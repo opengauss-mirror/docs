@@ -5,7 +5,7 @@ You can obtain the installation package from the openGauss open-source community
 ## Procedure<a name="en-us_topic_0289899746_en-us_topic_0283136484_en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
 1.  Download the installation package of the corresponding platform from the openGauss community.
-    1.  Log in to the openGauss open source community at  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html), select  **3.0.0**  in the  **Version**  field, and download the corresponding  Simplified installation package.
+    1.  Log in to the openGauss open source community at  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html), select  **3.1.0**  in the  **Version**  field, and download the corresponding  Simplified installation package.
 
     2.  Select the required installation package and click  **Download**.
 
@@ -32,5 +32,3 @@ You can obtain the installation package from the openGauss open-source community
     drwx------ 2 root root     4096 Mar 31 21:18 simpleInstall
     -rw------- 1 root root       32 Mar 31 21:18 version.cfg
     ```
-
-

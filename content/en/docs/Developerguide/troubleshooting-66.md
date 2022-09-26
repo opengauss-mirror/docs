@@ -6,6 +6,4 @@
 
 2.  A message is displayed prompting users to enter the PEM pass phrase.
 
-    In HTTPS communication mode, after specifying the path of the certificate and its key file \(the key file have been encrypted\), you need to enter the password of the encrypted private key file.
-
-
+    In HTTPS communication mode, after specifying the path of the certificate and its key file \(the key file have been encrypted\), you need to enter the password of the encrypted private key file. The password can also be passed through a standard input stream.

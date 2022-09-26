@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
-Only the type owner or a user granted with the ALTER permission can run the  **ALTER TYPE**  command. The system administrator has this permission by default. To modify the owner or schema of a type, you must be a type owner or system administrator and a member of the new owner role.
+The owner of a type, a user granted the ALTER permission on a type, or a user granted the ALTER ANY TYPE permission on a type can run the **ALTER TYPE** command. The system administrator has this permission by default. To modify the owner or schema of a type, you must be a type owner or system administrator and a member of the new owner role.
 
 ## Syntax<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
@@ -153,4 +153,3 @@ See  [Examples](create-type.md#en-us_topic_0283136568_en-us_topic_0237122124_en-
 ## Helpful Links<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
 [CREATE TYPE](create-type.md)  and  [DROP TYPE](drop-type.md)
-

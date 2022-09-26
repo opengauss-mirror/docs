@@ -53,6 +53,7 @@
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+            | COMMENT 'text' 
         ] [...]
         {
             AS 'definition'
@@ -78,6 +79,7 @@
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
+            | COMMENT 'text' 
          ][...]
          {
             IS | AS
@@ -232,6 +234,10 @@
 
     Value range: a positive number. The default value is  **1000**.
 
+-   **COMMENT 'text'**
+
+    Comments a function.
+    
 -   **configuration\_parameter**
     -   **value**
 
@@ -375,4 +381,3 @@ CONTEXT:  compilation of PL/pgSQL function "inline_code_block" near line 3
 ## Helpful Links<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [ALTER FUNCTION](alter-function.md)  and  [DROP FUNCTION](drop-function.md)
-

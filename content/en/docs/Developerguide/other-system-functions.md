@@ -4421,94 +4421,66 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
     Description: Sets the RANDOM flag for the current relationship.
 
-<<<<<<< HEAD
-- pgfadvise\_loader
-
-  Description: This function allow to interact directly with the Page Cache.
-  It can be used to load and/or unload page from memory based on a varbit
-  representing the map of the pages to load/unload accordingly.
-
-  Parameter: a table name or an index name.
-
-  Example: Work with relation pgbench_accounts, segment 0, arbitrary varbit map:
-
-      -- Loading and Unloading
-      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, true, B'111000');
-           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-      ------------------+--------------+---------------+--------------+----------------
-       base/11874/16447 |         4096 |        408376 |            3 |              3
-       
-      -- Loading
-      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, false, B'111000');
-           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-      ------------------+--------------+---------------+--------------+----------------
-       base/11874/16447 |         4096 |        408370 |            3 |              0
-       
-      -- Unloading
-      cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, false, true, B'111000');
-           relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
-      ------------------+--------------+---------------+--------------+----------------
-       base/11874/16447 |         4096 |        408370 |            0 |              3
-
-- pgfincore
-
-  Description: This function provide information about the file system cache (page cache).
-
-  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
-
-  Example:
-
-      cedric=# select * from pgfincore('pgbench_accounts');
-            relpath       | segment | os_page_size | rel_os_pages | pages_mem | group_mem | os_pages_free | databit | pages_dirty | group_dirty  
-      --------------------+---------+--------------+--------------+-----------+-----------+---------------+---------+-------------+-------------
-       base/11874/16447   |       0 |         4096 |       262144 |         3 |         1 |        408444 |         |           0 |           0
-       base/11874/16447.1 |       1 |         4096 |        65726 |         0 |         0 |        408444 |         |           0 |           0
-
-  For the specified relation it returns:
-
-   * relpath : the relation path 
-   * segment : the segment number analyzed 
-   * os_page_size : the size of one page
-   * rel_os_pages : the total number of pages of the relation
-   * pages_mem : the total number of relation's pages in page cache.
-  (not the shared buffers from PostgreSQL but the OS cache)
-   * group_mem : the number of groups of adjacent pages_mem
-   * os_page_free : the number of free page in the OS page cache
-   * databit : the varbit map of the file, because of its size it is useless to output
-  Use pgfincore('pgbench_accounts',true) to activate it.
-   * pages_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like pages_mem but for dirtied pages 
-   * group_dirty : if HAVE_FINCORE constant is define and the platorm provides the relevant information, like group_mem but for dirtied pages 
-=======
 -   pgfadvise\_loader
 
     Description: Allows direct interaction with the page cache. It may be used to load and/or unload a page from memory according to varbit representing a mapping of the page to be loaded/unloaded.
+
+    Parameters:
+    -   The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
+    -   The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
+    -   The third parameter specifies a relationship type. A character needs to be transferred. For a common relationship, the value of this parameter is **'r'** or **'R'**. For a partitioned table, the value of this parameter is **'p'** or **'P'**.
+    -   The fourth parameter: For a partition table, this parameter indicates the name of the partition. For a level-2 partitioned table, this parameter indicates the name of the level-2 partition. For an ordinary table, set this parameter to **NULL**. If other values are transferred, the query of the ordinary table is not affected.
+    -   The fifth parameter specifies the segment number.
+    -   The sixth parameter returns a Boolean value, indicating whether to perform the load operation.
+    -   The seventh parameter returns a Boolean value, indicating whether to perform the unload operation.
+    -   The eighth parameter is databit. This parameter is generally obtained by using pgfincore().
 
     Example: The relationship name is  **pgbench\_accounts**, the segment number is 0, and any varbit mapping is used.
 
     ```
     -- Loading and unloading
-    cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, true, B'111000');
+    cedric=# select * from pgfadvise_loader('pgbench_accounts', 'r', NULL, 0, true, true, B'111000');
     relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
     ------------------+--------------+---------------+--------------+----------------
          base/11874/16447 |         4096 |        408376 |            3 |              3
     
     -- Loading
-    cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, true, false, B'111000');
+    cedric=# select * from pgfadvise_loader('pgbench_accounts', 'r', NULL, 0, true, false, B'111000');
     relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
     ------------------+--------------+---------------+--------------+----------------
      base/11874/16447 |         4096 |        408370 |            3 |              0
     
     -- Unloading
-    cedric=# select * from pgfadvise_loader('pgbench_accounts', 0, false, true, B'111000');
+    cedric=# select * from pgfadvise_loader('pgbench_accounts', 'r', NULL, 0, false, true, B'111000');
     relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
     ------------------+--------------+---------------+--------------+----------------
     base/11874/16447 |         4096 |        408370 |            0 |              3
+    
+    -- This function can be used to restore the status of a table in the operating system cache.
+    -- Snapshot
+    cedric=# create table pgfincore_snapshot as
+    cedric-#   select 'pgbench_accounts'::text as relname,*,now() as date_snapshot
+    cedric-#   from pgfincore('pgbench_accounts',true);
+
+    -- Restore
+    cedric=# select * from pgfadvise_loader('pgbench_accounts', 'r', NULL, 0, true, true,
+                            (select databit from  pgfincore_snapshot
+                            where relname='pgbench_accounts' and segment = 0));
+    relpath      | os_page_size | os_pages_free | pages_loaded | pages_unloaded 
+    ------------------+--------------+---------------+--------------+----------------
+    base/11874/16447 |         4096 |         80867 |       262144 |              0
     ```
 
 -   pgfincore
 
     Description: Provides information about the file system cache \(page cache\).
 
+    Parameter: table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
+    Parameters:
+    -   The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
+    -   The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
+    -   The third parameter returns a Boolean value. The value **true** indicates that databit needs to be returned, and the value **false** indicates that databit does not need to be returned. This parameter can be omitted. For an integer or floating point number, zero is equivalent to false, and a non-zero value is equivalent to true. (It is not recommended that an integer or floating point number be transferred.)
+    
     Example:
 
     ```
@@ -4528,10 +4500,9 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     -   **pages\_mem**: total number of pages of the relationship in the page cache. \(not from the PostgreSQL shared buffer, but from the operating system cache\).
     -   **group\_mem**: number of groups of adjacent pages\_mem.
     -   **os\_page\_free**: number of idle pages in the OS page cache.
-    -   **databit**: varbit mapping of the file. To output this column, use  **pgfincore\('pgbench\_accounts', true\)**  to activate it.
+    -   **databit**: varbit mapping of the file. To output this column, use  **pgfincore\('pgbench\_accounts', true\)**  to activate it. If no data is inserted into a table and true is used to activate the table, no value is displayed for this column.
     -   **pages\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **pages\_mem**  except for dirty pages.
     -   **group\_dirty**: If the HAVE\_FINCORE constant is defined, the platform provides related information, which is similar to  **group\_mem**  except for dirty pages.
->>>>>>> cf71f1bb9cdaaf6fe842d0b8ca4826d3c531138a
 
 -   pgsysconf
 

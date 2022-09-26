@@ -20,7 +20,7 @@ openGauss provides client and server applications \(tools\) to help users better
 <td class="cellrowborder" valign="top" width="66.10000000000001%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"><a name="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"></a><a name="en-us_topic_0287276012_en-us_topic_0237152139_en-us_topic_0059778199_p168688291226"></a><strong id="b1675244914401"><a name="b1675244914401"></a><a name="b1675244914401"></a>gsql</strong> is a database connection tool provided by openGauss and runs in the command-line interface (CLI). Users can use <strong id="b107522049124018"><a name="b107522049124018"></a><a name="b107522049124018"></a>gsql</strong> to connect to a server and perform operations and maintenance on the server. In addition to basic functions for performing operations on a database, <strong id="b2753194918407"><a name="b2753194918407"></a><a name="b2753194918407"></a>gsql</strong> provides several advanced features for users.</p>
 </td>
 </tr>
-<tr id="row11852632175112"><td class="cellrowborder" rowspan="13" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_p452655620107"><a name="en-us_topic_0287276012_p452655620107"></a><a name="en-us_topic_0287276012_p452655620107"></a><a href="server-tools.md">Server tool</a></p>
+<tr id="row11852632175112"><td class="cellrowborder" rowspan="14" valign="top" width="15.290000000000001%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_p452655620107"><a name="en-us_topic_0287276012_p452655620107"></a><a name="en-us_topic_0287276012_p452655620107"></a><a href="server-tools.md">Server tool</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="18.61%" headers="mcps1.2.4.1.2 "><p id="p1185315325511"><a name="p1185315325511"></a><a name="p1185315325511"></a><a href="gs_cgroup.md">gs_cgroup</a></p>
 </td>
@@ -85,6 +85,12 @@ openGauss provides client and server applications \(tools\) to help users better
 <tr id="en-us_topic_0287276012_row2099819566449"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287276012_p20998856154416"><a name="en-us_topic_0287276012_p20998856154416"></a><a name="en-us_topic_0287276012_p20998856154416"></a><a href="gs_ssh.md">gs_ssh</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287276012_p11998556194411"><a name="en-us_topic_0287276012_p11998556194411"></a><a name="en-us_topic_0287276012_p11998556194411"></a><strong id="b1479194310432"><a name="b1479194310432"></a><a name="b1479194310432"></a>gs_ssh</strong>, provided by openGauss, helps users run the same command on multiple nodes in openGauss.</p>
+</td>
+</tr>
+    </tr>
+<tr id="row5469165019518"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p1447011501555"><a name="p1447011501555"></a><a name="p1447011501555"></a><a href="gs_sdr.md">gs_sdr</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p6470150953"><a name="p6470150953"></a><a name="p6470150953"></a><span id="en-us_topic_0287275995_text1932176615"><a name="en-us_topic_0287275995_text1932176615"></a><a name="en-us_topic_0287275995_text1932176615"></a>openGauss</span><span id="ph0565084812"><a name="ph0565084812"></a><a name="ph0565084812"></a><strong>gs\_sdr</strong>, provided by openGauss, implements cross-region remote DR without using additional storage media. The tool provides functions such as streaming DR establishment, DR switchover, planned primary/standby switchover, DR removal, DR status monitoring, and displaying the help information and version number.</span></p>
 </td>
 </tr>
 </tbody>

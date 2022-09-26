@@ -71,17 +71,10 @@ CREATE AGGREGATE name (
 ## Examples<a name="section14103104145915"></a>
 
 ```
-CREATE AGGREGATE sum (complex)
+openGauss=# CREATE AGGREGATE array_accum (anyelement)
 (
-    sfunc = complex_add,
-    stype = complex,
-    initcond = '(0,0)'
+    sfunc = array_append,
+    stype = anyarray,
+    initcond = '{}'
 );
-
-SELECT sum(a) FROM test_complex;
-
-   sum
------------
- (34,53.9)
 ```
-

@@ -231,9 +231,9 @@ Configuration description:
 -   **name**: name of a customized resource object. The value is a string of a maximum of 32 characters (including the end '\0').
 -   **instances**: list of nodes where customized resources are located.
 -   **node_id**: ID of the node where the resource instance is located.
--   **res_instance_id**: resource instance ID. The value is greater than or equal to 0. Different instances of the same resource have different IDs.
+-   **res\_instance\_id**: resource instance ID. The value is greater than or equal to 0. Different instances of the same resource have different IDs.
 -   **script**: location of the resource script.
--   **check_interval**: check interval, in seconds. The value is greater than or equal to 0.
+-   **check_interval**: interval for reporting the resource status, in seconds. The value is greater than or equal to 0.
 -   **time_out**: script execution timeout interval, in seconds. The value is greater than or equal to 0.
 -   **restart_delay**: restart delay after a fault occurs, in seconds. The value range is [0,1800].
 -   **restart_period**: If the difference between the current time and the latest restart time is greater than the value of **restart_period**, the number of resource restart times increases by 1.

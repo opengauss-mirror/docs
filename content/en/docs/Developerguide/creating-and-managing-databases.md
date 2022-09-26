@@ -100,5 +100,3 @@ To resolve this problem, you need to:
     openGauss=# DROP DATABASE human_tpcds;
     DROP DATABASE
     ```
-
-

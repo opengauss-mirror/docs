@@ -472,5 +472,3 @@ Use  **-D**  to provide the correct path of the database directory for the serve
     ```
     gsql -d postgres -p 1234
     ```
-
-

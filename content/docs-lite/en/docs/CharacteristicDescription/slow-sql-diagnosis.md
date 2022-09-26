@@ -29,7 +29,7 @@ For example:
 openGauss=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------
-node_name            | dn_6001_6002_6003
+node_name            | master
 db_name              | postgres
 schema_name          | "$user",public
 origin_node          | 1938253334

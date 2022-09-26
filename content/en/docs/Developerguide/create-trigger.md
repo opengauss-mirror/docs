@@ -9,6 +9,7 @@
 -   Currently, triggers can be created only on ordinary row-store tables, instead of on column-store tables, temporary tables, or unlogged tables.
 -   If multiple triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name.
 -   Triggers are usually used for data association and synchronization between multiple tables. SQL execution performance is greatly affected. Therefore, you are advised not to use this statement when a large amount of data needs to be synchronized and performance requirements are high.
+-   To create a trigger, you must have the TRIGGER permission on the specified table or have the CREATE ANY TRIGGER permission.
 
 ## Syntax<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
@@ -104,7 +105,7 @@ Events include:
 
     Specifies whether the trigger function will actually be executed. If  **WHEN**  is specified, the function will be called only when  **condition**  returns  **true**.
 
-    In  **FOR EACH ROW**  triggers, the  **WHEN**  condition can refer to columns of the old and/or new row values by writing  **OLD.**_column name_  or  **NEW.**_column name_  respectively. In addition,  **INSERT**  triggers cannot refer to  **OLD**, and  **DELETE**  triggers cannot refer to  **NEW**.
+    In  **FOR EACH ROW**  triggers, the  **WHEN**  condition can refer to columns of the old and/or new row values by writing  **OLD.***column name*  or  **NEW.***column name*  respectively. In addition,  **INSERT**  triggers cannot refer to  **OLD**, and  **DELETE**  triggers cannot refer to  **NEW**.
 
     **INSTEAD OF**  triggers do not support  **WHEN**  conditions.
 
@@ -349,4 +350,3 @@ openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 ## Helpful Links<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
 [ALTER TRIGGER](alter-trigger.md),  [DROP TRIGGER](drop-trigger.md), and  [ALTER TABLE](alter-table.md)
-

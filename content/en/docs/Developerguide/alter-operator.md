@@ -51,4 +51,3 @@ ALTER OPERATOR @@ (text, text) OWNER TO joe;
 ## Compatibility<a name="section135891317111410"></a>
 
 The SQL standard does not contain the ALTER OPERATOR statement.
-

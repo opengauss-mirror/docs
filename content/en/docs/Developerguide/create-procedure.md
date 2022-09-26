@@ -16,7 +16,7 @@
 -   When functions with output parameters are called in a stored procedure which is an assignment expression, you can omit the output parameters of the called functions.
 -   The stored procedure supports viewing, exporting, and importing parameter comments.
 -   The stored procedure supports viewing, exporting, and importing parameter comments between IS/AS and plsql\_body.
--   The default permission on a stored procedure is  **SECURITY INVOKER**. If you want to change the default permission to  **SECURITY DEFINER**, you need to set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**. For details about the S**ECURITY DEFINER**  permission, see section "Permission Control" in  _Security Hardening Guide_.
+-   The default permission on a stored procedure is  **SECURITY INVOKER**. If you want to change the default permission to  **SECURITY DEFINER**, you need to set the GUC parameter  **behavior\_compat\_options**  to  **'plsql\_security\_definer'**. For details about the S**ECURITY DEFINER**  permission, see section "Permission Control" in  *Security Hardening Guide*.
 -   Users granted with the  **CREATE ANY FUNCTION**  permission can create or replace stored procedures in the user schemas.
 -   **out/inout**  must be set to a variable but not a constant.
 -   In a centralized environment, if you want to call a stored procedure with the same in parameters but different out parameters, you need to set the GUC parameter  **behavior\_compat\_options**  to  **'proc\_outparam\_override'**. After the parameter is enabled, you must add the out parameters no matter whether you use the SELECT or CALL statement to call the stored procedure. After the parameter is enabled, you cannot use  **perform**  to call a stored procedure or function.
@@ -35,6 +35,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | {[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER | AUTHID DEFINER | AUTHID CURRENT_USER}
        | COST execution_cost
        | SET configuration_parameter { TO value | = value | FROM CURRENT }
+       | COMMENT text
     ][ ... ]
  { IS | AS } 
 plsql_body 
@@ -94,6 +95,10 @@ plsql_body
 
     Specifies a constraint. The function of each parameter is similar to that of  **CREATE FUNCTION**. For details, see  [CREATE FUNCTION](create-function.md).
 
+-   **COMMENT text**
+
+    Comments a stored procedure.   
+
 -   **plsql\_body**
 
     Specifies the PL/SQL stored procedure body.
@@ -114,5 +119,3 @@ plsql_body
 -   analyse | analyze
     -   Do not run  **ANALYZE**  in a transaction or anonymous block.
     -   Do not run  **ANALYZE**  in a function or stored procedure.
-
-

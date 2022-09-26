@@ -21,9 +21,9 @@
     ```
     total 147716
     drwx------ 2 root root     4096 Jan  4 21:23 dependency
-    -rwx------ 1 root root 73683192 Jan  4 21:23 GaussDB-Kernel-V500R002C10-EULER-64bit.bin
-    -rw------- 1 root root       65 Jan  4 21:23 GaussDB-Kernel-V500R002C10-EULER-64bit.sha256
-    -rw------- 1 root root 77146951 Jan  4 21:23 GaussDB-Kernel-V500R002C10-EULER-64bit.tar.gz
+    -rwx------ 1 root root 73683192 Jan  4 21:23 openGauss-Lite-x.x.x-openEuler-aarch64.bin
+    -rw------- 1 root root       65 Jan  4 21:23 openGauss-Lite-x.x.x-openEuler-aarch64.sha256
+    -rw------- 1 root root 77146951 Jan  4 21:23 openGauss-Lite-x.x.x-openEuler-aarch64.tar.gz
     -rw------- 1 root root    29154 Jan  4 21:23 install.sh
     -rw------- 1 root root      724 Jan  4 21:23 opengauss_lite.conf
     -rw------- 1 root root     2727 Jan  4 21:23 uninstall.sh
@@ -35,5 +35,3 @@
     -rw------- 1 root root   323935 Jan  4 21:23 upgrade_sql.tar.gz
     -rw------- 1 root root       43 Jan  4 21:23 version.cfg
     ```
-
-

@@ -8,7 +8,7 @@
 
     Return type: text
 
-    Length of the return value: At least 92 bytes and no more than \(4\*\[_Len_/3\]+68\) bytes, where  _Len_  indicates the length of the data before encryption \(unit: byte\).
+    Length of the return value: At least 92 bytes and no more than \(4\*\[*Len*/3\]+68\) bytes, where  *Len*  indicates the length of the data before encryption \(unit: byte\).
 
     Example:
 
@@ -85,6 +85,82 @@
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
+
+-   aes\_encrypt\(str, key\_str, init\_vector\)
+
+    Description: Encrypts the string **str** using the key string **key\_str** and initialization vector **init\_vector** based on the AES algorithm.
+
+    Parameter description:
+
+    -- **str**: character string to be encrypted. If **str** is set to **NULL**, the function returns **NULL**.
+
+    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](security-configuration.md)).
+
+    -- **init\_vector**: An initialization variable is provided for the required block encryption mode. The length is greater than or equal to 16 bytes. Bytes greater than 16 bytes are automatically ignored. If neither **str** nor **key\_str** is **NULL**, this parameter cannot be **NULL**. Otherwise, an error is reported. For security purposes, you are advised to ensure that the IV value for each encryption is unique in OFB mode and that the IV value for each encryption is unpredictable in CBC and CFB modes.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select aes_encrypt('huwei123','123456vfhex4dyu,vdaladhjsadad','1234567890123456');
+     aes_encrypt
+    -------------
+     u*8\x05c?0
+    (1 row)
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >
+     >(1) This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
+    >
+    >(2) A decryption password is required during the execution of this function. For security purposes, the gsql tool does not record the SQL statements containing the function name in the execution history. That is, the execution history of this function cannot be found in gsql by paging up and down.
+    >
+    >(3) Do not call this function during operations related to stored procedures, preventing the risk of sensitive information disclosure. In addition, when using the stored procedure that contains the function, you are advised to filter the parameter information of the function before providing the information for external maintenance personnel to locate the fault. Delete the logs after using them.
+    >
+    >(4) Do not call the function when **debug\_print\_plan** is enabled, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the function in the log files generated when **debug\_print\_plan** is enabled, and then provide the information to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
+    >
+    >(5) The SQL\_ASCII setting is different from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. When this function calls the OpenSSL third-party library, the returned encoding of data is non-ASCII data. Therefore, when the character set of the database server is set to SQL\_ASCII, the encoding of the client must also be set to SQL\_ASCII. Otherwise, an error is reported. The database does not convert or verify non-ASCII characters.
+
+-   aes\_decrypt\(pass\_str, key\_str, init\_vector\)
+
+    Description: Decrypts the string **str** using the key string **key\_str** and initialization vector **init\_vector** based on the AES algorithm.
+
+    Parameter description:
+
+    -- **pass\_str**: character string to be decrypted. If **pass\_str** is set to **NULL**, the function returns **NULL**.
+
+    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](security-configuration.md)).
+
+    -- **init\_vector**: An initialization variable is provided for the required block decryption mode. The length is greater than or equal to 16 bytes. Bytes greater than 16 bytes are automatically ignored. If neither **pass\_str** nor **key\_str** is **NULL**, this parameter cannot be **NULL**. Otherwise, an error is reported. For security purposes, you are advised to ensure that the IV value for each encryption is unique in OFB mode and that the IV value for each encryption is unpredictable in CBC and CFB modes.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# select aes_decrypt(aes_encrypt('huwei123','123456vfhex4dyu,vdaladhjsadad','1234567890123456'),'123456vfhex4dyu,vdaladhjsadad','1234567890123456');
+     aes_decrypt
+    -------------
+     huwei123
+    (1 row)
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >
+     >(1) This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
+    >
+     >(2) A decryption password is required during the execution of this function. For security purposes, the gsql tool does not record the SQL statements containing the function name in the execution history. That is, the execution history of this function cannot be found in gsql by paging up and down.
+     >
+     >(3) Do not call this function during operations related to stored procedures, preventing the risk of sensitive information disclosure. In addition, when using the stored procedure that contains the function, you are advised to filter the parameter information of the function before providing the information for external maintenance personnel to locate the fault. Delete the logs after using them.
+    >
+     >(4) Do not call the function when **debug\_print\_plan** is enabled, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the function in the log files generated when **debug\_print\_plan** is enabled, and then provide the information to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
+     >
+     >(5) To ensure successful decryption, ensure that the values of **block\_encryption\_mode**, **key\_str** and **iv** are the same as those during encryption.
+     >
+     >(6) Due to encoding differences, encrypted data cannot be directly copied from the gsql client for decryption. In this scenario, the decryption result may not be the character string before encryption.
+     >
+     >(7) The SQL\_ASCII setting is different from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. When this function calls the OpenSSL third-party library, the returned encoding of data is non-ASCII data. Therefore, when the character set of the database server is set to SQL\_ASCII, the encoding of the client must also be set to SQL\_ASCII. Otherwise, an error is reported. The database does not convert or verify non-ASCII characters.
 
 -   gs\_password\_deadline
 
@@ -348,5 +424,3 @@
     Return value type: void  
      
     For details about how to use the function and details about function examples, see  [Maintaining Audit Logs](en-us_topic_0289900145.md).
-
-

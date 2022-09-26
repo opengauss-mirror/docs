@@ -15,6 +15,8 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
 ## Precautions<a name="en-us_topic_0237152332_section4694838915381"></a>
 
+-   When the streaming DR function is used, the DR cluster does not support this tool.
+
 -   The monitoring information of  **gs\_checkperf**  comes from tables in PMK mode. If the ANALYZE operation is not performed on such tables,  **gs\_checkperf**  may fail to be executed. An example of the error information is as follows:
 
     ```
@@ -364,4 +366,3 @@ Session IO statistics:
 ## Helpful Links<a name="en-us_topic_0237152332_en-us_topic_0059778118_s192dbb9a0f6b4bae84d65bf5bdd8a796"></a>
 
 [gs\_check](gs_check.md),  [gs\_checkos](gs_checkos.md)
-

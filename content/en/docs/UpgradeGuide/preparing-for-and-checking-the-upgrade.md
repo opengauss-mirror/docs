@@ -37,7 +37,7 @@ This section describes preparations before the upgrade.
 </td>
 <td class="cellrowborder" valign="top" width="21.42%"><p id="p599243013301"><a name="p599243013301"></a><a name="p599243013301"></a>Collect node information.</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p1799215303302"><a name="p1799215303302"></a><a name="p1799215303302"></a>Collect names and IP addresses of database nodes and passwords of users <strong id="b11976123763215"><a name="b11976123763215"></a><a name="b11976123763215"></a>root</strong> and <strong id="b1197663793210"><a name="b1197663793210"></a><a name="b1197663793210"></a>omm</strong>.</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p1799215303302"><a name="p1799215303302"></a><a name="p1799215303302"></a>Collect the names, IP addresses, and passwords of users <strong>root</strong> and <strong>omm</strong> of the nodes involved in the database.
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p899353023018"><a name="p899353023018"></a><a name="p899353023018"></a>One day before the upgrade</p>
 </td>
@@ -114,7 +114,7 @@ This section describes preparations before the upgrade.
 </table>
 
 
->![](C:/Users/lijun/Desktop/docs/docs/content/en/docs/UpgradeGuide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Time required varies according to the particulars for the site \(such as the data volume and server performance\).
 
 ## Collecting Node Information
@@ -159,7 +159,7 @@ Contact the database system administrator to obtain names and IP addresses of da
 
 If the upgrade fails, services may be affected. Back up data in advance so that services can be restored as soon as possible after a failure occurs.
 
-For details, see section "Backup and Restoration" in the  _Administrator Guide_.
+For details, see section "Backup and Restoration" in the  *Administrator Guide*.
 
 ## Obtaining the Upgrade Packages
 
@@ -179,7 +179,7 @@ Use the  **gs\_checkos**  tool to check the OS status.
 
 - Only user  **root**  is authorized to run the  **gs\_checkos**  command.
 
-  >![](C:/Users/lijun/Desktop/docs/docs/content/en/docs/UpgradeGuide/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >This tool cannot be independently invoked. For security purposes, it is automatically deleted after the preinstallation is complete.
 
 
@@ -193,7 +193,7 @@ Use the  **gs\_checkos**  tool to check the OS status.
    gs_checkos -i A
    ```
 
-   Check the OS parameters to ensure that the database has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "**Server Tools**  \>  **gs\_checkos**  \>  **Table 1 OS check items**" in the  _Tool Reference_.
+   Check the OS parameters to ensure that the database has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "**Server Tools**  \>  **gs\_checkos**  \>  **Table 1 OS check items**" in the  *Tool Reference*.
 
 ## Checking the Disk Usage of the Database Node
 
@@ -214,4 +214,3 @@ This section describes how to query the database status.
    ```
 
 3. Ensure that the database is normal.
-

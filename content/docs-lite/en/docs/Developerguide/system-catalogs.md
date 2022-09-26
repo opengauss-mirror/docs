@@ -166,6 +166,8 @@
 
 -   **[PG\_SECLABEL](pg_seclabel.md)**  
 
+-   **[PG\_SET](pg_set.md)**  
+
 -   **[PG\_SHDEPEND](pg_shdepend.md)**  
 
 -   **[PG\_SHDESCRIPTION](pg_shdescription.md)**  
@@ -215,5 +217,3 @@
 -   **[STATEMENT\_HISTORY](statement_history.md)**  
 
 -   **[GS\_UID](gs_uid.md)**  
-
-

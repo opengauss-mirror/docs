@@ -22,7 +22,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p14426194115176"><a name="p14426194115176"></a><a name="p14426194115176"></a>Action parameter</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul64313256257"></a><a name="ul64313256257"></a><ul id="ul64313256257"><li><strong id="b023162673714"><a name="b023162673714"></a><a name="b023162673714"></a>show</strong>: displays results.</li><li><strong id="b36161028193715"><a name="b36161028193715"></a><a name="b36161028193715"></a>clean</strong>: clears results.</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul64313256257"></a><a name="ul64313256257"></a><ul id="ul64313256257"><li><strong id="b023162673714"><a name="b023162673714"></a><a name="b023162673714"></a>show</strong>: displays results.</li><li><strong id="b36161028193715"><a name="b36161028193715"></a><a name="b36161028193715"></a>clean</strong>: clears results.</li><li><strong>diagnosis</strong>: interactive diagnosis.</li></ul>
 </td>
 </tr>
 <tr id="row11910554101219"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1133111208135"><a name="p1133111208135"></a><a name="p1133111208135"></a>-c, --conf</p>
@@ -41,25 +41,24 @@
 </tr>
 <tr id="row45291529201416"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p192811539157"><a name="p192811539157"></a><a name="p192811539157"></a>--start-time</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1544145713182"><a name="p1544145713182"></a><a name="p1544145713182"></a>Timestamp of the start time, in milliseconds.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1544145713182"><a name="p1544145713182"></a><a name="p1544145713182"></a>Timestamp of the start time, in milliseconds. Alternatively, the date and time format is %Y-%m-%d %H:%M:%S.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1095712011916"><a name="p1095712011916"></a><a name="p1095712011916"></a>Non-negative integer</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1095712011916"><a name="p1095712011916"></a><a name="p1095712011916"></a>Positive integer or date and time format</p>
 </td>
 </tr>
 <tr id="row81421205167"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1114219081616"><a name="p1114219081616"></a><a name="p1114219081616"></a>--end-time</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1187010432198"><a name="p1187010432198"></a><a name="p1187010432198"></a>Timestamp of the end time, in milliseconds.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p32119591900"><a name="p32119591900"></a><a name="p32119591900"></a>Timestamp of the start time, in milliseconds. Alternatively, the date and time format is %Y-%m-%d %H:%M:%S.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p148691743121916"><a name="p148691743121916"></a><a name="p148691743121916"></a>Non-negative integer</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p4217596010"><a name="p4217596010"></a><a name="p4217596010"></a>Positive integer or date and time format</p>
 </td>
 </tr>
 <tr id="row8930340846"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p9930640443"><a name="p9930640443"></a><a name="p9930640443"></a>--retention-days</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p7930154013410"><a name="p7930154013410"></a><a name="p7930154013410"></a>Number of days retaining results</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1595617014197"><a name="p1595617014197"></a><a name="p1595617014197"></a>Non-negative real number</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p7930154013410"><a name="p7930154013410"></a><a name="p7930154013410"></a>Number of days retaining results</p>
 </td>
 </tr>
 </tbody>
 </table>
-

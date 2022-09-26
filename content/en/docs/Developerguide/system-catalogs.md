@@ -84,6 +84,7 @@
 -   **[PG\_REWRITE](pg_rewrite.md)**
 -   **[PG\_RLSPOLICY](pg_rlspolicy.md)**
 -   **[PG\_SECLABEL](pg_seclabel.md)**
+-   **[PG\_SET](pg_set.md)**  
 -   **[PG\_SHDEPEND](pg_shdepend.md)**
 -   **[PG\_SHDESCRIPTION](pg_shdescription.md)**
 -   **[PG\_SHSECLABEL](pg_shseclabel.md)**
@@ -108,6 +109,3 @@
 -   **[PGXC\_SLICE](pgxc_slice.md)**
 -   **[PLAN\_TABLE\_DATA](plan_table_data.md)**
 -   **[STATEMENT\_HISTORY](statement_history.md)**
-
-
-

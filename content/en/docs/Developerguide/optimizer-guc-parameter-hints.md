@@ -17,7 +17,7 @@ set(param value)
 -   Currently, the following parameters can be set and take effect by using Hint:
     -   Boolean
 
-        **enable\_bitmapscan**,  **enable\_hashagg**,  **enable\_hashjoin**,  **enable\_indexscan**,  **enable\_indexonlyscan**,  **enable\_material**,  **enable\_mergejoin**,  **enable\_nestloop**,  **enable\_index\_nestloop**,  **enable\_seqscan**,  **enable\_sort**, and  **enable\_tidscan**
+        **enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable\_tidscan, partition\_iterator\_elimination, partition\_page\_estimation, enable\_functional\_dependency,** and **var\_eq\_const\_selectivity**
 
     -   Integer
 
@@ -38,4 +38,3 @@ set(param value)
 >-   The GUC parameter hint takes effect only in the outermost query. That is, the GUC parameter hint in the subquery does not take effect.
 >-   The GUC parameter hint in the view definition does not take effect.
 >-   In the  **CREATE TABLE ... AS ...**  statement, the outermost GUC parameter hint takes effect.
-

@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_s930f5a4f83c6409d88e8b3f1cb94b164"></a>
 
-Only the owner of a synonym or a system administrator has the  **DROP SYNONYM**  permission.
+The owner of SYNONYM or a user granted with the DROP ANY SEQUENCE permission can run **DROP SYNONYM**. The system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_s9b11702dc40d417f95cd9eec3970b4d1"></a>
 
@@ -36,4 +36,3 @@ See  [Examples](create-synonym.md#en-us_topic_0283136599_en-us_topic_0237122116_
 ## Helpful Links<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_sc10e825d28c44222b38ad09aeaa385d2"></a>
 
 [ALTER SYNONYM](alter-synonym.md)  and  [CREATE SYNONYM](create-synonym.md)
-

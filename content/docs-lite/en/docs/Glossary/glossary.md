@@ -427,6 +427,11 @@
 <p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"></a>After receiving and accepting a connection request from the standby node, the primary node creates a WAL sender thread to interact with the standby node.</p>
 </td>
 </tr>
+<tr id="row72083135120"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p19208131105113"><a name="p19208131105113"></a><a name="p19208131105113"></a>publication</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1420921165112"><a name="p1420921165112"></a><a name="p1420921165112"></a>A publication can be defined on any primary physical replication server. The node where a publication is defined is called the publisher. A publication is a set of changes generated from a table or a group of tables. It can also be described as a change set or replication set. Each publication exists in only one database.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_row5935841174156"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p53422575174156"><a name="en-us_topic_0283139955_p53422575174156"></a><a name="en-us_topic_0283139955_p53422575174156"></a>RHEL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p32261284174156"><a name="en-us_topic_0283139955_p32261284174156"></a><a name="en-us_topic_0283139955_p32261284174156"></a>Acronym for Red Hat Enterprise Linux.</p>
@@ -470,6 +475,11 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row213185649138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p490821289138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p490821289138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p490821289138"></a>SSL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p162294289138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p162294289138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p162294289138"></a>Acronym for secure sockets layer. It is a network security protocol introduced by Netscape. It is based on the TCP/IP and uses public key technology. SSL supports a wide range of networks and provides three basic security services, all of which use the public key technology. SSL ensures the security of service communication through the network by establishing a secure connection between a client and a server and then being able to securely send any data through this connection.</p>
+</td>
+</tr>
+<tr id="row17699913114920"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p7701161374911"><a name="p7701161374911"></a><a name="p7701161374911"></a>subscription</p>
+</td>
+<td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p770117138499"><a name="p770117138499"></a><a name="p770117138499"></a>A subscription is the downstream side of logical replication. The node where a subscription is defined is called the subscriber. A subscription defines the connection to another database and the set of publications (one or more) that it wants to subscribe to.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row22066799171746"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p57115730171746"></a>oversubscription ratio</p>
@@ -727,4 +737,3 @@
 </tr>
 </tbody>
 </table>
-

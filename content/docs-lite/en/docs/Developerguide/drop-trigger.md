@@ -6,7 +6,7 @@
 
 ## Precautions<a name="en-us_topic_0283137186_en-us_topic_0237122156_en-us_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
-Only the owner of a trigger or a system administrator has the  **DROP TRIGGER**  permission.
+The owner of the table where a trigger resides or a user granted the DROP ANY TRIGGER permission can perform the DROP TRIGGER operation. The system administrator has this permission by default.
 
 ## Syntax<a name="en-us_topic_0283137186_en-us_topic_0237122156_en-us_topic_0059777895_sf4510c6bdb8443de98b3b31a1fed9107"></a>
 
@@ -44,4 +44,3 @@ For details, see  [Examples](create-trigger.md#en-us_topic_0283137165_en-us_topi
 ## Helpful Links<a name="en-us_topic_0283137186_en-us_topic_0237122156_en-us_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TRIGGER](create-trigger.md),  [ALTER TRIGGER](alter-trigger.md), and  [ALTER TABLE](alter-table.md)
-

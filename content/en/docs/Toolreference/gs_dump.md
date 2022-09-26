@@ -97,9 +97,9 @@ gs_dump [OPTION]... [DBNAME]
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->_DBNAME_  does not follow a short or long option. It specifies the database to be connected.
+>*DBNAME*  does not follow a short or long option. It specifies the database to be connected.
 >For example:
->Specify  _DBNAME_  without a  **-d**  option preceding it.
+>Specify  *DBNAME*  without a  **-d**  option preceding it.
 >```
 >gs_dump -p port_number  postgres -f dump1.sql
 >```
@@ -110,7 +110,7 @@ gs_dump [OPTION]... [DBNAME]
 >```
 > gs_dump -p port_number -f dump1.sql
 >```
->Environment variable:  _PGDATABASE_
+>Environment variable:  *PGDATABASE*
 
 ## Parameter Description<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
@@ -195,7 +195,7 @@ Dump parameters:
     >-   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
     >-   If  **-n**  is specified, the non-schema objects are not dumped.
 
-    Multiple schemas can be dumped. Entering  **-n **_schemaname_  multiple times dumps multiple schemas.
+    Multiple schemas can be dumped. Entering  **-n ***schemaname*  multiple times dumps multiple schemas.
 
     For example:
 
@@ -253,7 +253,7 @@ Dump parameters:
     >-   The number of  **-t**  parameters must be less than or equal to 100.
     >-   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.
     >-   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    >-   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  _tablename_  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
+    >-   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
     >-   **-t tablename**  does not export trigger information from a table.
 
     For example:
@@ -465,7 +465,7 @@ Connection parameters:
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be 127.0.0.1.
 
-    Example:  _host name_
+    Example:  *host name*
 
     Environment variable:  **PGHOST**
 
@@ -607,4 +607,3 @@ Example 6: Use  **gs\_dump**  to export only the information about the views tha
 ## Helpful Links<a name="en-us_topic_0287275988_en-us_topic_0237152335_en-us_topic_0059777770_s04aec05b522242268c264d0964818765"></a>
 
 [gs\_dumpall](gs_dumpall.md)  and  [gs\_restore](gs_restore.md)
-

@@ -22,4 +22,4 @@ During the use of openGauss, installation, upgrade, and health management are re
 
 -   **[gs\_ssh](gs_ssh.md)**  
 
-
+-   **[gs_sdr](gs_sdr.md)**  

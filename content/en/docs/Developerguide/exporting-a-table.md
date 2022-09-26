@@ -90,7 +90,7 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
     </tbody>
     </table>
 
-    For details about other parameters, see "Server Tools \> gs\_dump" in the  _Tool Reference_.
+    For details about other parameters, see "Server Tools \> gs\_dump" in the  *Tool Reference*.
 
 
 ## Examples<a name="en-us_topic_0283137162_en-us_topic_0237121171_en-us_topic_0096393572_s2612a8b058f24a14b1dfa8efd6f4c410"></a>
@@ -184,4 +184,3 @@ Password:
 gs_dump[port='8000'][jack][2018-11-14 17:21:18]: dump database human_resource successfully
 gs_dump[port='8000'][jack][2018-11-14 17:21:23]: total time: 4239  ms
 ```
-

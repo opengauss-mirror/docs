@@ -12,7 +12,7 @@ When  **gs\_dumpall**  is used to export data, other users can still access \(re
 
 The generated columns are not dumped during  **gs\_dumpall**  is used.
 
-**gs\_dumpall**  exports all openGauss databases in two parts:
+When **gs\_dumpall** is used to export data, generated columns are not dumped.
 
 -   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
 -   **gs\_dumpall**  calls  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
@@ -272,4 +272,3 @@ In the preceding command, backup/bkp2.sql indicates the exported file, and 37300
 ## Helpful Links<a name="en-us_topic_0059778372_s9ed79eb3e2564786a6823616c460fc00"></a>
 
 [gs\_dump](gs_dump.md)
-

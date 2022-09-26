@@ -230,7 +230,24 @@
       125
     (1 row)
     ```
+-   to\_char\(set\)
 
+    Description: Converts a value of the SET type to a string.
+
+    Return value: text
+
+    Example:
+
+    ```
+    -- The site column is of the SET type in the employee table.
+    openGauss=# select to_char(site) from employee;
+         to_char     
+    -----------------
+     beijing,nanjing
+     beijing,wuhan
+    (2 rows)
+    ```
+    
 -   to\_char\(numeric, text\)
 
     Description: Converts the values of the numeric type into the strings in the specified format.
@@ -440,8 +457,8 @@
 
     In  **to\_timestamp**  in openGauss,
 
-    -   If the input year  _YYYY_  is 0, an error will be reported.
-    -   If the input year  _YYYY_  is less than 0, specify  _SYYYY_  in  **fmt**. The year with the value of n \(an absolute value\) BC will be output correctly.
+    -   If the input year  *YYYY*  is 0, an error will be reported.
+    -   If the input year  *YYYY*  is less than 0, specify  *SYYYY*  in  **fmt**. The year with the value of n \(an absolute value\) BC will be output correctly.
 
     Characters in the  **fmt**  must match the schema for formatting the data and time. Otherwise, an error is reported.
 
@@ -1419,5 +1436,3 @@
      \x3132333435
     (1 row)
     ```
-
-

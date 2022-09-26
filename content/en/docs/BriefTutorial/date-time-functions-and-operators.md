@@ -23,7 +23,7 @@ SELECT date '2001-10-01' - '7' AS RESULT;
 <td class="cellrowborder" valign="top" width="92%" headers="mcps1.2.3.1.2 "><a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s4db82eb12b6545ba94e9dff751041317"></a><a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s4db82eb12b6545ba94e9dff751041317"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s4db82eb12b6545ba94e9dff751041317">openGauss=# SELECT date '2001-9-28' + integer '7' AS RESULT;
    result
 \------------
- 2001-10-05
+ 2001-10-05 00:00:00
 (1 row)</pre>
 </td>
 </tr>
@@ -628,7 +628,7 @@ SELECT date '2001-10-01' - '7' AS RESULT;
 
 -   add\_months\(d,n\)
 
-    Description: Returns the date  _date_  plus  _integer_  months.
+    Description: Returns the date  *date*  plus  *integer*  months.
 
     Return type: timestamp
 
@@ -644,7 +644,7 @@ SELECT date '2001-10-01' - '7' AS RESULT;
 
 -   last\_day\(d\)
 
-    Description: Returns the date of the last day of the month that contains  _date_.
+    Description: Returns the date of the last day of the month that contains  *date*.
 
     Return type: timestamp
 
@@ -661,7 +661,7 @@ SELECT date '2001-10-01' - '7' AS RESULT;
 
 -   next\_day\(x,y\)
 
-    Description: Calculates the time of the next week  _y_  started from  _x_.
+    Description: Calculates the time of the next week  *y_  started from  _x*.
 
     Return type: timestamp
 
@@ -1420,4 +1420,3 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 >+   If the range of the input two-digit year is between 50 and 99:    
 >    +   If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are equal to the first two digits of the current year minus 1.  
 >    +    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.    
-

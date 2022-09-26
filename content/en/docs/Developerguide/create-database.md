@@ -2,12 +2,12 @@
 
 ## Function<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
-**CREATE DATABASE**  is used to create a database. By default, the new database will be created only by cloning the standard system database  **template0**.
+Creates a database. By default, the new database will be created only by cloning the standard system database **template0**.
 
 ## Precautions<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s818d4df5d095482f86d8e7258a75df1b"></a>
 
--   A user that has the  **CREATEDB**  permission or a system administrator can create a database.
--   **CREATE DATABASE**  cannot be executed inside a transaction block.
+-   Only system administrators or users with the **CREATEDB** permission can create a database.
+-   **CREATE DATABASE** cannot be executed within a transaction block.
 -   During the database creation, an error message indicating that permission denied is displayed, possibly because the permission on the data directory in the file system is insufficient. If an error message, indicating no space left on device is displayed, the possible cause is that the disk space is used up.
 
 ## Syntax<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s819ed4de9ed04006954df8016e5e4858"></a>
@@ -28,40 +28,40 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
 -   **database\_name**
 
-    Specifies the database name.
+    Database name
 
-    Value range: a string. It must comply with the naming convention.
+    Value range: String, which must comply with the naming convention.
 
 -   **OWNER \[ = \] user\_name**
 
-    Specifies the owner of the new database. If omitted, the default owner is the current user.
+    Specifies the owner of the new database. By default, the owner of a new database is the current user.
 
-    Value range: an existing username
+    Value range: an existing user name.
 
 -   **TEMPLATE \[ = \] template**
 
-    Specifies a template name. That is, the template from which the database is created. openGauss creates a database by copying data from a template database. openGauss has two default template databases  **template0**  and  **template1**  and a default user database  **postgres**.
+    Specifies a template name, that is, the template from which the database is created. openGauss creates a database by copying data from a template database. openGauss has two default template databases **template0** and **template1** and a default user database **postgres**.
 
-    Value range:  **template0**
+    Value range: **template0**
 
--   **ENCODING \[ = \] encoding**
+- **ENCODING \[ = \] encoding**
 
-    Specifies the character encoding used by the database. The value can be a string \(for example,  **SQL\_ASCII**\) or an integer.
+  Specifies the encoding format used by the new database. The value can be a string (for example, **SQL\_ASCII**) or an integer.
 
-    If this parameter is not specified, the encoding of the template database is used by default. By default, the codes of the template databases  **template0**  and  **template1**  are related to the operating system environment. The character encoding of  **template1**  cannot be changed. To change the encoding, use  **template0**  to create a database.
+  By default, the encoding format of the template database is used. The encoding formats of the template databases **template0** and **template1** depend on the OS. The encoding format of **template1** cannot be changed. If you need to change the encoding format when creating a database, use **template0**.
 
-    The common values are  **GBK**,  **UTF8**, and  **Latin1**.
+  Common values are **GBK**, **UTF8**, **Latin1**, and **GB10830**. The supported character sets are as follows:
 
-    **Table  1**  openGauss character set
+  **Table 1** openGauss character set
 
     <a name="table78123179517"></a>
     <table><thead align="left"><tr id="row75301618757"><th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.1"><p id="p105308181954"><a name="p105308181954"></a><a name="p105308181954"></a><strong id="b3355164317430"><a name="b3355164317430"></a><a name="b3355164317430"></a>Name</strong></p>
     </th>
     <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.2"><p id="p15531318453"><a name="p15531318453"></a><a name="p15531318453"></a>Description</p>
     </th>
-    <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.3"><p id="p1053116189517"><a name="p1053116189517"></a><a name="p1053116189517"></a><strong id="b978420218448"><a name="b978420218448"></a><a name="b978420218448"></a>Language</strong></p>
+    <th class="cellrowborder" valign="top" width="14.53061224489796%" id="mcps1.2.8.1.3"><p id="p1053116189517"><a name="p1053116189517"></a><a name="p1053116189517"></a><strong id="b978420218448"><a name="b978420218448"></a><a name="b978420218448"></a>Language</strong></p>
     </th>
-    <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.4"><p id="p7531191813519"><a name="p7531191813519"></a><a name="p7531191813519"></a><strong id="b194331211164917"><a name="b194331211164917"></a><a name="b194331211164917"></a>Server Or Not</strong></p>
+    <th class="cellrowborder" valign="top" width="14.040816326530612%" id="mcps1.2.8.1.4"><p id="p7531191813519"><a name="p7531191813519"></a><a name="p7531191813519"></a><strong id="b194331211164917"><a name="b194331211164917"></a><a name="b194331211164917"></a>Server Or Not</strong></p>
     </th>
     <th class="cellrowborder" valign="top" width="14.285714285714285%" id="mcps1.2.8.1.5"><p id="p17531171813511"><a name="p17531171813511"></a><a name="p17531171813511"></a><strong id="b05602015134914"><a name="b05602015134914"></a><a name="b05602015134914"></a>ICU Or Not</strong></p>
     </th>
@@ -75,9 +75,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p18532818554"><a name="p18532818554"></a><a name="p18532818554"></a>Big Five</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p0532161814511"><a name="p0532161814511"></a><a name="p0532161814511"></a>Traditional Chinese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p0532161814511"><a name="p0532161814511"></a><a name="p0532161814511"></a>Traditional Chinese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p453219186515"><a name="p453219186515"></a><a name="p453219186515"></a>No</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p453219186515"><a name="p453219186515"></a><a name="p453219186515"></a>No</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p55321018851"><a name="p55321018851"></a><a name="p55321018851"></a>No</p>
     </td>
@@ -90,9 +90,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p2533318259"><a name="p2533318259"></a><a name="p2533318259"></a>Extended UNIX Code-CN</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p105337181650"><a name="p105337181650"></a><a name="p105337181650"></a>Simplified Chinese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p105337181650"><a name="p105337181650"></a><a name="p105337181650"></a>Simplified Chinese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p125335181519"><a name="p125335181519"></a><a name="p125335181519"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p125335181519"><a name="p125335181519"></a><a name="p125335181519"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p17533318355"><a name="p17533318355"></a><a name="p17533318355"></a>Yes</p>
     </td>
@@ -105,9 +105,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1153301819520"><a name="p1153301819520"></a><a name="p1153301819520"></a>Extended UNIX Code-JP</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p75348184511"><a name="p75348184511"></a><a name="p75348184511"></a>Japanese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p75348184511"><a name="p75348184511"></a><a name="p75348184511"></a>Japanese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p125348181059"><a name="p125348181059"></a><a name="p125348181059"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p125348181059"><a name="p125348181059"></a><a name="p125348181059"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p14534181816516"><a name="p14534181816516"></a><a name="p14534181816516"></a>Yes</p>
     </td>
@@ -120,9 +120,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p7534318657"><a name="p7534318657"></a><a name="p7534318657"></a>Extended UNIX Code-JP, JIS X 0213</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p125341818552"><a name="p125341818552"></a><a name="p125341818552"></a>Japanese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p125341818552"><a name="p125341818552"></a><a name="p125341818552"></a>Japanese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p13535151820513"><a name="p13535151820513"></a><a name="p13535151820513"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p13535151820513"><a name="p13535151820513"></a><a name="p13535151820513"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p55351618351"><a name="p55351618351"></a><a name="p55351618351"></a>No</p>
     </td>
@@ -135,9 +135,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p453512184519"><a name="p453512184519"></a><a name="p453512184519"></a>Extended UNIX Code-KR</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p2053519181852"><a name="p2053519181852"></a><a name="p2053519181852"></a>Korean</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p2053519181852"><a name="p2053519181852"></a><a name="p2053519181852"></a>Korean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p2535111812513"><a name="p2535111812513"></a><a name="p2535111812513"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p2535111812513"><a name="p2535111812513"></a><a name="p2535111812513"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1653610181251"><a name="p1653610181251"></a><a name="p1653610181251"></a>Yes</p>
     </td>
@@ -148,11 +148,11 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </tr>
     <tr id="row4536171811514"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p185361181550"><a name="p185361181550"></a><a name="p185361181550"></a>EUC_TW</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>Extended UNIX Code-TW</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p13536518654"><a name="p13536518654"></a><a name="p13536518654"></a>Extended UNIX Code-Taiwan, China</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>Traditional Chinese, Taiwan, China</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1353610188514"><a name="p1353610188514"></a><a name="p1353610188514"></a>Traditional Chinese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p65363189512"><a name="p65363189512"></a><a name="p65363189512"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p65363189512"><a name="p65363189512"></a><a name="p65363189512"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p65371518558"><a name="p65371518558"></a><a name="p65371518558"></a>Yes</p>
     </td>
@@ -165,9 +165,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p19537718856"><a name="p19537718856"></a><a name="p19537718856"></a>National Standard</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p55375181454"><a name="p55375181454"></a><a name="p55375181454"></a>Chinese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p55375181454"><a name="p55375181454"></a><a name="p55375181454"></a>Chinese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p165371518757"><a name="p165371518757"></a><a name="p165371518757"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p165371518757"><a name="p165371518757"></a><a name="p165371518757"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p18538918456"><a name="p18538918456"></a><a name="p18538918456"></a>No</p>
     </td>
@@ -180,9 +180,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p25398185512"><a name="p25398185512"></a><a name="p25398185512"></a>Extended National Standard</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p13539161816520"><a name="p13539161816520"></a><a name="p13539161816520"></a>Simplified Chinese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p13539161816520"><a name="p13539161816520"></a><a name="p13539161816520"></a>Simplified Chinese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p2539131810513"><a name="p2539131810513"></a><a name="p2539131810513"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p2539131810513"><a name="p2539131810513"></a><a name="p2539131810513"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p053951815510"><a name="p053951815510"></a><a name="p053951815510"></a>No</p>
     </td>
@@ -195,9 +195,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p8539131814513"><a name="p8539131814513"></a><a name="p8539131814513"></a>ISO 8859-5, ECMA 113</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p195406182059"><a name="p195406182059"></a><a name="p195406182059"></a>Latin/Cyrillic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p195406182059"><a name="p195406182059"></a><a name="p195406182059"></a>Latin/Cyrillic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p195401718256"><a name="p195401718256"></a><a name="p195401718256"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p195401718256"><a name="p195401718256"></a><a name="p195401718256"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p55406181056"><a name="p55406181056"></a><a name="p55406181056"></a>Yes</p>
     </td>
@@ -210,9 +210,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p125402018853"><a name="p125402018853"></a><a name="p125402018853"></a>ISO 8859-6, ECMA 114</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1954016189511"><a name="p1954016189511"></a><a name="p1954016189511"></a>Latin/Arabic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1954016189511"><a name="p1954016189511"></a><a name="p1954016189511"></a>Latin/Arabic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p85406181957"><a name="p85406181957"></a><a name="p85406181957"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p85406181957"><a name="p85406181957"></a><a name="p85406181957"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p15401618957"><a name="p15401618957"></a><a name="p15401618957"></a>Yes</p>
     </td>
@@ -225,9 +225,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1254114181957"><a name="p1254114181957"></a><a name="p1254114181957"></a>ISO 8859-7, ECMA 118</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p454118184512"><a name="p454118184512"></a><a name="p454118184512"></a>Latin/Greek</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p454118184512"><a name="p454118184512"></a><a name="p454118184512"></a>Latin/Greek</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p154101820518"><a name="p154101820518"></a><a name="p154101820518"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p154101820518"><a name="p154101820518"></a><a name="p154101820518"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p154115186512"><a name="p154115186512"></a><a name="p154115186512"></a>Yes</p>
     </td>
@@ -240,9 +240,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1354271812512"><a name="p1354271812512"></a><a name="p1354271812512"></a>ISO 8859-8, ECMA 121</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p754213181054"><a name="p754213181054"></a><a name="p754213181054"></a>Latin/Hebrew</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p754213181054"><a name="p754213181054"></a><a name="p754213181054"></a>Latin/Hebrew</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1954261818518"><a name="p1954261818518"></a><a name="p1954261818518"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1954261818518"><a name="p1954261818518"></a><a name="p1954261818518"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p16542118857"><a name="p16542118857"></a><a name="p16542118857"></a>Yes</p>
     </td>
@@ -255,9 +255,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p155429181754"><a name="p155429181754"></a><a name="p155429181754"></a>JOHAB</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p155429181250"><a name="p155429181250"></a><a name="p155429181250"></a>Korean</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p155429181250"><a name="p155429181250"></a><a name="p155429181250"></a>Korean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1154241810519"><a name="p1154241810519"></a><a name="p1154241810519"></a>No</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1154241810519"><a name="p1154241810519"></a><a name="p1154241810519"></a>No</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p16542218556"><a name="p16542218556"></a><a name="p16542218556"></a>No</p>
     </td>
@@ -270,9 +270,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p15543101818511"><a name="p15543101818511"></a><a name="p15543101818511"></a>KOI8-R</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1354311818516"><a name="p1354311818516"></a><a name="p1354311818516"></a>Cyrillic (Russian)</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1354311818516"><a name="p1354311818516"></a><a name="p1354311818516"></a>Cyrillic (Russian)</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p155434180514"><a name="p155434180514"></a><a name="p155434180514"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p155434180514"><a name="p155434180514"></a><a name="p155434180514"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1354312182055"><a name="p1354312182055"></a><a name="p1354312182055"></a>Yes</p>
     </td>
@@ -285,9 +285,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p10544151816516"><a name="p10544151816516"></a><a name="p10544151816516"></a>KOI8-U</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p185441218559"><a name="p185441218559"></a><a name="p185441218559"></a>Cyrillic (Ukrainian)</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p185441218559"><a name="p185441218559"></a><a name="p185441218559"></a>Cyrillic (Ukrainian)</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p135443187516"><a name="p135443187516"></a><a name="p135443187516"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p135443187516"><a name="p135443187516"></a><a name="p135443187516"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p2054417181757"><a name="p2054417181757"></a><a name="p2054417181757"></a>Yes</p>
     </td>
@@ -300,9 +300,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p135454181452"><a name="p135454181452"></a><a name="p135454181452"></a>ISO 8859-1, ECMA 94</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p165451918856"><a name="p165451918856"></a><a name="p165451918856"></a>Western European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p165451918856"><a name="p165451918856"></a><a name="p165451918856"></a>Western European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p7545218758"><a name="p7545218758"></a><a name="p7545218758"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p7545218758"><a name="p7545218758"></a><a name="p7545218758"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p185452181559"><a name="p185452181559"></a><a name="p185452181559"></a>Yes</p>
     </td>
@@ -315,9 +315,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p145464181556"><a name="p145464181556"></a><a name="p145464181556"></a>ISO 8859-2, ECMA 94</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p4546518457"><a name="p4546518457"></a><a name="p4546518457"></a>Central European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p4546518457"><a name="p4546518457"></a><a name="p4546518457"></a>Central European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p2546318155"><a name="p2546318155"></a><a name="p2546318155"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p2546318155"><a name="p2546318155"></a><a name="p2546318155"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1754615181510"><a name="p1754615181510"></a><a name="p1754615181510"></a>Yes</p>
     </td>
@@ -330,9 +330,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p3547131810510"><a name="p3547131810510"></a><a name="p3547131810510"></a>ISO 8859-3, ECMA 94</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p13547121811510"><a name="p13547121811510"></a><a name="p13547121811510"></a>South European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p13547121811510"><a name="p13547121811510"></a><a name="p13547121811510"></a>South European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p65482187515"><a name="p65482187515"></a><a name="p65482187515"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p65482187515"><a name="p65482187515"></a><a name="p65482187515"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p154815182516"><a name="p154815182516"></a><a name="p154815182516"></a>Yes</p>
     </td>
@@ -345,9 +345,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p12548818555"><a name="p12548818555"></a><a name="p12548818555"></a>ISO 8859-4, ECMA 94</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p154818185519"><a name="p154818185519"></a><a name="p154818185519"></a>North European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p154818185519"><a name="p154818185519"></a><a name="p154818185519"></a>North European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p125489187514"><a name="p125489187514"></a><a name="p125489187514"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p125489187514"><a name="p125489187514"></a><a name="p125489187514"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1954918180515"><a name="p1954918180515"></a><a name="p1954918180515"></a>Yes</p>
     </td>
@@ -360,9 +360,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p115491618954"><a name="p115491618954"></a><a name="p115491618954"></a>ISO 8859-9, ECMA 128</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p154911181150"><a name="p154911181150"></a><a name="p154911181150"></a>Turkish</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p154911181150"><a name="p154911181150"></a><a name="p154911181150"></a>Turkish</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p145509185514"><a name="p145509185514"></a><a name="p145509185514"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p145509185514"><a name="p145509185514"></a><a name="p145509185514"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p15550218959"><a name="p15550218959"></a><a name="p15550218959"></a>Yes</p>
     </td>
@@ -375,9 +375,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p12550181810518"><a name="p12550181810518"></a><a name="p12550181810518"></a>ISO 8859-10, ECMA 144</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p175505185520"><a name="p175505185520"></a><a name="p175505185520"></a>Nordic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p175505185520"><a name="p175505185520"></a><a name="p175505185520"></a>Nordic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p955161815511"><a name="p955161815511"></a><a name="p955161815511"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p955161815511"><a name="p955161815511"></a><a name="p955161815511"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p145511118250"><a name="p145511118250"></a><a name="p145511118250"></a>Yes</p>
     </td>
@@ -390,9 +390,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p9551318154"><a name="p9551318154"></a><a name="p9551318154"></a>ISO 8859-13</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p555191814515"><a name="p555191814515"></a><a name="p555191814515"></a>Baltic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p555191814515"><a name="p555191814515"></a><a name="p555191814515"></a>Baltic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p105512186513"><a name="p105512186513"></a><a name="p105512186513"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p105512186513"><a name="p105512186513"></a><a name="p105512186513"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p165511618555"><a name="p165511618555"></a><a name="p165511618555"></a>Yes</p>
     </td>
@@ -405,9 +405,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p16552141819513"><a name="p16552141819513"></a><a name="p16552141819513"></a>ISO 8859-14</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1155271812518"><a name="p1155271812518"></a><a name="p1155271812518"></a>Celtic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1155271812518"><a name="p1155271812518"></a><a name="p1155271812518"></a>Celtic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p4553318450"><a name="p4553318450"></a><a name="p4553318450"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p4553318450"><a name="p4553318450"></a><a name="p4553318450"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p055371811514"><a name="p055371811514"></a><a name="p055371811514"></a>Yes</p>
     </td>
@@ -420,9 +420,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1155315182515"><a name="p1155315182515"></a><a name="p1155315182515"></a>ISO 8859-15</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p15536181956"><a name="p15536181956"></a><a name="p15536181956"></a>LATIN1 with Euro and accents</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p15536181956"><a name="p15536181956"></a><a name="p15536181956"></a>LATIN1 with Euro and accents</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p855313189510"><a name="p855313189510"></a><a name="p855313189510"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p855313189510"><a name="p855313189510"></a><a name="p855313189510"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1455321818516"><a name="p1455321818516"></a><a name="p1455321818516"></a>Yes</p>
     </td>
@@ -435,9 +435,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p115541183515"><a name="p115541183515"></a><a name="p115541183515"></a>ISO 8859-16, ASRO SR 14111</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p14554151815513"><a name="p14554151815513"></a><a name="p14554151815513"></a>Romanian</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p14554151815513"><a name="p14554151815513"></a><a name="p14554151815513"></a>Romanian</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p655412181857"><a name="p655412181857"></a><a name="p655412181857"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p655412181857"><a name="p655412181857"></a><a name="p655412181857"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p115542181754"><a name="p115542181754"></a><a name="p115542181754"></a>No</p>
     </td>
@@ -450,9 +450,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p655410181154"><a name="p655410181154"></a><a name="p655410181154"></a>Mule internal code</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p85557181514"><a name="p85557181514"></a><a name="p85557181514"></a>Multilingual Emacs</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p85557181514"><a name="p85557181514"></a><a name="p85557181514"></a>Multilingual Emacs</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p18555618358"><a name="p18555618358"></a><a name="p18555618358"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p18555618358"><a name="p18555618358"></a><a name="p18555618358"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p7555141811517"><a name="p7555141811517"></a><a name="p7555141811517"></a>No</p>
     </td>
@@ -465,9 +465,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1655611182054"><a name="p1655611182054"></a><a name="p1655611182054"></a>Shift JIS</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19556181818512"><a name="p19556181818512"></a><a name="p19556181818512"></a>Japanese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p19556181818512"><a name="p19556181818512"></a><a name="p19556181818512"></a>Japanese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p255610184516"><a name="p255610184516"></a><a name="p255610184516"></a>No</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p255610184516"><a name="p255610184516"></a><a name="p255610184516"></a>No</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1055681813516"><a name="p1055681813516"></a><a name="p1055681813516"></a>No</p>
     </td>
@@ -480,9 +480,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p185578186511"><a name="p185578186511"></a><a name="p185578186511"></a>Shift JIS, JIS X 0213</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p95577186519"><a name="p95577186519"></a><a name="p95577186519"></a>Japanese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p95577186519"><a name="p95577186519"></a><a name="p95577186519"></a>Japanese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1255712187513"><a name="p1255712187513"></a><a name="p1255712187513"></a>No</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1255712187513"><a name="p1255712187513"></a><a name="p1255712187513"></a>No</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p12557418255"><a name="p12557418255"></a><a name="p12557418255"></a>No</p>
     </td>
@@ -495,9 +495,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p55573181513"><a name="p55573181513"></a><a name="p55573181513"></a>Unspecified (see the text)</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p165581181856"><a name="p165581181856"></a><a name="p165581181856"></a><em id="i865171516485"><a name="i865171516485"></a><a name="i865171516485"></a>Any</em></p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p165581181856"><a name="p165581181856"></a><a name="p165581181856"></a><em id="i865171516485"><a name="i865171516485"></a><a name="i865171516485"></a>Any</em></p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p185586182514"><a name="p185586182514"></a><a name="p185586182514"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p185586182514"><a name="p185586182514"></a><a name="p185586182514"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p855891812519"><a name="p855891812519"></a><a name="p855891812519"></a>No</p>
     </td>
@@ -510,9 +510,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1155815185519"><a name="p1155815185519"></a><a name="p1155815185519"></a>Unified Hangul Code</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1855818184510"><a name="p1855818184510"></a><a name="p1855818184510"></a>Korean</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1855818184510"><a name="p1855818184510"></a><a name="p1855818184510"></a>Korean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p115584183517"><a name="p115584183517"></a><a name="p115584183517"></a>No</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p115584183517"><a name="p115584183517"></a><a name="p115584183517"></a>No</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p11558141818517"><a name="p11558141818517"></a><a name="p11558141818517"></a>No</p>
     </td>
@@ -525,9 +525,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p205599189510"><a name="p205599189510"></a><a name="p205599189510"></a>Unicode, 8-bit</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p19559171813518"><a name="p19559171813518"></a><a name="p19559171813518"></a><em id="i89261018184813"><a name="i89261018184813"></a><a name="i89261018184813"></a><strong id="b15805111712489"><a name="b15805111712489"></a><a name="b15805111712489"></a>All</strong></em></p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p19559171813518"><a name="p19559171813518"></a><a name="p19559171813518"></a><em id="i89261018184813"><a name="i89261018184813"></a><a name="i89261018184813"></a><strong id="b15805111712489"><a name="b15805111712489"></a><a name="b15805111712489"></a>All</strong></em></p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1056071812514"><a name="p1056071812514"></a><a name="p1056071812514"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1056071812514"><a name="p1056071812514"></a><a name="p1056071812514"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p125602181053"><a name="p125602181053"></a><a name="p125602181053"></a>Yes</p>
     </td>
@@ -540,9 +540,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p1356018188517"><a name="p1356018188517"></a><a name="p1356018188517"></a>Windows CP866</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p656119187516"><a name="p656119187516"></a><a name="p656119187516"></a>Cyrillic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p656119187516"><a name="p656119187516"></a><a name="p656119187516"></a>Cyrillic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p155611418158"><a name="p155611418158"></a><a name="p155611418158"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p155611418158"><a name="p155611418158"></a><a name="p155611418158"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p556171811512"><a name="p556171811512"></a><a name="p556171811512"></a>Yes</p>
     </td>
@@ -555,9 +555,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p356191816510"><a name="p356191816510"></a><a name="p356191816510"></a>Windows CP874</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p15562018854"><a name="p15562018854"></a><a name="p15562018854"></a>Thai</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p15562018854"><a name="p15562018854"></a><a name="p15562018854"></a>Thai</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1556211189516"><a name="p1556211189516"></a><a name="p1556211189516"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1556211189516"><a name="p1556211189516"></a><a name="p1556211189516"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p175623187511"><a name="p175623187511"></a><a name="p175623187511"></a>No</p>
     </td>
@@ -570,9 +570,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p556318181510"><a name="p556318181510"></a><a name="p556318181510"></a>Windows CP1250</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p55637184516"><a name="p55637184516"></a><a name="p55637184516"></a>Central European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p55637184516"><a name="p55637184516"></a><a name="p55637184516"></a>Central European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p185631218859"><a name="p185631218859"></a><a name="p185631218859"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p185631218859"><a name="p185631218859"></a><a name="p185631218859"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p10563101812513"><a name="p10563101812513"></a><a name="p10563101812513"></a>Yes</p>
     </td>
@@ -585,9 +585,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p75647188514"><a name="p75647188514"></a><a name="p75647188514"></a>Windows CP1251</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p456419181453"><a name="p456419181453"></a><a name="p456419181453"></a>Cyrillic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p456419181453"><a name="p456419181453"></a><a name="p456419181453"></a>Cyrillic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1456412181253"><a name="p1456412181253"></a><a name="p1456412181253"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1456412181253"><a name="p1456412181253"></a><a name="p1456412181253"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p16564418253"><a name="p16564418253"></a><a name="p16564418253"></a>Yes</p>
     </td>
@@ -600,9 +600,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p356515187511"><a name="p356515187511"></a><a name="p356515187511"></a>Windows CP1252</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p145651218857"><a name="p145651218857"></a><a name="p145651218857"></a>Western European</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p145651218857"><a name="p145651218857"></a><a name="p145651218857"></a>Western European</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p856531820515"><a name="p856531820515"></a><a name="p856531820515"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p856531820515"><a name="p856531820515"></a><a name="p856531820515"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p1656561818516"><a name="p1656561818516"></a><a name="p1656561818516"></a>Yes</p>
     </td>
@@ -615,9 +615,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p95665188514"><a name="p95665188514"></a><a name="p95665188514"></a>Windows CP1253</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p656631812519"><a name="p656631812519"></a><a name="p656631812519"></a>Greek</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p656631812519"><a name="p656631812519"></a><a name="p656631812519"></a>Greek</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p356711181515"><a name="p356711181515"></a><a name="p356711181515"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p356711181515"><a name="p356711181515"></a><a name="p356711181515"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p85671918054"><a name="p85671918054"></a><a name="p85671918054"></a>Yes</p>
     </td>
@@ -630,9 +630,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p256813185514"><a name="p256813185514"></a><a name="p256813185514"></a>Windows CP1254</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p65686188514"><a name="p65686188514"></a><a name="p65686188514"></a>Turkish</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p65686188514"><a name="p65686188514"></a><a name="p65686188514"></a>Turkish</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p756821817510"><a name="p756821817510"></a><a name="p756821817510"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p756821817510"><a name="p756821817510"></a><a name="p756821817510"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p16568191818518"><a name="p16568191818518"></a><a name="p16568191818518"></a>Yes</p>
     </td>
@@ -645,9 +645,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p165681318955"><a name="p165681318955"></a><a name="p165681318955"></a>Windows CP1255</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p13569171813513"><a name="p13569171813513"></a><a name="p13569171813513"></a>Hebrew</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p13569171813513"><a name="p13569171813513"></a><a name="p13569171813513"></a>Hebrew</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p10569018955"><a name="p10569018955"></a><a name="p10569018955"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p10569018955"><a name="p10569018955"></a><a name="p10569018955"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p3569718551"><a name="p3569718551"></a><a name="p3569718551"></a>Yes</p>
     </td>
@@ -660,9 +660,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p3569141811511"><a name="p3569141811511"></a><a name="p3569141811511"></a>Windows CP1256</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1957015182056"><a name="p1957015182056"></a><a name="p1957015182056"></a>Arabic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1957015182056"><a name="p1957015182056"></a><a name="p1957015182056"></a>Arabic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p16570818555"><a name="p16570818555"></a><a name="p16570818555"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p16570818555"><a name="p16570818555"></a><a name="p16570818555"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p205707187515"><a name="p205707187515"></a><a name="p205707187515"></a>Yes</p>
     </td>
@@ -675,9 +675,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p125705184517"><a name="p125705184517"></a><a name="p125705184517"></a>Windows CP1257</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p1957013186513"><a name="p1957013186513"></a><a name="p1957013186513"></a>Baltic</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p1957013186513"><a name="p1957013186513"></a><a name="p1957013186513"></a>Baltic</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p1957016182516"><a name="p1957016182516"></a><a name="p1957016182516"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p1957016182516"><a name="p1957016182516"></a><a name="p1957016182516"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p35700181752"><a name="p35700181752"></a><a name="p35700181752"></a>Yes</p>
     </td>
@@ -690,9 +690,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p2571171816515"><a name="p2571171816515"></a><a name="p2571171816515"></a>Windows CP1258</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.3 "><p id="p657114181951"><a name="p657114181951"></a><a name="p657114181951"></a>Vietnamese</p>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p657114181951"><a name="p657114181951"></a><a name="p657114181951"></a>Vietnamese</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.4 "><p id="p05716186519"><a name="p05716186519"></a><a name="p05716186519"></a>Yes</p>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p05716186519"><a name="p05716186519"></a><a name="p05716186519"></a>Yes</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p185711718155"><a name="p185711718155"></a><a name="p185711718155"></a>Yes</p>
     </td>
@@ -704,122 +704,129 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
-    >Note that not all client APIs support the preceding character sets.
-    >The SQL\_ASCII setting performs quite differently from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. Therefore, this setting is not basically used to declare the specified encoding used, because this declaration ignores the encoding. In most cases, if you use any non-ASCII data, it is unwise to use the SQL\_ASCII setting because openGauss will not be able to help you convert or validate non-ASCII characters.
+  >![](./public_sys-resources/icon-caution.gif) **Caution:**
+  >Note that not all client APIs support the preceding character sets.
+  >The SQL\_ASCII setting performs quite differently from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. Therefore, this setting is not basically used to declare the specified encoding used, because this declaration ignores the encoding. In most cases, if you use any non-ASCII data, it is unwise to use the SQL\_ASCII setting because openGauss will not be able to help you convert or validate non-ASCII characters.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   The character set encoding of the new database must be compatible with the local settings \(**LC\_COLLATE**  and  **LC\_CTYPE**\).
-    >-   When the specified character encoding set is  **GBK**, some uncommon Chinese characters cannot be directly used as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E.  **@\[\\\]^\_'\{|\}**  is an operator in the database. If it is directly used as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is  **0x8240**, and the second byte is  **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use this function, you can add double quotation marks \(""\) to avoid this problem when creating and accessing objects.
-    >-   If the client-side encoding is A and the server-side encoding is B, the conversion between encoding format A and B in the database needs to be met. For example: if the server-side encoding is gb18030, since the current database does not support the conversion between gb18030 and gbk, When the client encoding format is set to gbk, the error "Conversion between GB18030 and GBK is not supported." will be reported. For all the encoding format conversions that the database can support, see the system table pg_conversion for details.
+  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >
+  >-   The character set encoding of the new database must be compatible with the local settings (**LC\_COLLATE** and **LC\_CTYPE**).
+
+  >-   When the specified character encoding set is **GBK**, some uncommon Chinese characters cannot be used directly as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E. **@\[\\\]^\_'\{|\}** is an operator in the database. If it is used directly as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is **0x8240**, and the second byte is **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use these characters, you can enclose them with double quotation marks ("") when creating and accessing objects to avoid this problem.
+  >-  If the client encoding is A and the server encoding is B, the conversion between encoding formats A and B must exist in the database. For example: If the encoding format on the server is gb18030, the error message "Conversion between GB18030 and GBK is not supported." is displayed when you set the encoding format on the client to **gbk** because the current database does not support conversion between gb18030 and gbk. For details about all encoding formats supported by the database, see the pg\_conversion system catalog.
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 
-    Specifies the character set used by the new database. For example, set this parameter by using  **lc\_collate = 'zh\_CN.gbk'**.
+    Specifies the character set used by the new database. For example, this parameter is set by running **lc\_collate = 'zh\_CN.gbk'**.
 
-    The use of this parameter affects the sort order of strings \(for example, the order of using  **ORDER BY**  for execution and the order of using indexes on text columns\). By default, the sorting order of the template database is used.
+    The use of this parameter affects the sort order of strings (for example, the order of using **ORDER BY** for execution and the order of using indexes on text columns). The default is to use the collation order of the template database.
 
-    Value range: a valid sorting type
+    Value range: A valid order type.
 
 -   **LC\_CTYPE \[ = \] lc\_ctype**
 
-    Specifies the character class used by the new database. For example, set this parameter by using  **lc\_ctype = 'zh\_CN.gbk'**. The use of this parameter affects the classification of characters, such as uppercase letters, lowercase letters, and digits. By default, the character classification of the template database is used.
+    Specifies the character class used by the new database. For example, this parameter is set by running **lc\_ctype = 'zh\_CN.gbk'**. The use of this parameter affects the classification of characters, such as uppercase letters, lowercase letters, and digits. The default is to use the character classification of the template database.
 
     Value range: a valid character type
 
--   **DBCOMPATIBILITY \[ = \] compatibility\_type**
+- **DBCOMPATIBILITY \[ = \] compatibility\_type**
 
-    Specifies the compatible database type. The default compatible database is Oracle.
+  Specifies the compatible database type. The default value is **O**.
 
-    Value range:  **A**,  **B**,  **C**, and  **PG**, indicating Oracle, MySQL, Teradata, and Postgres databases, respectively.
+  Value range: A, B, C, and PG, indicating **O**, **MY**, **TD** and **POSTGRES** databases, respectively.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   For A compatibility, the database treats empty strings as  **NULL**  and replaces  **DATE**  with  **TIMESTAMP\(0\) WITHOUT TIME ZONE**.
-    >-   When a character string is converted to an integer, if the input is invalid, the input will be converted to 0 due to B compatibility, and an error will be reported due to other compatibility issues.
-    >-   For PG compatibility, CHAR and VARCHAR are counted by character. For other compatibility types, they are counted by byte. For example, for the UTF-8 character set, CHAR\(3\) can store three Chinese characters in PG compatibility scenarios, but can store only one Chinese character in other compatibility scenarios.
+  >![](public_sys-resources/icon-note.gif) **NOTE:**
+  >
+  >-   For A compatibility, the database treats empty strings as **NULL** and replaces DATE with TIMESTAMP\(0\) WITHOUT TIME ZONE.
+
+  >-   When a character string is converted to an integer, if the input is invalid, the input will be converted to 0 due to B compatibility, and an error will be reported due to other compatibility issues.
+
+  >-   For PG compatibility, CHAR and VARCHAR are counted by character. For other compatibility types, they are counted by byte. For example, for the UTF-8 character set, CHAR\(3\) can store three Chinese characters in PG compatibility scenarios, but can store only one Chinese character in other compatibility scenarios.
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 
-    Specifies the tablespace of the database.
+    Specifies the name of the tablespace that will be associated with the new database.
 
-    Value range: an existing tablespace name
+    Value range: an existing tablespace name.
 
 -   **CONNECTION LIMIT \[ = \] connlimit**
 
     Specifies the maximum number of concurrent connections that can be made to the new database.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   The system administrator is not restricted by this parameter.
-    >-   connlimit is calculated separately for each primary database node. Number of connections of openGauss = connlimit x Number of normal CN primary database nodes.
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
+    >-   This limit does not apply to sysadmin.
+    
+>-   connlimit is calculated separately for each primary database node. Number of connections of the openGauss = connlimit x Number of normal CN master database nodes.
 
-    Value range: an integer greater than or equal to -1 The default value is  **-1**, indicating that there is no limit.
+    Value range: An integer greater than or equal to **-1**. The default value **-1** means no limit.
 
 
 The restrictions on character encoding are as follows:
 
--   If the locale is set to  **C**  \(or  **POSIX**\), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
+-   If the locale is set to **C** (or **POSIX**), all encoding types are allowed. For other locale settings, the character encoding must be the same as that of the locale.
 -   If the character encoding mode is SQL\_ASCII and the modifier is an administrator, the character encoding mode can be different from the locale setting.
--   The encoding and region settings must match the template database, except that  **template0**  is used as a template. This is because other databases may contain data that does not match the specified encoding, or may contain indexes whose sorting order is affected by  **LC\_COLLATE**  and  **LC\_CTYPE**. Copying this data will invalidate the indexes in the new database.  **template0**  does not contain any data or indexes that may be affected.
+-   The encoding and region settings must match the template database, except that **template0** is used as a template. This is because other databases might contain data that does not match the specified encoding, or might contain indexes whose sort ordering is affected by **LC\_COLLATE** and **LC\_CTYPE**. Copying such data will invalidate the indexes in the new database. **template0** does not contain any data or indexes that may be affected.
 
 ## Examples<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
 ```
--- Create users jim and tom.
+--Create users jim and tom.
 openGauss=# CREATE USER jim PASSWORD 'xxxxxxxxx';
 openGauss=# CREATE USER tom PASSWORD 'xxxxxxxxx';
 
--- Create database music using GBK (the local encoding type is also GBK).
+--Create database music using GBK (the local encoding type is also GBK).
 openGauss=# CREATE DATABASE music ENCODING 'GBK' template = template0;
 
--- Create database music2 and specify user jim as its owner.
+--Create database music2 and specify jim as its owner.
 openGauss=# CREATE DATABASE music2 OWNER jim;
 
--- Create database music3 using template template0 and specify user jim as its owner.
+--Create database music3 using template template0 and specify jim as its owner.
 openGauss=# CREATE DATABASE music3 OWNER jim TEMPLATE template0;
 
--- Set the maximum number of connections to database music to 10.
+--Set the maximum number of connections to database music to 10.
 openGauss=# ALTER DATABASE music CONNECTION LIMIT= 10;
 
--- Rename database music to music4.
+--Rename database music to music4.
 openGauss=# ALTER DATABASE music RENAME TO music4;
 
--- Change the owner of database music2 to user tom.
+--Change the owner of database music2 to tom.
 openGauss=# ALTER DATABASE music2 OWNER TO tom;
 
--- Set the tablespace of database music3 to PG_DEFAULT.
+--Set the tablespace of database music3 to PG_DEFAULT.
 openGauss=# ALTER DATABASE music3 SET TABLESPACE PG_DEFAULT;
 
--- Disable the default index scan on database music3.
+--Close the default index scan on database music3.
 openGauss=# ALTER DATABASE music3 SET enable_indexscan TO off;
 
--- Reset the enable_indexscan parameter.
+--Reset parameter enable_indexscan.
 openGauss=# ALTER DATABASE music3 RESET enable_indexscan;
 
--- Delete the database.
+--Delete a database.
 openGauss=# DROP DATABASE music2;
 openGauss=# DROP DATABASE music3;
 openGauss=# DROP DATABASE music4;
 
--- Delete the jim and tom users.
+--Delete users jim and tom.
 openGauss=# DROP USER jim;
 openGauss=# DROP USER tom;
 
--- Create a database compatible with the TD format.
+--Create a database compatible with Teradata.
 openGauss=# CREATE DATABASE td_compatible_db DBCOMPATIBILITY 'C';
 
--- Create a database compatible with the A format.
+--Create a database compatible with the A format.
 openGauss=# CREATE DATABASE ora_compatible_db DBCOMPATIBILITY 'A';
 
--- Delete the databases that are compatible with the TD and A formats.
+--Delete the databases that are compatible with the TD and A formats.
 openGauss=# DROP DATABASE td_compatible_db;
 openGauss=# DROP DATABASE ora_compatible_db;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
-[ALTER DATABASE](alter-database.md)  and  [DROP DATABASE](drop-database.md)
+[ALTER DATABASE](alter-database.md), [DROP DATABASE](drop-database.md)
 
-## Suggestions<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_section8189694144220"></a>
+## Optimization Suggestion<a name="en-us_topic_0283137050_en-us_topic_0237122099_en-us_topic_0059778277_section8189694144220"></a>
 
 -   **create database**
 
@@ -828,4 +835,4 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database \(SQL\_ASCII\) \(**'GBK'**,  **'UTF8'**, or  **'LATIN1'**\),  **template \[=\] template0**  must be specified.
+    If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database (SQL\_ASCII) (**'GBK'**, **'UTF8'**, **'LATIN1'**, or **'GB18030'**), **template \[=\] template0** must be specified.

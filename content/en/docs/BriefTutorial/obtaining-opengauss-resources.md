@@ -159,5 +159,3 @@ The openGauss community uses the mailing list for online communication. We since
     -   bilibili
     -   [CSDN](https://blog.csdn.net/GaussDB)
     -   MoDB
-
-

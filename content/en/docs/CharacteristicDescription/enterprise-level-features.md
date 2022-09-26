@@ -30,4 +30,12 @@
 
 -   **[Stored Procedure Debugging](stored-procedure-debugging.md)**  
 
+-   **[JDBC Client Load Balancing and Read/Write Isolation](jdbc-client-load-balancing-and-read-write-isolation.md)**
 
+-   **[In-place Update Storage Engine](in-place-update-storage-engine.md)**
+
+-   **[Publication-Subscription](publication-subscription.md)**
+
+-   **[Foreign Key Lock Enhancement](foreign-key-lock-enhancement.md)**
+
+-   **[Data Compression in OLTP Scenarios](data-compression-in-oltp-scenarios.md)**

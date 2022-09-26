@@ -24,6 +24,8 @@ DCF is a high-performance, highly mature, reliable, scalable, and easy-to-use in
 -   DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
 -   DCF supports forcible startup of the minority of DNs. In case that the majority of database instances are faulty, a minority of standby DNs are selected and forcibly promoted to primary, and other normal standby DNs replicate logs from the primary DNs.
 -   DCF supports automatic leader election. When the original primary DN is faulty, a new primary DN is automatically selected from the remaining standby DNs on the premise that data consistency is ensured.
+-   DCF supports the policy-based majority capability. On the premise that the majority capability is met, logs in the AZ are not lost.
+-   DCF supports the manual mode, where automatic quorum is not performed. In this mode, DCF interconnects with upper-layer management components such as CM for quorum adaptation, and replicates logs.
 
 ## Enhancements<a name="section1340684315478"></a>
 
@@ -33,7 +35,10 @@ None.
 
 To use this function, you need to enable DCF during installation and deployment. In DCF mode, the majority election is used. During the installation, if the number of faulty nodes and build nodes reaches the majority, the cluster installation will fail. For example, when one primary node and two standby nodes are installed, one node fails to be installed due to insufficient memory, but the other two nodes can be started normally. A standby node will be built again. In this case, the number of build nodes and faulty nodes is 2, which is the majority, and the cluster installation will fail. During the installation, check whether the memory and disk resources are sufficient.
 
+If the policy-based majority parameter is configured for an AZ and all nodes in the AZ are faulty, you need to remove the AZ configuration from the policy-based majority configuration when performing build operations on the nodes.
+
+The manual mode is used to set the cluster-level working mode. In this mode, the logger or passive role is not supported.
+
 ## Dependencies<a name="section8406643144716"></a>
 
 None.
-

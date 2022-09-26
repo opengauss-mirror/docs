@@ -62,7 +62,7 @@ The  **gs\_backup**  tool can use the following types of parameters:
 
     -   --all
 
-        Backs up binary files in the **app** directory, the **pg_hba.conf** file, and the **postgsql.conf** file.
+        Backs up binary files in the **app** directory, the **pg_hba.conf** file, and the **postgresql.conf** file.
 
     -   -l
 
@@ -142,5 +142,3 @@ The  **gs\_backup**  tool can use the following types of parameters:
     Performing remote restoration.
     Successfully restored cluster files.
     ```
-
-

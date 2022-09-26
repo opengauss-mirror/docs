@@ -46,7 +46,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   When collecting statistics about multiple columns, set the GUC parameter  default\_statistics\_target  to a negative value to sample data in percentage.
-    >-   The statistics about a maximum of 32 columns can be collected at a time.
+    >-   If the GUC parameter **enable\_functional\_dependency** is disabled, the statistics about a maximum of 32 columns can be collected at a time. If the GUC parameter **enable\_functional\_dependency** is enabled, the statistics about a maximum of 4 columns can be collected at a time.
     >-   You are not allowed to collect statistics about multiple columns in system catalogs.
 
 
@@ -189,4 +189,3 @@ ANALYZE
 openGauss=# DROP TABLE customer_info;
 openGauss=# DROP TABLE customer_par;
 ```
-

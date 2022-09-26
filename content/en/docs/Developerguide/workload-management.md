@@ -47,7 +47,7 @@ The database administrator should set a proper collection frequency based on sys
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to  _INT\_MAX_. The unit is s.
+**Value range**: an integer ranging from 1 to  *INT\*MAX_. The unit is s.
 
 **Default value**:  **30**
 
@@ -193,7 +193,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from –1 to  _INT\_MAX_
+**Value range**: an integer ranging from –1 to  *INT\*MAX_
 
 -   **–1**  indicates that resource monitoring is disabled.
 -   A value ranging from 0 to 9 indicates that statements whose execution cost is greater than or equal to 10 will be monitored.
@@ -207,7 +207,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is s.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is s.
 
 -   **0**  indicates that historical information about all statements recorded in the real-time resource monitoring view are archived.
 -   If the value is greater than  **0**, historical information about a statement whose execution time exceeds this value will be archived.
@@ -391,7 +391,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from –1 to  _INT\_MAX/2_. The unit is s.
+**Value range**: an integer ranging from –1 to  *INT\*MAX/2_. The unit is s.
 
 -   **–1**  or  **0**  indicates that no queuing timeout is specified for transaction block statements and stored procedure statements. The statements can be executed when resources are available.
 -   A value greater than  **0**  indicates that if transaction block statements and stored procedure statements have been queued for a time longer than the specified value, they are forcibly executed regardless of the current resource situation.
@@ -427,4 +427,3 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 **Value range**: a string
 
 **Default value**: empty
-

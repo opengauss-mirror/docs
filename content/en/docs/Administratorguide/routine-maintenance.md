@@ -1661,6 +1661,9 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 
         ```
         openGauss=# DROP INDEX areaS_idx;
+        ```
+        If the following information is displayed, the deletion is successful:
+        ```
         DROP INDEX
         ```
 
@@ -1668,6 +1671,9 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 
         ```
         openGauss=# CREATE INDEX areaS_idx ON areaS (area_id);
+        ```
+        If the following information is displayed, the creation is successful:
+        ```
         CREATE INDEX
         ```
 
@@ -1677,6 +1683,9 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 
         ```
         openGauss=# REINDEX TABLE areaS;
+        ```
+        If the following information is displayed, the recreating is successful:
+        ```
         REINDEX
         ```
 
@@ -1684,9 +1693,11 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 
         ```
         openGauss=# REINDEX INTERNAL TABLE areaS;
+        ```
+        If the following information is displayed, the recreating is successful:
+        ```
         REINDEX
         ```
-
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 

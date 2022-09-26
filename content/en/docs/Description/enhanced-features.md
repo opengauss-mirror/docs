@@ -94,7 +94,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     -   For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
     -   Triggers and primary foreign keys are not supported.
-    -   Psort index, B-tree index, and GIN index are supported. For details, see "**SQL Reference**  \>  **SQL Syntax**  \>  **CREATE INDEX**" in the  _Developer Guide_.
+    -   Psort index, B-tree index, and GIN index are supported. For details, see "**SQL Reference**  \>  **SQL Syntax**  \>  **CREATE INDEX**" in the  *Developer Guide*.
 
 -   Data compression in column store
 
@@ -165,13 +165,13 @@ openGauss supports 10,000 concurrent connections through server thread pools. It
 
 To locate performance issues of a query, you can use  **EXPLAIN PERFORMANCE**  to query its execution plan. However, this method produces many logs, requires to modify service logic, and depends on expertise to locate problems. SQL self-diagnosis enables users to locate performance issues more efficiently.
 
-Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see "**Performance Tuning **\>  **SQL Tuning**  \>  **Typical SQL Optimization Methods**  \>  **Optimizing SQL Self-Diagnosis**" in the  _Developer Guide_.
+Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see "**Performance Tuning **\>  **SQL Tuning**  \>  **Typical SQL Optimization Methods**  \>  **Optimizing SQL Self-Diagnosis**" in the  *Developer Guide*.
 
 SQL self-diagnosis helps users locate and optimize performance issues without affecting operations or modifying service logic.
 
 ## Equality Query in a Fully-encrypted Database<a name="section182549561910"></a>
 
-With the rapid growth and maturity of cloud infrastructure, cloud database services are emerging one after another. Cloud databases have become an important growth point of database services in the future. Most traditional database service vendors are accelerating the provision of high-quality cloud database services. Regardless of offline or cloud database services, the core task of databases is to help users store and manage data and ensure that data is not lost, privacy is not disclosed, data is not tampered with, and services are not interrupted in complex and diversified environments. This requires a specific multi-level security defense mechanism of the database to defend against malicious attacks from multiple aspects. Mature security technologies are used to build a multi-level database security defense system, ensuring database security in applications. Therefore, to better protect sensitive and privacy data, especially for cloud database services, a systematic solution that can completely protect data privacy throughout the entire lifecycle on the server is urgently needed. This solution is referred to as an encrypted database solution.
+With the rapid growth and maturity of cloud infrastructure, cloud database services are emerging one after another. Cloud databases have become an important growth point of database services in the future. Most traditional database service vendors are accelerating the provision of high-quality cloud database services. Regardless of offline or cloud database services, the core task of databases is to help users store and manage data and ensure that data is not lost, privacy is not disclosed, data is not tampered with, and services are not interrupted in complex and diversified environments. This requires a multi-level security defense mechanism of the database to defend against malicious attacks from multiple aspects. Mature security technologies are used to build a multi-level database security defense system, ensuring database security in applications. Therefore, to better protect sensitive and privacy data, especially for cloud database services, a systematic solution that can completely protect data privacy throughout the entire lifecycle on the server is urgently needed. This solution is referred to as an encrypted database solution.
 
 -   Overall encrypted database solution
 
@@ -247,19 +247,6 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
     When the model is in recommendation mode, second-level parameter recommendation is directly performed based on the current workload characteristics of the user.
 
-
--   Slow SQL discovery
-
-    In the actual production environment, users usually hope that jobs can be successfully executed in the fastest way. However, because the complexity of statements varies, execution times are different. Users want to identify the statements that may take a long time before execution, and execute them separately to prevent long-time locks from affecting the execution of other statements. In addition, users hope that the advance identification function does not occupy the original resources of the user database or affect the original response time.
-
-    The slow SQL diagnosis feature uses machine learning algorithms to construct an AI framework, parses the semantic structures of the statements, and qualitatively or quantitatively predicts the execution time of unknown statements based on the parsing results to meet users' requirements for identifying slow SQL statements in advance.
-
-    Slow SQL diagnosis has two main phases: training and prediction.
-
-    -   Training phase: Prepare the historical SQL records of your typical services, import the historical SQL data based on the entered log address, and train the intelligent model.
-    -   Prediction phase: After you enter the load to be predicted, the model predicts the execution time based on the historical information of each type to detect potential slow SQL statements.
-
-
 -   Index recommendation
 
     Single-query index recommendation and workload-level index recommendation are supported. During workload-level index recommendation, typical SQL statements are filtered based on the AI algorithm. For typical SQL statements, the optimal index is recommended and generated based on the semantic information of the statements and the statistics information of the database. Use the recommended indexes of all statements as the candidate index set, calculate the workload benefit of each candidate index, and recommend the index combination with the maximum benefit.
@@ -268,9 +255,13 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
     Time series characteristics information on the host where the database is deployed can be collected and stored. This data can be used for time series prediction, for example, storage space prediction. In addition, exceptions can be detected based on the preceding data. In this way, potential problems can be detected in advance so as to take countermeasures.
 
+-   Other autonomous O&M services
+
+    The services can be used to comprehensively monitor databases, detect exceptions, and analyze root causes of slow SQL statements in the system.
+
 -   DB4AI function
 
-    DB4AI, which is compatible with the MADlib ecosystem, supports more than 70 algorithms, has performance several times higher than that of the native MADlib, and supports advanced algorithms such as XGBoost and GBDT. It implements AI tasks driven by SQL statements based on the database.
+    The function supports the native DB4AI engine and uses databases to implement SQL statements to drive AI tasks.
 
 -   SQL execution time prediction
 
@@ -314,6 +305,19 @@ Supports full backup and incremental backup of the database, manages backup data
 
 PITR uses basic hot backup, write-ahead logs \(WALs\), and archived WALs for backup and recovery. When replaying a WAL record, you can stop at any point in time, so that there is a snapshot of the consistent database at any point in time. That is, you can restore the database to the state at any time since the backup starts. During recovery, you can specify a recovery stop point with a terminal ID \(TID\), time, and license serial number \(LSN\).
 
+## Two-City Three-DC DR<a name="section1271810330207"></a>
+
+Two-city three-DC indicates that the three DCs (production center, intra-city DR center, and remote DR center) are deployed in two cities. In recent years, natural disasters have occurred frequently at home and abroad. The two-city three-DC DR solution comes into being with the combination of two intra-city DCs and remote DR DCs. This solution features high availability and disaster backup capabilities. The two intra-city DCs are two data centers that can carry critical applications independently. They have similar data processing capabilities and can synchronize data in real time through high-speed links. Under normal circumstances, the two DCs manage services and system operation together and can be switched over. When disaster occurs, services can be switched over to the DR DC with almost no data loss, ensuring service continuity. Compared with the remote DR DC, two intra-city DCs have lower investment cost, faster building speed, easier operation and maintenance, and higher reliability. A remote DR DC is deployed in a different city and is used to back up data of the two DCs. When faults occur in the two DCs, the remote DR DC can recover services from backup data.
+
+[Figure 8](#fig104604146484) shows the openGauss two-city three-DC DR architecture. Two-city three-DC DR includes the OBS-based remote DR solution and streaming replication-based remote DR solution. openGauss 3.1.0 and later versions provide the streaming replication-based remote DR solution. After DR is enabled, the following functions can be implemented:
+
+- Full replication: Configure the DR database instance information for the primary database instance and wait for the DR database instance to be connected for full replication.
+
+- Incremental replication: After the DR database instance is fully built, streaming replication is established between the DR database instance and the primary database instance for incremental log replication.
+
+**Figure 8** openGauss two-city three-DC DR architecture<a name="fig104604146484"></a> 
+![](figures/openGauss两地三中心容灾架构示意图.png "openGauss两地三中心容灾架构示意图")
+
 ## Generated Columns<a name="section16281161234015"></a>
 
 Generated columns are calculated based on other columns in the table. Column generation is a standard SQL feature. Columns generated by SQL statements are automatically calculated when data is inserted or updated. Similar to common columns, they also occupy storage space.
@@ -356,5 +360,3 @@ The syntax and semantics of the SQL engine are decoupled to implement plug-ins f
 -   The gs\_cgroup load management is supported.
 
     gs\_cgroup is a load management tool. It creates and manages Cgroups in the database kernel and sets system resource quotas and resource limits to manage the resource usage and priorities of users and services, fully utilizing machine resources.
-
-

@@ -1,4 +1,4 @@
-# DCF<a name="EN-US_TOPIC_0000001180294758"></a>
+# DCF<a name="EN-US_TOPIC_0000001255021817"></a>
 
 Distributed Consensus Framework \(DCF\) implements typical algorithms such as Paxos and Raft to solve distribution consistency problems. DCF provides capabilities such as log replication, cluster HA, and automatic leader election, and can forcibly start the minority and dynamically adjust traffic for log replication. In addition, multiple Paxos-based roles are provided and can be adjusted.
 
@@ -104,14 +104,12 @@ Each line of information is commented out. The content in bold is related to the
   <!-- Whether to enable the DCF mode. on: enable; off: disable -->
     <PARAM name="enable_dcf" value="on/off"/>
   <!-- DCF configuration information -->
-    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},
-    {&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},
-    {&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
+    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/>  
   </CLUSTER>
 ...
 ```
 
-1.  **Cluster status query upon installation completion**
+1.  Cluster status query upon installation completion
 
     Use gs\_ctl to query the cluster status.
 
@@ -151,7 +149,7 @@ Each line of information is commented out. The content in bold is related to the
     -   **leader\_port**: port of the leader node, for DCF internal use.
     -   **nodes**: information about other nodes in the cluster.
 
-2.  **Online cluster scale adjustment**
+2.  Online cluster scale adjustment
 
     To add a copy online, run the following command:
 
@@ -167,7 +165,7 @@ Each line of information is commented out. The content in bold is related to the
 
     If the cluster is normal, a single copy can be deleted within 5 minutes.
 
-3.  **Forcible minority startup**
+3.  Forcible minority startup
 
     In case that the majority is faulty, no consensus can be reached based on the Paxos protocol. As a result, the system cannot continue to provide services. In order to provide emergency service capabilities, the minority needs to be started to continue to provide services.
 
@@ -185,7 +183,7 @@ Each line of information is commented out. The content in bold is related to the
      # cm_ctl setrunmode -n <node_id> -D <data_dir> --xmode=normal --votenum=<num>
     ```
 
-4.  **Switchover**
+4.  Switchover
 
     Primary/standby switchover is supported when one primary and multiple standby database nodes are deployed to implement switchover between AZs. Switchover is performed for maintenance. Before a switchover, ensure that the database instances are running properly, and no catchup between the primary and standby nodes is ongoing after services are stopped.
 
@@ -195,14 +193,27 @@ Each line of information is commented out. The content in bold is related to the
      # cm_ctl switchover –n <node_id> -D <data_dir>
     ```
 
-5.  **Standby node rebuilding**
+5.  Standby node rebuilding
 
     Full build is supported in primary/standby deployment. After receiving a full build request, the primary DN blocks recycling DCF logs and the standby DN replicates Xlogs and data files from the primary DN. After the standby DN is started, a time point is set for the DCF function to replicate logs.
 
     To start full build, run the following command:
 
     ```
-    # gs_ctl build -b full -D <new_node_data_dir>
+    gs_ctl build -b full -D <new_node_data_dir>
+    ```
+6.  Manual mode
+
+    DCF supports the manual mode, where automatic quorum is not performed. In this mode, DCF interconnects with upper-layer management components such as CM for quorum adaptation, and replicates logs.
+
+    For example:
+
+    ```
+    cm_ctl set --param --server -k dn_arbitrate_mode=quorum
+    cm_ctl reload --param --server
+    gs_guc reload -Z datanode -I all -N all  -c "dcf_run_mode=1"
     ```
 
-
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   The DCF working mode configured in GUC parameters must be the same as that configured in cm\_ctl. That is, both DCF working modes must be set to manual or automatic at the same time.
+    >-   After the working mode is switched in a normal cluster, the cluster can still work properly.

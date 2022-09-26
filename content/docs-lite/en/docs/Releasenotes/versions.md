@@ -65,5 +65,3 @@ The lite version is compatible with most features and functions of earlier versi
     -   [I4W3UB](https://gitee.com/opengauss/openGauss-server/issues/I4W3UB?from=project-issue): Fixed the issue of failing to obtain the view definition when the view is created using a user-defined type and the user-defined type is renamed.
     -   [I4WRMX](https://gitee.com/opengauss/openGauss-server/issues/I4WRMX?from=project-issue): Fixed the issue of failing to clear data in the  **statement\_history**  table. When the database restarts and the  **enable\_stmt\_track**  parameter is disabled, no record should be found in the  **statement\_history**  table.
     -   [I4WOBH](https://gitee.com/opengauss/openGauss-server/issues/I4WOBH?from=project-issue): Fixed the issue of failing to restart the database by setting GUC parameter  **pagewriter\_sleep**  from  **360000**  to  **2000**.
-
-

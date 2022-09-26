@@ -162,7 +162,7 @@ Table 3 Node rebuilding causes
 </tr>
 <tr id="en-us_topic_0283140576_row13764133118472"><td class="cellrowborder" valign="top" width="19.09%" headers="mcps1.1.3.1.1 "><p id="en-us_topic_0283140576_p5680195674719"><a name="en-us_topic_0283140576_p5680195674719"></a><a name="en-us_topic_0283140576_p5680195674719"></a>WAL segment removed</p>
 </td>
-<td class="cellrowborder" valign="top" width="80.91000000000001%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0283140576_p4764131124717"><a name="en-us_topic_0283140576_p4764131124717"></a><a name="en-us_topic_0283140576_p4764131124717"></a>WALs of the primary node do not exist, and logs of the standby node are later than those of the primary node.</p>
+<td class="cellrowborder" valign="top" width="80.91000000000001%" headers="mcps1.1.3.1.2 "><p id="en-us_topic_0283140576_p4764131124717"><a name="en-us_topic_0283140576_p4764131124717"></a><a name="en-us_topic_0283140576_p4764131124717"></a>Logs of the primary node or WALs do not exist, or logs of the standby node are later than those of the primary node.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283140576_row57641331174715"><td class="cellrowborder" valign="top" width="19.09%" headers="mcps1.1.3.1.1 "><p id="en-us_topic_0283140576_p12764131134712"><a name="en-us_topic_0283140576_p12764131134712"></a><a name="en-us_topic_0283140576_p12764131134712"></a>Disconnect</p>
@@ -216,6 +216,3 @@ node                           node_ip           port                           
 1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
 2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
 ```
-
-
-

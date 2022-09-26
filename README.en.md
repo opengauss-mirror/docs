@@ -8,7 +8,7 @@ Welcome to the repository of openGauss official documentation. This repository p
 
 ### Contributions
 
-We welcome your contributions. If you want to participate in the community documentation development, read the [贡献指导](contribute/贡献指导). You must comply with the document writing specifications and submit the document according to the process rules. After the application is approved, the modification will be displayed on the document project and official website.
+We welcome your contributions. If you want to participate in the community documentation development, read the [Contribution Scope](contribute/contribution-scope.md). You must comply with the document writing specifications and submit the document according to the process rules. After the application is approved, the modification will be displayed on the document project and official website.
 
 If you have any comments or suggestions on the document, please submit them in **Issues**.
 

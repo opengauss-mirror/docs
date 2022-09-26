@@ -1,4 +1,4 @@
-# AI4DB: Root Cause Analysis for Slow SQL Statements<a name="EN-US_TOPIC_0000001240824997"></a>
+# Slow Query Diagnosis: Root Cause Analysis for Slow SQL Statements<a name="EN-US_TOPIC_0000001240824997"></a>
 
 -   **[Overview](overview-5.md)**  
 
@@ -11,5 +11,3 @@
 -   **[Command Reference](command-reference-9.md)**  
 
 -   **[Troubleshooting](troubleshooting-10.md)**  
-
-

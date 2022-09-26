@@ -11,7 +11,7 @@ A user granted with the  **CREATE ANY TABLE**  permission can create views in th
 ## Syntax<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query;
 ```
@@ -24,6 +24,10 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 -   **OR REPLACE**
 
     Redefines the view if it already exists.
+
+- **DEFINER = user**
+
+  Specify user as the owner of the view. This option is used in B-compatible mode.
 
 -   **TEMP | TEMPORARY**
 
@@ -71,4 +75,3 @@ openGauss=# DROP VIEW myView;
 ## Helpful Links<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
 [ALTER VIEW](alter-view.md)  and  [DROP VIEW](drop-view.md)
-

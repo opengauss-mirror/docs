@@ -211,6 +211,18 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **10**
 
+## group\_concat\_max\_len
+
+**Parameter description**: In B-compatible mode, this parameter limits the length of the return value of GROUP_CONCAT. If the length exceeds the limit, the return value is truncated.
+
+Note: Currently, the maximum length that can be returned is 1073741823. If the length exceeds 1073741823, the out of memory error is reported.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: 0 to 9223372036854775807
+
+**Default value**: **1024**
+
 ## acceleration\_with\_compute\_pool<a name="section13787157164412"></a>
 
 **Parameter description**: Specifies whether to use the computing resource pool for acceleration when an OBS is queried.

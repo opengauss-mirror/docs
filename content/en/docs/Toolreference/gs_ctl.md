@@ -18,7 +18,10 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 -   **stop**  and  **restart**  parameters. For details, see  [Table 4](#en-us_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a).
 -   **switchover**  parameters. For details, see  [Table 5](#en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31).
 -   **build**  parameters. For details, see  [Table 6](#en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b).
--   Parameters for  **copy**. For details, see  [Table 7](#table65592307557).
+-   Parameters for  **query**. For details, see  [Table 7](#en-us_topic_0287275989_table198621411133319).
+-   Parameters for  **member**. For details, see  [Table 8](#table1055392110383).
+-   Parameters for  **changerole**. For details, see  [Table 9](#table591372895218).
+-   Parameters for  **setrunmode**. For details, see  [Table 10](#table1451519418810).
 
     **Table  1** **option**  parameters
 
@@ -378,22 +381,141 @@ The  **gs\_ctl**  tool can use the following types of parameters:
 </tbody>
 </table>
 
-**Table  7**  copy parameters
+**Table  7**  Parameters for query
 
-<a name="table65592307557"></a>
-<table><thead align="left"><tr id="row18559830175518"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p75651923175612"><a name="p75651923175612"></a><a name="p75651923175612"></a>Parameter</p>
+<a name="en-us_topic_0287275989_table198621411133319"></a>
+<table><thead align="left"><tr id="en-us_topic_0287275989_row2086211117339"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="en-us_topic_0287275989_p2862181110338"><a name="en-us_topic_0287275989_p2862181110338"></a><a name="en-us_topic_0287275989_p2862181110338"></a>Parameter</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p145651923155610"><a name="p145651923155610"></a><a name="p145651923155610"></a>Description</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="en-us_topic_0287275989_p88621511133318"><a name="en-us_topic_0287275989_p88621511133318"></a><a name="en-us_topic_0287275989_p88621511133318"></a>Description</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p6565102320562"><a name="p6565102320562"></a><a name="p6565102320562"></a>Value Range</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="en-us_topic_0287275989_p1986251123315"><a name="en-us_topic_0287275989_p1986251123315"></a><a name="en-us_topic_0287275989_p1986251123315"></a>Value Range</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row155591830125513"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p055910304553"><a name="p055910304553"></a><a name="p055910304553"></a>-Q</p>
+<tbody><tr id="en-us_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275989_p68621111193318"><a name="en-us_topic_0287275989_p68621111193318"></a><a name="en-us_topic_0287275989_p68621111193318"></a>-L</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p18961111214571"><a name="p18961111214571"></a><a name="p18961111214571"></a>Specifies the Xlog copy direction.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275989_p1886241133318"><a name="en-us_topic_0287275989_p1886241133318"></a><a name="en-us_topic_0287275989_p1886241133318"></a>Queries the LSN and displays the maximum length.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul5782621105711"></a><a name="ul5782621105711"></a><ul id="ul5782621105711"><li><strong id="b12211534310"><a name="b12211534310"></a><a name="b12211534310"></a>copy_from_local</strong>: copies data from the local host to the shared storage.</li><li><strong id="b538292264316"><a name="b538292264316"></a><a name="b538292264316"></a>copy_from_share</strong>: copies data from a shared storage device to a local storage device.</li><li><strong id="b13430335144319"><a name="b13430335144319"></a><a name="b13430335144319"></a>force_copy_from_local</strong>: forcibly copies data from the local host to the shared storage.</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275989_p1186261112338"><a name="en-us_topic_0287275989_p1186261112338"></a><a name="en-us_topic_0287275989_p1186261112338"></a>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**Table  8**  Parameters for member
+
+<a name="table1055392110383"></a>
+<table><thead align="left"><tr id="row755315212385"><th class="cellrowborder" valign="top" width="24.072407240724072%" id="mcps1.2.4.1.1"><p id="p1655352143812"><a name="p1655352143812"></a><a name="p1655352143812"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="34.53345334533453%" id="mcps1.2.4.1.2"><p id="p9553202117383"><a name="p9553202117383"></a><a name="p9553202117383"></a>Description</p>
+</th>
+<th class="cellrowborder" valign="top" width="41.394139413941396%" id="mcps1.2.4.1.3"><p id="p15553152183810"><a name="p15553152183810"></a><a name="p15553152183810"></a>Value Range</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row105111348144312"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1351220486434"><a name="p1351220486434"></a><a name="p1351220486434"></a>--operation</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p155120484435"><a name="p155120484435"></a><a name="p155120484435"></a>Adds or deletes nodes in DCF mode in an openGauss database instance.</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><a name="ul3915143164414"></a><a name="ul3915143164414"></a><ul id="ul3915143164414"><li><strong id="b65391152164919"><a name="b65391152164919"></a><a name="b65391152164919"></a>add</strong>: adds a node to the DCF node configuration of the database instance.</li><li><strong id="b4779523504"><a name="b4779523504"></a><a name="b4779523504"></a>remove</strong>: deletes a node from the DCF node configuration of the database instance.</li></ul>
+</td>
+</tr>
+<tr id="row055332143813"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1553821183814"><a name="p1553821183814"></a><a name="p1553821183814"></a>-u, --nodeid</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p75531421113819"><a name="p75531421113819"></a><a name="p75531421113819"></a>Specifies a new DCF node ID.</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p175531121183815"><a name="p175531121183815"></a><a name="p175531121183815"></a>Unsigned integer</p>
+</td>
+</tr>
+<tr id="row19908138183919"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p199097386398"><a name="p199097386398"></a><a name="p199097386398"></a>-i, --ip</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p1490913389393"><a name="p1490913389393"></a><a name="p1490913389393"></a>Specifies an IP address used by the new node to communicate with the DCF module of the database instance.</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p3909123816397"><a name="p3909123816397"></a><a name="p3909123816397"></a>Character string</p>
+</td>
+</tr>
+<tr id="row3672156133914"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p18672105611397"><a name="p18672105611397"></a><a name="p18672105611397"></a>-e, --port</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p967211565397"><a name="p967211565397"></a><a name="p967211565397"></a>Specifies a port number used by the new node to communicate with the DCF module of the database instance.</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p206721056183917"><a name="p206721056183917"></a><a name="p206721056183917"></a>Integer</p>
+</td>
+</tr>
+<tr id="row28001336154217"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0059778753_a7d43e3a7e1794b4ebf93c89155eda61b"><a name="en-us_topic_0059778753_a7d43e3a7e1794b4ebf93c89155eda61b"></a><a name="en-us_topic_0059778753_a7d43e3a7e1794b4ebf93c89155eda61b"></a>[-D, --pgdata=]DATADIR</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"><a name="en-us_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"></a><a name="en-us_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"></a>Specifies the data directory.</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"><a name="en-us_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"></a><a name="en-us_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"></a>Set <strong id="b180134795015"><a name="b180134795015"></a><a name="b180134795015"></a>DATADIR</strong> as required.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**Table  9**  Parameters for changerole
+
+<a name="table591372895218"></a>
+<table><thead align="left"><tr id="row29141628125217"><th class="cellrowborder" valign="top" width="24.842484248424842%" id="mcps1.2.4.1.1"><p id="p13914152885210"><a name="p13914152885210"></a><a name="p13914152885210"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="41.824182418241826%" id="mcps1.2.4.1.2"><p id="p14914142811528"><a name="p14914142811528"></a><a name="p14914142811528"></a>Description</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p1691452819522"><a name="p1691452819522"></a><a name="p1691452819522"></a>Value Range</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row4914828115214"><td class="cellrowborder" valign="top" width="24.842484248424842%" headers="mcps1.2.4.1.1 "><p id="p291482865212"><a name="p291482865212"></a><a name="p291482865212"></a>-R, --role</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.824182418241826%" headers="mcps1.2.4.1.2 "><p id="p591418288526"><a name="p591418288526"></a><a name="p591418288526"></a>Specifies the node role in DCF mode in an openGauss database instance. This role must be used on the node whose role is primary.</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul1914152813529"></a><a name="ul1914152813529"></a><ul id="ul1914152813529"><li><strong id="b48141423165115"><a name="b48141423165115"></a><a name="b48141423165115"></a>passive</strong>: passive role</li><li><strong id="b69481025195112"><a name="b69481025195112"></a><a name="b69481025195112"></a>follower</strong>: follower role</li></ul>
+</td>
+</tr>
+<tr id="row159141280529"><td class="cellrowborder" valign="top" width="24.842484248424842%" headers="mcps1.2.4.1.1 "><p id="p179141128115215"><a name="p179141128115215"></a><a name="p179141128115215"></a>-u, --nodeid</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.824182418241826%" headers="mcps1.2.4.1.2 "><p id="p891413285528"><a name="p891413285528"></a><a name="p891413285528"></a>Specifies a new DCF node ID.</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1891492816521"><a name="p1891492816521"></a><a name="p1891492816521"></a>Unsigned integer</p>
+</td>
+</tr>
+<tr id="row59154288524"><td class="cellrowborder" valign="top" width="24.842484248424842%" headers="mcps1.2.4.1.1 "><p id="p3748141573915"><a name="p3748141573915"></a><a name="p3748141573915"></a>[-D, --pgdata=]DATADIR</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.824182418241826%" headers="mcps1.2.4.1.2 "><p id="p3748015103918"><a name="p3748015103918"></a><a name="p3748015103918"></a>Specifies the data directory.</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p5749215113916"><a name="p5749215113916"></a><a name="p5749215113916"></a>Set <strong id="b1591065316507"><a name="b1591065316507"></a><a name="b1591065316507"></a>DATADIR</strong> as required.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**Table  10**  Parameters for setrunmode
+
+<a name="table1451519418810"></a>
+<table><thead align="left"><tr id="row18516194117811"><th class="cellrowborder" valign="top" width="24.512451245124513%" id="mcps1.2.4.1.1"><p id="p65163416817"><a name="p65163416817"></a><a name="p65163416817"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="37.58375837583758%" id="mcps1.2.4.1.2"><p id="p155163416818"><a name="p155163416818"></a><a name="p155163416818"></a>Description</p>
+</th>
+<th class="cellrowborder" valign="top" width="37.90379037903791%" id="mcps1.2.4.1.3"><p id="p9516741582"><a name="p9516741582"></a><a name="p9516741582"></a>Value Range</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row115169417819"><td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.1 "><p id="p1516134119817"><a name="p1516134119817"></a><a name="p1516134119817"></a>-v, --votenum</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.58375837583758%" headers="mcps1.2.4.1.2 "><p id="p451610415815"><a name="p451610415815"></a><a name="p451610415815"></a>Specifies the number of votes.</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.90379037903791%" headers="mcps1.2.4.1.3 "><p id="p972411219156"><a name="p972411219156"></a><a name="p972411219156"></a>Unsigned integer</p>
+</td>
+</tr>
+<tr id="row1451616412087"><td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.1 "><p id="p05161341488"><a name="p05161341488"></a><a name="p05161341488"></a>-x, --xmode</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.58375837583758%" headers="mcps1.2.4.1.2 "><p id="p1151614416820"><a name="p1151614416820"></a><a name="p1151614416820"></a>Specifies the running mode (used on minority DNs).</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.90379037903791%" headers="mcps1.2.4.1.3 "><a name="ul752115141516"></a><a name="ul752115141516"></a><ul id="ul752115141516"><li><strong id="b9258194135213"><a name="b9258194135213"></a><a name="b9258194135213"></a>minority</strong>: minority forcible startup</li><li><strong id="b16114835210"><a name="b16114835210"></a><a name="b16114835210"></a>normal</strong>: resuming</li></ul>
+</td>
+</tr>
+<tr id="row85161941782"><td class="cellrowborder" valign="top" width="24.512451245124513%" headers="mcps1.2.4.1.1 "><p id="p4441172918399"><a name="p4441172918399"></a><a name="p4441172918399"></a>[-D, --pgdata=]DATADIR</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.58375837583758%" headers="mcps1.2.4.1.2 "><p id="p7441162923915"><a name="p7441162923915"></a><a name="p7441162923915"></a>Specifies the data directory.</p>
+</td>
+<td class="cellrowborder" valign="top" width="37.90379037903791%" headers="mcps1.2.4.1.3 "><p id="p17441129193914"><a name="p17441129193914"></a><a name="p17441129193914"></a>Set <strong id="b6911195335013"><a name="b6911195335013"></a><a name="b6911195335013"></a>DATADIR</strong> as required.</p>
 </td>
 </tr>
 </tbody>

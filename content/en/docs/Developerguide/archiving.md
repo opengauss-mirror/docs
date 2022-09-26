@@ -8,8 +8,6 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   When  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
->-   The archiving function can be enabled on both the synchronous and asynchronous standby nodes. The method of enabling the archiving function is the same as that of enabling the archiving function on a single node. To enable the archiving function, set  **archive\_mode**  to  **on**  and set  **archive\_dest**  or  **archive\_command**  correctly.
->-   If the maximum availability mode is not enabled and the standby node is disconnected from the primary node, the primary node cannot send the archiving location to the standby node due to service congestion. As a result, the archiving fails.
 
 **Value range**: Boolean
 
@@ -76,4 +74,3 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 **Value range**: an integer ranging from 0 to 1073741823. The unit is s.  **0**  indicates that archiving timeout is disabled.
 
 **Default value**:  **0**
-

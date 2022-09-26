@@ -71,7 +71,7 @@
     The syntax of the optional parameter  **option**  is as follows:
 
     ```
-    FORMAT format_name
+    FORMAT 'format_name'
     | OIDS [ boolean ]
     | DELIMITER 'delimiter_character'
     | NULL 'null_string'
@@ -84,7 +84,6 @@
     | NOESCAPING [ boolean ]
     | FORCE_QUOTE { ( column_name [, ...] ) | * }
     | FORCE_NOT_NULL ( column_name [, ...] )
-    | FORCE_NULL ( column_name [, ...] )
     | ENCODING 'encoding_name'
     | IGNORE_EXTRA_DATA [ boolean ]
     | FILL_MISSING_FIELDS [ boolean ]
@@ -104,7 +103,6 @@
     | FILEHEADER 'header_file_string' 
     | FREEZE 
     | FORCE_NOT_NULL column_name [, ...]
-    | FORCE_NULL column_name [, ...]
     | FORCE_QUOTE { column_name [, ...] | * }
     | BINARY 
     | CSV 
@@ -200,7 +198,7 @@
 
     Used with the  **LOG ERROR**  parameter to set the upper limit of the tolerated errors in the  **COPY FROM**  statement. If the number of errors exceeds the limit, later errors will be reported based on the original mechanism.
 
-    Value range: a positive integer \(1 to  _INTMAX_\) or  **unlimited**
+    Value range: a positive integer \(1 to  *INTMAX*\) or  **unlimited**
 
     Default value: If  **LOG ERRORS**  is not specified, an error will be reported. If  **LOG ERRORS**  is specified, the default value is  **0**.
 
@@ -209,7 +207,7 @@
 
 -   **FORMATTER**
 
-    Defines the place of each column in the data file in fixed length mode. Defines the place of each column in the data file in the  **column\(**_offset_,_length_**\)**  format.
+    Defines the place of each column in the data file in fixed length mode. Defines the place of each column in the data file in the  **column\(***offset*,*length***\)**  format.
 
     Value range:
 
@@ -318,8 +316,9 @@
 
     -   FORCE\_NOT\_NULL \( column\_name \[, ...\] \)
 
-        In  **CSV COPY FROM**  mode, the value for a specified column cannot be null.
-
+        The column specified by this function will not match (recognize) the input as a NULL string. NULL value strings will be defaulted to empty strings (that is, zero-length strings), even if they are not enclosed in quotation marks.
+        This option can be used only in the COPY FROM statement and only when the CSV format is specified.
+        
         Value range: an existing column name
 
     -   ENCODING
@@ -452,12 +451,6 @@
     -   FORCE NOT NULL column\_name \[, ...\]
 
         In  **CSV COPY FROM**  mode, the specified column is not null. If the column is null, its value is regarded as a string of 0 characters.
-
-        Value range: an existing column name
-
-    -   FORCE NULL column\_name \[, ...\]
-
-        In  **CSV COPY FROM**  mode, set the string representing null value in the specified column to NULL, including the quoted null value string.
 
         Value range: an existing column name
 
@@ -627,4 +620,3 @@ openGauss=# COPY tpcds.ship_mode_t1 FROM '/home/omm/ds_ship_mode.dat' FIXED FORM
 -- Delete the tpcds.ship_mode_t1 table.
 openGauss=# DROP TABLE tpcds.ship_mode_t1;
 ```
-

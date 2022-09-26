@@ -1,6 +1,6 @@
 # MOT Durability<a name="EN-US_TOPIC_0289900585"></a>
 
-Durability refers to long-term data protection \(also known as  _disk persistence_\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is never lost or compromised. Durability ensures that data and the MOT engine are restored to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, a power failure\).
+Durability refers to long-term data protection \(also known as  *disk persistence*\). Durability means that stored data does not suffer from any kind of degradation or corruption, so that data is never lost or compromised. Durability ensures that data and the MOT engine are restored to a consistent state after a planned shutdown \(for example, for maintenance\) or an unplanned crash \(for example, a power failure\).
 
 Memory storage is volatile, meaning that it requires power to maintain the stored information. Disk storage, on the other hand, is non-volatile, meaning that it does not require power to maintain stored information, thus, it can survive a power shutdown. MOT uses both types of storage. It has all data in memory, while persisting transactional changes to disks and by maintaining frequent periodic  [MOT Checkpoints](#en-us_topic_0283136668_en-us_topic_0280525142_section182761535131617)  in order to ensure data recovery in case of shutdown.
 
@@ -104,7 +104,7 @@ Two synchronous transaction logging options and one asynchronous transaction log
 
 To configure logging –
 
-1.  The determination of whether synchronous or asynchronous transaction logging is performed is configured in the sync\_commit  **\(On = Synchronous\)**  parameters in the postgres.conf configuration file.
+1.  Whether the **synchronous\_commit**  parameter in the **postgres.conf** file is set to **On** determines whether to perform synchronous or asynchronous transaction logging.
 2.  Set the enable\_redo\_log parameter to  **True**  in the REDO LOG section of the mot.conf configuration file.
 
 If a synchronous mode of transaction logging has been selected \(synchronous\_commit =  **On**, as described above\), then the enable\_group\_commit parameter in the mot.conf configuration file determines whether the  **Group Synchronous Redo Logging**  option or the  **Synchronous Redo Logging**  option is used. For  **Group Synchronous Redo Logging**, you must also define in the mot.conf file which of the following thresholds determine when a group of transactions is recorded in the WAL
@@ -133,4 +133,3 @@ Checkpoint configuration is performed in the CHECKPOINT; section of the mot.conf
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >In a production deployment, the value must be TRUE \#enable\_Checkpoint = true. A FALSE value can only be used for testing.
-

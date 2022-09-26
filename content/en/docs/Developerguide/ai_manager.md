@@ -9,7 +9,7 @@ AI\_MANAGER is an AI feature deployment tool. It aims to provide automatic, effi
 -   If HTTPS is enabled, you need to prepare the corresponding root certificate, key file, and password.
 -   The GaussDB Kernel database has been started on the agent node.
 -   You need to install the agent node as a cluster user.
--   If the  **-/.bashrc**  file of the cluster user on the agent node does not contain the correct  _PGHOST_  configuration, configure the  _PGHOST_  configuration in the  **/dbs/AI-tools/ai\_env**  file.
+-   If the  **-/.bashrc**  file of the cluster user on the agent node does not contain the correct  *PGHOST*  configuration, configure the  *PGHOST*  configuration in the  **/dbs/AI-tools/ai\_env**  file.
 
 ## Examples<a name="section17609145765414"></a>
 
@@ -22,7 +22,7 @@ python3 ai_manager.py --module anomaly_detection --action install --param_file o
 An example of the uninstallation command is as follows:
 
 ```
-python3 ai_manager.py --module anomaly_detection--action uninstall --param_file opengauss.json
+python3 ai_manager.py --module anomaly_detection --action uninstall --param_file opengauss.json
 ```
 
 The following is an example of the parameter file:
@@ -73,4 +73,3 @@ The following is an example of the parameter file:
   }
 }
 ```
-

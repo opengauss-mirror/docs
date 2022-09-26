@@ -18,7 +18,7 @@ gs_collector --begin-time='20200724 00:00'  --end-time='20200725 00:00'
 
 ## FAQs About the Upgrade
 
-1. **Q:** What can I do if error `pscp: error: no such option: --trace-id` occurs during the upgrade?
+**Q:** What can I do if error `pscp: error: no such option: --trace-id` occurs during the upgrade?
    
    **A:** During the upgrade, the openGauss database of another version is being installed on the server. As a result, the database tool versions are inconsistent.
    Do not install other databases during the upgrade. Perform the rollback and perform the upgrade again.

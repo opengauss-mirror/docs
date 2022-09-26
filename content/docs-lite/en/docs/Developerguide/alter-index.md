@@ -45,7 +45,7 @@ It has the following forms:
 
 ## Precautions<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
 
-Only the index owner or a user who has the INDEX permission on the table where the index resides can run the  **ALTER INDEX**  command. The system administrator has this permission by default.
+The owner of an index, a user who has the INDEX permission on the table where the index resides, or a user granted the ALTER ANY INDEX permission can run this command. By default, a system administrator has this permission.
 
 ## Syntax<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sf28f1b42c78e4ae79c9097da9057c429"></a>
 
@@ -162,4 +162,3 @@ See  [Examples](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en
 ## Helpful Links<a name="en-us_topic_0283137124_en-us_topic_0237122063_en-us_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
 [CREATE INDEX](create-index.md),  [DROP INDEX](drop-index.md), and  [REINDEX](reindex.md)
-

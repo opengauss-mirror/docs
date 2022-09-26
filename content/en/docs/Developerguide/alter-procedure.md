@@ -35,6 +35,7 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
      | ROWS result_rows
      | SET configuration_parameter { { TO | = } { value | DEFAULT }| FROM CURRENT}
      | RESET {configuration_parameter | ALL}
+     | COMMENT 'text'
     ```
 
 -   Modify the name of a customized stored procedure.
@@ -173,6 +174,9 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
 
     Value range: an existing schema
 
+-   **COMMENT 'text'**
+
+    Comment a stored procedure.
 
 ## Examples<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sfe220a2da49d4ca5928fe714ca12e949"></a>
 
@@ -181,4 +185,3 @@ See  [Examples](create-function.md#en-us_topic_0283136560_en-us_topic_0237122104
 ## Helpful Links<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
 [CREATE PROCEDURE](create-procedure.md)  and  [DROP PROCEDURE](drop-procedure.md)
-

@@ -17,7 +17,7 @@ Common combination solutions for level-2 partitioned tables include range-range 
 -   The maximum number of level-2 partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the level-2 partitioned tables is about \(number of level-2 partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
 -   Level-2 partitioned tables support only row store and do not support column-store and hash bucket.
 -   Clusters are not supported.
--   When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(_partitionname_\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
+-   When specifying a partition for query, for example,  **select \* from tablename partition/subpartition**  \(*partitionname*\), ensure that the keywords  **partition**  and  **subpartition**  are correct. If they are incorrect, no error is reported during the query. In this case, the query is performed based on the table alias.
 -   Encrypted databases, ledger databases, and row-level security are not supported.
 -   In the  **PARTITION FOR \(values\)**  syntax for level-2 partitioned tables, values can only be constants.
 -   In the  **PARTITION/SUBPARTITION FOR \(values\)**  syntax for level-2 partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
@@ -32,14 +32,15 @@ CREATE TABLE [ IF NOT EXISTS ] subpartition_table_name
 | table_constraint
 | LIKE source_table [ like_option [...] ] }[, ... ]
 )
+[ AUTO_INCREMENT [ = ] value ]
 [ WITH ( {storage_parameter = value} [, ... ] ) ]
 [ COMPRESS | NOCOMPRESS ]
 [ TABLESPACE tablespace_name ]
 PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST | HASH} (subpartition_key)
 (
-  PARTITION partition_name1 [ VALUES LESS THAN (val1) | VALUES (val1[, …]) ] [ TABLESPACE tablespace ]
+  PARTITION partition_name1 [ VALUES LESS THAN (val1) | VALUES (val1[, …]) ] [ TABLESPACE tablespace ] [ COMMENT {=| } 'text' ]
   (
-       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE tablespace ] } [, ...]
+       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE tablespace ] [COMMENT {=| } 'text' ] } [, ...]
   )[, ...]
 )[ { ENABLE | DISABLE } ROW MOVEMENT ];
 ```
@@ -53,23 +54,26 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
       CHECK ( expression ) | 
       DEFAULT default_e xpr | 
       GENERATED ALWAYS AS ( generation_expr ) STORED |
+      AUTO_INCREMENT |
       UNIQUE index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 -   Table constraint:
 
     ```
-    [ CONSTRAINT constraint_name ]
+    [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) | 
-      UNIQUE ( column_name [, ... ] ) index_parameters | 
-      PRIMARY KEY ( column_name [, ... ] ) index_parameters |
-      FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+      UNIQUE  [ index_name ][ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters | 
+      PRIMARY KEY  [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
     ```
 
 
@@ -124,9 +128,45 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
     -   A table constraint is not bound to a particular column but can apply to more than one column.
 
+     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+        >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
+
+-   **index\_name**
+
+    Specifies an index name.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+
+-   **USING method**
+
+    Specifies the name of the index method to be used.
+
+    For details about the value range, see [USING method](create-index.md).
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+
+-   **ASC | DESC**
+
+    **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
+
 -   **LIKE source\_table \[ like\_option ... \]**
 
     Level-2 partitioned tables do not support this function.
+
+-   **AUTO\_INCREMENT \[ = \] value**
+
+    This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
+
+    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
@@ -265,6 +305,12 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     >-   The permission control for generated columns is the same as that for common columns.
     >-   Columns cannot be generated for column-store tables and MOTs. In foreign tables, only  **postgres\_fdw**  supports generated columns.
 
+-   **AUTO\_INCREMENT**
+
+    Specifies an auto-increment column.
+
+    For details, see [AUTO\_INCREMENT](create-table.md).
+
 -   **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
@@ -298,7 +344,10 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified, the index is created in  **default\_tablespace**. If  **default\_tablespace**  is empty, the default tablespace of the database is used.
 
+-   COMMENT {=| } 'text':
 
+    In the partition of a partitioned table, this column is meaningless and is used only for syntax compatibility. An alarm is displayed when the syntax is used in the database.
+    
 ## Examples<a name="section3608124119220"></a>
 
 -   Example 1: Create level-2 partitioned tables of various combination types.
@@ -1138,5 +1187,3 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     
     drop table list_list;
     ```
-
-

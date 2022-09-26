@@ -94,7 +94,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     -   For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
     -   Triggers and primary foreign keys are not supported.
-    -   Psort index, B-tree index, and GIN index are supported. For details, see "**SQL Reference**  \>  **SQL Syntax**  \>  **CREATE INDEX**" in the  _Developer Guide_.
+    -   Psort index, B-tree index, and GIN index are supported. For details, see "**SQL Reference**  \>  **SQL Syntax**  \>  **CREATE INDEX**" in the  *Developer Guide*.
 
 -   Data compression in column store
 
@@ -165,7 +165,7 @@ openGauss supports 10,000 concurrent connections through server thread pools. It
 
 To locate performance issues of a query, you can use  **EXPLAIN PERFORMANCE**  to query its execution plan. However, this method produces many logs, requires to modify service logic, and depends on expertise to locate problems. SQL self-diagnosis enables users to locate performance issues more efficiently.
 
-Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see "**Performance Tuning **\>  **SQL Tuning**  \>  **Typical SQL Optimization Methods**  \>  **Optimizing SQL Self-Diagnosis**" in the  _Developer Guide_.
+Before running a job, set the GUC parameters  **resource\_track\_level**  and  **resource\_track\_cost**, and obtain the possible performance issues after job execution by checking the related system view. The system view describes the possible causes of performance issues. To optimize low-performance jobs, see "**Performance Tuning **\>  **SQL Tuning**  \>  **Typical SQL Optimization Methods**  \>  **Optimizing SQL Self-Diagnosis**" in the  *Developer Guide*.
 
 SQL self-diagnosis helps users locate and optimize performance issues without affecting operations or modifying service logic.
 
@@ -251,5 +251,3 @@ The syntax and semantics of the SQL engine are decoupled to implement plug-ins f
 -   The gs\_cgroup load management is supported.
 
     gs\_cgroup is a load management tool. It creates and manages Cgroups in the database kernel and sets system resource quotas and resource limits to manage the resource usage and priorities of users and services, fully utilizing machine resources.
-
-
