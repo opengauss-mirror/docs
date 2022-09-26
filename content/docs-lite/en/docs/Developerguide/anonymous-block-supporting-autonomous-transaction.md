@@ -9,7 +9,6 @@ START TRANSACTION;
 DECLARE 
 	PRAGMA AUTONOMOUS_TRANSACTION;
 BEGIN
-	dbe_output.print_line('just use call.');
 	insert into t1 values(1,'you are so cute,will commit!');
 END;
 /
