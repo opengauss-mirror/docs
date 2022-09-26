@@ -81,3 +81,7 @@
 -   **[UPDATE](dolphin-UPDATE.md)**
 
 -   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  
+
+-   **[CHECKSUM TABLE](dolphin-CHECKSUM-TABLE.md)**  
+
+-   **[GRANT/REVOKE PROXY](dolphin-GRANT-REVOKE-PROXY.md)** 

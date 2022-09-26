@@ -195,3 +195,25 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 </tbody>
 </table>
+
+## 计算表数据校验和<a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_726c591645b6bb268663e85f5b5bd46dd5"></a>
+
+针对查询时刻对所查询表的可见的数据的校验和计算，该校验和与数据的先后顺序、存入位置、表名等无关，仅仅针对实际数据。所涉及的SQL语句，请参考[表11](#zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_83947b510399c96d25530915513295e3d8)。
+
+**表 11**  函数定义相关SQL
+
+<a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_83947b510399c96d25530915513295e3d8"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_5c57bfdd51d8e832ae507001ca55d7d189"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_81276653292d08668add24976dcd18a465"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a>计算表数据校验和</p>
+</td>
+<td class="cellrowborder" valign="top" width= "50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a href="../undefined">CHECKSUM TABLE</a></p>
+</td>
+</tr>
+
+</tbody>
+</table>
