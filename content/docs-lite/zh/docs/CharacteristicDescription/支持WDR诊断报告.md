@@ -47,7 +47,7 @@ WDR主要依赖两个组件：
 <tr id="row589614018168"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p2896170181618"><a name="p2896170181618"></a><a name="p2896170181618"></a>Load Profile</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.24%" headers="mcps1.2.3.1.2 "><p id="p2089612013161"><a name="p2089612013161"></a><a name="p2089612013161"></a>从时间，IO，事务，SQL几个维度评估当前系统负载的表现。</p>
-<p id="p161691350122212"><a name="p161691350122212"></a><a name="p161691350122212"></a>包含作业运行elapse time、CPU time，事务日质量，逻辑和物理读的量，读写IO次数、大小，登入登出次数，SQL、事务执行量，SQL P80、P95响应时间等。</p>
+<p id="p161691350122212"><a name="p161691350122212"></a><a name="p161691350122212"></a>包含作业运行elapse time、CPU time，事务日志量，逻辑和物理读的量，读写IO次数、大小，登入登出次数，SQL、事务执行量，SQL P80、P95响应时间等。</p>
 </td>
 </tr>
 <tr id="row889614011167"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.3.1.1 "><p id="p11896801161"><a name="p11896801161"></a><a name="p11896801161"></a>Instance Efficiency Percentages</p>
@@ -104,7 +104,7 @@ WDR主要依赖两个组件：
 <tr id="row1233374883113"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p10333948163119"><a name="p10333948163119"></a><a name="p10333948163119"></a>SQL Statistics</p>
 </td>
 <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p367217315715"><a name="p367217315715"></a><a name="p367217315715"></a>主要用于SQL语句性能问题的诊断。</p>
-<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间，执行次数、行活动、Cache IO等。</p>
+<p id="p103331848113117"><a name="p103331848113117"></a><a name="p103331848113117"></a>包含归一化的SQL的性能指标在多个维度上的排序：Elapsed Time、CPU Time、Rows Returned、Tuples Reads、Executions、Physical Reads、Logical Reads。这些指标的种类包括：执行时间、执行次数、行活动、Cache IO等。</p>
 </td>
 </tr>
 <tr id="row1933324873111"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p183331348193119"><a name="p183331348193119"></a><a name="p183331348193119"></a>Wait Events</p>
