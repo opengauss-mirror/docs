@@ -22,8 +22,8 @@ In addition, the following are detailed lists of various general limitations of 
 
 The following lists the functionality limitations of MOT tables:
 
--   Partitioning
--   AES encryption, row-level access control, dynamic data masking
+-   Partition by range
+-   AES encryption
 -   Stream operations
 -   User-defined types
 -   Sub-transactions
@@ -42,50 +42,40 @@ The following lists the functionality limitations of MOT tables:
 -   Tablespace
 -   Create schema with subcommands
 
-##  Unsupported Data Types
+## Unsupported Data Types<a name="en-us_topic_0283137737_en-us_topic_0280525140_section41636693"></a>
 
-- UUID
-- User-Defined Type (UDF)
-- Array data type
-- NVARCHAR2(n)
-- Clob
-- Name
-- Blob
-- Raw
-- Path
-- Circle
-- Reltime
-- Bit varying(10)
-- Tsvector
-- Tsquery
-- JSON
-- Box
-- Text
-- Line
-- Point
-- LSEG
-- POLYGON
-- INET
-- CIDR
-- MACADDR
-- Smalldatetime
-- BYTEA
-- Bit
-- Varbit
-- OID
-- Money
-- Any unlimited varchar/character varying
-- HSTORE
-- XML
-- Int16
-- Abstime
-- Tsrange
-- Tstzrange
-- Int8range
-- Int4range
-- Numrange
-- Daterange
-- HLL
+-   UUID
+-   User-Defined Type \(UDF\)
+-   Array data type
+-   NVARCHAR2\(n\)
+-   Clob
+-   Name
+-   Blob
+-   Raw
+-   Path
+-   Circle
+-   Reltime
+-   Bit varying\(10\)
+-   Tsvector
+-   Tsquery
+-   JSON
+-   Box
+-   Text
+-   Line
+-   Point
+-   LSEG
+-   POLYGON
+-   INET
+-   CIDR
+-   MACADDR
+-   Smalldatetime
+-   BYTEA
+-   Bit
+-   Varbit
+-   OID
+-   Money
+-   Any unlimited varchar/character varying
+-   HSTORE
 
 ## Unsupported Index DDLs and Index<a name="en-us_topic_0283137737_en-us_topic_0280525140_section39185923"></a>
 

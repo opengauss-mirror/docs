@@ -383,7 +383,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="11.21%" headers="mcps1.2.5.1.3 "><p id="p1448815410212"><a name="p1448815410212"></a><a name="p1448815410212"></a>integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.23%" headers="mcps1.2.5.1.4 "><p id="p44881346214"><a name="p44881346214"></a><a name="p44881346214"></a>Number of chunks used by the page. The value cannot be greater than the value of <strong>alocated_chunks</strong>.</p>
+    <td class="cellrowborder" valign="top" width="53.23%" headers="mcps1.2.5.1.4 "><p id="p44881346214"><a name="p44881346214"></a><a name="p44881346214"></a>Number of chunks used by the page. The value cannot be greater than the value of **alocated_chunks**.</p>
     </td>
     </tr>
     <tr id="row1488174126"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p124881418212"><a name="p124881418212"></a><a name="p124881418212"></a>Output parameter</p>
