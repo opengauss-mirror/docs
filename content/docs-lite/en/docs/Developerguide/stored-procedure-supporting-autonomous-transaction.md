@@ -16,14 +16,12 @@ DECLARE
 	PRAGMA AUTONOMOUS_TRANSACTION;
 BEGIN
 	insert into t2 values(num3, num4); 
-	dbe_output.print_line('just use call.');
 END;
 /
 -- Create a common stored procedure that invokes an autonomous transaction stored procedure.
 CREATE OR REPLACE PROCEDURE autonomous_5(a int, b int)  AS 
 DECLARE 
 BEGIN
-	dbe_output.print_line('just no use call.');
 	insert into t2 values(666, 666);
 	autonomous_4(a,b);
 	rollback;
