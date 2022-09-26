@@ -1,6 +1,6 @@
-# 内核B兼容性说明<a name="ZH-CN_TOPIC_0000001201277572"></a>
+# 内核MySQL兼容性说明<a name="ZH-CN_TOPIC_0000001201277572"></a>
 
-**表 1**  在openGauss内核中实现的B兼容性特性列表
+**表 1**  在openGauss内核中实现的MySQL兼容性特性列表
 
 <a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_table53712060"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_row56018257"><th class="cellrowborder" valign="top" width="18.23%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p41184969"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p41184969"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_p41184969"></a>分类</p>
