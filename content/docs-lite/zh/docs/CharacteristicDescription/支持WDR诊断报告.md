@@ -19,11 +19,6 @@ WDR\(Workload Diagnosis Report\)基于两次不同时间点系统的性能快照
 
 使用generate\_wdr\_report\(...\) 可以生成基于两个性能快照的性能报告。
 
-WDR性能快照数据存储在postgres库的snapshot schema下，默认的采集和保存策略为：
-
--   每小时采集一个快照\(wdr\_snapshot\_interval=1h\)。
--   保留8天\(wdr\_snapshot\_retention\_days=8\)。
-
 WDR主要依赖两个组件：
 
 -   SNAPSHOT性能快照：性能快照可以配置成按一定时间间隔从内核采集一定量的性能数据，持久化在用户表空间。任何一个SNAPSHOT可以作为一个性能基线，其他SNAPSHOT与之比较的结果，可以分析出与基线的性能表现。

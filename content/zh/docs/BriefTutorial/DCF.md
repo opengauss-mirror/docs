@@ -193,30 +193,15 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
      # cm_ctl switchover –n <node_id> -D <data_dir>
     ```
 
-5.  备机重建功能。
+5. 备机重建功能。
 
-    支持主备模式下全量build能力。实现过程是当主DN收到全量build的请求后，阻塞主DN回收DCF日志，备DN从主DN复制xlog日志和数据文件，在备DN拉起后设置DCF开始复制日志点。
+   支持主备模式下全量build能力。实现过程是当主DN收到全量build的请求后，阻塞主DN回收DCF日志，备DN从主DN复制xlog日志和数据文件，在备DN拉起后设置DCF开始复制日志点。
 
-    命令示例如下：
+   命令示例如下：
 
-    ```
-    gs_ctl build -b full -D <new_node_data_dir>
-    ```
+   ```
+   gs_ctl build -b full -D <new_node_data_dir>
+   ```
 
-6.  支持手动模式。
-
-    DCF支持手动模式，在手动模式下不自动仲裁，此模式下对接上层CM等管理组件做仲裁适配，DCF进行日志复制功能。
-
-    命令示例如下：
-
-    ```
-    cm_ctl set --param --server -k dn_arbitrate_mode=quorum
-    cm_ctl reload --param --server
-    gs_guc reload -Z datanode -I all -N all  -c "dcf_run_mode=1"
-    ```
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   GUC参数设置和cm\_ctl设置的DCF工作模式需要保持一致，即两者需要同步设置为DCF手动或自动模式。
-    >-   集群在正常状态下进行工作模式切换才能保证切换后工作正常。
-
+   
 
