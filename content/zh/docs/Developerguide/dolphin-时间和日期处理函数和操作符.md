@@ -637,13 +637,13 @@
   
   函数原型:
 
-  `TIME SUBDATE(TIME time1, TIME time2)`
+  `TEXT SUBTIME(TIME time1, TIME time2)`
 
-  `TIME SUBDATE(DATETIME time1, TIME time2)`
+  `TEXT SUBTIME(DATETIME time1, TIME time2)`
 
   功能描述：
 
-  该函数执行日期运算，返回`time1`减去`time2`的结果。返回参数类型与`time1`传入类型保持一致。
+  该函数执行日期运算，返回DATETIME或TIME表达式`time1`减去TIME表达式`time2`的结果。返回参数类型与`time1`传入类型保持一致。
 
   备注:
 
@@ -693,7 +693,7 @@
   
   函数原型:
 
-  `Cstring TIME(TEXT expr)`
+  `Text TIME(TEXT expr)`
 
   功能描述：
 
@@ -761,7 +761,7 @@
 
   `DATETIME TIMESTAMP(TEXT expr)`
 
-  `DATETIME TIMEDIFF(TEXT expr, TIME time)`
+  `DATETIME TIMESTAMP(TEXT expr, TIME time)`
 
   功能描述：
 
@@ -777,22 +777,22 @@
   示例:
 
   ```sql
-  openGauss=# select TIMESTAMP('2003-12-31'), TIMESTAMP('20031231');
-       timestamp      |     timestamp
+  openGauss=# select TIMESTAMP('2022-01-01'), TIMESTAMP('20220101');
+        timestamp      |      timestamp      
   ---------------------+---------------------
-   2003-12-31 00:00:00 | 2003-12-31 00:00:00
+  2022-01-01 00:00:00 | 2022-01-01 00:00:00
   (1 row)
   
-  openGauss=# select TIMESTAMP('2003-12-31 12:00:00.123456'), TIMESTAMP('20000229120000.1234567');
-           timestamp         |         timestamp
+  openGauss=# select TIMESTAMP('2022-01-31 12:00:00.123456'), TIMESTAMP('20000229120000.1234567');
+          timestamp          |         timestamp          
   ----------------------------+----------------------------
-   2003-12-31 12:00:00.123456 | 2000-02-29 12:00:00.123457
+  2022-01-31 12:00:00.123456 | 2000-02-29 12:00:00.123457
   (1 row)
   
-  openGauss=# select TIMESTAMP('2003-12-31','12:00:00.123456'), TIMESTAMP('2003-12-31 12:00:00','-32:00:00');
-           timestamp         |     timestamp
+  openGauss=# select TIMESTAMP('2022-01-31','12:00:00.123456'), TIMESTAMP('2022-01-31 12:00:00','-32:00:00');
+          timestamp          |      timestamp      
   ----------------------------+---------------------
-   2003-12-31 12:00:00.123456 | 2003-12-30 04:00:00
+  2022-01-31 12:00:00.123456 | 2022-01-30 04:00:00
   (1 row)
   
   openGauss=# select TIMESTAMP('20000229','100:00:00'), TIMESTAMP('20000229120000.123','100:00:00');
@@ -856,7 +856,7 @@
   
   函数原型:
 
-  `CSTRING TIME_FORMAT(text time, text format)。`
+  `TEXT TIME_FORMAT(text time, text format)。`
 
   功能描述：
 
