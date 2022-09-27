@@ -2,7 +2,7 @@
 
 JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。openGauss库提供了对JDBC 4.0特性的支持，需要使用JDK1.8版本编译程序代码，不支持JDBC桥接ODBC方式。
 
-在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取, 包名为openGauss-xxxx-操作系统版本号-64bit-Jdbc.tar.gz。
+在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取，包名为openGauss-xxxx-操作系统版本号-64bit-Jdbc.tar.gz。
 
 驱动包与PostgreSQL保持兼容，其中类名、类结构与PostgreSQL驱动完全一致，曾经运行于PostgreSQL的应用程序可以直接移植到当前系统使用。
 
