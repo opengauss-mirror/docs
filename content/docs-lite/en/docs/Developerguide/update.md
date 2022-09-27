@@ -12,16 +12,28 @@
 -   Column-store tables do not support non-deterministic update. If you update data in one row with multiple rows of data in a column-store table, an error will be reported.
 -   Memory space that records update operations in column-store tables is not recycled. You need to clean it by executing  **VACUUM FULL table\_name**.
 -   Currently,  **UPDATE**  cannot be used in column-store replication tables.
+-   The syntax for updating multiple tables takes effect only when **sql\_compatibility** is set to **B**. Column-store tables, views, and tables containing RULE cannot be updated.
 
 ## Syntax<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
 ```
+Update a single table:
+[ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
+    [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
+    [ LIMIT { count } ]
     [ RETURNING {* 
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
+
+Update multiple tables:
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+UPDATE [/*+ plan_hint */] table_list
+SET {column_name = { expression | DEFAULT } 
+    |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
+    [ FROM from_list] [ WHERE condition ];
 
 where sub_query can be:
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
@@ -30,13 +42,15 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ WHERE condition ]
 [ GROUP BY grouping_element [, ...] ]
 [ HAVING condition [, ...] ]
+[ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
+[ LIMIT { [offset,] count | ALL } ]
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sf3e3262b89854b3d829a94054116838c"></a>
 
 -   **plan\_hint**  clause
 
-    Follows the  **UPDATE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **UPDATE**  statement block. For details, see  [Hint-based Tuning](hint-based-tuning.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **UPDATE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **UPDATE**  statement block. For details, see  [Hint-based Tuning](hint-based-tuning.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 -   **table\_name**
 
@@ -54,13 +68,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     For details about the keywords, see  [SELECT](select.md).
 
-    For details, see  [CREATE TABLE SUBPARTITION](en-us_topic_0000001198046401.md).
+    For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
 
 -   **alias**
 
     Specifies a substitute name for the target table.
 
     Value range: a string. It must comply with the identifier naming convention.
+
+-   **table\_list**
+
+    Expression list of a table, which is similar to from\_list. However, the target table and associated table can be declared at the same time. This parameter takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **column\_name**
 
@@ -88,6 +106,8 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     This statement can be executed to update a table with information for other tables in the same database. For details about clauses in the  **SELECT**  statement, see  [SELECT](select.md).
 
+    When a single column is updated, the ORDER BY and LIMIT clauses can be used. When multiple columns are updated, the ORDER BY and LIMIT clauses cannot be used.
+
 -   **from\_list**
 
     Specifies a list of table expressions, allowing columns from other tables to appear in the  **WHERE**  condition and the update expressions. This is similar to the list of tables that can be specified in the  **FROM**  clause of a  **SELECT**  statement.
@@ -98,6 +118,14 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **condition**
 
     Specifies an expression that returns a value of type Boolean. Only rows for which this expression returns  **true**  are updated. You are not advised to use numeric types such as int for  **condition**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
+
+-   **ORDER BY**
+
+    For details about the keywords, see [SELECT](select.md).
+
+-   **LIMIT**
+
+    For details about the keywords, see [SELECT](select.md).
 
 -   **output\_expression**
 
@@ -137,4 +165,3 @@ openGauss=# SELECT * FROM student1;
 -- Delete the table.
 openGauss=# DROP TABLE student1;
 ```
-

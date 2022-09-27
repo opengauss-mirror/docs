@@ -1,6 +1,6 @@
 # DBE\_PLDEBUGGER Schema<a name="EN-US_TOPIC_0000001101338022"></a>
 
-DBE\_PLDEBUGGER system functions are used to debug stored procedures in a standalone system. This chapter describes the interfaces supported by DBE\_PLDEBUGGER. Only the administrator has the permission to execute these debugging interfaces.
+DBE\_PLDEBUGGER system functions are used to debug stored procedures in a standalone system. This chapter describes the interfaces supported by DBE\_PLDEBUGGER. Only the administrator has the permission to execute these debugging interfaces, but does not have the permission to modify or create functions.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >When a user is created in the function body, the plaintext password is returned when attach, next, continue, info\_code, step, info\_breakpoint, backtrace or finish is called. You are not advised to create a user in the function body.
