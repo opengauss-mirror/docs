@@ -4,22 +4,26 @@
 
 ## 连接参数<a name="section51233666102514"></a>
 
--   【关注】第三方工具通过JDBC连接openGauss时，JDBC向openGauss发起连接请求，会默认添加以下配置参数，详见JDBC代码ConnectionFactoryImpl类的实现。
+- 【关注】第三方工具通过JDBC连接openGauss时，JDBC向openGauss发起连接请求，会默认添加以下配置参数，详见JDBC代码ConnectionFactoryImpl类的实现。
 
-    ```
-    params = {
-    { "user", user },
-    { "database", database },
-    { "client_encoding", "UTF8" },
-    { "DateStyle", "ISO" },
-    { "extra_float_digits", "2" },
-    { "TimeZone",  createPostgresTimeZone() },
-    };
-    ```
+  ```
+  params = {
+  { "user", user },
+  { "database", database },
+  { "client_encoding", "UTF8" },
+  { "DateStyle", "ISO" },
+  { "extra_float_digits", "2" },
+  { "TimeZone",  createPostgresTimeZone() },
+  };
+  ```
 
-    这些参数可能会导致JDBC客户端的行为与gsql客户端的行为不一致，例如，Date数据显示方式、浮点数精度表示、timezone显示。
+  这些参数可能会导致JDBC客户端的行为与gsql客户端的行为不一致，例如，Date数据显示方式、浮点数精度表示、timezone显示。
 
-    如果实际期望和这些配置不符，建议在java连接设置代码中显式设定这些参数。
+  如果实际期望和这些配置不符，建议在java连接设置代码中显式设定这些参数。
+
+-   【建议】通过JDBC连接数据库时，会设置extra_float_digits=3，gsql中设置为extra_float_digits=0，可能会使同一条数据在JDBC显示和gsql显示的精度不同。
+
+-   【建议】对于精度敏感的场景，建议使用numeric类型。
 
 -   【建议】通过JDBC连接数据库时，应该保证下面三个时区设置一致：
     -   JDBC客户端所在主机的时区。
