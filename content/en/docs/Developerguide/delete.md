@@ -26,8 +26,13 @@ Delete multiple tables:
 DELETE [/*+ plan_hint */] [FROM] 
     {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
     [ USING using_list ]
-    [ WHERE condition | WHERE CURRENT OF cursor_name ]
-    [ LIMIT { count } ];
+    [ WHERE condition | WHERE CURRENT OF cursor_name ];
+or
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+DELETE [/*+ plan_hint */]
+    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    [ FROM using_list ]
+    [ WHERE condition | WHERE CURRENT OF cursor_name ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136795_en-us_topic_0237122131_en-us_topic_0059778379_s6df87c0dd87c49e29a034e0ff3385ca6"></a>
