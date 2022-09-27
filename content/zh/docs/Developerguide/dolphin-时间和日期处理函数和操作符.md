@@ -1401,35 +1401,26 @@
 
 - week\(date\[,mode\]\)
 
-    描述：返回date参数代表的日期在一年中的第几周。mode参数为可选参数，范围为[0,7]。mode参数可以指定一周开始于周一还是周日，返回值在[0-53]内还是在[1-53]内。无mode参数传入时，GUC变量default_week_format会作为默认mode参数。
+    描述：返回date参数代表的日期在一年中的第几周。mode参数为可选整型参数，范围为[0,7]。无mode参数传入时，GUC参数default_week_format会作为默认mode参数。
 
-    mode参数的各种取值及其意义如下表：
-    | mode | First day of week | range | Week 1 is the first week …|
-    | -----|----------------------- | -------------------------------- | ------ |
-    |0|Sunday|0-53|with a Sunday in this year|
-    |1|Monday|0-53|with 4 or more days this year|
-    |2|Sunday|1-53|with a Sunday in this year|
-    |3|Monday|1-53|with 4 or more days this year|
-    |4|Sunday|0-53|with 4 or more days this year|
-    |5|Monday|0-53|with a Monday in this year|
-    |6|Sunday|1-53|with 4 or more days this year|
-    |7|Monday|1-53|with a Monday in this year|
+    mode参数的各种取值及其意义如下：
+    | mode | 意义 |
+    | --------|----------------------- |
+    |0|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Sunday|
+    |1|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
+    |2|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Sunday|
+    |3|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
+    |4|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
+    |5|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Monday|
+    |6|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
+    |7|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Monday|
 
-    对于"with 4 or more days this year"的解释：
-    - 如果位于年份最开始的一周包含1月，并且有大于等于四天位于当前年内，则此周为当前年的第一周。
-    - 否则，此周为上一年的最后一周，下一周才为当前年的第一周。
-
-    如果日期在上一年的最后一周内，当使用0、1，或者5作为mode传入时，该函数返回0。其意义为当前日期位于日期所在年份的第0周。
-    ```
-    openGauss=# select week('2000-1-1', 0);
-    week
-    ------
-        0
-    (1 row)
-    ```
-    之所以返回0而不是1999年的第52周，是因为这样做可以让返回的值在参数给定的年份内，从而可以让week函数与其他提取日期部分的函数更好地协同工作。
-
-    如果想要以是否包含一周的第一天作为一年中第一周的判定，则可以使用0、2、5，或者7作为mode的值传入。
+    对于**一周的第一天**，**week取值范围**，**判定一年第一周的条件**的说明：
+    - **一周的第一天**指一周开始的那一天，Monday或者Sunday可能为一周的第一天。
+    - **week取值范围**指WEEK函数返回值的取值范围，有[0-53]和[1-53]两种取值范围。其中[0-53]中的0代表给定日期实际位于其所在年份上一年的最后一周内，但为了将返回结果与给定日期所在年份联系起来，故认为给定日期位于其所在年份的第零周（也即还未开始第一周）。若希望给定日期所在周数与其所在年份关系更紧密，则应该使用0、1、4或者5作为mode值，这样，当给定日期位于其所在年份上一年的最后一周时，WEEK函数会返回0。
+    - **判定一年第一周的条件**指判定所给日期位于当前年的第一周的条件，一般而言只有日期位于年份的边界才会进行判定。此判定有两种方式，由mode参数决定使用哪种方式。
+      - 方式一：若Monday或者Sunday是一周的第一天，并且Monday或者Sunday在给定日期所在年内，则此周为日期所在年份的第一周。对应mode取值为0、2、5和7。
+      - 方式二：若给定日期所在的周有大于等于4天位于日期所在年内，则此周为日期所在年份的第一周；否则此周为上一年的最后一周。对应mode取值为1、3、4和6。
 
     返回值类型：integer
 
@@ -1444,6 +1435,7 @@
     0
     (1 row)
 
+    -- 给定日期位于前一年的最后一周内，mode为0
     openGauss=# select week('2000-1-1');
     week
     ------
@@ -1453,6 +1445,7 @@
     openGauss=# alter system set default_week_format = 2;
     ALTER SYSTEM SET
 
+    -- 给定日期位于前一年的最后一周内，mode为2
     openGauss=# select week('2000-1-1');
     week
     ------
@@ -1468,9 +1461,9 @@
 
 - yearweek\(date\[,mode\]\) 
 
-    描述：返回date参数代表的日期所在的年份和周，当日期所在周是一年的第一周或者最后一周时，返回的年份可能与date参数中的年份不一致。mode参数为可选参数，其与WEEK函数的mode参数工作方式完全相同。范围为[0,7]。无mode参数传入时，0会作为默认mode参数，GUC参数default_week_format不会影响yearweek函数。
+    描述：返回date参数代表的日期所在的年份和周。mode为可选整型参数，取值范围为[0,7]。无mode参数传入时，0会作为默认mode参数，GUC参数default_week_format不会影响yearweek函数。mode参数详细意义参见week函数。
 
-    yearweek函数返回的周数与week函数在可选mode参数为0或1时返回0的情况有所不同，week函数返回0周是在date参数的年份中考虑的，而yearweek则不会在date参数的年份中考虑。
+    yearweek函数不会返回0周，即**week取值范围**始终为[1-53]，不受mode参数影响。
 
     返回值类型：bigint
 
