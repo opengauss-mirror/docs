@@ -4,10 +4,6 @@
 
 CREATE CAST defines a conversion.
 
-## Precautions<a name="section786041713618"></a>
-
-DROP AGGREGATE deletes an existing aggregate function. Only the owner of the aggregate function can run this command.
-
 ## Syntax<a name="section1374719912321"></a>
 
 ```
