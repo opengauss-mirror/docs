@@ -2,7 +2,7 @@
 
 - json_array([val[, val] ...])
 
-  描述：输入可变长参数，输出一个json数组。
+  描述：输入可变长参数，输出一个 JSON 数组。
 
   返回类型：array-json
 
@@ -18,11 +18,16 @@
   (1 row)
   ```
 
-- json_object(key, value[, key2, value2, ...])
+- json_object([VARIADIC “any”])
 
-  描述：由于JSON对象中的所有键为字符串，因此JSON_OBJECT()会将不是字符串类型的key转为字符串类型。为了保证程序的稳定性，我们一般使用字符串类型的key。
+  描述：输入参数为交替出现的`key`, `value`。从一个可变参数列表构造出一个 JSON 对象，使用前需设置`GUC`参数 b_compatibility_mode = 1。
 
   返回类型：json
+
+  备注：
+
+  * 由于 JSON 对象中的所有键为字符串，因此`JSON_OBJECT()`会将不是字符串类型的`key`转为字符串类型。为了保证程序的稳定性，我们一般使用字符串类型的`key`。
+  * `key`不能为 NULL 且入参个数应为偶数个。
 
   示例：
 
@@ -55,7 +60,7 @@
 
 - json_quote(string)
 
-  描述：输入字符串，输出json文档，并用双引号修饰。
+  描述：输入字符串，输出 JSON 文档，并用双引号修饰。
 
   返回类型：json
 
@@ -71,14 +76,14 @@
 
 - json_contains(json, json[, text])
 
-  描述：第三个可选参数是第一个json参数的path，返回第一个json参数是否包含第二个json参数。
+  描述：第三个可选参数是第一个 JSON 参数的`path`，返回第一个 JSON 参数是否包含第二个 JSON 参数。
 
   返回类型：bool
 
   备注：
 
-  - 任一参数为NULL，函数返回NULL。
-  - 当path在json中不存在时，函数返回NULL。
+  - 任一参数为 NULL，函数返回 NULL。
+  - 当`path`在 JSON 中不存在时，函数返回`NULL`。
 
   示例：
 
@@ -122,21 +127,21 @@
 
 - json_contains_path(json, text, text[])
 
-  描述：返回目标json参数是否存在输入的path参数，第二个参数选择模式。
+  描述：返回目标 JSON 参数是否存在输入的`path`参数，第二个参数选择模式。
 
   返回类型：bool
 
   备注：
 
-  - 第二个参数可以为'one'或'all'。
+  - 第二个参数可以为`one`或`all`。
 
-    'one'则只要一个path存在即返回true，否则返回false；'all'则全部path存在才返回true，否则返回false。
+    `one`则只要一个`path`存在即返回`true`，否则返回`false`；`all`则全部`path`存在才返回`true`，否则返回`false`。
 
-  - 第一、二个参数为NULL，函数返回NULL。
+  - 第一、二个参数为`NULL`，函数返回 NULL。
 
-  - 若模式为'one'，则按顺序检查path，NULL的path先于任一存在的path，则函数返回NULL；
+  - 若模式为`one`，则按顺序检查`path`，NULL 的`path`先于任一存在的`path`，则函数返回 NULL；
 
-    若模式为'all'，则按顺序检查path，NULL的path先于任一不存在的path，则函数返回NULL。
+    若模式为`all`，则按顺序检查`path`，NULL 的`path`先于任一不存在的`path`，则函数返回 NULL。
 
   示例：
 
@@ -214,7 +219,7 @@
 
 - json_unquote(json_val)
 
-  描述：去除文本中的引号，对转义符有所处理，或者舍弃json值中的引号。
+  描述：去除文本中的引号，对转义符有所处理，或者舍弃 JSON 值中的引号。
 
   返回类型：text
 
@@ -230,7 +235,7 @@
 
 - json_unquote(json_extract(column, path))
 
-  描述：去除文本中的引号，对转义符有所处理，或者舍弃json值中的引号。
+  描述：去除文本中的引号，对转义符有所处理，或者舍弃 JSON 值中的引号。
 
   返回类型：text
 
@@ -246,9 +251,9 @@
 
 - json_keys(json_doc[, path])
 
-  描述：将JSON对象的顶级值中的键作为 JSON 数组返回，或如果给定了路径参数，则返回所选路径中的顶级键。
+  描述：将 JSON 对象的顶级值中的键作为 JSON 数组返回，如果给定了路径参数，则返回路径所指示 JSON 对象的顶级键。
 
-  返回类型：text
+  返回类型：json
 
   示例：
 
@@ -264,17 +269,17 @@
 
 - json_search(json_doc，one_or_all，search_str [，escape_char [，path] ...])
 
-  描述：可传入一个或多个路径参数，根据转义符和one_or_all模式，返回目标字符串在路径限定下对应目标文件中的所在位置。
+  描述：可传入一个或多个路径参数，根据转义符和`one_or_all`模式，返回目标字符串在路径限定下对应目标文件中的所在位置。
 
   返回类型：text
 
   备注：
 
-  * 转义符如果为boolean型相当于NULL，默认`”\“`为转义符，可以直接输入个位数整型作为转义符。
+  * 转义符如果为boolean型相当于 NULL，默认`"\"`为转义符，可以直接输入个位数整型作为转义符。
   * 目标json文件和目标字符串不能为空，路径不能含空，如果path不存在则返回空。
   * `one_or_all`只能输入`one`或`all`。
   * `search_str`可以直接输入整型、浮点型、boolean型进行匹配，但是只能匹配目标文件中的字符串。
-  * `search_str`可以使用模糊匹配，path中可以使用通配符进行匹配。
+  * `search_str`可以使用模糊匹配，`path`中可以使用通配符进行匹配。
 
   示例：
 
@@ -333,11 +338,11 @@
   ```
 
 - json_append(json_doc, path, val[, path, val] ...)
-  描述：用来修改 JSON 文档，它向指定的数组节点中追加一个元素，并返回修改后的 JSON 文档。
+  描述：功能同`json_array_append`函数。
 
   返回类型：json
 
-  备注：json_append和json_array_append两个函数没有区别，json_append是通过调用json_array_append函数来实现其功能。
+  备注： `json_append()` 函数可能在将来的版本中被删除，推荐使用`json_array_append`函数。
   示例：
 
   ```
@@ -384,7 +389,7 @@
 
   返回类型：json
 
-  备注：当jsondoc或path为空时，返回空。
+  备注：当 JSON 文档或`path`为空时，返回空。
 
   示例：
 
@@ -400,21 +405,23 @@
 
   描述：功能同`json_merge_preserve`函数。
 
+  返回类型：json
+
   备注： `JSON_MERGE()` 函数可能在将来的版本中被删除，推荐使用`json_merge_preserve`函数。
 
   示例：
 
   ```
-  openGauss=# select json_merge('[1, 2]', '[true, false]');
-       json_merge      
-  ---------------------
-   [1, 2, true, false]
+  openGauss=# select json_merge('"opengauss"', '[[1,2],3,"test"]');
+              json_merge            
+  ----------------------------------
+   ["opengauss", [1, 2], 3, "test"]
   (1 row)
   ```
 
 * json_merge_preserve(json_doc, json_doc[, json_doc] ...)
 
-  描述：合并两个或多个 JSON 并返回合并结果。若任意参数不是有效的 JSON ，会发生错误。
+  描述：合并两个及以上的 JSON，相同键值合并为一个数组。
 
   返回类型：json
 
@@ -422,129 +429,117 @@
 
   * 如果任何参数为NULL则返回NULL。
   * 合并规范：
-    - 相邻数组合并为单个数组。
-    - 相邻对象将合并到单个对象中。
-    - `scalar`自动包装为数组并合并为数组。
-    - 通过将相邻的数组和对象自动包装为数组并合并两个数组来合并。
+    - 若相邻的两个 JSON 参数一个为`scalar`或对象，一个为数组。将`scalar`或对象，作为数组元素，按照参数的先后顺序，加入数组参数中，合并为单个数组。
+    - 若相邻的两个 JSON 参数都是`scalar`或对象。将`scalar`或对象按照参数的先后顺序，合并为单个数组。
+    - 若相邻的两个 JSON 参数都是数组。将两个数组的各个元素，按照参数的先后顺序，合并为单个数组。
+    - 若相邻的两个 JSON 参数都是对象。将两个对象的各个成员，按照`key`的顺序，合并为单个对象。
+    - 合并 JSON 后的对象成员返回值，全部符合`key`的顺序。
 
   示例：
 
   ```
-  openGauss=# SELECT JSON_MERGE_PRESERVE('[1, 2]', '[true, false]');
-   json_merge_preserve 
-  ---------------------
-   [1, 2, true, false]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{"name": "x"}', '{"id": 47}');
-     json_merge_preserve   
-  -------------------------
-   {"id": 47, "name": "x"}
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('1', 'true');
-   json_merge_preserve 
-  ---------------------
-   [1, true]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('[1, 2]', '{"id": 47}');
-   json_merge_preserve 
-  ---------------------
-   [1, 2, {"id": 47}]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{ "a": 1, "b": 2 }',
-  gary(#    '{ "a": 3, "c": 4 }');
+  openGauss=# select json_merge_preserve('{"a":"abc"}', '[1,true,null]');
         json_merge_preserve      
   -------------------------------
-   {"a": [1, 3], "b": 2, "c": 4}
+   [{"a": "abc"}, 1, true, null]
   (1 row)
   
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{ "a": 1, "b": 2 }','{ "a": 3, "c": 4 }',
-  gary(#    '{ "a": 5, "d": 6 }');
-             json_merge_preserve            
-  ------------------------------------------
-   {"a": [1, 3, 5], "b": 2, "c": 4, "d": 6}
+  openGauss=# select json_merge_preserve('1', '"b"', 'true');
+   json_merge_preserve 
+  ---------------------
+   [1, "b", true]
+  (1 row)
+  
+  openGauss=# select json_merge_preserve('[1,{"a":"abc"}]', '["b",false]');
+        json_merge_preserve      
+  -------------------------------
+   [1, {"a": "abc"}, "b", false]
+  (1 row)
+      
+  openGauss=# select json_merge_preserve('{"b":"abc"}', '{"a":"jks"}');
+     json_merge_preserve    
+  --------------------------
+   {"a": "jks", "b": "abc"}
+  (1 row)
+      
+  openGauss=# select json_merge_preserve(NULL, '1');
+   json_merge_preserve 
+  ---------------------
+   
   (1 row)
   ```
 
 * json_merge_patch(json_doc, json_doc[, json_doc] ...)
 
-  描述：对两个或多个 JSON 执行符合`RFC 7396`的合并，并返回合并结果，不保留具有重复键的成员。若任意参数不是有效的 JSON ，会发生错误。
+  描述：合并两个及以上的  JSON ，相同键值保留后者 JSON 对象键值成员。
 
   返回类型：json
 
   备注：
 
-  * 若任一参数为NULL，则之前的参数和该参数的合并结果为NULL。
-  * NULL参数后面一个参数若非NULL，则：
+  * 若任一参数为NULL，则之前的参数和该参数的合并结果为 NULL。
+  * NULL 参数后面一个参数若非 NULL，则：
     - 后面参数为数组、`scalar`，合并结果为后面参数本身。
-    - 后面参数为对象，合并结果为NULL。
+    - 后面参数为对象，合并结果为 NULL。
   * 合并规范：
-    - 如果第一个参数不是对象，则相当于第一个参数为空对象。合并的结果为，空对象与第二个参数合并的结果。
-    - 如果第二个参数不是对象，合并的结果直接为第二个参数。
-    - 如果两个参数都是对象，则合并的结果是具有以下成员的对象：
-      - 在第二个对象中找不到具有相同键的相应成员的，第一个对象的所有成员。
-      - 在第一个对象中找不到具有相同键的相应成员的，并且其值不是`null`的，第二个对象的所有成员。
-      - 具有同时存在于第一个和第二个对象中的键，并且其在第二个对象中的值不是`null`的所有成员。这些成员的值是递归地将第一个对象中的值与第二个对象中的值合并的结果。
-    - 可以使用这个函数通过在第二个参数中指定`null`作为值，来删除相应成员。
-    - 函数以递归方式操作。成员的值可以不限于 JSON 的`scalar`。
+    - 若相邻的两个 JSON 参数都是对象，则合并结果为单个对象。
+      * 若一个 JSON 对象的某一成员键在另一个 JSON 对象中没有重复，则在合并结果中保留该成员。
+      * 若前一个 JSON 对象的某一成员键在后一个 JSON 对象中重复，则在合并结果中，保留后者 JSON 对象中重复键成员。特别地，当后一个相同键对应对象成员的`value`为 NULL 时，在结果中删除该键成员。
+    - 若相邻的两个 JSON 参数存在一个参数不是对象，则合并的结果直接为第二个 JSON 参数。
+    - 若任一参数为NULL，则位于该参数之前的参数和该参数的合并结果为 NULL
+    - NULL 参数后面一个参数若非 NULL ，则：
+      * 后者参数为数组或`scalar`，合并结果为后面参数本身。
+      * 后者参数为对象，合并结果为 NULL 。
 
   示例：
 
   ```
-  openGauss=# select json_merge_patch('[1, 2]', '[true, false]');
+  openGauss=# select json_merge_patch('{"a":1}', '{"b":2}');
    json_merge_patch 
   ------------------
-   [true, false]
+   {"a": 1, "b": 2}
   (1 row)
   
-  openGauss=# select json_merge_patch('{"name": "x"}', '{"id": 47}');
-      json_merge_patch     
-  -------------------------
-   {"id": 47, "name": "x"}
+  openGauss=# select json_merge_patch('{"a":1}', '{"a":2}');
+   json_merge_patch 
+  ------------------
+   {"a": 2}
   (1 row)
   
-  openGauss=# select json_merge_patch('1', 'true');
+  openGauss=# select json_merge_patch('{"a":{"b":"abc"}}', '{"a":{"b":null}}');
+   json_merge_patch 
+  ------------------
+   {"a": {}}
+  (1 row)
+  
+  openGauss=# select json_merge_patch('{"a":1}', 'true');
    json_merge_patch 
   ------------------
    true
   (1 row)
   
-  openGauss=# select json_merge_patch('[1, 2]', '{"id": 47}');
+  openGauss=# select json_merge_patch('{"a":1}', NULL);
    json_merge_patch 
   ------------------
-   {"id": 47}
-  (1 row)
-  
-  openGauss=# select json_merge_patch('{ "a": 1, "b":2 }','{ "a": 3, "c":4 }');
-       json_merge_patch     
-  --------------------------
-   {"a": 3, "b": 2, "c": 4}
    
-  openGauss=# select json_merge_patch('{ "a": 1, "b":2 }','{ "a": 3, "c":4 }','{ "a": 5, "d":6 }');
-           json_merge_patch         
-  ----------------------------------
-   {"a": 5, "b": 2, "c": 4, "d": 6}
   (1 row)
   
-  openGauss=# select json_merge_patch('{"a":1, "b":2}', '{"b":null}');
+  openGauss=# select json_merge_patch(NULL, '{"a":1}');
    json_merge_patch 
   ------------------
-   {"a": 1}
+   
   (1 row)
   
-  openGauss=# select json_merge_patch('{"a":{"x":1}}', '{"a":{"y":2}}');
-      json_merge_patch     
-  -------------------------
-   {"a": {"x": 1, "y": 2}}
+  openGauss=# select json_merge_patch(NULL, '[1,2,3]');
+   json_merge_patch 
+  ------------------
+   [1, 2, 3]
   (1 row)
   ```
 
 * json_remove(json, path[, path] ...)
 
-  描述：从一个 JSON 文档中删除由路径指定的数据并返回修改后的 JSON 文档。
+  描述：从一个 JSON 文档中删除由路径指定的 JSON 对象并返回修改后的 JSON 文档。
 
   返回类型：json
 
@@ -552,7 +547,7 @@
 
   * 可以通过参数提供多个路径表达式以供删除。多个路径参数会从左到右依次被执行。当执行下一个参数的时候，JSON 文档可能已经发生了变化。
   * 如果 JSON 中不存在指定的路径，此函数返回原文档。
-  * 如果 JSON 文档或者路径为 `NULL`，此函数将返回 `NULL`。
+  * 如果 JSON 文档或者路径为 NULL，此函数将返回 NULL。
 
   示例：
 
@@ -581,7 +576,7 @@
 
 * json_replace([VARIADIC “any”])
 
-  描述：在一个 JSON 文档中替换已存在的数据并返回新的 JSON 文档。第一个参数为JSON文档，其后为交替出现的路径和替换值。
+  描述：在一个 JSON 文档中替换已存在的数据并返回新的 JSON 文档。第一个参数为 JSON 文档，其后为交替出现的路径和替换值。
 
   返回类型：json
 
@@ -597,7 +592,7 @@
 
 * json_set(json_doc, path, val[, path, val] ...))
 
-  描述：输入json文档，路径和键值，替换json文档中已有路径对应的键值，对于新增路径，插入对应键值。
+  描述：输入 JSON 文档，路径和键值，替换 JSON 文档中已有路径对应的键值，对于新增路径，插入对应键值。
 
   返回类型：json
 
@@ -613,14 +608,15 @@
 
 * json_depth(json)
 
-  描述：返回JSON文档的最大深度。
+  描述：返回 JSON 文档的最大深度。
 
   返回类型：integer
 
   备注：
 
   * 空数组、空对象或标量值的深度为1。
-  * 仅包含深度为1的元素的非空数组或仅包含深度为1的成员值的非空对象的深度为2。否则，JSON文档的深度大于2。
+  * 仅包含深度为1的数组或对象深度为2。
+  * JSON 节点的最大深度等于其所有子节点最大深度的最大值。
 
   示例：
 
