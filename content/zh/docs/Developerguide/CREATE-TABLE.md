@@ -117,19 +117,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
     >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp、pg\_toast\_temp开头的schema。
-    >
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
-    >
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
-    >
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
-    >
     >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
-    >
     >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
-    >
-    >-   \\parallel on临时表不支持主备切换。
-
+    >-   临时表不支持主备切换。
+    >-   全局临时表不响应自动清理，在长链接场景使用时尽量使用on commit delete rows的全局临时表，或定期手动执行vacuum，否则可能导致clog日志不回收。
+    
 -   **IF NOT EXISTS**
 
     如果已经存在相同名称的表，不会报出错误，而会发出通知，告知通知此表已存在。
