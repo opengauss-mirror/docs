@@ -2676,3 +2676,4 @@ headless: true
 	-   [Product-related FAQs]({{< relref "./docs/FAQ/product-related-faqs.md" >}})
     -   [Usage-related FAQs]({{< relref "./docs/FAQ/usage-related-faqs.md" >}})
 -   [Glossary]({{< relref "./docs/Glossary/Glossary.md" >}})
+-   [Communication Matrix]({{< relref "./docs/CommunicationMatrix/communication-matrix.md" >}})

@@ -39,7 +39,7 @@ CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH VALUES(CLIENT_MASTE
     A key password specified by a user. The key password length ranges from 28 to 256 bits. The derived 28-bit key meets the AES128 security requirements. If the user needs to use AES256, the key password length must be 39 bits. If the user does not specify the key password length, a 256-bit key is automatically generated.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >Chinese National Cryptography Standard \(Guomi\) constraints: SM2, SM3, and SM4 are Chinese national cryptography standards. To avoid legal risks, these algorithms must be used together. That is, if the CEK is used in the SM4\_SM3 algorithm, only the SM2 algorithm can be used to encrypt the CEK.
+    >Chinese National Cryptography Standard \(Guomi\) constraints: SM2, SM3, and SM4 are Chinese national cryptography standards. To avoid legal risks, these algorithms must be used together. If you specify the SM2 algorithm to encrypt CEKs when creating a CMK, you must specify the SM3 and SM4 algorithms (SM4_SM3) to encrypt data when creating CEKs.
 
 
 ## Examples<a name="section18204185851316"></a>

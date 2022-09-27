@@ -198,4 +198,3 @@ In addition, the following clauses disqualify a query from lite execution –
 -   Sort clause that does not conform to native index order
 -   Set operations
 -   Constraint dependencies
-

@@ -8,7 +8,7 @@ openGauss is a standalone database. It has the basic features of relational data
 
 -   Standard SQLs
 
-    Supports SQL92, SQL99, SQL2003, and SQL2011 standards, GBK and UTF-8 character sets, SQL standard functions and analytic functions, and SQL Procedural Language.
+    Supports SQL92, SQL99, SQL2003, and SQL2011 standards, GBK, GB18030, UTF-8, SQL ASCII, and Latin-1 character sets, SQL standard functions and analytic functions, and stored procedures.
 
 -   Database storage management
 
@@ -29,5 +29,3 @@ openGauss is a standalone database. It has the basic features of relational data
 -   Security management
 
     Supports SSL network connections, user permission management, password management, security auditing, and other functions, to ensure data security at the management, application, system, and network layers.
-
-

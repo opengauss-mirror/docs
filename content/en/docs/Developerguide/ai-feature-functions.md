@@ -87,7 +87,7 @@
 
     Parameters: template name and model name of the performance prediction model
 
-    Return type: tartup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
+    Return type: startup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
     [User Guide](en-us_topic_0289900575.md)  describes the examples.
 

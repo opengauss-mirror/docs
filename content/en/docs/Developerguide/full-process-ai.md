@@ -7,5 +7,3 @@ openGauss implements some full-process AI functions, which will be described in 
 -   **[PLPython Fenced Mode](plpython-fenced-mode.md)**  
 
 -   **[DB4AI-Snapshots for Data Version Management](db4ai-snapshots-for-data-version-management.md)**  
-
-

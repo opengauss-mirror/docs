@@ -6,7 +6,7 @@ The ledger database, which integrates a blockchain idea, records a user operatio
 
 The name and structure of the user history table are as follows:
 
-**Table  1**  Columns in the blockchain.<_schemaname_\>\_<_tablename_\>\_hist user history table
+**Table  1**  Columns in the blockchain.<*schemaname*\>\_<*tablename*\>\_hist user history table
 
 <a name="en-us_topic_0059778793_t611ff04302e6463c8850c39d3e1d78fb"></a>
 <table><thead align="left"><tr id="en-us_topic_0059778793_r8d98f172fcb143a4b42b10577220d355"><th class="cellrowborder" valign="top" width="27.200000000000003%" id="mcps1.2.4.1.1"><p id="en-us_topic_0059778793_a193720958fde4c19bc65993675dfa1a9"><a name="en-us_topic_0059778793_a193720958fde4c19bc65993675dfa1a9"></a><a name="en-us_topic_0059778793_a193720958fde4c19bc65993675dfa1a9"></a>Column Name</p>
@@ -118,8 +118,6 @@ The name and structure of the user history table are as follows:
      name   | text    |           | extended |              |
      hash   | hash16  |           | plain    |              |
     Has OIDs: no
-    Distribute By: HASH(id)
-    Location Nodes: ALL DATANODES
     Options: orientation=row, compression=no
     History table name: ledgernsp_usertable_hist
     
@@ -177,5 +175,3 @@ The name and structure of the user history table are as follows:
       2 | bob2 | 437761affbb7c605
     (2 rows)
     ```
-
-

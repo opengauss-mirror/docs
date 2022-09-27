@@ -112,8 +112,6 @@
     >-   **| NO FORCE/FORCE ROW LEVEL SECURITY**
     >    Forcibly enables or disables row-level access control for a table.
     >    By default, the table owner is not affected by the row-level access control feature. However, if row-level access control is forcibly enabled, the table owner \(excluding system administrators\) will be affected. System administrators are not affected by any row-level access control policies.
-    >-   **| REPLICA IDENTITY \{DEFAULT | USING INDEX index\_name | FULL | NOTHING\}**
-    >    Adjusts the amount of information written to WALs during logical replication. This option is valid only when  **wal\_level**  is set to  **logical**. When the original data table is updated, the default logical replication flow contains only the historical records of the primary key. If you need to output the historical records of column update or delete operations, you can modify this parameter.  **DEFAULT**  \(not the default value in the system catalog\) records the old value of the primary key column.  **USING INDEX**  records the old values of the columns contained in the  **index\_name**  index. All columns of the index must be  **NOT NULL**.  **FULL**  records the old values of all columns.  **NOTHING**  \(default value in the system catalog\) does not record information about old values.
     >-   **SET WITH OIDS**
     >    Adds an OID system column to a data table. If the OID already exists in the table, the syntax does not change anything.
     >-   **SET WITHOUT OIDS**

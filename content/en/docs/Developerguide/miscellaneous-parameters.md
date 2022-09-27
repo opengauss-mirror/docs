@@ -10,7 +10,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
-## enable\_ustore<a name="section182244334911"></a>
+## enable\_ustore<a name="section477353310529"></a>
 
 **Parameter description**: Specifies whether to enable the Ustore storage engine. If this parameter is set to  **on**, Ustore tables can be created. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
 
@@ -163,7 +163,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## transparent\_encrypt\_kms\_url<a name="en-us_topic_0283137574_en-us_topic_0237124754_section14139346195718"></a>
 
-**Parameter description**: Specifies the URL for obtaining the database secret key to be transparently encrypted. It must contain only the characters specified in RFC3986, and the maximum length is 2047 bytes. The format is  **kms://**_Protocol_**@**_KMS host name 1_**;**_KMS host name 2_**:**_KMS port number_**/kms**, for example,  **kms://https@linux175:29800/**. This parameter applies only to the DWS scenario in the current version.
+**Parameter description**: Specifies the URL for obtaining the database secret key to be transparently encrypted. It must contain only the characters specified in RFC3986, and the maximum length is 2047 bytes. The format is  **kms://***Protocol***@***KMS host name 1***;***KMS host name 2***:***KMS port number***/kms**, for example,  **kms://https@linux175:29800/**. This parameter applies only to the DWS scenario in the current version.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -187,7 +187,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 When the gs\_basebackup tool is used for transmission and a high compression rate is specified, the transmission of the tablespace may time out \(the client needs to compress the transmitted data\).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is s.  **0**  indicates that archiving timeout is disabled.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is s.  **0**  indicates that archiving timeout is disabled.
 
 **Default value:**  600s
 
@@ -211,6 +211,34 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **10**
 
+## group\_concat\_max\_len
+
+**Parameter description**: In B-compatible mode, this parameter limits the length of the return value of GROUP_CONCAT. If the length exceeds the limit, the return value is truncated.
+
+Note: Currently, the maximum length that can be returned is 1073741823. If the length exceeds 1073741823, the out of memory error is reported.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: 0 to 9223372036854775807
+
+**Default value**: **1024**
+
+## sql\_ignore\_strategy<a name="section106841634172711"></a>
+
+**Parameter description:** In B-compatible mode, this parameter controls the processing policy of the ignore_error hint when non-null constraints are violated.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**
+>For details about the ignore_error hint, see [Hint for Degrading Some Errors to Warnings](hint-for-degrading-some-errors-to-warnings.md).
+
+**Value range**: enumerated values
+
+-   **ignore_null**: ignores rows that violate non-null constraints.
+-   **overwrite_null**: overwrites the null value that violates the constraint to the default value of the target type.
+
+**Default value**: **ignore_null**
+
 ## acceleration\_with\_compute\_pool<a name="section13787157164412"></a>
 
 **Parameter description**: Specifies whether to use the computing resource pool for acceleration when an OBS is queried.
@@ -233,4 +261,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: 0 to 2147483647
 
 **Default value**:  **0**
-
