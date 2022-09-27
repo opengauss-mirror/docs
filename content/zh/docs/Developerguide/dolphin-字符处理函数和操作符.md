@@ -1,6 +1,6 @@
 # 字符处理函数和操作符<a name="ZH-CN_TOPIC_0289900656"></a>
 
-相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为:
+相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 1. 新增```regexp/not regexp/rlike```操作符。
 2. 新增```locate/lcase/ucase/insert/bin/chara/elt/field/find_int_set/hex/space/soundex```函数。
 3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
