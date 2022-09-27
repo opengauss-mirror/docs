@@ -277,3 +277,5 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 <a name="ul165953251100"></a><a name="ul165953251100"></a><ul id="ul165953251100"><li>等观察灾备集群的CM_AGENT告警信息“ALM_AI_AbnormalCMSProcess”，并尝试修复发生故障的CM_AGENT。故障排除后新首备的连接可恢复。</li><li>若如果故障的CM_AGENT短时间内无法修复，执行gs_ctl stop -D DATADIR命令或者kill命令手动停止该节点上的DN进程，可恢复。</li></ul>
 </td>
 </tr>
+</tbody>
+</table>
