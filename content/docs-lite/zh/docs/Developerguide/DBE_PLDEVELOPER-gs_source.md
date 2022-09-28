@@ -4,6 +4,18 @@
 
 打开plsql\_show\_all\_error参数后，会把成功或失败的PLPGSQL对象编译信息记录在此表中，如果关闭plsql\_show\_all\_error参数则只会将正确的编译相关信息插入此表中。
 
+> ![](C:/Users/tongmeixia/Desktop/doc-问题单同步/docs/content/zh/docs/Developerguide/public_sys-resources/icon-caution.gif) **注意：** 
+>
+> - gs_source表中只记录用户定义的原始对象语句，即使用户使用了ALTER改变了创建的SCHEMA或者名字，gs_source表中的信息也不会发生变化，如果用户更改了对象的SCHEMA或者名字，会导致用户在删除对象后，对象仍存在于gs_source表中。
+>
+> - gs_source表中的owner指创建的用户，不是用户创建存储过程或者package时指定的用户。
+>
+> - 数据库默认情况下没有对gs_source表中设置行级访问控制，如果用户想使用数据库隔离性特性，请参考以下语句，自行添加行级访问控制。
+>
+>   ```
+>   ALTER TABLE dbe_pldeveloper.gs_source ENABLE ROW LEVEL SECURITY; CREATE ROW LEVEL SECURITY POLICY all_data_rls ON dbe_pldeveloper.gs_source USING(owner = (select oid from pg_roles where rolname=current_user));
+>   ```
+
 **表 1**  DBE\_PLDEVELOPER.gs\_source字段
 
 <a name="table1011513101687"></a>
