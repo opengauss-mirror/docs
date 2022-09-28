@@ -11,17 +11,18 @@
     Statement stmt = conn.createStatement();
     ```
 
-2.  调用Statement的executeUpdate方法执行SQL语句。
+2. 调用Statement的executeUpdate方法执行SQL语句。
 
-    ```
-    int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
-    ```
+   ```
+   int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >
-    >-   数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，事务块中不支持vacuum操作。如果其中有一个语句失败，那么整个请求都将会被回滚。
-    >-   使用Statement执行多语句时应以“;”作为各语句间的分隔符，存储过程、函数、匿名块不支持多语句执行。
-    >-   “/”可用作创建单个存储过程、函数、匿名块的结束符。
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >
+   >-   数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，事务块中不支持vacuum操作。如果其中有一个语句失败，那么整个请求都将会被回滚。
+   >-   使用Statement执行多语句时应以“;”作为各语句间的分隔符，存储过程、函数、匿名块不支持多语句执行。
+   >-   “/”可用作创建单个存储过程、函数、匿名块的结束符。
+   >-   在prepareThreshold=1时，因为preferQueryMode默认模式不对statement进行缓存淘汰，所以statement执行的每条SQL都会缓存语句，可能导致内存膨胀。需要调整preferQueryMode=extendedCacheEverything，对statement进行缓存淘汰。
 
 3.  关闭语句对象。
 
