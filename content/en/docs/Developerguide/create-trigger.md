@@ -13,6 +13,8 @@
 
 ## Syntax<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
+-   **O-compatible syntax for creating a trigger**
+
 ```
 CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
     ON table_name
@@ -21,6 +23,19 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     [ FOR [ EACH ] { ROW | STATEMENT } ]
     [ WHEN ( condition ) ]
     EXECUTE PROCEDURE function_name ( arguments );
+```
+
+-   **MySQL-compatible syntax for creating a trigger**
+
+```
+CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
+    ON table_name
+    [ FROM referenced_table_name ]
+    { NOT DEFERRABLE | [ DEFERRABLE ] { INITIALLY IMMEDIATE | INITIALLY DEFERRED } }
+    [ FOR [ EACH ] { ROW | STATEMENT } ]
+    [ WHEN ( condition ) ]
+    [ trigger_order ]
+    trigger_body
 ```
 
 Events include:
@@ -32,11 +47,25 @@ Events include:
     TRUNCATE
 ```
 
+Where **trigger\_order** is:
+
+```
+    { FOLLOWS|PRECEDES } other_trigger_name
+```
+
 ## Parameter Description<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
 -   **CONSTRAINT**
 
     \(Optional\) Creates a constraint trigger. That is, the trigger is used as a constraint. This is the same as a regular trigger except that the timing of the trigger firing can be adjusted using  **SET CONSTRAINTS**. Constraint triggers must be  **AFTER ROW**  triggers.
+
+-   **DEFINER**
+
+    (Optional) Affects the permission control of the referenced object within the trigger.
+
+-   **IF NOT EXISTS**
+
+    (Optional) Prevents errors if triggers have the same name, table, or table in the same schema.
 
 -   **trigger\_name**
 
@@ -121,13 +150,21 @@ Events include:
 
     Specifies an optional comma-separated list of parameters to be provided to the function when the trigger is executed. The parameters are literal string constants. Simple names and numeric constants can also be written here, but they will all be converted to strings. Check the description of the implementation language of the trigger function to find out how these parameters can be accessed within the function.
 
+- **trigger\_order**
+
+  (Optional) {FOLLOWS|PRECEDES} in the trigger\_order feature controls the triggering sequence. In MySQL-compatible mode, multiple triggers can be defined for the same triggered event in the same table. The trigger that is created first is triggered first. You can use {FOLLOWS|PRECEDES} to adjust the priority. If FOLLOWS is used, the trigger used for the last time has the highest priority. If PRECEDES is used, the trigger used for the last time has the lowest priority.
+
+- **trigger\_body**
+
+  Define the work to be done after the trigger by writing a code block between BEGIN and END.
+
+    **Table  1**  Types of triggers supported on tables and views
+
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The following details trigger types:
     >-   **INSTEAD OF**  triggers must be marked as  **FOR EACH ROW**  and can be defined only on views.
     >-   **BEFORE**  and  **AFTER**  triggers on a view must be marked as  **FOR EACH STATEMENT**.
     >-   **TRUNCATE**  triggers must be marked as  **FOR EACH STATEMENT**.
-
-    **Table  1**  Types of triggers supported on tables and views
 
     <a name="en-us_topic_0283137165_en-us_topic_0237122123_table15282217184416"></a>
     <table><thead align="left"><tr id="en-us_topic_0283137165_en-us_topic_0237122123_row1928351717446"><th class="cellrowborder" valign="top" width="18.61%" id="mcps1.2.5.1.1"><p id="en-us_topic_0283137165_en-us_topic_0237122123_p172831717164411"><a name="en-us_topic_0283137165_en-us_topic_0237122123_p172831717164411"></a><a name="en-us_topic_0283137165_en-us_topic_0237122123_p172831717164411"></a>When</p>
@@ -345,6 +382,89 @@ openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;
 openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
+--Create a MySQL-compatible database.
+openGauss=# create database db_mysql dbcompatibility 'B';
+--Create a trigger definition user.
+openGauss=# create user test_user password 'Gauss@123';
+--Create a source table and a target table.
+db_mysql=# create table test_mysql_trigger_src_tbl (id INT);
+db_mysql=# create table test_mysql_trigger_des_tbl (id INT);
+db_mysql=# create table animals (id INT, name CHAR(30));
+db_mysql=# create table food (id INT, foodtype VARCHAR(32), remark VARCHAR(32), time_flag TIMESTAMP);
+--Create a MySQL trigger that is compatible with the definer syntax.
+db_mysql=# create definer=test_user trigger trigger1
+					after insert on test_mysql_trigger_src_tbl
+					for each row
+					begin 
+    				 insert into test_mysql_trigger_des_tbl values(1);
+					end;
+					/
+--Create a MySQL trigger that is compatible with the trigger_order syntax.
+db_mysql=# create trigger animal_trigger1
+ 					after insert on animals
+					for each row
+					begin
+    				 insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
+					end;
+					/
+--Create a MySQL trigger that is compatible with FOLLOWS.
+db_mysql=# create trigger animal_trigger2
+					after insert on animals
+					for each row
+					follows animal_trigger1
+					begin
+    				 insert into food(id, foodtype, remark, time_flag) values (2,'chocolate', 'sdsdsdsd', now());
+					end;
+					/
+db_mysql=# create trigger animal_trigger3
+          after insert on animals
+          for each row
+          follows animal_trigger1
+          begin
+              insert into food(id, foodtype, remark, time_flag) values (3,'cake', 'sdsdsdsd', now());
+          end;
+          /
+db_mysql=# create trigger animal_trigger4
+          after insert on animals
+          for each row
+          follows animal_trigger1
+          begin
+              insert into food(id, foodtype, remark, time_flag) values (4,'sausage', 'sdsdsdsd', now());
+          end;
+          /
+--Execute the INSERT statement to trigger an event and check the trigger result:
+db_mysql=# insert into animals (id, name) values(1,'lion');
+db_mysql=# select * from animals;
+db_mysql=# select id, foodtype, remark from food;
+--Create a MySQL trigger that is compatible with PROCEDES.
+db_mysql=# create trigger animal_trigger5
+          after insert on animals
+          for each row
+          precedes animal_trigger3
+          begin
+              insert into food(id, foodtype, remark, time_flag) values (5,'milk', 'sdsds', now());
+          end;
+          /
+db_mysql=# create trigger animal_trigger6
+          after insert on animals
+          for each row
+          precedes animal_trigger2
+          begin
+              insert into food(id, foodtype, remark, time_flag) values (6,'strawberry', 'sdsds', now());
+          end;
+          /
+--Execute the INSERT statement to trigger an event and check the trigger result:
+db_mysql=# insert into animals (id, name) values(2, 'dog');
+db_mysql=# select * from animals;
+db_mysql=# select id, foodtype, remark from food;
+--Create a MySQL trigger that is compatible with the IF NOT EXISTS syntax.
+db_mysql=# create trigger if not exists animal_trigger1
+          after insert on animals
+          for each row
+          begin
+              insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
+          end;
+          /
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>

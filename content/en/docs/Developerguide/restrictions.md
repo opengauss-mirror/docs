@@ -63,4 +63,3 @@
 
 -   A stored procedure or function that contains an autonomous transaction does not support exception handling.
 -   A trigger function does not support autonomous transactions.
-

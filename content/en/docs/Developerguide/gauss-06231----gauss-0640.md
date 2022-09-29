@@ -116,9 +116,9 @@ GAUSS-06138: "EOL string '%s' cannot contain any characters in'%s'"
 
 SQLSTATE: None
 
-Description: A custom line break cannot contain specified characters.
+Description: A custom line break cannot contain any characters.
 
-Solution: Ensure that the custom line break does not contain specified characters.
+Solution: Ensure that the custom line break does not contain any characters.
 
 GAUSS-06139: "EOL specification can not be used with non-text format using COPY FROM or READ ONLY foreign table"
 
@@ -135,4 +135,3 @@ SQLSTATE: None
 Description: Custom line breaks \(excluding 0x0D0A and 0x0A\) cannot be used for non-TEXT export using  **COPY**  or for write-only foreign tables.
 
 Solution: Ensure that the data to be exported using  **COPY**  and the write-only table are in TEXT format.
-

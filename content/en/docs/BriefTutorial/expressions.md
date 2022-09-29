@@ -92,6 +92,8 @@ Conditional expressions include the following types:
 
     Example:
 
+    Note: If the tpcds schema does not exist, create the tpcds schema and then create the table.
+
     ```
     openGauss=# CREATE TABLE tpcds.case_when_t1(CW_COL1 INT);
     
@@ -146,6 +148,8 @@ Conditional expressions include the following types:
 
     Example:
 
+    Note: If the tpcds schema does not exist, create the tpcds schema and then create the table.
+
     ```
     openGauss=# CREATE TABLE tpcds.c_tabl(description varchar(10), short_description varchar(10), last_value varchar(10)) ;
     
@@ -185,6 +189,8 @@ Conditional expressions include the following types:
     Only if the value of  **value1**  is equal to that of  **value2**  can  **NULLIF**  return  **NULL**. Otherwise,  **value1**  is returned.
 
     Example:
+
+    Note: If the tpcds schema does not exist, create the tpcds schema and then create the table.
 
     ```
     openGauss=# CREATE TABLE tpcds.null_if_t1 (
@@ -296,6 +302,8 @@ Subquery expressions include the following types:
 
     Example:
 
+    Note: In the following query statement, **tpcds** indicates the schema name.
+
     ```
     openGauss=# SELECT sr_reason_sk,sr_customer_sk FROM tpcds.store_returns WHERE EXISTS (SELECT d_dom FROM tpcds.date_dim WHERE d_dom = store_returns.sr_reason_sk and sr_customer_sk <10);
     sr_reason_sk | sr_customer_sk 
@@ -330,6 +338,8 @@ Subquery expressions include the following types:
     This is in accordance with SQL normal rules for Boolean combinations of null values. If the columns corresponding to two rows equal and are not null, the two rows are equal to each other. If any columns corresponding to the two rows do not equal and are not null, the two rows are not equal to each other. Otherwise, the result is  **NULL**. If the result of each row does not equal and at least one row yields  **NULL**, the result of  **IN**  will be  **NULL**.
 
     Example:
+
+    Note: In the following query statement, **tpcds** indicates the schema name.
 
     ```
     openGauss=# SELECT sr_reason_sk,sr_customer_sk  FROM tpcds.store_returns WHERE sr_customer_sk IN (SELECT d_dom FROM tpcds.date_dim WHERE d_dom < 10);
@@ -368,6 +378,8 @@ Subquery expressions include the following types:
 
     Example:
 
+    Note: In the following query statement, **tpcds** indicates the schema name.
+
     ```
     openGauss=# SELECT sr_reason_sk,sr_customer_sk  FROM tpcds.store_returns WHERE sr_customer_sk < ANY (SELECT d_dom FROM tpcds.date_dim WHERE d_dom < 10);
     sr_reason_sk | sr_customer_sk 
@@ -405,6 +417,8 @@ Subquery expressions include the following types:
 
     Example:
 
+    Note: In the following query statement, **tpcds** indicates the schema name.
+
     ```
     openGauss=# SELECT sr_reason_sk,sr_customer_sk  FROM tpcds.store_returns WHERE sr_customer_sk < all(SELECT d_dom FROM tpcds.date_dim WHERE d_dom < 10);
      sr_reason_sk | sr_customer_sk 
@@ -417,7 +431,7 @@ Subquery expressions include the following types:
 
 -   IN
 
-    _expression **IN **_\(value \[, ...\]\)
+    *expression **IN ***\(value \[, ...\]\)
 
     The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list meets the expression result on the left, the result of  **IN**  is  **true**. If no content meets the expression result, the result of  **IN**  is  **false**.
 
@@ -436,7 +450,7 @@ Subquery expressions include the following types:
 
 -   NOT IN
 
-    _expression  **NOT IN**_ \(value \[, ...\]\)
+    *expression  **NOT IN*** \(value \[, ...\]\)
 
     The parentheses on the right contain an expression list. The expression result on the left is compared with the content in the expression list. If the content in the list does not meet the expression result on the left, the result of  **NOT IN**  is  **true**. If any content meets the expression result, the result of  **NOT IN**  is  **false**.
 
@@ -458,9 +472,9 @@ Subquery expressions include the following types:
 
 -   ANY/SOME\(array\)
 
-    _expression operator  **ANY **_\(array expression\)
+    *expression operator  **ANY ***\(array expression\)
 
-    _expression operator  **SOME **_\(array expression\)
+    *expression operator  **SOME ***\(array expression\)
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
@@ -488,7 +502,7 @@ Subquery expressions include the following types:
 
 -   ALL\(array\)
 
-    _expression operator  **ALL **_\(array expression\)
+    *expression operator  **ALL ***\(array expression\)
 
     The right side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to calculate and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
@@ -530,4 +544,3 @@ openGauss=# SELECT ROW(1,2,NULL) < ROW(1,3,0) AS RESULT;
  t
 (1 row)
 ```
-

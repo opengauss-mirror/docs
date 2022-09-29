@@ -22,7 +22,7 @@ Only the owner of a subscription can execute **ALTER SUBSCRIPTION**, and the new
   ALTER SUBSCRIPTION name SET PUBLICATION publication_name [, ...]
   ```
 
-- Update the name of the publication on the publisher side.
+- Update the subscription list on the subscriber.
 
   ```
   ALTER SUBSCRIPTION name REFRESH PUBLICATION [ WITH ( refresh_option [= value] [, ... ] ) ]

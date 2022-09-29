@@ -133,4 +133,3 @@ The column_constraint can be:
 ## Helpful Links<a name="en-us_topic_0283137606_section10964241319"></a>
 
 [ALTER FOREIGN TABLE](alter-foreign-table.md)  and  [DROP FOREIGN TABLE](drop-foreign-table.md)
-

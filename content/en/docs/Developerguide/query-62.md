@@ -176,29 +176,27 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >Some snapshot information comes from unique SQL statements. Therefore, when automatic elimination is enabled, if the selected start snapshot and end snapshot exceed the elimination time, the WDR report cannot be generated.
 
-## enable\_slow\_query\_log \(Discarded\)<a name="section19769519201515"></a>
+## track\_stmt\_standby\_chain_\size<a name="section16119247614"></a>
 
-**Parameter description:**  Specifies whether to write the slow query information to the log file. This parameter is discarded in this version.
+**Parameter description**: Specifies the maximum memory and disk space occupied by fast/slow SQL statement records on the standby node. This parameter is a combination of parameters. This parameter is read every 60 seconds and records exceeding the retention period are deleted. Only the sysadmin user can access this parameter.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range**: Boolean
-
--   **on**: indicates that slow query information needs to be written into log files.
--   **off**: indicates that slow query information does not need to be written into log files.
-
-**Default value**:  **on**
-
-## query\_log\_file \(Discarded\)<a name="en-us_topic_0059778787_s3226ae3209154e249928c24ec67c5809"></a>
-
-**Parameter description**: If  **enable\_slow\_query\_log**  is set to  **ON**, slow query records are written into log files.  **query\_log\_file**  specifies the name of a slow query log file on the server. Only the sysadmin user can access this parameter. Generally, log file names are generated in strftime mode. Therefore, the system time can be used to define log file names, which are implemented using the escape character %. This function has been discarded in this version.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->You are advised to use %-escapes to specify the log file names for efficient management of log files.
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
-**Default value:** **slow\_query\_log-%Y-%m-%d\_%H%M%S.log**
+This parameter consists of four parts: **fast sql memory size**, **fast sql disk size**, **slow sql memory size**, and **slow sql disk size**.
+On the primary node, **full sql** indicates full SQL statements stored in an unlogged table, and **slow sql** indicates slow SQL statements. On the standby node, the non-slow SQL statements are called **fast sql**. Slow and fast SQL statements are stored in different locations. Therefore, four additional values are used for control.
 
+- **fast sql memory size** indicates the maximum memory space reserved for fast SQL statements. The value range is \[16,1024\], in MB.
+
+- **fast sql disk size** indicates the maximum disk space occupied by reserved fast SQL statements. The value range is \[512,1048576\], in MB.
+
+- **slow sql memory size** indicates the maximum memory space reserved for slow SQL statements. The value range is \[16,1024\], in MB.
+
+- **slow sql disk size** indicates the maximum disk space reserved for slow SQL statements. The value range is \[512,1048576\], in MB.
+
+Note that the memory values corresponding to the fast and slow SQL statements cannot be greater than the disk value.
+
+Data is cleared at a granularity of 16 MB. Therefore, a maximum of 16 MB data delay error may occur.
+
+**Default value: 32, 1024, 16, 512**

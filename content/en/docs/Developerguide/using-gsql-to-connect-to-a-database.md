@@ -1,6 +1,6 @@
 # Using gsql to Connect to a Database<a name="EN-US_TOPIC_0289900019"></a>
 
-**gsql**  provided by openGauss is a database connection tool running in the CLI.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to use  **gsql**  to connect to a database. For details about how to use  **gsql**, see "Client Tools \> gsql" in  _Tool Reference_.
+**gsql**  provided by openGauss is a database connection tool running in the CLI.  **gsql**  provides basic and advanced functions of databases to facilitate user operations. This section describes how to use  **gsql**  to connect to a database. For details about how to use  **gsql**, see "Client Tools \> gsql" in  *Tool Reference*.
 
 ## Precautions<a name="en-us_topic_0283137029_en-us_topic_0237120292_en-us_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
@@ -87,7 +87,7 @@ Connection information has been confirmed. For details, see  [Confirming Connect
         scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
         ```
 
-        In the preceding command,  **/opt/huawei/install/app**  indicates the  _\{gaussdbAppPath\}_  path configured in the  **clusterconfig.xml**  file, and  **10.10.0.30**  indicates the IP address of the client host.
+        In the preceding command,  **/opt/huawei/install/app**  indicates the  *\{gaussdbAppPath\}*  path configured in the  **clusterconfig.xml**  file, and  **10.10.0.30**  indicates the IP address of the client host.
 
     6.  Log in to the host where the client is installed and set environment variables.
 
@@ -124,5 +124,3 @@ Connection information has been confirmed. For details, see  [Confirming Connect
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   If a machine connected to openGauss is not in the same network segment as openGauss, the IP address specified by  **-h**  should be the value of  **coo.cooListenIp2**  \(application access IP address\) set in Manager.
     >-   Do not remotely connect to the database as user  **omm**.
-
-

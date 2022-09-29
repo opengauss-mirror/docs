@@ -139,7 +139,9 @@ Obtain the XML file template from  **script/gspylib/etc/conf/cluster\_config\_te
 ![](public_sys-resources/icon-note.gif) **NOTE:** 
 Each server must contain the following information. The following uses  **node1**  as an example.
 
-The information in bold is only an example. You can replace it as required. Each line of information is commented out.
+The content is an example and can be replaced as required. Each line of information has a comment.
+
+**Configure the following information on the host:**
 
 ```
 <!-- Information about node deployment on each server -->
@@ -362,7 +364,7 @@ In the parameter value, the first and second IP addresses are the IP addresses o
 
 | Directory        | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| /opt/huawei/data | Directory that stores instance data of the cluster. It is a data storage directory, and should be on a data disk.This directory must meet the following requirements:The disk space is planned according the actual service data volume.Directories for storing data of each instance are independent from each other. [Table 3](mk:@MSITStore:C:\Users\lijun\Downloads\英文\英文\安装和管理员\05 Installation Guide_openGauss Only.chm::/en-us_topic_0000001247107125.html#EN-US_TOPIC_0000001247107125__table15838192510429) lists planning for the data directory of each instance in this document. |
+| /opt/huawei/data | Directory that stores instance data of the cluster. It is a data storage directory, and should be on a data disk.This directory must meet the following requirements:The disk space is planned according the actual service data volume.Directories for storing data of each instance are independent from each other. The following table lists planning for the data directory of each instance in this document.|
 
 **table 3** Database instance data directories
 
@@ -395,7 +397,7 @@ In the parameter value, the first and second IP addresses are the IP addresses o
     <DEVICELIST>
         <!-- Information about node deployment on node1 -->
         <DEVICE sn="node1_hostname">
-            <PARAM name="name" value="node1_hostname"/>
+            <PARAM name="name" value="node1_hostname" />
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
             <!-- If only one NIC is available for the server, set backIP1 and sshIP1 to the same IP address. -->
@@ -841,4 +843,3 @@ In the parameter value, the first and second IP addresses are the IP addresses o
     </DEVICELIST>
 </ROOT>
 ```
-

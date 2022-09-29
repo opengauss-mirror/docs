@@ -4352,28 +4352,14 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
 
 - pgfadvise\_DONTNEED
 
-<<<<<<< HEAD
   Description: This function set *DONTNEED* flag on the current relation. It means that the
   Operating System will first unload pages of the file if it need to free some
   memory. Main idea is to unload files when they are not usefull anymore (instead
   of perhaps more interesting pages)
 
-  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
+  Parameter: a table name or an index name, the table can be partition table or subpartition table. Column-store tables and segment-page tables are not supported.
 
   Example: 
-=======
-    Description: Sets the DONTNEED flag for the current relationship. This means that if you need to free some memory, the operating system will first unload the pages of the file. The main idea is to unload files that are no longer in use \(rather than pages that might be used\).
-
-    Example:
-
-    ```
-    cedric=# select * from pgfadvise_dontneed('pgbench_accounts');
-          relpath       | os_page_size | rel_os_pages | os_pages_free
-    --------------------+--------------+--------------+---------------
-     base/11874/16447   |         4096 |       262144 |        342071
-     base/11874/16447.1 |         4096 |        65726 |        408103
-    ```
->>>>>>> cf71f1bb9cdaaf6fe842d0b8ca4826d3c531138a
 
       cedric=# select * from pgfadvise_dontneed('pgbench_accounts');
             relpath       | os_page_size | rel_os_pages | os_pages_free
@@ -4381,12 +4367,11 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
        base/11874/16447   |         4096 |       262144 |        342071
        base/11874/16447.1 |         4096 |        65726 |        408103
 
-<<<<<<< HEAD
 - pgfadvise\_WILLNEED
 
   Description: This function set *WILLNEED* flag on the current relation. It means that the Operating Sytem will try to load as much pages as possible of the relation. Main idea is to preload files on server startup, perhaps using cache hit/miss ratio or most required relations/indexes.  
 
-  Parameter: a table name or an index name, the table can be partition table or subpartition table. 
+  Parameter: a table name or an index name, the table can be partition table or subpartition table. Column-store tables and segment-page tables are not supported.
 
   Example: 
 
@@ -4395,19 +4380,6 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
       --------------------+--------------+--------------+---------------
        base/11874/16447   |         4096 |       262144 |         80650
        base/11874/16447.1 |         4096 |        65726 |         80650
-=======
-    Description: Sets the WILLNEED flag for the current relationship. This means that the operating system will try to load as many pages as possible for that relationship. The main idea is to preload files during server startup. During file preloading, information such as the cache hit rate, error rate, and relationships and indexes that are most likely to be used may be used.
-
-    Example:
-
-    ```
-    cedric=# select * from pgfadvise_willneed('pgbench_accounts');
-    relpath       | os_page_size | rel_os_pages | os_pages_free 
-    --------------------+--------------+--------------+---------------
-    base/11874/16447   |         4096 |       262144 |         80650
-    base/11874/16447.1 |         4096 |        65726 |         80650
-    ```
->>>>>>> cf71f1bb9cdaaf6fe842d0b8ca4826d3c531138a
 
 -   pgfadvise\_NORMAL
 
@@ -4428,12 +4400,14 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     Parameters:
     -   The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
     -   The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
-    -   The third parameter specifies a relationship type. A character needs to be transferred. For a common relationship, the value of this parameter is **'r'** or **'R'**. For a partitioned table, the value of this parameter is **'p'** or **'P'**.
+    -   The third parameter specifies a relationship type. A character needs to be transferred. For a common relationship, the value of this parameter is **'r'**. For a partitioned table, the value of this parameter is **'p'**. For a level-2 partitioned table, the value of this parameter is **'s'**.
     -   The fourth parameter: For a partition table, this parameter indicates the name of the partition. For a level-2 partitioned table, this parameter indicates the name of the level-2 partition. For an ordinary table, set this parameter to **NULL**. If other values are transferred, the query of the ordinary table is not affected.
     -   The fifth parameter specifies the segment number.
     -   The sixth parameter returns a Boolean value, indicating whether to perform the load operation.
     -   The seventh parameter returns a Boolean value, indicating whether to perform the unload operation.
     -   The eighth parameter is databit. This parameter is generally obtained by using pgfincore().
+
+
 
     Example: The relationship name is  **pgbench\_accounts**, the segment number is 0, and any varbit mapping is used.
 
@@ -4476,11 +4450,7 @@ The following table lists the functions used by openGaussGaussDB Kernel to imple
     Description: Provides information about the file system cache \(page cache\).
 
     Parameter: table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
-    Parameters:
-    -   The first parameter specifies the table name or index name. Partitioned tables and level-2 partitioned tables are supported. Column-store tables and segment-page tables are not supported.
-    -   The second parameter is **forkname**. The data of each relationship is stored in a so-called fork. Generally, the default value of **forkname** is **main**. This parameter can be omitted.
-    -   The third parameter returns a Boolean value. The value **true** indicates that databit needs to be returned, and the value **false** indicates that databit does not need to be returned. This parameter can be omitted. For an integer or floating point number, zero is equivalent to false, and a non-zero value is equivalent to true. (It is not recommended that an integer or floating point number be transferred.)
-    
+
     Example:
 
     ```

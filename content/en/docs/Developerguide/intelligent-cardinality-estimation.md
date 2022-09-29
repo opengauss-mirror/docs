@@ -1,11 +1,11 @@
 # Intelligent Cardinality Estimation<a name="EN-US_TOPIC_0000001316445490"></a>
 
--   **[Overview](overview-66-1.md)** 
+-   **[Overview](overview-abo.md)** 
 
--   **[Prerequisites](prerequisites-66.md)** 
+-   **[Prerequisites](prerequisites-abo.md)** 
 
--   **[Usage Guide](usage-guide-66-1.md)** 
+-   **[Usage Guide](usage-guide-abo.md)** 
 
--   **[Best Practices](best-practices-66.md)** 
+-   **[Best Practices](best-practices-abo.md)** 
 
--   **[Troubleshooting](troubleshooting-66-1.md)** 
+-   **[Troubleshooting](troubleshooting-abo.md)** 

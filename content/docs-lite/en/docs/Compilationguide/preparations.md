@@ -8,7 +8,7 @@ Git and Git Large File Storage \(LFS\) have been installed and configured on the
 
 **Procedure**
 
-1.  Run the following command to download the openGauss-server code. In the command,  _\[git ssh address\]_  indicates the code download address, which can be obtained from the openGauss community.
+1.  Run the following command to download the openGauss-server code. In the command,  *\[git ssh address\]*  indicates the code download address, which can be obtained from the openGauss community.
 
     ```
     [user@linux sda]$ git clone [git ssh address] openGauss-server
@@ -17,7 +17,10 @@ Git and Git Large File Storage \(LFS\) have been installed and configured on the
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   **openGauss-server**: openGauss code repository.
     >-   Database compilation depends on open-source third-party software. You can obtain the open-source third-party software from  [Building Open-source Software](#en-us_topic_0283136302_section13890105116714). Since open-source software build takes a long time, we have built  **binarylibs**  using  **openGauss-third\_party**  and compressed and uploaded it to the Internet.
-    >    You can download it at  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-third\_party\_binarylibs.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-third_party_binarylibs.tar.gz).
+    > The community provides binary files compiled on three platforms. The download links are as follows:\
+    **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
+    **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
+    **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
 
 2.  When the progress of each download reaches 100%, the download is successful.
 
@@ -29,7 +32,7 @@ The community provides built third-party binary files. If you directly use the b
 
 Install git and git-lfs, and then run the following commands to download the openGauss-third\_party repository code:
 
-\[user@linux sda\]$ git clone  _\[git ssh address\]_  openGauss-third\_party
+\[user@linux sda\]$ git clone  *\[git ssh address\]*  openGauss-third\_party
 
 **Building Open-source Software**
 
@@ -243,4 +246,3 @@ The following table describes the parameters.
 >3.  **-nopkg**  performs only lite compilation, and no packaging is performed. The compilation result is stored in the  **openGauss-server/mppdb\_temp\_install**  directory. If this parameter is not specified, the file is packaged by default and the packaging result is stored in the  **openGauss-server/output**  directory.
 
 >4.  Each option in this script has a default value. The number of options is small and the dependency is simple. Therefore, this script is easy to use. If the required value is different from the default value, set this parameter based on the actual requirements.
-

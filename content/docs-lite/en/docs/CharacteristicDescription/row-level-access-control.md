@@ -25,7 +25,7 @@ None.
 ## Constraints<a name="section06531946143616"></a>
 
 -   Row-level access control policies can be applied only to  **SELECT**,  **UPDATE**, and  **DELETE**  operations and cannot be applied to  **INSERT**  and  **MERGE**  operations.
--   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, replication tables, unlogged tables, and hash tables. Row-level access control policies cannot be defined for HDFS tables, foreign tables, and temporary tables.
+-   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, replication tables, unlogged tables, and hash tables. Row-level access control policies cannot be defined for foreign tables and temporary tables.
 -   Row-level access control policies cannot be defined for views.
 -   A maximum of 100 row-level access control policies can be defined for a table.
 -   Initial users and system administrators are not affected by row-level access control policies.

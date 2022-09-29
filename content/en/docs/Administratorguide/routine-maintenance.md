@@ -1949,6 +1949,8 @@ Run the following command to check the execution information about the SQL state
 gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp); 
 Run the following command to check the execution information about the slow SQL statements in the database instance:
 gsql> select * from dbe_perf.get_global_slow_sql_by_timestamp(start_timestamp, end_timestamp);
-Check the execution information about the SQL statement on the current node.
+Check the execution information about the SQL statement on the current primary node.
 gsql> select * from statement_history;
+Check the execution information about the SQL statement on the current standby node.
+gsql> select * from dbe_perf.standby_statement_history(is_only_slow, start_timestamp, end_timestamp);
 ```

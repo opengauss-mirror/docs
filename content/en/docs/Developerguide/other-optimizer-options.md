@@ -461,7 +461,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that code optimization is disabled.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >Currently, the LLVM optimization only supports the vectorized executor and SQL on Hadoop features. You are advised to set this parameter to  **off**  in other cases.
+    >Currently, the LLVM optimization only supports the vectorized executor features. You are advised to set this parameter to  **off**  in other cases.
 
 
 **Default value**:  **on**

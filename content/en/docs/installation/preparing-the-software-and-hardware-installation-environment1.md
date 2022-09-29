@@ -233,7 +233,7 @@ Currently, the installation can be performed only when the firewall is disabled.
 
 **Setting Character Set Parameters**
 
-Set the same character set for all database nodes. You can add  **export LANG=**_Unicode_  to the  **/etc/profile**  file.
+Set the same character set for all database nodes. You can add  **export LANG=***Unicode*  to the  **/etc/profile**  file.
 
 ```
 vim /etc/profile
@@ -256,7 +256,7 @@ Ensure that the time zone and time on each database node are consistent.
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >_$Locale/$Time zone_  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
+    >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
 3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
 

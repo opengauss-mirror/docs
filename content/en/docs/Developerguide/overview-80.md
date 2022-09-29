@@ -141,6 +141,12 @@ The name and structure of the user history table are as follows:
     >-   Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
     >-   When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
 
+    >![](public_sys-resources/icon-warning.gif) **Warning:**
+    >
+    >-   The dbe\_perf and snapshot schemas cannot be altered to the blockchain attribute, for example, ALTER SCHEMA dbe_perf WITH BLOCKCHAIN.
+    >-   The system schema cannot be altered to the blockchain attribute, such as ALTER SCHEMA pg_catalog WITH BLOCKCHAIN.
+    >-   The attribute of a schema that contains a table cannot be changed to blockchain using the ALTER SCHEMA statement.
+
 3.  Modify the data in the tamper-proof user table.
 
     For example, execute  **INSERT**,  **UPDATE**, or  **DELETE**  on the tamper-proof user table.

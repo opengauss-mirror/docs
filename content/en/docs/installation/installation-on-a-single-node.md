@@ -76,5 +76,3 @@
      Receiver info:
     No information 
     ```
-
-

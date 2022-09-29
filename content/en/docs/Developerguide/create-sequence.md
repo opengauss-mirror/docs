@@ -37,7 +37,7 @@ CREATE [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
 -   **MINVALUE minvalue | NO MINVALUE| NOMINVALUE**
 
-    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>-1**.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
+    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>+1**.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
 
 -   **MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE**
 
@@ -139,4 +139,3 @@ openGauss=# DROP SEQUENCE serial1 cascade;
 ## Helpful Links<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section184942174514"></a>
 
 [DROP SEQUENCE](drop-sequence.md)  and  [ALTER SEQUENCE](alter-sequence.md)
-

@@ -2,5 +2,9 @@
 
 openGauss is an open-source, secure, and reliable relational OLTP database with ultimate performance. It is released with the Mulan PSL v2 protocol, allowing users to copy, use, modify, and distribute the source code.
 
-The version number of openGauss is named in  _X.Y.Z_  format.  _X_  indicates the version for architecture changes,  _Y_  indicates the version released every year, and  _Z_  indicates the patch version. Generally, a  _Y_  version is released every year. A new  _X_  version is released for major architecture or feature changes. The preliminary openGauss lifecycle plan is 3.5 years.
+The version number of openGauss is named in  *X.Y.Z*  format.  *X_  indicates the version for architecture changes,  _Y*  indicates the version released every year, and  *Z_  indicates the patch version. Generally, a  _Y*  version is released every year. A new  *X*  version is released for major architecture or feature changes.
 
+The preliminary openGauss lifecycle plans are as follows:
+
++ The release version is released every one year, and the community provides three-year maintenance support.
++ The preview version is released every one year, and the community provides 0.5-year maintenance support.

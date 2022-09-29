@@ -15,7 +15,7 @@ Logical replication consists of logical decoding and data replication. Logical d
 
 Logical decoding provides basic transaction decoding capabilities for logical replication. openGauss uses SQL functions for logical decoding. This method features easy function calling, requires no tools to obtain logical logs, and provides specific interfaces for interconnecting with external replay tools, saving the need of additional adaptation.
 
-Logical logs are output only after transactions are committed because they use transactions as the unit and logical decoding is driven by users. Therefore, to prevent Xlogs from being recycled by the system when transactions start and prevent required transaction information from being recycled by  **VACUUM**, openGauss introduces logical replication slots to block Xlog recycling.
+Logical logs are output only after transactions are committed because they use transactions as the unit and logical decoding is driven by users. Therefore, to prevent Xlogs from being recycled by the system when transactions start and prevent required transaction information from being recycled by  **VACUUM**, openGauss uses logical replication slots to block Xlog recycling.
 
 A logical replication slot means a stream of changes that can be replayed in other databases in the order they were generated in the original database. Each owner of logical logs maintains one logical replication slot.
 
@@ -26,7 +26,7 @@ A logical replication slot means a stream of changes that can be replayed in oth
 -   Logical decoding is not supported on the cascaded standby node.
 -   After a DDL statement \(for example,  **ALTER TABLE**\) is executed, the physical logs that are not decoded before the DDL statement execution may be lost.
 -   The size of a single tuple cannot exceed 1 GB, and decoded data may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
--   openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLINT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(**_n_**\)**,  **VARCHAR\(**_n_**\)**, and  **TEXT**.
+-   openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLINT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(***n_**\)**,  **VARCHAR\(***n_**\)**, and  **TEXT**.
 -   If the SSL connection is required, ensure that the guc parameter  **ssl**  is set to  **on**.
 -   The logical replication slot name must contain fewer than 64 characters and contain only one or more types of the following characters: lowercase letters, digits, and underscores \(\_\).
 -   Currently, logical replication does not support the MOT feature.

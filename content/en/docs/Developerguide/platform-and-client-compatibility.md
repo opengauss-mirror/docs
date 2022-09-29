@@ -87,6 +87,17 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >-   This parameter can be set only by dbcompatibility when you run the [CREATE DATABASE](create-database.md) command to create a database.
 >-   In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
+## enable_set_variables_b_format<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980108261141"></a>
+
+**Parameter description:** Specifies whether the function of customizing user variables is supported in the MY-compatible database.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+- **on** indicates that user variables can be customized in the MY-compatible database.
+- **off** indicates that user variables cannot be customized in the MY-compatible database.
+
 ## behavior\_compat\_options<a name="en-us_topic_0283137574_en-us_topic_0237124754_section1980124735516"></a>
 
 **Parameter description**: Specifies database compatibility behavior. Multiple items are separated by commas \(,\).
