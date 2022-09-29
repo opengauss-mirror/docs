@@ -580,7 +580,7 @@ headless: true
 			-   [案例：改建分区表]({{< relref "./docs/Developerguide/案例-改建分区表.md" >}})
 			-   [案例：改写SQL消除子查询（案例1）]({{< relref "./docs/Developerguide/案例-改写SQL消除子查询_案例1.md" >}})
 			-   [案例：改写SQL消除子查询（案例2）]({{< relref "./docs/Developerguide/案例-改写SQL消除子查询_案例2.md" >}})
-			-   [案例：改写SQL消除in-clause]({{< relref "./docs/Developerguide/案例-改写SQL消除in-clause.md)
+			-   [案例：改写SQL消除in-clause]({{< relref "./docs/Developerguide/案例-改写SQL消除in-clause.md" >}})
 		-   [性能日志]({{< relref "./docs/Developerguide/性能日志.md" >}})
 	-   [配置运行参数]({{< relref "./docs/Developerguide/配置运行参数.md" >}})
 		-   [查看参数当前取值]({{< relref "./docs/Developerguide/查看参数当前取值.md" >}})
