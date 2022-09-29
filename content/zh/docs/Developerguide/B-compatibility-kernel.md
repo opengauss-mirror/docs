@@ -47,5 +47,20 @@
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="CREATE-VIEW.md">CREATE VIEW</a>
 </td>
 </tr>
+<tr>
+<td>DDL</td>
+<td>支持在创建、修改对象等语句中指定COMMENT选项</td>
+<td>
+<a href="ALTER-FUNCTION.md">ALTER FUNCTION</a>、
+<a href="ALTER-PROCEDURE.md">ALTER PROCEDURE</a>、
+<a href="ALTER-TABLE.md">ALTER TABLE</a>、
+<a href="CREATE-FUNCTION.md">CREATE FUNCTION</a>、
+<a href="CREATE-INDEX.md">CREATE INDEX</a>、
+<a href="CREATE-PROCEDURE.md">CREATE PROCEDURE</a>、
+<a href="CREATE-TABLE.md">CREATE TABLE</a>、
+<a href="CREATE-TABLE-PARTITION.md">CREATE TABLE PARTITION</a>、
+<a href="CREATE-TABLE-SUBPARTITION.md">CREATE TABLE SUBPARTITION</a>
+</td>
+</tr>
 </tbody>
 </table>
