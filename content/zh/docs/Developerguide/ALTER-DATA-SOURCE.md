@@ -8,7 +8,7 @@
 
 ## 注意选项<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section12438141318319"></a>
 
--   只有初始用户/系统管理员/属主才拥有修改Data Source的权限。
+-   只有初始用户、系统管理员和属主才拥有修改Data Source的权限。
 -   修改属主时，新的属主用户必须是初始用户或系统管理员。
 -   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到每个节点的$GAUSSHOME/bin目录下。
 
