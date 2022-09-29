@@ -10,6 +10,8 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 -   对比原openGauss的SELECT语法，新增了WHERE子句下的sounds like语法。
 
+-   新增join不带on/using,效果与cross join一致。
+
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   查询数据
@@ -50,6 +52,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | { expression | ( expression [, ...] ) } WITH ROLLUP
     ```
 
+-   JOIN语法
+
+```
+[JOIN | INNER JOIN] {ON join_condition | USING ( join_column [, ...] ) }
+```
 
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
@@ -107,6 +114,36 @@ openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLL
       | 110
 (4 rows)
 ```
+
+openGauss=# create table join_1(col1 int4, col2 int8);
+
+openGauss=# create table join_2(col1 int4, col2 int8);
+
+openGauss=# insert into join_1 values(1, 2), (3, 3);
+
+openGauss=# insert into join_2 values(1, 1), (2, 3), (4, 4);
+
+openGauss=# select join_1 join join_2;
+
+ col1 | col2 | col1 | col2
+------+------+------+------
+    1 |    2 |    1 |    1
+    1 |    2 |    2 |    3
+    1 |    2 |    4 |    4
+    3 |    3 |    1 |    1
+    3 |    3 |    2 |    3
+    3 |    3 |    4 |    4
+
+openGauss=# select join_1 inner join join_2;
+
+ col1 | col2 | col1 | col2
+------+------+------+------
+    1 |    2 |    1 |    1
+    1 |    2 |    2 |    3
+    1 |    2 |    4 |    4
+    3 |    3 |    1 |    1
+    3 |    3 |    2 |    3
+    3 |    3 |    4 |    4
 
 ## 相关链接<a name="section156744489391"></a>
 
