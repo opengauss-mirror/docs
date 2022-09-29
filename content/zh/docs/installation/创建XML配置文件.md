@@ -138,10 +138,10 @@
 
 ## 配置Host基本信息
 
-![](public_sys-resources/icon-note.gif) **说明：** 
-
-每台Host服务器都必须有如下信息，如下示例以node1为例。
-
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>
+>每台Host服务器都必须有如下信息，如下示例以node1为例。
+>
 内容为示例，可自行替换。每行信息均有注释进行说明。
 
 **Host配置以下信息。**
@@ -204,15 +204,15 @@
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **说明：** 
-配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
-示例：xml配置文件中同时配置backIp1和backIp2参数：
-在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
-```
-<PARAM name="backIp1" value="192.168.0.1"/>
-<PARAM name="backIp2" value="192.168.0.2"/>
-```
-
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
+>示例：xml配置文件中同时配置backIp1和backIp2参数：
+>在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
+>```
+><PARAM name="backIp1" value="192.168.0.1"/>
+><PARAM name="backIp2" value="192.168.0.2"/>
+>```
+>
 ## 配置数据库主节点信息
 
 内容为示例，可自行替换。每行信息均有注释进行说明。
