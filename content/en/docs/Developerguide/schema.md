@@ -66,11 +66,6 @@ The following table describes the schemas of openGauss.
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>Manages information about the package service.</p>
 </td>
 </tr>
-<tr id="row66775912104"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p667145921018"><a name="p667145921018"></a><a name="p667145921018"></a>pkg_util</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p467155918100"><a name="p467155918100"></a><a name="p467155918100"></a>Manages information about the package tool.</p>
-</td>
-</tr>
 </tbody>
 </table>
 
