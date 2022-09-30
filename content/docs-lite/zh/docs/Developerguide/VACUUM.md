@@ -20,7 +20,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 -   VACUUM列存表内部执行的操作包括三个：迁移delta表中的数据到主表、VACUUM主表的delta表、VACUUM主表的desc表。该操作不会回收delta表的存储空间，如果要回收delta表的冗余存储空间，需要对该列存表执行VACUUM DELTAMERGE。
 -   同时执行多个VACUUM FULL可能出现死锁。
 -   如果没有打开xc\_maintenance\_mode参数，那么VACUUM FULL操作将跳过所有系统表。
--   执行DELETE后立即执行VACUUM FULL命令不会回收空间。执行DELETE后再执行1000个非SELECT事务，或者等待1s后再执行1个事务，之后再执行VACUUM FULL命令空间才会回收。
+-   执行DELETE后立即执行VACUUM FULL命令，可能不会回收空间，这取决于是否有DELETE事务之前开启的事务仍处于活跃状态。此时需要等待所有事务结束，或者重启数据库，再重新执行VACUUM FULL命令进行清理。
 
 ## 语法格式<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_s6ae572813e4047dbafe371b136af69ae"></a>
 
