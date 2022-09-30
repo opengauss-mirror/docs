@@ -24,6 +24,45 @@ openGauss can use the SHOW command to display various object information. For de
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-PROCESSLIST.md">SHOW PROCESSLIST</a></p>
 </td>
 </tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a table.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-TABLE.md">SHOW-CREATE-TABLE</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a function.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-FUNCTION.md">SHOW-CREATE-FUNCTION</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a stored procedure.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-PROCEDURE.md">SHOW-CREATE-PROCEDURE</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a database.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-DATABASE.md">SHOW-CREATE-DATABASE</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a trigger.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-TRIGGER.md">SHOW-CREATE-TRIGGER</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Display the statement for creating a view.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-CREATE-VIEW.md">SHOW-CREATE-VIEW</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Query GUC parameters. </p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-SHOW-VARIABLES.md">SHOW-VARIABLES</a></p>
+</td></tr>
+<tr><td><p>Display the user permission information in openGauss.</p></td><td><p><a href="dolphin-show-grants.md">SHOW GRANTS</a></p></td></tr>
+<tr><td><p>Display information about storage functions. </p></td><td><p><a href="dolphin-show-function-status.md">SHOW FUNCTION STATUS</a></p></td></tr>
+<tr><td><p>Display the information about the stored procedure. </p></td><td><p><a href="dolphin-show-procedure-status.md">SHOW PROCEDURE STATUS</a></p></td></tr>
+<tr><td><p>Display information about the trigger. </p></td><td><p><a href="dolphin-show-triggers.md">SHOW TIRRGER</a></p></td>
+</tr>
 </tbody>
 </table>
 
@@ -70,6 +109,11 @@ The openGauss allows you to run the GRANT command to grant various permissions. 
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-GRANT.md">GRANT CREATE TABLESPACE</a></p>
 </td>
 </tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a05852c742a4dd98ece08701b9dd96945a"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"></a>Grant the proxy permission.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a href="../undefined">GRANT PROXY</a></p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -114,6 +158,11 @@ openGauss allows you to run the REVOKE command to revoke various permissions. Fo
 <tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>Grant permission to create tablespaces.</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_a59d57072ed9040daaf876aa3b5017935"></a><a href="dolphin-REVOKE.md">REVOKE CREATE TABLESPACE</a></p>
+</td>
+</tr>
+<tr id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_e6a4b114348a6fc29442f570890d0d1930"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_fb90643b4fa0c442c807ceb382f51000c4"><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_fb90643b4fa0c442c807ceb382f51000c4"></a><a name="en-us_topic_0283136632_en-us_topic_0237122051_en-us_topic_0059777960_fb90643b4fa0c442c807ceb382f51000c4"></a>Revoke the proxy permission.</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_56fd6b825588cb7108647eeeae6dd8c9c8"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_56fd6b825588cb7108647eeeae6dd8c9c8"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_56fd6b825588cb7108647eeeae6dd8c9c8"></a><a href="../undefined">REVOKE PROXY</a></p>
 </td>
 </tr>
 </tbody>

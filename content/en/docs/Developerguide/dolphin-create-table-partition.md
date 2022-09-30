@@ -104,7 +104,7 @@ Where create\_option is:
 - table_indexclause:
 
   ```
-  {INDEX | KEY} [index_name] [index_type] (key_part,...)
+  {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
   ```
 
 - Values of index\_type are as follows:
@@ -125,6 +125,17 @@ Where create\_option is:
     >-  The data type of the prefix key column must be binary or character (excluding special characters).
     >-  The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.
 
+- The index\_option parameter is as follows:
+
+  ```
+  index_option:{
+  	  COMMENT 'string'
+  	| index_type
+  }
+  ```
+  
+  The sequence and quantity of COMMENT and index\_type can be random, but only the last value of the same column takes effect.
+  
 - like\_option:
 
   ```
