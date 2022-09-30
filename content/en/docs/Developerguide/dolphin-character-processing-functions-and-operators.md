@@ -4,6 +4,8 @@ Compared with the original openGauss, Dolphin modifies character processing func
 1. The regexp, not regexp, and rlike operators are added.
 2. The locate, lcase, ucase, insert, bin, chara, elt, field, find_int_set, hex, space, and soundex functions are added.
 3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
+4. The XOR function of the ^ operator is added, and the LIKE BINARY/NOT LIKE BINARY operator is added.
+5. The LIKE/NOT LIKE operator is modified.
 
 -   bit\_length\(string\)
 
@@ -452,3 +454,81 @@ Compared with the original openGauss, Dolphin modifies character processing func
      hello
     (1 row)
     ```
+
+- ^
+
+  Description: Implements the XOR function of two character strings. The content before the first non-numeric symbol is truncated for XOR.
+
+  Return type: INT
+
+  Example: 
+
+  ```
+  openGauss=# SELECT '123a'^'123';
+  ?column?
+  ---------
+        0
+  (1 row)
+  ```
+
+- like/not like
+
+  Description: Specifies whether the string matches the pattern string following LIKE. In the source version, LIKE of openGauss is case sensitive. In this version, when **b\_compatibility\_mode** is set to **TRUE**, LIKE is case insensitive. When **b\_compatibility\_mode** is set to **FALSE**, LIKE is case sensitive. If the string matches the provided pattern, the LIKE expression returns true (the ILIKE expression returns false).
+
+  Return type: Boolean
+
+  Example: 
+
+  ```
+  openGauss=# SELECT 'a' like 'A' as result;
+   result
+  ------------
+           t
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like 'a' as result;
+   result
+  ------------
+            f
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like 'A%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  ```
+
+- like binary/not like binary
+
+  Description: Determines whether a string can match the pattern string after LIKE BINARY. LIKE BINARY uses case-sensitive pattern matching. If the pattern is matched, true is returned (NOT LIKE BINARY returns false). If the pattern is not matched, false is returned (NOT LIKE BINARY returns true).
+
+  Return type: Boolean
+
+  Example: 
+
+  ```
+  openGauss=# SELECT 'a' like binary 'A' as result;
+   result
+  ------------
+           f
+  (1 row)
+  
+  openGauss=# SELECT 'a' like binary 'a' as result;
+   result
+  ------------
+           t
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like binary 'a' as result;
+   result
+  ------------
+            f
+  (1 row)
+  
+  openGauss=# SELECT 'abc' like binary 'a%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  ```

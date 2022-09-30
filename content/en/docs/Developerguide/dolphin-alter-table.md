@@ -28,6 +28,7 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
         | DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]
         | RENAME INDEX index_name to new_index_name
         | ADD table_indexclause
+        | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
     ```
 
 -   Recreate a table.
@@ -43,12 +44,26 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
         RENAME { TO | AS } new_table_name;
     ```
 
+-   Add the ON UPDATE attribute to the timestamp column of the table.
+
+    ```sql
+    ALTER TABLE table_name
+        MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP;
+    ```
+
+-   Delete the ON UPDATE attribute from the timestamp column of the table.
+
+    ```sql
+    ALTER TABLE table_name
+        MODIFY column_name column_type;
+    ```
+
 -   **ADD table_indexclause**
 
     Add an index to the table.
 
     ```
-    {INDEX | KEY} [index_name] [index_type] (key_part,...)
+    {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
     ```
 
     Values of index\_type are as follows:
@@ -60,8 +75,19 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
     Values of key\_part are as follows:
 
     ```
-    {col_name | (expr)} [ASC | DESC]
+    {col_name[(length)] | (expr)} [ASC | DESC]
     ```
+    
+    The index\_option parameter is as follows:
+    
+    ```
+    index_option:{
+    	  COMMENT 'string'
+    	| index_type
+    }
+    ```
+    
+    The sequence and quantity of COMMENT and index\_type can be random, but only the last value of the same column takes effect.
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**
 

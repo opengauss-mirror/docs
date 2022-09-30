@@ -10,6 +10,12 @@ Creates an empty table in the current database. The table will be owned by the c
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
+
+Create a table using LIKE.
+```
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name LIKE source_table [ like_option [...] ]
+```
+
 Create a table.
 
 ```
@@ -36,7 +42,7 @@ Where create\_option is:
         [ COMPRESSION [=] compression_arg ]
         [ ENGINE [=] engine_name ]
         [ COLLATE [=] collation_name ]
-        [ CHARSET [=] charset_name ]
+        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
         [ ROW_FORMAT [=] row_format_name ]
 
     In addition to the WITH option, you can enter the same create\_option for multiple times. The latest input prevails.
@@ -45,8 +51,11 @@ Where create\_option is:
 -   table_indexclause:
 
     ```
-    {INDEX | KEY} [index_name] [index_type] (key_part,...)
+    {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
     ```
+    
+    This syntax does not support CREATE FOREIGN TABLE (such as MOT).
+
 
 -   Values of index\_type are as follows:
 
@@ -57,7 +66,26 @@ Where create\_option is:
 -   Values of key\_part are as follows:
 
     ```
-    {col_name | (expr)} [ASC | DESC]
+    {col_name[(length)] | (expr)} [ASC | DESC]
+    ```
+    
+    **length** indicates the prefix index.
+
+- The index\_option parameter is as follows:
+
+  ```
+  index_option:{
+  	  COMMENT 'string'
+  	| index_type
+  }
+  ```
+
+  The sequence and quantity of COMMENT and index\_type can be random, but only the last value of the same column takes effect.
+
+-   The like\_option is as follows:
+
+    ```
+    { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
 ## Parameter Description<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
@@ -68,13 +96,21 @@ Where create\_option is:
 
     For the enumeration type ENUM and character types such as CHAR, CHARACTER, VARCHAR, TEXT, you can use the keyword CHARSET or CHARACTER SET to specify the column character set when creating a table. Currently, it is used only for syntax and has no actual purpose.
 
+-   **column\_constraint**
+
+    The ON UPDATE feature of MySQL is added to the column type constraint. The constraint is of the same type as the DEFAULT attribute. The ON UPDATE attribute is used to automatically update the timestamp column when the timestamp column of the UPDATE operation is set to the default value.
+
+    ```sql
+    CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
+    ```
+
 -   **COLLATE collation**
 
     Assigns a collation to the column (which must be of a collatable data type). If no collation is specified, the default collation is used. You can run the **select \* from pg\_collation** command to query collation rules from the **pg\_collation** system catalog. The default collation rule is the row starting with **default** in the query result.
 
     If a collation is not supported, the database issues a warning and sets the column as the default collation.
 
--   **{ CHARSET | CHARACTER SET } \[=\] charset_name**
+-   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
     Selects the character set used by the table. Currently, it is used only for syntax and has no actual purpose.
 
@@ -131,6 +167,9 @@ openGauss=# CREATE TABLE tpcds.warehouse_t25
     index idx_SQ_FT using btree ((abs(W_WAREHOUSE_SQ_FT)))  ,
     key idx_SK using btree ((abs(W_WAREHOUSE_SK)+1))
 );
+
+--The index\_option column is included.
+openGauss=# create table test_option(a int, index idx_op using btree(a) comment 'idx comment');
 ```
 
 ```
