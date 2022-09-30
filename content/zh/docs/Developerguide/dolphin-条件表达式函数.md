@@ -68,6 +68,7 @@
   描述：
 
     - 将base_expr与后面的expr(n)逐一比较，直到expr(n)大于base_expr，返回value(n-1)；如果expr(n)均小于等于base_expr，则返回value(n)。
+    
     - 如果base_expr或者expr(n)为非数值数据：
     - BOOL型：TRUE转为1，FALSE转为0；
     - 能将其截断为float8形式浮点数，则将其截断为float8；
