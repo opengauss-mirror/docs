@@ -89,27 +89,31 @@
     
     COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
 - **{DISABLE | ENABLE} KEYS**
+
   禁用和启用一个表的所有非唯一索引。
 
 - **DROP INDEX index_name [ RESTRICT | CASCADE ]**
+
   删除一个表的索引。
 
 - **DROP PRIMARY KEY [ RESTRICT | CASCADE ]**
+
   删除一个表的外键。
 
 - **DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]**
+
   删除一个表的外键。
 
 - **RENAME INDEX index_name to new_index_name**
+
   重命名一个表的索引。
 
-## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
+>![](public_sys-resources/icon-note.gif) **说明：** 
 
-![](public_sys-resources/icon-note.gif) **说明：** 
-涉及的参数说明可见[ALTER TABLE](ALTER-TABLE.md)。
+>涉及的参数说明可见[ALTER TABLE](ALTER-TABLE.md)。
 
 ## 示例<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 
