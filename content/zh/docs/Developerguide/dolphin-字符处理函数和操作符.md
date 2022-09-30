@@ -441,18 +441,18 @@
     (1 row)
     ```
 
--   make_set(bits, str1, str2, ...)
+-   make_set(number, string1, string2, ...)
 
-    描述：返回一个设置值(一个包含子字符串的字符串，以字符分隔)，该值由bits中设置了相应位的字符串组成。str1对应位0，st2对应位1，但这些类推。
-    str1，str2，...中的NULL值不添加到结果中。
+    描述：返回一个由number中设置了相应位的字符串组成的设置值（包含子字符串的字符串，以,分隔）。string1对应位0，string2对应位1，依此类推。
+    string1，string2，...中的NULL值不添加到结果中。
 
     返回值类型：text
 
     ```sql
-    select make_set(1|4, 'hello', 'nice', NULL, 'world');
+    select make_set(1|4, 'one', 'two', NULL, 'four');
      make_set 
     ----------
-     hello
+     one
     (1 row)
     ```
 
