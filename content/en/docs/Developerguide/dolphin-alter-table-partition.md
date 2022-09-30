@@ -198,6 +198,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
     It is generally used to reclaim the space used by a partition, which has the same effect as deleting all records stored in the partition and then inserting them again. This is useful for defragmentation.
 
     Column-store tables are not supported, and level-2 partitions of level-2 partitioned tables cannot be specified.
+    
     ```
     REBUILD PARTITION  { partition_name } [, ...]
     REBUILD PARTITION ALL

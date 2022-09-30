@@ -121,3 +121,44 @@ openGauss provides network-related functions.
      10.0.5.9
     (1 row)
     ```
+
+- is_ipv4_compat(bytea\)
+
+    Description: This function accepts an IPv6 address of a binary string represented as a number, as returned by INET6_ATON(). If the parameter is a valid IPv4-compatible IPv6 address, 1 is returned. Otherwise, 0 is returned. The format of an IPv4-compatible address is ::ipv4\_address.
+
+    Return type: int
+
+    Example: 
+
+    ```
+    openGauss=# SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));
+     is_ipv4_compat 
+    ----------------
+                  1
+    (1 row)
+    openGauss=# SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));
+     is_ipv4_compat 
+    ----------------
+                  0
+    (1 row)
+
+- is_ipv4_mapped(bytea\)
+
+    Description: This function accepts an IPv6 address of a binary string represented as a number, as returned by INET6\_ATON(). If the parameter is a valid IPv4-mapped IPv6 address, 1 is returned. Otherwise, 0 is returned. The IPv4-mapped address format is ::ffff:ipv4\_address.
+
+    Return type: int
+
+    Example: 
+
+    ```
+    openGauss=# SELECT IS_IPV4_MAPPED(INET6_ATON('::10.0.5.9'));
+     is_ipv4_mapped 
+    ----------------
+                  0
+    (1 row)
+
+    openGauss=# SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.5.9'));
+     is_ipv4_mapped 
+    ----------------
+                  1
+    (1 row)

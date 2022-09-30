@@ -7,8 +7,10 @@ Change the user password.
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 -   If no user is specified, the password of the current user is changed.
--   If the user is not superuser and does not have the create role permission, use REPLACE to specify the current password to change the password.
-
+-   An initial user can change the password of any user (including its own password). REPLACE does not need to be specified to verify the current password.
+-   A non-initial user cannot change the password of an initial user.
+-   The sysadmin user and users with the createrole permission can change the passwords of other users (non-initialization, non-sysadmin, and non-createrole users). REPLACE does not need to be specified to verify the current password.
+-   When the sysadmin user or a user with the createrole permission changes the password, REPLACE must be specified to verify the current password.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
