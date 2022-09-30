@@ -6,22 +6,22 @@ Hardware requirements for compiling the openGauss are as follows:
 
 -   Number of servers: 1
 -   Hardware specifications:
-    -   CPU: 4U
+    -   CPU: 4U \(64-bit\)
     -   Memory: 8 GB
-    -   Free disk space: 100 GB \(Linux 64-bit\)
+    -   Free disk space: 100 GB
 
 
 ## Software Requirements<a name="section1704182212918"></a>
 
 **OS Requirements**
 
-The following OSs are supported:
+The following OSs \(Linux 64-bit\) are supported:
 
--   CentOS 7.6 \(x86 architecture\)
+-   CentOS 7.6 \(x86_64 architecture\)
 -   openEuler-20.03-LTS \(aarch64 architecture\)
--   openEuler-20.03-LTS  \(x86 architecture\)
+-   openEuler-20.03-LTS  \(x86_64 architecture\)
 -   Kylin-V10 \(aarch64 architecture\)
--   Asianux 7.6 \(x86 architecture\)
+-   Asianux 7.6 \(x86_64 architecture\)
 -   Asianux 7.5 \(aarch64 architecture\)
 -   FusionOS 22 \(aarch64 architecture\)
 -   FusionOS 22 \(x86 architecture\)

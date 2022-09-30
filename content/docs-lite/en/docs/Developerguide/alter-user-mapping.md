@@ -6,7 +6,7 @@
 
 ## Precautions<a name="section1017451134717"></a>
 
-If the  **password**  option is displayed, ensure that the  **usermapping.key.cipher**  and  **usermapping.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\\\_guc**  tool to generate them and use the  **gs\\\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node.
+If the  **password**  option is displayed, ensure that the  **usermapping.key.cipher**  and  **usermapping.key.rand**  files exist in the  *\\$GAUSSHOME***/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs_guc**  tool to generate them and use the  **gs_ssh**  tool to release them to the  *$GAUSSHOME***/bin**  directory on each node.
 
 ## Syntax<a name="en-us_topic_0283137333_section191931133103"></a>
 
@@ -70,4 +70,3 @@ In  **OPTIONS**,  **ADD**,  **SET**, and  **DROP**  are operations to be perform
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.
-

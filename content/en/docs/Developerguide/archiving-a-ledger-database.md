@@ -31,7 +31,7 @@
 1.  Archive a specified user history table.
 
     ```
-    openGauss=# SELECT pg_catalog.ledger_hist_archive('ledgernsp', 'usertable')
+    openGauss=# SELECT pg_catalog.ledger_hist_archive('ledgernsp', 'usertable');
     ```
 
     The command output is as follows:
@@ -70,7 +70,7 @@
     (1 row)
     ```
 
-    The global history table will be archived to  _n_  \(number of user tables\) data records by user table:
+    The global history table will be archived to  *n*  \(number of user tables\) data records by user table:
 
     ```
     openGauss=# SELECT * FROM gs_global_chain;
@@ -81,5 +81,3 @@
     ```
 
     The command output indicates that the global blockchain table of the current node is successfully exported.
-
-

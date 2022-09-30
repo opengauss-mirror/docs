@@ -19,7 +19,7 @@ You can use a client tool to connect to a database through a the primary node of
      1  plat1 192.168.0.11  5001 /srv/gaussdb/data1/dbnode  P Primary Normal
     ```
 
-    In the preceding information, the IP address of the server where the primary database node instance is deployed is  **192.168.10.11**. The data path of the primary node of the database is  **/srv/gaussdb/data1/dbnode**.  **P**  indicates that the role specified during the installation is  **Primary**. The role does not change after the database is installed and is read from the system static file.  **Primary**  means the primary instance.  **Normal**  indicates that openGauss is available, the data has redundancy backup, all processes are running, and the primary/standby relationship is normal.
+    In the preceding information, the IP address of the server where the primary database node instance is deployed is  **192.168.0.11**. The data path of the primary node of the database is  **/srv/gaussdb/data1/dbnode**.  **P**  indicates that the role specified during the installation is  **Primary**. The role does not change after the database is installed and is read from the system static file.  **Primary**  means the primary instance.  **Normal**  indicates that openGauss is available, the data has redundancy backup, all processes are running, and the primary/standby relationship is normal.
 
 3.  Confirm the port number of the primary node of the database.
 
@@ -42,5 +42,3 @@ You can use a client tool to connect to a database through a the primary node of
     ```
 
     **8000**  is the port number of the the primary node of the database.
-
-

@@ -336,7 +336,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
-**Default value**:  **off**. All the module logs are not output on the server. You can view the logs by running  **show logging\_module**. Example modules are displayed as follows: ALL,on\(\),off\(DFS,GUC,ORC,SLRU,MEM\_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,OPFUSION,VEC\_EXECUTOR,LLVM,OPT,OPT\_REWRITE,OPT\_JOIN,OPT\_AGG,OPT\_SUBPLAN,OPT\_SETOP,OPT\_SKEW,UDF,COOP\_ANALYZE,WLMCP,ACCELERATE,,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN\_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE\_CKPT,DBL\_WRT,RTO,HEARTBEAT\).
+**Default value**:  **off**. All the module logs are not output on the server. You can view the logs by running  **show logging\_module**. Example modules are displayed as follows: ALL,on\(\),off\(GUC,ORC,SLRU,MEM\_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,OPFUSION,VEC\_EXECUTOR,LLVM,OPT,OPT\_REWRITE,OPT\_JOIN,OPT\_AGG,OPT\_SUBPLAN,OPT\_SETOP,OPT\_SKEW,UDF,COOP\_ANALYZE,WLMCP,ACCELERATE,,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN\_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE\_CKPT,DBL\_WRT,RTO,HEARTBEAT\).
 
 **Setting method**: Run  **show logging\_module**  to view which modules are controllable. For example, the query output result is as follows:
 
@@ -344,7 +344,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 openGauss=# show logging_module;
 logging_module
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-ALL,on(),off(DFS,GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,T,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT)
+ALL,on(),off(GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,T,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT)
 (1 row)
 ```
 
@@ -354,7 +354,7 @@ Controllable modules are identified by uppercase letters, and the special ID  **
 openGauss=# set logging_module='on(SSL)';
 SET
 openGauss=# show logging_module;                                                                                                                                              logging_module                                               
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ALL,on(SSL),off(DFS,GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT,COMM_IPC,COMM_PARAM)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ALL,on(SSL),off(DFS,GUC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT,COMM_IPC,COMM_PARAM)
 (1 row)
 ```
 
@@ -366,7 +366,7 @@ The  **ALL**  identifier can be used to quickly enable or disable log output for
 openGauss=# set logging_module='off(ALL)';
 SET
 openGauss=# show logging_module;                                                                                                                                                logging_module                                              
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ALL,on(),off(DFS,GUC,ORC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ALL,on(),off(DFS,GUC,SLRU,MEM_CTL,AUTOVAC,CACHE,ADIO,SSL,TBLSPC,WLM,EXECUTOR,VEC_EXECUTOR,LLVM,OPT,OPT_REWRITE,OPT_JOIN,OPT_AGG,OPT_SUBPLAN,OPT_SETOP,OPT_SKEW,UDF,COOP_ANALYZE,WLMCP,ACCELERATE,PLANHINT,SNAPSHOT,XACT,HANDLE,CLOG,EC,REMOTE,CN_RETRY,PLSQL,TEXTSEARCH,SEQ,REDO,FUNCTION,PARSER,INSTR,INCRE_CKPT,DBL_WRT,RTO,HEARTBEAT)
 (1 row)
 
 openGauss=# set logging_module='on(ALL)';
@@ -406,4 +406,3 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 -   **off**  or  **false**  indicates that generation of ADIO logs is not allowed.
 
 **Default value**:  **off**
-

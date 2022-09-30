@@ -26,5 +26,4 @@ ssh -L 63333:localhost:8000 username@hostIP
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The first digit string \(**63333**\) of the  **-L**  parameter indicates the local port ID of the tunnel and can be randomly selected.
 >-   The second digit string \(**8000**\) indicates the remote port ID of the tunnel, which is the port ID on the server.
->-   _localhost_  is the IP address of the local host,  _username_  is the username on the database server to be connected, and  _hostIP_  is the IP address of the database server to be connected.
-
+>-   *localhost*  is the IP address of the local host,  *username*  is the username on the database server to be connected, and  *hostIP*  is the IP address of the database server to be connected.

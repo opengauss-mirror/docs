@@ -1,6 +1,9 @@
 # CPU<a name="EN-US_TOPIC_0289900497"></a>
 
 You can run the  **top**  command to check the CPU usage of each node in openGauss and analyze whether performance bottleneck caused by heavy CPU load exists.
+The **top** command is used to monitor the Linux OS status. It is a common performance analysis tool and can display the resource usage of each process in the system in real time.
+Parameter description:
+-**-d**: number of seconds, indicating the interval for updating the page displayed by running the **top** command. The default value is 5 seconds. **-b**: executes the **top** command in batches. **-n**: This parameter is used together with **-b** to indicate the number of times that the **top** command is executed. **-p**: specifies a PID for observation.
 
 ## Checking CPU Usage<a name="en-us_topic_0283136982_en-us_topic_0237121486_en-us_topic_0073253546_en-us_topic_0040046498_section5417561019132"></a>
 
@@ -111,7 +114,3 @@ In the command output, focus on the CPU usage occupied by each process.
             #10 0x00007f95c41df84d in clone () from /lib64/libc.so.6
             #11 0x0000000000000000 in ?? ()
             ```
-
-
-
-

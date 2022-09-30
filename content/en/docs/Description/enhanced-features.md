@@ -360,3 +360,7 @@ The syntax and semantics of the SQL engine are decoupled to implement plug-ins f
 -   The gs\_cgroup load management is supported.
 
     gs\_cgroup is a load management tool. It creates and manages Cgroups in the database kernel and sets system resource quotas and resource limits to manage the resource usage and priorities of users and services, fully utilizing machine resources.
+
+-  The standby node supports slow SQL performance diagnosis.
+
+    The slow SQL diagnosis capability can also be enabled on the standby node. Similar to the primary node, the standby node can record SQL performance details in multiple dimensions and granularities, such as events and wait events.

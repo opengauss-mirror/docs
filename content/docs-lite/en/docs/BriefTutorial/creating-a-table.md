@@ -26,7 +26,7 @@ CREATE TABLE table_name
 
 ## Examples<a name="section199331334134317"></a>
 
-Run the following commands to create a table named  **customer\_t1**. The table columns are  **c\_customer\_sk**,  **c\_customer\_id**,  **c\_first\_name**, and  **c\_last\_name**. The data types of the table columns are integer, char \(5\), char \(6\), and char \(8\), respectively.
+Run the following commands to create a table named  **customer\_t1**. The table columns are  **c\_customer\_sk**,  **c\_customer\_id**,  **c\_first\_name**, **c\_last\_name**, and **Amount**. The data types of the table columns are integer, char \(5\), char \(6\), char \(8\), and integer, respectively.
 
 ```
 openGauss=# CREATE TABLE customer_t1

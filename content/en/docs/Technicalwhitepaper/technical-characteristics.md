@@ -3,7 +3,7 @@
 Compared with other open-source databases, openGauss has the following characteristics:
 
 -   High performance
-    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,800,000 tpmC in Kunpeng 2-socket servers.
+    -   Provides the multi-core architecture-oriented concurrency control technology and Kunpeng hardware optimization, and achieves that the TPC-C benchmark performance reaches 1,500,000 tpmC in Kunpeng 2-socket servers.
     -   Uses NUMA-Aware data structures as the key kernel structures to adapt to the trend of using multi-core NUMA architecture on hardware.
     -   Provides the SQL bypass intelligent fast engine technology.
     -   The Ustore storage engine is provided for frequent update scenarios.

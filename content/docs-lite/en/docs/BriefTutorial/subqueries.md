@@ -27,7 +27,7 @@ WHERE  column_name OPERATOR
 
 Example:
 
-Create the  **customer**  table. The data is as follows:
+Create the  **customer_t1**  table. The data is as follows:
 
 ```
 openGauss=# SELECT * FROM customer_t1;

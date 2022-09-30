@@ -362,7 +362,7 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
         openGauss=# SHOW audit_enabled;
         ```
 
-        If the status is  **off**, run the  **\\q**  command to exit the database.
+        If off is displayed, run the **\q** command to exit the database and go to the next step. If on is displayed, no further action is required.
 
     2.  Run the following command to enable the audit function. The parameter settings take effect immediately.
 
@@ -383,5 +383,3 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
     ```
 
     **audit\_system\_object**  indicates the switch of the audit item, and  **12295**  indicates the value of the audit switch.
-
-

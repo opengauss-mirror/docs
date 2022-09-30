@@ -56,4 +56,3 @@ Install the  **hstore**  extension in the current database.
 ```
 CREATE EXTENSION hstore;
 ```
-

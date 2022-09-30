@@ -20,11 +20,10 @@ None
    **/opt/software/openGauss/clusterconfig.xml**  is the  XML configuration files during the openGauss installation.
 
    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-   >1. After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary two-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively.  
    >
-   >   
+   >- After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary two-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively.  
    >
-   >2. If  **--distribute**  is not specified, perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)  to distribute static configuration files to their corresponding hosts. If  **--distribute**  is specified, the static configuration files are automatically distributed and you do not need to perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e).  
+   >- If  **--distribute**  is not specified, perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)  to distribute static configuration files to their corresponding hosts. If  **--distribute**  is specified, the static configuration files are automatically distributed and you do not need to perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e).  
 
 3.  <a name="en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>\(Optional\) Replace the damaged static configuration files of the three hosts in the  **/opt/gaussdb/app/bin**  directory.
 
@@ -61,4 +60,3 @@ total 456
 -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat2
 -rwxr-xr-x 1 omm dbgrp 155648 2016-07-13 15:51 cluster_static_config_plat3
 ```
-

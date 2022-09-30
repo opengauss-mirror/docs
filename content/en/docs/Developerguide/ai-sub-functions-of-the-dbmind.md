@@ -12,4 +12,6 @@ You can run the  **component**  subcommand of  **gs\_dbmind**  to enable the cor
 
 -   **[SQLdiag: Slow SQL Discovery](sqldiag-slow-sql-discovery.md)**  
 
+-   **[SQL Rewriter: SQL Statement Rewriting](sql-rewriter-sql-statement-rewriting.md)** 
 
+-   **[Anomaly Detection](anomaly-detection.md)** 

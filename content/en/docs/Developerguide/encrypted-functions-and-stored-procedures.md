@@ -71,6 +71,5 @@ The  **gs\_encrypted\_proc**  system catalog is added to the function or stored 
 >-   **gs\_dump**  cannot be used to back up functions involving encrypted columns.
 >-   Keys cannot be created in functions or stored procedures.
 >-   In this version, encrypted functions and stored procedures do not support triggers.
->-   Encrypted equality query functions and stored procedures do not support the escape of the PL/pgSQL syntax. The  **CREATE FUNCTION AS'**_Syntax body_**'**  syntax whose syntax body is marked with single quotation marks \(''\) can be replaced with the  **CREATE FUNCTION AS $$**_Syntax body_** $$**  syntax.
+>-   Encrypted equality query functions and stored procedures do not support the escape of the PL/pgSQL syntax. The  **CREATE FUNCTION AS'***Syntax body***'**  syntax whose syntax body is marked with single quotation marks \(''\) can be replaced with the  **CREATE FUNCTION AS $$***Syntax body*** $$**  syntax.
 >-   The definition of an encrypted column cannot be modified in an encrypted equality query function or stored procedure, including creating an encrypted table and adding an encrypted column. Because the function is executed on the server, the client cannot determine whether the cache needs to be refreshed. The column can be encrypted only after the client is disconnected or the cache of the encrypted column on the client is refreshed.
-

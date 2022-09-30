@@ -24,7 +24,11 @@ The subscriber database behaves in the same way as any other openGauss instance 
 
 ## Enhancements<a name="section1359382119297"></a>
 
-None.
+In version 3.1.0, this feature is enhanced as follows:
+
+- gs\_probackup can be used to back up the logical replication slot of the publisher. In this way, the replication slot is not lost after the publisher uses gs\_probackup to back up and restore data, ensuring that the publication-subscription connections are normal.
+
+- Publication-subscription can synchronize basic data. Before a publication-subscription relationship is created, data already exists in the table of the publisher. The basic data is synchronized to the subscriber after the subscription is created.
 
 ## Constraints<a name="section13355203802911"></a>
 

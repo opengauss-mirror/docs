@@ -64,4 +64,3 @@ openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1)
 ## Helpful Links<a name="section156744489391"></a>
 
 [CREATE RESOURCE LABEL](create-resource-label.md)  and  [DROP RESOURCE LABEL](drop-resource-label.md)
-

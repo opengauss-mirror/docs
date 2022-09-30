@@ -25,7 +25,7 @@
     openGauss=# 
     ```
 
-    User  **omm**  is the administrator, and  _DBNAME_**=\#**  is displayed. If you log in to and connect to the database as a common user,  _DBNAME_**=\>**  is displayed, prompting you to enter SQL statements.
+    User  **omm**  is the administrator, and  *DBNAME***=\#**  is displayed. If you log in to and connect to the database as a common user,  *DBNAME***=\>**  is displayed, prompting you to enter SQL statements.
 
     **Non-SSL connection**  indicates that the database is not connected in SSL mode. 
 
@@ -37,7 +37,7 @@
 
 4.  gsql provides advanced functions for you to use the database.
 
-    The gsql program has some internal commands that are not SQL commands. They begin with a backslash \(\\\). For example:
+    The gsql program has some meta-commands that are not SQL commands. They begin with a backslash \(\\\). For example:
 
     -   You can run the following command to query the openGauss version and copyright information:
 
@@ -64,5 +64,3 @@
     ```
 
     By default, a client is automatically disconnected if it remains idle for a period longer than 10 minutes \(the default value of  **session\_timeout**\) after connecting to the database.
-
-

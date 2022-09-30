@@ -10,7 +10,7 @@ A cascaded standby server can be connected to a standby server based on the one-
 
 ## Benefits<a name="section46751668"></a>
 
-The one-primary-multiple-standby architecture cannot support a flexible structure in feature service scenarios. The multi-equipment room deployment cannot meet requirements of the complete structure in the HA switchover scenario \(three instances in the primary and standby equipment rooms and two or three instances in the secondary equipment room\). If the number of standby servers increases, the primary server may be overloaded. Queries that have low real-time requirements can be implemented on cascaded standby servers. Therefore, the cascading backup capability is required.
+The one-primary-multiple-standby architecture cannot support a flexible structure in special service scenarios. The multi-equipment room deployment cannot meet requirements of the complete structure in the HA switchover scenario \(three instances in the primary-standby equipment rooms and two or three instances in the standby-standby equipment rooms\). If the number of standby servers increases, the primary server may be overloaded. Queries that have low real-time requirements can be implemented on cascaded standby servers. Therefore, the cascading backup capability is required.
 
 ## Description<a name="section18111828"></a>
 
@@ -36,4 +36,3 @@ None
 ## Dependencies<a name="section57771982"></a>
 
 None
-

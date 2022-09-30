@@ -21,7 +21,9 @@ It supports customized resource monitoring and provides capabilities such as mon
 
 ## Enhancements<a name="section1340684315478"></a>
 
-None.
+The CM supports external status query and push.
+- The HTTP/HTTPS service is used to remotely query the cluster status, helping management personnel and O&M platforms monitor the cluster status.
+- When an primary/standby switchover occurs in the database cluster, the latest primary/standby information of the cluster is pushed to the receiving address registered by the application through the HTTP/HTTPS service in time. In this way, the application can detect the primary/standby change of the cluster in time and quickly connect to the new primary and standby nodes.
 
 ## Constraints<a name="section06531946143616"></a>
 
@@ -30,4 +32,3 @@ In scenarios where there are one primary node and one standby node, CM supports 
 ## Dependencies<a name="section8406643144716"></a>
 
 None.
-

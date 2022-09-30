@@ -26,7 +26,7 @@
 
     Description: Specifies the maximum value of expressions across all input values.
 
-    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
+    Parameter type: any array, numeric, string, or date/time type
 
     Return type: same as the argument data type
 
@@ -44,7 +44,7 @@
 
     Description: Specifies the minimum value of expressions across all input values.
 
-    Parameter type: any array, numeric, string, date/time type, or IPv4 and IPv6 addresses \(INET and CIDR data types\)
+    Parameter type: any array, numeric, string, or date/time type
 
     Return type: same as the argument data type
 

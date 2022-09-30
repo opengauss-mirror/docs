@@ -20,7 +20,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->A same value for  **[client\_min\_messages](#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **log\_min\_messages**  does not indicate the same level. For some log information, after this parameter is enabled, you also need to set  **logging\_modules**  to enable log printing for the corresponding module.
+>A same value for  **[client\_min\_messages](#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **log\_min\_messages**  does not indicate the same level. For some log information, after this parameter is enabled, you also need to set  **logging\_module**  to enable log printing for the corresponding module.
 
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162).
 
@@ -171,7 +171,7 @@ Valid values include  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->The parameter value is in milliseconds. You are advised to set it to a multiple of 1000. That is, the value is in seconds. The performance log files controlled by this parameter are stored in the  _$GAUSSLOG_**/gs\_profile/**<_node\_name_\> directory in .prf format. You are not advised to use this parameter externally.
+>The parameter value is in milliseconds. You are advised to set it to a multiple of 1000. That is, the value is in seconds. The performance log files controlled by this parameter are stored in the  *$GAUSSLOG***/gs\_profile/**<*node\*name_\> directory in .prf format. You are not advised to use this parameter externally.
 
 **Value range**: a number ranging from 0 to 2147483647. The unit is ms.
 
@@ -180,4 +180,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 A small value indicates that much data is logged, which seriously affects performance.
 
 **Default value**:  **0**
-
