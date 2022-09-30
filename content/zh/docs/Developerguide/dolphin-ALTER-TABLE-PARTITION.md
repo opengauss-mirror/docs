@@ -80,6 +80,7 @@
       >![](public_sys-resources/icon-notice.gif) **须知：** 
       >
       >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
+      >
       >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，会导致不能交换数据。
     
 -   row\_clause子语法用于设置分区表的行迁移开关。
@@ -116,6 +117,7 @@
    >![](public_sys-resources/icon-notice.gif) **须知：** 
    >
    >-   列存分区表不支持切割分区。
+   >
    >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
     
  -   不指定切割点no\_split\_point\_clause的语法为。
@@ -127,8 +129,11 @@
        >![](public_sys-resources/icon-notice.gif) **须知：** 
        >
        >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
+       >
        >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
+       >
        >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
+       >
        >-   在同一语句中partition\_less\_than\_item和partition\_start\_end\_item两者不可同时使用；不同split语句之间没有限制。
 
  -   分区项partition\_less\_than\_item的语法为。
@@ -147,7 +152,6 @@
                 {START(partition_value)} |
                 {END({partition_value | MAXVALUE})}
         } [TABLESPACE tablespace_name]
-        
         ```
 
  -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
@@ -170,6 +174,7 @@
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
+    >
     >-   间隔/哈希分区表不支持添加分区。
 
 -   drop\_clause子语法用于删除分区表中的指定分区。
@@ -193,24 +198,32 @@
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name  )}
         RENAME PARTITION { partion_name | FOR ( partition_value [, ...] ) } TO partition_new_name;
+    ```
 
 -   重建分区语法
+
     一般用于回收分区使用空间，与删除存储在分区中的所有记录，然后重新插入它们的效果相同。这对于碎片整理很有用。
 
     不支持列存表，不支持指定二级分区表的二级分区。
+
     ```
     REBUILD PARTITION  { partition_name } [, ...]
     REBUILD PARTITION ALL
     ```
+
 -   分区表remove partitioning语法
+
     移除表中partition，但是保留所有数据。
 
     不支持列存表和segment表。
+
     ```
     REMOVE PARTITIONING
     ```
 -   分区表repair，check和optimize语法
+
     仅支持语法，不做实际功能支持。
+
     ```
     CHECK PARTITION { partition_name } [, ...]
     CHECK PARTITION ALL
@@ -219,44 +232,55 @@
     OPTIMIZE PARTITION { partition_name } [, ...]
     OPTIMIZE PARTITION ALL
     ```
--   兼容b database Truncate分区语法
+
+-   兼容B database Truncate分区语法
+
     Truncate操作会删除当前分区对应的所有数据。
+
     ```
     TRUNCATE PARTITION { partition_name } [, ...]
     TRUNCATE PARTITION all
     ```
--   兼容b database exchange分区语法对齐
+-   兼容B database exchange分区语法对齐
+
     可以用来交换分区表和普通表的数据，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
 
     不支持交换二级分区。
+
     ```
     exchange partition partition_name with table table_name (without/with validation);
     ```
 
--   兼容b database analyze分区语法对齐
+-   兼容B database analyze分区语法对齐
+
     用于收集与表内容相关的统计信息。执行计划生成器会使用这些统计数据，以确定最有效的执行计划。
 
     不支持analyze指定二级分区。
+
     ```
     analyze partition { partition_name } [, ...]
     analyze partition all;
     ```
 
--   兼容b database add分区语法。
+-   兼容B database add分区语法。
+
     ```
     ADD {partition_less_than_item | partition_start_end_item| partition_list_item } [, ...]
     ```
 
--   兼容b database drop分区语法。
+-   兼容B database drop分区语法。
+
     ```
     DROP PARTITION { { partition_name } [ UPDATE GLOBAL INDEX ] } [, ...]
     DROP SUBPARTITION { { partition_name } [ UPDATE GLOBAL INDEX ] } [, ...]
     ```
 
--   兼容b database reorganize分区语法。
+-   兼容B database reorganize分区语法。
+
     重新分割或融合指定分区，重新划分分区的定义。
 
     以下是ALTER TABLE ... REORGANIZE PARTITION用于重新分区一些关键点：
+
     -   PARTITION用于确定新分区方案的选项应遵循与CREATE TABLE语句所使用的规则相同的规则。
     -   新的RANGE分区方案不能有任何重叠范围。一个新的LIST分区方案不能有任何重叠的值集。
     -   partition_definitions列表中的分区组合应与清单中命名的组合分区具有相同的范围或整体值集partition_list。
@@ -265,6 +289,7 @@
     -   不能用于REORGANIZE PARTITION更改表使用的分区类型。
     -   不可丢失原有表数据。
     -   不支持interval分区，不支持value分区。
+
     ```
     REORGANIZE PARTITION {{ partition_name } [, ...]} INTO {partition_less_than_item | partition_list_item } [, ...]
     ```
