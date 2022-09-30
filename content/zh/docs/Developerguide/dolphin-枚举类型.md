@@ -21,9 +21,10 @@ ENUM是一个字符串对象，其值是从创建表时在列定义中显式枚�
   
 * 枚举值不能包含`'anonymous_enum'`，同时不能将一个已有的类型重命名为包含`'anonymous_enum'`的名称，如果包含，会报错：
 
-  ```sql
+  ```
   CREATE TYPE country_anonymous_enum_1 AS enum('CHINA','USA');
   ERROR: enum type name "country_anonymous_enum_1" can't contain "anonymous_enum" 
+
   ```
 
 ### 枚举值的索引
@@ -56,12 +57,13 @@ t-shirt    | small
 
 * 如果您使用越界的索引号，则会导致错误。
   
-  ```sql
+  ```
   INSERT INTO shirts (name, size) VALUES ('t-shirt',4);
   ERROR:  enum order 4 out of the enum value size: 3
   LINE 1: INSERT INTO shirts (name, size) VALUES ('t-shirt',4);
                                                             ^
   CONTEXT:  referenced column: size
+
   ```
 
 ### 空值和空字符串
