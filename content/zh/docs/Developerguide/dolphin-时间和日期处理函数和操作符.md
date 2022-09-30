@@ -277,6 +277,7 @@
   给定年份和天数，返回该年份在此年份天数下日期值。
 
   备注:
+
     - 任一为NULL，函数返回NULL。
     - `dayofyear`必须大于0否则返回NULL。
     - 0 <= year < 70时：将year视作20XX年处理。 70 <= year < 100时：将year视作19XX年处理。
@@ -867,6 +868,7 @@
   第一参数`time`为time或datetime表达式，函数基于第二参数`format`格式化`time`值并返回为字符串。
 
   备注:
+
     - `format`支持的格式如下:
       | 格式 | 描述                                         |
       | ---- | -------------------------------------------- |
@@ -893,6 +895,7 @@
   提取的时间值最多保留六位小数，超出部分按照四舍五入进位。
 
   示例:
+
   ```sql
   openGauss=# select TIME_FORMAT('83:59:59.0000009', '%T|%r|%H|%h|%I|%i|%S|%f|%p|%k');
                     time_format                    
@@ -1011,6 +1014,7 @@
   功能描述：输入一个时间点`datetime`，返回`0000-01-01 00:00:00`到该时间点所经过的秒数
 
   备注：
+
   - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
   - 返回的结果只保留整秒数，小数部分直接舍弃。
 
@@ -1038,21 +1042,25 @@
 - unix_timestamp()
 
   函数原型：
+
   `NUMERIC UNIX_TIMESTAMP()`
 
   `NUMERIC UNIX_TIMESTAMP(text datetime)`
 
   功能描述：
+
   - 不输入任何参数，直接执行该函数，返回`1970-01-01 00:00:00 UTC`到当前时间点所经过的秒数
   - 输入一个时间点`datetime`，返回`1970-01-01 00:00:00 UTC`到`datetime`所经过的秒数
 
   备注：
+
   - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
   - 参数`datetime`的有效范围为`[1970-01-01 00:00:00.000000 UTC, 2038-01-19 03:14:07.999999 UTC]`。
   - 参数的输入范围会受到时区的影响，但最终计算结果不受时区影响。
   - 计算结果最多只保留六位小数。
 
   示例：
+
   ```sql
   opengauss=# select unix_timestamp('2022-09-01');
    unix_timestamp 
@@ -1080,9 +1088,11 @@
   功能描述：返回当前的UTC日期，类型为DATE。
 
   备注：
+
   - UTC_DATE能够以关键词的形式识别，此时无需包含括号。
 
   示例：
+
   ```sql
   opengauss=# select UTC_DATE();
     utc_date  
@@ -1100,6 +1110,7 @@
 - utc_time()
 
   函数原型：
+
   	`TIME UTC_TIME()`
   
   ​	`TIME UTC_TIME(int fsp)`
@@ -1107,9 +1118,11 @@
   功能描述：返回当前的UTC时间，类型为TIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]
   
   备注：
+
   - UTC_TIME能够以关键词的形式识别，此时无需包含括号。效果等同于无参数的UTC_TIME()函数。
   
   示例：
+
   ```sql
   opengauss=# select UTC_TIME();
    utc_time 
@@ -1405,6 +1418,7 @@
     描述：返回date参数代表的日期在一年中的第几周。mode参数为可选整型参数，范围为[0,7]。无mode参数传入时，GUC参数default_week_format会作为默认mode参数。
 
     mode参数的各种取值及其意义如下：
+
     | mode | 意义 |
     | --------|----------------------- |
     |0|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Sunday|
@@ -1417,6 +1431,7 @@
     |7|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Monday|
 
     对于**一周的第一天**，**week取值范围**，**判定一年第一周的条件**的说明：
+
     - **一周的第一天**指一周开始的那一天，Monday或者Sunday可能为一周的第一天。
     - **week取值范围**指WEEK函数返回值的取值范围，有[0-53]和[1-53]两种取值范围。其中[0-53]中的0代表给定日期实际位于其所在年份上一年的最后一周内，但为了将返回结果与给定日期所在年份联系起来，故认为给定日期位于其所在年份的第零周（也即还未开始第一周）。若希望给定日期所在周数与其所在年份关系更紧密，则应该使用0、1、4或者5作为mode值，这样，当给定日期位于其所在年份上一年的最后一周时，WEEK函数会返回0。
     - **判定一年第一周的条件**指判定所给日期位于当前年的第一周的条件，一般而言只有日期位于年份的边界才会进行判定。此判定有两种方式，由mode参数决定使用哪种方式。
@@ -1508,6 +1523,7 @@
   返回值类型：date
 
   示例：
+
   ```
   openGauss=# select from_days(365);
   from_days  
@@ -1531,6 +1547,7 @@
   备注：在B模式数据库中，此函数在GUC参数b_compatibility_mode为true时代替openGauss原有timestampdiff函数。
 
   示例：
+
   ```
   openGauss=# set b_compatibility_mode = true;
   SET
@@ -1555,6 +1572,7 @@
   返回值：datetime
 
   示例：
+
   ```
   openGauss=# SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');
         convert_tz
@@ -1610,6 +1628,7 @@
 - DATE\_SUB\(date/datetime/time, interval expr unit\)
   
   函数原型：
+
   ```
     text DATE_SUB(text expr1, INTERVAL expr2 unit)
     time DATE_SUB(time expr1, INTERVAL expr2 unit)
@@ -1653,9 +1672,11 @@
   ```
     
 - ADDDATE\(date/datetime/time, interval/days\)
+
   描述：该函数执行日期或时间加法运算。当第二参数为interval时，该函数表现与DATE_ADD函数相同，详细描述参见DATE_ADD。当第二参数为整数时，此整数会被当作天数加在第一参数上。
 
   示例：
+
   ```
   openGauss=# SELECT ADDDATE('2021-11-12', INTERVAL 1 SECOND);
         adddate
@@ -1685,6 +1706,7 @@
 - ADDTIME\(datetime/time,time\)
 
   函数原型：
+
   ``` 
   time ADDTIME(text expr1, time expr2)
   ```
@@ -1705,6 +1727,7 @@
       - 结果为time格式时，若超出[-838:59:59, 838:59:59]则报错。
   
   示例：
+  
   ```
   openGauss=# SELECT ADDTIME('11:22:33','10:20:30');
   addtime  
