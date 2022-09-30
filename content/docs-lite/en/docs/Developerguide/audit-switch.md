@@ -21,7 +21,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string
 
-**Default value:** **pg\_audit**
+**Default value:** **pg\_audit**. If **om** is used for openGauss deployment, audit logs are stored in **$GAUSSLOG/pg\_audit/*Instance name***.
+
+> ![](public_sys-resources/icon-notice.gif) **NOTICE:**  
+> You need to set different audit file directories for different DNs. Otherwise, audit logs will be abnormal.
 
 ## audit\_data\_format<a name="en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_s4738964503be49cb9b7ecf100f25df0d"></a>
 
@@ -39,7 +42,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to  _INT\_MAX_/60. The unit is min.
+**Value range**: an integer ranging from 1 to  *INT\*MAX_/60. The unit is min.
 
 **Default value:** **1d**
 
@@ -98,7 +101,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to 1048576
+**Value range**: an integer ranging from 100 to 1048576
 
 **Default value:** **1024**
 
@@ -117,4 +120,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >When  **audit\_dml\_state**  is enabled and high performance is required, you are advised to increase the value of this parameter to ensure that audit messages can be processed and recorded in a timely manner.
-

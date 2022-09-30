@@ -15,6 +15,7 @@ For logical replication, in addition to the configuration items described in sec
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The binary encoding rules are as follows:
+>
 >1.  The first four bytes represent the total number of bytes of the decoding result that follows the statement-level delimiter letter P \(excluded\) or the batch end character F \(excluded\) If the value is  **0**, the decoding of this batch ends.
 >2.  The next eight bytes (uint64) indicate the corresponding LSN (**begin** corresponds to **first\_lsn**, **commit** corresponds to **end\_lsn**, and other values correspond to the LSN of the statement).
 >3.  <a name="li12661162913519"></a>The following 1-byte letter can be  **B**,  **C**,  **I**,  **U**, or  **D**, representing BEGIN, COMMIT, INSERT, UPDATE, or DELETE.
@@ -33,13 +34,13 @@ For logical replication, in addition to the configuration items described in sec
 >    c.  The following two bytes \(uint16\) indicate the length of the table name.
 >    d.  The table name is read based on the preceding length.  
 >    e.  \(Optional\) If the next 1-byte letter is  **N**, it indicates a new tuple. If the letter is  **O**, it indicates an old tuple. In this case, the new tuple is sent first.  
->        i.  The following two bytes \(uint16\) indicate the number of columns to be decoded for the tuple, which is recorded as  **attrnum**.  
->        ii.  The following procedure is repeated for  *attrnum*  times.  
->            1).  The next two bytes \(uint16\) indicate the length of the column name.  
->            2).  The column name is read based on the preceding length.  
->            3).  The following four bytes \(uint32\) indicate the OID of the current column type.  
->            4).  The next four bytes \(uint32\) indicate the length of the value \(stored in the character string format\) in the current column. If the value is  **0xFFFFFFFF**, it indicates null. If the value is  **0**, it indicates a character string whose length is 0.  
->            5).  The column value is read based on the preceding length.  
+>        (i)  The following two bytes \(uint16\) indicate the number of columns to be decoded for the tuple, which is recorded as  **attrnum**.  
+>        (ii)  The following procedure is repeated for  *attrnum*  times.  
+>            (1)  The next two bytes \(uint16\) indicate the length of the column name.  
+>            (2)  The column name is read based on the preceding length.  
+>            (3)  The following four bytes \(uint32\) indicate the OID of the current column type.  
+>            (4)  The next four bytes \(uint32\) indicate the length of the value \(stored in the character string format\) in the current column. If the value is  **0xFFFFFFFF**, it indicates null. If the value is  **0**, it indicates a character string whose length is 0.  
+>            (5)  The column value is read based on the preceding length.  
 >    f.  Because there may still be a decoding statement after, if the next one-byte letter is  **P**, it indicates that the batch still needs to be decoded, and if the next one-byte letter is  **F**, it indicates that decoding of the batch ends.
 
 3.  Decoding only on the standby node

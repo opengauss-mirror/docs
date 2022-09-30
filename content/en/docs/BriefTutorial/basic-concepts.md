@@ -55,4 +55,3 @@ In addition, a transaction is the basic unit for recovery and concurrency contro
 -   Consistency: A transaction must change a database from one consistent state to another consistent state. Consistency is closely related to atomicity.
 -   Isolation: The execution of a transaction cannot be interfered by other transactions. It means that operations and data used in a transaction are isolated from those in other concurrent transactions. Concurrent transactions are independent of each other.
 -   Durability or Permanence: Once a transaction is committed, the data in the database is changed permanently. Subsequent operations or faults should not have any impact on them.
-

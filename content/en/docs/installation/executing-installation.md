@@ -13,6 +13,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >User  **omm**  must have the permission on the directory and subdirectories where the installation package is stored.
 
 2.  Log in to any host of the openGauss and switch to the  **omm**  user.
@@ -22,8 +23,11 @@ After the openGauss installation environment is prepared by executing the pre-in
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
+    >
     >-   You need to execute the  **gs\_install**  script as user  **omm**  specified in the  **gs\_preinstall**  script. Otherwise, an execution error will be reported.
+    >
     >-   openGauss compiled on the HiSilicon chip of a later version cannot run on the server with the HiSilicon chip of an earlier version. For example, the openGauss compiled on the Hi1620 cannot run on the Hi1616 environment.
 
 3.  Use  **gs\_install**  to install the openGauss. If the database is installed in environment variable separation mode, run the  **source**  command to obtain the environment variable separation file  **ENVFILE**.
@@ -40,29 +44,32 @@ After the openGauss installation environment is prepared by executing the pre-in
     -   Cannot be the same as the username, the current password \(**ALTER**\), or the current password in an inverted sequence.
     -   Contain at least three of the following: uppercase characters \(A to Z\), lowercase characters \(a to z\), digits \(0 to 9\), and other characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
-    The SSL certificate is generated during the installation. The certificate is stored in  _\{gaussdbAppPath\}_**/share/sslcert/om**, where  _\{gaussdbAppPath\}_  is the program installation directory specified in the openGauss configuration file.
+    The SSL certificate is generated during the installation. The certificate is stored in  *\{gaussdbAppPath\}***/share/sslcert/om**, where  *\{gaussdbAppPath\}*  is the program installation directory specified in the openGauss configuration file.
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **utf8**, and  **utf-8**; and  **Latine1**  and  **latine1**.
+    >
     >-   If no character set is specified during installation, the default character set SQL\_ASCII is used. To simplify and unify the locale, the default locale is  **C**. If you want to specify another character set and locale, use the  **--gsinit-parameter="--locale=LOCALE"**  parameter during installation. The  **LOCALE**  parameter specifies the default locale for the new database.
-    >    For example, to set the database encoding format to UTF-8, perform the following steps:
-    >    Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:
-    >    ```
-    >    omm@linux:~>  locale -a|grep utf8
-    >    ```
-    >    Information similar to the following is displayed, where  **en\_US.utf8**  indicates that the en\_US locale supports the UTF-8 encoding format.
-    >    ```
-    >    ...... 
-    >    en_SG.utf8 
-    >    en_US.utf8 
-    >    ......
-    >    ```
-    >    Select a locale as required, for example,  **en\_US.utf8**. Add the  **--locale=en\_US.utf8**  option when initializing the database for installation. The following is an example:
-    >    ```
-    >    gs_install -X /opt/software/openGauss/cluster_config.xml --gsinit-parameter="--locale=en_US.utf8"
-    >    ```
+    
+    For example, to set the database encoding format to UTF-8, perform the following steps:
+    Run the  **locale -a |grep utf8**  command to check the locale that supports UTF-8 encoding:
+    ```
+    omm@linux:~>  locale -a|grep utf8
+    ```
+    Information similar to the following is displayed, where  **en\_US.utf8**  indicates that the en\_US locale supports the UTF-8 encoding format.
+    ```
+    ...... 
+    en_SG.utf8 
+    en_US.utf8 
+    ......
+    ```
+    Select a locale as required, for example,  **en\_US.utf8**. Add the  **--locale=en\_US.utf8**  option when initializing the database for installation. The following is an example:
+    ```
+    gs_install -X /opt/software/openGauss/cluster_config.xml --gsinit-parameter="--locale=en_US.utf8"
+    ```
 
 4.  After the installation is successful, manually delete the trust between users  **root**  on the host, that is, delete the mutual trust file on each openGauss database node.
 
@@ -237,4 +244,3 @@ Successfully installed application.
 ## Troubleshooting<a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_sa05a0f9f81f34741a8a6ca3f5640a3b4"></a>
 
 If the installation fails, troubleshoot the problem based on logs in the  **gs\_install-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files in the openGauss log directory.
-

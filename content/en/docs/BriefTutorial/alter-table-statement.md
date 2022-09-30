@@ -28,7 +28,7 @@ The ALTER TABLE statement modifies tables, including modifying table definitions
 
     ```
     ALTER TABLE  table_name
-       ALTER column_name { SET | DROP } NOT NULL
+       ALTER column_name { SET | DROP } NOT NULL;
     ```
 
 
@@ -229,5 +229,3 @@ openGauss=# SELECT * FROM customer_t1;
               4320 | tpcds         | Lily         |             |   2000
     (10 rows)
     ```
-
-

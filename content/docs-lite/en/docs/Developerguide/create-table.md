@@ -224,8 +224,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Specifies an optional storage parameter for a table or an index.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   When using **Numeric** of any precision to define a column, specifies precision **p** and scale **s**.When precision and scale are not specified, the input will be displayed.
-    >-   In the Lite scenario, ORC functions of openGauss are unavailable.
 
     The description of parameters is as follows:
 
@@ -237,7 +237,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   ORIENTATION
 
-        Specifies the storage mode \(row-store, column-store, or ORC\) of table data. This parameter cannot be modified once it is set.
+        Specifies the storage mode \(row-store or column-store\) of table data. This parameter cannot be modified once it is set.
 
         Value range:
 
@@ -345,14 +345,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **[enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)**  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: 0 to 9999. The default value is  **100**.
-
-    -   VERSION
-
-        Specifies the version of ORC storage format.
-
-        Value range: 0.12. ORC 0.12 format is supported currently. More formats will be supported as the development of ORC format.
-
-        Default value:  **0.12**
 
     -   segment
 

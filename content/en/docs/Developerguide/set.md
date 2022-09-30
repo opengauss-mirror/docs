@@ -44,6 +44,22 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
                             | FROM CURRENT }}};
     ```
 
+- Set runtime parameters.
+
+  ```
+  SET { GLOBAL | @@GLOBAL.}
+      { {config_parameter = { expr | DEFAULT }}};
+  SET [ SESSION | @@SESSION. | @@]
+      { {config_parameter = { expr | DEFAULT }}};
+  ```
+
+- Set customized variables.
+
+  ```
+  SET @var_name := expr [, @var_name := expr] ...
+  SET @var_name = expr [, @var_name = expr] ...
+  ```
+
 
 ## Parameter Description<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s39823c7ebd854a9f9c761b3a32b1c3c3"></a>
 
@@ -102,6 +118,19 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the new value of  **config\_parameter**. This parameter can be specified as string constants, identifiers, numbers, or comma-separated lists of these.  **DEFAULT**  can be written to indicate resetting the parameter to its default value.
 
+- **GLOBAL | @@GLOBAL.** 
+  
+  The declared parameters can be POSTMASTER, SIGHUP, and BACKEND, which can be determined by the context column in the pg\_settings system view. The parameter range and effective mode are the same as those of the ALTER SYSTEM SET syntax. The value of config\_parameter can be assigned as an expression.
+  
+- **SESSION | @@SESSION. | @@**
+
+  The declared parameter takes effect in superuser or user mode, which can be determined by the context column in the pg\_settings system view. If GLOBAL/SESSION does not exist, SESSION is used as the default value. The value of config\_parameter can be assigned as an expression.
+
+  ![](public_sys-resources/icon-note.gif) **NOTE:**
+
+  1. The SET SESSION/GLOBAL syntax is supported only in B-compatible mode (sql_compatibility = B) and the GUC parameter enable\_set\_variable\_b\_format is enabled (enable\_set\_variable\_b\_format = on).
+  2. When @@config\_parameter is used for operator calculation, use spaces to separate them. For example, in the **set @config\_parameter1=@config\_parameter1*2;** command, **=@** is used as an operator. You can change it to **set @config\_parameter1= @config\_parameter1 * 2**.
+
 
 ## Examples<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
@@ -113,7 +142,18 @@ openGauss=# SET search_path TO tpcds, public;
 openGauss=# SET datestyle TO postgres,dmy;
 ```
 
+```
+--Global variable setting
+set global most_available_sync = t;
+set @@global.most_available_sync = t;
+
+--Session variable setting
+openGauss=# set @@codegen_cost_threshold = 10000;
+openGauss=# set @@session.codegen_cost_threshold = @@codegen_cost_threshold * 2;
+```
+
+
+
 ## Helpful Links<a name="en-us_topic_0283136841_en-us_topic_0237122186_en-us_topic_0059779029_sb71b84f08d92434d9974424733f4b326"></a>
 
 [RESET](reset.md)  and  [SHOW](show.md)
-

@@ -42,7 +42,7 @@ There are several scenarios in which  **REINDEX**  can be used:
 
 -   **INTERNAL TABLE**
 
-    Recreates the Desc table index of a column-store table or Hadoop internal table. The TOAST table \(if any\) of the table is reindexed as well.
+    Recreates the Desc table index of a column-store table. The TOAST table \(if any\) of the table is reindexed as well.
     
     Indexes cannot be recreated in CONCURRENTLY mode. REINDEX INTERNAL TABLE CONCURRENTLY is equivalent to REINDEX INTERNAL TABLE.
 

@@ -26,7 +26,7 @@ The git and git-lfs have been installed and configured on the local host.
 
 **Procedure**
 
-1.  Run the following command to download the code and open-source and third-party software repository.  _\[git ssh address\]_  indicates the actual code download address. You can obtain them from the openGauss community.
+1.  Run the following command to download the code and open-source and third-party software repository.  *\[git ssh address\]*  indicates the actual code download address. You can obtain them from the openGauss community.
 
     ```
     [user@linux sda]$ git clone [git ssh address] openGauss-server
@@ -38,8 +38,12 @@ The git and git-lfs have been installed and configured on the local host.
     >-   **openGauss-server**: openGauss code repository.  
     >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
     >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
-    >    You can download the compressed package by visiting  **https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-third\_party\_binarylibs.tar.gz**.  
-    >    After the download is complete, decompress the package and rename the folder to  **binarylibs**.  
+    > The community provides binary files compiled on three platforms. The download links are as follows:\
+      **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
+      **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
+      **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
+
+    >  After the download is complete, decompress and rename the package: **mv openGauss-third\_party\_binarylibs binarylibs**.
 
 2.  When the progress of each download reaches 100%, the download is successful.
 
@@ -256,7 +260,7 @@ The following table describes the parameters.
 </table>
 
 
->![](C:/Users/gongsiyi1/Desktop/openGauss开源文档0115/en/08 openGauss Compilation Guide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![] (public_sys-resources/icon-note.gif) **NOTE:**
 >
 >1.  **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
 >    -   **release**: indicates that the binary program of the release version is generated. During compilation of this version, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.
@@ -327,23 +331,15 @@ Software build and installation are to build code to generate software and insta
     [user@linux sda]$ cd /sda/openGauss-server
     ```
 
-2.  Run the following script to obtain the system version:
+2.  Obtain the third-party library binary file of the corresponding platform.
 
-    ```
-    [user@linux openGauss-server]$ sh src/get_PlatForm_str.sh
-    ```
-
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   The command output indicates the OSs supported by the openGauss. The OSs supported by the openGauss are centos7.6\_x86\_64、openeuler\_aarch64 and   openeuler\_x86\_64.  
-    >-   If  **Failed**  or another version is displayed, the openGauss does not support the current operating system.  
-
-3.  Configure environment variables, add  **\_\_\_\_**  based on the code download location, and replace  **\*\*\***  with the result obtained in  [Step 2](#li1666842982511).
+3.  Configure environment variables, add  **\_\_\_\_**  based on the code download location.
 
     ```
     export CODE_BASE=________     # Path of the openGauss-server file
     export BINARYLIBS=________    # Path of the binarylibs file
     export GAUSSHOME=$CODE_BASE/dest/
-    export GCC_PATH=$BINARYLIBS/buildtools/***/gcc7.3/
+    export GCC_PATH=$BINARYLIBS/buildtools/gcc7.3/
     export CC=$GCC_PATH/gcc/bin/gcc
     export CXX=$GCC_PATH/gcc/bin/g++
     export LD_LIBRARY_PATH=$GAUSSHOME/lib:$GCC_PATH/gcc/lib64:$GCC_PATH/isl/lib:$GCC_PATH/mpc/lib/:$GCC_PATH/mpfr/lib/:$GCC_PATH/gmp/lib/:$LD_LIBRARY_PATH
@@ -372,7 +368,7 @@ Software build and installation are to build code to generate software and insta
 
    >![](public_sys-resources/icon-note.gif) **NOTE:**   
    >
-   >- _\[debug | release | memcheck\]_  indicates that three target versions are available. The three target versions are as follows:
+   >- *\[debug | release | memcheck\]*  indicates that three target versions are available. The three target versions are as follows:
    >   -   **release**: indicates that the binary program of the release version is generated. During this version build, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.
    >   -   **debug**: indicates that a binary program of the debug version is generated. During this version build, the kernel code debugging function is added, which is usually used in the development self-test environment.
    >   -   **memcheck**: indicates that a binary program of the memcheck version is generated. During this version build, the ASAN function is added based on the debug version to locate memory problems.
@@ -394,8 +390,8 @@ Software build and installation are to build code to generate software and insta
     openGauss installation complete.
     ```
 
-    -   The software installation path after compilation is  _$GAUSSHOME_.
-    -   The compiled binary files are stored in  _$GAUSSHOME_**/bin**.
+    -   The software installation path after compilation is  *$GAUSSHOME*.
+    -   The compiled binary files are stored in  *$GAUSSHOME***/bin**.
 
 ## Compiling the Installation Package
 
@@ -488,7 +484,7 @@ After the build is complete, perform the following steps to verify openGauss:
 
 ## openGauss-OM Build<a name="EN-US_TOPIC_0000001223104256"></a>
 
-After the openGauss-server code repository is built using the source code, gs\_om does not exist. To use gs\_om, you need to compile openGauss-OM separately, copy the built  **openGauss-**_xxx_**-om.tar.gz**  package to the directory where the openGauss-server installation package is located, and install the openGauss-OM in the same way as the enterprise edition.
+After the openGauss-server code repository is built using the source code, gs\_om does not exist. To use gs\_om, you need to compile openGauss-OM separately, copy the built  **openGauss-***xxx***-om.tar.gz**  package to the directory where the openGauss-server installation package is located, and install the openGauss-OM in the same way as the enterprise edition.
 
 ## Procedure<a name="section1794492142011"></a>
 
@@ -514,4 +510,3 @@ After the openGauss-server code repository is built using the source code, gs\_o
    Everything is ready.
    success!
    ```
-

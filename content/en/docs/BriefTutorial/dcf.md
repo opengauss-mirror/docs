@@ -202,18 +202,3 @@ Each line of information is commented out. The content in bold is related to the
     ```
     gs_ctl build -b full -D <new_node_data_dir>
     ```
-6.  Manual mode
-
-    DCF supports the manual mode, where automatic quorum is not performed. In this mode, DCF interconnects with upper-layer management components such as CM for quorum adaptation, and replicates logs.
-
-    For example:
-
-    ```
-    cm_ctl set --param --server -k dn_arbitrate_mode=quorum
-    cm_ctl reload --param --server
-    gs_guc reload -Z datanode -I all -N all  -c "dcf_run_mode=1"
-    ```
-
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
-    >-   The DCF working mode configured in GUC parameters must be the same as that configured in cm\_ctl. That is, both DCF working modes must be set to manual or automatic at the same time.
-    >-   After the working mode is switched in a normal cluster, the cluster can still work properly.

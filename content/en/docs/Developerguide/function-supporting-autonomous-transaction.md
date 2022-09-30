@@ -33,4 +33,3 @@ select autonomous_33(0);
 select * from t4;
 
 ```
-

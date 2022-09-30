@@ -1,4 +1,4 @@
-# Character Processing Functions and Operators<a name="EN-US_TOPIC_0289900469"></a>
+# Arithmetic Functions and Operators<a name="EN-US_TOPIC_0289900469"></a>
 
 Compared with the original openGauss, Dolphin modifies the time/date function as follows:
 1. The DIV, MOD, and XOR operators are added.

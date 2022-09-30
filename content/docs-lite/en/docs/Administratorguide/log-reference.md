@@ -49,7 +49,7 @@ The following table describes details about log types.
 </tr>
 <tr id="en-us_topic_0283140584_en-us_topic_0237088896_row662551312317"><td class="cellrowborder" valign="top" width="15.72%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283140584_en-us_topic_0237088896_p262631313239"><a name="en-us_topic_0283140584_en-us_topic_0237088896_p262631313239"></a><a name="en-us_topic_0283140584_en-us_topic_0237088896_p262631313239"></a>Performance log</p>
 </td>
-<td class="cellrowborder" valign="top" width="84.28%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"><a name="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"></a><a name="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"></a>Logs used to record the status of physical resources and the performance of access to external resources (such as disks, Hadoop, and openGauss).</p>
+<td class="cellrowborder" valign="top" width="84.28%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"><a name="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"></a><a name="en-us_topic_0283140584_en-us_topic_0237088896_p176261113142310"></a>Logs used to record the status of physical resources and the performance of access to external resources (such as disks).</p>
 </td>
 </tr>
 </tbody>
@@ -161,7 +161,7 @@ WALs are important for database restoration. You are advised to routinely back u
 
 ## Performance Log<a name="en-us_topic_0283140584_section209649342396"></a>
 
-Performance logs focus on the access performance of external resources. Performance logs are used to record the status of physical resources and the performance of access to external resources \(such as disks, Hadoop, and openGauss\). When a performance issue occurs, you can locate the cause using performance logs, which greatly improves troubleshooting efficiency.
+Performance logs focus on the access performance of external resources. Performance logs are used to record the status of physical resources and the performance of access to external resources \(such as disks\). When a performance issue occurs, you can locate the cause using performance logs, which greatly improves troubleshooting efficiency.
 
 **Log Storage Directory**
 

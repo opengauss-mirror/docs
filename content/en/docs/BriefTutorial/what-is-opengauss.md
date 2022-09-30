@@ -10,7 +10,7 @@ openGauss is a user-friendly, enterprise-level, and open-source relational datab
 
     A relational database organizes data using a relational model, that is, data is stored in rows and columns. A series of rows and columns in a relational database are called tables, which form the database. A relational model can be simply understood as a two-dimensional table model, and a relational database is a data organization consisting of two-dimensional tables and their relationships.
 
-    In openGauss, SQL is a standard computer language often used to control the access to databases and manage data in databases. depending on your programming environment, you can enter SQL statements directly, embed SQL statements into code written in another language, or use specific language APIs with hidden SQL syntax.
+    In openGauss, SQL is a standard computer language often used to control the access to databases and manage data in databases. depending on your programming environment, you can enter SQL statements directly, embed SQL statements into code written in another language, or use specific language APIs that contain SQL syntax.
 
     SQL is defined by the ANSI/ISO SQL standard. The SQL standard has been developed since 1986 and has multiple versions. In this document, SQL92 is the standard released in 1992, SQL99 is the standard released in 1999, and SQL2003 is the standard released in 2003. SQL2011 is the latest version of the standard. openGauss supports the SQL92, SQL99, SQL2003, and SQL2011 specifications.
 
@@ -44,6 +44,3 @@ openGauss is a user-friendly, enterprise-level, and open-source relational datab
         -   It adopts the Mulan Permissive Software License, allowing code to be freely modified, used, and referenced.
         -   It fully opens database kernel capabilities.
         -   It provides excessive partner certifications, training systems, and university courses.
-
-
-

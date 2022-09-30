@@ -10,7 +10,7 @@
 
 -   Primary/standby deployment
 
-    Supports the ACID feature of transactions, single-node recovery, HA data synchronization, and HA switchover. The enterprise edition provides the CM tool to support database instance status query, primary/standby switchover, and log management.
+    Supports the ACID feature of transactions, single-node recovery, HA data synchronization, and HA switchover. The enterprise edition provides the CM tool to support database instance status query, primary/standby switchover, log management, and cluster status query and push.
 
 -   Application programming interface \(API\)
 
@@ -22,7 +22,7 @@
 
 -   Security management
 
-    Supports SSL network connections, user permission management, password management, security auditing, and other functions, to ensure data security at the management, application, system, and network layers.
+    Supports SSL network connections, user permission management, password management, security auditing, fine-grained ANY permission control, and other functions, to ensure data security at the management, application, system, and network layers.
 
 -   AI
 
@@ -31,68 +31,137 @@
 
 ## New Features<a name="en-us_topic_0283136327_section383172195410"></a>
 
-This section describes the openGauss 3.0.0 enterprise edition. Compared with openGauss 2.1.0, openGauss 3.0.0 has the following new features:
+This section describes the openGauss 3.1.0 enterprise edition. Compared with openGauss 3.0.0, it has the following new features:
 
--   Row-store execution to vectorized execution
+-   The performance of basic operators is improved.
+    -   The accuracy and performance of the new selection rate model in typical scenarios are improved by 1X.
+    -   The performance of the partitioned table page is improved by 20% in typical scenarios.
+    -   The performance of the Partition Iterator operator is improved by 5% in typical scenarios.
+    -   The function dependency feature supports multi-column query, improving the accuracy by 1X in typical scenarios.
+    -   The performance of the SeqScan operator is improved by 10% in typical scenarios.
 
-    Row-store table queries are converted into vectorized execution plans for execution, improving the execution performance of complex queries.
+-   Two-City Three-DC DR is supported.
 
--   Delay of entering the maximum availability mode
+    The remote DR solution based on streaming replication is added for the two-city 3DC cross-region DR feature.
 
-    When the maximum availability mode is enabled on the primary node and the primary node detects that the standby node exits \(for example, due to network jitter\), the primary node remains in the maximum protection mode within a specified time window. After the time window expires, the primary node enters the maximum availability mode.
+    -   DR database failover is supported. When the remote network latency of the primary and standby clusters is less than or equal to 100 ms and the DR failover is performed in typical database configurations, the RTO is minute-level and the RPO is approximately equal to zero.
+    -   Planned switchover between the DR primary and standby database instances is supported. When the remote network latency of the primary and standby clusters is less than or equal to 100 ms and the switchover is performed in typical database configurations, the RTO is minute-level and the RPO is 0.
 
--   Parallel logical decoding
+-   The CM supports external status query and push.
+    -   The HTTP/HTTPS service is used to remotely query the cluster status, helping management personnel and O&M platforms monitor the cluster status.
+    -   When an primary/standby switchover occurs in the database cluster, the latest primary/standby information of the cluster is pushed to the receiving address registered by the application through the HTTP/HTTPS service in time. In this way, the application can detect the primary/standby change of the cluster in time and quickly connect to the new primary and standby nodes.
 
-    When JDBC or pg\_recvlogical is used for decoding, you can set  **parallel-decode-num**  to a value greater than 1 and less than or equal to 20 to enable parallel decoding. In this way, one read thread, multiple decoding threads, and one sending thread are used to perform logical decoding, significantly improving the decoding speed.
+-   The DCF supports policy-based majority.
 
+    DCF supports the policy-based majority capability. Based on the configured AZ, DCF ensures that at least one node in the AZ synchronizes replication logs.
 
--   CM
+-   DBMind autonomous O&M platform
 
-    Supports customized resource monitoring and provides capabilities such as monitoring of the primary/standby database status, network communication faults, file system faults, and automatic primary/standby switchover upon faults.
+    An end-to-end autonomous O&M platform is built: The anomaly detection capability is added to improve the self-monitoring, self-diagnosis, and self-tuning capabilities.
 
--   Global SysCache
+    -   DBMind servitization: provides simple deployment capabilities, adds cmd exporters to expand collection metrics, and extends openGauss-exporter to Agent to obtain real-time information.
+    -   Anomaly detection: By analyzing monitored indicators, the system generates alarms for abnormal system status fluctuation, including rule-based and algorithm-based alarms. Algorithm-based analysis includes analysis of typical abnormal scenarios such as spike and mean shift.
 
-    Decouples the system cache from sessions and binds them to threads to reduce the memory usage together with the thread pool feature. In addition, it is used to improve the cache hit rate and ensure stable performance.
+-   Intelligent optimizer is supported.
+    -   The Bayes network algorithm in the database is implemented, and intelligent statistics are implemented based on the algorithm to improve the accuracy of multi-column cardinality estimation and improve the quality of the generated execution plan.
+    -   Adaptive plan selection solves plan jump problems caused by data skew, inaccurate indexes, and offset query, improving performance by more than 1x.
 
--   Publication-Subscription
+-   The fine-grained Any permission is enhanced.
 
-    Supports publication-subscription, which is implemented based on logical replication, with one or more subscribers subscribing to one or more publications on a publisher node. The subscriber pulls data from the publications they subscribe to. Data across database clusters can be synchronized in real time.
+    The ANY permission management supports the following 12 ANY permissions for five objects:
 
--   Foreign key lock enhancement
+    -   ALTER ANY TYPE, DROP ANY TYPE
+    -   ALTER ANY SEQUENCE, DROP ANY SEQUENCE, SELECT ANY SEQUENCE
+    -   ALTER ANY INDEX, DROP ANY INDEX
+    -   CREATE ANY TRIGGER, ALTER ANY TRIGGER, DROP ANY TRIGGER
+    -   CREATE ANY SYNONYM, DROP ANY SYNONYM
 
-    Two types of row locks are added, which are extended from share and update locks to key share, share, no key update, and update locks. A non-primary key update obtains a no key update lock, and a row lock obtained by a foreign key trigger is a key share lock. The two types of locks do not conflict with each other, thereby improving concurrency of foreign key locks.
+-   The compression capability of row-store tables is enhanced.
 
--   Row-store table compression
+    The storage status of the data page is changed by compressing the row-store data. A mapping management layer is added to flush compressed pages to disks. The entire process occurs when dirty pages are flushed to disks. The upper-layer logic of the database is not affected and users are unaware of the process.
 
-    Supports row-store table compression. A general compression algorithm is provided to implement transparent compression of table and index data pages and maintenance of page storage locations to achieve high compression and high performance. Disk persistence is implemented using two types of files: compressed address file \(with the file name extension .pca\) and compressed data file \(with the file name extension .pcd\).
+    In the TPC-C test model, the compression ratio is higher than 2:1 and the performance deterioration is less than 5%.
 
--   Open-source Data Studio
+-   Publication and subscription capabilities are enhanced.
 
-    Data Studio is a universal and integrated development environment for developers and database administrators. It simplifies the development and management of the openGauss database and supports the following functions:
+    The publication and subscription functions are enhanced to support the remote active-active solution.
 
-    -   Connect to the openGauss database over an integrated GUI-based development environment.
-    -   Efficiently develop SQL.
-    -   Manage or create database objects \(databases, schemas, functions, stored procedures, tables, sequences, columns, indexes, constraints, views, users, roles, and tablespaces\).
-    -   Run SQL statements or SQL scripts.
-    -   Create and execute a stored procedure.
-    -   Add, delete, modify, and query table data.
-    -   Import and export table data.
-    -   Display and export DDL data.
-    -   Import and export connection information.
-    -   Format SQL statements.
-    -   View SQL execution history.
-    -   Display the execution plan and ER diagram.
+    -   The subscription relationship is not interrupted after the primary/standby switchover on the publisher.
+    -   Basic data before subscription relationships are created can be synchronized.
+    -   The replication slot is not lost after backup and restoration, ensuring that the publication and subscription connections are normal.
+    -   Data can be sent in binary format.
 
--   MySQL to openGauss migration tool Chameleon
+-   Fine-grained rolling upgrade is supported.
 
-    Chameleon is Python-based. It supports real-time data replication from MySQL to openGauss. The tool can replicate initial full data and incremental data in real time to migrate them from MySQL to openGauss.
+    The gray upgrade provides the function of upgrading specified nodes. This ensures that some nodes are upgraded before the remaining nodes without interrupting services, reducing the service interruption duration in upgrade scenarios.
 
--   Using ShardingSphere to build a distributed database
+-   The diagnosis capability of the statement\_history view is enhanced.
+    -   The standby node supports the statement\_history view, meeting the requirements for diagnosing slow SQL statements on the standby node.
+    -   Statistics on waitevents are added to statement\_history to record the duration and number of wait events during slow SQL execution.
 
-    Supports the distributed middleware ShardingSphere to provide openGauss the distributed database capability. Up to16 Kunpeng 920 nodes can be used for networking. The sharding performance is greater than 10 million tpmC.
+-   Middleware: integrates OpenLookeng to provide distributed OLAP capabilities.
 
--   Deploying a distributed database using Kubernetes
+    The distributed analysis capability is implemented based on OpenLookeng. OpenLookeng reuses the sharding capability of the ShardingSphere middleware so that OpenLookeng can obtain openGauss data for analysis and calculation. It combines the distributed OLTP capability formed by ShardingSphere and openGauss to form the distributed HTAP capability.
 
-    Supports quick deployment of a distributed database. Patroni is used to implement planned switchover and automatic failover in case of faults. HAProxy is used to implement read and write load balancing between the primary and standby openGauss nodes. ShardingSphere is used to implement distributed capabilities. All functions are packaged into images and one-click deployment scripts are provided.
+-   Middleware: The CM can manage the ShardingSphere Proxy and registration center.
 
+    The CM supports customized resource management, ShardingSphere Proxy and registration center management, and automatic startup upon exceptions.
 
+-   Toolchain: MySQL full migration supports parallel migration, improving full migration performance.
+
+    Table-level parallel migration is supported to improve the MySQL full migration performance. Based on the sysbench test model, 10 tables (with a single table capacity of more than 3 million) can be migrated concurrently on the Kunpeng-920 2P server, achieving migration performance of more than 300 MB/s.
+
+-   Toolchain: MySQL incremental migration supports transaction-level parallel consumption, improving incremental migration performance.
+
+    The open-source third-party software **mysql-binlog-connector-java** is used to parse the **binlog** of the MySQL database. Based on the principle of parallel replication between the primary and standby MySQL databases, multiple threads are used to replay parallel transactions on openGauss to implement online migration from the MySQL database to openGauss.
+
+    The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scenario with 10 tables and 30 concurrent threads, the overall incremental migration performance on the Kunpeng-920 2P server can reach 30,000 TPS.
+
+-   Toolchain: The data verification based on the Merkle tree is supported.
+
+    A real-time data verification tool based on the Merkle tree is implemented. When MySQL data is migrated to openGauss, full and incremental verification of source and target data is supported.
+
+-   Toolchain: Migration from openGauss to MySQL is supported, meeting MySQL reverse migration requirements.
+
+    This feature is implemented based on logical replication of openGauss. Logical replication is enabled on openGauss, JDBC is used to obtain logical decoding, SQL parsing is performed on the logical decoding, and multi-thread concurrent migration is performed to migrate user data from MySQL to openGauss and ensure two databases run concurrently or escape after migration.
+
+    The sysbench performs a pressure test on openGauss. When 100 tables and 100 threads are concurrently executed, the overall migration performance on the Kunpeng-920 2P server can reach 30,000 TPS in the insert scenario.
+
+-   Compatibility: Compatible with most common MySQL functions and syntax.
+
+    The Dolphin plug-ins are provided to be compatible with MySQL in terms of keywords, data types, constants and macros, functions and operators, expressions, type conversion, DDL/DML/DCL syntax, stored procedures/user-defined functions, and system views.
+
+    Version 3.1.0 supports the following syntax points: (Only some typical syntax points are listed. For details, see section "MySQL Compatibility" in the Developer Guide.)
+
+    -   Data types: ENUM, SET, FIXED, LONGBLOB, MEDIUMBLOB, TINYBLOB, MEDIUM INT, DATETIME, YEAR, NVARCHAR, and unsigned integer.
+    -   Operators: =, ^\ (XOR\), <=\> (not equal to), ||, &&, regexp, not regexp, rlike, DIV, MOD, XOR, like binary, and not like binary.
+    -   System functions: if, ifnull, isnull, strcmp, locate, lcase, ucase, insert, bin, chara, elt, field, find\_int\_set, hex, space, soundex, length, convert, format, rand, crc32, conv, now, sysdate, current\_time, dayofmonth, is\_ipv4, inet\_aton, inet\_ntoa, is\_ipv6, inet6\_aton, export\_set, bit\_bool, json\_array, json\_quote, last\_insert\_id and group\_concat.
+    -   DDLs:
+        -   IF NOT EXISTS can be specified when a database is created.
+        -   Comments can be created and modified in the column/table/index/procedure/function.
+        -   Options can be arranged in disorder during table and index creation. Table names are case sensitive.
+        -   Indexes and constraints can be specified during table creation.
+        -   It is compatible with ADD, DELETE, EXCHANGE, REORGANIZE, TRUNCATE, ANALYZE, REBUILD, REPAIR, and REMOVE partitions.
+        -   ON UPDATE current\_timestamp can be specified during table creation.
+        -   Auto-increment columns are supported.
+
+    -   DMLs:
+        -   INSERT, UPDATE, and DELETE can contain the IGNORE keyword. When a conflict occurs, the error can be ignored.
+        -   The DELETE statement supports ORDER BY and specified partitions.
+        -   The DELETE statement can be used to delete multiple tables, and the UPDATE statement can be used to update multiple tables.
+        -   The REPLACE INTO syntax is supported.
+
+    -   PL/SQL:
+        -   The PL/SQL supports the setting of DEFINER.
+        -   Variables can be named in stored procedures.
+        -   Use the CALL keyword to invoke a stored procedure that has parameters.
+        -   DELIMITER can be used to define separators.
+
+    -   DCLs:
+        -   It is compatible with various SHOW syntaxes, including show databases, show processlist, show tables, show create table, show create view, and show master status.
+        -   USE db\_name and DESC table\_name are supported.
+
+    -   Network protocol compatibility: Compatible with basic network protocols of MySQL clients.
+    -   Compatibility: The compatibility evaluation tool is supported.
+
+        A compatibility assessment tool based on the openGauss kernel syntax tree. It can assess the compatibility of mainstream databases.

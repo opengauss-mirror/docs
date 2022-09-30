@@ -2,7 +2,7 @@
 
 Various types of engine components provide many interfaces for big data processing. However, for traditional database users, the SQL language is still the most familiar and convenient interface. Their operations will be efficient using SQL statements on a client to perform operations on big data components.
 
-openGauss supports SQL on Anywhere and allows to operate Hadoop, Oracle, Spark, and openGauss, building a unified big data computing platform.
+openGauss supports SQL on Anywhere and allows to operate Oracle, Spark, and openGauss, building a unified big data computing platform.
 
 ## Accessing Data Across Database Instances Based on Extension Connector<a name="section134436495103"></a>
 
@@ -10,7 +10,7 @@ You can use Extension Connector provided by openGauss to send SQL statements to 
 
 To use Extension Connector, construct a data source \(containing the connection and encoding information about the target database\), obtain the permission to use the data source, connect to the target database using the standard ODBC API, send SQL statements, and obtain the execution result.
 
-Extension Connector provides a unified connection function  **exec\_on\_extension \(**_text_**, **_text_**\)**, where the first  _text_  specifies the data source name and the second specifies the SQL statement to be sent.
+Extension Connector provides a unified connection function  **exec\_on\_extension \(***text***, ***text***\)**, where the first  *text*  specifies the data source name and the second specifies the SQL statement to be sent.
 
 Notice the following issues when using the  **exec\_on\_extension**  function:
 
@@ -71,12 +71,12 @@ Notice the following issues when using the  **exec\_on\_extension**  function:
 Comply with the following rules to use  **exec\_on\_extension**:
 
 -   **exec\_on\_extension**  first searches for  **USERNAME**  and  **PASSWORD**  in data sources. If they are not found, unixODBC searches the  **odbc.ini**  file. If they are still not found, the connection fails. If  **USERNAME**  and  **PASSWORD**  are incorrect in the data sources but correct in the  **odbc.ini**  file, the connection still fails.
--   In  **SELECT \* FROM exec\_on\_extension\(\) AS \(C1, C2,  ..., C**_n_**\)**, the columns specified by the  **AS**  clause are the first  _n_  columns of the data returned by executing the SQL statement. Therefore, the column types should match the first  _n_  columns of the returned data. Otherwise, the result may be incorrect or the execution may fail. Do not use only columns in the middle or end of the returned result. Ensure that columns in the  **AS**  clause are no more than the returned columns.
+-   In  **SELECT \* FROM exec\_on\_extension\(\) AS \(C1, C2,  ..., C***n_**\)**, the columns specified by the  **AS**  clause are the first  _n*  columns of the data returned by executing the SQL statement. Therefore, the column types should match the first  *n*  columns of the returned data. Otherwise, the result may be incorrect or the execution may fail. Do not use only columns in the middle or end of the returned result. Ensure that columns in the  **AS**  clause are no more than the returned columns.
 -   **exec\_on\_extension**  does not check the validity of the SQL statements to be sent. It can send only one SQL statement at a time. You are not advised to send the following statements or commands \(**exec\_hadoop\_sql**  also restricted\):
     -   Do not send commands or SQL statements that are valid only in the current session, for example, the statement for creating a temporary table.
     -   Do not send statements that start a transaction, for example,  **START TRANSACTION**.
     -   Do not send statements that call the  **exec\_on\_extension**  or  **exec\_hadoop\_sql**  function, for example,  **select \* from exec\_on\_extension\('xxx', 'select \* from exec\_on\_extension\(\)...'\)**.
-    -   Do not send client commands, for example, the  **SQLPlus**  command of Oracle and meta-commands in "Client Tools \> gsql \> Meta-Command Reference" in the  _Tool Reference_  of the openGauss database instance.
+    -   Do not send client commands, for example, the  **SQLPlus**  command of Oracle and meta-commands in "Client Tools \> gsql \> Meta-Command Reference" in the  *Tool Reference*  of the openGauss database instance.
     -   Do not send interactive commands, for example, the commands that require users to enter passwords.
 
 
@@ -91,5 +91,3 @@ Comply with the following rules to use  **exec\_on\_extension**:
 -   **[SQL on Spark](sql-on-spark.md)**  
 
 -   **[SQL on openGauss](sql-on-opengauss.md)**  
-
-

@@ -51,7 +51,7 @@
         openGauss=# \h
         ```
 
-    -   You can run the following command to query all data and description information in the openGauss:
+    -   You can run the following command to query all databases and description information in the openGauss:
 
         ```
         openGauss=# \l

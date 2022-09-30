@@ -225,7 +225,7 @@
 
 -   pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
 
-    Description: Records information about the memory context  **MemoryContextName**  of the thread  **tid**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory.  _threadid_  can be obtained from  _sessid_  in the  **GS\_SESSION\_MEMORY\_DETAIL**  view. In the officially released version, only the  **MemoryContextName**  that is an empty string \(two single quotation marks indicate that the input is an empty string\) is accepted. In this case, all memory context information is recorded. Otherwise, no operation is performed. For the DEBUG version for internal development and test personnel to debug, you can specify the  **MemoryContextName**  to be counted. In this case, all the memory usage of the context is recorded in the specified file. Only the administrator can execute this function.
+    Description: Records information about the memory context  **MemoryContextName**  of the thread  **tid**  into the  *threadid***\_timestamp.log**  file in the  *$GAUSSLOG***/pg\_log/***$\{node\*name\}***/dumpmem**  directory.  _threadid*  can be obtained from  *sessid*  in the  **GS\_SESSION\_MEMORY\_DETAIL**  view. In the officially released version, only the  **MemoryContextName**  that is an empty string \(two single quotation marks indicate that the input is an empty string\) is accepted. In this case, all memory context information is recorded. Otherwise, no operation is performed. For the DEBUG version for internal development and test personnel to debug, you can specify the  **MemoryContextName**  to be counted. In this case, all the memory usage of the context is recorded in the specified file. Only the administrator can execute this function.
 
     Return type: Boolean
 
@@ -234,7 +234,7 @@
 
 -   pg\_shared\_memctx\_detail\(MemoryContextName text\)
 
-    Description: Records information about the memory context  **MemoryContextName**  into the  _threadid_**\_timestamp.log**  file in the  _$GAUSSLOG_**/pg\_log/**_$\{node\_name\}_**/dumpmem**  directory. This function is provided only for internal development and test personnel to debug in the DEBUG version. Calling this function in the officially released version does not involve any operation. Only the administrator can execute this function.
+    Description: Records information about the memory context  **MemoryContextName**  into the  *threadid***\_timestamp.log**  file in the  *$GAUSSLOG***/pg\_log/***$\{node\*name\}_**/dumpmem**  directory. This function is provided only for internal development and test personnel to debug in the DEBUG version. Calling this function in the officially released version does not involve any operation. Only the administrator can execute this function.
 
     Return type: Boolean
 
@@ -410,18 +410,6 @@
 -   gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
 
     Description: Switches the Cgroup of a specified session.
-
-    Return type: record
-
--   hdfs\_fdw\_handler\(\)
-
-    Description: Rewrites a foreign table. It is a function to be defined when a foreign table is defined.
-
-    Return type: record
-
--   hdfs\_fdw\_validator\(text\[\], oid\)
-
-    Description: Rewrites a foreign table. It is a function to be defined when a foreign table is defined.
 
     Return type: record
 
@@ -623,7 +611,7 @@
 
 -   pg\_get\_variable\_info
 
-    Description: Obtains the shared memory variable  _cache_.
+    Description: Obtains the shared memory variable  *cache*.
 
     Parameter: nan
 
@@ -1410,5 +1398,3 @@
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The query result of this function is displayed only when the user-mode network is deployed in a centralized environment and  **enable\_dfx in comm\_proxy\_attr**  is set to  **true**. In other scenarios, an error message is displayed, indicating that queries are not supported.
-
-

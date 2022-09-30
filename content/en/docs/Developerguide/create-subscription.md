@@ -83,7 +83,13 @@ CREATE SUBSCRIPTION subscription_name
 
         Specifies whether the subscription is sent by the publisher in binary format. The value  **true**  indicates that the data is sent in binary format, and the value  **false**  indicates that the data is sent in the default text format. Default value:  **false**
 
+    -   **connect (boolean)**
 
+        Specifies whether to connect to the publisher during CREATE SUBSCRIPTION. If this parameter is set to **false**, **enabled** and **copy\_data** are also set to **false** by default. The default value is **true**.
+
+        Do not set **enabled** or **copy\_data** to **true** when **connect** is set to **false**.
+
+        When this option is set to **false**, no connection is established and the table is not subscribed to. Therefore, when subscription is enabled, no content is copied. You need to run the ALTER SUBSCRIPTION... REFRESH PUBLICATION statement to subscribe to tables.
 
 ## Examples<a name="section1399192015610"></a>
 

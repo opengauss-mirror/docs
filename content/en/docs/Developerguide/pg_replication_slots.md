@@ -83,6 +83,12 @@
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"><a name="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a><a name="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a>Whether the replication node is a dummy standby node</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_r57599043221e48e182ad2759b2e3fde0"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_aa339392231db46f29ac345c6ee181618"></a>confirmed_flush</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_zh-cn_topic_0059777747_abfdd09996f444afa960371c29115276a"></a><span id="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"></a><a name="zh-cn_topic_0283137075_zh-cn_topic_0237122427_text830016417309"></a>text</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"><a name="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a><a name="en-us_topic_0283137075_en-us_topic_0237122427_en-us_topic_0059777747_a609fb3d52ac648919835c6d3f67353f6"></a>Dedicated logical replication slot. The client confirms the location of the received log.</p>
+</td>
+</tr>
 </tbody>
 </table>
-

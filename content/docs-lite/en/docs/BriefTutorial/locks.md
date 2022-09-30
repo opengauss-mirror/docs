@@ -2,7 +2,7 @@
 
 To ensure database data consistency, you can execute the LOCK TABLE statement to prevent other users from modifying tables.
 
-For example, an application needs to ensure that data in a table is not modified during transaction running. For this purpose, table usage can be locked. This prevents data from being concurrently modified.
+For example, an application needs to ensure that data in a table is not modified during transaction running. For this purpose, tables can be locked. This prevents data from being concurrently modified.
 
 The LOCK TABLE statement is useless outside a transaction block, because the lock would remain held only to the completion of the statement.
 

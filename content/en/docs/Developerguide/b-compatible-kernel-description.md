@@ -1,6 +1,6 @@
-# B-compatible Kernel Description<a name="EN-US_TOPIC_0000001201277572"></a>
+# MySQL-compatible Kernel Description<a name="EN-US_TOPIC_0000001201277572"></a>
 
-**Table 1** B-compatible features implemented in the openGauss kernel
+**Table 1** MySQL-compatible features implemented in the openGauss kernel
 
 <a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_table53712060"></a>
 <table><thead align="left"><tr id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_row56018257"><th class="cellrowborder" valign="top" width="18.23%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p41184969"><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p41184969"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_p41184969"></a>Category</p>

@@ -21,7 +21,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 ## IS NOT NULL<a name="section829464952512"></a>
 
-In the  **WHERE**  clause, locate the column whose value is  **NULL**.
+In the  **WHERE**  clause, locate the column whose value is not **NULL**.
 
 For example, list the column whose  **c\_customer\_id**  is not set to a null value in the  **customer\_t1**  table.
 

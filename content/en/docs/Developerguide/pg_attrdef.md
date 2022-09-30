@@ -55,6 +55,19 @@
 <td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>Specifies whether a column is a generated column. The value <strong id="b2047394210513"><a name="b2047394210513"></a><a name="b2047394210513"></a>s</strong> indicates that the column is a generated column, and the value <strong id="b348054215112"><a name="b348054215112"></a><a name="b348054215112"></a>'\0</strong> indicates that the column is a common column. The default value is <strong id="b1748044213515"><a name="b1748044213515"></a><a name="b1748044213515"></a>'\0</strong>.</p>
 </td>
 </tr>
+<tr id="row182312541512"><td class="cellrowborder" valign="top" width="11.98%" headers="mcps1.2.4.1.1 "><p id="p13823135411113"><a name="p13823135411113"></a><a name="p13823135411113"></a>adbin_on_update</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="p282311541917"><a name="p282311541917"></a><a name="p282311541917"></a>pg_node_tree</p>
+</td>
+<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>Converts a storage expression into a character string.</p>
+</td>
+</tr>
+<tr id="row182312541512"><td class="cellrowborder" valign="top" width="11.98%" headers="mcps1.2.4.1.1 "><p id="p13823135411113"><a name="p13823135411113"></a><a name="p13823135411113"></a>adsrc_on_update</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="p282311541917"><a name="p282311541917"></a><a name="p282311541917"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>Specifies the name of a storage expression.</p>
+</td>
+</tr>
 </tbody>
 </table>
-

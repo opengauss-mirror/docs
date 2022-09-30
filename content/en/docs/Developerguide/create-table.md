@@ -213,6 +213,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**  or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
     >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
     >-   **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
+    >
+    >-   If the source table is a local temporary table, the new table must also be a local temporary table. Otherwise, an error is reported.
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
@@ -231,7 +233,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   ORIENTATION
 
-        Specifies the storage mode \(row-store, column-store, or ORC\) of table data. This parameter cannot be modified once it is set.
+        Specifies the storage mode \(row-store or column-store\) of table data. This parameter cannot be modified once it is set.
 
         Value range:
 
@@ -339,14 +341,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **[enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)**  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: 0 to 9999. The default value is  **100**.
-
-    -   VERSION
-
-        Specifies the version of ORC storage format.
-
-        Value range: 0.12. ORC 0.12 format is supported currently. More formats will be supported as the development of ORC format.
-
-        Default value:  **0.12**
 
     -   segment
 

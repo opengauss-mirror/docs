@@ -24,8 +24,8 @@ DCF is a high-performance, highly mature, reliable, scalable, and easy-to-use in
 -   DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
 -   DCF supports forcible startup of the minority of DNs. In case that the majority of database instances are faulty, a minority of standby DNs are selected and forcibly promoted to primary, and other normal standby DNs replicate logs from the primary DNs.
 -   DCF supports automatic leader election. When the original primary DN is faulty, a new primary DN is automatically selected from the remaining standby DNs on the premise that data consistency is ensured.
--   DCF supports the policy-based majority capability. On the premise that the majority capability is met, logs in the AZ are not lost.
--   DCF supports the manual mode, where automatic quorum is not performed. In this mode, DCF interconnects with upper-layer management components such as CM for quorum adaptation, and replicates logs.
+-   DCF supports the policy-based majority capability. Based on the configured AZ, DCF ensures that at least one node in the AZ synchronizes replication logs.
+
 
 ## Enhancements<a name="section1340684315478"></a>
 

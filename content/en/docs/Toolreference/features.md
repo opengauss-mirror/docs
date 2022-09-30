@@ -242,3 +242,55 @@ Configuration description:
 >![](./public_sys-resources/icon-caution.gif) **Caution:**  
 >The resource configuration file must exist on all nodes and be consistent. 
 >Ensure that the resource script can run properly. 
+
+### Cluster Information Query and Push
+**Functions: ** 
+By running the CMRestAPI component, the CM supports:
+1. The HTTP/HTTPS service is used to remotely query the cluster status, helping management personnel and O&M platforms monitor the cluster status.
+2. When an primary/standby switchover occurs in the database cluster, the latest primary/standby information of the cluster is pushed to the receiving address registered by the application through the HTTP/HTTPS service in time. In this way, the application can detect the primary/standby change of the cluster in time and quickly connect to the new primary and standby nodes.
+
+**Parameter description:** 
+-**-e** indicates the database environment variable file, which must be specified. 
+-**-w** indicates the whitelist of source IP addresses. If the whitelist is not required, you do not need to specify it. 
+Startup command: 
+java -jar cmrestapi-xxx.jar -e envFile [-w appWhiteList]
+
+**API description:** 
+1. Query the cluster or node status. 
+This API uses the GET method. The format is **http://***ip***:***port***/****CMRestAPI/***keyword*. 
+Where: 
+**ip** indicates the IP address of the node where CMRestAPI is running. 
+**port** indicates the listening port of the CMRestAPI service. 
+**keyword** indicates the keyword of the information to be queried. Currently, the following information can be queried: 
+Cluster status. The format is **http://***ip***:***port***/****CMRestAPI/ClusterStatus**. 
+Node status. The format is **http://***ip***:***port***/****CMRestAPI/ClusterStatus[?nodeId=n]**. If **nodeId** is set to **n**, the status of node *n* can be queried. If **nodeId** is not specified, the status of the node that provides services (that is, the status of the node specified by the IP address) is returned by default. 
+
+2. Register and update the addresses for receiving information about the primary and standby nodes. 
+If the application wants to receive the latest primary/standby information pushed by the CMRestAPI, the application needs to register an information receiving address with the CMRestAPI and listen on the address. After receiving the request, the CMRestAPI saves the registered receiving address to the environment where the cluster is located through DCC. DCC stores data in the key-value format. The key is **/CMRestAPI/RecvAddrList/***ip***/***app*, where **ip** indicates the IP address of the host where the application is located and **app** indicates the user-defined application name. It is used to distinguish the receiving addresses registered by multiple applications in the same environment. If the key already exists, that is, the source IP address and application name are the same, the address for receiving active and standby information corresponding to the key is updated. 
+This API uses the PUT method. The format is **http://***ip***:***port***/CMRestAPI/RecvAddr**. The following two parameters need to be provided: 
+**url**: receiving address to be registered. 
+**app**: application name. If this parameter is not provided, the key is in the format of Prefix + Application IP address.
+
+3. Delete the addresses for receiving information about the primary and standby nodes. 
+This API uses the DELETE method. The format is **http://***ip***:***port***/CMRestAPI/RecvAddr**. The following parameter needs to be provided: 
+**app**: application name. 
+
+4. Description of the address for receiving information. 
+Example of the information receiving address: **http://***ip***:***port***/CMRestAPI**
+The CMRestAPI uses the PUT method. The pushed host information carries the MasterIpPort parameter in the **ip:port** format, and the pushed standby node information carries the StanbysInfo parameter in the **ip1:port1,ip2:port2, ...,ipn:portn** format. For details about an application demo, see the application demo in the CMRestAPI repository.
+
+**Other description:** 
+1. Security-related description 
+By default, the CMRestAPI uses the HTTP service and supports the configuration of the access whitelist. You can use the startup parameter **-w** to configure the whitelist file of the access source IP address. Each line in the whitelist file contains one IP address. To use the HTTPS service, you can specify the system parameter **server.ssl** in the JAR package during startup to enable the CMRestAPI to start the HTTPS service, or configure the **application.properties** file in the resource directory. The following is an example: 
+```
+-Dserver.port=*Service listening port* -Dserver.ssl.key-store=*Key file path* -Dserver.ssl.key-store-password= *Key file password* -Dserver.ssl.key-store-type= *Key type* ``` 
+Example: **java -jar -Dserver.port=8443 -Dserver.ssl.key-store=/home/omm/keystore.p12 -Dserver.ssl.key-store-password=Abcdef@123 -Dserver.ssl.key-store-type=PKCS12 cmrestapi-xxx.jar -e envFile**
+```  
+You can search for and configure more parameters.
+
+2. Memory-related description 
+This program uses the Spring Boot framework. By default, the startup occupies a large amount of memory (about 1 GB). If the number of concurrent requests is small and you do not want the program to occupy a large amount of memory, you can specify some system parameters during startup to reduce the memory usage. The following is an example of the startup parameters: 
+```-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC```
+
+3. Customized resource configuration file 
+This program depends on CM-related processes and instructions. Therefore, this program must run with CM at the same time. You need to configure the customized resource configuration file. For details about the configuration method, see the content related to the customized resource monitoring feature.

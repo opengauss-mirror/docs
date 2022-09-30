@@ -34,7 +34,9 @@ You can run the  **gs\_dbmind**  command to start an exporter. The following des
     gs_dbmind component cmd_exporter --ssl-keyfile server.key --ssl-certfile server.crt 
     ```
 
-6.  <a name="li0810649203213"></a>Deploy node-exporter. Generally, node-exporter needs to be deployed on the Prometheus monitoring platform to monitor the Linux OS. Some AI functions mentioned in the following sections also depend on node-exporter to collect Linux system metrics. Therefore, node-exporter also needs to be deployed by users. For details, visit https://prometheus.io/docs/guides/node-exporter/\#installing-and-running-the-node-exporter. You can run the node-exporter process. The default port number is 9100. The command for starting the process is as follows:
+6.  <a name="li0810649203213"></a>Deploy node-exporter. Generally, node-exporter needs to be deployed on the Prometheus monitoring platform to monitor the Linux OS. Some AI functions mentioned in the following sections also depend on node-exporter to collect Linux system metrics. Therefore, node-exporter also needs to be deployed by users. For details, visit https://prometheus.io/docs/guides/node-exporter/\#installing-and-running-the-node-exporter.
+
+  You can run the node-exporter process. The default port number is 9100. The command for starting the process is as follows:
 
     ```
     node_exporter 

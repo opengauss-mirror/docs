@@ -12,13 +12,13 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a string If this parameter is set to  **\***, the name of any standby node that provides synchronous replication is matched. The value can be configured in the following format:
 
--   ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\) \[, ANY  _num\_sync_  \(_standby\_name_  \[, ...\]\)\]
--   \[FIRST\]  _num\_sync_  \(_standby\_name_  \[, ...\]\)
--   _standby\_name_  \[, ...\]
+-   ANY  *num\*sync_  \(*standby\*name_  \[, ...\]\) \[, ANY  *num\*sync_  \(*standby\*name_  \[, ...\]\)\]
+-   \[FIRST\]  *num\*sync_  \(*standby\*name_  \[, ...\]\)
+-   *standby\*name_  \[, ...\]
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   In the preceding command,  _num\_sync_  indicates the number of standby nodes that need to wait for responses from the transaction,  _standby\_name_  indicates the name of the standby node, and FIRST and ANY specify the policies for selecting standby nodes for synchronous replication from the listed servers.
-    >-   **ANY N \(dn\_instanceId1, dn\_instanceId2,...\)**  indicates that any  _N_  host names in the brackets are selected as the name list of standby nodes for synchronous replication. For example,  **ANY 1\(dn\_instanceId1, dn\_instanceId2\)**  indicates that any one of  **dn\_instanceId1**  and  **dn\_instanceId2**  is used as the standby node for synchronous replication.
+    >-   In the preceding command,  *num\*sync_  indicates the number of standby nodes that need to wait for responses from the transaction,  *standby\*name_  indicates the name of the standby node, and FIRST and ANY specify the policies for selecting standby nodes for synchronous replication from the listed servers.
+    >-   **ANY N \(dn\_instanceId1, dn\_instanceId2,...\)**  indicates that any  *N_  host names in the brackets are selected as the name list of standby nodes for synchronous replication. For example,  **ANY 1\(dn\*instanceId1, dn\_instanceId2\)**  indicates that any one of  **dn\_instanceId1**  and  **dn\_instanceId2**  is used as the standby node for synchronous replication.
     >-   **FIRST N \(dn\_instanceId1, dn\_instanceId2, ...\)**  indicates that the first N primary node names in the brackets are selected as the standby node name list for synchronous replication based on the priority. For example,  **FIRST 1 \(dn\_instanceId1, dn\_instanceId2\)**  indicates that  **dn\_instanceId1**  is selected as the standby node for synchronous replication.
     >-   The meanings of dn\_instanceId1, dn\_instanceId2, ... are the same as those of FIRST 1 \(dn\_instanceId1, dn\_instanceId2, ...\).
 
@@ -62,7 +62,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to  _INT\_MAX_. The unit is second.
+**Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is second.
 
 -   The value  **0**  indicates that the  **keep\_sync\_window**  is not set, that is, the maximum availability mode is entered directly.
 -   Other values indicate the size of the timeout window.
@@ -133,7 +133,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 8 to  _INT\_MAX_. The unit is KB.
+**Value range**: an integer ranging from 8 to  *INT\*MAX_. The unit is KB.
 
 **Default value**:  **8 MB**  \(8192 KB\)
 
@@ -182,7 +182,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1 to  _INT\_MAX_. The unit is second.
+**Value range**: an integer ranging from 1 to  *INT\*MAX_. The unit is second.
 
 **Default value**:  **300**
 
@@ -224,3 +224,28 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >-   To be specific, the sender sends a configuration file which directly overwrites the corresponding parameter in the configuration file of the receiver. After the policy for synchronizing configuration files is set, even if you modify configuration parameters of the receiver, the modification does not take effect because the sender immediately overwrites these parameters.
 >-   The following configuration parameters are not synchronized even if the policy for synchronizing configuration files is set: application\_name, archive\_command, audit\_directory, available\_zone, comm\_control\_port, comm\_sctp\_port, listen\_addresses, log\_directory, port, replconninfo1, replconninfo2, replconninfo3, replconninfo4, replconninfo5, replconninfo6, replconninfo7, replconninfo8, replconninfo9, replconninfo10, replconninfo11, replconninfo12, replconninfo13, replconninfo14, replconninfo15, replconninfo16, replconninfo17, replconninfo18, ssl, ssl\_ca\_file, ssl\_cert\_file, ssl\_ciphers, ssl\_crl\_file, ssl\_key\_file, ssl\_renegotiation\_limit, ssl\_cert\_notify\_time, synchronous\_standby\_names, local\_bind\_address, perf\_directory, query\_log\_directory, asp\_log\_directory, streaming\_router\_port, enable\_upsert\_to\_merge, archive\_dest, recovery\_min\_apply\_delay, and sync\_config\_strategy.
 
+
+## enable_save_confirmed_lsn<a name="section94339215542"></a>
+
+**Parameter description:** If this parameter is enabled, the primary node flushes the location that has achieved majority consistency with the current synchronous standby node during each transaction to a disk. When the primary node is faulty and the original primary node functions as the standby node to initiate a build request, the system checks whether the same confirmed LSN exists on the source node (new primary node). If it does not exist, the build fails to prevent the data of the original primary node from being overwritten by the build.
+
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:** Boolean
+
+-   **on**: indicates that this function is enabled. In the scenario where one primary node and multiple standby nodes are configured and a synchronous standby node is configured, each time the primary node performs a data change transaction operation (DML/DDL), and the primary node waits to reach a majority consistency location with the synchronous standby node, flushes the location that has achieved majority consistency with the current synchronous standby to disk. The persistent file corresponds to the status file of the replication slot of the synchronous standby node. If this parameter is enabled, both automatic build and incremental build in unspecified schema are affected. When the primary node is faulty and the original primary node functions as the standby node, the system checks whether the same confirmed LSN exists on the source node (new primary node). If it does not exist, the build fails to prevent the data of the original primary node from being overwritten by the build.
+-   **off**: indicates that this function is disabled. The behavior of the primary node remains unchanged when a transaction is committed. The behavior of automatic build and incremental build remains unchanged. In the scenario where one primary node and multiple standby nodes are configured and asynchronous standby nodes are configured, if the primary node suddenly breaks down and the majority consistency location (such as LSN100) of the primary node is not synchronized to the asynchronous standby node, the asynchronous standby node is forcibly started as the new primary node. If some transaction operations are performed on the new primary node, the data on the new primary node overwrites LSN100. In this case, if the original primary node is used as the standby node and a build request is initiated, the primary node loses the service data of LSN100 that has reached the latest majority consistency location.
+
+**Default value:** **off**
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>
+>-   If **most\_available\_sync** is set to **on** and all synchronous standby nodes are faulty, this function does not take effect. This is because no synchronous standby can trigger the persistence of the LSN.
+>
+>-   This function affects only incremental build or automatic build without specifying the build mode. If you forcibly specify the full build mode, this function does not take effect.
+>
+>-   If files in pg\_replslot of the primary node are manually deleted or damaged before the build command is executed, this function does not take effect.
+>
+>-   After this function is enabled, if the primary node is stopped while waiting for the standby node to achieve majority consistency, the system does not display a message indicating that the transaction has been committed locally and may not be synchronized to the remote node. This prevents upper-layer services from considering that data has been consistent.
+>
+>-   After this function is enabled, the synchronization waiting time is prolonged due to persistent data. As a result, the performance of the primary and standby clusters with synchronous standby nodes is affected. According to the test data, the performance decreases by about 20% compared with that when this function is disabled.
