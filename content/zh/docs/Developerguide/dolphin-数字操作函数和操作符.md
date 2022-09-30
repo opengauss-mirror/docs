@@ -1,6 +1,7 @@
 # 数字操作函数和操作符<a name="ZH-CN_TOPIC_0289900469"></a>
 
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
+
 1. 新增```DIV/MOD/XOR/^```操作符。
 2. 新增```truncate/rand/crc32/conv/float8_bool```函数。
 

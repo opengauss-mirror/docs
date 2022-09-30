@@ -3,6 +3,7 @@
 ## 时间/日期函数<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436"></a>
 
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
+
 1. 新增```dayofmonth/dayofweek/dayofyear/hour/microsecond/minute/quarter/second/weekday/weekofyear/year/current_date```函数。
 2. 新增```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now/sysdate```函数。
 3. 新增```makedate/maketime/period_add/period_diff/sec_to_time/subdate```函数。
