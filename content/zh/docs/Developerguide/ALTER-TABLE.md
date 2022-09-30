@@ -68,101 +68,126 @@
     ```
     
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
 - **ADD table\_constraint \[ NOT VALID \]**
+
   给表增加一个新的约束。
 
 - **ADD table\_constraint\_using\_index**
+
   根据已有唯一索引为表增加主键约束或唯一约束。
 
 - **VALIDATE CONSTRAINT constraint\_name**
+
   验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。
 
 - **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
+
   删除一个表上的约束。
 
 - **CLUSTER ON index\_name**
+
   为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。
 
 - **SET WITHOUT CLUSTER**
+
   从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。
 
 - **SET \( \{storage\_parameter = value\} \[, ... \] \)**
+
   修改表的一个或多个存储参数。
 
 - **RESET \( storage\_parameter \[, ... \] \)**
+
   重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。
 
 - **OWNER TO new\_owner**
+
   将表、序列、视图的属主改变成指定的用户。
 
 - **SET TABLESPACE new\_tablespace**
+
   这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
 
 - **SET \{COMPRESS|NOCOMPRESS\}**
+
   修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
 
 - **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
+
   此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
 
 - **ADD NODE \( nodename \[, ... \] \)**
+
   此语法主要供内部扩容工具使用，一般用户不建议使用。
 
 - **DELETE NODE \( nodename \[, ... \] \)**
+
   此语法主要供内部缩容工具使用，一般用户不建议使用。
 
 - **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+
   禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。
   应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
 
-- **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+- **ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+
   启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
 
-- **| ENABLE REPLICA TRIGGER trigger\_name**
+- **ENABLE REPLICA TRIGGER trigger\_name**
+
   触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
   配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
 
-- **| ENABLE ALWAYS TRIGGER trigger\_name**
+- **ENABLE ALWAYS TRIGGER trigger\_name**
   无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
 
-- **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
+- **DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
+
   配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
 
-- **| DISABLE/ENABLE ROW LEVEL SECURITY**
+- **DISABLE/ENABLE ROW LEVEL SECURITY**
+
   开启或关闭表的行访问控制开关。
   当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
 
-- **| NO FORCE/FORCE ROW LEVEL SECURITY**
+- **NO FORCE/FORCE ROW LEVEL SECURITY**
+
   强制开启或关闭表的行访问控制开关。
   默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
 
--  **| ENCRYPTION KEY ROTATION **
+- **ENCRYPTION KEY ROTATION**
 
   透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
 
 - **SET WITH OIDS**
+
   在资料表中增加了一个OID系统栏位。如果资料表中已经有OID，则此语法什么都不改变。
 
 - **SET WITHOUT OIDS**
+
   从资料表中移除一处OID系统栏位。如果资料表中没有OID，则此语法什么都不改变。
 
 - **INHERIT parent\_table**
+
   将目标资料表加到指定的父资料表中成为新的子资料表。之后，针对父资料表的查询将会包含目标资料表的资料。要作为子资料表加入前，目标资料表必须已经包含父资料表的所有栏位。这些栏位必须具有可匹配的资料类别，并且如果他们在父资料表中具有NOT NULL的限制条件，那么他们必须在子资料表中也具有NOT NULL的限制条件。对于父资料表的所有CHECK限制条件，必须还有相对应的子资料表限制条件，除非父资料表中标记为不可继承。
 
 - **NO INHERIT parent\_table**
+
   从指定的父资料表的子资料表中产出目标资料表。针对父资料表的查询将不再包含从目标资料表中所产生的记录。
 
 - **OF type\_name**
+
   将表连接至一种复合类型，与CREATE TABLE OF选项创建表一样。表的字段的名称和类型必须精确匹配复合类型中的定义，不过oid系统字段允许不一样。表不能是从任何其他表继承的。这些限制确保CREATE TABLE OF选项允许一个相同的表定义。
 
 - **NOT OF**
+
   将一个与某类型进行关联的表进行关联的解除。
 
 - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
 
   在逻辑复制场景下，指定该表的UPDATE和DELETE操作中旧元组的记录级别。
-
     - DEFAULT记录主键的列的旧值，没有主键则不记录。
     - USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的、不局部的、不可延迟的，并且仅包括标记为NOT NULL的列。
     - FULL记录该行中所有列的旧值。
@@ -172,7 +197,8 @@
 
    即使指定DEFAULT或USING INDEX，当前ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对ustore表，选项NOTHING无效，实际效果等同于FULL。
 
-- **COMMENT 'text'**
+- **COMMENT {=| } 'text'**
+
   修改表对象的注释。
 
 其中列相关的操作column\_clause可以是以下子句之一：
@@ -195,25 +221,31 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
 ```
 
-![](public_sys-resources/icon-note.gif) **说明：**  
+ ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>  
 
 - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
+
   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
   
 - **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
+
   向表中增加多列。
 
 - **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+
   修改字段注释。
 
 - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+
   修改表已存在字段的数据类型。
 
 - **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
+
   从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
-   DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
+  DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
 
 - **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
+
   改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
 
@@ -224,23 +256,29 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
 
 - **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
+
   为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
 
 - **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
+
   修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
 
 - **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
+
   为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
 
 - **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
+
   用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。如果关闭GUC参数enable\_functional\_dependency，每组多列统计信息最多支持32列；如果开启GUC参数enable\_functional\_dependency，每组多列统计信息最多支持4列。不支持添加/删除多列统计信息声明的表：系统表、外表。
 
 - **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
   **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
+
    设置/重置属性选项。
    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
 
 - **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
+
   为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
 
 - 其中列约束column\_constraint为：
@@ -535,8 +573,8 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
   - INITIALLY DEFERRED：只有在事务结尾才检查它。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
-    Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 -   **PARTIAL CLUSTER KEY**
 

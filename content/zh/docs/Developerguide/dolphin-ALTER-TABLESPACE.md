@@ -7,6 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
 相比于原始的openGauss，dolphin对于```ALTER TABLESPACE```语法的修改主要为：
+
 1. 新增```WAIT```可选项，无实际意义，仅作语法兼容。
 2. 新增```ENGINE [=] engine_name```可选项，无实际意义，仅作语法兼容。
 
