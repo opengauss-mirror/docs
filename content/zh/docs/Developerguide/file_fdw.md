@@ -6,41 +6,41 @@ file\_fdw模块提供了外部数据封装器file\_fdw，可以用来在服务�
 
 使用file_fdw创建的外部表可以有下列选项：
 	
-	-   **filename**
+-   **filename**
 	
-	    指定要读取的文件，必需的参数，且必须是一个绝对路径名。
+	指定要读取的文件，必需的参数，且必须是一个绝对路径名。
 	
-	-   **format**
+-   **format**
 	
-	    远端server的文件格式，支持text/csv/binary三种格式，和COPY语句的FORMAT选项相同。
+	远端server的文件格式，支持text/csv/binary三种格式，和COPY语句的FORMAT选项相同。
 	    
-	-   **header**
+-   **header**
 	
-	    指定的文件是否有标题行，与COPY语句的HEADER选项相同。
+	指定的文件是否有标题行，与COPY语句的HEADER选项相同。
 	
-	-   **delimiter**
+-   **delimiter**
 	
-	    指定文件的分隔符，与COPY的DELIMITER选项相同。
+	指定文件的分隔符，与COPY的DELIMITER选项相同。
 	
-	-   **quote**
+-   **quote**
 	
-		指定文件的引用字符，与COPY的QUOTE选项相同。
+	指定文件的引用字符，与COPY的QUOTE选项相同。
 	
-	-   **escape**
+-   **escape**
 	
-	    指定文件的转义字符，与COPY的ESCAPE选项相同。
+	指定文件的转义字符，与COPY的ESCAPE选项相同。
 	
-	-   **null**
+-   **null**
 	
-	    指定文件的null字符串，与COPY的NULL选项相同。
+	指定文件的null字符串，与COPY的NULL选项相同。
 	
-	-   **encoding**
+-   **encoding**
 	
-	    指定文件的编码，与COPY的ENCODING选项相同。
+	指定文件的编码，与COPY的ENCODING选项相同。
 	
-	-   **force\_not\_null**
+-   **force\_not\_null**
 		
-		这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是， 文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
+	这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是， 文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
 
 file\_fdw不支持COPY的OIDS和 FORCE_QUOTE选项。
 
