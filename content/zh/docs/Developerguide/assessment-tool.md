@@ -1,6 +1,7 @@
 # MySQL语法兼容性评估工具<a name="ZH-CN_TOPIC_0000001245957397"></a>
 
 本工具支持利用已有的openGauss节点评估数据SQL文本在openGauss的兼容性。包含但不限于以下限制：
+
 - 仅支持SQL文本文件输入，且SQL之间以`;`分割。
 
 - 不使用`dolphin`、`whale`等兼容性插件场景，不兼容语句的报错信息可能不准确。如果使用对应插件，需遵循插件使用约束。
@@ -10,6 +11,7 @@
 - 存储过程、函数语句仅支持：创建体的合法性校验和函数体的语法兼容校验。
 
 - 对于评估结果的准确率：
+
    - 完全兼容：openGauss完全支持该语法。兼容结果可能依赖于传入SQL语句的前置执行结果，因此实际在openGauss内执行时不一定完全兼容。
 
    - 语法兼容：openGauss支持该语法，但是实际使用过程中可能包含字段类型不支持、函数不存在等问题。
@@ -53,7 +55,9 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
 | contrib/dolphin             | B兼容数据库插件 |
 
 1. 下载openGauss源码，按照READMD.md指导编译openGauss源码。
+
 2. 将上述插件拷贝到openGauss源码路径的`contrib`路径下。`cd`进入对应目录后`make install -sj`。
+
 3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`extension.sql`，`extension.control`。`assessment`插件包含可执行文件`assessment_database`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
 
 **assessment依赖文件**
@@ -154,8 +158,11 @@ assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -o
 ### 原理
 
 1. 首先存在一个正常运行的数据库节点，可以直接通过`gs_initdb`初始化。
-2. 配置好对应连接参数，连接参数与`openGauss`的`gsql`连接方式是一致的。
-3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create extension`创建必要的插件。（如`assessment`、`dolphin`）。
-4. 如果指定`-d database`方式，工具会在对应数据库创建插件。
-5. 在对应评估数据库评估。评估类型包含：语法树兼容评估、实际语句是否兼容评估。
 
+2. 配置好对应连接参数，连接参数与`openGauss`的`gsql`连接方式是一致的。
+
+3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create extension`创建必要的插件。（如`assessment`、`dolphin`）。
+
+4. 如果指定`-d database`方式，工具会在对应数据库创建插件。
+
+5. 在对应评估数据库评估。评估类型包含：语法树兼容评估、实际语句是否兼容评估。

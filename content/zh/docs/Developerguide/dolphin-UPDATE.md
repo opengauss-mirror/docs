@@ -12,6 +12,7 @@
 
 ```
 单表更新：
+
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
@@ -23,6 +24,7 @@ SET {column_name = { expression | DEFAULT }
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
 
 多表更新：
+
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] table_list
 SET {column_name = { expression | DEFAULT } 
@@ -30,6 +32,7 @@ SET {column_name = { expression | DEFAULT }
     [ FROM from_list] [ WHERE condition ];
 
 where sub_query can be:
+
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
 [ FROM from_item [, ...] ]
@@ -54,8 +57,9 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   sql_ignore_startegy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**
-      >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
+   >![](public_sys-resources/icon-note.gif) **说明：**
+   >
+   >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
 
   2.违反唯一约束时：
 
@@ -89,6 +93,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ### IGNORE关键字
 
 为使用ignore_error hint，需要创建B兼容模式的数据库，名称为db_ignore。
+
 ```
 create database db_ignore dbcompatibility 'B';
 \c db_ignore
@@ -99,7 +104,9 @@ create database db_ignore dbcompatibility 'B';
 ```
 db_ignore=# create table t_not_null(num int not null);
 CREATE TABLE
+
 -- 采用忽略策略
+
 db_ignore=# set sql_ignore_strategy = 'ignore_null';
 SET
 db_ignore=# insert into t_not_null values (1);
@@ -122,6 +129,7 @@ db_ignore=# select * from t_not_null ;
 
 
 -- 采用覆写策略
+
 db_ignore=# delete from t_not_null;
 db_ignore=# set sql_ignore_strategy = 'overwrite_null';
 SET
@@ -201,6 +209,7 @@ db_ignore=# select * from t_ignore ;
 
 ```
 -- 当新值类型与列类型同为数值类型
+
 db_ignore=# create table t_tinyint(num tinyint);
 CREATE TABLE
 db_ignore=# insert into t_tinyint values(1);
@@ -222,6 +231,7 @@ db_ignore=# select * from t_tinyint;
 
 
 -- 当新值类型与列类型同为字符类型时
+
 db_ignore=# create table t_varchar5(content varchar(5));
 CREATE TABLE
 db_ignore=# insert into t_varchar5 values('abc');
