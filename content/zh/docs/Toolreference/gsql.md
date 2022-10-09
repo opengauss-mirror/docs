@@ -2404,6 +2404,7 @@ omm@[local] openGauss=#
     目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见《开发者指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节 。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
+    >
     >- 请不要修改pg\_hba.conf中openGauss主机的相关设置，否则可能导致数据库功能故障。
     >- 建议业务应用部署在openGauss之外，而非openGauss内部。
     
@@ -2418,4 +2419,5 @@ omm@[local] openGauss=#
     解决此问题，重试便可。同时请尽可能避免在升级等运维操作过程中，在openGauss内部运行业务程序，避免升级时因替换文件产生此问题。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >此故障的core dump文件的可能堆栈是dl\_main及其子调用，它是操作系统用来初始化进程做共享动态库加载的。如果进程已经初始化，但是共享动态库还未加载完成，严格意义上来说，进程并未完全启动。
