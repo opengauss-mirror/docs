@@ -24,6 +24,7 @@ CHECKSUM TABLE tbl_name [, tbl_name] ... [QUICK | EXTENDED]
    表名，可指定表名。也可以指定schema_name.table_name。
    
 - **[QUICK | EXTENDED]**
+
    校验模式，只支持EXTENDED（也即默认值）。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
