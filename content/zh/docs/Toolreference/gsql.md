@@ -2404,6 +2404,7 @@ omm@[local] openGauss=#
     目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见《开发者指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节 。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
+    >
     >- 请不要修改pg\_hba.conf中openGauss主机的相关设置，否则可能导致数据库功能故障。
     >- 建议业务应用部署在openGauss之外，而非openGauss内部。
     
