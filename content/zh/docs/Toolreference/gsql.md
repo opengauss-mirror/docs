@@ -2245,6 +2245,7 @@ omm@[local] openGauss=#
     数据库由于安全问题，禁止远程登录时使用trust模式。这时需要修改pg\_hba.conf里的连接认证信息。具体的设置信息请参见：《开发者指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >请不要修改pg\_hba.conf中openGauss主机的相关设置，否则可能导致数据库功能故障。建议业务应用部署在openGauss之外，而非openGauss内部。
 
 -   连接数据库，添加“-h 127.0.0.1”可以连接，去掉后无法连接问题。
