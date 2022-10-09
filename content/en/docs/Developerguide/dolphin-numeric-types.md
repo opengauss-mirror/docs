@@ -12,6 +12,7 @@ Compared with the original openGauss, Dolphin modifies the arithmetic types as f
 7. For the decimal data type, if the precision is not specified, the default precision is (10,0). That is, the total number of digits is 10 and the number of decimal places is 0.
 8. The UNSIGNED INT, TINYINT, SMALLINT, and BIGINT types are added. Compared with a common integer, the most significant bit of the UNSIGNED INT, TINYINT, SMALLINT, BIGINT type is a digit bit instead of a sign bit.
 9. The zerofill attribute is added, which is supported only in syntax and does not have the effect of filling zeros. It is equivalent to UNSIGNED.
+10. The cast function parameters SIGNED and UNSIGNED are added. CAST AS UNSIGNED converts the type to uint8, and CAST AS SIGNED converts the type to int8.
 
 **Table 1** Integer types
 
@@ -166,6 +167,20 @@ openGauss=# \d int_type_t2
 
 --Delete a table.
 openGauss=# DROP TABLE int_type_t1, int_type_t2;
+
+--Use CAST UNSIGNED to convert an expression to the uint8 type.
+openGauss=# select cast(1 - 2 as unsigned);
+        uint8
+----------------------
+ 18446744073709551615
+(1 row)
+
+--Use CAST SIGNED to convert an expression to the int8 type.
+openGauss=# select cast(1 - 2 as signed);
+ int8
+------
+   -1
+(1 row)
 ```
 
 **Table 2** Arbitrary precision types

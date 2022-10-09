@@ -7,7 +7,10 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 2. The curdate, current_time, curtime, current_timestamp, localtime, localtimestamp, now, and sysdate functions are added.
 3. The makedate, maketime, period_add, period_diff, sec_to_time, and subdate functions are added.
 4. The subtime, timediff, time, time_format, timestamp, and timestamppadd functions are added.
-4. The to_days, to_seconds, unix_timestamp, utc_date, utc_time, and utc_timestamp functions are added.
+5. The to_days, to_seconds, unix_timestamp, utc_date, utc_time, and utc_timestamp functions are added.
+6. The date\_bool and time\_bool functions are added.
+7. The dayname, monthname, time\_to\_sec, month, day, date, week, yearweek functions are added and the last_day function is modified.
+8. The datediff, from\_days, convert\_tz, date\_add, date\_sub, adddate, addtime functions are added and the timestampdiff function is modified.
 
 - curdate\(\)
 
@@ -544,7 +547,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   `CString SUBDATE(text date, INTERVAL expr unit)`
 
-  ​`CString SUBDATE(text date, int64 days)`
+  `CString SUBDATE(text date, int64 days)`
 
   Function description:
 
@@ -637,13 +640,13 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   
   Function prototype:
 
-  `TIME SUBDATE(TIME time1, TIME time2)`
+  `TEXT SUBTIME(TIME time1, TIME time2)`
 
-  `TIME SUBDATE(DATETIME time1, TIME time2)`
+  `TEXT SUBTIME(DATETIME time1, TIME time2)`
 
   Function description:
 
-  This function performs date calculation and returns the result of subtracting time2 from time1. The return parameter type is the same as the input type of time1.
+  This function performs date calculation and returns the result of DATETIME or TIME expression time1 minus TIME expression time2. The return parameter type is the same as the input type of time1.
 
   Remarks:
 
@@ -693,7 +696,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   
   Function prototype:
 
-  `Cstring TIME(TEXT expr)`
+  `Text TIME(TEXT expr)`
 
   Function description:
 
@@ -761,7 +764,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   `DATETIME TIMESTAMP(TEXT expr)`
 
-  `DATETIME TIMEDIFF(TEXT expr, TIME time)`
+  `DATETIME TIMESTAMP(TEXT expr, TIME time)`
 
   Function description:
 
@@ -777,22 +780,22 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   Example:
 
   ```sql
-  openGauss=# select TIMESTAMP('2003-12-31'), TIMESTAMP('20031231');
-       timestamp      |     timestamp
+  openGauss=# select TIMESTAMP('2022-01-01'), TIMESTAMP('20220101');
+        timestamp      |      timestamp      
   ---------------------+---------------------
-   2003-12-31 00:00:00 | 2003-12-31 00:00:00
+  2022-01-01 00:00:00 | 2022-01-01 00:00:00
   (1 row)
   
-  openGauss=# select TIMESTAMP('2003-12-31 12:00:00.123456'), TIMESTAMP('20000229120000.1234567');
-           timestamp         |         timestamp
+  openGauss=# select TIMESTAMP('2022-01-31 12:00:00.123456'), TIMESTAMP('20000229120000.1234567');
+          timestamp          |         timestamp          
   ----------------------------+----------------------------
-   2003-12-31 12:00:00.123456 | 2000-02-29 12:00:00.123457
+  2022-01-31 12:00:00.123456 | 2000-02-29 12:00:00.123457
   (1 row)
   
-  openGauss=# select TIMESTAMP('2003-12-31','12:00:00.123456'), TIMESTAMP('2003-12-31 12:00:00','-32:00:00');
-           timestamp         |     timestamp
+  openGauss=# select TIMESTAMP('2022-01-31','12:00:00.123456'), TIMESTAMP('2022-01-31 12:00:00','-32:00:00');
+          timestamp          |      timestamp      
   ----------------------------+---------------------
-   2003-12-31 12:00:00.123456 | 2003-12-30 04:00:00
+  2022-01-31 12:00:00.123456 | 2022-01-30 04:00:00
   (1 row)
   
   openGauss=# select TIMESTAMP('20000229','100:00:00'), TIMESTAMP('20000229120000.123','100:00:00');
@@ -856,7 +859,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   
   Function prototype:
 
-  CSTRING TIME_FORMAT(text time, text format).
+  TEXT TIME_FORMAT(text time, text format).
 
   Function description:
 
@@ -1157,4 +1160,567 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
       utc_timestamp    
   ---------------------
    2022-09-06 15:16:39
+  ```
+
+- date_bool(date)
+
+  Description: Returns a Boolean value based on the number of years in a date value. If the value is **0**, **false** is returned. Otherwise, **true** is returned.
+
+  Return type: Boolean
+
+  Example: 
+
+  ```
+  openGauss=# select time_bool('18:50:00');
+   time_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select time_bool('00:50:00');
+   time_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- time_bool(time)
+
+  Description: Returns a Boolean value based on the number of hours in a time value. If the value is **0**, **false** is returned. Otherwise, **true** is returned.
+
+  Return type: Boolean
+
+  Example: 
+
+  ```
+  openGauss=# select date_bool('2022-08-20');
+   date_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select date_bool('0000-08-20');
+   date_bool 
+  -----------
+   f
+  (1 row)
+  ```
+  
+- dayname\(date\)
+
+    Description: Returns the workday corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin-guc-parameters.md#lctimenamesa-namesection203671436824a).
+
+    Return type: text
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select dayname('2000-1-1');
+    dayname
+    ----------
+    Saturday
+    (1 row)
+
+    openGauss=# alter system set lc_time_names = 'zh_CN';
+    ALTER SYSTEM SET
+
+    openGauss=# select dayname('2000-1-1');
+    dayname
+    ---------
+    Saturday
+    (1 row)
+    ```
+
+- monthname\(date\)
+
+    Description: Returns the full name of the month corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin-guc-parameters.md#lctimenamesa-namesection203671436824a).
+
+    Return type: text
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select monthname('2000-1-1');
+    monthname
+    -----------
+    January
+    (1 row)
+
+    openGauss=# alter system set lc_time_names = 'zh_CN';
+    ALTER SYSTEM SET
+
+    openGauss=# select monthname('2000-1-1');
+    monthname
+    -----------
+    January
+    (1 row)
+    ```
+
+- time_to_sec\(time\)
+
+    Description: Converts time to seconds.
+
+    Return type: integer
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select time_to_sec('838:59:59');
+    time_to_sec
+    -------------
+        3020399
+    (1 row)
+
+    openGauss=# select time_to_sec('-838:59:59');
+    time_to_sec
+    -------------
+        -3020399
+    (1 row)
+    ```
+
+- month\(date\)
+
+    Description: Returns the month of a date.
+
+    Return type: integer
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select month('2021-11-12');
+    month
+    -------
+        11
+    (1 row)
+
+    openGauss=# select month('2021-11-0');
+    month
+    -------
+        11
+    (1 row)
+    ```
+
+- day\(date\)
+
+    Description: Returns the day of a date.
+
+    Return type: integer
+  
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select day('2021-11-12');
+    day
+    -----
+    12
+    (1 row)
+
+    openGauss=# select day('2021-0-0');
+    day
+    -----
+    0
+    (1 row)
+    ```
+
+- date\(expr\)
+
+    Description: Extracts the date part from expr when expr is recognized as a date or datetime expression.
+
+    Return type: text
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select date('2021-11-12');
+        date
+    ------------
+    2021-11-12
+    (1 row)
+
+    openGauss=# select date('2021-11-12 23:59:59.9999999');
+        date
+    ------------
+    2021-11-13
+    (1 row)
+
+    openGauss=# select date('2021-11-0');
+        date
+    ------------
+    2021-11-00
+    (1 row)
+
+    openGauss=# select date('2021-0-3');
+        date
+    ------------
+    2021-00-03
+    (1 row)
+    ```
+
+- last_day\(expr\)
+
+    Description: Returns the date of the last day of a month when expr is identified as date or datetime.
+
+    Return type: date
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints. In B-compatible databases, when the GUC parameter **b\_compatibility\_mode** is set to **true**, this function replaces the original last\_day function of openGauss.
+
+    Example: 
+
+    ```
+    openGauss=# set b_compatibility_mode = true;
+    SET
+
+    openGauss=# select last_day('2021-1-30');
+    last_day
+    ------------
+    2021-01-31
+    (1 row)
+
+    openGauss=# select last_day('2021-1-0');
+    last_day
+    ------------
+    2021-01-31
+    (1 row)
+    ```
+
+- week\(date\[,mode\]\)
+
+    Description: Returns the week of the date represented by the date parameter in a year. The mode parameter is optional. The value range is [0,7]. The mode parameter specifies whether a week starts on Monday or Sunday and whether the return value ranges from 0 to 53 or from 1 to 53. If no mode parameter is transferred, the GUC variable default\_week\_format is used as the default mode parameter.
+
+    The following table lists the values and meanings of the mode parameter.
+    | mode | First day of week | range | Week 1 is the first week ...|
+    | -----|----------------------- | -------------------------------- | ------ |
+    |0|Sunday|0-53|with a Sunday in this year|
+    |1|Monday|0-53|with 4 or more days this year|
+    |2|Sunday|1-53|with a Sunday in this year|
+    |3|Monday|1-53|with 4 or more days this year|
+    |4|Sunday|0-53|with 4 or more days this year|
+    |5|Monday|0-53|with a Monday in this year|
+    |6|Sunday|1-53|with 4 or more days this year|
+    |7|Monday|1-53|with a Monday in this year|
+
+    Explanation of "with 4 or more days this year":
+    - If the first week of a year contains January and four or more days of the year, the week is the first week of the year.
+    - Otherwise, this week is the last week of the previous year, and the next week is the first week of the current year.
+
+    If the date is in the last week of the previous year, the function returns 0 when 0, 1, or 5 is used as the value of **mode**. The meaning is that the current date is in week 0 of the year to which the date belongs.
+    ```
+    openGauss=# select week('2000-1-1', 0);
+    week
+    ------
+        0
+    (1 row)
+    ```
+    The reason why 0 is returned instead of the 52nd week of 1999 is that this allows the returned value to be within the year given by the parameter, so that the week function can work better with other functions that extract the date part.
+
+    If you want to use the first day of a week as the first week of a year, you can use 0, 2, 5, or 7 as the value of **mode**.
+
+    Return type: integer
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# show default_week_format;
+    default_week_format
+    ---------------------
+    0
+    (1 row)
+
+    openGauss=# select week('2000-1-1');
+    week
+    ------
+        0
+    (1 row)
+
+    openGauss=# alter system set default_week_format = 2;
+    ALTER SYSTEM SET
+
+    openGauss=# select week('2000-1-1');
+    week
+    ------
+    52
+    (1 row)
+
+    openGauss=# select week('2000-1-1', 2);
+    week
+    ------
+    52
+    (1 row)
+    ```
+
+- yearweek\(date\[,mode\]\) 
+
+    Description: Returns the year and week of the date represented by the date parameter. If the week of the date is the first or last week of a year, the returned year may be different from the year in the date parameter. The mode parameter is optional and works in the same way as the mode parameter of the WEEK function. The value range is [0,7]. If no mode parameter is specified, 0 is used as the default mode parameter. The GUC parameter default\_week\_format does not affect the yearweek function.
+
+    The number of weeks returned by the yearweek function is different from that returned by the week function when the optional mode parameter is 0 or 1. The week function returns 0 weeks in the year of the date parameter, but the yearweek function does not return 0 weeks in the year of the date parameter.
+
+    Return type: bigint
+
+    Note: This function is compatible with MySQL table insertion parameters and result constraints.
+
+    Example: 
+
+    ```
+    openGauss=# select week('1987-01-01', 0);
+    week
+    ------
+        0
+    (1 row)
+
+    openGauss=# select yearweek('1987-01-01', 0);
+    yearweek
+    ----------
+    198652
+    (1 row)
+    ```
+
+- datediff\(expr1,expr2\)
+
+  Description: expr1 and expr2 can be date or datetime. Calculate the number of days represented by expr1-expr2. Only the date part of expr1 and expr2 is involved in the calculation. If an input parameter is invalid, the function returns NULL.
+
+  Return type: integer (indicating the date difference, in days)
+
+  Example: 
+  ```
+  openGauss=# select datediff('2001-01-01','321-02-02');
+  datediff 
+  ----------
+   613576
+  (1 row)
+  ```
+
+- from\_days\(N\)
+
+  Description: Returns the date corresponding to the number of days represented by N.
+
+  Return type: date
+
+  Example: 
+  ```
+  openGauss=# select from_days(365);
+  from_days  
+  ------------
+  0000-00-00
+  (1 row)
+  
+  openGauss=# select from_days(366);
+  from_days  
+  ------------
+  0001-01-01
+  (1 row)
+  ```
+
+- timestampdiff\(unit,datetime expr1,datetime expr2\)
+
+  Description: The function returns the values of two date parameters expr2 - expr1. Both parameters may be datetime or date. If the parameter is date, the time part is considered as 0. After the difference is calculated, the calculation result is converted into a specified unit for display. The value of **unit** can be MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR. If an input parameter is invalid, the function returns NULL.
+
+  Return type: bigint (indicating the difference displayed in a specified unit)
+
+  Note: In B-compatible databases, this function replaces the original timestampdiff function of openGauss when the GUC parameter **b\_compatibility\_mode** is set to **true**.
+
+  Example: 
+  ```
+  openGauss=# set b_compatibility_mode = true;
+  SET
+  
+  openGauss=# select timestampdiff(SECOND,'2001-01-01 12:12:12','2001-01-01 12:12:11');
+  timestampdiff
+  ---------------
+              -1
+  (1 row)
+  
+  openGauss=# select timestampdiff(MONTH,'2001-01-01 12:12:12','2001-02-01 12:12:12');
+  timestampdiff
+  ---------------
+              1
+  (1 row)
+  ```
+
+- convert_tz\(datetime, from\_tz, to\_tz\)
+
+  Description: Converts datetime from the time zone specified by from\_tz to the time zone specified by to\_tz. If the range of datetime converted from from\_tz to the UTC time zone exceeds [1970-01-01 00:00:01.000000, 2038-01-19 03:14:07.999999], the conversion is not performed. If the parameter is invalid, the function returns NULL.
+
+  Return value: datetime
+
+  Example: 
+  ```
+  openGauss=# SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');
+        convert_tz
+  ---------------------
+    2004-01-01 13:00:00
+  (1 row)
+  ```
+
+- DATE\_ADD\(date/datetime/time, interval expr unit\)
+    
+  Function prototype:
+  ```
+  text DATE_ADD(text expr1, INTERVAL expr2 unit)
+  time DATE_ADD(time expr1, INTERVAL expr2 unit)
+  ```
+
+  Description: This function performs the date and time addition operation and returns the result of expr1 plus expr2. expr1 can be data of the date, datetime, or time type, and expr2 indicates the interval value. If expr1 is of the time type, time can be added only when expr1 is of the time type.
+  
+  Return value type: same as the type of the first parameter.
+  
+  Remarks:
+  
+  - Generally, the return type is the same as the type of the first parameter. When the type of the first parameter is DATE and the unit of INTERVAL contains HOUR, MINUTE, and SECOND, the return result is DATETIME.
+  - Parameter restrictions during MySQL table insertion.
+      - If expr1 is in the date or datetime format and the value exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported.
+      - If expr1 is of the time type, time can be added only when expr1 is of the time type. If date_add('1:1:1',interval 1 second) does not enter this function, change it to date_add(time'1:1:1', interval 1 second).
+  - Result restriction during MySQL table insertion.
+      - When expr1 is in the date or datetime format, if the result exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but less than '0001-1-1 00:00:00.000000', MySQL defines the result as 0000-00-00 or 0000-00-00 xx:xx:xx. The time depends on the calculation result. Because such a result is meaningless, an error is reported in openGauss.
+      - For data whose first parameter is of the time type, if the calculation result exceeds the time type range [-838:59:59, 838:59:59], an error is reported.
+  
+  Example: 
+  
+  ```
+  openGauss=# SELECT DATE_ADD('2022-01-01', INTERVAL 31 DAY);
+    date_add
+  ------------
+  2022-02-01
+  (1 row)
+    
+  openGauss=# SELECT DATE_ADD('2022-01-01 01:01:01', INTERVAL 1 YEAR);
+      date_add       
+  ---------------------
+  2023-01-01 01:01:01
+  (1 row)
+    
+  openGauss=# SELECT DATE_ADD('2022-01-01', INTERVAL 1 SECOND);
+      date_add       
+  ---------------------
+  2022-01-01 00:00:01
+  (1 row)
+  ```
+   
+- DATE\_SUB\(date/datetime/time, interval expr unit\)
+  
+  Function prototype:
+  ```
+    text DATE_SUB(text expr1, INTERVAL expr2 unit)
+    time DATE_SUB(time expr1, INTERVAL expr2 unit)
+  ```
+
+  Description: This function performs the date and time subtractive operation and returns the result of expr1 minus expr2. expr1 can be data of the date, datetime, or time type, and expr2 indicates the interval value. If expr1 is of the time type, time can be subtracted only when expr1 is of the time type.
+  
+  Return value type: same as the type of the first parameter.
+  
+  Remarks:
+  
+  - Generally, the return type is the same as the type of the first parameter. When the type of the first parameter is DATE and the unit of INTERVAL contains HOUR, MINUTE, and SECOND, the return result is DATETIME.
+  - Parameter restrictions during MySQL table insertion.
+      - If expr1 is in the date or datetime format and the value exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported.
+      - If expr1 is of the time type, time can be subtracted only when expr1 is of the time type. If date_sub('1:1:1',interval 1 second) does not enter this function, change it to date_sub(time'1:1:1', interval 1 second).
+  - Result restriction during MySQL table insertion.
+      - When expr1 is in the date or datetime format, if the result exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but less than '0001-1-1 00:00:00.000000', MySQL defines the result as 0000-00-00 or 0000-00-00 xx:xx:xx. The time depends on the calculation result. Because such a result is meaningless, an error is reported in openGauss.
+      - For data whose first parameter is of the time type, if the calculation result exceeds the time type range [-838:59:59, 838:59:59], an error is reported.
+  
+  Example: 
+  
+  ```
+  openGauss=# SELECT DATE_SUB('2022-01-01', INTERVAL 31 DAY);
+    date_sub
+  ------------
+  2021-12-01
+  (1 row)
+    
+  openGauss=# SELECT DATE_SUB('2022-01-01 01:01:01', INTERVAL 1 YEAR);
+      date_sub       
+  ---------------------
+  2021-01-01 01:01:01
+  (1 row)
+    
+    
+  openGauss=# SELECT DATE_SUB('2022-01-01', INTERVAL 1 SECOND);
+      date_sub       
+  ---------------------
+  2021-12-31 23:59:59
+  (1 row)
+  ```
+    
+- ADDDATE\(date/datetime/time, interval/days\)
+  Description: Performs a date or time addition operation. When the second parameter is interval, the function is the same as the DATE\_ADD function. For details, see DATE\_ADD. When the second parameter is an integer, the integer is added to the first parameter as a number of days.
+
+  Example: 
+  ```
+  openGauss=# SELECT ADDDATE('2021-11-12', INTERVAL 1 SECOND);
+        adddate
+  ---------------------
+  2021-11-12 00:00:01
+  (1 row)
+
+  openGauss=# SELECT ADDDATE(time'12:12:12', INTERVAL 1 DAY);
+  adddate
+  ----------
+  36:12:12
+  (1 row)
+
+  openGauss=# SELECT ADDDATE('2021-11-12', 1);
+    adddate
+  ------------
+  2021-11-13
+  (1 row)
+
+  openGauss=# SELECT ADDDATE(time'12:12:12', 1);
+  adddate
+  ----------
+  36:12:12
+  (1 row)
+  ```
+
+- ADDTIME\(datetime/time,time\)
+
+  Function prototype:
+  ``` 
+  time ADDTIME(text expr1, time expr2)
+  ```
+
+  Description: This function performs the time addition operation and returns the result of expr1 plus expr2. The expr1 can be in datetime or time format, and expr2 can only be in time format.
+  
+  Return value type: same as the type of the first parameter.
+  
+  Remarks:
+  
+  - Parameter restrictions during MySQL table insertion.
+      - If the value of the first parameter is in the datetime format and the value exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported.
+      - If the value of the first parameter is in the time format and exceeds the time range, an error is reported.
+      - The value of the second parameter must be in the time format.
+  
+  - Result restriction during MySQL table insertion.
+      - If the result is in datetime format and exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but is less than '0001-1-1 00:00:00.000000', null is returned.
+      - If the result is in the time format and the value exceeds [-838:59:59, 838:59:59], an error is reported.
+  
+  Example: 
+  ```
+  openGauss=# SELECT ADDTIME('11:22:33','10:20:30');
+  addtime  
+  ----------
+  21:43:03
+  (1 row)
+  
+  openGauss=# SELECT ADDTIME('2020-03-04 11:22:33', '-10:20:30');
+  addtime       
+  ---------------------
+  2020-03-04 01:02:03
+  (1 row)
   ```
