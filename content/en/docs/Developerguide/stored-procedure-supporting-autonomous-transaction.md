@@ -4,56 +4,36 @@ The stored procedure supports an autonomous transaction. The identifier is  **PR
 
 ```
 -- Create a table.
-CREATE TABLE test1 (a int, b text);
+create table t2(a int, b int);
+insert into t2 values(1,2);
+select * from t2;
+
 -- Create a stored procedure that contains an autonomous transaction.
-CREATE OR REPLACE PROCEDURE autonomous_easy_1(i int)
-AS
+CREATE OR REPLACE PROCEDURE autonomous_4(a int, b int) AS
 DECLARE
-    PRAGMA AUTONOMOUS_TRANSACTION;
+  num3 int := a;
+  num4 int := b;
+PRAGMA AUTONOMOUS_TRANSACTION;
 BEGIN
-    START TRANSACTION;
-    INSERT INTO test1 VALUES (2, 'a');
-    IF i % 2 = 0 THEN
-        COMMIT;
-    ELSE
-        ROLLBACK;
-    END IF;
+  insert into t2 values(num3, num4);
 END;
 /
--- Run a stored procedure.
-select autonomous_easy_1(1);
--- View table data.
-select * from test1;
--- Execution result:
- a | b
----+---
-(0 rows)
 
--- Run a stored procedure.
-select autonomous_easy_1(2);
--- View table data.
-select * from test1;
--- Execution result:
- a | b
----+---
- 2 | a
-(1 row)
+-- Create a common stored procedure that invokes an autonomous transaction stored procedure.
+CREATE OR REPLACE PROCEDURE autonomous_5(a int, b int) AS
+DECLARE
+BEGIN
+  insert into t2 values(666, 666);
+  autonomous_4(a,b);
+  rollback;
+END;
+/
 
--- Truncate table data.
-truncate table test1;
--- Execute a stored procedure that contains an autonomous transaction in a transaction block that is rolled back.
-begin;
-insert into test1 values(1,'b');
-select autonomous_easy_2(2);
-rollback;
+-- Invoke a common stored procedure.
+select autonomous_5(11,22);
 
--- View table data.
-select * from test1;
--- Execution result:
- a | b
----+---
- 2 | a
-(1 row)
+-- View the table result.
+select * from t2 order by a;
 ```
 
 In the preceding example, a stored procedure containing an autonomous transaction is finally executed in a transaction block to be rolled back, which directly illustrates a characteristic of the autonomous transaction, that is, rollback of the primary transaction does not affect content that has been committed by the autonomous transaction.
