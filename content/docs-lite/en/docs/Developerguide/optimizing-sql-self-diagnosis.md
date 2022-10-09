@@ -1,6 +1,6 @@
 # Optimizing SQL Self-Diagnosis<a name="EN-US_TOPIC_0289899908"></a>
 
-Performance issues may occur when you query data or run the  **INSERT**,  **DELETE**,  **UPDATE**, or  **CREATE TABLE AS**  statement. In this case, you can query the  **warning**  column in the  [PG\_CONTROL\_GROUP\_CONFIG](pg_control_group_config.md)  and  [GS\_SESSION\_MEMORY\_DETAIL](gs_session_memory_detail.md)  views to obtain reference for performance optimization.
+Performance issues may occur when you query data or run the  **INSERT**,  **DELETE**,  **UPDATE**, or  **CREATE TABLE AS**  statement. In this case, you can query the  **warning**  column in the [GS\_WLM\_SESSION\_STATISTICS](gs_wlm_session_statistics.md) and  [GS\_WLM\_SESSION\_HISTORY](gs_wlm_session_history.md) views to obtain reference for performance optimization.
 
 Alarms that can trigger SQL self diagnosis depend on the settings of  **[resource\_track\_level](workload-management.md#en-us_topic_0283137479_en-us_topic_0237124729_section153571329142612)**. If  **resource\_track\_level**  is set to  **query**, alarms about the failures in collecting column statistics and pushing down SQL statements will trigger the diagnosis. If  **resource\_track\_level**  is set to  **operator**, all alarms will trigger the diagnosis.
 
