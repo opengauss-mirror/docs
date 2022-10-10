@@ -602,6 +602,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >对于磁盘major:minor的编号获取，可以通过下面方式。如获取/mpp目录对应的磁盘编号：
 >```
 >> df 
