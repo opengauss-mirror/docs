@@ -122,6 +122,7 @@ gs_cgroup --recover
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >--recover只支持对Class控制组和Workload控制组的增删改操作进行回退，且只支持回退一次操作。
 
 8.查看已创建的控制组信息。  
