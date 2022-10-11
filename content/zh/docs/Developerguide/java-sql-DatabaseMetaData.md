@@ -1242,6 +1242,7 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >uppercaseAttributeName为true时，以下接口会将查询结果转为大写，可转换范围与java中的toUpperCase方法一致。
 >-   public ResultSet getProcedures\(String catalog, String schemaPattern, String procedureNamePattern\)
 >-   public ResultSet getProcedureColumns\(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern\)
