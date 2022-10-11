@@ -25,92 +25,92 @@ gs\_ctl参数可分为如下几类：
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
 
-    **表 1**  option参数
+**表 1**  option参数
 
-    <a name="table145081017222"></a>
+<a name="table145081017222"></a>
     
-    <table><thead align="left"><tr id="row750120016228"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="p125001701227"><a name="p125001701227"></a><a name="p125001701227"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="p1350113042215"><a name="p1350113042215"></a><a name="p1350113042215"></a>参数说明</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row115019017221"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p175017014220"><a name="p175017014220"></a><a name="p175017014220"></a>init</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p750112092213"><a name="p750112092213"></a><a name="p750112092213"></a>创建数据库。</p>
-    </td>
-    </tr>
-    <tr id="row8502002226"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p2050170142211"><a name="p2050170142211"></a><a name="p2050170142211"></a>start</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p650230122210"><a name="p650230122210"></a><a name="p650230122210"></a>启动数据库。</p>
-    </td>
-    </tr>
-    <tr id="row450213017224"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p4502130172216"><a name="p4502130172216"></a><a name="p4502130172216"></a>restart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p11502110202215"><a name="p11502110202215"></a><a name="p11502110202215"></a>重启数据库。</p>
-    </td>
-    </tr>
-    <tr id="row1150320020225"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p205037092217"><a name="p205037092217"></a><a name="p205037092217"></a>build</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1750311010229"><a name="p1750311010229"></a><a name="p1750311010229"></a>在主机上重建备实例或级联备实例。</p>
-    </td>
-    </tr>
-    <tr id="row1650310018229"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p195031101222"><a name="p195031101222"></a><a name="p195031101222"></a>stop</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p155031508224"><a name="p155031508224"></a><a name="p155031508224"></a>停止数据库。</p>
-    </td>
-    </tr>
-    <tr id="row19504130162214"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p450313016229"><a name="p450313016229"></a><a name="p450313016229"></a>reload</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45041702228"><a name="p45041702228"></a><a name="p45041702228"></a>重载配置文件（postgresql.conf, pg_hba.conf）。</p>
-    </td>
-    </tr>
-    <tr id="row45042062216"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p4504503222"><a name="p4504503222"></a><a name="p4504503222"></a>status</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p15042012224"><a name="p15042012224"></a><a name="p15042012224"></a>显示数据库运行状态。</p>
-    </td>
-    </tr>
-    <tr id="row1350550182211"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p105054022211"><a name="p105054022211"></a><a name="p105054022211"></a>finishredo</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p4505140142213"><a name="p4505140142213"></a><a name="p4505140142213"></a>主机故障时，备机停止回放，强制升主。</p>
-    </td>
-    </tr>
-    <tr id="row165052092213"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p95052013227"><a name="p95052013227"></a><a name="p95052013227"></a>failover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p18505130152217"><a name="p18505130152217"></a><a name="p18505130152217"></a>在主机异常时，将备机切换为主机。</p>
-    <p id="p1350511052219"><a name="p1350511052219"></a><a name="p1350511052219"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
-    </td>
-    </tr>
-    <tr id="row9506120142216"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p750515032216"><a name="p750515032216"></a><a name="p750515032216"></a>switchover</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p135061803228"><a name="p135061803228"></a><a name="p135061803228"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
-    <p id="p16506906222"><a name="p16506906222"></a><a name="p16506906222"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅作查询使用。</p>
-    <p id="p11506705227"><a name="p11506705227"></a><a name="p11506705227"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
-    <p id="p1550618072216"><a name="p1550618072216"></a><a name="p1550618072216"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
-    </td>
-    </tr>
-    <tr id="row1550612020229"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p1506130112218"><a name="p1506130112218"></a><a name="p1506130112218"></a>query</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p35068018229"><a name="p35068018229"></a><a name="p35068018229"></a>查询主备机之间的状态信息。</p>
-    </td>
-    </tr>
-    <tr id="row1350715072220"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p1550612002220"><a name="p1550612002220"></a><a name="p1550612002220"></a>notify</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45079019227"><a name="p45079019227"></a><a name="p45079019227"></a>启动后再指定主备机。</p>
-    </td>
-    </tr>
-    <tr id="row1950717022218"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p45078017224"><a name="p45078017224"></a><a name="p45078017224"></a>kill</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p>
-    </td>
-    </tr>
-    <tr id="row850715016228"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p13507150102218"><a name="p13507150102218"></a><a name="p13507150102218"></a>querybuild</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p4507140152210"><a name="p4507140152210"></a><a name="p4507140152210"></a>查看数据库的重建进度。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+<table><thead align="left"><tr id="row750120016228"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="p125001701227"><a name="p125001701227"></a><a name="p125001701227"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="p1350113042215"><a name="p1350113042215"></a><a name="p1350113042215"></a>参数说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row115019017221"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p175017014220"><a name="p175017014220"></a><a name="p175017014220"></a>init</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p750112092213"><a name="p750112092213"></a><a name="p750112092213"></a>创建数据库。</p>
+</td>
+</tr>
+<tr id="row8502002226"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p2050170142211"><a name="p2050170142211"></a><a name="p2050170142211"></a>start</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p650230122210"><a name="p650230122210"></a><a name="p650230122210"></a>启动数据库。</p>
+</td>
+</tr>
+<tr id="row450213017224"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p4502130172216"><a name="p4502130172216"></a><a name="p4502130172216"></a>restart</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p11502110202215"><a name="p11502110202215"></a><a name="p11502110202215"></a>重启数据库。</p>
+</td>
+</tr>
+<tr id="row1150320020225"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p205037092217"><a name="p205037092217"></a><a name="p205037092217"></a>build</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1750311010229"><a name="p1750311010229"></a><a name="p1750311010229"></a>在主机上重建备实例或级联备实例。</p>
+</td>
+</tr>
+<tr id="row1650310018229"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p195031101222"><a name="p195031101222"></a><a name="p195031101222"></a>stop</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p155031508224"><a name="p155031508224"></a><a name="p155031508224"></a>停止数据库。</p>
+</td>
+</tr>
+<tr id="row19504130162214"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p450313016229"><a name="p450313016229"></a><a name="p450313016229"></a>reload</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45041702228"><a name="p45041702228"></a><a name="p45041702228"></a>重载配置文件（postgresql.conf, pg_hba.conf）。</p>
+</td>
+</tr>
+<tr id="row45042062216"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p4504503222"><a name="p4504503222"></a><a name="p4504503222"></a>status</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p15042012224"><a name="p15042012224"></a><a name="p15042012224"></a>显示数据库运行状态。</p>
+</td>
+</tr>
+<tr id="row1350550182211"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p105054022211"><a name="p105054022211"></a><a name="p105054022211"></a>finishredo</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p4505140142213"><a name="p4505140142213"></a><a name="p4505140142213"></a>主机故障时，备机停止回放，强制升主。</p>
+</td>
+</tr>
+<tr id="row165052092213"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p95052013227"><a name="p95052013227"></a><a name="p95052013227"></a>failover</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p18505130152217"><a name="p18505130152217"></a><a name="p18505130152217"></a>在主机异常时，将备机切换为主机。</p>
+<p id="p1350511052219"><a name="p1350511052219"></a><a name="p1350511052219"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
+</td>
+</tr>
+<tr id="row9506120142216"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p750515032216"><a name="p750515032216"></a><a name="p750515032216"></a>switchover</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p135061803228"><a name="p135061803228"></a><a name="p135061803228"></a>在主备机正常时，出于维护的需要，将备机切换为主机，可保证切换过程中数据不丢失。</p>
+<p id="p16506906222"><a name="p16506906222"></a><a name="p16506906222"></a>必须在要切换为主机的备机上，执行switchover命令才会生效。在主机上执行switchover命令，仅作查询使用。</p>
+<p id="p11506705227"><a name="p11506705227"></a><a name="p11506705227"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
+<p id="p1550618072216"><a name="p1550618072216"></a><a name="p1550618072216"></a>switchover命令下发后，命令如果超时返回，后台进程的执行状态可能处于不可确定状态。</p>
+</td>
+</tr>
+<tr id="row1550612020229"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p1506130112218"><a name="p1506130112218"></a><a name="p1506130112218"></a>query</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p35068018229"><a name="p35068018229"></a><a name="p35068018229"></a>查询主备机之间的状态信息。</p>
+</td>
+</tr>
+<tr id="row1350715072220"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p1550612002220"><a name="p1550612002220"></a><a name="p1550612002220"></a>notify</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45079019227"><a name="p45079019227"></a><a name="p45079019227"></a>启动后再指定主备机。</p>
+</td>
+</tr>
+<tr id="row1950717022218"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p45078017224"><a name="p45078017224"></a><a name="p45078017224"></a>kill</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p>
+</td>
+</tr>
+<tr id="row850715016228"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p13507150102218"><a name="p13507150102218"></a><a name="p13507150102218"></a>querybuild</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p4507140152210"><a name="p4507140152210"></a><a name="p4507140152210"></a>查看数据库的重建进度。</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 **表 2**  公共参数
