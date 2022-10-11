@@ -79,7 +79,8 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     指定数据文件行数据的字段分隔符。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.gif) **说明：**
+    >   
     >-   分隔符不能是\\r和\\n。  
     >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。  
     >-   TEXT格式数据的分隔符不能包含： \\.abcdefghijklmnopqrstuvwxyz0123456789。  
