@@ -335,6 +335,7 @@
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：**  
+        >
         >-   -N all表示openGauss中的所有主机。  
         >-   -I all表示主机中的所有实例。  
         >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
