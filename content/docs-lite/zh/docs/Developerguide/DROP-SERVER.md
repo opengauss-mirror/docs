@@ -33,6 +33,7 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss不支持DROP SERVER语法中obs\_server。
 
 ## 相关链接<a name="zh-cn_topic_0283136745_section620331805317"></a>
