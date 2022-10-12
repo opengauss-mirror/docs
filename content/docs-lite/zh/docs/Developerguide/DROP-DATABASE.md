@@ -13,6 +13,7 @@
 -   如果执行DROP DATABASE失败，事务回滚，需要再次执行一次DROP DATABASE IF EXISTS。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 >DROP DATABASE一旦执行将无法撤销，请谨慎使用。
 
 ## 语法格式<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_seefd39b3ef1942df9e333846afd3a56c"></a>
