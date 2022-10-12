@@ -96,6 +96,7 @@
     可设置的运行时参数的名称。可用的运行时参数可以使用SHOW ALL命令查看。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >部分通过SHOW ALL查看的参数不能通过SET设置。如max\_datanodes。
 
 -   **value**

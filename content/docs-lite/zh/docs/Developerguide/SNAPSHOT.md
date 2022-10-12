@@ -12,6 +12,7 @@
 -   当需要稳定可用的快照用于AI训练等任务时，用户需要将快照发布。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >轻量版场景下，openGauss中AI能力不可用。
 
 
