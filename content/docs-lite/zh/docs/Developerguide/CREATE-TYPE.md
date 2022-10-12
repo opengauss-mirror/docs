@@ -110,6 +110,7 @@ CREATE TYPE name AS TABLE OF data_type
     输入函数必须返回一个该数据类型本身的值。通常，一个输入函数应该被声明为STRICT。 如果不是这样，在读到一个NULL输入值时，调用输入函数时第一个参数会是NULL。在这种情况下，该函数必须仍然返回NULL，除非调用函数发生了错误（这种情况主要是想支持域输入函数，域输入函数可能需要拒绝NULL输入）。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >输入和输出函数能被声明为具有新类型的结果或参数是因为：必须在创建新类型之前创建这两个函数。而新类型应该首先被定义为一种shell type，它是一种占位符类型，除了名称和拥有者之外它没有其他属性。这可以通过不带额外参数的命令CREATE TYPE name做到。然后用C写的I/O函数可以被定义为引用这种shell type。最后，用带有完整定义的CREATE TYPE把该shell type替换为一个完全的、合法的类型定义，之后新类型就可以正常使用了。
 
 -   **output\_function**
@@ -146,6 +147,7 @@ CREATE TYPE name AS TABLE OF data_type
     可选参数。将类型的修饰符的内部形式转换为外部文本形式的函数名。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >如果该类型支持修饰符（附加在类型声明上的可选约束，例如，char\(5\)或numeric\(30,2\)），则需要可选的type\_modifier\_input\_function以及type\_modifier\_output\_function。openGauss允许用户定义的类型有一个或者多个简单常量或者标识符作为修饰符。不过，为了存储在系统目录中，该信息必须能被打包到一个非负整数值中。所声明的修饰符会被以cstring数组的形式传递给type\_modifier\_input\_function。 type\_modifier\_input\_function必须检查该值的合法性（如果值错误就抛出一个错误），如果值正确，要返回一个非负integer值，该值将被存储在“typmod”列中。如果类型没有 type\_modifier\_input\_function则类型修饰符将被拒绝。type\_modifier\_output\_function把内部的整数typmod值转换回正确的形式用于用户显示。type\_modifier\_output\_function必须返回一个cstring值，该值就是追加到类型名称后的字符串。例如，numeric的函数可能会返回\(30,2\)。如果默认的显示格式就是只把存储的typmod整数值放在圆括号内，则允许省略type\_modifier\_output\_function。
 
 -   **analyze\_function**
@@ -199,6 +201,7 @@ CREATE TYPE name AS TABLE OF data_type
     可选参数。如果这种类型是其类型分类中的优先类型则为TRUE，否则为FALSE。默认为假。在一个现有类型分类中创建一种新的优先类型要非常谨慎， 因为这可能会导致很大的改变。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >category和preferred参数可以被用来帮助控制在混淆的情况下应用哪一种隐式造型。每一种数据类型都属于一个用单个ASCII 字符命名的分类，并且每一种类型可以是其所属分类中的“首选”。当有助于解决重载函数或操作符时，解析器将优先造型到首选类型（但是只能从同类的其他类型造型）。对于没有隐式转换到或来自任意其他类型的类型，让这些设置保持默认即可。不过，对于有隐式转换的相关类型的组，把它们都标记为属于同一个类别并且选择一种或两种“最常用”的类型作为该类别的首选通常是很有用的。在把一种用户定义的类型增加到一个现有的内建类别（例如，数字或者字符串类型）中时，category参数特别有用。不过，也可以创建新的全部是用户定义类型的类别。对这样的类别，可选择除大写字母之外的任何ASCII 字符。
 
 -   **default**
@@ -229,6 +232,7 @@ CREATE TYPE name AS TABLE OF data_type
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >在创建用户定义类型的时候， openGauss会自动创建一个与之关联的数组类型，其名称由该元素类型的名称前缀一个下划线组成。
 
 ## 示例<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>
