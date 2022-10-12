@@ -43,6 +43,7 @@ PGresult：包含查询结果的对象指针。
 应该调用PQresultStatus函数来检查任何错误的返回值（包括空指针的值，在这种情况下它将返回PGRES\_FATAL\_ERROR）。使用PQerrorMessage获取有关错误的更多信息。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 >命令字符串可以包括多个SQL命令（用分号分隔）。在一个PQexec调用中发送的多个查询是在一个事务里处理的，除非在查询字符串里有明确的BEGIN/COMMIT命令把整个字符串分隔成多个事务。请注意，返回的PGresult结构只描述字符串里执行的最后一条命令的结果，如果有一个命令失败，那么字符串处理的过程就会停止，并且返回的PGresult会描述错误条件。
 
 ## 示例<a name="zh-cn_topic_0283137421_zh-cn_topic_0241735619_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
