@@ -329,6 +329,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 ### **恢复目标相关参数\(recovery\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
 >如果需要使用持续归档的WAL日志进行PITR恢复，请按照下面描述的步骤：
 >1.  将物理备份的文件替换目标数据库目录。
