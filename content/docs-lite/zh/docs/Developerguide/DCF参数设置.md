@@ -1,6 +1,7 @@
 # DCF参数设置<a name="ZH-CN_TOPIC_0000001083207760"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss中DCF功能不可用，但提供DCF选主能力，用户若使用需自行配置。
 
 ## enable\_dcf<a name="section14941640131"></a>
