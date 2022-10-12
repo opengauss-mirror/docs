@@ -101,7 +101,8 @@ DELETE [/*+ plan_hint */]
 
     using子句。
      >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >当参数sql\_compatibility=B时，using\_list指定关联表的集合时可以同时出现目标表，并且可以定义表的别名并在目标表中使用。其他模式下则目标表不可重复出现在using\_list中。
+     >
+     >当参数sql\_compatibility=B时，using\_list指定关联表的集合时可以同时出现目标表，并且可以定义表的别名并在目标表中使用。其他模式下则目标表不可重复出现在using\_list中。
 
 -   **condition**
 
