@@ -13,6 +13,7 @@
 由该语法创建CEK对象可用于列级加密。在定义表中列字段时，可指定一个CEK对象，用于加密该列。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供此语法，但密态数据库相关功能不可用。
 
 ## 语法格式<a name="section182042586132"></a>
@@ -42,6 +43,7 @@ CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH VALUES(CLIENT_MASTE
     该值为用户指定的密钥口令，密钥口令长度范围为28 \~ 256个字符，28个字符派生出来的密钥安全强度满足AES128，若用户需要用AES256，密钥口令的长度需要39个字符，如果不指定，则会自动生成256字符的密钥。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >国密算法约束：由于SM2、SM3、SM4等算法属于中国国家密码标准算法，为规避法律风险，需配套使用。如果创建CMK时指定SM2算法来加密CEK，则创建CEK时必须指定SM4\_SM3算法来加密数据。
 
 
