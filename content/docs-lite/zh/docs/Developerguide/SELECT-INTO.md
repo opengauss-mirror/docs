@@ -58,6 +58,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp、pg\_toast\_temp开头的schema。
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作。
@@ -65,6 +66,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >SELECT INTO的其它参数可参考SELECT的[参数说明](SELECT.md#zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)。
 
 ## 示例<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
