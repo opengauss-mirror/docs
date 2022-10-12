@@ -11,6 +11,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 阅读[总体原则](#section14452102715206)，根据需要查看和配置mot.conf文件。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >以上描述了mot.conf文件中的各个设置。除上述内容外，要了解特定MOT功能（如恢复），可参考本用户手册的相关章节。例如，[MOT恢复](MOT恢复.md)说明了mot.conf文件的恢复，包含影响MOT恢复的设置。此外，有关恢复的完整说明，请参阅“MOT管理”章节的[MOT恢复](MOT恢复.md)。下文各相关章节中还提供了参考链接。
 
 以下介绍了mot.conf文件中的各个部分，其包含的设置以及默认值。
