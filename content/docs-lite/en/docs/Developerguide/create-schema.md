@@ -18,7 +18,7 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 -   Create a schema based on a specified name.
 
     ```
-    CREATE SCHEMA schema_name 
+    CREATE SCHEMA [IF NOT EXISTS] schema_name 
         [ AUTHORIZATION user_name ] [WITH BLOCKCHAIN] [ schema_element [ ... ] ];
     ```
 
