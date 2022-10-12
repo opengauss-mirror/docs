@@ -523,7 +523,7 @@ export PGDATABASE=postgres
     指定角色名的密码。
 
 
-## 说明<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
+![](public_sys-resources/icon-note.gif) **说明：**  
 
 如果openGauss有任何本地数据要添加到template1数据库，请谨慎将gs\_dump的输出恢复到一个真正的空数据库中，否则可能会因为被添加对象的定义被复制，出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
 
