@@ -438,7 +438,7 @@
 <p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p328439479138"></a>主机上侦听到备机连接请求，并接受后，就会创建一个WAL Sender线程，用于处理与备机的交互。</p>
 </td>
 </tr>
-<tr id="row72083135120"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p19208131105113"><a name="p19208131105113"></a><a name="p19208131105113"></a>publication</p>
+<tr id="row72083135120"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p19208131105113"><a name="p19208131105113"></a><a name="p19208131105113"></a>Publication</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p1420921165112"><a name="p1420921165112"></a><a name="p1420921165112"></a>发布可以被定义在任何物理复制的主服务器上。定义有发布的节点被称为发布者。发布是从一个表或者一组表生成的改变的集合，也可以被描述为更改集合或者复制集合。每个发布都只存在于一个数据库中。</p>
 </td>
@@ -488,7 +488,7 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p162294289138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p162294289138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p162294289138"></a>Secure Socket Layer，安全套接层。SSL是Netscape公司率先采用的网络安全协议。它是在传输通信协议（TCP/IP）上实现的一种安全协议，采用公开密钥技术。SSL广泛支持各种类型的网络，同时提供三种基本的安全服务，它们都使用公开密钥技术。SSL支持服务通过网络进行通信而不损害安全性。它在客户端和服务器之间创建一个安全连接。然后通过该连接安全地发送任意数据量。</p>
 </td>
 </tr>
-<tr id="row17699913114920"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p7701161374911"><a name="p7701161374911"></a><a name="p7701161374911"></a>subscription</p>
+<tr id="row17699913114920"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p7701161374911"><a name="p7701161374911"></a><a name="p7701161374911"></a>Subscription</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p770117138499"><a name="p770117138499"></a><a name="p770117138499"></a>订阅是逻辑复制的下游端。订阅被定义在其中的节点被称为订阅者。一个订阅会定义到另一个数据库的连接以及它想要订阅的发布集合（一个或者多个）。</p>
 </td>
