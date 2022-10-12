@@ -150,6 +150,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
     >-   如果T1.C1为子查询的输出，要根据业务逻辑确认其输出是否为NOT NULL。
 
