@@ -423,6 +423,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
