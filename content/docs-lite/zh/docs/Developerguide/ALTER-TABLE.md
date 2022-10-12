@@ -372,6 +372,7 @@
     -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
@@ -383,6 +384,7 @@
     索引名。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT操作中：
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
@@ -395,6 +397,7 @@
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
@@ -404,6 +407,7 @@
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
@@ -411,6 +415,7 @@
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
 
@@ -552,6 +557,7 @@
     -   INITIALLY DEFERRED：只有在事务结尾才检查它。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 
