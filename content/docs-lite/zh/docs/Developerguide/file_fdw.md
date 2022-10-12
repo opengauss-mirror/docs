@@ -46,6 +46,7 @@ file\_fdw对应的server和外表只允许数据库的初始用户或开启运�
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   file\_fdw不支持COPY的OIDS和 FORCE\_QUOTE选项。
 >-   这些选项只能为外部表或外部表的字段声明，不是file\_fdw的选项，也不是使用file\_fdw的服务器或用户映射的选项。
 >-   修改表级别的选项需要系统管理员权限。因为安全原因，只有系统管理员能够决定读取的文件。
@@ -58,6 +59,7 @@ file\_fdw对应的server和外表只允许数据库的初始用户或开启运�
 -   创建外表：CREATE FOREIGN TABLE
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   外表的表结构需要与指定的文件的数据保持一致。
     >-   对外表做查询操作，写操作不被允许。
 

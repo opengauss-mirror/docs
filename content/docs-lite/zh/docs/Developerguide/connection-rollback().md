@@ -5,6 +5,7 @@
 此方法回滚当前挂起事务。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >执行关闭连接“close\(\)”而不先提交更改“commit\(\)”将导致执行隐式回滚。
 
 ## 原型<a name="section441681310810"></a>
