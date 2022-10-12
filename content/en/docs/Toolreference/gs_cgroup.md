@@ -99,6 +99,7 @@ For details, see "Resource Load Management" in  _Developer Guide_.
             ```
 
             >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >
             >To set exception handling information for a Cgroup, ensure that the Cgroup has been created. Multiple specified thresholds are separated by commas \(,\). If no operation is specified,  **--penalty**  is used by default.
 
 
@@ -600,6 +601,7 @@ For details, see "Resource Load Management" in  _Developer Guide_.
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >Use the following method to obtain the  **major:minor**  value for the disk. For example, obtain the number of the disk corresponding to the  **/mpp**  directory.
 >```
 >> df 
@@ -616,6 +618,7 @@ For details, see "Resource Load Management" in  _Developer Guide_.
 >```
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Check the disk number of sdd rather than sdd1. Otherwise, an error will be reported.
 >If the length of I/O quota limitation after the upgrade exceeds the allowed maximum length of the string, the update will not be saved in the configuration file. If the maximum length of the string is set to 96 and I/O resources of more than eight disks are updated, the string limitation may be exceeded. The update will not be saved in the configuration file though the update succeeds.
 
