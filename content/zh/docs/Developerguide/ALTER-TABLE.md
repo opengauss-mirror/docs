@@ -403,6 +403,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 
