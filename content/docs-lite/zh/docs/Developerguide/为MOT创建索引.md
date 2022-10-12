@@ -26,6 +26,7 @@ create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) 
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >在MOT名字之前不需要指定FOREIGN关键字，因为它仅用于创建和删除表的命令。
 
 有关MOT索引限制，请参见“MOT SQL覆盖和限制”的索引部分内容。
