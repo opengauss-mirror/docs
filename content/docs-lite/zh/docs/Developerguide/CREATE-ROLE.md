@@ -63,6 +63,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     取值范围：字符串，要符合标识符的命名规范，且最多为63个字符。若超过63个字符，数据库会截断并保留前63个字符当做角色名称。在创建角色时，超过63个字符的时候数据库会给出提示信息。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >标识符需要为字母、下划线、数字（0-9）或美元符号（$），且必须以字母（a-z）或下划线（\_）开头。
 
 -   **password**
@@ -88,6 +89,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     默认情况下，用户可以更改自己的密码，除非密码被禁用。要禁用用户的密码，请指定DISABLE。禁用某个用户的密码后，将从系统中删除该密码，此类用户只能通过外部认证来连接数据库，例如：kerberos认证。只有管理员才能启用或禁用密码。普通用户不能禁用初始用户的密码。要启用密码，请运行ALTER USER并指定密码。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >轻量版场景下，openGauss中kerberos相关功能不可用。
 
 -   **ENCRYPTED | UNENCRYPTED**
@@ -175,6 +177,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
     声明该角色可以使用的并发连接数量。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   系统管理员不受此参数的限制。
     >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
