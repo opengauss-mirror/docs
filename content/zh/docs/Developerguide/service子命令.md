@@ -158,6 +158,7 @@ gs_dbmind service stop -c confpath
 DBMind服务会在后台执行完正在运行的任务后自行退出。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >-   \[METADATABASE\]中的元数据库用户需要具有在该数据库下的创表和数据插入更新权限，否则工具执行会出现异常。  
 >-   当前不支持同一配置文件下分开启动多个服务。  
 >-   工具提供了requirement.txt文件，用户可以通过该文件安装所需的第三方依赖。  
