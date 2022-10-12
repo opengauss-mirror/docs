@@ -9,6 +9,7 @@
 只有属主/系统管理员/初始用户才可以删除一个Data Source对象。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供此语法，但SQL on Anywhere不可用。
 
 ## 语法格式<a name="zh-cn_topic_0283136822_zh-cn_topic_0237122135_section1289212618239"></a>
