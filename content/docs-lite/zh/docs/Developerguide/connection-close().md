@@ -5,6 +5,7 @@
 此方法关闭数据库连接。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >此方法关闭数据库连接，并不自动调用commit\(\)。如果只是关闭数据库连接而不调用commit\(\)方法，那么所有更改将会丢失。
 
 ## 原型<a name="section441681310810"></a>
