@@ -143,6 +143,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Specifies the name of the constraint specified during table creation.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
@@ -169,12 +170,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **expression**
 
      >![](public_sys-resources/icon-notice.gif) **NOTICE:**
-    >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+     >
+     >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
 
 -   **data\_type**
 
@@ -217,6 +220,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
@@ -419,6 +423,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     A check constraint specified as a column constraint should reference only the column's values, while an expression appearing in a table constraint can reference multiple columns.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >**<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.
 
 -   **DEFAULT default\_expr**
@@ -491,6 +496,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     Controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only UNIQUE constraints, primary key constraints, and foreign key constraints accept this clause. All the other constraints are not deferrable.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >Ustore tables do not support the keywords  **DEFERRABLE**  and  **INITIALLY DEFERRED**.
 
 -   **COMMENT text**
@@ -1138,6 +1144,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >List and hash partitioned tables do not support  **LIKE INCLUDING PARTITION**.
 
 -   LIKE INCLUDING RELOPTIONS

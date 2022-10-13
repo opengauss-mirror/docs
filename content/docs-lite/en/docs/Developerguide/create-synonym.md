@@ -38,6 +38,7 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
     Value range: a string. It must comply with the identifier naming convention.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >**object\_name**  can be the name of an object that does not exist.
 
 
