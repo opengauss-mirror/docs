@@ -69,6 +69,7 @@
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null fields exist in the tuple.
 >2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the VARCHAR\(n\) type.
 >3.  Only advanced packages related to dbe\_lob support CLOBs whose size is greater than 1 GB. System functions do not support CLOBs whose size is greater than 1 GB.
