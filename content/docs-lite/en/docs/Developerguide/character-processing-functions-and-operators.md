@@ -115,6 +115,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If the length of the bytea type is queried and UTF8 encoding is specified, the maximum length can only be  **536870888**.
 
 -   lpad\(string text, length int \[, fill text\]\)
@@ -467,6 +468,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If the POSIX pattern contains any parentheses, the portion of the text that matched the first parenthesized sub-expression \(the one whose left parenthesis comes first\) is returned. You can put parentheses around the whole expression if you want to use parentheses within it without triggering this exception.
 
 -   substring\(string from  *pattern*  for  *escape*\)
@@ -608,6 +610,7 @@ String functions and operators provided by openGauss are for concatenating strin
     The optional  **flags**  argument contains zero or multiple single-letter flags that change function behavior.  **i**  indicates that the matching is not related to uppercase and lowercase.  **g**  indicates that each matched substring is replaced, instead of replacing only the first one.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >If the last parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to A, the returned result is an empty set. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can:
     >-   Change the database SQL compatibility mode to C.
     >-   Do not provide the last parameter or do not set the last parameter to an empty string.
@@ -687,6 +690,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The maximum size of memory allocated at a time cannot exceed 1 GB due to the memory allocation mechanism of the database. Therefore, the maximum value of  **number**  cannot exceed \(1 GB –  **x**\)/**lengthb**  \(**string**\) – 1.  **x**  indicates the length of the header information, which is usually greater than 4 bytes. The value varies among different scenarios.
 
 -   replace\(string text, from text, to text\)
@@ -1310,6 +1314,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Description: Connects str1 and str2 and returns the string.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >If the SQL compatibility mode is set to  **MY**  and  **str1**  or  **str2**  is set to  **NULL**,  **NULL**  will be returned.
 
     Return type: varchar
@@ -1416,6 +1421,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Description: Uses the first parameter as the separator, which is associated with all following parameters. The  **NULL**  parameter is ignored.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >-   If the first parameter value is  **NULL**, the returned result is  **NULL**.
     >-   If the first parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to  **A**, the returned result is  **NULL**. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can change the SQL compatibility mode of the database to  **B**,  **C**, or  **PG**.
 
@@ -1473,6 +1479,7 @@ String functions and operators provided by openGauss are for concatenating strin
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If the rule for converting between source to target encoding \(for example, GBK and LATIN1\) does not exist, the string is returned without conversion. See the  **pg\_conversion**  system catalog for details.
     >Example:
     >```
@@ -1630,6 +1637,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Description: Encrypts a string in MD5 mode and returns a value in hexadecimal form.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
 
     Return type: text
@@ -1648,7 +1656,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Description: Encrypts a string using SHA1 and returns a hexadecimal number. The sha and sha1 functions are the same.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**
-     >  
+    >  
     >The SHA1 encryption algorithm is not recommended because it has lower security and poses security risks.
     >This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
 
@@ -1676,7 +1684,7 @@ String functions and operators provided by openGauss are for concatenating strin
     **hash\_length**: corresponds to a SHA2 algorithm. The value can be **0**\(SHA-256\), **224**\(SHA-224\), **256**\(SHA-256\), **384**\(SHA-384\), or **512**\(SHA-512\). For other values, **NULL** is returned.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**
-       >
+    >
     >The SHA224 encryption algorithm is not recommended because it has lower security and poses security risks.
     >The SHA2 function records hash plaintext in logs. Therefore, you are not advised to use this function to encrypt sensitive information such as keys.
     >This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
@@ -1801,6 +1809,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >-   For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.
 >-   In openGauss,  *n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n*.
 >-   openGauss supports multiple types of databases, including A, B, C, and PG. If the database type is not specified, A is used by default. The lexical analyzer of A database is different from that of the other three databases. In A database, an empty character string is considered as  **NULL**. Therefore, when a type A database is used, if a  **NULL**  character string is used as a parameter in the preceding character operation function, no output is displayed. For example:
