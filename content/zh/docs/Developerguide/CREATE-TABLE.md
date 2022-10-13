@@ -163,6 +163,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     取值范围参考[参数说明](CREATE-INDEX)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -171,6 +172,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
@@ -178,6 +180,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
 
