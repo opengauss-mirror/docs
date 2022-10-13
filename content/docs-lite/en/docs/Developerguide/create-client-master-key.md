@@ -13,6 +13,7 @@ When using  **gsql**  to connect to a database server, you need to use the  **-C
 In the CMK object created using this syntax, only the method for reading keys from independent key management tools, services, or components is stored. The key itself is not stored.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
@@ -42,6 +43,7 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH (KEY_STORE = key_store_name
     Type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA\_3072**, and  **SM2**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >**Key storage path**: By default,  **localkms**  generates, reads, or deletes a key file in the  _$LOCALKMS_**\_FILE\_PATH**  path. You can manually configure this environment variable. However, you do not need to configure this environment variable separately. When failing to obtain $LOCALKMS\_FILE\_PATH,  **localkms**  attempts to obtain the  _$GAUSSHOME_**/etc/localkms/**  path. If the path exists, it is used as the key storage path.
     >**Key-related file name**: When the  **CREATE CMK**  syntax is used,  **localkms**  creates four files related to key paths. For example, when  **KEY\_PATH**  is set to  **key\_path\_value**, the names of the four files are  **key\_path\_value.pub**,  **key\_path\_value.pub.rand**,  **key\_path\_value.priv**, and  **key\_path\_value.priv.rand**.
     >Therefore, to successfully create key-related files, ensure that no file with the same name as the key-related files exists in the key path.

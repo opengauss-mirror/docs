@@ -3,6 +3,7 @@
 This feature allows administrators to reduce the I/O impact of the  **VACUUM**  and  **ANALYZE**  statements on concurrent database activities. It is often more important to prevent maintenance statements, such as  **VACUUM**  and  **ANALYZE**, from affecting other database operations than to run them quickly. Cost-based vacuum delay provides a way for administrators to achieve this purpose.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Certain vacuum operations hold critical locks and should be complete as quickly as possible. In openGauss, cost-based vacuum delays do not take effect during such operations. To avoid uselessly long delays in such cases, the actual delay is the larger of the two calculated values:
 >-   **vacuum\_cost\_delay**  x  **accumulated\_balance**/**vacuum\_cost\_limit**
 >-   **vacuum\_cost\_delay**  x 4
