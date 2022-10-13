@@ -175,6 +175,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     索引名。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -186,6 +187,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 

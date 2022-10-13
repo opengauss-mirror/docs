@@ -1148,6 +1148,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS
