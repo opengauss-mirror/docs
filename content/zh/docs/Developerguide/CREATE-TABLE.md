@@ -227,6 +227,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     这个子句为表或索引指定一个可选的存储参数。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
     参数的详细描述如下所示。
@@ -421,6 +422,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     声明为字段约束的检查约束应该只引用该字段的数值，而在表约束里出现的表达式可以引用多个字段。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。
 
 
@@ -441,6 +443,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
     >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型、布尔类型。
     >-   每个表只能有一个自动增长列。
