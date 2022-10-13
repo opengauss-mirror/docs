@@ -122,6 +122,7 @@ After resource load management is enabled, the system automatically creates  **d
 </table>
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >**default\_pool**  cannot be modified in openGauss.
 
 ## Prerequisites<a name="section17352165513395"></a>
