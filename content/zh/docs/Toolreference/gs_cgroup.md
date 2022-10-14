@@ -619,6 +619,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 >brw-rw---- 1 root disk 8, 48 Feb 26 11:20 /dev/sdd
 >```
 
+
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >这里一定要查sdd的磁盘号，不能是sdd1的磁盘号。否则执行时会报错。
 >如果更新IO的限额配置信息超过了可允许的最大配置字串，则新的更新不存储在配置文件中。如当前设置的字串长度为96，更新IO的磁盘数量大于8个，则有可能超出字串限制，更新成功，但是不存储在配置文件中。
