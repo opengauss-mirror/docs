@@ -9,6 +9,7 @@
 调用的模型名称在系统表gs\_model\_warehouse中可查看到。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供此语法，但AI能力不可用。
 
 ## 语法格式<a name="section74427451052"></a>
