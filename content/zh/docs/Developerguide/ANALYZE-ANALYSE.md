@@ -183,13 +183,7 @@ INFO:  analyzing "cstore.pg_delta_3394584009"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
 ANALYZE
-```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->若环境若有故障，需查看数据库主节点的log。
-
-
-```
 -- 删除表。
 openGauss=# DROP TABLE customer_info;
 openGauss=# DROP TABLE customer_par;
