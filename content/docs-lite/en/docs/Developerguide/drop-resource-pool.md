@@ -5,6 +5,7 @@
 **DROP RESOURCE POOL**  deletes a resource pool.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The resource pool cannot be deleted if it is associated with a role.
 
 ## Precautions<a name="en-us_topic_0059778399_sac7b2d84ed1a4b7fba5c5a6497f822c1"></a>
