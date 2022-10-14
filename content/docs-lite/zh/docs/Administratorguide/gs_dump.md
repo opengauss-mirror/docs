@@ -82,6 +82,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >可以使用gs\_dump程序将文件压缩为目录归档或自定义归档导出文件，减少导出文件的大小。生成目录归档或自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。
 
 ## 注意事项<a name="zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
@@ -97,6 +98,7 @@ gs_dump [OPTION]... [DBNAME]
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >“_DBNAME_”前面不需要加短或长选项。“_DBNAME_”指定要连接的数据库。
 >例如：
 >不需要-d，直接指定“_DBNAME_”。
