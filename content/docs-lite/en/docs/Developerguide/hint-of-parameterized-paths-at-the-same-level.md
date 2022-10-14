@@ -12,6 +12,7 @@ predpush_same_level(src1 src2 ..., dest)
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >This parameter takes effect only when the  **predpushforce**  option in  **rewrite\_rule**  is enabled.
 
 ## Examples<a name="section5736356154"></a>
