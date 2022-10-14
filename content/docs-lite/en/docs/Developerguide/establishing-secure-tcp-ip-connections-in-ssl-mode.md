@@ -53,6 +53,7 @@ Set digital certificate parameters related to SSL authentication. For details, s
 
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >You are advised to use bidirectional authentication for security purposes.
 >The environment variables configured for a client must contain the absolute file paths.
 
@@ -177,6 +178,7 @@ In the  **postgresql.conf**  file on the server, set the related parameters. For
 Configure environment variables related to SSL authentication on the client. For details, see  [Table 3](#en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The path of environment variables is set to  **/home/omm**  as an example. Replace it with the actual path.
 
 **Table  3**  Client parameters
