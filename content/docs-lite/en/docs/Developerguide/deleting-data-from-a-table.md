@@ -23,6 +23,7 @@ openGauss=# TRUNCATE TABLE customer_t1;
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >If you need to delete an entire table, you are advised to use the  **TRUNCATE**  statement rather than  **DELETE**.
 
 To delete a table, run the following command:

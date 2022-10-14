@@ -100,6 +100,7 @@ DELETE [/*+ plan_hint */]
 
     Specifies the  **USING**  clause.
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >When **sql\_compatibility** is set to **B**, the target table can appear at the same time when **using\_list** specifies the set of associated tables. In addition, the alias of the table can be defined and used in the target table. In other situations, the target table cannot appear repeatedly in **using\_list**.
 
 -   **condition**
