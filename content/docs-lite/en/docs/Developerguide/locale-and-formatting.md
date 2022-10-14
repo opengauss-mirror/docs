@@ -15,6 +15,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **ISO, MDY**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >**gs\_initdb**  will initialize this parameter so that its value is the same as that of  [lc\_time](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_scbb410b3c5c94682a3eec218c7ff0220).
 
 **Setting Suggestions**: The ISO format is recommended. Postgres, SQL, and German use abbreviations for time zones, such as  **EST**,  **WST**, and  **CST**. These abbreviations can be ambiguous. For example,  **CST**  can represent Central Standard Time \(USA\) UT-6:00, Central Standard Time \(Australia\) UT+9:30, and China Standard Time UT+8:00. This may lead to incorrect time zone conversion and cause errors.
@@ -34,6 +35,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_lf9dae2de082b41c094177f70cf798433).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >The  **IntervalStyle**  parameter also affects the interpretation of ambiguous interval input.
 
 **Default value**:  **postgres**
@@ -49,6 +51,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **GMT**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >**gs\_initdb**  will set a time zone value that is consistent with the system environment.
 
 ## timezone\_abbreviations<a name="en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_sfe98cbd0139a47a6af08665f2ef22d45"></a>
@@ -62,6 +65,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **Default**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >**Default**  indicates an abbreviation that works in most of the world, which is applicable to most cases. There are also other abbreviations, such as  **Australia**  and  **India**  that can be defined for a particular installation. For other time zone abbreviations, you need to set them in the corresponding configuration files before creating the database.
 
 ## extra\_float\_digits<a name="en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_saf497a16490b45439e96d11918794fe5"></a>
@@ -172,6 +176,7 @@ If the specified text search configuration does not exist, an error will be repo
 **Value range**: a string
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >openGauss supports the following two configurations:  **pg\_catalog.english**  and  **pg\_catalog.simple**.
 
 **Default value**:  **pg\_catalog.english**

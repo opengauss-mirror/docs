@@ -23,6 +23,7 @@ leading((join_table_list))
 _join\_table\_list_  specifies the tables to be joined. The values can be table names or table aliases. If a subquery is pulled up, the value can also be the subquery alias. Separate the values with spaces. You can add parentheses to specify the join priorities of tables.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >A table name or alias can only be a string without a schema name.
 >An alias \(if any\) is used to represent a table.
 
