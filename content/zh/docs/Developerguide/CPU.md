@@ -24,10 +24,9 @@ Cpu3  :  0.3%us,  0.3%sy,  0.0%ni, 69.3%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
 Mem:   8038844k total,  7165272k used,   873572k free,   530444k buffers
 Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
 
-   PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                                                                                      
-                                                                                                                                                                   
- 35184 omm  20   0  822m 421m 128m S    0  5.4   5:28.15 gaussdb                                                                                                                                                                       
-     1 root      20   0 13592  820  784 S    0  0.0   1:16.62 init            
+   PID USER  PR  NI  VIRT  RES  SHR  S   %CPU %MEM   TIME+  COMMAND                                                        
+ 35184 omm   20   0  822m 421m 128m  S    0    5.4   5:28.15 gaussdb                                                        
+     1 root   20   0 13592  820  784 S    0    0.0   1:16.62 init            
 ```
 
 分析时，请主要关注进程占用的CPU利用率。
@@ -46,17 +45,12 @@ Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
     Mem:   8038844k total,  5317668k used,  2721176k free,   180268k buffers
     Swap:  4192924k total,        0k used,  4192924k free,  2886860k cached
     
-       PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                  
-                      
-      3105 root      20   0 50492  11m 2708 S    3  0.1  22:22.56 acc-snf                   
-                    
+       PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                 
+      3105 root      20   0 50492  11m 2708 S    3  0.1  22:22.56 acc-snf
       4015 gdm       20   0  232m  23m  11m S    0  0.3  11:34.70 gdm-simple-gree           
-     51001 omm  20   0 12140 1484  948 R    0  0.0   0:00.94 top                       
-                    
-     54885 omm  20   0  615m 396m 116m S    0  5.1   0:09.44 gaussdb                   
-                      
-                  
-         1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init          
+     51001 omm  20   0 12140 1484  948 R    0  0.0   0:00.94 top
+     54885 omm  20   0  615m 396m 116m S    0  5.1   0:09.44 gaussdb
+         1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init
     ```
 
 2. 根据查询结果中“Cpu\(s\)”分析是系统CPU（sy）还是用户CPU（us）占用过高。
