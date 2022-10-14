@@ -127,7 +127,8 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：双引号。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.gif) **说明：**
+    >   
     >-   quote参数不能和分隔符、null参数相同。  
     >-   quote参数只能是单字节的字符。  
     >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。  
@@ -159,11 +160,11 @@ gsql工具提供了元命令\\copy进行数据导入。
 
 ## 任务示例<a name="zh-cn_topic_0237121136_zh-cn_topic_0117407672_section49087436203946"></a>
 
-1.  创建目标表a。
+1. 创建目标表a。
 
-    ```
-    CREATE TABLE a(a int);
-    ```
+   ```
+   CREATE TABLE a(a int);
+   ```
 
 2. 导入数据。
 
