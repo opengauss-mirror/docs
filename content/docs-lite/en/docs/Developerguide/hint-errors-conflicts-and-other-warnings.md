@@ -35,6 +35,7 @@ Hint error types are as follows:
         For example, if  **nestloop \(t1 t2\) hashjoin \(t1 t2\)**  is used,  **hashjoin \(t1 t2\)**  becomes invalid.  **nestloop\(t1 t2\)**  does not conflict with  **no mergejoin\(t1 t2\)**.
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >
         >The table list in the  **leading**  hint is disassembled. For example,  **leading \(\(t1 t2 t3\)\)**  will be disassembled as  **leading\(\(t1 t2\)\) leading\(\(\(t1 t2\) t3\)\)**, which will conflict with  **leading\(\(t2 t1\)\)**  \(if any\). In this case, the latter  **leading\(t2 t1\)**  becomes invalid. If two hints use duplicated table lists and only one of them has the specified outer/inner table, the one without a specified outer/inner table becomes invalid.
 
 

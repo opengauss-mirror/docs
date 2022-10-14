@@ -7,6 +7,7 @@ Some errors can be degraded to warnings when INSERT and UPDATE statements are ex
 This hint does not support column-store tables and cannot take effect in column-store tables.
 
 >![](./public_sys-resources/icon-caution.gif) **Caution:**
+>
 >Different from other hints, this hint affects only the processing mode when the executor encounters some errors and does not affect the execution plan.
 
 When this hint is used, errors are degraded in the following scenarios:
@@ -20,7 +21,8 @@ When this hint is used, errors are degraded in the following scenarios:
   -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
   
       >![](public_sys-resources/icon-note.gif) **NOTE:**
-    >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](miscellaneous-parameters.md).
+      >
+      >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](miscellaneous-parameters.md).
 
 - **The unique constraint is violated.**
 
