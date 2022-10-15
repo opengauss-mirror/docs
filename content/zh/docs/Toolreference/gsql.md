@@ -23,9 +23,9 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 **表 1**  gsql高级特性
 
 <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854aafa35d"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r4b73260a43df46f6ba18d2326f63d3e8"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"></a>特性名称</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r4b73260a43df46f6ba18d2326f63d3e8"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a29f357ee25eb4073a6e89b1c17957f46"></a><b>特性名称</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="84%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"></a>描述</p>
+<th class="cellrowborder" valign="top" width="84%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45cedfc72b04d209ad1655f0aac7443"></a><b>描述</b></p>
 </th>
 </tr>
 </thead>
