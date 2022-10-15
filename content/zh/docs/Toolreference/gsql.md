@@ -100,11 +100,11 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 **表 2**  特殊变量设置 <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_table45814285"></a>
     
 
-<table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_row63384495"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a>变量</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_row63384495"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a><b>变量</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"></a>设置方法</p>
+    <th class="cellrowborder" valign="top" width="28.000000000000004%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p56526422"></a><b>设置方法</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"></a>变量说明</p>
+    <th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p8552256"></a><b>变量说明</b></p>
     </th>
     </tr>
     </thead>
