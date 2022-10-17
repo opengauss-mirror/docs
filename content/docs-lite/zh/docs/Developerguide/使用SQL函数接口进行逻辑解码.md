@@ -7,6 +7,7 @@ openGauss可以通过调用SQL函数，进行创建、删除、推进逻辑复�
 -   逻辑日志目前从主机节点中抽取，如果进行逻辑复制，需要保证GUC参数[ssl](安全和认证（postgresql-conf）.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)=on。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >为避免安全风险，请保证启用SSL连接。
 
 
