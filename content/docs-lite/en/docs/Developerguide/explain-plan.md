@@ -18,6 +18,7 @@ FOR statement ;
 -   **STATEMENT\_ID**: tags each query. The tag information will be stored in  **PLAN\_TABLE**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If the  **EXPLAIN PLAN**  statement does not contain  **SET STATEMENT\_ID**,  **STATEMENT\_ID**  is empty by default. In addition, the value of  **STATEMENT\_ID**  cannot exceed 30 bytes. Otherwise, an error will be reported.
 
 
@@ -34,6 +35,7 @@ You can perform the following steps to collect execution plans of SQL statements
 1.  Run the  **EXPLAIN PLAN**  statement.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >After the  **EXPLAIN PLAN**  statement is executed, plan information is automatically stored in  **PLAN\_TABLE**.  **INSERT**,  **UPDATE**, and  **ANALYZE**  cannot be performed on  **PLAN\_TABLE**.
     >For details about  **PLAN\_TABLE**, see  [PLAN\_TABLE](plan_table.md).
 
