@@ -137,7 +137,7 @@
 
 - **ENABLE REPLICA TRIGGER trigger\_name**
 
-  触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+  触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
   配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
 
 - **ENABLE ALWAYS TRIGGER trigger\_name**
@@ -145,7 +145,7 @@
 
 - **DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
 
-  配置属于表的重写规则，已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+  配置属于表的重写规则，已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
 
 - **DISABLE/ENABLE ROW LEVEL SECURITY**
 
