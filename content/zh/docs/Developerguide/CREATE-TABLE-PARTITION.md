@@ -347,6 +347,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
   >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
   >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
   >2.  START END语法需要遵循以下限制：
   >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
@@ -375,6 +376,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
   >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
   >列存表不支持间隔分区。
 
 - **PARTITION BY LIST\(partition\_key\)**
@@ -436,6 +438,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
     >
     >-   不能为生成列指定默认值。
