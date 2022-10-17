@@ -70,6 +70,7 @@ DROP TABLE mytab;
 When control reaches the assignment to  **y**, it will fail with a  **division\_by\_zero**  error. This will be caught by the  **EXCEPTION**  clause. The value returned in the  **RETURN**  statement will be the incremented value of  **x**.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >A block containing an  **EXCEPTION**  clause is more expensive to enter and exit than a block without one. Therefore, do not use  **EXCEPTION**  without need.
 >In the following scenario, an exception cannot be caught, and the entire transaction rolls back. The threads of the nodes participating the stored procedure exit abnormally due to node failure and network fault, or the source data is inconsistent with that of the table structure of the target table during the COPY FROM operation.
 

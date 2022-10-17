@@ -14,6 +14,7 @@ For logical replication, in addition to the configuration items described in "Lo
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The binary encoding rules are as follows:
 >1.  The first four bytes represent the total number of bytes of the decoding result that follows the statement-level delimiter letter P \(excluded\) or the batch end character F \(excluded\) If the value is  **0**, the decoding of this batch ends.
 >2.  The next eight bytes \(uint64\) indicate the LSN.
