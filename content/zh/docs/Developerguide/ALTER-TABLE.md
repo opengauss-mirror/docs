@@ -434,6 +434,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
@@ -441,6 +442,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 -   **storage\_parameter**
 
