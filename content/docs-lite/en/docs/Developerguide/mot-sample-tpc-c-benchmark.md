@@ -111,6 +111,7 @@ The tpm-C metric is the number of new-order transactions executed per minute. Gi
 The tpm-C unit of measure is expressed as transactions-per-minute-C, whereas "C" stands for TPC-C specific benchmark.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The official TPC-C Benchmark specification can be accessed at –  [http://www.tpc.org/tpc\_documents\_current\_versions/pdf/tpc-c\_v5.11.0.pdf](http://www.tpc.org/tpc_documents_current_versions/pdf/tpc-c_v5.11.0.pdf). Some of the rules of this specification are generally not fulfilled in the industry, because they are too strict for industry reality. For example, Scaling rules – \(a\) tpm-C / Warehouse must be \>9 and <12.86 \(implying that a very high warehouses rate is required in order to achieve a high tpm-C rate, which also means that an extremely large database and memory capacity are required\); and \(b\) 10x terminals x Warehouses \(implying a huge quantity of simulated clients\).
 
 ## System-Level Optimization<a name="en-us_topic_0283137680_en-us_topic_0270171506_section151521359126"></a>
@@ -130,6 +131,7 @@ For example, to test TPCC, the  **BenchmarkSQL**  can be used, as follows –
 The only change done in the downloaded java file \(compared to the original one\) was to comment the error log printing for serialization and duplicate key errors. These errors are normal in case of MOT, since it uses Optimistic Concurrency Control \(OCC\) mechanism.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The benchmark test is executed using a standard interactive SQL mode without stored procedures.
 
 ## Running the Benchmark<a name="en-us_topic_0283137680_en-us_topic_0270171506_section1259282910208"></a>
