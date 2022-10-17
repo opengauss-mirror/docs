@@ -11,6 +11,7 @@ no_gpc
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >This parameter takes effect only for statements executed by PBE when  **enable\_global\_plancache**  is set to  **on**.
 
 ## Example<a name="section5736356154"></a>
