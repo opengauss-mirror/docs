@@ -341,6 +341,7 @@ openGauss=# DROP TABLE bigserial_type_tab;
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >SMALLSERIAL, SERIAL, BIGSERIAL, and LARGESERIAL are not real types. They are concepts used for setting a unique identifier for a table. Therefore, an integer column is created and its default value plans to be read from a sequencer. A NOT NULL constraint is used to ensure NULL is not inserted. In most cases you would also want to attach a  **UNIQUE**  or  **PRIMARY KEY**  constraint to prevent duplicate values from being inserted unexpectedly, but this is not automatic. The sequencer is set so that it belongs to the column. In this case, when the column or the table is deleted, the sequencer is also deleted. Currently, the  **SERIAL**  column can be specified only when you create a table. You cannot add the  **SERIAL**  column in an existing table. In addition,  **SERIAL**  columns cannot be created in temporary tables. Because SERIAL is not a data type, columns cannot be converted to this type.
 
 **Table  4**  Floating point types

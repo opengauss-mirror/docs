@@ -46,6 +46,7 @@ The recommended configuration is as follows:
         ```
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >The optimized value varies depending on the platform and application. For the current 128-core platform, the optimized value is  **16**  for the server and  **48**  for the client.
 
 
