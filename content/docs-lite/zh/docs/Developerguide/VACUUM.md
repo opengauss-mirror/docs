@@ -53,6 +53,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
     选择“FULL”清理，这样可以恢复更多的空间，但是需要耗时更多，并且在表上施加了排他锁。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >使用FULL参数会导致统计信息丢失，如果需要收集统计信息，请在VACUUM FULL语句中加上analyze关键字。
 
 -   **FREEZE**
