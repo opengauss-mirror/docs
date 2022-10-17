@@ -38,10 +38,10 @@ Successfully uninstalled application.
 Uninstallation succeeded.
 ```
 
-每个节点卸载场景使用gs\_uninstall脚本进行卸载。
+单机卸载场景使用gs\_uninstall脚本进行卸载。
 
 ```
-gs_uninstall --delete-data -L
+gs_uninstall --delete-data
 Checking uninstallation.
 Successfully checked uninstallation.
 Stopping the cluster.
