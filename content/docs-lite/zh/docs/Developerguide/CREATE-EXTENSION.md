@@ -36,6 +36,7 @@ CREATE EXTENSION [ IF NOT EXISTS ] extension_name
     扩展的实例被安装在该模式下，扩展的内容可以被重新安装。指定的模式必须已经存在，如果没有指定，扩展的控制文件也不指定一个模式，这样将使用默认模式。
 
     >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >
     >扩展不认为它在任何模式里面：扩展在一个数据库范围内的名字是不受限制的，但是一个扩展的实例是属于一个模式的。
 
 
