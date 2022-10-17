@@ -35,7 +35,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->condition和expression中可以使用targetlist中表达式的别名。
+>
+>-   condition和expression中可以使用targetlist中表达式的别名。
 >
 >-   只能同一层引用。
 >

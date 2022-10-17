@@ -117,6 +117,7 @@ plsql_body
 ## 优化建议<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_section60380346161036"></a>
 
 -   analyse | analyze
+
     -   不支持在事务或匿名块中执行analyze 。
     -   不支持在函数或存储过程中执行analyze操作。
 

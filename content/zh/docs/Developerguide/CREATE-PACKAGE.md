@@ -101,5 +101,8 @@
   end;
   /
   ```
+## 相关链接<a name="section33561436135517"></a>
+
+[DROP PACKAGE](DROP-PACKAGE.md) , [ALTER PACKAGE](ALTER-PACKAGE.md)
 
   

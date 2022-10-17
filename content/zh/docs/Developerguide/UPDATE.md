@@ -62,10 +62,15 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \[ \[ NOT \] MATERIALIZED \] \( \{select | values | insert | update | delete\} \)
 
     -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
+
     -   column\_name指定子查询结果集中显示的列名。
+
     -   每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
+
     -   用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
+
         -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
+
         -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属SELECT主干中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
 
 -   **plan\_hint子句**
@@ -88,7 +93,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   关键字详见[SELECT](SELECT.md)一节介绍
 
-  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
+  示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)
 
 -   **alias**
 
