@@ -336,7 +336,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
-- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | **\{END \(partition\_value | MAXVALUE\)**\}
+- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\} | \{START \(partition\_value\) END \(partition\_value|MAXVALUE\)\} | \{START\(partition\_value\)\} | \{END \(partition\_value | MAXVALUE\)\}**
 
   指定各分区的信息，各参数意义如下：
 
