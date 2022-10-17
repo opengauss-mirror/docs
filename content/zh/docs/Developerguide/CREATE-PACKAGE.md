@@ -101,5 +101,8 @@
   end;
   /
   ```
+## 相关链接<a name="ZH-CN_TOPIC_0000001114212452_section1114514478599"></a>
+
+[DROP PACKAGE](DROP-PACKAGE.md) [ALTER PACKAGE](ALTER-PACKAGE.md)
 
   
