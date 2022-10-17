@@ -70,6 +70,7 @@
     ```
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >若一级分区为HASH分区，不支持以ADD形式新增一级分区；若二级分区为HASH分区，不支持以MODIFY形式新增二级分区。
 
 -   drop\_clause子语法用于删除分区表中的指定分区。语法可以作用在一级分区上。

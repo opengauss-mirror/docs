@@ -10,6 +10,7 @@
 -   要修改表空间的所有者A为B，则A必须是B的直接或者间接成员。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >如果new\_owner与old\_owner一致，此处不再校验当前执行操作的用户是否具有修改权限，而直接显示ALTER成功。
 
 
@@ -83,6 +84,7 @@
     -   random\_page\_cost：设置优化器计算一次非顺序获取磁盘页面的开销。缺省为4.0。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   random\_page\_cost是相对于seq\_page\_cost的取值，等于或者小于seq\_page\_cost时毫无意义。
         >-   默认值为4.0的前提条件是，优化器采用索引来扫描表数据，并且表数据在cache中命中率可以90%左右。
         >-   如果表数据空间要比物理内存小，那么减小该值到一个适当水平；相反地，如果表数据在cache中命中率要低于90%，那么适当增大该值。
@@ -101,6 +103,7 @@
     -   由space\_size来确定，其格式参考[CREATE TABLESPACE](CREATE-TABLESPACE.md)。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   若调整后的限额值比当前表空间实际使用的值要小，调整操作可以执行成功，后续用户需要将该表空间的使用值降低到新限额值之下，才能继续往该表空间中写入数据。
         >-   修改参数MAXSIZE时也可使用：
         >```
