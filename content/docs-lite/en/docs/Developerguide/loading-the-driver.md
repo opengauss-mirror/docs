@@ -8,6 +8,7 @@ You can load the driver in the following ways:
 -   During the JVM startup, transfer the driver as a parameter to the JVM:  **java -Djdbc.drivers=org.postgresql.Driver jdbctest**
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >**jdbctest**  is the name of a test application.
 
 
