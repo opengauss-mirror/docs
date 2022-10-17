@@ -11,6 +11,7 @@
 -   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
 ## Syntax<a name="en-us_topic_0283137069_en-us_topic_0237122100_section1673654518413"></a>
