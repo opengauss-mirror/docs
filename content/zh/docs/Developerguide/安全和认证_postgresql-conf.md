@@ -220,7 +220,8 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
+>![](public_sys-resources/icon-notice.gif) **须知：**  
+> 
 >修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。  
 >-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。  
 >-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。  
@@ -240,7 +241,8 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>  
 >修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。  
 >-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。  
 >-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。  
