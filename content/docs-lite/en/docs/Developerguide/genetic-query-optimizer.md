@@ -9,6 +9,7 @@ This section describes parameters related to genetic query optimizer. The geneti
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >It is best not to turn it off in execution.  **geqo\_threshold**  provides more subtle control of GEQO.
 
 **Value range**: Boolean
@@ -39,11 +40,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >**geqo\_effort**  does not do anything directly. This parameter is only used to compute the default values for the other variables that influence GEQO behavior. If you prefer, you can manually set the other parameters instead.
 
 **Value range**: an integer ranging from 1 to 10
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Larger values increase the time spent in query planning, but also increase the probability that an efficient query plan is chosen.
 
 **Default value**:  **5**
@@ -57,6 +60,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >The value of this parameter must be at least  **2**, and useful values are typically from  **100**  to  **1000**. If this parameter is set to  **0**, openGauss selects a proper value based on  **geqo\_effort**  and the number of tables.
 
 **Default value**:  **0**
@@ -70,6 +74,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >The value of this parameter must be at least  **1**, and useful values are typically from  **100**  to  **1000**. If it is set to  **0**, a suitable value is chosen based on  **geqo\_pool\_size**.
 
 **Default value**:  **0**
@@ -93,6 +98,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range:**  a floating point number ranging from 0.0 to 1.0
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Varying the value changes the set of join paths explored, and may result in a better or worse best path being found.
 
 **Default value**:  **0**
