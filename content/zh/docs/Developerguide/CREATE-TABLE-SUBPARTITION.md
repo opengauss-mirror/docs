@@ -154,6 +154,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **LIKE source\_table \[ like\_option ... \]**
@@ -165,6 +166,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >该子句仅在参数sql\_compatibility=B时有效。
 
 
@@ -188,6 +190,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
         -   ROW（缺省值）：表的数据将以行式存储。
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >
             >orientation不支持修改。
 
 
