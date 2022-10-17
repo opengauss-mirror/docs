@@ -5,6 +5,7 @@
 此方法将当前挂起的事务提交到数据库。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >默认情况下，Psycopg在执行第一个命令之前打开一个事务：如果不调用commit\(\)，任何数据操作的效果都将丢失。
 
 ## 原型<a name="section441681310810"></a>
