@@ -27,6 +27,7 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
     -   Time zone used during openGauss database instance configuration.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >For details about how to set the time zone, see "Initial Configuration \> Synchronizing System Time" in  _Installation Guide_.
 
 
