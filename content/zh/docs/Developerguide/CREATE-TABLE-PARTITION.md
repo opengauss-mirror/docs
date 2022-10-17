@@ -194,6 +194,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 
@@ -218,6 +219,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >该子句仅在参数sql\_compatibility=B时有效。
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
@@ -240,6 +242,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   ROW（缺省值）：表的数据将以行式存储。
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >
             >orientation不支持修改。
         
     -    STORAGE\_TYPE
