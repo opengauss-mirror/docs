@@ -163,7 +163,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     指定创建索引的方法。
 
-    取值范围参考[参数说明](CREATE-INDEX)中的USING method。
+    取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
