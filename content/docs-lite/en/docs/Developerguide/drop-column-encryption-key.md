@@ -9,6 +9,7 @@
 Only the CEK owner or a user who has been granted the DROP permission can run this command. By default, the system administrator has this permission.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
 ## Syntax<a name="en-us_topic_0059778607_seefd39b3ef1942df9e333846afd3a56c"></a>
