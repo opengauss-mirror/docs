@@ -33,6 +33,7 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss does not support the change of  **obs\_server**  contained in the  **DROP SERVER**  syntax.
 
 ## Helpful Links<a name="en-us_topic_0283136745_section620331805317"></a>
