@@ -9,6 +9,7 @@
 只有列加密密钥所有者或者被授予了DROP权限的用户有权限执行命令，系统管理员默认拥有此权限。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供此语法，但密态数据库相关功能不可用。
 
 ## 语法格式<a name="zh-cn_topic_0059778607_seefd39b3ef1942df9e333846afd3a56c"></a>
