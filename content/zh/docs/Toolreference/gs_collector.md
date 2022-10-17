@@ -204,9 +204,8 @@
 
   若关键字KEYWORD中含有空格，需要使用双引号包围。
 
-  ![](public_sys-resources/icon-note.gif)  **说明：**
-   
-  性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
+  >![](public_sys-resources/icon-note.gif)  **说明：**
+  >性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
 
 -   --begin-time
 
