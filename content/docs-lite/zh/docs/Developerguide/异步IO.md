@@ -14,6 +14,7 @@
 **默认值：**off
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >当前版本暂不支持打开该开关，即使用户手动设置为打开，系统内部也会自动设置为关闭状态。
 
 ## enable\_adio\_function<a name="zh-cn_topic_0283137248_zh-cn_topic_0237124704_zh-cn_topic_0059778686_s070bd0423484454ab3a16267f8bf30d5"></a>
@@ -21,6 +22,7 @@
 **参数说明：**是否开起ADIO功能。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >当前版本暂不支持开启异步IO功能，默认该功能关闭，请勿自行修改。
 
 **取值范围：**布尔型
