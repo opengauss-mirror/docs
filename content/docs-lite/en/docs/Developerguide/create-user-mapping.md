@@ -67,6 +67,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
             User password of the remote openGauss database.
 
             >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >
             >The password entered by the user is encrypted in the openGauss background to ensure security. The key file required for encryption must be generated using the  **gs\_guc**  tool and released to the  _$GAUSSHOME_**/bin**  directory of each node in openGauss using the  **gs\_ssh**  tool. The password cannot contain the prefix 'encryptOpt'. Otherwise, it is considered as encrypted ciphertext.
 
 
@@ -77,5 +78,6 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 [ALTER USER MAPPING](alter-user-mapping.md)  and  [DROP USER MAPPING](drop-user-mapping.md)
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.
 
