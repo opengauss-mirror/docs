@@ -69,7 +69,7 @@ pg_recvlogical [OPTION]...
 
     指定向逻辑复制槽的输出插件添加参数。
 
-    参数的取值为：include-xids、skip-empty-xacts、include-timestamp、only-local、force-binary、white-table-list、standby-connection、parallel-decode-num、decode-style、sending-batch。
+    参数的取值为：include-xids、skip-empty-xacts、include-timestamp、only-local、force-binary、white-table-list、standby-connection、parallel-decode-num、decode-style、sending-batch、max-reorderbuffer-in-memory、max-txn-in-memory。
 
     详细请参见《开发者指南》中“SQL参考 \> 函数和操作符 \> 系统管理函数 \> 逻辑复制函数\> pg_logical_slot_peek_changes > options”以及 “应用程序开发教程 > 基于JDBC开发 > 示例：逻辑复制代码示例”章节。
 
