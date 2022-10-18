@@ -131,7 +131,7 @@ gsql工具提供了元命令\\copy进行数据导入。
     >   
     >-   quote参数不能和分隔符、null参数相同。  
     >-   quote参数只能是单字节的字符。  
-    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。  
+    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
 -   escape \[ as \] 'character'
 

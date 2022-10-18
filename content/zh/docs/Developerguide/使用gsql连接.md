@@ -154,7 +154,8 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     postgres为需要连接的数据库名称，10.10.0.11为数据库主节点所在的服务器IP地址，jack为连接数据库的用户，8000为数据库主节点的端口号，Test@123为连接数据库用户jack的密码。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    > 
     >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
     >-   禁止使用omm用户进行远程连接数据库。  
 
