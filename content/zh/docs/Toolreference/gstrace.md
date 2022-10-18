@@ -12,6 +12,7 @@ gstrace是openGauss提供的用来跟踪内核代码执行路径、记录内核�
 >4.  Trace仅用于诊断目的，开启trace将对性能产生一定影响，影响的大小视负载的高低，trace的模块而不同。
 >5.  Trace工具的权限为0700，仅限于数据库用户读、写和执行。
 
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >如果进程异常终止，/dev/shm/ 目录下将会有gstrace\_trace\_cfg\_\*残留，可以手动清除。
 
