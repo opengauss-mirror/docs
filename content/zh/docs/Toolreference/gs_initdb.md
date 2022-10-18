@@ -77,7 +77,7 @@ gs_initdb [OPTION]... [DATADIR]
 
 ## 命令参考<a name="section01341136122018"></a>
 
-gs\_initdb支持的常用参数和不常用参数请分别参见[表 常用参数说明](#zh-cn_topic_0237152414_zh-cn_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb)和[表 不常用参数说明](#zh-cn_topic_0237152414_zh-cn_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f)。
+gs\_initdb支持的常用参数和不常用参数请分别参见[表 1](#zh-cn_topic_0237152414_zh-cn_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb)和[表 2](#zh-cn_topic_0237152414_zh-cn_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f)。
 
 **表 1**  常用参数说明
 
