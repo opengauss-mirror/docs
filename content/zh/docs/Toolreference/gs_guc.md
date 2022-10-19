@@ -33,6 +33,7 @@ gs\_guc工具由操作系统用户omm执行。
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为source，则会生成这两个文件。其中“datasource.key.cipher”存储用户密码的密文，“datasource.key.rand”存储的是加密因子。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-    “datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。gs\_ssh工具可以协助您快速将文件放入集群各节点对应目录下。
     >
     >-   此外，使用gs\_guc generate命令也可以生成这两个文件，可以选择以下两种方式中的任一种，并根据提示输入密码。
