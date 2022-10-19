@@ -5,6 +5,7 @@
 openGauss在安装过程中，需要在openGauss中的节点间进行执行命令、传送文件等操作。因此，安装前需要确保互信是连通的。openGauss提供了gs\_sshexkey工具来帮助用户建立互信。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 > root用户互信可能会存在安全隐患，因此建议用户在使用完成后，立即删除各主机上root用户的互信。
 >
 >企业版安装场景下，出于安全考虑，预安装完成后会自动删除改工具。
