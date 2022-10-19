@@ -217,7 +217,7 @@ gs\_om参数可以分为如下几类：
         ![](public_sys-resources/icon-note.gif) **说明：** 
         本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
         
-        --all
+    -    --all
         
         显示openGauss所有节点信息。
         
