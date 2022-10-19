@@ -58,6 +58,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**  start. Users should not delete schema started with  **pg\_temp**  or  **pg\_toast\_temp**.
     >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
     >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**.
@@ -65,6 +66,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >For details about other** SELECT INTO**  parameters, see  [Parameter Description](select.md#en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)  in SELECT.
 
 ## Examples<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
