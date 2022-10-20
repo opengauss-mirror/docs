@@ -1,14 +1,14 @@
 # libpq<a name="ZH-CN_TOPIC_0000001188368230"></a>
 
-libpq是openGaussC应用程序接口。libpq允许客户程序向openGauss服务器服务进程发送查询并且获得查询返回的库函数。同时也是其他几个openGauss应用接口下面的引擎，如ODBC等依赖的库文件。
+libpq是openGauss C应用程序接口。libpq允许客户程序向openGauss服务器服务进程发送查询并且获得查询返回的库函数。同时也是其他几个openGauss应用接口下面的引擎，如ODBC等依赖的库文件。
 
 ## libpq使用依赖的头文件<a name="section134792037135416"></a>
 
-使用libpq的前端程序必须包括头文件libpq-fe.h并且必须与libpq库链接。
+使用libpq的前端程序必须包括头文件libpq-fe.h并且编译时须链接libpq库。
 
 ## 开发流程<a name="section0546145995416"></a>
 
-编译并且链接一个libpq的源程序，需要做下面的一些事情：
+编译并且链接libpq库，需要做下面的一些事情：
 
 1.  解压相应的发布包（如openGauss-\*.\*.0-\*\*\*-64bit-Libpq.tar.gz）文件，其中include文件夹下的头文件为所需的头文件，lib文件夹中为所需的libpq库文件。
 
