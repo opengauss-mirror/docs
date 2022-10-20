@@ -8,7 +8,7 @@ libpq是openGauss C应用程序接口。libpq允许客户程序向openGauss服�
 
 ## 开发流程<a name="section0546145995416"></a>
 
-编译并且链接libpq库，需要做下面的一些事情：
+编译一个libpq的源程序，需要做下面的一些事情：
 
 1.  解压相应的发布包（如openGauss-\*.\*.0-\*\*\*-64bit-Libpq.tar.gz）文件，其中include文件夹下的头文件为所需的头文件，lib文件夹中为所需的libpq库文件。
 
