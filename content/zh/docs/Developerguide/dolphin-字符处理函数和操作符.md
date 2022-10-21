@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/chara/elt/field/find_int_set/hex/space/soundex```函数。
+2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex```函数。
 3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
@@ -308,7 +308,7 @@
     (1 row)
     ```
 
--   chara(any)
+-   char(any)
 
     描述：根据ASCII码对多个数字转换为多个字符。
 
@@ -317,9 +317,9 @@
     示例：
 
     ```
-    b_compatibility_database=# select chara(77,77.3,'77.3','78.8',78.8);
-    chara
-    ------------
+    b_compatibility_database=# select char(77,77.3,'77.3','78.8',78.8);
+    char
+    -------
     MMMNO
     (1 row)
     ```
