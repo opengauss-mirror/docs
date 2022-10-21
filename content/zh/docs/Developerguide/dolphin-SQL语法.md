@@ -34,6 +34,8 @@
 
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
+-   **[EXECUTE](dolphin-EXECUTE.md)**  
+
 -   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
 
 -   **[GRANT](dolphin-GRANT.md)**
