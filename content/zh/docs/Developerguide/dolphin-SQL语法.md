@@ -34,6 +34,8 @@
 
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
+-   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
+
 -   **[GRANT](dolphin-GRANT.md)**
 
 -   **[INSERT](dolphin-INSERT.md)**
@@ -75,6 +77,8 @@
 -   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
 
 -   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
+
+-   **[SHOW TABLE STATUS](dolphin-SHOW-TABLE-STATUS.md)**  
 
 -   **[SHOW TRIGGERS](dolphin-SHOW-TRIGGERS.md)**  
 
