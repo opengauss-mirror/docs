@@ -494,3 +494,32 @@ The constraints on the query of this system catalog are as follows:
 </tr>
 </tbody>
 </table>
+## Query Record-related Feature
+
+This feature corresponding to the system table `statement_history`. Its main purpose is to record the SQL generated during the database running and its running information, to ensure that the SQL information can still be queried even if the database is restarted.
+
+General usage syntax:
+
+```
+select * from DBE_PERF.statement_history
+```
+
+It is mainly controlled by the following parameters:
+
+- `log_duration`: indicates whether to record slow queries.
+
+- `log_min_duration_statement`: marks the slow query time (unit: millisecond) of a SQL statement. `0` indicates that the slow query time of all SQLs is recorded. `-1` indicates that no information is recorded.
+
+- `track_stmt_stat_level`: The default value is `OFF, L0`. The value is separated with commas. If the first value is not `OFF`, all SQLs are recorded. If the first value is `OFF` and the second value is not `OFF`, only slow SQLs are recorded.
+
+- `track_stmt_parameter`: tracks the statement in detail.
+
+The logic of the code here is that one of the following conditions needs to be satisfied.
+
+1. Dynamic statement tracking is enabled: STMT is tracked using `dynamic_func_control`.
+
+2. `track_stmt_stat_level` tracks the SQL for which the first value is `L0` or higher.
+
+3. `track_stmt_stat_level` tracks the SQL for which the second value is `L0` or higher, the statement run time is greater than the set value of `log_min_duration_statement`, the value of `log_min_duration_statement` is greater than or equal to 0, and `track_stmt_statement` is not enabled. 
+
+4. `track_stmt_parameter` is enabled and the first value of `track_stmt_stat_level` (consumed DBTIME) is greater than 0.
