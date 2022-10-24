@@ -494,6 +494,7 @@ The constraints on the query of this system catalog are as follows:
 </tr>
 </tbody>
 </table>
+
 ## Query Record-related Feature
 
 This feature corresponding to the system table `statement_history`. Its main purpose is to record the SQL generated during the database running and its running information, to ensure that the SQL information can still be queried even if the database is restarted.
@@ -501,7 +502,7 @@ This feature corresponding to the system table `statement_history`. Its main pur
 General usage syntax:
 
 ```
-select * from DBE_PERF.statement_history
+openGauss=# select * from DBE_PERF.statement_history;
 ```
 
 It is mainly controlled by the following parameters:
