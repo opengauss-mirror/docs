@@ -324,22 +324,24 @@
 </tr>
 </tbody>
 </table>
-## 查询记录相关特性
+## 相关特性
 
-对应系统函数get_instr_unique_sql。其主要目的是保留数据库启动后，运行的SQL的状态记录。
+STATEMENT对应系统函数get_instr_unique_sql，主要目的是保留数据库启动后，运行的SQL的状态记录。
 
 一般使用形式：
 
 ```
-select * from dbe_perf.statement
+openGauss=# select * from dbe_perf.statement;
 ```
 
 主要受到以下参数控制：
 
 - enable_resource_track：允许运行时候的资源使用追踪。
 
-- instr_unique_sql_count：允许记录在内存中的SQL总数量。每次修改这个参数，都会重置掉内存中已经存在的所有unique sql。
+- instr_unique_sql_count：允许记录在内存中的SQL总数量。每次修改此参数，都会重置掉内存中已经存在的所有的归一化SQL。
 
-- instr_unique_sql_track_type：唯一SQL追踪的方式，参数有top，和all，目前仅支持top，对于存储过程，仅记录最外层调用而非所有SQL。
+- instr_unique_sql_track_type：归一化SQL追踪的方式，参数取值为top、all，目前仅支持top，对于存储过程，仅记录最外层调用而非所有SQL。
 
-- enable_auto_clean_unique_sql：是否打开unique sql的自动清理机制，当记录达到上限后，可以自动随机清理其中10%的记录。如果不打开，则会记录错误日志，SQL相关内容也不会记录到内存中。
+- enable_auto_clean_unique_sql：是否打开归一化SQL的自动清理机制，当记录达到上限后，可以自动随机清理其中10%的记录。如果不打开，则会记录错误日志，SQL相关内容也不会记录到内存中。
+
+另请参阅：[GUC参数 - Query](Query-22.md#ZH-CN_TOPIC_0289900490)
