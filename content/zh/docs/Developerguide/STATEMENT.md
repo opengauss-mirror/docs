@@ -324,6 +324,7 @@
 </tr>
 </tbody>
 </table>
+
 ## 相关特性
 
 STATEMENT对应系统函数get_instr_unique_sql，主要目的是保留数据库启动后，运行的SQL的状态记录。
