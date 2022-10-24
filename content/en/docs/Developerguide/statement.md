@@ -317,6 +317,7 @@
 </tr>
 </tbody>
 </table>
+
 ## Query Record-related Feature
 
 This feature corresponds to the system function `get_instr_unique_sql`. Its main purpose is to keep a record of the state of the SQL run after the database is started.
@@ -324,7 +325,7 @@ This feature corresponds to the system function `get_instr_unique_sql`. Its main
 General usage syntax:
 
 ```
-select * from dbe_perf.statement
+openGauss=# select * from dbe_perf.statement;
 ```
 
 It is mainly controlled by the following parameters:
@@ -333,6 +334,8 @@ It is mainly controlled by the following parameters:
 
 - `instr_unique_sql_count`: indicates the total number of SQLs allowed to be recorded in memory. When this parameter is modified, it will reset all the unique SQLs already in memory each time.
 
-- `instr_unique_sql_track_type`: indicates the only way to trace SQL. The value can be `top` and `all`. Currently only `top` is supported. For stored procedures, it does not record all SQLs but only the outermost calls.
+- `instr_unique_sql_track_type`: indicates the only way to trace unique SQL. The value can be `top` and `all`. Currently only `top` is supported. For stored procedures, it does not record all SQLs but only the outermost calls.
 
 - `enable_auto_clean_unique_sql`: indicates whether to enable the auto cleanup mechanism of unique SQL. It can automatically clean up 10% of the records randomly when the upper limit is reached. If it is not enabled, error logs will be recorded and SQL related content will not be recorded in memory.
+
+See also: [GUC parameter - Query](Query-62.md#EN-US_TOPIC_0289900490)

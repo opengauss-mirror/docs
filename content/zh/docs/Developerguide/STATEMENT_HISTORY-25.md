@@ -381,14 +381,15 @@
 </tr>
 </tbody>
 </table>
-## 查询记录相关特性
 
-对应系统表statement_history，其主要目的是记录数据库运行中产生的sql与其运行信息，保证即便数据库重启，SQL信息也依然可以查询到。
+## 相关特性
 
- 一般使用形式: 
+对应系统表statement_history，主要目的是记录数据库运行中产生的sql与其运行信息，保证即便数据库重启，SQL信息也依然可以查询到。
+
+一般使用形式: 
 
 ```
-select * from DBE_PERF.statement_history
+openGauss=# select * from DBE_PERF.statement_history;
 ```
 
 主要受到以下参数控制：
@@ -397,7 +398,7 @@ select * from DBE_PERF.statement_history
 
 - log_min_duration_statement：单位毫秒，标记SQL的慢查询时间，0记录所有SQL，-1则不记录任何信息。
 
-- track_stmt_stat_level：默认为OFF，L0。逗号切割的两个，第一个为非OFF情况下，会记录所有SQL，第一个OFF，第二个非OFF情况下，仅记录慢SQL。
+- track_stmt_stat_level：默认为`OFF,L0`。参数第一部分为非OFF情况下，会记录所有SQL，第一部分为OFF，第二部分为非OFF情况下，仅记录慢SQL。
 
 - track_stmt_parameter：追踪语句更详细内容。
 
