@@ -58,6 +58,12 @@
 
 -   **[SET PASSWORD](dolphin-SET-PASSWORD.md)**  
 
+-   **[SHOW CHARSET](dolphin-SHOW-CHARACTER-SET.md)** 
+
+-   **[SHOW CHARACTER SET](dolphin-SHOW-CHARACTER-SET.md)** 
+
+-   **[SHOW COLLATION](dolphin-SHOW-COLLATION.md)**  
+
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
 -   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
