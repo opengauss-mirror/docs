@@ -88,7 +88,7 @@ The constraints on the query of this system catalog are as follows:
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p115271059112417"><a name="p115271059112417"></a><a name="p115271059112417"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p1752618596243"><a name="p1752618596243"></a><a name="p1752618596243"></a>ID of the normalized SQL statement.</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p1752618596243"><a name="p1752618596243"></a><a name="p1752618596243"></a>ID of the unique SQL statement.</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p1528631383020"><a name="p1528631383020"></a><a name="p1528631383020"></a>L0</p>
 </td>
@@ -494,10 +494,9 @@ The constraints on the query of this system catalog are as follows:
 </tr>
 </tbody>
 </table>
+## Related Feature
 
-## Query Record-related Feature
-
-This feature corresponding to the system table `statement_history`. Its main purpose is to record the SQL generated during the database running and its running information, to ensure that the SQL information can still be queried even if the database is restarted.
+This feature corresponding to the system catalog `statement_history`. Its main purpose is to record SQL statements and running information generated during the database running, to ensure that the SQL information can still be queried even if the database is restarted.
 
 General usage syntax:
 
@@ -509,18 +508,18 @@ It is mainly controlled by the following parameters:
 
 - `log_duration`: indicates whether to record slow queries.
 
-- `log_min_duration_statement`: marks the slow query time (unit: millisecond) of a SQL statement. `0` indicates that the slow query time of all SQLs is recorded. `-1` indicates that no information is recorded.
+- `log_min_duration_statement`: marks the slow query time (unit: millisecond) of a SQL statement. `0` indicates that the slow query time of all SQL statements is recorded. `-1` indicates that no information is recorded.
 
-- `track_stmt_stat_level`: The default value is `OFF, L0`. The value is separated with commas. If the first value is not `OFF`, all SQLs are recorded. If the first value is `OFF` and the second value is not `OFF`, only slow SQLs are recorded.
+- `track_stmt_stat_level`: The default value is `OFF, L0`. If the first value is not `OFF`, all SQL statements are recorded. If the first value is `OFF` and the second value is not `OFF`, only slow SQL statements are recorded.
 
 - `track_stmt_parameter`: tracks the statement in detail.
 
-The logic of the code here is that one of the following conditions needs to be satisfied.
+The code logic needs to meet one of the following conditions:
 
 1. Dynamic statement tracking is enabled: STMT is tracked using `dynamic_func_control`.
 
-2. `track_stmt_stat_level` tracks the SQL for which the first value is `L0` or higher.
+2. `track_stmt_stat_level` tracks a SQL statement whose first value is `L0` or higher.
 
-3. `track_stmt_stat_level` tracks the SQL for which the second value is `L0` or higher, the statement run time is greater than the set value of `log_min_duration_statement`, the value of `log_min_duration_statement` is greater than or equal to 0, and `track_stmt_statement` is not enabled. 
+3. `track_stmt_stat_level` tracks a SQL statement whose second value is `L0` or higher. The statement runtime is greater than the value of `log_min_duration_statement`, the value of `log_min_duration_statement` is greater than or equal to 0, and `track_stmt_statement` is not enabled.
 
 4. `track_stmt_parameter` is enabled and the first value of `track_stmt_stat_level` (consumed DBTIME) is greater than 0.
