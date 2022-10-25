@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex```函数。
+2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64```函数。
 3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
@@ -534,4 +534,154 @@
   (1 row)
   ```
 
+- substring_index(str, delim, count)
   
+  描述：substring_index(str, delim, count)返回str的开始位置至匹配到第count次delim的位置之间的子字符串，count表示匹配的次数。若count为正数，则从str的左边开始匹配，并返回匹配位置左边的子字符串；若count为负数，则从str的右边开始匹配，并返回匹配位置右边的子字符串。count取值范围为INT64_MIN～INT64_MAX。
+  
+  返回值类型：text
+  
+  示例：
+  
+  ```
+    openGauss=# SELECT instr('abcdabcdabcd', 'bcd', 2);
+     substring_index 
+    -----------------
+     abcda
+    (1 row)
+    
+  ``` 
+
+
+-   export_set(bits, on, off, separator, number of bits)
+
+    描述：返回一个字符串，该字符串将显示位数。该函数需要5个自变量才能起作用。该函数将第一个参数(即整数)转换为二进制数字，如果二进制数字为1，则返回“on”，如果二进制数字为0，则返回“off”。
+
+    返回值类型：text
+    
+    示例：
+    ```sql
+    openGauss=# SELECT EXPORT_SET(5,'Y','N',',',5);
+     export_set 
+    -------------
+     Y,N,Y,N,N
+    (1 row)
+    ```
+
+- FROM_BASE64
+
+  描述:根据BASE64编码规则，将一个BASE64编码的字符串解码，返回字符串的解码结果。
+
+  返回值类型：text
+
+    编码规则：
+
+    - 将输入的每三个字节（24位）变成四个字节（32位）：6位为一组，高位补两个0，组成一个字节，这样正好能将三个字节补成四个字节，其中每个字节只会对应0(00000000)到63(00111111)。
+
+    - 每76个字符加一个换行符。
+
+    - 编码0(00000000)到61(00111111)对应A-Z，a-z，0-9共62个字符，62(00111110)的编码是'+'，63(00111111)的编码是'/'。
+
+    - 若输入的字符串字节数不为三的倍数，那么剩余的字节根据编码规则转换，若有一个字节不满8位，则在低位补0补满8位，同时用'='将转换结果补满四个字节。若最后一组只有两个字节，每6位一组，第三组只有4位，低位要补两个0，然后这三组再分别高位补两个0，转成三个字符，末尾补一个'='；若最后一组只有一个字节，每6位一组，第二组只有2位，低位要补四个0，然后这两组再分别高位补两个0，转成两个字符，末尾补两个'='。
+
+    
+
+    解码规则：
+
+    - 将输入的字符串用二进制表示，去掉每个字节高位的两个0。
+    - 根据编码规则，正确的编码字节数必为4的倍数。若末尾有'='，则根据'='数量去掉最后一个除'='以外的字节低位的0。若末尾有一个'='，即最后四个字节为'\*\*\*='，则将前三个字节转二进制后再去掉最后两个0，若末尾有两个'='，即最后四个字节为'\*\*=='，则将前两个字节转二进制后再去掉最后四个0。
+    - 将去掉高位0后的各个字节按顺序拼接，每8位转成一个字符。
+
+    
+
+    例子1：YWJj
+
+    1. 字符串用二进制表示为：00011000(Y)00010110(W)00001001(J)00100011(j)。
+    2. 去掉每个字节高位的两个0后变成：011000 010110 001001 100011。
+    3. 将去掉高位0后的各个字节按顺序拼接成：01100001(a)01100010(b)01100011(c)。
+    4. 故解码结果为abc。
+
+    例子2：YWI=
+
+    1. 字符串用二进制表示为：00011000(Y)00010110(W)00001000(I)。
+    2. 去掉每个字节高位的两个0后变成：011000 010110 001000。
+    3. 由于末尾有一个'='，则第三个字节末尾的0也要去掉再拼接：01100001 01100010。
+    4. 故解码结果为ab。
+
+    示例：
+    
+    ```
+        openGauss=# SELECT FROM_BASE64('YWJj');
+         from_base64 
+        -------------
+         abc
+        (1 row)
+        
+    ``` 
+- ORD(str)。
+
+  描述: 
+    返回str的最左边的字符的数值，并使用下面公式计算该字符组成字节的对应数值：
+    ```
+      (1st byte code)
+    + (2nd byte code  256)
+    + (3rd byte code  256^2) ...
+    ```
+
+
+  返回值类型：INT
+
+  示例:
+
+  ```sql
+  -- test 1 byte
+  openGauss=# select ord('1111');
+  ord 
+  -----
+    49
+  (1 row)
+
+  openGauss=# select ord('sss111');
+  ord 
+  -----
+  115
+  (1 row)
+
+  -- test 2 byte
+  openGauss=# select ord('Ŷ1111');
+    ord  
+  -------
+  50614
+  (1 row)
+
+  openGauss=# select ord('߷1111');
+    ord  
+  -------
+  57271
+  (1 row)
+
+  -- test 3 byte
+  openGauss=# select ord('অ1111');
+    ord    
+  ----------
+  14722693
+  (1 row)
+
+  openGauss=# select ord('ꬤ1111');
+    ord    
+  ----------
+  15379620
+  (1 row)
+
+  -- test 4 byte
+  openGauss=# select ord('𒁖1111');
+      ord     
+  ------------
+  4036133270
+  (1 row)
+
+  openGauss=# select ord('𓃔1111');
+      ord     
+  ------------
+  4036199316
+  (1 row)
+  ```
