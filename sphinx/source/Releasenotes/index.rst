@@ -9,15 +9,15 @@ Welcome to openGauss's documentation!
 .. toctree::
 
 	content/zh/docs/Releasenotes/法律声明 
-	/Releasenotes/Releasenotes 
-	/Description/Description 
-	/Technicalwhitepaper/Technicalwhitepaper 
-	/CharacteristicDescription/CharacteristicDescription 
-	/Compilationguide/Compilation 
+	Releasenotes/Releasenotes 
+	Description/Description 
+	Technicalwhitepaper/Technicalwhitepaper 
+	content/zh/docs/CharacteristicDescription/CharacteristicDescription 
+	Compilationguide/Compilation 
 	content/zh/docs/BriefTutorial/BriefTutorial 
 	content/zh/docs/Installation/Installation 
-	/UpgradeGuide/upgrade 
-	/Administratorguide/Administratorguide 
+	UpgradeGuide/upgrade 
+	Administratorguide/Administratorguide 
 	content/zh/docs/Developerguide/Developerguide 
 	content/zh/docs/DataMigration/DataMigration 
 	content/zh/docs/Toolreference/Toolreference 
