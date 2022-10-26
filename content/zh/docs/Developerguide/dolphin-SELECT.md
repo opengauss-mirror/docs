@@ -61,10 +61,12 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
 -   **WHERE子句**
-    1. sounds like是condition的一种语法，用法如：column_name sounds like '字符'; 相当于soundex(column_name) = soundex('字符')的对比结果，是一个boolean的值。用于通过soundex处理来查询满足条件的数据。
 
-![](public_sys-resources/icon-note.gif) **说明：** 
-涉及的其它参数说明可见[SELECT](SELECT.md)。
+    sounds like是condition的一种语法，用法如：column_name sounds like '字符'; 相当于soundex(column_name) = soundex('字符')的对比结果，是一个boolean的值。用于通过soundex处理来查询满足条件的数据。
+
+> ![](public_sys-resources/icon-note.gif) **说明：** 
+> 
+> 涉及的其它参数说明可见[SELECT](SELECT.md)。
 
 ## 示例<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 
@@ -115,6 +117,7 @@ openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLL
 (4 rows)
 ```
 
+```
 openGauss=# create table join_1(col1 int4, col2 int8);
 
 openGauss=# create table join_2(col1 int4, col2 int8);
@@ -144,6 +147,8 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    1 |    1
     3 |    3 |    2 |    3
     3 |    3 |    4 |    4
+
+```
 
 ## 相关链接<a name="section156744489391"></a>
 

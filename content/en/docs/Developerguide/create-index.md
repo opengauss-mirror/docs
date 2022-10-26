@@ -67,6 +67,7 @@ The partitioned table does not support partial index creation.
     -   Column-store tables, partitioned tables, and temporary tables do not support  **CREATE INDEX CONCURRENTLY**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   This keyword is specified when an index is created. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
     >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the creation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
     >-   If an index build fails, it leaves an "unusable" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try  **CREATE INDEX CONCURRENTLY**  again.
@@ -110,6 +111,7 @@ The partitioned table does not support partial index creation.
     Row-store tables \(Astore storage engine\) support the following index types:  **btree**  \(default\),  **hash**,  **gin**, and  **gist**. Row-store tables \(Ustore storage engine\) support the following index type:  **ubtree**. Column-store tables support the following index types:  **Psort**  \(default\),  **btree**, and  **gin**. Global temporary tables do not support GIN and GiST indexes.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >Column-store tables support GIN indexes only for the tsvector type. That is, the input parameter for creating a column-store GIN index must be the return value of the  **to\_tsvector**  function. This method is commonly used for GIN indexes.
 
 -   **column\_name**
@@ -125,6 +127,7 @@ The partitioned table does not support partial index creation.
     The prefix key uses the prefix of the specified column data as the index key value, which reduces the storage space occupied by the index. Indexes can be used for filter and join conditions that contain prefix key columns.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >
     >-  This syntax is valid only when **sql\_compatibility** is set to **B**. If **sql\_compatibility** is set to other values, this clause is regarded as the function expression key.
     >-  The prefix key supports the following index methods: btree and ubtree.
     >-  The data type of the prefix key column must be binary or character (excluding special characters).

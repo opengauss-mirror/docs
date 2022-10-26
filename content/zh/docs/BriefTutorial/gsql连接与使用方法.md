@@ -25,7 +25,7 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
     openGauss=# 
     ```
 
-    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。提示符告诉您可以在此输入SQL语句。
+    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。提示符告诉您openGauss准备为您输入SQL语句。
 
     “Non-SSL connection”表示未使用SSL方式连接数据库。
 
@@ -34,6 +34,11 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY 'XXXXXXXX' REPLACE 'XXXXXXXX';
     ```
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>- 最少包含8个字符；
+>- 不能和用户名和当前密码相同，或和当前密码反序；
+>- 至少包含大写字母（A-Z），小写字母（a-z），数字，非字母数字字符（限定为~!@#$%^&*()-_=+|[{}];:,<.>/?）四类字符中的三类字符；
+>- 安装过程中会生成ssl证书，证书存放路径为{gaussdbAppPath}/share/sslcert/om，其中{gaussdbAppPath}为集群openGauss配置文件中指定的程序安装目录。
 
 4.  gsql提供了高级功能方便您使用数据库。
 

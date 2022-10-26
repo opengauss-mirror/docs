@@ -66,7 +66,7 @@
 --创建一个名为serial的递增序列，从101开始。
 openGauss=# CREATE SEQUENCE serial START 101;
 
---创建一个表,定义默认值。
+--创建一个表，定义默认值。
 openGauss=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 
 --将序列serial的归属列变为T1.C1。

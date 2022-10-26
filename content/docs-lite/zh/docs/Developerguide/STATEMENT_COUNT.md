@@ -3,6 +3,7 @@
 显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）和（DDL、DML、DCL）统计信息。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >普通用户查询STATEMENT\_COUNT视图仅能看到该用户当前节点的统计信息；管理员权限用户查询STATEMENT\_COUNT视图则能看到所有用户当前节点的统计信息。当openGauss或该节点重启时，计数将清零，并重新开始计数。计数以节点收到的查询数为准，openGauss内部进行的查询。例如，数据库主节点收到一条查询，若下发多条查询数据库节点，那将在数据库节点上进行相应次数的计数。
 
 **表 1**  STATEMENT\_COUNT字段

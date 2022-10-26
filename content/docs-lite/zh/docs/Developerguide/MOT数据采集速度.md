@@ -12,5 +12,6 @@
 
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >预计MOT将针对这一场景进行多项额外的甚至重大的性能改进。更多关于大规模数据流和数据采集的信息，请参阅[MOT应用场景](MOT应用场景.md)。
 

@@ -288,6 +288,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Default value**:  **0**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >If this function is enabled, the  **detail\_info**  information in audit logs starts with  *xid*. For example:
 >```
 >detail_info: xid=14619 , create table t1(id int);

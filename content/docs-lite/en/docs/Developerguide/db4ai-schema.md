@@ -3,6 +3,7 @@
 The DB4AI schema is used to store and manage dataset versions in the AI feature. The schema holds a snapshot of the original view of the data tables, a change record for each data version, and management information for the version snapshot. This schema is intended for common users. In this schema, users can query the snapshot version information created by DB4AI.SNAPSHOT.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides the following schemas, but DB4AI is unavailable.
 
 -   **[DB4AI.SNAPSHOT](db4ai-snapshot.md)**  

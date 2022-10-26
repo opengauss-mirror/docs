@@ -19,5 +19,6 @@ openGauss commits all operations of a transaction using  **COMMIT**  or  **END**
 If a fault occurs during a transaction and the transaction cannot proceed, the system performs rollback to cancel all the completed database operations related to the transaction. See  [ROLLBACK](rollback.md).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction. If one of the statements fails, the entire request will be rolled back.
 

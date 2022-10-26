@@ -53,6 +53,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 >从安全性考虑，建议使用双向认证方式。
 >配置客户端环境变量，必须包含文件的绝对路径。
 
@@ -177,6 +178,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >客户端环境变量的路径以“_/home/omm_”为例，在实际操作中请使用实际路径进行替换。
 
 **表 3**  客户端参数
@@ -485,7 +487,7 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
-
+>
 >-   目前只支持上表中的6种加密算法套件。
 >-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
 >-   如需指定以上加密算法套件，可以设置ssl\_ciphers为上表中OpenSSL套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：

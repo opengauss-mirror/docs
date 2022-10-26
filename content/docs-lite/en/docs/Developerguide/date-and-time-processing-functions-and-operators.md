@@ -3,6 +3,7 @@
 ## Date and Time Operators<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>
 
 >![](public_sys-resources/icon-warning.gif) **WARNING:** 
+>
 >When the user uses date/time operators, explicit type prefixes are modified for corresponding operands to ensure that the operands parsed by the database are consistent with what the user expects, and no unexpected results occur.
 >For example, abnormal mistakes will occur in the following example without an explicit data type.
 >```
@@ -909,6 +910,7 @@
     Return type: character varying
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >There are multiple methods for obtaining the current time. Select an appropriate API based on the actual service scenario.
     >1.  The following APIs return values based on the start time of the current transaction:
     >    ```
@@ -1201,6 +1203,7 @@
 The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  –  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of the  **timestamp**,  **timestamptz**, or** date**  type.  **unit**  determines the unit of the difference between two dates.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >This function is valid only when openGauss is compatible with the MY type \(that is, dbcompatibility = 'B'\).
 
 -   year
@@ -1463,6 +1466,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     Monday is 1 and Sunday is 7.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >This is identical to  **dow**  except for Sunday.
 
     ```
@@ -1878,6 +1882,7 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 </table>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the table, the rules for RR to calculate years are as follows:
 >-   If the range of the input two-digit year is between 00 and 49:
 >    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.

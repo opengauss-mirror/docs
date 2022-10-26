@@ -120,7 +120,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
-    >-   全局临时表功能可以通过设置GUC参数max\_active\_global\_temporary\_table控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
+    >-   全局临时表功能可以通过设置GUC参数[max_active_global_temporary_table](全局临时表.md#section18307271684)控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
     >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
     >-   临时表不支持主备切换。
     >-   全局临时表不响应自动清理，在长链接场景使用时尽量使用on commit delete rows的全局临时表，或定期手动执行vacuum，否则可能导致clog日志不回收。
@@ -134,6 +134,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
   要创建的表名。
 
   ![](public_sys-resources/icon-notice.gif) **须知：** 
+  
   物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
 -   **column\_name**
@@ -145,6 +146,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     建表时指定的约束名称。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
@@ -152,6 +154,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     索引名。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -160,9 +163,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     指定创建索引的方法。
 
-    取值范围参考[参数说明](CREATE-INDEX)中的USING method。
+    取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -171,6 +175,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
@@ -178,6 +183,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
 
@@ -227,6 +233,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     这个子句为表或索引指定一个可选的存储参数。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
     参数的详细描述如下所示。
@@ -421,6 +428,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     声明为字段约束的检查约束应该只引用该字段的数值，而在表约束里出现的表达式可以引用多个字段。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。
 
 
@@ -441,6 +449,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
     >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型、布尔类型。
     >-   每个表只能有一个自动增长列。
@@ -1148,6 +1157,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS

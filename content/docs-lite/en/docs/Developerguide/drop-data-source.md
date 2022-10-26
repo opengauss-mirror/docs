@@ -9,6 +9,7 @@
 Only an owner, system administrator, or initial user can delete a data source.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
 ## Syntax<a name="en-us_topic_0283136822_en-us_topic_0237122135_section1289212618239"></a>

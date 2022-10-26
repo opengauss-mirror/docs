@@ -111,6 +111,7 @@ tpm-C指标是每分钟执行的新订单事务数。考虑到事务中所需的
 tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >官方TPC-C基准规范可访问：[http://www.tpc.org/tpc\_documents\_current\_versions/pdf/tpc-c\_v5.11.0.pdf](http://www.tpc.org/tpc_documents_current_versions/pdf/tpc-c_v5.11.0.pdf)。本规范中的一些规则在行业中难以实现，因为对行业现状来说这些规则太严格了。例如：扩容规则（a） tpm-C/Warehouse必须大于9且小于12.86（要达到较高的tpm-C率，需要很高的仓库费率。这就意味着需要非常大的数据库和内存容量）以及规则（b）10倍终端\*仓库（意味着大量的模拟客户端）。
 
 ## 系统级优化<a name="section18956395"></a>

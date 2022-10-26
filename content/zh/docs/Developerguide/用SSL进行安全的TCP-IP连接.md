@@ -484,11 +484,15 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->-   目前只支持上表中的6种加密算法套件。  
+>![](public_sys-resources/icon-note.gif) **说明：**
+>
+>-   目前只支持上表中的6种加密算法套件。
+>
 >-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
->-   如需指定以上加密算法套件，可以设置ssl\_ciphers为上表中OpenSSL套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：
->    ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'。  
+>
+>-   如需指定以上加密算法套件，可以设置ssl\_ciphers为上表中OpenSSL套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'。
+>
 >-   SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。  
+>
 >-   在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。  
 

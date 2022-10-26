@@ -129,6 +129,7 @@ gs_dbmind service setup -c confpath --interactive
 4. 完成配置目录初始化过程，可基于该配置目录启动DBMind后台服务。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >1. 配置文件注释信息用于在交互模式下对用户进行提示，有特殊含义不要手动修改或删除；  
 >2. 需要确保配置项的值与注释信息之间通过空格符分割，否则系统会将注释信息识别为配置项的值；  
 >3. 配置项中的特殊字符，如果需要转移，则通过转义符“百分号”（%）来转义，例如，用户配置的密码为 "password%", 则应通过“百分号”进行转义，即 "password%%"。  
@@ -158,6 +159,7 @@ gs_dbmind service stop -c confpath
 DBMind服务会在后台执行完正在运行的任务后自行退出。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
+>
 >-   \[METADATABASE\]中的元数据库用户需要具有在该数据库下的创表和数据插入更新权限，否则工具执行会出现异常。  
 >-   当前不支持同一配置文件下分开启动多个服务。  
 >-   工具提供了requirement.txt文件，用户可以通过该文件安装所需的第三方依赖。  

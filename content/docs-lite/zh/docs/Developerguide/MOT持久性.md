@@ -113,6 +113,7 @@ WAL重做日志将保留所有表行修改，直到执行检查点（如上所�
 -   group\_commit\_timeout：超时时间，单位为毫秒。例如，10表示在10毫秒之后，为同一组由客户端应用程序在最近10毫秒内提交的每个事务，在磁盘的WAL重做日志中写入一个条目。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >有关配置的详细信息，请参阅[重做日志（MOT）](MOT配置.md#zh-cn_topic_0283136588_zh-cn_topic_0280525130_section361563811235)。
 
 ## MOT检查点<a name="zh-cn_topic_0283136668_zh-cn_topic_0280525142_section182761535131617"></a>

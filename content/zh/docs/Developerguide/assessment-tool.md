@@ -75,7 +75,7 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
             ├── ***assessment--1.0.sql***
             └── ***assessment.control***
 ```
-**dolphin以来文件**
+**dolphin依赖文件**
 
 ```
 二进制路径

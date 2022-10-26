@@ -123,7 +123,7 @@ openGauss=# ALTER MASKING POLICY maskpol1 REMOVE randommasking ON LABEL(mask_lb2
 --修改脱敏策略maskpol1，修改一项脱敏方式
 openGauss=# ALTER MASKING POLICY maskpol1 MODIFY randommasking ON LABEL(mask_lb1);
 
---修改脱敏策略maskpol1使之仅对用户dev_mask和bob_mask,客户端工具为psql和gsql，IP地址为'10.20.30.40', '127.0.0.0/24'场景生效。
+--修改脱敏策略maskpol1使之仅对用户dev_mask和bob_mask，客户端工具为psql和gsql，IP地址为'10.20.30.40'，'127.0.0.0/24'场景生效。
 openGauss=# ALTER MASKING POLICY maskpol1 MODIFY (FILTER ON ROLES(dev_mask, bob_mask), APP(psql, gsql), IP('10.20.30.40', '127.0.0.0/24'));
 
 --修改脱敏策略maskpol1，使之对所有用户场景生效

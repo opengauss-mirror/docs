@@ -18,6 +18,7 @@ FOR statement ;
 -   STATEMENT\_ID用户可以对查询设置标签，输入的标签信息也将存储于PLAN\_TABLE中。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >用户在执行EXPLAIN PLAN时，如果没有进行SET  STATEMENT\_ID，则默认为空值。同时，用户可输入的STATEMENT\_ID最大长度为30个字节，超过长度将会产生报错。
 
 

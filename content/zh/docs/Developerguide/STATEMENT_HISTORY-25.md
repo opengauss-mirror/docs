@@ -382,3 +382,32 @@
 </tbody>
 </table>
 
+## 相关特性
+
+对应系统表statement_history，主要目的是记录数据库运行中产生的sql与其运行信息，保证即便数据库重启，SQL信息也依然可以查询到。
+
+一般使用形式: 
+
+```
+openGauss=# select * from DBE_PERF.statement_history;
+```
+
+主要受到以下参数控制：
+
+- log_duration：是否记录慢查询。
+
+- log_min_duration_statement：单位毫秒，标记SQL的慢查询时间，0记录所有SQL，-1则不记录任何信息。
+
+- track_stmt_stat_level：默认为`OFF,L0`。参数第一部分为非OFF情况下，会记录所有SQL，第一部分为OFF，第二部分为非OFF情况下，仅记录慢SQL。
+
+- track_stmt_parameter：追踪语句更详细内容。
+
+此处代码判断逻辑为（以下各个条件为或判定，满足其一即可）：
+
+1. 打开了动态语句追踪功能：采用dynamic_func_control追踪STMT。
+
+2. track_stmt_stat_level追踪第一个level为L0或者更高。
+
+3. track_stmt_stat_level追踪第二个level为L0或者更高，且语句运行时间大于log_min_duration_statement设定值，且log_min_duration_statement大于等于0，并且没有打开track_stmt_parameter。
+
+4. 打开track_stmt_parameter，并且时间模式第一个值（消耗的DBTIME）大于0。

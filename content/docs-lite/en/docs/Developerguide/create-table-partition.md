@@ -167,6 +167,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   A table constraint is not bound to a particular column but can apply to more than one column.
     
         >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+        >
         >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
@@ -193,6 +194,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **LIKE source\_table \[ like\_option ... \]**
@@ -216,6 +218,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
@@ -238,6 +241,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   **ROW**  \(default value\): The data will be stored in rows.
 
             >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >
             >**orientation**  cannot be modified.
 
 
@@ -302,6 +306,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     \(1\) Assume that the  **VALUES LESS THAN**  syntax is used.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >In this case, a maximum of four partition keys are supported.
 
     Data types supported by the partition keys are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(*n_\), VARCHAR\(*n_\), CHARACTER\(*n_\), CHAR\(*n_\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
@@ -309,6 +314,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     \(2\) Assume that the  **START END**  syntax is used.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >In this case, only one partition key is supported.
 
     Data types supported by the partition key are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
@@ -316,6 +322,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     \(3\) Assume that the  **INTERVAL**  syntax is used.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >In this case, only one partition key is supported.
 
     In this case, the data types supported by the partition key are TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
@@ -342,6 +349,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   *MAXVALUE*  usually specifies the upper limit of the last range partition.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >1.  If the defined statement is in the first place and has  **START**  specified, the range \(*MINVALUE*,  **START**\) will be automatically used as the first actual partition.
     >2.  The  **START END**  syntax must comply with the following rules:
     >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
@@ -363,6 +371,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **STORE IN \(tablespace\_name \[, ... \] \)**: Specifies the list of tablespaces for storing automatically created partitions. If this parameter is specified, the automatically created partitions are cyclically selected from the tablespace list. Otherwise, the default tablespace of the partition table is used.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >Column-store tables do not support interval partitioning.
 
 -   **PARTITION BY LIST\(partition\_key\)**
@@ -394,6 +403,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **DISABLE**: Row movement is disabled.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >Currently, list and hash partitioned tables do not support  **ROW MOVEMENT**.
 
 

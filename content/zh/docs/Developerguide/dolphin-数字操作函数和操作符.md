@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
 
 1. 新增```DIV/MOD/XOR/^```操作符。
-2. 新增```truncate/rand/crc32/conv/float8_bool```函数。
+2. 新增```truncate/rand/crc32/conv/float8_bool/oct```函数。
 
 -   DIV
 
@@ -156,3 +156,25 @@
    f
   (1 row)
   ```
+
+-   oct\(input N)
+
+    描述：将数字或字符串从一个十进制数字转换为八进制数字。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT OCT(10);
+     oct 
+    -----
+    12
+    (1 row)
+    
+    openGauss=# SELECT OCT('10');
+     oct 
+    -----
+    12
+    (1 row)
+    ```

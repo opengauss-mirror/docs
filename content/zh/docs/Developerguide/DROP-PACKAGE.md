@@ -15,3 +15,6 @@ DROP PACKAGE [ IF EXISTS ] package_name;
 DROP PACKAGE BODY [ IF EXISTS ] package_name;
 ```
 
+## 相关链接<a name="section37715281291"></a>
+
+[CREATE PACKAGE](CREATE-PACKAGE.md)，[ALTER PACKAGE](ALTER-PACKAGE.md)

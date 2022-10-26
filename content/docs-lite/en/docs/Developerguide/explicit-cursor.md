@@ -25,6 +25,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     -   _select\_statement_: specifies a query statement.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The system automatically determines whether the cursor can be used for backward fetching based on the execution plan.
 
     Define a dynamic cursor: Define a  **ref**  cursor, which means that the cursor can be opened dynamically by a set of static SQL statements. Define the type of the  **ref**  cursor first, and then the cursor variable of this cursor type. Dynamically bind a  **SELECT**  statement through  **OPEN FOR**  when the cursor is opened.

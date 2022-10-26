@@ -3,6 +3,7 @@
 [Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >If the time format of another database is different from that of openGauss, modify the value of the  **DateStyle**  parameter to keep them consistent.
 
 **Table  1**  Date/Time types

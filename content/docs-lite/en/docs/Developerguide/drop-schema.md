@@ -32,9 +32,11 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Schemas beginning with  **pg\_temp**  or  **pg\_toast\_temp**  are for internal use. Do not delete them. Otherwise, unexpected consequences may be incurred.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The schema currently being used cannot be deleted. To delete it, switch to another schema first.
 
 ## Examples<a name="en-us_topic_0283137271_en-us_topic_0237122148_en-us_topic_0059778467_s3390f031a430477da6a945b09b36b73d"></a>

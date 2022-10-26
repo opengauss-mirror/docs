@@ -328,6 +328,7 @@
 **Recovery objective-related parameters \(recovery\_options\)**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >Currently, continuous WAL archiving PITR cannot be configured. Therefore, parameter usage is restricted as follows:
 >To use continuously archived WAL logs for PITR, perform the following steps:
 >1.  Replace the target database directory with the physical backup files.

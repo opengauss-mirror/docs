@@ -9,6 +9,7 @@
 The deleted model can be viewed in the  **gs\_model\_warehouse**  system catalog.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but the AI capabilities are unavailable.
 
 ## Syntax<a name="section15925137181918"></a>

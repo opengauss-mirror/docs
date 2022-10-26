@@ -15,9 +15,9 @@ openGauss的PostGIS Extension支持如下数据类型：
 **表 1** **PostGIS Extension支持的操作符和函数列表**
 
 <a name="table18970162111535"></a>
-<table><thead align="left"><tr id="row99711021145319"><th class="cellrowborder" valign="top" width="21.15%" id="mcps1.2.3.1.1"><p id="p149718214536"><a name="p149718214536"></a><a name="p149718214536"></a>函数分类</p>
+<table><thead align="left"><tr id="row99711021145319"><th class="cellrowborder" valign="top" width="21.15%" id="mcps1.2.3.1.1"><p id="p149718214536"><a name="p149718214536"></a><a name="p149718214536"></a><b>函数分类</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="78.85%" id="mcps1.2.3.1.2"><p id="p1897112175318"><a name="p1897112175318"></a><a name="p1897112175318"></a>包含函数</p>
+<th class="cellrowborder" valign="top" width="78.85%" id="mcps1.2.3.1.2"><p id="p1897112175318"><a name="p1897112175318"></a><a name="p1897112175318"></a><b>包含函数</b></p>
 </th>
 </tr>
 </thead>

@@ -24,6 +24,7 @@ ssh -L 63333:localhost:8000 username@hostIP
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   -L参数的第一串数字（63333）是通道本端的端口号，可以自由选择。
 >-   第二串数字（8000）是通道远端的端口号，也就是服务器使用的端口号。
 >-   localhost是本机IP地址，username是要连接的服务器上的用户名，hostIP是要连接的主机IP地址。

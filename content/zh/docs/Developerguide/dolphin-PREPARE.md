@@ -7,12 +7,19 @@
 预备语句是服务端的对象，可以用于优化性能。在执行PREPARE语句的时候，指定的查询被解析、分析、重写。当随后发出EXECUTE语句的时候，预备语句被规划和执行。这种设计避免了重复解析、分析工作。PREPARE语句创建后在整个数据库会话期间一直存在，一旦创建成功，即便是在事务块中创建，事务回滚，PREPARE也不会删除。只能通过显式调用DEALLOCATE进行删除，会话结束时，PREPARE也会自动删除。
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
-N/A
+相比于原始的openGauss，dolphin对于PREPARE语法的修改为：
+
+1. 支持 PREPARE FROM 语法。
+
+2. statement 支持加单引号，且单引号内的statement必须是单个query。
+
+3. statement 中的绑定参数支持使用```?```，需要先将```b_compatibility_mode```设置为```on```，且不能同时在一个语句中同时使用```$```和```?```作为参数占位符。将```b_compatibility_mode```设置为```on```后，```?```将不能作为操作符使用。
+
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
-PREPARE name [ ( data_type [, ...] ) ] AS statement;
-PREPARE name FROM statement;
+PREPARE name [ ( data_type [, ...] ) ] { AS | FROM } statement;
+PREPARE name [ ( data_type [, ...] ) ] { AS | FROM } 'statement';
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
@@ -43,5 +50,13 @@ openGauss=# EXECUTE stmt;
 ------+-----
  a    |  18
 (1 row)
-
+openGauss=# set b_compatibility_mode to on;
+SET
+openGauss=# PREPARE stmt1 FROM 'SELECT sqrt(pow(?,2) + pow(?,2)) as test';;
+PREPARE
+openGauss=# EXECUTE stmt1 USING 6,8;
+ test
+------
+   10
+(1 row)
 ```

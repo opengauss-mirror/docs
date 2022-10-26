@@ -35,6 +35,7 @@
     表示允许127.0.0.1/32网段的客户端以ssl认证方式连接到openGauss服务器。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   如果服务端pg\_hba.conf文件中METHOD配置为cert，则只有客户端使用证书（client.crt）中所设置的用户名（common name）才能够成功连接数据库。如果设置为md5、sm3或sha256则对连接数据库的用户没有限制。
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。
 

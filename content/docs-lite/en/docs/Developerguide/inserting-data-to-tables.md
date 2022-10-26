@@ -44,6 +44,7 @@ The length of a character on the server and client may vary by the character set
 More than one of the preceding operations can be performed to a string. For example, if the character sets of the client and server are different, a string may be processed and then truncated. In this case, the result will also be unexpected. For details, see  [Table 2](#en-us_topic_0283137618_en-us_topic_0237120300_en-us_topic_0059779039_t8b4da148118a4913925a053cd07ca3c0).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >Long strings are truncated only if  **[DBCOMPATIBILITY](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_0059778277_l4aa2b919b99d47caa81872841c30b8c4)**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](en-us_topic_0283137001.md#en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.
 
 Run the following commands to create  **table1**  and  **table2**  to be used in the example:
@@ -205,6 +206,7 @@ You need to create a table before inserting data to it. For details about how to
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If implicit conversion is not implemented between the column data types of the specified table and those of the current table, the two tables must have the same column data types when data is inserted from the specified table to the current table.
 
 -   To delete a backup table, run the following command:
@@ -214,6 +216,7 @@ You need to create a table before inserting data to it. For details about how to
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >If the table to be deleted is in dependent relationship with other tables, you need to delete its dependent tables first.
 
 

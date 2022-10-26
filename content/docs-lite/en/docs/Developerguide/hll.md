@@ -86,6 +86,7 @@ HLL has advantages over others in the computing speed and storage space requirem
 When you create an HLL data type, 0 to 4 input parameters are supported. The parameter meanings and specifications are the same as those of the  **hll\_empty**  function. The first parameter is  **log2m**, indicating the logarithm of the number of buckets, and its value ranges from 10 to 16. The second parameter is  **log2explicit**, indicating the threshold in explicit mode, and its value ranges from 0 to 12. The third parameter is  **log2sparse**, indicating the threshold of the Sparse mode, and its value ranges from 0 to 14. The fourth parameter is  **duplicatecheck**, indicating whether to enable duplicatecheck, and its value ranges from 0 to 1. When the input parameter is set to  **–1**, the default value of the HLL parameter is used. You can run the  **\\d**  or  **\\d+**  command to view the parameters of the HLL type.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >When the HLL data type is created, the result varies depending on the input parameter behavior:
 >-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
 >-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.
@@ -125,6 +126,7 @@ ERROR:  log2m = 5 is out of range, it should be in range 10 to 16, or set -1 as 
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >When inserting an HLL object to an HLL table, ensure that the parameters of the HLL type are the same as those of the inserted object. Otherwise, an error is reported.
 
 ```

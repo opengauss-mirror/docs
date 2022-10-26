@@ -5,11 +5,11 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 **表 1**  对java.sql.DatabaseMetaData的支持情况
 
 <a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_table8388124"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_row36487540"><th class="cellrowborder" valign="top" width="37.730000000000004%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"></a>方法名</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_row36487540"><th class="cellrowborder" valign="top" width="37.730000000000004%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_ae123f115d48d478f9e47f920e11fd51c"></a><b>方法名</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="25.34%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"></a>返回值类型</p>
+<th class="cellrowborder" valign="top" width="25.34%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p471115"></a><b>返回值类型</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="36.93%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"></a>支持JDBC 4</p>
+<th class="cellrowborder" valign="top" width="36.93%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"></a><a name="zh-cn_topic_0237120393_zh-cn_topic_0213179159_zh-cn_topic_0189251480_zh-cn_topic_0059779369_zh-cn_topic_0058965196_p3032185"></a><b>支持JDBC </b>4</p>
 </th>
 </tr>
 </thead>
@@ -1242,6 +1242,7 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >uppercaseAttributeName为true时，以下接口会将查询结果转为大写，可转换范围与java中的toUpperCase方法一致。
 >-   public ResultSet getProcedures\(String catalog, String schemaPattern, String procedureNamePattern\)
 >-   public ResultSet getProcedureColumns\(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern\)

@@ -3,6 +3,7 @@
 DB4AI模式在AI特性中主要是用来存储和管理数据集版本。模式中保存数据表的原始视图快照，每一个数据版本的更改记录以及版本快照的管理信息。模式面向普通用户，用户可在该模式下查找特性DB4AI.SNAPSHOT创建的快照版本信息。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供下述schema，但DB4AI不可用。
 
 -   **[DB4AI.SNAPSHOT](DB4AI-SNAPSHOT.md)**  

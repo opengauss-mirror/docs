@@ -142,6 +142,7 @@ The owner of a type, a user granted the ALTER permission on a type, or a user gr
     Refuses to update the associated records of the modified type. This is the default action.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >-   **ADD ATTRIBUTE**,  **DROP ATTRIBUTE**, and  **ALTER ATTRIBUTE**  can be combined for processing. For example, it is possible to add several attributes or change the types of several attributes at the same time in one command.
     >-   To modify a schema of a type, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new owning role, and the member must have the  **CREATE**  permission on the schema of this type. \(These restrictions enforce that the user can only recreate and delete the type. However, the system administrator can change ownership of any type in any way.\) To add an attribute or modify the type of an attribute, you must also have the  **USAGE**  permission of this type.
 

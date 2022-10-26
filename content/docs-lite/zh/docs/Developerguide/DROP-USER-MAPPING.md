@@ -32,5 +32,6 @@ DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC }
 [ALTER USER MAPPING](ALTER-USER-MAPPING.md)，[CREATE USER MAPPING](CREATE-USER-MAPPING.md)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >轻量版场景下，openGauss提供此语法，但USER MAPPING功能不可用。
 

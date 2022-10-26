@@ -8,6 +8,7 @@
 MOT的平均事务速度为2.5倍，MOT延迟为10.5ms，而基于磁盘的表延迟为23至25ms。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >计算平均数时，已考虑TPC-C的5个事务分布占比。有关更多信息，请参阅[MOT样例TPC-C基准](MOT样例TPC-C基准.md)中关于TPC-C事务的说明。
 
 **图 2**  低延迟（90<sup>th</sup>%，事务平均）性能基准<a name="zh-cn_topic_0283136867_zh-cn_topic_0280525097_fig3108787"></a>  

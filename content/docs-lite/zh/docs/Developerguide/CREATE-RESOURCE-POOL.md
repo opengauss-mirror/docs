@@ -30,6 +30,7 @@ CREATE RESOURCE POOL pool_name
     控制组名称。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   设置控制组名称时，语法可以使用双引号，也可以使用单引号。
     >-   group\_name对大小写敏感。
     >-   不指定group\_name时，默认指定的字符串为 "Medium"，代表指定DefaultClass控制组的"Medium" Timeshare控制组。
@@ -65,6 +66,7 @@ CREATE RESOURCE POOL pool_name
     在普通场景下，普通用户的mem\_percent范围为0-100，默认值为0。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >mem\_percent和memory\_limit同时指定时，只有mem\_percent起作用。
 
 -   **io\_limits**
@@ -80,6 +82,7 @@ CREATE RESOURCE POOL pool_name
     包括三档可选：Low、Medium和High。不控制时可设置为None。默认为None。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT，COPY FROM，CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 -   **nodegroup**
@@ -93,6 +96,7 @@ CREATE RESOURCE POOL pool_name
     在逻辑集群模式下，指定当前资源池用于控制没有关联本逻辑集群的普通用户的资源。这里的逻辑集群是由资源池nodegroup字段指定的。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   nodegroup必须是存在的逻辑集群，不能是elastic\_group和安装的nodegroup \(group\_version1\)。
     >-   如果指定了is\_foreign为true，则资源池不能再关联用户，即不允许通过CREATE USER ... RESOURCE POOL语句来将该资源池配置给用户。该资源池自动检查用户是否关联到资源池指定的逻辑集群，如果用户没有关联到该逻辑集群，则这些用户在逻辑集群所包含的数据库节点上运行将受到该资源池的资源控制。
 
