@@ -24,7 +24,7 @@ ts_debug([ config regconfig, ] document text,
 -   **dictionary regdictionary**: the dictionary that recognized the token, or NULL if none did
 -   **lexemes text\[\]**: the lexeme\(s\) produced by the dictionary that recognized the token, or NULL if none did; an empty array \(\{\}\) means the token was recognized as a stop word
 
-Here is a simple example:
+Example:
 
 ```
 openGauss=# SELECT * FROM ts_debug('english','a fat  cat sat on a mat - it ate a fat rats');
@@ -56,4 +56,3 @@ openGauss=# SELECT * FROM ts_debug('english','a fat  cat sat on a mat - it ate a
  asciiword | Word, all ASCII | rats  | {english_stem} | english_stem | {rat}
 (24 rows)
 ```
-

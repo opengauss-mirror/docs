@@ -1199,7 +1199,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Removes the longest string containing only the characters \(a space by default\) from the start/end/both ends of the string.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
@@ -1231,7 +1231,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the end of string.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
@@ -1247,7 +1247,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the start of string.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
@@ -1263,7 +1263,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Converts the string into the uppercase.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 
@@ -1279,7 +1279,7 @@ String functions and operators provided by openGauss are for concatenating strin
 
     Description: Converts the string into the lowercase.
 
-    Return type: varchar
+    Return type: text
 
     Example:
 

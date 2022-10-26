@@ -21,7 +21,15 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string
 
-**Default value:** **pg\_audit**  If  **om**  is used for openGauss deployment, audit logs are stored in  **$GAUSSLOG/pg\_audit/*Instance name***.
+**Default value:** **pg\_audit**  If  **om**  is used for openGauss deployment, audit logs are stored in  **$GAUSSLOG/pg\_audit/*Instance name**.
+
+> ![](public_sys-resources/icon-notice.gif) **NOTICE:**  
+>
+> - You need to set different audit file directories for different DNs. Otherwise, audit logs will be abnormal.
+> - If the value of **audit_directory** in the configuration file is an invalid path, the audit function cannot be used.
+> - Path description:
+>   - Valid path: You have read and write permissions on the path.
+>   - Invalid path: You do not have read or write permissions on an invalid path.
 
 ## audit\_data\_format<a name="en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_s4738964503be49cb9b7ecf100f25df0d"></a>
 

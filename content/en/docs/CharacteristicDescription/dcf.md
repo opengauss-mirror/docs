@@ -33,7 +33,7 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
-To use this function, you need to enable DCF during installation and deployment. In DCF mode, the majority election is used. During the installation, if the number of faulty nodes and build nodes reaches the majority, the cluster installation will fail. For example, when one primary node and two standby nodes are installed, one node fails to be installed due to insufficient memory, but the other two nodes can be started normally. A standby node will be built again. In this case, the number of build nodes and faulty nodes is 2, which is the majority, and the cluster installation will fail. During the installation, check whether the memory and disk resources are sufficient.
+To use this function, at least three DNs must be deployed. You need to enable DCF during installation and deployment. In DCF mode, the majority election is used. During the installation, if the number of faulty nodes and build nodes reaches the majority, the cluster installation will fail. For example, when one primary node and two standby nodes are installed, one node fails to be installed due to insufficient memory, but the other two nodes can be started normally. A standby node will be built again. In this case, the number of build nodes and faulty nodes is 2, which is the majority, and the cluster installation will fail. During the installation, check whether the memory and disk resources are sufficient.
 
 If the policy-based majority parameter is configured for an AZ and all nodes in the AZ are faulty, you need to remove the AZ configuration from the policy-based majority configuration when performing build operations on the nodes.
 

@@ -11,8 +11,8 @@ gs_encrypt [OPTION]... PLAINTEXT
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   _PLAINTEXT_  does not follow a short or long option.
->-   _PLAINTEXT_  indicates the plaintext string to be encrypted.
+>-   *PLAINTEXT*  does not follow a short or long option.
+>-   *PLAINTEXT*  indicates the plaintext string to be encrypted.
 
 ## Parameter Description<a name="section13415675164452"></a>
 
@@ -24,23 +24,23 @@ gs_encrypt [OPTION]... PLAINTEXT
 
     Displays version information.
 
--   -k  _PASSWORD_, --key=_PASSWORD_
+-   -k  *PASSWORD*, --key=*PASSWORD*
 
-    Password entered by a user. It is used to derive the key for encryption. The password must contain 8 to 16 characters, including at least three types of the following: uppercase letters, lowercase letters, digits, and special characters.
+    Password entered by a user. It is used to derive the key for encryption. The password must contain 8 to 15 characters, including at least three types of the following: uppercase letters, lowercase letters, digits, and special characters.
 
--   -v  _VectorValue_, --vector=_VectorValue_
+-   -v  *VectorValue*, --vector=*VectorValue*
 
     Salt value entered by a user. It is used to scramble passwords during one-way password hash calculation. The string must contain 16 characters.
 
--   -f  _FilePrefix_, --file-prefix=_FilePrefix_
+-   -f  *FilePrefix*, --file-prefix=*FilePrefix*
 
     Prefix of the cipher and rand files used for encryption. The cipher and rand files must be stored in  **$GAUSSHOME/bin**.
 
--   -B  _Value_, --key-base64=_Value_
+-   -B  *Value*, --key-base64=*Value*
 
     Base64 plaintext key used for encryption.
 
--   -D  _Value_, --vector-base64=_Value_
+-   -D  *Value*, --vector-base64=*Value*
 
     Base64 random string used for encryption. The length of the string before base64 encoding must be 16 characters.
 
@@ -128,5 +128,3 @@ Example 3: Encrypt a plaintext string by using a Base64 key and a Base64 vector.
     ```
     V7mpnsfIHTjVTYGw1YHI0c6aY0N4J5L7BtU4CqDoeIkxMjM0NTY3ODkwYWJjZGVm
     ```
-
-

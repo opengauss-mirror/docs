@@ -89,27 +89,31 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
     
     The sequence and quantity of COMMENT and index\_type can be random, but only the last value of the same column takes effect.
 
-![](public_sys-resources/icon-note.gif) **NOTE:**
+## Parameter Description<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
 - **{DISABLE | ENABLE} KEYS**
+
   Disables or enables all non-unique indexes of a table.
 
 - **DROP INDEX index_name [ RESTRICT | CASCADE ]**
+
   Deletes the index of a table.
 
 - **DROP PRIMARY KEY [ RESTRICT | CASCADE ]**
-  Deletes the primary key of a table.
+
+  Deletes the foreign key of a table.
 
 - **DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]**
+
   Deletes the foreign key of a table.
 
 - **RENAME INDEX index_name to new_index_name**
+
   Renames an index of a table.
 
-## Parameter Description<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
+>![](public_sys-resources/icon-note.gif) **NOTE:**
 
-![](public_sys-resources/icon-note.gif) **NOTE:**
-For details about the involved parameters, see [ALTER TABLE](alter-table.md).
+>For details about the involved parameters, see [ALTER TABLE](alter-table.md).
 
 ## Examples<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 

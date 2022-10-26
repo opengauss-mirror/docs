@@ -1,11 +1,12 @@
 # Character Processing Functions and Operators<a name="EN-US_TOPIC_0289900656"></a>
 
 Compared with the original openGauss, Dolphin modifies character processing functions and operators as follows:
+
 1. The regexp, not regexp, and rlike operators are added.
 2. The locate, lcase, ucase, insert, bin, chara, elt, field, find_int_set, hex, space, and soundex functions are added.
 3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
-4. The XOR function of the ^ operator is added, and the LIKE BINARY/NOT LIKE BINARY operator is added.
-5. The LIKE/NOT LIKE operator is modified.
+4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
+5. The `LIKE/NOT LIKE` operator is modified.
 
 -   bit\_length\(string\)
 
@@ -305,7 +306,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     ---
     0 
     (1 row)
-     ```
+    ```
 
 -   chara(any)
 
@@ -440,18 +441,18 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   make_set(bits, str1, str2, ...)
+-   make_set(number, string1, string2, ...)
 
-    Description: Returns a set value (a string containing substrings separated by characters). The value consists of strings with the corresponding bits set in bits. str1 corresponds to bit 0, st2 corresponds to bit 1, and so on.
-    NULL values in str1, str2, ... are not added to the result.
+    Description: Returns a set value (a string containing substrings separated by commas) consisting of a string with the corresponding bit set in number. string1 corresponds to bit 0, string2 corresponds to bit 1, and so on.
+    NULL values in string1, string2, ... are not added to the result.
 
     Return type: text
 
     ```sql
-    select make_set(1|4, 'hello', 'nice', NULL, 'world');
+    select make_set(1|4, 'one', 'two', NULL, 'four');
      make_set 
     ----------
-     hello
+     one
     (1 row)
     ```
 
@@ -461,7 +462,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
   Return type: INT
 
-  Example: 
+  Example:
 
   ```
   openGauss=# SELECT '123a'^'123';
@@ -473,11 +474,11 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
 - like/not like
 
-  Description: Specifies whether the string matches the pattern string following LIKE. In the source version, LIKE of openGauss is case sensitive. In this version, when **b\_compatibility\_mode** is set to **TRUE**, LIKE is case insensitive. When **b\_compatibility\_mode** is set to **FALSE**, LIKE is case sensitive. If the string matches the provided pattern, the LIKE expression returns true (the ILIKE expression returns false).
+  Description: Specifies whether the string matches the pattern string following LIKE. In the source version, LIKE of openGauss is case sensitive. In this version, when `b_compatibility_mode` is set to `TRUE`, LIKE is case insensitive. When `b_compatibility_mode` is set to `FALSE`, LIKE is case sensitive. If the string matches the provided pattern, the LIKE expression returns true (the ILIKE expression returns false).
 
   Return type: Boolean
 
-  Example: 
+  Example:
 
   ```
   openGauss=# SELECT 'a' like 'A' as result;
@@ -505,7 +506,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
   Return type: Boolean
 
-  Example: 
+  Example:
 
   ```
   openGauss=# SELECT 'a' like binary 'A' as result;
@@ -532,3 +533,5 @@ Compared with the original openGauss, Dolphin modifies character processing func
             t
   (1 row)
   ```
+
+  

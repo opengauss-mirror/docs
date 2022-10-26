@@ -33,5 +33,5 @@ To minimize the installation account permissions during the installation and ens
 </tbody>
 </table>
 
-During the openGauss installation, when  **gs\_install**  is executed, a database user  **omm**  with the same name as the installation user is created. This user has the highest operation permissions on the database. The initial password of this user is specified by the user.
+During the openGauss installation, when  **gs\_preinstall**  is executed, a database user  **omm**  with the same name as the installation user is created. This user has the highest operation permissions on the database. The initial password of this user is specified by the user.
 

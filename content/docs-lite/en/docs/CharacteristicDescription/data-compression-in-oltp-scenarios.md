@@ -4,9 +4,11 @@
 
 This feature is available since openGauss 3.0.0.
 
+In openGauss 3.1.0, the PCA and PCD files are integrated into one file. The PCA file is loaded and eliminated independently and does not depend on the mmap operation. The chunk shrinking operation is added.
+
 ## Introduction<a name="section740615433477"></a>
 
-Row-store data compression is supported in OLTP scenarios and general compression algorithms are provided. Data pages are transparently compressed and page storage address files are added to achieve high compression and high performance.
+The feature supports row-store data compression in OLTP scenarios, provides a general compression algorithm, and implements transparent compression of data pages and maintenance of page storage locations to achieve high compression and high performance. The disk usage of the database is improved.
 
 ## Benefits<a name="section1067215172372"></a>
 
@@ -18,7 +20,13 @@ Data compression in OLTP scenarios can reduce the disk space usage of row-store 
 
 ## Constraints<a name="section1694165712371"></a>
 
-Only row-store tables and B-tree indexes are supported. This feature cannot be used in the Ustore and segment-page storage engines.
+- Only heap-based data tables can be compressed, that is, common row-store tables and B-tree indexes can be compressed.
+- The operating system must support the punch hole operation.
+- The data backup media must support the punch hole operation.
+- Compression-related parameters cannot be modified, and uncompressed tables cannot be converted to compressed tables.
+- Compression and decompression affect the CPU and performance. The advantages are as follows: The disk storage capability is improved, the disk usage is improved, the disk I/O is reduced, and the disk I/O pressure is reduced.
 
-Compressed table index files are accessed using memory-mapped \(mmap\).  **max\_map\_count**  must be set properly based on the number of compressed table files.
+## Dependency
 
+- The database must support the double-write operation.
+- The open-source compression algorithms PGLZ and ZSTD are used for compression.

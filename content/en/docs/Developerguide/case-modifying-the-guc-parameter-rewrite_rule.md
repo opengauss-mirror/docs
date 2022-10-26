@@ -7,7 +7,7 @@
 The query performance can be greatly improved by converting the subquery in the target column to JOIN. The following is an example:
 
 ```
-postgres=# set rewrite_rule='none';
+openGauss=#  set rewrite_rule='none';
 SET
 postgres=# create table t1(c1 int,c2 int);
 CREATE TABLE
@@ -34,9 +34,9 @@ postgres=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 wh
 Because the subquery  **\(select avg\(c2\) from t2 where t2.c2=t1.c2\)**  in the target column cannot be pulled up, execution of the subquery is triggered each time a row of data of  **t1**  is scanned, and the query efficiency is low. If the  **intargetlist**  parameter is enabled, the subquery is converted to JOIN to improve the query performance.
 
 ```
-postgres=# set rewrite_rule='intargetlist';
+openGauss=#  set rewrite_rule='intargetlist';
 SET
-postgres=#  explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
+openGauss=# explain (verbose on, costs off) select c1,(select avg(c2) from t2 where t2.c2=t1.c2) from t1 where t1.c1<100 order by t1.c2;
                   QUERY PLAN
 -----------------------------------------------
  Sort
@@ -73,7 +73,7 @@ To ensure semantic equivalence, the subquery  **tt**  must ensure that each  **g
 ```
 postgres=# set rewrite_rule='uniquecheck';
 SET
-postgres=# explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c1);
+openGauss=#  explain verbose select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c1);
                                      QUERY PLAN
 -------------------------------------------------------------------------------------
  Hash Join  (cost=43.36..104.40 rows=2149 distinct=[200, 200] width=4)
@@ -100,14 +100,14 @@ Note: Because  **group by t2.c1 unique check**  occurs before the filter conditi
 There are tables  **t1**  and  **t2**. The data in the tables is as follows:
 
 ```
-postgres=# select * from t1 order by c2;
+openGauss=#  select * from t1 order by c2;
  c1 | c2
 ----+----
   1 |  1
   2 |  2
   3 |  3
 (3 rows)
-postgres=# select * from t2 order by c2;
+openGauss=#  select * from t2 order by c2;
  c1 | c2
 ----+----
   1 |  1
@@ -122,16 +122,15 @@ postgres=# select * from t2 order by c2;
 Disable and enable the  **uniquecheck**  parameter for comparison. After the parameter is enabled, an error is reported.
 
 ```
-postgres=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
+openGauss=#  select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
  c1
 ----
   1
   2
   3
 (3 rows)
-postgres=# set rewrite_rule='uniquecheck';
+openGauss=#  set rewrite_rule='uniquecheck';
 SET
-postgres=# select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
+openGauss=#  select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
 ERROR:  more than one row returned by a subquery used as an expression
 ```
-

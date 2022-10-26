@@ -277,3 +277,5 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 <a name="ul165953251100"></a><a name="ul165953251100"></a><ul id="ul165953251100"><li>Check the CM Agent alarm ALM_AI_AbnormalCMSProcess in the DR cluster and try to recover the faulty CM Agent. After the fault is rectified, the connection to the new first standby instance is restored. </li><li>If the faulty CM Agent cannot be recovered within a short period of time, run the **gs_ctl stop -D DATADIR or kill** command to manually stop the DN process on the node and recover the node.</li></ul>
 </td>
 </tr>
+</tbody>
+</table>

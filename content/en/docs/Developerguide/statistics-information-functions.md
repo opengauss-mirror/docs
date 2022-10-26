@@ -3150,7 +3150,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_get\_session\_memctx\_detail\(text\)
 
-    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). This parameter is valid only in thread pool mode. Only the memory context queried through the  **pv\_session\_memory\_context**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **pv\_session\_memory\_context**  view\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
+    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). This parameter is valid only in thread pool mode. Only the memory context queried through the  **gs\_session\_memory\_context**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **gs\_session\_memory\_context**  view\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
 
     Return type: SETOF record
 
@@ -3192,7 +3192,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_get\_thread\_memctx\_detail\(tid,text\)
 
-    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **pv\_thread\_memory\_context**  view can be queried. The first input parameter is the thread ID \(the  **tid**  column of the data returned by the  **pv\_thread\_memory\_context**\), and the second parameter is the memory context name \(the  **contextname**  column of the data returned by  **pv\_thread\_memory\_context**\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
+    Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **gs\_thread\_memory\_context**  view can be queried. The first input parameter is the thread ID \(the  **tid**  column of the data returned by the  **gs\_thread\_memory\_context**\), and the second parameter is the memory context name \(the  **contextname**  column of the data returned by  **gs\_thread\_memory\_context**\). To query the function, you must have the  **sysadmin **or  **monitor admin**  permission.
 
     Return type: SETOF record
 
@@ -3223,7 +3223,7 @@ Statistics information functions are divided into the following two categories: 
     </td>
     <td class="cellrowborder" valign="top" width="12.47%" headers="mcps1.1.4.1.2 "><p id="p1623655013520"><a name="p1623655013520"></a><a name="p1623655013520"></a>int8</p>
     </td>
-    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p323610502051"><a name="p323610502051"></a><a name="p323610502051"></a>Size of the applied memory. The value is accumulated if the memory is applied for multiple times in the same line of the same file.</p>
+    <td class="cellrowborder" valign="top" width="65.86%" headers="mcps1.1.4.1.3 "><p id="p323610502051"><a name="p323610502051"></a><a name="p323610502051"></a>Size of the applied memory, in bytes. The value is accumulated if the memory is applied for multiple times in the same line of the same file.</p>
     </td>
     </tr>
     </tbody>
