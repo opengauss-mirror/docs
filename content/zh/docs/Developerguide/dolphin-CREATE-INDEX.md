@@ -49,10 +49,10 @@
     前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
-    >-  前缀键支持的索引方法：btree、ubtree。
-    >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
-    >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
-    >-  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、CONVERT、DAYOFMONTH、DAYOFWEEK、DAYOFYEAR、DB_B_FORMAT、EXTRACT、GREATEST、HOUR_P、IFNULL、LEAST、LOCATE、MICROSECOND_P、MID、MINUTE_P、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、QUARTER、SECOND_P、SUBSTR、SUBSTRING、TEXT_P、TIME、TIMESTAMP、TIMESTAMPDIFF、TREAT、TRIM、WEEKDAY、WEEKOFYEAR、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。若含有上述关键字的前缀键所在的索引是通过ALTER TABLE或CREATE TABLE语法创建的，导出的CREATE INDEX语句可能无法成功执行，请尽量不要使用上述关键字作为前缀键的列名称。
+    > -  前缀键支持的索引方法：btree、ubtree。
+    > -  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
+    > -  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
+    > -  CREATE INDEX语法中，不支持以下关键字作为前缀键的字段名称：COALESCE、CONVERT、DAYOFMONTH、DAYOFWEEK、DAYOFYEAR、DB_B_FORMAT、EXTRACT、GREATEST、HOUR_P、IFNULL、LEAST、LOCATE、MICROSECOND_P、MID、MINUTE_P、NULLIF、NVARCHAR、NVL、OVERLAY、POSITION、QUARTER、SECOND_P、SUBSTR、SUBSTRING、TEXT_P、TIME、TIMESTAMP、TIMESTAMPDIFF、TREAT、TRIM、WEEKDAY、WEEKOFYEAR、XMLCONCAT、XMLELEMENT、XMLEXISTS、XMLFOREST、XMLPARSE、XMLPI、XMLROOT、XMLSERIALIZE。若含有上述关键字的前缀键所在的索引是通过ALTER TABLE或CREATE TABLE语法创建的，导出的CREATE INDEX语句可能无法成功执行，请尽量不要使用上述关键字作为前缀键的列名称。
 
 - **index\_option**
 
