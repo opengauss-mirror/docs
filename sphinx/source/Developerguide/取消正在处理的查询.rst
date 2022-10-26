@@ -1,0 +1,7 @@
+
+
+.. toctree::
+
+    content/zh/docs/Developerguide/PQgetCancel
+    content/zh/docs/Developerguide/PQfreeCancel
+    content/zh/docs/Developerguide/PQcancel
