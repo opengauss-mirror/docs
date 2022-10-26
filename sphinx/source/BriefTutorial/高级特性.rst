@@ -1,0 +1,13 @@
+
+.. toctree::
+
+    content/zh/docs/BriefTutorial/索引推荐
+    content/zh/docs/BriefTutorial/DB4AI
+    content/zh/docs/BriefTutorial/列存储
+    content/zh/docs/BriefTutorial/LLVM
+    content/zh/docs/BriefTutorial/Ustore
+    content/zh/docs/BriefTutorial/MOT
+    content/zh/docs/BriefTutorial/全密态数据库
+    content/zh/docs/BriefTutorial/DCF
+    content/zh/docs/BriefTutorial/并行查询
+
