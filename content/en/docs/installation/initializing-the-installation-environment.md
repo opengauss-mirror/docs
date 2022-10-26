@@ -34,9 +34,11 @@ mkdir -p /opt/software/openGauss
 chmod 755 -R /opt/software
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
--   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
--   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>
+>-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
+>
+>-   The openGauss user must have the read and write permissions on the  **/opt/software/openGauss**  directory.  
 
 2.Upload the software package  **openGauss-**_x.x.x_**-openEuler-64bit-all.tar.gz**  and the configuration file  **cluster\_config.xml**  to the created directory.
 
@@ -48,10 +50,13 @@ tar -zxvf openGauss-1.1.0-openEuler-64bit-all.tar.gz
 tar -zxvf openGauss-1.1.0-openEuler-64bit-om.tar.gz
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:**  
--   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
--   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
--   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
+>![](public_sys-resources/icon-note.gif) **NOTE:**  
+>
+>-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
+>
+>-   When you execute the  **gs\_preinstall**  script to prepare the installation environment, the script automatically copies the openGauss configuration file and decompressed installation package to the same directory on other servers.  
+>
+>-   Before executing  **gs\_preinstall**  and establishing mutual trust, check whether the  **/etc/profile**  file contains error information. If it does, manually rectify the error.  
 
 4.Go to the directory for storing tool scripts.
 
@@ -91,10 +96,12 @@ vi /etc/profile.d/performance.sh
     ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
     ```
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**   
-  You need to run this command on each host.  
+  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >You need to run this command on each host.  
+  >
 
 - Execute  **gs\_preinstall**  in non-interactive mode.
+    
   - Manually establish mutual trust between users  **root**  and between openGauss users by following the instructions provided in[Establishing Mutual Trust Manually](#establishing-mutual-trust-manually) .
 
   - Run the following command to configure the installation environment:
@@ -104,9 +111,11 @@ vi /etc/profile.d/performance.sh
     ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
     ```
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**   
-  -   In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
-  -   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
+  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >
+  >-   In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
+  >
+  >-   The mutual trust established between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  immediately after the installation is complete.  
 
 
 
@@ -368,9 +377,10 @@ Establishing a mutual trust relationship using a script has the following impact
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
-
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>
+>The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
+>
 The procedure of manually establishing mutual trust is as follows \(**plat1**,  **plat2**, and  **plat3**  are host names\):
 
 1.  Generate a licensed file for user  **root**  on any host \(referred to as the local host\). Host  **plat1**  is used as an example.
@@ -440,9 +450,11 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
             plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
             # plat3 SSH-2.0-OpenSSH_5.1 
     
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
-    -   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
-    -   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
+    >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
+    >
+    >-   If the  **known\_hosts**  file is deleted from the local host, the mutual trust between the local and remote hosts remains valid, but alarms will be reported. To prevent such alarms, set the  **StrictHostKeyChecking**  parameter in the  **/etc/ssh/ssh\_config**  file to  **no**.
 
 
 3.  Send the  **known\_hosts**  file to all the other hosts except the local host. In this example, send the  **known\_hosts**  file on host  **plat1**  to hosts  **plat2**  and  **plat3**.
@@ -482,8 +494,10 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     plat1:~ # 
     ```
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:**   
-    If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
+    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >
+    >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
+    >
 
 
 ### Deleting Mutual Trust Between Users  **root** 

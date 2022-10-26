@@ -18,11 +18,16 @@
   (1 row)
   ```
 
-- json_object(key, value[, key2, value2, ...])
+- json_object([VARIADIC "any"])
 
-  Description: All keys in a JSON object are character strings. Therefore, JSON\_OBJECT() converts keys that are not of the character string type to the character string type. To ensure program stability, keys of the string type are used.
+  Description: Inputs parameters with `key` and `value` that appear alternately. Constructs a JSON object from a variable parameter list. Before using the JSON object, set the GUC parameter **b\_compatibility\_mode** to **1**.
 
   Return type: json
+
+  Remarks:
+
+  * All keys in a JSON object are character strings. Therefore, `JSON_OBJECT()` converts `keys` that are not of the character string type to the character string type. To ensure program stability, `keys` of the string type are used.
+  * The `key` cannot be NULL, and the number of input parameters must be an even number.
 
   Example: 
 
@@ -71,14 +76,14 @@
 
 - json_contains(json, json[, text])
 
-  Description: The third optional parameter is the path of the first JSON parameter. It determines whether the first JSON parameter contains the second JSON parameter.
+  Description: The third optional parameter is the `path` of the first JSON parameter. It determines whether the first JSON parameter contains the second JSON parameter.
 
   Return type: Boolean
 
   Remarks:
 
   - If any parameter is NULL, the function returns NULL.
-  - If the path does not exist in JSON, the function returns NULL.
+  - If the `path` does not exist in JSON, the function returns `NULL`.
 
   Example: 
 
@@ -122,21 +127,21 @@
 
 - json_contains_path(json, text, text[])
 
-  Description: Determines whether the target JSON parameter contains the input path parameter. The second parameter is used to select a mode.
+  Description: Determines whether the target JSON parameter contains the input `path` parameter. The second parameter is used to select a mode.
 
   Return type: Boolean
 
   Remarks:
 
-  - The second parameter can be 'one' or 'all'.
+  - The second parameter can be `one` or `all`.
 
-    'one' indicates that true is returned as long as one path exists. Otherwise, false is returned. 'all' indicates that true is returned only when all paths exist. Otherwise, false is returned.
+    `one` indicates that `true` is returned as long as one `path` exists. Otherwise, `false` is returned. `all` indicates that `true` is returned only when all `paths` exist. Otherwise, `false` is returned.
 
-  - If the first and second parameters are NULL, the function returns NULL.
+  - If the first and second parameters are `NULL`, the function returns NULL.
 
-  - If the mode is 'one', paths are checked in sequence. If a NULL path is prior to any existing path, NULL is returned.
+  - If the mode is `one`, `paths` are checked in sequence. If a NULL `path` is prior to any existing `path`, NULL is returned.
 
-    If the mode is 'all', paths are checked in sequence. If a NULL path is prior to any path that does not exist, the function returns NULL.
+    If the mode is `all`, `paths` are checked in sequence. If a NULL `path` is prior to any `path` that does not exist, the function returns NULL.
 
   Example: 
 
@@ -246,9 +251,9 @@
 
 - json_keys(json_doc[, path])
 
-  Description: Returns the key in the top-level value of a JSON object as a JSON array, or returns the top-level key in the selected path if a path parameter is given.
+  Description: Returns the key in the top-level value of a JSON object as a JSON array. If a path parameter is given, the top-level key of the JSON object indicated by the path is returned.
 
-  Return type: text
+  Return type: json
 
   Example: 
 
@@ -264,7 +269,7 @@
 
 - json_search(json_doc, one_or_all, search_str [, escape_char [, path] ...])
 
-  Description: One or more path parameters can be input. The location of the target character string in the target file corresponding to the path is returned based on the escape character and one\_or\_all mode.
+  Description: One or more path parameters can be input. The location of the target character string in the target file corresponding to the path is returned based on the escape character and `one_or_all` mode.
 
   Return type: text
 
@@ -272,9 +277,9 @@
 
   * If the escape character is of the Boolean type, it is equivalent to NULL. By default, the backslash (\) is the escape character. You can enter a single-digit integer as the escape character.
   * The target JSON file and target character string cannot be empty, and the path cannot be empty. If the path does not exist, an empty value is returned.
-  * The value of **one\_or\_all** can only be **one** or **all**.
-  * You can enter an integer, floating point, or Boolean value in search\_str for matching. However, only character strings in the target file can be matched.
-  * Fuzzy match can be used for search\_str, and wildcard characters can be used for matching in path.
+  * The value of `one_or_all` can only be `one` or `all`.
+  * You can enter an integer, floating point, or Boolean value in `search_str` for matching. However, only character strings in the target file can be matched.
+  * Fuzzy match can be used for`search_str`, and wildcard characters can be used for matching in `path`.
 
   Example: 
 
@@ -333,11 +338,11 @@
   ```
 
 - json_append(json_doc, path, val[, path, val] ...)
-  Description: Modifies a JSON document, appends an element to a specified array node, and returns the modified JSON document.
+  Description: The function is the same as that of the `json_array_append` function.
 
   Return type: json
 
-  Note: The json\_append and json_array_append functions are the same. The json\_append function is implemented by invoking the json\_array\_append function.
+  Note: The `json_append()` function may be deleted in later versions. You are advised to use the `json_array_append` function.
   Example: 
 
   ```
@@ -384,7 +389,7 @@
 
   Return type: json
 
-  Remarks: When jsondoc or path is empty, an empty value is returned.
+  Remarks: When the JSON document or `path` is empty, an empty value is returned.
 
   Example: 
 
@@ -398,23 +403,25 @@
 
 * json_merge(json_doc, json_doc[, json_doc] ...)
 
-  Description: The function is the same as that of the json\_merge\_preserve function.
+  Description: The function is the same as that of the `json_merge_preserve` function.
 
-  Note: The JSON\_MERGE() function may be deleted in later versions. You are advised to use the json\_merge\_preserve function.
+  Return type: json
+
+  Note: The `JSON_MERGE()` function may be deleted in later versions. You are advised to use the `json_merge_preserve` function.
 
   Example: 
 
   ```
-  openGauss=# select json_merge('[1, 2]', '[true, false]');
-       json_merge      
-  ---------------------
-   [1, 2, true, false]
+  openGauss=# select json_merge('"opengauss"', '[[1,2],3,"test"]');
+              json_merge            
+  ----------------------------------
+   ["opengauss", [1, 2], 3, "test"]
   (1 row)
   ```
 
 * json_merge_preserve(json_doc, json_doc[, json_doc] ...)
 
-  Description: Merges two or more JSON files and returns the merging result. If any parameter is not a valid JSON, an error occurs.
+  Description: Combines two or more JSON files with the same key-value into one array.
 
   Return type: json
 
@@ -422,56 +429,49 @@
 
   * If the value of any parameter is NULL, NULL is returned. 
   * Merging specifications:
-    - Adjacent arrays are merged into a single array.
-    - Adjacent objects are merged into a single object.
-    - The scalar is automatically wrapped as an array and merged into an array.
-    - Merge is performed by automatically wrapping adjacent arrays and objects into arrays and merging two arrays.
+    - If one of the two adjacent JSON parameters is a `scalar` or object and the other is an array, the `scalar` or object is added to an array parameter as an array element based on the parameter sequence to combine the scalar or object into a single array.
+    - If two adjacent JSON parameters are both `scalars` or objects, combine `scalars` or objects into a single array based on the parameter sequence.
+    - If two adjacent JSON parameters are both arrays, combine elements of two arrays into a single array based on the parameter sequence.
+    - If two adjacent JSON parameters are both objects, combine the members of two objects into a single object based on the `key` sequence.
+    - The returned values of object members after JSON combination comply with the `key` sequence.
 
   Example: 
 
   ```
-  openGauss=# SELECT JSON_MERGE_PRESERVE('[1, 2]', '[true, false]');
-   json_merge_preserve 
-  ---------------------
-   [1, 2, true, false]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{"name": "x"}', '{"id": 47}');
-     json_merge_preserve   
-  -------------------------
-   {"id": 47, "name": "x"}
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('1', 'true');
-   json_merge_preserve 
-  ---------------------
-   [1, true]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('[1, 2]', '{"id": 47}');
-   json_merge_preserve 
-  ---------------------
-   [1, 2, {"id": 47}]
-  (1 row)
-  
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{ "a": 1, "b": 2 }',
-  gary(#    '{ "a": 3, "c": 4 }');
+  openGauss=# select json_merge_preserve('{"a":"abc"}', '[1,true,null]');
         json_merge_preserve      
   -------------------------------
-   {"a": [1, 3], "b": 2, "c": 4}
+   [{"a": "abc"}, 1, true, null]
   (1 row)
   
-  openGauss=# SELECT JSON_MERGE_PRESERVE('{ "a": 1, "b": 2 }','{ "a": 3, "c": 4 }',
-  gary(#    '{ "a": 5, "d": 6 }');
-             json_merge_preserve            
-  ------------------------------------------
-   {"a": [1, 3, 5], "b": 2, "c": 4, "d": 6}
+  openGauss=# select json_merge_preserve('1', '"b"', 'true');
+   json_merge_preserve 
+  ---------------------
+   [1, "b", true]
+  (1 row)
+  
+  openGauss=# select json_merge_preserve('[1,{"a":"abc"}]', '["b",false]');
+        json_merge_preserve      
+  -------------------------------
+   [1, {"a": "abc"}, "b", false]
+  (1 row)
+      
+  openGauss=# select json_merge_preserve('{"b":"abc"}', '{"a":"jks"}');
+     json_merge_preserve    
+  --------------------------
+   {"a": "jks", "b": "abc"}
+  (1 row)
+      
+  openGauss=# select json_merge_preserve(NULL, '1');
+   json_merge_preserve 
+  ---------------------
+   
   (1 row)
   ```
 
 * json_merge_patch(json_doc, json_doc[, json_doc] ...)
 
-  Description: Performs an RFC 7396-compliant merge on two or more JSONs and returns the merge result. Members with duplicate keys are not retained. If any parameter is not a valid JSON, an error occurs.
+  Description: Combines two or more JSON objects and retains the JSON object key members of the same key value.
 
   Return type: json
 
@@ -482,69 +482,64 @@
     - The following parameters are arrays and scalar. The merge result is the following parameters.
     - The following parameters are objects, and the merge result is NULL.
   * Merging specifications:
-    - If the first parameter is not an object, it is equivalent to that the first parameter is an empty object. The merge result is the merge result of the empty object and the second parameter.
-    - If the second parameter is not an object, the merge result is the second parameter.
-    - If both parameters are objects, the merge result is an object with the following members:
-      - All members of the first object whose corresponding members with the same key cannot be found in the second object.
-      - All members of the second object whose corresponding members with the same key cannot be found in the first object and whose values are not null.
-      - All members that have keys that exist in both the first and second objects and whose values in the second object are not null. The values of these members are the result of recursively merging the values in the first object with those in the second object.
-    - You can use this function to delete the corresponding member by specifying null as the value in the second parameter.
-    - Functions operate recursively. The value of the member may not be limited to the scalar of JSON.
+    - If two adjacent JSON parameters are objects, the combination result is a single object.
+      * If a member key of a JSON object is not duplicate in another JSON object, the member is retained in the merge result.
+      * If a member key of a JSON object is duplicate in the next JSON object, the duplicate key member in the latter JSON object is retained in the merge result. In particular, when the `value` of the object member corresponding to the next same key is NULL, the key member is deleted from the result.
+    - If one of the two adjacent JSON parameters is not an object, the merge result is the second JSON parameter.
+    - If any parameter is NULL, the merge result of the previous parameter and this parameter is NULL.
+    - If the parameter following the NULL parameter is not NULL:
+      * The latter parameter is an array or `scalar`. The merge result is the latter parameter itself.
+      * The latter parameter is an object. The merge result is NULL.
 
   Example: 
 
   ```
-  openGauss=# select json_merge_patch('[1, 2]', '[true, false]');
+  openGauss=# select json_merge_patch('{"a":1}', '{"b":2}');
    json_merge_patch 
   ------------------
-   [true, false]
+   {"a": 1, "b": 2}
   (1 row)
   
-  openGauss=# select json_merge_patch('{"name": "x"}', '{"id": 47}');
-      json_merge_patch     
-  -------------------------
-   {"id": 47, "name": "x"}
+  openGauss=# select json_merge_patch('{"a":1}', '{"a":2}');
+   json_merge_patch 
+  ------------------
+   {"a": 2}
   (1 row)
   
-  openGauss=# select json_merge_patch('1', 'true');
+  openGauss=# select json_merge_patch('{"a":{"b":"abc"}}', '{"a":{"b":null}}');
+   json_merge_patch 
+  ------------------
+   {"a": {}}
+  (1 row)
+  
+  openGauss=# select json_merge_patch('{"a":1}', 'true');
    json_merge_patch 
   ------------------
    true
   (1 row)
   
-  openGauss=# select json_merge_patch('[1, 2]', '{"id": 47}');
+  openGauss=# select json_merge_patch('{"a":1}', NULL);
    json_merge_patch 
   ------------------
-   {"id": 47}
-  (1 row)
-  
-  openGauss=# select json_merge_patch('{ "a": 1, "b":2 }','{ "a": 3, "c":4 }');
-       json_merge_patch     
-  --------------------------
-   {"a": 3, "b": 2, "c": 4}
    
-  openGauss=# select json_merge_patch('{ "a": 1, "b":2 }','{ "a": 3, "c":4 }','{ "a": 5, "d":6 }');
-           json_merge_patch         
-  ----------------------------------
-   {"a": 5, "b": 2, "c": 4, "d": 6}
   (1 row)
   
-  openGauss=# select json_merge_patch('{"a":1, "b":2}', '{"b":null}');
+  openGauss=# select json_merge_patch(NULL, '{"a":1}');
    json_merge_patch 
   ------------------
-   {"a": 1}
+   
   (1 row)
   
-  openGauss=# select json_merge_patch('{"a":{"x":1}}', '{"a":{"y":2}}');
-      json_merge_patch     
-  -------------------------
-   {"a": {"x": 1, "y": 2}}
+  openGauss=# select json_merge_patch(NULL, '[1,2,3]');
+   json_merge_patch 
+  ------------------
+   [1, 2, 3]
   (1 row)
   ```
 
 * json_remove(json, path[, path] ...)
 
-  Description: Deletes the data specified by the path from a JSON document and returns the modified JSON document.
+  Description: Deletes the JSON object specified by the path from a JSON document and returns the modified JSON document.
 
   Return type: json
 
@@ -620,7 +615,8 @@
   Remarks:
 
   * The depth of an empty array, empty object, or scalar value is 1.
-  * A non-null array that contains only elements with a depth of 1 or a non-null object that contains only member values with a depth of 1 has a depth of 2. Otherwise, the depth of the JSON document is greater than 2.
+  * Only arrays whose depth is 1 or objects whose depth is 2 are contained.
+  * The maximum depth of a JSON node is equal to the maximum depth of all its subnodes.
 
   Example: 
 

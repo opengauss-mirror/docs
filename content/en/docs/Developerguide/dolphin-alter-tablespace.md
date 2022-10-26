@@ -7,6 +7,7 @@ Modifies the attributes of a tablespace.
 ## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
 Compared with the original openGauss, Dolphin modifies the ALTER TABLESPACE syntax as follows:
+
 1. The WAIT option is added for syntax compatibility only.
 2. The ENGINE [=] engine_name option is added for syntax compatibility only.
 

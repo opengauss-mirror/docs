@@ -21,6 +21,7 @@ To enable an application to operate data in the database by running SQL statemen
     >-   If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction.  **VACUUM**  is not supported in a transaction block. If one of the statements fails, the entire request will be rolled back.
     >-   Use semicolons \(;\) to separate statements. Stored procedures, functions, and anonymous blocks do not support multi-statement execution.
     >-   The slash \(/\) can be used as the terminator for creating a single stored procedure, function, or anonymous block.
+    >-   When **prepareThreshold** is set to **1**, each SQL statement executed by the statement is cached because cached statements are not evicted by default (default value of **preferQueryMode**). As a result, memory bloat may occur. In this case, set **preferQueryMode** to **extendedCacheEverything** to evict cached statements.
 
 3.  Close the statement object.
 
@@ -233,5 +234,3 @@ When a prepared statement processes multiple pieces of similar data, the databas
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Do not terminate a batch processing action when it is ongoing; otherwise, database performance will deteriorate. Therefore, disable automatic commit during batch processing. Manually commit several rows at a time. The statement for disabling automatic commit is  **conn.setAutoCommit\(false\);**.
-
-

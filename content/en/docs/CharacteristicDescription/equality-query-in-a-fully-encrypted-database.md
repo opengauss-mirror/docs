@@ -170,4 +170,4 @@ None.
 
 ## Dependencies<a name="section22810484"></a>
 
-None.
+To use the full encryption feature, you are advised to update the database, libpq_ce client driver, and JDBC client to the same version.

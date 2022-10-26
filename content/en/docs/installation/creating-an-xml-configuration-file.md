@@ -136,9 +136,10 @@ Obtain the XML file template from  **script/gspylib/etc/conf/cluster\_config\_te
 
 ## Configuring the Basic Host Information
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-Each server must contain the following information. The following uses  **node1**  as an example.
-
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
+>Each server must contain the following information. The following uses  **node1**  as an example.
+>
 The content is an example and can be replaced as required. Each line of information has a comment.
 
 **Configure the following information on the host:**
@@ -201,15 +202,15 @@ The content is an example and can be replaced as required. Each line of informat
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.  
-For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:  
-When the file is parsed, only  **backIp1**  takes effect.  
-```  
-<PARAM name="backIp1" value="192.168.0.11"/>  
-<PARAM name="backIp2" value="192.168.0.12"/>  
-```
-
+>![](public_sys-resources/icon-note.gif) **NOTE:**   
+>Only one IP address can be configured for all IP parameters \(including  **backIp**,  **sshIp**, and  **listenIp**\) in the configuration file. Excessive IP addresses are ignored.  
+>For example, you can configure  **backIp1**  and  **backIp2**  in the XML configuration file as follows:  
+>When the file is parsed, only  **backIp1**  takes effect.  
+>```  
+><PARAM name="backIp1" value="192.168.0.11"/>  
+><PARAM name="backIp2" value="192.168.0.12"/>  
+>```
+>
 ## Configuring Primary Database Node Information
 
 The information in bold is only an example. You can replace it as required. Each line of information is commented out.

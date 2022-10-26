@@ -21,13 +21,17 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
 
     If the result is not as expected, you are advised to explicitly set these parameters in the Java connection setting.
 
+-   [Proposal] When the database is connected through JDBC, **extra_float_digits** is set to **3**. When the database is connected using gsql, **extra_float_digits** is set to **0**. As a result, the precision of the same data displayed in JDBC clients may be different from that displayed in gsql clients.
+
+-   [Proposal] In precision-sensitive scenarios, the numeric type is recommended.
+
 -   \[Proposal\] When connecting to the database through JDBC, ensure that the following three time zones are the same:
     -   Time zone of the host where the JDBC client is located
     -   Time zone of the host where the openGauss database instance is located.
     -   Time zone used during openGauss database instance configuration.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >For details about how to set the time zone, see "Initial Configuration \> Synchronizing System Time" in  _Installation Guide_.
+        >For details about how to set the time zone, see "Initial Configuration \> Synchronizing System Time" in  *Installation Guide*.
 
 
 
@@ -53,4 +57,3 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
 ## CopyManager<a name="section1624965810277"></a>
 
 \[Proposal\] In the scenario where the ETL tool is not used and real-time data import is required, it is recommended that you use the  **CopyManager**  interface driven by the openGauss JDBC to import data in batches during application development.
-

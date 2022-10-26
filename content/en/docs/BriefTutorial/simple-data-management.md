@@ -1,4 +1,4 @@
-# Simple Data Management<a name="EN-US_TOPIC_0000001178149042"></a>
+# Simple Database Management<a name="EN-US_TOPIC_0000001178149042"></a>
 
 -   **[Creating a Database](creating-a-database.md)**  
 

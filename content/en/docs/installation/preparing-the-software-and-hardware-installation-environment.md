@@ -311,3 +311,99 @@ On each database node, disable  **RemoveIPC**.
     ```
 
 5.  Repeat Step 1 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744466) to Step 4 (#en-us_topic_0283136490_en-us_topic_0241802566_li17785744467) on other hosts.
+
+### Disabling the History Command
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**
+>
+>To prevent security risks caused by historical records, you need to disable the history command on each host.
+
+Step 1 Modify the **/etc/profile** file in the root directory.
+
+```
+vim /etc/profile
+```
+
+Step 2 Set **HISTSIZE** to **0**. For example, if the default value of **HISTSIZE** is **1000**, change it to **0**.
+
+```
+HISTSIZE=0
+```
+
+Step 3 Save the **/etc/profile** file.
+
+```
+:wq
+```
+
+Step 4 Make the **/etc/profile** file take effect.
+
+```
+source /etc/profile
+```
+
+**----End**
+
+## Setting Remote Login as User **root**
+
+During the openGauss installation, the user **root** is required for remote login. This section describes how to set the user **root** for remote login.
+
+>![](public_sys-resources/icon-note.gif) **NOTE:**
+>
+>The remote connection function is enabled only when mutual trust between users **root** is required in the database. After the operations and verifications are complete on each host, log out of the system as user **root** in a timely manner to prevent misoperations.
+
+1. Modify the **PermitRootLogin** configuration to enable remote login of user **root**.
+
+    a. Open the **sshd\_config** file.
+
+   ```
+   vim /etc/ssh/sshd_config
+   ```
+
+   b. Modify permissions of user **root** using either of the following methods:
+
+   - Comment out **PermitRootLogin no**.
+
+     ```
+     #PermitRootLogin no
+     ```
+
+   - Change the value of **PermitRootLogin** to **yes**.
+
+     ```
+     PermitRootLogin yes
+     ```
+
+   c. Run the **:wq** command to save the modification and exit.
+
+2. Modify the **Banner** configuration to delete the welcome information displayed when you connect to the system. The welcome information affects the return result of remote operations during the installation.
+
+   a. Edit the **sshd\_config** file.
+
+   ```
+   vim /etc/ssh/sshd_config
+   ```
+
+   b. Comment out the line where **Banner** is.
+
+   ```
+   #Banner XXXX
+   ```
+
+   c. Run the **:wq** command to save the modification and exit.
+
+3. Run the following command to validate the settings:
+
+   ```
+   systemctl restart sshd.service
+   ```
+
+4. Re-log in to the system as user **root**.
+
+   ```
+   ssh xxx.xxx.xxx.xxx
+   ```
+
+   > ![](public_sys-resources/icon-note.gif) **NOTE:**
+   >
+   > *xxx.xxx.xxx.xxx* is the IP address for installing the openGauss environment.
