@@ -20,11 +20,34 @@ SHOW TABLE STATUS
 
 - **db_name**
 
-       库名（或schema）,可选项，若不指定，则查询的是当前库或schema。
+       库名（或schema），可选项，若不指定，则查询的是当前库或schema。
 
 - **LIKE 'pattern'**
 
-       patternp匹配显示结果第一列（列名为'Name [`pattern`]'）。
+       pattern匹配显示结果第一列（列名为'Name [`pattern`]'）。
+
+## 输出字段说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
+
+| 字段           | 含义                                                         |
+| -------------- | ------------------------------------------------------------ |
+| Name           | 表名                                                         |
+| Engine         | 存储引擎类型。取值范围：USTORE，表示表支持Inplace-Update存储引擎。ASTORE，表示表支持Append-Only存储引擎。|
+| Version        | 默认值NULL                                                   |
+| Row_format     | 存储方式。取值范围：ROW，表示表的数据将以行式存储。COLUMN，表示表的数据将以列式存储。|
+| Rows           | 行数                                                         |
+| Avg_row_length | 默认值NULL                                                   |
+| Data_length    | 数据大小，由pg_relation_size(oid)获得                        |
+| Max_data_length| 默认值NULL                                                   |
+| Index_length   | 索引大小，由pg_indexes_size(oid)获得                         |
+| Data_free      | 默认值NULL                                                   |
+| Auto_increment | 当primary key为sequence时获取其last值                        |
+| Create_time    | 创建时间                                                     |
+| Update_time    | 更新时间                                                     |
+| Check_time     | 默认值NULL                                                   |
+| Collation      | 排序集                                                       |
+| Checksum       | 默认值NULL                                                   |
+| Create_options | 建表选项                                                     |
+| Comment        | 注释                                                         |
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
