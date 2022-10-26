@@ -12,7 +12,7 @@
     4.  BooleanTest表达式（IS\_NOT\_KNOWN/IS\_UNKNOWN/IS\_TRUE/IS\_NOT\_TRUE/IS\_FALSE/IS\_NOT\_FALSE）
     5.  NullTest表达式（IS\_NOT\_NULL/IS\_NULL）
     6.  Operator表达式
-    7.  Function表达式（lpad、substring、btrim、rtrim、length）
+    7.  Function表达式
     8.  Nullif表达式
 
     表达式计算支持的数据类型包括bool、tinyint、smallint、int、bigint、float4、float8、numeric、date、time、timetz、timestamp、timestamptz、interval、bpchar、varchar、text、oid。
