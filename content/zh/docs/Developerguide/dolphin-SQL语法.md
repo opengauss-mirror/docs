@@ -4,6 +4,8 @@
 
 -   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
 
+-   **[ALTER SERVER](dolphin-ALTER-SERVER.md)**
+
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
@@ -19,6 +21,8 @@
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
 -   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
+
+-   **[CREATE SERVER](dolphin-CREATE-SERVER.md)**
 
 -   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
