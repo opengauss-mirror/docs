@@ -25,6 +25,7 @@ gs\_guc工具由操作系统用户omm执行。
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为client，则会生成这两个文件。其中“client.key.cipher”存储用户密码的密文，“client.key.rand”存储的是加密因子。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >“client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
 
 
@@ -76,6 +77,7 @@ gs\_guc工具由操作系统用户omm执行。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   AUTHMEHOD后的authentication-options为可选参数，AUTHMEHOD支持以下选项：
     > 
     >    -   trust：不验密，禁止远程主机使用trust方式访问数据库。
@@ -127,6 +129,7 @@ gs\_guc工具由操作系统用户omm执行。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<16）和密码复杂度要求，如果不满足，将会报错。此密码用于保证生成密码文件的安全性和唯一性，用户无需保存或记忆。
     > 
     >-   -M是加密类型，当前仅支持server、client和source。默认值为server。
@@ -138,6 +141,7 @@ gs\_guc工具由操作系统用户omm执行。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   -o是输出cipher和rand文件前缀名称，默认输出文件名前缀为obsserver。其内容仅支持数字、字母和下划线。
     > 
     >-   -S是用户指定的密码，密码需要满足长度要求（8<=len<16）和复杂度要求，如不满足将会报错。当其值为default时，会随机生成一段字符串作为密码，该密码长度为13。如果不带-S参数则会提示交互式输入密码。为了系统安全，推荐使用交互式输入密码方式。
@@ -146,6 +150,7 @@ gs\_guc工具由操作系统用户omm执行。
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
 >
 >-   如果已经在环境变量中设置PGDATA，则可以省略-D参数。否则提示设置参数失败。
@@ -193,6 +198,7 @@ gs\_guc工具由操作系统用户omm执行。
   暂不支持一次设置中指定多个-N参数，指定多个-N会报错。
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
   >需依赖静态文件，仅在om安装的情况下有效，编译安装由于没有静态文件，所以无效。
 
 - -I INSTANCE-NAME
@@ -206,6 +212,7 @@ gs\_guc工具由操作系统用户omm执行。
   暂不支持一次设置中指定多个-N参数，指定多个-N会报错。
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
   >需依赖静态文件，仅在om安装的情况下有效，编译安装由于没有静态文件，所以无效。
 
 - -D
@@ -221,6 +228,7 @@ gs\_guc工具由操作系统用户omm执行。
     要设定的openGauss配置参数的名称和参数值。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
     >-   如果需要配置的value内容中包含双引号, 则需要在双引号前加上转义符。例如value为a"b"c, 则命令为-c " parameter = 'a\\"b\\"c' "
     >
@@ -237,6 +245,7 @@ gs\_guc工具由操作系统用户omm执行。
     要设定的逻辑数据库名称。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   该参数必需同-Z datanode一起使用。即gs\_guc只允许作用于逻辑数据库的DN实例。
     >
     >-   逻辑数据库允许操作的参数同完整数据库不同。具体差异可参见$GAUSSHOME/bin/cluster\_guc.conf。
@@ -289,6 +298,7 @@ gs\_guc工具由操作系统用户omm执行。
   详细的参数说明请参见“pg\_hba.conf”配置文件中的描述。
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
   >指定-h的情况下，默认会尝试修改所有节点的pg\_hba文件，但是如果是编译安装，由于没有静态文件，可以成功修改本节点的pg\_hba文件，但是会提示静态文件不存在。
 
 -   -?, --help
@@ -304,6 +314,7 @@ gs\_guc工具由操作系统用户omm执行。
     设定该密码在数据库运行过程中，用于服务端\(server\)、客户端\(client\)还是创建Data Source对象时调用。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >在使用ssl功能时，会涉及到服务端证书和私钥文件的加密密码和客户端证书和私钥文件的加密密码，在加密存储加密密码时，需要指定模式，否则默认是生成服务端的密码文件。
 
     取值范围：
@@ -323,6 +334,7 @@ gs\_guc工具由操作系统用户omm执行。
     指定要加密的用户，隶属于OS用户。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >openGauss可以为每个用户配置不同的ssl证书和私钥文件，指定该选项，可以生成按用户名区分的密码文件。
 
 -   -S CIPHERKEY
@@ -344,6 +356,7 @@ gs\_guc工具由操作系统用户omm执行。
     取值范围：datanode。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >数据库实例节点类型有coordinator、datanode、cmserver、cmagent和gtm。openGauss只能取值为datanode，当NODE-TYPE为datanode时，对应数据库的数据目录中的配置文件postgresql.conf。
 
 

@@ -46,6 +46,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
     取值范围：A1...A14、B1...B8。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >A1...A14 表示只检查操作系统参数，并不设置。
     >B1...B8 表示将参数系统参数设置为期望值。
     >A和B不能同时输入。
@@ -275,6 +276,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
 >    若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
