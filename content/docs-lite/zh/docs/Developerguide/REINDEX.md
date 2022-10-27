@@ -64,6 +64,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
     -   REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持在线重建索引。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >-   重建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建新索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
         >-   因为需要执行两次对表的扫描和build，且必须等待现有的所有可能对该表执行修改的事务结束，所以该索引的重建比正常耗时更长，同时带来的CPU和I/O消耗对其他业务也会造成影响。
         >-   如果在索引构建时发生失败，那会留下一个“不可用”的索引。这个索引会被查询忽略，但它仍消耗更新开销。这种情况推荐的恢复方法是删除该索引并尝试再次CONCURRENTLY重建索引。
@@ -79,6 +80,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
     需要重建索引的索引、表、数据库的名称。表和索引可以有模式修饰。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >REINDEX DATABASE和SYSTEM只能重建当前数据库的索引，所以name必须和当前数据库名称相同。
 
 -   **FORCE**
@@ -97,6 +99,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 >REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行。
 
 ## 示例<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_saeb969f6c052407e98c22893941c9440"></a>

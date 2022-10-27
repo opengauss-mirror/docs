@@ -59,6 +59,7 @@ openGauss=# explain select /*+predpush_same_level(t1, t2)*/ * from t1, t2 where 
 ```
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
+>
 >-   predpush\_same\_level可以指定多个src，但是所有的src必须在同一个条件中。
 >-   如果指定的src和dest条件不存在，或该条件不符合参数化路径要求，则本hint不生效。
 

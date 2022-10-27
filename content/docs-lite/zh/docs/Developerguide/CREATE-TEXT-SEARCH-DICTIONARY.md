@@ -126,6 +126,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >词典定义文件的文件名仅支持小写字母、数据、下划线混合。
     >轻量版场景下，openGauss中OBS相关功能不可用。
 

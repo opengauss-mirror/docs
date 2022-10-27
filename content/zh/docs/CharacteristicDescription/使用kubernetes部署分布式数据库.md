@@ -14,7 +14,7 @@
 
 ## 特性描述<a name="section57261629139"></a>
 
-通过patroni实现计划内switchover和故障场景自动failover, 通过haproxy实现openGauss主备节点读写负载均衡，通过shardingsphere实现分布式能力，所有功能打包至镜像并提供一键式部署脚本。
+通过patroni实现计划内switchover和故障场景自动failover，通过haproxy实现openGauss主备节点读写负载均衡，通过shardingsphere实现分布式能力，所有功能打包至镜像并提供一键式部署脚本。
 
 ## 特性增强<a name="section790711851312"></a>
 

@@ -53,6 +53,7 @@
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >If parameters with the same numeric value are hashed using different data types, the data will differ, because hash functions select different calculation policies for each type.
 
 -   hll\_hash\_smallint\(smallint, int32\)
@@ -727,6 +728,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >To perform the UNION operation on data in multiple HLLs, ensure that the HLLs have the same precision. Otherwise,  **UNION**  cannot be performed. This constraint also applies to the  **hll\_union\(hll, hll\)**  function.
 
 

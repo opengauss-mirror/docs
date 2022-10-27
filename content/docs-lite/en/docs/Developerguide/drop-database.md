@@ -13,6 +13,7 @@
 -   If  **DROP DATABASE**  fails and is rolled back, run  **DROP DATABASE IF EXISTS**  again.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >**DROP DATABASE**  cannot be undone.
 
 ## Syntax<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_seefd39b3ef1942df9e333846afd3a56c"></a>

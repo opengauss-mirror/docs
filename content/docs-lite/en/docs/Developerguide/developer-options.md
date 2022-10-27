@@ -14,6 +14,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**:  **off**
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>
 >You are not advised to change the default value of this parameter. If this parameter is set to  **on**, system tables may be damaged and the database may fail to be started.
 
 ## debug\_assertions<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_scb3c27202a7f4d2fb04a70f767ac5028"></a>
@@ -28,6 +29,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that various assertion checks are disabled.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >If you compile openGauss with the assertion check enabled, this parameter is set to  **on**  by default.
 
 **Default value**:  **off**
@@ -52,6 +54,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >This parameter is useful for recovering data from tables whose system indexes are damaged.
 
 **Value range**: Boolean
@@ -72,6 +75,7 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 **Default value**:  **0**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value  **0**  is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
 
 ## pre\_auth\_delay<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s82cb9c3349d3406d88d3ade8b4911b6e"></a>
@@ -85,6 +89,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 **Default value**:  **0**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value  **0**  is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
 
 ## trace\_notify<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sa6199e2adece4b37973aa834ae741888"></a>
@@ -215,6 +220,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **off**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The current version does not support database acceleration. Therefore, this parameter does not take effect after being set.
 
 ## support\_batch\_bind<a name="en-us_topic_0283137548_en-us_topic_0237124743_section157265302582"></a>
@@ -242,6 +248,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **all**  indicates that some shared data and threads are distributed to different NUMA nodes to reduce the number of remote access times and improve performance. Currently, this function applies only to ARM servers with multiple NUMA nodes. All NUMA nodes must be available for database processes. You cannot select only some NUMA nodes.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the current version,  **numa\_distribute\_mode**  cannot be set to  **all**  on the x86 platform.
 
 **Default value**:  **none**
@@ -304,6 +311,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **off**  indicates that different calculation methods are used and a redistribution is required.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >Calculation methods differ in the length of input strings used for calculating hash values. \(For a char-type hash value, spaces following a string are not counted as the length. For a text- or varchar-type hash value, the spaces are counted.\) The hash value affects the calculation result of queries. To avoid query errors, do not modify this parameter during database running once it is set.
 
 **Default value**:  **off**

@@ -27,6 +27,7 @@ To covert a disk-based table into an MOT, perform the following:
 7.  Resume application activity.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT seamlessly without code changes. Please note that MOT does not currently support cross-engine multi-table queries \(such as by using Join, Union and sub-query\) and cross-engine multi-table transactions. Therefore, if an original table is accessed somewhere in a multi-table query, stored procedure or transaction, you must either convert all related disk-tables into MOTs or alter the relevant code in the application or the database.
 
 ## Conversion Example<a name="en-us_topic_0283137611_en-us_topic_0280525135_section1367417"></a>

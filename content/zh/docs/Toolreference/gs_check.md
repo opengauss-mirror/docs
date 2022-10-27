@@ -85,7 +85,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 - --cid
 
-  检查ID，仅被内部check进程使用。
+    检查ID，仅被内部check进程使用。
 
 -   --time-out
 
@@ -871,6 +871,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >home/package/script/gspylib/inspection/config就是新建的场景配置文件的绝对路径。
 
 5.  换至omm用户，执行以下命令查看检查结果。

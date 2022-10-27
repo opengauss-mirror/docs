@@ -39,7 +39,9 @@ CREATE CLIENT MASTER KEY client_master_key_name WITH （KEY_STORE = key_store_na
     由本语法创建的用于加密COLUMN ENCRYPTION KEY，该参数用于指定加密算法的类型。取值范围：RSA\_2048、RSA_3072和SM2。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >**密钥存储路径：**默认情况下，localkms将在$LOCALKMS\_FILE\_PATH路径下生成/读取/删除密钥文件，用户可手动配置该环境变量。但是，用户也可以不用单独配置该环境变量，在尝试获取$LOCALKMS\_FILE\_PATH失败时，localkms会尝试获取$GAUSSHOME/etc/localkms/路径，如果该路径存在，则将其作为密钥存储路径。
+    >
     >**密钥相关文件名：**使用CREATE CMK语法时，localkms将会创建四个与存储密钥相关的文件。示例：当KEY\_PATH = "key\_path\_value", 四个文件的名称分别为key\_path\_value.pub、key\_path\_value.pub.rand、 key\_path\_value.priv、 key\_path\_value.priv.rand。
     >所以，为了能够成功创建密钥相关文件，在密钥存储路径下，应该保证没有已存在的与密钥相关文件名同名的文件。
 

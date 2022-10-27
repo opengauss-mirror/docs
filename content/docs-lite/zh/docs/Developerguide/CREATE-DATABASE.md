@@ -705,6 +705,7 @@ CREATE DATABASE database_name
     </table>
 
     >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >
     >需要注意并非所有的客户端API都支持上面列出的字符集。
     >SQL\_ASCII设置与其他设置表现得相当不同。如果服务器字符集是SQL\_ASCII，服务器把字节值0-127根据 ASCII标准解释，而字节值128-255则当作无法解析的字符。如果设置为SQL\_ASCII，就不会有编码转换。因此，这个设置基本不是用来声明所使用的指定编码， 因为这个声明会忽略编码。在大多数情况下，如果你使用了任何非ASCII数据，那么使用 SQL\_ASCII设置都是不明智的，因为OpenGauss将无法帮助你转换或者校验非ASCII字符。
 

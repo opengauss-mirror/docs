@@ -13,6 +13,7 @@ When using  **gsql**  to connect to a database server, you need to use the -C pa
 The CEK object created using this syntax can be used for column-level encryption. When defining a column in a table, you can specify a CEK object to encrypt the column.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
 ## Syntax<a name="section182042586132"></a>
@@ -42,6 +43,7 @@ CREATE COLUMN ENCRYPTION KEY column_encryption_key_name WITH VALUES(CLIENT_MASTE
     A key password specified by a user. The key password length ranges from 28 to 256 characters. The derived 28-character key meets the AES128 security requirements. If the user needs to use AES256, the key password length must be 39 characters. If the user does not specify the key password length, a 256-character key is automatically generated.
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >Chinese National Cryptography Standard \(Guomi\) constraints: SM2, SM3, and SM4 are Chinese national cryptography standards. To avoid legal risks, these algorithms must be used together. If you specify the SM2 algorithm to encrypt CEKs when creating a CMK, you must specify the SM3 and SM4 algorithms \(SM4\_SM3\) to encrypt data when creating CEKs.
 
 

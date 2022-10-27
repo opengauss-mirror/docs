@@ -20,7 +20,8 @@
     openGauss=# SET query_dop = 1;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    > 
     >-   资源许可的情况下，并行度越高，性能提升效果越好。  
     >-   SMP并行度支持会话级设置，推荐客户在执行符合要求的查询前，打开smp，执行结束后，关闭smp。以免在业务峰值时，对业务造成冲击。  
 

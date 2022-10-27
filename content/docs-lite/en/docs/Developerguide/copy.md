@@ -40,6 +40,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >In the syntax,  **FIXED FORMATTER \(\{column\_name\(offset, length\)\} \[, ...\]\)**  and  **\[\(option \[, ...\]\) | copy\_option \[...\]\]**  can be in any sequence.
 
 -   Copy data from a table to a file.
@@ -62,6 +63,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >1.  The syntax constraints of  **COPY TO**  are as follows:
     >    **\(query\)**  is incompatible with  **\[USING\] DELIMITER**. If the data comes from a query result,  **COPY TO**  cannot specify  **\[USING\] DELIMITERS**.
     >2.  Use spaces to separate  **copy\_option**  following  **FIXED FORMATTTER**.
@@ -160,6 +162,7 @@
     Fixes column length. When the column length is fixed,  **DELIMITER**,  **NULL**, and  **CSV**  cannot be specified. When  **FIXED**  is specified,  **BINARY**,  **CSV**, and  **TEXT**  cannot be specified by  **option**  or  **copy\_option**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The definition of fixed length is as follows:
     >1.  The column length of each record is the same.
     >2.  Spaces are used for column padding. Columns of the numeric type are left-aligned and columns of the string type are right-aligned. 
@@ -186,6 +189,7 @@
     Value range: a value set while data is imported using  **COPY FROM**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >The restrictions of this error tolerance parameter are as follows:
     >-   This error tolerance mechanism captures only the data type errors \(DATA\_EXCEPTION\) that occur during data parsing of  **COPY FROM**  on the primary node of the database.
     >-   If existing error tolerance parameters \(for example,  **IGNORE\_EXTRA\_DATA**\) of the  **COPY**  statement are enabled, the error of the corresponding type will be processed as specified by the parameters and no error will be reported. Therefore, the error table does not contain such error data.
@@ -198,6 +202,7 @@
     2.  Only users with the  **super**  permission can use the  **LOG ERRORS DATA**  parameter.
 
         >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+        >
         >If error content is too complex, it may fail to be written to the error tolerance table by using  **LOG ERRORS DATA**, causing the task failure.
 
 
@@ -210,6 +215,7 @@
     Default value: If  **LOG ERRORS**  is not specified, an error will be reported. If  **LOG ERRORS**  is specified, the default value is  **0**.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >In the error tolerance mechanism described in the description of  **LOG ERRORS**, the count of  **REJECT LIMIT**  is calculated based on the number of data parsing errors on the primary node of the database where the  **COPY FROM**  statement is executed, not based on the number of all errors on the primary node.
 
 -   **FORMATTER**
@@ -247,6 +253,7 @@
         Specifies the character that separates columns within each row \(line\) of the file.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >-   The value of  **delimiter**  cannot be  **\\r**  or  **\\n**.
         >-   A delimiter cannot be the same as the null value. The delimiter for the CSV format cannot be same as the  **quote**  value.
         >-   The delimiter for the TEXT format data cannot contain lowercase letters, digits, or special characters \(.\\\).
@@ -294,6 +301,7 @@
         Default value: single quotation marks \(''\)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >-   The value of  **quote**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The value of  **quote**  must be a single-byte character.
         >-   You are advised to set  **quote**  to an invisible character, such as  **0x07**,  **0x08**, or  **0x1b**.
@@ -311,6 +319,7 @@
         Value range: multi-character newline characters within 10 bytes. Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n **\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >-   The  **EOL**  parameter supports only the TEXT format for data import and export and does not support the CSV or FIXED format for data import. For forward compatibility, the EOL parameter can be set to  **0x0D**  or  **0x0D0A**  for data export in the CSV or FIXED format.
         >-   The value of  **EOL**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The EOL parameter value cannot contain the following characters: .abcdefghijklmnopqrstuvwxyz0123456789.
@@ -347,6 +356,7 @@
         Default value:  **false**
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >
         >If a newline character at the end of a row is missing and the row and another row are integrated into one, data in another row is ignored after the parameter is set to  **true**.
 
     -   COMPATIBLE\_ILLEGAL\_CHARS
@@ -361,6 +371,7 @@
         Default value:  **false**  or  **off**
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >The rules for converting invalid characters are as follows:
         >1.  **\\0**  is converted to a space.
         >2. Other invalid characters are converted to question marks.
@@ -381,6 +392,7 @@
         Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >You can use the  **TIMESTAMP\_FORMAT**  parameter to set the DATE format to  **TIMESTAMP**  for data import. For details, see  **TIMESTAMP\_FORMAT**  below.
 
     -   TIME\_FORMAT
@@ -411,6 +423,7 @@
         Specifies the string that represents a null value.
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >
         >When using  **COPY FROM**, any data item that matches this string will be stored as a null value, so make sure that you use the same string as you used with  **COPY TO**.
 
         Value range:
@@ -436,6 +449,7 @@
         Specifies a file that defines the content in the header for exported data. The file contains data description of each column.
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >
         >-   This parameter is available only when  **header**  is  **on**  or  **true**.
         >-   **fileheader**  specifies an absolute path.
         >-   The file can contain only one row of header information, and ends with a newline character. Excess rows will be discarded. \(Header information cannot contain newline characters.\)
@@ -452,6 +466,7 @@
         -   There are no original snapshots in the current transaction.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >When  **COPY**  is completed, all the other sessions will see the data immediately. However, this violates the general principle of MVCC visibility, and users should understand that this may cause potential risks.
 
     -   FORCE NOT NULL column\_name \[, ...\]
@@ -487,6 +502,7 @@
         Default value: single quotation marks \(''\)
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >-   The value of  **quote**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The value of  **quote**  must be a single-byte character.
         >-   You are advised to set  **quote**  to an invisible character, such as  **0x07**,  **0x08**, or  **0x1b**.
@@ -504,6 +520,7 @@
         Value range: multi-character newline characters within 10 bytes. Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n**  \(0x0D0A\). Special newline characters include  **$**  and  **\#**.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >-   The  **EOL**  parameter supports only the TEXT format for data import and export and does not support the CSV or FIXED format. For forward compatibility, the  **EOL**  parameter can be set to  **0x0D**  or  **0x0D0A**  for data export in the CSV or FIXED format.
         >-   The value of  **EOL**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The EOL parameter value cannot contain the following characters: .abcdefghijklmnopqrstuvwxyz0123456789.
@@ -533,6 +550,7 @@
         If this parameter is not used, an error is reported when invalid characters are encountered during the import, and the import is interrupted.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >The rules for converting invalid characters are as follows:
         >1.  **\\0**  is converted to a space.
         >2. Other invalid characters are converted to question marks.
@@ -547,6 +565,7 @@
         Default value:  **false**  or  **off**
 
         >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >
         >Do not specify this option. Currently, it does not enable error tolerance, but will make the parser ignore the said errors during data parsing on the primary node of the database. Such errors will not be recorded in the COPY error table \(enabled using  **LOG ERRORS REJECT LIMIT**\) but will be reported later by database node. Therefore, do not specify this option.
 
     -   DATE\_FORMAT 'date\_format\_string'
@@ -556,6 +575,7 @@
         Value range: a valid DATE value For details, see  [Date and Time Processing Functions and Operators](date-and-time-processing-functions-and-operators.md).
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >You can use the  **TIMESTAMP\_FORMAT**  parameter to set the DATE format to  **TIMESTAMP**  for data import. For details, see  **TIMESTAMP\_FORMAT**  below.
 
     -   TIME\_FORMAT 'time\_format\_string'
@@ -597,6 +617,7 @@
         When data is imported, the column modified by FILLER is discarded after being read from the data file.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >
         >To use FILLER, you need to specify the list of columns to be copied. During data processing, data is processed based on the position of the  **filler**  column in the column list.
 
     -   CONSTANT \( \{ column\_name 'constant\_string' \[, ...\] \} \)

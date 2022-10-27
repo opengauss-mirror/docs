@@ -157,5 +157,6 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)是会话级别的函数，若当前会话未对自动增长列插入任何数据，last\_insert\_id\(\)返回值为0。
     >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)仅在参数sql\_compatibility=B时可用。

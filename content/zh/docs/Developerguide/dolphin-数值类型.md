@@ -10,7 +10,7 @@
 4. 新增```float4(p[,s])```的方式，等价于```dec(p[,s])```。
 5. 新增```double```数据类型，是float8的别名。
 6. 新增```float4/float```支持可选的修饰符(n)，即支持```float4(n)/float(n)```的用法，当n在 [1,24]之间时，```float4(n)/float(n)```代表单精度浮点数；当n在 [25,53]之间时，```float4(n)/float(n)```代表双精度浮点数。
-7. 对于```decimal```数据类型，在未指定精度的情况下，默认精度为```(10,0)```，即总位数为10，小数位数为0。
+7. 对于```decimal/dec/fixed/numeric```数据类型，在未指定精度的情况下，默认精度为```(10,0)```，即总位数为10，小数位数为0。
 8. 新增```UNSIGNED INT/TINYINT/SMALLINT/BIGINT```类型，与普通整型相比，其最高位是数字位而非符号位。
 9. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。
 10. 新增cast函数类型转换参数signed/unsigned，其中cast as unsigned将类型转换为uint8，cast as signed将类型转换为int8.
@@ -211,18 +211,28 @@ openGauss=# select cast(1 - 2 as signed);
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"></a>未指定精度的情况下，等价于(10,0)，即小数点前最大10位，小数点后0位。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r1a20a578a55c4f89ba282a4452f1634c"><td class="cellrowborder" valign="top" width="16.3%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"></a>NUMBER[(p[,s])]</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p240989311333"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p240989311333"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p240989311333"></a>NUMERIC类型的别名。</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.779999999999998%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"></a>用户声明精度。每四位（十进制位）占用两个字节，然后在整个数据上加上八个字节的额外开销。</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"></a>未指定精度的情况下，小数点前最大131,072位，小数点后最大16,383位。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 示例：
 
 ```
---创建具有FIXED(p,s), FIXED, decimal类型数据的表。
+--创建具有FIXED(p,s), FIXED, decimal, number类型数据的表。
 openGauss=# CREATE TABLE dec_type_t1
            (
             DEC_COL1 FIXED,
             DEC_COL2 FIXED(20,5),
-            DEC_COL3 DECIMAL
+            DEC_COL3 DECIMAL,
+            DEC_COL4 NUMBER
            );
 
 --查看表结构。
@@ -233,6 +243,7 @@ openGauss=# \d dec_type_t1
  dec_col1 | numeric(10,0) |
  dec_col2 | numeric(20,5) |
  dec_col3 | numeric(10,0) |
+ dec_col4 | numeric       |
 
 --删除表。
 openGauss=# DROP TABLE dec_type_t1;

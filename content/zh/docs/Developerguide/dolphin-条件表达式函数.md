@@ -63,7 +63,7 @@
 
   备注：判空逻辑与`expr is null`一致。
 
-- gs_interval(base_expr, expr1, expr2, ..., exprn)
+- interval(base_expr, expr1, expr2, ..., exprn)
 
   描述：
 
@@ -77,26 +77,27 @@
   示例：
 
   ```
-  openGauss=# SELECT gs_interval(5,2,3,4,6,7);
-   gs_interval 
-  -------------
-             3
+  openGauss=# SELECT interval(5,2,3,4,6,7);
+   interval
+  ----------
+          3
   (1 row)
   ```
 
   ```
-  openGauss=# SELECT gs_interval(false,-1,0,true,2);
-   gs_interval 
-  -------------
-             2
+  openGauss=# SELECT interval(false,-1,0,true,2);
+   interval
+  ----------
+          2
   (1 row)
+
   ```
 
   ```
-  openGauss=# SELECT gs_interval('2022-12-12'::timestamp,'asdf','2020-12-12'::date,2023);
-   gs_interval 
-  -------------
-             2
+  openGauss=# SELECT interval('2022-12-12'::timestamp,'asdf','2020-12-12'::date,2023);
+   interval
+  ----------
+          2
   (1 row)
   ```
 

@@ -46,6 +46,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     For details, see  [Table 1](#en-us_topic_0283136582_en-us_topic_0237121094_en-us_topic_0059779140_t608a1965463e41f1b6eacd02f97a65ba).
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >
     >Except for database and usernames that are enclosed in double quotation marks \("\) during creation, uppercase letters are not allowed in the database and usernames in the commands in the following table.
 
     **Table  1**  Viewing the number of session connections

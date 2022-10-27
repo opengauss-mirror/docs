@@ -47,9 +47,9 @@ gs_restore [OPTION]... FILE
 
     默认是标准输出。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
-
-    -f不能同-d一起使用。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    
+    >-f不能同-d一起使用。
 
 -   -F, --format=c|d|t
 

@@ -141,7 +141,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
 ## 示例<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_s70741e0e8d4843c29a3d2916af35ad25"></a>
 
---- 创建表。
+-- 创建表。
 
 ```
 openGauss=# CREATE TABLE customer_info
@@ -152,11 +152,9 @@ WR_ITEM_SK                INTEGER               NOT NULL,
 WR_REFUNDED_CUSTOMER_SK   INTEGER
 )
 ;
-```
 
---- 创建分区表。
+-- 创建分区表。
 
-```
 openGauss=# CREATE TABLE customer_par
 (
 WR_RETURNED_DATE_SK       INTEGER                       ,
@@ -172,31 +170,21 @@ PARTITION P3 VALUES LESS THAN(2453000),
 PARTITION P4 VALUES LESS THAN(MAXVALUE)
 )
 ENABLE ROW MOVEMENT;
-```
 
---- 使用ANALYZE语句更新统计信息。
+-- 使用ANALYZE语句更新统计信息。
 
-```
 openGauss=# ANALYZE customer_info;
 openGauss=# ANALYZE customer_par;
-```
 
---- 使用ANALYZE VERBOSE语句更新统计信息，并输出表的相关信息。
+-- 使用ANALYZE VERBOSE语句更新统计信息，并输出表的相关信息。
 
-```
 openGauss=# ANALYZE VERBOSE customer_info;
 INFO:  analyzing "cstore.pg_delta_3394584009"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info"(cn_5002 pid=53078)
 INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
 ANALYZE
-```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->若环境若有故障，需查看数据库主节点的log。
-
---- 删除表。
-
-```
+-- 删除表。
 openGauss=# DROP TABLE customer_info;
 openGauss=# DROP TABLE customer_par;
 ```

@@ -1,0 +1,22 @@
+
+
+.. toctree::
+	
+	content/zh/docs/CharacteristicDescription/主备机
+	content/zh/docs/CharacteristicDescription/逻辑复制
+	content/zh/docs/CharacteristicDescription/逻辑备份
+	content/zh/docs/CharacteristicDescription/物理备份
+	content/zh/docs/CharacteristicDescription/作业失败自动重试
+	content/zh/docs/CharacteristicDescription/极致RTO
+	content/zh/docs/CharacteristicDescription/基于Paxos协议的高可用
+	content/zh/docs/CharacteristicDescription/级联备机
+	content/zh/docs/CharacteristicDescription/延时回放
+	content/zh/docs/CharacteristicDescription/备机增加删除
+	content/zh/docs/CharacteristicDescription/延迟进入最大可用模式
+	content/zh/docs/CharacteristicDescription/并行逻辑解码
+	content/zh/docs/CharacteristicDescription/DCF
+	content/zh/docs/CharacteristicDescription/CM
+	content/zh/docs/CharacteristicDescription/支持global-syscache
+	content/zh/docs/CharacteristicDescription/支持备机build备机
+	content/zh/docs/CharacteristicDescription/两地三中心跨Region容灾
+	

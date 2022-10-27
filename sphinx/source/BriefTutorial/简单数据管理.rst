@@ -1,0 +1,20 @@
+
+.. toctree::
+
+    content/zh/docs/BriefTutorial/创建数据库
+    content/zh/docs/BriefTutorial/创建表
+    content/zh/docs/BriefTutorial/INSERT-INTO语句
+    content/zh/docs/BriefTutorial/UPDATE语句
+    content/zh/docs/BriefTutorial/DELETE语句
+    content/zh/docs/BriefTutorial/查看对象
+    content/zh/docs/BriefTutorial/SELECT语句
+    content/zh/docs/BriefTutorial/运算符
+    content/zh/docs/BriefTutorial/表达式
+    content/zh/docs/BriefTutorial/WHERE子句
+    content/zh/docs/BriefTutorial/ORDER-BY子句
+    content/zh/docs/BriefTutorial/DISTINCT
+    content/zh/docs/BriefTutorial/GROUP-BY子句
+    content/zh/docs/BriefTutorial/HAVING子句
+    content/zh/docs/BriefTutorial/时间-日期函数和操作符
+    content/zh/docs/BriefTutorial/模式匹配操作符
+    content/zh/docs/BriefTutorial/聚集函数

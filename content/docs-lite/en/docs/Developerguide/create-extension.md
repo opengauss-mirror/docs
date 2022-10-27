@@ -36,6 +36,7 @@ CREATE EXTENSION [ IF NOT EXISTS ] extension_name
     The extension instance is installed in this schema, and the extended content can be reinstalled. The specified schema must exist. If it is not specified, the extended control file does not specify a schema either. In this case, the default schema is used.
 
     >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+    >
     >Extensions are not considered to be in any schema \(no restriction is posed on the name of extensions within the scope of a database\), but an extension instance belongs to a schema.
 
 

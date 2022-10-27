@@ -51,15 +51,15 @@
   </CLUSTER>
 ```
 
-![](public_sys-resources/icon-notice.gif) **须知：** 
-
--   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
--   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
--   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为“/opt/huawei/install/app”，gaussdbLogPath为“/opt/huawei/install/app/omm”。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
--   若需要安装脚本自动创建安装用户时，各配置的目录需保证不与系统创建的默认用户目录耦合关联。
--   配置openGauss路径和实例路径时，路径中不能包含“|”、“;”、“&”、“$”、“<”、“\>”、“\`”、“\\\\”、“'”、“\\”、“,”、“\{”，“\}”、“\(”，“\)”、“\[”，“\]”、“\~”、“\*”、“?”特殊字符。
--   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**，**node2\_hostname**。
--   配置dcf_config时，角色的配置有leader、follower、passive和logger，其中可投票的角色有leader、follower和logger。配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>
+>-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
+>-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
+>-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为“/opt/huawei/install/app”，gaussdbLogPath为“/opt/huawei/install/app/omm”。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
+>-   若需要安装脚本自动创建安装用户时，各配置的目录需保证不与系统创建的默认用户目录耦合关联。
+>-   配置openGauss路径和实例路径时，路径中不能包含“|”、“;”、“&”、“$”、“<”、“\>”、“\`”、“\\\\”、“'”、“\\”、“,”、“\{”，“\}”、“\(”，“\)”、“\[”，“\]”、“\~”、“\*”、“?”特殊字符。
+>-   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**，**node2\_hostname**。
+>-   配置dcf_config时，角色的配置有leader、follower、passive和logger，其中可投票的角色有leader、follower和logger。配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
 
 **表 1**  参数说明
 

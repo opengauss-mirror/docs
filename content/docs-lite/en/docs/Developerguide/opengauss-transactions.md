@@ -44,6 +44,7 @@ This parameter is a SUSET parameter. Set it based on method 3 in  [Table 1](rese
 -   **off**  indicates that the system is not in maintenance mode.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >Enable the maintenance mode with caution to avoid openGauss data inconsistencies.
 
 **Default value**:  **off**
@@ -104,6 +105,7 @@ This parameter is an internal parameter. Do not set it.
 **Default value**:  **1**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >In the Lite scenario, openGauss does not support the one primary multiple standbys mode.
 
 ## pgxc\_node\_name<a name="section145114033015"></a>
@@ -115,6 +117,7 @@ This parameter is a POSTMASTER parameter. Set it based on  [Table 2](resetting-p
 When a standby node requests to replicate logs on the primary node, if the  **application\_name**  parameter is not set, this parameter is used as the name of the streaming replication slot of the standby node on the primary node. The streaming replication slot is named in the following format: Value of this parameter\_IP address of the standby node\_Port number of the standby node. The IP address and port number of the standby node are obtained from the IP address and port number of the standby node specified by the  **replconninfo**  parameter. The maximum length of a streaming replication slot name is 61 characters. If the length of the concatenated string exceeds 61 characters, the truncated  **pgxc\_node\_name**  will be used for concatenation to ensure that the length of the streaming replication slot name is less than or equal to 61 characters.
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>
 >After this parameter is modified, the database instance will fail to be connected. You are advised not to modify this parameter.
 
 **Value range**: a string

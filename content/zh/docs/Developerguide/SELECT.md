@@ -35,7 +35,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->condition和expression中可以使用targetlist中表达式的别名。
+>
+>-   condition和expression中可以使用targetlist中表达式的别名。
 >
 >-   只能同一层引用。
 >
@@ -286,6 +287,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     10. “\(+\)”只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定“\(+\)”。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
 
 -   **START WITH**
@@ -313,6 +315,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。 这样做可以通过裁剪用户不需要的数据组来提高效率。 当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数，因为对于未分组的字段，可能返回多个数值。
 
 -   **HAVING子句**
@@ -354,6 +357,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   ```
 
   >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
   >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
 
 -   **UNION子句**

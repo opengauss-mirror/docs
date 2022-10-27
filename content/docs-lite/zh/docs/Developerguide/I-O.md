@@ -48,7 +48,8 @@
         vacuum full tablename;
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.gif) **说明：**
+        > 
         >建议用户在系统空闲时进行VACUUM FULL操作，VACUUM FULL操作会造成短时间内I/O负载重，反而不利于降低I/O。
 
 

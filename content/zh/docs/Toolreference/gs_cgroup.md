@@ -76,7 +76,7 @@ gs_cgroup -u -T Gaussdb -f 0-20
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
 
-4.设置异常处理信息（class:wg组需存在）。  
+5.设置异常处理信息（class:wg组需存在）。  
 a.  设置组class:wg下的作业阻塞到1200秒或执行2400秒时执行终止动作：
 
 ```
@@ -618,6 +618,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 >> ls -l /dev/sdd
 >brw-rw---- 1 root disk 8, 48 Feb 26 11:20 /dev/sdd
 >```
+
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >这里一定要查sdd的磁盘号，不能是sdd1的磁盘号。否则执行时会报错。

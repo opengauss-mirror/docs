@@ -34,6 +34,10 @@
 
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
+-   **[EXECUTE](dolphin-EXECUTE.md)**  
+
+-   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
+
 -   **[GRANT](dolphin-GRANT.md)**
 
 -   **[INSERT](dolphin-INSERT.md)**
@@ -53,6 +57,12 @@
 -   **[SET CHARSET](dolphin-SET-CHARSET.md)**
 
 -   **[SET PASSWORD](dolphin-SET-PASSWORD.md)**  
+
+-   **[SHOW CHARSET](dolphin-SHOW-CHARACTER-SET.md)** 
+
+-   **[SHOW CHARACTER SET](dolphin-SHOW-CHARACTER-SET.md)** 
+
+-   **[SHOW COLLATION](dolphin-SHOW-COLLATION.md)**  
 
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
@@ -75,6 +85,8 @@
 -   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
 
 -   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
+
+-   **[SHOW TABLE STATUS](dolphin-SHOW-TABLE-STATUS.md)**  
 
 -   **[SHOW TRIGGERS](dolphin-SHOW-TRIGGERS.md)**  
 

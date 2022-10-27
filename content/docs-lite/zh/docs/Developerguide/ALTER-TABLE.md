@@ -372,6 +372,7 @@
     -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
         >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
@@ -383,6 +384,7 @@
     索引名。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT操作中：
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
@@ -395,6 +397,7 @@
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
@@ -404,6 +407,7 @@
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
@@ -411,6 +415,7 @@
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
 
@@ -464,6 +469,7 @@
     USING子句声明如何从旧的字段值里计算新的字段值；如果省略，缺省从旧类型向新类型的赋值转换。如果从旧数据类型到新类型没有隐含或者赋值的转换，则必须提供一个USING子句。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >ALTER TYPE的USING选项实际上可以声明涉及该行旧值的任何表达式，即它可以引用除了正在被转换的字段之外其他的字段。这样，就可以用ALTER TYPE语法做非常普遍性的转换。因为这个灵活性，USING表达式并没有作用于该字段的缺省值（如果有的话），结果可能不是缺省表达式要求的常量表达式。这就意味着如果从旧类型到新类型没有隐含或者赋值转换的话，即使存在USING子句，ALTER TYPE也可能无法把缺省值转换成新的类型。在这种情况下，应该用DROP DEFAULT先删除缺省，执行ALTER TYPE，然后使用SET DEFAULT增加一个合适的新缺省值。类似的考虑也适用于涉及该字段的索引和约束。
 
 -   **NOT NULL | NULL**
@@ -551,6 +557,7 @@
     -   INITIALLY DEFERRED：只有在事务结尾才检查它。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
         >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 

@@ -38,6 +38,7 @@ NEXT
 The parameters of  **MOVE**  and  **FETCH**  are the same. For details, see  [Parameter Description](fetch.md#en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_sceb763c430654064b8f61e9aa0792af9)  in  **FETCH**.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >On successful completion, a  **MOVE**  statement returns a tag of the form  **MOVE count**. The  **count**  is the number of rows that a  **FETCH**  statement with the same parameters would have returned \(possibly zero\).
 
 ## Examples<a name="en-us_topic_0283137573_en-us_topic_0237122169_en-us_topic_0059778649_s135d1e005b114aa4b3446001b7416853"></a>

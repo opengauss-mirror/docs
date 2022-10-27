@@ -9,6 +9,7 @@ MOT has been designed to achieve the following –
 -   **Linear Scale-up –**  MOT delivers a transactional storage engine that utilizes all the cores of a single NUMA architecture server in order to provide near-linear scale-up performance. This means that MOT is targeted to achieve a direct, near-linear relationship between the quantity of cores in a machine and the multiples of performance increase.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >The near-linear scale-up results achieved by MOT significantly outperform all other existing solutions, and come as close as possible to achieving optimal results, which are limited by the physical restrictions and limitations of hardware, such as wires.
 
 -   **No Maximum Number of Cores Limitation –**  MOT does not place any limits on the maximum quantity of cores. This means that MOT is scalable from a single core up to 1000s of cores, with minimal degradation per additional core, even when crossing NUMA socket boundaries.

@@ -81,6 +81,7 @@ REVOKE用于撤销一个或多个角色的权限。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >轻量版场景下，openGauss提供此语法，但密态数据库相关功能不可用。
 
 -   回收指定列加密密钥上的权限。
@@ -94,6 +95,7 @@ REVOKE用于撤销一个或多个角色的权限。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >轻量版场景下，openGauss提供此语法，但密态数据库相关功能不可用。
 
 -   回收指定目录上权限。
@@ -209,6 +211,7 @@ REVOKE用于撤销一个或多个角色的权限。
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
     >轻量版场景下，openGauss提供此语法，但SQL on Anywhere不可用。
 
 -   回收package对象的权限。

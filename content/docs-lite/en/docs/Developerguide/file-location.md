@@ -5,6 +5,7 @@ After a database has been installed, three configuration files \(**postgresql.co
 When changing the storage directory of a configuration file, set  **data\_directory**  in  **postgresql.conf**  to the actual data directory.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >If a configuration file is incorrectly modified, the database will be seriously affected. Do not modify the configuration files mentioned in this section after installation.
 
 ## data\_directory<a name="en-us_topic_0283136624_en-us_topic_0237124693_en-us_topic_0059778803_sc5573df50b1c4214bd6067c213147fce"></a>
@@ -55,6 +56,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >This parameter takes effect only after the database restarts.
 
 **Value range**: a string
@@ -76,5 +78,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**:  **on**
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
 >If this parameter is set to  **off**, the .so file can be placed in any accessible directory or the .so file provided by the system can be used, which poses security risks. Therefore, you are not advised to set this parameter to  **off**.
 

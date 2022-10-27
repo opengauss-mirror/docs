@@ -62,6 +62,8 @@ openGauss支持使用SHOW命令展示各种对象信息。所涉及的SQL语句�
 <tr><td><p>显示有关存储函数的信息</p></td><td><p><a href="dolphin-SHOW-FUNCTION-STATUS.md">SHOW FUNCTION STATUS</a></p></td></tr>
 <tr><td><p>显示有关存储过程的信息</p></td><td><p><a href="dolphin-SHOW-PROCEDURE-STATUS.md">SHOW PROCEDURE STATUS</a></p></td></tr>
 <tr><td><p>显示有关触发器的信息</p></td><td><p><a href="dolphin-SHOW-TRIGGERS.md">SHOW TIRRGER</a></p></td>
+<tr><td><p>显示支持的字符集的信息</p></td><td><p><a href="dolphin-SHOW-CHARACTER-SET.md">SHOW CHARACTER SET、SHOW CHARSET</a></p></td>
+<tr><td><p>显示支持的字符序的信息</p></td><td><p><a href="dolphin-SHOW-COLLATION.md">SHOW COLLATION</a></p></td>
 </tr>
 </tbody>
 </table>

@@ -244,10 +244,15 @@ gs_restore [OPTION]... FILE
 >-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入，或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->1.-d/--dbname 和 -f/--file 不能同时使用；
+>
+>1. -d/--dbname 和 -f/--file 不能同时使用；
+>
 >2. -s/--schema-only 和 -a/--data-only不能同时使用；
+>
 >3. -c/--clean 和 -a/--data-only不能同时使用；
+>
 >4. 使用--single-transaction时，-j/--jobs必须为单任务；
+>
 >5. --role 和 --rolepassword必须一起使用。
 
 连接参数：
