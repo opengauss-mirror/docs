@@ -4,6 +4,18 @@ Records PLPGSQL object \(stored procedure, function, package, and package body\)
 
 When the  **plsql\_show\_all\_error**  parameter is enabled, information about PL/PGSQL object compilation success or failure is recorded in this table. When the  **plsql\_show\_all\_error**  parameter is disabled, only information about correct compilation is inserted into this table.
 
+> ![](/public_sys-resources/icon-caution.gif) **Note:**
+>
+> - The gs\_source table records only user-defined original object statements. Even if a user uses ALTER to change the created schema or name, the information in the gs\_source table does not change. If the user changes the schema or name of an object, the deleted object still exists in the gs\_source table.
+>
+> - The owner in the gs\_source table is the user who creates the table, not the user specified when the user creates the stored procedure or package.
+>
+> - By default, row-level security is not configured for the gs\_source table in the database. If you want to use the database isolation feature, run the following statement to add row-level security:
+>
+>   ```
+>   ALTER TABLE dbe_pldeveloper.gs_source ENABLE ROW LEVEL SECURITY; CREATE ROW LEVEL SECURITY POLICY all_data_rls ON dbe_pldeveloper.gs_source USING(owner = (select oid from pg_roles where rolname=current_user));
+>   ```
+
 **Table  1**  DBE\_PLDEVELOPER.gs\_source columns
 
 <a name="table1011513101687"></a>
@@ -65,4 +77,3 @@ When the  **plsql\_show\_all\_error**  parameter is enabled, information about P
 </tr>
 </tbody>
 </table>
-

@@ -10,7 +10,7 @@ The attributes include the name and owner. The content includes the type, versio
 
 -   Only the initial user, system administrator, and owner have the permission to modify data sources.
 -   To change the owner, the new owner must be the initial user or a system administrator.
--   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node.
+-   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  *$GAUSSHOME***/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  *$GAUSSHOME***/bin**  directory on each node.
 
 ## Syntax<a name="en-us_topic_0283136847_en-us_topic_0237122056_section20592145145512"></a>
 
@@ -100,4 +100,3 @@ openGauss=# DROP USER user_test1;
 ## Helpful Links<a name="en-us_topic_0283136847_en-us_topic_0237122056_section779812311320"></a>
 
 [CREATE DATA SOURCE](create-data-source.md)  and  [DROP DATA SOURCE](drop-data-source.md)
-

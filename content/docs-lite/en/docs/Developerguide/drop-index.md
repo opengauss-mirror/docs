@@ -8,6 +8,8 @@
 
 Only the index owner or a user who has the INDEX permission on the table where the index resides can run the  **DROP INDEX**  command. The system administrator has this permission by default.
 
+For a global temporary table, if a session has initialized a global temporary table object (including creating a global temporary table and inserting data into the global temporary table for the first time), other sessions cannot delete indexes from the table.
+
 ## Syntax<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
 
 ```
@@ -47,4 +49,3 @@ See  [Examples](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en
 ## Helpful Links<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
 [ALTER INDEX](alter-index.md)  and  [CREATE INDEX](create-index.md)
-

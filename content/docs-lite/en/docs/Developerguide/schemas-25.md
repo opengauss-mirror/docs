@@ -92,5 +92,3 @@ The following table describes the schemas of .
 -   **[DB4AI Schema](db4ai-schema.md)**  
 
 -   **[DBE\_PLDEVELOPER](dbe_pldeveloper.md)**  
-
-

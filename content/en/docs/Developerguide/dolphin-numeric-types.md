@@ -12,7 +12,6 @@ Compared with the original openGauss, Dolphin modifies the arithmetic types as f
 7. For the decimal data type, if the precision is not specified, the default precision is (10,0). That is, the total number of digits is 10 and the number of decimal places is 0.
 8. The UNSIGNED INT, TINYINT, SMALLINT, and BIGINT types are added. Compared with a common integer, the most significant bit of the UNSIGNED INT, TINYINT, SMALLINT, BIGINT type is a digit bit instead of a sign bit.
 9. The zerofill attribute is added, which is supported only in syntax and does not have the effect of filling zeros. It is equivalent to UNSIGNED.
-10. The cast function parameters SIGNED and UNSIGNED are added. CAST AS UNSIGNED converts the type to uint8, and CAST AS SIGNED converts the type to int8.
 
 **Table 1** Integer types
 
@@ -167,20 +166,6 @@ openGauss=# \d int_type_t2
 
 --Delete a table.
 openGauss=# DROP TABLE int_type_t1, int_type_t2;
-
---Use CAST UNSIGNED to convert an expression to the uint8 type.
-openGauss=# select cast(1 - 2 as unsigned);
-        uint8
-----------------------
- 18446744073709551615
-(1 row)
-
---Use CAST SIGNED to convert an expression to the int8 type.
-openGauss=# select cast(1 - 2 as signed);
- int8
-------
-   -1
-(1 row)
 ```
 
 **Table 2** Arbitrary precision types
@@ -252,7 +237,7 @@ openGauss=# DROP TABLE dec_type_t1;
 <tbody><tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r4df97f4960ab416c97e76346bc3007b6"><td class="cellrowborder" valign="top" width="16.3%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a2a7203897d124440842a471a07b92249"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a2a7203897d124440842a471a07b92249"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a2a7203897d124440842a471a07b92249"></a>FLOAT[(p)],</p>
 <p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p423919111191"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p423919111191"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p423919111191"></a>FLOAT4[(p)]</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"></a>Floating points, which is not very precise. The value range of **p** (precision) is [1,53].</p>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6bc5ac535cad4a529d89c06a75d2959c"></a>Floating point, which is not very precise. The value range of **p** (precision) is [1,53].</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.779999999999998%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_aceb612c3bc5f404aa6f4fb69029952a7"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_aceb612c3bc5f404aa6f4fb69029952a7"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_aceb612c3bc5f404aa6f4fb69029952a7"></a>4 bytes or 8 bytes </p>
 </td>

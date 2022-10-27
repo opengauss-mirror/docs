@@ -1,4 +1,4 @@
-# Advanced Data Management<a name="EN-US_TOPIC_0000001223788809"></a>
+# Advanced Database Management<a name="EN-US_TOPIC_0000001223788809"></a>
 
 -   **[Constraints](constraints.md)**  
 

@@ -128,5 +128,3 @@ openGauss=# DROP ROLE jay;
 -   create tablespace
 
     You are not advised to create tablespaces in a transaction.
-
-

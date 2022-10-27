@@ -60,8 +60,8 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Specifies the name of a role.
 
-    Value range: a string. It must comply with the naming convention rule, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the role name. When a role is created, the database will display a message.
-
+    Value range: a string. It must comply with the naming convention rule, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the role name. When a role is created, the database displays a message if the role contains more than 63 characters.
+    
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >The identifier must be letters, underscores \(\_\), digits \(0-9\), or dollar signs \($\) and must start with a letter \(a-z\) or underscore \(\_\).
 

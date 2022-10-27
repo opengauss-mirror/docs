@@ -14,9 +14,10 @@ The naming rules for identifiers are as follows:
     >-   In special cases, double quotation marks (") can be used to avoid special character errors.
 
 Compared with the original openGauss, Dolphin modifies keywords as follows:
+
 1. MEDIUMINT is added as a non-reserved keyword.
-2. The keyword DATE can be used as a function.
-3. LAST\_DAY is added as a reserved keyword to distinguish the original LAST\_DAY function of openGauss from the LAST\_DAY function of Dolphin at the syntax level.
+2. The keyword `DATE` can be used as a function.
+3. `LAST_DAY` is added as a reserved keyword to distinguish the original LAST\_DAY function of openGauss from the LAST\_DAY function of Dolphin at the syntax level.
 
 **Table 1** SQL keywords
 

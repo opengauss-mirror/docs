@@ -144,7 +144,7 @@
     (1 row)
     ```
 
-    Note:  **pg\_current\_sessionid\(\)**  is used to obtain the session ID in the current execution context. The structure of the value is  _Timestamp. Session ID_. When  **enable\_thread\_pool**  is set to  **off**, the actual session ID is the thread ID.
+    Note:  **pg\_current\_sessionid\(\)**  is used to obtain the session ID in the current execution context. The structure of the value is  *Timestamp. Session ID*. When  **enable\_thread\_pool**  is set to  **off**, the actual session ID is the thread ID.
 
 -   pg\_current\_sessid
 
@@ -418,6 +418,21 @@
      139973107902208
     (2 rows)
     ```
+
+- session_context( 'namespace' , 'parameter') 
+
+  Description: Obtains and returns the parameter values of a specified namespace.
+
+  Return type: VARCHAR
+
+  Example:
+
+  ```
+  openGauss=# SELECT session_context('USERENV', 'CURRENT_SCHEMA');
+  session_context
+  ------------------
+  public (1 row)
+  ```
 
 -   pg\_trigger\_depth\(\)
 
@@ -2089,5 +2104,3 @@ The following functions provide server transaction information in an exportable 
     Parameter: nan
 
     Return type: statement text, block\_time bigint, elapsed\_time bigint, total\_cpu\_time bigint, qualification\_time bigint, skew\_percent integer, control\_group text, status text, action text
-
-

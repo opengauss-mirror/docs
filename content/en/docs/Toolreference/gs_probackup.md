@@ -177,33 +177,33 @@
 
     Prints the  **gs\_probackup**  version and exits.
 
--   -B  _backup-path_, --backup-path=_backup-path_
+-   -B  *backup-path*, --backup-path=*backup-path*
 
     Backup path.
 
-    System environment variable:  _$BACKUP\_PATH_
+    System environment variable:  *$BACKUP\*PATH_
 
--   -D  _pgdata-path_, --pgdata=_pgdata-path_
+-   -D  *pgdata-path*, --pgdata=*pgdata-path*
 
     Path of the data directory.
 
-    System environment variable:  _$PGDATA_
+    System environment variable:  *$PGDATA*
 
--   --instance=_instance\_name_
+-   --instance=*instance\*name_
 
     Instance name.
 
--   -i  _backup-id_, --backup-id=_backup-id_
+-   -i  *backup-id*, --backup-id=*backup-id*
 
     Unique identifier of a backup.
 
--   --format=_format_
+-   --format=*format*
 
     Specifies format of the backup information to be displayed. The plain and JSON formats are supported.
 
     Default value:  **plain**
 
--   --status=_backup\_status_
+-   --status=*backup\*status_
 
     Deletes all backups in a specified state. The states are as follows:
 
@@ -216,7 +216,7 @@
     -   **ERROR**: Backup fails due to an unexpected error.
     -   **ORPHAN**: Backup is invalid because one of its parent backups is corrupted or lost.
 
--   -j  _threads\_num_, --threads=_threads\_num_
+-   -j  *threads\*num_, --threads=*threads\*num_
 
     Sets the number of concurrent threads for the backup, restoration, and combination processes.
 
@@ -228,14 +228,14 @@
 
     Displays progress.
 
--   --note=_text_
+-   --note=*text*
 
     Adds a note to the backup.
 
 
 **Backup-related parameters**
 
--   -b  _backup-mode_, --backup-mode=_backup-mode_
+-   -b  *backup-mode*, --backup-mode=*backup-mode*
 
     Specifies the backup mode. The value can be  **FULL**  or  **PTRACK**.
 
@@ -247,7 +247,7 @@
 
     Expands checkpoints within a period of time. By default,  **gs\_probackup**  attempts to complete checkpoints as soon as possible.
 
--   -S  _slot-name_, --slot=_slot-name_
+-   -S  *slot-name*, --slot=*slot-name*
 
     Specifies the replication slot for WAL stream processing.
 
@@ -261,7 +261,7 @@
 
     Includes the log directory in the backup. This directory typically contains log messages. By default, the log directory is included, but the log file is not included. If the default log path is changed, you can use the  **-E**  parameter to back up log files. The following describes how to use the  **-E**  parameter.
 
--   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
+-   -E  *external-directories-paths*, --external-dirs=*external-directories-paths*
 
     Includes the specified directory in the backup. This option is useful for backing up scripts in external data directories, sql dumps, and configuration files. To back up multiple external directories, use colons \(:\) to separate their paths in Unix.
 
@@ -279,7 +279,7 @@
 
     Disables backup file synchronization to the disk.
 
--   --archive-timeout=_timeout_
+-   --archive-timeout=*timeout*
 
     Specifies timeout interval for streaming processing, in seconds.
 
@@ -300,11 +300,11 @@
 
     Default value:  **none**
 
--   --external-mapping=_OLDDIR=NEWDIR_
+-   --external-mapping=*OLDDIR=NEWDIR*
 
     During restoration, the external directory contained in the backup is moved from  **OLDDIR **to  **NEWDIR**.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This option can be specified for multiple directories.
 
--   -T  _OLDDIR=NEWDIR_, --tablespace-mapping=_OLDDIR=NEWDIR_
+-   -T  *OLDDIR=NEWDIR*, --tablespace-mapping=*OLDDIR=NEWDIR*
 
     Relocates the tablespace from the  **OLDDIR**  directory to the  **NEWDIR**  directory during the restoration.  **OLDDIR**  and  **NEWDIR**  must be absolute paths. If the path contains an equal sign \(=\), use a backslash \(\\\) to escape. This parameter can be specified multiple times for multiple tablespaces. This parameter must be used together with  **--external-mapping**.
 
@@ -337,23 +337,23 @@
 >5.  Start the database.
 >6.  Connect to the database and check whether the database is recovered to the expected status. If the expected status is reached, run the  **pg\_xlog\_replay\_resume\(\)**  command so that the primary node can provide services externally.
 
--   --recovery-target-lsn=_lsn_
+-   --recovery-target-lsn=*lsn*
 
     Specifies LSN to be restored. Currently, only the backup stop LSN can be specified.
 
--   --recovery-target-name=_target-name_
+-   --recovery-target-name=*target-name*
 
     Specifies named savepoint to which data is restored. You can obtain the savepoint by viewing the recovery-name column in the backup.
 
--   --recovery-target-time=_time_
+-   --recovery-target-time=*time*
 
     Specifies time to which data is restored. Currently, only recovery-time can be specified.
 
--   --recovery-target-xid=_xid_
+-   --recovery-target-xid=*xid*
 
     Specifies transaction ID to which data is restored. Currently, only recovery-xid can be specified.
 
--   --recovery-target-inclusive=_boolean_
+-   --recovery-target-inclusive=*boolean*
 
     When this parameter is set to  **true**, the recovery objective will include the specified content.
 
@@ -367,19 +367,19 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  and  **delete**  commands.
 
--   --retention-redundancy=_retention-redundancy_
+-   --retention-redundancy=*retention-redundancy*
 
     Number of full backups retained in the data directory. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
     Default value:  **0**
 
--   --retention-window=_retention-window_
+-   --retention-window=*retention-window*
 
     Specifies the retention period. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
     Default value:  **0**
 
--   --wal-depth=_wal-depth_
+-   --wal-depth=*wal-depth*
 
     Latest number of valid backups that must be retained on each timeline to perform the PITR capability. The value must be a positive integer. The value  **0**  indicates that the setting is disabled.
 
@@ -407,7 +407,7 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >To exclude certain backups from the established retention policy, you can use the following parameters with the  **backup**  and  **set-backup**  commands.
 
--   --ttl=_interval_
+-   --ttl=*interval*
 
     Specifies a fixed amount of time to back up data from the restoration time. The value must be a positive integer. The value  **0**  indicates that the backup is canceled.
 
@@ -415,9 +415,9 @@
 
     For example,  **--ttl=30d**.
 
--   --expire-time=_time_
+-   --expire-time=*time*
 
-    Specifies the timestamp when the backup is invalid. The time stamp must comply with the ISO-8601 standard.
+    Specifies the timestamp when the backup is invalid. The time stamp must comply with the ISO-8601 standard. This parameter must be used together with retention-related parameters.
 
     For example,  **--expire-time='2020-01-01 00:00:00+03'**.
 
@@ -426,19 +426,19 @@
 
 Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **off**.
 
--   --log-level-console=_log-level-console_
+-   --log-level-console=*log-level-console*
 
     Sets the level of logs to be sent to the console. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log recording function of the console is disabled.
 
     Default value:  **info**
 
--   --log-level-file=_log-level-file_
+-   --log-level-file=*log-level-file*
 
     Sets the level of logs to be sent to the log file. Each level contains all the levels following it. A higher level indicates fewer messages sent. If this parameter is set to  **off**, the log file recording function is disabled.
 
     Default value:  **off**
 
--   --log-filename=_log-filename_
+-   --log-filename=*log-filename*
 
     Specifies the name of the log file to be created. The file name can use the strftime mode. Therefore,  **%-escapes**  can be used to specify the file name that changes with time.
 
@@ -448,19 +448,19 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **pg\_probackup.log**
 
--   --error-log-filename=_error-log-filename_
+-   --error-log-filename=*error-log-filename*
 
     Specifies the name of the log file that is used only for error logs. The specifying method is the same as that of the  **--log-filename**  parameter.
 
     It is used for troubleshooting and monitoring.
 
--   --log-directory=_log-directory_
+-   --log-directory=*log-directory*
 
     Specifies the directory where log files are created. The value must be an absolute path. This directory is created when the first log is written.
 
     Default value:  **$BACKUP\_PATH/log**
 
--   --log-rotation-size=_log-rotation-size_
+-   --log-rotation-size=*log-rotation-size*
 
     Specifies the maximum size of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The value  **0**  indicates that the file size-based loop is disabled.
 
@@ -468,7 +468,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **0**
 
--   --log-rotation-age=_log-rotation-age_
+-   --log-rotation-age=*log-rotation-age*
 
     Maximum life cycle of a log file. If the maximum size is reached, the log file will be circulated after the  **gs\_probackup**  command is executed. The  **help**  and  **version**  commands will not lead to a log file circulation. The  **$BACKUP\_PATH/log/log\_rotation**  directory saves the time of the last created log file. The value  **0**  indicates that the time-based loop is disabled.
 
@@ -482,39 +482,39 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  command.
 
--   -d  _dbname_, --pgdatabase=_dbname_
+-   -d  *dbname*, --pgdatabase=*dbname*
 
-    Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  _PGDATABASE_  environment variable, or the  **pg\_probackup.conf**  configuration file,  **gs\_probackup**  attempts to obtain the value from the  _PGUSER_  environment variable. If the  _PGUSER_  variable is not set, the value is obtained from the current user name.
+    Specifies the name of the database to connect to. This connection is only used to manage the backup process. Therefore, you can connect to any existing database. If this parameter is not specified in the command line, the  *PGDATABASE*  environment variable, or the  **pg\_probackup.conf**  configuration file,  **gs\_probackup**  attempts to obtain the value from the  *PGUSER*  environment variable. If the  *PGUSER*  variable is not set, the value is obtained from the current user name.
 
-    System environment variable:  _$PGDATABASE_
+    System environment variable:  *$PGDATABASE*
 
--   -h  _hostname_, --pghost=_hostname_
+-   -h  *hostname*, --pghost=*hostname*
 
     Specifies the host name of the system on which the server is running. If the value begins with a slash \(/\), it is used as the directory for the UNIX domain socket.
 
-    System environment variable:  _$PGHOST_
+    System environment variable:  *$PGHOST*
 
     Default value:  **local socket**
 
--   -p  _port_, --pgport=_p__ort_
+-   -p  *port*, --pgport=*p__ort*
 
     Specifies the TCP port or local Unix domain socket file name extension on which the server is listening for connections.
 
-    System environment variable:  _$PGPORT_
+    System environment variable:  *$PGPORT*
 
     Default value:  **5432**
 
--   -U  _username_, --pguser=_username_
+-   -U  *username*, --pguser=*username*
 
     Specifies the username of the host to be connected.
 
-    System environment variable:  _$PGUSER_
+    System environment variable:  *$PGUSER*
 
 -   -w, --no-password
 
     Never issues a password prompt. The connection attempt fails if the host requires password verification and the password is not provided in other ways. This option is useful in batch jobs and scripts in which no user password is required.
 
--   -W  _password_, --password=_password_
+-   -W  *password*, --password=*password*
 
     Specifies the user password for connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  option. If the  **-W**  option is not provided and you are not a system administrator, the system will ask you to enter a password.
 
@@ -524,7 +524,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  command.
 
--   --compress-algorithm=_compress-algorithm_
+-   --compress-algorithm=*compress-algorithm*
 
     Specifies the algorithm used to compress data file.
 
@@ -532,7 +532,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     Default value:  **none**
 
--   --compress-level=_compress-level_
+-   --compress-level=*compress-level*
 
     Specifies the compression level. Value range: 0–9
 
@@ -553,7 +553,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following are parameters that remotely run  **gs\_probackup**  through SSH, and can be used together with the  **add-instance**,  **set-config**,  **backup**, and  **restore**  commands.
 
--   --remote-proto=_protocol_
+-   --remote-proto=*protocol*
 
     Specifies the protocol used for remote operations. Currently, only the SSH protocol is supported. Valid value:
 
@@ -563,40 +563,40 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
     If  **--remote-host**  is specified, this parameter can be omitted.
 
--   --remote-host=_destination_
+-   --remote-host=*destination*
 
     Specifies the IP address or host name of the remote host to be connected.
 
--   --remote-port=_port_
+-   --remote-port=*port*
 
     Specifies the port number of the remote host to be connected.
 
     Default value:  **22**
 
--   --remote-user=_username_
+-   --remote-user=*username*
 
     Specifies the remote host user for SSH connection. If this parameter is not specified, the user who initiates the SSH connection is used.
 
     Default value: the current user.
 
--   --remote-path=_path_
+-   --remote-path=*path*
 
     Specifies the installation directory of  **gs\_probackup**  in the remote system.
 
     Default value: current path
 
--   --remote-libpath=_libpath_
+-   --remote-libpath=*libpath*
 
     Specifies the lib directory where gs\_probackup is installed in the remote system.
 
--   --ssh-options=_ssh\_options_
+-   --ssh-options=*ssh\*options_
 
     Specifies the character string of the SSH command line parameter.
 
     Example: --ssh-options='-c cipher\_spec -F configfile'
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  _archive-timeout_  seconds \(300 seconds is set by default\).
+    >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  *archive-timeout*  seconds \(300 seconds is set by default\).
     >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.
     >```
     >LOG: walsender thread shut down
@@ -659,4 +659,3 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 </tr>
 </tbody>
 </table>
-

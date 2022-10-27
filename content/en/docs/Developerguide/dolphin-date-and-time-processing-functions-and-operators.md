@@ -3,6 +3,7 @@
 ## Time/Date Functions<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436"></a>
 
 Compared with the original openGauss, Dolphin modifies the time/date function as follows:
+
 1. The dayofmonth, dayofweek, dayofyear, hour, microsecond, minute, quarter, second, weekday, weekofyear, year, and current_date functions are added.
 2. The curdate, current_time, curtime, current_timestamp, localtime, localtimestamp, now, and sysdate functions are added.
 3. The makedate, maketime, period_add, period_diff, sec_to_time, and subdate functions are added.
@@ -276,6 +277,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   Returns the date value of a year when the year and the number of days are given.
 
   Remarks:
+
     - If any of them is NULL, the function returns NULL.
     - The value of **dayofyear** must be greater than 0. Otherwise, NULL is returned.
     - 0 <= year < 70: **year** is regarded as 20XX. 70 <= year < 100: **year** is regarded as 19XX.
@@ -454,7 +456,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     - If any parameter is NULL, the function returns NULL.
     - If the year in P1 and P2 is less than 100, 70 is used as the boundary to convert the year to 20XX or 19XX.
- 
+
   Example:
 ```sql
  openGauss=# SELECT PERIOD_DIFF(202201,202003);
@@ -662,7 +664,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   ----------
   01:02:03
   (1 row)
-
+  
   openGauss=# select SUBTIME('2020-03-04 11:22:33', '-10:20:30');
         subtime       
   ---------------------
@@ -866,6 +868,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   The first parameter **time** is a time or datetime expression. The function formats the time value based on the second parameter **format** and returns the value as a string.
 
   Remarks:
+
     - The following formats are supported:
       | Format| Description                                        |
       | ---- | -------------------------------------------- |
@@ -892,6 +895,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   The extracted time value can contain a maximum of six decimal places. The excess part is rounded off.
 
   Example:
+
   ```sql
   openGauss=# select TIME_FORMAT('83:59:59.0000009', '%T|%r|%H|%h|%I|%i|%S|%f|%p|%k');
                     time_format                    
@@ -1010,6 +1014,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   Function description: After you enter a time point **datetime**, the number of seconds from 0000-01-01 00:00:00 to the time point is returned.
 
   Remarks:
+
   - The **datetime** parameter supports the following types: character string, number, date, datetime, and time. If the input parameter is of the time type, the date is automatically set to the current date.
   - The returned result contains only the integer number of seconds and the decimal part is discarded.
 
@@ -1037,21 +1042,25 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 - unix_timestamp()
 
   Function prototype:
+
   `NUMERIC UNIX_TIMESTAMP()`
 
   `NUMERIC UNIX_TIMESTAMP(text datetime)`
 
   Function description:
+
   - If you run the function without entering any parameter, the number of seconds from 1970-01-01 00:00:00 UTC to the current time is returned.
   - If you enter a time point **datetime**, the number of seconds from 1970-01-01 00:00:00 UTC to datetime is returned.
 
   Remarks:
+
   - The **datetime** parameter supports the following types: character string, number, date, datetime, and time. If the input parameter is of the time type, the date is automatically set to the current date.
   - The valid range of the **datetime** parameter is [1970-01-01 00:00:00.000000 UTC, 2038-01-19 03:14:07.999999 UTC].
   - The value range of this parameter is affected by the time zone, but the final calculation result is not affected by the time zone.
   - The calculation result can contain a maximum of six decimal places.
 
   Example:
+
   ```sql
   opengauss=# select unix_timestamp('2022-09-01');
    unix_timestamp 
@@ -1079,9 +1088,11 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   This function is used to return the current UTC date of the DATE type.
 
   Remarks:
+
   - UTC\_DATE can be identified as a keyword. In this case, parentheses are not required.
 
   Example:
+
   ```sql
   opengauss=# select UTC_DATE();
     utc_date  
@@ -1099,6 +1110,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 - utc_time()
 
   Function prototype:
+
   	`TIME UTC_TIME()`
   
   ​	`TIME UTC_TIME(int fsp)`
@@ -1106,9 +1118,11 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   This function is used to return the current UTC time of the TIME type. If an integer parameter is specified as the precision, the number of decimals to be retained in the result can be specified. The supported precision range is [0-6].
   
   Remarks:
+
   - UTC\_TIME can be identified by keywords. In this case, parentheses are not required. The effect is the same as that of the UTC\_TIME() function without parameters.
   
   Example:
+
   ```sql
   opengauss=# select UTC_TIME();
    utc_time 
@@ -1168,7 +1182,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Return type: Boolean
 
-  Example: 
+  Example:
 
   ```
   openGauss=# select time_bool('18:50:00');
@@ -1192,7 +1206,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Return type: Boolean
 
-  Example: 
+  Example:
 
   ```
   openGauss=# select date_bool('2022-08-20');
@@ -1209,7 +1223,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
    f
   (1 row)
   ```
-  
+
 - dayname\(date\)
 
     Description: Returns the workday corresponding to the date. The language set of the returned content is controlled by the GUC parameter [lc_time_names](dolphin-guc-parameters.md#lctimenamesa-namesection203671436824a).
@@ -1218,7 +1232,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select dayname('2000-1-1');
@@ -1245,7 +1259,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select monthname('2000-1-1');
@@ -1272,7 +1286,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select time_to_sec('838:59:59');
@@ -1296,7 +1310,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select month('2021-11-12');
@@ -1320,7 +1334,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select day('2021-11-12');
@@ -1344,7 +1358,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select date('2021-11-12');
@@ -1380,7 +1394,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints. In B-compatible databases, when the GUC parameter **b\_compatibility\_mode** is set to **true**, this function replaces the original last\_day function of openGauss.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# set b_compatibility_mode = true;
@@ -1401,41 +1415,34 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
 - week\(date\[,mode\]\)
 
-    Description: Returns the week of the date represented by the date parameter in a year. The mode parameter is optional. The value range is [0,7]. The mode parameter specifies whether a week starts on Monday or Sunday and whether the return value ranges from 0 to 53 or from 1 to 53. If no mode parameter is transferred, the GUC variable default\_week\_format is used as the default mode parameter.
+    Description: Returns the week of the date represented by the date parameter in a year. The mode parameter is optional. The value range is [0,7]. If no mode parameter is transferred, the GUC parameter **default\_week\_format** is used as the default mode parameter.
 
     The following table lists the values and meanings of the mode parameter.
-    | mode | First day of week | range | Week 1 is the first week ...|
-    | -----|----------------------- | -------------------------------- | ------ |
-    |0|Sunday|0-53|with a Sunday in this year|
-    |1|Monday|0-53|with 4 or more days this year|
-    |2|Sunday|1-53|with a Sunday in this year|
-    |3|Monday|1-53|with 4 or more days this year|
-    |4|Sunday|0-53|with 4 or more days this year|
-    |5|Monday|0-53|with a Monday in this year|
-    |6|Sunday|1-53|with 4 or more days this year|
-    |7|Monday|1-53|with a Monday in this year|
 
-    Explanation of "with 4 or more days this year":
-    - If the first week of a year contains January and four or more days of the year, the week is the first week of the year.
-    - Otherwise, this week is the last week of the previous year, and the next week is the first week of the current year.
+    | mode | Description|
+    | --------|----------------------- |
+    |0|Sunday indicates the first day of a week. The value of week ranges from 0 to 53. The first week of a year must contain Sunday.|
+    |1|Monday indicates the first day of a week. The value of week ranges from 0 to 53. The first week of a year must contain at least four days in the year.|
+    |2|Sunday indicates the first day of a week. The value of week ranges from 1 to 53. The first week of a year must contain Sunday.|
+    |3|Monday indicates the first day of a week. The value of week ranges from 1 to 53. The first week of a year must contain at least four days in the year.|
+    |4|Sunday indicates the first day of a week. The value of week ranges from 0 to 53. The first week of a year must contain at least four days in the year.|
+    |5|Monday indicates the first day of a week. The value of week ranges from 0 to 53. The first week of a year must contain Monday.|
+    |6|Sunday indicates the first day of a week. The value of week ranges from 1 to 53. The first week of a year must contain at least four days in the year.|
+    |7|Monday indicates the first day of a week. The value of week ranges from 1 to 53. The first week of a year must contain Monday.|
 
-    If the date is in the last week of the previous year, the function returns 0 when 0, 1, or 5 is used as the value of **mode**. The meaning is that the current date is in week 0 of the year to which the date belongs.
-    ```
-    openGauss=# select week('2000-1-1', 0);
-    week
-    ------
-        0
-    (1 row)
-    ```
-    The reason why 0 is returned instead of the 52nd week of 1999 is that this allows the returned value to be within the year given by the parameter, so that the week function can work better with other functions that extract the date part.
+    For the first day of a week, the value range of week is described as follows:
 
-    If you want to use the first day of a week as the first week of a year, you can use 0, 2, 5, or 7 as the value of **mode**.
+    - The first day of a week refers to the first day of a week. Monday or Sunday may be the first day of a week.
+    - The value range of week refers to the value range of the return value of the WEEK function. There are two value ranges: [0-53] and [1-53]. The value 0 in [0-53] indicates that the given date is actually located in the last week of the year before the given date. To associate the returned result with the year of the given date, the given date is considered to be located in the zeroth week of the year (that is, the first week has not started). If you want the week of a given date to be more closely related to its year, use 0, 1, 4, or 5 as the mode value. In this way, when the given date is in the last week of the year, the WEEK function returns 0.
+    - The condition for determining the first week of a year refers to the condition for determining that the given date is in the first week of the current year. Generally, the condition is determined only when the date is at the boundary of the year. There are two determination modes. The mode parameter determines the mode to be used.
+      - Method 1: If Monday or Sunday is the first day of a week and Monday or Sunday is in the year of the specified date, the week is the first week of the year. The value of mode can be 0, 2, 5, or 7.
+      - Method 2: If four or more days of the week to which the specified date belongs are in the year to which the specified date belongs, the week is the first week of the year to which the specified date belongs. Otherwise, the week is the last week of the previous year. The value of mode can be 1, 3, 4, or 6.
 
     Return type: integer
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# show default_week_format;
@@ -1444,6 +1451,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     0
     (1 row)
 
+    -- If the specified date is in the last week of the previous year, the value of mode is 0.
     openGauss=# select week('2000-1-1');
     week
     ------
@@ -1453,6 +1461,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     openGauss=# alter system set default_week_format = 2;
     ALTER SYSTEM SET
 
+    -- If the specified date is in the last week of the previous year, the value of mode is 2.
     openGauss=# select week('2000-1-1');
     week
     ------
@@ -1468,15 +1477,15 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
 - yearweek\(date\[,mode\]\) 
 
-    Description: Returns the year and week of the date represented by the date parameter. If the week of the date is the first or last week of a year, the returned year may be different from the year in the date parameter. The mode parameter is optional and works in the same way as the mode parameter of the WEEK function. The value range is [0,7]. If no mode parameter is specified, 0 is used as the default mode parameter. The GUC parameter default\_week\_format does not affect the yearweek function.
+    Description: Returns the year and week of the date represented by the date parameter. mode is an optional integer parameter. The value range is [0,7]. If no mode parameter is specified, 0 is used as the default mode parameter. The GUC parameter default\_week\_format does not affect the yearweek function. For details about the mode parameter, see the week function.
 
-    The number of weeks returned by the yearweek function is different from that returned by the week function when the optional mode parameter is 0 or 1. The week function returns 0 weeks in the year of the date parameter, but the yearweek function does not return 0 weeks in the year of the date parameter.
+    The yearweek function does not return 0 weeks. That is, the value range of week is always [1-53], which is not affected by the mode parameter.
 
     Return type: bigint
 
     Note: This function is compatible with MySQL table insertion parameters and result constraints.
 
-    Example: 
+    Example:
 
     ```
     openGauss=# select week('1987-01-01', 0);
@@ -1498,7 +1507,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Return type: integer (indicating the date difference, in days)
 
-  Example: 
+  Example:
   ```
   openGauss=# select datediff('2001-01-01','321-02-02');
   datediff 
@@ -1513,7 +1522,8 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Return type: date
 
-  Example: 
+  Example:
+
   ```
   openGauss=# select from_days(365);
   from_days  
@@ -1536,7 +1546,8 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Note: In B-compatible databases, this function replaces the original timestampdiff function of openGauss when the GUC parameter **b\_compatibility\_mode** is set to **true**.
 
-  Example: 
+  Example:
+
   ```
   openGauss=# set b_compatibility_mode = true;
   SET
@@ -1560,7 +1571,8 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Return value: datetime
 
-  Example: 
+  Example:
+
   ```
   openGauss=# SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');
         convert_tz
@@ -1591,7 +1603,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
       - When expr1 is in the date or datetime format, if the result exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but less than '0001-1-1 00:00:00.000000', MySQL defines the result as 0000-00-00 or 0000-00-00 xx:xx:xx. The time depends on the calculation result. Because such a result is meaningless, an error is reported in openGauss.
       - For data whose first parameter is of the time type, if the calculation result exceeds the time type range [-838:59:59, 838:59:59], an error is reported.
   
-  Example: 
+  Example:
   
   ```
   openGauss=# SELECT DATE_ADD('2022-01-01', INTERVAL 31 DAY);
@@ -1616,6 +1628,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 - DATE\_SUB\(date/datetime/time, interval expr unit\)
   
   Function prototype:
+
   ```
     text DATE_SUB(text expr1, INTERVAL expr2 unit)
     time DATE_SUB(time expr1, INTERVAL expr2 unit)
@@ -1635,7 +1648,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
       - When expr1 is in the date or datetime format, if the result exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but less than '0001-1-1 00:00:00.000000', MySQL defines the result as 0000-00-00 or 0000-00-00 xx:xx:xx. The time depends on the calculation result. Because such a result is meaningless, an error is reported in openGauss.
       - For data whose first parameter is of the time type, if the calculation result exceeds the time type range [-838:59:59, 838:59:59], an error is reported.
   
-  Example: 
+  Example:
   
   ```
   openGauss=# SELECT DATE_SUB('2022-01-01', INTERVAL 31 DAY);
@@ -1659,9 +1672,11 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   ```
     
 - ADDDATE\(date/datetime/time, interval/days\)
+
   Description: Performs a date or time addition operation. When the second parameter is interval, the function is the same as the DATE\_ADD function. For details, see DATE\_ADD. When the second parameter is an integer, the integer is added to the first parameter as a number of days.
 
-  Example: 
+  Example:
+
   ```
   openGauss=# SELECT ADDDATE('2021-11-12', INTERVAL 1 SECOND);
         adddate
@@ -1691,6 +1706,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 - ADDTIME\(datetime/time,time\)
 
   Function prototype:
+
   ``` 
   time ADDTIME(text expr1, time expr2)
   ```
@@ -1710,7 +1726,8 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
       - If the result is in datetime format and exceeds [0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999], an error is reported. If the result is within this range but is less than '0001-1-1 00:00:00.000000', null is returned.
       - If the result is in the time format and the value exceeds [-838:59:59, 838:59:59], an error is reported.
   
-  Example: 
+  Example:
+  
   ```
   openGauss=# SELECT ADDTIME('11:22:33','10:20:30');
   addtime  
