@@ -70,7 +70,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## 示例<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 
---SOUNDS LIKE子句示例：同音字段查询
+- SOUNDS LIKE子句示例：同音字段查询
 
 ```
 openGauss=# CREATE TABLE TEST(id int, name varchar);
