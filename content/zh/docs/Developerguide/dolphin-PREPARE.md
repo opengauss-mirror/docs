@@ -11,7 +11,7 @@
 
 1. 支持 PREPARE FROM 语法。
 
-2. statement 支持加单引号，且单引号内的statement必须是单个query。
+2. statement 支持加单引号，且单引号内的statement必须是单个query。加单引号的场景，statement除了```SELECT、INSERT、UPDATE、DELETE、MERGE INTO或VALUES```语句外，还支持其他最终会转换成SelectStmt的语句，如部分```SHOW```系列语句等。
 
 3. statement 中的绑定参数支持使用```?```，需要先将```b_compatibility_mode```设置为```on```，且不能同时在一个语句中同时使用```$```和```?```作为参数占位符。将```b_compatibility_mode```设置为```on```后，```?```将不能作为操作符使用。
 
