@@ -20,7 +20,7 @@
 -   When you do  **VACUUM**  to a column-store table, the following operations are internally performed: data in the delta table is migrated to the primary table, and the delta and desc tables of the primary table are vacuumed.  **VACUUM**  does not recycle the storage space of the delta table. To recycle it, do  **VACUUM DELTAMERGE**  to the column-store table.
 -   A deadlock may occur when multiple  **VACUUM FULL**  statements are executed simultaneously.
 -   If the  **xc\_maintenance\_mode**  parameter is not enabled, the  **VACUUM FULL**  operation will skip all system catalogs.
--   If you run  **VACUUM FULL**  immediately after running  **DELETE**, the space will not be recycled. After executing  **DELETE**, execute 1000 non-SELECT transactions, or wait for 1s and then execute one transaction. Then, run  **VACUUM FULL**  to the space.
+-   If VACUUM FULL is executed immediately after DELETE is executed, space may not be reclaimed, depending on whether transactions started before DELETE are still active. In this case, wait until all transactions are complete or restart the database, and then run the VACUUM FULL statement again.
 
 ## Syntax<a name="en-us_topic_0283137096_en-us_topic_0237122195_en-us_topic_0059777503_s6ae572813e4047dbafe371b136af69ae"></a>
 

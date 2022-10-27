@@ -75,4 +75,3 @@ openGauss=# select "table", "column", "indextype" from gs_index_advise('select n
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Parameters of the system function  **gs\_index\_advise\(\)**  are of the text type. If the parameters contain special characters such as single quotation marks \('\), you can use single quotation marks \('\) to escape the special characters. For details, see the preceding example.
-

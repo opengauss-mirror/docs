@@ -8,8 +8,6 @@ Creates a tablespace in a database.
 
 -   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
 
--   When you run the ADD DATAFILE command to create a tablespace, if the entered path ends with **.ibd**, the Dolphin plug-in changes the path name to end with **_ibd**.
-
 ## Syntax<a name="en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
 
 ```
@@ -34,19 +32,6 @@ In the preceding information, tablespace\_details is as follows:
 
 ```
 --Run the ADD DATAFILE syntax to create a tablespace.
-openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
+CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
-
---Use the ADD DATAFILE syntax to create a tablespace. The input path ends with **.ibd**.
-openGauss=# CREATE TABLESPACE test_tbspace_ibd ADD DATAFILE 'test_tbspace1.ibd';
-WARNING:  Suffix ".ibd" of datafile path detected. The actual path will be renamed as "test_tbspace1_ibd"
-CREATE TABLESPACE
-openGauss=# CREATE TABLE t_tbspace(num int) TABLESPACE test_tbspace_ibd;
-CREATE TABLE
-openGauss=# \d t_tbspace
-   Table "public.t_tbspace"
- Column |  Type   | Modifiers
---------+---------+-----------
- num    | integer |
-Tablespace: "test_tbspace_ibd"
 ```

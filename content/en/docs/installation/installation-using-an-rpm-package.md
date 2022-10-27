@@ -36,4 +36,4 @@ This section describes how to install the openGauss database on openEuler 22.03 
    
 2. Run the ps ux command to check the process. The binary installation directory is /usr/local/opengauss, and the default startup data directory is /var/lib/opengauss/data.
 
-3. Run the gsql -d postgres -p 7654 -r command to connect to the database. The default port number is 7654. After the database is connected, you can start to use the database as that of the openGauss Lite edition.
+3. Run the gsql -d postgres -p 7654 -r command to connect to the database. The default port number is 7654. After the database is connected, the database can be properly used.

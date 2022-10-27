@@ -69,6 +69,7 @@
 
     - Compares base\_expr with expr(n) one by one until expr(n) is greater than base\_expr and returns value(n-1). If expr(n) is less than or equal to base\_expr, returns value(n).
     - If base\_expr or expr(n) is non-numeric data:
+
         - BOOL: TRUE is converted to 1, and FALSE is converted to 0.
         - If it can be truncated to a floating point number in float8 format, it is truncated to float8.
         - If it cannot be truncated to a floating point number float8, it is considered as 0.

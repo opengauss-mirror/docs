@@ -835,4 +835,4 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    If the new database Encoding, LC-Collate, or LC\_Ctype does not match the template database (SQL\_ASCII) (**'GBK'**, **'UTF8'**, **'LATIN1'**, or **'GB18030'**), **template \[=\] template0** must be specified.
+    If the new database Encoding does not match the template database (SQL\_ASCII) (**'GBK'**, **'UTF8'**, **'LATIN1'**, or **'GB18030'**), **template \[=\] template0** must be specified.

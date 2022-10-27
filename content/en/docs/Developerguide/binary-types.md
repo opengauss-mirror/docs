@@ -19,7 +19,7 @@
 <div class="note" id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a>Column storage cannot be used for the BLOB type.</p>
 </div></div>
 </td>
-<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>Its maximum length is 1073733621 bytes (1 GB – 8203 bytes).</p>
+<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>Its maximum length is 32 TB (35184372088832 bytes).</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_rc75b9f1550a84c8d9f3808f11077c5eb"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a>RAW</p>
@@ -99,4 +99,3 @@ openGauss=#  SELECT * FROM blob_type_t1;
 -- Delete the table.
 openGauss=#  DROP TABLE blob_type_t1;
 ```
-

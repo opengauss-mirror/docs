@@ -1568,7 +1568,7 @@ The following functions of openGauss use internal data types, which cannot be di
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p179511533164517"><a name="p179511533164517"></a><a name="p179511533164517"></a>value_of_percentile</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p29519334454"><a name="p29519334454"></a><a name="p29519334454"></a>session_context</p>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p29519334454"><a name="p29519334454"></a><a name="p29519334454"></a>disable_conn</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1335564113460"><a name="p1335564113460"></a><a name="p1335564113460"></a>bind_variable</p>
     </td>

@@ -93,7 +93,12 @@
 </tr>
 <tr id="en-us_topic_0283137650_en-us_topic_0241716355_row759020441191"><td class="cellrowborder" valign="top" width="17.53%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283137650_en-us_topic_0241716355_p1059054419919"><a name="en-us_topic_0283137650_en-us_topic_0241716355_p1059054419919"></a><a name="en-us_topic_0283137650_en-us_topic_0241716355_p1059054419919"></a>keepalives_count</p>
 </td>
-<td class="cellrowborder" valign="top" width="82.47%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"><a name="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"></a><a name="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"></a>Adds command-line options to send to the server at runtime. For example, adding <strong id="b89869033615"><a name="b89869033615"></a><a name="b89869033615"></a>-c comm_debug_mode=off</strong> to set the value of the GUC parameter <strong id="b179866093610"><a name="b179866093610"></a><a name="b179866093610"></a>comm_debug_mode</strong> to <strong id="b09861609361"><a name="b09861609361"></a><a name="b09861609361"></a>off</strong>.</p>
+<td class="cellrowborder" valign="top" width="82.47%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"><a name="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"></a><a name="en-us_topic_0283137650_en-us_topic_0241716355_p24777515373"></a>Controls the number of times that keepalive messages are sent through TCP. The value **0** indicates that the default value is used. Ignore this parameter for Unix-domain connections or if keepalive is disabled.</p>
+</td>
+</tr>
+<tr id="row58155904711"><td class="cellrowborder" valign="top" width="17.53%" headers="mcps1.2.3.1.1 "><p id="p14815195472"><a name="p14815195472"></a><a name="p14815195472"></a>tcp_user_timeout</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.47%" headers="mcps1.2.3.1.2 "><p id="p681579124717"><a name="p681579124717"></a><a name="p681579124717"></a>Specifies the maximum duration for which transmitted data can remain unacknowledged before the TCP connection is forcibly closed on an operating system that supports the TCP_USER_TIMEOUT socket option. The value <strong>0</strong> indicates that the default value is used. Ignore this parameter for Unix-domain connections.</p>
 </td>
 </tr>
 <tr id="row1765822885215"><td class="cellrowborder" valign="top" width="17.53%" headers="mcps1.2.3.1.1 "><p id="p1658172885211"><a name="p1658172885211"></a><a name="p1658172885211"></a>rw_timeout</p>
@@ -221,4 +226,3 @@
 </tr>
 </tbody>
 </table>
-

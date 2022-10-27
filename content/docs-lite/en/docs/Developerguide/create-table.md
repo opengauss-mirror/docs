@@ -120,7 +120,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
     >-   You can set the GUC parameter  **max\_active\_global\_temporary\_table**  to determine whether to enable the global temporary table function. If  **max\_active\_global\_temporary\_table**  is set to  **0**, the global temporary table function is disabled.
     >-   A temporary table is visible only to the current session. Therefore, it cannot be used together with  **\\parallel on**.
-    >-   **\\parallel on**: The temporary table does not support primary/standby switchover.
+    >-   The temporary table does not support primary/standby switchover.
+    >-   The global temporary table does not respond to automatic clearance. In persistent connection scenarios, you are advised to use the global temporary table in the ON COMMIT DELETE ROWS clause or periodically and manually execute the VACUUM statement. Otherwise, Clogs may not be reclaimed.
+
 
 -   **IF NOT EXISTS**
 

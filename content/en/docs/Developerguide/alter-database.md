@@ -65,7 +65,9 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
     >-   To modify the object isolation attribute of a database, the database must be connected. Otherwise, the modification will fail.
+    >
     >-   For a new database, the object isolation attribute is disabled by default. After this attribute is enabled, common users can view only the objects \(such as tables, functions, views, and columns\) that they have the permission to access. This attribute does not take effect for administrators. After this attribute is enabled, administrators can still view all database objects.
 
 
@@ -127,7 +129,9 @@
 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
+>
 >-   Modify the default tablespace of a database by moving the table or index in the old tablespace into the new tablespace. This operation does not affect the tables or indexes in other non-default tablespaces.
+>
 >-   The modified database session parameter values will take effect in the next session.
 
 ## Examples<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
@@ -137,4 +141,3 @@ See  [Examples](create-database.md#en-us_topic_0283137050_en-us_topic_0237122099
 ## Helpful Links<a name="en-us_topic_0283136981_en-us_topic_0237122055_en-us_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
 
 [CREATE DATABASE](create-database.md)  and  [DROP DATABASE](drop-database.md)
-

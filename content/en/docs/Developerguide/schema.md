@@ -78,5 +78,3 @@ The following table describes the schemas of openGauss.
 -   **[DBE\_PLDEBUGGER Schema](dbe_pldebugger-schema.md)**  
 
 -   **[DB4AI Schema](db4ai-schema.md)**  
-
-

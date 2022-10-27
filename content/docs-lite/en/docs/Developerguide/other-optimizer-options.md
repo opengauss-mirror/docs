@@ -194,7 +194,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## enable\_global\_stats<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s9161437c044d473eb0de85acd35ecdb7"></a>
 
-**Parameter description**: Specifies the current statistics collection mode, which can be global statistics collection or single-node statistics collection. By default, the global statistics collection mode is used. If this parameter is set to  **off**, the statistics of the first node in openGauss are collected by default. In this case, the quality of the generated query plan may be affected. However, the information collection performance is optimal. Therefore, exercise caution when disabling this parameter.
+**Parameter description**: Specifies the current statistics collection mode, which can be global statistics collection or single-node statistics collection. By default, the global statistics collection mode is used. If this parameter is set to  **off**, the statistics of the first node in openGauss are collected by default. In this case, the quality of the generated query plan may be affected. However, the information collection performance is optimal. Therefore, exercise caution when disabling this parameter. This parameter has been discarded in the current version. Do not set it.
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

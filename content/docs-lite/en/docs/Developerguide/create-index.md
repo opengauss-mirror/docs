@@ -11,7 +11,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 -   Columns having filter criteria \(especially scope criteria\) of a  **where**  clause
 -   Columns that appear after  **order by**,  **group by**, and  **distinct**
 
-Partitioned tables do not support concurrent index creation and partial index creation.
+The partitioned table does not support partial index creation. 
 
 ## Precautions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 

@@ -11,7 +11,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 -   Columns having filter criteria \(especially scope criteria\) of a  **where**  clause
 -   Columns that appear after  **order by**,  **group by**, and  **distinct**
 
-Partitioned tables do not support concurrent index creation and partial index creation.
+The partitioned table does not support partial index creation. 
 
 ## Precautions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
@@ -46,7 +46,7 @@ Partitioned tables do not support concurrent index creation and partial index cr
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ]
-        [ COMMENT text ];
+        [ WHERE predicate ];
     ```
 
 
@@ -238,6 +238,9 @@ Partitioned tables do not support concurrent index creation and partial index cr
     Creates a partial index. A partial index is an index that contains entries for only a portion of a table, usually a portion that is more useful for indexing than the rest of the table. For example, if you have a table that contains both billed and unbilled orders where the unbilled orders take up a small fraction of the total table and yet that is an often used portion, you can improve performance by creating an index on just that portion. In addition,  **WHERE**  with  **UNIQUE**  can be used to enforce uniqueness over a subset for a table.
 
     Value range: The  **predicate**  expression can only refer to columns of the underlying table, but it can use all columns, not just the ones being indexed. Currently, subqueries and aggregate expressions are forbidden in  **WHERE**. You are not advised to use numeric types such as int for  **predicate**, because such types can be implicitly converted to bool values \(non-zero values are implicitly converted to  **true**  and  **0**  is implicitly converted to  **false**\), which may cause unexpected results.
+
+    For a partitioned table index, if the created index contains the GLOBAL or LOCAL keyword or the created index is a GLOBAL index, the WHERE clause cannot be used to create an index.
+
 
 -   **PARTITION index\_partition\_name**
 
