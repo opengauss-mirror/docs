@@ -36,7 +36,7 @@ GS\_TXN\_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护�
 </tr>
 <tr id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_row3706143601913"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p770713610197"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p770713610197"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p770713610197"></a>snpsnapshot</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"></a>test</p>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p127071361199"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p9707203619192"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p9707203619192"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p9707203619192"></a>快照序列化文本。</p>
 </td>
