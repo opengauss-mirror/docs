@@ -78,6 +78,8 @@
 
 -   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
 
+-   **[SHOW PRIVILEGES](dolphin-SHOW_PRIVILEGES.md)**
+
 -   **[SHOW PROCEDURE STATUS](dolphin-SHOW-PROCEDURE-STATUS.md)**
 
 -   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
