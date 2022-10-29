@@ -251,19 +251,19 @@ gs_restore [OPTION]... FILE
 
 ![](public_sys-resources/icon-notice.gif) **须知：** 
 
--   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
+>-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
     ```
     CREATE DATABASE foo WITH TEMPLATE template0;
     ```
--   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。
+>-   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。
 
 ![](public_sys-resources/icon-note.gif) **说明：** 
 
-1. -d/--dbname 和 -f/--file 不能同时使用；
-2. -s/--schema-only 和 -a/--data-only不能同时使用；
-3. -c/--clean 和 -a/--data-only不能同时使用；
-4. 使用--single-transaction时，-j/--jobs必须为单任务；
-5. --role 和 --rolepassword必须一起使用。
+>- 1. -d/--dbname 和 -f/--file 不能同时使用；
+>- 2. -s/--schema-only 和 -a/--data-only不能同时使用；
+>- 3. -c/--clean 和 -a/--data-only不能同时使用；
+>- 4. 使用--single-transaction时，-j/--jobs必须为单任务；
+>- 5. --role 和 --rolepassword必须一起使用。
 
 
 
