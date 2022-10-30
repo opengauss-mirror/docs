@@ -132,7 +132,7 @@ a.  查看配置文件中控制组信息。
 gs_cgroup -p 
 ```
 
-控制组配置信息
+b.控制组配置信息
 
 ```
 gs_cgroup -p
@@ -175,15 +175,15 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 
 **表 1**  控制组配置信息
 
-<table><thead align="left"><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_raf32468133ec42a98fa0a24a84f6e542"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.6.1.1"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a>GID</p>
+<table><thead align="left"><tr id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_raf32468133ec42a98fa0a24a84f6e542"><th class="cellrowborder" valign="top" width="12.42%" id="mcps1.2.6.1.1"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a35afb8adcfcc44caab1a15a95bc460f3"></a><b>GID</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="13.900000000000002%" id="mcps1.2.6.1.2"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a>类型</p>
+<th class="cellrowborder" valign="top" width="13.900000000000002%" id="mcps1.2.6.1.2"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a5e63574953494fda87d121cc98444458"></a><b>类型</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="15.61%" id="mcps1.2.6.1.3"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a>名称</p>
+<th class="cellrowborder" valign="top" width="15.61%" id="mcps1.2.6.1.3"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_a64f986ec452e42c284a6f32d6156dfb8"></a><b>名称</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="31.55%" id="mcps1.2.6.1.4"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a>Percent（%）信息</p>
+<th class="cellrowborder" valign="top" width="31.55%" id="mcps1.2.6.1.4"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_ae59345dfad974f2981d49561fde6edde"></a><b>Percent（%）信息</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="26.52%" id="mcps1.2.6.1.5"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a>特定信息</p>
+<th class="cellrowborder" valign="top" width="26.52%" id="mcps1.2.6.1.5"><p id="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a><a name="zh-cn_topic_0085032167_zh-cn_topic_0059777958_af84180bce2c64a849829b13fdb1e21d5"></a><b>特定信息</b></p>
 </th>
 </tr>
 </thead>
@@ -387,13 +387,13 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     **表 2**  异常阈值类型
 
     <a name="table55183313474"></a>
-    <table><thead align="left"><tr id="row161093118474"><th class="cellrowborder" valign="top" width="12.871287128712872%" id="mcps1.2.5.1.1"><p id="p1561023111479"><a name="p1561023111479"></a><a name="p1561023111479"></a>异常阈值类型</p>
+    <table><thead align="left"><tr id="row161093118474"><th class="cellrowborder" valign="top" width="12.871287128712872%" id="mcps1.2.5.1.1"><p id="p1561023111479"><a name="p1561023111479"></a><a name="p1561023111479"></a><b>异常阈值类型</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="51.48514851485149%" id="mcps1.2.5.1.2"><p id="p561012316470"><a name="p561012316470"></a><a name="p561012316470"></a>说明</p>
+    <th class="cellrowborder" valign="top" width="51.48514851485149%" id="mcps1.2.5.1.2"><p id="p561012316470"><a name="p561012316470"></a><a name="p561012316470"></a><b>说明</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.5.1.3"><p id="p661083144711"><a name="p661083144711"></a><a name="p661083144711"></a>取值范围（0表示取消设置）</p>
+    <th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.5.1.3"><p id="p661083144711"><a name="p661083144711"></a><a name="p661083144711"></a><b>取值范围（0表示取消设置）</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.2.5.1.4"><p id="p561163119474"><a name="p561163119474"></a><a name="p561163119474"></a>支持的异常操作</p>
+    <th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.2.5.1.4"><p id="p561163119474"><a name="p561163119474"></a><a name="p561163119474"></a><b>支持的异常操作</b></p>
     </th>
     </tr>
     </thead>
