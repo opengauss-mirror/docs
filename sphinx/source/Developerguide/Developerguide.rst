@@ -25,5 +25,6 @@
     Extension
     B-compatibility
     物化视图
+	GUC参数
     错误日志信息参考
     常见故障定位指南
