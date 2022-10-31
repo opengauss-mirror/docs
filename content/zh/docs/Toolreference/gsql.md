@@ -901,6 +901,7 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 8**  输入和输出参数
 
 <a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_t0233128ab394456c80e339179cb56739"></a>
@@ -1265,6 +1266,7 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 13**  输入/输出元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table62130565"></a>
@@ -2147,6 +2149,7 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 22**  大对象元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table55465693"></a>

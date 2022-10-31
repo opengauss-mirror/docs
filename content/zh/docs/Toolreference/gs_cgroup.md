@@ -304,10 +304,6 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 </tbody>
 </table>
 
-​     
-
-
-
 ​    b.  查看操作系统中树形结构的控制组信息  
 ​    gs\_cgroup -P显示控制组树形结构信息，其中shares代表操作系统中CPU资源的动态资源配额“cpu.shares”的数值，cpus代表操作系统中CPUSET资源的动态资源限额“cpuset.cpus”的数值，指的是该控制组能够使用的核数范围。
 
