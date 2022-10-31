@@ -111,13 +111,13 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 <a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_t48caf3ebc47a4dce88ed8b7132976edd"></a>
 
-<table><thead align="left"><tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_r51b833dc5e8143c58149ede8fa1b93d1"><th class="cellrowborder" valign="top" width="13.969999999999999%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"></a>状态</p>
+<table><thead align="left"><tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_r51b833dc5e8143c58149ede8fa1b93d1"><th class="cellrowborder" valign="top" width="13.969999999999999%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p78888171777"></a><b>状态</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="24.8%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"></a>巡检项</p>
+<th class="cellrowborder" valign="top" width="24.8%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p207863101088"></a><b>巡检项</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="44.43%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"></a>检查内容</p>
+<th class="cellrowborder" valign="top" width="44.43%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_zh-cn_topic_0059777799_zh-cn_topic_0058968132_p58880171476"></a><b>检查内容</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="16.8%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"></a>是否支持--set</p>
+<th class="cellrowborder" valign="top" width="16.8%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p6883120124818"></a><b>是否支持--set</b></p>
 </th>
 </tr>
 </thead>
@@ -881,7 +881,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     ```
 
 
-## **用户自定义检查项**<a name="zh-cn_topic_0237152330_section1497431723111"></a>
+## 用户自定义检查项<a name="zh-cn_topic_0237152330_section1497431723111"></a>
 
 1.  新增巡检项配置，修改script/gspylib/inspection/config/items.xml文件，格式如下：
 
@@ -1006,11 +1006,11 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 **表 2**  操作系统参数
 
 <a name="zh-cn_topic_0237152330_table174711620568"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152330_row134711465560"><th class="cellrowborder" valign="top" width="24.08240824082408%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152330_p258931915710"><a name="zh-cn_topic_0237152330_p258931915710"></a><a name="zh-cn_topic_0237152330_p258931915710"></a>参数名称</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152330_row134711465560"><th class="cellrowborder" valign="top" width="24.08240824082408%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152330_p258931915710"><a name="zh-cn_topic_0237152330_p258931915710"></a><a name="zh-cn_topic_0237152330_p258931915710"></a><b>参数名称</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="52.04520452045204%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152330_p1358931917574"><a name="zh-cn_topic_0237152330_p1358931917574"></a><a name="zh-cn_topic_0237152330_p1358931917574"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="52.04520452045204%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152330_p1358931917574"><a name="zh-cn_topic_0237152330_p1358931917574"></a><a name="zh-cn_topic_0237152330_p1358931917574"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="23.87238723872387%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152330_p6590119125718"><a name="zh-cn_topic_0237152330_p6590119125718"></a><a name="zh-cn_topic_0237152330_p6590119125718"></a>推荐取值</p>
+<th class="cellrowborder" valign="top" width="23.87238723872387%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152330_p6590119125718"><a name="zh-cn_topic_0237152330_p6590119125718"></a><a name="zh-cn_topic_0237152330_p6590119125718"></a><b>推荐取值</b></p>
 </th>
 </tr>
 </thead>
