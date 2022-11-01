@@ -12,6 +12,8 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 -   新增join不带on/using,效果与cross join一致。
 
+-   新增PARTITION子句可指定多个分区。
+
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   查询数据
@@ -33,6 +35,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
+-   其中指定查询源from\_item为：
+
+    ```
+    {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+    [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
+    [TIMECAPSULE {TIMESTAMP|CSN} expression]
+    |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
+    |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+    |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
+    |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
+    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+    ```
 
 -   其中group子句为：
 
@@ -44,6 +58,16 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | CUBE ( { expression | ( expression [, ...] ) } [, ...] )
     | GROUPING SETS ( grouping_element [, ...] )
     ```
+
+-   其中指定分区partition\_clause为：
+
+    ```
+    PARTITION { ( partition_name [, ...] ) | 
+            FOR (  partition_value [, ...] ) }
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >指定分区只适合普通表。
 
     rollup_clause子句为：
 
@@ -82,8 +106,8 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 (1 row)
 ```
 
+- SELECT GROUP BY子句中使用ROLLUP
 ```
---SELECT GROUP BY子句中使用ROLLUP。
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
 openGauss=# CREATE TABLE t_with_rollup(id int, name varchar(20), area varchar(50), count int);
@@ -147,6 +171,31 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    1 |    1
     3 |    3 |    2 |    3
     3 |    3 |    4 |    4
+
+```
+
+- SELECT FROM PARTITION子句指定多个分区
+```
+openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
+openGauss-# (
+openGauss(#     partition test_part1 values less than (400),
+openGauss(#     partition test_part2 values less than (700),
+openGauss(#     partition test_part3 values less than (1000)
+openGauss(# );
+CREATE TABLE
+openGauss=# insert into multi_partition_select_test values(111);
+INSERT 0 1
+openGauss=# insert into multi_partition_select_test values(555);
+INSERT 0 1
+openGauss=# insert into multi_partition_select_test values(888);
+INSERT 0 1
+
+openGauss=# select a.* from multi_partition_select_test partition (test_part1, test_part2) a;
+ c_int
+-------
+   111
+   555
+(2 rows)
 
 ```
 
