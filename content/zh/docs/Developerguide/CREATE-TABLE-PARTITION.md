@@ -306,6 +306,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过64个。
 
+    2.0.0版本创建list分区时，不支持分区键是DEFAULT，会提示Un-support feature.
+
 -   **PARTITION BY HASH\(partition\_key\)**
 
     创建哈希分区。partition\_key为分区键的名称。
