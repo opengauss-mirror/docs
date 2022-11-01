@@ -229,7 +229,7 @@ UPDATE 1
 db_ignore=# select * from t_tinyint;
  num
 -----
- 255
+ 127
 (1 row)
 
 
