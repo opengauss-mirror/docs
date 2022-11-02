@@ -12,6 +12,7 @@
 6. 新增```date_bool/time_bool```函数。
 7. 新增```dayname/monthname/time_to_sec/month/day/date/week/yearweek```函数，修改了```last_day```函数。
 8. 新增```datediff/from_days/convert_tz/date_add/date_sub/adddate/addtime```函数，修改了```timestampdiff```函数。
+9. 新增```get_format/date_format/from_unixtime/str_to_date```函数，修改了```extract```函数。
 
 - curdate\(\)
 
@@ -1739,5 +1740,219 @@
   addtime       
   ---------------------
   2020-03-04 01:02:03
+  (1 row)
+  ```
+
+- get\_format\(expr1, expr2\)
+
+  描述：expr1可接收date、datetime、time三种类型名字，expr2可接收五种规格字符串：'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'。函数根据expr1和expr2返回对应类型的对应规格的字符串。
+
+  该函数返回值情况如下表所示：
+  |类型|规格|返回值|
+  |---|---|---|
+  |DATE|'USA'|'%m.%d.%Y'|
+  |DATE|'JIS'|'%Y-%m-%d'|
+  |DATE|'ISO'|'%Y-%m-%d'|
+  |DATE|'EUR'|'%d.%m.%Y'|
+  |DATE|'INTERNAL'|'%Y%m%d'|
+  |DATETIME|'USA'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'JIS'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'ISO'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'EUR'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'INTERNAL'|'%Y%m%d%H%i%s'|
+  |TIME|'USA'|'%h:%i:%s %p'|
+  |TIME|'JIS'|'%H:%i:%s'|
+  |TIME|'ISO'|'%H:%i:%s'|
+  |TIME|'EUR'|'%H.%i.%s'|
+  |TIME|'INTERNAL'|'%H%i%s'|
+
+  返回值类型：text
+
+  示例：
+  
+  ```
+  openGauss=# select get_format(datetime, 'iso');
+      get_format
+  -------------------
+  %Y-%m-%d %H:%i:%s
+  (1 row)
+  ```
+
+- extract\(unit from expr\)
+
+  描述：从expr参数中提取由unit参数指定的部分。
+
+  返回值：bigint
+
+  备注：
+
+  - 在B模式数据库中，当b_compatibility_mode为true时才会替代openGauss原有extract函数。
+
+  - expr参数在解析时按照unit参数解析。当unit涉及```YEAR、WEEK、QUARTER、MONTH、DAY```时，expr参数被解析为date或者datetime；当unit只涉及```HOUR、MINUTE、SECOND、MICRESECOND```时，expr参数被解析为time。
+  - extract函数可以提取复合unit。
+    - 复合unit有：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND，HOUR_MINUTE，HOUR_SECOND，HOUR_MICROSECOND，MINUTE_SECOND，MINUTE_MICROSECOND，SECOND_MICROSECOND```。
+    - 对于复合unit：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND```，由于这些unit中包含```DAY```部分，所以openGauss将expr当作datetime来解析。
+
+  示例：
+  
+  ```
+  openGauss=# set b_compatibility_mode = true;
+  SET
+
+  openGauss=# select extract(year from '2021-11-12 12:12:12.000123');
+   extract
+  ---------
+      2021
+  (1 row)
+
+  openGauss=# select extract(day_microsecond from '2021-11-12 12:12:12.000123');
+      extract
+  ----------------
+  12121212000123
+  (1 row)
+
+  openGauss=# select extract(hour_microsecond from '2021-11-12 12:12:12.000123');
+    extract
+  --------------
+  121212000123
+  (1 row)
+
+  openGauss=# set b_compatibility_mode = false;
+  SET
+  ```
+
+- date\_format\(expr, format\)
+
+  描述：expr参数为输入的date或者datetime格式内容，该函数根据format参数格式化expr参数对应部分，format参数取值如下表：
+  | 提取标志 | 意义 |取值范围|
+  | ------- |----- |-------|
+  |%a|简写工作日名称|Sun...Sat|
+  |%b|简写月份名称|Jan...Dec|
+  |%c|数字形式的月份|0...12|
+  |%D|有后缀的月份中的天数|0th, 1st, 2nd, 3rd, ...|
+  |%d|数字形式的月份中的天数|00...31|
+  |%e|数字形式的月份中的天数|0...31|
+  |%f|微秒|000000...999999|
+  |%H|小时|00...23|
+  |%h|小时|01...12|
+  |%I|小时|01...12|
+  |%i|分钟|00...59|
+  |%j|一年中的天数|001...366|
+  |%k|小时|0...23|
+  |%l|小时|1...12|
+  |%M|月份全称|January...December|
+  |%m|数字形式的月份|00...12|
+  |%p|上午或者下午|AM 或者 PM|
+  |%r|范围为12小时的时间|%r返回的时间格式为'hh:mm:ss AM'或者'hh:mm:ss PM'|
+  |%S|秒|00...59|
+  |%s|秒|00...59|
+  |%T|范围为24小时的时间|%T返回的时间格式为'hh:mm:ss'|
+  |%U|日期在一年中对应的周数（对应WEEK函数mode为0的情况）|00...53|
+  |%u|日期在一年中对应的周数（对应WEEK函数mode为1的情况）|00...53|
+  |%V|日期在一年中对应的周数（对应WEEK函数mode为2的情况）此标志应和'%X'一起使用|01...53|
+  |%v|日期在一年中对应的周数（对应WEEK函数mode为3的情况）此标志应和'%X'一起使用|01...53|
+  |%W|工作日全称|Sunday...Saturday|
+  |%w|工作日索引|0=Sunday...6=Saturday|
+  |%X|日期所在周数对应的四位数字年份（计算方式为Sunday是一周的第一天），此标志应和'%V'一起使用|...|
+  |%x|日期所在周数对应的四位数字年份（计算方式为Monday是一周的第一天），此标志应和'%v'一起使用|...|
+  |%Y|四位数字年份|...|
+  |%y|两位数字年份|...|
+  |%%|'%'字面量|...|
+  |%x|未列出的字符x|...|
+
+  返回值：text
+
+  示例：
+
+  ```
+  -- 将日期格式化为指定内容
+  openGauss=# select date_format('2001-01-01 12:12:12','%Y %M %H');
+  date_format   
+  -----------------
+  2001 January 12
+  (1 row)
+
+  -- 将日期格式化为所在周数或者工作日
+  openGauss=# select date_format('2001-01-01 12:12:12','%V %v %U %u %W %w');
+      date_format
+  ----------------------
+  53 01 00 01 Monday 1
+  (1 row)
+  ```
+
+- from\_unixtime\(unix\_timestamp\[,format\]\)
+
+  描述：第一个参数为数值格式的时间戳,代表距离'1970-01-01 00:00:00'UTC的秒数；第二个参数为可选字符串参数。第二参数不传入时，函数返回'1970-01-01 00:00:00' UTC + unix_timestamp + 当前时区偏移对应的datetime；当第二个参数给出时，函数会将datetime根据第二个参数进行格式化，格式化的方法与date_format函数相同。当unix_timestamp超过最大时间戳范围后，函数返回NULL。
+
+  返回值：
+  - 仅传入第一个参数时：datetime
+  - 传入两个参数时：text
+
+  示例：
+
+  ```
+  openGauss=# select from_unixtime(1);
+      from_unixtime
+  ---------------------
+  1970-01-01 08:00:01
+  (1 row)
+
+  openGauss=# select from_unixtime(1,'%Y');
+  from_unixtime 
+  ---------------
+  1970
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483647);
+      from_unixtime
+  ---------------------
+  2038-01-19 11:14:07
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483648);
+   from_unixtime
+  ---------------
+
+  (1 row)
+  ```
+
+- str\_to\_date\(str, format\)
+
+  描述：该函数是date_format函数的逆函数。函数会尝试将字符串str与字符串format匹配，并根据format中包含的标志来构造对应date格式、datetime格式或者time格式的内容。
+
+  返回值：
+  - 当format中标志仅包含时间相关字符串```'fHISThiklrs'```中的字符时：time格式内容
+  - 当format中标志仅包含日期相关字符串```'MVUXYWabcjmvuxyw'```中的字符时：date格式内容
+  - 当format中标志为上述两种情况混合时：datetime格式内容
+
+  示例：
+
+  ```
+  -- 普通构造日期
+  openGauss=# select str_to_date('01,5,2013','%d,%m,%Y');
+   str_to_date
+  -------------
+  2013-05-01
+  (1 row)
+
+  -- 使用年份，周数，工作日构造日期
+  openGauss=# select str_to_date('200442 Monday', '%X%V %W');
+   str_to_date
+  -------------
+  2004-10-18
+  (1 row)
+
+  -- 使用年份，天数构造日期
+  openGauss=# select str_to_date('2004 100', '%Y %j');
+   str_to_date
+  -------------
+  2004-04-09
+  (1 row)
+
+  -- 构造时间
+  openGauss=# select str_to_date('1:12:12 pm', '%r');
+   str_to_date
+  -------------
+  13:12:12
   (1 row)
   ```
