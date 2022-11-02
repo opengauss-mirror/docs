@@ -270,6 +270,13 @@ PG\_CLASS系统表存储数据库对象信息及其之间的关系。
 <p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"></a>xxxx表示赋予的权限，yyyy表示授予这个权限的角色。权限的参数说明请参见<a href="#zh-cn_topic_0283136767_zh-cn_topic_0237122277_zh-cn_topic_0059778035_td89f8f6cc98f4a11a08b3c45d852a6cc">表2</a>。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_row11845015339"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1918516011336"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1918516011336"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1918516011336"></a>reloptions</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p18185509339"></a>text[]</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p171281349143316"></a>表或索引的访问方法，使用"keyword=value"格式的字符串。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_row6912152512319"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p9912325102310"></a>relreplident</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"></a><a name="zh-cn_topic_0283136767_zh-cn_topic_0237122277_p1891252562312"></a>"char"</p>
