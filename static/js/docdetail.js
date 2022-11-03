@@ -106,9 +106,9 @@ $(function ($) {
         const lang=hrefArray[1]
         let targetHref=''
         if(version.includes('lite')){
-            targetHref=nowHref.replace(`/${lang}/docs/${version}/`,`/${version.replace('-lite','')}/content/docs-lite/${lang}/`)
+            targetHref=nowHref.replace(`/${lang}/docs/${version}/`,`/${version.replace('-lite','').replace('latest','master')}/content/docs-lite/${lang}/`)
         }else{
-            targetHref=nowHref.replace(`/${lang}/docs/${version}/`,`/${version}/content/${lang}/`)
+            targetHref=nowHref.replace(`/${lang}/docs/${version}/`,`/${version.replace('latest','master')}/content/${lang}/`)
         }
         window.open('https://gitee.com/opengauss/docs/blob'+targetHref)
     });

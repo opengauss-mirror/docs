@@ -282,6 +282,14 @@
   background: 0 0;
   overflow-x: auto;
 }
+ pre +pre{
+  margin-top: 16px;
+}
+@media screen and (max-width: 768px){
+  pre +pre{
+    margin-top: 8px;
+  }
+}
 .markdown [class*="language-"] code {
   padding: 0;
   line-height: var(--o-line-height-text);
@@ -581,4 +589,5 @@
 .dark .markdown img {
   filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
+
 /*# sourceMappingURL=test.css.map */
