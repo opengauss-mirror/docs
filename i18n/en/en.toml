@@ -1,0 +1,266 @@
+#list page
+[hot_document]
+other = "Hot documents"
+
+[A-Tune_content]
+other = "This document describes how to install and use A-Tune, which is a performance self-optimization software for openGauss."
+
+[A-Tune_header]
+other = "A-Tune User Guide"
+
+[A-Tune_link]
+other = "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
+
+[secGear_content]
+other = "This document provides common administrator operations of the openGauss system to help administrators better use the system. This document is intended for all administrators who use openGauss."
+
+[secGear_header]
+other = "Administrator Guide"
+
+[secGear_link]
+other = "/en/docs/20.03_LTS/docs/Administration/administration.html"
+
+[StratoVirt_content]
+other = "This document is intended for openGauss users who need to install containers. "
+
+[StratoVirt_header]
+other = "Container User Guide"
+
+[StratoVirt_link]
+other = "/en/docs/20.03_LTS/docs/Container/container.html"
+
+[container_content]
+other = "This guide describes how to install Huawei openGauss."
+
+[container_header]
+other = "Installation Guide"
+
+[container_link]
+other = "/en/docs/20.03_LTS/docs/Installation/Installation.html"
+
+[document]
+other = "Document"
+
+[version_selection]
+other = "Version selection"
+
+[version_text]
+other = "Version"
+
+[current_lang]
+other = "English"
+
+[search]
+other = "search"
+
+[search_placeholder]
+other = "Input content"
+
+[quick_links]
+other = "Quick links"
+
+[kunpeng_community]
+other = "Kunpeng community"
+
+[document_link]
+other = "Documentation"
+
+[openeuler_document]
+other = "openGauss Documentation"
+
+[catalog_text]
+other = "Content"
+
+[other_text]
+other = "Reference Links"
+
+[know_90_1]
+other = "/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
+[know_91_1]
+other = "/en/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html"
+[know_92_1]
+other = "/en/docs/2.1.0/docs/Quickstart/learning-product-knowledge.html"
+[know_93_1]
+other = "/en/docs/2.0.1/docs/Quickstart/learning-product-knowledge.html"
+[know_94_1]
+other = "/en/docs/2.0.0/docs/Quickstart/learning-product-knowledge.html"
+[know_95_1]
+other = "/en/docs/1.1.0/docs/Quickstart/learning-product-knowledge.html"
+[know_96_1]
+other = "/en/docs/1.0.1/docs/Quickstart/learning-product-knowledge.html"
+[know_97_1]
+other = "/en/docs/1.0.0/docs/Quickstart/Quickstart.html"
+[know_98_1]
+other = "/en/docs/latest/docs/BriefTutorial/BriefTutorial.html"
+[version_90]
+other = "3.1.0"
+[version_91]
+other = "3.0.0"
+[version_92]
+other = "2.1.0"
+[version_93]
+other = "2.0.1"
+[version_94]
+other= "2.0.0"
+[version_95]
+other = "1.1.0"
+[version_96]
+other = "1.0.1"
+[version_97]
+other= "1.0.0"
+[version_98]
+other = "latest"
+
+[download_docs]
+other = "Download"
+[download_link_90]
+other = "3.1.0-link"
+[download_link_91]
+other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-en-3.0.0.zip"
+[download_link_92]
+other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-en-2.1.0.zip"
+[download_link_93]
+other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.0/openGauss-document-en-2.0.0.zip"
+[download_link_94]
+other= "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.0/openGauss-document-en-2.0.0.zip"
+[download_link_95]
+other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-en-1.1.0-2021-01-12.zip"
+[download_link_96]
+other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-en-1.0.1-2020-10-12.zip"
+[download_link_97]
+other= "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-document-en-1.0.0-2020-09-10.zip"
+[download_link_98]
+other = "latest-link"
+
+[atom]
+other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
+
+[copy_right]
+other = "Copyright © openGauss 2022. All rights reserved."
+
+[attention]
+other = "WeChat Subscription"
+
+[source_code]
+other = "Source Code"
+
+[feedbook]
+other = "Feedback"
+
+[previous]
+other = "Previous"
+
+[next]
+other = "Next"
+
+[evaluate]
+other = "Rating"
+
+[issue_1]
+other = "规范和低错类"
+
+[issue_2]
+other = "易用性"
+
+[issue_3]
+other = "正确性"
+
+[issue_4]
+other = "风险提示"
+
+[issue_5]
+other = "内容合规"
+
+[issue_title]
+other = "有奖捉虫"
+
+[issue_part]
+other = "“有虫”文档片段"
+
+[issue_reason]
+other = "存在的问题"
+
+[satisfaction]
+other = "您对文档的总体满意度"
+
+[low_score]
+other = "非常不满意"
+
+[high_score]
+other = "非常满意"
+
+[join_reason]
+other = "请问是什么原因让您参与到这个问题中"
+
+[own_job]
+other = "本职工作"
+
+[job_wanted]
+other = "求职"
+
+[technology]
+other = "技术兴趣"
+
+[study]
+other = "学习"
+
+[email]
+other = "您的邮箱"
+
+[text_email]
+other = "我们可能针对您提出的问题，向您发送邮件反馈进行方案。如有获奖信息，也会通过此方式通知您。"
+
+[privacy_text]
+other = "您理解并同意，您填写并提交的内容，即视为您已充分阅读并同意openGauss的"
+
+[privacy_link]
+other = "隐私声明"
+
+[btn_submit]
+other = "创Issue赢奖品"
+
+[back]
+other = "返回顶部"
+
+[questionnaire]
+other = "Feedback"
+
+#search page
+
+[result_1]
+other = " "
+
+[result_2]
+other = " search results about "
+
+[result_3]
+other = " are found"
+
+[hot_docs_version]
+other = "20.03 LTS"
+
+[cancel]
+other = "cancel"
+
+[atom-text]
+other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
+[brand]
+other = "Trademark"
+[privacy]
+other = "Privacy Policy"
+[legal]
+other = "Legal Notice"
+[relative]
+other = "About Us"
+[service]
+other = "Service Status"
+[wechat]
+other = "WeChat Subscription"
+[lang]
+other = "en"
+[opengauss]
+other = "https://www.openGauss.org/en/"
+[enterprise]
+other = "Enterprise"
+[lite]
+other = "Lite"

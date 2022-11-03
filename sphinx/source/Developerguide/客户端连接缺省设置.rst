@@ -1,7 +1,0 @@
-
-
-.. toctree::
-
-    content/zh/docs/Developerguide/语句行为
-    content/zh/docs/Developerguide/区域和格式化
-    content/zh/docs/Developerguide/其他缺省

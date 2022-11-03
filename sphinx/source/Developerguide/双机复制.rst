@@ -1,7 +1,0 @@
-
-
-.. toctree::
-
-    content/zh/docs/Developerguide/发送端服务器
-    content/zh/docs/Developerguide/主服务器
-    content/zh/docs/Developerguide/备服务器

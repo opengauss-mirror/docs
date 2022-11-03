@@ -1,0 +1,223 @@
+{{ template "_internal/google_analytics.html" . }}
+<div class="mask"></div>
+<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/jq.base64.js"></script>
+<script src="{{ .Site.BaseURL }}js/jstree.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/sensorsdata.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/sensors.js"></script>
+<script src="{{ .Site.BaseURL }}js/revision_new.js"></script>
+<div id="mask" onclick="hideNav()"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function getRelativePath() {
+            var url = location.href;
+            var arrURL = url.split("//");
+            return arrURL[1].substring(arrURL[1].indexOf("/"));
+        }
+        function getCurrentID(wholeData, relativeURL) {
+            for (var j in wholeData) {
+                var href = wholeData[j].a_attr.href;
+                var text = wholeData[j].text;
+                //debugger;
+                if ((encodeURIComponent(href).toLowerCase() == encodeURIComponent(relativeURL).toLowerCase()) || (text.indexOf(relativeURL) >= 0)) {
+                    return wholeData[j].id;
+                } else {
+                    if (wholeData[j].children.length > 0) {
+                        var v = getCurrentID(wholeData[j].children, relativeURL);
+                        if (v != "") {
+                            return v;
+                        }
+                    }
+                }
+            }
+            return "";
+        }
+        if ($('#docstreeview').length) {
+            $('#docstreeview').jstree();
+            $('#docstreeview').jstree().hide_dots();
+            $('#docstreeview').jstree().hide_icons();
+            $('#docstreeview').on("changed.jstree", function (e, data) {
+                if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+                    const tierData = data.node.parents
+                    tierData.unshift(data.node.id)
+                    tierData.pop()
+                    getTiername(tierData)
+                }
+                if (data.node) {
+                    var link = data.node.a_attr.href;
+                    if (link == "" || link == "#") {
+                        var aElementID = "#" + data.node.id + "_anchor";
+                        var aElement = $(aElementID).find("a");
+                        if (aElement.length) {
+                            link = aElement.attr("href");
+                        }
+                    }
+                    var relativeURL = getRelativePath();
+                    if (link != relativeURL) {
+                        location.href = link;
+                    }
+                }
+            });
+
+            $("#docstreeview").on("ready.jstree", function (e, data) {
+                $("#docsMenu").show();
+                var relativeURL = getRelativePath();
+                var wholeData = $("#docstreeview").jstree().get_json();
+                var currentID = getCurrentID(wholeData, relativeURL);
+                $("#docstreeview").jstree()._open_to(currentID);
+                $('#docstreeview').jstree().select_node(currentID);
+                $('#docstreeview').jstree().open_node(currentID);
+                // 获取上/下一页 URL
+                let result = [];
+                let nodeList = [];
+                /*把树状平铺，用于查看是否有上一页下一页*/
+                function getAllData(Arr) {
+                    for (var i = 0; i < Arr.length; i++) {
+                        var tempNode = {};
+                        tempNode.id = Arr[i].id;
+                        var href = Arr[i].a_attr.href;
+                        if (href === '#') {
+                            //转为jq对象特殊处理
+                            var jqNode = $(Arr[i].id);
+                            tempNode.href = jqNode.find('a').attr('href');
+                        } else {
+                            tempNode.href = href;
+                        }
+                        nodeList.push(tempNode);
+                        if (Arr[i].children !== []) {
+                            getAllData(Arr[i].children);
+                        }
+                    }
+                };
+                /*获取上一页、下一页*/
+                function nextAndPevious(arr, id) {
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i].id === id) {
+                            if (i === 0) {
+                                result.push(null);
+                            } else {
+                                result.push(arr[i - 1].href);
+                            }
+                            if (i === arr.length - 1) {
+                                result.push(null);
+                            } else {
+                                result.push(arr[i + 1].href);
+                            }
+                        }
+                    }
+                    return result;
+                };
+                getAllData(wholeData);
+                nextAndPevious(nodeList, currentID);
+                result[0] == null ? $('#prev').addClass('disabled') : $('#prev a').attr('href', result[0]);
+                result[1] == null ? $('#next').addClass('disabled') : $('#next a').attr('href', result[1]);
+                result[0] == null ? $('#h5-menu .h5-prev').addClass('disabled') : $('#h5-menu .h5-prev a').attr('href', result[0]);
+                result[1] == null ? $('#h5-menu .h5-next').addClass('disabled') : $('#h5-menu .h5-next a').attr('href', result[1]);
+            });
+        }
+        function showNav() {
+            $('#menu').css({
+                "transform": "translateX(0)"
+            }).attr("onoff", "on");
+            $('.mask').addClass('maskLayer');
+        }
+        function hideNav() {
+            $('#menu').css({
+                "transform": "translateX(-100%)"
+            }).attr("onoff", "off");
+            $('.mask').removeClass('maskLayer');
+        }
+
+        $("#slideNav").bind('click', function () {
+            if ($('#menu').attr("onoff") == "on") {
+                hideNav();
+            } else {
+                showNav();
+            }
+        })
+
+        // 点击遮罩层隐藏
+        $('.mask').bind('click', function() {
+            if ($('#menu').attr("onoff") == "on") {
+                hideNav();
+            } else {
+                showNav();
+            }
+        })
+
+        /* 获取当前所在层级名称以及父层级名称 */
+        function getTiername(data) {
+            const iterName = [],iterUrl = []
+            if(Array.isArray(data)) {
+                data.map(function (item) {
+                    iterName.unshift($('#'+item+'_anchor').text())
+                    iterUrl.unshift($('#'+item+'_anchor').attr('href'))
+                })
+            }
+
+            let aNode = [];
+            for(let i=0;i<iterName.length;i++) {
+                aNode.push(i == (iterName.length - 1) ?  '<a href="'+iterUrl[i]+'">'+iterName[i]+'</a>' : '<a href="'+ iterUrl[i]+ '">'+ iterName[i]+ '</a><span>&gt</span>');
+            }
+            $('.breadcrumbs').append(aNode.toString())
+        }
+
+        /* 解决滚动后导航栏fixed脱离文档流导致滚动条不能到底 */
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            console.log("这是手机")
+        }else {
+            $(window).scroll(function(){
+                if($(document).scrollTop()>=$('.navbar-affixed-top').height()) {
+                    $('#heading-breadcrumbs').addClass('breadcrumbs_top')
+                }else {
+                    $('#heading-breadcrumbs').removeClass('breadcrumbs_top')
+                }
+            });
+        }
+ 
+        /* 给每个pre添加复制代码功能 */
+        let preList = $(".markdown pre");
+        for (let i = 0; i < preList.length; i++) {
+            let pre = preList[i];
+            let btn = $(`<span class='btn_pre_copy'>{{ i18n "copy_code" }}</span>`);
+            btn.prependTo(pre);
+        }
+
+        $('.btn_pre_copy').hover(function () {
+            $(this).css('background-image', 'url(/img/common/copyed.png)');
+        }, function () {
+            $(this).css('background-image', 'url(/img/common/copy.png)');
+        })
+
+        $('.btn_pre_copy').click(function() {
+            let copyNode = $("<textarea></textarea>");
+            let parentNode = $(this).parent().clone();//克隆当前点击复制按钮的父节点
+            var $this = $(this);
+            parentNode.find(".btn_pre_copy").remove();//移除所有class为btn_pre_copy的元素（即复制按钮）
+            copyNode.text(parentNode.text());//转换为文本
+            $('body').append(copyNode);
+            copyNode.select();
+            document.execCommand("Copy");
+            copyNode.remove();
+            $this.css('background-image', 'url(/img/common/copy-success.png)');
+            setTimeout(function () {
+                $this.css('background-image', 'url(/img/common/copy.png)');
+            },1500)
+        })
+        window.lang = $('html').attr('lang');
+        $("#nav-search>div>.search-text").bind('keypress',function(event){
+            if(event.keyCode == "13") {
+                keyword = $("#nav-search .search-text").val();
+            }
+        });
+        $("#nav-search .icon-search").click(function (e) {
+            $("#result-container").css("display","block");
+            $(".baseof_mask").css('display','block');
+            keyword = $("#nav-search .search-text").val();
+            $("#title-evaluate").addClass("bug-hide")
+        });
+        let homeUrl = "/"+ lang + "/";
+        $(".nav-menu>.left").find("a").attr("href",homeUrl);
+    });
+</script>
+<script src="{{ "js/doclist.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>

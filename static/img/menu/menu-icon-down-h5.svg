@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_down</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="手机文档目录" transform="translate(-30.000000, -539.000000)">
+            <g id="博客内容" transform="translate(30.000000, 140.000000)" fill="#000000" fill-opacity="0.500983392"  font-size="14" font-weight="normal" line-spacing="24">
+                <text id="在计算机技术中，虚拟化是一种资源管理技术">
+                    <tspan x="0" y="115">在计算机技术中，虚拟化是一种资源管理技术，它</tspan>
+                    <tspan x="0" y="139">将计算机的各种实体资源（处理器、内存、磁盘、</tspan>
+                    <tspan x="0" y="163">网络适配器等）予以抽象，转换后呈现并可供分</tspan>
+                    <tspan x="0" y="187">割、组合为一个或多个计算机配置环境。这种资源</tspan>
+                    <tspan x="0" y="211">管理技术打破了实体结构不可分割的障碍，使这些</tspan>
+                    <tspan x="0" y="235">资源在虚拟化后不受现有资源的架设方式、地域或</tspan>
+                    <tspan x="0" y="259">物理配置限制，从而让用户可以更好地应用计算机</tspan>
+                    <tspan x="0" y="283">硬件资源，提高资源利用率。</tspan>
+                    <tspan x="0" y="307">虚拟化使得一台物理服务器上可以运行多台虚拟</tspan>
+                    <tspan x="0" y="331">机，虚拟机共享物理机的处理器、内存、I/O资源</tspan>
+                    <tspan x="0" y="355">等，但逻辑上虚拟机之间是互相隔离的。在虚拟化</tspan>
+                    <tspan x="0" y="379">技术中，通常将这个物理服务器称为宿主机，宿主</tspan>
+                    <tspan x="0" y="403">机上运行的虚拟机也叫客户机，虚拟机内部运行的</tspan>
+                    <tspan x="0" y="427">操作系统称为客户机操作系统。在宿主机和虚拟机</tspan>
+                    <tspan x="0" y="451">之间存在一层叫虚拟化层的软件，用于实现虚拟硬</tspan>
+                    <tspan x="0" y="475">件的模拟，通常这个虚拟化层被称为虚拟机监视</tspan>
+                    <tspan x="0" y="499">器。</tspan>
+                </text>
+            </g>
+            <rect id="矩形" fill-opacity="0.102491259" fill="#000000" x="0" y="70" width="375" height="3308"></rect>
+            <rect id="矩形" fill="#FBFBFB" x="0" y="70" width="375" height="844"></rect>
+            <g id="编组-6" transform="translate(30.000000, 196.000000)">
+                <g id="编组" transform="translate(0.000000, 35.000000)"></g>
+            </g>
+            <g id="编组-6备份-3" transform="translate(30.000000, 504.000000)" fill="#002FA7">
+                <g id="编组" transform="translate(1.000000, 35.000000)">
+                    <g id="Outlined/UI/button_down" transform="translate(7.000000, 7.000000) rotate(90.000000) translate(-7.000000, -7.000000) ">
+                        <path d="M3.5,3.5 L3.50309359,9.40111412 C3.50452522,9.88232922 3.89427149,10.2720755 4.37548659,10.2735071 L10.2766007,10.2766007 L10.2735071,9.40111412 L4.37548659,9.40111412 L4.37548659,3.50309359 L3.5,3.5 Z" id="Style备份" transform="translate(6.888300, 6.888300) rotate(-135.000000) translate(-6.888300, -6.888300) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

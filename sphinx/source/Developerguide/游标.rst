@@ -1,8 +1,0 @@
-
-
-.. toctree::
-	
-    content/zh/docs/Developerguide/游标概述
-    content/zh/docs/Developerguide/显式游标
-    content/zh/docs/Developerguide/隐式游标
-    content/zh/docs/Developerguide/游标循环

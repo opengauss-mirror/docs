@@ -1,5 +1,11 @@
 public
-resources/_gen
-
-.idea/
-.vscode/
+resources/_gen.DS_Store
+*/.DS_Store
+*.pyc
+*.vscode
+/content/zh/docs
+/content/en/docs
+/web-ui/node_modules
+/web-ui/package-lock.json
+public
+layouts/partials/docs/test.html
