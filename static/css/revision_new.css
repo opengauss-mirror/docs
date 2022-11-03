@@ -705,6 +705,9 @@ body{
   padding: 0 12px;
   border-right: 1px solid #fff;
 }
+.footer .inner .footer-option .footer-option-item .link:nth-last-of-type(1){
+  border-right: none;
+}
 .footer .inner .footer-option .copyright {
   margin-top: 16px;
   font-size: 12px;
