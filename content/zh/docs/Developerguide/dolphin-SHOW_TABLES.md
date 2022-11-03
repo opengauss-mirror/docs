@@ -24,7 +24,7 @@ SHOW [FULL] TABLES
 
 - **LIKE 'pattern'**
 
-   patternp匹配显示结果第一列(列名为'Tables_in_dbname [`pattern`]'）。
+   pattern匹配显示结果第一列(列名为'Tables_in_dbname [`pattern`]'）。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
