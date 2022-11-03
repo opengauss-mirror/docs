@@ -9,7 +9,7 @@ provided for customers and users. So all code modifications SHOULD be submitted 
 This repository is integrated by website which will provide the final outline, so please only maintain docs in this repository.
 anything others like styles, js are maintained in website as a combined hugo theme.
 
-Contents organized by hugo book  which is a framework helping build our own book.
+Contents oranganized by hugo book  which is a framework helping build our own book.
 please refer to hugo book [website](https://github.com/alex-shpak/hugo-book) for more detailed information.
 
 All files are written with MarkDown syntax, please note: If you want to add internal links,

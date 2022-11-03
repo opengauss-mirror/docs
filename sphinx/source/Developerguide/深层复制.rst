@@ -1,7 +1,0 @@
-
-
-.. toctree::
-
-    content/zh/docs/Developerguide/使用CREATE-TABLE执行深层复制
-    content/zh/docs/Developerguide/使用CREATE-TABLE-LIKE执行深层复制
-    content/zh/docs/Developerguide/通过创建临时表并截断原始表来执行深层复制

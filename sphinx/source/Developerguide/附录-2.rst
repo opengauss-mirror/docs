@@ -1,6 +1,0 @@
-
-
-.. toctree::
-
-    content/zh/docs/Developerguide/参考文献
-    content/zh/docs/Developerguide/术语表

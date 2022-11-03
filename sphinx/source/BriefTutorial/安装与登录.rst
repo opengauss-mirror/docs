@@ -1,9 +1,0 @@
-
-.. toctree::
-
-    content/zh/docs/BriefTutorial/获取安装包
-    content/zh/docs/BriefTutorial/准备软硬件安装环境
-    content/zh/docs/BriefTutorial/单节点安装
-    content/zh/docs/BriefTutorial/一主一备节点安装
-    content/zh/docs/BriefTutorial/gsql连接与使用方法
-

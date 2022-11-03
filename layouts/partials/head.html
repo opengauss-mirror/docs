@@ -1,0 +1,46 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ $versionArr := split $.File.Path "docs\\" }}
+    {{ $version := index $versionArr 1}}
+    {{ $version := split $version "\\" }}
+    {{ $version := index $version 0}}
+    {{ $title := "" }}
+    {{ if .Title }}
+        {{ $title = .Title }}
+    {{ else if and .IsSection .File }}
+        {{ $sections := split (trim .File.Dir "/") "/" }}
+        {{ $title = index ($sections | last 1) 0 | humanize | title }}
+    {{ else if and .IsPage .File }}
+        {{ $title = .File.BaseFileName | humanize | title }}
+    {{ end }}
+    {{ if $version}}
+    <title>{{ $title }} | {{ .Site.Title }} | v{{ $version }}</title>
+    {{ else }}
+    <title>{{ $title -}} </title>
+    {{ end }}
+    {{ if default .Summary .Description }}
+    <meta name="description" content="{{ default .Summary .Description }}">
+    {{ else if .Site.Params.DefaultDescription }}
+    <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+    {{ end }}
+    <meta name="author" content="{{ .Site.Params.author }}" >
+    <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
+    <link href="/css/theme.css" rel="stylesheet" type="text/css">
+    <link href="{{ "css/h5_footer.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+    <link href="{{ "css/common.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+    <link href="{{ "css/pagination.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/revision_new.css" rel="stylesheet" type="text/css">
+    {{ if ne .Site.LanguageCode "ru"}}
+    <script src="{{ .Site.BaseURL }}js/analytics.js"></script>
+    {{ end }}
+    <script src="{{ .Site.BaseURL }}js/highlight.min.js"></script>
+    <script src="{{ .Site.BaseURL }}js/tex.min.js"></script>
+    <link href="/css/monokai.min.css" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{{ .Site.BaseURL }}js/init-theme.js"></script>
+</head>

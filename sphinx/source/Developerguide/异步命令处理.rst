@@ -1,9 +1,0 @@
-
-
-.. toctree::
-	
-    content/zh/docs/Developerguide/PQsendQuery
-    content/zh/docs/Developerguide/PQsendQueryParams
-    content/zh/docs/Developerguide/PQsendPrepare
-    content/zh/docs/Developerguide/PQsendQueryPrepared
-    content/zh/docs/Developerguide/PQflush

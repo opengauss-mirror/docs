@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <link href="{{ "css/docdetail.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/markdown.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+
+  <body>
+    <!-- <div class="feedback">
+      <img src="/img/detail/gift.png" title="点击参与有奖捉虫" alt="">
+  </div> -->
+    <div id="all">
+      <div class="left">
+        <div id="menu-box">
+        <div class="pc-logo">
+          <a href="javaScript:;"><img src="\img\logo-dark.svg" alt="logo" /></a>
+        </div>
+        <div id="h5-menu-top">
+          <div class="h5-logo">
+            <div class="logo-img">
+            </div>
+            <i class="icon-close"></i>
+          </div>
+          <div class="container menu-select-box">
+            <div class="select-box">
+              <p>{{i18n "version_selection"}}</p>
+              <i class="icon-servision"></i>
+            </div>
+            <div class="option">
+              <a href="{{ i18n "know_98_1"}}">{{ i18n "version_98" }}</a>
+              <a href="{{ i18n "know_90_1"}}">{{ i18n "version_90" }}</a>
+              <a href="{{ i18n "know_91_1"}}">{{ i18n "version_91" }}</a>
+              <a href="{{ i18n "know_92_1"}}">{{ i18n "version_92" }}</a>
+              <a href="{{ i18n "know_93_1"}}">{{ i18n "version_93" }}</a>
+              <a href="{{ i18n "know_94_1"}}">{{ i18n "version_94" }}</a>
+              <a href="{{ i18n "know_95_1"}}">{{ i18n "version_95" }}</a>
+              <a href="{{ i18n "know_96_1"}}">{{ i18n "version_96" }}</a>
+              <a href="{{ i18n "know_97_1"}}">{{ i18n "version_97" }}</a>
+              <div class="angle"></div>
+              <div class="switch-version">
+                <span class="text enterprise checked">{{ i18n "enterprise" }}</span>
+                <input type="checkbox" class="switch" id="switchInput">
+                <span class="text lite">{{ i18n "lite" }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="version-select">
+          <span></span>
+          <div class="option">
+            <span href="{{i18n "know_98_1"}}">{{ i18n "version_98" }}</span>
+            <span href="{{ i18n "know_90_1"}}">{{ i18n "version_90" }}</span>
+            <span href="{{ i18n "know_91_1"}}">{{ i18n "version_91" }}</span>
+            <span href="{{ i18n "know_92_1"}}">{{ i18n "version_92" }}</span>
+            <span href="{{ i18n "know_93_1"}}">{{ i18n "version_93" }}</span>
+            <span href="{{ i18n "know_94_1"}}">{{ i18n "version_94" }}</span>
+            <span href="{{i18n "know_95_1"}}">{{ i18n "version_95" }}</span>
+            <span href="{{i18n "know_96_1"}}">{{ i18n "version_96" }}</span>
+            <span href="{{i18n "know_97_1"}}">{{ i18n "version_97" }}</span>
+          </div>
+        </div>
+        <div class="switch-version switch-pc">
+          <span class="text enterprise checked">{{ i18n "enterprise" }}</span>
+          <input type="checkbox" class="switch" id="switchInput">
+          <span class="text lite">{{ i18n "lite" }}</span>
+        </div>
+        
+        </div>
+        {{ partial "docs/menu" . }}
+        <div class="h5-theme-lang">
+           <div class="lang">
+            <a href="/zh/">中文</a>
+            <a href="/en/">EN</a>
+           </div>
+           <div class="theme-change">
+            <i class="icon-theme light"></i>
+        </div>
+        </div>
+      </div>
+       <div id="content">
+        {{ $versionArr := split $.File.Path "docs\\" }}
+        {{ $version := index $versionArr 1}}
+        {{ $version := split $version "\\" }}
+        {{ $version := index $version 0}}
+        {{ $lang := .Site.LanguageCode}}
+          <main class="docscontainer">
+            {{ partial "nav.html" . }}
+            <div id="h5-menu">
+              <ul>
+                <li class="h5-prev">
+                  <a href="javaScript:;"><i class="icon-prev"></i><span>{{ i18n "previous" }}</span></a>
+                </li>
+                <li class="h5-sersion">
+                </li>
+                <li class="h5-next">
+                  <a href="javaScript:;"><span>{{ i18n "next" }}</span><i class="icon-next"></i></a>
+                </li>
+              </ul>
+          </div>
+            <div class="h5-mask"></div>
+            <div class="book-page container" id="page">
+              <div class="page-content">
+                {{ partial "turn.html"}}
+                <div class="docs-a h5-docs-a">
+                </div> 
+                {{ template "main" . }}
+                {{ partial "insideNav.html"}}
+              </div>
+                <aside class="book-toc">
+                  <ul id="toc-list"></ul>
+                </aside>
+            </div>
+            {{ partial "pcfooter.html" . }}
+          </main>
+      </div>
+      <div class="zhezhao"></div>
+        <div class="searcher">
+          <div class="h5-search">
+            <i class="icon-search" style="right: 0px;"></i>
+            <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+            <i class="icon-clear" ></i>
+            <div class="cancel-btn">{{ i18n "cancel" }}</div>
+        </div>
+            <div class="search-result h5-search-result">
+                <!-- <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p> -->
+                <ul>
+
+                </ul>
+                <div id="pagination"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    <script src="{{ .Site.BaseURL }}js/docdetail.js"></script>
+    <script>
+      $(document).ready(function () {
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          const h = $('.book-page').height();
+          $('.docscontainer').height(h);
+			  }
+      });
+    </script>
+    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+  </body>
+</html>

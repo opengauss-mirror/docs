@@ -1,8 +1,0 @@
-
-
-.. toctree::
-
-    content/zh/docs/Developerguide/定义变量
-    content/zh/docs/Developerguide/赋值语句
-    content/zh/docs/Developerguide/调用语句
-

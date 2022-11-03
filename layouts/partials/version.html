@@ -1,0 +1,43 @@
+<div id="version-select">
+    <span></span>
+    <i class="v-icon-down"></i>
+    <div class="option">
+      <a href="{{ i18n "know_91_1"}}">{{ .Site.Params.version_91 }}</a>
+      <a href="{{ i18n "know_92_1"}}">{{ .Site.Params.version_92 }}</a>
+      <a href="{{ i18n "know_93_1"}}">{{ .Site.Params.version_93 }}</a>
+      {{ if ne .Site.LanguageCode "ru"}}
+      <a href="{{ i18n "know_94_1"}}">{{ .Site.Params.version_94 }}</a>
+      <a href="{{ i18n "know_95_1"}}">{{ .Site.Params.version_95 }}</a>
+      <a href="{{ i18n "know_96_1"}}">{{ .Site.Params.version_96 }}</a>
+      {{ end }}
+      <a href="{{ i18n "know_97_1"}}">{{ .Site.Params.version_97 }}</a>
+      <a href="{{ i18n "know_98_1"}}">{{ .Site.Params.version_98 }}</a>
+      <div class="angle"></div>
+    </div>
+  </div>
+  <div id="h5-menu-top">
+    <p>{{ i18n "catalog_text" }}<i class="icon-close"></i></p>
+    <div class="container menu-select-box">
+      <div class="select-box">
+        <span></span>
+        <i class="icon-down"></i>
+        <div class="option">
+          {{ if ne .Site.LanguageCode "ru"}}
+              <a href="{{ i18n "know_91_1"}}">22.03 LTS</a>
+              <a href="{{ i18n "know_92_1"}}">20.03 LTS SP3</a>
+              {{ end }}
+              <a href="{{ i18n "know_93_1"}}">21.09</a>
+              {{ if ne .Site.LanguageCode "ru"}}
+              <a href="{{ i18n "know_94_1"}}">20.03 LTS SP2</a>
+              <a href="{{i18n "know_96_1"}}">20.03 LTS SP1</a>
+              {{ end }}
+              <a href="{{i18n "know_98_1"}}">20.03 LTS</a>
+              {{ if ne .Site.LanguageCode "ru"}}
+              <a href="{{i18n "know_95_1"}}">21.03</a>
+              {{ end }}
+              <a href="{{i18n "know_97_1"}}">20.09</a>
+          <div class="angle"></div>
+        </div>
+      </div>
+    </div>
+  </div>

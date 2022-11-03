@@ -1,0 +1,58 @@
+<nav class="nav-box">
+  <div class="nav-menu container pc-nav-menu">
+    <!-- <div class="left">
+      <a href="javaScript:;"><img src="\img\common\logo_dark.svg" alt="" /></a>
+    </div> -->
+    <!-- <div class="h5_nav_left">
+      <a href="/{{.Site.LanguageCode}}/"
+        ><img id="img" src="\img\common\logo-h5.png" alt=""
+      /></a>
+      <span class="home">{{ i18n "document_link" }}</span>
+    </div> -->
+    <div class="docs-a">
+    </div> 
+    <div class="right" id="right-style">
+        {{ partial "link.html" }}
+        <div class="right-nav">
+          <div id="nav-search">
+            <i class="icon-search"></i>
+          </div>
+          <div id="result-container">
+            <div class="search-header">
+              <i class="icon-search"></i>
+              <input type="text" class="search-text" placeholder="{{ i18n
+              "search_placeholder" }}" />
+            </div>
+            <div class="search-result" class="container result-style">
+              <ul style="border: none"></ul>
+              <div id="baseof-pagination"></div>
+            </div>
+          </div>
+          <div class="baseof_mask">
+            <div class="loading-box">
+              <img src="/img/detail/loading.gif" alt="" />
+            </div>
+          </div>
+          <div name="lang" id="lang">
+            <span>{{ i18n "current_lang" }}</span>
+            <i class="icon-down"></i>
+            <div class="option web-lang lang-menu-list">
+              <a href="/zh/" class="lang-item">{{ .Site.Params.languageZh }}</a>
+              <a href="/en/" class="lang-item">{{ .Site.Params.languageEn }}</a>
+            </div>
+          </div>
+          <div class="theme-change">
+            <i class="icon-theme light"></i>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="h5-nav-menu">
+    <div class="h5_nav_left"></div>
+    <div class="h5-logo">
+    </div>
+    <div class="h5-right">
+      <i class="white_search"></i>
+    </div>
+  </div>
+</nav>
