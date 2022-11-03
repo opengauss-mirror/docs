@@ -1,7 +1,7 @@
 
 .. toctree::
 
-	安装准备
-	安装openGauss
-	content/zh/docs/Installation/安装验证
+    安装准备
+    安装openGauss
+    content/zh/docs/Installation/安装验证
 

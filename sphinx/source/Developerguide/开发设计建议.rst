@@ -4,7 +4,7 @@
 	
     content/zh/docs/Developerguide/开发设计建议概述
     content/zh/docs/Developerguide/数据库对象命名
-	数据库对象设计
-	工具对接
+    数据库对象设计
+    工具对接
     content/zh/docs/Developerguide/SQL编写
 
