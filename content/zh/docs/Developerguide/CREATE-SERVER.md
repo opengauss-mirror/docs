@@ -8,8 +8,10 @@
 
 ```
 CREATE SERVER server_name
+    [ TYPE ' server_type ' ]
+    [ VERSION ' server_version ' ]
     FOREIGN DATA WRAPPER fdw_name
-    OPTIONS ( { option_name ' value ' } [, ...] ) ;
+    [ OPTIONS ( { option_name ' value ' } [, ...] ) ] ;
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137586_section183121377402"></a>
@@ -19,6 +21,14 @@ CREATE SERVER server_name
     server的名称。
 
     取值范围：长度必须小于等于63。
+
+-   **server\_type**
+
+    可选的服务器类型，可能对外部数据包装器有用。
+
+-   **server\_version**
+
+    可选的服务器版本，可能对外部数据包装器有用。
 
 -   **fdw\_name**
 
