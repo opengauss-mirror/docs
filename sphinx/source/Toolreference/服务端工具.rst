@@ -1,0 +1,18 @@
+
+.. toctree::
+
+        content/zh/docs/Toolreference/gs_cgroup
+        content/zh/docs/Toolreference/gs_check
+        content/zh/docs/Toolreference/gs_checkos
+        content/zh/docs/Toolreference/gs_checkperf
+        content/zh/docs/Toolreference/gs_collector
+        content/zh/docs/Toolreference/gs_dump
+        content/zh/docs/Toolreference/gs_dumpall
+        content/zh/docs/Toolreference/gs_guc
+        content/zh/docs/Toolreference/gs_encrypt
+        content/zh/docs/Toolreference/gs_om
+        content/zh/docs/Toolreference/gs_plan_simulator
+        content/zh/docs/Toolreference/gs_restore
+        content/zh/docs/Toolreference/gs_ssh
+        content/zh/docs/Toolreference/gs_sdr
+

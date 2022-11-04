@@ -1,0 +1,10 @@
+
+
+.. toctree::
+
+    content/zh/docs/Developerguide/审视和修改表定义概述
+    content/zh/docs/Developerguide/选择存储模型
+    content/zh/docs/Developerguide/使用局部聚簇
+    content/zh/docs/Developerguide/使用分区表
+    content/zh/docs/Developerguide/选择数据类型
+

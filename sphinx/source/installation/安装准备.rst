@@ -1,0 +1,7 @@
+
+.. toctree::
+
+    content/zh/docs/Installation/了解安装流程
+    content/zh/docs/Installation/获取安装包
+    content/zh/docs/Installation/准备软硬件安装环境
+    content/zh/docs/Installation/了解安装用户及用户组
