@@ -236,6 +236,11 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p184176169138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p184176169138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p184176169138"></a>GNU计划，又称革奴计划，是由RichardStallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。GNU是“GNU's NotUnix”的递归缩写。Stallman宣布GNU应当发音为Guh-NOO以避免与new这个单词混淆（注：Gnu在英文中原意为非洲牛羚，发音与new相同）。Unix是一种广泛使用的商业操作系统的名称。技术上讲，GNU类似Unix。但是GNU却给了用户自由。</p>
 </td>
 </tr>
+<tr id="row127614443198"><td class="cellrowborder" valign="top" width="18.98%" headers="mcps1.2.3.1.1 "><p id="p927624411192"><a name="p927624411192"></a><a name="p927624411192"></a>共享存储</p>
+</td>
+<td class="cellrowborder" valign="top" width="81.02000000000001%" headers="mcps1.2.3.1.2 "><p id="p9277144101912"><a name="p9277144101912"></a><a name="p9277144101912"></a>共享存储（SharedStorage），提供主备机共享一份存储的能力，提供一种主备共享存储的新HA部署形态，解决传统HA部署下存储容量较单机翻倍的问题，满足降低存储容量及成本的需求。主备之间去除了日志复制功能，增加了主备页面交换功能，备机支持实时一致性读。</p>
+</td>
+</tr>    
 <tr id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_row315408209138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p46696649138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p46696649138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p46696649138"></a>gsql</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p426984719138"><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p426984719138"></a><a name="zh-cn_topic_0283139955_zh-cn_topic_0085413843_zh-cn_topic_0059777370_p426984719138"></a><span id="text1010471331118"><a name="text1010471331118"></a><a name="text1010471331118"></a>openGauss</span>交互终端。通过gsql能够以交互的方式输入查询，下发查询到<span id="text738742018116"><a name="text738742018116"></a><a name="text738742018116"></a>openGauss</span>，然后查看查询结果。或者，也可以从文件中输入。此外，gsql还提供许多元命令和各种类似shell命令，协助脚本编写及自动化各种任务。</p>
@@ -748,4 +753,5 @@
 </tr>
 </tbody>
 </table>
+
 

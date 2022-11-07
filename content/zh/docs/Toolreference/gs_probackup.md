@@ -29,6 +29,9 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
 -   当前仅支持备份发布订阅的逻辑复制槽。
 -   备份时，请确保服务器用户对备份的目录下所有文件有读写的权限，以防止在恢复时因权限不足的问题而失败。
+-   当前暂不支持dss模式下的增量备份和恢复。
+-   在dss模式下仅支持本地主机备份。
+-   当前暂不支持dss模式下的外部目录的备份和恢复。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -52,7 +55,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup init -B backup-path [--help]
     ```
 
--   在备份路径_backup-path_内初始化一个新的备份实例，并生成pg\_probackup.conf配置文件，该文件保存了指定数据目录_pgdata-path_的gs\_probackup设置。
+-   在备份路径_backup-path_内初始化一个新的备份实例，并生成pg\_probackup.conf配置文件，该文件保存了指定数据目录_pgdata-path_的gs\_probackup设置（非dss模式）。
 
     ```
     gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
@@ -231,6 +234,24 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   --note=_text_
 
     给备份添加note。
+
+### **dss模式下添加实例相关参数**
+
+- --enable-dss
+
+  开启dss模式。
+
+- --instance-id
+
+  数据库节点id号，因为dss模式只支持主机备份，因此该参数一般为0。
+
+- --vgname
+
+  dss模式下数据库使用的卷的卷名。
+
+- --socketpath
+
+  dss进程socket文件路径。
 
 ### **备份相关参数**
 
@@ -611,7 +632,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
   >```
 
 
-## 备份流程<a name="zh-cn_topic_0287276008_section1735727125216"></a>
+## 备份流程（非dss模式）<a name="zh-cn_topic_0287276008_section1735727125216"></a>
 
 1.  初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
 
@@ -636,6 +657,33 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     ```
     gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
     ```
+
+## 备份流程（dss模式）
+
+1. 初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
+
+   ```
+   gs_probackup init -B backup_dir
+   ```
+
+2. 添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
+
+   ```
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name --enable-dss --instance-id node_id --vgname vgname --socketpath=socket_domain
+   ```
+
+3. 创建指定实例的备份。在进行增量备份之前，必须至少创建一次全量备份。
+
+   ```
+   gs_probackup backup -B backup_dir --instance instance_name -b backup_mode -d postgres -p 26000
+   ```
+
+4. 从指定实例的备份中恢复数据。
+
+   ```
+   gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+   ```
+
 
 
 ## 故障处理<a name="section1494010372368"></a>
