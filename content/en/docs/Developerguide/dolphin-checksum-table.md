@@ -10,6 +10,7 @@ Calculates the table data checksum.
 - NULL is returned for non-ordinary tables (such as views) and tables that do not exist.
 - Comparability with table checksums of heterogeneous databases is not supported.
 (For example, if the number of records is the same, the query results in OpenGauss and MySQL cannot be compared.)
+- For non-QUICK option mode, checksum result is based on calculating of query result string, thus differentiation of column type is currently not supported
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
