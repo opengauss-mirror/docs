@@ -1,0 +1,9 @@
+
+
+.. toctree::
+
+    content/zh/docs/Developerguide/资源规划
+    content/zh/docs/Developerguide/启动资源负载管理功能
+    content/zh/docs/Developerguide/设置控制组
+    content/zh/docs/Developerguide/创建资源池	
+
