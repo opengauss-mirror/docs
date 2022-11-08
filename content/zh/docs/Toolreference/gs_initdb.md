@@ -333,3 +333,57 @@ zh_SG.gbk
 </tr>
 </tbody>
 </table>
+
+**表 3**  主备共享存储参数说明
+
+<table><thead align="left"><tr id="row3652951153118"><th class="cellrowborder" valign="top" width="15.939999999999998%" id="mcps1.2.4.1.1"><p id="p765225114311"><a name="p765225114311"></a><a name="p765225114311"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="60.89%" id="mcps1.2.4.1.2"><p id="p14652205103114"><a name="p14652205103114"></a><a name="p14652205103114"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="23.169999999999998%" id="mcps1.2.4.1.3"><p id="p20652251173120"><a name="p20652251173120"></a><a name="p20652251173120"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row176521551193111"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p7652551123112"><a name="p7652551123112"></a><a name="p7652551123112"></a>--I</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p465245173114"><a name="p465245173114"></a><a name="p465245173114"></a>指定节点ID，初始化共享存储参数ss_instance_id。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p106523513313"><a name="p106523513313"></a><a name="p106523513313"></a>[0-63]，  需要从0开始指定。</p>
+</td>
+</tr>
+<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable_dss</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p145298413418"><a name="p145298413418"></a><a name="p145298413418"></a>开启ss_enable_dss功能。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5652145173110"><a name="p5652145173110"></a><a name="p5652145173110"></a>-</p>
+</td>
+</tr>
+<tr id="row1165217515318"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p9652751113110"><a name="p9652751113110"></a><a name="p9652751113110"></a>--vgname</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p443733719"><a name="p443733719"></a><a name="p443733719"></a>卷组名。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5621183815134"><a name="p5621183815134"></a><a name="p5621183815134"></a>数据类型：字符串 。</p>
+<p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>例如：一个卷组“+data”或者两个卷组中间用“，”连接“<span>+data,+log</span>”。</p>
+</td>
+</tr>
+<tr id="row146530518312"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p1165214516311"><a name="p1165214516311"></a><a name="p1165214516311"></a>--socketpath</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p17653151133119"><a name="p17653151133119"></a><a name="p17653151133119"></a>dss实例进程使用的socket文件路径。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p1665325113113"><a name="p1665325113113"></a><a name="p1665325113113"></a>支持绝对路径。</p>
+</td>
+</tr>
+<tr id="row12653751173115"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p1865316513315"><a name="p1865316513315"></a><a name="p1865316513315"></a>--dms_url</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p1664032611259"><a name="p1664032611259"></a><a name="p1664032611259"></a>节点之间mes通信url。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p465375111319"><a name="p465375111319"></a><a name="p465375111319"></a>数据类型：字符串。格式为“节点id:ip:port,节点id:ip:port,.......”</p>
+<p id="p826308133419"><a name="p826308133419"></a><a name="p826308133419"></a>例如：“0:127.0.0.1:1611,1:127.0.0.1:1711”</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+> ![](public_sys-resources/icon-note.gif) **说明：** 
+> 共享存储下系统表存放在段页式中，unlogging表保持页式存储。
+
