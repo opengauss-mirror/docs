@@ -502,7 +502,7 @@
 
 - like binary/not like binary
 
-  描述：判断字符串能否匹配上LIKE BINARY后的模式字符串,like binary采用大小写敏感模式匹配，若模式匹配则返回真(not like binary返回假)，不匹配则放回假(not like binary返回真)。
+  描述：判断字符串能否匹配上LIKE BINARY后的模式字符串,like binary采用大小写敏感模式匹配，若模式匹配则返回真(not like binary返回假)，不匹配则返回假(not like binary返回真)。
 
   返回值类型：布尔型
 
@@ -549,7 +549,7 @@
      abcda
     (1 row)
     
-  ``` 
+  ```
 
 
 -   export_set(bits, on, off, separator, number of bits)
@@ -608,7 +608,7 @@
     4. 故解码结果为ab。
 
     示例：
-    
+  
     ```
         openGauss=# SELECT FROM_BASE64('YWJj');
          from_base64 
@@ -616,7 +616,7 @@
          abc
         (1 row)
         
-    ``` 
+    ```
 - ORD(str)。
 
   描述: 
