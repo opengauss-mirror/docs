@@ -72,7 +72,7 @@ The certificate file is incomplete when the rebuilding is interrupted. The rebui
    ```
 
 
-   >![](C:/Users/lijun/Desktop/007/public_sys-resources/icon-note.gif) **NOTE:**   
+   >![](public_sys-resources/icon-note.gif) **NOTE:**   
    >If the database on the standby node is stopped, you need to regenerate a certificate file or copy the certificate file \(in  _$GAUSSHOME_**/share**\) to the data directory, start the standby node, and rebuild the standby instance. For details about how to generate a certificate file, see the  _Developer Guide_.  
 
 ## No Response Is Returned for a Long Time When gs\_om -t status -\-all Is Used to Query Database Status<a name="EN-US_TOPIC_0289899236"></a>
