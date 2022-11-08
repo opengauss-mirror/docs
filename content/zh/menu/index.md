@@ -49,6 +49,7 @@ headless: true
 		-   [Xlog no Lock Flush]({{< relref "./docs/CharacteristicDescription/Xlog-no-Lock-Flush.md" >}})
 		-   [Parallel Page-based Redo For Ustore]({{< relref "./docs/CharacteristicDescription/Parallel-Page-based-Redo-For-Ustore.md" >}})
 		-   [行存转向量化]({{< relref "./docs/CharacteristicDescription/行存转向量化.md" >}})
+		-   [OCK加速数据传输]({{< relref "./docs/CharacteristicDescription/OCK加速数据传输.md" >}})
 	-   [高可用]({{< relref "./docs/CharacteristicDescription/高可用.md" >}})
 		-   [主备机]({{< relref "./docs/CharacteristicDescription/主备机.md" >}})
 		-   [逻辑复制]({{< relref "./docs/CharacteristicDescription/逻辑复制.md" >}})
