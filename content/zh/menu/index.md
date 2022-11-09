@@ -68,6 +68,7 @@ headless: true
 		-   [支持Global SysCache]({{< relref "./docs/CharacteristicDescription/支持global-syscache.md" >}})
 		-   [支持备机build备机]({{< relref "./docs/CharacteristicDescription/支持备机build备机.md" >}})
         -   [两地三中心跨Region容灾]({{< relref "./docs/CharacteristicDescription/两地三中心跨Region容灾.md" >}})
+		-   [主备共享存储]({{< relref "./docs/CharacteristicDescription/主备共享存储.md" >}})
 	-   [维护性]({{< relref "./docs/CharacteristicDescription/维护性.md" >}})
 		-   [灰度升级]({{< relref "./docs/CharacteristicDescription/灰度升级.md" >}})
 		-   [滚动升级]({{< relref "./docs/CharacteristicDescription/滚动升级.md" >}})
