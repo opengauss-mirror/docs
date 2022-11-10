@@ -6,8 +6,8 @@
     表和索引
     控制文本搜索
     附加功能
-    content/zh/docs/Developerguide/解析器
+    ../content/zh/docs/Developerguide/解析器
     词典
-    content/zh/docs/Developerguide/配置示例
+    ../content/zh/docs/Developerguide/配置示例
     测试和调试文本搜索
-    content/zh/docs/Developerguide/限制约束
+    ../content/zh/docs/Developerguide/限制约束

@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/网卡多中断队列设置
-    content/zh/docs/Developerguide/中断调优
-    content/zh/docs/Developerguide/网卡固件确认与更新
+    ../content/zh/docs/Developerguide/网卡多中断队列设置
+    ../content/zh/docs/Developerguide/中断调优
+    ../content/zh/docs/Developerguide/网卡固件确认与更新
 

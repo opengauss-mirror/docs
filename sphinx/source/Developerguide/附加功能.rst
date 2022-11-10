@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/处理tsvector
-    content/zh/docs/Developerguide/处理查询
-    content/zh/docs/Developerguide/查询重写
-    content/zh/docs/Developerguide/收集文献统计
+    ../content/zh/docs/Developerguide/处理tsvector
+    ../content/zh/docs/Developerguide/处理查询
+    ../content/zh/docs/Developerguide/查询重写
+    ../content/zh/docs/Developerguide/收集文献统计

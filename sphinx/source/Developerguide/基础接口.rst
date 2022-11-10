@@ -2,4 +2,4 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/PKG_SERVICE
+    ../content/zh/docs/Developerguide/PKG_SERVICE

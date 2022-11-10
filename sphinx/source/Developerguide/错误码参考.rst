@@ -2,8 +2,8 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/SQL标准错误码说明
-    content/zh/docs/Developerguide/第三方库错误码说明
+    ../content/zh/docs/Developerguide/SQL标准错误码说明
+    ../content/zh/docs/Developerguide/第三方库错误码说明
     GAUSS-00001----GAUSS-00100
     GAUSS-00101----GAUSS-00200
     GAUSS-00201----GAUSS-00300

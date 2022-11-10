@@ -2,9 +2,9 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/内存-21
-    content/zh/docs/Developerguide/磁盘空间
-    content/zh/docs/Developerguide/内核资源使用
-    content/zh/docs/Developerguide/基于开销的清理延迟
-    content/zh/docs/Developerguide/后端写进程
-    content/zh/docs/Developerguide/异步IO
+    ../content/zh/docs/Developerguide/内存-21
+    ../content/zh/docs/Developerguide/磁盘空间
+    ../content/zh/docs/Developerguide/内核资源使用
+    ../content/zh/docs/Developerguide/基于开销的清理延迟
+    ../content/zh/docs/Developerguide/后端写进程
+    ../content/zh/docs/Developerguide/异步IO

@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/基本结构
-    content/zh/docs/Developerguide/匿名块
-    content/zh/docs/Developerguide/子程序
+    ../content/zh/docs/Developerguide/基本结构
+    ../content/zh/docs/Developerguide/匿名块
+    ../content/zh/docs/Developerguide/子程序
 

@@ -1,28 +1,28 @@
 
 
 .. toctree::
-	
+
     core问题定位
-    content/zh/docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题
-    content/zh/docs/Developerguide/备机处于need-repair_WAL_状态问题
-    content/zh/docs/Developerguide/内存不足问题
-    content/zh/docs/Developerguide/服务启动失败
-    content/zh/docs/Developerguide/出现-Error-No-space-left-on-device-提示
-    content/zh/docs/Developerguide/在XFS文件系统中-使用du命令查询数据文件大小大于文件实际大小
-    content/zh/docs/Developerguide/在XFS文件系统中-出现文件损坏
-    content/zh/docs/Developerguide/switchover操作时-主机降备卡住
-    content/zh/docs/Developerguide/分析查询语句长时间运行的问题
-    content/zh/docs/Developerguide/分析查询语句运行状态
-    content/zh/docs/Developerguide/强制结束指定的问题会话
-    content/zh/docs/Developerguide/分析查询语句是否被阻塞
-    content/zh/docs/Developerguide/分析查询效率异常降低的问题
-    content/zh/docs/Developerguide/执行-SQL-语句时-提示-Lock-wait-timeout
-    content/zh/docs/Developerguide/VACUUM-FULL一张表后-表文件大小无变化
-    content/zh/docs/Developerguide/执行修改表分区操作时报错
-    content/zh/docs/Developerguide/不同用户查询同表显示数据不同
-    content/zh/docs/Developerguide/修改索引时只调用索引名提示索引不存在
-    content/zh/docs/Developerguide/重建索引失败
-    content/zh/docs/Developerguide/业务运行时整数转换错
-    content/zh/docs/Developerguide/高并发报错-too-many-clients-already-或无法创建线程
-    content/zh/docs/Developerguide/btree-索引故障情况下应对策略 	
-    content/zh/docs/Developerguide/TPCC高并发长稳运行因脏页刷盘效率导致性能下降 	
+    ../content/zh/docs/Developerguide/TPCC运行时-注入磁盘满故障-TPCC卡住的问题
+    ../content/zh/docs/Developerguide/备机处于need-repair_WAL_状态问题
+    ../content/zh/docs/Developerguide/内存不足问题
+    ../content/zh/docs/Developerguide/服务启动失败
+    ../content/zh/docs/Developerguide/出现-Error-No-space-left-on-device-提示
+    ../content/zh/docs/Developerguide/在XFS文件系统中-使用du命令查询数据文件大小大于文件实际大小
+    ../content/zh/docs/Developerguide/在XFS文件系统中-出现文件损坏
+    ../content/zh/docs/Developerguide/switchover操作时-主机降备卡住
+    ../content/zh/docs/Developerguide/分析查询语句长时间运行的问题
+    ../content/zh/docs/Developerguide/分析查询语句运行状态
+    ../content/zh/docs/Developerguide/强制结束指定的问题会话
+    ../content/zh/docs/Developerguide/分析查询语句是否被阻塞
+    ../content/zh/docs/Developerguide/分析查询效率异常降低的问题
+    ../content/zh/docs/Developerguide/执行-SQL-语句时-提示-Lock-wait-timeout
+    ../content/zh/docs/Developerguide/VACUUM-FULL一张表后-表文件大小无变化
+    ../content/zh/docs/Developerguide/执行修改表分区操作时报错
+    ../content/zh/docs/Developerguide/不同用户查询同表显示数据不同
+    ../content/zh/docs/Developerguide/修改索引时只调用索引名提示索引不存在
+    ../content/zh/docs/Developerguide/重建索引失败
+    ../content/zh/docs/Developerguide/业务运行时整数转换错
+    ../content/zh/docs/Developerguide/高并发报错-too-many-clients-already-或无法创建线程
+    ../content/zh/docs/Developerguide/btree-索引故障情况下应对策略
+    ../content/zh/docs/Developerguide/TPCC高并发长稳运行因脏页刷盘效率导致性能下降

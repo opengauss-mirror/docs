@@ -1,15 +1,15 @@
 
 .. toctree::
-	
-	content/zh/docs/CharacteristicDescription/MySQL_openGauss迁移工具chameleon
-	content/zh/docs/CharacteristicDescription/openGauss客户端工具DataStudio
 
-		
-		
-		
+    ../content/zh/docs/CharacteristicDescription/MySQL_openGauss迁移工具chameleon
+    ../content/zh/docs/CharacteristicDescription/openGauss客户端工具DataStudio
 
-		
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+

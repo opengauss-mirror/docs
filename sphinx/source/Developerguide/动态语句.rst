@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/执行动态查询语句
-    content/zh/docs/Developerguide/执行动态非查询语句
-    content/zh/docs/Developerguide/动态调用存储过程
-    content/zh/docs/Developerguide/动态调用匿名块
+    ../content/zh/docs/Developerguide/执行动态查询语句
+    ../content/zh/docs/Developerguide/执行动态非查询语句
+    ../content/zh/docs/Developerguide/动态调用存储过程
+    ../content/zh/docs/Developerguide/动态调用匿名块
