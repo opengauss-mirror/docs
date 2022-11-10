@@ -57,7 +57,7 @@
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group'
+**默认值**：'sql_mode_strict,sql_mode_full_group,ansi_quotes'
 
 **示例**：
 ```
