@@ -5,10 +5,53 @@
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前sql_mode的默认字符串为sql_mode_strict,sql_mode_full_group。当前有几种场景会用到sql\_mode：
 
 1. sql_mode_strict：插入不符合当前列类型的值时,进行数据转换;分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar；
+
 2. sql_mode_strict：插入的列值长度超过此列所限定的长度时,赋予该列最大或最小值（涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar）;
+
 3. sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值;（涉及的类型同上）
+
 4. sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default;（涉及的类型同上）
+
 5. sql_mode_full_group：主要是针对出现在select列表中的列（不使用聚合函数），是否一定要出现在group by子句中。当处在sql_mode_full_group模式（默认模式）下，如果select列表中的列没有使用聚合函数，也没有出现在group by子句，那么会报错，如果不在此模式下，则会执行成功，并在所有符合条件的元组中选取第一个元组。
+
+6. ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。当关闭ansi_quotes时，会导致部分元命令失效，失效的元命令如下表所示：
+
+   | 参数                        | 参数说明                                                     |
+   | --------------------------- | ------------------------------------------------------------ |
+   | \d[S+]                      | 列出当前search_path中模式下所有的表、视图和序列。当search_path中不同模式存在同名对象时，只显示search_path中位置靠前模式下的同名对象。 |
+   | \da[S] [PATTERN]            | 列出所有可用的聚集函数以及它们操作的数据类型和返回值类型。   |
+   | \db[+] [PATTERN]            | 列出所有可用的表空间。                                       |
+   | \dc[S+] [PATTERN]           | 列出所有字符集之间的可用转换。                               |
+   | \dC[+] [PATTERN]            | 列出所有类型转换。                                           |
+   | \dd[S] [PATTERN]            | 显示所有匹配PATTERN的描述。                                  |
+   | \ddp [PATTERN]              | 显示所有默认的使用权限。                                     |
+   | \dD[S+] [PATTERN]           | 列出所有可用域。                                             |
+   | \ded[+] [PATTERN]           | 列出所有的Data Source对象。                                  |
+   | \det[+] [PATTERN]           | 列出所有的外部表。                                           |
+   | \des[+] [PATTERN]           | 列出所有的外部服务器。                                       |
+   | \deu[+] [PATTERN]           | 列出用户映射信息。                                           |
+   | \dew[+] [PATTERN]           | 列出封装的外部数据。                                         |
+   | \df[antw][S+] [PATTERN]     | 列出所有可用函数以及它们的参数和返回的数据类型。a代表聚集函数，n代表普通函数，t代表触发器，w代表窗口函数。 |
+   | \dF[+] [PATTERN]            | 列出所有的文本搜索配置信息。                                 |
+   | \dFd[+] [PATTERN]           | 列出所有的文本搜索字典。                                     |
+   | \dFp[+] [PATTERN]           | 列出所有的文本搜索分析器。                                   |
+   | \dFt[+] [PATTERN]           | 列出所有的文本搜索模板。                                     |
+   | \dl                         | \lo_list的别名，显示一个大对象的列表。                       |
+   | \dL[S+] [PATTERN]           | 列出可用的程序语言。                                         |
+   | \dm[S+] [PATTERN]           | 列出物化视图                                                 |
+   | \dn[S+] [PATTERN]           | 列出所有的模式（名称空间）。                                 |
+   | \do[S] [PATTERN]            | 列出所有可用的操作符以及它们的操作数和返回的数据类型。       |
+   | \dO[S+] [PATTERN]           | 列出排序规则                                                 |
+   | \dp [PATTERN]               | 列出一列可用的表、视图以及相关的权限信息。                   |
+   | \drds [PATTERN1 [PATTERN2]] | 列出所有修改过的配置参数。这些设置可以是针对角色的、针对数据库的或者同时针对两者的。PATTERN1和PATTERN2表示要列出的角色PATTERN和数据库PATTERN。 |
+   | \dT[S+] [PATTERN]           | 列出所有的数据类型。                                         |
+   | \dE[S+] [PATTERN]           | 这一组命令，字母E、i、s、t和v分别代表着外部表、索引、序列、表和视图。可以以任意顺序指定其中一个或者它们的组合来列出这些对象。例如：\dit列出所有的索引和表。在命令名称后面追加+，则每一个对象的物理尺寸以及相关的描述也会被列出。 |
+   | \dx[+] [PATTERN]            | 列出安装数据库的扩展信息。                                   |
+   | \l[+]                       | 列出服务器上所有数据库的名称、所有者、字符集编码以及使用权限。 |
+   | \z [PATTERN]                | 列出数据库中所有表、视图和序列以及它们相关的访问特权。       |
+
+   
+
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
