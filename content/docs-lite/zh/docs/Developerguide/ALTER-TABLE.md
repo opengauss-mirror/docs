@@ -177,7 +177,7 @@
     value必须是非负整数，且不得大于2<sup>127</sup>-1。
   
   该子句仅在参数sql\_compatibility=B时生效。
-    
+  
 - **COMMENT 'text'**
     修改表对象的注释。
   
@@ -272,35 +272,34 @@
     [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
     ```
 
+-   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
 
-    -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-    
-        ```
-        [ CONSTRAINT constraint_name ]
-            { UNIQUE | PRIMARY KEY } USING INDEX index_name
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-    
-    -   其中表约束table\_constraint为：
-    
-        ```
-        [ CONSTRAINT [ constraint_name ] ]
-            { CHECK ( expression ) |
-              UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
-              PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
-              PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-              FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-                 [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-            [ COMMENT 'text' ]
-        ```
-    
-        其中索引参数index\_parameters为：
-    
-        ```
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-            [ USING INDEX TABLESPACE tablespace_name ]
-        ```
+    ```
+    [ CONSTRAINT constraint_name ]
+        { UNIQUE | PRIMARY KEY } USING INDEX index_name
+        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+-   其中表约束table\_constraint为：
+
+```
+[ CONSTRAINT [ constraint_name ] ]
+	{ CHECK ( expression ) |
+	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+```
+
+
+​    其中索引参数index\_parameters为：
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+        [ USING INDEX TABLESPACE tablespace_name ]
+    ```
 
 
 
