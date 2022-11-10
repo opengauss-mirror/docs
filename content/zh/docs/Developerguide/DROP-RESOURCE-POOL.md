@@ -9,7 +9,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0059778399_sac7b2d84ed1a4b7fba5c5a6497f822c1"></a>
 
-只要用户对当前数据库有DROP权限，就可以删除资源池。
+只有SYSADMIN、VCADMIN可以删除资源池。
 
 ## 语法格式<a name="zh-cn_topic_0059778399_s147ae6d344a249e1b923eedde3ba326a"></a>
 
