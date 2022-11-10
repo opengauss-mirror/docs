@@ -2,13 +2,13 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/GAUSS-01401----GAUSS-01410
-    content/zh/docs/Developerguide/GAUSS-01411----GAUSS-01420
-    content/zh/docs/Developerguide/GAUSS-01421----GAUSS-01430
-    content/zh/docs/Developerguide/GAUSS-01431----GAUSS-01440
-    content/zh/docs/Developerguide/GAUSS-01441----GAUSS-01450
-    content/zh/docs/Developerguide/GAUSS-01451----GAUSS-01460
-    content/zh/docs/Developerguide/GAUSS-01461----GAUSS-01470
-    content/zh/docs/Developerguide/GAUSS-01471----GAUSS-01480
-    content/zh/docs/Developerguide/GAUSS-01481----GAUSS-01490
-    content/zh/docs/Developerguide/GAUSS-01491----GAUSS-01500
+    ../content/zh/docs/Developerguide/GAUSS-01401----GAUSS-01410
+    ../content/zh/docs/Developerguide/GAUSS-01411----GAUSS-01420
+    ../content/zh/docs/Developerguide/GAUSS-01421----GAUSS-01430
+    ../content/zh/docs/Developerguide/GAUSS-01431----GAUSS-01440
+    ../content/zh/docs/Developerguide/GAUSS-01441----GAUSS-01450
+    ../content/zh/docs/Developerguide/GAUSS-01451----GAUSS-01460
+    ../content/zh/docs/Developerguide/GAUSS-01461----GAUSS-01470
+    ../content/zh/docs/Developerguide/GAUSS-01471----GAUSS-01480
+    ../content/zh/docs/Developerguide/GAUSS-01481----GAUSS-01490
+    ../content/zh/docs/Developerguide/GAUSS-01491----GAUSS-01500

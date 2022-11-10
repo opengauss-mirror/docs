@@ -2,11 +2,11 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/案例-调整查询重写GUC参数rewrite_rule
-    content/zh/docs/Developerguide/案例-调整I-O相关参数降低日志膨胀率
-    content/zh/docs/Developerguide/案例-建立合适的索引
-    content/zh/docs/Developerguide/案例-增加JOIN列非空条件
-    content/zh/docs/Developerguide/案例-改建分区表
-    content/zh/docs/Developerguide/案例-改写SQL消除子查询_案例1
-    content/zh/docs/Developerguide/案例-改写SQL消除子查询_案例2
-    content/zh/docs/Developerguide/案例-改写SQL消除in-clause
+    ../content/zh/docs/Developerguide/案例-调整查询重写GUC参数rewrite_rule
+    ../content/zh/docs/Developerguide/案例-调整I-O相关参数降低日志膨胀率
+    ../content/zh/docs/Developerguide/案例-建立合适的索引
+    ../content/zh/docs/Developerguide/案例-增加JOIN列非空条件
+    ../content/zh/docs/Developerguide/案例-改建分区表
+    ../content/zh/docs/Developerguide/案例-改写SQL消除子查询_案例1
+    ../content/zh/docs/Developerguide/案例-改写SQL消除子查询_案例2
+    ../content/zh/docs/Developerguide/案例-改写SQL消除in-clause

@@ -1,16 +1,16 @@
 
-.. toctree::		
-	
-	content/zh/docs/CharacteristicDescription/分布式数据库能力
-	content/zh/docs/CharacteristicDescription/使用kubernetes部署分布式数据库
-	content/zh/docs/CharacteristicDescription/分布式分析能力
+.. toctree::
 
-		
-		
-		
+    ../content/zh/docs/CharacteristicDescription/分布式数据库能力
+    ../content/zh/docs/CharacteristicDescription/使用kubernetes部署分布式数据库
+    ../content/zh/docs/CharacteristicDescription/分布式分析能力
 
-		
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+

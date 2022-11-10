@@ -1,6 +1,6 @@
 
 
 .. toctree::
-	
-    content/zh/docs/Developerguide/查询和索引统计收集器
-    content/zh/docs/Developerguide/性能统计
+
+    ../content/zh/docs/Developerguide/查询和索引统计收集器
+    ../content/zh/docs/Developerguide/性能统计

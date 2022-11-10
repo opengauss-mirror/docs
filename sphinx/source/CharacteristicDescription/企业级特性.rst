@@ -1,28 +1,28 @@
 
 .. toctree::
 
-	content/zh/docs/CharacteristicDescription/函数及存储过程支持
-	content/zh/docs/CharacteristicDescription/支持SQL-hint
-	content/zh/docs/CharacteristicDescription/全文索引
-	content/zh/docs/CharacteristicDescription/Copy接口支持容错机制
-	content/zh/docs/CharacteristicDescription/分区
-	content/zh/docs/CharacteristicDescription/高级分析函数支持
-	content/zh/docs/CharacteristicDescription/物化视图
-	content/zh/docs/CharacteristicDescription/支持HyperLogLog
-	content/zh/docs/CharacteristicDescription/在线添加索引
-	content/zh/docs/CharacteristicDescription/自治事务
-	content/zh/docs/CharacteristicDescription/全局临时表
-	content/zh/docs/CharacteristicDescription/伪列ROWNUM
-	content/zh/docs/CharacteristicDescription/支持存储过程调试
-	content/zh/docs/CharacteristicDescription/JDBC客户端负载均衡与读写分离
-	content/zh/docs/CharacteristicDescription/In-place-Update存储引擎
-	content/zh/docs/CharacteristicDescription/发布订阅
-	content/zh/docs/CharacteristicDescription/外键锁增强
-	content/zh/docs/CharacteristicDescription/支持OLTP场景数据压缩		
-		
+    ../content/zh/docs/CharacteristicDescription/函数及存储过程支持
+    ../content/zh/docs/CharacteristicDescription/支持SQL-hint
+    ../content/zh/docs/CharacteristicDescription/全文索引
+    ../content/zh/docs/CharacteristicDescription/Copy接口支持容错机制
+    ../content/zh/docs/CharacteristicDescription/分区
+    ../content/zh/docs/CharacteristicDescription/高级分析函数支持
+    ../content/zh/docs/CharacteristicDescription/物化视图
+    ../content/zh/docs/CharacteristicDescription/支持HyperLogLog
+    ../content/zh/docs/CharacteristicDescription/在线添加索引
+    ../content/zh/docs/CharacteristicDescription/自治事务
+    ../content/zh/docs/CharacteristicDescription/全局临时表
+    ../content/zh/docs/CharacteristicDescription/伪列ROWNUM
+    ../content/zh/docs/CharacteristicDescription/支持存储过程调试
+    ../content/zh/docs/CharacteristicDescription/JDBC客户端负载均衡与读写分离
+    ../content/zh/docs/CharacteristicDescription/In-place-Update存储引擎
+    ../content/zh/docs/CharacteristicDescription/发布订阅
+    ../content/zh/docs/CharacteristicDescription/外键锁增强
+    ../content/zh/docs/CharacteristicDescription/支持OLTP场景数据压缩
 
-		
-	
-	
-	
-	
+
+
+
+
+
+

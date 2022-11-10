@@ -1,13 +1,13 @@
 
 
 .. toctree::
-	
-    content/zh/docs/Developerguide/默认权限机制
-    content/zh/docs/Developerguide/管理员
-    content/zh/docs/Developerguide/三权分立
-    content/zh/docs/Developerguide/用户
-    content/zh/docs/Developerguide/角色
-    content/zh/docs/Developerguide/Schema
-    content/zh/docs/Developerguide/用户权限设置
-    content/zh/docs/Developerguide/行级访问控制
+
+    ../content/zh/docs/Developerguide/默认权限机制
+    ../content/zh/docs/Developerguide/管理员
+    ../content/zh/docs/Developerguide/三权分立
+    ../content/zh/docs/Developerguide/用户
+    ../content/zh/docs/Developerguide/角色
+    ../content/zh/docs/Developerguide/Schema
+    ../content/zh/docs/Developerguide/用户权限设置
+    ../content/zh/docs/Developerguide/行级访问控制
     设置安全策略
