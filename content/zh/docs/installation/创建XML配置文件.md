@@ -43,7 +43,8 @@
   <!-- 是否开启数据库节点自选主 -->
     <PARAM name="enable_dcf" value="on"/>
   <!-- 开启开关后对应的节点IP、PORT和角色信息 -->
-    <PARAM name="dcf_config" value="        <!-- 是否开启DN自选主 --> 
+    <PARAM name="dcf_config" value="       
+    <!-- 是否开启DN自选主 --> 
     <PARAM name="enable_dcf" value="on"/> 
     <!-- 开启开关后对应的节点IP、PORT和角色信息 --> 
     <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 

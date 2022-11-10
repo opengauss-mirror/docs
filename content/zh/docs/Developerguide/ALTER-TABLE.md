@@ -284,18 +284,16 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 - 其中列约束column\_constraint为：
 
   ```
-  [ CONSTRAINT constraint_name ]
-      { NOT NULL |
-        NULL |
-        CHECK ( expression ) |
-        DEFAULT default_expr  |
-        UNIQUE index_parameters |
-        PRIMARY KEY index_parameters |
-        ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
-        REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-            [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+  [ CONSTRAINT [ constraint_name ] ]
+  	{ CHECK ( expression ) |
+  	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+  	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+  	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+  	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+  	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+      [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   ```
-
+  
 - 其中列的压缩可选项compress\_mode为：
 
 ```
