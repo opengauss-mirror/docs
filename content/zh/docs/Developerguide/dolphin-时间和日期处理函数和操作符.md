@@ -559,11 +559,12 @@
   备注:
 
     - 函数返回格式为`DATE`或`DATETIME`。一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为`DATE`时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为`DATETIME`。
-    - 本函数所支持的interval单位与openguass支持的interval单位保持一致
+    - 本函数所支持的interval单位与openguass支持的interval单位保持一致，包括YEAR，MONTH，DAY，HOUR，MINUTE，SECOND，DAY TO HOUR，DAY TO MINUTE，DAY TO SECOND，HOUR TO MINUTE，HOUR TO SECOND，MINUTE TO SECOND。
     - 任一参数为NULL，函数返回NULL。
     - 在下列情况中，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
         - 参数`date`的日期超出范围[0000-1-1, 9999-12-31]
-        - 返回结果的日期超出范围[0001-1-1, 9999-12-31]
+        - 当interval单位为仅与年或月相关时，返回结果的日期超出范围[0000-1-1, 9999-12-31]
+        - 其他interval单位，返回结果的日期超出范围[0001-1-1, 9999-12-31]
   
   
   示例:
@@ -742,6 +743,7 @@ CONTEXT:  referenced column: subdate
     - 若出现下列情况，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
       - `TIME`类型入参超出[-838:59:59, 838:59:59]范围或格式不合法
       - `DATETIME`类型入参超出[0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999]范围或格式不合法
+      - 对于`DATETIME`格式的字符串入参，本函数支持0值日期，如'2000-0-1 1:1:1'
       - 返回值超出[-838:59:59, 838:59:59]范围
 
 
@@ -815,11 +817,11 @@ CONTEXT:  referenced column: subdate
   (1 row)
   ```
 
-- timestamp_add()
+- timestampadd(unit, span, expr)
 
   函数原型：
 
-  `TEXT TIMESTAMP_ADD(text unit, interval span, text datetime)`
+  `TEXT TIMESTAMPADD(text unit, interval span, text datetime)`
 
   功能描述：
 
