@@ -314,16 +314,15 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
-        { CHECK ( expression ) |
-           UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
-          PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
-          PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-          FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-              [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+    	{ CHECK ( expression ) |
+    	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+    	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+    	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+    	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+    	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        [ COMMENT 'text' ]
     ```
-
+    
 -   其中索引参数index\_parameters为：
 
     ```

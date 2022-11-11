@@ -177,7 +177,7 @@
     value必须是非负整数，且不得大于2<sup>127</sup>-1。
   
   该子句仅在参数sql\_compatibility=B时生效。
-    
+  
 - **COMMENT 'text'**
     修改表对象的注释。
   
@@ -253,24 +253,21 @@
 - 其中列约束column\_constraint为：
 
   ```
-  [ CONSTRAINT constraint_name ]
-      { NOT NULL |
-        NULL |
-        CHECK ( expression ) |
-        DEFAULT default_expr  |
-        AUTO_INCREMENT |
-        UNIQUE index_parameters |
-        PRIMARY KEY index_parameters |
-        ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
-        REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-            [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+  [ CONSTRAINT [ constraint_name ] ]
+  	{ CHECK ( expression ) |
+  	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
+  	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+  	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
+  	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+  	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+      [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   ```
-
+  
   - 其中列的压缩可选项compress\_mode为：
-
-    ```
+  
+  ```
     [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
-    ```
+  ```
 
 
     -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
