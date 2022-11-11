@@ -6,13 +6,23 @@
 
 ## 注意事项<a name="zh-cn_topic_0059777569_sf6c61d950e6b4383a3bc630c8d5910a4"></a>
 
-只要用户对当前数据库有CREATE权限，就可以创建资源池。
+只有SYSADMIN、VCADMIN可以创建资源池。
 
 ## 语法格式<a name="zh-cn_topic_0059777569_s864093cc963a4396a4a304befe0df251"></a>
 
 ```
 CREATE RESOURCE POOL pool_name
-    [WITH ({MEM_PERCENT=pct | CONTROL_GROUP="group_name" | ACTIVE_STATEMENTS=stmt | MAX_DOP = dop | MEMORY_LIMIT='memory_size' | io_limits=io_limits | io_priority='io_priority' | nodegroup="nodegroupname" | is_foreign=boolean }[, ... ])];
+    [WITH ({MEM_PERCENT=pct |
+            CONTROL_GROUP="group_name" |
+            ACTIVE_STATEMENTS=stmt |
+            MAX_DOP = dop |
+            MEMORY_LIMIT='memory_size' |
+            io_limits=io_limits |
+            io_priority='io_priority' |
+            nodegroup="nodegroupname" |
+            is_foreign=boolean }
+            [, ... ])
+    ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0059777569_s9b6dbda628294e24a95da9e33949c3e8"></a>
@@ -78,6 +88,8 @@ CREATE RESOURCE POOL pool_name
 
     对于行存，以万次为单位计数，而列存则以正常次数计数。
 
+    取值范围：数值型，0\~2147483647‬。
+
 -   **io\_priority**
 
     IO利用率高达90%时，重消耗IO作业进行IO资源管控时关联的优先级等级。
@@ -93,9 +105,13 @@ CREATE RESOURCE POOL pool_name
 
     如果逻辑集群名称包含大写字符、特殊符号或以数字开头，SQL语句中对逻辑集群名称需要加双引号。
 
+    单机下此参数无用。
+
 -   **is\_foreign**
 
     在逻辑集群模式下，指定当前资源池用于控制没有关联本逻辑集群的普通用户的资源。这里的逻辑集群是由资源池nodegroup字段指定的。
+
+    单机下此参数无用。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
