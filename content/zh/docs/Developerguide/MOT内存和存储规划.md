@@ -6,7 +6,7 @@
 
 MOT是一种内存数据库存储引擎（IMDB），其中所有表和索引完全驻留在内存中。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >内存存储是易失的，需要电力来维护所存储的信息。磁盘存储是持久的，写入磁盘是非易失性存储。MOT使用两种存储，既把所有数据保存在内存中，也把事务性更改同步（通过WAL日志记录）到磁盘上以保持严格一致性（使用同步日志记录模式）。
 
 服务器上必须有足够的物理内存以维持内存表的状态，并满足工作负载和数据的增长。所有这些都是在传统的基于磁盘的引擎、表和会话所需的内存之外的要求。因此，提前规划好足够的内存来容纳这些内容是非常有必要的。
@@ -27,7 +27,7 @@ MOT是一种内存数据库存储引擎（IMDB），其中所有表和索引完�
 
     如果违反此限制，则调整MOT内存内部限制，最大可能地满足上述限制范围。该调整在启动时进行，并据此计算MOT最大内存值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >MOT最大内存值是配置或调整值（max\_mot\_global\_memory + max\_mot\_local\_memory）的逻辑计算值。
 
     此时，会向服务器日志发出警告，如下所示：
@@ -115,7 +115,7 @@ MOT是一种内存数据库存储引擎（IMDB），其中所有表和索引完�
 
     在配置max\_mot\_local\_memory设置和应用程序开发时，请考虑此场景。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >有关配置的更多信息，请参阅[内存（MOT）](MOT配置.md#section1223551495)部分。
 
 
@@ -142,7 +142,7 @@ MOT是一个内存优化的持久化数据库存储引擎。需要磁盘驱动�
     检查点之所以需要两倍大小，是因为快照会保存数据的全部大小到磁盘上，此外还应该为正在进行的检查点分配同样数量的空间。当检查点进程结束时，以前的检查点文件将被删除。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >在下一个openGauss版本中，MOT将有一个增量检查点特性，这将大大降低存储容量需求。
 
 -   **日志记录**
@@ -158,6 +158,6 @@ MOT是一个内存优化的持久化数据库存储引擎。需要磁盘驱动�
     为了确保日志IO设备不会成为瓶颈，日志文件必须放在具有低延迟的驱动器上。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >有关配置的更多信息，请参阅[存储（MOT）](MOT配置.md#section16572933681)。
 

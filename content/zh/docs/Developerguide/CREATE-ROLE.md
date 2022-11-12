@@ -63,7 +63,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     取值范围：字符串，要符合标识符的命名规范，且最多为63个字符。若超过63个字符，数据库会截断并保留前63个字符当做角色名称。在创建角色时，数据库的时候会给出提示信息。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >标识符需要为字母、下划线、数字（0-9）或美元符号（$），且必须以字母（a-z）或下划线（\_）开头。
 
 -   **password**
@@ -180,7 +180,7 @@ CREATE ROLE role_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 
     声明该角色可以使用的并发连接数量。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   系统管理员不受此参数的限制。
 

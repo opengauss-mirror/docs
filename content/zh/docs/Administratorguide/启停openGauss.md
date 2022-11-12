@@ -9,7 +9,7 @@
     gs_om -t start
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >双机启动必须以双机模式启动，若中间过程以单机模式启动，则必须修复才能恢复双机关系，用gs\_ctl build进行修复，gs\_ctl的使用方法请参见《openGauss 工具参考》。
 
 
@@ -22,7 +22,7 @@
     gs_om -t stop
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >启停节点及AZ的操作请参见《openGauss 工具参考》中“服务端工具 \> gs\_om”章节。
 
 

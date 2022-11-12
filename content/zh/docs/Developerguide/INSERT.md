@@ -12,7 +12,7 @@
 -   如果使用query子句插入来自查询里的数据行，用户还需要拥有在查询里使用的表的SELECT权限。
 -   当连接到TD兼容的数据库时，td\_compatible\_truncation参数设置为on时，将启用超长字符串自动截断功能，在后续的insert语句中（不包含外表的场景下），对目标表中char和varchar类型的列上插入超长字符串时，系统会自动按照目标表中相应列定义的最大长度对超长字符串进行截断。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >如果向字符集为字节类型编码（SQL\_ASCII，LATIN1等）的数据库中插入多字节字符数据（如汉字等），且字符数据跨越截断位置，这种情况下，按照字节长度自动截断，自动截断后会在尾部产生非预期结果。如果用户有对于截断结果正确性的要求，建议用户采用UTF8等能够按照字符截断的输入字符集作为数据库的编码集。
 
 
@@ -54,7 +54,7 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
     -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
     -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属主干语句中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >INSERT ON DUPLICATE KEY UPDATE不支持WITH及WITH RECURSIVE子句。
 
   - **plan\_hint子句**

@@ -128,7 +128,7 @@ gs\_om参数可以分为如下几类：
 
         不指定数据库节点路径，表示使用静态文件中的数据库节点路径。
 
-        ![](public_sys-resources/icon-note.gif) **说明：**
+        ![](public_sys-resources/icon-note.png) **说明：**
         针对部署了CM工具的集群，如果在对单个实例进行启停时候指定了-D参数，只会启动或者停止数据库进程，不会影响CM相关进程。
         
         假设当前实例的数据库和CM进程都停止，在启动该实例时候如果指定了-D参数，那么只会尝试拉起数据库进程，此时由于CM进程不存在会导致数据库进程也拉起失败。可以去掉-D参数，启动整个实例。
@@ -214,14 +214,14 @@ gs\_om参数可以分为如下几类：
     
         显示详细信息。如果不指定，只提示该服务器是否正常。
     
-        ![](public_sys-resources/icon-note.gif) **说明：** 
+        ![](public_sys-resources/icon-note.png) **说明：** 
         本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
         
         --all
         
         显示openGauss所有节点信息。
         
-        ![](public_sys-resources/icon-note.gif) **说明：** 
+        ![](public_sys-resources/icon-note.png) **说明：** 
         本参数通过在每个数据库节点执行gsql查询系统表并汇总结果，来获取openGauss所有节点的信息。为保证显示信息的正确性，在使用本参数前请确认gsql可以查询。
 
 

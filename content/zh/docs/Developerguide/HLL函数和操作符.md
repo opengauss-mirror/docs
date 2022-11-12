@@ -52,7 +52,7 @@
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >数值大小相同的参数使用不同数据类型的哈希函数计算，最后结果会不一样，因为不同类型哈希函数会选取不同的哈希计算策略。
 
@@ -727,7 +727,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >注意：当两个或者多个hll数据结构做union的时候，必须要保证其中每一个hll里面的精度参数一样，否则将不可以进行union。同样的约束也适用于函数hll\_union\(hll,hll\)。
 

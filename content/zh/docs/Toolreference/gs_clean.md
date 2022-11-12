@@ -93,6 +93,6 @@ OPTION的取值如下所示：
 
     打印帮助信息。
 
->![](public_sys-resources/icon-notice.gif) **须知：**
+>![](public_sys-resources/icon-notice.png) **须知：**
 >
 >openGauss内核会在后台周期性调用gs_clean清理临时表，需要在pg_hba.conf文件中将本机的认证策略设置为trust，否则会导致gs_clean执行失败。

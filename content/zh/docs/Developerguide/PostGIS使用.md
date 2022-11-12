@@ -47,7 +47,7 @@ openGauss=# SELECT p1.city_name,p2.city_name,ST_Distance(p1.position,p2.position
 openGauss=# DROP EXTENSION postgis [CASCADE];
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果Extension被其它对象依赖（如创建的几何表），需要加入CASCADE（级联）关键字，删除所有依赖对象。
 
 若要完全删除PostGIS Extension，则需由omm用户使用gs\_om工具移除PostGIS及其依赖的动态链接库，格式如下：

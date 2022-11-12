@@ -111,7 +111,7 @@
 
   重命名一个表的索引。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 >涉及的参数说明可见[ALTER TABLE](ALTER-TABLE.md)。
 

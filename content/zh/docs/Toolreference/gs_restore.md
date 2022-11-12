@@ -23,7 +23,7 @@ gs\_restore工具由操作系统用户omm执行。
 gs_restore [OPTION]... FILE
 ```
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 
 -   FILE没有短选项或长选项。用来指定归档文件所处的位置。
 
@@ -47,7 +47,7 @@ gs_restore [OPTION]... FILE
 
     默认是标准输出。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ![](public_sys-resources/icon-note.png) **说明：** 
 
     -f不能同-d一起使用。
 
@@ -191,7 +191,7 @@ gs_restore [OPTION]... FILE
   gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
   ```
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   -t参数不支持schema_name.table_name的输入格式。
 
@@ -249,7 +249,7 @@ gs_restore [OPTION]... FILE
 
   使用管道传输密码，禁止在终端使用。
 
-![](public_sys-resources/icon-notice.gif) **须知：** 
+![](public_sys-resources/icon-notice.png) **须知：** 
 
 -   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
     ```
@@ -257,7 +257,7 @@ gs_restore [OPTION]... FILE
     ```
 -   gs\_restore不能选择性地导入大对象；例如只能导入那些指定表的对象。如果某个归档形式包含大对象，那所有大对象都会被导入或一个都不会被导入，如果它们通过-L、-t或其他选项被排除。
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 
 1. -d/--dbname 和 -f/--file 不能同时使用；
 2. -s/--schema-only 和 -a/--data-only不能同时使用；

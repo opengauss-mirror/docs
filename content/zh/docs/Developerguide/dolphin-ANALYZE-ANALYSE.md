@@ -10,7 +10,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 注意事项可见[ANALYZE](ANALYZE-ANALYSE.md)。
 
 ## 语法格式<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_sd95698dc205444ad9f4bbe049cc5d488"></a>
@@ -27,7 +27,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
     仅作语法，无实际用途
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 涉及的参数可见[ANALYZE](ANALYZE-ANALYSE.md)。
 
 ## 示例<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_s70741e0e8d4843c29a3d2916af35ad25"></a>

@@ -12,7 +12,7 @@ b.在"Docker Desktop"处点击"Download"
 
 c.双击下载下来的exe文件按指示完成安装(需要重启电脑)
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 > 部分电脑安装Docker完成后，Docker启动时会弹出提示“WSL 2 installation is incomplete.”，这时点击提示框内的链接，按照链接中的网页进行操作完成后，点击“Restart”即可
 

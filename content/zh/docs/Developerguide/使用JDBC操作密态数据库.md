@@ -40,7 +40,7 @@ public static Connection getConnect(String username, String passwd)
     };
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**  
+>![](public_sys-resources/icon-note.png) **说明：**  
 >
 >-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。 
 > 
@@ -72,7 +72,7 @@ Statement stmt = conn.createStatement();
 int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048));
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >创建密钥之前需要使用gs\_ktool工具提前生成密钥，才能创建CMK成功。
 
 ```

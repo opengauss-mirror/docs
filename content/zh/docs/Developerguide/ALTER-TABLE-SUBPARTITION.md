@@ -69,7 +69,7 @@
   SUBPARTITION subpartition_name [ VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT )]  [ TABLESPACE tablespace ]
   ```
 
-  >![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >若一级分区为HASH分区，不支持以ADD形式新增一级分区；若二级分区为HASH分区，不支持以MODIFY形式新增二级分区。
 
 - drop\_clause子语法用于删除分区表中的指定分区。语法可以作用在一级分区上。
@@ -84,7 +84,7 @@
   DROP SUBPARTITION  { subpartition_name | FOR (  partition_value, subpartition_value )  } [ UPDATE GLOBAL INDEX ]
   ```
 
-  >![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   若一级分区为HASH分区，不支持删除一级分区；若二级分区为HASH分区，不支持删除二级分区。
   >-   不支持删除唯一子分区。
@@ -101,7 +101,7 @@
   AT ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
   ```
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   切割点的大小要位于正在被切割的分区的分区键范围内。
 
@@ -119,7 +119,7 @@
     VALUES ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
     ```
     
-    >![](C:/Users/lijun/Downloads/309资料发布/07 开发者指南/public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   切割点的大小要位于正在被切割的分区的分区键范围内。
     >-   只能把一个分区切割成两个新分区。

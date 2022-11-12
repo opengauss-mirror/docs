@@ -98,7 +98,7 @@
 
     取值范围：IN、OUT、INOUT或VARIADIC。缺省值是IN。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >VARIADIC用于声明数组类型的参数。
 
 -   **argtype**
@@ -143,7 +143,7 @@
 
     表示该函数是窗口函数。替换函数定义时不能改变WINDOW属性。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。
 
 -   **IMMUTABLE**
@@ -250,7 +250,7 @@
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
 
 
