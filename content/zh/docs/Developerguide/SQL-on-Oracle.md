@@ -95,7 +95,7 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：**  
+>![](public_sys-resources/icon-notice.png) **须知：**  
 >
 >-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
 >  
@@ -314,7 +314,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         chmod -R 700 network
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >为了数据传输的安全性考虑，建议用户配置此安全连接。
 
 
@@ -355,7 +355,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     gs_om -t ec -m add -N DSN -U username --type=oracle -L  # -L为本地模式
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >使用本地模式时，需要在各个节点上分别执[1](#li16860111962113)-[5](#li1722613520498)。
 
 7.  安装unixODBC（仅在Oracle中有中文字符时，EC对接才需要执行此步骤）。
@@ -381,7 +381,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     ./configure --enable-gui=no --prefix=/tmp/unixODBC-2.3.6 --enable-iconv=yes --with-iconv-char-enc=enc
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
 
     >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
 
@@ -413,7 +413,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     chown -R user:group $GPHOME/unixodbc/*
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
 
     f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
@@ -422,7 +422,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >可以登录Oralce数据库，执行如下语句查询NLS\_LANG的值：
     >```
     >SELECT userenv('language') FROM sys_dummy;
@@ -430,7 +430,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
 
 8.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
@@ -441,7 +441,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     gs_om -t stop && gs_om -t start         #仅本地模式执行
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   使用本地模式时，需要在各个节点上分别执[步骤1](#li16860111962113)-[6](#li18491441322)。
     >-   因为本地模式不启停数据库实例，因此需要手动进行启停数据库实例。
 
@@ -464,7 +464,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         openGauss=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   无论用户是否[配置了Data Source密钥文件。](#li17974541057)创建和修改Data Source时，此处提供的Oracle数据库用户名和密码在openGauss数据库实例中都将被加密保存到系统表pg\_extension\_data\_source中。
         >-   如果Oracle的字符集为中文字符集，必须保证data source定义中ENCODING、$GAUSSHOME/utilslib/env\_ec中的NLS\_LANG设置、unixODBC编译参数--with-iconv-char-enc指定的encoding三者完全一致。
         >-   如果Oracle字符集为中文字符集，推荐本地数据库的字符集编码和远端Oracle的字符集编码保持一致，避免因字符集不兼容转码失败导致的作业执行失败。
@@ -481,7 +481,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     openGauss=# SELECT * FROM exec_on_extension('ds_oracle', 'select * from a;') AS (c1 int);
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   使用exec\_on\_extension之前需要创建Data Source对象。
     >-   当发送的SQL语句在Oracle执行失败时，连接函数exec\_on\_extension也是执行失败。
 

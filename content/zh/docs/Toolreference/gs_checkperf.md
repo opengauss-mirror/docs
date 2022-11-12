@@ -10,7 +10,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 - 运行在数据库之上的业务运行正常。
 
-  ![](public_sys-resources/icon-note.gif) **说明：**
+  ![](public_sys-resources/icon-note.png) **说明：**
 
   出于安全考虑，企业版安装方式下，gaussdbToolPath目录下该工具前置完成后会自动删除。
 

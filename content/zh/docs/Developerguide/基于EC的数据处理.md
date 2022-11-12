@@ -128,7 +128,7 @@ SQL on other openGauss目前仅支持以下数据类型：
 
 
 
->![](public_sys-resources/icon-notice.gif) **须知：**  
+>![](public_sys-resources/icon-notice.png) **须知：**  
 > 
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
 >     
@@ -255,7 +255,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     gs_om -t ec -m add -N DSN -U username --type=native -L  # -L为本地模式
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >使用本地模式时，需要在各个节点上分别执行[步骤1](#li16860111962113)-[5](#li116928192517)。
 
@@ -267,7 +267,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     gs_om -t stop && gs_om -t start         #仅本地模式下执行
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   使用本地模式时，需要在各个节点上分别[步骤1](#li16860111962113)-[6](#li748683312357)。
     >-   本地模式不启停数据库实例，因此需要手动执行启停命令。
 

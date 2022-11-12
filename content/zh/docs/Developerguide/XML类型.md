@@ -20,7 +20,7 @@ xmlconcat
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   该功能默认未开启，如需使用，需要重新使用build.sh脚本编译数据库，修改./configure配置参数，在其中加入--with-libxml参数。
 >

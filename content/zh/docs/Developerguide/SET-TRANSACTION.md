@@ -34,7 +34,7 @@
 
     指定事务隔离级别，该参数决定当一个事务中存在其他并发运行事务时能够看到什么数据。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >在事务中第一个数据修改语句（SELECT、INSERT、DELETE、UPDATE、FETCH、COPY）执行之后，当前事务的隔离级别就不能再次设置。
 
     取值范围：

@@ -30,7 +30,7 @@ DROP CLIENT MASTER KEY [ IF EXISTS ] client_master_key_name [CASCADE];
 -   **CASCADE**
     -   **CASCADE**：表示允许级联删除依赖于客户端加密主密钥的对象。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >在执行本语法的生命周期中，同时需要客户端和服务端更改状态，发生异常时可能存在服务端已删除密钥信息，但客户端未删除密钥文件的情况。
         >此时，客户端并不会在执行下一条语法的生命周期中，检查是否有期望被删除但却因发生异常而未被删除的密钥文件，而是需要用户定期检查密钥文件夹，对未被使用的密钥文件进行确认并处理。
 

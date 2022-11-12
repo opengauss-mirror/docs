@@ -35,7 +35,7 @@
 
     模式名称。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >模式名不能和当前数据库里其他的模式重名。
     >模式的名称不可以“pg\_”开头。
 
@@ -58,7 +58,7 @@
     子命令所创建的对象都被AUTHORIZATION子句指定的用户所拥有。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果当前搜索路径上的模式中存在同名对象时，需要明确指定引用对象所在的模式。可以通过命令SHOW SEARCH\_PATH来查看当前搜索路径上的模式。
 
 ## 示例<a name="zh-cn_topic_0283137491_zh-cn_topic_0237122113_zh-cn_topic_0059777945_s05e72232af5e4507aad1511c025d7617"></a>

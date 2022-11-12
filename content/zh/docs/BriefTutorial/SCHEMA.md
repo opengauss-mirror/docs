@@ -48,7 +48,7 @@ SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数�
 
     模式名称。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >模式名不能和当前数据库里其他的模式重名。
     >模式的名称不可以“pg\_”开头。
 
@@ -67,7 +67,7 @@ SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数�
     子命令所创建的对象都被AUTHORIZATION子句指定的用户所拥有。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果当前搜索路径上的模式中存在同名对象时，需要明确指定引用对象所在的模式。可以通过命令SHOW SEARCH\_PATH来查看当前搜索路径上的模式。
 
 ## 示例<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>

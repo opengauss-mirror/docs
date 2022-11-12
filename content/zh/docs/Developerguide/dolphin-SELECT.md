@@ -63,7 +63,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **WHERE子句**
     1. sounds like是condition的一种语法，用法如：column_name sounds like '字符'; 相当于soundex(column_name) = soundex('字符')的对比结果，是一个boolean的值。用于通过soundex处理来查询满足条件的数据。
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 涉及的其它参数说明可见[SELECT](SELECT.md)。
 
 ## 示例<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>

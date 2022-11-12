@@ -77,7 +77,7 @@
       -   列表分区表，哈希分区表不能是列存储。
       -   List/Hash/Range类型分区表支持exchange\_clause。
 
-      >![](public_sys-resources/icon-notice.gif) **须知：** 
+      >![](public_sys-resources/icon-notice.png) **须知：** 
       >
       >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
       >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，会导致不能交换数据。
@@ -113,7 +113,7 @@
    AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
    ```
     
-   >![](public_sys-resources/icon-notice.gif) **须知：** 
+   >![](public_sys-resources/icon-notice.png) **须知：** 
    >
    >-   列存分区表不支持切割分区。
    >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
@@ -124,7 +124,7 @@
      INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
      ```
         
-       >![](public_sys-resources/icon-notice.gif) **须知：** 
+       >![](public_sys-resources/icon-notice.png) **须知：** 
        >
        >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
        >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
@@ -168,7 +168,7 @@
         [ TABLESPACE tablespacename ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
     >-   间隔/哈希分区表不支持添加分区。
 
@@ -178,7 +178,7 @@
     DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >哈希分区表不支持删除分区。
 
 
@@ -341,7 +341,7 @@
 
     在VALIDATION是WITH状态时，如果检查出普通表有不满足要交换分区的分区键范围的数据，那么把这些数据插入到正确的分区，如果路由不到任何分区，再报错。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >只有在VALIDATION是WITH状态时，才可以指定VERBOSE。
 
 -   **partition\_new\_name**

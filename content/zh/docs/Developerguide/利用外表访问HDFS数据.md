@@ -26,7 +26,7 @@ openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建�
 -   删除外表，具体请参考[DROP FOREIGN TABLE](DROP-FOREIGN-TABLE.md)。
 -   查看外表。外表创建完成后，即可以通过SELECT进行数据查询。更多信息请参见[外表使用](外表使用.md)。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   HDFS外表在建表语句中，不支持普通表定义中的column constraint、table constraint特性及语法。
 >

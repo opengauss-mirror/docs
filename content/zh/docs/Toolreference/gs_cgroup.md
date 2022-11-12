@@ -44,7 +44,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
   ​    删除当前用户已建的“class1”Cgroups。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >如果删除Class控制组，则Workload控制组也被删除。
 
 3.更新已创建控制组的资源配额。  
@@ -73,7 +73,7 @@ gs_cgroup -u -T Gaussdb -f 0-20
 
 更新Gaussdb进程使用的CPU核数为0-20。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
 
 4.设置异常处理信息（class:wg组需存在）。  
@@ -101,7 +101,7 @@ d.  设置组Class下的作业在所有数据库节点上执行时间到达2400�
 gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
+>![](public_sys-resources/icon-notice.png) **须知：**   
 >给控制组设置异常处理信息，需要确保对应的控制组已经创建。指定多个阈值时用“，”分隔，不指定任何动作时默认为“penalty”操作。
 
 6.设置控制组使用的核数范围。
@@ -112,7 +112,7 @@ gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
 gs_cgroup -S class -G wg -g 20 --fixed -u
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >Class或Workload核数范围必须通过指定--fixed参数设置。
 
 7.回退上一个步骤。
@@ -121,7 +121,7 @@ gs_cgroup -S class -G wg -g 20 --fixed -u
 gs_cgroup --recover
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >--recover只支持对Class控制组和Workload控制组的增删改操作进行回退，且只支持回退一次操作。
 
 8.查看已创建的控制组信息。  
@@ -601,7 +601,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     取值范围：字符串，最长为32个字符。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >对于磁盘major:minor的编号获取，可以通过下面方式。如获取/mpp目录对应的磁盘编号：
 >```
 >> df 
@@ -617,7 +617,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 >brw-rw---- 1 root disk 8, 48 Feb 26 11:20 /dev/sdd
 >```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >这里一定要查sdd的磁盘号，不能是sdd1的磁盘号。否则执行时会报错。
 >如果更新IO的限额配置信息超过了可允许的最大配置字串，则新的更新不存储在配置文件中。如当前设置的字串长度为96，更新IO的磁盘数量大于8个，则有可能超出字串限制，更新成功，但是不存储在配置文件中。
 

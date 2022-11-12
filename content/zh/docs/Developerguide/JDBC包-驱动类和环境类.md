@@ -10,7 +10,7 @@
 
 在创建数据库连接之前，需要加载数据库驱动类“org.opengauss.Driver”。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >
 >+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC驱动包时，org.postgresql.Driver驱动类会冲突。
 >

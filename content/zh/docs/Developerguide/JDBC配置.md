@@ -30,7 +30,7 @@
     -   openGauss数据库实例所在主机的时区。
     -   openGauss数据库实例配置过程中时区。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >时区设置相关的操作，请参考《安装指南》中“企业版安装>安装准备>准备软硬件安装环境> 同步系统时间”章节内容。
 
 

@@ -49,6 +49,6 @@ group by  a.id;
 (9 rows)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >为了保证改写的等效性，在_normal\_date.id_加了_not null_约束。
 

@@ -334,7 +334,7 @@
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：**  
+        >![](public_sys-resources/icon-note.png) **说明：**  
         >-   -N all表示openGauss中的所有主机。  
         >-   -I all表示主机中的所有实例。  
         >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
@@ -490,7 +490,7 @@
 
     数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >-   数据库并不存储用户口令，只存储用户口令的哈希码。  
     >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。  
     >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。  

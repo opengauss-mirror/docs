@@ -53,7 +53,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为1，表示一次只能生成一个值，也就是没有缓存。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >不建议同时定义cache和maxvalue或minvalue。因为定义cache后不能保证序列的连续性，可能会产生空洞，造成序列号段浪费。
 
 -   **CYCLE**
@@ -74,7 +74,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为OWNED BY NONE，表示不存在这样的关联。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。
 
 
