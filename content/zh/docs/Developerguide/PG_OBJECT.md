@@ -51,20 +51,21 @@ PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视�
 </tr>
 <tr id="row95518631016"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="p148051512368"><a name="p148051512368"></a><a name="p148051512368"></a>createcsn</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p19555691018"><a name="p19555691018"></a><a name="p19555691018"></a>int8</p>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p19555691018"><a name="p19555691018"></a><a name="p19555691018"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p105517671010"><a name="p105517671010"></a><a name="p105517671010"></a>对象创建时的CSN。</p>
 </td>
 </tr>
 <tr id="row35161421017"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="p1621411016"><a name="p1621411016"></a><a name="p1621411016"></a>changecsn</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p116141410109"><a name="p116141410109"></a><a name="p116141410109"></a>int8</p>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p116141410109"><a name="p116141410109"></a><a name="p116141410109"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p161514101012"><a name="p161514101012"></a><a name="p161514101012"></a>对表或索引执行DDL操作时的CSN。</p>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >
@@ -73,4 +74,5 @@ PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视�
 >-   ctime和mtime所记录的时间为用户当次操作所属事务的起始时间。
 >-   由扩容引起的对象修改时间也会被记录。
 >-   createcsn和changecsn记录的是用户当次操作所属事务的事务提交序列号。
+>-   enable\_gtt\_concurrent\_truncate开启时，truncate全局临时表不会刷新mtime字段。
 
