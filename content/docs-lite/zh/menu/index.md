@@ -117,6 +117,8 @@ headless: true
 	-   [中间件]({{< relref "./docs/CharacteristicDescription/中间件.md" >}})
 		-   [分布式数据库能力]({{< relref "./docs/CharacteristicDescription/分布式数据库能力.md" >}})
 		-   [使用kubernetes部署分布式数据库]({{< relref "./docs/CharacteristicDescription/使用kubernetes部署分布式数据库.md" >}})
+	-   [负载管理]({{< relref "./docs/CharacteristicDescription/负载管理.md" >}})
+		-   [支持I层高时延逃生能力]({{< relref "./docs/CharacteristicDescription/支持I层高时延逃生能力.md" >}})
 -   [编译指导书]({{< relref "./docs/Compilationguide/Compilation.md" >}})
 	-   [简介]({{< relref "./docs/Compilationguide/简介.md" >}})
     -   [搭建编译环境]({{< relref "./docs/Compilationguide/搭建编译环境.md" >}})
