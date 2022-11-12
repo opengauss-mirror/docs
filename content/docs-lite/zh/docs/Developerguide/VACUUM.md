@@ -67,7 +67,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
   更新用于优化器的统计信息，以决定执行查询的最有效方法。
 
-  > **![](C:/Users/liyang/Desktop/openGauss/docs/content/zh/docs/Developerguide/public_sys-resources/icon-note.gif)说明**
+  > **![](public_sys-resources/icon-note.gif)说明**
   >
   > ustore分区表在autovacuum=analyze的时候也会触发vacuum。
 

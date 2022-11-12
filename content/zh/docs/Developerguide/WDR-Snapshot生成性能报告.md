@@ -63,7 +63,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
       select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
-      >![](C:/Users/liyang/Desktop/新建文件夹/20220419/07 开发者指南_2021033010438wdr/07 开发者指南/public_sys-resources/icon-note.gif) **说明：** 
+      >![](public_sys-resources/icon-note.gif) **说明：** 
       >当前openGauss的节点名固定是“dn\_6001\_6002\_6003”，也可直接代入。
 
       **表 1**  generate\_wdr\_report函数参数说明
