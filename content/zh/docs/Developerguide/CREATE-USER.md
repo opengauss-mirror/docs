@@ -13,7 +13,7 @@
 ## 语法格式<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
 ```
-CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
+CREATE USER [IF NOT EXISTS] user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 其中option子句用于设置权限及属性等信息。
@@ -55,6 +55,10 @@ CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { 
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
+
+-   **IF NOT EXISTS**
+
+    如果已经存在相同名称的用户，不会报出错误，而会发出通知，告知通知此用户已存在。
 
 -   **user\_name**
 
