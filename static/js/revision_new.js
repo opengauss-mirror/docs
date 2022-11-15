@@ -160,17 +160,40 @@ $(function ($) {
     $("#version-select .option>span").click(function () {
       window.open($(this).attr("href"), "_self");
     });
-    // 企业版与轻量版选择
+   
+     // 企业版、轻量版切换跳转
+     function switchLiteEnterprise(href) {
+      $.ajax({
+        type: "get",
+        url: href,
+        dataType: "json",
+        complete: function (res) {
+          // 若页面不存在跳转法律声明页面
+          if ((res.status === 404)) {
+            window.open(
+              location.origin +
+                `/${lang}/docs/${
+                  href.split("/")[5]
+                }/docs/Releasenotes/%E6%B3%95%E5%BE%8B%E5%A3%B0%E6%98%8E.html`,
+              "_self"
+            );
+          } else {
+            window.open(href, "_self");
+          }
+        },
+      });
+    }
+     // 企业版与轻量版选择
     $(".switch-version>input").click(function () {
       const version = location.pathname.split("/")[3];
       if (version.includes("-lite")) {
         $(this).removeClass("lite");
         const targetUrl = location.href.replace("-lite", "");
-        window.open(targetUrl, "_self");
+        switchLiteEnterprise(targetUrl);
       } else {
         $(this).addClass("lite");
         const targetUrl = location.href.replace(version, version + "-lite");
-        window.open(targetUrl, "_self");
+        switchLiteEnterprise(targetUrl);
       }
     });
     $(".switch-version>.enterprise").click(function () {
@@ -178,7 +201,7 @@ $(function ($) {
       if (version.includes("-lite")) {
         $(".switch-version>input").removeClass("lite");
         const targetUrl = location.href.replace("-lite", "");
-        window.open(targetUrl, "_self");
+        switchLiteEnterprise(targetUrl);
       }
     });
     $(".switch-version>.lite").click(function () {
@@ -186,7 +209,7 @@ $(function ($) {
       if (!version.includes("-lite")) {
         $(".switch-version>input").addClass("lite");
         const targetUrl = location.href.replace(version, version + "-lite");
-        window.open(targetUrl, "_self");
+        switchLiteEnterprise(targetUrl);
       }
     });
     // 低版本不出现企业版与轻量版选择
@@ -236,6 +259,18 @@ $(function ($) {
       });
     }
     dragMovex(".table-box");
+    // 向表中插入数据页面的表格处理
+    (function tableIllBox() {
+      const nowHref = location.href;
+      if (
+        nowHref.includes(
+          "%E5%90%91%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"
+        )
+      ) {
+        const table = $("#markdown>table:nth-of-type(2)");
+        table.wrap(`<div class="table-ill"></div>`);
+      }
+    })();
     // 文档下载按钮生成
     (function downloadLink() {
       const version = location.pathname.split("/")[3];
@@ -278,5 +313,21 @@ $(function ($) {
       }
       $(".left .download-button").html(downloadElement);
     })();
+    // 解决因hugo版本渲染造成的页面内a标签锚点跳转失灵问题
+    $("a").click(function () {
+      const href = $(this).attr("href");
+      if (href.split("")[0] === "#") {
+        $.each($("h2"), (index, value) => {
+          if (value.id.includes(href.replace("#", ""))) {
+            $("html,body").animate(
+              {
+                scrollTop: $("#" + value.id).offset().top,
+              },
+              500
+            );
+          }
+        });
+      }
+    });
   });
 });
