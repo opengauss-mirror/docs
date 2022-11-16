@@ -27,16 +27,17 @@
 -   Copy data from a file to a table.
 
     ```
-    COPY table_name [ ( column_name [, ...] ) ] 
+    COPY table_name [ ( column_name [, ...] ) ]
         FROM { 'filename' | STDIN }
         [ [ USING ] DELIMITERS 'delimiters' ]
         [ WITHOUT ESCAPING ]
         [ LOG ERRORS ]
+        [ LOG ERRORS DATA ]
         [ REJECT LIMIT 'limit' ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | TRANSFORM  ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] )
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ]
+        | [ TRANSFORM ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] ) ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -49,16 +50,16 @@
         TO { 'filename' | STDOUT }
         [ [ USING ] DELIMITERS 'delimiters' ]
         [ WITHOUT ESCAPING ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ];
     
     COPY query
         TO { 'filename' | STDOUT }
         [ WITHOUT ESCAPING ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -71,7 +72,7 @@
     The syntax of the optional parameter  **option**  is as follows:
 
     ```
-    FORMAT 'format_name'
+    FORMAT format_name
     | OIDS [ boolean ]
     | DELIMITER 'delimiter_character'
     | NULL 'null_string'
@@ -97,25 +98,25 @@
     The syntax of the optional parameter  **copy\_option**  is as follows:
 
     ```
-    OIDS 
-    | NULL 'null_string' 
-    | HEADER 
-    | FILEHEADER 'header_file_string' 
-    | FREEZE 
-    | FORCE_NOT_NULL column_name [, ...]
-    | FORCE_QUOTE { column_name [, ...] | * }
-    | BINARY 
-    | CSV 
-    | QUOTE [ AS ] 'quote_character' 
-    | ESCAPE [ AS ] 'escape_character' 
+    OIDS
+    | NULL 'null_string'
+    | HEADER
+    | FILEHEADER 'header_file_string'
+    | FREEZE
+    | FORCE NOT NULL column_name [, ...]
+    | FORCE QUOTE { column_name [, ...] | * }
+    | BINARY
+    | CSV
+    | QUOTE [ AS ] 'quote_character'
+    | ESCAPE [ AS ] 'escape_character'
     | EOL 'newline_character'
-    | ENCODING 'encoding_name' 
-    | IGNORE_EXTRA_DATA 
+    | ENCODING 'encoding_name'
+    | IGNORE_EXTRA_DATA
     | FILL_MISSING_FIELDS
-    | COMPATIBLE_ILLEGAL_CHARS 
-    | DATE_FORMAT 'date_format_string' 
-    | TIME_FORMAT 'time_format_string' 
-    | TIMESTAMP_FORMAT 'timestamp_format_string' 
+    | COMPATIBLE_ILLEGAL_CHARS
+    | DATE_FORMAT 'date_format_string'
+    | TIME_FORMAT 'time_format_string'
+    | TIMESTAMP_FORMAT 'timestamp_format_string'
     | SMALLDATETIME_FORMAT 'smalldatetime_format_string'
     ```
 

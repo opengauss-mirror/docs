@@ -27,16 +27,17 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 -   从一个文件拷贝数据到一个表。
 
     ```
-    COPY table_name [ ( column_name [, ...] ) ] 
+    COPY table_name [ ( column_name [, ...] ) ]
         FROM { 'filename' | STDIN }
         [ [ USING ] DELIMITERS 'delimiters' ]
         [ WITHOUT ESCAPING ]
         [ LOG ERRORS ]
+        [ LOG ERRORS DATA ]
         [ REJECT LIMIT 'limit' ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | TRANSFORM  ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] )
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ]
+        | [ TRANSFORM ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] ) ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -50,16 +51,16 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         TO { 'filename' | STDOUT }
         [ [ USING ] DELIMITERS 'delimiters' ]
         [ WITHOUT ESCAPING ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ];
     
     COPY query
         TO { 'filename' | STDOUT }
         [ WITHOUT ESCAPING ]
-        [ WITH ( option [, ...] ) ]
+        [ [ WITH ] ( option [, ...] ) ]
         | copy_option
-        | FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) [ ( option [, ...] ) | copy_option [  ...] ] ];
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ];
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -86,7 +87,6 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     | NOESCAPING [ boolean ]
     | FORCE_QUOTE { ( column_name [, ...] ) | * }
     | FORCE_NOT_NULL ( column_name [, ...] )
-    | FORCE_NULL ( column_name [, ...] )
     | ENCODING 'encoding_name'
     | IGNORE_EXTRA_DATA [ boolean ]
     | FILL_MISSING_FIELDS [ boolean ]
@@ -100,32 +100,26 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
     其中可选参数copy\_option子句语法为：
 
     ```
-    OIDS 
-    | NULL 'null_string' 
-    | HEADER 
-    | FILEHEADER 'header_file_string' 
-    | FREEZE 
-    | FORCE_NOT_NULL column_name [, ...]
-    | FORCE_NULL column_name [, ...]
-    | FORCE_QUOTE { column_name [, ...] | * }
-    | BINARY 
-    | CSV 
-    | QUOTE [ AS ] 'quote_character' 
-    | ESCAPE [ AS ] 'escape_character' 
+    OIDS
+    | NULL 'null_string'
+    | HEADER
+    | FILEHEADER 'header_file_string'
+    | FREEZE
+    | FORCE NOT NULL column_name [, ...]
+    | FORCE QUOTE { column_name [, ...] | * }
+    | BINARY
+    | CSV
+    | QUOTE [ AS ] 'quote_character'
+    | ESCAPE [ AS ] 'escape_character'
     | EOL 'newline_character'
-    | ENCODING 'encoding_name' 
-    | IGNORE_EXTRA_DATA 
-    | FILL_MISSING_FIELDS [ { 'one' | 'multi' } ]
-    | COMPATIBLE_ILLEGAL_CHARS 
-    | DATE_FORMAT 'date_format_string' 
-    | TIME_FORMAT 'time_format_string' 
-    | TIMESTAMP_FORMAT 'timestamp_format_string' 
+    | ENCODING 'encoding_name'
+    | IGNORE_EXTRA_DATA
+    | FILL_MISSING_FIELDS
+    | COMPATIBLE_ILLEGAL_CHARS
+    | DATE_FORMAT 'date_format_string'
+    | TIME_FORMAT 'time_format_string'
+    | TIMESTAMP_FORMAT 'timestamp_format_string'
     | SMALLDATETIME_FORMAT 'smalldatetime_format_string'
-    | SKIP int_number
-    | WHEN { ( start - end ) | column_name } { = | != } 'string'
-    | SEQUENCE ( { column_name ( integer [, incr] ) [, ...] } )
-    | FILLER ( { column_name [, ...] } )
-    | CONSTANT ( { column_name 'constant_string' [, ...] } )
     ```
 
 
