@@ -211,10 +211,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
     -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-    -   源表上的索引默认在新表上创建，且不影响指定INCLUDING INDEXES，若不希望复制源表索引，需指定EXCLUDING INDEXES。
+    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
     -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    -   如果源表为分区表，则源表的分区定义会默认复制到新表中，同时新表将不能再使用PRTITION BY子句，不影响指定INCLUDING PARTITION。若不希望复制分区信息，需指定EXCLUDING PARTITION。如果源分区表还带有索引，只使用EXCLUDING PARTITION，目标表定义将是普通表，但默认复制源表分区索引，结果会报错，因为普通表不支持分区索引。
+    -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。如果源表上带有索引，可以使用INCLUDING PARTITION INCLUDING INDEXES语法实现。如果对分区表只使用INCLUDING INDEXES，目标表定义将是普通表，但是索引是分区索引，最后结果会报错，因为普通表不支持分区索引。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
@@ -228,7 +228,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >-   如果源表是本地临时表，则新表也必须是本地临时表，否则会报错。
     >
-    >-   如果源表是hash或list分区表，则在CREATE TABLE ... LIKE默认复制分区时会报错，不支持复制hash或list分区表的分区，仅支持range分区，此时请手动EXCLUDING PARITITION。对于二级分区表，同样只支持range-range二级分区。
+    >-   如果源表是hash或list分区表，则在CREATE TABLE ... (LIKE ... INCLUDIING PARTITION)时会报错，不支持复制hash或list分区表的分区，仅支持range分区。对于二级分区表，同样只支持range-range二级分区。
+    >
+    >-   ATUO_INCREMENT列需要为主键或唯一约束的第一个字段，若复制包含AUTO_INCREAMENT列的表时指定EXCLUDING INDEX，将会报错。
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
