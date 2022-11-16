@@ -4,7 +4,7 @@ A package is a combination of PL/SQL programs, such as stored procedures, functi
 
 A package contains two parts: package specifications and package body. The declaration contained in the package specifications can be accessed by external functions and anonymous blocks. The declaration contained in the package body cannot be accessed by external functions or anonymous blocks, but can be accessed only by functions and stored procedures in the package body.
 
-For details about how to create a package, see  [CREATE PACKAGE](en-us_topic_0000001114212452.md).
+For details about how to create a package, see  [CREATE PACKAGE](create-package.md).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   Cross-package variables cannot be used as control variables in the for loops.
