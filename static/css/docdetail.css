@@ -1752,6 +1752,7 @@
 
 pre {
     position: relative;
+    overflow: auto;
 }
 
 .btn_pre_copy {
@@ -1765,7 +1766,22 @@ pre {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+td pre{
+    padding: 20px 0;
+    border: 1px solid var(--o-color-border2);
+}
 
+td .btn_pre_copy{
+    top: 0px;
+    right: 0px;
+    filter: brightness(0%);
+}
+.dark td .btn_pre_copy{
+    filter: brightness(100%);
+}
+pre+blockquote{
+    margin-top: 12px;
+}
 .btn_pre_copy:hover {
     background-image: url(/img/common/copyed.png);
     background-repeat: no-repeat;
@@ -1773,6 +1789,16 @@ pre {
 
 code {
     padding: 30px !important;
+}
+
+@media screen and (max-width: 768px){
+    .table-ill{
+        width: 100%;
+        overflow: auto;
+    }
+    .table-ill table{
+        width: 900px !important;
+    }
 }
 #right-style{
     display: flex;
