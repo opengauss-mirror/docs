@@ -8,7 +8,7 @@
 
 当enable_access_server_directory=off时，只允许初始用户删除directory对象；当enable_access_server_directory=on时，具有SYSADMIN权限的用户、directory对象的属主、被授予了该directory的DROP权限的用户或者继承了内置角色gs_rloe_directory_drop权限的用户可以删除directory。
 
-## 语法格式<a name="zh-cn_topic_028313
+
 
 ## 语法格式<a name="zh-cn_topic_0283137028_zh-cn_topic_0237122136_zh-cn_topic_0059779050_s6d36dd755c5a47d086e5b767a88f208b"></a>
 
