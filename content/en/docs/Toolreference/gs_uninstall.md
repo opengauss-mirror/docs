@@ -35,15 +35,15 @@ openGauss provides the  **gs\_uninstall**  tool to uninstall a cluster.
 
     Uninstalls the local host only. If a host in openGauss is uninstalled, openGauss cannot be performed full uninstallation.
 
-    -   -l
+-   -l
 
-        Specifies a log file name and its absolute path that can be accessed. A timestamp will be added automatically to the log file name.
+    Specifies a log file name and its absolute path that can be accessed. A timestamp will be added automatically to the log file name.
 
-        -   When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  _$GAUSSLOG_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
-        -   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is  **gaussdbLogPath/**_Username_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
+    -   When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  _$GAUSSLOG_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
+    -   When  **-l**  is not specified but  **gaussdbLogPath**  is set in the XML file, the default value of the  **-l**  parameter is  **gaussdbLogPath/**_Username_**/om/gs\_uninstall-YYYY-MM-DD\_hhmmss.log**.
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
-            >When executing  **gs\_uninstall**, the system will automatically delete the directories related to openGauss. You are advised to set the log file path to a path outside the openGauss database.
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >When executing  **gs\_uninstall**, the system will automatically delete the directories related to openGauss. You are advised to set the log file path to a path outside the openGauss database.
 
 
 
