@@ -90,15 +90,25 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 </tr>
 <tr id="row19271527135319"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="p22713278539"><a name="p22713278539"></a><a name="p22713278539"></a>-m MASK</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="p1271527145315"><a name="p1271527145315"></a><a name="p1271527145315"></a>指定哪些模块、函数需要追踪，如果参数为空，则追踪添加trace接口的所有模块的所有函数。</p>
-<p id="p176851402914"><a name="p176851402914"></a><a name="p176851402914"></a>格式：[comp…][ALL].[func…][ALL]</p>
+
+<td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="p1271527145315"><a name="p1271527145315"></a><a name="p1271527145315"></a>指定哪些模块、函数需要追踪。参数不得为空。</p>
+<p id="p176851402914"><a name="p176851402914"></a><a name="p176851402914"></a>格式：  &#60;COMP_FUNC_PAIR&#62; [,&#60;COMP_FUNC_PAIR&#62;]* </p>
 <p id="p476815146299"><a name="p476815146299"></a><a name="p476815146299"></a>描述：</p>
-<a name="ul191841558155417"></a><a name="ul191841558155417"></a><ul id="ul191841558155417"><li>comp 是模块列表，使用‘,’分隔，例如：executer,opengauss。也可以使用序号，例如：executer,2。</li><li>func 是function列表，使用‘,’ 分隔。 例如：sql_execute_ddl, sql_execute_dcl。也可以使用序号指代模块中第几个function，例如：2。</li><li>设置成ALL表示所有模块或所有function被trace。</li></ul>
+<a name="ul191841558155417"></a><a name="ul191841558155417"></a><ul id="ul191841558155417"><li><strong id="b1695325612511"><a name="b1695325612511"></a><a name="b1695325612511"></a>&#60;COMP_FUNC_PAIR&#62;</strong> -> &#60;COMP_NAME&#62;.&#60;FUNC_NAME&#62; <br/>
+COMP_FUNC_PAIR 代表一组模块与函数组合。<br/>
+<li><strong id="b1980614542618"><a name="b1980614542618"></a><a name="b1980614542618"></a>COMP_NAME</strong> 代表一个模块名。 <br/>
+<li><strong id="b146761139285"><a name="b146761139285"></a><a name="b146761139285"></a>&#60;FUNC_NAMES&#62;</strong> -> ALL|[&#60;FUNC_NAME&#62;[&#38;&#60;FUNC_NAME&#62;]*]<br/>
+<strong id="b199731552152717"><a name="b199731552152717"></a><a name="b199731552152717"></a>FUNC_NAMES</strong> 可由用户指定为ALL 或者一个及以上的函数名。由于FUNC_NAMES一定是与COMP_NAME组合，因此，ALL代表追踪以COMP_NAME为名的模块的所有函数；而如果用户指定的是一个及以上的函数名，则是追踪以COMP_NAME为名的模块中的这几个指定FUNC_NAME对应的函数名。 <br/></ul>
+
 <p id="p276921442916"><a name="p276921442916"></a><a name="p276921442916"></a>示例：</p>
-<a name="ul31951366551"></a><a name="ul31951366551"></a><ul id="ul31951366551"><li>executer,opengauss.ALL ：所有定义定义在executer和opengauss模块下的function被trace。</li><li>executer,opengauss.sql_execute_ddl ：定义在executer 下的Function sql_execute_ddl被trace. opengauss模块被忽略，因为下面没有该function 。</li><li>executer,opengauss.1 ：定义在模块executer和opengauss下的第一个function被trace。</li></ul>
-<p id="p176921422917"><a name="p176921422917"></a><a name="p176921422917"></a>ALL.1,2 ：定义在所有模块下的第一，二个function被trace。</p>
+<a name="ul31951366551"></a><a name="ul31951366551"></a><ul id="ul31951366551"><li><strong id="b351614415298"><a name="b351614415298"></a><a name="b351614415298"></a>access.StartTransaction</strong>: 追踪一个模块access中的函数StartTransaction。</li>
+<li><strong id="b1628374782920"><a name="b1628374782920"></a><a name="b1628374782920"></a>executer.ExecutorStart&ExecInitExpr</strong>: 追踪一个模块executer中的函数ExecutorStart和ExecInitExpr。 </li>
+<li><strong id="b1140325793010"><a name="b1140325793010"></a><a name="b1140325793010"></a>executer.ExecutorStart,tcop.PortalStart&PortalRun</strong>: 追踪模块executer中的ExecutorStart函数和模块tcop中的函数 PortalStart和PortalRun。</li>
+<li><strong id="b1622513344314"><a name="b1622513344314"></a><a name="b1622513344314"></a>executer.ALL,access.ALL</strong>: 追踪模块executer和access中的所有函数。</p></ul>
+
 </td>
 </tr>
+
 <tr id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_row12693367813"><td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p43111434122216"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p43111434122216"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p43111434122216"></a>-s BUFFER_SIZE</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.06%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p5310203414226"><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p5310203414226"></a><a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_p5310203414226"></a>指定用于trace功能的共享内存大小，默认为1G。如果指定的BUFFER_SIZE小于最小值2048，系统将自动调整为最小值。如果指定的BUFFER_SIZE不是2^N（二的N次方），则向下对齐2^N；例如：指定BUFFER_SIZE=3072，由于2^11&lt;3072&lt;2^12，系统将调整为2048。</p>
