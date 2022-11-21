@@ -633,6 +633,13 @@
     z-index: 1002;
     box-shadow: var(--o-shadow-l4);
 }
+@media screen and (max-width: 1480px){
+    #title-evaluate{
+        right: 1vw;
+    }
+
+}
+
 .bug-hide{
     display: none ;
   }
