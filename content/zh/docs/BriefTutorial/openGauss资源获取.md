@@ -159,5 +159,3 @@ openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀�
     -   [B站](https://space.bilibili.com/629605267?from=search&seid=8790769897413776977&spm_id_from=333.337.0.0)
     -   [CSDN](https://blog.csdn.net/GaussDB)
     -   [墨天轮](https://www.modb.pro/openGauss)
-
-

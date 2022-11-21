@@ -7,7 +7,7 @@ WHERE子句在所选列上设置条件，而HAVING子句则在由GROUP BY子句�
 ## 语法格式<a name="section108517702319"></a>
 
 ```
-SELECT 
+SELECT
 { * | [column, ...] }
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
@@ -58,4 +58,3 @@ openGauss=# SELECT c_first_name FROM customer_t1 GROUP BY c_first_name HAVING co
  Lily
 (2 rows)
 ```
-

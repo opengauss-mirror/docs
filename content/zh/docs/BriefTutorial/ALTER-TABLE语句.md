@@ -42,14 +42,14 @@
 -   更新多个列。
 
     ```
-    ALTER TABLE  table_name 
+    ALTER TABLE  table_name
         MODIFY ( { column_name data_type | column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
 -   对名称的修改不会影响所存储的数据。
 
     ```
-    ALTER TABLE table_name 
+    ALTER TABLE table_name
         RENAME TO new_table_name;
     ```
 
@@ -229,5 +229,3 @@ openGauss=# SELECT * FROM customer_t1;
               4320 | tpcds         | Lily         |             |   2000
     (10 rows)
     ```
-
-

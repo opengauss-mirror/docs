@@ -21,8 +21,8 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
     gsql((openGauss x.x.x build f521c606) compiled at 2021-09-16 14:55:22 commit 2935 last mr 6385 release)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
-    
-    openGauss=# 
+
+    openGauss=#
     ```
 
     omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。提示符告诉您可以在此输入SQL语句。
@@ -64,5 +64,3 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
     ```
 
     缺省情况下，客户端连接数据库后处于空闲状态时间超过参数session\_timeout的默认值（10min）时会自动断开连接。
-
-

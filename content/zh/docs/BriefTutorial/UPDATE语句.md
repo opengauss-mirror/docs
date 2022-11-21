@@ -5,8 +5,8 @@
 ## 语法格式<a name="section169339391182"></a>
 
 ```
-UPDATE table_name 
-SET column_name = { expression | DEFAULT } 
+UPDATE table_name
+SET column_name = { expression | DEFAULT }
 [WHERE condition ];
 ```
 
@@ -58,7 +58,6 @@ UPDATE 9
 用户可以在一个UPDATE命令中更新更多的字段，方法是在SET子句中列出更多赋值，比如：
 
 ```
-openGauss=# UPDATE customer_t1 SET c_customer_id = 'Admin', c_first_name = 'Local' WHERE c_customer_sk = 4421; 
+openGauss=# UPDATE customer_t1 SET c_customer_id = 'Admin', c_first_name = 'Local' WHERE c_customer_sk = 4421;
 UPDATE 1
 ```
-

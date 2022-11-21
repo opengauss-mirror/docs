@@ -134,4 +134,3 @@ openGauss=# SELECT * FROM table1 a FULL OUTER JOIN table2 b ON a.name = b.name;
        |      |  1 | Tommy | IT
 (6 rows)
 ```
-

@@ -33,14 +33,14 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 示例：
 
->![](public_sys-resources/icon-note.png) **说明：** 
->下面示例中黑体加下划线的字段需要替换成用户自己的信息，其中：  
+>![](public_sys-resources/icon-note.png) **说明：**
+>下面示例中黑体加下划线的字段需要替换成用户自己的信息，其中：
 >
->-   **<u>127.0.0.1</u>**：数据库所在的主机地址。  
->-   <u>**8080**</u>：数据库连接的端口。  
->-   <u>**test**</u>：连接的数据库名称。如果数据库不存在会报错，使用前请先确认该数据库是否存在。  
->-   **<u>myuser</u>**：连接数据库的用户名。  
->-   **<u>myPassWord</u>**：连接数据库用户的密码。  
+>-   **<u>127.0.0.1</u>**：数据库所在的主机地址。
+>-   <u>**8080**</u>：数据库连接的端口。
+>-   <u>**test**</u>：连接的数据库名称。如果数据库不存在会报错，使用前请先确认该数据库是否存在。
+>-   **<u>myuser</u>**：连接数据库的用户名。
+>-   **<u>myPassWord</u>**：连接数据库用户的密码。
 
 -   DriverManager.getConnection\(String url\);
 
@@ -54,7 +54,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
       public static void main(String[] args) {
             getConnect();
@@ -95,7 +95,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
       public static void main(String[] args) {
             getConnect();
@@ -137,7 +137,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
       public static void main(String[] args) {
             getConnect();
@@ -179,7 +179,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
       public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -219,7 +219,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -252,7 +252,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 ## 插入操作<a name="section1603173921418"></a>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >插入操作执行前需要确保执行了[创建表](#section1969315347146)操作，表名为test，表结构如下。
 >```
 >create table test (id int,name varchar (10));
@@ -306,7 +306,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
         public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -342,13 +342,13 @@ JDBC提供了三个方法，用于创建数据库连接。
             }
         }
     }
-    
+
     ```
 
 
 ## SELECT操作<a name="section138138476141"></a>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
 -   使用prepareStatement执行查询操作可以使用预编译，动态的添加参数也可以执行普通的SQL语句。
@@ -426,7 +426,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 ## 更新操作<a name="section112861325191512"></a>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
 -   使用Statement执行更新操作，然后执行查询语句判断更新是否成功。
@@ -477,7 +477,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
         public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -528,7 +528,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
         public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -563,7 +563,7 @@ JDBC提供了三个方法，用于创建数据库连接。
             }
         }
     }
-    
+
     ```
 
 
@@ -577,7 +577,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.Properties;
-    
+
     public class JdbcConn {
         public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
@@ -614,5 +614,3 @@ JDBC提供了三个方法，用于创建数据库连接。
         }
     }
     ```
-
-

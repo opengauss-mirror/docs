@@ -8,8 +8,8 @@ DCF是一款高性能、高度成熟可靠、易扩展、易使用的独立基�
 
 DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块、存储模块、通信模块、服务层等。
 
-**图 1**  DCF功能架构图<a name="fig31591049102410"></a>  
-![](figures/DCF功能架构图.png "DCF功能架构图")
+**图 1**  DCF功能架构图<a name="fig31591049102410"></a>
+![](figures/Diagram-Of-The-DCF-Functional-Architecture.png "DCF功能架构图")
 
 -   **算法模块：**
 
@@ -59,8 +59,8 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
 
     流控算法主要流程如[图2](#fig548518330404)所示：
 
-    **图 2**  流控算法流程<a name="fig548518330404"></a>  
-    ![](figures/流控算法流程.jpg "流控算法流程")
+    **图 2**  流控算法流程<a name="fig548518330404"></a>
+    ![](figures/Flow-Control-Algorithm-Process.jpg "流控算法流程")
 
     核心算法流程如下：
 
@@ -104,7 +104,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
   <!-- 是否开启DCF模式, 开启：on，关闭：off -->
     <PARAM name="enable_dcf" value="on/off"/>
   <!-- DCF config配置信息 -->
-    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
+    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;192.168.0.11&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;192.168.0.12&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;192.168.0.13&quot;,&quot;port&quot;:17783,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/>
   </CLUSTER>
 ...
 ```
@@ -117,16 +117,16 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
     # gs_ctl query –D <data_dir>
     # gs_ctl query -D /nvme0/gaussdb/cluster/nvme0/dn1
     HA state:
-           local role                     : Primary   
-           static connections             : 2   
-           db state                       : Normal 
-           detail information             : Normal 
+           local role                     : Primary
+           static connections             : 2
+           db state                       : Normal
+           detail information             : Normal
     Paxos replication info:
-           paxos write location           : 964/87134528  
-           paxos commit location          : 964/87134528  
-           local write location           : 964/87134528  
-           local flush location           : 964/87134528  
-           local replay location          : 964/87134528  
+           paxos write location           : 964/87134528
+           paxos commit location          : 964/87134528
+           local write location           : 964/87134528
+           local flush location           : 964/87134528
+           local replay location          : 964/87134528
            dcf replication info           : {"stream_id":1,"local_node_id":1,"role":"LEADER","term":3,"run_mode":0,"work_mode":0,"hb_interval":1000,"elc_timeout":3000,"applied_index":14300633605."commit_index":14300633605,"first_index":14300625186,"last_index":14300633605,"cluster_min_apply_idx'14300633605,"leader_id":1,"leader_ip":"172.16.137.38","leader_port":17783,"nodes":[{"node_id":1,"id":"172.16.137.38","port":17783,"role":"LEADER","next_index":14300633606,"match_index":14300633605,"apply_index":14300633605},{"node_id":2,"ip":"172.16.137.40","port":17783,"role":"FOLLOWER","next_index":14300633606,"match_index":14300633605,"apply_index":14300633605},{"node_id":3,"ip":"172.16.137.42","port":17783,"role":"FOLLOWER","next_index":14300633606,"match_index":14300633605,"apply_index":14300633605}}}
     ```
 
@@ -202,6 +202,3 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
    ```
    gs_ctl build -b full -D <new_node_data_dir>
    ```
-
-   
-

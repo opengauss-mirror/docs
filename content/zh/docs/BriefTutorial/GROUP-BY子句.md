@@ -5,7 +5,7 @@ GROUP BY语句和SELECT语句一起使用，用来对相同的数据进行分组
 ## 语法格式<a name="section1483055819415"></a>
 
 ```
-SELECT 
+SELECT
 { * | [column, ...] }
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
@@ -38,4 +38,3 @@ openGauss=# SELECT c_first_name, sum(Amount)  FROM customer_t1 GROUP BY c_first_
  Lily         | 3000
 (6 rows)
 ```
-
