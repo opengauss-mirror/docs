@@ -121,21 +121,15 @@ function getTreeLink() {
         let lastBread='';
         let h1=$(".markdown h1")
         let title=""
-        if(h1.html()){
-            title=h1.html().trim()
+        if(h1.text()){
+            title=h1.text().trim()
         }
         if(openEle.length){
             for (let i = 0; i < openEle.length; i++) {
-                if (i < openEle.length-1) {
+                if (i < openEle.length) {
                     let span = "<i></i>"
                     $(".docs-a").append($(" #docstreeview .jstree-container-ul").find(".jstree-open").eq(i).find("a").first().clone()).append(span);
                     lastBread= $(" #docstreeview .jstree-container-ul").find(".jstree-open").eq(i).find("a").first().text()
-                }
-                else {
-                    let text = $(" #docstreeview .jstree-container-ul").find(".jstree-open").eq(i).find("a").first().text();
-                    let span = "<a>" + text + "</a><i></i>"
-                    lastBread=text
-                    $(".docs-a").append(span);
                 }
             }
         }
