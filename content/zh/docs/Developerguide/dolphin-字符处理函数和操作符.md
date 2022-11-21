@@ -4,7 +4,7 @@
 
 1. 新增```regexp/not regexp/rlike```操作符。
 2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64```函数。
-3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
+3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
 
@@ -383,7 +383,63 @@
     disange
     (1 row)
     ```
-    
+
+-   left\(str text, n int\)
+
+    描述：返回字符串的前n个字符。当n是负数时，当做0处理。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    test_db=# select left('abcde', 2);
+    left
+    ------
+    ab
+    (1 row)
+
+    test_db=# select left('abcde', 0);
+    left
+    ------
+
+    (1 row)
+
+    test_db=# select left('abcde', -2);
+    left
+    ------
+
+    (1 row)
+    ```
+
+-   right\(str text, n int\)
+
+    描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    test_db=# select right('abcde', 2);
+    right
+    -------
+    de
+    (1 row)
+
+    test_db=# select right('abcde', 0);
+    right
+    -------
+
+    (1 row)
+
+    test_db=# select right('abcde', -2);
+    right
+    -------
+
+    (1 row)
+    ```
+
 -   field(str, str1,str2,str3,...)
 
     描述：获取str在后面strn中的位置，不区分大小写。
