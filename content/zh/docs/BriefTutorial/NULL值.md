@@ -50,4 +50,3 @@ openGauss=# SELECT * FROM customer_t1 WHERE c_customer_id IS NULL;
           3869 |               | Grace        |             |
 (1 row)
 ```
-

@@ -5,7 +5,7 @@
 ## 语法格式<a name="zh-cn_topic_0000001225258419_section4955330113019"></a>
 
 ```
-SELECT 
+SELECT
 { * | [column, ...] }
 [ FROM from_item [, ...] ]
 [ WHERE condition ];
@@ -81,5 +81,3 @@ SELECT
               4421 | Admin         | Local        |             |   3000
     (2 rows)
     ```
-
-

@@ -111,6 +111,3 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
         Has OIDs: no
         Options: orientation=row, storage_type=ustore, compression=no
         ```
-
-
-

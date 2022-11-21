@@ -2791,4 +2791,3 @@ VALUES {( expression [, ...] )} [, ...]
     [ OFFSET start [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ];
 ```
-

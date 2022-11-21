@@ -94,7 +94,7 @@ MOT可用于各种应用，例如：
 
     以授予数据库用户对MOT存储引擎的访问权限为例。每个数据库用户仅执行一次，通常在初始配置阶段完成。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >MOT通过外部数据封装器（Foreign Data Wrapper，FDW）机制与openGauss数据库集成，所以需要授权用户权限。
 
     要使特定用户能够创建和访问MOT（DDL、DML、SELECT），以下语句只执行一次：
@@ -140,21 +140,21 @@ MOT可用于各种应用，例如：
     创建一个用于TPC-C的ORDER表，并创建索引：
 
     ```
-    create FOREIGN table bmsql_oorder ( 
-      o_w_id       integer      not null, 
-      o_d_id       integer      not null, 
-      o_id         integer      not null, 
-      o_c_id       integer not null, 
-      o_carrier_id integer,          
-      o_ol_cnt     integer, 
-      o_all_local  integer, 
-      o_entry_d    timestamp, 
-      primary key (o_w_id, o_d_id, o_id) 
-    ); 
+    create FOREIGN table bmsql_oorder (
+      o_w_id       integer      not null,
+      o_d_id       integer      not null,
+      o_id         integer      not null,
+      o_c_id       integer not null,
+      o_carrier_id integer,
+      o_ol_cnt     integer,
+      o_all_local  integer,
+      o_entry_d    timestamp,
+      primary key (o_w_id, o_d_id, o_id)
+    );
     create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) ;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >在MOT名字之前不需要指定FOREIGN关键字，因为它仅用于创建和删除表的命令。
 
 
@@ -186,7 +186,7 @@ MOT可用于各种应用，例如：
     6.  浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
     7.  恢复应用程序活动。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。请注意，MOT目前不支持跨引擎多表查询（如使用Join、Union和子查询）和跨引擎多表事务。因此，如果在多表查询、存储过程或事务中访问原始表，则必须将所有相关的磁盘表转换为MOT，或者更改应用程序或数据库中的相关代码。
 
 -   转换示例
@@ -198,24 +198,24 @@ MOT可用于各种应用，例如：
     1.  检查源表列类型。验证MOT支持所有类型，详情请参阅“不支持的数据类型”章节。
 
         ```
-        benchmarksql-# \d+ customer 
-                               Table "public.customer" 
-         Column |  Type   | Modifiers | Storage | Stats target | Description 
-        --------+---------+-----------+---------+--------------+------------- 
-         x      | integer |           | plain   |              | 
-         y      | integer |           | plain   |              | 
-        Has OIDs: no 
+        benchmarksql-# \d+ customer
+                               Table "public.customer"
+         Column |  Type   | Modifiers | Storage | Stats target | Description
+        --------+---------+-----------+---------+--------------+-------------
+         x      | integer |           | plain   |              |
+         y      | integer |           | plain   |              |
+        Has OIDs: no
         Options: orientation=row, compression=no
         ```
 
     2.  请检查源表数据。
 
         ```
-        benchmarksql=# select * from customer; 
-         x | y 
-        ---+--- 
-         1 | 2 
-         3 | 4 
+        benchmarksql=# select * from customer;
+         x | y
+        ---+---
+         1 | 2
+         3 | 4
         (2 rows)
         ```
 
@@ -223,25 +223,25 @@ MOT可用于各种应用，例如：
 
         ```
         $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
-        gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully 
+        gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully
         gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
         ```
 
     4.  重命名源表。
 
         ```
-        benchmarksql=# alter table customer rename to customer_bk; 
+        benchmarksql=# alter table customer rename to customer_bk;
         ALTER TABLE
         ```
 
     5.  创建与源表完全相同的MOT。
 
         ```
-        benchmarksql=# create foreign table customer (x int, y int); 
-        CREATE FOREIGN TABLE 
-        benchmarksql=# select * from customer; 
-         x | y 
-        ---+--- 
+        benchmarksql=# create foreign table customer (x int, y int);
+        CREATE FOREIGN TABLE
+        benchmarksql=# select * from customer;
+         x | y
+        ---+---
         (0 rows)
         ```
 
@@ -249,24 +249,21 @@ MOT可用于各种应用，例如：
 
         ```
         $ gs_restore -C -d benchmarksql customer.dump -p 16000
-        restore operation successful 
-        total time: 24  ms 
-        Check that the data was imported successfully. 
-        benchmarksql=# select * from customer; 
-         x | y 
-        ---+--- 
-         1 | 2 
-         3 | 4 
-        (2 rows) 
-          
-        benchmarksql=# \d 
-                                        List of relations 
-         Schema |    Name     |     Type      | Owner  |             Storage 
-        --------+-------------+---------------+--------+---------------------------------- 
-         public | customer    | foreign table | aharon | 
-         public | customer_bk | table         | aharon | {orientation=row,compression=no} 
+        restore operation successful
+        total time: 24  ms
+        Check that the data was imported successfully.
+        benchmarksql=# select * from customer;
+         x | y
+        ---+---
+         1 | 2
+         3 | 4
+        (2 rows)
+
+        benchmarksql=# \d
+                                        List of relations
+         Schema |    Name     |     Type      | Owner  |             Storage
+        --------+-------------+---------------+--------+----------------------------------
+         public | customer    | foreign table | aharon |
+         public | customer_bk | table         | aharon | {orientation=row,compression=no}
         (2 rows)
         ```
-
-
-

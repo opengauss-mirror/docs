@@ -80,5 +80,3 @@ openGauss=# SELECT * FROM table2;
      Grace
     (8 rows)
     ```
-
-

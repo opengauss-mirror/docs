@@ -25,7 +25,7 @@ ON \( expression \[, ...\] \) 只保留那些在给出的表达式上运算出�
 在表customer\_t1中插入两条数据：
 
 ```
-openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name,Amount) VALUES 
+openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name,Amount) VALUES
     (6881, 'maps', 'Lily',1000),
     (4320, 'tpcds', 'Lily',2000);
 ```
@@ -84,4 +84,3 @@ openGauss=# SELECT DISTINCT c_first_name  FROM customer_t1 ;
  Lily
 (6 rows)
 ```
-

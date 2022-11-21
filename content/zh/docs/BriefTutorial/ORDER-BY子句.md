@@ -5,7 +5,7 @@ ORDER BY对对SELECT语句检索得到的一列或者多列数据进行升序（
 ## 语法格式<a name="zh-cn_topic_0000001224939983_section4955330113019"></a>
 
 ```
-SELECT 
+SELECT
 { * | [column, ...] }
 [ FROM from_item [, ...] ]
 [ ORDER BY {expression [ ASC | DESC ] }];
@@ -58,5 +58,3 @@ SELECT
               3869 | hello         |              |             |
     (9 rows)
     ```
-
-

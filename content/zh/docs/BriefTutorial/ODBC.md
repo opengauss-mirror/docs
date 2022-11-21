@@ -4,8 +4,8 @@ ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公�
 
 ODBC的系统结构参见[图1](#zh-cn_topic_0283137057_fig1255101034110)。
 
-**图 1**  ODBC系统机构<a name="zh-cn_topic_0283137057_fig1255101034110"></a>  
-![](figures/ODBC系统机构.png "ODBC系统机构")
+**图 1**  ODBC系统机构<a name="zh-cn_topic_0283137057_fig1255101034110"></a>
+![](figures/ODBC-System-Organization.png "ODBC系统机构")
 
 openGauss目前在以下环境中提供对ODBC的支持。
 
@@ -63,8 +63,8 @@ openGauss目前在以下环境中提供对ODBC的支持。
     #修改configure文件（如果不存在，那么请修改configure.ac），找到LIB_VERSION
     #将它的值修改为"1:0:0"，这样将编译出*.so.1的动态库，与psqlodbcw.so的依赖关系相同。
     vim configure
-    
-    ./configure --enable-gui=no #如果要在ARM服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu 
+
+    ./configure --enable-gui=no #如果要在ARM服务器上编译，请追加一个configure参数： --build=aarch64-unknown-linux-gnu
     make
     #安装可能需要root权限
     make install
@@ -339,7 +339,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
         </tbody>
         </table>
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >SSL模式：
         >保证client.key\*系列文件为600权限：
         >退回根目录，创建.postgresql目录，并将root.crt，client.crt，client.key，client.key.cipher，client.key.rand，client.req，server.crt，server.key，server.key.cipher，server.key.rand，server.req放在此路径下。
@@ -377,14 +377,14 @@ openGauss目前在以下环境中提供对ODBC的支持。
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：**   
-        >-   -N all表示openGauss中的所有主机。  
-        >-   -I all表示主机中的所有实例。  
-        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
-        >-   all表示允许客户端连接到任意的数据库。  
-        >-   jack表示连接数据库的用户。  
-        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。  
-        >-   sha256表示连接时jack用户的密码使用sha256算法加密。  
+        >![](public_sys-resources/icon-note.png) **说明：**
+        >-   -N all表示openGauss中的所有主机。
+        >-   -I all表示主机中的所有实例。
+        >-   -h表示指定需要在“pg\_hba.conf”增加的语句。
+        >-   all表示允许客户端连接到任意的数据库。
+        >-   jack表示连接数据库的用户。
+        >-   10.11.12.13/_32_表示只允许IP地址为10.11.12.13的主机连接。在使用过程中，请根据用户的网络进行配置修改。32表示子网掩码为1的位数，即255.255.255.255。
+        >-   sha256表示连接时jack用户的密码使用sha256算法加密。
 
         如果将ODBC客户端配置在和要连接的数据库主节点在同一台机器上，则可使用local trust认证方式，如下：
 
@@ -441,15 +441,15 @@ openGauss目前在以下环境中提供对ODBC的支持。
     | quit                                  |
     |                                       |
     +---------------------------------------+
-    SQL> 
+    SQL>
     ```
 
 -   若显示ERROR信息，则表明配置错误。请检查上述配置是否正确。
 
 ## 开发流程<a name="section3537202314458"></a>
 
-**图 2**  ODBC开发应用程序的流程<a name="zh-cn_topic_0283137079_zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/ODBC开发应用程序的流程.png "ODBC开发应用程序的流程")
+**图 2**  ODBC开发应用程序的流程<a name="zh-cn_topic_0283137079_zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>
+![](figures/ODBC-The-Flow-Of-Developing-An-Application.png "ODBC开发应用程序的流程")
 
 ## 常用接口<a name="section1274764216461"></a>
 
@@ -547,56 +547,56 @@ openGauss目前在以下环境中提供对ODBC的支持。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，同时如果其中有一个语句失败，那么整个请求都将会被回滚。
 
 ## 连接数据库<a name="section472715438471"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
+#endif
 SQLHENV       V_OD_Env;        // Handle ODBC environment
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+SQLHDBC       V_OD_hdbc;       // Handle connection
 SQLINTEGER    V_OD_erg;
-int main(int argc,char *argv[]) 
-{         
-      // 1. 申请环境句柄       
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-      // 2. 设置环境属性（版本信息）         
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-      // 3. 申请连接句柄        
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      // 1. 申请环境句柄
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
+      }
+      // 2. 设置环境属性（版本信息）
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+      // 3. 申请连接句柄
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
       }
       // 4. 设置连接属性
-      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
+      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
       // 5. 连接数据源，这里的“userName”与“password”分别表示连接数据库的用户名和用户密码，请根据实际情况修改。
-      // 如果odbc.ini文件中已经配置了用户名密码，那么这里可以留空（""）；但是不建议这么做，因为一旦odbc.ini权限管理不善，将导致数据库用户密码泄露。    
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n");  
-      // 6. 断开数据源连接并释放句柄资源   
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      // 如果odbc.ini文件中已经配置了用户名密码，那么这里可以留空（""）；但是不建议这么做，因为一旦odbc.ini权限管理不善，将导致数据库用户密码泄露。
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
+      // 6. 断开数据源连接并释放句柄资源
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
 }
 ```
@@ -604,58 +604,58 @@ int main(int argc,char *argv[])
 ## 创建表<a name="section3917185215283"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
-SQLHENV       V_OD_Env;        // Handle ODBC environment 
-SQLHSTMT      V_OD_hstmt;      // Handle statement 
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+#endif
+SQLHENV       V_OD_Env;        // Handle ODBC environment
+SQLHSTMT      V_OD_hstmt;      // Handle statement
+SQLHDBC       V_OD_hdbc;       // Handle connection
 SQLINTEGER    V_OD_erg;
-int main(int argc,char *argv[]) 
-{              
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-        
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-        
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
       }
- 
-      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
-    
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n"); 
+
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
+      }
+
+      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
+
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
       // 1. 设置语句属性
       SQLSetStmtAttr(V_OD_hstmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
       // 2. 申请语句句柄
-      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);       
+      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);
       // 3. 创建表格。
       SQLExecDirect(V_OD_hstmt,"drop table IF EXISTS customer_t1",SQL_NTS);
       SQLExecDirect(V_OD_hstmt,"CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));",SQL_NTS);
       printf("Done !\n");
       // 4. 断开数据源连接并释放句柄资源
-      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);    
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
  }
 ```
@@ -663,68 +663,68 @@ int main(int argc,char *argv[])
 ## 插入操作<a name="section10259133319294"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
-SQLHENV       V_OD_Env;        // Handle ODBC environment 
-SQLHSTMT      V_OD_hstmt;      // Handle statement 
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+#endif
+SQLHENV       V_OD_Env;        // Handle ODBC environment
+SQLHSTMT      V_OD_hstmt;      // Handle statement
+SQLHDBC       V_OD_hdbc;       // Handle connection
 SQLINTEGER    value = 100;
 SQLINTEGER    V_OD_erg;
-int main(int argc,char *argv[]) 
-{             
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-           
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-          
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
       }
-    
-      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
-  
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n"); 
-      
+
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
+      }
+
+      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
+
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
+
       SQLSetStmtAttr(V_OD_hstmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
-      
-      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);       
-      
+
+      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);
+
       // 1. 直接插入
       SQLExecDirect(V_OD_hstmt,"insert into customer_t1 values(25,li)",SQL_NTS);
 
       // 2. pbe方法插入
       // 2.1 插入占位符
-      SQLPrepare(V_OD_hstmt,"insert into customer_t1 values(?)",SQL_NTS); 
+      SQLPrepare(V_OD_hstmt,"insert into customer_t1 values(?)",SQL_NTS);
       // 2.2 绑定参数
       SQLBindParameter(V_OD_hstmt,1,SQL_PARAM_INPUT,SQL_C_SLONG,SQL_INTEGER,0,0,
                        &value,0,NULL);
       // 2.3 执行准备好的插入语句
       SQLExecute(V_OD_hstmt);
-      
+
       // 3. 断开数据源连接并释放句柄资源
-      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);    
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
  }
 ```
@@ -732,54 +732,54 @@ int main(int argc,char *argv[])
 ## SELECT操作<a name="section844533364711"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
-SQLHENV       V_OD_Env;        // Handle ODBC environment 
-SQLHSTMT      V_OD_hstmt;      // Handle statement 
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+#endif
+SQLHENV       V_OD_Env;        // Handle ODBC environment
+SQLHSTMT      V_OD_hstmt;      // Handle statement
+SQLHDBC       V_OD_hdbc;       // Handle connection
 char          typename[100];
 SQLINTEGER    V_OD_erg, V_OD_buffer, V_OD_err, V_OD_id;
-int main(int argc,char *argv[]) 
-{               
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-               
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-             
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
       }
-          SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
-      
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n"); 
-   
+
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
+      }
+          SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
+
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
+
       SQLSetStmtAttr(V_OD_hstmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
-     
-      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt); 
-      
+
+      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);
+
       // 1. 执行select语句
       SQLExecDirect(V_OD_hstmt,"select c_customer_sk from customer_t1",SQL_NTS);
       // 2. 获取结果集某一列的属性
-      SQLColAttribute(V_OD_hstmt,1,SQL_DESC_TYPE,typename,100,NULL,NULL);                 
+      SQLColAttribute(V_OD_hstmt,1,SQL_DESC_TYPE,typename,100,NULL,NULL);
       printf("SQLColAtrribute %s\n",typename);
       // 3. 绑定结果集
       SQLBindCol(V_OD_hstmt,1,SQL_C_SLONG, (SQLPOINTER)&V_OD_buffer,150,
@@ -795,10 +795,10 @@ int main(int argc,char *argv[])
       };
       printf("Done !\n");
       // 6. 断开数据源连接并释放句柄资源
-      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);    
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
  }
 ```
@@ -806,57 +806,57 @@ int main(int argc,char *argv[])
 ## 更新操作<a name="section15454103144818"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
-SQLHENV       V_OD_Env;        // Handle ODBC environment 
-SQLHSTMT      V_OD_hstmt;      // Handle statement 
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+#endif
+SQLHENV       V_OD_Env;        // Handle ODBC environment
+SQLHSTMT      V_OD_hstmt;      // Handle statement
+SQLHDBC       V_OD_hdbc;       // Handle connection
 SQLINTEGER    V_OD_erg;
-int main(int argc,char *argv[]) 
-{              
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-               
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-              
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
       }
-     
-      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
-   
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n"); 
-      
+
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
+      }
+
+      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
+
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
+
       SQLSetStmtAttr(V_OD_hstmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
-      
-      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt); 
-      
+
+      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);
+
       // 1. 执行更新操作
       SQLExecDirect(V_OD_hstmt,"update customer_t1 set c_customer_sk = 1000 where c_customer_name = 'li' ",SQL_NTS);
       // 16. 断开数据源连接并释放句柄资源
-      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);    
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
  }
 ```
@@ -864,59 +864,58 @@ int main(int argc,char *argv[])
 ## 删除操作<a name="section111033104496"></a>
 
 ```
-#include <stdlib.h> 
-#include <stdio.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include <sqlext.h>
 #ifdef WIN32
 #include <windows.h>
-#endif 
-SQLHENV       V_OD_Env;        // Handle ODBC environment 
-SQLHSTMT      V_OD_hstmt;      // Handle statement 
-SQLHDBC       V_OD_hdbc;       // Handle connection     
+#endif
+SQLHENV       V_OD_Env;        // Handle ODBC environment
+SQLHSTMT      V_OD_hstmt;      // Handle statement
+SQLHDBC       V_OD_hdbc;       // Handle connection
 SQLINTEGER    V_OD_erg;
-int main(int argc,char *argv[]) 
-{               
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))        
-      {           
-           printf("Error AllocHandle\n");           
-           exit(0);        
-      } 
-               
-      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);      
-              
-      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);     
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {                     
-           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);          
-           exit(0);       
+int main(int argc,char *argv[])
+{
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_ENV,SQL_NULL_HANDLE,&V_OD_Env);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           printf("Error AllocHandle\n");
+           exit(0);
       }
-      
-      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);          
-    
-      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,  
-                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);        
-      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))      
-      {           
-          printf("Error SQLConnect %d\n",V_OD_erg);            
-          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);       
-          exit(0);        
-      }     
-      printf("Connected !\n"); 
-      
+
+      SQLSetEnvAttr(V_OD_Env, SQL_ATTR_ODBC_VERSION, (void*)SQL_OV_ODBC3, 0);
+
+      V_OD_erg = SQLAllocHandle(SQL_HANDLE_DBC, V_OD_Env, &V_OD_hdbc);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+           SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+           exit(0);
+      }
+
+      SQLSetConnectAttr(V_OD_hdbc, SQL_ATTR_AUTOCOMMIT, SQL_AUTOCOMMIT_ON, 0);
+
+      V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) "gaussdb", SQL_NTS,
+                           (SQLCHAR*) "userName", SQL_NTS,  (SQLCHAR*) "password", SQL_NTS);
+      if ((V_OD_erg != SQL_SUCCESS) && (V_OD_erg != SQL_SUCCESS_WITH_INFO))
+      {
+          printf("Error SQLConnect %d\n",V_OD_erg);
+          SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
+          exit(0);
+      }
+      printf("Connected !\n");
+
       SQLSetStmtAttr(V_OD_hstmt,SQL_ATTR_QUERY_TIMEOUT,(SQLPOINTER *)3,0);
-      
-      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);   
-    
+
+      SQLAllocHandle(SQL_HANDLE_STMT, V_OD_hdbc, &V_OD_hstmt);
+
       // 1. 执行删除操作
       SQLExecDirect(V_OD_hstmt,"delete from customer_t1 where c_customer_name = 'li'",SQL_NTS);
-      
+
       // 2. 断开数据源连接并释放句柄资源
-      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);    
-      SQLDisconnect(V_OD_hdbc);         
-      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);       
-      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);  
+      SQLFreeHandle(SQL_HANDLE_STMT,V_OD_hstmt);
+      SQLDisconnect(V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_DBC,V_OD_hdbc);
+      SQLFreeHandle(SQL_HANDLE_ENV, V_OD_Env);
       return(0);
  }
 ```
-

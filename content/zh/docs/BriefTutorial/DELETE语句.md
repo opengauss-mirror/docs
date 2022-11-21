@@ -5,7 +5,7 @@ DELETE语句可以从指定的表里删除满足WHERE子句的行。如果WHERE�
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 
 ```
-DELETE FROM table_name 
+DELETE FROM table_name
        [WHERE condition];
 ```
 
@@ -84,4 +84,3 @@ openGauss=# SELECT * FROM customer_t1_bak;
 ---------------+---------------+--------------+-------------+--------
 (0 rows)
 ```
-

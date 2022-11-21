@@ -73,7 +73,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     用户也可以对独立的字段或者整个行明确缺省值。
 
     ```
-    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', DEFAULT);  
+    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES (3769, 'hello', DEFAULT);
     INSERT 0 1
     openGauss=# INSERT INTO customer_t1 DEFAULT VALUES;
     INSERT 0 1
@@ -82,7 +82,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 -   如果需要在表中插入多行，请使用以下命令。
 
     ```
-    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name,Amount) VALUES 
+    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name,Amount) VALUES
         (6885, 'maps', 'Joes',2200),
         (4321, 'tpcds', 'Lily',3000),
         (9527, 'world', 'James',5000);
@@ -90,5 +90,3 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     ```
 
     如果需要向表中插入多条数据，除此命令外，也可以多次执行插入一行数据命令实现。但是建议使用此命令可以提升效率。
-
-
