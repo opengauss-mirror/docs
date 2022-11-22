@@ -2,7 +2,9 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-查看指定表结构。
+DESCRIBE 和 [EXPLAIN](dolphin-EXPLAIN.md) 互为同义词，可以用于查看指定表结构，或查看指定 SQL 的执行计划。
+
+查看执行计划部分内容详见 [EXPLAIN](dolphin-EXPLAIN.md)。
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
@@ -16,14 +18,14 @@
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
-{DESCRIBE | DESC} tbl_name
+{DESCRIBE | DESC | EXPLAIN} tbl_name
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
-- **{DESCRIBE | DESC}**
+- **{DESCRIBE | DESC | EXPLAIN}**
 
-       使用DESCRIBE和DESC效果是等价的。
+       使用 DESCRIBE、DESC 和 EXPLAIN 效果是等价的。
 
 - **tbl_name**
   
@@ -126,5 +128,5 @@ openGauss=# describe public.test;
 
 ## 相关链接<a name="section156744489391"></a>
 
-N/A
+[EXPLAIN](dolphin-EXPLAIN.md)
 
