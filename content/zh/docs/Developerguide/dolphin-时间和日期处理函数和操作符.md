@@ -831,17 +831,17 @@ CONTEXT:  referenced column: subdate
 
     * `unit`支持的单位如下：
 
-      | 单位 | 对应的输入  |
-      | ---- | ----------- |
-      | 年   | year        |
-      | 季度 | qtr         |
-      | 月   | month       |
-      | 周   | week        |
-      | 日   | day         |
-      | 时   | hour        |
-      | 分   | minute      |
-      | 秒   | second      |
-      | 微秒 | microsecond |
+      | 单位 | 对应的输入                                                  |
+      | ---- | ----------------------------------------------------------- |
+      | 年   | year, years, y, yr, yrs, yyyy                               |
+      | 季度 | quarter, qtr, q                                             |
+      | 月   | month, months, mm, mon, mons                                |
+      | 周   | week, weeks, w                                              |
+      | 日   | day, days, d, dd, ddd, j                                    |
+      | 时   | hour, hours, h, hh, hr, hrs                                 |
+      | 分   | minute, minutes, m, mi, min, mins                           |
+      | 秒   | second, seconds, s, sec, secs                               |
+      | 微秒 | microsecond, microsecon, us, usec, usecond, useconds, usecs |
 
     * `span`支持小数。当`unit`为秒时，`span`根据第七位小数，四舍五入到六位小数；否则`span`四舍五入到整数。
 
