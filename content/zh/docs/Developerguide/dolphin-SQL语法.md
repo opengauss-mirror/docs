@@ -40,6 +40,8 @@
 
 -   **[EXECUTE](dolphin-EXECUTE.md)**  
 
+-   **[EXPLAIN](dolphin-EXPLAIN.md)**  
+
 -   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
 
 -   **[GRANT](dolphin-GRANT.md)**
