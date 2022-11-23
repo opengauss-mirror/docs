@@ -6,9 +6,9 @@ You can run the  **component**  subcommand of  **gs\_dbmind**  to enable the cor
 
 -   **[Index-advisor: Index Recommendation](index-advisor-index-recommendation.md)**  
 
--   **[AI4DB: Root Cause Analysis for Slow SQL Statements](ai4db-root-cause-analysis-for-slow-sql-statements.md)**  
+-   **[Slow-query-diagnosis: Root Cause Analysis for Slow SQL Statements](slow-query-diagnosis-root-cause-analysis-for-slow-sql-statements.md)**  
 
--   **[AI4DB: Trend Prediction](ai4db-trend-prediction.md)**  
+-   **[Forecast: Trend Prediction](forecast.md)**  
 
 -   **[SQLdiag: Slow SQL Discovery](sqldiag-slow-sql-discovery.md)**  
 

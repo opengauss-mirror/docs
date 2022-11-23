@@ -6,12 +6,14 @@
 
 -   **[Index-advisor：索引推荐](Index-advisor-索引推荐.md)**  
 
--   **[AI4DB: 慢SQL根因分析](AI4DB-慢SQL根因分析.md)**  
+-   **[Slow Query Diagnosis: 慢SQL根因分析](Slow-Query-Diagnosis-慢SQL根因分析.md)**  
 
--   **[AI4DB：趋势预测](AI4DB-趋势预测.md)**  
+-   **[Forecast：趋势预测](Forecast-趋势预测.md)**  
 
 -   **[SQLdiag：慢SQL发现](SQLdiag-慢SQL发现.md)**  
 
 -   **[SQL Rewriter: SQL语句改写](SQL-Rewriter-SQL语句改写.md)**  
 
 -   **[Anomaly detection: 异常检测](Anomaly-detection-异常检测.md)**  
+
+-   **[Anomaly analysis: 多指标关联](Anomaly-analysis-多指标关联分析.md)**  
