@@ -29,8 +29,8 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
 1.  第一级为实时信息，存储在内存中，展示最近几分钟的活跃Session信息，具有最高的精度；
 2.  第二级为持久化历史信息，存储在磁盘文件中，展示过去很长一段时间的历史活跃Session信息，从内存数据中抽样而来，适合长时间跨度的统计分析。
 
-**图 1**  Session性能诊断原理<a name="fig197862247217"></a>  
-![](figures/Session性能诊断原理.png "Session性能诊断原理")
+**图 1**  Session性能诊断原理<a name="fig197862247217"></a>
+![](figures/Session-Principle-Of-Performance-Diagnosis.png "Session性能诊断原理")
 
 部分使用场景如下所示：
 
@@ -62,9 +62,9 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
     WHERE sample_time > now() - 5 / (24 * 60)
     GROUP BY event)t WHERE s.event = t.event ORDER BY count DESC;
     ```
-    
-    
-    
+
+
+
 5. 查看最近五分钟较耗资源的session把资源都花费在哪些event上
 
    ```

@@ -30,7 +30,7 @@
 
 ```
 主机：执行命令查看数据库实例中SQL语句执行信息
-gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp); 
+gsql> select * from dbe_perf.get_global_full_sql_by_timestamp(start_timestamp, end_timestamp);
 例如：
 openGauss=# select * from DBE_PERF.get_global_full_sql_by_timestamp('2020-12-01 09:25:22', '2020-12-31 23:54:41');
 -[ RECORD 1 ]--------+---------------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ n_hard_parse         | 1
 query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
-                     
+
 备机：查看当前节点SQL语句执行信息
 gsql> select * from dbe_perf.standby_statement_history(only_slow, start_time, end_time);
 例如：
@@ -165,4 +165,3 @@ query_plan           | Datanode Name: dn_6001_6002_6003
 ## 依赖关系<a name="section15876411599"></a>
 
 无。
-

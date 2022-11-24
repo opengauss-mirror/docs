@@ -29,4 +29,3 @@ DeepSQL是对openGauss DB4AI能力的增强。DeepSQL将常用的机器学习算
 ## 依赖关系<a name="section850692718486"></a>
 
 无。
-

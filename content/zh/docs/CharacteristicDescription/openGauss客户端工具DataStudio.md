@@ -48,4 +48,3 @@ Data Studio作为一款配套openGauss数据库使用的客户端软件（当前
 ## 依赖关系<a name="section1498823744320"></a>
 
 当前只支持openGauss
-

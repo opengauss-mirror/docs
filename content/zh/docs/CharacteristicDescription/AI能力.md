@@ -10,10 +10,8 @@ AI与数据库结合是近些年的行业研究热点，openGauss较早地参与
 
 本章节所涉及的功能独立存在于数据库安装目录\($**GAUSSHOME**\)的bin/dbmind目录中，各个子功能存在于dbmind的子目录components中。提供gs\_dbmind命令行供用户调用。与此同时，对于数据库内置AI的功能（如DB4AI），以SQL语法和系统函数的形式呈现。
 
--   **[AI4DB: 数据库自治运维](AI4DB-数据库自治运维.md)**  
+-   **[AI4DB: 数据库自治运维](AI4DB-数据库自治运维.md)**
 
--   **[DB4AI: 数据库驱动AI](DB4AI-数据库驱动AI.md)**  
+-   **[DB4AI: 数据库驱动AI](DB4AI-数据库驱动AI.md)**
 
--   **[AI in DB: 数据库内AI功能](AI-in-DB-数据库内AI功能.md)**  
-
-
+-   **[AI in DB: 数据库内AI功能](AI-in-DB-数据库内AI功能.md)**

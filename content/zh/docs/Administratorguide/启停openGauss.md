@@ -22,7 +22,7 @@
     gs_om -t stop
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >启停节点及AZ的操作请参见《openGauss 工具参考》中“服务端工具 \> gs\_om”章节。
 
 
@@ -59,4 +59,3 @@ End stop cluster.
 ```
 gs_om -t start --time-out=300
 ```
-
