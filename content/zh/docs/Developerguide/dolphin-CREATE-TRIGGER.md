@@ -171,7 +171,6 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
   **表 1**  表和视图上支持的触发器种类：
   
   <a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_table15282217184416"></a>
-  
   <table><thead align="left"><tr id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_row1928351717446"><th class="cellrowborder" valign="top" width="18.61%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p172831717164411"></a>触发时机</p>
   </th>
   <th class="cellrowborder" valign="top" width="31.39%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"></a><a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_p12831417204411"></a>触发事件</p>
