@@ -258,11 +258,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     - USING(join_column[，…])
 
-      ON left_table.a = right_table.a AND left_table.b = right_table.b … 的简写。要求对应的列必须同名。
+      ON left_table.a = right_table.a AND left_table.b = right_table.b … 的简写。要求对应的列必须同名。USING 意味着，每个等号表达式里面的列，只有一列会输出，而不是全部。
 
     - NATURAL
 
-      NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
+      NATURAL是具有相同名称的两个表的所有列的USING列表的简写，如果没有一样名称的列，则等效于 join on true。
 
     - from item
 

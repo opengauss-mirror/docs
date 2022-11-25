@@ -117,7 +117,7 @@ PG\_STAT\_REPLICATION视图用于描述日志同步状态信息，例如发起�
 <td class="cellrowborder" valign="top" width="35.21352135213521%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a><a name="zh-cn_topic_0283137065_zh-cn_topic_0237122450_zh-cn_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p177818319522"><a name="p177818319522"></a><a name="p177818319522"></a>同步状态：</p>
-<a name="ul197782317527"></a><a name="ul197782317527"></a><ul id="ul197782317527"><li>异步复制</li><li>同步复制</li><li>潜在同步者</li><li>qurom：在同步与异步之间切换，保证备机中有大于一定数量的同步备机，同步备机数量一般为(n+1)/2-1，n为总副本个数。是否为同步备机取决于是否先接到了日志。详情可参考synchronous_standby_names参数描述。</li></ul>
+<a name="ul197782317527"></a><a name="ul197782317527"></a><ul id="ul197782317527"><li>异步复制</li><li>同步复制</li><li>潜在同步者</li><li>quorum：在同步与异步之间切换，保证备机中有大于一定数量的同步备机，同步备机数量一般为(n+1)/2-1，n为总副本个数。是否为同步备机取决于是否先接到了日志。详情可参考synchronous_standby_names参数描述。</li></ul>
 </td>
 </tr>
 </tbody>
