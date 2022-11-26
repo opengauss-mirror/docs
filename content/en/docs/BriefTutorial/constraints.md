@@ -10,7 +10,7 @@ The common constraints of openGauss are as follows:
 
 -   NOT NULL: specifies that a column cannot store  **NULL**  values.
 -   UNIQUE: ensures that the value of a column is unique.
--   PRIMARY KEY: functions as the combination of NOT NULL and UNIQUE and ensures that a column \(or the combination of two or more columns\) has a unique identifier to help quickly locate a specific record in a table.
+-   PRIMARY KEY: functions as the combination of NOT NULL and UNIQUE and ensures that a column (or the combination of two or more columns) has a unique identifier to help quickly locate a specific record in a table.
 -   FOREIGN KEY: ensures the referential integrity for data in one table to match values in another table.
 -   CHECK: ensures that values in a column meet specified conditions.
 
@@ -18,9 +18,9 @@ The common constraints of openGauss are as follows:
 
 If no constraint is specified during table creation, the default value is  **NULL**, indicating that  **NULL**  values can be inserted into columns. If you do not want a column to be set to  **NULL**, you need to define the NOT NULL constraint on the column to specify that  **NULL**  values are not allowed in the column. When you insert data, if the column contains  **NULL**, an error is reported and the data fails to be inserted.
 
-**NULL**  does not mean that there is no data. It indicates unknown data.
+**NULL** does not mean that there is no data. It indicates unknown data.
 
-For example, create the  **staff**  table that contains five columns. The  **NAME**  and  **ID**  columns cannot be set to  **NULL**.
+For example, create the **staff** table that contains five columns. The **NAME** and **ID** columns cannot be set to **NULL**.
 
 ```
 openGauss=# CREATE TABLE staff(
@@ -48,7 +48,7 @@ The UNIQUE constraint specifies that a group of one or more columns of a table c
 
 For the UNIQUE constraint,  **NULL**  is not considered equal.
 
-For example, create the  **staff1**  table that contains five columns, where  **AGE**  is set to  **UNIQUE**. Therefore, you cannot add two records with the same age.
+For example, create the **staff1** table that contains five columns, where **AGE** is set to **UNIQUE**. Therefore, you cannot add two records with the same age.
 
 ```
 openGauss=# CREATE TABLE staff1(
@@ -106,7 +106,7 @@ openGauss=# CREATE TABLE staff3(
 );
 ```
 
-Create the  **DEPARTMENT**  table and add three columns. The  **EMP\_ID**  column indicates the foreign key and it is similar to the  **ID**  column of the  **staff3**  table.
+Create the **DEPARTMENT** table and add three columns. The **EMP\_ID** column indicates the foreign key and it is similar to the **ID** column of the **staff3** table.
 
 ```
 openGauss=# CREATE TABLE DEPARTMENT(
@@ -143,4 +143,3 @@ openGauss=# INSERT INTO staff4(ID,NAME,AGE,SALARY) VALUES (2, 'JUCE',16,0);
 ERROR:  new row for relation "staff4" violates check constraint "staff4_salary_check"
 DETAIL:  N/A
 ```
-

@@ -2,42 +2,42 @@
 
 This section describes preparations before the upgrade.
 
--   **[Upgrade Preparation Checklist](#upgrade-preparation-checklist)**  
+-   **[Upgrade Preparation Checklist](#upgrade-preparation-checklist)** 
 
--   **[Collecting Node Information](#collecting-node-information)**  
+-   **[Collecting Node Information](#collecting-node-information)** 
 
--   **[Backing Up Data](#backing-up-data)**  
+-   **[Backing Up Data](#backing-up-data)** 
 
--   **[Obtaining the Upgrade Packages](#obtaining-the-upgrade-packages)**  
+-   **[Obtaining the Upgrade Package](#obtaining-the-upgrade-package)** 
 
--   **[Checking the OS Health Status](#checking-the-os-health-status)**  
+-   **[Checking the OS Health Status](#check-the-os-health-status)** 
 
--   **[Checking the Disk Usage of the Database Node](#checking-the-disk-usage-of-the-database-node)**  
+-   **[Checking the Disk Usage of the Database Node](#checking-the-disk-usage-of-the-database-node)** 
 
--   **[Checking the Database Status](#checking-the-database-status)**  
+-   **[Checking the Database Status](#checking-the-database-status)** 
 
 ## Upgrade Preparation Checklist
 
-**Table  1**  Upgrade preparation checklist
+**Table 1** Upgrade preparation
 
 <a name="toc218487220"></a>
 
-<table><tbody><tr id="row32107897"><td class="cellrowborder" valign="top" width="6.29%"><p id="p09921330173014"><a name="p09921330173014"></a><a name="p09921330173014"></a>No.</p>
+<table><tbody><tr id="row32107897"><td class="cellrowborder" valign="top" width="6.29%"><p id="p09921330173014"><a name="p09921330173014"></a><a name="p09921330173014"></a><b>No.</b></p>
 </td>
-<td class="cellrowborder" valign="top" width="21.42%"><p id="p9992930193018"><a name="p9992930193018"></a><a name="p9992930193018"></a>Item</p>
+<td class="cellrowborder" valign="top" width="21.42%"><p id="p9992930193018"><a name="p9992930193018"></a><a name="p9992930193018"></a><b>Item</b></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p999253013304"><a name="p999253013304"></a><a name="p999253013304"></a>Preparation Content</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p999253013304"><a name="p999253013304"></a><a name="p999253013304"></a><b>Preparation Content</b></p>
 </td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p199233017302"><a name="p199233017302"></a><a name="p199233017302"></a>Recommended Start Time</p>
+<td class="cellrowborder" valign="top" width="20%"><p id="p199233017302"><a name="p199233017302"></a><a name="p199233017302"></a><b>Recommended Start Time </b></p>
 </td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p39921430143016"><a name="p39921430143016"></a><a name="p39921430143016"></a>Required Time</p>
+<td class="cellrowborder" valign="top" width="20%"><p id="p39921430143016"><a name="p39921430143016"></a><a name="p39921430143016"></a><b>Time Required (Days/Hours/Minutes)</b></p>
 </td>
 </tr>
 <tr id="row49544030"><td class="cellrowborder" valign="top" width="6.29%"><p id="p17992330193012"><a name="p17992330193012"></a><a name="p17992330193012"></a>1</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.42%"><p id="p599243013301"><a name="p599243013301"></a><a name="p599243013301"></a>Collect node information.</p>
+<td class="cellrowborder" valign="top" width="21.42%"><p id="p599243013301"><a name="p599243013301"></a><a name="p599243013301"></a>Collect node information.
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p1799215303302"><a name="p1799215303302"></a><a name="p1799215303302"></a>Collect the names, IP addresses, and passwords of users <strong>root</strong> and <strong>omm</strong> of the nodes involved in the database.
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p1799215303302"><a name="p1799215303302"></a><a name="p1799215303302"></a>Collect names and IP addresses of database nodes and passwords of users <strong>root</strong> and <strong>omm</strong>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p899353023018"><a name="p899353023018"></a><a name="p899353023018"></a>One day before the upgrade</p>
 </td>
@@ -46,9 +46,9 @@ This section describes preparations before the upgrade.
 </tr>
 <tr id="row48569804"><td class="cellrowborder" valign="top" width="6.29%"><p id="p193771747164311"><a name="p193771747164311"></a><a name="p193771747164311"></a>2</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.42%"><p id="p13453193594318"><a name="p13453193594318"></a><a name="p13453193594318"></a>Set remote login of user <strong id="b64692044222919"><a name="b64692044222919"></a><a name="b64692044222919"></a>root</strong>.</p>
+<td class="cellrowborder" valign="top" width="21.42%"><p id="p13453193594318"><a name="p13453193594318"></a><a name="p13453193594318"></a>Set remote login of user <strong>root</strong>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p12454193511439"><a name="p12454193511439"></a><a name="p12454193511439"></a>Configure the configuration file to allow user <strong id="b175371140103213"><a name="b175371140103213"></a><a name="b175371140103213"></a>root</strong> to remotely log in.</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p12454193511439"><a name="p12454193511439"></a><a name="p12454193511439"></a>Configure the configuration file to allow user <strong>root</strong> to remotely log in.
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p1580510489499"><a name="p1580510489499"></a><a name="p1580510489499"></a>One day before the upgrade</p>
 </td>
@@ -59,7 +59,7 @@ This section describes preparations before the upgrade.
 </td>
 <td class="cellrowborder" valign="top" width="21.42%"><p id="p8993153053014"><a name="p8993153053014"></a><a name="p8993153053014"></a>Back up data.</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p189939306304"><a name="p189939306304"></a><a name="p189939306304"></a>For details, see section "Backup and Restoration" in the <em id="i122031043193210"><a name="i122031043193210"></a><a name="i122031043193210"></a>Administrator Guide</em>.</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p189939306304"><a name="p189939306304"></a><a name="p189939306304"></a>For details, see section "Backup and Restoration" in the Administrator Guide.</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p17993143018306"><a name="p17993143018306"></a><a name="p17993143018306"></a>One day before the upgrade</p>
 </td>
@@ -81,7 +81,7 @@ This section describes preparations before the upgrade.
 </td>
 <td class="cellrowborder" valign="top" width="21.42%"><p id="p799383019308"><a name="p799383019308"></a><a name="p799383019308"></a>Check the OS health status.</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p299312304302"><a name="p299312304302"></a><a name="p299312304302"></a>Use the <strong id="b755415093315"><a name="b755415093315"></a><a name="b755415093315"></a>gs_checkos</strong> tool to check the OS status.</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p299312304302"><a name="p299312304302"></a><a name="p299312304302"></a>Use the gs_checkos tool to check the OS status.</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p6993193013309"><a name="p6993193013309"></a><a name="p6993193013309"></a>One day before the upgrade</p>
 </td>
@@ -92,7 +92,7 @@ This section describes preparations before the upgrade.
 </td>
 <td class="cellrowborder" valign="top" width="21.42%"><p id="p999473010306"><a name="p999473010306"></a><a name="p999473010306"></a>Check the disk usage of the database node.</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.29%"><p id="p699412308302"><a name="p699412308302"></a><a name="p699412308302"></a>Run the <strong id="b9177087342"><a name="b9177087342"></a><a name="b9177087342"></a>df</strong> command to check the disk usage.</p>
+<td class="cellrowborder" valign="top" width="32.29%"><p id="p699412308302"><a name="p699412308302"></a><a name="p699412308302"></a>Run the <strong>df</strong> command to check the disk usage.</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%"><p id="p1199414300302"><a name="p1199414300302"></a><a name="p1199414300302"></a>One day before the upgrade</p>
 </td>
@@ -114,28 +114,28 @@ This section describes preparations before the upgrade.
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->Time required varies according to the particulars for the site \(such as the data volume and server performance\).
+>![](public_sys-resources/icon-note.gif) **NOTE:**
+>Time required varies according to the particulars for the site (such as the data volume and server performance).
 
 ## Collecting Node Information
 
-Contact the database system administrator to obtain names and IP addresses of database nodes. You have obtained the passwords of users  **root**  and  **omm**  for logging in to the nodes, as shown in  [Table 1](#toc218487220).
+Contact the database system administrator to obtain names and IP addresses of database nodes. You have obtained the passwords of users **root** and **omm** for logging in to the nodes, as shown in [Table 2](#toc218487220).
 
-**Table  1**  Node information
+**Table 2** Node information
 
 <a name="toc218487220"></a>
 
-<table><thead align="left"><tr id="row32107897"><th class="cellrowborder" valign="top" width="6.34%" id="mcps1.2.7.1.1"><p id="p50602835"><a name="p50602835"></a><a name="p50602835"></a>No.</p>
+<table><thead align="left"><tr id="row32107897"><th class="cellrowborder" valign="top" width="6.34%" id="mcps1.2.7.1.1"><p id="p50602835"><a name="p50602835"></a><a name="p50602835"></a><b>No.</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="15.18%" id="mcps1.2.7.1.2"><p id="p5188953"><a name="p5188953"></a><a name="p5188953"></a>Node Name</p>
+<th class="cellrowborder" valign="top" width="15.18%" id="mcps1.2.7.1.2"><p id="p5188953"><a name="p5188953"></a><a name="p5188953"></a><b>Node Name</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="34.72%" id="mcps1.2.7.1.3"><p id="p17652085"><a name="p17652085"></a><a name="p17652085"></a>Node IP Address</p>
+<th class="cellrowborder" valign="top" width="34.72%" id="mcps1.2.7.1.3"><p id="p17652085"><a name="p17652085"></a><a name="p17652085"></a><b>Node IP Address</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.4"><p id="p52539912"><a name="p52539912"></a><a name="p52539912"></a>Password of User <strong id="b33285994722851"><a name="b33285994722851"></a><a name="b33285994722851"></a>root</strong></p>
+<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.4"><p id="p52539912"><a name="p52539912"></a><a name="p52539912"></a><b>Password of User <strong>root</strong></b></p>
 </th>
-<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.5"><p id="p27874513"><a name="p27874513"></a><a name="p27874513"></a>Password of User <strong id="b120292277022851"><a name="b120292277022851"></a><a name="b120292277022851"></a>omm</strong></p>
+<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.5"><p id="p27874513"><a name="p27874513"></a><a name="p27874513"></a><b>Password of User <strong>omm</strong></b></p>
 </th>
-<th class="cellrowborder" valign="top" width="7.5200000000000005%" id="mcps1.2.7.1.6"><p id="p1635924414169"><a name="p1635924414169"></a><a name="p1635924414169"></a>Remarks</p>
+<th class="cellrowborder" valign="top" width="7.5200000000000005%" id="mcps1.2.7.1.6"><p id="p1635924414169"><a name="p1635924414169"></a><a name="p1635924414169"></a><b>Remarks</b></p>
 </th>
 </tr>
 </thead>
@@ -159,33 +159,33 @@ Contact the database system administrator to obtain names and IP addresses of da
 
 If the upgrade fails, services may be affected. Back up data in advance so that services can be restored as soon as possible after a failure occurs.
 
-For details, see section "Backup and Restoration" in the  *Administrator Guide*.
+For details, see section "Backup and Restoration" in the *Administrator Guide*.
 
-## Obtaining the Upgrade Packages
+## Obtaining the Upgrade Package
 
-https://opengauss.org/en/download.html
+https://opengauss.org/zh/download.html
 
 Obtain the upgrade package from the website.
 
 ## Checking the OS Health Status
 
-Use the  **gs\_checkos**  tool to check the OS status.
+Use the gs\_checkos tool to check the OS status.
 
 ### Prerequisites<a name="section16375145913200"></a>
 
 - The hardware and network are working properly.
 
-- The trust relationship of user  **root**  among the hosts is normal.
+- The trust relationship of user **root** among the hosts is normal.
 
-- Only user  **root**  is authorized to run the  **gs\_checkos**  command.
+- Only user **root** is authorized to run the **gs\_checkos** command.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:**
   >This tool cannot be independently invoked. For security purposes, it is automatically deleted after the preinstallation is complete.
 
 
 ### Procedure<a name="section1990781914214"></a>
 
-1. Log in to a server as user  **root**.
+1. Log in to the server as user **root**.
 
 2. Run the following command to check OS parameters of the server:
 
@@ -193,7 +193,7 @@ Use the  **gs\_checkos**  tool to check the OS status.
    gs_checkos -i A
    ```
 
-   Check the OS parameters to ensure that the database has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see "**Server Tools**  \>  **gs\_checkos**  \>  **Table 1 OS check items**" in the  *Tool Reference*.
+   Check the OS parameters to ensure that the database has passed the pre-installation check and can efficiently operate after it is installed. For details about the check items, see see "Server Tools > gs_checkos > Table 1 OS check items" in the Tool Reference.
 
 ## Checking the Disk Usage of the Database Node
 
@@ -205,7 +205,7 @@ This section describes how to query the database status.
 
 ### Procedure<a name="section117172026191017"></a>
 
-1. Log in to the node as the database user \(for example,  **omm**\) and run the  **source**  command to set the environment variables.
+1. Log in to the node as the database user (for example, **omm**) and run the **source** command to set the environment variables.
 
 2. Run the following command to check the database status:
 

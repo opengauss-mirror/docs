@@ -1,3 +1,3 @@
-# Technical White Paper 
+# Technical White Paper
 
-This document describes the architecture, capabilities, and main technologies of the openGauss database. 
+This document describes the architecture, functions, and technologies of the openGauss database.

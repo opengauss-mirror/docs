@@ -1,4 +1,4 @@
-# gs\_sdr<a name="EN-US_TOPIC_0000001263109824"></a>
+# gs\_sdr<a name="ZH-CN_TOPIC_0000001263109824"></a>
 
 ## Background<a name="en-us_topic_0287275995_section431817462"></a>
 
@@ -46,7 +46,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
 **gs\_sdr** has the following types of parameters:
 
--   Common parameters:
+-   Common parameters
     -   -t
 
         Specifies the type of the **gs\_sdr** command.
@@ -55,17 +55,17 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
     -   -l
 
-        Specifies a log file and its save path.
+        Specifies a log file and its storage path.
 
         Default value: **$GAUSSLOG/om/gs\_sdr-YYYY-MM-DD\_hhmmss.log**
 
     -   -?, --help
 
-        Displays the help information.
+        Display the help information.
 
     -   -V, --version
 
-        Displays the version number.
+        Displays version information.
 
 
 -   Parameters for establishing DR relationship:
@@ -84,6 +84,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         Password of the DR user.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >
         >1. Before the DR relationship is established, you need to create a DR user on the primary cluster for DR authentication. The primary and standby clusters must use the same DR username and password. After a DR relationship is established, the user password cannot be changed. You can remove the DR relationship, modify the username and password, and establish the DR relationship again. The DR user password cannot contain blank characters and the following characters: |;&$<>`\'"{}()[]~*?!\n
         >2. If the **-U** and **-W** parameters are not input in the command line, they can be input in interactive mode during the establishment.
 
@@ -123,12 +124,13 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         # localClusterConf: DN shard information of the cluster. In the preceding command, port indicates the port of the primary DN in the cluster, and {"ip": "10.244.44.216", "dtaIp": "172.31.12.58"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the cluster.
         ```
 
-        > ![](public_sys-resources/icon-note.gif) **NOTE:**
-        > -Either **-X** or **--json** can be used to configure DR information. If both parameters are delivered in the command, the JSON file prevails.
+        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >
+        >-Either **-X** or **--json** can be used to configure DR information. If both parameters are delivered in the command, the JSON file prevails.
 
     -   --time-out=SECS
 
-        Specifies the timeout period. The primary cluster waits for the connection to the standby cluster. If the connection times out, the OM script automatically exits. The unit is second.
+        Specifies the timeout period. The primary cluster waits for the connection to the standby cluster. If the connection times out, the OM script automatically exits. Unit: s
 
         Value range: a positive integer. The recommended value is **1200**.
 
@@ -137,7 +139,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
 -   Parameters for switching a DR node to primary:
     
-    None
+    None.
     
 -   Parameters for removing DR:
     -   -X
@@ -148,17 +150,18 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
         JSON file containing local and peer DR information.
 
-        > ![](public_sys-resources/icon-note.gif) **NOTE:**
-        > -For details about how to configure **-X** and **--json**, see the parameters for establishing DR relationship in this section.
+        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >
+        >-For details about how to configure **-X** and **--json**, see the parameters for establishing DR relationship in this section.
 
 
 -   DR query parameters:
-    -   None
+    -   None.
     
     The DR status query result is described as follows:
 
 
-<a name="en-us_topic_0287275995_table1171617665"></a>
+<a name="zh-cn_topic_0287275995_table1171617665"></a>
 <table><thead align="left"><tr id="en-us_topic_0287275995_row918131719617"><th class="cellrowborder" valign="top" width="16.29162916291629%" id="mcps1.1.6.1.1"><p id="en-us_topic_0287275995_p18181171612"><a name="en-us_topic_0287275995_p18181171612"></a><a name="en-us_topic_0287275995_p18181171612"></a>Item</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.49124912491249%" id="mcps1.1.6.1.2"><p id="p235823320131"><a name="p235823320131"></a><a name="p235823320131"></a>Meaning</p>
@@ -171,7 +174,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 </th>
 </tr>
 </thead>
-<tbody><tr id="en-us_topic_0287275995_row1181917465"><td class="cellrowborder" rowspan="12" valign="top" width="16.29162916291629%" headers="mcps1.1.6.1.1 "><p id="en-us_topic_0287275995_p51816176618"><a name="en-us_topic_0287275995_p51816176618"></a><a name="en-us_topic_0287275995_p51816176618"></a>hadr_cluster_stat</p>
+<tbody><tr id="zh-cn_topic_0287275995_row1181917465"><td class="cellrowborder" rowspan="12" valign="top" width="16.29162916291629%" headers="mcps1.1.6.1.1 "><p id="zh-cn_topic_0287275995_p51816176618"><a name="zh-cn_topic_0287275995_p51816176618"></a><a name="zh-cn_topic_0287275995_p51816176618"></a>hadr_cluster_stat</p>
 <p id="p1880163681713"><a name="p1880163681713"></a><a name="p1880163681713"></a></p>
 <p id="p18877836101715"><a name="p18877836101715"></a><a name="p18877836101715"></a></p>
 <p id="p6875163621715"><a name="p6875163621715"></a><a name="p6875163621715"></a></p>
@@ -204,35 +207,35 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 <td class="cellrowborder" valign="top" width="28.45284528452845%" headers="mcps1.1.6.1.5 "><p id="p1919212412160"><a name="p1919212412160"></a><a name="p1919212412160"></a>-</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row020217369"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p1630142871312"><a name="p1630142871312"></a><a name="p1630142871312"></a>full_backup</p>
+<tr id="zh-cn_topic_0287275995_row020217369"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p1630142871312"><a name="p1630142871312"></a><a name="p1630142871312"></a>full_backup</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p8909171188"><a name="p8909171188"></a><a name="p8909171188"></a>Full data replication in the primary database instance is in progress.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.3 "><p id="p1694192163015"><a name="p1694192163015"></a><a name="p1694192163015"></a>This status is available only for the primary database instance in streaming DR.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row62461715613"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p9301102814139"><a name="p9301102814139"></a><a name="p9301102814139"></a>archive</p>
+<tr id="zh-cn_topic_0287275995_row62461715613"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p9301102814139"><a name="p9301102814139"></a><a name="p9301102814139"></a>archive</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p18886172181"><a name="p18886172181"></a><a name="p18886172181"></a>Streaming log replication in the primary database instance is in progress.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.3 "><p id="p1452675710199"><a name="p1452675710199"></a><a name="p1452675710199"></a>This status is available only for the primary database instance in streaming DR.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row1525317264"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p0301228171318"><a name="p0301228171318"></a><a name="p0301228171318"></a>backup_fail</p>
+<tr id="zh-cn_topic_0287275995_row1525317264"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p0301228171318"><a name="p0301228171318"></a><a name="p0301228171318"></a>backup_fail</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p1682453175316"><a name="p1682453175316"></a><a name="p1682453175316"></a>Full data replication in the primary database instance fails.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.3 "><p id="p5193175871910"><a name="p5193175871910"></a><a name="p5193175871910"></a>This status is available only for the primary database instance in streaming DR.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row122515171668"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p73021028101310"><a name="p73021028101310"></a><a name="p73021028101310"></a>archive_fail</p>
+<tr id="zh-cn_topic_0287275995_row122515171668"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p73021028101310"><a name="p73021028101310"></a><a name="p73021028101310"></a>archive_fail</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p8836178184"><a name="p8836178184"></a><a name="p8836178184"></a>Streaming log replication in the primary database instance fails.</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.3 "><p id="p1190145871911"><a name="p1190145871911"></a><a name="p1190145871911"></a>This status is available only for the primary database instance in streaming DR.</p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row626181719616"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p13302172816136"><a name="p13302172816136"></a><a name="p13302172816136"></a>switchover</p>
+<tr id="zh-cn_topic_0287275995_row626181719616"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p13302172816136"><a name="p13302172816136"></a><a name="p13302172816136"></a>switchover</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p13817176181"><a name="p13817176181"></a><a name="p13817176181"></a>Planned primary/standby switchover is in progress.</p>
 </td>
@@ -336,7 +339,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 <p id="p7991201015166"><a name="p7991201015166"></a><a name="p7991201015166"></a></p>
 </td>
 </tr>
-<tr id="en-us_topic_0287275995_row11262171166"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p186731346181611"><a name="p186731346181611"></a><a name="p186731346181611"></a>Not null</p>
+<tr id="en-us_topic_0287275995_row11262171166"><td class="cellrowborder" valign="top" headers="mcps1.1.6.1.1 "><p id="p186731346181611"><a name="p186731346181611"></a><a name="p186731346181611"></a>Non null</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.6.1.2 "><p id="p13670124611616"><a name="p13670124611616"></a><a name="p13670124611616"></a>Duration in which data of the database instance may be lost, in seconds.</p>
 </td>

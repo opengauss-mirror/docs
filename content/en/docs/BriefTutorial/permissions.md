@@ -1,18 +1,18 @@
 # Permissions<a name="EN-US_TOPIC_0000001225378505"></a>
 
-A user who creates an object is the owner of this object. By default,  Separation of Duties is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions on the object to other users through  [GRANT](#li9428175732017)  by default.
+A user who creates an object is the owner of this object. By default, separation of duties is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions on the object to other users through [GRANT](#li9428175732017) by default.
 
 To enable another user to use the object, grant required permissions to the user or the role that contains the user.
 
-To remove permissions, use  [REVOKE](#li51033327269). Object owners have implicit permissions \(such as ALTER, DROP, COMMENT, INDEX, VACUUM, GRANT, and REVOKE\) on objects. That is, once becoming the owner of an object, the owner is immediately granted the implicit permissions on the object. Object owners can remove their own common permissions, for example, making tables read-only to themselves or others, except the system administrator.
+To remove permissions, use [REVOKE](#li51033327269). Object owners have implicit permissions (such as ALTER, DROP, COMMENT, INDEX, VACUUM, GRANT, and REVOKE) on objects. That is, once becoming the owner of an object, the owner is immediately granted the implicit permissions on the object. Object owners can remove their own common permissions, for example, making tables read-only to themselves or others, except the system administrator.
 
 openGauss supports the following permissions, which are associated with different object types:
 
--   **SELECT**: allows  **SELECT**  on a specified table, view, or sequence. The  **SELECT**  permission on the corresponding column is also required for  **UPDATE**  or  **DELETE**.
+-   **SELECT**: allows **SELECT** on a specified table, view, or sequence. The **SELECT** permission on the corresponding column is also required for **UPDATE** or **DELETE**.
 -   **INSERT**: allows  **INSERT**  on a specified table.
 -   **UPDATE**: allows  **UPDATE**  on any column of a specified table. Generally,  **UPDATE**  also requires the  **SELECT**  permission to query which rows need to be updated.  **SELECT ... FOR UPDATE**  and  **SELECT ... FOR SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
 -   **DELETE**: allows  **DELETE**  on a row of a specified table. Generally,  **DELETE**  also requires the  **SELECT**  permission to query which rows need to be deleted.
--   **TRUNCATE**: allows  **TRUNCATE**  on a specified table.
+-   **TRUNCATE**: allows **TRUNCATE** on a specified table.
 -   **REFERENCES**: allows creation of a foreign key constraint. This permission is required on both referencing and referenced tables.
 -   **CREATE**:
     -   For databases, allows new schemas to be created within the database.
@@ -101,7 +101,7 @@ openGauss supports the following permissions, which are associated with differen
             ```
 
             >![](public_sys-resources/icon-note.gif) **NOTE:** 
-            >When you grant table or view permissions to other users, you also need to grant the  **USAGE**  permission on the schema that the tables and views belong to. Without the  **USAGE**  permission, the users with table or view permissions can only see the object names, but cannot access them. This syntax cannot be used to grant the permission to create tables in schemas with the same name, but you can use the syntax for granting permission of a role to others to achieve the same effect.
+            >When you grant table or view permissions to other users, you also need to grant the **USAGE** permission on the schema that the tables and views belong to. Without the **USAGE** permission, the users with table or view permissions can only see the object names, but cannot access them. This syntax cannot be used to grant the permission to create tables in schemas with the same name, but you can use the syntax for granting permission of a role to others to achieve the same effect.
 
         -   Grant the tablespace access permission to a user or role.
 
@@ -123,7 +123,7 @@ openGauss supports the following permissions, which are associated with differen
         REVOKE ALL { PRIVILEGES | PRIVILEGE } FROM role_name;
         ```
 
-    -   Revoking permissions from a role
+    -   Revoke the permissions of a role.
 
         ```
         REVOKE [ ADMIN OPTION FOR ]
@@ -217,7 +217,7 @@ openGauss supports the following permissions, which are associated with differen
 
 -   **WITH GRANT OPTION**
 
-    If  **WITH GRANT OPTION**  is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that. This option cannot be granted to  **PUBLIC**.
+    If **WITH GRANT OPTION** is specified, the recipient of the permission can in turn grant it to others. Without a grant option, the recipient cannot do that. This option cannot be granted to **PUBLIC**.
 
 
 ## Examples<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
@@ -296,7 +296,7 @@ openGauss supports the following permissions, which are associated with differen
         GRANT
         ```
 
-        Create the  **tpcds\_tbspc**  tablespace and grant all permissions on the tablespace to user  **joe**. However, user  **joe**  cannot grant these permissions to other users.
+        Create the **tpcds\_tbspc** tablespace and grant all permissions on the tablespace to user **joe**. However, user **joe** cannot grant these permissions to other users.
 
         ```
         openGauss=# CREATE TABLESPACE tpcds_tbspc RELATIVE LOCATION 'tablespace/tablespace_1';
@@ -324,6 +324,3 @@ openGauss supports the following permissions, which are associated with differen
         openGauss=# GRANT manager TO senior_manager;
         GRANT ROLE
         ```
-
-
-

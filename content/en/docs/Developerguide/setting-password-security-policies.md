@@ -1,22 +1,25 @@
-# Setting Password Security Policies<a name="EN-US_TOPIC_0289900602"></a>
+
+
+# Setting Password Security Policy
 
 ## Procedure<a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_s3a1d8e5070044faa84acbb053ba19602"></a>
 
-User passwords are stored in the system catalog  **pg\_authid**. To prevent password leakage, openGauss encrypts user passwords before storing them. The encryption algorithm is determined by the configuration parameter  **password\_encryption\_type**.
+User passwords are stored in the system catalog **pg\_authid**. To prevent password leakage, openGauss encrypts user passwords before storing them. The encryption algorithm is determined by the configuration parameter **password\_encryption\_type**.
 
--   If parameter  **password\_encryption\_type**  is set to  **0**, passwords are encrypted using MD5. MD5 is an insecure encryption algorithm. Therefore, you are not advised to use MD5.
--   If parameter  **password\_encryption\_type**  is set to  **1**, passwords are encrypted using SHA-256 and MD5. MD5 is an insecure encryption algorithm. Therefore, you are not advised to use MD5.
--   If parameter  **password\_encryption\_type**  is set to  **2**, passwords are encrypted using SHA-256. This is the default configuration.
--   If parameter  **password\_encryption\_type**  is set to  **3**, passwords are encrypted using sm3. This is the default configuration.
+-   If parameter **password\_encryption\_type** is set to **0**, passwords are encrypted using MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+-   If parameter **password\_encryption\_type** is set to **1**, passwords are encrypted using SHA-256 and MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+-   If parameter **password\_encryption\_type** is set to **2**, passwords are encrypted using SHA-256. This is the default configuration.
+-   If parameter **password\_encryption\_type** is set to **3**, passwords are encrypted using SM3.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
+1. Log in as the OS user **omm** to the primary node of the database.
+
 2.  Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
     ```
 
-    **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
+    **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
 
     If information similar to the following is displayed, the connection succeeds:
 
@@ -25,306 +28,318 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
-    postgres=# 
+    openGauss=# 
     ```
 
 3.  View the configured encryption algorithm.
 
     ```
-    postgres=# SHOW password_encryption_type;
+    openGauss=# SHOW password_encryption_type;
      password_encryption_type
     --------------------------
      2
     (1 row)
     ```
 
-    If the command output is  **0**  or  **1**, run the  **\\q**  command to exit the database.
+    If the command output is **0** or **1**, run the **\\q** command to exit the database.
 
-4.  Set  **gs\_guc reload -Z coordinator -D**  using a secure encryption algorithm:
+4.  Set **gs\_guc reload -Z coordinator -D** using a secure encryption algorithm:
 
     ```
     gs_guc reload -N all -I all -c "password_encryption_type=2"
     ```
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >To prevent password leakage, when running  **CREATE USER/ROLE**  to create a database user, do not specify the  **UNENCRYPTED**  attribute. In this way, the password of the newly created user must be encrypted for storage.
+    >When running **CREATE USER/ROLE** to create a database user, do not specify the properties of **UNENCRYPTED** to prevent password leakage. By doing so, only the password of the newly created user can be encrypted and stored.
 
 5. Configure password security parameters.
 
-   -   Password complexity
+   - Password complexity
 
-       You need to specify a password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules \(see  [password\_policy](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)\). Otherwise, you are prompted to enter the password again.
+     You must specify your password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules (see [password\_policy](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)). Otherwise, you are prompted to enter the password again. 
 
-       -   If parameter  **password\_policy**  is set to  **1**, the default password complexity rule is used to check passwords.
-       -   If parameter  **password\_policy**  is set to  **0**, the password complexity is not verified. You are not advised to set the parameter to this value because it is insecure. Password complexity is skipped only if the  **password\_policy**  parameter is set to  **0**  for all openGauss nodes.
+     -   If parameter **password\_policy** is set to **1**, the default password complexity rule is used to check passwords.
+     -   If parameter **password\_policy** is set to **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to **0** because this operation poses security risks. Even if the setting is required, you must set **password\_policy** to **0** on all openGauss nodes.
 
-       Configure the  **password\_policy**  parameter.
+     Configure the **password\_policy** parameter.
 
-       1.  Run the following command to connect to the database:
+     1. Run the following command to connect to the database:
 
-           ```
-           gsql -d postgres -p 8000
-           ```
+        ```
+        gsql -d postgres -p 8000
+        ```
 
-           **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
+        **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
 
-           If information similar to the following is displayed, the connection succeeds:
+        If information similar to the following is displayed, the connection succeeds:
 
-           ```
-           gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-           Non-SSL connection (SSL connection is recommended when requiring high-security)
-           Type "help" for help.
-           
-           postgres=# 
-           ```
+        ```
+        gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        openGauss=# 
+        ```
 
-       2.  View the current value.
+     2. View the current value.
 
-           ```
-           postgres=# SHOW password_policy;
-            password_policy
-           ---------------------
-            1
-           (1 row)
-           ```
+        ```
+        openGauss=# SHOW password_policy;
+         password_policy
+        ---------------------
+         1
+        (1 row)
+        ```
 
-           If the command output is not  **1**, run the  **\\q**  command to exit the database.
+        If the command output is not **1**, run the **\\q** command to exit the database.
 
-       3.  Run the following command to set the parameter to its default value  **1**:
+     3. Run the following command to set the parameter to its default value **1**:
 
-           ```
-           gs_guc reload -N all -I all -c "password_policy=1"
-           ```
+        ```
+        gs_guc reload -N all -I all -c "password_policy=1"
+        ```
 
-       The password complexity requirements are as follows:
+     > ![](public_sys-resources/icon-note.gif) **NOTE:** 
+     >
+     > The password complexity requirements are as follows:
+     >
+     > - Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
+     > - Minimum number of lowercase letters \(a-z\) \(**password\_min\_lowercase**\)
+     > - Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
+     > - Minimum number of special characters \(**password\_min\_special**\) \([Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8) lists special characters.\)
+     > - Minimum password length \(**password\_min\_length**\)
+     > - Maximum password length \(**password\_max\_length**\)
+     > - A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
+     > - A password is case insensitive and cannot be the username or the username spelled backwards.
+     > - A new password cannot be the current password and the current password spelled backwards.
+     > - A password cannot be a weak password.
+     > - Weak passwords are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
+     > - Passwords in the weak password dictionary are stored in the **gs\_global\_config** system catalog. When a user is created or modified, the password set by the user is compared with that stored in the weak password dictionary. If the password is matched, a message is displayed, indicating that the password is weak and password setting fails.
+     > - The weak password dictionary is empty by default. You can add or delete weak passwords using the following syntax:
+     >
+     > ```
+     > openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password1'), ('password2');
+     > openGauss=# DROP WEAK PASSWORD DICTIONARY;
+     > ```
 
-       -   Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
-       -   Minimum number of lowercase letters \(a-z\) \(**password\_min\_uppercase**\)
-       -   Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
-       -   Minimum number of special characters \(**password\_min\_special**\) \([Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)  lists special characters.\)
-       -   Minimum password length \(**password\_min\_length**\)
-       -   Maximum password length \(**password\_max\_length**\)
-       -   A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
-       -   A password is case insensitive and cannot be the username or the username spelled backwards.
-       -   A new password cannot be the current password and the current password spelled backwards.
+   - Password reuse
 
-   -   Password reuse
+     An old password can be reused only when it meets the requirements on reuse days \([password\_reuse\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)\) and reuse times \([password\_reuse\_max](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)\). [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee) lists the parameter configurations.
 
-       An old password can be reused only when it meets the requirements on reuse days \(**[password\_reuse\_time](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**\) and reuse times \(**[password\_reuse\_max](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**\).  [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee)  lists the parameter configurations.
+     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+     >The default values of the **password_reuse_time** and **password_reuse_max** parameters are **60** and **0**, respectively. Large parameter values ensure high security, but they may also cause operation inconvenience. The default values meet security standards. You can keep them or change the values as needed to improve the security level.
+
+     Configure the **password\_reuse\_time** parameter.
+
+     1. Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        openGauss=# 
+        ```
+
+     2. View the current value.
+
+        ```
+        openGauss=# SHOW password_reuse_time;
+         password_reuse_time
+        ---------------------
+         60
+        (1 row)
+        ```
+
+        If the command output is not **60**, run the **\\q** command to exit the database.
+
+     3. Run the following command to set the parameter to its default value **60**:
+
+        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >You are not advised to set the parameter to **0**. This value is valid only when **password\_reuse\_time** for all openGauss nodes is set to **0**.
+
+        ```
+        gs_guc reload -N all -I all -c "password_reuse_time=60"
+        ```
+
+     Configure the **password\_reuse\_max** parameter.
+
+     1. Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+            
+        openGauss=# 
+        ```
+
+     2. View the current value.
+
+        ```
+        openGauss=# SHOW password_reuse_max;
+        password_reuse_max
+        --------------------
+        0
+        (1 row)
+        ```
+
+        If the command output is not **0**, run the **\\q** command to exit the database.
+
+     3. Run the following command to set the parameter to its default value **0**:
+
+        ```
+        gs_guc reload -N all -I all -c "password_reuse_max = 0"
+        ```
+
+   - Password validity period
+
+     A validity period ([password\_effect\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)) is set for each database user password. If the password is about to expire ([password\_notify\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)), the system displays a message to remind the user to change it upon login.
+
+     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+     >Considering the usage and service continuity of a database, the database still allows a user to log in after the password expires. A password change notification is displayed every time the user logs in to the database until the password is changed.
+
+     Configure the **password\_effect\_time** parameter.
+
+     1. Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+        
+        openGauss=# 
+        ```
+
+     2. View the current value.
+
+        ```
+        openGauss=# SHOW password_effect_time;
+         password_effect_time
+        ----------------------
+         90
+        (1 row)
+        ```
+
+        If the command output is not **90**, run the **\\q** command to exit the database.
+
+     3. Run the following command to set the parameter to **90** \(**0** is not recommended\):
+
+        ```
+        gs_guc reload -N all -I all -c "password_effect_time = 90"
+        ```
+
+     Configure the **password_notify_time** parameter.
+
+     1. Run the following command to connect to the database:
+
+        ```
+        gsql -d postgres -p 8000
+        ```
+
+        **postgres** is the name of the database to be connected, and **8000** is the port number of the database primary node.
+
+        If information similar to the following is displayed, the connection succeeds:
+
+        ```
+        gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
+        Non-SSL connection (SSL connection is recommended when requiring high-security)
+        Type "help" for help.
+            
+        openGauss=# 
+        ```
+
+     2. View the current value.
+
+        ```
+        openGauss=# SHOW password_notify_time;
+        password_notify_time
+        ----------------------
+        7
+        (1 row)
+        ```
+
+     3. If **7** is not displayed, run the following command to set the parameter to **7** \(**0** is not recommended\):
+
+        ```
+        gs_guc reload -N all -I all -c "password_notify_time = 7"
+        ```
+
+   - Password change
+
+     - During database installation, an OS user with the same name as the initial user is created. The password of the OS user needs to be periodically changed for account security.
+
+       To change the password of user **user1**, run the following command:
+
+       ```
+       passwd user1
+       ```
+
+       Change the password as prompted.
+
+     - System administrators and common users need to periodically change their passwords to prevent the accounts from being stolen.
+
+       For example, to change the password of user **user1**, connect to the database as the system administrator and run the following commands:
+
+       ```
+       openGauss=# ALTER USER user1 IDENTIFIED BY "1234@abc" REPLACE "5678@def";
+       ALTER ROLE
+       ```
 
        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-       >The default values of the  **password\_reuse\_time**  and  **password\_reuse\_max**  parameters are  **60**  and  **0**, respectively. Large values of the two parameters bring higher security. However, if the values of the parameters are set too large, inconvenience may occur. The default values of the two parameters meet the security requirements. You can change the parameter values as needed for higher security.
+       >**1234@abc** and **5678@def** represent the new password and the original password of the user **user1**, respectively. If the new password does not have the required complexity, the change will not take effect.
 
-       Configure the  **password\_reuse\_time**  parameter.
+     - Administrators can change their own and common users' passwords. If common users forget their passwords, they can ask administrators to change the passwords.
 
-       1.  Run the following command to connect to the database:
+       To change the password of user **joe**, run the following command:
 
-           ```
-           gsql -d postgres -p 8000
-           ```
-
-           **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
-
-           If information similar to the following is displayed, the connection succeeds:
-
-           ```
-           gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-           Non-SSL connection (SSL connection is recommended when requiring high-security)
-           Type "help" for help.
-           
-           postgres=# 
-           ```
-
-       2.  View the current value.
-
-           ```
-           postgres=# SHOW password_reuse_time;
-            password_reuse_time
-           ---------------------
-            60
-           (1 row)
-           ```
-
-           If the command output is not  **60**, run the  **\\q**  command to exit the database.
-
-       3.  Run the following command to set the parameter to its default value  **60**:
-
-           >![](public_sys-resources/icon-note.gif) **NOTE:** 
-           >You are not advised to set the parameter to  **0**. This value is valid only when  **password\_reuse\_time**  for all openGauss nodes is set to  **0**.
-
-           ```
-           gs_guc reload -N all -I all -c "password_reuse_time=60"
-           ```
-
-       Configure the  **password\_reuse\_max**  parameter.
-
-       1.  Run the following command to connect to the database:
-
-           ```
-           gsql -d postgres -p 8000
-           ```
-
-           **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
-
-           If information similar to the following is displayed, the connection succeeds:
-
-           ```
-           gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-           Non-SSL connection (SSL connection is recommended when requiring high-security)
-           Type "help" for help.
-           
-           postgres=# 
-           ```
-
-       2.  View the current value.
-
-           ```
-           postgres=# SHOW password_reuse_max;
-            password_reuse_max
-           --------------------
-            0
-           (1 row)
-           ```
-
-           If the command output is not  **0**, run the  **\\q**  command to exit the database.
-
-       3.  Run the following command to set the parameter to its default value  **0**:
-
-           ```
-           gs_guc reload -N all -I all -c "password_reuse_max = 0"
-           ```
-
-   -   Password validity period
-
-       A validity period \(**[password\_effect\_time](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)**\) is set for each database user password. If the password is about to expire \(**[password\_notify\_time](en-us_topic_0283137371.md#en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)**\), the system displays a message to remind the user to change it upon login.
+       ```
+       openGauss=# ALTER USER joe IDENTIFIED BY "abc@1234";
+       ALTER ROLE
+       ```
 
        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-       >Considering the usage and service continuity of a database, the database still allows a user to log in after the password expires. A password change notification is displayed every time the user logs in to the database until the password is changed.
-
-       Configure the  **password\_effect\_time**  parameter.
-
-       1.  Run the following command to connect to the database:
-
-           ```
-           gsql -d postgres -p 8000
-           ```
-
-           **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
-
-           If information similar to the following is displayed, the connection succeeds:
-
-           ```
-           gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-           Non-SSL connection (SSL connection is recommended when requiring high-security)
-           Type "help" for help.
-           
-           postgres=# 
-           ```
-
-       2.  View the current value.
-
-           ```
-           postgres=# SHOW password_effect_time;
-            password_effect_time
-           ----------------------
-            90
-           (1 row)
-           ```
-
-           If the command output is not  **90**, run the  **\\q**  command to exit the database.
-
-       3.  Run the following command to set the parameter to  **90**  \(**0**  is not recommended\):
-
-           ```
-           gs_guc reload -N all -I all -c "password_effect_time = 90"
-           ```
-
-       Configure the  **password\_notify\_time**  parameter.
-
-       1.  Run the following command to connect to the database:
-
-           ```
-           gsql -d postgres -p 8000
-           ```
-
-           **postgres**  is the name of the database to be connected, and  **8000**  is the port number of the database primary node.
-
-           If information similar to the following is displayed, the connection succeeds:
-
-           ```
-           gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
-           Non-SSL connection (SSL connection is recommended when requiring high-security)
-           Type "help" for help.
-           
-           postgres=# 
-           ```
-
-       2.  View the current value.
-
-           ```
-           postgres=# SHOW password_notify_time;
-            password_notify_time
-           ----------------------
-            7
-           (1 row)
-           ```
-
-       3.  If  **7**  is not displayed, run the following command to set the parameter to  **7**  \(**0**  is not recommended\):
-
-           ```
-           gs_guc reload -N all -I all -c "password_notify_time = 7"
-           ```
-
-   -   Password change
-
-       -   During database installation, an OS user with the same name as the initial user is created. The password of the OS user needs to be periodically changed for account security.
-
-           To change the password of user  **user1**, run the following command:
-
-           ```
-           passwd user1
-           ```
-
-           Change the password as prompted.
-
-       -   System administrators and common users need to periodically change their passwords to prevent the accounts from being stolen.
-
-           For example, to change the password of user  **user1**, connect to the database as the system administrator and run the following commands:
-
-           ```
-           postgres=# ALTER USER user1 IDENTIFIED BY "1234@abc" REPLACE "5678@def";
-           ALTER ROLE
-           ```
-
-           >![](public_sys-resources/icon-note.gif) **NOTE:** 
-           >**1234@abc**  and  **5678@def**  represent the new password and the original password of user  **user1**, respectively. If the new password does not have the required complexity, the change will not take effect.
-
-       -   Administrators can change their own and common users' passwords. If common users forget their passwords, they can ask administrators to change the passwords.
-
-           To change the password of user  **joe**, run the following command:
-
-           ```
-           postgres=# ALTER USER joe IDENTIFIED BY "abc@1234";
-           ALTER ROLE
-           ```
-
-       >![](public_sys-resources/icon-note.gif) **NOTE:** 
+       >
        >-   System administrators are not allowed to change passwords for each other.
        >-   A system administrator can change the password of a common user without being required to provide the common user's old password.
        >-   A system administrator can change their own password but is required to provide the old password.
 
-   -   Password verification
+   - Password verification
 
-       Password verification is required when you set the user or role in the current session. If the entered password is inconsistent with the stored password of the user, an error is reported.
+     Password verification is required when you set the user or role in the current session. If the entered password is inconsistent with the stored password of the user, an error is reported.
 
-       If user  **joe**  needs to be set, run the following command:
+     If user **joe** needs to be set, run the following command:
 
-       ```
-       postgres=# SET ROLE joe PASSWORD "abc@1234";
-       ERROR:  Invalid username/password,set role denied.
-       ```
+     ```
+     openGauss=# SET ROLE joe PASSWORD "abc@1234";
+     ERROR: Invalid username/password,set role denied.
+     ```
 
-   **Table  1**  Special characters
+   **Table 1** Special characters
 
    <a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8"></a>
 
@@ -365,7 +380,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
    </tr>
    <tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r182287f066e84b69b11c7f27932acec3"><td class="cellrowborder" valign="top" width="10.068993100689932%" headers="mcps1.2.9.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7e2787c822b3424f924ab22cdb5d84c8"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7e2787c822b3424f924ab22cdb5d84c8"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7e2787c822b3424f924ab22cdb5d84c8"></a>2</p>
    </td>
-   <td class="cellrowborder" valign="top" width="10.898910108989101%" headers="mcps1.2.9.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"></a>!</p>
+   <td class="cellrowborder" valign="top" width="10.898910108989101%" headers="mcps1.2.9.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a7626f8433f9e4544aa2dca491f16e36e"></a>! The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
    </td>
    <td class="cellrowborder" valign="top" width="12.90870912908709%" headers="mcps1.2.9.1.3 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a33170122b3264b39a37ef2537834d824"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a33170122b3264b39a37ef2537834d824"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a33170122b3264b39a37ef2537834d824"></a>10</p>
    </td>
@@ -428,7 +443,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
    </td>
    <td class="cellrowborder" valign="top" width="15.108489151084893%" headers="mcps1.2.9.1.7 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a1cb04948ae114f63b059df9cf364a201"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a1cb04948ae114f63b059df9cf364a201"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a1cb04948ae114f63b059df9cf364a201"></a>29</p>
    </td>
-   <td class="cellrowborder" valign="top" width="13.0986901309869%" headers="mcps1.2.9.1.8 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"></a>?</p>
+   <td class="cellrowborder" valign="top" width="13.0986901309869%" headers="mcps1.2.9.1.8 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a21496f785fa2410aa1bd37313f6eac0d"></a>? The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
    </td>
    </tr>
    <tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_rf07ecf171b274834bb8e5233562d200f"><td class="cellrowborder" valign="top" width="10.068993100689932%" headers="mcps1.2.9.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p420416794727"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p420416794727"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p420416794727"></a>6</p>
@@ -485,9 +500,10 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
    </tbody>
    </table>
 
-   **Table  2**  Parameter description for reuse days and reuse times
+   **Table 2** Parameter description for reuse days and reuse times
 
    <a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee"></a>
+
    <table><thead align="left"><tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r3b0d8f9c19e74880b6db34e52ecce9b2"><th class="cellrowborder" valign="top" width="21.05%" id="mcps1.2.4.1.1"><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p765380794727"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p765380794727"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p765380794727"></a>Parameter</p>
    </th>
    <th class="cellrowborder" valign="top" width="25.75%" id="mcps1.2.4.1.2"><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_acd5bec9313cd4c3083ef549a2a6736f3"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_acd5bec9313cd4c3083ef549a2a6736f3"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_acd5bec9313cd4c3083ef549a2a6736f3"></a>Value Range</p>
@@ -496,22 +512,22 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
    </th>
    </tr>
    </thead>
-   <tbody><tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r09980779c6e04971857619b99e87d843"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"></a>Number of days during which a password cannot be reused (<strong id="en-us_topic_0237121110_b12771935174315"><a name="en-us_topic_0237121110_b12771935174315"></a><a name="en-us_topic_0237121110_b12771935174315"></a>password_reuse_time</strong>)</p>
+   <tbody><tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r09980779c6e04971857619b99e87d843"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a2ee15e6afe43479a95d2d6285a7ff4d9"></a>Number of days during which a password cannot be reused (<strong id="b12771935174315"><a name="b12771935174315"></a><a name="b12771935174315"></a>password_reuse_time</strong>)</p>
    </td>
-   <td class="cellrowborder" valign="top" width="25.75%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"></a>Positive number or <strong id="en-us_topic_0237121110_b167991758144318"><a name="en-us_topic_0237121110_b167991758144318"></a><a name="en-us_topic_0237121110_b167991758144318"></a>0</strong>. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
-   <p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"></a>By default, the number of days is set to <strong id="en-us_topic_0237121110_b187976914614"><a name="en-us_topic_0237121110_b187976914614"></a><a name="en-us_topic_0237121110_b187976914614"></a>60</strong>.</p>
+   <td class="cellrowborder" valign="top" width="25.75%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa966c9a1127f46868ef9e8775c709e21"></a>Positive number or <strong id="b167991758144318"><a name="b167991758144318"></a><a name="b167991758144318"></a>0</strong>. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
+   <p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_a9947002243e94f05ab23f1b969f34840"></a>The default value is <strong>60</strong>. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
    </td>
-   <td class="cellrowborder" valign="top" width="53.2%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"></a><ul id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"><li>If the parameter value is changed to a smaller one, new passwords will be checked based on the new parameter value.</li><li>If the parameter value is changed to a larger one (for example, changed from <strong id="en-us_topic_0237121110_b188471854174614"><a name="en-us_topic_0237121110_b188471854174614"></a><a name="en-us_topic_0237121110_b188471854174614"></a>a</strong> to <strong id="en-us_topic_0237121110_b28471454174610"><a name="en-us_topic_0237121110_b28471454174610"></a><a name="en-us_topic_0237121110_b28471454174610"></a>b</strong>), the historical passwords before <strong id="en-us_topic_0237121110_b684825484614"><a name="en-us_topic_0237121110_b684825484614"></a><a name="en-us_topic_0237121110_b684825484614"></a>b</strong> days probably can be reused because these historical passwords may have been deleted. New passwords will be checked based on the new parameter value.<div class="note" id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"></a>The absolute time is used. Historical passwords are recorded using absolute time and unaffected by local time changes.</p>
+   <td class="cellrowborder" valign="top" width="53.2%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"></a><ul id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u70f52b4e7ce64d1793435c03328e5b2a"><li>If the parameter value is changed to a smaller one, new password will be checked based on the new parameter value. </li><li>If the parameter value is changed to a larger one (for example, changed from **a** to **b**), the historical passwords before **b** days probably can be reused because these historical passwords may have been deleted. passwords that are changed later are checked based on the new parameter value. <div class="note" id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_n35c0f22786ef4fa895529a5144bab98a"></a><span class="notetitle"> Note: </span><div class="notebody"><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ad9b5d3b4c7b745f19e0832026e5e0b47"></a>The absolute time is used. Historical passwords are recorded using absolute time and do not recognize time changes. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
    </div></div>
    </li></ul>
    </td>
    </tr>
-   <tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r6db7a8b1298d4839a195f76b7466777b"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"></a>Number of consecutive times that a password cannot be reused (<strong id="en-us_topic_0237121110_b163384334475"><a name="en-us_topic_0237121110_b163384334475"></a><a name="en-us_topic_0237121110_b163384334475"></a>password_reuse_max</strong>)</p>
+   <tr id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_r6db7a8b1298d4839a195f76b7466777b"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_ac4934c12f3854a938c196a119731596a"></a>Number of consecutive times that a password cannot be reused (<strong id="b163384334475"><a name="b163384334475"></a><a name="b163384334475"></a>password_reuse_max</strong>)</p>
    </td>
-   <td class="cellrowborder" valign="top" width="25.75%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"></a>Positive integer or <strong id="en-us_topic_0237121110_b15163955124716"><a name="en-us_topic_0237121110_b15163955124716"></a><a name="en-us_topic_0237121110_b15163955124716"></a>0</strong>.</p>
-   <p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"></a>The value <strong id="en-us_topic_0237121110_b1479813566472"><a name="en-us_topic_0237121110_b1479813566472"></a><a name="en-us_topic_0237121110_b1479813566472"></a>0</strong> indicates that the number of consecutive times that a password cannot be reused is not checked.</p>
+   <td class="cellrowborder" valign="top" width="25.75%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_en-us_topic_0058967680_p190167594727"></a>Positive integer or 0. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
+   <p id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_aa129f63f92c448f2b89793d781bec3b3"></a>The value <strong>0</strong> indicates that the number of consecutive times that a password cannot be reused is not checked. The integral part of a positive number indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.</p>
    </td>
-   <td class="cellrowborder" valign="top" width="53.2%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"></a><ul id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"><li>If the parameter value is changed to a smaller one, new passwords will be checked based on the new parameter value.</li><li>If the parameter value is changed to a larger one (for example, changed from <strong id="en-us_topic_0237121110_b13262131114811"><a name="en-us_topic_0237121110_b13262131114811"></a><a name="en-us_topic_0237121110_b13262131114811"></a>a</strong> to <strong id="en-us_topic_0237121110_b18267121120483"><a name="en-us_topic_0237121110_b18267121120483"></a><a name="en-us_topic_0237121110_b18267121120483"></a>b</strong>), the historical passwords before the last <strong id="en-us_topic_0237121110_b1326781110483"><a name="en-us_topic_0237121110_b1326781110483"></a><a name="en-us_topic_0237121110_b1326781110483"></a>b</strong> passwords probably can be reused because these historical passwords may have been deleted. New passwords will be checked based on the new parameter value.</li></ul>
+   <td class="cellrowborder" valign="top" width="53.2%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"></a><a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"></a><ul id="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_u430461f661044758b2299bc2a81f02c0"><li>If the parameter value is changed to a smaller one, new password will be checked based on the new parameter value. </li><li>If the parameter value is changed to a larger one (for example, changed from **a** to **b**), the historical passwords before the last **b** passwords probably can be reused because these historical passwords may have been deleted. passwords that are changed later are checked based on the new parameter value. </li></ul>
    </td>
    </tr>
    </tbody>
@@ -519,26 +535,27 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
 6. Set user password expiration.
 
-   A user with the CREATEROLE permission can create a user with the password expiration feature. The command format is as follows:
+   When creating a user, a user with the **CREATEROLE** permission can force the user password to expire. After logging in to the database for the first time, a new user can perform query operations only after changing the password. The command format is as follows:
 
    ```
-   postgres=# CREATE USER joe PASSWORD "abc@1234" EXPIRED;
+   openGauss=# CREATE USER joe PASSWORD "abc@1234" EXPIRED;
    CREATE ROLE
    ```
 
-   A user with the CREATEROLE permission can force a user password to expire or force a user to change the forcibly expired password. The command format is as follows:
+   A user with the **CREATEROLE** permission can force a user password to expire or force a user to change the forcibly expired password. The command format is as follows:
 
    ```
-   postgres=# ALTER USER joe PASSWORD EXPIRED;
+   openGauss=# ALTER USER joe PASSWORD EXPIRED;
    ALTER ROLE
    ```
 
    ```
-   postgres=# ALTER USER joe PASSWORD "abc@2345" EXPIRED;
+   openGauss=# ALTER USER joe PASSWORD "abc@2345" EXPIRED;
    ALTER ROLE
    ```
 
    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-   >-   After logging in to the database, a user with the password expiration feature is prompted to change the password when the user tries to perform a simple or extended query. The user can then execute the statement after changing the password.
-   >-   If a user has the permission to change passwords of other users, the user also has the permission related to password expiration.
-   >-   Only initial users, system administrators (sysadmin), or users with the CREATEROLE permission can set user passwords to expire. System administrators can also set their passwords or the passwords of other system administrators to expire except initial users. 
+   >
+   >-   After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
+   >
+   >-   Only initial users, system administrators (with the **sysadmin** permission), and users who have the permission to create users (with the **CREATEROLE** permission) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The password of initial users cannot be invalidated.
