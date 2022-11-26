@@ -1788,11 +1788,11 @@
 
   - 在B模式数据库中，当b_compatibility_mode为true时才会替代openGauss原有extract函数。
 
-  - expr参数在解析时按照unit参数解析。当unit涉及```YEAR、WEEK、QUARTER、MONTH、DAY```时，expr参数被解析为date或者datetime；当unit只涉及```HOUR、MINUTE、SECOND、MICRESECOND```时，expr参数被解析为time。
+  - expr参数在解析时按照unit参数解析。当unit涉及`YEAR、WEEK、QUARTER、MONTH、DAY`时，expr参数被解析为date或者datetime；当unit只涉及`HOUR、MINUTE、SECOND、MICRESECOND`时，expr参数被解析为time。
 
   - extract函数可以提取复合unit。
-    - 复合unit有：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND，HOUR_MINUTE，HOUR_SECOND，HOUR_MICROSECOND，MINUTE_SECOND，MINUTE_MICROSECOND，SECOND_MICROSECOND```。
-    - 对于复合unit：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND```，由于这些unit中包含```DAY```部分，所以openGauss将expr当作datetime来解析。
+    - 复合unit有：`DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND，HOUR_MINUTE，HOUR_SECOND，HOUR_MICROSECOND，MINUTE_SECOND，MINUTE_MICROSECOND，SECOND_MICROSECOND`。
+    - 对于复合unit：`DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND`，由于这些unit中包含`DAY`部分，所以openGauss将expr当作datetime来解析。
 
   示例：
   
@@ -1927,13 +1927,17 @@
 
   返回值：
   
-  - 当format中标志仅包含时间相关字符串```'fHISThiklrs'```中的字符时：time格式内容
+  - 当format中标志仅包含时间相关字符串`'fHISThiklrs'`中的字符时：time格式内容
 
-  - 当format中标志仅包含日期相关字符串```'MVUXYWabcjmvuxyw'```中的字符时：date格式内容
+  - 当format中标志仅包含日期相关字符串`'MVUXYWabcjmvuxyw'`中的字符时：date格式内容
 
   - 当format中标志为上述两种情况混合时：datetime格式内容
 
-  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+  备注：
+
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 此函数兼容MySQL中sql_mode不含NO_ZERO_DATE时的情况。
 
   示例：
 
