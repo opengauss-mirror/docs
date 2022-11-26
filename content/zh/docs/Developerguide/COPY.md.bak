@@ -299,7 +299,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
       >-   quote参数不能和分隔符、null参数相同。
       >-   quote参数只能是单字节的字符。
       >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
-      例如quote e'\x22'  ：使用ASCII编码为16进制22的字符。
+      >-   例如quote e'\x22'  ：使用ASCII编码为16进制22的字符。
  
     -   ESCAPE
         
@@ -511,7 +511,6 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
         >-   quote参数不能和分隔符、null参数相同。
         >-   quote参数只能是单字节的字符。
         >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
-	例如quote e'\x22'  ：使用ASCII编码为16进制22的字符。
 
     -   ESCAPE \[AS\] 'escape\_character'
 
