@@ -68,7 +68,7 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
         Adds parameters to the output plug-in of a logical replication slot.
 
-        The value can be  **include-xids**,  **skip-empty-xacts**,  **include-timestamp**,  **only-local**,  **force-binary**,  **white-table-list**,  **standby-connection**,  **parallel-decode-num**,  **decode-style**, or  **sending-batch**.
+        The value can be  **include-xids**,  **skip-empty-xacts**,  **include-timestamp**,  **only-local**,  **force-binary**,  **white-table-list**,  **standby-connection**,  **parallel-decode-num**,  **decode-style**,   **sending-batch**, **max-reorderbuffer-in-memory**, or **max-txn-in-memory**.
 
         For details, see "SQL Reference \> Functions and Operators \> System Administration Functions \> Logical Replication Functions \> pg\_logical\_slot\_peek\_changes \> options" and "Application Development Guide \> Development Based on JDBC \> Example: Logic Replication Code" in  _Developer Guide_.
 
