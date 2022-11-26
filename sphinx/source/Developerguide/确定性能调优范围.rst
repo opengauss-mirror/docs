@@ -2,7 +2,7 @@
 
 .. toctree::
 
-	硬件瓶颈点分析
-    content/zh/docs/Developerguide/查询最耗性能的SQL
-    content/zh/docs/Developerguide/分析作业是否被阻塞
+    硬件瓶颈点分析
+    ../content/zh/docs/Developerguide/查询最耗性能的SQL
+    ../content/zh/docs/Developerguide/分析作业是否被阻塞
 

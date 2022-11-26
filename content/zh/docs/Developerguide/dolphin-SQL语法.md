@@ -4,6 +4,8 @@
 
 -   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
 
+-   **[ALTER SERVER](dolphin-ALTER-SERVER.md)**
+
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
@@ -20,6 +22,8 @@
 
 -   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
 
+-   **[CREATE SERVER](dolphin-CREATE-SERVER.md)**
+
 -   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
@@ -35,6 +39,8 @@
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
 -   **[EXECUTE](dolphin-EXECUTE.md)**  
+
+-   **[EXPLAIN](dolphin-EXPLAIN.md)**  
 
 -   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
 
@@ -77,6 +83,8 @@
 -   **[SHOW MASTER STATUS](dolphin-SHOW-MASTER-STATUS.md)**
 
 -   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
+
+-   **[SHOW PRIVILEGES](dolphin-SHOW_PRIVILEGES.md)**
 
 -   **[SHOW PROCEDURE STATUS](dolphin-SHOW-PROCEDURE-STATUS.md)**
 

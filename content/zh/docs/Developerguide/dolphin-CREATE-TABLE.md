@@ -11,10 +11,16 @@
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
 
-通过like创建表。
+通过无括号like创建表。
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name LIKE source_table [ like_option [...] ]
 ```
+
+- like后不能添加普通建表的额外可选语句。
+- table前不能添加foreign选项，包括外表、mot表的创建。
+- 默认复制源表的索引，若不希望复制索引，需要手动指定EXCLUDING INDEXES。
+- 默认复制源分区表的分区，若不希望复制分区，需要手动指定EXCLUDING PARTITION。
+- 只支持复制range分区表的分区，对于hash、list分区表，由于默认复制分区，会直接报错，需要手动指定EXCLUING PARTITION。二级分区只支持复制range-range分区，处理方法同上。
 
 创建表。
 

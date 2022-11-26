@@ -234,11 +234,11 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
     **表 3**  提示符变量
 
     <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_tfd36c27a76294b92ad194d20beeaac7f"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r817a3786ba804a1886882c4a3687feae"><th class="cellrowborder" valign="top" width="12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"></a>变量</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r817a3786ba804a1886882c4a3687feae"><th class="cellrowborder" valign="top" width="12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_aaf5543159dee490f99f2cb452ce752d5"></a><b>变量</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="35%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="35%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ad45548d4c8354eb39118d80473523c41"></a><b>描述</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="53%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"></a>示例</p>
+    <th class="cellrowborder" valign="top" width="53%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a0f91d05a9ebb454c9341e7dfa5c74ce0"></a><b>示例</b></p>
     </th>
     </tr>
     </thead>
@@ -296,9 +296,9 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
     **表 4**  已定义的替换
 
     <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_table55443487"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_row8395738"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"></a>符号</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_row8395738"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p28543196"></a><b>符号</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="84%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"></a>符号说明</p>
+    <th class="cellrowborder" valign="top" width="84%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_p14857929"></a><b>符号说明</b></p>
     </th>
     </tr>
     </thead>
@@ -379,9 +379,9 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
     **表 5**  与gsql相关的环境变量
     
     <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_ta6e7da8b2a0f4d2b9f94b5b7037ac91e"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r1b9f53c1bcfc49218c72089a021d9e5c"><th class="cellrowborder" valign="top" width="29.14%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"></a>名称</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_r1b9f53c1bcfc49218c72089a021d9e5c"><th class="cellrowborder" valign="top" width="29.14%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a6cd68d2ab45f4ca6bf2aa28a9783dcd4"></a><b>名称</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="70.86%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="70.86%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"></a><a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_a060c10b23e9a470bb35f9def232631a5"></a><b>描述</b></p>
     </th>
     </tr>
     </thead>
@@ -751,9 +751,9 @@ omm@[local] openGauss=#
     **表 6**  使用gsql联机帮助
 
     <a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_table52020644"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_row35168989"><th class="cellrowborder" valign="top" width="30.86%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"></a>描述</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_row35168989"><th class="cellrowborder" valign="top" width="30.86%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p30115862"></a><b>描述</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="69.14%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"></a>示例</p>
+    <th class="cellrowborder" valign="top" width="69.14%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_zh-cn_topic_0058968146_p21681027"></a><b>示例</b></p>
     </th>
     </tr>
     </thead>
@@ -811,11 +811,11 @@ omm@[local] openGauss=#
 **表 7**  常用参数
 
 <a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_t5f35328143ec419983a1c23d13c46e49"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_rf9b2bbe319a24d139970cf428f495efd"><th class="cellrowborder" valign="top" width="22.24%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_rf9b2bbe319a24d139970cf428f495efd"><th class="cellrowborder" valign="top" width="22.24%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_aa15e412fe7364f6992cb5ff1d06f6d46"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="53.7%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="53.7%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a11229b9b997f438eb84506dae58a0287"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="24.060000000000002%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="24.060000000000002%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p192487379712"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -901,14 +901,15 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 8**  输入和输出参数
 
 <a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_t0233128ab394456c80e339179cb56739"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ra3cdda570ced41129194efd2e680304d"><th class="cellrowborder" valign="top" width="14.67%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ra3cdda570ced41129194efd2e680304d"><th class="cellrowborder" valign="top" width="14.67%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p401260795738"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="62.59%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="62.59%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a906241fb7455400e916a9a38a9868a71"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="22.74%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="22.74%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p485266179117"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -1009,11 +1010,11 @@ omm@[local] openGauss=#
 **表 9**  输出格式参数
 
 <a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_t47c174e145784f16ac251d3c6aea8ea8"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ra101278a50d349be83a64bb1915591f1"><th class="cellrowborder" valign="top" width="17.52%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ra101278a50d349be83a64bb1915591f1"><th class="cellrowborder" valign="top" width="17.52%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a396cd422101544c9b9de39d172ab7175"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="64.25%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="64.25%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_ad608a82fa0b44fa49519299758dcc9dd"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="18.23%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="18.23%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p431994959135"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -1107,11 +1108,11 @@ omm@[local] openGauss=#
 **表 10**  连接参数
 
 <a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_td7e646abbf6a4d85bc54cd9741c80b68"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_r7ae18844030f48148c25a09efc185001"><th class="cellrowborder" valign="top" width="22.720000000000002%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_r7ae18844030f48148c25a09efc185001"><th class="cellrowborder" valign="top" width="22.720000000000002%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_af5afc71383bd49859a7eb14f09f4a230"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="52.28%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="52.28%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a6a81762f2c984cbcb0a23bdca1adced8"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_a2795db2b320742e6affbac1bafa83b6f"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -1178,11 +1179,11 @@ omm@[local] openGauss=#
 **表 11**  一般的元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table23103470"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row28068480"><th class="cellrowborder" valign="top" width="18.55%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row28068480"><th class="cellrowborder" valign="top" width="18.55%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58954407"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="52.31%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="52.31%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p10577654"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="29.14%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="29.14%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a6ae5c3d2b0e24a70a6735941aa80ea5a"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -1232,9 +1233,9 @@ omm@[local] openGauss=#
 **表 12**  查询缓存区元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table8624338"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row60218325"><th class="cellrowborder" valign="top" width="36.25%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row60218325"><th class="cellrowborder" valign="top" width="36.25%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p45846132"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="63.74999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="63.74999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22549200"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -1265,12 +1266,13 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 13**  输入/输出元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table62130565"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row27656514"><th class="cellrowborder" valign="top" width="43%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row27656514"><th class="cellrowborder" valign="top" width="43%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25585200"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="56.99999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p59135330"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -1329,13 +1331,13 @@ omm@[local] openGauss=#
 **表 14**  显示信息元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table44907299"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row64036265"><th class="cellrowborder" valign="top" width="13%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row64036265"><th class="cellrowborder" valign="top" width="13%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p21471471"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="37%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="37%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p761538"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a2566f5d7e6914403a8ab904249817030"></a><b>取值范围</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0237152146_p1357773513104"><a name="zh-cn_topic_0237152146_p1357773513104"></a><a name="zh-cn_topic_0237152146_p1357773513104"></a>示例</p>
+<th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0237152146_p1357773513104"><a name="zh-cn_topic_0237152146_p1357773513104"></a><a name="zh-cn_topic_0237152146_p1357773513104"></a><b>示例</b></p>
 </th>
 </tr>
 </thead>
@@ -1722,9 +1724,9 @@ omm@[local] openGauss=#
 **表 15**  权限的参数说明
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_t9b9f37d7c1c54a7893307344083e644e"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_r6362dc74b9f541a69e0d66b9cf284ed9"><th class="cellrowborder" valign="top" width="28.060000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_r6362dc74b9f541a69e0d66b9cf284ed9"><th class="cellrowborder" valign="top" width="28.060000000000002%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="71.94%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="71.94%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_ae7e92c0355f448ea8ca7c9140ada9108"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -1827,9 +1829,9 @@ omm@[local] openGauss=#
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table53911699"></a>
 
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row23785826"><th class="cellrowborder" valign="top" width="34.88%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row23785826"><th class="cellrowborder" valign="top" width="34.88%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p19011743"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="65.12%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="65.12%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p18693083"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -1879,11 +1881,11 @@ omm@[local] openGauss=#
 **表 17**  可调节的打印选项
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table22053343"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row34213901"><th class="cellrowborder" valign="top" width="21.130000000000003%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"></a>选项</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row34213901"><th class="cellrowborder" valign="top" width="21.130000000000003%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p25176457"></a><b>选项</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="38.830000000000005%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"></a>选项说明</p>
+<th class="cellrowborder" valign="top" width="38.830000000000005%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p46637289"></a><b>选项说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="40.040000000000006%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="40.040000000000006%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p250729112140"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -2002,11 +2004,11 @@ omm@[local] openGauss=#
 **表 18**  连接元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table37189353"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row51130770"><th class="cellrowborder" valign="top" width="21.490000000000002%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row51130770"><th class="cellrowborder" valign="top" width="21.490000000000002%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p47951669"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="52.56999999999999%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="52.56999999999999%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58880018"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="25.94%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="25.94%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p665642669562"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -2039,11 +2041,11 @@ omm@[local] openGauss=#
 **表 19**  操作系统元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table32146234"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row57810541"><th class="cellrowborder" valign="top" width="21.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row57810541"><th class="cellrowborder" valign="top" width="21.87%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p52142277"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="47.11%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="47.11%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p62774893"></a><b>参数说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="31.019999999999996%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="31.019999999999996%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a197968a4cc80417d895710ba55ccfd8d"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -2081,9 +2083,9 @@ omm@[local] openGauss=#
 **表 20**  变量元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table50076468"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row64340398"><th class="cellrowborder" valign="top" width="32.86%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row64340398"><th class="cellrowborder" valign="top" width="32.86%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p44189784"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="67.14%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="67.14%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p22602779"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -2109,11 +2111,11 @@ omm@[local] openGauss=#
 **表 21**  \\set常用命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_t03d91a7973ee453b918f0b755284f04d"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_r19e99ba6f3f04b6f97fd0ad130d78d0f"><th class="cellrowborder" valign="top" width="23.31%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"></a>名称</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_r19e99ba6f3f04b6f97fd0ad130d78d0f"><th class="cellrowborder" valign="top" width="23.31%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_a99f521f800fc4039a69aa49124a11b2d"></a><b>名称</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="56.769999999999996%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"></a>命令说明</p>
+<th class="cellrowborder" valign="top" width="56.769999999999996%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_abdbf8729ec724fc0ad2df55fcf7fdda0"></a><b>命令说明</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="19.919999999999998%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"></a>取值范围</p>
+<th class="cellrowborder" valign="top" width="19.919999999999998%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p471742039289"></a><b>取值范围</b></p>
 </th>
 </tr>
 </thead>
@@ -2147,12 +2149,13 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 **表 22**  大对象元命令
 
 <a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table55465693"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row47399046"><th class="cellrowborder" valign="top" width="28.249999999999996%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"></a>参数</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_row47399046"><th class="cellrowborder" valign="top" width="28.249999999999996%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p14117557"></a><b>参数</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="71.75%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"></a>参数说明</p>
+<th class="cellrowborder" valign="top" width="71.75%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p2671501"></a><b>参数说明</b></p>
 </th>
 </tr>
 </thead>
@@ -2348,9 +2351,9 @@ omm@[local] openGauss=#
     **表 23**  查看会话连接数
 
     <a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_t8e166846f0204638bd83f2fd35f44585"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_r32046f7f632b492891276dd6f4bf8999"><th class="cellrowborder" valign="top" width="31.41%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"></a><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"></a>描述</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_r32046f7f632b492891276dd6f4bf8999"><th class="cellrowborder" valign="top" width="31.41%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"></a><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_af6146f03532142dcaabcb534b3f1c117"></a><b>描述</b></p>
     </th>
-    <th class="cellrowborder" valign="top" width="68.58999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"></a><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"></a>命令</p>
+    <th class="cellrowborder" valign="top" width="68.58999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"></a><a name="zh-cn_topic_0237152147_zh-cn_topic_0059779356_aa2c6dba9fc5043509474d2a1d80a33be"></a><b>命令</b></p>
     </th>
     </tr>
     </thead>

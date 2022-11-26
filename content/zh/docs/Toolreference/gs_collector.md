@@ -179,10 +179,10 @@
   }
   ```
 
-  ![](public_sys-resources/icon-note.gif) **说明：**
-
-   TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
-  对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
+  >![](public_sys-resources/icon-note.gif) **说明：**
+  >
+  >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
+  >对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
 
   默认配置文件内容如下：
 

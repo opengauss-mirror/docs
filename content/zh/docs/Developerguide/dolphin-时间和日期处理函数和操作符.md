@@ -12,6 +12,7 @@
 6. 新增```date_bool/time_bool```函数。
 7. 新增```dayname/monthname/time_to_sec/month/day/date/week/yearweek```函数，修改了```last_day```函数。
 8. 新增```datediff/from_days/convert_tz/date_add/date_sub/adddate/addtime```函数，修改了```timestampdiff```函数。
+9. 新增```get_format/date_format/from_unixtime/str_to_date```函数，修改了```extract```函数。
 
 - curdate\(\)
 
@@ -341,7 +342,7 @@
  10:15:20.500001
 (1 row)
 
--- 四舍五入进位
+-- 超出边界值
  openGauss=# SELECT MAKETIME(839,0,0);
  maketime  
 -----------
@@ -547,22 +548,24 @@
   
   函数原型:
 
-  `CString SUBDATE(text date, INTERVAL expr unit)`
+  `Text SUBDATE(text date, INTERVAL expr unit)`
 
-  `CString SUBDATE(text date, int64 days)`
+  `Text SUBDATE(text date, int64 days)`
 
   功能描述：
 
-  该函数执行日期运算。参数`date`指定开始DATE或DATETIME类型值。指定要从开始日期减去的INTERVAL值，返回相减后的结果日期值。若第二参数为整数，则将其视为减去的天数值。
+  该函数执行日期运算。参数`date`指定开始`DATE`或`DATETIME`类型值。指定要从开始日期减去的INTERVAL值，返回相减后的结果日期值。若第二参数为整数，则将其视为减去的天数值。
 
   备注:
 
-    - 函数返回格式为DATE或DATETIME。一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME。
-    - 参数满足如下任一条件时，函数返回NULL：
-
-        1. 参数date的日期超出范围[0, 9999-12-31]
-        2. 任一参数为NULL。
-    - 返回结果的日期必须在范围[0001-1-1, 9999-12-31]内。若越界，则返回NULL。
+    - 函数返回格式为`DATE`或`DATETIME`。一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为`DATE`时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为`DATETIME`。
+    - 本函数所支持的interval单位与openguass支持的interval单位保持一致，包括YEAR，MONTH，DAY，HOUR，MINUTE，SECOND，DAY TO HOUR，DAY TO MINUTE，DAY TO SECOND，HOUR TO MINUTE，HOUR TO SECOND，MINUTE TO SECOND。
+    - 任一参数为NULL，函数返回NULL。
+    - 在下列情况中，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
+        - 参数`date`的日期超出范围[0000-1-1, 9999-12-31]
+        - 当interval单位为仅与年或月相关时，返回结果的日期超出范围[0000-1-1, 9999-12-31]
+        - 其他interval单位，返回结果的日期超出范围[0001-1-1, 9999-12-31]
+  
   
   示例:
 
@@ -574,10 +577,10 @@
 (1 row)
 
 -- 第一参数为DATE
- openGauss=# SELECT SUBDATE('2022-01-01 01:01:01', INTERVAL 1 YEAR);
-       subdate       
----------------------
- 2021-01-01 01:01:01
+ openGauss=# SELECT SUBDATE('2022-01-01', INTERVAL 1 YEAR);
+  subdate   
+------------
+ 2021-01-01
 (1 row)
 
 -- 第一参数为DATETIME
@@ -610,10 +613,12 @@
 
   备注:
 
-    - 第一参数必须为原始的TIME类型，而非由字符串的隐式转换而来。如SUBDATE('1:1:1', 1)并不会进入此函数。需改为SUBDATE(time'1:1:1', 1)。
-    - 第二参数的INTERVAL单位不能包含年或月部分，否则返回NULL。
-    - 返回值必须在[-838:59:59, 838:59:59]内，否则返回NULL。
-
+    - 第一参数必须为原始的TIME类型，而非由字符串的隐式转换而来。如`SUBDATE('1:1:1', 1)`并不会进入此函数。需改为`SUBDATE(time'1:1:1', 1)`。
+    - 在如下情况下，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
+      - 第二参数的INTERVAL单位包含年或月部分
+      - 函数返回`TIME`值超出[-838:59:59, 838:59:59]
+  
+  
   示例:
 
 ```sql
@@ -625,17 +630,13 @@
 
 -- 第二参数的INTERVAL单位不能包含年或月部分
  openGauss=# SELECT SUBDATE(time'838:00:00', INTERVAL '1' MONTH);
- subdate 
----------
- 
-(1 row)
+ERROR:  time field value out of range
+CONTEXT:  referenced column: subdate
 
 -- 结果超出范围
  openGauss=# SELECT SUBDATE(time'838:59:59', INTERVAL '-1' SECOND);
- subdate 
----------
- 
-(1 row)
+ERROR:  time field value out of range
+CONTEXT:  referenced column: subdate
 ```
 
 - SUBTIME()
@@ -648,13 +649,15 @@
 
   功能描述：
 
-  该函数执行日期运算，返回DATETIME或TIME表达式`time1`减去TIME表达式`time2`的结果。返回参数类型与`time1`传入类型保持一致。
+  该函数执行日期运算，返回`DATETIME`或`TIME`表达式`time1`减去TIME表达式`time2`的结果。返回结果类型与`time1`传入类型保持一致。
 
   备注:
 
-    - `time1`需要是正确合法的TIME格式或者DATETIME格式，否则报错。
-    - `time2`需要是正确合法的TIME格式，否则报错。
-    - 如返回值超出[-838:59:59, 838:59:59]，则会根据符号返回极值。
+  - 在如下情况下，函数报错：
+    - `time1`为不为合法的TIME格式或者DATETIME格式
+    - `time2`为不为合法的TIME格式
+    - 返回`DATETIME`值时，结果超过[0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999]
+    - 返回`TIME`值时，结果超过[-838:59:59, 838:59:59]
 
   示例:
 
@@ -694,19 +697,15 @@
     (1 row)
     ```
 
-- time()
-  
-  函数原型:
-
-  `Text TIME(TEXT expr)`
+- time(expr)
 
   功能描述：
 
-  兼容mysql的time()函数。参数指定一个TIME或DATETIME表达式，提取其中的time表达式并返回为字符串。
+  参数指定一个TIME或DATETIME表达式`expr`，提取其中的time表达式并返回为字符串。
 
   备注:
 
-    - 返回的时间表达式中最多保留六位小数，超出部分按照四舍五入进位。
+    - 返回的时间表达式中最多保留六位小数，并且不显示小数部分尾部的0
     - 对于异常的日期或时间格式或是域溢出的日期或时间(如1:60:60、2022-12-32 等)，本函数兼容mysql中该函数于insert语句中的表现，即报错。
     - date格式字符串将会报错，而date类型参数将会返回"00:00:00"。
 
@@ -732,16 +731,21 @@
 
   `TIME TIMEDIFF(TIME time1, TIME time2)`
 
-  `DATETIME TIMEDIFF(DATETIME  time1, DATETIME time2)`
+  `TIME TIMEDIFF(DATETIME datetime1, DATETIME datetime2)`
 
   功能描述：
 
-  该函数执行日期运算，返回`time1`减去`time2`的结果。返回参数类型与传入类型保持一致。
+  该函数执行`DATETIME`或`TIME `类型值间的减法运算，计算`DATETIME`或`TIME `间的时间差值，运算结果以`TIME`类型值返回。
 
   备注:
 
-    - `time1, time2`类型需要一致且均合法，否则返回NULL。
-    - 如`time1, time2`均为`TIME`类型且返回值超出[-838:59:59, 838:59:59]，函数将会报错。
+    - `time1, time2`所对应类型需要一致，否则返回NULL。
+    - 若出现下列情况，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
+      - `TIME`类型入参超出[-838:59:59, 838:59:59]范围或格式不合法
+      - `DATETIME`类型入参超出[0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999]范围或格式不合法
+      - 对于`DATETIME`格式的字符串入参，本函数支持0值日期，如'2000-0-1 1:1:1'
+      - 返回值超出[-838:59:59, 838:59:59]范围
+
 
   示例:
 
@@ -752,12 +756,17 @@
    22:58:58 | 46:58:58
   (1 row)
   
-  -- 超出范围时返回极值。
-  openGauss=# SELECT TIMEDIFF(time'-830:00:00', time'10:20:30'), TIMEDIFF(time'830:00:00', time'-10:20:30');
-    timediff  | timediff
-  ------------+-----------
-   -838:59:59 | 838:59:59
+  -- 两参数对应类型不一致
+  opengauss=# select timediff('2000-1-1 0:0:0', '0:0:0'), timediff(time'0:0:0', datetime'2000-1-1 0:0:0');
+   timediff | timediff 
+  ----------+----------
+            | 
   (1 row)
+  
+  -- 返回值超出范围时报错。
+  openGauss=# select timediff(time'-830:00:00', time'10:20:30');
+  ERROR:  time field value out of range
+  CONTEXT:  referenced column: timediff
   ```
 
 - TIMESTAMP()
@@ -772,11 +781,12 @@
 
   只有一个参数时，函数将DATE或DATETIME表达式`expr`转为DATETIME值返回。
 
-  有两个参数时，函数计算DATE或DATETIME表达式`expr`加上TIME类型`time`的结果并返回。
+  有两个参数时，函数计算DATE或DATETIME表达式`expr`加上TIME类型值`time`的结果并以DATETIME值返回。
 
   备注:
 
     - `expr`为不存在的date或datetime表达式时。如'2000-12-32'，'2000-1-1 24:00:00'等，函数报错。
+    - 入参或返回值超出指定时间范围，函数报错
     - 包含两个参数且第二参数`time`为非TIME格式字符串时，函数报错。
 
   示例:
@@ -807,11 +817,11 @@
   (1 row)
   ```
 
-- timestamp_add()
+- timestampadd(unit, span, expr)
 
   函数原型：
 
-  `TEXT TIMESTAMP_ADD(text unit, interval span, text datetime)`
+  `TEXT TIMESTAMPADD(text unit, interval span, text datetime)`
 
   功能描述：
 
@@ -821,17 +831,17 @@
 
     * `unit`支持的单位如下：
 
-      | 单位 | 对应的输入 |
-      | ---- | ---------- |
-      | 年   | year       |
-      | 季度 | qtr        |
-      | 月   | month      |
-      | 周   | week       |
-      | 日   | day        |
-      | 时   | hour       |
-      | 分   | minute     |
-      | 秒   | second     |
-      | 微秒 | microsecon |
+      | 单位 | 对应的输入                                                  |
+      | ---- | ----------------------------------------------------------- |
+      | 年   | year, years, y, yr, yrs, yyyy                               |
+      | 季度 | quarter, qtr, q                                             |
+      | 月   | month, months, mm, mon, mons                                |
+      | 周   | week, weeks, w                                              |
+      | 日   | day, days, d, dd, ddd, j                                    |
+      | 时   | hour, hours, h, hh, hr, hrs                                 |
+      | 分   | minute, minutes, m, mi, min, mins                           |
+      | 秒   | second, seconds, s, sec, secs                               |
+      | 微秒 | microsecond, microsecon, us, usec, usecond, useconds, usecs |
 
     * `span`支持小数。当`unit`为秒时，`span`根据第七位小数，四舍五入到六位小数；否则`span`四舍五入到整数。
 
@@ -865,7 +875,7 @@
 
   功能描述：
 
-  第一参数`time`为time或datetime表达式，函数基于第二参数`format`格式化`time`值并返回为字符串。
+  第一参数`time`为time或datetime表达式，函数基于第二参数`format`格式化`time`部分的值并返回为字符串。
 
   备注:
 
@@ -883,16 +893,17 @@
       | ％s  | 秒（00到59）                                 |
       | ％T  | 24小时格式的时间（hh：mm：ss）               |
       | %k   | 小时数                                       |
+      
     - 对于非时分秒相关的格式，会返回0或NULL，包括：
-
-| 格式                                               | 返回结果 |
-| -------------------------------------------------- | -------- |
-| %a、%b、%D、%j、%M、%U、%u、%V、%v、%W、%w、%X、%x | NULL     |
-| %c 、%e                                            | 0        |
-| %d、%m、%y                                         | 00       |
-| %Y                                                 | 0000     |
-
-  提取的时间值最多保留六位小数，超出部分按照四舍五入进位。
+  
+  | 格式                                               | 返回结果 |
+  | -------------------------------------------------- | -------- |
+  | %a、%b、%D、%j、%M、%U、%u、%V、%v、%W、%w、%X、%x | NULL     |
+  | %c 、%e                                            | 0        |
+  | %d、%m、%y                                         | 00       |
+  | %Y                                                 | 0000     |
+  
+    - 提取的时间值最多保留六位小数
 
   示例:
 
@@ -973,16 +984,16 @@
     (1 row)
     ```
 
-- to_days()
-
-  函数原型：`int8 TO_DAYS(DATETIME date)`
+- to_days(expr)
 
   功能描述：接受一个date或datetime表达式作为参数，返回参数所指定的日期到0000年所经过的天数
+
+  返回类型：64位整数`int8`
 
   备注: 
 
   * 若入参类型为time类型，将用于计算的日期将为当前日期加上time指定时间后得到的日期。
-  * 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错。
+  * 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错（兼容mysql中该函数于insert语句中的表现）。
 
   示例：
 
@@ -1007,16 +1018,17 @@
   (1 row)
   ```
 
-- to_seconds()
+- to_seconds(expr)
 
-  函数原型：`NUMERIC TO_SECONDS(text datetime)`
+  功能描述：参数输入一个`date`或`datetime`表达式`expr`用以指定时间点，返回`0000-01-01 00:00:00`到该时间点所经过的秒数
 
-  功能描述：输入一个时间点`datetime`，返回`0000-01-01 00:00:00`到该时间点所经过的秒数
+  返回类型：64位整数`int8`
 
   备注：
 
   - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
   - 返回的结果只保留整秒数，小数部分直接舍弃。
+  - 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错（兼容mysql中该函数于insert语句中的表现）。
 
   示例：
   ```sql
@@ -1057,7 +1069,7 @@
   - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
   - 参数`datetime`的有效范围为`[1970-01-01 00:00:00.000000 UTC, 2038-01-19 03:14:07.999999 UTC]`。
   - 参数的输入范围会受到时区的影响，但最终计算结果不受时区影响。
-  - 计算结果最多只保留六位小数。
+  - 计算结果最多只保留六位小数且不显示小数部分尾部的0。
 
   示例：
 
@@ -1111,18 +1123,19 @@
 
   函数原型：
 
-  	`TIME UTC_TIME()`
+	`TIME UTC_TIME()`
   
-  ​	`TIME UTC_TIME(int fsp)`
+	`TIME UTC_TIME(int fsp)`
   
   功能描述：返回当前的UTC时间，类型为TIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]
   
   备注：
 
   - UTC_TIME能够以关键词的形式识别，此时无需包含括号。效果等同于无参数的UTC_TIME()函数。
+  - 返回的`TIME`结果不显示小数部分尾部的0
   
   示例：
-
+  
   ```sql
   opengauss=# select UTC_TIME();
    utc_time 
@@ -1149,13 +1162,14 @@
 
   - `DATETIME UTC_TIMESTAMP()`
   - `DATETIME UTC_TIMESTAMP(int fsp)`
-  
+
   功能描述：返回当前的UTC日期时间值，类型为DATETIME。若给定一个整数参数作为精度，则能够指定结果保留的小数数量，支持精度范围为[0-6]。
 
   备注:
-  
+
   - UTC_TIMESTAMP能够以关键词的形式识别，此时无需包含括号。效果等同于无参数的UTC_TIMESTAMP()函数。
-  
+  - 返回的`DATETIME`结果不显示小数部分尾部的0
+
   示例：
   ```sql
   opengauss=# select UTC_TIMESTAMP();
@@ -1226,280 +1240,284 @@
 
 - dayname\(date\)
 
-    描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
+  描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
 
-    返回值类型：text
+  返回值类型：text
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select dayname('2000-1-1');
-    dayname
-    ----------
-    Saturday
-    (1 row)
+  ```
+  openGauss=# select dayname('2000-1-1');
+  dayname
+  ----------
+  Saturday
+  (1 row)
 
-    openGauss=# alter system set lc_time_names = 'zh_CN';
-    ALTER SYSTEM SET
+  openGauss=# alter system set lc_time_names = 'zh_CN';
+  ALTER SYSTEM SET
 
-    openGauss=# select dayname('2000-1-1');
-    dayname
-    ---------
-    星期六
-    (1 row)
-    ```
+  openGauss=# select dayname('2000-1-1');
+  dayname
+  ---------
+  星期六
+  (1 row)
+  ```
 
 - monthname\(date\)
 
-    描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
+  描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
 
-    返回值类型：text
+  返回值类型：text
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select monthname('2000-1-1');
-    monthname
-    -----------
-    January
-    (1 row)
+  ```
+  openGauss=# select monthname('2000-1-1');
+  monthname
+  -----------
+  January
+  (1 row)
 
-    openGauss=# alter system set lc_time_names = 'zh_CN';
-    ALTER SYSTEM SET
+  openGauss=# alter system set lc_time_names = 'zh_CN';
+  ALTER SYSTEM SET
 
-    openGauss=# select monthname('2000-1-1');
-    monthname
-    -----------
-    一月
-    (1 row)
-    ```
+  openGauss=# select monthname('2000-1-1');
+  monthname
+  -----------
+  一月
+  (1 row)
+  ```
 
 - time_to_sec\(time\)
 
-    描述：将时间转换为秒数。
+  描述：将时间转换为秒数。
 
-    返回值类型：integer
+  返回值类型：integer
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select time_to_sec('838:59:59');
-    time_to_sec
-    -------------
-        3020399
-    (1 row)
+  ```
+  openGauss=# select time_to_sec('838:59:59');
+  time_to_sec
+  -------------
+      3020399
+  (1 row)
 
-    openGauss=# select time_to_sec('-838:59:59');
-    time_to_sec
-    -------------
-        -3020399
-    (1 row)
-    ```
+  openGauss=# select time_to_sec('-838:59:59');
+  time_to_sec
+  -------------
+      -3020399
+  (1 row)
+  ```
 
 - month\(date\)
 
-    描述：返回日期中的月份。
+  描述：返回日期中的月份。
 
-    返回值类型：integer
+  返回值类型：integer
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select month('2021-11-12');
-    month
-    -------
-        11
-    (1 row)
+  ```
+  openGauss=# select month('2021-11-12');
+  month
+  -------
+      11
+  (1 row)
 
-    openGauss=# select month('2021-11-0');
-    month
-    -------
-        11
-    (1 row)
-    ```
+  openGauss=# select month('2021-11-0');
+  month
+  -------
+      11
+  (1 row)
+  ```
 
 - day\(date\)
 
-    描述：返回日期中的天数。
+  描述：返回日期中的天数。
 
-    返回值类型：integer
-  
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  返回值类型：integer
 
-    示例：
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    ```
-    openGauss=# select day('2021-11-12');
-    day
-    -----
-    12
-    (1 row)
+  示例：
 
-    openGauss=# select day('2021-0-0');
-    day
-    -----
-    0
-    (1 row)
-    ```
+  ```
+  openGauss=# select day('2021-11-12');
+  day
+  -----
+  12
+  (1 row)
+
+  openGauss=# select day('2021-0-0');
+  day
+  -----
+  0
+  (1 row)
+  ```
 
 - date\(expr\)
 
-    描述：expr识别为date或者datetime表达式，从expr中提取出日期部分。
+  描述：expr识别为date或者datetime表达式，从expr中提取出日期部分。
 
-    返回值类型：text
+  返回值类型：text
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select date('2021-11-12');
-        date
-    ------------
-    2021-11-12
-    (1 row)
+  ```
+  openGauss=# select date('2021-11-12');
+      date
+  ------------
+  2021-11-12
+  (1 row)
 
-    openGauss=# select date('2021-11-12 23:59:59.9999999');
-        date
-    ------------
-    2021-11-13
-    (1 row)
+  openGauss=# select date('2021-11-12 23:59:59.9999999');
+      date
+  ------------
+  2021-11-13
+  (1 row)
 
-    openGauss=# select date('2021-11-0');
-        date
-    ------------
-    2021-11-00
-    (1 row)
+  openGauss=# select date('2021-11-0');
+      date
+  ------------
+  2021-11-00
+  (1 row)
 
-    openGauss=# select date('2021-0-3');
-        date
-    ------------
-    2021-00-03
-    (1 row)
-    ```
+  openGauss=# select date('2021-0-3');
+      date
+  ------------
+  2021-00-03
+  (1 row)
+  ```
 
 - last_day\(expr\)
 
-    描述：expr识别为date或者datetime，返回该月对应的最后一天的日期。
+  描述：expr识别为date或者datetime，返回该月对应的最后一天的日期。
 
-    返回值类型：date
+  返回值类型：date
 
-    备注：此函数兼容MySQL插表时参数及结果约束。在B模式数据库中，当GUC参数b_compatibility_mode为true时，此函数代替openGauss原有last_day函数。
+  备注：
 
-    示例：
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    ```
-    openGauss=# set b_compatibility_mode = true;
-    SET
+  - 在B模式数据库中，当GUC参数b_compatibility_mode为true时，此函数代替openGauss原有last_day函数。
 
-    openGauss=# select last_day('2021-1-30');
-    last_day
-    ------------
-    2021-01-31
-    (1 row)
+  示例：
 
-    openGauss=# select last_day('2021-1-0');
-    last_day
-    ------------
-    2021-01-31
-    (1 row)
-    ```
+  ```
+  openGauss=# set b_compatibility_mode = true;
+  SET
+
+  openGauss=# select last_day('2021-1-30');
+  last_day
+  ------------
+  2021-01-31
+  (1 row)
+
+  openGauss=# select last_day('2021-1-0');
+  last_day
+  ------------
+  2021-01-31
+  (1 row)
+  ```
 
 - week\(date\[,mode\]\)
 
-    描述：返回date参数代表的日期在一年中的第几周。mode参数为可选整型参数，范围为[0,7]。无mode参数传入时，GUC参数default_week_format会作为默认mode参数。
+  描述：返回date参数代表的日期在一年中的第几周。mode参数为可选整型参数，范围为[0,7]。无mode参数传入时，GUC参数default_week_format会作为默认mode参数。
 
-    mode参数的各种取值及其意义如下：
+  mode参数的各种取值及其意义如下：
 
-    | mode | 意义 |
-    | --------|----------------------- |
-    |0|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Sunday|
-    |1|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
-    |2|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Sunday|
-    |3|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
-    |4|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
-    |5|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Monday|
-    |6|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
-    |7|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Monday|
+  | mode | 意义 |
+  | --------|----------------------- |
+  |0|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Sunday|
+  |1|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
+  |2|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Sunday|
+  |3|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
+  |4|Sunday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须有大于等于4天在此年内|
+  |5|Monday为一周的第一天；week的取值范围为[0-53]；一年的第一周必须包含Monday|
+  |6|Sunday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须有大于等于4天在此年内|
+  |7|Monday为一周的第一天；week的取值范围为[1-53]；一年的第一周必须包含Monday|
 
-    对于**一周的第一天**，**week取值范围**，**判定一年第一周的条件**的说明：
+  对于**一周的第一天**，**week取值范围**，**判定一年第一周的条件**的说明：
 
-    - **一周的第一天**指一周开始的那一天，Monday或者Sunday可能为一周的第一天。
-    - **week取值范围**指WEEK函数返回值的取值范围，有[0-53]和[1-53]两种取值范围。其中[0-53]中的0代表给定日期实际位于其所在年份上一年的最后一周内，但为了将返回结果与给定日期所在年份联系起来，故认为给定日期位于其所在年份的第零周（也即还未开始第一周）。若希望给定日期所在周数与其所在年份关系更紧密，则应该使用0、1、4或者5作为mode值，这样，当给定日期位于其所在年份上一年的最后一周时，WEEK函数会返回0。
-    - **判定一年第一周的条件**指判定所给日期位于当前年的第一周的条件，一般而言只有日期位于年份的边界才会进行判定。此判定有两种方式，由mode参数决定使用哪种方式。
-      - 方式一：若Monday或者Sunday是一周的第一天，并且Monday或者Sunday在给定日期所在年内，则此周为日期所在年份的第一周。对应mode取值为0、2、5和7。
-      - 方式二：若给定日期所在的周有大于等于4天位于日期所在年内，则此周为日期所在年份的第一周；否则此周为上一年的最后一周。对应mode取值为1、3、4和6。
+  - **一周的第一天**指一周开始的那一天，Monday或者Sunday可能为一周的第一天。
+  - **week取值范围**指WEEK函数返回值的取值范围，有[0-53]和[1-53]两种取值范围。其中[0-53]中的0代表给定日期实际位于其所在年份上一年的最后一周内，但为了将返回结果与给定日期所在年份联系起来，故认为给定日期位于其所在年份的第零周（也即还未开始第一周）。若希望给定日期所在周数与其所在年份关系更紧密，则应该使用0、1、4或者5作为mode值，这样，当给定日期位于其所在年份上一年的最后一周时，WEEK函数会返回0。
+  - **判定一年第一周的条件**指判定所给日期位于当前年的第一周的条件，一般而言只有日期位于年份的边界才会进行判定。此判定有两种方式，由mode参数决定使用哪种方式。
+    - 方式一：若Monday或者Sunday是一周的第一天，并且Monday或者Sunday在给定日期所在年内，则此周为日期所在年份的第一周。对应mode取值为0、2、5和7。
+    - 方式二：若给定日期所在的周有大于等于4天位于日期所在年内，则此周为日期所在年份的第一周；否则此周为上一年的最后一周。对应mode取值为1、3、4和6。
 
-    返回值类型：integer
+  返回值类型：integer
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# show default_week_format;
-    default_week_format
-    ---------------------
-    0
-    (1 row)
+  ```
+  openGauss=# show default_week_format;
+  default_week_format
+  ---------------------
+  0
+  (1 row)
 
-    -- 给定日期位于前一年的最后一周内，mode为0
-    openGauss=# select week('2000-1-1');
-    week
-    ------
-        0
-    (1 row)
+  -- 给定日期位于前一年的最后一周内，mode为0
+  openGauss=# select week('2000-1-1');
+  week
+  ------
+      0
+  (1 row)
 
-    openGauss=# alter system set default_week_format = 2;
-    ALTER SYSTEM SET
+  openGauss=# alter system set default_week_format = 2;
+  ALTER SYSTEM SET
 
-    -- 给定日期位于前一年的最后一周内，mode为2
-    openGauss=# select week('2000-1-1');
-    week
-    ------
-    52
-    (1 row)
+  -- 给定日期位于前一年的最后一周内，mode为2
+  openGauss=# select week('2000-1-1');
+  week
+  ------
+  52
+  (1 row)
 
-    openGauss=# select week('2000-1-1', 2);
-    week
-    ------
-    52
-    (1 row)
-    ```
+  openGauss=# select week('2000-1-1', 2);
+  week
+  ------
+  52
+  (1 row)
+  ```
 
 - yearweek\(date\[,mode\]\) 
 
-    描述：返回date参数代表的日期所在的年份和周。mode为可选整型参数，取值范围为[0,7]。无mode参数传入时，0会作为默认mode参数，GUC参数default_week_format不会影响yearweek函数。mode参数详细意义参见week函数。
+  描述：返回date参数代表的日期所在的年份和周。mode为可选整型参数，取值范围为[0,7]。无mode参数传入时，0会作为默认mode参数，GUC参数default_week_format不会影响yearweek函数。mode参数详细意义参见week函数。
 
-    yearweek函数不会返回0周，即**week取值范围**始终为[1-53]，不受mode参数影响。
+  yearweek函数不会返回0周，即**week取值范围**始终为[1-53]，不受mode参数影响。
 
-    返回值类型：bigint
+  返回值类型：bigint
 
-    备注：此函数兼容MySQL插表时参数及结果约束。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select week('1987-01-01', 0);
-    week
-    ------
-        0
-    (1 row)
+  ```
+  openGauss=# select week('1987-01-01', 0);
+  week
+  ------
+      0
+  (1 row)
 
-    openGauss=# select yearweek('1987-01-01', 0);
-    yearweek
-    ----------
-    198652
-    (1 row)
-    ```
+  openGauss=# select yearweek('1987-01-01', 0);
+  yearweek
+  ----------
+  198652
+  (1 row)
+  ```
 
 - datediff\(expr1,expr2\)
 
@@ -1507,12 +1525,14 @@
 
   返回值类型：integer（代表日期差值，单位是天)
 
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
   示例：
   ```
   openGauss=# select datediff('2001-01-01','321-02-02');
-  datediff 
+    datediff 
   ----------
-   613576
+    613576
   (1 row)
   ```
 
@@ -1544,7 +1564,11 @@
 
   返回值类型：bigint（代表以指定单位显示的差值）
 
-  备注：在B模式数据库中，此函数在GUC参数b_compatibility_mode为true时代替openGauss原有timestampdiff函数。
+  备注：
+
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 在B模式数据库中，此函数在GUC参数b_compatibility_mode为true时代替openGauss原有timestampdiff函数。
 
   示例：
 
@@ -1571,6 +1595,8 @@
 
   返回值：datetime
 
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
   示例：
 
   ```
@@ -1582,7 +1608,7 @@
   ```
 
 - DATE\_ADD\(date/datetime/time, interval expr unit\)
-    
+  
   函数原型：
   ```
   text DATE_ADD(text expr1, INTERVAL expr2 unit)
@@ -1595,14 +1621,12 @@
   
   备注：
   
+  - 兼容MySQL插表时的严格模式和非严格模式表现。
+
   - 一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME。
-  - 参数限制：MySQL插表时参数限制。
-      - expr1为date/datetime格式时，若超出[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]，则报错。
-      - expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。如date_add('1:1:1',interval 1 second)并不会进入此函数，需改为date_add(time'1:1:1', interval 1 second)。
-  - 结果限制：MySQL插表时结果限制。
-      - expr1为date/datetime格式时，若结果超出[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]，则报错；若结果在此范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中报错。
-      - 对第一参数为time类型的数据，如果计算结果超出time类型范围[-838:59:59, 838:59:59]，报错。
-  
+
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中严格模式下报错，非严格模式下报warning并返回NULL。
+
   示例：
   
   ```
@@ -1624,9 +1648,9 @@
   2022-01-01 00:00:01
   (1 row)
   ```
-   
-- DATE\_SUB\(date/datetime/time, interval expr unit\)
   
+- DATE\_SUB\(date/datetime/time, interval expr unit\)
+
   函数原型：
 
   ```
@@ -1640,13 +1664,11 @@
   
   备注：
   
+  - 兼容MySQL插表时的严格模式和非严格模式表现。
+
   - 一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME。
-  - 参数限制：MySQL插表时参数限制。
-      - expr1为date/datetime格式时，若超出[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]，则报错。
-      - expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。如date_sub('1:1:1',interval 1 second)并不会进入此函数，需改为date_sub(time'1:1:1', interval 1 second)。
-  - 结果限制：MySQL插表时结果限制。
-      - expr1为date/datetime格式时，若结果超出[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]，则报错；若结果在此范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中报错。
-      - 对第一参数为time类型的数据，如果计算结果超出time类型范围[-838:59:59, 838:59:59]，报错。
+
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中严格模式下报错，非严格模式下报warning并返回NULL。
   
   示例：
   
@@ -1663,14 +1685,13 @@
   2021-01-01 01:01:01
   (1 row)
     
-    
   openGauss=# SELECT DATE_SUB('2022-01-01', INTERVAL 1 SECOND);
       date_sub       
   ---------------------
   2021-12-31 23:59:59
   (1 row)
   ```
-    
+  
 - ADDDATE\(date/datetime/time, interval/days\)
 
   描述：该函数执行日期或时间加法运算。当第二参数为interval时，该函数表现与DATE_ADD函数相同，详细描述参见DATE_ADD。当第二参数为整数时，此整数会被当作天数加在第一参数上。
@@ -1715,16 +1736,7 @@
   
   返回值类型：与第一参数类型保持一致。
   
-  备注：
-  
-  - 参数限制：MySQL插表时参数限制。
-      - 第一参数为datetime格式时，若超出[0000-1-1 00:00:00.000000 , 9999-12-31 23:59:59.999999]，则报错。
-      - 第一参数为time格式时，若超过time类型范围，则报错。
-      - 第二参数只能为time格式。
-  
-  - 结果限制：MySQL插表时结果限制。
-      - 结果为datetime格式时，若超出[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]，则报错；若结果在此范围内，但小于'0001-1-1 00:00:00.000000'，则函数返回NULL。
-      - 结果为time格式时，若超出[-838:59:59, 838:59:59]则报错。
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
   
   示例：
   
@@ -1739,5 +1751,231 @@
   addtime       
   ---------------------
   2020-03-04 01:02:03
+  (1 row)
+  ```
+
+- get\_format\(expr1, expr2\)
+
+  描述：expr1可接收date、datetime、time三种类型名字，expr2可接收五种规格字符串：'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'。函数根据expr1和expr2返回对应类型的对应规格的字符串。
+
+  该函数返回值情况如下表所示：
+  |类型|规格|返回值|
+  |---|---|---|
+  |DATE|'USA'|'%m.%d.%Y'|
+  |DATE|'JIS'|'%Y-%m-%d'|
+  |DATE|'ISO'|'%Y-%m-%d'|
+  |DATE|'EUR'|'%d.%m.%Y'|
+  |DATE|'INTERNAL'|'%Y%m%d'|
+  |DATETIME|'USA'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'JIS'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'ISO'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'EUR'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'INTERNAL'|'%Y%m%d%H%i%s'|
+  |TIME|'USA'|'%h:%i:%s %p'|
+  |TIME|'JIS'|'%H:%i:%s'|
+  |TIME|'ISO'|'%H:%i:%s'|
+  |TIME|'EUR'|'%H.%i.%s'|
+  |TIME|'INTERNAL'|'%H%i%s'|
+
+  返回值类型：text
+
+  示例：
+  
+  ```
+  openGauss=# select get_format(datetime, 'iso');
+      get_format
+  -------------------
+  %Y-%m-%d %H:%i:%s
+  (1 row)
+  ```
+
+- extract\(unit from expr\)
+
+  描述：从expr参数中提取由unit参数指定的部分。
+
+  返回值：bigint
+
+  备注：
+
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 在B模式数据库中，当b_compatibility_mode为true时才会替代openGauss原有extract函数。
+
+  - expr参数在解析时按照unit参数解析。当unit涉及```YEAR、WEEK、QUARTER、MONTH、DAY```时，expr参数被解析为date或者datetime；当unit只涉及```HOUR、MINUTE、SECOND、MICRESECOND```时，expr参数被解析为time。
+
+  - extract函数可以提取复合unit。
+    - 复合unit有：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND，HOUR_MINUTE，HOUR_SECOND，HOUR_MICROSECOND，MINUTE_SECOND，MINUTE_MICROSECOND，SECOND_MICROSECOND```。
+    - 对于复合unit：```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND```，由于这些unit中包含```DAY```部分，所以openGauss将expr当作datetime来解析。
+
+  示例：
+  
+  ```
+  openGauss=# set b_compatibility_mode = true;
+  SET
+
+  openGauss=# select extract(year from '2021-11-12 12:12:12.000123');
+  extract
+  ---------
+      2021
+  (1 row)
+
+  openGauss=# select extract(day_microsecond from '2021-11-12 12:12:12.000123');
+      extract
+  ----------------
+  12121212000123
+  (1 row)
+
+  openGauss=# select extract(hour_microsecond from '2021-11-12 12:12:12.000123');
+    extract
+  --------------
+  121212000123
+  (1 row)
+
+  openGauss=# set b_compatibility_mode = false;
+  SET
+  ```
+
+- date\_format\(expr, format\)
+
+  描述：expr参数为输入的date或者datetime格式内容，该函数根据format参数格式化expr参数对应部分，format参数取值如下表：
+  | 提取标志 | 意义 |取值范围|
+  | ------- |----- |-------|
+  |%a|简写工作日名称|Sun...Sat|
+  |%b|简写月份名称|Jan...Dec|
+  |%c|数字形式的月份|0...12|
+  |%D|有后缀的月份中的天数|0th, 1st, 2nd, 3rd, ...|
+  |%d|数字形式的月份中的天数|00...31|
+  |%e|数字形式的月份中的天数|0...31|
+  |%f|微秒|000000...999999|
+  |%H|小时|00...23|
+  |%h|小时|01...12|
+  |%I|小时|01...12|
+  |%i|分钟|00...59|
+  |%j|一年中的天数|001...366|
+  |%k|小时|0...23|
+  |%l|小时|1...12|
+  |%M|月份全称|January...December|
+  |%m|数字形式的月份|00...12|
+  |%p|上午或者下午|AM 或者 PM|
+  |%r|范围为12小时的时间|%r返回的时间格式为'hh:mm:ss AM'或者'hh:mm:ss PM'|
+  |%S|秒|00...59|
+  |%s|秒|00...59|
+  |%T|范围为24小时的时间|%T返回的时间格式为'hh:mm:ss'|
+  |%U|日期在一年中对应的周数（对应WEEK函数mode为0的情况）|00...53|
+  |%u|日期在一年中对应的周数（对应WEEK函数mode为1的情况）|00...53|
+  |%V|日期在一年中对应的周数（对应WEEK函数mode为2的情况）此标志应和'%X'一起使用|01...53|
+  |%v|日期在一年中对应的周数（对应WEEK函数mode为3的情况）此标志应和'%X'一起使用|01...53|
+  |%W|工作日全称|Sunday...Saturday|
+  |%w|工作日索引|0=Sunday...6=Saturday|
+  |%X|日期所在周数对应的四位数字年份（计算方式为Sunday是一周的第一天），此标志应和'%V'一起使用|...|
+  |%x|日期所在周数对应的四位数字年份（计算方式为Monday是一周的第一天），此标志应和'%v'一起使用|...|
+  |%Y|四位数字年份|...|
+  |%y|两位数字年份|...|
+  |%%|'%'字面量|...|
+  |%x|未列出的字符x|...|
+
+  返回值：text
+
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  示例：
+
+  ```
+  -- 将日期格式化为指定内容
+  openGauss=# select date_format('2001-01-01 12:12:12','%Y %M %H');
+  date_format   
+  -----------------
+  2001 January 12
+  (1 row)
+
+  -- 将日期格式化为所在周数或者工作日
+  openGauss=# select date_format('2001-01-01 12:12:12','%V %v %U %u %W %w');
+      date_format
+  ----------------------
+  53 01 00 01 Monday 1
+  (1 row)
+  ```
+
+- from\_unixtime\(unix\_timestamp\[,format\]\)
+
+  描述：第一个参数为数值格式的时间戳,代表距离'1970-01-01 00:00:00'UTC的秒数；第二个参数为可选字符串参数。第二参数不传入时，函数返回'1970-01-01 00:00:00' UTC + unix_timestamp + 当前时区偏移对应的datetime；当第二个参数给出时，函数会将datetime根据第二个参数进行格式化，格式化的方法与date_format函数相同。当unix_timestamp超过最大时间戳范围后，函数返回NULL。
+
+  返回值：
+
+  - 仅传入第一个参数时：datetime
+
+  - 传入两个参数时：text
+
+  示例：
+
+  ```
+  openGauss=# select from_unixtime(1);
+      from_unixtime
+  ---------------------
+  1970-01-01 08:00:01
+  (1 row)
+
+  openGauss=# select from_unixtime(1,'%Y');
+  from_unixtime 
+  ---------------
+  1970
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483647);
+      from_unixtime
+  ---------------------
+  2038-01-19 11:14:07
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483648);
+  from_unixtime
+  ---------------
+
+  (1 row)
+  ```
+
+- str\_to\_date\(str, format\)
+
+  描述：该函数是date_format函数的逆函数。函数会尝试将字符串str与字符串format匹配，并根据format中包含的标志来构造对应date格式、datetime格式或者time格式的内容。
+
+  返回值：
+  
+  - 当format中标志仅包含时间相关字符串```'fHISThiklrs'```中的字符时：time格式内容
+
+  - 当format中标志仅包含日期相关字符串```'MVUXYWabcjmvuxyw'```中的字符时：date格式内容
+
+  - 当format中标志为上述两种情况混合时：datetime格式内容
+
+  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  示例：
+
+  ```
+  -- 普通构造日期
+  openGauss=# select str_to_date('01,5,2013','%d,%m,%Y');
+  str_to_date
+  -------------
+  2013-05-01
+  (1 row)
+
+  -- 使用年份，周数，工作日构造日期
+  openGauss=# select str_to_date('200442 Monday', '%X%V %W');
+  str_to_date
+  -------------
+  2004-10-18
+  (1 row)
+
+  -- 使用年份，天数构造日期
+  openGauss=# select str_to_date('2004 100', '%Y %j');
+  str_to_date
+  -------------
+  2004-04-09
+  (1 row)
+
+  -- 构造时间
+  openGauss=# select str_to_date('1:12:12 pm', '%r');
+  str_to_date
+  -------------
+  13:12:12
   (1 row)
   ```

@@ -28,9 +28,9 @@ This section describes preparations before the upgrade.
 </td>
 <td class="cellrowborder" valign="top" width="32.29%"><p id="p999253013304"><a name="p999253013304"></a><a name="p999253013304"></a><b>Preparation Content</b></p>
 </td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p199233017302"><a name="p199233017302"></a><a name="p199233017302"></a><b>Recommended Start Time </b></p>
+<td class="cellrowborder" valign="top" width="20%"><p id="p199233017302"><a name="p199233017302"></a><a name="p199233017302"></a><b>Recommended Start Time</b></p>
 </td>
-<td class="cellrowborder" valign="top" width="20%"><p id="p39921430143016"><a name="p39921430143016"></a><a name="p39921430143016"></a><b>Time Required (Days/Hours/Minutes)</b></p>
+<td class="cellrowborder" valign="top" width="20%"><p id="p39921430143016"><a name="p39921430143016"></a><a name="p39921430143016"></a><b>Required Time</b></p>
 </td>
 </tr>
 <tr id="row49544030"><td class="cellrowborder" valign="top" width="6.29%"><p id="p17992330193012"><a name="p17992330193012"></a><a name="p17992330193012"></a>1</p>
@@ -131,9 +131,9 @@ Contact the database system administrator to obtain names and IP addresses of da
 </th>
 <th class="cellrowborder" valign="top" width="34.72%" id="mcps1.2.7.1.3"><p id="p17652085"><a name="p17652085"></a><a name="p17652085"></a><b>Node IP Address</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.4"><p id="p52539912"><a name="p52539912"></a><a name="p52539912"></a><b>Password of User <strong>root</strong></b></p>
+<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.4"><p id="p52539912"><a name="p52539912"></a><a name="p52539912"></a><b>Password of User <strong id="b33285994722851"><a name="b33285994722851"></a><a name="b33285994722851"></a><b>root</b></strong></p>
 </th>
-<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.5"><p id="p27874513"><a name="p27874513"></a><a name="p27874513"></a><b>Password of User <strong>omm</strong></b></p>
+<th class="cellrowborder" valign="top" width="18.12%" id="mcps1.2.7.1.5"><p id="p27874513"><a name="p27874513"></a><a name="p27874513"></a><b>Password of User <strong id="b120292277022851"><a name="b120292277022851"></a><a name="b120292277022851"></a><b>omm</b></strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="7.5200000000000005%" id="mcps1.2.7.1.6"><p id="p1635924414169"><a name="p1635924414169"></a><a name="p1635924414169"></a><b>Remarks</b></p>
 </th>

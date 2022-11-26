@@ -4,7 +4,7 @@
 
 1. 新增```regexp/not regexp/rlike```操作符。
 2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64```函数。
-3. 修改```length/bit_length/octet_length/convert/format```函数的表现。
+3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
 
@@ -345,9 +345,10 @@
     (1 row)
     ```
 
--   convert\(expr using transcoding\_name\)
+-   convert(expr using transcoding_name)
 
-    描述：通过transcoding_name转换expr
+    描述：通过transcoding_name指定的编码方式转换expr;
+    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。
 
     返回值类型：text
 
@@ -355,6 +356,12 @@
 
     ```
     b_compatibility_database=# select convert('a' using 'utf8');
+    convert
+    ---------
+    a 
+    (1 row)
+
+    b_compatibility_database=# select convert('a' using utf8);
     convert
     ---------
     a 
@@ -376,7 +383,63 @@
     disange
     (1 row)
     ```
-    
+
+-   left\(str text, n int\)
+
+    描述：返回字符串的前n个字符。当n是负数时，当做0处理。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    test_db=# select left('abcde', 2);
+    left
+    ------
+    ab
+    (1 row)
+
+    test_db=# select left('abcde', 0);
+    left
+    ------
+
+    (1 row)
+
+    test_db=# select left('abcde', -2);
+    left
+    ------
+
+    (1 row)
+    ```
+
+-   right\(str text, n int\)
+
+    描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    test_db=# select right('abcde', 2);
+    right
+    -------
+    de
+    (1 row)
+
+    test_db=# select right('abcde', 0);
+    right
+    -------
+
+    (1 row)
+
+    test_db=# select right('abcde', -2);
+    right
+    -------
+
+    (1 row)
+    ```
+
 -   field(str, str1,str2,str3,...)
 
     描述：获取str在后面strn中的位置，不区分大小写。
@@ -502,7 +565,7 @@
 
 - like binary/not like binary
 
-  描述：判断字符串能否匹配上LIKE BINARY后的模式字符串,like binary采用大小写敏感模式匹配，若模式匹配则返回真(not like binary返回假)，不匹配则放回假(not like binary返回真)。
+  描述：判断字符串能否匹配上LIKE BINARY后的模式字符串,like binary采用大小写敏感模式匹配，若模式匹配则返回真(not like binary返回假)，不匹配则返回假(not like binary返回真)。
 
   返回值类型：布尔型
 
@@ -549,7 +612,7 @@
      abcda
     (1 row)
     
-  ``` 
+  ```
 
 
 -   export_set(bits, on, off, separator, number of bits)
@@ -608,7 +671,7 @@
     4. 故解码结果为ab。
 
     示例：
-    
+  
     ```
         openGauss=# SELECT FROM_BASE64('YWJj');
          from_base64 
@@ -616,7 +679,7 @@
          abc
         (1 row)
         
-    ``` 
+    ```
 - ORD(str)。
 
   描述: 
@@ -685,3 +748,97 @@
   4036199316
   (1 row)
   ```
+
+  - TO_BASE64(str)
+  
+  描述：根据BASE64编码规则，将一个字符串编码成BASE64编码格式，返回字符串的编码结果。编码规则与解码规则和FROM_BASE64相同。
+
+  返回值类型：text
+
+  注意事项
+
+  - 如果输入的是NULL，那么返回的结果为NULL。
+  - 编码解码规则与函数FROM_BASE64相同。
+
+  例子1：abc
+
+  1. 将字符串用二进制表示：01100001(a)01100010(b)01100011(c)
+  2. 将二进制串拆分，每6位一组：011000 010110 001001 100011
+  3. 在每一组的高位都补上两个0：00011000 00010110 00001001 00100011
+  4. 查找base64编码转换表：00011000，00010110，00001001，00100011对应的字符为：Y,W,J,j
+  5. 故编码结果为YWJj
+
+  例子2：ab
+
+  1. 将字符串用二进制表示：01100001(a)01100010(b)
+  2. 将二进制串拆分，每6位一组，由于最后一组只有4位，在低位补0补够6位：011000 010110 0010(00)
+  3. 在每一组的高位都补上两个0：00011000 00010110 00001000
+  4. 查找base64编码转换表：00011000，00010110，00001000对应的字符为：Y,W,I
+  5. 由于输入的字符串字节数不为三的倍数，导致转换后的字符数不为4的倍数，所以最后需要用=号补满4个字节，最终编码结果为：YWI=
+
+    示例：
+    
+    ```sql
+      SELECT TO_BASE64('to_base64');
+        to_base64   
+      --------------
+      dG9fYmFzZTY0
+      (1 row)
+      SELECT TO_BASE64('123456');
+       to_base64 
+      -----------
+       MTIzNDU2
+      (1 row)
+
+      SELECT TO_BASE64('12345');
+       to_base64 
+      -----------
+       MTIzNDU=
+      (1 row)
+
+      SELECT TO_BASE64('1234');
+       to_base64 
+      -----------
+       MTIzNA==
+      (1 row)
+    ```
+
+- UNHEX(str)
+  
+  描述：将一个十六进制编码的字符串解码，一个十六进制字符变成4位二进制，两个十六进制字符（8位）解码为一个字符，返回字符串的解码结果。若十六进制字符串的字符数不为偶数，则在高位补0。若输入的是二进制格式的字符串，则返回NULL。
+
+  返回值类型：text
+
+  注意事项
+
+  - 如果输入的是NULL或者包含非十六进制字符，那么返回的结果为NULL。
+  - 若输入的是数字，则将数字转成字符串后进行解码，如需将十六进制数转为十进制数，则需要使用其它的函数
+  - 编码解码规则与函数HEX相同。
+
+  例子1：4142
+
+  1. 将每个十六进制字符用4位二进制表示，若十六进制字符数不为偶数，则在高位补0：0100(4)0001(1)0100(4)0010(2)
+  2. 每8位组成一个字符：01000001 01000010
+  3. 故解码结果为AB
+
+    示例：
+    
+    ```sql
+      SELECT UNHEX('6f70656e4761757373');
+        unhex   
+      -----------
+      openGauss
+      (1 row)
+
+      SELECT UNHEX(HEX('string'));
+       unhex  
+      --------
+       string
+      (1 row)
+
+      SELECT HEX(UNHEX('1267'));
+       hex  
+      ------
+       1267
+      (1 row)
+    ```

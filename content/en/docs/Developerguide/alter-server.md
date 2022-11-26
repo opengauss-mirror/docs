@@ -99,5 +99,5 @@ Only the server owner or a user granted with the ALTER permission can run the  *
 
 ## Helpful Links<a name="en-us_topic_0283136932_section13898752175613"></a>
 
-[CREATE SERVER ](create-server.md)  and  [CREATE SERVER](drop-server.md)
+[CREATE SERVER ](create-server.md)  and  [DROP SERVER](drop-server.md)
 

@@ -4,7 +4,7 @@ package是一组相关存储过程、函数、变量、常量、游标等PL/SQL�
 
 package包含包头（Package Specification）和Package Body两个部分，其中包头所包含的声明可以被外部函数、匿名块等访问，而在包体中包含的声明不能被外部函数、匿名块等访问，只能被包体内函数和存储过程等访问。
 
-PACKAGE的创建请参见[CREATE PACKAGE](zh-cn_topic_0000001114212452.md)。
+PACKAGE的创建请参见[CREATE PACKAGE](CREATE-PACKAGE.md)。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >-   跨PACKAGE变量不支持作为FOR循环中控制变量使用。

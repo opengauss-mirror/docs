@@ -175,7 +175,7 @@ INSERT 0 1
 db_ignore=# select * from t_tinyint;
  num 
 -----
- 255
+ 127
 (1 row)
 
 -- 当新值类型与列类型同为字符类型时

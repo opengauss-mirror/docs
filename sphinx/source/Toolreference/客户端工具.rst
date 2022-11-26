@@ -1,5 +1,5 @@
 
 .. toctree::
 
-	content/zh/docs/Toolreference/gsql
+    ../content/zh/docs/Toolreference/gsql
 

@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
 
 1. 新增```DIV/MOD/XOR/^```操作符。
-2. 新增```truncate/rand/crc32/conv/float8_bool/oct```函数。
+2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool```函数。
 
 -   DIV
 
@@ -133,6 +133,20 @@
   （1 row）
   ```
 
+  描述：当```set b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
+
+  返回值类型：DOUBLE
+
+  示例：
+
+  ```
+  openGauss=# select 0.5678::float^1.1234::float;
+   ?column? 
+  ----------
+          0
+  (1 row)
+  ```
+
 - float8_bool(float)
 
   描述：根据浮点数的取值返回布尔型（为零时返回false，否则返回true）。
@@ -178,3 +192,29 @@
     12
     (1 row)
     ```
+
+- float4_bool(float)
+
+  描述：根据浮点数的取值返回布尔型（为零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  示例：
+
+  ~~~
+  openGauss=# select float4_bool(0.1);
+   float4_bool 
+  -------------
+   t
+  (1 row)
+  ~~~
+
+  ~~~
+  openGauss=# select float4_bool(0.0);
+   float4_bool 
+  -------------
+   f
+  (1 row)
+  ~~~
+
+  

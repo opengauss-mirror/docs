@@ -38,16 +38,31 @@
     <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
   <!--数据库core文件目录-->
     <PARAM name="corePath" value="/opt/huawei/corefile"/>
-  <!-- 节点IP，与数据库节点名称列表一一对应 -->
+  <!-- 节点IP，与nodeNames一一对应 -->
     <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
-  <!-- 是否开启数据库节点自选主 -->
+    <!-- 是否开启数据库节点自选主 -->
     <PARAM name="enable_dcf" value="on"/>
-  <!-- 开启开关后对应的节点IP、PORT和角色信息 -->
-    <PARAM name="dcf_config" value="        <!-- 是否开启DN自选主 --> 
-    <PARAM name="enable_dcf" value="on"/> 
-    <!-- 开启开关后对应的节点IP、PORT和角色信息 --> 
-    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/> 
-
+    <!-- 开启开关后对应的节点IP、PORT和角色信息 -->
+    <PARAM name="dcf_config" value="[{&quot;stream_id&quot;:1,&quot;node_id&quot;:1,&quot;ip&quot;:&quot;8.92.1.85&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;LEADER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:2,&quot;ip&quot;:&quot;8.92.1.86&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;},{&quot;stream_id&quot;:1,&quot;node_id&quot;:3,&quot;ip&quot;:&quot;8.92.1.87&quot;,&quot;port&quot;:16683,&quot;role&quot;:&quot;FOLLOWER&quot;}]"/>
+    <!-- 共享存储模式开关 -->
+    <PARAM name="enable_dss" value="on"/>
+    <!-- dss实例目录 -->
+    <PARAM name="dss_home" value="/opt/huawei/install/data/dss"/>
+    <!-- dss共享卷名 -->
+    <PARAM name="ss_dss_vg_name" value="data"/>
+    <!-- dss挂载卷组名和卷组信息，包含共享卷 -->
+    <PARAM name="dss_vg_info" value="data:/dev/sdb,p0:/dev/sdc,p1:/dev/sdd"/>
+    <!-- cm投票卷 -->
+    <PARAM name="votingDiskPath" value="/dev/sde"/>
+    <!-- cm共享卷 -->
+    <PARAM name="shareDiskDir" value="/dev/sdf"/>
+    <!-- dss开启ssl认证开关 -->
+    <PARAM name="dss_ssl_enable" value="on"/>
+    <!-- mes通信协议类型  -->
+    <PARAM name="ss_interconnect_type" value="TCP"/>
+    <!-- rdma绑定cpu序列  -->
+    <PARAM name="ss_rdma_work_config" value="1 7"/>
+  
   </CLUSTER>
 ```
 
@@ -55,80 +70,137 @@
 >
 >-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
 >-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
->-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为“/opt/huawei/install/app”，gaussdbLogPath为“/opt/huawei/install/app/omm”。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
+>-   在对数据库节点的实例进行具体配置时，需确保配置的目录之间不相互耦合。即各个配置目录不关联，删除其中任意一个目录，不会级联删除其它目录。如gaussdbAppPath为"/opt/huawei/install/app"，gaussdbLogPath为"/opt/huawei/install/app/omm"。当gaussdbAppPath目录被删除时，会级联删除gaussdbLogPath目录，从而引起其它问题。
 >-   若需要安装脚本自动创建安装用户时，各配置的目录需保证不与系统创建的默认用户目录耦合关联。
->-   配置openGauss路径和实例路径时，路径中不能包含“|”、“;”、“&”、“$”、“<”、“\>”、“\`”、“\\\\”、“'”、“\\”、“,”、“\{”，“\}”、“\(”，“\)”、“\[”，“\]”、“\~”、“\*”、“?”特殊字符。
->-   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的**node1\_hostname**，**node2\_hostname**。
->-   配置dcf_config时，角色的配置有leader、follower、passive和logger，其中可投票的角色有leader、follower和logger。配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
+>-   配置openGauss路径和实例路径时，路径中不能包含"|",";","&","$","<","\>","\`","\\\\","'","\\"","\{","\}","\(","\)","\[","\]","\~","\*","?"特殊字符。
+>-   配置数据库节点名称时，请通过hostname命令获取数据库节点的主机名称，替换示例中的node1\_hostname,node2\_hostname。
+>-   配置dcf\_config时，角色的配置有leader，follower，passive，logger，其中可投票的角色有leader，follower，logger，配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
+>-   共享存储中请谨慎配置所有包含磁盘信息的参数，安装时工具会低格所有参数中配置的磁盘，所有参数中的磁盘不能重复。
+>-   共享存储中的ip和dn的数据ip保持一致，dss的端口是db端口+10，dms的端口是db端口+20。
 
 **表 1**  参数说明
 
-<a name="zh-cn_topic_0249784584_table1876635205813"></a>
-
-<table><thead align="left"><tr id="zh-cn_topic_0249784584_row476775215811"><th class="cellrowborder" valign="top" width="10.87108710871087%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a>实例类型</p>
+<table><thead align="left"><tr id="zh-cn_topic_0283136466_row476775215811"><th class="cellrowborder" valign="top" width="10.87108710871087%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p45714015101039"></a>实例类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.8016801680168%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a>参数</p>
+<th class="cellrowborder" valign="top" width="17.87178717871787%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p11847771101039"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="72.32723272327232%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a>说明</p>
+<th class="cellrowborder" valign="top" width="71.25712571257125%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20145362101039"></a>说明</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0249784584_row2076785215584"><td class="cellrowborder" rowspan="10" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="19" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<p id="p8418171218599"><a name="p8418171218599"></a><a name="p8418171218599"></a></p>
+<p id="p090514610594"><a name="p090514610594"></a><a name="p090514610594"></a></p>
+<p id="p1982221273714"><a name="p1982221273714"></a><a name="p1982221273714"></a></p>
+<p id="p279512353716"><a name="p279512353716"></a><a name="p279512353716"></a></p>
+<p id="p45711927193718"><a name="p45711927193718"></a><a name="p45711927193718"></a></p>
+<p id="p1039955033919"><a name="p1039955033919"></a><a name="p1039955033919"></a></p>
+<p id="p1764777195211"><a name="p1764777195211"></a><a name="p1764777195211"></a></p>
+<p id="p1866319125214"><a name="p1866319125214"></a><a name="p1866319125214"></a></p>
+<p id="p18535132418528"><a name="p18535132418528"></a><a name="p18535132418528"></a></p>
+<p id="p19885415195219"><a name="p19885415195219"></a><a name="p19885415195219"></a></p>
+<p id="p13547194445219"><a name="p13547194445219"></a><a name="p13547194445219"></a></p>
+<p id="p10362253145215"><a name="p10362253145215"></a><a name="p10362253145215"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="16.8016801680168%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a>clusterName</p>
+<td class="cellrowborder" valign="top" width="17.87178717871787%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63365422101039"></a>clusterName</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.32723272327232%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"></a>openGauss名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784584_row1767115215813"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"></a>nodeNames</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"></a>openGauss中主机名称。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784584_row1883518127274"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p48031547203112"><a name="zh-cn_topic_0249784584_p48031547203112"></a><a name="zh-cn_topic_0249784584_p48031547203112"></a>backIp1s</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"></a>主机在后端存储网络中的IP地址（内网IP）。所有openGauss主机使用后端存储网络通讯。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784584_row1776745213589"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a>gaussdbAppPath</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a>openGauss程序安装目录。此目录应满足如下要求：</p>
-<a name="zh-cn_topic_0249784584_ul6325251103320"></a><a name="zh-cn_topic_0249784584_ul6325251103320"></a><ul id="zh-cn_topic_0249784584_ul6325251103320"><li>磁盘空间&gt;1GB。</li><li>与数据库所需其它路径相互独立，没有包含关系。</li></ul>
+<td class="cellrowborder" valign="top" width="71.25712571257125%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32325548101039"></a>openGauss名称。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784584_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a>gaussdbLogPath</p>
+<tr id="zh-cn_topic_0283136466_row1767115215813"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p10113616101039"></a>nodeNames</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"></a>openGauss运行日志和操作日志存储目录。此目录应满足如下要求：</p>
-<a name="zh-cn_topic_0249784584_ul1986519123412"></a><a name="zh-cn_topic_0249784584_ul1986519123412"></a><ul id="zh-cn_topic_0249784584_ul1986519123412"><li>磁盘空间建议根据主机上的数据库节点数规划。数据库节点预留1GB空间的基础上，再适当预留冗余空间。</li><li>与<span id="zh-cn_topic_0249784584_text108660153411"><a name="zh-cn_topic_0249784584_text108660153411"></a><a name="zh-cn_topic_0249784584_text108660153411"></a>openGauss</span>所需其它路径相互独立，没有包含关系。</li></ul>
-<p id="zh-cn_topic_0249784584_p10866412348"><a name="zh-cn_topic_0249784584_p10866412348"></a><a name="zh-cn_topic_0249784584_p10866412348"></a>此路径可选。不指定的情况下，<span id="zh-cn_topic_0249784584_text6866131173419"><a name="zh-cn_topic_0249784584_text6866131173419"></a><a name="zh-cn_topic_0249784584_text6866131173419"></a>openGauss</span>安装时会默认指定“$GAUSSLOG/安装用户名”作为日志目录。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p13896585101039"></a>openGauss中主机名称。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784584_row13251729125910"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a>tmpdbPath</p>
+<tr id="zh-cn_topic_0283136466_row1883518127274"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_p48031547203112"><a name="zh-cn_topic_0283136466_p48031547203112"></a><a name="zh-cn_topic_0283136466_p48031547203112"></a>backIp1s</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p79071485351"><a name="zh-cn_topic_0249784584_p79071485351"></a><a name="zh-cn_topic_0249784584_p79071485351"></a>数据库临时文件存放目录。</p>
-<p id="zh-cn_topic_0249784584_p29071084358"><a name="zh-cn_topic_0249784584_p29071084358"></a><a name="zh-cn_topic_0249784584_p29071084358"></a>若不配置tmpdbPath，默认存放在/opt/huawei/wisequery/perfadm_db目录下。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784584_row123267298592"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a>gaussdbToolPath</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a><a name="zh-cn_topic_0249784584_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a>openGauss系统工具目录，主要用于存放互信工具等。此目录应满足如下要求：</p>
-<a name="zh-cn_topic_0249784584_ul735382813519"></a><a name="zh-cn_topic_0249784584_ul735382813519"></a><ul id="zh-cn_topic_0249784584_ul735382813519"><li>磁盘空间&gt;100MB。</li><li>固定目录，与数据库所需其它目录相互独立，没有包含关系。</li></ul>
-<p id="zh-cn_topic_0249784584_p3353328143519"><a name="zh-cn_topic_0249784584_p3353328143519"></a><a name="zh-cn_topic_0249784584_p3353328143519"></a>此目录可选。不指定的情况下，<span id="zh-cn_topic_0249784584_text03531828163513"><a name="zh-cn_topic_0249784584_text03531828163513"></a><a name="zh-cn_topic_0249784584_text03531828163513"></a>openGauss</span>安装时会默认指定“/opt/huawei/wisequery”作为数据库系统工具目录。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p31230749101039"></a>主机在后端存储网络中的IP地址（内网IP）。所有openGauss主机使用后端存储网络通讯。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>corePath</p>
+<tr id="zh-cn_topic_0283136466_row1776745213589"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p64280946101039"></a>gaussdbAppPath</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>openGauss core文件的指定目录。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>enable_dcf</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>是否开启DCF模式。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p39374110101039"></a>openGauss程序安装目录。此目录应满足如下要求：</p>
+<a name="zh-cn_topic_0283136466_ul6325251103320"></a><a name="zh-cn_topic_0283136466_ul6325251103320"></a><ul id="zh-cn_topic_0283136466_ul6325251103320"><li>磁盘空间&gt;1GB。</li><li>与数据库所需其它路径相互独立，没有包含关系。</li></ul>
 </td>
 </tr>
-<tr id="zh-cn_topic_0249784584_row10235118121016"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784584_p192361185103"><a name="zh-cn_topic_0249784584_p192361185103"></a><a name="zh-cn_topic_0249784584_p192361185103"></a>dcf_config</p>
+<tr id="zh-cn_topic_0283136466_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p48241855101039"></a>gaussdbLogPath</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784584_p16236283104"><a name="zh-cn_topic_0249784584_p16236283104"></a><a name="zh-cn_topic_0249784584_p16236283104"></a>开启DCF模式时配置，DCF启动节点信息。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p15276202101039"></a>openGauss运行日志和操作日志存储目录。此目录应满足如下要求：</p>
+<a name="zh-cn_topic_0283136466_ul1986519123412"></a><a name="zh-cn_topic_0283136466_ul1986519123412"></a><ul id="zh-cn_topic_0283136466_ul1986519123412"><li>磁盘空间建议根据主机上的数据库节点数规划。数据库节点预留1GB空间的基础上，再适当预留冗余空间。</li><li>与<span id="zh-cn_topic_0283136466_text108660153411"><a name="zh-cn_topic_0283136466_text108660153411"></a><a name="zh-cn_topic_0283136466_text108660153411"></a>openGauss</span>所需其它路径相互独立，没有包含关系。</li></ul>
+<p id="zh-cn_topic_0283136466_p10866412348"><a name="zh-cn_topic_0283136466_p10866412348"></a><a name="zh-cn_topic_0283136466_p10866412348"></a>此路径可选。不指定的情况下，<span id="zh-cn_topic_0283136466_text6866131173419"><a name="zh-cn_topic_0283136466_text6866131173419"></a><a name="zh-cn_topic_0283136466_text6866131173419"></a>openGauss</span>安装时会默认指定“$GAUSSLOG/安装用户名”作为日志目录。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136466_row13251729125910"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a>tmpMppdbPath</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_p79071485351"><a name="zh-cn_topic_0283136466_p79071485351"></a><a name="zh-cn_topic_0283136466_p79071485351"></a>数据库临时文件存放目录。</p>
+<p id="zh-cn_topic_0283136466_p29071084358"><a name="zh-cn_topic_0283136466_p29071084358"></a><a name="zh-cn_topic_0283136466_p29071084358"></a>若不配置tmpMppdbPath，默认存放在/opt/huawei/wisequery/安装用户名_mppdb目录下，其中"opt/huawei/wisequery"是默认指定的数据库系统工具目录。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136466_row123267298592"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a>gaussdbToolPath</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p32813568101039"></a>openGauss系统工具目录，主要用于存放互信工具等。此目录应满足如下要求：</p>
+<a name="zh-cn_topic_0283136466_ul735382813519"></a><a name="zh-cn_topic_0283136466_ul735382813519"></a><ul id="zh-cn_topic_0283136466_ul735382813519"><li>磁盘空间&gt;100MB。</li><li>固定目录，与数据库所需其它目录相互独立，没有包含关系。</li></ul>
+<p id="zh-cn_topic_0283136466_p3353328143519"><a name="zh-cn_topic_0283136466_p3353328143519"></a><a name="zh-cn_topic_0283136466_p3353328143519"></a>此目录可选。不指定的情况下，<span id="zh-cn_topic_0283136466_text03531828163513"><a name="zh-cn_topic_0283136466_text03531828163513"></a><a name="zh-cn_topic_0283136466_text03531828163513"></a>openGauss</span>安装时会默认指定“/opt/huawei/wisequery”作为数据库系统工具目录。</p>
+</td>
+</tr>
+<tr id="row1980710134314"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p2811105433"><a name="p2811105433"></a><a name="p2811105433"></a>corePath</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p48151014318"><a name="p48151014318"></a><a name="p48151014318"></a>openGauss core文件的指定目录。</p>
+</td>
+</tr>
+<tr id="row12418151285918"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p104180128590"><a name="p104180128590"></a><a name="p104180128590"></a>enable_dcf</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p44181412175911"><a name="p44181412175911"></a><a name="p44181412175911"></a>是否开启DCF模式。</p>
+</td>
+</tr>
+<tr id="row490515610593"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p19056695920"><a name="p19056695920"></a><a name="p19056695920"></a>dcf_config</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p16905176195917"><a name="p16905176195917"></a><a name="p16905176195917"></a>开启DCF模式时配置，DCF启动节点信息。</p>
+</td>
+</tr>
+<tr id="row19822181216374"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p7822412123718"><a name="p7822412123718"></a><a name="p7822412123718"></a><span id="ph9894173393710"><a name="ph9894173393710"></a><a name="ph9894173393710"></a>enable_dss</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p3822151223719"><a name="p3822151223719"></a><a name="p3822151223719"></a><span id="ph926135011373"><a name="ph926135011373"></a><a name="ph926135011373"></a>共享存储模式开关</span><span id="ph991191210218"><a name="ph991191210218"></a><a name="ph991191210218"></a><span id="ph1716615151418"><a name="ph1716615151418"></a><a name="ph1716615151418"></a>，取值范围on/off，默认为off，</span>共享存储不支持dcf模式。</span></p>
+</td>
+</tr>
+<tr id="row37942023183718"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p779592320372"><a name="p779592320372"></a><a name="p779592320372"></a><span id="ph165120406388"><a name="ph165120406388"></a><a name="ph165120406388"></a>dss_home</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1379592333717"><a name="p1379592333717"></a><a name="p1379592333717"></a><span id="ph17398452123810"><a name="ph17398452123810"></a><a name="ph17398452123810"></a>dss实例目录</span><span id="ph17538195493817"><a name="ph17538195493817"></a><a name="ph17538195493817"></a>，</span><span id="ph132811033543"><a name="ph132811033543"></a><a name="ph132811033543"></a>enable_dss</span><span id="ph172491934242"><a name="ph172491934242"></a><a name="ph172491934242"></a>为on时必选</span><span id="ph1678111928"><a name="ph1678111928"></a><a name="ph1678111928"></a>。</span></p>
+</td>
+</tr>
+<tr id="row1957172718373"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p757112272373"><a name="p757112272373"></a><a name="p757112272373"></a><span id="ph178591726133919"><a name="ph178591726133919"></a><a name="ph178591726133919"></a>ss_dss_vg_name</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p4571112723717"><a name="p4571112723717"></a><a name="p4571112723717"></a><span id="ph12848153203914"><a name="ph12848153203914"></a><a name="ph12848153203914"></a>dss共享卷名</span><span id="ph6120153413916"><a name="ph6120153413916"></a><a name="ph6120153413916"></a>，</span><span id="ph34189422414"><a name="ph34189422414"></a><a name="ph34189422414"></a>enable_dss</span><span id="ph164182042344"><a name="ph164182042344"></a><a name="ph164182042344"></a>为on时必选</span><span id="ph7211316427"><a name="ph7211316427"></a><a name="ph7211316427"></a>。</span></p>
+</td>
+</tr>
+<tr id="row1139818506398"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p1399135014392"><a name="p1399135014392"></a><a name="p1399135014392"></a><span id="ph14706515391"><a name="ph14706515391"></a><a name="ph14706515391"></a>dss_vg_info</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p103991850103915"><a name="p103991850103915"></a><a name="p103991850103915"></a><span id="ph129519341407"><a name="ph129519341407"></a><a name="ph129519341407"></a>dss挂载卷组信息，包含一个共享卷</span><span id="ph1364123824016"><a name="ph1364123824016"></a><a name="ph1364123824016"></a>组，</span><span id="ph1102134414413"><a name="ph1102134414413"></a><a name="ph1102134414413"></a>其余</span><span id="ph488332334716"><a name="ph488332334716"></a><a name="ph488332334716"></a>为日志卷组，日志卷组的数量和dn的数量保持一致，集中式每个节点最多有一个dn。</span><span id="ph48251455416"><a name="ph48251455416"></a><a name="ph48251455416"></a>卷组形如“data:/dev/sdb”，卷组和卷组之间以“，”隔开，enable_dss</span><span id="ph382510458410"><a name="ph382510458410"></a><a name="ph382510458410"></a>为on时必选</span><span id="ph986320181424"><a name="ph986320181424"></a><a name="ph986320181424"></a>。</span><span id="ph1383519434138"><a name="ph1383519434138"></a><a name="ph1383519434138"></a>日志卷组磁盘大小需要大于dn参数max_size_for_xlog_prune</span><span id="ph97651948151313"><a name="ph97651948151313"></a><a name="ph97651948151313"></a>的值，</span></p>
+</td>
+</tr>
+<tr id="row146471775525"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p464818765210"><a name="p464818765210"></a><a name="p464818765210"></a><span id="ph581617812523"><a name="ph581617812523"></a><a name="ph581617812523"></a>votingDiskPath</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p16487711527"><a name="p16487711527"></a><a name="p16487711527"></a><span id="ph158834811533"><a name="ph158834811533"></a><a name="ph158834811533"></a>cm的投票卷，</span><span id="ph55181509413"><a name="ph55181509413"></a><a name="ph55181509413"></a>enable_dss</span><span id="ph4518105020420"><a name="ph4518105020420"></a><a name="ph4518105020420"></a>为on时必选</span><span id="ph1171812191629"><a name="ph1171812191629"></a><a name="ph1171812191629"></a>。</span></p>
+</td>
+</tr>
+<tr id="row1786611915217"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p208662191525"><a name="p208662191525"></a><a name="p208662191525"></a><span id="ph13888734165212"><a name="ph13888734165212"></a><a name="ph13888734165212"></a>shareDiskDir</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p38665199521"><a name="p38665199521"></a><a name="p38665199521"></a><span id="ph13931218541"><a name="ph13931218541"></a><a name="ph13931218541"></a>cm的共享卷</span><span id="ph111238201023"><a name="ph111238201023"></a><a name="ph111238201023"></a>，<span id="ph13770852340"><a name="ph13770852340"></a><a name="ph13770852340"></a>enable_dss</span><span id="ph677018521245"><a name="ph677018521245"></a><a name="ph677018521245"></a>为on时必选</span>。</span></p>
+</td>
+</tr>
+<tr id="row3885115185213"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p17885101519526"><a name="p17885101519526"></a><a name="p17885101519526"></a><span id="ph12203154245213"><a name="ph12203154245213"></a><a name="ph12203154245213"></a>dss_ssl_enable</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p98854159527"><a name="p98854159527"></a><a name="p98854159527"></a><span id="ph18955350185415"><a name="ph18955350185415"></a><a name="ph18955350185415"></a>dss开启ssl认证开关，取值范围on/off，默认为on</span><span id="ph1844720211729"><a name="ph1844720211729"></a><a name="ph1844720211729"></a>。</span></p>
+</td>
+</tr>
+<tr id="row195477449524"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p9547204411523"><a name="p9547204411523"></a><a name="p9547204411523"></a><span id="ph1398217580526"><a name="ph1398217580526"></a><a name="ph1398217580526"></a>ss_interconnect_type</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p354734417527"><a name="p354734417527"></a><a name="p354734417527"></a><span id="ph89401381618"><a name="ph89401381618"></a><a name="ph89401381618"></a>mes通信协议类型，默认值TCP，取值范围</span><span id="ph14853227014"><a name="ph14853227014"></a><a name="ph14853227014"></a>TCP/RDMA，默认为TCP</span><span id="ph103917226213"><a name="ph103917226213"></a><a name="ph103917226213"></a>。</span></p>
+</td>
+</tr>
+<tr id="row1636215345219"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p73629537522"><a name="p73629537522"></a><a name="p73629537522"></a><span id="ph62489207537"><a name="ph62489207537"></a><a name="ph62489207537"></a>ss_rdma_work_config</span></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1936335316521"><a name="p1936335316521"></a><a name="p1936335316521"></a><span id="ph1859724119315"><a name="ph1859724119315"></a><a name="ph1859724119315"></a>rdma用户态poll占用起止cpu</span><span id="ph17210345531"><a name="ph17210345531"></a><a name="ph17210345531"></a>，</span><span id="ph209312048739"><a name="ph209312048739"></a><a name="ph209312048739"></a>ss_interconnect_type</span><span id="ph88565498320"><a name="ph88565498320"></a><a name="ph88565498320"></a>为RDMA时有效，形如</span><span id="ph28400511657"><a name="ph28400511657"></a><a name="ph28400511657"></a>"10 15"</span><span id="ph128321249878"><a name="ph128321249878"></a><a name="ph128321249878"></a>，中间以空格分隔。</span></p>
 </td>
 </tr>
 </tbody>

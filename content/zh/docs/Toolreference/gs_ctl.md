@@ -78,7 +78,7 @@ gs\_ctl参数可分为如下几类：
 <tr id="row165052092213"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p95052013227"><a name="p95052013227"></a><a name="p95052013227"></a>failover</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p18505130152217"><a name="p18505130152217"></a><a name="p18505130152217"></a>在主机异常时，将备机切换为主机。</p>
-<p id="p1350511052219"><a name="p1350511052219"></a><a name="p1350511052219"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。</p>
+<p id="p1350511052219"><a name="p1350511052219"></a><a name="p1350511052219"></a>切换成功后，需要执行gs_om -t refreshconf 命令记录当前主备机信息，确保gs_om -t refreshconf 命令执行成功，否则再次重启会影响数据库状态。dcf模式下不支持该操作。</p>
 </td>
 </tr>
 <tr id="row9506120142216"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p750515032216"><a name="p750515032216"></a><a name="p750515032216"></a>switchover</p>

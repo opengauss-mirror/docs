@@ -4,7 +4,7 @@
 
 -   **连接数据库：**默认只支持从服务器本机连接，如果需要连接到远端的数据库，必须在服务端进行配置。详细操作请参见《开发者指南》中“数据库使用 \> 连接数据库 \> 使用gsql连接 \> 远程连接数据库”章节。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.gif) **说明：**
     >gsql创建连接时，会有5分钟超时时间。如果在这个时间内，数据库未正确地接受连接并对身份进行认证，gsql将超时退出。
     >针对此问题，可以参考[常见问题处理](常见问题处理.md)。
 
@@ -47,6 +47,14 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
 <p id="zh-cn_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"><a name="zh-cn_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a><a name="zh-cn_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a>这三个变量的值可以用户自定义，也可以使用gsql预定义的值。详细请参见<a href="#zh-cn_topic_0059778819_zh-cn_topic_0058968129_li65414495">提示符</a>。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0059778819_r5efe8924bbc449bd97710897768e9a03"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"><a name="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"></a><a name="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"></a>命令自动补齐</p>
+</td>
+<td class="cellrowborder" valign="top" width="84%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"><a name="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"></a><a name="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"></a>根据openGauss语法规则，gsql支持使用Tab键进行命令的自动补齐，当编译时指定了选项-with-readline，且客户端连接时指定“-r”参数，此功能被打开。例如：crea后键入Tab，gsql会将其补齐为create。</p>
+<div class="note" id="zh-cn_topic_0059778819_nb67c60d357644d98802305a02d312bbe"><a name="zh-cn_topic_0059778819_nb67c60d357644d98802305a02d312bbe"></a><a name="zh-cn_topic_0059778819_nb67c60d357644d98802305a02d312bbe"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0059778819_u72ddc318d0184b3abdc617b792956d29"></a><a name="zh-cn_topic_0059778819_u72ddc318d0184b3abdc617b792956d29"></a><ul id="zh-cn_topic_0059778819_u72ddc318d0184b3abdc617b792956d29"><li>支持数据库SQL关键字如select、create、table等。</li><li>支持表名、视图名等自定义标识符的补齐。</li>
+<li>元命令选项'S'、'+'不支持自动补齐。</li><li>对表进行补齐时，只有前缀是“pg_”、"gs_"才会补齐系统表。</li><li>不支持建表时字段类型的补齐。</li><li>select后不支持任何补齐。</li><li>不支持常量与宏的自动补齐。</li><li>select * from a,b… 不支持第二个开始表的自动补齐, insert into t1 (col1, col2, …) 不支持第二个列的自动补齐。</li><li>不支持create tablespace语句with以及with后参数的自动补齐。</li><li>创建索引不支持local、global的自动补齐，修改索引不支持rebuild自动补齐。</li><li>set语句仅支持自动补全user和superuser级别的参数。</li><li>不支持if exists的自动补齐。</li>
+<li>不支持表名.列名的自动补齐，如alter sequence owned by tableName.colName，owned by。</li><li>不支持自定义操作符自动补齐。使用复制粘贴这种方式输入命令，如果粘贴的命令里面有TAB键有可能会使输入命令的格式错乱，无法正常执行。</li></ul></div></div>
+</td>
+</tr>
 <tr id="zh-cn_topic_0059778819_r5efe8924bbc449bd97710897768e9a03"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"><a name="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"></a><a name="zh-cn_topic_0059778819_adb36f998bf7148d091daf15c6e104f05"></a>客户端操作历史记录</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"><a name="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"></a><a name="zh-cn_topic_0059778819_a363dd0cef39947078205d99444faf743"></a>gsql支持客户端操作历史记录，当客户端连接时指定“-r”参数，此功能被打开。可以通过\set设置记录历史的条数，例如，\set HISTSIZE 50，将记录历史的条数设置为50，\set HISTSIZE 0，不记录历史。</p>
@@ -76,7 +84,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
 
     gsql预定义了一些特殊变量，同时也规划了变量的取值。为了保证和后续版本最大限度地兼容，请避免以其他目的使用这些变量。所有特殊变量见[表2](#zh-cn_topic_0059778819_zh-cn_topic_0058968129_table45814285)。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.gif) **说明：**
     >-   所有特殊变量都由大写字母、数字和下划线组成。
     >-   要查看特殊变量的默认值，请使用元命令\\echo :_varname_（例如\\echo :DBNAME）。
 
@@ -231,7 +239,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0059778819_t88d6eef25b234de4b4b0f7854a
 
     执行以上命令，将会查询HR.areaS表。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.gif) **须知：**
     >变量的值是逐字复制的，甚至可以包含不对称的引号或反斜杠命令。所以必须保证输入的内容有意义。
 
 

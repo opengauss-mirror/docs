@@ -6,13 +6,20 @@
 
 ## 注意事项<a name="zh-cn_topic_0059778630_sc6d595f2e535403c85636f0e37b66060"></a>
 
-只要用户对当前数据库有ALTER权限，就可以修改资源池。
+只有SYSADMIN、VCADMIN可以修改资源池。
 
 ## 语法格式<a name="zh-cn_topic_0059778630_s4811e37a59884a3897fa21c665e5fa52"></a>
 
 ```
 ALTER RESOURCE POOL pool_name
-    WITH ({MEM_PERCENT= pct | CONTROL_GROUP="group_name" | ACTIVE_STATEMENTS=stmt | MAX_DOP = dop | MEMORY_LIMIT='memory_size' | io_limits=io_limits | io_priority='io_priority'}[, ... ]);
+    WITH ({MEM_PERCENT= pct |
+           CONTROL_GROUP="group_name" |
+           ACTIVE_STATEMENTS=stmt |
+           MAX_DOP = dop |
+           MEMORY_LIMIT='memory_size' |
+           io_limits=io_limits |
+           io_priority='io_priority'}
+          [, ... ]);
 ```
 
 ## 参数说明<a name="zh-cn_topic_0059778630_s744bfeb9db194d149727d961f0f4b382"></a>
@@ -53,7 +60,7 @@ ALTER RESOURCE POOL pool_name
 
     资源池最大并发度，语句执行时能够创建的最多线程数量。
 
-    取值范围：数值型，1\~2147483647‬。
+    取值范围：数值型，1\~64‬。
 
 -   **memory\_size**
 

@@ -1,0 +1,11 @@
+
+
+.. toctree::
+
+    ../content/zh/docs/Developerguide/词典概述
+    ../content/zh/docs/Developerguide/停用词
+    ../content/zh/docs/Developerguide/Simple词典
+    ../content/zh/docs/Developerguide/Synonym词典
+    ../content/zh/docs/Developerguide/Thesaurus词典
+    ../content/zh/docs/Developerguide/Ispell词典
+    ../content/zh/docs/Developerguide/Snowball词典

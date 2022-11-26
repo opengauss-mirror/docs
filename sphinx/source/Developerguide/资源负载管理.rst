@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/资源负载管理概述
+    ../content/zh/docs/Developerguide/资源负载管理概述
     资源管理准备
 
 

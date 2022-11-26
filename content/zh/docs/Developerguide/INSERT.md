@@ -97,8 +97,19 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
     取值范围：已存在的字段名。
 
 -   **expression**
-
+    
     赋予对应column的一个有效表达式或值：
+    
+    （1）当数据库的兼容性等级为 B 时，VALUES 后面的表达式中允许引用字段名。VALUES 与 ON DUPLICATE KEY UPDATE 后的表达式的计算规则如下：
+    - ① 表达式的计算顺序按照 SQL 语句的字段书写顺序进行执行。
+    - ② 当引用的字段未执行计算或正在计算（引用自身）：
+        - 所引用的字段的默认值为常量或存在旧元组，则取默认值或旧元组值参与当前表达式的计算。
+        - 所引用的字段的默认值不是常量（是方法、表达式等）且不存在旧元组值，取null参与当前表达式的计算。
+    - ③ 当引用的字段已执行计算，取该字段的当前记录的值参与当前表达式的计算。
+    
+    其余与其他兼容性等级的数据库表现相同。
+    
+    （2）其他数据库兼容性等级的语法说明如下：
 
     -   如果是INSERT ON DUPLICATE KEY UPDATE语句下，expression可以为VALUES\(column\_name\)或EXCLUDED.column\_name用来表示引用冲突行对应的column\_name字段的值。需注意，其中VALUES\(column\_name\)不支持嵌套在表达式中（例如VALUES\(column\_name\)+1），但EXCLUDED不受此限制。
 
@@ -150,7 +161,7 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
-```
+```sql
 --创建表tpcds.reason_t2。
 openGauss=# CREATE TABLE tpcds.reason_t2
 (
@@ -179,6 +190,27 @@ openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5')
 
 --删除表tpcds.reason_t2。
 openGauss=# DROP TABLE tpcds.reason_t2;
+```
+数据库兼容性等级为 B 的示例：
+```sql
+create database db_comb with dbcompatibility 'B';
+\c db_comb
+
+create table test_order_t(n1 int default 100, n2 int default 100, s int);
+insert into test_order_t values(1000, 1000, n1 + n2);
+insert into test_order_t(s, n1, n2) values(n1 + n2, 300,  300);
+select * from test_order_t;
+
+create table upser(c1 int, c2 int, c3 int);
+create unique index idx_upser_c1 on upser(c1);
+insert into upser values (1, 10, 10), (2, 10, 10), (3, 10, 10), (4, 10, 10), (5, 10, 10), (6, 10, 10), (7, 10, 10),
+                         (8, 10, 10), (9, 10, 10), (10, 10, 10);
+insert into upser values (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 100), (8, c1 + 100, 100),
+                         (9, c1 + 100, 100), (10, c1 + 100, 100), (11, c1 + 100, 100), (12, c1 + 100, 100),
+                         (13, c1 + 100, 100), (14, c1 + 100, 100), (15, c1 + 100, c1 + c2)
+                         on duplicate key update c2 = c1 + c2, c3 = c2 + c3;
+
+select * from upser order by c1;
 ```
 
 ## 优化建议<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_section3855297014560"></a>
