@@ -1705,7 +1705,7 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
 
 ## Exporting and Viewing the WDR
 
-Accessing WDR snapshot data requires the **sysadmin** or **monadmin** permission. Therefore, to generate a WDR, you must use the **root** account or other accounts with the aforementioned permissions.
+To generate snapshot data, set **enable\_wdr\_snapshot** to **on**. Accessing WDR snapshot data requires the **sysadmin** or **monadmin** permission. Therefore, to generate a WDR, you must use the **root** account or other accounts with the aforementioned permissions.
 
 1. Run the following command to create a report file:
 
@@ -1722,7 +1722,7 @@ Accessing WDR snapshot data requires the **sysadmin** or **monadmin** permission
 3. Select two different snapshots in the **snapshot.snapshot** table. If no service restart occurs between the two snapshots, use the two snapshots to generate a report.
 
    ```
-   gsql> select * from snapshot.snapshot order by start_ts desc limit 10;
+   openGauss=#  select * from snapshot.snapshot order by start_ts desc limit 10;
    ```
 
 4. Run the following commands to generate a WDR in HTML format on the local PC:
@@ -1730,31 +1730,36 @@ Accessing WDR snapshot data requires the **sysadmin** or **monadmin** permission
    1. Run the following commands to set the report format. **\\a** indicates that table row and column symbols are not displayed. **\\t** indicates that column names are not displayed. **\\o** specifies an output file.
 
       ```
-      gsql> \a      
-      gsql> \t 
-      gsql> \o {*Report path*}
+      openGauss=# \a \t \o {Report path}
+      ```
+
+      Example:
+
+      ```
+      openGauss=# \a \t \o /home/omm/wdrTestNode.html
       ```
 
    2. Run the following command to generate a WDR in HTML format:
 
       ```
-      gsql> select generate_wdr_report(begin_snap_id Oid, end_snap_id Oid, int report_type, int report_scope, int node_name );
+      openGauss=# select generate_wdr_report(begin_snap_id Oid, end_snap_id Oid, int report_type, int report_scope, int node_name );
       ```
 
       Example 1: Generate a cluster-level report.
 
       ```
-      select generate_wdr_report(1, 2, 'all', 'cluster',null);
+      openGauss=# select generate_wdr_report(1, 2, 'all', 'cluster',null);
       ```
 
       Example 2: Generate a report for a node.
 
       ```
-      select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
+      openGauss=# select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
       >![](public_sys-resources/icon-note.gif) **NOTE:**
-      >Currently, the name of the openGauss node is fixed to **dn\_6001\_6002\_6003**. You can also replace it with the actual node name.
+      >
+      >Currently, the name of the openGauss node is fixed to **dn\_6001**. You can also replace it with the actual node name.
 
       **Table 1** Parameter description
 

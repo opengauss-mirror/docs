@@ -5,9 +5,9 @@ An index is a pointer to data in a table. The index in a database is very simila
 Indexes are primarily used to enhance database performance \(though inappropriate use can result in database performance deterioration\). You are advised to create indexes on:
 
 -   Columns that are often queried
--   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns. For example, for  **select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b**, you can create a composite index on columns  **a**  and  **b**  in table  **t1**.
+-   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns. For example, select \* from t1 join t2 on t1. a=t2. a and t1. b=t2.b. You can create a composite index on the a and b columns of table t1.
 -   Columns having filter criteria \(especially scope criteria\) of a  **WHERE**  clause
--   Columns that are frequently used after  **ORDER BY**,  **GROUP BY**, and  **DISTINCT**
+-   Columns that are frequently used after **ORDER BY**, **GROUP BY**, and **DISTINCT**
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -77,7 +77,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
     Specifies the name of the index to be created. The schema of the index is the same as that of the table.
 
-    Value range: a string. It must comply with the identifier naming convention.
+    Value range: a string.
 
 -   **table\_name**
 
@@ -93,7 +93,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 -   **expression**
 
-    Specifies an expression index created based on one or more columns of the table. The expression index usually must be written with surrounding parentheses. However, the parentheses can be omitted if the expression has the form of a function call.
+    Specifies an expression index constraint based on one or more columns of the table. It must be written in parentheses. However, the parentheses can be omitted if the expression has the form of a function call.
 
     The expression index can be used to obtain fast access to data based on some transformation of the basic data. For example, an index computed on  **upper\(col\)**  would allow the  **WHERE upper\(col\) = 'JIM'**  clause to use an index.
 
@@ -108,7 +108,7 @@ Indexes are primarily used to enhance database performance \(though inappropriat
 
 ## Examples<a name="section1037364913493"></a>
 
--- Create the  **tpcds.ship\_mode\_t1**  table.
+Create the  **tpcds.ship\_mode\_t1**  table.
 
 ```
 openGauss=# CREATE SCHEMA tpcds;
@@ -152,4 +152,3 @@ Delete the created index.
 ```
 openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
 ```
-

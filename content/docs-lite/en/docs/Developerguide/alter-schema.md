@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sfccb497f01564edb804ecee58fe2698c"></a>
 
--   Only the owner of a schema or users granted with the  **ALTER**  permission on the schema can run the  **ALTER SCHEMA**  command. The system administrator has this permission by default. To change the owner of a schema, you must be the owner of the schema or system administrator and a member of the new owner role.
--   Only the initial user is allowed to change the owner of the  **pg\_catalog**  system schema.
+-   Only the owner of a schema or users granted with the ALTER permission on the schema can run the **ALTER SCHEMA** command. The system administrator has this permission by default. To change the owner of a schema, you must be the owner of the schema or system administrator and a member of the new owner role.
+-   Only the initial user is allowed to change the owner of the **pg\_catalog** system schema.
 
 ## Syntax<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
@@ -59,25 +59,25 @@
 
 -   **\{ WITH | WITHOUT \} BLOCKCHAIN**
 
-    Alters the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be altered only when no table is contained in the schema. In addition, the temporary table mode is not supported. Alter the tamper-proof attribute in the  **toast table**  schema,  **dbe\_perf**  schema, and  **blockchain**  schema.
+    Alters the tamper-proof attribute of a schema. Common row-store tables with the tamper-proof attribute are tamper-proof history tables, excluding foreign tables, temporary tables, and system catalogs. The tamper-proof attribute can be altered only when no table is contained in the schema. In addition, the tamper-proof attribute of the temporary table schema, **toast table** schema, **dbe\_perf** schema, and **blockchain** schema cannot be modified.
 
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
 ```
--- Create the ds schema.
+--Create the ds schema.
 openGauss=# CREATE SCHEMA ds;
 
--- Rename the current schema ds to ds_new.
+--Rename the current schema ds to ds_new.
 openGauss=# ALTER SCHEMA ds RENAME TO ds_new;
 
--- Create user jack.
+--Create user jack.
 openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 
--- Change the owner of ds_new to jack.
+--Change the owner of ds_new to jack.
 openGauss=# ALTER SCHEMA ds_new OWNER TO jack;
 
--- Delete user jack and schema ds_new.
+--Delete user jack and schema ds_new.
 openGauss=# DROP SCHEMA ds_new;
 openGauss=# DROP USER jack;
 ```
@@ -85,4 +85,3 @@ openGauss=# DROP USER jack;
 ## Helpful Links<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
 [CREATE SCHEMA](create-schema.md)  and  [DROP SCHEMA](drop-schema.md)
-

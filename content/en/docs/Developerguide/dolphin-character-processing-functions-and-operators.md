@@ -3,7 +3,7 @@
 Compared with the original openGauss, Dolphin modifies character processing functions and operators as follows:
 
 1. The regexp, not regexp, and rlike operators are added.
-2. The locate, lcase, ucase, insert, bin, chara, elt, field, find_int_set, hex, space, and soundex functions are added.
+2. The locate, lcase, ucase, insert, bin, char, elt, field, find\_int\_set, hex, space, soundex, export\_set, ord, substring\_index, and from\_base64 functions are added.
 3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
 4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
 5. The `LIKE/NOT LIKE` operator is modified.
@@ -308,7 +308,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   chara(any)
+-   char(any)
 
     Description: Converts multiple digits into multiple characters based on ASCII codes.
 
@@ -317,9 +317,9 @@ Compared with the original openGauss, Dolphin modifies character processing func
     Example:
 
     ```
-    b_compatibility_database=# select chara(77,77.3,'77.3','78.8',78.8);
-    chara
-    ------------
+    b_compatibility_database=# select char(77,77.3,'77.3','78.8',78.8);
+    char
+    -------
     MMMNO
     (1 row)
     ```
@@ -534,4 +534,154 @@ Compared with the original openGauss, Dolphin modifies character processing func
   (1 row)
   ```
 
+- substring_index(str, delim, count)
   
+  Description: Returns the substring between the start position of **str** and the position where **delim** is matched for **count** times. **count** indicates the number of matching times. If **count** is a positive number, the matching starts from the left of **str** and the substring on the left of the matching position is returned. If **count** is a negative number, the matching starts from the right of **str** and the substring on the right of the matching position is returned. The value of **count** ranges from INT64_MIN to INT64_MAX.
+  
+  Return type: text
+  
+  Example:
+  
+  ```
+    openGauss=# SELECT instr('abcdabcdabcd', 'bcd', 2);
+     substring_index 
+    -----------------
+     abcda
+    (1 row)
+    
+  ``` 
+
+
+-   export_set(bits, on, off, separator, number of bits)
+
+    Description: Returns a string that will display the number of digits. This function requires five independent variables to work. This function converts the first parameter (integer) to a binary number. If the binary number is 1, **on** is returned. If the binary number is 0, **off** is returned.
+
+    Return type: text
+    
+    Example:
+    ```sql
+    openGauss=# SELECT EXPORT_SET(5,'Y','N',',',5);
+     export_set 
+    -------------
+     Y,N,Y,N,N
+    (1 row)
+    ```
+
+- FROM_BASE64
+
+  Description: Decodes a BASE64-encoded character string based on BASE64 encoding rules and returns the decoding result.
+
+  Return type: text
+
+    Encoding rules:
+
+    - Every three bytes (24 bits) are converted into four bytes (32 bits). Six bits form a group, and two 0s are padded to the most significant bits to form a byte. In this way, three bytes can be padded into four bytes, and each byte corresponds to only 0(00000000) to 63(00111111).
+
+    - Add a newline character for every 76 characters.
+
+    - The codes from 0(00000000) to 61(00111111) correspond to 62 characters from A to Z, a to z, and 0 to 9. The code of 62(00111110) is '+', and the code of 63(00111111) is '/'.
+
+    - If the number of bytes in the input character string is not a multiple of three, the remaining bytes are converted according to the encoding rule. If a byte is less than eight bits, 0s are padded to the least significant bits to fill eight bits, and '=' is used to fill four bytes in the conversion result. If the last group contains only two bytes, every six bits form a group, and the third group contains only four bits, pad two 0s to the least significant bits, pad two 0s to the most significant bits of the three groups, convert the three groups into three characters, and add an equal sign (=) to the end of the three groups. If the last group contains only one byte, every six bits form a group, and the second group contains only two bits, four 0s need to be padded to the lower bits. Then, two 0s need to be padded to the upper bits of the two groups to convert the two groups into two characters, and two equal signs (=) need to be added to the end of the two groups.
+
+    
+
+    Decoding rules:
+
+    - Represent the input string in binary mode and remove the two 0s from the high-order bits of each byte.
+    - According to the encoding rule, the number of correct encoding bytes must be a multiple of 4. If there is an equal sign (=) at the end, 0s in the least significant bits of the last byte except the equal sign (=) are removed based on the number of equal signs (=). If there is an equal sign (=) at the end, that is, the last four bytes are '\*\*\*=', convert the first three bytes into binary and delete the last two zeros. If there are two equal signs (=) at the end, that is, the last four bytes are '\*\*==', in this case, the first two bytes are converted into binary digits and then the last four 0s are deleted.
+    - The bytes after the high-order 0s are removed are combined in sequence, and every eight bits are converted into a character.
+
+    
+
+    Example 1: YWJj
+
+    1. The character string is expressed as 00011000(Y)00010110(W)00001001(J)00100011(j) in binary mode.
+    2. After the two 0s are removed from the most significant bits of each byte, the value becomes 011000 010110 001001 100011.
+    3. Combine the bytes without the most significant bit 0 into 01100001(a)01100010(b)01100011(c) in sequence.
+    4. Therefore, the decoding result is abc.
+
+    Example 2: YWI=
+
+    1. The character string is expressed as 00011000(Y)00010110(W)00001000(I) in binary mode.
+    2. After the two 0s are removed from the most significant bits of each byte, the value becomes 011000 010110 001000.
+    3. Because there is an equal sign (=) at the end of the third byte, 0 at the end of the third byte must be removed and then combined, for example, 01100001 01100010.
+    4. Therefore, the decoding result is ab.
+
+    Example:
+    
+    ```
+        openGauss=# SELECT FROM_BASE64('YWJj');
+         from_base64 
+        -------------
+         abc
+        (1 row)
+        
+    ``` 
+- ORD(str)
+
+  Description:
+    Returns the value of the leftmost character of **str** and use the following formula to calculate the value of the byte formed by the character:
+    ```
+      (1st byte code)
+    + (2nd byte code  256)
+    + (3rd byte code  256^2) ...
+    ```
+
+
+  Return type: INT
+
+  Example:
+
+  ```sql
+  -- test 1 byte
+  openGauss=# select ord('1111');
+  ord 
+  -----
+    49
+  (1 row)
+
+  openGauss=# select ord('sss111');
+  ord 
+  -----
+  115
+  (1 row)
+
+  -- test 2 byte
+  openGauss=# select ord('Ŷ1111');
+    ord  
+  -------
+  50614
+  (1 row)
+
+  openGauss=# select ord('߷1111');
+    ord  
+  -------
+  57271
+  (1 row)
+
+  -- test 3 byte
+  openGauss=# select ord('অ1111');
+    ord    
+  ----------
+  14722693
+  (1 row)
+
+  openGauss=# select ord('ꬤ1111');
+    ord    
+  ----------
+  15379620
+  (1 row)
+
+  -- test 4 byte
+  openGauss=# select ord('��1111');
+      ord     
+  ------------
+  4036133270
+  (1 row)
+
+  openGauss=# select ord('��1111');
+      ord     
+  ------------
+  4036199316
+  (1 row)
+  ```

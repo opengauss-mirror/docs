@@ -61,14 +61,16 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ## Parameter Description<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
 -   **WHERE clause**
-    1. SOUNDS LIKE is a syntax of condition. For example, **column_name sounds like 'character';** is equivalent to the comparison result of **soundex(column_name) = soundex('character')**. It is a Boolean value. It is used to query the data that meets the conditions through soundex processing.
 
-![](public_sys-resources/icon-note.gif) **NOTE:**
-For details about other parameters, see [SELECT](select.md).
+    SOUNDS LIKE is a syntax of condition. For example, **column_name sounds like 'character';** is equivalent to the comparison result of **soundex(column_name) = soundex('character')**. It is a Boolean value. It is used to query the data that meets the conditions through soundex processing.
+
+> ![](public_sys-resources/icon-note.gif) **NOTE:**
+> 
+> For details about other parameters, see [SELECT](select.md).
 
 ## Examples<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sc1b5e63c90c946b89430696c38fc86c0"></a>
 
---Example of the SOUNDS LIKE: homophone column query
+- Example of the SOUNDS LIKE: homophone column query
 
 ```
 openGauss=# CREATE TABLE TEST(id int, name varchar);
@@ -115,6 +117,7 @@ openGauss=# SELECT name, sum(count) FROM t_with_rollup GROUP BY (name) WITH ROLL
 (4 rows)
 ```
 
+```
 openGauss=# create table join_1(col1 int4, col2 int8);
 
 openGauss=# create table join_2(col1 int4, col2 int8);
@@ -144,6 +147,8 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    1 |    1
     3 |    3 |    2 |    3
     3 |    3 |    4 |    4
+
+```
 
 ## Helpful Links<a name="section156744489391"></a>
 

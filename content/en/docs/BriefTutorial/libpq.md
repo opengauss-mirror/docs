@@ -1,19 +1,19 @@
-# libpq<a name="EN-US_TOPIC_0000001188368230"></a>
+# libpq<a name="ZH-CN_TOPIC_0000001188368230"></a>
 
-**libpq**  is a C application programming interface to openGauss.  **libpq**  contains a set of library functions that allow client programs to send query requests to the openGauss servers and obtain query results. It is also the underlying engine of other openGauss application interfaces, such as ODBC.
+**libpq** is a C application programming interface to openGauss. **libpq**  contains a set of library functions that allow client programs to send query requests to the openGauss servers and obtain query results. It is also the underlying engine of other openGauss application interfaces, such as ODBC.
 
 ## Header File that libpq Depends On<a name="section134792037135416"></a>
 
-Client programs that use  **libpq**  must include the header file  **libpq-fe.h**  and must link with the  **libpq**  library.
+Client programs that use libpq must include the header file **libpq-fe.h** and must link with the libpq library during compilation.
 
 ## Development Process<a name="section0546145995416"></a>
 
-To compile and connect to a libpq source program, perform the following operations:
+To compile a libpq source program, perform the following operations:
 
-1.  Decompress the release package \(for example,  **openGauss-\*.\*.0-\*\*\*-64bit-Libpq.tar.gz**\). The required header file is stored in the  **include**  folder, and the  **lib**  folder contains the required libpq library file.
+1.  Decompress the release package (for example, **openGauss-\*.\*.0-\*\*\*-64bit-Libpq.tar.gz**). The required header file is stored in the **include** folder, and the **lib** folder contains the required libpq library file.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >In addition to  **libpq-fe.h**, the  **include**  folder contains the header files  **postgres\_ext.h**,  **gs\_thread.h**, and  **gs\_threadlocal.h**  by default. These three header files are the dependency files of  **libpq-fe.h**.
+    >In addition to **libpq-fe.h**, the **include** folder contains the header files **postgres\_ext.h**, **gs\_thread.h**, and **gs\_threadlocal.h** by default. These three header files are the dependency files of **libpq-fe.h**.
 
 2.  Include the  **libpq-fe.h**  header file.
 
@@ -21,13 +21,13 @@ To compile and connect to a libpq source program, perform the following operatio
     #include <libpq-fe.h>
     ```
 
-3.  Provide the  **-I** _directory_  option to provide the installation location of the header files. \(Sometimes the compiler looks for the default directory, so this option can be ignored.\) Example:
+3.  Provide the  **-I** *directory*  option to provide the installation location of the header files. \(Sometimes the compiler looks for the default directory, so this option can be ignored.\) Example:
 
     ```
     gcc -I (Directory where the header files are located) -L (Directory where the libpq library is located) testprog.c -lpq
     ```
 
-4.  If the makefile is used, add the following options to variables  _CPPFLAGS_,  _LDFLAGS_, and  _LIBS_:
+4.  If the makefile is used, add the following options to variables  *CPPFLAGS*,  *LDFLAGS*, and  *LIBS*:
 
     ```
     CPPFLAGS += -I (Directory where the header files are located)
@@ -405,4 +405,3 @@ main(int argc, char **argv)
     return 0;
 }
 ```
-

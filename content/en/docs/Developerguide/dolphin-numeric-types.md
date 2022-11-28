@@ -3,15 +3,17 @@
 For details about arithmetic operators and related built-in functions, see [Arithmetic Functions and Operators](dolphin-arithmetic-functions-and-operators.md).
 
 Compared with the original openGauss, Dolphin modifies the arithmetic types as follows:
+
 1. The INT, TINYINT, SMALLINT, and BIGINT support the optional modifier (n), that is, the usage of TINYINT(n), SMALLINT(n), and BIGINT(n) is supported. **n** is meaningless and does not affect any performance.
 2. The MEDIUMINT(n) data type is added, which is the alias of INT4. **n** is meaningless and does not affect any performance. The storage space is 4 bytes, and the data ranges from -2,147,483,648 to +2,147,483,647.
 3. The FIXED[(p[,s])] data type is added, which is the alias of the NUMERIC type. The precision is specified by users. Two bytes are occupied for every four decimals of precision. An extra eight-byte overhead is added for numbers of this type. Up to 131,072 digits before the decimal point and up to 16,383 digits after the decimal point when no precision is specified
 4. The float4(p[,s]) mode is added, which is equivalent to dec(p[,s]).
 5. The double data type is added, which is the alias of float8.
 6. The new float4 and float support the modifier (n). That is, float4(n) and float(n) are supported. When the value range of **n** is [1,24], float4(n) and float(n) indicate a single-precision floating point number. If the value range of **n** is [25,53], float4(n) and float(n) indicate a double-precision floating point number.
-7. For the decimal data type, if the precision is not specified, the default precision is (10,0). That is, the total number of digits is 10 and the number of decimal places is 0.
+7. For the decimal, dec, fixed, and numeric data types, if the precision is not specified, the default precision is (10,0). That is, the total number of digits is 10 and the number of decimal places is 0.
 8. The UNSIGNED INT, TINYINT, SMALLINT, and BIGINT types are added. Compared with a common integer, the most significant bit of the UNSIGNED INT, TINYINT, SMALLINT, BIGINT type is a digit bit instead of a sign bit.
 9. The zerofill attribute is added, which is supported only in syntax and does not have the effect of filling zeros. It is equivalent to UNSIGNED.
+10. The cast function parameters SIGNED and UNSIGNED are added. CAST AS UNSIGNED converts the type to uint8, and CAST AS SIGNED converts the type to int8.
 
 **Table 1** Integer types
 
@@ -166,6 +168,21 @@ openGauss=# \d int_type_t2
 
 --Delete a table.
 openGauss=# DROP TABLE int_type_t1, int_type_t2;
+
+--Use CAST UNSIGNED to convert an expression to the uint8 type.
+openGauss=# select cast(1 - 2 as unsigned);
+        uint8
+----------------------
+ 18446744073709551615
+(1 row)
+
+--Use CAST SIGNED to convert an expression to the int8 type.
+openGauss=# select cast(1 - 2 as signed);
+ int8
+------
+   -1
+(1 row)
+
 ```
 
 **Table 2** Arbitrary precision types
@@ -194,18 +211,28 @@ openGauss=# DROP TABLE int_type_t1, int_type_t2;
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae13572ca5e9343d9b40a57e1ee3ceacd"></a>If the precision is not specified, the value is equivalent to (10,0), that is, a maximum of 10 digits before the decimal point and 0 digits after the decimal point.</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r1a20a578a55c4f89ba282a4452f1634c"><td class="cellrowborder" valign="top" width="16.3%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a36ac973c8a184a63a0a73265ecf2d966"></a>NUMBER[(p[,s])]</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p240989311333"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p240989311333"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_en-us_topic_0058965945_p240989311333"></a>Alias of the NUMERIC class.</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.779999999999998%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a6be08511dd3c4c0a80bdbb4ec58b0c9e"></a>The precision is specified by users. Two bytes are occupied for every four decimals of precision. An extra eight-byte overhead is added for numbers of this type.</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_ae51f38c437fd456090357f9fb4933dd0"></a>Up to 131,072 digits before the decimal point and up to 16,383 digits after the decimal point when no precision is specified.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 Example:
 
 ```
---Create a table with FIXED(p,s), FIXED, and decimal data.
+--Create a table with FIXED(p,s), FIXED, decimal, and number data.
 openGauss=# CREATE TABLE dec_type_t1
            (
             DEC_COL1 FIXED,
             DEC_COL2 FIXED(20,5),
-            DEC_COL3 DECIMAL
+            DEC_COL3 DECIMAL,
+            DEC_COL4 NUMBER
            );
 
 --View the table structure.
@@ -216,6 +243,7 @@ openGauss=# \d dec_type_t1
  dec_col1 | numeric(10,0) |
  dec_col2 | numeric(20,5) |
  dec_col3 | numeric(10,0) |
+ dec_col4 | numeric       |
 
 --Delete a table.
 openGauss=# DROP TABLE dec_type_t1;

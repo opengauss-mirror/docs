@@ -1,87 +1,99 @@
 # SQL Syntax<a name="EN-US_TOPIC_0289900416"></a>
 
--   **[ALTER FUNCTION](dolphin-alter-function.md)**
+-   **[ALTER FUNCTION](dolphin-ALTER-FUNCTION.md)**
 
--   **[ALTER PROCEDURE](dolphin-alter-procedure.md)**
+-   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
 
--   **[ALTER TABLE](dolphin-alter-table.md)**  
+-   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
--   **[ALTER TABLE PARTITION](dolphin-alter-table-partition.md)**  
+-   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
 
--   **[ALTER TABLESPACE](dolphin-alter-tablespace.md)** 
+-   **[ALTER TABLESPACE](dolphin-ALTER-TABLESPACE.md)**  
 
--   **[ANALYZE | ANALYSE](dolphin-analyze-analyse.md)**
+-   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
--   **[AST](dolphin-ast.md)**
+-   **[AST](dolphin-AST.md)**
 
--   **[CREATE FUNCTION](dolphin-create-function.md)** 
+-   **[CREATE FUNCTION](dolphin-CREATE-FUNCTION.md)**
 
--   **[CREATE INDEX](dolphin-create-index.md)**
+-   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
--   **[CREATE PROCEDURE](dolphin-create-procedure.md)** 
+-   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
 
--   **[CREATE TABLE](dolphin-create-table.md)** 
+-   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
--   **[CREATE TABLE AS](dolphin-create-table-as.md)**
+-   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
 
--   **[CREATE TABLE PARTITION](dolphin-create-table-partition.md)**
+-   **[CREATE TABLE PARTITION](dolphin-CREATE-TABLE-PARTITION.md)**
 
--   **[CREATE TABLESPACE](dolphin-create-tablespace.md)**
+-   **[CREATE TABLESPACE](dolphin-CREATE-TABLESPACE.md)**
 
--   **[CREATE INDEX](dolphin-create-index.md)**
+-   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
--   **[DESCRIBE TABLE](dolphin-describe-table.md)**
+-   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
 
--   **[DROP TABLESPACE](dolphin-drop-tablespace.md)** 
+-   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
--   **[GRANT](dolphin-grant.md)**
+-   **[EXECUTE](dolphin-EXECUTE.md)**  
 
--   **[INSERT](dolphin-insert.md)**
+-   **[FLUSH BINARY LOGS](dolphin-FLUSH-BINARY-LOGS.md)**  
 
--   **[KILL](dolphin-kill.md)**  
+-   **[GRANT](dolphin-GRANT.md)**
 
--   **[OPTIMIZE TABLE](dolphin-optimize-table.md)**
+-   **[INSERT](dolphin-INSERT.md)**
 
--   **[PREPARE](dolphin-prepare.md)**
+-   **[KILL](dolphin-KILL.md)**  
 
--   **[RENAME USER](dolphin-rename-user.md)**
+-   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
 
--   **[REVOKE](dolphin-revoke.md)**
+-   **[PREPARE](dolphin-PREPARE.md)**
 
--   **[SELECT](dolphin-select.md)**  
+-   **[RENAME USER](dolphin-RENAME-USER.md)**
 
--   **[SET CHARSET](dolphin-set-charset.md)**
+-   **[REVOKE](dolphin-REVOKE.md)**
 
--   **[SET PASSWORD](dolphin-set-password.md)**  
+-   **[SELECT](dolphin-SELECT.md)**  
 
--   **[SHOW COLUMNS](dolphin-show_columns.md)**  
+-   **[SET CHARSET](dolphin-SET-CHARSET.md)**
 
--   **[SHOW DATABASES](dolphin-show-databases.md)**
+-   **[SET PASSWORD](dolphin-SET-PASSWORD.md)**  
 
--   **[SHOW FUNCTION STATUS](dolphin-show-function-status.md)**  
+-   **[SHOW CHARSET](dolphin-SHOW-CHARACTER-SET.md)** 
 
--   **[SHOW GRANTS](dolphin-show-grants.md)**  
+-   **[SHOW CHARACTER SET](dolphin-SHOW-CHARACTER-SET.md)** 
 
--   **[SHOW INDEX](dolphin-show-index.md)**  
+-   **[SHOW COLLATION](dolphin-SHOW-COLLATION.md)**  
 
--   **[SHOW MASTER STATUS](dolphin-show-master-status.md)**
+-   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
--   **[SHOW PLUGINS](dolphin-show_plugins.md)**  
+-   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
 
--   **[SHOW PROCEDURE STATUS](dolphin-show-procedure-status.md)**
+-   **[SHOW FUNCTION STATUS](dolphin-SHOW-FUNCTION-STATUS.md)**
 
--   **[SHOW PROCESSLIST](dolphin-show-processlist.md)**
+-   **[SHOW GRANTS](dolphin-SHOW-GRANTS.md)**
 
--   **[SHOW SLAVE HOSTS](dolphin-show-slave-hosts.md)**
+-   **[SHOW INDEX](dolphin-SHOW-INDEX.md)**  
 
--   **[SHOW TABLES](dolphin-show_tables.md)**  
+-   **[SHOW MASTER STATUS](dolphin-SHOW-MASTER-STATUS.md)**
 
--   **[SHOW TRIGGERS](dolphin-show-triggers.md)**  
+-   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
 
--   **[UPDATE](dolphin-update.md)**
+-   **[SHOW PROCEDURE STATUS](dolphin-SHOW-PROCEDURE-STATUS.md)**
 
--   **[USE DB_NAME](dolphin-use-db_name.md)**  
+-   **[SHOW PROCESSLIST](dolphin-SHOW-PROCESSLIST.md)**
 
--   **[CHECKSUM TABLE](dolphin-checksum-table.md)**  
+-   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
 
--   **[GRANT/REVOKE PROXY](dolphin-grant-revoke-proxy.md)** 
+-   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
+
+-   **[SHOW TABLE STATUS](dolphin-SHOW-TABLE-STATUS.md)**  
+
+-   **[SHOW TRIGGERS](dolphin-SHOW-TRIGGERS.md)**  
+
+-   **[UPDATE](dolphin-UPDATE.md)**
+
+-   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  
+
+-   **[CHECKSUM TABLE](dolphin-CHECKSUM-TABLE.md)**  
+
+-   **[GRANT/REVOKE PROXY](dolphin-GRANT-REVOKE-PROXY.md)** 

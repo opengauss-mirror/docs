@@ -25,7 +25,7 @@
     openGauss=# 
     ```
 
-    User  **omm**  is the administrator, and  *DBNAME***=\#**  is displayed. If you log in to and connect to the database as a common user,  *DBNAME***=\>**  is displayed, prompting you to enter SQL statements.
+    User **omm** is the administrator, and **DBNAME=\#** is displayed. If you log in to and connect to the database as a common user, **DBNAME=\>** is displayed, prompting you to enter SQL statements.
 
     **Non-SSL connection**  indicates that the database is not connected in SSL mode. 
 
@@ -34,6 +34,11 @@
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY 'XXXXXXXX' REPLACE 'XXXXXXXX';
     ```
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
+>- Contain at least eight characters.
+>- Cannot be the same as the username, the current password, or the current password in an inverted sequence.
+>- Contain at least three of the following: uppercase characters (A to Z), lowercase characters (a to z), digits (0 to 9), and other characters (limited to ~!@#$%^&*()-_=+|[{}];:,<.>/?).
+>- The SSL certificate is generated during the installation. The certificate is stored in *{gaussdbAppPath}***/share/sslcert/om**, where *{gaussdbAppPath}* is the program installation directory specified in the openGauss configuration file of the cluster.
 
 4.  gsql provides advanced functions for you to use the database.
 
