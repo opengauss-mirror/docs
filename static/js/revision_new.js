@@ -111,7 +111,7 @@ $(function ($) {
     // 点击logo回到文档首页
     $("#h5-menu-top .h5-logo .logo-img,.nav-box .h5-logo,.pc-logo").click(
       () => {
-        window.open(`/${lang}/`, "_self");
+        window.open(`https://www.opengauss.org/${lang}/`, "_blank");
       }
     );
     // 点击版本出现版本选择
