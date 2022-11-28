@@ -28,7 +28,7 @@ gs\_ctl参数可分为如下几类：
     **表 1**  option参数
 
     <a name="table145081017222"></a>
-    
+
     <table><thead align="left"><tr id="row750120016228"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="p125001701227"><a name="p125001701227"></a><a name="p125001701227"></a>参数</p>
     </th>
     <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="p1350113042215"><a name="p1350113042215"></a><a name="p1350113042215"></a>参数说明</p>
@@ -504,4 +504,3 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-

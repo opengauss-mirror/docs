@@ -7,7 +7,7 @@
 ## 语法<a name="section15554112119116"></a>
 
 ```
-python3 pscp [OPTIONS] 
+python3 pscp [OPTIONS]
 ```
 
 ## 参数说明<a name="section7730228131115"></a>
@@ -64,5 +64,3 @@ python3 pscp [OPTIONS]
 -   -O OPT
 
     补充的线下模式scp的参数。
-
-

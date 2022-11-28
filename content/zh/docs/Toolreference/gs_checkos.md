@@ -21,13 +21,13 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 -   检查操作系统信息
 
     ```
-    gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE] 
+    gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE]
     ```
 
 -   显示帮助信息
 
     ```
-    gs_checkos -? | --help 
+    gs_checkos -? | --help
     ```
 
 -   显示版本号信息
@@ -45,7 +45,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     取值范围：A1...A14、B1...B8。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >A1...A14 表示只检查操作系统参数，并不设置。
     >B1...B8 表示将参数系统参数设置为期望值。
     >A和B不能同时输入。
@@ -56,7 +56,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     主机名称列表文件。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-f和-h参数不能同时使用。
 
     取值范围：主机名称的列表。
@@ -268,13 +268,13 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 </td>
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>远程设备继承系统默认资源：修改/etc/pam.d/sshd服务文件，添加配置项session required pam_limits.so，来控制用户使用的资源。</p>
 </td>
-</tr>       
+</tr>
 </tbody>
 </table>
 
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。
 >    若\[SUGGEST:/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Warning，B1参数不会进行设置，需根据实际情况进行手动设置。
@@ -560,7 +560,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 使用如下命令检查操作系统参数。
 
 ```
-gs_checkos -i A -h plat1 -X /opt/software/openGauss/clusterconfig.xml --detail -o /var/log/checkos 
+gs_checkos -i A -h plat1 -X /opt/software/openGauss/clusterconfig.xml --detail -o /var/log/checkos
 Performing operation system check/set. Output the result to the file /var/log/checkos.
 Operation system check/set is completed.
 Total numbers:14. Abnormal numbers:0. Warning number:1.
@@ -570,7 +570,7 @@ Total numbers:14. Abnormal numbers:0. Warning number:1.
 查看操作系统参数检查结果。
 
 ```
-vim /var/log/checkos 
+vim /var/log/checkos
 Checking items:
     A1. [ OS version status ]                                   : Normal
     A2. [ openGauss version status ]                               : Normal
@@ -591,4 +591,3 @@ Checking items:
 ## 相关命令<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s3229172816a643dda00f100421b8a903"></a>
 
 [gs\_check](gs_check.md)，[gs\_checkperf](gs_checkperf.md)
-

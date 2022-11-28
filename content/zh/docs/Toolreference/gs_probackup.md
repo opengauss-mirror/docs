@@ -155,7 +155,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     [--recovery-target-time=time | --recovery-target-xid=xid | --recovery-target-lsn=lsn | --recovery-target-name=target-name]
     [--recovery-target-inclusive=boolean]
     [logging_options]
-    [--help] 
+    [--help]
     ```
 
 
@@ -328,7 +328,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **恢复目标相关参数\(recovery\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
 >如果需要使用持续归档的WAL日志进行PITR恢复，请按照下面描述的步骤：
 >1.  将物理备份的文件替换目标数据库目录。
@@ -364,7 +364,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **留存相关参数\(retention\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >可以和backup和delete命令一起使用这些参数。
 
 -   --retention-redundancy=_retention-redundancy_
@@ -403,7 +403,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **固定备份相关参数\(pinning\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
 
 -   --ttl=_interval_
@@ -476,7 +476,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **连接相关参数\(connection\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >可以和backup命令一起使用这些参数。
 
 -   -d  _dbname_, --pgdatabase=_dbname_
@@ -517,7 +517,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **压缩相关参数\(compression\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >可以和backup命令一起使用这些参数。
 
 -   --compress-algorithm=_compress-algorithm_
@@ -545,7 +545,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **远程模式相关参数\(remote\_options\)**
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
 
 -   --remote-proto=_protocol_
@@ -590,7 +590,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
   例如：--ssh-options='-c cipher\_spec -F configfile'
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >
   >
@@ -660,4 +660,3 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 </tr>
 </tbody>
 </table>
-

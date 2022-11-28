@@ -75,13 +75,13 @@ Uninstallation succeeded.
    查看互信是否建成功，可以互相ssh主机名。输入exit退出。
 
    ```
-   plat1:~ # ssh plat2 
-   Last login: Tue Jan  5 10:28:18 2016 from plat1 
-   Huawei's internal systems must only be used for conducting Huawei's business or for purposes authorized by Huawei management.Use is subject to audit at any time by Huawei management. 
-   plat2:~ # exit 
-   logout 
-   Connection to plat2 closed. 
-   plat1:~ # 
+   plat1:~ # ssh plat2
+   Last login: Tue Jan  5 10:28:18 2016 from plat1
+   Huawei's internal systems must only be used for conducting Huawei's business or for purposes authorized by Huawei management.Use is subject to audit at any time by Huawei management.
+   plat2:~ # exit
+   logout
+   Connection to plat2 closed.
+   plat1:~ #
    ```
 
 3. 进入script路径下。
@@ -152,4 +152,3 @@ Successfully cleaned environment.
 **错误排查**
 
 如果一键式环境清理失败请根据“$GAUSSLOG/om/gs\_postuninstall-YYYY-MM-DD\_HHMMSS.log”中的日志信息排查错误。
-
