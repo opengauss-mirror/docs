@@ -204,6 +204,29 @@ GS\_ASP显示被持久化的ACTIVE SESSION PROFILE样本，该表只能在系统
 <td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.4.1.3 "><p id="p1121735523214"><a name="p1121735523214"></a><a name="p1121735523214"></a>全局会话ID。</p>
 </td>
 </tr>
+<tr id="row26151130020"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p1561614135016"><a name="p1561614135016"></a><a name="p1561614135016"></a>xact_start_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.3%" headers="mcps1.2.4.1.2 "><p id="p261617131702"><a name="p261617131702"></a><a name="p261617131702"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.4.1.3 "><p id="p16165131908"><a name="p16165131908"></a><a name="p16165131908"></a>事务开始时间。</p>
+</td>
+</tr>
+<tr id="row898817281803"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p159881028507"><a name="p159881028507"></a><a name="p159881028507"></a>query_start_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.3%" headers="mcps1.2.4.1.2 "><p id="p19988182816018"><a name="p19988182816018"></a><a name="p19988182816018"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.4.1.3 "><p id="p18988328700"><a name="p18988328700"></a><a name="p18988328700"></a>语句开始执行时间。</p>
+</td>
+</tr>
+<tr id="row182716259017"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p15272192513020"><a name="p15272192513020"></a><a name="p15272192513020"></a>state</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.3%" headers="mcps1.2.4.1.2 "><p id="p1272825207"><a name="p1272825207"></a><a name="p1272825207"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.95%" headers="mcps1.2.4.1.3 "><p id="p132720254014"><a name="p132720254014"></a><a name="p132720254014"></a>当前事务状态。</p>
+<p id="p1148618524917"><a name="p1148618524917"></a><a name="p1148618524917"></a>可能取值为：active, idle in transaction, fastpath function call, idle in transaction (aborted), disabled, retrying。</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
