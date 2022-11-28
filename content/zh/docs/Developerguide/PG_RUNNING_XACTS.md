@@ -50,7 +50,7 @@ PG\_RUNNING\_XACTS视图主要功能是显示当前节点运行事务的信息�
 </tr>
 <tr id="zh-cn_topic_0059778567_r3d0dc7c37a1b4acba7f09ac92b00378a"><td class="cellrowborder" valign="top" width="23.330000000000002%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778567_a3076c633e4344419968b2a14ff8b8442"><a name="zh-cn_topic_0059778567_a3076c633e4344419968b2a14ff8b8442"></a><a name="zh-cn_topic_0059778567_a3076c633e4344419968b2a14ff8b8442"></a>vacuum</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"><a name="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"></a><a name="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"></a><span id="text71461320193011"><a name="text71461320193011"></a><a name="text71461320193011"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="15.790000000000001%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"><a name="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"></a><a name="zh-cn_topic_0059778567_a512e99361d024c29b20b9cb3e2978d4c"></a><span id="text71461320193011"><a name="text71461320193011"></a><a name="text71461320193011"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="60.88%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778567_ae2f0ed9cea4b48179252fbc8c28cfcd0"><a name="zh-cn_topic_0059778567_ae2f0ed9cea4b48179252fbc8c28cfcd0"></a><a name="zh-cn_topic_0059778567_ae2f0ed9cea4b48179252fbc8c28cfcd0"></a>标志当前事务是否是lazy vacuum事务。</p>
 <a name="ul588154784410"></a><a name="ul588154784410"></a><ul id="ul588154784410"><li>t（true）：表示是。</li><li>f（false）：表示否。</li></ul>

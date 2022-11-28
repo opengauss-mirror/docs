@@ -17,14 +17,14 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p563483485115"><a name="p563483485115"></a><a name="p563483485115"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p86341934145113"><a name="p86341934145113"></a><a name="p86341934145113"></a>用户名</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p86341934145113"><a name="p86341934145113"></a><a name="p86341934145113"></a>用户名。</p>
 </td>
 </tr>
 <tr id="row56348346517"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p16634634135117"><a name="p16634634135117"></a><a name="p16634634135117"></a>timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p863415348515"><a name="p863415348515"></a><a name="p863415348515"></a>timestamp with time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p86348343514"><a name="p86348343514"></a><a name="p86348343514"></a>时间戳</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p86348343514"><a name="p86348343514"></a><a name="p86348343514"></a>时间戳。</p>
 </td>
 </tr>
 <tr id="row13634143413512"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p96344345511"><a name="p96344345511"></a><a name="p96344345511"></a>used_memory</p>
