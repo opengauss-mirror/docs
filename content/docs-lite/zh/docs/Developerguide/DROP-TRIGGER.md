@@ -14,6 +14,12 @@
 DROP TRIGGER [ IF EXISTS ] trigger_name ON table_name [ CASCADE | RESTRICT ];
 ```
 
+mysql兼容性下新增语法
+
+```
+DROP TRIGGER [ IF EXISTS ] trigger_name;
+```
+
 ## 参数说明<a name="zh-cn_topic_0283137186_zh-cn_topic_0237122156_zh-cn_topic_0059777895_se717dd5fd464489bb0235495c62d3a9e"></a>
 
 -   **IF EXISTS**
