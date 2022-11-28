@@ -11,7 +11,7 @@
     database=postgres  
     user=omm
     password=test
-   ```
+    ```
 2. 在连接选项中添加SSL连接相关参数：sslmode、sslcert、sslkey、sslrootcert。  
     a.  sslmode：可选项见[表1](#table167989176183)。  
     b.  sslcert：客户端证书路径。  
@@ -24,16 +24,15 @@
     import psycopg2
     parser = ConfigParser()
     parser.read('database.ini')
-    parameters = {}
-    for parameter, value in parser.items('opengauss'):  
-        parameters[parameter] = value  
+    parameters = dict()
+    for parameter, value in parser.items('opengauss'):
+        parameters[parameter] = value
     connection = psycopg2.connect(**parameters)
    ```
 4. 使用connection对象创建cursor对象。  
     ```python
     cursor = connection.cursor()
     ```
-
 
 **表 1**  sslmode的可选项及其描述
 
@@ -90,4 +89,3 @@
 </tr>
 </tbody>
 </table>
-
