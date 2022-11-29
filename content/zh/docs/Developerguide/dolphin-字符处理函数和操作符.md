@@ -7,6 +7,7 @@
 3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
+6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
 
 -   bit\_length\(string\)
 
@@ -842,3 +843,37 @@
        1267
       (1 row)
     ```
+
+- !
+  
+  描述：在表达式前使用，实现逻辑运算“非”。其效果与表达式前使用NOT一致。
+
+  返回值类型：boolean
+
+  注意事项
+
+  - 该运算符仅在```b_compatibility_mode```为```TRUE```时可用。
+  - openGauss原有阶乘运算符"!!"。为避免与本运算符混淆，当```b_compatibility_mode```为```TRUE```时，阶乘运算符"!!"不可使用。请使用函数```factorial```替代。
+  - 当```b_compatibility_mode```为```TRUE```时，不允许多个"!"运算符连用。
+  - 仅有可转换为boolean类型的表达式可使用本操作符。详情查看系统表```pg_cast```。
+
+  示例：
+
+  ```
+  openGauss=# set b_compatibility_mode = 1;
+  SET
+  openGauss=# select !10;
+   ?column?
+  ----------
+   f
+  (1 row)
+  
+  openGauss=# select !true;
+   ?column?
+  ----------
+   f
+  (1 row)
+  
+  openGauss=# select !!10;
+  ERROR:  Operator '!!' is deprecated when b_compatibility_mode is on. Please use function factorial().
+  ```
