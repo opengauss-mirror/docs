@@ -24,7 +24,7 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653543155118"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653543155118"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p6653543155118"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"></a>作业ID，主键，是唯一的（有唯一索引）</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p165310431514"></a>作业ID，主键，是唯一的（有唯一索引）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row64984839164044"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p53372863164047"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p53372863164047"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p53372863164047"></a>current_postgres_pid</p>
@@ -38,28 +38,28 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p86538435512"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p86538435512"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p86538435512"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"></a>创建者的UserName</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p0653104395119"></a>创建者的UserName。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row4961148185118"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p146539431511"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p146539431511"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p146539431511"></a>priv_user</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p19653104315116"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p19653104315116"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p19653104315116"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"></a>作业执行者的UserName</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p465434345113"></a>作业执行者的UserName。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row144841135105111"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p126541343135119"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p126541343135119"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p126541343135119"></a>dbname</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p176541943165115"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p176541943165115"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p176541943165115"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"></a>标识作业要在哪个数据库执行的数据库名称</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p66541743185116"></a>标识作业要在哪个数据库执行的数据库名称。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row42918368516"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p56541243155111"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p56541243155111"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p56541243155111"></a>node_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p1165464385115"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p1165464385115"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p1165464385115"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"></a>标识当前作业是在哪个<span id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"></a>数据库主节点</span>上创建和执行</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p765414436513"></a>标识当前作业是在哪个<span id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_text1177124561716"></a>数据库主节点</span>上创建和执行。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_row28778562165811"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p36929150165813"><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p36929150165813"></a><a name="zh-cn_topic_0283136590_zh-cn_topic_0237122295_zh-cn_topic_0059777589_p36929150165813"></a>job_status</p>
@@ -166,4 +166,5 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </tr>
 </tbody>
 </table>
+
 
