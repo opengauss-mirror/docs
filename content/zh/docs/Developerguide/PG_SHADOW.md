@@ -154,7 +154,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </tr>
 <tr id="row1039772718307"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p526312301779"><a name="p526312301779"></a><a name="p526312301779"></a>usemonitoradmin</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p2263173017719"><a name="p2263173017719"></a><a name="p2263173017719"></a>Boolean</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p2263173017719"><a name="p2263173017719"></a><a name="p2263173017719"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p0263730774"><a name="p0263730774"></a><a name="p0263730774"></a>-</p>
 </td>
@@ -164,7 +164,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </tr>
 <tr id="row494752117304"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p18637357712"><a name="p18637357712"></a><a name="p18637357712"></a>useoperatoradmin</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p8631535475"><a name="p8631535475"></a><a name="p8631535475"></a>Boolean</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p8631535475"><a name="p8631535475"></a><a name="p8631535475"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p136317358714"><a name="p136317358714"></a><a name="p136317358714"></a>-</p>
 </td>
@@ -174,7 +174,7 @@ PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的�
 </tr>
 <tr id="row198620244302"><td class="cellrowborder" valign="top" width="17.11%" headers="mcps1.2.5.1.1 "><p id="p116991389717"><a name="p116991389717"></a><a name="p116991389717"></a>usepolicyadmin</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p570093811710"><a name="p570093811710"></a><a name="p570093811710"></a>Boolean</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p570093811710"><a name="p570093811710"></a><a name="p570093811710"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.060000000000002%" headers="mcps1.2.5.1.3 "><p id="p27001938775"><a name="p27001938775"></a><a name="p27001938775"></a>-</p>
 </td>

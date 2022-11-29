@@ -29,7 +29,7 @@ PG\_TIMEZONE\_ABBREVS视图提供了显示了所有可用的时区信息。
 </tr>
 <tr id="zh-cn_topic_0283137118_zh-cn_topic_0237122539_row58449376298"><td class="cellrowborder" valign="top" width="22.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p2050394817305"><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p2050394817305"></a><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p2050394817305"></a>is_dst</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"></a><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"></a>Boolean</p>
+<td class="cellrowborder" valign="top" width="31.64%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"></a><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p4844237142913"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.239999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p12844103713296"><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p12844103713296"></a><a name="zh-cn_topic_0283137118_zh-cn_topic_0237122539_p12844103713296"></a>如果当前正处于夏令时范围则为TRUE，否则为FALSE。</p>
 </td>
