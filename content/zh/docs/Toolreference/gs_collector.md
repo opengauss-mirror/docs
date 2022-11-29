@@ -141,7 +141,7 @@
 
     主机名称列表文件。该文件为纯文本格式。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-f和-h参数不能同时使用。
 
     取值范围：主机名称列表。
@@ -204,7 +204,7 @@
 
   若关键字KEYWORD中含有空格，需要使用双引号包围。
 
-  ![](public_sys-resources/icon-note.png)  **说明：** 
+  ![](public_sys-resources/icon-note.png)  **说明：**
   性能日志为二进制日志，关键字搜集功能不支持该日志的搜集。
 
 -   --begin-time
@@ -235,7 +235,7 @@
 执行如下命令收集OS信息和日志信息。
 
 ```
-gs_collector --begin-time="20180131 23:00" --end-time="20180201 20:00" -h plat1 
+gs_collector --begin-time="20180131 23:00" --end-time="20180201 20:00" -h plat1
 Successfully parsed the configuration file.
 create Dir.
 Successfully create dir.
@@ -311,4 +311,3 @@ tar -zxvf log_20200624_134548540916.tar.gz
 ./gs_profile/dn_6001_6002/postgresql-2020-06-24_114316.prf
 ./gs_profile/dn_6001_6002/postgresql-2020-06-24_114043.prf
 ```
-

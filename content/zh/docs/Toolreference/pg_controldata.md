@@ -42,5 +42,3 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 -   -?,--help
 
     打印帮助信息。
-
-

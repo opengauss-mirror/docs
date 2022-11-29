@@ -7,7 +7,7 @@
 ## 语法<a name="section39063449108"></a>
 
 ```
-python3 pssh [OPTIONS] 
+python3 pssh [OPTIONS]
 ```
 
 ## 参数说明<a name="section14185451151019"></a>
@@ -60,5 +60,3 @@ python3 pssh [OPTIONS]
 -   -O OPT
 
     补充的线下模式ssh的参数。
-
-

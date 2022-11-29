@@ -69,4 +69,3 @@ plat3
 [SUCCESS] plat4:
 plat4
 ```
-

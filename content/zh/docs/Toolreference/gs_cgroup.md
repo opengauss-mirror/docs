@@ -14,11 +14,11 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
   1.前置条件：需设置GAUSSHOME环境变量为数据库安装目录；且root用户已创建普通用户默认的控制组。
 
-  2.创建控制组及设置对应的资源配额，以便在数据库中运行作业时，指定到此控制组，使用此控制组管理的资源；通常数据库管理员为每个数据库用户创建Class组。  
-  a.  创建Class控制组和Workload控制组。  
+  2.创建控制组及设置对应的资源配额，以便在数据库中运行作业时，指定到此控制组，使用此控制组管理的资源；通常数据库管理员为每个数据库用户创建Class组。
+  a.  创建Class控制组和Workload控制组。
 
   ```
-  gs_cgroup -c -S class1 -s 40  
+  gs_cgroup -c -S class1 -s 40
   ```
 
    创建当前用户新的Class Cgroups命名为“class1”，资源配额为总Class的40%。
@@ -27,7 +27,7 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
    gs_cgroup -c -S class1 -G grp1 -g 20
   ```
 
-  创建当前用户新的“class1” Cgroups下属的Workload控制组，命名为“grp1”，资源配额为“class1” Cgroups的20%。  
+  创建当前用户新的“class1” Cgroups下属的Workload控制组，命名为“grp1”，资源配额为“class1” Cgroups的20%。
 
    b.  删除grp1控制组和Class控制组。
 
@@ -44,10 +44,10 @@ gs\_cgroup工具为使用数据库的操作系统用户创建Cgroups配置文件
 
   ​    删除当前用户已建的“class1”Cgroups。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >如果删除Class控制组，则Workload控制组也被删除。
 
-3.更新已创建控制组的资源配额。  
+3.更新已创建控制组的资源配额。
 a.  更新动态资源配额。
 
 ```
@@ -73,10 +73,10 @@ gs_cgroup -u -T Gaussdb -f 0-20
 
 更新Gaussdb进程使用的CPU核数为0-20。
 
->![](public_sys-resources/icon-note.png) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**
 >-f参数只适用于对Gaussdb设置核数范围。对于其他各控制组，如需设置核数范围，需要使用--fixed参数。
 
-4.设置异常处理信息（class:wg组需存在）。  
+4.设置异常处理信息（class:wg组需存在）。
 a.  设置组class:wg下的作业阻塞到1200秒或执行2400秒时执行终止动作：
 
 ```
@@ -101,7 +101,7 @@ d.  设置组Class下的作业在所有数据库节点上执行时间到达2400�
 gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
 ```
 
->![](public_sys-resources/icon-notice.png) **须知：**   
+>![](public_sys-resources/icon-notice.png) **须知：**
 >给控制组设置异常处理信息，需要确保对应的控制组已经创建。指定多个阈值时用“，”分隔，不指定任何动作时默认为“penalty”操作。
 
 6.设置控制组使用的核数范围。
@@ -112,7 +112,7 @@ gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
 gs_cgroup -S class -G wg -g 20 --fixed -u
 ```
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >Class或Workload核数范围必须通过指定--fixed参数设置。
 
 7.回退上一个步骤。
@@ -121,14 +121,14 @@ gs_cgroup -S class -G wg -g 20 --fixed -u
 gs_cgroup --recover
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >--recover只支持对Class控制组和Workload控制组的增删改操作进行回退，且只支持回退一次操作。
 
-8.查看已创建的控制组信息。  
+8.查看已创建的控制组信息。
 a.  查看配置文件中控制组信息。
 
 ```
-gs_cgroup -p 
+gs_cgroup -p
 ```
 
 控制组配置信息
@@ -303,11 +303,11 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 </tbody>
 </table>
 
-​     
+​
 
 
 
-​    b.  查看操作系统中树形结构的控制组信息  
+​    b.  查看操作系统中树形结构的控制组信息
 ​    gs\_cgroup -P显示控制组树形结构信息，其中shares代表操作系统中CPU资源的动态资源配额“cpu.shares”的数值，cpus代表操作系统中CPUSET资源的动态资源限额“cpuset.cpus”的数值，指的是该控制组能够使用的核数范围。
 
         gs_cgroup -P
@@ -316,7 +316,7 @@ ABORT: BlockTime=1200 ElapsedTime=2400
         blkio:/dev/cgroup/blkio
         cpuset:/dev/cgroup/cpuset
         cpuacct:/dev/cgroup/cpuacct
-        
+
         Group Tree Information:
         - Gaussdb:wangrui (shares: 5120, cpus: 0-20, weight: 1000)
                 - Backend (shares: 4096, cpus: 0-20, weight: 400)
@@ -601,10 +601,10 @@ ABORT: BlockTime=1200 ElapsedTime=2400
     取值范围：字符串，最长为32个字符。
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >对于磁盘major:minor的编号获取，可以通过下面方式。如获取/mpp目录对应的磁盘编号：
 >```
->> df 
+>> df
 >Filesystem      1K-blocks      Used  Available Use% Mounted on
 >/dev/sda1       524173248  41012784  456534008   9% /
 >devtmpfs         66059264       236   66059028   1% /dev
@@ -617,7 +617,6 @@ ABORT: BlockTime=1200 ElapsedTime=2400
 >brw-rw---- 1 root disk 8, 48 Feb 26 11:20 /dev/sdd
 >```
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >这里一定要查sdd的磁盘号，不能是sdd1的磁盘号。否则执行时会报错。
 >如果更新IO的限额配置信息超过了可允许的最大配置字串，则新的更新不存储在配置文件中。如当前设置的字串长度为96，更新IO的磁盘数量大于8个，则有可能超出字串限制，更新成功，但是不存储在配置文件中。
-

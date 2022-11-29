@@ -49,7 +49,7 @@ openGauss提供了gs\_dropnode工具从一主多备的数据库中移除不需�
 -   移除备机
 
     ```
-    gs_dropnode -U USER -G GROUP -h hostlist  
+    gs_dropnode -U USER -G GROUP -h hostlist
     ```
 
 -   显示帮助信息
@@ -123,7 +123,7 @@ Do you want to continue to drop the target node (yes/no)? yes
 [gs_dropnode]Start to set pg_hba config file on PrimaryNode.
 [gs_dropnode]End of set pg_hba config file on PrimaryNode.
 [gs_dropnode]Start to modify the cluster static conf.
-[gs_dropnode]End of modify the cluster static conf. 
+[gs_dropnode]End of modify the cluster static conf.
 [gs_dropnode]Success to drop the target nodes.
 
 ```
@@ -131,4 +131,3 @@ Do you want to continue to drop the target node (yes/no)? yes
 ## 相关命令
 
 [gs\_expansion](gs_expansion.md)，[gs\_ctl](gs_ctl.md)
-

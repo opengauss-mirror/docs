@@ -191,7 +191,7 @@ gs_dumpall [OPTION]...
 -   --parallel-jobs
 
     指定备份进程并发数，取值范围为1\~1000。
-    
+
 -    --pipeline
 
     使用管道传输密码，禁止在终端使用。
@@ -276,7 +276,7 @@ gs\_dumpall恢复前需要所有必要的表空间目录才能退出；否则，
 
 使用gs\_dumpall一次导出openGauss的所有数据库。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。
 
 ```
@@ -292,4 +292,3 @@ gs_dumpall[port='37300'][2018-06-27 09:55:46]: total time: 56088  ms
 ## 相关命令<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_s9ed79eb3e2564786a6823616c460fc00"></a>
 
 [gs\_dump](gs_dump.md)，[gs\_restore](gs_restore.md)
-

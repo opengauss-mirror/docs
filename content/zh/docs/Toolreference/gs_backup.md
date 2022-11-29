@@ -99,11 +99,11 @@ gs\_backup参数可以分为如下几类：
         指定日志文件及存放路径。
 
         默认值：$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log
-        
+
     -   --force
-    
+
         节点的静态文件丢失之后强行restore，仅限--all或者--binary参数使用时才生效。
-    
+
 
 
 - 其他参数：
@@ -118,10 +118,10 @@ gs\_backup参数可以分为如下几类：
   -   -t
 
       指定操作类型。
-      
+
       取值范围：backup或者restore。
 
-  
+
 
 ## 示例<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 
@@ -145,5 +145,3 @@ gs\_backup参数可以分为如下几类：
     Performing remote restoration.
     Successfully restored cluster files.
     ```
-
-

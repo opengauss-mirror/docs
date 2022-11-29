@@ -19,7 +19,7 @@
 -   容灾升主
 
     ```
-    gs_sdr -t failover [-l LOGFILE] 
+    gs_sdr -t failover [-l LOGFILE]
     ```
 
 -   计划内主备切换
@@ -83,7 +83,7 @@ gs\_sdr参数可以分为如下几类：
 
         容灾用户密码
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >1. 搭建容灾关系前，主集群需创建容灾用户，用于容灾鉴权，主备集群必须使用相同的容灾用户名和密码，一次容灾搭建后，该用户密码不可修改。若需修改容灾用户名与密码，需要解除容灾，使用新的容灾用户重新进行搭建。容灾用户密码中不可包含以下字符“| ;&$<>`\'"{}()[]~*?!\n空白”。
         >2. -U、-W 参数如果搭建命令行未带，则在搭建过程中支持交互式输入。
 
@@ -123,7 +123,7 @@ gs\_sdr参数可以分为如下几类：
         # localClusterConf：本集群的dn分片信息。其中port为本集群主dn的端口，{"ip": "10.244.44.216", "dtaIp": "172.31.12.58"}为本集群dn分片上各节点用于SSH可信通道的IP与流复制的IP映射关系。
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >-X与--json参数支持二选一方式进行配置容灾信息，如果命令行中两个参数全部下发，则以json为准。
 
     -   --time-out=SECS
@@ -136,9 +136,9 @@ gs\_sdr参数可以分为如下几类：
 
 
 -   容灾升主参数：
-    
+
     无
-    
+
 -   容灾解除参数：
     -   -X
 
@@ -148,13 +148,13 @@ gs\_sdr参数可以分为如下几类：
 
         带有本端及对端容灾信息的json文件。
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >-X、--json的配置方式请参考本节容灾搭建参数配置。
 
 
 -   容灾查询参数：
     -   无
-    
+
     容灾状态查询结果说明如下：
 
 
@@ -584,5 +584,3 @@ gs\_sdr参数可以分为如下几类：
     Successfully execute streaming disaster recovery query, result:
     {'hadr_cluster_stat': 'archive', 'hadr_failover_stat': '', 'hadr_switchover_stat': '', 'RPO': '0', 'RTO': '0'}
     ```
-
-

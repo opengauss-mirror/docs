@@ -50,4 +50,3 @@ archive_cleanup_command = 'pg_archivecleanup /mnt/server/archiverdir %r'
 ```
 
 恢复完成后从归档目录中清除不再需要的文件。
-

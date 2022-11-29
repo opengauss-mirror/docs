@@ -19,7 +19,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
 -   停止openGauss
 
     ```
-    gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE] 
+    gs_om -t stop [-h HOSTNAME] [-D dataDir]  [--time-out=SECS] [-m MODE] [-l LOGFILE]
     ```
 
 -   重启openGauss
@@ -130,7 +130,7 @@ gs\_om参数可以分为如下几类：
 
         ![](public_sys-resources/icon-note.png) **说明：**
         针对部署了CM工具的集群，如果在对单个实例进行启停时候指定了-D参数，只会启动或者停止数据库进程，不会影响CM相关进程。
-        
+
         假设当前实例的数据库和CM进程都停止，在启动该实例时候如果指定了-D参数，那么只会尝试拉起数据库进程，此时由于CM进程不存在会导致数据库进程也拉起失败。可以去掉-D参数，启动整个实例。
 
     -   --time-out=SECS
@@ -151,7 +151,7 @@ gs\_om参数可以分为如下几类：
         -   off不以安全模式启动，默认不开启安全模式。
 
     -   --cluster-number
-        
+
         指定启动时内核运行版本号。
 
         取值范围： 内核版本号。
@@ -209,15 +209,15 @@ gs\_om参数可以分为如下几类：
         输出到指定的output文件中。
 
         如果不指定，直接显示在屏幕上。
-    
-    -   --detail  
-    
-        显示详细信息。如果不指定，只提示该服务器是否正常。  
+
+    -   --detail
+
+        显示详细信息。如果不指定，只提示该服务器是否正常。
     本参数通过在每个数据库节点执行gs_ctl query命令进行查询并汇总结果，来获取openGauss的详细信息。
-    
-    + --all  
-    
-      显示openGauss所有节点信息。  
+
+    + --all
+
+      显示openGauss所有节点信息。
       本参数通过在每个数据库节点执行gsql查询系统表并汇总结果，来获取openGauss所有节点的信息。为保证显示信息的正确性，在使用本参数前请确认gsql可以查询。
 
 
@@ -231,17 +231,17 @@ gs\_om参数可以分为如下几类：
     - --old-values=old
 
       需要修改的静态文件中的旧值。
-    
+
       取值范围：port、ip、hostname，可以输入多个值，用逗号隔开。
-    
+
     - --new-values=new
-    
+
       需要修改的静态文件中的新值。
-    
+
       取值范围：port、ip、hostname，可以输入多个值，用逗号隔开，与old-values一一对应。
-    
+
     -   --distribute
-    
+
         将静态配置文件发布到openGauss实例的安装目录。
 
 
@@ -276,9 +276,9 @@ gs\_om参数可以分为如下几类：
     - --rollback
 
       证书回退到上一次成功备份的状态。
-    
+
     - -L
-    
+
       制定该参数时，仅对当前节点进行。
 
 
@@ -492,7 +492,7 @@ gs\_om参数可以分为如下几类：
     ======================================================================
     .
     ======================================================================
-    
+
     Successfully started .
     ```
 
@@ -524,7 +524,7 @@ gs\_om参数可以分为如下几类：
   -----------------------------------------------------------------------------------------------------------------
   1  pekpopgsci00235  10.244.62.204    5432      6001 /opt/gaussdb/cluster/data/dn1   P Primary Normal
   2  pekpopgsci00238  10.244.61.81      5432      6002 /opt/gaussdb/cluster/data/dn1   S Standby Normal
- 
+
   ```
 
 - 在openGauss上执行如下命令，生成配置文件。
@@ -569,7 +569,7 @@ gs\_om参数可以分为如下几类：
 -   SSL证书回退。
 
     ```
-    gs_om -t cert --rollback 
+    gs_om -t cert --rollback
     [plat1] SSL cert files rollback successfully.
     [plat2] SSL cert files rollback successfully.
     [plat3] SSL cert files rollback successfully.
@@ -578,7 +578,7 @@ gs\_om参数可以分为如下几类：
 -   新License注册。
 
     ```
-    gs_om -t license -m register -f MTgsMTkK  
+    gs_om -t license -m register -f MTgsMTkK
     Preparing for the program initialization.
     Lock the OPS operation of OM components.
     Check and make sure the consistency of the license file.
@@ -602,4 +602,3 @@ gs\_om参数可以分为如下几类：
     Remove the backup license file on all of the cluster hosts.
     License unregister successfully.
     ```
-

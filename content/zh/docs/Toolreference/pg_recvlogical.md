@@ -116,7 +116,7 @@ pg_recvlogical [OPTION]...
 -   -?, --help
 
     输出帮助信息，随后立即退出。
-    
+
 -   -r, --raw
 
     在并行解码场景下，设置此参数表示不会将二进制格式或是批量发送的结果转化为文本格式，该参数仅供测试人员测量并行解码性能时使用。设置该参数后，二进制格式或批量发送的解码结果将为不可读的格式。
@@ -153,5 +153,3 @@ pg_recvlogical [OPTION]...
     ```
     pg_recvlogical -d postgres -S test_slot -p 26000 --drop
     ```
-
-

@@ -28,7 +28,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
     此时需要登录任一数据库主节点，连接postgres数据库执行如下SQL。
 
     ```
-    analyze pmk.pmk_configuration; 
+    analyze pmk.pmk_configuration;
     analyze pmk.pmk_meta_data;
     analyze pmk.pmk_snapshot;
     analyze pmk.pmk_snapshot_dbnode_stat;
@@ -245,7 +245,7 @@ MPPDB CPU usage rate:
 Shared buffer hit rate:
     Shared Buffer Reads                          :    0
     Shared Buffer Hits                           :    24129
-    Shared Buffer Hit ratio                      :    100.00     %    
+    Shared Buffer Hit ratio                      :    100.00     %
     In-memory sort ratio                         :    100.00     %
 I/O usage:
     Number of files                              :    537
@@ -281,13 +281,13 @@ dn_6001_6002:
     Read Time                                    :    0
     Write Time                                   :    0
 dn_6003_6004:
-    MPPDB CPU Time                             :    170       
+    MPPDB CPU Time                             :    170
     Jiffies    Host CPU Busy Time                :    1030       Jiffies
-    Host CPU Total Time                          :    42470      Jiffies    
+    Host CPU Total Time                          :    42470      Jiffies
     MPPDB CPU Time % in Busy Time              :    16.50      %
     MPPDB CPU Time % in Total Time             :    .40        %
     Physical memory                              :    8231776256 Bytes
-    DB Memory usage                              :    881434624  Bytes    
+    DB Memory usage                              :    881434624  Bytes
     Shared buffer size                           :    33554432   Bytes
     Shared buffer hit ratio                      :    100.00     %
     Sorts in memory                              :    119
@@ -372,4 +372,3 @@ Session IO statistics:
 ## 相关命令<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_s192dbb9a0f6b4bae84d65bf5bdd8a796"></a>
 
 [gs\_check](gs_check.md)，[gs\_checkos](gs_checkos.md)
-
