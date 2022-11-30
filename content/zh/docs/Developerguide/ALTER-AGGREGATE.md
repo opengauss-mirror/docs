@@ -62,4 +62,3 @@ ALTER AGGREGATE myavg(integer) SET SCHEMA myschema;
 ## 兼容性<a name="section15847115116365"></a>
 
 SQL标准里没有ALTER AGGREGATE语句。
-

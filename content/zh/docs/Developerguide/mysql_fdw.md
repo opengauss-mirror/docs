@@ -55,4 +55,3 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 -   不支持**IMPORT FOREIGN SCHEMA**语法。
 
 -   不支持对外表进行**CREATE TRIGGER**操作。
-

@@ -44,4 +44,3 @@ PG\_FOREIGN\_TABLE系统表存储外部表的辅助信息。
 </tr>
 </tbody>
 </table>
-

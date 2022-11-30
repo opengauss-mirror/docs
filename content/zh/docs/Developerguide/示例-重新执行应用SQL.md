@@ -53,14 +53,14 @@ public class SQLRetry {
 
      return conn;
 }
- 
+
    //执行普通SQL语句，创建jdbc_test1表。
    public static void CreateTable(Connection conn) {
      Statement stmt = null;
      try {
        stmt = conn.createStatement();
 
-       
+
        Runtime.getRuntime().addShutdownHook(new ExitHandler(stmt));
 
        //执行普通SQL语句。
@@ -110,7 +110,7 @@ public class SQLRetry {
        e.printStackTrace();
      }
    }
- 
+
    //执行预编译语句，更新数据。
    private static boolean QueryRedo(Connection conn){
      PreparedStatement pstmt = null;
@@ -118,7 +118,7 @@ public class SQLRetry {
      try {
        pstmt = conn
            .prepareStatement("SELECT col1 FROM jdbc_test1 WHERE col2 = ?");
- 
+
            pstmt.setString(1, "data 10");
            ResultSet rs = pstmt.executeQuery();
 
@@ -126,7 +126,7 @@ public class SQLRetry {
                System.out.println("col1 = " + rs.getString("col1"));
            }
            rs.close();
- 
+
        pstmt.close();
         retValue = true;
       } catch (SQLException e) {
@@ -140,8 +140,8 @@ public class SQLRetry {
        }
        e.printStackTrace();
      }
- 
-      System.out.println("finesh......"); 
+
+      System.out.println("finesh......");
      return retValue;
    }
 
@@ -157,20 +157,20 @@ public class SQLRetry {
   boolean ret = QueryRedo(conn);
   if(ret == false){
    System.out.println("retry, time:" + time);
-   Thread.sleep(10000); 
+   Thread.sleep(10000);
    QueryRedo(conn);
   }
              } catch (Exception e) {
                  e.printStackTrace();
              }
-         } while (null == result && time < maxRetryTime); 
- 
+         } while (null == result && time < maxRetryTime);
+
    }
 
    /**
     * 主程序，逐步调用各静态方法。
     * @param args
-    * @throws InterruptedException 
+    * @throws InterruptedException
     */
    public static void main(String[] args) throws InterruptedException {
      //创建数据库连接。
@@ -196,4 +196,3 @@ public class SQLRetry {
 
  }
 ```
-

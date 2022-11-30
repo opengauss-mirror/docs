@@ -42,10 +42,9 @@ openGauss=# CREATE DATA SOURCE ds_tst1;
 
 --删除Data Source对象。
 openGauss=# DROP DATA SOURCE ds_tst1 CASCADE;
-openGauss=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT; 
+openGauss=# DROP DATA SOURCE IF EXISTS ds_tst1 RESTRICT;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136822_zh-cn_topic_0237122135_section191190297715"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[ALTER DATA SOURCE](ALTER-DATA-SOURCE.md)
-

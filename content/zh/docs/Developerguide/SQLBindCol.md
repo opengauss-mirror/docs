@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sc0a085a7e70b42b49cf7383da395ecff"></a>
 
 ```
-SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,    
-                     SQLUSMALLINT   ColumnNumber,     
+SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
+                     SQLUSMALLINT   ColumnNumber,
                      SQLSMALLINT    TargetType,
                      SQLPOINTER     TargetValuePtr,
                      SQLLEN     BufferLength,
@@ -73,4 +73,3 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_sd5d16919fd6141598535fc735a91d4df"></a>
 
 参见：[示例](示例-2.md)
-

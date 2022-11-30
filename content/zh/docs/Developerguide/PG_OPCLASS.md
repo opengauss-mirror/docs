@@ -102,4 +102,3 @@ PG\_OPCLASS系统表定义索引访问方法操作符类。
 </table>
 
 一个操作符类的opcmethod必须匹配包含它的操作符族的opfmethod。
-

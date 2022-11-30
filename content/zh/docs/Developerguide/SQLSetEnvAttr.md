@@ -8,8 +8,8 @@
 
 ```
 SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
-                        SQLINTEGER    Attribute,    
-                        SQLPOINTER    ValuePtr,     
+                        SQLINTEGER    Attribute,
+                        SQLPOINTER    ValuePtr,
                         SQLINTEGER    StringLength);
 ```
 
@@ -62,4 +62,3 @@ SQLRETURN SQLSetEnvAttr(SQLHENV       EnvironmentHandle
 ## 示例<a name="zh-cn_topic_0238272902_zh-cn_topic_0237120432_zh-cn_topic_0059778852_s54d045c03fcc414bab03c37ea6e4da08"></a>
 
 参见：[示例](示例-2.md)
-

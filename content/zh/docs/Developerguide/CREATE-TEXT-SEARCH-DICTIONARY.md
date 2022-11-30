@@ -125,7 +125,7 @@ CREATE TEXT SEARCH DICTIONARY name (
             词典定义文件所在目录。可以指定为本地目录或者OBS目录（只能在安全模式下指定OBS目录，通过启动时添加securitymode选项进入安全模式）。其中，本地目录格式为“file://absolute\_path”，OBS目录格式为“obs://bucket\_name/path accesskey=ak secretkey=sk region=rg”。默认值为预定义词典文件所在目录。FILEPATH参数必须和STOPWORDS参数同时指定，不允许单独指定。
 
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >词典定义文件的文件名仅支持小写字母、数据、下划线混合。
 
 -   **value**
@@ -140,4 +140,3 @@ CREATE TEXT SEARCH DICTIONARY name (
 ## 相关链接<a name="zh-cn_topic_0283137272_zh-cn_topic_0237122122_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [ALTER TEXT SEARCH DICTIONARY](ALTER-TEXT-SEARCH-DICTIONARY.md)，[CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)
-

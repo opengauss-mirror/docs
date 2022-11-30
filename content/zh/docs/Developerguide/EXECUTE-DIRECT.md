@@ -51,7 +51,7 @@ EXECUTE DIRECT ON { COORDINATORS | DATANODES | ALL } query;
 ```
 --查询当前数据库实例的节点分布状态。
 openGauss=# SELECT * FROM pgxc_node;
- node_name   | node_type | node_port |   node_host    | node_port1 |   node_host1   | hostis_primary | nodeis_primary | nodeis_preferred |   node_id   | sctp_port | control_port | sctp_port1 | control_port1 
+ node_name   | node_type | node_port |   node_host    | node_port1 |   node_host1   | hostis_primary | nodeis_primary | nodeis_preferred |   node_id   | sctp_port | control_port | sctp_port1 | control_port1
 --------------+-----------+-----------+----------------+------------+----------------+----------------+----------------+------------------+-------------+-----------+--------------+------------+---------------
  cn_5001      | C         |      8050 | 10.180.155.74  |       8050 | 10.180.155.74  | t              | f              | f                |  1120683504 |         0 |            0 |          0 |             0
  cn_5003      | C         |      8050 | 10.180.157.130 |       8050 | 10.180.157.130 | t              | f              | f                |  -125853378 |         0 |            0 |          0 |             0
@@ -63,16 +63,15 @@ openGauss=# SELECT * FROM pgxc_node;
 
 --查询dn_6001_6002上tpcds.customer_address记录。
 openGauss=# EXECUTE DIRECT ON(dn_6001_6002) 'select count(*) from tpcds.customer_address';
- count 
+ count
 -------
  16922
 (1 row)
 
 --查询tpcds.customer_address所有记录。
 openGauss=# SELECT count(*) FROM tpcds.customer_address;
- count 
+ count
 -------
  50000
 (1 row)
 ```
-

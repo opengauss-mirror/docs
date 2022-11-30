@@ -8,8 +8,8 @@
 
 ```
 SQLRETURN SQLSetStmtAttr(SQLHSTMT      StatementHandle
-                         SQLINTEGER    Attribute,    
-                         SQLPOINTER    ValuePtr,     
+                         SQLINTEGER    Attribute,
+                         SQLPOINTER    ValuePtr,
                          SQLINTEGER    StringLength);
 ```
 
@@ -61,4 +61,3 @@ SQLRETURN SQLSetStmtAttr(SQLHSTMT      StatementHandle
 ## 示例<a name="zh-cn_topic_0238272903_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 参见：[示例](示例-2.md)
-

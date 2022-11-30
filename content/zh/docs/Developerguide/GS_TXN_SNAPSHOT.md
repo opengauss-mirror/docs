@@ -43,4 +43,3 @@ GS\_TXN\_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护�
 </tr>
 </tbody>
 </table>
-

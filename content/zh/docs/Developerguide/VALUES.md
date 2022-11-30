@@ -59,4 +59,3 @@ VALUES {( expression [, ...] )} [, ...]
 ## 示例<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_sdb42dc749d654038b498d0f77883ae8a"></a>
 
 请参见INSERT的[示例](INSERT.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d)。
-

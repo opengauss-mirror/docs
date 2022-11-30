@@ -16,8 +16,8 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 
 ```
 CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
-    [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
-    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
+    [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
+    [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ]
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
@@ -53,7 +53,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为1，表示一次只能生成一个值，也就是没有缓存。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >不建议同时定义cache和maxvalue或minvalue。因为定义cache后不能保证序列的连续性，可能会产生空洞，造成序列号段浪费。
 
 -   **CYCLE**
@@ -74,7 +74,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为OWNED BY NONE，表示不存在这样的关联。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。
 
 
@@ -92,7 +92,7 @@ openGauss=# CREATE SEQUENCE serial
 
 ```
 openGauss=# SELECT nextval('serial');
- nextval 
+ nextval
  ---------
       101
 ```
@@ -101,7 +101,7 @@ openGauss=# SELECT nextval('serial');
 
 ```
 openGauss=# SELECT nextval('serial');
- nextval 
+ nextval
  ---------
       102
 ```
@@ -123,7 +123,7 @@ openGauss=# CREATE TABLE customer_address
     ca_zip                    char(10)                      ,
     ca_country                varchar(20)                   ,
     ca_gmt_offset             decimal(5,2)                  ,
-    ca_location_type          char(20)                     
+    ca_location_type          char(20)
 );
 
 openGauss=# CREATE SEQUENCE serial1
@@ -139,4 +139,3 @@ openGauss=# DROP SEQUENCE serial1 cascade;
 ## 相关链接<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section184942174514"></a>
 
 [DROP SEQUENCE](DROP-SEQUENCE.md)，[ALTER SEQUENCE](ALTER-SEQUENCE.md)
-

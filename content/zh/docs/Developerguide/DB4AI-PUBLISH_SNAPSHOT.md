@@ -36,4 +36,3 @@ PUBLISH\_SNAPSHOT是DB4AI特性用于发布快照的接口函数。通过语法P
 </tr>
 </tbody>
 </table>
-

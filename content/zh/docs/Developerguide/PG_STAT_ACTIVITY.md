@@ -189,6 +189,3 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </tr>
 </tbody>
 </table>
-
-
-

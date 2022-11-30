@@ -27,5 +27,3 @@
     ```
     ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
-
-

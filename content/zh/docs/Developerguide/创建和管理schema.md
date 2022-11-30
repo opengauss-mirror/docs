@@ -61,7 +61,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
 
         ```
         openGauss=# SELECT * FROM myschema.mytable;
-        id | name 
+        id | name
         ----+------
         (0 rows)
         ```
@@ -106,7 +106,7 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
 
         ```
         openGauss=# SELECT current_schema();
-         current_schema 
+         current_schema
         ----------------
          myschema
         (1 row)
@@ -150,6 +150,3 @@ schema又称作模式。通过管理schema，允许多个用户使用同一数�
         openGauss=# DROP USER jack;
         DROP ROLE
         ```
-
-
-

@@ -21,14 +21,14 @@
 -   修改模式的名称。
 
     ```
-    ALTER SCHEMA schema_name 
+    ALTER SCHEMA schema_name
         RENAME TO new_name;
     ```
 
 -   修改模式的所有者。
 
     ```
-    ALTER SCHEMA schema_name 
+    ALTER SCHEMA schema_name
         OWNER TO new_owner;
     ```
 
@@ -85,4 +85,3 @@ openGauss=# DROP USER jack;
 ## 相关链接<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
 [CREATE SCHEMA](CREATE-SCHEMA.md)，[DROP SCHEMA](DROP-SCHEMA.md)
-

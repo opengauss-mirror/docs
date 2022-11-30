@@ -44,4 +44,3 @@ GS\_DB\_PRIVILEGE系统表记录ANY权限的授予情况，每条记录对应一
 </tr>
 </tbody>
 </table>
-

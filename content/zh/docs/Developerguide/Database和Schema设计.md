@@ -18,4 +18,3 @@ openGauss中可以使用Database和Schema实现业务的隔离，区别在于Dat
 -   【关注】如果该用户不具有sysadmin权限或者不是该Schema的owner，要访问Schema下的对象，需要同时给用户赋予Schema的usage权限和对象的相应权限。
 -   【关注】如果要在Schema下创建对象，需要授予操作用户该Schema的create权限。
 -   【关注】Schema的owner默认拥有该Schema下对象的所有权限，包括删除权限。删除权限影响较大，请谨慎使用。
-

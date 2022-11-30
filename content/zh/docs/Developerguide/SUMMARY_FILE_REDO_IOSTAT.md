@@ -64,4 +64,3 @@ openGauss内汇聚所有的Redo（WAL）相关的统计信息。
 </tr>
 </tbody>
 </table>
-

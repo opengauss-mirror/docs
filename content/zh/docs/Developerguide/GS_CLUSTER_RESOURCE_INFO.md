@@ -64,4 +64,3 @@ GS\_CLUSTER\_RESOURCE\_INFO视图显示的是所有DN资源的汇总信息。该
 </tr>
 </tbody>
 </table>
-

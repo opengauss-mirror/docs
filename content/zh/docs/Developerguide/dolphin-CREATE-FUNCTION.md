@@ -57,7 +57,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
     CREATE [ OR REPLACE  ] FUNCTION function_name
         ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }
       [, ...]  ] )
-        RETURN rettype 
+        RETURN rettype
         [
             {IMMUTABLE  | STABLE  | VOLATILE }
             | {SHIPPABLE | NOT SHIPPABLE}
@@ -88,7 +88,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 - **SQL SECURITY INVOKER**
 
    表明该函数将带着调用它的用户的权限执行。该参数可以省略。
-   
+
    SQL SECURITY INVOKER和SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
 
 - **SQL SECURITY DEFINER**
@@ -105,35 +105,35 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 
 ```
 --指定 CONTAINS SQL
-openGauss=# CREATE FUNCTION func_test (s CHAR(20)) RETURNS int  
+openGauss=# CREATE FUNCTION func_test (s CHAR(20)) RETURNS int
 CONTAINS SQL AS $$ select 1 $$ ;
 
 --指定 DETERMINISTIC
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int 
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 CONTAINS SQL DETERMINISTIC  AS $$ select s; $$ ;
 
 --指定 LANGUAGE SQL
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 CONTAINS SQL LANGUAGE SQL AS $$ select s; $$ ;
 
 --指定 NO SQL
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 NO SQL AS $$ select s; $$ ;
 
 --指定  READS SQL DATA
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int 
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 CONTAINS SQL  READS SQL DATA  AS $$ select s; $$ ;
 
 --指定 MODIFIES SQL DATA
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 CONTAINS SQL LANGUAGE SQL NO SQL  MODIFIES SQL DATA AS $$ select s; $$ ;
 
 --指定 SECURITY DEFINER
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int 
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 NO SQL SQL SECURITY DEFINER AS $$ select s; $$ ;
 
 --指定 SECURITY INVOKER
-openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
+openGauss=# CREATE FUNCTION func_test (s int) RETURNS int
 SQL SECURITY INVOKER  READS SQL DATA LANGUAGE SQL AS $$ select s; $$ ;
 ```
 
@@ -142,4 +142,3 @@ SQL SECURITY INVOKER  READS SQL DATA LANGUAGE SQL AS $$ select s; $$ ;
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [CREATE FUNCTION](CREATE-FUNCTION.md)
-

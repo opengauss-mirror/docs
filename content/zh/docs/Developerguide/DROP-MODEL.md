@@ -25,4 +25,3 @@ model\_name
 ## 相关链接<a name="section3791104752012"></a>
 
 [CREATE MODEL](CREATE-MODEL.md)，[PREDICT BY](PREDICT-BY.md)
-

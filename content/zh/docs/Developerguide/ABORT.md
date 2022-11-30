@@ -51,11 +51,11 @@ openGauss=# START TRANSACTION;
 openGauss=# UPDATE customer_demographics_t1 SET cd_education_status= 'Unknown';
 
 --终止事务，上面所执行的更新会被撤销掉。
-openGauss=# ABORT; 
+openGauss=# ABORT;
 
 --查询数据。
 openGauss=# SELECT * FROM customer_demographics_t1 WHERE cd_demo_sk = 1920801;
-cd_demo_sk | cd_gender | cd_marital_status | cd_education_status  | cd_purchase_estimate | cd_credit_rating | cd_dep_count | cd_dep_employed_count | cd_dep_college_count 
+cd_demo_sk | cd_gender | cd_marital_status | cd_education_status  | cd_purchase_estimate | cd_credit_rating | cd_dep_count | cd_dep_employed_count | cd_dep_college_count
 ------------+-----------+-------------------+----------------------+----------------------+------------------+--------------+-----------------------+----------------------
     1920801 | M         | U                 | DOCTOR DEGREE        |                  200 | GOOD             |            1 |                     0 |                    0
 (1 row)
@@ -67,4 +67,3 @@ openGauss=# DROP TABLE customer_demographics_t1;
 ## 相关链接<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s51afa4e9c2fd4b07b11d4eb49fe546b8"></a>
 
 [SET TRANSACTION](SET-TRANSACTION.md)，[COMMIT | END](COMMIT-END.md)，[ROLLBACK](ROLLBACK.md)
-

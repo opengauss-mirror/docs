@@ -30,4 +30,3 @@ DROP PROCEDURE [ IF EXISTS  ] procedure_name ;
 ## 相关链接<a name="zh-cn_topic_0283137697_zh-cn_topic_0237122145_zh-cn_topic_0059778377_s79db76d7068b489c8b96c2c51494ee04"></a>
 
 [CREATE PROCEDURE](CREATE-PROCEDURE.md)
-

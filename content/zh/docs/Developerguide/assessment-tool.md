@@ -19,7 +19,7 @@
    - 不支持评估：未考虑的语句。后续会陆续支持语句评估（例如create database等跨数据库影响语句）。
 
    - 忽略语句：注释等。
-   
+
 <font color='red'>对于A兼容数据库，在作SQL语句导出时，最好提前作如下设置：</font>
 ```sql
 EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'SEGMENT_ATTRIBUTES',false);
@@ -148,7 +148,7 @@ assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -o
 - 语法兼容：openGauss支持该语法，但是实际使用过程中可能包含字段类型不支持、函数不存在等问题。
 
 - 语句不兼容：openGauss不支持该语法。
- 
+
 - 不支持评估：未考虑的语句。后续会陆续支持语句评估（例如create database等跨数据库影响语句）。
 
 ### 原理
@@ -158,4 +158,3 @@ assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -o
 3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create extension`创建必要的插件。（如`assessment`、`dolphin`）。
 4. 如果指定`-d database`方式，工具会在对应数据库创建插件。
 5. 在对应评估数据库评估。评估类型包含：语法树兼容评估、实际语句是否兼容评估。
-

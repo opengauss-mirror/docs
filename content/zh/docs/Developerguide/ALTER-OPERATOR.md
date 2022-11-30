@@ -51,4 +51,3 @@ ALTER OPERATOR @@ (text, text) OWNER TO joe;
 ## 兼容性<a name="section135891317111410"></a>
 
 SQL 标准里没有ALTER OPERATOR语句。
-

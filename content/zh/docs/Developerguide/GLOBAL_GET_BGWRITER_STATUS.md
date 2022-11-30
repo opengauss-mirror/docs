@@ -57,4 +57,3 @@ GLOBAL\_GET\_BGWRITER\_STATUS视图显示所有实例bgwriter线程刷页信息�
 </tr>
 </tbody>
 </table>
-

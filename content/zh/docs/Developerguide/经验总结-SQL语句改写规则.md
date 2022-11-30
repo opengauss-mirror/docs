@@ -53,5 +53,3 @@
     -   作业中多个SQL有同样的子查询，并且子查询数据量较大。
     -   Plan cost计算不准，导致子查询hash bucket太小，比如实际数据1000W行，hash bucket只有1000。
     -   函数（如substr、to\_number）导致大数据量子查询选择度计算不准。
-
-

@@ -50,4 +50,3 @@ PG\_PREPARED\_STATEMENTS视图显示当前会话所有可用的预备语句。
 </tr>
 </tbody>
 </table>
-

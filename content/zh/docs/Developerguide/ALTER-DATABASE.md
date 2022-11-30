@@ -18,42 +18,42 @@
 -   修改数据库的最大连接数。
 
     ```
-    ALTER DATABASE database_name 
+    ALTER DATABASE database_name
         [ [ WITH ] CONNECTION LIMIT connlimit ];
     ```
 
 -   修改数据库名称。
 
     ```
-    ALTER DATABASE database_name 
+    ALTER DATABASE database_name
         RENAME TO new_name;
     ```
 
 -   修改数据库所属者。
 
     ```
-    ALTER DATABASE database_name 
+    ALTER DATABASE database_name
         OWNER TO new_owner;
     ```
 
 -   修改数据库默认表空间。
 
     ```
-    ALTER DATABASE database_name 
+    ALTER DATABASE database_name
         SET TABLESPACE new_tablespace;
     ```
 
 -   修改数据库指定会话参数值。
 
     ```
-    ALTER DATABASE database_name 
+    ALTER DATABASE database_name
         SET configuration_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT };
     ```
 
 -   数据库配置参数重置。
 
     ```
-    ALTER DATABASE database_name RESET 
+    ALTER DATABASE database_name RESET
         { configuration_parameter | ALL };
     ```
 
@@ -64,7 +64,7 @@
     ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   修改数据库的对象隔离属性时须连接至该数据库，否则无法更改。
     >
@@ -128,7 +128,7 @@
     重置全部的数据库会话参数值。
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   修改数据库默认表空间，会将旧表空间中的所有表和索引转移到新表空间中，该操作不会影响其他非默认表空间中的表和索引。
 >
@@ -141,4 +141,3 @@
 ## 相关链接<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_saa1e5193215b4927989f304541d2ecbd"></a>
 
 [CREATE DATABASE](CREATE-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
-

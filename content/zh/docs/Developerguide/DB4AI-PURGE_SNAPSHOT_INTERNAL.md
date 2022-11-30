@@ -29,4 +29,3 @@ PURGE\_SNAPSHOT\_INTERNAL是DB4AI.PURGE\_SNAPSHOT函数的内置执行函数。�
 </tr>
 </tbody>
 </table>
-

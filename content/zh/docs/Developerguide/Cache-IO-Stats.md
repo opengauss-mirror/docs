@@ -124,4 +124,3 @@ Cache IO Stats包含User table和User index两张表，列名称及描述如下�
 </tr>
 </tbody>
 </table>
-

@@ -57,4 +57,3 @@ CREATE [ DEFAULT ] CONVERSION name
 --使用myfunc创建一个编码UTF8到LATIN1的转换。
 CREATE CONVERSION myconv FOR 'URF8' TO 'LATIN1' FROM myfunc;
 ```
-

@@ -38,4 +38,3 @@ DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [ALTER VIEW](ALTER-VIEW.md)，[CREATE VIEW](CREATE-VIEW.md)
-

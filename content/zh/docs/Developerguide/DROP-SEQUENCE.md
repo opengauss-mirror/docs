@@ -47,4 +47,3 @@ openGauss=# DROP SEQUENCE serial;
 ## 相关链接<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section365162034413"></a>
 
 [ALTER SEQUENCE](ALTER-SEQUENCE.md)，  [CREATE SEQUENCE](CREATE-SEQUENCE.md)
-

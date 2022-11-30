@@ -48,7 +48,7 @@ SET类型是一种包含字符串成员的集合类型，在表字段创建时�
 
     ```
     openGauss=# select * from employee;
-       name   |      site       
+       name   |      site
     ----------+-----------------
      zhangsan | beijing,nanjing
     (1 rows)
@@ -104,11 +104,9 @@ SET类型是一种包含字符串成员的集合类型，在表字段创建时�
     openGauss=# INSERT INTO employee values('lisi', 9);
     INSERT 0 1
     openGauss=# select * from employee;
-       name   |      site       
+       name   |      site
     ----------+-----------------
      zhangsan | beijing,nanjing
      lisi     | beijing,wuhan
     (2 rows)
     ```
-
-

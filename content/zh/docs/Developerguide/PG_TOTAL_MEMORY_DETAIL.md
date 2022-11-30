@@ -36,4 +36,3 @@ PG\_TOTAL\_MEMORY\_DETAIL视图显示某个数据库节点内存使用情况。
 </tr>
 </tbody>
 </table>
-

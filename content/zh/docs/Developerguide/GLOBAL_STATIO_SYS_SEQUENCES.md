@@ -57,4 +57,3 @@ GLOBAL\_STATIO\_SYS\_SEQUENCES视图显示各节点的命名空间中所有系�
 </tr>
 </tbody>
 </table>
-

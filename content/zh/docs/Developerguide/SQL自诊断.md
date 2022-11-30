@@ -51,4 +51,3 @@ Statistic Not Collect:
     ```
 
 2.  如果query存在limit节点（即查询语句中包含limit），则不会上报limit节点以下的Operator级别的告警。
-

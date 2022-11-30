@@ -36,4 +36,3 @@ DROP SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_sc10e825d28c44222b38ad09aeaa385d2"></a>
 
 [ALTER SYNONYM](ALTER-SYNONYM.md)，[CREATE SYNONYM](CREATE-SYNONYM.md)
-

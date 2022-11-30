@@ -35,12 +35,12 @@ openGauss=# ROLLBACK TO SAVEPOINT my_savepoint;
 openGauss=# DECLARE foo CURSOR FOR SELECT 1 UNION SELECT 2;
 openGauss=# SAVEPOINT foo;
 openGauss=# FETCH 1 FROM foo;
- ?column? 
+ ?column?
 ----------
         1
 openGauss=# ROLLBACK TO SAVEPOINT foo;
 openGauss=# FETCH 1 FROM foo;
- ?column? 
+ ?column?
 ----------
         2
 openGauss=# RELEASE SAVEPOINT my_savepoint;
@@ -50,4 +50,3 @@ openGauss=# COMMIT;
 ## 相关链接<a name="zh-cn_topic_0283137625_zh-cn_topic_0237122182_zh-cn_topic_0059778869_section3863621131515"></a>
 
 [SAVEPOINT](SAVEPOINT.md)，[RELEASE SAVEPOINT](RELEASE-SAVEPOINT.md)
-

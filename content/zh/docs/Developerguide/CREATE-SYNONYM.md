@@ -18,7 +18,7 @@
 ## 语法格式<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
 ```
-CREATE [ OR REPLACE ] SYNONYM synonym_name 
+CREATE [ OR REPLACE ] SYNONYM synonym_name
     FOR object_name;
 ```
 
@@ -36,7 +36,7 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
 
     取值范围：字符串，要符合标识符的命名规范。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >object\_name可以是不存在的对象名称。
 
 
@@ -106,4 +106,3 @@ openGauss=# DROP SCHEMA ot CASCADE;
 ## 相关链接<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059778825_section184942174514"></a>
 
 [ALTER SYNONYM](ALTER-SYNONYM.md)，[DROP SYNONYM](DROP-SYNONYM.md)
-

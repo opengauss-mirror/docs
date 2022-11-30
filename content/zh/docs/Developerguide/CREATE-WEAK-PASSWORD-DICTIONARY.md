@@ -14,7 +14,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_s77068dc6043742e086ef7bfea9075223"></a>
 
 ```
-CREATE WEAK PASSWORD DICTIONARY        
+CREATE WEAK PASSWORD DICTIONARY
        [WITH VALUES] ( {'weak_password'} [, ...] );
 ```
 
@@ -29,20 +29,19 @@ weak\_password
 ## 示例<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_s5587dfafbfee44509237e4eb718ccc55"></a>
 
 ```
---向gs_global_config系统表中插入单个弱口令。 
-openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password1');  
+--向gs_global_config系统表中插入单个弱口令。
+openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password1');
 
---向gs_global_config系统表中插入多个弱口令。 
-openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password2'),('password3');  
+--向gs_global_config系统表中插入多个弱口令。
+openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password2'),('password3');
 
---清空gs_global_config系统表中所有弱口令。 
-openGauss=# DROP WEAK PASSWORD DICTIONARY;  
+--清空gs_global_config系统表中所有弱口令。
+openGauss=# DROP WEAK PASSWORD DICTIONARY;
 
---查看现有弱口令。 
+--查看现有弱口令。
 openGauss=# SELECT * FROM gs_global_config WHERE NAME LIKE 'weak_password';
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137390_zh-cn_topic_0237122128_zh-cn_topic_0059778820_sb9bc0f8b2b464231a9dc551fa79f0485"></a>
 
 [DROP WEAK PASSWORD DICTIONARY](DROP-WEAK-PASSWORD-DICTIONARY.md)
-

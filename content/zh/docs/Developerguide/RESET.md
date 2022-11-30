@@ -60,4 +60,3 @@ openGauss=# RESET ALL;
 ## 相关链接<a name="zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_s97f0691750e2467d97f3e904047703d7"></a>
 
 [SET](SET.md)，[SHOW](SHOW.md)
-

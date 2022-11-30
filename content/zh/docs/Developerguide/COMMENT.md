@@ -151,4 +151,3 @@ openGauss=# DROP VIEW tpcds.customer_details_view_v2;
 -- 删除tpcds.customer_demographics_t2。
 openGauss=# DROP TABLE tpcds.customer_demographics_t2;
 ```
-

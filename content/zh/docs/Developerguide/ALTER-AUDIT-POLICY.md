@@ -14,7 +14,7 @@
 ```
 ALTER AUDIT POLICY [ IF EXISTS ] policy_name { ADD | REMOVE } { [ privilege_audit_clause ] [ access_audit_clause ] };
 ALTER AUDIT POLICY [ IF EXISTS ] policy_name MODIFY ( filter_group_clause );
-ALTER AUDIT POLICY [ IF EXISTS ] policy_name DROP FILTER; 
+ALTER AUDIT POLICY [ IF EXISTS ] policy_name DROP FILTER;
 ALTER AUDIT POLICY [ IF EXISTS ] policy_name COMMENTS policy_comments;
 ALTER AUDIT POLICY [ IF EXISTS ] policy_name { ENABLE | DISABLE };
 ```
@@ -85,4 +85,3 @@ ALTER AUDIT POLICY [ IF EXISTS ] policy_name { ENABLE | DISABLE };
 ## 相关链接<a name="section156744489391"></a>
 
 [CREATE AUDIT POLICY](CREATE-AUDIT-POLICY.md)，[DROP AUDIT POLICY](DROP-AUDIT-POLICY.md)。
-

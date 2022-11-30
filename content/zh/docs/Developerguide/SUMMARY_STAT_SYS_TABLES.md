@@ -155,4 +155,3 @@ openGauss内汇聚pg\_catalog、information\_schema以及pg_toast模式下的所
 </tr>
 </tbody>
 </table>
-

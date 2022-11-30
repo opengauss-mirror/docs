@@ -85,4 +85,3 @@ SUMMARY\_STATIO\_ALL\_TABLES视图将包含openGauss内汇聚的数据库中每�
 </tr>
 </tbody>
 </table>
-

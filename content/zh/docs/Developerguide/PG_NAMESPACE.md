@@ -64,5 +64,3 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 </tr>
 </tbody>
 </table>
-
-

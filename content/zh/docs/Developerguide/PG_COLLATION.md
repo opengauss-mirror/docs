@@ -80,4 +80,3 @@ PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称�
 </tr>
 </tbody>
 </table>
-

@@ -30,7 +30,7 @@
     -   openGauss数据库实例所在主机的时区。
     -   openGauss数据库实例配置过程中时区。
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >时区设置相关的操作，请参考《安装指南》中“企业版安装>安装准备>准备软硬件安装环境> 同步系统时间”章节内容。
 
 
@@ -57,4 +57,3 @@
 ## CopyManager<a name="section1624965810277"></a>
 
 【建议】在不使用ETL工具，数据入库实时性要求又比较高的情况下，建议在开发应用程序时，使用openGauss JDBC驱动的copyManger接口进行微批导入。
-

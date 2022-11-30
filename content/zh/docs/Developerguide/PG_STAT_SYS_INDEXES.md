@@ -71,4 +71,3 @@ PG\_STAT\_SYS\_INDEXES视图显示pg\_catalog、information\_schema模式中所�
 </tr>
 </tbody>
 </table>
-

@@ -169,4 +169,3 @@ PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包�
 </tr>
 </tbody>
 </table>
-

@@ -15,7 +15,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
 ```
-CREATE TEXT SEARCH CONFIGURATION name 
+CREATE TEXT SEARCH CONFIGURATION name
     ( PARSER = parser_name | COPY = source_config )
     [ WITH ( {configuration_option = value} [, ...] )];
 ```
@@ -38,7 +38,7 @@ CREATE TEXT SEARCH CONFIGURATION name
 
     文本搜索配置的配置参数，主要是针对parser\_name执行的解析器或者source\_config隐含的解析器而言的。
 
-    取值范围：目前共支持default、ngram两种类型的解析器，其中default类型的解析器没有对应的configuration\_option、ngram类型解析器对应的configuration\_option如[表1](#zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_t0d301ca84e1a4c16ae8bead85aa1a8c3)所示。 
+    取值范围：目前共支持default、ngram两种类型的解析器，其中default类型的解析器没有对应的configuration\_option、ngram类型解析器对应的configuration\_option如[表1](#zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_t0d301ca84e1a4c16ae8bead85aa1a8c3)所示。
 
     **表 1**  ngram类型解析器对应的配置参数
 
@@ -120,4 +120,3 @@ openGauss=# DROP ROLE IF EXISTS joe;
 ## 相关链接<a name="zh-cn_topic_0283137399_zh-cn_topic_0237122121_zh-cn_topic_0059777835_s0205fc5b18e94f51af91402258be4747"></a>
 
 [ALTER TEXT SEARCH CONFIGURATION](ALTER-TEXT-SEARCH-CONFIGURATION.md)，  [DROP TEXT SEARCH CONFIGURATION](DROP-TEXT-SEARCH-CONFIGURATION.md)
-

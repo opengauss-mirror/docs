@@ -3,9 +3,9 @@
 ## 现象描述<a name="zh-cn_topic_0075873755_section58732893101941"></a>
 
 ```
-select 
+select
     1,
-    (select count(*) from normal_date n where n.id = a.id) as GZCS 
+    (select count(*) from normal_date n where n.id = a.id) as GZCS
 from normal_date a;
 ```
 
@@ -29,8 +29,8 @@ from normal_date a;
 此优化的核心就是消除子查询。分析业务场景发现_a**.**id_不为null，那么从SQL语义出发，可以等价改写SQL为：
 
 ```
-select 
-count(*) 
+select
+count(*)
 from normal_date n, normal_date a
 where n.id = a.id
 group by  a.id;
@@ -49,6 +49,5 @@ group by  a.id;
 (9 rows)
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >为了保证改写的等效性，在_normal\_date.id_加了_not null_约束。
-

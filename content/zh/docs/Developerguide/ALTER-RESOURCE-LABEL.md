@@ -11,7 +11,7 @@
 ## 语法格式<a name="zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
 ```
-ALTER RESOURCE LABEL label_name (ADD|REMOVE) 
+ALTER RESOURCE LABEL label_name (ADD|REMOVE)
   label_item_list[, ...]*;
 ```
 
@@ -64,4 +64,3 @@ openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1)
 ## 相关链接<a name="section156744489391"></a>
 
 [CREATE RESOURCE LABEL](CREATE-RESOURCE-LABEL.md),，[DROP RESOURCE LABEL](DROP-RESOURCE-LABEL.md)。
-

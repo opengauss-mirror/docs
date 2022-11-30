@@ -2,8 +2,8 @@
 
 如上文所述，AI4DB主要用于对数据库进行自治运维和管理，从而帮助数据库运维人员减少运维工作量。在实现上，DBMind的AI4DB框架具有监控和服务化的性质，同时也提供即时AI工具包，提供开箱即用的AI运维功能（如索引推荐）。AI4DB的监控平台以开源的Prometheus为主，DBMind提供监控数据生产者exporter, 可与Prometheus平台完成对接。DBMind的AI4DB服务架构如下图所示：
 
-**图 1**  DBMind AI4DB服务架构<a name="fig1555795823612"></a>  
-![](figures/DBMind-AI4DB服务架构.png "DBMind-AI4DB服务架构")
+**图 1**  DBMind AI4DB服务架构<a name="fig1555795823612"></a>
+![](figures/DBMind-AI4DB-service-architecture.png "DBMind-AI4DB服务架构")
 
 图中各关键组件说明：
 
@@ -25,10 +25,8 @@ pip install requirements-x86.txt
 
 如果用户没有安装齐全所需的依赖，则当用户执行gs\_dbmind命令时，会再次提醒用户安装第三方依赖。需要注意，该文件提供了DBMind所需的第三方依赖，若用户环境存在第三方包冲突等情况，可由用户根据实际情况进行处理。
 
--   **[DBMind模式说明](DBMind模式说明.md)**  
+-   **[DBMind模式说明](DBMind模式说明.md)**
 
--   **[DBMind的支持组件](DBMind的支持组件.md)**  
+-   **[DBMind的支持组件](DBMind的支持组件.md)**
 
--   **[DBMind的AI子功能](DBMind的AI子功能.md)**  
-
-
+-   **[DBMind的AI子功能](DBMind的AI子功能.md)**

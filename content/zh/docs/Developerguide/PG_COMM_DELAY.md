@@ -66,4 +66,3 @@ PG\_COMM\_DELAY视图展示单个节点的通信库时延状态。
 </tr>
 </tbody>
 </table>
-

@@ -6,4 +6,3 @@
 4.  不再需要智能统计模型的时候，使用ALTER TABLE \[table\_name\] DELETE STATISTICS \(\(\[column\_name,\]\)\)进行统计信息以及模型删除。
 
 其他使用的方法详见SQL接口章节[ALTER TABLE](zh-cn_topic_0289899912.md)和[ANALYZE | ANALYSE](zh-cn_topic_0289900881.md)。
-

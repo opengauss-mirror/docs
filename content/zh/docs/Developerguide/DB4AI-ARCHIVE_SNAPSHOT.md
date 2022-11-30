@@ -36,4 +36,3 @@ ARCHIVE\_SNAPSHOT是DB4AI特性用于存档快照的接口函数。通过语法A
 </tr>
 </tbody>
 </table>
-

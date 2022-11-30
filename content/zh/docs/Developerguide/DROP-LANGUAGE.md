@@ -40,4 +40,3 @@ DROP LANGUAGE plsample;
 ## 兼容性<a name="section446220148329"></a>
 
 SQL标准里没有DROP LANGUAGE语句。
-

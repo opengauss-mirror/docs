@@ -64,4 +64,3 @@ GS\_REDO\_STAT视图用于统计回话线程日志回放情况。
 </tr>
 </tbody>
 </table>
-

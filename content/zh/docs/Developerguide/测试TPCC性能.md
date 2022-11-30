@@ -4,10 +4,10 @@
 2.  将目录lib/postgresql下面的\*.jar 替换为openGauss适配的jar包。
 
     ```
-    $ pwd 
-    /your path/benchmarksql-5.0/lib/postgres 
-    $ ls 
-    postgresql.jar #openGauss jdbc驱动。 
+    $ pwd
+    /your path/benchmarksql-5.0/lib/postgres
+    $ ls
+    postgresql.jar #openGauss jdbc驱动。
     postgresql-9.3-1102.jdbc41.jar.bak    # 自带jar备份。
     ```
 
@@ -16,7 +16,7 @@
 3.  进入benchmarksql-5.0根目录，输入ant命令进行编译。
 
     ```
-    $ cd /your path/benchmarksql-5.0/ 
+    $ cd /your path/benchmarksql-5.0/
     $ ant
     ```
 
@@ -25,54 +25,54 @@
 4.  创建benchmarkSQL配置文件，使用benchmarkSQL前需要配置数据库相关的信息，包括数据库账号、密码、端口、数据库名称。
 
     ```
-    $ cd /your path/benchmarksql-5.0/run 
-    $ cp props.pg props.opengauss.1000w 
+    $ cd /your path/benchmarksql-5.0/run
+    $ cp props.pg props.opengauss.1000w
     $ vim props.opengauss.1000w
     ```
 
     从props.pg拷贝一份配置文件并按如下修改，斜体处请根据真实情况进行修改。
 
     ```
-    db=postgres 
-    driver=org.postgresql.Driver 
+    db=postgres
+    driver=org.postgresql.Driver
     // 修改连接字符串, 包含IP、端口号、数据库，其中8.92.4.238为数据库服务端的千兆网卡IP。
-    conn=jdbc:postgresql://8.92.4.238:21579/tpcc1000?prepareThreshold=1&batchMode=on&fetchsize=10 
+    conn=jdbc:postgresql://8.92.4.238:21579/tpcc1000?prepareThreshold=1&batchMode=on&fetchsize=10
     // 设置数据库登录用户和密码。
-    user=bot 
-    password=Gaussdba@Mpp 
-      
-    warehouses=1000 
-    loadWorkers=200 
-      
-    // 设置最大并发数量, 跟服务端最大work数对应。 
-    terminals=812 
+    user=bot
+    password=Gaussdba@Mpp
+
+    warehouses=1000
+    loadWorkers=200
+
+    // 设置最大并发数量, 跟服务端最大work数对应。
+    terminals=812
     //要为每个终端运行指定事务--runMins必须等于零
-    runTxnsPerTerminal=0 
+    runTxnsPerTerminal=0
     //要运行指定的分钟 - runTxnsPerTerminal必须等于零
-    runMins=5 
+    runMins=5
     //每分钟总事务数
-    limitTxnsPerMin=0 
-      
-     
+    limitTxnsPerMin=0
+
+
     //在4.x兼容模式下运行时，设置为True。
     //设置为false以均匀使用整个配置的数据库。
-    terminalWarehouseFixed=false 
-      
+    terminalWarehouseFixed=false
+
     //以下五个值相加之和为100。
     //45、43、4、4和4的默认百分比与TPC-C规范匹配。
-    newOrderWeight=45 
-    paymentWeight=43 
-    orderStatusWeight=4 
-    deliveryWeight=4 
-    stockLevelWeight=4 
-      
+    newOrderWeight=45
+    paymentWeight=43
+    orderStatusWeight=4
+    deliveryWeight=4
+    stockLevelWeight=4
+
     //创建文件夹以收集详细结果数据。
     //通过注释取消此内容。
-    resultDirectory=my_result_%tY-%tm-%td_%tH%tM%tS 
-    osCollectorScript=./misc/os_collector_linux.py 
-    osCollectorInterval=1 
+    resultDirectory=my_result_%tY-%tm-%td_%tH%tM%tS
+    osCollectorScript=./misc/os_collector_linux.py
+    osCollectorInterval=1
     //收集OS负载信息。
-    osCollectorSSHAddr=osuer@10.44.133.78    
+    osCollectorSSHAddr=osuer@10.44.133.78
     osCollectorDevices=net_enp3s0 blk_nvme0n1 blk_nvme1n1 blk_nvme2n1 blk_nvme3n1
     ```
 
@@ -83,12 +83,12 @@
     ```
     CREATE TABLESPACE example2 relative location 'tablespace2';
     CREATE TABLESPACE example3 relative location 'tablespace3';
-    
+
     create table bmsql_config (
       cfg_name    varchar(30),
       cfg_value   varchar(50)
     );
-    
+
     create table bmsql_warehouse (
       w_id        integer   not null,
       w_ytd       decimal(12,2),
@@ -100,7 +100,7 @@
       w_state     char(2),
       w_zip       char(9)
     ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_district (
       d_w_id       integer       not null,
       d_id         integer       not null,
@@ -114,7 +114,7 @@
       d_state      char(2),
       d_zip        char(9)
      ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_customer (
       c_w_id         integer        not null,
       c_d_id         integer        not null,
@@ -138,9 +138,9 @@
       c_middle       char(2),
       c_data         varchar(500)
     ) WITH (FILLFACTOR=80) tablespace example2;
-    
+
     create sequence bmsql_hist_id_seq;
-    
+
     create table bmsql_history (
       hist_id  integer,
       h_c_id   integer,
@@ -152,13 +152,13 @@
       h_amount decimal(6,2),
       h_data   varchar(24)
     ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_new_order (
       no_w_id  integer   not null,
       no_d_id  integer   not null,
       no_o_id  integer   not null
     ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_oorder (
       o_w_id       integer      not null,
       o_d_id       integer      not null,
@@ -169,7 +169,7 @@
       o_all_local  integer,
       o_entry_d    timestamp
     ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_order_line (
       ol_w_id         integer   not null,
       ol_d_id         integer   not null,
@@ -182,7 +182,7 @@
       ol_quantity     integer,
       ol_dist_info    char(24)
     ) WITH (FILLFACTOR=80);
-    
+
     create table bmsql_item (
       i_id     integer      not null,
       i_name   varchar(24),
@@ -190,7 +190,7 @@
       i_data   varchar(50),
       i_im_id  integer
     );
-    
+
     create table bmsql_stock (
       s_w_id       integer       not null,
       s_i_id       integer       not null,
@@ -216,8 +216,8 @@
     1.  创建数据库用户。
 
         ```
-        create user bot identified by 'Gaussdba@Mpp' profile default; 
-        alter user bot sysadmin; 
+        create user bot identified by 'Gaussdba@Mpp' profile default;
+        alter user bot sysadmin;
         create database tpcc1000 encoding 'UTF8' template=template0 owner tpcc5q;
         ```
 
@@ -236,8 +236,8 @@
     在性能测试过程中，为了增加IO的吞吐量，需要将数据分散到不同的存储介质上。由于机器上有4块NVME盘，可以将数据分散到不同的盘上。将pg\_xlog、tablespace2、tablespace3这三个目录放置在其他3个NVME盘上，并在原有的位置给出指向真实位置的软连接。pg\_xlog位于数据库目录下，tablespace2、tablespace3分别位于数据库目录pg\_location下。对tablespace2分盘的命令如下:
 
     ```
-    mv $DATA_DIR/pg_location/tablespace2 $TABSPACE2_DIR/tablespace2 
-    cd $DATA_DIR/pg_location/ 
+    mv $DATA_DIR/pg_location/tablespace2 $TABSPACE2_DIR/tablespace2
+    cd $DATA_DIR/pg_location/
     ln -svf $TABSPACE2_DIR/tablespace2 ./
     ```
 
@@ -266,4 +266,3 @@
     ![](figures/zh-cn_image_0263913310.png)
 
 11. 如果为了避免数据的干扰，需要进行重新测试，可以通过[步骤7](#li11139125793619)备份的数据通过拷贝的方式恢复数据。重复[步骤8](#li1840654753618)\~[步骤10](#li202511145123814)可以重新进行测试。
-

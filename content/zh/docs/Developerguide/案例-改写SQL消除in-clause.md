@@ -5,25 +5,25 @@
 in-clause/any-clause是常见的SQL语句约束条件，有时in或any后面的clause都是常量，类似于：
 
 ```
-select 
-count(1) 
-from calc_empfyc_c1_result_tmp_t1 
+select
+count(1)
+from calc_empfyc_c1_result_tmp_t1
 where ls_pid_cusr1 in (‘20120405’, ‘20130405’);
 ```
 
 或者
 
 ```
-select 
-count(1) 
-from calc_empfyc_c1_result_tmp_t1 
+select
+count(1)
+from calc_empfyc_c1_result_tmp_t1
 where ls_pid_cusr1 in any(‘20120405’, ‘20130405’);
 ```
 
 但是也有一些如下的特殊用法：
 
 ```
-SELECT 
+SELECT
 *
 FROM test1 t1, test2 t2
 WHERE t1.a = any(values(t2.a),(t2.b));
@@ -85,4 +85,3 @@ FROM (
  Total runtime: 7.759 ms
 (16 rows)
 ```
-

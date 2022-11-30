@@ -14,4 +14,3 @@
 DROP PACKAGE [ IF EXISTS ] package_name;
 DROP PACKAGE BODY [ IF EXISTS ] package_name;
 ```
-

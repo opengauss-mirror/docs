@@ -34,7 +34,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >condition和expression中可以使用targetlist中表达式的别名。
 >
 >-   只能同一层引用。
@@ -85,11 +85,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   其中指定分区partition\_clause为：
 
     ```
-    PARTITION { ( partition_name ) | 
+    PARTITION { ( partition_name ) |
             FOR (  partition_value [, ...] ) }
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >指定分区只适合普通表。
 
 - 其中设置排序方式nlssort\_expression\_clause为：
@@ -135,7 +135,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     ON \( expression \[, ...\] \) 只保留那些在给出的表达式上运算出相同结果的行集合中的第一行。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >DISTINCT ON表达式是使用与ORDER BY相同的规则进行解释的。除非使用了ORDER BY来保证需要的行首先出现，否则，“第一行” 是不可预测的。
 
 -   **SELECT列表**
@@ -285,7 +285,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     9.  “\(+\)”只能出现“比较表达式”，“NOT表达式”，“ANY表达式”，“ALL表达式”，“IN表达式”，“NULLIF表达式”，“IS DISTINCT FROM表达式”，“IS OF表达式”。“\(+\)”不能出现在其他类型表达式中，并且这些表达式中不允许出现通过“AND”和“OR”连接的表达式。
     10. “\(+\)”只能转化为左外连接或者右外连接，不能转化为全连接，即不能在一个表达式的两个表上同时指定“\(+\)”。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >对于WHERE子句的LIKE操作符，当LIKE中要查询特殊字符“%”、“\_”、“\\”的时候需要使用反斜杠“\\”来进行转义。
 
 -   **START WITH**
@@ -312,7 +312,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。 这样做可以通过裁剪用户不需要的数据组来提高效率。 当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数，因为对于未分组的字段，可能返回多个数值。
 
 -   **HAVING子句**
@@ -325,11 +325,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   ```
   [ existing\_window\_name \]
-  
+
   [ PARTITION BY expression \[, ...\] \]
-  
+
   [ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
-  
+
   [ frame\_clause \]
   ```
 
@@ -337,23 +337,23 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   ```
   [ RANGE | ROWS \] frame\_start
-  
+
   [ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
-  
+
   frame\_start和frame\_end可以是：
-  
+
   UNBOUNDED PRECEDING
-  
+
   value PRECEDING
-  
+
   CURRENT ROW
-  
+
   value FOLLOWING
-  
+
   UNBOUNDED FOLLOWING
   ```
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
 
 -   **UNION子句**
@@ -422,7 +422,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8、GB18030或GBK。命令如下:
     >
     >```
@@ -469,18 +469,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     如果一个表中同时出现（或隐含同时出现）在多个子句中，则按照最强的锁处理。类似的，如果影响一个表的任意子句中出现了NOWAIT，该表将按照NOWAIT处理。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >对列存表的查询不支持for update/share。
 
 -   **NLS\_SORT**
 
     指定某字段按照特殊方式排序。目前仅支持中文拼音格式排序和不区分大小写排序。如果要支持此排序方式，在创建数据库时需要指定编码格式为“UTF8”、”GB18030”或“GBK”；如果指定为其他编码，例如SQL\_ASCII，则可能报错或者排序无效。
-    
+
     取值范围：
-    
+
     -   SCHINESE\_PINYIN\_M，按照中文拼音排序。
     -   generic\_m\_ci，不区分大小写排序（可选，仅支持纯英文不区分大小写排序）。
-    
+
 -   **PARTITION子句**
 
     查询某个分区表中相应分区的数据。
@@ -554,15 +554,15 @@ openGauss=# INSERT INTO tpcds.reason_p values(3,'AAAAAAAABAAAAAAA','reason 1'),(
 
 --PARTITION子句示例：从tpcds.reason_p的表分区P_05_BEFORE中获取数据。
 openGauss=#  SELECT * FROM tpcds.reason_p PARTITION (P_05_BEFORE);
- r_reason_sk |   r_reason_id    |   r_reason_desc                   
+ r_reason_sk |   r_reason_id    |   r_reason_desc
 -------------+------------------+------------------------------------
-           4 | AAAAAAAABAAAAAAA | reason 3                          
-           3 | AAAAAAAABAAAAAAA | reason 1                          
+           4 | AAAAAAAABAAAAAAA | reason 3
+           3 | AAAAAAAABAAAAAAA | reason 1
 (2 rows)
 
 --GROUP BY子句示例：按r_reason_id分组统计tpcds.reason_p表中的记录数。
 openGauss=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id;
- count |   r_reason_id    
+ count |   r_reason_id
 -------+------------------
      2 | AAAAAAAACAAAAAAA
      5 | AAAAAAAABAAAAAAA
@@ -576,38 +576,38 @@ openGauss=# SELECT * FROM tpcds.reason GROUP BY  GROUPING SETS ((r_reason_id,r_r
 
 --HAVING子句示例：按r_reason_id分组统计tpcds.reason_p表中的记录，并只显示r_reason_id个数大于2的信息。
 openGauss=# SELECT COUNT(*) c,r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING c>2;
- c |   r_reason_id    
+ c |   r_reason_id
 ---+------------------
  5 | AAAAAAAABAAAAAAA
 (1 row)
 
 --IN子句示例：按r_reason_id分组统计tpcds.reason_p表中的r_reason_id个数，并只显示r_reason_id值为 AAAAAAAABAAAAAAA或AAAAAAAADAAAAAAA的个数。
-openGauss=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING r_reason_id IN('AAAAAAAABAAAAAAA','AAAAAAAADAAAAAAA'); 
-count |   r_reason_id    
+openGauss=# SELECT COUNT(*),r_reason_id FROM tpcds.reason_p GROUP BY r_reason_id HAVING r_reason_id IN('AAAAAAAABAAAAAAA','AAAAAAAADAAAAAAA');
+count |   r_reason_id
 -------+------------------
      5 | AAAAAAAABAAAAAAA
 (1 row)
 
 --INTERSECT子句示例：查询r_reason_id等于AAAAAAAABAAAAAAA，并且r_reason_sk小于5的信息。
 openGauss=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' INTERSECT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<5;
- r_reason_sk |   r_reason_id    |     r_reason_desc                 
+ r_reason_sk |   r_reason_id    |     r_reason_desc
 -------------+------------------+------------------------------------
-           4 | AAAAAAAABAAAAAAA | reason 3                           
-           3 | AAAAAAAABAAAAAAA | reason 1                           
+           4 | AAAAAAAABAAAAAAA | reason 3
+           3 | AAAAAAAABAAAAAAA | reason 1
 (2 rows)
 
 --EXCEPT子句示例：查询r_reason_id等于AAAAAAAABAAAAAAA，并且去除r_reason_sk小于4的信息。
 openGauss=# SELECT * FROM tpcds.reason_p WHERE r_reason_id='AAAAAAAABAAAAAAA' EXCEPT SELECT * FROM tpcds.reason_p WHERE r_reason_sk<4;
-r_reason_sk |   r_reason_id    |      r_reason_desc                  
+r_reason_sk |   r_reason_id    |      r_reason_desc
 -------------+------------------+------------------------------------
-          10 | AAAAAAAABAAAAAAA | reason 2                          
-          10 | AAAAAAAABAAAAAAA | reason 5                          
-          10 | AAAAAAAABAAAAAAA | reason 4                          
-           4 | AAAAAAAABAAAAAAA | reason 3                          
+          10 | AAAAAAAABAAAAAAA | reason 2
+          10 | AAAAAAAABAAAAAAA | reason 5
+          10 | AAAAAAAABAAAAAAA | reason 4
+           4 | AAAAAAAABAAAAAAA | reason 3
 (4 rows)
 
 --通过在where子句中指定"(+)"来实现左连接。
-openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+) 
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk  = t2.c_customer_sk(+)
 order by 1 desc limit 1;
  sr_item_sk | c_customer_id
 ------------+---------------
@@ -615,7 +615,7 @@ order by 1 desc limit 1;
 (1 row)
 
 --通过在where子句中指定"(+)"来实现右连接。
-openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk 
+openGauss=# select t1.sr_item_sk ,t2.c_customer_id from store_returns t1, customer t2 where t1.sr_customer_sk(+)  = t2.c_customer_sk
 order by 1 desc limit 1;
  sr_item_sk |  c_customer_id
 ------------+------------------
@@ -680,4 +680,3 @@ openGauss=#  SELECT * FROM tpcds.time_table TIMECAPSULE CSN 107330;
    3 | 2021-04-25 17:50:16.12921  |  107327 | time3
 (3 rows)
 ```
-

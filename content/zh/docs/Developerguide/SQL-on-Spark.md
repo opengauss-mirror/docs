@@ -108,10 +108,10 @@ SQL on Spark支持的数据类型，见下表。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.png) **须知：**  
->-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。  
->-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
->-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。例如，下面查询exec\_on\_extension返回数据的length时：select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>-   对于Spark返回的数据类型，需要使用上表中对应的类型去接收（在AS子句中指定）。如果Spark返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。
+>-   当Spark端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
+>-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。例如，下面查询exec\_on\_extension返回数据的length时：select c2,length\(c2\) from exec\_on\_extension\('spark','select \* from a;'\) as \(c1 int, c2 text\);
 >    返回的第二列为字符串的字节数，而不是实际字符数。exec\_hadoop\_sql也有此特征。
 
 ## **使用前的对接配置**<a name="section72009141218"></a>
@@ -138,7 +138,7 @@ SQL on Spark支持的数据类型，见下表。
     b. 在主界面点击右上角“更多”选项，选择“下载客户端”进行下载。解压下载好的客户端，得到FusionInsight\_Services\_ClientConfig.tar压缩包，解压后进入FusionInsight\_Services\_ClientConfig目录下，按照准备package.zip包的方式打包KrbClient为KrbClient.zip。
 
     c. 进入FusionInsight\_Services\_ClientConfig的Spark2x目录下，解压DataSight\_Spark\_V100R002C50RC2SPC200\_HiveODBC.zip。进入解压后生成的Linux目录下，根据操作系统版本选择对应的rpm包。Red Hat/Centos：datasight-hiveodbc-1.0.0-1.el6.x86\_64.rpm。SUSE：datasight-hiveodbc-1.0.0-1.x86\_64.rpm。
-    
+
     d. 在主界面点击最上方的“系统”选项进入用户界面。选择需要连接Spark的用户，点击“更多”选择认证凭据，下载kuser\_1544261037803\_keytab.tar。
 
 3.  <a name="li13407125013577"></a>在$GAUSSHOME/utilslib/fc\_conf/$DSN下生成DSN.ini文件。用户需保证文件内容与格式正确。参考示例如下：
@@ -181,7 +181,7 @@ SQL on Spark支持的数据类型，见下表。
     kinit kuser    #这里的kuser指的是对端数据库实例上用来连接访问的用户
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >使用本地模式时，需要在各个节点上分别执行[1](#li1343510529592)-[3](#li13407125013577)。
 
 6.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
@@ -192,7 +192,7 @@ SQL on Spark支持的数据类型，见下表。
     gs_om -t stop && gs_om -t start        # 仅本地模式执行
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   使用本地模式时，需要在各个节点上分别执行[1](#li1343510529592)-[4](#li18491441322)。
     >
@@ -203,13 +203,13 @@ SQL on Spark支持的数据类型，见下表。
     可以参考如下操作：
 
     a.  [连接数据库](连接数据库.md)。
-    
+
     b.  创建Data Source。
 
         ```
         openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(DSN 'spark_odbc', encoding 'utf8');
         ```
-        
+
         各字段含义、对象修改方法与SQL on Oracle中的[9](SQL-on-Oracle.md#li18691619432)类似。
 
 
@@ -234,7 +234,7 @@ SQL on Spark支持的数据类型，见下表。
 -- 2  hive
 -- 通过 exec_hadoop_sql 函数查询，其中spark_odbc是odbc.ini中对应Spark的DSN，
 openGauss=# SELECT * FROM exec_hadoop_sql('spark_odbc', 'select * from t1;', '') AS (c1 int, c2 text);
- c1 |  c2   
+ c1 |  c2
 ----+-------
   1 | spark
   2 | hive
@@ -242,7 +242,7 @@ openGauss=# SELECT * FROM exec_hadoop_sql('spark_odbc', 'select * from t1;', '')
 -- 通过 exec_on_extension 函数查询
 openGauss=# CREATE DATA SOURCE spark_ds OPTIONS(dsn 'spark_odbc');
 openGauss=# SELECT * FROM exec_on_extension ('spark_ds', 'select * from t1;') AS (c1 int, c2 text);
- c1 |  c2   
+ c1 |  c2
 ----+-------
   1 | spark
   2 | hive
@@ -304,4 +304,3 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 ## **相关链接**<a name="section67639236412"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)**，**《工具参考》中“服务端工具 \> gs\_om”章节
-

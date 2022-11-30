@@ -14,11 +14,11 @@
 
 ```
 START TRANSACTION
-  [ 
-    { 
+  [
+    {
        ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
        | { READ WRITE | READ ONLY }
-     } [, ...] 
+     } [, ...]
   ];
 ```
 
@@ -26,11 +26,11 @@ START TRANSACTION
 
 ```
 BEGIN [ WORK | TRANSACTION ]
-  [ 
-    { 
+  [
+    {
        ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
        | { READ WRITE | READ ONLY }
-      } [, ...] 
+      } [, ...]
   ];
 ```
 
@@ -44,8 +44,8 @@ BEGIN [ WORK | TRANSACTION ]
 
     指定事务隔离级别，它决定当一个事务中存在其他并发运行事务时它能够看到什么数据。
 
-    >![](public_sys-resources/icon-note.png) **说明：**   
-    >在事务中第一个数据修改语句（SELECT、 INSERT、DELETE、UPDATE、FETCH、COPY）执行之后，事务隔离级别就不能再次设置。  
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >在事务中第一个数据修改语句（SELECT、 INSERT、DELETE、UPDATE、FETCH、COPY）执行之后，事务隔离级别就不能再次设置。
 
     取值范围：
 
@@ -80,4 +80,3 @@ openGauss=# COMMIT;
 ## 相关链接<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s144c0965b0ba447e9d3a73dd5dac1aad"></a>
 
 [COMMIT | END](COMMIT-END.md)，[ROLLBACK](ROLLBACK.md)，[SET TRANSACTION](SET-TRANSACTION.md)
-

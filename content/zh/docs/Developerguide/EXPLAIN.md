@@ -192,7 +192,7 @@ Node/s: All dbnodes
 
 --以JSON格式输出的执行计划（explain_perf_mode为normal时）。
 openGauss=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
-              QUERY PLAN              
+              QUERY PLAN
 --------------------------------------
  [                                   +
    {                                 +
@@ -218,7 +218,7 @@ Node/s: dn_6005_6006
 
 --以YAML格式输出的执行计划（explain_perf_mode为normal时）。
 openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-           QUERY PLAN            
+           QUERY PLAN
 ---------------------------------
  - Plan:                        +
      Node Type: "Data Node Scan"+
@@ -231,7 +231,7 @@ openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE c
 
 --禁止开销估计的执行计划。
 openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-       QUERY PLAN       
+       QUERY PLAN
 ------------------------
  Data Node Scan
    Node/s: dn_6005_6006
@@ -239,7 +239,7 @@ openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca
 
 --带有聚集函数查询的执行计划。
 openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
-                                      QUERY PLAN                                       
+                                      QUERY PLAN
 ---------------------------------------------------------------------------------------
  Aggregate  (cost=18.19..14.32 rows=1 width=4)
    ->  Streaming (type: GATHER)  (cost=18.19..14.32 rows=3 width=4)
@@ -295,4 +295,3 @@ openGauss=# DROP TABLE tpcds.customer_address_p1;
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
 [ANALYZE | ANALYSE](ANALYZE-ANALYSE.md)
-

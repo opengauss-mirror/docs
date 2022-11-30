@@ -65,4 +65,3 @@ GS\_AUDITING\_PRIVILEGE视图显示对数据库DDL相关操作的所有审计信
 </tr>
 </tbody>
 </table>
-

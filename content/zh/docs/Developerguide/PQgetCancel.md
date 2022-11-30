@@ -40,4 +40,3 @@ PQgetCancel创建一个给定PGconn连接对象的PGcancel对象。如果给定�
 ## 示例<a name="zh-cn_topic_0241735636_section4160944682"></a>
 
 请参见[示例](示例-3.md)章节。
-

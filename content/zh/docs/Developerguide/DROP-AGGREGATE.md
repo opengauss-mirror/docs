@@ -48,4 +48,3 @@ DROP AGGREGATE myavg(integer);
 ## 兼容性<a name="section9989313154010"></a>
 
 SQL 标准里没有DROP AGGREGATE语句。
-

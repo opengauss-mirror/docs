@@ -109,4 +109,3 @@
 </table>
 
 在不久后将发布的版本中，openGauss MOT还将支持SNAPSHOT和SERIALIZABLE隔离级别。
-

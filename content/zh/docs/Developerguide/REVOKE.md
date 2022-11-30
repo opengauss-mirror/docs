@@ -18,7 +18,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }[, ...] 
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }[, ...]
         | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -30,7 +30,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )}[, ...] 
+        { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )}[, ...]
         | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -41,7 +41,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...] 
+        { { SELECT | UPDATE | ALTER | DROP | COMMENT }[, ...]
         | ALL [ PRIVILEGES ] }
          ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
@@ -53,7 +53,7 @@ REVOKE用于撤销一个或多个角色的权限。
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...] 
+        { { CREATE | CONNECT | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
         | ALL [ PRIVILEGES ] }
         ON DATABASE database_name [, ...]
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -233,7 +233,7 @@ REVOKE用于撤销一个或多个角色的权限。
     { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
     DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
     CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE | ALTER ANY TYPE | DROP ANY TYPE | ALTER ANY SEQUENCE | DROP ANY SEQUENCE |
-    SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER |  DROP ANY TRIGGER 
+    SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER |  DROP ANY TRIGGER
   } [, ...]
     FROM [ GROUP ] role_name [, ...];
   ```
@@ -263,4 +263,3 @@ REVOKE用于撤销一个或多个角色的权限。
 ## 相关链接<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s865f60db543c4043bd5fa9b678295c5a"></a>
 
 [GRANT](GRANT.md)
-

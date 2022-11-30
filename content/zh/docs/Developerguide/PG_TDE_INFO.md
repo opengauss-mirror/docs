@@ -38,4 +38,3 @@ PG\_TDE\_INFO视图提供了openGauss加密信息。
 </tr>
 </tbody>
 </table>
-

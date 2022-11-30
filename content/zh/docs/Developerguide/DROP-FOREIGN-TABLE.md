@@ -11,7 +11,7 @@ DROP FOREIGN TABLE会强制删除指定的表，删除表后，依赖该表的�
 ## 语法格式<a name="zh-cn_topic_0283137169_section20143164116497"></a>
 
 ```
-DROP FOREIGN TABLE [ IF EXISTS ] 
+DROP FOREIGN TABLE [ IF EXISTS ]
     table_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
@@ -38,4 +38,3 @@ DROP FOREIGN TABLE [ IF EXISTS ]
 ## 相关链接<a name="zh-cn_topic_0283137169_section1811945514913"></a>
 
 [ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md)，[CREATE FOREIGN TABLE](CREATE-FOREIGN-TABLE.md)
-

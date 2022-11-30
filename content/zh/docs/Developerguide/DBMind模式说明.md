@@ -78,10 +78,8 @@ available subcommands:
 </tbody>
 </table>
 
--   **[service子命令](service子命令.md)**  
+-   **[service子命令](service子命令.md)**
 
--   **[component子命令](component子命令.md)**  
+-   **[component子命令](component子命令.md)**
 
--   **[set子命令](set子命令.md)**  
-
-
+-   **[set子命令](set子命令.md)**

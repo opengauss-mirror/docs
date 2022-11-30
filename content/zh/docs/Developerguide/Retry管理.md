@@ -7,15 +7,13 @@ Retry是数据库在SQL或存储过程（包含匿名块）执行失败时，在
     示例：
 
     ```
-    openGauss=# CREATE OR REPLACE PROCEDURE retry_basic ( IN  x INT) 
-    AS  
+    openGauss=# CREATE OR REPLACE PROCEDURE retry_basic ( IN  x INT)
+    AS
     BEGIN
     	  INSERT INTO t1 (a) VALUES (x);
     	  INSERT INTO t1 (a) VALUES (x+1);
     END;
     /
-    
-    openGauss=# CALL retry_basic(1); 
+
+    openGauss=# CALL retry_basic(1);
     ```
-
-

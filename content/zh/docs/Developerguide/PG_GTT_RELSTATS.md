@@ -71,4 +71,3 @@ PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调
 </tr>
 </tbody>
 </table>
-

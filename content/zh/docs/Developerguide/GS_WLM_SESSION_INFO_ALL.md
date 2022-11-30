@@ -626,4 +626,3 @@ GS\_WLM\_SESSION\_INFO\_ALL视图显示在数据库实例上执行作业结束�
 </tr>
 </tbody>
 </table>
-

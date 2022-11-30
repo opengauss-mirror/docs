@@ -145,7 +145,7 @@ java.sql.CallableStatement是存储过程执行接口。
 </td>
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
 </td>
-</tr>  
+</tr>
 <tr id="row18341192584512"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p934120254458"><a name="p934120254458"></a><a name="p934120254458"></a>getTime(int parameterIndex)</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1534119257455"><a name="p1534119257455"></a><a name="p1534119257455"></a>Time</p>
@@ -192,11 +192,10 @@ java.sql.CallableStatement是存储过程执行接口。
 </table>
 
 
->![](public_sys-resources/icon-note.png) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   不允许含有OUT参数的语句执行批量操作。
 >
 >-   以下方法是从java.sql.Statement继承而来：close、execute、executeQuery、executeUpdate、getConnection、getResultSet、getUpdateCount、isClosed、setMaxRows 、 setFetchSize。
 >
 >-   以下方法是从java.sql.PreparedStatement继承而来：addBatch、clearParameters、execute、executeQuery、executeUpdate、getMetaData、setBigDecimal、setBoolean、setByte、setBytes、setDate、setDouble、setFloat、setInt、setLong、setNull、setObject、setString、setTime、setTimestamp。
-

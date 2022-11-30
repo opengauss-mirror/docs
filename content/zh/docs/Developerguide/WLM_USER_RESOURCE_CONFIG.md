@@ -85,4 +85,3 @@ WLM\_USER\_RESOURCE\_CONFIG视图显示用户的资源配置信息。
 </tr>
 </tbody>
 </table>
-

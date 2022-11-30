@@ -60,4 +60,3 @@ CREATE FUNCTION plsample_call_handler() RETURNS language_handler
 CREATE LANGUAGE plsample
     HANDLER plsample_call_handler;
 ```
-

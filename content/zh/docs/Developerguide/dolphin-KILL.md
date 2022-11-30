@@ -24,11 +24,11 @@ KILL [CONNECTION | QUERY] processlist_id
     使用CONNECTION关键字修饰KILL语句时，效果等价于KILL processlist_id，终止当前连接。
 
 - **QUERY**
-  
+
     使用QUERY关键字修饰KILL语句时，终止当前连接执行的SQL语句，连接本身不受影响。
 
 - **processlist_id**
-  
+
     连接Id。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
@@ -138,4 +138,3 @@ openGauss=# show processlist;
 22-06-27 14:00:53.163338+08 | 2022-06-27 14:04:35.418518+08 |      0 | active | show processlist;
 (9 rows)
 ```
-

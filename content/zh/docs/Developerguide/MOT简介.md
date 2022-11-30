@@ -2,8 +2,8 @@
 
 openGauss引入了MOT存储引擎，它是一种事务性行存储，针对多核和大内存服务器进行了优化。MOT是openGauss数据库最先进的生产级特性（Beta版本），它为事务性工作负载提供更高的性能。MOT完全支持ACID特性，并包括严格的持久性和高可用性支持。企业可以在关键任务、性能敏感的在线事务处理（OLTP）中使用MOT，以实现高性能、高吞吐、可预测低延迟以及多核服务器的高利用率。MOT尤其适合在多路和多核处理器的现代服务器上运行，例如基于Arm/鲲鹏处理器的华为TaiShan服务器，以及基于x86的戴尔或类似服务器。
 
-**图 1**  openGauss内存优化存储引擎<a name="fig16939193016363"></a>  
-![](figures/openGauss内存优化存储引擎.png "openGauss内存优化存储引擎")
+**图 1**  openGauss内存优化存储引擎<a name="fig16939193016363"></a>
+![](figures/openGauss-Memory-optimized-storage-engine.png "openGauss内存优化存储引擎")
 
 如[图1](#fig16939193016363)所示，openGauss数据库内存优化存储引擎组件（绿色部分）负责管理MOT和事务。
 
@@ -19,4 +19,3 @@ MOT完全支持ACID特性：
 -   一致性（Consistency）：事务结束后，数据库处于一致状态，保留数据完整性。
 -   隔离性（Isolation）：事务之间不能相互干扰。MOT支持不同的重复读和读提交隔离级别。在下一个版本中，MOT还将支持可序列化隔离。更多信息，请参见[MOT隔离级别](MOT隔离级别.md)。
 -   持久性（Durability）：即使发生崩溃和失败，成功完成（提交）的事务效果持久保存。MOT完全集成了openGauss的基于WAL的日志记录。同时支持同步和异步日志记录选项。MOT还支持同步+面向NUMA优化的组提交。更多信息，请参见[MOT持久性概念](MOT持久性概念.md)。
-

@@ -184,8 +184,8 @@ application_name text
 COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 ```
 
->![](public_sys-resources/icon-note.png) **说明：**   
->此处的日志名“logfile.csv”要换成实际生成的日志的名称。  
+>![](public_sys-resources/icon-note.png) **说明：**
+>此处的日志名“logfile.csv”要换成实际生成的日志的名称。
 
 ## 简化输入<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s7025be501c46413a9d63291fc8a2f130"></a>
 
@@ -194,4 +194,3 @@ COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 -   设置[log\_filename](记录日志的位置.md#zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3226ae3209154e249928c24ec67c5809)和[log\_rotation\_age](记录日志的位置.md#zh-cn_topic_0237124721_zh-cn_topic_0059778787_s3ce09b8a7ae543b18fae13a821a725a5)，为日志文件提供一个一致的、可预测的命名方案。通过日志文件名，预测一个独立的日志文件完成并进入准备导入状态的时间。
 -   将[log\_rotation\_size](记录日志的位置.md#zh-cn_topic_0237124721_zh-cn_topic_0059778787_s282e72143bb14915bedb4b432586b07e)设为0来终止基于尺寸的日志回滚，因为基于尺寸的日志回滚让预测日志文件名变得非常的困难。
 -   将[log\_truncate\_on\_rotation](记录日志的位置.md#zh-cn_topic_0237124721_zh-cn_topic_0059778787_s143b6d35ddbe48b8810106a4d3929e8a)设为on以便区分在同一日志文件中旧的日志数据和新的日志数据。
-

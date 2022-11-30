@@ -99,4 +99,3 @@ GLOBAL\_DOUBLE\_WRITE\_STATUS视图显示openGauss所有实例的双写文件的
 </tr>
 </tbody>
 </table>
-

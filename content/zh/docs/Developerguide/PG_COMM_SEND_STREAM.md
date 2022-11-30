@@ -135,4 +135,3 @@ PG\_COMM\_SEND\_STREAM视图展示节点上所有的通信库发送流状态。
 </tr>
 </tbody>
 </table>
-

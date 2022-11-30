@@ -57,4 +57,3 @@ PREPARE\_SNAPSHOT是DB4AI特性中数据准备模型训练和解释快照进行�
 </tr>
 </tbody>
 </table>
-

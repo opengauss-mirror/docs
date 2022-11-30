@@ -29,22 +29,21 @@ ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
 
 ```
 --查询会话信息。
-openGauss=# 
+openGauss=#
 SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
 LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'JobScheduler';
-       sid       | serial# | username 
+       sid       | serial# | username
 -----------------+---------+----------
  140131075880720 |       0 | omm
  140131025549072 |       0 | omm
  140131073779472 |       0 | omm
  140131071678224 |       0 | omm
- 140131125774096 |       0 | 
- 140131127875344 |       0 | 
- 140131113629456 |       0 | 
- 140131094742800 |       0 | 
+ 140131125774096 |       0 |
+ 140131127875344 |       0 |
+ 140131113629456 |       0 |
+ 140131094742800 |       0 |
 (8 rows)
 
 --结束SID为140131075880720的会话。
 openGauss=#  ALTER SYSTEM KILL SESSION '140131075880720,0' IMMEDIATE;
 ```
-

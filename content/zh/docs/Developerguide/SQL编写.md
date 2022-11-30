@@ -119,20 +119,20 @@
 -   【建议】如果过滤条件只有OR表达式，可以将OR表达式转化为UNION ALL以提升性能。使用OR的SQL语句经常无法优化，导致执行速度慢。例如，将下面语句
 
     ```
-    SELECT * FROM scdc.pub_menu 
+    SELECT * FROM scdc.pub_menu
     WHERE (cdp= 300 AND inline=301) OR (cdp= 301 AND inline=302) OR (cdp= 302 ANDinline=301);
     ```
 
     转换为：
 
     ```
-    SELECT * FROM scdc.pub_menu 
-    WHERE (cdp= 300 AND inline=301) 
+    SELECT * FROM scdc.pub_menu
+    WHERE (cdp= 300 AND inline=301)
     union all
-    SELECT * FROM scdc.pub_menu 
-    WHERE (cdp= 301 AND inline=302) 
-    union all 
-    SELECT * FROM tablename 
+    SELECT * FROM scdc.pub_menu
+    WHERE (cdp= 301 AND inline=302)
+    union all
+    SELECT * FROM tablename
     WHERE (cdp= 302 AND inline=301)
     ```
 
@@ -149,11 +149,10 @@
   SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
   ```
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
 
   >-   如果T1.C1为子查询的输出，要根据业务逻辑确认其输出是否为NOT NULL。
 
 -   【建议】通过游标进行翻页查询，而不是使用LIMIT OFFSET语法，避免多次执行带来的资源开销。游标必须在事务中使用，执行完后务必关闭游标并提交事务。
-

@@ -47,4 +47,3 @@ openGauss=# SHRINK TABLE row_compression;
 --删除表
 openGauss=# DROP TABLE row_compression;
 ```
-

@@ -20,18 +20,18 @@
 单表更新：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
-SET {column_name = { expression | DEFAULT } 
+SET {column_name = { expression | DEFAULT }
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
     [ LIMIT { count } ]
-    [ RETURNING {* 
+    [ RETURNING {*
                 | {output_expression [ [ AS ] output_name ]} [, ...] }];
 
 多表更新：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] table_list
-SET {column_name = { expression | DEFAULT } 
+SET {column_name = { expression | DEFAULT }
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ];
 
@@ -131,7 +131,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     一个表的表达式列表，允许在WHERE条件里使用其他表的字段。与在一个SELECT语句的FROM子句里声明表列表类似。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >目标表绝对不能出现在from\_list里，除非在使用一个自连接（此时它必须以from\_list的别名出现）。
 
 -   **condition**
@@ -163,7 +163,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 openGauss=# CREATE TABLE student1
 (
    stuno     int,
-   classno   int 
+   classno   int
 );
 
 --插入数据。
@@ -183,4 +183,3 @@ openGauss=# SELECT * FROM student1;
 --删除表。
 openGauss=# DROP TABLE student1;
 ```
-

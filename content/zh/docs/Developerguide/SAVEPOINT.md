@@ -89,4 +89,3 @@ openGauss=# DROP TABLE table2;
 ## 相关链接<a name="zh-cn_topic_0283137144_zh-cn_topic_0237122183_zh-cn_topic_0059777880_section183301781176"></a>
 
 [RELEASE SAVEPOINT](RELEASE-SAVEPOINT.md)，[ROLLBACK TO SAVEPOINT](ROLLBACK-TO-SAVEPOINT.md)
-

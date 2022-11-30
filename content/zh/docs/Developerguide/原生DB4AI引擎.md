@@ -523,7 +523,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
     ```
     openGauss=# SELECT id, PREDICT BY iris_classification (FEATURES sepal_length,sepal_width,petal_length,petal_width) as "PREDICT" FROM tb_iris limit 3;
-     
+
     id  | PREDICT
     -----+---------
       84 |       2
@@ -649,7 +649,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment FROM patients;
             ERROR:  Supervised ML algorithms require TARGET clause
             -----------------------------------------------------------------------------------------------------------------------------
-            CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;   
+            CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;
             ERROR:  Supervised ML algorithms require FEATURES clause
             ```
 
@@ -707,6 +707,5 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >DB4AI特性需要读取数据参与计算，不适用于密态数据库等情况。
-

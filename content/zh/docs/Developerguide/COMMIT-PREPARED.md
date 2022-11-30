@@ -39,4 +39,3 @@ openGauss=# COMMIT PREPARED 'trans_test';
 ## 相关链接<a name="zh-cn_topic_0283137183_zh-cn_topic_0237122095_zh-cn_topic_0059777686_s7c42ca786fad42b0badcb6f63e895aff"></a>
 
 [PREPARE TRANSACTION](PREPARE-TRANSACTION.md)，[ROLLBACK PREPARED](ROLLBACK-PREPARED.md)。
-

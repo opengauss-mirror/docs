@@ -34,7 +34,7 @@
 
   ```
      add_clause    |
-     drop_clause   | 
+     drop_clause   |
      split_clause  |
      truncate_clause
   ```
@@ -69,7 +69,7 @@
   SUBPARTITION subpartition_name [ VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT )]  [ TABLESPACE tablespace ]
   ```
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >若一级分区为HASH分区，不支持以ADD形式新增一级分区；若二级分区为HASH分区，不支持以MODIFY形式新增二级分区。
 
 - drop\_clause子语法用于删除分区表中的指定分区。语法可以作用在一级分区上。
@@ -84,7 +84,7 @@
   DROP SUBPARTITION  { subpartition_name | FOR (  partition_value, subpartition_value )  } [ UPDATE GLOBAL INDEX ]
   ```
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >
   >-   若一级分区为HASH分区，不支持删除一级分区；若二级分区为HASH分区，不支持删除二级分区。
   >-   不支持删除唯一子分区。
@@ -101,7 +101,7 @@
   AT ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
   ```
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >
   >-   切割点的大小要位于正在被切割的分区的分区键范围内。
 
@@ -112,19 +112,19 @@
     ```
     AT ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
     ```
-    
+
     指定List分区策略切割点split\_point\_clause的语法为：
-    
+
     ```
     VALUES ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
     ```
-    
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >
     >-   切割点的大小要位于正在被切割的分区的分区键范围内。
     >-   只能把一个分区切割成两个新分区。
     >-   Range分区策略切割点是把当前分区以此切割点分割为两个分区（小于此分割点为一个分区，大于此分割点为另一个分区），所以Range分区策略切割点只能为一个。List分区策略切割点可以为多个，但不超过64个，即把这些切割点从当前分区的边界值提取出来作为一个新分区，当前分区剩余边界值作为另一个新分区。
-    
+
 -   truncate\_clause子语法用于清空分区表中的指定分区。
 
     ```
@@ -156,4 +156,3 @@
 ## 示例<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
 
 请参考CREATE TABLE SUBPARTITION的示例。
-

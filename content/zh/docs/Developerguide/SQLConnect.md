@@ -80,4 +80,3 @@ SQLRETURN  SQLConnect(SQLHDBC        ConnectionHandle,
 ## 示例<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s941ebfb1b130484d9e8e7225aa91a590"></a>
 
 参见：[示例](示例-2.md)
-

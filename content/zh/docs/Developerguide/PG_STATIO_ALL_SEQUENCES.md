@@ -50,4 +50,3 @@ PG\_STATIO\_ALL\_SEQUENCES视图包含当前数据库中每个序列的I/O的统
 </tr>
 </tbody>
 </table>
-

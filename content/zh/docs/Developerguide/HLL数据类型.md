@@ -58,7 +58,7 @@ HLL与其他算法的比较请参见[表1](#table55621821164213)。
 
 HLL在计算速度和所占存储空间上都占优势。在时间复杂度上，Sort算法需要排序至少O\(nlogn\)的时间，虽说Hash算法和HLL一样扫描一次全表O\(n\)的时间就可以得出结果，但是存储空间上，Sort算法和Hash算法都需要先把原始数据存起来再进行统计，会导致存储空间消耗巨大，而对HLL来说不需要存原始数据，只需要维护HLL数据结构，故占用空间有很大的压缩，默认规格下HLL数据结构的最大空间约为16KB。
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >
 >-   当前默认规格下可计算最大distinct值的数量约为1.1e+15个，误差率为0.8%。用户应注意如果计算结果超过当前规格下distinct最大值会导致计算结果误差率变大，或导致计算结果失败并报错。
 >
@@ -89,7 +89,7 @@ HLL中主要的数据结构，请参见[表2](#table18186113885012)。
 
 创建HLL数据类型时，可以支持0\~4个参数入参，具体的参数含义与参数规格同函数hll\_empty一致。第一个参数为log2m，表示分桶数的对数值，取值范围10\~16；第二个参数为log2explicit，表示Explicit模式的阈值大小，取值范围0\~12；第三个参数为log2sparse，表示Sparse模式的阈值大小，取值范围0\~14；第四个参数为duplicatecheck，表示是否启用duplicatecheck，取值范围为0\~1。当入参输入值为-1时，会采用默认值设定HLL的参数。可以通过\\d或\\d+查看HLL类型的参数。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >创建HLL数据类型时，根据入参的行为不同，结果不同：
 >
@@ -132,14 +132,14 @@ openGauss=# create table t4(id int, set hll(5,-1));
 ERROR:  log2m = 5 is out of range, it should be in range 10 to 16, or set -1 as default
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >对含有HLL类型的表插入HLL对象时，HLL类型的设定参数须同插入对象的设定参数一致，否则报错。
 
 ```
 -- 创建带有hll类型的表
 openGauss=# create table t1(id integer, set hll(14));
- 
+
 -- 向表中插入hll对象,参数一致，成功
 openGauss=# insert into t1 values (1, hll_empty(14,-1));
 
@@ -157,23 +157,23 @@ HLL的应用场景。
     ```
     -- 创建带有hll类型的表
     openGauss=# create table helloworld (id integer, set hll);
-     
+
     -- 向表中插入空的hll
     openGauss=# insert into helloworld(id, set) values (1, hll_empty());
-     
+
     -- 把整数经过哈希计算加入到hll中
     openGauss=# update helloworld set set = hll_add(set, hll_hash_integer(12345)) where id = 1;
-    
+
     -- 把字符串经过哈希计算加入到hll中
     openGauss=# update helloworld set set = hll_add(set, hll_hash_text('hello world')) where id = 1;
-     
+
     -- 得到hll中的distinct值
     openGauss=# select hll_cardinality(set) from helloworld where id = 1;
-     hll_cardinality 
+     hll_cardinality
     -----------------
                    2
     (1 row)
-    
+
     -- 删除表
     openGauss=#  drop table helloworld;
     ```
@@ -188,7 +188,7 @@ HLL的应用场景。
              date            date,
              user_id         integer
     );
-     
+
     -- 构造数据，表示一天中有哪些用户访问过网站。
     openGauss=# insert into facts values ('2019-02-20', generate_series(1,100));
     openGauss=# insert into facts values ('2019-02-21', generate_series(1,200));
@@ -198,19 +198,19 @@ HLL的应用场景。
     openGauss=# insert into facts values ('2019-02-25', generate_series(1,600));
     openGauss=# insert into facts values ('2019-02-26', generate_series(1,700));
     openGauss=# insert into facts values ('2019-02-27', generate_series(1,800));
-     
+
     -- 创建表并指定列为hll。
     openGauss=# create table daily_uniques (
         date            date UNIQUE,
         users           hll
     );
-     
+
     -- 根据日期把数据分组，并把数据插入到hll中。
     openGauss=# insert into daily_uniques(date, users)
         select date, hll_add_agg(hll_hash_integer(user_id))
         from facts
         group by 1;
-     
+
     -- 计算每一天访问网站不同用户数量
     openGauss=# select date, hll_cardinality(users) from daily_uniques order by date;
         date    | hll_cardinality
@@ -224,16 +224,16 @@ HLL的应用场景。
      2019-02-26 | 696.602316769498
      2019-02-27 | 798.111731634412
     (8 rows)
-     
+
     -- 计算在2019.02.20到2019.02.26一周中有多少不同用户访问过网站
     openGauss=# select hll_cardinality(hll_union_agg(users)) from daily_uniques where date >= '2019-02-20'::date and date <= '2019-02-26'::date;
-     hll_cardinality  
+     hll_cardinality
     ------------------
      702.941844662509
     (1 row)
-     
+
     -- 计算昨天访问过网站而今天没访问网站的用户数量。
-    openGauss=# SELECT date, (#hll_union_agg(users) OVER two_days) - #users AS lost_uniques FROM daily_uniques WINDOW two_days AS (ORDER BY date ASC ROWS 1 PRECEDING);                                                                                                             
+    openGauss=# SELECT date, (#hll_union_agg(users) OVER two_days) - #users AS lost_uniques FROM daily_uniques WINDOW two_days AS (ORDER BY date ASC ROWS 1 PRECEDING);
         date    | lost_uniques
     ------------+--------------
      2019-02-20 |            0
@@ -245,7 +245,7 @@ HLL的应用场景。
      2019-02-26 |            0
      2019-02-27 |            0
     (8 rows)
-    
+
     -- 删除表
     openGauss=# drop table facts;
     openGauss=# drop table daily_uniques;
@@ -261,5 +261,3 @@ HLL的应用场景。
     ERROR:  not a hll type, size=6 is not enough
     openGauss=# drop table test;
     ```
-
-

@@ -155,4 +155,3 @@ openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信
 </tr>
 </tbody>
 </table>
-

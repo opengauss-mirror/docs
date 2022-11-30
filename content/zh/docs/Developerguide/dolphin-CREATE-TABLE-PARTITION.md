@@ -49,7 +49,7 @@
 
 ```
 CREATE TABLE [ IF NOT EXISTS ] partition_table_name
-( [ 
+( [
     { column_name data_type [ COLLATE collation ] [ column_constraint [ ... ] ]
     | table_constraint
     | table_indexclause
@@ -57,11 +57,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 ] )
     [create_option]
 
-     PARTITION BY { 
+     PARTITION BY {
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
         {LIST | HASH (partition_key) (PARTITION partition_name [VALUES [IN] (list_values_clause)] opt_table_space )}
-    } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
+    } [ { ENABLE | DISABLE } ROW MOVEMENT ];
     [create_option]
 
 其中create_option为：
@@ -78,11 +78,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
     [ CONSTRAINT constraint_name ]
     { NOT NULL |
-      NULL | 
-      CHECK ( expression ) | 
-      DEFAULT default_e xpr | 
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_e xpr |
       GENERATED ALWAYS AS ( generation_expr ) STORED |
-      UNIQUE index_parameters | 
+      UNIQUE index_parameters |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
@@ -93,8 +93,8 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     ```
     [ CONSTRAINT constraint_name ]
-    { CHECK ( expression ) | 
-      UNIQUE ( column_name [, ... ] ) index_parameters | 
+    { CHECK ( expression ) |
+      UNIQUE ( column_name [, ... ] ) index_parameters |
       PRIMARY KEY ( column_name [, ... ] ) index_parameters |
       FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
@@ -118,10 +118,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   ```
   {col_name [ ( length ) ] | (expr)} [ASC | DESC]
   ```
-  
+
 - 其中`col_name ( length )`为前缀键，column_name为前缀键的字段名，length为前缀长度。前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
-  
-    >![](public_sys-resources/icon-note.png) **说明：** 
+
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-  前缀键支持的索引方法：btree、ubtree。
     >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
     >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
@@ -134,9 +134,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   	| index_type
   }
   ```
-  
+
   COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
-  
+
 - like选项like\_option：
 
   ```
@@ -240,48 +240,48 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.png) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：**
             >orientation不支持修改。
-        
+
     -    STORAGE\_TYPE
-    
+
          指定存储引擎类型，该参数设置成功后就不再支持修改。
-    
+
         取值范围：
         - USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
         - ASTORE，表示表支持Append-Only存储引擎。
         - 默认值，不指定表时，默认是Append-Only存储。
-    
+
     - COMPRESSION
       -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
       -   行存表不支持压缩。
-    
+
     - MAX\_BATCHROW
-    
+
       指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-    
+
       取值范围：10000\~60000，默认60000。
-    
+
     - PARTIAL\_CLUSTER\_ROWS
-    
+
       指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-    
+
       取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-    
+
     - DELTAROW\_THRESHOLD
-    
+
       预留参数。该参数只对列存表有效。
-    
+
       取值范围：0～9999
-    
+
     - segment
-    
+
       使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
-    
+
       取值范围：on/off
-    
+
       默认值：off
-    
+
 - **COMPRESS / NOCOMPRESS**
 
   创建一个新表时，需要在创建表语句中指定关键字COMPRESS，这样，当对该表进行批量插入时就会触发压缩特性。该特性会在页范围内扫描所有元组数据，生成字典、压缩元组数据并进行存储。指定关键字NOCOMPRESS则不对表进行压缩。行存表不支持压缩。
@@ -298,21 +298,21 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   （1）对于从句是VALUES LESS THAN的语法格式：
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
   该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
   （2）对于从句是START END的语法格式：
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
   该情形下，分区键支持的数据类型为：SMALLINT、INTEGER、BIGINT、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
   （3）对于指定了INTERVAL子句的语法格式：
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
 
   该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
@@ -321,7 +321,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >
   >-   每个分区都需要指定一个上边界。
   >-   分区上边界的类型应当和分区键的类型一致。
@@ -339,7 +339,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
   -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
   >2.  START END语法需要遵循以下限制：
   >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
@@ -360,7 +360,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >列存表不支持间隔分区。
 
 - **PARTITION BY LIST\(partition\_key\)**
@@ -391,7 +391,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   ENABLE（缺省值）：行迁移开关打开。
   -   DISABLE：行迁移开关关闭。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >列表/哈希分区表暂不支持ROW MOVEMENT。
 
 
@@ -425,7 +425,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
     >
     >-   不能为生成列指定默认值。
@@ -539,38 +539,38 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P7 VALUES LESS THAN(2453005),
             PARTITION P8 VALUES LESS THAN(MAXVALUE)
     );
-    
+
     --从示例数据表导入数据。
     openGauss=# INSERT INTO tpcds.web_returns_p1 SELECT * FROM tpcds.web_returns;
-    
+
     --删除分区P8。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION P8;
-    
+
     --增加分区WR_RETURNED_DATE_SK介于2453005和2453105之间。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P8 VALUES LESS THAN (2453105);
-    
+
     --增加分区WR_RETURNED_DATE_SK介于2453105和MAXVALUE之间。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 ADD PARTITION P9 VALUES LESS THAN (MAXVALUE);
-    
+
     --删除分区P8。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 DROP PARTITION FOR (2453005);
-    
+
     --分区P7重命名为P10。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION P7 TO P10;
-    
+
     --分区P6重命名为P11。
     openGauss=# ALTER TABLE tpcds.web_returns_p1 RENAME PARTITION FOR (2452639) TO P11;
-    
+
     --查询分区P10的行数。
     openGauss=# SELECT count(*) FROM tpcds.web_returns_p1 PARTITION (P10);
-     count  
+     count
     --------
      0
     (1 row)
-    
+
     --查询分区P1的行数。
     openGauss=# SELECT COUNT(*) FROM tpcds.web_returns_p1 PARTITION FOR (2450815);
-     count  
+     count
     --------
      0
     (1 row)
@@ -589,7 +589,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# CREATE TABLESPACE example2 RELATIVE LOCATION 'tablespace2/tablespace_2';
     openGauss=# CREATE TABLESPACE example3 RELATIVE LOCATION 'tablespace3/tablespace_3';
     openGauss=# CREATE TABLESPACE example4 RELATIVE LOCATION 'tablespace4/tablespace_4';
-    
+
     openGauss=# CREATE TABLE tpcds.web_returns_p2
     (
         WR_RETURNED_DATE_SK       INTEGER                       ,
@@ -630,26 +630,26 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P8 VALUES LESS THAN(MAXVALUE) TABLESPACE example2
     )
     ENABLE ROW MOVEMENT;
-    
+
     --以like方式创建一个分区表。
     openGauss=# CREATE TABLE tpcds.web_returns_p3 (LIKE tpcds.web_returns_p2 INCLUDING PARTITION);
-    
+
     --修改分区P1的表空间为example2。
     openGauss=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P1 TABLESPACE example2;
-    
+
     --修改分区P2的表空间为example3。
     openGauss=# ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P2 TABLESPACE example3;
-    
+
     --以2453010为分割点切分P8。
     openGauss=# ALTER TABLE tpcds.web_returns_p2 SPLIT PARTITION P8 AT (2453010) INTO
     (
             PARTITION P9,
             PARTITION P10
-    ); 
-    
+    );
+
     --将P6，P7合并为一个分区。
     openGauss=# ALTER TABLE tpcds.web_returns_p2 MERGE PARTITIONS P6, P7 INTO PARTITION P8;
-    
+
     --修改分区表迁移属性。
     openGauss=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     --删除表和表空间。
@@ -673,14 +673,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# CREATE TABLESPACE startend_tbs2 LOCATION '/home/omm/startend_tbs2';
     openGauss=# CREATE TABLESPACE startend_tbs3 LOCATION '/home/omm/startend_tbs3';
     openGauss=# CREATE TABLESPACE startend_tbs4 LOCATION '/home/omm/startend_tbs4';
-    
+
     -- 创建临时schema
     openGauss=# CREATE SCHEMA tpcds;
     openGauss=# SET CURRENT_SCHEMA TO tpcds;
-    
+
     -- 创建分区表，分区键是integer类型
-    openGauss=# CREATE TABLE tpcds.startend_pt (c1 INT, c2 INT) 
-    TABLESPACE startend_tbs1 
+    openGauss=# CREATE TABLE tpcds.startend_pt (c1 INT, c2 INT)
+    TABLESPACE startend_tbs1
     PARTITION BY RANGE (c2) (
         PARTITION p1 START(1) END(1000) EVERY(200) TABLESPACE startend_tbs2,
         PARTITION p2 END(2000),
@@ -689,7 +689,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         PARTITION p5 START(3000) END(5000) EVERY(1000) TABLESPACE startend_tbs4
     )
     ENABLE ROW MOVEMENT;
-    
+
     -- 查看分区表信息
     openGauss=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
        relname   | boundaries |    spcname
@@ -707,7 +707,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p5_2        | {5000}     | startend_tbs4
      startend_pt |            | startend_tbs1
     (12 rows)
-    
+
     -- 导入数据，查看分区数据量
     openGauss=# INSERT INTO tpcds.startend_pt VALUES (GENERATE_SERIES(0, 4999), GENERATE_SERIES(0, 4999));
     openGauss=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION FOR (0);
@@ -715,34 +715,34 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -------
          1
     (1 row)
-    
+
     openGauss=# SELECT COUNT(*) FROM tpcds.startend_pt PARTITION (p3);
      count
     -------
        500
     (1 row)
-    
+
     -- 增加分区: [5000, 5300), [5300, 5600), [5600, 5900), [5900, 6000)
     openGauss=# ALTER TABLE tpcds.startend_pt ADD PARTITION p6 START(5000) END(6000) EVERY(300) TABLESPACE startend_tbs4;
-    
+
     -- 增加MAXVALUE分区: p7
     openGauss=# ALTER TABLE tpcds.startend_pt ADD PARTITION p7 END(MAXVALUE);
-    
+
     -- 重命名分区p7为p8
     openGauss=# ALTER TABLE tpcds.startend_pt RENAME PARTITION p7 TO p8;
-    
+
     -- 删除分区p8
     openGauss=# ALTER TABLE tpcds.startend_pt DROP PARTITION p8;
-    
+
     -- 重命名5950所在的分区为：p71
     openGauss=# ALTER TABLE tpcds.startend_pt RENAME PARTITION FOR(5950) TO p71;
-    
+
     -- 分裂4500所在的分区[4000, 5000)
     openGauss=# ALTER TABLE tpcds.startend_pt SPLIT PARTITION FOR(4500) INTO(PARTITION q1 START(4000) END(5000) EVERY(250) TABLESPACE startend_tbs3);
-    
+
     -- 修改分区p2的表空间为startend_tbs4
     openGauss=# ALTER TABLE tpcds.startend_pt MOVE PARTITION p2 TABLESPACE startend_tbs4;
-    
+
     -- 查看分区情形
     openGauss=# SELECT relname, boundaries, spcname FROM pg_partition p JOIN pg_tablespace t ON p.reltablespace=t.oid and p.parentid='tpcds.startend_pt'::regclass ORDER BY 1;
        relname   | boundaries |    spcname
@@ -767,7 +767,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      q1_4        | {5000}     | startend_tbs3
      startend_pt |            | startend_tbs1
     (19 rows)
-    
+
     -- 删除表和表空间
     openGauss=# DROP SCHEMA tpcds CASCADE;
     openGauss=# DROP TABLESPACE startend_tbs1;
@@ -797,13 +797,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ( PARTITION p1 VALUES LESS THAN ('2019-02-01 00:00:00'),
       PARTITION p2 VALUES LESS THAN ('2019-02-02 00:00:00')
     );
-    
+
     -- 数据插入分区p1
     openGauss=# INSERT INTO sales VALUES(1, 12, '2019-01-10 00:00:00', 'a', 1, 1, 1);
-    
+
     -- 数据插入分区p2
     openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-01 00:00:00', 'a', 1, 1, 1);
-    
+
     -- 查看分区信息
     openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
      relname | partstrategy |       boundaries
@@ -811,15 +811,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p1      | r            | {"2019-02-01 00:00:00"}
      p2      | r            | {"2019-02-02 00:00:00"}
     (2 rows)
-    
+
     -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
     -- 新分区的范围为 '2019-02-05 00:00:00' <= time_id < '2019-02-06 00:00:00'
     openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-05 00:00:00', 'a', 1, 1, 1);
-    
+
     -- 插入数据没有匹配的分区，新创建一个分区，并将数据插入该分区
     -- 新分区的范围为 '2019-02-03 00:00:00' <= time_id < '2019-02-04 00:00:00'
     openGauss=# INSERT INTO sales VALUES(1, 12, '2019-02-03 00:00:00', 'a', 1, 1, 1);
-    
+
     -- 查看分区信息
     openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'sales' AND t1.parttype = 'p';
      relname | partstrategy |       boundaries
@@ -829,7 +829,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p1      | r            | {"2019-02-01 00:00:00"}
      p2      | r            | {"2019-02-02 00:00:00"}
     (4 rows)
-    
+
     ```
 
 
@@ -845,13 +845,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     partition p3 values (4000),
     partition p4 values (5000)
     );
-    
+
     -- 数据插入
     openGauss=# INSERT INTO test_list VALUES(2000, 2000);
     INSERT 0 1
     openGauss=# INSERT INTO test_list VALUES(3000, 3000);
     INSERT 0 1
-    
+
     -- 查看分区信息
     openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_list' AND t1.parttype = 'p';
      relname | partstrategy | boundaries
@@ -861,11 +861,11 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p3      | l            | {4000}
      p4      | l            | {5000}
     (4 rows)
-    
+
     -- 插入数据没有匹配到分区，报错处理
     openGauss=# INSERT INTO test_list VALUES(6000, 6000);
     ERROR:  inserted partition key does not map to any table partition
-    
+
     -- 添加分区
     openGauss=# alter table test_list add partition p5 values (6000);
     ALTER TABLE
@@ -880,7 +880,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (5 rows)
     openGauss=# INSERT INTO test_list VALUES(6000, 6000);
     INSERT 0 1
-    
+
     -- 分区表和普通表交换数据
     openGauss=# create table t1 (col1 int, col2 int);
     CREATE TABLE
@@ -900,7 +900,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ------+------
      2000 | 2000
     (1 row)
-    
+
     -- truncate分区
     openGauss=# select * from test_list partition (p2);
      col1 | col2
@@ -913,7 +913,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      col1 | col2
     ------+------
     (0 rows)
-    
+
     -- 删除分区
     openGauss=# alter table test_list drop partition p5;
     ALTER TABLE
@@ -925,10 +925,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p2      | l            | {3000}
      p3      | l            | {4000}
     (4 rows)
-    
+
     openGauss=# INSERT INTO test_list VALUES(6000, 6000);
     ERROR:  inserted partition key does not map to any table partition
-    
+
     -- 删除分区表
     openGauss=# drop table test_list;
     ```
@@ -944,7 +944,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     partition p1,
     partition p2
     );
-    
+
     -- 数据插入
     openGauss=# INSERT INTO test_hash VALUES(1, 1);
     INSERT 0 1
@@ -954,7 +954,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     INSERT 0 1
     openGauss=# INSERT INTO test_hash VALUES(4, 4);
     INSERT 0 1
-    
+
     -- 查看分区信息
     openGauss=# SELECT t1.relname, partstrategy, boundaries FROM pg_partition t1, pg_class t2 WHERE t1.parentid = t2.oid AND t2.relname = 'test_hash' AND t1.parttype = 'p';
      relname | partstrategy | boundaries
@@ -962,7 +962,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      p1      | h            | {0}
      p2      | h            | {1}
     (2 rows)
-    
+
     -- 查看数据
     openGauss=# select * from test_hash partition (p1);
      col1 | col2
@@ -970,14 +970,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         3 |    3
         4 |    4
     (2 rows)
-    
+
     openGauss=# select * from test_hash partition (p2);
      col1 | col2
     ------+------
         1 |    1
         2 |    2
     (2 rows)
-    
+
     -- 分区表和普通表交换数据
     openGauss=# create table t1 (col1 int, col2 int);
     CREATE TABLE
@@ -993,7 +993,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         3 |    3
         4 |    4
     (2 rows)
-    
+
     -- truncate分区
     openGauss=# alter table test_hash truncate partition p2;
     ALTER TABLE
@@ -1001,7 +1001,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      col1 | col2
     ------+------
     (0 rows)
-    
+
     -- 删除分区表
     openGauss=# drop table test_hash;
 
@@ -1015,7 +1015,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     b int,
     c int,
     d int
-    ) 
+    )
     PARTITION BY RANGE(a)
     (
         PARTITION p0 VALUES LESS THAN (100000),
@@ -1035,7 +1035,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     select * from test_part where ((99990 < c and c < 100000) or (219990 < c and c < 220000));
     select * from test_part where ((99990 < d and d < 100000) or (219990 < d and d < 220000));
     select * from test_part where ((99990 < b and b < 100000) or (219990 < b and b < 220000));
-    
+
     --测试rebuild分区表语法
     ALTER TABLE test_part REBUILD PARTITION p0, p1;
     --检查分区表系统信息和真实数据
@@ -1044,7 +1044,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     select * from test_part where ((99990 < c and c < 100000) or (219990 < c and c < 220000));
     select * from test_part where ((99990 < d and d < 100000) or (219990 < d and d < 220000));
     select * from test_part where ((99990 < b and b < 100000) or (219990 < b and b < 220000));
-    
+
     --测试rebuild partition all分区表语法
     ALTER TABLE test_part REBUILD PARTITION all;
     --检查分区表系统信息和真实数据
@@ -1053,7 +1053,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     select * from test_part where ((99990 < c and c < 100000) or (219990 < c and c < 220000));
     select * from test_part where ((99990 < d and d < 100000) or (219990 < d and d < 220000));
     select * from test_part where ((99990 < b and b < 100000) or (219990 < b and b < 220000));
-    
+
     --测试 repair check optimize 分区表语法
     ALTER TABLE test_part repair PARTITION p0,p1;
     ALTER TABLE test_part check PARTITION p0,p1;
@@ -1061,7 +1061,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ALTER TABLE test_part repair PARTITION all;
     ALTER TABLE test_part check PARTITION all;
     ALTER TABLE test_part optimize PARTITION all;
-    
+
     --测试 remove partitioning 语法
     select relname, boundaries from pg_partition where parentid in (select parentid from pg_partition where relname = 'test_part') order by relname;
     select parttype,relname from pg_class where relname = 'test_part' and relfilenode != oid;
@@ -1078,7 +1078,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (
     a int,
     b int
-    ) 
+    )
     PARTITION BY RANGE(a)
     (
         PARTITION p0 VALUES LESS THAN (100),
@@ -1127,7 +1127,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     (
     a int,
     b int
-    ) 
+    )
     PARTITION BY RANGE(a)
     (
         PARTITION p0 VALUES LESS THAN (100),
@@ -1135,12 +1135,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         PARTITION p2 VALUES LESS THAN (300),
         PARTITION p3 VALUES LESS THAN (400)
     );
-    
+
     CREATE TABLE IF NOT EXISTS test_subpart2
     (
     a int,
     b int
-    ) 
+    )
     PARTITION BY RANGE(a) SUBPARTITION BY RANGE(b)
     (
         PARTITION p0 VALUES LESS THAN (100)
@@ -1182,7 +1182,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ALTER TABLE test_subpart2 DROP SUBPARTITION p0_0;
     ALTER TABLE test_subpart2 DROP SUBPARTITION p0_2, p1_0, p1_2;
     select relname, boundaries from pg_partition where parentid in (select oid from pg_partition where parentid in (select parentid from pg_partition where relname = 'test_subpart2'));
-    
+
     --兼容b database reorganize分区语法示例
     CREATE TABLE test_range_subpart
     (
@@ -1218,14 +1218,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     select * from test_range_subpart partition(m1);
     explain select /*+ indexscan(test_range_subpart test_range_subpart_pkey) */ * from test_range_subpart where a > 0;
     select * from test_range_subpart;
-    
+
     -- 分区表建索引，在create table 中index默认为local,不支持指定global/local
     CREATE TABLE test_partition_btree
     (
         f1  INTEGER,
         f2  INTEGER,
         f3  INTEGER,
-        key part_btree_idx using btree(f1)	
+        key part_btree_idx using btree(f1)
     )
     PARTITION BY RANGE(f1)
     (
@@ -1234,7 +1234,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-    
+
     -- 分区表建组合索引
     CREATE TABLE test_partition_index
     (
@@ -1250,7 +1250,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-    
+
     -- 分区表列存创建索引
     CREATE TABLE test_partition_column
     (
@@ -1266,7 +1266,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             PARTITION P3 VALUES LESS THAN(2451544),
             PARTITION P4 VALUES LESS THAN(MAXVALUE)
     );
-    
+
     -- 分区表创建表达式索引
     CREATE TABLE test_partition_expr
     (
@@ -1289,4 +1289,3 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
 [ALTER TABLE PARTITION](ALTER-TABLE-PARTITION.md)，[DROP TABLE](DROP-TABLE.md)
-

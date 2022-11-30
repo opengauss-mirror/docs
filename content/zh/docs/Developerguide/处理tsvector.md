@@ -12,7 +12,7 @@ openGauss提供了用来操作tsvector类型的函数和操作符。
 
   setweight返回一个输入tsvector的副本，其中每一个位置都使用给定的权重做了标记。权值可以为A、B、C或D（D是tsvector副本的默认权重，并且不在输出中呈现）。当对tsvector进行连接操作时，这些权重标签将会被保留，文档不同部分以不同的权重进行排序。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >
   >权重标签作用于位置，而不是词素。如果传入的tsvector已经被剥离了位置信息，那么setweight函数将什么都不做。
 
@@ -23,5 +23,3 @@ openGauss提供了用来操作tsvector类型的函数和操作符。
 -   strip\(vector tsvector\) returns tsvector
 
     返回一个tsvector类型，其中包含输入的tsvector的同义词，但不包含任何位置和权重信息。虽然在相关性排序中，这里返回的tsvector要比未拆分的tsvector的作用小很多，但它通常都比未拆分的tsvector小的多。
-
-

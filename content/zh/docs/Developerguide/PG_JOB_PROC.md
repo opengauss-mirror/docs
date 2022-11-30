@@ -43,5 +43,3 @@ PG\_JOB\_PROC系统表对应PG\_JOB表中每个任务的作业内容（包括：
 </tr>
 </tbody>
 </table>
-
-

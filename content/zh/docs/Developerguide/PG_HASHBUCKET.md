@@ -57,4 +57,3 @@ PG\_HASHBUCKET系统表存储hash bucket信息。
 </tr>
 </tbody>
 </table>
-

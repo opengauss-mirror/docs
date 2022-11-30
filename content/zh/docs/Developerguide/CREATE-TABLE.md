@@ -24,7 +24,7 @@
 创建表。
 
 ```
-CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name
     ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | LIKE source_table [ like_option [...] ] }
@@ -114,7 +114,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >
     >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp、pg\_toast\_temp开头的schema。
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
@@ -124,7 +124,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
     >-   临时表不支持主备切换。
     >-   全局临时表不响应自动清理，在长链接场景使用时尽量使用on commit delete rows的全局临时表，或定期手动执行vacuum，否则可能导致clog日志不回收。
-    
+
 -   **IF NOT EXISTS**
 
     如果已经存在相同名称的表，不会报出错误，而会发出通知，告知通知此表已存在。
@@ -133,7 +133,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   要创建的表名。
 
-  ![](public_sys-resources/icon-notice.png) **须知：** 
+  ![](public_sys-resources/icon-notice.png) **须知：**
   物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
 -   **column\_name**
@@ -144,14 +144,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     建表时指定的约束名称。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
 
     索引名。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -162,7 +162,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     取值范围参考[参数说明](CREATE-INDEX)中的USING method。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -170,14 +170,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
 
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
 
@@ -212,7 +212,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >
     >-   如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >
@@ -226,7 +226,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     这个子句为表或索引指定一个可选的存储参数。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
     参数的详细描述如下所示。
@@ -305,7 +305,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         行存表参数，设置行存表压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数生效后不允许修改。（仅支持ASTORE下的普通表）
 
         取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
-    
+
         默认值：4096
 
     - COMPRESS_PREALLOC_CHUNKS
@@ -317,7 +317,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
       - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
       - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
-    
+
   - COMPRESS_BYTE_CONVERT
 
       行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节转换预处理。当`COMPRESS_DIFF_CONVERT`为真时，该值不允许修改为假。
@@ -353,23 +353,23 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
       取值范围：on/off
-  
+
       默认值：off
-  
+
   - dek\_cipher
-  
+
       透明数据加密密钥的密文。当开启enable\_tde选项时会自动申请创建，用户不可单独指定。通过密钥轮转功能可以对密钥进行更新。
-  
+
       取值范围：字符串。
-  
+
       默认值：不开启加密时默认为空。
-  
+
   - hasuids
-  
+
       参数开启：更新表元组时，为元组分配表级唯一标识id。
-  
+
       取值范围：on/off。
-  
+
       默认值：off。
 
 
@@ -392,7 +392,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     创建新表时指定此关键字，表示新表将要在指定表空间内创建。如果没有声明，将使用默认表空间。
 
 -   **COMMNET {=| } text**
-    
+
     创建新表时指定此关键字，表示新表的注释内容。如果没有声明，则不创建注释。
 
 -   **CONSTRAINT constraint\_name**
@@ -420,7 +420,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     声明为字段约束的检查约束应该只引用该字段的数值，而在表约束里出现的表达式可以引用多个字段。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。
 
 
@@ -440,7 +440,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
     >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型、布尔类型。
     >-   每个表只能有一个自动增长列。
@@ -494,7 +494,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
-  ![](public_sys-resources/icon-note.png) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：**
   Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
 
 - **COMMENT text**
@@ -600,7 +600,7 @@ openGauss=# CREATE TABLE tpcds.warehouse_t4
     W_STATE                   CHAR(2)                        ,
     W_ZIP                     CHAR(10)                       ,
     W_COUNTRY                 VARCHAR(20)                    ,
-    W_GMT_OFFSET              DECIMAL(5,2) 
+    W_GMT_OFFSET              DECIMAL(5,2)
 );
 ```
 
@@ -943,14 +943,14 @@ openGauss=# CREATE TABLE tpcds.warehouse_t20
     W_ZIP                     CHAR(10)                      ,
     W_COUNTRY                 VARCHAR(20)                   ,
     W_GMT_OFFSET              DECIMAL(5,2),
-    CONSTRAINT W_CONSTR_KEY2 CHECK(W_WAREHOUSE_SK > 0 AND W_WAREHOUSE_NAME IS NOT NULL) 
+    CONSTRAINT W_CONSTR_KEY2 CHECK(W_WAREHOUSE_SK > 0 AND W_WAREHOUSE_NAME IS NOT NULL)
 );
 
 --创建一个有外键约束的表。
 openGauss=# CREATE TABLE tpcds.city_t23
 (
     W_CITY            VARCHAR(60)                PRIMARY KEY,
-    W_ADDRESS       TEXT                     
+    W_ADDRESS       TEXT
 );
 openGauss=# CREATE TABLE tpcds.warehouse_t23
 (
@@ -1039,22 +1039,22 @@ openGauss=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_
 --查看约束的名称，并删除一个列存表中的局部聚簇列。
 openGauss=# \d+ tpcds.warehouse_t17
                               Table "tpcds.warehouse_t17"
-      Column       |         Type          | Modifiers | Storage  | Stats target | Description 
+      Column       |         Type          | Modifiers | Storage  | Stats target | Description
 -------------------+-----------------------+-----------+----------+--------------+-------------
- w_warehouse_sk    | integer               | not null  | plain    |              | 
- w_warehouse_id    | character(16)         | not null  | extended |              | 
- w_warehouse_name  | character varying(20) |           | extended |              | 
- w_warehouse_sq_ft | integer               |           | plain    |              | 
- w_street_number   | character(10)         |           | extended |              | 
- w_street_name     | character varying(60) |           | extended |              | 
- w_street_type     | character(15)         |           | extended |              | 
- w_suite_number    | character(10)         |           | extended |              | 
- w_city            | character varying(60) |           | extended |              | 
- w_county          | character varying(30) |           | extended |              | 
- w_state           | character(2)          |           | extended |              | 
- w_zip             | character(10)         |           | extended |              | 
- w_country         | character varying(20) |           | extended |              | 
- w_gmt_offset      | numeric(5,2)          |           | main     |              | 
+ w_warehouse_sk    | integer               | not null  | plain    |              |
+ w_warehouse_id    | character(16)         | not null  | extended |              |
+ w_warehouse_name  | character varying(20) |           | extended |              |
+ w_warehouse_sq_ft | integer               |           | plain    |              |
+ w_street_number   | character(10)         |           | extended |              |
+ w_street_name     | character varying(60) |           | extended |              |
+ w_street_type     | character(15)         |           | extended |              |
+ w_suite_number    | character(10)         |           | extended |              |
+ w_city            | character varying(60) |           | extended |              |
+ w_county          | character varying(30) |           | extended |              |
+ w_state           | character(2)          |           | extended |              |
+ w_zip             | character(10)         |           | extended |              |
+ w_country         | character varying(20) |           | extended |              |
+ w_gmt_offset      | numeric(5,2)          |           | main     |              |
 Partial Cluster :
     "warehouse_t17_cluster" PARTIAL CLUSTER KEY (w_warehouse_sk)
 Has OIDs: no
@@ -1063,7 +1063,7 @@ Options: compression=no, version=0.12
 openGauss=# ALTER TABLE tpcds.warehouse_t17 DROP CONSTRAINT warehouse_t17_cluster;
 
 --将表移动到另一个表空间。
-openGauss=# ALTER TABLE tpcds.warehouse_t19 SET TABLESPACE PG_DEFAULT; 
+openGauss=# ALTER TABLE tpcds.warehouse_t19 SET TABLESPACE PG_DEFAULT;
 --创建模式joe。
 openGauss=# CREATE SCHEMA joe;
 
@@ -1116,54 +1116,52 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
     -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
 
 -   TEMPORARY | TEMP
-    
+
     -   临时表只在当前会话可见，会话结束后会自动删除。
-    
+
 -   LIKE
-    
+
     -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-    
+
 -   LIKE INCLUDING DEFAULTS
-    
+
     -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
-    
+
 -   LIKE INCLUDING CONSTRAINTS
-    
+
     -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-    
+
 -   LIKE INCLUDING INDEXES
-    
+
     -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    
+
 -   LIKE INCLUDING STORAGE
-    
+
     -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
-    
+
 -   LIKE INCLUDING COMMENTS
-    
+
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    
+
 -   LIKE INCLUDING PARTITION
 
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 
 -   LIKE INCLUDING RELOPTIONS
-    
+
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-    
+
 -   LIKE INCLUDING ALL
-    
+
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
-    
+
 -   ORIENTATION ROW
-    
+
     -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
-    
+
 -   ORIENTATION COLUMN
-    
+
     -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
-
-

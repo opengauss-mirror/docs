@@ -105,13 +105,13 @@ MOT功能限制：
     下面是伪代码计算键大小：
 
     ```
-    keySize =0; 
-      
-    for each (column in index){ 
-          keySize += (columnSize + columnAddSize); 
-    } 
-    if (index is non_unique) { 
-          keySize += 8; 
+    keySize =0;
+
+    for each (column in index){
+          keySize += (columnSize + columnAddSize);
+    }
+    if (index is non_unique) {
+          keySize += 8;
     }
     ```
 
@@ -210,4 +210,3 @@ MOT功能限制：
 -   Sort clause that does not conform to native index order
 -   Set operations
 -   Constraint dependencies
-

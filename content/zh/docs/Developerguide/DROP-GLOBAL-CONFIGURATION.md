@@ -18,4 +18,3 @@ DROP GLOBAL CONFIGURATION 参数名称，参数名称...;
 ## 参数说明<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s96f32bd65e9e46f4bf15eb3c1663af3a"></a>
 
 参数名称是gs\_global\_config中已经存在的参数，删除不存在的参数将报错。
-

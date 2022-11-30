@@ -31,4 +31,3 @@ explain select * from t1 where t1.a in (select /*+ no_expand*/ t2.a from t2);
 计划
 
 ![](figures/zh-cn_image_0000001209736009.png)
-

@@ -71,4 +71,3 @@ PG\_EXTENSION系统表存储关于所安装扩展的信息。openGauss默认扩�
 </tr>
 </tbody>
 </table>
-

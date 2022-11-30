@@ -78,4 +78,3 @@ GLOBAL\_RECOVERY\_STATUS视图显示关于主机和备机的日志流控信息�
 </tr>
 </tbody>
 </table>
-

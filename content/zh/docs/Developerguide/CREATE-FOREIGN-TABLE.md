@@ -11,7 +11,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137606_section0692184823016"></a>
 
 ```
-CREATE FOREIGN TABLE [ IF NOT EXISTS  ] table_name ( { 
+CREATE FOREIGN TABLE [ IF NOT EXISTS  ] table_name ( {
     column_name type_name POSITION ( offset, length ) [column_constraint ]
         | LIKE source_table | table_constraint } [, ...] )
         SEVER gsmpp_server
@@ -21,7 +21,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS  ] table_name ( {
         [ REMOTE LOG 'name' ]
         [PER NODE REJECT LIMIT 'value']
         [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ];
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( { 
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( {
     column_name type_name
     [ { [CONSTRAINT constraint_name] NULL |
     [CONSTRAINT constraint_name] NOT NULL |
@@ -32,7 +32,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( {
         DISTRIBUTE BY {ROUNDROBIN | REPLICATION}
         [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ]
         [ PARTITION BY ( column_name ) [AUTOMAPPED]] ;
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [ { 
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] table_name ( [ {
     column_name type_name | LIKE source_table } [, ...] ] )
         SERVER server_name
         OPTIONS ( { option_name ' value ' } [, ...] )
@@ -151,7 +151,7 @@ where table_constraint can be:
                 这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是，文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
 
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >file\_fdw更多使用请参见[file\_fdw](file_fdw.md)。
 
 
@@ -159,4 +159,3 @@ where table_constraint can be:
 ## 相关链接<a name="zh-cn_topic_0283137606_section10964241319"></a>
 
 [ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md)，[DROP FOREIGN TABLE](DROP-FOREIGN-TABLE.md)
-

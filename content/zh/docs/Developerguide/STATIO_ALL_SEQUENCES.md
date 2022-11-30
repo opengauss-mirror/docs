@@ -50,4 +50,3 @@ STATIO\_ALL\_SEQUENCES视图包含数据库中每个序列的每一行，显示�
 </tr>
 </tbody>
 </table>
-

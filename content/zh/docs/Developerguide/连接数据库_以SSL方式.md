@@ -40,7 +40,7 @@
 
    表示允许127.0.0.1/32网段的客户端以ssl认证方式连接到openGauss服务器。
 
-   >![](public_sys-resources/icon-notice.png) **须知：** 
+   >![](public_sys-resources/icon-notice.png) **须知：**
    >
    >-   如果服务端pg\_hba.conf文件中METHOD配置为cert，则只有客户端使用证书（client.crt）中所设置的用户名（common name）才能够成功连接数据库。如果设置为md5、sm3或sha256则对连接数据库的用户没有限制。
    >
@@ -138,4 +138,3 @@ public class SSL{
  * 启用bouncycastle：使用jdbc的项目引入依赖：bcpkix-jdk15on.jar包，版本建议：1.65以上。
  */
 ```
-

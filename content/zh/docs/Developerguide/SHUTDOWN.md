@@ -11,10 +11,10 @@ SHUTDOWN将关闭当前连接的数据库节点。
 ## 语法格式<a name="zh-cn_topic_0283136791_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s8d26aecdc3a24323a64f4df9f4df53f3"></a>
 
 ```
-SHUTDOWN 
-  { 
-          | 
-    fast  | 
+SHUTDOWN
+  {
+          |
+    fast  |
     immediate
   };
 ```
@@ -44,4 +44,3 @@ openGauss=# SHUTDOWN;
 --使用fast模式关闭当前数据库节点。
 openGauss=# SHUTDOWN FAST;
 ```
-

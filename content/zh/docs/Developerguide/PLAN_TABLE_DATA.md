@@ -93,9 +93,8 @@ PLAN\_TABLE\_DATA存储了用户通过执行EXPLAIN PLAN收集到的计划信息
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   PLAN\_TABLE\_DATA中包含了当前节点所有用户、所有会话的数据，仅管理员有访问权限。普通用户可以通过[PLAN\_TABLE](PLAN_TABLE.md)视图查看属于自己的数据。
 >-   PLAN\_TABLE\_DATA中的数据是用户通过执行EXPLAIN PLAN命令后由系统自动插入表中，因此禁止用户手动对数据进行插入或更新，否则会引起表中的数据混乱。需要对表中数据删除时，建议通过[PLAN\_TABLE](PLAN_TABLE.md)视图。
 >-   statement\_id、object\_name、object\_owner和projection字段内容遵循用户定义的大小写存储，其它字段内容采用大写存储。
-

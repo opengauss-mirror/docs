@@ -30,7 +30,7 @@
     示例：
 
     ```
-    openGauss=# 
+    openGauss=#
     select * from gs_gsc_catalog_detail(16574, 1260);
      database_id | database_name | rel_id | rel_name  | cache_id |  self  |  ctid  | infomask | infomask2 | hash_value | refcount
     -------------+---------------+--------+-----------+----------+--------+--------+----------+-----------+------------+----------
@@ -93,5 +93,3 @@
              0 |       10
     (2 rows)
     ```
-
-

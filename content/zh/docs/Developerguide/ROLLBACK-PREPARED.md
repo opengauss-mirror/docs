@@ -25,4 +25,3 @@ ROLLBACK PREPARED transaction_id ;
 ## 相关链接<a name="zh-cn_topic_0283136817_zh-cn_topic_0237122181_zh-cn_topic_0059779108_s8478ceeac5ca4509817f9fab4c7a138a"></a>
 
 [COMMIT PREPARED](COMMIT-PREPARED.md)，[PREPARE TRANSACTION](PREPARE-TRANSACTION.md)。
-

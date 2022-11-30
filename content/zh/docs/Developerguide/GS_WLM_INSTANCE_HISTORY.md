@@ -124,4 +124,3 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </tr>
 </tbody>
 </table>
-

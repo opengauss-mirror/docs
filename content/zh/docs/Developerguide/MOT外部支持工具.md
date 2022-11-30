@@ -25,4 +25,3 @@ gs\_dump用于将数据库模式和数据导出到文件中。支持MOT。
 ## gs\_restore<a name="section2332376"></a>
 
 gs\_restore用于从文件中导入数据库模式和数据。支持MOT。
-

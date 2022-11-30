@@ -55,4 +55,3 @@ openGauss=# DROP USER u1;
 ## 相关链接<a name="zh-cn_topic_0283137325_zh-cn_topic_0237122074_section613212620440"></a>
 
 [CREATE SYNONYM](CREATE-SYNONYM.md)，[DROP SYNONYM](DROP-SYNONYM.md)
-

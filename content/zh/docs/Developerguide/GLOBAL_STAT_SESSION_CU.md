@@ -36,4 +36,3 @@ GLOBAL\_STAT\_SESSION\_CU用于查询openGauss各个节点，当前运行session
 </tr>
 </tbody>
 </table>
-

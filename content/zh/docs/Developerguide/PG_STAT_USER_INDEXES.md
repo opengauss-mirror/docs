@@ -71,4 +71,3 @@ PG\_STAT\_USER\_INDEXES视图显示数据库中用户自定义普通表和toast�
 </tr>
 </tbody>
 </table>
-

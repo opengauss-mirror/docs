@@ -20,4 +20,3 @@ index \"%s\" contains corrupted page at block
 ```
 REINDEX INTERNAL TABLE name;
 ```
-

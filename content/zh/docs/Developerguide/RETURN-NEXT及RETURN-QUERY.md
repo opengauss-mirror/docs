@@ -61,4 +61,3 @@ openGauss=# call fun_for_return_query();
  10
 (2 rows)
 ```
-

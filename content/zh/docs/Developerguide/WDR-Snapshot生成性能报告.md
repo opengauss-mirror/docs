@@ -32,7 +32,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
    select create_wdr_snapshot();
    ```
 
-   >![](public_sys-resources/icon-note.png) **说明：** 
+   >![](public_sys-resources/icon-note.png) **说明：**
    >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 5. 执行如下命令，在本地生成HTML格式的WDR报告。
@@ -40,8 +40,8 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
    1. 执行如下命令，设置报告格式。\\a: 不显示表行列符号， \\t:  不显示列名 ，\\o: 指定输出文件。
 
       ```
-      gsql> \a      
-      gsql> \t 
+      gsql> \a
+      gsql> \t
       gsql> \o /home/om/wdrTestNode.html
       ```
 
@@ -63,7 +63,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
       select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
-      >![](public_sys-resources/icon-note.png) **说明：** 
+      >![](public_sys-resources/icon-note.png) **说明：**
       >当前openGauss的节点名固定是“dn\_6001\_6002\_6003”，也可直接代入。
 
       **表 1**  generate\_wdr\_report函数参数说明
@@ -120,7 +120,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#
    3. 执行如下命令关闭输出选项及格式化输出命令。
 
       ```
-      \o \a \t 
+      \o \a \t
       ```
 
 6. 在/home/om/下根据需要[查看WDR报告](zh-cn_topic_0000001215195224.md)。
@@ -136,7 +136,7 @@ gsql -d postgres -p 端口号 -r
 
 --查询已经生成的快照。
 openGauss=# select * from snapshot.snapshot;
- snapshot_id |           start_ts            |            end_ts             
+ snapshot_id |           start_ts            |            end_ts
 -------------+-------------------------------+-------------------------------
            1 | 2020-09-07 10:20:36.763244+08 | 2020-09-07 10:20:42.166511+08
            2 | 2020-09-07 10:21:13.416352+08 | 2020-09-07 10:21:19.470911+08
@@ -165,4 +165,3 @@ openGauss=# \o \a \t
 Output format is aligned.
 Tuples only is off.
 ```
-

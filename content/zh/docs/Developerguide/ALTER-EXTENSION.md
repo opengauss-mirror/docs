@@ -136,4 +136,3 @@ ALTER EXTENSION hstore SET SCHEMA utils;
 ```
 ALTER EXTENSION hstore ADD FUNCTION populate_record(anyelement, hstore);
 ```
-

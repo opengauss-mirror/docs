@@ -28,4 +28,3 @@ SQL发展简史如下：
 ## openGauss支持的SQL标准<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_zh-cn_topic_0059778020_sd52420ad5d4f4fbd9461a8c937e6f469"></a>
 
 openGauss默认支持SQL2、SQL3和SQL4的主要特性。
-

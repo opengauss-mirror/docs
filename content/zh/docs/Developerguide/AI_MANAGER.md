@@ -73,4 +73,3 @@ python3 ai_manager.py --module anomaly_detection --action uninstall --param_file
   }
 }
 ```
-

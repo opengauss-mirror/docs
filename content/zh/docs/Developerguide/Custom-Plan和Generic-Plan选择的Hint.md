@@ -19,7 +19,7 @@
     ```
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >-   对于非PBE方式执行的SQL语句，设置本hint不会影响执行方式。
 >-   本Hint的优先级仅高于基于代价的选择和plan\_cache\_mode参数，即plan\_cache\_mode无法强制选择执行方式的语句本hint也无法生效。
 
@@ -48,4 +48,3 @@ explain execute p(1);
 计划如下。可以看到过滤条件为待填充的入参，即此计划为Generic Plan。
 
 ![](figures/zh-cn_image_0000001209457383.png)
-

@@ -28,4 +28,3 @@ ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name ALTER [ PROCEDURAL ] LANGU
 ## 兼容性<a name="section446220148329"></a>
 
 SQL标准里没有ALTER LANGUAGE语句。
-

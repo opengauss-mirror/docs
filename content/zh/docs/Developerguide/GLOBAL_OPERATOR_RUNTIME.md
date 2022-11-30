@@ -177,4 +177,3 @@ GLOBAL\_OPERATOR\_RUNTIME视图显示当前用户在数据库主节点上正在�
 </tr>
 </tbody>
 </table>
-

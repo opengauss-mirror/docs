@@ -8,8 +8,8 @@ openGauss基于PostgreSQL，而PostgreSQL没有内置存储引擎适配器，如
 
 下图显示了MOT存储引擎如何嵌入到openGauss中及其对数据库功能的双向访问。
 
-**图 1**  openGauss内置MOT存储引擎——外部数据库的FDW访问<a name="fig23070208"></a>  
-![](figures/MOT架构.png "MOT架构")
+**图 1**  openGauss内置MOT存储引擎——外部数据库的FDW访问<a name="fig23070208"></a>
+![](figures/MOT-architecture.png "MOT架构")
 
 我们通过扩展和修改FdwRoutine结构来扩展FDW的能力，以便引入在MOT引入之前不需要的特性和调用。例如，新增了对以下功能的支持：添加索引、删除索引/表、截断、真空和表/索引内存统计。重点放在了FdwRoutine结构与openGauss日志、复制和检查点机制的集成，以便通过故障为跨表事务提供一致性。在这种情况下，MOT本身有时会通过FDW层发起对openGauss功能的调用。
 
@@ -49,4 +49,3 @@ MOT DW机制将指令传递给MOT存储引擎，用于实际建表。同样，�
 ## 查询本机编译（JIT）<a name="section48756423"></a>
 
 MOT引擎的FDW适配器还包含一个轻量级执行路径，该路径使用LLVM编译器执行JIT编译查询。有关MOT查询本机编译的更多信息可以在[MOT查询原生编译（JIT）](MOT查询原生编译_JIT.md)一节中找到。
-

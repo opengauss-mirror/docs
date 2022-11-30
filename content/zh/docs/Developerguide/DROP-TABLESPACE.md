@@ -44,5 +44,3 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name;
 -   drop database
 
     不支持在事务中删除database。
-
-

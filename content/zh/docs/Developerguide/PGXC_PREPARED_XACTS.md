@@ -22,4 +22,3 @@ PGXC\_PREPARED\_XACTS视图显示当前处于prepared阶段的两阶段事务。
 </tr>
 </tbody>
 </table>
-

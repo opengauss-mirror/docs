@@ -22,8 +22,8 @@
 
 **默认值：**10000
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->迭代次数设置过小会降低口令存储的安全性，设置过大会导致认证、用户创建等涉及口令加密的场景性能劣化，请根据实际硬件条件合理设置迭代次数，推荐采用默认迭代次数。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>迭代次数设置过小会降低口令存储的安全性，设置过大会导致认证、用户创建等涉及口令加密的场景性能劣化，请根据实际硬件条件合理设置迭代次数，推荐采用默认迭代次数。
 
 ## session\_authorization<a name="section2099118013294"></a>
 
@@ -55,8 +55,8 @@
 
 **默认值：**0
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->openGauss gsql客户端中有自动重连机制，所以针对初始化用户本地连接，超时后gsql表现的现象为断开后重连。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>openGauss gsql客户端中有自动重连机制，所以针对初始化用户本地连接，超时后gsql表现的现象为断开后重连。
 
 ## ssl<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa"></a>
 
@@ -69,8 +69,8 @@
 -   on表示启用SSL连接。
 -   off表示不启用SSL连接。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。
 
 **默认值：**on
 
@@ -85,8 +85,8 @@
 -   on表示服务器端强制要求SSL连接。
 -   off表示服务器端对是否通过SSL连接不作强制要求。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->openGauss目前支持SSL的场景为客户端连接数据库主节点场景，该参数目前建议只在数据库主节点中开启。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>openGauss目前支持SSL的场景为客户端连接数据库主节点场景，该参数目前建议只在数据库主节点中开启。
 
 **默认值：**off
 
@@ -204,8 +204,8 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->从安全性考虑，请勿关闭密码复杂度策略。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>从安全性考虑，请勿关闭密码复杂度策略。
 
 **取值范围：**0、1
 
@@ -220,12 +220,12 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。  
->-   当[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)为0时，表示不限制密码重用次数，仅限制密码重用天数。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为0时，表示不对密码重用进行限制。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。
+>-   当[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)为0时，表示不限制密码重用次数，仅限制密码重用天数。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为0时，表示不对密码重用进行限制。
 
 **取值范围：**浮点型，最小值为0，最大值为3650，单位为天。
 
@@ -240,12 +240,12 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。  
->-   当[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)为0时，表示不限制密码重用次数，仅限制密码重用天数。  
->-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为0时，表示不对密码重用进行限制。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>修改密码时会检查配置参数[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为正数时，只要满足其中任一个，即可认为密码可以重用。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)为0时，表示不限制密码重用天数，仅限制密码重用次数。
+>-   当[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)为0时，表示不限制密码重用次数，仅限制密码重用天数。
+>-   当[password\_reuse\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s36625909efc14a42af3e142435ae9794)和[password\_reuse\_max](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)都为0时，表示不对密码重用进行限制。
 
 **取值范围：**整型，最小值为0，最大值为1000。
 
@@ -260,8 +260,8 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->password\_lock\_time和[failed\_login\_attempts](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959)必须都为正数时锁定和解锁功能才能生效。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>password\_lock\_time和[failed\_login\_attempts](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959)必须都为正数时锁定和解锁功能才能生效。
 
 **取值范围：**浮点型，最小值为0，最大值为365，单位为天。
 
@@ -276,8 +276,8 @@
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->failed\_login\_attempts和[password\_lock\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27)必须都为正数时锁定和解锁功能才能生效。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>failed\_login\_attempts和[password\_lock\_time](#zh-cn_topic_0237124696_zh-cn_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27)必须都为正数时锁定和解锁功能才能生效。
 
 **取值范围：**整型，最小值为0，最大值为1000。
 
@@ -299,8 +299,8 @@
 -   2表示采用sha256方式对密码加密。
 -   3表示采用sm3方式对密码加密。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->md5加密算法安全性低，存在安全风险，不建议用户使用。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>md5加密算法安全性低，存在安全风险，不建议用户使用。
 
 **默认值：**2
 
@@ -401,4 +401,3 @@
 -   1\~999表示帐户密码到期前提醒的天数。
 
 **默认值：**7
-

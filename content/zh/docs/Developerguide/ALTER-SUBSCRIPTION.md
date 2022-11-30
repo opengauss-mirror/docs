@@ -79,7 +79,7 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
     从发布端获取缺少的表信息。这将开始复制自上次调用REFRESH PUBLICATION或从CREATE SUBSCRIPTION以来添加到订阅发布中的表。
 
     refresh\_option指定了刷新操作的附加选项。支持的选项有：
-    
+
     copy\_data (boolean)
           指定在复制启动后是否应复制正在订阅的发布中的现有数据。默认值是true。（以前订阅的表不会被复制）
 
@@ -98,4 +98,3 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
 ## 相关链接<a name="section773423484017"></a>
 
 [CREATE SUBSCRIPTION](CREATE-SUBSCRIPTION.md)，[DROP SUBSCRIPTION](DROP-SUBSCRIPTION.md)
-

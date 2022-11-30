@@ -59,5 +59,3 @@ CREATE USER创建用户的同时，系统会在执行该命令的数据库中，
     openGauss=# SET SEARCH_PATH TO myschema, public;
     SET
     ```
-
-

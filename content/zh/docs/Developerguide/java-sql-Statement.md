@@ -352,11 +352,10 @@ java.sql.Statement是SQL语句接口。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   通过setFetchSize可以减少结果集在客户端的内存占用情况。它的原理是通过将结果集打包成游标，然后分段处理，所以会加大数据库与客户端的通信量，会有性能损耗。
 >
 >-   由于数据库游标是事务内有效，所以，在设置setFetchSize的同时，需要将连接设置为非自动提交模式，setAutoCommit\(false\)。同时在业务数据需要持久化到数据库中时，在连接上执行提交操作。
 >
 >-   LargeUpdate相关方法必须在JDBC4.2及以上使用。
-

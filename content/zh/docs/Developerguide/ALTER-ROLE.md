@@ -48,14 +48,14 @@
 -   修改角色的名称。
 
     ```
-    ALTER ROLE role_name 
+    ALTER ROLE role_name
         RENAME TO new_name;
     ```
 
 -   锁定或解锁。
 
     ```
-    ALTER ROLE role_name 
+    ALTER ROLE role_name
         ACCOUNT { LOCK | UNLOCK };
     ```
 
@@ -132,4 +132,3 @@
 ## 相关链接<a name="zh-cn_topic_0283137195_zh-cn_topic_0237122068_zh-cn_topic_0059778744_sb24012e0cec94bc3ba5c2c0e8997d052"></a>
 
 [CREATE ROLE](CREATE-ROLE.md)，[DROP ROLE](DROP-ROLE.md)，[SET](SET.md)
-

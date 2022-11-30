@@ -71,4 +71,3 @@ GS\_MATVIEWS视图提供了关于数据库中每一个物化视图的信息。
 </tr>
 </tbody>
 </table>
-

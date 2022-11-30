@@ -26,7 +26,7 @@
        使用DESCRIBE和DESC效果是等价的。
 
 - **tbl_name**
-  
+
        表名，可指定表名。也可以指定schema_name.table_name。
 
 
@@ -127,4 +127,3 @@ openGauss=# describe public.test;
 ## 相关链接<a name="section156744489391"></a>
 
 N/A
-

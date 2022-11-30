@@ -38,7 +38,7 @@
 
   ```
   openGauss=# SELECT ifnull('hello','world');
-    nvl  
+    nvl
   -------
    hello
   (1 row)
@@ -55,9 +55,9 @@
 
   ```
   openGauss=# SELECT ifnull('hello');
-  ?column?  
+  ?column?
   --------
-        f 
+        f
   (1 row)
   ```
 
@@ -78,7 +78,7 @@
 
   ```
   openGauss=# SELECT gs_interval(5,2,3,4,6,7);
-   gs_interval 
+   gs_interval
   -------------
              3
   (1 row)
@@ -86,7 +86,7 @@
 
   ```
   openGauss=# SELECT gs_interval(false,-1,0,true,2);
-   gs_interval 
+   gs_interval
   -------------
              2
   (1 row)
@@ -94,7 +94,7 @@
 
   ```
   openGauss=# SELECT gs_interval('2022-12-12'::timestamp,'asdf','2020-12-12'::date,2023);
-   gs_interval 
+   gs_interval
   -------------
              2
   (1 row)
@@ -110,7 +110,7 @@
 
   ```
   openGauss=# SELECT strcmp('asd','asd');
-   strcmp 
+   strcmp
   --------
         0
   (1 row)
@@ -118,7 +118,7 @@
 
   ```
   openGauss=# SELECT strcmp(312,311);
-   strcmp 
+   strcmp
   --------
         1
   (1 row)
@@ -126,14 +126,8 @@
 
   ```
   openGauss=# SELECT strcmp('2021-12-12'::timestamp,20210::float8);
-   strcmp 
+   strcmp
   --------
        -1
   (1 row)
   ```
-
-  
-
-
-
-

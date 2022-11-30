@@ -71,4 +71,3 @@ GLOBAL\_PLANCACHE\_STATUS视图显示GPC全局计划缓存状态信息。
 </tr>
 </tbody>
 </table>
-

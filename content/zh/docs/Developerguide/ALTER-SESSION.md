@@ -21,9 +21,9 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
 -   设置会话的其他运行时参数。
 
     ```
-    ALTER SESSION SET 
+    ALTER SESSION SET
         {{config_parameter { { TO  | =  }  { value | DEFAULT }
-          | FROM CURRENT }} 
+          | FROM CURRENT }}
           | TIME ZONE time_zone
           | CURRENT_SCHEMA schema
           | NAMES encoding_name
@@ -82,4 +82,3 @@ openGauss=# DROP ROLE joe;
 ## 相关链接<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_sae8fd88368e642f8bec50ae5712a870c"></a>
 
 [SET](SET.md)
-

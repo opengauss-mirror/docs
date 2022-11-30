@@ -55,5 +55,3 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 -   不支持**IMPORT FOREIGN SCHEMA**语法。
 
 -   不支持对外表进行**CREATE TRIGGER**操作。
-
-

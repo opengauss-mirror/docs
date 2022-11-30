@@ -22,4 +22,3 @@ javax.naming.spi.InitialContextFactory是初始连接上下文工厂接口。
 </tr>
 </tbody>
 </table>
-

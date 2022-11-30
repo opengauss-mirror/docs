@@ -67,4 +67,3 @@ openGauss=# alter system set enable_thread_pool to on;
 NOTICE:  please restart the database for the POSTMASTER level parameter to take effect.
 ALTER SYSTEM SET
 ```
-

@@ -46,7 +46,7 @@ gs_dbmind service setup -c confpath --interactive
    ssl_keyfile = (null) # Certificate private key file.
    ssl_keyfile_password = (null) # Password for ssl keyfile.
    ssl_ca_file = (null)  # CA certificate to validate requests.
-   
+
    # METADATABASE 部分用于指定DBMind生成的分析结果的存储位置。
    # 当前支持的数据库类型有SQLite, openGauss以及PostgreSQL. 如果使用openGauss数据库的话，注意Python驱动psycopg2的兼容性问题，用户可以选择使用openGauss官方提供的驱动，也可以通过自行编译或修改GUC参数进行适配。
    # 其他信息为连接到该数据库的连接信息，注意用户需要有数据库创建权限。
@@ -57,11 +57,11 @@ gs_dbmind service setup -c confpath --interactive
    username = # User name to connect to meta-data database.
    password = (null) # Password to connect to meta-data database.
    database = # Database name to connect to meta-data database.
-   
+
    # WORKER 用于指定DBMind可以使用的worker子进程数量，如果写0则会进行自适应，即尽可能多地使用CPU资源。
    [WORKER]
    process_num = 0  # Number of worker processes on a local node. Less than or equal to zero means adaptive.
-   
+
    # AGENT 部分用于指定DBMind连接到openGauss Agent的信息。通过使用该Agent，可以让DBMind获取到被监控实例的即时状态，从而提高分析准确性。同时，也可以向数据库实例下发一些变更动作，如结束某条慢SQL语句（这取决于此处配置的用户是否有足够的权限）。
    # 该master_url 地址即为Agent的地址，由于openGauss-exporter承担了Agent的角色，故改地址也就是openGauss-exporter 的地址。
    # 同时，openGauss-exporter是支持Https协议的，所以，此处也可以根据配置指定SSL证书。
@@ -73,7 +73,7 @@ gs_dbmind service setup -c confpath --interactive
    ssl_keyfile = (null) # Certificate private key file.
    ssl_keyfile_password = (null) # Password for ssl keyfile.
    ssl_ca_file = (null)  # CA certificate to validate requests.
-   
+
    # SELF-MONITORING 表示“自监控”配置，用于配置监控数据库实例时的参数。
    # detection_interval 表示周期性检查任务的执行频次，单位是秒；
    # last_detection_time 表示每一次检查任务使用的最近数据长度；
@@ -87,7 +87,7 @@ gs_dbmind service setup -c confpath --interactive
    # The following golden_kpi of monitoring system is vital.
    golden_kpi = os_cpu_usage, os_mem_usage, os_disk_usage, gaussdb_qps_by_instance  # DBMind only measures and detects the golden metrics in the anomaly detection processing.
    result_storage_retention = 604800  # Unit is second. How long should the results retain? If retention is more than the threshold, DBMind will delete them.
-   
+
    # SELF-OPTIMIZATION 表示“自优化”配置，可以修改下述参数配置，对DBMind的优化结果进行干预，一般使用默认值即可。
    # optimization_interval 的优化任务执行间隔；
    # max_reserved_period 优化结果的最大保存时间；
@@ -103,13 +103,13 @@ gs_dbmind service setup -c confpath --interactive
    max_index_storage = 100 # Unit is MB.
    max_template_num = 5000 # Maximum number of templates.
    kill_slow_query = false  # Whether to actively check and kill slow query. The default elapsed time of a slow query to be killed is 1 minute.
-   
+
    # LOG表示设置DMBind的日志记录信息。
    [LOG]
    maxbytes = 10485760 # Default is 10Mb. Maximum size of a single log file. If maxbytes is zero, the file grows indefinitely.
    backupcount = 1 # Number of backups of log files.
    level = INFO  # Options: DEBUG, INFO, WARNING, ERROR.
-   
+
    # 下列内容表示给用户进行交互配置时的提示信息，用户无需配置。
    [COMMENT]
    worker = The form of executing compute-intensive tasks. Tasks can be executed locally or distributed to multiple nodes for execution.
@@ -117,7 +117,7 @@ gs_dbmind service setup -c confpath --interactive
    metadatabase = Configure the database to record meta-data, which the database can store meta-data for the forecasting and diagnosis process. The database should be an openGauss instance.
    self-monitoring = Set up parameters for monitoring and diagnosing openGauss instance.
    self-optimization = Set up parameters for openGauss optimization.
-   
+
    ```
 
 3. 待用户手动修改完上述参数后，需要执行下述命令进行配置项的初始化。在该阶段中，DBMind会初步检查配置项的正确性、初始化用于存储结果数据的元数据库表结构和内容，同时也加密配置项中出现的明文密码。
@@ -128,10 +128,10 @@ gs_dbmind service setup -c confpath --interactive
 
 4. 完成配置目录初始化过程，可基于该配置目录启动DBMind后台服务。
 
->![](public_sys-resources/icon-note.png) **说明：** 
->1. 配置文件注释信息用于在交互模式下对用户进行提示，有特殊含义不要手动修改或删除；  
->2. 需要确保配置项的值与注释信息之间通过空格符分割，否则系统会将注释信息识别为配置项的值；  
->3. 配置项中的特殊字符，如果需要转移，则通过转义符“百分号”（%）来转义，例如，用户配置的密码为 "password%", 则应通过“百分号”进行转义，即 "password%%"。  
+>![](public_sys-resources/icon-note.png) **说明：**
+>1. 配置文件注释信息用于在交互模式下对用户进行提示，有特殊含义不要手动修改或删除；
+>2. 需要确保配置项的值与注释信息之间通过空格符分割，否则系统会将注释信息识别为配置项的值；
+>3. 配置项中的特殊字符，如果需要转移，则通过转义符“百分号”（%）来转义，例如，用户配置的密码为 "password%", 则应通过“百分号”进行转义，即 "password%%"。
 
 ## 启动服务<a name="section165401522192514"></a>
 
@@ -157,10 +157,10 @@ gs_dbmind service stop -c confpath
 
 DBMind服务会在后台执行完正在运行的任务后自行退出。
 
->![](public_sys-resources/icon-caution.png) **注意：** 
->-   \[METADATABASE\]中的元数据库用户需要具有在该数据库下的创表和数据插入更新权限，否则工具执行会出现异常。  
->-   当前不支持同一配置文件下分开启动多个服务。  
->-   工具提供了requirement.txt文件，用户可以通过该文件安装所需的第三方依赖。  
+>![](public_sys-resources/icon-caution.png) **注意：**
+>-   \[METADATABASE\]中的元数据库用户需要具有在该数据库下的创表和数据插入更新权限，否则工具执行会出现异常。
+>-   当前不支持同一配置文件下分开启动多个服务。
+>-   工具提供了requirement.txt文件，用户可以通过该文件安装所需的第三方依赖。
 
 ## 命令参考<a name="section272822583215"></a>
 
@@ -242,4 +242,3 @@ optional arguments:
 </tr>
 </tbody>
 </table>
-

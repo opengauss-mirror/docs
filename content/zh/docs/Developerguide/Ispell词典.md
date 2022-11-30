@@ -11,7 +11,7 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
     用户可以使用开源词典，直接获取的开源词典后缀名可能为.aff和.dic，此时需要将扩展名改为.affix和.dict。此外，对于某些词典文件，还需要使用下面的命令把字符转换成UTF-8编码，比如挪威语词典：
 
     ```
-    iconv -f ISO_8859-1 -t UTF-8 -o nn_no.affix nn_NO.aff 
+    iconv -f ISO_8859-1 -t UTF-8 -o nn_no.affix nn_NO.aff
     iconv -f ISO_8859-1 -t UTF-8 -o nn_no.dict nn_NO.dic
     ```
 
@@ -32,12 +32,11 @@ openGauss不提供任何预定义的Ispell类型词典或词典文件。dict文�
 
     ```
     openGauss=# SELECT ts_lexize('norwegian_ispell', 'sjokoladefabrikk');
-          ts_lexize      
+          ts_lexize
     ---------------------
      {sjokolade,fabrikk}
     (1 row)
-    
+
     ```
 
     MySpell不支持复合词，Hunspell对复合词有较好的支持。openGauss仅支持Hunspell中基本的复合词操作。通常情况下，Ispell词典能够识别的词是一个有限集合，其后应该配置一个更广义的词典，例如一个可以识别所有词的Snowball词典。
-

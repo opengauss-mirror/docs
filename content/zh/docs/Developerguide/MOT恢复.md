@@ -15,4 +15,3 @@ openGauss管理和触发WAL重做日志恢复。
 -   配置恢复。
 -   虽然WAL恢复以串行方式执行，但可以将检查点恢复配置为以多线程方式运行（即由多个工作线程并行运行）。
 -   在mot.conf文件中配置checkpoint\_recovery\_workers参数，见[恢复（MOT）](MOT配置.md#section7442447103115)中的描述。
-

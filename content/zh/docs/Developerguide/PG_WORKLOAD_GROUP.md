@@ -43,4 +43,3 @@ PG\_WORKLOAD\_GROUP系统表提供了数据库负载组的信息。
 </tr>
 </tbody>
 </table>
-

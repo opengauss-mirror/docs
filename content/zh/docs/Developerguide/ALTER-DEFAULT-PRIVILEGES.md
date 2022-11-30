@@ -38,9 +38,9 @@ ALTER DEFAULT PRIVILEGES
 -   其中grant\_on\_tables\_clause子句用于对表授权。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }
         [, ...] | ALL [ PRIVILEGES ] }
-        ON TABLES 
+        ON TABLES
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -48,9 +48,9 @@ ALTER DEFAULT PRIVILEGES
 -   其中grant\_on\_sequences\_clause子句用于对序列授权。
 
     ```
-    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT }
         [, ...] | ALL [ PRIVILEGES ] }
-        ON SEQUENCES 
+        ON SEQUENCES
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -59,7 +59,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-        ON FUNCTIONS 
+        ON FUNCTIONS
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -68,7 +68,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     GRANT { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-        ON TYPES 
+        ON TYPES
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -86,7 +86,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
-        ON COLUMN_ENCRYPTION_KEYS 
+        ON COLUMN_ENCRYPTION_KEYS
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ]
     ```
@@ -95,9 +95,9 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } 
+        { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM }
         [, ...] | ALL [ PRIVILEGES ] }
-        ON TABLES 
+        ON TABLES
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -106,7 +106,7 @@ ALTER DEFAULT PRIVILEGES
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-        { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } 
+        { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT }
         [, ...] | ALL [ PRIVILEGES ] }
         ON SEQUENCES
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -118,7 +118,7 @@ ALTER DEFAULT PRIVILEGES
     ```
     REVOKE [ GRANT OPTION FOR ]
         { {EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-        ON FUNCTIONS 
+        ON FUNCTIONS
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -128,7 +128,7 @@ ALTER DEFAULT PRIVILEGES
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { USAGE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-        ON TYPES 
+        ON TYPES
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -139,7 +139,7 @@ ALTER DEFAULT PRIVILEGES
     ```
     REVOKE [ GRANT OPTION FOR ]
         { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
-        ON CLIENT_MASTER_KEYS 
+        ON CLIENT_MASTER_KEYS
         FROM { [ GROUP ] role_name | PUBLIC } [, ...]
         [ CASCADE | RESTRICT | CASCADE CONSTRAINTS ]
     ```
@@ -178,7 +178,7 @@ ALTER DEFAULT PRIVILEGES
     取值范围：已存在的角色名称。
 
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >如果想删除一个被赋予了默认权限的角色，有必要恢复改变的缺省权限或者使用DROP OWNED BY来为角色脱离缺省的权限记录。
 
 ## 示例<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>
@@ -194,7 +194,7 @@ openGauss=# CREATE USER jack PASSWORD 'xxxxxxxxx';
 openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds GRANT INSERT ON TABLES TO jack;
 
 --撤销上述权限。
-openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE SELECT ON TABLES FROM PUBLIC; 
+openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE SELECT ON TABLES FROM PUBLIC;
 openGauss=# ALTER DEFAULT PRIVILEGES IN SCHEMA tpcds REVOKE INSERT ON TABLES FROM jack;
 
 --删除用户jack。
@@ -204,4 +204,3 @@ openGauss=# DROP USER jack;
 ## 相关链接<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s802a1dc228084944b989677194792353"></a>
 
 [GRANT](GRANT.md)，[REVOKE](REVOKE.md)
-

@@ -50,4 +50,3 @@ STATIO\_SYS\_SEQUENCES显示命名空间中所有系统表为序列的IO状态�
 </tr>
 </tbody>
 </table>
-

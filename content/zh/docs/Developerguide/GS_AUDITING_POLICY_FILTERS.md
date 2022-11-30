@@ -57,5 +57,3 @@ GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相
 </tr>
 </tbody>
 </table>
-
-

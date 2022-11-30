@@ -98,17 +98,17 @@ INSERT 0 3
 openGauss=#  TRUNCATE TABLE tpcds.reason_t2;
 --查询tpcds.reason_t2表中的数据
 openGauss=#  select * from tpcds.reason_t2;
- r_reason_sk | r_reason_id | r_reason_desc 
+ r_reason_sk | r_reason_id | r_reason_desc
 -------------+-------------+---------------
 (0 rows)
 --执行闪回TRUNCATE
 openGauss=#  TIMECAPSULE TABLE tpcds.reason_t2 to BEFORE TRUNCATE;
 openGauss=#  select * from tpcds.reason_t2;
- r_reason_sk |   r_reason_id    |                                            r_reason_desc                                             
+ r_reason_sk |   r_reason_id    |                                            r_reason_desc
 -------------+------------------+------------------------------------------------------------------------------------------------------
-           1 | AA               | reason1                                                                                             
-           2 | AB               | reason2                                                                                             
-           3 | AC               | reason3                                                                                             
+           1 | AA               | reason1
+           2 | AB               | reason2
+           3 | AC               | reason3
 (3 rows)
 --删除表tpcds.reason_t2
 openGauss=#  DROP TABLE tpcds.reason_t2;
@@ -116,4 +116,3 @@ openGauss=#  DROP TABLE tpcds.reason_t2;
 openGauss=#  TIMECAPSULE TABLE tpcds.reason_t2 to BEFORE DROP;
 TimeCapsule Table
 ```
-

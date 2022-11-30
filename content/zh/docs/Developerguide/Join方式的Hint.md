@@ -32,4 +32,3 @@ select /*+ nestloop(store_sales store_returns item) */ i_product_name product_na
 该hint表示：生成store\_sales、store\_returns和item三表的结果集时，最后的两表关联使用nestloop。生成计划如下所示：
 
 ![](figures/zh-cn_image_0253032870.png)
-

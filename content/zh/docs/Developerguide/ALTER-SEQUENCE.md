@@ -18,7 +18,7 @@
 -   修改序列归属列
 
     ```
-    ALTER  SEQUENCE [ IF EXISTS ] name 
+    ALTER  SEQUENCE [ IF EXISTS ] name
         [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE | CACHE cache]
         [ OWNED BY { table_name.column_name | NONE } ] ;
     ```
@@ -80,4 +80,3 @@ openGauss=# DROP TABLE T1;
 ## 相关链接<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_seadab16e00ee41c383d8cba1759ed7c8"></a>
 
 [CREATE SEQUENCE](CREATE-SEQUENCE.md)，[DROP SEQUENCE](DROP-SEQUENCE.md)
-

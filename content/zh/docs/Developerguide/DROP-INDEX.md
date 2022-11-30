@@ -13,7 +13,7 @@
 ## 语法格式<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s79208f25fe214e06b6c7f661c030f3d1"></a>
 
 ```
-DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ] 
+DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
     index_name [, ...] [ CASCADE | RESTRICT ];
 ```
 
@@ -49,4 +49,3 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 ## 相关链接<a name="zh-cn_topic_0283136794_zh-cn_topic_0237122140_zh-cn_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
 [ALTER INDEX](ALTER-INDEX.md)，[CREATE INDEX](CREATE-INDEX.md)
-

@@ -80,4 +80,3 @@ ai\_server为anomaly\_detection特性的分离特性，在原anomaly\_detection�
 </table>
 
 部署方式请参见[AI\_MANAGER](AI_MANAGER.md)章节。
-

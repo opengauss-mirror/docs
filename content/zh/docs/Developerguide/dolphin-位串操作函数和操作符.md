@@ -13,7 +13,7 @@
   示例：
   ~~~
   openGauss=# select bit_bool('11111');
-   bit_bool 
+   bit_bool
   ----------
    t
   (1 row)
@@ -21,7 +21,7 @@
 
   ~~~
   openGauss=# select bit_bool('00001');
-   bit_bool 
+   bit_bool
   ----------
    t
   (1 row)
@@ -29,11 +29,8 @@
 
   ~~~
   openGauss=# select bit_bool('00000');
-   bit_bool 
+   bit_bool
   ----------
    f
   (1 row)
   ~~~
-
-  
-

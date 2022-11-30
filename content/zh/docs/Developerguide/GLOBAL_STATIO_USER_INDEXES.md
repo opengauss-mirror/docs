@@ -71,4 +71,3 @@ GLOBAL\_STATIO\_USER\_INDEXES视图显示各节点的命名空间中所有用户
 </tr>
 </tbody>
 </table>
-

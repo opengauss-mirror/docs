@@ -52,4 +52,3 @@ char *PQgetvalue(const PGresult *res,
 ## 示例<a name="zh-cn_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
 参见：[示例](示例-3.md)
-

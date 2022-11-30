@@ -17,4 +17,3 @@ SQL被大多数数据库用作查询语言。它是可移植的并且容易学�
 PL/pgSQL可以使用SQL中所有的数据类型、操作符和函数。一些常见函数，例如gs_extend_library。
 
 应用PL/pgSQL创建函数的语法为[CREATE FUNCTION](CREATE-FUNCTION.md)。PL/pgSQL是一种可载入的过程语言。其应用方法与[存储过程](存储过程.md)相似，只是存储过程无返回值，函数有返回值。
-

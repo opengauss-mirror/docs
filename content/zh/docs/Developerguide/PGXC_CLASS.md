@@ -86,4 +86,3 @@ PGXC\_CLASS系统表存储每张表的复制或分布信息。PGXC\_CLASS系统�
 </tr>
 </tbody>
 </table>
-

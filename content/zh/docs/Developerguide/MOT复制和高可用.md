@@ -8,4 +8,3 @@ openGauss gs\_ctl工具用于可用性控制和数据库操作。这包括gs\_ct
 
 -   配置复制和高可用性。
 -   请参考openGauss相关文档。
-

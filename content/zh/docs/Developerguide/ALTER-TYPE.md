@@ -18,9 +18,9 @@
     ALTER TYPE name RENAME ATTRIBUTE attribute_name TO new_attribute_name [ CASCADE | RESTRICT ]
     ALTER TYPE name RENAME TO new_name
     ALTER TYPE name SET SCHEMA new_schema
-    ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum_value [ { BEFORE | AFTER } neighbor_enum_value ] 
+    ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum_value [ { BEFORE | AFTER } neighbor_enum_value ]
     ALTER TYPE name RENAME VALUE existing_enum_value TO new_enum_value
-    
+
     where action is one of:
         ADD ATTRIBUTE attribute_name data_type [ COLLATE collation ] [ CASCADE | RESTRICT ]
         DROP ATTRIBUTE [ IF EXISTS ] attribute_name [ CASCADE | RESTRICT ]
@@ -141,10 +141,10 @@
 
     如果需联动更新类型是已更新类型的关联记录，则拒绝更新。这是缺省选项。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >
     >-   ADD ATTRIBUTE、DROP ATTRIBUTE和ALTER ATTRIBUTE选项可以组合成一个列表同时处理。 例如，在一条命令中同时增加几个属性或是更改几个属性的类型是可以实现的。
-    
+
     >-   要修改一个类型的模式，必须在新模式上拥有CREATE权限。 要修改所有者，必须是新的所有角色的直接或间接成员， 并且该成员必须在此类型的模式上有CREATE权限。 （这些限制强制了修改所有者不会做任何通过删除和重建类型不能做的事情。 不过，系统管理员可以以任何方式修改任意类型的所有权。） 要增加一个属性或是修改一个属性的类型，也必须有该类型的USAGE权限。
 
 
@@ -155,4 +155,3 @@
 ## 相关链接<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_sfe6a005c6e5b4a98b94be3d6521f4840"></a>
 
 [CREATE TYPE](CREATE-TYPE.md)，[DROP TYPE](DROP-TYPE.md)
-

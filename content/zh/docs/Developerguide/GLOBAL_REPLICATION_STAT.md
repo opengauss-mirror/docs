@@ -128,5 +128,3 @@ GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信�
 </tr>
 </tbody>
 </table>
-
-

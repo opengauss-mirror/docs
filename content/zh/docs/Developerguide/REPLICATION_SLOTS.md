@@ -85,4 +85,3 @@ REPLICATION\_SLOTS视图用于查看复制节点的信息。
 </tr>
 </tbody>
 </table>
-

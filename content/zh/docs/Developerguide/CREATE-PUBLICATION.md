@@ -15,9 +15,9 @@
 ## **语法格式**<a name="section52689257424"></a>
 
 ```
-CREATE PUBLICATION name 
-    [ FOR TABLE table_name [, ...] 
-      | FOR ALL TABLES ] 
+CREATE PUBLICATION name
+    [ FOR TABLE table_name [, ...]
+      | FOR ALL TABLES ]
     [ WITH ( publication_parameter [=value] [, ... ] ) ];
 ```
 
@@ -63,4 +63,3 @@ DROP PUBLICATION insert_only;
 ## 相关链接<a name="section871143685317"></a>
 
 [ALTER PUBLICATION](ALTER-PUBLICATION.md)，[DROP PUBLICATION](DROP-PUBLICATION.md)
-

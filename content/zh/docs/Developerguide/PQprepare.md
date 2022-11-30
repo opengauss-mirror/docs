@@ -62,10 +62,9 @@ PGresult：包含查询结果的对象指针。
 -   PQprepare创建一个为PQexecPrepared执行用的预备语句，本特性支持命令的重复执行，不需要每次都进行解析和规划。PQprepare仅在协议3.0及以后的连接中支持，使用协议2.0时，PQprepare将失败。
 -   该函数从查询字符串创建一个名为stmtName的预备语句，该查询字符串必须包含一个SQL命令。stmtName可以是""来创建一个未命名的语句，在这种情况下，任何预先存在的未命名的语句都将被自动替换；否则，如果在当前会话中已经定义了语句名称，则这是一个错误。如果使用了任何参数，那么在查询中将它们称为$1,$2等。nParams是在paramTypes\[\]数组中预先指定类型的参数的数量。（当nParams为0时，数组指针可以为NULL）paramTypes\[\]通过OID指定要分配给参数符号的数据类型。如果paramTypes为NULL ，或者数组中的任何特定元素为零，服务器将按照对非类型化字面字符串的相同方式为参数符号分配数据类型。另外，查询可以使用数字高于nParams的参数符号；还将推断这些符号的数据类型。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->通过执行SQLPREPARE语句，还可以创建与PQexecPrepared一起使用的预备语句。此外，虽然没有用于删除预备语句的libpq函数，但是SQL DEALLOCATE语句可用于此目的。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>通过执行SQLPREPARE语句，还可以创建与PQexecPrepared一起使用的预备语句。此外，虽然没有用于删除预备语句的libpq函数，但是SQL DEALLOCATE语句可用于此目的。
 
 ## 示例<a name="zh-cn_topic_0241735620_section13066285525"></a>
 
 请参见[示例](示例-3.md)章节。
-

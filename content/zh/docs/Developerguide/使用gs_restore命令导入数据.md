@@ -19,7 +19,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 
 ## 操作步骤<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section3467125218532"></a>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议选择使用“-c”和“-e”参数。“-c”表示在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象；“-e”表示当发送SQL语句到数据库时如果出现错误请退出，默认状态下会继续，且在导入后会显示一系列错误信息。
 
 1.  以操作系统用户omm登录数据库主节点。
@@ -111,7 +111,7 @@ gs_restore: total time: 13053  ms
 示例二：执行gs\_restore，导入指定MPPDB\_backup.tar文件（tar归档格式）中postgres数据库的数据和对象定义。
 
 ```
-gs_restore backup/MPPDB_backup.tar -p 8000 -d backupdb 
+gs_restore backup/MPPDB_backup.tar -p 8000 -d backupdb
 gs_restore[2017-07-21 19:21:32]: restore operation successful
 gs_restore[2017-07-21 19:21:32]: total time: 21203  ms
 ```
@@ -127,7 +127,7 @@ gs_restore[2017-07-21 19:26:46]: total time: 21003  ms
 示例四：执行gs\_restore，将postgres数据库的所有对象的定义导入至backupdb数据库。导入前，数据库存在完整的定义和数据，导入后，backupdb数据库只存在所有对象定义，表没有数据。
 
 ```
-gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c 
+gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c
 Password:
 gs_restore[2017-07-21 19:46:27]: restore operation successful
 gs_restore[2017-07-21 19:46:27]: total time: 32993  ms
@@ -173,7 +173,7 @@ gs_restore[2017-07-21 20:12:32]: total time: 20203  ms
 
 ```
 human_resource=# select * from hr.staffs;
- staff_id | first_name  |  last_name  |  email   |    phone_number    |      hire_date      | employment_id |  salary  | commission_pct | manager_id | section_id 
+ staff_id | first_name  |  last_name  |  email   |    phone_number    |      hire_date      | employment_id |  salary  | commission_pct | manager_id | section_id
 ----------+-------------+-------------+----------+--------------------+---------------------+---------------+----------+----------------+------------+------------
       200 | Jennifer    | Whalen      | JWHALEN  | 515.123.4444       | 1987-09-17 00:00:00 | AD_ASST       |  4400.00 |                |        101 |         10
       201 | Michael     | Hartstein   | MHARTSTE | 515.123.5555       | 1996-02-17 00:00:00 | MK_MAN        | 13000.00 |                |        100 |         20
@@ -188,13 +188,13 @@ human_resource=# drop table hr.staffs CASCADE;
 NOTICE:  drop cascades to view hr.staff_details_view
 DROP TABLE
 
-gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d human_resource -n hr -t staffs -s -e 
+gs_restore /home/omm/backup/MPPDB_backup.tar -p 8000 -d human_resource -n hr -t staffs -s -e
 Password:
 restore operation successful
 total time: 904  ms
 
 human_resource=# select * from hr.staffs;
- staff_id | first_name | last_name | email | phone_number | hire_date | employment_id | salary | commission_pct | manager_id | section_id 
+ staff_id | first_name | last_name | email | phone_number | hire_date | employment_id | salary | commission_pct | manager_id | section_id
 ----------+------------+-----------+-------+--------------+-----------+---------------+--------+----------------+------------+------------
 (0 rows)
 ```
@@ -204,7 +204,7 @@ human_resource=# select * from hr.staffs;
 ```
 human_resource=# \d
                                  List of relations
- Schema |        Name        | Type  |  Owner   |             Storage              
+ Schema |        Name        | Type  |  Owner   |             Storage
 --------+--------------------+-------+----------+----------------------------------
  hr     | employment_history | table | omm | {orientation=row,compression=no}
  hr     | employments        | table | omm | {orientation=row,compression=no}
@@ -213,14 +213,14 @@ human_resource=# \d
  hr     | states             | table | omm | {orientation=row,compression=no}
 (5 rows)
 
-gs_restore /home/gaussdb/backup/MPPDB_backup.tar -p 8000 -d human_resource -n hr -t staffs -n hr -t areas 
+gs_restore /home/gaussdb/backup/MPPDB_backup.tar -p 8000 -d human_resource -n hr -t staffs -n hr -t areas
 Password:
 restore operation successful
 total time: 724  ms
 
 human_resource=# \d
                                  List of relations
- Schema |        Name        | Type  |  Owner   |             Storage              
+ Schema |        Name        | Type  |  Owner   |             Storage
 --------+--------------------+-------+----------+----------------------------------
  hr     | areas              | table | omm | {orientation=row,compression=no}
  hr     | employment_history | table | omm | {orientation=row,compression=no}
@@ -232,7 +232,7 @@ human_resource=# \d
 (7 rows)
 
 human_resource=# select * from hr.areas;
- area_id |       area_name        
+ area_id |       area_name
 ---------+------------------------
        4 | Middle East and Africa
        1 | Europe
@@ -276,7 +276,7 @@ Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
 backupdb=# select * from hr.areas;
- area_id |       area_name        
+ area_id |       area_name
 ---------+------------------------
        4 | Middle East and Africa
        1 | Europe
@@ -295,14 +295,14 @@ Password:
 restore operation successful
 total time: 554  ms
 
-gsql -d backupdb -p 8000 -r 
+gsql -d backupdb -p 8000 -r
 
 gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 Type "help" for help.
 
 backupdb=# select * from hr.areas;
- area_id |       area_name        
+ area_id |       area_name
 ---------+------------------------
        4 | Middle East and Africa
        1 | Europe
@@ -310,4 +310,3 @@ backupdb=# select * from hr.areas;
        3 | Asia
 (4 rows)
 ```
-

@@ -26,7 +26,7 @@
 6.  浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
 7.  恢复应用程序活动。
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。请注意，MOT目前不支持跨引擎多表查询（如使用Join、Union和子查询）和跨引擎多表事务。因此，如果在多表查询、存储过程或事务中访问原始表，则必须将所有相关的磁盘表转换为MOT，或者更改应用程序或数据库中的相关代码。
 
 ## 转换示例<a name="section1367417"></a>
@@ -38,24 +38,24 @@
 1.  检查源表列类型。验证MOT支持所有类型，详情请参阅“不支持的数据类型”章节。
 
     ```
-    benchmarksql-# \d+ customer 
-                           Table "public.customer" 
-     Column |  Type   | Modifiers | Storage | Stats target | Description 
-    --------+---------+-----------+---------+--------------+------------- 
-     x      | integer |           | plain   |              | 
-     y      | integer |           | plain   |              | 
-    Has OIDs: no 
+    benchmarksql-# \d+ customer
+                           Table "public.customer"
+     Column |  Type   | Modifiers | Storage | Stats target | Description
+    --------+---------+-----------+---------+--------------+-------------
+     x      | integer |           | plain   |              |
+     y      | integer |           | plain   |              |
+    Has OIDs: no
     Options: orientation=row, compression=no
     ```
 
 2.  请检查源表数据。
 
     ```
-    benchmarksql=# select * from customer; 
-     x | y 
-    ---+--- 
-     1 | 2 
-     3 | 4 
+    benchmarksql=# select * from customer;
+     x | y
+    ---+---
+     1 | 2
+     3 | 4
     (2 rows)
     ```
 
@@ -63,25 +63,25 @@
 
     ```
     $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
-    gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully 
+    gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: dump database benchmarksql successfully
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
     ```
 
 4.  重命名源表。
 
     ```
-    benchmarksql=# alter table customer rename to customer_bk; 
+    benchmarksql=# alter table customer rename to customer_bk;
     ALTER TABLE
     ```
 
 5.  创建与源表完全相同的MOT。
 
     ```
-    benchmarksql=# create foreign table customer (x int, y int); 
-    CREATE FOREIGN TABLE 
-    benchmarksql=# select * from customer; 
-     x | y 
-    ---+--- 
+    benchmarksql=# create foreign table customer (x int, y int);
+    CREATE FOREIGN TABLE
+    benchmarksql=# select * from customer;
+     x | y
+    ---+---
     (0 rows)
     ```
 
@@ -89,23 +89,21 @@
 
     ```
     $ gs_restore -C -d benchmarksql customer.dump -p 16000
-    restore operation successful 
-    total time: 24  ms 
-    Check that the data was imported successfully. 
-    benchmarksql=# select * from customer; 
-     x | y 
-    ---+--- 
-     1 | 2 
-     3 | 4 
-    (2 rows) 
-      
-    benchmarksql=# \d 
-                                    List of relations 
-     Schema |    Name     |     Type      | Owner  |             Storage 
-    --------+-------------+---------------+--------+---------------------------------- 
-     public | customer    | foreign table | aharon | 
-     public | customer_bk | table         | aharon | {orientation=row,compression=no} 
+    restore operation successful
+    total time: 24  ms
+    Check that the data was imported successfully.
+    benchmarksql=# select * from customer;
+     x | y
+    ---+---
+     1 | 2
+     3 | 4
+    (2 rows)
+
+    benchmarksql=# \d
+                                    List of relations
+     Schema |    Name     |     Type      | Owner  |             Storage
+    --------+-------------+---------------+--------+----------------------------------
+     public | customer    | foreign table | aharon |
+     public | customer_bk | table         | aharon | {orientation=row,compression=no}
     (2 rows)
     ```
-
-

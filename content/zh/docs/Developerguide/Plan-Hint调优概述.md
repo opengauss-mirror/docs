@@ -20,9 +20,9 @@ select /*+ <plan_hint1> <plan_hint2> */ * from t1, (select /*+ <plan_hint3> */ f
 
 其中<plan\_hint1\>，<plan\_hint2\>为外层查询的hint，<plan\_hint3\>为内层子查询的hint。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->如果在视图定义（CREATE VIEW）时指定hint，则在该视图每次被应用时会使用该hint。  
->当使用random plan功能（参数plan\_mode\_seed不为0）时，查询指定的plan hint不会被使用。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>如果在视图定义（CREATE VIEW）时指定hint，则在该视图每次被应用时会使用该hint。
+>当使用random plan功能（参数plan\_mode\_seed不为0）时，查询指定的plan hint不会被使用。
 
 ## 支持范围<a name="zh-cn_topic_0237121532_section1748920122313"></a>
 
@@ -257,4 +257,3 @@ group by i_product_name
 ```
 
 ![](figures/zh-cn_image_0253028833.png)
-

@@ -91,7 +91,7 @@ MOT使用返回码（Return Code，RC）返回Postgres标准错误代码至封�
 
 MOT从内部返回Postgres代码（见下文）到数据库包，数据库封装根据标准的Postgres行为对其做出反应。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >提示信息中的%s、%u、%lu指代相应的错误信息（如查询、表名或其他信息）。
 >
 >-   %s：字符串
@@ -417,4 +417,3 @@ MOT从内部返回Postgres代码（见下文）到数据库包，数据库封装
 </tr>
 </tbody>
 </table>
-

@@ -71,4 +71,3 @@ GLOBAL\_STATIO\_ALL\_INDEXES视图包含各节点的数据库中的每个索引�
 </tr>
 </tbody>
 </table>
-

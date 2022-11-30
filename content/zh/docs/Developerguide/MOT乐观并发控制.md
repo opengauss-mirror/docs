@@ -188,4 +188,3 @@ create foreign table test (x int, y int, z int, primary key(x));
 </tr>
 </tbody>
 </table>
-

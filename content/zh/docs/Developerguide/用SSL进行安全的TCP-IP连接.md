@@ -17,7 +17,7 @@ openGauss支持SSL标准协议（TLS 1.2），SSL协议是安全性更高的协�
 
 openGauss在数据库部署完成后，默认已开启SSL认证模式。服务器端证书，私钥以及根证书已经默认配置完成。用户需要配置客户端的相关参数。
 
-配置SSL认证相关的数字证书参数，具体要求请参见[表1](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_table56811076112938)。 
+配置SSL认证相关的数字证书参数，具体要求请参见[表1](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_table56811076112938)。
 
 -   配置客户端参数。
 
@@ -52,7 +52,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     ```
 
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >从安全性考虑，建议使用双向认证方式。
 >配置客户端环境变量，必须包含文件的绝对路径。
 
@@ -176,7 +176,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >客户端环境变量的路径以“_/home/omm_”为例，在实际操作中请使用实际路径进行替换。
 
 **表 3**  客户端参数
@@ -484,11 +484,10 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.png) **说明：** 
->-   目前只支持上表中的6种加密算法套件。  
+>![](public_sys-resources/icon-note.png) **说明：**
+>-   目前只支持上表中的6种加密算法套件。
 >-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
 >-   如需指定以上加密算法套件，可以设置ssl\_ciphers为上表中OpenSSL套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：
->    ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'。  
->-   SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。  
->-   在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。  
-
+>    ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'。
+>-   SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。
+>-   在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。

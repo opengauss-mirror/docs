@@ -10,7 +10,7 @@
 
 在创建数据库连接之前，需要加载数据库驱动类“org.opengauss.Driver”。
 
->![](public_sys-resources/icon-note.png) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC驱动包时，org.postgresql.Driver驱动类会冲突。
 >
@@ -41,7 +41,7 @@
    **表 1**  变量说明
 
    <a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_table1625616152473"></a>
-   
+
    <table><thead align="left"><tr id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_row1525719152472"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p52573155477"></a>变量名</p>
    </th>
    <th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a><a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_p525713159478"></a>操作</p>
@@ -75,6 +75,3 @@
    </tr>
    </tbody>
    </table>
-
-
-

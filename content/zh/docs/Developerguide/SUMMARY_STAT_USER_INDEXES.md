@@ -57,4 +57,3 @@ openGauss内汇聚所有数据库中用户自定义普通表的索引状态信�
 </tr>
 </tbody>
 </table>
-

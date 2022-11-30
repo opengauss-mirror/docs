@@ -7,7 +7,7 @@
 ## 原型<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s4914d0218ea7413d8329f30f387e9d20"></a>
 
 ```
-SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,    
+SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
                         SQLHANDLE     Handle);
 ```
 
@@ -51,4 +51,3 @@ SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
 ## 示例<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s877f1d1111e8452fbea6495355622686"></a>
 
 参见：[示例](示例-2.md)
-

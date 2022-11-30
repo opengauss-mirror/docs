@@ -43,4 +43,3 @@ DROP EXTENSION hstore;
 ```
 
 在当前数据库中，如果有使用hstore的对象的，这条命令就会失败，比如任一表中的字段使用hstore类型。这时增加CASCADE选项会强制删除扩展和依赖于扩展的对象。
-

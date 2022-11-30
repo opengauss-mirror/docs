@@ -37,7 +37,7 @@ NEXT
 
 MOVE命令的参数与FETCH的相同，详细请参见FETCH的[参数说明](FETCH.md#zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9)。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >成功完成时，MOVE命令将返回一个“MOVE count”的标签，count是一个使用相同参数的FETCH命令会返回的行数（可能为零）。
 
 ## 示例<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s135d1e005b114aa4b3446001b7416853"></a>
@@ -54,12 +54,12 @@ openGauss=# MOVE FORWARD 3 FROM cursor1;
 
 --抓取游标cursor1的前4行。
 openGauss=# FETCH 4 FROM cursor1;
- r_reason_sk |   r_reason_id    |                                            r_reason_desc                                             
+ r_reason_sk |   r_reason_id    |                                            r_reason_desc
 -------------+------------------+------------------------------------------------------------------------------------------------------
-           4 | AAAAAAAAEAAAAAAA | Not the product that was ordred                                                                     
-           5 | AAAAAAAAFAAAAAAA | Parts missing                                                                                       
-           6 | AAAAAAAAGAAAAAAA | Does not work with a product that I have                                                            
-           7 | AAAAAAAAHAAAAAAA | Gift exchange                                                                                       
+           4 | AAAAAAAAEAAAAAAA | Not the product that was ordred
+           5 | AAAAAAAAFAAAAAAA | Parts missing
+           6 | AAAAAAAAGAAAAAAA | Does not work with a product that I have
+           7 | AAAAAAAAHAAAAAAA | Gift exchange
 (4 rows)
 
 --关闭游标。
@@ -72,4 +72,3 @@ openGauss=# END;
 ## 相关链接<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>
 
 [CLOSE](CLOSE.md)，[FETCH](FETCH.md)
-

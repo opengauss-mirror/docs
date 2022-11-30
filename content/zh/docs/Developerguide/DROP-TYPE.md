@@ -40,4 +40,3 @@ DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]
 ## 相关链接<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_s428358f9df2f458a8d50d103683f7ee0"></a>
 
 [CREATE TYPE](CREATE-TYPE.md)，[ALTER TYPE](ALTER-TYPE.md)
-

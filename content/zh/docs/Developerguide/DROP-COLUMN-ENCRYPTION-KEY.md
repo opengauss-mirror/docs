@@ -35,4 +35,3 @@ openGauss=# DROP COLUMN ENCRYPTION KEY ImgCEK CASCADE;
 ERROR:  cannot drop column setting: imgcek cascadely because encrypted column depend on it.
 HINT:  we have to drop encrypted column: name, ... before drop column setting: imgcek cascadely.
 ```
-

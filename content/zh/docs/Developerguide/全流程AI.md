@@ -4,8 +4,6 @@
 
 openGauss实现了部分全流程AI的功能，将在本章节中详细展开。
 
--   **[PLPython Fenced模式](plpython-fenced模式.md)**  
+-   **[PLPython Fenced模式](plpython-fenced模式.md)**
 
--   **[DB4AI-Snapshots数据版本管理](DB4AI-Snapshots数据版本管理.md)**  
-
-
+-   **[DB4AI-Snapshots数据版本管理](DB4AI-Snapshots数据版本管理.md)**

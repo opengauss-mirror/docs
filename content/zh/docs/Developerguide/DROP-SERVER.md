@@ -35,4 +35,3 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 ## 相关链接<a name="zh-cn_topic_0283136745_section620331805317"></a>
 
 [ALTER SERVER](ALTER-SERVER.md)，[CREATE SERVER](CREATE-SERVER.md)
-

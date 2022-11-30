@@ -126,6 +126,3 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
              6
         (5 rows)
         ```
-
-
-

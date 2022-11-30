@@ -704,11 +704,11 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   </tbody>
   </table>
 
-  >![](public_sys-resources/icon-caution.png) **注意：** 
+  >![](public_sys-resources/icon-caution.png) **注意：**
   >需要注意并非所有的客户端API都支持上面列出的字符集。
   >SQL\_ASCII设置与其他设置表现得相当不同。如果服务器字符集是SQL\_ASCII，服务器把字节值0-127根据 ASCII标准解释，而字节值128-255则当作无法解析的字符。如果设置为SQL\_ASCII，就不会有编码转换。因此，这个设置基本不是用来声明所使用的指定编码， 因为这个声明会忽略编码。在大多数情况下，如果你使用了任何非ASCII数据，那么使用 SQL\_ASCII设置都是不明智的，因为OpenGauss将无法帮助你转换或者校验非ASCII字符。
 
-  >![](public_sys-resources/icon-notice.png) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：**
   >
   >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
 
@@ -735,7 +735,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >-   A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。
 
@@ -753,10 +753,10 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
     数据库可以接受的并发连接数。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >
     >-   系统管理员不受此参数的限制。
-    
+
 >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
 
     取值范围：\>=-1的整数。默认值为-1，表示没有限制。
@@ -836,4 +836,3 @@ openGauss=# DROP DATABASE ora_compatible_db;
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
     当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'）时，必须指定template \[=\] template0。
-

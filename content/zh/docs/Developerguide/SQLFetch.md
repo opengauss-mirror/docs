@@ -45,4 +45,3 @@ SQLRETURN SQLFetch(SQLHSTMT    StatementHandle);
 ## 示例<a name="zh-cn_topic_0238272893_zh-cn_topic_0237120423_zh-cn_topic_0059777989_s297ce23d9b4d4e6ab0f5888390604f41"></a>
 
 参见：[示例](示例-2.md)
-
