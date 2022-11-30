@@ -29,28 +29,28 @@
 </tr>
 <tr id="row133931487257"><td class="cellrowborder" valign="top" width="14.591459145914593%" headers="mcps1.2.4.1.1 "><p id="p1139311862519"><a name="p1139311862519"></a><a name="p1139311862519"></a>puballtables</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p12393582257"><a name="p12393582257"></a><a name="p12393582257"></a>bool</p>
+<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p12393582257"><a name="p12393582257"></a><a name="p12393582257"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p739315892515"><a name="p739315892515"></a><a name="p739315892515"></a>如果为真，这个publication自动包括数据库中的所有表，包括未来将会创建的任何表。</p>
 </td>
 </tr>
 <tr id="row108501716192615"><td class="cellrowborder" valign="top" width="14.591459145914593%" headers="mcps1.2.4.1.1 "><p id="p1385131610262"><a name="p1385131610262"></a><a name="p1385131610262"></a>pubinsert</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p108511116162616"><a name="p108511116162616"></a><a name="p108511116162616"></a>bool</p>
+<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p108511116162616"><a name="p108511116162616"></a><a name="p108511116162616"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p685201611265"><a name="p685201611265"></a><a name="p685201611265"></a>如果为真，为publication中的表复制INSERT操作。</p>
 </td>
 </tr>
 <tr id="row47792198262"><td class="cellrowborder" valign="top" width="14.591459145914593%" headers="mcps1.2.4.1.1 "><p id="p578011914261"><a name="p578011914261"></a><a name="p578011914261"></a>pubupdate</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p1780181916261"><a name="p1780181916261"></a><a name="p1780181916261"></a>bool</p>
+<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p1780181916261"><a name="p1780181916261"></a><a name="p1780181916261"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p27801719102611"><a name="p27801719102611"></a><a name="p27801719102611"></a>如果为真，为publication中的表复制UPDATE操作。</p>
 </td>
 </tr>
 <tr id="row1331192214267"><td class="cellrowborder" valign="top" width="14.591459145914593%" headers="mcps1.2.4.1.1 "><p id="p12332122252613"><a name="p12332122252613"></a><a name="p12332122252613"></a>pubdelete</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p11332722192612"><a name="p11332722192612"></a><a name="p11332722192612"></a>bool</p>
+<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p11332722192612"><a name="p11332722192612"></a><a name="p11332722192612"></a>boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p1133282216262"><a name="p1133282216262"></a><a name="p1133282216262"></a>如果为真，为publication中的表复制DELETE操作。</p>
 </td>

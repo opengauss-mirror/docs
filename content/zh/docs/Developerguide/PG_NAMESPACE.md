@@ -57,7 +57,7 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 </tr>
 <tr id="row7896173213409"><td class="cellrowborder" valign="top" width="20.13%" headers="mcps1.2.4.1.1 "><p id="p48972328402"><a name="p48972328402"></a><a name="p48972328402"></a>nspblockchain</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p147331629175510"><a name="p147331629175510"></a><a name="p147331629175510"></a><span id="text877737212"><a name="text877737212"></a><a name="text877737212"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p147331629175510"><a name="p147331629175510"></a><a name="p147331629175510"></a><span id="text877737212"><a name="text877737212"></a><a name="text877737212"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><a name="ul736813311431"></a><a name="ul736813311431"></a><ul id="ul736813311431"><li>如果为真，则该模式为防篡改模式。</li><li>如果为假，则此模式为非防篡改模式。</li></ul>
 </td>

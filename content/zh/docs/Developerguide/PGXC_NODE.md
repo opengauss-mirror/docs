@@ -65,7 +65,7 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 <tr id="zh-cn_topic_0059778795_r2848aa12f15d4defb72da5e607afbd12"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778795_a52620b180efe43afa68ae795a800ef5f"><a name="zh-cn_topic_0059778795_a52620b180efe43afa68ae795a800ef5f"></a><a name="zh-cn_topic_0059778795_a52620b180efe43afa68ae795a800ef5f"></a>hostis_primary</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"><a name="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"></a><a name="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"></a><span id="text581312152919"><a name="text581312152919"></a><a name="text581312152919"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"><a name="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"></a><a name="zh-cn_topic_0059778795_ab863dfb623344886a05f7e6884b09e7f"></a><span id="text581312152919"><a name="text581312152919"></a><a name="text581312152919"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="61.529999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778795_ab1fdb5a69fa6462ea56ea15c2475ad6a"><a name="zh-cn_topic_0059778795_ab1fdb5a69fa6462ea56ea15c2475ad6a"></a><a name="zh-cn_topic_0059778795_ab1fdb5a69fa6462ea56ea15c2475ad6a"></a>表明当前节点是否发生主备切换。</p>
 <a name="ul12255125141612"></a><a name="ul12255125141612"></a><ul id="ul12255125141612"><li>t（true）：表示发生。</li><li>f（false）：表示不发生。</li></ul>
@@ -73,7 +73,7 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 <tr id="zh-cn_topic_0059778795_rae9e8e4f20d24b44860845e9bcbd9ee2"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778795_a07afd48514bf4db495284ce0e8b74250"><a name="zh-cn_topic_0059778795_a07afd48514bf4db495284ce0e8b74250"></a><a name="zh-cn_topic_0059778795_a07afd48514bf4db495284ce0e8b74250"></a>nodeis_primary</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"><a name="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"></a><a name="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"></a><span id="text1152610217292"><a name="text1152610217292"></a><a name="text1152610217292"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"><a name="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"></a><a name="zh-cn_topic_0059778795_a70dfb1ba75fd404fadc69b9b5f9e975e"></a><span id="text1152610217292"><a name="text1152610217292"></a><a name="text1152610217292"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="61.529999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778795_a0e2e85e7d4684dc2b0252452e3169007"><a name="zh-cn_topic_0059778795_a0e2e85e7d4684dc2b0252452e3169007"></a><a name="zh-cn_topic_0059778795_a0e2e85e7d4684dc2b0252452e3169007"></a>在replication表下，是否优选当前节点作为优先执行的节点进行非查询操作。</p>
 <a name="ul1769914342913"></a><a name="ul1769914342913"></a><ul id="ul1769914342913"><li>t（true）：表示优选。</li><li>f（false）：表示不优选。</li></ul>
@@ -81,7 +81,7 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 <tr id="zh-cn_topic_0059778795_r5ab55a781c4c46a8a9b7c0b614b77573"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059778795_a2e96fa15f5a34850ac770ea5b6629080"><a name="zh-cn_topic_0059778795_a2e96fa15f5a34850ac770ea5b6629080"></a><a name="zh-cn_topic_0059778795_a2e96fa15f5a34850ac770ea5b6629080"></a>nodeis_preferred</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"><a name="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"></a><a name="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"></a><span id="text935820342911"><a name="text935820342911"></a><a name="text935820342911"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"><a name="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"></a><a name="zh-cn_topic_0059778795_abd8e5e40a4194128934e106148a80b8f"></a><span id="text935820342911"><a name="text935820342911"></a><a name="text935820342911"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="61.529999999999994%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778795_a7ba426714b6843bd8cc02c0de04388dc"><a name="zh-cn_topic_0059778795_a7ba426714b6843bd8cc02c0de04388dc"></a><a name="zh-cn_topic_0059778795_a7ba426714b6843bd8cc02c0de04388dc"></a>在replication表下，是否优选当前节点作为首选的节点进行查询。</p>
 <a name="ul118201358112920"></a><a name="ul118201358112920"></a><ul id="ul118201358112920"><li>t（true）：表示优选。</li><li>f（false）：表示不优选。</li></ul>
@@ -124,7 +124,7 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 <tr id="row641750114318"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p18418130104318"><a name="p18418130104318"></a><a name="p18418130104318"></a>nodeis_central</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="p9418110154318"><a name="p9418110154318"></a><a name="p9418110154318"></a><span id="text162514492919"><a name="text162514492919"></a><a name="text162514492919"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="p9418110154318"><a name="p9418110154318"></a><a name="p9418110154318"></a><span id="text162514492919"><a name="text162514492919"></a><a name="text162514492919"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="61.529999999999994%" headers="mcps1.2.4.1.3 "><p id="p44186016437"><a name="p44186016437"></a><a name="p44186016437"></a>表明当前节点是否为中心控制节点，只用于CN，对DN无效。</p>
 <a name="ul21561963304"></a><a name="ul21561963304"></a><ul id="ul21561963304"><li>t（true）：表示是。</li><li>f（false）：表示不是。</li></ul>
@@ -132,7 +132,7 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 <tr id="row129545512711"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p11955105476"><a name="p11955105476"></a><a name="p11955105476"></a>nodeis_active</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="p2095617513718"><a name="p2095617513718"></a><a name="p2095617513718"></a><span id="text198461215931"><a name="text198461215931"></a><a name="text198461215931"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="16.41%" headers="mcps1.2.4.1.2 "><p id="p2095617513718"><a name="p2095617513718"></a><a name="p2095617513718"></a><span id="text198461215931"><a name="text198461215931"></a><a name="text198461215931"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="61.529999999999994%" headers="mcps1.2.4.1.3 "><p id="p1995695579"><a name="p1995695579"></a><a name="p1995695579"></a>表明当前节点是否是正常状态，用于标记CN是否被剔除，对DN无效。</p>
 <a name="ul18109192519303"></a><a name="ul18109192519303"></a><ul id="ul18109192519303"><li>t（true）：表示是。</li><li>f（false）：表示不是。</li></ul>
