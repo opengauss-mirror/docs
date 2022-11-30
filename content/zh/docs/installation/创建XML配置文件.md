@@ -304,6 +304,8 @@
 <PARAM name="dataNodeXlogPath1" value="/home/omm/gauss_xlog,/home/omm/gauss_xlog "/>
 <!--数据库节点上设定同步模式的节点数-->
 <PARAM name="dataNode1_syncNum" value="0"/>
+<!--数据库节点上自定义设定同步模式的节点方式、数量及顺序,hostname根据主机名自行替换-->
+<PARAM name="syncNode_hostname" value="ANY 1(node1_hostname，node2_hostname)"/>
 ```
 
 **表 1**  参数说明
@@ -348,7 +350,12 @@
 </tr>
 <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dataNode1_syncNum</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，用于指定当前数据库中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与syncNode_hostname参数二选一。如需配置，仅在主机节点下配置。用于指定当前数据库中同步模式的节点数目。取值范围为0~数据库备机节点数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>syncNode_hostname</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与dataNode1_syncNum参数二选一。如需配置，需要在所有的节点下同时配置。用于指定当前数据库中同步模式的备机节点方式、数量及顺序。syncNode_hostname中的hostname根据主机名自行替换。</p>
 </td>
 </tr>
 </tbody>
@@ -692,7 +699,10 @@
             <PARAM name="dataNum" value="1"/> 
 	    <PARAM name="dataPortBase" value="15400"/> 
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn"/> 
+            <!--同步备机设置方式,dataNode1_syncNum与syncNode_hostname参数二选一进行配置--> 
             <PARAM name="dataNode1_syncNum" value="0"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node1_hostname" value="FIRST 2(node2_hostname, node3_hostname)"/> 
         </DEVICE> 
  
         <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
@@ -703,6 +713,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.2"/> 
             <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node2_hostname" value="ANY 2(node1_hostname, node3_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -716,6 +728,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.3"/> 
             <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node3_hostname" value="ANY 1(node2_hostname), FIRST 1(node1_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -763,8 +777,11 @@
 	    <!--dn--> 
             <PARAM name="dataNum" value="1"/> 
 	    <PARAM name="dataPortBase" value="15400"/> 
-	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/> 
-            <PARAM name="dataNode1_syncNum" value="0"/> 
+	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn"/>
+            <!--同步备机设置方式,dataNode1_syncNum与syncNode_hostname参数二选一进行配置--> 
+            <PARAM name="dataNode1_syncNum" value="0"/>
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node1_hostname" value="ANY 2(node2_hostname, node3_hostname)"/> 
         </DEVICE> 
  
         <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
@@ -775,6 +792,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.2"/> 
             <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node2_hostname" value="ANY 3(node1_hostname, node3_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -788,6 +807,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.3"/> 
             <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node3_hostname" value="FIRST 3(node1_hostname, node2_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -801,6 +822,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.4"/> 
             <PARAM name="sshIp1" value="192.168.0.4"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node4_hostname" value="ANY 2(node1_hostname, node3_hostname), FIRST 1(node2_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -849,7 +872,10 @@
             <PARAM name="dataNum" value="1"/> 
 	    <PARAM name="dataPortBase" value="15400"/> 
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
+            <!--同步备机设置方式,dataNode1_syncNum与syncNode_hostname参数二选一进行配置--> 
             <PARAM name="dataNode1_syncNum" value="0"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node1_hostname" value="ANY 2(node2_hostname, node4_hostname), ANY 1(node3_hostname, node5_hostname)"/> 
         </DEVICE> 
  
         <!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --> 
@@ -860,6 +886,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.2"/> 
             <PARAM name="sshIp1" value="192.168.0.2"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node2_hostname" value="ANY 2(node1_hostname, node3_hostname), FIRST 1(node5_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -873,6 +901,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.3"/> 
             <PARAM name="sshIp1" value="192.168.0.3"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node3_hostname" value="FIRST 3(node2_hostname, node1_hostname, node4_hostname, node5_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -886,6 +916,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.4"/> 
             <PARAM name="sshIp1" value="192.168.0.4"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node4_hostname" value="ANY 2(node2_hostname, node1_hostname, node5_hostname, node3_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -899,6 +931,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.5"/> 
             <PARAM name="sshIp1" value="192.168.0.5"/> 
+            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <PARAM name="syncNode_node5_hostname" value="ANY 1(node1_hostname, node2_hostname, node3_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
