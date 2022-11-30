@@ -43,7 +43,7 @@ GS\_MASKING\_POLICY系统表记录动态数据脱敏策略的主体信息，每�
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>polenabled</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a><span id="text8141152032618"><a name="text8141152032618"></a><a name="text8141152032618"></a>Boolean</span></p>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a><span id="text8141152032618"><a name="text8141152032618"></a><a name="text8141152032618"></a>boolean</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>策略启动开关。</p>
 </td>
