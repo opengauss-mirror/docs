@@ -197,7 +197,7 @@ $(function ($) {
         let name = item.title.replace("<em>", "");
         name = name.replace("</em>", "");
         // console.log(urlArr);
-        let url = "/" + lang + "/" + item.path.replace("/master","/latest") + ".html";
+        let url = "/" + lang + "/" + item.path.replace("/master","/latest")+ ".html";
         $(".search-result>ul").append(
           "<li>" +
             '<div class="res-title" href="' +
