@@ -16,7 +16,7 @@ goto statement ::=
 
 ```
 openGauss=# CREATE OR REPLACE PROCEDURE GOTO_test()
-AS 
+AS
 DECLARE
     v1  int;
 BEGIN
@@ -45,7 +45,7 @@ GOTO使用有以下限制场景：
 
     ```
     BEGIN
-      GOTO pos1; 
+      GOTO pos1;
       <<pos1>>
       SELECT * FROM ...
       <<pos1>>
@@ -58,7 +58,7 @@ GOTO使用有以下限制场景：
 
     ```
     BEGIN
-       GOTO pos1; 
+       GOTO pos1;
        IF valid THEN
          <<pos1>>
          SELECT * FROM ...
@@ -70,7 +70,7 @@ GOTO使用有以下限制场景：
 -   不支持GOTO语句从一个IF子句跳转到另一个IF子句，或从一个CASE语句的WHEN子句跳转到另一个WHEN子句。
 
     ```
-    BEGIN 
+    BEGIN
        IF valid THEN
          GOTO pos1;
          SELECT * FROM ...
@@ -86,7 +86,7 @@ GOTO使用有以下限制场景：
 
     ```
     BEGIN
-       GOTO pos1;  
+       GOTO pos1;
        BEGIN
          <<pos1>>
          UPDATE t1 SET ...
@@ -124,5 +124,3 @@ GOTO使用有以下限制场景：
     END;
     /
     ```
-
-

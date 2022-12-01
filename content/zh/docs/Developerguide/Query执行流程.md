@@ -2,8 +2,8 @@
 
 SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如[图1](#zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_fig29880521152348)和[表1](#zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_table11198623152535)所示。其中，红色字体部分为DBA可以介入实施调优的环节。
 
-**图 1**  SQL引擎执行查询类SQL语句的流程<a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_fig29880521152348"></a>  
-![](figures/SQL引擎执行查询类SQL语句的流程.png "SQL引擎执行查询类SQL语句的流程")
+**图 1**  SQL引擎执行查询类SQL语句的流程<a name="zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_fig29880521152348"></a>
+![](figures/The-SQL-engine-executes-the-process-of-querying-SQL-like-statements.png "SQL引擎执行查询类SQL语句的流程")
 
 **表 1**  SQL引擎执行查询类SQL语句的步骤说明
 
@@ -54,7 +54,7 @@ openGauss优化器是典型的基于代价的优化（Cost-Based Optimization，
 如下SQL语句:
 
 ```
-select count(1) 
+select count(1)
 from customer inner join store_sales on (ss_customer_sk = c_customer_sk);
 ```
 
@@ -73,4 +73,3 @@ openGauss的表支持行存表、列存表，底层存储方式的选择严格�
 除了上述干预SQL引擎所生成执行计划的执行性能外，根据数据库的SQL执行机制以及大量的实践发现，有些场景下，在保证客户业务SQL逻辑的前提下，通过一定规则由DBA重写SQL语句，可以大幅度的提升SQL语句的性能。
 
 这种调优场景对DBA的要求比较高，需要对客户业务有足够的了解，同时也需要扎实的SQL语句基本功，后续会介绍几个常见的SQL改写场景。
-

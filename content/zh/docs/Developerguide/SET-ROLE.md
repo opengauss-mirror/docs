@@ -67,4 +67,3 @@ openGauss=# RESET role;
 --删除用户。
 openGauss=# DROP USER paul;
 ```
-

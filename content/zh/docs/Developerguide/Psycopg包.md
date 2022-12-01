@@ -6,4 +6,3 @@
 
 -   psycopg2：psycopg2库文件。
 -   lib：lib库文件。
-

@@ -4,7 +4,7 @@
 
 修改触发器名称。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >目前只支持修改名称。
 
@@ -46,4 +46,3 @@ ALTER TRIGGER trigger_name ON table_name RENAME TO new_name;
 ## 相关链接<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TRIGGER](CREATE-TRIGGER.md)，[DROP TRIGGER](DROP-TRIGGER.md)，[ALTER TABLE](ALTER-TABLE.md)
-

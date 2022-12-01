@@ -19,7 +19,7 @@
     按规范激活VACUUM操作。
 
     ```
-    VACUUM [FULL | ANALYZE] [ table ]; 
+    VACUUM [FULL | ANALYZE] [ table ];
     ```
 
     只支持FULL和ANALYZE VACUUM两种类型。VACUUM操作只能对整个MOT进行。
@@ -34,5 +34,3 @@
     此外，不支持以下功能：
 
     -   AUTOVACUUM
-
-

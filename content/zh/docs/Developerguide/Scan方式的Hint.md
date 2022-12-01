@@ -17,9 +17,9 @@
 -   **table**表示hint指定的表，只能指定一个表，如果表存在别名应优先使用别名进行hint。
 -   **index**表示使用indexscan或indexonlyscan的hint时，指定的索引名称，当前只能指定一个。
 
->![](public_sys-resources/icon-note.png) **说明：**   
->对于indexscan或indexonlyscan，只有hint的索引属于hint的表时，才能使用该hint。  
->scan hint支持在行列存表、obs表、子查询表上指定。  
+>![](public_sys-resources/icon-note.png) **说明：**
+>对于indexscan或indexonlyscan，只有hint的索引属于hint的表时，才能使用该hint。
+>scan hint支持在行列存表、obs表、子查询表上指定。
 
 ## 示例<a name="zh-cn_topic_0237121537_section1127715590585"></a>
 
@@ -39,4 +39,3 @@ select /*+ indexscan(item i) */ i_product_name product_name ...
 该hint表示：item表使用索引i进行扫描。生成计划如下所示：
 
 ![](figures/zh-cn_image_0253037239.png)
-

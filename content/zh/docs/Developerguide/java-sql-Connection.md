@@ -359,6 +359,5 @@ java.sql.Connection是数据库连接接口。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >接口内部默认使用自动提交模式，若通过setAutoCommit\(false\)关闭自动提交，将会导致后面执行的语句都受到显式事务包裹，数据库中不支持事务中执行的语句不能在此模式下执行。
-

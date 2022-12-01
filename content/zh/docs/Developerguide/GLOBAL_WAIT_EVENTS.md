@@ -85,4 +85,3 @@ GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息�
 </tr>
 </tbody>
 </table>
-

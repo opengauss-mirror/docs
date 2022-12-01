@@ -64,4 +64,3 @@ GLOBAL\_CANDIDATE\_STATUS视图显示整个数据库所有实例候选buffer个�
 </tr>
 </tbody>
 </table>
-

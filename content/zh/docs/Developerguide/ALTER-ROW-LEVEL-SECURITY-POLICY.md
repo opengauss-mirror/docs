@@ -104,4 +104,3 @@ Options: orientation=row, compression=no, enable_rowsecurity=true
 ## 相关链接<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section1426016489355"></a>
 
 [CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)，[DROP ROW LEVEL SECURITY POLICY](DROP-ROW-LEVEL-SECURITY-POLICY.md)
-

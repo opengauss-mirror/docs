@@ -72,13 +72,13 @@
 
     ```
     openGauss=# SELECT length('abcd');
-     length 
+     length
     --------
           4
     (1 row)
 
     openGauss=# SELECT length('中文');
-     length 
+     length
     --------
           6
     (1 row)
@@ -301,10 +301,10 @@
     100110101
     (1 row)
 
-    b_compatibility_database=# SELECT bin('你好'); 
+    b_compatibility_database=# SELECT bin('你好');
     bin
     ---
-    0 
+    0
     (1 row)
     ```
 
@@ -357,7 +357,7 @@
     b_compatibility_database=# select convert('a' using 'utf8');
     convert
     ---------
-    a 
+    a
     (1 row)
     ```
 
@@ -371,12 +371,12 @@
 
     ```
     b_compatibility_database=# select elt(3,'wo','ceshi','disange');
-    elt   
+    elt
     ---------
     disange
     (1 row)
     ```
-    
+
 -   field(str, str1,str2,str3,...)
 
     描述：获取str在后面strn中的位置，不区分大小写。
@@ -387,12 +387,12 @@
 
     ```
     b_compatibility_database=# select field('ceshi','wo','ceshi','disange');
-    field 
+    field
     -------
         2
     (1 row)
     ```
-    
+
 -   find_in_set(str, strlist)
 
     描述：获取str在后面strlist中的位置，不区分大小写,strlist以，分割。
@@ -403,7 +403,7 @@
 
     ```
     b_compatibility_database=# select find_in_set('ceshi','wo','ceshi,ni,wo,ta');
-    find_in_set 
+    find_in_set
     -------------
             3
     (1 row)
@@ -419,9 +419,9 @@
 
     ```
     b_compatibility_database=# select space('5');
-    space 
+    space
     -------
-        
+
     (1 row)
     ```
 
@@ -435,7 +435,7 @@
 
     ```
     b_compatibility_database=# select soundex('abcqwcaa');
-    soundex 
+    soundex
     ---------
     A120
     (1 row)
@@ -450,7 +450,7 @@
 
     ```sql
     select make_set(1|4, 'one', 'two', NULL, 'four');
-     make_set 
+     make_set
     ----------
      one
     (1 row)
@@ -486,13 +486,13 @@
   ------------
            t
   (1 row)
-  
+
   openGauss=# SELECT 'abc' like 'a' as result;
    result
   ------------
             f
   (1 row)
-  
+
   openGauss=# SELECT 'abc' like 'A%' as result;
    result
   ------------
@@ -514,24 +514,22 @@
   ------------
            f
   (1 row)
-  
+
   openGauss=# SELECT 'a' like binary 'a' as result;
    result
   ------------
            t
   (1 row)
-  
+
   openGauss=# SELECT 'abc' like binary 'a' as result;
    result
   ------------
             f
   (1 row)
-  
+
   openGauss=# SELECT 'abc' like binary 'a%' as result;
    result
   ------------
             t
   (1 row)
   ```
-
-  

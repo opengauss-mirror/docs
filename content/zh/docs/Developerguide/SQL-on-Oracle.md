@@ -95,22 +95,22 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.png) **须知：**  
+>![](public_sys-resources/icon-notice.png) **须知：**
 >
 >-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
->  
+>
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
 >      ```
 >     select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
 >     ```
 >
 >-   待返回的Oracle数据中不可含有NAN或INF。
->  
->-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
+>
+>-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。
 >
 >
->      返回的第二列就是字符串的字节数，而不是实际字符数。 
-> 
+>      返回的第二列就是字符串的字节数，而不是实际字符数。
+>
 > -   对于TIMESTAMP\[\(p\)\] WITH TIME ZONE的数据类型，要求Oracle数据库的时区和本地数据库的时区设置一致，否则可能出现结果错误。
 
 ## **使用前的对接配置**<a name="section082131416315"></a>
@@ -145,7 +145,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
-    
+
     a.  前往Oracle官网（[http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)）下载如下三个oracle压缩包。放置于$GAUSSHOME/utilslib/fc\_conf/$DSN下。路径不存在部分用户可自行创建，$DSN是以DSN为名的文件夹。DSN名必须由字母，数字，下划线组成。
         -   oracle-instantclient-basic-linux.x64-12.2.0.1.0.zip
         -   oracle-instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
@@ -187,9 +187,9 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
               (ORACLE_HOME =/opt/oracle/db/product/11.1.0/db)
             )
           )
-        
+
         # HOST和PORT分别是Oracle数据库的主机IP地址和端口号，请根据实际修改。
-        
+
         LISTENER =
           (DESCRIPTION_LIST =
             (DESCRIPTION =
@@ -197,7 +197,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
               (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
             )
           )
-        
+
         # /opt/oracle/db是Oracle数据库的安装目录，不是ORACLE_HOME，请根据实际修改。
         ADR_BASE_LISTENER = /opt/oracle/db
         ```
@@ -214,7 +214,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         ```
         # ORCL是数据库实例名称，也是准备连接的实例，请根据实际修改。
         # HOST和PORT分别是Oracle数据库的主机IP地址和端口号，请根据实际修改。
-        
+
         ORCL =
           (DESCRIPTION =
             (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
@@ -314,7 +314,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         chmod -R 700 network
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >为了数据传输的安全性考虑，建议用户配置此安全连接。
 
 
@@ -334,7 +334,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
 
     -   不配置安全连接时，添加内容（'\#'及其后面的内容不要）:
-    
+
         ```
         [oracle]                                # DSN
         Driver=Oracle ODBC driver               # Oracle ODBC名称
@@ -342,7 +342,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         Database=orcl                           # 待连接的Oracle实例名称
         Port=XXXX                               # Oracle的端口号
         ```
-    
+
         创建Data Source时，其中的dsn字段就是此处DNS.ini文件中的"oracle".
 
 
@@ -355,7 +355,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     gs_om -t ec -m add -N DSN -U username --type=oracle -L  # -L为本地模式
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >使用本地模式时，需要在各个节点上分别执[1](#li16860111962113)-[5](#li1722613520498)。
 
 7.  安装unixODBC（仅在Oracle中有中文字符时，EC对接才需要执行此步骤）。
@@ -381,14 +381,14 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     ./configure --enable-gui=no --prefix=/tmp/unixODBC-2.3.6 --enable-iconv=yes --with-iconv-char-enc=enc
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
 
     >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
 
     >-   常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
 
     >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
-    
+
     >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
 
     c\) 编译安装。
@@ -413,7 +413,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     chown -R user:group $GPHOME/unixodbc/*
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
 
     f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
@@ -422,7 +422,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >可以登录Oralce数据库，执行如下语句查询NLS\_LANG的值：
     >```
     >SELECT userenv('language') FROM sys_dummy;
@@ -430,7 +430,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
 
 8.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
@@ -441,7 +441,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     gs_om -t stop && gs_om -t start         #仅本地模式执行
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   使用本地模式时，需要在各个节点上分别执[步骤1](#li16860111962113)-[6](#li18491441322)。
     >-   因为本地模式不启停数据库实例，因此需要手动进行启停数据库实例。
 
@@ -464,7 +464,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         openGauss=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >-   无论用户是否[配置了Data Source密钥文件。](#li17974541057)创建和修改Data Source时，此处提供的Oracle数据库用户名和密码在openGauss数据库实例中都将被加密保存到系统表pg\_extension\_data\_source中。
         >-   如果Oracle的字符集为中文字符集，必须保证data source定义中ENCODING、$GAUSSHOME/utilslib/env\_ec中的NLS\_LANG设置、unixODBC编译参数--with-iconv-char-enc指定的encoding三者完全一致。
         >-   如果Oracle字符集为中文字符集，推荐本地数据库的字符集编码和远端Oracle的字符集编码保持一致，避免因字符集不兼容转码失败导致的作业执行失败。
@@ -481,7 +481,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     openGauss=# SELECT * FROM exec_on_extension('ds_oracle', 'select * from a;') AS (c1 int);
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   使用exec\_on\_extension之前需要创建Data Source对象。
     >-   当发送的SQL语句在Oracle执行失败时，连接函数exec\_on\_extension也是执行失败。
 
@@ -507,25 +507,25 @@ openGauss=# CREATE DATA SOURCE oracle VERSION '11g' OPTIONS (dsn 'oracle', usern
 
 -- 建远程表、插入数据、查询数据
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'create table a (c1 int);') AS (c1 text);
- c1 
+ c1
 ----
 (0 rows)
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'insert into a values (119);') AS (c1 text);
- c1 
+ c1
 ----
 (0 rows)
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'insert into a select * from a;') AS (c1 text);
- c1 
+ c1
 ----
 (0 rows)
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int);
- c1  
+ c1
 -----
  119
  119
 (2 rows)
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'select * from a a1 inner join a a2 on a1.c1=a2.c1;') AS (c1 int, c2 int);
- c1  | c2  
+ c1  | c2
 -----+-----
  119 | 119
  119 | 119
@@ -543,7 +543,7 @@ INSERT 0 1
 
 -- 查询结果与本地表关联查询
 openGauss=# SELECT * FROM b INNER JOIN (SELECT * FROM exec_on_extension('oracle', 'select * from a;') AS (c1 int)) a ON a.c1=b.c1;
- c1  | c2  
+ c1  | c2
 -----+-----
  119 | 119
  119 | 119
@@ -558,7 +558,7 @@ openGauss=# GRANT USAGE ON DATA SOURCE oracle TO tmp_usr;
 
 openGauss=# \c - tmp_usr
 openGauss=#  SELECT * FROM exec_on_extension('oracle', 'select * from a group by c1;') AS (c1 int);
- c1  
+ c1
 -----
  119
 (1 row)
@@ -566,7 +566,7 @@ openGauss=#  SELECT * FROM exec_on_extension('oracle', 'select * from a group by
 -- 清除Data Source、表和用户
 openGauss=# \c - omm
 openGauss=# SELECT * FROM exec_on_extension('oracle', 'drop table a;') AS (c1 text);
- c1 
+ c1
 ----
 (0 rows)
 openGauss=# DROP DATA SOURCE oracle;
@@ -629,4 +629,3 @@ EC对接openGauss时产生的常见异常，请参见[表2](#table1097865225410)
 ## **相关链接**<a name="section187221926368"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[SQL on Spark](SQL-on-Spark.md)，[SQL on other openGauss](SQL-on-other-openGauss.md)，《工具参考》中“服务端工具 \> gs\_om”章节
-

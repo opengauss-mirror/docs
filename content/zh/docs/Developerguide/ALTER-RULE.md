@@ -37,4 +37,3 @@ ALTER RULE name ON table_name RENAME TO new_name
 ```
 ALTER RULE notify_all ON emp RENAME TO notify_me;
 ```
-

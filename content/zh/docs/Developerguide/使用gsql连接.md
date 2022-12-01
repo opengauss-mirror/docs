@@ -27,7 +27,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
    其中postgres为需要连接的数据库名称，8000为数据库主节点的端口号。请根据实际情况替换。另外，也可以使用如下任一命令连接数据库。
 
    ```
-   gsql postgres://omm:Gauss_234@127.0.0.1:8000/postgres -r 
+   gsql postgres://omm:Gauss_234@127.0.0.1:8000/postgres -r
    gsql -d "host=127.0.0.1 port=8000 dbname=postgres user=omm password=Gauss_234"
    ```
 
@@ -37,8 +37,8 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-29 05:49:21 commit 1071 last mr 1373)
    Non-SSL connection (SSL connection is recommended when requiring high-security)
    Type "help" for help.
-   
-   openGauss=# 
+
+   openGauss=#
    ```
 
    omm用户是管理员用户，因此系统显示“DBNAME=\#”。若使用普通用户身份登录和连接数据库，系统显示“DBNAME=\>”。
@@ -79,7 +79,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     gsql ((GaussDB Kernel VxxxRxxxCxxopenGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
-    
+
     openGauss=#
     ```
 
@@ -104,7 +104,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   软件包相对位置为安装时所放位置，根据实际情况填写。
     >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
@@ -120,19 +120,19 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
     scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
     ```
-        
+
     其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
 
     打开“\~/.bashrc”文件。
-        
+
     ```
     vi ~/.bashrc
     ```
-        
+
     在其中输入如下内容后，使用“:wq!”命令保存并退出。
-        
+
     ```
     export PATH=/tmp/tools/bin:$PATH
     export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
@@ -154,8 +154,6 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     postgres为需要连接的数据库名称，10.10.0.11为数据库主节点所在的服务器IP地址，jack为连接数据库的用户，8000为数据库主节点的端口号，Test@123为连接数据库用户jack的密码。
 
-    >![](public_sys-resources/icon-note.png) **说明：**  
-    >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
-    >-   禁止使用omm用户进行远程连接数据库。  
-
-
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。
+    >-   禁止使用omm用户进行远程连接数据库。

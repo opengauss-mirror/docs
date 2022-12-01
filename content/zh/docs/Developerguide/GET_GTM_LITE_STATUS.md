@@ -29,4 +29,3 @@ GET\_GTM\_LITE\_STATUS视图是获取GTM上的backupXid和csn，用来支持问�
 </tr>
 </tbody>
 </table>
-

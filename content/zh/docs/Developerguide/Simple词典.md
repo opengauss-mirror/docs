@@ -26,13 +26,13 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
 
     ```
     openGauss=# SELECT ts_lexize('public.simple_dict','YeS');
-     ts_lexize 
+     ts_lexize
     -----------
      {yes}
     (1 row)
-    
+
     openGauss=# SELECT ts_lexize('public.simple_dict','The');
-     ts_lexize 
+     ts_lexize
     -----------
      {}
     (1 row)
@@ -44,16 +44,14 @@ Simple词典首先将输入标记转换为小写字母，然后检查停用词�
     openGauss=# ALTER TEXT SEARCH DICTIONARY public.simple_dict ( Accept = false );
     ALTER TEXT SEARCH DICTIONARY
     openGauss=# SELECT ts_lexize('public.simple_dict','YeS');
-     ts_lexize 
+     ts_lexize
     -----------
-    
+
     (1 row)
-    
+
     openGauss=# SELECT ts_lexize('public.simple_dict','The');
-     ts_lexize 
+     ts_lexize
     -----------
      {}
     (1 row)
     ```
-
-

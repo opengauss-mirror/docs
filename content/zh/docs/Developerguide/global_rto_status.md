@@ -29,4 +29,3 @@ global\_rto\_status视图显示关于主机和备机的日志流控信息（本�
 </tr>
 </tbody>
 </table>
-

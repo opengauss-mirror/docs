@@ -57,4 +57,3 @@ CREATE GROUP group_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] 
 ## 相关链接<a name="zh-cn_topic_0283137568_zh-cn_topic_0237122105_zh-cn_topic_0059779249_s8153dd487fd84f2e924435436395a9a8"></a>
 
 [ALTER GROUP](ALTER-GROUP.md)，[DROP GROUP](DROP-GROUP.md)，[CREATE ROLE](CREATE-ROLE.md)
-

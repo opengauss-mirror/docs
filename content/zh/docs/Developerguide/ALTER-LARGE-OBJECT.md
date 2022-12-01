@@ -11,7 +11,7 @@ ALTER LARGE OBJECT用于更改一个large object的定义。它的唯一的功�
 ## 语法格式<a name="zh-cn_topic_0283137719_zh-cn_topic_0237122064_zh-cn_topic_0059778505_sc544d982cf6142e9bdb66283e857ce80"></a>
 
 ```
-ALTER LARGE OBJECT large_object_oid 
+ALTER LARGE OBJECT large_object_oid
     OWNER TO new_owner;
 ```
 
@@ -33,4 +33,3 @@ ALTER LARGE OBJECT large_object_oid
 ## 示例<a name="zh-cn_topic_0283137719_zh-cn_topic_0237122064_zh-cn_topic_0059778505_s6e23110aff5940ea87da3c0f9569f987"></a>
 
 无。
-

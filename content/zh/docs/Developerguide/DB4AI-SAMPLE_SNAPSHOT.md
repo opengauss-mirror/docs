@@ -64,4 +64,3 @@ SAMPLE\_SNAPSHOT是DB4AI特性用于对基数据进行采样生成快照的接�
 </tr>
 </tbody>
 </table>
-

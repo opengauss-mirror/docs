@@ -121,7 +121,7 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
 
 
     -   删除数据表快照SNAPSHOT
-    
+
         ```
         purge snapshot s1@3.0;
         schema |  name
@@ -129,13 +129,13 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
          public | s1@3.0
         (1 row)
         ```
-    
+
         此时，已经无法再从s1@3.0 中检索到数据了，同时该数据表快照在db4ai.snapshot视图中的记录也会被清除。删除该版本的数据表快照不会影响其他版本的数据表快照。
-    
+
     -   从数据表快照中采样
-    
+
         示例：从snapshot s1中抽取数据，使用0.5抽样率。
-    
+
         ```
         sample snapshot s1@2.0 stratify by name as nick at ratio .5;
         schema |    name
@@ -143,9 +143,9 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
          public | s1nick@2.0
         (1 row)
         ```
-    
+
         可以利用该功能创建训练集与测试集，例如：
-    
+
         ```
         SAMPLE SNAPSHOT s1@2.0  STRATIFY BY name AS _test AT RATIO .2, AS _train AT RATIO .8 COMMENT IS 'training';
         schema |      name
@@ -154,11 +154,11 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
          public | s1_train@2.0
         (2 rows)
         ```
-    
+
     -   发布数据表快照
-    
+
         采用下述SQL语句将数据表快照 s1@2.0 标记为published 状态：
-    
+
         ```
         publish snapshot s1@2.0;
         schema |  name
@@ -166,11 +166,11 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
          public | s1@2.0
         (1 row)
         ```
-    
+
     -   存档数据表快照
-    
+
         采用下述语句可以将数据表快照标记为 archived 状态：
-    
+
         ```
         archive snapshot s1@2.0;
         schema |  name
@@ -178,9 +178,9 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
          public | s1@2.0
         (1 row)
         ```
-    
+
         可以通过db4ai-snapshots提供的视图查看当前数据表快照的状态以及其他信息：
-    
+
         ```
         select * from db4ai.snapshot;
         id | parent_id | matrix_id | root_id | schema |    name    | owner  |                 commands                 | comment | published | archived |          created           | row_count
@@ -198,7 +198,7 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
         ---------
         ERROR:  snapshot public."s1nick@2.0" does not exist
         CONTEXT:  PL/pgSQL function db4ai.publish_snapshot(name,name) line 11 at assignment
-         
+
         archive snapshot s1nick@2.0;
         ----------
         ERROR:  snapshot public."s1nick@2.0" does not exist
@@ -255,6 +255,5 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
     ```
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >命名空间DB4AI是本功能的私有域，不支持在DB4AI的命令空间下创建函数索引（functional index）。
-

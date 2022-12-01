@@ -29,4 +29,3 @@ PG\_REPLICATION\_ORIGIN系统表包含所有已创建的复制源，该表为全
 </tr>
 </tbody>
 </table>
-

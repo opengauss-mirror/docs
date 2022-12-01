@@ -36,7 +36,7 @@ DROP USER [ IF EXISTS ] user_name [, ...] [ CASCADE | RESTRICT ];
     -   CASCADE：级联删除依赖用户的对象。
     -   RESTRICT：如果用户还有任何依赖的对象，则拒绝删除该用户（缺省行为）。
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
         >在openGauss中，存在一个配置参数enable\_kill\_query，此参数在配置文件postgresql.conf中。此参数影响级联删除用户对象的行为：
         >
         >-   当参数enable\_kill\_query为on ，且使用CASCADE模式删除用户时，会自动kill锁定用户级联对象的进程，并删除用户。
@@ -52,4 +52,3 @@ DROP USER [ IF EXISTS ] user_name [, ...] [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283137192_zh-cn_topic_0237122158_zh-cn_topic_0059778403_s428358f9df2f458a8d50d103683f7ee0"></a>
 
 [ALTER USER](ALTER-USER.md)，[CREATE USER](CREATE-USER.md)
-

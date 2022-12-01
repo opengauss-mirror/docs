@@ -42,13 +42,13 @@
           | COST execution_cost
           | ROWS result_rows
           | SET configuration_parameter { {TO | =} value | FROM CURRENT }
-          | COMMENT 'text' 
+          | COMMENT 'text'
       ] [...]
       {
           AS 'definition'
           | AS 'obj_file', 'link_symbol'
       }
-  
+
   ```
 
 -   O风格的创建自定义函数的语法。
@@ -69,7 +69,7 @@
             | COST execution_cost
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
-            | COMMENT 'text' 
+            | COMMENT 'text'
          ][...]
          {
             IS | AS
@@ -98,7 +98,7 @@
 
     取值范围：IN、OUT、INOUT或VARIADIC。缺省值是IN。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >VARIADIC用于声明数组类型的参数。
 
 -   **argtype**
@@ -143,7 +143,7 @@
 
     表示该函数是窗口函数。替换函数定义时不能改变WINDOW属性。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。
 
 -   **IMMUTABLE**
@@ -250,7 +250,7 @@
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
 
 
@@ -292,7 +292,7 @@ openGauss=# SELECT * FROM func_dup_sql(42);
 --计算两个整数的和，并返回结果。如果输入为null，则返回null。
 openGauss=# CREATE FUNCTION func_add_sql2(num1 integer, num2 integer) RETURN integer
 AS
-BEGIN 
+BEGIN
 RETURN num1 + num2;
 END;
 /
@@ -316,4 +316,3 @@ openGauss=# DROP FUNCTION func_add_sql;
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 
 [ALTER FUNCTION](ALTER-FUNCTION.md)，[DROP FUNCTION](DROP-FUNCTION.md)
-

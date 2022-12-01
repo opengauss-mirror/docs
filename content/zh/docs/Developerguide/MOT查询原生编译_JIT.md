@@ -7,26 +7,26 @@ MOT使您可以在执行之前以原生格式（使用PREPARE语句）准备并�
 下面是SQL中的PREPARE语法示例：
 
 ```
-PREPARE name [ ( data_type [, ...] ) ] AS statement 
+PREPARE name [ ( data_type [, ...] ) ] AS statement
 ```
 
 下面是一个如何在Java应用程序中调用PREPARE和EXECUTE语句的示例：
 
 ```
-conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword); 
+conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
 
-// Example 1: PREPARE without bind settings 
-String query = "SELECT * FROM getusers"; 
-PreparedStatement prepStmt1 = conn.prepareStatement(query); 
-ResultSet rs1 = pstatement.executeQuery()) 
-while (rs1.next()) {…} 
+// Example 1: PREPARE without bind settings
+String query = "SELECT * FROM getusers";
+PreparedStatement prepStmt1 = conn.prepareStatement(query);
+ResultSet rs1 = pstatement.executeQuery())
+while (rs1.next()) {…}
 
-// Example 2: PREPARE with bind settings 
-String sqlStmt = "SELECT * FROM employees where first_name=? and last_name like ?"; 
-PreparedStatement prepStmt2 = conn.prepareStatement(sqlStmt); 
-prepStmt2.setString(1, "Mark"); // first name “Mark” 
-prepStmt2.setString(2, "%n%"); // last name contains a letter “n” 
-ResultSet rs2 = prepStmt2.executeQuery()) 
+// Example 2: PREPARE with bind settings
+String sqlStmt = "SELECT * FROM employees where first_name=? and last_name like ?";
+PreparedStatement prepStmt2 = conn.prepareStatement(sqlStmt);
+prepStmt2.setString(1, "Mark"); // first name “Mark”
+prepStmt2.setString(2, "%n%"); // last name contains a letter “n”
+ResultSet rs2 = prepStmt2.executeQuery())
 while (rs2.next()) {…}
 ```
 
@@ -64,4 +64,3 @@ while (rs2.next()) {…}
 另一个显着的概念差异是MOT LLVM代码只在查询的PREPARE阶段为准备查询生成，而不是在查询执行时生成。由于OLTP查询的运行时间相当短，因此这对于OLTP场景尤其重要，这无法在每次查询执行期间生成代码和执行较长的查询编译时间。
 
 最后，在openGauss中，激活PREPARE意味着于同一个会话中具有不同参数的执行之间重用生成的计划。同样，MOT JIT对其LLVM代码结果应用了缓存策略，并扩展了缓存策略，以便在不同会话之间重用。因此，单个查询可以只编译一次，其LLVM代码可以在多个会话中重用，这同样有利于OLTP场景。
-

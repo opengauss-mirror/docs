@@ -34,4 +34,3 @@ DROP ROLE [ IF EXISTS ] role_name [, ...];
 ## 相关链接<a name="zh-cn_topic_0283136937_zh-cn_topic_0237122147_zh-cn_topic_0059778848_sbaf144c395d044f88acd5e545bf09f97"></a>
 
 [CREATE ROLE](CREATE-ROLE.md)，[ALTER ROLE](ALTER-ROLE.md)，[SET ROLE](SET-ROLE.md)
-

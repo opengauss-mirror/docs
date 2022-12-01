@@ -37,8 +37,8 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
        | SET configuration_parameter { TO value | = value | FROM CURRENT }
        | COMMENT text
     ][ ... ]
- { IS | AS } 
-plsql_body 
+ { IS | AS }
+plsql_body
 /
 ```
 
@@ -58,7 +58,7 @@ plsql_body
 
     参数的模式。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >VARIADIC用于声明数组类型的参数。
 
     取值范围： IN、OUT、INOUT或VARIADIC。缺省值是IN。只有OUT模式的参数能跟在VARIADIC参数之后。
@@ -97,17 +97,17 @@ plsql_body
 
 -   **COMMENT text**
 
-    指定存储过程注释。    
+    指定存储过程注释。
 
 -   **plsql\_body**
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >当在存储过程体中进行创建用户等涉及用户密码相关操作时，系统表及csv日志中会记录密码的明文。因此不建议用户在存储过程体中进行涉及用户密码的相关操作。
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >argname和argmode的顺序没有严格要求，推荐按照argname、argmode、argtype的顺序使用。
 
 ## 相关链接<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>
@@ -119,5 +119,3 @@ plsql_body
 -   analyse | analyze
     -   不支持在事务或匿名块中执行analyze 。
     -   不支持在函数或存储过程中执行analyze操作。
-
-

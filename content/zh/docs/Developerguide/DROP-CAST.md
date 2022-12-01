@@ -48,4 +48,3 @@ DROP CAST (text AS int);
 ## 兼容性<a name="section75182291579"></a>
 
 DROP CAST遵循 SQL 标准。
-

@@ -36,4 +36,3 @@ PQfreeCancel释放一个由前面的PQgetCancel创建的数据对象。
 ## 示例<a name="zh-cn_topic_0241735637_section1090020191139"></a>
 
 请参见[示例](示例-3.md)章节。
-

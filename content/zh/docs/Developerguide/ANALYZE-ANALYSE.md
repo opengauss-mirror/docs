@@ -33,7 +33,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
         PARTITION ( patrition_name ) ;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >普通分区表目前支持针对某个分区的统计信息的语法，但功能上不支持针对某个分区的统计信息收集。
 
 
@@ -44,7 +44,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
         table_name (( column_1_name, column_2_name [, ...] ));
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   收集多列统计信息时，请设置GUC参数[default\_statistics\_target](其他优化器选项.md#zh-cn_topic_0283137690_zh-cn_topic_0237124719_zh-cn_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)为负数，以使用百分比采样方式。
     >
@@ -59,7 +59,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE};
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   Fast模式校验时，需要对校验的表有并发的DML操作，会导致校验过程中有误报的问题，因为当前Fast模式是直接从磁盘上读取，并发有其他线程修改文件时，会导致获取的数据不准确，建议离线操作。
     >
@@ -77,7 +77,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name|index_name [CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   支持对普通表的操作和索引表的操作，但不支持对索引表index使用CASCADE操作。原因是由于CASCADE模式用于处理主表的所有索引表，当单独对索引表进行检测时，无需使用CASCADE模式。
     >
@@ -91,7 +91,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >支持对表的单独分区进行检测操作，但不支持对索引表index使用CASCADE操作。
 
 
@@ -101,7 +101,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
     启用显示进度信息。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >如果指定了VERBOSE，ANALYZE发出进度信息，表明目前正在处理的表。各种有关表的统计信息也会打印出来。
 
 -   **table\_name**
@@ -191,7 +191,7 @@ INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
 ANALYZE
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >若环境若有故障，需查看数据库主节点的log。
 
 --- 删除表。
@@ -200,4 +200,3 @@ ANALYZE
 openGauss=# DROP TABLE customer_info;
 openGauss=# DROP TABLE customer_par;
 ```
-

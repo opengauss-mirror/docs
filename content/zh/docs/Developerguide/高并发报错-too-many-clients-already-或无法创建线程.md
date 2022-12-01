@@ -28,8 +28,8 @@ value=max(32768，实例数目*8192)
 设置最小值方法为，修改/etc/security/limits.conf，追加如下两行：
 
 ```
-* hard nproc [value]  
-* soft nproc [value] 
+* hard nproc [value]
+* soft nproc [value]
 ```
 
 对于不同操作系统修改方式略有不同，centos6以上版本可以修改/etc/security/limits.d/90-nofile.conf文件，方法同上。
@@ -41,4 +41,3 @@ ulimit -u [values]
 ```
 
 在大并发模式下，建议开启线程池，使数据库内部的线程资源受控。
-

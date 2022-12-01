@@ -10,7 +10,7 @@
 no_gpc
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >本参数仅在enable\_global\_plancache=on时对PBE执行的语句生效。
 
 ## 示例<a name="section5736356154"></a>
@@ -18,4 +18,3 @@ no_gpc
 ![](figures/zh-cn_image_0000001144139135.png)
 
 dbe\_perf.global\_plancache\_status视图中无结果即没有计划被全局缓存。
-

@@ -31,4 +31,3 @@ DROP OWNED BY name [, ...] [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283136635_zh-cn_topic_0237122143_section1285104485620"></a>
 
 [REASSIGN OWNED](REASSIGN-OWNED.md)  ,  [DROP ROLE](DROP-ROLE.md)
-

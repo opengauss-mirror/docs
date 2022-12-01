@@ -64,4 +64,3 @@ PG\_SECLABEL系统表存储数据对象上的安全标签。
 </tr>
 </tbody>
 </table>
-

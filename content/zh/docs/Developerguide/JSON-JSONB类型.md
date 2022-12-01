@@ -23,32 +23,32 @@ select 'null'::json;   -- sucselect 'NULL'::jsonb;  -- err
 数字（num-json）：正负整数、小数、0，支持科学计数法。
 
 ```
-select '1'::json;select '-1.5'::json;select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;select '001'::json, '+15'::json, 'NaN'::json; 
+select '1'::json;select '-1.5'::json;select '-1.5e-5'::jsonb, '-1.5e+2'::jsonb;select '001'::json, '+15'::json, 'NaN'::json;
 -- 不支持多余的前导0，正数的+号，以及NaN和infinity。
 ```
 
 布尔（bool-json）：仅true、false，全小写。
 
 ```
-select 'true'::json;select 'false'::jsonb;  
+select 'true'::json;select 'false'::jsonb;
 ```
 
 字符串（str-json）：必须是加双引号的字符串。
 
 ```
-select '"a"'::json;select '"abc"'::jsonb;  
+select '"a"'::json;select '"abc"'::jsonb;
 ```
 
 数组（array-json）：使用中括号\[\]包裹，满足数组书写条件。数组内元素类型可以是任意合法的JSON，且不要求类型一致。
 
 ```
-select '[1, 2, "foo", null]'::json;select '[]'::json;select '[1, 2, "foo", null, [[]], {}]'::jsonb; 
+select '[1, 2, "foo", null]'::json;select '[]'::json;select '[1, 2, "foo", null, [[]], {}]'::jsonb;
 ```
 
 对象（object-json）：使用大括号\{\}包裹，键必须是满足JSON字符串规则的字符串，值可以是任意合法的JSON。
 
 ```
-select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
+select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;
 ```
 
 >![](public_sys-resources/icon-caution.png) **注意：**
@@ -87,7 +87,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 
     ```
     postgres=# select '{"aa" : 1, "b" : 2, "a" : 3}'::jsonb;           jsonb
-    --------------------------- 
+    ---------------------------
     {"a": 3, "b": 2, "aa": 1}(1 row)
     ```
 
@@ -105,7 +105,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
         -   array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
         -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
 
-        >![](public_sys-resources/icon-caution.png) **注意：** 
+        >![](public_sys-resources/icon-caution.png) **注意：**
         >
         >object-jsonb类型内比较时，比较时使用的是格式整理后的最终结果进行比较，因此相对于我们直接的输入未必会很直观。
 
@@ -131,7 +131,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
     -- 左侧数组包含了右侧字符串：SELECT '[1, “aa”, 3]'::jsonb ? 'aa';
     -- 左侧数组包含了右侧的数组所有元素，顺序、重复不重要：SELECT '[1, 2, 3]'::jsonb @> '[1, 3, 1]'::jsonb;
     -- 左侧object-json包含了右侧object-json的所有键值对：SELECT '{"product": "PostgreSQL", "version": 9.4, "jsonb":true}'::jsonb @> '{"version":9.4}'::jsonb;
-    -- 左侧数组并没有包含右侧的数组所有元素，因为左侧数组的三个元素为1、2、[1,3]，右侧的为1、3：SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb; 
+    -- 左侧数组并没有包含右侧的数组所有元素，因为左侧数组的三个元素为1、2、[1,3]，右侧的为1、3：SELECT '[1, 2, [1, 3]]'::jsonb @> '[1, 3]'::jsonb;
     -- 产生假-- 相似的，这样也不对：SELECT '{"foo": {"bar": "baz"}}'::jsonb @> '{"bar": "baz"}'::jsonb; -- false
     ```
 
@@ -140,4 +140,3 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
 -   函数和操作符
 
     json/jsonb类型相关支持的函数和操作符请参见[JSON/JSONB函数和操作符](JSON-JSONB函数和操作符.md)。
-

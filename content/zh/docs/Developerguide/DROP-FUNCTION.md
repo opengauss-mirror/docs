@@ -13,7 +13,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_s1aad0e4026434244b8879b36ec9adaff"></a>
 
 ```
-DROP FUNCTION [ IF EXISTS ] function_name 
+DROP FUNCTION [ IF EXISTS ] function_name
 [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
 ```
 
@@ -49,4 +49,3 @@ DROP FUNCTION [ IF EXISTS ] function_name
 ## 相关链接<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_sf722b7d9e13547449d559364553b790a"></a>
 
 [ALTER FUNCTION](ALTER-FUNCTION.md)，[CREATE FUNCTION](CREATE-FUNCTION.md)
-

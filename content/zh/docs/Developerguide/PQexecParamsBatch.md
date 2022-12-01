@@ -7,10 +7,10 @@
 ## 原型<a name="zh-cn_topic_0059778058_s311ac101dcb74b3abb5b3d2ee9781c2c"></a>
 
 ```
-PGresult* PQexecParamsBatch(PGconn* conn, 
+PGresult* PQexecParamsBatch(PGconn* conn,
                             const char* command,
                             int nParams,
-                            int nBatch, 
+                            int nBatch,
                             const Oid* paramTypes,
                             const char* const* paramValues,
                             const int* paramLengths,
@@ -80,4 +80,3 @@ PGresult* PQexecParamsBatch(PGconn* conn,
 ## 返回值<a name="zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
 PGresult类型指针。
-

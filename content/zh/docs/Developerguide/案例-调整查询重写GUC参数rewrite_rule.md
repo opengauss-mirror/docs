@@ -134,4 +134,3 @@ SET
 openGauss=#  select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c1=t2.c2) ;
 ERROR:  more than one row returned by a subquery used as an expression
 ```
-

@@ -4,7 +4,7 @@
 
 打开plsql\_show\_all\_error参数后，会把成功或失败的PLPGSQL对象编译信息记录在此表中，如果关闭plsql\_show\_all\_error参数则只会将正确的编译相关信息插入此表中。
 
-> ![](public_sys-resources/icon-caution.png) **注意：** 
+> ![](public_sys-resources/icon-caution.png) **注意：**
 >
 > - gs_source表中只记录用户定义的原始对象语句，即使用户使用了ALTER改变了创建的SCHEMA或者名字，gs_source表中的信息也不会发生变化，如果用户更改了对象的SCHEMA或者名字，会导致用户在删除对象后，对象仍存在于gs_source表中。
 >
@@ -77,4 +77,3 @@
 </tr>
 </tbody>
 </table>
-

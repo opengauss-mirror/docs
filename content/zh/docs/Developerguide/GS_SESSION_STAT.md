@@ -50,4 +50,3 @@ GS\_SESSION\_STAT视图以会话线程或AutoVacuum线程为单位，统计会�
 </tr>
 </tbody>
 </table>
-

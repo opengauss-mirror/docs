@@ -79,4 +79,3 @@ openGauss=# ALTER TABLE tde_test1 SET (enable_tde=on);
 ```
 openGauss=# ALTER TABLE tde_test1 ENCRYPTION KEY ROTATION;
 ```
-

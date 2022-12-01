@@ -346,7 +346,7 @@ java.sql.PreparedStatement是预处理语句接口。
 
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   addBatch\(\)、execute\(\)必须在clearBatch\(\)之后才能执行。
 
@@ -357,4 +357,3 @@ java.sql.PreparedStatement是预处理语句接口。
 >-   以下方法是从java.sql.Statement继承而来：close、execute、executeQuery、executeUpdate、getConnection、getResultSet、getUpdateCount、isClosed、setMaxRows、setFetchSize。
 
 >-   executeLargeUpdate\(\)方法必须在JDBC4.2及以上使用。
-

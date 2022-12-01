@@ -24,7 +24,7 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause
 
 多表删除：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] [FROM] 
+DELETE [/*+ plan_hint */] [FROM]
     {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ];
@@ -55,10 +55,10 @@ DELETE [/*+ plan_hint */]
     - column\_name指定子查询结果集中显示的列名。
     - 每个子查询可以是SELECT、VALUES、INSERT、UPDATE或DELETE语句。
     - 用户可以使用MATERIALIZED / NOT MATERIALIZED对CTE进行修饰。
-    
+
       -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
       -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属主干语句中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
-    
+
 -   **plan\_hint子句**
 
     以/\*+ \*/的形式在DELETE关键字后，用于对DELETE对应的语句块生成的计划进行hint调优，详细用法请参见章节[使用Plan Hint进行调优](使用Plan-Hint进行调优.md)。每条语句中只有第一个/\*+ plan\_hint \*/注释块会作为hint生效，里面可以写多条hint。
@@ -107,8 +107,8 @@ DELETE [/*+ plan_hint */]
 
     using子句。
 
-      >![](public_sys-resources/icon-notice.png) **须知：** 
-      > 
+      >![](public_sys-resources/icon-notice.png) **须知：**
+      >
     >当参数sql\_compatibility=B时，using\_list指定关联表的集合时可以同时出现目标表，并且可以定义表的别名并在目标表中使用。其他模式下则目标表不可重复出现在using\_list中。
 
 -   **condition**
@@ -158,5 +158,3 @@ openGauss=# DROP TABLE tpcds.customer_address_bak;
 -   delete
 
     如果要删除表中的所有记录，建议使用truncate语法。
-
-

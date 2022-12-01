@@ -89,4 +89,3 @@ openGauss=# DROP DATA SOURCE ds_test4;
 ## 相关链接<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section45538169227"></a>
 
 [ALTER DATA SOURCE](ALTER-DATA-SOURCE.md),  [DROP DATA SOURCE](DROP-DATA-SOURCE.md)
-

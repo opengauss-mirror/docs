@@ -64,4 +64,3 @@ PG\_NODE\_ENV视图提供获取当前节点的环境变量信息。
 </tr>
 </tbody>
 </table>
-

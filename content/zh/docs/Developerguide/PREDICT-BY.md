@@ -39,4 +39,3 @@ FROM houses;
 ## 相关链接<a name="section998105215517"></a>
 
 [CREATE MODEL](CREATE-MODEL.md)，[DROP MODEL](DROP-MODEL.md)
-

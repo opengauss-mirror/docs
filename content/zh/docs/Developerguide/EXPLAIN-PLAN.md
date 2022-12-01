@@ -17,7 +17,7 @@ FOR statement ;
 -   EXPLAIN中的PLAN选项表示需要将计划信息存储于PLAN\_TABLE中，存储成功将返回“EXPLAIN SUCCESS”。
 -   STATEMENT\_ID用户可以对查询设置标签，输入的标签信息也将存储于PLAN\_TABLE中。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >用户在执行EXPLAIN PLAN时，如果没有进行SET  STATEMENT\_ID，则默认为空值。同时，用户可输入的STATEMENT\_ID最大长度为30个字节，超过长度将会产生报错。
 
 
@@ -33,7 +33,7 @@ FOR statement ;
 
 1.  执行EXPLAIN PLAN。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >执行EXPLAIN PLAN 后会将计划信息自动存储于PLAN\_TABLE中，不支持对PLAN\_TABLE进行INSERT、UPDATE、ANALYZE等操作。
     >PLAN\_TABLE详细介绍见[PLAN\_TABLE](PLAN_TABLE.md)。
 
@@ -68,12 +68,10 @@ FOR statement ;
     SELECT * FROM PLAN_TABLE;
     ```
 
-    ![](figures/文档.png)
+    ![](figures/document)
 
 3.  清理PLAN\_TABLE表中的数据。
 
     ```
     DELETE FROM PLAN_TABLE WHERE xxx;
     ```
-
-

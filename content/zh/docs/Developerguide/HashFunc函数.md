@@ -113,29 +113,29 @@
 
     ```
     openGauss=# select getbucket(10,'H');
-     getbucket 
+     getbucket
     -----------
          14535
     (1 row)
-    
+
     openGauss=# select getbucket(11,'H');
-     getbucket 
+     getbucket
     -----------
          13449
     (1 row)
-    
+
     openGauss=# select getbucket(11,'R');
-     getbucket 
+     getbucket
     -----------
          13449
     (1 row)
-    
+
     openGauss=# select getbucket(12,'R');
-     getbucket 
+     getbucket
     -----------
           9412
     (1 row)
-    
+
     ```
 
 -   hash\_array\(anyarray\)
@@ -150,7 +150,7 @@
 
     ```
     openGauss=# select hash_array(ARRAY[[1,2,3],[1,2,3]]);
-     hash_array 
+     hash_array
     ------------
      -382888479
     (1 row)
@@ -173,29 +173,29 @@
     HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
     CREATE TABLE
     openGauss=# select * from tt;
-     a | b | c | d 
+     a | b | c | d
     ---+---+---+---
     (0 rows)
-    
+
     openGauss=# insert into tt values(1,2,3,4);
     INSERT 0 1
     openGauss=# select * from tt;
-     a | b | c | d 
+     a | b | c | d
     ---+---+---+---
      1 | 2 | 3 | 4
     (1 row)
-    
+
     openGauss=# insert into tt values(5,6,7,8);
     INSERT 0 1
     openGauss=# select * from tt;
-     a | b | c | d 
+     a | b | c | d
     ---+---+---+---
      1 | 2 | 3 | 4
      5 | 6 | 7 | 8
     (2 rows)
-    
+
     openGauss=# select hash_group(a,b) from tt where a=1 and b=2;
-     hash_group 
+     hash_group
     ------------
       990882385
     (1 row)
@@ -213,7 +213,7 @@
 
     ```
     openGauss=# select hash_numeric(30);
-     hash_numeric 
+     hash_numeric
     --------------
        -282860963
     (1 row)
@@ -231,7 +231,7 @@
 
     ```
     openGauss=# select hash_range(numrange(1.1,2.2));
-     hash_range 
+     hash_range
     ------------
       683508754
     (1 row)
@@ -249,7 +249,7 @@
 
     ```
     openGauss=# select hashbpchar('hello');
-     hashbpchar  
+     hashbpchar
     -------------
      -1870292951
     (1 row)
@@ -267,13 +267,13 @@
 
     ```
     openGauss=# select hashbpchar('hello');
-     hashbpchar  
+     hashbpchar
     -------------
      -1870292951
     (1 row)
-    
+
     openGauss=# select hashchar('true');
-      hashchar  
+      hashchar
     ------------
      1686226652
     (1 row)
@@ -293,7 +293,7 @@
     openGauss=# CREATE TYPE b1 AS ENUM('good', 'bad', 'ugly');
     CREATE TYPE
     openGauss=# call hashenum('good'::b1);
-      hashenum  
+      hashenum
     ------------
      1821213359
     (1 row)
@@ -311,7 +311,7 @@
 
     ```
     openGauss=# select hashfloat4(12.1234);
-     hashfloat4 
+     hashfloat4
     ------------
      1398514061
     (1 row)
@@ -329,7 +329,7 @@
 
     ```
     openGauss=# select hashfloat8(123456.1234);
-     hashfloat8 
+     hashfloat8
     ------------
      1673665593
     (1 row)
@@ -347,7 +347,7 @@
 
     ```
     openGauss=# select hashinet('127.0.0.1'::inet);
-      hashinet   
+      hashinet
     -------------
      -1435793109
     (1 row)
@@ -365,7 +365,7 @@
 
     ```
     openGauss=# select hashint1(20);
-      hashint1   
+      hashint1
     -------------
      -2014641093
     (1 row)
@@ -383,7 +383,7 @@
 
     ```
     openGauss=# select hashint2(20000);
-      hashint2  
+      hashint2
     ------------
      -863179081
     (1 row)
@@ -588,5 +588,3 @@
     参数：character varying, integer
 
     返回值类型：integer
-
-

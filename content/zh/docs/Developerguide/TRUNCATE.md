@@ -31,10 +31,10 @@ TRUNCATE [ TABLE ] [ ONLY ] {table_name [ * ]} [, ... ]
 -   清理表分区的数据。
 
 ```
-ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name  
-                           | table_name *  
-                           | ONLY ( table_name )  } 
-    TRUNCATE PARTITION { partition_name  
+ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
+                           | table_name *
+                           | ONLY ( table_name )  }
+    TRUNCATE PARTITION { partition_name
                        | FOR (  partition_value  [, ...] )  } [ UPDATE GLOBAL INDEX ];
 ```
 
@@ -73,7 +73,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
     取值范围：需要进行删除数据分区的分区键的取值范围。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >使用PARTITION FOR子句时，partition\_value所在的整个分区会被清空。
 
 
@@ -126,4 +126,3 @@ openGauss=# TRUNCATE TABLE tpcds.reason_p;
 --删除表。
 openGauss=# DROP TABLE tpcds.reason_p;
 ```
-

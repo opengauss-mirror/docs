@@ -160,7 +160,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
   **表 1**  表和视图上支持的触发器种类：
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >关于触发器种类：
   >
   >-   INSTEAD OF的触发器必须标记为FOR EACH ROW，并且只能在视图上定义。
@@ -345,7 +345,7 @@ openGauss=# CREATE TRIGGER insert_trigger
 
 --创建UPDATE触发器
 openGauss=# CREATE TRIGGER update_trigger
-           AFTER UPDATE ON test_trigger_src_tbl  
+           AFTER UPDATE ON test_trigger_src_tbl
            FOR EACH ROW
            EXECUTE PROCEDURE tri_update_func();
 
@@ -374,10 +374,10 @@ openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生�
 openGauss=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl RENAME TO delete_trigger_renamed;
 
 --禁用insert_trigger触发器
-openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER insert_trigger;  
+openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER insert_trigger;
 
 --禁用当前表上所有触发器
-openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;  
+openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;
 
 --删除触发器
 openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
@@ -396,7 +396,7 @@ db_mysql=# create table food (id INT, foodtype VARCHAR(32), remark VARCHAR(32), 
 db_mysql=# create definer=test_user trigger trigger1
 					after insert on test_mysql_trigger_src_tbl
 					for each row
-					begin 
+					begin
     				 insert into test_mysql_trigger_des_tbl values(1);
 					end;
 					/
@@ -471,4 +471,3 @@ db_mysql=# create trigger if not exists animal_trigger1
 ## 相关链接<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
 [ALTER TRIGGER](ALTER-TRIGGER.md)，[DROP TRIGGER](DROP-TRIGGER.md)，[ALTER TABLE](ALTER-TABLE.md)
-

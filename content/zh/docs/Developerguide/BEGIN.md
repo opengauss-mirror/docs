@@ -15,9 +15,9 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
 -   开启匿名块
 
     ```
-    [DECLARE [declare_statements]] 
+    [DECLARE [declare_statements]]
     BEGIN
-    execution_statements  
+    execution_statements
     END;
     /
     ```
@@ -26,11 +26,11 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
 
     ```
     BEGIN [ WORK | TRANSACTION ]
-      [ 
-        { 
+      [
+        {
            ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
            | { READ WRITE | READ ONLY }
-          } [, ...] 
+          } [, ...]
       ];
     ```
 
@@ -55,4 +55,3 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
 ## 相关链接<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_section552105014012"></a>
 
 [START TRANSACTION](START-TRANSACTION.md)
-

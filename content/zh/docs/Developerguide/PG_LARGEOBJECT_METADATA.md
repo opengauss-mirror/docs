@@ -44,4 +44,3 @@ PG\_LARGEOBJECT\_METADATA系统表存储与大数据相关的元数据。实际�
 </tr>
 </tbody>
 </table>
-

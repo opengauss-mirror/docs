@@ -8,7 +8,7 @@
 ERROR: index 'xxxx_index' contains unexpected zero page
 或
 ERROR: index 'pg_xxxx_index' contains unexpected zero page
-或 
+或
 ERROR: compressed data is corrupt
 ```
 
@@ -43,7 +43,7 @@ ERROR: compressed data is corrupt
     -   如果错误中提示是xxxx\_index，其中xxxx代表用户表名。请执行如下命令之一重建表的索引。
 
         ```
-        REINDEX INDEX indexname; 
+        REINDEX INDEX indexname;
         ```
 
         或者
@@ -57,6 +57,3 @@ ERROR: compressed data is corrupt
 ```
 REINDEX SYSTEM databasename;
 ```
-
-
-

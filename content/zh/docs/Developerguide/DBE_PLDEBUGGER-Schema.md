@@ -2,7 +2,7 @@
 
 DBE\_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口，且无权限修改和创建新函数。
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >当在函数体中创建用户时，调用attach、next、continue、 info\_code、step、info\_breakpoint、backtrace、 finish中会返回密码的明文。因此不建议用户在函数体中创建用户。
 
 对应权限角色为gs\_role\_pldebugger，可以由管理员用户通过如下命令将debugger权限赋权给该用户。
@@ -18,8 +18,8 @@ GRANT gs_role_pldebugger to user;
     通过PG\_PROC，查找到待调试存储过程的oid，并执行DBE\_PLDEBUGGER.turn\_on\(oid\)。本客户端就会作为server端使用。
 
     ```
-    openGauss=# CREATE OR REPLACE PROCEDURE test_debug ( IN  x INT) 
-    AS  
+    openGauss=# CREATE OR REPLACE PROCEDURE test_debug ( IN  x INT)
+    AS
     BEGIN
         INSERT INTO t1 (a) VALUES (x);
         DELETE FROM t1 WHERE a = x;
@@ -85,7 +85,7 @@ GRANT gs_role_pldebugger to user;
     ---------+---------+-------+--------------+---------
      x       | int4    | 2     |              | f
     (1 row)
-    
+
     ```
 
     直接执行完成当前正在调试的存储过程。
@@ -268,8 +268,3 @@ GRANT gs_role_pldebugger to user;
     </tr>
     </tbody>
     </table>
-
-
-
-
-

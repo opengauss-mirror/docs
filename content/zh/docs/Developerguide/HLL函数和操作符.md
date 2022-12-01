@@ -12,7 +12,7 @@
 
     ```
     openGauss=# SELECT hll_hash_boolean(FALSE);
-      hll_hash_boolean   
+      hll_hash_boolean
     ---------------------
      -5451962507482445012
     (1 row)
@@ -29,7 +29,7 @@
 
     ```
     openGauss=# SELECT hll_hash_boolean(FALSE, 10);
-      hll_hash_boolean  
+      hll_hash_boolean
     --------------------
      -1169037589280886076
     (1 row)
@@ -45,14 +45,14 @@
 
     ```
     openGauss=# SELECT hll_hash_smallint(100::smallint);
-      hll_hash_smallint  
+      hll_hash_smallint
     ---------------------
      962727970174027904
     (1 row)
     ```
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >数值大小相同的参数使用不同数据类型的哈希函数计算，最后结果会不一样，因为不同类型哈希函数会选取不同的哈希计算策略。
 
@@ -66,7 +66,7 @@
 
     ```
     openGauss=# SELECT hll_hash_smallint(100::smallint, 10);
-      hll_hash_smallint  
+      hll_hash_smallint
     ---------------------
      -9056177146160443041
     (1 row)
@@ -82,7 +82,7 @@
 
     ```
     openGauss=# SELECT hll_hash_integer(0);
-       hll_hash_integer   
+       hll_hash_integer
     ----------------------
      5156626420896634997
     (1 row)
@@ -98,7 +98,7 @@
 
     ```
     openGauss=# SELECT hll_hash_integer(0, 10);
-      hll_hash_integer  
+      hll_hash_integer
     --------------------
      -5035020264353794276
     (1 row)
@@ -114,7 +114,7 @@
 
     ```
     openGauss=# SELECT hll_hash_bigint(100::bigint);
-       hll_hash_bigint   
+       hll_hash_bigint
     ---------------------
      -2401963681423227794
     (1 row)
@@ -130,7 +130,7 @@
 
     ```
     openGauss=# SELECT hll_hash_bigint(100::bigint, 10);
-       hll_hash_bigint   
+       hll_hash_bigint
     ---------------------
      -2305749404374433531
     (1 row)
@@ -146,7 +146,7 @@
 
     ```
     openGauss=# SELECT hll_hash_bytea(E'\\x');
-     hll_hash_bytea 
+     hll_hash_bytea
     ----------------
      0
     (1 row)
@@ -162,7 +162,7 @@
 
     ```
     openGauss=# SELECT hll_hash_bytea(E'\\x', 10);
-       hll_hash_bytea    
+       hll_hash_bytea
     ---------------------
      7233188113542599437
     (1 row)
@@ -178,7 +178,7 @@
 
     ```
     openGauss=# SELECT hll_hash_text('AB');
-        hll_hash_text    
+        hll_hash_text
     ---------------------
      -5666002586880275174
     (1 row)
@@ -210,13 +210,13 @@
 
     ```
     openGauss=# select hll_hash_any(1);
-         hll_hash_any     
+         hll_hash_any
     ----------------------
      -1316670585935156930
     (1 row)
-    
+
     openGauss=# select hll_hash_any('08:00:2b:01:02:03'::macaddr);
-         hll_hash_any     
+         hll_hash_any
     ----------------------
      -3719950434455589360
     (1 row)
@@ -232,7 +232,7 @@
 
     ```
     openGauss=# select hll_hash_any(1, 10);
-         hll_hash_any     
+         hll_hash_any
     ----------------------
      7048553517657992351
     (1 row)
@@ -248,7 +248,7 @@
 
     ```
     openGauss=# select hll_hashval_eq(hll_hash_integer(1), hll_hash_integer(1));
-     hll_hashval_eq 
+     hll_hashval_eq
     ----------------
      t
     (1 row)
@@ -264,7 +264,7 @@
 
     ```
     openGauss=# select hll_hashval_ne(hll_hash_integer(1), hll_hash_integer(1));
-     hll_hashval_ne 
+     hll_hashval_ne
     ----------------
      f
     (1 row)
@@ -298,7 +298,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_type(hll_empty());
-     hll_type 
+     hll_type
     ----------
             1
     (1 row)
@@ -316,13 +316,13 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     -----------
             14
     (1 row)
-    
+
     openGauss=# select hll_log2m(hll_empty(10));
      hll_log2m
     -----------
             10
     (1 row)
-    
+
     openGauss=# select hll_log2m(hll_empty(-1));
      hll_log2m
     -----------
@@ -342,13 +342,13 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ------------------
                    10
     (1 row)
-    
+
     openGauss=# select hll_log2explicit(hll_empty(12, 8));
      hll_log2explicit
     ------------------
                     8
     (1 row)
-    
+
     openGauss=# select hll_log2explicit(hll_empty(12, -1));
      hll_log2explicit
     ------------------
@@ -368,13 +368,13 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ----------------
                  12
     (1 row)
-    
+
     openGauss=# select hll_log2sparse(hll_empty(12, 8, 10));
      hll_log2sparse
     ----------------
                  10
     (1 row)
-    
+
     openGauss=# select hll_log2sparse(hll_empty(12, 8, -1));
      hll_log2sparse
     ----------------
@@ -395,13 +395,13 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     --------------------
                       0
     (1 row)
-    
+
     openGauss=# select hll_duplicatecheck(hll_empty(12, 8, 10, 1));
      hll_duplicatecheck
     --------------------
                       1
     (1 row)
-    
+
     openGauss=# select hll_duplicatecheck(hll_empty(12, 8, 10, -1));
      hll_duplicatecheck
     --------------------
@@ -442,7 +442,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ------------------------------------------------------------
      \x484c4c00000000002b04000000000000000000000000000000000000
     (1 row)
-    
+
     openGauss=# select hll_empty(-1);
                              hll_empty
     ------------------------------------------------------------
@@ -464,7 +464,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ------------------------------------------------------------
      \x484c4c00000000001304000000000000000000000000000000000000
     (1 row)
-    
+
     openGauss=# select hll_empty(10, -1);
                              hll_empty
     ------------------------------------------------------------
@@ -486,7 +486,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ------------------------------------------------------------
      \x484c4c00000000001204000000000000000000000000000000000000
     (1 row)
-    
+
     openGauss=# select hll_empty(10, 4, -1);
                              hll_empty
     ------------------------------------------------------------
@@ -508,7 +508,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ------------------------------------------------------------
      \x484c4c00000000001204000000000000000000000000000000000000
     (1 row)
-    
+
     openGauss=# select hll_empty(10, 4, 8, -1);
                              hll_empty
     ------------------------------------------------------------
@@ -558,7 +558,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_eq(hll_add(hll_empty(), hll_hash_integer(1)), hll_add(hll_empty(), hll_hash_integer(2)));
-     hll_eq 
+     hll_eq
     --------
      f
     (1 row)
@@ -574,7 +574,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_ne(hll_add(hll_empty(), hll_hash_integer(1)), hll_add(hll_empty(), hll_hash_integer(2)));
-     hll_ne 
+     hll_ne
     --------
      t
     (1 row)
@@ -590,7 +590,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_cardinality(hll_empty() || hll_hash_integer(1));
-     hll_cardinality 
+     hll_cardinality
     -----------------
                    1
     (1 row)
@@ -629,16 +629,16 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     openGauss=# insert into t_id values(generate_series(1,500));
     openGauss=# create table t_data(a int, c text);
     openGauss=# insert into t_data select mod(id,2), id from t_id;
-    
+
     --创建表并指定列为hll
     openGauss=# create table t_a_c_hll(a int, c hll);
-    
+
     --根据a列group by对数据分组，把各组数据加到hll中
     openGauss=# insert into t_a_c_hll select a, hll_add_agg(hll_hash_text(c)) from t_data group by a;
-    
+
     --得到每组数据中hll的Distinct值
     openGauss=# select a, #c as cardinality from t_a_c_hll order by a;
-     a |   cardinality    
+     a |   cardinality
     ---+------------------
      0 | 247.862354346299
      1 | 250.908710610377
@@ -656,7 +656,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_cardinality(hll_add_agg(hll_hash_text(c), 12)) from t_data;
-     hll_cardinality  
+     hll_cardinality
     ------------------
      497.965240179228
     (1 row)
@@ -672,7 +672,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_cardinality(hll_add_agg(hll_hash_text(c), NULL, 1)) from t_data;
-     hll_cardinality  
+     hll_cardinality
     ------------------
      498.496062953313
     (1 row)
@@ -688,7 +688,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_cardinality(hll_add_agg(hll_hash_text(c), NULL, 6, 10)) from t_data;
-     hll_cardinality  
+     hll_cardinality
     ------------------
      498.496062953313
     (1 row)
@@ -704,7 +704,7 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
 
     ```
     openGauss=# select hll_cardinality(hll_add_agg(hll_hash_text(c), NULL, 6, 10, -1)) from t_data;
-     hll_cardinality  
+     hll_cardinality
     ------------------
      498.496062953313
     (1 row)
@@ -721,13 +721,13 @@ hll主要存在三种模式Explicit、Sparse、Full。当数据规模比较小�
     ```
     --将各组中的hll数据union成一个hll，并计算distinct值。
     openGauss=# select #hll_union_agg(c) as cardinality from t_a_c_hll;
-       cardinality    
+       cardinality
     ------------------
      498.496062953313
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >注意：当两个或者多个hll数据结构做union的时候，必须要保证其中每一个hll里面的精度参数一样，否则将不可以进行union。同样的约束也适用于函数hll\_union\(hll,hll\)。
 
@@ -897,14 +897,14 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     ```
     --hll
     openGauss=# select (hll_empty() || hll_hash_integer(1)) = (hll_empty() || hll_hash_integer(1));
-    column 
+    column
     ----------
      t
     (1 row)
-    
+
     --hll_hashval
     openGauss=# select hll_hash_integer(1) = hll_hash_integer(1);
-     ?column? 
+     ?column?
     ----------
      t
     (1 row)
@@ -922,14 +922,14 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     ```
     --hll
     openGauss=# select (hll_empty() || hll_hash_integer(1)) <> (hll_empty() || hll_hash_integer(2));
-     ?column? 
+     ?column?
     ----------
      t
     (1 row)
-    
+
     --hll_hashval
     openGauss=# select hll_hash_integer(1) <> hll_hash_integer(2);
-     ?column? 
+     ?column?
     ----------
      t
     (1 row)
@@ -950,14 +950,14 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
     ----------------------------------------------------------------------------
      \x484c4c08000002002b0900000000000000f03f3e2921ff133fbaed3e2921ff133fbaed00
     (1 row)
-    
+
     --hll_add_rev
     openGauss=# select hll_hash_integer(1) || hll_empty();
                                       ?column?
     ----------------------------------------------------------------------------
      \x484c4c08000002002b0900000000000000f03f3e2921ff133fbaed3e2921ff133fbaed00
     (1 row)
-    
+
     --hll_union
     openGauss=# select (hll_empty() || hll_hash_integer(1)) || (hll_empty() || hll_hash_integer(2));
                                               ?column?
@@ -976,9 +976,8 @@ HLL（HyperLogLog）有一系列内置函数用于内部对数据进行处理，
 
     ```
     openGauss=# select #(hll_empty() || hll_hash_integer(1));
-     ?column? 
+     ?column?
     ----------
             1
     (1 row)
     ```
-

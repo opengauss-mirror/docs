@@ -31,4 +31,3 @@ REASSIGN OWNED BY old_role [, ...] TO new_role;
 ## 示例<a name="zh-cn_topic_0283136605_zh-cn_topic_0237122173_zh-cn_topic_0059779106_sbcf57ecc9f7a417bad32fed1fe01c036"></a>
 
 无。
-

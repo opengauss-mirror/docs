@@ -52,11 +52,11 @@
 
     要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0283137272_zh-cn_topic_0237122122_li1286812455448)。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-   不支持修改词典的TEMPLATE参数值。
 
     >-   不支持仅修改FILEPATH参数而不修改对应的词典定义文件参数。
-    
+
     >-   词典定义文件的文件名仅支持小写字母、数据、下划线混合。
 
 -   **value**
@@ -100,4 +100,3 @@ openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
 ## 相关链接<a name="zh-cn_topic_0283136970_zh-cn_topic_0237122080_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TEXT SEARCH DICTIONARY](CREATE-TEXT-SEARCH-DICTIONARY.md)，[DROP TEXT SEARCH DICTIONARY](DROP-TEXT-SEARCH-DICTIONARY.md)
-

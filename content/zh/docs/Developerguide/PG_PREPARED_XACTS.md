@@ -62,4 +62,3 @@ PG\_PREPARED\_XACTS视图显示当前准备好进行两阶段提交的事务的�
 </tr>
 </tbody>
 </table>
-

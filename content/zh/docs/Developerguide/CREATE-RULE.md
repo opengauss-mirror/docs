@@ -65,4 +65,3 @@ UPDATE
     DO INSTEAD
         SELECT * FROM t2;
 ```
-

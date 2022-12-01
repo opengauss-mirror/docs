@@ -30,7 +30,7 @@
   ```
   CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
       ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
-      [ INCLUDE ( column_name [, ...] )]    
+      [ INCLUDE ( column_name [, ...] )]
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
       [ TABLESPACE tablespace_name ]
       [ COMMENT text ]
@@ -66,7 +66,7 @@
   -   普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
   -   列存表、分区表和临时表不支持CONCURRENTLY方式创建索引。
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >-   创建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
 
@@ -117,7 +117,7 @@
 
     行存表（ASTORE存储引擎）支持的索引类型：btree（行存表缺省值）、hash、gin、gist。行存表（USTORE存储引擎）支持的索引类型：ubtree。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。全局临时表不支持GIN索引和Gist索引。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。
 
 -   **column\_name**
@@ -132,7 +132,7 @@
 
     前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >-  此语法只在sql_compatibility=B时有效，sql_compatibility为其他值的情况下，此子句将被视作函数表达式键。
     >-  前缀键支持的索引方法：btree、ubtree。
     >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
@@ -257,7 +257,7 @@
     索引二级分区的名称。
 
     取值范围：字符串，要符合标识符的命名规范
-    
+
 -   **TABLESPACE index\_partition\_tablespace**
 
     索引分区的表空间。
@@ -320,7 +320,7 @@ openGauss=# CREATE TABLE tpcds.ship_mode_t1
     SM_CODE                   CHAR(10)                      ,
     SM_CARRIER                CHAR(20)                      ,
     SM_CONTRACT               CHAR(20)
-) 
+)
 ;
 
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建普通的唯一索引。
@@ -374,21 +374,21 @@ openGauss=# CREATE TABLE tpcds.customer_address_p1
 )
 TABLESPACE example1
 PARTITION BY RANGE(CA_ADDRESS_SK)
-( 
+(
    PARTITION p1 VALUES LESS THAN (3000),
    PARTITION p2 VALUES LESS THAN (5000) TABLESPACE example1,
    PARTITION p3 VALUES LESS THAN (MAXVALUE) TABLESPACE example2
 )
 ENABLE ROW MOVEMENT;
 --创建分区表索引ds_customer_address_p1_index1，不指定索引分区的名称。
-openGauss=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL; 
+openGauss=# CREATE INDEX ds_customer_address_p1_index1 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL;
 --创建分区表索引ds_customer_address_p1_index2，并指定索引分区的名称。
 openGauss=# CREATE INDEX ds_customer_address_p1_index2 ON tpcds.customer_address_p1(CA_ADDRESS_SK) LOCAL
 (
     PARTITION CA_ADDRESS_SK_index1,
     PARTITION CA_ADDRESS_SK_index2 TABLESPACE example3,
     PARTITION CA_ADDRESS_SK_index3 TABLESPACE example4
-) 
+)
 TABLESPACE example2;
 
 --创建GLOBAL分区索引
@@ -450,5 +450,3 @@ CREATE INDEX
     -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
     -   GLOBAL索引，最大支持31列。
     -   如果alter语句不带有UPDATE GLOBAL INDEX，那么原有的GLOBAL索引将失效，查询时将使用其他索引进行查询；如果alter语句带有UPDATE GLOBAL INDEX，原有的GLOBAL索引仍然有效，并且索引功能正确。
-
-

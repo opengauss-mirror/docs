@@ -34,14 +34,14 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 - 仅回收空间，不更新统计信息。
 
   ```
-  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name ] 
+  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name ]
   [ PARTITION ( partition_name )  | SUBPARTITION ( subpartition_name ) ];
   ```
 
 -   回收空间并更新统计信息，且对关键字顺序有要求。
 
     ```
-    VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ] 
+    VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ]
         [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name )| SUBPARTITION ( subpartition_name ) ];
     ```
 
@@ -52,7 +52,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     选择“FULL”清理，这样可以恢复更多的空间，但是需要耗时更多，并且在表上施加了排他锁。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >使用FULL参数会导致统计信息丢失，如果需要收集统计信息，请在VACUUM FULL语句中加上analyze关键字。
 
 -   **FREEZE**
@@ -94,7 +94,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 -   **subpartition\_name**
 
     要清理的表的二级分区名称。缺省时为所有二级分区
-    
+
 -   **DELTAMERGE**
 
     只针对列存表，将列存表的delta table中的数据转移到主表存储上。对列存表而言，此操作受enable\_delta\_store和[参数说明](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)中的deltarow\_threshold控制。
@@ -121,5 +121,3 @@ openGauss=# DROP TABLE tpcds.reason;
     -   建议生产数据库经常清理（至少每晚一次），以保证不断地删除失效的行。尤其是在增删了大量记录后，对相关表执行VACUUM ANALYZE命令。
     -   不建议日常使用FULL选项，但是可以在特殊情况下使用。例如，一个例子就是在用户删除了一个表的大部分行之后，希望从物理上缩小该表以减少磁盘空间占用。
     -   执行VACUUM FULL操作时，建议首先删除相关表上的所有索引，再运行VACUUM FULL命令，最后重建索引。
-
-

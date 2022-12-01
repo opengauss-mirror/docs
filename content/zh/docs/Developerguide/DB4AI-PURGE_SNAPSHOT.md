@@ -36,4 +36,3 @@ PURGE\_SNAPSHOT是DB4AI特性用于删除快照的接口函数。通过语法PUR
 </tr>
 </tbody>
 </table>
-

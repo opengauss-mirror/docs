@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0059778058_s311ac101dcb74b3abb5b3d2ee9781c2c"></a>
 
 ```
-PGresult* PQexecPreparedBatch(PGconn* conn, 
-                              const char* stmtName, 
+PGresult* PQexecPreparedBatch(PGconn* conn,
+                              const char* stmtName,
                               int nParams,
                               int nBatchCount,
                               const char* const* paramValues,
@@ -74,4 +74,3 @@ PGresult* PQexecPreparedBatch(PGconn* conn,
 ## 返回值<a name="zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
 PGresult类型指针。
-

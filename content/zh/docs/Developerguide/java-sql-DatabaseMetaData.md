@@ -1241,7 +1241,7 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >uppercaseAttributeName为true时，以下接口会将查询结果转为大写，可转换范围与java中的toUpperCase方法一致。
 >-   public ResultSet getProcedures\(String catalog, String schemaPattern, String procedureNamePattern\)
 >-   public ResultSet getProcedureColumns\(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern\)
@@ -1257,10 +1257,9 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 >-   public ResultSet getUDTs\(String catalog, String schemaPattern, String typeNamePattern, int\[\] types\)
 >-   public ResultSet getFunctions\(String catalog, String schemaPattern, String functionNamePattern\)
 
->![](public_sys-resources/icon-caution.png) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：**
 >getPartitionTablePrimaryKeys​\(String catalog, String schema, String table\)接口用于获取分区表含全局索引的主键列，使用示例如下：
 >```
 >PgDatabaseMetaData dbmd = (PgDatabaseMetaData)conn.getMetaData();
 >dbmd.getPartitionTablePrimaryKeys("catalogName", "schemaName", "tableName");
 >```
-

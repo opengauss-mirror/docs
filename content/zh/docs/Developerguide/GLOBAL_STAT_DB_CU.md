@@ -50,4 +50,3 @@ GLOBAL\_STAT\_DB\_CU视图用于查询openGauss，每个数据库的CU命中情�
 </tr>
 </tbody>
 </table>
-

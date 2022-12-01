@@ -291,4 +291,3 @@ openGauss=# COMMIT;
 --删除表tpcds.reason_t1。
 openGauss=# DROP TABLE tpcds.reason_t1;
 ```
-

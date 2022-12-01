@@ -90,4 +90,3 @@ PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允�
 -   DEPENDENCY\_INTERNAL \(i\)：有依赖的对象是作为被引用对象的一部分创建的，实际上只是它的内部实现的一部分。DROP有依赖对象是不能直接允许的（将告诉用户发出一条删除被引用对象的DROP）。一个对被引用对象的DROP将传播到有依赖对象，不管是否声明了CASCADE。
 -   DEPENDENCY\_EXTENSION \(e\)：依赖对象是被依赖对象extension的一个成员（请参见[PG\_EXTENSION](PG_EXTENSION.md)）。依赖对象只可以通过在被依赖对象上DROP EXTENSION删除。函数上这个依赖类型和内部依赖一样动作，但是它为了清晰和简化gs\_dump保持分开。
 -   DEPENDENCY\_PIN \(p\)：没有依赖对象；这种类型的记录标志着系统本身依赖于被引用对象，因此这个对象决不能被删除。这种类型的记录只有在initdb的时候创建。有依赖对象的字段里是零。
-

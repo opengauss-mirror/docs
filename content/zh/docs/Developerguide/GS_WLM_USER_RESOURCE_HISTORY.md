@@ -141,4 +141,3 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 </tr>
 </tbody>
 </table>
-

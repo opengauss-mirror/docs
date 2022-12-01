@@ -29,5 +29,3 @@ COMMIT;
 -   REPEATABLE READ级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1执行INSERT完成后直接提交，事务T2中执行INSERT语句后执行查询语句，看不到事务T1中插入的数据。
-
-

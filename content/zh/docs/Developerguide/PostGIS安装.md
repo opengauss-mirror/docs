@@ -97,8 +97,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     ```
     cd $GAUSSHOME/gcc/packages/mpc-1.0.3
-    ./configure --prefix=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpc-1.0.3  --with-gmp=$GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-6.1.0 --with-mpfr=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpfr-3.1.4 
-    make -sj 
+    ./configure --prefix=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpc-1.0.3  --with-gmp=$GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-6.1.0 --with-mpfr=$GAUSSHOME/gcc/gcc-7.3.0/depend/mpfr-3.1.4
+    make -sj
     make install -sj
     ```
 
@@ -173,10 +173,10 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     ```
     cd $GAUSSHOME/postgis-xc/
-    patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
+    patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch
     ```
 
-    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。 
+    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
@@ -223,7 +223,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         对于ARM操作系统，则需使用如下configure命令：
 
         ```
-        ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
+        ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu
         ```
 
     -   PostGIS
@@ -261,6 +261,3 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     ```
     gs_om -t stop && gs_om -t start
     ```
-
-
-

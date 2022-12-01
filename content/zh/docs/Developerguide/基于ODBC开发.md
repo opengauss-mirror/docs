@@ -1,21 +1,21 @@
 # 基于ODBC开发<a name="ZH-CN_TOPIC_0244721233"></a>
 
--   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
+-   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**
 
--   **[Linux下配置数据源](Linux下配置数据源.md)**  
+-   **[Linux下配置数据源](Linux下配置数据源.md)**
 
--   **[开发流程](开发流程-1.md)**  
+-   **[开发流程](开发流程-1.md)**
 
--   **[示例](示例.md)**  
+-   **[示例](示例.md)**
 
--   **[ODBC接口参考](ODBC接口参考.md)**  
+-   **[ODBC接口参考](ODBC接口参考.md)**
 
 ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。
 
 ODBC的系统结构参见[图1](#fig1255101034110)。
 
-**图 1**  ODBC系统机构<a name="fig1255101034110"></a>  
-![](figures/ODBC系统机构.png "ODBC系统机构")
+**图 1**  ODBC系统机构<a name="fig1255101034110"></a>
+![](figures/ODBC-system-organization.png "ODBC系统机构")
 
 openGauss目前在以下环境中提供对ODBC3.5的支持。
 
@@ -55,7 +55,5 @@ UNIX/Linux系统下的驱动程序管理器主要有unixODBC和iODBC，在这选
 
 Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项。
 
->![](public_sys-resources/icon-note.png) **说明：**   
->当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。  
-
-
+>![](public_sys-resources/icon-note.png) **说明：**
+>当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。

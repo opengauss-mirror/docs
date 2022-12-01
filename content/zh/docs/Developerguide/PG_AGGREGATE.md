@@ -109,4 +109,3 @@ PG\_AGGREGATE系统表存储与聚集函数有关的信息。PG\_AGGREGATE里的
 </tr>
 </tbody>
 </table>
-

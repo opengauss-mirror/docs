@@ -12,7 +12,7 @@
 ## 语法格式<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
 
 ```
-DROP TABLE [ IF EXISTS ] 
+DROP TABLE [ IF EXISTS ]
     { [schema.]table_name } [, ...] [ CASCADE | RESTRICT ] [ PURGE ];
 ```
 
@@ -33,7 +33,7 @@ DROP TABLE [ IF EXISTS ]
 -   **CASCADE | RESTRICT**
     -   CASCADE：级联删除依赖于表的对象（比如视图）。
     -   RESTRICT（缺省项）：如果存在依赖对象，则拒绝删除该表。这个是缺省。
-    
+
 - **PURGE**
 
   该参数表示即使开启回收站功能，DROP表时，也会直接物理删除表，而不是将其放入回收站中。
@@ -46,4 +46,3 @@ DROP TABLE [ IF EXISTS ]
 ## 相关链接<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s08580f38742d47efa6a955c9385d6ae2"></a>
 
 [ALTER TABLE](ALTER-TABLE.md)，[CREATE TABLE](CREATE-TABLE.md)
-

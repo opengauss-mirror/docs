@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_s76c0a779ab1c478c810142eb2525b643"></a>
 
 ```
-SQLRETURN SQLBindParameter(SQLHSTMT       StatementHandle,    
-                           SQLUSMALLINT   ParameterNumber,     
+SQLRETURN SQLBindParameter(SQLHSTMT       StatementHandle,
+                           SQLUSMALLINT   ParameterNumber,
                            SQLSMALLINT    InputOutputType,
                            SQLSMALLINT    ValuetType,
                            SQLSMALLINT    ParameterType,
@@ -97,4 +97,3 @@ SQLRETURN SQLBindParameter(SQLHSTMT       StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_sb33a1598a85f4ab581fd17d40e3db274"></a>
 
 参见：[示例](示例-2.md)
-

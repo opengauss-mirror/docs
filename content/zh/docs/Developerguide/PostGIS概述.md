@@ -9,4 +9,3 @@ PostGIS Extension依赖第三方开源软件如下：
 -   Json 0.12.1
 -   Libxml2 2.7.1
 -   Gdal 1.11.0
-

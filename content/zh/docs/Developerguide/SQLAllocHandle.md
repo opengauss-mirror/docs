@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0238272884_zh-cn_topic_0237120414_zh-cn_topic_0059778058_s311ac101dcb74b3abb5b3d2ee9781c2c"></a>
 
 ```
-SQLRETURN SQLAllocHandle(SQLSMALLINT   HandleType,    
-                         SQLHANDLE     InputHandle,     
+SQLRETURN SQLAllocHandle(SQLSMALLINT   HandleType,
+                         SQLHANDLE     InputHandle,
                          SQLHANDLE     *OutputHandlePtr);
 ```
 
@@ -58,4 +58,3 @@ SQLRETURN SQLAllocHandle(SQLSMALLINT   HandleType,
 ## 示例<a name="zh-cn_topic_0238272884_zh-cn_topic_0237120414_zh-cn_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
 参见：[示例](示例-2.md)
-

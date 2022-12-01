@@ -26,7 +26,7 @@
 
 ```
 CREATE TABLE [ IF NOT EXISTS ] subpartition_table_name
-( 
+(
 { column_name data_type [ COLLATE collation ] [ column_constraint [ ... ] ]
 | table_constraint
 | LIKE source_table [ like_option [...] ] }[, ... ]
@@ -49,12 +49,12 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     ```
     [ CONSTRAINT constraint_name ]
     { NOT NULL |
-      NULL | 
-      CHECK ( expression ) | 
-      DEFAULT default_e xpr | 
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_e xpr |
       GENERATED ALWAYS AS ( generation_expr ) STORED |
       AUTO_INCREMENT |
-      UNIQUE index_parameters | 
+      UNIQUE index_parameters |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
@@ -66,8 +66,8 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
-    { CHECK ( expression ) | 
-      UNIQUE  [ index_name ][ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters | 
+    { CHECK ( expression ) |
+      UNIQUE  [ index_name ][ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
       PRIMARY KEY  [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters |
       FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
@@ -127,14 +127,14 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   列约束：作为一个列定义的一部分，仅影响该列。
     -   表约束：不和某个列绑在一起，可以作用于多个列。
 
-     >![](public_sys-resources/icon-notice.png) **须知：** 
+     >![](public_sys-resources/icon-notice.png) **须知：**
         >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
 
     索引名。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -145,7 +145,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -153,7 +153,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **LIKE source\_table \[ like\_option ... \]**
@@ -164,7 +164,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >该子句仅在参数sql\_compatibility=B时有效。
 
 
@@ -187,30 +187,30 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.png) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：**
             >orientation不支持修改。
 
 
     -   COMPRESSION
         -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
         -   行存表不支持压缩。
-    
+
     -   MAX\_BATCHROW
-    
+
         指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-    
+
         取值范围：10000\~60000，默认60000。
-    
+
     -   PARTIAL\_CLUSTER\_ROWS
-    
+
         指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-    
+
         取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-    
+
     -   DELTAROW\_THRESHOLD
-    
+
         预留参数。该参数只对列存表有效。
-    
+
         取值范围：0～9999
 
 
@@ -274,7 +274,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
     >
@@ -289,7 +289,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
     >
     >-   生成列的权限控制和普通列一样。
-    > 
+    >
     >
     >-   不能为生成列指定默认值。
     >
@@ -380,7 +380,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_list values('201903', '1', '1', 1);
     insert into list_list values('201903', '2', '1', 1);
     select * from list_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
@@ -389,7 +389,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table list_list;
     CREATE TABLE list_hash
     (
@@ -418,7 +418,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_hash values('201903', '5', '1', 1);
     insert into list_hash values('201903', '6', '1', 1);
     select * from list_hash;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 4         | 1       |         1
      201903     | 5         | 1       |         1
@@ -427,7 +427,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 3         | 1       |         1
      201902     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table list_hash;
     CREATE TABLE list_range
     (
@@ -457,7 +457,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_range values('201903', '6', '1', 1);
     ERROR:  inserted partition key does not map to any table partition
     select * from list_range;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 4         | 1       |         1
      201903     | 5         | 1       |         1
@@ -465,7 +465,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 2         | 1       |         1
      201902     | 3         | 1       |         1
     (5 rows)
-    
+
     drop table list_range;
     CREATE TABLE range_list
     (
@@ -494,7 +494,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into range_list values('201903', '1', '1', 1);
     insert into range_list values('201903', '2', '1', 1);
     select * from range_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
      201902     | 1         | 1       |         1
@@ -503,7 +503,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201903     | 2         | 1       |         1
      201903     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table range_list;
     CREATE TABLE range_hash
     (
@@ -532,7 +532,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into range_hash values('201903', '1', '1', 1);
     insert into range_hash values('201903', '2', '1', 1);
     select * from range_hash;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
      201902     | 1         | 1       |         1
@@ -541,7 +541,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201903     | 2         | 1       |         1
      201903     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table range_hash;
     CREATE TABLE range_range
     (
@@ -570,7 +570,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into range_range values('201903', '1', '1', 1);
     insert into range_range values('201903', '2', '1', 1);
     select * from range_range;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
@@ -579,7 +579,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
     (6 rows)
-    
+
     drop table range_range;
     CREATE TABLE hash_list
     (
@@ -608,7 +608,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into hash_list values('201903', '1', '1', 1);
     insert into hash_list values('201903', '2', '1', 1);
     select * from hash_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
@@ -617,7 +617,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201901     | 1         | 1       |         1
      201901     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table hash_list;
     CREATE TABLE hash_hash
     (
@@ -646,7 +646,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into hash_hash values('201903', '1', '1', 1);
     insert into hash_hash values('201903', '2', '1', 1);
     select * from hash_hash;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
@@ -655,7 +655,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201901     | 1         | 1       |         1
      201901     | 1         | 1       |         1
     (6 rows)
-    
+
     drop table hash_hash;
     CREATE TABLE hash_range
     (
@@ -684,7 +684,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into hash_range values('201903', '1', '1', 1);
     insert into hash_range values('201903', '2', '1', 1);
     select * from hash_range;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 1         | 1       |         1
      201903     | 2         | 1       |         1
@@ -732,7 +732,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     DETAIL:  N/A.
     insert into range_list partition for ('201902') values('201902', '1', '1', 1);
     insert into range_list subpartition for ('201902','1') values('201902', '1', '1', 1);
-    
+
     --指定分区查询数据
     select * from range_list partition (p_201901);
      month_code | dept_code | user_no | sales_amt
@@ -742,7 +742,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     select * from range_list subpartition (p_201901_a);
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -751,7 +751,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     select * from range_list partition for ('201902');
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -760,7 +760,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     select * from range_list subpartition for ('201902','1');
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -769,7 +769,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     --指定分区更新数据
     update range_list partition (p_201901) set user_no = '2';
     select * from range_list;
@@ -808,7 +808,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 4       |         1
     (4 rows)
     select * from range_list;
-    
+
     --指定分区删除数据
     delete from range_list partition (p_201901);
     DELETE 4
@@ -821,7 +821,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     --参数sql_compatibility=B时，可指定多分区删除数据
     delete from range_list as t partition (p_201901_a, p_201901);
     DELETE 0
-    
+
     --指定分区insert数据
     insert into range_list partition (p_201901)  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 5;
     insert into range_list subpartition (p_201901_a)  values('201902', '1', '1', 1)  ON DUPLICATE KEY UPDATE sales_amt = 10;
@@ -835,7 +835,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     --指定分区merge into数据
     CREATE TABLE newrange_list
     (
@@ -859,15 +859,15 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     );
     insert into newrange_list values('201902', '1', '1', 1);
     insert into newrange_list values('201903', '1', '1', 2);
-    
+
     MERGE INTO range_list partition (p_201901) p
     USING newrange_list partition (p_201901) np
     ON p.month_code= np.month_code
     WHEN MATCHED THEN
       UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
-    WHEN NOT MATCHED THEN  
+    WHEN NOT MATCHED THEN
       INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
-    
+
     select * from range_list;
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -876,15 +876,15 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     MERGE INTO range_list partition for ('201901') p
     USING newrange_list partition for ('201901') np
     ON p.month_code= np.month_code
     WHEN MATCHED THEN
       UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
-    WHEN NOT MATCHED THEN  
+    WHEN NOT MATCHED THEN
       INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
-    
+
     select * from range_list;
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -893,15 +893,15 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     MERGE INTO range_list subpartition (p_201901_a) p
     USING newrange_list subpartition (p_201901_a) np
     ON p.month_code= np.month_code
     WHEN MATCHED THEN
       UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
-    WHEN NOT MATCHED THEN  
+    WHEN NOT MATCHED THEN
       INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
-    
+
     select * from range_list;
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -910,15 +910,15 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (4 rows)
-    
+
     MERGE INTO range_list subpartition for ('201901', '1') p
     USING newrange_list subpartition for ('201901', '1') np
     ON p.month_code= np.month_code
     WHEN MATCHED THEN
       UPDATE SET dept_code = np.dept_code, user_no = np.user_no, sales_amt = np.sales_amt
-    WHEN NOT MATCHED THEN  
+    WHEN NOT MATCHED THEN
       INSERT VALUES (np.month_code, np.dept_code, np.user_no, np.sales_amt);
-    
+
     select * from range_list;
      month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
@@ -959,7 +959,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_list values('201903', '1', '1', 1);
     insert into list_list values('201903', '2', '1', 1);
     select * from list_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
@@ -968,40 +968,40 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (6 rows)
-    
+
     select * from list_list partition (p_201901);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (3 rows)
-    
+
     alter table list_list truncate partition p_201901;
     select * from list_list partition (p_201901);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list partition (p_201902);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
      201903     | 1         | 1       |         1
     (3 rows)
-    
+
     alter table list_list truncate partition p_201902;
     select * from list_list partition (p_201902);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     insert into list_list values('201902', '1', '1', 1);
     insert into list_list values('201902', '2', '1', 1);
     insert into list_list values('201902', '1', '1', 1);
@@ -1009,62 +1009,62 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_list values('201903', '1', '1', 1);
     insert into list_list values('201903', '2', '1', 1);
     select * from list_list subpartition (p_201901_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (2 rows)
-    
+
     alter table list_list truncate subpartition p_201901_a;
     select * from list_list subpartition (p_201901_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list subpartition (p_201901_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
     (1 row)
-    
+
     alter table list_list truncate subpartition p_201901_b;
     select * from list_list subpartition (p_201901_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list subpartition (p_201902_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 1         | 1       |         1
     (1 row)
-    
+
     alter table list_list truncate subpartition p_201902_a;
     select * from list_list subpartition (p_201902_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list subpartition (p_201902_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
     (2 rows)
-    
+
     alter table list_list truncate subpartition p_201902_b;
     select * from list_list subpartition (p_201902_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     drop table list_list;
-    
+
     ```
 
 -   示例4：对二级分区表进行split操作
@@ -1097,7 +1097,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     insert into list_list values('201903', '1', '1', 1);
     insert into list_list values('201903', '2', '1', 1);
     select * from list_list;
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
@@ -1106,88 +1106,86 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (6 rows)
-    
+
     select * from list_list subpartition (p_201901_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (2 rows)
-    
+
     select * from list_list subpartition (p_201901_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
     (1 row)
-    
+
     alter table list_list split subpartition p_201901_b values (2) into
     (
      subpartition p_201901_b,
      subpartition p_201901_c
     );
     select * from list_list subpartition (p_201901_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (2 rows)
-    
+
     select * from list_list subpartition (p_201901_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
     (1 row)
-    
+
     select * from list_list subpartition (p_201901_c);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list partition (p_201901);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201902     | 2         | 1       |         1
      201902     | 1         | 1       |         1
      201902     | 1         | 1       |         1
     (3 rows)
-    
+
     select * from list_list subpartition (p_201902_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 1         | 1       |         1
     (1 row)
-    
+
     select * from list_list subpartition (p_201902_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
     (2 rows)
-    
+
     alter table list_list split subpartition p_201902_b values (3) into
     (
      subpartition p_201902_b,
      subpartition p_201902_c
     );
     select * from list_list subpartition (p_201902_a);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 1         | 1       |         1
     (1 row)
-    
+
     select * from list_list subpartition (p_201902_b);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
     (0 rows)
-    
+
     select * from list_list subpartition (p_201902_c);
-     month_code | dept_code | user_no | sales_amt 
+     month_code | dept_code | user_no | sales_amt
     ------------+-----------+---------+-----------
      201903     | 2         | 1       |         1
      201903     | 2         | 1       |         1
     (2 rows)
-    
+
     drop table list_list;
     ```
-
-

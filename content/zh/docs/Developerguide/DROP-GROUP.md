@@ -23,4 +23,3 @@ DROP GROUP [ IF EXISTS ] group_name [, ...];
 ## 相关链接<a name="zh-cn_topic_0283137231_zh-cn_topic_0237122139_zh-cn_topic_0059778284_s1629a6ec030447bc9463ea522ac72d2a"></a>
 
 [CREATE GROUP](CREATE-GROUP.md)，[ALTER GROUP](ALTER-GROUP.md)，[DROP ROLE](DROP-ROLE.md)
-

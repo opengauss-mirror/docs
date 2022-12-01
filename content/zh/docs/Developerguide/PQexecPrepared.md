@@ -7,9 +7,9 @@
 ## 原型<a name="zh-cn_topic_0059778058_s311ac101dcb74b3abb5b3d2ee9781c2c"></a>
 
 ```
-PGresult* PQexecPrepared(PGconn* conn, 
-                         const char* stmtName, 
-                         int nParams, 
+PGresult* PQexecPrepared(PGconn* conn,
+                         const char* stmtName,
+                         int nParams,
                          const char* const* paramValues,
                          const int* paramLengths,
                          const int* paramFormats,
@@ -68,4 +68,3 @@ PGresult* PQexecPrepared(PGconn* conn,
 ## 返回值<a name="zh-cn_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
 PGresult类型指针。
-

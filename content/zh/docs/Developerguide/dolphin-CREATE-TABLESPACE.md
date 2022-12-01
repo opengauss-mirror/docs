@@ -50,5 +50,3 @@ openGauss=# \d t_tbspace
  num    | integer |
 Tablespace: "test_tbspace_ibd"
 ```
-
-

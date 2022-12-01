@@ -135,4 +135,3 @@ PG\_COMM\_RECV\_STREAM视图展示节点上所有的通信库接收流状态。
 </tr>
 </tbody>
 </table>
-

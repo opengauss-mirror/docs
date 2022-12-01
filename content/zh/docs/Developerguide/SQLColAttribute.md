@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_se76fe01df92c444b960a085f65094cb8"></a>
 
 ```
-SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,    
-                         SQLUSMALLINT    ColumnNumber,     
+SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
+                         SQLUSMALLINT    ColumnNumber,
                          SQLUSMALLINT    FieldIdentifier,
                          SQLPOINTER      CharacterAtrriburePtr,
                          SQLSMALLINT     BufferLength,
@@ -79,4 +79,3 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_sa0124e0144e742c989a8b2f0e52adfd6"></a>
 
 参见：[示例](示例-2.md)
-

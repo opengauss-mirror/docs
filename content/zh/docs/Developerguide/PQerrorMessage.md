@@ -12,7 +12,7 @@ char* PQerrorMessage(const PGconn* conn);
 
 ## 参数<a name="zh-cn_topic_0059778058_s3488a4902c544a86ae94d239d63e21a9"></a>
 
-**表 1** 
+**表 1**
 
 <a name="zh-cn_topic_0059778058_t753453111a55495490879cf0a4b36cf6"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0059778058_r91a64b4bccf441acbcb74615b079d506"><th class="cellrowborder" valign="top" width="23.27%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"><a name="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"></a><a name="zh-cn_topic_0059778058_a1cfb85f5e73d458d816d5f5b5e9538cd"></a><strong id="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"><a name="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"></a><a name="zh-cn_topic_0059778058_a471452b4ce36463d9fbbad2b44ea3b2d"></a>关键字</strong></p>
@@ -36,4 +36,3 @@ char类型指针。
 ## 示例<a name="zh-cn_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
 参见：[示例](示例-3.md)
-

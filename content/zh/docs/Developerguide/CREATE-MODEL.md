@@ -12,7 +12,7 @@
 ## 语法格式<a name="section187451047882"></a>
 
 ```
-CREATE MODEL model_name USING algorithm_name 
+CREATE MODEL model_name USING algorithm_name
 [FEATURES { {expression [ [ AS ] output_name ]} [, ...] }]
 [TARGET { {expression [ [ AS ] output_name ]} [, ...] }]
 FROM { table_name | select_query }
@@ -77,4 +77,3 @@ CREATE MODEL price_model USING logistic_regression
 ## 相关链接<a name="section084411512195"></a>
 
 [DROP MODEL](DROP-MODEL.md)，[PREDICT BY](PREDICT-BY.md)
-

@@ -79,12 +79,12 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     指定数据文件行数据的字段分隔符。
 
-    >![](public_sys-resources/icon-note.png) **说明：**   
-    >-   分隔符不能是\\r和\\n。  
-    >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。  
-    >-   TEXT格式数据的分隔符不能包含： \\.abcdefghijklmnopqrstuvwxyz0123456789。  
-    >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。  
-    >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07、0x08、0x1b等。  
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >-   分隔符不能是\\r和\\n。
+    >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。
+    >-   TEXT格式数据的分隔符不能包含： \\.abcdefghijklmnopqrstuvwxyz0123456789。
+    >-   数据文件中单行数据长度需<1GB，如果分隔符较长且数据列较多的情况下，会影响导出有效数据的长度。
+    >-   分隔符推荐使用多字符和不可见字符。多字符例如'$^&'；不可见字符例如0x07、0x08、0x1b等。
 
     取值范围：支持多字符分隔符，但分隔符不能超过10个字节。
 
@@ -126,10 +126,10 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：双引号。
 
-    >![](public_sys-resources/icon-note.png) **说明：**   
-    >-   quote参数不能和分隔符、null参数相同。  
-    >-   quote参数只能是单字节的字符。  
-    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。  
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >-   quote参数不能和分隔符、null参数相同。
+    >-   quote参数只能是单字节的字符。
+    >-   推荐不可见字符作为quote，例如0x07、0x08、0x1b等。
 
 -   escape \[ as \] 'character'
 
@@ -186,7 +186,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 
    ```
    openGauss=# SELECT * FROM a;
-    a 
+    a
    ---
     1
     2
@@ -201,6 +201,3 @@ gsql工具提供了元命令\\copy进行数据导入。
    ```
    \copy a FROM '/home/omm/2.csv' WITH (delimiter',',IGNORE_EXTRA_DATA 'on');
    ```
-
-
-

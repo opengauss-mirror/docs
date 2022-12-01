@@ -43,4 +43,3 @@ SUMMARY\_STATIO\_ALL\_SEQUENCES视图包含openGauss内汇聚的数据库中每�
 </tr>
 </tbody>
 </table>
-

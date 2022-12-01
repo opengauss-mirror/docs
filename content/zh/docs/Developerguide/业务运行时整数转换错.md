@@ -15,4 +15,3 @@ Invalid input syntax for integer: "13."
 ## 处理办法<a name="section2142103410214"></a>
 
 逐步缩小SQL范围确定不能转换的数据类型。
-

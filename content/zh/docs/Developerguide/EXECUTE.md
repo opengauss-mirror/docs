@@ -29,7 +29,7 @@ EXECUTE name [ ( parameter [, ...] ) ];
 
 ```
 --创建表reason。
-openGauss=# CREATE TABLE tpcds.reason ( 
+openGauss=# CREATE TABLE tpcds.reason (
     CD_DEMO_SK          INTEGER          NOT NULL,
     CD_GENDER           character(16)            ,
     CD_MARITAL_STATUS   character(100)
@@ -45,10 +45,9 @@ openGauss=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
 --为一个INSERT语句创建一个预备语句然后执行它。
 openGauss=# PREPARE insert_reason(integer,character(16),character(100)) AS INSERT INTO tpcds.reason_t1 VALUES($1,$2,$3);
 
-openGauss=# EXECUTE insert_reason(52, 'AAAAAAAADDAAAAAA', 'reason 52'); 
+openGauss=# EXECUTE insert_reason(52, 'AAAAAAAADDAAAAAA', 'reason 52');
 
 --删除表reason和reason_t1。
 openGauss=# DROP TABLE tpcds.reason;
 openGauss=# DROP TABLE tpcds.reason_t1;
 ```
-

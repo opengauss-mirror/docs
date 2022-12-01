@@ -1,11 +1,11 @@
 # CPU<a name="ZH-CN_TOPIC_0245374521"></a>
 通过top命令查看openGauss内节点CPU使用情况，分析是否存在由于CPU负载过高导致的性能瓶颈。 top命令经常用来监控linux的系统状况，是常用的性能分析工具，能够实时显示系统中各个进程的资源占用情况。
- 
-参数解释： 
 
-- d：number代表秒数，表示top命令显示的页面更新一次的间隔。默认是5秒。 
-- b：以批次的方式执行top。 
-- n：与b配合使用，表示需要进行几次top命令的输出结果。 
+参数解释：
+
+- d：number代表秒数，表示top命令显示的页面更新一次的间隔。默认是5秒。
+- b：以批次的方式执行top。
+- n：与b配合使用，表示需要进行几次top命令的输出结果。
 - p：指定特定的pid进程号进行观察。
 
 ## 查看CPU状况<a name="zh-cn_topic_0237121486_zh-cn_topic_0073253546_zh-cn_topic_0040046498_section5417561019132"></a>
@@ -24,10 +24,10 @@ Cpu3  :  0.3%us,  0.3%sy,  0.0%ni, 69.3%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
 Mem:   8038844k total,  7165272k used,   873572k free,   530444k buffers
 Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
 
-   PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                                                                                      
-                                                                                                                                                                   
- 35184 omm  20   0  822m 421m 128m S    0  5.4   5:28.15 gaussdb                                                                                                                                                                       
-     1 root      20   0 13592  820  784 S    0  0.0   1:16.62 init            
+   PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+
+ 35184 omm  20   0  822m 421m 128m S    0  5.4   5:28.15 gaussdb
+     1 root      20   0 13592  820  784 S    0  0.0   1:16.62 init
 ```
 
 分析时，请主要关注进程占用的CPU利用率。
@@ -39,24 +39,24 @@ Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
 1.  使用“top -H”命令查看CPU，显示内容如下所示。
 
     ```
-        14 root      20   0     0    0    0 S    0  0.0   0:16.41 events/3                  
+        14 root      20   0     0    0    0 S    0  0.0   0:16.41 events/3
     top - 14:22:49 up 5 days, 21:51,  2 users,  load average: 0.08, 0.08, 0.06
     Tasks: 312 total,   1 running, 311 sleeping,   0 stopped,   0 zombie
     Cpu(s):  1.3%us,  0.7%sy,  0.0%ni, 95.0%id,  2.4%wa,  0.5%hi,  0.2%si,  0.0%st
     Mem:   8038844k total,  5317668k used,  2721176k free,   180268k buffers
     Swap:  4192924k total,        0k used,  4192924k free,  2886860k cached
-    
-       PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                  
-                      
-      3105 root      20   0 50492  11m 2708 S    3  0.1  22:22.56 acc-snf                   
-                    
-      4015 gdm       20   0  232m  23m  11m S    0  0.3  11:34.70 gdm-simple-gree           
-     51001 omm  20   0 12140 1484  948 R    0  0.0   0:00.94 top                       
-                    
-     54885 omm  20   0  615m 396m 116m S    0  5.1   0:09.44 gaussdb                   
-                      
-                  
-         1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init          
+
+       PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+
+      3105 root      20   0 50492  11m 2708 S    3  0.1  22:22.56 acc-snf
+
+      4015 gdm       20   0  232m  23m  11m S    0  0.3  11:34.70 gdm-simple-gree
+     51001 omm  20   0 12140 1484  948 R    0  0.0   0:00.94 top
+
+     54885 omm  20   0  615m 396m 116m S    0  5.1   0:09.44 gaussdb
+
+
+         1 root      20   0 13592  944  792 S    0  0.0   0:08.54 init
     ```
 
 2. 根据查询结果中“Cpu\(s\)”分析是系统CPU（sy）还是用户CPU（us）占用过高。
@@ -77,21 +77,21 @@ Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
      Cpu(s):  0.9%us,  0.4%sy,  0.0%ni, 97.3%id,  1.1%wa,  0.2%hi,  0.1%si,  0.0%st
      Mem:   8038844k total,  5322180k used,  2716664k free,   180316k buffers
      Swap:  4192924k total,        0k used,  4192924k free,  2889860k cached
-     
-        PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                  
-      54775 omm  20   0  684m 424m 131m S    0  5.4   0:00.32 gaussdb                   
-      54951 omm  20   0  684m 424m 131m S    0  5.4   0:00.84 gaussdb                   
-      54732 omm  20   0  684m 424m 131m S    0  5.4   0:00.24 gaussdb                   
-      54758 omm  20   0  684m 424m 131m S    0  5.4   0:00.00 gaussdb                   
-      54759 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
-      54773 omm  20   0  684m 424m 131m S    0  5.4   0:02.79 gaussdb                   
-      54780 omm  20   0  684m 424m 131m S    0  5.4   0:00.04 gaussdb                   
-      54781 omm  20   0  684m 424m 131m S    0  5.4   0:00.21 gaussdb                   
-      54782 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb                   
-      54798 omm  20   0  684m 424m 131m S    0  5.4   0:16.70 gaussdb                   
-      54952 omm  20   0  684m 424m 131m S    0  5.4   0:07.51 gaussdb                   
-      54953 omm  20   0  684m 424m 131m S    0  5.4   0:00.81 gaussdb                   
-      54954 omm  20   0  684m 424m 131m S    0  5.4   0:06.54 gaussdb                   
+
+        PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+      54775 omm  20   0  684m 424m 131m S    0  5.4   0:00.32 gaussdb
+      54951 omm  20   0  684m 424m 131m S    0  5.4   0:00.84 gaussdb
+      54732 omm  20   0  684m 424m 131m S    0  5.4   0:00.24 gaussdb
+      54758 omm  20   0  684m 424m 131m S    0  5.4   0:00.00 gaussdb
+      54759 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb
+      54773 omm  20   0  684m 424m 131m S    0  5.4   0:02.79 gaussdb
+      54780 omm  20   0  684m 424m 131m S    0  5.4   0:00.04 gaussdb
+      54781 omm  20   0  684m 424m 131m S    0  5.4   0:00.21 gaussdb
+      54782 omm  20   0  684m 424m 131m S    0  5.4   0:00.02 gaussdb
+      54798 omm  20   0  684m 424m 131m S    0  5.4   0:16.70 gaussdb
+      54952 omm  20   0  684m 424m 131m S    0  5.4   0:07.51 gaussdb
+      54953 omm  20   0  684m 424m 131m S    0  5.4   0:00.81 gaussdb
+      54954 omm  20   0  684m 424m 131m S    0  5.4   0:06.54 gaussdb
      ```
 
      b. 使用“gstack ”查看进程内各线程的函数调用栈。查找上一步骤中占用CPU较高的线程ID对应的线程号。
@@ -118,7 +118,3 @@ Swap:  4192924k total,     4920k used,  4188004k free,  4742904k cached
      #10 0x00007f95c41df84d in clone () from /lib64/libc.so.6
      #11 0x0000000000000000 in ?? ()
      ```
-
-
-
-

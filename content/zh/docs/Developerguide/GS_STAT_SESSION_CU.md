@@ -36,4 +36,3 @@ GS\_STAT\_SESSION\_CU视图查询openGauss各个节点，当前运行session的C
 </tr>
 </tbody>
 </table>
-

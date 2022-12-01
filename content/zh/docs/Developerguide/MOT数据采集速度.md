@@ -11,6 +11,5 @@
     -   延迟：2.8ms每10条记录批量插入（包括客户端-服务器组网）。
 
 
->![](public_sys-resources/icon-caution.png) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：**
 >预计MOT将针对这一场景进行多项额外的甚至重大的性能改进。更多关于大规模数据流和数据采集的信息，请参阅[MOT应用场景](MOT应用场景.md)。
-

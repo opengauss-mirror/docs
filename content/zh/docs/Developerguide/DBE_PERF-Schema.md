@@ -8,20 +8,19 @@ DBE\_PERF Schema内视图主要用来诊断性能问题，也是WDR Snapshot的�
 
 DBE\_PERF Schema内视图如下：
 
--   **[OS](OS.md)**  
--   **[Instance](Instance.md)**  
--   **[Memory](Memory.md)**  
--   **[File](File.md)**  
--   **[Object](Object.md)**  
--   **[Workload](Workload.md)**  
--   **[Session/Thread](Session-Thread.md)**  
--   **[Transaction](Transaction.md)**  
--   **[Query](Query.md)**  
--   **[Cache/IO](Cache-IO.md)**  
--   **[Utility](Utility.md)**  
--   **[Lock](LOCK.md)**  
--   **[Wait Events](Wait-Events.md)**  
--   **[Configuration](Configuration.md)**  
--   **[Operator](Operator.md)**  
--   **[Workload Manager](Workload-Manager.md)**  
-
+-   **[OS](OS.md)**
+-   **[Instance](Instance.md)**
+-   **[Memory](Memory.md)**
+-   **[File](File.md)**
+-   **[Object](Object.md)**
+-   **[Workload](Workload.md)**
+-   **[Session/Thread](Session-Thread.md)**
+-   **[Transaction](Transaction.md)**
+-   **[Query](Query.md)**
+-   **[Cache/IO](Cache-IO.md)**
+-   **[Utility](Utility.md)**
+-   **[Lock](LOCK.md)**
+-   **[Wait Events](Wait-Events.md)**
+-   **[Configuration](Configuration.md)**
+-   **[Operator](Operator.md)**
+-   **[Workload Manager](Workload-Manager.md)**

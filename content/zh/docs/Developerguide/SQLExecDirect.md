@@ -8,7 +8,7 @@
 
 ```
 SQLRETURN SQLExecDirect(SQLHSTMT         StatementHandle,
-                        SQLCHAR         *StatementText,     
+                        SQLCHAR         *StatementText,
                         SQLINTEGER       TextLength);
 ```
 
@@ -58,4 +58,3 @@ SQLRETURN SQLExecDirect(SQLHSTMT         StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272891_zh-cn_topic_0237120421_zh-cn_topic_0059778538_s8fbcb12db6c5494e98bac4b4820ecc3c"></a>
 
 参见：[示例](示例-2.md)
-

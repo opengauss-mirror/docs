@@ -26,7 +26,7 @@ SELECT * FROM join_a a JOIN join_b b ON a.b = b.b;
 
     ```
     SELECT
-     * 
+     *
     SELECT * FROM join_a a JOIN join_b b ON a.b = b.b where a.b IS NOT NULL;
     ```
 
@@ -47,5 +47,3 @@ SELECT * FROM join_a a JOIN join_b b ON a.b = b.b;
      Total runtime: 13.556 ms
     (10 rows)
     ```
-
-

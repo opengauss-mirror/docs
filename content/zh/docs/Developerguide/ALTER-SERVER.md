@@ -13,7 +13,7 @@
 -   修改外部服务的参数。
 
 ```
- ALTER SERVER server_name [ VERSION 'new_version' ]   
+ ALTER SERVER server_name [ VERSION 'new_version' ]
       [ OPTIONS ( {[ ADD | SET | DROP ] option ['value']} [, ... ] ) ];
 ```
 
@@ -23,7 +23,7 @@
 -   修改外部服务的名称。
 
     ```
-    ALTER SERVER server_name     
+    ALTER SERVER server_name
        RENAME TO new_name;
     ```
 
@@ -100,4 +100,3 @@
 ## 相关链接<a name="zh-cn_topic_0283136932_section13898752175613"></a>
 
 [CREATE SERVER ](CREATE-SERVER.md)，[CREATE SERVER](DROP-SERVER.md)
-

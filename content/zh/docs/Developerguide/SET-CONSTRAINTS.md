@@ -51,4 +51,3 @@ SET CONSTRAINTS  { ALL  |  { name  }  [, ...]  }  { DEFERRED  | IMMEDIATE  } ;
 --设置所有约束在事务提交时检查。
 openGauss=# SET CONSTRAINTS ALL DEFERRED;
 ```
-

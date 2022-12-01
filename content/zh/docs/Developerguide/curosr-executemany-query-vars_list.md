@@ -41,4 +41,3 @@ curosr.executemany(query,vars_list)
 ## 示例<a name="section4160944682"></a>
 
 请参见[示例：常用操作](示例-常用操作-1.md)。
-

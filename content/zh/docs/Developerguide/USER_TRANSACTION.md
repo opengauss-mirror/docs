@@ -106,4 +106,3 @@ USER\_TRANSACTION用来统计用户执行的事务信息。monadmin用户能看�
 </tr>
 </tbody>
 </table>
-

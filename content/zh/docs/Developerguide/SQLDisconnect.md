@@ -43,4 +43,3 @@ SQLRETURN SQLDisconnect(SQLHDBC    ConnectionHandle);
 ## 示例<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sb7797f4e64534d1f85c319d5433804d4"></a>
 
 参见：[示例](示例-2.md)
-

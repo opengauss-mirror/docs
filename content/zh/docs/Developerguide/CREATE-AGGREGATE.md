@@ -78,4 +78,3 @@ openGauss=# CREATE AGGREGATE array_accum (anyelement)
     initcond = '{}'
 );
 ```
-

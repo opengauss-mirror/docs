@@ -44,4 +44,3 @@ CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是�
 </tr>
 </tbody>
 </table>
-

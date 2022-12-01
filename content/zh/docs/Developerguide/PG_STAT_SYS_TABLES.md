@@ -169,4 +169,3 @@ PG\_STAT\_SYS\_TABLES视图显示pg\_catalog、information\_schema模式的所�
 </tr>
 </tbody>
 </table>
-

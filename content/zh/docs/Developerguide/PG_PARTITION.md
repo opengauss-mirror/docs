@@ -229,4 +229,3 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 </tr>
 </tbody>
 </table>
-

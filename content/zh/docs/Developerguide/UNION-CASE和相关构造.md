@@ -9,7 +9,7 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 -   如果输入不属于同一个类型范畴，失败。（unknown类型除外）
 - 如果输入类型是同一个类型范畴，则选择该类型范畴的首选类型。（例外：union操作会选择第一个分支的类型作为所选类型。）
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。
 
@@ -99,7 +99,7 @@ openGauss=# \c a_1
 --创建表t1。
 a_1=# CREATE TABLE t1(a int, b varchar(10));
 
---查看coalesce参数输入int和varchar类型的查询语句的执行计划。                 
+--查看coalesce参数输入int和varchar类型的查询语句的执行计划。
 a_1=# EXPLAIN SELECT coalesce(a, b) FROM t1;
 ERROR:  COALESCE types integer and character varying cannot be matched
 LINE 1: EXPLAIN SELECT coalesce(a, b) FROM t1;
@@ -162,14 +162,14 @@ ora_1=# INSERT INTO t1 VALUES(1, 2, '3', '4', date '12-10-2010');
 
 --result1类型为char，defresult类型为text，text精度更高，返回值的类型由char更新为text。
 ora_1=# SELECT decode(1, 2, c_char, c_text) AS result, pg_typeof(result) FROM t1;
- result | pg_typeof 
+ result | pg_typeof
 --------+-----------
  4      | text
 (1 row)
 
 --result1类型为int，属于数值类型范畴，返回值的类型置为numeric。
 ora_1=# SELECT decode(1, 2, c_int, c_float8) AS result, pg_typeof(result) FROM t1;
- result | pg_typeof 
+ result | pg_typeof
 --------+-----------
       2 | numeric
 (1 row)
@@ -195,4 +195,3 @@ ora_1=# \c postgres
 openGauss=# DROP DATABASE ora_1;
 DROP DATABASE
 ```
-

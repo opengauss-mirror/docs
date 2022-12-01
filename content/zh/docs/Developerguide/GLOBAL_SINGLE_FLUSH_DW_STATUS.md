@@ -57,4 +57,3 @@ GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS视图显示数据库所有实例单页面淘�
 </tr>
 </tbody>
 </table>
-

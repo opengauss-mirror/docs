@@ -73,4 +73,3 @@ PG\_USER\_STATUS系统表提供了访问数据库用户的状态。需要有系�
 </tr>
 </tbody>
 </table>
-

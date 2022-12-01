@@ -43,4 +43,3 @@ SUMMARY\_STATIO\_USER\_SEQUENCES视图显示openGauss内汇聚的命名空间中
 </tr>
 </tbody>
 </table>
-

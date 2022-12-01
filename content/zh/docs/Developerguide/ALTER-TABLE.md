@@ -66,7 +66,7 @@
         | AUTO_INCREMENT [ = ] value
         | COMMENT {=| } 'text'
     ```
-    
+
 
 ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
@@ -204,29 +204,29 @@
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]   
-| MODIFY column_name data_type [ ON UPDATE update_expr ]   
-| MODIFY [ COLUMN ] column_name [ COMMENT 'text']    
+ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+| MODIFY column_name data_type [ ON UPDATE update_expr ]
+| MODIFY [ COLUMN ] column_name [ COMMENT 'text']
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
-| DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
-| ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]    
-| ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }    
-| ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL    
-| ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer    
-| ADD STATISTICS (( column_1_name, column_2_name [, ...] ))    
-| DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
-| ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
-| ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
+| DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]
+| ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]
+| ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }
+| ALTER [ COLUMN ] column_name { SET | DROP } NOT NULL
+| ALTER [ COLUMN ] column_name SET STATISTICS [PERCENT] integer
+| ADD STATISTICS (( column_1_name, column_2_name [, ...] ))
+| DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))
+| ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )
+| ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )
 | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
 ```
 
- ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>  
+ ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
 - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]  \[ COMMENT {=| } 'text'\]**
 
   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-  
+
 - **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \[ COMMENT {=| } 'text'\] \} \[, ...\] \)**
 
   向表中增加多列。
@@ -293,7 +293,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
   	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
       [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   ```
-  
+
 - 其中列的压缩可选项compress\_mode为：
 
 ```
@@ -332,7 +332,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 -   重命名表。对名称的修改不会影响所存储的数据。
 
     ```
-    ALTER TABLE [ IF EXISTS ] table_name 
+    ALTER TABLE [ IF EXISTS ] table_name
         RENAME TO new_table_name;
     ```
 
@@ -353,11 +353,11 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 -   设置表的所属模式。
 
     ```
-    ALTER TABLE [ IF EXISTS ] table_name 
+    ALTER TABLE [ IF EXISTS ] table_name
         SET SCHEMA new_schema;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >-   这种形式把表移动到另外一个模式。相关的索引、约束都跟着移动。目前序列不支持改变schema。 若该表拥有序列，需要将序列删除，重建，或者取消拥有关系， 才能将表schema更改成功。
     >
@@ -379,7 +379,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 -   更新多个列。
 
     ```
-    ALTER TABLE [ IF EXISTS ] table_name 
+    ALTER TABLE [ IF EXISTS ] table_name
         MODIFY ( { column_name data_type [ ON UPDATE update_expr ]| column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
@@ -400,15 +400,15 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     -   在DROP CONSTRAINT操作中表示要删除的现有约束的名称。
     -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
-        >![](public_sys-resources/icon-notice.png) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：**
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 
 -   **index\_name**
 
     索引名称。
-        
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >在ADD CONSTRAINT操作中：
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
@@ -420,7 +420,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
@@ -429,14 +429,14 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
 -   **expression**
 
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 -   **storage\_parameter**
 
@@ -451,11 +451,11 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
         表示创建索引时起的bgworker线程数量，例如2就表示将会起2个bgworker线程并发创建索引。
 
         如果未设置，启动bgworker线程数量与表大小相关，一般不超过4个线程。
-        
+
     -   hasuids（bool类型）
-    
+
         默认值：off
-    
+
         参数开启：更新表元组时，为元组分配表级唯一标识id。
 
 
@@ -487,7 +487,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
     USING子句声明如何从旧的字段值里计算新的字段值；如果省略，缺省从旧类型向新类型的赋值转换。如果从旧数据类型到新类型没有隐含或者赋值的转换，则必须提供一个USING子句。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >ALTER TYPE的USING选项实际上可以声明涉及该行旧值的任何表达式，即它可以引用除了正在被转换的字段之外其他的字段。这样，就可以用ALTER TYPE语法做非常普遍性的转换。因为这个灵活性，USING表达式并没有作用于该字段的缺省值（如果有的话），结果可能不是缺省表达式要求的常量表达式。这就意味着如果从旧类型到新类型没有隐含或者赋值转换的话，即使存在USING子句，ALTER TYPE也可能无法把缺省值转换成新的类型。在这种情况下，应该用DROP DEFAULT先删除缺省，执行ALTER TYPE，然后使用SET DEFAULT增加一个合适的新缺省值。类似的考虑也适用于涉及该字段的索引和约束。
 
 -   **NOT NULL | NULL**
@@ -571,7 +571,7 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 
   - INITIALLY DEFERRED：只有在事务结尾才检查它。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 -   **PARTIAL CLUSTER KEY**
@@ -626,4 +626,3 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 ## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
 [CREATE TABLE](CREATE-TABLE.md)，[DROP TABLE](DROP-TABLE.md)
-

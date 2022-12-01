@@ -128,5 +128,3 @@ openGauss=# DROP ROLE jay;
 -   create tablespace
 
     不建议在事务内部创建表空间。
-
-

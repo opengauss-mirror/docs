@@ -92,4 +92,3 @@ GLOBAL\_REPLICATION\_SLOTS视图用于查看openGauss各节点的复制节点的
 </tr>
 </tbody>
 </table>
-

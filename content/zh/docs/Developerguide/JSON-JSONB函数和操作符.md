@@ -114,7 +114,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-caution.png) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：**
 >对于 \#\> 和 \#\>\> 操作符，当给出的路径无法查找到数据时，不会报错，会返回空。
 
 **表 2** **JSONB额外支持操作符**
@@ -260,7 +260,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
     ```
     openGauss=# SELECT row_to_json(row(1,'foo'));
-             row_to_json     
+             row_to_json
         ---------------------
          {"f1":1,"f2":"foo"}    (1 row)
     ```
@@ -437,7 +437,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
        1
        true
        [1,[2,3]]
-    
+
       (4 rows)
     ```
 
@@ -1005,10 +1005,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
      gin_extract_jsonb_query_hash
      gin_triconsistent_jsonb
      gin_triconsistent_jsonb_hash
-     
+
      json_agg_transfn
      json_agg_finalfn
      json_object_agg_transfn
      json_object_agg_finalfn
     ```
-

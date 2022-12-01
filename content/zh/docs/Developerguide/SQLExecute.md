@@ -46,4 +46,3 @@ SQLRETURN SQLExecute(SQLHSTMT    StatementHandle);
 ## 示例<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_s224798c3974741f3976659ed7d6de926"></a>
 
 参见：[示例](示例-2.md)
-

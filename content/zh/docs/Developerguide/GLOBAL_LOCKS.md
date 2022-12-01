@@ -126,4 +126,3 @@ GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 </tr>
 </tbody>
 </table>
-

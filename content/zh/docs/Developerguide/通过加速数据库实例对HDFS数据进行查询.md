@@ -57,21 +57,21 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
 2.  打开加速数据库实例功能。
 
     ```
-    gs_guc set -Z datanode -N all -I all -c "use_workload_manager=on" 
+    gs_guc set -Z datanode -N all -I all -c "use_workload_manager=on"
     ```
 
     ```
-    gs_guc set -Z datanode -N all -I all -c "enable_dynamic_workload=on" 
+    gs_guc set -Z datanode -N all -I all -c "enable_dynamic_workload=on"
     ```
 
     ```
-    gs_guc set -Z datanode -N all -I all -c "enable_acceleration_cluster_wlm=on" 
+    gs_guc set -Z datanode -N all -I all -c "enable_acceleration_cluster_wlm=on"
     ```
 
 3.  根据数据库实例硬件规模设置max\_active\_statements为正值。
 
     ```
-    gs_guc reload -Z datanode -N all -I all -c "max_active_statements=10" 
+    gs_guc reload -Z datanode -N all -I all -c "max_active_statements=10"
     ```
 
 4.  [使用gsql连接](使用gsql连接.md)数据库。
@@ -133,5 +133,3 @@ openGauss数据库实例只拥有固定数量的执行节点（DN），在对大
     gs_guc set -Z datanode -N all -I all -h "host all all 192.168.0.0/16 sha256"
     gs_guc set -Z datanode -N all -I all -h "host all all 10.185.181.0/24 sha256"
     ```
-
-

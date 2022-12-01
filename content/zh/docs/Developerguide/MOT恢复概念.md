@@ -15,4 +15,3 @@ WAL记录作为封装的WAL恢复的一部分进行恢复。openGauss封装会�
 在主备部署中，备用服务器始终处于Recovery状态，以便自动WAL恢复过程。
 
 MOT恢复参数在mot.conf文件中配置，参见[MOT恢复](MOT恢复.md)。
-

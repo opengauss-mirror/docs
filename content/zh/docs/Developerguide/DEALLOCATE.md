@@ -30,4 +30,3 @@ DEALLOCATE [ PREPARE ] { name | ALL };
 ## 示例<a name="zh-cn_topic_0283136579_zh-cn_topic_0237122129_zh-cn_topic_0059778612_s0cd8d4c203d642af85b3ae2ca4600bb3"></a>
 
 无。
-

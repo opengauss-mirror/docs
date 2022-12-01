@@ -108,4 +108,3 @@ CREATE OPERATOR === (
     HASHES, MERGES
 );
 ```
-

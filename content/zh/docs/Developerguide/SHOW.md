@@ -11,14 +11,14 @@ SHOW将显示当前运行时参数的数值。
 ## 语法格式<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s8d26aecdc3a24323a64f4df9f4df53f3"></a>
 
 ```
-SHOW 
-  { 
-    [VARIABLES LIKE] configuration_parameter | 
-    CURRENT_SCHEMA | 
-    TIME ZONE | 
-    TRANSACTION ISOLATION LEVEL | 
-    SESSION AUTHORIZATION | 
-    ALL 
+SHOW
+  {
+    [VARIABLES LIKE] configuration_parameter |
+    CURRENT_SCHEMA |
+    TIME ZONE |
+    TRANSACTION ISOLATION LEVEL |
+    SESSION AUTHORIZATION |
+    ALL
   };
 ```
 
@@ -42,4 +42,3 @@ openGauss=# SHOW VARIABLES LIKE var;
 ## 相关链接<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s5f7ae1b9fc8c4edfa04138996c61eaa4"></a>
 
 [SET](SET.md)，[RESET](RESET.md)
-

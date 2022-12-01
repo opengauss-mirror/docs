@@ -71,4 +71,3 @@ GLOBAL\_PAGEWRITER\_STATUS视图显示openGauss实例的刷页信息和检查点
 </tr>
 </tbody>
 </table>
-

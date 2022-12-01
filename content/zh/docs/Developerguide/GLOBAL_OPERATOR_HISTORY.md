@@ -170,4 +170,3 @@ GLOBAL\_OPERATOR\_HISTORY系统视图显示的是当前用户在数据库主节�
 </tr>
 </tbody>
 </table>
-

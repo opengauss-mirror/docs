@@ -95,4 +95,3 @@ openGauss=# CREATE INDEX indexname ON tablename USING GIST ( geometryfield );
 -   不支持拓扑对象管理模块Topology和栅格数据处理模块Raster。
 -   不支持BRIN索引。
 -   spatial\_ref\_sys表在扩容期间只支持查询操作。
-

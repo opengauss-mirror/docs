@@ -38,4 +38,3 @@ PREPARE name [ ( data_type [, ...] ) ] AS statement;
 ## 相关链接<a name="zh-cn_topic_0283137580_zh-cn_topic_0237122171_section1690451517271"></a>
 
 [DEALLOCATE](DEALLOCATE.md)
-

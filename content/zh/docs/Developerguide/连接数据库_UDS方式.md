@@ -35,7 +35,6 @@ public class Test {
 }
 ```
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >-   socketFactoryArg参数配置根据真实路径进行配置，与GUC参数unix\_socket\_directory的值保持一致。
 >-   连接主机名必须设置为“localhost”。
-

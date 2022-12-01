@@ -44,4 +44,3 @@ DROP TRIGGER [ IF EXISTS ] trigger_name ON table_name [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283137186_zh-cn_topic_0237122156_zh-cn_topic_0059777895_see210f0a4a344c6d8e1bc34d85b3ec05"></a>
 
 [CREATE TRIGGER](CREATE-TRIGGER.md)，[ALTER TRIGGER](ALTER-TRIGGER.md)，[ALTER TABLE](ALTER-TABLE.md)
-

@@ -48,4 +48,3 @@ SUMMARY\_STATIO\_ALL\_INDEXES视图包含含openGauss内汇聚的数据库中的
 </tr>
 </tbody>
 </table>
-

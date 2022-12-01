@@ -86,12 +86,10 @@ Extension Connector的基本工作原理是：用户首先构建Data Source对�
 >
 >2.  在MySQL兼容性下暂不支持exec\_on\_extension和exec\_hadoop\_sql函数的使用。
 
--   **[SQL on Hadoop](SQL-on-Hadoop.md)**  
+-   **[SQL on Hadoop](SQL-on-Hadoop.md)**
 
--   **[SQL on Oracle](SQL-on-Oracle.md)**  
+-   **[SQL on Oracle](SQL-on-Oracle.md)**
 
--   **[SQL on Spark](SQL-on-Spark.md)**  
+-   **[SQL on Spark](SQL-on-Spark.md)**
 
--   **[SQL on other openGauss](SQL-on-other-openGauss.md)**  
-
-
+-   **[SQL on other openGauss](SQL-on-other-openGauss.md)**

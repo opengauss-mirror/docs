@@ -30,7 +30,7 @@
     ```
     CREATE [ OR REPLACE ] PACKAGE [ schema. ]package_name
         [ invoker_rights_clause ] { IS | AS } item_list_1 END package_name;
-    
+
     invoker_rights_clause可以被声明为AUTHID DEFINER或者AUTHID CURRENT_USER，分别为定义者权限和调用者权限。
     item_list_1可以为声明的变量或者存储过程以及函数。
     ```
@@ -101,5 +101,3 @@
   end;
   /
   ```
-
-  

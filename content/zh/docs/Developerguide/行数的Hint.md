@@ -39,4 +39,3 @@ select /*+ rows(store_sales store_returns *50) */ i_product_name product_name ..
 该hint表示：store\_sales、store\_returns关联的结果集估算行数在原估算行数基础上乘以50。生成计划如下所示：
 
 ![](figures/zh-cn_image_0253036670.png)
-

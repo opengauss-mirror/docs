@@ -176,4 +176,3 @@ GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。
 </tr>
 </tbody>
 </table>
-

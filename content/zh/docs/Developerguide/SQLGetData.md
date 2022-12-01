@@ -75,4 +75,3 @@ SQLRETURN SQLGetData(SQLHSTMT        StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s69654c27e011474aa33ede59ff0961b8"></a>
 
 参见：[示例](示例-2.md)
-

@@ -140,4 +140,3 @@ PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式
 </tr>
 </tbody>
 </table>
-

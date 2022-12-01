@@ -133,18 +133,18 @@ openGauss=# INSERT INTO newproducts VALUES (1666, 'harry potter', 'toys');
 openGauss=# INSERT INTO newproducts VALUES (1700, 'wait interface', 'books');
 
 -- 进行MERGE INTO操作
-openGauss=# MERGE INTO products p   
-USING newproducts np   
-ON (p.product_id = np.product_id)   
-WHEN MATCHED THEN  
-  UPDATE SET p.product_name = np.product_name, p.category = np.category WHERE p.product_name != 'play gym'  
-WHEN NOT MATCHED THEN  
+openGauss=# MERGE INTO products p
+USING newproducts np
+ON (p.product_id = np.product_id)
+WHEN MATCHED THEN
+  UPDATE SET p.product_name = np.product_name, p.category = np.category WHERE p.product_name != 'play gym'
+WHEN NOT MATCHED THEN
   INSERT VALUES (np.product_id, np.product_name, np.category) WHERE np.category = 'books';
 MERGE 4
 
 -- 查询更新后的结果
 openGauss=# SELECT * FROM products ORDER BY product_id;
- product_id |  product_name  | category  
+ product_id |  product_name  | category
 ------------+----------------+-----------
        1501 | vivitar 35mm   | electrncs
        1502 | olympus camera | electrncs
@@ -158,4 +158,3 @@ openGauss=# SELECT * FROM products ORDER BY product_id;
 openGauss=# DROP TABLE products;
 openGauss=# DROP TABLE newproducts;
 ```
-

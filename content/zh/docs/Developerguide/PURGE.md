@@ -23,9 +23,9 @@
 ## 语法格式<a name="section2067414318544"></a>
 
 ```
-PURGE { TABLE [schema_name.]table_name          
-        | INDEX index_name         
-        | RECYCLEBIN       
+PURGE { TABLE [schema_name.]table_name
+        | INDEX index_name
+        | RECYCLEBIN
       }
 ```
 
@@ -78,13 +78,13 @@ openGauss=#  CREATE TABLE tpcds.reason_t3
   r_reason_desc  character(100)
   ) tablespace reason_table_space1;
 -- 对表tpcds.reason_t1创建索引
-openGauss=#  CREATE INDEX index_t1 on tpcds.reason_t1(r_reason_id); 
+openGauss=#  CREATE INDEX index_t1 on tpcds.reason_t1(r_reason_id);
 openGauss=#  DROP TABLE tpcds.reason_t1;
 openGauss=#  DROP TABLE tpcds.reason_t2;
 openGauss=#  DROP TABLE tpcds.reason_t3;
 --查看回收站
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
-        rcyname        | rcyoriginname | rcytablespace 
+        rcyname        | rcyoriginname | rcytablespace
 -----------------------+---------------+---------------
  BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
@@ -94,7 +94,7 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
 --PURGE清除表
 openGauss=#  PURGE TABLE tpcds.reason_t3;
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
-        rcyname        | rcyoriginname | rcytablespace 
+        rcyname        | rcyoriginname | rcytablespace
 -----------------------+---------------+---------------
  BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
@@ -103,7 +103,7 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
 --PURGE清除索引
 openGauss=#  PURGE INDEX tindex_t1;
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
-        rcyname        | rcyoriginname | rcytablespace 
+        rcyname        | rcyoriginname | rcytablespace
 -----------------------+---------------+---------------
  BIN$16409$2CEE988==$0 | reason_t1     |         16408
  BIN$16412$2CF2188==$0 | reason_t2     |         16408
@@ -111,9 +111,8 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
 --PURGE清除回收站所有对象
 openGauss=#  PURGE recyclebin;
 openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
-        rcyname        | rcyoriginname | rcytablespace 
+        rcyname        | rcyoriginname | rcytablespace
 -----------------------+---------------+---------------
 (0 rows)
 
 ```
-

@@ -30,21 +30,21 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 -   修改视图的所有者。
 
     ```
-    ALTER VIEW [ IF EXISTS ] view_name 
+    ALTER VIEW [ IF EXISTS ] view_name
         OWNER TO new_owner;
     ```
 
 -   重命名视图。
 
     ```
-    ALTER VIEW [ IF EXISTS ] view_name 
+    ALTER VIEW [ IF EXISTS ] view_name
         RENAME TO new_name;
     ```
 
 -   设置视图的所属模式。
 
     ```
-    ALTER VIEW [ IF EXISTS ] view_name 
+    ALTER VIEW [ IF EXISTS ] view_name
         SET SCHEMA new_schema;
     ```
 
@@ -134,4 +134,3 @@ openGauss=# DROP VIEW public.customer_details_view_v2;
 ## 相关链接<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
 [CREATE VIEW](CREATE-VIEW.md)，[DROP VIEW](DROP-VIEW.md)
-

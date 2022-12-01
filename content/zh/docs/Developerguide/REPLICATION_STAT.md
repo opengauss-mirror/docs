@@ -129,5 +129,3 @@ REPLICATION\_STAT用于描述日志同步状态信息，如发起端发送日志
 </tr>
 </tbody>
 </table>
-
-

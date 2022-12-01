@@ -8,10 +8,10 @@ openGauss支持标准的数据库操作语言（DML）命令，对表进行更�
 
 ```
 CREATE TABLE customer_t
-( c_customer_sk             integer,   
-  c_customer_id             char(5),    
-  c_first_name              char(6),    
-  c_last_name               char(8) 
+( c_customer_sk             integer,
+  c_customer_id             char(5),
+  c_first_name              char(6),
+  c_last_name               char(8)
 ) ;
 ```
 
@@ -27,9 +27,9 @@ CREATE TABLE customer_t
     -   向表customer\_t中插入多行数据。
 
         ```
-        INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES    
-        (6885, 1, 'Joes', 'Hunter'),    
-        (4321, 2, 'Lily','Carter'),    
+        INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES
+        (6885, 1, 'Joes', 'Hunter'),
+        (4321, 2, 'Lily','Carter'),
         (9527, 3, 'James', 'Cook'),
         (9500, 4, 'Lucy', 'Baker');
         ```
@@ -66,5 +66,3 @@ CREATE TABLE customer_t
     删除表时，DELETE语句每次删除一行数据而TRUNCATE语句是通过释放表存储的数据页来删除数据，使用TRUNCATE语句比使用DELETE语句更加快速。
 
     使用DELETE语句删除表时，仅删除数据，不释放存储空间。使用TRUNCATE语句删除表时，删除数据且释放存储空间。
-
-

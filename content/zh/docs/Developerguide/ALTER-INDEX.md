@@ -52,7 +52,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   重命名表索引的名称。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         RENAME TO new_name;
     ```
 
@@ -60,7 +60,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   修改表索引的所属空间。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         SET TABLESPACE tablespace_name;
     ```
 
@@ -68,7 +68,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   修改表索引的存储参数。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         SET ( {storage_parameter = value} [, ... ] );
     ```
 
@@ -76,7 +76,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   重置表索引的存储参数。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         RESET ( storage_parameter [, ... ] ) ;
     ```
 
@@ -84,18 +84,18 @@ ALTER INDEX用于修改现有索引的定义。
 -   设置表索引或索引分区不可用。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         [ MODIFY PARTITION index_partition_name ] UNUSABLE;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >列存表不支持该语法。
 
 
 -   重建表索引或索引分区。
 
     ```
-    ALTER INDEX index_name 
+    ALTER INDEX index_name
         REBUILD [ PARTITION index_partition_name ];
     ```
 
@@ -103,7 +103,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   重命名索引分区。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         RENAME PARTITION index_partition_name TO new_index_partition_name;
     ```
 
@@ -111,7 +111,7 @@ ALTER INDEX用于修改现有索引的定义。
 -   修改索引分区的所属表空间。
 
     ```
-    ALTER INDEX [ IF EXISTS ] index_name 
+    ALTER INDEX [ IF EXISTS ] index_name
         MOVE PARTITION index_partition_name TABLESPACE new_tablespace;
     ```
 
@@ -162,4 +162,3 @@ ALTER INDEX用于修改现有索引的定义。
 ## 相关链接<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sc49c6608f7ca4dd6bfacdb1da044d816"></a>
 
 [CREATE INDEX](CREATE-INDEX.md)，[DROP INDEX](DROP-INDEX.md)，[REINDEX](REINDEX.md)
-

@@ -7,4 +7,3 @@
 -   戴尔x86服务器，2路英特尔至强金牌6154 CPU @ 3Ghz，18核（超线程开启时共72核），1TB RAM，1TB SSD。操作系统为CentOS 7.6。
 -   x86超微服务器，8路英特尔（R）至强（R） CPU E7-8890 v4 @ 2.20GHz，24核（超线程开启共384核），1TB RAM，1.2 TB SSD（希捷1200 SSD 200GB，SAS 12Gb/s）。操作系统为Ubuntu 16.04.2 LTS。
 -   华为x86服务器，4路英特尔（R）至强（R） CPU E7-8890 v4 @ 2.2Ghz（超线程开启共96核），512GB RAM，SSD 2TB。操作系统为CentOS 7.6。
-

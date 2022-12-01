@@ -29,7 +29,7 @@ ALTER RESOURCE POOL pool_name
 
   控制组名称。
 
-  >![](public_sys-resources/icon-note.png) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：**
   >
   >-   设置控制组名称时，语法可以使用双引号，也可以使用单引号。
 
@@ -69,7 +69,7 @@ ALTER RESOURCE POOL pool_name
 
     在普通场景下，普通用户的mem\_percent范围为0-100的整数，默认值为0。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >mem\_percent和memory\_limit同时指定时，只有mem\_percent起作用。
 
 -   **io\_limits**
@@ -85,7 +85,7 @@ ALTER RESOURCE POOL pool_name
     包括三档可选：Low、Medium和High。不控制时可设置为None，默认为None。
 
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT、COPY FROM、CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 ## 示例<a name="zh-cn_topic_0059778630_s5701ea039ae94537a49dec3cd0c173d8"></a>
@@ -106,7 +106,7 @@ openGauss=# ALTER RESOURCE POOL pool1 WITH (CONTROL_GROUP="class1:Low");
 openGauss=# ALTER RESOURCE POOL pool1 WITH (CONTROL_GROUP="class1:wg1");
 
 --更新一个资源池，其控制组指定为"class1"组下属的"wg2" Workload控制组。
-openGauss=# ALTER RESOURCE POOL pool1 WITH (CONTROL_GROUP="class1:wg2:3"); 
+openGauss=# ALTER RESOURCE POOL pool1 WITH (CONTROL_GROUP="class1:wg2:3");
 --删除资源池pool1。
 openGauss=# DROP RESOURCE POOL pool1;
 ```
@@ -114,4 +114,3 @@ openGauss=# DROP RESOURCE POOL pool1;
 ## 相关链接<a name="zh-cn_topic_0059778630_seca31b0ddce240958b33b5be42b33c0c"></a>
 
 [CREATE RESOURCE POOL](CREATE-RESOURCE-POOL.md)，[DROP RESOURCE POOL](DROP-RESOURCE-POOL.md)
-

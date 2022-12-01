@@ -12,10 +12,10 @@
 
     ```
     CREATE TABLE customer_t_copy
-    ( c_customer_sk             integer,   
-      c_customer_id             char(5),    
-      c_first_name              char(6),    
-      c_last_name               char(8) 
+    ( c_customer_sk             integer,
+      c_customer_id             char(5),
+      c_first_name              char(6),
+      c_last_name               char(8)
     ) ;
     ```
 
@@ -36,5 +36,3 @@
     ```
     ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
-
-

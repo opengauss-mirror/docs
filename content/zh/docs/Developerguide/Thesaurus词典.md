@@ -14,7 +14,7 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
     以一个简单的天文学词典thesaurus\_astro为例，其中定义了两组天文短语及其同义词如下：
 
     ```
-    supernovae stars : sn 
+    supernovae stars : sn
     crab nebulae : crab
     ```
 
@@ -46,23 +46,23 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
 
         ```
         openGauss=# SELECT plainto_tsquery('russian','supernova star');
-         plainto_tsquery 
+         plainto_tsquery
         -----------------
          'sn'
         (1 row)
-        
+
         openGauss=# SELECT to_tsvector('russian','supernova star');
-         to_tsvector 
+         to_tsvector
         -------------
          'sn':1
         (1 row)
-        
+
         openGauss=# SELECT to_tsquery('russian','''supernova star''');
-         to_tsquery 
+         to_tsquery
         ------------
          'sn'
         (1 row)
-        
+
         ```
 
         其中，supernova star匹配了词典thesaurus\_astro定义中的supernovae stars，这是因为在thesaurus\_astro词典定义中指定了Snowball类型的子词典english\_stem，该词典移除了e和s。
@@ -71,17 +71,14 @@ Thesaurus词典，也叫做分类词典（缩写为TZ），是一组定义了词
 
         ```
         supernovae stars : sn supernovae stars
-        
+
         openGauss=# ALTER TEXT SEARCH DICTIONARY thesaurus_astro (
             DictFile = thesaurus_astro,
             FILEPATH = 'file:///home/dicts/');
-        
+
         openGauss=# SELECT plainto_tsquery('russian','supernova star');
-               plainto_tsquery       
+               plainto_tsquery
         -----------------------------
          'sn' & 'supernova' & 'star'
         (1 row)
         ```
-
-
-

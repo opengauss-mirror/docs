@@ -50,4 +50,3 @@ update normal_date n set time = (
     select time from normal_date_part p where p.id = n.id
 );
 ```
-

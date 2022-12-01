@@ -52,4 +52,3 @@ openGauss=# CREATE OR REPLACE DIRECTORY  dir  as '/tmp/';
 ## 相关链接<a name="zh-cn_topic_0283136620_zh-cn_topic_0237122101_section1767373224414"></a>
 
 [ALTER DIRECTORY](ALTER-DIRECTORY.md)，[DROP DIRECTORY](DROP-DIRECTORY.md)
-

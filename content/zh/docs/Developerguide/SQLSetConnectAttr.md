@@ -8,8 +8,8 @@
 
 ```
 SQLRETURN SQLSetConnectAttr(SQLHDBC       ConnectionHandle
-                            SQLINTEGER    Attribute,    
-                            SQLPOINTER    ValuePtr,     
+                            SQLINTEGER    Attribute,
+                            SQLPOINTER    ValuePtr,
                             SQLINTEGER    StringLength);
 ```
 
@@ -61,4 +61,3 @@ SQLRETURN SQLSetConnectAttr(SQLHDBC       ConnectionHandle
 ## 示例<a name="zh-cn_topic_0238272901_zh-cn_topic_0237120431_zh-cn_topic_0059777827_s25786d32524c458786d43445baa48941"></a>
 
 参见：[示例](示例-2.md)
-

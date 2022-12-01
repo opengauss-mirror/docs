@@ -99,4 +99,3 @@ GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计�
 </tr>
 </tbody>
 </table>
-

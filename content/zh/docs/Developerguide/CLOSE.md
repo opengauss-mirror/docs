@@ -37,4 +37,3 @@ CLOSE { cursor_name | ALL } ;
 ## 相关链接<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sbd6c1c8ef3144346919144e8b416822f"></a>
 
 [FETCH](FETCH.md)，[MOVE](MOVE.md)
-

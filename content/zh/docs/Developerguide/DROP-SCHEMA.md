@@ -31,10 +31,10 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
     -   RESTRICT：如果模式包含任何对象，则删除失败（缺省行为）。
 
 
->![](public_sys-resources/icon-notice.png) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：**
 >不要随意删除pg\_temp或pg\_toast\_temp开头的模式，这些模式是系统内部使用的，如果删除，可能导致无法预知的结果。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >无法删除当前模式。如果要删除当前模式，须切换到其他模式下。
 
 ## 示例<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s3390f031a430477da6a945b09b36b73d"></a>
@@ -44,4 +44,3 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
 ## 相关链接<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s344eb8c77efa4c209c358dd81f79034f"></a>
 
 [ALTER SCHEMA](ALTER-SCHEMA.md)，[CREATE SCHEMA](CREATE-SCHEMA.md)。
-

@@ -1796,4 +1796,3 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 </tbody>
 </table>
-

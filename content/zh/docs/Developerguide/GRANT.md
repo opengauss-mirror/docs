@@ -33,7 +33,7 @@
     当声明了WITH ADMIN OPTION，被授权的用户可以将该权限再次授予其他角色或用户，以及撤销所有由该角色或用户继承到的权限。当授权的角色或用户发生变更或被撤销时，所有继承该角色或用户权限的用户拥有的权限都会随之发生变更。
 
     数据库系统管理员可以给任何角色或用户授予/撤销任何权限。拥有CREATEROLE权限的角色可以赋予或者撤销任何非系统管理员角色的权限。
-    
+
 -   **将ANY权限授予给角色或用户**
 
     将ANY权限授予特定的角色和用户，ANY权限的取值范围参见语法格式。当声明了WITH ADMIN OPTION，被授权的用户可以将该ANY权限再次授予其他角色/用户，或从其他角色/用户处回收该ANY权限。ANY权限可以通过角色被继承，但不能赋予PUBLIC。初始用户和三权分立关闭时的系统管理员用户可以给任何角色/用户授予或撤销ANY权限。
@@ -54,19 +54,19 @@
 -   将表或视图的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...]
           | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
-        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
-    
+
     ```
 
 -   将表中字段的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
+    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...]
           | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -76,11 +76,11 @@
 -   将序列的访问权限赋予指定的用户或角色，LARGE字段属性可选，赋权语句不区分序列是否为LARGE。
 
     ```
-    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...] 
+    GRANT { { SELECT | UPDATE | USAGE | ALTER | DROP | COMMENT } [, ...]
           | ALL [ PRIVILEGES ] }
         ON { [ [ LARGE ] SEQUENCE ] sequence_name [, ...]
            | ALL SEQUENCES IN SCHEMA schema_name [, ...] }
-        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
@@ -103,15 +103,15 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >本版本暂时不支持赋予域的访问权限。
 
 -   将客户端加密主密钥CMK的访问权限赋予指定的用户或角色。
 
     ```
     GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
-        ON CLIENT_MASTER_KEY client_master_key [, ...] 
-        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        ON CLIENT_MASTER_KEY client_master_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
@@ -119,8 +119,8 @@
 
     ```
     GRANT { { USAGE | DROP } [, ...] | ALL [ PRIVILEGES ] }
-        ON COLUMN_ENCRYPTION_KEY column_encryption_key [, ...] 
-        TO { [ GROUP ] role_name | PUBLIC } [, ...] 
+        ON COLUMN_ENCRYPTION_KEY column_encryption_key [, ...]
+        TO { [ GROUP ] role_name | PUBLIC } [, ...]
         [ WITH GRANT OPTION ];
     ```
 
@@ -162,7 +162,7 @@
       [ WITH GRANT OPTION ];
   ```
 
-  
+
 
 -   将过程语言的访问权限赋予给指定的用户或角色。
 
@@ -182,7 +182,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >本版本暂时不支持大对象。
 
 -   将模式的访问权限赋予指定的用户或角色。
@@ -194,7 +194,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。 同名模式下创建表的权限无法通过此语法赋予，可以通过将角色的权限赋予其他用户或角色的语法，赋予同名模式下创建表的权限。
 
 -   将表空间的访问权限赋予指定的用户或角色。
@@ -215,7 +215,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
     >本版本暂时不支持赋予类型的访问权限。
 
 -   将Data Source对象的权限赋予指定的角色。
@@ -455,7 +455,7 @@ GRANT的参数说明如下所示。
 -   如果用户有该对象上的部分权限，则GRANT命令只授予他有授权选项的权限。
 -   如果用户没有可用的授权选项，GRANT ALL PRIVILEGES形式将发出一个警告信息，其他命令形式将发出在命令中提到的且没有授权选项的相关警告信息。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。
 
 - WITH ADMIN OPTION
@@ -608,7 +608,7 @@ GRANT的参数说明如下所示。
 </tbody>
 </table>
 
->![](/public_sys-resources/icon-note.png) **说明：** 
+>![](/public_sys-resources/icon-note.png) **说明：**
 >用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](zh-cn_topic_0000001190922647.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 
 ## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
@@ -762,4 +762,3 @@ openGauss=# DROP USER joe CASCADE;
 ## 相关链接<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s3bb41459be684975af982bfe2508c335"></a>
 
 [REVOKE](REVOKE.md)，[ALTER DEFAULT PRIVILEGES](ALTER-DEFAULT-PRIVILEGES.md)
-

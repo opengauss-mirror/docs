@@ -85,4 +85,3 @@ SUMMARY\_STATIO\_USER\_TABLES视图显示openGauss内汇聚的命名空间中所
 </tr>
 </tbody>
 </table>
-

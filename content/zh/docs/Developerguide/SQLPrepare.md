@@ -7,8 +7,8 @@
 ## 原型<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_s195bb50934b04608b371fd8329ab099b"></a>
 
 ```
-SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,    
-                     SQLCHAR       *StatementText,     
+SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,
+                     SQLCHAR       *StatementText,
                      SQLINTEGER    TextLength);
 ```
 
@@ -56,4 +56,3 @@ SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,
 ## 示例<a name="zh-cn_topic_0238272898_zh-cn_topic_0237120428_zh-cn_topic_0059779125_sbf766eb45a5e442094a561b3036a4205"></a>
 
 参见：[示例](示例-2.md)
-

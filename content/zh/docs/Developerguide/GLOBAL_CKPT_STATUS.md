@@ -64,4 +64,3 @@ GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和
 </tr>
 </tbody>
 </table>
-

@@ -26,7 +26,7 @@
     pidstat -d 1 10  //1为采样间隔时间，10为采样次数
     03:17:12 PM   UID       PID   kB_rd/s   kB_wr/s kB_ccwr/s  Command
     03:17:13 PM  1006     36134      0.00  59436.00      0.00  gaussdb
-    
+
     ```
 
     “kB\_rd/s”为每秒读取的kB数，“kB\_wr/s”为每秒写入的kB数。
@@ -69,8 +69,5 @@
         vacuum full tablename;
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：**   
-        >建议用户在系统空闲时进行VACUUM FULL操作，VACUUM FULL操作会造成短时间内I/O负载重，反而不利于降低I/O。  
-
-
-
+        >![](public_sys-resources/icon-note.png) **说明：**
+        >建议用户在系统空闲时进行VACUUM FULL操作，VACUUM FULL操作会造成短时间内I/O负载重，反而不利于降低I/O。

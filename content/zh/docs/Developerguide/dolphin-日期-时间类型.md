@@ -1,6 +1,6 @@
 ## 兼容M*时间类型
 
-相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为: 
+相比于原始的openGauss，dolphin对于日期/时间类型的修改主要为:
 
 1. 修改```date/time/datetime/timestamp```类型的表现。
 2. 新增```year```数据类型。
@@ -45,7 +45,7 @@
 openGauss=# CREATE TABLE test_date(
 openGauss(# dt date);
 CREATE TABLE
-    
+
 --插入数据。
 openGauss=# INSERT INTO test_date VALUES ('2020-12-21');
 INSERT 0 1
@@ -56,7 +56,7 @@ INSERT 0 1
 
 --查看数据。
 openGauss=# SELECT * FROM test_date;
-     dt     
+     dt
 ------------
  2020-12-21
  2014-12-21
@@ -89,7 +89,7 @@ openGauss=# SELECT * FROM test_date;
 openGauss=# CREATE TABLE test_time(
 openGauss(# ti time(2));
 CREATE TABLE
-    
+
 --插入数据。
 openGauss=# INSERT INTO test_time VALUES ('2 9:12:24.1234');
 INSERT 0 1
@@ -100,7 +100,7 @@ INSERT 0 1
 
 --查看数据。
 openGauss=# SELECT * FROM test_time;
-      ti      
+      ti
 --------------
  57:12:24.12
  -34:56:59.12
@@ -132,7 +132,7 @@ openGauss=# SELECT * FROM test_time;
 openGauss=# CREATE TABLE test_datetime(
 openGauss(# dt datetime(2));
 CREATE TABLE
-    
+
 --插入数据。
 openGauss=# INSERT INTO test_datetime VALUES ('2020-11-08 02:31:25.961');
 INSERT 0 1
@@ -141,7 +141,7 @@ INSERT 0 1
 
 --查看数据。
 openGauss=# SELECT * FROM test_datetime;
-           dt           
+           dt
 ------------------------
  2020-11-08 02:31:25.96
  2020-11-12 23:45:12
@@ -173,7 +173,7 @@ openGauss=# SELECT * FROM test_datetime;
 openGauss=# CREATE TABLE test_timestamp(
 openGauss(# ts timestamp(2));
 CREATE TABLE
-    
+
 --插入数据。
 openGauss=# INSERT INTO test_timestamp VALUES ('2012-10-21 23:55:23-12:12');
 INSERT 0 1
@@ -182,18 +182,18 @@ INSERT 0 1
 
 --查看数据。
 openGauss=# SELECT * FROM test_timestamp;
-           ts           
+           ts
 ------------------------
  2012-10-22 20:07:23
  2020-11-12 23:45:12
 (3 rows)
-    
+
 --变更时区。
 openGauss=# SET TIME ZONE UTC;
 SET
 --查看数据。
 openGauss=# SELECT * FROM test_timestamp;
-           ts           
+           ts
 ------------------------
  2012-10-22 12:07:23
  2020-11-12 15:45:12
@@ -222,7 +222,7 @@ openGauss=# CREATE TABLE test_year(
 openGauss(#  y year,
 openGauss(#  y2 year(2));
 CREATE TABLE
-    
+
 --插入数据。
 openGauss=# INSERT INTO test_year VALUES ('70', '70');
 INSERT 0 1
@@ -235,7 +235,7 @@ INSERT 0 1
 
 --查看数据。
 openGauss=# SELECT * FROM test_year;
-  y   | y2 
+  y   | y2
 ------+----
  1970 | 70
  2069 | 69
@@ -243,4 +243,3 @@ openGauss=# SELECT * FROM test_year;
  1970 | 70
 (4 rows)
 ```
-

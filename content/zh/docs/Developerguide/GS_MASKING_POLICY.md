@@ -50,5 +50,3 @@ GS\_MASKING\_POLICY系统表记录动态数据脱敏策略的主体信息，每�
 </tr>
 </tbody>
 </table>
-
-

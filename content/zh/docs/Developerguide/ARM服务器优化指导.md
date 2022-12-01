@@ -73,7 +73,7 @@ kernel.core_uses_pid=1
 调优守护程序使用Throughput-performance配置文件：
 
 ```
-[...]$ tuned-adm profile throughput-performance 
+[...]$ tuned-adm profile throughput-performance
 ```
 
 调优启动参数，将如下配置加入内核启动参数：
@@ -185,4 +185,3 @@ ethtool -G enp5s0 rx  4096 tx 4096
 /var/scripts/set_irq_affinity_<256/128>.sh -x all enp4s0
 ethtool -C enp4s0 adaptive-rx off adaptive-tx off rx-usecs 62 tx-usecs 62
 ```
-

@@ -39,4 +39,3 @@ DROP RULE [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 --删除重写规则newrule
 DROP RULE newrule ON mytable;
 ```
-

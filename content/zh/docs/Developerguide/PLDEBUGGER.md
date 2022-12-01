@@ -259,4 +259,3 @@ openGauss=# select * from pldbg_abort_target(1);
  t
 (1 row)
 ```
-

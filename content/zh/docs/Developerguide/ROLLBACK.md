@@ -35,4 +35,3 @@ openGauss=# ROLLBACK;
 ## 相关链接<a name="zh-cn_topic_0283137047_zh-cn_topic_0237122180_zh-cn_topic_0059778963_s1745a25c568b45c7ad9475ba14714358"></a>
 
 [COMMIT | END](COMMIT-END.md)
-

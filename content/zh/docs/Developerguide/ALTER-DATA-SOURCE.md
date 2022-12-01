@@ -100,4 +100,3 @@ openGauss=# DROP USER user_test1;
 ## 相关链接<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section779812311320"></a>
 
 [CREATE DATA SOURCE](CREATE-DATA-SOURCE.md)，[DROP DATA SOURCE](DROP-DATA-SOURCE.md)
-

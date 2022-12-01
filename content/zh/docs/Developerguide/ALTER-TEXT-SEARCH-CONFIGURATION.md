@@ -22,14 +22,14 @@ DROP MAPPING FOR选项会删除当前文本搜索配置中指定的字串类型�
 -   增加文本搜索配置字串类型映射语法
 
 ```
-ALTER TEXT SEARCH CONFIGURATION name 
+ALTER TEXT SEARCH CONFIGURATION name
     ADD MAPPING FOR token_type [, ... ] WITH dictionary_name [, ... ];
 ```
 
 -   修改文本搜索配置字典语法
 
 ```
-ALTER TEXT SEARCH CONFIGURATION name 
+ALTER TEXT SEARCH CONFIGURATION name
     ALTER MAPPING FOR token_type [, ... ] REPLACE old_dictionary WITH new_dictionary;
 ```
 
@@ -144,7 +144,7 @@ ALTER TEXT SEARCH CONFIGURATION
 
 --查询文本搜索配置相关信息。
 openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
-  cfgname  | maptokentype | mapseqno | mapdict |   dictname   
+  cfgname  | maptokentype | mapseqno | mapdict |   dictname
 -----------+--------------+----------+---------+--------------
  english_1 |            2 |        1 |    3765 | simple
  english_1 |            2 |        2 |   12960 | english_stem
@@ -158,7 +158,7 @@ ALTER TEXT SEARCH CONFIGURATION
 
 --查询文本搜索配置相关信息。
 openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM pg_ts_config_map a,pg_ts_config b, pg_ts_dict c WHERE a.mapcfg=b.oid AND a.mapdict=c.oid AND b.cfgname='english_1' ORDER BY 1,2,3,4,5;
-  cfgname  | maptokentype | mapseqno | mapdict |   dictname   
+  cfgname  | maptokentype | mapseqno | mapdict |   dictname
 -----------+--------------+----------+---------+--------------
  english_1 |            2 |        1 |    3765 | simple
  english_1 |            2 |        2 |   12960 | english_stem
@@ -172,4 +172,3 @@ openGauss=# SELECT b.cfgname,a.maptokentype,a.mapseqno,a.mapdict,c.dictname FROM
 ## 相关链接<a name="zh-cn_topic_0283137411_zh-cn_topic_0237122079_zh-cn_topic_0059778328_sb5eacaaa1ba74a8abb0193ac98c34512"></a>
 
 [CREATE TEXT SEARCH CONFIGURATION](CREATE-TEXT-SEARCH-CONFIGURATION.md)，  [DROP TEXT SEARCH CONFIGURATION](DROP-TEXT-SEARCH-CONFIGURATION.md)
-

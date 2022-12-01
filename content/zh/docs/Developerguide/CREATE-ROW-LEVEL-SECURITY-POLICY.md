@@ -143,7 +143,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     当未指定时，PUBLIC为默认值，PUBLIC表示影响所有数据库用户，可以指定多个受影响的数据库用户。
 
-    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：**
     >系统管理员不受行访问控制特性影响。
 
 
@@ -223,10 +223,9 @@ openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
    Filter: ((role)::name = 'alice'::name)
  Notice: This query is influenced by row level security feature
 (3 rows)
- 
+
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137345_zh-cn_topic_0237122109_section1426016489355"></a>
 
 [DROP ROW LEVEL SECURITY POLICY](DROP-ROW-LEVEL-SECURITY-POLICY.md)，[ALTER ROW LEVEL SECURITY POLICY](ALTER-ROW-LEVEL-SECURITY-POLICY.md)
-

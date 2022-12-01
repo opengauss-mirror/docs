@@ -527,7 +527,3 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  Invalid number of features for prediction, provided 3, expected 2
             CONTEXT:  referenced column: patient_linear_regression_pre
             ```
-
-
-
-

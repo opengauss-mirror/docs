@@ -37,7 +37,7 @@ openGauss=# CREATE USER webuser PASSWORD 'xxxxxxxxx';
 --授予用户webuser对模式tpcds下视图的所有操作权限。
 openGauss=# DO $$DECLARE r record;
 BEGIN
-    FOR r IN SELECT c.relname table_name,n.nspname table_schema FROM pg_class c,pg_namespace n 
+    FOR r IN SELECT c.relname table_name,n.nspname table_schema FROM pg_class c,pg_namespace n
              WHERE c.relnamespace = n.oid AND n.nspname = 'tpcds' AND relkind IN ('r','v')
     LOOP
         EXECUTE 'GRANT ALL ON ' || quote_ident(r.table_schema) || '.' || quote_ident(r.table_name) || ' TO webuser';
@@ -48,4 +48,3 @@ END$$;
 --删除用户webuser。
 openGauss=# DROP USER webuser CASCADE;
 ```
-

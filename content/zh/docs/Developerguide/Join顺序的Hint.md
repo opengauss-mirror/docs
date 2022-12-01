@@ -9,22 +9,22 @@
 -   仅指定join顺序，不指定内外表顺序。
 
 ```
-leading(join_table_list) 
+leading(join_table_list)
 ```
 
 -   同时指定join顺序和内外表顺序，内外表顺序仅在最外层生效。
 
 ```
-leading((join_table_list)) 
+leading((join_table_list))
 ```
 
 ## 参数说明<a name="zh-cn_topic_0237121533_section1280444714345"></a>
 
 **join\_table\_list**为表示表join顺序的hint字符串，可以包含当前层的任意个表（别名），或对于子查询提升的场景，也可以包含子查询的hint别名，同时任意表可以使用括号指定优先级，表之间使用空格分隔。
 
->![](public_sys-resources/icon-notice.png) **须知：**   
->表只能用单个字符串表示，不能带schema。  
->表如果存在别名，需要优先使用别名来表示该表。  
+>![](public_sys-resources/icon-notice.png) **须知：**
+>表只能用单个字符串表示，不能带schema。
+>表如果存在别名，需要优先使用别名来表示该表。
 
 join table list中指定的表需要满足以下要求，否则会报语义错误。
 
@@ -59,4 +59,3 @@ select /*+ leading((((((store_sales store) promotion) item) customer) ad2) store
 ![](figures/zh-cn_image_0253030479.png)
 
 图中计划顶端warning的提示详见[Hint的错误、冲突及告警](Hint的错误-冲突及告警.md)的说明。
-

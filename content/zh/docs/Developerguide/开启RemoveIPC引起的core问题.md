@@ -15,4 +15,3 @@ FATAL: semctl(1463124609, 3, SETVAL, 0) failed: Invalid argument
 ## 处理分析<a name="zh-cn_topic_0283136554_section10754612151312"></a>
 
 设置RemoveIPC参数为no。设置方法请参考《安装指南》中“安装准备\>准备软硬件安装环境\>修改操作系统配置”章节。
-

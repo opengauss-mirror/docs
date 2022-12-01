@@ -12,7 +12,7 @@ public static Connection getConnect(String username, String passwd)
         //数据库连接描述符。
         String sourceURL = "jdbc:opengauss://10.10.0.13:8000/postgres?enable_ce=1";
         Connection conn = null;
-        
+
         try
         {
             //加载驱动。
@@ -23,7 +23,7 @@ public static Connection getConnect(String username, String passwd)
             e.printStackTrace();
             return null;
         }
-        
+
         try
         {
              //创建连接。
@@ -35,16 +35,16 @@ public static Connection getConnect(String username, String passwd)
             e.printStackTrace();
             return null;
         }
-        
+
         return conn;
     };
 ```
 
->![](public_sys-resources/icon-note.png) **说明：**  
+>![](public_sys-resources/icon-note.png) **说明：**
 >
->-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。 
-> 
->-   【建议】使用JDBC操作密态数据库时，不同connection对密态配置数据有变更，由客户端调用isvalid方法保证connection能够持有变更后的密态配置数据，此时需要保证参数refreshClientEncryption为1\(默认值为1\)，在单客户端操作密态数据场景下，refreshClientEncryption参数可以设置为0。  
+>-   【建议】使用JDBC操作密态数据库时，一个数据库连接对象对应一个线程，否则，不同线程变更可能导致冲突。
+>
+>-   【建议】使用JDBC操作密态数据库时，不同connection对密态配置数据有变更，由客户端调用isvalid方法保证connection能够持有变更后的密态配置数据，此时需要保证参数refreshClientEncryption为1\(默认值为1\)，在单客户端操作密态数据场景下，refreshClientEncryption参数可以设置为0。
 
 ## 调用isValid方法刷新缓存示例<a name="section8416165433116"></a>
 
@@ -72,7 +72,7 @@ Statement stmt = conn.createStatement();
 int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048));
 ```
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：**
 >创建密钥之前需要使用gs\_ktool工具提前生成密钥，才能创建CMK成功。
 
 ```
@@ -128,4 +128,3 @@ int[] rowcount = pstmt.executeBatch();
 // 调用PreparedStatement的close方法关闭预编译语句对象。
 pstmt.close();
 ```
-

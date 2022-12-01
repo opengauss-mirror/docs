@@ -36,4 +36,3 @@ PG\_APP\_WORKLOADGROUP\_MAPPING系统表提供了数据库负载映射组的信�
 </tr>
 </tbody>
 </table>
-

@@ -64,4 +64,3 @@ STATIO\_ALL\_INDEXES视图包含数据库中的每个索引行，显示特定索
 </tr>
 </tbody>
 </table>
-

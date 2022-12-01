@@ -70,7 +70,7 @@
     预置时脱敏方式如下：
 
     ```
-    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking 
+    maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking
     ```
 
 -   **label\_name**
@@ -136,4 +136,3 @@ openGauss=# ALTER MASKING POLICY maskpol1 DISABLE;
 ## 相关链接<a name="section156744489391"></a>
 
 [CREATE MASKING POLICY](CREATE-MASKING-POLICY.md),[DROP MASKING POLICY](DROP-MASKING-POLICY.md)。
-

@@ -154,4 +154,3 @@ PG\_OPERATOR系统表存储有关操作符的信息。
 </tr>
 </tbody>
 </table>
-

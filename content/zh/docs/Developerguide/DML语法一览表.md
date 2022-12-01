@@ -57,4 +57,3 @@ openGauss提供了三个用于调用函数的语句，它们在语法结构上�
 </tr>
 </tbody>
 </table>
-

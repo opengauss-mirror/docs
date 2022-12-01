@@ -43,4 +43,3 @@ javax.sql.PooledConnection是由连接池创建的连接接口。
 </tr>
 </tbody>
 </table>
-

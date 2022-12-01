@@ -29,9 +29,8 @@ SHOW CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
 ```
 --查询数据库创建语句
 openGauss=# show create database test_get_database;
-     Database      |                  Create Database                   
+     Database      |                  Create Database
 -------------------+----------------------------------------------------
- test_get_database | CREATE SCHEMA test_get_database AUTHORIZATION omm 
+ test_get_database | CREATE SCHEMA test_get_database AUTHORIZATION omm
 (1 row)
 ```
-

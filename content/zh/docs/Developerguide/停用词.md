@@ -24,4 +24,3 @@ openGauss=# SELECT ts_rank_cd (to_tsvector('english','list stop words'), to_tsqu
 ------------
          .1
 ```
-

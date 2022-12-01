@@ -38,4 +38,3 @@ openGauss=# DROP DIRECTORY dir;
 ## 相关链接<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_section613212620440"></a>
 
 [CREATE DIRECTORY](CREATE-DIRECTORY.md)，[DROP DIRECTORY](DROP-DIRECTORY.md)
-

@@ -54,7 +54,7 @@
 
     对于本地openGauss数据库实例有很多节点，且其IP不连续或不在同网段时，用户可用脚本批量设置，具体请参考基于EC的数据处理的[4](基于EC的数据处理.md#li118501793551)。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
 
     >-   远端数据库实例需要在所有有DN的节点上进行配置。
 
@@ -75,15 +75,15 @@
 1.  创建server。
 
     ```
-    openGauss=# CREATE SERVER server_remote FOREIGN DATA WRAPPER GC_FDW OPTIONS 
+    openGauss=# CREATE SERVER server_remote FOREIGN DATA WRAPPER GC_FDW OPTIONS
        (address '10.146.187.231:8000,10.180.157.130:8000' ,
-      dbname 'test', 
-      username 'test', 
+      dbname 'test',
+      username 'test',
       password 'xxxxxxxx'
     );
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
 
     >-   server\_remote为server名称，供外表使用。
 
@@ -114,7 +114,7 @@
     );
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：**
 
     >-   外表的列不允许带任何约束。
 
@@ -130,7 +130,7 @@
 
     ```
     openGauss=# \d+ region
-    
+
                                   Foreign table "public.region"
        Column    |  Type   | Modifiers | FDW Options | Storage  | Stats target | Description
     -------------+---------+-----------+-------------+----------+--------------+-------------
@@ -158,7 +158,7 @@
         openGauss=# INSERT INTO local_region SELECT * FROM region;
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
 
         >-   如遇到报错连接失败，请检查server的信息确认两个数据库实例是否已经相互连通。
 
@@ -176,12 +176,12 @@
         openGauss=# SELECT local_region * FROM region, local_region WHERE local_region.R_NAME = region.R_NAME;
         ```
 
-        >![](public_sys-resources/icon-note.png) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：**
 
         >-   外表可以当做一个本地表来使用，执行复杂的作业。
 
         >-   如果远端数据库实例已经有统计信息，请对该外表执行analyze以获得更优的执行计划。
-        
+
         >-   如果本地数据库实例的DN数量比远端数据库实例的DN数量少，本地数据库实例需要使用SMP来获得更佳的性能。
 
 
@@ -189,7 +189,5 @@
 
     ```
     openGauss=# DROP FOREIGN TABLE region;
-    DROP FOREIGN TABLE 
+    DROP FOREIGN TABLE
     ```
-
-
