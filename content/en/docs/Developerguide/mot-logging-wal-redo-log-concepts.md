@@ -19,6 +19,7 @@ To ensure Durability, MOT is fully integrated with the openGauss's Write-Ahead L
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >In order to ensure that the log IO device does not become a bottleneck, the log file must be placed on a drive that has low latency.
 
+-   Parallel Redo Recovery - Since the openGauss 5.0 version release, the MOT engine includes a Parallel Recovery mechanism. The recovery operations are performed using multiple threads, while the transaction commit is done with a single thread, ensuring transactional consistency. This delivers an RTO for MOT tables of single second level.
 
 ## Logging Types<a name="section1648172420153"></a>
 

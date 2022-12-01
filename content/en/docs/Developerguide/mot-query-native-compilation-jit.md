@@ -1,5 +1,13 @@
 # MOT Query Native Compilation \(JIT\)<a name="EN-US_TOPIC_0270677721"></a>
 
+Native Compilation (JIT) is one of key technologies of MOT for delivering exceptionally low latency and high throughput performance. Two types of Native Compilation (JIT) are supported (using a PREPARE statement): 1) JIT for Stored Procedures (JIT SP), and 2) JIT for Queries (JIT Query).
+The following sections describe how to use both mechanisms in your application.
+
+## JIT SP
+JIT SP refers to code generation, compiling and execution of stored procedures (SP) by LLVM runtime code generation and compilation library. JIT SP is available to SPs accessing MOT tables (only) and is completely transparent to users. Acceleration level depends on the SP logic. For example, a real customer application achieved acceleration of 20%, 44%, 300% and 500% for different SPs in latency.
+During the PREPARE phase of a query invoking an SP, or the first SP execution, the JIT module performs an attempt to translate the SP SQL into a C-based function and compile it in runtime (using LLVM). If successful, the consecutive SP invocations the MOT will execute a compiled function, leading to performance gains. In case of failure to produce a compiled function, the SP will be executed by standard PGPLSQL. Both scenarios are fully transparent to users.
+
+## JIT Query
 MOT enables you to prepare and parse  _pre-compiled full queries_  in a native format \(using a  **PREPARE**  statement\) before they are needed for execution.
 
 This native format can later be executed \(using an  **EXECUTE**  command\) more efficiently. This type of execution is much more efficient because during execution the native format bypasses multiple database processing layers. This division of labor avoids repetitive parse analysis operations. The Lite Executor module is responsible for executing  **prepared**  queries and has a much faster execution path than the regular generic plan performed by the envelope. This is achieved using Just-In-Time \(JIT\) compilation via LLVM. In addition, a similar solution that has potentially similar performance is provided in the form of pseudo-LLVM.
@@ -48,20 +56,9 @@ When the resulting execute query command reaches the database, it uses the corre
 
 In addition, for availability, the Lite Executor maintains a preallocated pool of JIT sources. Each session preallocates its own session-local pool of JIT context objects \(used for repeated executions of precompiled queries\).
 
-For more details you may refer to the Supported Queries for Lite Execution and Unsupported Queries for Lite Execution sections.
+You may refer to the [Unsupported JIT features](mot-sql-coverage-and-limitations.md#section4815162910417) section in MOT SQL Coverage and Limitations page. 
 
-## JIT Compilation Comparison – openGauss Disk-based vs. MOT Tables<a name="section1176712185116"></a>
+## JIT for Stored procedures 
 
-Currently, openGauss contains two main forms of JIT / CodeGen query optimizations for its disk-based tables –
-
--   Accelerating expression evaluation, such as in WHERE clauses, target lists, aggregates and projections
--   Inlining small function invocations.
-
-These optimizations are partial \(in the sense they do not optimize the entire interpreted operator tree or replace it altogether\) and are targeted mostly at CPU-bound complex queries, typically seen in OLAP use cases. The execution of queries is performed in a pull-model \(Volcano-style processing\) using an interpreted operator tree. When activated, the compilation is performed at each query execution. At the moment, caching of the generated LLVM code and its reuse across sessions and queries is not yet provided.
-
-In contrast, MOT JIT optimization provides LLVM code for entire queries that qualify for JIT optimization by MOT. The resulting code is used for direct execution over MOT tables, while the interpreted operator model is abandoned completely. The result is  _practically_  handwritten LLVM code that has been generated for an entire specific query execution.
-
-Another significant conceptual difference is that MOT LLVM code is only generated for prepared queries during the PREPARE phase of the query, rather than at query execution. This is especially important for OLTP scenarios due to the rather short runtime of OLTP queries, which cannot allow for code generation and relatively long query compilation time to be performed during each query execution.
-
-Finally, in openGauss the activation of a PREPARE implies the reuse of the resulting plan across executions with different parameters in the same session. Similarly, the MOT JIT applies a caching policy for its LLVM code results, and extends it for reuse across different sessions. Thus, a single query may be compiled just once and its LLVM code may be reused across many sessions, which again is beneficial for OLTP scenarios.
+JIT for Stored Procedures (JIT SP) is supported by the openGauss MOT engine (starting from 5.0 version), and its goal is deliver even higher performance and lower latency. Refer to[ JIT for SP](JIT for Stored procedures)or more details.
 

@@ -6,12 +6,10 @@ MOT is fully integrated into openGauss, including support for high-availability 
 
 If a Failover event occurs, whether it is due to an unplanned primary node failure or due to a planned maintenance event, the secondary node quickly becomes active. The amount of time that it takes to recover and replay the WAL Redo Log and to enable connections is also referred to as the Recovery Time Objective \(RTO\).
 
-**The RTO of openGauss, including the MOT, is less than 10 seconds.**
+**The RTO of openGauss is less than 10 seconds, with single-digit level for MOT tables, thanks to its Parallel Recovery mechanism.**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The Recovery Time Objective \(RTO\) is the duration of time and a service level within which a business process must be restored after a disaster in order to avoid unacceptable consequences associated with a break in continuity. In other words, the RTO is the answer to the question: “How much time did it take to recover after notification of a business process disruption?“
-
-In addition, as shown in the  [MOT High Throughput](mot-high-throughput.md)  section in MOT the replication overhead of a Primary/Secondary High Availability scenario is only 7% on ARM/Kunpeng servers and 2% on x86 servers, as opposed to the replication overhead of disk-tables, which is 20% on ARM/Kunpeng and 15% on x86 servers.
 
 ## Cold-Start Recovery Time
 

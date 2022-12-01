@@ -18,6 +18,9 @@ Creating a Memory Optimized Table \(MOT\) is very simple. Only the create and dr
     drop FOREIGN table test;
     ```
 
+-   ALTER TABLE – 
+
+    support includes Add column, Drop column and Rename column.  
 
 For a description of the limitations of supported features for MOT tables, such as data types, see the  [MOT SQL Coverage and Limitations](mot-sql-coverage-and-limitations.md)  section.
 

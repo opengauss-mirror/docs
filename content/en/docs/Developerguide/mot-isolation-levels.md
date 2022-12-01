@@ -24,8 +24,8 @@ Even though MOT is fully ACID-compliant \(as described in the section\), not all
 </tr>
 <tr id="row6786611"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p12844628"><a name="p12844628"></a><a name="p12844628"></a>SNAPSHOT</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p33781949"><a name="p33781949"></a><a name="p33781949"></a><strong id="b35602093"><a name="b35602093"></a><a name="b35602093"></a>Not supported by MOT.</strong></p>
-<p id="p51983383"><a name="p51983383"></a><a name="p51983383"></a>The SNAPSHOT isolation level makes the same guarantees as SERIALIZABLE, except that concurrent transactions can modify the data. Instead, it forces every reader to see its own version of the world (its own snapshot). This makes it very easy to program, plus it is very scalable, because it does not block concurrent updates. However, in many implementations this isolation level requires higher server resources.</p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p33781949"><a name="p33781949"></a><a name="p33781949"></a><strong id="b35602093"><a name="b35602093"></a><a name="b35602093"></a>Supported by MOT.</strong></p>
+<p id="p51983383"><a name="p51983383"></a><a name="p51983383"></a>The SNAPSHOT isolation level makes the same guarantees as SERIALIZABLE, except that concurrent transactions can modify the data. Instead, it forces every reader to see its own version of the world (its own snapshot). This makes it very easy to program, plus it is very scalable, because it does not block concurrent updates. </p>
 </td>
 </tr>
 <tr id="row49904522"><td class="cellrowborder" valign="top" width="24.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p15734461"><a name="p15734461"></a><a name="p15734461"></a>REPEATABLE READ</p>
@@ -109,5 +109,4 @@ The following table shows the concurrency side effects enabled by the different 
 </tbody>
 </table>
 
-In the near future release, openGauss MOT will also support both SNAPSHOT and SERIALIZABLE isolation levels.
 
