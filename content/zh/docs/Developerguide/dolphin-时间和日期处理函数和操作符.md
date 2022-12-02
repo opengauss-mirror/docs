@@ -1756,7 +1756,7 @@ CONTEXT:  referenced column: subdate
 
 - get\_format\(expr1, expr2\)
 
-  描述：expr1可接收date、datetime、time三种类型名字，expr2可接收五种规格字符串：'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'。函数根据expr1和expr2返回对应类型的对应规格的字符串。
+  描述：expr1可接收date、datetime、timestamp、time四种类型名字，expr2可接收五种规格字符串：'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'。函数根据expr1和expr2返回对应类型的对应规格的字符串。
 
   该函数返回值情况如下表所示：
   |类型|规格|返回值|
@@ -1771,6 +1771,11 @@ CONTEXT:  referenced column: subdate
   |DATETIME|'ISO'|'%Y-%m-%d %H:%i:%s'|
   |DATETIME|'EUR'|'%Y-%m-%d %H.%i.%s'|
   |DATETIME|'INTERNAL'|'%Y%m%d%H%i%s'|
+  |TIMESTAMP|'USA'|'%Y-%m-%d %H.%i.%s'|
+  |TIMESTAMP|'JIS'|'%Y-%m-%d %H:%i:%s'|
+  |TIMESTAMP|'ISO'|'%Y-%m-%d %H:%i:%s'|
+  |TIMESTAMP|'EUR'|'%Y-%m-%d %H.%i.%s'|
+  |TIMESTAMP|'INTERNAL'|'%Y%m%d%H%i%s'|
   |TIME|'USA'|'%h:%i:%s %p'|
   |TIME|'JIS'|'%H:%i:%s'|
   |TIME|'ISO'|'%H:%i:%s'|
