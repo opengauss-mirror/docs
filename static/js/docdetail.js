@@ -65,6 +65,13 @@ $(function ($) {
         $("#title-evaluate>.title").find("li").find("a").removeClass("active");
         $(this).addClass("active");
     });
+    // 回到顶部
+    $("#title-evaluate .gotop").click(function (e) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+  });
     $("#title-evaluate .evaluate").find("i").click(function (e) {
         if (isEvaluate) {
             return false;
