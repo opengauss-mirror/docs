@@ -7,12 +7,13 @@
 }
 #markdown blockquote {
   border-radius: 6px;
-  background-color: rgba(203, 217, 255, 0.2);
-  border-left: 6px solid #002fa7;
-  padding: 20px;
+  background-color: rgba(125, 50, 234, 0.06);
+  border-left: 6px solid #7d32ea;
+  padding:8px 16px;
 }
 #markdown blockquote img {
   vertical-align: top;
+  max-width: 24px;
 }
 .markdown > *:first-child {
   margin-top: 0 !important;

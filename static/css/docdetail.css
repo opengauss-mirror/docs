@@ -1795,9 +1795,11 @@ pre+blockquote{
 }
 
 code {
-    padding: 30px !important;
-}
-
+  padding: 2px 4px;
+  color: rgba(0,0,0,0.8);
+  background-color: rgba(125, 50, 234, 0.08);;
+  font-weight: normal;
+} 
 @media screen and (max-width: 768px){
     .table-ill{
         width: 100%;
