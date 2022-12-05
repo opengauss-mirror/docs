@@ -1240,7 +1240,7 @@ CONTEXT:  referenced column: subdate
 
 - dayname\(date\)
 
-  描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
+  描述：返回日期对应的工作日，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
 
   返回值类型：text
 
@@ -1255,7 +1255,7 @@ CONTEXT:  referenced column: subdate
   Saturday
   (1 row)
 
-  openGauss=# alter system set lc_time_names = 'zh_CN';
+  openGauss=# alter system set dolphin.lc_time_names = 'zh_CN';
   ALTER SYSTEM SET
 
   openGauss=# select dayname('2000-1-1');
@@ -1267,7 +1267,7 @@ CONTEXT:  referenced column: subdate
 
 - monthname\(date\)
 
-  描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
+  描述：返回日期对应月份的全称，返回内容所在语言集受GUC参数[dolphin.lc_time_names](dolphin-GUC参数说明.md#lctimenamesa-namesection203671436824a)控制。
 
   返回值类型：text
 
@@ -1282,7 +1282,7 @@ CONTEXT:  referenced column: subdate
   January
   (1 row)
 
-  openGauss=# alter system set lc_time_names = 'zh_CN';
+  openGauss=# alter system set dolphin.lc_time_names = 'zh_CN';
   ALTER SYSTEM SET
 
   openGauss=# select monthname('2000-1-1');
@@ -1410,12 +1410,12 @@ CONTEXT:  referenced column: subdate
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 在B模式数据库中，当GUC参数b_compatibility_mode为true时，此函数代替openGauss原有last_day函数。
+  - 在B模式数据库中，当GUC参数dolphin.b_compatibility_mode为true时，此函数代替openGauss原有last_day函数。
 
   示例：
 
   ```
-  openGauss=# set b_compatibility_mode = true;
+  openGauss=# set dolphin.b_compatibility_mode = true;
   SET
 
   openGauss=# select last_day('2021-1-30');
@@ -1463,8 +1463,8 @@ CONTEXT:  referenced column: subdate
   示例：
 
   ```
-  openGauss=# show default_week_format;
-  default_week_format
+  openGauss=# show dolphin.default_week_format;
+  dolphin.default_week_format
   ---------------------
   0
   (1 row)
@@ -1476,7 +1476,7 @@ CONTEXT:  referenced column: subdate
       0
   (1 row)
 
-  openGauss=# alter system set default_week_format = 2;
+  openGauss=# alter system set dolphin.default_week_format = 2;
   ALTER SYSTEM SET
 
   -- 给定日期位于前一年的最后一周内，mode为2
@@ -1568,12 +1568,12 @@ CONTEXT:  referenced column: subdate
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 在B模式数据库中，此函数在GUC参数b_compatibility_mode为true时代替openGauss原有timestampdiff函数。
+  - 在B模式数据库中，此函数在GUC参数dolphin.b_compatibility_mode为true时代替openGauss原有timestampdiff函数。
 
   示例：
 
   ```
-  openGauss=# set b_compatibility_mode = true;
+  openGauss=# set dolphin.b_compatibility_mode = true;
   SET
   
   openGauss=# select timestampdiff(SECOND,'2001-01-01 12:12:12','2001-01-01 12:12:11');
@@ -1799,7 +1799,7 @@ CONTEXT:  referenced column: subdate
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 在B模式数据库中，当b_compatibility_mode为true时才会替代openGauss原有extract函数。
+  - 在B模式数据库中，当dolphin.b_compatibility_mode为true时才会替代openGauss原有extract函数。
 
   - expr参数在解析时按照unit参数解析。当unit涉及`YEAR、WEEK、QUARTER、MONTH、DAY`时，expr参数被解析为date或者datetime；当unit只涉及`HOUR、MINUTE、SECOND、MICRESECOND`时，expr参数被解析为time。
 
@@ -1810,7 +1810,7 @@ CONTEXT:  referenced column: subdate
   示例：
   
   ```
-  openGauss=# set b_compatibility_mode = true;
+  openGauss=# set dolphin.b_compatibility_mode = true;
   SET
 
   openGauss=# select extract(year from '2021-11-12 12:12:12.000123');
@@ -1831,7 +1831,7 @@ CONTEXT:  referenced column: subdate
   121212000123
   (1 row)
 
-  openGauss=# set b_compatibility_mode = false;
+  openGauss=# set dolphin.b_compatibility_mode = false;
   SET
   ```
 

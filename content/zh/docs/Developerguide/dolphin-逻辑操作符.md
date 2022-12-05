@@ -7,7 +7,7 @@
 
 - &&
 
-  描述：当```b_compatibility_mode```为```TRUE```时代表逻辑与运算，支持的类型包含boolean型、时间型、日期型、整型、浮点型、位串型。真值表如下：
+  描述：当```dolphin.b_compatibility_mode```为```TRUE```时代表逻辑与运算，支持的类型包含boolean型、时间型、日期型、整型、浮点型、位串型。真值表如下：
 
   <table>
       <tr>

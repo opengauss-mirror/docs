@@ -202,7 +202,7 @@ openGauss=# insert into value_test values();
 ERROR:  null value in column "a" violates not-null constraint
 
 --关闭sql_mode,向表中插入VALUES()。
-openGauss=# set sql_mode = '';
+openGauss=# set dolphin.sql_mode = '';
 openGauss=# insert into value_test values();
 
 --查看表数据

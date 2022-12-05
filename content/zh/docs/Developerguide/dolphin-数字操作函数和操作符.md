@@ -133,7 +133,7 @@
   （1 row）
   ```
 
-  描述：当```set b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
+  描述：当```set dolphin.b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
 
   返回值类型：DOUBLE
 
