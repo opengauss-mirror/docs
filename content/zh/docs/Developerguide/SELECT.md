@@ -324,23 +324,23 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   一般形式为WINDOW window\_name AS \( window\_definition \) \[， ...\]，window\_name是可以被随后的窗口定义所引用的名称，window\_definition可以是以下的形式：
 
   ```
-  [ existing\_window\_name \]
+  [ existing_window_name ]
 
-  [ PARTITION BY expression \[, ...\] \]
+  [ PARTITION BY expression [, ...] ]
 
-  [ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
+  [ ORDER BY expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ] [, ...] ]
 
-  [ frame\_clause \]
+  [ frame_clause ]
   ```
 
   frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
 
   ```
-  [ RANGE | ROWS \] frame\_start
+  [ RANGE | ROWS ] frame_start
 
-  [ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
+  [ RANGE | ROWS ] BETWEEN frame_start AND frame_end
 
-  frame\_start和frame\_end可以是：
+  frame_start和frame_end可以是：
 
   UNBOUNDED PRECEDING
 
