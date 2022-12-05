@@ -378,7 +378,7 @@ If no time units are specified, then microseconds are assumed.
 
 ## JIT \(MOT\)<a name="section179836383210"></a>
 
--   **enable\_mot\_codegen =  false**
+-   **enable\_mot\_codegen = false**
 
     Specifies whether to use JIT query compilation and execution for planned queries.
 
