@@ -20,7 +20,7 @@
 
 - json_object([VARIADIC “any”])
 
-  描述：输入参数为交替出现的`key`, `value`。从一个可变参数列表构造出一个 JSON 对象，使用前需设置`GUC`参数 b_compatibility_mode = 1。
+  描述：输入参数为交替出现的`key`, `value`。从一个可变参数列表构造出一个 JSON 对象，使用前需设置GUC参数 dolphin.b_compatibility_mode = 1。
 
   返回类型：json
 
@@ -32,7 +32,7 @@
   示例：
 
   ```
-  opengauss=# SET b_compatibility_mode = 1;
+  opengauss=# SET dolphin.b_compatibility_mode = 1;
   opengauss=# SELECT JSON_OBJECT(
   opengauss(#         'name',
   opengauss(#         'Tim',
@@ -50,7 +50,7 @@
    {"age" : 20, "name" : "Tim", "hobby" : ["games", "sports"], "friend" : {"age" : 20, "name" : "Jim"}}
   (1 row)
   
-  opengauss=# SET b_compatibility_mode = 0;
+  opengauss=# SET dolphin.b_compatibility_mode = 0;
   opengauss=# select json_object('{a,b,"a b c"}', '{a,1,1}');
                 json_object              
   ---------------------------------------

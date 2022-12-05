@@ -1,6 +1,6 @@
 # GUC参数说明<a name="ZH-CN_TOPIC_0289899843"></a>
 
-## sql\_mode<a name="section203671436821"></a>
+## dolphin.sql\_mode<a name="section203671436821"></a>
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
@@ -55,7 +55,7 @@
    
 
 
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
@@ -81,7 +81,7 @@ openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
 openGauss=# select a1,a2 from test1 group by a1;
 
 --向表中插入记录成功。
-openGauss=# set sql_mode = '';
+openGauss=# set dolphin.sql_mode = '';
 openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
 --查询表成功
 openGauss=# select a1,a2 from test1 group by a1;
@@ -90,11 +90,11 @@ openGauss=# select a1,a2 from test1 group by a1;
 openGauss=# DROP TABLE test1;
 ```
 
-## b\_db\_timestamp<a name="section203671436822"></a>
+## dolphin.b\_db\_timestamp<a name="section203671436822"></a>
 
 **参数说明**：参数值为浮点数，该参数影响dolphin中的```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now```函数。当此参数值为0时，以上函数返回当前日期或时间；若参数值位于区间[1,2147483647]，则上述函数以该GUC参数的值作为秒数偏移，返回1970年01月01日 00:00:00 UTC + 秒数偏移 + 当前时区偏移的对应日期或时间。设置此参数时，若值不在上述合法区间内，会报错。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1.0, 2147483647.0]
 
@@ -123,11 +123,11 @@ openGauss=# select now();
 (1 row)
 ```
 
-## default\_week\_format<a name="section203671436823"></a>
+## dolphin.default\_week\_format<a name="section203671436823"></a>
 
 **参数说明**：参数值为整数，该参数影响dolphin插件中的```week```函数，该参数的取值范围为[0,7]，分别对应8种不同的计算策略，这些策略的详细内容参见[时间/日期函数](dolphin-时间和日期处理函数和操作符.md#时间日期函数a-namezh-cntopic0283136846zh-cntopic0237121972zh-cntopic0059779084sd0d47140cdd048c1964ed53f9858f436a)中的```week```函数说明。当此GUC参数设置的值超过对应边界值时，会报warning，并且将此GUC参数的值设置为对应边界值。
 
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 7]
 
@@ -135,8 +135,8 @@ openGauss=# select now();
 
 **示例**：
 ```
-openGauss=# show default_week_format;
-default_week_format
+openGauss=# show dolphin.default_week_format;
+dolphin.default_week_format
 ---------------------
 0
 (1 row)
@@ -147,7 +147,7 @@ week
     0
 (1 row)
 
-openGauss=# alter system set default_week_format = 2;
+openGauss=# alter system set dolphin.default_week_format = 2;
 ALTER SYSTEM SET
 
 openGauss=# select week('2000-1-1');
@@ -157,11 +157,11 @@ week
 (1 row)
 ```
 
-## lc\_time\_names<a name="section203671436824"></a>
+## dolphin.lc\_time\_names<a name="section203671436824"></a>
 
 **参数说明**：参数值为字符串，该参数控制dolphin插件中```dayname/monthname```函数以何种语言输出结果。该参数的取值有111种。设置参数时，若值不在合法取值范围内，则会报错。
 
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：
 lc_time_names语言集有如下可供选择的值：
@@ -289,7 +289,7 @@ dayname
 Saturday
 (1 row)
 
-openGauss=# alter system set lc_time_names = 'zh_CN';
+openGauss=# alter system set dolphin.lc_time_names = 'zh_CN';
 ALTER SYSTEM SET
 
 openGauss=# select dayname('2000-1-1');
@@ -299,7 +299,7 @@ dayname
 (1 row)
 ```
 
-## b\_compatibility\_mode<a name="section203671436825"></a>
+## dolphin.b\_compatibility\_mode<a name="section203671436825"></a>
 
 **参数说明**：参数值为布尔类型，该参数影响dolphin插件中的部分冲突的函数和操作符等，参数开启时这些函数和操作符会执行兼容性逻辑，关闭时则保持openGauss原有的逻辑。
 
@@ -320,7 +320,7 @@ dayname
 其他影响的参数：
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 

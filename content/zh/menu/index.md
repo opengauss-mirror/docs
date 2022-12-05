@@ -1657,6 +1657,7 @@ headless: true
 				-   [SQL参考]({{< relref "./docs/Developerguide/dolphin-SQL参考.md" >}})
 				-   [系统视图]({{< relref "./docs/Developerguide/dolphin-系统视图.md" >}})
 				-   [GUC参数说明]({{< relref "./docs/Developerguide/dolphin-GUC参数说明.md" >}})
+				-   [重设参数]({{< relref "./docs/Developerguide/dolphin-重设参数.md" >}})
 		-   [MySQL语法兼容性评估工具]({{< relref "./docs/Developerguide/assessment-tool.md" >}})
     -   [物化视图]({{< relref "./docs/Developerguide/物化视图.md" >}})
 		-   [全量物化视图]({{< relref "./docs/Developerguide/全量物化视图.md" >}})
