@@ -26,7 +26,7 @@ The following lists the functionality limitations of MOT tables –
 -   AES encryption, row-level access control, dynamic data masking
 -   Stream operations
 -   User-defined types
--   Sub-transactions – supported with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
+-   Sub-transactions – supported only in the context of statement blocks inside stored procedures with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
 
 -   DML triggers
 -   DDL triggers
