@@ -26,7 +26,7 @@ openGauss提供了在表和文件之间拷贝数据的语句，请参考[COPY](C
 
 ## 锁定表<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_sc96d73a125be4828991a058d852380fa"></a>
 
-openGauss提供了多种锁模式用于控制对表中数据的并发访问，请参考[LOCK](LOCK.md)。
+openGauss提供了多种锁模式用于控制对表中数据的并发访问，请参考[LOCK](LOCK-1.md)。
 
 ## 调用函数<a name="zh-cn_topic_0283137022_zh-cn_topic_0237122050_zh-cn_topic_0059778364_s04a7c8870a5f42c18aa48d11bde42b8c"></a>
 
@@ -57,4 +57,3 @@ openGauss提供了三个用于调用函数的语句，它们在语法结构上�
 </tr>
 </tbody>
 </table>
-
