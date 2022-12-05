@@ -60,5 +60,5 @@ You may refer to the [Unsupported JIT features](mot-sql-coverage-and-limitations
 
 ## JIT for Stored procedures 
 
-JIT for Stored Procedures (JIT SP) is supported by the openGauss MOT engine (starting from 5.0 version), and its goal is deliver even higher performance and lower latency. Refer to[ JIT for SP](JIT for Stored procedures)or more details.
+JIT for Stored Procedures (JIT SP) is supported by the openGauss MOT engine (starting from 5.0 version), and its goal is deliver even higher performance and lower latency. Refer to[ JIT for SP](JIT for Stored procedures) for more details.
 

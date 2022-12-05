@@ -26,9 +26,7 @@ The following lists the functionality limitations of MOT tables –
 -   AES encryption, row-level access control, dynamic data masking
 -   Stream operations
 -   User-defined types
--   Sub-transactions
-
-    SUB-Transactions – supported with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
+-   Sub-transactions – supported with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
 
 -   DML triggers
 -   DDL triggers
@@ -36,9 +34,7 @@ The following lists the functionality limitations of MOT tables –
 
 ## Unsupported Table DDLs<a name="section1072117103819"></a>
 
--   CREATE FORIGN table LIKE ... 
-
-    Limited support, LIKE can any table (MOT and Heap tables), but without any options, data or indexes.
+-   CREATE FORIGN table LIKE - Limited support, LIKE can any table (MOT and Heap tables), but without any options, data or indexes.
 
 -   Create table as select
 -   Partition by range

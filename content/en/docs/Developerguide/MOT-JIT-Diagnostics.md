@@ -1,4 +1,4 @@
-# MOT JIT functions useful for diagnostics
+# MOT JIT Diagnostics
 
 
 
