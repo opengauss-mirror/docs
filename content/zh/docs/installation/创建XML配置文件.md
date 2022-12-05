@@ -355,7 +355,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>syncNode_hostname</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与dataNode1_syncNum参数二选一。如需配置，需要在所有的节点下同时配置。用于指定当前数据库中同步模式的备机节点方式、数量及顺序。syncNode_hostname中的hostname根据主机名自行替换。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与dataNode1_syncNum参数二选一。如需配置，需要在所有的节点下同时配置。用于指定当前数据库中同步模式的备机节点方式、数量及顺序。syncNode_hostname中的hostname根据主机名自行替换。参数中指定同步备主机名存在且正确，同步备数量不能超过备选同步备主机个数。参数中FIRST与ANY不可以同时存在，ANY支持组合配置，FIRST不支持组合配置，具体见：一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）。</p>
 </td>
 </tr>
 </tbody>
@@ -914,7 +914,7 @@
 </ROOT>
 ```
 
-### 一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机方式）
+### 一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -954,7 +954,7 @@
             <PARAM name="dataNum" value="1"/> 
 	    <PARAM name="dataPortBase" value="15400"/> 
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
-            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node1_hostname" value="ANY 2(node2_hostname, node4_hostname), ANY 1(node3_hostname, node5_hostname)"/> 
         </DEVICE> 
  
@@ -966,8 +966,8 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.2"/> 
             <PARAM name="sshIp1" value="192.168.0.2"/> 
-            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
-            <PARAM name="syncNode_node2_hostname" value="ANY 2(node1_hostname, node3_hostname), FIRST 1(node5_hostname, node4_hostname)"/>
+            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <PARAM name="syncNode_node2_hostname" value="ANY 2(node1_hostname, node3_hostname), ANY 1(node5_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
@@ -981,7 +981,7 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.3"/> 
             <PARAM name="sshIp1" value="192.168.0.3"/> 
-            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node3_hostname" value="FIRST 3(node2_hostname, node1_hostname, node4_hostname, node5_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
@@ -996,7 +996,7 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.4"/> 
             <PARAM name="sshIp1" value="192.168.0.4"/> 
-            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node4_hostname" value="ANY 2(node2_hostname, node1_hostname, node5_hostname, node3_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
@@ -1011,7 +1011,7 @@
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.5"/> 
             <PARAM name="sshIp1" value="192.168.0.5"/> 
-            <!--syncNode_hostname中的hostname替换为自己的主机名称-->
+            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node5_hostname" value="ANY 1(node1_hostname, node2_hostname, node3_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
