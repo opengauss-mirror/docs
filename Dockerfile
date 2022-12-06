@@ -3,7 +3,7 @@ FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.16.1-20.03
 RUN yum -y update && yum install -y git curl tar
 
 
-ENV HUGO_VERSION=0.86.0
+ENV HUGO_VERSION=0.104.3
 
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
