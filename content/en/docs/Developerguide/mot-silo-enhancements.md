@@ -9,7 +9,7 @@ SILO  in its basic algorithm flow outperformed many other ACID-compliant OCCs th
 -   Added support for lockless cooperative garbage collection
 -   Added support for lockless checkpoints
 -   Added support for fast recovery
--   Added support for two-phase commit in a distributed deployment
+-   Multi Version Concurrency Control (MVCC) support was added (openGauss 5.0).
 
 Adding these enhancements without breaking the scalable characteristic of the original SILO was very challenging.
 

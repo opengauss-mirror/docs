@@ -12,25 +12,7 @@ The following is a simple overview of the tasks related to working with MOT tabl
 
 ![](figures/en-us_image_0270171684.png)
 
--   [Granting User Permissions](granting-user-permissions.md)
--   [Creating/Dropping an MOT Table](creating-dropping-an-mot-table.md)
--   **Creating an Index for an MOT Table**
--   This section also describes how to perform various additional MOT-related tasks, as well as  [MOT SQL Coverage and Limitations](mot-sql-coverage-and-limitations.md)  –
 
--   **[Granting User Permissions](granting-user-permissions.md)**  
 
--   **[Creating/Dropping an MOT Table](creating-dropping-an-mot-table.md)**  
-
--   **[Creating an Index for an MOT Table](creating-an-index-for-an-mot-table.md)**  
-
--   **[Converting a Disk Table into an MOT Table](converting-a-disk-table-into-an-mot-table.md)**  
-
--   **[Query Native Compilation](query-native-compilation.md)**  
-
--   **[Retrying an Aborted Transaction](retrying-an-aborted-transaction.md)**  
-
--   **[MOT External Support Tools](mot-external-support-tools.md)**  
-
--   **[MOT SQL Coverage and Limitations](mot-sql-coverage-and-limitations.md)**  
 
 

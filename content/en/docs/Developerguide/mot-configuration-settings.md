@@ -74,6 +74,7 @@ If no time units are specified, then microseconds are assumed.
 
     A commit group is closed after either the configured number of transactions has arrived or after the configured timeout period since the group was opened. After the group is closed, all the transactions in the group wait for a group flush to complete execution and then notify the client that each transaction has ended.
 
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
     You may refer to  [MOT Logging – WAL Redo Log](mot-durability.md#section129831140121218)  section for more information about the WAL Redo Log and synchronous group commit logging.
 
 
@@ -108,6 +109,11 @@ If no time units are specified, then microseconds are assumed.
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >You may refer to the  [MOT Recovery](mot-recovery.md)  section for more information about configuration settings.
 
+-   **parallel_recovery_workers = 5**
+    Specifies the number of workers to use during redo recovery/replay.
+
+-   **parallel_recovery_workers = 5**
+    Specifies the size of the queue used during recovery to hold redo log segments. This parameter also limits the maximum number of transactions that can be active (in progress) during parallel recovery. If this limit is reached, redo replay will wait for some of the transactions to commit before processing the redo log for new transactions.
 
 ## STATISTICS \(MOT\)<a name="section659861612477"></a>
 
@@ -208,7 +214,7 @@ If no time units are specified, then microseconds are assumed.
     MOT engine assumes that all the available NUMA nodes have memory. If the machine has some special configuration in which some of the NUMA nodes have no memory, then the MOT engine initialization and hence the database server startup will fail. In such machines, it is recommended that this configuration value be set to false, in order to prevent startup failures and let the MOT engine to function normally without using NUMA-aware memory allocation.
 
 
--   **affinity\_mode = fill-physical-first**
+-   **affinity\_mode = equal-per-socket**
 
     Configures the affinity mode of threads for the user session and internal MOT tasks.
 
@@ -348,10 +354,6 @@ If no time units are specified, then microseconds are assumed.
 
 ## GARBAGE COLLECTION \(MOT\)<a name="section82711330317"></a>
 
--   **enable\_gc = true**
-
-    Specifies whether to use the Garbage Collector \(GC\).
-
 -   **reclaim\_threshold = 512 KB**
 
     Configures the memory threshold for the garbage collector.
@@ -376,27 +378,31 @@ If no time units are specified, then microseconds are assumed.
 
 ## JIT \(MOT\)<a name="section179836383210"></a>
 
--   **enable\_mot\_codegen = true**
+-   **enable\_mot\_codegen = false**
 
     Specifies whether to use JIT query compilation and execution for planned queries.
 
     JIT query execution enables JIT-compiled code to be prepared for a prepared query during its planning phase. The resulting JIT-compiled function is executed whenever the prepared query is invoked. JIT compilation usually takes place in the form of LLVM. On platforms where LLVM is not natively supported, MOT provides a software-based fallback called Tiny Virtual Machine \(TVM\).
 
--   **force\_mot\_pseudo\_codegen = false**
-
-    Specifies whether to use TVM \(pseudo-LLVM\) even though LLVM is supported on the current platform.
-
-    On platforms where LLVM is not natively supported, MOT automatically defaults to TVM.
-
-    On platforms where LLVM is natively supported, LLVM is used by default. This configuration item enables the use of TVM for JIT compilation and execution on platforms on which LLVM is supported.
-
 -   **enable\_mot\_codegen\_print = false**
 
     Specifies whether to print emitted LLVM/TVM IR code for JIT-compiled queries.
 
--   **mot\_codegen\_limit = 100**
+-   **mot\_codegen\_limit = 50000**
 
     Limits the number of JIT queries allowed per user session.
+
+-   **enable_mot_query_codegen = true**
+
+    Specifies whether to use JIT query compilation and execution for planned queries. JIT query execution allows preparing Just-In-Time compiled code for a prepared query during its planning phase. The resulting JIT-compiled function is executed whenever the prepared query is invoked. JIT compilation takes place in the form of LLVM.
+
+-   **enable_mot_sp_codegen = true**
+
+    Specifies whether to use JIT query compilation and execution for stored procedures. JIT query execution allows preparing Just-In-Time compiled code for a stored procedure during its compilation phase. The resulting JIT-compiled function is executed whenever the stored procedure is invoked.
+
+-   **enable_mot_codegen_profile = true**
+
+    Specifies whether to use JIT profiling. When using this option, the mot_jit_profile() function can be used to obtain run-time profile data for jitted stored procedures and queries.
 
 
 ## Default mot.conf<a name="section1973591616715"></a>

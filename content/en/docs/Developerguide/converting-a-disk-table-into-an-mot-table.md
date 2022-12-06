@@ -26,7 +26,11 @@ To covert a disk-based table into an MOT table, perform the following –
 6.  Visually/manually verify that all the original data was imported correctly into the new MOT table. An example is provided below.
 7.  Resume application activity.
 
-**IMPORTANT Note** **–**  In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT table seamlessly without code changes. Please note that MOT does not currently support cross-engine multi-table queries \(such as by using Join, Union and sub-query\) and cross-engine multi-table transactions. Therefore, if an original table is accessed somewhere in a multi-table query, stored procedure or transaction, you must either convert all related disk-tables into MOT tables or alter the relevant code in the application or the database.
+**IMPORTANT Note** **–**  In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT table seamlessly without code changes. An additional method is to copy data from a regular (Heap) table into the new MOT table by using an “INSERT INTO SELECT” statement.
+```
+INSERT INTO [MOT_table] SELECT * FROM [PG_table] WHERE condition;
+```
+This method is subject to MOT transaction size limitation of less than 1 GB.
 
 ## Conversion Example<a name="section099142492814"></a>
 

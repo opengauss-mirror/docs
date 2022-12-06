@@ -8,13 +8,13 @@ The following describes the various types of SQL coverages and limitations –
 
 The following features are not supported by MOT –
 
--   Engine Interop –  No cross-engine \(Disk+MOT\) queries, views or transactions. Planned for 2021.
--   MVCC, Isolation – No snapshot/serializable isolation. Planned for 2021.
--   Native Compilation \(JIT\)  –  Limited SQL coverage. Also, JIT compilation of stored procedures is not supported.
+-   Isolation – SERIALIZABLE isolation is not supported. 
+-   Query Native Compilation \(JIT\)  –  Limited SQL coverage. 
 -   LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
--   Capacity \(Data+Index\) is limited to available memory. Anti-caching + Data Tiering will be available in the future.
+-   Capacity \(Data+Index\) is limited to available memory.
 -   No full-text search index.
 -   Do not support Logical copy.
+-   SAVEPOINT – not supported.
 
 In addition, the following are detailed lists of various general limitations of MOT tables, MOT indexes, Query and DML syntax and the features and limitations of Query Native Compilation.
 
@@ -26,15 +26,16 @@ The following lists the functionality limitations of MOT tables –
 -   AES encryption, row-level access control, dynamic data masking
 -   Stream operations
 -   User-defined types
--   Sub-transactions
+-   Sub-transactions – supported only in the context of statement blocks inside stored procedures with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
+
 -   DML triggers
 -   DDL triggers
 -   Collations other than "C" or "POSIX"
 
 ## Unsupported Table DDLs<a name="section1072117103819"></a>
 
--   Alter table
--   Create table, like including
+-   CREATE FORIGN table LIKE - Limited support, LIKE can any table (MOT and Heap tables), but without any options, data or indexes.
+
 -   Create table as select
 -   Partition by range
 -   Create table with no-logging clause
@@ -179,13 +180,13 @@ The following lists the functionality limitations of MOT tables –
 ## Unsupported DMLs<a name="section2069095112407"></a>
 
 -   Merge into
--   Select into
 -   Lock table
 -   Copy from table
 -   Upsert
 
-## Unsupported Queries for Native Compilation and Lite Execution<a name="section4815162910417"></a>
+## Unsupported JIT features (Native Compilation and Execution)<a name="section4815162910417"></a>
 
+-   JIT SP (Stored Procedures Compilation) – available to SPs accessing only MOT tables.
 -   The query refers to more than two tables
 -   The query has any one of the following attributes –
     -   Aggregation on non-primitive types
@@ -204,6 +205,6 @@ In addition, the following clauses disqualify a query from lite execution –
 -   Having clause
 -   Windows clause
 -   Distinct clause
--   Sort clause that does not conform to native index order
+-   Sort clause that does not conform to native index order - is supported, however all sort columns must be present in the SELECT.
 -   Set operations
 -   Constraint dependencies

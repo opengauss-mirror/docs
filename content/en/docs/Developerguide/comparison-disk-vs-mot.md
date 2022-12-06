@@ -59,16 +59,16 @@ The following table briefly compares the various features of the openGauss disk-
 </tr>
 <tr id="row40471574"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p56972087"><a name="p56972087"></a><a name="p56972087"></a>Isolation Levels</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><a name="ul51336373"></a><a name="ul51336373"></a><ul id="ul51336373"><li>RC+SI</li><li>RR</li><li>Serializable</li></ul>
+<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><a name="ul51336373"></a><a name="ul51336373"></a><ul id="ul51336373"><li>RC+SI</li><li>RR</li></ul>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><a name="ul54139417"></a><a name="ul54139417"></a><ul id="ul54139417"><li>RC</li><li>RR</li><li>RC+SI (in V2 release)</li></ul>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><a name="ul54139417"></a><a name="ul54139417"></a><ul id="ul54139417"><li>RC+SI</li><li>RR</li></ul>
 </td>
 </tr>
 <tr id="row1504051"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p54719288"><a name="p54719288"></a><a name="p54719288"></a>Concurrency Control</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><p id="p3077358"><a name="p3077358"></a><a name="p3077358"></a>Pessimistic</p>
+<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><p id="p3077358"><a name="p3077358"></a><a name="p3077358"></a>Pessimistic + MVCC</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p47939452"><a name="p47939452"></a><a name="p47939452"></a>Optimistic</p>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p47939452"><a name="p47939452"></a><a name="p47939452"></a>Optimistic + MVCC</p>
 </td>
 </tr>
 <tr id="row28801892"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p51251947"><a name="p51251947"></a><a name="p51251947"></a>Data Capacity (Data + Index)</p>
@@ -82,7 +82,7 @@ The following table briefly compares the various features of the openGauss disk-
 </td>
 <td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><p id="p1146965"><a name="p1146965"></a><a name="p1146965"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p25795375"><a name="p25795375"></a><a name="p25795375"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p25795375"><a name="p25795375"></a><a name="p25795375"></a>Yes<ul><li>Query (by PREPARE command)</li><li>Stored Procedures (by PREPARE command)</li></ul></p>
 </td>
 </tr>
 <tr id="row30831790"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p14347060"><a name="p14347060"></a><a name="p14347060"></a>Replication, Recovery</p>
@@ -102,11 +102,6 @@ The following table briefly compares the various features of the openGauss disk-
 </tbody>
 </table>
 
-**Legend –**
-
--   RR = Repeatable Reads
--   RC = Read Committed
--   SI = Snapshot Isolation
 
 # Appendices
 

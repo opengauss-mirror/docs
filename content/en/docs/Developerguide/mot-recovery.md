@@ -12,7 +12,9 @@ MOT recovery consists of two stages –
 
 The WAL Redo Log recovery is managed and triggered by openGauss.
 
--   To configure recovery –
--   While WAL recovery is performed in a serial manner, the Checkpoint recovery can be configured to run in a multi-threaded manner \(meaning in parallel by multiple workers\).
--   Configure the  **Checkpoint\_recovery\_workers**  parameter in the  **mot.conf**  file, which is described in the  [RECOVERY \(MOT\)](mot-configuration-settings.md#section7442447103115)  section.
+In order to shorten the RTO (secondary node recovery at a failover event) and to speed-up the cold-start, the MOT Engine supports process parallelization of both Redo Log Recovery and Checkpoint Recovery. 
+Configure the parallel_recovery_workers and parallel_recovery_queue_size settings to change how the Redo Log Recovery (log replay) parallelization works. This effects the RTO.
+Configure the checkpoint_recovery_workers setting to change how the Checkpoint Recovery parallelization works. This mostly affects the cold-start time.
+
+See the [RECOVERY (MOT)](mot-configuration-settings.md#section7442447103115) section for additional description and defaults values.
 
