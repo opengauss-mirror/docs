@@ -315,3 +315,14 @@
 
 **默认值**：86400
 
+## enable\_fence\_dn<a name="section114001741152513"></a>
+
+**参数说明**：cm\_agent连不上任何除了自身节点的cms,并且自身节点cms不是Primary时，设置是否重启datanode进程。
+
+**取值范围**：布尔型。修改后可以reload生效，参数修改请参考[表 set cm参数](#table10437204416514)进行设置。
+
+-   on、yes、true、1：表示重启datanode进程。
+
+-   off、no、false、0：表示不重启datanode进程。
+
+**默认值：**

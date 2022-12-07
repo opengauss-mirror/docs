@@ -431,3 +431,32 @@
 
 **默认值**：300
 
+
+
+## delay\_arbitrate\_timeout<a name="section1410893910156"></a>
+
+**参数说明**：设置等待跟主DN同AZ节点redo回放，优先选择同AZ升主的时间。
+
+**取值范围**：整型，\[0, 2147483647\]，单位：秒。参数修改请参考[表 set cm参数](#table10437204416514)进行设置。
+
+**默认值**：0
+
+## cm\_auth\_method<a name="section1969815428196"></a>
+
+**参数说明：**CM模块端口认证方式，trust表示未配置端口认证，gss表示采用kerberos端口认证。必须注意的是：只有当kerberos服务端和客户端成功安装后才能修改为gss，否则CM模块无法正常通信，将影响数据库状态。
+
+**取值范围：**枚举类型，有效值有trust, gss。修改后需要重启cm\_server才能生效。参数修改请参考[表 set cm参数](#table10437204416514)进行设置。
+
+**默认值：**trust
+
+## dn\_arbitrate\_mode<a name="section1264174324416"></a>
+
+**参数说明**：DN仲裁模式。
+
+**取值范围**：字符串。修改后可以reload生效。参数修改请参考[表 set cm参数](#table10437204416514)进行设置，share\_disk模式下，不建议用户修改仲裁模式。
+
+-   quorum
+-   paxos
+-   share\_disk
+
+**默认值**：quorum

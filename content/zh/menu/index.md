@@ -2668,6 +2668,7 @@ headless: true
 		-   [特性介绍]({{< relref "./docs/Toolreference/特性介绍.md" >}})
 		-   [cm\_ctl工具介绍]({{< relref "./docs/Toolreference/cm_ctl工具介绍.md" >}})
 		-   [cm\_persit工具介绍]({{< relref "./docs/Toolreference/cm_persit工具介绍.md" >}})
+		-   [安装和卸载工具介绍]({{< relref "./docs/Toolreference/安装和卸载工具介绍.md" >}})
 		-   [安全设计]({{< relref "./docs/Toolreference/安全设计.md" >}})
 		-   [CM配置参数介绍]({{< relref "./docs/Toolreference/CM配置参数介绍.md" >}})
 			-   [cm\_agent参数]({{< relref "./docs/Toolreference/cm_agent参数.md" >}})
