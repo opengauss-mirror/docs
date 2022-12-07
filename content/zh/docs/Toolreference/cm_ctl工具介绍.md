@@ -241,14 +241,14 @@ cm\_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="row1822715813100"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p122279589106"><a name="p122279589106"></a><a name="p122279589106"></a>-a</p>
 </td>
-<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p182271958161018"><a name="p182271958161018"></a><a name="p182271958161018"></a>重置节点状态为初始配置状态。</p>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p182271958161018"><a name="p182271958161018"></a><a name="p182271958161018"></a>将集群的主机重置到初始配置的节点。</p>
 <div class="note" id="note4227758151011"><a name="note4227758151011"></a><a name="note4227758151011"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p322713584103"><a name="p322713584103"></a><a name="p322713584103"></a>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pgxc_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</p>
 </div></div>
 </td>
 </tr>
 <tr id="row876891261217"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p157683127123"><a name="p157683127123"></a><a name="p157683127123"></a>-A</p>
 </td>
-<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p5768101211121"><a name="p5768101211121"></a><a name="p5768101211121"></a>将所有节点实例统一从主切换到备。</p>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p5768101211121"><a name="p5768101211121"></a><a name="p5768101211121"></a>将主机切换到一个合适的备机节点上。</p>
 </td>
 </tr>
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-f</p>
