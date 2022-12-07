@@ -5,6 +5,7 @@
 1. 新增```bit_bool```函数。
 2. 新增```^```操作符。
 3. 新增```bit_count```函数。
+4. 新增```bit_xor```函数。
 
 - bit_bool(bit)
 
@@ -65,7 +66,7 @@
 
   示例：
   ~~~
-  SELECT bit_count(29);
+  openGauss=# SELECT bit_count(29);
    bit_count 
   ----------
    4
@@ -73,12 +74,38 @@
   ~~~
 
   ~~~
-  SELECT bit_count(b'101010');
+  openGauss=# SELECT bit_count(b'101010');
    bit_count 
   ----------
    3
   (1 row)
   ~~~
 
-  
+- bit_count(expr)
 
+  描述：返回表中所有列的值异或为无符号64位整数时的结果
+
+  输入类型：expr
+
+  返回值类型：unsigned int
+
+  注意: 当表中的值的数字或字符串数值为负数时，会自动转换成无符号的数字.
+
+  示例：
+  ```sql
+  openGauss=# INSERT INTO bit_xor_int4(a) values(-1.11);
+  INSERT 0 1
+  openGauss=# SELECT BIT_XOR(a) from bit_xor_int4;
+  bit_xor 
+  ---------
+  1
+  (1 row)
+
+  openGauss=# INSERT INTO bit_xor_int4(a) values(1.11);
+  INSERT 0 1
+  openGauss=# SELECT BIT_XOR(a) from bit_xor_int4;
+  bit_xor 
+  ---------
+  0
+  (1 row)
+  ```
