@@ -60,7 +60,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     ```
     gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
     [-E external-directories-paths]
-    [remote_options]
+    [remote_options] [dss_options]
     [--help]
     ```
 
@@ -79,7 +79,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
     [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
     [-d dbname] [-h hostname] [-p port] [-U username]
-    [logging_options] [remote_options]
+    [logging_options] [remote_options] [dss_options]
     [--help]
     ```
 
@@ -114,8 +114,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
     [--archive-timeout=timeout] [-t rwtimeout]
-    [logging_options] [retention_options] [compression_options]
-    [connection_options] [remote_options] [pinning_options][--backup-pg-replslot]
+    [logging_options] [retention_options] [compression_options] [connection_options]
+    [remote_options] [dss_options] [pinning_options][--backup-pg-replslot]
     [--help]
     ```
 
@@ -125,7 +125,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup restore -B backup-path --instance=instance_name
     [-D pgdata-path] [-i backup_id] [-j threads_num] [--progress] [--force] [--no-sync] [--no-validate] [--skip-block-validation]
     [--external-mapping=OLDDIR=NEWDIR] [-T OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
-    [recovery_options] [remote_options] [logging_options]
+    [recovery_options] [remote_options] [dss_options] [logging_options]
     [--help]
     ```
 
