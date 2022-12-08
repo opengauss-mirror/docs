@@ -10,24 +10,9 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 
 ## 语法<a name="section554725769"></a>
 
--   查看control文件信息
-
-    ```
-    pg_controldata [DATADIR]
-    ```
-
--   显示版本号信息
-
-    ```
-    pg_controldata -V | --version
-    ```
-
--   显示帮助信息
-
-    ```
-    pg_controldata 
-    -? | --help
-    ```
+```
+pg_controldata [OPTION]... DATADIR
+```
 
 
 ## 参数说明<a name="section187851955142614"></a>
@@ -35,6 +20,20 @@ pg\_controldata工具用来显示数据库目录下control文件的信息。
 -   DATADIR
 
     查看control文件信息时所用的参数，DATADIR为实例对应的数据库目录。
+
+OPTION取值如下所示
+
+-   -I, --instance-id=INSTANCE_ID
+
+    共享存储参数，打印指定实例的control文件信息，该参数不指定时打印全部实例的control文件信息
+
+-   --enable-dss
+
+    共享存储参数，开启共享存储功能
+
+-   --socketpath=SOCKETPATH
+
+    共享存储参数，dss实例进程使用的socket文件路径，仅支持绝对路径
 
 -   -V, --version
 
