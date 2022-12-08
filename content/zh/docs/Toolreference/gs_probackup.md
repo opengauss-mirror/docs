@@ -27,7 +27,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
--   当前暂不支持备份逻辑复制槽。
+-   当前仅支持备份发布订阅的逻辑复制槽。
+-   备份时，请确保服务器用户对备份的目录下所有文件有读写的权限，以防止在恢复时因权限不足的问题而失败。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -111,7 +112,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
     [--archive-timeout=timeout] [-t rwtimeout]
     [logging_options] [retention_options] [compression_options]
-    [connection_options] [remote_options] [pinning_options]
+    [connection_options] [remote_options] [pinning_options][--backup-pg-replslot]
     [--help]
     ```
 
@@ -288,6 +289,10 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     以秒为单位的连接的超时时间。
 
     默认值: 120
+
+-   --backup-pg-replslot
+
+    将pg_replslot下发布订阅的逻辑复制槽目录包含到备份中。默认情况下包含pg_replslot目录，但不包含复制槽文件。
 
 ### **恢复相关参数**
 
