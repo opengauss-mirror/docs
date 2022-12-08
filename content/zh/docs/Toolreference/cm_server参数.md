@@ -449,14 +449,4 @@
 
 **默认值：**trust
 
-## dn\_arbitrate\_mode<a name="section1264174324416"></a>
-
-**参数说明**：DN仲裁模式。
-
-**取值范围**：字符串。修改后可以reload生效。参数修改请参考[表 set cm参数](#table10437204416514)进行设置，share\_disk模式下，不建议用户修改仲裁模式。
-
--   quorum
--   paxos
--   share\_disk
-
-**默认值**：quorum
+## 
