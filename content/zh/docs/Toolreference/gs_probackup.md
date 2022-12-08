@@ -684,6 +684,87 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
    gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
    ```
 
+## cm工具管理集群全量备份恢复流程（dss模式）
+
+1. 初始化备份目录。
+
+   ```
+   gs_probackup init -B backup_dir
+   ```
+
+2. 添加一个新的备份实例。
+
+   ```
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name --enable-dss --instance-id node_id --vgname="vgdata,vglog" --socketpath=socket_domain
+   ```
+
+3. 创建指定实例的备份，对主机进行备份。在进行增量备份之前，必须至少创建一次全量备份。
+
+   ```
+   gs_probackup backup -B backup_dir --instance instance_name -b backup_mode -d db_name -p port
+   ```
+
+4. 执行cm_ctl stop关闭集群。
+
+   ```
+   cm_ctl stop
+   ```
+
+5. 使用dd命令清空磁阵，of后面的参数可以进入$DSS_HOME的cfg目录，在dss_vg_conf.ini文件中查看每个卷对应磁盘，这里需要清空该文件中的所有主备对应的数据和日志磁盘。
+
+   ```
+   dd if=/dev/zero of=/dev/disk_name bs=2048 count=1000 > /dev/null 2>&1
+   ```
+
+6. 使用dsscmd cv命令建卷，-v后面的参数是每个卷对应磁盘，在dss_vg_conf.ini文件中查看。
+
+   ```
+   dsscmd cv -g data -v /dev/disk_name -D $DSS_HOME
+   ```
+
+7. 将主机的dn目录中的如下文件拷贝出来（当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群，需要执行该操作，否则跳过）。
+
+   ```
+   cacert.pem server.crt server.key server.key.cipher server.key.rand
+   ```
+
+8. 清空主机的dn目录，启动dssserver。
+
+   ```
+   rm -rf primary_dir/*
+   dssserver -D $DSS_HOME &
+   ```
+
+9. 在主机执行恢复操作。
+
+   ```
+   gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+   ```
+
+10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
+
+11. 将备机的dn目录进行拷贝，在步骤14会用到。
+
+12. 清空备机的dn目录，启动dssserver。
+
+    ```
+    rm -rf standby_dir/*
+    dssserver -D $DSS_HOME &
+    ```
+
+13. 在备机执行初始化操作，可以在备机的om日志目录下执行grep gs_initdb *来查找该命令的历史执行然后直接复制。
+    
+    ```
+    gs_initdb --locale=LOCALE -D DATADIR --nodename=NODENAME -C DIR -n --vgname="vgdata,vglog" --enable-dss --dms_url="node0_id:ip0:dms0_port,..." -I node_id --socketpath=socket_domain
+    ```
+
+14. 用步骤11中拷贝的dn目录覆盖初始化完毕后备机生成的dn目录。
+
+15. 在主机启动集群。
+
+    ```
+    cm_ctl start
+    ```
 
 
 ## 故障处理<a name="section1494010372368"></a>
@@ -709,4 +790,3 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 </tr>
 </tbody>
 </table>
-
