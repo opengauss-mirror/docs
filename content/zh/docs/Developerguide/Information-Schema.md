@@ -4,7 +4,7 @@
 
 信息模式继承自开源PGXC/PG，相关细节描述请参见PGXC/PG官方文档，链接如下：
 
-http://postgres-xc.sourceforge.net/docs/1\_1/information-schema.html
+[http://postgres-xc.sourceforge.net/docs/1_1/information-schema.html](http://postgres-xc.sourceforge.net/docs/1_1/information-schema.html)
 
 https://www.postgresql.org/docs/9.2/information-schema.html
 
