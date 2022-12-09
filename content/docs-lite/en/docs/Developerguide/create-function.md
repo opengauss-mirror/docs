@@ -145,7 +145,7 @@
 
 -   **LANGUAGE lang\_name**
 
-    Specifies the name of the language that is used to implement the function. It can be  **SQL**,  **internal**, or the name of a customized process language. To ensure downward compatibility, the name can use single quotation marks. Contents in single quotation marks must be capitalized.
+    Specifies the name of the language that is used to implement the function. It can be  **SQL**,  **internal**, or the name of a customized process language. To ensure downward compatibility, the name can use single quotation marks. Contents in single quotation marks must be lowercase.
 
 -   **WINDOW**
 
