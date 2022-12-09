@@ -13,7 +13,8 @@
 ```
 CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
-    AS query;
+    AS query
+    [ WITH [ CASCADED | LOCAL ] CHECK OPTION ];
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -49,14 +50,54 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
     该子句为视图指定一个可选的参数。
 
-    目前view\_option\_name支持的参数仅有security\_barrier，当VIEW试图提供行级安全时，应使用该参数。
+    -   **security\_barrier**
 
-    取值范围：Boolean类型，TRUE、FALSE
+        当VIEW试图提供行级安全时，应使用该参数。
+        
+        取值范围：Boolean类型，TRUE、FALSE。
+    
+    -   **check\_option**
+
+        指定该视图的检查选项。
+
+        取值范围：LOCAL、CASCADED。
 
 -   **query**
 
     为视图提供行和列的SELECT或VALUES语句。
 
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+
+    该选项控制自动更新视图的行为，对视图的insert和update，要检查确保新行满足视图定义的条件，即新行可以通过视图看到。如果没有通过检查，则拒绝修改。如果没有添加该选项，则允许通过对视图的insert和update来创建该视图不可见的行。支持下列检查选项：
+
+    -   **LOCAL**
+
+        只检查视图本身直接定义的条件，除非底层视图也定义了CHECK OPTION，否则它们定义的条件都不检查。
+
+    -   **CASCADED**
+
+        检查该视图和所有底层视图定义的条件。如果仅声明了CHECK OPTION，没有声明LOCAL和CASCADED，默认是CASCADED。
+    
+    注意，只有在可自动更新、没有INSTEAD OF触发器或者INSTEAD规则的视图上才支持CHECK OPTION。如果一个自动更新的视图被定义在一个具有INSTEAD OF触发器的视图上，那么CHECK OPTION可以被用来检查该自动更新视图上的条件，但具有INSTEAD OF触发器的视图上的条件不会被检查。如果该视图或者任何底层关系具有导致INSERT或UPDATE命令被重写的INSTEAD规则，那么在被重写的查询中将忽略所有检查选项，包括任何来自定义在有STEAD规则关系上的可自动更新视图的检查。
+
+## 可自动更新视图<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
+
+简单视图是可自动更新的，系统允许在这类视图上执行INSERT、UPDATE和DELETE语句，如果一个视图满足以下条件，那么它就是可自动更新的。
+
+* 视图的FROM列表中只有一项，并且必须是一个表或者是另一个可自动更新视图。
+* 视图定义的顶层不能包含WITH、DISTINCT、GROUP BY、HAVING、LIMIT、OFFSET子句的视图
+* 视图定义的顶层不能包含集合操作（UNION、INTERSET、EXCEPT）的视图。
+* 视图的目标列表中不能包含聚集函数、窗口函数或者返回集合的函数。
+
+一个可自动更新的视图可以混合可更新列以及不可更新列。如果一个列是对底层关系中一个可更新列的简单引用，则它是可更新的。否则该列是只读的，并且在一个INSERT或者UPDATE语句尝试对它赋值时会报错。
+
+如果视图是可自动更新的，系统将把视图上的任何INSERT、UPDATE或者DELETE语句转换成在底层关系上的对应语句。
+
+如果一个可自动更新的视图包含一个WHERE条件，该条件会限制底层关系的哪些行可以被该视图上的UPDATE以及DELETE语句修改。不过，一个允许被UPDATE修改的行可能让该行不再满足WHERE条件，并且因此也不再能从视图中可见。类似的，一个INSERT命令可能插入不满足WHERE条件的行，因此从该视图中看不到这些行。CHECK OPTION可以用来阻止INSERT和UPDATE命令创建这类从视图中无法看到的行。
+
+一个更加复杂的、不满足上述条件的视图默认是只读的，系统不允许在该视图上执行INSERT、UPDATE和DELETE语句。可以通过在该视图上创建一个INSTEAD OF触发器来获得可更新视图的效果，该触发器必须把该视图上尝试的插入转换成其他表上合法的动作，更多信息请见[CREATE TRIGGER](CREATE-TRIGGER.md)。另一种方式是创建规则（见[CREATE RULE](CREATE-RULE.md)）。
+
+注意在视图上执行插入、更新或删除的用户必须具有该视图上相应的插入、更新或删除特权。此外，视图的所有者必须拥有底层关系上对应的权限，但执行的用户并不需要底层关系上的任何权限。
 
 ## 示例<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>
 

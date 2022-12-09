@@ -108,9 +108,17 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 
     该子句为视图指定一个可选的参数。
 
-    目前view\_option\_name支持的参数仅有security\_barrier，当VIEW试图提供行级安全时，应使用该参数。
+    -   **security\_barrier**
 
-    取值范围：Boolean类型，TRUE、FALSE。
+        当VIEW试图提供行级安全时，应使用该参数。
+        
+        取值范围：Boolean类型，TRUE、FALSE。
+    
+    -   **check\_option**
+
+        指定该视图的检查选项。
+
+        取值范围：LOCAL、CASCADED。
 
 
 ## 示例<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
