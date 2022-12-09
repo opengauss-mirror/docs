@@ -197,13 +197,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: an integer ranging from 1024 to 65535
 
 **Default value**:  **3308**
-
-## dolphin\.default\_database\_name<a name="us_topic_0283136886_en-us_topic_0237124695_topic_0059777636_se9188f6aa8c9487c84d6d540eb470b0045"></a>
-
-**Parameter description**: Specifies the default database name used by dolphin protocol plugin.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range:**  a string
-
-**Default value**: database\_name in connection session while initialize dolphin protocol pulin at first time. 
