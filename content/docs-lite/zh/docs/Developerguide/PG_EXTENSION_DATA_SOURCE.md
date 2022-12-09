@@ -37,7 +37,7 @@ PG\_EXTENSION\_DATA\_SOURCE系统表存储外部数据源对象的信息。一�
 </td>
 <td class="cellrowborder" valign="top" width="18.09%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p11368195796"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p11368195796"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p11368195796"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.19%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"></a>PG_AUTHID.oid</p>
+<td class="cellrowborder" valign="top" width="20.19%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p123691857912"></a><a href="PG_AUTHID.md">PG_AUTHID</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.82%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p153691351292"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p153691351292"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p153691351292"></a>外部数据源对象的所有者。</p>
 </td>

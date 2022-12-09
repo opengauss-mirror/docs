@@ -755,38 +755,38 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
 
 
--   - jsonb\_contained\(jsonb, jsonb\)
+- jsonb\_contained\(jsonb, jsonb\)
 
-    描述：同操作符 \`<@\`, 判断$1中的所有元素是否在$2的顶层存在。
+  描述：同操作符 \`<@\`, 判断$1中的所有元素是否在$2的顶层存在。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-     openGauss=# select jsonb_contained('[1,2,3]', '[1,2,3,4]');
-       jsonb_contained
-      -----------------
-       t
-      (1 row)
-    ```
+  ```
+   openGauss=# select jsonb_contained('[1,2,3]', '[1,2,3,4]');
+     jsonb_contained
+    -----------------
+     t
+    (1 row)
+  ```
 
 
--   - jsonb\_contains\(jsonb, jsonb\)
+- jsonb\_contains\(jsonb, jsonb\)
 
-    描述：同操作符 \`@\>\`, 判断$1中的顶层所有元素是否包含在$2的所有元素。
+  描述：同操作符 \`@\>\`, 判断$1中的顶层所有元素是否包含在$2的所有元素。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-     openGauss=# select jsonb_contains('[1,2,3,4]', '[1,2,3]');
-       jsonb_contains
-      ----------------
-       t
-      (1 row)
-    ```
+  ```
+   openGauss=# select jsonb_contains('[1,2,3,4]', '[1,2,3]');
+     jsonb_contains
+    ----------------
+     t
+    (1 row)
+  ```
 
 
 -   - jsonb\_exists\(jsonb, text\)
@@ -806,21 +806,21 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
 
 
--   - jsonb\_exists\_all\(jsonb, text\[\]\)
+- jsonb\_exists\_all\(jsonb, text\[\]\)
 
-    描述：同操作符 \`?&\`,  字符串数组$2里面，是否所有的元素，都在$1的顶层以key\\elem\\scalar的形式存在。
+  描述：同操作符 \`?&\`,  字符串数组$2里面，是否所有的元素，都在$1的顶层以key\\elem\\scalar的形式存在。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-      openGauss=# select jsonb_exists_all('["1","2",3]', '{1, 2}');
-       jsonb_exists_all
-      ------------------
-       t
-      (1 row)
-    ```
+  ```
+    openGauss=# select jsonb_exists_all('["1","2",3]', '{1, 2}');
+     jsonb_exists_all
+    ------------------
+     t
+    (1 row)
+  ```
 
 
 -   - jsonb\_exists\_any\(jsonb, text\[\]\)
@@ -840,106 +840,106 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
 
 
--   - jsonb\_cmp\(jsonb, jsonb\)
+- jsonb\_cmp\(jsonb, jsonb\)
 
-    描述：比较大小，正数代表大于，负数代表小于，0表示相等。
+  描述：比较大小，正数代表大于，负数代表小于，0表示相等。
 
-    返回类型：integer
+  返回类型：integer
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_cmp
-      -----------
-              -1
-      (1 row)
-    ```
-
-
--   - jsonb\_eq\(jsonb, jsonb\)
-
-    描述：同操作符 \`=\`, 比较两个值的大小。
-
-    返回类型：bool
-
-    示例：
-
-    ```
-      openGauss=# select jsonb_eq('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_eq
-      ----------
-       f
-      (1 row)
-    ```
+  ```
+  openGauss=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_cmp
+    -----------
+            -1
+    (1 row)
+  ```
 
 
--   - jsonb\_ne\(jsonb, jsonb\)
+- jsonb\_eq\(jsonb, jsonb\)
 
-    描述：同操作符 \`<\>\`, 比较两个值的大小。
+  描述：同操作符 \`=\`, 比较两个值的大小。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-      openGauss=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_ne
-      ----------
-       t
-      (1 row)
-    ```
-
-
--   - jsonb\_gt\(jsonb, jsonb\)
-
-    描述：同操作符 \`\>\`, 比较两个值的大小。
-
-    返回类型：bool
-
-    示例：
-
-    ```
-     openGauss=# select jsonb_gt('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_gt
-      ----------
-       f
-      (1 row)
-    ```
+  ```
+    openGauss=# select jsonb_eq('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_eq
+    ----------
+     f
+    (1 row)
+  ```
 
 
--   - jsonb\_ge\(jsonb, jsonb\)
+- jsonb\_ne\(jsonb, jsonb\)
 
-    描述：同操作符 \`\>=\`, 比较两个值的大小。
+  描述：同操作符 \`<\>\`, 比较两个值的大小。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-     openGauss=# select jsonb_ge('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_ge
-      ----------
-       f
-      (1 row)
-    ```
+  ```
+    openGauss=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_ne
+    ----------
+     t
+    (1 row)
+  ```
 
 
--   - jsonb\_lt\(jsonb, jsonb\)
+- jsonb\_gt\(jsonb, jsonb\)
 
-    描述：同操作符 \`<\`, 比较两个值的大小。
+  描述：同操作符 \`\>\`, 比较两个值的大小。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-     openGauss=# select jsonb_lt('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_lt
-      ----------
-       t
-      (1 row)
-    ```
+  ```
+   openGauss=# select jsonb_gt('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_gt
+    ----------
+     f
+    (1 row)
+  ```
+
+
+- jsonb\_ge\(jsonb, jsonb\)
+
+  描述：同操作符 \`\>=\`, 比较两个值的大小。
+
+  返回类型：bool
+
+  示例：
+
+  ```
+   openGauss=# select jsonb_ge('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_ge
+    ----------
+     f
+    (1 row)
+  ```
+
+
+- jsonb\_lt\(jsonb, jsonb\)
+
+  描述：同操作符 \`<\`, 比较两个值的大小。
+
+  返回类型：bool
+
+  示例：
+
+  ```
+   openGauss=# select jsonb_lt('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_lt
+    ----------
+     t
+    (1 row)
+  ```
 
 
 -   - jsonb\_le\(jsonb, jsonb\)
@@ -959,57 +959,57 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
 
 
--   - to\_json\(anyelement\)
+- to\_json\(anyelement\)
 
-    描述：把参数转换为\`json\`。
+  描述：把参数转换为\`json\`。
 
-    返回类型：json
+  返回类型：json
 
-    示例：
+  示例：
 
-    ```
-     openGauss=# select to_json('{1,5}'::text[]);
-        to_json
-      -----------
-       ["1","5"]
-      (1 row)
-    ```
-
--   - jsonb\_hash\(jsonb\)
-
-    描述：对jsonb进行hash运算。
-
-    返回类型：integer
-
-    示例：
-
-    ```
-    openGauss=# select jsonb_hash('[1,2,3]');
-     jsonb_hash
-    ------------
-     -559968547
+  ```
+   openGauss=# select to_json('{1,5}'::text[]);
+      to_json
+    -----------
+     ["1","5"]
     (1 row)
-    ```
+  ```
 
--   - 其他函数
+- jsonb\_hash\(jsonb\)
 
-    描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。
+  描述：对jsonb进行hash运算。
 
-    ```
-     gin_compare_jsonb
-     gin_consistent_jsonb
-     gin_consistent_jsonb_hash
-     gin_extract_jsonb
-     gin_extract_jsonb_hash
-     gin_extract_jsonb_query
-     gin_extract_jsonb_query_hash
-     gin_triconsistent_jsonb
-     gin_triconsistent_jsonb_hash
-     
-     json_agg_transfn
-     json_agg_finalfn
-     json_object_agg_transfn
-     json_object_agg_finalfn
-    ```
+  返回类型：integer
+
+  示例：
+
+  ```
+  openGauss=# select jsonb_hash('[1,2,3]');
+   jsonb_hash
+  ------------
+   -559968547
+  (1 row)
+  ```
+
+- 其他函数
+
+  描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。
+
+  ```
+   gin_compare_jsonb
+   gin_consistent_jsonb
+   gin_consistent_jsonb_hash
+   gin_extract_jsonb
+   gin_extract_jsonb_hash
+   gin_extract_jsonb_query
+   gin_extract_jsonb_query_hash
+   gin_triconsistent_jsonb
+   gin_triconsistent_jsonb_hash
+   
+   json_agg_transfn
+   json_agg_finalfn
+   json_object_agg_transfn
+   json_object_agg_finalfn
+  ```
 
 
