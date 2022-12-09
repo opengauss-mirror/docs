@@ -10,6 +10,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
 
 **图 1**  DCF功能架构图<a name="fig31591049102410"></a>
 
+
 <img src="figures/Diagram-Of-The-DCF-Functional-Architecture.png" style="zoom: 50%;">
 
 
