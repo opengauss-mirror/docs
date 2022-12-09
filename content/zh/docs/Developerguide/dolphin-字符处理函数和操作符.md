@@ -853,7 +853,7 @@
   注意事项
 
   - 该运算符仅在```b_compatibility_mode```为```TRUE```时可用。
-  - openGauss原有阶乘运算符"!!"。为避免与本运算符混淆，当```b_compatibility_mode```为```TRUE```时，阶乘运算符"!!"不可使用。请使用函数```factorial```替代。
+  - openGauss原有阶乘运算符"!!"。为避免与本运算符混淆，当```b_compatibility_mode```为```TRUE```时，阶乘运算符"!!"与"!"不可使用。请使用函数```factorial```替代。
   - 当```b_compatibility_mode```为```TRUE```时，不允许多个"!"运算符连用。
   - 仅有可转换为boolean类型的表达式可使用本操作符。详情查看系统表```pg_cast```。
 
@@ -876,4 +876,7 @@
   
   openGauss=# select !!10;
   ERROR:  Operator '!!' is deprecated when b_compatibility_mode is on. Please use function factorial().
+  
+  openGauss=# select 10!;
+  ERROR:  Operator '!' behind expression is deprecated when b_compatibility_mode is on. Please use function factorial().
   ```
