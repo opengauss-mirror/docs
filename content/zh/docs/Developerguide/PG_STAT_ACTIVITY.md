@@ -170,7 +170,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="zh-cn_topic_0289900801.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）。</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a><a name="zh-cn_topic_0283136816_zh-cn_topic_0237122439_p1612017551314"></a>json格式字符串，记录当前连接数据库的驱动类型、驱动版本号、当前驱动的部署路径、进程属主用户等信息（参见<a href="连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）。</p>
 </td>
 </tr>
 <tr id="row1275719812594"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p16757128145914"><a name="p16757128145914"></a><a name="p16757128145914"></a>unique_sql_id</p>
@@ -189,6 +189,7 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </tr>
 </tbody>
 </table>
+
 
 
 
