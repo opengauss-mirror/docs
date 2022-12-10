@@ -306,21 +306,54 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     将查询结果按某一列或多列的值分组，值相等的为一组。
 
-    -   CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
-
-        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息， 用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。 以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。
-
     -   GROUPING SETS \( grouping\_element \[, ...\] \)
 
         GROUPING SETS子句是GROUP BY子句的进一步扩展，它可以使用户指定多个GROUP BY选项。 这样做可以通过裁剪用户不需要的数据组来提高效率。 当用户指定了所需的数据组时，数据库不需要执行完整CUBE或ROLLUP生成的聚合集合。
 
+    -   CUBE \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
+
+        CUBE是自动对group by子句中列出的字段进行分组汇总，结果集将包含维度列中各值的所有可能组合，以及与这些维度值组合相匹配的基础行中的聚合值。它会为每个分组返回一行汇总信息， 用户可以使用CUBE来产生交叉表值。比如，在CUBE子句中给出三个表达式（n = 3），运算结果为2<sup>n</sup>  = 2<sup>3</sup>  = 8组。 以n个表达式的值分组的行称为常规行，其余的行称为超级聚集行。例如：
+
+        CUBE (c1,c2,c3)
+        等效于
+        ```
+        GROUPING SETS (
+          (c1, c2, c3),
+          (c1, c2),
+          (c2, c3),
+          (c1, c3),
+          (c1),
+          (c2),
+          (c3),
+          ()
+        )
+        ```
+
+    -   ROLLUP \( \{ expression | \( expression \[, ...\] \) \} \[, ...\] \)
+        
+        ROLLUP是生成多个分组集合的快捷功能。与CUBE子句的差异是，ROLLUP不生成基于特定列所有可能的分组集合，生成分组集合为其子集。ROLLUP假设输入列之间存在层次结构，从而生成有意义的所有分组集合。例如：
+
+        ROLLUP(c1,c2,c3)仅生成4种分组集合，等效于：
+        ```
+        GROUPING SETS (
+          (c1, c2, c3),
+          (c1, c2),
+          (c1),
+          (),
+        )
+        ```
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
-    >如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数，因为对于未分组的字段，可能返回多个数值。
+    > - 如果SELECT列表的表达式中引用了那些没有分组的字段，则会报错，除非使用了聚集函数或者它函数依赖于分组的字段，因为对于未分组的字段，可能返回多个数值。如果分组的字段是包含非分组字段的表的主键（或者主键的子集），则存在函数依赖。
+    > - 如果任何GROUPING SETS、ROLLUP、CUBE作为分组字段存在，则GROUP BY子句整体上定义了数个独立的分组集。其效果等效于在子查询间构建一个UNION ALL，子查询带有分组集作为它们的GROUP BY子句。
+    > - 当前，FOR UPDATE、FOR SHARE、FOR NO KEY UPDATE、FOR KEY SHARE不能和GROUP BY子句一起指定。
 
 -   **HAVING子句**
 
     与GROUP BY子句配合用来选择特殊的组。HAVING子句将组的一些属性与一个常数值比较，只有满足HAVING子句中的逻辑表达式的组才会被提取出来。
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
+    >当前，FOR UPDATE、FOR SHARE、FOR NO KEY UPDATE、FOR KEY SHARE不能和HAVING子句一起指定。
 
 - **WINDOW子句**
 
