@@ -2,15 +2,26 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>
 
-SELECT INTO用于根据查询结果创建一个新表，并且将查询到的数据插入到新表中。
+- SELECT INTO ***new_table***用于根据查询结果创建一个新表，并且将查询到的数据插入到新表中。数据并不返回给客户端，这一点和普通的SELECT不同。新表的字段具有和SELECT的输出字段相同的名称和数据类型。
 
-数据并不返回给客户端，这一点和普通的SELECT不同。新表的字段具有和SELECT的输出字段相同的名称和数据类型。
+
+- SELECT INTO ***var_list***用于把查询的结果赋值给目标变量，其中***var_list***可以是用户自定义变量、存储过程或函数的参数、存储程序的局部变量。
+
+
+​		**注：** *var_list*是存储过程或函数的参数，或是存储程序的局部变量时，参考[存储过程](存储过程.md)章节的语法。以下为用户自定义变量的场景。
 
 ## 注意事项<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_seabd3b47a66045ed92ad80da65bd79cc"></a>
 
-CREATE TABLE AS的作用和SELECT INTO类似，且提供了SELECT INTO所提供功能的超集。建议使用CREATE TABLE AS语法替代SELECT INTO，因为SELECT INTO不能在存储过程中使用。
+- CREATE TABLE AS的作用和SELECT INTO ***new_table***类似，且提供了SELECT INTO ***new_table***所提供功能的超集。建议使用CREATE TABLE AS语法替代SELECT INTO ***new_table***，因为SELECT INTO ***new_table***不能在存储过程中使用。
+
+
+- SELECT INTO ***var_list***中select查询结果只能返回一行，多行情况需要使用limit 1加以限制，否则报错。返回的列数需要和变量的数量保持一致，否则报错。
+
 
 ## 语法格式<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s95d36c6f79da4133a55b3776c59d3449"></a>
+
+- SELECT INTO ***new_table***语法
+
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -19,7 +30,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     INTO [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] [ TABLE ] new_table
     [ FROM from_item [, ...] ]
     [ WHERE condition ]
-    [ GROUP BY expression [, ...] ]
+    [ GROUP BY grouping_element [, ...] ]
     [ HAVING condition [, ...] ]
     [ WINDOW {window_name AS ( window_definition )} [, ...] ]
     [ { UNION | INTERSECT | EXCEPT | MINUS } [ ALL | DISTINCT ] select ]
@@ -28,6 +39,30 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ OFFSET start [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
     [ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT |WAIT N]} [...] ];
+```
+
+- SELECT INTO ***var_list***语法
+
+
+```
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
+    { * | {expression [ [ AS ] output_name ]} [, ...] }
+    [into_option]
+    [ FROM from_item [, ...] ]
+    [ WHERE condition ]
+    [ [ START WITH condition ] CONNECT BY [NOCYCLE] condition [ ORDER SIBLINGS BY expression ] ]
+    [ GROUP BY grouping_element [, ...] ]
+    [ HAVING condition [, ...] ]
+    [ WINDOW {window_name AS ( window_definition )} [, ...] ]
+    [ { UNION | INTERSECT | EXCEPT | MINUS } [ ALL | DISTINCT ] select ]
+    [ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
+    [ LIMIT { [offset,] count | ALL } ]
+    [ OFFSET start [ ROW | ROWS ] ]
+    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
+    [into_option]
+    [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N ]} [...] ];
+    [into_option]
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s5393efdc6e4a42e096e2fd326054418c"></a>
@@ -64,10 +99,16 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作。
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
 
+- **into_option**
+    -   INTO语句可以出现在三个位置，在同一个SELECT语句中只能有一个into子句。
+    -   需要在b模式数据库，并且guc参数enable_set_variable_b_format设置为on的时候，才能正确识别用户自定义变量。
+    into_option: { INTO var_name [, var_name] ... }
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >
->SELECT INTO的其它参数可参考SELECT的[参数说明](SELECT.md#zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)。
+>SELECT INTO的其它参数可参考SELECT的[参数说明](SELECT.md#zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc)。content\zh\docs\Developerguide\SELECT-INTO.md
+>
+>参数var_name可参考SET中对[var_name](..\..\..\zh\docs\Developerguide\set.md)的说明。
 
 ## 示例<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
 
@@ -78,6 +119,20 @@ INSERT 0 6
 
 --删除tpcds.reason_t1表。
 openGauss=# DROP TABLE tpcds.reason_t1;
+
+--SELECT INTO varlist的三个位置
+openGauss=# SELECT * INTO @my_var FROM t;
+SELECT INTO
+openGauss=# SELECT * FROM t INTO @my_var FOR UPDATE;
+SELECT INTO
+openGauss=# SELECT * FROM t FOR UPDATE INTO @my_var;
+SELECT INTO
+
+--报错场景
+openGauss=# select * from t into @aa;
+ERROR:  select result consisted of more than one row
+openGauss=# select * from t limit 1 into @aa,@bb;
+ERROR:  number of variables must equal the number of columns
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_se82df922609a4e8eb3a6d6a011e508a6"></a>
@@ -93,5 +148,4 @@ openGauss=# DROP TABLE tpcds.reason_t1;
 -   **SYSTEM**
 
     不建议在事务中reindex系统表。
-
 

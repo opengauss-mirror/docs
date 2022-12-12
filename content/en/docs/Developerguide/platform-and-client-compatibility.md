@@ -87,7 +87,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >-   This parameter can be set only by dbcompatibility when you run the [CREATE DATABASE](create-database.md) command to create a database.
 >-   In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
-## enable_set_variables_b_format<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980108261141"></a>
+## enable_set_variable_b_format<a name="zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980108261141"></a>
 
 **Parameter description:** Specifies whether the function of customizing user variables is supported in the MY-compatible database.
 
