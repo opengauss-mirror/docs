@@ -77,6 +77,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
     提交组在到达配置的事务数后或者在超时后关闭。组关闭后，组中的所有事务等待一个组落盘完成执行，然后通知客户端每个事务都已经结束。
 
+    >![](public_sys-resources/icon-note.gif)**说明：**
     有关同步组提交日志记录的详细信息，请参阅[MOT日志类型](MOT持久性.md#section125771537134)。
 
 
@@ -109,6 +110,12 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >有关配置的详细信息，请参阅[MOT恢复](MOT恢复.md)。
+
+-   **parallel_recovery_workers = 5**
+    指定在重做恢复/回放期间使用的工作线程数。
+
+-   **parallel_recovery_workers = 5**
+    指定恢复期间用于保存重做日志段的队列大小。此参数还限制并行恢复期间处于活动状态（进行中）的最大事务数。如果达到此限制，重做回放将等待某些事务提交，然后再处理新事务的重做日志。
 
 ## 统计（MOT）<a name="section659861612477"></a>
 
@@ -194,7 +201,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
     指定是否使用可识别NUMA的内存。禁用时，所有亲和性配置也将被禁用。MOT引擎假定所有可用的NUMA节点都有内存。如果计算机具有某些特殊配置，其中某些NUMA节点没有内存，则MOT引擎初始化将因此失败，因此数据库服务器启动将失败。在此类计算机中，建议将此配置值设置为false，以防止启动失败并让MOT引擎在不使用可识别NUMA的内存分配的情况下正常运行。
     
--   **affinity\_mode = fill-physical-first**
+-   **affinity\_mode = equal-per-socket**
 
     设置用户会话和内部MOT任务的线程亲和模式。
 
@@ -324,10 +331,6 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
 ## 垃圾收集（MOT）<a name="section22885696"></a>
 
--   **enable\_gc = true**
-
-    是否使用垃圾收集器（Garbage Collector，GC）。
-
 -   **reclaim\_threshold = 512 KB**
 
     设置垃圾收集器的内存阈值。
@@ -351,28 +354,32 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
 ## JIT（MOT）<a name="section4644675"></a>
 
--   **enable\_mot\_codegen = true**
+-   **enable\_mot\_codegen = false**
 
     指定是否对计划查询使用JIT查询编译和执行。
 
     JIT查询执行为在计划阶段准备好的查询准备了JIT编译的代码。每当调用准备好的查询时，都会执行生成的JIT编译函数。JIT编译通常以LLVM的形式进行。在原生不支持LLVM的平台上，MOT提供了基于软件的回退（Tiny Virtual Machine，TVM）。
 
--   **force\_mot\_pseudo\_codegen = false**
-
-    当前平台支持LLVM时，是否使用TVM（伪LLVM）。
-
-    在原生不支持LLVM的平台上，MOT自动默认为TVM。
-
-    在原生支持LLVM的平台上，默认使用LLVM。该配置项允许在支持LLVM的平台上使用TVM进行JIT编译和执行。
-
 -   **enable\_mot\_codegen\_print = false**
 
-    指定是否为JIT编译的查询打印发出的LLVM/TVM IR代码。
+    是否为JIT编译的查询打印发出的LLVM/TVM IR代码。
 
--   **mot\_codegen\_limit = 100**
+-   **mot\_codegen\_limit = 50000**
 
-    限制每个用户会话允许的JIT查询数。
+    限制每个用户会话允许的JIT查询数量。
 
+-   **enable_mot_query_codegen = true**
+
+    计划查询是否使用JIT查询编译和执行。JIT查询执行允许在规划阶段为预处理查询提供即时编译代码。每当调用预处理查询时，就会执行生成的JIT编译函数。JIT编译以LLVM的形式进行。
+
+-   **enable_mot_sp_codegen = true**
+
+    存储过程是否使用JIT查询编译和执行。JIT查询执行允许在编译阶段为存储过程提供即时编译代码。每当调用存储过程时，就会执行生成的JIT编译函数。
+
+-   **enable_mot_codegen_profile = true**
+
+    是否使用JIT分析。使用此选项时，mot_jit_profile()函数可用于获取JIT存储过程和查询的运行时配置数据。
+    
 ## 默认MOT.conf文件<a name="section40674409"></a>
 
 最小设置和配置指定将postgresql.conf文件指向MOT.conf文件的位置：
