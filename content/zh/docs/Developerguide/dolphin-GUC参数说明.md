@@ -528,3 +528,18 @@ dayname
 **取值范围**：[0, 2]
 
 **默认值**：1
+
+## dolphin\.default\_database\_name<a name="section203671436850"></a>
+
+**参数说明：**dolphin协议插件默认使用的opengauss数据库实例名称
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
+
+**取值范围**：字符串
+
+**默认值：**加载dolphin协议插件时，当前会话的database\_name
