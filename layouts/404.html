@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+    {{ partial "head.html" . }}
 
-{{ partial "head.html" . }}
-
-<body>
-    <div id="all">
-
-        <div class="not-found container">
-            <span>{{ .Site.Params.notFound }}</span>
-            <img src="/img/404-banner.png" alt="404 not found" />
+    <body>
+        <div id="all">
+            <div class="not-found container">
+                <span>{{ .Site.Params.notFound }}</span>
+                <img src="/img/404.png" alt="404 not found" />
+            </div>
         </div>
-    </div>
-    
-</body>
+    </body>
 </html>
