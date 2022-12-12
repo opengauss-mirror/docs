@@ -814,7 +814,7 @@ body{
   right: 4vw;
   top: 100px;
   width: 200px;
-  height: calc(100vh - 426px);
+  height: calc(100vh - 500px);
 }
 .book-toc::before {
   display: block;
@@ -827,7 +827,7 @@ body{
   background-color: var(--o-color-division1);
 }
 .book-toc #toc-list {
-  height: 150px;
+  height: 100%;
   overflow-y: scroll;
 }
 .book-toc #toc-list::-webkit-scrollbar {

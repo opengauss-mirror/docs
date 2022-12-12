@@ -25,7 +25,7 @@ following commands.
 hugo can be installed easily after nodejs is ready.
 
 ```
-curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_0.56.3_Linux-64bit.tar.gz | tar -xz && \
+curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_0.104.3_Linux-64bit.tar.gz | tar -xz && \
     mv hugo /usr/local/bin/
 ```
 

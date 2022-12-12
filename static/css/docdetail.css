@@ -526,7 +526,12 @@
 #prev:hover a,#next:hover a{
     color: var(--o-color-brand1);
 }
-
+.prev-next .disabled a,
+.prev-next .disabled .icon-next,
+.prev-next .disabled .icon-prev{
+  color: var(--o-color-text4) !important;
+  cursor:no-drop;
+}
 .top-link .prev-next span,
 .top-link .other-link span {
     font-size: 16px;
@@ -630,7 +635,7 @@
 
 #title-evaluate {
     position: fixed;
-    bottom: 326px;
+    bottom: 200px;
     right: 10vw;
     max-height: calc(100vh - 157px);
     z-index: 1002;
