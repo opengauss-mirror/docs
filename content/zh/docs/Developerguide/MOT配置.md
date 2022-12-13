@@ -358,11 +358,11 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
     指定是否对计划查询使用JIT查询编译和执行。
 
-    JIT查询执行为在计划阶段准备好的查询准备了JIT编译的代码。每当调用准备好的查询时，都会执行生成的JIT编译函数。JIT编译通常以LLVM的形式进行。在原生不支持LLVM的平台上，MOT提供了基于软件的回退（Tiny Virtual Machine，TVM）。
+    JIT查询执行为在计划阶段准备好的查询准备了JIT编译的代码。每当调用准备好的查询时，都会执行生成的JIT编译函数。JIT编译通常以LLVM的形式进行。
 
 -   **enable\_mot\_codegen\_print = false**
 
-    是否为JIT编译的查询打印发出的LLVM/TVM IR代码。
+    是否为JIT编译的查询打印发出的LLVM代码。
 
 -   **mot\_codegen\_limit = 50000**
 
