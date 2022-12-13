@@ -1817,13 +1817,12 @@ code {
         width: 900px !important;
     }
 }
-#right-style{
-    display: flex;
+ #right-style{
+    /*display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    align-items: center;
-    /* padding-right: 120px; */
-}
+    align-items: center;*/
+} 
 @media screen and (min-width: 1980px) {
      #h5-menu-top .select-box {
         right: 190px !important;

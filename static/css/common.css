@@ -84,6 +84,7 @@ i {
     align-items: center;
     padding: 0 64px;
     max-width: 1620px;
+    justify-content: space-between;
 }
 @media screen and (min-width: 1958px){
     .nav-box .nav-menu{
@@ -243,7 +244,7 @@ i {
     width: 113px;
     height: 60px;
     position: absolute;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: var(--o-color-text1);line-height: 16px;
     margin-left: 80px;
