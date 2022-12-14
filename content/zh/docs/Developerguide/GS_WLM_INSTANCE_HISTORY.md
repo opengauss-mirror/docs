@@ -1,6 +1,6 @@
 # GS\_WLM\_INSTANCE\_HISTORY<a name="ZH-CN_TOPIC_0289900166"></a>
 
-GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据库节点）相关的资源使用相关信息。该系统表里每条记录都是对应时间点某实例资源使用情况，包括：内存、CPU核数、磁盘IO、进程物理IO和进程逻辑IO信息。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。
+GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据库节点）相关的资源使用相关信息。该系统表里每条记录都是对应时间点某实例资源使用情况，包括：内存、CPU核数、磁盘IO、进程物理IO和进程逻辑IO信息。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。（IO等资源使用的相关统计仅在分布式生效，集中式不生效）
 
 **表 1**  GS\_WLM\_INSTANCE\_HISTORY字段
 
@@ -96,6 +96,7 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p497345154017"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p497345154017"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p497345154017"></a><span id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_text101735572163"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_text101735572163"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_text101735572163"></a>数据库主节点</span>实例：不统计。</p>
 <p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p79731451154010"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p79731451154010"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p79731451154010"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑读字节速率，单位KB/s。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_row135252052966"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p052511521460"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p052511521460"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p052511521460"></a>logical_write</p>
@@ -104,6 +105,7 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p10400171410419"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p10400171410419"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p10400171410419"></a>数据库主节点实例：不统计。</p>
 <p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p12401914134118"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p12401914134118"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p12401914134118"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑写字节速率，单位KB/s。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_row852513521069"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p195252524616"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p195252524616"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p195252524616"></a>read_counts</p>
@@ -112,6 +114,7 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p11861122217413"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p11861122217413"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p11861122217413"></a>数据库主节点实例：不统计。</p>
 <p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p20861182210416"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p20861182210416"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p20861182210416"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑读操作次数之和，单位次。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_row8525052867"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p852519521066"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p852519521066"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p852519521066"></a>write_counts</p>
@@ -120,6 +123,7 @@ GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p65004318417"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p65004318417"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p65004318417"></a>数据库主节点实例：不统计。</p>
 <p id="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p3500931204113"><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p3500931204113"></a><a name="zh-cn_topic_0283136549_zh-cn_topic_0237122262_p3500931204113"></a>数据库节点实例：该实例在本次统计间隙（10秒）内逻辑写操作次数之和，单位次。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 </tbody>
