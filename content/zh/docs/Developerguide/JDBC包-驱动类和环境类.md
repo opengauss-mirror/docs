@@ -2,7 +2,9 @@
 
 ## JDBC包<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>
 
-在Linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取，包名为openGauss-x.x.x-操作系统版本号-64bit-Jdbc.tar.gz。
+openGauss提供两种JDBCjar包：postgresql.jar和openGauss-jdbc-x.x.x.jar，两种jar包功能一致，仅仅是为了解决和PostgreSQL之间的JDBC驱动包名冲突。
+
+在Linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar和opengauss-jdbc-x.x.x.jar，包位置在源代码内output目录下。从发布包中获取，包名为openGauss-x.x.x-操作系统版本号-64bit-Jdbc.tar.gz。
 
 驱动包与PostgreSQL保持兼容，其中类名、类结构与PostgreSQL驱动完全一致，曾经运行于PostgreSQL的应用程序可以直接移植到当前系统使用。
 
@@ -12,7 +14,7 @@
 
 >![](public_sys-resources/icon-note.png) **说明：**
 >
->+ 由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC驱动包时，org.postgresql.Driver驱动类会冲突。
+>+ openGauss在JDBC的使用上与PG的使用方法保持兼容。在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC同名驱动时，可能存在org.postgresql.Driver驱动类冲突问题。
 >
 >+ 相比于PG驱动，openGauss JDBC驱动主要做了以下特性的增强：
 >
