@@ -43,6 +43,10 @@
 -   对于分区表PARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
 -   分区数最大值为1048575个，一般情况下业务不可能创建这么多分区，这样会导致内存不足。应参照参数local\_syscache\_threshold的值合理创建分区，分区表使用内存大致为（分区数 \* 3 / 1024）MB。理论上分区占用内存不允许大于local\_syscache\_threshold的值，同时还需要预留部分空间以供其他功能使用。
 -   使用table_indexclause创建分区表上的索引为LOCAL索引，不支持选择GLOBAL索引。
+-   支持使用表达式当作分区键，允许分区键使用算术运算符 "+"、"-"、"*"。
+-   只支持部分函数允许在分区键中使用，支持的函数为:
+    ABS()、CEILING()、DATEDIFF()、DAY()、DAYOFMONTH()、DAYOFWEEK()、DAYOFYEAR()、EXTRACT() 、FLOOR()、HOUR()、MICROSECOND()、MINUTE()、MOD()、MONTH()、QUARTER()、SECOND()、TIME_TO_SEC()、TO_DAYS()、TO_SECONDS()、UNIX_TIMESTAMP()、WEEKDAY()、YEAR()、YEARWEEK()。
+-   表达式用作分区键时，只支持设置一个partition key，且分区为range、hash和list分区，另外暂不支持列存表。
 
 
 ## 语法格式<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
@@ -1284,6 +1288,43 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     );
     ```
 
+-   示例7：创建分区键为表达式分区的分区表。
+
+    ```
+    openGauss=# create table testrangepart(a int, b int) partition by range(abs(a*2))
+    (
+        partition p0 values less than(100),
+        partition p1 values less than(200)
+    );
+    CREATE TABLE
+    openGauss=# select partkeyexpr from pg_partition where (parttype = 'r') and (parentid in (select oid from pg_class where relname = 'testrangepart'));
+                                                                                                                                                                                                                                                                                                                                                            partkeyexpr                                                                                                                                                                                                                                                                                                                                               
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    {FUNCEXPR :funcid 1397 :funcresulttype 23 :funcresulttype_orig -1 :funcretset false :funcformat 0 :funccollid 0 :inputcollid 0 :args ({OPEXPR :opno 514 :opfuncid 141 :opresulttype 23 :opretset false :opcollid 0 :inputcollid 0 :args ({VAR :varno 1 :varattno 1 :vartype 23 :vartypmod -1 :varcollid 0 :varlevelsup 0 :varnoold 1 :varoattno 1 :location 64} {CONST :consttype 23 :consttypmod -1 :constcollid 0 :constlen 4 :constbyval true :constisnull false :ismaxvalue false :location 66 :constvalue 4 [ 2 0 0 0 0 0 0 0 ] :cursor_data  :row_count 0 :cur_dno -1 :is_open false :found false :not_found false :null_open false :null_fetch false}) :location 65}) :location 60 :refSynOid 0}
+    (1 row)
+
+    openGauss=# insert into testrangepart values(-51,1),(49,2);
+    INSERT 0 2
+    openGauss=# insert into testrangepart values(-101,1);
+    ERROR:  inserted partition key does not map to any table partition
+    openGauss=# select * from testrangepart partition(p0);
+    a  | b 
+    ----+---
+    49 | 2
+    (1 row)
+
+    openGauss=# select * from testrangepart partition(p1);
+    a  | b 
+    -----+---
+    -51 | 1
+    (1 row)
+
+    openGauss=# select * from testrangepart where a = -51;
+    a  | b 
+    -----+---
+    -51 | 1
+    (1 row)
+    ```
 
 
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
