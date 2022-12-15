@@ -53,6 +53,18 @@ OPTION取值如下所示：
 
     设置下一个multitransaction的偏移量。
 
+-   --enable-dss
+
+    共享存储参数，开启共享存储功能。
+
+-   --socketpath=SOCKETPATH
+
+    共享存储参数，dss实例进程使用的socket文件路径，仅支持绝对路径。
+
+-   --vgname=VGDATA
+
+    共享存储参数，共享存储的数据目录。
+
 -   -V, --version
 
     显示版本信息。
@@ -64,5 +76,16 @@ OPTION取值如下所示：
 -   -?, --help
 
     打印帮助信息。
+
+
+## 使用举例（DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
+
+```
+pg_resetxlog [OPTION]... DATADIR --enable-dss --vgname=VGDATA --socketpath=SOCKETPATH
+```
+
+**DSS模式使用说明：**
+
+在DSS模式，用户需要指定数据库文件系统的数据目录DATADIR，用于判断数据库是否关闭，同时也需要指定共享存储的数据目录，用于操作共享存储中的文件。由于备机dss不能写，用户只能在主机执行该工具，并且数据库必须是正常关闭的状态。用户在执行该工具之后，工具会自动识别主机并对主机的日志进行重置。
 
 
