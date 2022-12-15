@@ -119,7 +119,7 @@
 
 - ^
 
-  描述：实现两个整数之间的按位异或。
+  描述：实现两个整数之间的按位异或。注意，异或操作符不支持非0/1的bool类型，也不支持raw类型。
 
   返回值类型：INT
 
@@ -133,7 +133,7 @@
   （1 row）
   ```
 
-  描述：当```set dolphin.b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
+  描述：当```set dolphin.b_compatibility_mode=0```后，可以实现对float数据的幂运算。当```set dolphin.b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
 
   返回值类型：DOUBLE
 
