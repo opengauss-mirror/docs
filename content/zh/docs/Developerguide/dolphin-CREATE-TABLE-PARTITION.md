@@ -155,7 +155,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   partition\_less\_than\_item：
 
     ```
-    PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) [TABLESPACE tablespace_name]
+    PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) | MAXVALUE [TABLESPACE tablespace_name]
     ```
 
 -   partition\_start\_end\_item：
@@ -163,9 +163,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     ```
     PARTITION partition_name {
             {START(partition_value) END (partition_value) EVERY (interval_value)} |
-            {START(partition_value) END ({partition_value | MAXVALUE})} |
+            {START(partition_value) END ({partition_value | MAXVALUE}) | MAXVALUE} |
             {START(partition_value)} |
-            {END({partition_value | MAXVALUE})}
+            {END ({partition_value | MAXVALUE}) | MAXVALUE}
     } [TABLESPACE tablespace_name]
     ```
 
@@ -317,7 +317,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
-- **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \)**
+- **PARTITION partition\_name VALUES LESS THAN \( \{ partition\_value | MAXVALUE \} \) | MAXVALUE**
 
   指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
@@ -327,7 +327,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   >-   分区上边界的类型应当和分区键的类型一致。
   >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
-- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\}** |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\)**\} | \{START\(partition\_value\)**\} | **\{END \(partition\_value | MAXVALUE\)**\}
+- **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\}** |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\) | MAXVALUE**\} | \{START\(partition\_value\)**\} | **\{END \(partition\_value | MAXVALUE\) | MAXVALUE**\}
 
   指定各分区的信息，各参数意义如下：
 
