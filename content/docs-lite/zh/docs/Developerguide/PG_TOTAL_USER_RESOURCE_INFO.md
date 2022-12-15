@@ -96,6 +96,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p46381241142211"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p46381241142211"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p46381241142211"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text113271146162214"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text113271146162214"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text113271146162214"></a>数据库主节点</span>：过去5秒内，该用户在数据库节点上复杂作业read的字节总数（单位KB）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>数据库节点：实例启动至当前时间为止，该用户复杂作业read的字节总数（单位KB）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_row758511216274"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1158617212276"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1158617212276"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1158617212276"></a>write_kbytes</p>
@@ -104,6 +105,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p25861121172715"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p25861121172715"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p25861121172715"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text1226234812219"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text1226234812219"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text1226234812219"></a>数据库主节点</span>：过去5秒内，该用户在数据库节点上复杂作业write的字节总数（单位KB）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1917191716289"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1917191716289"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1917191716289"></a>数据库节点：实例启动至当前时间为止，该用户复杂作业write的字节总数（单位KB）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_row1020031172910"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42019182917"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42019182917"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42019182917"></a>read_counts</p>
@@ -112,6 +114,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p19710105172920"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p19710105172920"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p19710105172920"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text15541134911222"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text15541134911222"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text15541134911222"></a>数据库主节点</span>：过去5秒内，该用户在数据库节点上复杂作业read的次数之和（单位次）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1720114116299"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1720114116299"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1720114116299"></a>数据库节点：实例启动至当前时间为止，该用户复杂作业read的次数之和（单位次）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_row14601458142920"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p16460125819296"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p16460125819296"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p16460125819296"></a>write_counts</p>
@@ -120,6 +123,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p193961020133012"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p193961020133012"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p193961020133012"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text48946503228"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text48946503228"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text48946503228"></a>数据库主节点</span>：过去5秒内，该用户在数据库节点上复杂作业write的次数之和（单位次）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p11460158142912"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p11460158142912"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p11460158142912"></a>数据库节点：实例启动至当前时间为止，该用户复杂作业write的次数之和（单位次）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_row1222144193118"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1722844173115"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1722844173115"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p1722844173115"></a>read_speed</p>
@@ -128,6 +132,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p922184415311"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p922184415311"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p922184415311"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text61671852172213"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text61671852172213"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text61671852172213"></a>数据库主节点</span>：过去5秒内，该用户在单个数据库节点上复杂作业read平均速率（单位KB/s）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42022014332"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42022014332"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p42022014332"></a>数据库节点：过去5秒内，该用户在该数据库节点上复杂作业read平均速率（单位KB/s）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_row78702338"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p4910083314"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p4910083314"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p4910083314"></a>write_speed</p>
@@ -136,6 +141,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO视图显示所有用户资源使用情况，需�
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p2091702339"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p2091702339"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p2091702339"></a><span id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text9531205312229"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text9531205312229"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_text9531205312229"></a>数据库主节点</span>：过去5秒内，该用户在单个数据库节点上复杂作业write平均速率（单位KB/s）。</p>
 <p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p7807924163514"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p7807924163514"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p7807924163514"></a>数据库节点：过去5秒内，该用户在该数据库节点上复杂作业write平均速率（单位KB/s）。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 </tbody>
