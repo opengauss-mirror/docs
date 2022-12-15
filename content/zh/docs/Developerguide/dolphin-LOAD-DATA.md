@@ -8,13 +8,13 @@
 ## 注意事项<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_sc996fd2c14664963bae3e1e0ce655461"></a>
 
 -   当参数enable\_copy\_server\_files关闭时，只允许初始用户执行LOAD DATA命令，当参数enable\_copy\_server\_files打开，允许具有SYSADMIN权限的用户或继承了内置角色gs\_role\_copy\_files权限的用户执行，但默认禁止对数据库配置文件、密钥文件、证书文件和审计日志执行，以防止用户越权查看或修改敏感文件。
--   COPY只能用于表，不能用于视图。
+-   只能用于表，不能用于视图。
 -   不支持列存表和外表。
--   LOAD DATA 需要插入的表的insert权限, replace选项还需要表的delete权限。
--   如果声明了一个字段列表，COPY将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，COPY FROM将为那些字段插入缺省值。
+-   需要插入的表的insert权限, replace选项还需要表的delete权限。
+-   如果声明了一个字段列表，LOAD将只在文件和表之间拷贝已声明字段的数据。如果表中有任何不在字段列表里的字段，将为那些字段插入缺省值。
 -   声明的数据源文件，服务器必须可以访问该文件。
--   如果数据文件的任意行包含比预期多或者少的字段，LOAD DATA将抛出一个错误。
--   LOAD DATA \\N为空字符串，如果要输入实际数据值\\N ，使用\\\\N。
+-   如果数据文件的任意行包含比预期多或者少的字段，dolphin.sql_mode为严格模式时将抛出一个错误，宽松模式时缺少的字段将插入NULL,如果字段有NOT NULL约束则会插入类型基础值。
+-   \\N为NULL，如果要输入实际数据值\\N ，使用\\\\N。
 
 ## 语法格式<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s85a73a9ad894403da754c5d6b3d821g2"></a>
 
@@ -69,7 +69,7 @@
 
 -   **LINES TERMINATED BY 'string'**
 
-    指定导入数据文件换行符样式。
+    指定导出数据文件换行符样式。
 
     取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
     
@@ -88,7 +88,7 @@
 
 -   **\[OPTIONALLY\] ENCLOSED BY 'char'**
     
-    引号字符。
+    指定包裹符，完整包裹符内的数据将被当成一列的参数进行解析，OPTIONALLY没有实际意义。
     
     缺省值：双引号。
     
@@ -107,7 +107,7 @@
 
 -   **IGNORE number \{LINES \| ROWS\}**
 
-    指定数据导入时，跳过数据文件的前 number行。
+    指定数据导出时，跳过数据文件的前 number行。
 
 ## 示例<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s30bb80bf2fbd4cb3af1ab84e7cb1e0h8"></a>
 
@@ -122,15 +122,25 @@ openGauss=# CREATE TABLE load_t1
     SM_CODE                   CHAR(10)                      ,
     SM_CARRIER                CHAR(20)                      ,
     SM_CONTRACT               CHAR(20)
-)
-WITH (ORIENTATION = COLUMN,COMPRESSION=MIDDLE)
-;
+);
+--/home/omm/test.csv文件
+1,a,b,c,d,e
+,a,b,c,d,e
+3,\N,a,b,c,d
+\N,a,b,c,d,e
 
 --从/home/omm/test.csv文件拷贝数据到表load_t1。
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1;
 
 --从/home/omm/test.csv文件拷贝数据到表load_t1，使用参数如下：字段分隔符为'\t' (fields terminated by E'\t') 换行符为'\r' (lines terminated by E'\r') 跳过前两行 (IGNORE 2 LINES)。
-openGauss=# LOAD DATA '/home/omm/test.csv' INTO TABLE load_t1 fields terminated by E'\t' lines terminated by E'\r' IGNORE 2 LINES;
+openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1 fields terminated by ',' lines terminated by E'\n' IGNORE 2 LINES;
+
+openGauss=# select * from load_t1;
+ sm_ship_mode_sk | sm_ship_mode_id  |            sm_type             |  sm_code   |      sm_carrier      |     sm_contract
+-----------------+------------------+--------------------------------+------------+----------------------+----------------------
+               3 |                  | a                              | b          | c                    | d
+               0 | a                | b                              | c          | d                    | e
+(2 rows)
 
 --删除load_t1。
 openGauss=# DROP TABLE load_t1;
