@@ -8,13 +8,13 @@ MOT设计几乎能够覆盖SQL和未来特性集。例如，大多数支持标�
 
 MOT不支持以下特性：
 
--   跨引擎操作：不支持跨引擎（磁盘+MOT）的查询、视图或事务。计划于2021年实现该特性。
--   MVCC、隔离：不支持没有快照/可序列化隔离。计划于2021年实现该特性。
--   原生编译（JIT）：SQL覆盖有限。此外，不支持存储过程的JIT编译。
+-   隔离性：不支持SERIALIZABLE隔离。
+-   查询原生编译（JIT）：SQL覆盖范围有限。
 -   本地内存限制为1GB。一个事务只能更改小于1GB的数据。
--   容量（数据+索引）受限于可用内存。未来将提供Anti-caching和数据分层功能。
+-   容量（数据+索引）受限于可用内存。
 -   不支持全文检索索引。
 -   不支持逻辑复制特性。
+-   不支持保存点。
 
 此外，下面详细列出了MOT、MOT索引、查询和DML语法的各种通用限制，以及查询原生编译的特点和限制。
 
@@ -26,15 +26,14 @@ MOT功能限制：
 -   AES加密、数据动态脱敏、行级访问控制
 -   流操作
 -   自定义类型
--   子事务
+-   子事务：仅支持存储过程的语句块上下文，且有以下限制：MOT恢复支持仅包含SELECT操作的子事务，且仅允许只读回滚。在这种情况下，父事务将中止。
 -   DML触发器
 -   DDL触发器
 -   “C”或“POSIX”以外的排序规则
 
 ## 不支持的DDL操作<a name="section56822082"></a>
 
--   修改表结构
--   创建including表
+-   CREATE FORIGN table LIKE：有限支持，LIKE可以用于任何表（MOT和堆表），但不带任何选项、数据或索引。
 -   创建as select表
 -   按范围分区
 -   创建无日志记录子句（no-logging clause）的表
@@ -182,13 +181,13 @@ MOT功能限制：
 ## 不支持的DML<a name="section17128987"></a>
 
 -   Merge into
--   Select into
 -   Lock table
 -   Copy from table
 -   Upsert
 
-## 原生编译和轻量执行不支持的查询<a name="section19943160"></a>
+## 不支持的JIT功能（原生编译和执行）<a name="section4815162910417"></a>
 
+-   存储过程编译：仅访问MOT表的存储过程可用。
 -   查询涉及两个以上的表
 -   查询有以下任何一个情况：
     -   非原生类型的聚合
@@ -207,7 +206,7 @@ MOT功能限制：
 -   Having clause
 -   Windows clause
 -   Distinct clause
--   Sort clause that does not conform to native index order
+-   Sort clause that does not conform to native index order：支持，但所有排序列都必须存在于SELECT中。
 -   Set operations
 -   Constraint dependencies
 

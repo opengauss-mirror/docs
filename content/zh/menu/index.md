@@ -620,6 +620,8 @@ headless: true
 				-   [为MOT创建索引]({{< relref "./docs/Developerguide/为MOT创建索引.md" >}})
 				-   [将磁盘表转换为MOT]({{< relref "./docs/Developerguide/将磁盘表转换为MOT.md" >}})
 				-   [查询原生编译]({{< relref "./docs/Developerguide/查询原生编译.md" >}})
+					-   [JIT存储过程]({<relref"./docs/Developerguide/JIT存储过程.md">}}）
+					-   [MOT JIT诊断]({<relref"./docs/Developerguide/MOT-JIT诊断.md">}})
 				-   [重试中止事务]({{< relref "./docs/Developerguide/重试中止事务.md" >}})
 				-   [MOT外部支持工具]({{< relref "./docs/Developerguide/MOT外部支持工具.md" >}})
 				-   [MOT SQL覆盖和限制]({{< relref "./docs/Developerguide/MOT-SQL覆盖和限制.md" >}})

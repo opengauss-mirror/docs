@@ -57,16 +57,16 @@
 </tr>
 <tr id="row42988862"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p59545773"><a name="p59545773"></a><a name="p59545773"></a>隔离级别</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.1.4.1.2 "><a name="ul58478297"></a><a name="ul58478297"></a><ul id="ul58478297"><li>RC+SI</li><li>RR</li><li>序列化</li></ul>
+<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><a name="ul51336373"></a><a name="ul51336373"></a><ul id="ul51336373"><li>RC+SI</li><li>RR</li></ul>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.1.4.1.3 "><a name="ul65471412"></a><a name="ul65471412"></a><ul id="ul65471412"><li>RC</li><li>RR</li><li>RC+SI（V2版本）</li></ul>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><a name="ul54139417"></a><a name="ul54139417"></a><ul id="ul54139417"><li>RC+SI</li><li>RR</li></ul>
 </td>
 </tr>
 <tr id="row61206697"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p58795437"><a name="p58795437"></a><a name="p58795437"></a>并发控制策略</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.1.4.1.2 "><p id="p64809920"><a name="p64809920"></a><a name="p64809920"></a>悲观</p>
+<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><p id="p3077358"><a name="p3077358"></a><a name="p3077358"></a>悲观+MVCC</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.1.4.1.3 "><p id="p15112205"><a name="p15112205"></a><a name="p15112205"></a>乐观</p>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p47939452"><a name="p47939452"></a><a name="p47939452"></a>乐观+MVCC</p>
 </td>
 </tr>
 <tr id="row1792120"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p10944012"><a name="p10944012"></a><a name="p10944012"></a>数据容量（数据+索引）</p>
@@ -80,7 +80,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.1.4.1.2 "><p id="p33840186"><a name="p33840186"></a><a name="p33840186"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.1.4.1.3 "><p id="p56700530"><a name="p56700530"></a><a name="p56700530"></a>是</p>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><p id="p25795375"><a name="p25795375"></a><a name="p25795375"></a>Yes<ul><li>Query (by PREPARE command)</li><li>存储过程（使用PREPARE命令）</li></ul></p>
 </td>
 </tr>
 <tr id="row40542723"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.1.4.1.1 "><p id="p62735159"><a name="p62735159"></a><a name="p62735159"></a>复制、恢复</p>

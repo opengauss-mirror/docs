@@ -20,6 +20,9 @@
     drop FOREIGN table test;
     ```
 
+-   ALTER TABLE
+
+    支持添加列、删除列和重命名列。
 
 有关MOT的功能限制（如数据类型），请参见[MOT SQL覆盖和限制](MOT-SQL覆盖和限制.md)。
 
