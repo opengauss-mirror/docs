@@ -106,12 +106,12 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
-    用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于临时表。
+    用于声明一个或多个可以在主查询中通过名称引用的子查询，相当于只在主查询中存在的临时表，其可以将复杂的查询简化。
 
-    如果声明了RECURSIVE，那么允许SELECT子查询通过名称引用它自己。
-
-    其中with\_query的详细格式为：with\_query\_name \[ \( column\_name \[, ...\] \) \] AS \[ \[ NOT \] MATERIALIZED \] \( \{select | values | insert | update | delete\} \)
-
+    其中with\_query的详细格式为
+    ```
+    with_query_name [ ( column_name [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
+    ```
     -   with\_query\_name指定子查询生成的结果集名称，在查询中可使用该名称访问子查询的结果集。
     -   column\_name指定子查询结果集中显示的列名。
     -   每个子查询可以是SELECT，VALUES，INSERT，UPDATE或DELETE语句。
@@ -119,6 +119,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         -   如果声明为MATERIALIZED，WITH查询将被物化，生成一个子查询结果集的拷贝，在引用处直接查询该拷贝，因此WITH子查询无法和主干SELECT语句进行联合优化（如谓词下推、等价类传递等），对于此类场景可以使用NOT MATERIALIZED进行修饰，如果WITH查询语义上可以作为子查询内联执行，则可以进行上述优化。
         -   如果用户没有显示声明物化属性则遵守以下规则：如果CTE只在所属SELECT主干中被引用一次，且语义上支持内联执行，则会被改写为子查询内联执行，否则以CTE Scan的方式物化执行。
 
+    如果声明了RECURSIVE，那么允许AS后的SELECT子查询通过名称引用自己，详细格式为：
+    ```
+    non_recursive_term UNION [ ALL | DISTINCT ] recursive_term
+    ```
+    -  即由非递归项、UNION、递归项组成
+    -  只有递归项中可以引用自己
+    -  每个查询中只允许一个递归自引用
 
 -   **plan\_hint子句**
 
@@ -313,8 +320,46 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **CONNECT BY子句**
 
     CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR SHARE/UPDATE锁）
+    ```
+    openGauss=# create table test(name varchar, id int, fatherid int);
+    openGauss=# insert into test values('A', 1, 0), ('B', 2, 1), ('C', 3, 1), ('D', 4, 1), ('E', 5, 2);
+    select * from test start with id = 1 connect by prior id = fatherid order siblings by id desc;
+    name | id | fatherid
+    ------+----+----------
+    A    |  1 |        0
+    D    |  4 |        1
+    C    |  3 |        1
+    B    |  2 |        1
+    E    |  5 |        2
+    (5 rows)
+    ```
+    Start with语句的执行流程是：
+    1. 由 start with 区域的条件选择初始的数据集。上述例子里，先把 ('A', 1, 0) 选择出来。然后把初始的数据集设置为工作集。
+    2. 只要工作集不为空，会用工作集的数据作为输入，查询下一轮的数据，过滤条件有 conntect by 区域指定。其中，PRIOR关键字表示当前记录，比如上位例子中 prior id = fatherid 表示当前记录的 id 是下一条记录的 fatherid。
+    3. 把2中筛选出来的数据集，设为工作集，返回第二步重复操作。
+  
+    同时，数据库为每一条选出来的数据添加下述的伪列，方便用户了解数据在递归或者树状结构中的位置。
+    - LEVEL：节点的层级
+    - CONNECT_BY_ISLEAF：是否为叶子结点
+    
+    除了伪列外，还提供下述的查询函数
+    - sys_connect)by_path(col, separtor)：返回从根节点到当前行的连接路径。参数col为路径中显示的列的名称，separator为连接符。
+    - connect_by_root(col)：显示该节点最顶级的节点，col为输出列的名称。
 
--   ORDER SIBLINGS BY子句
+    当前Start with默认行为是宽度优先搜索，但可以通过和伪列配合，实现深度优先搜索。比如：
+    ```
+    openGauss=# select sys_connect_by_path(name,'-') as path,*,LEVEL from test start with id = 1 connect by fatherid=prior id order by path;
+      path  | name | id | fatherid | level
+    --------+------+----+----------+-------
+    -A     | A    |  1 |        0 |     1
+    -A-B   | B    |  2 |        1 |     2
+    -A-B-E | E    |  5 |        2 |     3
+    -A-C   | C    |  3 |        1 |     2
+    -A-D   | D    |  4 |        1 |     2
+    (5 rows)
+    ```
+
+-   **ORDER SIBLINGS BY子句**
 
     ORDER SIBLINGS BY通常和START WITH、CONNECT BY子句同时使用, 用法和ORDER BY子句一样, 用于在递归过程中的层级排序。
 
@@ -350,27 +395,38 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     \[ frame\_clause \]
 
-    frame\_clause为窗函数定义一个窗口框架window frame，窗函数（并非所有）依赖于框架，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
+    frame\_clause为窗函数定义一个窗口帧window frame，窗函数（并非所有）依赖于帧，window frame是当前查询行的一组相关行。frame\_clause可以是以下的形式：
 
     \[ RANGE | ROWS \] frame\_start
 
     \[ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
 
     frame\_start和frame\_end可以是：
+    ```
+    UNBOUNDED PRECEDING     //分区第一行开始的帧
 
-    UNBOUNDED PRECEDING
+    value PRECEDING         //当前行前value行开始或结束的帧
 
-    value PRECEDING
+    CURRENT ROW             //当前行开始或结束的帧
 
-    CURRENT ROW
+    value FOLLOWING         //当前行后value行开始或结束的帧
 
-    value FOLLOWING
-
-    UNBOUNDED FOLLOWING
+    UNBOUNDED FOLLOWING     //分区最后一行结束的帧
+    ```
+    - frame_start缺省为UNBOUNDED PRECEDING，frame_end缺省为CURRENT ROW
+    - frame_end的取值在上面列出的顺序中必须晚于frame_start的取值
+    - value不可为负数或空，可以为0
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >
     >对列存表的查询目前只支持row\_number窗口函数，不支持frame\_clause。
+
+    WINDOW子句可指定窗口函数的行为，在处理窗口定义相同的窗口函数时，使用WINDOW子句，在OVER中引用，能使SQL语句更简单，例如：
+    ```
+    openGauss=# SELECT sum(count) OVER w, avg(count) OVER w
+        FROM table_count
+        WINDOW w AS (PARTITION BY name ORDER BY count DESC);
+    ```
 
 -   **UNION子句**
 
@@ -504,6 +560,35 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ```
 --先通过子查询得到一张临时表temp_t，然后查询表temp_t中的所有数据。
 openGauss=# WITH temp_t(name,isdba) AS (SELECT usename,usesuper FROM pg_user) SELECT * FROM temp_t;
+
+--创建多级菜单表
+openGauss=# CREATE TABLE exp_menu (
+  id int,
+  name text,
+  parent_id int
+);
+
+--插入数据
+openGauss=# INSERT INTO exp_menu VALUES (1, 'grandpa', 0),(2, 'father', 1),(3, 'son', 2);
+
+--使用 WITH RECURSIVE 递归查询菜单关系
+openGauss=# WITH RECURSIVE res AS (
+    SELECT id, name, parent_id
+    FROM exp_menu 
+    WHERE id = 3
+    UNION
+    SELECT m.id,
+           m.name || ' > ' || r.name,
+           m.parent_id
+    FROM res r INNER JOIN exp_menu m ON m.id = r.parent_id
+)
+select * from res;
+ id |          name          | parent_id
+----+------------------------+-----------
+  3 | son                    |         2
+  2 | father > son           |         1
+  1 | grandpa > father > son |         0
+(3 rows)
 
 --查询tpcds.reason表的所有r_reason_sk记录，且去除重复。
 openGauss=# SELECT DISTINCT(r_reason_sk) FROM tpcds.reason;
