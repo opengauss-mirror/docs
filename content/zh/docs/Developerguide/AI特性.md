@@ -15,3 +15,5 @@ AI与数据库结合是近些年的行业研究热点，openGauss较早地参与
 -   **[DB4AI: 数据库驱动AI](DB4AI-数据库驱动AI.md)**
 
 -   **[AI in DB: 数据库内AI功能](AI-in-DB-数据库内AI功能.md)**
+
+-   **[ABO优化器](ABO优化器.md)**
