@@ -14,7 +14,7 @@
 8. 新增```UNSIGNED INT/TINYINT/SMALLINT/BIGINT```类型，与普通整型相比，其最高位是数字位而非符号位。
 9. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。
 10. 新增cast函数类型转换参数signed/unsigned，其中cast as unsigned将类型转换为uint8，cast as signed将类型转换为int8.
-11. 新增```float(p[,s])，double(p[,s])，real(p[,s])，double precision(p[,s])```的语法，其中```float(p[,s])，real(p[,s])，double precision(p[,s])```大致等价于```dec(p[,s])```，与```dec(p[,s]```不同的是，```float(p[,s])，real(p[,s])，double precision(p[,s])```的p和s必须为整数，而```double(p[,s])```则完全等价于```dec(p[,s])```。舍入方式为四舍五入。
+11. 新增```float(p,s)，double(p,s)，real(p,s)，double precision(p,s)```的语法，其中```float(p,s)，real(p,s)，double precision(p,s)```大致等价于```dec(p,s)```，与```dec(p,s)```不同的是，```float(p,s)，real(p,s)，double precision(p,s)```的p和s必须为整数，而```double(p,s)```则完全等价于```dec(p,s)```。舍入方式为四舍五入。
 
 **表 1**  整数类型
 
@@ -299,7 +299,7 @@ openGauss=# DROP TABLE dec_type_t1;
 <p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>REAL(p,s),</p>
 <p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>DOUBLE PRECISION(p,s)</p>
 </td>
-<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a>精度p取值范围为[1,1000]，标度s取值范围为[0,p]</p>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a>精度p取值范围为[1,1000]，标度s取值范围为[0,p]。</p>
 <div class="note" id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_note5927466117522"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_note5927466117522"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_note5927466117522"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_p6370990817522"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_p6370990817522"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_p6370990817522"></a>p为总位数，s为小数位位数，其中float(p,s)，real(p,s)，double precision(p,s)大致等价于dec(p,s)，但p和s都必须为整数，而double(p,s)完全等价于dec(p,s)。舍入方式为四舍五入。</p>
 </div></div>
 </td>
@@ -339,4 +339,26 @@ openGauss=# \d float_type_t1
 
 --删除表。
 openGauss=# DROP TABLE float_type_t1;
+
+--创建具有float(p,s), double(p,s), real(p,s), double precision(p,s)类型数据的表。
+openGauss=# CREATE TABLE test_float_double_real_double_precision
+           (
+            a FLOAT(20,2),
+            b DOUBLE(20,2),
+            c REAL(20,2),
+            d DOUBLE PRECISION(20,2)
+           );
+
+--查看表结构。
+openGauss=# \d test_float_double_real_double_precision        
+    Table "public.test_float_double_real_double_precision"
+ Column |     Type      | Modifiers 
+--------+---------------+-----------
+ a      | numeric(20,2) | 
+ b      | numeric(20,2) | 
+ c      | numeric(20,2) | 
+ d      | numeric(20,2) |
+
+--删除表
+openGauss=# DROP TABLE test_float_double_real_double_precision;
 ```
