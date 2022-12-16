@@ -50,7 +50,7 @@ decode\(expr, search1, result1, search2, result2, ..., defresult\)，也即 case
 
 ORA兼容模式，开启 set sql\_beta\_feature = 'a\_style\_coerce'; 参数的情况下，所支持的隐式类型转换见下图，\\代表不需要转换，yes表示支持，空白表示不支持：
 
-![](../figures/decode_type.png)
+![](figures/decode_type.png)
 
 ## 示例<a name="zh-cn_topic_0283136625_zh-cn_topic_0237122011_zh-cn_topic_0059779260_sb48a6ac8819342588bbdeeb006db477e"></a>
 

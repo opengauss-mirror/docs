@@ -10,7 +10,6 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
 
 **图 1**  DCF功能架构图<a name="fig31591049102410"></a>
 
-
 <img src="figures/Diagram-Of-The-DCF-Functional-Architecture.png" style="zoom: 50%;">
 
 
@@ -64,7 +63,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
     流控算法主要流程如[图2](#fig548518330404)所示：
 
     **图 2**  流控算法流程<a name="fig548518330404"></a>
-    ![](figures/Flow-Control-Algorithm-Process.jpg "流控算法流程")
+    ![](figures/流控算法流程.png "流控算法流程")
 
     核心算法流程如下：
 
