@@ -1300,7 +1300,11 @@ CONTEXT:  referenced column: subdate
 
   返回值类型：integer
 
-  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+  备注：
+  
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 函数参数被当做time类型解析时，其参数约束范围为[-838:59:59, 838:59:59]，与openGauss中time类型插表约束相同。
 
   示例：
 
@@ -1622,6 +1626,8 @@ CONTEXT:  referenced column: subdate
   返回值类型：与第一参数类型保持一致。
   
   备注：
+
+  - openGauss目前INTERVAL后不支持运算表达式。
   
   - 兼容MySQL插表时的严格模式和非严格模式表现。
 
@@ -1665,6 +1671,8 @@ CONTEXT:  referenced column: subdate
   返回值类型：与第一参数类型保持一致。
   
   备注：
+
+  - openGauss目前INTERVAL后不支持运算表达式。
   
   - 兼容MySQL插表时的严格模式和非严格模式表现。
 
@@ -1697,6 +1705,8 @@ CONTEXT:  referenced column: subdate
 - ADDDATE\(date/datetime/time, interval/days\)
 
   描述：该函数执行日期或时间加法运算。当第二参数为interval时，该函数表现与DATE_ADD函数相同，详细描述参见DATE_ADD。当第二参数为整数时，此整数会被当作天数加在第一参数上。
+  
+  备注：openGauss目前INTERVAL后不支持运算表达式。
 
   示例：
 
@@ -1807,6 +1817,8 @@ CONTEXT:  referenced column: subdate
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
   - 在B模式数据库中，当dolphin.b_compatibility_mode为true时才会替代openGauss原有extract函数。
+
+  - 函数参数被当做time类型解析时，其参数约束范围为[-838:59:59, 838:59:59]，与openGauss中time类型插表约束相同。
 
   - expr参数在解析时按照unit参数解析。当unit涉及`YEAR、WEEK、QUARTER、MONTH、DAY`时，expr参数被解析为date或者datetime；当unit只涉及`HOUR、MINUTE、SECOND、MICRESECOND`时，expr参数被解析为time。
 
