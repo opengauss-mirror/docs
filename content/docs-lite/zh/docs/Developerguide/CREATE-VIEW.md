@@ -75,7 +75,9 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 
         检查该视图和所有底层视图定义的条件。如果仅声明了CHECK OPTION，没有声明LOCAL和CASCADED，默认是CASCADED。
     
-    注意，只有在可自动更新、没有INSTEAD OF触发器或者INSTEAD规则的视图上才支持CHECK OPTION。如果一个自动更新的视图被定义在一个具有INSTEAD OF触发器的视图上，那么CHECK OPTION可以被用来检查该自动更新视图上的条件，但具有INSTEAD OF触发器的视图上的条件不会被检查。如果该视图或者任何底层关系具有导致INSERT或UPDATE命令被重写的INSTEAD规则，那么在被重写的查询中将忽略所有检查选项，包括任何来自定义在有STEAD规则关系上的可自动更新视图的检查。
+    注意:
+    1. 只有在可自动更新、没有INSTEAD OF触发器或者INSTEAD规则的视图上才支持CHECK OPTION。如果一个自动更新的视图被定义在一个具有INSTEAD OF触发器的视图上，那么CHECK OPTION可以被用来检查该自动更新视图上的条件，但具有INSTEAD OF触发器的视图上的条件不会被检查。如果该视图或者任何底层关系具有导致INSERT或UPDATE命令被重写的INSTEAD规则，那么在被重写的查询中将忽略所有检查选项，包括任何来自定义在有STEAD规则关系上的可自动更新视图的检查。
+    2. 基于MySQL外表的视图不支持CHECK OPTION选项。
 
 ## 可自动更新视图<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
