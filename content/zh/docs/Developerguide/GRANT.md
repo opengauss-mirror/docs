@@ -288,7 +288,7 @@ GRANT的权限分类如下所示。
 
 -   **UPDATE**
 
-    允许对声明的表中任意字段执行UPDATE命令。通常，update命令也需要select权限来查询出哪些行需要更新。SELECT… FOR UPDATE和SELECT… FOR SHARE除了需要SELECT权限外，还需要UPDATE权限。
+    允许对声明的表中任意字段执行UPDATE命令。通常，update命令也需要select权限来查询出哪些行需要更新。SELECT… FOR UPDATE、SELECT… FOR NO KEY UPDATE、SELECT… FOR SHARE和SELECT… FOR KEY SHARE除了需要SELECT权限外，还需要UPDATE权限。
 
 -   **DELETE**
 
