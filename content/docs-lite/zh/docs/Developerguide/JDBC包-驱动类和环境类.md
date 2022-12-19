@@ -2,17 +2,17 @@
 
 ## JDBC包<a name="zh-cn_topic_0283136979_zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>
 
-在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取, 包名为openGauss-x.x.x-操作系统版本号-64bit-Jdbc.tar.gz。
+openGauss提供两种JDBCjar包：postgresql.jar和openGauss-jdbc-x.x.x.jar，两种jar包功能一致，仅仅是为了解决和PostgreSQL之间的JDBC驱动包名冲突。
+
+在Linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar和opengauss-jdbc-x.x.x.jar，包位置在源代码内output目录下。也可以从官网发布包中获取，包名为openGauss-x.x.x-JDBC.tar.gz。
 
 驱动包与PostgreSQL保持兼容，其中类名、类结构与PostgreSQL驱动完全一致，曾经运行于PostgreSQL的应用程序可以直接移植到当前系统使用。
 
 ## 驱动类<a name="zh-cn_topic_0283136979_zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s103697559c8d4cb68f396e18e3ae65a9"></a>
 
-在创建数据库连接之前，需要加载数据库驱动类“org.postgresql.Driver”。
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >
->1.  由于openGauss在JDBC的使用上与PG的使用方法保持兼容，所以同时在同一进程内使用两个JDBC驱动的时候，可能会类名冲突。
+>1.  openGauss在JDBC的使用上与PG的使用方法保持兼容。在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC同名驱动时，可能存在org.postgresql.Driver驱动类冲突问题。
 >2.  相比于PG驱动，openGauss JDBC驱动主要做了以下特性的增强：
 >3.  支持SHA256加密方式登录。
 >4.  支持对接实现sf4j接口的第三方日志框架。

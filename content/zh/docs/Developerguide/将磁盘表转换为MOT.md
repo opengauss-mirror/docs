@@ -28,7 +28,11 @@
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >
->由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。请注意，MOT目前不支持跨引擎多表查询（如使用Join、Union和子查询）和跨引擎多表事务。因此，如果在多表查询、存储过程或事务中访问原始表，则必须将所有相关的磁盘表转换为MOT，或者更改应用程序或数据库中的相关代码。
+>由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。另一种方法是通过INSERT INTO SELECT语句将数据从普通（堆）表复制到新的MOT表。
+```
+INSERT INTO [MOT_table] SELECT * FROM [PG_table] WHERE condition;
+```
+此方法受MOT事务大小限制，小于1GB。
 
 ## 转换示例<a name="section1367417"></a>
 

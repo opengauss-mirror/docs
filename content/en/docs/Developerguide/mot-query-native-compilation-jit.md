@@ -5,7 +5,7 @@ The following sections describe how to use both mechanisms in your application.
 
 ## JIT SP
 JIT SP refers to code generation, compiling and execution of stored procedures (SP) by LLVM runtime code generation and compilation library. JIT SP is available to SPs accessing MOT tables (only) and is completely transparent to users. Acceleration level depends on the SP logic. For example, a real customer application achieved acceleration of 20%, 44%, 300% and 500% for different SPs in latency.
-During the PREPARE phase of a query invoking an SP, or the first SP execution, the JIT module performs an attempt to translate the SP SQL into a C-based function and compile it in runtime (using LLVM). If successful, the consecutive SP invocations the MOT will execute a compiled function, leading to performance gains. In case of failure to produce a compiled function, the SP will be executed by standard PGPLSQL. Both scenarios are fully transparent to users.
+During the PREPARE phase of a query invoking an SP, or the first SP execution, the JIT module performs an attempt to translate the SP SQL into a C-based function and compile it in runtime (using LLVM). If the consecutive SP invocation is successful, MOT will execute a compiled function, leading to performance gains. In case of failure to produce a compiled function, the SP will be executed by standard PGPLSQL. Both scenarios are fully transparent to users.
 
 ## JIT Query
 MOT enables you to prepare and parse  _pre-compiled full queries_  in a native format \(using a  **PREPARE**  statement\) before they are needed for execution.

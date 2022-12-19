@@ -467,6 +467,9 @@ db_mysql=# create trigger if not exists animal_trigger1
               insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
           end;
           /
+--mysql兼容删除触发器语法
+db_mysql=# drop trigger animal_trigger1;
+db_mysql=# drop trigger if exists animal_trigger1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>

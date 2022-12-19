@@ -382,11 +382,11 @@ If no time units are specified, then microseconds are assumed.
 
     Specifies whether to use JIT query compilation and execution for planned queries.
 
-    JIT query execution enables JIT-compiled code to be prepared for a prepared query during its planning phase. The resulting JIT-compiled function is executed whenever the prepared query is invoked. JIT compilation usually takes place in the form of LLVM. On platforms where LLVM is not natively supported, MOT provides a software-based fallback called Tiny Virtual Machine \(TVM\).
+    JIT query execution enables JIT-compiled code to be prepared for a prepared query during its planning phase. The resulting JIT-compiled function is executed whenever the prepared query is invoked. JIT compilation usually takes place in the form of LLVM.
 
 -   **enable\_mot\_codegen\_print = false**
 
-    Specifies whether to print emitted LLVM/TVM IR code for JIT-compiled queries.
+    Specifies whether to print emitted LLVM code for JIT-compiled queries.
 
 -   **mot\_codegen\_limit = 50000**
 

@@ -24,8 +24,8 @@
 </tr>
 <tr id="row29896802"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.3.1.1 "><p id="p5721932"><a name="p5721932"></a><a name="p5721932"></a>SNAPSHOT</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.75757575757575%" headers="mcps1.2.3.1.2 "><p id="p60823375"><a name="p60823375"></a><a name="p60823375"></a><strong id="b10539465"><a name="b10539465"></a><a name="b10539465"></a>MOT不支持</strong></p>
-<p id="p48390307"><a name="p48390307"></a><a name="p48390307"></a>SNAPSHOT（快照）隔离级别提供与SERIALIZABLE（可序列化）相同的保证，同时支持并发事务修改数据。相反，它迫使每个读者看到自己的世界版本（自己的快照）。不阻止并发更新使得编程非常容易，且可扩展性很强。然而，在许多实现中，这种隔离级别需要更高的服务器资源。</p>
+<td class="cellrowborder" valign="top" width="75.76%" headers="mcps1.2.3.1.2 "><p id="p33781949"><a name="p33781949"></a><a name="p33781949"></a><strong id="b35602093"><a name="b35602093"></a><a name="b35602093"></a>MOT支持</strong></p>
+<p id="p51983383"><a name="p51983383"></a><a name="p51983383"></a>SNAPSHOT（快照）隔离级别提供与SERIALIZABLE（可序列化）相同的保证，除了支持并发事务修改数据。相反，它迫使每个读者看到自己的世界版本（自己的快照）。不阻止并发更新使得编程非常容易，且可扩展性很强。</p>
 </td>
 </tr>
 <tr id="row32859581"><td class="cellrowborder" valign="top" width="24.242424242424242%" headers="mcps1.2.3.1.1 "><p id="p44380409"><a name="p44380409"></a><a name="p44380409"></a>REPEATABLE READ</p>
@@ -108,5 +108,5 @@
 </tbody>
 </table>
 
-在不久后将发布的版本中，openGauss MOT还将支持SNAPSHOT和SERIALIZABLE隔离级别。
+
 

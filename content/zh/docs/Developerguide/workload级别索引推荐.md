@@ -84,7 +84,7 @@ echo PASSWORD | gs_dbmind component fetch_statement [DB_PORT] [DATABASE] [OUTPUT
     echo PASSWORD | gs_dbmind component index_advisor [p DB_PORT] [d DATABASE] [f FILE] [--h DB_HOST] [-U DB_USER] [--schema SCHEMA]
     [--max_index_num MAX_INDEX_NUM][--max_index_storage MAX_INDEX_STORAGE] [--multi_iter_mode] [--max-n-distinct MAX_N_DISTINCT]
     [--min-improved-rate MIN_IMPROVED_RATE] [--max-candidate-columns MAX_CANDIDATE_COLUMNS] [--max-index-columns MAX_INDEX_COLUMNS] 
-    [--min-reltuples MIN_RELTUPLES] [--use-all-columns] [--multi_node]  [--json] [--driver] [--show_detail] [--show-benifits]
+    [--min-reltuples MIN_RELTUPLES] [--multi_node]  [--json] [--driver] [--show_detail] [--show-benifits]
     ```
 
     其中的输入参数依次为：
@@ -102,7 +102,6 @@ echo PASSWORD | gs_dbmind component fetch_statement [DB_PORT] [DATABASE] [OUTPUT
     -   MAX\_CANDIDATE\_COLUMNS：（可选）索引最大的候选列个数。
     -   MAX\_INDEX\_COLUMNS：索引最大列数，默认为4。
     -   MIN\_RELTUPLES：最小记录数，默认为10000。
-    -   use-all-columns：将所有相关列作为索引候选列。
     -   multi\_node：（可选）指定当前是否为分布式数据库实例。
     -   multi\_iter\_mode：（可选）算法模式，可通过是否设置该参数来切换算法。
     -   json：（可选）指定workload语句的文件路径格式为SQL归一化后的json，默认格式每条SQL占一行。

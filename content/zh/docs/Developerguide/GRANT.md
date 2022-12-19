@@ -288,7 +288,7 @@ GRANT的权限分类如下所示。
 
 -   **UPDATE**
 
-    允许对声明的表中任意字段执行UPDATE命令。通常，update命令也需要select权限来查询出哪些行需要更新。SELECT… FOR UPDATE和SELECT… FOR SHARE除了需要SELECT权限外，还需要UPDATE权限。
+    允许对声明的表中任意字段执行UPDATE命令。通常，update命令也需要select权限来查询出哪些行需要更新。SELECT… FOR UPDATE、SELECT… FOR NO KEY UPDATE、SELECT… FOR SHARE和SELECT… FOR KEY SHARE除了需要SELECT权限外，还需要UPDATE权限。
 
 -   **DELETE**
 
@@ -611,7 +611,7 @@ GRANT的参数说明如下所示。
 </tbody>
 </table>
 
->![](/public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.gif) **说明：** 
 >
 >用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](zh-cn_topic_0000001190922647.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 

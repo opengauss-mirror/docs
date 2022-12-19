@@ -8,6 +8,7 @@
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
 6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
+7. 新增```text_bool/varchar_bool/char_bool```函数。
 
 -   bit\_length\(string\)
 
@@ -540,6 +541,11 @@
 
   描述：判断字符串能否匹配上LIKE后的模式字符串。opengauss的原like为大小写敏感匹配，现将其改为当```dolphin.b_compatibility_mode```为```TRUE```时大小写不敏感匹配，当```dolphin.b_compatibility_mode```为```FALSE```时大小写敏感匹配。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
 
+  注意事项：
+
+  - 在dolphin插件中增加了该操作符对true/false的bool类型兼容；
+  - 对于定长字符串char，若插入表的字符串长度小于指定长度则会在字符串末尾自动填充空格，在dolphin插件中，该操作符处理定长字符串类型时忽略末尾多余空格。
+
   返回值类型：布尔型
 
   示例：
@@ -558,6 +564,12 @@
   (1 row)
   
   openGauss=# SELECT 'abc' like 'A%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  
+  openGauss=# SELECT true like true as result;
    result
   ------------
             t
@@ -751,7 +763,7 @@
   ```
 
   - TO_BASE64(str)
-  
+
   描述：根据BASE64编码规则，将一个字符串编码成BASE64编码格式，返回字符串的编码结果。编码规则与解码规则和FROM_BASE64相同。
 
   返回值类型：text
@@ -790,13 +802,13 @@
       -----------
        MTIzNDU2
       (1 row)
-
+    
       SELECT TO_BASE64('12345');
        to_base64 
       -----------
        MTIzNDU=
       (1 row)
-
+    
       SELECT TO_BASE64('1234');
        to_base64 
       -----------
@@ -823,20 +835,20 @@
   3. 故解码结果为AB
 
     示例：
-    
+  
     ```sql
       SELECT UNHEX('6f70656e4761757373');
         unhex   
       -----------
       openGauss
       (1 row)
-
+  
       SELECT UNHEX(HEX('string'));
        unhex  
       --------
        string
       (1 row)
-
+  
       SELECT HEX(UNHEX('1267'));
        hex  
       ------
@@ -880,3 +892,101 @@
   openGauss=# select 10!;
   ERROR:  Operator '!' behind expression is deprecated when b_compatibility_mode is on. Please use function factorial().
   ```
+
+- text_bool(text)
+
+  描述：先截取输入文本首部的数值部分（包括整数、小数、正负数），丢弃剩下的非数值部分。若截取得到的数值部分等于0，则函数返回逻辑假；否则函数返回逻辑真。若输入文本首部不是数值，则直接返回逻辑假。
+
+  返回类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select text_bool('-0.01abc');
+   text_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select text_bool('0abc');
+   text_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select text_bool('abc');
+   text_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- varchar_bool(varchar)
+
+  描述：先截取输入的变长字符串首部的数值部分（包括整数、小数、正负数），丢弃剩下的非数值部分。若截取得到的数值部分等于0，则函数返回逻辑假；否则函数返回逻辑真。若输入的变长字符串首部不是数值，则直接返回逻辑假。
+
+  返回类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select varchar_bool('-0.0100abc');
+   varchar_bool 
+  --------------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select varchar_bool('0abc');
+   varchar_bool 
+  --------------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select varchar_bool('abc');
+   varchar_bool 
+  --------------
+   f
+  (1 row)
+  ```
+
+- char_bool(char)
+
+  描述：先截取输入字符串首部的数值部分（包括整数、小数、正负数），丢弃剩下的非数值部分。若截取得到的数值部分等于0，则函数返回逻辑假；否则函数返回逻辑真。若输入字符串首部不是数值，则直接返回逻辑假。
+
+  返回类型：boolean
+
+  示例：
+
+  ```
+  openGauss=# select char_bool('-0.0100abc');
+   char_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select char_bool('0abc');
+   char_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select char_bool('abc');
+   char_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  

@@ -102,6 +102,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p96351034175115"><a name="p96351034175115"></a><a name="p96351034175115"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p863533413514"><a name="p863533413514"></a><a name="p863533413514"></a>监控周期内，读操作的字节流量，单位KB。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="row136351034125115"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p10635234185115"><a name="p10635234185115"></a><a name="p10635234185115"></a>write_kbytes</p>
@@ -109,6 +110,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p863523415119"><a name="p863523415119"></a><a name="p863523415119"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p10636734165110"><a name="p10636734165110"></a><a name="p10636734165110"></a>监控周期内，写操作的字节流量，单位KB。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="row9636133465111"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p1563653445111"><a name="p1563653445111"></a><a name="p1563653445111"></a>read_counts</p>
@@ -116,6 +118,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p763683465118"><a name="p763683465118"></a><a name="p763683465118"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p1563341118139"><a name="p1563341118139"></a><a name="p1563341118139"></a>监控周期内，读操作的次数，单位次。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="row1663683417516"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p66365344511"><a name="p66365344511"></a><a name="p66365344511"></a>write_counts</p>
@@ -123,6 +126,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p2636163418516"><a name="p2636163418516"></a><a name="p2636163418516"></a>bigint</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p763613415512"><a name="p763613415512"></a><a name="p763613415512"></a>监控周期内，写操作的次数，单位次。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="row2636734175117"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p463663495117"><a name="p463663495117"></a><a name="p463663495117"></a>read_speed</p>
@@ -130,6 +134,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p1663619341518"><a name="p1663619341518"></a><a name="p1663619341518"></a>real</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p96361534105116"><a name="p96361534105116"></a><a name="p96361534105116"></a>监控周期内，读操作的字节速率，单位KB/s。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 <tr id="row19991428101118"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p12100228141112"><a name="p12100228141112"></a><a name="p12100228141112"></a>write_speed</p>
@@ -137,6 +142,7 @@ GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p191000288116"><a name="p191000288116"></a><a name="p191000288116"></a>real</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p210072812117"><a name="p210072812117"></a><a name="p210072812117"></a>监控周期内，写操作的字节速率，单位KB/s。</p>
+<p id="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a><a name="zh-cn_topic_0283137005_zh-cn_topic_0237122471_p118134716239"></a>仅分布式可用。</p>
 </td>
 </tr>
 </tbody>
