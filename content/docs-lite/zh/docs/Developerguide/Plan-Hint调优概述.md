@@ -2,6 +2,8 @@
 
 Plan Hint为用户提供了直接影响执行计划生成的手段，用户可以通过指定join顺序，join、scan方法，指定结果行数，等多个手段来进行执行计划的调优，以提升查询的性能。
 
+openGauss还提供了SQL PATCH功能，在不修改业务语句的前提下通过创建SQL PATCH的方式使得Hint生效。详见《特性描述》中的“可维护性 \> 支持SQL PATCH”章节。
+
 ## 功能描述<a name="zh-cn_topic_0283137554_zh-cn_topic_0237121532_section54351718142011"></a>
 
 Plan Hint支持在SELECT关键字后通过如下形式指定：
