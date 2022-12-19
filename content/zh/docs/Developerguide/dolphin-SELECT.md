@@ -67,7 +67,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >指定分区只适合普通表。
+    >指定分区只适合分区表。
 
     rollup_clause子句为：
 
