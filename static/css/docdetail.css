@@ -3,6 +3,7 @@
 /* #all{
     display: flex;
 } */
+
 #all .left{
     background-color: var(--o-color-trafficpurple5);
     position: fixed;
