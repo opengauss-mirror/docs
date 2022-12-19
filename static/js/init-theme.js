@@ -3,9 +3,6 @@ if(location.pathname==='/zh/'){
 }else if(location.pathname==='/en/'){
   window.open("/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html","_self")
 }
-if(location.href.includes('----')){
-  window.open(location.href.replace('----','-'),"_self")
-}
 const themeStyle = localStorage.getItem("openeuler-theme");
 const html = document.getElementsByTagName("html")[0];
 if (!themeStyle) {

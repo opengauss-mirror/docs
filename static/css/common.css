@@ -32,7 +32,7 @@ i {
 }
 
 .not-found img {
-    width: 400px;
+    /* width: 400px; */
     height: 400px;
     display: block;
     margin: 0 auto;
@@ -549,7 +549,7 @@ i {
     }
     
     .not-found img {
-        width: 265px;
+        /* width: 265px; */
         height: 272px;
         margin: 30px auto 0 auto;
     }
