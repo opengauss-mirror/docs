@@ -101,8 +101,6 @@
 
     在文件中分隔各个字段的字符串，分隔符最大长度不超过10个字节。
 
-    取值范围：不允许包含\\.abcdefghijklmnopqrstuvwxyz0123456789中的任何一个字符。
-
     缺省值：缺省是水平制表符。
 
 -   **IGNORE number \{LINES \| ROWS\}**
