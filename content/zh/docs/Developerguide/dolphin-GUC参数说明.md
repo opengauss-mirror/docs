@@ -106,7 +106,7 @@ openGauss=# DROP TABLE test1;
 
 **示例**：
 ```
-openGauss=# show b_db_timestamp;
+openGauss=# show dolphin.b_db_timestamp;
  b_db_timestamp
 ----------------
  0
@@ -118,7 +118,7 @@ openGauss=# select now();
  2022-09-18 19:52:23
 (1 row)
 
-openGauss=# set b_db_timestamp = 1.0;
+openGauss=# set dolphin.b_db_timestamp = 1.0;
 SET
 openGauss=# select now();
         now()
@@ -391,7 +391,7 @@ dayname
 
 **取值范围**：字符串
 
-**默认值**：utf8
+**默认值**：latin1
 
 ## collation_server<a name="section203671436832"></a>
 
@@ -523,7 +523,7 @@ dayname
 
 **默认值**：28800
 
-## lower_case_table_names<a name="section203671436844"></a>
+## dolphin.lower_case_table_names<a name="section203671436844"></a>
 
 **参数说明**：该参数用于控制用户名和表名的大小写敏感；为0时大小写敏感，>0时为大小写不敏感
 
