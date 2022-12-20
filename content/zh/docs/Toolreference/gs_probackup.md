@@ -29,9 +29,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
 -   当前仅支持备份发布订阅的逻辑复制槽。
 -   备份时，请确保服务器用户对备份的目录下所有文件有读写的权限，以防止在恢复时因权限不足的问题而失败。
--   当前暂不支持dss模式下的增量备份和恢复。
--   在dss模式下仅支持本地主机备份。
--   当前暂不支持dss模式下的外部目录的备份和恢复。
+-   在dss模式下当前仅支持本地主机全量备份和全量恢复。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -632,77 +630,55 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
   >```
 
 
-## 备份流程（非dss模式）<a name="zh-cn_topic_0287276008_section1735727125216"></a>
+## 备份指令执行顺序（非dss模式）<a name="zh-cn_topic_0287276008_section1735727125216"></a>
 
 1.  初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
 
     ```
-    gs_probackup init -B backup_dir
+    gs_probackup init -B backup-path
     ```
 
 2.  添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
 
     ```
-    gs_probackup add-instance -B backup_dir -D data_dir --instance instance_name
+    gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name
     ```
 
 3.  创建指定实例的备份。在进行增量备份之前，必须至少创建一次全量备份。
 
     ```
-    gs_probackup backup -B backup_dir --instance instance_name -b backup_mode
+    gs_probackup backup -B backup-path --instance instance_name -b backup_mode
     ```
 
 4.  从指定实例的备份中恢复数据。
 
     ```
-    gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+    gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
     ```
 
-## 备份流程（dss模式）
-
-1. 初始化备份目录。在指定的目录下创建backups/和wal/子目录，分别用于存放备份文件和WAL文件。
-
-   ```
-   gs_probackup init -B backup_dir
-   ```
-
-2. 添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
-
-   ```
-   gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name --enable-dss --instance-id node_id --vgname vgname --socketpath=socket_domain
-   ```
-
-3. 创建指定实例的备份。在进行增量备份之前，必须至少创建一次全量备份。
-
-   ```
-   gs_probackup backup -B backup_dir --instance instance_name -b backup_mode -d postgres -p 26000
-   ```
-
-4. 从指定实例的备份中恢复数据。
-
-   ```
-   gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
-   ```
 
 ## cm工具管理集群全量备份恢复流程（dss模式）
 
 1. 初始化备份目录。
 
    ```
-   gs_probackup init -B backup_dir
+   gs_probackup init -B backup-path
    ```
+   **说明：** backup-path为用户指定的备份目录。
 
 2. 添加一个新的备份实例。
 
    ```
-   gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name --enable-dss --instance-id node_id --vgname="vgdata,vglog" --socketpath=socket_domain
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name --enable-dss --instance-id node_id --vgname="vgdata,vglog" --socketpath=socket_domain
    ```
+   **说明：** pgdata-path为数据库在文件系统中的数据目录，instance_name为用户指定的备份实例名，--enable-dss参数代表所添加的备份实例对应的数据库为共享存储模式，node_id为所备份数据库集群的主机节点id，vgdata和vglog分别代表共享存储的数据目录和主机在磁阵中的日志目录(例如--vgname="+data,+p0",其中+data为共享存储的数据目录，+p0为主机在磁阵中的日志目录)，socket_domain为dss实例进程使用的socket文件路径，仅支持绝对路径。
 
 3. 创建指定实例的备份，对主机进行备份。在进行增量备份之前，必须至少创建一次全量备份。
 
    ```
-   gs_probackup backup -B backup_dir --instance instance_name -b backup_mode -d db_name -p port
+   gs_probackup backup -B backup-path --instance instance_name -b backup_mode -d db_name -p port
    ```
+   **说明：** 此操作与非dss模式相同。
 
 4. 执行cm_ctl stop关闭集群。
 
@@ -710,23 +686,46 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
    cm_ctl stop
    ```
 
-5. 使用dd命令清空磁阵，of后面的参数可以进入$DSS_HOME的cfg目录，在dss_vg_conf.ini文件中查看每个卷对应磁盘，这里需要清空该文件中的所有主备对应的数据和日志磁盘。
+5. 使用dd命令清空磁阵（清空磁阵前2M内容磁阵便可以被清空）。
 
    ```
    dd if=/dev/zero of=/dev/disk_name bs=2048 count=1000 > /dev/null 2>&1
-   ```
 
-6. 使用dsscmd cv命令建卷，-v后面的参数是每个卷对应磁盘，在dss_vg_conf.ini文件中查看。
+   示例：
+   假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
+   data:/dev/user_dss_shared
+   p0:/dev/user_dss_private_0
+   p2:/dev/user_dss_private_1
+   对应清空磁阵操作如下：
+   dd if=/dev/zero of=/dev/user_dss_shared bs=2048 count=1000 > /dev/null 2>&1
+   dd if=/dev/zero of=/dev/user_dss_private_0 bs=2048 count=1000 > /dev/null 2>&1
+   dd if=/dev/zero of=/dev/user_dss_private_1 bs=2048 count=1000 > /dev/null 2>&1
+   ```
+   **说明：** of后面的参数可以进入$DSS_HOME的cfg目录，在dss_vg_conf.ini文件中查看每个卷对应磁盘，这里需要清空该文件中的所有主备对应的数据和日志磁盘。
+
+6. 使用dsscmd cv命令建卷。
 
    ```
    dsscmd cv -g data -v /dev/disk_name -D $DSS_HOME
+
+   示例：
+   假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
+   data:/dev/user_dss_shared
+   p0:/dev/user_dss_private_0
+   p2:/dev/user_dss_private_1
+   对应建卷操作如下：
+   dsscmd cv -g data -v /dev/user_dss_shared -D $DSS_HOME
+   dsscmd cv -g p0 -v /dev/user_dss_private_0 -D $DSS_HOME
+   dsscmd cv -g p2 -v /dev/user_dss_private_1 -D $DSS_HOME
    ```
+   **说明：** -v后面的参数是每个卷对应磁盘，在dss_vg_conf.ini文件中查看。
 
 7. 将主机的dn目录中的如下文件拷贝出来（当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群，需要执行该操作，否则跳过）。
 
    ```
    cacert.pem server.crt server.key server.key.cipher server.key.rand
    ```
+   **说明：** 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，集群之间用于认证的证书会发生变化，因此需要将当前集群的拷贝下来防止恢复后被备份文件中的证书覆盖导致无法和备机通信。
 
 8. 清空主机的dn目录，启动dssserver。
 
@@ -738,7 +737,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 9. 在主机执行恢复操作。
 
    ```
-   gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+   gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
    ```
 
 10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
@@ -752,11 +751,12 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     dssserver -D $DSS_HOME &
     ```
 
-13. 在备机执行初始化操作，可以在备机的om日志目录下执行grep gs_initdb *来查找该命令的历史执行然后直接复制。
+13. 在备机执行初始化操作。
     
     ```
-    gs_initdb --locale=LOCALE -D DATADIR --nodename=NODENAME -C DIR -n --vgname="vgdata,vglog" --enable-dss --dms_url="node0_id:ip0:dms0_port,..." -I node_id --socketpath=socket_domain
+    gs_initdb --locale=LOCALE -D pgdata-path --nodename=NODENAME -C DIR -n --vgname="vgdata,vglog" --enable-dss --dms_url="node0_id:ip0:dms0_port,..." -I node_id --socketpath=socket_domain
     ```
+    **说明：** 可以在备机的om日志目录下执行grep gs_initdb *来查找该命令的历史执行然后直接复制,无需用户自己去指定对应参数。
 
 14. 用步骤11中拷贝的dn目录覆盖初始化完毕后备机生成的dn目录。
 
@@ -765,6 +765,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     ```
     cm_ctl start
     ```
+
 
 
 ## 故障处理<a name="section1494010372368"></a>
