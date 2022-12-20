@@ -139,7 +139,7 @@
  -   分区项partition\_less\_than\_item的语法为。
 
         ```
-        PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) 
+        PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE }  [, ...] ) | MAXVALUE
             [ TABLESPACE tablespacename ]
         ```
 
@@ -148,9 +148,9 @@
         ```
         PARTITION partition_name {
                 {START(partition_value) END (partition_value) EVERY (interval_value)} |
-                {START(partition_value) END ({partition_value | MAXVALUE})} |
+                {START(partition_value) END ({partition_value | MAXVALUE}) | MAXVALUE} |
                 {START(partition_value)} |
-                {END({partition_value | MAXVALUE})}
+                {END ({partition_value | MAXVALUE}) | MAXVALUE}
         } [TABLESPACE tablespace_name]
         ```
 
@@ -289,6 +289,7 @@
     -   不能用于REORGANIZE PARTITION更改表使用的分区类型。
     -   不可丢失原有表数据。
     -   不支持interval分区，不支持value分区。
+    -   对于RANGE分区，不支持start end语法。
 
     ```
     REORGANIZE PARTITION {{ partition_name } [, ...]} INTO {partition_less_than_item | partition_list_item } [, ...]
