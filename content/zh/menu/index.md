@@ -2645,6 +2645,7 @@ headless: true
 			-   [高并发报错"too many clients already"或无法创建线程]({{< relref "./docs/Developerguide/高并发报错-too-many-clients-already-或无法创建线程.md" >}})
 			-   [btree 索引故障情况下应对策略]({{< relref "./docs/Developerguide/btree-索引故障情况下应对策略.md" >}}) 	
 			-   [TPCC高并发长稳运行因脏页刷盘效率导致性能下降]({{< relref "./docs/Developerguide/TPCC高并发长稳运行因脏页刷盘效率导致性能下降.md" >}}) 	
+			-   [谓词下推引起的查询报错]({{< relref "./docs/Developerguide/谓词下推引起的查询报错.md" >}})
 -   [数据迁移]({{< relref "./docs/DataMigration/DataMigration.md" >}})
 	-   [迁移MySQL数据库至openGauss]({{< relref "./docs/DataMigration/迁移MySQL数据库至openGauss.md" >}})
 		-   [全量迁移]({{< relref "./docs/DataMigration/全量迁移.md" >}})
