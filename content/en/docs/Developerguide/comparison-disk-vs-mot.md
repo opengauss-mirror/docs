@@ -59,9 +59,9 @@ The following table briefly compares the various features of the openGauss disk-
 </tr>
 <tr id="row40471574"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p56972087"><a name="p56972087"></a><a name="p56972087"></a>Isolation Levels</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><a name="ul51336373"></a><a name="ul51336373"></a><ul id="ul51336373"><li>RC+SI</li><li>RR</li></ul>
+<td class="cellrowborder" valign="top" width="29.592959295929592%" headers="mcps1.2.4.1.2 "><a name="ul51336373"></a><a name="ul51336373"></a><ul id="ul51336373"><li>READ COMMITTED</li><li>REPEATABLE READ</li></ul>
 </td>
-<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><a name="ul54139417"></a><a name="ul54139417"></a><ul id="ul54139417"><li>RC+SI</li><li>RR</li></ul>
+<td class="cellrowborder" valign="top" width="33.673367336733676%" headers="mcps1.2.4.1.3 "><a name="ul54139417"></a><a name="ul54139417"></a><ul id="ul54139417"><li>READ COMMITTED</li><li>REPEATABLE READ</li></ul>
 </td>
 </tr>
 <tr id="row1504051"><td class="cellrowborder" valign="top" width="36.733673367336735%" headers="mcps1.2.4.1.1 "><p id="p54719288"><a name="p54719288"></a><a name="p54719288"></a>Concurrency Control</p>

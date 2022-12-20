@@ -19,7 +19,7 @@ We contributed our Masstree index improvements to the Masstree open-source imple
 
 MOT's main innovation was to enhance the original Masstree data structure and algorithm, which did not support Non-Unique Indexes \(as a Secondary index\). You may refer to the  [Non-unique Indexes](#section12297174320129)  section for the design details.
 
-MOT supports both Primary, Secondary and Keyless indexes \(subject to the limitations specified in the  [Unsupported Index DDLs and Index](mot-sql-coverage-and-limitations.md#section1072117103819)section\).
+MOT supports both Primary, Secondary and Keyless indexes \(subject to the limitations specified in the  [Unsupported Index DDLs and Index](mot-sql-coverage-and-limitations.md#section143421450173815) section\).
 
 ## Non-unique Indexes<a name="section12297174320129"></a>
 

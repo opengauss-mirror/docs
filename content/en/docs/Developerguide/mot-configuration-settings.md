@@ -109,10 +109,10 @@ If no time units are specified, then microseconds are assumed.
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >You may refer to the  [MOT Recovery](mot-recovery.md)  section for more information about configuration settings.
 
--   **parallel_recovery_workers = 5**
+-   **parallel\_recovery\_workers = 5**
     Specifies the number of workers to use during redo recovery/replay.
 
--   **parallel_recovery_workers = 5**
+-   **parallel\_recovery\_queue\_size = 512**
     Specifies the size of the queue used during recovery to hold redo log segments. This parameter also limits the maximum number of transactions that can be active (in progress) during parallel recovery. If this limit is reached, redo replay will wait for some of the transactions to commit before processing the redo log for new transactions.
 
 ## STATISTICS \(MOT\)<a name="section659861612477"></a>
