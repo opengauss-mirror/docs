@@ -119,7 +119,12 @@
 
 - ^
 
-  描述：实现两个整数之间的按位异或。注意，异或操作符不支持非0/1的bool类型，也不支持raw类型。
+  描述：实现两个整数之间的按位异或。
+
+  注意：
+
+  - 异或操作符不支持非0/1的bool类型，也不支持raw类型。
+  - 在dolphin插件中，^操作符不再支持对两个整数之间的幂运算。如需要使用两个整数之间的幂运算操作，可以使用power函数。
 
   返回值类型：INT
 
@@ -131,6 +136,18 @@
   ----------
          0
   （1 row）
+  
+  openGauss=# SELECT 2 ^ 3;
+   ?column? 
+  ----------
+          1
+  (1 row)
+  
+  openGauss=# SELECT power(2,3);
+   power 
+  -------
+       8
+  (1 row)
   ```
 
   描述：当```set dolphin.b_compatibility_mode=0```后，可以实现对float数据的幂运算。当```set dolphin.b_compatibility_mode=1```后，可以实现对float数据的按位异或，对float数据四舍五入后异或。
