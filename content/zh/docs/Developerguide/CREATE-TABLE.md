@@ -229,9 +229,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   如果源表是本地临时表，则新表也必须是本地临时表，否则会报错。
     >
     >-   如果源表是hash或list分区表，则在CREATE TABLE ... (LIKE ... INCLUDIING PARTITION)时会报错，不支持复制hash或list分区表的分区，仅支持range分区。对于二级分区表，同样只支持range-range二级分区。
-    >
-    >-   ATUO_INCREMENT列需要为主键或唯一约束的第一个字段，若复制包含AUTO_INCREAMENT列的表时指定EXCLUDING INDEX，将会报错。
-
+    
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。
