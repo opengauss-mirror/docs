@@ -162,8 +162,3 @@ java.sql.ResultSetMetaData是对ResultSet对象相关信息的具体描述。
 </tr>
 </tbody>
 </table>
-
->![](public_sys-resources/icon-note.png) **说明：**
->uppercaseAttributeName为true时，下面接口会将查询结果转为大写，可转换范围为26个英文字母。
->-   public String getColumnName\(int column\)
->-   public String getColumnLabel\(int column\)
