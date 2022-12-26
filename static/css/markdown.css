@@ -60,7 +60,7 @@
 .markdown h5,
 .markdown h6 {
   color: var(--o-color-text1);
-  font-weight: normal;
+  font-weight: 600;
 }
 .markdown h1 a,
 .markdown h2 a,
@@ -419,7 +419,7 @@
 .migration-markdown h5,
 .migration-markdown h6 {
   color: var(--o-color-text1);
-  font-weight: normal;
+  font-weight: 600;
 }
 .migration-markdown h1 a,
 .migration-markdown h2 a,
