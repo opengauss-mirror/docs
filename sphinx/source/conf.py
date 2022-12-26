@@ -76,3 +76,6 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+latex_elements = {
+    'extraclassoptions': 'openany,oneside'
+}
