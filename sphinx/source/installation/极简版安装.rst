@@ -1,4 +1,7 @@
 
+
+极简版安装
+=====================================
 .. toctree::
 
     content/zh/docs/Installation/安装准备1
