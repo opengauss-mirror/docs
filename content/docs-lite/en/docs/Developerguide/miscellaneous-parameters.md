@@ -54,11 +54,11 @@ This parameter is a fixed parameter of the INTERNAL type. It can be viewed but c
 
 **Parameter description**: Specifies the server version number.
 
-This parameter is a fixed parameter of the INTERNAL type. It can be viewed but cannot be modified. This parameter is inherited from the PostgreSQL kernel, indicating that the current database kernel is compatible with the server\_version\_num version corresponding to PostgreSQL. This parameter is reserved to ensure the ecosystem compatibility of the northbound external tool API. \(query when the tool is connected\).
+This parameter is a fixed parameter of the INTERNAL type. It can be viewed but cannot be modified. This parameter is the openGauss version.
 
 **Value range**: an integer
 
-**Default value**:  **90204**
+**Default value**:  **30000**
 
 ## block\_size<a name="en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_s46449cae21604e8d828a3614d26d3874"></a>
 
