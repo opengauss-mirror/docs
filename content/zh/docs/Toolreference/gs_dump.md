@@ -133,8 +133,6 @@ export PGDATABASE=postgres
     -   d|directory：该格式会创建一个目录，该目录包含两类文件，一类是目录文件，另一类是每个表和blob对象对应的数据文件。
     -   t|tar：输出一个tar格式的归档形式，作为gs\_restore输入信息。tar格式与目录格式兼容；tar格式归档形式在提取过程中会生成一个有效的目录格式归档形式。但是，tar格式不支持压缩且对于单独表有8GB的大小限制。此外，表数据项的相应排序在恢复过程中不能更改。
 
-        输出一个tar格式的归档形式，也可以作为gsql输入信息。
-
 
 -   -v, --verbose
 
@@ -312,9 +310,9 @@ export PGDATABASE=postgres
 
   在使用v1参数时，建议和--exclude-guc="enable\_cluster\_resize"、--exclude-function、--exclude-with等选项共用，否则导入到v1时可能报错。
 
-- --exclude-guc
+-g --exclude-guc
 
-  导出的文本文件中，不包括相关guc参数的set命令，目前只支持enable\_cluster\_resize。
+  该参数为扩展预留接口，不建议使用。
 
 - --exclude-function
 
