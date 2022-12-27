@@ -125,7 +125,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     CSV格式文件下的引号字符。
 
-    默认值：双引号。
+    默认值：""。
 
     >![](public_sys-resources/icon-note.gif) **说明：**
     >   

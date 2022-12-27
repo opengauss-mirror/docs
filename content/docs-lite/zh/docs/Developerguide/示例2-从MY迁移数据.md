@@ -49,7 +49,7 @@ public class Migration{
                 baseConn.setAutoCommit(false);
 
                 //初始化表信息   
-                String sql = "Copy " + tablename + " from STDIN with (DELIMITER " + "'" + delimiter + "'" +","+ " ENCODING " + "'" + encoding + "'");
+                String sql = "Copy " + tablename + " from STDIN with (DELIMITER " + "'" + delimiter + "'" +","+ " ENCODING " + "'" + encoding + "')";
 
                 //提交缓存buffer中的数据                   
                 CopyManager cp = new CopyManager(baseConn);

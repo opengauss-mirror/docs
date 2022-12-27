@@ -128,8 +128,6 @@ gs_dump [OPTION]... [DBNAME]
     -   d|directory：该格式会创建一个目录，该目录包含两类文件，一类是目录文件，另一类是每个表和blob对象对应的数据文件。
     -   t|tar：输出一个tar格式的归档形式，作为gs\_restore输入信息。tar格式与目录格式兼容；tar格式归档形式在提取过程中会生成一个有效的目录格式归档形式。但是，tar格式不支持压缩且对于单独表有8GB的大小限制。此外，表数据项的相应排序在恢复过程中不能更改。
 
-        输出一个tar格式的归档形式，也可以作为gsql输入信息。
-
 
 -   -v, --verbose
 
@@ -303,7 +301,7 @@ gs_dump [OPTION]... [DBNAME]
 
 -   -g, --exclude-guc
 
-    导出的文本文件中，不包括相关guc参数的set命令，目前只支持enable\_cluster\_resize。
+    该参数为扩展预留接口，不建议使用。
 
 -   --exclude-function
 
@@ -516,7 +514,7 @@ tar归档形式的文件大小不得超过8GB（tar文件格式的固有限制�
 
 ```
 gs_dump -U omm -f backup/MPPDB_backup.sql -p 37300 postgres -F p
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: The total objects number is 356.
 gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: [100.00%] 356 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: dump database postgres successfully
@@ -529,7 +527,7 @@ gs_dump[port='37300'][postgres][2018-06-27 09:49:17]: total time: 1274  ms
 
 ```
 gs_dump -U omm -f backup/MPPDB_backup.tar -p 37300 postgres -F t
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-27 10:02:24]: The total objects number is 1369.
 gs_dump[port='37300'][postgres][2018-06-27 10:02:53]: [100.00%] 1369 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-27 10:02:53]: dump database postgres successfully
@@ -540,7 +538,7 @@ gs_dump[port='37300'][postgres][2018-06-27 10:02:53]: total time: 50086  ms
 
 ```
 gs_dump -U omm -f backup/MPPDB_backup.dmp -p 37300 postgres -F c
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-27 10:05:40]: The total objects number is 1369.
 gs_dump[port='37300'][postgres][2018-06-27 10:06:03]: [100.00%] 1369 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-27 10:06:03]: dump database postgres successfully
@@ -551,7 +549,7 @@ gs_dump[port='37300'][postgres][2018-06-27 10:06:03]: total time: 36620  ms
 
 ```
 gs_dump -U omm -f backup/MPPDB_backup -p 37300  postgres -F d
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-27 10:16:04]: The total objects number is 1369.
 gs_dump[port='37300'][postgres][2018-06-27 10:16:23]: [100.00%] 1369 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-27 10:16:23]: dump database postgres successfully
@@ -562,7 +560,7 @@ gs_dump[port='37300'][postgres][2018-06-27 10:16:23]: total time: 33977  ms
 
 ```
 gs_dump -U omm -p 37300 postgres --exclude-table-file=/home/MPPDB_temp.sql -f backup/MPPDB_backup.sql
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-27 10:37:01]: The total objects number is 1367.
 gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: [100.00%] 1367 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: dump database postgres successfully
@@ -575,7 +573,7 @@ gs_dump[port='37300'][postgres][2018-06-27 10:37:22]: total time: 37017  ms
 
 ```
 gs_dump -s -p 37300 postgres -t PUBLIC.testtable --include-depend-objs --exclude-self -f backup/MPPDB_backup.sql -F p
-Password:
+
 gs_dump[port='37300'][postgres][2018-06-15 14:12:54]: The total objects number is 331.
 gs_dump[port='37300'][postgres][2018-06-15 14:12:54]: [100.00%] 331 objects have been dumped.
 gs_dump[port='37300'][postgres][2018-06-15 14:12:54]: dump database postgres successfully
