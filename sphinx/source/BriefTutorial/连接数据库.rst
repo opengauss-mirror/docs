@@ -1,7 +1,8 @@
-
+连接数据库
+==========
 .. toctree::
 
     C-C++语言
-	content/zh/docs/BriefTutorial/Java
-	content/zh/docs/BriefTutorial/Python
+	../content/zh/docs/BriefTutorial/Java
+	../content/zh/docs/BriefTutorial/Python
 
