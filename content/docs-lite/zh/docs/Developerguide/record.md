@@ -81,8 +81,8 @@ BEGIN
      raise info 'employer1 name: % , epno: %',employer1.name, employer1.epno;
          
       --将一个record类型变量赋值为NULL。
-     employer1 := NULL;
-     raise info 'employer1 name: % , epno: %',employer1.name, employer1.epno;
+     employer := NULL;
+     raise info 'employer name: % , epno: %',employer.name, employer.epno;
 
       --获取record变量的默认值。
      raise info 'employer2 name: % ,epno: %', employer2.name, employer2.epno;
