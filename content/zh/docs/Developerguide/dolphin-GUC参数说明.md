@@ -6,7 +6,7 @@
 
 1. sql_mode_strict：插入不符合当前列类型的值时,进行数据转换;分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar；
 
-2. sql_mode_strict：插入的列值长度超过此列所限定的长度时,赋予该列最大或最小值（涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar）;
+2. sql_mode_strict：插入的列值长度超过此列所限定的长度时,赋予该列最大或最小值，涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar;
 
 3. sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值;（涉及的类型同上）
 
@@ -55,7 +55,7 @@
    
 
 
-该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 ansi_quotes关闭情况下，如果需要用到数据库关键字作为对象标识符，或者出于规范性要求需要包裹所有对象标识符，可以使用反引号(`)替代双引号。
 
@@ -78,20 +78,37 @@ openGauss=# CREATE TABLE test1
   a6 numeric not null,
   a7 varchar(5) not null
 );
-
+CREATE TABLE
 --向表中插入记录失败。
 openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
+ERROR:  smallint out of range
+CONTEXT:  referenced column: a1
 --查询表失败
 openGauss=# select a1,a2 from test1 group by a1;
+ERROR:  column "test1.a2" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select a1,a2 from test1 group by a1;
 
 --向表中插入记录成功。
 openGauss=# set dolphin.sql_mode = '';
+SET
 openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
+WARNING:  invalid input syntax for numeric: ""
+CONTEXT:  referenced column: a6
+WARNING:  smallint out of range
+CONTEXT:  referenced column: a1
+WARNING:  integer out of range
+CONTEXT:  referenced column: a2
+INSERT 0 1
 --查询表成功
 openGauss=# select a1,a2 from test1 group by a1;
+  a1   |     a2
+-------+------------
+ 32767 | 2147483647
+(1 row)
 
 --删除表
 openGauss=# DROP TABLE test1;
+DROP TABLE
 ```
 
 ## dolphin.b\_db\_timestamp<a name="section203671436822"></a>
