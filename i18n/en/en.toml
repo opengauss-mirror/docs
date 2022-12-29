@@ -2,6 +2,15 @@
 [hot_document]
 other = "Hot documents"
 
+[login_text]
+other = "Login"
+
+[logout_text]
+other = "Logout"
+
+[zone_text]
+other = "User Center"
+
 [A-Tune_content]
 other = "This document describes how to install and use A-Tune, which is a performance self-optimization software for openGauss."
 
