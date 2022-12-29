@@ -17,6 +17,14 @@ other = "Documentation"
 [opengauss_document]
 other = "openGauss Documentation"
 
+[login_text]
+other = "登录"
+
+[logout_text]
+other = "退出登录"
+
+[zone_text]
+other = "个人中心"
 
 [catalog_text]
 other = "目录"
