@@ -199,119 +199,96 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 ## 示例<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
---创建一个表tpcds.customer_address_p1。
-openGauss=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
+-- 1、首先创建一个兼容性等级为 B 的数据库，并切换
+openGauss=# create database openGauss with dbcompatibility 'B';
+CREATE DATABASE
+openGauss=# \c openGauss
+Non-SSL connection (SSL connection is recommended when requiring high-security)
+You are now connected to database "opengauss" as user "omm".
 
---修改explain_perf_mode为normal
-openGauss=# SET explain_perf_mode=normal;
+-- 2、在新的数据库上创建一个表格
+opengauss=# create table test_t(c1 int, c2 varchar(30));
+CREATE TABLE
 
---显示表简单查询的执行计划。
-openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
-QUERY PLAN
---------------------------------------------------
-Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
-Node/s: All dbnodes
-(2 rows)
+-- 3、可以设置 explain_perf_mode 为 normal
+opengauss=# SET explain_perf_mode=normal;
+SET
 
---以JSON格式输出的执行计划（explain_perf_mode为normal时）。
-openGauss=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
-              QUERY PLAN              
---------------------------------------
- [                                   +
-   {                                 +
-     "Plan": {                       +
-       "Node Type": "Data Node Scan",+
-       "Startup Cost": 0.00,         +
-       "Total Cost": 0.00,           +
-       "Plan Rows": 0,               +
-       "Plan Width": 0,              +
-       "Node/s": "All dbnodes"     +
-     }                               +
-   }                                 +
+-- 4、查看 SQL 的执行计划
+opengauss=# explain select * from test_t;
+                        QUERY PLAN
+----------------------------------------------------------
+ Seq Scan on test_t  (cost=0.00..17.29 rows=729 width=82)
+(1 row)
+
+-- 5、在查看计划时可以指定输出格式（支持两种指定方式:括号或等号）
+opengauss=# explain (format json) select * from test_t;
+            QUERY PLAN
+----------------------------------
+ [                               +
+   {                             +
+     "Plan": {                   +
+       "Node Type": "Seq Scan",  +
+       "Relation Name": "test_t",+
+       "Alias": "test_t",        +
+       "Startup Cost": 0.00,     +
+       "Total Cost": 17.29,      +
+       "Plan Rows": 729,         +
+       "Plan Width": 82          +
+     }                           +
+   }                             +
  ]
 (1 row)
 
---如果有一个索引，当使用一个带索引WHERE条件的查询，可能会显示一个不同的计划。
-openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-QUERY PLAN
---------------------------------------------------
-Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
-Node/s: dn_6005_6006
-(2 rows)
-
---以YAML格式输出的执行计划（explain_perf_mode为normal时）。
-openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-           QUERY PLAN            
----------------------------------
- - Plan:                        +
-     Node Type: "Data Node Scan"+
-     Startup Cost: 0.00         +
-     Total Cost: 0.00           +
-     Plan Rows: 0               +
-     Plan Width: 0              +
-     Node/s: "dn_6005_6006"
+opengauss=# explain format=json select * from test_t;
+            QUERY PLAN
+----------------------------------
+ [                               +
+   {                             +
+     "Plan": {                   +
+       "Node Type": "Seq Scan",  +
+       "Relation Name": "test_t",+
+       "Alias": "test_t",        +
+       "Startup Cost": 0.00,     +
+       "Total Cost": 17.29,      +
+       "Plan Rows": 729,         +
+       "Plan Width": 82          +
+     }                           +
+   }                             +
+ ]
 (1 row)
 
---禁止开销估计的执行计划。
-openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-       QUERY PLAN       
-------------------------
- Data Node Scan
-   Node/s: dn_6005_6006
+-- 6、如果一个查询中的 where 子句的列有索引，在条件不一样或数据量等不一样时，可能会显示不同的执行计划
+opengauss=# create index idx_test_t_c1 on test_t(c1);
+CREATE INDEX
+opengauss=# insert into test_t values(generate_series(1, 200), 'hello openGauss');
+INSERT 0 200
+opengauss=# explain select c1, c2 from test_t where c1=100;
+                                 QUERY PLAN
+----------------------------------------------------------------------------
+ Bitmap Heap Scan on test_t  (cost=4.28..12.74 rows=4 width=82)
+   Recheck Cond: (c1 = 100)
+   ->  Bitmap Index Scan on idx_test_t_c1  (cost=0.00..4.28 rows=4 width=0)
+         Index Cond: (c1 = 100)
+(4 rows)
+
+-- 7、可以通过 costs 选项，指定是否显示开销
+opengauss=# explain (costs false) select * from test_t where c1=100;
+                QUERY PLAN
+------------------------------------------
+ Bitmap Heap Scan on test_t
+   Recheck Cond: (c1 = 100)
+   ->  Bitmap Index Scan on idx_test_t_c1
+         Index Cond: (c1 = 100)
+(4 rows)
+
+-- 8、在兼容性等级为 B 的数据库下，explain 是和 desc（describe）等价的，还可以用来查看表格信息
+opengauss=# explain test_t;
+ Field |         Type          | Null | Key | Default | Extra
+-------+-----------------------+------+-----+---------+-------
+ c1    | integer               | YES  | MUL | NULL    |
+ c2    | character varying(30) | YES  |     | NULL    |
 (2 rows)
-
---带有聚集函数查询的执行计划。
-openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
-                                      QUERY PLAN                                       
----------------------------------------------------------------------------------------
- Aggregate  (cost=18.19..14.32 rows=1 width=4)
-   ->  Streaming (type: GATHER)  (cost=18.19..14.32 rows=3 width=4)
-         Node/s: All dbnodes
-         ->  Aggregate  (cost=14.19..14.20 rows=3 width=4)
-               ->  Seq Scan on customer_address_p1  (cost=0.00..14.18 rows=10 width=4)
-                     Filter: (ca_address_sk < 10000)
-(6 rows)
-
-
---创建一个二级分区表。
-openGauss=# CREATE TABLE range_list
-openGauss-# (
-openGauss(#     month_code VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     dept_code  VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     user_no    VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     sales_amt  int
-openGauss(# )
-openGauss-# PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
-openGauss-# (
-openGauss(#   PARTITION p_201901 VALUES LESS THAN( '201903' )
-openGauss(#   (
-openGauss(#     SUBPARTITION p_201901_a values ('1'),
-openGauss(#     SUBPARTITION p_201901_b values ('2')
-openGauss(#   ),
-openGauss(#   PARTITION p_201902 VALUES LESS THAN( '201910' )
-openGauss(#   (
-openGauss(#     SUBPARTITION p_201902_a values ('1'),
-openGauss(#     SUBPARTITION p_201902_b values ('2')
-openGauss(#   )
-openGauss(# );
-CREATE TABLE
-
---执行带有二级分区表的查询语句。
---Iterations 和 Sub Iterations分别标识遍历了几个一级分区和二级分区。
---Selected Partitions标识哪些一级分区被实际扫描，Selected Subpartitions: (p:s)标识第p个一级分区下s个二级分区被实际扫描，如果一级分区下所有二级分区都被扫描则s显示为ALL。
-openGauss=# EXPLAIN SELECT * FROM range_list WHERE dept_code = '1';
-                                  QUERY PLAN
--------------------------------------------------------------------------------
- Partition Iterator  (cost=0.00..13.81 rows=2 width=238)
-   Iterations: 2, Sub Iterations: 2
-   ->  Partitioned Seq Scan on range_list  (cost=0.00..13.81 rows=2 width=238)
-         Filter: ((dept_code)::text = '1'::text)
-         Selected Partitions:  1..2
-         Selected Subpartitions:  1:1, 2:1
-(6 rows)
-
---删除表tpcds.customer_address_p1。
-openGauss=# DROP TABLE tpcds.customer_address_p1;
 
 ```
 

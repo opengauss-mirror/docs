@@ -8,12 +8,12 @@ DESCRIBE 和 [EXPLAIN](dolphin-EXPLAIN.md) 互为同义词，可以用于查看�
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
-- 临时表需要指定临时表对应的schema查询
-- 复合主键索引所有参与列都会在Key字段中显示为PRI
-- 复合唯一索引所有参与列都会在Key字段中显示为UNI
-- 如果一个列参与了多个索引的创建，以该列第一个创建的索引为准显示Key字段
-- 生成列会在Default中显示生成式
-- 不支持表同义词
+- 临时表需要指定临时表对应的schema查询。
+- 复合主键索引所有参与列都会在Key字段中显示为PRI。
+- 复合唯一索引所有参与列都会在Key字段中显示为UNI。
+- 如果一个列参与了多个索引的创建，将按 PRI、UNI、MUL 的优先级顺序显示。
+- 生成列会在Default中显示生成式。
+- 不支持表同义词。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
