@@ -54,7 +54,7 @@ This parameter is a fixed parameter of the INTERNAL type. It can be viewed but c
 
 **Parameter description**: Specifies the server version number.
 
-This parameter is a fixed parameter of the INTERNAL type. It can be viewed but cannot be modified. This parameter is the openGauss version.
+This parameter is a fixed parameter of the INTERNAL type. It can be viewed but cannot be modified. This parameter is the openGauss version of the integer type whose last digit is zero. For example, if the openGauss version is 3.1.1, the value of the parameter is 30100.
 
 **Value range**: an integer
 
