@@ -260,7 +260,7 @@ export PGDATABASE=postgres
 
     -   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。 
 
-    -   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
+    -   -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。 
 
     -   -t tablename不会导出表上的触发器信息。  
 
@@ -384,7 +384,7 @@ export PGDATABASE=postgres
 
 -   --non-lock-table
 
-    该参数为扩展预留接口，不建议使用。
+    该参数仅供软件间接口调用。
 
 -   --include-alter-table
 

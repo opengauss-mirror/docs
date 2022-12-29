@@ -87,7 +87,7 @@ gs_dumpall [OPTION]...
 
 -   -S, --sysadmin=NAME
 
-    在转储过程中使用的系统管理员名称。
+    该参数为扩展预留接口，不建议使用。
 
 -   -t, --tablespaces-only
 
@@ -170,7 +170,7 @@ gs_dumpall [OPTION]...
 
 -   --non-lock-table
 
-    该参数仅供OM工具使用。
+    该参数仅供软件间接口调用。
 
 -   --tablespaces-postfix
 
@@ -199,7 +199,7 @@ gs_dumpall [OPTION]...
 
 连接参数：
 
--   -h, --host
+-   -h, --host=HOSTNAME
 
     指定主机的名称。如果取值是以斜线开头，它将用作Unix域套接字的目录。默认值取自PGHOST环境变量；如果没有设置，将启动某个Unix域套接字建立连接。
 
@@ -207,11 +207,11 @@ gs_dumpall [OPTION]...
 
     环境变量：PGHOST
 
--   -l, --database
+-   -l, --database=DATABASENAME
 
     指定所连接的转储全局对象的数据库名称，并去寻找还有其他哪些数据库需要被转储。如果没有指定，会使用postgres数据库，如果postgres数据库不存在，会使用template1。
 
--   -p, --port
+-   -p, --port=PORT
 
     指定服务器所侦听的TCP端口或本地Unix域套接字后缀，以确保连接。默认值设置为PGPORT环境变量。
 
@@ -219,7 +219,7 @@ gs_dumpall [OPTION]...
 
     环境变量：PGPORT
 
--   -U, --username
+-   -U, --username=NAME
 
     所连接的用户名。
 
@@ -229,15 +229,15 @@ gs_dumpall [OPTION]...
 
     不出现输入密码提示。如果服务器要求密码认证并且密码没有通过其它形式给出，则连接尝试将会失败。 该选项在批量工作和不存在用户输入密码的脚本中很有帮助。
 
--   -W, --password
+-   -W, --password=PASSWORD
 
     指定用户连接的密码。如果主机的认证策略是trust，则不会对系统管理员进行密码验证，即无需输入-W选项；如果没有-W选项，并且不是系统管理员，“Dump Restore工具”会提示用户输入密码。
 
--   --role
+-   --role=ROLENAME
 
     指定创建转储使用的角色名。选择该选项，会使gs\_dumpall连接数据库后，发起一个SET ROLE角色名命令。当所授权用户（由-U指定）没有gs\_dumpall要求的权限时，该选项会起到作用，即切换到具备相应权限的角色。某些安装操作规定不允许直接以系统管理员身份登录，而使用该选项能够在不违反该规定的情况下完成转储。
 
--   --rolepassword
+-   --rolepassword=ROLEPASSWORD
 
     指定具体角色用户的角色密码。
 
@@ -246,7 +246,7 @@ gs_dumpall [OPTION]...
 
 -   由于gs\_dumpall内部调用gs\_dump，所以一些诊断信息参见[gs\_dump](gs_dump.md)。
 -   一旦恢复，建议在每个数据库上运行ANALYZE，优化程序提供有用的统计数据。
--   gs\_dumpall恢复前需要所有必要的表空间目录才能退出；否则，对于处在非默认位置的数据库，数据库创建会失败。
+-   gs\_dumpall恢复前需要所有必要的表空间目录为空；否则，对于处在非默认位置的数据库，数据库创建会失败。
 
 ## 示例<a name="zh-cn_topic_0059778372_sb56721027dde49e1bf8c5df9685d2f2f"></a>
 
