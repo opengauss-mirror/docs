@@ -199,29 +199,28 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 ## 示例<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
--- 1、首先创建一个兼容性等级为 B 的数据库，并切换
+-- 1、首先创建一个兼容性为 B 模式的数据库，并切换
 openGauss=# create database openGauss with dbcompatibility 'B';
 CREATE DATABASE
 openGauss=# \c openGauss
 Non-SSL connection (SSL connection is recommended when requiring high-security)
 You are now connected to database "opengauss" as user "omm".
 
--- 2、在新的数据库上创建一个表格
+-- 2、在新的数据库上创建一个表
 opengauss=# create table test_t(c1 int, c2 varchar(30));
 CREATE TABLE
 
--- 3、可以设置 explain_perf_mode 为 normal
-opengauss=# SET explain_perf_mode=normal;
-SET
-
--- 4、查看 SQL 的执行计划
+-- 3、查看 SQL 的执行计划
 opengauss=# explain select * from test_t;
                         QUERY PLAN
 ----------------------------------------------------------
  Seq Scan on test_t  (cost=0.00..17.29 rows=729 width=82)
 (1 row)
 
--- 5、在查看计划时可以指定输出格式（支持两种指定方式:括号或等号）
+-- 4、在查看计划时可以指定输出格式
+-- 注意：只有当 explain_perf_mode 为 normal 时，才支持 json 格式
+openGauss=# SET explain_perf_mode=normal;
+SET
 opengauss=# explain (format json) select * from test_t;
             QUERY PLAN
 ----------------------------------
@@ -258,7 +257,7 @@ opengauss=# explain format=json select * from test_t;
  ]
 (1 row)
 
--- 6、如果一个查询中的 where 子句的列有索引，在条件不一样或数据量等不一样时，可能会显示不同的执行计划
+-- 5、如果一个查询中的 where 子句的列有索引，在条件不一样或数据量等不一样时，可能会显示不同的执行计划
 opengauss=# create index idx_test_t_c1 on test_t(c1);
 CREATE INDEX
 opengauss=# insert into test_t values(generate_series(1, 200), 'hello openGauss');
@@ -272,7 +271,7 @@ opengauss=# explain select c1, c2 from test_t where c1=100;
          Index Cond: (c1 = 100)
 (4 rows)
 
--- 7、可以通过 costs 选项，指定是否显示开销
+-- 6、可以通过 costs 选项，指定是否显示开销
 opengauss=# explain (costs false) select * from test_t where c1=100;
                 QUERY PLAN
 ------------------------------------------
@@ -282,7 +281,7 @@ opengauss=# explain (costs false) select * from test_t where c1=100;
          Index Cond: (c1 = 100)
 (4 rows)
 
--- 8、在兼容性等级为 B 的数据库下，explain 是和 desc（describe）等价的，还可以用来查看表格信息
+-- 7、在兼容性为 B 的数据库下，explain 和 desc（describe）是等价的，还可以用来查看表结构信息
 opengauss=# explain test_t;
  Field |         Type          | Null | Key | Default | Extra
 -------+-----------------------+------+-----+---------+-------
