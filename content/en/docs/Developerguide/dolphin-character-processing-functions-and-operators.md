@@ -692,3 +692,97 @@ Compared with the original openGauss, Dolphin modifies character processing func
   4036199316
   (1 row)
   ```
+
+  - TO_BASE64(str)
+  
+  Description: Encodes a character string into BASE64 format based on BASE64 encoding rules and returns the encoding result. The encoding and decoding rules are the same as those of the FROM\_BASE64 function.
+
+  Return type: text
+
+  Precautions
+
+  - If NULL is entered, NULL is returned.
+  - The encoding and decoding rules are the same as those of the FROM\_BASE64 function.
+
+  Example 1: abc
+
+  1. Represent a character string in binary mode: 01100001(a)01100010(b)01100011(c)
+  2. Split the binary string into 6-bit groups: 011000 010110 001001 100011
+  3. Pad the upper bits with two 0s: 00011000 00010110 00001001 00100011
+  4. Search for the BASE64 code conversion table and find out that characters corresponding to 00011000, 00010110, 00001001, and 00100011 are Y, W, J, and j.
+  5. Therefore, the encoding result is YWJj.
+
+  Example 2: ab
+
+  1. Represent a character string in binary mode: 01100001(a)01100010(b)
+  2. Split the binary string into 6-bit groups. The lower bits of the last group are padded with two 0s to ensure that the last group contains six bits: 011000 010110 0010(00)
+  3. Pad the upper bits with two 0s: 00011000 00010110 00001000
+  4. Search for the BASE64 code conversion table and find out that characters corresponding to 00011000, 00010110, and 00001000 are Y, W, and I.
+  5. The number of bytes in the input character string is not a multiple of 3. As a result, the number of characters after conversion is not a multiple of 4. You need to add an equal sign (=) to ensure that the final encoding result contains 4 bytes, that is YWI=.
+
+    Example:
+    
+    ```sql
+      SELECT TO_BASE64('to_base64');
+        to_base64   
+      --------------
+      dG9fYmFzZTY0
+      (1 row)
+      SELECT TO_BASE64('123456');
+       to_base64 
+      -----------
+       MTIzNDU2
+      (1 row)
+
+      SELECT TO_BASE64('12345');
+       to_base64 
+      -----------
+       MTIzNDU=
+      (1 row)
+
+      SELECT TO_BASE64('1234');
+       to_base64 
+      -----------
+       MTIzNA==
+      (1 row)
+    ```
+
+- UNHEX(str)
+  
+  Description: Decodes a hexadecimal-encoded string. A hexadecimal character is decoded into a four-bit binary character, and two hexadecimal characters (eight bits) are decoded into one character. The decoding result of the string is returned. If the number of characters in the hexadecimal string is not an even number, pad the upper bits with 0. If a binary string is entered, NULL is returned.
+
+  Return type: text
+
+  Precautions
+
+  - If the input is NULL or contains non-hexadecimal characters, NULL is returned.
+  - If a number is entered, the number is converted into a character string and then decoded. If a hexadecimal number needs to be converted into a decimal number, other functions are required.
+  - The encoding and decoding rules are the same as those of the HEX function.
+
+  Example 1: 4142
+
+  1. Represent each hexadecimal character in 4-bit binary mode. If the number of characters in the hexadecimal string is not an even number, pad the upper bits with 0: 0100(4)0001(1)0100(4)0010(2)
+  2. Every eight bit form a character: 01000001 01000010
+  3. Therefore, the decoding result is AB.
+
+    Example:
+    
+    ```sql
+      SELECT UNHEX('6f70656e4761757373');
+        unhex   
+      -----------
+      openGauss
+      (1 row)
+
+      SELECT UNHEX(HEX('string'));
+       unhex  
+      --------
+       string
+      (1 row)
+
+      SELECT HEX(UNHEX('1267'));
+       hex  
+      ------
+       1267
+      (1 row)
+    ```

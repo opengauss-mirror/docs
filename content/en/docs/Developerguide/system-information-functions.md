@@ -94,7 +94,7 @@
     >SET search_path TO schema [, schema, ...]
     >```
 
--   current\_user
+-   current\_user\[\(\)\]
 
     Description: User name of current execution context
 
@@ -103,7 +103,7 @@
     Example:
 
     ```
-    openGauss=# SELECT current_user;
+    openGauss=# SELECT current_user();
      current_user
     --------------
      omm

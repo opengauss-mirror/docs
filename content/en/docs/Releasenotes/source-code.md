@@ -1,6 +1,6 @@
 # Source Code<a name="EN-US_TOPIC_0289899190"></a>
 
-openGauss contains the following 16 code repositories:
+openGauss contains the following 18 code repositories:
 
 -   Open-source software code repository:  [https://gitee.com/opengauss/openGauss-third\_party](https://gitee.com/opengauss/openGauss-third_party)
 
@@ -11,6 +11,8 @@ openGauss contains the following 16 code repositories:
 -   Autonomous O&M platform DBMind code repository: [https://gitee.com/opengauss/openGauss-DBMind](https://gitee.com/opengauss/openGauss-DBMind)
 -   OM tool code repository:  [https://gitee.com/opengauss/openGauss-OM](https://gitee.com/opengauss/openGauss-OM)
 -   CM tool code repository:  [https://gitee.com/opengauss/CM](https://gitee.com/opengauss/CM)
+-   DMS code repository: [https://gitee.com/opengauss/DMS](https://gitee.com/opengauss/DMS)
+-   DSS code repository: [https://gitee.com/opengauss/DSS](https://gitee.com/opengauss/DSS)
 -   DCF code repository:  [https://gitee.com/opengauss/DCF](https://gitee.com/opengauss/DCF)
 -   DCC code repository:  [https://gitee.com/opengauss/DCC](https://gitee.com/opengauss/DCC)
 -   Plug-in code repository:  [https://gitee.com/opengauss/Plugin](https://gitee.com/opengauss/Plugin)

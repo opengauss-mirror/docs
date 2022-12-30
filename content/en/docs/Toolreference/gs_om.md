@@ -212,16 +212,14 @@ The **gs\_om** tool can use the following types of parameters:
     
     -   --detail
     
-        Displays detailed information. If the parameter is not specified, only a prompt is displayed indicating whether the server is normal.
-    
-        ![](public_sys-resources/icon-note.gif) **NOTE:**
-        You can run the **gs_ctl query **command on each database node to query and summarize the results to obtain the detailed information about openGauss.
+        Displays detailed information. If the parameter is not specified, only a prompt is displayed indicating whether the server is normal. 
+        
+        You can run the **gs_ctl query** command on each database node to query and summarize the results to obtain the detailed information about openGauss.
         
     -    --all
         
         Displays information about all openGauss nodes.
         
-        ![](public_sys-resources/icon-note.gif) **NOTE:**
         You can run the **gsql **command on each database node to query the system catalog and summarize the results to obtain information about all openGauss nodes. Ensure that **gsql **can be used to query the correct information before using this parameter.
 
 

@@ -13,7 +13,7 @@
 ## Syntax<a name="en-us_topic_0283136891_en-us_topic_0237122125_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
 ```
-CREATE USER user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
+CREATE USER [IF NOT EXISTS] user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | UNENCRYPTED ] { PASSWORD | IDENTIFIED BY } { 'password' [EXPIRED] | DISABLE };
 ```
 
 The  **option**  clause is used to configure information, including permissions and properties.
@@ -55,6 +55,10 @@ The  **option**  clause is used to configure information, including permissions 
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136891_en-us_topic_0237122125_en-us_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
+
+-   **IF NOT EXISTS**
+
+    Sends a notice, but does not throw an error, if a user with the same name exists.
 
 -   **user\_name**
 
