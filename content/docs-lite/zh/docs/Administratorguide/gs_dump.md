@@ -255,7 +255,7 @@ gs_dump [OPTION]... [DBNAME]
     >-   -t参数选项个数必须小于等于100。
     >-   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
     >-   当-t已指定时，gs\_dump不会转储已选表所附着的任何其他数据库对象。因此，无法保证某个指定表的转储结果能够自行成功地储存到一个空数据库中。
-    >-   -t tablename只转储在默认搜索路径中可见的表。-t '\*.tablename'转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
+    >-   -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
     >-   -t tablename不会导出表上的触发器信息。
 
     例如：
@@ -370,7 +370,7 @@ gs_dump [OPTION]... [DBNAME]
 
 -   --non-lock-table
 
-    该参数为扩展预留接口，不建议使用。
+    该参数仅供软件间接口调用。
 
 -   --quote-all-identifiers
 
@@ -447,7 +447,7 @@ gs_dump [OPTION]... [DBNAME]
 >-   --inserts/--column-inserts和-o/--oids不能同时使用，因为INSERT命令不能设置OIDS。
 >-   --role和--rolepassword必须一起使用。
 >-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
->-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效
+>-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。
 >-   --exclude-self必须同--include-depend-objs一起使用。
 >-   --with-encryption=AES128仅支持-F p/plain。
 >-   --with-key=KEY仅支持-F p/plain。
