@@ -1,6 +1,7 @@
-
+工具对接
+========
 .. toctree::
 
-    content/zh/docs/Developerguide/JDBC配置
+    ../content/zh/docs/Developerguide/JDBC配置
 
 

@@ -1,4 +1,5 @@
-
+Schema
+======
 
 .. toctree::
 

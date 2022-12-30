@@ -1,6 +1,7 @@
-
+用户自定义函数
+==============
 
 .. toctree::
 
-    content/zh/docs/Developerguide/PL-pgSQL语言函数
+    ../content/zh/docs/Developerguide/PL-pgSQL语言函数
 

@@ -1,10 +1,11 @@
-
+应用程序开发教程
+================
 
 .. toctree::
 
-    content/zh/docs/Developerguide/开发规范
+    ../content/zh/docs/Developerguide/开发规范
     基于JDBC开发
     基于ODBC开发
-    content/zh/docs/Developerguide/基于libpq开发
-    content/zh/docs/Developerguide/基于Psycopg开发
-    content/zh/docs/Developerguide/调试
+    基于libpq开发
+    基于Psycopg开发
+    ../content/zh/docs/Developerguide/调试
