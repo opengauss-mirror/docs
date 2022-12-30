@@ -832,7 +832,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
       | Hour  | hour       |
       | Minute  | minute     |
       | Second  | second     |
-      | Microsecond| microsecon |
+      | Microsecond| microsecond |
 
     * The span supports decimals. If the unit is second, the span is rounded off to six decimal places based on the seventh decimal place. Otherwise, the span is rounded off to an integer.
 
