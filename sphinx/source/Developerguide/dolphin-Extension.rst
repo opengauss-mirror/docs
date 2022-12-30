@@ -1,4 +1,5 @@
-
+dolphin Extension
+=================
 
 .. toctree::
 

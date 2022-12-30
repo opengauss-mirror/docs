@@ -1,8 +1,9 @@
-
+系统调优指南
+============
 
 .. toctree::
 	
-    content/zh/docs/Developerguide/操作系统参数调优
+    ../content/zh/docs/Developerguide/操作系统参数调优
     数据库系统参数调优
     配置SMP
     配置LLVM

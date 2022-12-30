@@ -1,8 +1,9 @@
-
+连接数据库
+==========
 
 .. toctree::
 
-    content/zh/docs/Developerguide/确认连接信息
-    content/zh/docs/Developerguide/配置服务端远程连接
-    content/zh/docs/Developerguide/用gsql连接
-    content/zh/docs/Developerguide/应用程序接口
+    ../content/zh/docs/Developerguide/确认连接信息
+    ../content/zh/docs/Developerguide/配置服务端远程连接
+    ../content/zh/docs/Developerguide/用gsql连接
+    ../content/zh/docs/Developerguide/应用程序接口

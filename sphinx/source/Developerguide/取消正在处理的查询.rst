@@ -1,7 +1,8 @@
-
+取消正在处理的查询
+==================
 
 .. toctree::
-
-    content/zh/docs/Developerguide/PQgetCancel
-    content/zh/docs/Developerguide/PQfreeCancel
-    content/zh/docs/Developerguide/PQcancel
+		
+    ../content/zh/docs/Developerguide/PQgetCancel
+    ../content/zh/docs/Developerguide/PQfreeCancel
+    ../content/zh/docs/Developerguide/PQcancel

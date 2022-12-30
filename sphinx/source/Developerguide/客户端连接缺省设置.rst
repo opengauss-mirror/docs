@@ -1,7 +1,8 @@
-
+客户端连接缺省设置
+==================
 
 .. toctree::
 
-    content/zh/docs/Developerguide/语句行为
-    content/zh/docs/Developerguide/区域和格式化
-    content/zh/docs/Developerguide/其他缺省
+    ../content/zh/docs/Developerguide/语句行为
+    ../content/zh/docs/Developerguide/区域和格式化
+    ../content/zh/docs/Developerguide/其他缺省

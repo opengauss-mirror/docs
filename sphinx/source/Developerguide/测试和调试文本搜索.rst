@@ -1,7 +1,8 @@
-
+测试和调试文本搜索
+==================
 
 .. toctree::
 
-   content/zh/docs/Developerguide/分词器测试
-   content/zh/docs/Developerguide/解析器测试
-   content/zh/docs/Developerguide/词典测试
+   ../content/zh/docs/Developerguide/分词器测试
+   ../content/zh/docs/Developerguide/解析器测试
+   ../content/zh/docs/Developerguide/词典测试

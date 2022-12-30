@@ -1,8 +1,9 @@
-
+系统表和系统视图
+================
 
 .. toctree::
 
-    content/zh/docs/Developerguide/系统表和系统视图概述
+    ../content/zh/docs/Developerguide/系统表和系统视图概述
     系统表
     系统视图
 

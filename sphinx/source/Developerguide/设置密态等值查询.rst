@@ -1,8 +1,9 @@
-
+设置密态等值查询
+================
 
 .. toctree::
 	
-    content/zh/docs/Developerguide/密态等值查询概述
-    content/zh/docs/Developerguide/使用gsql操作密态数据库
-    content/zh/docs/Developerguide/使用JDBC操作密态数据库
-    content/zh/docs/Developerguide/密态支持函数-存储过程
+    ../content/zh/docs/Developerguide/密态等值查询概述
+    ../content/zh/docs/Developerguide/使用gsql操作密态数据库
+    ../content/zh/docs/Developerguide/使用JDBC操作密态数据库
+    ../content/zh/docs/Developerguide/密态支持函数-存储过程

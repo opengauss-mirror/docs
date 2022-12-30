@@ -1,4 +1,5 @@
-
+DBE_PERF Schema
+===============
 
 .. toctree::
 
