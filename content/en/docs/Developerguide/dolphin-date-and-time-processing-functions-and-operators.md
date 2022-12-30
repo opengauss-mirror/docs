@@ -12,6 +12,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 6. The date\_bool and time\_bool functions are added.
 7. The dayname, monthname, time\_to\_sec, month, day, date, week, yearweek functions are added and the last_day function is modified.
 8. The datediff, from\_days, convert\_tz, date\_add, date\_sub, adddate, addtime functions are added and the timestampdiff function is modified.
+9. The get\_format, date\_format, from\_unixtime, str\_to\_date functions are added, and the extract function is modified.
 
 - curdate\(\)
 
@@ -1739,5 +1740,219 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   addtime       
   ---------------------
   2020-03-04 01:02:03
+  (1 row)
+  ```
+  
+- get\_format\(expr1, expr2\)
+
+  Description: expr1 receives three types of names: date, datetime, and time. expr2 receives five types of character strings: 'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'. The function returns a string of the corresponding specification based on the type of expr1 and expr2.
+
+  The following table describes the return values of the function.
+  |Type|Specification|Return Value|
+  |---|---|---|
+  |DATE|'USA'|'%m.%d.%Y'|
+  |DATE|'JIS'|'%Y-%m-%d'|
+  |DATE|'ISO'|'%Y-%m-%d'|
+  |DATE|'EUR'|'%d.%m.%Y'|
+  |DATE|'INTERNAL'|'%Y%m%d'|
+  |DATETIME|'USA'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'JIS'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'ISO'|'%Y-%m-%d %H:%i:%s'|
+  |DATETIME|'EUR'|'%Y-%m-%d %H.%i.%s'|
+  |DATETIME|'INTERNAL'|'%Y%m%d%H%i%s'|
+  |TIME|'USA'|'%h:%i:%s %p'|
+  |TIME|'JIS'|'%H:%i:%s'|
+  |TIME|'ISO'|'%H:%i:%s'|
+  |TIME|'EUR'|'%H.%i.%s'|
+  |TIME|'INTERNAL'|'%H%i%s'|
+
+  Return type: text
+
+  Example:
+  
+  ```
+  openGauss=# select get_format(datetime, 'iso');
+      get_format
+  -------------------
+  %Y-%m-%d %H:%i:%s
+  (1 row)
+  ```
+
+- extract\(unit from expr\)
+
+  Description: Extracts the part specified by the **unit** parameter from the **expr** parameter.
+
+  Return value: bigint
+
+  Note: 
+
+  - In B-compatible databases, the original extract function of openGauss is replaced only when **b_compatibility_mode** is set to **true**.
+
+  - The **expr** parameter is parsed based on the **unit** parameter. If the unit involves YEAR, WEEK, QUARTER, MONTH, and DAY, the **expr** parameter is parsed as date or datetime. If the unit involves only HOUR, MINUTE, SECOND, and MICRESECOND, the **expr** parameter is parsed as time.
+  - The extract function can extract composite units.
+    - Composite units include DAY_HOUR, DAY_MINUTE, DAY_SECOND, DAY_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, HOUR_MICROSECOND, MINUTE_SECOND, MINUTE_MICROSECOND, and SECOND_MICROSECOND.
+    - For composite units DAY_HOUR, DAY_MINUTE, DAY_SECOND, and DAY_MICROSECOND, the openGauss parses expr as datetime because these units contain the DAY part.
+
+  Example:
+  
+  ```
+  openGauss=# set b_compatibility_mode = true;
+  SET
+
+  openGauss=# select extract(year from '2021-11-12 12:12:12.000123');
+   extract
+  ---------
+      2021
+  (1 row)
+
+  openGauss=# select extract(day_microsecond from '2021-11-12 12:12:12.000123');
+      extract
+  ----------------
+  12121212000123
+  (1 row)
+
+  openGauss=# select extract(hour_microsecond from '2021-11-12 12:12:12.000123');
+    extract
+  --------------
+  121212000123
+  (1 row)
+
+  openGauss=# set b_compatibility_mode = false;
+  SET
+  ```
+
+- date\_format\(expr, format\)
+
+  Description: The **expr** parameter indicates the input date or datetime format. This function formats the **expr** parameter based on the **format** parameter. The following table lists the values of the **format** parameter.
+  | Extraction Flag| Description|Value Range|
+  | ------- |----- |-------|
+  |%a|Abbreviation of the day of the week|Sun...Sat|
+  |%b|Abbreviation of the month|Jan...Dec|
+  |%c|Month number|0...12|
+  |%D|The day of the month with the ordinal suffix|0th, 1st, 2nd, 3rd, ...|
+  |%d|The day of the month|00...31|
+  |%e|The day of the month|0...31|
+  |%f|Microsecond|000000...999999|
+  |%H|Hour|00...23|
+  |%h|Hour|01...12|
+  |%I|Hour|01...12|
+  |%i|Minute|00...59|
+  |%j|Day number of the year|001...366|
+  |%k|Hour|0...23|
+  |%l|Hour|1...12|
+  |%M|Full name of the month|January...December|
+  |%m|Month number|00...12|
+  |%p|Morning or afternoon|AM or PM|
+  |%r|12-hour clock|'hh:mm:ss AM' or 'hh:mm:ss PM'|
+  |%S|Second|00...59|
+  |%s|Second|00...59|
+  |%T|24-hour clock|'hh:mm:ss'|
+  |%U|Week number corresponding to the date (when the mode of the WEEK function is 0)|00...53|
+  |%u|Week number corresponding to the date (when the mode of the WEEK function is 1)|00...53|
+  |%V|Week number corresponding to the date (when the mode of the WEEK function is 2). This flag must be used together with %X.|01...53|
+  |%v|Week number corresponding to the date (when the mode of the WEEK function is 3). This flag must be used together with %X.|01...53|
+  |%W|Full name of the day of the week|Sunday...Saturday|
+  |%w|Index of the day of the week|0=Sunday...6=Saturday|
+  |%X|Four-digit year corresponding to the week number of the date (Sunday is the first day of the week). This flag must be used together with %V.|...|
+  |%x|Four-digit year corresponding to the week number of the date (Monday is the first day of the week). This flag must be used together with %v.|...|
+  |%Y|Four-digit year|...|
+  |%y|Two-digit year|...|
+  |%%|Literal of '%'|...|
+  |%x|Unlisted character x|...|
+
+  Return value: text
+
+  Example:
+
+  ```
+  -- Format a date to a specified content.
+  openGauss=# select date_format('2001-01-01 12:12:12','%Y %M %H');
+  date_format   
+  -----------------
+  2001 January 12
+  (1 row)
+
+  -- Format the date to the week number or the day of the week.
+  openGauss=# select date_format('2001-01-01 12:12:12','%V %v %U %u %W %w');
+      date_format
+  ----------------------
+  53 01 00 01 Monday 1
+  (1 row)
+  ```
+
+- from\_unixtime\(unix\_timestamp\[,format\]\)
+
+  Description: The first parameter is a timestamp in numeric format, indicating the number of seconds since '1970-01-01 00:00:00'UTC. The second parameter is an optional character string parameter. If the second parameter is not input, the function returns datetime corresponding to '1970-01-01 00:00:00' UTC + unix_timestamp + the current time zone offset. If the second parameter is input, the function formats datetime based on the second parameter. The formatting method is the same as that of the date\_format function. When unix\_timestamp exceeds the maximum timestamp range, the function returns NULL.
+
+  Return value:
+  - **datetime** if only the first parameter is input.
+  - **text** if two parameters are input.
+
+  Example:
+
+  ```
+  openGauss=# select from_unixtime(1);
+      from_unixtime
+  ---------------------
+  1970-01-01 08:00:01
+  (1 row)
+
+  openGauss=# select from_unixtime(1,'%Y');
+  from_unixtime 
+  ---------------
+  1970
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483647);
+      from_unixtime
+  ---------------------
+  2038-01-19 11:14:07
+  (1 row)
+
+  openGauss=# select from_unixtime(2147483648);
+   from_unixtime
+  ---------------
+
+  (1 row)
+  ```
+
+- str\_to\_date\(str, format\)
+
+  Description: This function is the inverse of date\_format. The function attempts to match a string with a format and constructs the content in the date, datetime, or time format based on the flag contained in format.
+
+  Return value:
+  - If the flag in format contains only characters in the time-related character string 'fHISThiklrs', the content is in the time format.
+  - If the flag in format contains only characters in the date-related character string 'MVUXYWabcjmvuxyw', the content is in the date format.
+  - If the flag contains both characters, the content is in the datetime format.
+
+  Example:
+
+  ```
+  -- Construct a date.
+  openGauss=# select str_to_date('01,5,2013','%d,%m,%Y');
+   str_to_date
+  -------------
+  2013-05-01
+  (1 row)
+
+  -- Use the year, week number, and the day of the week to construct a date.
+  openGauss=# select str_to_date('200442 Monday', '%X%V %W');
+   str_to_date
+  -------------
+  2004-10-18
+  (1 row)
+
+  -- Use the year and day number to construct a date.
+  openGauss=# select str_to_date('2004 100', '%Y %j');
+   str_to_date
+  -------------
+  2004-04-09
+  (1 row)
+
+  -- Construct time.
+  openGauss=# select str_to_date('1:12:12 pm', '%r');
+   str_to_date
+  -------------
+  13:12:12
   (1 row)
   ```

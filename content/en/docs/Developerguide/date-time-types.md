@@ -179,6 +179,9 @@ type \[ \( p \) \] 'value'
 
 The  **p**  that can be selected in the precision statement is an integer, indicating the number of fractional digits in the  **seconds**  column.  [Table 2](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_t0606b0d8bec74d34a6440ef1de8d1e67)  shows some possible inputs for the  **date**  type.
 
+>![](public_sys-resources/icon-note.gif) **NOTE:**
+>Valid date separators are hyphens (-) and slashes (/). Mixed use of hyphens and slashes may cause parsing errors.
+
 **Table  2**  Date input
 
 <a name="en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_t0606b0d8bec74d34a6440ef1de8d1e67"></a>

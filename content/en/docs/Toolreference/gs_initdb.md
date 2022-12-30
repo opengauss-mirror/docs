@@ -333,3 +333,56 @@ During <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1
 </tr>
 </tbody>
 </table>
+
+**Table 3** Primary/Standby shared storage parameters
+
+<table><thead align="left"><tr id="row3652951153118"><th class="cellrowborder" valign="top" width="15.939999999999998%" id="mcps1.2.4.1.1"><p id="p765225114311"><a name="p765225114311"></a><a name="p765225114311"></a>Parameter</p>
+</th>
+<th class="cellrowborder" valign="top" width="60.89%" id="mcps1.2.4.1.2"><p id="p14652205103114"><a name="p14652205103114"></a><a name="p14652205103114"></a>Description</p>
+</th>
+<th class="cellrowborder" valign="top" width="23.169999999999998%" id="mcps1.2.4.1.3"><p id="p20652251173120"><a name="p20652251173120"></a><a name="p20652251173120"></a>Value Range</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row176521551193111"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p7652551123112"><a name="p7652551123112"></a><a name="p7652551123112"></a>--I</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p465245173114"><a name="p465245173114"></a><a name="p465245173114"></a>Specifies the node ID to initialize the shared storage parameter <strong>ss_instance_id</strong>.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p106523513313"><a name="p106523513313"></a><a name="p106523513313"></a>[0-63]. The value must start from 0.</p>
+</td>
+</tr>
+<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable_dss</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p145298413418"><a name="p145298413418"></a><a name="p145298413418"></a>Enables the ss_enable_dss function.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5652145173110"><a name="p5652145173110"></a><a name="p5652145173110"></a>-</p>
+</td>
+</tr>
+<tr id="row1165217515318"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p9652751113110"><a name="p9652751113110"></a><a name="p9652751113110"></a>--vgname</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p443733719"><a name="p443733719"></a><a name="p443733719"></a>Specifies the volume group name.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5621183815134"><a name="p5621183815134"></a><a name="p5621183815134"></a>Data type: character string.</p>
+<p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>For example, a volume group name is <strong>+data</strong>, and the name of two volume groups is connected by a comma (,), that is <strong>+data,+log</strong>.</p>
+</td>
+</tr>
+<tr id="row146530518312"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p1165214516311"><a name="p1165214516311"></a><a name="p1165214516311"></a>--socketpath</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p17653151133119"><a name="p17653151133119"></a><a name="p17653151133119"></a>Specifies the path of the socket file used by the DSS instance process.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p1665325113113"><a name="p1665325113113"></a><a name="p1665325113113"></a>Absolute paths are supported.</p>
+</td>
+</tr>
+<tr id="row12653751173115"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p1865316513315"><a name="p1865316513315"></a><a name="p1865316513315"></a>--dms_url</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p1664032611259"><a name="p1664032611259"></a><a name="p1664032611259"></a>Specifies the URL for MES communication between nodes.</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p465375111319"><a name="p465375111319"></a><a name="p465375111319"></a>Data type: character string. The format is "Node ID:IP address:Port number,Node ID:IP address:Port number,..."</p>
+<p id="p826308133419"><a name="p826308133419"></a><a name="p826308133419"></a>For example, "0:127.0.0.1:1611,1:127.0.0.1:1711".</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+> ![](public_sys-resources/icon-note.gif) **NOTE:**
+> In shared storage, system catalogs are stored in segment-page mode, and unlogging tables are stored in page mode.

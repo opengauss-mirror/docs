@@ -3,6 +3,7 @@
 Compared with the original openGauss, Dolphin modifies the bit string functions as follows:
 
 1. The bit\_bool function is added.
+2. The `^` operator is added.
 
 - bit_bool(bit)
 
@@ -34,5 +35,22 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
    f
   (1 row)
   ~~~
+
+
+- ^
+
+  Description: Implements the bitwise XOR of bit-type data.
+
+  Return type: bit
+
+  Example: 
+
+  ```
+  openGauss=# select b'1001'^b'1100';
+   ?column? 
+  ----------
+   0101
+  (1 row)
+  ```
 
   

@@ -8,8 +8,10 @@
 
 ```
 CREATE SERVER server_name
+    [ TYPE ' server_type ' ]
+    [ VERSION ' server_version ' ]
     FOREIGN DATA WRAPPER fdw_name
-    OPTIONS ( { option_name ' value ' } [, ...] ) ;
+    [ OPTIONS ( { option_name ' value ' } [, ...] ) ] ;
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137586_section183121377402"></a>
@@ -20,6 +22,14 @@ CREATE SERVER server_name
 
     Value range: a string containing no more than 63 characters
 
+-   **server\_type**
+
+    Optional server type, which may be useful for foreign data wrappers.
+
+-   **server\_version**
+
+    Optional server version, which may be useful for foreign data wrappers.
+    
 -   **fdw\_name**
 
     Specifies the name of the foreign data wrapper.

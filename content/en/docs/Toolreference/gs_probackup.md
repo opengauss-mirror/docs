@@ -29,6 +29,9 @@
 -   When remote backup is valid \(**remote-proto=ssh**\), ensure that **-h** and **--remote-host **specify the same server. When remote backup is invalid, if the **-h** option is specified, ensure that **-h** specifies the local address or local host name.
 -   Currently, only logical replication slots for publication and subscription can be backed up.
 -   During the backup, ensure that the server user has the read and write permissions on all files in the backup directory. Otherwise, the restoration may fail due to insufficient permission.
+-   Currently, incremental backup and restoration in DSS mode are not supported.
+-   In DSS mode, only local host backup is supported.
+-   Currently, external directories cannot be backed up or restored in DSS mode.
 
 ## Command Description<a name="en-us_topic_0287276008_section86861610172816"></a>
 
@@ -52,7 +55,7 @@
     gs_probackup init -B backup-path [--help]
     ```
 
--   Initialize a new backup instance in the _backup-path_ and generate the **pg\_probackup.conf** file, which saves the gs\_probackup settings of the specified data directory _pgdata-path_.
+-   Initialize a new backup instance in the _backup-path_ and generate the **pg\_probackup.conf** file, which saves the gs\_probackup settings of the specified data directory _pgdata-path_ (in non-DSS mode).
 
     ```
     gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
@@ -231,6 +234,24 @@
 -   --note=*text*
 
     Adds a note to the backup.
+
+### **Parameters for adding an instance in DSS mode**
+
+- --enable-dss
+
+  Enables the DSS mode.
+
+- --instance-id
+
+  Specifies the ID of the database node. The DSS mode supports only the backup of the primary node. Therefore, the value of this parameter is 0.
+
+- --vgname
+
+  Specifies the name of the volume used by the database in DSS mode.
+
+- --socketpath
+
+  Specifies the socket file path of the DSS process.
 
 ### **Backup-related parameters**
 
@@ -611,7 +632,7 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
   >```
 
 
-## Backup Process<a name="en-us_topic_0287276008_section1735727125216"></a>
+## Backup Process (non-DSS Mode)<a name="en-us_topic_0287276008_section1735727125216"></a>
 
 1.  Initialize the backup directory. Create the **backups/** and **wal/** subdirectories in the specified directory to store backup files and WAL files respectively.
 
@@ -637,6 +658,31 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
     gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
     ```
 
+## Backup Process (DSS Mode)
+
+1. Initialize the backup directory. Create the **backups/** and **wal/** subdirectories in the specified directory to store backup files and WAL files respectively.
+
+   ```
+   gs_probackup init -B backup_dir
+   ```
+
+2. Add a new backup instance. **gs\_probackup** can store backups of multiple database instances in the same backup directory.
+
+   ```
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name --enable-dss --instance-id node_id --vgname vgname --socketpath=socket_domain
+   ```
+
+3. Create a backup for a specified database instance. Before performing an incremental backup, you must create at least one full backup.
+
+   ```
+   gs_probackup backup -B backup_dir --instance instance_name -b backup_mode -d postgres -p 26000
+   ```
+
+4. Restore data from the backup of a specified instance.
+
+   ```
+   gs_probackup restore -B backup_dir --instance instance_name -D pgdata-path -i backup_id
+   ```
 
 ## Troubleshooting<a name="section1494010372368"></a>
 

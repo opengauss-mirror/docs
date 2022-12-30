@@ -270,6 +270,13 @@
 <p id="en-us_topic_0283136767_en-us_topic_0237122277_en-us_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"><a name="en-us_topic_0283136767_en-us_topic_0237122277_en-us_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_en-us_topic_0059778035_a6e035a93fbeb462ca62cbbeccbd1efdb"></a><em id="i1415771816457"><a name="i1415771816457"></a><a name="i1415771816457"></a>xxxx</em> indicates assigned permissions, and <em id="i1416591820451"><a name="i1416591820451"></a><a name="i1416591820451"></a>yyyy</em> indicates roles with the assigned permissions. For details on permission descriptions, see <a href="#en-us_topic_0283136767_en-us_topic_0237122277_en-us_topic_0059778035_td89f8f6cc98f4a11a08b3c45d852a6cc">Table 2</a>.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0283136767_en-us_topic_0237122277_row11845015339"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136767_en-us_topic_0237122277_p1918516011336"><a name="en-us_topic_0283136767_en-us_topic_0237122277_p1918516011336"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_p1918516011336"></a>reloptions</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136767_en-us_topic_0237122277_p18185509339"><a name="en-us_topic_0283136767_en-us_topic_0237122277_p18185509339"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_p18185509339"></a>text[]</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.39%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136767_en-us_topic_0237122277_p171281349143316"><a name="en-us_topic_0283136767_en-us_topic_0237122277_p171281349143316"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_p171281349143316"></a>Table or index access method, using character strings in the format of "keyword=value"</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283136767_en-us_topic_0237122277_row6912152512319"><td class="cellrowborder" valign="top" width="22.2%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136767_en-us_topic_0237122277_p9912325102310"><a name="en-us_topic_0283136767_en-us_topic_0237122277_p9912325102310"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_p9912325102310"></a>relreplident</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136767_en-us_topic_0237122277_p1891252562312"><a name="en-us_topic_0283136767_en-us_topic_0237122277_p1891252562312"></a><a name="en-us_topic_0283136767_en-us_topic_0237122277_p1891252562312"></a>"char"</p>

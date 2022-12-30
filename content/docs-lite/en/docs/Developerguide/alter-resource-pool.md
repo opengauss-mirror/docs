@@ -48,7 +48,7 @@ ALTER RESOURCE POOL pool_name
 
     Specifies the maximum statement concurrency degree for a resource pool, equivalent to the number of threads that can be created for executing a statement.
 
-    Value range: numeric data ranging from 1 to 2147483647
+    Value range: numeric data ranging from 1 to 64
 
 -   **memory\_size**
 

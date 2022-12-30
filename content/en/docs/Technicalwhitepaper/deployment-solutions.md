@@ -160,3 +160,10 @@ The overall deployment solution can be classified into three types: standalone d
     **Figure  3**  One-primary and multiple-standby deployment<a name="fig5294135131017"></a>  
     ![](figures/one-primary-and-multiple-standby-deployment.png "one-primary-and-multiple-standby-deployment")
 
+- Shared Storage Deployment
+
+  The primary and standby nodes must be deployed on the same disk array. DR deployment and hybrid deployment of the primary and standby nodes are not supported. For example, the primary and standby nodes are deployed on different disk arrays.
+
+  Figure 4 Shared storage deployment
+
+  ![](figures/en-us_image_0000001324164196.png)

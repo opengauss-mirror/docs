@@ -4,8 +4,8 @@
 
 Parameter description: The parameter value is a character string separated by commas (,). Only valid character strings are allowed. If the parameter value is invalid, a warning is reported after the startup. Similarly, if the new value is invalid, a warning is reported and the old value is not changed. The default string of the current sql\_mode is sql\_mode_strict,sql\_mode\_full\_group. Currently, sql\_mode is used in the following scenarios:
 
-1. sql\_mode\_strict: When a value that does not comply with the current column type is inserted, data conversion is performed. There are two scenarios: **insert into table values (...)** and **insert into table select ...**. Conversion between various data types is involved. Currently, the following types are involved: tinyint (tinyint is not considered because its data scope is different from that of MySQL), smallint, int, bigint, float, double, numeric, clob, char, and varchar.
-2. sql\_mode\_strict: If the length of the inserted column value exceeds the length limit of the column, the maximum or minimum value is assigned to the column. The involved types are tinyint, smallint, int, bigint, float, double, numeric, clob, char, and varchar.
+1. sql\_mode\_strict: Data is converted if the inserted value does not comply with the current column type. The involved scenarios are INSERT INTO table VALUES (...) and INSERT INTO table SELECT … Currently, the involved types are TINYINT[UNSIGNED],SMALLINT[UNSIGNED],INT[UNSIGNED],BIGINT[UNSIGNED],FLOAT,DOUBLE,NUMERIC,CLOB,CHAR, and VARCHAR.
+2. sql\_mode\_strict: If the value length of an inserted column exceeds the limit, the maximum or minimum value of the column is used. The involved types are TINYINT[UNSIGNED],SMALLINT[UNSIGNED],INT[UNSIGNED],BIGINT[UNSIGNED],FLOAT,DOUBLE,NUMERIC,CLOB,CHAR, and VARCHAR.
 3. sql\_mode\_strict: During insert, if a column whose attribute is not empty and does not have a default value is not in the insert list, the default value is added to the column. (The involved types are the same as the preceding types.)
 4. sql\_mode\_strict: supports explicit insertion of default to columns whose attributes are not empty and do not have default values. (The involved types are the same as the preceding types.)
 5. sql\_mode\_full\_group: determines whether columns (without aggregate functions) in the SELECT list must be included in the GROUP BY clause. In sql\_mode\_full\_group mode (default mode), if a column in the select list does not use an aggregate function or appear in the GROUP BY clause, an error is reported. Otherwise, the execution is successful and the first tuple is selected from all tuples that meet the conditions.
@@ -263,3 +263,33 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range:**  a string
 
 **Default value**: database\_name in connection session while initialize dolphin protocol pulin at first time.
+
+## b\_compatibility\_mode<a name="section203671436825"></a>
+
+**Parameter description:** The parameter value is of the Boolean type. This parameter affects some conflicting functions and operators in the Dolphin plug-in. When this parameter is enabled, the compatibility logic is executed for these functions and operators. When this parameter is disabled, the original openGauss logic is retained.
+
+Currently, the following operators are affected:
+
+1. [LIKE/NOT LIKE](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+2. Character type XOR [^](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+3. Numeric type XOR [^](dolphin-arithmetic-functions-and-operators.md#EN-US_TOPIC_0289900469)
+4. [&&](dolphin-logical-operators.md#EN-US_TOPIC_0289900469)
+5. [#](dolphin-comment-operators.md#EN-US_TOPIC_0289900280)
+
+The following functions are affected:
+1. [LAST_DAY](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2. [TIMESTAMPDIFF](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+3. [FORMAT](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+4. [EXTRACT](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+
+Other affected parameters:
+1. [?](dolphin-prepare.md#en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on** indicates that the new compatibility function is used.
+-   **off** indicates that the compatibility function is disabled and the original kernel functions are used.
+
+**Default value**: **off**

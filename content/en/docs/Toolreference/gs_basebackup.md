@@ -49,7 +49,7 @@ The  **gs\_basebackup**  tool can use the following types of parameters:
 
 -   -D directory
 
-    Directory for storing backup files. This parameter is mandatory.
+    Directory for storing backup files. This parameter is mandatory. The backup directory must be created in advance.
 
 
 -   Common parameters

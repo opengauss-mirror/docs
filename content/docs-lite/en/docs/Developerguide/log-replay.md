@@ -78,7 +78,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 >-   If the delay time is too long, the disk where the XLOG file is located on the standby node may be full. Therefore, you need to set the delay time based on the disk size.
 >-   Operations without transactions are not delayed.
 >-   After the primary/standby switchover, if the original primary node needs to be delayed, you need to manually set this parameter.
->-   When  **synchronous\_commit**  is set to  **remote\_apply**, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby server is complete.
+-   When **synchronous\_commit** is set to **remote\_apply**, synchronous replication is affected by the delay. Each commit message is returned only after the replay on the standby node is complete. Therefore, when **synchronous\_commit** of the host is set to **remote\_apply**, do not set this parameter to a non-zero value. Otherwise, services on the host will be severely blocked.
 >-   Using this feature also delays  **hot\_standby\_feedback**, which may cause the primary server to bloat, so be careful when using both.
 >-   If a DDL operation \(such as DROP or TRUNCATE\) that holds an AccessExclusive lock is performed on the primary node, the query operation on the operation object on the standby node will be returned only after the lock is released during the delayed replay of the record on the standby node.
 >-   The MOT table is not supported.

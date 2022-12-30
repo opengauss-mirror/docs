@@ -12,6 +12,8 @@ Serving as an overlaid filter for a database table, **SELECT** filters required 
 
 -   The new JOIN does not contain ON/USING. The effect is the same as that of CROSS JOIN.
 
+-   The new PARTITION clause can be used to specify multiple partitions.
+
 ## Syntax<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   Querying data
@@ -33,6 +35,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
+-   The specified query source **from\_item** is as follows:
+
+    ```
+    {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+    [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
+    [TIMECAPSULE {TIMESTAMP|CSN} expression]
+    |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
+    |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+    |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
+    |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
+    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+    ```
 
 -   The **group** clause is as follows:
 
@@ -44,6 +58,15 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | CUBE ( { expression | ( expression [, ...] ) } [, ...] )
     | GROUPING SETS ( grouping_element [, ...] )
     ```
+-   The specified partition **partition\_clause** is as follows:
+
+    ```
+    PARTITION { ( partition_name [, ...] ) | 
+            FOR (  partition_value [, ...] ) }
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >The specified partition applies only to ordinary tables.
 
     The rollup\_clause clause is as follows:
 
@@ -82,8 +105,9 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 (1 row)
 ```
 
+
+- Use ROLLUP in the SELECT GROUP BY clause.
 ```
---Use ROLLUP in the SELECT GROUP BY clause.
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
 openGauss=# CREATE TABLE t_with_rollup(id int, name varchar(20), area varchar(50), count int);
@@ -147,6 +171,30 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    1 |    1
     3 |    3 |    2 |    3
     3 |    3 |    4 |    4
+
+```
+- Use the SELECT FROM PARTITION clause to specif multiple partitions.
+```
+openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
+openGauss-# (
+openGauss(#     partition test_part1 values less than (400),
+openGauss(#     partition test_part2 values less than (700),
+openGauss(#     partition test_part3 values less than (1000)
+openGauss(# );
+CREATE TABLE
+openGauss=# insert into multi_partition_select_test values(111);
+INSERT 0 1
+openGauss=# insert into multi_partition_select_test values(555);
+INSERT 0 1
+openGauss=# insert into multi_partition_select_test values(888);
+INSERT 0 1
+
+openGauss=# select a.* from multi_partition_select_test partition (test_part1, test_part2) a;
+ c_int
+-------
+   111
+   555
+(2 rows)
 
 ```
 

@@ -47,7 +47,7 @@ If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EX
 >-   In O-compatible mode, SQLCODE is equivalent to SQLSTATE.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->The syntax described in  [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4)  does not append any parameter. This form is used only for the  **EXCEPTION**  statement in a  **BEGIN**  block so that the error can be re-processed.
+>-   The syntax shown in [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4) is not followed by any parameter. This form is used only for the EXCEPTION statement in a BEGIN block so that the error can be re-processed.
 >-   For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](description-of-sql-error-codes.md). Only ERROR condition names are supported.
 
 **EXCEPTION\_INIT**

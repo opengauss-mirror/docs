@@ -2,7 +2,7 @@
 
 ## Prerequisites<a name="en-us_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>
 
-The user using** gsql**  must have the permission to access the database.
+The user using **gsql**  must have the permission to access the database.
 
 ## Background<a name="en-us_topic_0059779027_sec8c9233ebad4d6da06846cb31af1f44"></a>
 
