@@ -77,6 +77,14 @@ OPTION取值如下所示：
 
     打印帮助信息。
 
+## 使用举例（非DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
+
+```
+pg_resetxlog [OPTION]... DATADIR
+```
+**说明：**
+
+在非DSS模式，OPTION的取值不能是共享存储参数。
 
 ## 使用举例（DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
 
