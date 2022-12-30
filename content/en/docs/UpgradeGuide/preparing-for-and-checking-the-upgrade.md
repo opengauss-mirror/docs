@@ -163,7 +163,7 @@ For details, see section "Backup and Restoration" in the *Administrator Guide*.
 
 ## Obtaining the Upgrade Package
 
-https://opengauss.org/zh/download.html
+https://opengauss.org/zh/download/
 
 Obtain the upgrade package from the website.
 
