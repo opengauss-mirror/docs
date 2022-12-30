@@ -345,16 +345,23 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   convert\(expr using transcoding\_name\)
+-   convert(expr using transcoding_name)
 
-    Description: Converts **expr** using **transcoding_name**.
-
+    Description: Converts expr based on the encoding mode specified by transcoding\_name.
+    Note: By default, the database supports the following format: convert(string bytea, src\_encoding name, dest\_encoding name), where the bytea is converted using the encoding mode specified by dest\_encoding. In Dolphin, transcoding\_name after USING can be used to specify the encoding mode to convert expr, and the preceding three parameters are not supported.
+    
     Return type: text
 
     Example:
 
     ```
     b_compatibility_database=# select convert('a' using 'utf8');
+    convert
+    ---------
+    a 
+    (1 row)
+    
+    b_compatibility_database=# select convert('a' using utf8);
     convert
     ---------
     a 

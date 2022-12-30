@@ -39,7 +39,7 @@ SHOW [FULL] {COLUMNS | FIELDS}
 
 - **LIKE 'pattern'**
 
-   The patternp matches the Field column of the displayed result.
+   The pattern matches the Field column of the displayed result.
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

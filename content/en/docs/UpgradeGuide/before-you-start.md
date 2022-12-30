@@ -47,7 +47,7 @@ Gray upgrade: based on gray upgrade, supports to upgrade the specified nodes, su
 </tr>
 <tr id="row10729745336"><td class="cellrowborder" valign="top" width="41.410000000000004%"><p id="p473019455316"><a name="p473019455316"></a><a name="p473019455316"></a>openGauss 1.1.0 and later</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p207301045037"><a name="p207301045037"></a><a name="p207301045037"></a>It can be upgraded to any version later than openGauss 1.1.0.</p>
+<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p207301045037"><a name="p207301045037"></a><a name="p207301045037"></a>It can be upgraded to any version form openGauss 1.1.0 to openGauss 3.1.0 (exclusive).</span></p>
 </td>
 </tr>
 </tbody>

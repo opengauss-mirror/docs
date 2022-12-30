@@ -4,17 +4,57 @@
 
 Parameter description: The parameter value is a character string separated by commas (,). Only valid character strings are allowed. If the parameter value is invalid, a warning is reported after the startup. Similarly, if the new value is invalid, a warning is reported and the old value is not changed. The default string of the current sql\_mode is sql\_mode_strict,sql\_mode\_full\_group. Currently, sql\_mode is used in the following scenarios:
 
-1. sql\_mode\_strict: When a value that does not comply with the current column type is inserted, data conversion is performed. There are two scenarios: **insert into table values (...)** and **insert into table select ...**. Conversion between various data types is involved. Currently, the following types are involved: tinyint (tinyint is not considered because its data scope is different from that of MySQL), smallint, int, bigint, float, double, numeric, clob, char, and varchar.
-2. sql\_mode\_strict: If the length of the inserted column value exceeds the length limit of the column, the maximum or minimum value is assigned to the column. The involved types are tinyint, smallint, int, bigint, float, double, numeric, clob, char, and varchar.
+1. sql\_mode\_strict: Data is converted if the inserted value does not comply with the current column type. The involved scenarios are INSERT INTO table VALUES (...) and INSERT INTO table SELECT … Currently, the involved types are TINYINT[UNSIGNED],SMALLINT[UNSIGNED],INT[UNSIGNED],BIGINT[UNSIGNED],FLOAT,DOUBLE,NUMERIC,CLOB,CHAR, and VARCHAR.
+
+2. sql\_mode\_strict: If the value length of an inserted column exceeds the limit, the maximum or minimum value of the column is used. The involved types are TINYINT[UNSIGNED],SMALLINT[UNSIGNED],INT[UNSIGNED],BIGINT[UNSIGNED],FLOAT,DOUBLE,NUMERIC,CLOB,CHAR, and VARCHAR.
+
 3. sql\_mode\_strict: During insert, if a column whose attribute is not empty and does not have a default value is not in the insert list, the default value is added to the column. (The involved types are the same as the preceding types.)
+
 4. sql\_mode\_strict: supports explicit insertion of default to columns whose attributes are not empty and do not have default values. (The involved types are the same as the preceding types.)
+
 5. sql\_mode\_full\_group: determines whether columns (without aggregate functions) in the SELECT list must be included in the GROUP BY clause. In sql\_mode\_full\_group mode (default mode), if a column in the select list does not use an aggregate function or appear in the GROUP BY clause, an error is reported. Otherwise, the execution is successful and the first tuple is selected from all tuples that meet the conditions.
+
+6. ansi\_quotes: It is mainly used in places where double quotation marks need to be used to indicate string values. When ansi\_quotes is enabled, the content in the double quotation marks is considered as an object reference. When ansi_quotes is disabled, the content in the double quotation marks is considered as a string value. When ansi\_quotes is disabled, some meta-commands become invalid. The following table lists the invalid meta-commands.
+
+   | Parameter                       | Description                                                    |
+   | --------------------------- | ------------------------------------------------------------ |
+   | \d[S+]                      | Lists all tables, views, and sequences of all schemas in search\_path. When objects with the same name exist in different schemas in search\_path, only the object in the schema that ranks first in search\_path is displayed.|
+   | \da[S] [PATTERN]            | Lists all available aggregate functions, together with their return value types and the data types.  |
+   | \db[+] [PATTERN]            | Lists all available tablespaces.                                      |
+   | \dc[S+] [PATTERN]           | Lists all available conversions between character sets.                              |
+   | \dC[+] [PATTERN]            | Lists all available type conversions.                                          |
+   | \dd[S] [PATTERN]            | Lists descriptions about objects matching PATTERN.                                 |
+   | \ddp [PATTERN]              | Lists all default permissions.                                    |
+   | \dD[S+] [PATTERN]           | Lists all available domains.                                            |
+   | \ded[+] [PATTERN]           | Lists all data source objects.                                 |
+   | \det[+] [PATTERN]           | Lists all foreign tables.                                          |
+   | \des[+] [PATTERN]           | Lists all foreign servers.                                      |
+   | \deu[+] [PATTERN]           | Lists all user mappings.                                          |
+   | \dew[+] [PATTERN]           | Lists foreign-data wrappers.                                        |
+   | \df[antw][S+] [PATTERN]     | Lists all available functions, together with their parameters and return types. <strong>a</strong> indicates an aggregate function, <strong>n</strong> indicates a common function, <strong>t</strong> indicates a trigger, and <strong>w</strong> indicates a window function.|
+   | \dF[+] [PATTERN]            | Lists all text search configurations.                                |
+   | \dFd[+] [PATTERN]           | Lists all text search dictionaries.                                    |
+   | \dFp[+] [PATTERN]           | Lists all text search parsers.                                  |
+   | \dFt[+] [PATTERN]           | Lists all text search templates.                                    |
+   | \dl                         | This is an alias for <strong>\lo_list</strong>, which shows a list of large objects.                      |
+   | \dL[S+] [PATTERN]           | Lists all available program languages.                                        |
+   | \dm[S+] [PATTERN]           | Lists materialized views.                                                |
+   | \dn[S+] [PATTERN]           | Lists all schemas (namespaces).                                |
+   | \do[S] [PATTERN]            | Lists all available operators with their operand and return types.      |
+   | \dO[S+] [PATTERN]           | Lists collations.                                                |
+   | \dp [PATTERN]               | Lists tables, views, and related permissions.                  |
+   | \drds [PATTERN1 [PATTERN2]] | Lists all modified configuration parameters. These settings can be for roles, for databases, or for both. PATTERN1 and PATTERN2 indicate a role pattern and a database pattern, respectively.|
+   | \dT[S+] [PATTERN]           | Lists all data types.                                        |
+   | \dE[S+] [PATTERN]           | In this group of commands, the letters E, i, s, t, and v stand for a foreign table, index, sequence, table, or view, respectively. You can specify any or a combination of these letters sequenced in any order to obtain an object list. For example, <strong>\dit</strong> lists all indexes and tables. If a command is suffixed with a plus sign (+), physical dimensions and related descriptions of each object will be displayed.|
+   | \dx[+] [PATTERN]            | Lists installed extensions.                                  |
+   | \l[+]                       | Lists the names, owners, character set encodings, and permissions of all the databases in the server.|
+   | \z [PATTERN]                | Lists all tables, views, and sequences in the database and their access permissions.      |
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
-Default value: 'sql_mode_strict,sql_mode_full_group'
+**Default value:** 'sql_mode_strict,sql_mode_full_group,ansi_quotes'
 
 **Example**:
 ```
@@ -263,3 +303,33 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range:**  a string
 
 **Default value**: database\_name in connection session while initialize dolphin protocol pulin at first time.
+
+## b\_compatibility\_mode<a name="section203671436825"></a>
+
+**Parameter description:** The parameter value is of the Boolean type. This parameter affects some conflicting functions and operators in the Dolphin plug-in. When this parameter is enabled, the compatibility logic is executed for these functions and operators. When this parameter is disabled, the original openGauss logic is retained.
+
+Currently, the following operators are affected:
+
+1. [LIKE/NOT LIKE](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+2. Character type XOR [^](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+3. Numeric type XOR [^](dolphin-arithmetic-functions-and-operators.md#EN-US_TOPIC_0289900469)
+4. [&&](dolphin-logical-operators.md#EN-US_TOPIC_0289900469)
+5. [#](dolphin-comment-operators.md#EN-US_TOPIC_0289900280)
+
+The following functions are affected:
+1. [LAST_DAY](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2. [TIMESTAMPDIFF](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+3. [FORMAT](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
+4. [EXTRACT](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+
+Other affected parameters:
+1. [?](dolphin-prepare.md#en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on** indicates that the new compatibility function is used.
+-   **off** indicates that the compatibility function is disabled and the original kernel functions are used.
+
+**Default value**: **off**

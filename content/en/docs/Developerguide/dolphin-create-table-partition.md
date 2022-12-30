@@ -300,14 +300,14 @@ Where create\_option is:
   >![](public_sys-resources/icon-notice.gif) **NOTICE:**
   >In this case, a maximum of four partition keys are supported.
 
-  In this case, the partition key supports the following data types: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(n\), VARCHAR\(n\), CHARACTER\(n\), CHAR\(n\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
+  Data types supported by the partition keys are as follows: TINYINT[UNSIGNED], SMALLINT[UNSIGNED], INTEGER[UNSIGNED], BIGINT[UNSIGNED], DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(n\), VARCHAR\(n\), CHARACTER\(n\), CHAR\(n\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
   (2) Assume that the **START END** syntax is used.
 
   >![](public_sys-resources/icon-notice.gif) **NOTICE:**
   >In this case, only one partition key is supported.
 
-  Data types supported by the partition key are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
+  Data types supported by the partition keys are as follows: TINYINT[UNSIGNED], SMALLINT[UNSIGNED], INTEGER[UNSIGNED], BIGINT[UNSIGNED], DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
   (3) Assume that the **INTERVAL** syntax is used.
 
@@ -369,7 +369,7 @@ Where create\_option is:
   -   For **partition\_key**, the list partitioning policy supports only one column of partition keys.
   -   If the clause is VALUES \(list\_values\_clause\), list\_values\_clause contains the key values of the corresponding partition. It is recommended that the number of key values of each partition be less than or equal to 64.
 
-  Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
+  Data types supported by the partition keys are as follows: INT1[UNSIGNED], INT2[UNSIGNED], INT4[UNSIGNED], INT8[UNSIGNED], NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 - **PARTITION BY HASH\(partition\_key\)**
 
@@ -377,7 +377,7 @@ Where create\_option is:
 
   For **partition\_key**, the hash partitioning policy supports only one column of partition keys.
 
-  Partition keys support the following data types: INT1, INT2, INT4, INT8, NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
+  Data types supported by the partition keys are as follows: INT1[UNSIGNED], INT2[UNSIGNED], INT4[UNSIGNED], INT8[UNSIGNED], NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 
 - **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 

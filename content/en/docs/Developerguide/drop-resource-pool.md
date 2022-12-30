@@ -9,7 +9,7 @@
 
 ## Precautions<a name="en-us_topic_0059778399_sac7b2d84ed1a4b7fba5c5a6497f822c1"></a>
 
-Only a user with the  **DROP**  permission on the current database can perform this operation.
+Only SYSADMIN and VCADMIN users can delete resource pools.
 
 ## Syntax<a name="en-us_topic_0059778399_s147ae6d344a249e1b923eedde3ba326a"></a>
 

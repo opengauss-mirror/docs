@@ -6,13 +6,23 @@
 
 ## Precautions<a name="en-us_topic_0059777569_sf6c61d950e6b4383a3bc630c8d5910a4"></a>
 
-Only a user with the  **CREATE**  permission on the current database can perform this operation.
+Only SYSADMIN and VCADMIN users can create resource pools.
 
 ## Syntax<a name="en-us_topic_0059777569_s864093cc963a4396a4a304befe0df251"></a>
 
 ```
 CREATE RESOURCE POOL pool_name
-    [WITH ({MEM_PERCENT=pct | CONTROL_GROUP="group_name" | ACTIVE_STATEMENTS=stmt | MAX_DOP = dop | MEMORY_LIMIT='memory_size' | io_limits=io_limits | io_priority='io_priority' | nodegroup="nodegroupname" | is_foreign=boolean }[, ... ])];
+    [WITH ({MEM_PERCENT=pct |
+            CONTROL_GROUP="group_name" |
+            ACTIVE_STATEMENTS=stmt |
+            MAX_DOP = dop |
+            MEMORY_LIMIT='memory_size' |
+            io_limits=io_limits |
+            io_priority='io_priority' |
+            nodegroup="nodegroupname" |
+            is_foreign=boolean }
+            [, ... ])
+    ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0059777569_s9b6dbda628294e24a95da9e33949c3e8"></a>
@@ -48,7 +58,7 @@ CREATE RESOURCE POOL pool_name
 
     Specifies the maximum statement concurrency degree for a resource pool, equivalent to the number of threads that can be created for executing a statement.
 
-    Value range: numeric data ranging from 1 to 2147483647
+    Value range: numeric data ranging from 1 to 64
 
 -   **memory\_size**
 
@@ -73,6 +83,8 @@ CREATE RESOURCE POOL pool_name
 
     The IOPS is counted by ones for column storage and by 10 thousands for row storage.
 
+    Value range: numeric data ranging from 0 to 2147483647
+
 -   **io\_priority**
 
     Specifies the I/O priority for jobs that consume many I/O resources. It takes effect when the I/O usage reaches 90%.
@@ -88,9 +100,13 @@ CREATE RESOURCE POOL pool_name
 
     If the logical cluster name contains uppercase letters or special characters or begins with a digit, enclose the name with double quotation marks \(""\) in SQL statements.
 
+    This parameter is invalid in a standalone system.
+
 -   **is\_foreign**
 
     In logical cluster mode, specifies the current resource pool to control the resources of common users that are not associated with the logical cluster specified by  **nodegroup**.
+
+    This parameter is invalid in a standalone system.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   **nodegroup**  must specify an existing logical cluster, and cannot be  **elastic\_group**  or the default node group \(**group\_version1**\), which is generated during cluster installation.

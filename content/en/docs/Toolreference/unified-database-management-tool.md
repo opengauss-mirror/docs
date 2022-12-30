@@ -1790,6 +1790,18 @@ Application scope: Files in the **$GAUSSLOG/cm/cm\_ctl**, **$GAUSSLOG/cm/cm\_ser
 
 **Default value**: **0**
 
+#### enable\_fence\_dn<a name="section114001741152513"></a>
+
+**Parameter description:** Specifies whether to restart the DN process when cm\_agent cannot connect to any CMS except its own CMS which is not primary.
+
+**Value range**: Boolean The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+
+-   **on**, **yes**, **true**, or **1**: The DN process is restarted.
+
+-   **off**, **no**, **false**, or **0**: The DN process is not restarted.
+
+**Default value**:
+
 ### Parameters Related to cm\_server<a name="EN-US_TOPIC_0000001246287001"></a>
 
 #### log\_dir<a name="section21021611134413"></a>

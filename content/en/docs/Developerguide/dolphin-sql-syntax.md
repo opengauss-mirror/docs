@@ -4,6 +4,8 @@
 
 -   **[ALTER PROCEDURE](dolphin-ALTER-PROCEDURE.md)**
 
+-   **[ALTER SERVER](dolphin-ALTER-SERVER.md)**
+
 -   **[ALTER TABLE](dolphin-ALTER-TABLE.md)**  
 
 -   **[ALTER TABLE PARTITION](dolphin-ALTER-TABLE-PARTITION.md)**  
@@ -19,6 +21,8 @@
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 
 -   **[CREATE PROCEDURE](dolphin-CREATE-PROCEDURE.md)**
+
+-   **[CREATE SERVER](dolphin-CREATE-SERVER.md)**
 
 -   **[CREATE TABLE](dolphin-CREATE-TABLE.md)**
 
@@ -77,6 +81,8 @@
 -   **[SHOW MASTER STATUS](dolphin-SHOW-MASTER-STATUS.md)**
 
 -   **[SHOW PLUGINS](dolphin-SHOW_PLUGINS.md)**  
+
+-   **[SHOW PRIVILEGES](dolphin-SHOW_PRIVILEGES.md)**
 
 -   **[SHOW PROCEDURE STATUS](dolphin-SHOW-PROCEDURE-STATUS.md)**
 

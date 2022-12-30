@@ -6,13 +6,20 @@
 
 ## Precautions<a name="en-us_topic_0059778630_sc6d595f2e535403c85636f0e37b66060"></a>
 
-Only a user with the  **ALTER**  permission on the current database can perform this operation.
+Only SYSADMIN and VCADMIN users can modify resource pools.
 
 ## Syntax<a name="en-us_topic_0059778630_s4811e37a59884a3897fa21c665e5fa52"></a>
 
 ```
 ALTER RESOURCE POOL pool_name
-    WITH ({MEM_PERCENT= pct | CONTROL_GROUP="group_name" | ACTIVE_STATEMENTS=stmt | MAX_DOP = dop | MEMORY_LIMIT='memory_size' | io_limits=io_limits | io_priority='io_priority'}[, ... ]);
+    WITH ({MEM_PERCENT= pct |
+           CONTROL_GROUP="group_name" |
+           ACTIVE_STATEMENTS=stmt |
+           MAX_DOP = dop |
+           MEMORY_LIMIT='memory_size' |
+           io_limits=io_limits |
+           io_priority='io_priority'}
+          [, ... ]);
 ```
 
 ## Parameter Description<a name="en-us_topic_0059778630_s744bfeb9db194d149727d961f0f4b382"></a>
@@ -48,7 +55,7 @@ ALTER RESOURCE POOL pool_name
 
     Specifies the maximum statement concurrency degree for a resource pool, equivalent to the number of threads that can be created for executing a statement.
 
-    Value range: numeric data ranging from 1 to 2147483647
+    Value range: numeric data ranging from 1 to 64
 
 -   **memory\_size**
 

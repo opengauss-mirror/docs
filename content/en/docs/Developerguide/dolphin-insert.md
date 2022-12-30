@@ -174,7 +174,7 @@ INSERT 0 1
 db_ignore=# select * from t_tinyint;
  num 
 -----
- 255
+ 127
 (1 row)
 
 -- When the new value type and column type are both character strings:

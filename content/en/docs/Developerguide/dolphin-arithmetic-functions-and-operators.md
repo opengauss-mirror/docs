@@ -3,7 +3,7 @@
 Compared with the original openGauss, Dolphin modifies the time/date function as follows:
 
 1. The DIV, MOD, XOR, and ^ operators are added.
-2. The truncate, rand, crc32, conv, float8\_bool, and oct functions are added.
+2. The truncate, rand, crc32, conv, float8\_bool, oct, and float4_bool functions are added.
 
 -   DIV
 
@@ -133,6 +133,20 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   (1 row)
   ```
 
+  Description: After `set b_compatibility_mode` is set to `1`, the float data can be bitwise XOR or XOR after rounded off.
+
+  Return type: DOUBLE
+
+  Example:
+
+  ```
+  openGauss=# select 0.5678::float^1.1234::float;
+   ?column? 
+  ----------
+          0
+  (1 row)
+  ```
+
 - float8_bool(float)
 
   Description: Returns a Boolean value based on the value of a floating point number. If the value is **0**, **false** is returned. Otherwise, **true** is returned.
@@ -178,3 +192,27 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     12
     (1 row)
     ```
+
+- float4_bool(float)
+
+  Description: Returns a Boolean value based on the value of a floating point number. If the value is **0**, **false** is returned. Otherwise, **true** is returned.
+
+  Return type: Boolean
+
+  Example:
+
+  ~~~
+  openGauss=# select float4_bool(0.1);
+   float4_bool 
+  -------------
+   t
+  (1 row)
+  ~~~
+
+  ~~~
+  openGauss=# select float4_bool(0.0);
+   float4_bool 
+  -------------
+   f
+  (1 row)
+  ~~~

@@ -37,10 +37,10 @@ This section describes how to configure parameters for resource load management.
 You can perform the following steps only as a database administrator to enable load management based on the resource pool. The following uses user  **omm**  as an example.
 
 1.  Log in as the OS user  **omm**  to the primary node of openGauss.
-2.  Enable the Cgroup function.
+2.  Enable resource pool–based load management.
 
     ```
-    gs_guc reload -Z coordinator -Z datanode -N all -I all -c "enable_control_group=on"
+    gs_guc set -N all -I all -c "use_workload_manager=on"
     ```
 
 3.  Restart the database for the parameter settings to take effect.

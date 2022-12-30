@@ -18,6 +18,8 @@ Compared with the original openGauss, Dolphin modifies keywords as follows:
 1. MEDIUMINT is added as a non-reserved keyword.
 2. The keyword `DATE` can be used as a function.
 3. `LAST_DAY` is added as a reserved keyword to distinguish the original LAST\_DAY function of openGauss from the LAST\_DAY function of Dolphin at the syntax level.
+4. `GET_FORMAT` is added as a non-reserved keyword to identify the GET\_FORMAT function in syntax.
+5. `DAY_HOUR, DAY_MINUTE, DAY_SECOND, DAY_MICROSECOND, HOUR_MINUTE, HOUR_SECOND, HOUR_MICROSECOND, MINUTE_SECOND, MINUTE_MICROSECOND, and SECOND_MICROSECOND` are added as non-reserved keywords for the EXTRACT function to identify the corresponding unit in syntax.
 
 **Table 1** SQL keywords
 
@@ -98,7 +100,7 @@ Compared with the original openGauss, Dolphin modifies keywords as follows:
 <tr>
 <td>DATE
 </td>
-<td>Non-reserved (a function or type)
+<td>Non-reserved (excluding functions and types)
 </td>
 <td>-
 </td>
@@ -109,6 +111,116 @@ Compared with the original openGauss, Dolphin modifies keywords as follows:
 <td>LAST_DAY
 </td>
 <td>Reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>GET_FORMAT
+</td>
+<td>Non-reserved (excluding functions and types)
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>DAY_HOUR
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>DAY_MINUTE
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>DAY_SECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>DAY_MICROSECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>HOUR_MINUTE
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>HOUR_SECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>HOUR_MICROSECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>MINUTE_SECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>MINUTE_MICROSECOND
+</td>
+<td>Non-reserved
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>SECOND_MICROSECOND
+</td>
+<td>Non-reserved
 </td>
 <td>-
 </td>
