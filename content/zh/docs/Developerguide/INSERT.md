@@ -100,16 +100,16 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
     
     赋予对应column的一个有效表达式或值：
     
-    （1）当数据库的兼容性等级为 B 时，VALUES 后面的表达式中允许引用字段名。VALUES 与 ON DUPLICATE KEY UPDATE 后的表达式的计算规则如下：
+    （1）当数据库的兼容性为 B 时，VALUES 后面的表达式中允许引用字段名。VALUES 与 ON DUPLICATE KEY UPDATE 后的表达式的计算规则如下：
     - ① 表达式的计算顺序按照 SQL 语句的字段书写顺序进行执行。
     - ② 当引用的字段未执行计算或正在计算（引用自身）：
         - 所引用的字段的默认值为常量或存在旧元组，则取默认值或旧元组值参与当前表达式的计算。
         - 所引用的字段的默认值不是常量（是方法、表达式等）且不存在旧元组值，取null参与当前表达式的计算。
     - ③ 当引用的字段已执行计算，取该字段的当前记录的值参与当前表达式的计算。
     
-    其余与其他兼容性等级的数据库表现相同。
+    其余与其他兼容性模式的数据库表现相同。
     
-    （2）其他数据库兼容性等级的语法说明如下：
+    （2）其他兼容性模式的数据库的语法说明如下：
 
     -   如果是INSERT ON DUPLICATE KEY UPDATE语句下，expression可以为VALUES\(column\_name\)或EXCLUDED.column\_name用来表示引用冲突行对应的column\_name字段的值。需注意，其中VALUES\(column\_name\)不支持嵌套在表达式中（例如VALUES\(column\_name\)+1），但EXCLUDED不受此限制。
 

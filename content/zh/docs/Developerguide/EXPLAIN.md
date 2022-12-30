@@ -176,22 +176,21 @@
 ## 示例<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
--- 1、在新的数据库上创建一个表格
+-- 1、创建一个表
 openGauss=# create table test_t(c1 int, c2 varchar(30));
 CREATE TABLE
 
--- 2、可以设置 explain_perf_mode 为 normal
-openGauss=# SET explain_perf_mode=normal;
-SET
-
--- 3、查看 SQL 的执行计划
+-- 2、查看 SQL 的执行计划
 openGauss=# explain select * from test_t;
                         QUERY PLAN
 ----------------------------------------------------------
  Seq Scan on test_t  (cost=0.00..17.29 rows=729 width=82)
 (1 row)
 
--- 4、在查看计划时可以指定输出格式
+-- 3、在查看计划时可以指定输出格式
+-- 注意：只有当 explain_perf_mode 为 normal 时，才支持 json 格式
+openGauss=# SET explain_perf_mode=normal;
+SET
 openGauss=# explain (format json) select * from test_t;
             QUERY PLAN
 ----------------------------------
@@ -210,7 +209,7 @@ openGauss=# explain (format json) select * from test_t;
  ]
 (1 row)
 
--- 5、如果一个查询中的 where 子句的列有索引，在条件或数据等不一样时，可能会显示不同的执行计划
+-- 4、如果一个查询中的 where 子句的列有索引，在条件或数据等不一样时，可能会显示不同的执行计划
 openGauss=# create index idx_test_t_c1 on test_t(c1);
 CREATE INDEX
 openGauss=# insert into test_t values(generate_series(1, 200), 'hello openGauss');
@@ -224,7 +223,7 @@ openGauss=# explain select c1, c2 from test_t where c1=100;
          Index Cond: (c1 = 100)
 (4 rows)
 
--- 6、可以通过 costs 选项，指定是否显示开销
+-- 5、可以通过 costs 选项，指定是否显示开销
 openGauss=# explain (costs false) select * from test_t where c1=100;
                 QUERY PLAN
 ------------------------------------------
