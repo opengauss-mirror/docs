@@ -1,6 +1,6 @@
 # GS\_REDO\_STAT<a name="ZH-CN_TOPIC_0289900539"></a>
 
-GS\_REDO\_STAT视图用于统计回话线程日志回放情况。
+GS\_REDO\_STAT视图用于统计会话线程日志回放情况。
 
 **表 1**  GS\_REDO\_STAT字段
 
@@ -64,4 +64,3 @@ GS\_REDO\_STAT视图用于统计回话线程日志回放情况。
 </tr>
 </tbody>
 </table>
-

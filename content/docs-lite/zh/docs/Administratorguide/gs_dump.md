@@ -57,7 +57,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </td>
 <td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="p205841643165011"><a name="p205841643165011"></a><a name="p205841643165011"></a>中型或大型数据库，推荐自定义归档格式。</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>使用<a href="gs_restore.md">gs_restore</a>可以选择要从自定义归档导出文件中导入相应的数据库对象。</p>
+<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>使用<a href="gs_restore.md">gs_restore</a>可以选择要从自定义归档/目录归档/tar归档导出文件中导入相应的数据库对象。</p>
 </td>
 </tr>
 <tr id="row1377584264920"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"><a name="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a><a name="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a>目录归档格式</p>
@@ -87,7 +87,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 
 ## 注意事项<a name="zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
--   禁止修改导出的文件和内容，否则可能无法恢复成功。
+-   禁止修改-F c/d/t 格式导出的文件和内容，否则可能无法恢复成功。对于-F p 格式导出的文件，如有需要，可根据需要谨慎编辑导出文件。
 -   为了保证数据一致性和完整性，gs\_dump会对需要转储的表设置共享锁。如果表在别的事务中设置了共享锁，gs\_dump会等待锁释放后锁定表。如果无法在指定时间内锁定某个表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
 -   不支持加密导出存储过程和函数。
 
