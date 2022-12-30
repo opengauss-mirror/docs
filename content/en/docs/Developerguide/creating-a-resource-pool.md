@@ -66,7 +66,7 @@ After resource load management is enabled, the system automatically creates  **d
 </td>
 <td class="cellrowborder" valign="top" width="28.44715528447155%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0066854608_p32218723173126"><a name="en-us_topic_0066854608_p32218723173126"></a><a name="en-us_topic_0066854608_p32218723173126"></a>–1</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0066854608_p59579767173126"><a name="en-us_topic_0066854608_p59579767173126"></a><a name="en-us_topic_0066854608_p59579767173126"></a>Maximum number of concurrent queries allowed by the resource pool. The value **-1** indicates that the maximum number of concurrent queries cannot exceed INT32_MAX.</p>
+<td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0066854608_p59579767173126"><a name="en-us_topic_0066854608_p59579767173126"></a><a name="en-us_topic_0066854608_p59579767173126"></a>Maximum number of concurrent queries allowed by the resource pool. The value <strong>-1</strong> indicates that the maximum number of concurrent queries cannot exceed INT_MAX.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0066854608_row66455862173126"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0066854608_p14215762173126"><a name="en-us_topic_0066854608_p14215762173126"></a><a name="en-us_topic_0066854608_p14215762173126"></a>max_dop</p>
@@ -94,7 +94,7 @@ After resource load management is enabled, the system automatically creates  **d
 </td>
 <td class="cellrowborder" valign="top" width="28.44715528447155%" headers="mcps1.2.4.1.2 "><p id="p17885150133211"><a name="p17885150133211"></a><a name="p17885150133211"></a>0</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.2.4.1.3 "><p id="p2268117153212"><a name="p2268117153212"></a><a name="p2268117153212"></a>Upper limit of IOPS. It is counted by ones for column storage and by 10 thousands for row storage. The value **0** indicates that the maximum number of concurrent queries cannot exceed INT32_MAX.</p>
+<td class="cellrowborder" valign="top" width="45.175482451754824%" headers="mcps1.2.4.1.3 "><p id="p2268117153212"><a name="p2268117153212"></a><a name="p2268117153212"></a>Upper limit of IOPS. It is counted by ones for column storage and by 10 thousands for row storage. The value <strong>0</strong> indicates that the maximum number of concurrent queries cannot exceed INT_MAX.</p>
 </td>
 </tr>
 <tr id="row112023317329"><td class="cellrowborder" valign="top" width="26.37736226377362%" headers="mcps1.2.4.1.1 "><p id="p41211633153214"><a name="p41211633153214"></a><a name="p41211633153214"></a>io_priority</p>
@@ -155,7 +155,7 @@ You are familiar with the  [CREATE RESOURCE POOL](create-resource-pool.md),  [AL
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   If you do not specify an associated Cgroup when creating a resource pool, the resource pool will be associated with the default Cgroup, which is the Timeshare Cgroup  **Medium**  under the  **DefaultClass**  Cgroup.
-    >-   The value of  **control\_group**  is case-sensitive and must be contained in single quotation marks \(''\).
+    >-   The value of **control\_group** is case-sensitive and must be contained in single quotation marks or double quotation marks.
     >-   If a database user specifies the Timeshare string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
     >-   **control\_group**  allows you to create a Workload Cgroup, for example,  **class1:wd**  whose Cgroup level can also be appended, such as  **class1:wd:2**. The Cgroup level must be within 1 to 10, but it is not used for Cgroup differentiation. In earlier versions, you can create Workload Cgroups with the same name and differentiate them by their levels. In the latest version, Cgroup names must be unique. If you have created duplicate Workload Cgroups in an earlier version, delete them to avoid confusion.
 

@@ -342,7 +342,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
  10:15:20.500001
 (1 row)
 
--- Round off.
+-- Exceed the boundary value.
  openGauss=# SELECT MAKETIME(839,0,0);
  maketime  
 -----------
@@ -548,22 +548,22 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   
   Function prototype:
 
-  `CString SUBDATE(text date, INTERVAL expr unit)`
+  `Text SUBDATE(text date, INTERVAL expr unit)`
 
-  `CString SUBDATE(text date, int64 days)`
+  `Text SUBDATE(text date, INTERVAL expr unit)`
 
   Function description:
 
-  Performs date calculation. The **date** parameter specifies the start DATE or DATETIME type value. Specifies the INTERVAL value to be subtracted from the start date. The result date value after subtraction is returned. If the second parameter is an integer, it is considered as a subtracted day value.
+  Performs date calculation. The `date` parameter specifies the start `DATE` or `DATETIME` type value. Specifies the INTERVAL value to be subtracted from the start date. The result date value after subtraction is returned. If the second parameter is an integer, it is considered as a subtracted day value.
 
   Remarks:
 
-    - The return format of the function is DATE or DATETIME. Generally, the return type is the same as the type of the first parameter. When the type of the first parameter is DATE and the unit of INTERVAL contains HOUR, MINUTE, and SECOND, the return result is DATETIME.
-    - The function returns NULL if any of the following conditions is met:
-
-        1. The value of date is out of range [0, 9999-12-31].
-        2. Any parameter is NULL.
-    - The date of the returned result must be within the range [0001-1-1, 9999-12-31]. If the value is out of range, NULL is returned.
+    - The return format of the function is `DATE` or `DATETIME`. Generally, the return type is the same as the type of the first parameter. When the type of the first parameter is `DATE` and the unit of INTERVAL contains HOUR, MINUTE, and SECOND, the return result is `DATETIME`.
+    - The interval unit supported by this function is the same as that supported by openGauss.
+    - If any parameter is NULL, the function returns NULL.
+    - The function reports an error in the following scenarios (this feature is compatible with the behavior of this function in the INSERT statement of MySQL):
+        - The value of `date` is out of range [0000-1-1, 9999-12-31].
+        - The date in the returned result is out of range [0001-1-1, 9999-12-31].
   
   Example:
 
@@ -575,10 +575,10 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 (1 row)
 
 -- The first parameter is DATE.
- openGauss=# SELECT SUBDATE('2022-01-01 01:01:01', INTERVAL 1 YEAR);
-       subdate       
----------------------
- 2021-01-01 01:01:01
+ openGauss=# SELECT SUBDATE('2022-01-01', INTERVAL 1 YEAR);
+  subdate   
+------------
+ 2021-01-01
 (1 row)
 
 -- The first parameter is DATETIME.
@@ -611,9 +611,10 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Remarks:
 
-    - The first parameter must be of the original TIME type, not implicitly converted from a string. For example, SUBDATE('1:1:1', 1) does not enter this function. Change it to SUBDATE(time'1:1:1', 1).
-    - The INTERVAL unit of the second parameter cannot contain the year or month part. Otherwise, NULL is returned.
-    - The return value must be within [-838:59:59, 838:59:59]. Otherwise, NULL is returned.
+    - The first parameter must be of the original TIME type, not implicitly converted from a string. For example, `SUBDATE('1:1:1', 1)` does not enter this function. Change it to `SUBDATE(time'1:1:1', 1)`.
+    - The function reports an error in the following scenarios (this feature is compatible with the behavior of this function in the INSERT statement of MySQL):
+      - The INTERVAL unit of the second parameter contains the year or month part.
+      - The `TIME` value returned by the function exceeds [-838:59:59, 838:59:59].
 
   Example:
 
@@ -626,17 +627,13 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
 -- The INTERVAL unit of the second parameter cannot contain the year or month part.
  openGauss=# SELECT SUBDATE(time'838:00:00', INTERVAL '1' MONTH);
- subdate 
----------
- 
-(1 row)
+ERROR:  time field value out of range
+CONTEXT:  referenced column: subdate
 
 -- The result is out of range.
  openGauss=# SELECT SUBDATE(time'838:59:59', INTERVAL '-1' SECOND);
- subdate 
----------
- 
-(1 row)
+ERROR:  time field value out of range
+CONTEXT:  referenced column: subdate
 ```
 
 - SUBTIME()
@@ -649,13 +646,15 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Function description:
 
-  This function performs date calculation and returns the result of DATETIME or TIME expression time1 minus TIME expression time2. The return parameter type is the same as the input type of time1.
+  This function performs date calculation and returns the result of `DATETIME` or `TIME` expression `time1` minus TIME expression `time2`. The return result type is the same as the input type of `time1`.
 
   Remarks:
 
-    - The value of time1 must be in TIME or DATETIME format. Otherwise, an error is reported.
-    - The value of time2 must be in the correct and valid TIME format. Otherwise, an error is reported.
-    - If the return value is greater than [-838:59:59, 838:59:59], the extreme value is returned based on the symbol.
+  - The function reports an error in the following scenarios:
+    - The value of `time1` is in invalid TIME or DATETIME format.
+    - The value of `time2` is in invalid TIME format.
+    - When the `DATETIME` value is returned, the result exceeds [0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999].
+    - When the `TIME` value is returned, the result exceeds [-838:59:59, 838:59:59].
 
   Example:
 
@@ -695,19 +694,15 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
-- time()
-  
-  Function prototype:
-
-  `Text TIME(TEXT expr)`
+- time(expr)
 
   Function description:
 
-  The time() function of MySQL is compatible. The parameter specifies a TIME or DATETIME expression from which the time expression is extracted and returned as a string.
+  The parameter specifies a TIME or DATETIME expression `expr` from which the time expression is extracted and returned as a string.
 
   Remarks:
 
-    - The returned time expression can contain a maximum of six decimal places. The excess part is rounded off.
+    - The returned time expression can contain a maximum of six decimal places, and 0 at the end of the decimal part is not displayed.
     - For an abnormal date or time format or a date or time with domain overflow (for example, 1:60:60 and 2022-12-32), this function is compatible with the insert statement in MySQL, that is, an error is reported.
     - An error is reported for a character string in the date format, and 00:00:00 is returned for a parameter of the date type.
 
@@ -733,16 +728,19 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   `TIME TIMEDIFF(TIME time1, TIME time2)`
 
-  `DATETIME TIMEDIFF(DATETIME  time1, DATETIME time2)`
+  `TIME TIMEDIFF(DATETIME datetime1, DATETIME datetime2)`
 
   Function description:
 
-  This function performs date calculation and returns the result of subtracting time2 from time1. The type of the returned parameter is the same as the input type.
+  This function is used to perform the subtraction operation between `DATETIME` or `TIME` values to calculate the time difference between `DATETIME` or `TIME` values. The operation result is returned as a `TIME` value.
 
   Remarks:
 
-    - The types of time1 and time2 must be the same and valid. Otherwise, NULL is returned.
-    - For example, if time1 and time2 are of the TIME type and the return value is beyond [-838:59:59, 838:59:59], the function reports an error.
+    - The types of time1 and time2 must be the same. Otherwise, NULL is returned.
+    - The function reports an error in the following scenarios (this feature is compatible with the behavior of this function in the INSERT statement of MySQL):
+      - The input parameter of the `TIME` type is out of the range [-838:59:59, 838:59:59], or the format is invalid.
+      - The input parameter of the `DATETIME` type is out of the range [0000-01-01 00:00:00.000000, 9999-12-31 23:59:59.999999], or the format is invalid.
+      - The return value is out of the range [-838:59:59, 838:59:59].
 
   Example:
 
@@ -753,12 +751,17 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
    22:58:58 | 46:58:58
   (1 row)
   
-  -- If the value is out of range, the extreme value is returned.
-  openGauss=# SELECT TIMEDIFF(time'-830:00:00', time'10:20:30'), TIMEDIFF(time'830:00:00', time'-10:20:30');
-    timediff  | timediff
-  ------------+-----------
-   -838:59:59 | 838:59:59
+  -- The types of the two parameters are inconsistent.
+  opengauss=# select timediff('2000-1-1 0:0:0', '0:0:0'), timediff(time'0:0:0', datetime'2000-1-1 0:0:0');
+   timediff | timediff 
+  ----------+----------
+            | 
   (1 row)
+  
+  -- An error is reported when the return value is out of range.
+  openGauss=# select timediff(time'-830:00:00', time'10:20:30');
+  ERROR:  time field value out of range
+  CONTEXT:  referenced column: timediff
   ```
 
 - TIMESTAMP()
@@ -773,11 +776,12 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   If there is only one parameter, the function converts the DATE or DATETIME expression expr to the DATETIME value and returns the value.
 
-  If there are two parameters, the function calculates the result of the DATE or DATETIME expression expr plus time of the TIME type and returns the result.
+  If there are two parameters, the function calculates the result of the DATE or DATETIME expression `expr` plus `time` of the TIME type and returns the DATETIME value.
 
   Remarks:
 
     - expr is a date or datetime expression that does not exist. For example, '2000-12-32' and '2000-1-1 24:00:00'. The function reports an error.
+    - The function reports an error when the input parameter or return value exceeds the specified time range.
     - When the value contains two parameters and the value of the second parameter time is not a character string in TIME format, the function reports an error.
 
   Example:
@@ -893,7 +897,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 | %d, %m, %y                                        | 00       |
 | %Y                                                 | 0000     |
 
-  The extracted time value can contain a maximum of six decimal places. The excess part is rounded off.
+  - The extracted time value can contain a maximum of six decimal places.
 
   Example:
 
@@ -974,16 +978,16 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
-- to_days()
-
-  Function prototype: `int8 TO_DAYS(DATETIME date)`
+- to_days(expr)
 
   Function description: Receives a date or datetime expression as a parameter and returns the number of days from the date specified by the parameter to the year 0000.
+
+  Return type: 64-bit integer `int8`
 
   Remarks:
 
   * If the input parameter type is time, the date used for calculation is the current date plus the time specified by time.
-  * If the entered date is out of the range [0000-01-01, 9999-12-31] or the input parameter is an invalid date or datetime expression, the function reports an error.
+  * If the entered date is out of the range [0000-01-01, 9999-12-31] or the input parameter is an invalid date or datetime expression, the function reports an error. (This function is compatible with the behavior of this function in the INSERT statement of MySQL.)
 
   Example:
 
@@ -1008,16 +1012,17 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   (1 row)
   ```
 
-- to_seconds()
+- to_seconds(expr)
 
-  Function prototype: `NUMERIC TO_SECONDS(text datetime)`
+  Function description: Enters a `date` or `datetime` expression `expr` to specify a time point. Return the number of seconds from `0000-01-01 00:00:00` to the time point.
 
-  Function description: After you enter a time point **datetime**, the number of seconds from 0000-01-01 00:00:00 to the time point is returned.
+  Return type: 64-bit integer `int8`
 
   Remarks:
 
   - The **datetime** parameter supports the following types: character string, number, date, datetime, and time. If the input parameter is of the time type, the date is automatically set to the current date.
   - The returned result contains only the integer number of seconds and the decimal part is discarded.
+  - If the entered date is out of the range [0000-01-01, 9999-12-31] or the input parameter is an invalid date or datetime expression, the function reports an error. (This function is compatible with the behavior of this function in the INSERT statement of MySQL.)
 
   Example:
   ```sql
@@ -1058,7 +1063,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   - The **datetime** parameter supports the following types: character string, number, date, datetime, and time. If the input parameter is of the time type, the date is automatically set to the current date.
   - The valid range of the **datetime** parameter is [1970-01-01 00:00:00.000000 UTC, 2038-01-19 03:14:07.999999 UTC].
   - The value range of this parameter is affected by the time zone, but the final calculation result is not affected by the time zone.
-  - The calculation result can contain a maximum of six decimal places.
+  - The calculation result can contain a maximum of six decimal places and 0 at the end of the decimal part is not displayed.
 
   Example:
 
@@ -1121,7 +1126,8 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   Remarks:
 
   - UTC\_TIME can be identified by keywords. In this case, parentheses are not required. The effect is the same as that of the UTC\_TIME() function without parameters.
-  
+  - The returned `TIME` result does not display 0 at the end of the decimal part.
+
   Example:
 
   ```sql
@@ -1156,6 +1162,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   Remarks:
   
   - UTC\_TIMESTAMP can be identified by keywords. In this case, parentheses are not required. The effect is the same as that of the UTC\_TIMESTAMP() function without parameters.
+  - The returned `DATETIME` result does not display 0 at the end of the decimal part.
   
   Example:
   ```sql
