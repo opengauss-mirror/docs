@@ -399,3 +399,23 @@ gs\_ctl参数可分为如下几类：
 </tbody>
 </table>
 
+
+**表 11**  stack参数
+
+<table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p14281162351513"><a name="p14281162351513"></a><a name="p14281162351513"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p8281023191520"><a name="p8281023191520"></a><a name="p8281023191520"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row182819238154"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p42828237159"><a name="p42828237159"></a><a name="p42828237159"></a>-I</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p17282423191511"><a name="p17282423191511"></a><a name="p17282423191511"></a>用于指定需要获取调用栈的线程的lwtid。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p528252331511"><a name="p528252331511"></a><a name="p528252331511"></a>正整数</p>
+</td>
+</tr>
+</tbody>
+</table>
