@@ -24,7 +24,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
 -   **OR REPLACE**
 
-    如果视图已存在，则重新定义。
+    当CREATE VIEW中存在OR REPLACE时，表示若以前存在该视图就进行替换，但新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列。
 
 - **DEFINER = user**
 
