@@ -43,6 +43,25 @@ OPTION取值如下所示
 
     打印帮助信息。
 
+## 使用举例（非DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
+
+```
+pg_controldata DATADIR
+```
+**说明：**
+
+在非DSS模式，OPTION的取值不能是共享存储参数。
+
+## 使用举例（DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
+
+```
+pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
+```
+
+**DSS模式使用说明：**
+
+在DSS模式，-I后面的参数为要查看的控制文件对应节点的节点id，VGDATA为集群的共享存储数据目录（例如数据目录为+data）。
+
 
 ## 使用举例（DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
 
