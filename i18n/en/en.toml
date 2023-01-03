@@ -145,7 +145,7 @@ other = "latest-link"
 other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
 
 [copy_right]
-other = "Copyright © openGauss 2022. All rights reserved."
+other = "Copyright © openGauss 2023. All rights reserved."
 
 [attention]
 other = "WeChat Subscription"
