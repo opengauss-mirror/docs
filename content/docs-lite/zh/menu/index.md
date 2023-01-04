@@ -1195,7 +1195,6 @@ headless: true
 			-   [GS\_DB\_PRIVILEGES]({{< relref "./docs/Developerguide/GS_DB_PRIVILEGES.md" >}})
 			-   [GS\_GSC\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/GS_GSC_MEMORY_DETAIL.md" >}})
 			-   [GS\_LSC\_MEMORY\_DETAIL]({{< relref "./docs/Developerguide/GS_LSC_MEMORY_DETAIL.md" >}})
-			-   [GS\_WRITE\_TERM\_LOG]({{< relref "./docs/Developerguide/GS_WRITE_TERM_LOG.md" >}})
 	-   [Schema]({{< relref "./docs/Developerguide/Schema-24.md" >}})
 		-   [Information Schema]({{< relref "./docs/Developerguide/Information-Schema.md" >}})
 			-   [\_PG\_FOREIGN\_DATA\_WRAPPERS]({{< relref "./docs/Developerguide/_PG_FOREIGN_DATA_WRAPPERS.md" >}})

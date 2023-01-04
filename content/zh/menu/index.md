@@ -1278,7 +1278,6 @@ headless: true
 			-   [GS\_WLM\_SESSION\_INFO\_ALL]({{< relref "./docs/Developerguide/GS_WLM_SESSION_INFO_ALL.md" >}})
 			-   [GS\_WLM\_SESSION\_STATISTICS]({{< relref "./docs/Developerguide/GS_WLM_SESSION_STATISTICS.md" >}})
 			-   [GS\_WLM\_USER\_INFO]({{< relref "./docs/Developerguide/GS_WLM_USER_INFO.md" >}})
-			-   [GS\_WRITE\_TERM\_LOG]({{< relref "./docs/Developerguide/GS_WRITE_TERM_LOG.md" >}})
 			-   [MPP\_TABLES]({{< relref "./docs/Developerguide/MPP_TABLES.md" >}})
 			-   [PG\_AVAILABLE\_EXTENSION\_VERSIONS]({{< relref "./docs/Developerguide/PG_AVAILABLE_EXTENSION_VERSIONS.md" >}})
 			-   [PG\_AVAILABLE\_EXTENSIONS]({{< relref "./docs/Developerguide/PG_AVAILABLE_EXTENSIONS.md" >}})
