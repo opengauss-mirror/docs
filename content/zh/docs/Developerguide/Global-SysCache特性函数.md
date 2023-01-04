@@ -1,6 +1,6 @@
 # Global SysCache特性函数<a name="ZH-CN_TOPIC_0000001242498033"></a>
 
--   gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+-   gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     描述：查看数据库里全局系统缓存的表元数据。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -19,7 +19,7 @@
     ```
 
 
--   gs\_gsc\_catalog\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+-   gs\_gsc\_catalog\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     描述：查看数据库里全局系统缓存的系统表行信息。调用该函数的用户需要具有SYSADMIN权限。
 
@@ -48,7 +48,7 @@
     ```
 
 
--   gs\_gsc\_clean\(database\_id dafault NULL\)
+-   gs\_gsc\_clean\(database\_id default NULL\)
 
     描述：清理global syscache的缓存，需要注意，正在使用中的数据不会被清理。调用该函数的用户需要具有SYSADMIN权限。
 

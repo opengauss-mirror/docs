@@ -17,7 +17,7 @@
 -   不支持增加自增列，或者增加DEFAULT值中包含nextval\(\)表达式的列。
 -   不支持对外表、临时表开启行访问控制开关。
 -   通过约束名删除PRIMARY KEY约束时，不会删除NOT NULL约束，如果有需要，请手动删除NOT NULL约束。
--   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
+-   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
