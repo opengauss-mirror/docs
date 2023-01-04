@@ -98,7 +98,7 @@ gs_cgroup -S class -E "allcputime=100" --penalty
 d.  设置组Class下的作业在所有数据库节点上执行时间到达2400秒，倾斜率达到90时执行降级动作:
 
 ```
-gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
+gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercent=90"
 ```
 
 >![](public_sys-resources/icon-notice.gif) **须知：**   

@@ -7,7 +7,7 @@
 ## 语法<a name="section15554112119116"></a>
 
 ```
-python3 pscp [OPTIONS] 
+pscp [OPTIONS] 
 ```
 
 ## 参数说明<a name="section7730228131115"></a>
