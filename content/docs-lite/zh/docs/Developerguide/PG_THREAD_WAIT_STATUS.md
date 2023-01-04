@@ -125,6 +125,12 @@
 <td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="p184611568132"><a name="p184611568132"></a><a name="p184611568132"></a>全局会话ID。</p>
 </td>
 </tr>
+</tr>
+<tr id="zh-cn_topic_0283136724_row9483152492216"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p10661823122212"><a name="zh-cn_topic_0283136724_p10661823122212"></a><a name="zh-cn_topic_0283136724_p10661823122212"></a>wait reserve td</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p866113235224"><a name="zh-cn_topic_0283136724_p866113235224"></a><a name="zh-cn_topic_0283136724_p866113235224"></a>等待分配ustore事务槽。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -327,7 +333,7 @@ wait\_status列的等待状态有以下状态。
 </td>
 <td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p866113235224"><a name="zh-cn_topic_0283136724_p866113235224"></a><a name="zh-cn_topic_0283136724_p866113235224"></a>Stream算子等待生产者执行。</p>
 </td>
-</tr>
+
 </tbody>
 </table>
 
