@@ -95,7 +95,7 @@ For details, see "Resource Load Management" in  _Developer Guide_.
         4.  Demote a job under the Class Cgroup when the total time taken to execute the job on all nodes reaches 2400s and the skew of the CPU time reaches 90 percent.
 
             ```
-            gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercnt=90"
+            gs_cgroup -S class -E "qualificationtime=2400,cpuskewpercent=90"
             ```
 
             >![](public_sys-resources/icon-notice.gif) **NOTICE:** 

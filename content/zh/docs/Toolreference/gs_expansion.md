@@ -125,6 +125,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 ```
 plat1:/opt/software/openGauss/script # ./gs_expansion -U omm -G dbgrp -X /home/omm/cluster_config.xml -h 192.168.0.1
+Start expansion without cluster manager component.
 Start to preinstall database on new nodes.
 Start to send soft to each standby nodes.
 End to send soft to each standby nodes.
@@ -134,39 +135,6 @@ End to preinstall database step.
 End to preinstall database on new nodes.
 
 Start to install database on new nodes.
-Installing database on node 192.168.0.1:
-Please enter the password of user [omm] on node [192.168.0.1]:
-Parsing the configuration file.
-Check preinstall on every node.
-Successfully checked preinstall on every node.
-Creating the backup directory.
-Successfully created the backup directory.
-begin deploy..
-Installing the cluster.
-begin prepare Install Cluster..
-Checking the installation environment on all nodes.
-begin install Cluster..
-Installing applications on all nodes.
-Successfully installed APP.
-begin init Instance..
-encrypt cipher and rand files for database.
-Please enter password for database:
-Please repeat for database:
-begin to create CA cert files
-The sslcert will be generated in /opt/gaussdb/cluster/app/share/sslcert/om
-Cluster installation is completed.
-Configuring.
-Deleting instances from all nodes.
-Successfully deleted instances from all nodes.
-Checking node configuration on all nodes.
-Initializing instances on all nodes.
-Updating instance configuration on all nodes.
-Check consistence of memCheck and coresCheck on database nodes.
-Configuring pg_hba on all nodes.
-Configuration is completed.
-Successfully started cluster.
-Successfully installed application.
-end deploy..
 192.168.0.1 install success.
 Finish to install database on all nodes.
 Database on standby nodes installed finished.
