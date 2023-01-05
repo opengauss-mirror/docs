@@ -253,6 +253,8 @@ gs_dump [OPTION]... [DBNAME]
     >-   -t tablename只转储在默认搜索路径中可见的表。-t \*.tablename转储数据库下所有模式下的tablename表。-t schema.table转储特定模式中的表。
     >-   -t tablename不会导出表上的触发器信息。
 
+    >-   对于表名中包含大写字母的表，在使用-t参数指定导出时需对表名添加\"来导出。如对于表"abC"，导出需指定-t \"abC\"；如对于表schema."abC"，导出需指定-t schema.\"abC\"。  
+
     例如：
 
     ```
