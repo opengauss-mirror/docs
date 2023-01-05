@@ -624,7 +624,7 @@
 }
 @media screen and (max-width:1480px) {
     #page{
-        margin-right: 0;
+        margin-right: 40px;
     }
     .book-toc{
         display: none;
