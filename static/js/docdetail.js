@@ -3,6 +3,16 @@ $(function ($) {
     if (lang !== 'zh') {
         $('#title-evaluate').css('display', 'none')
     }
+    // 本函数为模拟a标签打开新网页进而避免使用window.open被拦截
+    function openUrl(url="#") {
+        let tempALink = document.createElement("a");
+        tempALink.setAttribute("target", "_blank");
+        tempALink.setAttribute("id", "openWin");
+        tempALink.setAttribute("href", url);
+        document.body.appendChild(tempALink);
+        document.getElementById("openWin").click();
+        document.body.removeChild(tempALink);
+    }
     var isEvaluate = false;
     var urlArr = (window.location.pathname).split("/");
     var isAdd1 = $("#markdown>ul").first().find("li").children().is("ul");
@@ -117,7 +127,7 @@ $(function ($) {
         }else{
             targetHref=nowHref.replace(`/${lang}/docs/${version}/`,`/${version.replace('latest','master')}/content/${lang}/`)
         }
-        window.open('https://gitee.com/opengauss/docs/blob'+targetHref)
+        openUrl('https://gitee.com/opengauss/docs/blob'+targetHref)
     });
     getTreeLink();
 });
