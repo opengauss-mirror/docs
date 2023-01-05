@@ -15,7 +15,7 @@
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值、UNIQUE和PRIMARY KEY。
 -   列存表支持delta表，受参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
--   使用JDBC时，支持通过PrepareStatement对DEFAUTL值进行参数化设置。
+-   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte，text、varchar、char等长度可变的类型除外。
 -   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
 
