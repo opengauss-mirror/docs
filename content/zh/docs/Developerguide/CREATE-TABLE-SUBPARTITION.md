@@ -21,7 +21,7 @@
 -   对于二级分区表PARTITION FOR \(values\)语法，values只能是常量。
 -   对于分区表PARTITION/SUBPARTITION FOR \(values\)语法，values在需要数据类型转换时，建议使用强制类型转换，以防隐式类型转换结果与预期不符。
 -   指定分区语句目前不能走全局索引扫描。
--   目前Hash分区是按倒序排列的，即通过哈希和取余计算后得到的分区下标与创建顺序相反，同样EXPLAIN计划显示的Selected Partitions的序号排序也与创建顺序相反。
+-   目前Hash分区是按倒序排列的，即通过哈希和取余计算后得到的分区下标与创建顺序相反，同样EXPLAIN计划显示的Selected Partitions的序号排序也与创建顺序相反。List分区是按分区数组的第一个元素排序的。
 
 ## 语法格式<a name="section11556125664117"></a>
 
