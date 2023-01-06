@@ -160,16 +160,16 @@ $(function ($) {
     $("#version-select .option>span").click(function () {
       window.open($(this).attr("href"), "_self");
     });
-   
-     // 企业版、轻量版切换跳转
-     function switchLiteEnterprise(href) {
+
+    // 企业版、轻量版切换跳转
+    function switchLiteEnterprise(href) {
       $.ajax({
         type: "get",
         url: href,
         dataType: "json",
         complete: function (res) {
           // 若页面不存在跳转法律声明页面
-          if ((res.status === 404)) {
+          if (res.status === 404) {
             window.open(
               location.origin +
                 `/${lang}/docs/${
@@ -183,7 +183,7 @@ $(function ($) {
         },
       });
     }
-     // 企业版与轻量版选择
+    // 企业版与轻量版选择
     $(".switch-version>input").click(function () {
       const version = location.pathname.split("/")[3];
       if (version.includes("-lite")) {
@@ -329,5 +329,18 @@ $(function ($) {
         });
       }
     });
+    // 给较长的导航栏文字增加title start
+    function addNavTitle() {
+      $(".jstree-anchor").mouseenter(function () {
+        if ($(this)[0].scrollWidth > $(this)[0].offsetWidth) {
+          $(this).attr("title", $(this).text());
+        }
+      });
+    }
+    addNavTitle();
+    // 观察导航栏节点是否发生变化
+    const targetNode = $("#docstreeview")[0];
+    targetNode.addEventListener("DOMSubtreeModified", addNavTitle, false);
+    // 给较长的导航栏文字增加title end
   });
 });
