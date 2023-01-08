@@ -2002,3 +2002,20 @@ CONTEXT:  referenced column: subdate
   13:12:12
   (1 row)
   ```
+- sleep\(duration \)
+
+  描述：睡眠 duration 秒， 然后返回0
+
+  返回值：int
+
+  备注：此函数和mysql略有不同，函数睡眠达到给定时间，则返回0，如果中间发生中断，则返回NULL。
+
+  示例：
+
+  ```sql
+  openGauss=# SELECT sleep(1);
+  sleep 
+  -------
+      0
+  (1 row)
+  ```
