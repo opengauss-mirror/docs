@@ -10,11 +10,12 @@
 <div id="mask" onclick="hideNav()"></div>
 <script type="text/javascript">
     $(document).ready(function () {
-        function getRelativePath() {
-            var url = location.href;
-            var arrURL = url.split("//");
-            return arrURL[1].substring(arrURL[1].indexOf("/"));
-        }
+        // function getRelativePath() {
+        //     var url = location.href;
+        //     var arrURL = url.split("//");
+        //     console.log(arrURL[1].substring(arrURL[1].indexOf("/")));
+        //     return arrURL[1].substring(arrURL[1].indexOf("/"));
+        // }
         function getCurrentID(wholeData, relativeURL) {
             for (var j in wholeData) {
                 var href = wholeData[j].a_attr.href;
@@ -53,7 +54,8 @@
                             link = aElement.attr("href");
                         }
                     }
-                    var relativeURL = getRelativePath();
+                    // var relativeURL = getRelativePath();
+                    var relativeURL = location.pathname;
                     if (link != relativeURL) {
                         location.href = link;
                     }
@@ -62,7 +64,8 @@
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
                 $("#docsMenu").show();
-                var relativeURL = getRelativePath();
+                // var relativeURL = getRelativePath();
+                var relativeURL = location.pathname;
                 var wholeData = $("#docstreeview").jstree().get_json();
                 var currentID = getCurrentID(wholeData, relativeURL);
                 $("#docstreeview").jstree()._open_to(currentID);
