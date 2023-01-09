@@ -146,7 +146,7 @@
     可以改写为：
 
     ```
-    SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
+    SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T2 WHERE T1.C1=T2.C2);
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
