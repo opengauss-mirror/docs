@@ -9,9 +9,16 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   显示帮助信息
 
     ```
-    dsscmd 
+    dsscmd -h
+    dsscmd --help
     ```
 
+-   显示dss的版本号
+
+    ```
+    dsscmd -v
+    dsscmd --version
+    ```
 
 -   创建卷组
 
@@ -19,7 +26,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd cv <-g vg_name> <-v vol_name> [-s au_size] [-D DSS_HOME]
     ```
 
-    此处的vg\_name为卷组名，命名长度不能超过64，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
+    此处的vg\_name为卷组名，命名长度不能超过64，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
 
 -   显示卷组和磁盘使用信息
 
@@ -44,10 +51,10 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   创建文件
 
     ```
-    dsscmd touch <-n name> [-U UDS:socket_domain]
+    dsscmd touch <-p path> [-U UDS:socket_domain]
     ```
 
-    此处的name为文件名命名长度不能超过64（非目录，单指文件名），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
+    此处的name为文件名命名长度不能超过64（非目录，单指文件名），仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
 
 -   显示路径下文件信息
 
@@ -61,10 +68,12 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd cp <-s src_file> <-d dest_file> [-U UDS:socket_domain]
     ```
 
+    此处的src_file和dest_file带目录长度不能超过1K，开头可带'+', 仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
+
 -   删除卷组文件
 
     ```
-    dsscmd rm <-n name> [-U UDS:socket_domain]
+    dsscmd rm <-p path> [-U UDS:socket_domain]
     ```
 
 -   删除卷组中的卷
@@ -73,7 +82,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd rmv <-g vg_name> <-v vol_name> [-U UDS:socket_domain]
     ```
 
-    此处的vg\_name为卷组名，不需要以‘+’开头。
+    此处的vg_name为卷组名，不需要以‘+’开头。
 
 -   删除目录及其内容
 
@@ -81,10 +90,23 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd rmdir <-p path> [-r] [-U UDS:socket_domain path]
     ```
 
+    此处-r代表级联删除。
+
 -   查询LUN/注册信息
 
     ```
     dsscmd inq  <-t inq_type>
+    ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >inq_type表示查询信息的类型。取值如下：
+    >-   lun: 查询LUN信息。
+    >-   reg: 查询reservations信息。
+
+-   查询该节点是否注册
+
+    ```
+    dsscmd inq_reg  <-i inst_id> [-D DSS_HOME]
     ```
 
 -   显示客户端信息
@@ -93,19 +115,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd lscli
     ```
 
--   将当前节点添加到集群，走服务端
-
-    ```
-    dsscmd regh [-U UDS:socket_domain]
-    ```
-
--   将当前节点从集群中移除
-
-    ```
-    dsscmd unregh [-U UDS:socket_domain]
-    ```
-
--   从集群中移除非当前节点，第一个参数是要移除的节点id
+-   从集群中踢出非当前节点，第一个参数是要移除的节点id
 
     ```
     dsscmd kickh <-i inst_id> [-U UDS:socket_domain]
@@ -123,29 +133,18 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd unreghl <-i inst_id> [-D DSS_HOME]
     ```
 
--   将节点注册到volname，不走服务端
+-   扫描并打开指定路径下指定用户和属组的盘符，不走服务端
 
     ```
-    dsscmd reg <-i inst_id> <-v vol_name>
+    dsscmd scandisk <-t type> <-p path> <-u user_name> <-g group_name>
     ```
 
--   将节点从volname中取消注册，不走服务端
-
-    ```
-    dsscmd unreg <-i inst_id> <-v vol_name>
-    ```
-
--   清理掉节点在volume上保留的所有信息
-
-    ```
-    dsscmd clrreg <-i inst_id> <-v vol_name>
-    ```
-
--   抢占持续预留并删除注册信息
-
-    ```
-    dsscmd kick <-i inst_id> <-k kicked_inst_id> <-v vol_name>
-    ```
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   type: 盘符类型，当前只支持block块设备。
+    >-   [path][user_name][group_name]: 该字段中不能含有命令注入安全隐患的非法字符：
+    >'|'， ';'， '&'， '$'， '<'， '>'， '`'， '\\\'， '\\''， '\\"'， '{'， '}'， '('， ')'， '['， ']'， '~'， '*'， '?'， ' '， '!'， '\n'。
+    >-   user_name: 操作系统的用户名。
+    >-   group_name: 操作系统的属组。
 
 -   设置dss节点的auid
 
@@ -153,16 +152,12 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd auid <-a auid>
     ```
 
--   抢占持续预留并删除注册信息与服务端无交互
-
-    ```
-    dsscmd kickhl <-i inst_id> <-k kicked_inst_id> [-D DSS_HOME]
-    ```
+    此处的auid是一个64位的值。
 
 -   读取dss文件内容
 
     ```
-    dsscmd examine <-n name> <-o offset> <-f format> [-s read_size] [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd examine <-p path> <-o offset> <-f format> [-s read_size] [-D DSS_HOME] [-U UDS:socket_domain]
     ```
 
     此处format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
@@ -183,13 +178,17 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >如果指定参数-b block\_id，则需指定-n node\_id。
+    >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
+    >-   如果指定参数-b block_id，则需指定-n node_id。
+    >-   blocl_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
 
 -   重命名文件名
 
     ```
     dsscmd rename <-o old_name> <-n new_name> [-U UDS:socket_domain]
     ```
+
+    此处的old_name和new_name带目录长度不能超过1K，以'+'开头, 仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
 
 -   显示带有可选参数的文件/目录的磁盘使用情况
 
@@ -217,6 +216,8 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     ```
     dsscmd ln <-s src_path> <-t target_path> [-U UDS:socket_domain]
     ```
+
+    此处的src_path和target_path是路径名，需要带'+'，命名长度不能超过1K，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
 
 -   显示文件链接信息
 
@@ -248,7 +249,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd getcfg <-n name> [-U UDS:socket_domain]
     ```
 
--   关闭dssserver进程
+-   通知dss服务端进行优雅退出，异步关闭dssserver进程
 
     ```
     dsscmd stopdss [-U UDS:socket_domain]
@@ -275,17 +276,17 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 
     默认为Byte。
 
+-   path
+
+    路径名，需要带'+'，命名长度不能超过1K，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
+
 -   dir\_name
 
     目录名，命名长度不能超过64，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
 
--   dest\_file
-
-    目标文件，文件名命名长度不能超过64（非目录，单指文件名），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
-
 -   vol\_name
 
-    卷名。
+    卷名。文件命名长度不能超过1K（包括目录），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
 
 -   -D
 
@@ -303,38 +304,9 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 
     volume上锁的起始地址。
 
--   -r
-
-    级联删除。
-
--   inq\_type
-
-    查询信息的类型。取值如下:
-
-    -   lun：查询LUN 信息。
-    -   reg：查询reservations信息。
-
 -   read\_size
 
     读取长度。
-
--   struct\_name
-
-    指定输出信息的文件类型。
-
-    取值范围：core\_ctrl、vg\_header、 volume\_ctrl 、root\_ft\_block。
-
--   new\_name
-
-    重命名后的文件名。
-
-    文件名命名长度不能超过64（非目录，单指文件名），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
-
--   target\_path
-
-    目标文件。
-
-    文件名命名长度不能超过64（非目录，单指文件名），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
 
 -   name:
 
