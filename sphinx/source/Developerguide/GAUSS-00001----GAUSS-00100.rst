@@ -2,7 +2,7 @@
 
 .. toctree::
 
-    content/zh/docs/Developerguide/GAUSS-00001----GAUSS-00010
+    ../content/zh/docs/Developerguide/GAUSS-00001----GAUSS-00010
     content/zh/docs/Developerguide/GAUSS-00011----GAUSS-00020
     content/zh/docs/Developerguide/GAUSS-00021----GAUSS-00030
     content/zh/docs/Developerguide/GAUSS-00031----GAUSS-00040
