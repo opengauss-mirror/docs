@@ -83,6 +83,8 @@ other = "Content"
 [other_text]
 other = "Reference Links"
 
+[know_89_1]
+other = "/en/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html"
 [know_90_1]
 other = "/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
 [know_91_1]
@@ -101,6 +103,8 @@ other = "/en/docs/1.0.1/docs/Quickstart/learning-product-knowledge.html"
 other = "/en/docs/1.0.0/docs/Quickstart/Quickstart.html"
 [know_98_1]
 other = "/en/docs/latest/docs/BriefTutorial/BriefTutorial.html"
+[version_89]
+other = "3.1.1"
 [version_90]
 other = "3.1.0"
 [version_91]
