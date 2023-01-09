@@ -7,6 +7,9 @@
 	content/zh/docs/CharacteristicDescription/慢SQL诊断
 	content/zh/docs/CharacteristicDescription/Session性能诊断
 	content/zh/docs/CharacteristicDescription/系统KPI辅助诊断
+	content/zh/docs/CharacteristicDescription/内置stack工具	
+	content/zh/docs/CharacteristicDescription/支持SQL-PATCH	
+
 
 		
 		
