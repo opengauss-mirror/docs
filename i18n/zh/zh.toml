@@ -33,6 +33,8 @@ other = "目录"
 [other_text]
 other = "友好社区"
 
+[know_89_1]
+other = "/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html"
 [know_90_1]
 other = "/zh/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
 [know_91_1]
@@ -51,6 +53,9 @@ other = "/zh/docs/1.0.1/docs/Quickstart/%E4%BA%86%E8%A7%A3%E4%BA%A7%E5%93%81.htm
 other = "/zh/docs/1.0.0/docs/Quickstart/Quickstart.html"
 [know_98_1]
 other = "/zh/docs/latest/docs/BriefTutorial/BriefTutorial.html"
+
+[version_89]
+other = "3.1.1"
 [version_90]
 other = "3.1.0"
 [version_91]
