@@ -5,3 +5,6 @@
 -   **[系统视图](dolphin-系统视图.md)**  
 
 -   **[GUC参数说明](dolphin-GUC参数说明.md)**  
+
+-   **[存储过程](dolphin-存储过程.md)**
+
