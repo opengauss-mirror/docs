@@ -58,7 +58,7 @@ WITH hyperparameter_name = { hyperparameter_value | DEFAULT } [, ...] }
 
     机器学习模型的超参名称。
 
-    取值范围：字符串，针对不同算法范围不同。
+    取值范围：字符串，针对不同算法超参类型范围不同。
 
 -   **hp\_value**
 
