@@ -1,7 +1,7 @@
 if(location.pathname==='/zh/'){
-  window.open("/zh/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html","_self")
+  window.open("/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html","_self")
 }else if(location.pathname==='/en/'){
-  window.open("/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html","_self")
+  window.open("/en/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html","_self")
 }
 const themeStyle = localStorage.getItem("openeuler-theme");
 const html = document.getElementsByTagName("html")[0];
