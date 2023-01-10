@@ -6,7 +6,7 @@
 
 1.  获取unixODBC源码包。
 
-    获取参考地址：https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download
+    获取参考地址：https://sourceforge.net/projects/unixodbc/files/unixODBC
 
     下载后请先按照社区提供的完整性校验算法进行完整性校验。
 
@@ -305,7 +305,7 @@
     ```
     退回根目录，创建.postgresql目录，并将root.crt，client.crt，client.key，client.key.cipher，client.key.rand，client.req，server.crt，server.key，server.key.cipher，server.key.rand，server.req放在此路径下。
     Unix系统下，server.crt、server.key的权限设置必须禁止任何外部或组的访问，请执行如下命令实现这一点。
-    chmod 0600 server.key
+    chmod 600 server.key
     将root.crt以及server开头的证书相关文件全部拷贝进数据库install/data目录下（与postgresql.conf文件在同一路径）。
     修改postgresql.conf文件：
         ssl = on

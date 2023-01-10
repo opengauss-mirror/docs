@@ -720,13 +720,19 @@ CREATE DATABASE database_name
 
     该参数的使用会影响到对字符串的排序顺序（如使用ORDER BY执行，以及在文本列上使用索引的顺序）。默认是使用模板数据库的排序顺序。
 
-    取值范围：有效的排序类型。
+    取值范围：操作系统支持的字符集。
 
 -   **LC\_CTYPE \[ = \] lc\_ctype**
 
     指定新数据库使用的字符分类。例如，通过lc\_ctype = 'zh\_CN.gbk'设定该参数。该参数的使用会影响到字符的分类，如大写、小写和数字。默认是使用模板数据库的字符分类。
 
-    取值范围：有效的字符分类。
+    取值范围：操作系统支持的字符分类。
+     >![](public_sys-resources/icon-note.gif) **说明：** 
+    >
+    >- 对于lc_collate和lc_ctype参数的取值范围，取决于本地环境支持的字符集。
+    
+    
+    >   例如：在Linux操作系统上，可通过locale -a命令获取操作系统支持的字符集列表，在应用lc_collate和lc_ctype参数时可从中选择用户需要的字符集和字符分类。 
 
 -   **DBCOMPATIBILITY \[ = \] compatibility\_type**
 

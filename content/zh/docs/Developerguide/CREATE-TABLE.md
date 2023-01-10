@@ -233,7 +233,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
-    这个子句为表或索引指定一个可选的存储参数。
+    这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
@@ -381,7 +381,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       取值范围：on/off。
   
       默认值：off。
+      
+-   **WITHOUT OIDS**
 
+    等价于WITH（OIDS=FALSE）的语法。
 
 -   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
 

@@ -56,8 +56,6 @@
         | FORCE ROW LEVEL SECURITY
         | NO FORCE ROW LEVEL SECURITY
         | ENCRYPTION KEY ROTATION
-        | SET WITH OIDS
-        | SET WITHOUT OIDS
         | INHERIT parents
         | NO INHERIT parents
         | OF type_name
@@ -161,13 +159,6 @@
 
   透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
 
-- **SET WITH OIDS**
-
-  在资料表中增加了一个OID系统栏位。如果资料表中已经有OID，则此语法什么都不改变。
-
-- **SET WITHOUT OIDS**
-
-  从资料表中移除一处OID系统栏位。如果资料表中没有OID，则此语法什么都不改变。
 
 - **INHERIT parent\_table**
 
