@@ -1,4 +1,5 @@
-
+安装openGauss
+=============
 .. toctree::
 
     ../content/zh/docs/installation/创建XML配置文件
