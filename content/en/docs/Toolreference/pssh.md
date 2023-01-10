@@ -7,7 +7,7 @@ This tool is used to execute access between database nodes and send commands to 
 ## Syntax<a name="section39063449108"></a>
 
 ```
-python3 pssh [OPTIONS] 
+pssh [OPTIONS] 
 ```
 
 ## Parameter Description<a name="section14185451151019"></a>

@@ -7,7 +7,7 @@ This tool is used to transfer files between database nodes.
 ## Syntax<a name="section15554112119116"></a>
 
 ```
-python3 pscp [OPTIONS] 
+pscp [OPTIONS] 
 ```
 
 ## Parameter Description<a name="section7730228131115"></a>

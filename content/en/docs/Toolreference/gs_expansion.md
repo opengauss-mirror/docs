@@ -123,6 +123,7 @@ Use  **gs\_expansion**  for scaling:
 
 ```
 [root@openGauss173 script]# ./gs_expansion -U gsexpa -G xuemn -X /home/gsexpa/cas.xml -h 90.90.44.171
+Start expansion without cluster manager component.
 Start to preinstall database on new nodes.
 Start to send soft to each standby nodes.
 End to send soft to each standby nodes.
@@ -132,39 +133,6 @@ End to preinstall database step.
 End to preinstall database on new nodes.
 
 Start to install database on new nodes.
-Installing database on node 90.90.44.171:
-Please enter the password of user [gsexpa] on node [90.90.44.171]:
-Parsing the configuration file.
-Check preinstall on every node.
-Successfully checked preinstall on every node.
-Creating the backup directory.
-Successfully created the backup directory.
-begin deploy..
-Installing the cluster.
-begin prepare Install Cluster..
-Checking the installation environment on all nodes.
-begin install Cluster..
-Installing applications on all nodes.
-Successfully installed APP.
-begin init Instance..
-encrypt cipher and rand files for database.
-Please enter password for database:
-Please repeat for database:
-begin to create CA cert files
-The sslcert will be generated in /data/gsexpa/openGauss/cluster/app/share/sslcert/om
-Cluster installation is completed.
-Configuring.
-Deleting instances from all nodes.
-Successfully deleted instances from all nodes.
-Checking node configuration on all nodes.
-Initializing instances on all nodes.
-Updating instance configuration on all nodes.
-Check consistence of memCheck and coresCheck on database nodes.
-Configuring pg_hba on all nodes.
-Configuration is completed.
-Successfully started cluster.
-Successfully installed application.
-end deploy..
 90.90.44.171 install success.
 Finish to install database on all nodes.
 Database on standby nodes installed finished.

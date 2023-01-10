@@ -59,7 +59,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     当前行访问控制影响的SQL操作，可指定操作包括：ALL、SELECT、UPDATE、DELETE。当未指定时，ALL为默认值，涵盖SELECT、UPDATE、DELETE操作。
 
-    当command为SELECT时，SELECT类操作受行访问控制的影响，只能查看到满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括SELECT，UPDATE ... RETURNING，DELETE ... RETURNING。
+    当command为SELECT时，SELECT类操作受行访问控制的影响，只能查看到满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括SELECT，UPDATE ... RETURNING，DELETE ... RETURNING。不允许修改、删除受到访问限制的数据。
 
     当command为UPDATE时，UPDATE类操作受行访问控制的影响，只能更新满足条件\(using\_expression返回值为TRUE\)的元组数据，受影响的操作包括UPDATE, UPDATE ... RETURNING, SELECT ... FOR UPDATE/SHARE。
 
