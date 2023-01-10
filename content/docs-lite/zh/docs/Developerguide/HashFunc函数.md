@@ -169,8 +169,7 @@
     ```
     按照步骤依次执行。
     openGauss=# CREATE TABLE tt(a int, b int,c int,d int);
-    NOTICE:  The 'DISTRIBUTE BY' clause is not specified. Using 'a' as the distribution column by default.
-    HINT:  Please use 'DISTRIBUTE BY' clause to specify suitable data distribution column.
+   
     CREATE TABLE
     openGauss=# select * from tt;
      a | b | c | d 
