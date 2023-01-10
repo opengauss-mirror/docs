@@ -1,7 +1,8 @@
 
 $(function ($) {
     if (lang !== 'zh') {
-        $('#title-evaluate').css('display', 'none')
+        $('#title-evaluate .right-nav .nav-item').css('width', '82px')
+        $('#title-evaluate .right-nav .nav-item').css('height', '82px')
     }
     // 本函数为模拟a标签打开新网页进而避免使用window.open被拦截
     function openUrl(url="#") {
