@@ -147,7 +147,7 @@ full sql stat level为全量SQL跟踪级别，取值范围为OFF、L0、L1、L2
 slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \> L0），级别说明请参见[表1](STATEMENT_HISTORY.md)。
+>若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \> L0），级别说明请参见《开发者指南》的“系统表和系统视图 > 系统表 > STATEMENT_HISTORY”中的“STATEMENT_HISTORY字段”表格。
 
 **默认值：**OFF,L0
 
