@@ -11,7 +11,7 @@ pg\_resetxlog是一个重新设置数据库事务文件的工具。
 
 保证数据库目录存在且路径正确。
 
-## 语法（非DSS模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
+## 语法<a name="zh-cn_topic_0237152442_section554725769"></a>
 
 ```
 pg_resetxlog [OPTION]... DATADIR

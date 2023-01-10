@@ -344,7 +344,7 @@ zh_SG.gbk
 </th>
 </tr>
 </thead>
-<tbody><tr id="row176521551193111"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p7652551123112"><a name="p7652551123112"></a><a name="p7652551123112"></a>--I</p>
+<tbody><tr id="row176521551193111"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p7652551123112"><a name="p7652551123112"></a><a name="p7652551123112"></a>-I</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p465245173114"><a name="p465245173114"></a><a name="p465245173114"></a>指定节点ID，初始化共享存储参数ss_instance_id。</p>
 </td>
