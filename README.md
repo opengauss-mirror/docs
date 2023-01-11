@@ -43,6 +43,8 @@
 Docs包含了如下7个分支：
 
 - master：开发分支，为默认分支。
+- 3.1.1：3.1.1版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 3.1.1"。
+- 3.1.0：3.1.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 3.1.0"。
 - 3.0.0：3.0.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 3.0.0"。
 - 2.1.0：2.1.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 2.1.0"。
 - 2.0.0：2.0.0版本分支，分支内容呈现在[openGauss社区网站](https://opengauss.org/zh)"文档 > 2.0.0"。
