@@ -43,6 +43,8 @@ Open the **docs** folder. The mapping between manuals and folders is as follows:
 Docs contains the following seven branches:
 
 - master: development branch, which is the default branch.
+- 3.1.1: 3.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 3.1.1.
+- 3.1.0: 3.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 3.1.0.
 - 3.0.0: 3.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 3.0.0.
 - 2.1.0: 2.1.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 2.1.0.
 - 2.0.0: 2.0.0 version branch. To view the branch content, click [openGauss community website](https://opengauss.org/en/) and choose Document > 2.0.0.
