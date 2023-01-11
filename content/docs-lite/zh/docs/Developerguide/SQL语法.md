@@ -288,7 +288,7 @@
 
 -   **[INSERT](INSERT.md)**  
 
--   **[LOCK](LOCK.md)**  
+-   **[LOCK](LOCK-1.md)**  
 
 -   **[MERGE INTO](MERGE-INTO.md)**  
 
