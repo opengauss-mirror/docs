@@ -232,11 +232,11 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
-## ****JSON/JSONB**支持的函数**<a name="section845725420151"></a>
+## **JSON/JSONB支持的函数**<a name="section845725420151"></a>
 
--   array\\\_to\\\_json\\\(anyarray \\\[, pretty\\\_bool\\\]\\\)
+-   array\_to\_json\(anyarray \[, pretty\_bool\])
 
-    描述：返回JSON类型的数组。一个多维数组成为一个JSON数组的数组。如果pretty\\\_bool为true，将在一维元素之间添加换行符。
+    描述：返回JSON类型的数组。一个多维数组成为一个JSON数组的数组。如果pretty\_bool为true，将在一维元素之间添加换行符。
 
     返回类型：json
 
@@ -250,9 +250,9 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
         (1 row)
     ```
 
--   row\\\_to\\\_json\\\(record \\\[, pretty\\\_bool\\\]\\\)
+-   row\_to\_json\(record \[, pretty\_bool\]\)
 
-    描述：返回JSON类型的行。如果pretty\\\_bool为true，将在第一级元素之间添加换行符。
+    描述：返回JSON类型的行。如果pretty\_bool为true，将在第一级元素之间添加换行符。
 
     返回类型：json
 
@@ -275,8 +275,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     示例：
 
     ```
-    openGauss=# select json_array_element('[1,true,[1,[2,3
-    ]],null]',2);
+    openGauss=# select json_array_element('[1,true,[1,[2,3]],null]',2);
       json_array_element
       --------------------
       [1,[2,3]]
