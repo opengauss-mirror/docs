@@ -20,6 +20,8 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 3. 新增```LAST_DAY```，作为保留关键字，用于在语法层面区别openGauss原有LAST_DAY函数和dolphin中LAST_DAY函数。
 4. 新增```GET_FORMAT```，作为非保留关键字，用于在语法上识别GET_FORMAT函数。
 5. 新增```DAY_HOUR，DAY_MINUTE，DAY_SECOND，DAY_MICROSECOND，HOUR_MINUTE，HOUR_SECOND，HOUR_MICROSECOND，MINUTE_SECOND，MINUTE_MICROSECOND，SECOND_MICROSECOND```，作为非保留关键字，用于EXTRACT函数在语法上识别对应单位。
+6. 改变关键字```AUTHID```等级，由RESERVED_KEYWORD变为COL_NAME_KEYWORD，使其可以作为表名列名使用。
+7. 改变关键字```BODY```等级，由UNRESERVED_KEYWORD变为RESERVED_KEYWORD。
 
 **表 1**  SQL关键字
 
@@ -221,6 +223,26 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td>SECOND_MICROSECOND
 </td>
 <td>非保留
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>AUTHID
+</td>
+<td>非保留（不能是函数或类型）
+</td>
+<td>-
+</td>
+<td>-
+</td>
+</tr>
+<tr>
+<td>BODY
+</td>
+<td>保留
 </td>
 <td>-
 </td>
