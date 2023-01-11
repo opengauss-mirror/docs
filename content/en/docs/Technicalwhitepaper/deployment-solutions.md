@@ -114,12 +114,12 @@ openGauss supports the following CPUs and OSs:
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p1214174883410"></a>x86</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a>CentOS 7.6 , openEuler 20.03 LTS or Asianux 7.6</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p19214148183417"></a>CentOS 7.6 , openEuler 20.03 LTS , openEuler 22.03 LTS or Asianux 7.6</p>
 </td>
 </tr>
 <tr id="en-us_topic_0243295239_en-us_topic_0240782908_row221414883410"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p11214164893414"></a>Kunpeng</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a>openEuler 20.03 LTS , Kirin V10 or Asianux 7.5</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a><a name="en-us_topic_0243295239_en-us_topic_0240782908_p6214348143417"></a>openEuler 20.03 LTS , openEuler 22.03 LTS, Kirin V10 or Asianux 7.5</p>
 </td>
 </tr>
 </tbody>
