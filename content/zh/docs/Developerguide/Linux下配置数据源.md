@@ -386,7 +386,7 @@
 
 ## 测试数据源配置<a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_scfaeeaa70a9448889e6fdd7e37d172c5"></a>
 
-执行./isql -v MPPODBC（数据源名称）命令。
+安装后/usr/bin下面会存放生成的二进制，可执行./isql -v MPPODBC（数据源名称）命令。
 
 -   如果显示如下信息，表明配置正确，连接成功。
 
