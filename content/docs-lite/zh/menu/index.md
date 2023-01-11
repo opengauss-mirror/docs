@@ -870,7 +870,7 @@ headless: true
             - [FETCH]({{< relref "./docs/Developerguide/FETCH.md" >}})
             - [GRANT]({{< relref "./docs/Developerguide/GRANT.md" >}})
             - [INSERT]({{< relref "./docs/Developerguide/INSERT.md" >}})
-            - [LOCK]({{< relref "./docs/Developerguide/LOCK.md" >}})
+            - [LOCK]({{< relref "./docs/Developerguide/LOCK-1.md" >}})
             - [MERGE INTO]({{< relref "./docs/Developerguide/MERGE-INTO.md" >}})
             - [MOVE]({{< relref "./docs/Developerguide/MOVE.md" >}})
             - [PREDICT BY]({{< relref "./docs/Developerguide/PREDICT-BY.md" >}})
