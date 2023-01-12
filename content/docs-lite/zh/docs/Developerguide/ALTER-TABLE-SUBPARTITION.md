@@ -66,7 +66,7 @@
     subpartition\_definition\_list为1到多个二级分区subpartition\_definition对象，subpartition\_definition具体语法如下。
 
     ```
-    SUBPARTITION subpartition_name [ VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT )]  [ TABLESPACE tablespace ]
+    SUBPARTITION subpartition_name { VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT ) }  [ TABLESPACE tablespace ]
     ```
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
