@@ -66,7 +66,7 @@
     **subpartition\_definition\_list**  contains the  **subpartition\_definition**  object of one or more level-2 partitions. The syntax is as follows:
 
     ```
-    SUBPARTITION subpartition_name [ VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT )]  [ TABLESPACE tablespace ]
+    SUBPARTITION subpartition_name { VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT ) }  [ TABLESPACE tablespace ]
     ```
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
