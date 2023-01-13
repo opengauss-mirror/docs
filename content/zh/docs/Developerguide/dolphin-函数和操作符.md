@@ -7,7 +7,6 @@
 -   **[咨询锁函数](dolphin-咨询锁函数.md)**
 -   **[网络地址函数和操作符](dolphin-网络地址函数和操作符.md)**  
 -   **[条件表达式函数](dolphin-条件表达式函数.md)**  
--   **[EXPORT_SET](dolphin-EXPORT-SET.md)**  
 -   **[聚集函数](dolphin-聚集函数.md)**  
 -   **[系统信息函数](dolphin-系统信息函数.md)**  
 
