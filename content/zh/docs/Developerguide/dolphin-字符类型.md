@@ -4,8 +4,9 @@
 
 1. 修改```CHARACTER/NCHAR```类型n的含义，n是指字符长度而不是字节长度。
 2. 所有的字符数据类型在对比时，均忽略尾部空格，如where条件过滤场景、join场景等。例如 'a'::text = 'a  '::text 为真。需要特别注意的是，对于VARCHAR、VARCHAR2、NVARCHAR2、NVARCHAR、TEXT、CLOB类型，只有GUC参数 string_hash_compatible 为on的情况下，hash join以及hash agg才会忽略尾部空格。
-3. 新增```TEXT```支持可选的修饰符(n)，即支持```TEXT(n)```的用法，n无实际意义，不影响任何表现。
-4. 新增```TINYTEXT(n)/MEDIUMTEXT(n)/LONGTEXT(n)```数据类型，是```TEXT```的别名，n无实际作用，不影响任何表现。
+3. 新增```NATIONAL VARCHAR(n)```，为NVARCHAR2(n)类型的别名，n是指字符长度。
+4. 新增```TEXT```支持可选的修饰符(n)，即支持```TEXT(n)```的用法，n无实际意义，不影响任何表现。
+5. 新增```TINYTEXT(n)/MEDIUMTEXT(n)/LONGTEXT(n)```数据类型，是```TEXT```的别名，n无实际作用，不影响任何表现。
 
 **表 1**  字符类型
 
@@ -23,6 +24,13 @@
 <p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_ae30552cd3e8f4ffabd99de4be254a248"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_ae30552cd3e8f4ffabd99de4be254a248"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_ae30552cd3e8f4ffabd99de4be254a248"></a>NCHAR(n)</p>
 </td>
 <td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"></a>定长字符串，不足补空格。n是指字符长度，如不带精度n，默认精度为1。</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"></a>最大为10MB。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_row47407823"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p14828449"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p14828449"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p14828449"></a>NATIONAL VARCHAR(n)</p>
+</td>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p60253707"></a>变长字符串。是NVARCHAR2(n)类型的别名。n是指字符长度。</p>
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"></a><a name="zh-cn_topic_0283136755_zh-cn_topic_0237121950_zh-cn_topic_0059777889_zh-cn_topic_0058966269_p48712118"></a>最大为10MB。</p>
 </td>
