@@ -9,10 +9,9 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 ## 注意事项<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
 -   对比原openGauss的SELECT语法，新增了WHERE子句下的sounds like语法。
-
 -   新增join不带on/using,效果与cross join一致。
-
 -   新增PARTITION子句可指定多个分区。
+-   新增FROM DUAL 语法，含义等同于不写FROM子句，是为了满足那些要求所有SELECT语句都应该包含FROM的情况。
 
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
@@ -35,18 +34,24 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
--   其中指定查询源from\_item为：
+- 其中指定查询源from\_item为：
 
-    ```
-    {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
-    [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
-    [TIMECAPSULE {TIMESTAMP|CSN} expression]
-    |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
-    |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
-    |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
-    |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
-    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
-    ```
+  ```
+  {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+  [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
+  [TIMECAPSULE {TIMESTAMP|CSN} expression]
+  |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
+  |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+  |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
+  |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
+  |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+  ```
+
+- 其中不写FROM 子句的情况等价于：
+
+  ```
+  FROM DUAL
+  ```
 
 -   其中group子句为：
 
@@ -103,6 +108,21 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
  id | name
 ----+------
   1 | too
+(1 row)
+```
+
+- SELECT 语句中使用FROM DUAL 示例
+
+```
+openGauss=# select 1 as col;
+ col
+-----
+   1
+(1 row)
+openGauss=# select 1 as col FROM DUAL;
+ col
+-----
+   1
 (1 row)
 ```
 
