@@ -125,11 +125,9 @@ td_1=# CREATE TABLE t2(a int, b varchar(10));
 td_1=# EXPLAIN VERBOSE select coalesce(a, b) from t2;
                                       QUERY PLAN
 ---------------------------------------------------------------------------------------
- Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
-   Output: (COALESCE((t2.a)::character varying, t2.b))
-   Node/s: All dbnodes
-   Remote query: SELECT COALESCE(a::character varying, b) AS "coalesce" FROM public.t2
-(4 rows)
+ Seq Scan on public.t2  (cost=0.00..31.27 rows=1702 width=18)
+   Output: COALESCE((a)::character varying, b)
+(2 rows)
 
 --删除表。
 td_1=# DROP TABLE t2;
