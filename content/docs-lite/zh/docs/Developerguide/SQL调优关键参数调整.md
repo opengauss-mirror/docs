@@ -71,7 +71,7 @@
 </tr>
 <tr id="row15768191461612"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p076951417163"><a name="p076951417163"></a><a name="p076951417163"></a>sql_beta_feature</p>
 </td>
-<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PARAM_PATH_OPT/PAGE_EST_OPT/CANONICAL_PATHKEY/PARTITION_OPFUSION/PREDPUSH_SAME_LEVEL/PARTITION_FDW_ON/DISABLE_BITMAP_COST_WITH_LOSSY_PAGES测试功能。</p>
+<td class="cellrowborder" valign="top" width="73.5%" headers="mcps1.2.3.1.2 "><p id="p1676941418160"><a name="p1676941418160"></a><a name="p1676941418160"></a>控制优化器是否启用。SEL_SEMI_POISSON/SEL_EXPR_INSTR/PARAM_PATH_GEN/RAND_COST_OPT/PAGE_EST_OPT/PARAM_PATH_OPT/NO_UNIQUE_INDEX_FIRST/JOIN_SEL_WITH_CAST_FUNC/CANONICAL_PATHKEY/INDEX_COST_WITH_LEAF_PAGES_ONLY/PARTITION_OPFUSION/A_STYLE_COERCE/PLPGSQL_STREAM_FETCHALL/PREDPUSH_SAME_LEVEL/PARTITION_FDW_ON/DISABLE_BITMAP_COST_WITH_LOSSY_PAGES/EXTRACT_PUSHDOWN_OR_CLAUSE测试功能。</p>
 </td>
 </tr>
 <tr id="row372215341299"><td class="cellrowborder" valign="top" width="26.5%" headers="mcps1.2.3.1.1 "><p id="p187235341897"><a name="p187235341897"></a><a name="p187235341897"></a>var_eq_const_selectivity</p>
