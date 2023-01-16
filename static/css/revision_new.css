@@ -392,12 +392,12 @@ body {
     padding-bottom: 16px;
   }
   #h5-menu-top .option {
-    height: 0;
-    overflow: hidden;
+    max-height: 0;
+    overflow: auto;
     transition: all 0.2s;
   }
   #h5-menu-top .option-show {
-    height: 334px;
+    max-height: 334px;
   }
   #h5-menu-top .h5-logo {
     width: 100%;
