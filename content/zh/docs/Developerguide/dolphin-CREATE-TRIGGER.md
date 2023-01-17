@@ -2,7 +2,10 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 
-创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。
+- 创建一个触发器。 触发器将与指定的表或视图关联，并在特定条件下执行指定的函数。
+
+- 对比原始openGauss语法，新增了使用MySQL 的格式创建触发器的语法。
+- 新增了使用单条sql创建触发器的语法。
 
 ## 注意事项<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
@@ -160,6 +163,8 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
   也可以是单条sql语句，目前支持的语句：insert、update、delete、set、call。
 
+  当设置了分隔符后，使用MySQL 风格的创建触发器的语法，trigger_body 的格式是按照MySQL 的格式规定书写的，declare 段落需要写在begin ... end段落之间。
+  
   >![](public_sys-resources/icon-note.gif) **说明：** 
   >
   >关于触发器种类：
@@ -461,6 +466,7 @@ db_mysql=# create trigger animal_trigger6
 db_mysql=# insert into animals (id, name) values(2, 'dog');
 db_mysql=# select * from animals;
 db_mysql=# select id, foodtype, remark from food;
+--创建MySql
 --创建MySQL兼容if not exists语法触发器
 db_mysql=# create trigger if not exists animal_trigger1
           after insert on animals
