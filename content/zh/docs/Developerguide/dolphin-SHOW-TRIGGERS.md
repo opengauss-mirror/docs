@@ -11,7 +11,7 @@ N/A
 ## 语法格式
 
 ```
-SHOW TRIIGERS {FROM | IN} db_name [LIKE 'pattern' | WHERE expr]
+SHOW TRIGGERS {FROM | IN} db_name [LIKE 'pattern' | WHERE expr]
 ```
 
 ## 参数说明
