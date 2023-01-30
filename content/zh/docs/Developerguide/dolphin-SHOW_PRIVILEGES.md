@@ -43,8 +43,8 @@ opengauss=# show privileges;
  Create any table     | Table                                                                                                      | To create any table
  Create any trigger   | Trigger                                                                                                    | To create any trigger
  Create any type      | Type                                                                                                       | To create any type
- Delte                | Table                                                                                                      | To delete table
- Delte any table      | Table                                                                                                      | To delete any table
+ Delete                | Table                                                                                                      | To delete table
+ Delete any table      | Table                                                                                                      | To delete any table
  Drop any sequence    | Sequence                                                                                                   | To drop any sequence
  Drop any synonym     | Synonym                                                                                                    | To drop any synonym
  Drop any table       | Table                                                                                                      | To drop any table

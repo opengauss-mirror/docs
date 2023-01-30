@@ -35,3 +35,19 @@
     3939644819374082
     (1 row)
     ```
+
+-   dolphin_version\(\)
+
+    描述：dolphin版本信息。返回一个描述dolphin插件版本信息的字符串。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT dolphin_version();
+        dolphin_version
+    ------------------------
+     dolphin build 511401b6
+    (1 row)
+    ```

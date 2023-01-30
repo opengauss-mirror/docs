@@ -1737,6 +1737,7 @@ headless: true
 						-	[INDEX STATISTIC]({{< relref "./docs/Developerguide/dolphin-INDEX_STATISTIC.md" >}})
 				-   [GUC参数说明]({{< relref "./docs/Developerguide/dolphin-GUC参数说明.md" >}})
 				-   [重设参数]({{< relref "./docs/Developerguide/dolphin-重设参数.md" >}})
+				-   [存储过程]({{< relref "./docs/Developerguide/dolphin-存储过程.md" >}})
 		-   [MySQL语法兼容性评估工具]({{< relref "./docs/Developerguide/assessment-tool.md" >}})
     -   [物化视图]({{< relref "./docs/Developerguide/物化视图.md" >}})
 		-   [全量物化视图]({{< relref "./docs/Developerguide/全量物化视图.md" >}})
