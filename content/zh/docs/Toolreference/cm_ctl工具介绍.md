@@ -94,7 +94,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="zh-cn_topic_0116784021_row10772813716"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_p1471228371"><a name="zh-cn_topic_0116784021_p1471228371"></a><a name="zh-cn_topic_0116784021_p1471228371"></a>switchover</p>
 </td>
-<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_p4718281716"><a name="zh-cn_topic_0116784021_p4718281716"></a><a name="zh-cn_topic_0116784021_p4718281716"></a>一主多备数据库部署模式下切换数据库主备实例，dcf模式下只支持-n NODEID -D DATADIR。</p>
+<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_p4718281716"><a name="zh-cn_topic_0116784021_p4718281716"></a><a name="zh-cn_topic_0116784021_p4718281716"></a>一主多备数据库部署模式下切换数据库主备实例。</p>
 </td>
 </tr>
 <tr id="row47801623861"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="p778072319614"><a name="p778072319614"></a><a name="p778072319614"></a>finishredo</p>
@@ -253,7 +253,8 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 </tbody>
 </table>
-![](C:/Users/liyang/Desktop/新建文件夹/docs-split_fix/docs-split_fix/content/zh/docs/Toolreference/public_sys-resources/icon-note.gif) **说明：**   
+
+![](public_sys-resources/icon-note.gif) **说明：**   
 
 此处列出的公共参数并不一定适用于所有命令，而是多个命令支持，为避免冗余信息，所以统一在此说明，详细的使用方法见以上使用方法，也可以使用cm_ctl --help进行查询。
 
@@ -269,8 +270,6 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <tbody><tr id="row1822715813100"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p122279589106"><a name="p122279589106"></a><a name="p122279589106"></a>-a</p>
 </td>
 <td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p182271958161018"><a name="p182271958161018"></a><a name="p182271958161018"></a>将集群的主机重置到初始配置的节点。</p>
-<div class="note" id="note4227758151011"><a name="note4227758151011"></a><a name="note4227758151011"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p322713584103"><a name="p322713584103"></a><a name="p322713584103"></a>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pgxc_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</p>
-</div></div>
 </td>
 </tr>
 <tr id="row876891261217"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p157683127123"><a name="p157683127123"></a><a name="p157683127123"></a>-A</p>
@@ -280,8 +279,12 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-f</p>
 </td>
-<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>指定进行-f类型switchover。</p>
-<div class="note" id="note2022865851012"><a name="note2022865851012"></a><a name="note2022865851012"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul1722865861017"></a><a name="ul1722865861017"></a><ul id="ul1722865861017"><li>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pgxc_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</li><li>使用方式：cm_ctl switchover -n NODEID -D DATADIR -f。</li></ul>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>指定进行-f类型switchover。使用方式：cm_ctl switchover -n NODEID -D DATADIR -f。</p>
+</tr>
+<tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-z</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>将主机切换到-z参数指定的AZ。</p>
+<div class="note" id="note2022865851012"><a name="note2022865851012"></a><a name="note2022865851012"></a><span class="notetitle"> 注意： </span><div class="notebody"><a name="ul1722865861017"></a><a name="ul1722865861017"></a><ul id="ul1722865861017"><li>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pgxc_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</li>
 </div></div>
 </td>
 </tr>
