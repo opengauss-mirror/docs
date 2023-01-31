@@ -55,7 +55,7 @@ openGauss=# CREATE TABLE table_for_label(col1 int, col2 text);
 openGauss=# CREATE RESOURCE LABEL table_label ADD COLUMN(table_for_label.col1);
 
 --将col2添加至资源标签table_label中
-openGauss=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2)
+openGauss=# ALTER RESOURCE LABEL table_label ADD COLUMN(table_for_label.col2);
 
 --将资源标签table_label中的一项移除
 openGauss=# ALTER RESOURCE LABEL table_label REMOVE COLUMN(table_for_label.col1);
