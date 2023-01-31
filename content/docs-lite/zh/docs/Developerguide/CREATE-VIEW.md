@@ -7,6 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
 
 被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建视图。
+不可与同一模式下已存在的synonym产生命名冲突。
 
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 

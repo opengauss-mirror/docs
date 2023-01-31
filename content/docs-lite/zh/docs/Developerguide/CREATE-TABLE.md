@@ -18,6 +18,7 @@
 -   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte（由于数据存储形式原因，实际上限略小于8192 byte），text、varchar、char等长度可变的类型除外。
 -   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
+-   不可与同一模式下已存在的synonym产生命名冲突。
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 

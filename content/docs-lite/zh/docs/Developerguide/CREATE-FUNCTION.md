@@ -30,6 +30,7 @@
     3.  部分场景不支持函数参与表达式（与参数打开前相比），如存储过程中左赋值，call function等，见[示例](#zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
     4.  不支持调用无return的函数，perform function调用。
     5.  存储过程中调用函数，不支持out/inout参数传入常量，见[示例](#zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
+-   不可与同一模式下已存在的synonym产生命名冲突。
 
 
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>

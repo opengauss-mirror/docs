@@ -18,6 +18,8 @@
 -   不支持对外表、临时表开启行访问控制开关。
 -   通过约束名删除PRIMARY KEY约束时，不会删除NOT NULL约束，如果有需要，请手动删除NOT NULL约束。
 -   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
+-   重命名时，不能与当前命名空间的synonym产生命名冲突。
+-   设置命名空间时，不能与当前命名空间的synonym产生命名冲突。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 

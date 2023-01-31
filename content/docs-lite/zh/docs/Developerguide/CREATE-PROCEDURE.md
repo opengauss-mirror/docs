@@ -23,6 +23,7 @@
 -   被授予CREATE ANY FUNCTION权限的用户，可以在用户模式下创建/替换存储过程。
 -   out/inout参数必须传入变量，不能够传入常量。
 -   集中式环境下，想要调用in参数相同，out参数不同的存储过程，需要设置guc参数behavior\_compat\_options='proc\_outparam\_override'，并且打开参数后，无论使用select还是call调用存储过程，都必须加上out参数。打开参数后，不支持使用perform调用存储过程或函数。
+-   不可与同一模式下已存在的synonym产生命名冲突。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
