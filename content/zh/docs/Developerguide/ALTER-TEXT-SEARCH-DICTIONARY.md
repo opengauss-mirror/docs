@@ -48,16 +48,17 @@
 
     取值范围：已存在的词典名。
 
--   **option**
+- **option**
 
-    要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0283137272_zh-cn_topic_0237122122_li1286812455448)。
+  要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0283137272_zh-cn_topic_0237122122_li1286812455448)。
 
-    >![](public_sys-resources/icon-note.png) **说明：**
-    >-   不支持修改词典的TEMPLATE参数值。
+  >![](public_sys-resources/icon-note.png) **说明：**
+  >
+  >-   不支持修改词典的TEMPLATE参数值。
 
-    >-   不支持仅修改FILEPATH参数而不修改对应的词典定义文件参数。
+  >-   不支持仅修改FILEPATH参数而不修改对应的词典定义文件参数。
 
-    >-   词典定义文件的文件名仅支持小写字母、数据、下划线混合。
+  >-   词典定义文件的文件名仅支持小写字母、数据、下划线混合。
 
 -   **value**
 
@@ -91,7 +92,7 @@
 openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( StopWords = newrussian, FilePath = 'file:///home/dicts' );
 
 --更改Snowball类型字典的Language参数，并删除停用词定义。
-openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch， StopWords );
+openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch, StopWords );
 
 --更新词典定义，不实际更改任何内容。
 openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
