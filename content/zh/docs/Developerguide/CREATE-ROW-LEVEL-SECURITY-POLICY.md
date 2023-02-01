@@ -189,7 +189,8 @@ openGauss=# \d+ all_data
  role   | character varying(100) |           | extended |              |
  data   | character varying(100) |           | extended |              |
 Row Level Security Policies:
-    POLICY "all_data_rls"
+    POLICY "all_data_rls" FOR ALL
+      To public
       USING (((role)::name = "current_user"()))
 Has OIDs: no
 Options: orientation=row, compression=no, enable_rowsecurity=true
