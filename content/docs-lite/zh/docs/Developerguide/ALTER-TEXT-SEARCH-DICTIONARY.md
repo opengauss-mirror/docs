@@ -90,7 +90,7 @@
 openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( StopWords = newrussian, FilePath = 'file:///home/dicts' );
 
 --更改Snowball类型字典的Language参数，并删除停用词定义。
-openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch， StopWords );
+openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( Language = dutch, StopWords );
 
 --更新词典定义，不实际更改任何内容。
 openGauss=# ALTER TEXT SEARCH DICTIONARY my_dict ( dummy );
