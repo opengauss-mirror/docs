@@ -12,11 +12,11 @@
 ## 语法格式<a name="section187451047882"></a>
 
 ```
-CREATE MODEL model_name USING algorithm_name 
-[FEATURES { {expression [ [ AS ] output_name ]} [, ...] }]
-[TARGET { {expression [ [ AS ] output_name ]} [, ...] }]
-FROM { table_name | select_query }
-WITH hyperparameter_name = { hyperparameter_value | DEFAULT } [, ...] }
+CREATE  MODEL model_name USING architecture_name
+FEATURES { {attribute_list} }
+[TARGET attribute_name, [,attribute_name]*],
+FROM ([schema.]table_name | subquery)
+WITH (hyper_parameter_name [= {hp_value | DEFAULT}]) [, ...]*]
 ```
 
 ## 参数说明<a name="section19493195215818"></a>
