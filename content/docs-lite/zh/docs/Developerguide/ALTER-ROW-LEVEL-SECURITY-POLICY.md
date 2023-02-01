@@ -57,10 +57,10 @@ openGauss=# \d+ all_data
  role   | character varying(100) |           | extended |              |
  data   | character varying(100) |           | extended |              |
 Row Level Security Policies:
-    POLICY "all_data_rls"
+    POLICY "all_data_rls" FOR ALL
+      To public
       USING (((role)::name = "current_user"()))
 Has OIDs: no
-Location Nodes: ALL DATANODES
 Options: orientation=row, compression=no
 
 --修改行访问控制all_data_rls的名称
@@ -76,12 +76,11 @@ openGauss=# \d+ all_data
  role   | character varying(100) |           | extended |              |
  data   | character varying(100) |           | extended |              |
 Row Level Security Policies:
-    POLICY "all_data_new_rls"
+    POLICY "all_data_rls" FOR ALL
       TO alice,bob
       USING (((role)::name = "current_user"()))
 Has OIDs: no
-Location Nodes: ALL DATANODES
-Options: orientation=row, compression=no, enable_rowsecurity=true
+Options: orientation=row, compression=no
 
 --修改行访问控制策略表达式
 openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data USING (id > 100 AND role = current_user);
@@ -93,12 +92,11 @@ openGauss=# \d+ all_data
  role   | character varying(100) |           | extended |              |
  data   | character varying(100) |           | extended |              |
 Row Level Security Policies:
-    POLICY "all_data_new_rls"
+    POLICY "all_data_new_rls" FOR ALL
       TO alice,bob
       USING (((id > 100) AND ((role)::name = "current_user"())))
 Has OIDs: no
-Location Nodes: ALL DATANODES
-Options: orientation=row, compression=no, enable_rowsecurity=true
+Options: orientation=row, compression=no
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137062_zh-cn_topic_0237122069_section1426016489355"></a>
