@@ -165,12 +165,11 @@
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-        ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
-           | ALL PROCEDURE IN SCHEMA schema_name [, ...] }
-        TO { [ GROUP ] role_name | PUBLIC } [, ...]
-        [ WITH GRANT OPTION ];
+    	ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+    	TO { [ GROUP ] role_name | PUBLIC } [, ...]
+    	[ WITH GRANT OPTION ];
     ```
-
+    
 -   将过程语言的访问权限赋予给指定的用户或角色。
 
     ```
