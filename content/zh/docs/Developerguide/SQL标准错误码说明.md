@@ -1164,7 +1164,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rfa4de50cb31146dcb28e0d7056919fd1"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"></a>42705</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"></a>w未定义的键（UNDEFINED_KEY）</p>
+<td class="cellrowborder" valign="top" width="79.52%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p651945981175"></a>未定义的键（UNDEFINED_KEY）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rfa4de50cb31146dcb28e0d7056919fd1"><td class="cellrowborder" valign="top" width="20.48%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p82614121175"></a>42711</p>
