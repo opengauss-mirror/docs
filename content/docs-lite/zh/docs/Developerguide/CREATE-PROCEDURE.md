@@ -19,7 +19,7 @@
 -   在存储过程内部调用其他有出参的函数，如果在赋值表达式中调用时，被调函数的出参可以省略，给出了也会被忽略。
 -   存储过程支持参数注释的查看与导出、导入。
 -   存储过程支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
--   存储过程默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'，如果对定义者权限不了解，请参考《安全加固指南》-中“权限控制”章节。
+-   存储过程默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
 -   被授予CREATE ANY FUNCTION权限的用户，可以在用户模式下创建/替换存储过程。
 -   out/inout参数必须传入变量，不能够传入常量。
 -   集中式环境下，想要调用in参数相同，out参数不同的存储过程，需要设置guc参数behavior\_compat\_options='proc\_outparam\_override'，并且打开参数后，无论使用select还是call调用存储过程，都必须加上out参数。打开参数后，不支持使用perform调用存储过程或函数。
