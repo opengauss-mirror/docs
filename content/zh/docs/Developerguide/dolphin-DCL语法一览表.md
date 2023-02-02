@@ -111,7 +111,7 @@ openGauss支持使用GRANT命令授予各种权限。所涉及的SQL语句，请
 </tr>
 <tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a05852c742a4dd98ece08701b9dd96945a"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_b0ba1177437559c76bcc1cd6127cc462f6"></a>授予代理者权限</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a href="../undefined">GRANT PROXY</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_4b1a04ac717679e536e2a6f9c751b2921c"></a><a href="dolphin-GRANT-REVOKE-PROXY.md">GRANT PROXY</a></p>
 </td>
 </tr>
 </tbody>
