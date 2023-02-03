@@ -131,6 +131,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **AUTO\_INCREMENT**
 
     该关键字将字段指定为自动增长列。自动增长列必须是某个索引的第一个字段。
+    自动增长列数据类型不能为BOOL类型。
 
 ## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
