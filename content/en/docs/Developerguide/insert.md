@@ -98,6 +98,17 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
 
     Specifies an expression or a value to assign to the corresponding column.
 
+    1. If the database compatibility level is B, column names can be referenced in expressions following VALUES. The calculation rules of expressions following VALUES and ON DUPLICATE KEY UPDATE are as follows:
+    - (1) Expressions are calculated based on the column writing sequence of SQL statements.
+    - (2) When the referenced column is not calculated or is being calculated (referencing itself):
+        - If the default value of the referenced column is a constant or an old tuple exists, the default value or old tuple value is used for the calculation of the current expression.
+        - If the default value of the referenced column is not a constant (such as a method or expression) and no old tuple value exists, null is used for calculation of the current expression.
+    - (3) If the referenced column has been calculated, the value of the current record of the field is used for the calculation of the current expression.
+    
+    Other databases have the same performance as databases of other compatibility levels.
+    
+    2. The syntax of other database compatibility levels is described as follows:
+
     -   In the  **INSERT ON DUPLICATE KEY UPDATE**  statement, expression can be  **VALUES\(**_column\_name_**\)**  or  **EXCLUDED.**_column\_name_, indicating that the value of  **column\_name**  corresponding to the conflict row is referenced. Note that  **VALUES\(**_column\_name_**\)**  cannot be nested in an expression \(for example,  **VALUES\(**_column\_name_**\)+1**\).  **EXCLUDED**  is not subject to this restriction.
 
     -   If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
@@ -148,7 +159,7 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
-```
+```sql
 -- Create the tpcds.reason_t2 table.
 openGauss=# CREATE TABLE tpcds.reason_t2
 (
@@ -177,6 +188,27 @@ openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5')
 
 -- Delete the tpcds.reason_t2.
 openGauss=# DROP TABLE tpcds.reason_t2;
+```
+The following is an example of database compatibility level B:
+```sql
+create database db_comb with dbcompatibility 'B';
+\c db_comb
+
+create table test_order_t(n1 int default 100, n2 int default 100, s int);
+insert into test_order_t values(1000, 1000, n1 + n2);
+insert into test_order_t(s, n1, n2) values(n1 + n2, 300,  300);
+select * from test_order_t;
+
+create table upser(c1 int, c2 int, c3 int);
+create unique index idx_upser_c1 on upser(c1);
+insert into upser values (1, 10, 10), (2, 10, 10), (3, 10, 10), (4, 10, 10), (5, 10, 10), (6, 10, 10), (7, 10, 10),
+                         (8, 10, 10), (9, 10, 10), (10, 10, 10);
+insert into upser values (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 100), (8, c1 + 100, 100),
+                         (9, c1 + 100, 100), (10, c1 + 100, 100), (11, c1 + 100, 100), (12, c1 + 100, 100),
+                         (13, c1 + 100, 100), (14, c1 + 100, 100), (15, c1 + 100, c1 + c2)
+                         on duplicate key update c2 = c1 + c2, c3 = c2 + c3;
+
+select * from upser order by c1;
 ```
 
 ## Suggestions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_section3855297014560"></a>

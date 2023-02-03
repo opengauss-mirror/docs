@@ -1421,12 +1421,15 @@ The cm\_install tool can be used to deploy CMs in the openGauss database cluster
 
 -   After cm\_install is executed, the cluster is started by default.
 -   This tool must be used as an individual user.
+-   This tool allows you to install or uninstall the CM tool when the cluster is stopped. Note that the primary node before the cluster is stopped must be the initial primary node configured in the XML file. Otherwise, after the CM tool is installed or uninstalled and started again, the host of the cluster is different from that before the cluster is stopped.
+-   If the CM tool is uninstalled when the cluster is stopped, dynamic files will be deleted after the uninstallation. However, dynamic files cannot be generated because the cluster is stopped. If necessary, run the **gs_om -t refreshconf** command to generate dynamic files after the cluster is started using gs\_om.
 
 ### Prerequisites
 
 -   The OM tool is required for installing the openGauss cluster.
 -   Generally, the cluster installed using the OM tool can ensure that mutual trust exists between nodes in the cluster.
 -   The version of the openGauss cluster to be installed is the same as that of the CM to be installed.
+-   Before CM deployment, the cluster status must be normal or stopped, and the term value of the host must be a non-zero value and the largest value in the cluster.
 
 ### Usage
 
@@ -1446,15 +1449,15 @@ cm_uninstall -X XMLFILE [-e envFile] [--deleteData] [--deleteBinary]
 
 -   -X
 
-    Specifies the path of the XML file. The value must be an absolute path.
+    Specifies the path of the XML file.
 
 -   -e
 
-    Specifies the path of the environment variable file. The value must be an absolute path. The default value is **~/.bashrc**.
+    Specifies the path of the environment variable file. The default value is **~/.bashrc**.
 
 -   --cmpkg
 
-    Specifies the path of the CM package. The value must be an absolute path.
+    Specifies the path of the CM package.
 
 -   --deleteData
 
@@ -1538,7 +1541,7 @@ You can view cm\_agent parameters in the <strong>cm\_agent.conf</strong> file in
 
 **Value range**: a string of up to 1024 characters. Any modification of this parameter takes effect only after cm\_agent is restarted. For details, see [Options of set cm](#table10437204416514).
 
-**Default value**: **log**, indicating that the cm\_agent log is generated in the CM directory in *$GAUSSLOG*.
+**Default value**: **log**, indicating that the cm\_agent log is generated in the CM directory under the CM data directory.
 
 #### log\_file\_size<a name="section130710434392"></a>
 
@@ -1810,7 +1813,7 @@ Application scope: Files in the **$GAUSSLOG/cm/cm\_ctl**, **$GAUSSLOG/cm/cm\_ser
 
 **Value range**: a string of up to 1024 characters. You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
 
-**Default value**: **log**, indicating that the cm\_server log is generated in the CM directory in *$GAUSSLOG*.
+**Default value**: **log**, indicating that the cm\_server log is generated in the CM directory under the CM data directory.
 
 #### log\_file\_size<a name="section171021311114411"></a>
 

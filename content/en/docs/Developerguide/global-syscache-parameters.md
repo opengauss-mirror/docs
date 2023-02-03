@@ -9,17 +9,15 @@
 -   **on**  indicates that the global system cache function is enabled.
 -   **off**  indicates that the global system cache function is disabled.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 You are advised to use this parameter together with the thread pool parameter. After this parameter is enabled, you are advised to set  **wal\_level**  of the standby nnode to  **hot\_standby**  or higher if you need to access the standby node.
 
 ## global\_syscache\_threshold<a name="section787511112134"></a>
 
-**Parameter description**: Specifies the maximum memory usage of the global system cache. If this parameter is set to a small value, memory is frequently evicted, and a large number of memory fragments cannot be recycled. As a result, memory control fails.
+**Parameter description**: Specifies the maximum memory usage of the global system cache. If this parameter is set to a small value, memory is frequently evicted, and a large number of memory fragments cannot be recycled. As a result, memory control fails. This parameter takes effect only when the **enable\_global\_syscache** parameter is enabled.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-The  **enable\_global\_syscache**  parameter must be enabled.
 
 **Value range**: an integer ranging from 16384 to 1073741824. The unit is KB.
 

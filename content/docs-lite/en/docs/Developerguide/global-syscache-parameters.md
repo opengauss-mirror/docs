@@ -9,7 +9,7 @@
 -   **on**  indicates that the global system cache function is enabled.
 -   **off**  indicates that the global system cache function is disabled.
 
-**Default value**:  **on**
+**Default value**:  **off**
 
 You are advised to use this parameter together with the thread pool parameter. After this parameter is enabled, you are advised to set  **wal\_level**  of the standby nnode to  **hot\_standby**  or higher if you need to access the standby node.
 
