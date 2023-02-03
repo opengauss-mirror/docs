@@ -198,6 +198,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     取值范围：DELTA、PREFIX、DICTIONARY、NUMSTR、NOCOMPRESS
 
+    -   DELTA压缩仅支持长度为1-8字节的数据类型（0 < pg_type.typlen <= 8）。
+    -   PREFIX、NUMSTR压缩仅支持变长数据类型（pg_type.typlen = -1）和NULL结尾的C字符串（pg_type.typlen = -2）。
+    -   该压缩选项与列存表自适应压缩算法无关，后者为列存表内部数据存储采用的压缩算法，不支持用户指定。
+
 -   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
