@@ -190,7 +190,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </thead>
 <tbody><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_81276653292d08668add24976dcd18a465"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a>计算表数据校验和</p>
 </td>
-<td class="cellrowborder" valign="top" width= "50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a href="dolphin-CHECKSUM-TABLE.MD">CHECKSUM TABLE</a></p>
+<td class="cellrowborder" valign="top" width= "50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a href="dolphin-CHECKSUM-TABLE.md">CHECKSUM TABLE</a></p>
 </td>
 </tr>
 
