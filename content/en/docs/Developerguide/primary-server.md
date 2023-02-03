@@ -26,7 +26,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 If you use the gs\_guc tool to set this parameter, perform the following operations:
 
 ```
-gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY NODE 1(dn_instanceId1, dn_instanceId2)'";
+gs_guc reload -Z datanode -N @NODE_NAME@ -D @DN_PATH@ -c "synchronous_standby_names='ANY 1(dn_instanceId1, dn_instanceId2)'";
 ```
 
 or

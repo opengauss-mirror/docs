@@ -2,7 +2,7 @@
 
 ## sql\_mode<a name="section203671436821"></a>
 
-Parameter description: The parameter value is a character string separated by commas (,). Only valid character strings are allowed. If the parameter value is invalid, a warning is reported after the startup. Similarly, if the new value is invalid, a warning is reported and the old value is not changed. The default string of the current sql\_mode is sql\_mode_strict,sql\_mode\_full\_group. Currently, sql\_mode is used in the following scenarios:
+**Parameter description**: The parameter value is a character string separated by commas (,). Only valid character strings are allowed. If the parameter value is invalid, a warning is reported after the startup. Similarly, if the new value is invalid, a warning is reported and the old value is not changed. Currently, sql\_mode is used in the following scenarios:
 
 1. sql\_mode\_strict: Data is converted if the inserted value does not comply with the current column type. The involved scenarios are INSERT INTO table VALUES (...) and INSERT INTO table SELECT … Currently, the involved types are TINYINT[UNSIGNED],SMALLINT[UNSIGNED],INT[UNSIGNED],BIGINT[UNSIGNED],FLOAT,DOUBLE,NUMERIC,CLOB,CHAR, and VARCHAR.
 
@@ -14,11 +14,14 @@ Parameter description: The parameter value is a character string separated by co
 
 5. sql\_mode\_full\_group: determines whether columns (without aggregate functions) in the SELECT list must be included in the GROUP BY clause. In sql\_mode\_full\_group mode (default mode), if a column in the select list does not use an aggregate function or appear in the GROUP BY clause, an error is reported. Otherwise, the execution is successful and the first tuple is selected from all tuples that meet the conditions.
 
-6. ansi\_quotes: It is mainly used in places where double quotation marks need to be used to indicate string values. When ansi\_quotes is enabled, the content in the double quotation marks is considered as an object reference. When ansi_quotes is disabled, the content in the double quotation marks is considered as a string value. When ansi\_quotes is disabled, some meta-commands become invalid. The following table lists the invalid meta-commands.
+6. **pipes\_as\_concat**: controls whether **||** is used as a connector or an OR operator.
+
+7. **ansi\_quotes**: It is mainly used in places where double quotation marks need to be used to indicate string values. When **ansi\_quotes** is enabled, the content in the double quotation marks is considered as an object reference. When **ansi\_quotes** is disabled, the content in the double quotation marks is considered as a string value. When **ansi\_quotes** is disabled, some meta-commands become invalid. The following table lists the invalid meta-commands.
 
    | Parameter                       | Description                                                    |
    | --------------------------- | ------------------------------------------------------------ |
    | \d[S+]                      | Lists all tables, views, and sequences of all schemas in search\_path. When objects with the same name exist in different schemas in search\_path, only the object in the schema that ranks first in search\_path is displayed.|
+   | \d+ [PATTERN]               | Lists all tables, views, and indexes. |
    | \da[S] [PATTERN]            | Lists all available aggregate functions, together with their return value types and the data types.  |
    | \db[+] [PATTERN]            | Lists all available tablespaces.                                      |
    | \dc[S+] [PATTERN]           | Lists all available conversions between character sets.                              |
@@ -43,7 +46,6 @@ Parameter description: The parameter value is a character string separated by co
    | \do[S] [PATTERN]            | Lists all available operators with their operand and return types.      |
    | \dO[S+] [PATTERN]           | Lists collations.                                                |
    | \dp [PATTERN]               | Lists tables, views, and related permissions.                  |
-   | \drds [PATTERN1 [PATTERN2]] | Lists all modified configuration parameters. These settings can be for roles, for databases, or for both. PATTERN1 and PATTERN2 indicate a role pattern and a database pattern, respectively.|
    | \dT[S+] [PATTERN]           | Lists all data types.                                        |
    | \dE[S+] [PATTERN]           | In this group of commands, the letters E, i, s, t, and v stand for a foreign table, index, sequence, table, or view, respectively. You can specify any or a combination of these letters sequenced in any order to obtain an object list. For example, <strong>\dit</strong> lists all indexes and tables. If a command is suffixed with a plus sign (+), physical dimensions and related descriptions of each object will be displayed.|
    | \dx[+] [PATTERN]            | Lists installed extensions.                                  |
@@ -54,7 +56,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Value range**: a string
 
-**Default value:** 'sql_mode_strict,sql_mode_full_group,ansi_quotes'
+**Default value**: **'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes'**
 
 **Example**:
 ```
@@ -333,3 +335,203 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off** indicates that the compatibility function is disabled and the original kernel functions are used.
 
 **Default value**: **off**
+
+## version_comment<a name="section203671436826"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating the database server and license information.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value:** openGauss Server(MulanPSL-2.0)
+
+## auto_increment_increment<a name="section203671436827"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The parameter value is an integer, indicating the auto-increment step of the auto-increment column.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1,65535]
+
+**Default value**: **1**
+
+## character_set_client<a name="section203671436828"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the client uses the character set.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **utf8**
+
+## character_set_connection<a name="section203671436829"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the character set is used when no character set is introduced to the program.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **utf8**
+
+## character_set_results<a name="section203671436830"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the server uses the character set to return query results to the client.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **utf8**
+
+## character_set_server<a name="section203671436831"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the server uses the character set.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **utf8**
+
+## collation_server<a name="section203671436832"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the server uses the sorting rule.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **latin1_swedish_ci**
+
+## collation_connection<a name="section203671436833"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the connection character set uses the sorting rule.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value:** none
+
+## init_connect<a name="section203671436834"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating the SQL statement executed during connection initialization.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value:** none
+
+## interactive_timeout<a name="section203671436835"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating that the server closes an interactive connection after the number of seconds in which the connection is inactive.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1,31536000]
+
+**Default value**: **28800**
+
+## license<a name="section203671436836"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the server uses the license.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value**: **MulanPSL-2.0**
+
+## max_allowed_packet<a name="section203671436837"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating the upper limit (in bytes) of the data packet size.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1024,1073741824]
+
+**Default value**: **4194304**
+
+## net_buffer_length<a name="section203671436838"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating the default buffer size. The buffer size can be dynamically set to the value of **max_allowed_packet** and restored after the SQL statement ends.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1024,1048576]
+
+**Default value:** **16384**
+
+## net_write_timeout<a name="section203671436839"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating that the server stops writing data after the number of seconds specified by this parameter.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1,31536000]
+
+**Default value**: **60**
+
+## query_cache_size<a name="section203671436840"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating the size (in bytes) of the memory allocated when the query result is cached.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [0,9223372036854775807]
+
+**Default value**: **1048576**
+
+## query_cache_type<a name="section203671436841"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is an integer, indicating the type of the cache to be queried.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [0,2]
+
+**Default value**: **0**
+
+## system_time_zone<a name="section203671436842"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating the system time zone of the server.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: a string
+
+**Default value:** none
+
+## time_zone<a name="section203671436843"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating the current time zone.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [-12:59,+13:00]
+
+**Default value**: **SYSTEM**
+
+## wait_timeout<a name="section203671436844"></a>
+
+**Parameter description:** Currently, this parameter is read-only and has no specific meaning. The value is a string, indicating that the server closes a non-interactive connection after the number of seconds in which the connection is inactive.
+
+Currently, this parameter is an INTERNAL parameter and cannot be set.
+
+**Value range**: [1,31536000]
+
+**Default value**: **28800**
+
+## lower_case_table_names<a name="section203671436844"></a>
+
+**Parameter description**: Specifies whether the user name and table name are case sensitive. The value **0** indicates that the user name and table name are case sensitive. A value greater than 0 indicates that the user name and table name are case insensitive.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: [0,2]
+
+**Default value**: **1**

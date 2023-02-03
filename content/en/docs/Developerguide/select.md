@@ -256,11 +256,11 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     
     -   USING\(join\_column\[, ...\]\)
     
-        Abbreviation of  **ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ....**. The names of the corresponding columns must be the same.
+        Abbreviation of **ON left_table.a = right_table.a AND left_table.b = right_table.b …**. The corresponding columns must have the same name. USING means that only one column in each equation is output.
     
     -   NATURAL
     
-        Is a shorthand for a  **USING**  list that mentions all columns in the two tables that have the same names.
+        Is short for USING list of all columns in two tables with the same name. If there is no column with the same name, NATURAL is equivalent to JOIN ON TRUE.
     
     -   from item
     

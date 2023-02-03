@@ -4,7 +4,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
 1. The regexp, not regexp, and rlike operators are added.
 2. The locate, lcase, ucase, insert, bin, char, elt, field, find\_int\_set, hex, space, soundex, export\_set, ord, substring\_index, and from\_base64 functions are added.
-3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
+3. The performance of the length, bit\_length, octet\_length, convert, format, left, and right functions are modified.
 4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
 5. The `LIKE/NOT LIKE` operator is modified.
 
@@ -384,6 +384,62 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
     
+-   left\(str text, n int\)
+
+    Description: Returns the first *n* characters in a string. If **n** is a negative number, the value **0** is used.
+
+    Return type: text
+
+    Example:
+
+    ```
+    test_db=# select left('abcde', 2);
+    left
+    ------
+    ab
+    (1 row)
+
+    test_db=# select left('abcde', 0);
+    left
+    ------
+
+    (1 row)
+
+    test_db=# select left('abcde', -2);
+    left
+    ------
+
+    (1 row)
+    ```
+
+-   right\(str text, n int\)
+
+    Description: Returns the last *n* characters in a string. If **n** is a negative value, the value **0** is used.
+
+    Return type: text
+
+    Example:
+
+    ```
+    test_db=# select right('abcde', 2);
+    right
+    -------
+    de
+    (1 row)
+
+    test_db=# select right('abcde', 0);
+    right
+    -------
+
+    (1 row)
+
+    test_db=# select right('abcde', -2);
+    right
+    -------
+
+    (1 row)
+    ```
+
 -   field(str, str1,str2,str3,...)
 
     Description: Obtains the position of str in strn. The position is case insensitive.

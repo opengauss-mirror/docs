@@ -117,7 +117,7 @@
 <td class="cellrowborder" valign="top" width="35.21352135213521%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137065_en-us_topic_0237122450_en-us_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"><a name="en-us_topic_0283137065_en-us_topic_0237122450_en-us_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a><a name="en-us_topic_0283137065_en-us_topic_0237122450_en-us_topic_0059777909_abd2b323ebb04401c8a1b7d6ed6ec363b"></a>text</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137065_p1654561565417"><a name="en-us_topic_0283137065_p1654561565417"></a><a name="en-us_topic_0283137065_p1654561565417"></a>Synchronization state:</p>
-<a name="en-us_topic_0283137065_ul8410419125415"></a><a name="en-us_topic_0283137065_ul8410419125415"></a><ul id="en-us_topic_0283137065_ul8410419125415"><li>Asynchronous replication</li><li>Synchronous replication</li><li>Potential synchronization</li></ul>
+<a name="en-us_topic_0283137065_ul8410419125415"></a><a name="en-us_topic_0283137065_ul8410419125415"></a><ul id="en-us_topic_0283137065_ul8410419125415"><li>Asynchronous replication. </li><li>Synchronous replication. </li><li>Potential synchronization. </li><li><strong>quorum</strong>: switches between the synchronous and asynchronous states to ensure that there are more than a certain number of synchronous standby servers. Generally, the number of synchronous standby servers is (n+1)/2-1, where <strong>n</strong> indicates the total number of copies. Whether the standby server is synchronous depends on whether logs are received first. For details, see the description of the <strong>synchronous\_standby\_names</strong> parameter.</li></ul>
 </td>
 </tr>
 </tbody>

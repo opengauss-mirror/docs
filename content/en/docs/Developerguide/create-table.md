@@ -203,10 +203,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
     -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
-    -   By default, indexes of the source table are created on the new table and does not affect the **INCLUDING INDEXES** clause. If you do not want to copy the indexes of the source table, you need to specify the **EXCLUDING INDEXES** clause.
+    -   Any indexes on the original table will not be created on the new table, unless the **INCLUDING INDEXES** clause is specified.
     -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
     -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
-    -   If the source table is a partitioned table, the partition definition of the source table is copied to the new table by default. In addition, the **PRTITION BY** clause cannot be used in the new table, and the **INCLUDING PARTITION** clause can be specified. If you do not want to copy partition information, you need to specify the **EXCLUDING PARTITION** clause. An error is reported if the source partitioned table has indexes, only **EXCLUDING PARTITION** is used, the target table is defined as an ordinary table, and the partitioned indexes of the source table is copied by default. The reason is that ordinary tables do not support partitioned indexes.
+    -   If **INCLUDING PARTITION** is specified, the partition definitions of the source table are copied to the new table, and the new table no longer use the **PARTITON BY** clause. The default behavior is to exclude partition definition of the original table. If the source table has an index, you can use the **INCLUDING PARTITION INCLUDING INDEXES** syntax. If only **INCLUDING INDEXES** is used for a partitioned table, the target table will be defined as an ordinary table, but the index is a partitioned index. In this case, an error will be reported because ordinary tables do not support partitioned indexes.
     -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
     -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,** INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
 
@@ -217,7 +217,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >-   If the source table is a local temporary table, the new table must also be a local temporary table. Otherwise, an error is reported.
     >
-    >-   An error is reported if CREATE TABLE ... LIKE is executed to copy hash or list partitions of the source table by default. The hash or list partitions cannot be copied. Only range partitions can be copied. In this case, you need to manually run EXCLUDING PARITITION. For level-2 partitioned tables, only level-2 range-range partitions can be copied.
+    >-   An error is reported if CREATE TABLE ... (LIKE ... INCLUDIING PARTITION) is executed for hash or list partitions of the source table. The hash or list partitions cannot be copied. Only range partitions can be copied. For level-2 partitioned tables, only level-2 range-range partitions can be copied.
+    >
+    >-   The ATUO_INCREMENT column must be the first column of a primary key or unique constraint. If EXCLUDING INDEX is specified when a table containing AUTO_INCREAMENT columns is copied, an error is reported.
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 

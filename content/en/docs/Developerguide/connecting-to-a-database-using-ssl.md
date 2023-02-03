@@ -1,4 +1,4 @@
-# Connecting to the Database \(Using SSL\)<a name="EN-US_TOPIC_0000001162579686"></a>
+# Connecting to a Database \(Using SSL\)<a name="EN-US_TOPIC_0000001162579686"></a>
 
 When establishing connections to the openGauss server using JDBC, you can enable SSL connections to encrypt client and server communications for security of sensitive data transmission on the Internet. This section describes how applications establish an SSL connection to openGauss using JDBC. To start the SSL mode, you must have the server certificate, client certificate, and private key files. For details how to obtain these files, see related documents and commands of OpenSSL.
 
