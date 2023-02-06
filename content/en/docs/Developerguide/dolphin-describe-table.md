@@ -2,7 +2,9 @@
 
 ## Function<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-Views the structure of a specified table.
+DESCRIBE and [EXPLAIN](dolphin-EXPLAIN.md) are synonyms of each other. They can be used to view the structure of a specified table or the execution plan of a specified SQL statement.
+
+For details about how to view an execution plan, see [EXPLAIN](dolphin-explain.md).
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
@@ -16,14 +18,14 @@ Views the structure of a specified table.
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
-{DESCRIBE | DESC} tbl_name
+{DESCRIBE | DESC | EXPLAIN} tbl_name
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
-- **{DESCRIBE | DESC}**
+- **{DESCRIBE | DESC | EXPLAIN}**
 
-       The effect of using DESCRIBE is equivalent to that of using DESCRIBE.
+       DESCRIBE, DESC, and EXPLAIN have the same effect.
 
 - **tbl_name**
   
@@ -126,4 +128,4 @@ openGauss=# describe public.test;
 
 ## Helpful Links<a name="section156744489391"></a>
 
-N/A
+[EXPLAIN](dolphin-explain.md)

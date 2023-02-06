@@ -2,7 +2,7 @@
 
 -   **[Before You Start](before-you-start.md)**  
 
--   **[Connecting to a Database](connecting-to-a-database.md)**  
+-   **[Connecting to a Database](connecting-to-a-database-0.md)**  
 
 -   **[Creating and Managing Databases](creating-and-managing-databases.md)**  
 

@@ -11,10 +11,16 @@ Creates an empty table in the current database. The table will be owned by the c
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
 
-Create a table using LIKE.
+Create a table using LIKE without parentheses.
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name LIKE source_table [ like_option [...] ]
 ```
+
+- Additional optional statements for common table creation cannot be added after LIKE.
+- Do not add the FOREIGN option before TABLE, including creating foreign tables and MOTs.
+- By default, the index of the source table is copied. If you do not want to copy the index, manually specify EXCLUDING INDEXES.
+- By default, the partitions of the source table are copied. If you do not want to copy partitions, manually specify EXCLUDING PARTITION.
+- Only range partitions of the tables can be copied. For hash and list partitions, an error is reported because partitions are copied by default. In this case, you need to manually specify EXCLUING PARTITION. Only range-range partitions can be copied for level-2 partitions. The processing method is the same as the preceding method.
 
 Create a table.
 
