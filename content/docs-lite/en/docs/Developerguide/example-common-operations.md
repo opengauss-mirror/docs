@@ -3,6 +3,10 @@
 ```
 import psycopg2
 
+# Common connection modes of psycopg2
+1. conn = psycopg2.connect(dbname="postgres", user="user", password="password", host="localhost", port=port)
+2. conn = psycopg2.connect("dbname=postgres user=user password=password  host=localhost port=port")
+
 # Create a connection object.
 conn=psycopg2.connect(database="postgres",user="user",password="password",host="localhost",port=port)
 cur=conn.cursor() # Create a pointer object.
@@ -32,10 +36,7 @@ conn.commit()
 cur.close()
 conn.close()
 
-Common connection modes of psycopg2
-1. conn = psycopg2.connect(dbname="postgres", user="user", password="password", host="localhost", port=port)
-2. conn = psycopg2.connect("dbname=postgres user=user password=password  host=localhost port=port")
-3. Using logs
+# Use logs.
 import logging
 import psycopg2
 from psycopg2.extras import LoggingConnection
