@@ -14,6 +14,8 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 -   新增PARTITION子句可指定多个分区。
 
+-   新增UNION子句列如果没有相似的数据类型，会采取转换为text类型的方式进行处理。
+
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   查询数据
@@ -87,6 +89,23 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **WHERE子句**
 
     sounds like是condition的一种语法，用法如：column_name sounds like '字符'; 相当于soundex(column_name) = soundex('字符')的对比结果，是一个boolean的值。用于通过soundex处理来查询满足条件的数据。
+
+-   **UNION子句**
+
+    UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列如果没有相似的数据类型，会采取转换为text类型的方式进行处理。同时，每条SELECT语句中的列的顺序必须相同。
+
+    UNION子句有如下约束条件：
+
+    -   除非声明了ALL子句，否则缺省的UNION结果不包含重复的行。
+    -   同一个SELECT语句中的多个UNION操作符是从左向右计算的，除非用圆括弧进行了标识。
+    -   FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE和FOR KEY SHARE不能在UNION的结果或输入中声明。
+
+    一般表达式：
+
+    select\_statement UNION \[ALL\] select\_statement
+
+    -   select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
+    -   如果用圆括弧包围，ORDER BY和LIMIT可以附着在子表达式里。
 
 > ![](public_sys-resources/icon-note.gif) **说明：** 
 > 
