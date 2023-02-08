@@ -16,6 +16,8 @@
 
 4. 增加语法兼容项 SQL SECURITY { DEFINER | INVOKER }。
 
+5. 增加B兼容风格语法格式.
+
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
 dolphin加载后，CREATE FUNCTION 语法的格式为
@@ -79,11 +81,26 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
          } plsql_body
     /
 
+-   B兼容风格语法格式。
+
+    ```
+    CREATE [ OR REPLACE  ] FUNCTION function_name
+        ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }
+      [, ...]  ] )
+        RETURNS rettype 
+        [
+            SQL SECURITY { DEFINER | INVOKER }
+            | COMMENT 'text'
+            | {DETERMINISTIC | NOT DETERMINISTIC}
+            | LANGUAGE lang_name
+            | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+         ][...] plsql_body
+
 ## 参数说明<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
 -   **LANGUAGE  lang_name**
 
-    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql O风格默认值 plpgsql。
+    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 B兼容风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。
 
 - **SQL SECURITY INVOKER**
 
@@ -135,8 +152,33 @@ NO SQL SQL SECURITY DEFINER AS $$ select s; $$ ;
 --指定 SECURITY INVOKER
 openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
 SQL SECURITY INVOKER  READS SQL DATA LANGUAGE SQL AS $$ select s; $$ ;
-```
 
+--B兼容风格语法格式
+openGauss=# create function func(n int) returns varchar(50) return (select n+1);
+CREATE FUNCTION
+openGauss=# select func(1);
+ func
+------
+ 2
+(1 row)
+
+openGauss=# delimiter //
+SET
+openGauss=# create function func10(b int) returns int
+openGauss-# begin
+openGauss-#     if b > 0 then return b + 10;
+openGauss-#     else return -1;
+openGauss-#     end if;
+openGauss-# end//
+CREATE FUNCTION
+openGauss=# delimiter ;
+SET
+openGauss=# select func10(9);
+ func10
+--------
+     19
+(1 row)
+```
 
 
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
