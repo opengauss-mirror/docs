@@ -19,6 +19,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies the timeout for attempts to acquire a lock. If the time spent in waiting for a lock exceeds the specified time, an error is reported.
 
+Due to the implementation mechanism of the DMS component, the actual timeout interval of the distributed lock may be greater than the value of this parameter, but the difference is within 12s.
+
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is ms.

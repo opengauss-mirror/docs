@@ -147,7 +147,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string in the format of *start CPU* *end CPU* \(separated by a space\), for example, **10 15**
 
-**Default value**:  **""**
+**Default value**: **""**
 
 ## ss\_ock\_log\_path<a name="section484914735817"></a>
 

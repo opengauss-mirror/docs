@@ -14,6 +14,7 @@ Compared with the original openGauss, Dolphin modifies the arithmetic types as f
 8. The UNSIGNED INT, TINYINT, SMALLINT, and BIGINT types are added. Compared with a common integer, the most significant bit of the UNSIGNED INT, TINYINT, SMALLINT, BIGINT type is a digit bit instead of a sign bit.
 9. The zerofill attribute is added, which is supported only in syntax and does not have the effect of filling zeros. It is equivalent to UNSIGNED.
 10. The cast function parameters SIGNED and UNSIGNED are added. CAST AS UNSIGNED converts the type to uint8, and CAST AS SIGNED converts the type to int8.
+11. The syntaxes of `float(p,s), double(p,s), real(p,s), and double precision(p,s)` are added. `float(p,s), real(p,s), and double precision(p,s)` are approximately equivalent to `dec(p,s)`, but p and s must be integers. `double(p,s)` is equivalent to `dec(p,s)`. The round off is adopted.
 
 **Table 1** Integer types
 
@@ -34,7 +35,7 @@ Compared with the original openGauss, Dolphin modifies the arithmetic types as f
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a>1 byte</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"></a>-128 to +127</p>
+<td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a9384b26adfc6434eb2a4b7769468f151"></a>-128 ~ +127</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row47768271"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a>SMALLINT(n)</p>
@@ -293,6 +294,19 @@ openGauss=# DROP TABLE dec_type_t1;
 </td>
 <td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"></a></p>
 </td>
+</tr><tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r7f401d3ca614436eb3f87864972f8b9d"><td class="cellrowborder" valign="top" width="16.3%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>FLOAT(p,s),</p>
+<p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>DOUBLE(p,s),</p>
+<p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>REAL(p,s),</p>
+<p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a8e82cca8b2524af996f4b500da67af80"></a>DOUBLE PRECISION(p,s)</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.81%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a33c2cb7dccbf4ac8b4eb0b37e95e7eb9"></a>The value range of p (precision) is [1,1000], and the value range of s (scale) is [0,p]. </p>
+<div class="note" id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_note5927466117522"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_note5927466117522"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_note5927466117522"></a><span class="notetitle"> Note: </span><div class="notebody"><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_p6370990817522"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_p6370990817522"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_p6370990817522"></a>p indicates the total number of digits, and s indicates the number of decimal places. float(p,s), real(p,s), and double precision(p,s) are approximately equivalent to dec(p,s), but p and s must be integers. double(p,s) is equivalent to dec(p,s). The round off is adopted.</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="27.779999999999998%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a49f41506384d410bbe1c2462dd2903ca"><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a49f41506384d410bbe1c2462dd2903ca"></a><a name="en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_a49f41506384d410bbe1c2462dd2903ca"></a>The precision is specified by users. Two bytes are occupied for every four decimals of precision. An extra eight-byte overhead is added for numbers of this type.</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a5745ec811f4447a786a21fce4b9fab6a"></a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -325,4 +339,26 @@ openGauss=# \d float_type_t1
 
 --Delete a table.
 openGauss=# DROP TABLE float_type_t1;
+
+--Create a table that contains data of the float(p,s), double(p,s), real(p,s), and double precision(p,s) types.
+openGauss=# CREATE TABLE test_float_double_real_double_precision
+           (
+            a FLOAT(20,2),
+            b DOUBLE(20,2),
+            c REAL(20,2),
+            d DOUBLE PRECISION(20,2)
+           );
+
+--View the table structure.
+openGauss=# \d test_float_double_real_double_precision        
+    Table "public.test_float_double_real_double_precision"
+ Column |     Type      | Modifiers 
+--------+---------------+-----------
+ a      | numeric(20,2) | 
+ b      | numeric(20,2) | 
+ c      | numeric(20,2) | 
+ d      | numeric(20,2) |
+
+--Delete a table.
+openGauss=# DROP TABLE test_float_double_real_double_precision;
 ```

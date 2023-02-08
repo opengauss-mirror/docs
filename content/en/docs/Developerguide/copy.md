@@ -291,6 +291,7 @@
         >-   The value of  **quote**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The value of  **quote**  must be a single-byte character.
         >-   You are advised to set  **quote**  to an invisible character, such as  **0x07**,  **0x08**, or  **0x1b**.
+        For example, quote e'\x22' is a hexadecimal 22 character encoded in ASCII mode.
 
     -   ESCAPE
 
@@ -479,6 +480,7 @@
         >-   The value of  **quote**  cannot be the same as that of the  **delimiter**  or  **null**  parameter.
         >-   The value of  **quote**  must be a single-byte character.
         >-   You are advised to set  **quote**  to an invisible character, such as  **0x07**,  **0x08**, or  **0x1b**.
+        For example, quote e'\x22' is a hexadecimal 22 character encoded in ASCII mode.
 
     -   ESCAPE \[AS\] 'escape\_character'
 
