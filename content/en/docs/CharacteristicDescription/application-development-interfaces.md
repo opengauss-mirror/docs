@@ -6,6 +6,4 @@
 
 -   **[PostgreSQL API Compatibility](postgresql-api-compatibility.md)**  
 
--   **[PL/Java](pl-java.md)**  
-
-
+-   **[MySQL Compatibility Enhancement](mysql-compatibility-enhancement.md)**  

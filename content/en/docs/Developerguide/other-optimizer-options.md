@@ -737,3 +737,18 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: Boolean. The value  **true**  indicates that the function is enabled, and the value  **false**  indicates that the function is disabled.
 
 **Default value**:  **false**
+
+## show\_fdw\_remote\_plan
+
+**Parameter description**: Specifies whether to print the method used by the FDW to obtain remote data in EXPLAIN.
+If a foreign table exists in the query, the database needs to use the ForeignScan operator to obtain the actual data from the remote server. If this parameter is enabled, the used ForeignScan operators are numbered in EXPLAIN, and the method used by each ForeignScan operator to obtain remote data is appended and printed to the EXPLAIN result in sequence.
+The dedicated remote plan printing API of the FDW is called to fill in the content to be printed. If the FDW does not support this API, the system displays a message indicating that no plan information is available.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **true**: enabled
+-   **false**: disabled;
+
+**Default value**: **false**

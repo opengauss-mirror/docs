@@ -68,6 +68,24 @@
 
     Remarks:  **current\_schema**  returns the first valid schema name in the search path. \(If the search path is empty or contains no valid schema name,  **NULL**  is returned.\) This is the schema that will be used for any tables or other named objects that are created without specifying a target schema.
 
+-   schema
+
+    Description: Name of the current schema
+
+    Return type: name
+
+    Example:
+
+    ```
+    openGauss=# SELECT schema();
+     schema
+    --------
+     public
+    (1 row)
+    ```
+
+    Remarks: This parameter is synonymous with current\_schema.
+
 -   current\_schemas\(Boolean\)
 
     Description: Names of schemas in search path
@@ -450,7 +468,7 @@
     (1 row)
     ```
 
--   session\_user
+-   session\_user\[\(\)\]
 
     Description: Session user name
 
@@ -459,7 +477,7 @@
     Example:
 
     ```
-    openGauss=# SELECT session_user;
+    openGauss=# SELECT session_user();
      session_user
     --------------
      omm
@@ -468,19 +486,53 @@
 
     Note:  **session\_user**  is usually the user who initiated the current database connection, but administrators can change this setting with  [SET SESSION AUTHORIZATION](set-session-authorization.md).
 
--   user
+-   user\[\(\)\]
 
-    Description: Equivalent to  **current\_user**.
+    Description: Equivalent to  **current\_user\[\(\)\]**.
 
     Return type: name
 
     Example:
 
     ```
-    openGauss=# SELECT user;
+    openGauss=# SELECT user();
      current_user
     --------------
      omm
+    (1 row)
+    ```
+
+-   system\_user\(\)
+
+    Description: Equivalent to current\_user\[\(\)\].
+
+    Return type: name
+
+    Example:
+
+    ```
+    openGauss=# SELECT system_user();
+     system_user
+    -------------
+     omm
+    (1 row)
+    ```
+
+-   connection\_id\(\)
+        
+    Description: Returns the ID of the connection thread.
+
+    The returned result is the same as the ID column in the output of SHOW PROCESSLIST.
+
+    Return type: int
+
+    Example:
+
+    ```
+    openGauss=# SELECT CONNECTION_ID();
+      connection_id  
+    -----------------
+    140065528485632
     (1 row)
     ```
 

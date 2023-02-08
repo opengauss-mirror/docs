@@ -2,7 +2,7 @@
 
 ## Function<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-Inserts new rows into a table.
+**INSERT** inserts new rows into a table.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
@@ -37,8 +37,9 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
     -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
-      The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
+    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >
+    >The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
 
   2. The unique constraint is violated.
 
@@ -73,7 +74,7 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 -   **set_clause_values**
 
     It is equivalent to **insert into table_name set column_name = value, column_name = value, ...** set\_clause\_values indicates **set column_name = value**. Multiple column insertion values are separated by commas (,).
-    This is an extended syntax of INSERT INTO to prevent write errors caused by disordered field sequence and value sequence during INSERT INTO. 
+    This is an extended syntax of INSERT INTO to prevent write errors caused by disordered field sequence and value sequence during INSERT INTO.
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -201,7 +202,7 @@ openGauss=# insert into value_test values();
 ERROR:  null value in column "a" violates not-null constraint
 
 --Disable sql\_mode and insert VALUES() into the table.
-openGauss=# set sql_mode = '';
+openGauss=# set dolphin.sql_mode = '';
 openGauss=# insert into value_test values();
 
 --View table data.

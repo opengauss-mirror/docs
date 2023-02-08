@@ -2,11 +2,11 @@
 
 ## Function<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_section1274412112511"></a>
 
-**ALTER VIEW**  modifies all auxiliary attributes of a view. \(To modify the query definition of a view, use  **CREATE OR REPLACE VIEW**.\)
+**ALTER VIEW** modifies all auxiliary attributes of a view. \(To modify the query definition of a view, use **CREATE OR REPLACE VIEW**.\)
 
 ## Precautions<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
-Only the view owner or a user granted with the ALTER permission can run the  **ALTER VIEW**  command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
+Only the view owner or a user granted with the ALTER permission can run the **ALTER VIEW** command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
 
 -   To modify the schema of a view, you must be the owner of the view or system administrator and have the CREATE permission on the new schema.
 -   To modify the owner of a view, you must be the owner of the view or system administrator and a member of the new owner role, with the CREATE permission on the schema of the view.
@@ -61,7 +61,7 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
     ALTER VIEW [ IF EXISTS ] view_name
         RESET ( view_option_name [, ... ] );
     ```
-    
+
 - Set the definition of a view. (This syntax can be used only in B-compatible mode.)
 
   ```
@@ -80,7 +80,7 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
 
     Specifies the view name, which can be schema-qualified.
 
-    Value range: a string. It must comply with the naming convention rule.
+    Value range: a string. It must comply with the naming convention.
 
 -   **column\_name**
 
@@ -108,29 +108,37 @@ Only the view owner or a user granted with the ALTER permission can run the  **A
 
     Specifies an optional parameter for a view.
 
-    Currently,  **view\_option\_name**  supports only the  **security\_barrier**  parameter. This parameter is used when the view attempts to provide row-level security.
+    -   **security\_barrier**
 
-    Value range: Boolean type,  **TRUE**, and  **FALSE**.
+        This parameter is used when the view attempts to provide row-level security.
+        
+        Value range: Boolean type, **TRUE**, and **FALSE**.
+    
+    -   **check\_option**
+
+        Specifies the check options of the view.
+
+        Value range: **LOCAL** or **CASCADED**.
 
 
 ## Examples<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s3d5088f2366242cf9ef14a91c2081248"></a>
 
 ```
--- Create a view consisting of rows with c_customer_sk less than 150.
+--Create a view consisting of rows with c_customer_sk less than 150.
 openGauss=# CREATE VIEW tpcds.customer_details_view_v1 AS
     SELECT * FROM tpcds.customer
     WHERE c_customer_sk < 150;
 
--- Rename a view.
+--Rename a view.
 openGauss=# ALTER VIEW tpcds.customer_details_view_v1 RENAME TO customer_details_view_v2;
 
--- Change the schema of a view.
+--Change the schema of a view.
 openGauss=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 
--- Delete a view.
+--Delete a view.
 openGauss=# DROP VIEW public.customer_details_view_v2;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE VIEW](create-view.md)  and  [DROP VIEW](drop-view.md)
+[CREATE VIEW](create-view.md) and [DROP VIEW](drop-view.md)

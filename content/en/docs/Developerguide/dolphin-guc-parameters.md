@@ -1,6 +1,6 @@
 # GUC Parameters<a name="EN-US_TOPIC_0289899843"></a>
 
-## sql\_mode<a name="section203671436821"></a>
+## dolphin.sql\_mode<a name="section203671436821"></a>
 
 **Parameter description**: The parameter value is a character string separated by commas (,). Only valid character strings are allowed. If the parameter value is invalid, a warning is reported after the startup. Similarly, if the new value is invalid, a warning is reported and the old value is not changed. Currently, sql\_mode is used in the following scenarios:
 
@@ -16,12 +16,12 @@
 
 6. **pipes\_as\_concat**: controls whether **||** is used as a connector or an OR operator.
 
-7. **ansi\_quotes**: It is mainly used in places where double quotation marks need to be used to indicate string values. When **ansi\_quotes** is enabled, the content in the double quotation marks is considered as an object reference. When **ansi\_quotes** is disabled, the content in the double quotation marks is considered as a string value. When **ansi\_quotes** is disabled, some meta-commands become invalid. The following table lists the invalid meta-commands.
+7. ansi\_quotes: It is mainly used in places where double quotation marks need to be used to indicate string values. When ansi\_quotes is enabled, the content in the double quotation marks is considered as an object reference. When ansi_quotes is disabled, the content in the double quotation marks is considered as a string value. When ansi\_quotes is disabled, some meta-commands become invalid. The following table lists the invalid meta-commands.
 
    | Parameter                       | Description                                                    |
    | --------------------------- | ------------------------------------------------------------ |
    | \d[S+]                      | Lists all tables, views, and sequences of all schemas in search\_path. When objects with the same name exist in different schemas in search\_path, only the object in the schema that ranks first in search\_path is displayed.|
-   | \d+ [PATTERN]               | Lists all tables, views, and indexes. |
+   | \d+ [PATTERN]               | Lists all tables, views, and indexes.|
    | \da[S] [PATTERN]            | Lists all available aggregate functions, together with their return value types and the data types.  |
    | \db[+] [PATTERN]            | Lists all available tablespaces.                                      |
    | \dc[S+] [PATTERN]           | Lists all available conversions between character sets.                              |
@@ -52,13 +52,20 @@
    | \l[+]                       | Lists the names, owners, character set encodings, and permissions of all the databases in the server.|
    | \z [PATTERN]                | Lists all tables, views, and sequences in the database and their access permissions.      |
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+   
+
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](dolphin-resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837).
+
+When **ansi\_quotes** is disabled, if you need to use database keywords as object identifiers or wrap all object identifiers for standardization purposes, you can use backquotes (`) to replace double quotation marks.
+
+When backquotes (`) are used, except the table name (controlled by the **lower\_case\_table\_names** parameter), other enclosed column names and index names are automatically lowercased, and the names of the returned columns are also lowercased.
 
 **Value range**: a string
 
 **Default value**: **'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes'**
 
-**Example**:
+**Example**
 ```
 --Create a table named test1.
 openGauss=# CREATE TABLE test1
@@ -78,7 +85,7 @@ openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
 openGauss=# select a1,a2 from test1 group by a1;
 
 --A record is successfully inserted into the table.
-openGauss=# set sql_mode = '';
+openGauss=# set dolphin.sql_mode = '';
 openGauss=# insert into test1(a1,a2) values(123412342342314,3453453453434324);
 --A table is queried successfully.
 openGauss=# select a1,a2 from test1 group by a1;
@@ -87,11 +94,11 @@ openGauss=# select a1,a2 from test1 group by a1;
 openGauss=# DROP TABLE test1;
 ```
 
-## b\_db\_timestamp<a name="section203671436822"></a>
+## dolphin.b\_db\_timestamp<a name="section203671436822"></a>
 
 **Parameter description:** The parameter value is a floating point number. This parameter affects the curdate, current_time, curtime, current_timestamp, localtime, localtimestamp, and now functions in Dolphin. If this parameter is set to **0**, the preceding functions return the current date or time. If the parameter value is within the range [1,2147483647], the preceding functions use the value of this parameter as the second offset and return the date or time corresponding to 1970-01-01 00:00:00 UTC + Second offset + Current time zone offset. If the value of this parameter is not in the preceding valid range, an error is reported.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](dolphin-resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837).
 
 **Value range:** [1.0, 2147483647.0]
 
@@ -99,7 +106,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Example**
 ```
-openGauss=# show b_db_timestamp;
+openGauss=# show dolphin.b_db_timestamp;
  b_db_timestamp
 ----------------
  0
@@ -111,7 +118,7 @@ openGauss=# select now();
  2022-09-18 19:52:23
 (1 row)
 
-openGauss=# set b_db_timestamp = 1.0;
+openGauss=# set dolphin.b_db_timestamp = 1.0;
 SET
 openGauss=# select now();
         now()
@@ -120,11 +127,11 @@ openGauss=# select now();
 (1 row)
 ```
 
-## default\_week\_format<a name="section203671436823"></a>
+## dolphin.default\_week\_format<a name="section203671436823"></a>
 
 **Parameter description:** The parameter value is an integer. This parameter affects the week function in the Dolphin plug-in. The value range of this parameter is [0,7], which corresponds to eight calculation policies. For details about these policies, see [Time and Date Functions ](dolphin-date-and-time-processing-functions-and-operators.md). If the value of this GUC parameter exceeds the corresponding boundary value, a warning is reported and the GUC parameter is set to the corresponding boundary value.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](dolphin-resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837).
 
 **Value range:** [0, 7]
 
@@ -132,8 +139,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Example**
 ```
-openGauss=# show default_week_format;
-default_week_format
+openGauss=# show dolphin.default_week_format;
+dolphin.default_week_format
 ---------------------
 0
 (1 row)
@@ -144,7 +151,7 @@ week
     0
 (1 row)
 
-openGauss=# alter system set default_week_format = 2;
+openGauss=# alter system set dolphin.default_week_format = 2;
 ALTER SYSTEM SET
 
 openGauss=# select week('2000-1-1');
@@ -154,11 +161,11 @@ week
 (1 row)
 ```
 
-## lc\_time\_names<a name="section203671436824"></a>
+## dolphin.lc\_time\_names<a name="section203671436824"></a>
 
 **Parameter description:** Specifies the language in which the dayname and monthname functions of the dolphin plug-in output results. The parameter value is a character string. There are 111 values for this parameter. If the value of a parameter is not within the valid value range, an error is reported.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](dolphin-resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837).
 
 **Value range**:
 The options of lc\_time\_names are as follows:
@@ -286,7 +293,7 @@ dayname
 Saturday
 (1 row)
 
-openGauss=# alter system set lc_time_names = 'zh_CN';
+openGauss=# alter system set dolphin.lc_time_names = 'zh_CN';
 ALTER SYSTEM SET
 
 openGauss=# select dayname('2000-1-1');
@@ -296,17 +303,7 @@ Saturday
 (1 row)
 ```
 
-## dolphin\.default\_database\_name<a name="section203671436850"></a>
-
-**Parameter description**: Specifies the default database name used by dolphin protocol plugin.
-
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
-**Value range:**  a string
-
-**Default value**: database\_name in connection session while initialize dolphin protocol pulin at first time.
-
-## b\_compatibility\_mode<a name="section203671436825"></a>
+## dolphin.b\_compatibility\_mode<a name="section203671436825"></a>
 
 **Parameter description:** The parameter value is of the Boolean type. This parameter affects some conflicting functions and operators in the Dolphin plug-in. When this parameter is enabled, the compatibility logic is executed for these functions and operators. When this parameter is disabled, the original openGauss logic is retained.
 
@@ -327,7 +324,7 @@ The following functions are affected:
 Other affected parameters:
 1. [?](dolphin-prepare.md#en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](dolphin-resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d837).
 
 **Value range**: Boolean
 
@@ -394,7 +391,7 @@ Currently, this parameter is an INTERNAL parameter and cannot be set.
 
 **Value range**: a string
 
-**Default value**: **utf8**
+**Default value**: **latin1**
 
 ## collation_server<a name="section203671436832"></a>
 
@@ -526,7 +523,7 @@ Currently, this parameter is an INTERNAL parameter and cannot be set.
 
 **Default value**: **28800**
 
-## lower_case_table_names<a name="section203671436844"></a>
+## dolphin.lower_case_table_names<a name="section203671436844"></a>
 
 **Parameter description**: Specifies whether the user name and table name are case sensitive. The value **0** indicates that the user name and table name are case sensitive. A value greater than 0 indicates that the user name and table name are case insensitive.
 
@@ -535,3 +532,18 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: [0,2]
 
 **Default value**: **1**
+
+## dolphin.default_database_name<a name="section203671436846"></a>
+
+**Parameter description**: Specifies the default name of the openGauss database instance used by the Dolphin protocol plug-in.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>
+>-   This function can be used after the Dophin plug-in is loaded and the Dolphin database protocol is enabled.
+>-   The openGauss database system is different from the MySQL database system. Therefore, you need to select an openGauss database instance for Dophin.
+
+**Value range**: a string
+
+**Default value**: database\_name of the current session when the Dolphin protocol plug-in is loaded

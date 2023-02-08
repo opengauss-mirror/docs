@@ -47,6 +47,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **6s**
 
+## logical\_sender\_timeout
+
+**Parameter description:** Specifies the maximum waiting time for the sender to wait for the receiver to receive logical logs.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: an integer ranging from 0 to INT\_MAX. The unit is ms.
+
+**Default value**: **30s**
+
 ## max\_replication\_slots<a name="en-us_topic_0283137693_section7322161612568"></a>
 
 **Parameter description**: Specifies the number of log replication slots in the primary server.

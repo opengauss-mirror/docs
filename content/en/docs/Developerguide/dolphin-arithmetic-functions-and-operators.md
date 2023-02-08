@@ -3,7 +3,7 @@
 Compared with the original openGauss, Dolphin modifies the time/date function as follows:
 
 1. The DIV, MOD, XOR, and ^ operators are added.
-2. The truncate, rand, crc32, conv, float8\_bool, oct, and float4_bool functions are added.
+2. The `truncate, rand, crc32, conv, float8\_bool, oct, and float4_bool` functions are added.
 
 -   DIV
 
@@ -121,6 +121,11 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
   Description: Implements bitwise XOR between two integers.
 
+  Note:
+
+  - The XOR operator does not support the Boolean type that is not 0/1 or the raw type.
+  - In the Dolphin plug-in, the ^ operator no longer supports exponentiation between two integers. If you need to use the exponentiation operation between two integers, you can use the power function.
+
   Return type: INT
 
   Example:
@@ -131,9 +136,21 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   ----------
          0
   (1 row)
+  
+  openGauss=# SELECT 2 ^ 3;
+   ?column? 
+  ----------
+          1
+  (1 row)
+  
+  openGauss=# SELECT power(2,3);
+   power 
+  -------
+       8
+  (1 row)
   ```
 
-  Description: After `set b_compatibility_mode` is set to `1`, the float data can be bitwise XOR or XOR after rounded off.
+  Description: After `set dolphin.b_compatibility_mode` is set to `0`, exponentiation of float data can be implemented. After `set dolphin.b_compatibility_mode` is set to `1`, the float data can be bitwise XOR or XOR after rounded off.
 
   Return type: DOUBLE
 
@@ -216,3 +233,5 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
    f
   (1 row)
   ~~~
+
+  

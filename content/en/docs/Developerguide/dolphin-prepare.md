@@ -13,7 +13,7 @@ Compared with the original openGauss, Dolphin modifies the PREPARE syntax as fol
 
 2. A statement can be enclosed in single quotation marks, and the statement in the single quotation marks must be a single query. In scenarios where single quotation marks are added, in addition to SELECT, INSERT, UPDATE, DELETE, MERGE INTO, and VALUES statements, other statements that will be converted to SelectStmt are supported, for example, some SHOW statements.
 
-3. The question mark (`?`) can be used as a binding parameter in a statement. You need to set `b_compatibility_mode` to `on` first, and `$` and `?` cannot be used as parameter placeholders in the same statement at the same time. After `b_compatibility_mode` is set to `on`, `?` cannot be used as an operator.
+3. The question mark (`?`) can be used as a binding parameter in a statement. You need to set `dolphin.b_compatibility_mode` to `on` first, and `$` and `?` cannot be used as parameter placeholders in the same statement at the same time. After `dolphin.b_compatibility_mode` is set to `on`, `?` cannot be used as an operator.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -50,7 +50,7 @@ openGauss=# EXECUTE stmt;
 ------+-----
  a    |  18
 (1 row)
-openGauss=# set b_compatibility_mode to on;
+openGauss=# set dolphin.b_compatibility_mode to on;
 SET
 openGauss=# PREPARE stmt1 FROM 'SELECT sqrt(pow(?,2) + pow(?,2)) as test';;
 PREPARE

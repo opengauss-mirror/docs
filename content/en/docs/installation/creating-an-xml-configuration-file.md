@@ -898,7 +898,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	</DEVICE> 
  
-        <!-- If only one NIC is available for the server, set <b>backIP1/<b> and <b>sshIP1</b> to the same IP address. -->
+        <!-- Node deployment information on node 5. The value of name is the host name. -->
         <DEVICE sn="node5_hostname"> 
             <PARAM name="name" value="node5_hostname"/> 
             <PARAM name="azName" value="AZ1"/> 
@@ -1003,7 +1003,7 @@ In <p id="p12877195316581"><a name="p12877195316581"></a><a name="p1287719531658
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	</DEVICE> 
  
-        <!-- If only one NIC is available for the server, set <b>backIP1/<b> and <b>sshIP1</b> to the same IP address. -->
+        <!-- Node deployment information on node 5. The value of name is the host name. -->
         <DEVICE sn="node5_hostname"> 
             <PARAM name="name" value="node5_hostname"/> 
             <PARAM name="azName" value="AZ1"/> 

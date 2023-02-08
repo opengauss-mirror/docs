@@ -13,3 +13,7 @@ Updating data refers to modifying one or multiple records in a database table. F
 ## Querying Data<a name="en-us_topic_0283137022_en-us_topic_0237122050_en-us_topic_0059778364_s1633132317ef42edba6e4afdbb2d6b46"></a>
 
 The database query statement SELECT is used to search for required information in a database. For details, see [SELECT](dolphin-select.md).
+
+## Importing Data<a name="en-us_topic_0283137022_en-us_topic_0237122050_en-us_topic_0059778364_s1633132317ef42edba6e4afdbb2d6b15"></a>
+
+LOAD DATA is used to copy data from a file to a table. For details, see [LOAD DATA](dolphin-load-data.md).

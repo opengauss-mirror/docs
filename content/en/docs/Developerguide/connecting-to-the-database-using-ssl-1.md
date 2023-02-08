@@ -1,6 +1,6 @@
 # Connecting to the Database \(Using SSL\)<a name="EN-US_TOPIC_0000001127066489"></a>
 
-When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SSL to encrypt the communication between the client and server. To enable SSL, you must have the server certificate, client certificate, and private key files. For details on how to obtain these files, see related documents and commands of OpenSSL.
+When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SSL to encrypt the communication between the client and server. To enable SSL, you must have the server certificate, client certificate, and private key files. For details on how to obtain these files, see [related documents and commands of OpenSSL](https://www.openssl.net.cn/).
 
 1. Use the .ini file \(the **configparser** package of Python can parse this type of configuration file\) to save the configuration information about the database connection.
 
@@ -34,7 +34,7 @@ When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SS
     cursor = connection.cursor()
     ```
 
-**Table  1**  sslmode options
+**Table 1** sslmode options
 
 <a name="table167989176183"></a>
 <table><thead align="left"><tr id="row137980170181"><th class="cellrowborder" valign="top" width="19.671967196719674%" id="mcps1.2.4.1.1"><p id="p1779912176188"><a name="p1779912176188"></a><a name="p1779912176188"></a>sslmode</p>
@@ -56,21 +56,21 @@ When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SS
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p1579961710189"><a name="p1579961710189"></a><a name="p1579961710189"></a>Possible</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p879961791818"><a name="p879961791818"></a><a name="p879961791818"></a>If the database server requires SSL connection, SSL connection can be enabled. However, authenticity of the database server will not be verified.</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p879961791818"><a name="p879961791818"></a><a name="p879961791818"></a>If the database server requires SSL connection, SSL connection can be enabled. However, authenticity of the database server will not be verified. </p>
 </td>
 </tr>
 <tr id="row19799417101810"><td class="cellrowborder" valign="top" width="19.671967196719674%" headers="mcps1.2.4.1.1 "><p id="p1979961711181"><a name="p1979961711181"></a><a name="p1979961711181"></a>prefer</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p37991117111814"><a name="p37991117111814"></a><a name="p37991117111814"></a>Possible</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p16799101716188"><a name="p16799101716188"></a><a name="p16799101716188"></a>If the database supports SSL connection, SSL connection is preferred. However, authenticity of the database server will not be verified.</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p16799101716188"><a name="p16799101716188"></a><a name="p16799101716188"></a>If the database supports SSL connection, SSL connection is preferred. However, authenticity of the database server will not be verified. </p>
 </td>
 </tr>
 <tr id="row679916170181"><td class="cellrowborder" valign="top" width="19.671967196719674%" headers="mcps1.2.4.1.1 "><p id="p6799917171819"><a name="p6799917171819"></a><a name="p6799917171819"></a>require</p>
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p5799101761818"><a name="p5799101761818"></a><a name="p5799101761818"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p19799161751816"><a name="p19799161751816"></a><a name="p19799161751816"></a>SSL connection is required and data is encrypted. However, authenticity of the database server will not be verified.</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p19799161751816"><a name="p19799161751816"></a><a name="p19799161751816"></a>SSL connection is required and data is encrypted. However, authenticity of the database server will not be verified. </p>
 </td>
 </tr>
 <tr id="row197990172186"><td class="cellrowborder" valign="top" width="19.671967196719674%" headers="mcps1.2.4.1.1 "><p id="p379919177185"><a name="p379919177185"></a><a name="p379919177185"></a>verify-ca</p>
@@ -84,7 +84,7 @@ When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SS
 </td>
 <td class="cellrowborder" valign="top" width="27.362736273627362%" headers="mcps1.2.4.1.2 "><p id="p679981717180"><a name="p679981717180"></a><a name="p679981717180"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>The SSL connection must be enabled. Currently, <span id="text159163191612"><a name="text159163191612"></a><a name="text159163191612"></a>openGauss</span> does not support this option.</p>
+<td class="cellrowborder" valign="top" width="52.96529652965296%" headers="mcps1.2.4.1.3 "><p id="p17799317131814"><a name="p17799317131814"></a><a name="p17799317131814"></a>The SSL connection must be enabled. Currently, the SSL connection is not supported.</p>
 </td>
 </tr>
 </tbody>
