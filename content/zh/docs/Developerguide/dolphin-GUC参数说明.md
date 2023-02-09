@@ -564,3 +564,17 @@ dayname
 **取值范围**：字符串
 
 **默认值**：加载dolphin协议插件时，当前会话的database_name
+
+## dolphin.dolphin.div_precision_increment<a name="section203671436846"></a>
+
+**参数说明**：此变量指定使用/运算符执行除法运算的结果的小数位数。
+
+该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>
+>该参数用于提供除法运算结果的小数位数，在通过该参数以及入参计算出小数位数之后，与openGauss原生计算的小数位数进行对比，获取两者中的较大值作为计算结果的小数位数。大多数情况下openGauss的小数位数会比M\*高，所以该参数在设置的值不大的情况下效果暂时不明显。
+
+**取值范围**：[0, 30]
+
+**默认值**：4
