@@ -22,13 +22,6 @@
 
    - 忽略语句：注释等。
    
-<font color='red'>对于A兼容数据库，在作SQL语句导出时，最好提前作如下设置：</font>
-```sql
-EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'SEGMENT_ATTRIBUTES',false);
-EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'SQLTERMINATOR',true);
-EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'STORAGE',false);
-EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLESPACE',false);
-```
 
 ### 代码获取
 
@@ -101,7 +94,7 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
 |          | d    | 数据库（可选）                           | `-d evaluation` |
 |          | U    |用户名（可选），如果支持本地连接，可不填 | `-U user`                |
 |          | W | 密码（可选），如果支持本地连接，可不填 | `-W ******` |
-| 兼容性评估 | c | 指定兼容类型（A\B\C\PG)，如果指定`d`参数，该参数不可设置。 | `-c B` |
+| 兼容性评估 | c | 指定兼容类型（A\B\C\PG)，如果指定`d`参数，该参数不可设置。MySQL场景下请指定B。 | `-c B` |
 | 文件参数 | f | 评估SQL文件（必填） | `-f intput.sql` |
 |  | o | 输出文件（必填），一般输入html结尾文件 | `-o result.html` |
 
