@@ -1,29 +1,29 @@
 # Usage Guide<a name="EN-US_TOPIC_0000001240944983"></a>
 
-Assume that the  **confpath**  configuration file directory has been initialized.
+Assume that the **confpath** configuration file directory has been initialized.
 
--   Run the following command to start only the slow SQL diagnosis function (the number of root causes for slow SQL diagnosis is determined by the algorithm running result and is not fixed). For more usage, see the description of the **service** subcommand.
-
-    ```
-    gs_dbmind service start -c confpath --only-run slow_query_diagnosis
-    ```
-
--   Run the following command to query the diagnosis history of slow SQL statements:
+-   To enable only the trend prediction function, run the following command (for details, see the description of the **service** subcommand):
 
     ```
-    gs_dbmind component slow_query_diagnosis show -c confpath --query SQL --start-time timestamps0 --end-time timestamps1
+    gs_dbmind service start -c confpath --only-run forecast
     ```
 
--   Run the following command to diagnose slow SQL statements in interactive mode:
+-   To enable trend prediction in interactive mode, run the following command and view the prediction result of an instance metric from **timestamps0** to **timestamps1**:
 
     ```
-    gs_dbmind component slow_query_diagnosis diagnosis -c confpath --database dbname --schema schema_name --query SQL
+    gs_dbmind component forecast show -c confpath --metric-name metric --host instance --start-time timestamps0 --end-time timestamps1
     ```
 
 -   Run the following command to manually clear historical prediction results:
 
     ```
-    gs_dbmind component slow_query_diagnosis clean -c confpath --retention-days DAYS
+    gs_dbmind component forecast clean -c confpath --retention-days DAYS
+    ```
+
+-   To enable trend prediction based on the user-defined threshold (**up** and **low**), run the following command and view the prediction result of the metric of an instance from **timestamps0** to **timestamps1** and check whether the prediction value exceeds the threshold:
+
+    ```
+    gs_dbmind component forecast early-warning -c confpath --metric-name metric --host instance --start-time timestamps0 --end-time timestamps1 --upper up --lower low
     ```
 
 -   Run the following command to stop the services that have been started:

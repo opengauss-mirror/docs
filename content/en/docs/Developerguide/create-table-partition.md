@@ -41,6 +41,7 @@ Partitioning can provide several benefits:
 -   In the  **PARTITION FOR \(values\)**  syntax for partitioned tables, if data type conversion is required for values, you are advised to use forcible type conversion to prevent the implicit type conversion result from being inconsistent with the expected result.
 -   The maximum number of partitions is 1048575. Generally, it is impossible to create so many partitions, because too many partitions may cause insufficient memory. Create partitions based on the value of  **local\_syscache\_threshold**. The memory used by the partitioned tables is about \(number of partitions x 3/1024\) MB. Theoretically, the memory occupied by the partitions cannot be greater than the value of  **local\_syscache\_threshold**. In addition, some space must be reserved for other functions.
 -   Currently, the statement specifying a partition cannot perform global index scan.
+-   Currently, hash partitions are sorted in reverse order. That is, the partition subscripts obtained after hash and modulo calculation are opposite to the creation sequence. Similarly, the sequence numbers of Selected Partitions displayed in the EXPLAIN plan are opposite to the creation sequence.
 
 ## Syntax<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 

@@ -7,7 +7,7 @@ Compared with the original openGauss, Dolphin has two new logical operators:
 
 - &&
 
-  Description: When **b\_compatibility\_mode** is set to **TRUE**, it indicates the logical AND operation. The supported types include Boolean, time, date, integer, floating point, and bit string. The truth table is as follows:
+  Description: When `dolphin.b_compatibility_mode` is set to `TRUE`, it indicates the logical AND operation. The supported types include Boolean, time, date, integer, floating point, bit string, and character. The truth table is as follows:
 
   <table>
       <tr>
@@ -56,29 +56,34 @@ Compared with the original openGauss, Dolphin has two new logical operators:
   </tr>
   <tr>
       <td>Boolean </td>
-      <td> The logical AND operation is performed according to the truth table.</td>
+      <td> The logical AND operation is performed according to the truth table. </td>
   </tr>
   <tr>
       <td>Integer</td>
-      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed.</td>
+      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed. </td>
   </tr>
   <tr>
       <td>Floating point </td>
-      <td>Only zero is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed.</td>
+      <td>Only zero is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed. </td>
   </tr>
   <tr>
       <td>Bit string </td>
-      <td>Only the all-0 value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed.</td>
+      <td>Only the all-0 value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical AND operation is performed. </td>
   </tr>
   <tr>
       <td>Time </td>
-      <td>The conversion mode of the time type depends only on the hour part. When '00:xx:xx' is entered, the time type is converted to Boolean false. When 'yy:xx:xx' is entered, if **yy** is not 0, the time type is converted to Boolean true. Then, the logical AND operation is performed.</td>
+      <td>The conversion mode of the time type depends only on the hour part. When '00:xx:xx' is entered, the time type is converted to Boolean false. When 'yy:xx:xx' is entered, if **yy** is not 0, the time type is converted to Boolean true. Then, the logical AND operation is performed. </td>
   </tr>
   <tr>
       <td>Date </td>
-      <td>The conversion mode of the date type depends only on the year part. When '0000-xx-xx' is entered, the date type is converted to Boolean false. When 'yyyy-xx-xx' is entered, if **yy** is not 0, the date type is converted to Boolean true. Then, the logical AND operation is performed.</td>
+      <td>The conversion mode of the date type depends only on the year part. When '0000-xx-xx' is entered, the date type is converted to Boolean false. When 'yyyy-xx-xx' is entered, if **yy** is not 0, the date type is converted to Boolean true. Then, the logical AND operation is performed. </td>
+  </tr>
+  <tr>
+      <td>Character</td>
+      <td>The conversion of the character type depends on whether the header of the character type is a number. If the header of the character type is not a number, the character type is directly converted to Boolean false. If the value is a number, the value 0 is converted to Boolean false. Otherwise, the value is converted to Boolean true, and then the logical AND operation is performed. </td>
   </tr>
   </table>
+
 
   Return type: Boolean
 
@@ -94,7 +99,7 @@ Compared with the original openGauss, Dolphin has two new logical operators:
 
 - ||
 
-  Description: When **sql\_mode** is not set to **'pipes\_as\_concat'**, it indicates a logical OR operation. The supported types include Boolean, time, date, integer, floating point, and bit string. The truth table is as follows:
+  Description: When **sql\_mode** is not set to **'pipes\_as\_concat'**, it indicates a logical OR operation. The supported types include Boolean, time, date, integer, floating point, bit string, and character. The truth table is as follows:
 
   <table>
       <tr>
@@ -143,34 +148,40 @@ Compared with the original openGauss, Dolphin has two new logical operators:
   </tr>
   <tr>
       <td>Boolean </td>
-      <td> The logical OR operation is performed according to the truth table.</td>
+      <td> The logical OR operation is performed according to the truth table. </td>
   </tr>
   <tr>
       <td>Integer</td>
-      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed.</td>
+      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed. </td>
   </tr>
   <tr>
       <td>Floating point </td>
-      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed.</td>
+      <td>Only the zero value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed. </td>
   </tr>
   <tr>
       <td>Bit string </td>
-      <td>Only the all-0 value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed.</td>
+      <td>Only the all-0 value is converted to Boolean false, and other values are converted to Boolean true. Then, the logical OR operation is performed. </td>
   </tr>
   <tr>
       <td>Time </td>
-      <td>The conversion mode of the time type depends only on the hour part. When '00:xx:xx' is entered, the time type is converted to Boolean false. When 'yy:xx:xx' is entered, if **yy** is not 0, the time type is converted to Boolean true. Then, the logical OR operation is performed.</td>
+      <td>The conversion mode of the time type depends only on the hour part. When '00:xx:xx' is entered, the time type is converted to Boolean false. When 'yy:xx:xx' is entered, if **yy** is not 0, the time type is converted to Boolean true. Then, the logical OR operation is performed. </td>
   </tr>
   <tr>
       <td>Date </td>
-      <td>The conversion mode of the date type depends only on the year part. When '0000-xx-xx' is entered, the date type is converted to Boolean false. When 'yyyy-xx-xx' is entered, if **yy** is not 0, the date type is converted to Boolean true. Then, the logical OR operation is performed.</td>
+      <td>The conversion mode of the date type depends only on the year part. When '0000-xx-xx' is entered, the date type is converted to Boolean false. When 'yyyy-xx-xx' is entered, if **yy** is not 0, the date type is converted to Boolean true. Then, the logical OR operation is performed. </td>
+  </tr>
+  <tr>
+      <td>Character</td>
+      <td>The conversion of the character type depends on whether the header of the character type is a number. If the header of the character type is not a number, the character type is directly converted to Boolean false. If the value is a number, the value 0 is converted to Boolean false. Otherwise, the value is converted to Boolean true, and then the logical OR operation is performed. </td>
   </tr>
   </table>
 
+  
+  
   Return type: Boolean
-
+  
   Example: 
-
+  
   ```
   openGauss=# SELECT 0 || 0;
   ?column?
@@ -178,5 +189,5 @@ Compared with the original openGauss, Dolphin has two new logical operators:
          f
   (1 row)
   ```
-
+  
   

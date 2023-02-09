@@ -1706,6 +1706,18 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
+-   pg\_relation\_is\_updatable(reloid, include\_triggers)
+
+    Description: Obtains the time modification type supported by an object. The value **4** indicates UPDATE, **8** indicates INSERT, and **16** indicates DELETE. If **include\_triggers** is set to **true**, triggers on the object need to be considered.
+
+    Return type: int
+
+-   pg\_column\_is\_updatable(reloid, attnum, include\_triggers)
+
+    Description: Determines whether a column of an object can be updated or deleted.
+
+    Return type: Boolean
+
 
 ## Comment Information Functions<a name="en-us_topic_0283136950_en-us_topic_0237121987_en-us_topic_0059777618_s088c996ec385478daa38d9aa9f991d58"></a>
 

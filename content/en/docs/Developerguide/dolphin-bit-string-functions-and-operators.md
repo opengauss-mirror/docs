@@ -5,6 +5,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
 1. The `bit_bool` function is added.
 2. The `^` operator is added.
 3. The `bit_count` function is added.
+4. The `bit_xor` function is added.
 
 - bit_bool(bit)
 
@@ -12,7 +13,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
 
   Return type: Boolean
 
-  Example: 
+  Example:
   ~~~
   openGauss=# select bit_bool('11111');
    bit_bool 
@@ -43,7 +44,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
 
   Return type: bit
 
-  Example: 
+  Example:
 
   ```
   openGauss=# select b'1001'^b'1100';
@@ -65,7 +66,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
 
   Example:
   ~~~
-  SELECT bit_count(29);
+  openGauss=# SELECT bit_count(29);
    bit_count 
   ----------
    4
@@ -73,10 +74,38 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
   ~~~
 
   ~~~
-  SELECT bit_count(b'101010');
+  openGauss=# SELECT bit_count(b'101010');
    bit_count 
   ----------
    3
   (1 row)
   ~~~
-  
+
+- bit_count(expr)
+
+  Description: Returns the result when the values of all columns in a table are XORed as unsigned 64-bit integers.
+
+  Input type: expr
+
+  Return type: unsigned int
+
+  Note: When the number of a value or string value in the table is negative, the value is automatically converted to an unsigned number.
+
+  Example:
+  ```sql
+  openGauss=# INSERT INTO bit_xor_int4(a) values(-1.11);
+  INSERT 0 1
+  openGauss=# SELECT BIT_XOR(a) from bit_xor_int4;
+  bit_xor 
+  ---------
+  1
+  (1 row)
+
+  openGauss=# INSERT INTO bit_xor_int4(a) values(1.11);
+  INSERT 0 1
+  openGauss=# SELECT BIT_XOR(a) from bit_xor_int4;
+  bit_xor 
+  ---------
+  0
+  (1 row)
+  ```

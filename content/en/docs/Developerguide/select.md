@@ -324,19 +324,19 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     The general format is  **WINDOW window\_name AS \( window\_definition \) \[, ...\]**.  **window\_name**  is a name can be referenced by  **window\_definition**.  **window\_definition**  can be expressed in the following forms:
 
-    \[ existing\_window\_name \]
+    [ existing_window_name ]
 
-    \[ PARTITION BY expression \[, ...\] \]
+    [ PARTITION BY expression [, ...] ]
 
-    \[ ORDER BY expression \[ ASC | DESC | USING operator \] \[ NULLS \{ FIRST | LAST \} \] \[, ...\] \]
+    [ ORDER BY expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ] [, ...] ]
 
-    \[ frame\_clause \]
+    [ frame_clause ]
 
     **frame\_clause**  defines a  **window frame**  for the window function. The window function \(not all window functions\) depends on  **window frame**  and  **window frame**  is a set of relevant rows of the current query row.  **frame\_clause**  can be expressed in the following forms:
 
-    \[ RANGE | ROWS \] frame\_start
+    [ RANGE | ROWS ] frame_start
 
-    \[ RANGE | ROWS \] BETWEEN frame\_start AND frame\_end
+    [ RANGE | ROWS ] BETWEEN frame_start AND frame_end
 
     **frame\_start**  and  **frame\_end**  can be expressed in the following forms:
 

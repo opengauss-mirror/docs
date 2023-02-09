@@ -1,6 +1,6 @@
-# Obtaining Help Information<a name="EN-US_TOPIC_0000001240351149"></a>
+# Obtaining Help Information <a name="EN-US_TOPIC_0000001240351149"></a>
 
-You can run the  **--help**  command to obtain the help information. For example:
+You can run the **--help** command to obtain the help information. For example:
 
 ```
 gs_dbmind component forecast --help
@@ -47,3 +47,4 @@ optional arguments:
   --csv-dump-path CSV_DUMP_PATH
                         Dump the result CSV file to the path if it is
                         specified. Use in warning.
+```

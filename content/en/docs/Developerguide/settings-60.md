@@ -280,3 +280,15 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:**1**
 
+## autocommit<a name="section934218214011"></a>
+
+**Parameter description**: Specifies whether transactions are automatically committed. The value can be changed to **false** only in B-compatible mode.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**: The auto commit is enabled.
+-   **off**: The auto commit is disabled.
+
+**Default value**: **on**

@@ -20,7 +20,7 @@
 
 - json_object([VARIADIC "any"])
 
-  Description: Inputs parameters with `key` and `value` that appear alternately. Constructs a JSON object from a variable parameter list. Before using the JSON object, set the GUC parameter **b\_compatibility\_mode** to **1**.
+  Description: Inputs parameters with `key` and `value` that appear alternately. Constructs a JSON object from a variable parameter list. Before using the JSON object, set the GUC parameter **dolphin.b\_compatibility\_mode** to **1**.
 
   Return type: json
 
@@ -32,7 +32,7 @@
   Example: 
 
   ```
-  opengauss=# SET b_compatibility_mode = 1;
+  opengauss=# SET dolphin.b_compatibility_mode = 1;
   opengauss=# SELECT JSON_OBJECT(
   opengauss(#         'name',
   opengauss(#         'Tim',
@@ -50,7 +50,7 @@
    {"age" : 20, "name" : "Tim", "hobby" : ["games", "sports"], "friend" : {"age" : 20, "name" : "Jim"}}
   (1 row)
   
-  opengauss=# SET b_compatibility_mode = 0;
+  opengauss=# SET dolphin.b_compatibility_mode = 0;
   opengauss=# select json_object('{a,b,"a b c"}', '{a,1,1}');
                 json_object              
   ---------------------------------------
