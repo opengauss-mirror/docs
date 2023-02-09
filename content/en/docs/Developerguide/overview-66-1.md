@@ -3,6 +3,7 @@
 SQL Rewriter is an SQL rewriting tool. It converts query statements into more efficient or standard forms based on preset rules to improve query efficiency.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
+>
 >-   This function does not apply to statements that contain subqueries.
 >-   This function supports only the SELECT and DELETE statements for deleting the entire table.
 >-   This function contains 12 rewriting rules. Statements that do not comply with the rewriting rules are not processed.

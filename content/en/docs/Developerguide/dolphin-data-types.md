@@ -4,6 +4,8 @@
 
 -   **[Character Types](dolphin-character-types.md)** 
 
+-   **[Boolean Types](dolphin-boolean-types.md)**
+
 -   **[Date/Time Types](dolphin-date-time-types.md)** 
 
 -   **[Bit String Types](dolphin-bit-string-types.md)**

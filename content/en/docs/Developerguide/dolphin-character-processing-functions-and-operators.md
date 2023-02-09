@@ -4,9 +4,11 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
 1. The regexp, not regexp, and rlike operators are added.
 2. The locate, lcase, ucase, insert, bin, char, elt, field, find\_int\_set, hex, space, soundex, export\_set, ord, substring\_index, and from\_base64 functions are added.
-3. The performance of the length, bit\_length, octet\_length, convert, format, left, and right functions are modified.
+3. The performance of the length, bit_length, octet_length, convert, format, left, and right functions are modified.
 4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
 5. The `LIKE/NOT LIKE` operator is modified.
+6. The `!` operator is added and can be used before an expression. The effect is the same as that of NOT.
+7. The `text_bool, varchar_bool, and char_bool` functions are added.
 
 -   bit\_length\(string\)
 
@@ -88,7 +90,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
   Description: Returns **val** in the format of x,xxx,xxx.xx. The **val** will retain *dec_num* decimal places. A maximum of 32 decimal places can be reserved. If **dec\_num** is greater than 32, 32 decimal places are reserved. If **dec\_num** is set to 0, the returned content does not contain the decimal point or decimal part. The third parameter is optional. You can specify the format of the decimal point and thousands separator in the returned content based on locale. If the third parameter is not specified or the value of the third parameter is invalid, the default value **en_US** is used.
 
-  Note: This format function is used for B-compatible databases and has different semantics from the original format function of openGauss. To use this semantics, create a B-compatible database, enable the B-compatible SQL engine plug-in, and set **B_COMPATIBILITY_MODE** to **TRUE**.
+  Note: This format function is used for B-compatible databases and has different semantics from the original format function of openGauss. To use this semantics, create a B-compatible database, enable the B-compatible SQL engine plug-in, and set **dolphin.b_compatibility_mode** to **TRUE**.
 
   Return type: text
 
@@ -100,7 +102,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     openGauss=# \c B_COMPATIBILITY_DATABASE
     b_compatibility_database=# CREATE EXTENSION dolphin;
     CREATE EXTENSION
-    b_compatibility_database=# SET B_COMPATIBILITY_MODE = TRUE;
+    b_compatibility_database=# SET dolphin.b_compatibility_mode = TRUE;
     SET
     b_compatibility_database=# select format(1234.4567,2);
       format
@@ -349,7 +351,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
     Description: Converts expr based on the encoding mode specified by transcoding\_name.
     Note: By default, the database supports the following format: convert(string bytea, src\_encoding name, dest\_encoding name), where the bytea is converted using the encoding mode specified by dest\_encoding. In Dolphin, transcoding\_name after USING can be used to specify the encoding mode to convert expr, and the preceding three parameters are not supported.
-    
+
     Return type: text
 
     Example:
@@ -360,7 +362,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     ---------
     a 
     (1 row)
-    
+
     b_compatibility_database=# select convert('a' using utf8);
     convert
     ---------
@@ -383,7 +385,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     disange
     (1 row)
     ```
-    
+
 -   left\(str text, n int\)
 
     Description: Returns the first *n* characters in a string. If **n** is a negative number, the value **0** is used.
@@ -537,7 +539,12 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
 - like/not like
 
-  Description: Specifies whether the string matches the pattern string following LIKE. In the source version, LIKE of openGauss is case sensitive. In this version, when `b_compatibility_mode` is set to `TRUE`, LIKE is case insensitive. When `b_compatibility_mode` is set to `FALSE`, LIKE is case sensitive. If the string matches the provided pattern, the LIKE expression returns true (the ILIKE expression returns false).
+  Description: Specifies whether the string matches the pattern string following LIKE. In the source version, LIKE of openGauss is case sensitive. In this version, when `dolphin.b_compatibility_mode` is set to `TRUE`, LIKE is case insensitive. When `dolphin.b_compatibility_mode` is set to `FALSE`, LIKE is case sensitive. If the string matches the provided pattern, the LIKE expression returns true (the ILIKE expression returns false).
+
+  Note:
+
+  - The operator compatible with the Boolean type (true/false) is added to the Dolphin plug-in.
+  - For a fixed-length character string, if the length of the character string inserted into the table is less than the specified length, spaces are automatically added to the end of the character string. In the Dolphin plug-in, this operator ignores redundant spaces at the end of the fixed-length character string.
 
   Return type: Boolean
 
@@ -557,6 +564,12 @@ Compared with the original openGauss, Dolphin modifies character processing func
   (1 row)
   
   openGauss=# SELECT 'abc' like 'A%' as result;
+   result
+  ------------
+            t
+  (1 row)
+  
+  openGauss=# SELECT true like true as result;
    result
   ------------
             t
@@ -612,7 +625,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
      abcda
     (1 row)
     
-  ``` 
+  ```
 
 
 -   export_set(bits, on, off, separator, number of bits)
@@ -671,7 +684,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     4. Therefore, the decoding result is ab.
 
     Example:
-    
+  
     ```
         openGauss=# SELECT FROM_BASE64('YWJj');
          from_base64 
@@ -679,7 +692,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
          abc
         (1 row)
         
-    ``` 
+    ```
 - ORD(str)
 
   Description:
@@ -750,7 +763,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
   ```
 
   - TO_BASE64(str)
-  
+
   Description: Encodes a character string into BASE64 format based on BASE64 encoding rules and returns the encoding result. The encoding and decoding rules are the same as those of the FROM\_BASE64 function.
 
   Return type: text
@@ -789,13 +802,13 @@ Compared with the original openGauss, Dolphin modifies character processing func
       -----------
        MTIzNDU2
       (1 row)
-
+    
       SELECT TO_BASE64('12345');
        to_base64 
       -----------
        MTIzNDU=
       (1 row)
-
+    
       SELECT TO_BASE64('1234');
        to_base64 
       -----------
@@ -822,23 +835,158 @@ Compared with the original openGauss, Dolphin modifies character processing func
   3. Therefore, the decoding result is AB.
 
     Example:
-    
+  
     ```sql
       SELECT UNHEX('6f70656e4761757373');
         unhex   
       -----------
       openGauss
       (1 row)
-
+  
       SELECT UNHEX(HEX('string'));
        unhex  
       --------
        string
       (1 row)
-
+  
       SELECT HEX(UNHEX('1267'));
        hex  
       ------
        1267
       (1 row)
     ```
+
+- !
+  
+  Description: Implements the NOT logical operation before an expression. The effect is the same as using NOT before an expression.
+
+  Return type: Boolean
+
+  Precautions
+
+  - This operator is available only when `b_compatibility_mode` is set to `TRUE`.
+  - "!!" is the original factorial operator of openGauss. To avoid confusion with this operator, when `b_compatibility_mode` is `TRUE`, the factorial operator "!!" or "!" cannot be used. Use the `factorial` function instead.
+  - When `b_compatibility_mode` is set to `TRUE`, only one exclamation mark (!) is allowed.
+  - Only expressions that can be converted to the Boolean type can use this operator. For details, see the `pg_cast` system catalog.
+
+  Example:
+
+  ```
+  openGauss=# set b_compatibility_mode = 1;
+  SET
+  openGauss=# select !10;
+   ?column?
+  ----------
+   f
+  (1 row)
+  
+  openGauss=# select !true;
+   ?column?
+  ----------
+   f
+  (1 row)
+  
+  openGauss=# select !!10;
+  ERROR:  Operator '!!' is deprecated when b_compatibility_mode is on. Please use function factorial().
+  
+  openGauss=# select 10!;
+  ERROR:  Operator '!' behind expression is deprecated when b_compatibility_mode is on. Please use function factorial().
+  ```
+
+- text_bool(text)
+
+  Description: Truncates the numeric part (including integers, decimals, and positive and negative numbers) in the header of the input text and discards the remaining non-numeric part. If the truncated number is 0, the function returns a logical false value. Otherwise, the function returns a logical true value. If the header of the input text is not a number, the logic false is returned.
+
+  Return type: Boolean
+
+  Example:
+
+  ```
+  openGauss=# select text_bool('-0.01abc');
+   text_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select text_bool('0abc');
+   text_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select text_bool('abc');
+   text_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- varchar_bool(varchar)
+
+  Description: Truncates the numeric part (including integers, decimals, and positive and negative numbers) at the beginning of the input variable-length string and discards the remaining non-numeric part. If the truncated numerical part is 0, the function returns a logical false value. Otherwise, the function returns a logical true value. If the header of the input variable-length string is not a number, the logic false is returned.
+
+  Return type: Boolean
+
+  Example:
+
+  ```
+  openGauss=# select varchar_bool('-0.0100abc');
+   varchar_bool 
+  --------------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select varchar_bool('0abc');
+   varchar_bool 
+  --------------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select varchar_bool('abc');
+   varchar_bool 
+  --------------
+   f
+  (1 row)
+  ```
+
+- char_bool(char)
+
+  Description: Truncates the numeric part (including integers, decimals, and positive and negative numbers) at the beginning of the input string and discards the remaining non-numeric part. If the truncated numerical part is 0, the function returns a logical false value. Otherwise, the function returns a logical true value. If the header of the input string is not a number, the logic false is returned.
+
+  Return type: Boolean
+
+  Example:
+
+  ```
+  openGauss=# select char_bool('-0.0100abc');
+   char_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select char_bool('0abc');
+   char_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select char_bool('abc');
+   char_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+  
