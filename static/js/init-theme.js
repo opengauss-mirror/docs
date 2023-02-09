@@ -1,20 +1,36 @@
-if(location.pathname==='/zh/'){
-  window.open("/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html","_self")
-}else if(location.pathname==='/en/'){
-  window.open("/en/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html","_self")
+// 预览网站的初始化地址
+const preInitUrlObj={
+  urlZh:"/zh/docs/latest/docs/Releasenotes/%E6%B3%95%E5%BE%8B%E5%A3%B0%E6%98%8E.html",
+  urlEn:"/en/docs/latest/docs/Releasenotes/Terms-of-Use.html",
+}
+// 官网网站的初始化地址
+const initUrlObj={
+  urlZh:"/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html",
+  urlEn:"/en/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html",
+}
+function initUrl(urlObj){
+  const lang=location.pathname
+  if (lang === "/zh/") {
+    window.open(urlObj.urlZh, "_self");
+  } else if (lang === "/en/") {
+    window.open(urlObj.urlEn, "_self");
+  }
+}
+if (location.origin === "https://opengauss-docs-preview.test.osinfra.cn") {
+  initUrl(preInitUrlObj)
+} else {
+  initUrl(initUrlObj)
 }
 const themeStyle = localStorage.getItem("openeuler-theme");
 const html = document.getElementsByTagName("html")[0];
 if (!themeStyle) {
   localStorage.getItem("openeuler-theme", "light");
-  html.classList.add("light")
+  html.classList.add("light");
 } else {
-  html.classList.add(themeStyle)
+  html.classList.add(themeStyle);
 }
 (function () {
   if (location.pathname.split("/")[3].includes("-lite")) {
-    html.classList.add("lite")
+    html.classList.add("lite");
   }
-})()
-
-
+})();
