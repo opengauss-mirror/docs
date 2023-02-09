@@ -118,7 +118,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   从集群中踢出非当前节点，第一个参数是要移除的节点id
 
     ```
-    dsscmd kickh <-i inst_id> [-U UDS:socket_domain]
+    dsscmd kickh <-i inst_id> [-D DSS_HOME] [-U UDS:socket_domain]
     ```
 
 -   将节点添加到集群，不走服务端
@@ -253,6 +253,12 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 
     ```
     dsscmd stopdss [-U UDS:socket_domain]
+    ```
+
+-   清理dss内部的锁资源
+
+    ```
+    dsscmd clean [-D DSS_HOME]
     ```
 
 
