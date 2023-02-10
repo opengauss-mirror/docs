@@ -50,6 +50,8 @@
 
 -   **[KILL](dolphin-KILL.md)**  
 
+-   **[LOAD DATA](dolphin-LOAD-DATA.md)**
+
 -   **[OPTIMIZE TABLE](dolphin-OPTIMIZE-TABLE.md)**
 
 -   **[PREPARE](dolphin-PREPARE.md)**
