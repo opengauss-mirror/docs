@@ -40,7 +40,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     The password must meet the following complexity requirements:
 
-    -   Contain at least eight characters.
+    -   Contain 8~16 characters.
     -   Cannot be the same as the username, the current password \(**ALTER**\), or the current password in an inverted sequence.
     -   Contain at least three of the following: uppercase characters \(A to Z\), lowercase characters \(a to z\), digits \(0 to 9\), and other characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
