@@ -26,7 +26,7 @@ gs_encrypt [OPTION]... PLAINTEXT
 
 -   -k  *PASSWORD*, --key=*PASSWORD*
 
-    Password entered by a user. It is used to derive the key for encryption. The password must contain 8 to 15 characters, including at least three types of the following: uppercase letters, lowercase letters, digits, and special characters.
+    Password entered by a user. It is used to derive the key for encryption. The password must contain 8 to 16 characters, including at least three types of the following: uppercase letters, lowercase letters, digits, and special characters.
 
 -   -v  *VectorValue*, --vector=*VectorValue*
 
