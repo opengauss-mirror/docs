@@ -361,7 +361,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **ORDER SIBLINGS BY子句**
 
-    ORDER SIBLINGS BY通常和START WITH、CONNECT BY子句同时使用, 用法和ORDER BY子句一样, 用于在递归过程中的层级排序。
+    ORDER SIBLINGS BY通常和START WITH、CONNECT BY子句同时使用, 用法和ORDER BY子句一样, 用于在递归过程中的层级排序。当前不支持接函数调用，如果有函数调用，且函数参数中存在列，则取第一个列作为排序键排序。
 
 -   **GROUP BY子句**
 
