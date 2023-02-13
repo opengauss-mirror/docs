@@ -29,6 +29,28 @@
         | RENAME INDEX index_name to new_index_name
         | ADD table_indexclause
         | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
+        | AUTOEXTEND_SIZE [=] value
+        | AVG_ROW_LENGTH [=] value
+        | CHECKSUM [=] value
+        | CONNECTION [=] 'connect_string'
+        | {DATA | INDEX} DIRECTORY [=] 'absolute path to directory'
+        | DELAY_KEY_WRITE [=] value
+        | ENCRYPTION [=] 'encryption_string'
+        | ENGINE_ATTRIBUTE [=] 'string'
+        | INSERT_METHOD [=] { NO | FIRST | LAST }
+        | KEY_BLOCK_SIZE [=] value
+        | MAX_ROWS [=] value
+        | MIN_ROWS [=] value
+        | PACK_KEYS [=] value
+        | PASSWORD [=] 'password'
+        | START TRANSACTION
+        | SECONDARY_ENGINE_ATTRIBUTE [=] 'string'
+        | STATS_AUTO_RECALC [=] value
+        | STATS_PERSISTENT [=] value
+        | STATS_SAMPLE_PAGES [=] value
+        | UNION [=] (tbl_name[,tbl_name]...)
+        | TABLESPACE tablespace_name [STORAGE DISK]
+        | [TABLESPACE tablespace_name] STORAGE MEMORY
     ```
 
 -   对一个表进行重建。
@@ -110,6 +132,78 @@
 - **RENAME INDEX index_name to new_index_name**
 
   重命名一个表的索引。
+
+- **AUTOEXTEND\_SIZE \[=\] value**
+
+  用于指定在表空间变满时扩展表空间大小；目前该特性仅有语法支持，不实现功能。参数的取值范围包括非负整数，小数，标识符，非负整数+标识符，小数+标识符。
+
+- **AVG\_ROW\_LENGTH \[=\] value**
+
+  用于指定表的平均行长度；目前该特性仅有语法支持，不实现功能。参数的取值范围包括非负整数，小数。
+
+- **CHECKSUM \[=\] value**
+
+  用于指定是否维护所有行的实时校验和；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数。
+
+- **CONNECTION \[=\] 'connect_string'**
+
+  用于指定联合表的连接字符串；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **{DATA | INDEX} DIRECTORY \[=\] 'absolute path to directory'**
+
+  用于指定表数据数据和索引的存储目录；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **DELAY\_KEY\_WRITE \[=\] value**
+
+  用于指定是否延迟表的键更新直到表关闭；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数。
+
+- **ENCRYPTION \[=\] 'encryption_string'**
+
+  用于指定表启用或禁用页面级数据加密；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **ENGINE\_ATTRIBUTE \[=\] 'string'**
+
+  用于指定主存储引擎的表属性；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **INSERT\_METHOD \[=\] { NO | FIRST | LAST }**
+
+  用于指定应将行插入到的表；目前该特性仅有语法支持，不实现功能。参数的取值范围为NO，FIRST，LAST。
+
+- **KEY\_BLOCK\_SIZE \[=\] value**
+
+  用于指定索引键块的字节大小；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数。
+
+- **MAX\_ROWS [\=\] value**
+
+  用于指定计划在表中存储的最大行数；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数。
+
+- **MIN\_ROWS \[=\] value**
+
+  用于指定计划在表中存储的最小行数；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数。
+
+- **PACK\_KEYS \[=\] value**
+
+  用于指定控制压缩索引的方式；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
+
+- **PASSWORD \[=\] 'password'**
+
+  此选项未使用；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **SECONDARY\_ENGINE\_ATTRIBUTE \[=\] 'string'**
+
+  用于指定辅助存储引擎的表属性；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
+
+- **STATS\_AUTO\_RECALC \[=\] value**
+
+  用于指定是否自动重新计算表的持久统计信息；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
+
+- **STATS\_PERSISTENT \[=\] value**
+
+  用于指定是否为表启用持久统计信息；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
+
+- **STATS\_SAMPLE\_PAGES \[=\] value**
+
+  用于指定估计索引列的基数和其他统计信息时要采样的索引页数；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 
