@@ -915,6 +915,7 @@ headless: true
 				-   [GIN提示与技巧]({{< relref "./docs/Developerguide/GIN提示与技巧.md" >}})
 			-   [扩展函数]({{< relref "./docs/Developerguide/扩展函数.md" >}})
 			-   [扩展语法]({{< relref "./docs/Developerguide/扩展语法.md" >}})
+			-   [类型基础值]({{< relref "./docs/Developerguide/INSERT_RIGHT_REF_DEFAULT_VALUE.md" >}})
 	-   [用户自定义函数]({{< relref "./docs/Developerguide/用户自定义函数.md" >}})
 		-   [PL/pgSQL语言函数]({{< relref "./docs/Developerguide/PL-pgSQL语言函数.md" >}})
 	-   [存储过程]({{< relref "./docs/Developerguide/存储过程.md" >}})
