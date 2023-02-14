@@ -1,4 +1,4 @@
-# SET TRANSACTION<a name="ZH-CN_TOPIC_0289900810"></a>
+# SET TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0283137515_zh-cn_topic_0237122190_zh-cn_topic_0059778135_se7890b9b6c9749168d76cd4ce38ee49f"></a>
 

@@ -1,4 +1,4 @@
-# 高并发报错“too many clients already”或无法创建线程<a name="ZH-CN_TOPIC_0291615108"></a>
+# 高并发报错“too many clients already”或无法创建线程
 
 ## 问题现象<a name="section1556012104711"></a>
 

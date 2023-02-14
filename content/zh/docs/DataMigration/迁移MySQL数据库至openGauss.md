@@ -1,4 +1,4 @@
-# 迁移MySQL数据库至openGauss<a name="ZH-CN_TOPIC_0000001347132520"></a>
+# 迁移MySQL数据库至openGauss
 
 ## 工具部署架构图<a name="section12438813102615"></a>
 

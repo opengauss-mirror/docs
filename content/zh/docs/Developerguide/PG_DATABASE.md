@@ -1,4 +1,4 @@
-# PG\_DATABASE<a name="ZH-CN_TOPIC_0289900413"></a>
+# PG\_DATABASE
 
 PG\_DATABASE系统表存储关于可用数据库的信息。
 

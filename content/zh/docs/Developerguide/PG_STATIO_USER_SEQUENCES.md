@@ -1,4 +1,4 @@
-# PG\_STATIO\_USER\_SEQUENCES<a name="ZH-CN_TOPIC_0289900445"></a>
+# PG\_STATIO\_USER\_SEQUENCES
 
 PG\_STATIO\_USER\_SEQUENCES视图显示命名空间中所有用户关系表类型为序列的IO状态信息。
 

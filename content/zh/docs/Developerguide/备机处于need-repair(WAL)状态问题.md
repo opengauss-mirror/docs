@@ -1,4 +1,4 @@
-# 备机处于need repair\(WAL\)状态问题<a name="ZH-CN_TOPIC_0289900624"></a>
+# 备机处于need repair\(WAL\)状态问题
 
 ## 问题现象<a name="zh-cn_topic_0283137649_section19264812163110"></a>
 

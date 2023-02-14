@@ -1,4 +1,4 @@
-# \_PG\_FOREIGN\_SERVERS<a name="ZH-CN_TOPIC_0310260668"></a>
+# \_PG\_FOREIGN\_SERVERS
 
 显示外部服务器的信息。该视图只有sysadmin权限可以查看。
 

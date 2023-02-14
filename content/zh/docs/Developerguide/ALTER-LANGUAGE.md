@@ -1,4 +1,4 @@
-# ALTER LANGUAGE<a name="ZH-CN_TOPIC_0000001080736216"></a>
+# ALTER LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>
 

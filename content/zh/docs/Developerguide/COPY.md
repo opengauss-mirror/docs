@@ -1,4 +1,4 @@
-# COPY<a name="ZH-CN_TOPIC_0289899980"></a>
+# COPY
 
 ## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d9c"></a>
 

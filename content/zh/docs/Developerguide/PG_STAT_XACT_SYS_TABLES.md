@@ -1,4 +1,4 @@
-# PG\_STAT\_XACT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0289900316"></a>
+# PG\_STAT\_XACT\_SYS\_TABLES
 
 PG\_STAT\_XACT\_SYS\_TABLES视图显示命名空间中系统表的事务状态信息。
 

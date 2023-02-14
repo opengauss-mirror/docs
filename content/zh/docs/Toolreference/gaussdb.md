@@ -1,4 +1,4 @@
-# gaussdb<a name="ZH-CN_TOPIC_0249632245"></a>
+# gaussdb
 
 ## 背景信息<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>
 

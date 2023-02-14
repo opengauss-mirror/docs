@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374715"></a>
+# GLOBAL\_STAT\_XACT\_USER\_FUNCTIONS
 
 视图包含各节点本事务内函数执行的统计信息。
 

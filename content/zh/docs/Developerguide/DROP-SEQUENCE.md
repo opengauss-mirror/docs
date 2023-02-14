@@ -1,4 +1,4 @@
-# DROP SEQUENCE<a name="ZH-CN_TOPIC_0289900269"></a>
+# DROP SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137072_zh-cn_topic_0237122149_zh-cn_topic_0059778402_section892464917343"></a>
 

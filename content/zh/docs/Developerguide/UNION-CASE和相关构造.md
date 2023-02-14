@@ -1,4 +1,4 @@
-# UNION，CASE和相关构造<a name="ZH-CN_TOPIC_0289900690"></a>
+# UNION，CASE和相关构造
 
 SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一个结果集。解析算法分别应用于联合查询的每个输出字段。INTERSECT和EXCEPT构造对不相同的类型使用和UNION相同的算法进行解析。CASE、ARRAY、VALUES、GREATEST和LEAST构造也使用同样的算法匹配它的部件表达式并且选择一个结果数据类型。
 

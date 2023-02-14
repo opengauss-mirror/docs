@@ -1,4 +1,4 @@
-# STATEMENT<a name="ZH-CN_TOPIC_0289900054"></a>
+# STATEMENT
 
 获得当前节点的执行语句（归一化SQL）的信息。查询视图必须具有sysadmin权限或者monitor admin权限。数据库主节点上可以看到此数据库主节点接收到的归一化的SQL的全量统计信息（包含数据库节点）；数据库节点上仅可看到归一化的SQL的此节点执行的统计信息。
 

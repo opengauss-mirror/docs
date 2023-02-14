@@ -1,4 +1,4 @@
-# 附录：SQL语法<a name="ZH-CN_TOPIC_0000001237263391"></a>
+# 附录：SQL语法
 
 ## ABORT<a name="section49831237711"></a>
 

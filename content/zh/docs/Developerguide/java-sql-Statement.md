@@ -1,4 +1,4 @@
-# java.sql.Statement<a name="ZH-CN_TOPIC_0289900015"></a>
+# java.sql.Statement
 
 java.sql.Statement是SQL语句接口。
 

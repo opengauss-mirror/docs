@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374681"></a>
+# SUMMARY\_STAT\_USER\_TABLES
 
 openGauss内汇聚所有命名空间中用户自定义普通表的状态信息。
 

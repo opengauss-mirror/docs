@@ -1,4 +1,4 @@
-# GS\_AUDITING<a name="ZH-CN_TOPIC_0306525316"></a>
+# GS\_AUDITING
 
 GS\_AUDITING视图显示对数据库相关操作的所有审计信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。
 

@@ -1,4 +1,4 @@
-# MOT管理<a name="ZH-CN_TOPIC_0280525141"></a>
+# MOT管理
 
 下面介绍MOT管理。
 

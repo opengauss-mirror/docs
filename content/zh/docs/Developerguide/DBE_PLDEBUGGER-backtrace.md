@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.backtrace<a name="ZH-CN_TOPIC_0000001121763470"></a>
+# DBE\_PLDEBUGGER.backtrace
 
 debug端调试过程中，调用backtrace，查看当前的调用堆栈。
 

@@ -1,4 +1,4 @@
-# SQLExecDirect<a name="ZH-CN_TOPIC_0242371445"></a>
+# SQLExecDirect
 
 ## 功能描述<a name="zh-cn_topic_0238272891_zh-cn_topic_0237120421_zh-cn_topic_0059778538_sa444edc74fad433d8d9beb6eec51f680"></a>
 

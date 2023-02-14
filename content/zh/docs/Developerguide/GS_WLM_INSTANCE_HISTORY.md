@@ -1,4 +1,4 @@
-# GS\_WLM\_INSTANCE\_HISTORY<a name="ZH-CN_TOPIC_0289900166"></a>
+# GS\_WLM\_INSTANCE\_HISTORY
 
 GS\_WLM\_INSTANCE\_HISTORY系统表存储与实例（数据库主节点或数据库节点）相关的资源使用相关信息。该系统表里每条记录都是对应时间点某实例资源使用情况，包括：内存、CPU核数、磁盘IO、进程物理IO和进程逻辑IO信息。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。
 

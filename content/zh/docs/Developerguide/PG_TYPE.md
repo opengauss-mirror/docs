@@ -1,4 +1,4 @@
-# PG\_TYPE<a name="ZH-CN_TOPIC_0289901011"></a>
+# PG\_TYPE
 
 PG\_TYPE系统表存储数据类型的相关信息。
 

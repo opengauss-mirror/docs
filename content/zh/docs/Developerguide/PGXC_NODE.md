@@ -1,4 +1,4 @@
-# PGXC\_NODE<a name="ZH-CN_TOPIC_0000001198172421"></a>
+# PGXC\_NODE
 
 PGXC\_NODE系统表存储集群节点信息。PGXC\_NODE系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。
 

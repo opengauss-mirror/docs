@@ -1,4 +1,4 @@
-# CBO优化器<a name="ZH-CN_TOPIC_0000001088278192"></a>
+# CBO优化器
 
 ## 可获得性<a name="section3480125215575"></a>
 

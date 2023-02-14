@@ -1,4 +1,4 @@
-# DBE\_SQL\_UTIL.show\_sql\_patch<a name="ZH-CN_TOPIC_0000001314153109"></a>
+# DBE\_SQL\_UTIL.show\_sql\_patch
 
 show\_sql\_patch是用于显示给定patch\_name对应的SQL PATCH的接口函数，返回运行结果。
 

@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0245374718"></a>
+# GLOBAL\_STAT\_BAD\_BLOCK
 
 获得各节点的表、索引等文件的读取失败信息。
 

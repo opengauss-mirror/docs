@@ -1,4 +1,4 @@
-# PG\_STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0289900534"></a>
+# PG\_STAT\_BAD\_BLOCK
 
 PG\_STAT\_BAD\_BLOCK视图显示自节点启动后，读取数据时出现Page/CU校验失败的统计信息。
 

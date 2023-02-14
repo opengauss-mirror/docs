@@ -1,4 +1,4 @@
-# 创建XML配置文件<a name="ZH-CN_TOPIC_0270171699"></a>
+# 创建XML配置文件
 
 安装openGauss前需要创建cluster\_config.xml文件。cluster\_config.xml文件包含部署openGauss的服务器信息、安装路径、IP地址以及端口号等。用于告知openGauss如何部署。用户需根据不同场景配置对应的XML文件。
 

@@ -1,4 +1,4 @@
-# PG\_STAT\_BGWRITER<a name="ZH-CN_TOPIC_0289899919"></a>
+# PG\_STAT\_BGWRITER
 
 PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 

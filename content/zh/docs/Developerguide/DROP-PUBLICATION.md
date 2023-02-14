@@ -1,4 +1,4 @@
-# DROP PUBLICATION<a name="ZH-CN_TOPIC_0000001240652289"></a>
+# DROP PUBLICATION
 
 ## **功能描述**<a name="section4742194571517"></a>
 

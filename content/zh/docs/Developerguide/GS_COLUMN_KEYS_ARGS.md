@@ -1,4 +1,4 @@
-# GS\_COLUMN\_KEYS\_ARGS<a name="ZH-CN_TOPIC_0294528095"></a>
+# GS\_COLUMN\_KEYS\_ARGS
 
 GS\_COLUMN\_KEYS\_ARGS系统表记录密态等值特性中客户端加密主密钥相关元数据信息，每条记录对应客户端加密主密钥的一个键值对信息。
 

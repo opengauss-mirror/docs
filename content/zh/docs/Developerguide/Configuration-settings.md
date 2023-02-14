@@ -1,4 +1,4 @@
-# Configuration settings<a name="ZH-CN_TOPIC_0000001215035246"></a>
+# Configuration settings
 
 Configuration settings列名称及描述如下表所示。
 

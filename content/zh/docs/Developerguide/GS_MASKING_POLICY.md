@@ -1,4 +1,4 @@
-# GS\_MASKING\_POLICY<a name="ZH-CN_TOPIC_0306525312"></a>
+# GS\_MASKING\_POLICY
 
 GS\_MASKING\_POLICY系统表记录动态数据脱敏策略的主体信息，每条记录对应一个脱敏策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 

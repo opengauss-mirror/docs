@@ -1,4 +1,4 @@
-# GLOBAL\_BGWRITER\_STAT<a name="ZH-CN_TOPIC_0245374817"></a>
+# GLOBAL\_BGWRITER\_STAT
 
 GLOBAL\_BGWRITER\_STAT视图显示各节点关于后端写进程活动的统计信息。
 

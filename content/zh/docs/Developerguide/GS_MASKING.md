@@ -1,4 +1,4 @@
-# GS\_MASKING<a name="ZH-CN_TOPIC_0306525320"></a>
+# GS\_MASKING
 
 GS\_MASKING视图显示所有已配置的动态脱敏策略信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。
 

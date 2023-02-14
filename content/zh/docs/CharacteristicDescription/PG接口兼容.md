@@ -1,4 +1,4 @@
-# PG接口兼容<a name="ZH-CN_TOPIC_0000001135302877"></a>
+# PG接口兼容
 
 ## 可获得性<a name="section56086982"></a>
 

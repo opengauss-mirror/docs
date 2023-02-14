@@ -1,4 +1,4 @@
-# pg\_resetxlog<a name="ZH-CN_TOPIC_0249632285"></a>
+# pg\_resetxlog
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154813"></a>
 

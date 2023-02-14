@@ -1,4 +1,4 @@
-# 使用Plan Hint进行调优<a name="ZH-CN_TOPIC_0245374566"></a>
+# 使用Plan Hint进行调优
 
 -   **[Plan Hint调优概述](Plan-Hint调优概述.md)**  
 -   **[Join顺序的Hint](Join顺序的Hint.md)**  

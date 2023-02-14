@@ -1,4 +1,4 @@
-# PLPython Fenced模式<a name="ZH-CN_TOPIC_0000001149506467"></a>
+# PLPython Fenced模式
 
 在fenced模式中添加plpython非安全语言。在数据库编译时需要将python集成进数据库中，在configure阶段加入--with-python选项。同时也可指定安装plpython的python路径，添加选项--with-includes='/python-dir=path'。
 

@@ -1,4 +1,4 @@
-# SQLGetData<a name="ZH-CN_TOPIC_0242371453"></a>
+# SQLGetData
 
 ## 功能描述<a name="zh-cn_topic_0238272899_zh-cn_topic_0237120429_zh-cn_topic_0059778461_s4c79ae112a6f415a9fed38561c46eebc"></a>
 

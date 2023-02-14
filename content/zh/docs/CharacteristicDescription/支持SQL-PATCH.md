@@ -1,4 +1,4 @@
-# 支持SQL PATCH<a name="ZH-CN_TOPIC_0000001266435066"></a>
+# 支持SQL PATCH
 
 ## 可获得性<a name="section1964504520318"></a>
 

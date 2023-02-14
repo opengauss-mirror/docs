@@ -1,4 +1,4 @@
-# STAT\_XACT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374710"></a>
+# STAT\_XACT\_USER\_TABLES
 
 显示当前节点命名空间中用户表的事务状态信息。
 

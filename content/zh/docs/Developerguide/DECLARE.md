@@ -1,4 +1,4 @@
-# DECLARE<a name="ZH-CN_TOPIC_0289900564"></a>
+# DECLARE
 
 ## 功能描述<a name="zh-cn_topic_0283137571_zh-cn_topic_0237122130_zh-cn_topic_0059777616_sf3fcf0507ea74a0ba4c4b4cbf0a0a8ba"></a>
 

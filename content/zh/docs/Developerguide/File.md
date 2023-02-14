@@ -1,4 +1,4 @@
-# File<a name="ZH-CN_TOPIC_0245374669"></a>
+# File
 
 -   **[FILE\_IOSTAT](FILE_IOSTAT.md)**
 

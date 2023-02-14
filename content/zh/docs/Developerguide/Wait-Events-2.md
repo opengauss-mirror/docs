@@ -1,4 +1,4 @@
-# Wait Events<a name="ZH-CN_TOPIC_0000001215515174"></a>
+# Wait Events
 
 Wait Events列名称及描述如下表所示。
 

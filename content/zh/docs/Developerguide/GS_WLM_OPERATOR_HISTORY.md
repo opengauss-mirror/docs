@@ -1,4 +1,4 @@
-# GS\_WLM\_OPERATOR\_HISTORY<a name="ZH-CN_TOPIC_0000001105042482"></a>
+# GS\_WLM\_OPERATOR\_HISTORY
 
 GS\_WLM\_OPERATOR\_HISTORY视图显示的是当前用户当前数据库主节点上执行作业结束后的算子的相关记录。查询该视图需要sysadmin权限。
 

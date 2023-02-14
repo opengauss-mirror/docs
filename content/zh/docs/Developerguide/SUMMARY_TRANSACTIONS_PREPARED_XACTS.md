@@ -1,4 +1,4 @@
-# SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS<a name="ZH-CN_TOPIC_0245374755"></a>
+# SUMMARY\_TRANSACTIONS\_PREPARED\_XACTS
 
 显示openGauss中数据库主节点当前准备好进行两阶段提交的事务的信息。
 

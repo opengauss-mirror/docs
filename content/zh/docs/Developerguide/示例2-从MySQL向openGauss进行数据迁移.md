@@ -1,4 +1,4 @@
-# 示例2：从MySQL向openGauss进行数据迁移<a name="ZH-CN_TOPIC_0242370285"></a>
+# 示例2：从MySQL向openGauss进行数据迁移
 
 下面示例演示如何通过CopyManager从MySQL向openGauss进行数据迁移的过程。
 

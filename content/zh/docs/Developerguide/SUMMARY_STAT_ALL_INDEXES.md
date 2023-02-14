@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0245374696"></a>
+# SUMMARY\_STAT\_ALL\_INDEXES
 
 将包含openGauss内汇聚数据库中的每个索引行，显示访问特定索引的统计。
 

@@ -1,4 +1,4 @@
-# DB4AI.PREPARE\_SNAPSHOT<a name="ZH-CN_TOPIC_0000001149391558"></a>
+# DB4AI.PREPARE\_SNAPSHOT
 
 PREPARE\_SNAPSHOT是DB4AI特性中数据准备模型训练和解释快照进行协作。快照为所有应用更改的数据和文档提供了完整的序列。通过语法PREPARE SNAPSHOT调用。
 

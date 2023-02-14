@@ -1,4 +1,4 @@
-# Cache/IO<a name="ZH-CN_TOPIC_0245374772"></a>
+# Cache/IO
 
 -   **[STATIO\_USER\_TABLES](STATIO_USER_TABLES.md)**
 

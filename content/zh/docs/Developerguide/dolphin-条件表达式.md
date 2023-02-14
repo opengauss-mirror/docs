@@ -1,4 +1,4 @@
-# 条件表达式<a name="ZH-CN_TOPIC_0289899945"></a>
+# 条件表达式
 
 相比于原始的openGauss，dolphin对于条件表达式的修改主要为:
 1. 新增```IFNULL/IF```表达式。

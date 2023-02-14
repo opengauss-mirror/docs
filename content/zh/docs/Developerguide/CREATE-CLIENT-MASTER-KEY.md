@@ -1,4 +1,4 @@
-# CREATE CLIENT MASTER KEY<a name="ZH-CN_TOPIC_0294528088"></a>
+# CREATE CLIENT MASTER KEY
 
 ## 功能描述<a name="section1163224811518"></a>
 

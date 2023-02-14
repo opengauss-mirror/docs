@@ -1,4 +1,4 @@
-# 使用gs\_restore命令导入数据<a name="ZH-CN_TOPIC_0000001208139521"></a>
+# 使用gs\_restore命令导入数据
 
 ## 操作场景<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section17330121375310"></a>
 

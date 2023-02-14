@@ -1,4 +1,4 @@
-# STATIO\_ALL\_SEQUENCES<a name="ZH-CN_TOPIC_0245374797"></a>
+# STATIO\_ALL\_SEQUENCES
 
 STATIO\_ALL\_SEQUENCES视图包含数据库中每个序列的每一行，显示特定序列关于I/O的统计。
 

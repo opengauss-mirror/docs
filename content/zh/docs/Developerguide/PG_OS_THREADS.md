@@ -1,4 +1,4 @@
-# PG\_OS\_THREADS<a name="ZH-CN_TOPIC_0289899829"></a>
+# PG\_OS\_THREADS
 
 PG\_OS\_THREADS视图提供当前节点下所有线程的状态信息。
 

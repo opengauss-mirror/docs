@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_XACT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374705"></a>
+# SUMMARY\_STAT\_XACT\_ALL\_TABLES
 
 显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。
 

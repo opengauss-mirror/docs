@@ -1,4 +1,4 @@
-# SQL语法<a name="ZH-CN_TOPIC_0289900416"></a>
+# SQL语法
 
 -   **[ALTER FUNCTION](dolphin-ALTER-FUNCTION.md)**
 

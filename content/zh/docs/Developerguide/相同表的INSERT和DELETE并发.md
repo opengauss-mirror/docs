@@ -1,4 +1,4 @@
-# 相同表的INSERT和DELETE并发<a name="ZH-CN_TOPIC_0242370303"></a>
+# 相同表的INSERT和DELETE并发
 
 事务T1：
 

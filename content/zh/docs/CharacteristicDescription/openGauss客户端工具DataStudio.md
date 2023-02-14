@@ -1,4 +1,4 @@
-# openGauss客户端工具DataStudio<a name="ZH-CN_TOPIC_0000001220227672"></a>
+# openGauss客户端工具DataStudio
 
 ## 可获得性<a name="section56086982"></a>
 

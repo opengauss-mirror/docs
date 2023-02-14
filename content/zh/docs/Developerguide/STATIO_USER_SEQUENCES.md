@@ -1,4 +1,4 @@
-# STATIO\_USER\_SEQUENCES<a name="ZH-CN_TOPIC_0245374779"></a>
+# STATIO\_USER\_SEQUENCES
 
 STATIO\_USER\_SEQUENCE视图显示当前节点的命名空间中所有用户关系表类型为序列的IO状态信息。
 

@@ -1,4 +1,4 @@
-# 基于Foreign Table的数据处理<a name="ZH-CN_TOPIC_0311524283"></a>
+# 基于Foreign Table的数据处理
 
 ## 功能描述<a name="zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 

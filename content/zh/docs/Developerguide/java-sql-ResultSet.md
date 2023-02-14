@@ -1,4 +1,4 @@
-# java.sql.ResultSet<a name="ZH-CN_TOPIC_0289900530"></a>
+# java.sql.ResultSet
 
 java.sql.ResultSet是执行结果集接口。
 

@@ -1,4 +1,4 @@
-# Database和Schema设计<a name="ZH-CN_TOPIC_0000001102948064"></a>
+# Database和Schema设计
 
 openGauss中可以使用Database和Schema实现业务的隔离，区别在于Database的隔离更加彻底，各个Database之间共享资源极少，可实现连接隔离、权限隔离等，Database之间无法直接互访。Schema隔离的方式共用资源较多，可以通过grant与revoke语法便捷地控制不同用户对各Schema及其下属对象的权限。
 

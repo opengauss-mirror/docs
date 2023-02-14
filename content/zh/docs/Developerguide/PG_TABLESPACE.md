@@ -1,4 +1,4 @@
-# PG\_TABLESPACE<a name="ZH-CN_TOPIC_0289901005"></a>
+# PG\_TABLESPACE
 
 PG\_TABLESPACE系统表存储表空间信息。
 

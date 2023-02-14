@@ -1,4 +1,4 @@
-# gs\_collector<a name="ZH-CN_TOPIC_0249632249"></a>
+# gs\_collector
 
 ## 背景信息<a name="zh-cn_topic_0237152334_zh-cn_topic_0059778085_section1813744893314"></a>
 

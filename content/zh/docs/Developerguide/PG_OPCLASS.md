@@ -1,4 +1,4 @@
-# PG\_OPCLASS<a name="ZH-CN_TOPIC_0289899823"></a>
+# PG\_OPCLASS
 
 PG\_OPCLASS系统表定义索引访问方法操作符类。
 

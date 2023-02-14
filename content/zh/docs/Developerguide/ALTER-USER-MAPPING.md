@@ -1,4 +1,4 @@
-# ALTER USER MAPPING<a name="ZH-CN_TOPIC_0289900415"></a>
+# ALTER USER MAPPING
 
 ## 功能描述<a name="zh-cn_topic_0283137333_section38351127909"></a>
 

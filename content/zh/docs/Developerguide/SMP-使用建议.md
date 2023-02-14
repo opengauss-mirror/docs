@@ -1,4 +1,4 @@
-# SMP 使用建议<a name="ZH-CN_TOPIC_0000001085291122"></a>
+# SMP 使用建议
 
 ## 使用限制<a name="section545621551611"></a>
 

@@ -1,4 +1,4 @@
-# PG\_COLLATION<a name="ZH-CN_TOPIC_0289900999"></a>
+# PG\_COLLATION
 
 PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称映射到操作系统本地类别。
 

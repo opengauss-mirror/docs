@@ -1,4 +1,4 @@
-# Forecast：趋势预测<a name="ZH-CN_TOPIC_0000001195431216"></a>
+# Forecast：趋势预测
 
 -   **[概述](概述-63.md)**
 

@@ -1,4 +1,4 @@
-# Global SysCache特性函数<a name="ZH-CN_TOPIC_0000001242498033"></a>
+# Global SysCache特性函数
 
 -   gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)
 

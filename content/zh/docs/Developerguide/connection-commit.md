@@ -1,4 +1,4 @@
-# connection.commit\(\)<a name="ZH-CN_TOPIC_0000001127067907"></a>
+# connection.commit\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

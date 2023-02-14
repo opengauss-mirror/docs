@@ -1,4 +1,4 @@
-# CREATE FUNCTION<a name="ZH-CN_TOPIC_0289900779"></a>
+# CREATE FUNCTION
 
 ## Function <a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
 

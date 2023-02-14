@@ -1,4 +1,4 @@
-# WDR Snapshot 数据表<a name="ZH-CN_TOPIC_0245374866"></a>
+# WDR Snapshot 数据表
 
 WDR Snapshot数据表命名原则：snap\_\{源数据表\}。
 

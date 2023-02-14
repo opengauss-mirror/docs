@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374688"></a>
+# GLOBAL\_STAT\_SYS\_TABLES
 
 得到各节点pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。
 

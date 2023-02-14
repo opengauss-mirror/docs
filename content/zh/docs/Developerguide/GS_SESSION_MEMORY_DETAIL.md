@@ -1,4 +1,4 @@
-# GS\_SESSION\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0289900281"></a>
+# GS\_SESSION\_MEMORY\_DETAIL
 
 GS\_SESSION\_MEMORY\_DETAIL统计会话的内存使用情况，以MemoryContext节点来统计。当开启线程池（enable\_thread\_pool = on）时，该视图包含所有的线程和会话的内存使用情况。当GUC参数enable\_memory\_limit的值为off时，本视图不可用。
 

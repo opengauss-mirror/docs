@@ -1,4 +1,4 @@
-# DROP SCHEMA<a name="ZH-CN_TOPIC_0289900224"></a>
+# DROP SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>
 

@@ -1,3 +1,3 @@
-# libpq接口参考<a name="ZH-CN_TOPIC_0000001166778402"></a>
+# libpq接口参考
 
 请参见[libpq](libpq.md)。

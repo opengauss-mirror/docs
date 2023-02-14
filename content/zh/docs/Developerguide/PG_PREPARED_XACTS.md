@@ -1,4 +1,4 @@
-# PG\_PREPARED\_XACTS<a name="ZH-CN_TOPIC_0289900641"></a>
+# PG\_PREPARED\_XACTS
 
 PG\_PREPARED\_XACTS视图显示当前准备好进行两阶段提交的事务的信息。
 

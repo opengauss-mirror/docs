@@ -1,4 +1,4 @@
-# 概述<a name="ZH-CN_TOPIC_0000001240824995"></a>
+# 概述
 
 Prometheus是业内非常流行的开源监控系统，同时本身也是一款时序数据库。Prometheus的采集端称之为exporter，用来收集被监控模块的指标项。为了与Prometheus平台完成对接，AI工具分别实现了两款exporter，分别是用来采集数据库指标的openGauss-exporter，以及对采集到的指标进行二次加工的reprocessing-exporter。
 

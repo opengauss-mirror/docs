@@ -1,4 +1,4 @@
-# ODBC包及依赖的库和头文件<a name="ZH-CN_TOPIC_0244721234"></a>
+# ODBC包及依赖的库和头文件
 
 ## Linux下的ODBC包<a name="zh-cn_topic_0237120406_zh-cn_topic_0059778054_s4f531225ebb34e5a9d05a3042695060d"></a>
 

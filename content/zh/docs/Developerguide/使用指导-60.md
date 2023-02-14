@@ -1,4 +1,4 @@
-# 使用指导<a name="ZH-CN_TOPIC_0000001196305050"></a>
+# 使用指导
 
 用户可通过gs\_dbmind命令启动对应的exporter。下面为用户演示一个完整的Prometheus监控平台的搭建过程。
 

@@ -1,4 +1,4 @@
-# MOT样例TPC-C基准<a name="ZH-CN_TOPIC_0280525151"></a>
+# MOT样例TPC-C基准
 
 ## TPC-C简介<a name="section46845508"></a>
 

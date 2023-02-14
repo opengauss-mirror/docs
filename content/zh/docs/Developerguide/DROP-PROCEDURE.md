@@ -1,4 +1,4 @@
-# DROP PROCEDURE<a name="ZH-CN_TOPIC_0289900018"></a>
+# DROP PROCEDURE
 
 ## 功能描述<a name="zh-cn_topic_0283137697_zh-cn_topic_0237122145_zh-cn_topic_0059778377_se53c099099b3499097fe40da9daf8b12"></a>
 

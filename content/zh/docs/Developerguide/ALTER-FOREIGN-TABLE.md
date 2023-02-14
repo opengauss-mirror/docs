@@ -1,4 +1,4 @@
-# ALTER FOREIGN TABLE<a name="ZH-CN_TOPIC_0289900030"></a>
+# ALTER FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137201_section178411726125517"></a>
 

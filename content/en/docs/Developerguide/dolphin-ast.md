@@ -1,4 +1,4 @@
-# AST<a name="ZH-CN_TOPIC_0289900704"></a>
+# AST
 
 ## Function <a name="en-us_topic_0283136750_en-us_topic_0237122053_en-us_topic_0059778271_s35ca23dd889c479da90f14c150c52f4b"></a>
 

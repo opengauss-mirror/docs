@@ -1,4 +1,4 @@
-# DV\_SESSION\_LONGOPS<a name="ZH-CN_TOPIC_0000001116401258"></a>
+# DV\_SESSION\_LONGOPS
 
 DV\_SESSION\_LONGOPS视图存储当前正在执行的操作的进度。该视图需要授权访问。
 

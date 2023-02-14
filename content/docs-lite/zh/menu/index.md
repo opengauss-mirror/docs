@@ -104,7 +104,6 @@ headless: true
 		-   [支持标准SQL]({{< relref "./docs/CharacteristicDescription/支持标准SQL.md" >}})
 		-   [支持标准开发接口]({{< relref "./docs/CharacteristicDescription/支持标准开发接口.md" >}})
 		-   [PG接口兼容]({{< relref "./docs/CharacteristicDescription/PG接口兼容.md" >}})
-		-   [支持PL-Java]({{< relref "./docs/CharacteristicDescription/支持PL-Java.md" >}})
 	-   [AI能力]({{< relref "./docs/CharacteristicDescription/AI能力.md" >}})
     -   [AI4DB: 数据库自治运维]({{< relref "./docs/CharacteristicDescription/AI4DB-数据库自治运维.md" >}})
         -   [数据库指标采集、预测与异常监控]({{< relref "./docs/CharacteristicDescription/数据库指标采集-预测与异常监控.md" >}})

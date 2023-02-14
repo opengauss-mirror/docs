@@ -1,4 +1,4 @@
-# PG\_CONSTRAINT<a name="ZH-CN_TOPIC_0289899922"></a>
+# PG\_CONSTRAINT
 
 PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 

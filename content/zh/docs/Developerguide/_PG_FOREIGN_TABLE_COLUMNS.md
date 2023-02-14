@@ -1,4 +1,4 @@
-# \_PG\_FOREIGN\_TABLE\_COLUMNS<a name="ZH-CN_TOPIC_0310260669"></a>
+# \_PG\_FOREIGN\_TABLE\_COLUMNS
 
 显示外部表的列信息。该视图只有sysadmin权限可以查看。
 

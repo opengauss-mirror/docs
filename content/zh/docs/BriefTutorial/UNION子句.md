@@ -1,4 +1,4 @@
-# UNION子句<a name="ZH-CN_TOPIC_0000001180258710"></a>
+# UNION子句
 
 UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列也必须拥有相似的数据类型。同时，每条SELECT语句中的列的顺序必须相同。
 

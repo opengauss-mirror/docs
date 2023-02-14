@@ -1,4 +1,4 @@
-# MERGE INTO<a name="ZH-CN_TOPIC_0289900297"></a>
+# MERGE INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137308_zh-cn_topic_0237122170_section11462163155618"></a>
 

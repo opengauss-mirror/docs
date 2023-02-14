@@ -1,4 +1,4 @@
-# 了解openGauss<a name="ZH-CN_TOPIC_0000001178444496"></a>
+# 了解openGauss
 
 -   **[什么是openGauss](什么是openGauss.md)**
 

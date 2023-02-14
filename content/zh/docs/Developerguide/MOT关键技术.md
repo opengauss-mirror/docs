@@ -1,4 +1,4 @@
-# MOT关键技术<a name="ZH-CN_TOPIC_0280525157"></a>
+# MOT关键技术
 
 MOT的关键技术如下：
 

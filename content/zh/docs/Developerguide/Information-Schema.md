@@ -1,4 +1,4 @@
-# Information Schema<a name="ZH-CN_TOPIC_0310257374"></a>
+# Information Schema
 
 信息模式本身是一个名为information\_schema的模式。这个模式自动存在于所有数据库中。信息模式由一组视图构成，它们包含定义在当前数据库中对象的信息。这个模式的拥有者是初始数据库用户，并且该用户自然地拥有这个模式上的所有特权，包括删除它的能力。
 

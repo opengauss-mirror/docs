@@ -1,4 +1,4 @@
-# Top 10 Events by Total Wait Time<a name="ZH-CN_TOPIC_0000001260075115"></a>
+# Top 10 Events by Total Wait Time
 
 Top 10 Events by Total Wait Time列名称及描述如下表所示。
 

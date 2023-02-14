@@ -1,4 +1,4 @@
-# PG\_AGGREGATE<a name="ZH-CN_TOPIC_0289900746"></a>
+# PG\_AGGREGATE
 
 PG\_AGGREGATE系统表存储与聚集函数有关的信息。PG\_AGGREGATE里的每条记录都是一条pg\_proc里面的记录的扩展。PG\_PROC记录承载该聚集的名称、输入和输出数据类型，以及其它一些和普通函数类似的信息。
 

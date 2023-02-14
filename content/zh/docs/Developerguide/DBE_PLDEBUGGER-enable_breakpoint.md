@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.enable\_breakpoint<a name="ZH-CN_TOPIC_0000001198278163"></a>
+# DBE\_PLDEBUGGER.enable\_breakpoint
 
 debug端调试过程中，调用enable\_breakpoint激活已被禁用的断点。
 

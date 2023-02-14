@@ -1,4 +1,4 @@
-# 注释操作符<a name="ZH-CN_TOPIC_0289900280"></a>
+# 注释操作符
 
 相比于原始的openGauss，dolphin对于注释操作符的修改主要为：
 

@@ -1,4 +1,4 @@
-# 支持LLVM<a name="ZH-CN_TOPIC_0000001088566336"></a>
+# 支持LLVM
 
 ## 可获得性<a name="section3480125215575"></a>
 

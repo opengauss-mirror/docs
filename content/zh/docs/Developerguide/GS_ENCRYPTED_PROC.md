@@ -1,4 +1,4 @@
-# GS\_ENCRYPTED\_PROC<a name="ZH-CN_TOPIC_0000001151424329"></a>
+# GS\_ENCRYPTED\_PROC
 
 GS\_ENCRYPTED\_PROC系统表提供了密态函数/存储过程函数参数、返回值的原始数据类型，加密列等信息。
 

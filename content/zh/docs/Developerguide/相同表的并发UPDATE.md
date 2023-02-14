@@ -1,4 +1,4 @@
-# 相同表的并发UPDATE<a name="ZH-CN_TOPIC_0242370305"></a>
+# 相同表的并发UPDATE
 
 事务T1：
 

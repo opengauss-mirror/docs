@@ -1,4 +1,4 @@
-# PURGE<a name="ZH-CN_TOPIC_0000001151429881"></a>
+# PURGE
 
 ## 功能描述<a name="section625854265112"></a>
 

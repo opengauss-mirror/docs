@@ -1,4 +1,4 @@
-# SMP并行执行<a name="ZH-CN_TOPIC_0000001105395260"></a>
+# SMP并行执行
 
 ## 可获得性<a name="section3480125215575"></a>
 

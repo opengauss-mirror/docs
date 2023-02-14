@@ -1,4 +1,4 @@
-# Anomaly detection: 异常检测<a name="ZH-CN_TOPIC_0000001364416149"></a>
+# Anomaly detection: 异常检测
 
 -   **[概述](概述-67.md)**
 

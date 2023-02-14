@@ -1,4 +1,4 @@
-# PGXC\_SLICE<a name="ZH-CN_TOPIC_0000001152212582"></a>
+# PGXC\_SLICE
 
 PGXC\_SLICE表是针对range范围分布和list分布创建的系统表，用来记录分布具体信息，当前不支持range interval自动扩展分片，不过在系统表中预留。
 

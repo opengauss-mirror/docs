@@ -1,4 +1,4 @@
-# GS\_CLUSTER\_RESOURCE\_INFO<a name="ZH-CN_TOPIC_0289900268"></a>
+# GS\_CLUSTER\_RESOURCE\_INFO
 
 GS\_CLUSTER\_RESOURCE\_INFO视图显示的是所有DN资源的汇总信息。该视图需要设置enable\_dynamic\_workload=on才能查询，并且该视图不支持在DN执行。查询该视图需要sysadmin权限。
 

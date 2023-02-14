@@ -1,4 +1,4 @@
-# DROP FUNCTION<a name="ZH-CN_TOPIC_0289900712"></a>
+# DROP FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_se0a88dccf4a449189e3598bd873250fe"></a>
 

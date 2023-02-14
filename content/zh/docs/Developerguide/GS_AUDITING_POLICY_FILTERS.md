@@ -1,4 +1,4 @@
-# GS\_AUDITING\_POLICY\_FILTERS<a name="ZH-CN_TOPIC_0306525310"></a>
+# GS\_AUDITING\_POLICY\_FILTERS
 
 GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相关信息，每条记录对应一个设计策略。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 

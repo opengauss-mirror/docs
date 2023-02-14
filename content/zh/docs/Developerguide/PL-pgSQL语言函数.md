@@ -1,4 +1,4 @@
-# PL/pgSQL语言函数<a name="ZH-CN_TOPIC_0245374598"></a>
+# PL/pgSQL语言函数
 
 PL/pgSQL是一种可载入的过程语言。
 

@@ -1,4 +1,4 @@
-# PG\_SYNONYM<a name="ZH-CN_TOPIC_0000001126290482"></a>
+# PG\_SYNONYM
 
 PG\_SYNONYM系统表存储同义词对象名与其他数据库对象名间的映射信息。
 

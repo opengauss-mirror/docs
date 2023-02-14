@@ -1,4 +1,4 @@
-# RELEASE SAVEPOINT<a name="ZH-CN_TOPIC_0289899874"></a>
+# RELEASE SAVEPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137262_zh-cn_topic_0237122177_zh-cn_topic_0059778044_section16730316162219"></a>
 

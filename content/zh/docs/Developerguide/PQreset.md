@@ -1,4 +1,4 @@
-# PQreset<a name="ZH-CN_TOPIC_0242380574"></a>
+# PQreset
 
 ## 功能描述<a name="zh-cn_topic_0241735617_section396721820257"></a>
 

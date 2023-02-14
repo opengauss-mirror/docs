@@ -1,4 +1,4 @@
-# SQL on Oracle<a name="ZH-CN_TOPIC_0311524278"></a>
+# SQL on Oracle
 
 ## **概述**<a name="section18645135181515"></a>
 

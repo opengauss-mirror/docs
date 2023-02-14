@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_DATABASE<a name="ZH-CN_TOPIC_0245374700"></a>
+# GLOBAL\_STAT\_DATABASE
 
 视图将包含openGauss中各节点的每个数据库的每一行，显示数据库统计。
 

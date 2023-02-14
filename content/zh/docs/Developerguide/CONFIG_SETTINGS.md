@@ -1,4 +1,4 @@
-# CONFIG\_SETTINGS<a name="ZH-CN_TOPIC_0245374836"></a>
+# CONFIG\_SETTINGS
 
 CONFIG\_SETTINGS视图显示数据库运行时参数的相关信息。
 

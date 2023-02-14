@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374684"></a>
+# SUMMARY\_STAT\_USER\_INDEXES
 
 openGauss内汇聚所有数据库中用户自定义普通表的索引状态信息。
 

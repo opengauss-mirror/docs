@@ -1,4 +1,4 @@
-# SUMMARY\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374674"></a>
+# SUMMARY\_FILE\_REDO\_IOSTAT
 
 openGauss内汇聚所有的Redo（WAL）相关的统计信息。
 

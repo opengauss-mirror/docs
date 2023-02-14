@@ -1,4 +1,4 @@
-# ALTER AUDIT POLICY<a name="ZH-CN_TOPIC_0306525299"></a>
+# ALTER AUDIT POLICY
 
 ## 功能描述<a name="zh-cn_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>
 

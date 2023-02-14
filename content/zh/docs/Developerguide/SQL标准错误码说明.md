@@ -1,4 +1,4 @@
-# SQL标准错误码说明<a name="ZH-CN_TOPIC_0000001208140033"></a>
+# SQL标准错误码说明
 
 根据X/Open和SQL Access Group SQL CAE规范（1992）所进行的定义，SQLERROR返回SQLSTATE值。SQLSTATE值是包含五个字符的字符串，由2个字符的SQL错误类和3个字符的子类构成。五个字符包含数值或者大写字母， 代表各种错误或者警告条件的代码。成功的状态是由00000标识的。SQLSTATE代码大多数情况下都是定义在SQL标准里的。
 

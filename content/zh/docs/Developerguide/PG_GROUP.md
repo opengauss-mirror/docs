@@ -1,4 +1,4 @@
-# PG\_GROUP<a name="ZH-CN_TOPIC_0289900390"></a>
+# PG\_GROUP
 
 PG\_GROUP视图查看数据库认证角色及角色之间的成员关系。
 

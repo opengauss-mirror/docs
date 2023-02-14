@@ -1,4 +1,4 @@
-# CREATE DATA SOURCE<a name="ZH-CN_TOPIC_0289900178"></a>
+# CREATE DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283137069_zh-cn_topic_0237122100_section1697927113919"></a>
 

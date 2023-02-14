@@ -1,4 +1,4 @@
-# GLOBAL\_SHARED\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374668"></a>
+# GLOBAL\_SHARED\_MEMORY\_DETAIL
 
 查询openGauss中所有正常节点下的共享内存上下文的使用信息。
 

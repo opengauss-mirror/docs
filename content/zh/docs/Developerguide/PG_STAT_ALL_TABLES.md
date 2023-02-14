@@ -1,4 +1,4 @@
-# PG\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0289900450"></a>
+# PG\_STAT\_ALL\_TABLES
 
 PG\_STAT\_ALL\_TABLES视图将包含当前数据库中每个表的一行（包括TOAST表），显示访问特定表的统计信息。
 

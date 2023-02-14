@@ -1,4 +1,4 @@
-# GS\_RECYCLEBIN<a name="ZH-CN_TOPIC_0000001151309157"></a>
+# GS\_RECYCLEBIN
 
 gs\_recyclebin描述了回收站对象的详细信息。
 

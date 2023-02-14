@@ -1,4 +1,4 @@
-# FILE\_IOSTAT<a name="ZH-CN_TOPIC_0245374670"></a>
+# FILE\_IOSTAT
 
 通过对数据文件IO的统计，反映数据的IO性能，用以发现IO操作异常等性能问题。
 

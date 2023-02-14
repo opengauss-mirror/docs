@@ -1,4 +1,4 @@
-# GS\_SLOW\_QUERY\_INFO（废弃）<a name="ZH-CN_TOPIC_0000001151141798"></a>
+# GS\_SLOW\_QUERY\_INFO（废弃）
 
 GS\_SLOW\_QUERY\_INFO视图显示当前节点上已经转储的慢查询信息。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](zh-cn_topic_0289900033.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表，开启此功能会占用系统存储空间并对性能有一定影响。用户通过查询GS\_SLOW\_QUERY\_INFO视图，可以查看已经转储的慢查询信息，本版本中已废弃。
 

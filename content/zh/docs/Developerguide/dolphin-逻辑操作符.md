@@ -1,4 +1,4 @@
-# 逻辑操作符<a name="ZH-CN_TOPIC_0289900469"></a>
+# 逻辑操作符
 
 相比于原始的openGauss，dolphin新增了两个逻辑操作符：
 

@@ -1,4 +1,4 @@
-# Anomaly-detection：数据库指标采集、预测与异常监控<a name="ZH-CN_TOPIC_0000001091892904"></a>
+# Anomaly-detection：数据库指标采集、预测与异常监控
 
 ## 可获得性<a name="section1394818443613"></a>
 

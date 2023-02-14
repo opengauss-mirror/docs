@@ -1,4 +1,4 @@
-# AI能力<a name="ZH-CN_TOPIC_0000001091443838"></a>
+# AI能力
 
 -   **[Predictor: AI查询时间预测](Predictor-AI查询时间预测.md)**
 

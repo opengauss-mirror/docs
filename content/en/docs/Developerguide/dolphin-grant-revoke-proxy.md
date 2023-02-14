@@ -1,4 +1,4 @@
-# GRANT/REVOKE PROXY<a name="ZH-CN_TOPIC_0289900448"></a>
+# GRANT/REVOKE PROXY
 
 ## Function <a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_82447c9355baf6b6fe87ecdad394891bca"></a>
 

@@ -1,4 +1,4 @@
-# 字符类型<a name="ZH-CN_TOPIC_0289900587"></a>
+# 字符类型
 
 相比于原始的openGauss，dolphin对于字符类型的修改主要为：
 

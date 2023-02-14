@@ -1,4 +1,4 @@
-# java.sql.PreparedStatement<a name="ZH-CN_TOPIC_0289899873"></a>
+# java.sql.PreparedStatement
 
 java.sql.PreparedStatement是预处理语句接口。
 

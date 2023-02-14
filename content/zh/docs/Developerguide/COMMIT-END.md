@@ -1,4 +1,4 @@
-# COMMIT | END<a name="ZH-CN_TOPIC_0289900020"></a>
+# COMMIT | END
 
 ## 功能描述<a name="zh-cn_topic_0283137519_zh-cn_topic_0237122094_zh-cn_topic_0059779032_sbacb814400404584828c86483f577b12"></a>
 

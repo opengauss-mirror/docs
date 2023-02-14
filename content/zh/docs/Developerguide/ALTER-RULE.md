@@ -1,4 +1,4 @@
-# ALTER RULE<a name="ZH-CN_TOPIC_0306398141"></a>
+# ALTER RULE
 
 ## 功能描述<a name="section1858233912452"></a>
 

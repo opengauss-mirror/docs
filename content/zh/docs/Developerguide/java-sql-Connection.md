@@ -1,4 +1,4 @@
-# java.sql.Connection<a name="ZH-CN_TOPIC_0289900351"></a>
+# java.sql.Connection
 
 java.sql.Connection是数据库连接接口。
 

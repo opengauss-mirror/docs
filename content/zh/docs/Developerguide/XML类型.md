@@ -1,4 +1,4 @@
-# XML类型<a name="ZH-CN_TOPIC_0289900228"></a>
+# XML类型
 
 openGauss支持XML类型，使用示例如下。
 

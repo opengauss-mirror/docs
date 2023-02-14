@@ -1,4 +1,4 @@
-# CREATE DIRECTORY<a name="ZH-CN_TOPIC_0289900765"></a>
+# CREATE DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283136620_zh-cn_topic_0237122101_zh-cn_topic_0059778310_section50807000114421"></a>
 

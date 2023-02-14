@@ -1,4 +1,4 @@
-# GS\_WLM\_EC\_OPERATOR\_STATISTICS<a name="ZH-CN_TOPIC_0000001163041099"></a>
+# GS\_WLM\_EC\_OPERATOR\_STATISTICS
 
 GS\_WLM\_EC\_OPERATOR\_STATISTICS视图显示当前用户正在执行的EC（Extension Connector）作业的算子相关信息。查询该视图需要sysadmin权限。
 

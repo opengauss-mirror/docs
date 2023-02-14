@@ -1,4 +1,4 @@
-# ALTER TABLE PARTITION<a name="ZH-CN_TOPIC_0289900688"></a>
+# ALTER TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 

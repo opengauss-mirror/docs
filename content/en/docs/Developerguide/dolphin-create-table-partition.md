@@ -1,4 +1,4 @@
-# CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0289900346"></a>
+# CREATE TABLE PARTITION
 
 ## Function<a name="en-us_topic_0283136653_en-us_topic_0237122119_section1163224811518"></a>
 

@@ -1,4 +1,4 @@
-# PG\_STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0289900028"></a>
+# PG\_STAT\_SYS\_INDEXES
 
 PG\_STAT\_SYS\_INDEXES视图显示pg\_catalog、information\_schema模式中所有系统表的索引状态信息。
 

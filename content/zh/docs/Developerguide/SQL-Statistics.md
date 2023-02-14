@@ -1,4 +1,4 @@
-# SQL Statistics<a name="ZH-CN_TOPIC_0000001215355222"></a>
+# SQL Statistics
 
 SQL Statistics列名称及描述如下表所示。
 

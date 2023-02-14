@@ -1,4 +1,4 @@
-# PG\_SETTINGS<a name="ZH-CN_TOPIC_0289900570"></a>
+# PG\_SETTINGS
 
 PG\_SETTINGS视图显示数据库运行时参数的相关信息。
 

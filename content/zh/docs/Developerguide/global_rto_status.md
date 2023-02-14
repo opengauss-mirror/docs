@@ -1,4 +1,4 @@
-# global\_rto\_status<a name="ZH-CN_TOPIC_0000001150228308"></a>
+# global\_rto\_status
 
 global\_rto\_status视图显示关于主机和备机的日志流控信息（本节点除外、备DN上不可使用）。
 

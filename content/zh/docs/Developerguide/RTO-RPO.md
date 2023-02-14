@@ -1,4 +1,4 @@
-# RTO & RPO<a name="ZH-CN_TOPIC_0000001196068077"></a>
+# RTO & RPO
 
 -   **[global\_rto\_status](global_rto_status.md)**
 -   **[gs_hadr_local_rto_and_rpo_stat](gs_hadr_local_rto_and_rpo_stat.md)**

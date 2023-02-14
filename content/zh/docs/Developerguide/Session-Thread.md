@@ -1,4 +1,4 @@
-# Session/Thread<a name="ZH-CN_TOPIC_0245374732"></a>
+# Session/Thread
 
 -   **[SESSION\_STAT](SESSION_STAT.md)**
 

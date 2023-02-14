@@ -1,4 +1,4 @@
-# 子链接块名的hint<a name="ZH-CN_TOPIC_0245374573"></a>
+# 子链接块名的hint
 
 ## 功能描述<a name="zh-cn_topic_0237121538_section290819468377"></a>
 

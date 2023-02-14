@@ -1,4 +1,4 @@
-# 案例：**改写SQL消除in-clause**<a name="ZH-CN_TOPIC_0000001382071337"></a>
+# 案例：**改写SQL消除in-clause**
 
 ## 现象描述<a name="zh-cn_topic_0075873761_section47054049113429"></a>
 

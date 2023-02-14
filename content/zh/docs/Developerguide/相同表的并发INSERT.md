@@ -1,4 +1,4 @@
-# 相同表的并发INSERT<a name="ZH-CN_TOPIC_0242370304"></a>
+# 相同表的并发INSERT
 
 事务T1：
 

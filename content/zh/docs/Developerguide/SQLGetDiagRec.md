@@ -1,4 +1,4 @@
-# SQLGetDiagRec<a name="ZH-CN_TOPIC_0242371454"></a>
+# SQLGetDiagRec
 
 ## 功能描述<a name="zh-cn_topic_0238272900_zh-cn_topic_0237120430_zh-cn_topic_0059778032_s0088b32a977e44f5a1e1e2b1523fc51c"></a>
 

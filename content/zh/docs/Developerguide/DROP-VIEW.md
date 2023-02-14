@@ -1,4 +1,4 @@
-# DROP VIEW<a name="ZH-CN_TOPIC_0289900219"></a>
+# DROP VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>
 

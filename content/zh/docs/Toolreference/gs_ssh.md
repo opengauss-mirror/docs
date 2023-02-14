@@ -1,4 +1,4 @@
-# gs\_ssh<a name="ZH-CN_TOPIC_0249632288"></a>
+# gs\_ssh
 
 ## 背景信息<a name="zh-cn_topic_0237152344_zh-cn_topic_0059777951_section12241205518358"></a>
 

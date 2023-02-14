@@ -1,4 +1,4 @@
-# LOCAL\_REL\_IOSTAT<a name="ZH-CN_TOPIC_0245374676"></a>
+# LOCAL\_REL\_IOSTAT
 
 获取当前节点中数据文件IO状态的累计值，显示为所有数据文件IO状态的总和。
 

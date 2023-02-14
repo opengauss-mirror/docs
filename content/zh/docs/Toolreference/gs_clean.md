@@ -1,4 +1,4 @@
-# gs\_clean<a name="ZH-CN_TOPIC_0000001135963605"></a>
+# gs\_clean
 
 ## 背景信息<a name="zh-cn_topic_0059777935_section1572870103317"></a>
 
