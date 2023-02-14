@@ -1,4 +1,4 @@
-# Copy接口支持容错机制<a name="ZH-CN_TOPIC_0000001135302867"></a>
+# Copy接口支持容错机制
 
 ## 可获得性<a name="section56086982"></a>
 

@@ -1,4 +1,4 @@
-# DELETE<a name="ZH-CN_TOPIC_0289900955"></a>
+# DELETE
 
 ## 功能描述<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>
 

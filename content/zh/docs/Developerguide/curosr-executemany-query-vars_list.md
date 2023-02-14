@@ -1,4 +1,4 @@
-# curosr.executemany\(query,vars\_list\)<a name="ZH-CN_TOPIC_0000001080211184"></a>
+# curosr.executemany\(query,vars\_list\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

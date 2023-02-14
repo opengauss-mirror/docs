@@ -1,4 +1,4 @@
-# CREATE INDEX<a name="ZH-CN_TOPIC_0289900160"></a>
+# CREATE INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s10bd477b6f0a4b4687123335b61aa981"></a>
 

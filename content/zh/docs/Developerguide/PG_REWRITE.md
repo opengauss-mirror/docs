@@ -1,4 +1,4 @@
-# PG\_REWRITE<a name="ZH-CN_TOPIC_0289900611"></a>
+# PG\_REWRITE
 
 PG\_REWRITE系统表存储为表和视图定义的重写规则。
 

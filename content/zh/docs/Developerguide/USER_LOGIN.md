@@ -1,4 +1,4 @@
-# USER\_LOGIN<a name="ZH-CN_TOPIC_0245374827"></a>
+# USER\_LOGIN
 
 USER\_LOGIN用来记录用户登录和退出次数的相关信息。
 

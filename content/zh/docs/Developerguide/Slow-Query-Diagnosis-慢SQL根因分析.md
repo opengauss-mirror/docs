@@ -1,4 +1,4 @@
-# Slow Query Diagnosis: 慢SQL根因分析<a name="ZH-CN_TOPIC_0000001240824997"></a>
+# Slow Query Diagnosis: 慢SQL根因分析
 
 -   **[概述](概述-62.md)**
 

@@ -1,4 +1,4 @@
-# GIN提示与技巧<a name="ZH-CN_TOPIC_0289900456"></a>
+# GIN提示与技巧
 
 创建vs插入
 

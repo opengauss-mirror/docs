@@ -1,4 +1,4 @@
-# SQL参考<a name="ZH-CN_TOPIC_0242370407"></a>
+# SQL参考
 
 -   **[openGauss SQL](openGauss-SQL.md)**
 

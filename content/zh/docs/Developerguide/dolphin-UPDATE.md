@@ -1,4 +1,4 @@
-# UPDATE<a name="ZH-CN_TOPIC_0289900207"></a>
+# UPDATE
 
 ## 功能描述<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>
 

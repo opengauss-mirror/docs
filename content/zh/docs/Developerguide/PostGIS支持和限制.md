@@ -1,4 +1,4 @@
-# PostGIS支持和限制<a name="ZH-CN_TOPIC_0000001201437540"></a>
+# PostGIS支持和限制
 
 ## 支持数据类型<a name="section59521232327"></a>
 

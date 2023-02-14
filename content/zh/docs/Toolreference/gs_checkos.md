@@ -1,4 +1,4 @@
-# gs\_checkos<a name="ZH-CN_TOPIC_0249632239"></a>
+# gs\_checkos
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>
 

@@ -1,4 +1,4 @@
-# 什么是openGauss<a name="ZH-CN_TOPIC_0000001223667315"></a>
+# 什么是openGauss
 
 openGauss是一款全面友好开放，携手伙伴共同打造的企业级开源关系型数据库。openGauss提供面向多核架构的极致性能、全链路的业务、数据安全、基于AI的调优和高效运维的能力。openGauss深度融合华为在数据库领域多年的研发经验，结合企业级场景需求，持续构建竞争力特性。openGauss网站 \([https://opengauss.org/zh/](https://opengauss.org/zh/)  \) 提供了有关openGauss软件的最新信息。
 

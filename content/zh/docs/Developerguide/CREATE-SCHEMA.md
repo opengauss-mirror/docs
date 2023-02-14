@@ -1,4 +1,4 @@
-# CREATE SCHEMA<a name="ZH-CN_TOPIC_0289901000"></a>
+# CREATE SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283137491_zh-cn_topic_0237122113_zh-cn_topic_0059777945_s8496918cf41f499098fc49523f02b0d8"></a>
 

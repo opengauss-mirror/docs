@@ -1,4 +1,4 @@
-# CREATE RULE<a name="ZH-CN_TOPIC_0306398142"></a>
+# CREATE RULE
 
 ## 功能描述<a name="section189661819135511"></a>
 

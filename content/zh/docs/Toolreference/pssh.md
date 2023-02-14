@@ -1,4 +1,4 @@
-# pssh<a name="ZH-CN_TOPIC_0000001197461637"></a>
+# pssh
 
 ## 基本功能<a name="section6557202811106"></a>
 

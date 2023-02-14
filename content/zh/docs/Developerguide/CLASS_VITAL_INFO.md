@@ -1,4 +1,4 @@
-# CLASS\_VITAL\_INFO<a name="ZH-CN_TOPIC_0245374826"></a>
+# CLASS\_VITAL\_INFO
 
 CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是否一致。
 

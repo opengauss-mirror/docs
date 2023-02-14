@@ -1,4 +1,4 @@
-# SQL on other openGauss<a name="ZH-CN_TOPIC_0311524280"></a>
+# SQL on other openGauss
 
 -   **[概述](概述.md)**
 

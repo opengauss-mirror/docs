@@ -1,4 +1,4 @@
-# 处理tsvector<a name="ZH-CN_TOPIC_0289900182"></a>
+# 处理tsvector
 
 openGauss提供了用来操作tsvector类型的函数和操作符。
 

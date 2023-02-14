@@ -1,4 +1,4 @@
-# DROP RESOURCE LABEL<a name="ZH-CN_TOPIC_0306525307"></a>
+# DROP RESOURCE LABEL
 
 ## 功能描述<a name="zh-cn_topic_0059777864_s9274542cc63647ee9a7ed300d5e21524"></a>
 

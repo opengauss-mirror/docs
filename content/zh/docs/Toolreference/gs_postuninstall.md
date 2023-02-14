@@ -1,4 +1,4 @@
-# gs\_postuninstall<a name="ZH-CN_TOPIC_0249632244"></a>
+# gs\_postuninstall
 
 ## 背景信息<a name="zh-cn_topic_0237152418_zh-cn_topic_0059778816_section1822511168423"></a>
 

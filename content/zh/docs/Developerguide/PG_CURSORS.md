@@ -1,4 +1,4 @@
-# PG\_CURSORS<a name="ZH-CN_TOPIC_0289900055"></a>
+# PG\_CURSORS
 
 PG\_CURSORS视图列出了当前可用的游标。
 

@@ -1,4 +1,4 @@
-# btree 索引故障情况下应对策略<a name="ZH-CN_TOPIC_0291615109"></a>
+# btree 索引故障情况下应对策略
 
 ## 问题现象<a name="section14883333175911"></a>
 

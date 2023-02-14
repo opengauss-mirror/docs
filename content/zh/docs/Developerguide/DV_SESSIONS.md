@@ -1,4 +1,4 @@
-# DV\_SESSIONS<a name="ZH-CN_TOPIC_0000001116241344"></a>
+# DV\_SESSIONS
 
 DV\_SESSIONS视图存储当前会话的所有会话信息。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。
 

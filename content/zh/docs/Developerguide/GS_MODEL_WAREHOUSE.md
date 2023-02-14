@@ -1,4 +1,4 @@
-# GS\_MODEL\_WAREHOUSE<a name="ZH-CN_TOPIC_0000001110838812"></a>
+# GS\_MODEL\_WAREHOUSE
 
 GS\_MODEL\_WAREHOUSE系统表用于存储AI引擎训练模型，其中包含模型，训练过程的详细描述。
 

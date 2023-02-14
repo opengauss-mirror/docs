@@ -1,4 +1,4 @@
-# SQL on Spark<a name="ZH-CN_TOPIC_0311524279"></a>
+# SQL on Spark
 
 ## **概述**<a name="section18188841175718"></a>
 

@@ -1,4 +1,4 @@
-# OS<a name="ZH-CN_TOPIC_0245374655"></a>
+# OS
 
 -   **[OS\_RUNTIME](OS_RUNTIME.md)**
 

@@ -1,4 +1,4 @@
-# PG\_EXT\_STATS<a name="ZH-CN_TOPIC_0289900237"></a>
+# PG\_EXT\_STATS
 
 PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)表里面的扩展统计信息的访问。扩展统计信息目前包括多列统计信息。
 

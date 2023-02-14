@@ -1,4 +1,4 @@
-# 处理结果集<a name="ZH-CN_TOPIC_0244720265"></a>
+# 处理结果集
 
 ## 设置结果集类型<a name="zh-cn_topic_0237120384_zh-cn_topic_0213179150_zh-cn_topic_0189250321_zh-cn_topic_0059778370_s93cc9b6475b04b76815b70162d174374"></a>
 

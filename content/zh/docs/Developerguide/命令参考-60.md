@@ -1,4 +1,4 @@
-# 命令参考<a name="ZH-CN_TOPIC_0000001240744995"></a>
+# 命令参考
 
 reprocessing-exporter的使用帮助详情：
 

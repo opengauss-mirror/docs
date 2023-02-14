@@ -1,4 +1,4 @@
-# Parallel Page-based Redo For Ustore<a name="ZH-CN_TOPIC_0000001164037824"></a>
+# Parallel Page-based Redo For Ustore
 
 ## 可获得性<a name="section1136213124018"></a>
 

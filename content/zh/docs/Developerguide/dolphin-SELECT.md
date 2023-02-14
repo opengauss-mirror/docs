@@ -1,4 +1,4 @@
-# SELECT<a name="ZH-CN_TOPIC_0289900232"></a>
+# SELECT
 
 ## 功能描述<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_s65596fb5f1d44a428e41dd508d2044a7"></a>
 

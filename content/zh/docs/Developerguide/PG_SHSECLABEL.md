@@ -1,4 +1,4 @@
-# PG\_SHSECLABEL<a name="ZH-CN_TOPIC_0289900523"></a>
+# PG\_SHSECLABEL
 
 PG\_SHSECLABEL系统表存储在共享数据库对象上的安全标签。安全标签可以用SECURITY LABEL命令操作。
 

@@ -1,4 +1,4 @@
-# PG\_GTT\_STATS<a name="ZH-CN_TOPIC_0289900715"></a>
+# PG\_GTT\_STATS
 
 PG\_GTT\_STATS视图查看当前会话所有全局临时表单列统计信息，调用pg\_get\_gtt\_statistics函数。
 

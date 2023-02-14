@@ -1,4 +1,4 @@
-# global\_streaming\_hadr\_rto\_and\_rpo\_stat<a name="ZH-CN_TOPIC_0000001150412640"></a>
+# global\_streaming\_hadr\_rto\_and\_rpo\_stat
 
 **global\_streaming\_hadr\_rto\_and\_rpo\_stat** displays the log flow control information about the primary and standby database instances for streaming DR. This view can be used only by primary database node of the primary database instance. Statistics cannot be obtained from the standby database node or standby database instance.
 

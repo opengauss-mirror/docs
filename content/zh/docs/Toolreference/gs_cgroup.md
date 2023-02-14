@@ -1,4 +1,4 @@
-# gs\_cgroup<a name="ZH-CN_TOPIC_0000001147386014"></a>
+# gs\_cgroup
 
 ## 背景信息<a name="zh-cn_topic_0059777958_s70c9bd657f6844e6a03a4daa7aa46cd6"></a>
 

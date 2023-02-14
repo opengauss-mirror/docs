@@ -1,4 +1,4 @@
-# 支持备机build备机<a name="ZH-CN_TOPIC_0000001223785974"></a>
+# 支持备机build备机
 
 ## 可获得性<a name="section14707931165614"></a>
 

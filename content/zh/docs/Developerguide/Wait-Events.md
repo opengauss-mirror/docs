@@ -1,4 +1,4 @@
-# Wait Events<a name="ZH-CN_TOPIC_0245374832"></a>
+# Wait Events
 
 -   **[WAIT\_EVENTS](WAIT_EVENTS.md)**
 

@@ -1,4 +1,4 @@
-# connection.rollback\(\)<a name="ZH-CN_TOPIC_0000001080371156"></a>
+# connection.rollback\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

@@ -1,4 +1,4 @@
-# CREATE SEQUENCE<a name="ZH-CN_TOPIC_0289899862"></a>
+# CREATE SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>
 

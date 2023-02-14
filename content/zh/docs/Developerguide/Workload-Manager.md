@@ -1,4 +1,4 @@
-# Workload Manager<a name="ZH-CN_TOPIC_0245374851"></a>
+# Workload Manager
 
 -   **[WLM\_USER\_RESOURCE\_CONFIG](WLM_USER_RESOURCE_CONFIG.md)**
 

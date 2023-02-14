@@ -1,4 +1,4 @@
-# CALL<a name="ZH-CN_TOPIC_0289900888"></a>
+# CALL
 
 ## 功能描述<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s17e49a7670334c61978f059adf2cb65d"></a>
 

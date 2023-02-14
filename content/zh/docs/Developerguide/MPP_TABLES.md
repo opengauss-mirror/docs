@@ -1,4 +1,4 @@
-# MPP\_TABLES<a name="ZH-CN_TOPIC_0289900816"></a>
+# MPP\_TABLES
 
 MPP\_TABLES视图显示信息如下。
 

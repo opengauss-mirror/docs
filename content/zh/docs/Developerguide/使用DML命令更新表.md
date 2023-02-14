@@ -1,4 +1,4 @@
-# 使用DML命令更新表<a name="ZH-CN_TOPIC_0242370289"></a>
+# 使用DML命令更新表
 
 openGauss支持标准的数据库操作语言（DML）命令，对表进行更新。
 

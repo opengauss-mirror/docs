@@ -1,4 +1,4 @@
-# PG\_CAST<a name="ZH-CN_TOPIC_0289900432"></a>
+# PG\_CAST
 
 PG\_CAST系统表存储数据类型之间的转化关系。
 

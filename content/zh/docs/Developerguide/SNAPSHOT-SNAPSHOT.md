@@ -1,4 +1,4 @@
-# SNAPSHOT.SNAPSHOT<a name="ZH-CN_TOPIC_0245374864"></a>
+# SNAPSHOT.SNAPSHOT
 
 SNAPSHOT表记录当前系统中存储的WDR快照数据的索引信息、开始时间和结束时间。只能在系统库中查询到结果，在用户库中无法查询。
 

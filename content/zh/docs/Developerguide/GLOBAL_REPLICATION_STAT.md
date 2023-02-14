@@ -1,4 +1,4 @@
-# GLOBAL\_REPLICATION\_STAT<a name="ZH-CN_TOPIC_0245374813"></a>
+# GLOBAL\_REPLICATION\_STAT
 
 GLOBAL\_REPLICATION\_STAT视图用于获得各节点描述日志同步状态信息，如发起端发送日志位置、收端接收日志位置等。
 

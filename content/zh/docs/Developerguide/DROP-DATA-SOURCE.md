@@ -1,4 +1,4 @@
-# DROP DATA SOURCE<a name="ZH-CN_TOPIC_0289900803"></a>
+# DROP DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283136822_zh-cn_topic_0237122135_section324414515172"></a>
 

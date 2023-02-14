@@ -1,4 +1,4 @@
-# dolphin限制<a name="ZH-CN_TOPIC_0000001201437540"></a>
+# dolphin限制
 
 -   不支持小型化版本。
 -   不支持删除dolphin插件。

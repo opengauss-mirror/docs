@@ -1,4 +1,4 @@
-# AI\_SERVER<a name="ZH-CN_TOPIC_0000001106449240"></a>
+# AI\_SERVER
 
 ai\_server为anomaly\_detection特性的分离特性，在原anomaly\_detection数据采集功能的基础上增加了采集类型、采集项、数据存储模式，仅用于数据采集，后续将整合到anomaly\_detection中，该特性主要包含server组件和agent组件，agent须部署到数据库节点，用于数据采集，server部署在独立节点进行数据收集存储。
 

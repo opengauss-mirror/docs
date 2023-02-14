@@ -1,4 +1,4 @@
-# RETURN NEXT及RETURN QUERY<a name="ZH-CN_TOPIC_0245374622"></a>
+# RETURN NEXT及RETURN QUERY
 
 ## 语法<a name="zh-cn_topic_0237122232_section66906369117"></a>
 

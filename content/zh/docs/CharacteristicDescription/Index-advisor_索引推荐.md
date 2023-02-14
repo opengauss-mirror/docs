@@ -1,4 +1,4 @@
-# Index-advisor：索引推荐<a name="ZH-CN_TOPIC_0000001091732976"></a>
+# Index-advisor：索引推荐
 
 ## 可获得性<a name="section17365142913365"></a>
 

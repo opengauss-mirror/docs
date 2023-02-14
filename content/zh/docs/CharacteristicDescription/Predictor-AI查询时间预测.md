@@ -1,4 +1,4 @@
-# Predictor: AI查询时间预测<a name="ZH-CN_TOPIC_0000001151995065"></a>
+# Predictor: AI查询时间预测
 
 ## 可获得性<a name="section56086982"></a>
 

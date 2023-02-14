@@ -1,4 +1,4 @@
-# 卸载openGauss<a name="ZH-CN_TOPIC_0249784556"></a>
+# 卸载openGauss
 
 卸载openGauss的过程包含卸载openGauss和对openGauss服务器的环境做清理。
 

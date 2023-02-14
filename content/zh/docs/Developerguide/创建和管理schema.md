@@ -1,4 +1,4 @@
-# 创建和管理schema<a name="ZH-CN_TOPIC_0242370192"></a>
+# 创建和管理schema
 
 ## 背景信息<a name="zh-cn_topic_0237120306_zh-cn_topic_0059779372_sccec47ed8ad54f89b98b83caf9a0b4fd"></a>
 

@@ -1,4 +1,4 @@
-# In-place Update存储引擎<a name="ZH-CN_TOPIC_0000001168230024"></a>
+# In-place Update存储引擎
 
 ## 可获得性<a name="section1076382216287"></a>
 

@@ -1,4 +1,4 @@
-# FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374673"></a>
+# FILE\_REDO\_IOSTAT
 
 本节点Redo（WAL）相关的统计信息。
 

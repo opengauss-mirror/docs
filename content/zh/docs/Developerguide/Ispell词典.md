@@ -1,4 +1,4 @@
-# Ispell词典<a name="ZH-CN_TOPIC_0289900767"></a>
+# Ispell词典
 
 Ispell词典模板支持词法词典，它可以把一个词的各种语言学形式规范化成相同的词位。比如，一个Ispell英语词典可以匹配搜索词bank的词尾变化和词形变化，如banking、banked、banks、banks'和bank's等。
 

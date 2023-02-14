@@ -1,4 +1,4 @@
-# PG\_COMM\_DELAY<a name="ZH-CN_TOPIC_0311526902"></a>
+# PG\_COMM\_DELAY
 
 PG\_COMM\_DELAY视图展示单个节点的通信库时延状态。
 

@@ -1,4 +1,4 @@
-# ALTER DIRECTORY<a name="ZH-CN_TOPIC_0289899981"></a>
+# ALTER DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_zh-cn_topic_0059778392_sc84e6980912549c4bbd6895f97ac39f1"></a>
 

@@ -1,4 +1,4 @@
-# DB4AI: 数据库驱动AI<a name="ZH-CN_TOPIC_0000001263249913"></a>
+# DB4AI: 数据库驱动AI
 
 ## 可获得性<a name="section1420315335481"></a>
 

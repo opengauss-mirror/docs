@@ -1,4 +1,4 @@
-# Prometheus Exporter组件<a name="ZH-CN_TOPIC_0000001195825108"></a>
+# Prometheus Exporter组件
 
 -   **[概述](概述-60.md)**
 

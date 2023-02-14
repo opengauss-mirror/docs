@@ -1,4 +1,4 @@
-# \_PG\_FOREIGN\_DATA\_WRAPPERS<a name="ZH-CN_TOPIC_0310260667"></a>
+# \_PG\_FOREIGN\_DATA\_WRAPPERS
 
 显示外部数据封装器的信息。该视图只有sysadmin权限可以查看。
 

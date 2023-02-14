@@ -1,4 +1,4 @@
-# CHECKPOINT<a name="ZH-CN_TOPIC_0289900495"></a>
+# CHECKPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137558_zh-cn_topic_0237122089_zh-cn_topic_0059778147_s45168794daa74bc2a308ea3c943e0a93"></a>
 

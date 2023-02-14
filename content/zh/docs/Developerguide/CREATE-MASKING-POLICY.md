@@ -1,4 +1,4 @@
-# CREATE MASKING POLICY<a name="ZH-CN_TOPIC_0306525303"></a>
+# CREATE MASKING POLICY
 
 ## 功能描述<a name="section1163224811518"></a>
 

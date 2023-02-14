@@ -1,4 +1,4 @@
-# 使用COPY FROM STDIN导入数据<a name="ZH-CN_TOPIC_0242370281"></a>
+# 使用COPY FROM STDIN导入数据
 
 -   **[关于COPY FROM STDIN导入数据](关于COPY-FROM-STDIN导入数据.md)**
 

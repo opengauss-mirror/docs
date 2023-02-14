@@ -1,4 +1,4 @@
-# 鲲鹏NUMA架构优化<a name="ZH-CN_TOPIC_0000001135548527"></a>
+# 鲲鹏NUMA架构优化
 
 ## 可获得性<a name="section1820817472142"></a>
 

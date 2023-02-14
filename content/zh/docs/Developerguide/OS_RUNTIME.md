@@ -1,4 +1,4 @@
-# OS\_RUNTIME<a name="ZH-CN_TOPIC_0245374656"></a>
+# OS\_RUNTIME
 
 显示当前操作系统运行的状态信息。
 

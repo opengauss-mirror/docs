@@ -1,4 +1,4 @@
-# PG\_NODE\_ENV<a name="ZH-CN_TOPIC_0289899993"></a>
+# PG\_NODE\_ENV
 
 PG\_NODE\_ENV视图提供获取当前节点的环境变量信息。
 

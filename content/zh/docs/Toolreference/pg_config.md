@@ -1,4 +1,4 @@
-# pg\_config<a name="ZH-CN_TOPIC_0249632265"></a>
+# pg\_config
 
 ## 功能介绍<a name="zh-cn_topic_0237152437_section88358281478"></a>
 

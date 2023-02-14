@@ -1,4 +1,4 @@
-# cursor.fetchone\(\)<a name="ZH-CN_TOPIC_0000001079923112"></a>
+# cursor.fetchone\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

@@ -1,4 +1,4 @@
-# GLOBAL\_SESSION\_STAT<a name="ZH-CN_TOPIC_0245374734"></a>
+# GLOBAL\_SESSION\_STAT
 
 各节点上以会话线程或AutoVacuum线程为单位，统计会话状态信息。
 

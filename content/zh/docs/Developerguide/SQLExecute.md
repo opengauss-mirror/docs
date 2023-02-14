@@ -1,4 +1,4 @@
-# SQLExecute<a name="ZH-CN_TOPIC_0242371446"></a>
+# SQLExecute
 
 ## 功能描述<a name="zh-cn_topic_0238272892_zh-cn_topic_0237120422_zh-cn_topic_0059778182_sab94d410ef5f4a509e8d2881ec7373e7"></a>
 

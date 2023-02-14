@@ -1,4 +1,4 @@
-# Docker中快速运行<a name="ZH-CN_TOPIC_0249784529"></a>
+# Docker中快速运行
 
 Docker中快速运行适合于想快速体验OpenGauss操作的用户.使用Docker在容器中运行OpenGauss,简单易操作，不需要考虑环境配置问题，windows下也可以快速体验。
 

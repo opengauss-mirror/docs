@@ -1,4 +1,4 @@
-# GOTO语句<a name="ZH-CN_TOPIC_0245374628"></a>
+# GOTO语句
 
 GOTO语句可以实现从GOTO位置到目标语句的无条件跳转。GOTO语句会改变原本的执行逻辑，因此应该慎重使用，或者也可以使用EXCEPTION处理特殊场景。当执行GOTO语句时，目标Label必须是唯一的。
 

@@ -1,4 +1,4 @@
-# COMMIT PREPARED<a name="ZH-CN_TOPIC_0289900574"></a>
+# COMMIT PREPARED
 
 ## 功能描述<a name="zh-cn_topic_0283137183_zh-cn_topic_0237122095_zh-cn_topic_0059777686_s06b2916a6c67438087f9f84a0159252a"></a>
 

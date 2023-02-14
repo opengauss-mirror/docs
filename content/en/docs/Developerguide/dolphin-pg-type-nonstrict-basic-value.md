@@ -1,4 +1,4 @@
-# PG\_TYPE\_NONSTRICT\_BASIC\_VALUE<a name="ZH-CN_TOPIC_0000001116241547"></a>
+# PG\_TYPE\_NONSTRICT\_BASIC\_VALUE
 
 PG\_TYPE\_NONSTRICT\_BASIC\_VALUE displays the basic values of the storage type, which are used to insert values(). By default, only the system administrator can access this view. Common users can access the view only after being authorized.
 

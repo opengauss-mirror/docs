@@ -1,4 +1,4 @@
-# SQLBindCol<a name="ZH-CN_TOPIC_0242371440"></a>
+# SQLBindCol
 
 ## 功能描述<a name="zh-cn_topic_0238272886_zh-cn_topic_0237120416_zh-cn_topic_0059779335_s20aba247faad4486a9207cbeafeadb20"></a>
 

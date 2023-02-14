@@ -1,4 +1,4 @@
-# gs\_initdb<a name="ZH-CN_TOPIC_0249632240"></a>
+# gs\_initdb
 
 ## 简介<a name="section7777368159"></a>
 

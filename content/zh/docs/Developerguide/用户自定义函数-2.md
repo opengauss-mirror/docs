@@ -1,4 +1,4 @@
-# 用户自定义函数<a name="ZH-CN_TOPIC_0000001130221229"></a>
+# 用户自定义函数
 
 ## udf\_memory\_limit<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section1765913299426"></a>
 

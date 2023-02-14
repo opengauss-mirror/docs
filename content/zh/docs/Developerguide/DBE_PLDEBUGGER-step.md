@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.step<a name="ZH-CN_TOPIC_0000001162765995"></a>
+# DBE\_PLDEBUGGER.step
 
 debug端调试过程中，如果当前执行的是一个存储过程，则进入该存储过程继续调试，返回该存储过程第一行的行号等信息，如果当前执行的不是存储过程，则和next行为一致，执行该sql后返回下一行的行号等信息。
 

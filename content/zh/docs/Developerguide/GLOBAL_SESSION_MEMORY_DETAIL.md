@@ -1,4 +1,4 @@
-# GLOBAL\_SESSION\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374740"></a>
+# GLOBAL\_SESSION\_MEMORY\_DETAIL
 
 统计各节点的线程的内存使用情况，以MemoryContext节点来统计。
 

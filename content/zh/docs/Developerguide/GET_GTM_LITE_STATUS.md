@@ -1,4 +1,4 @@
-# GET\_GTM\_LITE\_STATUS<a name="ZH-CN_TOPIC_0242385906"></a>
+# GET\_GTM\_LITE\_STATUS
 
 GET\_GTM\_LITE\_STATUS视图是获取GTM上的backupXid和csn，用来支持问题定位。
 

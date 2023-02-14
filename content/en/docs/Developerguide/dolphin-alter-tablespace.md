@@ -1,4 +1,4 @@
-# ALTER TABLESPACE<a name="ZH-CN_TOPIC_0289899866"></a>
+# ALTER TABLESPACE
 
 ## Function <a name="en-us_topic_0283137270_en-us_topic_0237122078_en-us_topic_0059777507_s15c266ccb0b240ddaab9e5fadcfb4313"></a>
 

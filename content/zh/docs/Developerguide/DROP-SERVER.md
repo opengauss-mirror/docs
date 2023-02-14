@@ -1,4 +1,4 @@
-# DROP SERVER<a name="ZH-CN_TOPIC_0289900384"></a>
+# DROP SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283136745_section18987145713527"></a>
 

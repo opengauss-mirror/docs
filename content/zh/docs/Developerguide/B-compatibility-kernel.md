@@ -1,4 +1,4 @@
-# 内核MySQL兼容性说明<a name="ZH-CN_TOPIC_0000001201277572"></a>
+# 内核MySQL兼容性说明
 
 **表 1**  在openGauss内核中实现的MySQL兼容性特性列表
 

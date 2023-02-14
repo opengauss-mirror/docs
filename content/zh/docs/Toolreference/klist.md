@@ -1,4 +1,4 @@
-# klist<a name="ZH-CN_TOPIC_0249632262"></a>
+# klist
 
 ## 功能介绍<a name="zh-cn_topic_0237152431_section10172172474817"></a>
 

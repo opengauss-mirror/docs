@@ -1,4 +1,4 @@
-# JSON/JSONB函数和操作符<a name="ZH-CN_TOPIC_0289900983"></a>
+# JSON/JSONB函数和操作符
 
 JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 

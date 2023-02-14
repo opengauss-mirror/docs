@@ -1,4 +1,4 @@
-# Psycopg<a name="ZH-CN_TOPIC_0000001080051584"></a>
+# Psycopg
 
 Psycopg接口是一套提供给用户的API方法，本节将对部分常用接口做具体描述。
 

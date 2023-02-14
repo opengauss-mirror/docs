@@ -1,4 +1,4 @@
-# gs\_hadr\_local\_rto\_and\_rpo\_stat<a name="ZH-CN_TOPIC_0000001196498547"></a>
+# gs\_hadr\_local\_rto\_and\_rpo\_stat
 
 gs\_hadr\_local\_rto\_and\_rpo\_stat视图显示流式容灾的主数据库实例和备数据库实例日志流控信息（只可在主数据库实例的数据库主节点使用，数据库备节点以及备数据库实例均上不可获取到统计信息）。
 

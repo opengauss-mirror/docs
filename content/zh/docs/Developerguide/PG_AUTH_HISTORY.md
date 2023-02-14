@@ -1,4 +1,4 @@
-# PG\_AUTH\_HISTORY<a name="ZH-CN_TOPIC_0289899841"></a>
+# PG\_AUTH\_HISTORY
 
 PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理员权限才可以访问此系统表。
 

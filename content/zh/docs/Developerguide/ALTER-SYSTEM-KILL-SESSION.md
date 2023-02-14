@@ -1,4 +1,4 @@
-# ALTER SYSTEM KILL SESSION<a name="ZH-CN_TOPIC_0289900551"></a>
+# ALTER SYSTEM KILL SESSION
 
 ## 功能描述<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>
 

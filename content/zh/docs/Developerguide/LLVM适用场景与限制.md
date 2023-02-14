@@ -1,4 +1,4 @@
-# LLVM适用场景与限制<a name="ZH-CN_TOPIC_0245374539"></a>
+# LLVM适用场景与限制
 
 ## 适用场景<a name="zh-cn_topic_0237121504_zh-cn_topic_0066033419_section279430195545"></a>
 

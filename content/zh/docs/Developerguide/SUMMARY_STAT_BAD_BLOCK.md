@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0245374717"></a>
+# SUMMARY\_STAT\_BAD\_BLOCK
 
 获得openGauss内汇聚的表、索引等文件的读取失败信息。
 

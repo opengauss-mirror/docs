@@ -1,4 +1,4 @@
-# LOCK<a name="ZH-CN_TOPIC_0242370632"></a>
+# LOCK
 
 ## 功能描述<a name="zh-cn_topic_0237122168_zh-cn_topic_0059778442_s11c25749bd754f4c98e19b29df2baf41"></a>
 

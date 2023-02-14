@@ -1,4 +1,4 @@
-# SQLConnect<a name="ZH-CN_TOPIC_0242371443"></a>
+# SQLConnect
 
 ## 功能描述<a name="zh-cn_topic_0238272889_zh-cn_topic_0237120419_zh-cn_topic_0059778729_s3748e0b0ff1d4511806e76a6047e4b2b"></a>
 

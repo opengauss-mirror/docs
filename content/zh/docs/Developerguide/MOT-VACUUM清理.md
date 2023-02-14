@@ -1,4 +1,4 @@
-# MOT VACUUM清理<a name="ZH-CN_TOPIC_0280525146"></a>
+# MOT VACUUM清理
 
 使用VACUUM进行垃圾收集，并有选择地分析数据库，如下所示。
 

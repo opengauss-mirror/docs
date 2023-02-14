@@ -1,4 +1,4 @@
-# PG\_SET<a name="ZH-CN_TOPIC_0000001369984861"></a>
+# PG\_SET
 
 PG\_SET系统表存储SET数据类型定义的元数据。
 

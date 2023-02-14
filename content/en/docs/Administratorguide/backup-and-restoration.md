@@ -2409,7 +2409,7 @@ gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 
 
 
-### gs\_backup<a name="ZH-CN_TOPIC_0000001179389636"></a>
+### gs\_backup
 
 #### Background<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
 

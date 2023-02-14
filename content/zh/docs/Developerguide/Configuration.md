@@ -1,4 +1,4 @@
-# Configuration<a name="ZH-CN_TOPIC_0245374835"></a>
+# Configuration
 
 -   **[CONFIG\_SETTINGS](CONFIG_SETTINGS.md)**
 

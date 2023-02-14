@@ -1,4 +1,4 @@
-# 查看WDR报告<a name="ZH-CN_TOPIC_0000001215195224"></a>
+# 查看WDR报告
 
 -   **[Database Stat](Database-Stat.md)**
 

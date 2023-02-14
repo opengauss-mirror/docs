@@ -1,4 +1,4 @@
-# PQgetCancel<a name="ZH-CN_TOPIC_0242380588"></a>
+# PQgetCancel
 
 ## 功能描述<a name="zh-cn_topic_0241735636_section5708152714306"></a>
 

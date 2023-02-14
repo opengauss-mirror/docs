@@ -1,4 +1,4 @@
-# WORKLOAD\_TRANSACTION<a name="ZH-CN_TOPIC_0245374725"></a>
+# WORKLOAD\_TRANSACTION
 
 当前节点上负载的事务信息。
 

@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS<a name="ZH-CN_TOPIC_0245374714"></a>
+# SUMMARY\_STAT\_XACT\_USER\_FUNCTIONS
 
 视图包含openGauss内汇聚的本事务内函数执行的统计信息。
 

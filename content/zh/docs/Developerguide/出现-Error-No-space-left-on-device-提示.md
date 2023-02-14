@@ -1,4 +1,4 @@
-# 出现“Error:No space left on device”提示<a name="ZH-CN_TOPIC_0291615090"></a>
+# 出现“Error:No space left on device”提示
 
 ## 问题现象<a name="section668912633713"></a>
 

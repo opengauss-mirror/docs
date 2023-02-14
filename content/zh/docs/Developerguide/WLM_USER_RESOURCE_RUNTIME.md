@@ -1,4 +1,4 @@
-# WLM\_USER\_RESOURCE\_RUNTIME<a name="ZH-CN_TOPIC_0245374858"></a>
+# WLM\_USER\_RESOURCE\_RUNTIME
 
 WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要使用管理员用户进行查询。此视图在GUC参数“use\_workload\_manager”为“on”时才有效。
 

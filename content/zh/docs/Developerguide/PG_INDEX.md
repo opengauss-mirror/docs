@@ -1,4 +1,4 @@
-# PG\_INDEX<a name="ZH-CN_TOPIC_0289900943"></a>
+# PG\_INDEX
 
 PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG\_CLASS中。
 

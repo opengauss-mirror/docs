@@ -1,4 +1,4 @@
-# ALTER SEQUENCE<a name="ZH-CN_TOPIC_0289900494"></a>
+# ALTER SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s806d414edb004fa89cd50a1166d1136e"></a>
 

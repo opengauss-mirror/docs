@@ -1,4 +1,4 @@
-# 智能Explain: SQL语句查询时间预测<a name="ZH-CN_TOPIC_0289900436"></a>
+# 智能Explain: SQL语句查询时间预测
 
 -   **[概述](概述-65.md)**
 

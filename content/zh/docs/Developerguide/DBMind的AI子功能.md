@@ -1,4 +1,4 @@
-# DBMind的AI子功能<a name="ZH-CN_TOPIC_0000001198483454"></a>
+# DBMind的AI子功能
 
 用户可以通过gs\_dbmind的component子命令启动对应的AI子功能，下述章节展示不同AI功能的具体内容和使用详情。
 

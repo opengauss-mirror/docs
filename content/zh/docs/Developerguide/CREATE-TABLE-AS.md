@@ -1,4 +1,4 @@
-# CREATE TABLE AS<a name="ZH-CN_TOPIC_0289900336"></a>
+# CREATE TABLE AS
 
 ## 功能描述<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sf40d8ce0a2af4856a44d883e623632b9"></a>
 

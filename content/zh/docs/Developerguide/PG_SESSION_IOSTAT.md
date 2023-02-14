@@ -1,4 +1,4 @@
-# PG\_SESSION\_IOSTAT<a name="ZH-CN_TOPIC_0000001151882223"></a>
+# PG\_SESSION\_IOSTAT
 
 PG\_SESSION\_IOSTAT视图显示当前用户执行作业正在运行时的IO负载管理相关信息。查询该视图需要sysadmin权限或者monitor admin权限。
 

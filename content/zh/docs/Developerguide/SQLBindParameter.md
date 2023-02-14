@@ -1,4 +1,4 @@
-# SQLBindParameter<a name="ZH-CN_TOPIC_0242371441"></a>
+# SQLBindParameter
 
 ## 功能描述<a name="zh-cn_topic_0238272887_zh-cn_topic_0237120417_zh-cn_topic_0059778788_s9699227cd3d64b43b542e3e3b9a52f37"></a>
 

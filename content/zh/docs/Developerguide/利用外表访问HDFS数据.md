@@ -1,4 +1,4 @@
-# 利用外表访问HDFS数据<a name="ZH-CN_TOPIC_0311524273"></a>
+# 利用外表访问HDFS数据
 
 openGauss创建的HDFS外表的数据类型要和HDFS上通过Hadoop HIVE创建的结构化表定义的数据类型相匹配。HDFS上Hadoop结构化数据表的定义参见HIVE官方文档描述。
 

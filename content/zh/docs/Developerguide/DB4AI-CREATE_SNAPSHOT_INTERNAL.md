@@ -1,4 +1,4 @@
-# DB4AI.CREATE\_SNAPSHOT\_INTERNAL<a name="ZH-CN_TOPIC_0000001149551352"></a>
+# DB4AI.CREATE\_SNAPSHOT\_INTERNAL
 
 CREATE\_SNAPSHOT\_INTERNAL是db4ai.create\_snapshot函数的内置执行函数。函数存在信息校验，无法直接调用。
 

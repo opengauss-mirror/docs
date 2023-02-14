@@ -1,4 +1,4 @@
-# PG\_ENUM<a name="ZH-CN_TOPIC_0289900547"></a>
+# PG\_ENUM
 
 PG\_ENUM系统表包含显示每个枚举类型值和标签的记录。给定枚举类型的内部表示实际上是PG\_ENUM里面相关行的OID。
 

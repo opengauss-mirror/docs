@@ -1,4 +1,4 @@
-# PG\_DB\_ROLE\_SETTING<a name="ZH-CN_TOPIC_0289900360"></a>
+# PG\_DB\_ROLE\_SETTING
 
 PG\_DB\_ROLE\_SETTING系统表存储数据库运行时每个角色与数据绑定的配置项的默认值。
 

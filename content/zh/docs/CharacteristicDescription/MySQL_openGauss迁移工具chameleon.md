@@ -1,4 +1,4 @@
-# MySQL-\>openGauss迁移工具chameleon<a name="ZH-CN_TOPIC_0000001264707837"></a>
+# MySQL-\>openGauss迁移工具chameleon
 
 ## 可获得性<a name="section56086982"></a>
 

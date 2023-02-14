@@ -1,4 +1,4 @@
-# 关于COPY FROM STDIN导入数据<a name="ZH-CN_TOPIC_0242370282"></a>
+# 关于COPY FROM STDIN导入数据
 
 用户可以使用以下方式通过COPY FROM STDIN语句直接向openGauss写入数据。
 

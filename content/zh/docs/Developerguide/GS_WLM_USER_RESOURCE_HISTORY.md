@@ -1,4 +1,4 @@
-# GS\_WLM\_USER\_RESOURCE\_HISTORY<a name="ZH-CN_TOPIC_0000001152202091"></a>
+# GS\_WLM\_USER\_RESOURCE\_HISTORY
 
 GS\_WLM\_USER\_RESOURCE\_HISTORY系统表存储与用户使用资源相关的信息。该系统表的每条记录都是对应时间点某用户的资源使用情况，包括：内存、CPU核数、存储空间、临时空间、算子落盘空间、逻辑IO流量、逻辑IO次数和逻辑IO速率信息。其中，内存、CPU、IO相关监控项仅记录用户复杂作业的资源使用情况。对于IO相关监控项，当参数enable\_logical\_io\_statistics为on时才有效；当参数enable\_user\_metric\_persistent为on时，才会开启用户监控数据保存功能。GS\_WLM\_USER\_RESOURCE\_HISTORY系统表的数据来源于PG\_TOTAL\_USER\_RESOURCE\_INFO视图。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。
 

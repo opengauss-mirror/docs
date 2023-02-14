@@ -1,4 +1,4 @@
-# PG\_PROC<a name="ZH-CN_TOPIC_0289900818"></a>
+# PG\_PROC
 
 PG\_PROC系统表存储函数或过程的信息。
 

@@ -1,4 +1,4 @@
-# BGWRITER\_STAT<a name="ZH-CN_TOPIC_0245374816"></a>
+# BGWRITER\_STAT
 
 BGWRITER\_STAT视图显示关于后端写进程活动的统计信息。
 

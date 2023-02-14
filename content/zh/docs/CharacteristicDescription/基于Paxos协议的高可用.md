@@ -1,4 +1,4 @@
-# 基于Paxos协议的高可用<a name="ZH-CN_TOPIC_0000001241071899"></a>
+# 基于Paxos协议的高可用
 
 ## 可获得性<a name="section57017810"></a>
 

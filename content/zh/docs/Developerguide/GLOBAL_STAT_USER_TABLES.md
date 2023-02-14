@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374682"></a>
+# GLOBAL\_STAT\_USER\_TABLES
 
 得到各节点所有命名空间中用户自定义普通表的状态信息。
 

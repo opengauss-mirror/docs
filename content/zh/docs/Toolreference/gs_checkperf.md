@@ -1,4 +1,4 @@
-# gs\_checkperf<a name="ZH-CN_TOPIC_0249632246"></a>
+# gs\_checkperf
 
 ## 背景信息<a name="zh-cn_topic_0237152332_zh-cn_topic_0059778118_section1646074516325"></a>
 

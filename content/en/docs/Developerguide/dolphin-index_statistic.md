@@ -1,4 +1,4 @@
-# INDEX\_STAITISTIC<a name="ZH-CN_TOPIC_0000001116241547"></a>
+# INDEX\_STAITISTIC
 
 INDEX\_STAITISTIC displays information about indexes in the current database.
 

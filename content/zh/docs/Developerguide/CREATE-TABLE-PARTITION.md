@@ -1,4 +1,4 @@
-# CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0289900346"></a>
+# CREATE TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>
 

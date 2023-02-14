@@ -1,4 +1,4 @@
-# Undo系统函数<a name="ZH-CN_TOPIC_0000001135762588"></a>
+# Undo系统函数
 
 -   gs\_undo\_meta\(type, zoneId, location\)
 

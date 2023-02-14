@@ -1,4 +1,4 @@
-# DROP RULE<a name="ZH-CN_TOPIC_0306398143"></a>
+# DROP RULE
 
 ## 功能描述<a name="section5400959952"></a>
 

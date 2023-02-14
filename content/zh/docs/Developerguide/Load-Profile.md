@@ -1,4 +1,4 @@
-# Load Profile<a name="ZH-CN_TOPIC_0000001215355218"></a>
+# Load Profile
 
 Load Profile指标名称及描述如下表所示。
 

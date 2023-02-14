@@ -1,4 +1,4 @@
-# Undo<a name="ZH-CN_TOPIC_0000001129789643"></a>
+# Undo
 
 ## undo\_space\_limit\_size<a name="section13674152315117"></a>
 

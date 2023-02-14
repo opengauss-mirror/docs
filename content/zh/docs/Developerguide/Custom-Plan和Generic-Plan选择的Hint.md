@@ -1,4 +1,4 @@
-# Custom Plan和Generic Plan选择的Hint<a name="ZH-CN_TOPIC_0000001096560522"></a>
+# Custom Plan和Generic Plan选择的Hint
 
 ## 功能描述<a name="section290819468377"></a>
 
