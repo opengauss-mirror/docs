@@ -118,7 +118,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   从集群中踢出非当前节点，第一个参数是要移除的节点id
 
     ```
-    dsscmd kickh <-i inst_id> [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd kickh <-i inst_id> [-D DSS_HOME]
     ```
 
 -   将节点添加到集群，不走服务端
@@ -130,8 +130,11 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   将节点从集群中移除，不走服务端
 
     ```
-    dsscmd unreghl <-i inst_id> [-D DSS_HOME]
+    dsscmd unreghl <-i inst_id> [-t type] [-D DSS_HOME]
     ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   type: 值为int类型，0表示不使用vg锁，非0表示使用vg锁，默认值为1。
 
 -   扫描并打开指定路径下指定用户和属组的盘符，不走服务端
 
@@ -258,7 +261,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   清理dss内部的锁资源
 
     ```
-    dsscmd clean [-D DSS_HOME]
+    dsscmd clean_vglock [-D DSS_HOME]
     ```
 
 
