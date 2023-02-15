@@ -167,11 +167,11 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 4.  Install the libraries that PostGIS depends on.
     1.  Obtain the PostGIS source code from  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz). Save it to the  *$GAUSSHOME*  directory. Download the compressed package, decompress it, and rename the folder  **postgis-xc**.
 
-    2.  Download the patch file from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-1.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
+    2.  Download the patch file from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
 
         ```
         cd $GAUSSHOME/postgis-xc/
-        patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
+        patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
         ```
 
     3.  Download the header file on which PostGIS depends from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h. Save the header file to *$GAUSSHOME***/include/postgresql/server/**.
