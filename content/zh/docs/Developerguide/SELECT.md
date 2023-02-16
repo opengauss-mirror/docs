@@ -513,7 +513,18 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   - 如果对于所有声明的表达式都相同，则按随机顺序返回。
 
-  - 在与DISTINCT关键字一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。例外：在兼容B模式下，ORDER BY可以支持表达式，其中引用的列必须在DISTINCT中，当[allow_orderby_undistinct_column](平台和客户端兼容性.md)参数打开时，ORDER BY中的列可以不在DISTINCT中。此例外只支持DISTINCT语法，不支持DISTINCT ON语法。
+  - 在与DISTINCT关键字一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
+    >![](public_sys-resources/icon-notice.gif) **例外：**
+    >
+    > 在兼容B模式下，ORDER BY 可以支持表达式，其中引用的列必须在 DISTINCT 中。
+    >
+    > 在兼容B模式下，以下两种方式可以让 ORDER BY 引用的列不必在 DISTINCT 中：
+    >
+    > - DOLPHIN 插件存在时，dolphin.sql_mode 参数未设置 sql_mode_full_group 选项。
+    >
+    > - DOLPHIN 插件不存在时，behavior_compat_options 参数设置 allow_orderby_undistinct_column 选项。
+    >
+    > 注意：本例外只支持DISTINCT语法，不支持DISTINCT ON语法。
 
   - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
