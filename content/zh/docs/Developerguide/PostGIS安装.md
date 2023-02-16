@@ -169,11 +169,11 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
 
-    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-1.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
+    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
 
     ```
     cd $GAUSSHOME/postgis-xc/
-    patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
+    patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
     3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。 
