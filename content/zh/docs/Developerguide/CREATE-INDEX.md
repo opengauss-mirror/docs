@@ -23,6 +23,7 @@
 -   HASH索引目前仅限于行存表索引、临时表索引和分区表LOCAL索引，且不支持创建多字段索引。
 -   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 -   如果表达式索引中调用的是用户自定义函数，按照函数创建者权限执行表达式索引函数。
+-   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -35,6 +36,7 @@
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
       [ TABLESPACE tablespace_name ]
       [ COMMENT text ]
+      [ VISIBLE | INVISIBLE ]
       [ WHERE predicate ];
   ```
 
@@ -47,6 +49,7 @@
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ]
+        [ VISIBLE | INVISIBLE ]
         [ WHERE predicate ];
     ```
 
@@ -239,6 +242,10 @@
 -   **COMMENT text**
 
     指定索引的注释，如果没有声明则注释为空。
+
+-   **VISIBLE | INVISIBLE**
+
+    指定索引是否可见，如果没有声明则默认为VISIBLE。
 
 - **WHERE predicate**
 
