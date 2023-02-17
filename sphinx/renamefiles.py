@@ -49,7 +49,6 @@ def replace_md_name(file, filemap):
     file_data = ""
     with open(file, "r", encoding="utf-8") as f:
         for line in f:
-            # lines = line.split('/')
             oldname = line.split('/')[-1].strip()
             if line.strip().startswith('../') and oldname in filemap:
                 line = line.replace(oldname, filemap.get(oldname))
@@ -67,8 +66,7 @@ def replace_rst_name(file, rstfilemap):
         for line in f:
             if 'toctree' in line:
                 flag = 1
-            lines = line.split('/')
-
+                
             oldname = line.split('/')[-1].strip()
             if flag and oldname in filemap and not line.strip().startswith('../'):
                 line = line.replace(oldname, filemap.get(oldname))
