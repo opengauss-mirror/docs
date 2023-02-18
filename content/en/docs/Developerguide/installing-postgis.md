@@ -224,6 +224,19 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
             ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
             ```
 
+        -   Gdal
+
+            ```
+            cd $GAUSSHOME/postgis-xc/gdal-1.11.0
+            chmod +x ./configure
+            chmod +x ./install-sh
+            ./configure --prefix=$GAUSSHOME/install/gdal --with-xml2=$GAUSSHOME/install/libxml2/bin/xml2-config --with-geos=$GAUSSHOME/install/geos/bin/geos-config --with-static_proj4=$GAUSSHOME/install/proj CFLAGS='-O2 -fpermissive -pthread'
+            make -sj
+            make install -sj
+            ```
+
+            If a message similar to "/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la cannot be found" is displayed during compilation, create a directory, copy  **libstdc++.la**  to the directory, and run  **make -sj**. \(If similar problems occur in  **libstdc++.so**, use the same method.\)
+
         -   PostGIS
 
             ```
@@ -234,7 +247,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
             make install -sj
             ```
 
-        If a message similar to "/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la cannot be found" is displayed during compilation, create a directory, copy  **libstdc++.la**  to the directory, and run  **make -sj**. \(If similar problems occur in  **libstdc++.so**, use the same method.\)
+            If make-sj reports a missing openGauss header, For details, see the postgis installation document in the third_party repository https://gitee.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis, such as lack of: h storage/file/fio_device.h storage/file/fio_device_com.h ddes/dms/ss_aio.h ddes/dms/ss_dms_recovery.h h ddes/dms/ss_common_attr.h ddes/dms/ss_init.h storage/dss/dss_api_def.h) Names of the seven header files. Copy it to the compiled and installed database in the dest/include directory.
 
     5.  Execute the script file  **PostGIS\_install.sh**  in the  *$GAUSSHOME***/share/postgis**  directory as user  **omm**  to distribute those dynamic link libraries to database instance nodes.
 
