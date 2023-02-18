@@ -106,10 +106,11 @@
     index_option:{
     	  COMMENT 'string'
     	| index_type
+      | [ VISIBLE | INVISIBLE ]
     }
     ```
     
-    COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
+    COMMENT、index_type、[ VISIBLE | INVISIBLE ] 的顺序和数量任意，但相同字段仅最后一个值生效。
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 

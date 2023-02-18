@@ -565,7 +565,7 @@ dayname
 
 **默认值**：加载dolphin协议插件时，当前会话的database_name
 
-## dolphin.dolphin.div_precision_increment<a name="section203671436846"></a>
+## dolphin.div_precision_increment<a name="section203671436846"></a>
 
 **参数说明**：此变量指定使用/运算符执行除法运算的结果的小数位数。
 
@@ -578,3 +578,33 @@ dayname
 **取值范围**：[0, 30]
 
 **默认值**：4
+
+## dolphin.optimizer_switch<a name="section203671436846"></a>
+
+**参数说明**：控制优化器行为，该参数是一系列控制选项的集合。当前支持的控制选项如下：
+
+  | 选项名               | 默认   | 功能                |
+  | ------------------- | ------ | ------------------- | 
+  |use_invisible_index	| off    | 控制是否使用不可见索引 |
+
+该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：字符串
+
+**有效取值**: 各选项以逗号隔开，如下。
+
+optimizer_switch='command[,command]...'
+
+  | command               | 描述                |
+  | ------------------- | ------------------ | 
+  | default	|  将所有控制选项设为其默认值 |
+  | opt_name = default	|  将指定控制选项设为其默认值 |
+  | opt_name = off	|  将指定控制选项设为关闭 |
+  | opt_name = on	|  将指定控制选项设为打开 |
+
+**默认值**：default
+
+**示例**：
+```
+openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = on';
+```
