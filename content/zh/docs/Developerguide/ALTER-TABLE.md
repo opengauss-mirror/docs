@@ -20,6 +20,7 @@
 -   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 -   重命名时，不能与当前命名空间的synonym产生命名冲突。
 -   设置命名空间时，不能与当前命名空间的synonym产生命名冲突。
+-   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
@@ -65,6 +66,7 @@
         | REPLICA IDENTITY { DEFAULT | USING INDEX index_name | FULL | NOTHING }
         | AUTO_INCREMENT [ = ] value
         | COMMENT {=| } 'text'
+        | ALTER INDEX index_name [ VISBLE | INVISIBLE ]
     ```
     
 
@@ -194,6 +196,10 @@
 
   修改表对象的注释。
 
+- **ALTER INDEX index_name [ VISBLE | INVISIBLE ]**
+
+  修改索引的可见性。
+
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
@@ -308,8 +314,8 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
     ```
     [ CONSTRAINT [ constraint_name ] ]
     	{ CHECK ( expression ) |
-    	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters |
-    	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters |
+    	  UNIQUE [ idx_name ] [ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+    	  PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] }[, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
     	  PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
     	  FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
     	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
@@ -617,6 +623,10 @@ ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ c
 -   **schema\_name**
 
     表所在的模式名称。
+
+-   **VISIBLE | INVISIBLE**
+
+    指定索引是否可见，如果没有声明则默认为VISIBLE。
 
 
 ## 示例<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>

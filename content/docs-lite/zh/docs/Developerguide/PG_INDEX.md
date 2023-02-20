@@ -162,6 +162,13 @@ PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG
 <td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="p1065161015012"><a name="p1065161015012"></a><a name="p1065161015012"></a>索引中的总字段数，超出indnatts的部分不参与索引查询。</p>
 </td>
 </tr>
+<tr id="row16501010404"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="p86518101709"><a name="p86518101709"></a><a name="p86518101709"></a>indisvisible</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.04%" headers="mcps1.2.4.1.2 "><p id="p36516107017"><a name="p36516107017"></a><a name="p36516107017"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="p1065161015012"><a name="p1065161015012"></a><a name="p1065161015012"></a>索引是否可见。如果为假，表示此索引对优化器不可见，但仍然维护。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
