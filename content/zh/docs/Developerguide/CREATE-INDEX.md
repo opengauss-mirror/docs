@@ -29,7 +29,7 @@
 - 在表上创建索引。
 
   ```
-  CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
+  CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ [schema_name.]index_name ] ON table_name [ USING method ]
       ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
       [ INCLUDE ( column_name [, ...] )]    
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
@@ -41,7 +41,7 @@
 -   在分区表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ] ON table_name [ USING method ]
+    CREATE [ UNIQUE ] INDEX [ IF NOT EXISTS ] [ [schema_name.]index_name ] ON table_name [ USING method ]
         ( {{ column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name | SUBPARTITION index_subpartition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ INCLUDE ( column_name [, ...] )]
