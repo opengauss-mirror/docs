@@ -71,7 +71,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ STATS_PERSISTENT [=] value ]
         [ STATS_SAMPLE_PAGES [=] value ]
         [ UNION [=] (tbl_name[,tbl_name]...) ]
-        [ TABLESPACE tablespace_name [STORAGE DISK] ]
+        [ TABLESPACE tablespace_name STORAGE DISK ]
         [ [TABLESPACE tablespace_name] STORAGE MEMORY ]
 
     除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
@@ -215,6 +215,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     用于指定辅助存储引擎的表属性；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
 
+-   **START TRANSACTION**
+
+    用于开启事务模式；目前该特性仅有语法支持，不实现功能。
+
 -   **STATS\_AUTO\_RECALC \[=\] value**
 
     用于指定是否自动重新计算表的持久统计信息；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
@@ -226,6 +230,18 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **STATS\_SAMPLE\_PAGES \[=\] value**
 
     用于指定估计索引列的基数和其他统计信息时要采样的索引页数；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数。
+
+-   **UNION \[=\] (tbl\_name\[,tbl\_name\]...)**
+
+    用于访问一组相同的表作为一个表；目前该特性仅有语法支持，不实现功能。
+
+-   **TABLESPACE tablespace\_name STORAGE DISK**
+
+    用于指定表存储在磁盘；目前该特性仅有语法支持，不实现功能。
+
+-   **\[TABLESPACE tablespace\_name\] STORAGE MEMORY**
+
+    用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
 
 ## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
