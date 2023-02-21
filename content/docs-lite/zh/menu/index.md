@@ -1058,6 +1058,7 @@ headless: true
 			-   [PG\_STATISTIC]({{< relref "./docs/Developerguide/PG_STATISTIC.md" >}})
 			-   [PG\_STATISTIC\_EXT]({{< relref "./docs/Developerguide/PG_STATISTIC_EXT.md" >}})
 			-   [PG\_SUBSCRIPTION]({{< relref "./docs/Developerguide/PG_SUBSCRIPTION.md" >}})
+			-   [PG\_SUBSCRIPTION\_REL]({{< relref "./docs/Developerguide/PG_SUBSCRIPTION_REL.md" >}})
 			-   [PG\_SYNONYM]({{< relref "./docs/Developerguide/PG_SYNONYM.md" >}})
 			-   [PG\_TABLESPACE]({{< relref "./docs/Developerguide/PG_TABLESPACE.md" >}})
 			-   [PG\_TRIGGER]({{< relref "./docs/Developerguide/PG_TRIGGER.md" >}})
