@@ -309,7 +309,7 @@
 
     Description: Process ID of the server process attached to the current session
 
-    Return type: int
+    Return type: bigint
 
     Example:
 
