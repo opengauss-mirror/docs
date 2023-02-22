@@ -66,10 +66,9 @@ def replace_rst_name(file, rstfilemap):
         for line in f:
             if 'toctree' in line:
                 flag = 1
-                
             oldname = line.split('/')[-1].strip()
-            if flag and oldname in filemap and not line.strip().startswith('../'):
-                line = line.replace(oldname, filemap.get(oldname))
+            if flag and oldname in rstfilemap and not line.strip().startswith('../'):
+                line = line.replace(oldname, rstfilemap.get(oldname))
 
             file_data += line
 
