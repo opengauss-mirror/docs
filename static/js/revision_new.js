@@ -276,6 +276,7 @@ $(function ($) {
     (function downloadLink() {
       const version = location.pathname.split("/")[3];
       const linkHref = {
+        "3.1.0":`https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-document-zh-3.1.0.zip`,
         "3.0.0-lite": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-${lang}-3.0.0.zip`,
         "3.0.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-${lang}-3.0.0.zip`,
         "2.1.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-${lang}-2.1.0.zip`,
@@ -302,7 +303,11 @@ $(function ($) {
       </svg>`;
       let downLink = "";
       if (linkHref[version]) {
-        downLink = linkHref[version];
+        if(version==="3.1.0"&&lang==="en"){
+          $(".left .download-button").hide();
+        }else{
+          downLink = linkHref[version];
+        }
       } else {
         $(".left .download-button").hide();
       }
