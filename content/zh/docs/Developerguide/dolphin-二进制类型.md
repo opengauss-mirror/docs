@@ -7,10 +7,13 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 1. 新增```BINARY/VARBINARY/TINYBLOB/MEDIUMBLOB/LONGBLOB```类型。
 2. 对```BLOB```类型的输入函数进行了修改，在b_compatibility_mode为on的情况下，其输入可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
 3. 对```TINYBLOB/MEDIUMBLOB/LONGBLOB```类型，在b_compatibility_mode为off的情况下也可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
+4. 对```BINARY```类型的输入函数进行了修改，可支持M\*数据库中的转义字符识别。
+5. 新增BIANRY EXPR用法，用在任意表达式前的BINARY 关键字，表示将此表达式转化为二进制类型;
 
 **表 1**  二进制类型
 
 <a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_r4c641dab15474e4d84b23ae5d6bab90b"><th class="cellrowborder" valign="top" width="16.82%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_afcf8ccbfcdea49368a4dc7e0498bc185"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_afcf8ccbfcdea49368a4dc7e0498bc185"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_afcf8ccbfcdea49368a4dc7e0498bc185"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="35.18%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a24e8ed03de424a75bdad6cb7a6f9a6cf"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a24e8ed03de424a75bdad6cb7a6f9a6cf"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a24e8ed03de424a75bdad6cb7a6f9a6cf"></a>描述</p>
@@ -152,5 +155,18 @@ openGauss=#  SELECT * FROM blob_type_t1;
 
 --删除表。
 openGauss=#  DROP TABLE blob_type_t1;
+
+--使用BINARY转化
+openGauss=# select 'a\t'::binary;
+ binary
+--------
+ \x6109
+(1 row)
+
+openGauss=# select binary 'a\b';
+ binary
+--------
+ \x6108
+(1 row)
 ```
 
