@@ -51,3 +51,19 @@
      dolphin build 511401b6
     (1 row)
     ```
+
+-   dolphin_types\(\)
+
+    描述：dolphin新增类型信息。返回一个描述dolphin新增类型信息的二维字符串数组, 每个数组内的信息依次是：类型名、是否支持精度、是否支持范围。
+
+    返回值类型：text[][]
+
+    示例：
+
+    ```
+    openGauss=# SELECT dolphin_types();
+                        dolphin_types
+    ----------------------------------------------------------------------------------------------------------------------------------------------
+    {{uint1,false,false},{uint2,false,false},{uint4,false,false},{uint8,false,false},{year,true,false},{binary,true,false},{varbinary,true,false},{tinyblob,false,false},{mediumblob,false,false},{longblob,false,false},{set,false,false},{enum,false,false}}
+    (1 row)
+    ```
