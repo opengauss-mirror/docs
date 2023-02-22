@@ -92,7 +92,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **UNION子句**
 
-    UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列如果没有相似的数据类型，会采取转换为text类型的方式进行处理。同时，每条SELECT语句中的列的顺序必须相同。
+    UNION计算多个SELECT语句返回行集合的并集。UNION内部的SELECT语句必须拥有相同数量的列，列如果没有相似的数据类型或者为UNKNOWN类型，会采取转换为text类型的方式进行处理。
 
     UNION子句有如下约束条件：
 
