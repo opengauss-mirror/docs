@@ -1,7 +1,4 @@
 #list page
-[hot_document]
-other = "Hot documents"
-
 [login_text]
 other = "Login"
 
@@ -10,42 +7,6 @@ other = "Logout"
 
 [zone_text]
 other = "User Center"
-
-[A-Tune_content]
-other = "This document describes how to install and use A-Tune, which is a performance self-optimization software for openGauss."
-
-[A-Tune_header]
-other = "A-Tune User Guide"
-
-[A-Tune_link]
-other = "/en/docs/20.03_LTS/docs/A-Tune/A-Tune.html"
-
-[secGear_content]
-other = "This document provides common administrator operations of the openGauss system to help administrators better use the system. This document is intended for all administrators who use openGauss."
-
-[secGear_header]
-other = "Administrator Guide"
-
-[secGear_link]
-other = "/en/docs/20.03_LTS/docs/Administration/administration.html"
-
-[StratoVirt_content]
-other = "This document is intended for openGauss users who need to install containers. "
-
-[StratoVirt_header]
-other = "Container User Guide"
-
-[StratoVirt_link]
-other = "/en/docs/20.03_LTS/docs/Container/container.html"
-
-[container_content]
-other = "This guide describes how to install Huawei openGauss."
-
-[container_header]
-other = "Installation Guide"
-
-[container_link]
-other = "/en/docs/20.03_LTS/docs/Installation/Installation.html"
 
 [document]
 other = "Document"
@@ -82,68 +43,6 @@ other = "Content"
 
 [other_text]
 other = "Reference Links"
-
-[know_89_1]
-other = "/en/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html"
-[know_90_1]
-other = "/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
-[know_91_1]
-other = "/en/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html"
-[know_92_1]
-other = "/en/docs/2.1.0/docs/Quickstart/learning-product-knowledge.html"
-[know_93_1]
-other = "/en/docs/2.0.1/docs/Quickstart/learning-product-knowledge.html"
-[know_94_1]
-other = "/en/docs/2.0.0/docs/Quickstart/learning-product-knowledge.html"
-[know_95_1]
-other = "/en/docs/1.1.0/docs/Quickstart/learning-product-knowledge.html"
-[know_96_1]
-other = "/en/docs/1.0.1/docs/Quickstart/learning-product-knowledge.html"
-[know_97_1]
-other = "/en/docs/1.0.0/docs/Quickstart/Quickstart.html"
-[know_98_1]
-other = "/en/docs/latest/docs/BriefTutorial/BriefTutorial.html"
-[version_89]
-other = "3.1.1"
-[version_90]
-other = "3.1.0"
-[version_91]
-other = "3.0.0"
-[version_92]
-other = "2.1.0"
-[version_93]
-other = "2.0.1"
-[version_94]
-other= "2.0.0"
-[version_95]
-other = "1.1.0"
-[version_96]
-other = "1.0.1"
-[version_97]
-other= "1.0.0"
-[version_98]
-other = "latest"
-
-[download_docs]
-other = "Download"
-[download_link_90]
-other = "3.1.0-link"
-[download_link_91]
-other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-en-3.0.0.zip"
-[download_link_92]
-other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-en-2.1.0.zip"
-[download_link_93]
-other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.0/openGauss-document-en-2.0.0.zip"
-[download_link_94]
-other= "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.0/openGauss-document-en-2.0.0.zip"
-[download_link_95]
-other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-en-1.1.0-2021-01-12.zip"
-[download_link_96]
-other = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-en-1.0.1-2020-10-12.zip"
-[download_link_97]
-other= "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-document-en-1.0.0-2020-09-10.zip"
-[download_link_98]
-other = "latest-link"
 
 [atom]
 other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
@@ -249,14 +148,9 @@ other = " search results about "
 [result_3]
 other = " are found"
 
-[hot_docs_version]
-other = "20.03 LTS"
-
 [cancel]
 other = "cancel"
 
-[atom-text]
-other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
 [brand]
 other = "Trademark"
 [privacy]

@@ -377,18 +377,12 @@ body {
   #h5-menu-top .option {
     background-color: var(--o-color-bg1);
   }
-  #h5-menu-top .option a {
+  #h5-menu-top .option>span {
     display: block;
     margin-left: 16px;
     padding-top: 16px;
   }
-  #h5-menu-top .option-ru a {
-    display: none;
-  }
-  #h5-menu-top .option-ru .option-ru-a {
-    display: block;
-  }
-  #h5-menu-top .option a:nth-last-of-type(1) {
+  #h5-menu-top .option>span:nth-last-of-type(1) {
     padding-bottom: 16px;
   }
   #h5-menu-top .option {
@@ -431,7 +425,7 @@ body {
   .icon-open {
     transform: scale(0.8) rotateZ(0deg);
   }
-  #h5-menu-top .option a {
+  #h5-menu-top .option>span {
     color: var(--o-color-text1);
     font-size: 14px;
   }
