@@ -42,11 +42,11 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
     恢复目录安全上下文命令：
 
     ```
-    restorecon -r -vv /home/
+    restorecon -r -v /home/
     ```
 
     ```
-    restorecon -r -vv /root/
+    restorecon -r -v /root/
     ```
 
 

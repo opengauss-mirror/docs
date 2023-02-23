@@ -311,7 +311,8 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
         ```
         cd $GAUSSHOME/utilslib/instantclient_12_2/
-        chmod -R 700 network
+        chmod  600 network/admin/tnasnames.ora
+        chmod  600 network/admin/sqlnet.ora
         ```
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
