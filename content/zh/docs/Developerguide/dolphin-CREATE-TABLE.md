@@ -105,10 +105,11 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
   index_option:{
   	  COMMENT 'string'
   	| index_type
+    | [ VISIBLE | INVISIBLE ]
   }
   ```
 
-  COMMENT、index_type 的顺序和数量任意，但相同字段仅最后一个值生效。
+  COMMENT、index_type、[ VISIBLE | INVISIBLE ] 的顺序和数量任意，但相同字段仅最后一个值生效。
 
 -   其中like选项like\_option为：
 

@@ -1733,6 +1733,7 @@ headless: true
 						-	[USE-DB_NAME]({{< relref "./docs/Developerguide/dolphin-USE-DB_NAME.md" >}} 
 						-	[CHECKSUM-TABLE]({{< relref "./docs/Developerguide/dolphin-CHECKSUM-TABLE.md" >}}  
 						-	[GRANT-REVOKE-PROXY]({{< relref "./docs/Developerguide/dolphin-GRANT-REVOKE-PROXY.md" >}} 					
+						-	[SELECT-HINT]({{< relref "./docs/Developerguide/dolphin-SELECT-HINT.md" >}}
 				-   [系统视图]({{< relref "./docs/Developerguide/dolphin-系统视图.md" >}})
 						-	[PG TYPE NONSTRICT BASIC VALUE]({{< relref "./docs/Developerguide/dolphin-PG_TYPE_NONSTRICT_BASIC_VALUE.md" >}})
 						-	[INDEX STATISTIC]({{< relref "./docs/Developerguide/dolphin-INDEX_STATISTIC.md" >}})
