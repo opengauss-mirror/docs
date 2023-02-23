@@ -363,7 +363,7 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   文件删除，删除data中文件。
 
     ```
-    dsscmd rm -n +data/pg_xlog0/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd rm -p +data/pg_xlog0/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 
