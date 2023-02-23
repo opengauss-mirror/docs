@@ -176,7 +176,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >Some snapshot information comes from unique SQL statements. Therefore, when automatic elimination is enabled, if the selected start snapshot and end snapshot exceed the elimination time, the WDR report cannot be generated.
 
-## track\_stmt\_standby\_chain_\size<a name="section16119247614"></a>
+## track\_stmt\_standby\_chain_size<a name="section16119247614"></a>
 
 **Parameter description**: Specifies the maximum memory and disk space occupied by fast/slow SQL statement records on the standby node. This parameter is a combination of parameters. This parameter is read every 60 seconds and records exceeding the retention period are deleted. Only the sysadmin user can access this parameter.
 

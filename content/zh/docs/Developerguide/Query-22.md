@@ -164,7 +164,7 @@ slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >由于快照有部分信息是来源于unique sql，所以开启自动淘汰的情况下，在生成wdr报告时，如果选择的起始快照和终止快照跨过了淘汰发生的时间，会导致无法生成wdr报告。
 
-## track\_stmt\_standby\_chain_\size<a name="section16119247614"></a>
+## track\_stmt\_standby\_chain_size<a name="section16119247614"></a>
 
 **参数说明：**组合参数，控制备机快/慢SQL记录的最大占用内存与磁盘空间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
 

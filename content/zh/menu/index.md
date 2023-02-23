@@ -1690,50 +1690,50 @@ headless: true
 					-	[DML语法一览表]({{< relref "./docs/Developerguide/dolphin-DML语法一览表.md" >}})	
 					-	[DCL语法一览表]({{< relref "./docs/Developerguide/dolphin-DCL语法一览表.md" >}})
 					-	[SQL语法]({{< relref "./docs/Developerguide/dolphin-SQL语法.md" >}})
-						-	[ALTER FUNCTION]({{< relref "./docs/Developerguide/dolphin-ALTER-FUNCTION.md" >}}
-						-	[ALTER PROCEDURE]({{< relref "./docs/Developerguide/dolphin-ALTER-PROCEDURE.md" >}}
-						-	[ALTER TABLE]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLE.md" >}} 
-						-	[ALTER TABLE-PARTITION]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLE-PARTITION.md" >}} 
-						-	[ALTER TABLESPACE]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLESPACE.md" >}}  
-						-	[ANALYZE ANALYSE]({{< relref "./docs/Developerguide/dolphin-ANALYZE-ANALYSE.md" >}}
-						-	[AST]({{< relref "./docs/Developerguide/dolphin-AST.md" >}}
-						-	[CREATE-FUNCTION]({{< relref "./docs/Developerguide/dolphin-CREATE-FUNCTION.md" >}}
-						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}}*
-						-	[CREATE-PROCEDURE]({{< relref "./docs/Developerguide/dolphin-CREATE-PROCEDURE.md" >}}
-						-	[CREATE-TABLE]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE.md" >}}
-						-	[CREATE-TABLE-AS]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE-AS.md" >}}
-						-	[CREATE-TABLE-PARTITION]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE-PARTITION.md" >}}
-						-	[CREATE-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLESPACE.md" >}}
-						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}}
-						-	[DESCRIBE-TABLE]({{< relref "./docs/Developerguide/dolphin-DESCRIBE-TABLE.md" >}}
-						-	[DROP-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-DROP-TABLESPACE.md" >}} 
-						-	[GRANT]({{< relref "./docs/Developerguide/dolphin-GRANT.md" >}}
-						-	[INSERT]({{< relref "./docs/Developerguide/dolphin-INSERT.md" >}}
-						-	[KILL]({{< relref "./docs/Developerguide/dolphin-KILL.md" >}}
-						-	[OPTIMIZE-TABLE]({{< relref "./docs/Developerguide/dolphin-OPTIMIZE-TABLE.md" >}}
-						-	[PREPARE]({{< relref "./docs/Developerguide/dolphin-PREPARE.md" >}}
-						-	[RENAME-USER]({{< relref "./docs/Developerguide/dolphin-RENAME-USER.md" >}}
-						-	[REVOKE]({{< relref "./docs/Developerguide/dolphin-REVOKE.md" >}}
-						-	[SELECT]({{< relref "./docs/Developerguide/dolphin-SELECT.md" >}} 
-						-	[SET-CHARSET]({{< relref "./docs/Developerguide/dolphin-SET-CHARSET.md" >}}
-						-	[SET-PASSWORD]({{< relref "./docs/Developerguide/dolphin-SET-PASSWORD.md" >}}  
-						-	[SHOW_COLUMNS]({{< relref "./docs/Developerguide/dolphin-SHOW_COLUMNS.md" >}} 
-						-	[SHOW-DATABASES]({{< relref "./docs/Developerguide/dolphin-SHOW-DATABASES.md" >}}
-						-	[SHOW-FUNCTION-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-FUNCTION-STATUS.md" >}}
-						-	[SHOW-GRANTS]({{< relref "./docs/Developerguide/dolphin-SHOW-GRANTS.md" >}}
-						-	[SHOW-INDEX]({{< relref "./docs/Developerguide/dolphin-SHOW-INDEX.md" >}}  
-						-	[SHOW-MASTER-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-MASTER-STATUS.md" >}}
-						-	[SHOW_PLUGINS]({{< relref "./docs/Developerguide/dolphin-SHOW_PLUGINS.md" >}} 
-						-	[SHOW-PROCEDURE-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCEDURE-STATUS.md" >}}
-						-	[SHOW-PROCESSLIST]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCESSLIST.md" >}}
-						-	[SHOW-SLAVE-HOSTS]({{< relref "./docs/Developerguide/dolphin-SHOW-SLAVE-HOSTS.md" >}}
-						-	[SHOW_TABLES]({{< relref "./docs/Developerguide/dolphin-SHOW_TABLES.md" >}} 
-						-	[SHOW-TRIGGERS]({{< relref "./docs/Developerguide/dolphin-SHOW-TRIGGERS.md" >}} 
-						-	[UPDATE]({{< relref "./docs/Developerguide/dolphin-UPDATE.md" >}}
-						-	[USE-DB_NAME]({{< relref "./docs/Developerguide/dolphin-USE-DB_NAME.md" >}} 
-						-	[CHECKSUM-TABLE]({{< relref "./docs/Developerguide/dolphin-CHECKSUM-TABLE.md" >}}  
-						-	[GRANT-REVOKE-PROXY]({{< relref "./docs/Developerguide/dolphin-GRANT-REVOKE-PROXY.md" >}} 					
-						-	[SELECT-HINT]({{< relref "./docs/Developerguide/dolphin-SELECT-HINT.md" >}}
+						-	[ALTER FUNCTION]({{< relref "./docs/Developerguide/dolphin-ALTER-FUNCTION.md" >}})
+						-	[ALTER PROCEDURE]({{< relref "./docs/Developerguide/dolphin-ALTER-PROCEDURE.md" >}})
+						-	[ALTER TABLE]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLE.md" >}}) 
+						-	[ALTER TABLE-PARTITION]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLE-PARTITION.md" >}}) 
+						-	[ALTER TABLESPACE]({{< relref "./docs/Developerguide/dolphin-ALTER-TABLESPACE.md" >}})  
+						-	[ANALYZE ANALYSE]({{< relref "./docs/Developerguide/dolphin-ANALYZE-ANALYSE.md" >}})
+						-	[AST]({{< relref "./docs/Developerguide/dolphin-AST.md" >}})
+						-	[CREATE-FUNCTION]({{< relref "./docs/Developerguide/dolphin-CREATE-FUNCTION.md" >}})
+						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}})
+						-	[CREATE-PROCEDURE]({{< relref "./docs/Developerguide/dolphin-CREATE-PROCEDURE.md" >}})
+						-	[CREATE-TABLE]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE.md" >}})
+						-	[CREATE-TABLE-AS]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE-AS.md" >}})
+						-	[CREATE-TABLE-PARTITION]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLE-PARTITION.md" >}})
+						-	[CREATE-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-CREATE-TABLESPACE.md" >}})
+						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}})
+						-	[DESCRIBE-TABLE]({{< relref "./docs/Developerguide/dolphin-DESCRIBE-TABLE.md" >}})
+						-	[DROP-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-DROP-TABLESPACE.md" >}}) 
+						-	[GRANT]({{< relref "./docs/Developerguide/dolphin-GRANT.md" >}})
+						-	[INSERT]({{< relref "./docs/Developerguide/dolphin-INSERT.md" >}})
+						-	[KILL]({{< relref "./docs/Developerguide/dolphin-KILL.md" >}})
+						-	[OPTIMIZE-TABLE]({{< relref "./docs/Developerguide/dolphin-OPTIMIZE-TABLE.md" >}})
+						-	[PREPARE]({{< relref "./docs/Developerguide/dolphin-PREPARE.md" >}})
+						-	[RENAME-USER]({{< relref "./docs/Developerguide/dolphin-RENAME-USER.md" >}})
+						-	[REVOKE]({{< relref "./docs/Developerguide/dolphin-REVOKE.md" >}})
+						-	[SELECT]({{< relref "./docs/Developerguide/dolphin-SELECT.md" >}}) 
+						-	[SET-CHARSET]({{< relref "./docs/Developerguide/dolphin-SET-CHARSET.md" >}})
+						-	[SET-PASSWORD]({{< relref "./docs/Developerguide/dolphin-SET-PASSWORD.md" >}})  
+						-	[SHOW_COLUMNS]({{< relref "./docs/Developerguide/dolphin-SHOW_COLUMNS.md" >}}) 
+						-	[SHOW-DATABASES]({{< relref "./docs/Developerguide/dolphin-SHOW-DATABASES.md" >}})
+						-	[SHOW-FUNCTION-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-FUNCTION-STATUS.md" >}})
+						-	[SHOW-GRANTS]({{< relref "./docs/Developerguide/dolphin-SHOW-GRANTS.md" >}})
+						-	[SHOW-INDEX]({{< relref "./docs/Developerguide/dolphin-SHOW-INDEX.md" >}})  
+						-	[SHOW-MASTER-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-MASTER-STATUS.md" >}})
+						-	[SHOW_PLUGINS]({{< relref "./docs/Developerguide/dolphin-SHOW_PLUGINS.md" >}}) 
+						-	[SHOW-PROCEDURE-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCEDURE-STATUS.md" >}})
+						-	[SHOW-PROCESSLIST]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCESSLIST.md" >}})
+						-	[SHOW-SLAVE-HOSTS]({{< relref "./docs/Developerguide/dolphin-SHOW-SLAVE-HOSTS.md" >}})
+						-	[SHOW_TABLES]({{< relref "./docs/Developerguide/dolphin-SHOW_TABLES.md" >}})
+						-	[SHOW-TRIGGERS]({{< relref "./docs/Developerguide/dolphin-SHOW-TRIGGERS.md" >}}) 
+						-	[UPDATE]({{< relref "./docs/Developerguide/dolphin-UPDATE.md" >}})
+						-	[USE-DB_NAME]({{< relref "./docs/Developerguide/dolphin-USE-DB_NAME.md" >}}) 
+						-	[CHECKSUM-TABLE]({{< relref "./docs/Developerguide/dolphin-CHECKSUM-TABLE.md" >}})  
+						-	[GRANT-REVOKE-PROXY]({{< relref "./docs/Developerguide/dolphin-GRANT-REVOKE-PROXY.md" >}}) 					
+						-	[SELECT-HINT]({{< relref "./docs/Developerguide/dolphin-SELECT-HINT.md" >}})
 				-   [系统视图]({{< relref "./docs/Developerguide/dolphin-系统视图.md" >}})
 						-	[PG TYPE NONSTRICT BASIC VALUE]({{< relref "./docs/Developerguide/dolphin-PG_TYPE_NONSTRICT_BASIC_VALUE.md" >}})
 						-	[INDEX STATISTIC]({{< relref "./docs/Developerguide/dolphin-INDEX_STATISTIC.md" >}})
