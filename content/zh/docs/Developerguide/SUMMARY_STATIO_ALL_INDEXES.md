@@ -1,6 +1,6 @@
 # SUMMARY\_STATIO\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0245374795"></a>
 
-SUMMARY\_STATIO\_ALL\_INDEXES视图包含含openGauss内汇聚的数据库中的每个索引行， 显示特定索引的I/O的统计。
+SUMMARY\_STATIO\_ALL\_INDEXES视图包含openGauss内汇聚的数据库中的每个索引行， 显示特定索引的I/O的统计。
 
 <a name="zh-cn_topic_0237122691_table9322152172514"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0237122691_row10388102119256"><th class="cellrowborder" valign="top" width="18.96%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237122691_p6389121162512"><a name="zh-cn_topic_0237122691_p6389121162512"></a><a name="zh-cn_topic_0237122691_p6389121162512"></a><strong id="zh-cn_topic_0237122691_b5389182115253"><a name="zh-cn_topic_0237122691_b5389182115253"></a><a name="zh-cn_topic_0237122691_b5389182115253"></a>名称</strong></p>

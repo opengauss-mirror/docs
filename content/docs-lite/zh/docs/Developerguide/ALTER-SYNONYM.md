@@ -36,17 +36,29 @@ ALTER SYNONYM synonym_name
 ## 示例<a name="zh-cn_topic_0283137325_zh-cn_topic_0237122074_section162752045154311"></a>
 
 ```
+--创建系统管理员用户。
+openGauss=# CREATE USER sysadmin WITH SYSADMIN PASSWORD 'user@111';
+
+--切换管理员用户。
+openGauss=# \c - sysadmin
+
 --创建同义词t1。
-openGauss=#  CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
+openGauss=# CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 --创建新用户u1。
-openGauss=# CREATE USER u1 PASSWORD 'user@111';
+gaussdbopenGauss=# CREATE USER u1 PASSWORD 'user@111';
+
+--给新用户赋权限。
+openGauss=# GRANT ALL ON SCHEMA sysadmin TO u1;
 
 --修改同义词t1的owner为u1。
 openGauss=# ALTER SYNONYM t1 OWNER TO u1;
 
 --删除同义词t1。
 openGauss=# DROP SYNONYM t1;
+
+--收回用户u1权限。
+openGauss=# REVOKE ALL ON SCHEMA sysadmin FROM u1;
 
 --删除用户u1。
 openGauss=# DROP USER u1;

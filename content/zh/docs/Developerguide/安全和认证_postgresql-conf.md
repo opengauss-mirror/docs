@@ -196,7 +196,7 @@
 -   on表示openGauss安装成功后初始用户首次登录操作前需要修改初始密码。
 -   off表示openGauss安装成功后初始用户无需修改初始密码即可进行操作。
 
-**默认值：**off
+**默认值：**on
 
 ## password\_policy<a name="zh-cn_topic_0237124696_zh-cn_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626"></a>
 
