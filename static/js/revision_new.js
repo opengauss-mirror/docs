@@ -19,11 +19,9 @@ $(function ($) {
     // 根据目前语言激活语言切换相应颜色
     (function () {
       if (lang === "zh") {
-        $(`a[href='/zh/']`).addClass("active");
+        $(`a[name='zh']`).addClass("active");
       } else if (lang === "en") {
-        $(`a[href='/en/']`).addClass("active");
-      } else {
-        $(`a[href='/ru/']`).addClass("active");
+        $(`a[name='en']`).addClass("active");
       }
     })();
     // 生成当前页的二级目录导航
@@ -156,10 +154,6 @@ $(function ($) {
         window.open($(this).attr("href"), "_self");
       }
     );
-    // 版本跳转
-    $("#version-select .option>span").click(function () {
-      window.open($(this).attr("href"), "_self");
-    });
 
     // 企业版、轻量版切换跳转
     function switchLiteEnterprise(href) {
@@ -272,57 +266,11 @@ $(function ($) {
         table.wrap(`<div class="table-ill"></div>`);
       }
     })();
-    // 文档下载按钮生成
-    (function downloadLink() {
-      const version = location.pathname.split("/")[3];
-      const linkHref = {
-        "3.1.0":`https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-document-zh-3.1.0.zip`,
-        "3.0.0-lite": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-${lang}-3.0.0.zip`,
-        "3.0.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/openGauss-document-${lang}-3.0.0.zip`,
-        "2.1.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-${lang}-2.1.0.zip`,
-        "2.0.1": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.1/openGauss-document-${lang}-2.0.1.zip`,
-        "2.0.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.0.0/openGauss-document-${lang}-2.0.0.zip`,
-        "1.1.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-${lang}-1.1.0-2021-01-12.zip`,
-        "1.0.1": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-${lang}-1.0.1-2020-10-12.zip`,
-        "1.0.0": `https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/openGauss-document-${lang}-1.0.0-2020-09-10.zip`,
-      };
-      const svg = `<?xml version="1.0" encoding="UTF-8"?>
-      <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>切片</title>
-          <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="学习/文档/内容样式/正常" transform="translate(-120.000000, -1150.000000)" fill="#FFFFFF">
-                  <g id="编组-5" transform="translate(0.000000, 254.000000)">
-                      <g id="按钮/主要按钮/light/高32px/nor/文字+右图标" transform="translate(40.000000, 886.000000)">
-                          <g id="icon/24/arrow_forward" transform="translate(80.000000, 10.000000)">
-                              <path d="M5.65,8.4 C5.7,8.45 5.8,8.5 5.9,8.5 L6.1,8.5 C6.2,8.5 6.3,8.45 6.35,8.4 L8.9,5.85 C9,5.75 9,5.6 8.9,5.5 C8.9,5.5 8.9,5.5 8.9,5.5 L8.55,5.15 C8.45,5.05 8.3,5.05 8.2,5.15 C8.2,5.15 8.2,5.15 8.2,5.15 L6.5,6.85 L6.5,1.75 C6.5,1.6 6.4,1.5 6.25,1.5 L5.75,1.5 C5.6,1.5 5.5,1.6 5.5,1.75 L5.5,6.85 L3.8,5.15 C3.7,5 3.5,5 3.45,5.1 C3.45,5.1 3.45,5.1 3.45,5.1 L3.1,5.45 C3,5.55 3,5.7 3.1,5.8 C3.1,5.8 3.1,5.8 3.1,5.8 L5.65,8.4 Z M10.5,9.5 L1.5,9.5 L1.5,10.5 L10.5,10.5 L10.5,9.5 Z" id="Icon-color"></path>
-                          </g>
-                      </g>
-                  </g>
-              </g>
-          </g>
-      </svg>`;
-      let downLink = "";
-      if (linkHref[version]) {
-        if(version==="3.1.0"&&lang==="en"){
-          $(".left .download-button").hide();
-        }else{
-          downLink = linkHref[version];
-        }
-      } else {
-        $(".left .download-button").hide();
-      }
-      let downloadElement = null;
-      if (lang === "zh") {
-        downloadElement = `<button><a href="${downLink}">文档下载 ${svg}</a></button>`;
-      } else {
-        downloadElement = `<button><a href="${downLink}">Download ${svg}</a></button>`;
-      }
-      $(".left .download-button").html(downloadElement);
-    })();
+
     // 解决因hugo版本渲染造成的页面内a标签锚点跳转失灵问题
     $("a").click(function () {
       const href = $(this).attr("href");
-      if (href.split("")[0] === "#") {
+      if (href && href.split("")[0] === "#") {
         $.each($("h2"), (index, value) => {
           if (value.id.includes(href.replace("#", ""))) {
             $("html,body").animate(
@@ -348,12 +296,11 @@ $(function ($) {
     const targetNode = $("#docstreeview")[0];
     targetNode.addEventListener("DOMSubtreeModified", addNavTitle, false);
     // 给较长的导航栏文字增加title end
-   
   });
 });
- // 控制左侧导航栏滚动
-window.onload=function(){
-  const firstNavTop=$("#docstreeview>ul>li:nth-of-type(1)").offset().top
-  const checkedTop=$(".jstree-clicked").offset().top
-   $(".nav").scrollTop(checkedTop-firstNavTop);
-}
+// 控制左侧导航栏滚动
+window.onload = function () {
+  const firstNavTop = $("#docstreeview>ul>li:nth-of-type(1)").offset().top;
+  const checkedTop = $(".jstree-clicked").offset().top;
+  $(".nav").scrollTop(checkedTop - firstNavTop);
+};

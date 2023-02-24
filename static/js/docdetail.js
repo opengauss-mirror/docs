@@ -29,7 +29,7 @@ $(function ($) {
     }
     evaluateParams.lang = lang;
     var versionStr = urlArr[3].replace("-lite",'');
-    $("#version-select .option span,#h5-menu-top .option a").each(function(){
+    $("#version-select .option span,#h5-menu-top .option>span").each(function(){
         if($(this).html()===versionStr){
             $(this).addClass("active")
         }
