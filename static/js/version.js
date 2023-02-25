@@ -151,8 +151,8 @@ $(document).ready(function () {
         </g>
     </svg>`;
     let downLink = "";
-    if (versionObj[version].downLink) {
-      downLink = linkHref[version];
+    if (versionObj[version] && versionObj[version].downLink) {
+      downLink = versionObj[version].downLink;
     } else {
       $(".left .download-button").hide();
     }
