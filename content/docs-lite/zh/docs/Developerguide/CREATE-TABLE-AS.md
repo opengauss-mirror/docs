@@ -82,7 +82,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
   [ COMMENT {=| } 'text' ]
   ```
 
-> ![](../67474_4_0/public_sys-resources/icon-notice.gif) **须知：** 
+> ![](public_sys-resources/icon-notice.gif) **须知：** 
 >
 > -   更多参数细节说明可参考[CREATE TABLE](CREATE-TABLE.md)章节。
 
