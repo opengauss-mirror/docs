@@ -23,7 +23,7 @@
 -   在表上创建索引。
 
     ```
-    CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ]
+    CREATE [ UNIQUE | FULLTEXT ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ]
         { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ index_option ]
@@ -180,6 +180,40 @@ openGauss=# create table cgin_create_test(a int, b text) with (orientation = col
 CREATE TABLE
 openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
 CREATE INDEX
+```
+
+##全文索引
+```sql
+test=# CREATE SCHEMA fulltext_test;
+set current_schema to 'fulltext_test';
+CREATE TABLE test (
+id int unsigned auto_increment not null primary key,
+title varchar,
+boby text,
+name name
+);
+NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
+CREATE TABLE
+test=# \d test
+              Table "fulltext_test.test"
+ Column |       Type        |        Modifiers
+--------+-------------------+-------------------------
+ id     | uint4             | not null AUTO_INCREMENT
+ title  | character varying |
+ boby   | text              |
+ name   | name              |
+Indexes:
+    "test_pkey" PRIMARY KEY, btree (id) TABLESPACE pg_default
+
+CREATE FULLTEXT INDEX test_index_1 ON test (title, boby) WITH PARSER ngram;
+\d test_index_1
+                  Index "fulltext_test.test_index_1"
+    Column    | Type |                   Definition
+--------------+------+------------------------------------------------
+ to_tsvector  | text | to_tsvector('"ngram"'::regconfig, title::text)
+ to_tsvector1 | text | to_tsvector('"ngram"'::regconfig, boby)
+gin, for table "fulltext_test.test"
 ```
 
 ## 相关链接<a name="section156744489391"></a>

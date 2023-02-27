@@ -84,6 +84,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [JOIN | INNER JOIN] {ON join_condition | USING ( join_column [, ...] ) }
 ```
 
+-   condition说明:
+    where 子句可以包含兼容MySQL全文索引的查询语法。
+```sql
+    where match(column_name) against ('匹配字符');
+```
+    column_name可以是多列，列名之间用逗号分隔。
+
 ## 参数说明<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
 -   **WHERE子句**
@@ -215,6 +222,42 @@ openGauss=# select a.* from multi_partition_select_test partition (test_part1, t
    111
    555
 (2 rows)
+
+```
+
+- 兼容MySQL兼容性全文索引语法查询
+```sql
+test=# CREATE TABLE test (
+test(# id int unsigned auto_increment not null primary key,
+test(# title varchar,
+test(# boby text,
+test(# name name,
+test(# FULLTEXT (title, boby) WITH PARSER ngram
+test(# );
+NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
+CREATE TABLE
+test=# INSERT INTO test(title, boby, name) VALUES('test1', 'gauss', 'opengauss');
+INSERT 0 1
+test=# INSERT INTO test(title, boby, name) VALUES('test2', 'gauss2', 'opengauss');
+INSERT 0 1
+test=# INSERT INTO test(title, boby, name) VALUES('test3', 'test', 'opengauss');
+INSERT 0 1
+test=# INSERT INTO test(title, boby, name) VALUES('gauss_123_@', 'test', 'opengauss');
+INSERT 0 1
+test=# INSERT INTO test(title, boby, name) VALUES('', '', 'opengauss');
+INSERT 0 1
+test=# INSERT INTO test(title, boby, name) VALUES(' ', ' ', ' ');
+INSERT 0 1
+test=# SELECT * FROM TEST WHERE MATCH (title, boby) AGAINST ('test');
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 4  | test3       | test         | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+(5 rows)
 
 ```
 
