@@ -24,16 +24,8 @@ body {
 .detail-footer {
   margin-left: 300px;
 }
-.h5_footer .atom-img {
-  margin: 0 auto;
-}
-.h5_footer .footer-logo {
-  width: 134px;
-  height: 28px;
-  margin: 0 auto;
-}
-.detail-footer .atom-img,
-.h5_footer .atom-img {
+
+.detail-footer .atom-img {
   width: 274px;
   height: 58px;
   background-image: url(../img/common/atom.png);
@@ -41,14 +33,12 @@ body {
   background-size: 100% 100%;
 }
 @media screen and (max-width: 1100px) {
-  .detail-footer .atom-img,
-  .h5_footer .atom-img {
+  .detail-footer .atom-img {
     width: 189px;
     height: 40px;
   }
 }
-.dark .detail-footer .atom-img,
-.dark .h5_footer .atom-img {
+.dark .detail-footer .atom-img {
   background-image: url(../img/common/atom-logo-dark.svg);
 }
 .detail-footer .footer-logo {
@@ -351,17 +341,17 @@ body {
   #docstreeview > ul > li > ul > li i {
     top: 14px;
   }
-  #h5-menu-top .select-box {
+  #menu-top-mobile .select-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 0 8px 0;
   }
-  #h5-menu-top .select-box span {
+  #menu-top-mobile .select-box span {
     margin-left: 16px;
     font-size: 14px;
   }
-  #h5-menu-top .select-box .icon-down {
+  #menu-top-mobile .select-box .icon-down {
     width: 16px;
     height: 16px;
     position: relative;
@@ -374,32 +364,32 @@ body {
     margin-left: 16px;
     color: var(--o-color-text1);
   }
-  #h5-menu-top .option {
+  #menu-top-mobile .option {
     background-color: var(--o-color-bg1);
   }
-  #h5-menu-top .option>span {
+  #menu-top-mobile .option>span {
     display: block;
     margin-left: 16px;
     padding-top: 16px;
   }
-  #h5-menu-top .option>span:nth-last-of-type(1) {
+  #menu-top-mobile .option>span:nth-last-of-type(1) {
     padding-bottom: 16px;
   }
-  #h5-menu-top .option {
+  #menu-top-mobile .option {
     max-height: 0;
     overflow: auto;
     transition: all 0.2s;
   }
-  #h5-menu-top .option-show {
+  #menu-top-mobile .option-show {
     max-height: 334px;
   }
-  #h5-menu-top .h5-logo {
+  #menu-top-mobile .logo-mobile {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 22px 0 0 16px;
   }
-  #h5-menu-top .h5-logo .icon-close {
+  #menu-top-mobile .logo-mobile .icon-close {
     width: 24px;
     height: 24px;
     margin-right: 16px;
@@ -425,11 +415,11 @@ body {
   .icon-open {
     transform: scale(0.8) rotateZ(0deg);
   }
-  #h5-menu-top .option>span {
+  #menu-top-mobile .option>span {
     color: var(--o-color-text1);
     font-size: 14px;
   }
-  #h5-menu-top .option .active {
+  #menu-top-mobile .option .active {
     color: var(--o-color-brand1);
   }
   .jstree-closed > .jstree-icon {
@@ -445,7 +435,7 @@ body {
     background-image: url(../img/common/down-dark.svg);
   }
 }
-#h5-menu .h5-sersion {
+#menu-mobile .sersion-mobile {
   color: var(--o-color-text1);
 }
 .select-box:active {
@@ -477,10 +467,10 @@ body {
     display: flex;
   }
 }
-.h5-theme-lang {
+.theme-lang-mobile {
   display: none;
 }
-.h5-theme-lang i.light {
+.theme-lang-mobile i.light {
   background-image: url(../img/common/moon.svg);
 }
 .theme-change i.dark {
@@ -488,11 +478,11 @@ body {
   background-color: #ffffff;
 }
 @media screen and (max-width: 1100px) {
-  .h5-theme-lang {
+  .theme-lang-mobile {
     display: flex;
   }
 }
-.h5-theme-lang {
+.theme-lang-mobile {
   position: absolute;
   left: 0;
   bottom: 0px;
@@ -502,21 +492,21 @@ body {
   background-color: var(--o-color-bg2);
   justify-content: space-between;
 }
-.h5-theme-lang .lang {
+.theme-lang-mobile .lang {
   display: flex;
 }
-.h5-theme-lang .lang a {
+.theme-lang-mobile .lang a {
   color: var(--o-color-text1);
   font-size: 12px;
   line-height: 22px;
   display: flex;
   align-items: center;
 }
-.h5-theme-lang .lang .active {
+.theme-lang-mobile .lang .active {
   color: var(--o-color-brand1);
 }
 
-.h5-theme-lang .lang a + a::before {
+.theme-lang-mobile .lang a + a::before {
   content: "";
   display: inline-block;
   height: 12px;
@@ -524,15 +514,15 @@ body {
   margin: 0 8px;
   background-color: var(--o-color-border1);
 }
-.h5-theme-lang .theme-change i {
+.theme-lang-mobile .theme-change i {
   width: 16px;
   height: 16px;
 }
-.h5-mask {
+.mask-mobile {
   display: none;
 }
 @media screen and (max-width: 1100px) {
-  .h5-mask {
+  .mask-mobile {
     position: fixed;
     left: 0;
     top: 0;
@@ -542,25 +532,25 @@ body {
     z-index: 1002;
   }
   #menu-box,
-  #menu-box .h5-logo,
+  #menu-box .logo-mobile,
   #menu-box .menu-select-box,
   #docstreeview {
     background-color: var(--o-color-bg2);
   }
 }
-.h5-nav-menu .h5-logo {
+.h5-nav-menu .logo-mobile {
   width: 92px;
   height: 24px;
   background: url(../img/logo.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-.dark .h5-nav-menu .h5-logo {
+.dark .h5-nav-menu .logo-mobile {
   background: url(../img/logo-dark.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-.h5-search {
+.search-mobile {
   width: 100vw;
   height: 48px;
   padding: 12px 16px;
@@ -570,7 +560,7 @@ body {
   top: 0;
   font-size: 14px;
 }
-.h5-search .icon-search {
+.search-mobile .icon-search {
   position: absolute;
   left: 24px;
   top: 16px;
@@ -579,7 +569,7 @@ body {
   height: 16px;
   background: url(../img/search/search.svg) no-repeat 100%/100%;
 }
-.h5-search input {
+.search-mobile input {
   flex-grow: 2;
   height: 24px;
   margin-right: 16px;
@@ -591,14 +581,14 @@ body {
   line-height: 14px;
   border: none;
 }
-.h5-search .cancel-btn {
+.search-mobile .cancel-btn {
   color: var(--o-color-text1);
   line-height: 24px;
 }
-.dark .h5-search .icon-search {
+.dark .search-mobile .icon-search {
   background: url(../img/search/search-dark.svg) no-repeat 100%/100%;
 }
-.h5-search .icon-clear {
+.search-mobile .icon-clear {
   position: absolute;
   right: 72px;
   top: 16px;
@@ -607,18 +597,18 @@ body {
   height: 16px;
   background: url(../img/common/icon-close-light.svg) no-repeat 100%/100%;
 }
-.dark .h5-search .icon-clear {
+.dark .search-mobile .icon-clear {
   background: url(../img/common/icon-close-dark.svg) no-repeat 100%/100%;
 }
 
-#h5-menu-top .h5-logo .logo-img {
+#menu-top-mobile .logo-mobile .logo-img {
   width: 92px;
   height: 24px;
   background: url(../img/logo.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-.dark #h5-menu-top .h5-logo .logo-img {
+.dark #menu-top-mobile .logo-mobile .logo-img {
   background: url(../img/logo-dark.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -631,7 +621,7 @@ body {
   background: var(--o-color-greyblack1);
 }
 @media (max-width: 1100px) {
-  .footer.migration {
+  .footer {
     margin-left: 0;
     margin-top: 0;
   }
@@ -847,16 +837,16 @@ body {
     display: block;
   }
 }
-.h5-prev,
-.h5-next,
-.h5-prev a,
-.h5-next a,
-.h5-prev a i,
-.h5-next a i {
+.prev-mobile,
+.next-mobile,
+.prev-mobile a,
+.next-mobile a,
+.prev-mobile a i,
+.next-mobile a i {
   display: flex;
   align-items: center;
 }
-#h5-menu-box {
+#menu-mobile-box {
   position: fixed;
   left: 0;
   top: 0;
@@ -869,11 +859,11 @@ body {
   transform: translateX(-100%);
 }
 
-.h5-docs-a {
+.docs-a-mobile {
   display: none;
 }
 @media screen and (max-width: 1100px) {
-  .h5-docs-a {
+  .docs-a-mobile {
     display: flex;
     align-items: center;
   }
@@ -903,19 +893,19 @@ body {
   width: 400px;
 }
 /* 文档下载按钮 start */
-.left .download-button {
+.sidebar .download-button {
   padding: 16px 0 16px 40px;
   width: 300px;
   height: 64px;
   background-color: var(--o-color-trafficpurple5);
 }
-.left .download-button button {
+.sidebar .download-button button {
   width: 104px;
   height: 32px;
   background-color: #feb32a;
   border: none;
 }
-.left .download-button button a {
+.sidebar .download-button button a {
   display: flex;
   width: 100%;
   height: 100%;
@@ -925,24 +915,24 @@ body {
   align-items: center;
   justify-content: center;
 }
-.left .download-button button a svg {
+.sidebar .download-button button a svg {
   margin-left: 8px;
   line-height: 32px;
 }
 @media screen and (max-width: 1100px) {
-  .left .download-button {
+  .sidebar .download-button {
     padding: 8px 0 0 16px;
     width: 60vw;
     height: 40px;
     background-color: var(--o-color-bg2);
   }
-  .left .download-button button {
+  .sidebar .download-button button {
     width: 88px;
     height: 24px;
     background-color: var(--o-color-brand1);
     border: none;
   }
-  .left .download-button button a {
+  .sidebar .download-button button a {
     display: flex;
     width: 100%;
     height: 100%;

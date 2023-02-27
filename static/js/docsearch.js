@@ -51,31 +51,31 @@ $(function ($) {
 
   $(".white_search").click(function (e) {
     $(".searcher").css("display", "block");
-    $(".zhezhao").css("display", "block");
+    $(".mask-search-mobile").css("display", "block");
     var height = $(".h5_index").outerHeight(true) - 279;
-    $(".zhezhao").css("height", height);
+    $(".mask-search-mobile").css("height", height);
   });
   $(".cancel-btn").click(function (e) {
     $(".searcher").css("display", "none");
-    $(".zhezhao").css("display", "none");
+    $(".mask-search-mobile").css("display", "none");
     var height = $(".h5_index").outerHeight(true) - 279;
-    $(".zhezhao").css("height", height);
+    $(".mask-search-mobile").css("height", height);
   });
 
-  $(".zhezhao").click(function (e) {
+  $(".mask-search-mobile").click(function (e) {
     $(".searcher").css("display", "none");
-    $(".zhezhao").css("display", "none");
+    $(".mask-search-mobile").css("display", "none");
     $(".h5_index .h5_nav").removeClass("h5_nav_show");
   });
 
-  $(".h5-search")
+  $(".search-mobile")
     .find(".search-btn")
     .click(function (e) {
-      keyword = $(".h5-search").find("input").val();
+      keyword = $(".search-mobile").find("input").val();
       $(".search-result").css("display", "none");
       searchMethods.search(decodeURI(keyword), 1, "#pagination");
     });
-  $(".h5-search input").keyup(function () {
+  $(".search-mobile input").keyup(function () {
     if ($(this).val() !== "") {
       $(".icon-clear").show();
     } else {
@@ -83,12 +83,12 @@ $(function ($) {
     }
   });
   $(".icon-clear").click(function () {
-    $(".h5-search input").val("");
+    $(".search-mobile input").val("");
     $(".icon-clear").hide();
   });
-  $(".h5-search>.search-text").bind("keypress", function (event) {
+  $(".search-mobile>.search-text").bind("keypress", function (event) {
     if (event.keyCode == "13") {
-      keyword = $(".h5-search>.search-text").val();
+      keyword = $(".search-mobile>.search-text").val();
 
       $(".search-result").css("display", "block");
       searchMethods.search(decodeURI(keyword), 1, "#pagination");
@@ -257,6 +257,6 @@ $(function ($) {
   } else {
     $(".search-result>.title").find(".keyword").text(decodeURI(keyword));
     $(".input>.search-text").val(decodeURI(keyword));
-    $(".h5-search>div").find("input").val(decodeURI(keyword));
+    $(".search-mobile>div").find("input").val(decodeURI(keyword));
   }
 });

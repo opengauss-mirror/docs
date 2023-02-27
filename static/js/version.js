@@ -117,16 +117,16 @@ $(document).ready(function () {
     Object.keys(versionObj).forEach((key) => {
       spanElement = spanElement + `<span>${key}</span>`;
     });
-    $("#version-select .option,#h5-menu-top .option").prepend(spanElement);
+    $("#version-select .option,#menu-top-mobile .option").prepend(spanElement);
   }
   createVersionSpan();
   // 控制中英文切换
-  $("#lang .lang-item,.h5-theme-lang .lang a").click(function () {
+  $("#lang .lang-item,.theme-lang-mobile .lang a").click(function () {
     const linkLang = $(this).attr("name");
     jumpDocsHome(linkLang, version);
   });
   // 控制版本切换
-  $("#version-select .option span,#h5-menu-top .option>span").click(
+  $("#version-select .option span,#menu-top-mobile .option>span").click(
     function () {
       jumpDocsHome(lang, $(this).html());
     }
@@ -154,7 +154,7 @@ $(document).ready(function () {
     if (versionObj[version] && versionObj[version].downLink) {
       downLink = versionObj[version].downLink;
     } else {
-      $(".left .download-button").hide();
+      $(".sidebar .download-button").hide();
     }
     let downloadElement = null;
     if (lang === "zh") {
@@ -162,6 +162,6 @@ $(document).ready(function () {
     } else {
       downloadElement = `<button><a href="${downLink}">Download ${svg}</a></button>`;
     }
-    $(".left .download-button").html(downloadElement);
+    $(".sidebar .download-button").html(downloadElement);
   })();
 });

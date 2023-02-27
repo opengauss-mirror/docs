@@ -1,5 +1,4 @@
 {{ template "_internal/google_analytics.html" . }}
-<div class="mask"></div>
 <script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/jq.base64.js"></script>
 <script src="{{ .Site.BaseURL }}js/login.js"></script>
@@ -8,7 +7,6 @@
 <script src="{{ .Site.BaseURL }}js/sensors.js"></script>
 <script src="{{ .Site.BaseURL }}js/revision_new.js"></script>
 <script src="{{ .Site.BaseURL }}js/version.js"></script>
-<div id="mask" onclick="hideNav()"></div>
 <script type="text/javascript">
     $(document).ready(function () {
         // function getRelativePath() {
@@ -64,7 +62,7 @@
             });
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
-                $("#docsMenu").show();
+                $("#docs-menu").show();
                 // var relativeURL = getRelativePath();
                 var relativeURL = location.pathname;
                 var wholeData = $("#docstreeview").jstree().get_json();
@@ -116,39 +114,10 @@
                 nextAndPevious(nodeList, currentID);
                 result[0] == null ? $('#prev').addClass('disabled') : $('#prev a').attr('href', result[0]);
                 result[1] == null ? $('#next').addClass('disabled') : $('#next a').attr('href', result[1]);
-                result[0] == null ? $('#h5-menu .h5-prev').addClass('disabled') : $('#h5-menu .h5-prev a').attr('href', result[0]);
-                result[1] == null ? $('#h5-menu .h5-next').addClass('disabled') : $('#h5-menu .h5-next a').attr('href', result[1]);
+                result[0] == null ? $('#menu-mobile .prev-mobile').addClass('disabled') : $('#menu-mobile .prev-mobile a').attr('href', result[0]);
+                result[1] == null ? $('#menu-mobile .next-mobile').addClass('disabled') : $('#menu-mobile .next-mobile a').attr('href', result[1]);
             });
         }
-        function showNav() {
-            $('#menu').css({
-                "transform": "translateX(0)"
-            }).attr("onoff", "on");
-            $('.mask').addClass('maskLayer');
-        }
-        function hideNav() {
-            $('#menu').css({
-                "transform": "translateX(-100%)"
-            }).attr("onoff", "off");
-            $('.mask').removeClass('maskLayer');
-        }
-
-        $("#slideNav").bind('click', function () {
-            if ($('#menu').attr("onoff") == "on") {
-                hideNav();
-            } else {
-                showNav();
-            }
-        })
-
-        // 点击遮罩层隐藏
-        $('.mask').bind('click', function() {
-            if ($('#menu').attr("onoff") == "on") {
-                hideNav();
-            } else {
-                showNav();
-            }
-        })
 
         /* 获取当前所在层级名称以及父层级名称 */
         function getTiername(data) {
@@ -222,7 +191,7 @@
             $("#title-evaluate").addClass("bug-hide")
         });
         let homeUrl = "/"+ lang + "/";
-        $(".nav-menu>.left").find("a").attr("href",homeUrl);
+        $(".nav-menu>.sidebar").find("a").attr("href",homeUrl);
     });
 </script>
 <script src="{{ "js/doclist.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>

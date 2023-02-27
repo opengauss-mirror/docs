@@ -91,19 +91,19 @@ i {
         max-width: none;
     }
 }
-.nav-box .nav-menu  .left{
+.nav-box .nav-menu  .sidebar{
     width: 300px;
     padding: 0 40px 0;
     background-color:var(--o-color-kleinblue5);
     min-width: 300px;
 }
-.nav-box .nav-menu  .left img{
+.nav-box .nav-menu  .sidebar img{
     width: 139px;
     height: 32px;
     position: relative;
     top:53px;
 }
-.nav-box .nav-menu  .left 
+.nav-box .nav-menu  .sidebar
 .nav-box .nav-menu
 .nav-menu .h5-right {
     display: none;
@@ -114,7 +114,7 @@ i {
     height: 60px;
 }
 
-.nav-menu .left a img {
+.nav-menu .sidebar a img {
     display: block;
     width: 300px;
     height: 60px;
@@ -272,7 +272,7 @@ i {
     white-space: nowrap;
 }
 
-.nav-menu>div .option,#h5-menu-top .select-box .option {
+.nav-menu>div .option,#menu-top-mobile .select-box .option {
     display: none;
     position: absolute;
     width: 100%;
@@ -286,7 +286,7 @@ i {
     width: 134px;
 }
 
-#h5-menu-top .select-box .option a {
+#menu-top-mobile .select-box .option a {
     font-size: 14px;
     padding: 0 13px;
     display: block;
@@ -303,7 +303,7 @@ i {
     background: rgba(0, 47, 167, 0.06);
 } */
 
-.nav-menu>div .angle,#h5-menu-top .select-box .angle {
+.nav-menu>div .angle,#menu-top-mobile .select-box .angle {
     position: absolute;
     top: -6px;
     left: 50%;
@@ -531,7 +531,7 @@ i {
         align-items: center;
     }
 
-    .nav-box .nav-menu .left {
+    .nav-box .nav-menu .sidebar {
         display: none;
     }
 
@@ -560,12 +560,12 @@ i {
         text-align: center;
     }
     /* 搜索框 */
-    .h5-search {
+    .search-mobile {
         display: flex !important;
         flex-direction: row;
         justify-content: space-between;
     }
-    .h5-search input {
+    .search-mobile input {
         flex-grow: 2;
         height: 24px;
         margin-right: 16px;
@@ -577,11 +577,11 @@ i {
         border: 1px solid rgba(0, 0, 0, 0.3);
     }
     
-    .h5-search input:focus {
+    .search-mobile input:focus {
         outline: 0;
     }
 
-    .h5-search .search-btn {
+    .search-mobile .search-btn {
         width: 44px;
         height: 32px;
         border-radius: 4px;
