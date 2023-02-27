@@ -30,6 +30,12 @@
         [ WHERE predicate ];
     ```
 
+    ```
+    CREATE [UNIQUE] INDEX index_name
+        ON tbl_name (key_part,...)
+        [USING {BTREE | HASH}]
+    ```
+
 -   在分区表上创建索引。
 
     ```
