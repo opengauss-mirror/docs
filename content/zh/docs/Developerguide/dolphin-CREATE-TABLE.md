@@ -297,70 +297,70 @@ openGauss=# CREATE TABLE t_row_format(c text) ROW_FORMAT test_row_format;
 WARNING:  ROW_FORMAT for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定在表空间变满时扩展表空间大小。
+--创建表时对表指定在表空间变满时扩展表空间大小。
 openGauss=# CREATE TABLE t_autoextend_size(c text) AUTOEXTEND_SIZE 4M;
 WARNING:  AUTOEXTEND_SIZE for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定表的平均行长度。
+--创建表时对表指定表的平均行长度。
 openGauss=# CREATE TABLE t_avg_row_length(c text) AVG_ROW_LENGTH 10;
 WARNING:  AVG_ROW_LENGTH for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定是否维护所有行的实时校验和。
+--创建表时对表指定是否维护所有行的实时校验和。
 openGauss=#	CREATE TABLE t_checksum(c text) CHECKSUM 0;
 WARNING:  CHECKSUM for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定联合表的连接字符串。
+--创建表时对表指定联合表的连接字符串。
 openGauss=# CREATE TABLE t_connection(c text) CONNECTION 'connect_string';
 WARNING:  CONNECTION for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定表数据数据和索引的存储目录。
+--创建表时对表指定表数据数据和索引的存储目录。
 openGauss=# CREATE TABLE t_data_directory(c text) DATA DIRECTORY 'data_directory';
-WARNING:  DATA OR INDEX DIRECTORY for TABLE is not supported for current version. skipped
+WARNING:  DIRECTORY for TABLE is not supported for current version. skipped
 CREATE TABLE
 openGauss=# CREATE TABLE t_index_directory(c text) INDEX DIRECTORY 'index_directory';
-WARNING:  DATA OR INDEX DIRECTORY for TABLE is not supported for current version. skipped
+WARNING:  DIRECTORY for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定是否延迟表的索引更新直到表关闭。
+--创建表时对表指定是否延迟表的索引更新直到表关闭。
 openGauss=# CREATE TABLE t_delay_key_write(c text) DELAY_KEY_WRITE 1;
 WARNING:  DELAY_KEY_WRITE for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定表启用或禁用页面级数据加密。
+--创建表时对表指定表启用或禁用页面级数据加密。
 openGauss=# CREATE TABLE t_encryption(c text) ENCRYPTION 'Y';
 WARNING:  ENCRYPTION for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定主存储引擎的表属性。
+--创建表时对表指定主存储引擎的表属性。
 openGauss=# CREATE TABLE t_engine_attribute(c text) ENGINE_ATTRIBUTE 'engine_attribute';
 WARNING:  ENGINE_ATTRIBUTE for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定应将行插入到的表。
+--创建表时对表指定应将行插入到的表。
 openGauss=# CREATE TABLE t_insert_method(c text) INSERT_METHOD NO;
 WARNING:  INSERT_METHOD for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定索引键块的字节大小。
+--创建表时对表指定索引键块的字节大小。
 openGauss=# CREATE TABLE t_key_block_size(c text) KEY_BLOCK_SIZE 10;
 WARNING:  KEY_BLOCK_SIZE for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定计划在表中存储的最大行数。
+--创建表时对表指定计划在表中存储的最大行数。
 openGauss=# CREATE TABLE t_max_rows(c text) MAX_ROWS 20;
 WARNING:  MAX_ROWS for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定计划在表中存储的最小行数。
+--创建表时对表指定计划在表中存储的最小行数。
 openGauss=# CREATE TABLE t_min_rows(c text) MIN_ROWS 5;
 WARNING:  MIN_ROWS for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定控制压缩索引的方式。
+--创建表时对表指定控制压缩索引的方式。
 openGauss=# CREATE TABLE t_pack_keys(c text) PACK_KEYS DEFAULT;
 WARNING:  PACK_KEYS for TABLE is not supported for current version. skipped
 CREATE TABLE
@@ -369,37 +369,37 @@ openGauss=# CREATE TABLE t_password(c text) PASSWORD 'password';
 WARNING:  PASSWORD for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定开启事务模式。
+--创建表时对表指定开启事务模式。
 openGauss=# CREATE TABLE t_start_transaction(c text) START TRANSACTION;
 WARNING:  START TRANSACTION for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定辅助存储引擎的表属性。
+--创建表时对表指定辅助存储引擎的表属性。
 openGauss=# CREATE TABLE t_secondary_engine_attribute(c text) SECONDARY_ENGINE_ATTRIBUTE 'secondary_engine_attribute';
 WARNING:  SECONDARY_ENGINE_ATTRIBUTE for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定是否自动重新计算表的持久统计信息。
+--创建表时对表指定是否自动重新计算表的持久统计信息。
 openGauss=# CREATE TABLE t_stats_auto_recalc(c text) STATS_AUTO_RECALC DEFAULT;
 WARNING:  STATS_AUTO_RECALC for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定是否为表启用持久统计信息。
+--创建表时对表指定是否为表启用持久统计信息。
 openGauss=# CREATE TABLE t_stats_persistent(c text) STATS_PERSISTENT DEFAULT;
 WARNING:  STATS_PERSISTENT for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定估计索引列的基数和其他统计信息时要采样的索引页数。
+--创建表时对表指定估计索引列的基数和其他统计信息时要采样的索引页数。
 openGauss=# CREATE TABLE t_stats_sample_pages(c text) STATS_SAMPLE_PAGES 1;
 WARNING:  STATS_SAMPLE_PAGES for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时访问一组相同的表作为一个表。
+--创建表时访问一组相同的表作为一个表。
 openGauss=# CREATE TABLE t_union(c text) UNION(a, b);
 WARNING:  UNION for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定表存储在磁盘。
+--创建表时对表格指定表存储在磁盘。
 openGauss=# CREATE TABLESPACE test ADD DATAFILE 'data.ibd';
 WARNING:  Suffix ".ibd" of datafile path detected. The actual path will be renamed as "data_ibd"
 CREATE TABLESPACE
@@ -407,7 +407,7 @@ openGauss=# CREATE TABLE t_tablespace_storage_disk(c text) TABLESPACE test STORA
 WARNING:  TABLESPACE_OPTION for TABLE is not supported for current version. skipped
 CREATE TABLE
 
---创建表格时对表格指定表存储在内存。
+--创建表时对表格指定表存储在内存。
 openGauss=# CREATE TABLESPACE test ADD DATAFILE 'data.ibd';
 WARNING:  Suffix ".ibd" of datafile path detected. The actual path will be renamed as "data_ibd"
 CREATE TABLESPACE
