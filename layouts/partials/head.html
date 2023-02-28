@@ -25,12 +25,11 @@
     {{ if default .Summary .Description }}
     <meta name="description" content="{{ default .Summary .Description }}">
     {{ else if .Site.Params.DefaultDescription }}
-    <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+    <meta name="description" content="{{ .Site.Params.DefaultDescription }}">
     {{ end }}
     <meta name="author" content="{{ .Site.Params.author }}" >
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
-    <link href="{{ "css/h5_footer.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="{{ "css/common.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="{{ "css/pagination.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
     <link href="/css/reset.css" rel="stylesheet" type="text/css">

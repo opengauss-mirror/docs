@@ -3,7 +3,7 @@ $(function ($) {
     const lang = location.href.split("/")[3];
 
     $(
-      "#h5-menu .h5-next i,#h5-menu .h5-prev i"
+      "#menu-mobile .next-mobile i,#menu-mobile .prev-mobile i"
     ).html(`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 32 32">
 <title>arrow-right</title>
 <path fill="currentColor"  d="M2.667 16.667v-1.333c0-0.368 0.298-0.667 0.667-0.667h21.56l-5.933-5.92c-0.126-0.125-0.197-0.296-0.197-0.473s0.071-0.348 0.197-0.473l0.947-0.933c0.125-0.126 0.296-0.197 0.473-0.197s0.348 0.071 0.473 0.197l8.187 8.173c0.188 0.187 0.293 0.442 0.293 0.707v0.507c-0.003 0.265-0.108 0.518-0.293 0.707l-8.187 8.173c-0.125 0.126-0.296 0.197-0.473 0.197s-0.348-0.071-0.473-0.197l-0.947-0.947c-0.125-0.123-0.196-0.291-0.196-0.467s0.071-0.344 0.196-0.467l5.933-5.92h-21.56c-0.368 0-0.667-0.298-0.667-0.667z"></path>
@@ -81,24 +81,24 @@ $(function ($) {
       if (!themeStyle) {
         $(".theme-change i").removeClass("light dark").addClass("light");
         // $(".title-h2 .icon-help").removeClass("dark");
-        $(".nav-menu a .h5-logo").removeClass("dark");
+        $(".nav-menu a .logo-mobile").removeClass("dark");
         _body.removeClass("light dark").addClass("light");
         localStorage.getItem("openeuler-theme", "light");
       } else {
         $(".theme-change i").removeClass("light dark").addClass(themeStyle);
         // $(".title-h2 .icon-help").addClass(themeStyle);
-        $(".nav-menu a .h5-logo").addClass(themeStyle);
+        $(".nav-menu a .logo-mobile").addClass(themeStyle);
         _body.removeClass("light dark").addClass(themeStyle);
       }
       $(".theme-change i").click(function () {
         if ($(this).hasClass("light")) {
           // $(".title-h2 .icon-help").addClass("dark");
-          $(".nav-menu a .h5-logo").addClass("dark");
+          $(".nav-menu a .logo-mobile").addClass("dark");
           $(this).addClass("dark").removeClass("light");
           localStorage.setItem("openeuler-theme", "dark");
           _body.addClass("dark").removeClass("light");
         } else {
-          $(".nav-menu a .h5-logo").removeClass("dark");
+          $(".nav-menu a .logo-mobile").removeClass("dark");
           // $(".title-h2 .icon-help").removeClass("dark");
           $(this).addClass("light").removeClass("dark");
           localStorage.setItem("openeuler-theme", "light");
@@ -107,7 +107,7 @@ $(function ($) {
       });
     })();
     // 点击logo回到文档首页
-    $("#h5-menu-top .h5-logo .logo-img,.nav-box .h5-logo,.pc-logo").click(
+    $("#menu-top-mobile .logo-mobile .logo-img,.nav-box .logo-mobile,.pc-logo").click(
       () => {
         window.open(`https://www.opengauss.org/${lang}/`, "_blank");
       }
@@ -120,18 +120,18 @@ $(function ($) {
     // 控制移动端菜单栏的显示
     $(".h5_index .h5_nav_left").click(function () {
       $(".h5_index .h5_nav").addClass("h5_nav_show");
-      $(".zhezhao").css("display", "block");
-      $(".zhezhao").css("height", "100vh");
-      $(".zhezhao").css("position", "fixed");
+      $(".mask-search-mobile").css("display", "block");
+      $(".mask-search-mobile").css("height", "100vh");
+      $(".mask-search-mobile").css("position", "fixed");
     });
     $(".h5_index .icon-close").click(function () {
       $(".h5_index .h5_nav").removeClass("h5_nav_show");
-      $(".zhezhao").css("display", "none");
+      $(".mask-search-mobile").css("display", "none");
     });
     // 根据语言控制版本选择的显示
     $("#version-select .option a[href^='/ru/']").addClass("option-ru-a");
-    $("#h5-menu-top .option").addClass(`option-${lang}`);
-    $("#h5-menu-top .option a[href^='/ru/']").addClass("option-ru-a");
+    $("#menu-top-mobile .option").addClass(`option-${lang}`);
+    $("#menu-top-mobile .option a[href^='/ru/']").addClass("option-ru-a");
     // 让markdown里面的目录隐藏
     // $(function ($) {
     //   $(".markdown ul li>a[href^='#']").parent().hide();

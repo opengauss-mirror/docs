@@ -29,16 +29,16 @@ $(function ($) {
     }
     evaluateParams.lang = lang;
     var versionStr = urlArr[3].replace("-lite",'');
-    $("#version-select .option span,#h5-menu-top .option>span").each(function(){
+    $("#version-select .option span,#menu-top-mobile .option>span").each(function(){
         if($(this).html()===versionStr){
             $(this).addClass("active")
         }
     })
     if (evaluateParams.lang === "en") {
-        $("#version-select>span,#h5-menu .h5-sersion").text("Version: " + versionStr);
+        $("#version-select>span,#menu-mobile .sersion-mobile").text("Version: " + versionStr);
     }
     else if (evaluateParams.lang === "zh") {
-        $("#version-select>span,#h5-menu .h5-sersion").text("版本: " + versionStr);
+        $("#version-select>span,#menu-mobile .sersion-mobile").text("版本: " + versionStr);
     }
     $("#version-select").click(function (e) {
         $(this).children(".option").toggleClass("option-active");
@@ -49,20 +49,20 @@ $(function ($) {
         e.stopPropagation();
     });
     $(".h5_nav_left").click(function (e) {
-        $("#all>.left").addClass("show-left");
-        $(".h5-mask").show();
+        $("#all>.sidebar").addClass("show-left");
+        $(".mask-mobile").show();
     });
 
-    $("#h5-menu-top .icon-close,.h5-mask").click(function (e) {
-        $("#all>.left").removeClass("show-left");
-        $(".h5-mask").hide();
+    $("#menu-top-mobile .icon-close,.mask-mobile").click(function (e) {
+        $("#all>.sidebar").removeClass("show-left");
+        $(".mask-mobile").hide();
     });
-    $("#h5-menu-top .h5-search").find(".search-btn").click(function (e) {
-        keyword = $("#h5-menu-top .h5-search").find("input").val();
+    $("#menu-top-mobile .search-mobile").find(".search-btn").click(function (e) {
+        keyword = $("#menu-top-mobile .search-mobile").find("input").val();
         window.location.href = '/' + lang + '/search.html?keyword=' + keyword;
     });
-    $("#h5-menu-top .select-box").click(function (e) {
-        $("#h5-menu-top .menu-select-box .option").toggleClass("option-show")
+    $("#menu-top-mobile .select-box").click(function (e) {
+        $("#menu-top-mobile .menu-select-box .option").toggleClass("option-show")
         $(".icon-servision").toggleClass("icon-open")
         e.stopPropagation();
     });

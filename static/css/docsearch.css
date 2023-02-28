@@ -1,6 +1,6 @@
 /* 搜索页面样式 */
 
-.h5-search {
+.search-mobile {
     display: none;
 }
 
@@ -21,7 +21,7 @@
         border-top:none;
     }
 }
-.h5-search-result{
+.search-result-mobile{
     display: none;
 }
 .search-result::-webkit-scrollbar-track {
@@ -132,7 +132,7 @@
 @media screen and (max-width: 1100px) {
     
 
-    .body_content .h5-search {
+    .body_content .search-mobile {
         position: relative;
         margin-top: 40px;
     }
@@ -179,6 +179,6 @@
 .right-nav #result-container .search-result ul {
     padding-top: 40px;
 }
-.h5-search-result::-webkit-scrollbar{
+.search-result-mobile::-webkit-scrollbar{
     display: none !important;
 }

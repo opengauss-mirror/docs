@@ -1,5 +1,5 @@
 /* 列表页样式 */
-.h5-search {
+.search-mobile {
     display: none;
 }
 
@@ -245,7 +245,7 @@ html[lang="zh"] .list[index="95"] .use .link-box a:nth-of-type(3) {
 
 @media screen and (max-width: 1100px) {
 
-    .body_content .doclist .h5-search {
+    .body_content .doclist .search-mobile {
         position: relative;
         margin-top: 40px;
     }
