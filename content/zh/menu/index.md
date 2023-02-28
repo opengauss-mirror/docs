@@ -50,6 +50,7 @@ headless: true
 		-   [Parallel Page-based Redo For Ustore]({{< relref "./docs/CharacteristicDescription/Parallel-Page-based-Redo-For-Ustore.md" >}})
 		-   [行存转向量化]({{< relref "./docs/CharacteristicDescription/行存转向量化.md" >}})
 		-   [OCK加速数据传输]({{< relref "./docs/CharacteristicDescription/OCK加速数据传输.md" >}})
+		-   [OCK SCRLOCK加速分布式锁]({{< relref "./docs/CharacteristicDescription/OCK SCRLOCK加速分布式锁.md" >}})
 	-   [高可用]({{< relref "./docs/CharacteristicDescription/高可用.md" >}})
 		-   [主备机]({{< relref "./docs/CharacteristicDescription/主备机.md" >}})
 		-   [逻辑复制]({{< relref "./docs/CharacteristicDescription/逻辑复制.md" >}})
