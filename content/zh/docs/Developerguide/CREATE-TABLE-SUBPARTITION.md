@@ -37,11 +37,11 @@ CREATE TABLE [ IF NOT EXISTS ] subpartition_table_name
 [ WITH ( {storage_parameter = value} [, ... ] ) ]
 [ COMPRESS | NOCOMPRESS ]
 [ TABLESPACE tablespace_name ]
-PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST | HASH} (subpartition_key)
+PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key) [ PARTITIONS integer ] SUBPARTITION BY {RANGE | LIST | HASH | KEY} (subpartition_key) [ SUBPARTITIONS integer ]
 (
-  PARTITION partition_name1 [ VALUES LESS THAN (val1) | VALUES (val1[, …]) ] [ TABLESPACE tablespace ] [ COMMENT {=| } 'text' ]
+  PARTITION partition_name1 [ VALUES LESS THAN {(val1) | MAXVALUE} | VALUES [IN] (val1[, …]) ] [ TABLESPACE [=] tablespace ]
   (
-       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE tablespace ] [COMMENT {=| } 'text' ] } [, ...]
+       { SUBPARTITION subpartition_name1 [ VALUES LESS THAN (val1_1) | VALUES (val1_1[, …])]  [ TABLESPACE [=] tablespace ] [COMMENT {=| } 'text' ] } [, ...]
   )[, ...]
 )[ { ENABLE | DISABLE } ROW MOVEMENT ];
 ```
@@ -56,7 +56,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
       DEFAULT default_e xpr | 
       GENERATED ALWAYS AS ( generation_expr ) STORED |
       AUTO_INCREMENT |
-      UNIQUE index_parameters | 
+      UNIQUE [KEY] index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
@@ -176,13 +176,13 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     这个子句为表或索引指定一个可选的存储参数。参数的详细描述如下所示：
 
-    -   FILLFACTOR
+    -   **FILLFACTOR**
 
         一个表的填充因子（fillfactor）是一个介于10和100之间的百分数。100（完全填充）是默认值。如果指定了较小的填充因子，INSERT操作仅按照填充因子指定的百分率填充表页。每个页上的剩余空间将用于在该页上更新行，这就使得UPDATE有机会在同一页上放置同一条记录的新版本，这比把新版本放置在其他页上更有效。对于一个从不更新的表将填充因子设为100是最佳选择，但是对于频繁更新的表，选择较小的填充因子则更加合适。该参数对于列存表没有意义。
 
         取值范围：10\~100
 
-    -   ORIENTATION
+    -   **ORIENTATION**
 
         决定了表的数据的存储方式。
 
@@ -195,28 +195,28 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
             >
             >orientation不支持修改。
 
+-   **COMPRESSION**
+    
+    -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
+-   行存表不支持压缩。
+    
+-   **MAX\_BATCHROW**
 
-    -   COMPRESSION
-        -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
-        -   行存表不支持压缩。
-    
-    -   MAX\_BATCHROW
-    
-        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
-    
-        取值范围：10000\~60000，默认60000。
-    
-    -   PARTIAL\_CLUSTER\_ROWS
-    
-        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
-    
-        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
-    
-    -   DELTAROW\_THRESHOLD
-    
-        预留参数。该参数只对列存表有效。
-    
-        取值范围：0～9999
+    指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+
+    取值范围：10000\~60000，默认60000。
+
+-   **PARTIAL\_CLUSTER\_ROWS**
+
+    指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+
+    取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+
+-   **DELTAROW\_THRESHOLD**
+
+    预留参数。该参数只对列存表有效。
+
+    取值范围：0～9999
 
 
 -   **COMPRESS / NOCOMPRESS**
@@ -225,17 +225,42 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     缺省值为NOCOMPRESS，即不对元组数据进行压缩。
 
--   **TABLESPACE tablespace\_name**
+- **TABLESPACE tablespace\_name**
 
-    指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
+  指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
 
--   **PARTITION BY \{RANGE | LIST | HASH\} \(partition\_key\)**
-    -   对于partition\_key，分区策略的分区键仅支持1列。
-    -   分区键支持的数据类型和一级分区表约束保持一致。
+- **PARTITION BY \{RANGE \[COLUMNS\] | LIST \[COLUMNS\] | HASH | KEY\} \(partition\_key\)**
 
--   **SUBPARTITION BY \{RANGE | LIST | HASH\} \(subpartition\_key\)**
-    -   对于subpartition\_key，分区策略的分区键仅支持1列。
-    -   分区键支持的数据类型和一级分区表约束保持一致。
+  -   对于partition\_key，分区策略的分区键仅支持1列。
+  -   分区键支持的数据类型和一级分区表约束保持一致。
+  -   COLUMNS关键字只能在sql\_compatibility='B'时使用，只能加在RANGE或LIST之后，“RANGE COLUMNS” 语义同 “RANGE”，“LIST COLUMNS” 语义同 “LIST”。
+  -   KEY关键字只能在sql\_compatibility='B'时使用，KEY与HASH同义。
+
+- **SUBPARTITION BY \{RANGE | LIST | HASH | KEY\} \(subpartition\_key\)**
+
+  -   对于subpartition\_key，分区策略的分区键仅支持1列。
+  -   分区键支持的数据类型和一级分区表约束保持一致。
+  -   KEY关键字只能在sql\_compatibility='B'时使用，KEY与HASH同义。
+
+- **PARTITIONS integer**
+
+  指定分区个数。
+
+  integer为分区数，必须为大于0的整数，且不得大于1048575。
+
+  -   当在RANGE和LIST分区后指定此子句时，必须显式定义每个分区，且定义分区的数量必须与integer值相等。只能在sql\_compatibility='B'时在RANGE和LIST分区后指定此子句。
+  -   当在HASH和KEY分区后指定此子句时，若不列出各个分区定义，将自动生成integer个分区，自动生成的分区名为“p+数字”，数字依次为0到integer-1，分区的表空间默认为此表的表空间；也可以显式列出每个分区定义，此时定义分区的数量必须与integer值相等。若既不列出分区定义，也不指定分区数量，将创建唯一一个分区。
+
+- **SUBPARTITIONS integer**
+
+  指定二级分区数量。
+
+  integer为二级分区个数，必须为大于0的整数，且不得大于1048575。
+
+  -   只能在HASH和KEY二级分区后指定此子句。
+      -   若不列出各个二级分区定义，将在每个一级分区内自动生成integer个二级分区，自动生成的二级分区名为“一级分区名+sp+数字”，数字依次为0到integer-1，分区的表空间默认为此表的表空间。
+      -   也可以列出每个二级分区定义，此时二级分区的数量必须与integer值相等。
+      -   若既不列出每个二级分区定义，也不指定二级分区数量，将创建唯一一个二级分区。
 
 
 -   **\{ ENABLE | DISABLE \} ROW MOVEMENT**
@@ -281,25 +306,20 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
+    >-   STORED关键字可省略，与不省略STORED语义相同。
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
-    >
     >-   不能为生成列指定默认值。
-    >
     >-   生成列不能作为分区键的一部分。
-    >
     >-   生成列不能和ON UPDATE约束字句的CASCADE、SET NULL、SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
-    >
     >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
-    >
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
-    >
     >-   生成列的权限控制和普通列一样。
-    > 
+    >
     >
     >-   不能为生成列指定默认值。
     >
     >-   生成列不能作为分区键的一部分。
-    >
+    > 
     >-   生成列不能和ON UPDATE约束字句的CASCADE、SET NULL、SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
     >
     >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
@@ -309,7 +329,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     >-   生成列的权限控制和普通列一样。
     >
     >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
-
+    
 -   **AUTO\_INCREMENT**
 
     指定列为自动增长列。
