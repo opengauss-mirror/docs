@@ -227,6 +227,24 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 <td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p114281847184818"></a>冻结多事务ID号。</p>
 </td>
 </tr>
+<tr id="row1145064432220"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="p473718403619"><a name="p473718403619"></a><a name="p473718403619"></a>partitionno</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="p15638201511718"><a name="p15638201511718"></a><a name="p15638201511718"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="p2069231971919"><a name="p2069231971919"></a><a name="p2069231971919"></a>用于维护分区表中的分区Map结构。<a name="ul051711610402"></a><a name="ul051711610402"></a><ul id="ul051711610402"><li>当对象为分区时，此字段表示分区ID，从1开始自增。</li><li>当对象为分区表时，此字段表示分区ID的最大值，并使用负值来特殊标记，该值会随着部分分区DDL语法不断递增。</li><li>当对象为其他类型时，此字段为空值，没有任何含义。</li></ul>
+</div>
+<p id="p1735762532420"><a name="p1735762532420"></a><a name="p1735762532420"></a>partitionno是一个永久自增列，可以通过语法ALTER TABLE t_name RESET PARTITION或者VACUUM FULL命令重置/回收。</p>
+</td>
+</tr>
+<tr id="row4450114472214"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="p2867155618610"><a name="p2867155618610"></a><a name="p2867155618610"></a>subpartitionno</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="p5760131615718"><a name="p5760131615718"></a><a name="p5760131615718"></a>integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="58.589999999999996%" headers="mcps1.2.4.1.3 "><div class="p" id="p2970115214227"><a name="p2970115214227"></a><a name="p2970115214227"></a>用于维护分区表中的二级分区Map结构。<a name="ul7161143054016"></a><a name="ul7161143054016"></a><ul id="ul7161143054016"><li>当对象为二级分区时，此字段表示二级分区ID，从1开始自增。</li><li>当对象为二级分区表的一级分区时，此字段表示二级分区ID的最大值，并使用负值来特殊标记，该值会随着部分分区DDL语法不断递增。</li><li>当对象为其他类型时，此字段为空值，没有任何含义。</li></ul>
+</div>
+<p id="p1526511328252"><a name="p1526511328252"></a><a name="p1526511328252"></a>subpartitionno是一个永久自增列，可以通过语法ALTER TABLE t_name RESET PARTITION或者VACUUM FULL命令重置/回收。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
