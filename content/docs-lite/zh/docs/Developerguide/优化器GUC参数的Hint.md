@@ -17,7 +17,7 @@ set(param value)
 -   目前支持使用Hint设置生效的参数有
     -   布尔类：
 
-        enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable\_tidscan，partition\_iterator\_elimination，partition\_page\_estimation, var\_eq\_const\_selectivity, enable\_functional\_dependency
+        enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable\_tidscan，partition\_iterator\_elimination，partition\_page\_estimation, var\_eq\_const\_selectivity, enable\_functional\_dependency, enable\_inner\_unique\_opt
 
     -   整形类：
 
