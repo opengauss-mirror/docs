@@ -28,21 +28,21 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     ```
     VACUUM [ ( { FULL | FREEZE | VERBOSE | {ANALYZE | ANALYSE }} [,...] ) ]
-        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) | SUBPARTITION ( subpartition_name ) ];
+        [ table_name [ (column_name [, ...] ) ] [ PARTITION ( partition_name ) | SUBPARTITION ( subpartition_name ) ] ] ;
     ```
 
 - 仅回收空间，不更新统计信息。
 
   ```
-  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name ] 
-  [ PARTITION ( partition_name )  | SUBPARTITION ( subpartition_name ) ];
+  VACUUM [ FULL [COMPACT] ] [ FREEZE ] [ VERBOSE ] [ table_name 
+  [ PARTITION ( partition_name )  | SUBPARTITION ( subpartition_name ) ] ] ;
   ```
 
 -   回收空间并更新统计信息，且对关键字顺序有要求。
 
     ```
     VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] { ANALYZE | ANALYSE } [ VERBOSE ] 
-        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name )| SUBPARTITION ( subpartition_name ) ];
+        [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) ];
     ```
 
 
