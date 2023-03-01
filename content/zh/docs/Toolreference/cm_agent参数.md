@@ -327,3 +327,30 @@
 
 **默认值：**
 
+## event_triggers
+
+**参数说明**：
+该参数用于定义事件触发器。
+
+**取值范围**：以字符串表示的json类型。  
+配置形式为：'{"trigger_type_1":"trigger_value_1",...,"trigger_type_n":"trigger_value_n"}'  
+其中：
+> trigger_type为事件触发器类型，当前支持的事件触发器类型为：on_start、on_stop、on_failover、on_switchover
+> trigger_value为发生对应事件时待执行的用户自定义触发器脚本  
+
+修改后重载cm\_agent参数生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+
+自定义脚本的输出会重定向至cm_agent日志目录下的system-callxxx.log中。
+
+**默认值**：''
+
+**约束条件**：
+1. trigger_value即自定义脚本，必须为真实存在的shell脚本，且为绝对路径，并且对当前用户至少有读取和执行权限。
+2. 使用cm_ctl set命令配置该参数时，参数值必须符合json格式，并且将json类型表示为字符串类型，中间不能包含换行和空格。
+3. 参数值最大长度为1024。
+
+**配置样例**：
+'{"on_start":"/dir/on_start.sh","on_stop":"/dir/on_stop.sh","on_failover":"/dir/on_failover.sh","on_switchover":"/dir/on_switchover.sh"}'
+
+>![](public_sys-resources/icon-caution.gif) **注意：**
+>由于CM内部对各事件的执行均是异步执行，即将事件置于后台执行，所以CM在调用用户自定义的触发器脚本时，有可能事件还尚未执行完成，所以用户自定义触发器脚本中如果是需要等待事件完成后才执行动作的话，则需要在脚本中添加对应的状态检查，以确保事件完成。
