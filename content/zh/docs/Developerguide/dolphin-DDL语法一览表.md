@@ -53,13 +53,13 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a href="dolphin-CREATE-TABLE.md">CREATE TABLE</a></p>
 </td>
 </tr>
-</tr>
+
 <tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_r3df8acf5f17e4ceca9a8d1d8de519731"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p938501610638"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p938501610638"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_zh-cn_topic_0058966187_p938501610638"></a>修改表属性</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a href="dolphin-ALTER-TABLE.md">ALTER TABLE</a></p>
 </td>
 </tr>
-</tr>
+
 </tbody>
 </table>
 
@@ -117,7 +117,9 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_a495999d1ab684352825e3030c76e84de"></a><a href="dolphin-CREATE-INDEX.md">CREATE INDEX</a></p>
 </td>
-</tr>
+<tr>
+<td>删除索引</td>
+<td><a href="dolphin-DROP-INDEX.md">DROP INDEX</a></td>
 </tr>
 </tbody>
 </table>
@@ -171,7 +173,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aff1c2db7ebb24eda8c6cbca6c9a1a677"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aff1c2db7ebb24eda8c6cbca6c9a1a677"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aff1c2db7ebb24eda8c6cbca6c9a1a677"></a><a href="dolphin-ALTER-FUNCTION.md">ALTER FUNCTION</a></p>
 </td>
 </tr>
-</tr>
+
 </tbody>
 </table>
 
@@ -195,4 +197,27 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 
 </tbody>
+</table>
+
+## 定义视图
+
+视图是从一个或几个基本表中导出的虚表，可用于控制用户对数据访问，请参考[表8](#dolphin_ddl_list_t12)。
+
+**表 8** 视图定义相关SQL
+<a id="dolphin_ddl_list_t12"></a>
+<table>
+<tr>
+    <th align="left">功能</th>
+    <th align="left">相关SQL</th>
+</tr>
+
+<tr>
+    <td>创建视图</td>
+    <td><a href="dolphin-CREATE-VIEW.md">CREATE VIEW</a></td>
+</tr>
+
+<tr>
+    <td>修改视图</td>
+    <td><a href="dolphin-ALTER-VIEW.md">CREATE VIEW</a></td>
+</tr>
 </table>

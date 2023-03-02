@@ -13,6 +13,8 @@
 
 在分区表上创建索引与在普通表上创建索引的语法不太一样，使用时请注意，如分区表上不支持并行创建索引，不支持创建部分索引。
 
+新增可以指定 ALGORITHM 选项语法。
+
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
@@ -27,7 +29,7 @@
         { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ({ { column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
         [ index_option ]
-        [ WHERE predicate ];
+        [ WHERE predicate | ALGORITHM [=] {DEFAULT | INPLACE | COPY} ];
     ```
 
 -   在分区表上创建索引。
@@ -37,7 +39,7 @@
         { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
         [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
-        [ index_option ]
+        [ index_option ] [ALGORITHM [=] {DEFAULT | INPLACE | COPY} ]
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
@@ -65,6 +67,10 @@
     ```
 
     其中，TABLESPACE选项允许输入多次，以最后一次的输入为准。
+
+- **ALGORITHM**
+
+    指定算法，可选项：DEFAULT、INPLACE、COPY。当前只做语法兼容，暂无实际功能。
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
