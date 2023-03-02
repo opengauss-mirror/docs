@@ -53,6 +53,17 @@
       { {config_parameter = { expr | DEFAULT }}};
   ```
 
+- 在兼容B模式（sql\_compatibility = 'B'）下设置参数。
+
+  ```
+  SET [ SESSION | @@SESSION. | @@]
+        { {config_parameter = { expr | DEFAULT }}};
+  SET { GLOBAL | @@GLOBAL.}
+        { {config_parameter = { expr | DEFAULT }}}
+  ```
+  
+  
+  
 - 设置自定义变量
 
   ```
@@ -145,7 +156,7 @@
   > 6. Prepare语句中用户自定义变量存储的字符串只支持select/insert/update/delete/merge语法。
   > 7. 对于连续赋值的场景，只支持@var_name1 := @var_name2 := ... := expr和@var_name1 = @var_name2 := ... := expr，等号（=）只有放在首位才表示赋值，其他位置表示比较操作符。
 
-- expr
+- **expr**
 
   表达式，支持可直接或间接转为整型，浮点型，字符串，位串和NULL的表达式。
 
@@ -163,49 +174,34 @@ openGauss=# SET search_path TO tpcds, public;
 --把日期时间风格设置为传统的 POSTGRES 风格(日在月前)。
 openGauss=# SET datestyle TO postgres,dmy;
 
--- set自定义用户变量的功能
-b=# show sql_compatibility;
- sql_compatibility
--------------------
- B
-(1 row)
+--SET自定义用户变量的功能
+openGauss=# create database user_var dbcompatibility 'b';
+openGauss=# \c user_var
+user_var=# SET b_format_behavior_compat_options = enable_set_variables;
+user_var=# SET @v1 := 1, @v2 := 1.1, @v3 := true, @v4 := 'dasda', @v5 := x'41';
 
-b=# show enable_set_variable_b_format;
- enable_set_variable_b_format
-------------------------------
- on
-(1 row)
+--查询自定义用户变量
+user_var=# select @v1, @v2, @v3, @v4, @v5, @v6, @v7;
+--PREPARE语法使用自定义用户变量
+user_var=# SET @sql = 'select 1';
+user_var=# PREPARE stmt as @sql;
+user_var=# EXECUTE stmt;
 
-b=# set @v1 := 1, @v2 := 1.1, @v3 := true, @v4 := 'dasda', @v5 := x'41';
-SET
-b=# select @v1, @v2, @v3, @v4, @v5, @v6, @v7;
- @v1 | @v2 | @v3 |  @v4  |   @v5    | @v6 | @v7
------+-----+-----+-------+----------+-----+-----
-   1 | 1.1 |   1 | dasda | 01000001 |     |
-(1 row)
+--设置B兼容性参数
+openGauss=# create database test_set dbcompatibility 'B';
+openGauss=# \c test_set
+test_set=# set b_format_behavior_compat_options = 'enable_set_variables';
 
--- prepare语法
-b=# set @sql = 'select 1';
-SET
-b=# prepare stmt as @sql;
-PREPARE
-b=# execute stmt;
- ?column?
-----------
-        1
-(1 row)
+--session变量设置
+test_set=# set @@codegen_cost_threshold = 10000;
+test_set=# set @@session.codegen_cost_threshold = @@codegen_cost_threshold * 2;
 
+--global变量设置
+test_set=#set global most_available_sync = t;
+test_set=#set @@global.most_available_sync = t;
 ```
 
-```
---Global变量设置
-set global most_available_sync = t;
-set @@global.most_available_sync = t;
 
---Session变量设置
-openGauss=# set @@codegen_cost_threshold = 10000;
-openGauss=# set @@session.codegen_cost_threshold = @@codegen_cost_threshold * 2;
-```
 
 
 

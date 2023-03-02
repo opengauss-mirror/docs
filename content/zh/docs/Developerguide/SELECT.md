@@ -20,6 +20,7 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
+[ into_option ]
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
 [ [ START WITH condition ] CONNECT BY [NOCYCLE] condition [ ORDER SIBLINGS BY expression ] ]
@@ -31,7 +32,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ LIMIT { [offset,] count | ALL } ]
 [ OFFSET start [ ROW | ROWS ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
-[ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N]} [...] ];
+[ into_option ]
+[ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N]} [...] ]
+[ into_option ];
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -58,6 +61,29 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     with_query_name [ ( column_name [, ...] ) ]
         AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
+
+- 其中into字句为：
+
+  ```
+  into_option: {
+          INTO var_name [, var_name] ...
+  	| INTO OUTFILE 'file_name'
+  		[CHARACTER SET charset_name]
+  		export_options
+  	| INTO DUMPFILE 'file_name'
+  }
+  export_options: {
+      [FIELDS
+   [TERMINATED BY 'string']
+   [[OPTIONALLY] ENCLOSED BY 'char']
+   [ESCAPED BY 'char' ]
+      ]
+      [LINES
+   [STARTING BY 'string']
+   [TERMINATED BY 'string']
+      ]
+  }
+  ```
 
 -   其中指定查询源from\_item为：
 
@@ -158,6 +184,65 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   手动输入列名，多个列之间用英文逗号（,）分隔。
     -   可以是FROM子句里面计算出来的字段。
 
+- **INTO子句**
+
+  将select出的结果输出到指定用户自定义变量或文件。
+
+  - var\_name
+
+    用户自定义的变量名。详见[SET章节](SET.md)中的var\_name。
+
+  - OUTFILE
+
+    - CHARACTER SET 指定编码格式。
+
+    - FIELDS 指定每个字段的属性：
+
+      TERMINATED 指定间隔符。
+
+      \[OPTIONALLY\] ENCLOSED 指定引号符，指定OPTIONALLY时只对字符串数据类型起作用。
+
+      ESCAPED 指定转义符。
+
+    - LINES 指定行属性：
+
+      STARTING 指定行开头。
+
+      TERMINATED 指定行结尾。
+
+  - DUMPFILE
+
+    导出无间隔符，无换行符的单行数据到文件。
+
+  - file\_name
+
+    指定文件的绝对路径。
+
+    ```
+  into_option三处位置：
+    --在from子句之前。
+    openGauss=#  select * into @my_var from t;
+    --在锁定子句之前。
+    openGauss=#  select * from t into @my_var for update;
+    --在select语句结尾。
+  openGauss=#  select * from t for update into @my_var;
+    
+  导出到文件：
+    openGauss=#  select * from t；
+   a | b
+    ---+---
+   1 | a
+    (1 row)
+  --导出数据到outfile文件。
+    openGauss=#  select * from t into outfile '/home/openGauss/t.txt'FIELDS TERMINATED BY '~' ENCLOSED BY 't' ESCAPED BY '^' LINES STARTING BY '$' TERMINATED BY '&\n';
+  文件内容：$t1t~tat&，其中LINES STARTING BY($),FIELDS TERMINATED BY(~),ENCLOSED BY(t),LINES TERMINATED BY(&\n)。
+    --导出数据到dumpfile文件。
+  openGauss=#  select * from t into dumpfile '/home/openGauss/t.txt';
+    文件内容：1a
+  ```
+  
+  
+  
 - **FROM子句**
 
   为SELECT声明一个或者多个源表。

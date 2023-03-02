@@ -21,6 +21,7 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 { * | {expression [ [ AS ] output_name ]} [, ...] }
+[ into_option ]
 [ FROM from_item [, ...] ]
 [ WHERE condition ]
 [ [ START WITH condition ] CONNECT BY [NOCYCLE] condition [ ORDER SIBLINGS BY expression ] ]
@@ -32,7 +33,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ LIMIT { [offset,] count | ALL } ]
 [ OFFSET start [ ROW | ROWS ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
-[ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N ]} [...] ];
+[ into_option ]
+[ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N ]} [...] ]
+[into_option];
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -52,6 +55,29 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     with_query_name [ ( column_name [, ...] ) ]
         AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
+
+- 其中into字句为：
+
+  ```
+  into_option: {
+          INTO var_name [, var_name] ...
+  	| INTO OUTFILE 'file_name'
+  		[CHARACTER SET charset_name]
+  		export_options
+  	| INTO DUMPFILE 'file_name'
+  }
+  export_options: {
+      [FIELDS
+   [TERMINATED BY 'string']
+   [[OPTIONALLY] ENCLOSED BY 'char']
+   [ESCAPED BY 'char' ]
+      ]
+      [LINES
+   [STARTING BY 'string']
+   [TERMINATED BY 'string']
+      ]
+  }
+  ```
 
 -   其中指定查询源from\_item为：
 
@@ -156,6 +182,63 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   手动输入列名，多个列之间用英文逗号（,）分隔。
     -   可以是FROM子句里面计算出来的字段。
 
+-   **INTO子句**
+
+    将select出的结果输出到指定用户自定义变量或文件。
+
+    - var\_name
+
+      用户自定义的变量名。详见[SET章节](SET.md)中的var\_name。
+
+    - OUTFILE
+
+      - CHARACTER SET 指定编码格式。
+
+      - FIELDS 指定每个字段的属性：
+
+        TERMINATED 指定间隔符。
+
+        \[OPTIONALLY\] ENCLOSED 指定引号符，指定OPTIONALLY时只对字符串数据类型起作用。
+
+        ESCAPED 指定转义符。
+
+      - LINES 指定行属性：
+
+        STARTING 指定行开头。
+
+        TERMINATED 指定行结尾。
+
+    - DUMPFILE
+
+      导出无间隔符，无换行符的单行数据到文件。
+
+    - file\_name
+
+      指定文件的绝对路径。
+
+      ```
+  into_option三处位置：
+      --在from子句之前。
+      openGauss=#  select * into @my_var from t;
+      --在锁定子句之前。
+      openGauss=#  select * from t into @my_var for update;
+      --在select语句结尾。
+      openGauss=#  select * from t for update into @my_var;
+      
+      导出到文件：
+      openGauss=#  select * from t；
+       a | b
+      ---+---
+       1 | a
+      (1 row)
+      --导出数据到outfile文件。
+      openGauss=#  select * from t into outfile '/home/openGauss/t.txt'FIELDS TERMINATED BY '~' ENCLOSED BY 't' ESCAPED BY '^' LINES STARTING BY '$' TERMINATED BY '&\n';
+      文件内容：$t1t~tat&，其中LINES STARTING BY($),FIELDS TERMINATED BY(~),ENCLOSED BY(t),LINES TERMINATED BY(&\n)。
+      --导出数据到dumpfile文件。
+      openGauss=#  select * from t into dumpfile '/home/openGauss/t.txt';
+      文件内容：1a
+      ```
+    
 -   **FROM子句**
 
     为SELECT声明一个或者多个源表。
@@ -199,97 +282,95 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
             >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
             >-   对表执行truncate之后，再进行闪回查询或者闪回表操作。通过时间点进行的闪回操作会报错：Snapshot too old。通过CSN进行的闪回操作会找不到数据，或者报错：Snapshot too old。
 
+-   column\_alias
 
-    -   column\_alias
-    
-        列别名
-    
-    -   PARTITION
-    
-        查询分区表的某个分区的数据。
-    
-    -   partition\_name
-    
-        分区名。
-    
-    -   partition\_value
-    
-        指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
-    
-    -   SUBPARTITION
-    
-        查询分区表的某个二级分区的数据。
-    
-    -   subpartition\_name
-    
-        二级分区名。
-    
-    -   subpartition\_value
-    
-        指定的一级分区和二级分区键值。可以通过SUBPARTITION FOR子句指定的两个分区键的值，唯一确定一个二级分区。
-    
-    -   subquery
-    
-        FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
-    
-    -   with\_query\_name
-    
-        WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
-    
-    -   function\_name
-    
-        函数名称。函数调用也可以出现在FROM子句中。
-    
-    -   join\_type
-    
-        有5种类型，如下所示。
-    
-        -   \[ INNER \] JOIN
-    
-            一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
-    
-            在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
-    
-        -   LEFT \[ OUTER \] JOIN
-    
-            返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
-    
-        -   RIGHT \[ OUTER \] JOIN
-    
-            返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
-    
-            这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
-    
-        -   FULL \[ OUTER \] JOIN
-    
-            返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
-    
-        -   CROSS JOIN
-    
-            CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
-    
-            >![](public_sys-resources/icon-note.gif) **说明：** 
-            >
-            >必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON，join\_condition，USING \(join\_column \[， ...\]\) 之一。但是它们不能出现在CROSS JOIN中。
+    列别名
 
+-   PARTITION
 
-        其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
-    
-    -   ON join\_condition
-    
-        连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。不建议使用int等数值类型作为join\_condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
-    
-    -   USING\(join\_column\[，...\]\)
-    
-        ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
-    
-    -   NATURAL
-    
-        NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
-    
-    -   from item
-    
-        用于连接的查询源对象的名称。
+    查询分区表的某个分区的数据。
+
+-   partition\_name
+
+    分区名。
+
+-   partition\_value
+
+    指定的分区键值。在创建分区表时，如果指定了多个分区键，可以通过PARTITION FOR子句指定的这一组分区键的值，唯一确定一个分区。
+
+-   SUBPARTITION
+
+    查询分区表的某个二级分区的数据。
+
+-   subpartition\_name
+
+    二级分区名。
+
+-   subpartition\_value
+
+    指定的一级分区和二级分区键值。可以通过SUBPARTITION FOR子句指定的两个分区键的值，唯一确定一个二级分区。
+
+-   subquery
+
+    FROM子句中可以出现子查询，创建一个临时表保存子查询的输出。
+
+-   with\_query\_name
+
+    WITH子句同样可以作为FROM子句的源，可以通过WITH查询的名称对其进行引用。
+
+-   function\_name
+
+    函数名称。函数调用也可以出现在FROM子句中。
+
+-   join\_type
+
+    有5种类型，如下所示。
+
+    -   \[ INNER \] JOIN
+
+        一个JOIN子句组合两个FROM项。可使用圆括弧以决定嵌套的顺序。如果没有圆括弧，JOIN从左向右嵌套。
+
+        在任何情况下，JOIN都比逗号分隔的FROM项绑定得更紧。
+
+    -   LEFT \[ OUTER \] JOIN
+
+        返回笛卡尔积中所有符合连接条件的行，再加上左表中通过连接条件没有匹配到右表行的那些行。这样，左边的行将扩展为生成表的全长，方法是在那些右表对应的字段位置填上NULL。请注意，只在计算匹配的时候，才使用JOIN子句的条件，外层的条件是在计算完毕之后施加的。
+
+    -   RIGHT \[ OUTER \] JOIN
+
+        返回所有内连接的结果行，加上每个不匹配的右边行（左边用NULL扩展）。
+
+        这只是一个符号上的方便，因为总是可以把它转换成一个LEFT OUTER JOIN，只要把左边和右边的输入互换位置即可。
+
+    -   FULL \[ OUTER \] JOIN
+
+        返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
+
+    -   CROSS JOIN
+
+        CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
+
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
+        >必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON，join\_condition，USING \(join\_column \[， ...\]\) 之一。但是它们不能出现在CROSS JOIN中。
+
+​    其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
+
+-   ON join\_condition
+
+    连接条件，用于限定连接中的哪些行是匹配的。如：ON left\_table.a = right\_table.a。不建议使用int等数值类型作为join\_condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
+
+-   USING\(join\_column\[，...\]\)
+
+    ON left\_table.a = right\_table.a AND left\_table.b = right\_table.b ... 的简写。要求对应的列必须同名。
+
+-   NATURAL
+
+    NATURAL是具有相同名称的两个表的所有列的USING列表的简写。
+
+-   from item
+
+    用于连接的查询源对象的名称。
 
 
 -   **WHERE子句**
