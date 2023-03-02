@@ -57,10 +57,10 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
     [ COMMENT {=| } 'text' ]
-     PARTITION BY { 
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [COMMENT {=| } 'text'][...][, ... ] )} |
-        {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [COMMENT {=| } 'text'][...][, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES (list_values_clause)] opt_table_space [COMMENT {=| } 'text'][...])}
+      {RANGE [COLUMNS] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] [ PARTITIONS integer ] ( partition_less_than_item [, ... ] )} |
+        {RANGE [COLUMNS] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] [ PARTITIONS integer ] ( partition_start_end_item [, ... ] )} |
+        {LIST [COLUMNS] (partition_key) [ PARTITIONS integer ] ( PARTITION partition_name VALUES [IN] (list_values) [TABLESPACE [=] tablespace_name][, ... ]）} |
+        {{HASH | KEY} (partition_key) [ PARTITIONS integer ] ( PARTITION partition_name [TABLESPACE [=] tablespace_name][, ... ]）}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
 ```
 
@@ -74,7 +74,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       DEFAULT default_e xpr | 
       GENERATED ALWAYS AS ( generation_expr ) STORED |
       AUTO_INCREMENT |
-      UNIQUE index_parameters | 
+      UNIQUE [KEY] index_parameters | 
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
@@ -114,7 +114,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   partition\_less\_than\_item：
 
     ```
-    PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) [TABLESPACE tablespace_name]
+    PARTITION partition_name VALUES LESS THAN {( { partition_value | MAXVALUE } [,...] ) | MAXVALUE } [TABLESPACE [=] tablespace_name]
     ```
 
 -   partition\_start\_end\_item：
@@ -125,7 +125,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             {START(partition_value) END ({partition_value | MAXVALUE})} |
             {START(partition_value)} |
             {END({partition_value | MAXVALUE})}
-    } [TABLESPACE tablespace_name]
+    } [TABLESPACE [=] tablespace_name]
     ```
 
 -   COMMENT {=| } 'text':
@@ -213,7 +213,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   非空约束将总是复制到新表中，CHECK约束则仅在指定了INCLUDING CONSTRAINTS的时候才复制，而其他类型的约束则永远也不会被复制。此规则同时适用于表约束和列约束。
     -   和INHERITS不同，被复制的列和约束并不使用相同的名称进行融合。如果明确的指定了相同的名称或者在另外一个LIKE子句中，将会报错。
     -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    -   如果指定了INCLUDING STORAGE，则拷贝列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
+    -   如果指定了INCLUDING STORAGE，则源表列的STORAGE设置也将被拷贝，默认情况下不包含STORAGE设置。
     -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释也会被拷贝过来。默认情况下，不拷贝源表的注释。
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）也将拷贝至新表。默认情况下，不拷贝源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
@@ -249,49 +249,48 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             >
             >orientation不支持修改。
 
+-   STORAGE\_TYPE
 
-    -   STORAGE\_TYPE
+    指定存储引擎类型，该参数设置成功后就不再支持修改。
 
-        指定存储引擎类型，该参数设置成功后就不再支持修改。
+    取值范围：
 
-        取值范围：
+    -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+    -   ASTORE，表示表支持Append-Only存储引擎。
 
-        -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
-        -   ASTORE，表示表支持Append-Only存储引擎。
+    默认值：
 
-        默认值：
+    不指定表时，默认是Append-Only存储。
 
-        不指定表时，默认是Append-Only存储。
+-   COMPRESSION
+    -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
+    -   行存表不支持压缩。
 
-    -   COMPRESSION
-        -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
-        -   行存表不支持压缩。
+-   MAX\_BATCHROW
 
-    -   MAX\_BATCHROW
+    指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+    取值范围：10000\~60000，默认60000。
 
-        取值范围：10000\~60000，默认60000。
+-   PARTIAL\_CLUSTER\_ROWS
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+    取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
 
-        取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+-   DELTAROW\_THRESHOLD
 
-    -   DELTAROW\_THRESHOLD
+    预留参数。该参数只对列存表有效。
 
-        预留参数。该参数只对列存表有效。
+    取值范围：0～9999
 
-        取值范围：0～9999
+-   segment
 
-    -   segment
+    使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
 
-        使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+    取值范围：on/off
 
-        取值范围：on/off
-
-        默认值：off
+    默认值：off
 
 
 -   **COMPRESS / NOCOMPRESS**
@@ -439,20 +438,21 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
--   GENERATED ALWAYS AS \( generation\_expr \) STORED
+- **GENERATED ALWAYS AS \( generation\_expr \) \[STORED\]**
 
-    该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
+  该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >
-    >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
-    >-   不能为生成列指定默认值。
-    >-   生成列不能作为分区键的一部分。
-    >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
-    >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
-    >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
-    >-   生成列的权限控制和普通列一样。
-    >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  >-   STORED关键字可省略，与不省略STORED语义相同。
+  >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
+  >-   不能为生成列指定默认值。
+  >-   生成列不能作为分区键的一部分。
+  >-   生成列不能和ON UPDATE约束字句的CASCADE,SET NULL,SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL,SET DEFAULT动作同时指定。
+  >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
+  >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
+  >-   生成列的权限控制和普通列一样。
+  >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
 -   **AUTO\_INCREMENT**
 
@@ -468,13 +468,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     对于唯一约束，NULL被认为是互不相等的。
 
--   **PRIMARY KEY index\_parameters**
+- **PRIMARY KEY index\_parameters**
 
-    **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
+  **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
-    主键约束声明表中的一个或者多个字段只能包含唯一的非NULL值。
+  主键约束声明表中的一个或者多个字段只能包含唯一的非NULL值。
 
-    一个表只能声明一个主键。
+  一个表只能声明一个主键。
+
+  UNIQUE KEY只能在sql\_compatibility='B'时使用，与UNIQUE语义相同。
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 
@@ -1024,6 +1026,22 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     openGauss=# drop table test_hash;
     ```
 
++ 示例7：创建LIST分区表t\_multi\_keys\_list，初始包含5个分区，两个分区键分别为INT类型和VARCHAR类型。
+
+  ```
+  -- 创建表t_multi_keys_list
+  openGauss=# CREATE TABLE t_multi_keys_list (a int, b varchar(4), c int)
+  PARTITION BY LIST (a,b)
+  (
+      PARTITION p1 VALUES ( (0,NULL) ),
+      PARTITION p2 VALUES ( (0,'1'), (0,'2'), (0,'3'), (1,'1'), (1,'2') ),
+      PARTITION p3 VALUES ( (NULL,'0'), (2,'1') ),
+      PARTITION p4 VALUES ( (3,'2'), (NULL,NULL) ),
+      PARTITION pd VALUES ( DEFAULT )
+  );
+  ```
+
+  
 
 ## 相关链接<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
