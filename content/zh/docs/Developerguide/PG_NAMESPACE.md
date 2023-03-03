@@ -62,6 +62,13 @@ PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 <td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><a name="ul736813311431"></a><a name="ul736813311431"></a><ul id="ul736813311431"><li>如果为真，则该模式为防篡改模式。</li><li>如果为假，则此模式为非防篡改模式。</li></ul>
 </td>
 </tr>
+<tr id="row610218488357"><td class="cellrowborder" valign="top" width="20.13%" headers="mcps1.2.4.1.1 "><p id="p141036489352"><a name="p141036489352"></a><a name="p141036489352"></a>nspcollation</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.669999999999998%" headers="mcps1.2.4.1.2 "><p id="p1910304803511"><a name="p1910304803511"></a><a name="p1910304803511"></a>oid</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.2%" headers="mcps1.2.4.1.3 "><p id="p21034487359"><a name="p21034487359"></a><a name="p21034487359"></a>名称空间的默认字符序（仅在sql_compatibility='b'时可能有值）。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

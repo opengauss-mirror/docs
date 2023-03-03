@@ -78,6 +78,25 @@ PG\_COLLATION系统表描述可用的排序规则，本质上从一个SQL名称�
 <td class="cellrowborder" valign="top" width="38.72%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137275_zh-cn_topic_0237122278_zh-cn_topic_0059779096_a970a6580d949442f879d6ad3425c089b"><a name="zh-cn_topic_0283137275_zh-cn_topic_0237122278_zh-cn_topic_0059779096_a970a6580d949442f879d6ad3425c089b"></a><a name="zh-cn_topic_0283137275_zh-cn_topic_0237122278_zh-cn_topic_0059779096_a970a6580d949442f879d6ad3425c089b"></a>这个排序规则对象的LC_CTYPE。</p>
 </td>
 </tr>
+<tr id="row1645282013401"><td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.5.1.1 "><p id="p64521020144020"><a name="p64521020144020"></a><a name="p64521020144020"></a>collpadattr</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="p1545272018409"><a name="p1545272018409"></a><a name="p1545272018409"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.439999999999998%" headers="mcps1.2.5.1.3 "><p id="p7452112054011"><a name="p7452112054011"></a><a name="p7452112054011"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.72%" headers="mcps1.2.5.1.4 "><p id="p14521020174015"><a name="p14521020174015"></a><a name="p14521020174015"></a>这个排序规则的填充属性。</p>
+<a name="ul1013119336813"></a><a name="ul1013119336813"></a><ul id="ul1013119336813"><li>NULL：不适用。</li><li>NO PAD：无填充。</li><li>PAD SPACE：末尾空白填充。</li></ul>
+</td>
+</tr>
+<tr id="row1386142554118"><td class="cellrowborder" valign="top" width="21.43%" headers="mcps1.2.5.1.1 "><p id="p1538618253418"><a name="p1538618253418"></a><a name="p1538618253418"></a>collisdef</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.41%" headers="mcps1.2.5.1.2 "><p id="p5386225144113"><a name="p5386225144113"></a><a name="p5386225144113"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.439999999999998%" headers="mcps1.2.5.1.3 "><p id="p1138620259411"><a name="p1138620259411"></a><a name="p1138620259411"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.72%" headers="mcps1.2.5.1.4 "><p id="p1038617253418"><a name="p1038617253418"></a><a name="p1038617253418"></a>这个排序规则是否是所属字符集的默认字符序。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

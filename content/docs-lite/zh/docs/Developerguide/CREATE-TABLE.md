@@ -27,11 +27,12 @@
 
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-    ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
     [ AUTO_INCREMENT [ = ] value ]
+    [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
@@ -48,7 +49,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       CHECK ( expression ) |
       DEFAULT default_expr |
       AUTO_INCREMENT |
-      UNIQUE index_parameters |
+      UNIQUE [KEY] index_parameters |
       ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
@@ -198,10 +199,64 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   PREFIX、NUMSTR压缩仅支持变长数据类型（pg_type.typlen = -1）和NULL结尾的C字符串（pg_type.typlen = -2）。
     -   该压缩选项与列存表自适应压缩算法无关，后者为列存表内部数据存储采用的压缩算法，不支持用户指定。
 
--   **COLLATE collation**
+-   **CHARACTER SET | CHARSET charset**
 
-    COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+    只在B模式数据库下（即sql\_compatibility = 'B'）支持该语法，其他模式数据库不支持。指定表字段的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。
 
+- **COLLATE collation**
+
+  COLLATE子句指定列的排序规则（字符序）（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。对于B模式数据库下（即sql\_compatibility = 'B'）还支持utf8mb4\_bin、utf8mb4\_general\_ci、utf8mb4\_unicode\_ci、binary字符序。
+
+  > ![](public_sys-resources/icon-note.gif)**说明：** 
+  >
+  > -   仅字符类型支持指定字符集，指定为binary字符集或字符序实际是将字符类型转化为对应的二进制类型，若类型映射不存在则报错。当前仅有TEXT类型转化为BLOB的映射。
+  > -   除binary字符集和字符序外，当前仅支持指定与数据库编码相同的字符集。
+  > -   未显式指定字段字符集或字符序时，若指定了表的默认字符集或字符序，字段字符集和字符序将从表上继承。若表的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，字段的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
+
+  **表 1**  B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍
+
+  <a name="table8163190152"></a>
+
+  <table><thead align="left"><tr id="row6163697151"><th class="cellrowborder" valign="top" width="17.631763176317634%" id="mcps1.2.4.1.1"><p id="p51638915157"><a name="p51638915157"></a><a name="p51638915157"></a>字符序名称</p>
+  </th>
+  <th class="cellrowborder" valign="top" width="20.462046204620464%" id="mcps1.2.4.1.2"><p id="p141633921512"><a name="p141633921512"></a><a name="p141633921512"></a>对应的字符集</p>
+  </th>
+  <th class="cellrowborder" valign="top" width="61.90619061906191%" id="mcps1.2.4.1.3"><p id="p2016310971518"><a name="p2016310971518"></a><a name="p2016310971518"></a>描述</p>
+  </th>
+  </tr>
+  </thead>
+  <tbody><tr id="row14163694155"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p5163159191519"><a name="p5163159191519"></a><a name="p5163159191519"></a>utf8mb4_general_ci</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p616499151513"><a name="p616499151513"></a><a name="p616499151513"></a>utf8mb4（即utf8）</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p13164897150"><a name="p13164897150"></a><a name="p13164897150"></a>使用通用排序规则，不区分大小写。</p>
+  </td>
+  </tr>
+  <tr id="row1216419911516"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p516411914158"><a name="p516411914158"></a><a name="p516411914158"></a>utf8mb4_unicode_ci</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p111644961510"><a name="p111644961510"></a><a name="p111644961510"></a>utf8mb4（即utf8）</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p154091631191717"><a name="p154091631191717"></a><a name="p154091631191717"></a>使用通用排序规则，不区分大小写。</p>
+  </td>
+  </tr>
+  <tr id="row1164993152"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p141641891154"><a name="p141641891154"></a><a name="p141641891154"></a>utf8mb4_bin</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p5164209191519"><a name="p5164209191519"></a><a name="p5164209191519"></a>utf8mb4（即utf8）</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p1216419917150"><a name="p1216419917150"></a><a name="p1216419917150"></a>使用二进制排序规则，区分大小写。</p>
+  </td>
+  </tr>
+  <tr id="row11164119191514"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p31642961520"><a name="p31642961520"></a><a name="p31642961520"></a>binary</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p91641981515"><a name="p91641981515"></a><a name="p91641981515"></a>binary</p>
+  </td>
+  <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p31640971510"><a name="p31640971510"></a><a name="p31640971510"></a>使用二进制排序规则。</p>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+
+  
 -   **LIKE source\_table \[ like\_option ... \]**
 
     LIKE子句声明一个表，新表自动从这个表中继承所有字段名及其数据类型和非空约束。
@@ -327,7 +382,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     取值范围：0\~7，默认值为0。
 
     - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+    
   - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+
   - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
 
   - COMPRESS_BYTE_CONVERT
@@ -381,8 +438,17 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       参数开启：更新表元组时，为元组分配表级唯一标识id。
 
       取值范围：on/off。
-
+  
       默认值：off。
+      
+  -   collate
+  
+      在B模式数据库下（即sql\_compatibility = 'B'）用于记录表的默认字符序，一般只用于内部存储和导入导出，不推荐用户指定或修改。
+  
+      取值范围：B模式数据库中独立支持的字符序的oid。
+  
+      默认值：0。
+  
 -   **WITHOUT OIDS**
 
     等价于WITH（OIDS=FALSE）的语法
@@ -469,13 +535,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
      >-   自增计数器自增和刷新操作不会回滚。
 
 
--   **UNIQUE index\_parameters**
+- **\[DEFAULT\] CHARACTER SET | CHARSET \[ = \] default\_charset**
 
-    **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
+  仅在sql\_compatibility='B'时支持该语法。指定表的默认字符集，单独指定时会将表的默认字符序设置为指定的字符集的默认字符序。
 
-    UNIQUE约束表示表里的一个字段或多个字段的组合必须在全表范围内唯一。
+- **\[DEFAULT\] COLLATE \[ = \] default\_collation**
 
-    对于唯一约束，NULL被认为是互不相等的。
+  仅在sql\_compatibility='B'时支持该语法。指定表的默认字符序，单独指定时会将表的默认字符集设置为指定的字符序对应的字符集。字符序参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](#table8163190152)。
+
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >未显式指定表的字符集或字符序时，若指定了模式的默认字符集或字符序，表字符集和字符序将从模式上继承。若模式的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，表的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
+
+- **UNIQUE [KEY] index\_parameters**
+
+  **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
+
+  UNIQUE约束表示表里的一个字段或多个字段的组合必须在全表范围内唯一。
+
+  对于唯一约束，NULL被认为是互不相等的。
+
+  UNIQUE KEY只能在sql\_compatibility='B'时使用，与UNIQUE语义相同。
 
 -   **PRIMARY KEY index\_parameters**
 
