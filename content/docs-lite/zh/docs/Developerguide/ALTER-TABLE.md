@@ -13,7 +13,6 @@
 -   列存表只支持PARTIAL CLUSTER KEY、UNIQUE、PRIMARY KEY表级约束，不支持外键等表级约束。
 -   列存表只支持添加字段ADD COLUMN、修改字段的数据类型ALTER TYPE、设置单个字段的收集目标SET STATISTICS、支持更改表名称、支持更改表空间，支持删除字段DROP COLUMN。对于添加的字段和修改的字段类型要求是列存支持的[数据类型](数据类型.md)。ALTER TYPE的USING选项只支持常量表达式和涉及本字段的表达式，暂不支持涉及其他字段的表达式。
 -   列存表支持的字段约束包括NULL、NOT NULL和DEFAULT常量值、UNIQUE和PRIMARY KEY；对字段约束的修改当前只支持对DEFAULT值的修改（SET DEFAULT）和删除（DROP DEFAULT），暂不支持对非空约束NULL/NOT NULL的修改。
-
 -   不支持增加自增列，或者增加DEFAULT值中包含nextval\(\)表达式的列。
 -   不支持对外表、临时表开启行访问控制开关。
 -   通过约束名删除PRIMARY KEY约束时，不会删除NOT NULL约束，如果有需要，请手动删除NOT NULL约束。
@@ -21,6 +20,7 @@
 -   重命名时，不能与当前模式下已存在的synonym产生命名冲突。
 -   修改模式时，不能与新模式下已存在的synonym产生命名冲突。
 -   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
+-   使用FIRST | AFTER column\_name新增列或修改列，或修改字段的字符集，会带来全表更新开销，影响在线业务。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
@@ -67,129 +67,143 @@
       | AUTO_INCREMENT [ = ] value
       | COMMENT {=| } 'text'
       | ALTER INDEX index_name [ VISBLE | INVISIBLE ]
+      | [ [ DEFAULT ] CHARACTER SET | CHARSET [ = ] default_charset ] [ [ DEFAULT ] COLLATE [ = ] default_collation ]
+      | CONVERT TO CHARACTER SET | CHARSET charset | DEFAULT [ COLLATE collation ]
   ```
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
 
-  - **ADD table\_constraint \[ NOT VALID \]**
-    给表增加一个新的约束。
-
-  - **ADD table\_constraint\_using\_index**
-    根据已有唯一索引为表增加主键约束或唯一约束。
-
-  - **VALIDATE CONSTRAINT constraint\_name**
-    验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。
-
-  - **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
-    删除一个表上的约束。
-
-  - **CLUSTER ON index\_name**
-    为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。
-
-  - **SET WITHOUT CLUSTER**
-    从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。
-
-  - **SET \( \{storage\_parameter = value\} \[, ... \] \)**
-    修改表的一个或多个存储参数。
-
-  - **RESET \( storage\_parameter \[, ... \] \)**
-    重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。
-
-  - **OWNER TO new\_owner**
-    将表、序列、视图的属主改变成指定的用户。
-
-  - **SET TABLESPACE new\_tablespace**
-    这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
-
-  - **SET \{COMPRESS|NOCOMPRESS\}**
-    修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
-
-  - **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
-    此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
-
-  - **ADD NODE \( nodename \[, ... \] \)**
-    此语法主要供内部扩容工具使用，一般用户不建议使用。
-
-  - **DELETE NODE \( nodename \[, ... \] \)**
-    此语法主要供内部缩容工具使用，一般用户不建议使用。
-
-  - **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-    禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。
-    应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
-
-  - **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
-    启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
-
-  - **| ENABLE REPLICA TRIGGER trigger\_name**
-    触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
-    配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
-
-  - **| ENABLE ALWAYS TRIGGER trigger\_name**
-    无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
-
-  - **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
-    配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
-
-  - **| DISABLE/ENABLE ROW LEVEL SECURITY**
-    开启或关闭表的行访问控制开关。
-    当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
-
-  - **| NO FORCE/FORCE ROW LEVEL SECURITY**
-    强制开启或关闭表的行访问控制开关。
-    默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
-
-  - **| ENCRYPTION KEY ROTATION**
-
-    透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
-
-
-  - **INHERIT parent\_table**
-    将目标资料表加到指定的父资料表中成为新的子资料表。之后，针对父资料表的查询将会包含目标资料表的资料。要作为子资料表加入前，目标资料表必须已经包含父资料表的所有栏位。这些栏位必须具有可匹配的资料类别，并且如果他们在父资料表中具有NOT NULL的限制条件，那么他们必须在子资料表中也具有NOT NULL的限制条件。对于父资料表的所有CHECK限制条件，必须还有相对应的子资料表限制条件，除非父资料表中标记为不可继承。
-
-  - **NO INHERIT parent\_table**
-    从指定的父资料表的子资料表中产出目标资料表。针对父资料表的查询将不再包含从目标资料表中所产生的记录。
-
-  - **OF type\_name**
-    将表连接至一种复合类型，与CREATE TABLE OF选项创建表一样。表的字段的名称和类型必须精确匹配复合类型中的定义，不过oid系统字段允许不一样。表不能是从任何其他表继承的。这些限制确保CREATE TABLE OF选项允许一个相同的表定义。
-
-  - **NOT OF**
-    将一个与某类型进行关联的表进行关联的解除。
-
-  - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
-    在逻辑复制场景下，指定该表的UPDATE和DELETE操作中旧元组的记录级别。
-
-    + DEFAULT记录主键的列的旧值，没有主键则不记录。
-    + USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的、不局部的、不可延迟的，并且仅包括标记为NOT NULL的列。
-  + FULL记录该行中所有列的旧值。
-    + NOTHING不记录有关旧行的信息。
-    
-    在逻辑复制场景，解析该表的UPDATE和DELETE操作语句时，解析出的旧元组由以此方法记录的信息组成。对于有主键表该选项可设置为DEFAULT或FULL。对于无主键表该选项需设置为FULL，否则解码时旧元组将解析为空。一般场景不建议设置为NOTHING，旧元组会始终解析为空。
-    
-    即使指定DEFAULT或USING INDEX，当前ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对ustore表，选项NOTHING无效，实际效果等同于FULL。
-    
-  - **AUTO\_INCREMENT \[ = \] value**
-    
-    设置自动增长列下一次的自增值。设置的值只有大于当前自增计数器时才会生效。
-  
-    value必须是非负整数，且不得大于2<sup>127</sup>-1。
-  
-  该子句仅在参数sql\_compatibility=B时生效。
-  
-- **COMMENT 'text'**
-    修改表对象的注释。
-
-- **ALTER INDEX index_name [ VISBLE | INVISIBLE ]**
-
-  修改索引的可见性。
+  >+ **ADD table\_constraint \[ NOT VALID \]**
+  >  给表增加一个新的约束。
+  >
+  >+ **ADD table\_constraint\_using\_index**
+  >  根据已有唯一索引为表增加主键约束或唯一约束。
+  >
+  >+ **VALIDATE CONSTRAINT constraint\_name**
+  >  验证一个使用NOT VALID选项创建的检查类约束，通过扫描全表来保证所有记录都符合约束条件。如果约束已标记为有效时，什么操作也不会发生。
+  >
+  >+ **DROP CONSTRAINT \[ IF EXISTS \]  constraint\_name \[ RESTRICT | CASCADE \]**
+  >  删除一个表上的约束。
+  >
+  >+ **CLUSTER ON index\_name**
+  >  为将来的CLUSTER（聚簇）操作选择默认索引。实际上并没有重新盘簇化处理该表。
+  >
+  >+ **SET WITHOUT CLUSTER**
+  >  从表中删除最新使用的CLUSTER索引。这样会影响将来那些没有声明索引的CLUSTER（聚簇）操作。
+  >
+  >+ **SET \( \{storage\_parameter = value\} \[, ... \] \)**
+  >  修改表的一个或多个存储参数。
+  >
+  >+ **RESET \( storage\_parameter \[, ... \] \)**
+  >  重置表的一个或多个存储参数。与SET一样，根据参数的不同可能需要重写表才能获得想要的效果。
+  >
+  >+ **OWNER TO new\_owner**
+  >  将表、序列、视图的属主改变成指定的用户。
+  >
+  >+ **SET TABLESPACE new\_tablespace**
+  >  这种形式将表空间修改为指定的表空间并将相关的数据文件移动到新的表空间。但是表上的所有索引都不会被移动，索引可以通过ALTER INDEX语法的SET TABLESPACE选项来修改索引的表空间。
+  >
+  >+ **SET \{COMPRESS|NOCOMPRESS\}**
+  >  修改表的压缩特性。表压缩特性的改变只会影响后续批量插入的数据的存储方式，对已有数据的存储毫无影响。也就是说，表压缩特性的修改会导致该表中同时存在着已压缩和未压缩的数据。行存表不支持压缩。
+  >
+  >+ **TO \{ GROUP groupname | NODE \( nodename \[, ... \] \) \}**
+  >  此语法仅在扩展模式（GUC参数support\_extended\_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
+  >
+  >+ **ADD NODE \( nodename \[, ... \] \)**
+  >  此语法主要供内部扩容工具使用，一般用户不建议使用。
+  >
+  >+ **DELETE NODE \( nodename \[, ... \] \)**
+  >  此语法主要供内部缩容工具使用，一般用户不建议使用。
+  >
+  >+ **DISABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+  >  禁用trigger\_name所表示的单个触发器，或禁用所有触发器，或仅禁用用户触发器（此选项不包括内部生成的约束触发器，例如，可延迟唯一性和排除约束的约束触发器）。
+  >  应谨慎使用此功能，因为如果不执行触发器，则无法保证原先期望的约束的完整性。
+  >
+  >+ **| ENABLE TRIGGER \[ trigger\_name | ALL | USER \]**
+  >  启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
+  >
+  >+ **| ENABLE REPLICA TRIGGER trigger\_name**
+  >  触发器触发机制受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+  >  配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
+  >
+  >+ **| ENABLE ALWAYS TRIGGER trigger\_name**
+  >  无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
+  >
+  >+ **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
+  >  配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+  >
+  >+ **| DISABLE/ENABLE ROW LEVEL SECURITY**
+  >  开启或关闭表的行访问控制开关。
+  >  当开启行访问控制开关时，如果未在该数据表定义相关行访问控制策略，数据表的行级访问将不受影响；如果关闭表的行访问控制开关，即使定义了行访问控制策略，数据表的行访问也不受影响。详细信息参见[CREATE ROW LEVEL SECURITY POLICY](CREATE-ROW-LEVEL-SECURITY-POLICY.md)章节。
+  >
+  >+ **| NO FORCE/FORCE ROW LEVEL SECURITY**
+  >  强制开启或关闭表的行访问控制开关。
+  >  默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
+  >
+  >+ **| ENCRYPTION KEY ROTATION**
+  >
+  >  透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
+  >
+  >
+  >  - **INHERIT parent\_table**
+  >    将目标资料表加到指定的父资料表中成为新的子资料表。之后，针对父资料表的查询将会包含目标资料表的资料。要作为子资料表加入前，目标资料表必须已经包含父资料表的所有栏位。这些栏位必须具有可匹配的资料类别，并且如果他们在父资料表中具有NOT NULL的限制条件，那么他们必须在子资料表中也具有NOT NULL的限制条件。对于父资料表的所有CHECK限制条件，必须还有相对应的子资料表限制条件，除非父资料表中标记为不可继承。
+  >
+  >  - **NO INHERIT parent\_table**
+  >    从指定的父资料表的子资料表中产出目标资料表。针对父资料表的查询将不再包含从目标资料表中所产生的记录。
+  >
+  >  - **OF type\_name**
+  >    将表连接至一种复合类型，与CREATE TABLE OF选项创建表一样。表的字段的名称和类型必须精确匹配复合类型中的定义，不过oid系统字段允许不一样。表不能是从任何其他表继承的。这些限制确保CREATE TABLE OF选项允许一个相同的表定义。
+  >
+  >  - **NOT OF**
+  >    将一个与某类型进行关联的表进行关联的解除。
+  >
+  >  - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
+  >    在逻辑复制场景下，指定该表的UPDATE和DELETE操作中旧元组的记录级别。
+  >
+  >    + DEFAULT记录主键的列的旧值，没有主键则不记录。
+  >    + USING INDEX记录命名索引覆盖的列的旧值，这些值必须是唯一的、不局部的、不可延迟的，并且仅包括标记为NOT NULL的列。
+  >
+  >  + FULL记录该行中所有列的旧值。
+  >
+  >    + NOTHING不记录有关旧行的信息。
+  >
+  >    在逻辑复制场景，解析该表的UPDATE和DELETE操作语句时，解析出的旧元组由以此方法记录的信息组成。对于有主键表该选项可设置为DEFAULT或FULL。对于无主键表该选项需设置为FULL，否则解码时旧元组将解析为空。一般场景不建议设置为NOTHING，旧元组会始终解析为空。
+  >
+  >    即使指定DEFAULT或USING INDEX，当前ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对ustore表，选项NOTHING无效，实际效果等同于FULL。
+  >
+  >  - **AUTO\_INCREMENT \[ = \] value**
+  >
+  >    设置自动增长列下一次的自增值。设置的值只有大于当前自增计数器时才会生效。
+  >
+  >    value必须是非负整数，且不得大于2<sup>127</sup>-1。
+  >
+  >    该子句仅在参数sql\_compatibility=B时生效。
+  >
+  >- **COMMENT 'text'**
+  >  修改表对象的注释。
+  >
+  >- **ALTER INDEX index_name [ VISBLE | INVISIBLE ]**
+  >
+  >  修改索引的可见性。
+  >
+  >- **\[ \[ DEFAULT \] CHARACTER SET | CHARSET \[ = \] default\_charset \] \[ \[ DEFAULT \] COLLATE \[ = \] default\_collation \]**
+  >
+  >  修改表的默认字符集和默认字符序为指定的值。修改不会影响表中当前已经存在的列。
+  >
+  >- **CONVERT TO CHARACTER SET | CHARSET charset \[ COLLATE collation \]**
+  >
+  >  修改表的默认字符集和默认字符序为指定的值，同时将表中的所有字符类型的字段的字符集和字符序设置为指定的值，并将字段里的数据转换为新字符集编码。
 
 - 其中列相关的操作column\_clause可以是以下子句之一：
 
   ```
-  ADD [ COLUMN ] column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ]    
+  ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ COMMENT {=| } 'text' ] [ FIRST | AFTER column_name ]       
   | MODIFY column_name data_type  
   | MODIFY [ COLUMN ] column_name [ COMMENT 'text']      
   | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
   | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
+  | MODIFY [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
+  | CHANGE [ COLUMN ] old_column_name new_column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
   | DROP [ COLUMN ] [ IF EXISTS ] column_name [ RESTRICT | CASCADE ]    
   | ALTER [ COLUMN ] column_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ USING expression ]    
   | ALTER [ COLUMN ] column_name { SET DEFAULT expression | DROP DEFAULT }    
@@ -199,57 +213,75 @@
   | DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
   | ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
   | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
-  | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
+| ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
   ```
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
+  
+  >- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] \[ COMMENT {=| } 'text'\][ FIRST | AFTER column_name ]    **
+  >  向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。
+  >
+  >  - **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
+  >    向表中增加多列。
+  >
+  >
+  >  - **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
+  >    修改字段注释。
+  >
+  >  - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+  >    修改表已存在字段的数据类型。
+  >
+  >  - **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+  >    修改表已存在字段的定义，将用新定义替换字段原定义，原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束等）不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段定义的同时修改字段在表中的位置。
+  >    此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表，不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则。
+  >    被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+  >    被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+  >    被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段完毕后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+  >    修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
+  >    此子句与上一子句中“MODIFY column\_name data\_type”部分语法相同，语义功能不同，当GUC参数b\_format\_behavior\_compat\_options含有'enable\_modify\_column'选项时，将按照此子句功能处理。
+  >
+  >- **CHANGE \[ COLUMN \] old\_column\_name new\_column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+  >  修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。
+  >  此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表。不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则
+  >  被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+  >  被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+  >  被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段名称后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+  >  修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
+  >
+  >- **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
+  >  从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
+  >  DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
+  >
+  >- **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
+  >  改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
+  >  ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
+  >
+  >  ```
+  >  ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+  >  ```
+  >
+  >  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+  >
+  >- **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
+  >  为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
+  >
+  >- **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
+  >  修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
+  >
+  >- **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
+  >  为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
+  >
+  >- **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
+  >  用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。如果关闭GUC参数enable\_functional\_dependency，每组多列统计信息最多支持32列；如果开启GUC参数enable\_functional\_dependency，每组多列统计信息最多支持4列。不支持添加/删除多列统计信息声明的表：系统表、外表。
+  >
+  >- **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
+  >  **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
+  >  设置/重置属性选项。
+  >  目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
+  >
+  >- **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
+  >  为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
 
-  - **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] \[ COMMENT {=| } 'text'\]**
-    向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。
-
-  - **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
-    向表中增加多列。
-
-
-  - **MODIFY \[ COLUMN \] column\_name \[ COMMENT {=| } 'text'\]**
-    修改字段注释。
-
-  - **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
-    修改表已存在字段的数据类型。
-
-  - **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
-    从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
-    DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
-
-  - **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
-    改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
-    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
-
-    ```
-    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
-    ```
-
-    这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
-
-  - **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
-    为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
-
-  - **ALTER \[ COLUMN \] column\_name \{ SET | DROP \} NOT NULL**
-    修改一个字段是否允许NULL值或者拒绝NULL值。如果表在字段中包含非NULL，则只能使用SET NOT NULL。
-
-  - **ALTER \[ COLUMN \] column\_name SET STATISTICS \[PERCENT\] integer**
-    为随后的ANALYZE操作设置针对每个字段的统计收集目标。目标的范围可以在0到10000之内设置。设置为-1时表示重新恢复到使用系统缺省的统计目标。
-
-  - **\{ADD | DELETE\} STATISTICS \(\(column\_1\_name, column\_2\_name \[, ...\]\)\)**
-    用于添加和删除多列统计信息声明（不实际进行多列统计信息收集），以便在后续进行全表或全库analyze时进行多列统计信息收集。如果关闭GUC参数enable\_functional\_dependency，每组多列统计信息最多支持32列；如果开启GUC参数enable\_functional\_dependency，每组多列统计信息最多支持4列。不支持添加/删除多列统计信息声明的表：系统表、外表。
-
-  - **ALTER \[ COLUMN \] column\_name SET \( \{attribute\_option = value\} \[, ... \] \)**
-    **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
-    设置/重置属性选项。
-    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
-
-  - **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
-    为一个字段设置存储模式。这个设置控制这个字段是内联保存还是保存在一个附属的表里，以及数据是否要压缩。仅支持对行存表的设置；对列存表没有意义，执行时报错。SET STORAGE本身并不改变表上的任何东西，只是设置将来的表操作时，建议使用的策略。
 
 - 其中列约束column\_constraint为：
 
@@ -263,42 +295,43 @@
   	    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
       [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   ```
+
   
+
   - 其中列的压缩可选项compress\_mode为：
-  
+
   ```
     [ DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS ]
   ```
 
+-   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
 
-    -   其中根据已有唯一索引为表增加主键约束或唯一约束table\_constraint\_using\_index为：
-    
-        ```
-        [ CONSTRAINT constraint_name ]
-            { UNIQUE | PRIMARY KEY } USING INDEX index_name
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-        ```
-    
-    -   其中表约束table\_constraint为：
-    
-        ```
-        [ CONSTRAINT [ constraint_name ] ]
-            { CHECK ( expression ) |
-              UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
-              PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
-              PARTIAL CLUSTER KEY ( column_name [, ... ]  }
-              FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
-                 [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
-            [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
-            [ COMMENT 'text' ]
-        ```
-    
-        其中索引参数index\_parameters为：
-    
-        ```
-        [ WITH ( {storage_parameter = value} [, ... ] ) ]
-            [ USING INDEX TABLESPACE tablespace_name ]
-        ```
+    ```
+    [ CONSTRAINT constraint_name ]
+        { UNIQUE | PRIMARY KEY } USING INDEX index_name
+        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    ```
+
+-   其中表约束table\_constraint为：
+
+    ```
+    [ CONSTRAINT [ constraint_name ] ]
+        { CHECK ( expression ) |
+          UNIQUE [ idx_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+          PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+          PARTIAL CLUSTER KEY ( column_name [, ... ]  }
+          FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
+             [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+        [ COMMENT 'text' ]
+    ```
+
+    其中索引参数index\_parameters为：
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+        [ USING INDEX TABLESPACE tablespace_name ]
+    ```
 
 
 
@@ -458,9 +491,22 @@
 
     表字段的压缩可选项。该子句指定该字段优先使用的压缩算法。行存表不支持压缩。
 
--   **collation**
+-   **charset**
 
-    字段排序规则名称。可选字段COLLATE指定了新字段的排序规则，如果省略，排序规则为新字段的默认类型。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+    只在B模式数据库下（即sql\_compatibility = 'B'）支持该语法，其他模式数据库不支持。指定表字段的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。
+
+- **collation**
+
+  字段排序规则（字符序）名称。可选字段COLLATE指定了新字段的排序规则，如果省略，排序规则为新字段的默认类型。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
+
+  对于B模式数据库下（即sql\_compatibility = 'B'）还支持utf8mb4\_bin、utf8mb4\_general\_ci、utf8mb4\_unicode\_ci、binary字符序，部分说明见表字段的字符集说明（参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](CREATE-TABLE.md#table8163190152)）。
+
+  > ![](public_sys-resources/icon-note.gif) **说明：** 
+  >
+  > -   仅字符类型支持指定字符集，指定为binary字符集或字符序实际是将字符类型转化为对应的二进制类型，若类型映射不存在则报错。当前仅有TEXT类型转化为BLOB的映射。
+  > -   除binary字符集和字符序外，当前仅支持指定与数据库编码相同的字符集。
+  > -   未显式指定字段字符集或字符序时，若指定了表的默认字符集或字符序，字段字符集和字符序将从表上继承。若表的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，字段的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
+  > -   当修改的字符集或字符序对应的字符集与当前字段字符集不同时，会将字段中的数据转换为指定的字符集进行编码。
 
 -   **USING expression**
 
@@ -513,11 +559,13 @@
 
     详见：[AUTO\_INCREMENT](CREATE-TABLE.md)。
 
--   **UNIQUE index\_parameters**
+- **UNIQUE \[KEY\] index\_parameters**
 
-    **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
+  **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
 
-    UNIQUE约束表示表里的一个或多个字段的组合必须在全表范围内唯一。
+  UNIQUE约束表示表里的一个或多个字段的组合必须在全表范围内唯一。
+
+  UNIQUE KEY只能在sql\_compatibility='B'时使用，与UNIQUE语义相同。
 
 -   **PRIMARY KEY index\_parameters**
 
@@ -595,9 +643,27 @@
 
     级联删除依赖于被依赖字段或者约束的对象（比如引用该字段的视图）。
 
--   **RESTRICT**
+- **RESTRICT**
 
-    如果字段或者约束还有任何依赖的对象，则拒绝删除该字段。这是缺省行为。
+  如果字段或者约束还有任何依赖的对象，则拒绝删除该字段。这是缺省行为。
+
++ **FIRST**
+
+  新增列或修改列到第一位。
+
++ **AFTER** **column\_name**
+
+  新增列或修改列到column\_name之后。
+
+  > ![](public_sys-resources/icon-note.gif)**说明：** 
+  >
+  > -   列存表不支持FIRST | AFTER column\_name。
+  > -   仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
+  > -   加密列不支持FIRST | AFTER column\_name。
+  > -   有规则依赖的表不支持改变表列的位置（包括新增和修改导致列位置的变化）。
+  > -   外表不支持FIRST | AFTER column\_name。
+  > -   SET类型的字段不支持修改到指定位置。
+
 
 -   **schema\_name**
 
@@ -606,11 +672,57 @@
 -   **VISIBLE | INVISIBLE**
 
     指定索引是否可见，如果没有声明则默认为VISIBLE。
+    
+- **\[DEFAULT\] CHARACTER SET | CHARSET \[ = \] default\_charset**
+
+  仅在sql\_compatibility='B'时支持该语法。修改表的默认字符集，单独指定时会将表的默认字符序设置为指定的字符集的默认字符序。
+
+- **\[DEFAULT\] COLLATE \[ = \] default\_collation**
+
+  仅在sql\_compatibility='B'时支持该语法。修改表的默认字符序，单独指定时会将表的默认字符集设置为指定的字符序对应的字符集。字符序参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](CREATE-TABLE.md#table8163190152)。
+
+  >![](C:/Users/liyang/Desktop/暂存/20230302/12-503.1-集中式-开发者指南 (1)/public_sys-resources/icon-note.gif) **说明：** 
+  >未显式指定表的字符集或字符序时，若指定了模式的默认字符集或字符序，表字符集和字符序将从模式上继承。若模式的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，表的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
 
 
 ## 示例<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>
 
 请参考CREATE TABLE的[示例](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8)。
+
+```
+-- 创建B模式数据库。
+openGauss=# create database test_first_after dbcompatibility 'b';
+openGauss=# \c test_first_after
+-- 创建表t1并插入数据。
+openGauss=# drop table if exists t1 cascade;
+openGauss=# create table t1(f1 int, f2 varchar(20), f3 timestamp, f4 bit(8), f5 bool);
+openGauss=# insert into t1 values(1, 'a', '2022-11-08 19:56:10.158564', x'41', true), (2, 'b', '2022-11-09 19:56:10.158564', x'42', false);
+-- 指定位置新增字段
+openGauss=# alter table t1 add f6 clob first;
+openGauss=# alter table t1 add f7 blob after f2;
+openGauss=# alter table t1 add f8 int, add f9 text first, add f10 float after f3;
+-- 查询t1表结构
+openGauss=# \d+ t1
+-- 查询t1表数据
+openGauss=# select * from t1;
+-- 修改字段到指定位置
+openGauss=# alter table t1 modify f3 timestamp first;
+openGauss=# alter table t1 modify f1 int after f5;
+-- 查询t1表结构
+openGauss=# \d+ t1
+-- 查询t1表数据
+openGauss=# select * from t1;
+-- 修改t1表的默认字符集为utf8mb4，默认字符序为utf8mb4_bin
+openGauss=# alter table t1 charset utf8mb4 collate utf8mb4_bin;
+-- 将t1表中字符类型字段的数据转化为utf8mb4编码，并设置表和字段的字符序为utf8mb4_bin
+openGauss=# alter table t1 convert to charset utf8mb4 collate utf8mb4_bin;
+-- 为t1表新增字段并设置字段的字符集为utf8mb4，字符序为utf8mb4_bin
+openGauss=# alter table t1 add t10 varchar(20) charset utf8mb4 collate utf8mb4_bin;
+-- 修改t1表的t10字段的字符集为utf8mb4，字符序为utf8mb4_unicode_ci
+openGauss=# alter table t1 modify t10 varchar(20) charset utf8mb4 collate utf8mb4_unicode_ci;
+```
+
+
 
 ## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 

@@ -28,6 +28,14 @@
     CREATE SCHEMA AUTHORIZATION user_name [ schema_element [ ... ] ];
     ```
 
++ 创建模式并指定默认字符集和字符序。
+
+  ```
+  CREATE SCHEMA schema_name 
+      [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ];
+  ```
+
+  
 
 ## 参数说明<a name="zh-cn_topic_0283137491_zh-cn_topic_0237122113_zh-cn_topic_0059777945_s9930d6a2a74b406980e00129b1f4fe2c"></a>
 
@@ -57,6 +65,16 @@
     在模式里创建对象的SQL语句。目前仅支持CREATE TABLE、CREATE VIEW、CREATE INDEX、CREATE PARTITION、CREATE SEQUENCE、CREATE TRIGGER、GRANT子句。
 
     子命令所创建的对象都被AUTHORIZATION子句指定的用户所拥有。
+    
+- **default\_charset**
+
+  仅在sql\_compatibility='B'时支持该语法。指定模式的默认字符集，单独指定时会将模式的默认字符序设置为指定的字符集的默认字符序。
+
+- **default\_collation**
+
+  仅在sql\_compatibility='B'时支持该语法。指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
+
+  支持字符序参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](CREATE-TABLE.md#table8163190152)。
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -74,9 +92,13 @@ openGauss=# CREATE SCHEMA AUTHORIZATION role1
      CREATE TABLE films (title text, release date, awards text[])      
      CREATE VIEW winners AS         
      SELECT title, release FROM films WHERE awards IS NOT NULL;
+     
+-- 创建一个schema ds，指定schema的默认字符集为utf8mb4，默认字符序为utf8mb4_bin。
+openGauss=# CREATE SCHEMA ds CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 --删除schema。
 openGauss=# DROP SCHEMA role1 CASCADE;
+
 --删除用户。
 openGauss=# DROP USER role1 CASCADE;
 ```
