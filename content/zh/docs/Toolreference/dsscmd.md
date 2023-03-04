@@ -124,13 +124,13 @@ openGauss部署共享存储模式且开启ss\_enable\_dss功能情况下，经�
 -   将节点添加到集群，不走服务端
 
     ```
-    dsscmd reghl <-i inst_id> [-D DSS_HOME]
+    dsscmd reghl [-D DSS_HOME]
     ```
 
 -   将节点从集群中移除，不走服务端
 
     ```
-    dsscmd unreghl <-i inst_id> [-t type] [-D DSS_HOME]
+    dsscmd unreghl [-t type] [-D DSS_HOME]
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
