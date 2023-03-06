@@ -313,16 +313,20 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   ```
   [ CONSTRAINT constraint_name ]
-      { NOT NULL |
-        NULL |
-        CHECK ( expression ) |
-        DEFAULT default_expr  |
-        UNIQUE [KEY] index_parameters |
-        PRIMARY KEY index_parameters |
-        ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
-        REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-            [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+              { NOT NULL |
+                NULL |
+                CHECK ( expression ) |
+                DEFAULT default_expr  |
+                GENERATED ALWAYS AS ( generation_expr ) [STORED] |
+                AUTO_INCREMENT |
+                UNIQUE [KEY] index_parameters |
+                PRIMARY KEY index_parameters |
+                ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
+                REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+                    [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   ```
+
+  
 
 - 其中列的压缩可选项compress\_mode为：
 

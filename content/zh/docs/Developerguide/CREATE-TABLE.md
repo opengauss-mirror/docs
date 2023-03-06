@@ -48,6 +48,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       NULL |
       CHECK ( expression ) |
       DEFAULT default_expr |
+      GENERATED ALWAYS AS ( generation_expr ) [STORED] |
       AUTO_INCREMENT |
       ON UPDATE update_expr |
       UNIQUE [KEY] index_parameters |

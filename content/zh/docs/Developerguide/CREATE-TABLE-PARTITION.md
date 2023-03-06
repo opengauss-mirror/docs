@@ -77,7 +77,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       NULL | 
       CHECK ( expression ) | 
       DEFAULT default_e xpr | 
-      GENERATED ALWAYS AS ( generation_expr ) STORED |
+      GENERATED ALWAYS AS ( generation_expr ) [STORED] |
       AUTO_INCREMENT |
       UNIQUE [KEY] index_parameters | 
       PRIMARY KEY index_parameters |

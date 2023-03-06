@@ -54,7 +54,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
       NULL | 
       CHECK ( expression ) | 
       DEFAULT default_e xpr | 
-      GENERATED ALWAYS AS ( generation_expr ) STORED |
+      GENERATED ALWAYS AS ( generation_expr ) [STORED] |
       AUTO_INCREMENT |
       UNIQUE [KEY] index_parameters | 
       PRIMARY KEY index_parameters |
