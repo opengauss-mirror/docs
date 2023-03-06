@@ -1244,8 +1244,6 @@ headless: true
 			-   [PLAN\_TABLE\_DATA]({{< relref "./docs/Developerguide/PLAN_TABLE_DATA.md" >}})
 			-   [STATEMENT\_HISTORY]({{< relref "./docs/Developerguide/STATEMENT_HISTORY.md" >}})	          
         -   [系统视图]({{< relref "./docs/Developerguide/系统视图.md" >}})
-			-   [DV\_SESSIONS]({{< relref "./docs/Developerguide/DV_SESSIONS.md" >}})
-			-   [DV\_SESSION\_LONGOPS]({{< relref "./docs/Developerguide/DV_SESSION_LONGOPS.md" >}})
 			-   [GET\_GLOBAL\_PREPARED\_XACTS（废弃）]({{< relref "./docs/Developerguide/GET_GLOBAL_PREPARED_XACTS（废弃）.md" >}})
 			-   [GS\_AUDITING]({{< relref "./docs/Developerguide/GS_AUDITING.md" >}})
 			-   [GS\_AUDITING\_ACCESS]({{< relref "./docs/Developerguide/GS_AUDITING_ACCESS.md" >}})
