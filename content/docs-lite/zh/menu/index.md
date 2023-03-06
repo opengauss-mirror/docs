@@ -279,6 +279,7 @@ headless: true
 			-   [示例：从MY迁移数据]({{< relref "./docs/Developerguide/示例-从MY迁移数据.md" >}})
 			-   [示例：逻辑复制代码示例]({{< relref "./docs/Developerguide/示例-逻辑复制代码示例.md" >}})
 			-   [示例：不同场景下连接数据库参数配置]({{< relref "./docs/Developerguide/示例-不同场景下连接数据库参数配置.md" >}})
+			-   [示例：jdbc实现主备集群负载均衡]({{< relref "./docs/Developerguide/示例-jdbc实现主备集群负载均衡.md" >}})
 			-   [JDBC接口参考]({{< relref "./docs/Developerguide/JDBC接口参考.md" >}})
 			-   [JDBC常用参数参考]({{< relref "./docs/Developerguide/JDBC常用参数参考.md" >}})
 		-   [基于libpq开发]({{< relref "./docs/Developerguide/基于libpq开发.md" >}})
