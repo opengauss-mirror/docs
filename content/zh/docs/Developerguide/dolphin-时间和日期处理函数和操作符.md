@@ -272,7 +272,7 @@
   
   函数原型:
 
-  `DATE MAKEDATE(int64 year, int64 dayofyear)`
+  `DATE MAKEDATE(int8 year, int8 dayofyear)`
   功能描述：
 
   给定年份和天数，返回该年份在此年份天数下日期值。
@@ -312,7 +312,7 @@
 
   函数原型:
 
-  `TIME MAKETIME(int64 hour, int64 minue, Numeric second)`
+  `TIME MAKETIME(int8 hour, int8 minue, Numeric second)`
   
   功能描述：
 
@@ -408,7 +408,7 @@
   
   函数原型:
 
-  `int64 PERIOD_ADD(int64 P, int64 N)`
+  `int8 PERIOD_ADD(int8 P, int8 N)`
   
   功能描述：
 
@@ -448,7 +448,7 @@
   
   函数原型:
 
-  `int64 PERIOD_DIFF(int64 P1, int64 P2)`
+  `int8 PERIOD_DIFF(int8 P1, int8 P2)`
   
   功能描述：
 
@@ -552,7 +552,7 @@
 
   `Text SUBDATE(text date, INTERVAL expr unit)`
 
-  `Text SUBDATE(text date, int64 days)`
+  `Text SUBDATE(text date, int8 days)`
 
   功能描述：
 
@@ -606,7 +606,7 @@
 
   `TIME SUBDATE(TIME time, INTERVAL expr unit)`
 
-  `TIME SUBDATE(TIME time, int64 days)`
+  `TIME SUBDATE(TIME time, int8 days)`
 
   功能描述：
 
