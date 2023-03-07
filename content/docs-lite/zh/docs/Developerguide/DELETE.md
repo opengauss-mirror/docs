@@ -8,7 +8,7 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 
 -   表的所有者、被授予了表DELETE权限的用户或被授予DELETE ANY TABLE权限的用户有权删除表中数据，系统管理员默认拥有此权限。同时也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
--   对于多表删除语法，暂时不支持对列存表、视图和含有RULE的表进行多表删除。
+-   对于多表删除语法，仅在参数sql\_compatibility=B时生效，暂时不支持对列存表、视图和含有RULE的表进行多表删除。
 
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
