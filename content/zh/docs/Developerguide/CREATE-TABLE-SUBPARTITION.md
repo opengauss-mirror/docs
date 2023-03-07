@@ -300,7 +300,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     缺省表达式将被用于任何未声明该字段数值的插入操作。如果没有指定缺省值则缺省值为NULL 。
 
--   **GENERATED ALWAYS AS \( generation\_expr \) STORED**
+-   **GENERATED ALWAYS AS \( generation\_expr \) [STORED]**
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
