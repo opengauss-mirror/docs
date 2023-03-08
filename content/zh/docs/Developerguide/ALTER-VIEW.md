@@ -67,8 +67,7 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 
   ```
   ALTER [DEFINER = user] VIEW view_name [ ( column_name [, ...] ) ]
-      [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
-      AS query;
+      AS query [WITH [CASCADE | LOCAL] CHECK OPTION];
   ```
 
     >![](public_sys-resources/icon-note.gif) **说明：**   

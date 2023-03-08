@@ -63,6 +63,15 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
         RESET ( view_option_name [, ... ] );
     ```
 
+- 设置视图的定义（该语法仅支持在B兼容模式下才能使用）
+
+  ```
+  ALTER [DEFINER = user] VIEW view_name [ ( column_name [, ...] ) ]
+      AS query [WITH [CASCADE | LOCAL] CHECK OPTION];
+  ```
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >ALTER VIEW AS 中的 query 新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列。
 
 ## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 
