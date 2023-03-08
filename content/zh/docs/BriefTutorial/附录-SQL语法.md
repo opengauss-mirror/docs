@@ -176,6 +176,17 @@ CREATE [OR REPLACE] DIRECTORY directory_name
 AS 'path_name';
 ```
 
+## ALTER EVENT TRIGGER<a name="section84611730152512"></a>
+
+修改事件触发器。
+
+```
+ALTER EVENT TRIGGER name DISABLE
+ALTER EVENT TRIGGER name ENABLE [ REPLICA | ALWAYS ]
+ALTER EVENT TRIGGER name OWNER TO { new_owner | CURRENT_USER | SESSION_USER }
+ALTER EVENT TRIGGER name RENAME TO new_name
+```
+
 ## ALTER EXTENSION<a name="section84611730152513"></a>
 
 修改插件扩展。
@@ -1153,6 +1164,17 @@ CREATE [OR REPLACE] DIRECTORY directory_name
 AS 'path_name';
 ```
 
+## CREATE EVENT TRIGGER<a name="section1142367183143"></a>
+
+创建一个事件触发器。事件触发器将与指定的事件触发器函数绑定，在特定事件触发后执行函数。
+
+```
+CREATE EVENT TRIGGER name
+    ON event
+    [ WHEN filter_variable IN (filter_value [, ... ]) [ AND ... ] ]
+    EXECUTE PROCEDURE function_name()
+```
+
 ## CREATE EXTENSION<a name="section1371614218343"></a>
 
 安装一个扩展。
@@ -1922,6 +1944,14 @@ DROP DATABASE [ IF EXISTS ] database_name;
 
 ```
 DROP DIRECTORY [ IF EXISTS ] directory_name;
+```
+
+## DROP EVENT TRIGGER<a name="section335169343419"></a>
+
+删除一个事件触发器。
+
+```
+DROP EVENT TRIGGER [ IF EXISTS ] name [ CASCADE | RESTRICT ];
 ```
 
 ## DROP EXTENSION<a name="section335916343419"></a>
