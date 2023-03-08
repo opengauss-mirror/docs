@@ -21,6 +21,7 @@
 -   兼容Oracle风格的函数支持参数注释的查看与导出、导入。
 -   兼容Oracle风格的函数支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
 -   不可与同一模式下已存在的synonym产生命名冲突。
+-   当language为internal时，自定义函数的参数类型和返回值类型（void除外）需要与引用的系统函数保持一致，参数个数超出系统函数的部分不做对比校验。当未指定strict时，此选项与系统函数保持一致。
 
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
