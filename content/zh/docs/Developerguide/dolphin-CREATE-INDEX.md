@@ -44,7 +44,7 @@
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ]
         { ON table_name [ USING method ] | [ USING method ] ON table_name }
         ( {{ column_name | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS LAST ] }[, ...] )
-        [ LOCAL [ ( { PARTITION index_partition_name [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
+        [ LOCAL [ ( { PARTITION index_partition_name [ ( SUBPARTITION index_subpartition_name [, ...] ) ] [ TABLESPACE index_partition_tablespace ] } [, ...] ) ] | GLOBAL ]
         [ index_option ] [ALGORITHM [=] {DEFAULT | INPLACE | COPY} ]
     ```
 
