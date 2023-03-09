@@ -7,3 +7,4 @@
 -   dolphin中所有新增/修改的语法不支持在gsql客户端通过```\h```查看帮助说明，不支持在gsql客户端自动补齐。
 -   dolphin插件的创建会删除数据库存在的插件所需的同名函数和类型以及之前存在的与之依赖的对象。
 -   dolphin插件依赖于public schema，因此不支持使用drop schema的方式删除public schema。
+-   连接安装有dolphin插件的B兼容性数据库时，会默认修改GUC参数[behavior_compat_options](平台和客户端兼容性.md#zh-cn_topic_0283137574_zh-cn_topic_0237124754_section1980124735516)，增加```display_leading_zero```和```select_into_return_null```选项，以保持兼容性。
