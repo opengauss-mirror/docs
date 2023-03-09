@@ -77,20 +77,27 @@ The debezium service listens to the incremental data of the source MySQL databas
             	data.check.data-path, is the output address of the verification result. The default configuration can not be modified
             	data.check.source-uri， is the source side service request address. The default configuration can not be modified
             	data.check.sink-uri，is the target end service request address. The default configuration can not be modified
+            	data.check.core-pool-size The number of concurrent threads can be set according to the current environment configuration and can not be modified. The default value is 10. If it is set to 0, the system will automatically allocate
+            	data.check.max-retry-times Maximum number of attempts such as heartbeat, 1000 by default
+            	data.check.retry-interval-times Maximum interval time unit of heartbeat, progress, etc. 10000 milliseconds
+                data.check.auto-delete-topic: Configure whether to delete the topic automatically. 0 will not be deleted, 1 will be deleted after the verification is completed, and 2 tables will be deleted after the verification is completed. The default value is 2
             	rules.enable  Enable rule verification
             	rules.tables Add table filtering rules
             	rules.row  Add row filter rule
-            	rules.column Add column filter rule
+    	rules.column Add column filter rule
             ```
-            
+        
         -   Configuration file of the extraction end and source end: **application-source.yml**
-
+        
             ```
-    The source side service configuration modifies the application-source.yml file
+        The source side service configuration modifies the application-source.yml file
             	server.port is the source side extraction service web port, which can not be modified by default
             	logging.config, sets the log path of the verification service to the absolute path of the config/log4j2source.xml file
             	spring.check.server-uri is the verification service request address. The default configuration cannot be modified
             	spring.extract.schema is the current validation data schema, and the MySQL database name
+            	spring.extract.core-pool-size The number of concurrent threads can be set according to the current environment configuration and can not be modified. The default value is 10. If it is set to 0, the system will automatically allocate
+            	spring.extract.max-retry-times Maximum number of attempts such as heartbeat, 1000 by default
+            	spring.extract.retry-interval-times Maximum interval time unit of heartbeat, progress, etc. 10000 milliseconds
             	bootstrap-servers  is the working address of kafka. The default installation can not be modified
             	
             	Data source configuration
@@ -108,6 +115,9 @@ The debezium service listens to the incremental data of the source MySQL databas
             	logging.config, sets the log path of the verification service to the absolute path of the config/log4j2source.xml file
             	spring.check.server-uri is the verification service request address. The default configuration cannot be modified
             	spring.extract.schema Current verification data schema, opengauss schema name
+            	spring.extract.core-pool-size The number of concurrent threads can be set according to the current environment configuration and can not be modified. The default value is 10. If it is set to 0, the system will automatically allocate
+            	spring.extract.max-retry-times Maximum number of attempts such as heartbeat, 1000 by default
+            	spring.extract.retry-interval-times Maximum interval time unit of heartbeat, progress, etc. 10000 milliseconds
             	bootstrap-servers is the working address of kafka. The default installation can not be modified
             	
             	Data source configuration
@@ -115,43 +125,45 @@ The debezium service listens to the incremental data of the source MySQL databas
             	initialSize: 5 Default initial connection size
             	minIdle: 10 Default minimum number of connection pools
             	maxActive: 20 Number of active database connections by default
-    ```
-        
-5.  Start the service.
-        -   Start the ZooKeeper.
-    
             ```
-            cd /data/kafka/confluent-7.2.0
-            bin/zookeeper-server-start -daemon etc/kafka/zookeeper.properties
-            ```
-    
-        -   Start Kafka.
-    
-            ```
-            bin/kafka-server-start -daemon etc/kafka/server.properties
-            ```
-    
-        -   The connect debezium connector is started (incremental check is required). The **mysql-conect.properties** file is used to configure the debezium connector.
-    
-            ```
-            bin/connect-standalone -daemon etc/kafka/connect-standalone.properties etc/kafka/mysql-conect.properties
-            ```
+	5.  Start the service.
 
+        - Start the ZooKeeper
+        
+          ```
+          cd /data/kafka/confluent-7.2.0
+          bin/zookeeper-server-start -daemon etc/kafka/zookeeper.properties
+          ```
+        
+        - Start Kafka
+        
+          ```
+          bin/kafka-server-start -daemon etc/kafka/server.properties
+          ```
+        
+        - The connect debezium connector is started (incremental check is required). The **my-mysql-connect.properties** file is used to configure the debezium connector
+        
+          ```
+          bin/connect-standalone -daemon etc/kafka/connect-standalone.properties etc/kafka/my-mysql-connect.properties
+          ```
+        
     6.  Start the extraction service.
-    
-    ```
-        sh extract-endpoints.sh stat|restart|stop
-        sh check-endpoint.sh stat|restart|stop
-        ```
-    
-7.  After the service is started, the full calibration process will be automatically started.
-    
-8.  Start incremental check by modifying the configuration file on the source end.
-    
-        ```
-        debezium-enable: true
-    Configure other debezium-related configurations and start the service to enable the incremental check service.
-        ```
+	
+        
+          ```
+          sh extract-endpoints.sh stat|restart|stop
+    	  sh check-endpoint.sh stat|restart|stop
+	      ```
+    7.  After the service is started, the full calibration process will be automatically started.
+	
+	8.  Start incremental check by modifying the configuration file on the source end.
+       
+          ```
+          debezium-enable: true
+	   Configure other debezium-related configurations and start the service to enable the incremental check service.
+          ```
+       
+       
 
 ** For detailed instructions, see  《[ Instructions for use of calibration tools ](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md)》**
 
