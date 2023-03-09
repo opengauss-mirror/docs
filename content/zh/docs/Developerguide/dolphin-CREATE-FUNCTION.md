@@ -100,7 +100,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 
 -   **LANGUAGE  lang_name**
 
-    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 B兼容风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。
+    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 B兼容风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。在B兼容风格语法格式下，此选项允许重复。
 
 - **SQL SECURITY INVOKER**
 
@@ -108,15 +108,19 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
    
    SQL SECURITY INVOKER和SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
 
+   在B兼容风格语法格式下，此选项允许重复，且与SQL SECURITY DEFINER同类别。该类别的函数选项以最后一个输入为准。
+
 - **SQL SECURITY DEFINER**
 
   声明该函数将以创建它的用户的权限执行。
 
   SQL SECURITY DEFINER和AUTHID DEFINER和SECURITY DEFINER的功能相同。
 
+  在B兼容风格语法格式下，此选项允许重复，且与SQL SECURITY INVOKER同类别。该类别的函数选项以最后一个输入为准。
+
 - **CONTAINS SQL** | **NO SQL** | **READS SQL DATA** | **MODIFIES SQL DATA**
 
-  语法兼容项。
+  语法兼容项。此选项允许重复。
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
