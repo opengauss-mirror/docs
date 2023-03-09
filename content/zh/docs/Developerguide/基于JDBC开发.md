@@ -7,7 +7,6 @@ JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行S
 -   **[加载驱动](加载驱动.md)**  
 -   **[连接数据库](连接数据库-0.md)**  
 -   **[连接数据库（以SSL方式）](连接数据库_以SSL方式.md)**  
--   **[连接数据库（以UDS方式）](连接数据库_UDS方式.md)** 
 -   **[执行SQL语句](执行SQL语句.md)**  
 -   **[处理结果集](处理结果集.md)**  
 -   **[关闭连接](关闭连接.md)**  
@@ -18,5 +17,4 @@ JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行S
 -   **[示例：从MY向openGauss进行数据迁移](示例-从MY向openGauss进行数据迁移.md)**  
 -   **[示例：不同场景下连接数据库参数配置](示例-不同场景下连接数据库参数配置.md)**
 -   **[JDBC接口参考](JDBC接口参考.md)**  
--   **[JDBC常用参数参考](JDBC常用参数参考.md)**  
 
