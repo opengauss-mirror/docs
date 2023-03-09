@@ -64,6 +64,8 @@
 
   返回类型：json
 
+  备注：在opengauss中，通过入参前加`E`来实现转译功能，转译前后与Mysql一致。
+
   示例：
 
   ```
@@ -71,6 +73,20 @@
    json_quote 
   ------------
    "gauss"
+  (1 row)
+  
+  #opengauss反斜杠非转译模式
+  opengauss=# select json_quote('\\t\\u0032');
+      json_quote    
+  ------------------
+   "\\\\t\\\\u0032"
+  (1 row)
+  
+  #opengauss反斜杠转译模式
+  opengauss=# select json_quote(E'\\t\\u0032');
+    json_quote  
+  --------------
+   "\\t\\u0032"
   (1 row)
   ```
 
@@ -284,37 +300,37 @@
   示例：
 
   ```
-  select json_search('"abc"','one','abc',true);    
+  opengauss=# select json_search('"abc"','one','abc',true);    
    json_search 
   -------------
    "$"
   (1 row)
   
-  select json_search('"a%c"','all','a1%c',1);
+  opengauss=# select json_search('"a%c"','all','a1%c',1);
    json_search 
   -------------
    "$"
   (1 row)
   
-  select json_search('"abc"','one','abc','&','$',null);
+  opengauss=# select json_search('"abc"','one','abc','&','$',null);
    json_search 
   -------------
    
   (1 row)
   
-  select json_search('"1.2"','one',1.2);
+  opengauss=# select json_search('"1.2"','one',1.2);
    json_search 
   -------------
    "$"
   (1 row)
   
-  select json_search('{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$.*[*]');
+  opengauss=# select json_search('{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$.*[*]');
                          json_search                        
   ----------------------------------------------------------
    ["$.a[0].b[0]","$.a[0].b[1]","$.a[1]","$.c[0]","$.c[1]"]
   (1 row)
   
-  select json_search(''{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$**[1]');
+  opengauss=# select json_search(''{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$**[1]');
               json_search            
   -----------------------------------
    ["$.a[0].b[1]","$.a[1]","$.c[1]"]
@@ -369,14 +385,14 @@
   示例：
 
   ```
-  select json_array_insert('[1, [2, 3], {"a": [4, 5]}]', '$[0]', 0);
+  opengauss=# select json_array_insert('[1, [2, 3], {"a": [4, 5]}]', '$[0]', 0);
         json_array_insert       
   -------------------------------
   [0, 1, [2, 3], {"a": [4, 5]}]
   (1 row)
   
   
-  select json_array_insert('[1, [2, 3], {"a": [4, 5]}]', '$[9]', 4);
+  opengauss=# select json_array_insert('[1, [2, 3], {"a": [4, 5]}]', '$[9]', 4);
         json_array_insert       
   -------------------------------
   [1, [2, 3], {"a": [4, 5]}, 4]
@@ -552,22 +568,22 @@
   示例：
 
   ```
-  SELECT JSON_REMOVE('[0, 1, 2, [3, 4]]', '$[0]', '$[2]');
+  opengauss=# SELECT JSON_REMOVE('[0, 1, 2, [3, 4]]', '$[0]', '$[2]');
    json_remove 
   -------------
    [1, 2]
   (1 row)
-  SELECT JSON_REMOVE('{"x": 1, "y": 2}', '$.x');
+  opengauss=# SELECT JSON_REMOVE('{"x": 1, "y": 2}', '$.x');
    json_remove 
   -------------
    {"y": 2}
   (1 row)
-  SELECT JSON_REMOVE('{"x": {"z":2,"a":3}, "y": 2}', NULL);
+  opengauss=# SELECT JSON_REMOVE('{"x": {"z":2,"a":3}, "y": 2}', NULL);
    json_remove 
   -------------
    
   (1 row)
-  SELECT JSON_REMOVE(NULL, '$.x.z');
+  opengauss=# SELECT JSON_REMOVE(NULL, '$.x.z');
    json_remove 
   -------------
    
@@ -636,4 +652,344 @@
   ------------
             3
   (1 row)
+  ```
+
+* json_length(json_doc[, path])
+
+  描述：输出JSON长度，如果有路径，则输出该路径对应文档的长度。
+
+  返回类型：integer
+
+  备注：
+
+  * 路径不能含有通配符`*`，并且只能有一个路径。
+
+  示例：
+
+  ```
+  opengauss=# select json_length('null');
+   json_length 
+  -------------
+             1
+  (1 row)
+  
+  opengauss=# select json_length('{}');
+   json_length 
+  -------------
+             0
+  (1 row)
+  
+  opengauss=# select json_length('{"a":1,"b":2,"c":3,"d":4}');
+   json_length 
+  -------------
+             4
+  (1 row)
+  
+  opengauss=# select json_length('{"a":"abc","b":"abc"}','$.a');
+   json_length 
+  -------------
+             1
+  (1 row)
+  ```
+
+
+* json_type(json_val)
+
+  描述：输入为JSON文档，返回数据类型。
+
+  返回类型：text
+
+  示例：
+
+  ```
+  opengauss=# select json_type('"aa"');
+   json_type 
+  -----------
+   string
+  (1 row)
+  
+  opengauss=# select json_type('null');
+   json_type 
+  -----------
+   null
+  (1 row)
+  
+  opengauss=# select json_type('[1,2]');
+   json_type 
+  -----------
+   array
+  (1 row)
+  
+  opengauss=# select json_type('{"w":1}');
+   json_type 
+  -----------
+   object
+  (1 row)
+  
+  opengauss=# select json_type('11');
+   json_type 
+  -----------
+   INTEGER
+  (1 row)
+  ```
+
+* json_valid(doc)
+
+  描述：判断输入文本是否是合法的 JSON 。
+
+  返回类型：bool
+
+  备注：
+
+  - 若输入参数是 JSON 类型，该函数返回 `true`。
+  - 若所输入字符串需要转义，在单引号前加`E`，字符串转义语法是（`E'...'`）。
+
+   示例：
+
+  ```
+  openGauss=# select json_valid('{"a":[1,2,3]}');
+   json_valid 
+  ------------
+   t
+  (1 row)
+  
+  openGauss=# select json_valid('{"a":[1,2,3]}');
+   json_valid 
+  ------------
+   t
+  (1 row)
+  
+  openGauss=# select json_valid('{"a":[[1,2,3]}');
+   json_valid 
+  ------------
+   f
+  (1 row)
+  
+  openGauss=# select json_valid('0.3135621312');
+   json_valid 
+  ------------
+   t
+  (1 row)
+  
+  openGauss=# select json_valid('03135621312');
+   json_valid 
+  ------------
+   f
+  (1 row)
+  
+  openGauss=# select json_valid('{"a":true}'::json);
+   json_valid 
+  ------------
+   t
+  (1 row)
+  ```
+
+* json_pretty(json)
+
+  描述：格式化输出一个 JSON 文档，以便更易于阅读。
+
+  返回类型：json 
+
+  示例：
+
+  ```
+  opengauss=# select JSON_PRETTY('{"a": 43}');
+   json_pretty 
+  -------------
+     {        +
+     "a": 43  +
+   }
+  (1 row)
+  
+  opengauss=# select JSON_PRETTY('{}');
+   json_pretty 
+  -------------
+     {}
+  (1 row)
+  
+  opengauss=# select JSON_PRETTY('{"a":[{"age": 43, "name": "lihua"}, [[[[43,33, []]]]], "hello"]}');
+        json_pretty      
+  -----------------------
+     {                  +
+     "a": [             +
+       {                +
+         "age": 43,     +
+         "name": "lihua"+
+       },               +
+       [                +
+         [              +
+           [            +
+             [          +
+               43,      +
+               33,      +
+               []       +
+             ]          +
+           ]            +
+         ]              +
+       ],               +
+       "hello"          +
+     ]                  +
+   }
+  (1 row)
+  ```
+
+* json_storage_size(json)
+
+  描述：`JSON_STORAGE_SIZE()` 函数返回存储一个 JSON 文档的二进制表示所占用的字节数。
+
+  返回类型：integer
+
+  备注：
+
+  * json是必需的。一个 JSON 文档。它可以是一个 JSON 字符串，或者一个 JSON 列。根据华为方意见，调用opengauss内部函数计算json在opengauss中的具体存储大小，其结果与mysql不同。
+
+  示例：
+
+  ```
+  opengauss=# SELECT JSON_STORAGE_SIZE('0');
+  json_storage_size 
+  -------------------
+                  5
+  (1 row)
+  
+  opengauss=# SELECT JSON_STORAGE_SIZE('"Hello World"');
+  json_storage_size 
+  -------------------
+                  17
+  (1 row)
+  
+  opengauss=# SELECT JSON_STORAGE_SIZE('[1, "abc", null, true, "10:27:06.000000", {"id": 1}]');
+  json_storage_size 
+  -------------------
+                  56
+  (1 row)
+  
+  opengauss=# SELECT JSON_STORAGE_SIZE('{"x": 1, "y": 2}');
+  json_storage_size 
+  -------------------
+                  20
+  (1 row)
+  ```
+
+* json_arrayagg("any")
+
+  描述：`json_arrayagg`函数返回一个 JSON_ARRAY型数组，它将指定列中的值聚合。
+
+  备注：
+
+  * 此函数为聚合函数，仅能在表中使用。
+  * 如果结果集没有任何行，此函数将返回 NULL。
+
+  示例：
+
+  ```
+  opengauss=# CREATE TEMP TABLE foo1 (serial_num int, name text, type text);
+  opengauss=# INSERT INTO foo1 VALUES (847001,'t15','GE1043');
+  opengauss=# INSERT INTO foo1 VALUES (847002,'t16','GE1043');
+  opengauss=# INSERT INTO foo1 VALUES (847003,'sub-alpha','GESS90');
+  opengauss=# SELECT json_arrayagg(serial_num)
+  FROM foo1;
+        json_arrayagg       
+  --------------------------
+   [847001, 847002, 847003]
+  (1 row)
+  
+  opengauss=# SELECT json_arrayagg(type)
+  FROM foo1;
+           json_arrayagg          
+  --------------------------------
+   ["GE1043", "GE1043", "GESS90"]
+  (1 row)
+  
+  ```
+
+* json_objectagg(any, any)
+
+  描述：将由第一个参数作为键和第二个参数作为值的键值对聚合为一个 JSON 对象。
+
+  返回类型：object-json
+
+  备注：
+
+  * 此函数为聚合函数，仅能在表中使用。
+
+  示例：
+
+  ```
+  openGauss=# select * from City;
+      district     |     name      | population 
+  -----------------+---------------+------------
+   Capital Region  | Canberra      |     322723
+   New South Wales | Sydney        |    3276207
+   New South Wales | Newcastle     |     270324
+   New South Wales | Central Coast |     227657
+   New South Wales | Wollongong    |     219761
+   Queensland      | Brisbane      |    1291117
+   Queensland      | Gold Coast    |     311932
+   Queensland      | Townsville    |     109914
+   Queensland      | Cairns        |      92273
+   South Australia | Adelaide      |     978100
+   Tasmania        | Hobart        |     126118
+   Victoria        | Melbourne     |    2865329
+   Victoria        | Geelong       |     125382
+   West Australia  | Perth         |    1096829
+  (14 rows)
+  
+  openGauss=# SELECT 
+  openGauss-#   District AS State,
+  openGauss-#   JSON_OBJECTAGG(Name, Population) AS "City/Population"
+  openGauss-# FROM City
+  openGauss-# GROUP BY State;
+        state      |                                     City/Population                                     
+  -----------------+-----------------------------------------------------------------------------------------
+   West Australia  | {"Perth": 1096829}
+   Queensland      | {"Cairns": 92273, "Brisbane": 1291117, "Gold Coast": 311932, "Townsville": 109914}
+   New South Wales | {"Sydney": 3276207, "Newcastle": 270324, "Wollongong": 219761, "Central Coast": 227657}
+   Tasmania        | {"Hobart": 126118}
+   Victoria        | {"Geelong": 125382, "Melbourne": 2865329}
+   South Australia | {"Adelaide": 978100}
+   Capital Region  | {"Canberra": 322723}
+  (7 rows)
+  ```
+
+- column->path
+
+  描述：相当于`json_extract`的别名，在JSON文档提取路径表达式指定的数据并返回,操作符`->`要在查表操作中进行。
+
+  返回类型:   json
+
+  示例：
+
+  ```
+  opengauss=# create table test(data json);
+  CREATE TABLE
+  opengauss=# insert into test values('{"a":"lihua"}');
+  INSERT 0 1
+  opengauss=# select data->'$.a' from test;
+   ?column? 
+  ----------
+   "lihua"
+  (1 row)
+  
+  ```
+
+- column->>path
+
+  描述：功能类似于`json_unquote(json_extract(json,path))`,`json_unquote(column->path)`,取消对JSON文档中提取的数据引号的引用，操作符`->>`要在查表操作中进行。
+
+  返回类型:  text
+
+  示例：
+
+  ```
+  opengauss=# create table test(data json);
+  CREATE TABLE
+  opengauss=# insert into test values('{"a":"lihua"}');
+  INSERT 0 1
+  opengauss=# select data->>'$.a' from test;
+   ?column? 
+  ----------
+    lihua
+  (1 row)
+  
   ```
