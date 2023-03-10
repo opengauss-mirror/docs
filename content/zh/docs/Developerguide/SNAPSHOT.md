@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section1427744717250"></a>
 
--   本特性GUC参数db4ai\_snapshot\_mode，快照存储模型分为MSS和CSS两种；GUC参数db4ai\_snapshot\_version\_delimiter，用于设定版本分隔符，默认为“@”;GUC参数db4ai\_snapshot\_version\_separator，用于设定子版本分隔符，默认为“.”。
+-   本特性GUC参数db4ai\_snapshot\_mode，快照存储模型分为MSS和CSS两种；GUC参数db4ai\_snapshot\_version\_delimiter，用于设定版本分隔符，仅接受设定单字节参数值，默认为“@”;GUC参数db4ai\_snapshot\_version\_separator，用于设定子版本分隔符，仅接受设定单字节参数值，默认为“.”。
 -   当快照选用增量存储方式时，各个快照中具有依赖关系。删除快照需要按照依赖顺序进行删除。
 -   snapshot特性用于团队不同成员间维护数据，涉及管理员和普通用户之间的数据转写。所以在私有用户、三权分立\(enableSeparationOfDuty=ON\)等状态下，数据库不支持snapshot功能特性。
 -   当需要稳定可用的快照用于AI训练等任务时，用户需要将快照发布。

@@ -42,6 +42,9 @@
     ALTER DATABASE database_name 
         SET TABLESPACE new_tablespace;
     ```
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+        >
+        > 如果该数据库中的某些表或对象已经创建在new_tablespace下，则无法将该数据库的默认表空间修改为new_tablespace，执行会报错。
 
 -   修改数据库指定会话参数值。
 
