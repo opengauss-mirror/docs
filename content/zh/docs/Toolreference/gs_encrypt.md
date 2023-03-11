@@ -89,9 +89,9 @@ G0R7Y2oROfuiEjWtUBx9+eHP3I21A1wMOJ2onVQIiAsxMjM0NTY3ODkwMTIzNDU2
     ```
 
 
-示例3：通过输入base64加密后的key和vector密文来对明文字符串进行加密操作。
+示例3：通过输入base64转码后的key和vector密文来对明文字符串进行加密操作。
 
-1.  输入base64加密后的key。
+1.  输入base64转码后的key。
 
     ```
     python
@@ -105,7 +105,7 @@ G0R7Y2oROfuiEjWtUBx9+eHP3I21A1wMOJ2onVQIiAsxMjM0NTY3ODkwMTIzNDU2
     R2F1c3NAMTIz
     ```
 
-2.  输入base64加密后vector密文。
+2.  输入base64转码后vector密文。
 
     ```
     >>> print base64.b64encode("1234567890abcdef");
