@@ -1345,12 +1345,6 @@ CONTEXT:  referenced column: subdate
   -------
       11
   (1 row)
-
-  openGauss=# select month('2021-11-0');
-  month
-  -------
-      11
-  (1 row)
   ```
 
 - day\(date\)
@@ -1369,21 +1363,19 @@ CONTEXT:  referenced column: subdate
   -----
   12
   (1 row)
-
-  openGauss=# select day('2021-0-0');
-  day
-  -----
-  0
-  (1 row)
   ```
 
 - date\(expr\)
 
   描述：expr识别为date或者datetime表达式，从expr中提取出日期部分。
 
-  返回值类型：text
+  返回值类型：date
 
-  备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
+  备注：
+
+  - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
+  
+  - 当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss对数值0输入返回日期'0000-00-00'；在dolphin.sql_mode为其他情况时，严格模式报错，非严格模式报warning并返回NULL。
 
   示例：
 
@@ -1398,18 +1390,6 @@ CONTEXT:  referenced column: subdate
       date
   ------------
   2021-11-13
-  (1 row)
-
-  openGauss=# select date('2021-11-0');
-      date
-  ------------
-  2021-11-00
-  (1 row)
-
-  openGauss=# select date('2021-0-3');
-      date
-  ------------
-  2021-00-03
   (1 row)
   ```
 
@@ -1432,12 +1412,6 @@ CONTEXT:  referenced column: subdate
   SET
 
   openGauss=# select last_day('2021-1-30');
-  last_day
-  ------------
-  2021-01-31
-  (1 row)
-
-  openGauss=# select last_day('2021-1-0');
   last_day
   ------------
   2021-01-31
@@ -1621,16 +1595,14 @@ CONTEXT:  referenced column: subdate
   ```
 
 - DATE\_ADD\(date/datetime/time, interval expr unit\)
-  
-  函数原型：
-  ```
-  text DATE_ADD(text expr1, INTERVAL expr2 unit)
-  time DATE_ADD(time expr1, INTERVAL expr2 unit)
-  ```
 
   描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。
   
-  返回值类型：与第一参数类型保持一致。
+  返回值类型：
+  
+  - 该函数返回值类型为text，以便可以得到date或datetime等多种类型的结果格式。
+
+  - 若有函数结果参与计算需求，可以使用cast语句将函数结果转换为合适数据数据类型而后再参与计算，如：SELECT CAST(DATE_ADD('2021-11-12', INTERVAL 1 SECOND) AS DATETIME) + 1;
   
   备注：
 
@@ -1638,9 +1610,9 @@ CONTEXT:  referenced column: subdate
   
   - 兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME。
+  - 一般情况下，返回结果格式与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME格式。
 
-  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中严格模式下报错，非严格模式下报warning并返回NULL。
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。在openGauss中，当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss在上述情况时，表现与MySQL一致；当dolphin.sql_mode处于其他情况时，严格模式报错，非严格模式报warning并返回NULL。
 
   示例：
   
@@ -1666,16 +1638,13 @@ CONTEXT:  referenced column: subdate
   
 - DATE\_SUB\(date/datetime/time, interval expr unit\)
 
-  函数原型：
-
-  ```
-    text DATE_SUB(text expr1, INTERVAL expr2 unit)
-    time DATE_SUB(time expr1, INTERVAL expr2 unit)
-  ```
-
   描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。
   
-  返回值类型：与第一参数类型保持一致。
+  返回值类型：
+  
+  - 该函数返回值类型为text，以便可以得到date或datetime等多种类型的结果格式。
+
+  - 若有函数结果参与计算需求，可以使用cast语句将函数结果转换为合适数据数据类型而后再参与计算，如：SELECT CAST(DATE_SUB('2021-11-12', INTERVAL 1 SECOND) AS DATETIME) + 1;
   
   备注：
 
@@ -1683,9 +1652,9 @@ CONTEXT:  referenced column: subdate
   
   - 兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME。
+  - 一般情况下，返回结果格式与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME格式。
 
-  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。鉴于这样的结果没有意义，故在openGauss中严格模式下报错，非严格模式下报warning并返回NULL。
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。在openGauss中，当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss在上述情况时，表现与MySQL一致；当dolphin.sql_mode处于其他情况时，严格模式报错，非严格模式报warning并返回NULL。
   
   示例：
   
@@ -1745,15 +1714,13 @@ CONTEXT:  referenced column: subdate
 
 - ADDTIME\(datetime/time,time\)
 
-  函数原型：
-
-  ``` 
-  time ADDTIME(text expr1, time expr2)
-  ```
-
   描述：该函数执行时间加法运算，返回expr1加上expr2的结果。expr1可以为datetime或者time格式，expr2只能为time格式。
   
-  返回值类型：与第一参数类型保持一致。
+  返回值类型：
+  
+  - 该函数返回值类型为text，以便可以得到time或datetime的结果格式。
+
+  - 若有函数结果参与计算需求，可以使用cast语句将函数结果转换为合适数据数据类型而后再参与计算，如：SELECT CAST(ADDTIME('2021-11-12 11:11:11', '10:10:10') AS DATETIME) + 1;
   
   备注：此函数兼容MySQL插表时的严格模式和非严格模式表现。
   
@@ -1926,7 +1893,7 @@ CONTEXT:  referenced column: subdate
 
   描述：第一个参数为数值格式的时间戳,代表距离'1970-01-01 00:00:00'UTC的秒数；第二个参数为可选字符串参数。第二参数不传入时，函数返回'1970-01-01 00:00:00' UTC + unix_timestamp + 当前时区偏移对应的datetime；当第二个参数给出时，函数会将datetime根据第二个参数进行格式化，格式化的方法与date_format函数相同。当unix_timestamp超过最大时间戳范围后，函数返回NULL。
 
-  返回值：
+  返回值类型：
 
   - 仅传入第一个参数时：datetime
 
@@ -1964,13 +1931,17 @@ CONTEXT:  referenced column: subdate
 
   描述：该函数是date_format函数的逆函数。函数会尝试将字符串str与字符串format匹配，并根据format中包含的标志来构造对应date格式、datetime格式或者time格式的内容。
 
-  返回值：
+  返回值类型：
+
+  - 该函数返回值类型为text，以便可以得到time、date或datetime的结果格式。
   
   - 当format中标志仅包含时间相关字符串`'fHISThiklrs'`中的字符时：time格式内容
 
   - 当format中标志仅包含日期相关字符串`'MVUXYWabcjmvuxyw'`中的字符时：date格式内容
 
   - 当format中标志为上述两种情况混合时：datetime格式内容
+
+  - 若有函数结果参与计算需求，可以使用cast语句将函数结果转换为合适数据数据类型而后再参与计算，如：SELECT CAST(STR_TO_DATE('2021-11-12 12:12:12', '%Y-%m-%d %T') AS DATETIME) + 1;
 
   备注：
 
