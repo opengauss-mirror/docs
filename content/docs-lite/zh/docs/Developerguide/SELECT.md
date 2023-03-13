@@ -56,7 +56,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         AS [ [ NOT ] MATERIALIZED ] ( {select | values | insert | update | delete} )
     ```
 
-- 其中into字句为：
+- 其中into子句为：
 
   ```
   into_option: {
