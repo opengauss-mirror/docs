@@ -218,6 +218,6 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 
 <tr>
     <td>修改视图</td>
-    <td><a href="dolphin-ALTER-VIEW.md">CREATE VIEW</a></td>
+    <td><a href="dolphin-ALTER-VIEW.md">ALTER VIEW</a></td>
 </tr>
 </table>
