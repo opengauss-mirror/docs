@@ -52,18 +52,24 @@
    | \l[+]                       | 列出服务器上所有数据库的名称、所有者、字符集编码以及使用权限。 |
    | \z [PATTERN]                | 列出数据库中所有表、视图和序列以及它们相关的访问特权。       |
 
-   
+    ansi_quotes关闭情况下，如果需要用到数据库关键字作为对象标识符，或者出于规范性要求需要包裹所有对象标识符，可以使用反引号(`)替代双引号。
 
+    使用反引号(`)的情况下，表名称（受到参数lower_case_table_names控制）之外，其他包围的列名称，索引名称等都会做自动的小写化处理，返回数据的列也均为小写名称。
+
+8. no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
+
+    |参数|表现|
+    |---|---|
+    |no_zero_date, sql_mode_strict|非法日期，报错（使用update/insert ignore时告警）|
+    |no_zero_date|非法日期，告警|
+    |sql_mode_strict|合法日期，无告警|
+    |--|合法日期，无告警|
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
-ansi_quotes关闭情况下，如果需要用到数据库关键字作为对象标识符，或者出于规范性要求需要包裹所有对象标识符，可以使用反引号(`)替代双引号。
-
-使用反引号(`)的情况下，表名称（受到参数lower_case_table_names控制）之外，其他包围的列名称，索引名称等都会做自动的小写化处理，返回数据的列也均为小写名称。
-
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date'
 
 **示例**：
 ```
