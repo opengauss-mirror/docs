@@ -248,6 +248,7 @@ headless: true
         -   [升级验证]({{< relref "./docs/UpgradeGuide/升级验证.md" >}})
         -   [提交升级]({{< relref "./docs/UpgradeGuide/提交升级.md" >}})
         -   [升级版本回滚]({{< relref "./docs/UpgradeGuide/升级版本回滚.md" >}})
+        -   [集群管理组件增量升级]({{< relref "./docs/UpgradeGuide/集群管理组件增量升级.md" >}})
     -   [异常处理]({{< relref "./docs/UpgradeGuide/异常处理.md" >}})
 -   [管理员指南]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
     -   [启停openGauss]({{< relref "./docs/Administratorguide/启停openGauss.md" >}})

@@ -14,6 +14,8 @@
 
 滚动升级：滚动升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
 
+集群管理组件增量升级：仅对集群管理组件进行增量升级，支持全业务操作。
+
 ## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
 -   升级操作不能和扩容、缩容同时执行。
@@ -38,6 +40,16 @@
 -   灰度升级中， 业务并发要小于200并发读加200并发写的情况。
 -   建议数据库节点磁盘使用率低于80%时再执行升级操作。
 -   执行gs_upgradectl -t auto-upgrade 之后，没有提交之前，不能执行快照生成，即升级过程中不能执行快照生成。
+
+集群管理组件增量升级注意事项:
+
+-   集群管理组件增量升级操作不能和扩节点、缩节点同时执行。
+-   集群管理组件增量升级操作不需要执行前置操作，请参考本页中升级示例六进行集群管理组件的升级。
+-   建议在数据库系统业务空闲情况下进行集群管理组件的升级，尽量避开业务繁忙时段。
+-   集群管理组件增量升级需要使用官方提供的组件包进行升级。
+-   执行集群管理组件升级需要保障集群内节点间互信正常通信（可以通过在节点间互相执行ssh命令进行检查）。
+-   --upgrade-package 是指定集群管理升级包路径的参数，升级前请检查升级包的权限（属主、属组、读写权限）是否正常。
+-   升级集群管理组件后，如果进行增加节点操作（gs_expansion）,为保障所有节点的集群管理组件的一致性，建议在增加节点操作完成后，再次执行集群管理组件的升级操作。
 
 ## 语法<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
@@ -81,6 +93,12 @@
     >
     >-   一旦提交操作完成，则不能再执行回滚操作。
 
+-   集群管理组件增量升级
+
+    ```
+    gs_upgradectl -t upgrade-cm --upgrade-package PACKAGEPATH
+    ```
+
 
 ## 参数说明<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
 
@@ -88,7 +106,7 @@
 
     gs\_upgradectl命令的类型。
 
-    取值范围：chose-strategy、auto-upgrade、auto-rollback和commit-upgrade。
+    取值范围：chose-strategy、auto-upgrade、auto-rollback、commit-upgrade和upgrade-cm。
 
 -   -l
 
@@ -325,4 +343,25 @@ Once the check done, please execute following command to commit upgrade:
 
 gs_upgradectl -t commit-upgrade -X /data/node2.xml
 Successfully upgrade all nodes.
+```
+
+**示例六：**使用gs\_upgradectl脚本执行集群管理组件增量升级。
+```
+gs_upgradectl -t upgrade-cm --upgarde-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
+Start ot perform the upgrade of CM component in cluster.
+Ready to transform CM package to all nodes.
+Send CM package to all nodes successfully.
+Start to record origin cluster state.
+cluster origin state is : [Normal]
+Start to prepare CM componet files on all nodes.
+Prepare upgrade CM component files successfully.
+Start to upgrade CM component on all nodes.
+Upgrade CM component files successfully.
+Finial check cluster:
+Cluster state check unavailale.
+Cluster state is : [Normal]
+Cluster state is : [Normal]
+Cluster state is : [Normal]
+The cluster status check is available.
+Upgrade CM component successfully.
 ```
