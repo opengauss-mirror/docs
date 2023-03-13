@@ -243,6 +243,7 @@ headless: true
         -   [升级验证]({{< relref "./docs/UpgradeGuide/升级验证.md" >}})
         -   [提交升级]({{< relref "./docs/UpgradeGuide/提交升级.md" >}})
         -   [升级版本回滚]({{< relref "./docs/UpgradeGuide/升级版本回滚.md" >}})
+        -   [集群管理组件增量升级]({{< relref "./docs/UpgradeGuide/集群管理组件增量升级" >}})
     -   [异常处理]({{< relref "./docs/UpgradeGuide/异常处理.md" >}})
 -   [管理员指南]({{< relref "./docs/Administratorguide/Administratorguide.md" >}})
     -   [启停openGauss]({{< relref "./docs/Administratorguide/启停openGauss.md" >}})
@@ -253,8 +254,7 @@ headless: true
     -   [备份与恢复]({{< relref "./docs/Administratorguide/备份与恢复.md" >}})
 	-   [两地三中心跨Region容灾]({{< relref "./docs/Administratorguide/两地三中心跨Region容灾.md" >}})
     -   [高危操作一览表]({{< relref "./docs/Administratorguide/高危操作一览表.md" >}})
-    -   [日志参考]({{< relref "./docs/Administratorguide/日志参考.md" >}})
- 
+    -   [日志参考]({{< relref "./docs/Administratorguide/日志参考.md" >}}
 -   [开发者指南]({{< relref "./docs/Developerguide/Developerguide.md" >}})
     -   [概述]({{< relref "./docs/Developerguide/概述.md" >}})
         -   [数据库逻辑结构图]({{< relref "./docs/Developerguide/数据库逻辑结构图.md" >}})
