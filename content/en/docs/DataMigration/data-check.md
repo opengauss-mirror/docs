@@ -161,11 +161,11 @@ The debezium service listens to the incremental data of the source MySQL databas
           ```
           debezium-enable: true
 	   Configure other debezium-related configurations and start the service to enable the incremental check service.
-          ```
+         ```
        
        
 
-** For detailed instructions, see  《[ Instructions for use of calibration tools ](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md)》**
+** For detailed instructions, see  《[ Instructions for use of calibration tools ](https://gitee.com/opengauss/openGauss-tools-datachecker-performance)》**
 
 ## Binary Installation<a name="section33621845504"></a>
 
