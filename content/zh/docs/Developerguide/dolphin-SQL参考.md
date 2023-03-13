@@ -8,8 +8,6 @@
 
 -   **[表达式](dolphin-表达式.md)**
 
--   **[类型转换](dolphin-类型转换.md)**
-
 -   **[DDL语法一览表](dolphin-DDL语法一览表.md)**
 
 -   **[DML语法一览表](dolphin-DML语法一览表.md)**
