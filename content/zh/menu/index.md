@@ -254,7 +254,7 @@ headless: true
 	-   [两地三中心跨Region容灾]({{< relref "./docs/Administratorguide/两地三中心跨Region容灾.md" >}})
     -   [高危操作一览表]({{< relref "./docs/Administratorguide/高危操作一览表.md" >}})
     -   [日志参考]({{< relref "./docs/Administratorguide/日志参考.md" >}})
-    -   [集群管理组件增量升级]({{< relref "./docs/Administratorguide/集群管理组件增量升级.md" >}})
+ 
 -   [开发者指南]({{< relref "./docs/Developerguide/Developerguide.md" >}})
     -   [概述]({{< relref "./docs/Developerguide/概述.md" >}})
         -   [数据库逻辑结构图]({{< relref "./docs/Developerguide/数据库逻辑结构图.md" >}})
