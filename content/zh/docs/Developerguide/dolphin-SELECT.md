@@ -90,7 +90,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     where match(column_name) against ('匹配字符');
 ```
     column_name可以是多列，列名之间用逗号分隔。
-    against()的匹配字符只能是字符内容(即全文索引支持字段类型只能是这三种char, varchar, text)，不包含int, bool, 特殊字符与正规功能。
+    against()的匹配字符只能是字符内容(即全文索引支持字段类型只能是这三种char, varchar, text)，不包含int, bool, 特殊字符(!,#,空格等)与正规功能。
     注意：
         mysql的全文索引查询语法match(column_name)允许无序，但该功能底层用的是opengauss的to_tsvector(),他的要求是字段顺序必须有序(与表的字段顺序一致)。
 

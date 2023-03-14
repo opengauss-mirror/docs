@@ -119,7 +119,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 其中table_indexclause中包含：
     ```sql
-    FULLTEXT (column_name) WITH PARSER ngram ON {UPDATE | DELETE} CASCADE
+    FULLTEXT (column_name) WITH PARSER ngram
     ```
 column_name为多列时，列名用逗号分隔。
 
