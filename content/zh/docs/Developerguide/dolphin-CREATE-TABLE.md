@@ -442,13 +442,13 @@ CREATE TABLE
 
 --创建兼容MySQL全文索引语法的表。
 ```sql
-test=# CREATE TABLE test (
-test(# id int unsigned auto_increment not null primary key,
-test(# title varchar,
-test(# boby text,
-test(# name name,
-test(# FULLTEXT (title, boby) WITH PARSER ngram
-test(# );
+openGauss=# CREATE TABLE test (
+openGauss(# id int unsigned auto_increment not null primary key,
+openGauss(# title varchar,
+openGauss(# boby text,
+openGauss(# name name,
+openGauss(# FULLTEXT (title, boby) WITH PARSER ngram
+openGauss(# );
 NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
 NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
 CREATE TABLE

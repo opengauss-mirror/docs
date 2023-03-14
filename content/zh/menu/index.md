@@ -1732,6 +1732,7 @@ headless: true
 						-	[UPDATE]({{< relref "./docs/Developerguide/dolphin-UPDATE.md" >}})
 						-	[USE-DB_NAME]({{< relref "./docs/Developerguide/dolphin-USE-DB_NAME.md" >}}) 
 						-	[CHECKSUM-TABLE]({{< relref "./docs/Developerguide/dolphin-CHECKSUM-TABLE.md" >}})  
+						-	[SHOW_STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW_STATUS.md" >}})
 						-	[GRANT-REVOKE-PROXY]({{< relref "./docs/Developerguide/dolphin-GRANT-REVOKE-PROXY.md" >}}) 					
 						-	[SELECT-HINT]({{< relref "./docs/Developerguide/dolphin-SELECT-HINT.md" >}})
 				-   [系统视图]({{< relref "./docs/Developerguide/dolphin-系统视图.md" >}})
