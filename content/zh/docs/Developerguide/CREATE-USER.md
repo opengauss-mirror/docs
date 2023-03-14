@@ -64,7 +64,13 @@ CREATE USER [IF NOT EXISTS] user_name [ [ WITH ] option [ ... ] ] [ ENCRYPTED | 
 
     用户名称。
 
-    取值范围：字符串，要符合标识符的命名规范。且最大长度不超过63个字符。
+    取值范围：
+    - 字符串，要符合标识符的命名规范。且最大长度不超过63个字符。
+    - 若GUC参数test_user_host打开且在b数据库模式下，则支持以下特殊形式的语法。
+        - 'user_name' @ 'host_name'。例如：'user1'@'127.0.0.%'。
+        - 'user_name'，但是不允许包含特殊字符@。 例如：'user1'。
+        - user_name@host_name。例如：user1@127.%.0.1。
+    其中user_name是符合命名规范的标识符（可包含特殊字符%），host_name是IP地址，由数字，'.'和'%'组成。
 
 -   **password**
 
