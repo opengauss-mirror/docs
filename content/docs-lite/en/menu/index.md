@@ -618,7 +618,7 @@ headless: true
 			-   [OID Types]({{< relref "./docs/Developerguide/oid-types.md" >}})
 			-   [Pseudo-Types]({{< relref "./docs/Developerguide/pseudo-types.md" >}})
 			-   [Data Types Supported by Column-store Tables]({{< relref "./docs/Developerguide/data-types-supported-by-column-store-tables.md" >}})
-			-   [XML Types]({{< relref "./docs/Developerguide/xml-types.md" >}})
+			-   [XML Type]({{< relref "./docs/Developerguide/xml-type.md" >}})
 			-   [Data Type Used by the Ledger Database]({{< relref "./docs/Developerguide/data-type-used-by-the-ledger-database.md" >}})
 			-   [SET Type]({{< relref "./docs/Developerguide/set-type.md" >}})
 		-   [Constant and Macro]({{< relref "./docs/Developerguide/constant-and-macro.md" >}})
