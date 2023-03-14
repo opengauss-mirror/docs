@@ -1,5 +1,7 @@
 **新增json函数**
 
+- 在`public`中创建同名自定义函数或存储过程可能影响原函数功能，建议用户创建同名自定义函数或存储过程时指定模式名。
+
 - json_array([val[, val] ...])
 
   描述：输入可变长参数，输出一个 JSON 数组。
@@ -18,9 +20,9 @@
   (1 row)
   ```
 
-- json_object([VARIADIC “any”])
+- json_object([key, val[, key, val] ...])
 
-  描述：输入参数为交替出现的`key`, `value`。从一个可变参数列表构造出一个 JSON 对象，使用前需设置GUC参数 dolphin.b_compatibility_mode = 1。
+  描述：输入参数为交替出现的`key`、`value`。从一个可变参数列表构造出一个 JSON 对象，使用前需设置GUC参数 dolphin.b_compatibility_mode = 1。
 
   返回类型：json
 
@@ -64,7 +66,10 @@
 
   返回类型：json
 
-  备注：在opengauss中，通过入参前加`E`来实现转译功能，转译前后与Mysql一致。
+  备注：
+
+  * 在opengauss中，通过入参前加`E`来实现转译功能，转译前后与Mysql一致。
+  * 在opengauss中，json_quote函数支持数值型。
 
   示例：
 
@@ -88,18 +93,24 @@
   --------------
    "\\t\\u0032"
   (1 row)
+  
+  #opengauss支持数值型
+  opengauss=# select json_quote(1);
+   json_quote 
+  ------------
+   "1"
+  (1 row)
   ```
 
-- json_contains(json, json[, text])
+- json_contains(target, candidate[, path])
 
-  描述：第三个可选参数是第一个 JSON 参数的`path`，返回第一个 JSON 参数是否包含第二个 JSON 参数。
+  描述：`path`可选参数是`target`参数的`path`，返回`target`参数是否包含`candidate`参数。
 
   返回类型：bool
 
   备注：
 
-  - 任一参数为 NULL，函数返回 NULL。
-  - 当`path`在 JSON 中不存在时，函数返回`NULL`。
+  - 当`path`在`target`中不存在时，函数返回`NULL`。
 
   示例：
 
@@ -141,23 +152,21 @@
   (1 row)
   ```
 
-- json_contains_path(json, text, text[])
+- json_contains_path(json_doc, one_or_all, path[, path] ...)
 
-  描述：返回目标 JSON 参数是否存在输入的`path`参数，第二个参数选择模式。
+  描述：返回目标`json_doc`参数是否存在输入的`path`参数，`one_or_all`参数选择模式。
 
   返回类型：bool
 
   备注：
 
-  - 第二个参数可以为`one`或`all`。
+  - `one_or_all`参数可以为`one`或`all`。
 
     `one`则只要一个`path`存在即返回`true`，否则返回`false`；`all`则全部`path`存在才返回`true`，否则返回`false`。
 
-  - 第一、二个参数为`NULL`，函数返回 NULL。
+  - 若`one_or_all`参数为`one`，则按顺序检查`path`，NULL 的`path`先于任一存在的`path`，则函数返回 NULL；
 
-  - 若模式为`one`，则按顺序检查`path`，NULL 的`path`先于任一存在的`path`，则函数返回 NULL；
-
-    若模式为`all`，则按顺序检查`path`，NULL 的`path`先于任一不存在的`path`，则函数返回 NULL。
+    若`one_or_all`参数为`all`，则按顺序检查`path`，NULL 的`path`先于任一不存在的`path`，则函数返回 NULL。
 
   示例：
 
@@ -217,9 +226,9 @@
   (1 row)
   ```
 
-- json_extract(json, VARIADIC text[])  
+- json_extract(json_doc, path[, path] ...)  
 
-  描述：在 JSON 文档提取路径表达式指定的数据并返回。    
+  描述：在 JSON 文档提取路径表达式指定的数据并返回。
 
   返回类型：json
 
@@ -325,15 +334,9 @@
   (1 row)
   
   opengauss=# select json_search('{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$.*[*]');
-                         json_search                        
-  ----------------------------------------------------------
-   ["$.a[0].b[0]","$.a[0].b[1]","$.a[1]","$.c[0]","$.c[1]"]
-  (1 row)
-  
-  opengauss=# select json_search(''{"a":[{"b":["abc","abc"]},"ac"],"c":["abbc","abcc"]}','all','a%c',null,'$**[1]');
-              json_search            
-  -----------------------------------
-   ["$.a[0].b[1]","$.a[1]","$.c[1]"]
+                           json_search                          
+  --------------------------------------------------------------
+   ["$.a[0].b[0]", "$.a[0].b[1]", "$.a[1]", "$.c[0]", "$.c[1]"]
   (1 row)
   ```
 
@@ -391,7 +394,6 @@
   [0, 1, [2, 3], {"a": [4, 5]}]
   (1 row)
   
-  
   opengauss=# select json_array_insert('[1, [2, 3], {"a": [4, 5]}]', '$[9]', 4);
         json_array_insert       
   -------------------------------
@@ -399,7 +401,7 @@
   (1 row)
   ```
 
-* json_insert(VARIADIC "any")
+* json_insert(json_doc, path, val[, path, val] ...)
 
   描述：向一个 JSON 文档中插入数据并返回新的 JSON 文档。
 
@@ -410,9 +412,9 @@
   示例：
 
   ```
-  opengauss=# select json_extract('{"x": 1}','$.y'，true);
-         json_extract       
-  ----------------------------
+  opengauss=# select json_insert('{"x": 1}','$.y',true);
+       json_insert     
+  ---------------------
    {"x": 1, "y": true}
   (1 row)
   ```
@@ -590,7 +592,7 @@
   (1 row)
   ```
 
-* json_replace([VARIADIC “any”])
+* json_replace(json_doc, path, val[, path, val] ...)
 
   描述：在一个 JSON 文档中替换已存在的数据并返回新的 JSON 文档。第一个参数为 JSON 文档，其后为交替出现的路径和替换值。
 
@@ -705,25 +707,25 @@
   opengauss=# select json_type('"aa"');
    json_type 
   -----------
-   string
+   STRING
   (1 row)
   
   opengauss=# select json_type('null');
    json_type 
   -----------
-   null
+   NULL
   (1 row)
   
   opengauss=# select json_type('[1,2]');
    json_type 
   -----------
-   array
+   ARRAY
   (1 row)
   
   opengauss=# select json_type('{"w":1}');
    json_type 
   -----------
-   object
+   OBJECT
   (1 row)
   
   opengauss=# select json_type('11');
@@ -733,7 +735,7 @@
   (1 row)
   ```
 
-* json_valid(doc)
+* json_valid(val)
 
   描述：判断输入文本是否是合法的 JSON 。
 
@@ -741,7 +743,7 @@
 
   备注：
 
-  - 若输入参数是 JSON 类型，该函数返回 `true`。
+  - 若输入的`val`参数是 JSON 类型，该函数返回 `true`。
   - 若所输入字符串需要转义，在单引号前加`E`，字符串转义语法是（`E'...'`）。
 
    示例：
@@ -841,43 +843,42 @@
 
   备注：
 
-  * json是必需的。一个 JSON 文档。它可以是一个 JSON 字符串，或者一个 JSON 列。根据华为方意见，调用opengauss内部函数计算json在opengauss中的具体存储大小，其结果与mysql不同。
+  * json是必需的。一个 JSON 文档。它可以是一个 JSON 字符串，或者一个 JSON 列。根据实际存储方式的差异，调用opengauss内部函数计算json在opengauss中的具体存储大小，其结果与mysql不同。
 
   示例：
 
   ```
   opengauss=# SELECT JSON_STORAGE_SIZE('0');
-  json_storage_size 
+   json_storage_size 
   -------------------
-                  5
+                   2
   (1 row)
   
   opengauss=# SELECT JSON_STORAGE_SIZE('"Hello World"');
-  json_storage_size 
+   json_storage_size 
   -------------------
-                  17
+                  14
   (1 row)
   
   opengauss=# SELECT JSON_STORAGE_SIZE('[1, "abc", null, true, "10:27:06.000000", {"id": 1}]');
-  json_storage_size 
+   json_storage_size 
   -------------------
-                  56
+                  53
   (1 row)
   
   opengauss=# SELECT JSON_STORAGE_SIZE('{"x": 1, "y": 2}');
-  json_storage_size 
+   json_storage_size 
   -------------------
-                  20
+                  17
   (1 row)
   ```
 
-* json_arrayagg("any")
+* json_arrayagg(col_or_expr)
 
   描述：`json_arrayagg`函数返回一个 JSON_ARRAY型数组，它将指定列中的值聚合。
 
   备注：
 
-  * 此函数为聚合函数，仅能在表中使用。
   * 如果结果集没有任何行，此函数将返回 NULL。
 
   示例：
@@ -903,7 +904,7 @@
   
   ```
 
-* json_objectagg(any, any)
+* json_objectagg(key, value)
 
   描述：将由第一个参数作为键和第二个参数作为值的键值对聚合为一个 JSON 对象。
 
@@ -911,7 +912,7 @@
 
   备注：
 
-  * 此函数为聚合函数，仅能在表中使用。
+  * 如果结果集没有任何行，此函数将返回 NULL。
 
   示例：
 
@@ -954,7 +955,7 @@
 
 - column->path
 
-  描述：相当于`json_extract`的别名，在JSON文档提取路径表达式指定的数据并返回,操作符`->`要在查表操作中进行。
+  描述：相当于`json_extract`的别名，在JSON文档提取路径表达式指定的数据并返回，操作符`->`要在查表操作中进行。
 
   返回类型:   json
 
@@ -975,7 +976,7 @@
 
 - column->>path
 
-  描述：功能类似于`json_unquote(json_extract(json,path))`,`json_unquote(column->path)`,取消对JSON文档中提取的数据引号的引用，操作符`->>`要在查表操作中进行。
+  描述：功能类似于`json_unquote(json_extract(json,path))`，`json_unquote(column->path)`，取消对JSON文档中提取的数据引号的引用，操作符`->>`要在查表操作中进行。
 
   返回类型:  text
 
@@ -991,5 +992,4 @@
   ----------
     lihua
   (1 row)
-  
   ```
