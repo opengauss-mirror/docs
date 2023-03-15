@@ -2765,6 +2765,7 @@ headless: true
 		-   [增量迁移]({{< relref "./docs/DataMigration/增量迁移.md" >}})
 		-   [数据校验]({{< relref "./docs/DataMigration/数据校验.md" >}})
 		-   [反向迁移]({{< relref "./docs/DataMigration/反向迁移.md" >}})
+		-   [MySQL一键式迁移]({{< relref "./docs/DataMigration/MySQL一键式迁移.md" >}})
 -   [工具参考]({{< relref "./docs/Toolreference/Toolreference.md" >}})
     -   [工具一览表]({{< relref "./docs/Toolreference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/Toolreference/客户端工具.md" >}})
