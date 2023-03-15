@@ -67,9 +67,11 @@
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
+9. pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length'
 
 **示例**：
 ```
@@ -343,6 +345,7 @@ dayname
 2. [TIMESTAMPDIFF](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 3. [FORMAT](dolphin-字符处理函数和操作符.md#ZH-CN_TOPIC_0289900656)
 4. [EXTRACT](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+5. [CAST](dolphin-类型转换函数.md)
 
 其他影响的参数：
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)

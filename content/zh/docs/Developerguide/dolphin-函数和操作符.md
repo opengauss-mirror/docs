@@ -15,3 +15,5 @@
 - **[位串操作函数和操作符](dolphin-位串操作函数和操作符.md)**  
 
 - **[JSON-JSONB函数和操作符](dolphin-JSON-JSONB函数和操作符.md)**
+
+- **[类型转换函数](dolphin-类型转换函数.md)**  

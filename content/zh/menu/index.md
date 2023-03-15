@@ -1690,6 +1690,7 @@ headless: true
 						-	[逻辑操作符]({{< relref "./docs/Developerguide/dolphin-逻辑操作符.md" >}}) 
 						-	[位串操作函数和操作符]({{< relref "./docs/Developerguide/dolphin-位串操作函数和操作符.md" >}})
 						-	[JSON-JSONB函数和操作符]({{< relref "./docs/Developerguide/dolphin-JSON-JSONB函数和操作符.md" >}})
+						-	[类型转换函数]({{< relref "./docs/Developerguide/dolphin-类型转换函数.md" >}})
 					-	[表达式]({{< relref "./docs/Developerguide/dolphin-表达式.md" >}})
 						-	[条件表达式]({{< relref "./docs/Developerguide/dolphin-表达式.md" >}})
 					-	[DDL语法一览表]({{< relref "./docs/Developerguide/dolphin-DDL语法一览表.md" >}})
