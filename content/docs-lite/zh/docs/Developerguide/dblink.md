@@ -22,7 +22,7 @@ make install
 
 -   sql             在远程数据库中执行的SQL查询，例如select * from foo。
 
--   fail_on_error   如果为真（忽略时的默认值），那么在连接的远端抛出的一个错误也会导致本地抛出一个错误。如果为假，远程错误只在本地被报告为一个 NOTICE，并且该函数不反回行。
+-   fail_on_error   如果为真（忽略时的默认值），那么在连接的远端抛出的一个错误也会导致本地抛出一个错误。如果为假，远程错误只在本地被报告为一个 NOTICE，并且该函数不返回行。（只在通过libpq连接时候生效）
 
 函数
 
@@ -301,6 +301,9 @@ make install
 
 ## 注意事项
 
--   目前dblink支持通过odbc连接所有支持odbc的异构数据库，以及通过libpq连接opengauss数据库
--   判断odbc或者libpq的条件为connstr中的drivername字段，存在drivername通过odbc连接，不存在drivername通过libpq连接
+-   目前dblink支持通过odbc连接所有支持odbc的异构数据库，以及通过libpq连接opengauss数据库。
+-   判断odbc或者libpq的条件为connstr中的drivername字段，存在drivername通过odbc连接，不存在drivername通过libpq连接，通过odbc连接只需指定用户名，密码，驱动名称三个参数即可，其他参数不生效。
 -   目前dblink暂时不支持线程池模式。
+-   dblink_open,dblink_fetch,dblink_close 三个关于游标使用的函数，本质上为提前组装SQL语句，然后通过exec执行，因不同数据库语法有差异，不兼容的情况下，请通过dblink_exec来手动执行SQL控制游标。在通过odbc连接openGauss时，请自行通过dblink_exec打开/关闭事务。
+-   dblink异步执行系列函数请务必执行正确的SQL语句，否则可能会导致异步执行函数异常。
+-   因openGauss与postgressql依赖冲突，暂时无法连接至postgresql数据库。
