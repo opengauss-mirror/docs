@@ -8,7 +8,8 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
-此语法不支持查询临时表。
+- 此语法不支持查询临时表。
+- 字段字符集和字符序将从表上继承，字段和表的字符集、字符序在SHOW CREATE TABLE中均会全部显示。若表的默认字符集或字符序不存在，当b_format_behavior_compat_options = 'default_collation'时，字符集和字符序将继承当前数据库的字符集及其对应的默认字符序，未设置b_format_behavior_compat_options时，无字符集和字符序显示。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

@@ -80,6 +80,18 @@
 
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
+-   **[SHOW-CREATE-DATABASE](dolphin-SHOW-CREATE-DATABASE.md)**
+
+-   **[SHOW-CREATE-FUNCTION](dolphin-SHOW-CREATE-FUNCTION.md)**
+
+-   **[SHOW-CREATE-PROCEDURE](dolphin-SHOW-CREATE-PROCEDURE.md)**
+
+-   **[SHOW-CREATE-TABLE](dolphin-SHOW-CREATE-TABLE.md)**
+
+-   **[SHOW-CREATE-TRIGGER](dolphin-SHOW-CREATE-TRIGGER.md)**
+
+-   **[SHOW-CREATE-VIEW](dolphin-SHOW-CREATE-VIEW.md)**
+
 -   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
 
 -   **[SHOW FUNCTION STATUS](dolphin-SHOW-FUNCTION-STATUS.md)**
@@ -105,6 +117,8 @@
 -   **[SHOW TABLE STATUS](dolphin-SHOW-TABLE-STATUS.md)**  
 
 -   **[SHOW TRIGGERS](dolphin-SHOW-TRIGGERS.md)**  
+
+-   **[SHOW-VARIABLES](dolphin-SHOW-VARIABLES.md)**
 
 -   **[UPDATE](dolphin-UPDATE.md)**
 
