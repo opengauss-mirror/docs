@@ -1727,7 +1727,7 @@ headless: true
 						-	[SHOW-PROCEDURE-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCEDURE-STATUS.md" >}})
 						-	[SHOW-PROCESSLIST]({{< relref "./docs/Developerguide/dolphin-SHOW-PROCESSLIST.md" >}})
 						-	[SHOW-SLAVE-HOSTS]({{< relref "./docs/Developerguide/dolphin-SHOW-SLAVE-HOSTS.md" >}})
-						-	[SHOW_STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW_STATUS.md" >}})
+						-	[SHOW_STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-STATUS.md" >}})
 						-	[SHOW_TABLES]({{< relref "./docs/Developerguide/dolphin-SHOW_TABLES.md" >}})
 						-	[SHOW-TRIGGERS]({{< relref "./docs/Developerguide/dolphin-SHOW-TRIGGERS.md" >}}) 
 						-	[UPDATE]({{< relref "./docs/Developerguide/dolphin-UPDATE.md" >}})
