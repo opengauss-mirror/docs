@@ -167,15 +167,15 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 4.  Install the libraries that PostGIS depends on.
     1.  Obtain the PostGIS source code from  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz). Save it to the  *$GAUSSHOME*  directory. Download the compressed package, decompress it, and rename the folder  **postgis-xc**.
 
-    2.  Download the patch file from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-1.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
+    2.  Download the patch file from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
 
         ```
         cd $GAUSSHOME/postgis-xc/
-        patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
+        patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
         ```
 
     3.  Download the header file on which PostGIS depends from https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h. Save the header file to *$GAUSSHOME***/include/postgresql/server/**.
-    
+
     4.  Separately compile GEOS, PROJ, JSON-C, Libxml2, and PostGIS, and generate the corresponding dynamic link libraries. Compiling commands are as follows:
 
         -   Geos
@@ -224,6 +224,19 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
             ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
             ```
 
+        -   Gdal
+
+            ```
+            cd $GAUSSHOME/postgis-xc/gdal-1.11.0
+            chmod +x ./configure
+            chmod +x ./install-sh
+            ./configure --prefix=$GAUSSHOME/install/gdal --with-xml2=$GAUSSHOME/install/libxml2/bin/xml2-config --with-geos=$GAUSSHOME/install/geos/bin/geos-config --with-static_proj4=$GAUSSHOME/install/proj CFLAGS='-O2 -fpermissive -pthread'
+            make -sj
+            make install -sj
+            ```
+
+            If a message similar to "/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la cannot be found" is displayed during compilation, create a directory, copy  **libstdc++.la**  to the directory, and run  **make -sj**. \(If similar problems occur in  **libstdc++.so**, use the same method.\)
+
         -   PostGIS
 
             ```
@@ -234,7 +247,7 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
             make install -sj
             ```
 
-        If a message similar to "/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la cannot be found" is displayed during compilation, create a directory, copy  **libstdc++.la**  to the directory, and run  **make -sj**. \(If similar problems occur in  **libstdc++.so**, use the same method.\)
+            If make-sj reports a missing openGauss header, For details, see the postgis installation document in the third_party repository https://gitee.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis, such as lack of: h storage/file/fio_device.h storage/file/fio_device_com.h ddes/dms/ss_aio.h ddes/dms/ss_dms_recovery.h h ddes/dms/ss_common_attr.h ddes/dms/ss_init.h storage/dss/dss_api_def.h) Names of the seven header files. Copy it to the compiled and installed database in the dest/include directory.
 
     5.  Execute the script file  **PostGIS\_install.sh**  in the  *$GAUSSHOME***/share/postgis**  directory as user  **omm**  to distribute those dynamic link libraries to database instance nodes.
 

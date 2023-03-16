@@ -169,14 +169,14 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
 
-    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-1.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
+    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
 
     ```
     cd $GAUSSHOME/postgis-xc/
-    patch -p1 < $GAUSSHOME/postgis_2.4.2-1.patch 
+    patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
-    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。 
+    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
@@ -225,6 +225,18 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ```
         ./configure --prefix=$GAUSSHOME/install/libxml2 --build=aarch64-unknown-linux-gnu 
         ```
+    -   Gdal
+
+        ```
+        cd $GAUSSHOME/postgis-xc/gdal-1.11.0
+        chmod +x ./configure
+        chmod +x ./install-sh
+        ./configure --prefix=$GAUSSHOME/install/gdal --with-xml2=$GAUSSHOME/install/libxml2/bin/xml2-config --with-geos=$GAUSSHOME/install/geos/bin/geos-config --with-static_proj4=$GAUSSHOME/install/proj CFLAGS='-O2 -fpermissive -pthread'
+        make -sj
+        make install -sj
+        ```
+
+        如果编译出现类似/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la 找不到，可以自建目录，将libstdc++.la拷贝进去，然后再make -sj（如果libstdc++.so出现类似问题，按同样方法处理）。
 
     -   PostGIS
 
@@ -236,7 +248,17 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         make install -sj
         ```
 
-        如果编译出现类似/home/carrot/data/openGauss-server/third\_party/buildtools/gcc/res/lib64/libstdc++.la 找不到，可以自建目录，将libstdc++.la拷贝进去，然后再make -sj（如果libstdc++.so出现类似问题，按同样方法处理）。
+        如果make -sj报错缺少openGauss头文件，需要从其源码中拷贝到数据库对应的include目录下
+        详情参考third_party仓库下的postgis安装文档 https://gitee.com/opengauss/openGauss-third_party/tree/master/gpl_dependency/postgis
+        例如缺少：
+        （storage/file/fio_device.h
+        storage/file/fio_device_com.h
+        ddes/dms/ss_aio.h
+        ddes/dms/ss_dms_recovery.h
+        ddes/dms/ss_common_attr.h
+        ddes/dms/ss_init.h
+        storage/dss/dss_api_def.h）七个头文件的名称
+        这些头文件在server仓库、src目录下，将其复制到编译安装好的数据库dest/include目录下，目录层级需要一一对应
 
     5).  omm用户执行下面的语句，完成PostGIS相关动态链接库在数据库实例节点中的分发。
 
