@@ -112,6 +112,8 @@
 
 -   **[SHOW SLAVE HOSTS](dolphin-SHOW-SLAVE-HOSTS.md)**
 
+-   **[SHOW TABLES](dolphin-SHOW-STATUS.md)**
+
 -   **[SHOW TABLES](dolphin-SHOW_TABLES.md)**  
 
 -   **[SHOW TABLE STATUS](dolphin-SHOW-TABLE-STATUS.md)**  

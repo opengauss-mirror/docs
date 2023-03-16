@@ -117,6 +117,12 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
+其中table_indexclause中包含：
+    ```sql
+    FULLTEXT (column_name) WITH PARSER ngram
+    ```
+column_name为多列时，列名用逗号分隔。
+
 ## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
 -   **data\_type**
@@ -431,5 +437,19 @@ WARNING:  Suffix ".ibd" of datafile path detected. The actual path will be renam
 CREATE TABLESPACE
 openGauss=# CREATE TABLE t_tablespace_storage_memory(c text) TABLESPACE test STORAGE MEMORY;
 WARNING:  TABLESPACE_OPTION for TABLE is not supported for current version. skipped
+CREATE TABLE
+```
+
+--创建兼容MySQL全文索引语法的表。
+```sql
+openGauss=# CREATE TABLE test (
+openGauss(# id int unsigned auto_increment not null primary key,
+openGauss(# title varchar,
+openGauss(# boby text,
+openGauss(# name name,
+openGauss(# FULLTEXT (title, boby) WITH PARSER ngram
+openGauss(# );
+NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
 CREATE TABLE
 ```
