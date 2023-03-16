@@ -1718,7 +1718,7 @@ headless: true
 						-	[DESCRIBE-TABLE]({{< relref "./docs/Developerguide/dolphin-DESCRIBE-TABLE.md" >}})
 						-	[DROP-INDEX]({{< relref "./docs/Developerguide/dolphin-DROP-INDEX.md" >}}) 
 						-	[DROP-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-DROP-TABLESPACE.md" >}}) 
-						-	[EXPLAIN]({{< relref "./docs/DDeveloperguide/dolphin-EXPLAIN.md" >}}
+						-	[EXPLAIN]({{< relref "./docs/Developerguide/dolphin-EXPLAIN.md" >}}
 						-	[EXECUTE]({{< relref "./docs/Developerguide/dolphin-EXECUTE.md" >}}) 
 						-	[EXPLAIN]({{< relref "./docs/Developerguide/dolphin-EXPLAIN.md" >}}) 
 						-	[FLUSH BINARY LOGS]({{< relref "./docs/Developerguide/dolphin-FLUSH-BINARY-LOGS.md" >}}) 
