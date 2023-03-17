@@ -175,7 +175,6 @@ headless: true
 		-   [锁]({{< relref "./docs/BriefTutorial/锁.md" >}})
 		-   [匿名块]({{< relref "./docs/BriefTutorial/匿名块.md" >}})
 		-   [触发器]({{< relref "./docs/BriefTutorial/触发器.md" >}})
-		-   [事件触发器]({{< relref "./docs/Developerguide/事件触发器.md" >}})
 		-   [存储过程]({{< relref "./docs/BriefTutorial/存储过程.md" >}})
 		-   [物化视图]({{< relref "./docs/BriefTutorial/物化视图.md" >}})
 		-   [子查询]({{< relref "./docs/BriefTutorial/子查询.md" >}})
