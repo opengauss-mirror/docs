@@ -44,11 +44,11 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 -   **TABLE**
 
-    重新建立指定表的所有索引，如果表有从属的"TOAST"表，则这个表也会重建索引。如果表上有索引已经被alter unusable失效，则这个索引无法被重新创建。
+    重新建立指定表的所有索引，如果表有从属的"TOAST"表，则这个表也会重建索引。如果表上有索引已经被alter unusable失效，则这个索引无法被重新创建。当指定CONCURRENTLY选项时，暂不支持重建从属"TOAST"表上的索引。
 
 -   **DATABASE**
 
-    重建当前数据库里的所有索引。
+    重建当前数据库里的所有索引。当指定CONCURRENTLY选项时，暂不支持重建数据库中表的从属"TOAST"表上的索引。
 
 -   **SYSTEM**
 
@@ -56,7 +56,7 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 -   **CONCURRENTLY**
 
-    以不阻塞DML的方式重建索引（加ShareUpdateExclusiveLock锁）。重建索引时，一般会阻塞其他语句对该索引所依赖表的访问。指定此关键字，可以实现重建过程中不阻塞DML。
+    以不阻塞DML的方式重建索引（加ShareUpdateExclusiveLock锁）。重建索引时，一般会阻塞其他语句对该索引所依赖表的访问。指定此关键字，可以实现重建过程中不阻塞DML。不支持在线重建系统表上的索引。不支持REINDEX INTERNAL TABLE CONCURRENTLY和REINDEX SYSTEM CONCURRENTLY。当执行REINDEX DATABASE CONCURRENTLY时，在线重建当前数据库中用户表上的所有索引（不会处理系统表上的索引）。REINDEX CONCURRENTLY不可以在事务内执行。在线重建索引只支持B-tree索引和UB-tree索引，只支持普通索引、GLOBAL索引、LOCAL索引。在线并行重建索引只支持Astore的普通索引、GLOBAL索引、LOCAL索引。如果在线重建索引失败，可能会留下非法的新索引，在系统无法自动清理失败新索引的情况下（比如数据库宕机），需要尽快手动清除（使用DROP INDEX语句）非法新索引，以防占用更多资源。一般来说，非法的新索引的后缀名为_ccnew。REINDEX INDEX CONCURRENTLY对表加4级会话锁，且其前几个阶段与CREATE INDEX CONCURRENTLY相似，因此也可能产生卡住或死锁的问题，具体场景与CREATE INDEX CONCURRENTLY相似（比如两个会话同时对同一个索引或表进行REINDEX CONCURRENTLY操作，会引发死锁问题），详见[CREATE-INDEX](CREATE-INDEX.md)章节。
 
     -   此选项只能指定一个索引的名称。
     -   普通REINDEX命令可以在事务内执行，但是REINDEX CONCURRENTLY不可以在事务内执行。
