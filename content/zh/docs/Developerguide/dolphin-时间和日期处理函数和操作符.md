@@ -1375,7 +1375,7 @@ CONTEXT:  referenced column: subdate
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
   
-  - 当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss对数值0输入返回日期'0000-00-00'；在dolphin.sql_mode为其他情况时，严格模式报错，非严格模式报warning并返回NULL。
+  - 只有当dolphin.sql_mode中不含'no_zero_date'时，DATE函数才能接收'0000-00-00'输入，并且返回日期'0000-00-00'。
 
   示例：
 
@@ -1612,7 +1612,7 @@ CONTEXT:  referenced column: subdate
 
   - 一般情况下，返回结果格式与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME格式。
 
-  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。在openGauss中，当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss在上述情况时，表现与MySQL一致；当dolphin.sql_mode处于其他情况时，严格模式报错，非严格模式报warning并返回NULL。
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，openGauss表现与MySQL一致：将日期部分置为'0000-00-00'，时间部分结果视具体计算结果而定。
 
   示例：
   
@@ -1654,7 +1654,7 @@ CONTEXT:  referenced column: subdate
 
   - 一般情况下，返回结果格式与第一参数的类型相同。当第一参数的类型为DATE时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为DATETIME格式。
 
-  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，MySQL中将结果定为'0000-00-00'或者'0000-00-00 xx:xx:xx'，其中时间部分结果视具体计算结果而定。在openGauss中，当dolphin.sql_mode中含有'sql_mode_strict'并且不含'no_zero_date'时，openGauss在上述情况时，表现与MySQL一致；当dolphin.sql_mode处于其他情况时，严格模式报错，非严格模式报warning并返回NULL。
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，openGauss表现与MySQL一致：将日期部分置为'0000-00-00'，时间部分结果视具体计算结果而定。
   
   示例：
   
@@ -1947,7 +1947,9 @@ CONTEXT:  referenced column: subdate
 
   - 此函数兼容MySQL插表时的严格模式和非严格模式表现。
 
-  - 此函数兼容MySQL中sql_mode不含NO_ZERO_DATE时的情况。
+  - 只有当dolphin.sql_mode中不含'no_zero_date'时，才能构造出日期'0000-00-00'。
+
+  - 只有当dolphin.sql_mode中不含'no_zero_date'时，才能构造出单独的时间，如select str_to_date('10', '%h');
 
   示例：
 
@@ -1974,6 +1976,8 @@ CONTEXT:  referenced column: subdate
   (1 row)
 
   -- 构造时间
+  openGauss=# set dolphin.sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes';
+  SET
   openGauss=# select str_to_date('1:12:12 pm', '%r');
   str_to_date
   -------------
