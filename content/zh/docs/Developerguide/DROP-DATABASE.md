@@ -33,6 +33,10 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
     取值范围：字符串，已存在的数据库名称。
 
+![](D:/sc2/docs/content/zh/docs/Developerguide/public_sys-resources/icon-note.gif) **说明：** 
+
+-   B兼容性下， dolphin.b_compatibility_mode 为on时，语法等同为DROP SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法为DROP DATABASE 语法。
+
 
 ## 示例<a name="zh-cn_topic_0283137424_zh-cn_topic_0237122133_zh-cn_topic_0059778607_sabd40dc25b604e1b8c213e7e9f6b5200"></a>
 
@@ -47,5 +51,4 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 -   drop database
 
     不支持在事务中删除database。
-
 

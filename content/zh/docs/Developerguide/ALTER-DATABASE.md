@@ -70,9 +70,18 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
     >-   修改数据库的对象隔离属性时须连接至该数据库，否则无法更改。
-    >
     >-   新创建的数据库，对象隔离属性默认是关闭的。当开启数据库对象隔离属性后，普通用户只能查看有权访问的对象（表、函数、视图、字段等）。对象隔离特性对管理员用户不生效，当开启对象隔离特性后，管理员也可以查看到全量的数据库对象。
+    
+- 修改SCHEMA的默认字符集和字符序
 
+  ```
+  ALTER DATABASE schema_name [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ];
+  ```
+
+  ![](D:/sc2/docs/content/zh/docs/Developerguide/public_sys-resources/icon-note.gif) **说明：** 
+
+  -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
+  -   使用该语法时，语法等效于ALTER SCHEMA。
 
 ## 参数说明<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_s4d6b72484e3b43969af25757fda7ad81"></a>
 
@@ -134,8 +143,15 @@
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >
 >-   修改数据库默认表空间，会将旧表空间中的所有表和索引转移到新表空间中，该操作不会影响其他非默认表空间中的表和索引。
->
 >-   修改的数据库会话参数值，将在下一次会话中生效。
+
+- **[ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ]**
+
+  指定模式的默认字符集，单独指定时会将模式的默认字符序设置为指定的字符集的默认字符序。
+
+- **[ [DEFAULT] COLLATE [ = ] default_collation ]**
+
+  指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
 
 ## 示例<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sb089bcdb51bd4932a2967c246217d29e"></a>
 
