@@ -248,31 +248,85 @@ openGauss=# select a.* from multi_partition_select_test partition (test_part1, t
 
 ```
 
-- 兼容MySQL兼容性全文索引语法查询
+- 兼容MySQL兼容性全文索引语法查询，前提是兼容模式为B的数据库。
 ```sql
-test=# CREATE TABLE test (
-test(# id int unsigned auto_increment not null primary key,
-test(# title varchar,
-test(# boby text,
-test(# name name,
-test(# FULLTEXT (title, boby) WITH PARSER ngram
-test(# );
+openGauss=# CREATE SCHEMA fulltext_test;
+CREATE SCHEMA
+openGauss=# set current_schema to 'fulltext_test';
+SET
+openGauss=# CREATE TABLE test (
+openGauss(# id int unsigned auto_increment not null primary key,
+openGauss(# title varchar,
+openGauss(# boby text,
+openGauss(# name name,
+openGauss(# FULLTEXT (title, boby) WITH PARSER ngram
+openGauss(# );
 NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
 NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
 CREATE TABLE
-test=# INSERT INTO test(title, boby, name) VALUES('test1', 'gauss', 'opengauss');
+openGauss=# \d test
+              Table "fulltext_test.test"
+ Column |       Type        |        Modifiers
+--------+-------------------+-------------------------
+ id     | uint4             | not null AUTO_INCREMENT
+ title  | character varying |
+ boby   | text              |
+ name   | name              |
+Indexes:
+    "test_pkey" PRIMARY KEY, btree (id) TABLESPACE pg_default
+    "test_to_tsvector_to_tsvector1_idx" gin (to_tsvector('ngram'::regconfig, title::text), to_tsvector('ngram'::regconfig, boby)) TABLESPACE pg_default
+
+openGauss=# \d test_to_tsvector_to_tsvector1_idx
+      Index "fulltext_test.test_to_tsvector_to_tsvector1_idx"
+    Column    | Type |                  Definition
+--------------+------+----------------------------------------------
+ to_tsvector  | text | to_tsvector('ngram'::regconfig, title::text)
+ to_tsvector1 | text | to_tsvector('ngram'::regconfig, boby)
+gin, for table "fulltext_test.test"
+
+openGauss=# DROP INDEX test_to_tsvector_to_tsvector1_idx;
+DROP INDEX
+openGauss=# ALTER TABLE test ADD FULLTEXT INDEX test_index_1 (title, boby) WITH PARSER ngram;
+ALTER TABLE
+openGauss=# DROP INDEX test_index_1;
+DROP INDEX
+openGauss=# CREATE FULLTEXT INDEX test_index_1 ON test (title, boby) WITH PARSER ngram;
+CREATE INDEX
+openGauss=# \d test_index_1
+                 Index "fulltext_test.test_index_1"
+    Column    | Type |                  Definition
+--------------+------+----------------------------------------------
+ to_tsvector  | text | to_tsvector('ngram'::regconfig, title::text)
+ to_tsvector1 | text | to_tsvector('ngram'::regconfig, boby)
+gin, for table "fulltext_test.test"
+
+openGauss=# INSERT INTO test(title, boby, name) VALUES('test', '&67575@gauss', 'opengauss');
 INSERT 0 1
-test=# INSERT INTO test(title, boby, name) VALUES('test2', 'gauss2', 'opengauss');
+openGauss=# INSERT INTO test(title, boby, name) VALUES('test1', 'gauss', 'opengauss');
 INSERT 0 1
-test=# INSERT INTO test(title, boby, name) VALUES('test3', 'test', 'opengauss');
+openGauss=# INSERT INTO test(title, boby, name) VALUES('test2', 'gauss2', 'opengauss');
 INSERT 0 1
-test=# INSERT INTO test(title, boby, name) VALUES('gauss_123_@', 'test', 'opengauss');
+openGauss=# INSERT INTO test(title, boby, name) VALUES('test3', 'test', 'opengauss');
 INSERT 0 1
-test=# INSERT INTO test(title, boby, name) VALUES('', '', 'opengauss');
+openGauss=# INSERT INTO test(title, boby, name) VALUES('gauss_123_@', 'test', 'opengauss');
 INSERT 0 1
-test=# INSERT INTO test(title, boby, name) VALUES(' ', ' ', ' ');
+openGauss=# INSERT INTO test(title, boby, name) VALUES('', '', 'opengauss');
 INSERT 0 1
-test=# SELECT * FROM TEST WHERE MATCH (title, boby) AGAINST ('test');
+openGauss=# INSERT INTO test(title, boby, name) VALUES(' ', ' ', ' ');
+INSERT 0 1
+openGauss=# SELECT * FROM TEST;
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 4  | test3       | test         | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+ 6  |             |              | opengauss
+ 7  |             |              |
+(7 rows)
+
+openGauss=# SELECT * FROM TEST WHERE MATCH (title, boby) AGAINST ('test');
  id |    title    |     boby     |   name
 ----+-------------+--------------+-----------
  1  | test        | &67575@gauss | opengauss
@@ -282,6 +336,233 @@ test=# SELECT * FROM TEST WHERE MATCH (title, boby) AGAINST ('test');
  5  | gauss_123_@ | test         | opengauss
 (5 rows)
 
+openGauss=# SELECT * FROM TEST WHERE MATCH (title, boby) AGAINST ('gauss');
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+(4 rows)
+
+openGauss=# DROP INDEX test_index_1;
+DROP INDEX
+openGauss=# CREATE FULLTEXT INDEX test_index_1 ON test (boby) WITH PARSER ngram;
+CREATE INDEX
+openGauss=# \d test_index_1
+             Index "fulltext_test.test_index_1"
+   Column    | Type |              Definition
+-------------+------+---------------------------------------
+ to_tsvector | text | to_tsvector('ngram'::regconfig, boby)
+gin, for table "fulltext_test.test"
+
+openGauss=# SELECT * FROM test WHERE MATCH (boby) AGAINST ('test');
+ id |    title    | boby |   name
+----+-------------+------+-----------
+ 4  | test3       | test | opengauss
+ 5  | gauss_123_@ | test | opengauss
+(2 rows)
+
+openGauss=# SELECT * FROM test WHERE MATCH (boby) AGAINST ('gauss');
+ id | title |     boby     |   name
+----+-------+--------------+-----------
+ 1  | test  | &67575@gauss | opengauss
+ 2  | test1 | gauss        | opengauss
+ 3  | test2 | gauss2       | opengauss
+(3 rows)
+
+openGauss=# DROP INDEX test_index_1;
+DROP INDEX
+openGauss=# CREATE FULLTEXT INDEX test_index_1 ON test (title, boby, name) WITH PARSER ngram;
+CREATE INDEX
+openGauss=# \d test_index_1
+                 Index "fulltext_test.test_index_1"
+    Column    | Type |                  Definition
+--------------+------+----------------------------------------------
+ to_tsvector  | text | to_tsvector('ngram'::regconfig, title::text)
+ to_tsvector1 | text | to_tsvector('ngram'::regconfig, boby)
+ to_tsvector2 | text | to_tsvector('ngram'::regconfig, name::text)
+gin, for table "fulltext_test.test"
+
+openGauss=# SELECT * FROM test WHERE MATCH (title, boby, name) AGAINST ('test');
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 4  | test3       | test         | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+(5 rows)
+
+openGauss=# SELECT * FROM test WHERE MATCH (title, boby, name) AGAINST ('gauss');
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 4  | test3       | test         | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+ 6  |             |              | opengauss
+(6 rows)
+
+openGauss=# SELECT * FROM test WHERE MATCH (title, boby, name) AGAINST ('opengauss');
+ id |    title    |     boby     |   name
+----+-------------+--------------+-----------
+ 1  | test        | &67575@gauss | opengauss
+ 2  | test1       | gauss        | opengauss
+ 3  | test2       | gauss2       | opengauss
+ 4  | test3       | test         | opengauss
+ 5  | gauss_123_@ | test         | opengauss
+ 6  |             |              | opengauss
+(6 rows)
+
+openGauss=# drop table if exists articles;
+NOTICE:  table "articles" does not exist, skipping
+DROP TABLE
+openGauss=# CREATE TABLE articles (
+openGauss(# ID int,
+openGauss(# title VARCHAR(100),
+openGauss(# FULLTEXT INDEX ngram_idx(title)WITH PARSER ngram
+openGauss(# );
+CREATE TABLE
+openGauss=# \d articles
+       Table "fulltext_test.articles"
+ Column |          Type          | Modifiers
+--------+------------------------+-----------
+ ID     | integer                |
+ title  | character varying(100) |
+Indexes:
+    "ngram_idx" gin (to_tsvector('ngram'::regconfig, title::text)) TABLESPACE pg_default
+
+openGauss=# drop table if exists articles;
+DROP TABLE
+openGauss=# CREATE TABLE articles (
+openGauss(# ID int,
+openGauss(# title VARCHAR(100),
+openGauss(# FULLTEXT INDEX (title)WITH PARSER ngram
+openGauss(# );
+CREATE TABLE
+openGauss=# \d articles
+       Table "fulltext_test.articles"
+ Column |          Type          | Modifiers
+--------+------------------------+-----------
+ ID     | integer                |
+ title  | character varying(100) |
+Indexes:
+    "articles_to_tsvector_idx" gin (to_tsvector('ngram'::regconfig, title::text)) TABLESPACE pg_default
+
+openGauss=# drop table if exists articles;
+DROP TABLE
+openGauss=# CREATE TABLE articles (
+openGauss(# ID int,
+openGauss(# title VARCHAR(100),
+openGauss(# FULLTEXT KEY keyngram_idx(title)WITH PARSER ngram
+openGauss(# );
+CREATE TABLE
+openGauss=# \d articles
+       Table "fulltext_test.articles"
+ Column |          Type          | Modifiers
+--------+------------------------+-----------
+ ID     | integer                |
+ title  | character varying(100) |
+Indexes:
+    "keyngram_idx" gin (to_tsvector('ngram'::regconfig, title::text)) TABLESPACE pg_default
+
+openGauss=# drop table if exists articles;
+DROP TABLE
+openGauss=# CREATE TABLE articles (
+openGauss(# ID int,
+openGauss(# title VARCHAR(100),
+openGauss(# FULLTEXT KEY (title)WITH PARSER ngram
+openGauss(# );
+CREATE TABLE
+openGauss=# \d articles
+       Table "fulltext_test.articles"
+ Column |          Type          | Modifiers
+--------+------------------------+-----------
+ ID     | integer                |
+ title  | character varying(100) |
+Indexes:
+    "articles_to_tsvector_idx" gin (to_tsvector('ngram'::regconfig, title::text)) TABLESPACE pg_default
+
+openGauss=# create table table_ddl_0154(col1 int,col2 varchar(64), FULLTEXT idx_ddl_0154(col2));
+CREATE TABLE
+openGauss=# create table table_ddl_0085(
+openGauss(# id int(11) not null,
+openGauss(# username varchar(50) default null,
+openGauss(# sex varchar(5) default null,
+openGauss(# address varchar(100) default null,
+openGauss(# score_num int(11));
+CREATE TABLE
+openGauss=# create fulltext index idx_ddl_0085_02 on table_ddl_0085(username);
+CREATE INDEX
+openGauss=# insert into table_ddl_0085 values (1,'test','m','xi''an changanqu', 10001), (2,'tst','w','xi''an beilingqu', 10002),
+(3,'es','w','xi''an yangtaqu', 10003),(4,'s','m','beijingchaoyangqu', 10004);
+INSERT 0 4
+openGauss=# SELECT * FROM table_ddl_0085 WHERE MATCH (username) AGAINST ('te' IN NATURAL LANGUAGE MODE);
+ id | username | sex |     address     | score_num
+----+----------+-----+-----------------+-----------
+  1 | test     | m   | xi'an changanqu |     10001
+(1 row)
+
+openGauss=# SELECT * FROM table_ddl_0085 WHERE MATCH (username) AGAINST ('ts' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION);
+ id | username | sex |     address     | score_num
+----+----------+-----+-----------------+-----------
+  2 | tst      | w   | xi'an beilingqu |     10002
+(1 row)
+
+openGauss=# SELECT * FROM table_ddl_0085 WHERE MATCH (username) AGAINST ('test' IN BOOLEAN MODE);
+ id | username | sex |     address     | score_num
+----+----------+-----+-----------------+-----------
+  1 | test     | m   | xi'an changanqu |     10001
+(1 row)
+
+openGauss=# SELECT * FROM table_ddl_0085 WHERE MATCH (username) AGAINST ('es' WITH QUERY EXPANSION);
+ id | username | sex |     address     | score_num
+----+----------+-----+-----------------+-----------
+  1 | test     | m   | xi'an changanqu |     10001
+  3 | es       | w   | xi'an yangtaqu  |     10003
+(2 rows)
+
+openGauss=# SELECT * FROM table_ddl_0085 WHERE MATCH (username) AGAINST ('s');
+ id | username | sex |      address      | score_num
+----+----------+-----+-------------------+-----------
+  4 | s        | m   | beijingchaoyangqu |     10004
+(1 row)
+
+openGauss=# insert into table_ddl_0085 select * from table_ddl_0085 where match (username) against ('te' IN NATURAL LANGUAGE MODE);
+INSERT 0 1
+openGauss=# select * from table_ddl_0085;
+ id | username | sex |      address      | score_num
+----+----------+-----+-------------------+-----------
+  1 | test     | m   | xi'an changanqu   |     10001
+  2 | tst      | w   | xi'an beilingqu   |     10002
+  3 | es       | w   | xi'an yangtaqu    |     10003
+  4 | s        | m   | beijingchaoyangqu |     10004
+  1 | test     | m   | xi'an changanqu   |     10001
+(5 rows)
+
+openGauss=# create fulltext index idx_ddl_0085_03 on table_ddl_0085(username) with parser ngram visible;
+CREATE INDEX
+openGauss=# create fulltext index idx_ddl_0085_04 on table_ddl_0085(username) visible with parser ngram;
+CREATE INDEX
+openGauss=# create fulltext index idx_ddl_0085_05 on table_ddl_0085(username) visible;
+CREATE INDEX
+openGauss=# create fulltext index idx_ddl_0085_06 on table_ddl_0085(username) with parser ngram comment 'TEST FULLTEXT INDEX COMMENT';
+CREATE INDEX
+openGauss=# create fulltext index idx_ddl_0085_07 on table_ddl_0085(username) comment 'TEST FULLTEXT INDEX COMMENT' with parser ngram;
+CREATE INDEX
+openGauss=# create fulltext index idx_ddl_0085_08 on table_ddl_0085(username) comment 'TEST FULLTEXT INDEX COMMENT';
+CREATE INDEX
+openGauss=# drop schema fulltext_test cascade;
+NOTICE:  drop cascades to 4 other objects
+DETAIL:  drop cascades to table test
+drop cascades to table articles
+drop cascades to table table_ddl_0154
+drop cascades to table table_ddl_0085
+DROP SCHEMA
+openGauss=# reset current_schema;
+RESET
 ```
 
 ## 相关链接<a name="section156744489391"></a>

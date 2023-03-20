@@ -107,11 +107,11 @@
     	  COMMENT 'string'
     	| index_type
       | [ VISIBLE | INVISIBLE ]
-      | WITH PARSER ngram ON {UPDATE | DELETE} CASCADE
+      | [WITH PARSER NGRAM]
     }
     ```
     
-    COMMENT、index_type、[ VISIBLE | INVISIBLE ] 的顺序和数量任意，但相同字段仅最后一个值生效。WITH PARSER ngram 为FULLTEXT INDEX指定的ngram解析器。
+    COMMENT、index_type、[ VISIBLE | INVISIBLE ] 的顺序和数量任意，但相同字段仅最后一个值生效。WITH PARSER NGRAM 为FULLTEXT INDEX指定的ngram解析器，前提是索引必须指定关键字FULLTEXT，FULLTEXT 默认 WITH PARSER NGRAM。
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
@@ -282,7 +282,7 @@ openGauss=# ALTER TABLE alter_table_tbl1 RENAME INDEX alter_table_tbl_b_ind TO n
 openGauss=# DROP TABLE alter_table_tbl1, alter_table_tbl2;
 ```
 
---- 兼容MySQL全文索引，添加全文索引语法
+--- 兼容MySQL全文索引，添加全文索引语法，前提是兼容模式为B的数据库。
 ```sql
 test=# ALTER TABLE test ADD FULLTEXT INDEX test_index_1 (title, boby) WITH PARSER ngram;
 ALTER TABLE

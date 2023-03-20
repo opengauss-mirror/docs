@@ -196,9 +196,11 @@ CREATE INDEX
 
 ##全文索引
 ```sql
-test=# CREATE SCHEMA fulltext_test;
-set current_schema to 'fulltext_test';
-CREATE TABLE test (
+openGauss=# CREATE SCHEMA fulltext_test;
+CREATE SCHEMA
+openGauss=# set current_schema to 'fulltext_test';
+SET
+openGauss=# CREATE TABLE test (
 id int unsigned auto_increment not null primary key,
 title varchar,
 boby text,
@@ -207,7 +209,7 @@ name name
 NOTICE:  CREATE TABLE will create implicit sequence "test_id_seq" for serial column "test.id"
 NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_pkey" for table "test"
 CREATE TABLE
-test=# \d test
+openGauss=# \d test
               Table "fulltext_test.test"
  Column |       Type        |        Modifiers
 --------+-------------------+-------------------------
@@ -218,7 +220,7 @@ test=# \d test
 Indexes:
     "test_pkey" PRIMARY KEY, btree (id) TABLESPACE pg_default
 
-CREATE FULLTEXT INDEX test_index_1 ON test (title, boby) WITH PARSER ngram;
+openGauss=# CREATE FULLTEXT INDEX test_index_1 ON test (title, boby) WITH PARSER ngram;
 \d test_index_1
                   Index "fulltext_test.test_index_1"
     Column    | Type |                   Definition
@@ -226,6 +228,9 @@ CREATE FULLTEXT INDEX test_index_1 ON test (title, boby) WITH PARSER ngram;
  to_tsvector  | text | to_tsvector('"ngram"'::regconfig, title::text)
  to_tsvector1 | text | to_tsvector('"ngram"'::regconfig, boby)
 gin, for table "fulltext_test.test"
+
+openGauss=# CREATE FULLTEXT INDEX test_index_2 ON test (title, boby, name);
+CREATE INDEX
 ```
 
 ## 相关链接<a name="section156744489391"></a>
