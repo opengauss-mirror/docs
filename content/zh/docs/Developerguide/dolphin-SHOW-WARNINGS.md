@@ -74,10 +74,10 @@ openGauss=# show count(*) warnings;
 (1 row)
 
 openGauss=# CREATE OR REPLACE FUNCTION TEST_FUNC(tempdata char) RETURNS VOID AS $$
-tt$# BEGIN
-tt$# raise info'TEST CHAR VALUE IS %',tempdata;
-tt$# END;
-tt$# $$ LANGUAGE plpgsql;
+openGauss$# BEGIN
+openGauss$# raise info'TEST CHAR VALUE IS %',tempdata;
+openGauss$# END;
+openGauss$# $$ LANGUAGE plpgsql;
 CREATE FUNCTION
 openGauss=# select TEST_FUNC('abc'::clob);
 INFO:  TEST CHAR VALUE IS abc
