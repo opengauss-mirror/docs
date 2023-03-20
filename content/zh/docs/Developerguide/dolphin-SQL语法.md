@@ -122,6 +122,8 @@
 
 -   **[SHOW-VARIABLES](dolphin-SHOW-VARIABLES.md)**
 
+-   **[SHOW-WARNINGS](dolphin-SHOW-WARNINGS.md)**
+
 -   **[UPDATE](dolphin-UPDATE.md)**
 
 -   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  

@@ -1764,6 +1764,7 @@ headless: true
 						-	[SHOW-TABLE-STATUS]({{< relref "./docs/Developerguide/dolphin-SHOW-TABLE-STATUS.md" >}})
 						-	[SHOW-TRIGGERS]({{< relref "./docs/Developerguide/dolphin-SHOW-TRIGGERS.md" >}}) 
 						-	[SHOW-VARIABLES]({{< relref "./docs/Developerguide/dolphin-SHOW-VARIABLES.md" >}}) 
+						-	[SHOW-WARNINGS]({{< relref "./docs/Developerguide/dolphin-SHOW-WARNINGS.md" >}})
 						-	[UPDATE]({{< relref "./docs/Developerguide/dolphin-UPDATE.md" >}})
 						-	[USE-DB_NAME]({{< relref "./docs/Developerguide/dolphin-USE-DB_NAME.md" >}}) 
 						-	[CHECKSUM-TABLE]({{< relref "./docs/Developerguide/dolphin-CHECKSUM-TABLE.md" >}})  
