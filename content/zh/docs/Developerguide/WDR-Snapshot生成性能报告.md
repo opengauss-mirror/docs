@@ -4,7 +4,7 @@
 
 ## 前提条件<a name="zh-cn_topic_0283137259_section128252205291"></a>
 
-WDR Snapshot启动（即参数[enable\_wdr\_snapshot](zh-cn_topic_0289901018.md#zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
+WDR Snapshot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-cn_topic_0283137284_zh-cn_topic_0237124757_section983311682019)为on时），且快照数量大于等于2。
 
 ## 操作步骤<a name="zh-cn_topic_0283137259_section49941629132915"></a>
 
