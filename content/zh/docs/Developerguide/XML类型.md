@@ -39,7 +39,7 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 >    -   比较表达式>、<、>=、<=、=、<>、!=、^=、between and、is distinct from、is not distinct from、<=>。
 >    -   条件表达式decode、nullif、greatest、least。
 >    -   作为distinct/group by/order by 参数。
->    -   聚合函数sum、max、min、avg、list_agg、corr、covar_pop、covar_samp、stddev、stddev_pop、stddev_samp、var_pop、var_samp、variance、bit_and、bit_or、bool_and、bool_or、every、regr_avgx、regr_avgy、regr_count、regr_intercept、regr_r2、regr_slope、regr_sxx、regr_sxy、regr_syy。
+>    -   聚合函数sum、max、min、avg、listagg、corr、covar_pop、covar_samp、stddev、stddev_pop、stddev_samp、var_pop、var_samp、variance、bit_and、bit_or、bool_and、bool_or、every、regr_avgx、regr_avgy、regr_count、regr_intercept、regr_r2、regr_slope、regr_sxx、regr_sxy、regr_syy。
 >    -   不支持ODBC相关绑定传参接口。
 >-   XML类型支持如下操作：
 >    -   物理备份恢复。
