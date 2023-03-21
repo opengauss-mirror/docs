@@ -12,8 +12,7 @@
 
 ```
 CREATE RESOURCE POOL pool_name
-    [WITH ({MEM_PERCENT=pct |
-            CONTROL_GROUP="group_name" |
+    [WITH (CONTROL_GROUP="group_name",{MEM_PERCENT=pct |
             ACTIVE_STATEMENTS=stmt |
             MAX_DOP = dop |
             MEMORY_LIMIT='memory_size' |
@@ -45,12 +44,10 @@ CREATE RESOURCE POOL pool_name
     >
     >-   group\_name对大小写敏感。
     >
-    >-   不指定group\_name时，默认指定的字符串为 “Medium”，代表指定DefaultClass控制组的“Medium” Timeshare控制组。
-    >
     >-   若数据库管理员指定自定义Class组下的Workload控制组，如control\_group的字符串为：“class1:workload1”；代表此资源池指定到class1控制组下的workload1控制组。也可同时指定Workload控制组的层次，如control\_group的字符串为：“class1:workload1:1”。
     >
     >-   若数据库用户指定Timeshare控制组代表的字符串，即“Rush”、“High”、“Medium”或“Low”其中一种，如control\_group的字符串为“High”；代表资源池指定到DefaultClass控制组下的“High” Timeshare控制组。
-
+    
     取值范围：字符串，要符合说明中的规则，其指定已创建的控制组。
 
 -   **stmt**

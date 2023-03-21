@@ -48,6 +48,7 @@
 -   即使用户被授予ANY权限，也不能对私有用户下的对象进行访问操作（INSERT、DELETE、UPDATE、SELECT）。
 -   ANY权限与原有的权限相互无影响。
 -   如果用户被授予CREATE ANY TABLE权限，在同名schema下创建表的属主是该schema的属主，用户对表进行其他操作时，需要授予相应的操作权限。与此类似的还有CREATE ANY FUNCTION、CREATE ANY PACKAGE、CREATE ANY TYPE、CREATE ANY SEQUENCE和CREATE ANY INDEX，在同名模式下创建的对象的属主是同名模式的属主；而对于CREATE ANY TRIGGER和CREATE ANY SYNONYM，在同名模式下创建的对象的属主为创建者。
+-   需要谨慎授予用户CREATE ANY FUNCTION或CREATE ANY PACKAGE的权限，以免其他用户利用DEFINER类型的函数或PACKAGE进行权限提升。
 
 ## 语法格式<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
