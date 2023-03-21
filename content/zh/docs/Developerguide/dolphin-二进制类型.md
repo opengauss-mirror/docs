@@ -5,8 +5,8 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 相比于原始的openGauss，dolphin对于二进制类型的修改主要为:
 
 1. 新增```BINARY/VARBINARY/TINYBLOB/MEDIUMBLOB/LONGBLOB```类型。
-2. 对```BLOB```类型的输入函数进行了修改，在b_compatibility_mode为on的情况下，其输入可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
-3. 对```TINYBLOB/MEDIUMBLOB/LONGBLOB```类型，在b_compatibility_mode为off的情况下也可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
+2. 对```BLOB```类型的输入函数进行了修改，在dolphin.b_compatibility_mode为on的情况下，其输入可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
+3. 对```TINYBLOB/MEDIUMBLOB/LONGBLOB```类型，在dolphin.b_compatibility_mode为off的情况下也可以兼容M*数据库的普通字符串输入，输出则需要再将bytea_output参数设置为escape才能输出对应的字符串，否则会被转换成十六进制字符串的形式进行输出。
 4. 对```BINARY```类型的输入函数进行了修改，可支持M\*数据库中的转义字符识别。
 5. 新增BIANRY EXPR用法，用在任意表达式前的BINARY 关键字，表示将此表达式转化为二进制类型;
 
