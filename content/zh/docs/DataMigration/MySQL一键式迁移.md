@@ -1,63 +1,71 @@
 ﻿# MySQL一键式迁移
 
 ### 功能介绍
+
 opengauss-migration-portal是一个用java编写的，在linux系统上运行的，集成了全量迁移、增量迁移、反向迁移、数据校验的工具。opengauss-migration-portal支持以上工具的一键式安装与启动。
 
 ### 注意事项
 
 1.对于同一个mysql实例和opengauss数据库，一旦执行增量迁移之后执行过反向迁移，就不能再次执行增量迁移，否则会引起数据不一致问题。
+
 2.portal在执行增量迁移、反向迁移、增量校验时需要使用curl工具。
+
+3.增量迁移和反向迁移不能同时开启，如果一个计划中包含了增量迁移和反向迁移，那么需要用户手动停止增量迁移，启动反向迁移。
+
+4.portal使用的workspace.id只能为小写字母与数字的组合。
+
+5.portal在启动多个计划时，需要保证mysql数据库实例各不相同，openGauss端数据库各不相同。
 
  ### 默认文件结构
 
    ```
-   /portal
-   	config/    
-   		migrationConfig.properties
-   		toolspath.properties
-   		status
-   		currentPlan
-   		input
-   		chameleon/
-           	config-example.yml
-           datacheck/
-           	application-source.yml
-           	application-sink.yml
-           	application.yml
-           	log4j2.xml
-           	log4j2source.xml
-           	log4j2sink.xml
-           debezium/
-               connect-avro-standalone.properties
-           	mysql-sink.properties
-           	mysql-source.properties
-           	opengauss-sink.properties
-           	opengauss-source.properties
-   	logs/      
-   		portal.log 
-   	pkg/           
-           chameleon/
-           	chameleon-3.1.1-py3-none-any.whl
-           datacheck/
-           	openGauss-datachecker-performance-5.0.0.tar.gz
-           debezium/
-           	confluent-5.5.1.tar.gz
-           	debezium-connector-mysql-1.8.1.Final-plugin.tar.gz
-           	debezium-connector-opengauss-1.8.1.Final-plugin.tar.gz
-           	kafka_2.13-3.2.3.tgz
-       tmp/
-       tools/
-           chameleon/
-           datacheck/
-           debezium/
-           	confluent-5.5.1/
-           	kafka_2.13-3.2.3/
-           	plugin/
-           		debezium-connector-mysql/
-           		debezium-connector-opengauss/
-       portal.portId.lock
-       portalControl-1.0-SNAPSHOT-exec.jar
-       README.md
+/portal
+	config/    
+		migrationConfig.properties
+		toolspath.properties
+		status
+		currentPlan
+		input
+		chameleon/
+        	config-example.yml
+        datacheck/
+        	application-source.yml
+        	application-sink.yml
+        	application.yml
+        	log4j2.xml
+        	log4j2source.xml
+        	log4j2sink.xml
+        debezium/
+            connect-avro-standalone.properties
+        	mysql-sink.properties
+        	mysql-source.properties
+        	opengauss-sink.properties
+        	opengauss-source.properties
+	logs/      
+		portal.log 
+	pkg/           
+        chameleon/
+        	chameleon-3.1.1-py3-none-any.whl
+        datacheck/
+        	openGauss-datachecker-performance-5.0.0.tar.gz
+        debezium/
+        	confluent-5.5.1.tar.gz
+        	debezium-connector-mysql-1.8.1.Final-plugin.tar.gz
+        	debezium-connector-opengauss-1.8.1.Final-plugin.tar.gz
+        	kafka_2.13-3.2.3.tgz
+    tmp/
+    tools/
+        chameleon/
+        datacheck/
+        debezium/
+        	confluent-5.5.1/
+        	kafka_2.13-3.2.3/
+        	plugin/
+        		debezium-connector-mysql/
+        		debezium-connector-opengauss/
+    portal.portId.lock
+    portalControl-1.0-SNAPSHOT-exec.jar
+    README.md
    ```
 
 ### 安装教程
@@ -122,7 +130,7 @@ portal会在workspace文件夹下创造对应id的文件夹，并将执行任务
 | debezium-connector-mysql     | 1.8.1      |
 | debezium-connector-opengauss | 1.8.1      |
 
-在/ops/portal/config目录的toolspath.properties文件中修改工具安装路径：
+在/ops/portal/config目录的toolspath.properties文件中修改工具安装路径，其中文件夹要以/结尾：
 
 | 参数名称                     | 参数说明                                                     |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -193,7 +201,7 @@ java -Dpath=/ops/portal/ -Dskip=true -Dorder=install_mysql_all_migration_tools -
 
 用户可以在/ops/portal/config目录的migrationConfig.properties文件中修改迁移所用参数。
 
-参数优先级：命令行输入 > workspace下设置的参数 > 公共空间参数。所以如果使用之前用过的workspaceid执行任务，请在/ops/portal/workspace/要使用的ID/config/migrationConfig.properties下面修改参数。
+参数优先级：命令行输入 > workspace下设置的参数 > 公共空间参数。如果使用的workspace.id和之前存在的workspace.id相同的话将沿用之前的workspace里面的参数，如果不同的话，那么portal将从config文件夹中复制一份配置文件到id对应的workspace下面作为这个任务的配置文件。
 
 | 参数名称                  | 参数说明                |
 | ------------------------- | ----------------------- |
@@ -208,6 +216,32 @@ java -Dpath=/ops/portal/ -Dskip=true -Dorder=install_mysql_all_migration_tools -
 | opengauss.database.port   | openGauss数据库端口     |
 | opengauss.database.name   | openGauss数据库名       |
 | opengauss.database.schema | openGauss数据库模式名   |
+
+除了配置迁移所用基本参数外，用户还可在指定位置自行配置工具自身的所用参数。但是portal会默认修改工具自身的临时文件和日志位置，并分配部分工具自身所用的端口。用户可自行查看并修改工具的配置文件，默认工具配置文件位置如下表。
+
+注意事项：
+
+- zookeeper默认端口2181、kafka默认端口9092、schema-registry默认端口8081不会自动分配，其余工具均会自动分配端口。用户如果需要修改工具的端口，请不要修改IP。如果需要修改kafka的端口，要注意将kafka的文件中的参数listeners的值修改为PLAINTEXT://localhost:要配置的端口。
+- 下表使用${config}代表/ops/portal/。
+- 下表使用${kafka.path}代表/ops/portal/config目录的toolspath.properties文件里面kafka.path的值。
+- 下表使用${confluent.path}代表/ops/portal/config目录的toolspath.properties文件里面confluent.path的值。
+- 每次创建新的任务时，/ops/portal/config/debezium目录的connect-avro-standalone.properties文件会被自动复制成四份并修改端口。
+
+| 工具名称            | 配置文件位置                                                 |
+| ------------------- | ------------------------------------------------------------ |
+| chameleon           | ${config}/chameleon/config-example.yml                       |
+| datacheck           | ${config}/datacheck/application-source.yml                   |
+|                     | ${config}/datacheck/application-sink.yml                     |
+|                     | ${config}/datacheck/application.yml                          |
+| zookeeper           | ${kafka.path}/config/zookeeper.properties                    |
+| kafka               | ${kafka.path}/config/server.properties                       |
+| schema-registry     | ${confluent.path}/etc/schema-registry/schema-registry.properties |
+| connector-mysql     | ${config}/debezium/connect-avro-standalone.properties        |
+|                     | ${config}/debezium/mysql-source.properties                   |
+|                     | ${config}/debezium/mysql-sink.properties                     |
+| connector-opengauss | ${config}/debezium/connect-avro-standalone.properties        |
+|                     | ${config}/debezium/opengauss-source.properties               |
+|                     | ${config}/debezium/opengauss-sink.properties                 |
 
 ### 执行迁移计划
 
@@ -236,6 +270,36 @@ java -Dpath=/ops/portal/ -Dskip=true -Dorder=start_plan1 -Dworkspace.id=3 -jar p
 | plan1    | 全量迁移→全量校验                            |
 | plan2    | 全量迁移→全量校验→增量迁移→增量校验          |
 | plan3    | 全量迁移→全量校验→增量迁移→增量校验→反向迁移 |
+
+#### 增量迁移和反向迁移
+
+增量迁移功能是持续将MySQL端的数据修改同步到openGauss端的功能，而反向迁移功能是持续将openGauss端的数据修改同步到MySQL端的功能，所以二者均不会自动关闭。如果用户想要停止增量迁移功能，需要另开窗口输入指令停止增量迁移功能，反向迁移功能同理。
+
+并且需要注意的是：增量迁移和反向迁移不能同时开启，如果一个计划中包含了增量迁移和反向迁移，那么需要用户手动停止增量迁移，启动反向迁移，以启动默认计划3为例：
+
+在配置好配置文件后输入以下指令开启plan3：
+
+   ```
+java -Dpath=/ops/portal/ -Dskip=true -Dorder=start_plan3 -Dworkspace.id=3 -jar portalControl-1.0-SNAPSHOT-exec.jar
+   ```
+
+这时portal会自动执行全量迁移→全量校验→增量迁移→增量校验，然后一直处于增量迁移状态（此时增量迁移和增量校验同时运行），如果用户想要停止增量迁移功能，需要另开窗口输入以下指令停止增量迁移功能：
+
+   ```
+java -Dpath=/ops/portal/ -Dskip=true -Dorder=stop_incremental_migration -Dworkspace.id=3 -jar portalControl-1.0-SNAPSHOT-exec.jar
+   ```
+
+输入指令后，这个进程会退出，而正在执行计划的portal会接收到停止增量迁移的消息，从而停止增量迁移，等待下一步指令。
+
+如果用户想要启动反向迁移功能，需要输入以下指令：
+
+   ```
+java -Dpath=/ops/portal/ -Dskip=true -Dorder=run_reverse_migration -Dworkspace.id=3 -jar portalControl-1.0-SNAPSHOT-exec.jar
+   ```
+
+输入指令后，这个进程会退出，而正在执行计划的portal会接收到启动反向迁移的消息，从而启动反向迁移，此时portal一直处于反向迁移状态。
+
+如果想要停止整个迁移计划，请参考下方的“停止计划”小节。
 
 以下为启动迁移计划的指令列表：
 
@@ -283,6 +347,28 @@ java -Dpath=/ops/portal/ -Dskip=true -Dorder=stop_plan -Dworkspace.id=2 -jar por
    ```
 
 输入指令后，这个进程会退出，而正在执行计划的portal会接收到停止计划的消息，从而停止计划。
+
+#### 启动多个计划
+
+portal支持同时启动多个计划，但是这些计划的mysql端应该为各不相同的实例，openGauss端应该为各不相同的数据库：
+
+首先修改配置文件，详情见配置参数环节。
+
+使用workspace.id为p1启动第一个迁移计划（这里启动计划3）：
+
+   ```
+java -Dpath=/ops/portal/ -Dskip=true -Dorder=start_plan3 -Dworkspace.id=p1 -jar portalControl-1.0-SNAPSHOT-exec.jar
+   ```
+
+然后再次修改配置文件。
+
+使用workspace.id为p2启动第一个迁移计划（这里启动计划3）：
+
+   ```
+java -Dpath=/ops/portal/ -Dskip=true -Dorder=start_plan3 -Dworkspace.id=p2 -jar portalControl-1.0-SNAPSHOT-exec.jar
+   ```
+
+这样就启动了多个portal。
 
 #### 卸载迁移工具
 
