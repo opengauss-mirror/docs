@@ -2845,7 +2845,7 @@ headless: true
 	        -   [实例监控]({{< relref "./docs/Toolreference/DataKit/observability-instance/observability-instance.md" >}})
 	        -   [日志检索]({{< relref "./docs/Toolreference/DataKit/observability-log-search/observability-log-search.md" >}})
 	        -   [sql诊断]({{< relref "./docs/Toolreference/DataKit/observability-sql-diagnosis/observability-sql-diagnosis.md" >}})
-	    -   [数据迁移]({{< relref "./docs/DataKit/Toolreference/data-migration.md" >}})
+	    -   [数据迁移]({{< relref "./docs/Toolreference/DataKit/data-migration.md" >}})
 	    -   [业务开发]({{< relref "./docs/Toolreference/DataKit/data-studio/data-studio.md" >}})
 	    -   [开发手册]({{< relref "./docs/Toolreference/DataKit/DataKit-Documentation.md" >}})
 	        -   [DataKit配置文档]({{< relref "./docs/Toolreference/DataKit/visualtool/DataKit Configuration Documentation.md" >}})
