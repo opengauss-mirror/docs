@@ -155,7 +155,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
 - **trigger\_order**
 
-  可选项，trigger_order特征中的{FOLLOWS|PRECEDES}控制触发器的优先触发顺序，mysql兼容性模式下允许对同一个表，在同一触发事件定义多个触发器，会按照触发器创建的先后顺序来决定触发的优先顺序（先创建的优先）。可以通过{FOLLOWS|PRECEDES}来调整优先级。使用FOLLOWS，最后一次使用的触发器与原始触发器最紧挨着，其他的触发器的优先级都顺序向后挤压；使用PRECEDES，最后一次使用的触发器与原始触发器最紧挨着，其他的触发器的优先级都顺序向前挤压。
+  可选项，trigger_order特征中的{FOLLOWS|PRECEDES}控制触发器的优先触发顺序，B兼容性模式下允许对同一个表，在同一触发事件定义多个触发器，会按照触发器创建的先后顺序来决定触发的优先顺序（先创建的优先）。可以通过{FOLLOWS|PRECEDES}来调整优先级。使用FOLLOWS，最后一次使用的触发器与原始触发器最紧挨着，其他的触发器的优先级都顺序向后挤压；使用PRECEDES，最后一次使用的触发器与原始触发器最紧挨着，其他的触发器的优先级都顺序向前挤压。
 
 - **trigger\_body**
 
@@ -391,7 +391,7 @@ openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER ALL;
 openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
---创建mysql兼容数据库
+--创建B兼容性数据库
 openGauss=# create database db_mysql dbcompatibility 'B';
 --创建触发器定义用户
 openGauss=# create user test_user password 'Gauss@123';

@@ -36,7 +36,7 @@ CREATE [ OR REPLACE ] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] [DEFINER = u
 
 - **DEFINER = user**
 
-  指定user作为视图的属主。该选项尽在B兼容模式下使用。
+  指定user作为视图的属主。该选项仅在B兼容模式下使用。
 
 -   **TEMP | TEMPORARY**
 
