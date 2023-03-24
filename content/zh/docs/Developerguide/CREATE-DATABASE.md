@@ -22,7 +22,6 @@ CREATE DATABASE [IF NOT EXISTS] database_name
                [ DBCOMPATIBILITY [=] compatibilty_type ] |
                [ TABLESPACE [=] tablespace_name ] |
                [ CONNECTION LIMIT [=] connlimit ]}[...] ];
-               [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s1d6127a393bf4f6d8fdac63105932d16"></a>
@@ -769,28 +768,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
 有关字符编码的一些限制：
 
-- 若区域设置为C（或POSIX），则允许所有的编码类型，但是对于其他的区域设置，字符编码必须和区域设置相同。
-
-- 若字符编码方式是SQL\_ASCII，并且修改者为管理员用户时，则字符编码可以和区域设置不相同。
-
-- 编码和区域设置必须匹配模板数据库，除了将template0当作模板。 因为其他数据库可能会包含不匹配指定编码的数据，或者可能包含排序顺序受LC\_COLLATE和LC\_CTYPE影响的索引。复制这些数据会导致在新数据库中的索引失效。template0是不包含任何会受到影响的数据或者索引。
-
-- **[ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ]**
-
-  指定模式的默认字符集，单独指定时会将模式的默认字符序设置为指定的字符集的默认字符序。
-
--  **[ [DEFAULT] COLLATE [ = ] default_collation ]**
-
-  指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
-
-  ![](public_sys-resources/icon-note.gif) **说明：** 
-
-  -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
-  -   使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法。
-  -   B兼容性下， dolphin.b_compatibility_mode 为on时，不指定 default_charset 、default_collation ，而指定其他CREATE DATABASE 语法选项，语法仍为CREATE DATABASE语法。
-  -   B兼容性下， dolphin.b_compatibility_mode 为on时，当不指定任何选项，语法等同为CREATE SCHEMA语法；dolphin.b_compatibility_mode 为off时，语法等同为CREATE DATABASE 语法。
-
-
+-   若区域设置为C（或POSIX），则允许所有的编码类型，但是对于其他的区域设置，字符编码必须和区域设置相同。
+-   若字符编码方式是SQL\_ASCII，并且修改者为管理员用户时，则字符编码可以和区域设置不相同。
+-   编码和区域设置必须匹配模板数据库，除了将template0当作模板。 因为其他数据库可能会包含不匹配指定编码的数据，或者可能包含排序顺序受LC\_COLLATE和LC\_CTYPE影响的索引。复制这些数据会导致在新数据库中的索引失效。template0是不包含任何会受到影响的数据或者索引。
 
 ## 示例<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s6be7b8abbb4b4aceb9dae686434d672c"></a>
 
@@ -844,15 +824,6 @@ openGauss=# CREATE DATABASE ora_compatible_db DBCOMPATIBILITY 'A';
 --删除兼容TD、A格式的数据库。
 openGauss=# DROP DATABASE td_compatible_db;
 openGauss=# DROP DATABASE ora_compatible_db;
-
--- 打开 dolphin.b_compatibility_mode 开关
-openGauss=# set dolphin.b_compatibility_mode = on;
-SET
-openGauss=# create database test1;
-CREATE SCHEMA
-openGauss=# create database test2 charset 'utf8';
-CREATE SCHEMA
-openGauss=# drop database if exists test1;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>

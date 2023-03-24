@@ -1702,6 +1702,7 @@ headless: true
 					-	[DML语法一览表]({{< relref "./docs/Developerguide/dolphin-DML语法一览表.md" >}})	
 					-	[DCL语法一览表]({{< relref "./docs/Developerguide/dolphin-DCL语法一览表.md" >}})
 					-	[SQL语法]({{< relref "./docs/Developerguide/dolphin-SQL语法.md" >}})
+						-	[ALTER DATABASE]({{< relref "./docs/Developerguide/dolphin-ALTER-DATABASE.md" >}})
 						-	[ALTER FUNCTION]({{< relref "./docs/Developerguide/dolphin-ALTER-FUNCTION.md" >}})
 						-	[ALTER PROCEDURE]({{< relref "./docs/Developerguide/dolphin-ALTER-PROCEDURE.md" >}})
 						-	[ALTER SERVER]({{< relref "./docs/Developerguide/dolphin-ALTER-SERVER.md" >}}) 
@@ -1711,6 +1712,7 @@ headless: true
 						-	[ALTER VIEW]({{< relref "./docs/Developerguide/dolphin-ALTER-VIEW.md" >}})  
 						-	[ANALYZE ANALYSE]({{< relref "./docs/Developerguide/dolphin-ANALYZE-ANALYSE.md" >}})
 						-	[AST]({{< relref "./docs/Developerguide/dolphin-AST.md" >}})
+						-	[CREATE-DATABASE]({{< relref "./docs/Developerguide/dolphin-CREATE-DATABASE.md" >}})
 						-	[CREATE-FUNCTION]({{< relref "./docs/Developerguide/dolphin-CREATE-FUNCTION.md" >}})
 						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}})
 						-	[CREATE-PROCEDURE]({{< relref "./docs/Developerguide/dolphin-CREATE-PROCEDURE.md" >}})
@@ -1722,6 +1724,7 @@ headless: true
 						-	[CREATE-INDEX]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}})
 						-	[CREATE-VIEW]({{< relref "./docs/Developerguide/dolphin-CREATE-INDEX.md" >}})
 						-	[DESCRIBE-TABLE]({{< relref "./docs/Developerguide/dolphin-DESCRIBE-TABLE.md" >}})
+						-	[DROP-DATABASE]({{< relref "./docs/Developerguide/dolphin-DROP-DATABASE.md" >}})
 						-	[DROP-INDEX]({{< relref "./docs/Developerguide/dolphin-DROP-INDEX.md" >}}) 
 						-	[DROP-TABLESPACE]({{< relref "./docs/Developerguide/dolphin-DROP-TABLESPACE.md" >}}) 
 						-	[EXPLAIN]({{< relref "./docs/Developerguide/dolphin-EXPLAIN.md" >}}

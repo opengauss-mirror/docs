@@ -259,6 +259,27 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p31640971510"><a name="p31640971510"></a><a name="p31640971510"></a>使用二进制排序规则。</p>
     </td>
     </tr>
+    <tr id="row11164119191514"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p31642961520"><a name="p31642961520"></a><a name="p31642961520"></a>utf8_general_ci</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p91641981515"><a name="p91641981515"></a><a name="p91641981515"></a>utf8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p31640971510"><a name="p31640971510"></a><a name="p31640971510"></a>使用通用排序规则，不区分大小写。</p>
+    </td>
+    </tr>
+    <tr id="row11164119191514"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p31642961520"><a name="p31642961520"></a><a name="p31642961520"></a>utf8_unicode_ci</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p91641981515"><a name="p91641981515"></a><a name="p91641981515"></a>utf8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p31640971510"><a name="p31640971510"></a><a name="p31640971510"></a>使用通用排序规则，不区分大小写。</p>
+    </td>
+    </tr>
+    <tr id="row11164119191514"><td class="cellrowborder" valign="top" width="17.631763176317634%" headers="mcps1.2.4.1.1 "><p id="p31642961520"><a name="p31642961520"></a><a name="p31642961520"></a>utf8_bin</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="20.462046204620464%" headers="mcps1.2.4.1.2 "><p id="p91641981515"><a name="p91641981515"></a><a name="p91641981515"></a>utf8</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.90619061906191%" headers="mcps1.2.4.1.3 "><p id="p31640971510"><a name="p31640971510"></a><a name="p31640971510"></a>使用二进制排序规则，区分大小写。</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
@@ -1284,5 +1305,4 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 -   ORIENTATION COLUMN
     
     -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
-
 
