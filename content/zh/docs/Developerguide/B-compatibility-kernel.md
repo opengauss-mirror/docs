@@ -177,7 +177,7 @@
 </tr>
 <tr>
 <td>DML</td>
-<td>SELECT INTO语法兼容</td>
+<td>SELECT INTO语法兼容；以及支持ORDER BY的列不在DISTINCT中</td>
 <td>
 <a href="SELECT.md">SELECT</a>
 </td>

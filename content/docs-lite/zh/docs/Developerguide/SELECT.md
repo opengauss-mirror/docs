@@ -905,3 +905,23 @@ openGauss=#  SELECT * FROM tpcds.time_table TIMECAPSULE CSN 107330;
 (3 rows)
 ```
 
+- ORDER BY子句的列不在DISTINCT子句中的示例（兼容B模式下）：
+```sql
+-- 创建B库并切换
+CREATE DATABASE mydb_b WITH DBCOMPATIBILITY 'B';
+\c mydb_b
+
+-- ORDER BY列不在DISTINCT中的示例：根据c2列进行去重，按c1列进行排序，只输出c2列
+CREATE TABLE my_tbl(score INT, name VARCHAR(20));
+INSERT INTO my_tbl VALUES (100, 'alice'), (90, 'john'), (99, 'bob'), (80, 'bob');
+
+-- 允许ORDER BY后面的列不在DISTINCT里
+-- 无dolphin插件时执行：（增加 allow_orderby_undistinct_column 选项即可）
+SET behavior_compat_options = 'allow_orderby_undistinct_column';
+-- 有dolphin插件时执行：(将 sql_mode_full_group 选项删除即可)
+set dolphin.sql_mode = '';
+-- 注意：openGauss只会将去重后的数据，根据ORDER BY后的列进行排序。并不会先排序再去重，也就是无法保证重复行被去除的是哪一行，
+-- 所以当去重列与排序列的数据值没有一一对应时，可能会由于数据的插入顺序、数据量等不一致而导致最终输出结果不一样。
+SELECT DISTINCT name FROM my_tbl ORDER BY score;
+```
+
