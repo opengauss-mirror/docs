@@ -276,6 +276,12 @@ openGauss=# CREATE INDEX alter_table_tbl_b_ind ON alter_table_tbl1(b);
 openGauss=# ALTER TABLE alter_table_tbl1 RENAME INDEX alter_table_tbl_b_ind TO new_alter_table_tbl_b_ind;
 ```
 
+--- 修改表，创建INVISIBLE普通索引
+
+```
+openGauss=# ALTER TABLE alter_table_tbl1 ADD INDEX alter_table_tbl_b_ind(b) INVISIBLE;
+```
+
 --- 删除表。
 
 ```

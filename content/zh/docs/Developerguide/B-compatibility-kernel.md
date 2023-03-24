@@ -266,6 +266,22 @@
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_ul55286870"></a><a href="CREATE-TABLE-AS.md">CREATE TABLE AS</a>
 </td>
 </tr>
+<tr>
+<td>DDL</td>
+<td>支持在创建表、修改表、创建索引等语句中对索引指定VISIBLE|INVISIBLE选项</td>
+<td>
+<a href="CREATE-TABLE.md">CREATE TABLE</a>、
+<a href="ALTER-TABLE.md">ALTER TABLE</a>、
+<a href="CREATE-INDEX.md">CREATE INDEX</a>
+</td>
+</tr>
+<tr>
+<td>DML</td>
+<td>视图支持插入、更新和删除</td>
+<td>
+<a href="CREATE-VIEW.md">CREATE VIEW</a>
+</td>
+</tr>
 </tbody>
 </table>
 
