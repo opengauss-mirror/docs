@@ -12,7 +12,7 @@
 2. 增加语法兼容项 [NOT] DETERMINISTIC。
 3. 增加语法兼容项 { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA } 。
 4. 增加语法兼容项 SQL SECURITY { DEFINER | INVOKER }。
-5. 兼容M* 的创建存储过程的语法格式
+5. 兼容MySQL的创建存储过程的语法格式
 6. 兼容创建存储过程紧跟单条查询语句
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
@@ -41,9 +41,9 @@ plsql_body
 /
 ```
 
-- 使用M* 的格式进行创建存储过程。
+- 使用MySQL的格式进行创建存储过程。
 
-  注意：使用M* 的格式创建时，需要在客户端使用delimiter 命令设置结束符。
+  注意：使用MySQL的格式创建时，需要在客户端使用delimiter 命令设置结束符。
 
 ```
 CREATE [ OR REPLACE ] PROCEDURE procedure_name
