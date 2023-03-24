@@ -8,7 +8,7 @@
 
   描述：将从# 开始到换行符以内视为注释信息。
 
-  注意：此操作符针对B兼容数据库使用，与openGauss原有的#操作符语义不同。若想使用此语义，请创建B兼容模式数据库，启用B兼容性SQL引擎插件，并将dolphin.b_compatibility_mode设置为TRUE.
+  注意：此操作符针对B兼容数据库使用，与openGauss原有的#操作符语义不同。若想使用此语义，请创建B兼容模式数据库，启用MySQL兼容性SQL引擎插件，并将dolphin.b_compatibility_mode设置为TRUE.
 
   示例：
 

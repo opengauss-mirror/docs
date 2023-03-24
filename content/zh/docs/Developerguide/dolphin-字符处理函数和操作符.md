@@ -90,7 +90,7 @@
 
   描述：将val以"x,xxx,xxx.xx"的格式返回。val将保留dec_num位小数。保留的小数位数最多为32位，若dec_num大于32，则以保留32位小数返回。若dec_num为0，则返回内容无小数点及小数部分数字。第三个参数可选，可以根据locale指定返回内容的小数点及千位分隔符的格式。如果没有指定第三个参数，或第三个参数值非法，则使用默认值'en_US'。
 
-  注意：此format函数针对B兼容数据库使用，与openGauss原有的format函数语义不同。若想使用此语义，请创建B兼容模式数据库，启用B兼容性SQL引擎插件，并将dolphin.b_compatibility_mode设置为TRUE.
+  注意：此format函数针对B兼容数据库使用，与openGauss原有的format函数语义不同。若想使用此语义，请创建B兼容模式数据库，启用MySQL兼容性SQL引擎插件，并将dolphin.b_compatibility_mode设置为TRUE.
 
   返回值类型：text
 
@@ -989,4 +989,4 @@
   (1 row)
   ```
 
-  
+

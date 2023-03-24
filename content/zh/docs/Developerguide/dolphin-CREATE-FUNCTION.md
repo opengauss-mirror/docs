@@ -16,7 +16,7 @@
 
 4. 增加语法兼容项 SQL SECURITY { DEFINER | INVOKER }。
 
-5. 增加B兼容风格语法格式.
+5. 增加MySQL兼容风格语法格式.
 
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
@@ -81,7 +81,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
          } plsql_body
     /
 
--   B兼容风格语法格式。
+-   MySQL兼容风格语法格式。
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -100,7 +100,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 
 -   **LANGUAGE  lang_name**
 
-    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 B兼容风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。在B兼容风格语法格式下，此选项允许重复。
+    用以实现函数的语言的名称。PostgreSQL风格函数默认值 sql, O风格默认值 plpgsql。 MySQL兼容风格语法格式下，LANGUAGE选项仅做语法兼容，可填入其他值，但最终将使用plpgsql作为实现函数的语言。在MySQL兼容风格语法格式下，此选项允许重复。
 
 - **SQL SECURITY INVOKER**
 
@@ -108,7 +108,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
    
    SQL SECURITY INVOKER和SECURITY INVOKER和AUTHID CURRENT\_USER的功能相同。
 
-   在B兼容风格语法格式下，此选项允许重复，且与SQL SECURITY DEFINER同类别。该类别的函数选项以最后一个输入为准。
+   在MySQL兼容风格语法格式下，此选项允许重复，且与SQL SECURITY DEFINER同类别。该类别的函数选项以最后一个输入为准。
 
 - **SQL SECURITY DEFINER**
 
@@ -116,7 +116,7 @@ dolphin加载后，CREATE FUNCTION 语法的格式为
 
   SQL SECURITY DEFINER和AUTHID DEFINER和SECURITY DEFINER的功能相同。
 
-  在B兼容风格语法格式下，此选项允许重复，且与SQL SECURITY INVOKER同类别。该类别的函数选项以最后一个输入为准。
+  在MySQL兼容风格语法格式下，此选项允许重复，且与SQL SECURITY INVOKER同类别。该类别的函数选项以最后一个输入为准。
 
 - **CONTAINS SQL** | **NO SQL** | **READS SQL DATA** | **MODIFIES SQL DATA**
 
@@ -157,7 +157,7 @@ NO SQL SQL SECURITY DEFINER AS $$ select s; $$ ;
 openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
 SQL SECURITY INVOKER  READS SQL DATA LANGUAGE SQL AS $$ select s; $$ ;
 
---B兼容风格语法格式
+--MySQL兼容风格语法格式
 openGauss=# create function func(n int) returns varchar(50) return (select n+1);
 CREATE FUNCTION
 openGauss=# select func(1);
