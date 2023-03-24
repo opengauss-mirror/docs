@@ -45,8 +45,8 @@
 | abstime | Wed Dec 31 16:00:00 1969 PST |  |
 | money | $0.00 |  |
 | int4range | empty |  |
-| blob |  |  |
-| raw |  |  |
+| blob |  | 数据内容为空的对象 |
+| raw |  | 数据内容为空的对象 |
 | bytea | \x |  |
 | point | (0,0) |  |
 | lseg | [(0,0),(0,0)] |  |
@@ -57,11 +57,11 @@
 | cidr | 0.0.0.0/32 |  |
 | inet | 0.0.0.0 |  |
 | macaddr | 00:00:00:00:00:00 |  |
-| BIT |  |  |
-| BIT VARYING |  |  |
+| BIT |  | 数据内容为空的对象 |
+| BIT VARYING |  | 数据内容为空的对象 |
 | UUID | 00000000-0000-0000-0000-000000000000 |  |
-| json | null |  |
-| jsonb | null |  |
+| json | null | 数据内容为null |
+| jsonb | null | 数据内容为null |
 | int8range | empty |  |
 | numrange | empty |  |
 | tsrange | empty |  |
@@ -69,8 +69,8 @@
 | daterange | empty |  |
 | hll | \x |  |
 | SET | "" |  |
-| tsvector |  |  |
-| tsquery |  |  |
+| tsvector |  | 数据内容为空的对象 |
+| tsquery |  | 数据内容为空的对象 |
 | HASH16 | 0000000000000000 |  |
 | HASH32 | 00000000000000000000000000000000 |  |
 | enum | 第一项 |  |

@@ -564,6 +564,21 @@ DROP SCHEMA
 openGauss=# reset current_schema;
 RESET
 ```
+- UNION子句非相似数据类型按 TEXT 类型进行转换示例：
+```sql
+-- 首先创建兼容模式为B的数据库
+CREATE DATABASE mydb WITH DBCOMPATIBILITY 'B';
+\c mydb
+
+-- 创建两个表并插入测试数据
+CREATE TABLE tbl_date(col DATE);
+INSERT INTO tbl_date VALUES('2000-02-16');
+CREATE TABLE tbl_json(col JSON);
+INSERT INTO tbl_json VALUES('{"id":1,"dbname":"openGauss","language":"C++"}');
+
+-- UNION 查询，将会使用TEXT类型进行转换
+SELECT * FROM tbl_date UNION SELECT * FROM tbl_json;
+```
 
 ## 相关链接<a name="section156744489391"></a>
 
