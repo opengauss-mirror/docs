@@ -756,6 +756,10 @@ openGauss=# alter table t1 convert to charset utf8mb4 collate utf8mb4_bin;
 openGauss=# alter table t1 add t10 varchar(20) charset utf8mb4 collate utf8mb4_bin;
 -- 修改t1表的t10字段的字符集为utf8mb4，字符序为utf8mb4_unicode_ci
 openGauss=# alter table t1 modify t10 varchar(20) charset utf8mb4 collate utf8mb4_unicode_ci;
+-- 创建INVISIBLE唯一索引
+openGauss=# alter table t1 add constraint uniq_a unique (f1) invisible;
+-- 修改索引为VISIBLE
+openGauss=# alter table t1 alter index uniq_a visible;
 ```
 
 

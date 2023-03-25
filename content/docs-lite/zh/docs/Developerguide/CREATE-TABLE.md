@@ -1193,6 +1193,26 @@ openGauss=# ALTER TABLE joe.warehouse_t19 RENAME TO warehouse_t23;
 --从warehouse_t23表中删除一个字段。
 openGauss=# ALTER TABLE joe.warehouse_t23 DROP COLUMN W_STREET_NAME;
 
+--创建带INVISIBLE唯一索引的表，需要在B兼容性数据库下
+openGauss=# CREATE TABLE tpcds.warehouse_t26
+(
+    W_WAREHOUSE_SK            INTEGER                NOT NULL,
+    W_WAREHOUSE_ID            CHAR(16)               NOT NULL,
+    W_WAREHOUSE_NAME          VARCHAR(20)              UNIQUE,
+    W_WAREHOUSE_SQ_FT         INTEGER                        ,
+    W_STREET_NUMBER           CHAR(10)                       ,
+    W_STREET_NAME             VARCHAR(60)                    ,
+    W_STREET_TYPE             CHAR(15)                       ,
+    W_SUITE_NUMBER            CHAR(10)                       ,
+    W_CITY                    VARCHAR(60)                    ,
+    W_COUNTY                  VARCHAR(30)                    ,
+    W_STATE                   CHAR(2)                        ,
+    W_ZIP                     CHAR(10)                       ,
+    W_COUNTRY                 VARCHAR(20)                    ,
+    W_GMT_OFFSET              DECIMAL(5,2)                   ,
+    UNIQUE uni_t26 (W_WAREHOUSE_SK) INVISIBLE
+) WITH(fillfactor=70);
+
 --删除表空间、模式joe和模式表warehouse。
 openGauss=# DROP TABLE tpcds.warehouse_t1;
 openGauss=# DROP TABLE tpcds.warehouse_t2;
@@ -1218,6 +1238,7 @@ openGauss=# DROP TABLE tpcds.warehouse_t22;
 openGauss=# DROP TABLE joe.warehouse_t23;
 openGauss=# DROP TABLE tpcds.warehouse_t24;
 openGauss=# DROP TABLE tpcds.warehouse_t25;
+openGauss=# DROP TABLE tpcds.warehouse_t26;
 openGauss=# DROP TABLESPACE DS_TABLESPACE1;
 openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 ```

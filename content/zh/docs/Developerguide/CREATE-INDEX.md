@@ -356,6 +356,9 @@ openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
 --删除一个现有的索引。
 openGauss=# DROP INDEX tpcds.ds_ship_mode_t1_index2;
 
+--创建INVISIBLE索引
+openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_CODE,1 ,4)) INVISIBLE;
+
 --删除表。
 openGauss=# DROP TABLE tpcds.ship_mode_t1;
 
