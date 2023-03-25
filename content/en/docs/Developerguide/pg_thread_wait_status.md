@@ -125,6 +125,11 @@
 <td class="cellrowborder" valign="top" width="68.11%" headers="mcps1.2.4.1.3 "><p id="p184611568132"><a name="p184611568132"></a><a name="p184611568132"></a>Global session ID</p>
 </td>
 </tr>
+<tr id="en-us_topic_0283136724_row9483152492216"><td class="cellrowborder" valign="top" width="43.419999999999995%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136724_p10661823122212"><a name="en-us_topic_0283136724_p10661823122212"></a><a name="en-us_topic_0283136724_p10661823122212"></a>wait reserve td</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.58%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136724_p866113235224"><a name="en-us_topic_0283136724_p866113235224"></a><a name="en-us_topic_0283136724_p866113235224"></a>Waiting for Ustore transaction slot allocation.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

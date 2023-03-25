@@ -16,7 +16,7 @@
 CREATE EXTENSION [ IF NOT EXISTS ] extension_name
 [ WITH ] [ SCHEMA schema_name ]
 [ VERSION version ]
-[ FROM old_version ]
+[ FROM old_version ];
 ```
 
 ## Parameter Description<a name="section62781959163314"></a>

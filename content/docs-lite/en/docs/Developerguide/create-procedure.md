@@ -11,6 +11,9 @@
 -   **current\_schema**  and  **search\_path**  specified by  **SET**  during stored procedure creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
 -   If a stored procedure has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the procedure. When the  **CALL**  statement calls the stored procedure or a non-overloaded function, output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
 -   A stored procedure with the  **PACKAGE**  attribute can use overloaded functions.
+-   You cannot create overloaded functions with different formal parameter names (the function name and parameter list type are the same).
+-   You cannot create a function that has the same name and parameter list as a stored procedure.
+-   If an undeclared variable is used in a function, an error is reported when the function is invoked.
 -   When you create a procedure, you cannot insert aggregate functions or other functions out of the average function.
 -   When stored procedures without parameters are called in another stored procedure, you can omit brackets and call stored procedures using their names directly.
 -   When functions with output parameters are called in a stored procedure which is an assignment expression, you can omit the output parameters of the called functions.

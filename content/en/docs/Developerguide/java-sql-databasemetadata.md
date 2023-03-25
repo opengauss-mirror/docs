@@ -1240,23 +1240,6 @@ This section describes  **java.sql.DatabaseMetaData**, the API for defining data
 </tr>
 </tbody>
 </table>
-
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->If the value of  **uppercaseAttributeName**  is  **true**, the following APIs convert the query result to uppercase letters. The conversion range is the same as that of the  **toUpperCase**  method in Java.
->-   public ResultSet getProcedures\(String catalog, String schemaPattern, String procedureNamePattern\)
->-   public ResultSet getProcedureColumns\(String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern\)
->-   public ResultSet getTables\(String catalog, String schemaPattern, String tableNamePattern, String\[\] types\)
->-   public ResultSet getSchemas\(String catalog, String schemaPattern\)
->-   public ResultSet getColumns\(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern\)
->-   public ResultSet getColumnPrivileges\(String catalog, String schema, String table, String columnNamePattern\)
->-   public ResultSet getTablePrivileges\(String catalog, String schemaPattern, String tableNamePattern\)
->-   public ResultSet getBestRowIdentifier\(String catalog, String schema, String table, int scope, boolean nullable\)
->-   public ResultSet getPrimaryKeys\(String catalog, String schema, String table\)
->-   protected ResultSet getImportedExportedKeys\(String primaryCatalog, String primarySchema, String primaryTable, String foreignCatalog, String foreignSchema, String foreignTable\)
->-   public ResultSet getIndexInfo\(String catalog, String schema, String tableName, boolean unique, boolean approximate\)
->-   public ResultSet getUDTs\(String catalog, String schemaPattern, String typeNamePattern, int\[\] types\)
->-   public ResultSet getFunctions\(String catalog, String schemaPattern, String functionNamePattern\)
-
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >The  **getPartitionTablePrimaryKeys\(String catalog, String schema, String table\)**  API is used to obtain the primary key column of a partitioned table that contains global indexes. The following is an example:
 >```

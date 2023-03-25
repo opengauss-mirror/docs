@@ -59,7 +59,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     Specifies the SQL operations affected by a row-level access control policy, including  **ALL**,  **SELECT**,  **UPDATE**, and  **DELETE**. If this parameter is not specified, the default value  **ALL**  will be used, covering  **SELECT**,  **UPDATE**, and  **DELETE**.
 
-    If  _command_  is set to  **SELECT**, only tuple data that meets the condition \(the return value of  _using\_expression_  is  **TRUE**\) can be queried. The operations that are affected include  **SELECT**,  **UPDATE.... RETURNING**, and  **DELETE... RETURNING**. 
+    If  _command_  is set to  **SELECT**, only tuple data that meets the condition \(the return value of  _using\_expression_  is  **TRUE**\) can be queried. The operations that are affected include  **SELECT**,  **UPDATE.... RETURNING**, and  **DELETE... RETURNING**. You are not allowed to modify or delete the data that is restricted by access.
 
     If  _command_  is set to  **UPDATE**, only tuple data that meets the condition \(the return value of  _using\_expression_  is  **TRUE**\) can be updated. The operations that are affected include  **UPDATE**,  **UPDATE ... RETURNING**, and  **SELECT ... FOR UPDATE/SHARE**. 
 

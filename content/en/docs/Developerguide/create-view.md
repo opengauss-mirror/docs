@@ -18,17 +18,19 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 ```
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->You can use **WITH\(security\_barrier\)** to create a relatively secure view. This prevents attackers from printing hidden base table data by using the **RAISE** statement of low-cost functions.
+>
+>-   You can use **WITH\(security\_barrier\)** to create a relatively secure view. This prevents attackers from printing hidden base table data by using the **RAISE** statement of low-cost functions.
+>-   After a view is created, you are not allowed to use REPLACE to modify column names in the view or delete the columns.
 
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
 -   **OR REPLACE**
 
-    Redefines the view if it already exists.
+    If OR REPLACE exists in CREATE VIEW, it indicates that if the view exists, the new view will replace the existing view. However, the new query cannot change the column definition of the original query, including the sequence, column name, data type, and type precision. You can only add other columns to the end of the list.
 
 - **DEFINER = user**
 
-  Specify user as the owner of the view. This option is used in B-compatible mode.
+    Specifies user as the owner of the view. This option is used in B-compatible mode.
 
 -   **TEMP | TEMPORARY**
 

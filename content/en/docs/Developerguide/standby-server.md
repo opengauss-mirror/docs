@@ -36,7 +36,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## max\_standby\_streaming\_delay<a name="en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_sa882fb4dfbfc4fdda5640d350053c2be"></a>
 
-**Parameter description**: Specifies the wait period before queries on a standby server are canceled when the queries conflict with WAL data receiving through streaming replication in hot standby mode.
+**Parameter description**: Specifies the wait period before queries on a standby server are canceled when the queries conflict with WAL data receiving through streaming replication in hot standby mode. If this parameter is set to a large value or the service load is heavy, an error may be reported for waiting for transaction replay and flushing to disks.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

@@ -89,7 +89,7 @@ Dump parameters:
 
 -   -S, --sysadmin=NAME
 
-    Name of the system administrator during the dump.
+    Specifies a reserved port for function expansion. This parameter is not recommended.
 
 -   -t, --tablespaces-only
 
@@ -172,7 +172,7 @@ Dump parameters:
 
 -   --non-lock-table
 
-    This parameter is used only by the OM tool.
+    This parameter is used only for inter-software API calling.
 
 -   --tablespaces-postfix
 
@@ -201,7 +201,7 @@ Dump parameters:
 
 Connection parameters:
 
--   -h, --host
+-   -h, --host=HOSTNAME
 
     Specifies the host name. If the value begins with a slash \(/\), it is used as the directory for the Unix domain socket. The default value is taken from the  **PGHOST**  environment variable. If it is not set, a Unix domain socket connection is attempted.
 
@@ -209,11 +209,11 @@ Connection parameters:
 
     Environment variable:  **PGHOST**
 
--   -l, --database
+-   -l, --database=DATABASENAME
 
     Specifies the name of the database connected to dump global objects and discover other databases to be dumped. If this parameter is not specified, the  **postgres**  database will be used. If the  **postgres**  database does not exist,  **template1**  will be used.
 
--   -p, --port
+-   -p, --port=PORT
 
     Specifies the TCP port listened on by the server or the local Unix domain socket file name extension to ensure a correct connection. The default value is the  **PGPORT**  environment variable.
 
@@ -221,7 +221,7 @@ Connection parameters:
 
     Environment variable:  **PGPORT**
 
--   -U, --username
+-   -U, --username=NAME
 
     Specifies the username for connection.
 
@@ -231,15 +231,15 @@ Connection parameters:
 
     Never issues a password prompt. The connection attempt fails if the server requires password for authentication and the password is not provided in other ways. This option is useful in batch jobs and scripts in which no user password is required.
 
--   -W, --password
+-   -W, --password=PASSWORD
 
     Specifies the user password for connection. If the host uses the trust authentication policy, the administrator does not need to enter the  **-W**  option. If the  **-W**  option is not provided and you are not a system administrator, the  **Dump Restore**  tool will ask you to enter a password.
 
--   --role
+-   --role=ROLENAME
 
     Specifies a role name to be used for creating the dump. If this option is selected, the  **SET ROLE**  command will be issued after the database is connected to  **gs\_dumpall**. It is useful when the authenticated user \(specified by  **-U**\) lacks the permissions required by  **gs\_dumpall**. It allows the user to switch to a role with the required permissions. Some installations have a policy against logging in directly as a system administrator. This option allows dumping data without violating the policy.
 
--   --rolepassword
+-   --rolepassword=ROLEPASSWORD
 
     Specifies the password of the specific role.
 
@@ -248,7 +248,7 @@ Connection parameters:
 
 -   **gs\_dumpall**  internally calls  **gs\_dump**. For details about the diagnosis information, see  [gs\_dump](gs_dump.md).
 -   Once  **gs\_dumpall**  is restored, it is advised to run  **ANALYZE**  on each database so that the optimizer can provide useful statistics.
--   **gs\_dumpall**  requires all needed tablespace directories to exit before the restoration. Otherwise, database creation will fail if the databases are in non-default locations.
+-   **gs\_dumpall**  requires all needed tablespace directories to be empty before the restoration. Otherwise, database creation will fail if the databases are in non-default locations.
 
 ## Examples<a name="en-us_topic_0059778372_sb56721027dde49e1bf8c5df9685d2f2f"></a>
 

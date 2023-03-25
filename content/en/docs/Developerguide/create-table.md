@@ -219,7 +219,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >-   An error is reported if CREATE TABLE ... (LIKE ... INCLUDIING PARTITION) is executed for hash or list partitions of the source table. The hash or list partitions cannot be copied. Only range partitions can be copied. For level-2 partitioned tables, only level-2 range-range partitions can be copied.
     >
-    >-   The ATUO_INCREMENT column must be the first column of a primary key or unique constraint. If EXCLUDING INDEX is specified when a table containing AUTO_INCREAMENT columns is copied, an error is reported.
+    >-   The ATUO_INCREMENT column must be the first column of a primary key or unique constraint. If EXCLUDING INDEX is specified when a table containing AUTO_INCREAMENT columns is copied, an error is reported. AUTO_INCREAMENT takes effects only in B-compatible databases.
 
 -  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 

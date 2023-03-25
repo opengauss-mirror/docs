@@ -302,7 +302,7 @@ The possible permissions are:
 
 -   **UPDATE**
 
-    Allows  **UPDATE**  of any column of a table. Generally,  **UPDATE**  also requires the SELECT permission to query which rows need to be updated.  **SELECT ... FOR UPDATE**  and  **SELECT ... FOR SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
+    Allows  **UPDATE**  of any column of a table. Generally,  **UPDATE**  also requires the  **SELECT**  permission to query which rows need to be updated.  **SELECT… FOR UPDATE**, **SELECT… FOR NO KEY UPDATE**,  **SELECT… FOR SHARE**, and **SELECT… FOR KEY SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
 
 -   **DELETE**
 

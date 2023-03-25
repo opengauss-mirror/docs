@@ -96,6 +96,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"></a>Primary database node: total bytes read by the user's complex jobs on all database nodes in the last 5 seconds, in KB</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Database node: total bytes read by the user's complex jobs from the instance startup time to the current time, in KB</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row758511216274"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"></a>write_kbytes</p>
@@ -104,6 +105,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"></a>Primary database node: total bytes written by the user's complex jobs on all database nodes in the last 5 seconds, in KB</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a>Database node: total bytes written by the user's complex jobs from the instance startup time to the current time, in KB</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row1020031172910"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"></a>read_counts</p>
@@ -112,6 +114,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"></a>Primary database node: total number of read times of the user's complex jobs on all database nodes in the last 5 seconds</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a>Database node: total number of read times of the user's complex jobs from the instance startup time to the current time</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row14601458142920"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"></a>write_counts</p>
@@ -120,6 +123,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"></a>Primary database node: total number of write times of the user's complex jobs on all database nodes in the last 5 seconds</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a>Database node: total number of write times of the user's complex jobs from the instance startup time to the current time</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row1222144193118"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"></a>read_speed</p>
@@ -128,6 +132,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"></a>Primary database node: average read rate of the user's complex jobs on a single database node in the last 5 seconds, in KB/s</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a>Database node: average read rate of the user's complex jobs on the database node in the last 5 seconds, in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row78702338"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"></a>write_speed</p>
@@ -136,6 +141,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"></a>Primary database node: average write rate of the user's complex jobs on a single database node in the last 5 seconds, in KB/s</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a>Database node: average write rate of the user's complex jobs on the database node in the last 5 seconds, in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 </tbody>

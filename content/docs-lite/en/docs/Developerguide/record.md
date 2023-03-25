@@ -80,8 +80,8 @@ BEGIN
      raise info 'employer1 name: % , epno: %',employer1.name, employer1.epno;
          
       -- Assign the NULL value to a record variable.
-     employer1 := NULL;
-     raise info 'employer1 name: % , epno: %',employer1.name, employer1.epno;
+     employer := NULL;
+     raise info 'employer name: % , epno: %',employer.name, employer.epno;
 
       -- Obtain the default value of a record variable.
      raise info 'employer2 name: % ,epno: %', employer2.name, employer2.epno;

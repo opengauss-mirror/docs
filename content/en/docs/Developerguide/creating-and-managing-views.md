@@ -18,7 +18,7 @@ A view is different from a base table. It is only a virtual object rather than a
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >The  **OR REPLACE**  parameter in this command is optional. It indicates that if the view exists, the new view will replace the existing view.  
+    >If OR REPLACE exists in CREATE VIEW, it indicates that if the view exists, the new view will replace the existing view. However, the new query cannot change the column definition of the original query, including the sequence, column name, data type, and type precision. You can only add other columns to the end of the list. 
 
 -   Querying a view
 

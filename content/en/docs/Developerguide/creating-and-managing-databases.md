@@ -13,7 +13,6 @@ Only the database system administrator or users granted with database creation p
     >-   The template database does not contain any user table. You can view the attributes of the template database in the  **PG\_DATABASE**  system catalog.
     >-   The  **template0**  template does not allow user connections. Only the initial user of the database and the system administrator can connect to  **template1**.
 
--   A maximum of 128 databases can be created in openGauss.
 -   A database system consists of multiple databases. A client can connect to only one database at a time. Users cannot query data across databases. If one openGauss contains multiple databases, set the  **-d**  parameter to specify the database instance to be connected.
 
 ## Precautions<a name="en-us_topic_0283136807_en-us_topic_0237120295_en-us_topic_0059779126_section19939134010190"></a>

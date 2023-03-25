@@ -56,7 +56,7 @@ You can use  **gs\_dumpall**  to export global objects, including database users
     </td>
     <td class="cellrowborder" valign="top" width="43.33%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137605_en-us_topic_0237121174_p1962511481717"><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1962511481717"></a><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1962511481717"></a>Dumps only tablespaces. You can also use <strong id="en-us_topic_0237121174_b1375718102153"><a name="en-us_topic_0237121174_b1375718102153"></a><a name="en-us_topic_0237121174_b1375718102153"></a>--tablespaces-only</strong> alternatively.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"></a><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"></a>-</p>
+    <td class="cellrowborder" valign="top" width="31.669999999999998%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"></a><a name="en-us_topic_0283137605_en-us_topic_0237121174_p1662514481776"></a>-t</p>
     </td>
     </tr>
     </tbody>

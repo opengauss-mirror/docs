@@ -79,6 +79,6 @@ END;
 /
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->**BULK COLLECT INTO**  can only assign values to arrays in batches. Use  **LIMIT**  properly to prevent performance deterioration caused by excessive operations on data.
-
+>![](public_sys-resources/icon-notice.gif) **NOTICE:**  
+>**BULK COLLECT INTO**  can only assign values to arrays in batches. Use  **LIMIT**  properly to prevent performance deterioration caused by excessive operations on data.  
+>For array variables, parentheses () are preferentially identified as subscripts. Therefore, expressions with parentheses cannot be written after array variables. For example, select (1+3) into va(5) cannot be written as select into va(5) (1+3) or select into va[5] (1+3).

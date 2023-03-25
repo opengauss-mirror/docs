@@ -1,6 +1,6 @@
 # Global SysCache Feature Functions<a name="EN-US_TOPIC_0000001242498033"></a>
 
--   gs\_gsc\_table\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+-   gs\_gsc\_table\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     Description: Queries global system cache table metadata in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
@@ -19,7 +19,7 @@
     ```
 
 
--   gs\_gsc\_catalog\_detail\(database\_id dafault NULL, rel\_id default NULL\)
+-   gs\_gsc\_catalog\_detail\(database\_id default NULL, rel\_id default NULL\)
 
     Description: Queries the system table row information cached in the global system in a database. The user who calls this function must have the  **SYSADMIN**  permission.
 
@@ -47,7 +47,7 @@
     ```
 
 
--   gs\_gsc\_clean\(database\_id dafault NULL\)
+-   gs\_gsc\_clean\(database\_id default NULL\)
 
     Description: Clears the global syscache cache. Note that data in use will not be cleared. The user who calls this function must have the  **SYSADMIN**  permission.
 

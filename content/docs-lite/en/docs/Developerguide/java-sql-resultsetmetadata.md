@@ -163,9 +163,4 @@ This section describes  **java.sql.ResultSetMetaData**, which provides details a
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
->
->When  **uppercaseAttributeName**  is set to  **true**, the following APIs convert the query result to uppercase letters. The conversion range is 26 English letters.
->-   public String getColumnName\(int column\)
->-   public String getColumnLabel\(int column\)
 

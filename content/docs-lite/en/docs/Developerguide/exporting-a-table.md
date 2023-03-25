@@ -95,6 +95,9 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
 
 ## Examples<a name="en-us_topic_0283137162_en-us_topic_0237121171_en-us_topic_0096393572_s2612a8b058f24a14b1dfa8efd6f4c410"></a>
 
+>![](public_sys-resources/icon-note.gif) **NOTE:**  
+After the following examples are exported, ensure that the schema to which the exported table belongs exists before the import restoration.
+
 Example 1: Run  **gs\_dump**  to export definitions and data of the  **hr.staffs**  table. The exported files are in text format.
 
 ```

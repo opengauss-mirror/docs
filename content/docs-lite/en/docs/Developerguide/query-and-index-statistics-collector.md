@@ -107,6 +107,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **on**
 
+## plan_collect_thresh
+**Parameter description**:  Collects statistics about the plans that are being executed in each session.
+This parameter is a SUSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range**: an integer ranging from –1 to 2147483647 
+-  **-1**: Plans that are being executed are not collected.
+-  **0**: Plans that are being executed are collected before plan execution.
+-  \>0: When the total number of tuples incrementally returned by all operators in a plan is greater than or equal to the value of this parameter, plans that are being executed are collected once.
+
+**Default value**: 0
+
 ## track\_sql\_count<a name="en-us_topic_0283136895_en-us_topic_0237124727_section6524929122813"></a>
 
 **Parameter description**: Collects statistics about the statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **MERGE INTO**, and  **DELETE**\) that are being executed in a session.
