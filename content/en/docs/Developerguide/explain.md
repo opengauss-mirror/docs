@@ -176,119 +176,63 @@ The  **ANALYZE**  option causes the statement to be actually executed, not only 
 ## Examples<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 
 ```
--- Create the tpcds.customer_address_p1 table.
-openGauss=# CREATE TABLE tpcds.customer_address_p1 AS TABLE tpcds.customer_address;
+-- 1. Create a table.
+openGauss=# create table test_t(c1 int, c2 varchar(30));
+CREATE TABLE
 
--- Change the value of explain_perf_mode to normal.
+-- 2. View the execution plan of the SQL statement.
+openGauss=# explain select * from test_t;
+                        QUERY PLAN
+----------------------------------------------------------
+ Seq Scan on test_t  (cost=0.00..17.29 rows=729 width=82)
+(1 row)
+
+-- 3. (Optional) Specify the output format when querying a plan.
+-- Note: The JSON format is supported only when explain_perf_mode is set to normal.
 openGauss=# SET explain_perf_mode=normal;
-
--- Display an execution plan for simple queries in the table.
-openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1;
-QUERY PLAN
---------------------------------------------------
-Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
-Node/s: All dbnodes
-(2 rows)
-
--- Generate an execution plan in JSON format (with explain_perf_mode being normal).
-openGauss=# EXPLAIN(FORMAT JSON) SELECT * FROM tpcds.customer_address_p1;
-              QUERY PLAN              
---------------------------------------
- [                                   +
-   {                                 +
-     "Plan": {                       +
-       "Node Type": "Data Node Scan",+
-       "Startup Cost": 0.00,         +
-       "Total Cost": 0.00,           +
-       "Plan Rows": 0,               +
-       "Plan Width": 0,              +
-       "Node/s": "All dbnodes"     +
-     }                               +
-   }                                 +
+SET
+openGauss=# explain (format json) select * from test_t;
+            QUERY PLAN
+----------------------------------
+ [                               +
+   {                             +
+     "Plan": {                   +
+       "Node Type": "Seq Scan",  +
+       "Relation Name": "test_t",+
+       "Alias": "test_t",        +
+       "Startup Cost": 0.00,     +
+       "Total Cost": 17.29,      +
+       "Plan Rows": 729,         +
+       "Plan Width": 82          +
+     }                           +
+   }                             +
  ]
 (1 row)
 
--- If there is an index and we use a query with an indexable WHERE condition, EXPLAIN might show a different plan.
-openGauss=# EXPLAIN SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-QUERY PLAN
---------------------------------------------------
-Data Node Scan  (cost=0.00..0.00 rows=0 width=0)
-Node/s: dn_6005_6006
-(2 rows)
+-- 4. If the column of the WHERE clause in a query has an index, different execution plans may be displayed when the conditions or data are different.
+openGauss=# create index idx_test_t_c1 on test_t(c1);
+CREATE INDEX
+openGauss=# insert into test_t values(generate_series(1, 200), 'hello openGauss');
+INSERT 0 200
+openGauss=# explain select c1, c2 from test_t where c1=100;
+                                 QUERY PLAN
+----------------------------------------------------------------------------
+ Bitmap Heap Scan on test_t  (cost=4.28..12.74 rows=4 width=82)
+   Recheck Cond: (c1 = 100)
+   ->  Bitmap Index Scan on idx_test_t_c1  (cost=0.00..4.28 rows=4 width=0)
+         Index Cond: (c1 = 100)
+(4 rows)
 
--- Generate an execution plan in YAML format (with explain_perf_mode being normal).
-openGauss=# EXPLAIN(FORMAT YAML) SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-           QUERY PLAN            
----------------------------------
- - Plan:                        +
-     Node Type: "Data Node Scan"+
-     Startup Cost: 0.00         +
-     Total Cost: 0.00           +
-     Plan Rows: 0               +
-     Plan Width: 0              +
-     Node/s: "dn_6005_6006"
-(1 row)
+-- 5. (Optional) Use the costs option to specify whether to display the cost.
+openGauss=# explain (costs false) select * from test_t where c1=100;
+                QUERY PLAN
+------------------------------------------
+ Bitmap Heap Scan on test_t
+   Recheck Cond: (c1 = 100)
+   ->  Bitmap Index Scan on idx_test_t_c1
+         Index Cond: (c1 = 100)
+(4 rows)
 
--- Here is an example of a query plan with cost estimates suppressed:
-openGauss=# EXPLAIN(COSTS FALSE)SELECT * FROM tpcds.customer_address_p1 WHERE ca_address_sk=10000;
-       QUERY PLAN       
-------------------------
- Data Node Scan
-   Node/s: dn_6005_6006
-(2 rows)
-
--- Here is an example of a query plan for a query using an aggregate function:
-openGauss=# EXPLAIN SELECT SUM(ca_address_sk) FROM tpcds.customer_address_p1 WHERE ca_address_sk<10000;
-                                      QUERY PLAN                                       
----------------------------------------------------------------------------------------
- Aggregate  (cost=18.19..14.32 rows=1 width=4)
-   ->  Streaming (type: GATHER)  (cost=18.19..14.32 rows=3 width=4)
-         Node/s: All dbnodes
-         ->  Aggregate  (cost=14.19..14.20 rows=3 width=4)
-               ->  Seq Scan on customer_address_p1  (cost=0.00..14.18 rows=10 width=4)
-                     Filter: (ca_address_sk < 10000)
-(6 rows)
-
-
--- Create a level-2 partitioned table.
-openGauss=# CREATE TABLE range_list
-openGauss-# (
-openGauss(#     month_code VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     dept_code  VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     user_no    VARCHAR2 ( 30 ) NOT NULL ,
-openGauss(#     sales_amt  int
-openGauss(# )
-openGauss-# PARTITION BY RANGE (month_code) SUBPARTITION BY LIST (dept_code)
-openGauss-# (
-openGauss(#   PARTITION p_201901 VALUES LESS THAN( '201903' )
-openGauss(#   (
-openGauss(#     SUBPARTITION p_201901_a values ('1'),
-openGauss(#     SUBPARTITION p_201901_b values ('2')
-openGauss(#   ),
-openGauss(#   PARTITION p_201902 VALUES LESS THAN( '201910' )
-openGauss(#   (
-openGauss(#     SUBPARTITION p_201902_a values ('1'),
-openGauss(#     SUBPARTITION p_201902_b values ('2')
-openGauss(#   )
-openGauss(# );
-CREATE TABLE
-
--- Run a query statement containing a level-2 partitioned table.
--- Iterations and Sub Iterations specifies the numbers of level-1 and level-2 partitions that are traversed, respectively.
--- Selected Partitions specifies which level-1 partitions are actually scanned. Selected Subpartitions (p:s) indicates that s level-2 partitions under the pth level-1 partition are actually scanned. If all level-2 partitions under the level-1 partition are scanned, the value of s is ALL.
-openGauss=# EXPLAIN SELECT * FROM range_list WHERE dept_code = '1';
-                                  QUERY PLAN
--------------------------------------------------------------------------------
- Partition Iterator  (cost=0.00..13.81 rows=2 width=238)
-   Iterations: 2, Sub Iterations: 2
-   ->  Partitioned Seq Scan on range_list  (cost=0.00..13.81 rows=2 width=238)
-         Filter: ((dept_code)::text = '1'::text)
-         Selected Partitions:  1..2
-         Selected Subpartitions:  1:1, 2:1
-(6 rows)
-
--- Delete the tpcds.customer_address_p1 table.
-openGauss=# DROP TABLE tpcds.customer_address_p1;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>

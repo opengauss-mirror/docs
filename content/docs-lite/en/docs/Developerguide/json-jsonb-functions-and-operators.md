@@ -755,7 +755,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_contained\(jsonb, jsonb\)
+-   jsonb\_contained\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<@\`**, determines whether all elements in_ $1_  exist at the top layer of  _$2_.
 
@@ -772,7 +772,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_contains\(jsonb, jsonb\)
+-   jsonb\_contains\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`@\>\`**, checks whether all top-layer elements in  _$1_  are contained in  _$2_.
 
@@ -789,7 +789,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_exists\(jsonb, text\)
+-   jsonb\_exists\(jsonb, text\)
 
     Description: Same as the operator  **\`?\`**, determines whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
 
@@ -806,7 +806,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_exists\_all\(jsonb, text\[\]\)
+-   jsonb\_exists\_all\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`?&\`**, checks whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
 
@@ -823,7 +823,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_exists\_any\(jsonb, text\[\]\)
+-   jsonb\_exists\_any\(jsonb, text\[\]\)
 
     Description: Same as the operator  **\`?|\`**, checks whether all elements in the string array  _$2_  exist at the top layer of  _$1_  in the form of  **key\\elem\\scalar**.
 
@@ -840,7 +840,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_cmp\(jsonb, jsonb\)
+-   jsonb\_cmp\(jsonb, jsonb\)
 
     Description: Compares values. A positive value indicates greater than, a negative value indicates less than, and  **0**  indicates equal.
 
@@ -857,7 +857,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_eq\(jsonb, jsonb\)
+-   jsonb\_eq\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`=\`**, compares two values.
 
@@ -874,7 +874,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_ne\(jsonb, jsonb\)
+-   jsonb\_ne\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<\>\`**, compares two values.
 
@@ -891,7 +891,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_gt\(jsonb, jsonb\)
+-   jsonb\_gt\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`\>\`**, compares two values.
 
@@ -908,7 +908,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_ge\(jsonb, jsonb\)
+-   jsonb\_ge\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`\>=\`**, compares two values.
 
@@ -925,7 +925,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_lt\(jsonb, jsonb\)
+-   jsonb\_lt\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<\`**, compares two values.
 
@@ -942,7 +942,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - jsonb\_le\(jsonb, jsonb\)
+-   jsonb\_le\(jsonb, jsonb\)
 
     Description: Same as the operator  **\`<=\`**, compares two values.
 
@@ -959,7 +959,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     ```
 
 
--   - to\_json\(anyelement\)
+-   to\_json\(anyelement\)
 
     Description: Converts parameters to  **\`json\`**.
 
@@ -975,7 +975,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
       (1 row)
     ```
 
--   - jsonb\_hash\(jsonb\)
+-   jsonb\_hash\(jsonb\)
 
     Description: Performs the hash operation on JSONB.
 

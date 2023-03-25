@@ -15,7 +15,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 The value of this parameter is calculated by 26 binary bits. The 26 binary bits represent 26 types of openGauss objects. If the corresponding binary bit is set to  **0**, the CREATE, DROP, and ALTER operations on corresponding database objects are not audited. If it is set to  **1**, the CREATE, DROP, and ALTER operations are audited. For details about the audit contents represented by these 26 binary bits, see  [Table 1](#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_en-us_topic_0058967566_table53712060).
 
-**Default value**:  **12295**
+**Default value**:  **67121159**
 
 **Table  1**  Meaning of each value for the  **audit\_system\_object**  parameter
 
@@ -105,7 +105,14 @@ The value of this parameter is calculated by 26 binary bits. The 26 binary bits 
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u69d8d7c50483457f970bb4755d9f2698"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u69d8d7c50483457f970bb4755d9f2698"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_u69d8d7c50483457f970bb4755d9f2698"><li><strong id="b67921213203"><a name="b67921213203"></a><a name="b67921213203"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are not audited.</li><li><strong id="b8644171415019"><a name="b8644171415019"></a><a name="b8644171415019"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are audited.</li></ul>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_row18587823135616"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"></a>Bit 11</p>
+<tr id="row86071038102514"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p199651516152612"><a name="p199651516152612"></a><a name="p199651516152612"></a>Bit 11</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p1960715387254"><a name="p1960715387254"></a><a name="p1960715387254"></a>Reserved.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><p id="p8607123882519"><a name="p8607123882519"></a><a name="p8607123882519"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_row18587823135616"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"></a><a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_p18588723165618"></a>Bit 12</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p8588112385617"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p8588112385617"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p8588112385617"></a>Whether to audit the CREATE, DROP, and ALTER operations on data sources.</p>
 </td>
@@ -113,77 +120,77 @@ The value of this parameter is calculated by 26 binary bits. The 26 binary bits 
 <a name="en-us_topic_0283136929_en-us_topic_0237124747_ul979823312575"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul979823312575"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul979823312575"><li><strong id="b1653111204015"><a name="b1653111204015"></a><a name="b1653111204015"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are audited.</li></ul>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row14996171520226"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a>Bit 12</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row14996171520226"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p13997415182219"></a>Bit 13</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p10997171592219"></a>Reserved.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul1984414587225"></a><p>-</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row186561926144118"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a>Bit 13</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row186561926144118"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p12658192619413"></a>Bit 14</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p265872613415"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p265872613415"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p265872613415"></a>Whether to audit the CREATE, DROP, and ALTER operations on ROW LEVEL SECURITY objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul9841936124412"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul9841936124412"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul9841936124412"><li><strong id="b105959447016"><a name="b105959447016"></a><a name="b105959447016"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are not audited.</li><li><strong id="b7890344305"><a name="b7890344305"></a><a name="b7890344305"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on these objects are audited.</li></ul>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row4808247102118"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"></a>Bit 14</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row4808247102118"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p1680944712110"></a>Bit 15</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p128093473217"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p128093473217"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p128093473217"></a>Whether to audit the CREATE, DROP, and ALTER operations on types.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul15303111582319"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul15303111582319"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul15303111582319"><li><strong id="b92871948008"><a name="b92871948008"></a><a name="b92871948008"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on types are not audited.</li><li><strong id="b1138034913019"><a name="b1138034913019"></a><a name="b1138034913019"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on types are audited.</li></ul>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row191581657111714"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"></a>Bit 15</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row191581657111714"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p777252101717"></a>Bit 16</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p17771252171710"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p17771252171710"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p17771252171710"></a>Whether to audit the CREATE, DROP, and ALTER operations on text search objects (CONFIGURATION and DICTIONARY).</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7781052121710"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul7781052121710"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul7781052121710"><li><strong id="b16336852102"><a name="b16336852102"></a><a name="b16336852102"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on text search objects are not audited.</li><li><strong id="b3324153405"><a name="b3324153405"></a><a name="b3324153405"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on text search objects are audited.</li></ul>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row9578135522119"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"></a>Bit 16</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row9578135522119"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p457918556215"></a>Bit 17</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p145791855132118"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p145791855132118"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p145791855132118"></a>Whether to audit the CREATE, DROP, and ALTER operations on directories.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul87171831122315"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul87171831122315"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul87171831122315"><li><strong id="b8829125518018"><a name="b8829125518018"></a><a name="b8829125518018"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on directories are not audited.</li><li><strong id="b108811756904"><a name="b108811756904"></a><a name="b108811756904"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on directories are audited.</li></ul>
 </td>
 </tr>
-<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row11776411216"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a>Bit 17</p>
+<tr id="en-us_topic_0283136929_en-us_topic_0237124747_row11776411216"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p18781048124"></a>Bit 18</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_p678114121210"></a>Whether to audit the CREATE, DROP, and ALTER operations on synonyms.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"></a><a name="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"></a><ul id="en-us_topic_0283136929_en-us_topic_0237124747_ul2222131763217"><li><strong id="b12462410111"><a name="b12462410111"></a><a name="b12462410111"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations on types are not audited.</li><li><strong id="b8876182520118"><a name="b8876182520118"></a><a name="b8876182520118"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations on types are audited.</li></ul>
 </td>
 </tr>
-<tr id="row179969551391"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p19552112941013"><a name="p19552112941013"></a><a name="p19552112941013"></a>Bit 18</p>
+<tr id="row179969551391"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p19552112941013"><a name="p19552112941013"></a><a name="p19552112941013"></a>Bit 19</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p17304122601018"><a name="p17304122601018"></a><a name="p17304122601018"></a>Whether to audit the CREATE, DROP, and ALTER operations on sequences.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul159761016111016"></a><a name="ul159761016111016"></a><ul id="ul159761016111016"><li><strong id="b329985610566"><a name="b329985610566"></a><a name="b329985610566"></a>0</strong> indicates that the operations are not audited.</li><li><strong id="b1280375795612"><a name="b1280375795612"></a><a name="b1280375795612"></a>1</strong> indicates that the operations are audited.</li></ul>
 </td>
 </tr>
-<tr id="row12528183642212"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p75280363223"><a name="p75280363223"></a><a name="p75280363223"></a>Bit 19</p>
+<tr id="row12528183642212"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p75280363223"><a name="p75280363223"></a><a name="p75280363223"></a>Bit 20</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p8528153672212"><a name="p8528153672212"></a><a name="p8528153672212"></a>Whether to audit the CREATE and DROP operations on CMK and CEK objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul1462054142213"></a><a name="ul1462054142213"></a><ul id="ul1462054142213"><li><strong id="b01461522172711"><a name="b01461522172711"></a><a name="b01461522172711"></a>0</strong> indicates that the CREATE and DROP operations on CMK and CEK objects are not audited.</li><li><strong id="b7667723172711"><a name="b7667723172711"></a><a name="b7667723172711"></a>1</strong> indicates that the CREATE and DROP operations on CMK and CEK objects are audited.</li></ul>
 </td>
 </tr>
-<tr id="row262715591644"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p61782117513"><a name="p61782117513"></a><a name="p61782117513"></a>Bit 20</p>
+<tr id="row262715591644"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p61782117513"><a name="p61782117513"></a><a name="p61782117513"></a>Bit 21</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p117813111656"><a name="p117813111656"></a><a name="p117813111656"></a>Whether to audit the CREATE, DROP, and ALTER operations on PACKAGE objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul121781111750"></a><a name="ul121781111750"></a><ul id="ul121781111750"><li><strong id="b1962855400104045"><a name="b1962855400104045"></a><a name="b1962855400104045"></a>0</strong> indicates that the operations are not audited.</li><li><strong id="b577221023104045"><a name="b577221023104045"></a><a name="b577221023104045"></a>1</strong> indicates that the operations are audited.</li></ul>
 </td>
 </tr>
-<tr id="row1775015199291"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p1175013199294"><a name="p1175013199294"></a><a name="p1175013199294"></a>Bit 21</p>
+<tr id="row1775015199291"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p1175013199294"><a name="p1175013199294"></a><a name="p1175013199294"></a>Bit 22</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p1675091992919"><a name="p1675091992919"></a><a name="p1675091992919"></a>Whether to audit the CREATE and DROP operations on MODEL objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul101724263318"></a><a name="ul101724263318"></a><ul id="ul101724263318"><li><strong id="b1433516221104045"><a name="b1433516221104045"></a><a name="b1433516221104045"></a>0</strong> indicates that the CREATE and ALTER operations are not audited.</li><li><strong id="b1309818747104045"><a name="b1309818747104045"></a><a name="b1309818747104045"></a>1</strong> indicates that the CREATE and DROP operations are audited.</li></ul>
 </td>
 </tr>
-<tr id="row943982312360"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p3333152233616"><a name="p3333152233616"></a><a name="p3333152233616"></a>Bit 22</p>
+<tr id="row943982312360"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p3333152233616"><a name="p3333152233616"></a><a name="p3333152233616"></a>Bit 23</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p1333312223366"><a name="p1333312223366"></a><a name="p1333312223366"></a>Whether to audit the CREATE, DROP, and ALTER operations on PUBLICATION and SUBSCRIPTION objects.</p>
 </td>
@@ -191,18 +198,25 @@ The value of this parameter is calculated by 26 binary bits. The 26 binary bits 
 </li></ul>
 </td>
 </tr>
-<tr id="row195313321903"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p14541432203"><a name="p14541432203"></a><a name="p14541432203"></a>Bit 23</p>
+<tr id="row195313321903"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p14541432203"><a name="p14541432203"></a><a name="p14541432203"></a>Bit 24</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p25423210015"><a name="p25423210015"></a><a name="p25423210015"></a>Whether to audit the ALTER and DROP operations on the <strong id="b19316134613420"><a name="b19316134613420"></a><a name="b19316134613420"></a>gs_global_config</strong> objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul2561910115"></a><a name="ul2561910115"></a><ul id="ul2561910115"><li><strong id="b183011956942"><a name="b183011956942"></a><a name="b183011956942"></a>0</strong> indicates that the ALTER and DROP operations are not audited.</li><li><strong id="b11641759740"><a name="b11641759740"></a><a name="b11641759740"></a>1</strong> indicates that the ALTER and DROP operations are audited.</li></ul>
 </td>
 </tr>
-<tr id="row14951941133415"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p121439412341"><a name="p121439412341"></a><a name="p121439412341"></a>Bit 24</p>
+<tr id="row14951941133415"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p121439412341"><a name="p121439412341"></a><a name="p121439412341"></a>Bit 25</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p111431841153412"><a name="p111431841153412"></a><a name="p111431841153412"></a>Whether to audit the CREATE, DROP, and ALTER operations on FOREIGN DATA WRAPPER objects.</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul181438412349"></a><a name="ul181438412349"></a><ul id="ul181438412349"><li><strong id="b1718486089104045"><a name="b1718486089104045"></a><a name="b1718486089104045"></a>0</strong> indicates that the CREATE, DROP, and ALTER operations are not audited.</li><li><strong id="b195156995104045"><a name="b195156995104045"></a><a name="b195156995104045"></a>1</strong> indicates that the CREATE, DROP, and ALTER operations are audited.</li></ul>
+</td>
+</tr>
+<tr id="row51901021203316"><td class="cellrowborder" valign="top" width="18.23%" headers="mcps1.2.4.1.1 "><p id="p388533772815"><a name="p388533772815"></a><a name="p388533772815"></a>Bit 26</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.54%" headers="mcps1.2.4.1.2 "><p id="p13885103718288"><a name="p13885103718288"></a><a name="p13885103718288"></a>Whether to audit the CREATE, ENABLE, DISABLE, and DROP operations on SQL patches.</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.23%" headers="mcps1.2.4.1.3 "><a name="ul41316326294"></a><a name="ul41316326294"></a><ul id="ul41316326294"><li><strong>0</strong> indicates that the CREATE, ENABLE, DISABLE, and DROP operations on SQL patches are not audited.</li><li><strong>1</strong> indicates that the CREATE, ENABLE, DISABLE, and DROP operations on SQL patches are audited.</li></ul>
 </td>
 </tr>
 </tbody>

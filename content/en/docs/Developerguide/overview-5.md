@@ -24,7 +24,7 @@ openGauss provides  **gs\_dump**  and  **gs\_dumpall**  to export required datab
 </td>
 <td class="cellrowborder" rowspan="3" valign="top" width="16.1%" headers="mcps1.2.5.1.3 "><a name="en-us_topic_0237121167_ul6884122713717"></a><a name="en-us_topic_0237121167_ul6884122713717"></a><ul id="en-us_topic_0237121167_ul6884122713717"><li>Plaintext</li><li>Custom</li><li>Directory</li><li>.tar</li></ul>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="29.32%" headers="mcps1.2.5.1.4 "><a name="en-us_topic_0237121167_ul3303122921718"></a><a name="en-us_topic_0237121167_ul3303122921718"></a><ul id="en-us_topic_0237121167_ul3303122921718"><li>For details about how to import data files in text format, see <a href="using-a-gsql-meta-command-to-import-data.md">Using a gsql Meta-Command to Import Data</a>.</li><li>For details about how to import data files in .tar, directory, or custom format, see <a href="using-gs_restore-to-import-data.md">Using gs_restore to Import Data</a>.</li></ul>
+<td class="cellrowborder" rowspan="3" valign="top" width="29.32%" headers="mcps1.2.5.1.4 "><a name="en-us_topic_0237121167_ul3303122921718"></a><a name="en-us_topic_0237121167_ul3303122921718"></a><ul id="en-us_topic_0237121167_ul3303122921718"><li>For details about how to import data files in text format using gsql, see "Client Tools > gsql" in Tool Reference.</li><li>For details about how to import data files in .tar, directory, or custom format, see <a href="using-gs_restore-to-import-data.md">Using gs_restore to Import Data</a>.</li></ul>
 </td>
 </tr>
 <tr id="en-us_topic_0237121167_row14846172111503"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0237121167_p1591231313911"><a name="en-us_topic_0237121167_p1591231313911"></a><a name="en-us_topic_0237121167_p1591231313911"></a><a href="exporting-a-schema.md">Schema-level export</a></p>
@@ -54,9 +54,9 @@ openGauss provides  **gs\_dump**  and  **gs\_dumpall**  to export required datab
 </tbody>
 </table>
 
-**gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you can set  **--role**  in the  **gs\_dump**  or  **gs\_dumpall**  command to the role that has the permissions. Then,  **gs\_dump**  or  **gs\_dumpall**  uses the specified role to export data. See  [Table 1](#en-us_topic_0237121167_table08278213504)  for application scenarios and  [Data Export By a User Without Required Permissions](data-export-by-a-user-without-required-permissions.md)  for operation details.
+**gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you need to assign the permission to a role who does not have the permission, and then set the **--role** parameter in the export command to specify the role with the permission.  Then,  **gs\_dump**  or  **gs\_dumpall**  uses the specified role to export data. See  [Data Export By a User Without Required Permissions](data-export-by-a-user-without-required-permissions.md)  for application scenarios and  [Table 1](#en-us_topic_0283136743_en-us_topic_0237121167_table08278213504)  for operation details.
 
-**gs\_dump**  and  **gs\_dumpall**  encrypt the exported data files. These files are decrypted before being imported. In this way, data disclosure is prevented, protecting database security.
+**gs\_dump**  and  **gs\_dumpall**  encrypt the exported data files. These files are decrypted before being imported. In this way, data disclosure is prevented, protecting database security. Note that if the exported database contains stored procedures, use the other three modes to export the database and use gs\_restore to restore the database because gsql does not support decryption and import of stored procedures and functions.
 
 When  **gs\_dump**  or  **gs\_dumpall**  is used to export data from a cluster, other users can still access \(read and write\) databases in openGauss.
 
@@ -64,7 +64,7 @@ When  **gs\_dump**  or  **gs\_dumpall**  is used to export data from a cluster, 
 
 ## Precautions<a name="en-us_topic_0237121167_section969916571299"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
+-   Do not modify the files and contents exported using the **-F c/d/t** formats. Otherwise, the restoration may fail. For files exported using the **-F p** format, you can edit the exported files with caution if necessary.
 -   If there are more than 500,000 objects \(data tables, views, and indexes\) in a database, you are advised to use  **gs\_guc**  to set the following parameters for database nodes. This operation is not required if the parameter values are greater than the recommended ones.
 
     ```

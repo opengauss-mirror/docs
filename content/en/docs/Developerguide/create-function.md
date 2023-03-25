@@ -11,6 +11,9 @@
 -   **current\_schema**  and  **search\_path**  specified by  **SET**  during function creation are invalid.  **search\_path**  and  **current\_schema**  before and after function execution should be the same.
 -   If a function has output parameters, the  **SELECT**  statement uses the default values of the output parameters when calling the function. When the  **CALL**  statement calls the function, it requires that the output parameters must be specified. When the  **CALL**  statement calls an overloaded  **PACKAGE**  function, it can use the default values of the output parameters. For details, see examples in  [CALL](call.md).
 -   Only the functions compatible with PostgreSQL or those with the  **PACKAGE**  attribute can be overloaded. After  **REPLACE**  is specified, a new function is created instead of replacing a function if the number of parameters, parameter type, or return value is different.
+-   You cannot create overloaded functions with different formal parameter names (the function name and parameter list type are the same).
+-   You cannot create a function that has the same name and parameter list as a stored procedure.
+-   If an undeclared variable is used in a function, an error is reported when the function is invoked.
 -   You can use the  **SELECT**  statement to specify different parameters using identical functions, but cannot use the  **CALL**  statement to call identical functions without the  **PACKAGE**  attribute.
 -   When you create a function, you cannot insert other agg functions out of the avg function or other functions.
 -   By default, the permissions to execute new functions are granted to  **PUBLIC**. For details, see  [GRANT](grant.md). You can revoke the default execution permissions from  **PUBLIC**  and grant them to other users as needed. To avoid the time window during which new functions can be accessed by all users, create functions in transactions and set function execution permissions.
@@ -147,7 +150,7 @@
 
 -   **LANGUAGE lang\_name**
 
-    Specifies the name of the language that is used to implement the function. It can be  **SQL**,  **internal**, or the name of a customized process language. To ensure downward compatibility, the name can use single quotation marks. Contents in single quotation marks must be capitalized.
+    Specifies the name of the language that is used to implement the function. It can be  **SQL**,  **internal**, or the name of a customized process language. To ensure downward compatibility, the name can use single quotation marks. Contents in single quotation marks must be lowercase.
 
 -   **WINDOW**
 

@@ -66,7 +66,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**
-    >The specified partition applies only to ordinary tables.
+    >The specified partition applies only to partitioned tables.
 
     The rollup\_clause clause is as follows:
 

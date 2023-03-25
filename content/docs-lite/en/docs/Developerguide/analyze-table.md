@@ -28,10 +28,11 @@ If  **autovacuum**  is set to  **on**, the system will start the autovacuum thre
 -   For an empty table, when the number of rows inserted to it is greater than 50,  **ANALYZE**  is automatically triggered.
 -   For a table containing data, the threshold is 50 + 10% x  **reltuples**, where  **reltuples**  indicates the total number of rows in the table.
 
-The autovacuum function also depends on the following two GUC parameters in addition to  **autovacuum**:
+The autovacuum function also depends on the following GUC parameters for autoanalyze:
 
 -   [track\_counts](query-and-index-statistics-collector.md#en-us_topic_0283136895_en-us_topic_0237124727_en-us_topic_0059779313_s3f4fb0b1004041f69e1454c701952411): This parameter must be set to  **on**  to enable statistics collection about the database.
 -   [autovacuum\_max\_workers](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673): This parameter must be set to a value greater than  **0**  to specify the maximum number of concurrent autovacuum threads.
+-   [autovacuum\_mode](automatic-vacuuming.md#en-us_topic_0237124730en-us_topic_0283137694_en-us_topic_0237124730_section658130152017): This parameter must be configured to allow ANALYZE.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   The autoanalyze function supports the default sampling mode but not percentage sampling.

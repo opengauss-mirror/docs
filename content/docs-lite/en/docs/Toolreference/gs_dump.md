@@ -252,7 +252,7 @@ Dump parameters:
     >-   The number of -t parameters must be less than or equal to 100.
     >-   If the number of -t parameters is greater than 100, you are advised to use the --include-table-file parameter to replace some -t parameters.
     >-   If -t is specified, gs\_dump does not dump any other database objects that the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    >-   -t tablename only dumps visible tables in the default search path. -t '\*.tablename' dumps tablename tables in all the schemas of the dumped database. -t schema.table dumps tables in a specific schema.
+    >-   -t tablename only dumps visible tables in the default search path. -t \*.tablename dumps tablename tables in all the schemas of the dumped database. -t schema.table dumps tables in a specific schema.
     >-   -t tablename does not export trigger information from a table.
 
     For example:
@@ -367,7 +367,7 @@ Dump parameters:
 
 -   --non-lock-table
 
-    Reserved for function extension. The option is not recommended.
+    This parameter is used only for inter-software API calling.
 
 -   --quote-all-identifiers
 

@@ -1,3 +1,4 @@
+
 # gs\_restore<a name="EN-US_TOPIC_0000001265864781"></a>
 
 ## Context<a name="en-us_topic_0059777561_section182531928123515"></a>
@@ -185,7 +186,7 @@ Import parameters:
     ```
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
-    >-   **-t**  does not support the  **schema\_name.table\_name**  input format.
+    >-   **-t**  does not support the  **schema\_name.table\_name**  input format. If this format is specified, no error is reported but the setting does not take effect.
     >-   When  **-t**  is specified,  **gs\_restore**  does not import any other database objects that are attached to the selected table. Therefore, there is no guarantee that the results of a specific-table dump can be automatically imported to an empty database.
     >-   **-t tablename**  does not import trigger information from a table.
 
@@ -258,15 +259,21 @@ Connection parameters:
 
     This parameter is used only for defining names of the hosts outside openGauss. The names of the hosts inside openGauss must be  **127.0.0.1**.
 
+Environment variable: *PGHOST*
+
 -   -p, --port=PORT
 
     Specifies the TCP port or the local Unix-domain socket file name extension on which the server is listening to connections. The default value is the  **PGPORT**  environment variable.
 
     If the thread pool is enabled, you are advised to use  **pooler port**, that is, the listening port number plus 1.
 
+Environment variable: *PGPORT*
+
 -   -U, --username=NAME
 
     Specifies the username for connection.
+
+Environment variable: *PGUESR*
 
 -   -w, --no-password
 
@@ -321,67 +328,60 @@ Example 1: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_b
 
 ```
 gs_restore backup/MPPDB_backup.dmp -p 8000 -d postgres
-Password:
-gs_restore: restore operation successful
-gs_restore: total time: 13053  ms
+restore operation successful
+total time: 13053  ms
 ```
 
 Example 2: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup.tar**  file \(.tar format\) to the  **postgres**  database.
 
 ```
 gs_restore backup/MPPDB_backup.tar -p 8000 -d postgres 
-Password:
-gs_restore[2017-07-21 19:16:26]: restore operation successful
-gs_restore[2017-07-21 19:16:26]: total time: 21203  ms
+restore operation successful
+total time: 21203  ms
 ```
 
 Example 3: Execute the  **gs\_restore**  tool to import the exported  **MPPDB\_backup**  file \(directory format\) to the  **postgres**  database.
 
 ```
 gs_restore backup/MPPDB_backup -p 8000 -d postgres
-Password:
-gs_restore[2017-07-21 19:16:26]: restore operation successful
-gs_restore[2017-07-21 19:16:26]: total time: 21003  ms
+restore operation successful
+total time: 21003  ms
 ```
 
 Example 4: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import all the object definitions and data in the  **PUBLIC**  schema. Existing objects are deleted from the target database before the import. If an existing object references to an object in another schema, you need to manually delete the referenced object first.
 
 ```
 gs_restore backup/MPPDB_backup.dmp -p 8000 -d postgres -e -c -n PUBLIC
-Password:
-gs_restore: [archiver (db)] Error while PROCESSING TOC:
-gs_restore: [archiver (db)] Error from TOC entry 313; 1259 337399 TABLE table1 gaussdba
-gs_restore: [archiver (db)] could not execute query: ERROR:  cannot drop table table1 because other objects depend on it
+Error while PROCESSING TOC:
+Error from TOC entry 313; 1259 337399 TABLE table1 gaussdba
+could not execute query: ERROR:  cannot drop table table1 because other objects depend on it
 DETAIL:  view t1.v1 depends on table table1
 HINT:  Use DROP ... CASCADE to drop the dependent objects too.
-    Command was: DROP TABLE public.table1;
+    Command was: DROP TABLE IF EXISTS public.table1;
 ```
 
 Manually delete the referenced object and create it again after the import is complete.
 
 ```
 gs_restore backup/MPPDB_backup.dmp -p 8000 -d postgres -e -c -n PUBLIC
-Password:
-gs_restore[2017-07-21 19:16:26]: restore operation successful
-gs_restore[2017-07-21 19:16:26]: total time: 2203  ms
+restore operation successful
+total time: 2203  ms
 ```
 
 Example 5: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the definition of  **table1**  in the  **PUBLIC**  schema.
 
 ```
 gs_restore backup/MPPDB_backup.dmp -p 8000 -d postgres -e -c -s -n PUBLIC -t table1
-Password:
-gs_restore[2017-07-21 19:16:26]: restore operation successful
-gs_restore[2017-07-21 19:16:26]: total time: 21000  ms
+restore operation successful
+total time: 21000  ms
 ```
 
 Example 6: Execute the  **gs\_restore**  tool and run the following commands to import the  **MPPDB\_backup.dmp**  file \(in custom format\). Specifically, import only the data of  **table1**  in the  **PUBLIC**  schema.
 
 ```
 gs_restore backup/MPPDB_backup.dmp -p 8000 -d postgres -e -a -n PUBLIC -t table1
-Password:
-gs_restore[2017-07-21 19:16:26]: restore operation successful
-gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
+restore operation successful
+total time: 20203  ms
 ```
 
 ## Helpful Links<a name="en-us_topic_0059777561_sd2827da1c60248c0b0bfffc406b9f668"></a>

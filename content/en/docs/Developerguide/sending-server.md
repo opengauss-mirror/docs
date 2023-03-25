@@ -127,6 +127,46 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **false**
 
+## repl\_auth\_mode<a name="section69221497161"></a>
+
+**Parameter description**: Specifies the validation mode for primary/standby replication and standby node rebuilding.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
+>-   If UUID validation is enabled on the primary node and a non-null repl_uuid validation code is configured, UUID validation must also be enabled on the standby node and the same repl_uuid validation code must be configured on the standby node. Otherwise, requests for log replication between the primary and standby nodes and standby node rebuilding will be rejected by the primary node.
+>-   The modification does not affect the established primary/standby connection and takes effect for subsequent primary/standby replication requests and primary/standby rebuilding requests.
+>-   It supports the standby node rebuild validation under the Quorum and DCF protocols and the primary/standby replication validation under the Quorum protocol. It does not support primary/standby replication validation under the DCF protocol.
+>-   The UUID validation function is used to prevent data crosstalk and pollution caused by incorrect connection between the primary and standby nodes. It is not used for security purposes.
+>-   This parameter cannot be automatically synchronized between the primary and standby nodes.
+
+**Value range**: Enumerated type
+
+-   **off**: indicates that UUID validation is disabled.
+-   **default**: indicates that UUID validation is disabled.
+-   **uuid**: indicates that UUID validation is enabled.
+
+**Default value**: default
+
+## repl\_uuid<a name="section528554210288"></a>
+
+**Parameter description**: Specifies the UUID used for primary/standby UUID validation.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+>![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>
+>-   If UUID validation is enabled on the primary node and a non-null repl_uuid validation code is configured, UUID validation must also be enabled on the standby node and the same repl_uuid validation code must be configured on the standby node. Otherwise, requests for log replication between the primary and standby nodes and standby node rebuilding will be rejected by the primary node.
+>-   The modification does not affect the established primary/standby connection and takes effect for subsequent primary/standby replication requests and primary/standby rebuilding requests.
+>-   It supports the standby node rebuild validation under the Quorum and DCF protocols and the primary/standby replication validation under the Quorum protocol. It does not support primary/standby replication validation under the DCF protocol.
+>-   The UUID validation function is used to prevent data crosstalk and pollution caused by incorrect connection between the primary and standby nodes. It is not used for security purposes.
+>-   This parameter cannot be automatically synchronized between the primary and standby nodes.
+
+**Value range**: a string of 0 to 63 case-insensitive letters and digits. It is converted to lowercase letters for storage. An empty string indicates that UUID validation is disabled.
+
+**Default value**: Empty string
+
 ## replconninfo1<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_se4d237ddf6e7410182aa0936da9d54ed"></a>
 
 **Parameter description**: Specifies the information about the first node to be listened on and authenticated by the current server.

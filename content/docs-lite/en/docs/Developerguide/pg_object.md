@@ -72,4 +72,4 @@
 >-   The time recorded by  **ctime**  and  **mtime**  is the start time of the transaction to which the current operation belongs.
 >-   The time of object modification due to capacity expansion is also recorded.
 >-   **createcsn**  and  **changecsn**  record the transaction commit sequence number of the transaction to which the current operation belongs.
-
+>-   When **enable_gtt_concurrent_truncate** is set to **on**, the **mtime** field is not updated when the global temporary table is truncated.

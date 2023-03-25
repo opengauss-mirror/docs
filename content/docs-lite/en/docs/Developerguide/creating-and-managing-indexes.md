@@ -17,7 +17,7 @@ Indexes are created based on columns in database tables. Therefore, you must cor
     >-   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.
     >-   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.
     >-   Partitioned table indexes are classified into local indexes and global indexes. A local index corresponds to a specific partition, and a global index corresponds to the entire partitioned table.
-
+-   When logical replication is enabled, if you need to create a primary key index that contains system columns, you must set the **REPLICA IDENTITY** attribute of the table to **FULL** or use USING INDEX to specify a unique, non-local, non-deferrable index that does not contain system columns and contains only columns marked **NOT NULL**.
 
 ## Procedure<a name="en-us_topic_0283136615_en-us_topic_0237120308_en-us_topic_0059777978_scba43baf1cd54d06a22160699ec2c658"></a>
 

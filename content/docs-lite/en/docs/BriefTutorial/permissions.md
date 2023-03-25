@@ -10,7 +10,7 @@ openGauss supports the following permissions, which are associated with differen
 
 -   **SELECT**: allows  **SELECT**  on a specified table, view, or sequence. The  **SELECT**  permission on the corresponding column is also required for  **UPDATE**  or  **DELETE**.
 -   **INSERT**: allows  **INSERT**  on a specified table.
--   **UPDATE**: allows  **UPDATE**  on any column of a specified table. Generally,  **UPDATE**  also requires the  **SELECT**  permission to query which rows need to be updated.  **SELECT ... FOR UPDATE**  and  **SELECT ... FOR SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
+-   **UPDATE**: allows  **UPDATE**  on any column of a specified table. Generally,  **UPDATE**  also requires the  **SELECT**  permission to query which rows need to be updated.  **SELECT… FOR UPDATE**, **SELECT… FOR NO KEY UPDATE**,  **SELECT… FOR SHARE**, and **SELECT… FOR KEY SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
 -   **DELETE**: allows  **DELETE**  on a row of a specified table. Generally,  **DELETE**  also requires the  **SELECT**  permission to query which rows need to be deleted.
 -   **TRUNCATE**: allows  **TRUNCATE**  on a specified table.
 -   **REFERENCES**: allows creation of a foreign key constraint. This permission is required on both referencing and referenced tables.

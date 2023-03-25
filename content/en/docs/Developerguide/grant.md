@@ -286,7 +286,7 @@ The possible permissions are:
 
 -   **UPDATE**
 
-    Allows  **UPDATE**  of any column of a table. Generally,  **UPDATE**  also requires the SELECT permission to query which rows need to be updated.  **SELECT ... FOR UPDATE**  and  **SELECT ... FOR SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
+    Allows  **UPDATE**  of any column of a table. Generally,  **UPDATE**  also requires the  **SELECT**  permission to query which rows need to be updated.  **SELECT… FOR UPDATE**, **SELECT… FOR NO KEY UPDATE**,  **SELECT… FOR SHARE**, and **SELECT… FOR KEY SHARE**  also require this permission on at least one column, in addition to the  **SELECT**  permission.
 
 -   **DELETE**
 
@@ -607,7 +607,7 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 </tbody>
 </table>
 
->![](/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >If a user is granted with any ANY permission, the user has the  **USAGE**  permission on the public and user schemas but does not have the  **USAGE**  permission on the system schemas except  **public**  listed in  [Table 1](en-us_topic_0000001190922647.md#table167371825175015).
 
 ## Examples<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>

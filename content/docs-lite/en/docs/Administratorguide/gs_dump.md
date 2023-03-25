@@ -57,7 +57,7 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 </td>
 <td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="p205841643165011"><a name="p205841643165011"></a><a name="p205841643165011"></a>You are advised to use custom-format archive files for medium or large databases.</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>You can use <a href="gs_restore.md"><strong id="b19638162910371"><a name="b19638162910371"></a><a name="b19638162910371"></a>gs_restore</strong></a> to import database objects from a custom-format archive.</p>
+<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>You can use <a href="gs_restore.md"><strong id="b19638162910371"><a name="b19638162910371"></a><a name="b19638162910371"></a>gs_restore</strong></a> to import database objects from a custom-format archive, directory archive, or TAR archive export file.</p>
 </td>
 </tr>
 <tr id="row1377584264920"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"><a name="en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a><a name="en-us_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a>Directory</p>
@@ -86,7 +86,7 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 
 ## Precautions<a name="en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
+-   Do not modify the files and contents exported using the **-F c/d/t** formats. Otherwise, restoration may fail. For files exported using the **-F p** format, you can edit the exported files with caution if necessary.
 -   To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If a share lock has been set for the table in other transactions,  **gs\_dump**  locks the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
 -   Stored procedures and functions cannot be exported in encrypted mode.
 
@@ -253,8 +253,9 @@ Dump parameters:
     >-   The number of  **-t**  options must be less than or equal to 100.
     >-   If the number of  **-t**  options is greater than 100, you are advised to use the  **--include-table-file**  option to replace some  **-t**  options.
     >-   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects that the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
-    >-   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
+    >-   **-t tablename**  only dumps visible tables in the default search path.  **-t \*.tablename**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.
     >-   **-t tablename**  does not export trigger information from a table.
+    >-   If the table name contains uppercase letters, you need to add \" to the table name when using the **-t** parameter to specify the export. To export the **"abC"** table, specify **-t \"abC\"**. To export the **schema."abC"** table, specify **-t schema.\"abC\"**.
 
     For example:
 
@@ -368,7 +369,7 @@ Dump parameters:
 
 -   --non-lock-table
 
-    Specifies a reserved port for function expansion. This parameter is not recommended.
+    This parameter is used only for inter-software API calling.
 
 -   --quote-all-identifiers
 

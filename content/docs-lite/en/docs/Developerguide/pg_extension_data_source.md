@@ -37,7 +37,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.09%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283137407_en-us_topic_0237122289_p11368195796"><a name="en-us_topic_0283137407_en-us_topic_0237122289_p11368195796"></a><a name="en-us_topic_0283137407_en-us_topic_0237122289_p11368195796"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.19%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"><a name="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"></a><a name="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"></a>PG_AUTHID.oid</p>
+<td class="cellrowborder" valign="top" width="20.19%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"><a name="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"></a><a name="en-us_topic_0283137407_en-us_topic_0237122289_p123691857912"></a><a href="pg_authid.md">PG_AUTHID</a>.oid</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.82%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137407_en-us_topic_0237122289_p153691351292"><a name="en-us_topic_0283137407_en-us_topic_0237122289_p153691351292"></a><a name="en-us_topic_0283137407_en-us_topic_0237122289_p153691351292"></a>Owner of a foreign data source</p>
 </td>

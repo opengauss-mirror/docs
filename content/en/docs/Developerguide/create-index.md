@@ -22,6 +22,7 @@ The partitioned table does not support partial index creation.
 -   Column-store tables support GIN indexes, rather than partial indexes and unique indexes. If GIN indexes are used, you can create expression indexes. However, an expression in this situation cannot contain empty splitters, empty columns, or multiple columns.
 -   Currently, only row-store table indexes, temporary table indexes, and local indexes of partitioned tables can be used as hash indexes. Multi-column indexes are not supported.
 -   A user granted with the  **CREATE ANY INDEX**  permission can create indexes in both the public and user schemas.
+-   If a user-defined function is called in the expression index, the expression index function is executed based on the permission of the function creator.
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 

@@ -96,6 +96,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p497345154017"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p497345154017"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p497345154017"></a><span id="en-us_topic_0237122262_text101735572163"><a name="en-us_topic_0237122262_text101735572163"></a><a name="en-us_topic_0237122262_text101735572163"></a>Primary database node</span> instance: not collected</p>
 <p id="en-us_topic_0283136549_en-us_topic_0237122262_p79731451154010"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p79731451154010"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p79731451154010"></a>Database node instance: logical read byte rate of the instance within the statistical interval (10 seconds), in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136549_en-us_topic_0237122262_row135252052966"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p052511521460"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p052511521460"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p052511521460"></a>logical_write</p>
@@ -104,6 +105,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p10400171410419"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p10400171410419"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p10400171410419"></a>Primary database node instance: not collected</p>
 <p id="en-us_topic_0283136549_en-us_topic_0237122262_p12401914134118"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p12401914134118"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p12401914134118"></a>Database node instance: logical write byte rate of the instance within the statistical interval (10 seconds), in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136549_en-us_topic_0237122262_row852513521069"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p195252524616"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p195252524616"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p195252524616"></a>read_counts</p>
@@ -112,6 +114,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p11861122217413"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p11861122217413"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p11861122217413"></a>Primary database node instance: not collected</p>
 <p id="en-us_topic_0283136549_en-us_topic_0237122262_p20861182210416"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p20861182210416"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p20861182210416"></a>Database node instance: total number of logical read operations of the instance within the statistical interval (10 seconds)</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136549_en-us_topic_0237122262_row8525052867"><td class="cellrowborder" valign="top" width="17.43%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p852519521066"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p852519521066"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p852519521066"></a>write_counts</p>
@@ -120,6 +123,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136549_en-us_topic_0237122262_p65004318417"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p65004318417"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p65004318417"></a>Primary database node instance: not collected</p>
 <p id="en-us_topic_0283136549_en-us_topic_0237122262_p3500931204113"><a name="en-us_topic_0283136549_en-us_topic_0237122262_p3500931204113"></a><a name="en-us_topic_0283136549_en-us_topic_0237122262_p3500931204113"></a>Database node instance: total number of logical write operations of the instance within the statistical interval (10 seconds)</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Available only in distributed mode.</p>
 </td>
 </tr>
 </tbody>

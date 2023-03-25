@@ -2,6 +2,8 @@
 
 In plan hints, you can specify a join order, join and scan operations, and the number of rows in a result to tune an execution plan, improving query performance.
 
+openGauss also provides the SQL PATCH function. You can create an SQL PATCH to make hints take effect without modifying service statements. For details, see "Maintainability > SQL PATCH" in *Feature Description*.
+
 ## Function<a name="en-us_topic_0283137554_en-us_topic_0237121532_section54351718142011"></a>
 
 The hint syntax must follow immediately after a  **SELECT**  keyword and is written in the following format:

@@ -13,7 +13,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row994912273453"><td class="cellrowborder" valign="top" width="26.090000000000003%" headers="mcps1.2.4.1.1 "><p id="p1394982704511"><a name="p1394982704511"></a><a name="p1394982704511"></a>cgoup_name</p>
+<tbody><tr id="row994912273453"><td class="cellrowborder" valign="top" width="26.090000000000003%" headers="mcps1.2.4.1.1 "><p id="p1394982704511"><a name="p1394982704511"></a><a name="p1394982704511"></a>cgroup_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.11%" headers="mcps1.2.4.1.2 "><p id="p1594912274452"><a name="p1594912274452"></a><a name="p1594912274452"></a>text</p>
 </td>
@@ -27,7 +27,7 @@
 <td class="cellrowborder" valign="top" width="50.8%" headers="mcps1.2.4.1.3 "><p id="p69501327184513"><a name="p69501327184513"></a><a name="p69501327184513"></a>Priority of the job</p>
 </td>
 </tr>
-<tr id="row1795072794515"><td class="cellrowborder" valign="top" width="26.090000000000003%" headers="mcps1.2.4.1.1 "><p id="p2095012716454"><a name="p2095012716454"></a><a name="p2095012716454"></a>usage_pecent</p>
+<tr id="row1795072794515"><td class="cellrowborder" valign="top" width="26.090000000000003%" headers="mcps1.2.4.1.1 "><p id="p2095012716454"><a name="p2095012716454"></a><a name="p2095012716454"></a>usage_percent</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.11%" headers="mcps1.2.4.1.2 "><p id="p179500279454"><a name="p179500279454"></a><a name="p179500279454"></a>integer</p>
 </td>

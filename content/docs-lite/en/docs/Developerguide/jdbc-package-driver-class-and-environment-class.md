@@ -2,17 +2,17 @@
 
 ## JDBC Package<a name="en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_en-us_topic_0189249669_en-us_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>
 
-Run  **build.sh**  in the source code directory on Linux OS to obtain the driver JAR package  **postgresql.jar**, which is stored in the source code directory. Obtain the package from the release package named  **openGauss-**_x.x.x-OS version number_**-64bit-Jdbc.tar.gz**.
+openGauss provides two types of JDBC JAR packages: **postgresql.jar** and **openGauss-jdbc-***x.x.x***.jar**. The two types of JAR packages have the same functions and are used to resolve the JDBC driver package name conflict between openGauss and PostgreSQL.
+
+Run the **build.sh** command in the source code directory on the Linux server to obtain the driver JAR packages **postgresql.jar** and **openGauss-jdbc-***x.x.x***.jar** in the output directory of the source code. You can also obtain the **openGauss-***x.x.x***-JDBC.tar.gz** package from the official website.
 
 The driver package is compatible with PostgreSQL. The class name and structure in the driver are the same as those in the PostgreSQL driver. All applications running on PostgreSQL can be smoothly migrated to the current system.
 
 ## Driver Class<a name="en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_en-us_topic_0189249669_en-us_topic_0059778950_s103697559c8d4cb68f396e18e3ae65a9"></a>
 
-Before establishing a database connection, load the  **org.postgresql.Driver**  database driver class.
-
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >
->1.  openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, when two JDBC drivers are used in the same process, class names may conflict.
+>1.  openGauss is compatible with PostgreSQL in the use of JDBC. When the JDBC drivers of PostgreSQL and openGauss with the same name are loaded to the same JVM, the org.postgresql.Driver driver class may conflict.
 >2.  Compared with the PostgreSQL driver, the openGauss JDBC driver has the following enhanced features:
 >    1.  The SHA256 encryption mode is supported for login.
 >    2.  The third-party log framework that implements the sf4j API can be connected.
