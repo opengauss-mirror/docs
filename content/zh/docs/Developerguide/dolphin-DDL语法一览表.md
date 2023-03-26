@@ -257,3 +257,22 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
     <td><a href="dolphin-ALTER-VIEW.md">ALTER VIEW</a></td>
 </tr>
 </table>
+
+## 定义触发器
+
+触发器与指定的表关联，并在特定条件下完成指定的工作，请参考[表10](#dolphin_ddl_list_t10)。
+
+**表 10**触发器定义相关SQL
+
+<table><thead align="left"><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_5c57bfdd51d8e832ae507001ca55d7d189"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a>功能</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a>相关SQL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_81276653292d08668add24976dcd18a465"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cead2ac9374149e2bed51c58f880350c22"></a>创建触发器</p>
+</td>
+<td class="cellrowborder" valign="top" width= "50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a href="dolphin-CREATE-TRIGGER.md">CREATE TRIGGER</a></p>
+</td>
+</tr>
+

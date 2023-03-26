@@ -19,6 +19,7 @@
 -   **[CREATE TABLE AS](dolphin-CREATE-TABLE-AS.md)**
 -   **[CREATE TABLE PARTITION](dolphin-CREATE-TABLE-PARTITION.md)**
 -   **[CREATE TABLESPACE](dolphin-CREATE-TABLESPACE.md)**
+-   **[CREATE TRIGGER](dolphin-CREATE-TRIGGER.md)**
 -   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
 -   **[CREATE VIEW](dolphin-CREATE-VIEW.md)**
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
