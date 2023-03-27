@@ -264,6 +264,8 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 
 **表 10**触发器定义相关SQL
 
+<a id="dolphin_ddl_list_t10"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_5c57bfdd51d8e832ae507001ca55d7d189"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_cc5d7f7963415ac6ccc11994f21dc04439"></a>功能</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_fe26ef3e3a7c4db2ce5f4d8b12b0427dbf"></a>相关SQL</p>
