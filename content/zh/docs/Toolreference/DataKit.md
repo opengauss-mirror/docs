@@ -16,17 +16,17 @@ DataKit是基于spring-brick开发的插件化的工具，前台使用vue，后�
 
 ## 环境准备
 
-X86/ARM+openEuler 20.03 或 X86+CentOS 5.7
+X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
 
 ## 操作步骤
 
-1.  创建工作目
+1.  创建工作目录：
 
     ```
     mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
     ```
     
-1.  将jar包传至/ops/server/openGauss-visualtool/下,jar包下载地址：https://www.opengauss.org/zh/download/
+1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：https://www.opengauss.org/zh/download/
 
 3. 将配置文件application-temp.yml传至/ops/server/openGauss-visualtool/config/下。配置文件内容如下：
 
@@ -79,9 +79,9 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7
 
    
 
-2.  修改application-temp.yml文件中的数据链链接ip、port、database、dbuser、dbpassword
+2.  修改application-temp.yml文件中的数据链链接ip、port、database、dbuser、dbpassword。
 
-2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）
+2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）。
 
 7. 切换到ops用户，进入/ops/server/openGauss-visualtool目录，执行启动命令：
 
@@ -98,9 +98,10 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 
 
 
-DataKit使用文档和开发文档：https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc
+1. DataKit使用文档和开发文档：https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc
 
-基础运维插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops
+2. 基础运维插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops
 
-其他插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins
+3. 其他插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins
+
 
