@@ -470,16 +470,6 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p23481352227"><a name="p23481352227"></a><a name="p23481352227"></a>非标使用退出字符（NONSTANDARD_USE_OF_ESCAPE_CHARACTER）</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237124759_row432813359234"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p3328235162313"><a name="zh-cn_topic_0237124759_p3328235162313"></a><a name="zh-cn_topic_0237124759_p3328235162313"></a>22P07</p>
-</td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p6328183512313"><a name="zh-cn_topic_0237124759_p6328183512313"></a><a name="zh-cn_topic_0237124759_p6328183512313"></a>文件读取失败（FILE_READ_FAILED）</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237124759_row101347913248"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p013411972411"><a name="zh-cn_topic_0237124759_p013411972411"></a><a name="zh-cn_topic_0237124759_p013411972411"></a>22P08</p>
-</td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p131341911247"><a name="zh-cn_topic_0237124759_p131341911247"></a><a name="zh-cn_topic_0237124759_p131341911247"></a>获取数据失败（FETCH_DATA_FAILED）</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r6e86bdbbffe946d699d94297767ed2b9"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p108556751175"></a>2200L</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p68944551175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p68944551175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p68944551175"></a>非XML文件（NOT_AN_XML_DOCUMENT）</p>
@@ -508,11 +498,6 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rb34d2a71fbe34bd184cc255f36318c2d"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p631952841175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p631952841175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p631952841175"></a>2200T</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p185443571175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p185443571175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p185443571175"></a>非法的XML处理命令（INVALID_XML_PROCESSING_INSTRUCTION）</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0237124759_row472819010596"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p772917011592"><a name="zh-cn_topic_0237124759_p772917011592"></a><a name="zh-cn_topic_0237124759_p772917011592"></a>2200X</p>
-</td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p272950175912"><a name="zh-cn_topic_0237124759_p272950175912"></a><a name="zh-cn_topic_0237124759_p272950175912"></a>关闭RELATION错误（RELATION_CLOSE_ERROR）</p>
 </td>
 </tr>
 <tr id="row16852194611229"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p10977195632212"><a name="p10977195632212"></a><a name="p10977195632212"></a>2200Z</p>
@@ -667,7 +652,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="zh-cn_topic_0237124759_row1526520213018"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p926514210304"><a name="zh-cn_topic_0237124759_p926514210304"></a><a name="zh-cn_topic_0237124759_p926514210304"></a>27001</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p72651213011"><a name="zh-cn_topic_0237124759_p72651213011"></a><a name="zh-cn_topic_0237124759_p72651213011"></a>触发的元素非法（TRIGGERED_INVALID_TUPLE）</p>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p72651213011"><a name="zh-cn_topic_0237124759_p72651213011"></a><a name="zh-cn_topic_0237124759_p72651213011"></a>触发的元素非法（INVALID_TUPLE_FOR_TRIGGER）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r89c3ab082ce64c99acf31353d154d8cf"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p561030991175"></a>类 28 - 非法授权声明</p>
@@ -1354,7 +1339,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p5198123214326"><a name="p5198123214326"></a><a name="p5198123214326"></a>RU停查询（RU_STOP_QUERY）</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r5e799265759c45658e20f0e2b04abba2"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"></a>类 58 - 系统错误（GaussDB Kernel内部的错误）</p>
+<tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r5e799265759c45658e20f0e2b04abba2"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p95619521175"></a>类 58 - 系统错误（openGauss自己内部的错误）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_r7234260946f8481bab02bed4eceb5585"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p584503131175"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p584503131175"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_zh-cn_topic_0058968727_p584503131175"></a>58000</p>
@@ -1571,12 +1556,12 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p53511166375"><a name="p53511166375"></a><a name="p53511166375"></a>不支持FDW操作（FDW_OPERATION_NOT_SUPPORTED）</p>
 </td>
 </tr>
-<tr id="row19508153773610"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p835146113720"><a name="p835146113720"></a><a name="p835146113720"></a>HV027</p>
+<tr id="row19508153773610"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p835146113720"><a name="p835146113720"></a><a name="p835146113720"></a>HV026</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p1235111663716"><a name="p1235111663716"></a><a name="p1235111663716"></a>不支持跨引擎事务（FDW_CROSS_STORAGE_ENGINE_TRANSACTION_NOT_SUPPORTED）</p>
 </td>
 </tr>
-<tr id="row16609164012365"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p1735113663720"><a name="p1735113663720"></a><a name="p1735113663720"></a>HV026</p>
+<tr id="row16609164012365"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p1735113663720"><a name="p1735113663720"></a><a name="p1735113663720"></a>HV027</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p835116163719"><a name="p835116163719"></a><a name="p835116163719"></a>不支持跨引擎查询（FDW_CROSS_STORAGE_ENGINE_QUERY_NOT_SUPPORTED）</p>
 </td>
@@ -1758,6 +1743,24 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <tr id="row6394944163015"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p19394184403016"><a name="p19394184403016"></a><a name="p19394184403016"></a>XX015</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p839444473019"><a name="p839444473019"></a><a name="p839444473019"></a>CN重试桩（CN_RETRY_STUB）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rc4c024681c014649bc1e82a9d978d249"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"></a>类 CG - CodeGen错误</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row194711444155712"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p6471134413576"><a name="zh-cn_topic_0237124759_p6471134413576"></a><a name="zh-cn_topic_0237124759_p6471134413576"></a>CG000</p>
+</td>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p847124475711"><a name="zh-cn_topic_0237124759_p847124475711"></a><a name="zh-cn_topic_0237124759_p847124475711"></a>CodeGen错误（CODEGEN_ERROR）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row194711444155712"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p6471134413576"><a name="zh-cn_topic_0237124759_p6471134413576"></a><a name="zh-cn_topic_0237124759_p6471134413576"></a>CG001</p>
+</td>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p847124475711"><a name="zh-cn_topic_0237124759_p847124475711"></a><a name="zh-cn_topic_0237124759_p847124475711"></a>加载IR函数失败（LOAD_IR_FUNCTION_FAILED）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row194711444155712"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p6471134413576"><a name="zh-cn_topic_0237124759_p6471134413576"></a><a name="zh-cn_topic_0237124759_p6471134413576"></a>CG002</p>
+</td>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p847124475711"><a name="zh-cn_topic_0237124759_p847124475711"></a><a name="zh-cn_topic_0237124759_p847124475711"></a>加载INTRINSIC函数失败（LOAD_INTRINSIC_FUNCTION_FAILED）</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_rc4c024681c014649bc1e82a9d978d249"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"></a><a name="zh-cn_topic_0237124759_zh-cn_topic_0059778351_a0c491cdb7a494497829b3446efd556b7"></a>类 YY - SQL重试错误</p>
@@ -1975,7 +1978,7 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 </tr>
 <tr id="row555191184218"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p12900912104214"><a name="p12900912104214"></a><a name="p12900912104214"></a>D0015</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p169004121423"><a name="p169004121423"></a><a name="p169004121423"></a>超时错误（PLDEBUGGER_TIMEOUT）</p>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p169004121423"><a name="p169004121423"></a><a name="p169004121423"></a>超时错误（PLDEBUGGER_WAIT_TIMEOUT）</p>
 </td>
 </tr>
 <tr id="row37001457144113"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p12900121234219"><a name="p12900121234219"></a><a name="p12900121234219"></a>D0016</p>
@@ -1994,6 +1997,19 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <tr id="zh-cn_topic_0237124759_row53691457161513"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p5370657181520"><a name="zh-cn_topic_0237124759_p5370657181520"></a><a name="zh-cn_topic_0237124759_p5370657181520"></a>LL002</p>
 </td>
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p11370175761513"><a name="zh-cn_topic_0237124759_p11370175761513"></a><a name="zh-cn_topic_0237124759_p11370175761513"></a>哈希表搜索错误（RELFILENODEMAP）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row96461242171413"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p658884919146"><a name="zh-cn_topic_0237124759_p658884919146"></a><a name="zh-cn_topic_0237124759_p658884919146"></a>类 DB - 调试信息</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row53691457161513"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p5370657181520"><a name="zh-cn_topic_0237124759_p5370657181520"></a><a name="zh-cn_topic_0237124759_p5370657181520"></a>DB001</p>
+</td>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p11370175761513"><a name="zh-cn_topic_0237124759_p11370175761513"></a><a name="zh-cn_topic_0237124759_p11370175761513"></a>调试（DEBUG）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237124759_row53691457161513"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237124759_p5370657181520"><a name="zh-cn_topic_0237124759_p5370657181520"></a><a name="zh-cn_topic_0237124759_p5370657181520"></a>DB010</p>
+</td>
+<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237124759_p11370175761513"><a name="zh-cn_topic_0237124759_p11370175761513"></a><a name="zh-cn_topic_0237124759_p11370175761513"></a>日志（LOG）</p>
 </td>
 </tr>
 <tr id="row139107187430"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="p101514579442"><a name="p101514579442"></a><a name="p101514579442"></a>类 TS - 时序类错误</p>
@@ -2017,22 +2033,91 @@ openGauss也遵循SQL标准返回错误码的SQLSTATE值，详细说明请参见
 <td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p201511157154418"><a name="p201511157154418"></a><a name="p201511157154418"></a>非法审计日志（INVALID_AUDIT_LOG）</p>
 </td>
 </tr>
-<tr id="row8476124514431"><td class="cellrowborder" colspan="2" valign="top" headers="mcps1.2.3.1.1 mcps1.2.3.1.2 "><p id="p13151257184418"><a name="p13151257184418"></a><a name="p13151257184418"></a>类 UE - 不正确的错误</p>
+</tbody>
+</table>
+
+**表 2**  CM错误码SQLSTATE值
+
+<a name="table548617911814"></a>
+
+<table><thead align="left"><tr id="row174871598183"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1352583209"><a name="p1352583209"></a><a name="p1352583209"></a>类 c0 - 连接异常（Connection Exception）</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2">&nbsp;&nbsp;</th>
+</tr>
+</thead>
+<tbody><tr id="row16487498187"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p26847299588"><a name="p26847299588"></a><a name="p26847299588"></a>c0000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5684142965813"><a name="p5684142965813"></a><a name="p5684142965813"></a>连接异常（connection_exception）</p>
 </td>
 </tr>
-<tr id="row3776194116437"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p1415105734413"><a name="p1415105734413"></a><a name="p1415105734413"></a>UE000</p>
+<tr id="row248718981813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1368412919589"><a name="p1368412919589"></a><a name="p1368412919589"></a>c0001</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p6151557114413"><a name="p6151557114413"></a><a name="p6151557114413"></a>UE通用错误（UE_COMMON_ERROR）</p>
-</td>
-</tr>
-<tr id="row1445783818436"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p415195717448"><a name="p415195717448"></a><a name="p415195717448"></a>UE001</p>
-</td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p7151155718448"><a name="p7151155718448"></a><a name="p7151155718448"></a>UE脏页（UE_DIRTY_PAGE）</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20684829185813"><a name="p20684829185813"></a><a name="p20684829185813"></a>连接不存在（connection_does_not_exist）</p>
 </td>
 </tr>
-<tr id="row3233635134312"><td class="cellrowborder" valign="top" width="20.44%" headers="mcps1.2.3.1.1 "><p id="p51515578442"><a name="p51515578442"></a><a name="p51515578442"></a>UE002</p>
+<tr id="row748719961810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p96845291586"><a name="p96845291586"></a><a name="p96845291586"></a>c0002</p>
 </td>
-<td class="cellrowborder" valign="top" width="79.56%" headers="mcps1.2.3.1.2 "><p id="p11151175794418"><a name="p11151175794418"></a><a name="p11151175794418"></a>UE清理页（UE_CLEAN_PAGE）</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10684729135810"><a name="p10684729135810"></a><a name="p10684729135810"></a>连接失败（connection_failure）</p>
+</td>
+</tr>
+<tr id="row24873914181"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17684329165811"><a name="p17684329165811"></a><a name="p17684329165811"></a>类 c1 - 环境异常（Environment Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row64875991816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1468462905810"><a name="p1468462905810"></a><a name="p1468462905810"></a>c1000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1068411296586"><a name="p1068411296586"></a><a name="p1068411296586"></a>内存不足（out_of_memory）</p>
+</td>
+</tr>
+<tr id="row1348816931816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p87419425417"><a name="p87419425417"></a><a name="p87419425417"></a>类 c2 - 文件异常（File Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row1548818911185"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p166855299589"><a name="p166855299589"></a><a name="p166855299589"></a>c2000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1168562955811"><a name="p1168562955811"></a><a name="p1168562955811"></a>打开文件失败（open_file_failure）</p>
+</td>
+</tr>
+<tr id="row134881695184"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p668582916589"><a name="p668582916589"></a><a name="p668582916589"></a>c2001</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2685122945815"><a name="p2685122945815"></a><a name="p2685122945815"></a>文件读取失败（read_file_failure）</p>
+</td>
+</tr>
+<tr id="row15488179191818"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76852291582"><a name="p76852291582"></a><a name="p76852291582"></a>c2002</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6685142915589"><a name="p6685142915589"></a><a name="p6685142915589"></a>配置文件失败（config_file_failure）</p>
+</td>
+</tr>
+<tr id="row74886912189"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p417655515915"><a name="p417655515915"></a><a name="p417655515915"></a>类 c3 - 参数异常（Parameter Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row174886971816"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9818323101020"><a name="p9818323101020"></a><a name="p9818323101020"></a>c3000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1818152381016"><a name="p1818152381016"></a><a name="p1818152381016"></a>参数失败（parameter_failure）</p>
+</td>
+</tr>
+<tr id="row748811917183"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p697020193111"><a name="p697020193111"></a><a name="p697020193111"></a>c3001</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p797031912113"><a name="p797031912113"></a><a name="p797031912113"></a>环境变量失败（environment_variable_failure）</p>
+</td>
+</tr>
+<tr id="row134887919182"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p648113615127"><a name="p648113615127"></a><a name="p648113615127"></a>类 c4 - Etcd异常（Etcd Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row748829141813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12985622111213"><a name="p12985622111213"></a><a name="p12985622111213"></a>c4000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19851822121220"><a name="p19851822121220"></a><a name="p19851822121220"></a>etcd打开失败（etcd_open_failure）</p>
+</td>
+</tr>
+<tr id="row1048889121815"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32411930101211"><a name="p32411930101211"></a><a name="p32411930101211"></a>类 c5 - 内部异常（Internal Exception）</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 ">&nbsp;&nbsp;</td>
+</tr>
+<tr id="row24896941819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p205810405138"><a name="p205810405138"></a><a name="p205810405138"></a>c5000</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2058340171318"><a name="p2058340171318"></a><a name="p2058340171318"></a>内部错误（internal_error）</p>
 </td>
 </tr>
 </tbody>
