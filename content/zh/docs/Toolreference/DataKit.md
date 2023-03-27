@@ -2,9 +2,9 @@
 
 ## 功能介绍
 
-openGauss的安装、运维场景对于初级用户或单纯想要测试openGauss数据库基本特性的使用者来说技术难度较大、过程较为复杂、学习曲线较为陡峭，尤其企业版安装对一般用户来说操作难度很大。使用可视化运维工具可以屏蔽openGauss的技术细节，让普通用户能够快速上手体验功能，让运维人员能够快速在企业环境中部署、卸载各类openGauss集群，减少了用户的学习成本和运维成本，实现了对openGauss各种常见操作的可视化，屏蔽了各种不同openGauss版本中的运维命令差异，可以让用户使用相同的方式操作数据库，不用知道命令细节也可以使用openGauss数据库的各项能力，让用户可以专注于自身的业务领域。
+openGauss的开发运维涉及到很多复杂操作，DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。
 
-因此需要开发一些有针对性的运维监控工具，为不同配置不同运维要求的客户提供运维技术支撑，这些都将是openGauss社区的宝贵资产。而社区急需一个一体化的工具通过插件的方式将这些工具进行整合，并支持方便快捷的个性化配置。
+DataKit是一个以资源（物理机，数据库）为底座的开发运维工具，将上层的开发运维工具插件化，各插件之间相互独立，方便用户按需引入。各插件围绕DataKit的资源中心进行扩展开，完成数据库的运维，监控，迁移，开发，建模等复杂的操作。
 
 ## 原理简介
 
@@ -16,17 +16,17 @@ DataKit是基于spring-brick开发的插件化的工具，前台使用vue，后�
 
 ## 环境准备
 
-X86/ARM+openEuler 20.03 或 X86+CentOS 5.7
+X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
 
 ## 操作步骤
 
-1.  创建工作目
+1.  创建工作目录：
 
     ```
     mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
     ```
     
-1.  将jar包传至/ops/server/openGauss-visualtool/下,jar包下载地址：https://www.opengauss.org/zh/download/
+1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：https://www.opengauss.org/zh/download/
 
 3. 将配置文件application-temp.yml传至/ops/server/openGauss-visualtool/config/下。配置文件内容如下：
 
@@ -79,9 +79,9 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7
 
    
 
-2.  修改application-temp.yml文件中的数据链链接ip、port、database、dbuser、dbpassword
+2.  修改application-temp.yml文件中的数据链链接ip、port、database、dbuser、dbpassword。
 
-2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）
+2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）。
 
 7. 切换到ops用户，进入/ops/server/openGauss-visualtool目录，执行启动命令：
 
@@ -96,5 +96,12 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 
 ## 注意事项
 
-暂无
+
+
+1. DataKit使用文档和开发文档：https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc
+
+2. 基础运维插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops
+
+3. 其他插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins
+
 
