@@ -181,7 +181,7 @@
 
   备注：必须是系统管理员或者运维管理人员才能执行此函数。
 
-  >![](C:/Users/Administrator/Desktop/docs-3.0.0/docs-3.0.0/content/docs-lite/zh/docs/Developerguide/public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.gif) **说明：** 
   >该接口当前仅支持USTORE数据表。
 
   **表 4**  gs\_undo\_dump\_parsepage\_mv参数说明
