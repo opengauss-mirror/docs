@@ -253,7 +253,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 </tbody>
 </table>
-![](C:/Users/liyang/Desktop/新建文件夹/docs-split_fix/docs-split_fix/content/zh/docs/Toolreference/public_sys-resources/icon-note.gif) **说明：**   
+![](public_sys-resources/icon-note.gif) **说明：**   
 
 此处列出的公共参数并不一定适用于所有命令，而是多个命令支持，为避免冗余信息，所以统一在此说明，详细的使用方法见以上使用方法，也可以使用cm_ctl --help进行查询。
 
