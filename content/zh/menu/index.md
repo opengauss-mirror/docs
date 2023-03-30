@@ -1078,7 +1078,7 @@ headless: true
     		-   [DECLARE]({{< relref "./docs/SQLReference/DECLARE.md" >}}) 
     		-   [DELETE]({{< relref "./docs/SQLReference/DELETE.md" >}}) 
     		-   [DO]({{< relref "./docs/SQLReference/DO.md" >}}) 
-		-   [DELIMITER]({{< relref "./docs/SQLReference/DELIMITER.md" >}}) 
+			-   [DELIMITER]({{< relref "./docs/SQLReference/DELIMITER.md" >}}) 
     		-   [DROP AGGREGATE]({{< relref "./docs/SQLReference/DROP-AGGREGATE.md" >}}) 
     		-   [DROP AUDIT POLICY]({{< relref "./docs/SQLReference/DROP-AUDIT-POLICY.md" >}}) 
     		-   [DROP CAST]({{< relref "./docs/SQLReference/DROP-CAST.md" >}}) 
