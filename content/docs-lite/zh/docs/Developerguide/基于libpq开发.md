@@ -4,9 +4,9 @@ libpq是openGaussC应用程序接口。libpq是一套允许客户程序向openGa
 
 -   **[libpq使用依赖的头文件](libpq使用依赖的头文件.md)**  
 
--   **[开发流程](开发流程-1.md)**  
+-   **[开发流程](开发流程_libpq.md)**  
 
--   **[示例](示例.md)**  
+-   **[示例](示例-libpq.md)**  
 
 -   **[libpq接口参考](libpq接口参考.md)**  
 

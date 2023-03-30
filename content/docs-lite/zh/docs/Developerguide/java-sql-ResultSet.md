@@ -433,18 +433,18 @@ java.sql.ResultSet是执行结果集接口。
 <td class="cellrowborder" valign="top" width="32.73327332733273%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"></a>Yes</p>
 </td>
 </tr>
-<tr id="row33701651113210"><td class="cellrowborder" valign="top" width="34.483448344834486%" headers="mcps1.2.4.1.1 "><p id="p3370105110327"><a name="p3370105110327"></a><a name="p3370105110327"></a>getNString(int columnIndex)</p>
+<tr id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_row10745073"><td class="cellrowborder" valign="top" width="34.483448344834486%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p16787348"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p16787348"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p16787348"></a>getNString(int columnIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.78327832783278%" headers="mcps1.2.4.1.2 "><p id="p1137195183218"><a name="p1137195183218"></a><a name="p1137195183218"></a>String</p>
+<td class="cellrowborder" valign="top" width="32.78327832783278%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p6437320"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p6437320"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p6437320"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.73327332733273%" headers="mcps1.2.4.1.3 "><p id="p1937111518326"><a name="p1937111518326"></a><a name="p1937111518326"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="32.73327332733273%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p25157476"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p25157476"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p25157476"></a>Yes</p>
 </td>
 </tr>
-<tr id="row673015593324"><td class="cellrowborder" valign="top" width="34.483448344834486%" headers="mcps1.2.4.1.1 "><p id="p1873045918323"><a name="p1873045918323"></a><a name="p1873045918323"></a>getNString(String columnLabel)</p>
+<tr id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_row58277829"><td class="cellrowborder" valign="top" width="34.483448344834486%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p56787308"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p56787308"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p56787308"></a>getNString(String columnLabel)</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.78327832783278%" headers="mcps1.2.4.1.2 "><p id="p7730105933219"><a name="p7730105933219"></a><a name="p7730105933219"></a>String</p>
+<td class="cellrowborder" valign="top" width="32.78327832783278%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p27847433"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p27847433"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p27847433"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.73327332733273%" headers="mcps1.2.4.1.3 "><p id="p1473025943214"><a name="p1473025943214"></a><a name="p1473025943214"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="32.73327332733273%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p23219719"></a>Yes</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_row22685569"><td class="cellrowborder" valign="top" width="34.483448344834486%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p62447280"><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p62447280"></a><a name="zh-cn_topic_0237120396_zh-cn_topic_0213179162_zh-cn_topic_0189249914_zh-cn_topic_0059779124_zh-cn_topic_0058965250_p62447280"></a>getTime(int columnIndex)</p>
@@ -954,7 +954,10 @@ java.sql.ResultSet是执行结果集接口。
 </tbody>
 </table>
 
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   一个Statement不能有多个处于“open”状态的ResultSet。
+
 >-   用于遍历结果集（ResultSet）的游标（Cursor）在被提交后不能保持“open”的状态。
 

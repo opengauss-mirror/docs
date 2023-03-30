@@ -59,3 +59,23 @@ A customer needs to insert 10 million data records in batches. To improve effici
 ```
 jdbc:postgresql://node1/database?batchMode=true
 ```
+
+## Case Conversion<a name="section588403715355"></a>
+
+In the Oracle database, metadata is stored in uppercase letters by default. In the GaussDB, metadata is stored in lowercase letters by default. Therefore, after the metadata is migrated from Oracle to GaussDB, the uppercase letters changes to lowercase letters. If the original service involves the processing of uppercase metadata, you can enable this parameter. However, you are advised to modify the service code instead of using this method to solve the problem. If you have to use this function, ensure that the metadata in the current database is in lowercase to avoid problems.
+
+```
+jdbc:postgresql://node1/database?uppercaseAttributeName=true
+```
+
+The APIs involved in DatabaseMetaData can be directly invoked based on input parameters. The methods of using the APIs involved in ResultSetMetaData are as follows:
+
+```
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery("select * from test_supper");
+ResultSetMetaData rsmd = rs.getMetaData();
+for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+    System.out.println(rsmd.getColumnLabel(i) + "   " + rsmd.getColumnName(i));
+}
+```
+

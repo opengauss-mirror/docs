@@ -23,17 +23,17 @@ conn=psycopg2.connect(dbname="test",user="postgres",password="secret",host="127.
 </thead>
 <tbody><tr id="zh-cn_topic_0237120432_zh-cn_topic_0059778852_r89c7807f135840058d4a248137b3ca08"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p23111054217"><a name="p23111054217"></a><a name="p23111054217"></a>dbname</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1393801515211"><a name="p1393801515211"></a><a name="p1393801515211"></a>数据库名称</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1393801515211"><a name="p1393801515211"></a><a name="p1393801515211"></a>数据库名称。</p>
 </td>
 </tr>
 <tr id="row9119201612171"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p41191016141710"><a name="p41191016141710"></a><a name="p41191016141710"></a>user</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1011981671716"><a name="p1011981671716"></a><a name="p1011981671716"></a>用户名</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p1011981671716"><a name="p1011981671716"></a><a name="p1011981671716"></a>用户名。</p>
 </td>
 </tr>
 <tr id="row10206172741720"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p1720682713174"><a name="p1720682713174"></a><a name="p1720682713174"></a>password</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p17206227121719"><a name="p17206227121719"></a><a name="p17206227121719"></a>密码</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="p17206227121719"><a name="p17206227121719"></a><a name="p17206227121719"></a>密码。</p>
 </td>
 </tr>
 <tr id="row9558132361711"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="p15558152311177"><a name="p15558152311177"></a><a name="p15558152311177"></a>host</p>
@@ -75,5 +75,5 @@ connection对象（连接openGauss数据库实例的对象）。
 
 ## 示例<a name="section4160944682"></a>
 
-请参见[示例：常用操作](示例-常用操作-8.md)。
+请参见[示例：常用操作](示例-常用操作_Psycopg.md)。
 

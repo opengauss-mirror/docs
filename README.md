@@ -23,19 +23,24 @@
 
 | 文件夹名称                       | 对应手册   |
 | --------------------------------| ---------- |
-| Administratorguide              | 管理员指南 |
-| Compilationguide                | 编译指导书 |
-| Description                     | 产品描述   |
-| Developerguide                  | 开发者指南 |
-| Glossary                        | 术语表     |
-| installation                    | 安装指南   |
-| Quickstart                      | 快速入门 |
+| AIFeatureGuide | AI特性指南 |
+| DatabaseAdministrationGuide | 数据库管理指南 |
+| DatabaseOMGuide | 数据库运维指南 |
+| Appendix | 附录 |
 | BriefTutorial | 简易教程 |
-| Releasenotes                    | 发行说明   |
-| Technicalwhitepaper             | 技术白皮书 |
-| Toolreference                   | 工具参考   |
-| CharacteristicDescription       | 特性描述   |
-| FAQ                             | FAQ        |
+| CompilationGuide | 编译指南 |
+| DatabaseReference | 数据库参考 |
+| DataMigrationGuide | 数据迁移指南 |
+| AboutopenGauss       | 关于openGauss |
+| DeveloperGuide    | 应用开发指南 |
+| ExtensionReference | 插件参考 |
+| GettingStarted           | 快速入门 |
+| PerformanceTuningGuide | 性能调优指南 |
+| InstallationGuide   | 安装指南   |
+| ReleaseNotes        | 发行说明   |
+| SQLReference | SQL参考 |
+| TechnicalWhitePaper | 技术白皮书 |
+| ToolandCommandReference | 工具与命令参考 |
 
 
 ### 版本分支对应关系
