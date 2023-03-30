@@ -26,7 +26,7 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
     mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
     ```
     
-1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：https://www.opengauss.org/zh/download/
+1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：[https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)
 
 3. 将配置文件application-temp.yml传至/ops/server/openGauss-visualtool/config/下。配置文件内容如下：
 
@@ -98,10 +98,9 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 
 
 
-1. DataKit使用文档和开发文档：https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc
+1. DataKit使用文档和开发文档：[https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc](https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc)
 
-2. 基础运维插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops
+2. 基础运维插件：[https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops](https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops)
 
-3. 其他插件：https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins
-
+3. 其他插件：[https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins](https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins)
 
