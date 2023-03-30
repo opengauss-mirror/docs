@@ -1,4 +1,4 @@
-# Example 2: Migrating Data from a MySQL Database to the openGauss Database<a name="EN-US_TOPIC_0289900277"></a>
+# Example: Migrating Data from a MySQL Database to the openGauss Database<a name="EN-US_TOPIC_0289900277"></a>
 
 The following example shows how to use CopyManager to migrate data from MY to openGauss.
 
