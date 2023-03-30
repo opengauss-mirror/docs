@@ -5,11 +5,11 @@ java.sql.PreparedStatement是预处理语句接口。
 **表 1**  对java.sql.PreparedStatement的支持情况
 
 <a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_table46208586"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row60929707"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"></a>方法名</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row60929707"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p40954461"></a><b>方法名</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"></a>返回值类型</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p64667854"></a><b>返回值类型</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"></a>支持JDBC 4</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p66901896"></a><b>支持JDBC 4</b></p>
 </th>
 </tr>
 </thead>
@@ -41,11 +41,11 @@ java.sql.PreparedStatement是预处理语句接口。
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p41662813"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p41662813"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p41662813"></a>Yes</p>
 </td>
 </tr>
-<tr id="row1673514431915"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p173613445191"><a name="p173613445191"></a><a name="p173613445191"></a>executeLargeUpdate()</p>
+<tr id="row1673514431915"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p173613445191"><a name="p173613445191"></a><a name="p173613445191"></a><span id="ph5619165016319"><a name="ph5619165016319"></a><a name="ph5619165016319"></a>executeLargeUpdate()</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p9736104421919"><a name="p9736104421919"></a><a name="p9736104421919"></a>long</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p9736104421919"><a name="p9736104421919"></a><a name="p9736104421919"></a><span id="ph102620317411"><a name="ph102620317411"></a><a name="ph102620317411"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p77361944171918"><a name="p77361944171918"></a><a name="p77361944171918"></a>No</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p77361944171918"><a name="p77361944171918"></a><a name="p77361944171918"></a><span id="ph1655913018410"><a name="ph1655913018410"></a><a name="ph1655913018410"></a>No</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row60645442"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p28911818"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p28911818"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p28911818"></a>getMetaData()</p>
@@ -321,11 +321,11 @@ java.sql.PreparedStatement是预处理语句接口。
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a>Yes</p>
 </td>
 </tr>
-<tr id="row545743143617"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p945144316360"><a name="p945144316360"></a><a name="p945144316360"></a>setNString(int parameterIndex, String x)</p>
+<tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row66088519"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p20844712"></a>setNString(int parameterIndex, String x)</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1145114313614"><a name="p1145114313614"></a><a name="p1145114313614"></a>void</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p55246051"></a>void</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p545243103610"><a name="p545243103610"></a><a name="p545243103610"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p54983245"></a>Yes</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_row28430838"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p9676836"></a>addBatch()</p>
@@ -341,14 +341,20 @@ java.sql.PreparedStatement是预处理语句接口。
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p52370137"><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p52370137"></a><a name="zh-cn_topic_0237120395_zh-cn_topic_0213179161_zh-cn_topic_0189250583_zh-cn_topic_0059777515_zh-cn_topic_0058965185_p52370137"></a>Yes</p>
 </td>
-</tr>
 </tbody>
 </table>
 
+
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   addBatch\(\)、execute\(\)必须在clearBatch\(\)之后才能执行。
+
 >-   调用executeBatch\(\)方法并不会清除batch。用户必须显式使用clearBatch\(\)清除 。
->-   在添加了一个batch的绑定变量后，用户若想重用这些值\(再次添加一个batch\)，无需再次使用set\*\(\)方法 。
->-   以下方法是从java.sql.Statement继承而来：close，execute，executeQuery，executeUpdate，getConnection，getResultSet，getUpdateCount，isClosed，setMaxRows,  setFetchSize。
+
+>-   在添加了一个batch的绑定变量后，用户若想重用这些值（再次添加一个batch），无需再次使用set\*\(\)方法 。
+
+>-   以下方法是从java.sql.Statement继承而来：close、execute、executeQuery、executeUpdate、getConnection、getResultSet、getUpdateCount、isClosed、setMaxRows、setFetchSize。
+
 >-   executeLargeUpdate\(\)方法必须在JDBC4.2及以上使用。
 

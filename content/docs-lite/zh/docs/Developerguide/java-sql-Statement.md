@@ -5,11 +5,11 @@ java.sql.Statement是SQL语句接口。
 **表 1**  对java.sql.Statement的支持情况
 
 <a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_table29004196"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_row609630"><th class="cellrowborder" valign="top" width="32.22%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"></a>方法名</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_row609630"><th class="cellrowborder" valign="top" width="32.22%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p1185663"></a><b>方法名</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="35.18%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"></a>返回值类型</p>
+<th class="cellrowborder" valign="top" width="35.18%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p27392696"></a><b>返回值类型</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="32.6%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"></a>支持JDBC 4</p>
+<th class="cellrowborder" valign="top" width="32.6%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_zh-cn_topic_0058965266_p25146373"></a><b>支持JDBC 4</b></p>
 </th>
 </tr>
 </thead>
@@ -307,53 +307,56 @@ java.sql.Statement是SQL语句接口。
 <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_a7733e8a283e94ce9b05f62edcb60533f"><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_a7733e8a283e94ce9b05f62edcb60533f"></a><a name="zh-cn_topic_0237120398_zh-cn_topic_0213179164_zh-cn_topic_0189250755_zh-cn_topic_0059777679_a7733e8a283e94ce9b05f62edcb60533f"></a>Yes</p>
 </td>
 </tr>
-<tr id="row37088558211"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p97081555172119"><a name="p97081555172119"></a><a name="p97081555172119"></a>executeLargeUpdate(String sql)</p>
+<tr id="row37088558211"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p97081555172119"><a name="p97081555172119"></a><a name="p97081555172119"></a><span id="ph745214141863"><a name="ph745214141863"></a><a name="ph745214141863"></a>executeLargeUpdate(String sql)</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1670810558211"><a name="p1670810558211"></a><a name="p1670810558211"></a>long</p>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1670810558211"><a name="p1670810558211"></a><a name="p1670810558211"></a><span id="ph343462117712"><a name="ph343462117712"></a><a name="ph343462117712"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p7708455172110"><a name="p7708455172110"></a><a name="p7708455172110"></a>No</p>
-</td>
-</tr>
-<tr id="row11331123122213"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p143311135221"><a name="p143311135221"></a><a name="p143311135221"></a>getLargeUpdateCount()</p>
-</td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1933110317222"><a name="p1933110317222"></a><a name="p1933110317222"></a>long</p>
-</td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p23312372219"><a name="p23312372219"></a><a name="p23312372219"></a>No</p>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p7708455172110"><a name="p7708455172110"></a><a name="p7708455172110"></a><span id="ph157531833377"><a name="ph157531833377"></a><a name="ph157531833377"></a>No</span></p>
 </td>
 </tr>
-<tr id="row16355792219"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p186358712212"><a name="p186358712212"></a><a name="p186358712212"></a>executeLargeBatch()</p>
+<tr id="row11331123122213"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p143311135221"><a name="p143311135221"></a><a name="p143311135221"></a><span id="ph180871918613"><a name="ph180871918613"></a><a name="ph180871918613"></a>getLargeUpdateCount()</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p56358710226"><a name="p56358710226"></a><a name="p56358710226"></a>long</p>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1933110317222"><a name="p1933110317222"></a><a name="p1933110317222"></a><span id="ph1597952012311"><a name="ph1597952012311"></a><a name="ph1597952012311"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p263527152214"><a name="p263527152214"></a><a name="p263527152214"></a>No</p>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p23312372219"><a name="p23312372219"></a><a name="p23312372219"></a><span id="ph10507203342316"><a name="ph10507203342316"></a><a name="ph10507203342316"></a>No</span></p>
 </td>
 </tr>
-<tr id="row1070771211226"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p19707141213224"><a name="p19707141213224"></a><a name="p19707141213224"></a>executeLargeUpdate(String sql, int autoGeneratedKeys)</p>
+<tr id="row16355792219"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p186358712212"><a name="p186358712212"></a><a name="p186358712212"></a><span id="ph46529268616"><a name="ph46529268616"></a><a name="ph46529268616"></a>executeLargeBatch()</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1707131218221"><a name="p1707131218221"></a><a name="p1707131218221"></a>long</p>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p56358710226"><a name="p56358710226"></a><a name="p56358710226"></a><span id="ph3685162162313"><a name="ph3685162162313"></a><a name="ph3685162162313"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p4707161218223"><a name="p4707161218223"></a><a name="p4707161218223"></a>No</p>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p263527152214"><a name="p263527152214"></a><a name="p263527152214"></a><span id="ph1225773415235"><a name="ph1225773415235"></a><a name="ph1225773415235"></a>No</span></p>
+</td>
+</tr>
+<tr id="row1070771211226"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p19707141213224"><a name="p19707141213224"></a><a name="p19707141213224"></a><span id="ph108181136569"><a name="ph108181136569"></a><a name="ph108181136569"></a>executeLargeUpdate(String sql, int autoGeneratedKeys)</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p1707131218221"><a name="p1707131218221"></a><a name="p1707131218221"></a><span id="ph174365221231"><a name="ph174365221231"></a><a name="ph174365221231"></a>long</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p4707161218223"><a name="p4707161218223"></a><a name="p4707161218223"></a><span id="ph16750355238"><a name="ph16750355238"></a><a name="ph16750355238"></a>No</span></p>
 </td>
 </tr>
 <tr id="row6971116102213"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p0971916122219"><a name="p0971916122219"></a><a name="p0971916122219"></a>executeLargeUpdate(String sql, int[] columnIndexes)</p>
 </td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p19971216182212"><a name="p19971216182212"></a><a name="p19971216182212"></a>long</p>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p19971216182212"><a name="p19971216182212"></a><a name="p19971216182212"></a><span id="ph815782319230"><a name="ph815782319230"></a><a name="ph815782319230"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p2971916152217"><a name="p2971916152217"></a><a name="p2971916152217"></a>No</p>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p2971916152217"><a name="p2971916152217"></a><a name="p2971916152217"></a><span id="ph57495355236"><a name="ph57495355236"></a><a name="ph57495355236"></a>No</span></p>
 </td>
 </tr>
-<tr id="row0846142252213"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p6847122212219"><a name="p6847122212219"></a><a name="p6847122212219"></a>executeLargeUpdate(String sql, String[] columnNames)</p>
+<tr id="row0846142252213"><td class="cellrowborder" valign="top" width="32.22%" headers="mcps1.2.4.1.1 "><p id="p6847122212219"><a name="p6847122212219"></a><a name="p6847122212219"></a><span id="ph1913715111273"><a name="ph1913715111273"></a><a name="ph1913715111273"></a>executeLargeUpdate(String sql, String[] columnNames)</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p9847192211225"><a name="p9847192211225"></a><a name="p9847192211225"></a>long</p>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p9847192211225"><a name="p9847192211225"></a><a name="p9847192211225"></a><span id="ph482182420232"><a name="ph482182420232"></a><a name="ph482182420232"></a>long</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p784712223228"><a name="p784712223228"></a><a name="p784712223228"></a>No</p>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.3 "><p id="p784712223228"><a name="p784712223228"></a><a name="p784712223228"></a><span id="ph13388036182312"><a name="ph13388036182312"></a><a name="ph13388036182312"></a>No</span></p>
 </td>
 </tr>
 </tbody>
 </table>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>
 >-   通过setFetchSize可以减少结果集在客户端的内存占用情况。它的原理是通过将结果集打包成游标，然后分段处理，所以会加大数据库与客户端的通信量，会有性能损耗。
+>
 >-   由于数据库游标是事务内有效，所以，在设置setFetchSize的同时，需要将连接设置为非自动提交模式，setAutoCommit\(false\)。同时在业务数据需要持久化到数据库中时，在连接上执行提交操作。
+>
 >-   LargeUpdate相关方法必须在JDBC4.2及以上使用。
 

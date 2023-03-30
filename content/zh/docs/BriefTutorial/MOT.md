@@ -200,7 +200,7 @@ MOT可用于各种应用，例如：
         ```
         benchmarksql-# \d+ customer 
                                Table "public.customer" 
-         Column |  Type   | Modifiers | Storage | Stats target | Description 
+         Column |  Type   | Modifiers | Storage | Stats target | AboutopenGauss 
         --------+---------+-----------+---------+--------------+------------- 
          x      | integer |           | plain   |              | 
          y      | integer |           | plain   |              | 

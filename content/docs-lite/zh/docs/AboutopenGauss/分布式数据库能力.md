@@ -1,0 +1,31 @@
+# 分布式数据库能力<a name="ZH-CN_TOPIC_0000001220467648"></a>
+
+## 可获得性<a name="section135316597815"></a>
+
+本特性自openGauss 2.1.0版本开始引入。
+
+## 特性简介<a name="section179114112911"></a>
+
+基于分布式中间件shardingsphere使openGauss具备分布式数据库能力。使用32个鲲鹏920\(128核\)节点组网\(1\*shardingsphere-proxy ,11\*shardingsphere-jdbc,20\*openGauss\)时，完美sharding性能\>2100万tpmc。
+
+## 客户价值<a name="section121868185910"></a>
+
+通过中间件构建逻辑上无资源限制的分布式数据库。
+
+## 特性描述<a name="section3804421498"></a>
+
+通过shardingsphere中间件的分库分表能力，使多个openGauss数据库可以在逻辑上组成一个更大的数据库，同时具备分布式事务和弹性伸缩的能力，使用方式与openGauss数据库并无不同。
+
+## 特性增强<a name="section18502924493"></a>
+
+1. 支持事务内语句读写分离能力。
+2. 支持聚集算子计算能力，实现数据库跨分片表关联查询能力。
+
+## 特性约束<a name="section139558268916"></a>
+
+无。
+
+## 依赖关系<a name="section1559552916919"></a>
+
+shardingsphere中间件。
+

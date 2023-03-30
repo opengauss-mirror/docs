@@ -5,11 +5,11 @@ java.sql.CallableStatement是存储过程执行接口。
 **表 1**  对java.sql.CallableStatement的支持情况
 
 <a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_table3828870"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row36987648"><th class="cellrowborder" valign="top" width="38.33%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"></a>方法名</p>
+<table><thead align="left"><tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row36987648"><th class="cellrowborder" valign="top" width="38.33%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p43209511"></a><b>方法名</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="30.330000000000002%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"></a>返回值类型</p>
+<th class="cellrowborder" valign="top" width="30.330000000000002%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p10309494"></a><b>返回值类型</b></p>
 </th>
-<th class="cellrowborder" valign="top" width="31.34%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"></a>支持JDBC 4</p>
+<th class="cellrowborder" valign="top" width="31.34%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p61969327"></a><b>支持JDBC 4</b></p>
 </th>
 </tr>
 </thead>
@@ -139,13 +139,13 @@ java.sql.CallableStatement是存储过程执行接口。
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
 </td>
 </tr>
-<tr id="row1014674783314"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p1614624793312"><a name="p1614624793312"></a><a name="p1614624793312"></a>getNString(int parameterIndex)</p>
+ <tr id="row1184941493911"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p128505140394"><a name="p128505140394"></a><a name="p128505140394"></a>getNString(int parameterIndex)</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p2146747103318"><a name="p2146747103318"></a><a name="p2146747103318"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1385015148393"><a name="p1385015148393"></a><a name="p1385015148393"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1614617476335"><a name="p1614617476335"></a><a name="p1614617476335"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p1385091417395"><a name="p1385091417395"></a><a name="p1385091417395"></a>Yes</p>
 </td>
-</tr>
+</tr>  
 <tr id="row18341192584512"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p934120254458"><a name="p934120254458"></a><a name="p934120254458"></a>getTime(int parameterIndex)</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1534119257455"><a name="p1534119257455"></a><a name="p1534119257455"></a>Time</p>
@@ -181,13 +181,6 @@ java.sql.CallableStatement是存储过程执行接口。
 <td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p53950512"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p53950512"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p53950512"></a>Yes</p>
 </td>
 </tr>
-<tr id="row738113501243"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="p153811950112418"><a name="p153811950112418"></a><a name="p153811950112418"></a>registerOutParameter(int parameterIndex, int sqlType, int type)</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="p1338155032415"><a name="p1338155032415"></a><a name="p1338155032415"></a>void</p>
-</td>
-<td class="cellrowborder" valign="top" width="31.34%" headers="mcps1.2.4.1.3 "><p id="p12381650172417"><a name="p12381650172417"></a><a name="p12381650172417"></a>Yes</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_row15792565"><td class="cellrowborder" valign="top" width="38.33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p23672536"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p23672536"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p23672536"></a>wasNull()</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.330000000000002%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p59980828"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p59980828"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_zh-cn_topic_0059778741_zh-cn_topic_0058965232_p59980828"></a><span id="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_text13995396495"><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_text13995396495"></a><a name="zh-cn_topic_0237120392_zh-cn_topic_0213179158_zh-cn_topic_0189250822_text13995396495"></a>Boolean</span></p>
@@ -198,9 +191,12 @@ java.sql.CallableStatement是存储过程执行接口。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>
 >-   不允许含有OUT参数的语句执行批量操作。
->-   以下方法是从java.sql.Statement继承而来：close，execute，executeQuery，executeUpdate，getConnection，getResultSet，getUpdateCount，isClosed，setMaxRows ,  setFetchSize。
->-   以下方法是从java.sql.PreparedStatement继承而来：addBatch，clearParameters，execute，executeQuery，executeUpdate，getMetaData，setBigDecimal，setBoolean，setByte，setBytes，setDate，setDouble，setFloat，setInt，setLong，setNull，setObject，setString，setTime，setTimestamp 。
->-   registerOutParameter\(int parameterIndex, int sqlType, int type\)方法仅用于注册复合数据类型，其它类型不支持。
+>
+>-   以下方法是从java.sql.Statement继承而来：close、execute、executeQuery、executeUpdate、getConnection、getResultSet、getUpdateCount、isClosed、setMaxRows 、 setFetchSize。
+>
+>-   以下方法是从java.sql.PreparedStatement继承而来：addBatch、clearParameters、execute、executeQuery、executeUpdate、getMetaData、setBigDecimal、setBoolean、setByte、setBytes、setDate、setDouble、setFloat、setInt、setLong、setNull、setObject、setString、setTime、setTimestamp。
 

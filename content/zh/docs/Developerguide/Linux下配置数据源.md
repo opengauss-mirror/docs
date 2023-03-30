@@ -296,8 +296,8 @@
         </tbody>
         </table>
 
-5.  （可选）生成SSL证书，具体请参见[证书生成](zh-cn_topic_0289900216.md)。此步骤和[6](#zh-cn_topic_0283136654_li1724551081815)在服务端与客户端通过ssl方式连接的情况下需要执行。非ssl方式连接情况下可以跳过。
-6.  <a name="zh-cn_topic_0283136654_li1724551081815"></a>（可选）替换SSL证书，具体请参见[证书替换](zh-cn_topic_0289900549.md)。
+5.  （可选）生成SSL证书，具体请参见[证书生成](../DatabaseAdministrationGuide/证书生成.md)。此步骤和6在服务端与客户端通过ssl方式连接的情况下需要执行。非ssl方式连接情况下可以跳过。
+6.  （可选）替换SSL证书，具体请参见[证书替换](../DatabaseAdministrationGuide/证书替换.md)。
 7.  SSL模式：
 
     声明如下环境变量，同时保证client.key\*系列文件为600权限：
@@ -498,7 +498,7 @@
     >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。  
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。  
 
-    要解决该问题，可以更新用户口令（参见[ALTER USER](zh-cn_topic_0289900744.md)）；或者新建一个用户（参见[CREATE USER](zh-cn_topic_0289899951.md)），赋于同等权限，使用新用户连接数据库。
+    要解决该问题，可以更新用户口令（参见[ALTER USER](../SQLReference/ALTER-USER.md)）；或者新建一个用户（参见[CREATE USER](../SQLReference/CREATE-USER.md)），赋于同等权限，使用新用户连接数据库。
 
 -   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 

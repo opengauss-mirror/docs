@@ -65,7 +65,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
     ```
     openGauss=# \d+  test
                              Table "public.test"
-     Column |  Type                 | Modifiers | Storage  | Stats target | Description
+     Column |  Type                 | Modifiers | Storage  | Stats target | AboutopenGauss
     --------+-----------------------+-----------+----------+--------------+-------------
      id     | integer               |           | plain    |              |
      age    | integer               |           | plain    |              |
@@ -81,7 +81,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
         ```
         openGauss=# \d+  test
                                         Table "public.test"
-         Column |  Type                 | Modifiers | Storage  | Stats target | Description
+         Column |  Type                 | Modifiers | Storage  | Stats target | AboutopenGauss
         --------+-----------------------+-----------+----------+--------------+-------------
          id     | integer               |           | plain    |              |
          age    | integer               |           | plain    |              |
@@ -101,7 +101,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
         ```
         openGauss=# \d+  test
                                         Table "public.test"
-         Column |  Type                 | Modifiers | Storage  | Stats target | Description
+         Column |  Type                 | Modifiers | Storage  | Stats target | AboutopenGauss
         --------+-----------------------+-----------+----------+--------------+-------------
          id     | integer               |           | plain    |              |
          age    | integer               |           | plain    |              |
