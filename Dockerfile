@@ -95,6 +95,17 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/3.1.1-lite/ && \
     cp -rf /src/3.1.1/docs/content/docs-lite/en/* /src/website/content/en/docs/3.1.1-lite/ && \
 
+    git clone -b 5.0.0 https://gitee.com/opengauss/docs 5.0.0/docs && \
+    mkdir -p /src/website/content/zh/docs/5.0.0 && \
+    cp -rf /src/5.0.0/docs/content/zh/* /src/website/content/zh/docs/5.0.0 && \
+    mkdir -p /src/website/content/en/docs/5.0.0 && \
+    cp -rf /src/5.0.0/docs/content/en/* /src/website/content/en/docs/5.0.0 && \
+
+    mkdir -p /src/website/content/zh/docs/5.0.0-lite/ && \
+    cp -rf /src/5.0.0/docs/content/docs-lite/zh/* /src/website/content/zh/docs/5.0.0-lite/ && \
+    mkdir -p /src/website/content/en/docs/5.0.0-lite/ && \
+    cp -rf /src/5.0.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.0.0-lite/ && \
+
     cd /src/website && /usr/local/bin/hugo -b / && /usr/local/bin/hugo --gc --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html && \
