@@ -814,7 +814,7 @@ headless: true
     		    -	[PG TYPE NONSTRICT BASIC VALUE]({{< relref "./docs/ExtensionReference/dolphin-pg-type-nonstrict-basic-value.md" >}})
     		    -	[INDEX STATISTIC]({{< relref "./docs/ExtensionReference/dolphin-index-statistic.md" >}})
     	    -   [GUC Parameters]({{< relref "./docs/ExtensionReference/dolphin-guc-parameters.md" >}})
-    	    -   [Resetting Parameters]({{< relref "./docs/ExtensionReference/dolphin-../DatabaseAdministrationGuide/resetting-parameters.md" >}})  		
+    	    -   [Resetting Parameters]({{< relref "./docs/ExtensionReference/dolphin-resetting-parameters.md" >}})  		
 	-   [PostGIS Extensions]({{< relref "./docs/ExtensionReference/postgis-extension.md" >}})
 		-   [Overview]({{< relref "./docs/ExtensionReference/overview-PostGIS.md" >}})
 		-   [Installing PostGIS]({{< relref "./docs/ExtensionReference/installing-postgis.md" >}})
