@@ -6,7 +6,8 @@
 
 **Basic Features**
 
--   **Connect to the database**: For details, see "Database Usage \> Connecting to a Database \> Using gsql to Connect to a Database \> Remotely Connecting to a Database" in the  _Developer Guide_.
+-   **Connect to the database**: For details, see [Remotely Connecting to a Database]()
+-   "Database Usage \> Connecting to a Database \> Using gsql to Connect to a Database \> Remotely Connecting to a Database" in the  _Developer Guide_.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >

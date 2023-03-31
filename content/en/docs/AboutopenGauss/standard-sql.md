@@ -16,7 +16,7 @@ All database vendors can use a unified SQL interface, reducing the costs of lear
 
 ## Description<a name="section16673190"></a>
 
-For details, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
+For details, see [SQL Syntax](../SQLReference/sql-syntax.md).
 
 ## Enhancements<a name="section15840983"></a>
 
