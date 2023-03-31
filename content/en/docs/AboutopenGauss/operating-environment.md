@@ -4,13 +4,13 @@
 
 openGauss supports:
 
--   ARM server and x86\_64-based universal PC server
+-   Arm server and x86\_64-based universal PC server
 -   SATA, SAS, and SSD local storage
 -   1-gigabit and 10-gigabit Ethernet
 
 ## Supported OSs<a name="en-us_topic_0283136535_en-us_topic_0237080615_en-us_topic_0231763749_en-us_topic_0059777704_sa3cc6a5214094aa9b46a22b25ba77c20"></a>
 
--   ARM:
+-   Arm:
     -   openEuler 20.03LTS \(recommended\)
     -   openEuler 22.03LTS
     -   Kirin V10
