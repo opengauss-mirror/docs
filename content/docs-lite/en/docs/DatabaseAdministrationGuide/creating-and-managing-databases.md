@@ -76,7 +76,7 @@ To resolve this problem, you need to:
 
 4.  Delete the database.
 
-    You can run the  **[DROP DATABASE](drop-database.md)**  command to delete a database. This command deletes the system catalog of the database and the database directory on the disk. Only the database owner or system administrator can delete a database. A database accessed by users cannot be deleted. You need to connect to another database before deleting this database.
+    You can run the  **[DROP DATABASE](../SQLReference/drop-database.md)**  command to delete a database. This command deletes the system catalog of the database and the database directory on the disk. Only the database owner or system administrator can delete a database. A database accessed by users cannot be deleted. You need to connect to another database before deleting this database.
 
     Run the following command to delete the database:
 
