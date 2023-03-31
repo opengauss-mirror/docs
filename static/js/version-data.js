@@ -4,7 +4,7 @@ const versionObjZh = {
     downLink: "",
   },
   "5.0.0": {
-    homePath: "docs/GettingStarted/GettingStarted.html",
+    homePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
   },
   "3.1.1": {
@@ -58,7 +58,7 @@ const versionObjEn = {
     downLink: "",
   },
   "5.0.0": {
-    homePath: "docs/GettingStarted/GettingStarted.html",
+    homePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
   },
   "3.1.1": {
