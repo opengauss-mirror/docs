@@ -253,7 +253,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
->For details about the ignore_error hint, see [Hint for Degrading Some Errors to Warnings](hint-for-degrading-some-errors-to-warnings.md).
+>For details about the ignore_error hint, see [Hint for Degrading Some Errors to Warnings](../PerformanceTuningGuide/hint-for-degrading-some-errors-to-warnings.md).
 
 **Value range**: enumerated values
 

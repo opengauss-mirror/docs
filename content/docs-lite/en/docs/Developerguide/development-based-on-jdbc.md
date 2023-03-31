@@ -8,9 +8,9 @@ Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It
 
 -   **[Loading the Driver](loading-the-driver.md)**  
 
--   **[Connecting to a Database](connecting-to-a-database-1.md)**  
+-   **[Connecting to a Database](../GettingStarted/connecting-to-a-database.md)**  
 
--   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-(using-ssl).md)**  
+-   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-using-ssl.md)**  
 
 -   **[Running SQL Statements](running-sql-statements.md)**  
 
@@ -19,8 +19,6 @@ Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It
 -   **[Closing a Connection](closing-a-connection.md)**  
 
 -   **[Log Management](log-management.md)**  
-
--   **[Examples: Common Operations](examples-common-operations.md)**  
 
 -   **[Example: Retrying SQL Queries for Applications](example-retrying-sql-queries-for-applications.md)**  
 
@@ -32,6 +30,6 @@ Java Database Connectivity \(JDBC\) is a Java API for running SQL statements. It
 
 -   **[Example: Parameters for Connecting to the Database in Different Scenarios](example-parameters-for-connecting-to-the-database-in-different-scenarios.md)**  
 
--   **[JDBC API Reference](jdbc-api-reference.md)**  
+-   **[JDBC API Reference](jdbc-interface-reference.md)**  
 
 

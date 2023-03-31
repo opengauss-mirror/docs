@@ -1,6 +1,6 @@
 # Permissions<a name="EN-US_TOPIC_0000001210461844"></a>
 
-A user who creates an object is the owner of this object. By default,  [Separation of Duties](en-us_topic_0289900233.md)  is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions on the object to other users through  [GRANT](#li9428175732017)  by default.
+A user who creates an object is the owner of this object. By default,  [Separation of Duties](../DatabaseAdministrationGuide/separation-of-duties.md)  is disabled after database installation. A database system administrator has the same permissions as object owners. After an object is created, only the object owner or system administrator can query, modify, and delete the object, and grant permissions on the object to other users through  [GRANT](#li9428175732017)  by default.
 
 To enable another user to use the object, grant required permissions to the user or the role that contains the user.
 

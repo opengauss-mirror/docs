@@ -308,7 +308,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
 -   **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
 -   **partition\_opfusion**: Enables partitioned table optimization.
--   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](union-case-and-related-constructs.md#section20337194392613).
+-   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](../SQLReference/union-case-and-related-constructs.md#section20337194392613).
 -   **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
 
 **Default value**:  **none**
@@ -361,7 +361,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
 >-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
 >    1.  Restore to the default statistics.
->    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](hint-based-tuning.md).
+>    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](../PerformanceTuningGuide/hint-based-tuning.md).
 >-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
 >-   If this parameter is set to a negative value, the auto-analyze function is disabled.
 
@@ -568,7 +568,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   When the hash aggregation operator designed for column-oriented hash tables is used, the memory usage of the query can be reduced. However, in scenarios when  **[enable\_codegen](#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_sbe5e1dbabf214873baf37dbb7580a7a3)**  is set to  **on**  and the performance is significantly improved, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](description.md).
+>-   If  **enable\_sonic\_hashagg**  is set to  **on**, when certain constraints are met, the hash aggregation operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Aggregation**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Aggregation**. For details, see  [Description](../PerformanceTuningGuide/description.md).
 
 **Default value**:  **on**
 
@@ -586,7 +586,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   Currently, the parameter can be used only for Inner Join.
 >-   If  **enable\_sonic\_hashjoin**  is enabled, the memory usage of query using the Hash Inner operator can be reduced. However, in scenarios where the code generation technology can significantly improve performance, the performance of the operator may deteriorate.
->-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](description.md).
+>-   If  **enable\_sonic\_hashjoin**  is set to  **on**, when certain constraints are met, the hash join operator designed for column-oriented hash tables is used and its name is displayed as  **Sonic Hash Join**  in the output of the Explain Analyze/Performance operation. When the constraints are not met, the operator name is displayed as  **Hash Join**. For details, see  [Description](../PerformanceTuningGuide/description.md).
 
 **Default value**:  **on**
 
