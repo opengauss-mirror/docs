@@ -64,7 +64,7 @@ Before running the X-Tuner, you need to load the configuration file. You can run
 ...
 ```
 
-You can modify the configuration items in the configuration file as required to instruct the X-Tuner to perform different actions. For details about the configuration items in the configuration file, see  [Table 2](command-reference-3.md#table10217184512711). If you need to change the loading path of the configuration file, you can specify the path through the  **-x**  command line option.
+You can modify the configuration items in the configuration file as required to instruct the X-Tuner to perform different actions. For details about the configuration items in the configuration file, see  [Table 2](x-tuner-parameter-tuning-and-diagnosis-command-reference.md#table10217184512711). If you need to change the loading path of the configuration file, you can specify the path through the  **-x**  command line option.
 
 ## Benchmark Selection and Configuration<a name="section11685014422"></a>
 

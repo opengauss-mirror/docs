@@ -159,7 +159,7 @@ The first part indicates the tracing level of full SQL statements. The value can
 The second part indicates the tracing level of slow SQL statements. The value can be  **OFF**,  **L0**,  **L1**, or  **L2**.
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->If the full SQL tracing level is not  **OFF**, the current SQL tracing level is the higher level \(L2 \> L1 \> L0\) of the full SQL and slow SQL statements. For details about the levels, see  [Table 1](en-us_topic_0301824804.md#table949020817280).
+>If the full SQL tracing level is not  **OFF**, the current SQL tracing level is the higher level \(L2 \> L1 \> L0\) of the full SQL and slow SQL statements. For details about the levels, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#table949020817280).
 
 **Default value**:  **OFF,L0**
 

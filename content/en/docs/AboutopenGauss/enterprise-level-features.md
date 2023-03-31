@@ -20,11 +20,7 @@
 
 -   **[Autonomous Transaction](autonomous-transaction.md)**  
 
--   **[Global Temporary Table](global-temporary-table.md)**  
-
--   **[Global Partition Index](global-partition-index.md)**  
-
--   **[AI Capabilities](ai-capabilities.md)**  
+-   **[Global Temporary Table](global-temporary-table.md)**   
 
 -   **[Pseudocolumn ROWNUM](pseudocolumn-rownum.md)**  
 
