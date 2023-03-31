@@ -197,7 +197,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
 
 -   **AS query**
 
-    一个SELECT VALUES命令或者一个运行预备好的SELECT或VALUES查询的EXECUTE命令。
+    一个SELECT VALUES命令。
 
 -   **\[ WITH \[ NO \] DATA \]**
 

@@ -29,7 +29,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
 
 - **\[ AS \] query**
 
-    一个SELECT VALUES命令或者一个运行预备好的SELECT或VALUES查询的EXECUTE命令。
+    一个SELECT VALUES命令。
 
     AS关键字可选，但若query中带有WITH语句，则必须使用括号将query包围，参考语句：
 
