@@ -213,6 +213,7 @@ $(function ($) {
         version.includes("3.0.0") ||
         version.includes("3.1.0") ||
         version.includes("3.1.1") ||
+        version.includes("5.0.0") ||
         version.includes("latest")
       ) {
         $(".switch-version").addClass("switch-show");
