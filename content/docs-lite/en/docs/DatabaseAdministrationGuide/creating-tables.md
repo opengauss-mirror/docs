@@ -2,7 +2,7 @@
 
 ## Background<a name="en-us_topic_0283137451_en-us_topic_0237120299_en-us_topic_0059778113_s98ef8b33479543b8a2dd01ff14f4729b"></a>
 
-A table is created in a database and can be saved in different databases. Tables under different schemas in a database can have the same name. Before creating a table, refer to  [Planning a Storage Model](planning-a-storage-model.md).
+A table is created in a database and can be saved in different databases. Tables under different schemas in a database can have the same name. Before creating a table, refer to  [Planning a Storage Model](../Developerguide/planning-a-storage-model.md).
 
 ## Procedure<a name="en-us_topic_0283137451_en-us_topic_0237120299_en-us_topic_0059778113_section414221814554"></a>
 

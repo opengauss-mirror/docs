@@ -8,7 +8,7 @@
 
 ## Context<a name="en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   Currently, the ledger database provides two archiving interfaces:  [ledger\_hist\_archive\(text...](ledger-database-functions.md#li18806468138)  and  [ledger\_gchain\_archive\(vo...](ledger-database-functions.md#li988064691317). Only the audit administrator can invoke the ledger database interfaces.
+-   Currently, the ledger database provides two archiving interfaces:  [ledger\_hist\_archive\(text...](../SQLReference/ledger-database-functions.md#li18806468138)  and  [ledger\_gchain\_archive\(vo...](../SQLReference/ledger-database-functions.md#li988064691317). Only the audit administrator can invoke the ledger database interfaces.
 -   The interface for archiving the user history table is  **pg\_catalog.ledger\_hist\_archive**. To archive the table, run the following command:
 
     ```
