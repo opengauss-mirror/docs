@@ -6,7 +6,7 @@ When jobs are batch processed in a cluster, loads on servers significantly vary 
 
 **gs\_cgroup**  creates Cgroups configuration files for the OS user of a database and generates Cgroups that the OS user sets in the OS.  **gs\_cgroup**  also allows users to add or delete Cgroups, update Cgroup resource quotas, allocate CPU cores or I/O resources, set exception thresholds, and handle the exceptions.  **gs\_cgroup**  is responsible only for Cgroups operations performed on the node where the current OS resides, and needs to be centrally configured across nodes by invoking the same statement.
 
-For details, see "Resource Load Management" in  _Developer Guide_.
+For details, see [Resource Load Management](../PerformanceTuningGuide/resource-load-management.md).
 
 ## Examples<a name="en-us_topic_0059777958_s9a5160c94e894511a98780d923399a96"></a>
 
