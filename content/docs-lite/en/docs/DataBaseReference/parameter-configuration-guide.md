@@ -1,3 +1,3 @@
 # Parameter Configuration Guide
 
-- **[Configuring Running Parameters](configuring-running-parameters.md)**
+- **[Configuring Running Parameters](../DatabaseAdministrationGuide/configuring-running-parameters.md)**

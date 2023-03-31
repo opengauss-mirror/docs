@@ -176,7 +176,7 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 >    ```
 >    {"driver_name":"ODBC","driver_version": "(openGauss X.X.X build 13b34b53) compiled at 2020-05-08 02:59:43 commit 2143 last mr 131 release","driver_path":"/usr/local/lib/psqlodbcw.so","os_user":"omm"}
 >    ```
->    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](connecting-to-a-database-1.md).
+>    **driver\_name**  and  **driver\_version**  are displayed by default. Whether  **driver\_path**  and  **os\_user**  are displayed is determined by users. For details, see  [Connecting to a Database](../GettingStarted/connecting-to-a-database.md).
 
 ## enable\_dolphin\_proto<a name="us_topic_0283136886_en-us_topic_0237124695_section48344571148818"></a>
 

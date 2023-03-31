@@ -328,7 +328,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## plsql\_show\_all\_error<a name="section232164414549"></a>
 
-**Parameter description:**  Specifies whether to skip errors and continue compiling PLPGSQL objects. For details about the impact, see  [DBE\_PLDEVELOPER](dbe_pldeveloper.md).
+**Parameter description:**  Specifies whether to skip errors and continue compiling PLPGSQL objects. For details about the impact, see  [DBE\_PLDEVELOPER](../SQLReference/dbe_pldeveloper.md).
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

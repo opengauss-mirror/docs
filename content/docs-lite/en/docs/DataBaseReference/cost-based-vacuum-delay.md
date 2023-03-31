@@ -10,7 +10,7 @@ This feature allows administrators to reduce the I/O impact of the  **VACUUM**  
 
 ## Background<a name="en-us_topic_0283136744_en-us_topic_0237124702_en-us_topic_0059778692_s07d4dedef9d24a83acb5d9412d6b68fc"></a>
 
-During the execution of the  [ANALYZE | ANALYSE](analyze-analyse.md)  and  [VACUUM](vacuum.md)  statements, the system maintains an internal counter that keeps track of the estimated cost of the various I/O operations that are performed. When the accumulated cost reaches a limit \(specified by  **vacuum\_cost\_limit**\), the process performing the operation will sleep for a short period of time \(specified by  **vacuum\_cost\_delay**\). Then, the counter resets and the operation continues.
+During the execution of the  [ANALYZE | ANALYSE](../SQLReference/analyze-analyse.md)  and  [VACUUM](../SQLReference/vacuum.md)  statements, the system maintains an internal counter that keeps track of the estimated cost of the various I/O operations that are performed. When the accumulated cost reaches a limit \(specified by  **vacuum\_cost\_limit**\), the process performing the operation will sleep for a short period of time \(specified by  **vacuum\_cost\_delay**\). Then, the counter resets and the operation continues.
 
 By default, this feature is disabled. To enable this feature, set  **vacuum\_cost\_delay**  to a non-zero value.
 
