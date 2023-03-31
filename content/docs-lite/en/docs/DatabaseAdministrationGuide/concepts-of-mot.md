@@ -16,7 +16,7 @@ This chapter describes how openGauss MOT is designed and how it works. It also s
 
 -   **[MOT Recovery Concepts](mot-recovery-concepts.md)**  
 
--   **[MOT Query Native Compilation \(JIT\)](mot-query-native-compilation-(jit).md)**  
+-   **[MOT Query Native Compilation \(JIT\)](mot-query-native-compilation-jit.md)**  
 
 -   **[Comparison: Disk vs. MOT](comparison-disk-vs-mot.md)**  
 
