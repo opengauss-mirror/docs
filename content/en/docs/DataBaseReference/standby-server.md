@@ -7,7 +7,7 @@
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   If this parameter is set to  **on**,  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.
+>-   If this parameter is set to  **on**,  **[wal\_level](settings-60.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.
 >-   In an HA system,  **hot\_standby**  cannot be set to  **off**, because this setting can affect other features of the HA system.
 >-   If the  **hot\_standby**  parameter was disabled and the  **wal\_level**  parameter was set to a value lower than  **hot\_standby**, perform the following operations to ensure that the logs to be replayed on the standby node can be queried on the standby node before enabling the  **hot\_standby**  parameter again:
 >    1.  Change the  **wal\_level**  value of the primary and standby nodes to  **hot\_standby**  or higher, and restart the instances for the change to take effect.
