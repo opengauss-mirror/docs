@@ -1,4 +1,4 @@
-# Gray Upgrade
+# Rolling Upgrade
 
 ## Availability
 
@@ -6,15 +6,15 @@ This feature is available since openGauss 3.1.0.
 
 ## Introduction
 
-Based on gray upgrade, specified nodes can be upgraded at first and then the remaining nodes be upgraded.
+In gray upgrade, you can upgrade some specified nodes and then the remaining nodes.
 
 ## Benefits
 
-Based on gray upgrade, provides a kind of function which can upgrade specified nodes. Without interrupting services, upgrade specified nodes and then upgrade the remaining nodes.
+The gray upgrade provides the function of upgrading specified nodes. This ensures that some nodes are upgraded before the remaining nodes without interrupting services.
 
 ## Description
 
-Gray upgrade is an online upgrade mode that upgrades specified nodes. At present, the rolling upgrade is to add the function of upgrading specified nodes on the basis of the gray upgrade. During upgrade specified nodes, which is the same as the gray upgrade, if only the binary files of the database need to be replaced, to minimize the impact on services, the two sets of binary files exist on the same node at the same time, and the soft connection switchover mode is used to switch the process version \(one intermittent disconnection within 10 seconds\). All nodes can be upgraded in two steps. The first step is to upgrade the specified node, and the second step is to upgrade the remaining nodes. The submit operation must be performed only after all nodes are upgraded.
+Rolling upgrade is an online upgrade mode that upgrades certain nodes. Currently, rolling upgrade adds the function of upgrading specified nodes based on gray upgrade. Similar to gray upgrade, when some nodes are upgraded, database binary files need to be replaced. To minimize the impact on services, two sets of binary files coexist on the same node. The process version is switched and upgraded through soft connection switchover (intermittent disconnection once within 10 seconds). You can upgrade all nodes in two steps. The first step is to upgrade specified nodes, and the second step is to upgrade remaining nodes. The commit operation must be performed only after all nodes are upgraded.
 
 ## Enhancements
 
@@ -22,8 +22,8 @@ None.
 
 ## Constraints
 
-All constraints of gray upgrade are met.
-For details about the gray upgrade constraints, see "Before You Start \> Upgrade Impact and Constraints" in  _Upgrade Guide_.
+All gray upgrade constraints are met.
+For details about the gray upgrade constraints, see "Before You Start \> Upgrade Impact and Constraints" in *Upgrade Guide*.
 
 ## Dependencies
 

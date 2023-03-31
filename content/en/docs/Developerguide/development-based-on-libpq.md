@@ -2,14 +2,4 @@
 
 **libpq**  is a C application programming interface to openGauss.  **libpq**  contains a set of library functions that allow client programs to send query requests to the openGauss servers and obtain query results. It is also the underlying engine of other openGauss application interfaces, such as ODBC. This section provides two examples to show how to write code using  **libpq**.
 
--   **[Dependent Header Files of libpq](dependent-header-files-of-libpq.md)**  
-
--   **[Development Process](development-process.md)**  
-
--   **[Example](example.md)**  
-
--   **[libpq API Reference](libpq-api-reference.md)**  
-
--   **[Link Parameters](link-parameters.md)**  
-
 
