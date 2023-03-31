@@ -22,7 +22,7 @@ None
 
 ## Constraints<a name="section06531946143616"></a>
 
-For details, see "Importing Data \> Running the COPY FROM STDIN Statement to Import Data \> Handling Import Errors" in the  _Developer Guide_.
+For details, see [handling-import-errors](../DatabaseOMGuide/handling-import-errors.md).
 
 ## Dependencies<a name="section57771982"></a>
 

@@ -35,7 +35,8 @@ sales | 4 | 4800 | 4866.6666666666666667
 
 The analysis function  **avg\(salary\) OVER \(PARTITION BY depname\)**  easily calculates each employee's salary and the average salary of the department.
 
-Currently, the system supports the following analysis functions:  **row\_number\(\)**,  **rank\(\)**,  **dense\_rank\(\)**,  **percent\_rank\(\)**,  **cume\_dist\(\)**,  **ntile\(\)**,  **lag\(\)**,  **lead\(\)**,  **first\_value\(\)**,  **last\_value\(\)**, and  **nth\_value\(\)**. For details about functions and statements, see "SQL Reference \> Functions and Operators \> Window Functions" in the  _Developer Guide_.
+Currently, the system supports the following analysis functions:  **row\_number\(\)**,  **rank\(\)**,  **dense\_rank\(\)**,  **percent\_rank\(\)**,  **cume\_dist\(\)**,  **ntile\(\)**,  **lag\(\)**,  **lead\(\)**,  **first\_value\(\)**,  **last\_value\(\)**, and  **nth\_value\(\)**. For details about functions and statements, see [Window Functions](../SQLReference/window-functions.md)
+"SQL Reference \> Functions and Operators \> Window Functions" in the  _Developer Guide_.
 
 ## Enhancements<a name="section7109043"></a>
 
