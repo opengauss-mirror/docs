@@ -2,7 +2,7 @@
 
 ## Basic Features<a name="en-us_topic_0059778819_s8ce37a15763045549311205e19f06a45"></a>
 
--   **Connect to the database**: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see Database Usage \> Connecting to a Database \> Using gsql to Connect to a Database \> Remotely Connecting to a Database in the  _Developer Guide_.
+-   **Connect to the database**: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see  [Gsql Connection and Usage](../GettingStarted/gsql-connection-and-usage.md).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >If  **gsql**  is used to connect to a database, the connection timeout period will be 5 minutes. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.

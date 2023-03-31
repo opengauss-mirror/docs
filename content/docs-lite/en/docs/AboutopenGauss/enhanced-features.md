@@ -94,7 +94,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     -   For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
     -   Triggers and primary foreign keys are not supported.
-    -   Psort index, B-tree index, and GIN index are supported. For details, see [CREATE INDEX](../SQLReference/create-index.md)"**SQL Reference**  \>  **SQL Syntax**  \>  **CREATE INDEX**" in the  *Developer Guide*.
+    -   Psort index, B-tree index, and GIN index are supported. For details, see [CREATE INDEX](../SQLReference/create-index.md).
 
 -   Data compression in column store
 

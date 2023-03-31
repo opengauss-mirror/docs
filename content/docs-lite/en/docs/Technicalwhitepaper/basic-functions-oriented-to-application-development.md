@@ -4,7 +4,7 @@
 
     openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
 
-    openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  _Developer Guide_.
+    openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see [SQL Syntax](../SQLReference/sql-syntax.md).
 
     The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
 

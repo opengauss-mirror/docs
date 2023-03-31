@@ -128,7 +128,7 @@ You are advised to dump expired logs periodically to save disk space and prevent
 
 After the audit function is enabled, a large number of audit logs will be generated, which occupy large storage space. You can customize an audit log maintenance policy based on the size of available storage space.
 
-For details, see "Database Security Management \> Configuring Database Audit \> Maintaining Audit Logs" in the  _Developer Guide_.
+For details, see [Maintaining Audit Logs](../DatabaseAdministrationGuide/maintaining-audit-logs.md).
 
 ## WAL<a name="en-us_topic_0283140584_section1842844603615"></a>
 

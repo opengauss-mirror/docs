@@ -77,7 +77,7 @@
    >   
    >   Procedure
    >   
-   >   -   Prepare certificates and private keys. For details about how to generate a certificate, see "Database Security Management \> Managing SSL Certificates \> Generating Certificates" in *Developer Guide*.
+   >   -   Prepare certificates and private keys. For details about how to generate a certificate, see [Generating Certificates](../DatabaseAdministrationGuide/generating-certificates.md). 
    >       Conventions for configuration file names on the server:
    >       -   Certificate name: server.crt
    >       -   Private key name: server.key

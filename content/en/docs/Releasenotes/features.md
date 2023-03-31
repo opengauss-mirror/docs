@@ -45,7 +45,7 @@ This section describes openGauss 3.1.1. Compared with openGauss 3.1.0, it has th
     The CM installation can be decoupled when the database process already exists. In addition, the CM component can be upgraded independently, enhancing the reliability of the database cluster.
 
 -   Enhanced MySQL compatibility
-    Version 3.1.1 supports the following syntax points: (Only some typical syntax points are listed. For details, see section "MySQL Compatibility" in the Developer Guide.)
+    Version 3.1.1 supports the following syntax points: Only some typical syntax points are listed. For details, see [MySQL Compatibility](../DataMigrationGuide/b-compatible-description.md).
     -   Operators: !, ->, and ->>
     -   System functions: 28 JSON class functions, such as JSON_ARRAY(), JSON_OBJECT(), JSON_QUOTE(), JSON_CONTAINS(), JSON_CONTAINS_PATH(), and JSON_EXTRACT(), support any\_value, database, and default functions.
     -   DDLs:

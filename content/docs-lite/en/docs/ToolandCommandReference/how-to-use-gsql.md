@@ -6,8 +6,7 @@ The user using **gsql**  must have the permission to access the database.
 
 ## Background<a name="en-us_topic_0059779027_sec8c9233ebad4d6da06846cb31af1f44"></a>
 
-You can use the  **gsql**  command to connect to the local database or remote database. When connecting to the remote database, enable remote connection on the server. For details, see "Working with Databases \> Connecting to a Database \> Using gsql to Connect to a Database \> Remotely Connecting to a Database" in the  _Developer Guide_.
-
+You can use the  **gsql**  command to connect to the local database or remote database. When connecting to the remote database, enable remote connection on the server. For details, see  [Gsql Connection and Usage](../GettingStarted/gsql-connection-and-usage.md).
 ## Procedure<a name="en-us_topic_0059779027_s88b93467806944068b85cf2ec928ae02"></a>
 
 1.  Connect to the openGauss server using the  **gsql**  tool.
