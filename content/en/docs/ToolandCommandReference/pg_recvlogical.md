@@ -19,7 +19,7 @@ Logical replication slot behavior parameters are mandatory and must be specified
 -   --create
 
     Creates a logical replication slot.
-    The **pg\_create\_logical\_replication\_slot** function is called internally. The user who calls this function must have the **SYSADMIN** or **REPLICATION** permission or inherits the permission of the built-in role **gs\_role\_replication**. This function can be called only on the primary node. For details, see the description of the **pg\_create\_logical\_replication\_slot** function in *Developer Guide*.
+    The **pg\_create\_logical\_replication\_slot** function is called internally. The user who calls this function must have the **SYSADMIN** or **REPLICATION** permission or inherits the permission of the built-in role **gs\_role\_replication**. This function can be called only on the primary node. For details, see the description of the **pg\_create\_logical\_replication\_slot** function in *SQLReference*.
 
 -   --start
 
