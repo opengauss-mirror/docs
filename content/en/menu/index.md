@@ -330,7 +330,7 @@ headless: true
     	-   [Psycopg API Reference]({{< relref "./docs/DeveloperGuide/psycopg-api-reference.md" >}})
 			-   [psycopg2.connect\(\)]({{< relref "./docs/DeveloperGuide/psycopg2-connect.md" >}})
 			-   [connection.cursor\(\)]({{< relref "./docs/DeveloperGuide/connection-cursor.md" >}})
-			-   [cursor.execute\(query,vars\_list\)]({{< relref "./docs/DeveloperGuide/cursor-execute-query-vars_list.md" >}})
+			-   [cursor.execute\(query,vars\_list\)]({{< relref "./docs/DeveloperGuide/cursor-execute_query-vars_list.md" >}})
 			-   [curosr.executemany\(query,vars\_list\)]({{< relref "./docs/DeveloperGuide/curosr-executemany-query-vars_list.md" >}})
 			-   [connection.commit\(\)]({{< relref "./docs/DeveloperGuide/connection-commit.md" >}})
 			-   [connection.rollback\(\)]({{< relref "./docs/DeveloperGuide/connection-rollback.md" >}})
