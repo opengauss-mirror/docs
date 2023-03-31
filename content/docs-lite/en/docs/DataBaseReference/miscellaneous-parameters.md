@@ -4,7 +4,7 @@
 
 **Parameter description:**  Specifies whether to enable the UStore storage engine by default. If this parameter is set to  **on**, all created tables are UStore tables.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
 
 **Value range:**  \[off,on\]
 
@@ -14,7 +14,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable the Ustore storage engine. If this parameter is set to  **on**, Ustore tables can be created. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  \[off,on\]
 
@@ -24,7 +24,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether to reserve space for the nullable attribute of an Ustore table. If this parameter is set to  **on**, space is reserved for the nullable attribute of the Ustore table by default.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  \[off,on\]
 
@@ -34,7 +34,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies the UStore test parameters.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 You can set  **enable\_ustore\_partial\_seqscan**  \(copy selective columns only during sequential scanning in the ustore table\),  **enable\_candidate\_buf\_usage\_count**  \(whether dirty pages are evicted and added to the use count weight\), and  **ustats\_tracker\_naptime**  \(time for reloading the statistics file\).  **umax\_search\_length\_for\_prune**  \(number of blocks to be pruned before table extension\) and  **ustore\_unit\_test**  \(starting the UStore white box test\). The setting method is ustore\_att ='**enable\_ustore\_partial\_seqscan**=on'.
 
@@ -141,7 +141,7 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Parameter description**: If this parameter is set to  **on**, the delta merge operation internally increases the lock level, and errors can be prevented when update and delete operations are performed at the same time.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -152,7 +152,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 ## transparent\_encrypted\_string<a name="en-us_topic_0283137574_en-us_topic_0237124754_section59019117496"></a>
 
-**Parameter description**: Specifies a sample string that is transparently encrypted. Its value is generated by encrypting  **TRANS\_ENCRYPT\_SAMPLE\_STRING**  using a database secret key. The ciphertext is used to check whether the DEK obtained during secondary startup is correct. If it is incorrect, database nodes will not be started. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). This parameter applies only to the DWS scenario in the current version.
+**Parameter description**: Specifies a sample string that is transparently encrypted. Its value is generated by encrypting  **TRANS\_ENCRYPT\_SAMPLE\_STRING**  using a database secret key. The ciphertext is used to check whether the DEK obtained during secondary startup is correct. If it is incorrect, database nodes will not be started. This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). This parameter applies only to the DWS scenario in the current version.
 
 **Value range**: a string. An empty string indicates that openGauss is a not encrypted.
 
@@ -165,7 +165,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the URL for obtaining the database secret key to be transparently encrypted. It must contain only the characters specified in RFC3986, and the maximum length is 2047 bytes. The format is  **kms://***Protocol***@***KMS host name 1***;***KMS host name 2***:***KMS port number***/kms**, for example,  **kms://https@linux175:29800/**. This parameter applies only to the DWS scenario in the current version.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -175,7 +175,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the deployment region of openGauss. It must contain only the characters specified in RFC3986, and the maximum length is 2047 bytes. This parameter applies only to the DWS scenario in the current version.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
 
@@ -195,7 +195,7 @@ When the gs\_basebackup tool is used for transmission and a high compression rat
 
 **Parameter description**: Specifies the interval at which heartbeat messages are sent between heartbeat threads. You are advised to set this parameter to a value no more than wal\_receiver\_timeout/2.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1000 to 60000. The unit is ms.
 
@@ -205,7 +205,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the maximum number of autonomous transaction connections, that is, the maximum number of concurrent autonomous transactions executed at the same time. If this parameter is set to  **0**, autonomous transactions cannot be executed.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0–1024
 
@@ -217,7 +217,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 Note: Currently, the maximum length that can be returned is 1073741823. If the length exceeds 1073741823, the out of memory error is reported.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0 to 9223372036854775807
 
@@ -227,7 +227,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to use the computing resource pool for acceleration when an OBS is queried.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
@@ -240,7 +240,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies the maximum number of threads that DN can run concurrently on an acceleration database instance on the cloud.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0 to 2147483647
 
@@ -250,7 +250,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description:** In B-compatible mode, this parameter controls the processing policy of the ignore_error hint when non-null constraints are violated.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
 >For details about the ignore_error hint, see [Hint for Degrading Some Errors to Warnings](hint-for-degrading-some-errors-to-warnings.md).

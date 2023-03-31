@@ -6,7 +6,7 @@ This section describes parameters used for controlling how the server processes 
 
 **Parameter description:**  If this function is enabled, errors of the ERROR level will be upgraded to PANIC errors, and core stacks will be generated. It is mainly used to locate problems and test services.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -19,7 +19,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: If this parameter is set to  **on**  and a backend process crashes, openGauss automatically reinitializes the backend process.
 
-This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -35,7 +35,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Parameter description**: If this parameter is set to  **on**  and the client character set of the database is encoded in UTF-8 format, character encoding conversion errors will be recorded in logs. Additionally, converted characters that have conversion errors will be ignored and replaced with question marks \(?\).
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -48,7 +48,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the maximum number of times that an  **SQL**  statement with errors can be re-executed.  **SQL**  statements with the following types of errors can be re-executed:  **Connection reset by peer**,  **Lock wait timeout**, and  **Connection timed out**. If this parameter is set to  **0**, the re-execution function is disabled.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 20
 
@@ -58,7 +58,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the size of the data buffer used for data transmission on the primary database node.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 8 to 128. The unit is KB.
 
@@ -68,7 +68,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum number of temporary files that can be used by the the primary node of the database during automatic SQL statement retries. The value  **0**  indicates that no temporary file is used.
 
-This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 10485760. The unit is KB.
 
@@ -78,7 +78,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: Specifies the list of SQL error types that support automatic retries.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -88,7 +88,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to keep running the database when updated data fails to be written into disks by using the  **fsync**  function. In some OSs, no error is reported even if  **fsync**  fails after the second attempt. As a result, data is lost.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
@@ -101,7 +101,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies whether to enable the remote read function. This function allows pages on the standby server to be read when reading pages on the primary server fails.
 
-This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: enumerated values
 

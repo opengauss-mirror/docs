@@ -8,7 +8,7 @@ This section describes parameters related to the time format setting.
 
 This variable contains two independent components: the output format specifications \(ISO, Postgres, SQL, or German\) and the input/output order of year/month/day \(DMY, MDY, or YMD\). The two components can be set separately or together. The keywords Euro and European are synonyms for DMY. The keywords US, NonEuro, and NonEuropean are synonyms for MDY.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -23,7 +23,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the display format for interval values.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: enumerated values
 
@@ -42,7 +42,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the time zone for displaying and interpreting timestamps.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string. You can obtain it by querying the  [PG\_TIMEZONE\_NAMES](en-us_topic_0289900200.md)  view.
 
@@ -55,7 +55,7 @@ Default value:  GMT
 
 **Parameter description**: Specifies the time zone abbreviations that will be accepted by the server.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string. You can obtain it by querying the  **pg\_timezone\_names**  view.
 
@@ -68,7 +68,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Adjusts the number of digits displayed for floating-point values, including float4, float8, and geometric data types. The parameter value is added to the standard number of digits \(FLT\_DIG or DBL\_DIG as appropriate\).
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range:**  an integer ranging from –15 to 3
 
@@ -84,7 +84,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 Set this parameter based on the situation of the front-end services. Try to keep the encoding consistent on the client and server to improve efficiency.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: encoding compatible with PostgreSQL.  **UTF8**  indicates that the database encoding is used.
 
@@ -104,7 +104,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   Acceptable values are system-related.
 -   On some systems, this locale category does not exist. Setting this variable will still work, but there will be no effect. In addition, translated messages for the desired language may not exist. In this case, you can still see the English messages.
 
-    This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+    This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 
 **Value range**: a string
@@ -119,7 +119,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the display format of monetary values. It affects the output of functions such as  **to\_char**. Acceptable values are system-related.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -133,7 +133,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the display format of numbers. It affects the output of functions such as  **to\_char**. Acceptable values are system-related.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -147,7 +147,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the display format of time and locale. It affects the output of functions such as  **to\_char**. Acceptable values are system-related.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -166,7 +166,7 @@ If the specified text search configuration does not exist, an error will be repo
 -   The text search configuration is used by text search functions that do not have an explicit argument specifying the configuration.
 -   When a configuration file matching the environment is determined,  **gs\_initdb**  will initialize the configuration file with a setting that corresponds to the environment.
 
-    This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+    This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 
 **Value range**: a string

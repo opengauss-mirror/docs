@@ -4,7 +4,7 @@
 
 **Parameter description**: Specifies the directory where  **cm\_agent**  logs are stored. It can be specified as an absolute path, or a path relative to  _$GAUSSLOG_.
 
-**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **log**, indicating that the  **cm\_agent**  log is generated in the CM directory in  _$GAUSSLOG_.
 
@@ -12,7 +12,7 @@
 
 **Parameter description**: Specifies the size of a log file. If a log file exceeds the specified size, a new one is created to record log information.
 
-**Value range**: an integer ranging from 0 to 2047. The unit is MB. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 2047. The unit is MB. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **16 MB**
 
@@ -20,7 +20,7 @@
 
 **Parameter description**: Specifies which message levels are written to the  **cm\_agent**  log. Each level covers all the levels following it. The lower the level is, the fewer messages will be written into the log.
 
-**Value range**: enumerated type. Valid values are  **debug5**,  **debug1**,  **log**,  **warning**,  **error**, and  **fatal**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: enumerated type. Valid values are  **debug5**,  **debug1**,  **log**,  **warning**,  **error**, and  **fatal**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **warning**
 
@@ -28,7 +28,7 @@
 
 **Parameter description**: Specifies whether a standby DN is incrementally built. If this parameter is enabled, a standby DN is incrementally built.
 
-**Value range**: Boolean. The value can be  **on**  or  **off**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: Boolean. The value can be  **on**  or  **off**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **on**
 
@@ -36,7 +36,7 @@
 
 **Parameter description**: Specifies the location of the alarm component that processes alarms.
 
-**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 -   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
 -   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
@@ -45,7 +45,7 @@
 
 ## alarm\_report\_interval<a name="en-us_topic_0059779159_s5e0f88486fdb4973bff373b335f66f5d"></a>
 
-**Parameter description**: Specifies the interval at which an alarm is reported. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Parameter description**: Specifies the interval at which an alarm is reported. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a non-negative integer \(unit: s\)
 
@@ -53,7 +53,7 @@
 
 ## alarm\_report\_max\_count<a name="section13705726193413"></a>
 
-**Parameter description**: Specifies the maximum number of times an alarm is reported. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Parameter description**: Specifies the maximum number of times an alarm is reported. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a non-negative integer
 
@@ -63,7 +63,7 @@
 
 **Parameter description**: Specifies the interval at which  **cm\_agent**  reports the instance status.
 
-**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **1**
 
@@ -71,7 +71,7 @@
 
 **Parameter description**: Specifies the interval at which  **cm\_agent**  checks whether the DN process is suspended.
 
-**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value:** **10**
 
@@ -79,7 +79,7 @@
 
 **Parameter description**: Specifies the interval at which cm\_agent queries for the status of instances, such as the DNs.
 
-**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value:** **2**
 
@@ -87,7 +87,7 @@
 
 **Parameter description**: Specifies the time to wait before the  **cm\_server**  heartbeat times out.
 
-**Value range**: an integer ranging from 2 to 2<sup>31</sup>  – 1. The unit is second. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 2 to 2<sup>31</sup>  – 1. The unit is second. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **8**
 
@@ -95,7 +95,7 @@
 
 **Parameter description**: Specifies the time to wait before the attempt of  **cm\_agent**  to connect to  **cm\_server**  times out.
 
-**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **1**
 
@@ -103,7 +103,7 @@
 
 **Parameter description**: Specifies the number of times  **cm\_agent**  tries to connect to the  **cm\_server**.
 
-**Value range**: an integer. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **15**
 
@@ -111,7 +111,7 @@
 
 **Parameter description**: Specifies the interval from the time when  **cm\_agent**  fails to connect to the primary  **cm\_server**  to the time when  **cm\_agent**  kills all instances on the node.
 
-**Value range**: an integer. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **0**, indicating that the operation of killing all instances on the node is not initiated.
 
@@ -119,7 +119,7 @@
 
 **Parameter description**: Specifies whether DNs are started in secure mode. If this parameter is set to  **on**, DNs are started in secure mode. Otherwise, DNs are started in non-secure mode.
 
-**Value range**: Boolean. The value can be  **on**  or  **off**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: Boolean. The value can be  **on**  or  **off**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **off**
 
@@ -127,13 +127,13 @@
 
 **Parameter description**: Specifies the internal version number of the database before an in-place upgrade. Do not modify the value of this parameter.
 
-**Value range**: a non-negative integer You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: a non-negative integer You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **0**
 
 ## process\_cpu\_affinity<a name="section195545541684"></a>
 
-**Parameter description**: Specifies whether to bind a primary DN process to a CPU core before starting the process. If this parameter is set to  **0**, core binding will not be performed. If it is set to another value, core binding will be performed, and the number of physical CPU cores is 2<sup>n</sup>. Restart the database and  **cm\_agent**  for the modification to take effect. Only ARM is supported. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Parameter description**: Specifies whether to bind a primary DN process to a CPU core before starting the process. If this parameter is set to  **0**, core binding will not be performed. If it is set to another value, core binding will be performed, and the number of physical CPU cores is 2<sup>n</sup>. Restart the database and  **cm\_agent**  for the modification to take effect. Only ARM is supported. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 2
 
@@ -143,7 +143,7 @@
 
 **Parameter description**: Specifies the interval for compressing and clearing logs. Logs are compressed and cleared every 1800 seconds.
 
-**Value range**: an integer ranging from 0 to 2147483647. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 2147483647. The unit is s. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **1800**
 
@@ -154,7 +154,7 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The parameter value must be the same as the actual number of shards to be added.
 
-**Value range**: an integer ranging from 0 to 2<sup>32</sup>  – 1. If this parameter is set to  **0**, the disk scale-out alarm is not reported. If this parameter is set to a value greater than  **0**, the disk scale-out alarm is reported and the threshold is calculated based on the number of shards specified by this parameter. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 2<sup>32</sup>  – 1. If this parameter is set to  **0**, the disk scale-out alarm is not reported. If this parameter is set to a value greater than  **0**, the disk scale-out alarm is reported and the threshold is calculated based on the number of shards specified by this parameter. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **1**
 
@@ -162,7 +162,7 @@
 
 **Parameter description**: Specifies the maximum size of a log file.
 
-**Value range**: an integer ranging from 0 to 2147483647. The unit is MB. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 2147483647. The unit is MB. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **10240**
 
@@ -170,7 +170,7 @@
 
 **Parameter description**: Specifies the maximum number of logs that can be stored on hard disks.
 
-**Value range**: an integer ranging from 0 to 10000. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 10000. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **10000**
 
@@ -178,7 +178,7 @@
 
 **Parameter description**: Specifies the number of days for storing logs.
 
-**Value range**: an integer ranging from 0 to 1000. The unit is day. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: an integer ranging from 0 to 1000. The unit is day. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**:  **90**
 
@@ -186,7 +186,7 @@
 
 **Parameter description**: Specifies whether to enable log compression.
 
-**Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 -   **on**  indicates that log compression is enabled.
 -   **off**  indicates that log compression is disabled.
@@ -197,7 +197,7 @@
 
 **Parameter description**: Specifies the format of compressed logs. It is used when  **enable\_log\_compress=on**  is set. All logs containing the keyword  **%s**  are compressed.  **%s**  is the name of a server tool.
 
-**Value range**: values of all parameters in  [Table 1](#table57617155518). For details about how to modify this parameter, see  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+**Value range**: values of all parameters in  [Table 1](#table57617155518). For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Default value**: default values of the parameters in  [Table 1](#table57617155518). The default value cannot be modified.
 
@@ -457,7 +457,7 @@
 
 **Parameter description**: Specifies the DR database instance settings. After this parameter is enabled, CM runs in DR database instance mode.
 
-**Value range:** **0**  or  **1**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range:** **0**  or  **1**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 -   **0**: disabled.
 -   **1**: enabled.
@@ -468,7 +468,7 @@
 
 **Parameter description**: Specifies whether the  **pgxc\_node**  system catalog can be modified when the database instance is in read-only mode.
 
-**Value range**: Boolean For details about how to modify this parameter, see  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range**: Boolean For details about how to modify this parameter, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 -   **on**  indicates that the  **pgxc\_node**  system catalog can be modified.
 -   **off**  indicates that the  **pgxc\_node**  system catalog cannot be modified.
@@ -479,7 +479,7 @@
 
 **Parameter description**: Specifies the directory location of the Unix socket.
 
-**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Default value:** **''**
 
@@ -487,7 +487,7 @@
 
 **Parameter description**: Specifies the status of the DCF mode.
 
-**Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 -   **0**: disabled.
 -   **1**: enabled.
@@ -498,7 +498,7 @@
 
 **Parameter description**: Specifies the type of the DR relationship between the primary and standby database instances.
 
-**Value range**: an integer ranging from 0 to 2 You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+**Value range**: an integer ranging from 0 to 2 You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 -   **0**  indicates that no DR relationship is established.
 -   **1**  indicates that the OBS DR relationship is established.

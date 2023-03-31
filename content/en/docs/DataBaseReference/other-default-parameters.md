@@ -12,7 +12,7 @@ The value of  **dynamic\_library\_path**  must be a list of absolute paths separ
 dynamic_library_path = '/usr/local/lib/gaussdb:/opt/testgs/lib:$libdir'
 ```
 
-This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
@@ -25,7 +25,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Parameter description**: Specifies the upper limit of the size of the set returned by GIN indexes.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: an integer ranging from 0 to 2147483647
 
@@ -40,7 +40,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   If a specified library is not found, the connection attempt will fail.
 -   Every openGauss-supported library has a "magic block" that is checked to guarantee compatibility. For this reason, non-openGauss-supported libraries cannot be loaded in this way.
 
-This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 2](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 

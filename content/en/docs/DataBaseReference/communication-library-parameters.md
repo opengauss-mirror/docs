@@ -6,7 +6,7 @@ This section describes parameter settings and value ranges for communication lib
 
 **Parameter description**: Specifies the interval for transmitting keepalive signals on an OS that supports the  **TCP\_KEEPIDLE**  socket option. If no keepalive signal is transmitted, the connection is in idle mode.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.
@@ -23,7 +23,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description:**  Specifies the response time before retransmission on an OS that supports the  **TCP\_KEEPINTVL**  socket option.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0 to 180. The unit is s.
 
@@ -40,7 +40,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the number of keepalive signals that can be waited before the openGauss server is disconnected from the client on an OS that supports the  **TCP\_KEEPCNT**  socket option.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.
@@ -68,7 +68,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >    -   **numa\_num**: number of NUMA nodes in the system. 2P and 4P servers are supported. The value can be:  **4**  or  **8**.
 >    -   **numa\_bind**: core binding parameter of the agent thread. Each numa has two CPUs. There are a total of  **numa\_num**  groups. The value range is as follows: \[0, Number of CPUs – 1\].
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string, consisting of one or more characters
 
