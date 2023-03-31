@@ -119,7 +119,6 @@ headless: true
                 -   [Intelligent Cardinality Estimation]({{< relref "./docs/AboutopenGauss/intelligent-cardinality-estimation.md" >}})   
 	    		-   [Adaptive Plan Selection]({{< relref "./docs/AboutopenGauss/adaptive-plan-selection.md" >}})				
         -   [Tool Chain]({{< relref "./docs/AboutopenGauss/tool-chain.md" >}})
-            -   [MySQL to openGauss Migration Tool Chameleon]({{< relref "./docs/AboutopenGauss/mysql-to-opengauss-migration-tool-chameleon.md" >}})
             -   [OpenGauss Client Tool DataStudio]({{< relref "./docs/AboutopenGauss/opengauss-client-tool-datastudio.md" >}})
         -   [Middleware]({{< relref "./docs/AboutopenGauss/middleware.md" >}})
             -   [Distributed Database Capability]({{< relref "./docs/AboutopenGauss/distributed-database-capability.md" >}})
