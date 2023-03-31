@@ -4,7 +4,7 @@
 
 **Parameter description:** Similar to shared\_buffers, this parameter is used to set the size of the page compression block address mapping management buffer.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
  
 **Value range:** 64 KB to 16 GB.
  

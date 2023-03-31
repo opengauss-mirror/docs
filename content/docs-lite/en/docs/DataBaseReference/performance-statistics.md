@@ -13,7 +13,7 @@ During the running of the database, the lock access, disk I/O operation, and inv
 
 All these parameters can only provide assistant analysis for administrators, which are similar to the getrusage\(\) of the Linux OS.
 
-These parameters are SUSET parameters. Set them based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+These parameters are SUSET parameters. Set them based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   The  **log\_statement\_stats**  records the total statement statistics whereas other parameters record statistics only about their corresponding modules.

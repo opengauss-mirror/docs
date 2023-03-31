@@ -8,7 +8,7 @@ This section describes parameters related to client-server connection modes.
 
 This parameter specifies the IP address used by the openGauss server for listening, for example, IPv4  or IPv6 \(if supported\). Multiple NICs may exist on the host and each NIC can be bound to multiple IP addresses. This parameter specifies the IP addresses to which openGauss is bound. The client can use the IP address specified by this parameter to connect to or send requests to openGauss.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**:
 
@@ -22,7 +22,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the host IP address bound to the current node for connecting to other nodes in openGauss.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Default value**: After the database instance is installed, the default value is configured according to the IP address of different instances in the XML configuration file. The default value for the DN instance is  **'x.x.x.x'**.
 
@@ -30,7 +30,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the TCP port listened on by the openGauss.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >This parameter is specified in the configuration file during installation. Do not modify this parameter unless absolutely necessary. Otherwise, database communication will be affected.
@@ -49,7 +49,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the maximum number of concurrent connections to the database. This parameter influences the concurrent processing capability of openGauss.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer. The minimum value is  **10**  \(greater than the value of  *max\*wal\_senders_\). The theoretical maximum value is  **262143**. The actual maximum value is a dynamic value, which is calculated using the formula 262143 – value of  *job\*queue\_processes_  – value of  *autovacuum\*max\_workers_  – value of  *AUXILIARY\*BACKENDS_  – value of  *AV\*LAUNCHER\_PROCS_. The values of  [*job\*queue\_processes_](en-us_topic_0000001083527348.md#en-us_topic_0283137574_en-us_topic_0237124754_en-us_topic_0059778487_section10342177134137),  *[autovacuum\*max\_workers](en-us_topic_0289900634.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)*, and  _[max\*inner\_tool\_connections](#en-us_topic_0283136886_section132711513143211)_  depend on the settings of the corresponding GUC parameters.  *AUXILIARY\*BACKENDS_  indicates the number of reserved auxiliary threads, which is fixed at 20.  *AV\*LAUNCHER\_PROCS_  indicates the number of reserved launcher threads for autovacuum, which is fixed at 2.
 
@@ -75,7 +75,7 @@ Retain the default value of this parameter on the primary node of the databases.
 
 **Parameter description**: Specifies the maximum number of concurrent connections of a tool which is allowed to connect to the database. This parameter influences the concurrent connection capability of the openGauss tool.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1 to  *MIN*  \(which takes the smaller value between  **262143**  and  *max\*connections_\). For details about how to calculate the value of  *max\*connections_, see the preceding description.
 
@@ -91,7 +91,7 @@ If this parameter is set to a large value, openGauss requires more System V shar
 
 **Parameter description**: Specifies the minimum number of connections reserved for administrators. You are advised not to set this parameter to a large value. This parameter is used together with the  *max\*connections_  parameter. The maximum number of connections of the administrator is equal to the value of  *max\*connections_  +  *sysadmin\*reserved\_connections_.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 0 to  *MIN*  \(which takes the smaller value between  **262143**  and  *max\*connections_\). For details about how to calculate the value of  *max\*connections_, see the preceding description.
 
@@ -103,7 +103,7 @@ Note: When the thread pool function is enabled, if the thread pool is fully occu
 
 **Parameter description**: Specifies the Unix domain socket directory for the openGauss server to listen to connections from the client.
 
-This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a  **POSTMASTER**  parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 The parameter length limit varies by OS. If the length is exceeded, the error "Unix-domain socket path xxx is too long" will be reported.
 
@@ -115,7 +115,7 @@ The parameter length limit varies by OS. If the length is exceeded, the error "U
 
 **Parameter description**: Specifies the group of the Unix domain socket \(the user of a socket is the user that starts the server\). This parameter can work with  **[unix\_socket\_permissions](#en-us_topic_0283136886_en-us_topic_0237124695_en-us_topic_0059777636_s09d0cf55124b4f1aa3d401d18b9b4151)**  to control socket access.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string. If this parameter is set to an empty string, the default group of the current user is used.
 
@@ -129,7 +129,7 @@ The Unix domain socket uses the usual permission set of the Unix file system. Th
 
 You are advised to set it to  **0770**  \(only allowing access from users connecting to the database and users in the same group as them\) or  **0700**  \(only allowing access from users connecting to the database\).
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: 0000 to 0777
 
@@ -153,7 +153,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the client name used in the current connection request.
 
-This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 When a standby node requests to replicate logs on the primary node, if this parameter is not an empty string, it is used as the name of the streaming replication slot of the standby node on the primary node. In this case, if the length of this parameter exceeds 61 bytes, only the first 61 bytes are used as the streaming replication slot name.
 
@@ -183,7 +183,7 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 
 **Parameter descriptio：**Whether enable dolphin database protocol or not
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a bool
 
@@ -193,7 +193,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Parameter description**: Specifies the TCP port listened on by the dolphin plugin server.
 
-This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: an integer ranging from 1024 to 65535
 
