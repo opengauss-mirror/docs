@@ -48,7 +48,7 @@
 
 -   **[Miscellaneous Parameters](miscellaneous-parameters.md)**
 
--   **[Wait Events](wait-events-62.md)**
+-   **[Wait Events](wait_events.md)**
 
 -   **[Query](query-62.md)**
 

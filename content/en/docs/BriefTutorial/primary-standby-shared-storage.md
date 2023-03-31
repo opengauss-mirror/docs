@@ -46,7 +46,7 @@ Compared with traditional gs\_initdb database creation, directories are classifi
 >Step-by-step manual installation means that you can run related commands step by step to create a database for shared storage after project compilation. For details about how to install the openGauss, see the *Installation Guide*.
 
 -   Prerequisites
-    -   The code of the project has been compiled. For details about the compilation, see [Software Compilation and Installation](en-us_topic_0289899548.md).
+    -   The code of the project has been compiled. For details about the compilation, see [Software Compilation and Installation](../Compilationguide/setting-up-the-compilation-environment.md.md).
     -   The LUN of the disk array has been mounted to the host, the UltraPath software has been installed, and the disk array is available.
 
 
@@ -238,7 +238,7 @@ The shared storage feature provides the real-time read consistency function on s
     3.  Perform steps [1](#li0988195961613) to [5](#li23296624419) to gs\_initdb to create a database.
     4.  Modify the **postgresql.conf** file.
 
-        Set **ss\_interconnect\_type** to **RDMA** and add the **ss\_rdma\_work\_config** and **ss\_ock\_log\_path** configuration items. For details about the parameter description and configuration, see [Shared Storage Parameters](en-us_topic_0000001371524841.md).
+        Set **ss\_interconnect\_type** to **RDMA** and add the **ss\_rdma\_work\_config** and **ss\_ock\_log\_path** configuration items. For details about the parameter description and configuration, see [Shared Storage Parameters](../DataBaseReference/en-us_topic_0000001371524841.md).
 
         Example:
 
