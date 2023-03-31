@@ -102,7 +102,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
             (1 row)
             ```
 
-            Where, @ is the data table snapshot version separator and the from clause is followed by the existing data table snapshot, in the format of @ + version number. You can add an operation keyword \(such as  **INSERT**,  **UPDATE**,  **DELETE**, or  **ALTER**\) after the  **USING**  keyword. In the  **INSERT INTO**  and  **DELETE FROM**  statements, clauses related to data table snapshot names, such as  **INTO**  and  **FROM**, can be omitted. For details, see  [AI Feature Functions](en-us_topic_0303599451.md).
+            Where, @ is the data table snapshot version separator and the from clause is followed by the existing data table snapshot, in the format of @ + version number. You can add an operation keyword \(such as  **INSERT**,  **UPDATE**,  **DELETE**, or  **ALTER**\) after the  **USING**  keyword. In the  **INSERT INTO**  and  **DELETE FROM**  statements, clauses related to data table snapshot names, such as  **INTO**  and  **FROM**, can be omitted. For details, see  [AI Feature Functions](../SQLReference/ai-feature-functions.md).
 
             In the example, based on the  **s1@1.0**  snapshot, insert two pieces of data and delete one piece of data to generate a new snapshot  **s1@3.0**. Then, retrieve  **s1@3.0**.
 
