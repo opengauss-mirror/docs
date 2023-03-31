@@ -81,7 +81,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see "GUC Parameters \> Resource Consumption \> Cost-based Vacuum Delay" in the  _Developer Guide_.
+    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../DataBaseReference/cost-based-vacuum-delay.md).
 
 3.  Delete a table.
 

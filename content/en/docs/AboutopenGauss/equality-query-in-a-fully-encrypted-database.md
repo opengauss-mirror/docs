@@ -46,7 +46,7 @@ None.
 -   Data can only be imported to the encrypted table by running  **copy from stdin**,  **\\copy**, or  **insert into values \(...\)**  on the client.
 -   Copying an encrypted table to a file is not supported.
 -   The system does not support encrypted queries, such as sorting, range query, and fuzzy query, except equality query.
--   The encrypted syntax of stored procedures for some functions is supported. For details about the constraints, see "Encrypted Functions and Stored Procedures" in the  *Developer Guide*.
+-   The encrypted syntax of stored procedures for some functions is supported. For details about the constraints, see [Encrypted Functions and Stored Procedures](../DatabaseAdministrationGuide/encrypted-functions-and-stored-procedures.md).
 -   Non-encrypted table data cannot be inserted into encrypted table data using the  **INSERT INTO... SELECT...**  or  **MERGE INTO**  syntax.
 -   For a request in connection state, the CEK information change on the server can be detected only after the cache update operation is triggered \(for example, the user is changed or the encrypted column fails to be decrypted\) and the connection is re-established.
 -   Encrypted equality query is not supported on columns encrypted using the random encryption algorithm.
