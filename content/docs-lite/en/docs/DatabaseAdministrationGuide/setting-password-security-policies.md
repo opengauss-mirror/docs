@@ -53,7 +53,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
     -   Password complexity
 
-        You need to specify a password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules \(see  [password\_policy](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)\). Otherwise, you are prompted to enter the password again.
+        You need to specify a password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules \(see  [password\_policy](../DataBaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)\). Otherwise, you are prompted to enter the password again.
 
         -   If parameter  **password\_policy**  is set to  **1**, the default password complexity rule is used to check passwords.
         -   If parameter  **password\_policy**  is set to  **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see  [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to  **0**  because this operation poses security risks. Even if the setting is required, you must set  **password\_policy**  to  **0**  on all openGauss nodes.
@@ -121,7 +121,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
     -   Password reuse
 
-        An old password can be reused only when it meets the requirements on reuse days \(**[password\_reuse\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**\) and reuse times \(**[password\_reuse\_max](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**\).  [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee)  lists the parameter configurations.
+        An old password can be reused only when it meets the requirements on reuse days \(**[password\_reuse\_time](../DataBaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**\) and reuse times \(**[password\_reuse\_max](../DataBaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**\).  [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee)  lists the parameter configurations.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >The default value of  **password\_reuse\_time**  is  **60**  and the default value of  **password\_reuse\_max**  is  **0**, respectively. Large values of the two parameters bring higher security. However, if the values of the parameters are set too large, inconvenience may occur. The default values of the two parameters meet the security requirements. You can change the parameter values as needed for higher security.
@@ -207,7 +207,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
     -   Password validity period
 
-        A validity period \(**[password\_effect\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)**\) is set for each database user password. If the password is about to expire \(**[password\_notify\_time](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)**\), the system displays a message to remind the user to change it upon login.
+        A validity period \(**[password\_effect\_time](../DataBaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)**\) is set for each database user password. If the password is about to expire \(**[password\_notify\_time](../DataBaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)**\), the system displays a message to remind the user to change it upon login.
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >Considering the usage and service continuity of a database, the database still allows a user to log in after the password expires. A password change notification is displayed every time the user logs in to the database until the password is changed.

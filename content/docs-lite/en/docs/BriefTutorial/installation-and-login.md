@@ -4,9 +4,9 @@ openGauss supports simplified installation using scripts. Simplified installatio
 
 -   **[Obtaining and Verifying an Installation Package](obtaining-and-verifying-an-installation-package.md)**  
 
--   **[Preparing the Software and Hardware Installation Environment](data01-pa_temp-1-en-us_bookmap_0000001262449423220330105200533-temp-en-us_topic_0000001217616720.md)**  
+-   **[Preparing the Software and Hardware Installation Environment](preparing-the-software-and-hardware-installation-environment.md)**  
 
--   **[Installation ](data01-pa_temp-1-en-us_bookmap_0000001262449423220330105200533-temp-en-us_topic_0000001262456549.md)**  
+-   **[Installation ](installation.md)**  
 
 -   **[gsql Connection and Usage](gsql-connection-and-usage.md)**  
 

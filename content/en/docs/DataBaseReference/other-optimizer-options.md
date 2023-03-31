@@ -304,7 +304,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **canonical\_pathkey**: after regularization pathkey is generated. \(**pathkey**: a set of ordered key values of data.\)
 -   **index\_cost\_with\_leaf\_pages\_only**: Considers index leaf nodes when the index cost is estimated.
 -   **partition\_opfusion**: Enables partitioned table optimization.
--   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details, see  [Type Resolution for CASE in ORA Compatibility Type](en-us_topic_0289900690.md#section20337194392613).
+-   **a\_style\_coerce**: Enables the Decode type conversion rule to be compatible with O. For details.
 -   **partition\_fdw\_on**: SQL statements can be created for Postgres foreign tables based on partitioned tables.
 -   **predpush\_same\_level**: Enables predpush hints to control parameterized paths at the same layer.
 
@@ -358,7 +358,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >-   A larger positive number than the default value increases the time required to do  **ANALYZE**, but might improve the quality of the optimizer's estimates.
 >-   Changing settings of this parameter may result in performance deterioration. If query performance deteriorates, you can:
 >    1.  Restore to the default statistics.
->    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](en-us_topic_0289900289.md).
+>    2.  Use hints to force the optimizer to use the optimal query plan. For details, see  [Hint-based Tuning](../PerformanceTuningGuide/hint-based-tuning.md).
 >-   If this parameter is set to a negative value, the number of samples is greater than or equal to 2% of the total data volume, and the number of records in user tables is less than 1.6 million, the time taken by running  **ANALYZE**  will be longer than when this parameter uses its default value.
 >-   If this parameter is set to a negative value, the auto-analyze function is disabled.
 

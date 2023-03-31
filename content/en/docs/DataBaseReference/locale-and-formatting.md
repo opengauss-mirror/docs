@@ -31,7 +31,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **postgres**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **ISO**.
 -   **postgres\_verbose**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **non\_ISO**.
 -   **iso\_8601**  indicates that output matching the time interval "format with designators" defined in ISO 8601 will be generated.
--   **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](en-us_topic_0289900496.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_lf9dae2de082b41c094177f70cf798433).
+-   **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](locale-and-formatting.md.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_lf9dae2de082b41c094177f70cf798433).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >The  **IntervalStyle**  parameter also affects the interpretation of ambiguous interval input.
@@ -44,7 +44,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: a string. You can obtain it by querying the  [PG\_TIMEZONE\_NAMES](en-us_topic_0289900200.md)  view.
+**Value range**: a string. You can obtain it by querying the  [PG\_TIMEZONE\_NAMES](../DataBaseReference/pg_timezone_names.md)  view.
 
 Default value:  GMT
 

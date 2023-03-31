@@ -10,7 +10,7 @@ An expression is similar to a formula. You can use it in a query statement to se
 
 -   Comparison expressions
 
-    [Operators](en-us_topic_0289900672.md)  lists the common comparison operators.
+    [Operators](operators.md)  lists the common comparison operators.
 
     In addition to comparison operators, you can also use the following sentence structures:
 

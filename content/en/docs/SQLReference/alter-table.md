@@ -136,7 +136,7 @@
 
 - **| ENABLE REPLICA TRIGGER trigger\_name**
 
-  Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](en-us_topic_0289900775.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216). When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
+  Determines that the trigger firing mechanism is affected by the configuration variable  [session\_replication\_role](../DataBaseReference/statement-behavior.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216). When the replication role is  **origin**  \(default value\) or  **local**, a simple trigger is fired.
 
   When  **ENABLE REPLICA**  is configured for a trigger, it is fired only when the session is in replica mode.
 
@@ -146,7 +146,7 @@
 
 - **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
 
-  Enables or disables a rule for tables. Disabled rules are still visible in the system, but are not applied during query rewriting. The  **ON SELECT**  rule cannot be disabled because it is related to the view implementation. Rules configured as  **ENABLE REPLICA**  are enabled only when the session is in replica mode, while those configured as  **ENABLE ALWAYS**  can be enabled regardless of the replica mode. Rule triggering is also affected by configuration variables in  [session\_replication\_role](en-us_topic_0289900775.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216), which is similar to the preceding trigger setting.
+  Enables or disables a rule for tables. Disabled rules are still visible in the system, but are not applied during query rewriting. The  **ON SELECT**  rule cannot be disabled because it is related to the view implementation. Rules configured as  **ENABLE REPLICA**  are enabled only when the session is in replica mode, while those configured as  **ENABLE ALWAYS**  can be enabled regardless of the replica mode. Rule triggering is also affected by configuration variables in  [session\_replication\_role](../DataBaseReference/statement-behavior.md#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216), which is similar to the preceding trigger setting.
 
 - **| DISABLE/ENABLE ROW LEVEL SECURITY**
 

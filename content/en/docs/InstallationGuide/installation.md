@@ -1,17 +1,10 @@
-# Installation<a name="EN-US_TOPIC_0000001120430818"></a>
+# Installation Guide<a name="EN-US_TOPIC_0242381303"></a>
 
-## Prerequisites<a name="section9955194683210"></a>
+## Overview
 
--   A user group and a common user have been created.
--   All the server OSs and networks are functioning properly.
--   You must have the read, write, and execute permissions on the decompression directory, installation directory, and data directory of the database installation package. The installation directory and data directory must be empty, and the installation directory, data directory, and log directory cannot overlap.
--   You have the execute permission on the downloaded openGauss Lite package.
--   Before the installation, check whether the specified port is occupied. If the port is occupied, change the port or stop the process that uses the port.
--   Environment variables: Ensure that  *GAUSSHOME*,  *GAUSSDATA*,  *GAUSSLOG*, and  *GAUSSENV*  do not exist during new installation. If subsequent operations such as configuration and startup are performed, ensure that these environment variables are properly configured.
+This document describes how to install the openGauss.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
->If the  **history**  command is not disabled before the installation, manually clear sensitive information in the  **HISTORY**  records after the installation to prevent information leakage.
->If the  **history**  command has been disabled before the installation, ignore this note.
+## Intended Audience
 
 ## Procedure<a name="section98663181331"></a>
 

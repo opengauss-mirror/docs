@@ -234,6 +234,4 @@
 
 -   **[GS\_LSC\_MEMORY\_DETAIL](gs_lsc_memory_detail.md)**  
 
--   **[GS\_WRITE\_TERM\_LOG](en-us_topic_0000001212336584.md)**  
-
 

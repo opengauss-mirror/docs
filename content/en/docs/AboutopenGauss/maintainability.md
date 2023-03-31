@@ -4,7 +4,7 @@
 
 -   **[Rolling Upgrade](rolling-upgrade.md)**  
 
--   **[Workload Diagnosis Report \(WDR\)](workload-diagnosis-report-(wdr).md)**  
+-   **[Workload Diagnosis Report \(WDR\)](workload-diagnosis-report-wdr.md)**  
 
 -   **[Slow SQL Diagnosis](slow-sql-diagnosis.md)**  
 
