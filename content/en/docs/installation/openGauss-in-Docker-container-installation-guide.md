@@ -1,5 +1,5 @@
 # Opengauss on Docker
-Sample Docker build files to facilitate installation, configuration, and environment setup for DevOps users. For more information about openGasuss please see the [opengauss Online Documentation](https://opengauss.org/zh/docs/1.0.0/docs/Quickstart/Quickstart.html).
+Sample Docker build files to facilitate installation, configuration, and environment setup for DevOps users. For more information about openGasuss please see the [opengauss Online Documentation](https://docs.opengauss.org/zh/docs/1.0.0/docs/Quickstart/Quickstart.html).
 
 ## How to build and run
 This project offers sample Dockerfiles for:
@@ -11,7 +11,7 @@ To assist in building the images, you can use the [buildDockerImage.sh](dockerfi
 The `buildDockerImage.sh` script is just a utility shell script that performs MD5 checks and is an easy way for beginners to get started. Expert users are welcome to directly call `docker build` with their prefered set of parameters.
 
 ### Building opengauss Docker Install Images
-**IMPORTANT:** You will have to provide the installation binaries of opengauss and put them into the `dockerfiles/<version>` folder. You only need to provide the binaries you are going to install. The binaries can be downloaded from the [opengauss.org](https://opengauss.org/en/download.html),  You also have to make sure to have internet connectivity for yum. Note that you must not uncompress the binaries. The script will handle that for you and fail if you uncompress them manually!
+**IMPORTANT:** You will have to provide the installation binaries of opengauss and put them into the `dockerfiles/<version>` folder. You only need to provide the binaries you are going to install. The binaries can be downloaded from the [opengauss.org](https://opengauss.org/en/download/),  You also have to make sure to have internet connectivity for yum. Note that you must not uncompress the binaries. The script will handle that for you and fail if you uncompress them manually!
 
 Before you build the image make sure that you have provided the installation binaries and put them into the right folder. go into the **dockerfiles** folder and run the **buildDockerImage.sh** script:
 
