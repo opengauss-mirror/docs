@@ -125,7 +125,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 -   benchmarksql工具中的模式创建脚本需要调整为MOT语法，避免使用不支持的DDL。下载调整后的脚本：[https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz)。该tar文件的内容包括sql.common.opengauss.mot文件夹和jTPCCTData.java文件，以及一个示例配置文件postgresql.conf和TPCC属性文件props.mot供参考。
 -   将sql.common.opengauss.mot文件夹放在run文件夹下与sql.common同级的文件夹，用下载的Java文件替换src/client/jTPCCTData.java文件。
 -   编辑run文件夹下的runDatabaseBuild.sh文件，将extraHistID从AFTER\_LOAD列表中删除，以避免不支持的ALTER表DDL。
--   将lib/postgres文件夹下的JDBC驱动替换为openGauss JDBC。驱动下载链接：[https://opengauss.org/en/download.html](https://opengauss.org/en/download.html)。
+-   将lib/postgres文件夹下的JDBC驱动替换为openGauss JDBC。驱动下载链接：[https://opengauss.org/en/download/](https://opengauss.org/en/download/)。
 
 在下载的Java文件（与原始文件相比）中所做的唯一更改是注释错误日志打印，以进行序列化和重复键错误。这些错误在MOT中是正常的，因为MOT使用的是乐观并发控制（OCC）机制。
 
