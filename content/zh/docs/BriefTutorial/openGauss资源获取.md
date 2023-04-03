@@ -19,7 +19,7 @@ openGauss提供了在线资源，其中包含大量有用的信息，例如常�
 
 openGauss已经开放数据库源代码，成立了[openGauss开源社区](https://gitee.com/opengauss)。openGauss鼓励用户进行社区贡献、合作，希望能共同构建一个能够融合多元化技术架构的企业级开源数据库社区。
 
-openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以便于更好的管理和改善工作流程。 SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云上拥有一个或多个代码仓库。 您可以在SIG对应的代码仓库上提交Issue，参与Issue讨论，提交Pull Request，参与代码检视等。 常用SIG见[表1](#table9705652154412)，您可以从SIG说明列表中找到您感兴趣的SIG。参与贡献的方法请参见[社区贡献](https://opengauss.org/zh/contribution.html)。
+openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以便于更好的管理和改善工作流程。 SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云上拥有一个或多个代码仓库。 您可以在SIG对应的代码仓库上提交Issue，参与Issue讨论，提交Pull Request，参与代码检视等。 常用SIG见[表1](#table9705652154412)，您可以从SIG说明列表中找到您感兴趣的SIG。参与贡献的方法请参见[社区贡献](https://opengauss.org/zh/contribution/)。
 
 **表 1**  openGauss社区常见SIG
 
@@ -135,11 +135,11 @@ openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以�
 
 ## 博客<a name="section1613515344318"></a>
 
-openGauss提供了[博客](https://opengauss.org/zh/blogs/blogs.html)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜索，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
+openGauss提供了[博客](https://opengauss.org/zh/blogs/)板块，此处汇聚了openGauss用户在使用过程中的问题解决和心得。如果遇到问题，您也可以在此处进行搜索，查看其他用户的解决办法。您在使用过程中的心得，也可以发表博客分享给其他用户，帮助更多的人解决问题。
 
 ## 邮件列表<a name="section18179203094610"></a>
 
-openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀请您通过邮件列表参与讨论，详情请参见[线上交流](https://opengauss.org/zh/community/onlineCommunication.html)。
+openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀请您通过邮件列表参与讨论，详情请参见[线上交流](https://opengauss.org/zh/community/onlineCommunication/)。
 
 ## 学习交流平台<a name="section7788161704417"></a>
 
