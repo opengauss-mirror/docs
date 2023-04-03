@@ -11,7 +11,7 @@
     postgresql-9.3-1102.jdbc41.jar.bak    # 自带jar备份。
     ```
 
-    openGauss适配的JDBC版本包获取路径为[openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download.html)。
+    openGauss适配的JDBC版本包获取路径为[openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download/)。
 
 3.  进入benchmarksql-5.0根目录，输入ant命令进行编译。
 

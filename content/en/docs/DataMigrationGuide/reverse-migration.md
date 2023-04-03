@@ -79,4 +79,4 @@ The reverse-migration tool is an independent JAR package. You can delete the JAR
 
 ## Precautions <a name="section147831546105511"></a>
 
-Reverse migration depends on the logical decoding capability of openGauss. For details about the restrictions, see [Logical Decoding Overview](https://opengauss.org/en/docs/latest/docs/Developerguide/overview-100.html).
+Reverse migration depends on the logical decoding capability of openGauss. For details about the restrictions, see [Logical Decoding Overview](https://docs.opengauss.org/en/docs/5.0.0/docs/Developerguide/overview-100.html).
