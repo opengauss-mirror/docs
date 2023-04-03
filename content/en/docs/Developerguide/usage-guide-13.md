@@ -178,7 +178,7 @@ Currently, PL/Python stored procedures are not friendly to concurrent execution.
 
 ## Algorithms in the Library<a name="section20203192814330"></a>
 
-For details about algorithms in the library and how to use them, see the  [official MADlib document](http://madlib.apache.org/docs/latest/index.html).
+For details about algorithms in the library and how to use them, see the  [official MADlib document](http://madlib.apache.org/docs/3.1.1/index.html).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   Currently, only the machine learning algorithm is supported. The deep learning module is not supported.

@@ -169,7 +169,7 @@ select proc_oid, id, parent_id, substr(query, 0, 50), namespace, weight, total, 
 
 ## Miscellaneous
 
-Another useful system table to get information about stored procedures and functions is [**pg_proc**](https://opengauss.org/en/docs/2.0.0/docs/Developerguide/pg_proc.html).
+Another useful system table to get information about stored procedures and functions is [**pg_proc**](https://docs.opengauss.org/en/docs/2.0.0/docs/Developerguide/pg_proc.html).
 
 For example, body of a stored procedure can be queried using the following query:
 
