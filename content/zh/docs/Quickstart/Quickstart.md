@@ -6,6 +6,6 @@
 
 《开发人员指南》部分介绍了openGauss的许多重要功能。
 
-例如， [MOT内存表](https://opengauss.org/zh/docs/1.0.1/docs/Developerguide/内存表特性.html)部分详细介绍了内存优化表，这是一种与标准存储引擎并排嵌入的高性能存储引擎。其中包括MOT简介（包括性能基准），使用MOT部分为完整的手册指南，MOT概念部分作为总结，对MOT设计和技术有更深入的了解。
+例如， [MOT内存表](https://docs.opengauss.org/zh/docs/1.0.1/docs/Developerguide/内存表特性.html)部分详细介绍了内存优化表，这是一种与标准存储引擎并排嵌入的高性能存储引擎。其中包括MOT简介（包括性能基准），使用MOT部分为完整的手册指南，MOT概念部分作为总结，对MOT设计和技术有更深入的了解。
 
  

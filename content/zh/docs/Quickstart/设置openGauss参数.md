@@ -9,7 +9,7 @@
 
 ## 设置客户端认证策略
 
-目前openGauss配置文件“pg\_hba.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。更多配置请参见[《开发者指南》](https://opengauss.org/zh/docs/1.0.1/docs/Developerguide/Developerguide.html)。
+目前openGauss配置文件“pg\_hba.conf”中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。更多配置请参见[《开发者指南》](https://docs.opengauss.org/zh/docs/1.0.1/docs/Developerguide/Developerguide.html)。
 
 ### 语法
 
