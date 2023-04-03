@@ -11,7 +11,7 @@
     postgresql-9.3-1102.jdbc41.jar.bak #Backup .jar file.
     ```
 
-    The JDBC version package adapted to openGauss is obtained from  [openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download.html).
+    The JDBC version package adapted to openGauss is obtained from  [openGauss-x.x.x-JDBC .tar.gz](https://opengauss.org/zh/download/).
 
 3.  Go to the root directory of benchmarksql-5.0 and run the  **ant**  command for compilation.
 
