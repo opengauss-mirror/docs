@@ -23,7 +23,7 @@ None.
 ## Constraints
 
 All gray upgrade constraints are met.
-For details about the gray upgrade constraints, see "Before You Start \> Upgrade Impact and Constraints" in *Upgrade Guide*.
+For details about the gray upgrade constraints, see [Before You Start](../DatabaseOMGuide/before-you-start.md).
 
 ## Dependencies
 
