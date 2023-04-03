@@ -15,7 +15,7 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 ## Creating an openGauss Docker Image<a name="en-us_topic_0283136491_section159607494319"></a>
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
->-   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-**_X.X.X_**-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<_version_\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html). Ensure that the correct yum source is available.
+>-   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-**_X.X.X_**-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<_version_\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
 >-   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the MD5 check is performed by default. You need to manually write the check result to the  **md5\_file\_amd64**  file.
 >    ```
 >    ## Modify the MD5 verification file.
