@@ -17,7 +17,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 ## Installing Chameleon<a name="section1912981915448"></a>
 
 -   **Installing using WHL**
-    1.  Download the installation package. Download address: [https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/chameleon/chameleon-1.0.0-py3-none-any.whl](https://gitee.com/link?target=https%3A%2F%2Fopengauss.obs.cn-south-1.myhuaweicloud.com%2Flatest%2Fchameleon%2Fchameleon-1.0.0-py3-none-any.whl). After the installation package is downloaded, install it in the Python virtual environment.
+    1.  Download the installation package. Download address: [https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/chameleon/chameleon-1.0.0-py3-none-any.whl](https://gitee.com/link?target=https%3A%2F%2Fopengauss.obs.cn-south-1.myhuaweicloud.com%2Flatest%2Fchameleon%2Fchameleon-1.0.0-py3-none-any.whl). After the installation package is downloaded, install it in the Python virtual environment.
     2.  Run the following commands to create and activate the Python virtual environment:
 
         ```

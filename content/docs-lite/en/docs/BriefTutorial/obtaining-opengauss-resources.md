@@ -19,7 +19,7 @@ openGauss provides online resources that contain a lot of useful information, su
 
 openGauss has opened the database source code and an  [openGauss community](https://gitee.com/opengauss)  has been established. openGauss encourages users to contribute to and cooperate with the community, hoping to jointly build an enterprise-level open-source database community that can integrate diversified technical architectures.
 
-The openGauss community is organized based on different Special Interest Groups \(SIGs\) to better manage and improve the work process. SIGs are open to everyone to make contributions. Each SIG has one or more code repositories on the Gitee platform. You can commit issues, participate in issue discussions, pull requests, and review code in the code repository of an SIG.  [Table 1](#table9705652154412)  lists common SIGs. You can find the SIGs that you are interested in from the SIG list. For details about how to contribute to the community, see  [Contribution](https://opengauss.org/zh/contribution.html).
+The openGauss community is organized based on different Special Interest Groups \(SIGs\) to better manage and improve the work process. SIGs are open to everyone to make contributions. Each SIG has one or more code repositories on the Gitee platform. You can commit issues, participate in issue discussions, pull requests, and review code in the code repository of an SIG.  [Table 1](#table9705652154412)  lists common SIGs. You can find the SIGs that you are interested in from the SIG list. For details about how to contribute to the community, see  [Contribution](https://opengauss.org/zh/contribution/).
 
 **Table  1**  Common SIGs in the openGauss community
 
@@ -135,11 +135,11 @@ The openGauss community is organized based on different Special Interest Groups 
 
 ## Blog<a name="section1613515344318"></a>
 
-openGauss provides a  [blog](https://opengauss.org/zh/blogs/blogs.html)  section, where users can exchange their problems and experience during the use of openGauss. If you encounter any problem, you can also search for other users' solutions. Or, post blogs to share your experience with other users, helping them solve problems.
+openGauss provides a  [blog](https://opengauss.org/zh/blogs/blogs/)  section, where users can exchange their problems and experience during the use of openGauss. If you encounter any problem, you can also search for other users' solutions. Or, post blogs to share your experience with other users, helping them solve problems.
 
 ## Mailing List<a name="section18179203094610"></a>
 
-The openGauss community uses the mailing list for online communication. We sincerely invite you to participate indiscussions through the mailing list. For details, see  [Communication](https://opengauss.org/zh/community/onlineCommunication.html).
+The openGauss community uses the mailing list for online communication. We sincerely invite you to participate indiscussions through the mailing list. For details, see  [Communication](https://opengauss.org/zh/community/onlineCommunication/).
 
 ## Learning Platform<a name="section7788161704417"></a>
 

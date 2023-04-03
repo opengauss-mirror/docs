@@ -160,7 +160,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 Download the package from the following link, decompress the package, configure related configuration files, and run the shell script to start the service: For details about the configuration information and operation procedure, see the source code installation part.
 
 ```
-https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-datachecker-performance-3.1.0.tar.gz
+https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-datachecker-performance-3.1.0.tar.gz
 tar -zxvf openGauss-datachecker-performance-3.1.0.tar.gz
 ```
 

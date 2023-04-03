@@ -38,4 +38,4 @@ rename user
 
 ## Helpful Links <a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s08580f38742d47efa6a955c9385d6ae2"> </a>
 
-[ALTER USER](https://opengauss.org/zh/docs/latest/docs/BriefTutorial/%E9%99%84%E5%BD%95-SQL%E8%AF%AD%E6%B3%95.html)
+[ALTER USER](https://docs.opengauss.org/zh/docs/3.1.1/docs/BriefTutorial/%E9%99%84%E5%BD%95-SQL%E8%AF%AD%E6%B3%95.html)
