@@ -29,7 +29,7 @@ openGauss数据库提供了对Psycopg2特性的支持，并且支持psycopg2通�
 ## 加载驱动<a name="section163169384819"></a>
 
 -   在使用驱动之前，需要做如下操作：
-    1.  从[openGauss官网](https://opengauss.org/zh/download.html)上下载编译好的psycopg2压缩包。
+    1.  从[openGauss官网](https://opengauss.org/zh/download/)上下载编译好的psycopg2压缩包。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >openGauss官网上下载的psycopg2适配的版本为Python3.6，如果使用其他版本的Python, 需要自行编译psycopg2，编译方法与在PostgreSQL数据库下基本相同。只是需要修改一下编译时的setup.py版本号校验部分的代码，可通过如下命令实现：

@@ -199,7 +199,7 @@ headless: true
 	-   [Appendix: SQL Syntax]({{< relref "./docs/BriefTutorial/appendix-sql-syntax.md" >}})
 
 -   [Application Development Guide]({{< relref "./docs/DeveloperGuide/application-development.md" >}})
-    -   [Query Request Handling Process]({{< relref "./docs/DeveloperGuide/query-request-handling-process.md" >}})
+    -   [Query Request Handling Process]({{< relref ".https://docs.opengauss.org/zh/docs/query-request-handling-process.md" >}})
     -   [Development and Design Proposal]({{< relref "./docs/DeveloperGuide/development-and-design-proposal.md" >}})
         -   [Development and Design Proposal]({{< relref "./docs/DeveloperGuide/development-and-design-proposal-overview.md" >}})
         -   [Database Object Naming Conventions]({{< relref "./docs/DeveloperGuide/database-object-naming-conventions.md" >}})

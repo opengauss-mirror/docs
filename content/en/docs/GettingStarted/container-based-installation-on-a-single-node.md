@@ -16,7 +16,7 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >
-> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-***X.X.X***-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html). Ensure that the correct yum source is available.
+> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-***X.X.X***-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
 >
 > -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
 >    ```
