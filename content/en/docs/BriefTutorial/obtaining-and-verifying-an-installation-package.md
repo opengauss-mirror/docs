@@ -3,7 +3,7 @@
 ## Procedure<a name="en-us_topic_0289899746_en-us_topic_0283136484_en-us_topic_0241802590_en-us_topic_0085434667_en-us_topic_0059782060_section62223956163549"></a>
 
 1.  Download the installation package of the corresponding platform from the openGauss community.
-    1.  [Log in to the openGauss community](https://opengauss.org/en/download.html)  and download the latest installation package of the corresponding platform. For individual developers or non-enterprise-level environments, download the simplified installation package \(without installing components such as the OM\).
+    1.  [Log in to the openGauss community](https://opengauss.org/en/download/)  and download the latest installation package of the corresponding platform. For individual developers or non-enterprise-level environments, download the simplified installation package \(without installing components such as the OM\).
     2.  Click  **Download**.
 
 2.  Check the installation package.
