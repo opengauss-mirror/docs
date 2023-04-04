@@ -97,7 +97,7 @@
 
 -   **DELTAMERGE**
 
-    \(For column-store tables\) Migrates data from the delta table to primary tables. For a column-store table, this operation is controlled by  **deltarow\_threshold**. For details, see  [enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)  and  [Parameter Description](create-table.md#en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428).
+    \(For column-store tables\) Migrates data from the delta table to primary tables. For a column-store table, this operation is controlled by  **deltarow\_threshold**. For details, see enable\_delta\_store  and  [Parameter Description](create-table.md#en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428).
 
 
 ## Examples<a name="en-us_topic_0283137096_en-us_topic_0237122195_en-us_topic_0059777503_s030f55570baf48f8978effdf4361bb45"></a>
