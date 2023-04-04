@@ -700,7 +700,7 @@
 
 -   multiply\(x double precision or text, y double precision or text\)
 
-    Description: Product of x and y.
+    Description: Product of x and y. Only multiply\(x text, y double precision\) or multiply\(x double precision, y text\) is supported.
 
     Return type: double precision
 
