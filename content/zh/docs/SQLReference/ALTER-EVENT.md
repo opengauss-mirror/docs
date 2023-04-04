@@ -10,10 +10,11 @@
 -   只有定时任务的所有者有权修改待修改的定时任务，系统管理员默认拥有修改所有定时任务的权限。
 -   可以通过SHOW  EVENTS或在PG\_JOB表中查看log\_user列来获得job的所有者信息
 -   修改定时任务时每次修改成功后会更新被修改job的所有者为当前用户，若修改定时任务时指定了definer，则更新为被指定的definer。
--   definer选项场景限制与[CREATE EVENT](CREATE-EVENT.md)章节中对definer限制场景一致。
+- definer选项场景限制与[CREATE EVENT](CREATE-EVENT.md)章节中对definer限制场景一致。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   系统管理员修改其他用户创建的定时任务后，被修改定时任务的所有者将切换为系统管理员，待执行语句将使用系统管理员的权限执行。
+  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >
+  >系统管理员修改其他用户创建的定时任务后，被修改定时任务的所有者将切换为系统管理员，待执行语句将使用系统管理员的权限执行。
 
 
 ## 语法格式<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s7a58ab6578844d1d826f43cf0be946f9"></a>
