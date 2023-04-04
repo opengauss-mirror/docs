@@ -1313,7 +1313,7 @@ headless: true
     			-   [PKG\_SERVICE]({{< relref "./docs/SQLReference/PKG_SERVICE.md" >}})
     	-   [Retry管理]({{< relref "./docs/SQLReference/Retry管理.md" >}})
         -   [调试]({{< relref "./docs/SQLReference/调试-20.md" >}})
-    	-   [package]({{< relref "./docs/SQLReference/package.md" >}}
+    	-   [package]({{< relref "./docs/SQLReference/package.md" >}})
     -   [PL/pgSQL语言函数]({{< relref "./docs/SQLReference/PL-pgSQL语言函数.md" >}})
     -   [触发器]({{< relref "./docs/SQLReference/触发器.md" >}})
     -   [全文检索]({{< relref "./docs/SQLReference/全文检索.md" >}})
