@@ -28,7 +28,7 @@
 
 -   **[Object stats](object-stats.md)**  
 
--   **[Configuration settings](configuration-settings.md)**  
+-   **[Configuration settings](Configuration-settings-60.md)**  
 
 -   **[SQL Detail](sql-detail.md)**  
 
