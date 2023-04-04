@@ -129,7 +129,7 @@ $(function ($) {
         });
       }
       // type: "docs",
-      const version = location.pathname.split("/")[3].replace("latest","master");
+      const version = location.pathname.split("/")[3];
       let postData = {
         keyword: value,
         lang: lang,
