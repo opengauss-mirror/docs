@@ -10,5 +10,5 @@ The directory specified by GUC parameter  **log\_directory**  cannot be read or 
 
 ## Procedure<a name="en-us_topic_0283137178_section485620163250"></a>
 
-Set  **log\_directory**  to a valid directory. For details, see  [log\_destination](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194).
+Set  **log\_directory**  to a valid directory. For details, see  [log\_destination](../DataBaseReference/logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194).
 
