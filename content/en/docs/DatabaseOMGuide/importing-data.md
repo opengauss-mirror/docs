@@ -1,5 +1,23 @@
 # Importing Data<a name="EN-US_TOPIC_0242370266"></a>
 
+-   **[Running the INSERT Statement to Insert Data](running-the-insert-statement-to-insert-data.md)**  
+
+-   **[Running the COPY FROM STDIN Statement to Import Data](running-the-copy-from-stdin-statement-to-import-data.md)**  
+
+-   **[Using a gsql Meta-Command to Import Data](using-a-gsql-meta-command-to-import-data.md)**  
+
+-   **[Using gs\_restore to Import Data](using-gs_restore-to-import-data.md)**  
+
+-   **[Updating Data in a Table](updating-data-in-a-table-4.md)**  
+
+-   **[Deep Copy](deep-copy.md)**  
+
+-   **[ANALYZE Table](analyze-table.md)**  
+
+-   **[Doing VACUUM to a Table](doing-vacuum-to-a-table.md)**  
+
+-   **[Managing Concurrent Write Operations](managing-concurrent-write-operations.md)** 
+
 You can use  **INSERT**,  **COPY**, or  **\\copy**  \(a  **gsql**  meta-command\) to import data to the openGauss database. The methods have different characteristics. For details, see  [Table 1](#en-us_topic_0237121116_table59418455192145).
 
 **Table  1**  Import modes
@@ -31,23 +49,3 @@ You can use  **INSERT**,  **COPY**, or  **\\copy**  \(a  **gsql**  meta-command\
 </tr>
 </tbody>
 </table>
-
--   **[Running the INSERT Statement to Insert Data](running-the-insert-statement-to-insert-data.md)**  
-
--   **[Running the COPY FROM STDIN Statement to Import Data](running-the-copy-from-stdin-statement-to-import-data.md)**  
-
--   **[Using a gsql Meta-Command to Import Data](using-a-gsql-meta-command-to-import-data.md)**  
-
--   **[Using gs\_restore to Import Data](using-gs_restore-to-import-data.md)**  
-
--   **[Updating Data in a Table](updating-data-in-a-table-4.md)**  
-
--   **[Deep Copy](deep-copy.md)**  
-
--   **[ANALYZE Table](analyze-table.md)**  
-
--   **[Doing VACUUM to a Table](doing-vacuum-to-a-table.md)**  
-
--   **[Managing Concurrent Write Operations](managing-concurrent-write-operations.md)**  
-
-

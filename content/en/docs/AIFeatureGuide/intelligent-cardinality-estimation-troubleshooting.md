@@ -1,3 +1,3 @@
-# Troubleshooting<a name="EN-US_TOPIC_0000001311576152"></a>
+# Troubleshooting<a name="EN-US_TOPIC_0000001316306072"></a>
 
--   If the SQL statement cannot be rewritten, check whether the SQL statement complies with the rewriting rule or whether the SQL syntax is correct.
+If a model cannot be created due to an exception, the ABO optimizer creates only traditional statistics. Rectify the fault based on the alarm information.

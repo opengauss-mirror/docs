@@ -1,3 +1,3 @@
-# Overview<a name="EN-US_TOPIC_0000001311416516"></a>
+# Overview<a name="EN-US_TOPIC_0000001367634813"></a>
 
-The anomaly detection module implements time series data based on statistics methods to detect possible exceptions in the data. The framework of this module is decoupled to flexibly replace different anomaly detection algorithms. In addition, this module can automatically select algorithms based on different features of time series data. It supports anomaly value detection, threshold detection, box plot detection, gradient detection, growth rate detection, fluctuation rate detection, and status conversion detection.
+Adaptive plan selection applies to scenarios where a general cache plan is used for plan execution. Cache plan exploration is performed by using range linear expansion, and plan selection is performed by using range coverage matching. Adaptive plan selection makes up for the performance problem caused by the traditional single cache plan that cannot change according to the query condition parameter, and avoids frequent calling of query optimization.

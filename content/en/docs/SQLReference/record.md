@@ -1,6 +1,6 @@
-# record<a name="EN-US_TOPIC_0000001208139393"></a>
+# Record<a name="EN-US_TOPIC_0000001208139393"></a>
 
-## record Variables<a name="en-us_topic_0283136936_en-us_topic_0237122215_section16992418680"></a>
+## Record Variables<a name="en-us_topic_0283136936_en-us_topic_0237122215_section16992418680"></a>
 
 Perform the following operations to create a record variable:
 

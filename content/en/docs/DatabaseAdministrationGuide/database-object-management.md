@@ -1,4 +1,4 @@
-# Other Operations<a name="EN-US_TOPIC_0242370191"></a>
+# Database Object Management<a name="EN-US_TOPIC_0242370191"></a>
 
 -   **[Creating and Managing Schemas](creating-and-managing-schemas.md)**  
 
