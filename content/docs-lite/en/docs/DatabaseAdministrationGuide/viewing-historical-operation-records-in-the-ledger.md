@@ -14,7 +14,7 @@
     SELECT * FROM gs_global_chain;
     ```
 
-    This table contains 11 fields. For details about the meaning of each field, see  [GS\_GLOBAL\_CHAIN](gs_global_chain.md).
+    This table contains 11 fields. For details about the meaning of each field, see  [GS\_GLOBAL\_CHAIN](../DataBaseReference/gs_global_chain.md).
 
 -   To query the user history table in  **BLOCKCHAIN**  schema, the operation is as follows:
 
@@ -24,7 +24,7 @@
     SELECT * FROM blockchain.ledgernsp_usertable_hist;
     ```
 
-    The user history table contains four fields. For details about the meaning of each field, see  [Table 1](overview-6.md#en-us_topic_0059778793_t611ff04302e6463c8850c39d3e1d78fb).
+    The user history table contains four fields. For details about the meaning of each field, see  [Table 1](overview-leader-database.md#en-us_topic_0059778793_t611ff04302e6463c8850c39d3e1d78fb).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Generally, the name of a user history table is in the format of blockchain.<_schemaname_\>\_<_tablename_\>\_hist. If the schema name or table name of the tamper-proof user table is too long, the length of the table name generated using the preceding format may exceed the upper limit. In this case, the blockchain.<_schema\_oid_\>\_<_table\_oid_\>\_hist format is used to name the table.
