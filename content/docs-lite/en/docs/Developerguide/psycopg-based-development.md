@@ -28,11 +28,11 @@ openGauss supports the psycopg2 feature and allows psycopg2 to be connected in S
 
 -   **[Psycopg Package](psycopg-package.md)**  
 
--   **[Development Process](development-process-3.md)**  
+-   **[Development Process](development-process-psycopg.md)**  
 
 -   **[Loading a Driver](loading-a-driver.md)**  
 
--   **[Connecting to the Database](connecting-to-the-database.md)**  
+-   **[Connecting to the Database](connecting-to-a-database-psycopg.md)**  
 
 -   **[Executing SQL Statements](executing-sql-statements.md)**  
 
@@ -40,9 +40,9 @@ openGauss supports the psycopg2 feature and allows psycopg2 to be connected in S
 
 -   **[Closing the Connection](closing-the-connection.md)**  
 
--   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-(using-ssl)-4.md)**  
+-   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-using-ssl-psycopg.md)**  
 
--   **[Example: Common Operations](example-common-operations.md)**  
+-   **[Example: Common Operations](example-common-operations-psycopg.md)**  
 
 -   **[Psycopg API Reference](psycopg-api-reference.md)**  
 
