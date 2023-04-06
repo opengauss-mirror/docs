@@ -6,7 +6,7 @@
 
 After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+![](public_sys-resources/icon-note.gif) **NOTE:** 
 
 -   **gs\_basebackup**  supports only full backup.
 
@@ -170,7 +170,7 @@ To restore the original database, perform the following steps:
 5.  If a link file exists in the database, modify the link file so that it can be linked to the correct file.
 6.  Restart the database server and check the database content to ensure that the database is restored to the required status.
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 
 -   Incremental restoration from backup files is not supported.   
 -   After the restoration, check that the link file in the database is linked to the correct file.  
@@ -284,7 +284,7 @@ For example:
 recovery_target_inclusive = true
 ```
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 
 -   Only one of the four configuration items  **recovery\_target\_name**,  **recovery\_target\_time**,  **recovery\_target\_xid**, and  **recovery\_target\_lsn**  can be used at a time.  
 -   If no recovery targets are configured or the configured target does not exist, data is recovered to the latest WAL log point by default.  
@@ -656,7 +656,7 @@ recovery_target_inclusive = true
 
 **Retention-related parameters \(retention\_options\)**
 
->![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  and  **delete**  commands.
 
 - --retention-redundancy=*retention-redundancy*
@@ -771,7 +771,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
 **Connection-related parameters \(connection\_options\)**
 
->![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >The following parameters can be used together with the  **backup**  command.
 
 - -d  *dbname*, --pgdatabase=*dbname*
@@ -887,7 +887,7 @@ Log levels:  **verbose**,  **log**,  **info**,  **warning**,  **error**, and  **
 
   Example: --ssh-options='-c cipher\_spec -F configfile'
 
-  >![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >
   >-   If the server does not respond due to a temporary network fault,  **gs\_probackup **will exit after waiting for  *archive-timeout*  seconds \(300 seconds is set by default\).
   >-   If the LSN of the standby server is different from that of the primary server, the database continuously updates the following log information. In this case, you need to rebuild the standby server.

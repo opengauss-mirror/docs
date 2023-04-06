@@ -1,8 +1,8 @@
-# PG\_ExtensionReference<a name="ZH-CN_TOPIC_0289900664"></a>
+# PG\_Extension<a name="ZH-CN_TOPIC_0289900664"></a>
 
-PG\_ExtensionReference系统表存储关于所安装扩展的信息。openGauss默认扩展是PLPGSQL和MOT\_FDW。
+PG\_Extension系统表存储关于所安装扩展的信息。openGauss默认扩展是PLPGSQL和MOT\_FDW。
 
-**表 1**  PG\_ExtensionReference
+**表 1**  PG\_Extension
 
 <a name="zh-cn_topic_0283137700_zh-cn_topic_0237122288_zh-cn_topic_0059778375_t47de5378656040b89fd728f97d302162"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283137700_zh-cn_topic_0237122288_zh-cn_topic_0059778375_rc25760cfe28a4e569b2a67d87e1bf0cb"><th class="cellrowborder" valign="top" width="28.749999999999996%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137700_zh-cn_topic_0237122288_zh-cn_topic_0059778375_a4c1fdebe02ff493b9413aa4ec9292285"><a name="zh-cn_topic_0283137700_zh-cn_topic_0237122288_zh-cn_topic_0059778375_a4c1fdebe02ff493b9413aa4ec9292285"></a><a name="zh-cn_topic_0283137700_zh-cn_topic_0237122288_zh-cn_topic_0059778375_a4c1fdebe02ff493b9413aa4ec9292285"></a>名称</p>

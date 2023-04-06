@@ -164,9 +164,9 @@ gs_dumpall [OPTION]...
   - 密钥长度为8~16字符。
   - 至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为~!@#$%^&*()-_=+\|[]{};:,<.>/?）四类字符中的三类字符。
 
--   --include-ExtensionReference
+-   --include-Extension
 
-    如果--include-ExtensionReference参数被设置，将备份所有的CREATE ExtensionReference语句。
+    如果--include-Extension参数被设置，将备份所有的CREATE Extension语句。
 
 -   --include-templatedb
 

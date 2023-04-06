@@ -70,7 +70,7 @@ file\_fdw不支持COPY的OIDS和 FORCE_QUOTE选项。
 
 ## 注意事项<a name="section17197204403"></a>
 
--   不支持**DROP ExtensionReference file_fdw**操作。
+-   不支持**DROP Extension file_fdw**操作。
 
 
 

@@ -51,7 +51,7 @@
 
 2. 将上述插件拷贝到openGauss源码路径的`contrib`路径下。`cd`进入对应目录后`make install -sj`。
 
-3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`ExtensionReference.sql`，`ExtensionReference.control`。`assessment`插件包含可执行文件`assessment_database`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
+3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`Extension.sql`，`Extension.control`。`assessment`插件包含可执行文件`assessment_database`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
 
 **assessment依赖文件**
 
@@ -64,7 +64,7 @@
 │       └── ***assessment.so***
 └── share
     └── postgresql
-        └── ExtensionReference
+        └── Extension
             ├── ***assessment--1.0.sql***
             └── ***assessment.control***
 ```
@@ -77,7 +77,7 @@
 │       └── ***dolphin.so***
 └── share
     └── postgresql
-        └── ExtensionReference
+        └── Extension
             ├── ***dolphin--1.0.sql***
             └── ***dolphin.control***
 ```
@@ -113,7 +113,7 @@ assessment_database -p5432 -cB -ftest.sql -oresult.html
 ```shell
 assessment_database: create database "assessment_197561" automatically.
 assessment_database: Create plugin[dolphin] automatically.
-assessment_database: Create ExtensionReference[assessment] automatically.
+assessment_database: Create Extension[assessment] automatically.
 assessment_database: 解析[100.00%]:35/35
 assessment_database: Create database assessment_197561 automatically, clear it manually!
 ```
@@ -154,7 +154,7 @@ assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -o
 
 2. 配置好对应连接参数，连接参数与`openGauss`的`gsql`连接方式是一致的。
 
-3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create ExtensionReference`创建必要的插件。（如`assessment`、`dolphin`）。
+3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create Extension`创建必要的插件。（如`assessment`、`dolphin`）。
 
 4. 如果指定`-d database`方式，工具会在对应数据库创建插件。
 
