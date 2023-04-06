@@ -1,6 +1,6 @@
 # Setting a Ledger Database<a name="EN-US_TOPIC_0000001100127484"></a>
 
--   **[Overview](overview-6.md)**  
+-   **[Overview](overview-leader-database.md)**  
 
 -   **[Viewing Historical Operation Records in the Ledger](viewing-historical-operation-records-in-the-ledger.md)**  
 

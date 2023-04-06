@@ -13,17 +13,17 @@ The following is a simple overview of the tasks related to working with MOT tabl
 ![](figures/en-us_image_0289899953.png)
 
 -   [Granting User Permissions](granting-user-permissions.md)
--   [Creating/Deleting an MOT](creating-deleting-an-mot.md)
+-   [Creating/Deleting an MOT](creating-deleting-an-mot-table.md)
 -   **Creating an Index for an MOT Table**
 -   This section also describes how to perform various additional MOT-related tasks, as well as  [MOT SQL Coverage and Limitations](mot-sql-coverage-and-limitations.md)  –
 
 -   **[Granting User Permissions](granting-user-permissions.md)**  
 
--   **[Creating/Deleting an MOT](creating-deleting-an-mot.md)**  
+-   **[Creating/Deleting an MOT](creating-deleting-an-mot-table.md)**  
 
--   **[Creating an Index for an MOT](creating-an-index-for-an-mot.md)**  
+-   **[Creating an Index for an MOT](creating-an-index-for-an-mot-table.md)**  
 
--   **[Converting a Disk Table into an MOT](converting-a-disk-table-into-an-mot.md)**  
+-   **[Converting a Disk Table into an MOT](converting-a-disk-table-into-an-mot-table.md)**  
 
 -   **[Query Native Compilation](query-native-compilation.md)**  
 
