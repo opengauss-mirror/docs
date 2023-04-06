@@ -6,7 +6,7 @@
 
     Connect to the database, and run  **show log\_hostname**  to check whether  **log\_hostname**  is enabled in the database.
 
-    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the host where the database is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of  **log\_hostname**  in section "GUC Parameter Description \> Error Reports and Logs \> Log Content" in the  _Developer Guide_.
+    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the host where the database is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of  **log\_hostname**  in section [Log Content](../DataBaseReference/logging-content.md).
 
 -   The database kernel slowly runs the initialization statement.
 
@@ -26,7 +26,7 @@
 
     It indicates that the  **SELECT VERSION\(\)**  statement was run slowly.
 
-    After the database is connected, you can run the  **explain performance select version\(\)**  statement to find the reason why the initialization statement was run slowly. For more information, see "Performance Tuning \> SQL Tuning Guide \> SQL Execution Plan" in the  _Developer Guide_.
+    After the database is connected, you can run the  **explain performance select version\(\)**  statement to find the reason why the initialization statement was run slowly. For more information, see [SQL Execution Plan](../PerformanceTuningGuide/sql-execution-plan-overview.md).
 
     An uncommon scenario is that the disk of the machine where the DN resides is full or faulty, affecting queries and leading to user authentication failures. As a result, the connection process is suspended. To solve this problem, simply clear the data disk space of the DN.
 
@@ -59,8 +59,8 @@
 
 -   gsql: FATAL:  Forbid remote connection with trust method!
 
-    For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see "Database Security Management \> Client Access Authentication \> Configuration File Reference" in the  _Developer Guide_.
-
+    For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see [Configuration File Reference](../DatabaseAdministrationGuide/configuration-file-reference.md).
+    
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty. It is recommended that service applications be deployed outside the database instead of inside the database.
 
@@ -70,7 +70,7 @@
 
     If they are different, set  **$PGHOST**  to the directory specified by  **unix\_socket\_directory**.
 
-    For more information about  **unix\_socket\_directory**, see "GUC Parameter Description \> Connection and Authentication \> Connection Settings" in the  _Developer Guide_.
+    For more information about  **unix\_socket\_directory**, see [Connection Settings](../DataBaseReference/connection-settings.md). 
 
 -   The "libpq.so" loaded mismatch the version of gsql, please check it.
 
@@ -235,8 +235,8 @@
     Check whether DN logs contain information similar to "FATAL: cipher file "/data/coordinator/server.key.cipher" has group or world access". This error is usually caused by incorrect tampering with the permissions for data directories or some key files. For details about how to correct the permissions, see related permissions for files on other normal instances.
 
 -   gsql: FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
-
-    In  **pg\_hba.conf**  of the target DN, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see "Database Security Management \> Client Access Authentication \> Configuration File Reference" in the  _Developer Guide_.
+-   
+    In  **pg\_hba.conf**  of the target DN, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see [Configuration File Reference](../DatabaseAdministrationGuide/configuration-file-reference.md).
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >-   Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.

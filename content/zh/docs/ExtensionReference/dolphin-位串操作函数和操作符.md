@@ -81,7 +81,7 @@
   (1 row)
   ~~~
 
-- bit_count(expr)
+- bit_xor(expr)
 
   描述：返回表中所有列的值异或为无符号64位整数时的结果
 
