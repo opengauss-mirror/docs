@@ -1187,7 +1187,7 @@ openGauss=# ALTER TABLE tpcds.warehouse_t17 ADD PARTIAL CLUSTER KEY(W_WAREHOUSE_
 --查看约束的名称，并删除一个列存表中的局部聚簇列。
 openGauss=# \d+ tpcds.warehouse_t17
                               Table "tpcds.warehouse_t17"
-      Column       |         Type          | Modifiers | Storage  | Stats target | AboutopenGauss 
+      Column       |         Type          | Modifiers | Storage  | Stats target | Description 
 -------------------+-----------------------+-----------+----------+--------------+-------------
  w_warehouse_sk    | integer               | not null  | plain    |              | 
  w_warehouse_id    | character(16)         | not null  | extended |              | 

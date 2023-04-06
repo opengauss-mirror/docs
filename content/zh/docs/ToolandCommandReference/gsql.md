@@ -774,7 +774,7 @@ omm@[local] openGauss=#
     <p id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_a712672849f624615a2ced2b19306448a"><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_a712672849f624615a2ced2b19306448a"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_a712672849f624615a2ced2b19306448a"></a>例如，查看CREATE DATABASE命令的参数可使用下面的命令：</p>
     <a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_sde7cf267c98c4dfd94c7681a30e11f0c"></a><a name="zh-cn_topic_0237152144_zh-cn_topic_0059778941_sde7cf267c98c4dfd94c7681a30e11f0c"></a><pre class="screen" codetype="Sql" id="zh-cn_topic_0237152144_zh-cn_topic_0059778941_sde7cf267c98c4dfd94c7681a30e11f0c"><span id="zh-cn_topic_0237152144_text833015519233"><a name="zh-cn_topic_0237152144_text833015519233"></a><a name="zh-cn_topic_0237152144_text833015519233"></a>openGauss=# </span>\help CREATE DATABASE
     Command:     CREATE DATABASE
-    AboutopenGauss: create a new database
+    Description: create a new database
     Syntax:
     CREATE DATABASE database_name
          [ [ WITH ] {[ OWNER [=] user_name ]|
