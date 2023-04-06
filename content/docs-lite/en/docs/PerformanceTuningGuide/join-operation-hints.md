@@ -14,7 +14,7 @@ These hints specify the join method, which can be nested loop join, hash join, o
 
 -   **no**  indicates that the specified hint will not be used for a join.
 
--   **table\_list **specifies the tables to be joined. The values are the same as those of  **[join\_table\_list](en-us_topic_0283136909.md#en-us_topic_0237121533_section1280444714345)**  but contain no parentheses.
+-   **table\_list **specifies the tables to be joined. The values are the same as those of  **join\_table\_list**  but contain no parentheses.
 
 For example:
 
@@ -22,7 +22,7 @@ For example:
 
 ## Example<a name="en-us_topic_0283137375_en-us_topic_0237121534_section1127715590585"></a>
 
-Hint the query plan in  [Example](en-us_topic_0283137554.md#en-us_topic_0237121532_section671421102912)  as follows:
+Hint the query plan in  [Example](plan-hint-optimization.md#en-us_topic_0237121532_section671421102912)  as follows:
 
 ```
 explain
