@@ -1,4 +1,4 @@
-# Shared Storage Parameters<a name="EN-US_TOPIC_0000001371524841"></a>
+# Resource Pooling Parameters<a name="EN-US_TOPIC_0000001371524841"></a>
 
 ## ss\_enable\_dss<a name="section14941640131"></a>
 

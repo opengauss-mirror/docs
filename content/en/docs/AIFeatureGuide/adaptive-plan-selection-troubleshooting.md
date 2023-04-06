@@ -1,4 +1,3 @@
-# Troubleshooting<a name="EN-US_TOPIC_0000001364496017"></a>
+# Troubleshooting<a name="EN-US_TOPIC_0000001367754681"></a>
 
--   Overview scenario failure: Check whether the configuration file path is correct and whether the configuration file information is complete. Check whether the metric name is correct, whether the host IP address is correct, whether the anomaly detection type is correct, and whether the metric data exists in the start time and end time.
--   Visualization scenario failure: Check whether the configuration file path is correct and whether the configuration file information is complete. Check whether the metric name is correct, whether the host IP address is correct, whether the anomaly detection type is correct, and whether the metric data exists in the start time and end time.
+For complex slow queries, this feature may not be able to correctly select a plan due to feature range restrictions. You are advised to use CPLAN to generate a query plan.

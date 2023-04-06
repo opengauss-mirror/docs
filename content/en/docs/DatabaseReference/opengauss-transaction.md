@@ -1,4 +1,4 @@
-# Transaction<a name="EN-US_TOPIC_0289900431"></a>
+# openGauss Transaction<a name="EN-US_TOPIC_0289900431"></a>
 
 This section describes the settings and value ranges of openGauss transaction parameters.
 
