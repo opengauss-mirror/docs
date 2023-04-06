@@ -46,7 +46,7 @@ Compared with traditional gs\_initdb database creation, directories are classifi
 >Step-by-step manual installation means that you can run related commands step by step to create a database for shared storage after project compilation. For details about how to install the openGauss, see the *Installation Guide*.
 
 -   Prerequisites
-    -   The code of the project has been compiled. For details about the compilation, see [Software Compilation and Installation](../Compilationguide/setting-up-the-compilation-environment.md.md).
+    -   The code of the project has been compiled. For details about the compilation, see [Software Compilation and Installation](../CompilationGuide/setting-up-the-compilation-environment.md).
     -   The LUN of the disk array has been mounted to the host, the UltraPath software has been installed, and the disk array is available.
 
 

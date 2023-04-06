@@ -18,6 +18,6 @@
 
 2. 拷贝插件所需文件：
         dolphin.so 路径： app/lib/postgresql/。
-        dolphin.control和dolphin--1.0.sql 路径 app/share/postgresql/ExtensionReference。
+        dolphin.control和dolphin--1.0.sql 路径 app/share/postgresql/Extension。
 
 3. 创建B库并使用初始用户连接B库。

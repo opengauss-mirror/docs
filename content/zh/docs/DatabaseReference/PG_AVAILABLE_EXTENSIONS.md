@@ -1,8 +1,8 @@
-# PG\_AVAILABLE\_ExtensionReferenceS<a name="ZH-CN_TOPIC_0289900593"></a>
+# PG\_AVAILABLE\_ExtensionS<a name="ZH-CN_TOPIC_0289900593"></a>
 
-PG\_AVAILABLE\_ExtensionReferenceS视图显示数据库中某些特性的扩展信息。
+PG\_AVAILABLE\_ExtensionS视图显示数据库中某些特性的扩展信息。
 
-**表 1**  PG\_AVAILABLE\_ExtensionReferenceS字段
+**表 1**  PG\_AVAILABLE\_ExtensionS字段
 
 <a name="zh-cn_topic_0283137053_zh-cn_topic_0237122409_zh-cn_topic_0059778728_td3501409bdf04c5ab880016a97840a38"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283137053_zh-cn_topic_0237122409_zh-cn_topic_0059778728_rb4e10669ba9041bc89fe78b5ce183340"><th class="cellrowborder" valign="top" width="25.77%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137053_zh-cn_topic_0237122409_zh-cn_topic_0059778728_ab20bf079b22441b9b40e72be084086fe"><a name="zh-cn_topic_0283137053_zh-cn_topic_0237122409_zh-cn_topic_0059778728_ab20bf079b22441b9b40e72be084086fe"></a><a name="zh-cn_topic_0283137053_zh-cn_topic_0237122409_zh-cn_topic_0059778728_ab20bf079b22441b9b40e72be084086fe"></a>名称</p>

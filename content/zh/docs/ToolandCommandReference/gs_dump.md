@@ -436,7 +436,7 @@ export PGDATABASE=postgres
 
     gs_dumpall使用此参数传递随机值。
 
--   --include-ExtensionReference
+-   --include-Extension
 
     在转储中包含扩展。
 

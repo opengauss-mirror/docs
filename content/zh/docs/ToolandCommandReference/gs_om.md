@@ -408,7 +408,7 @@ gs\_om参数可以分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p193661715614"><a name="p193661715614"></a><a name="p193661715614"></a>基础版</p>
 </td>
 </tr>
-<tr id="row7361317666"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p53661713617"><a name="p53661713617"></a><a name="p53661713617"></a>ExtensionReference_CONNECTOR</p>
+<tr id="row7361317666"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p53661713617"><a name="p53661713617"></a><a name="p53661713617"></a>Extension_CONNECTOR</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p23617171966"><a name="p23617171966"></a><a name="p23617171966"></a>9</p>
 </td>

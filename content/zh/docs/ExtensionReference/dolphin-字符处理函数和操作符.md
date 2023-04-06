@@ -100,8 +100,8 @@
     openGauss=# CREATE DATABASE B_COMPATIBILITY_DATABASE DBCOMPATIBILITY 'B';
     CREATE DATABASE
     openGauss=# \c B_COMPATIBILITY_DATABASE
-    b_compatibility_database=# CREATE ExtensionReference dolphin;
-    CREATE ExtensionReference
+    b_compatibility_database=# CREATE Extension dolphin;
+    CREATE Extension
     b_compatibility_database=# SET dolphin.b_compatibility_mode = TRUE;
     SET
     b_compatibility_database=# select format(1234.4567,2);

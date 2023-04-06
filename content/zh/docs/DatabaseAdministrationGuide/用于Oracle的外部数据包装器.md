@@ -12,15 +12,15 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 安装好开发包后，就可以开始编译oracle\_fdw了。编译时需要在执行**configure**时，加入  **--enable-oracle-fdw**  选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考  **软件安装编译**  ）
 
-编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/**下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/ExtensionReference/**下。
+编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/**下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/Extension/**下。
 
-如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql、oracle\_fdw--1.1.sql、oracle\_fdw.control**放到对应的安装目录  **share/postgresql/ExtensionReference/**即可。
+如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql、oracle\_fdw--1.1.sql、oracle\_fdw.control**放到对应的安装目录  **share/postgresql/Extension/**即可。
 
 ## 使用oracle\_fdw<a name="section15777182920432"></a>
 
 -   使用oracle\_fdw需要连接Oracle，Oracle server请自行安装。
 
--   加载oracle\_fdw扩展：**CREATE ExtensionReference oracle\_fdw**
+-   加载oracle\_fdw扩展：**CREATE Extension oracle\_fdw**
 
 -   创建服务器对象：**CREATE SERVER**
 
@@ -36,7 +36,7 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   删除服务器对象：**DROP SERVER**
 
--   删除扩展：**DROP ExtensionReference oracle\_fdw**
+-   删除扩展：**DROP Extension oracle\_fdw**
 
 
 ## 常见问题<a name="section41707373437"></a>
@@ -45,7 +45,7 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   执行**CREATE USER MAPPING**时使用的Oracle用户需要有远程连接Oracle数据库及对表相关操作的权限。使用外表前，可以在openGauss server所在的机器上，使用Oracle的客户端，使用对应的用户名密码确认能否成功连接Oracle并进行操作。
 
--   执行**CREATE ExtensionReference oracle\_fdw;**时，出现  **libclntsh.so: cannot open shared object file: No such file or directory**。原因是Oracle的开发库libclntsh.so不在系统的相关路径中，可以先找到libclntsh.so的具体路径，然后将该so文件所在的文件夹加到  **/etc/ld.so.conf**  中。比如libclntsh.so的路径为   **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**  ，那么就将该文件的路径  **/usr/lib/oracle/11.2/client64/lib/**  加到  **/etc/ld.so.conf**  文件末尾。然后执行  **ldconfig**使修改生效即可。注意此操作需要**root**权限。
+-   执行**CREATE Extension oracle\_fdw;**时，出现  **libclntsh.so: cannot open shared object file: No such file or directory**。原因是Oracle的开发库libclntsh.so不在系统的相关路径中，可以先找到libclntsh.so的具体路径，然后将该so文件所在的文件夹加到  **/etc/ld.so.conf**  中。比如libclntsh.so的路径为   **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**  ，那么就将该文件的路径  **/usr/lib/oracle/11.2/client64/lib/**  加到  **/etc/ld.so.conf**  文件末尾。然后执行  **ldconfig**使修改生效即可。注意此操作需要**root**权限。
 
 
 ## 注意事项<a name="section12951245164312"></a>

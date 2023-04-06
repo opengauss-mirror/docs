@@ -2,7 +2,7 @@
 
 Flashback restoration is a part of the database recovery technology. It can be used to selectively cancel the impact of a committed transaction and restore data from incorrect manual operations. Before the flashback technology is used, the committed database modification can be retrieved only by means of restoring backup and PITR. The restoration takes several minutes or even hours. After the flashback technology is used, it takes only seconds to restore the submitted data before the database is modified. The restoration time is irrelevant to the database size.
 
->![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](F:/opengauss-docs/docs/content/en/docs/DatabaseOMGuide/public_sys-resources/icon-note.gif) **NOTE:** 
 >
 >The Astore engine does not support the flashback function.
 
