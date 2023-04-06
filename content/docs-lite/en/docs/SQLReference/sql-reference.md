@@ -1,6 +1,6 @@
 # SQL Reference<a name="EN-US_TOPIC_0289900204"></a>
 
--   **[openGauss SQL](opengauss-sql.md)**  
+-   **[openGauss SQL](SQL-language-structure-and-syntax.md)**  
 
 -   **[Keywords](keywords.md)**  
 
@@ -28,6 +28,6 @@
 
 -   **[SQL Syntax](sql-syntax.md)**  
 
--   **[Appendix](appendix.md)**  
+-   **[Appendix](../Appendix/appendix.md)**  
 
 

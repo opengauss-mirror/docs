@@ -183,7 +183,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies the name of the index method to be used.
 
-    For details about the value range, see [USING method](en-us_topic_0289900160.md#en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a).
+    For details about the value range, see [USING method](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a).
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
