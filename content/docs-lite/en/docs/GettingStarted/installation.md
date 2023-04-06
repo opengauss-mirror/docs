@@ -2,7 +2,7 @@
 
 openGauss supports simplified installation using scripts. 
 
-- **[Preparing Installation](#Preparing-Installation.md)**
+- **[Preparing Installation](preparing-for-installation.md)**
 
 - **[Container-based Installation on a Single Node ](Container-based-Installation-on-a-Single-Node.md)**
 

@@ -1,6 +1,6 @@
 # Description<a name="EN-US_TOPIC_0289899920"></a>
 
-As described in  [Overview](overview-12.md),  **EXPLAIN**  displays the execution plan, but will not actually run SQL statements.  **EXPLAIN ANALYZE**  and  **EXPLAIN PERFORMANCE**  both will actually run SQL statements and return the execution information. This section describes the execution plan and execution information in detail.
+As described in  [Overview](sql-execution-plan-overview.md),  **EXPLAIN**  displays the execution plan, but will not actually run SQL statements.  **EXPLAIN ANALYZE**  and  **EXPLAIN PERFORMANCE**  both will actually run SQL statements and return the execution information. This section describes the execution plan and execution information in detail.
 
 ## Execution Plans<a name="en-us_topic_0283137659_en-us_topic_0237121511_en-us_topic_0073548188_section5369140493714"></a>
 
