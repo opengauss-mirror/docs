@@ -45,7 +45,7 @@ INSERT INTO [MOT_table] SELECT * FROM [PG_table] WHERE condition;
     ```
     benchmarksql-# \d+ customer 
                            Table "public.customer" 
-     Column |  Type   | Modifiers | Storage | Stats target | AboutopenGauss 
+     Column |  Type   | Modifiers | Storage | Stats target | Description 
     --------+---------+-----------+---------+--------------+------------- 
      x      | integer |           | plain   |              | 
      y      | integer |           | plain   |              | 
