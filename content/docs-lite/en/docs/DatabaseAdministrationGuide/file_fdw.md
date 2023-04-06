@@ -1,6 +1,6 @@
 # file\_fdw<a name="EN-US_TOPIC_0000001116194726"></a>
 
-The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the  **COPY FROM**  command. For details, see  [COPY](copy.md). file\_fdw is only used to access readable data files, but cannot write data to the data files.
+The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the  **COPY FROM**  command. For details, see  [COPY](../SQLReference/copy.md). file\_fdw is only used to access readable data files, but cannot write data to the data files.
 
 By default, the file\_fdw is compiled in openGauss. During database initialization, the plug-in is created in the  **pg\_catalog**  schema.
 

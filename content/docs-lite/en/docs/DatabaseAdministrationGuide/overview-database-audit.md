@@ -6,7 +6,7 @@ Database security is essential for a database system. openGauss writes all user 
 
 You need to know the following about the audit function:
 
--   The overall audit switch  **[audit\_enabled](audit-switch.md#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd)**  supports dynamic loading. After you change the switch status when the database is running, the change takes effect immediately and you do not need to restart the database. Its default value is  **on**, indicating that the audit function is enabled.
+-   The overall audit switch  **[audit\_enabled](../DataBaseReference/audit-switch.md#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd)**  supports dynamic loading. After you change the switch status when the database is running, the change takes effect immediately and you do not need to restart the database. Its default value is  **on**, indicating that the audit function is enabled.
 -   In addition to the overall audit switch, each audit item has an independent switch. An audit item is available only after its own switch is turned on.
 -   The switch of each audit supports dynamic loading. After changing the audit switch status when the database is running, the modification takes effect immediately without restarting the database.
 

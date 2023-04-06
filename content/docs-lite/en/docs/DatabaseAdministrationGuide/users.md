@@ -8,7 +8,7 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
 
 ## Adding, Modifying, and Deleting Users<a name="en-us_topic_0283136811_en-us_topic_0237121102_en-us_topic_0155089862_section1157510331121"></a>
 
--   To create a user, use the SQL statement  **[CREATE USER](create-user.md)**.
+-   To create a user, use the SQL statement  **[CREATE USER](../SQLReference/create-user.md)**.
 
     For example, create a user  **joe**  and set the  **CREATEDB**  attribute for the user.
 
@@ -17,16 +17,16 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
     CREATE ROLE
     ```
 
--   To create a system administrator, use the  **[CREATE USER](create-user.md)**  statement with the  **SYSADMIN**  parameter.
--   To delete an existing user, use  **[DROP USER](drop-user.md)**.
--   To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](alter-user.md)**.
--   To view a user list, query the  **[PG\_USER](pg_user.md)**  view.
+-   To create a system administrator, use the  **[CREATE USER](../SQLReference/create-user.md)**  statement with the  **SYSADMIN**  parameter.
+-   To delete an existing user, use  **[DROP USER](../SQLReference/drop-user.md)**.
+-   To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](../SQLReference/alter-user.md)**.
+-   To view a user list, query the  **[PG\_USER](../DataBaseReference/pg_user.md)**  view.
 
     ```
     openGauss=# SELECT * FROM pg_user; 
     ```
 
--   To view user attributes, query the system catalog  **[PG\_AUTHID](pg_authid.md)**.
+-   To view user attributes, query the system catalog  **[PG\_AUTHID](../DataBaseReference/pg_authid.md)**.
 
     ```
     openGauss=# SELECT * FROM pg_authid; 
