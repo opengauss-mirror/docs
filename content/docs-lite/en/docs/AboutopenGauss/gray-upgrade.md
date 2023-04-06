@@ -22,7 +22,7 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
-For details about the gray upgrade constraints, see [Before You Start ](../DatabaseOMGuide/before-you-start.md).
+None.
 
 ## Dependencies<a name="section57771982"></a>
 
