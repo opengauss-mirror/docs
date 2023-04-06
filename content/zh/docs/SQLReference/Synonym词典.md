@@ -8,7 +8,7 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
 
     ```
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
-       alias   |   AboutopenGauss   | token |  dictionaries  |  dictionary  | lexemes 
+       alias   |   Description   | token |  dictionaries  |  dictionary  | lexemes 
     -----------+-----------------+-------+----------------+--------------+---------
      asciiword | Word, all ASCII | Paris | {english_stem} | english_stem | {pari}
     (1 row)
@@ -24,13 +24,13 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
         WITH my_synonym, english_stem;
     
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
-       alias   |   AboutopenGauss   | token |       dictionaries        | dictionary | lexemes 
+       alias   |   Description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
     
     openGauss=# SELECT * FROM ts_debug('english', 'paris');
-       alias   |   AboutopenGauss   | token |       dictionaries        | dictionary | lexemes 
+       alias   |   Description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
@@ -38,13 +38,13 @@ Synonym词典用于定义、识别token的同义词并转化，不支持词组�
     openGauss=# ALTER TEXT SEARCH DICTIONARY my_synonym ( CASESENSITIVE=true);
     
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
-       alias   |   AboutopenGauss   | token |       dictionaries        | dictionary | lexemes 
+       alias   |   Description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {paris}
     (1 row)
     
     openGauss=# SELECT * FROM ts_debug('english', 'paris');
-       alias   |   AboutopenGauss   | token |       dictionaries        | dictionary | lexemes 
+       alias   |   Description   | token |       dictionaries        | dictionary | lexemes 
     -----------+-----------------+-------+---------------------------+------------+---------
      asciiword | Word, all ASCII | Paris | {my_synonym,english_stem} | my_synonym | {pari}
     (1 row)

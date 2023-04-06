@@ -134,7 +134,7 @@ GS\_OPT\_MODEL是启用AiEngine执行计划时间预测功能时的数据表，�
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136832_p44171554184519"><a name="zh-cn_topic_0283136832_p44171554184519"></a><a name="zh-cn_topic_0283136832_p44171554184519"></a>[不需设置]标识模型各任务的准确率。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136832_row1737015571459"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136832_p5370125734517"><a name="zh-cn_topic_0283136832_p5370125734517"></a><a name="zh-cn_topic_0283136832_p5370125734517"></a>AboutopenGauss</p>
+<tr id="zh-cn_topic_0283136832_row1737015571459"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136832_p5370125734517"><a name="zh-cn_topic_0283136832_p5370125734517"></a><a name="zh-cn_topic_0283136832_p5370125734517"></a>Description</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136832_p1437015577454"><a name="zh-cn_topic_0283136832_p1437015577454"></a><a name="zh-cn_topic_0283136832_p1437015577454"></a>text</p>
 </td>

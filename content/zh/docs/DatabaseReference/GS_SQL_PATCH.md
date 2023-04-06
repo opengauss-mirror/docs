@@ -97,7 +97,7 @@ GS\_SQL\_PATCH系统表存储所有SQL\_PATCH的状态信息。
 <td class="cellrowborder" valign="top" width="63.48634863486349%" headers="mcps1.2.4.1.3 "><p id="p126467333140"><a name="p126467333140"></a><a name="p126467333140"></a>PATCH之后语句的解析结果（预留字段）。</p>
 </td>
 </tr>
-<tr id="row4488153014154"><td class="cellrowborder" valign="top" width="18.74187418741874%" headers="mcps1.2.4.1.1 "><p id="p34885308158"><a name="p34885308158"></a><a name="p34885308158"></a>AboutopenGauss</p>
+<tr id="row4488153014154"><td class="cellrowborder" valign="top" width="18.74187418741874%" headers="mcps1.2.4.1.1 "><p id="p34885308158"><a name="p34885308158"></a><a name="p34885308158"></a>Description</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.77177717771777%" headers="mcps1.2.4.1.2 "><p id="p12488163020158"><a name="p12488163020158"></a><a name="p12488163020158"></a>text</p>
 </td>
