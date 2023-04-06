@@ -51,7 +51,7 @@ openGauss=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 openGauss=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
 openGauss=# \d+ all_data
                                Table "public.all_data"
- Column |          Type          | Modifiers | Storage  | Stats target | AboutopenGauss
+ Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
  id     | integer                |           | plain    |              |
  role   | character varying(100) |           | extended |              |
@@ -70,7 +70,7 @@ openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_rls ON all_data RENAME TO a
 openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data TO alice, bob;
 openGauss=# \d+ all_data
                                Table "public.all_data"
- Column |          Type          | Modifiers | Storage  | Stats target | AboutopenGauss
+ Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
  id     | integer                |           | plain    |              |
  role   | character varying(100) |           | extended |              |
@@ -86,7 +86,7 @@ Options: orientation=row, compression=no
 openGauss=# ALTER ROW LEVEL SECURITY POLICY all_data_new_rls ON all_data USING (id > 100 AND role = current_user);
 openGauss=# \d+ all_data
                                Table "public.all_data"
- Column |          Type          | Modifiers | Storage  | Stats target | AboutopenGauss
+ Column |          Type          | Modifiers | Storage  | Stats target | Description
 --------+------------------------+-----------+----------+--------------+-------------
  id     | integer                |           | plain    |              |
  role   | character varying(100) |           | extended |              |

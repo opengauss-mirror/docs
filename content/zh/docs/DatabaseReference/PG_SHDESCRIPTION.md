@@ -1,12 +1,12 @@
-# PG\_SHAboutopenGauss<a name="ZH-CN_TOPIC_0289900363"></a>
+# PG\_SHDescription<a name="ZH-CN_TOPIC_0289900363"></a>
 
-PG\_SHAboutopenGauss系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用psql的\\d命令查看注释内容。
+PG\_SHDescription系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用psql的\\d命令查看注释内容。
 
-PG\_AboutopenGauss提供了类似的功能，它记录了单个数据库中对象的注释。
+PG\_Description提供了类似的功能，它记录了单个数据库中对象的注释。
 
-不同于大多数系统表，PG\_SHAboutopenGauss是在openGauss里面所有的数据库之间共享的：每个openGauss只有一个PG\_SHAboutopenGauss，而不是每个数据库一个。
+不同于大多数系统表，PG\_SHDescription是在openGauss里面所有的数据库之间共享的：每个openGauss只有一个PG\_SHDescription，而不是每个数据库一个。
 
-**表 1**  PG\_SHAboutopenGauss字段
+**表 1**  PG\_SHDescription字段
 
 <a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_t39898e158652494aa37ee8aae3aff81e"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_re401285566774c669d7cab3db6ebd3c1"><th class="cellrowborder" valign="top" width="16.351635163516352%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_aa77e01517a3d4febabf6c0c47723cb5f"><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_aa77e01517a3d4febabf6c0c47723cb5f"></a><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_aa77e01517a3d4febabf6c0c47723cb5f"></a>名称</p>
@@ -37,7 +37,7 @@ PG\_AboutopenGauss提供了类似的功能，它记录了单个数据库中对�
 <td class="cellrowborder" valign="top" width="46.994699469946994%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_abd9cd0d703524e44b48c30c566138ac9"><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_abd9cd0d703524e44b48c30c566138ac9"></a><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_abd9cd0d703524e44b48c30c566138ac9"></a>这个对象出现的系统表的OID。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_r5f538b261d684bb180f175fc2ddd1fe2"><td class="cellrowborder" valign="top" width="16.351635163516352%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"></a><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"></a>AboutopenGauss</p>
+<tr id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_r5f538b261d684bb180f175fc2ddd1fe2"><td class="cellrowborder" valign="top" width="16.351635163516352%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"></a><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a60088d5b6aa541deb64a33ccae25a4ac"></a>Description</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.15101510151015%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a26eb664b5a36410d990eacac976e892b"><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a26eb664b5a36410d990eacac976e892b"></a><a name="zh-cn_topic_0283136853_zh-cn_topic_0237122315_zh-cn_topic_0059779259_a26eb664b5a36410d990eacac976e892b"></a>text</p>
 </td>
