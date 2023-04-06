@@ -4,7 +4,7 @@ openGauss supports simplified installation using scripts. Simplified installatio
 
 -   **[Obtaining and Verifying an Installation Package](obtaining-and-verifying-an-installation-package.md)**  
 
--   **[Preparing the Software and Hardware Installation Environment](preparing-the-software-and-hardware-installation-environment.md)**  
+-   **[Preparing the Software and Hardware Installation Environment](../InstallationGuide/preparing-the-software-and-hardware-installation-environment.md)**  
 
 -   **[Installation ](installation.md)**  
 
