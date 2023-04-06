@@ -446,8 +446,8 @@ headless: true
 				-   [为MOT创建索引]({{< relref "./docs/DatabaseAdministrationGuide/为MOT创建索引.md" >}})
 				-   [将磁盘表转换为MOT]({{< relref "./docs/DatabaseAdministrationGuide/将磁盘表转换为MOT.md" >}})
 				-   [查询原生编译]({{< relref "./docs/DatabaseAdministrationGuide/查询原生编译.md" >}})
-					-   [JIT存储过程]({<relref"./docs/DatabaseAdministrationGuide/JIT存储过程.md">}}）
-					-   [MOT JIT诊断]({<relref"./docs/DatabaseAdministrationGuide/MOT-JIT诊断.md">}})
+					-   [JIT存储过程]({{<relref"./docs/DatabaseAdministrationGuide/JIT存储过程.md">}})
+					-   [MOT JIT诊断]({{<relref"./docs/DatabaseAdministrationGuide/MOT-JIT诊断.md">}})
 				-   [重试中止事务]({{< relref "./docs/DatabaseAdministrationGuide/重试中止事务.md" >}})
 				-   [MOT外部支持工具]({{< relref "./docs/DatabaseAdministrationGuide/MOT外部支持工具.md" >}})
 				-   [MOT SQL覆盖和限制]({{< relref "./docs/DatabaseAdministrationGuide/MOT-SQL覆盖和限制.md" >}})
