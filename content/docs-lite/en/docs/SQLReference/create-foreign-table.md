@@ -126,7 +126,7 @@ The column_constraint can be:
 
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >For details about how to use  **file\_fdw**, see  [file\_fdw](file_fdw.md).
+        >For details about how to use  **file\_fdw**, see  [file\_fdw](../DatabaseAdministrationGuide/file_fdw.md).
 
 
 

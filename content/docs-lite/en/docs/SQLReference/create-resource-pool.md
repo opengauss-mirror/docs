@@ -99,7 +99,7 @@ CREATE RESOURCE POOL pool_name
 
 ## Examples<a name="en-us_topic_0059777569_s44181f6d005b4da1952aaeff4ef66e0e"></a>
 
-This example assumes that Cgroups have been created by users in advance. For details about how to create Cgroups, see  [Setting a Cgroup](setting-a-cgroup.md).
+This example assumes that Cgroups have been created by users in advance. For details about how to create Cgroups, see  [Setting a Cgroup](../PerformanceTuningGuide/setting-a-cgroup.md).
 
 ```
 -- Create a default resource pool, and associate it with the Medium Timeshare Cgroup under Workload under DefaultClass.
