@@ -2,6 +2,6 @@
 
 -   **[Logical Decoding](logical-decoding.md)**  
 
--   **[Replicating Data Using the Logical Replication Tool](en-us_topic_0000001254215967.md)** 
+-   **[Replicating Data Using the Logical Replication Tool](replicating-data-using-the-logical-replication-tool.md)** 
 
 -   **[Publication-Subscription](publication-subscription.md)** 

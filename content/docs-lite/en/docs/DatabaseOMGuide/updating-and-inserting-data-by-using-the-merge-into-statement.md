@@ -55,7 +55,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
       INSERT VALUES (p.product_id, p.product_name, p.category) ; 
     ```
 
-    For details on parameters in the statement, see  [Table 1](#en-us_topic_0283137209_en-us_topic_0237121140_en-us_topic_0165787112_table1973914406416). For more information, see  [MERGE INTO](merge-into.md).
+    For details on parameters in the statement, see  [Table 1](#en-us_topic_0283137209_en-us_topic_0237121140_en-us_topic_0165787112_table1973914406416). For more information, see  [MERGE INTO](../SQLReference/merge-into.md).
 
     **Table  1**  Parameters in the MERGE INTO statement
 
