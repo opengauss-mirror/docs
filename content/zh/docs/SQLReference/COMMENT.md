@@ -24,7 +24,7 @@ COMMENT ON
   CONVERSION object_name |
   DATABASE object_name |
   DOMAIN object_name |
-  ExtensionReference object_name |
+  Extension object_name |
   FOREIGN DATA WRAPPER object_name |
   FOREIGN TABLE object_name |
   FUNCTION function_name ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) |

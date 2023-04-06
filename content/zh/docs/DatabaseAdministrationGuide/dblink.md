@@ -16,7 +16,7 @@ make install
 -   加载dblink扩展
 
     ```
-    CREATE ExtensionReference dblink;
+    CREATE Extension dblink;
     ```
 
 -   打开一个到远程数据库的持久连接
@@ -64,7 +64,7 @@ make install
 -   删除扩展
 
     ```
-    DROP ExtensionReference dblink;
+    DROP Extension dblink;
     ```
 
 

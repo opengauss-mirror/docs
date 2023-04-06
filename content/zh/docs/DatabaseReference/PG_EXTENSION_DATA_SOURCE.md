@@ -1,8 +1,8 @@
-# PG\_ExtensionReference\_DATA\_SOURCE<a name="ZH-CN_TOPIC_0289900626"></a>
+# PG\_Extension_DATA\_SOURCE<a name="ZH-CN_TOPIC_0289900626"></a>
 
-PG\_ExtensionReference\_DATA\_SOURCE系统表存储外部数据源对象的信息。一个外部数据源对象（Data Source）包含了外部数据库的一些口令编码等信息，主要配合ExtensionReference Connector使用。
+PG\_Extension_DATA\_SOURCE系统表存储外部数据源对象的信息。一个外部数据源对象（Data Source）包含了外部数据库的一些口令编码等信息，主要配合Extension Connector使用。
 
-**表 1**  PG\_ExtensionReference\_DATA\_SOURCE字段
+**表 1**  PG\_Extension_DATA\_SOURCE字段
 
 <a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_table13368458915"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_row53681151092"><th class="cellrowborder" valign="top" width="18.9%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p20368135990"><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p20368135990"></a><a name="zh-cn_topic_0283137407_zh-cn_topic_0237122289_p20368135990"></a>名称</p>

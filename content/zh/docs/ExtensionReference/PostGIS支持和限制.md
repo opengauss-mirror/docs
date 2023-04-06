@@ -2,7 +2,7 @@
 
 ## 支持数据类型<a name="section59521232327"></a>
 
-openGauss的PostGIS ExtensionReference支持如下数据类型：
+openGauss的PostGIS Extension支持如下数据类型：
 
 -   box2d
 -   box3d
@@ -12,7 +12,7 @@ openGauss的PostGIS ExtensionReference支持如下数据类型：
 
 ## 支持的操作符和函数列表<a name="section1198813519310"></a>
 
-**表 1** **PostGIS ExtensionReference支持的操作符和函数列表**
+**表 1** **PostGIS Extension支持的操作符和函数列表**
 
 <a name="table18970162111535"></a>
 <table><thead align="left"><tr id="row99711021145319"><th class="cellrowborder" valign="top" width="21.15%" id="mcps1.2.3.1.1"><p id="p149718214536"><a name="p149718214536"></a><a name="p149718214536"></a><b>函数分类</b></p>
@@ -81,7 +81,7 @@ openGauss的PostGIS ExtensionReference支持如下数据类型：
 
 ## 空间索引<a name="section2993751311"></a>
 
-openGauss数据库的PostGIS ExtensionReference支持GIST \(Generalized Search Tree\) 空间索引（分区表除外）。相比于B-tree索引，GIST索引适应于任意类型的非常规数据结构，可有效提高几何和地理数据信息的检索效率。
+openGauss数据库的PostGIS Extension支持GIST \(Generalized Search Tree\) 空间索引（分区表除外）。相比于B-tree索引，GIST索引适应于任意类型的非常规数据结构，可有效提高几何和地理数据信息的检索效率。
 
 使用如下命令创建GIST索引：
 

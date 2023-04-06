@@ -1,16 +1,16 @@
 # PostGIS使用<a name="ZH-CN_TOPIC_0000001201277572"></a>
 
-## 创建ExtensionReference<a name="section21088306113"></a>
+## 创建Extension<a name="section21088306113"></a>
 
-创建PostGIS ExtensionReference可直接使用CREATE ExtensionReference命令进行创建：
+创建PostGIS Extension可直接使用CREATE Extension命令进行创建：
 
 ```
-openGauss=# CREATE ExtensionReference postgis;
+openGauss=# CREATE Extension postgis;
 ```
 
-## 使用ExtensionReference<a name="section107391050141118"></a>
+## 使用Extension<a name="section107391050141118"></a>
 
-PostGIS ExtensionReference函数调用格式为：
+PostGIS Extension函数调用格式为：
 
 ```
 openGauss=# SELECT GisFunction (Param1, Param2,......);
@@ -39,19 +39,19 @@ openGauss=# INSERT INTO cities (id, position, city_name) VALUES (3,ST_GeomFromTe
 openGauss=# SELECT p1.city_name,p2.city_name,ST_Distance(p1.position,p2.position) FROM cities AS p1, cities AS p2 WHERE p1.id > p2.id;
 ```
 
-## 删除ExtensionReference<a name="section1587441381220"></a>
+## 删除Extension<a name="section1587441381220"></a>
 
-在openGauss中删除PostGIS ExtensionReference的方法如下所示：
+在openGauss中删除PostGIS Extension的方法如下所示：
 
 ```
-openGauss=# DROP ExtensionReference postgis [CASCADE];
+openGauss=# DROP Extension postgis [CASCADE];
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >
->如果ExtensionReference被其它对象依赖（如创建的几何表），需要加入CASCADE（级联）关键字，删除所有依赖对象。
+>如果Extension被其它对象依赖（如创建的几何表），需要加入CASCADE（级联）关键字，删除所有依赖对象。
 
-若要完全删除PostGIS ExtensionReference，则需由omm用户使用gs\_om工具移除PostGIS及其依赖的动态链接库，格式如下：
+若要完全删除PostGIS Extension，则需由omm用户使用gs\_om工具移除PostGIS及其依赖的动态链接库，格式如下：
 
 ```
 gs_om -t postgis -m rmlib

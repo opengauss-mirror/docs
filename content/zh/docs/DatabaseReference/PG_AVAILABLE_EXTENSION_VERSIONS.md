@@ -1,8 +1,8 @@
-# PG\_AVAILABLE\_ExtensionReference\_VERSIONS<a name="ZH-CN_TOPIC_0289900780"></a>
+# PG\_AVAILABLE\_Extension\_VERSIONS<a name="ZH-CN_TOPIC_0289900780"></a>
 
-PG\_AVAILABLE\_ExtensionReference\_VERSIONS视图显示数据库中某些特性的扩展版本信息。
+PG\_AVAILABLE\_Extension\_VERSIONS视图显示数据库中某些特性的扩展版本信息。
 
-**表 1**  PG\_AVAILABLE\_ExtensionReference\_VERSIONS字段
+**表 1**  PG\_AVAILABLE\_Extension\_VERSIONS字段
 
 <a name="zh-cn_topic_0283137080_zh-cn_topic_0237122408_zh-cn_topic_0059777416_tecc475ec801f482faefb896ade37902e"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283137080_zh-cn_topic_0237122408_zh-cn_topic_0059777416_r898f10f0575543daa887821638ccdf08"><th class="cellrowborder" valign="top" width="25.77%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137080_zh-cn_topic_0237122408_zh-cn_topic_0059777416_ad0f15f2964274b37b464d5e895a1824a"><a name="zh-cn_topic_0283137080_zh-cn_topic_0237122408_zh-cn_topic_0059777416_ad0f15f2964274b37b464d5e895a1824a"></a><a name="zh-cn_topic_0283137080_zh-cn_topic_0237122408_zh-cn_topic_0059777416_ad0f15f2964274b37b464d5e895a1824a"></a>名称</p>

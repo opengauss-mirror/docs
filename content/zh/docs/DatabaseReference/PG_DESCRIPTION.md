@@ -1,10 +1,10 @@
-# PG\_AboutopenGauss<a name="ZH-CN_TOPIC_0289900837"></a>
+# PG\_DESCRIPTION<a name="ZH-CN_TOPIC_0289900837"></a>
 
-PG\_AboutopenGauss系统表可以给每个数据库对象存储一个可选的描述（注释）。许多内置的系统对象的描述提供了PG\_AboutopenGauss的初始内容。
+PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描述（注释）。许多内置的系统对象的描述提供了PG\_DESCRIPTION的初始内容。
 
-这个表的功能类似[PG\_SHAboutopenGauss](PG_SHDESCRIPTION.md)，用于记录openGauss范围内共享对象的注释。
+这个表的功能类似[PG_SHDESCRIPTION](PG_SHDESCRIPTION.md)，用于记录openGauss范围内共享对象的注释。
 
-**表 1**  PG\_AboutopenGauss字段
+**表 1**  PG_SHDESCRIPTION字段
 
 <a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_t6d8526cd27634c979add34313515ecbe"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_rc66e09c6907141958a1f095d0b5903b3"><th class="cellrowborder" valign="top" width="12.31%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a32a13f2e449c4a2b9dcac364c758ebe9"><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a32a13f2e449c4a2b9dcac364c758ebe9"></a><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a32a13f2e449c4a2b9dcac364c758ebe9"></a>名称</p>
@@ -44,7 +44,7 @@ PG\_AboutopenGauss系统表可以给每个数据库对象存储一个可选的�
 <td class="cellrowborder" valign="top" width="56.86%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aa43bf460c68042c4956fd6c81ebba567"><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aa43bf460c68042c4956fd6c81ebba567"></a><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aa43bf460c68042c4956fd6c81ebba567"></a>对于一个表字段的注释，它是字段号（objoid和classoid指向表自身）。对于其它对象类型，它是零。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_r1a2f1f3756c64b1bbb8319cf122aa35a"><td class="cellrowborder" valign="top" width="12.31%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"></a><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"></a>AboutopenGauss</p>
+<tr id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_r1a2f1f3756c64b1bbb8319cf122aa35a"><td class="cellrowborder" valign="top" width="12.31%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"></a><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_aaaffe06a13544129b67d434a26d6be49"></a>Description</p>
 </td>
 <td class="cellrowborder" valign="top" width="9.31%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a897fe676ea664bbda1e5137003d20877"><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a897fe676ea664bbda1e5137003d20877"></a><a name="zh-cn_topic_0283136780_zh-cn_topic_0237122285_zh-cn_topic_0059778572_a897fe676ea664bbda1e5137003d20877"></a>text</p>
 </td>
@@ -55,4 +55,5 @@ PG\_AboutopenGauss系统表可以给每个数据库对象存储一个可选的�
 </tr>
 </tbody>
 </table>
+
 
