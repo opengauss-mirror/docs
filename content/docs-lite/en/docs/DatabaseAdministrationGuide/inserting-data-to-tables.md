@@ -45,7 +45,7 @@ More than one of the preceding operations can be performed to a string. For exam
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >
->Long strings are truncated only if  **DBCOMPATIBILITY**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](en-us_topic_0283137001.md#en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.
+>Long strings are truncated only if  **DBCOMPATIBILITY**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](../DataBaseReference/platform-and-client-compatibility.md#en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.
 
 Run the following commands to create  **table1**  and  **table2**  to be used in the example:
 

@@ -6,6 +6,6 @@
 
 -   **[Concepts of MOT](concepts-of-mot.md)**  
 
--   **[Appendices](appendices.md)**  
+-   **[Appendices](appendix.md)**  
 
 
