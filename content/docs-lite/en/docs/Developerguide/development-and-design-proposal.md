@@ -1,6 +1,6 @@
 # Development and Design Proposal<a name="EN-US_TOPIC_0000001149748073"></a>
 
--   **[Development and Design Proposal](development-and-design-proposal-0.md)**  
+-   **[Development and Design Proposal](development-and-design-proposal-overview.md)**  
 
 -   **[Database Object Naming Conventions](database-object-naming-conventions.md)**  
 

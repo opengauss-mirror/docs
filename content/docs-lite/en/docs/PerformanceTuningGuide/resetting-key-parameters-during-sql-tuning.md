@@ -1,6 +1,6 @@
 # Resetting Key Parameters During SQL Tuning<a name="EN-US_TOPIC_0289900358"></a>
 
-This section introduces key parameters of the primary database node that affect optimization of SQL statements in openGauss. For details about the parameter configurations, see  [Configuring Running Parameters](configuring-running-parameters.md).
+This section introduces key parameters of the primary database node that affect optimization of SQL statements in openGauss. For details about the parameter configurations, see  [Configuring Running Parameters](../DatabaseAdministrationGuide/configuring-running-parameters.md).
 
 **Table  1**  Parameters of the primary database node
 
