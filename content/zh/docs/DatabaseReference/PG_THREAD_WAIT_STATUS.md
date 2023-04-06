@@ -339,7 +339,7 @@ wait\_status列的等待状态有以下状态。
 
 当wait\_status为acquire lwlock、acquire lock或者wait io时，表示有等待事件。正在等待获取wait\_event列对应类型的轻量级锁、事务锁，或者正在进行IO。
 
-其中，wait\_status值为acquire lwlock（轻量级锁）时对应的wait\_event等待事件类型与描述信息如下。（wait\_event为ExtensionReference时，表示此时的轻量级锁是动态分配的锁，未被监控。）
+其中，wait\_status值为acquire lwlock（轻量级锁）时对应的wait\_event等待事件类型与描述信息如下。（wait\_event为Extension时，表示此时的轻量级锁是动态分配的锁，未被监控。）
 
 **表 3**  轻量级锁等待事件列表
 
@@ -545,7 +545,7 @@ wait\_status列的等待状态有以下状态。
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p82543257341"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p82543257341"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p82543257341"></a>用于元数据循环淘汰。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row7254325113418"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"></a>ExtensionReferenceConnectorLibLock</p>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row7254325113418"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1325452543419"></a>ExtensionConnectorLibLock</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p22545253341"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p22545253341"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p22545253341"></a>用于初始化ODBC连接场景，在加载与卸载特定动态库时进行加锁。</p>
 </td>
@@ -940,7 +940,7 @@ wait\_status列的等待状态有以下状态。
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1959201233518"><a name="zh-cn_topic_0283136724_p1959201233518"></a><a name="zh-cn_topic_0283136724_p1959201233518"></a>用于管理行存储的数据页复制。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0283136724_row140882312506"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p840812237501"><a name="zh-cn_topic_0283136724_p840812237501"></a><a name="zh-cn_topic_0283136724_p840812237501"></a>ExtensionReference</p>
+<tr id="zh-cn_topic_0283136724_row140882312506"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p840812237501"><a name="zh-cn_topic_0283136724_p840812237501"></a><a name="zh-cn_topic_0283136724_p840812237501"></a>Extension</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p1408423105015"><a name="zh-cn_topic_0283136724_p1408423105015"></a><a name="zh-cn_topic_0283136724_p1408423105015"></a>其他轻量锁。</p>
 </td>

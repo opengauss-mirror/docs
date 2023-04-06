@@ -37,7 +37,7 @@ openGauss=# SHOW PLUGINS;
  log_fdw         | ACTIVE   |      | NULL    |         | Foreign Data Wrapper for accessing logging data
 
 --插件状态的更新显示
-openGauss=# drop ExtensionReference hstore;
+openGauss=# drop Extension hstore;
 openGauss=# SHOW PLUGINS;
       Name       |  Status  | Type | Library | License |                      Comment                       
 -----------------+----------+------+---------+---------+----------------------------------------------------
@@ -52,7 +52,7 @@ openGauss=# SHOW PLUGINS;
  hstore          | DISABLED |      | NULL    |         | data type for storing sets of (key, value) pairs
  log_fdw         | ACTIVE   |      | NULL    |         | Foreign Data Wrapper for accessing logging data
 
-openGauss=# CREATE ExtensionReference hstore;
+openGauss=# CREATE Extension hstore;
 openGauss=# show plugins;
       Name       |  Status  | Type | Library | License |                      Comment                       
 -----------------+----------+------+---------+---------+----------------------------------------------------

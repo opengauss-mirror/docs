@@ -22,20 +22,20 @@ gaussdb --fenced -k /user-set-dir-path -D /user-set-dir-path &
 
 ## 使用指导<a name="section823619213143"></a>
 
--   创建ExtensionReference
+-   创建Extension
 
     -   当编译的plpython为python2时：
 
         ```
-        openGauss=# create ExtensionReference plpythonu;
-        CREATE ExtensionReference
+        openGauss=# create Extension plpythonu;
+        CREATE Extension
         ```
 
     -   当编译的plpython为python3时：
 
         ```
-        openGauss=# create ExtensionReference plpython3u;
-        CREATE ExtensionReference
+        openGauss=# create Extension plpython3u;
+        CREATE Extension
         ```
 
     下面示例是以python2为例。

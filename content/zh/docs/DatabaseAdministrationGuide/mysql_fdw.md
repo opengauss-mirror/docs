@@ -12,15 +12,15 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 安装好开发包后，就可以开始编译mysql\_fdw了。编译时需要在执行**configure**时，加入**--enable-mysql-fdw**选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考**软件安装编译**）
 
-编译完成后，编译产物为**mysql\_fdw.so**，位于安装目录的**lib/postgresql/** 下。mysql\_fdw相关的sql文件和control文件，位于安装目录的**share/postgresql/ExtensionReference/**下。
+编译完成后，编译产物为**mysql\_fdw.so**，位于安装目录的**lib/postgresql/** 下。mysql\_fdw相关的sql文件和control文件，位于安装目录的**share/postgresql/Extension/**下。
 
-如果编译安装时，没有加入**--enable-mysql-fdw**选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql、mysql\_fdw--1.1.sql、mysql\_fdw--1.0.sql、mysql\_fdw.control**放到对应的安装目录**share/postgresql/ExtensionReference/**即可。
+如果编译安装时，没有加入**--enable-mysql-fdw**选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql、mysql\_fdw--1.1.sql、mysql\_fdw--1.0.sql、mysql\_fdw.control**放到对应的安装目录**share/postgresql/Extension/**即可。
 
 ## 使用mysql\_fdw<a name="section1776874817393"></a>
 
 -   使用mysql\_fdw需要连接MariaDB或者MySQL Server，MariaDB或MySQL Server请自行安装。
 
--   加载mysql\_fdw扩展：**CREATE ExtensionReference mysql\_fdw;**
+-   加载mysql\_fdw扩展：**CREATE Extension mysql\_fdw;**
 
 -   创建服务器对象：**CREATE SERVER**
 
@@ -36,7 +36,7 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 -   删除服务器对象：**DROP SERVER**
 
--   删除扩展：**DROP ExtensionReference mysql\_fdw;**
+-   删除扩展：**DROP Extension mysql\_fdw;**
 
 
 ## 常见问题<a name="section7506175533915"></a>

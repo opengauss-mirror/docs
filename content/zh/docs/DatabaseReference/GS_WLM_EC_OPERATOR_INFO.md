@@ -1,6 +1,6 @@
 # GS\_WLM\_EC\_OPERATOR\_INFO<a name="ZH-CN_TOPIC_0289900046"></a>
 
-GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（ExtensionReference Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会每3分钟将GS\_WLM\_EC\_OPERATOR\_HISTORY中的记录导入此系统表，开启此功能会占用系统存储空间并对性能有一定影响。查询该系统表需要sysadmin权限。
+GS\_WLM\_EC\_OPERATOR\_INFO系统表存储执行EC（Extension Connector）作业结束后的算子相关的记录。当设置GUC参数[enable\_resource\_record](负载管理.md#zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)为on时，系统会每3分钟将GS\_WLM\_EC\_OPERATOR\_HISTORY中的记录导入此系统表，开启此功能会占用系统存储空间并对性能有一定影响。查询该系统表需要sysadmin权限。
 
 **表 1**  GS\_WLM\_EC\_OPERATOR\_INFO的字段
 
