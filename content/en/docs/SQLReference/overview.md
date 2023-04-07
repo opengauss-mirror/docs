@@ -35,7 +35,7 @@ There are four fundamental SQL constructs requiring distinct type conversion rul
     Since all query results from a unionized  **SELECT**  statement must appear in a single set of columns, the types of the results of each  **SELECT**  clause must be matched up and converted to a uniform set. Similarly, the result expressions of a  **CASE**  construct must be converted to a common type so that the  **CASE**  expression as a whole has a known output type. The same holds for  **ARRAY**  constructs, and for the  **GREATEST**  and  **LEAST**  functions.
 
 
-The system catalog pg\_cast stores information about which conversions, or casts, exist between which data types, and how to perform those conversions. For details, see  [PG\_CAST](pg_cast.md).
+The system catalog pg\_cast stores information about which conversions, or casts, exist between which data types, and how to perform those conversions. For details, see  [PG\_CAST](../DatabaseReference/pg_cast.md).
 
 The return type and conversion behavior of an expression are determined during semantic analysis. Data types are divided into several basic type categories, including Boolean,  **numeric**,  **string**,  **bitstring**,  **datetime**,  **timespan**,  **geometric**, and  **network**. Within each category there can be one or more preferred types, which are preferred when there is a choice of possible types. With careful selection of preferred types and available implicit casts, it is possible to ensure that ambiguous expressions \(those with multiple candidate parsing solutions\) can be resolved in a useful way.
 

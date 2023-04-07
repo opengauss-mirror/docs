@@ -91,7 +91,7 @@ The definitions of  **GLOBAL\_THREAD\_WAIT\_STATUS**  and  **THREAD\_WAIT\_STATU
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122640_p192281733112915"><a name="en-us_topic_0237122640_p192281733112915"></a><a name="en-us_topic_0237122640_p192281733112915"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p1122820333294"><a name="en-us_topic_0237122640_p1122820333294"></a><a name="en-us_topic_0237122640_p1122820333294"></a>Waiting status of the current thread. For details about the waiting status, see <a href="pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p1122820333294"><a name="en-us_topic_0237122640_p1122820333294"></a><a name="en-us_topic_0237122640_p1122820333294"></a>Waiting status of the current thread. For details about the waiting status, see <a href="../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122640_p3228113316292"><a name="en-us_topic_0237122640_p3228113316292"></a><a name="en-us_topic_0237122640_p3228113316292"></a>wait_event</p>

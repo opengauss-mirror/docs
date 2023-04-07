@@ -94,7 +94,7 @@
 
     -- **str**: character string to be encrypted. If **str** is set to **NULL**, the function returns **NULL**.
 
-    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](security-configuration.md)).
+    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](../DatabaseReference/security-configuration.md)).
 
     -- **init\_vector**: An initialization variable is provided for the required block encryption mode. The length is greater than or equal to 16 bytes. Bytes greater than 16 bytes are automatically ignored. If neither **str** nor **key\_str** is **NULL**, this parameter cannot be **NULL**. Otherwise, an error is reported. For security purposes, you are advised to ensure that the IV value for each encryption is unique in OFB mode and that the IV value for each encryption is unpredictable in CBC and CFB modes.
 
@@ -130,7 +130,7 @@
 
     -- **pass\_str**: character string to be decrypted. If **pass\_str** is set to **NULL**, the function returns **NULL**.
 
-    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](security-configuration.md)).
+    -- **key\_str**: key character string. If **key\_str** is set to **NULL**, the function returns **NULL**. For security purposes, you are advised to use a 128-bit, 192-bit, or 256-bit secure random number as the key string for the 128-bit, 192-bit, or 256-bit key (determined by block\_encryption\_mode. For details, see [Security Configuration](../DatabaseReference/security-configuration.md)).
 
     -- **init\_vector**: An initialization variable is provided for the required block decryption mode. The length is greater than or equal to 16 bytes. Bytes greater than 16 bytes are automatically ignored. If neither **pass\_str** nor **key\_str** is **NULL**, this parameter cannot be **NULL**. Otherwise, an error is reported. For security purposes, you are advised to ensure that the IV value for each encryption is unique in OFB mode and that the IV value for each encryption is unpredictable in CBC and CFB modes.
 
@@ -415,7 +415,7 @@
     </tbody>
     </table>
 
-    For details about how to use the function and details about function examples, see  [Querying Audit Results](en-us_topic_0289900741.md).
+    For details about how to use the function and details about function examples, see  [Querying Audit Results](../DatabaseAdministrationGuide/querying-audit-results.md).
 
 -   pg\_delete\_audit
 
@@ -423,4 +423,4 @@
      
     Return value type: void  
      
-    For details about how to use the function and details about function examples, see  [Maintaining Audit Logs](en-us_topic_0289900145.md).
+    For details about how to use the function and details about function examples, see  [Maintaining Audit Logs](../DatabaseAdministrationGuide/maintaining-audit-logs.md).

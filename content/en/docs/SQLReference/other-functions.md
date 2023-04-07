@@ -30,7 +30,7 @@
 
 -   pg\_catalog.plancache\_status\(\)
 
-    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](en-us_topic_0297927201.md).
+    Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](global_plancache_status.md).
 
     Return type: record
 

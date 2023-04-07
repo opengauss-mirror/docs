@@ -338,4 +338,4 @@ It is mainly controlled by the following parameters:
 
 - `enable_auto_clean_unique_sql`: indicates whether to enable the auto cleanup mechanism of unique SQL. It can automatically clean up 10% of the records randomly when the upper limit is reached. If it is not enabled, error logs will be recorded and SQL related content will not be recorded in memory.
 
-For details, see [GUC parameter: Query](query-62.md#EN-US_TOPIC_0289900490).
+For details, see [GUC parameter: Query](../DatabaseReference/query-62.md#EN-US_TOPIC_0289900490).

@@ -35,7 +35,7 @@ You can perform the following steps to collect execution plans of SQL statements
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >After the  **EXPLAIN PLAN**  statement is executed, plan information is automatically stored in  **PLAN\_TABLE**.  **INSERT**,  **UPDATE**, and  **ANALYZE**  cannot be performed on  **PLAN\_TABLE**.
-    >For details about  **PLAN\_TABLE**, see  [PLAN\_TABLE](plan_table.md).
+    >For details about  **PLAN\_TABLE**, see  [PLAN\_TABLE](../DatabaseReference/plan_table.md).
 
     ```
     explain plan set statement_id='TPCH-Q4' for

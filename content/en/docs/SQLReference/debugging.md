@@ -23,7 +23,7 @@ The syntax of RAISE is as follows:
 
 **Parameter description**:
 
--   The level option is used to specify the error level, that is,  **DEBUG**,  **LOG**,  **INFO**,  **NOTICE**,  **WARNING**, or  **EXCEPTION**  \(default\).  **EXCEPTION**  throws an error that normally terminates the current transaction and the others only generate information at their levels. The  [log\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  and  [client\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  parameters control whether the error messages of specific levels are reported to the client and are written to the server log.
+-   The level option is used to specify the error level, that is,  **DEBUG**,  **LOG**,  **INFO**,  **NOTICE**,  **WARNING**, or  **EXCEPTION**  \(default\).  **EXCEPTION**  throws an error that normally terminates the current transaction and the others only generate information at their levels. The  [log\_min\_messages](../DatabaseReference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)  and  [client\_min\_messages](../DatabaseReference/logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)  parameters control whether the error messages of specific levels are reported to the client and are written to the server log.
 -   **format**: specifies the error message text to be reported, a format string. The format string can be appended with an expression for insertion to the message text. In a format string,  **%**  is replaced by the parameter value attached to format and  **%%**  is used to print  **%**. For example:
 
     ```
@@ -48,7 +48,7 @@ If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EX
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The syntax shown in [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4) is not followed by any parameter. This form is used only for the EXCEPTION statement in a BEGIN block so that the error can be re-processed.
->-   For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](description-of-sql-error-codes.md). Only ERROR condition names are supported.
+>-   For the condition name specified by ERRCODE and condition\_name, see [Description of SQL Error Codes](../DatabaseReference/description-of-sql-error-codes.md). Only ERROR condition names are supported.
 
 **EXCEPTION\_INIT**
 
