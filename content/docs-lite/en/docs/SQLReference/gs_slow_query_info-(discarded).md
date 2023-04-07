@@ -1,6 +1,6 @@
 # GS\_SLOW\_QUERY\_INFO \(Discarded\)<a name="EN-US_TOPIC_0000001151141798"></a>
 
-**GS\_SLOW\_QUERY\_INFO**  displays the slow query information that has been dumped on the current node. The data is dumped from the kernel to the system catalog. If  [enable\_resource\_record](workload-management.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)  is set to  **on**, the system imports the query information from the kernel to  **GS\_WLM\_SESSION\_QUERY\_INFO\_ALL**  every 3 minutes. This operation occupies storage space and affects performance. You can check  **GS\_SLOW\_QUERY\_INFO**  to view the slow query information that has been dumped. This view has been discarded in this version.
+**GS\_SLOW\_QUERY\_INFO**  displays the slow query information that has been dumped on the current node. The data is dumped from the kernel to the system catalog. If  [enable\_resource\_record](../DataBaseReference/workload-management.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)  is set to  **on**, the system imports the query information from the kernel to  **GS\_WLM\_SESSION\_QUERY\_INFO\_ALL**  every 3 minutes. This operation occupies storage space and affects performance. You can check  **GS\_SLOW\_QUERY\_INFO**  to view the slow query information that has been dumped. This view has been discarded in this version.
 
 **Table  1**  GS\_SLOW\_QUERY\_INFO columns
 

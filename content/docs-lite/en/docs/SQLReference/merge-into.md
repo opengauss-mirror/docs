@@ -32,7 +32,7 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
 -   **plan\_hint**  clause
 
-    Follows the  **MERGE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **MERGE**  statement block. For details, see  [Hint-based Tuning](hint-based-tuning.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **MERGE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of a  **MERGE**  statement block. For details, see  [Hint-based Tuning](../PerformanceTuningGuide/hint-based-tuning.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 -   **INTO**  clause
 
@@ -55,7 +55,6 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
     If the value of the  **value**  clause is inconsistent with the specified partition, an error is reported.
 
-    For details, see  [CREATE TABLE SUBPARTITION](en-us_topic_0000001198046401.md).
 
 -   **alias**
 

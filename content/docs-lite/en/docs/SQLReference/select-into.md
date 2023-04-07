@@ -108,7 +108,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 >
 >For details about other **SELECT INTO** parameters, see [Parameter Description](select.md#en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc) in SELECT.content\zh\docs\Developerguide\SELECT-INTO.md
 >
->For details about the **var\_name** parameter, see the description of [var\_name](..\..\..\en\docs\Developerguide\set.md).
+>For details about the **var\_name** parameter, see the description of [var\_name](..\Developerguide\set.md).
 
 ## Examples<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s895bebf9e3214a0783610d5fc1ad2f31"></a>
 

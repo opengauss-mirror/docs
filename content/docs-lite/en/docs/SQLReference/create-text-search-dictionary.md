@@ -4,7 +4,7 @@
 
 **CREATE TEXT SEARCH DICTIONARY**  creates a full-text retrieval dictionary. A dictionary is used to identify and process particular words during full-text retrieval.
 
-Dictionaries are created by using predefined templates \(defined in the  [PG\_TS\_TEMPLATE](pg_ts_template.md)  system catalog\). Five types of dictionaries can be created,  **Simple**,  **Ispell**,  **Synonym**,  **Thesaurus**, and  **Snowball**. These dictionaries are used to handle different types of tasks.
+Dictionaries are created by using predefined templates \(defined in the  [PG\_TS\_TEMPLATE](../DataBaseReference/pg_ts_template.md)  system catalog\). Five types of dictionaries can be created,  **Simple**,  **Ispell**,  **Synonym**,  **Thesaurus**, and  **Snowball**. These dictionaries are used to handle different types of tasks.
 
 ## Precautions<a name="en-us_topic_0283137272_en-us_topic_0237122122_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
@@ -33,7 +33,7 @@ CREATE TEXT SEARCH DICTIONARY name (
 
     Specifies a template name.
 
-    Value range: templates \(**Simple**,  **Synonym**,  **Thesaurus**,  **Ispell**, and  **Snowball**\) defined in the  [PG\_TS\_TEMPLATE](pg_ts_template.md)  system catalog
+    Value range: templates \(**Simple**,  **Synonym**,  **Thesaurus**,  **Ispell**, and  **Snowball**\) defined in the  [PG\_TS\_TEMPLATE](../DataBaseReference/pg_ts_template.md)  system catalog
 
 -   **option**
 
