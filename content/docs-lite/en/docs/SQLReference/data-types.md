@@ -1,6 +1,6 @@
 # Data Types<a name="EN-US_TOPIC_0289900421"></a>
 
-openGauss supports implicit conversions between certain data types. For details, see[PG\_CAST](pg_cast.md)  .
+openGauss supports implicit conversions between certain data types. For details, see[PG\_CAST](../DataBaseReference/pg_cast.md)  .
 
 -   **[Numeric Types](numeric-types.md)**  
 
@@ -35,8 +35,6 @@ openGauss supports implicit conversions between certain data types. For details,
 -   **[Pseudo-Types](pseudo-types.md)**  
 
 -   **[Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md)**  
-
--   **[XML Types](xml-types.md)**  
 
 -   **[Data Type Used by the Ledger Database](data-type-used-by-the-ledger-database.md)**  
 
