@@ -50,7 +50,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **plan\_hint**  clause
 
-    Follows the  **UPDATE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **UPDATE**  statement block. For details, see  [Hint-based Tuning](hint-based-tuning.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **UPDATE**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **UPDATE**  statement block. For details, see  [Hint-based Tuning](../PerformanceTuningGuide/hint-based-tuning.md). In each statement, only the first  **/\*+** *plan\*hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
 -   **table\_name**
 
@@ -67,8 +67,6 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     SUBPARTITION \{ \( subpartition\_name \) | FOR \( subpartition\_value \[, ...\] \) \}
 
     For details about the keywords, see  [SELECT](select.md).
-
-    For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
 
 -   **alias**
 
