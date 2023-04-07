@@ -368,7 +368,6 @@
 
 - **[VALUES](values.md)**  
 
-- **[SHRINK](shrink.md)** 
 
 - **[ALTER PROCEDURE](alter-procedure.md)**  
 
