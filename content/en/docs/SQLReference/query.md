@@ -18,8 +18,6 @@
 
 -   **[STATEMENT\_RESPONSETIME\_PERCENTILE](statement_responsetime_percentile.md)**  
 
--   **[STATEMENT\_USER\_COMPLEX\_HISTORY](statement_user_complex_history.md)**  
-
 -   **[STATEMENT\_COMPLEX\_RUNTIME](statement_complex_runtime.md)**  
 
 -   **[STATEMENT\_COMPLEX\_HISTORY\_TABLE](statement_complex_history_table.md)**  
