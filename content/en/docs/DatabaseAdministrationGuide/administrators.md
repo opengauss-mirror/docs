@@ -10,7 +10,7 @@ An initial user bypasses all permission checks. You are advised to use an initia
 
 A system administrator is an account with the  **SYSADMIN**  attribute. By default, a database system administrator has the same permissions as object owners but does not have the object permissions in  **dbe\_perf**  mode.
 
-To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **SYSADMIN**  specified.
+To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **SYSADMIN**  specified.
 
 ```
 CREATE USER sysadmin WITH SYSADMIN password "xxxxxxxxx";
@@ -30,7 +30,7 @@ To run the  **ALTER USER**  statement, the user must exist.
 
 A monitor administrator is an account with the  **MONADMIN**  attribute and has the permission to view views and functions in the  **dbe\_perf**  schema. The monitor administrator can also grant or revoke object permissions in the  **dbe\_perf**  schema.
 
-To create a monitor administrator, connect to the database as a system administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **MONADMIN**  specified.
+To create a monitor administrator, connect to the database as a system administrator and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](../SQLReference/alter-user.md)**  statement with  **MONADMIN**  specified.
 
 ```
 postgres=# CREATE USER monadmin WITH MONADMIN password "xxxxxxxxx";
@@ -48,7 +48,7 @@ To run the  **ALTER USER**  statement, the user must exist.
 
 An O&M administrator is an account with the  **OPRADMIN**  attribute and has the permission to use Roach to perform backup and restoration.
 
-To create an O&M administrator, connect to the database as an initial user and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **OPRADMIN**  specified.
+To create an O&M administrator, connect to the database as an initial user and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](../SQLReference/alter-user.md)**  statement with  **OPRADMIN**  specified.
 
 ```
 postgres=# CREATE USER opradmin WITH OPRADMIN password "xxxxxxxxx";
@@ -66,7 +66,7 @@ To run the  **ALTER USER**  statement, the user must exist.
 
 A security policy administrator is an account with the  **POLADMIN**  attribute and has the permission to create resource tags, anonymization policies, and unified audit policies.
 
-To create a security policy administrator, connect to the database as an administrator and run the  **[CREATE USER](create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **POLADMIN**  specified.
+To create a security policy administrator, connect to the database as an administrator and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](../SQLReference/alter-user.md)**  statement with  **POLADMIN**  specified.
 
 ```
 postgres=# CREATE USER poladmin WITH POLADMIN password "xxxxxxxxx";
