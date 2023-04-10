@@ -1,0 +1,32 @@
+企业级特性
+==========
+
+.. toctree::
+
+	../content/zh/docs/AboutopenGauss/函数及存储过程支持
+	../content/zh/docs/AboutopenGauss/支持SQL-hint
+	../content/zh/docs/AboutopenGauss/全文索引
+	../content/zh/docs/AboutopenGauss/Copy接口支持容错机制
+	../content/zh/docs/AboutopenGauss/分区
+	../content/zh/docs/AboutopenGauss/高级分析函数支持
+	../content/zh/docs/AboutopenGauss/物化视图
+	../content/zh/docs/AboutopenGauss/支持HyperLogLog
+	../content/zh/docs/AboutopenGauss/在线添加索引
+	../content/zh/docs/AboutopenGauss/自治事务
+	../content/zh/docs/AboutopenGauss/全局临时表
+	../content/zh/docs/AboutopenGauss/伪列ROWNUM
+	../content/zh/docs/AboutopenGauss/支持存储过程调试
+	../content/zh/docs/AboutopenGauss/JDBC客户端负载均衡与读写分离
+	../content/zh/docs/AboutopenGauss/In-place-Update存储引擎
+	../content/zh/docs/AboutopenGauss/发布订阅
+	../content/zh/docs/AboutopenGauss/外键锁增强
+	../content/zh/docs/AboutopenGauss/支持OLTP场景数据压缩
+	../content/zh/docs/AboutopenGauss/事件触发器
+	../content/zh/docs/AboutopenGauss/资源池化
+		
+
+		
+	
+	
+	
+	

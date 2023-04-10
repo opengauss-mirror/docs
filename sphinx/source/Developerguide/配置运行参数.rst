@@ -1,6 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/查看参数当前取值
-    ../content/zh/docs/Developerguide/重设参数

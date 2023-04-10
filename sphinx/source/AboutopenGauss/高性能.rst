@@ -1,0 +1,25 @@
+高性能
+======
+
+.. toctree::
+
+	../content/zh/docs/AboutopenGauss/CBO优化器
+	../content/zh/docs/AboutopenGauss/支持LLVM
+	../content/zh/docs/AboutopenGauss/向量化引擎
+	../content/zh/docs/AboutopenGauss/行列混合存储
+	../content/zh/docs/AboutopenGauss/自适应压缩
+	../content/zh/docs/AboutopenGauss/SQL-by-pass
+	../content/zh/docs/AboutopenGauss/鲲鹏NUMA架构优化
+	../content/zh/docs/AboutopenGauss/支持线程池高并发
+	../content/zh/docs/AboutopenGauss/SMP并行执行
+	../content/zh/docs/AboutopenGauss/Xlog-no-Lock-Flush
+	../content/zh/docs/AboutopenGauss/Parallel-Page-based-Redo-For-Ustore
+	../content/zh/docs/AboutopenGauss/行存转向量化	
+	../content/zh/docs/AboutopenGauss/OCK加速数据传输
+	../content/zh/docs/AboutopenGauss/OCK-SCRLOCK加速分布式锁
+		
+		
+	
+	
+	
+	
