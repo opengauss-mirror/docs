@@ -12,7 +12,7 @@
     -   The GUC parameters at the BACKEND level take effect only after the session is reconnected.
     -   The GUC parameters at the SIGHUP level take effect immediately. \(Actually, there is a slight delay to wait for the thread reloading the parameter.\)
 
--   You can set the  [**audit\_set\_parameter**](en-us_topic_0289900107.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_sc59738d0efe94f909306fde1f3d04f1e)  parameter to specify whether the operation is audited.
+-   You can set the  [**audit\_set\_parameter**](../DatabaseReference/operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_sc59738d0efe94f909306fde1f3d04f1e)  parameter to specify whether the operation is audited.
 -   The operation can be synchronized to the standby server.
 -   The operation is the same as  **gs\_guc**, which does not pay attention to whether the database is a primary or standby node or whether the database is read-only.
 -   The operation cannot be executed in a transaction because it cannot be rolled back.

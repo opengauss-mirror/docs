@@ -8,7 +8,7 @@
 
     Return type: record
 
-    [Single-query Index Recommendation](en-us_topic_0296549246.md)  describes the examples.
+    [Single-query Index Recommendation](../AIFeatureGuide/single-query-index-recommendation.md)  describes the examples.
 
 -   hypopg\_create\_index\(text\)
 
@@ -18,7 +18,7 @@
 
     Return type: record
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](../AIFeatureGuide/virtual-index.md)  describes the examples.
 
 -   hypopg\_display\_index\(\)
 
@@ -28,7 +28,7 @@
 
     Return type: record
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](../AIFeatureGuide/virtual-index.md)  describes the examples.
 
 -   hypopg\_drop\_index\(oid\)
 
@@ -38,7 +38,7 @@
 
     Return type: Boolean
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](../AIFeatureGuide/virtual-index.md)  describes the examples.
 
 -   hypopg\_reset\_index\(\)
 
@@ -48,7 +48,7 @@
 
     Return type: none
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](../AIFeatureGuide/virtual-index.md)  describes the examples.
 
 -   hypopg\_estimate\_size\(oid\)
 
@@ -58,7 +58,7 @@
 
     Return type: int8
 
-    [Virtual Index](en-us_topic_0296549247.md)  describes the examples.
+    [Virtual Index](../AIFeatureGuide/virtual-index.md)  describes the examples.
 
 -   check\_engine\_status\(ip text, port text\)
 
@@ -68,7 +68,6 @@
 
     Return type: text
 
-    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
@@ -89,7 +88,6 @@
 
     Return type: tartup\_time\_accuracy FLOAT8, total\_time\_accuracy FLOAT8, rows\_accuracy FLOAT8, peak\_memory\_accuracy FLOAT8
 
-    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   track\_model\_train\_opt\(ip text, port text\)
 
@@ -99,7 +97,6 @@
 
     Return type: text
 
-    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   encode\_feature\_perf\_hist\(datname text\)
 
@@ -109,7 +106,6 @@
 
     Return type: queryid bigint, plan\_node\_id int, parent\_node\_id int, left\_child\_id int, right\_child\_id int, encode text, startup\_time bigint, total\_time bigint, rows bigint, and peak\_memory int
 
-    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   gather\_encoding\_info\(datname text\)
 
@@ -119,7 +115,6 @@
 
     Return type: int
 
-    [User Guide](en-us_topic_0289900575.md)  describes the examples.
 
 -   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
 

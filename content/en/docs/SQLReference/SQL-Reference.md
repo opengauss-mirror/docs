@@ -28,6 +28,6 @@
 
 -   **[SQL Syntax](sql-syntax.md)**  
 
--   **[Appendix](appendix.md)**  
+-   **[Appendix](../BriefTutorial/appendix-sql-syntax.md)**  
 
 
