@@ -33,7 +33,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
     Specifies options for user mapping. These options typically define the actual user name and password for this mapping. The option name must be unique. The allowed option names and values are related to the foreign data wrapper of the server.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >-   User passwords are encrypted and stored in the system catalog  [PG\_USER\_MAPPING](pg_user_mapping.md). During the encryption,  **usermapping.key.cipher**  and  **usermapping.key.rand**  are used as the encryption password file and encryption factor. Before using the tool for the first time, run the following command to create the two files, save the files to the  _$GAUSSHOME_**/bin**  directory on each node, and ensure that you have the read permission on the files.  **gs\_ssh**  helps you quickly place files in the specified directory of each node.
+    >-   User passwords are encrypted and stored in the system catalog  [PG\_USER\_MAPPING](../DatabaseReference/pg_user_mapping.md). During the encryption,  **usermapping.key.cipher**  and  **usermapping.key.rand**  are used as the encryption password file and encryption factor. Before using the tool for the first time, run the following command to create the two files, save the files to the  _$GAUSSHOME_**/bin**  directory on each node, and ensure that you have the read permission on the files.  **gs\_ssh**  helps you quickly place files in the specified directory of each node.
     >    ```
     >    gs_ssh -c "gs_guc generate -o usermapping -S default -D $GAUSSHOME/bin"
     >    ```
