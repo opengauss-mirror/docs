@@ -55,13 +55,13 @@ WITH hyperparameter_name = { hyperparameter_value | DEFAULT } [, ...] }
 
     Hyperparameter name of the machine learning model.
 
-    Value range: a string. The value range varies depending on the algorithms. For details, see  [Table 2](en-us_topic_0000001149426339.md#table15985527185615).
+    Value range: a string. The value range varies depending on the algorithms. For details, see  [Table 2](../AIFeatureGuide/db4ai-query-for-model-training-and-prediction.md#table15985527185615).
 
 -   **hp\_value**
 
     Hyperparameter value.
 
-    Value range: a string. The value range varies depending on the algorithms. For details, see  [Table 3](en-us_topic_0000001149426339.md#table86881521502).
+    Value range: a string. The value range varies depending on the algorithms. For details, see  [Table 3](../AIFeatureGuide/db4ai-query-for-model-training-and-prediction.md#table86881521502).
 
 
 ## Examples<a name="section10367355883"></a>
