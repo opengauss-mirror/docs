@@ -238,7 +238,7 @@ The shared storage feature provides the real-time read consistency function on s
     3.  Perform steps [1](#li0988195961613) to [5](#li23296624419) to gs\_initdb to create a database.
     4.  Modify the **postgresql.conf** file.
 
-        Set **ss\_interconnect\_type** to **RDMA** and add the **ss\_rdma\_work\_config** and **ss\_ock\_log\_path** configuration items. For details about the parameter description and configuration, see [Shared Storage Parameters](../DataBaseReference/en-us_topic_0000001371524841.md).
+        Set **ss\_interconnect\_type** to **RDMA** and add the **ss\_rdma\_work\_config** and **ss\_ock\_log\_path** configuration items. For details about the parameter description and configuration, see [Shared Storage Parameters](primary-standby-shared-storage.md).
 
         Example:
 
