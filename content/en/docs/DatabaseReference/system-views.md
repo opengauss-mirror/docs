@@ -2,7 +2,7 @@
 
 -   **[DV\_SESSION\_LONGOPS](dv_session_longops.md)**
 -   **[DV\_SESSIONS](dv_sessions.md)**
--   **[GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\)](get_global_prepared_xacts-(discarded).md)**
+-   **[GET\_GLOBAL\_PREPARED\_XACTS \(Discarded\)](get_global_prepared_xacts-discarded.md)**
 -   **[GS\_AUDITING\_ACCESS](gs_auditing_access.md)**
 -   **[GS\_AUDITING\_PRIVILEGE](gs_auditing_privilege.md)**
 -   **[GS\_AUDITING](gs_auditing.md)**
@@ -39,7 +39,6 @@
 -   **[GS\_WLM\_SESSION\_INFO](gs_wlm_session_info.md)**
 -   **[GS\_WLM\_SESSION\_STATISTICS](gs_wlm_session_statistics.md)**
 -   **[GS\_WLM\_USER\_INFO](gs_wlm_user_info.md)**
--   **[GS\_WRITE\_TERM\_LOG](gs_write_term_log.md)**
 -   **[MPP\_TABLES](mpp_tables.md)**
 -   **[PG\_AVAILABLE\_EXTENSION\_VERSIONS](pg_available_extension_versions.md)**
 -   **[PG\_AVAILABLE\_EXTENSIONS](pg_available_extensions.md)**
