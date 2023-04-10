@@ -11,14 +11,14 @@ openGauss supports:
 ## Supported OSs<a name="en-us_topic_0283136535_en-us_topic_0237080615_en-us_topic_0231763749_en-us_topic_0059777704_sa3cc6a5214094aa9b46a22b25ba77c20"></a>
 
 -   Arm:
-    -   openEuler 20.03LTS \(recommended\)
-    -   openEuler 22.03LTS
+    -   openEuler 20.03 LTS \(recommended\)
+    -   openEuler 22.03 LTS
     -   Kirin V10
     -   Asianux 7.5
     
 -   x86:
-    -   openEuler 20.03LTS
-    -   openEuler 22.03LTS
+    -   openEuler 20.03 LTS
+    -   openEuler 22.03 LTS
     -   CentOS 7.6
     -   Asianux 7.6
 
