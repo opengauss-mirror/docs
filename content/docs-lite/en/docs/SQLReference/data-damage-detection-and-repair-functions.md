@@ -176,7 +176,7 @@
 
         Number of the damaged page. Set this parameter based on the  **block\_num**  column in  **local\_bad\_block\_info**  or the  **blocknum**  column in the  **gs\_verify\_and\_tryrepair\_page**  function.
 
-        Value range: OID ranging from 0 to 4294967295. Note: A negative value will be forcibly converted to a non-negative integer.
+        Value range: INT ranging from 0 to 2147483647. Note: A negative value will be forcibly converted to a non-negative integer.
 
     -   is\_segment
 
