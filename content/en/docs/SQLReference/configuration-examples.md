@@ -5,7 +5,7 @@ Text search configuration specifies the following components required for conver
 -   A parser, decomposes a text into tokens.
 -   Dictionary list, converts each token into a lexeme.
 
-Each time when the **to\_tsvector** or **to\_tsquery** function is invoked, a text search configuration is required to specify a processing procedure. The GUC parameter [default\_text\_search\_config](locale-and-formatting.md#en-us_topic_0237124733_en-us_topic_0059778109_sd9a07d429cd4498383931c621742b816) specifies the default text search configuration, which will be used if the text search function does not explicitly specify a text search configuration.
+Each time when the **to\_tsvector** or **to\_tsquery** function is invoked, a text search configuration is required to specify a processing procedure. The GUC parameter [default\_text\_search\_config](../DatabaseReference/locale-and-formatting.md#en-us_topic_0237124733_en-us_topic_0059778109_sd9a07d429cd4498383931c621742b816) specifies the default text search configuration, which will be used if the text search function does not explicitly specify a text search configuration.
 
 openGauss provides some predefined text search configurations. You can also create user-defined text search configurations. In addition, to facilitate the management of text search objects, multiple **gsql** meta-commands are provided to display information about text search objects. For details, see "Client Tool \> Meta-Command Reference" in *Tool Reference*.
 

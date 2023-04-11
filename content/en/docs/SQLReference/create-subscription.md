@@ -29,7 +29,6 @@ CREATE SUBSCRIPTION subscription_name
 
     For example,  **'host=1.1.1.1,2.2.2.2 port=10000,20000 dbname=postgres user=repusr1 password=password\_123'**.
 
-    For details about the fields in the character string, see  [Link Parameters](en-us_topic_0289900649.md). The following table lists the common link parameters.
 
     -   **host**
 

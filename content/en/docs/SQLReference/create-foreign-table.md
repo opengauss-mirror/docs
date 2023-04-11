@@ -151,7 +151,7 @@ where table_constraint can be:
 
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >For details about how to use  **file\_fdw**, see  [file\_fdw](en-us_topic_0000001116194726.md).
+        >For details about how to use  **file\_fdw**, see  [file\_fdw](../DatabaseAdministrationGuide/file_fdw.md).
 
 
 

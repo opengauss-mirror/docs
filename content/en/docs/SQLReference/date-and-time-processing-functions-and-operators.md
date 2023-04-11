@@ -544,7 +544,7 @@
 
     Description: Converts a number to the interval type.  **num**  is a numeric-typed number.  **interval\_unit**  is a string in the following format: 'DAY' | 'HOUR' | 'MINUTE' | 'SECOND'
 
-    You can set the  [IntervalStyle](en-us_topic_0289900528.md#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s89302a8dcd7f46ecb7167574d6397dc0)  parameter to  **a**  to be compatible with the interval output format of the function.
+    You can set the  [IntervalStyle](../DatabaseReference/locale-and-formatting.md#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s89302a8dcd7f46ecb7167574d6397dc0)  parameter to  **a**  to be compatible with the interval output format of the function.
 
     Example:
 
