@@ -65,5 +65,5 @@ CONNECTION_BAD
 
 ## 示例<a name="zh-cn_topic_0241735618_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-请参见[示例](示例-3.md)章节。
+请参见[示例](示例-libpq.md)章节。
 
