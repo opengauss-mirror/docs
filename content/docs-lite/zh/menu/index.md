@@ -1204,6 +1204,7 @@ headless: true
 			-   [DBE\_PLDEBUGGER.turn\_off]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-turn_off.md" >}})
 			-   [DBE\_PLDEBUGGER.local\_debug\_server\_info]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-local_debug_server_info.md" >}})
 			-   [DBE\_PLDEBUGGER.attach]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-attach.md" >}})
+			-   [DBE\_PLDEBUGGER.info\_locals]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-info_locals.md" >}})
 			-   [DBE\_PLDEBUGGER.next]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-next.md" >}})
 			-   [DBE\_PLDEBUGGER.continue]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-continue.md" >}})
 			-   [DBE\_PLDEBUGGER.abort]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-abort.md" >}})
