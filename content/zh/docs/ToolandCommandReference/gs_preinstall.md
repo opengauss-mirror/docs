@@ -96,6 +96,9 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   --skip-hostname-set
 
     是否将xml配置文件中主机名与IP的映射关系写入“/etc/hosts”文件中。默认写入，如果指定该参数则不写入。
+-   --unused-third-party
+
+    是否使用om提供的三方库。默认使用，如果指定该参数则不使用。
 
 - -l
 
