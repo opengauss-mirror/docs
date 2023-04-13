@@ -1,0 +1,9 @@
+安装准备
+=====================================
+
+.. toctree::
+
+    ../content/zh/docs/InstallationGuide/了解安装流程
+	../content/zh/docs/InstallationGuide/获取安装包
+    ../content/zh/docs/InstallationGuide/准备软硬件安装环境
+    ../content/zh/docs/InstallationGuide/了解安装用户及用户组

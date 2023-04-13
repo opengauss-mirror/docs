@@ -1,0 +1,18 @@
+开发设计规范
+=====
+
+.. toctree::
+	
+    ../content/zh/docs/DeveloperGuide/开发设计规范概述
+    ../content/zh/docs/DeveloperGuide/数据库对象命名
+    ../content/zh/docs/DeveloperGuide/数据库对象设计
+    Database和Schema设计
+    表设计
+    规划存储模型
+    字段设计
+    约束设计
+    视图和关联表设计
+    ../content/zh/docs/DeveloperGuide/SQL编写
+    ../content/zh/docs/DeveloperGuide/程序开发规范
+    开发规范
+    工具对接
