@@ -20,7 +20,7 @@ headless: true
 	-   [系统架构]({{< relref "./docs/Description/系统架构.md" >}})
 	-   [应用场景]({{< relref "./docs/Description/应用场景.md" >}})
 	-   [运行环境]({{< relref "./docs/Description/运行环境.md" >}})
-	-   [技术指标]({{< relref "./docs/Description/技术指标.md" >}})
+	-   [技术指标]({{< relref "./docs/Technicalwhitepaper/技术指标.md" >}})
 	-   [基本功能和特性]({{< relref "./docs/Description/基本功能和特性.md" >}})
 	-   [企业级增强特性]({{< relref "./docs/Description/企业级增强特性.md" >}})	
 -   [技术白皮书]({{< relref "./docs/Technicalwhitepaper/Technicalwhitepaper.md" >}})
