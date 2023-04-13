@@ -1,0 +1,12 @@
+参数配置
+========
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/查看参数
+    ../content/zh/docs/DatabaseAdministrationGuide/设置参数
+
+
+
+
