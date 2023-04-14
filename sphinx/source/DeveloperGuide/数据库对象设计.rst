@@ -3,9 +3,9 @@
 
 .. toctree::
 	
-    ../content/zh/docs/Developerguide/Database和Schema设计
-    ../content/zh/docs/Developerguide/表设计
-    ../content/zh/docs/Developerguide/规划存储模型
-    ../content/zh/docs/Developerguide/字段设计
-    ../content/zh/docs/Developerguide/约束设计
-    ../content/zh/docs/Developerguide/视图和关联表设计
+    ../content/zh/docs/DeveloperGuide/Database和Schema设计
+    ../content/zh/docs/DeveloperGuide/表设计
+    ../content/zh/docs/DeveloperGuide/规划存储模型
+    ../content/zh/docs/DeveloperGuide/字段设计
+    ../content/zh/docs/DeveloperGuide/约束设计
+    ../content/zh/docs/DeveloperGuide/视图和关联表设计
