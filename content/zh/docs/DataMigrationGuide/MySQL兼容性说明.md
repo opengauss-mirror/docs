@@ -1,5 +1,7 @@
 # MySQL兼容性说明<a name="ZH-CN_TOPIC_0000001201277572"></a>
 
+openGauss的MySQL兼容性主要通过Dolphin插件和内核实现。Dolphin插件的说明可参考[Dolphin插件介绍](../ExtensionReference/dolphin-Extension.md)。在openGauss内核中实现的MySQL兼容性特性见下表。
+
 **表 1**  在openGauss内核中实现的MySQL兼容性特性列表
 
 <a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_zh-cn_topic_0058967566_table53712060"></a>
