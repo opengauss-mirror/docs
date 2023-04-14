@@ -94,6 +94,10 @@
 -   --skip-hostname-set
 
     Specifies whether to write the mapping relationship between the host name and IP address of the XML configuration file to the  **/etc/hosts**  file. By default, the relationship is written to the file. If this parameter is specified, the relationship is not written to the file.
+    
+-  --unused-third-party
+
+    Whether to use the third-party library provided by OM. By default, if this parameter is specified, it will not be used.
 
 - -l
 
