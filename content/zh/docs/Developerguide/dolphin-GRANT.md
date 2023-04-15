@@ -7,7 +7,7 @@ GRANT用于授予一个或多个角色的权限。
 ## 注意事项<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sf1580b93b5664a7db2c08cf69806faa5"></a>
 
    本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
-   增加ALTER ROUTINE、CRAETE ROUTINE、CREATE TEMPORARY TABLES、CREATE USER、CREATE TABLESPACE、INDEX权限
+   增加ALTER ROUTINE、CREATE ROUTINE、CREATE TEMPORARY TABLES、CREATE USER、CREATE TABLESPACE、INDEX权限
 ## 语法格式<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
 -   新增```ALTER ROUTINE```权限
