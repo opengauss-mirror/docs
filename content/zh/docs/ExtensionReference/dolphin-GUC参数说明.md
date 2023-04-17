@@ -403,183 +403,382 @@ dayname
 
 ## auto_increment_increment<a name="section203671436827"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示自增列的自增步长。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示自增列的自增步长。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 65535]
 
 **默认值**：1
 
+**示例**：
+```
+--设置auto_increment_increment为1
+openGauss=# set auto_increment_increment = 1;
+WARNING:  Variable 'auto_increment_increment' has no actual meaning.
+SET
+--设置auto_increment_increment为default
+openGauss=# set auto_increment_increment = default;
+SET
+```
+
 ## character_set_client<a name="section203671436828"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示客户端使用该字符集。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示客户端使用该字符集。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：utf8
+
+**示例**：
+```
+--设置character_set_client为uft8
+openGauss=# set character_set_client = uft8;
+WARNING:  Variable 'character_set_client' has no actual meaning.
+SET
+--设置character_set_client为default
+openGauss=# set auto_increment_increment = default;
+SET
+```
 
 ## character_set_connection<a name="section203671436829"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示没有字符集引入程序时，使用该字符集。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示没有字符集引入程序时，使用该字符集。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：utf8
+
+**示例**：
+```
+--设置character_set_connection为utf8
+openGauss=# set character_set_connection = utf8;
+WARNING:  Variable 'character_set_connection' has no actual meaning.
+SET
+--设置character_set_connection为default
+openGauss=# set character_set_connection = default;
+SET
+```
 
 ## character_set_results<a name="section203671436830"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集向客户端返回查询结果。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集向客户端返回查询结果。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：utf8
 
+**示例**：
+```
+--设置character_set_results为utf8
+openGauss=# set character_set_results = utf8;
+set lower_case_table_names = default;
+SETWARNING:  Variable 'character_set_results' has no actual meaning.
+SET
+--设置character_set_results为default
+openGauss=# set character_set_results = default;
+SET
+```
+
 ## character_set_server<a name="section203671436831"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：latin1
 
+**示例**：
+```
+--设置character_set_server为latin1
+openGauss=# set character_set_server = latin1;
+WARNING:  Variable 'character_set_server' has no actual meaning.
+SET
+--设置character_set_server为default
+openGauss=# set character_set_server = default;
+SET
+```
+
 ## collation_server<a name="section203671436832"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示服务端使用该排序规则。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该排序规则。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：latin1_swedish_ci
 
+**示例**：
+```
+--设置collation_server为latin1_swedish_ci
+openGauss=# set collation_server = latin1_swedish_ci;
+WARNING:  Variable 'collation_server' has no actual meaning.
+SET
+--设置collation_server为defalut
+openGauss=# set collation_server = default;
+SET
+```
+
 ## collation_connection<a name="section203671436833"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示连接字符集使用该排序规则。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接字符集使用该排序规则。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：无
 
+**示例**：
+```
+--设置collation_connection为'collation_connection'
+openGauss=# set collation_connection = 'collation_connection';
+WARNING:  Variable 'collation_connection' has no actual meaning.
+SET
+--设置collation_connection为default
+openGauss=# set collation_connection = default;
+SET
+```
+set lower_case_table_names = default;
+SET
 ## init_connect<a name="section203671436834"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示连接初始化时执行的SQL语句。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接初始化时执行的SQL语句。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：无
+
+**示例**：
+```
+--设置init_connect为'init_connect'
+openGauss=# set init_connect = 'init_connect';
+WARNING:  Variable 'init_connect' has no actual meaning.
+SET
+--设置init_connect为default
+openGauss=# set init_connect = default;
+SET
+```
 
 ## interactive_timeout<a name="section203671436835"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示交互式连接在持续无活动该秒数后，服务端会将其关闭。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示交互式连接在持续无活动该秒数后，服务端会将其关闭。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
 **默认值**：28800
 
+**示例**：
+```
+--设置interactive_timeout为28800
+openGauss=# set interactive_timeout = 28800;
+WARNING:  Variable 'interactive_timeout' has no actual meaning.
+SET
+--设置interactive_timeout为default
+openGauss=# set interactive_timeout = default;
+SET
+```
+
 ## license<a name="section203671436836"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示服务端使用该许可证。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该许可证。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，但设置参数值时会报错（将参数设置为default时不会报错）。
 
 **取值范围**：字符串
 
 **默认值**：MulanPSL-2.0
 
+**示例**：
+```
+--设置license为'MulanPSL-2.0'
+openGauss=# set license = 'MulanPSL-2.0';
+ERROR:  Variable 'license' is a read only variable.
+--设置license为default
+openGauss=# set license = default;
+SET
+```
+
 ## max_allowed_packet<a name="section203671436837"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示数据包的大小上限（字节）。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示数据包的大小上限（字节）。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1024, 1073741824]
 
 **默认值**：4194304
 
+**示例**：
+```
+--设置max_allowed_packet为4194304
+openGauss=# set max_allowed_packet = 4194304;
+WARNING:  Variable 'max_allowed_packet' has no actual meaning.
+SET
+--设置max_allowed_packet为default
+openGauss=# set max_allowed_packet = default;
+SET
+```
+
 ## net_buffer_length<a name="section203671436838"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示缓冲区的默认大小，缓冲区的大小可以动态的扩张到max_allowed_packet，并在SQL语句结束后还原。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示缓冲区的默认大小，缓冲区的大小可以动态的扩张到max_allowed_packet，并在SQL语句结束后还原。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1024, 1048576]
 
 **默认值**：16384
 
+**示例**：
+```
+--设置net_buffer_length为16384
+openGauss=# set net_buffer_length = 16384;
+WARNING:  Variable 'net_buffer_length' has no actual meaning.
+SET
+--设置net_buffer_length为default
+openGauss=# set net_buffer_length = default;
+SET
+```
+
 ## net_write_timeout<a name="section203671436839"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示在等待写入该秒数后，服务端会将其中止。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示在等待写入该秒数后，服务端会将其中止。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
 **默认值**：60
 
+**示例**：
+```
+--设置net_write_timeout为60
+openGauss=# set net_write_timeout = 60;
+WARNING:  Variable 'net_write_timeout' has no actual meaning.
+SET
+--设置net_write_timeout为default
+openGauss=# set net_write_timeout = default;
+SET
+```
+
 ## query_cache_size<a name="section203671436840"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示在缓存查询结果时，分配的内存大小（字节）。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示在缓存查询结果时，分配的内存大小（字节）。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 9223372036854775807]
 
 **默认值**：1048576
 
+**示例**：
+```
+--设置query_cache_size为1048576
+openGauss=# set query_cache_size = 1048576;
+WARNING:  Variable 'query_cache_size' has no actual meaning.
+SET
+--设置query_cache_size为default
+openGauss=# set query_cache_size = default;
+SET
+```
+
 ## query_cache_type<a name="section203671436841"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为整数类型，表示查询缓存的类型。
+**参数说明**：该参数目前未实现其具体意义。参数值为整数类型，表示查询缓存的类型。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[0, 2]
 
 **默认值**：0
 
+**示例**：
+```
+--设置query_cache_type为0
+openGauss=# set query_cache_type = 0;
+WARNING:  Variable 'query_cache_type' has no actual meaning.
+SET
+--设置query_cache_type为default
+openGauss=# set query_cache_type = default;
+SET
+```
+
 ## system_time_zone<a name="section203671436842"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示服务器系统时区。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务器系统时区。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：字符串
 
 **默认值**：无
 
+**示例**：
+```
+--设置system_time_zone为'system_time_zone'
+openGauss=# set system_time_zone = 'system_time_zone';
+WARNING:  Variable 'system_time_zone' has no actual meaning.
+SET
+--设置system_time_zone为default
+openGauss=# set system_time_zone = default;
+SET
+```
+
 ## time_zone<a name="section203671436843"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示当前时区。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示当前时区。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[-12:59, +13:00]
 
 **默认值**：SYSTEM
 
+**示例**：
+```
+--设置time_zone为SYSTEM
+openGauss=# set time_zone = SYSTEM;
+WARNING:  Variable 'time_zone' has no actual meaning.
+SET
+--设置time_zone为default
+openGauss=# set time_zone = default;
+SET
+```
+
 ## wait_timeout<a name="section203671436844"></a>
 
-**参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示非交互式连接在持续无活动该秒数后，服务端会将其关闭。
+**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示非交互式连接在持续无活动该秒数后，服务端会将其关闭。
 
-该参数目前属于INTERNAL类型参数，用户无法对其进行设置。
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **取值范围**：[1, 31536000]
 
 **默认值**：28800
+
+**示例**：
+```
+--设置wait_timeout为28800
+openGauss=# set wait_timeout = 28800;
+WARNING:  Variable 'wait_timeout' has no actual meaning.
+SET
+--设置wait_timeout为default
+openGauss=# set wait_timeout = default;
+SET
+```
 
 ## dolphin.lower_case_table_names<a name="section203671436844"></a>
 
@@ -672,4 +871,42 @@ openGauss=# show sql_note;
 ----------
  on
 (1 row)
+```
+
+## sql\_mode
+
+**参数说明**：该参数目前未实现其具体意义。请使用dolphin.sql_mode。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**示例**：
+```
+--设置sql_mode为'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length'
+openGauss=# set sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length';
+WARNING:  Variable 'sql_mode' has no actual meaning, please use variable 'dolphin.sql_mode'.
+SET
+--设置sql_mode为default
+openGauss=# set sql_mode = default;
+SET
+```
+
+## lower\_case\_table\_names
+
+**参数说明**：该参数目前未实现其具体意义。请使用dolphin.lower_case_table_names。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：[0, 2]
+
+**默认值**：1
+
+**示例**：
+```
+--设置lower_case_table_names为1
+openGauss=# set lower_case_table_names = 1;
+WARNING:  Variable 'lower_case_table_names' has no actual meaning, please use variable 'dolphin.lower_case_table_names'.
+SET
+--设置lower_case_table_names为default
+openGauss=# set lower_case_table_names = default;
+SET
 ```
