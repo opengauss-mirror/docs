@@ -2,7 +2,7 @@
 .. toctree::
 
     ../content/zh/docs/CharacteristicDescription/灰度升级
-    ../content/zh/docs/CharacteristicDescription/滚动升级
+    ../content/zh/docs/CharacteristicDescription/指定节点升级
     ../content/zh/docs/CharacteristicDescription/支持WDR诊断报告
     ../content/zh/docs/CharacteristicDescription/慢SQL诊断
     ../content/zh/docs/CharacteristicDescription/Session性能诊断

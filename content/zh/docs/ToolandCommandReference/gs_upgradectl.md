@@ -12,7 +12,7 @@
 
 灰度升级：灰度升级支持全业务操作，也是一次性升级所有节点（openGauss1.1.0版本之后的版本支持该功能）。
 
-滚动升级：滚动升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
+指定节点升级：指定节点升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
 
 ## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
@@ -253,7 +253,7 @@ Successfully Cleaned old install path.
 Commit binary upgrade succeeded.
 ```
 
-**示例五：**使用gs\_upgradectl脚本执行滚动升级。.
+**示例五：**使用gs\_upgradectl脚本执行指定节点升级。.
 
 升级部分指定节点
 ```
