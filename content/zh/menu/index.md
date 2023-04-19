@@ -64,7 +64,7 @@ headless: true
             -   [两地三中心跨Region容灾]({{< relref "./docs/AboutopenGauss/两地三中心跨Region容灾.md" >}})
 	    -   [维护性]({{< relref "./docs/AboutopenGauss/维护性.md" >}})
 	    	-   [灰度升级]({{< relref "./docs/AboutopenGauss/灰度升级.md" >}})
-	    	-   [滚动升级]({{< relref "./docs/AboutopenGauss/滚动升级.md" >}})
+	    	-   [指定节点升级]({{< relref "./docs/AboutopenGauss/指定节点升级.md" >}})
 	    	-   [支持WDR诊断报告]({{< relref "./docs/AboutopenGauss/支持WDR诊断报告.md" >}})
 	    	-   [慢SQL诊断]({{< relref "./docs/AboutopenGauss/慢SQL诊断.md" >}})
 	    	-   [Session性能诊断]({{< relref "./docs/AboutopenGauss/Session性能诊断.md" >}})
