@@ -314,31 +314,39 @@
 
 -   schema\_to\_xml\(schema name, nulls boolean, tableforest boolean, targetns text\)
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+    描述：把模式中的表映射成XML值。
 
     返回值类型：xml
 
--   schema\_to\_xmlschema\(schema name, nulls boolean, tableforest boolean, targetns text\)
+- schema\_to\_xmlschema\(schema name, nulls boolean, tableforest boolean, targetns text\)
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+  描述：把模式中的表映射成XML模式文档。
 
--   schema\_to\_xml\_and\_xmlschema\(schema name, nulls boolean, tableforest boolean, targetns text\)
+  返回值类型：xml
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+- schema\_to\_xml\_and\_xmlschema\(schema name, nulls boolean, tableforest boolean, targetns text\)
 
--   database\_to\_xml\(nulls boolean, tableforest boolean, targetns text\)
+  描述：把模式中的表映射成XML值和模式文档。
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+  返回值类型：xml
 
-    返回值类型：xml
+- database\_to\_xml\(nulls boolean, tableforest boolean, targetns text\)
 
--   database\_to\_xmlschema\(nulls boolean, tableforest boolean, targetns text\)
+  描述：把数据库的表映射成XML值。
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+  返回值类型：xml
 
--   database\_to\_xml\_and\_xmlschema\(nulls boolean, tableforest boolean, targetns text\)
+- database\_to\_xmlschema\(nulls boolean, tableforest boolean, targetns text\)
 
-    描述：用于产生相似的整个模式或整个当前数据库的映射。
+  描述：把数据库的表映射成XML模式文档。
+
+  返回值类型：xml
+
+- database\_to\_xml\_and\_xmlschema\(nulls boolean, tableforest boolean, targetns text\)
+
+  描述：把数据库的表映射成XML值和模式文档。
+
+  返回值类型：xml
 
 -   table\_to\_xml\(tbl regclass, nulls boolean, tableforest boolean, targetns text\)
 

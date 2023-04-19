@@ -314,31 +314,39 @@ The following functions are inherited from the open source PG9.2.
 
 -   schema_to_xml(schema name, nulls boolean, tableforest boolean, targetns text)
 
-    Description: used to generate a similar mapping of the entire schema or the entire current database.
+    Description: Map tables in the schema to XML values.
 
 	Return value type: xml
 
--   schema_to_xmlschema(schema name, nulls boolean, tableforest boolean, targetns text)
+- schema_to_xmlschema(schema name, nulls boolean, tableforest boolean, targetns text)
 
-    Description: used to generate a similar mapping of the entire schema or the entire current database.
+  Description: Map tables in the schema to XML schema documents.
 
--   schema_to_xml_and_xmlschema(schema name, nulls boolean, tableforest boolean, targetns text)
+  Return value type: xml
 
-    Description: used to generate a similar mapping of the entire schema or the entire current database.
+- schema_to_xml_and_xmlschema(schema name, nulls boolean, tableforest boolean, targetns text)
 
--   database_to_xml(nulls boolean, tableforest boolean, targetns text)
+  Description: Map tables in the schema to XML values and schema documents.
 
-    Description: used to generate a similar mapping of the entire schema or the entire current database.
+  Return value type: xml
 
-	Return value type: xml
+- database_to_xml(nulls boolean, tableforest boolean, targetns text)
 
--   database_to_xmlschema(nulls boolean, tableforest boolean, targetns text)
+  Description: Map database tables to XML values.
 
-    Description: used to generate a similar mapping of the entire schema or the entire current database.
+  Return value type: xml
 
--   database_to_xml_and_xmlschema(nulls boolean, tableforest boolean, targetns text)
+- database_to_xmlschema(nulls boolean, tableforest boolean, targetns text)
 
-   Description: used to generate a similar mapping of the entire schema or the entire current database.
+  Description: Map database tables to XML schema documents.
+
+  Return value type: xml
+
+- database_to_xml_and_xmlschema(nulls boolean, tableforest boolean, targetns text)
+
+  Description: Map database tables to XML values and schema documents.
+
+  Return value type: xml
 
 -   table_to_xml(tbl regclass, nulls boolean, tableforest boolean, targetns text)
 
