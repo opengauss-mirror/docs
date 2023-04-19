@@ -792,6 +792,7 @@ headless: true
                 -   [获取帮助]({{< relref "./docs/AIFeatureGuide/Anomaly-analysis-获取帮助.md" >}})
                 -   [命令参考]({{< relref "./docs/AIFeatureGuide/Anomaly-analysis-命令参考.md" >}})
                 -   [常见问题处理]({{< relref "./docs/AIFeatureGuide/Anomaly-analysis-常见问题处理.md" >}})	
+		-   [DBMind部署]({{< relref "./docs/AIFeatureGuide/DBMind部署.md" >}})
 		-   [ABO优化器]({{< relref "./docs/AIFeatureGuide/ABO优化器.md" >}})
 			-   [智能基数估计]({{< relref "./docs/AIFeatureGuide/智能基数估计.md" >}})
 				-   [概述]({{< relref "./docs/AIFeatureGuide/概述-ABO.md" >}})
