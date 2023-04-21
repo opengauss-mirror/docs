@@ -257,7 +257,7 @@ headless: true
 			-   [SQLSetConnectAttr]({{< relref "./docs/Developerguide/sqlsetconnectattr.md" >}})
 			-   [SQLSetEnvAttr]({{< relref "./docs/Developerguide/sqlsetenvattr.md" >}})
 			-   [SQLSetStmtAttr]({{< relref "./docs/Developerguide/sqlsetstmtattr.md" >}})
-			-   [Examples]({{< relref "./docs/Developerguide/examples.md" >}})
+			-   [Example]({{< relref "./docs/Developerguide/example-odbc.md" >}})
 		-   [Development Based on libpq]({{< relref "./docs/DeveloperGuide/development-based-on-libpq.md" >}})
             -   [Dependent Header Files of libpq]({{< relref "./docs/DeveloperGuide/dependent-header-files-of-libpq.md" >}})
             -   [Development Process]({{< relref "./docs/DeveloperGuide/development-process-libpq.md" >}})
