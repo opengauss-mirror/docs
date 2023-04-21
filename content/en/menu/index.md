@@ -1239,7 +1239,7 @@ headless: true
 				-   [Memory]({{< relref "./docs/SQLReference/memory-24.md" >}})
 					-   [MEMORY\_NODE\_DETAIL]({{< relref "./docs/SQLReference/memory_node_detail.md" >}})
 					-   [GLOBAL\_MEMORY\_NODE\_DETAIL]({{< relref "./docs/SQLReference/global_memory_node_detail.md" >}})
-					-   [SHARED\_MEMORY\_DETAIL]({{< relref "./docs/SQLReference/shared_memory_detail.md" >}})
+					-   [GS_SHARED\_MEMORY\_DETAIL]({{< relref "./docs/SQLReference/gs_shared_memory_detail.md" >}})
 					-   [GLOBAL\_SHARED\_MEMORY\_DETAIL]({{< relref "./docs/SQLReference/global_shared_memory_detail.md" >}})
 				-   [File]({{< relref "./docs/SQLReference/file.md" >}})
 					-   [FILE\_IOSTAT]({{< relref "./docs/SQLReference/file_iostat.md" >}})
