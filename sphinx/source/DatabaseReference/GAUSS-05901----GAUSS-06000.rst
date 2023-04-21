@@ -1,0 +1,15 @@
+GAUSS-05901----GAUSS-06000
+==========================
+
+.. toctree::
+	
+    ../content/zh/docs/DatabaseReference/GAUSS-05901----GAUSS-05910
+    ../content/zh/docs/DatabaseReference/GAUSS-05911----GAUSS-05920
+    ../content/zh/docs/DatabaseReference/GAUSS-05921----GAUSS-05930
+    ../content/zh/docs/DatabaseReference/GAUSS-05931----GAUSS-05940
+    ../content/zh/docs/DatabaseReference/GAUSS-05941----GAUSS-05950
+    ../content/zh/docs/DatabaseReference/GAUSS-05951----GAUSS-05960
+    ../content/zh/docs/DatabaseReference/GAUSS-05961----GAUSS-05970
+    ../content/zh/docs/DatabaseReference/GAUSS-05971----GAUSS-05980
+    ../content/zh/docs/DatabaseReference/GAUSS-05981----GAUSS-05990
+    ../content/zh/docs/DatabaseReference/GAUSS-05991----GAUSS-06000
