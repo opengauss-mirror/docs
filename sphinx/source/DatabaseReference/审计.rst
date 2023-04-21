@@ -1,0 +1,8 @@
+审计
+====
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseReference/审计开关
+    ../content/zh/docs/DatabaseReference/用户和权限审计
+    ../content/zh/docs/DatabaseReference/操作审计
