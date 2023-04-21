@@ -4,7 +4,7 @@
 
 ### 1.1 环境信息
 
-假设有一套端口号为19999的集群环境，环境信息如下：
+假设在主控节点`192.168.100.4`上部署DBMind，有一套端口号为19999的集群环境，环境信息如下：
 
 | node    | node_ip       | state   |
 | ------- | ------------- | ------- |
@@ -12,15 +12,13 @@
 | 备节点1 | 192.168.100.2 | Standby |
 | 备节点2 | 192.168.100.3 | Standby |
 
-假设在主控节点`192.168.100.4`上部署DBMind。
-
-假设需要在`test_user`用户下安装，需要在这4个节点上创建好用户，可以使用如下命令，创建用户并指定登入目录
+假设需要在`test_user`用户下安装，需要在这4个节点上创建好用户，可以使用如下命令，创建用户并指定登入目录。
 
 ```shell
 useradd -m test_user -d /home/test_user
 ```
 
-安装之前需要修改相关文件的权限，并使用`su - test_user`命令切换到目标用户空间下安装
+安装之前需要修改相关文件的权限，并使用`su - test_user`命令切换到目标用户空间下安装。
 
 ### 1.2 安装包
 
@@ -39,7 +37,7 @@ useradd -m test_user -d /home/test_user
 
 ### 1.3 数据库用户
 
-本文以如下的用户和数据库信息作为示例
+本文以如下的用户和数据库信息作为示例。
 
 >- username：dbmind_monitor
 >- password：test_123
@@ -64,7 +62,7 @@ gsql -p {port} -d postgres -c 'alter user dbmind_monitor monadmin;'
 gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 ```
 
-DBMind服务器，创建元数据库
+DBMind服务器，创建元数据库：
 
 ```shell
 grant all privileges to {username:dbmind_monitor};
@@ -103,15 +101,15 @@ DBMind有两种部署方式，分别为手动部署和自动部署，推荐使�
 
 自动部署会根据配置文件中的信息自动执行部署，所以需要先将配置文件`openGauss-DBMind/dbmind/components/deployment/deploy.conf`配置好。可以手动将文件配置好，也可以使用交互式配置。推荐使用手动配置的方式。
 
-需要提前将prometheus和node_exporter两个安装包放置在用户根目录的`downloads`文件夹下，并修改属主为`test_user`用户
+需要提前将prometheus和node_exporter两个安装包放置在用户根目录的`downloads`文件夹下，并修改属主为`test_user`用户。
 
 #### 手动配置--推荐
 
 使用手动配置的方式，需要提前将实例信息和参数填入`openGauss-DBMind/dbmind/components/deployment/deploy.conf`配置文件。
 
-假设在test_user用户空间下进行安装，即host_username=test_user，deploy.conf配置文件信息如下
+假设在test_user用户空间下进行安装，即host_username=test_user，deploy.conf配置文件信息如下：
 
-```bash
+```shell
 [DOWNLAODING]
 host = https://github.com/prometheus
 node_exporter = node_exporter-1.5.0.linux-amd64
@@ -132,7 +130,7 @@ reprocessing_exporter_port = 8181
 targets = 192.168.100.1:19999/postgres,192.168.100.2:19999/postgres,192.168.100.3:19999/postgres
 ssh_port = 22
 host_username = test_user
-path = /home/test_user/node_exporter
+path = /home/test_user/node_exporter # 用户可以指定其他的安装路径
 database_username = dbmind_monitor
 listen_address = 192.168.100.4
 opengauss_ports_range = 9187-9197
@@ -144,7 +142,7 @@ enable_ssl = False
 # 该模块其他内容不用修改，内容略
 ```
 
-可以使用`sha256sum`命令生成文件的sha256校验码，如下所示。
+可以使用`sha256sum`命令生成文件的sha256校验码，如下所示：
 
 ```shell
 sha256sum prometheus-2.43.0.linux-amd64.tar.gz
@@ -158,16 +156,16 @@ gs_dbmind component deployment --offline -c dbmind/components/deployment/deploy.
 
 该命令会提示用户输入用户密码，然后将主控节点downloads目录下的安装包解压并复制到数据库节点。
 
-最后执行如下命令，会自动启动DBMind的各exporter组件和prometheus。如果各组件都正常启动，则可以执行[启动DBMind](#4. 启动DBMind)步骤。
+最后执行如下命令，会自动启动DBMind的各exporter组件和prometheus。如果各组件都正常启动，则可以执行[启动DBMind](#4.-启动DBMind)步骤。
 
 ```shell
-gs_dbmind component deployment -run
+gs_dbmind component deployment --run
 ```
 
 <mark>**常见问题**</mark>：
 
-1. 需要提前将prometheus和node_exporter两个安装包放置在用户根目录的`downloads`文件夹下，并修改属主为`test_user`用户
-2. 配置文件中`[DOWNLOADING]`模块的安装包名字**不带**`.tar.gz`后缀
+1. 需要提前将prometheus和node_exporter两个安装包放置在用户根目录的`downloads`文件夹下，并修改属主为`test_user`用户。
+2. 配置文件中`[DOWNLOADING]`模块的安装包名字**不带**`.tar.gz`后缀。
 
 #### 交互式配置
 
@@ -212,7 +210,7 @@ cd node_exporter-1.5.0.linux-amd64
 
 cmd_exporter用来执行cmd命令并获取返回结果以及采集日志信息，当前主要用于采集集群状态，在一个备数据库节点上安装就可以了。
 
-cmd_exporter组件需要通过dbmind安装，所以需要先在一个备节点上[安装dbmind](#2. 安装DBMind)，安装完之后，再通过`gs_dbmind`的`component`子命令安装cmd_exporter，如下所示。
+cmd_exporter组件需要通过dbmind安装，所以需要先在一个备节点上[安装dbmind](#2.-安装DBMind)，安装完之后，再通过`gs_dbmind`的`component`子命令安装cmd_exporter，如下所示。
 
 ```shell
 gs_dbmind component cmd_exporter --web.listen-address 0.0.0.0 --web.listen-port 9180 --disable-https
@@ -224,7 +222,7 @@ gs_dbmind component cmd_exporter --web.listen-address 0.0.0.0 --web.listen-port 
 
 opengauss_exporter是DBMind采集数据库的组件，从openGauss数据库中读取系统表（或系统视图）的数据，并通过Prometheus保存起来。支持**远程部署**，需要在每个数据库节点上安装。
 
-用户可以通过远程部署的方式在主控节点上执行下述命令，从而将opengauss_exporter安装到对应的数据库节点上，opangauss_exporter的默认端口号范围是9187-9197，如果被占用可以使用其他端口。
+用户可以通过远程部署的方式在主控节点上执行下述命令，从而将opengauss_exporter安装到对应的数据库节点上，opengauss_exporter的默认端口号范围是9187-9197，如果被占用可以使用其他端口。
 
 ```shell
 # 方式一：URL格式
@@ -256,7 +254,7 @@ cd prometheus-2.42.0.linux-amd64/
 ./prometheus --web.enable-admin-api --web.enable-lifecycle --storage.tsdb.retention.time=1w >./prometheus.log 2>&1 &
 ```
 
-在进行第2步启动prometheus之前，需要修改`prometheus-2.42.0.linux-amd64/prometheus.yml`配置文件。在该文件中找到 scrape_configs 部分，该部分包含了所有需要被抓取的targets的配置信息，用户需要根据自己的节点数量和端口占用情况进行修改。根据[规划配置](#规划配置)可做如下配置
+在进行第2步启动prometheus之前，需要修改`prometheus-2.42.0.linux-amd64/prometheus.yml`配置文件。在该文件中找到 scrape_configs 部分，该部分包含了所有需要被抓取的targets的配置信息，用户需要根据自己的节点数量和端口占用情况进行修改。根据[规划配置](#规划配置)可做如下配置：
 
 ```shell
 scrape_configs:
@@ -294,7 +292,7 @@ gs_dbmind component reprocessing_exporter host_ip 9090 --web.listen-address 0.0.
 
 ### 4.1 启动步骤
 
-启动DBMind的命令如下，在主控节点，切换到openGauss-DBMind目录下，输入如下命令
+启动DBMind的命令如下，在主控节点，切换到openGauss-DBMind目录下，输入如下命令：
 
 ```shell
 # 1. 启动配置，会在openGauss-DBMind目录下创建dbmindconf/dbmind.conf配置文件
@@ -316,7 +314,7 @@ gs_dbmind service start -c dbmindconf
 
 - **TSDB**
 
-  TDSB为时序数据库配置，即prometheus相关信息
+  TDSB为时序数据库配置，即prometheus相关信息。
 
   ```shell
   [TSDB]
@@ -327,7 +325,7 @@ gs_dbmind service start -c dbmindconf
 
 - **METADATABASE**
 
-  DBMind服务器所创建的metadatabase[数据库相关信息](#1.3 数据库用户)，注意用户需要有数据库创建的权限。在启动DBMind之前，需要把metadatabase创建好
+  DBMind服务器所创建的metadatabase[数据库相关信息](#1.3-数据库用户)，注意用户需要有数据库创建的权限。在启动DBMind之前，需要把metadatabase创建好。
   
   ```shell
   [METADATABASE]
@@ -344,7 +342,7 @@ gs_dbmind service start -c dbmindconf
 
   该模块用于指定DBMind可以使用的worker子进程数量，如果写0则会进行自适应，尽可能多地使用CPU资源。
 
-  用户可以使用`cat /proc/cpuinfo | grep "physical id" | fort | uniq | wc -l`命令查看逻辑CPU的个数，根据服务器情况配置worker子进程数量
+  用户可以使用`cat /proc/cpuinfo | grep "physical id" | fort | uniq | wc -l`命令查看逻辑CPU的个数，根据服务器情况配置worker子进程数量。
 
   ```shell
   [WORKER]
@@ -387,12 +385,10 @@ gs_dbmind service start -c dbmindconf
 
 - **WEB-SERVICE**
 
-  通过`http://{DBMind服务器IP}:8080`访问DBMind网页
+  通过`http://{DBMind服务器IP}:8080`访问DBMind网页。
 
   ```shell
   [WEB-SERVICE]
   host = 192.168.100.4  # Which host to bind for web service. '0.0.0.0' means to bind all.
   port = 8080  # Port to listen for web serivce.
   ```
-
-  
