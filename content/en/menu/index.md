@@ -1659,6 +1659,7 @@ headless: true
     		-   [Parameters Related to cm\_server]({{< relref "./docs/ToolandCommandReference/parameters-related-to-cm_server.md" >}})
 	-   [Functions of openGauss Executable Scripts]({{< relref "./docs/ToolandCommandReference/functions-of-opengauss-executable-scripts.md" >}})
     -   [System Catalogs and Views Supported by gs\_collector]({{< relref "./docs/ToolandCommandReference/system-catalogs-and-views-supported-by-gs_collector.md" >}})	
+    -   [DataKit]({{< relref "./docs/ToolandCommandReference/datakit.md" >}})
     -   [FAQs]({{< relref "./docs/ToolandCommandReference/faqs.md" >}})
 -   [Database Reference]({{< relref "./docs/DatabaseReference/DataBaseReference.md" >}})
 	-   [GUC Parameters]({{< relref "./docs/DatabaseReference/guc-parameters.md" >}})
