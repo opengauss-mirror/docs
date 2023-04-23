@@ -697,6 +697,7 @@ headless: true
             -   [Join Operation Hints]({{< relref "./docs/PerformanceTuningGuide/join-operation-hints.md" >}})
             -   [Rows Hints]({{< relref "./docs/PerformanceTuningGuide/rows-hints.md" >}})
             -   [Scan Operation Hints]({{< relref "./docs/PerformanceTuningGuide/scan-operation-hints.md" >}})
+			-   [INDEX HINTS]({{< relref "./docs/PerformanceTuningGuide/index-hints.md" >}})
             -   [Sublink Name Hints]({{< relref "./docs/PerformanceTuningGuide/sublink-name-hints.md" >}})
             -   [Hint Errors, Conflicts, and Other Warnings]({{< relref "./docs/PerformanceTuningGuide/hint-errors-conflicts-and-other-warnings.md" >}})	
             -   [Optimizer GUC Parameter Hints]({{< relref "./docs/PerformanceTuningGuide/optimizer-guc-parameter-hints.md" >}})
