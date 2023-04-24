@@ -29,7 +29,7 @@ openGauss supports the psycopg2 feature and allows psycopg2 to be connected in S
 ## Loading a Driver<a name="section163169384819"></a>
 
 -   Before using the driver, perform the following operations:
-    1.  Download the compiled psycopg2 package from the  [openGauss website](https://opengauss.org/zh/download.html).
+    1.  Download the compiled psycopg2 package from the  [openGauss website](https://opengauss.org/zh/download/).
 
         >![](public_sys-resources/icon-note.gif) **NOTE:** 
         >The psycopg2 downloaded from the openGauss website matches Python 3.6. If you use Python of another version, you need to compile psycopg2. The compilation method is similar to that in the PostgreSQL database. You only need to modify the code for verifying the version number of  **setup.py**  during compilation by running the following command:

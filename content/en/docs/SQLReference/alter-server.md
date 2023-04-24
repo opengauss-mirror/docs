@@ -62,7 +62,7 @@ Only the server owner or a user granted with the ALTER permission can run the  *
 
             Listening port number of the MySQL server or MariaDB.
 
-    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  [Connection Characters](en-us_topic_0289900649.md). Note that the following options cannot be modified:
+    -   The options supported by postgres\_fdw are the same as those supported by libpq. For details, see  [Connection Characters](../DeveloperGuide/link-parameters-libpq.md). Note that the following options cannot be modified:
         -   **user**  and  **password**
 
             The user name and password are specified when the user mapping is created.

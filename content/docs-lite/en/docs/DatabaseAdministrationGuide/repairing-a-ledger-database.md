@@ -7,7 +7,7 @@
 
 ## Context<a name="en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   When an exception occurs or a global blockchain table or user history table is damaged, you can use the  [ledger\_gchain\_repair\(tex...](ledger-database-functions.md#li1188094681312)  or  [ledger\_hist\_repair\(text,...](ledger-database-functions.md#li688019463130)  interface to repair the table. After the fault is rectified, the result of invoking the global blockchain table or user history table verification interface is  **true**.
+-   When an exception occurs or a global blockchain table or user history table is damaged, you can use the  [ledger\_gchain\_repair\(tex...](../SQLReference/ledger-database-functions.md#li1188094681312)  or  [ledger\_hist\_repair\(text,...](../SQLReference/ledger-database-functions.md#li688019463130)  interface to repair the table. After the fault is rectified, the result of invoking the global blockchain table or user history table verification interface is  **true**.
 -   The interface for repairing a user history table is  **pg\_catalog.ledger\_hist\_repair**. To repair the table, run the following command:
 
     ```

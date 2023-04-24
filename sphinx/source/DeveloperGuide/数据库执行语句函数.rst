@@ -1,0 +1,16 @@
+数据库执行语句函数
+=====
+
+.. toctree::
+	
+    ../content/zh/docs/DeveloperGuide/PQclear
+    ../content/zh/docs/DeveloperGuide/PQexec
+    ../content/zh/docs/DeveloperGuide/PQexecParams
+    ../content/zh/docs/DeveloperGuide/PQexecParamsBatch
+    ../content/zh/docs/DeveloperGuide/PQexecPrepared
+    ../content/zh/docs/DeveloperGuide/PQexecPreparedBatch
+    ../content/zh/docs/DeveloperGuide/PQfname
+    ../content/zh/docs/DeveloperGuide/PQgetvalue
+    ../content/zh/docs/DeveloperGuide/PQnfields
+    ../content/zh/docs/DeveloperGuide/PQntuples
+    ../content/zh/docs/DeveloperGuide/PQprepare

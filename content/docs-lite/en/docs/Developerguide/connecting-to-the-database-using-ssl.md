@@ -11,7 +11,7 @@ Perform the following operations \(assuming that the license files are saved in 
 1.  Log in as the OS user  **omm**  to the primary node of the database.
 2.  Generate and configure a certificate.
 
-    Generate an SSL certificate. For details, see  [Generating Certificates](generating-certificates.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
+    Generate an SSL certificate. For details, see  [Generating Certificates](../DatabaseAdministrationGuide/generating-certificates.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
 
     In the Unix OS,  **server.crt**  and  **server.key**  must deny the access from the external or any group. Run the following command to set this permission:
 

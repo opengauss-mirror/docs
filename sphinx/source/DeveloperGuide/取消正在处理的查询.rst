@@ -1,0 +1,8 @@
+取消正在处理的查询
+=====
+
+.. toctree::
+	
+    ../content/zh/docs/DeveloperGuide/PQgetCancel
+    ../content/zh/docs/DeveloperGuide/PQfreeCancel
+    ../content/zh/docs/DeveloperGuide/PQcancel

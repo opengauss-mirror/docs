@@ -1,5 +1,0 @@
-
-.. toctree::
-
-    ../content/zh/docs/Toolreference/gsql
-

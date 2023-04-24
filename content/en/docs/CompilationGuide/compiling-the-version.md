@@ -39,9 +39,9 @@ The git and git-lfs have been installed and configured on the local host.
     >-   **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
     >-   **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#Compiling Open-source Software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
     > The community provides binary files compiled on three platforms. The download links are as follows:\
-      **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
-      **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
-      **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
+      **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
+      **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
+      **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
 
     >  After the download is complete, decompress and rename the package: **mv openGauss-third\_party\_binarylibs binarylibs**.
 

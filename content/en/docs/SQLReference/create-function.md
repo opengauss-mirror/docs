@@ -113,7 +113,7 @@
 
 -   **argtype**
 
-    Specifies the data type of a function parameter.  **%TYPE**  or  **%ROWTYPE**  can be used to indirectly reference a variable or table type. For details, see  [Variable Definition Statements](en-us_topic_0289900208.md).
+    Specifies the data type of a function parameter.  **%TYPE**  or  **%ROWTYPE**  can be used to indirectly reference a variable or table type. For details, see  [Variable Definition Statements](variable-definition-statements.md).
 
 -   **expression**
 

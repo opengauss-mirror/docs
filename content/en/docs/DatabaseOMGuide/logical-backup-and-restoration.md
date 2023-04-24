@@ -85,7 +85,7 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 </tbody>
 </table>
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
 
 
@@ -104,7 +104,7 @@ To reduce the size of an exported file, you can use the gs\_dump tool to compres
 gs_dump [OPTION]... [DBNAME]
 ```
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 *DBNAME*  does not follow a short or long option. It specifies the database to be connected.  
 For example:  
 Specify  *DBNAME*  without a  **-d**  option preceding it.
@@ -268,7 +268,7 @@ Dump parameters:
 
   The  **-n**  and  **-N**  options have no effect when  **-t**  is used, because tables selected by using  **-t**  will be dumped regardless of those options.
 
-  ![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+  ![](public_sys-resources/icon-note.gif) **NOTE:**   
 
   -   The number of  **-t**  parameters must be less than or equal to 100.  
   -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
@@ -475,7 +475,7 @@ Dump parameters:
   ```
 
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 
 -   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
 -   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
@@ -896,7 +896,7 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:** 
+![](public_sys-resources/icon-note.gif) **NOTE:** 
 **gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
 
 ```
@@ -955,7 +955,7 @@ Common parameters
 
   The default is the standard output.
 
-  >![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+  >![](public_sys-resources/icon-note.gif) **NOTE:**   
   >**-f**  cannot be used in conjunction with  **-d**.  
 
 - -F, --format=c|d|t
@@ -1165,7 +1165,7 @@ CREATE DATABASE foo WITH TEMPLATE template0;
 
 -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
-![](F:/opengauss-docs/docs/content/en/docs/Administratorguide/public_sys-resources/icon-note.gif) **NOTE:**   
+![](public_sys-resources/icon-note.gif) **NOTE:**   
 
 1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.  
 2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  

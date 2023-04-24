@@ -126,7 +126,7 @@ For example, to test TPCC, the  **BenchmarkSQL**  can be used, as follows –
 -   The schema creation scripts in the  **benchmarksql**  tool need to be adjusted to MOT syntax and unsupported DDLs need to be avoided. The adjusted scripts can be directly downloaded from the following link –  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz). The contents of this tar file includes sql.common.opengauss.mot folder and jTPCCTData.java file as well as a sample configuration file postgresql.conf and a TPCC properties file props.mot for reference.
 -   Place the sql.common.opengauss.mot folder in the same level as sql.common under run folder and replace the file src/client/jTPCCTData.java with the downloaded java file.
 -   Edit the file runDatabaseBuild.sh under run folder to remove  **extraHistID**  from  **AFTER\_LOAD**  list to avoid unsupported alter table DDL.
--   Replace the JDBC driver under lib/postgres folder with the openGauss JDBC driver available from the following link –  [https://opengauss.org/en/download.html](https://opengauss.org/en/download.html).
+-   Replace the JDBC driver under lib/postgres folder with the openGauss JDBC driver available from the following link –  [https://opengauss.org/en/download/](https://opengauss.org/en/download/).
 
 The only change done in the downloaded java file \(compared to the original one\) was to comment the error log printing for serialization and duplicate key errors. These errors are normal in case of MOT, since it uses Optimistic Concurrency Control \(OCC\) mechanism.
 

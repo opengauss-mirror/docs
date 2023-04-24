@@ -4,13 +4,13 @@ Descriptions in  [Default Permission Mechanism](default-permission-mechanism.md)
 
 In actual service management, you can set separation of duties to prevent system administrators from having excessive centralized permissions, which may cause high risks. Some permissions of the system administrator are transferred to the security administrator and audit administrator, implementing separation of duties among the system administrator, security administrator, and audit administrator.
 
-After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](create-role.md).
+After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](../SQLReference/create-role.md).
 
 After separation of duties is enabled, system administrators have the permissions only for the objects owned by them.
 
 Separation of duties does not take effect for an initial user. Therefore, you are advised to use an initial user as a database administrator only for database management other than service running.
 
-To enable separation of duties, set  **[enableSeparationOfDuty](operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
+To enable separation of duties, set  **[enableSeparationOfDuty](../DataBaseReference/operation-auditing.md#en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
 
 For details about permission changes before and after enabling separation of duties, see  [Table 1](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t58384b51e1fd4e67ab393f4bb6103a16)  and  [Table 2](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t12fe700a5db44d748cb0dc123012289b).
 
@@ -91,7 +91,7 @@ For details about permission changes before and after enabling separation of dut
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.2 "><p id="en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_p8791418201112"><a name="en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_p8791418201112"></a><a name="en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_p8791418201112"></a>Has permissions to query all system catalogs and views.</p>
 </td>
-<td class="cellrowborder" colspan="3" valign="top" headers="mcps1.2.7.1.4 mcps1.2.7.1.5 mcps1.2.7.1.6 "><p id="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"><a name="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"></a><a name="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"></a>Has permissions to query only some system catalogs and views. For details, see <a href="system-catalogs-and-system-views.md">System Catalogs and System Views</a>.</p>
+<td class="cellrowborder" colspan="3" valign="top" headers="mcps1.2.7.1.4 mcps1.2.7.1.5 mcps1.2.7.1.6 "><p id="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"><a name="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"></a><a name="en-us_topic_0283137357_en-us_topic_0237121101_p32116536521"></a>Has permissions to query only some system catalogs and views. For details, see <a href="../DatabaseReference/system-catalogs-and-system-views.md">System Catalogs and System Views</a>.</p>
 <p id="en-us_topic_0283137357_p16256201112418"><a name="en-us_topic_0283137357_p16256201112418"></a><a name="en-us_topic_0283137357_p16256201112418"></a></p>
 <p id="en-us_topic_0283137357_p425619111041"><a name="en-us_topic_0283137357_p425619111041"></a><a name="en-us_topic_0283137357_p425619111041"></a></p>
 </td>

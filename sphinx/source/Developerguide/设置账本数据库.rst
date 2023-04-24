@@ -1,9 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/账本数据库概述
-    ../content/zh/docs/Developerguide/查看账本历史操作记录
-    ../content/zh/docs/Developerguide/校验账本数据一致性
-    ../content/zh/docs/Developerguide/归档账本数据库
-    ../content/zh/docs/Developerguide/修复账本数据库

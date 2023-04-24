@@ -822,7 +822,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pg\_stat\_get\_last\_data\_changed\_time\(oid\)
 
-    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](pg_stat_all_tables.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
+    Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](../DataBaseReference/pg_stat_all_tables.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
 
     Return type: timestamptz
 
@@ -2622,7 +2622,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pv\_os\_run\_info
 
-    Description: Displays the running status of the current OS. For details about the columns, see  [GS\_OS\_RUN\_INFO](gs_os_run_info.md).
+    Description: Displays the running status of the current OS. For details about the columns, see  [GS\_OS\_RUN\_INFO](../DataBaseReference/gs_os_run_info.md).
 
     Parameter: nan
 
@@ -2630,7 +2630,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pv\_session\_stat
 
-    Description: Collects session status information by session thread or AutoVacuum thread. For details about the columns, see  [GS\_SESSION\_STAT](gs_session_stat.md).
+    Description: Collects session status information by session thread or AutoVacuum thread. For details about the columns, see  [GS\_SESSION\_STAT](../DataBaseReference/gs_session_stat.md).
 
     Parameter:  **nan**
 
@@ -2638,7 +2638,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   pv\_session\_time
 
-    Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the columns, see  [GS\_SESSION\_TIME](gs_session_time.md).
+    Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the columns, see  [GS\_SESSION\_TIME](../DataBaseReference/gs_session_time.md).
 
     Parameter:  **nan**
 
@@ -2767,7 +2767,7 @@ Statistics information functions are divided into the following two categories: 
     Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If  **[enable\_memory\_limit](memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
+    >If  **[enable\_memory\_limit](../DataBaseReference/memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
 
     Return type: record
 

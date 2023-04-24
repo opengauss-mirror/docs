@@ -42,7 +42,7 @@ This section describes the process for upgrade from an earlier version to the ta
 </td>
 <td class="cellrowborder" valign="top" width="19.408059194080593%" headers="mcps1.2.6.1.4 "><p id="p1946215493216"><a name="p1946215493216"></a><a name="p1946215493216"></a>The duration is the same as the operation duration. Generally, the duration does not exceed 30 minutes.</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.218678132186781%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0059783606_p7684821145645"><a name="en-us_topic_0059783606_p7684821145645"></a><a name="en-us_topic_0059783606_p7684821145645"></a>Start the upgrade according to the upgrade guide.</p>
+<td class="cellrowborder" valign="top" width="13.218678132186781%" headers="mcps1.2.6.1.5 "><p id="en-us_topic_0059783606_p7684821145645"><a name="en-us_topic_0059783606_p7684821145645"></a><a name="en-us_topic_0059783606_p7684821145645"></a>Start the upgrade according to the Database O&M Guide.</p>
 </td>
 </tr>
 <tr id="row786055223420"><td class="cellrowborder" valign="top" width="25.477452254774523%" headers="mcps1.2.6.1.1 "><p id="p744624011202"><a name="p744624011202"></a><a name="p744624011202"></a>Verify the upgrade.</p>

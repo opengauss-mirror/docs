@@ -162,7 +162,7 @@
 >由于openGauss默认模式下的通信加密协议与PostgreSQL不兼容，故导致通过PyPI源安装的基于PostgreSQL编译的Python驱动psycopg2-binary默认无法连接至openGauss数据库。
 >因此，需要用户自行编译psycopg2或修改GUC参数进行适配。也可通过openGauss官方网站下载基于openGauss编译的psycopg2（_官方网站仅提供部分Python版本的编译包，需要用户鉴别是否与当前Python运行时版本一致_）。
 >-   官方openGauss Python驱动下载地址为：
->    https://opengauss.org/zh/download.html
+>    https://opengauss.org/zh/download/
 >-   关于Python驱动的适配问题，可参考openGauss官方操作指南：
 >    https://mp.weixin.qq.com/s/2TobUQKtw0N9sBpMZJr6zw
 

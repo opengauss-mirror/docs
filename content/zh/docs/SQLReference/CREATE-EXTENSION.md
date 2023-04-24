@@ -1,4 +1,4 @@
-# CREATE ExtensionReference<a name="ZH-CN_TOPIC_0000001080534638"></a>
+# CREATE Extension<a name="ZH-CN_TOPIC_0000001080534638"></a>
 
 ## 功能描述<a name="section173831846163116"></a>
 
@@ -6,14 +6,14 @@
 
 ## 注意事项<a name="section786041713618"></a>
 
--   CREATE ExtensionReference命令安装一个新的扩展到一个数据库中，必须保证没有同名的扩展已经被安装。
+-   CREATE Extension命令安装一个新的扩展到一个数据库中，必须保证没有同名的扩展已经被安装。
 -   安装一个扩展意味着执行一个扩展的脚本文件，这个脚本会创建一个新的SQL实体，例如函数、数据类型、操作符、和索引支持的方法。
--   安装扩展需要有和创建他的组件对象相同的权限。对于大多数扩展这意味着需要超户或者数据库所有者的权限，对于后续的权限检查和该扩展脚本所创建的实体，运行CREATE ExtensionReference命令的角色将变为扩展的所有者。
+-   安装扩展需要有和创建他的组件对象相同的权限。对于大多数扩展这意味着需要超户或者数据库所有者的权限，对于后续的权限检查和该扩展脚本所创建的实体，运行CREATE Extension命令的角色将变为扩展的所有者。
 
 ## 语法格式<a name="section1374719912321"></a>
 
 ```
-CREATE ExtensionReference [ IF NOT EXISTS ] ExtensionReference_name
+CREATE Extension [ IF NOT EXISTS ] Extension_name
 [ WITH ] [ SCHEMA schema_name ]
 [ VERSION version ]
 [ FROM old_version ];
@@ -26,7 +26,7 @@ CREATE ExtensionReference [ IF NOT EXISTS ] ExtensionReference_name
     如果系统已经存在一个同名的扩展，不会报错。这种情况下会给出一个提示。请注意该参数不保证系统存在的扩展和现在脚本创建的扩展相同。
 
 
--   **ExtensionReference\_name**
+-   **Extension\_name**
 
     将被安装扩展的名字。
 
@@ -46,7 +46,7 @@ CREATE ExtensionReference [ IF NOT EXISTS ] ExtensionReference_name
 
 -   **old\_version**
 
-    当你想升级安装“old style” 模块中没有的内容时,你必须指定FROM old\_version。这个选项使CREATE ExtensionReference 运行一个安装脚本将新的内容安装到扩展中，而不是创建一个新的实体.注意SCHEMA指定了包括这些已存在实体的模式。
+    当你想升级安装“old style” 模块中没有的内容时,你必须指定FROM old\_version。这个选项使CREATE Extension 运行一个安装脚本将新的内容安装到扩展中，而不是创建一个新的实体.注意SCHEMA指定了包括这些已存在实体的模式。
 
 
 ## 示例<a name="section14411351193419"></a>
@@ -54,6 +54,6 @@ CREATE ExtensionReference [ IF NOT EXISTS ] ExtensionReference_name
 在当前数据库安装hstore扩展：
 
 ```
-CREATE ExtensionReference hstore;
+CREATE Extension hstore;
 ```
 

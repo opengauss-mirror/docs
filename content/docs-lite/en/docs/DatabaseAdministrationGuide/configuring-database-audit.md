@@ -1,6 +1,6 @@
 # Configuring Database Audit<a name="EN-US_TOPIC_0289900858"></a>
 
--   **[Overview](overview-5.md)**  
+-   **[Overview](overview-database-audit.md)**  
 
 -   **[Querying Audit Results](querying-audit-results.md)**  
 

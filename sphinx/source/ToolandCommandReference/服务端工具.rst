@@ -1,0 +1,19 @@
+服务端工具
+==========
+.. toctree::
+
+    ../content/zh/docs/ToolandCommandReference/gs_cgroup
+    ../content/zh/docs/ToolandCommandReference/gs_check
+    ../content/zh/docs/ToolandCommandReference/gs_checkos
+    ../content/zh/docs/ToolandCommandReference/gs_checkperf
+    ../content/zh/docs/ToolandCommandReference/gs_collector
+    ../content/zh/docs/ToolandCommandReference/gs_dump
+    ../content/zh/docs/ToolandCommandReference/gs_dumpall
+    ../content/zh/docs/ToolandCommandReference/gs_guc
+    ../content/zh/docs/ToolandCommandReference/gs_encrypt
+    ../content/zh/docs/ToolandCommandReference/gs_om
+    ../content/zh/docs/ToolandCommandReference/gs_plan_simulator
+    ../content/zh/docs/ToolandCommandReference/gs_restore
+    ../content/zh/docs/ToolandCommandReference/gs_ssh
+    ../content/zh/docs/ToolandCommandReference/gs_sdr
+

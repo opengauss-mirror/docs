@@ -160,7 +160,7 @@ The debezium service listens to the incremental data of the source MySQL databas
 Download the package from the following link, decompress the package, configure related configuration files, and run the shell script to start the service: For details about the configuration information and operation procedure, see the source code installation part.
 
 ```
-https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openGauss-datachecker-performance-5.0.0.tar.gz
+https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/openGauss-datachecker-performance-5.0.0.tar.gz
 tar -zxvf openGauss-datachecker-performance-5.0.0.tar.gz
 ```
 

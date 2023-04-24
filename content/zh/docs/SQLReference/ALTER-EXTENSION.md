@@ -1,4 +1,4 @@
-# ALTER ExtensionReference<a name="ZH-CN_TOPIC_0000001127799415"></a>
+# ALTER Extension<a name="ZH-CN_TOPIC_0000001127799415"></a>
 
 ## 功能描述<a name="section173831846163116"></a>
 
@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section786041713618"></a>
 
-ALTER ExtensionReference 修改一个已安装的扩展的定义。这里有几种方式：
+ALTER Extension 修改一个已安装的扩展的定义。这里有几种方式：
 
 -   UPDATE
 
@@ -24,16 +24,16 @@ ALTER ExtensionReference 修改一个已安装的扩展的定义。这里有几�
 
     这个方式从扩展上移除一个成员对象。 主要在扩展更新脚本上有用。这个对象没有被取消，只是从扩展里分开了。
 
-    您必须拥有扩展来使用 ALTER ExtensionReference。 这个 ADD/DROP 方式要求添加/删除对象的所有权。
+    您必须拥有扩展来使用 ALTER Extension。 这个 ADD/DROP 方式要求添加/删除对象的所有权。
 
 
 ## 语法格式<a name="section1374719912321"></a>
 
 ```
-ALTER ExtensionReference name UPDATE [ TO new_version ];
-ALTER ExtensionReference name SET SCHEMA new_schema;
-ALTER ExtensionReference name ADD member_object;
-ALTER ExtensionReference name DROP member_object;
+ALTER Extension name UPDATE [ TO new_version ];
+ALTER Extension name SET SCHEMA new_schema;
+ALTER Extension name ADD member_object;
+ALTER Extension name DROP member_object;
 
 where member_object is:
 
@@ -70,7 +70,7 @@ where member_object is:
 
 -   **new\_version**
 
-    扩展的新版本。可以通过被标识符和字面字符重写。如果不指定的扩展的新版本，ALTER ExtensionReference UPDATE会更新到扩展的控制文件中显示的默认版本。
+    扩展的新版本。可以通过被标识符和字面字符重写。如果不指定的扩展的新版本，ALTER Extension UPDATE会更新到扩展的控制文件中显示的默认版本。
 
 -   **new\_schema**
 
@@ -100,11 +100,11 @@ where member_object is:
 
 -   **argmode**
 
-    这个函数参数的模型：IN、OUT、INOUT或者VARIADIC。如果省略的话，默认值为IN。ALTER ExtensionReference 不关心OUT参数 ，因为确认函数的一致性只需要输入参数，因此列出IN、INOUT和VARIADIC参数就足够了。
+    这个函数参数的模型：IN、OUT、INOUT或者VARIADIC。如果省略的话，默认值为IN。ALTER Extension 不关心OUT参数 ，因为确认函数的一致性只需要输入参数，因此列出IN、INOUT和VARIADIC参数就足够了。
 
 -   **argname**
 
-    函数参数的名称。ALTER ExtensionReference不关心参数名称，确认函数的一致性只需要参数数据类型。
+    函数参数的名称。ALTER Extension不关心参数名称，确认函数的一致性只需要参数数据类型。
 
 -   **argtype**
 
@@ -122,18 +122,18 @@ where member_object is:
 更新 hstore 扩展到版本 2.0：
 
 ```
-ALTER ExtensionReference hstore UPDATE TO '2.0';
+ALTER Extension hstore UPDATE TO '2.0';
 ```
 
 更新 hstore扩展的模式为utils：
 
 ```
-ALTER ExtensionReference hstore SET SCHEMA utils;
+ALTER Extension hstore SET SCHEMA utils;
 ```
 
 添加一个已存在的函数给 hstore 扩展：
 
 ```
-ALTER ExtensionReference hstore ADD FUNCTION populate_record(anyelement, hstore);
+ALTER Extension hstore ADD FUNCTION populate_record(anyelement, hstore);
 ```
 

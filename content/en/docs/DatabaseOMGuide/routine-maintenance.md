@@ -2,18 +2,49 @@
 
 <!-- TOC -->
 
-- [Routine Maintenance Check Items](#routine-maintenance-check-items)
-- [Checking OS Parameters](#checking-os-parameters)
-- [Checking openGauss Health Status](#checking-opengauss-health-status)
-- [Checking Database Performance](#checking-database-performance)
-- [Checking and Deleting Logs](#checking-and-deleting-logs)
-- [Checking Time Consistency](#checking-time-consistency)
-- [Checking the Number of Application Connections](#checking-the-number-of-application-connections)
-- [Routinely Maintaining Tables](#routinely-maintaining-tables)
-- [Routinely Recreating an Index](#routinely-recreating-an-index)
-- [Exporting and Viewing the WDR](#exporting-and-viewing-the-wdr)
-- [Data Security Maintenance Suggestions](#data-security-maintenance-suggestions)
-- [Slow SQL Diagnosis](#slow-sql-diagnosis)
+- [Routine Maintenance](#routine-maintenance)
+  - [Routine Maintenance Check Items](#routine-maintenance-check-items)
+    - [Checking openGauss Status](#checking-opengauss-status)
+    - [Checking Lock Information](#checking-lock-information)
+    - [Collecting Event Statistics](#collecting-event-statistics)
+    - [Checking Objects](#checking-objects)
+    - [Checking an SQL Report](#checking-an-sql-report)
+    - [Backing Up Data](#backing-up-data)
+    - [Checking Basic Information](#checking-basic-information)
+  - [Checking OS Parameters](#checking-os-parameters)
+    - [Check Method](#check-method)
+    - [Exception Handling](#exception-handling)
+  - [Checking openGauss Health Status](#checking-opengauss-health-status)
+    - [Check Method](#check-method-1)
+    - [Exception Handling](#exception-handling-1)
+  - [Checking Database Performance](#checking-database-performance)
+    - [Check Method](#check-method-2)
+    - [Exception Handling](#exception-handling-2)
+  - [Checking and Deleting Logs](#checking-and-deleting-logs)
+    - [Checking OS Logs](#checking-os-logs)
+    - [Checking openGauss Run Logs](#checking-opengauss-run-logs)
+    - [Cleaning Run Logs](#cleaning-run-logs)
+  - [Checking Time Consistency](#checking-time-consistency)
+    - [Procedure](#procedure)
+  - [Checking the Number of Application Connections](#checking-the-number-of-application-connections)
+    - [Procedure](#procedure-1)
+    - [Exception Handling](#exception-handling-3)
+  - [Routinely Maintaining Tables](#routinely-maintaining-tables)
+    - [Related Concepts](#related-concepts)
+    - [Procedure](#procedure-2)
+    - [Maintenance Suggestions](#maintenance-suggestions)
+  - [Routinely Recreating an Index](#routinely-recreating-an-index)
+    - [Background](#background)
+    - [Methods](#methods)
+    - [Procedure](#procedure-3)
+  - [Exporting and Viewing the WDR](#exporting-and-viewing-the-wdr)
+  - [Data Security Maintenance Suggestions](#data-security-maintenance-suggestions)
+    - [Preventing Data Loss](#preventing-data-loss)
+    - [Preventing Illegal Data Access](#preventing-illegal-data-access)
+    - [Preventing System Logs from Leaking Personal Data](#preventing-system-logs-from-leaking-personal-data)
+  - [Slow SQL Diagnosis](#slow-sql-diagnosis)
+    - [Background](#background-1)
+    - [Prerequisites](#prerequisites)
 
 <!-- /TOC -->
 
@@ -1607,7 +1638,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see "GUC Parameters \> Resource Consumption \> Cost-based Vacuum Delay" in the  *Developer Guide*.
+    >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../DataBaseReference/cost-based-vacuum-delay.md).
 
 3.  Delete a table.
 

@@ -1,13 +1,53 @@
 # Core Database Technologies<a name="EN-US_CONCEPT_0252569318"></a>
 <!-- TOC -->
 
-- [Basic Functions Oriented to Application Development](#Basic Functions Oriented to Application Development)
-- [High Performance](#high-performance)
-- [High Scalability](#high-scalability)
-- [HA](#ha)
-- [Maintainability](#maintainability)
-- [Database Security](#database-security)
-- [AI Capabilities](#ai-capabilities)
+- [Core Database Technologies](#core-database-technologies)
+  - [Basic Functions Oriented to Application Development](#basic-functions-oriented-to-application-development)
+  - [High Performance](#high-performance)
+    - [CBO Optimizer](#cbo-optimizer)
+    - [Hybrid Row-Column Storage](#hybrid-row-column-storage)
+    - [In-place Upate Storage](#in-place-upate-storage)
+    - [Xlog Lockless Update and Parallel Page Playback](#xlog-lockless-update-and-parallel-page-playback)
+    - [Adaptive Compression](#adaptive-compression)
+    - [Partition](#partition)
+    - [SQL Bypass](#sql-bypass)
+    - [Kunpeng NUMA Architecture Optimization](#kunpeng-numa-architecture-optimization)
+    - [High Concurrency of the Thread Pool](#high-concurrency-of-the-thread-pool)
+    - [Parallel Query](#parallel-query)
+    - [Dynamic Build and Execution](#dynamic-build-and-execution)
+  - [High Scalability](#high-scalability)
+    - [High Concurrency of the Thread Pool](#high-concurrency-of-the-thread-pool-1)
+  - [HA](#ha)
+    - [Primary/Standby](#primarystandby)
+    - [Logical Backup](#logical-backup)
+    - [Physical Backup](#physical-backup)
+    - [Flashback Restoration](#flashback-restoration)
+    - [Ultimate RTO](#ultimate-rto)
+    - [Logical Replication](#logical-replication)
+    - [Point-In-Time Recovery (PITR)](#point-in-time-recovery-pitr)
+    - [High Availability Based on the Paxos Protocol (DCF)](#high-availability-based-on-the-paxos-protocol-dcf)
+    - [Two-City Three-DC DR](#two-city-three-dc-dr)
+  - [Maintainability](#maintainability)
+    - [Workload Diagnosis Report](#workload-diagnosis-report)
+    - [Slow SQL Diagnosis](#slow-sql-diagnosis)
+  - [Database Security](#database-security)
+    - [Access Control](#access-control)
+    - [Separation of Control and Access Permissions](#separation-of-control-and-access-permissions)
+    - [Built-in Database Role Permission Management](#built-in-database-role-permission-management)
+    - [Database Encryption Authentication](#database-encryption-authentication)
+    - [Database Audit](#database-audit)
+    - [Network Communication Security](#network-communication-security)
+    - [Row-Level Security](#row-level-security)
+    - [Resource Labels](#resource-labels)
+    - [Dynamic Data Masking](#dynamic-data-masking)
+    - [Unified Auditing](#unified-auditing)
+    - [Password Strength Verification](#password-strength-verification)
+    - [Data Encryption and Storage](#data-encryption-and-storage)
+    - [Ledger Database](#ledger-database)
+  - [AI Capabilities](#ai-capabilities)
+    - [AI4DB](#ai4db)
+    - [DB4AI](#db4ai)
+    - [ABO Optimizer](#abo-optimizer)
 
 <!-- /TOC -->
 
@@ -17,8 +57,8 @@
 
   openGauss supports standard SQL statements. The SQL standard is an international standard and is updated periodically. SQL standards are classified into core features and optional features. Most databases do not fully support SQL standards. SQL features are built by database vendors to maintain customers and push up application migration costs. New SQL features are increasingly different among vendors. Currently, there is no authoritative SQL standard test.
 
-  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see "SQL Reference \> SQL Syntax" in the  *Developer Guide*.
-
+  openGauss supports most of the SQL:2011 core features and some optional features. For details about the feature list, see [SQL Syntax](../SQLReference/sql-syntax.md).
+  
   The introduction of standard SQL provides a unified SQL interface for all database vendors, reducing the learning costs of users and openGauss application migration costs.
 
 - Standard Development Interfaces
@@ -63,7 +103,7 @@
   -   Commit;
   -   Rollback;
 
-  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  *Developer Guide*.
+  Set transaction \(used for setting the isolation level, read/write mode, and delay mode\). For details about the syntax, see the  *SQLReference*.
 
 - Support for Functions and Stored Procedures
 
@@ -77,7 +117,7 @@
   4.  To process SQL statements, the stored procedure process assigns a memory fragment to store context association. Cursors are handles or pointers to context areas. With cursors, stored procedures can control alterations in context areas.
   5.  Six levels of exception information are supported to facilitate the debugging of stored procedures. Stored procedure debugging is a debugging method. During the development of a stored procedure, you can trace the process executed by the stored procedure step by step and find the error cause or program bug based on the variable value to improve the fault locating efficiency. You can set breakpoints and perform independent debugging.
 
-  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  *Developer Guide*.
+  openGauss supports functions and stored procedures in the SQL standard, which enhances the usability of stored procedures. For details about how to use the stored procedures, see the  *SQLReference*.
 
 - PG Interface Compatibility
 

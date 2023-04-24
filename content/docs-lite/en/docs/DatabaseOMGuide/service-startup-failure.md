@@ -24,7 +24,7 @@ The service startup failed.
 FATAL: hot standby is not possible because max_connections = 10 is a lower setting than on the master server (its value was 100)
 ```
 
-    -   Check whether the GUC parameters are set to proper values. For example, check parameters, such as  **shared\_buffers**,  **effective\_cache\_size**, and  **bulk\_write\_ring\_size **that consume much resources, or parameter  **max\_connections**  that cannot be easily set to a value that is less than its last value. For details about how to view and set GUC parameters, see  [Configuring Running Parameters](configuring-running-parameters.md).
+    -   Check whether the GUC parameters are set to proper values. For example, check parameters, such as  **shared\_buffers**,  **effective\_cache\_size**, and  **bulk\_write\_ring\_size **that consume much resources, or parameter  **max\_connections**  that cannot be easily set to a value that is less than its last value. For details about how to view and set GUC parameters, see  [Configuring Running Parameters](../DatabaseAdministrationGuide/configuring-running-parameters.md).
 
 
 -   Check whether some DNs are abnormal. Check the status of each primary and standby instance in the current database using  **gs\_ctl query**.

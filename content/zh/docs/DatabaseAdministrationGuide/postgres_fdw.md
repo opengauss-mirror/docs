@@ -10,7 +10,7 @@ postgres\_fdw插件默认参与编译，使用安装包安装好openGauss后，�
 
 ## 使用postgres\_fdw<a name="section862733411474"></a>
 
--   加载postgres\_fdw扩展：**CREATE ExtensionReference postgres\_fdw;**
+-   加载postgres\_fdw扩展：**CREATE Extension postgres\_fdw;**
 
 -   创建服务器对象：**CREATE SERVER**
 
@@ -26,7 +26,7 @@ postgres\_fdw插件默认参与编译，使用安装包安装好openGauss后，�
 
 -   删除服务器对象：**DROP SERVER**
 
--   删除扩展：**DROP ExtensionReference postgres\_fdw;**
+-   删除扩展：**DROP Extension postgres\_fdw;**
 
 -   查看REMOTE SQL PLAN：开启GUC参数show_fdw_remote_plan，可以在explain时追加打印remote sql的计划，对remote sql的explain会继承explain语句的verbose、costs选项。
 

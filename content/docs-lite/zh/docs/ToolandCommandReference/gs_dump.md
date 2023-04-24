@@ -44,7 +44,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </td>
 <td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="p130319266504"><a name="p130319266504"></a><a name="p130319266504"></a>小型数据库，一般推荐纯文本格式。</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p18632714386"><a name="p18632714386"></a><a name="p18632714386"></a>使用<a href="gsql.md">gsql</a>工具恢复数据库对象前，可根据需要使用文本编辑器编辑纯文本导出文件。</p>
+<td class="cellrowborder" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p18632714386"><a name="p18632714386"></a><a name="p18632714386"></a>使用<a href="../ToolandCommandReference/gsql.md">gsql</a>工具恢复数据库对象前，可根据需要使用文本编辑器编辑纯文本导出文件。</p>
 </td>
 </tr>
 <tr id="row14339208493"><td class="cellrowborder" valign="top" width="12.78%" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"><a name="zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a><a name="zh-cn_topic_0058967678_af130ab9de506445ca1707d7e363597d0"></a>自定义归档格式</p>
@@ -55,7 +55,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--fo
 </td>
 <td class="cellrowborder" valign="top" width="20.65%" headers="mcps1.2.6.1.4 "><p id="p205841643165011"><a name="p205841643165011"></a><a name="p205841643165011"></a>中型或大型数据库，推荐自定义归档格式。</p>
 </td>
-<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>使用<a href="gs_restore.md">gs_restore</a>可以选择要从自定义归档/目录归档/tar归档导出文件中导入相应的数据库对象。</p>
+<td class="cellrowborder" rowspan="3" valign="top" width="25.990000000000002%" headers="mcps1.2.6.1.5 "><p id="p146377143811"><a name="p146377143811"></a><a name="p146377143811"></a>使用<a href="../ToolandCommandReference/gs_restore.md">gs_restore</a>可以选择要从自定义归档/目录归档/tar归档导出文件中导入相应的数据库对象。</p>
 </td>
 </tr>
 <tr id="row1377584264920"><td class="cellrowborder" valign="top" headers="mcps1.2.6.1.1 "><p id="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"><a name="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a><a name="zh-cn_topic_0058967678_a10491f96f0dd4e469b9bf7c97c464f11"></a>目录归档格式</p>

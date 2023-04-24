@@ -6,7 +6,7 @@ The name of a database object must meet the following requirements: The name of 
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >
-    >You can use the select \* from pg\_get\_keywords\(\) query openGauss keyword or view the keyword in  [Keywords](keywords.md).
+    >You can use the select \* from pg\_get\_keywords\(\) query openGauss keyword or view the keyword in  [Keywords](../SQLReference/keywords.md).
 
 -   \[Proposal\] Do not use a string enclosed in double quotation marks \(""\) to define the database object name, unless you need to specify its capitalization. Case sensitivity of database object names makes problem location difficult.
 -   \[Proposal\] Use the same naming format for database objects.

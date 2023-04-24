@@ -24,7 +24,7 @@ pg_archivecleanup [OPTION]... ARCHIVELOCATION OLDESTKEPTWALFILE
 
     打印pg\_archivecleanup的版本并退出。
 
--   -x ExtensionReference
+-   -x Extension
 
     当该程序用作单独的工具时，提供一个扩展选项，只选择对应扩展名格式的文件。
 

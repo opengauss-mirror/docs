@@ -22,7 +22,7 @@ When this hint is used, errors are degraded in the following scenarios:
   
       >![](public_sys-resources/icon-note.gif) **NOTE:**
       >
-      >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](miscellaneous-parameters.md).
+      >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](../DataBaseReference/miscellaneous-parameters.md).
 
 - **The unique constraint is violated.**
 

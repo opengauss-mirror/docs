@@ -1,6 +1,6 @@
 # PostGIS安装<a name="ZH-CN_TOPIC_0000001201117578"></a>
 
-PostGIS ExtensionReference源码包可通过网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取。该ExtensionReference需使用GCC-7.3（GNU编译器套件）进行编译安装。
+PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取。该Extension需使用GCC-7.3（GNU编译器套件）进行编译安装。
 
 -   在整个安装过程中，可使用make    -sj和make install -sj命令并行加速编译，-sj命令极低概率性出现安装错误，如果安装失败则请使用make和make install进行串行安装。
 -   对于ARM物理机，在configure时增加如下编译参数：--build=aarch64-unknown-linux-gnu。
@@ -176,7 +176,7 @@ PostGIS ExtensionReference源码包可通过网站[https://opengauss.obs.cn-sout
     patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
-    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/ExtensionReference\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
+    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/Extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
@@ -263,7 +263,7 @@ PostGIS ExtensionReference源码包可通过网站[https://opengauss.obs.cn-sout
     5).  omm用户执行下面的语句，完成PostGIS相关动态链接库在数据库实例节点中的分发。
 
     ```
-    mv $GAUSSHOME/lib/postgresql/postgis-2.4.so $GAUSSHOME/install/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis-2.4.so $GAUSSHOME/lib/postgresql/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/json/lib/libjson-c.so.2 $GAUSSHOME/lib/libjson-c.so.2 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/ExtensionReference/postgis--2.4.2.sql python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/ExtensionReference/postgis.control python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
+    mv $GAUSSHOME/lib/postgresql/postgis-2.4.so $GAUSSHOME/install/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis-2.4.so $GAUSSHOME/lib/postgresql/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/json/lib/libjson-c.so.2 $GAUSSHOME/lib/libjson-c.so.2 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/Extension/postgis--2.4.2.sql python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/Extension/postgis.control python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
     ```
 
     动态链接库分发脚本执行完毕后，可执行下列命令删除$GAUSSHOME/postgis安装目录。

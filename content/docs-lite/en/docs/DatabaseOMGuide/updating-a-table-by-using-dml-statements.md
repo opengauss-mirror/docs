@@ -34,7 +34,7 @@ You can run the following DML statements to update data in the table.
         (9500, 4, 'Lucy', 'Baker');
         ```
 
-        For details on how to use  **INSERT**, see  [Inserting Data to Tables](inserting-data-to-tables.md).
+        For details on how to use  **INSERT**, see  [Inserting Data to Tables](../DatabaseAdministrationGuide/inserting-data-to-tables.md).
 
 
 -   Run the  **UPDATE**  statement to update data in the table. Change the value of the  **c\_customer\_id**  column to  **0**.
@@ -43,7 +43,7 @@ You can run the following DML statements to update data in the table.
     openGauss=# UPDATE customer_t SET c_customer_id = 0;
     ```
 
-    For details on how to use  **UPDATE**, see  [UPDATE](update.md).
+    For details on how to use  **UPDATE**, see  [UPDATE](../SQLReference/update.md).
 
 -   Run the  **DELETE**  statement to delete rows from the table.
 
@@ -53,7 +53,7 @@ You can run the following DML statements to update data in the table.
     openGauss=# DELETE FROM customer_t WHERE c_last_name = 'Baker';
     ```
 
-    For details on how to use  **DELETE**, see  [DELETE](delete.md).
+    For details on how to use  **DELETE**, see  [DELETE](../SQLReference/delete.md).
 
 -   Run the  **TRUNCATE**  statement to delete all rows from the table.
 
@@ -61,7 +61,7 @@ You can run the following DML statements to update data in the table.
     openGauss=# TRUNCATE TABLE customer_t;
     ```
 
-    For details on how to use  **TRUNCATE**, see  [TRUNCATE](truncate.md).
+    For details on how to use  **TRUNCATE**, see  [TRUNCATE](../SQLReference/truncate.md).
 
     The  **DELETE**  statement deletes a row of data each time whereas the  **TRUNCATE**  statement deletes data by releasing the data page stored in the table. Therefore, data can be deleted more quickly by using  **TRUNCATE**  than using  **DELETE**.
 

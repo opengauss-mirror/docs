@@ -1,6 +1,6 @@
 # Inserting Data to Tables<a name="EN-US_TOPIC_0289900995"></a>
 
-A new table contains no data. You need to insert data to the table before using it. This section describes how to insert a row or multiple rows of data using the  **[INSERT](insert.md)**  command and to insert data from a specified table. For details about how to insert a large amount of data to a table in batches, see  [Importing Data](importing-data.md).
+A new table contains no data. You need to insert data to the table before using it. This section describes how to insert a row or multiple rows of data using the  **[INSERT](../SQLReference/insert.md)**  command and to insert data from a specified table. For details about how to insert a large amount of data to a table in batches, see  [Importing Data](importing-data.md).
 
 ## Background<a name="en-us_topic_0283137618_en-us_topic_0237120300_en-us_topic_0059779039_s0ba8d61b4741479585fa6c86df04bad1"></a>
 
@@ -45,7 +45,7 @@ More than one of the preceding operations can be performed to a string. For exam
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >
->Long strings are truncated only if  **[DBCOMPATIBILITY](en-us_topic_0283137050.md#en-us_topic_0237122099_en-us_topic_0059778277_l4aa2b919b99d47caa81872841c30b8c4)**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](en-us_topic_0283137001.md#en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.
+>Long strings are truncated only if  **DBCOMPATIBILITY**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](../DataBaseReference/platform-and-client-compatibility.md#en-us_topic_0237124738_en-us_topic_0059779195_sb8212ce57eb9432a972e390f77203b7c)**  is set to  **on**.
 
 Run the following commands to create  **table1**  and  **table2**  to be used in the example:
 

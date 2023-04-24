@@ -108,4 +108,4 @@
 -   **[PGXC\_NODE](pgxc_node.md)**
 -   **[PGXC\_SLICE](pgxc_slice.md)**
 -   **[PLAN\_TABLE\_DATA](plan_table_data.md)**
--   **[STATEMENT\_HISTORY](statement_history.md)**
+-   **[STATEMENT\_HISTORY](statement_history_system-catalogs.md)**
