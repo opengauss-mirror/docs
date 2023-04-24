@@ -83,6 +83,11 @@ This section describes hardware and software requirements of openGauss. It is re
 <td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p582112294311"><a name="en-us_topic_0283136474_p582112294311"></a><a name="en-us_topic_0283136474_p582112294311"></a>bzip2</p>
 </td>
 </tr>
+<tr id="row149893529588"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0289899729_en-us_topic_0283136474_p075762219324"><a name="en-us_topic_0289899729_en-us_topic_0283136474_p075762219324"></a><a name="en-us_topic_0289899729_en-us_topic_0283136474_p075762219324"></a>Python</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="en-us_concept_0283139016_ul1537120034117"></a><a name="en-us_concept_0283139016_ul1537120034117"></a><ul id="en-us_concept_0283139016_ul1537120034117"><li>Python 3.6 or later</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
 
