@@ -1,0 +1,99 @@
+#opt_user:hover .user-menu-list {
+    display: block;
+}
+#opt_user .user-menu-list {
+    display: none;
+}
+#opt_user .user-menu-list {
+    width: 112px;
+    position: absolute;
+    top: 40px;
+    background: var(--o-color-bg2);
+    padding: 0 var(--o-spacing-h5);
+    cursor: pointer;
+    z-index: 99;
+    border: none;
+}
+#opt_user .user-menu-list .user-item {
+    display: block;
+    line-height: var(--o-line-height-h3);
+    text-align: center;
+    font-size: var(--o-font-size-text);
+    color: var(--o-color-text1);
+    border-bottom: 1px solid var(--o-color-division);
+    height: 48px;
+    line-height: 48px;
+}
+#opt_user .user-menu-list .user-item:hover {
+    color: var(--o-color-brand1);
+}
+#opt_user .user-menu-list .user-item :last-child {
+    border-bottom: 0 none;
+}
+#opt_user .user-menu-list .user-item .active,
+#opt_user .user-menu-list .user-item :hover {
+    color: var(--o-color-brand1);
+}
+.h5-nav-menu .h5-right {
+    display: flex;
+    align-items: center;
+}
+#opt_user {
+    position: relative;
+    margin-left: 16px;
+}
+.nav-menu #opt_user {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+#opt_user .logined {
+    /* display: none; */
+}
+#opt_user .opt-info {
+    display: flex;
+    align-items: center;
+    width: 112px;
+    cursor: pointer;
+    position: relative;
+}
+#opt_user .opt-info .opt-img {
+    position: relative;
+}
+#opt_user .opt-info .opt-img .img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+    display: none;
+}
+#opt_user .opt-info .opt-img .empty-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+#opt_user .opt-info .opt-name {
+    margin-left: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    color: var(--o-color-text1);
+}
+#opt_user .login {
+    width: 112px;
+    height: 32px;
+    line-height: 30px;
+    border: 1px solid var(--o-color-neutral6);
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--o-color-text1);
+    display: none;
+}
+
+#opt_user .login:hover {
+    border: 1px solid var(--o-color-trafficpurple5);
+    color: var(--o-color-brand1);
+}
