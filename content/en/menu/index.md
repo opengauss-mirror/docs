@@ -303,7 +303,7 @@ headless: true
         -   [Example: Common Functions and Batch Binding]({{< relref "./docs/DeveloperGuide/example-common-functions-and-batch-binding.md" >}})
         -   [Typical Application Scenarios and Configurations]({{< relref "./docs/DeveloperGuide/typical-application-scenarios-and-configurations.md" >}}) 
         -   [ODBC Interface Reference]({{< relref "./docs/DeveloperGuide/odbc-interface-reference.md" >}})
-	    -   [SQLAllocEnv]({{< relref "./docs/DeveloperGuide/sqlallocenv.md" >}})
+    	    -   [SQLAllocEnv]({{< relref "./docs/DeveloperGuide/sqlallocenv.md" >}})
             -   [SQLAllocConnect]({{< relref "./docs/DeveloperGuide/sqlallocconnect.md" >}})
             -   [SQLAllocHandle]({{< relref "./docs/DeveloperGuide/sqlallochandle.md" >}})
             -   [SQLAllocStmt]({{< relref "./docs/DeveloperGuide/sqlallocstmt.md" >}})
