@@ -62,6 +62,11 @@
     <PARAM name="ss_interconnect_type" value="TCP"/>
     <!-- rdma绑定cpu序列  -->
     <PARAM name="ss_rdma_work_config" value="1 7"/>
+
+    <!-- VIP信息  -->
+    <PARAM name="floatIp1" value="10.10.10.100"/>
+    <PARAM name="floatIp2" value="20.20.20.100"/>
+    <PARAM name="floatIp3" value="30.30.30.100"/>
   
   </CLUSTER>
 ```
@@ -88,7 +93,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="19" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="20" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
 <p id="p8418171218599"><a name="p8418171218599"></a><a name="p8418171218599"></a></p>
 <p id="p090514610594"><a name="p090514610594"></a><a name="p090514610594"></a></p>
 <p id="p1982221273714"><a name="p1982221273714"></a><a name="p1982221273714"></a></p>
@@ -201,6 +206,11 @@
 <tr id="row1636215345219"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p73629537522"><a name="p73629537522"></a><a name="p73629537522"></a><span id="ph62489207537"><a name="ph62489207537"></a><a name="ph62489207537"></a>ss_rdma_work_config</span></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1936335316521"><a name="p1936335316521"></a><a name="p1936335316521"></a><span id="ph1859724119315"><a name="ph1859724119315"></a><a name="ph1859724119315"></a>rdma用户态poll占用起止cpu</span><span id="ph17210345531"><a name="ph17210345531"></a><a name="ph17210345531"></a>，</span><span id="ph209312048739"><a name="ph209312048739"></a><a name="ph209312048739"></a>ss_interconnect_type</span><span id="ph88565498320"><a name="ph88565498320"></a><a name="ph88565498320"></a>为RDMA时有效，形如</span><span id="ph28400511657"><a name="ph28400511657"></a><a name="ph28400511657"></a>"10 15"</span><span id="ph128321249878"><a name="ph128321249878"></a><a name="ph128321249878"></a>，中间以空格分隔。</span></p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0249784567_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p14456479368"><a name="zh-cn_topic_0249784567_p14456479368"></a><a name="zh-cn_topic_0249784567_p14456479368"></a>floatIp1、floatIp2、floatIp3</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a>虚拟ip。</p>
 </td>
 </tr>
 </tbody>
@@ -320,7 +330,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="8" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
+<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="9" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.73257325732573%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a>dataNum</p>
 </td>
@@ -356,6 +366,16 @@
 <tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>syncNode_hostname</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与dataNode1_syncNum参数二选一。如需配置，需要在所有的节点下同时配置。用于指定当前数据库中同步模式的备机节点方式、数量及顺序。syncNode_hostname中的hostname根据主机名自行替换。参数中指定同步备主机名存在且正确，同步备数量不能超过备选同步备主机个数。参数中FIRST与ANY不可以同时存在，ANY支持组合配置，FIRST不支持组合配置，具体见：一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dataListenIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，各节点监听ip，若不配置，则默认使用backIp1s的值  </p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>floatIpMap1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，配置VIP时需要配置，表示floatIp与dataListenIp的对应关系，其顺序与dataListenIp1的顺序要相互对应  </p>
 </td>
 </tr>
 </tbody>
