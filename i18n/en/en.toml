@@ -1,0 +1,173 @@
+#list page
+[login_text]
+other = "Login"
+
+[logout_text]
+other = "Logout"
+
+[zone_text]
+other = "User Center"
+
+[document]
+other = "Document"
+
+[version_selection]
+other = "Version selection"
+
+[version_text]
+other = "Version"
+
+[current_lang]
+other = "English"
+
+[search]
+other = "search"
+
+[search_placeholder]
+other = "Input content"
+
+[quick_links]
+other = "Quick links"
+
+[kunpeng_community]
+other = "Kunpeng community"
+
+[document_link]
+other = "Documentation"
+
+[openeuler_document]
+other = "openGauss Documentation"
+
+[catalog_text]
+other = "Content"
+
+[other_text]
+other = "Reference Links"
+
+[atom]
+other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
+
+[copy_right]
+other = "Copyright © openGauss 2023. All rights reserved."
+
+[attention]
+other = "WeChat Subscription"
+
+[source_code]
+other = "Source Code"
+
+[feedbook]
+other = "Feedback"
+
+[previous]
+other = "Previous"
+
+[next]
+other = "Next"
+
+[evaluate]
+other = "Rating"
+
+[issue_1]
+other = "规范和低错类"
+
+[issue_2]
+other = "易用性"
+
+[issue_3]
+other = "正确性"
+
+[issue_4]
+other = "风险提示"
+
+[issue_5]
+other = "内容合规"
+
+[issue_title]
+other = "有奖捉虫"
+
+[issue_part]
+other = "“有虫”文档片段"
+
+[issue_reason]
+other = "存在的问题"
+
+[satisfaction]
+other = "您对文档的总体满意度"
+
+[low_score]
+other = "非常不满意"
+
+[high_score]
+other = "非常满意"
+
+[join_reason]
+other = "请问是什么原因让您参与到这个问题中"
+
+[own_job]
+other = "本职工作"
+
+[job_wanted]
+other = "求职"
+
+[technology]
+other = "技术兴趣"
+
+[study]
+other = "学习"
+
+[email]
+other = "您的邮箱"
+
+[text_email]
+other = "我们可能针对您提出的问题，向您发送邮件反馈进行方案。如有获奖信息，也会通过此方式通知您。"
+
+[privacy_text]
+other = "您理解并同意，您填写并提交的内容，即视为您已充分阅读并同意openGauss的"
+
+[privacy_link]
+other = "隐私声明"
+
+[btn_submit]
+other = "创Issue赢奖品"
+
+[back]
+other = "Top"
+
+[questionnaire]
+other = "Feedback"
+
+#search page
+
+[result_1]
+other = " "
+
+[result_2]
+other = " search results about "
+
+[result_3]
+other = " are found"
+
+[cancel]
+other = "cancel"
+
+[brand]
+other = "Trademark"
+[privacy]
+other = "Privacy Policy"
+[legal]
+other = "Legal Notice"
+[relative]
+other = "About Us"
+[service]
+other = "Service Status"
+[wechat]
+other = "WeChat Subscription"
+[lang]
+other = "en"
+[opengauss]
+other = "https://www.openGauss.org/en/"
+[enterprise]
+other = "Enterprise"
+[lite]
+other = "Lite"
