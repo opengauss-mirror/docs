@@ -1,2 +1,8 @@
 public
-resources/_gen
+resources/_gen.DS_Store
+*/.DS_Store
+*.pyc
+*.vscode
+/web-ui/node_modules
+/web-ui/package-lock.json
+layouts/partials/docs/test.html

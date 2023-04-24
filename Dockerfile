@@ -3,7 +3,7 @@ FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.16.1-20.03
 RUN yum -y update && yum install -y git curl tar
 
 
-ENV HUGO_VERSION=0.86.0
+ENV HUGO_VERSION=0.104.3
 
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
@@ -83,6 +83,28 @@ RUN cd /src/ && \
     cp -rf /src/3.1.0/docs/content/docs-lite/zh/* /src/website/content/zh/docs/3.1.0-lite/ && \
     mkdir -p /src/website/content/en/docs/3.1.0-lite/ && \
     cp -rf /src/3.1.0/docs/content/docs-lite/en/* /src/website/content/en/docs/3.1.0-lite/ && \
+
+    git clone -b 3.1.1 https://gitee.com/opengauss/docs 3.1.1/docs && \
+    mkdir -p /src/website/content/zh/docs/3.1.1 && \
+    cp -rf /src/3.1.1/docs/content/zh/* /src/website/content/zh/docs/3.1.1 && \
+    mkdir -p /src/website/content/en/docs/3.1.1 && \
+    cp -rf /src/3.1.1/docs/content/en/* /src/website/content/en/docs/3.1.1 && \
+
+    mkdir -p /src/website/content/zh/docs/3.1.1-lite/ && \
+    cp -rf /src/3.1.1/docs/content/docs-lite/zh/* /src/website/content/zh/docs/3.1.1-lite/ && \
+    mkdir -p /src/website/content/en/docs/3.1.1-lite/ && \
+    cp -rf /src/3.1.1/docs/content/docs-lite/en/* /src/website/content/en/docs/3.1.1-lite/ && \
+
+    git clone -b 5.0.0 https://gitee.com/opengauss/docs 5.0.0/docs && \
+    mkdir -p /src/website/content/zh/docs/5.0.0 && \
+    cp -rf /src/5.0.0/docs/content/zh/* /src/website/content/zh/docs/5.0.0 && \
+    mkdir -p /src/website/content/en/docs/5.0.0 && \
+    cp -rf /src/5.0.0/docs/content/en/* /src/website/content/en/docs/5.0.0 && \
+
+    mkdir -p /src/website/content/zh/docs/5.0.0-lite/ && \
+    cp -rf /src/5.0.0/docs/content/docs-lite/zh/* /src/website/content/zh/docs/5.0.0-lite/ && \
+    mkdir -p /src/website/content/en/docs/5.0.0-lite/ && \
+    cp -rf /src/5.0.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.0.0-lite/ && \
 
     cd /src/website && /usr/local/bin/hugo -b / && /usr/local/bin/hugo --gc --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
