@@ -19,15 +19,15 @@ The event trigger can capture DDL operations in the current database and target 
 The event trigger can capture four types of events: ddl_command_start, ddl_command_end, sql_drop, and table_rewrite.
 1. The ddl_command_start event occurs before the CREATE, ALTER, DROP, SECURITY LABEL, COMMENT, GRANT, or REVOKE statement is executed. The existence of the affected object is not checked before the event trigger is used.
 2. The ddl_command_end event captures DDL operations and occurs after DDL execution.
-3. The sql_drop event captures any operation of deleting database objects and is executed before ddl_command_end.
-4. The table_rewrite event occurs only before the table is overwritten by some actions of the ALTER TABLE and ALTER TYPE statements.
+3. The sql\_drop event captures any operation of deleting database objects and is executed before ddl\_command\_end.
+4. The table\_rewrite event occurs only before the table is overwritten by some actions of the ALTER TABLE and ALTER TYPE statements.
    
 
 ## Constraints<a name="section1694165712371"></a>
 
 - This feature is available only in PG-compatible mode.
 - Only the system administrator can add, delete, and modify the event trigger.
-- Built-in functions related to the event trigger can be used only for event trigger functions (the return type is event_trigger).
+- Built-in functions related to the event trigger can be used only for event trigger functions (the return type is event\_trigger).
 
 ## Dependencies
 
