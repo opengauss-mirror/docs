@@ -1,0 +1,23 @@
+{{ template "hrefhack" . }}
+{{ $version := .File.Dir }}
+{{ $versionArr := split $version "docs" }}
+{{ $versionArr := index $versionArr 1 }}
+{{ $versionArr := split $versionArr "/" }}
+{{ $versionArr := index $versionArr 1 }}
+{{ $versionArr := string $versionArr }}
+{{ $versionArr := delimit (slice "docs" $versionArr) "/"}}
+{{ $versionArr := delimit (slice $versionArr "menu" ) "/"}}
+{{ $versionArr := string $versionArr}}
+{{ with .Site.GetPage $versionArr}}
+  {{- .Content -}}
+{{ end }}
+
+
+{{ define "hrefhack" }}
+  {{ $attrEq := "$=" }}
+  {{ $attrVal := .RelPermalink }}
+  {{ if eq .RelPermalink "/" }}
+    {{ $attrEq = "=" }}
+    {{ $attrVal = .Permalink }}
+  {{ end }}
+{{ end }}
