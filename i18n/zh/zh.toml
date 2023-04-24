@@ -1,0 +1,183 @@
+#list page
+[version_text]
+other = "版本"
+
+[current_lang]
+other = "中文"
+
+[search]
+other = "搜索"
+
+[search_placeholder]
+other = "请输入搜索内容"
+
+[document_link]
+other = "Documentation"
+
+[opengauss_document]
+other = "openGauss Documentation"
+
+[login_text]
+other = "登录"
+
+[logout_text]
+other = "退出登录"
+
+[zone_text]
+other = "个人中心"
+
+[catalog_text]
+other = "目录"
+
+
+[other_text]
+other = "友好社区"
+
+[document]
+other = "文档"
+
+[version_selection]
+other = "版本选择"
+
+[quick_links]
+other = "快速链接"
+
+[kunpeng_community]
+other = "鲲鹏社区"
+
+[atom]
+other = "openGauss 是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目"
+
+[copy_right]
+other = "版权所有 © openGauss 2023 保留一切权利"
+
+[attention]
+other = "扫码关注公众号"
+
+[source_code]
+other = "查看源码"
+
+[feedbook]
+other = "反馈问题"
+
+[previous]
+other = "上一篇"
+
+[next]
+other = "下一篇"
+
+[evaluate]
+other = "评价"
+
+[issue_1]
+other = "规范和低错类"
+
+[issue_2]
+other = "易用性"
+
+[issue_3]
+other = "正确性"
+
+[issue_4]
+other = "风险提示"
+
+[issue_5]
+other = "内容合规"
+
+[issue_title]
+other = "文档捉虫"
+
+[issue_part]
+other = "“有虫”文档片段"
+
+[issue_reason]
+other = "问题描述"
+
+[satisfaction]
+other = "您对文档的总体满意度"
+
+[low_score]
+other = "非常不满意"
+
+[high_score]
+other = "非常满意"
+
+[join_reason]
+other = "请问是什么原因让您参与到这个问题中"
+
+[own_job]
+other = "本职工作"
+
+[job_wanted]
+other = "求职"
+
+[technology]
+other = "技术兴趣"
+
+[study]
+other = "学习"
+
+[email]
+other = "您的邮箱"
+
+[text_email]
+other = "我们可能针对您提出的问题，向您发送邮件反馈进行方案。如有获奖信息，也会通过此方式通知您。"
+
+[privacy_text]
+other = "您理解并同意，您填写并提交的内容，即视为您已充分阅读并同意openGauss的"
+
+[privacy_link]
+other = "隐私声明"
+
+[btn_submit]
+other = "提交"
+
+[back]
+other = "返回顶部"
+
+[questionnaire]
+other = "意见反馈"
+
+#search page
+
+[result_1]
+other = "一共有"
+
+[result_2]
+other = "个关于"
+
+[result_3]
+other = "的结果"
+
+[hot_docs_version]
+other = "20.03 LTS"
+
+[website]
+other = "openGauss官网"
+
+[other_link]
+other = "友情链接"
+
+[cancel]
+other = "取消"
+
+[atom-text]
+other = "openGauss 是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目"
+[brand]
+other = "品牌"
+[privacy]
+other = "隐私政策"
+[legal]
+other = "法律声明"
+[relative]
+other = "关于我们"
+[service]
+other = "服务状态"
+[wechat]
+other = "扫码关注公众号"
+[lang]
+other = "zh"
+[enterprise]
+other = "企业版"
+[lite]
+other = "轻量版"

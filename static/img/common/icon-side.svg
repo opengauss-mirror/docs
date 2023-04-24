@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="42px" viewBox="0 0 44 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 14</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="学习/文档/内容样式" transform="translate(-1753.000000, -952.000000)">
+            <g id="编组-15" transform="translate(1742.000000, 940.000000)">
+                <g id="编组-14" transform="translate(11.000000, 13.000000)">
+                    <path d="M31.2222138,12.3217687 L31.2224083,49.1138282 C20.9806047,49.0684791 12.6922138,40.8494899 12.6922138,30.7173928 C12.6922138,20.5572178 21.0266054,12.3207687 31.3075984,12.3207687 L31.2222138,12.3217687 Z" id="形状结合" fill="#5A9B83" transform="translate(21.999906, 30.717300) rotate(-90.000000) translate(-21.999906, -30.717300) "></path>
+                    <path d="M33,-10.9704641 L33,32.9113924 C20.8497355,32.9113924 11,23.0881042 11,10.9704641 C11,-1.14717594 20.8497355,-10.9704641 33,-10.9704641 L33,-10.9704641 Z" id="形状结合" fill="#000000" transform="translate(22.000000, 10.970464) scale(1, -1) rotate(-90.000000) translate(-22.000000, -10.970464) "></path>
+                    <ellipse id="椭圆形" fill="#FFFFFF" cx="22" cy="20.2531645" rx="4.56923077" ry="4.55696202"></ellipse>
+                    <ellipse id="椭圆形" fill="#FFCA6E" cx="22" cy="13.3333333" rx="2.36923077" ry="2.3628692"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
