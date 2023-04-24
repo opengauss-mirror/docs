@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    {{ partial "head.html" . }}
+
+    <body>
+        <div id="all">
+            <div class="home-page container">
+                <img src="/img/logo.svg" alt="openGauss" />
+                <p>{{ .Site.Params.defaultDescription }}</p>
+                <a href={{.Site.Params.BookRepo }}>Gitee Code </a>
+            </div>
+        </div>
+    </body>
+</html>
