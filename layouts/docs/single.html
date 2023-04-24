@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="markdown" id="markdown">
+  {{ $pt := (replace .Content ".md\"" ".html\"") }}
+  {{ $pt1 := (replace $pt ".md#" ".html#") }}
+  {{ $st := (replace $pt1 "&lsquo;" "'") }}
+  {{ $ot := (replace $st "&rsquo;" "'") }}
+  {{- $ot | safeHTML -}}
+</article>
+{{ end }}
