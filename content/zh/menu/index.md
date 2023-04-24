@@ -478,8 +478,6 @@ headless: true
 			-   [MOT查询原生编译（JIT）]({{< relref "./docs/DatabaseAdministrationGuide/MOT查询原生编译_JIT.md" >}})
 			-   [对比：磁盘与MOT]({{< relref "./docs/DatabaseAdministrationGuide/对比-磁盘与MOT.md" >}})
 		-   [附录]({{< relref "./docs/DatabaseAdministrationGuide/附录_MOT.md" >}})
-			-   [参考文献]({{< relref "./docs/DatabaseAdministrationGuide/参考文献.md" >}})
-			-   [术语表]({{< relref "./docs/DatabaseAdministrationGuide/术语表.md" >}})			
 	-   [访问外部数据库]({{< relref "./docs/DatabaseAdministrationGuide/Foreign-Data-Wrapper.md" >}})
 			-   [oracle_fdw]({{< relref "./docs/DatabaseAdministrationGuide/用于Oracle的外部数据包装器.md" >}})
 			-   [mysql_fdw]({{< relref "./docs/DatabaseAdministrationGuide/mysql_fdw.md" >}})
