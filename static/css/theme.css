@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/*颜色  */
+:root {
+  /**
+   * 基础色盘
+   */
+  /* 交通紫 */
+  --o-color-trafficpurple1: #2d0a60;
+  --o-color-trafficpurple2: #420f8e;
+  --o-color-trafficpurple3: #5813bc;
+  --o-color-trafficpurple4: #6e1be8;
+  --o-color-trafficpurple5: #7d32ea;
+  --o-color-trafficpurple6: #ba3ff7;
+  --o-color-trafficpurple7: #a358ff;
+  --o-color-trafficpurple8: #bd72ff;
+  --o-color-trafficpurple9: #d68bff;
+  --o-color-trafficpurple10: #e1abff;
+  /* 中性色 */
+  --o-color-neutral1: #121212;
+  --o-color-neutral2: #151515;
+  --o-color-neutral3: #2d2d2d;
+  --o-color-neutral4: #3f3f3f;
+  --o-color-neutral5: #555555;
+  --o-color-neutral6: #707070;
+  --o-color-neutral7: #848484;
+  --o-color-neutral8: #999999;
+  --o-color-neutral9: #b2b2b2;
+  --o-color-neutral10: #cccccc;
+  --o-color-neutral11: #e5e5e5;
+  /* 红色 */
+  --o-color-red1: #850d09;
+  --o-color-red2: #b4110c;
+  --o-color-red3: #e4160f;
+  --o-color-red4: #f13b35;
+  --o-color-red5: #f3524d;
+  --o-color-red6: #ff5f5a;
+  --o-color-red7: #ff7873;
+  --o-color-red8: #ff928d;
+  --o-color-red9: #ffaba6;
+  --o-color-red10: #fabab8;
+  /* 黄色 */
+  --o-color-yellow1: #754c01;
+  --o-color-yellow2: #a86d01;
+  --o-color-yellow3: #dabe01;
+  --o-color-yellow4: #feaa11;
+  --o-color-yellow5: #feb32a;
+  --o-color-yellow6: #ffc037;
+  --o-color-yellow7: #ffd950;
+  --o-color-yellow8: #fff36a;
+  --o-color-yellow9: #ffff83;
+  --o-color-yellow10: #ffe1aa;
+  /* 绿色 */
+  --o-color-green1: #1f370f;
+  --o-color-green2: #355f1a;
+  --o-color-green3: #4b8725;
+  --o-color-green4: #62af30;
+  --o-color-green5: #6dc335;
+  --o-color-green6: #7ad042;
+  --o-color-green7: #93e95b;
+  --o-color-green8: #adff75;
+  --o-color-green9: #c6ff8e;
+  --o-color-green10: #c5e7ae;
+  /* 橙色 */
+  --o-color-orange1: #9b370e;
+  --o-color-orange2: #b54f00;
+  --o-color-orange3: #e86600;
+  --o-color-orange4: #ff801c;
+  --o-color-orange5: #ff8e36;
+  --o-color-orange6: #ff9b43;
+  --o-color-orange7: #ffb45c;
+  --o-color-orange8: #ffce76;
+  --o-color-orange9: #ffcf8f;
+  --o-color-orange10: #ffd2af;
+  /* 灰蓝色 */
+  --o-color-greyblue1: #e5e8f0;
+  --o-color-greyblue2: #f7f8fa;
+  --o-color-greyblue3: #f5f6f8;
+  /* 灰黑色 */
+  --o-color-greyblack1: #1e1e1e;
+  --o-color-greyblack2: #242424;
+  --o-color-greyblack3: #2e2e2e;
+  --o-color-greyblack4: #383838;
+  /* 白色 */
+  --o-color-white: #ffffff;
+  /* 黑色 */
+  --o-color-black: #000000;
+  /* 透明 */
+  --o-color-transparent: transparent;
+  /**
+   * 状态颜色 && 功能颜色
+   */
+  /* 成功色 */
+  --o-color-success1: var(--o-color-green5);
+  /* normal */
+  --o-color-success2: var(--o-color-green7);
+  /* hover */
+  --o-color-success3: var(--o-color-green10);
+  /* disabled */
+  /* 告警色 */
+  --o-color-warning1: var(--o-color-orange5);
+  /* normal */
+  --o-color-warning2: var(--o-color-orange7);
+  /* hover */
+  --o-color-warning3: var(--o-color-orange10);
+  /* disabled */
+  /* 错误色 */
+  --o-color-error1: var(--o-color-red5);
+  /* normal */
+  --o-color-error2: var(--o-color-red7);
+  /* hover */
+  --o-color-error3: var(--o-color-red10);
+  /* disabled */
+  /* 品牌色 */
+  --o-color-brand1: var(--o-color-trafficpurple5);
+  /* 常规、文字 */
+  --o-color-brand2: var(--o-color-trafficpurple8);
+  /* 悬浮 */
+  --o-color-brand3: var(--o-color-trafficpurple4);
+  /* 确认 */
+  --o-color-brand4: var(--o-color-trafficpurple6);
+  /* 特殊场景 */
+  --o-color-brand5: var(--o-color-trafficpurple10);
+  /* 一般禁用 */
+  --o-color-brand6: var(--o-color-trafficpurple10);
+  /* 文字禁用，暂和一般禁用保持一致 */
+  /* 文字颜色 */
+  --o-color-text1: var(--o-color-black);
+  /* 强调/正文标题 黑色 */
+  --o-color-text2: var(--o-color-white);
+  /* 强调/正文标题 白色 */
+  --o-color-text3: var(--o-color-neutral4);
+  /* 次强调/正文标题 */
+  --o-color-text4: var(--o-color-neutral6);
+  /* 次要信息/正文 */
+  --o-color-text5: var(--o-color-neutral11);
+  /* 置灰信息 */
+  --o-color-text-secondary: var(--o-color-neutral5);
+  /*次级文字颜色  */
+  /*  背景色*/
+  --o-color-bg1: var(--o-color-greyblue3);
+  /* 整体背景色 */
+  --o-color-bg2: var(--o-color-white);
+  /* 一级容器背景色 */
+  --o-color-bg3: var(--o-color-greyblue2);
+  /* 二级容器背景色 */
+  --o-color-bg4: var(--o-color-greyblue1);
+  /* 三级容器背景色 */
+  --o-color-bg5: var(--o-color-white);
+  /* 弹出框、tooltip背景色 */
+  --o-color-bg6: rgba(0, 0, 0, 0.5);
+  /* 蒙层 */
+  --o-color-bg-secondary: var(--o-color-neutral11);
+  /* 次级颜色背景颜色 */
+  /* 链接色 */
+  --o-color-link1: var(--o-color-trafficpurple5);
+  /* 常规 */
+  --o-color-link2: var(--o-color-trafficpurple8);
+  /* 悬浮 */
+  --o-color-link3: var(--o-color-trafficpurple4);
+  /* 点击 */
+  --o-color-link4: var(--o-color-trafficpurple6);
+  /* 特殊场景 */
+  --o-color-link5: var(--o-color-trafficpurple10);
+  /* 一般禁用 */
+  --o-color-link6: var(--o-color-trafficpurple10);
+  /* 文字禁用，暂和一般禁用保持一致 */
+  /* 边框颜色 */
+  --o-color-border1: var(--o-color-neutral6);
+  --o-color-border2: var(--o-color-neutral11);
+  --o-color-border3: var(--o-color-trafficpurple5);
+  /* 分割线颜色 */
+  --o-color-division1: var(--o-color-neutral11);
+  /* 填充色，用于阴影容器背景 */
+  --o-color-fill1: var(--o-color-white);
+  /* SL1 一级投影容器背景，应用于默认状态的卡片、楼层、导航栏、组件里局部投影背景等 */
+  --o-color-fill2: var(--o-color-white);
+  /* SL2 二级投影容器背景，应用于卡片、组件里局部投影等 */
+  --o-color-fill2_hover: var(--o-color-white);
+  /* SL2-hover 升起投影容器背景，应用于悬停状态的卡片等，是SL2的激活态 */
+  --o-color-fill3: var(--o-color-white);
+  /* SL3 三级投影容器背景，应用于一级投影上的卡片、组件等 */
+  --o-color-fill4: var(--o-color-white);
+  /* SL4 覆盖阴影容器背景，应用于信息提示【tips、活动进入按钮等】等投影容器 */
+  --o-color-fill5: var(--o-color-white);
+  /* SL5 弹出阴影容器背景，应用于模态弹窗投影 */
+
+  /*阴影，注：SL2有hover投影*/
+
+  --o-shadow-l1: 0 1px 5px rgba(45, 47, 51, 0.1);
+  /*SL1 一级投影，应用于楼层、导航栏、组件里局部投影等，*/
+  --o-shadow-l2: 0 1px 5px rgba(45, 47, 51, 0.1);
+  /*SL2-normal 二级投影，应用于卡片、组件里局部投影等*/
+  --o-shadow-l2_hover: 0 6px 18px rgba(125, 50, 234, 0.14);
+  /*SL2-hover 升起投影，应用于悬停状态的卡片等，是SL2的激活态*/
+  --o-shadow-l3: 0 6px 18px rgba(45, 47, 51, 0.14);
+  /*SL3 三级投影，应用于一级投影上的卡片、组件等*/
+  --o-shadow-l4: 0 10px 32px rgba(45, 47, 51, 0.18);
+  /*SL4 覆盖阴影，应用于信息提示【tips、活动进入按钮等】等投影*/
+  --o-shadow-l5: 0 12px 42px rgba(45, 47, 51, 0.24);
+  /*SL5 弹出阴影，应用于模态弹窗投影*/
+
+  /* 字号 */
+
+  --o-font-size-h1: 64px;
+  --o-font-size-h2: 54px;
+  --o-font-size-h3: 36px;
+  --o-font-size-h4: 28px;
+  --o-font-size-h5: 24px;
+  --o-font-size-h6: 20px;
+  --o-font-size-h7: 18px;
+  --o-font-size-h8: 16px;
+  --o-font-size-text: 14px;
+  --o-font-size-tip: 12px;
+  --o-line-height-h1: 84px;
+  --o-line-height-h2: 76px;
+  --o-line-height-h3: 48px;
+  --o-line-height-h4: 36px;
+  --o-line-height-h5: 32px;
+  --o-line-height-h6: 28px;
+  --o-line-height-h7: 26px;
+  --o-line-height-h8: 24px;
+  --o-line-height-text: 22px;
+  --o-line-height-tip: 18px;
+
+  /*间距*/
+
+  --o-spacing-h1: 64px;
+  --o-spacing-h2: 40px;
+  --o-spacing-h3: 32px;
+  --o-spacing-h4: 24px;
+  --o-spacing-h5: 16px;
+  --o-spacing-h6: 12px;
+  --o-spacing-h7: 10px;
+  --o-spacing-h8: 8px;
+  --o-spacing-h9: 6px;
+  --o-spacing-h10: 4px;
+  /* 分页器颜色 */
+  --o-pagination-bg-color:var(--o-color-neutral11);
+}
+.dark {
+  /*成功色*/
+  --o-color-success1: var(--o-color-green5);
+  /*normal*/
+  --o-color-success2: var(--o-color-green7);
+  /*hover*/
+  --o-color-success3: var(--o-color-green2);
+  /*disabled*/
+  /*告警色*/
+  --o-color-warning1: var(--o-color-orange5);
+  /*normal*/
+  --o-color-warning2: var(--o-color-orange7);
+  /*hover*/
+  --o-color-warning3: var(--o-color-orange1);
+  /*disabled*/
+  /*错误色*/
+  --o-color-error1: var(--o-color-red5);
+  /*normal*/
+  --o-color-error2: var(--o-color-red7);
+  /*hover*/
+  --o-color-error3: var(--o-color-red1);
+  /*disabled*/
+  /*品牌色*/
+  --o-color-brand1: var(--o-color-trafficpurple8);
+  /*常规*/
+  --o-color-brand2: var(--o-color-trafficpurple9);
+  /*悬浮*/
+  --o-color-brand3: var(--o-color-trafficpurple5);
+  /*点击确认*/
+  --o-color-brand4: var(--o-color-trafficpurple7);
+  /*特殊场景*/
+  --o-color-brand5: var(--o-color-trafficpurple3);
+  /*普通禁用*/
+  --o-color-brand6: var(--o-color-trafficpurple3);
+  /*文字禁用*/
+  /*文字颜色*/
+  --o-color-text1: var(--o-color-white);
+  /*强调/正文标题*/
+  --o-color-text2: var(--o-color-black);
+  /*强调/正文标题*/
+  --o-color-text3: var(--o-color-neutral11);
+  /*次强调/正文标题*/
+  --o-color-text4: var(--o-color-neutral9);
+  /*次要信息/正文*/
+  --o-color-text5: var(--o-color-neutral5);
+  /*置灰信息*/
+  --o-color-text-secondary: var(--o-color-neutral9);
+  /*次级文字颜色*/
+  /*背景色*/
+  --o-color-bg1: var(--o-color-neutral1);
+  /*整体背景色*/
+  --o-color-bg2: var(--o-color-greyblack1);
+  /*一级容器背景色*/
+  --o-color-bg3: var(--o-color-greyblack2);
+  /*二级容器背景色*/
+  --o-color-bg4: var(--o-color-greyblack3);
+  /*三级容器背景色*/
+  --o-color-bg5: var(--o-color-greyblack3);
+  /*弹出框、tooltip背景色*/
+  --o-color-bg6: rgba(0, 0, 0, 0.5);
+  /*蒙层*/
+  --o-color-bg-secondary: var(--o-color-neutral5);
+  /*刺激背景颜色*/
+  /*链接色*/
+  --o-color-link1: var(--o-color-trafficpurple8);
+  /*常规*/
+  --o-color-link2: var(--o-color-trafficpurple9);
+  /*悬浮*/
+  --o-color-link3: var(--o-color-trafficpurple5);
+  /*点击*/
+  --o-color-link4: var(--o-color-trafficpurple7);
+  /*特殊场景*/
+  --o-color-link5: var(--o-color-trafficpurple3);
+  /*一般禁用*/
+  --o-color-link6: var(--o-color-trafficpurple3);
+  /*文字禁用，暂和一般禁用保持一致*/
+  /*边框颜色*/
+  --o-color-border1: var(--o-color-neutral9);
+  --o-color-border2: var(--o-color-neutral3);
+  --o-color-border3: var(--o-color-trafficpurple8);
+  /*分割线颜色*/
+  --o-color-division1: var(--o-color-neutral3);
+  /*填充色，用于阴影容器背景*/
+  --o-color-fill1: var(--o-color-greyblack1);
+  /*SL1 一级投影容器背景，应用于默认状态的卡片、楼层、导航栏、组件里局部投影背景等*/
+  --o-color-fill2: var(--o-color-greyblack1);
+  /*SL2 二级投影容器背景，应用于卡片、组件里局部投影等*/
+  --o-color-fill2_hover: var(--o-color-greyblack2);
+  /*SL2-hover 升起投影容器背景，应用于悬停状态的卡片等，是SL2的激活态*/
+  --o-color-fill3: var(--o-color-greyblack2);
+  /*SL3 三级投影容器背景，应用于一级投影上的卡片、组件等*/
+  --o-color-fill4: var(--o-color-greyblack3);
+  /*SL4 覆盖阴影容器背景，应用于信息提示【tips、活动进入按钮等】等投影容器*/
+  --o-color-fill5: var(--o-color-greyblack4);
+  /*SL5 弹出阴影容器背景，应用于模态弹窗投影
+  */
+  /**
+   * 阴影
+   */
+  --o-shadow-l1: 0 1px 7px rgba(0, 0, 0, 0.3);
+  /*SL1 一级投影，应用于楼层、导航栏、组件里局部投影等，*/
+  --o-shadow-l2: 0 1px 7px rgba(0, 0, 0, 0.3);
+  /*SL2-normal 二级投影，应用于卡片、组件里局部投影等*/
+  --o-shadow-l2_hover: 0 6px 18px rgba(0, 0, 0, 0.42);
+  /*SL2-hover 升起投影，应用于悬停状态的卡片等，是SL2的激活态*/
+  --o-shadow-l3: 0 6px 18px rgba(0, 0, 0, 0.42);
+  /*SL3 三级投影，应用于一级投影上的卡片、组件等*/
+  --o-shadow-l4: 0 10px 32px rgba(0, 0, 0, 0.54);
+  /*SL4 覆盖阴影，应用于信息提示【tips、活动进入按钮等】等投影*/
+  --o-shadow-l5: 0 12px 42px rgba(0, 0, 0, 0.72);
+  /*SL5 弹出阴影，应用于模态弹窗投影*/
+
+  /* 分页器颜色 */
+  --o-pagination-bg-color:var(--o-color-neutral5);
+}

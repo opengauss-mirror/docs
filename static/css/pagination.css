@@ -1,0 +1,117 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+._page_container {
+    margin-top: 50px;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    user-select: none;
+    color: var(--o-color-text1);
+}
+
+._page_container input[type=number] {
+    -moz-appearance: textfield;
+}
+
+._page_container input[type=number]::-webkit-inner-spin-button,
+._page_container input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+._page_container ._pages {
+    display: inline-block;
+}
+
+._page_container ._pages li {
+    display: inline-block;
+    list-style: none;
+    vertical-align: top;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+._page_container ._pages li:hover {
+    color: var(--o-color-brand1);
+}
+
+._page_container ._pages li:first-child,
+._page_container ._pages li:last-child {
+    font-size: 14px;
+}
+
+._page_container ._pages ._prev,
+._page_container ._pages ._next,
+._page_container ._pages ._home,
+._page_container ._pages ._last {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0 8px;
+}
+
+._page_container ._jumper {
+    display: inline-block;
+    color: #606266;
+    margin-left: 10px;
+}
+
+._page_container ._jumper ._count {
+    margin-right: 10px;
+}
+
+._page_container ._jumper ._jumper_input {
+    display: inline-block;
+    font-size: 14px;
+    color: #606266;
+    width: 50px;
+    height: 26px;
+    text-align: center;
+    margin: 0 5px;
+    padding: 3px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+._page_container ._jumper ._jumper_input:focus {
+    border-color: var(--o-color-brand1);
+}
+
+/*._pages_1 li {
+    background-color: #f4f4f5;
+}*/
+
+._active_1 {
+    color: #fff !important;
+    background-color: var(--o-color-brand1) !important;
+}
+
+._active_2 {
+    color: var(--o-color-brand1) !important;
+}
+
+._disabled {
+    cursor: not-allowed !important;
+}
+
+._disabled_c {
+    color: #c0c4cc !important;
+}
+@media screen and (max-width: 1100px) {
+    ._page_container {
+        text-align: center;
+        color: var(--o-color-text4);
+    }
+    ._page_container ._pages{
+        display: block;
+    }
+}
