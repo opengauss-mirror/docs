@@ -90,6 +90,9 @@
             <aside class="book-toc">
               <ul id="toc-list"></ul>
             </aside>
+            <div class="date-box">
+              {{.Date.Format "2006-01-02 15:04:05"}}
+            </div>
         </div>
             {{ partial "pcfooter.html" . }}
       </div>

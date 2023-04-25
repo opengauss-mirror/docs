@@ -950,3 +950,17 @@ body {
 #docstreeview .jstree-node[aria-level="6"] {
   padding-left: 16px;
 }
+#page{
+  position: relative;
+}
+#page .date-box{
+  position: absolute;
+  left: 40px;
+  bottom: 0;
+  color: var(--o-color-text5);
+}
+@media screen and (max-width: 1100px) {
+  #page .date-box{
+    left: 16px;
+  }
+}

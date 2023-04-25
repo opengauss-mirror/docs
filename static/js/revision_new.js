@@ -107,11 +107,11 @@ $(function ($) {
       });
     })();
     // 点击logo回到文档首页
-    $("#menu-top-mobile .logo-mobile .logo-img,.nav-box .logo-mobile,.pc-logo").click(
-      () => {
-        window.open(`https://www.opengauss.org/${lang}/`, "_blank");
-      }
-    );
+    $(
+      "#menu-top-mobile .logo-mobile .logo-img,.nav-box .logo-mobile,.pc-logo"
+    ).click(() => {
+      window.open(`https://www.opengauss.org/${lang}/`, "_blank");
+    });
     // 点击版本出现版本选择
     $(".h5_index .h5_nav .icon-servision").click(function () {
       $(this).toggleClass("open");
@@ -303,5 +303,12 @@ $(function ($) {
 window.onload = function () {
   const firstNavTop = $("#docstreeview>ul>li:nth-of-type(1)").offset().top;
   const checkedTop = $(".jstree-clicked").offset().top;
-  $(".nav").scrollTop(checkedTop - firstNavTop);
+  $(".nav")
+    .stop()
+    .animate(
+      {
+        scrollTop: checkedTop - firstNavTop,
+      },
+      500
+    );
 };
