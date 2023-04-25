@@ -1,0 +1,93 @@
+<nav class="nav-box">
+  <div class="nav-menu container pc-nav-menu">
+    <div class="docs-a">
+    </div> 
+    <div class="right" id="right-style">
+        <div class="right-nav">
+          <div id="nav-search">
+            <i class="icon-search"></i>
+          </div>
+          <div id="result-container">
+            <div class="search-header">
+              <i class="icon-search"></i>
+              <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+            </div>
+            <div class="search-result" class="container result-style">
+              <ul style="border: none"></ul>
+              <div id="baseof-pagination"></div>
+            </div>
+          </div>
+          <div class="baseof_mask">
+            <div class="loading-box">
+              <img src="/img/detail/loading.gif" alt="" />
+            </div>
+          </div>
+          <div name="lang" id="lang">
+            <span>{{ i18n "current_lang" }}</span>
+            <i class="icon-down"></i>
+            <div class="option web-lang lang-menu-list">
+              <a name="zh" class="lang-item">{{ .Site.Params.languageZh }}</a>
+              <a name="en" class="lang-item">{{ .Site.Params.languageEn }}</a>
+            </div>
+          </div>
+          <div class="theme-change">
+            <i class="icon-theme light"></i>
+          </div>
+          <div class="opt-user" id="opt_user">
+            <div class="logined">
+                <div class="opt-info">
+                    <div class="opt-img">
+                        <img
+                            src=""
+                            alt="LogOut"
+                            class="img"
+                        />
+                        <div class="empty-img"></div>
+                    </div>
+                    <p class="opt-name"></p>
+                    <div class="user-menu-list">
+                      <a class="zone user-item">{{i18n "zone_text"}}</a>
+                      <a class="logout user-item">{{i18n "logout_text"}}</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="login">
+                {{i18n "login_text"}}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="h5-nav-menu">
+    <div class="h5_nav_left"></div>
+    <div class="logo-mobile">
+    </div>
+    <div class="h5-right">
+      <i class="white_search"></i>
+      <div class="opt-user" id="opt_user">
+        <div class="logined">
+            <div class="opt-info">
+                <div class="opt-img">
+                    <img
+                        src=""
+                        alt="LogOut"
+                        class="img"
+                    />
+                    <div class="empty-img"></div>
+                </div>
+                <p class="opt-name"></p>
+                <div class="user-menu-list">
+                  <a class="zone user-item">{{i18n "zone_text"}}</a>
+                  <a class="logout user-item">{{i18n "logout_text"}}</a>
+              </div>
+            </div>
+        </div>
+
+        <div class="login">
+            {{i18n "login_text"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
