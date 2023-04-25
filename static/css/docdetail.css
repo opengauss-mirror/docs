@@ -1486,7 +1486,7 @@
     #page {
         width: 100%;
         box-sizing: border-box;
-        margin-bottom: 40px;
+        padding-bottom: 40px;
     }
     #content{
         height: auto!important;

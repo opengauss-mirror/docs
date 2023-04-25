@@ -54,3 +54,7 @@ paginate = 10
 
     notFound = "404"
 
+# 设置时间
+[frontmatter]
+  date = [':fileModTime','date', 'publishDate', ]
+
