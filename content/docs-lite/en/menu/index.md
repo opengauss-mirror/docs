@@ -238,7 +238,7 @@ headless: true
             -   [ODBC Packages, Dependent Libraries, and Header Files]({{< relref "./docs/DeveloperGuide/odbc-packages-dependent-libraries-and-header-files.md" >}})
             -   [Configuring a Data Source in the Linux OS]({{< relref "./docs/DeveloperGuide/configuring-a-data-source-in-the-linux-os.md" >}})
             -   [Development Process]({{< relref "./docs/DeveloperGuide/development-process-odbc.md" >}})
-            -   [Example: Common Functions and Batch Binding]({{< relref "./docs/DeveloperGuide/development-process-odbc.md.md" >}})
+            -   [Example: Common Functions and Batch Binding]({{< relref "./docs/DeveloperGuide/example-common-functions-and-batch-binding.md" >}})
             -   [Typical Application Scenarios and Configurations]({{< relref "./docs/DeveloperGuide/typical-application-scenarios-and-configurations.md" >}}) 
             -   [ODBC Interface Reference]({{< relref "./docs/DeveloperGuide/odbc-interface-reference.md" >}})
                 -   [SQLAllocEnv]({{< relref "./docs/Developerguide/sqlallocenv.md" >}})
