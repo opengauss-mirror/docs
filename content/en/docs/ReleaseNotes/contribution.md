@@ -2,7 +2,7 @@
 
 **Participating in Contribution**
 
-As an openGauss user, you can contribute to the openGauss community in multiple ways. For details about how to contribute to the community, see [Contribution](https://opengauss.org/zh/contribution/). Here, some methods are listed for reference.
+As an openGauss user, you can contribute to the openGauss community in multiple ways. For details about how to contribute to the community, see [Contribution](https://opengauss.org/en/contribution/). Here, some methods are listed for reference.
 
 **Special Interest Groups \(SIGs\)**
 
