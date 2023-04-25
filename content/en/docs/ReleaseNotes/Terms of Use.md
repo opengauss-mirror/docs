@@ -4,9 +4,7 @@
 
 Your replication, use, modification, and distribution of this document are governed by the Creative Commons License Attribution-ShareAlike 4.0 International Public License \(CC BY-SA 4.0\). You can visit [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/) to view a human-readable summary of \(and not a substitute for\) CC BY-SA 4.0. For the complete CC BY-SA 4.0, visit [https://creativecommons.org/licenses/by-sa/4.0/legalcode](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-Certain document contents (such as standard APIs and parameter descriptions) on this website are from the official PostgreSQL website (https://www.postgresql.org/docs/). 
-
-Complies with the following protocols:
+Certain document contents (such as standard APIs and parameter descriptions) on this website are from the official PostgreSQL website (https://www.postgresql.org/docs/) and comply with the following protocols:
 PostgreSQL is Copyright © 1996–2020 by the PostgreSQL Global Development Group.
 Postgres95 is Copyright © 1994–5 by the Regents of the University of California.
 
