@@ -1,0 +1,9 @@
+自治事务
+========
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/存储过程支持自治事务
+    ../content/zh/docs/SQLReference/匿名块支持自治事务
+    ../content/zh/docs/SQLReference/函数支持自治事务
+    ../content/zh/docs/SQLReference/规格约束
