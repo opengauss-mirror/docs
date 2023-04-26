@@ -32,7 +32,7 @@
         action [, ... ];
     ```
 
-    其中action统指如下分区维护子语法。当存在多个分区维护子句时，保证了分区的连续性，无论这些子句的排序如何，GaussDB KernelopenGauss总会先执行DROP PARTITION再执行ADD PARTITION操作，最后顺序执行其它分区维护操作。
+    其中action统指如下分区维护子语法。当存在多个分区维护子句时，保证了分区的连续性，无论这些子句的排序如何，openGauss总会先执行DROP PARTITION再执行ADD PARTITION操作，最后顺序执行其它分区维护操作。
 
     ```
         move_clause  |
