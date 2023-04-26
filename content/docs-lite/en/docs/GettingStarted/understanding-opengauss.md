@@ -16,7 +16,7 @@ openGauss is a user-friendly, enterprise-level, and open-source relational datab
 
 -   **openGauss provides open-source software.**
 
-    Open-source means that anyone can use and modify the software. Anyone can download the openGauss software and use it at no cost. You can dig into the source code and make changes to meet your needs. The openGauss software is released under the Mulan Permissive Software License v2 \([http://license.coscl.org.cn/MulanPSL2/](http://license.coscl.org.cn/MulanPSL2/)\) to define the software usage scope.
+    Open-source means that anyone can use and modify the software. Anyone can download the openGauss software and use it at no cost. You can dig into the source code and make changes to meet your needs. The openGauss software is released under the Mulan Permissive Software License v2 \([http://license.coscl.org.cn/MulanPSL2](http://license.coscl.org.cn/MulanPSL2)\) to define the software usage scope.
 
 -   **An openGauss database features high performance, high availability, high security, easy O&M, and full openness.**
     -   High performance
