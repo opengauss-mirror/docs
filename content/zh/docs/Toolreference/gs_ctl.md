@@ -341,7 +341,7 @@ gs\_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0287275989_p105751436553"><a name="zh-cn_topic_0287275989_p105751436553"></a><a name="zh-cn_topic_0287275989_p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
 <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● auto（不指定）：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全 量。</p>
 <p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a></p>
-    <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C蚕食指定镜像的ip和port。</p>
+    <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C参数指定镜像的ip和port。</p>
 <p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a>默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
 </div></div>
