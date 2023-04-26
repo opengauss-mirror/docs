@@ -59,6 +59,20 @@
 
 **默认值：**on
 
+## multi\_stats\_type<a name="section493528164016"></a>
+
+**参数说明：**该参数用于指定在enable\_ai\_stats为on状态下创建的统计信息类别。
+
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：**枚举类型，有效值为"BAYESNET"、"MCV"、"ALL"。
+
+-   "BAYESNET"：只创建智能统计信息。
+-   "MCV"：只创建传统统计信息。
+-   "ALL"：同时创建传统统计信息和智能统计信息。
+
+**默认值：**"BAYESNET"
+
 ## enable\_cachedplan\_mgr<a name="section76622010222"></a>
 
 **参数说明：**该参数用于指定是否开启自适应计划选择功能。
