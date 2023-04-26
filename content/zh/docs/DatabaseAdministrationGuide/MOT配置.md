@@ -10,7 +10,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
 阅读[总体原则](#section14452102715206)，根据需要查看和配置mot.conf文件。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >以上描述了mot.conf文件中的各个设置。除上述内容外，要了解特定MOT功能（如恢复），可参考本用户手册的相关章节。例如，[MOT恢复](MOT恢复.md)说明了mot.conf文件的恢复，包含影响MOT恢复的设置。此外，有关恢复的完整说明，请参阅“MOT管理”章节的[MOT恢复](MOT恢复.md)。下文各相关章节中还提供了参考链接。
 
@@ -77,7 +77,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
 
     提交组在到达配置的事务数后或者在超时后关闭。组关闭后，组中的所有事务等待一个组落盘完成执行，然后通知客户端每个事务都已经结束。
 
-    >![](public_sys-resources/icon-note.gif)**说明：**
+    >![](public_sys-resources/icon-note.png)**说明：**
     有关同步组提交日志记录的详细信息，请参阅[MOT日志类型](MOT持久性.md#section125771537134)。
 
 
@@ -98,7 +98,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
     检查点由多个MOT引擎工作线程并行执行。工作线程的数量可能会大大影响整个检查点操作的整体性能，以及其它正在运行的事务的操作。为了实现较短的检查点持续时间，应使用更多线程，直至达到最佳数量（根据硬件和工作负载的不同而不同）。但请注意，如果这个数目太大，可能会对其他正在运行的事务的执行时间产生负面影响。尽可能低这个数字，以最小化对其他运行事务的运行时的影响。当此数目过高时，检查点持续时间会较长。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >有关配置的更多信息，请参阅[MOT检查点](MOT持久性.md#section182761535131617)。
 
 ## 恢复（MOT）<a name="section7442447103115"></a>
@@ -108,7 +108,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
     指定在检查点数据恢复期间要使用的工作线程数。每个MOT引擎工作线程在自己的核上运行，通过将不同的表读入内存，可以并行处理不同的表。缺省值为3，可将此参数设置为可处理的核数。恢复后，将停止并杀死这些线程。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >有关配置的详细信息，请参阅[MOT恢复](MOT恢复.md)。
 
 -   **parallel_recovery_workers = 5**

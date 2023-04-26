@@ -42,12 +42,12 @@
     gs_dbmind component extract_log $GAUSSLOG/pg_log/dn_6001 sql_log.txt '%m %c %d %p %a %x %n %e' -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >若指定-d/-U参数，日志打印每条日志信息的前缀格式需包含%d、%u，若需要抽取事务，必须指定%p，详见log\_line\_prefix参数。max\_template\_num参数设置建议不超5000条，避免workload索引推荐执行时间过长。
 
 3.  将[1](#li541620573521)中设置的GUC参数还原为设置前的值。  
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >   
     >业务数据抽取完毕建议将上述GUC参数复原，否则容易导致日志文件膨胀。
 

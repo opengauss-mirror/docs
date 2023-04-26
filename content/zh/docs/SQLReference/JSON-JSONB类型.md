@@ -51,7 +51,7 @@ select '[1, 2, "foo", null]'::json;select '[]'::json;select '[1, 2, "foo", null,
 select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：**
+>![](public_sys-resources/icon-caution.png) **注意：**
 >
 >-   区分 'null'::json 和 null::json 是两个不同的概念，类似于字符串 str="" 和 str=null。
 >
@@ -105,7 +105,7 @@ JSON和JSONB的主要差异在于存储方式上的不同，JSONB存储的是解
         -   array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
         -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
 
-        >![](public_sys-resources/icon-caution.gif) **注意：** 
+        >![](public_sys-resources/icon-caution.png) **注意：** 
         >
         >object-jsonb类型内比较时，比较时使用的是格式整理后的最终结果进行比较，因此相对于我们直接的输入未必会很直观。
 

@@ -10,7 +10,7 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 
 初始化数据库时会生成大量的系统表和视图，其中绝大部分都对任何数据库用户开放查看权限。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >pg\_user\_status、pg\_auth\_history系统表权限只对初始化数据库用户和sysadmin用户开放。
 
 **生成的数据库**
@@ -384,6 +384,6 @@ zh_SG.gbk
 </tbody>
 </table>
 
-> ![](public_sys-resources/icon-note.gif) **说明：** 
+> ![](public_sys-resources/icon-note.png) **说明：** 
 > 资源池化下系统表存放在段页式中，unlogging表保持页式存储。
 

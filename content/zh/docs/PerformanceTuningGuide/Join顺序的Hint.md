@@ -22,7 +22,7 @@ leading((join_table_list))
 
 **join\_table\_list**为表示表join顺序的hint字符串，可以包含当前层的任意个表（别名），或对于子查询提升的场景，也可以包含子查询的hint别名，同时任意表可以使用括号指定优先级，表之间使用空格分隔。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
+>![](public_sys-resources/icon-notice.png) **须知：**   
 >表只能用单个字符串表示，不能带schema。  
 >表如果存在别名，需要优先使用别名来表示该表。  
 

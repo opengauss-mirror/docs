@@ -223,7 +223,7 @@
 
   用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 >涉及的参数说明可见[ALTER TABLE](../SQLReference/ALTER-TABLE.md)。
 

@@ -77,7 +77,7 @@
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   一旦提交操作完成，则不能再执行回滚操作。
 

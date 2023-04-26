@@ -77,7 +77,7 @@
 
   返回值类型：text。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >该函数为内部功能调用函数，不建议用户直接使用。
 

@@ -20,7 +20,7 @@ gs_dbmind set METADATABASE password xxxxx -c confpath
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >+ 该命令对于字符串是大小写敏感的，如果输错则可能出现执行过程错误。
 >+ 由于set子命令涉及的参数值类型很多，故只会对设置值进行初步检查，用户需要保证输入值的内容正确，如某些值应为正整数而非负数。

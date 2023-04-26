@@ -17,7 +17,7 @@
    int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
    ```
 
-   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >![](public_sys-resources/icon-note.png) **说明：** 
    >
    >-   数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，事务块中不支持vacuum操作。如果其中有一个语句失败，那么整个请求都将会被回滚。
    >-   使用Statement执行多语句时应以“;”作为各语句间的分隔符，存储过程、函数、匿名块不支持多语句执行;当preferQueryMode=simple，语句执行不走解析逻辑，此场景下无法使用";"作为多语句间的分隔符。
@@ -120,14 +120,14 @@ openGauss支持通过JDBC直接调用事先创建的存储过程，步骤如下�
     cstmt.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   很多的数据库类如Connection、Statement和ResultSet都有close\(\)方法，在使用完对象后应把它们关闭。要注意的是，Connection的关闭将间接关闭所有与它关联的Statement，Statement的关闭间接关闭了ResultSet。
     >-   一些JDBC驱动程序还提供命名参数的方法来设置参数。命名参数的方法允许根据名称而不是顺序来设置参数，若参数有默认值，则可以不用指定参数值就可以使用此参数的默认值。即使存储过程中参数的顺序发生了变更，也不必修改应用程序。目前openGauss数据库的JDBC驱动程序不支持此方法。
     >-   openGauss数据库不支持带有输出参数的函数，也不支持存储过程和函数参数默认值。
     >-   myConn.prepareCall("{? = CALL TESTPROC(?,?,?)}")，执行存储过程绑定参数时，可以按照占位符的顺序绑定参数，注册第一个参数为出参，也可以按照存储过程中的参数顺序绑定参数，注册第四个参数为出参，上述用例为此场景，注册第四个参数为出参。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   当游标作为存储过程的返回值时，如果使用JDBC调用该存储过程，返回的游标将不可用。
     >-   存储过程不能和普通SQL在同一条语句中执行。
@@ -182,7 +182,7 @@ openGauss支持通过JDBC直接调用事先创建的存储过程，步骤如下�
     cs.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   oracle兼容模式开启参数后，调用存储过程必须使用\{call proc\_name\(?,?,?\)\}形式调用，调用函数必须使用\{? = call func\_name\(?,?\)\}形式调用（等号左侧的“？”为函数返回值的占位符，用于注册函数返回值）。
     >-   参数behavior\_compat\_options='proc\_outparam\_override'行为变更后，业务需要重新建立连接，否则无法正确调用存储过程和函数。
@@ -237,7 +237,7 @@ end;
     pstmt.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >在实际的批处理过程中，通常不终止批处理程序的执行，否则会降低数据库的性能。因此在批处理程序时，应该关闭自动提交功能，每几行提交一次。关闭自动提交功能的语句为：    conn.setAutoCommit\(false\);
 
 
