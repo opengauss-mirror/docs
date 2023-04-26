@@ -76,7 +76,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     连接成功后，系统显示类似如下信息：
 
     ```
-    gsql ((GaussDB Kernel VxxxRxxxCxxopenGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
