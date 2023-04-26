@@ -74,7 +74,7 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
     -   在线重建分区表索引会将“不可用”分区表索引变为“可用”，将分区表索引内的“不可用”分区索引变为“可用”。
     -   在线重建分区表索引特定分区索引会将“不可用”分区索引变为“可用”。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   重建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建新索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
     
@@ -97,7 +97,7 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 
     需要重建索引的索引、表、数据库的名称。表和索引可以有模式修饰。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >REINDEX DATABASE和SYSTEM只能重建当前数据库的索引，所以name必须和当前数据库名称相同。
 
 -   **FORCE**
@@ -115,7 +115,7 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
     -   如果前面是REINDEX INTERNAL TABLE，则这里应该指定列存分区表的分区的名称。
 
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行。
 
 ## 示例<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_saeb969f6c052407e98c22893941c9440"></a>

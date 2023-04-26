@@ -2,7 +2,7 @@
 
 介绍与内存相关的参数设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >这些参数只能在数据库服务重新启动后生效。
 
 ## memorypool\_enable<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s630c23ad11044fafae4ed851bc89169a"></a>
@@ -41,7 +41,7 @@
 
 **默认值：**on
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >
 >-   若max\_process\_memory-shared\_buffers-cstore\_buffers-元数据少于2G，openGauss强制把enable\_memory\_limit设置为off。其中元数据是openGauss内部使用的内存和部分并发参数，如max\_connections、thread\_pool\_attr、max\_prepared\_transactions等参数相关。
 >
@@ -61,7 +61,7 @@
 
 数据库节点上该数值需要根据系统物理内存及单节点部署主数据库节点个数决定。建议计算公式如下：\(物理内存大小 - vm.min\_free\_kbytes\) \\\* 0.7 / \(1 + 主节点个数\)。该系数的目的是尽可能保证系统的可靠性，不会因数据库内存膨胀导致节点OOM。这个公式中提到vm.min\_free\_kbytes，其含义是预留操作系统内存供内核使用，通常用作操作系统内核中通信收发内存分配，至少为5%内存。即，max\_process\_memory = 物理内存 \* 0.665 / \(1 + 主节点个数\)。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >当该值设置不合理，即大于服务器物理内存，可能导致操作系统OOM问题。
 
 ## enable\_memory\_context\_control<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_section83355314353"></a>
@@ -178,7 +178,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值：**10
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >一般不需要对事务显式进行PREPARE操作，如果业务对事务进行显示PREPARE操作，为避免在准备步骤失败，需要调大该值，大于需要进行PREPARE业务的并发数。
 
@@ -213,7 +213,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值：**0
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   如果设置的query\_mem值大于0，在生成执行计划时，优化器会将作业的估算内存调整为该值。
 >
@@ -229,7 +229,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值：**0
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   如果设置的query\_max\_mem值大于0，当作业执行时所使用内存超过该值时，将报错退出。
 >
@@ -257,7 +257,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >同样，多个正在运行的会话可能会同时进行表的局部排序操作。因此，使用的总内存可能是psort\_work\_mem的几倍。
 
@@ -271,7 +271,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >max\_loaded\_cudesc设置过高时，有可能引起内存分配不足。
 
@@ -367,7 +367,7 @@ resilience_memory_reject_percent = '70,90'
 
 表示内存使用超过最大内存上限的90%后禁止新连接接入并kill堆积的会话，kill会话过程中内存恢复到最大内存的70%以下时停止kill会话并允许新连接接入。
 
-> ![](public_sys-resources/icon-notice.gif) **须知：**
+> ![](public_sys-resources/icon-notice.png) **须知：**
 >
 > - 最大动态内存和已使用的动态内存可以通过gs_total_memory_detail视图查询获得，最大动态内存：max_dynamic_memory，已使用的动态内存：dynamic_used_memory。
 > - 该参数如果设置的百分比过小，则会频繁触发内存过载逃生流程，会使正在执行的会话被强制退出，新连接短时间接入失败，需要根据实际内存使用情况慎重设置。

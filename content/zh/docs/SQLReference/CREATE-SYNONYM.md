@@ -37,7 +37,7 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
 
     取值范围：字符串，要符合标识符的命名规范。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     > 
     >object\_name可以是不存在的对象名称。
 

@@ -143,7 +143,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     当未指定时，PUBLIC为默认值，PUBLIC表示影响所有数据库用户，可以指定多个受影响的数据库用户。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >系统管理员不受行访问控制特性影响。
 
 

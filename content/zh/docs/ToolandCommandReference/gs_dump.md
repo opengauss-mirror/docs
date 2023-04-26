@@ -81,7 +81,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过“-F”或者“-
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 可以使用gs\_dump程序将文件压缩为目录归档或自定义归档导出文件，减少导出文件的大小。生成目录归档或自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。
 
 ## 注意事项<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
@@ -97,7 +97,7 @@ gs\_dump可以创建四种不同的导出文件格式，通过“-F”或者“-
 gs_dump [OPTION]... [DBNAME]
 ```
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 “DBNAME”前面不需要加短或长选项。“DBNAME”指定要连接的数据库。
 例如：
 不需要-d，直接指定“DBNAME”。
@@ -193,7 +193,7 @@ export PGDATABASE=postgres
 
     只转储与模式名称匹配的模式，此选项包括模式本身和所有它包含的对象。如果该选项没有指定，所有在目标数据库中的非系统模式将会被转储。写入多个-n选项来选择多个模式。此外，根据gsql的\\d命令所使用的相同规则，模式参数可被理解成一个pattern，所以多个模式也可以通过在该pattern中写入通配符来选择。使用通配符时，注意给pattern打引号，防止shell扩展通配符。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**
+    ![](public_sys-resources/icon-note.png) **说明：**
 
     -   当-n已指定时，gs\_dump不会转储已选模式所附着的任何其他数据库对象。因此，无法保证某个指定模式的转储结果能够自行成功地储存到一个空数据库中。
 
@@ -253,7 +253,7 @@ export PGDATABASE=postgres
 
     当使用-t时，-n和-N没有任何效应，这是因为由-t选择的表的转储不受那些选项的影响。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**  
+    ![](public_sys-resources/icon-note.png) **说明：**  
     -   -t参数选项个数必须小于等于100。
 
     -   如果-t参数选项个数大于100，建议使用参数--include-table-file来替换。
@@ -299,7 +299,7 @@ export PGDATABASE=postgres
 
     指定不需要dump的表文件。
 
-    ![](public_sys-resources/icon-note.gif) **说明：** 
+    ![](public_sys-resources/icon-note.png) **说明：** 
     同--include-table-file，其内容格式如下：
     schema1.table1
     schema2.table2
@@ -373,7 +373,7 @@ export PGDATABASE=postgres
 
     不转储订阅。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**
+    ![](public_sys-resources/icon-note.png) **说明：**
 
     -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
@@ -426,7 +426,7 @@ export PGDATABASE=postgres
   - 密钥长度为8~16字符。
   - 至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为~!@#$%^&*()-_=+\|[]{};:,<.>/?）四类字符中的三类字符。
 
-  ![](public_sys-resources/icon-note.gif) **说明：**  
+  ![](public_sys-resources/icon-note.png) **说明：**  
 
   - 使用gs_dump工具进行加密导出时，仅支持plain格式导出。通过-F plain导出的数据，需要通过gsql工具进行导入，且如果以加密方式导入，在通过gsql导入时，需要指定--with-key参数。
 
@@ -467,7 +467,7 @@ export PGDATABASE=postgres
     ```
 
 
-![](public_sys-resources/icon-note.gif) **说明：**  
+![](public_sys-resources/icon-note.png) **说明：**  
 
 -   -s/--schema-only和-a/--data-only不能同时使用。  
 
@@ -544,7 +544,7 @@ tar归档形式的文件大小不得超过8GB（tar文件格式的固有限制�
 
 示例中“Bigdata@123”表示数据库用户密码；“backup/MPPDB\_backup.sql”表示导出的文件，其中backup表示相对于当前目录的相对目录；“37300”表示数据库服务器端口；“postgres”表示要访问的数据库名。
 
-![](public_sys-resources/icon-note.gif) **说明：** 
+![](public_sys-resources/icon-note.png) **说明：** 
 导出操作时，请确保该目录存在并且当前的操作系统用户对其具有读写权限。
 
 示例1：执行gs\_dump，导出postgres数据库全量信息，导出的MPPDB\_backup.sql文件格式为纯文本格式。

@@ -165,7 +165,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
   当设置了分隔符后，使用MySQL 风格的创建触发器的语法，trigger_body 的格式是按照MySQL 的格式规定书写的，declare 段落需要写在begin ... end段落之间。
   
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >关于触发器种类：
   >

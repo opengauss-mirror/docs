@@ -199,7 +199,7 @@
 
 **默认值**：90
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >日志压缩能力受限于内存限制，最多只能检测到30000个日志文件。总日志量超过30000个文件时，则无法保证日志能被正常压缩及删除。可以通过调整log\_saved\_days和log\_threshold\_check\_interval快速清理已压缩日志文件。
 
 ## agent\_phony\_dead\_check\_interval<a name="section13310143113916"></a>
@@ -295,7 +295,7 @@
 -   off、no、false、0：表示不启用ssl。
 -   **默认值**：on
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >出于安全性考虑，建议不要关闭该配置。关闭后cm将**不使用**加密通信，所有信息明文传播，可能带来窃听、篡改、冒充等安全风险。
 
 
@@ -352,7 +352,7 @@
 **配置样例**：
 '{"on_start":"/dir/on_start.sh","on_stop":"/dir/on_stop.sh","on_failover":"/dir/on_failover.sh","on_switchover":"/dir/on_switchover.sh"}'
 
->![](public_sys-resources/icon-caution.gif) **注意：**
+>![](public_sys-resources/icon-caution.png) **注意：**
 >由于CM内部对各事件的执行均是异步执行，即将事件置于后台执行，所以CM在调用用户自定义的触发器脚本时，有可能事件还尚未执行完成，所以用户自定义触发器脚本中如果是需要等待事件完成后才执行动作的话，则需要在脚本中添加对应的状态检查，以确保事件完成。
 
 ## db\_service\_vip

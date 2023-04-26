@@ -21,7 +21,7 @@
   ALTER DATABASE schema_name [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ];
   ```
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
   -   使用该语法时，语法等效于ALTER SCHEMA。

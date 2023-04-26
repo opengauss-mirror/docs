@@ -38,7 +38,7 @@ CREATE RESOURCE POOL pool_name
 
     控制组名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   设置控制组名称时，语法可以使用双引号，也可以使用单引号。
     >
@@ -76,7 +76,7 @@ CREATE RESOURCE POOL pool_name
 
     在普通场景下，普通用户的mem\_percent范围为0-100，默认值为0。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >mem\_percent和memory\_limit同时指定时，只有mem\_percent起作用。
 
 -   **io\_limits**
@@ -93,7 +93,7 @@ CREATE RESOURCE POOL pool_name
 
     包括三档可选：Low、Medium和High。不控制时可设置为None。默认为None。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >io\_limits和io\_priority的设置都仅对复杂作业有效。包括批量导入（INSERT INTO SELECT、COPY FROM、CREATE TABLE AS等），单DN数据量大约超过500MB的复杂查询和VACUUM FULL等操作。
 
 -   **nodegroup**
@@ -110,7 +110,7 @@ CREATE RESOURCE POOL pool_name
 
     单机下此参数无用。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   nodegroup必须是存在的逻辑集群，不能是elastic\_group和安装的nodegroup \(group\_version1\)。
     >

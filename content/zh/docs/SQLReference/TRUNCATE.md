@@ -73,7 +73,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
     取值范围：需要进行删除数据分区的分区键的取值范围。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >使用PARTITION FOR子句时，partition\_value所在的整个分区会被清空。
 
 

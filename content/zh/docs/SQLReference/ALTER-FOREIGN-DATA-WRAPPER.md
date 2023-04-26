@@ -28,7 +28,7 @@ ALTER FOREIGN DATA WRAPPER name
 
     指定外部数据包装器不再具有处理器函数。
 
-	>![](public_sys-resources/icon-notice.gif) **须知：** 
+	>![](public_sys-resources/icon-notice.png) **须知：** 
     >
     > 不能访问使用没有处理器的外部数据包装器的外部表。
 
@@ -36,7 +36,7 @@ ALTER FOREIGN DATA WRAPPER name
 
     为外部数据包装器指定一个新的验证器函数。
 
-	>![](public_sys-resources/icon-notice.gif) **须知：** 
+	>![](public_sys-resources/icon-notice.png) **须知：** 
     >
     > 在修改验证器函数后，外部数据包装器，服务器和用户映射的选项可能会失效。在使用外部数据包装器之前，用户应确保这些选项是正确的。
 
