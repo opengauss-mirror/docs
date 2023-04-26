@@ -4,11 +4,11 @@
     
 ## 编译安装
 
-1. 编译安装openGauss。
+1. [编译安装openGauss](https://gitee.com/opengauss/openGauss-server#%E7%BC%96%E8%AF%91)。
 
-2. 将dolphin源码拷贝到openGauss源码contrib目录下。
+2. 将[dolphin源码](https://gitee.com/opengauss/Plugin/tree/master/contrib/dolphin)拷贝到openGauss-server源码的contrib目录下。
 
-3. 进去dolphin目录执行make install。
+3. 进入dolphin目录执行make install。
 
 4. 创建B库并使用初始用户连接B库。
 
