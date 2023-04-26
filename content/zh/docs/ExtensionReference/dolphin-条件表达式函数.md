@@ -54,7 +54,7 @@
   示例：
 
   ```
-  openGauss=# SELECT ifnull('hello');
+  openGauss=# SELECT isnull('hello');
   ?column?  
   --------
         f 
