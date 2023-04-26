@@ -72,7 +72,6 @@ Logical replication slot behavior parameters are mandatory and must be specified
     The value can be  **include-xids**,  **skip-empty-xacts**,  **include-timestamp**,  **only-local**,  **force-binary**,  **white-table-list**,  **standby-connection**,  **parallel-decode-num**,  **decode-style**, or  **sending-batch**.
 
     For details, see [pg\_logical\_slot\_peek\_changes](../SQLReference/logical-replication-functions.md) and [Example: Logic Replication Code](../Developerguide/example-logic-replication-code.md).
-    Link: https://docs.opengauss.org/en/docs/latest/docs/Developerguide/example-logic-replication-code.html
 
 -   -P, --plugin=PLUGIN
 
