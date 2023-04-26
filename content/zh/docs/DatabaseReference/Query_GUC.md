@@ -164,7 +164,34 @@ slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 >![](public_sys-resources/icon-caution.png) **注意：** 
 >由于快照有部分信息是来源于unique sql，所以开启自动淘汰的情况下，在生成wdr报告时，如果选择的起始快照和终止快照跨过了淘汰发生的时间，会导致无法生成wdr报告。
 
-## track\_stmt\_standby\_chain_\size<a name="section16119247614"></a>
+## enable\_slow\_query\_log（废弃）<a name="section19769519201515"></a>
+
+**参数说明：**是否将慢查询信息写到日志文件中，在该版本中已废弃。
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：**布尔型
+
+-   on：表示需要将慢查询信息写到日志文件中。
+-   off：表示不需要将慢查询信息写到日志文件中。
+
+**默认值**：on
+
+## query\_log\_file（废弃）<a name="zh-cn_topic_0059778787_s3226ae3209154e249928c24ec67c5809"></a>
+
+**参数说明：**GUC参数enable\_slow\_query\_log设置为ON，表示需要将慢查询记录写进日志文件中，query\_log\_file决定服务器慢查询日志文件的名称，仅sysadmin用户可以访问。通常日志文件名是按照strftime模式生成，因此可以用系统时间定义日志文件名，用%转义字符实现，在该版本中已废弃。
+
+该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](C:/Users/liyang/Desktop/openGauss/docs/content/docs-lite/zh/docs/DatabaseReference/public_sys-resources/icon-notice.gif) **须知：** 
+>
+>建议使用%转义字符定义日志文件名称，否则难以对日志文件进行有效的管理。
+
+**取值范围：**字符串
+
+**默认值：**slow\_query\_log-%Y-%m-%d\_%H%M%S.log
+
+## track\_stmt\_standby\_chain_size<a name="section16119247614"></a>
 
 **参数说明：**组合参数，控制备机快/慢SQL记录的最大占用内存与磁盘空间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
 
