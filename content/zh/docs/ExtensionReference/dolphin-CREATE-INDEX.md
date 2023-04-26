@@ -18,7 +18,8 @@
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
-    新增支持option的无序排列。
+-   新增支持option的无序排列。
+-   原始openGauss中，索引名是schema级别唯一的，创建索引时如果索引名重复了会报错。在dolphin插件中，如果GUC参数`dolphin.b_compatibility_mode`为on，当索引名重复时，会自动生成一个不重复的索引名做替代，并告警提示。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -196,6 +197,15 @@ openGauss=# create table cgin_create_test(a int, b text) with (orientation = col
 CREATE TABLE
 openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
 CREATE INDEX
+
+--索引名重复的场景，打开dolphin.b_compatibility_mode后，重复索引名将自动替换成其他不重复的名字
+openGauss=# set dolphin.b_compatibility_mode to on;
+SET
+openGauss=# create table t1(id int,index idx_id(id));
+CREATE TABLE
+openGauss=# create table t2(id int,index idx_id(id));
+WARNING:  index "idx_id" already exists, change index name to "t2_id_idx"
+CREATE TABLE
 ```
 
 ##全文索引
