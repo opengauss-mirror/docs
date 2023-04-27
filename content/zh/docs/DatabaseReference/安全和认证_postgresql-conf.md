@@ -72,7 +72,7 @@
 >![](public_sys-resources/icon-notice.png) **须知：**   
 >开启此参数需要同时配置ssl\_cert\_file、ssl\_key\_file和ssl\_ca\_file等参数及对应文件，不正确的配置可能会导致openGauss无法正常启动。  
 
-**默认值：**on
+**默认值：**off
 
 ## require\_ssl<a name="zh-cn_topic_0237124696_section1652594319820"></a>
 
