@@ -24,6 +24,7 @@ gs\_ctl参数可分为如下几类：
 -   member参数，详细请参见[表8](#table1055392110383)。
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
+-   copy参数，详细参见[表11](#table1451519418811)。
 
 **表 1**  option参数
 
@@ -112,6 +113,11 @@ gs\_ctl参数可分为如下几类：
 <tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>stack</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>获取gaussdb的调用栈。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>copy</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>基于共享存储的双中心容灾模式，进行xlog日志拷贝。</p>
 </td>
 </tr>
 </tbody>
@@ -318,7 +324,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-**表 6**  build参数
+**表 6**   build参数
 
 <a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>参数</p>
@@ -334,16 +340,17 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1966215010318"><a name="zh-cn_topic_0287275989_p1966215010318"></a><a name="zh-cn_topic_0287275989_p1966215010318"></a>指定重建备机的模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p887411245513"><a name="zh-cn_topic_0287275989_p887411245513"></a><a name="zh-cn_topic_0287275989_p887411245513"></a>mode的取值：</p>
-<p id="zh-cn_topic_0287275989_p13270172819514"><a name="zh-cn_topic_0287275989_p13270172819514"></a><a name="zh-cn_topic_0287275989_p13270172819514"></a>● full：通过全量镜像的方式重新同步 主机的数据目录。</p>
-<p id="zh-cn_topic_0287275989_p466319111169"><a name="zh-cn_topic_0287275989_p466319111169"></a><a name="zh-cn_topic_0287275989_p466319111169"></a>● incremental：通过解析Xlog日志获 取主备机差异的数据进行增量修复备机。</p>
-<div class="note" id="note885935410392"><a name="note885935410392"></a><a name="note885935410392"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p085915541394"><a name="p085915541394"></a><a name="p085915541394"></a>增量重建适用于主备双主等因日志造成的不一致场景。</p>
+<p id="zh-cn_topic_0287275989_p13270172819514"><a name="zh-cn_topic_0287275989_p13270172819514"></a><a name="zh-cn_topic_0287275989_p13270172819514"></a><li> full：通过全量镜像的方式重新同步 主机的数据目录。</li></p>
+<p></a><li> incremental：通过解析Xlog日志获 取主备机差异的数据进行增量修复备机。</li></p>
+<div class="note" id="note885935410392"><a name="note885935410392"></a><a name="note885935410392"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p085915541394"><a name="p085915541394"></a><a name="p085915541394"></a> <ul>- 增量重建适用于主备双主等因日志造成的不一致场景。 </ul></p>
 </div></div>
-<p id="zh-cn_topic_0287275989_p643515574347"><a name="zh-cn_topic_0287275989_p643515574347"></a><a name="zh-cn_topic_0287275989_p643515574347"></a>● 增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</p>
-<p id="zh-cn_topic_0287275989_p105751436553"><a name="zh-cn_topic_0287275989_p105751436553"></a><a name="zh-cn_topic_0287275989_p105751436553"></a>● 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</p>
-<p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● auto（不指定）：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全 量。</p>
-<p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a></p>
-    <p id="zh-cn_topic_0287275989_p381916183516"><a name="zh-cn_topic_0287275989_p381916183516"></a><a name="zh-cn_topic_0287275989_p381916183516"></a>● standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C参数指定镜像的ip和port。</p>
-<p id="zh-cn_topic_0287275989_p106721111857"><a name="zh-cn_topic_0287275989_p106721111857"></a><a name="zh-cn_topic_0287275989_p106721111857"></a>默认值：auto</p>
+<p id="zh-cn_topic_0287275989_p643515574347"></a> <ul>-  增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</ul></p>
+<p id="zh-cn_topic_0287275989_p105751436553"></a><ul>- 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</ul></p>
+<p ></a><li> auto（不指定）：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全量。</li></p>
+ <p>  <li> standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C参数指定镜像的ip和port。</p>
+ <p><li>  copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。 </p>
+<p><li>  copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</p>
+<p> 默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
 </div></div>
 </td>
@@ -526,6 +533,32 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p17282423191511"><a name="p17282423191511"></a><a name="p17282423191511"></a>用于指定需要获取调用栈的线程的lwtid。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p528252331511"><a name="p528252331511"></a><a name="p528252331511"></a>正整数。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+**表 12**  copy参数
+
+<a name="table1451519418811"></a>
+
+<table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p14281162351513"><a name="p14281162351513"></a><a name="p14281162351513"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p8281023191520"><a name="p8281023191520"></a><a name="p8281023191520"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row182819238154"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p42828237159"><a name="p42828237159"></a><a name="p42828237159"></a>-Q</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p17282423191511"><a name="p17282423191511"></a><a name="p17282423191511"></a>指定xlog日志拷贝方向。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p528252331511"><a name="p528252331511"></a><a name="p528252331511"></a>
+<ul><li>  copy_from_local：从本地往共享存储上拷贝。</li>
+<li> copy_from_share：从共享存储往本地存储上拷贝。</li>
+<li>force_copy_from_local：强制从本地往共享存储上拷贝。</li></ul></p>
 </td>
 </tr>
 </tbody>
