@@ -48,7 +48,7 @@ gs_dbmind component xtuner recommend -f connection.json
 则可以生成诊断报告如下：
 
 **图 1**  recommend模式生成的报告示意图<a name="fig49748416171"></a>  
-![](figures/recommend模式生成的报告示意图.png "recommend模式生成的报告示意图")
+![](figures/report-generated-in-recommend-mode.png "recommend模式生成的报告示意图")
 
 在上述报告中，推荐了该环境上的数据库参数配置，并进行了风险提示。报告同时生成了当前workload的特征信息，其中有几个特征是比较有参考意义的：
 
