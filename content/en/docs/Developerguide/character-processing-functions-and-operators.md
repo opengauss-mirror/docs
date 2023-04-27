@@ -547,29 +547,6 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
-
-    Description: obtains the number of substrings used for matching.
-
-    Parameter description:
-
-    -   **string**: source character string used for matching.
-    -   **pattern**: regular expression pattern string used for matching.
-    -   **position**: sequence number of the character to be matched from the source character string. This parameter is optional. The default value is  **1**.
-    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n' **character by default. The meaning of option  **n**  is the same as that of option  **m**.
-
-    Return type: int
-
-    Example:
-
-    ```
-    openGauss=# SELECT regexp_count('foobarbaz','b(..)', 5) AS RESULT;
-    result
-    --------
-    1
-    (1 row)
-    ```
-
 -   regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
 
     Description: obtains the position \(starting from 1\) of the substring that meets the matching condition. If no substring is matched,  **0**  is returned.
