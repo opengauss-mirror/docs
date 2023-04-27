@@ -26,7 +26,7 @@
 >如果在tune模式下，使用深度强化学习算法，要求必须有一个训练好的模型，且要求**训练该模型时的参数与进行调优时的参数列表（包括max与min）必须一致**。
 
 **图 1**  X-Tuner结构图<a name="fig137427353816"></a>  
-![](figures/X-Tuner结构图.png "X-Tuner结构图")
+![](figures/x-tuner-structure.png "X-Tuner结构图")
 
 X-Tuner的整体架构如[图1 X-Tuner 结构图](#fig137427353816)所示，系统可以分为：
 
