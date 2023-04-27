@@ -101,7 +101,7 @@ select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"f
         -   num-json类型：数值比较
         -   bool-json类型：true \> false
         -   array-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个元素。
-        -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，在比较值。
+        -   object-jsonb类型：长度长的 \> 长度短的，长度相等则依次比较每个键值对，先比较键，再比较值。
 
         >![](public_sys-resources/icon-caution.gif) **注意：** 
         >
