@@ -164,13 +164,22 @@ $(function ($) {
         complete: function (res) {
           // 若页面不存在跳转法律声明页面
           if (res.status === 404) {
-            window.open(
-              location.origin +
-                `/${lang}/docs/${
-                  href.split("/")[5]
-                }/docs/Releasenotes/%E6%B3%95%E5%BE%8B%E5%A3%B0%E6%98%8E.html`,
-              "_self"
-            );
+            let version = href.split("/")[5];
+            const versionData = lang === "zh" ? versionObjZh : versionObjEn;
+            if (version.includes("-lite")) {
+              version = version.split("-")[0];
+              window.open(
+                location.origin +
+                  `/${lang}/docs/${version}-lite/${versionData[version].homeLitePath}`,
+                "_self"
+              );
+            } else {
+              window.open(
+                location.origin +
+                  `/${lang}/docs/${version}/${versionData[version].homePath}`,
+                "_self"
+              );
+            }
           } else {
             window.open(href, "_self");
           }
@@ -206,16 +215,11 @@ $(function ($) {
         switchLiteEnterprise(targetUrl);
       }
     });
-    // 低版本不出现企业版与轻量版选择
+    // 查看该版本是否有轻量版，有轻量版才显示切换按钮
     (function switchVersionHidden() {
-      const version = location.pathname.split("/")[3];
-      if (
-        version.includes("3.0.0") ||
-        version.includes("3.1.0") ||
-        version.includes("3.1.1") ||
-        version.includes("5.0.0") ||
-        version.includes("latest")
-      ) {
+      const version = location.pathname.split("/")[3].split("-")[0];
+      const versionData = lang === "zh" ? versionObjZh : versionObjEn;
+      if (versionData[version].homeLitePath) {
         $(".switch-version").addClass("switch-show");
       }
     })();
