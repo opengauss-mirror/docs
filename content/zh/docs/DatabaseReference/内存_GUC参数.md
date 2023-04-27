@@ -346,6 +346,32 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值**：256MB
 
+## memory\_trace\_level<a name="section198622451396"></a>
+
+**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](设置参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：枚举型
+
+-   none：表示不记录内存申请信息。
+-   level1：动态内存使用超过最大动态内存的90%后，会记录以下信息，并将记录的内存信息保存在$GAUSSLOG/mem\_log目录下。
+    -   全局内存概况。
+    -   instance，session，thread三种类型的所有内存上下文中内存占用前20的内存上下文的内存使用情况。
+    -   每个内存上下文的totalsize、freesize字段。
+
+-   level2：动态内存使用超过最大动态内存的90%后，会记录以下信息，并将记录的内存信息保存在$GAUSSLOG/mem\_log目录下。
+    -   全局内存概况。
+    -   instance，session，thread三种类型的所有内存上下文中内存占用前20的内存上下文的内存使用情况。
+    -   每个内存上下文的totalsize，freesize字段。
+    -   每个内存上下文上所有内存申请的详细信息，包含申请内存所在的文件，行号和大小。
+
+**默认值**：level1
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   该参数设置为level2后，会记录每个内存上下文的内存申请详情（file，line，size字段），会对性能影响较大，需慎重设置。
+>-   记录的内存快照信息可以通过系统函数gs\_get\_history\_memory\_detail\(cstring\)查询，函数详情请参考《开发者指南》的“SQL参考 \> 函数和操作符 \> 统计信息函数”章节查询。
+>-   记录的内存上下文是经过将同一类型所有重名的内存上下文进行汇总之后得到的。
+
 ##  resilience_memory_reject_percent
 
 **参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](https://gitee.com/opengauss/docs/blob/33dd523b07ca669b90346b9831510ee891c05069/content/docs-lite/zh/docs/DeveloperGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
