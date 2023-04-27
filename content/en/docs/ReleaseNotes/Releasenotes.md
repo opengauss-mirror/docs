@@ -1,3 +1,3 @@
-# Release Notes 
+# Release Notes
 
-This document describes the release notes of openGauss 5.0.0. 
+This document is the release notes of openGauss 5.0.0.

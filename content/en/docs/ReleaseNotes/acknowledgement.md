@@ -1,4 +1,3 @@
 # Acknowledgement<a name="EN-US_TOPIC_0289899198"></a>
 
-We sincerely thank all the members who participated in and assisted in the openGauss project. It is your hard work to make the version released successfully and provide the possibility for the better development of openGauss.
-
+We sincerely thank all the members who participated in and assisted in the openGauss project, including Huawei, ENMOTECH, VASTDATA, China Unicom, GBASE, Greater Bay Area National Center of Technology Innovation (GBA NCTI), iSoftStone, Beijing SuperMap Software Co., Ltd., China Minsheng Banking, SHENTONGDATA, School of Computer Science and Engineering of UESTC, School of Information Engineering of Ningxia University, School of Software Engineering of SCUT, School of Computer Science and Engineering of Sun Yat-sen University, School of Information Engineering of Minzu University of China, Xi'an Rita Network Technology Co., Ltd., SphereEx, and SANGFOR. It is your hard work to make the version released successfully and provide the possibility for the better development of openGauss.
