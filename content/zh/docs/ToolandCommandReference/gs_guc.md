@@ -261,6 +261,7 @@ gs\_guc工具由操作系统用户omm执行。
   >-   该参数必须与set/reload一起使用，且-Z只支持datanode。
   >-   该参数不支持与-D一起使用。
   >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >-   --ignore-node必须在-N all时才可生效。
 
 -   -c parameter
 
