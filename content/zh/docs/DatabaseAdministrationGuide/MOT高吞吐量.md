@@ -16,7 +16,7 @@ MOT高吞吐量测试结果如下。
     MOT用橙色表示，基于磁盘的表用蓝色表示。
 
     **图 1**  Arm/鲲鹏2路128核性能基准<a name="fig37538044"></a>  
-    ![](figures/Arm-鲲鹏2路128核性能基准.png "Arm-鲲鹏2路128核性能基准")
+    ![](figures/Arm-Kunpeng-2-way-128-core-performance-benchmark.png "Arm-鲲鹏2路128核性能基准")
 
     结果表明：
 
@@ -31,7 +31,7 @@ MOT高吞吐量测试结果如下。
     下图是华为Arm/鲲鹏服务器2路128核的单核TPC-C基准性能/吞吐量测试结果。同样地，一共进行了四类测试：
 
     **图 2**  Arm/鲲鹏2路128核的单核性能标杆<a name="fig5673583"></a>  
-    ![](figures/Arm-鲲鹏2路128核的单核性能标杆.png "Arm-鲲鹏2路128核的单核性能标杆")
+    ![](figures/Arm-Kunpeng-2-way-128-core-single-core-performance-benchmark.png "Arm-鲲鹏2路128核的单核性能标杆")
 
     结果表明，正如预期的那样，在所有情况下，MOT的单核性能明显高于基于磁盘的表。相比单节点（无高可用性、无复制），在有复制需求的生产级（高可用性）服务器（主备节点）上，使用MOT的好处更显著。
 
@@ -41,7 +41,7 @@ MOT高吞吐量测试结果如下。
 下面通过单连接数的tpmC来展示MOT出色的并发控制性能。
 
 **图 3**  Arm/鲲鹏4路256核性能基准<a name="fig31033795"></a>  
-![](figures/Arm-鲲鹏4路256核性能基准.png "Arm-鲲鹏4路256核性能基准")
+![](figures/Arm-Kunpeng-4-way-128-core-performance-benchmark.png "Arm-鲲鹏4路256核性能基准")
 
 结果表明，随着核数增多，性能也显著提高，在768核时性能达到480万tpmC的峰值。
 
@@ -52,7 +52,7 @@ MOT高吞吐量测试结果如下。
 下面通过比较基于磁盘的表和MOT之间单连接数的tpmC，来展示MOT出色的并发控制性能。本次测试以8路384核x86服务器为例。橙色表示MOT的结果。
 
 **图 4**  8路384核x86服务器性能基准<a name="fig35990092"></a>  
-![](figures/8路384核x86服务器性能基准.png "8路384核x86服务器性能基准")
+![](figures/8-way-384-core-x86-server-performance-benchmark.png "8路384核x86服务器性能基准")
 
 结果表明，在386核服务器上，MOT的性能明显优于基于磁盘的表，并且单核性能非常高，达到300万tpmC/核。
 
@@ -61,5 +61,5 @@ MOT高吞吐量测试结果如下。
 在4路96核服务器上，MOT实现了390万tpmC。下图展示了高效MOT的单核性能达到4万tpmC/核。
 
 **图 5**  4路96核服务器性能基准<a name="fig33381819"></a>  
-![](figures/4路96核服务器性能基准.png "4路96核服务器性能基准")
+![](figures/4-way-96-core-server-performance-benchmark.png "4路96核服务器性能基准")
 
