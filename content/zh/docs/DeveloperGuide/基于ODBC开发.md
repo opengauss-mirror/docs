@@ -15,7 +15,7 @@ ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公�
 ODBC的系统结构参见[图1](#fig1255101034110)。
 
 **图 1**  ODBC系统机构<a name="fig1255101034110"></a>  
-![](figures/ODBC系统机构.png "ODBC系统机构")
+![](figures/ODBC-System-Organization.png "ODBC系统机构")
 
 openGauss目前在以下环境中提供对ODBC3.5的支持。
 
