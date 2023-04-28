@@ -222,14 +222,15 @@
 
     取值范围：已经创建的逻辑数据库名称。
 
--   --ignore-node=NODES
+- --ignore-node=NODES
 
-    需要忽略的主机名称。
+  需要忽略的主机名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
-    >-   该参数不支持与-D一起使用。
-    >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
+  >-   该参数不支持与-D一起使用。
+  >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >-   --ignore-node必须在-N all时才可生效。
 
 -   -c parameter
 
