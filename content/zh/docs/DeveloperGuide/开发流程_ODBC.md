@@ -1,7 +1,7 @@
 # 开发流程<a name="ZH-CN_TOPIC_0244721237"></a>
 
 **图 1**  ODBC开发应用程序的流程<a name="zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/ODBC开发应用程序的流程.png "ODBC开发应用程序的流程")
+![](figures/The-process-of-developing-application-programs-using-ODBC.png "ODBC开发应用程序的流程")
 
 ## 开发流程中涉及的API<a name="zh-cn_topic_0237120409_zh-cn_topic_0059778957_sc80403b34b784a2cbb2e52f9e00c3f7e"></a>
 
