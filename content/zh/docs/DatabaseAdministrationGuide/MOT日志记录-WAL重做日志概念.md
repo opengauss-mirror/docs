@@ -40,7 +40,7 @@ MOT全面集成openGauss的封装日志记录设施。除持久性外，这种�
     当事务结束时，同步重做日志处理程序（SynchronousRedoLogHandler）序列化事务缓冲区，并写入XLOG iLogger实现。
 
     **图 1**  同步日志记录<a name="fig25836861"></a>  
-    ![](figures/同步日志记录.png "同步日志记录")
+    ![](figures/Synchronize-logging.png "同步日志记录")
 
     **总结**
 
@@ -76,7 +76,7 @@ MOT全面集成openGauss的封装日志记录设施。除持久性外，这种�
     4种颜色分别代表4个NUMA节点。因此，每个NUMA节点都有自己的内存日志，允许多个连接的组提交。
 
     **图 2**  组提交——具有NUMA感知<a name="fig34015509"></a>  
-    ![](figures/组提交-具有NUMA感知.png "组提交-具有NUMA感知")
+    ![](figures/Group-submission-with-NUMA-awareness.png "组提交-具有NUMA感知")
 
     **总结**
 
@@ -102,7 +102,7 @@ MOT全面集成openGauss的封装日志记录设施。除持久性外，这种�
     在事务提交时，事务缓冲区被移到集中缓冲区（指针分配，而不是数据副本），并为事务分配一个新的事务缓冲区。一旦事务缓冲区移动到集中缓冲区，且事务线程不被阻塞，事务就会被释放。实际写入日志使用Postgres WALWRITER线程。当WALWRITER计时器到期时，它首先调用异步重做日志处理程序（通过注册的回调）来写缓冲区，然后继续其逻辑，并将数据刷新到XLOG中。
 
     **图 3**  异步日志记录<a name="fig44824869"></a>  
-    ![](figures/异步日志记录.png "异步日志记录")
+    ![](figures/Asynchronous-logging.png "异步日志记录")
 
     **总结**
 
@@ -115,7 +115,7 @@ MOT全面集成openGauss的封装日志记录设施。除持久性外，这种�
     下面将详细介绍内储存引擎模块中与持久化相关的各个组件的设计细节。
 
     **图 4**  三种日志记录选项<a name="fig48696192"></a>  
-    ![](figures/三种日志记录选项.png "三种日志记录选项")
+    ![](figures/Three-logging-options.png "三种日志记录选项")
 
 
 重做日志组件由使用内储存引擎的后端线程和WAL编写器使用，以便持久化其数据。检查点通过Checkpoint管理器执行，由Postgres的Checkpointer触发。
@@ -132,7 +132,7 @@ MOT全面集成openGauss的封装日志记录设施。除持久性外，这种�
 
 
 **图 5**  单事务日志记录<a name="fig28147941"></a>  
-![](figures/单事务日志记录.png "单事务日志记录")
+![](figures/Single-transaction-logging.png "单事务日志记录")
 
 并行日志记录由MOT和磁盘引擎执行。但是，MOT引擎通过每个事务的日志缓冲区、无锁准备和单个日志记录增强了这种设计。
 

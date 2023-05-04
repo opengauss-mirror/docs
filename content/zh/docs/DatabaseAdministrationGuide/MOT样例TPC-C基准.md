@@ -163,7 +163,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
 
 **图 1**  详细结果报告<a name="fig49333891"></a>  
-![](figures/详细结果报告.png "详细结果报告")
+![](figures/Detailed-Results-Report.png "详细结果报告")
 
 ![](figures/zh-cn_image_0280525217.png)
 
@@ -178,5 +178,5 @@ BenchmarkSQL收集详细的性能统计数据和操作系统性能数据（如�
 下图展示了近乎线性的可扩展性：
 
 **图 2**  华为TaiShan 2480 MOT TPC-C测试结果<a name="fig6118042"></a>  
-![](figures/华为TaiShan-2480-MOT-TPC-C测试结果.png "华为TaiShan-2480-MOT-TPC-C测试结果")
+![](figures/Huawei-TaiShan-2480-MOT-TPC-C-Test-Results.png "华为TaiShan-2480-MOT-TPC-C测试结果")
 

@@ -6,5 +6,5 @@
 -   CPU利用率（%）：CPU利用率由蓝色线条和右侧的Y轴**CPU%**表示。
 
 **图 1**  资源利用率性能基准<a name="fig7436496"></a>  
-![](figures/资源利用率性能基准.png "资源利用率性能基准")
+![](figures/Resource-utilization-performance-benchmark.png "资源利用率性能基准")
 
