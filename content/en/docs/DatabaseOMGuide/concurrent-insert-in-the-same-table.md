@@ -1,4 +1,4 @@
-# Concurrent INSERT in the Same table<a name="EN-US_TOPIC_0242370304"></a>
+# Concurrent INSERT in the Same Table<a name="EN-US_TOPIC_0242370304"></a>
 
 Transaction T1:
 
