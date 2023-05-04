@@ -2,7 +2,7 @@
 
 用于记录PLPGSQL对象（存储过程、函数、包、包体）编译相关信息，具体内容见下列字段描述。
 
-打开plsql\_show\_all\_error参数后，会把成功或失败的PLPGSQL对象编译信息记录在此表中，如果关闭plsql\_show\_all\_error参数则只会将正确的编译相关信息插入此表中。
+无论PLPGSQL对象编译成功或失败，均会把编译信息记录在此表中。
 
 > ![](public_sys-resources/icon-caution.gif) **注意：** 
 >
