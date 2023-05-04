@@ -732,6 +732,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
    ```
    rm -rf primary_dir/*
+   export DSS_MAINTAIN=TRUE
    dssserver -D $DSS_HOME &
    ```
 
@@ -739,6 +740,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
    ```
    gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
+   export DSS_MAINTAIN=FALSE
    ```
 
 10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
@@ -749,7 +751,9 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     ```
     rm -rf standby_dir/*
+    export DSS_MAINTAIN=TRUE
     dssserver -D $DSS_HOME &
+    export DSS_MAINTAIN=FALSE
     ```
 
 13. 在备机执行初始化操作。
