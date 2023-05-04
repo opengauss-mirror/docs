@@ -139,6 +139,13 @@ body {
 } */
 #docstreeview > ul > li ul {
   padding-top: 8px;
+  padding-bottom: 8px;
+}
+#docstreeview > ul > li >ul>li>ul li ul {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#docstreeview > ul > li > ul {
   padding-bottom: 24px;
 }
 @media screen and (max-width: 1100px) {
@@ -367,12 +374,12 @@ body {
   #menu-top-mobile .option {
     background-color: var(--o-color-bg1);
   }
-  #menu-top-mobile .option>span {
+  #menu-top-mobile .option > span {
     display: block;
     margin-left: 16px;
     padding-top: 16px;
   }
-  #menu-top-mobile .option>span:nth-last-of-type(1) {
+  #menu-top-mobile .option > span:nth-last-of-type(1) {
     padding-bottom: 16px;
   }
   #menu-top-mobile .option {
@@ -415,7 +422,7 @@ body {
   .icon-open {
     transform: scale(0.8) rotateZ(0deg);
   }
-  #menu-top-mobile .option>span {
+  #menu-top-mobile .option > span {
     color: var(--o-color-text1);
     font-size: 14px;
   }
@@ -950,17 +957,17 @@ body {
 #docstreeview .jstree-node[aria-level="6"] {
   padding-left: 16px;
 }
-#page{
+#page {
   position: relative;
 }
-#page .date-box{
+#page .date-box {
   position: absolute;
   left: 40px;
   bottom: 0;
   color: var(--o-color-text5);
 }
 @media screen and (max-width: 1100px) {
-  #page .date-box{
+  #page .date-box {
     left: 16px;
   }
 }
