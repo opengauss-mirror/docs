@@ -11,7 +11,7 @@
 record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 
 **图 1**  record类型的语法<a name="zh-cn_topic_0237122215_fig092918316312"></a>  
-![](figures/record类型的语法.png "record类型的语法")
+![](figures/syntax-record-type.png "record类型的语法")
 
 对以上语法格式的解释如下：
 
