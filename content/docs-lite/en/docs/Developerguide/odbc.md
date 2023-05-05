@@ -1,6 +1,6 @@
 # ODBC<a name="EN-US_TOPIC_0242371435"></a>
 
-The ODBC interface is a set of API functions provided to users. This chapter describes its common interfaces. For details on other interfaces, see "ODBC Programmer's Reference" at MSDN \(https://msdn.microsoft.com/en-us/library/windows/desktop/ms714177\(v=vs.85\).aspx\).
+The ODBC interface is a set of API functions provided to users. This chapter describes its common interfaces. For details on other interfaces, see "ODBC Programmer's Reference" at MSDN (https://learn.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?redirectedfrom=MSDN&view=sql-server-ver16).
 
 -   **[SQLAllocEnv](sqlallocenv.md)**  
 
