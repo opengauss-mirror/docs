@@ -25,9 +25,9 @@
 
 - 在安装操作系统过程中，software选择openGauss，安装操作系统时候默认安装上openGauss数据库。
 
-![](public_sys-resources/soft_select.png)
+![](figures/soft_select.png)
 
-![](public_sys-resources/choose_opengauss.png)
+![](figures/choose_opengauss.png)
 
 
 ## 使用说明
