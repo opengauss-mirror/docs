@@ -39,7 +39,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 - Scale out the standby node only on the primary node.
 
-  >![](C:/Users/lijun/Downloads/08 Tool Reference_openGauss Only/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >For security purposes, the tool in the  **gaussdbToolPath**  directory will be automatically deleted after the pre-installation is complete in enterprise-edition installation mode.
 
 

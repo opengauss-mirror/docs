@@ -422,7 +422,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   - 在与GROUP BY子句一起使用的情况下，ORDER BY中排序的列必须包括在SELECT语句所检索的结果集的列中。
 
-    >![](C:/Users/lijun/Downloads/1230需求同步/1230需求同步/openGauss 开发者指南 01/public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
     >如果要支持中文拼音排序，需要在初始化数据库时指定编码格式为UTF-8、GB18030或GBK。命令如下:
     >
     >```

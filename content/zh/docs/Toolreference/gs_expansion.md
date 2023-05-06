@@ -39,7 +39,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 - 扩容备节点的操作只能在主节点上执行。
 
-  >![](C:/Users/lijun/Downloads/309资料发布/08 工具参考_仅openGauss/public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.gif) **说明：** 
   >出于安全考虑，企业版安装方式下，gaussdbToolPath目录下该工具前置完成后会自动删除。
 
 

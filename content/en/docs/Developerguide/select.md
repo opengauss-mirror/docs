@@ -408,7 +408,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   -   When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
   -   When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
 
-  >![](C:/Users/lijun/Downloads/1230需求同步/1230需求同步/openGauss Developer Guide 01/public_sys-resources/icon-notice.gif) **NOTICE:** 
+  >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
   >To support Chinese pinyin order, specify the  **UTF-8**,  **GB18030**, or  **GBK**  encoding mode during database initiation. The statements are as follows:
   >
   >```

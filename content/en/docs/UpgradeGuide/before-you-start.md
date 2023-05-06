@@ -52,7 +52,7 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 </table>
 
 
->![](C:/Users/lijun/Downloads/openGauss-document-zh-3.0.0/openGauss-document-zh-3.0.0/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >To view the current version, run the following command:
 >
 >```

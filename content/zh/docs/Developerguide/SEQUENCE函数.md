@@ -116,12 +116,12 @@
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
-    >Setval后当前会话会立刻生效，但如果其他会话有缓存的序列值，只能等到缓存值用尽才能感知Setval的作用。所以为了避免序列值冲突，setval要谨慎使用。
->因为序列是非事务的，setval造成的改变不会由于事务的回滚而撤销。
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >+ Setval后当前会话会立刻生效，但如果其他会话有缓存的序列值，只能等到缓存值用尽才能感知Setval的作用。所以为了避免序列值冲突，setval要谨慎使用。
     >
-    >nextval函数只能在主机上执行，备机不支持执行此函数。
+    >+ 因为序列是非事务的，setval造成的改变不会由于事务的回滚而撤销。
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>
+>nextval函数只能在主机上执行，备机不支持执行此函数。
 
 - pg_sequence_last_value(sequence_oid oid, OUT cache_value int16, OUT last_value int16)
 

@@ -92,58 +92,59 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 ## 远程连接数据库
 
 1.  完成远程连接配置，操作步骤参见[配置服务端远程连接](配置服务端远程连接.md)。
-2.  在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
+2. 在客户端机器（10.10.0.30）上，上传客户端工具包并配置gsql的执行环境变量。此处以openEuler环境为例。
 
-    a.  以root用户登录客户端机器。
+   a.  以root用户登录客户端机器。
 
-    b.  创建“/tmp/tools”目录。
+   b.  创建“/tmp/tools”目录。
 
-        ```
-        mkdir /tmp/tools
-        ```
+   ```
+   mkdir /tmp/tools
+   ```
 
-    c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
+   c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >-   软件包相对位置为安装时所放位置，根据实际情况填写。
-        
-        >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >
+   >-   软件包相对位置为安装时所放位置，根据实际情况填写。
 
-    d.  解压文件。
+   >-   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
-        ```
-        cd /tmp/tools
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
-        ```
+   d.  解压文件。
 
-    e.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。
+   ```
+   cd /tmp/tools
+   tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
+   ```
 
-        ```
-        scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
-        ```
-        
-        其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
+   e.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。
 
-    f.  登录客户端所在主机，设置环境变量。
+   ```
+   scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
+   ```
 
-        打开“\~/.bashrc”文件。
-        
-        ```
-        vi ~/.bashrc
-        ```
-        
-        在其中输入如下内容后，使用“:wq!”命令保存并退出。
-        
-        ```
-        export PATH=/tmp/tools/bin:$PATH
-        export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
-        ```
+   其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
-    g.  使环境变量配置生效。
+   f.  登录客户端所在主机，设置环境变量。
 
-        ```
-        source ~/.bashrc
-        ```
+   打开“\~/.bashrc”文件。
+
+   ```
+   vi ~/.bashrc
+   ```
+
+   在其中输入如下内容后，使用“:wq!”命令保存并退出。
+
+   ```
+   export PATH=/tmp/tools/bin:$PATH
+   export LD_LIBRARY_PATH=/tmp/tools/lib:$LD_LIBRARY_PATH
+   ```
+
+   g.  使环境变量配置生效。
+
+   ```
+   source ~/.bashrc
+   ```
 
 3.  连接数据库。
 

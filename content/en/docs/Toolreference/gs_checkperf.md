@@ -10,7 +10,7 @@ openGauss provides the  **gs\_checkperf**  tool for you to routinely check the o
 
 - Services are running properly on the database.
 
-  >![](C:/Users/lijun/Downloads/08 Tool Reference_openGauss Only/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >For security purposes, the tool in the  **gaussdbToolPath**  directory will be automatically deleted after the pre-installation is complete in enterprise-edition installation mode.
 
 ## Precautions<a name="en-us_topic_0237152332_section4694838915381"></a>
