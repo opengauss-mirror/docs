@@ -114,7 +114,7 @@ This section describes preparations before the upgrade.
 </table>
 
 
->![](C:/Users/lijun/Desktop/docs/docs/content/en/docs/UpgradeGuide/public_sys-resources/icon-note.gif) **NOTE:** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >Time required varies according to the particulars for the site \(such as the data volume and server performance\).
 
 ## Collecting Node Information
@@ -179,7 +179,7 @@ Use the  **gs\_checkos**  tool to check the OS status.
 
 - Only user  **root**  is authorized to run the  **gs\_checkos**  command.
 
-  >![](C:/Users/lijun/Desktop/docs/docs/content/en/docs/UpgradeGuide/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >This tool cannot be independently invoked. For security purposes, it is automatically deleted after the preinstallation is complete.
 
 

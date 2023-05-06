@@ -12,7 +12,7 @@
 
 - Only user  **root**  is authorized to run the  **gs\_checkos**  command.
 
-  >![](C:/Users/lijun/Downloads/08 Tool Reference_openGauss Only/public_sys-resources/icon-note.gif) **NOTE:** 
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
   >This tool cannot be invoked independently. For security purposes, it will be automatically deleted after the preinstallation is complete in enterprise-edition installation mode.
 
 ## Syntax<a name="en-us_topic_0237152331_en-us_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>

@@ -98,14 +98,14 @@ Oracle到openGauss的数据类型转换关系如[表1](#table11811516202811)所�
 >![](public_sys-resources/icon-notice.gif) **须知：**  
 >
 >-   对于Oracle返回的数据类型，需要使用上表中对应的类型去接收，即在AS子句中指定。如果Oracle返回的类型不在上表中，或没有按照指定对应关系去接收，则可能会出现结果不正确或转换失败。比如Oracle的任意数值类型NUMBER是不在支持范围内的。
->  
+> 
 >-   openGauss的编码方式设置为SQL\_ASCII时，length\(\)函数返回的是字符串数据的字节数，而不是实际的字符数。因此查询exec\_on\_extension返回数据的length时请注意，例如：
 >      ```
 >     select c2,length\(c2\) from exec\_on\_extension\('oracle','select \* from a;'\) as \(c1 int, c2 text\);
->     ```
+>      ```
 >
 >-   待返回的Oracle数据中不可含有NAN或INF。
->  
+> 
 >-   Oracle端数据类型定义为CHAR\(n\)时，对于字符串长度小于n的情况会自动补齐空格，当这种数据传输到openGauss并转换为text类型时，字符串尾部的空格保留。  
 >
 >
@@ -127,21 +127,21 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     a.  使用gs\_guc工具生成密钥文件。
 
-        ```
-        gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
-        ```
+    ```
+    gs_guc encrypt –M source –K ‘用户密钥串’ –D  ‘密钥文件存放目录’
+    ```
 
-        -   用户密钥串需至少包含3种字符，且不少于8个字符。
-        -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
-        -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
+    -   用户密钥串需至少包含3种字符，且不少于8个字符。
+    -   生成后的密钥文件有两个，分别为datasource.key.cipher和datasource.key.rand。文件名称需固定不可变更。
+    -   datasource.key.cipher和datasource.key.rand这两个文件，需分发到数据库实例各节点的$GAUSSHOME/bin下。
 
     b.  将密钥文件放入指定位置$GAUSSHOME/bin下。然后使用gs\_om ec工具将密钥文件发送到数据库实例其他节点。
 
-        ```
-        gs_om -t ec -m install --key-files --force
-        ```
+    ```
+    gs_om -t ec -m install --key-files --force
+    ```
 
-        更多详细信息请参考《工具参考》中“服务端工具 \> gs\_om”章节。
+    更多详细信息请参考《工具参考》中“服务端工具 \> gs\_om”章节。
 
 
 3.  准备package.zip压缩包。安装配置方法可参考如下：
@@ -165,42 +165,42 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     a.  设置listener.ora文件（添加侦听列表）：
 
-        ```
-        cd $ORACLE_HOME/network/admin
-        vim listener.ora
-        ```
+    ```
+    cd $ORACLE_HOME/network/admin
+    vim listener.ora
+    ```
 
-        在文件中输入类似以下配置信息（如果已有则不用重复添加）：
+    在文件中输入类似以下配置信息（如果已有则不用重复添加）：
 
-        ```
-        # ORACLE_HOME指定的目录，请根据实际修改。
-        # ORCL是Oracle数据库的实例名称，也是准备连接的实例，请根据实际修改。
-        SID_LIST_LISTENER =
-          (SID_LIST =
-            (SID_DESC =
-              (SID_NAME = ORCL)
-              (ORACLE_HOME =/opt/oracle/db/product/11.1.0/db)
-              (PROGRAM = extproc)
-            )
-            (SID_DESC =
-              (SID_NAME = ORCL)
-              (ORACLE_HOME =/opt/oracle/db/product/11.1.0/db)
-            )
-          )
-        
-        # HOST和PORT分别是Oracle数据库的主机IP地址和端口号，请根据实际修改。
-        
-        LISTENER =
-          (DESCRIPTION_LIST =
-            (DESCRIPTION =
-              (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
-              (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
-            )
-          )
-        
-        # /opt/oracle/db是Oracle数据库的安装目录，不是ORACLE_HOME，请根据实际修改。
-        ADR_BASE_LISTENER = /opt/oracle/db
-        ```
+    ```
+    # ORACLE_HOME指定的目录，请根据实际修改。
+    # ORCL是Oracle数据库的实例名称，也是准备连接的实例，请根据实际修改。
+    SID_LIST_LISTENER =
+      (SID_LIST =
+        (SID_DESC =
+          (SID_NAME = ORCL)
+          (ORACLE_HOME =/opt/oracle/db/product/11.1.0/db)
+          (PROGRAM = extproc)
+        )
+        (SID_DESC =
+          (SID_NAME = ORCL)
+          (ORACLE_HOME =/opt/oracle/db/product/11.1.0/db)
+        )
+      )
+    
+    # HOST和PORT分别是Oracle数据库的主机IP地址和端口号，请根据实际修改。
+    
+    LISTENER =
+      (DESCRIPTION_LIST =
+        (DESCRIPTION =
+          (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+          (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
+        )
+      )
+    
+    # /opt/oracle/db是Oracle数据库的安装目录，不是ORACLE_HOME，请根据实际修改。
+    ADR_BASE_LISTENER = /opt/oracle/db
+    ```
 
     b.  设置tnsnames.ora文件（添加数据库实例）：
 
@@ -208,9 +208,9 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
         cd $ORACLE_HOME/network/admin
         vim tnsnames.ora
         ```
-
+    
         在文件中添加如下数据库实例，（如已有则不用重复添加）：
-
+    
         ```
         # ORCL是数据库实例名称，也是准备连接的实例，请根据实际修改。
         # HOST和PORT分别是Oracle数据库的主机IP地址和端口号，请根据实际修改。
@@ -228,7 +228,7 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     c.  查看侦听状态：
 
         通过lsnrctl命令，status是查看状态，start是打开侦听，stop是关闭侦听。以下是数据库实例ORCL处于侦听状态的示例：
-
+    
         ```
         lsnrctl
         LSNRCTL> status
@@ -243,9 +243,9 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
           Instance "orcl", status READY, has 1 handler(s) for this service...
         The command completed successfully
         ```
-
+    
         也可以直接在终端上输入：
-
+    
         ```
         lsnrctl stop      # 停止侦听。
         lsnrctl start     # 打开侦听。
@@ -253,69 +253,69 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
 
     d.  **（可选）**配置安全连接：
 
-        以Network Data Encryption为例，详细的配置和可选加密方法请参考Oracle文档：
+    以Network Data Encryption为例，详细的配置和可选加密方法请参考Oracle文档：
 
-        [https://docs.oracle.com/cd/E11882\_01/network.112/e40393/asoconfg.htm\#ASOAG020](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asoconfg.htm#ASOAG020)
+    [https://docs.oracle.com/cd/E11882\_01/network.112/e40393/asoconfg.htm\#ASOAG020](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asoconfg.htm#ASOAG020)
 
-        下面给出其中一种AES256的配置方法：
+    下面给出其中一种AES256的配置方法：
 
-        a\) 配置Server端（Oracle数据库）。
+    a\) 配置Server端（Oracle数据库）。
 
-        修改配置文件sqlnet.ora
+    修改配置文件sqlnet.ora
 
-        ```
-        cd $ORACLE_HOME/network/admin
-        vim sqlnet.ora
-        ```
+    ```
+    cd $ORACLE_HOME/network/admin
+    vim sqlnet.ora
+    ```
 
-        若要求采用AES256方法加密连接Server，在文件末尾追加内容（如已有则无需重复添加）：
+    若要求采用AES256方法加密连接Server，在文件末尾追加内容（如已有则无需重复添加）：
 
-        ```
-        SQLNET.ENCRYPTION_SERVER=REQUIRED
-        SQLNET.ENCRYPTION_TYPES_SERVER=(AES256)
-        ```
+    ```
+    SQLNET.ENCRYPTION_SERVER=REQUIRED
+    SQLNET.ENCRYPTION_TYPES_SERVER=(AES256)
+    ```
 
-        b\) 配置Client端（本地openGauss数据库实例）。
+    b\) 配置Client端（本地openGauss数据库实例）。
 
-        修改文件$GAUSSHOME/utilslib/instantclient\_12\_2/network/admin/sqlnet.ora，首次需要添加该文件，其中内容如下：
+    修改文件$GAUSSHOME/utilslib/instantclient\_12\_2/network/admin/sqlnet.ora，首次需要添加该文件，其中内容如下：
 
-        ```
-        # NAMES.DIRECTORY_PATH指定解析方法
-        # ADR_BASE是Oracle的本地家目录，就是ODBC的目录
-        # 加密方法需要和Server端一致，此处是AES256
-        NAMES.DIRECTORY_PATH= (TNSNAMES, EZCONNECT)
-        SQLNET.ENCRYPTION_CLIENT=REQUIRED
-        SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256)
-        ADR_BASE = $GAUSSHOME/utilslib/instantclient_12_2  # 环境变量需展开为绝对路径
-        ```
+    ```
+    # NAMES.DIRECTORY_PATH指定解析方法
+    # ADR_BASE是Oracle的本地家目录，就是ODBC的目录
+    # 加密方法需要和Server端一致，此处是AES256
+    NAMES.DIRECTORY_PATH= (TNSNAMES, EZCONNECT)
+    SQLNET.ENCRYPTION_CLIENT=REQUIRED
+    SQLNET.ENCRYPTION_TYPES_CLIENT=(AES256)
+    ADR_BASE = $GAUSSHOME/utilslib/instantclient_12_2  # 环境变量需展开为绝对路径
+    ```
 
-        修改文件$GAUSSHOME/utilslib/instantclient\_12\_2/network/admin/tnsnames.ora，首次需要添加该文件，其中内容如下：
+    修改文件$GAUSSHOME/utilslib/instantclient\_12\_2/network/admin/tnsnames.ora，首次需要添加该文件，其中内容如下：
 
-        ```
-        # HOST和PORT分别是Oracle数据库的主机IP地址和端口号
-        # SERVICE_NAME=ORCL是Oracle具体实例名称
-        # Remote_ORCL是用户自己重命名的实例名，加密连接时需要指定该实例名称
-        Remote_ORCL =
-          (DESCRIPTION =
-            (ADDRESS_LIST=
-                (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
-            )
-            (CONNECT_DATA =
-              (SERVER = DEDICATED)
-              (SERVICE_NAME = ORCL)
-            )
-          )
-        ```
+    ```
+    # HOST和PORT分别是Oracle数据库的主机IP地址和端口号
+    # SERVICE_NAME=ORCL是Oracle具体实例名称
+    # Remote_ORCL是用户自己重命名的实例名，加密连接时需要指定该实例名称
+    Remote_ORCL =
+      (DESCRIPTION =
+        (ADDRESS_LIST=
+            (ADDRESS = (PROTOCOL = TCP)(HOST = XX.XX.XX.XX)(PORT = XXXX))
+        )
+        (CONNECT_DATA =
+          (SERVER = DEDICATED)
+          (SERVICE_NAME = ORCL)
+        )
+      )
+    ```
 
-        如果是首次添加这两个文件，则需要保证数据库实例用户至少拥有读写权限：
+    如果是首次添加这两个文件，则需要保证数据库实例用户至少拥有读写权限：
 
-        ```
-        cd $GAUSSHOME/utilslib/instantclient_12_2/
-        chmod -R 700 network
-        ```
+    ```
+    cd $GAUSSHOME/utilslib/instantclient_12_2/
+    chmod -R 700 network
+    ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >为了数据传输的安全性考虑，建议用户配置此安全连接。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >为了数据传输的安全性考虑，建议用户配置此安全连接。
 
 
 5.  <a name="li1722613520498"></a>设置DSN配置文件。
@@ -358,80 +358,79 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >使用本地模式时，需要在各个节点上分别执[1](#li16860111962113)-[5](#li1722613520498)。
 
-7.  安装unixODBC（仅在Oracle中有中文字符时，EC对接才需要执行此步骤）。
+7. 安装unixODBC（仅在Oracle中有中文字符时，EC对接才需要执行此步骤）。
 
-    unixODBC的安装推荐使用源码进行安装。
+   unixODBC的安装推荐使用源码进行安装。
 
-    源码可在[http://www.unixodbc.org/](http://www.unixodbc.org/)或[https://sourceforge.net/projects/unixodbc/files/unixODBC/](https://sourceforge.net/projects/unixodbc/files/unixODBC/)进行下载。
+   源码可在[http://www.unixodbc.org/](http://www.unixodbc.org/)或[https://sourceforge.net/projects/unixodbc/files/unixODBC/](https://sourceforge.net/projects/unixodbc/files/unixODBC/)进行下载。
 
-    建议使用2.3.6版本。推荐如下方法进行unixODBC安装部署：
+   建议使用2.3.6版本。推荐如下方法进行unixODBC安装部署：
 
-    a\) 下载并解压。
+   a\) 下载并解压。
 
-    ```
-    tar -xzvf unixODBC-2.3.6.tar.gz
-    cd unixODBC-2.3.6
-    ```
+   ```
+   tar -xzvf unixODBC-2.3.6.tar.gz
+   cd unixODBC-2.3.6
+   ```
 
-    b\) configure（需要gcc）。
+   b\) configure（需要gcc）。
 
-    使用以下命令对unixODBC进行configure操作。其中，prefix为用户指定安装目录，此处的安装目录为临时的，建议指定一个空目录。
+   使用以下命令对unixODBC进行configure操作。其中，prefix为用户指定安装目录，此处的安装目录为临时的，建议指定一个空目录。
 
-    ```
-    ./configure --enable-gui=no --prefix=/tmp/unixODBC-2.3.6 --enable-iconv=yes --with-iconv-char-enc=enc
-    ```
+   ```
+   ./configure --enable-gui=no --prefix=/tmp/unixODBC-2.3.6 --enable-iconv=yes --with-iconv-char-enc=enc
+   ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >
+   >+ 实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
+   >+ 常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
+   >+ 如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
+   >+ 如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
 
-    >-   实际部署时，编译参数--with-iconv-char-enc=enc中的enc需要替换为Oracle数据库的字符集编码。
+   
 
-    >-   常见的Oracle数据库中文字符编码有AL32UTF8和ZHS16GBK。
+   c\) 编译安装。
 
-    >    -   如果Oracle字符编码为AL32UTF8，建议编译参数设置为--with-iconv-char-enc=UTF8。
-    
-    >    -   如果Oracle字符编码为ZHS16GBK，建议编译参数设置为--with-iconv-char-enc=GB18030。
+   ```
+   make
+   make install
+   ```
 
-    c\) 编译安装。
+   d\) 拷贝unixODBC到指定的安装目录。
 
-    ```
-    make
-    make install
-    ```
+   ```
+   cd /tmp/unixODBC-2.3.6
+   rm -rf $GPHOME/unixodbc/*
+   cp -r /tmp/unixODBC-2.3.6/* $GPHOME/unixodbc/
+   ```
 
-    d\) 拷贝unixODBC到指定的安装目录。
+   e\) 修改$GPHOME/unixodbc/路径下的文件权限和属主。
 
-    ```
-    cd /tmp/unixODBC-2.3.6
-    rm -rf $GPHOME/unixodbc/*
-    cp -r /tmp/unixODBC-2.3.6/* $GPHOME/unixodbc/
-    ```
+   ```
+   chmod -R 700 $GPHOME/unixodbc/*
+   chown -R user:group $GPHOME/unixodbc/*
+   ```
 
-    e\) 修改$GPHOME/unixodbc/路径下的文件权限和属主。
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
 
-    ```
-    chmod -R 700 $GPHOME/unixodbc/*
-    chown -R user:group $GPHOME/unixodbc/*
-    ```
+   f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >实际部署时使用数据库实例安装用户和属主替换命令行中的user:group
+   g\) 设置环境变量。参考[7](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
 
-    f\) 设置unixODBC配置文件 。参考[4](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l2322ca6025324e47bcaac1859155e566)。\(/usr/local/etc/ 替换成$GPHOME/unixodbc/etc/\)
+   修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
 
-    g\) 设置环境变量。参考[7](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >可以登录Oralce数据库，执行如下语句查询NLS\_LANG的值：
+   >```
+   >SELECT userenv('language') FROM sys_dummy;
+   >```
 
-    修改$GAUSSHOME/utilslib/env\_ec，修改或者追加环境变量NLS\_LANG设置。
+   h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >可以登录Oralce数据库，执行如下语句查询NLS\_LANG的值：
-    >```
-    >SELECT userenv('language') FROM sys_dummy;
-    >```
-
-    h\) 把步骤d中的unixODBC文件拷贝到数据库实例的其它数据节点的$GPHOME/unixodbc/路径下，并执行步骤e和步骤f修改文件权限、属主，并配置环境变量。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
+   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >对于OS异构的数据库实例，需要根据OS把节点分组，然后每组单独编译unixODBC（执行步骤b到步骤g）。
 
 8.  执行如下命令，重启数据库实例，终止om\_monitor进程，以使openGauss的进程感知到环境变量的变化。
 
@@ -452,25 +451,25 @@ SQL on Oracle需要使用标准的unixODBC-2.3.6和Oracle ODBC-12.2连接Oracle�
     a.  [连接数据库](连接数据库.md)。
     b.  创建Data Source。
 
-        ```
-        openGauss=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');
-        ```
+    ```
+    openGauss=# CREATE DATA SOURCE ds_oracle TYPE 'ORACLE' OPTIONS (DSN 'oracle', USERNAME 'oracle_user', PASSWORD 'oracle_pwd', ENCODING 'UTF8');
+    ```
 
-        其OPTIONS中DSN字段为odbc.ini中对应Oracle数据库的DSN（在上一个步骤中即是'oracle'），USERNAME和PASSWORD字段分别为Oracle数据库的待访问实例ORCL（odbc.ini中的database）的用户名和密码，ENCODING字段为Oracle字符集的编码方式。
+    其OPTIONS中DSN字段为odbc.ini中对应Oracle数据库的DSN（在上一个步骤中即是'oracle'），USERNAME和PASSWORD字段分别为Oracle数据库的待访问实例ORCL（odbc.ini中的database）的用户名和密码，ENCODING字段为Oracle字符集的编码方式。
 
-        如果需要修改ds\_oracle中的PASSWORD为'new\_pwd'，则可做如下操作：
+    如果需要修改ds\_oracle中的PASSWORD为'new\_pwd'，则可做如下操作：
 
-        ```
-        openGauss=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
-        ```
+    ```
+    openGauss=# ALTER DATA SOURCE ds_oracle OPTIONS (SET PASSWORD 'new_pwd');
+    ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >-   无论用户是否[配置了Data Source密钥文件。](#li17974541057)创建和修改Data Source时，此处提供的Oracle数据库用户名和密码在openGauss数据库实例中都将被加密保存到系统表pg\_extension\_data\_source中。
-        >-   如果Oracle的字符集为中文字符集，必须保证data source定义中ENCODING、$GAUSSHOME/utilslib/env\_ec中的NLS\_LANG设置、unixODBC编译参数--with-iconv-char-enc指定的encoding三者完全一致。
-        >-   如果Oracle字符集为中文字符集，推荐本地数据库的字符集编码和远端Oracle的字符集编码保持一致，避免因字符集不兼容转码失败导致的作业执行失败。
-        >-   Data Source创建后，密钥文件不可更改，否则Data Source将无法使用。
-        >-   用户需要保证package.zip中的内容完整，DSN.ini中的内容正确。安装部署完成后不进行修改，否则搭建好的环境有无法正常使用的风险。
-        >-   创建的DATA SOURCE需要和odbc.ini中的配置保持一致，不然会导致无法找到数据源。
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   无论用户是否[配置了Data Source密钥文件。](#li17974541057)创建和修改Data Source时，此处提供的Oracle数据库用户名和密码在openGauss数据库实例中都将被加密保存到系统表pg\_extension\_data\_source中。
+    >-   如果Oracle的字符集为中文字符集，必须保证data source定义中ENCODING、$GAUSSHOME/utilslib/env\_ec中的NLS\_LANG设置、unixODBC编译参数--with-iconv-char-enc指定的encoding三者完全一致。
+    >-   如果Oracle字符集为中文字符集，推荐本地数据库的字符集编码和远端Oracle的字符集编码保持一致，避免因字符集不兼容转码失败导致的作业执行失败。
+    >-   Data Source创建后，密钥文件不可更改，否则Data Source将无法使用。
+    >-   用户需要保证package.zip中的内容完整，DSN.ini中的内容正确。安装部署完成后不进行修改，否则搭建好的环境有无法正常使用的风险。
+    >-   创建的DATA SOURCE需要和odbc.ini中的配置保持一致，不然会导致无法找到数据源。
 
 
 10. 连接Oracle数据库。

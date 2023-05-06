@@ -81,6 +81,6 @@ postgres=#  EXPLAIN(COSTS OFF) SELECT * FROM public.all_data;
 (5 rows)
 ```
 
-> ![](C:/Users/liyang/Desktop/3.0.0/docs/content/zh/docs/Developerguide/public_sys-resources/icon-notice.gif) **Notice:**   
+> ![](public_sys-resources/icon-notice.gif) **Notice:**   
 >
 > PG_STATISTIC system table and PG_STATISTIC_EXT system table store some sensitive information of statistical objects, such as high frequency value MCV. After the separation of powers is carried out, the system administrator can still obtain the information in the statistical information by accessing the two system tables.
