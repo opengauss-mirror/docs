@@ -79,7 +79,7 @@ PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   object\_type取值范围为[PG\_CLASS](PG_CLASS.md)中定义的relkind类型（TABLE普通表，INDEX索引，SEQUENCE序列，VIEW视图，COMPOSITE TYPE复合类型，TOASTVALUE TOAST表）和计划使用到的rtekind\(SUBQUERY,JOIN,FUNCTION,VALUES,CTE,REMOTE\_QUERY\)。
 >-   object\_owner对于RTE来说是计划中使用的对象描述，非用户定义的类型不存在object\_owner。

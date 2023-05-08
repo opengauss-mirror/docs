@@ -43,7 +43,7 @@
 -   on表示该功能启用。
 -   off表示该功能被禁用。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >谨慎打开这个开关，避免引起openGauss数据不一致。
 
 **默认值：**off
@@ -111,7 +111,7 @@
 
 在备机请求主机进行日志复制时，如果application\_name参数没有设置，那么该参数会被用来作为备机在主机上的流复制槽名字。该流复制槽的命名方式为 "该参数值\_备机ip\_备机port"。其中，备机ip和备机port取自replconninfo参数中指定的备机ip和端口号。该流复制槽最大长度为61个字符，如果拼接后的字符串超过该长度，则会使用截断后的pgxc\_node\_name进行拼接，以保证流复制槽名字长度小于等于61个字符。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >此参数修改后会导致连接数据库实例失败，不建议进行修改。
 
 **取值范围：**字符串

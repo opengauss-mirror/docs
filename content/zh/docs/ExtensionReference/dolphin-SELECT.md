@@ -76,7 +76,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
             FOR (  partition_value [, ...] ) }
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >指定分区只适合分区表。
 
     rollup_clause子句为：
@@ -128,7 +128,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   select\_statement可以是任何没有ORDER BY、LIMIT、FOR UPDATE，FOR NO KEY UPDATE，FOR SHARE或FOR KEY SHARE子句的SELECT语句。
     -   如果用圆括弧包围，ORDER BY和LIMIT可以附着在子表达式里。
 
-> ![](public_sys-resources/icon-note.gif) **说明：** 
+> ![](public_sys-resources/icon-note.png) **说明：** 
 > 
 > 涉及的其它参数说明可见[SELECT](../SQLReference/SELECT.md)。
 

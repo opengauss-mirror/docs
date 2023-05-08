@@ -52,7 +52,7 @@ gsql -p {port} -d postgres -c 'create user {username:dbmind_monitor} with passwo
 gsql -p {port} -d postgres -c 'alter user {username:dbmind_monitor} monadmin; '
 gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 ```
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >本文中为了突出命令中的参数配置，使用了{key:value}的形式。实际情况下，应输入如下命令 ：
 >
@@ -173,7 +173,7 @@ gs_dbmind component deployment --offline -c dbmind/components/deployment/deploy.
 gs_dbmind component deployment --run
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >
 >-   需要提前将prometheus和node_exporter两个安装包放置在用户根目录的`downloads`文件夹下，并修改属主为`test_user`用户。
 >-   配置文件中`[DOWNLOADING]`模块的安装包名字**不带**`.tar.gz`后缀。
@@ -248,7 +248,7 @@ opengauss_exporter是DBMind采集数据库的组件，从openGauss数据库中�
    ```shell
    gs_dbmind component opengauss_exporter --url postgresql://dbmind_monitor:test_123@192.168.100.1:19999/postgres --web.listen-address 0.0.0.0 --web.listen-port 9187 --log.level info --disable-https
    ```
-   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >![](public_sys-resources/icon-note.png) **说明：** 
    >
    >对于采用URL格式的DSN，由于@等特殊字符用来分割URL串中各个部分的内容，故需要URL编码。例如某个用户dbmind的密码为Test@123，则URL格式的DSN为`psotgresql:dbmind:Test%40123@127.0.0.1:19999`，即将@字符编码为`%40`。
 

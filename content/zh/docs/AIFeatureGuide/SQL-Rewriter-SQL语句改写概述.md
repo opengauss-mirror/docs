@@ -2,7 +2,7 @@
 
 SQL Rewriter是一个SQL改写工具，根据预先设定的规则，将查询语句转换为更为高效或更为规范的形式，使得查询效率得以提升。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   本功能不适用包含子查询的语句；
 >-   本功能只支持SELECT语句和DELETE对整个表格删除的语句；

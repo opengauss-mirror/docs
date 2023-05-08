@@ -4,7 +4,7 @@
 
 随着openGauss 5.0的发布，MOT现已支持MVCC，其中包括减少了读取和更新事务之间的争用，从而减少了OCC方法导致的事务中止。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >MOT完全符合原子性、一致性、隔离性、持久性（ACID）特性，如[MOT简介](MOT简介.md)所述。
 
 下面介绍MOT的并发控制机制。

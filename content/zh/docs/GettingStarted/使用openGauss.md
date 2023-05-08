@@ -43,7 +43,7 @@ openGauss正常运行。
 
     “Non-SSL connection”表示未使用SSL方式连接数据库。如果需要高安全性时，请使用SSL连接。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >gsql是本产品提供的命令行方式的数据库连接工具。更多的数据库连接办法可参考[连接数据库](连接数据库.md)。
 
 3. 创建数据库用户。

@@ -4,7 +4,7 @@
 
 修改触发器名称。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >目前只支持修改名称。
 

@@ -13,7 +13,7 @@
 
 调优程序是一个独立于数据库内核之外的工具，需要提供数据库及其所在实例的用户名和登录密码信息，以便控制数据库执行benchmark进行性能测试；在启动调优程序前，要求用户测试环境交互正常，能够正常跑通benchmark测试脚本、能够正常连接数据库。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果需要调优的参数中，包含重启数据库后才能使修改生效的参数，那么在调优过程中数据库将会重启多次。如果用户的数据库正在执行作业，请慎用train与tune模式。
 
 调优程序X-Tuner包含三种运行模式，分别是:
@@ -22,7 +22,7 @@
 -   train：通过用户提供的benchmark信息，不断地进行参数修改和benchmark的执行。通过反复的迭代过程，训练强化学习模型，以便用户在后面通过tune模式加载该模型进行调优。
 -   tune：使用优化算法进行数据库参数的调优，当前支持两大类算法，一种是深度强化学习，另一种是全局搜索算法（全局优化算法）。深度强化学习模式要求先运行train模式，生成训练后的调优模型，而使用全局搜索算法则不需要提前进行训练，可以直接进行搜索调优。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >如果在tune模式下，使用深度强化学习算法，要求必须有一个训练好的模型，且要求**训练该模型时的参数与进行调优时的参数列表（包括max与min）必须一致**。
 
 **图 1**  X-Tuner结构图<a name="fig137427353816"></a>  
@@ -35,7 +35,7 @@ X-Tuner的整体架构如[图1 X-Tuner 结构图](#fig137427353816)所示，系�
 -   X-Tuner主体逻辑模块：通过Enviroment模块进行封装，每一个step就是一次调优过程。整个调优过程通过多个step进行迭代。
 -   benchmark：由用户指定的benchmark性能测试脚本，用于运行benchmark作业，通过跑分结果反映数据库系统性能优劣。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >应确保benchmark脚本跑分结果越大表示性能越好。
 >例如TPCH这种衡量SQL语句整体执行时长的benchmark，可以通过取总体执行时间的相反数作为benchmark的输出分数。
 

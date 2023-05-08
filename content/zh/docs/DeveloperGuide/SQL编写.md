@@ -149,7 +149,7 @@
   SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T2 WHERE T1.C1=T2.C2);
   ```
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
 

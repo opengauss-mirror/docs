@@ -129,14 +129,14 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
     -   列约束：作为一个列定义的一部分，仅影响该列。
     -   表约束：不和某个列绑在一起，可以作用于多个列。
 
-     >![](public_sys-resources/icon-notice.gif) **须知：** 
+     >![](public_sys-resources/icon-notice.png) **须知：** 
         >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
 
     索引名。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -147,7 +147,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -155,7 +155,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -167,7 +167,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >该子句仅在参数sql\_compatibility=B时有效。
 
@@ -191,7 +191,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：** 
             >
             >orientation不支持修改。
 
@@ -304,7 +304,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   STORED关键字可省略，与不省略STORED语义相同。
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。

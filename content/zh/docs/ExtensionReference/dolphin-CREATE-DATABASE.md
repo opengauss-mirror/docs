@@ -35,7 +35,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
   -   使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法, database\_name 为SCHEMA名称 。

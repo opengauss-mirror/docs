@@ -20,7 +20,7 @@ record类型的语法参见[图1](#zh-cn_topic_0237122215_fig092918316312)。
 -   datatype：record类型中成员的类型。
 -   expression：设置默认值的表达式。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >在openGauss中：  
 >-   record类型变量的赋值支持：  
 >    1. 在函数或存储过程的声明阶段，声明一个record类型，并且可以在该类型中定义成员变量。  

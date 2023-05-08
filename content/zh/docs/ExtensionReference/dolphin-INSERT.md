@@ -37,7 +37,7 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
     -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
 

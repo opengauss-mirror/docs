@@ -52,7 +52,7 @@
 
   要修改的参数名。与template对应，不同的词典类型具有不同的参数列表，且与指定顺序无关。详细参数说明请见[option](CREATE-TEXT-SEARCH-DICTIONARY.md#zh-cn_topic_0283137272_zh-cn_topic_0237122122_li1286812455448)。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   不支持修改词典的TEMPLATE参数值。
 

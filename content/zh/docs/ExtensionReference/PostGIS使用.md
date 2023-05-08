@@ -47,7 +47,7 @@ openGauss=# SELECT p1.city_name,p2.city_name,ST_Distance(p1.position,p2.position
 openGauss=# DROP Extension postgis [CASCADE];
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >如果Extension被其它对象依赖（如创建的几何表），需要加入CASCADE（级联）关键字，删除所有依赖对象。
 
