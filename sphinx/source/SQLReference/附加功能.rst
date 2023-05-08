@@ -1,0 +1,9 @@
+附加功能
+========
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/处理tsvector
+    ../content/zh/docs/SQLReference/处理查询
+    ../content/zh/docs/SQLReference/查询重写
+    ../content/zh/docs/SQLReference/收集文献统计

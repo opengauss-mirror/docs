@@ -1,0 +1,7 @@
+查询原生编译
+===========
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseAdministrationGuide/JIT存储过程
+    ../content/zh/docs/DatabaseAdministrationGuide/MOT-JIT诊断

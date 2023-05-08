@@ -1,9 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/概述-18
-    ../content/zh/docs/Developerguide/操作符
-    ../content/zh/docs/Developerguide/函数
-    ../content/zh/docs/Developerguide/值存储
-    ../content/zh/docs/Developerguide/UNION-CASE和相关构造

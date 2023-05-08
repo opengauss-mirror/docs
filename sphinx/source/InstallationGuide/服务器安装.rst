@@ -1,0 +1,11 @@
+
+
+服务器安装
+=====================================
+
+.. toctree::
+
+
+    ../content/zh/docs/InstallationGuide/单节点安装
+    ../content/zh/docs/InstallationGuide/一主一备节点安装
+

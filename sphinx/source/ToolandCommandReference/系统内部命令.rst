@@ -1,0 +1,37 @@
+系统内部命令
+============
+.. toctree::
+	
+    ../content/zh/docs/ToolandCommandReference/dsscmd
+    ../content/zh/docs/ToolandCommandReference/dssserver
+    ../content/zh/docs/ToolandCommandReference/gaussdb
+    ../content/zh/docs/ToolandCommandReference/gs_backup
+    ../content/zh/docs/ToolandCommandReference/gs_basebackup
+    ../content/zh/docs/ToolandCommandReference/gs_ctl
+    ../content/zh/docs/ToolandCommandReference/gs_initdb
+    ../content/zh/docs/ToolandCommandReference/gs_install
+    ../content/zh/docs/ToolandCommandReference/gs_postuninstall
+    ../content/zh/docs/ToolandCommandReference/gs_preinstall
+    ../content/zh/docs/ToolandCommandReference/gs_sshexkey
+    ../content/zh/docs/ToolandCommandReference/gs_tar
+    ../content/zh/docs/ToolandCommandReference/gs_uninstall
+    ../content/zh/docs/ToolandCommandReference/gs_upgradectl
+    ../content/zh/docs/ToolandCommandReference/gs_expansion
+    ../content/zh/docs/ToolandCommandReference/gs_dropnode
+    ../content/zh/docs/ToolandCommandReference/gs_probackup
+    ../content/zh/docs/ToolandCommandReference/gstrace
+    ../content/zh/docs/ToolandCommandReference/kdb5_util
+    ../content/zh/docs/ToolandCommandReference/kadmin-local
+    ../content/zh/docs/ToolandCommandReference/kinit
+    ../content/zh/docs/ToolandCommandReference/klist
+    ../content/zh/docs/ToolandCommandReference/krb5kdc
+    ../content/zh/docs/ToolandCommandReference/kdestroy
+    ../content/zh/docs/ToolandCommandReference/pg_config
+    ../content/zh/docs/ToolandCommandReference/pg_controldata
+    ../content/zh/docs/ToolandCommandReference/pg_recvlogical
+    ../content/zh/docs/ToolandCommandReference/pg_resetxlog
+    ../content/zh/docs/ToolandCommandReference/pg_archivecleanup
+    ../content/zh/docs/ToolandCommandReference/pssh
+    ../content/zh/docs/ToolandCommandReference/pscp
+    ../content/zh/docs/ToolandCommandReference/transfer-py
+

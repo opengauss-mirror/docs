@@ -1,0 +1,10 @@
+资源管理准备
+============
+
+.. toctree::
+
+    ../content/zh/docs/PerformanceTuningGuide/资源规划
+    ../content/zh/docs/PerformanceTuningGuide/启动资源负载管理功能
+    ../content/zh/docs/PerformanceTuningGuide/设置控制组
+    ../content/zh/docs/PerformanceTuningGuide/创建资源池	
+

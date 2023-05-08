@@ -1,0 +1,23 @@
+高可用
+======
+
+.. toctree::
+	
+	../content/zh/docs/AboutopenGauss/主备机
+	../content/zh/docs/AboutopenGauss/逻辑复制
+	../content/zh/docs/AboutopenGauss/逻辑备份
+	../content/zh/docs/AboutopenGauss/物理备份
+	../content/zh/docs/AboutopenGauss/作业失败自动重试
+	../content/zh/docs/AboutopenGauss/极致RTO
+	../content/zh/docs/AboutopenGauss/基于Paxos协议的高可用
+	../content/zh/docs/AboutopenGauss/级联备机
+	../content/zh/docs/AboutopenGauss/延时回放
+	../content/zh/docs/AboutopenGauss/备机增加删除
+	../content/zh/docs/AboutopenGauss/延迟进入最大可用模式
+	../content/zh/docs/AboutopenGauss/并行逻辑解码
+	../content/zh/docs/AboutopenGauss/DCF
+	../content/zh/docs/AboutopenGauss/CM
+	../content/zh/docs/AboutopenGauss/支持global-syscache
+	../content/zh/docs/AboutopenGauss/支持备机build备机
+	../content/zh/docs/AboutopenGauss/两地三中心跨Region容灾
+	

@@ -1,0 +1,14 @@
+全文检索
+========
+
+.. toctree::
+
+    介绍
+    表和索引
+    控制文本搜索
+    附加功能
+    ../content/zh/docs/SQLReference/解析器
+    词典
+    ../content/zh/docs/SQLReference/配置示例
+    测试和调试文本搜索
+    ../content/zh/docs/SQLReference/限制约束

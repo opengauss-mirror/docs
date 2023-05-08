@@ -1,0 +1,11 @@
+自适应计划选择
+==============
+
+.. toctree::
+
+    ../content/zh/docs/AIFeatureGuide/概述-自适应
+    ../content/zh/docs/AIFeatureGuide/前置条件-自适应
+    ../content/zh/docs/AIFeatureGuide/使用指导-自适应
+    ../content/zh/docs/AIFeatureGuide/最佳实践-自适应
+    ../content/zh/docs/AIFeatureGuide/常见问题处理-自适应
+
