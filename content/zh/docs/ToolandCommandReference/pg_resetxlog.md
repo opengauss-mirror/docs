@@ -4,8 +4,9 @@
 
 pg\_resetxlog是一个重新设置数据库事务文件的工具。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
->通过pg\_resetxlog重新设置之前，需要先停止数据库。
+>![](public_sys-resources/icon-caution.gif) **注意：**<br/> 
+>通过pg\_resetxlog重新设置之前，需要先停止数据库。<br/> 
+>在共享存储模式，关闭数据库之后需要先手动开启dssserver，然后执行pg\_resetxlog操作。
 
 ## 前提条件<a name="zh-cn_topic_0237152442_section14602518109"></a>
 
@@ -89,7 +90,10 @@ pg_resetxlog [OPTION]... DATADIR
 ## 使用举例（资源池化模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
 
 ```
+export DSS_MAINTAIN=TRUE
+dssserver -D $DSS_HOME
 pg_resetxlog [OPTION]... DATADIR --enable-dss --vgname=VGDATA --socketpath=SOCKETPATH
+export DSS_MAINTAIN=FALSE
 ```
 
 **资源池化模式使用说明：**
