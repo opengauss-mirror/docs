@@ -165,6 +165,7 @@ openGauss=# SELECT * FROM test_datetime;
 - 类似兼容后的 date 类型，如果要想输入年份大于等于 10000 的时间戳，请使用 'YYYY-MM-DD hh:mm:ss\[.frac\]' 这种格式
 - 注意，timestamp 类型在 MySQL 一端为不带时区的时间戳，而在 openGauss 一端为带时区的时间戳，实际上兼容后 timestamp 类型在内部会使用 timestamptz 类型存储，请用户在使用前注意这种区别，如想使用不带时区的时间戳，可以使用 datetime 类型。
 - 注意：由于 MySQL 一端没有 timestamp with\[out\] time zone 这种语法，但是我们仍然在 openGauss 保留这种语法。timestamp with time zone 等价于直接原来 openGauss timestamptz 类型，timestamp without time zone 等价于直接使用原来 openGauss 中的 timestamp 类型(并非兼容后的 timestamp 类型，是指 openGauss 原有的不带时区属性的 timestamp 类型)
+- 注意：当输入的值发生舍入时，会对舍入后的值进行范围判断，当舍入后的值超出类型范围时，严格模式下报错，非严格模式下告警并返回全零。
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
