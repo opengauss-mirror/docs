@@ -1,0 +1,7 @@
+软件要求
+========
+
+.. toctree::
+
+    ../content/zh/docs/PerformanceTuningGuide/操作系统
+    ../content/zh/docs/PerformanceTuningGuide/软件依赖

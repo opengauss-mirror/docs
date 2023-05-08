@@ -1,8 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/设置
-    ../content/zh/docs/Developerguide/检查点
-    ../content/zh/docs/Developerguide/日志回放
-    ../content/zh/docs/Developerguide/归档

@@ -1,0 +1,15 @@
+访问外部数据库
+==============
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/用于Oracle的外部数据包装器
+    ../content/zh/docs/DatabaseAdministrationGuide/mysql_fdw
+    ../content/zh/docs/DatabaseAdministrationGuide/postgres_fdw
+    ../content/zh/docs/DatabaseAdministrationGuide/file_fdw
+    ../content/zh/docs/DatabaseAdministrationGuide/dblink
+
+
+
+

@@ -1,0 +1,11 @@
+数据存储管理
+==============
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/逻辑存储结构
+
+
+
+

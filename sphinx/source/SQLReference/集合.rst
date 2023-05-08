@@ -1,0 +1,8 @@
+集合
+====
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/集合类型的使用
+    ../content/zh/docs/SQLReference/集合支持的函数
+

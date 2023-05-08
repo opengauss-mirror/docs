@@ -1,0 +1,17 @@
+系统管理函数
+============
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/配置设置函数
+    ../content/zh/docs/SQLReference/通用文件访问函数
+    ../content/zh/docs/SQLReference/服务器信号函数
+    ../content/zh/docs/SQLReference/备份恢复控制函数
+    ../content/zh/docs/SQLReference/快照同步函数
+    ../content/zh/docs/SQLReference/数据库对象函数
+    ../content/zh/docs/SQLReference/咨询锁函数
+    ../content/zh/docs/SQLReference/逻辑复制函数
+    ../content/zh/docs/SQLReference/段页式存储函数
+    ../content/zh/docs/SQLReference/其它函数
+    ../content/zh/docs/SQLReference/Undo系统函数
+    ../content/zh/docs/SQLReference/行存压缩系统函数

@@ -1,0 +1,12 @@
+词典
+====
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/词典概述
+    ../content/zh/docs/SQLReference/停用词
+    ../content/zh/docs/SQLReference/Simple词典
+    ../content/zh/docs/SQLReference/Synonym词典
+    ../content/zh/docs/SQLReference/Thesaurus词典
+    ../content/zh/docs/SQLReference/Ispell词典
+    ../content/zh/docs/SQLReference/Snowball词典

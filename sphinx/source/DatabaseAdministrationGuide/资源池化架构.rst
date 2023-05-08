@@ -1,0 +1,12 @@
+资源池化架构
+==============
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/资源池化开发者环境部署
+    ../content/zh/docs/DatabaseAdministrationGuide/资源池化当前架构特性约束	
+
+
+
+

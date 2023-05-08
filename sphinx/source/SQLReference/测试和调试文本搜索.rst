@@ -1,0 +1,8 @@
+测试和调试文本搜索
+==================
+
+.. toctree::
+
+   ../content/zh/docs/SQLReference/分词器测试
+   ../content/zh/docs/SQLReference/解析器测试
+   ../content/zh/docs/SQLReference/词典测试

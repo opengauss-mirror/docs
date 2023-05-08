@@ -1,0 +1,47 @@
+Object
+======
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/STAT_USER_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_USER_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_USER_TABLES
+    ../content/zh/docs/SQLReference/STAT_USER_INDEXES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_USER_INDEXES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_USER_INDEXES
+    ../content/zh/docs/SQLReference/STAT_SYS_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_SYS_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_SYS_TABLES
+    ../content/zh/docs/SQLReference/STAT_SYS_INDEXES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_SYS_INDEXES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_SYS_INDEXES
+    ../content/zh/docs/SQLReference/STAT_ALL_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_ALL_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_ALL_TABLES
+    ../content/zh/docs/SQLReference/STAT_ALL_INDEXES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_ALL_INDEXES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_ALL_INDEXES
+    ../content/zh/docs/SQLReference/STAT_DATABASE
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_DATABASE
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_DATABASE
+    ../content/zh/docs/SQLReference/STAT_DATABASE_CONFLICTS
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_DATABASE_CONFLICTS
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_DATABASE_CONFLICTS
+    ../content/zh/docs/SQLReference/STAT_XACT_ALL_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_XACT_ALL_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_XACT_ALL_TABLES
+    ../content/zh/docs/SQLReference/STAT_XACT_SYS_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_XACT_SYS_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_XACT_SYS_TABLES
+    ../content/zh/docs/SQLReference/STAT_XACT_USER_TABLES
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_XACT_USER_TABLES
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_XACT_USER_TABLES
+    ../content/zh/docs/SQLReference/STAT_XACT_USER_FUNCTIONS
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_XACT_USER_FUNCTIONS
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_XACT_USER_FUNCTIONS
+    ../content/zh/docs/SQLReference/STAT_BAD_BLOCK
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_BAD_BLOCK
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_BAD_BLOCK
+    ../content/zh/docs/SQLReference/STAT_USER_FUNCTIONS
+    ../content/zh/docs/SQLReference/SUMMARY_STAT_USER_FUNCTIONS
+    ../content/zh/docs/SQLReference/GLOBAL_STAT_USER_FUNCTIONS
