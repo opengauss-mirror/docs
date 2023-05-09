@@ -25,7 +25,7 @@ VALUES {( expression [, ...] )} [, ...]
 
     用于计算或插入结果表指定地点的常量或者表达式。
 
-    在一个出现在INSERT顶层的VALUES列表中，expression可以被DEFAULT替换以表示插入目的字段的缺省值。除此以外，当VALUES出现在其他场合的时候是不能使用DEFAULT的。
+    在一个出现在INSERT顶层的VALUES列表中，expression可以被DEFAULT替换以表示插入目标字段的缺省值。除此以外，当VALUES出现在其他场合的时候是不能使用DEFAULT的。
 
 -   **sort\_expression**
 
