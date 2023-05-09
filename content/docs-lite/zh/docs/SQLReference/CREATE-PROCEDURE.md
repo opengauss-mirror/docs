@@ -25,6 +25,7 @@
 -   out/inout参数必须传入变量，不能够传入常量。
 -   集中式环境下，想要调用in参数相同，out参数不同的存储过程，需要设置guc参数behavior\_compat\_options='proc\_outparam\_override'，并且打开参数后，无论使用select还是call调用存储过程，都必须加上out参数。打开参数后，不支持使用perform调用存储过程或函数。
 -   不可与同一模式下已存在的synonym产生命名冲突。
+-   通过`CREATE OR REPLACE`语法替换已有的存储过程时，会一并重建依赖此存储过程的视图，存储过程中的参数数据类型变更等情况可能会导致重建视图失败，进而导致替换存储过程失败。此种情况下，建议先删除依赖的视图，再重建存储过程，再重新创建视图。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
