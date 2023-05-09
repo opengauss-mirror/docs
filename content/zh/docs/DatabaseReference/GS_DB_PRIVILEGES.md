@@ -1,4 +1,4 @@
-# GS\_DB\_PRIVILEGES<a name="ZH-CN_TOPIC_0000001195224090"></a>
+# GS\_DB\_PRIVILEGES
 
 GS\_DB\_PRIVILEGES系统视图记录ANY权限的授予情况，每条记录对应一条授权信息。
 

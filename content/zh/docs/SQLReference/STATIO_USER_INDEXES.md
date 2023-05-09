@@ -1,4 +1,4 @@
-# STATIO\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374776"></a>
+# STATIO\_USER\_INDEXES
 
 STATIO\_USER\_INDEXES视图显示当前节点命名空间中所有用户关系表索引的IO状态信息。
 

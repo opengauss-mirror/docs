@@ -1,4 +1,4 @@
-# 系统视图<a name="ZH-CN_TOPIC_0289901002"></a>
+# 系统视图
 
 -   **[PG\_TYPE\_NONSTRICT\_BASIC\_VALUE](dolphin-PG_TYPE_NONSTRICT_BASIC_VALUE.md)**
 

@@ -1,4 +1,4 @@
-# ALTER SYNONYM<a name="ZH-CN_TOPIC_0289900326"></a>
+# ALTER SYNONYM
 
 ## 功能描述<a name="zh-cn_topic_0283137325_zh-cn_topic_0237122074_zh-cn_topic_0059778392_sc84e6980912549c4bbd6895f97ac39f1"></a>
 

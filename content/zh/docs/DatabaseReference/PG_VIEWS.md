@@ -1,4 +1,4 @@
-# PG\_VIEWS<a name="ZH-CN_TOPIC_0289900604"></a>
+# PG\_VIEWS
 
 PG\_VIEWS视图提供访问数据库中每个视图的有用信息。
 

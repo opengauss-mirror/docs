@@ -1,4 +1,4 @@
-# PG\_VARIABLE\_INFO<a name="ZH-CN_TOPIC_0289900430"></a>
+# PG\_VARIABLE\_INFO
 
 PG\_VARIABLE\_INFO视图用于查询openGauss中当前节点的xid、oid的状态。
 

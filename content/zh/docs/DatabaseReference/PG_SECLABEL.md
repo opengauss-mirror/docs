@@ -1,4 +1,4 @@
-# PG\_SECLABEL<a name="ZH-CN_TOPIC_0289900484"></a>
+# PG\_SECLABEL
 
 PG\_SECLABEL系统表存储数据对象上的安全标签。
 

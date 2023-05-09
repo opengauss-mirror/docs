@@ -1,4 +1,4 @@
-# javax.naming.Context<a name="ZH-CN_TOPIC_0242371431"></a>
+# javax.naming.Context
 
 javax.naming.Context是连接配置的上下文接口。
 

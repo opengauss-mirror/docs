@@ -1,4 +1,4 @@
-# DBE\_SQL\_UTIL.create\_abort\_sql\_patch<a name="ZH-CN_TOPIC_0000001313953157"></a>
+# DBE\_SQL\_UTIL.create\_abort\_sql\_patch
 
 create\_abort\_sql\_patch是用于创建避险SQL PATCH的接口函数，返回执行是否成功。
 

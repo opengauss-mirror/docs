@@ -1,4 +1,4 @@
-# GS\_THREAD\_MEMORY\_CONTEXT<a name="ZH-CN_TOPIC_0289900729"></a>
+# GS\_THREAD\_MEMORY\_CONTEXT
 
 GS\_THREAD\_MEMORY\_CONTEXT视图统计所有的线程的内存使用情况，以MemoryContext节点来统计。该视图在关闭线程池（enable\_thread\_pool = off）时等价于GS\_SESSION\_MEMORY\_DETAIL视图。当GUC参数enable\_memory\_limit的值为off时，本视图不可用。
 

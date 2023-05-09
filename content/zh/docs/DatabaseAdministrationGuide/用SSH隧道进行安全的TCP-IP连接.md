@@ -1,4 +1,4 @@
-# 用SSH隧道进行安全的TCP/IP连接<a name="ZH-CN_TOPIC_0246507952"></a>
+# 用SSH隧道进行安全的TCP/IP连接
 
 ## 背景信息<a name="zh-cn_topic_0237121093_zh-cn_topic_0059778333_section59301241111412"></a>
 

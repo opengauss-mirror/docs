@@ -1,4 +1,4 @@
-# 为MOT创建索引<a name="ZH-CN_TOPIC_0280525134"></a>
+# 为MOT创建索引
 
 支持标准的PostgreSQL创建和删除索引语句。
 

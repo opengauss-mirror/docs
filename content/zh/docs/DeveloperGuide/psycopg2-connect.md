@@ -1,4 +1,4 @@
-# psycopg2.connect\(\)<a name="ZH-CN_TOPIC_0000001127193505"></a>
+# psycopg2.connect\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

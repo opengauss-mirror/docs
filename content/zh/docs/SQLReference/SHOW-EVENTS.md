@@ -1,4 +1,4 @@
-# SHOW EVENTS<a name="ZH-CN_TOPIC_0000001503604049"></a>
+# SHOW EVENTS
 
 ## 功能描述<a name="section5400959952"></a>
 

@@ -1,4 +1,4 @@
-# GS\_GSC\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0000001197659934"></a>
+# GS\_GSC\_MEMORY\_DETAIL
 
 GS\_GSC\_MEMORY\_DETAIL视图描述当前节点当前进程的全局SysCache的内存占用情况，仅在开启GSC的模式下有数据。需要注意的是，这个查询由于是以数据库内存上下文分隔的，因此会缺少一部分内存的统计，缺失的内存统计对应的内存上下文名称为GlobalSysDBCache。
 

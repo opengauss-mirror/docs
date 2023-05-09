@@ -1,4 +1,4 @@
-# AI特性函数<a name="ZH-CN_TOPIC_0303599451"></a>
+# AI特性函数
 
 -   gs\_index\_advise\(text\)
 

@@ -1,4 +1,4 @@
-# SELECT INTO<a name="ZH-CN_TOPIC_0289900598"></a>
+# SELECT INTO
 
 ## 功能描述<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s8acfcbcb82b947e08be0c1bb0de2de86"></a>
 

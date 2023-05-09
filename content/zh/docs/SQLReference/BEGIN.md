@@ -1,4 +1,4 @@
-# BEGIN<a name="ZH-CN_TOPIC_0289900173"></a>
+# BEGIN
 
 ## 功能描述<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>
 

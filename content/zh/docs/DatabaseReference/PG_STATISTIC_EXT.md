@@ -1,4 +1,4 @@
-# PG\_STATISTIC\_EXT<a name="ZH-CN_TOPIC_0289899833"></a>
+# PG\_STATISTIC\_EXT
 
 PG\_STATISTIC\_EXT系统表存储有关该数据库中表的扩展统计数据，包括多列统计数据和表达式统计数据（后续支持）。收集哪些扩展统计数据是由用户指定的。需要有系统管理员权限才可以访问此系统表。
 

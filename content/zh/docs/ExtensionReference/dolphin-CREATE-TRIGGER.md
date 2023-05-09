@@ -1,4 +1,4 @@
-# CREATE TRIGGER<a name="ZH-CN_TOPIC_0289900727"></a>
+# CREATE TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 

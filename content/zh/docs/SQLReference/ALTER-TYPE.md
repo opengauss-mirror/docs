@@ -1,4 +1,4 @@
-# ALTER TYPE<a name="ZH-CN_TOPIC_0289899831"></a>
+# ALTER TYPE
 
 ## 功能描述<a name="zh-cn_topic_0283136571_zh-cn_topic_0237122082_zh-cn_topic_0059777461_s46f3e0aac3a84502bc20eee219bef9cf"></a>
 

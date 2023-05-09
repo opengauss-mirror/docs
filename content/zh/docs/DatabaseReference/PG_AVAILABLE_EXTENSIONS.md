@@ -1,4 +1,4 @@
-# PG\_AVAILABLE\_ExtensionS<a name="ZH-CN_TOPIC_0289900593"></a>
+# PG\_AVAILABLE\_ExtensionS
 
 PG\_AVAILABLE\_ExtensionS视图显示数据库中某些特性的扩展信息。
 

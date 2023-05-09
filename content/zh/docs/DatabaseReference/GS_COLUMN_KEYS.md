@@ -1,4 +1,4 @@
-# GS\_COLUMN\_KEYS<a name="ZH-CN_TOPIC_0294528094"></a>
+# GS\_COLUMN\_KEYS
 
 GS\_COLUMN\_KEYS系统表记录密态等值特性中列加密密钥相关信息，每条记录对应一个列加密密钥。
 

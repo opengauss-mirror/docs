@@ -1,4 +1,4 @@
-# HyperLogLog<a name="ZH-CN_TOPIC_0000001083204098"></a>
+# HyperLogLog
 
 ## hll\_default\_log2m<a name="section189901634112519"></a>
 

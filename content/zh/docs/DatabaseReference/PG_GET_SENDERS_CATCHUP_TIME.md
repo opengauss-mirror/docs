@@ -1,4 +1,4 @@
-# PG\_GET\_SENDERS\_CATCHUP\_TIME<a name="ZH-CN_TOPIC_0289900894"></a>
+# PG\_GET\_SENDERS\_CATCHUP\_TIME
 
 PG\_GET\_SENDERS\_CATCHUP\_TIME视图显示数据库节点上当前活跃的主备发送线程的追赶信息。
 

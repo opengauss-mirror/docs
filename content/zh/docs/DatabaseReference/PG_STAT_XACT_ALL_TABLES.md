@@ -1,4 +1,4 @@
-# PG\_STAT\_XACT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0289900465"></a>
+# PG\_STAT\_XACT\_ALL\_TABLES
 
 PG\_STAT\_XACT\_ALL\_TABLES视图显示命名空间中所有普通表和toast表的事务状态信息。
 

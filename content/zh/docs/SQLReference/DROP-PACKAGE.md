@@ -1,4 +1,4 @@
-# DROP PACKAGE<a name="ZH-CN_TOPIC_0000001114052560"></a>
+# DROP PACKAGE
 
 ## 功能描述<a name="section37715281291"></a>
 

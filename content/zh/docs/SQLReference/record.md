@@ -1,4 +1,4 @@
-# record<a name="ZH-CN_TOPIC_0245374605"></a>
+# record
 
 ## record类型的变量<a name="zh-cn_topic_0237122215_section16992418680"></a>
 

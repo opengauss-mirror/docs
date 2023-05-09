@@ -1,4 +1,4 @@
-# gs\_install<a name="ZH-CN_TOPIC_0249632258"></a>
+# gs\_install
 
 ## 背景信息<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_section551843134215"></a>
 

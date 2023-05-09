@@ -1,4 +1,4 @@
-# DROP TEXT SEARCH DICTIONARY<a name="ZH-CN_TOPIC_0289900800"></a>
+# DROP TEXT SEARCH DICTIONARY
 
 ## 功能描述<a name="zh-cn_topic_0283137105_zh-cn_topic_0237122155_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 

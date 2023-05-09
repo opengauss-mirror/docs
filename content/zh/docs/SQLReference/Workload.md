@@ -1,4 +1,4 @@
-# Workload<a name="ZH-CN_TOPIC_0245374722"></a>
+# Workload
 
 -   **[WORKLOAD\_SQL\_COUNT](WORKLOAD_SQL_COUNT.md)**  
 -   **[SUMMARY\_WORKLOAD\_SQL\_COUNT](SUMMARY_WORKLOAD_SQL_COUNT.md)**  

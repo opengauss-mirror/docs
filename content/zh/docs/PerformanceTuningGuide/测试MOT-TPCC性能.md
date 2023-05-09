@@ -1,4 +1,4 @@
-# 测试MOT-TPCC性能<a name="ZH-CN_TOPIC_0280525151"></a>
+# 测试MOT-TPCC性能
 
 ## TPC-C简介<a name="section46845508"></a>
 

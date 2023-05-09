@@ -1,4 +1,4 @@
-# gs\_sdr<a name="ZH-CN_TOPIC_0000001263109824"></a>
+# gs\_sdr
 
 ## 背景信息<a name="zh-cn_topic_0287275995_section431817462"></a>
 

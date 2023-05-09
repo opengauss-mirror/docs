@@ -1,4 +1,4 @@
-# JDBC常用参数参考<a name="ZH-CN_TOPIC_0000001399380057"></a>
+# JDBC常用参数参考
 
 ## targetServerType<a name="section556210112155"></a>
 

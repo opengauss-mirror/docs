@@ -1,4 +1,4 @@
-# EXPLAIN PLAN<a name="ZH-CN_TOPIC_0289900301"></a>
+# EXPLAIN PLAN
 
 ## 功能描述<a name="zh-cn_topic_0283136849_zh-cn_topic_0237122164_section0601642305"></a>
 

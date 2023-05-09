@@ -1,4 +1,4 @@
-# PG\_CONTROL\_GROUP\_CONFIG<a name="ZH-CN_TOPIC_0289900093"></a>
+# PG\_CONTROL\_GROUP\_CONFIG
 
 PG\_CONTROL\_GROUP\_CONFIG视图存储系统的控制组配置信息。查询该视图需要sysadmin权限。
 

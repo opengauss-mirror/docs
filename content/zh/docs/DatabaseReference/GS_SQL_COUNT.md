@@ -1,4 +1,4 @@
-# GS\_SQL\_COUNT<a name="ZH-CN_TOPIC_0289900440"></a>
+# GS\_SQL\_COUNT
 
 GS\_SQL\_COUNT视图显示数据库当前节点当前时刻执行的五类语句（SELECT、INSERT、UPDATE、DELETE、MERGE INTO）统计信息。
 

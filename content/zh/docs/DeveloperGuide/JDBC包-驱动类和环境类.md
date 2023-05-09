@@ -1,4 +1,4 @@
-# JDBC包、驱动类和环境类<a name="ZH-CN_TOPIC_0244720259"></a>
+# JDBC包、驱动类和环境类
 
 ## JDBC包<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>
 

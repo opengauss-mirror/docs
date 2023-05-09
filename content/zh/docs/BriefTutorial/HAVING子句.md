@@ -1,4 +1,4 @@
-# HAVING子句<a name="ZH-CN_TOPIC_0000001225378499"></a>
+# HAVING子句
 
 HAVING子句可以让我们筛选分组后的各组数据。
 

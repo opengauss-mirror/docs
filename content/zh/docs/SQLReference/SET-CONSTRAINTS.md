@@ -1,4 +1,4 @@
-# SET CONSTRAINTS<a name="ZH-CN_TOPIC_0289900402"></a>
+# SET CONSTRAINTS
 
 ## 功能描述<a name="zh-cn_topic_0283136774_zh-cn_topic_0237122187_zh-cn_topic_0059779017_s016571300554457884633ea16394654e"></a>
 

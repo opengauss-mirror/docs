@@ -1,4 +1,4 @@
-# Query<a name="ZH-CN_TOPIC_0289900490"></a>
+# Query
 
 ## instr\_unique\_sql\_count<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section983311682019"></a>
 

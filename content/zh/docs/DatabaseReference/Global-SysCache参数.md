@@ -1,4 +1,4 @@
-# Global SysCache参数<a name="ZH-CN_TOPIC_0000001242538051"></a>
+# Global SysCache参数
 
 ## enable\_global\_syscache<a name="section97160555612"></a>
 

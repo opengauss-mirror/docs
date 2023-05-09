@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.continue<a name="ZH-CN_TOPIC_0000001147937843"></a>
+# DBE\_PLDEBUGGER.continue
 
 执行当前存储过程，直到下一个断点或结束。返回值表示执行的下一条的行数和对应query。
 

@@ -1,4 +1,4 @@
-# STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374692"></a>
+# STAT\_ALL\_TABLES
 
 本节点内数据库中每个表（包括TOAST表）的一行的统计信息。
 

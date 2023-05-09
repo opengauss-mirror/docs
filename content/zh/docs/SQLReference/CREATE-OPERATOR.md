@@ -1,4 +1,4 @@
-# CREATE OPERATOR<a name="ZH-CN_TOPIC_0000001080835908"></a>
+# CREATE OPERATOR
 
 ## 功能描述<a name="section173831846163116"></a>
 

@@ -1,4 +1,4 @@
-# Global Plancache<a name="ZH-CN_TOPIC_0297927200"></a>
+# Global Plancache
 
 GPC相关视图在enable\_global\_plancache打开且线程池打开的状态下才有效。
 

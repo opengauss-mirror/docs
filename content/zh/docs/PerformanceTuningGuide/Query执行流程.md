@@ -1,4 +1,4 @@
-# Query执行流程<a name="ZH-CN_TOPIC_0245374543"></a>
+# Query执行流程
 
 SQL引擎从接受SQL语句到执行SQL语句需要经历的步骤如[图1](#zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_fig29880521152348)和[表1](#zh-cn_topic_0237121508_zh-cn_topic_0073320637_zh-cn_topic_0071158048_table11198623152535)所示。其中，红色字体部分为DBA可以介入实施调优的环节。
 

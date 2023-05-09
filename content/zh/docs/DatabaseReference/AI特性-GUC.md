@@ -1,4 +1,4 @@
-# AI特性<a name="ZH-CN_TOPIC_0000001108458456"></a>
+# AI特性
 
 ## enable\_hypo\_index<a name="section76151259193016"></a>
 

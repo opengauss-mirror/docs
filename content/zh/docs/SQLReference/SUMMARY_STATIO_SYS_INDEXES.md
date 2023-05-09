@@ -1,4 +1,4 @@
-# SUMMARY\_STATIO\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0245374786"></a>
+# SUMMARY\_STATIO\_SYS\_INDEXES
 
 SUMMARY\_STATIO\_SYS\_INDEXES视图显示openGauss内汇聚的命名空间中所有系统表索引的IO状态信息。
 

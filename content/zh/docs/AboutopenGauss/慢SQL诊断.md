@@ -1,4 +1,4 @@
-# 慢SQL诊断<a name="ZH-CN_TOPIC_0000001135403989"></a>
+# 慢SQL诊断
 
 ## 可获得性<a name="section147531742205517"></a>
 

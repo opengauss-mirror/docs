@@ -1,4 +1,4 @@
-# 支持标准SQL<a name="ZH-CN_TOPIC_0000001088566346"></a>
+# 支持标准SQL
 
 ## 可获得性<a name="section38134078"></a>
 

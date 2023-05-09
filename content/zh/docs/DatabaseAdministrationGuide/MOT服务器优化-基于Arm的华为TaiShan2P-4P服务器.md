@@ -1,4 +1,4 @@
-# MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器<a name="ZH-CN_TOPIC_0280525129"></a>
+# MOT服务器优化：基于Arm的华为TaiShan2P/4P服务器
 
 以下是基于Arm/鲲鹏架构的华为TaiShan 2280 v2服务器（2路128核）和TaiShan 2480 v2服务器（4路256核）上运行MOT时的建议配置。
 

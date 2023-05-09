@@ -1,4 +1,4 @@
-# GLOBAL\_WAIT\_EVENTS<a name="ZH-CN_TOPIC_0289900024"></a>
+# GLOBAL\_WAIT\_EVENTS
 
 GLOBAL\_WAIT\_EVENTS视图显示各节点的event的等待相关的统计信息。
 

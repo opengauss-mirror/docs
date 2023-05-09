@@ -1,4 +1,4 @@
-# Instance<a name="ZH-CN_TOPIC_0245374660"></a>
+# Instance
 
 -   **[INSTANCE\_TIME](INSTANCE_TIME.md)**  
 

@@ -1,4 +1,4 @@
-# Operator<a name="ZH-CN_TOPIC_0245374838"></a>
+# Operator
 
 -   **[OPERATOR\_HISTORY\_TABLE](OPERATOR_HISTORY_TABLE.md)**  
 

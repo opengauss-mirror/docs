@@ -1,4 +1,4 @@
-# DROP FOREIGN TABLE<a name="ZH-CN_TOPIC_0289899895"></a>
+# DROP FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137169_section57611418144918"></a>
 

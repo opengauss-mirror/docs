@@ -1,4 +1,4 @@
-# PostGIS安装<a name="ZH-CN_TOPIC_0000001201117578"></a>
+# PostGIS安装
 
 PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取。该Extension需使用GCC-7.3（GNU编译器套件）进行编译安装。
 
