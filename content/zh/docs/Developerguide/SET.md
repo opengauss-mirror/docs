@@ -65,9 +65,7 @@
 
     取值范围：有效的本地时区。该选项对应的运行时参数名称为TimeZone，DEFAULT缺省值为PRC。
 
--   **CURRENT\_SCHEMA**
-
-    **schema**
+-   **CURRENT\_SCHEMA schema**
 
     CURRENT\_SCHEMA用于指定当前的模式。
 
