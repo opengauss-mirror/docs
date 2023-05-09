@@ -24,7 +24,9 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：** \/tmp\/
 
-    **说明：** om安装后的默认值为$DSS\_HOME
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >+ om安装后的默认值为$DSS\_HOME
 
 -   LOG\_HOME
 
@@ -58,7 +60,9 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：** 0
 
-    **说明：** om安装后的默认值为0~63中的某个值
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >+ om安装后的默认值为0~63中的某个值
 
 -   STORAGE\_MODE
 
@@ -68,7 +72,9 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：** DISK
 
-    **说明：** om安装后的默认值为CLUSTER_RAID
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >+ om安装后的默认值为CLUSTER_RAID
 
 -   \_LOG\_LEVEL
 
@@ -142,7 +148,9 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：** 1
 
-    **说明：** om安装后的默认值为1~64中的某个值
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >+ om安装后的默认值为1~64中的某个值
 
 -   DSS\_NODES\_LIST
 
@@ -296,5 +304,6 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：""**
 
-    **说明：** om安装后的默认值为libclient.so
-
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >+ om安装后的默认值为libclient.so
