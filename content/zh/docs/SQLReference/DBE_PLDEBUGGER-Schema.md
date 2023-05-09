@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER Schema<a name="ZH-CN_TOPIC_0000001101338022"></a>
+# DBE\_PLDEBUGGER Schema
 
 DBE\_PLDEBUGGER下系统函数用于单机下调试存储过程，目前支持的接口及其描述如下所示。仅管理员有权限执行这些调试接口，且无权限修改和创建新函数。
 

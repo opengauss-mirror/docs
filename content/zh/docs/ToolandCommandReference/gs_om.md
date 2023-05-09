@@ -1,4 +1,4 @@
-# gs\_om<a name="ZH-CN_TOPIC_0249632260"></a>
+# gs\_om
 
 ## 背景信息<a name="section431817462"></a>
 

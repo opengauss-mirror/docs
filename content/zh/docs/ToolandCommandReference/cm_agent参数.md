@@ -1,4 +1,4 @@
-# cm\_agent参数<a name="ZH-CN_TOPIC_0000001246246987"></a>
+# cm\_agent参数
 
 ## log\_dir<a name="section030711438392"></a>
 

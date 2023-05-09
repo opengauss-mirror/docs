@@ -1,4 +1,4 @@
-# pg\_recvlogical<a name="ZH-CN_TOPIC_0000001092048360"></a>
+# pg\_recvlogical
 
 ## 功能介绍<a name="section143231619112111"></a>
 

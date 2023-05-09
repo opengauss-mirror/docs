@@ -1,4 +1,4 @@
-# dolphin-聚集函数<a name="ZH-CN_TOPIC_0289900330"></a>
+# dolphin-聚集函数
 
 -   any_value\(expression\)
 

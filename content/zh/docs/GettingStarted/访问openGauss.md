@@ -1,4 +1,4 @@
-# 访问openGauss<a name="ZH-CN_TOPIC_0289900104"></a>
+# 访问openGauss
 
 连接数据库的客户端工具包括gsql、应用程序接口（如JDBC）。
 

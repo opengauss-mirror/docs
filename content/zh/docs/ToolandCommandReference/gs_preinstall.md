@@ -1,4 +1,4 @@
-# gs\_preinstall<a name="ZH-CN_TOPIC_0249632278"></a>
+# gs\_preinstall
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>
 

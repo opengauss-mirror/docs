@@ -1,4 +1,4 @@
-# PKG\_SERVICE<a name="ZH-CN_TOPIC_0304085685"></a>
+# PKG\_SERVICE
 
 PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
 

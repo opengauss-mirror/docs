@@ -1,4 +1,4 @@
-# Memory Statistics<a name="ZH-CN_TOPIC_0000001215195226"></a>
+# Memory Statistics
 
 Memory Statistics指标名称及描述如下表所示。
 

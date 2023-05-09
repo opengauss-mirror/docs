@@ -1,4 +1,4 @@
-# DCF<a name="ZH-CN_TOPIC_0000001255021817"></a>
+# DCF
 
 DCF全称是Distributed Consensus Framework，即分布式一致性共识框架。DCF实现了Paxos、Raft等解决分布式一致性问题典型算法。使用DCF可以提供日志复制、集群高可用等能力。DCF提供了自选主能力，支持少数派强起能力，日志复制支持动态流量调整。同时也提供了基于Paxos多种角色节点类型，并能进行调整。
 

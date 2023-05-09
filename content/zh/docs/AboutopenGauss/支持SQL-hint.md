@@ -1,4 +1,4 @@
-# 支持SQL hint<a name="ZH-CN_TOPIC_0000001162578986"></a>
+# 支持SQL hint
 
 ## 可获得性<a name="section56086982"></a>
 

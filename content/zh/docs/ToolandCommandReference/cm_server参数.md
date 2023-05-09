@@ -1,4 +1,4 @@
-# cm\_server参数<a name="ZH-CN_TOPIC_0000001246287001"></a>
+# cm\_server参数
 
 ## log\_dir<a name="section21021611134413"></a>
 

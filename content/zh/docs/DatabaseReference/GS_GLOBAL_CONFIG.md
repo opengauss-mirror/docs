@@ -1,4 +1,4 @@
-# GS\_GLOBAL\_CONFIG<a name="ZH-CN_TOPIC_0000001111762848"></a>
+# GS\_GLOBAL\_CONFIG
 
 GS\_GLOBAL\_CONFIG记录了数据库实例初始化时，用户指定的参数值。除此之外，还存放了用户设置的弱口令，支持数据库初始用户通过ALTER和DROP语法对系统表中的参数进行写入、修改和删除。
 

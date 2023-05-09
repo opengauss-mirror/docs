@@ -1,4 +1,4 @@
-# GUC参数说明<a name="ZH-CN_TOPIC_0289899843"></a>
+# GUC参数说明
 
 ## dolphin.sql\_mode<a name="section203671436821"></a>
 

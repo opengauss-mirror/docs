@@ -1,4 +1,4 @@
-# PG\_TRIGGER<a name="ZH-CN_TOPIC_0289900828"></a>
+# PG\_TRIGGER
 
 PG\_TRIGGER系统表存储触发器信息。
 

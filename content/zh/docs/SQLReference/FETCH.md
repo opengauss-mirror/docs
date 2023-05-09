@@ -1,4 +1,4 @@
-# FETCH<a name="ZH-CN_TOPIC_0289900300"></a>
+# FETCH
 
 ## 功能描述<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_s1a1f69e123144a83800629a2d8ab2dba"></a>
 

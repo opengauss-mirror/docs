@@ -1,4 +1,4 @@
-# CREATE DATABASE<a name="ZH-CN_TOPIC_0289900066"></a>
+# CREATE DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 

@@ -1,4 +1,4 @@
-# Hint的错误、冲突及告警<a name="ZH-CN_TOPIC_0245374575"></a>
+# Hint的错误、冲突及告警
 
 Plan Hint的结果会体现在计划的变化上，可以通过explain来查看变化。
 

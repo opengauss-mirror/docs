@@ -1,4 +1,4 @@
-# 使用gsql访问openGauss<a name="ZH-CN_TOPIC_0289900019"></a>
+# 使用gsql访问openGauss
 
 gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考《工具与命令参考》中“客户端工具 \> gsql”章节。
 

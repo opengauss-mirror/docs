@@ -1,4 +1,4 @@
-# PQconnectdbParams<a name="ZH-CN_TOPIC_0242380570"></a>
+# PQconnectdbParams
 
 ## 功能描述<a name="zh-cn_topic_0241735613_section735013014140"></a>
 

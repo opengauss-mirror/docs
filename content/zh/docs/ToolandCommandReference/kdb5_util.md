@@ -1,4 +1,4 @@
-# kdb5\_util<a name="ZH-CN_TOPIC_0249632286"></a>
+# kdb5\_util
 
 ## 功能介绍<a name="zh-cn_topic_0237152428_section10172172474817"></a>
 

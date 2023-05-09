@@ -1,4 +1,4 @@
-# 用SSL进行安全的TCP/IP连接<a name="ZH-CN_TOPIC_0289900924"></a>
+# 用SSL进行安全的TCP/IP连接
 
 ## 背景信息<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_section1957281971410"></a>
 

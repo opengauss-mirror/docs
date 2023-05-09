@@ -1,4 +1,4 @@
-# gs\_dumpall<a name="ZH-CN_TOPIC_0249632251"></a>
+# gs\_dumpall
 
 ## 背景信息<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_section31221112348"></a>
 

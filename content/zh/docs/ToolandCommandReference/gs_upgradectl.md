@@ -1,4 +1,4 @@
-# gs\_upgradectl<a name="ZH-CN_TOPIC_0289899212"></a>
+# gs\_upgradectl
 
 ## 背景信息<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
 

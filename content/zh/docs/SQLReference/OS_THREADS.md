@@ -1,4 +1,4 @@
-# OS\_THREADS<a name="ZH-CN_TOPIC_0245374658"></a>
+# OS\_THREADS
 
 提供当前节点下所有线程的状态信息。
 

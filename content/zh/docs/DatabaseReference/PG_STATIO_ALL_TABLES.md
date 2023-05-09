@@ -1,4 +1,4 @@
-# PG\_STATIO\_ALL\_TABLES<a name="ZH-CN_TOPIC_0289900072"></a>
+# PG\_STATIO\_ALL\_TABLES
 
 PG\_STATIO\_ALL\_TABLES视图将包含当前数据库中每个表（包括TOAST表）的I/O统计信息。
 

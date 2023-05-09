@@ -1,4 +1,4 @@
-# 使用gs\_dump和gs\_dumpall命令导出数据<a name="ZH-CN_TOPIC_0242370316"></a>
+# 使用gs\_dump和gs\_dumpall命令导出数据
 
 -   **[概述](概述-5.md)**  
 

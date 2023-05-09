@@ -1,4 +1,4 @@
-# ALTER SESSION<a name="ZH-CN_TOPIC_0289900721"></a>
+# ALTER SESSION
 
 ## 功能描述<a name="zh-cn_topic_0283137033_zh-cn_topic_0237122073_zh-cn_topic_0059778275_s62f804a7ed5a4f278e36b0175ff7bdc9"></a>
 

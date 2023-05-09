@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0245374697"></a>
+# GLOBAL\_STAT\_ALL\_INDEXES
 
 将包含各节点数据库中的每个索引行，显示访问特定索引的统计。
 

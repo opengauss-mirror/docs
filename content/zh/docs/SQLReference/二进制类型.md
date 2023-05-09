@@ -1,4 +1,4 @@
-# 二进制类型<a name="ZH-CN_TOPIC_0289900777"></a>
+# 二进制类型
 
 openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)。
 

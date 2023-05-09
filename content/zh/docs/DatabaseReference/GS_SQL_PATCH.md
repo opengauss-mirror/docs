@@ -1,4 +1,4 @@
-# GS\_SQL\_PATCH<a name="ZH-CN_TOPIC_0000001314273105"></a>
+# GS\_SQL\_PATCH
 
 GS\_SQL\_PATCH系统表存储所有SQL\_PATCH的状态信息。
 

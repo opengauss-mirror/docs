@@ -1,4 +1,4 @@
-# AI能力<a name="ZH-CN_TOPIC_0000001091443838"></a>
+# AI能力
 
 -   **[X-Tuner: 参数调优与诊断](X_Tuner_参数调优与诊断.md)**  
 

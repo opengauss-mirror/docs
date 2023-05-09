@@ -1,4 +1,4 @@
-# 扩展FDW与其他openGauss特性<a name="ZH-CN_TOPIC_0280525160"></a>
+# 扩展FDW与其他openGauss特性
 
 openGauss基于PostgreSQL，而PostgreSQL没有内置存储引擎适配器，如MySQL的handlerton。为了使MOT存储引擎能够集成到openGauss中，我们利用并扩展了现有的FDW机制。随着FDW引入PostgreSQL 9.1，现在可以将这些外表和数据源呈现为统一、本地可访问的关系来访问外部管理的数据库。
 

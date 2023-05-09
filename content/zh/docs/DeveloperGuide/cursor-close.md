@@ -1,4 +1,4 @@
-# cursor.close\(\)<a name="ZH-CN_TOPIC_0000001127193507"></a>
+# cursor.close\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

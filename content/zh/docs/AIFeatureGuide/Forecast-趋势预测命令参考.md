@@ -1,4 +1,4 @@
-# 命令参考<a name="ZH-CN_TOPIC_0000001195271250"></a>
+# 命令参考
 
 **表 1**  gs\_dbmind component forecast 命令行说明
 

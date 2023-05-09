@@ -1,4 +1,4 @@
-# PG\_PLTEMPLATE<a name="ZH-CN_TOPIC_0289900451"></a>
+# PG\_PLTEMPLATE
 
 PG\_PLTEMPLATE系统表存储过程语言的“模板”信息。
 

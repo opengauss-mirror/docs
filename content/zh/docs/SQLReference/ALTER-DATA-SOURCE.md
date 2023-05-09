@@ -1,4 +1,4 @@
-# ALTER DATA SOURCE<a name="ZH-CN_TOPIC_0289899857"></a>
+# ALTER DATA SOURCE
 
 ## 功能描述<a name="zh-cn_topic_0283136847_zh-cn_topic_0237122056_section1246564332711"></a>
 

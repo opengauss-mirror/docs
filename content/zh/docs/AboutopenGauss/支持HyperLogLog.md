@@ -1,4 +1,4 @@
-# 支持HyperLogLog<a name="ZH-CN_TOPIC_0000001135403983"></a>
+# 支持HyperLogLog
 
 ## 可获得性<a name="section5309649"></a>
 

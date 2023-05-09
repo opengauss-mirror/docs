@@ -1,4 +1,4 @@
-# Xlog no Lock Flush<a name="ZH-CN_TOPIC_0000001209317775"></a>
+# Xlog no Lock Flush
 
 ## 可获得性<a name="section3480125215575"></a>
 

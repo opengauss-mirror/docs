@@ -1,4 +1,4 @@
-# C/C++语言<a name="ZH-CN_TOPIC_0000001179780280"></a>
+# C/C++语言
 
 -   **[ODBC](ODBC.md)**  
 

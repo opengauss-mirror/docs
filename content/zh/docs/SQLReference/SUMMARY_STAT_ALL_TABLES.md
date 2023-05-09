@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374693"></a>
+# SUMMARY\_STAT\_ALL\_TABLES
 
 openGauss内汇聚数据库中每个表的一行（包括TOAST表）的统计信息。
 

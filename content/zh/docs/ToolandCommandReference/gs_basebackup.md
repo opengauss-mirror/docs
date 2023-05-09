@@ -1,4 +1,4 @@
-# gs\_basebackup<a name="ZH-CN_TOPIC_0249632270"></a>
+# gs\_basebackup
 
 ## 背景信息<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_section48401199395"></a>
 

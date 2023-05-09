@@ -1,4 +1,4 @@
-# REVOKE<a name="ZH-CN_TOPIC_0289900263"></a>
+# REVOKE
 
 ## 功能描述<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_sda1d739a0a8c460c93bc099fb8208944"></a>
 

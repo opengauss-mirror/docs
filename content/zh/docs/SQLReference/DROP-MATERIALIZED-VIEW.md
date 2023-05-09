@@ -1,4 +1,4 @@
-# DROP MATERIALIZED VIEW<a name="ZH-CN_TOPIC_0289899894"></a>
+# DROP MATERIALIZED VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_sed6f06f3d4d94b38b10c7592f98bacdb"></a>
 

@@ -1,4 +1,4 @@
-# USE db_name<a name="ZH-CN_TOPIC_0289900448"></a>
+# USE db_name
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 

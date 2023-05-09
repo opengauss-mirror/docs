@@ -1,4 +1,4 @@
-# CREATE TABLESPACE<a name="ZH-CN_TOPIC_0289900078"></a>
+# CREATE TABLESPACE
 
 ## 功能描述<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_sbf00214c21e441f5adc2bc08ecaca4e7"></a>
 

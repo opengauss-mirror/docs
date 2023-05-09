@@ -1,4 +1,4 @@
-# gs\_check<a name="ZH-CN_TOPIC_0249632243"></a>
+# gs\_check
 
 ## 背景信息<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_section2466014153117"></a>
 

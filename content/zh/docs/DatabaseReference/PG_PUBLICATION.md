@@ -1,4 +1,4 @@
-# PG\_PUBLICATION<a name="ZH-CN_TOPIC_0000001197110736"></a>
+# PG\_PUBLICATION
 
 系统表pg\_publication包含当前数据库中创建的所有publication。
 

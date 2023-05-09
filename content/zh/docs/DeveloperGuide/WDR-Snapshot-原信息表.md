@@ -1,4 +1,4 @@
-# WDR Snapshot 原信息表<a name="ZH-CN_TOPIC_0245374863"></a>
+# WDR Snapshot 原信息表
 
 -   **[SNAPSHOT.SNAPSHOT](SNAPSHOT-SNAPSHOT.md)**  
 

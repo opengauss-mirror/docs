@@ -1,4 +1,4 @@
-# PG\_STAT\_DATABASE<a name="ZH-CN_TOPIC_0289900750"></a>
+# PG\_STAT\_DATABASE
 
 PG\_STAT\_DATABASE视图将包含openGauss中每个数据库的数据库统计信息。
 

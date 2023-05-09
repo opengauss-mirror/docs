@@ -1,4 +1,4 @@
-# PQclear<a name="ZH-CN_TOPIC_0242380580"></a>
+# PQclear
 
 ## 功能描述<a name="zh-cn_topic_0241735622_section696285173713"></a>
 
