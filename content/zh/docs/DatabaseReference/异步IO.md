@@ -13,7 +13,7 @@
 
 **默认值：** off
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >当前版本暂不支持打开该开关，即使用户手动设置为打开，系统内部也会自动设置为关闭状态。
 
@@ -23,7 +23,7 @@
 
 该参数属于INTERNAL类型参数，为固定参数，用户无法修改此参数，只能查看。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >当前版本暂不支持开启异步IO功能，默认该功能关闭。
 

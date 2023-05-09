@@ -99,10 +99,10 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，同时如果其中有一个语句失败，那么整个请求都将会被回滚。  
 
-> <img src="public_sys-resources/icon-danger.gif"> **警告：**   
+> <img src="public_sys-resources/icon-danger.png"> **警告：**   
 >
 > ODBC为应用程序与数据库的中心层，负责把应用程序发出的SQL指令传到数据库当中，自身并不解析SQL语法。故在应用程序中写入带有保密信息的SQL语句时（如明文密码），保密信息会被暴露在驱动日志中。
 

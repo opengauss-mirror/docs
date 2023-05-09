@@ -32,7 +32,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
     这个子句指定用户映射的选项。这些选项通常定义该映射实际的用户名和口令。选项名必须唯一。允许的选项名和值与该服务器的外部数据包装器有关。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   用户的口令会加密后保存到系统表[PG\_USER\_MAPPING](../DatabaseReference/PG_USER_MAPPING.md)中，加密时需要使用usermapping.key.cipher和usermapping.key.rand作为加密密码文件和加密因子。首次使用前需要通过如下命令创建这两个文件，并将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。gs\_ssh工具可以协助您快速将文件放入各节点对应目录下。
     >    ```
     >    gs_ssh -c "gs_guc generate -o usermapping -S default -D $GAUSSHOME/bin"
@@ -66,7 +66,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
             远端openGauss用户对应的密码。
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >![](public_sys-resources/icon-note.png) **说明：** 
             >openGauss在后台会对用户输入的password加密以保证安全性。该加密所需密钥文件需要使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。password不应当包含'encryptOpt'前缀，否则会被认为是加密后的密文。
 
 

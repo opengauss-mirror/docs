@@ -45,7 +45,7 @@ END;
 /
 ```
 
-> ![](public_sys-resources/icon-notice.gif) **须知：** 
+> ![](public_sys-resources/icon-notice.png) **须知：** 
 >
 > * 在begin...end之间可以通过set variable\_name :=(=) value来对变量进行赋值。
 

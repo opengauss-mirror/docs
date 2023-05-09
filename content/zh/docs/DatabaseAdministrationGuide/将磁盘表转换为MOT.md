@@ -26,7 +26,7 @@
 6.  浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
 7.  恢复应用程序活动。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。另一种方法是通过INSERT INTO SELECT语句将数据从普通（堆）表复制到新的MOT表。
 ```

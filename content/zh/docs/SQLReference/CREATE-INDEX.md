@@ -67,7 +67,7 @@
   -   普通CREATE INDEX命令可以在事务内执行，但是CREATE INDEX CONCURRENTLY不可以在事务内执行。
   -   列存表、分区表和临时表不支持CONCURRENTLY方式创建索引。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   创建索引时指定此关键字，需要执行先后两次对该表的全表扫描来完成build，第一次扫描的时候创建索引，不阻塞读写操作；第二次扫描的时候合并更新第一次扫描到目前为止发生的变更。
 
@@ -118,7 +118,7 @@
 
     行存表（ASTORE存储引擎）支持的索引类型：btree（行存表缺省值）、hash、gin、gist。行存表（USTORE存储引擎）支持的索引类型：ubtree。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。全局临时表不支持GIN索引和Gist索引。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >列存表对GIN索引支持仅限于对于tsvector类型的支持，即创建列存GIN索引入参需要为to\_tsvector函数（的返回值）。此方法为GIN索引比较普遍的使用方式。
 
 -   **column\_name**
@@ -133,7 +133,7 @@
 
     前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-  此语法只在sql_compatibility=B时有效，sql_compatibility为其他值的情况下，此子句将被视作函数表达式键。
     >-  前缀键支持的索引方法：btree、ubtree。

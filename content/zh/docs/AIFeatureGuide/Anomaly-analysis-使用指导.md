@@ -18,6 +18,6 @@ gs_dbmind component anomaly_analysis --conf confpath --metric metric_name --star
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >在输入anomaly_analysis的参数时，start-time至少要比end-time早30秒以上。
 

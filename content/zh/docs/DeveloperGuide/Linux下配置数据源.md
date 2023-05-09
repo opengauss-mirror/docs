@@ -334,7 +334,7 @@
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：**  
+        >![](public_sys-resources/icon-note.png) **说明：**  
         >
         >-   -N all表示openGauss中的所有主机。  
         >-   -I all表示主机中的所有实例。  
@@ -491,7 +491,7 @@
 
     数据库中存储的口令校验只存储了SHA256格式哈希，而开源客户端只识别MD5校验，双方校验方法不匹配报错。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**  
+    >![](public_sys-resources/icon-note.png) **说明：**  
     > 
     >-   数据库并不存储用户口令，只存储用户口令的哈希码。  
     >-   数据库当用户更新用户口令或者新建用户时，会同时存储两种格式的哈希码，这时将兼容开源的认证协议。  

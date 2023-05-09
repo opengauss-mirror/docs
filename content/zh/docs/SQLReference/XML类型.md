@@ -29,7 +29,7 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >-   XML类型不支持如下操作：
 >    -   逻辑表达式and、or、not。
 >    -   作为分区键、二级分区键、外键、主键、唯一约束。

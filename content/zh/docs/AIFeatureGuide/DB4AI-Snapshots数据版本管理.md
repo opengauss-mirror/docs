@@ -255,6 +255,6 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >命名空间DB4AI是本功能的私有域，不支持在DB4AI的命令空间下创建函数索引（functional index）。
 

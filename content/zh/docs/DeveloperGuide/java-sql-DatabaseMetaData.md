@@ -1240,7 +1240,7 @@ java.sql.DatabaseMetaData是数据库对象定义接口。
 </tr>
 </tbody>
 </table>
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >getPartitionTablePrimaryKeys​\(String catalog, String schema, String table\)接口用于获取分区表含全局索引的主键列，使用示例如下：
 >```
 >PgDatabaseMetaData dbmd = (PgDatabaseMetaData)conn.getMetaData();

@@ -52,7 +52,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     ```
 
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >从安全性考虑，建议使用双向认证方式。
 >配置客户端环境变量，必须包含文件的绝对路径。
 
@@ -176,7 +176,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >客户端环境变量的路径以“_/home/omm_”为例，在实际操作中请使用实际路径进行替换。
 
 **表 3**  客户端参数
@@ -484,7 +484,7 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**
+>![](public_sys-resources/icon-note.png) **说明：**
 >
 >-   目前只支持上表中的6种加密算法套件。
 >

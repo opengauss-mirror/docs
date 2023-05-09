@@ -707,6 +707,6 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >DB4AI特性需要读取数据参与计算，不适用于密态数据库等情况。
 
