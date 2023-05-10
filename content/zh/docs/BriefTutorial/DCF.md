@@ -9,7 +9,7 @@ DCF是一款高性能、高度成熟可靠、易扩展、易使用的独立基�
 DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块、存储模块、通信模块、服务层等。
 
 **图 1**  DCF功能架构图<a name="fig31591049102410"></a>  
-<img src="figures/Diagram-Of-The-DCF-Functional-Architecture.png" title="DCF功能架构图" style="zoom:50%;" />
+![](figures/Diagram-Of-The-DCF-Functional-Architecture.png "DCF功能架构图")
 
 -   **算法模块：**
 
@@ -60,7 +60,7 @@ DCF功能架构如[图1](#fig31591049102410)所示，主要包括：功能模块
     流控算法主要流程如[图2](#fig548518330404)所示：
 
     **图 2**  流控算法流程<a name="fig548518330404"></a>  
-    ![](figures/zh-011.png "流控算法流程")
+    ![](figures/zh-011.PNG "流控算法流程")
 
     核心算法流程如下：
 
