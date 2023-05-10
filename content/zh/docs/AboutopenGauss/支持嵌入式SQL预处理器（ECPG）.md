@@ -1,4 +1,4 @@
-# 支持嵌入式SQL预处理器（ECPG）<a name="ZH-CN_TOPIC_0000001088406674"></a>
+# 支持嵌入式SQL预处理器（ECPG）
 
 ## 可获得性<a name="section663215"></a>
 

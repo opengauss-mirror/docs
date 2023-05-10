@@ -1,4 +1,4 @@
-# gs\_ctl<a name="ZH-CN_TOPIC_0289899218"></a>
+# gs\_ctl
 
 ## 背景信息<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>
 

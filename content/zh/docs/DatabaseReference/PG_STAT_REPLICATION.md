@@ -1,4 +1,4 @@
-# PG\_STAT\_REPLICATION<a name="ZH-CN_TOPIC_0289900612"></a>
+# PG\_STAT\_REPLICATION
 
 PG\_STAT\_REPLICATION视图用于描述日志同步状态信息，例如发起端发送日志位置，接收端接收日志位置等。
 

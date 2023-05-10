@@ -1,4 +1,4 @@
-# DROP DIRECTORY<a name="ZH-CN_TOPIC_0289900633"></a>
+# DROP DIRECTORY
 
 ## 功能描述<a name="zh-cn_topic_0283137028_zh-cn_topic_0237122136_zh-cn_topic_0059779050_s7810bb02b5b247fd92d22d7e328c870f"></a>
 

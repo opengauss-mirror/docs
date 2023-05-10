@@ -1,4 +1,4 @@
-# 全局临时表<a name="ZH-CN_TOPIC_0303812074"></a>
+# 全局临时表
 
 ## max\_active\_global\_temporary\_table<a name="section18307271684"></a>
 

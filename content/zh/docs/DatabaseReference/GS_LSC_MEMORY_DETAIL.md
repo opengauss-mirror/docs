@@ -1,4 +1,4 @@
-# GS\_LSC\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0000001242540033"></a>
+# GS\_LSC\_MEMORY\_DETAIL
 
 GS\_LSC\_MEMORY\_DETAIL视图统计所有的线程的本地SysCache内存使用情况，以MemoryContext节点来统计，仅在开启GSC的模式下有数据。
 

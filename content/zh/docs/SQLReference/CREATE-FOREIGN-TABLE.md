@@ -1,4 +1,4 @@
-# CREATE FOREIGN TABLE<a name="ZH-CN_TOPIC_0289900252"></a>
+# CREATE FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137606_section03743713018"></a>
 

@@ -1,4 +1,4 @@
-# Object stats<a name="ZH-CN_TOPIC_0000001260195075"></a>
+# Object stats
 
 Object stats包含User Tables stats、User index stats和Bad lock stats三张表，列名称及描述如下所示。
 

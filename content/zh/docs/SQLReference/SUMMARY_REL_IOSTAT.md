@@ -1,4 +1,4 @@
-# SUMMARY\_REL\_IOSTAT<a name="ZH-CN_TOPIC_0245374678"></a>
+# SUMMARY\_REL\_IOSTAT
 
 获取所有节点上的数据文件IO统计信息。
 

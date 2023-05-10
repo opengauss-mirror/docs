@@ -1,4 +1,4 @@
-# SHOW<a name="ZH-CN_TOPIC_0289900662"></a>
+# SHOW
 
 ## 功能描述<a name="zh-cn_topic_0283136640_zh-cn_topic_0237122191_zh-cn_topic_0059779163_s812131d8918641df9772c998b753f87e"></a>
 

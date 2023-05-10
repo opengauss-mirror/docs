@@ -1,4 +1,4 @@
-# TRUNCATE<a name="ZH-CN_TOPIC_0289900169"></a>
+# TRUNCATE
 
 ## 功能描述<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>
 

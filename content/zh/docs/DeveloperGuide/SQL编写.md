@@ -1,4 +1,4 @@
-# SQL编写<a name="ZH-CN_TOPIC_0000001149508025"></a>
+# SQL编写
 
 ## DDL<a name="section60205875143313"></a>
 

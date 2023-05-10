@@ -1,4 +1,4 @@
-# GS\_CLIENT\_GLOBAL\_KEYS<a name="ZH-CN_TOPIC_0294528092"></a>
+# GS\_CLIENT\_GLOBAL\_KEYS
 
 GS\_CLIENT\_GLOBAL\_KEYS系统表记录密态等值特性中客户端加密主密钥相关信息，每条记录对应一个客户端加密主密钥。
 

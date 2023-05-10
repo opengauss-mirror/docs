@@ -1,4 +1,4 @@
-# ALTER Extension<a name="ZH-CN_TOPIC_0000001127799415"></a>
+# ALTER Extension
 
 ## 功能描述<a name="section173831846163116"></a>
 

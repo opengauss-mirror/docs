@@ -1,4 +1,4 @@
-# 数据校验 gs_datacheck <a name="ZH-CN_TOPIC_0000001264707837"></a>
+# 数据校验 gs_datacheck 
 
 ## 可获得性<a name="section56086982"></a>
 

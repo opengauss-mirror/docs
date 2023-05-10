@@ -1,4 +1,4 @@
-# GS\_MASKING\_POLICY\_FILTERS<a name="ZH-CN_TOPIC_0306525314"></a>
+# GS\_MASKING\_POLICY\_FILTERS
 
 GS\_MASKING\_POLICY\_FILTERS系统表记录动态数据脱敏策略对应的用户过滤条件，当用户条件满足FILTER条件时，对应的脱敏策略才会生效。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 

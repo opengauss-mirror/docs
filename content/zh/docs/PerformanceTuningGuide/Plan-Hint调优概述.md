@@ -1,4 +1,4 @@
-# Plan Hint调优概述<a name="ZH-CN_TOPIC_0245374567"></a>
+# Plan Hint调优概述
 
 Plan Hint为用户提供了直接影响执行计划生成的手段，用户可以通过指定join顺序、join、scan方法、指定结果行数等多个手段来进行执行计划的调优，以提升查询的性能。
 

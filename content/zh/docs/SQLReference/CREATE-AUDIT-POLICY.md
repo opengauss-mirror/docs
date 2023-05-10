@@ -1,4 +1,4 @@
-# CREATE AUDIT POLICY<a name="ZH-CN_TOPIC_0306525302"></a>
+# CREATE AUDIT POLICY
 
 ## 功能描述<a name="section1163224811518"></a>
 

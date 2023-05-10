@@ -1,4 +1,4 @@
-# 类型转换函数<a name="ZH-CN_TOPIC_0289900669"></a>
+# 类型转换函数
 
 ## 类型转换函数<a name="zh-cn_topic_0283137417_zh-cn_topic_0237121973_zh-cn_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>
 

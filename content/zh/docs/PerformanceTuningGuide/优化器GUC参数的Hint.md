@@ -1,4 +1,4 @@
-# 优化器GUC参数的Hint<a name="ZH-CN_TOPIC_0000001096400532"></a>
+# 优化器GUC参数的Hint
 
 ## 功能描述<a name="section290819468377"></a>
 

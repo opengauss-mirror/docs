@@ -1,4 +1,4 @@
-# CREATE SYNONYM<a name="ZH-CN_TOPIC_0289900787"></a>
+# CREATE SYNONYM
 
 ## 功能描述<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 

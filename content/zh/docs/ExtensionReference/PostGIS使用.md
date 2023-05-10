@@ -1,4 +1,4 @@
-# PostGIS使用<a name="ZH-CN_TOPIC_0000001201277572"></a>
+# PostGIS使用
 
 ## 创建Extension<a name="section21088306113"></a>
 

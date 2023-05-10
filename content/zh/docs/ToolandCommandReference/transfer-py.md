@@ -1,4 +1,4 @@
-# transfer.py<a name="ZH-CN_TOPIC_0000001151422084"></a>
+# transfer.py
 
 ## 功能介绍<a name="section51291439191115"></a>
 

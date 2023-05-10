@@ -1,4 +1,4 @@
-# GIN索引<a name="ZH-CN_TOPIC_0289900571"></a>
+# GIN索引
 
 -   **[介绍](介绍_GIN.md)**  
 

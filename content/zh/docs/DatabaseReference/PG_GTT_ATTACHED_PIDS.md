@@ -1,4 +1,4 @@
-# PG\_GTT\_ATTACHED\_PIDS<a name="ZH-CN_TOPIC_0289900591"></a>
+# PG\_GTT\_ATTACHED\_PIDS
 
 PG\_GTT\_ATTACHED\_PIDS视图查看哪些会话正在使用全局临时表，调用pg\_get\_attached\_pid函数。
 

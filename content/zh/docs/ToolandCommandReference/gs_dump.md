@@ -1,4 +1,4 @@
-# gs\_dump<a name="ZH-CN_TOPIC_0249632271"></a>
+# gs\_dump
 
 ## 背景信息<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_section1271019596335"></a>
 

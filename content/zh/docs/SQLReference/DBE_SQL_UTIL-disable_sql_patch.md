@@ -1,4 +1,4 @@
-# DBE\_SQL\_UTIL.disable\_sql\_patch<a name="ZH-CN_TOPIC_0000001314072137"></a>
+# DBE\_SQL\_UTIL.disable\_sql\_patch
 
 disable\_sql\_patch是用于禁用SQL PATCH的接口函数，返回执行是否成功。
 

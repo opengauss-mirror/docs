@@ -1,4 +1,4 @@
-# GLOBAL\_OS\_THREADS<a name="ZH-CN_TOPIC_0245374659"></a>
+# GLOBAL\_OS\_THREADS
 
 提供openGauss中所有正常节点下的线程状态信息。
 

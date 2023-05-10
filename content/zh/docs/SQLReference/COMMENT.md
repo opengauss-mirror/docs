@@ -1,4 +1,4 @@
-# COMMENT<a name="ZH-CN_TOPIC_0289900191"></a>
+# COMMENT
 
 ## 功能描述<a name="zh-cn_topic_0283137624_zh-cn_topic_0237122093_zh-cn_topic_0059778518_se3f65a35f2604b18a7024290d26f80cf"></a>
 

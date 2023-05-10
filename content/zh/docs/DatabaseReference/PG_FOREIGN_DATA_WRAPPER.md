@@ -1,4 +1,4 @@
-# PG\_FOREIGN\_DATA\_WRAPPER<a name="ZH-CN_TOPIC_0289900217"></a>
+# PG\_FOREIGN\_DATA\_WRAPPER
 
 PG\_FOREIGN\_DATA\_WRAPPER系统表存储外部数据封装器定义。一个外部数据封装器是在外部服务器上驻留外部数据的机制，是可以访问的。
 

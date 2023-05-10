@@ -1,4 +1,4 @@
-# PGXC\_GROUP<a name="ZH-CN_TOPIC_0000001198052321"></a>
+# PGXC\_GROUP
 
 PGXC\_GROUP系统表存储节点组信息。PGXC\_GROUP系统表仅在分布式场景下有具体含义，openGauss只能查询表定义。
 

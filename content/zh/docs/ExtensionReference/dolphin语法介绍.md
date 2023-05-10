@@ -1,4 +1,4 @@
-# dolphin语法介绍<a name="ZH-CN_TOPIC_0000001201277572"></a>
+# dolphin语法介绍
 
 -   **[SQL参考](dolphin-SQL参考.md)**  
 

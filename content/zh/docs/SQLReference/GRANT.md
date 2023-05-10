@@ -1,4 +1,4 @@
-# GRANT<a name="ZH-CN_TOPIC_0289900312"></a>
+# GRANT
 
 ## 功能描述<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
 

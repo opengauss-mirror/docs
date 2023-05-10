@@ -1,4 +1,4 @@
-# PG\_SHDEPEND<a name="ZH-CN_TOPIC_0289900698"></a>
+# PG\_SHDEPEND
 
 PG\_SHDEPEND系统表记录数据库对象和共享对象（比如角色）之间的依赖性关系。这些信息允许openGauss保证在企图删除这些对象之前，这些对象是没有被引用的。
 

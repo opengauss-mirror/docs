@@ -1,4 +1,4 @@
-# MOT日志记录：WAL重做日志概念<a name="ZH-CN_TOPIC_0280525164"></a>
+# MOT日志记录：WAL重做日志概念
 
 ## 概述<a name="section57612679"></a>
 

@@ -1,4 +1,4 @@
-# MOVE<a name="ZH-CN_TOPIC_0289900005"></a>
+# MOVE
 
 ## 功能描述<a name="zh-cn_topic_0283137573_zh-cn_topic_0237122169_zh-cn_topic_0059778649_s0bf0a06c81754f8b9c758ba7660a6d5f"></a>
 

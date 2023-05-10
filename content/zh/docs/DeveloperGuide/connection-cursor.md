@@ -1,4 +1,4 @@
-# connection.cursor\(\)<a name="ZH-CN_TOPIC_0000001127310747"></a>
+# connection.cursor\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

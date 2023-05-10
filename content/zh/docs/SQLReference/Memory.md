@@ -1,4 +1,4 @@
-# Memory<a name="ZH-CN_TOPIC_0245374663"></a>
+# Memory
 
 -   **[MEMORY\_NODE\_DETAIL](MEMORY_NODE_DETAIL.md)**  
 

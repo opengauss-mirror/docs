@@ -1,4 +1,4 @@
-# CREATE VIEW<a name="ZH-CN_TOPIC_0289900307"></a>
+# CREATE VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>
 

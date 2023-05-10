@@ -1,4 +1,4 @@
-# CREATE MODEL<a name="ZH-CN_TOPIC_0000001117639598"></a>
+# CREATE MODEL
 
 ## 功能描述<a name="section94489231810"></a>
 

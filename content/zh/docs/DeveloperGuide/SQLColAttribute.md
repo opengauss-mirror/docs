@@ -1,4 +1,4 @@
-# SQLColAttribute<a name="ZH-CN_TOPIC_0242371442"></a>
+# SQLColAttribute
 
 ## 功能描述<a name="zh-cn_topic_0238272888_zh-cn_topic_0237120418_zh-cn_topic_0059778558_scc387c9cd5a14083903b16db19a589da"></a>
 

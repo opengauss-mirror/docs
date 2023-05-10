@@ -1,4 +1,4 @@
-# gs\_encrypt<a name="ZH-CN_TOPIC_0000001197874537"></a>
+# gs\_encrypt
 
 ## 背景信息<a name="section16490883164452"></a>
 

@@ -1,4 +1,4 @@
-# 通过INSERT语句直接写入数据<a name="ZH-CN_TOPIC_0242370280"></a>
+# 通过INSERT语句直接写入数据
 
 用户可以通过以下方式执行[INSERT](../SQLReference/INSERT.md)语句直接向openGauss数据库写入数据：
 

@@ -1,4 +1,4 @@
-# SQL Rewriter: SQL语句改写<a name="ZH-CN_TOPIC_0000001364336305"></a>
+# SQL Rewriter: SQL语句改写
 
 -   **[概述](SQL-Rewriter-SQL语句改写概述.md)**  
 

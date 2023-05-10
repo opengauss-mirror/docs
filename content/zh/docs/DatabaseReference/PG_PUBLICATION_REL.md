@@ -1,4 +1,4 @@
-# PG\_PUBLICATION\_REL<a name="ZH-CN_TOPIC_0000001197430692"></a>
+# PG\_PUBLICATION\_REL
 
 系统表PG\_PUBLICATION\_REL包含当前数据库中的表和publication之间的映射，这是一种多对多映射。
 

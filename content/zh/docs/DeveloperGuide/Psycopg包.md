@@ -1,4 +1,4 @@
-# Psycopg包<a name="ZH-CN_TOPIC_0000001127192085"></a>
+# Psycopg包
 
 从发布包中获取，包名为openGauss-xxxx-操作系统版本号-64-Python.tar.gz。
 

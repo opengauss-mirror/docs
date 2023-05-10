@@ -1,4 +1,4 @@
-# PG\_OPERATOR<a name="ZH-CN_TOPIC_0289899832"></a>
+# PG\_OPERATOR
 
 PG\_OPERATOR系统表存储有关操作符的信息。
 

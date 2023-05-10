@@ -1,4 +1,4 @@
-# TIMECAPSULE TABLE<a name="ZH-CN_TOPIC_0000001151110015"></a>
+# TIMECAPSULE TABLE
 
 ## 功能描述<a name="section1788163418319"></a>
 

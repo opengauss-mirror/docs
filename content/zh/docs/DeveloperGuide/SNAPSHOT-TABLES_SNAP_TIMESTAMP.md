@@ -1,4 +1,4 @@
-# SNAPSHOT.TABLES\_SNAP\_TIMESTAMP<a name="ZH-CN_TOPIC_0245374865"></a>
+# SNAPSHOT.TABLES\_SNAP\_TIMESTAMP
 
 TABLES\_SNAP\_TIMESTAMP表记录所有存储的WDR snapshot中数据库、表对象、以及数据采集的开始和结束时间。
 

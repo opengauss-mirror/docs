@@ -1,4 +1,4 @@
-# 全量迁移gs_mysync<a name="ZH-CN_TOPIC_0000001264707837"></a>
+# 全量迁移gs_mysync
 
 ## 可获得性<a name="section56086982"></a>
 

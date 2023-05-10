@@ -1,4 +1,4 @@
-# Join顺序的Hint<a name="ZH-CN_TOPIC_0245374568"></a>
+# Join顺序的Hint
 
 ## 功能描述<a name="zh-cn_topic_0237121533_section97491741123412"></a>
 

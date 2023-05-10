@@ -1,4 +1,4 @@
-# ALTER LARGE OBJECT<a name="ZH-CN_TOPIC_0289900449"></a>
+# ALTER LARGE OBJECT
 
 ## 功能描述<a name="zh-cn_topic_0283137719_zh-cn_topic_0237122064_zh-cn_topic_0059778505_sbaf83721f63f42a9ba63625707e18b5c"></a>
 

@@ -1,4 +1,4 @@
-# CREATE EVENT<a name="ZH-CN_TOPIC_0000001503312881"></a>
+# CREATE EVENT
 
 ## 功能描述<a name="section189661819135511"></a>
 

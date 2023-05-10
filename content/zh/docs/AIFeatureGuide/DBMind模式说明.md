@@ -1,4 +1,4 @@
-# DBMind模式说明<a name="ZH-CN_TOPIC_0000001243843273"></a>
+# DBMind模式说明
 
 用户可通过gs\_dbmind命令调用AI4DB的全部功能，该命令可实现下列基本功能：
 

@@ -1,4 +1,4 @@
-# X-Tuner: 参数调优与诊断<a name="ZH-CN_TOPIC_0000001138509455"></a>
+# X-Tuner: 参数调优与诊断
 
 ## 可获得性<a name="section1145114551456"></a>
 

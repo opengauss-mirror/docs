@@ -1,4 +1,4 @@
-# DeepSQL：库内AI算法<a name="ZH-CN_TOPIC_0000001138595127"></a>
+# DeepSQL：库内AI算法
 
 ## 可获得性<a name="section76684290441"></a>
 

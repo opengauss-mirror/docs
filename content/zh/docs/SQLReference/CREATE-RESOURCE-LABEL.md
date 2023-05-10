@@ -1,4 +1,4 @@
-# CREATE RESOURCE LABEL<a name="ZH-CN_TOPIC_0306525304"></a>
+# CREATE RESOURCE LABEL
 
 ## 功能描述<a name="section1163224811518"></a>
 

@@ -1,4 +1,4 @@
-# gs\_sshexkey<a name="ZH-CN_TOPIC_0249632281"></a>
+# gs\_sshexkey
 
 ## 背景信息<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_section15111432124318"></a>
 

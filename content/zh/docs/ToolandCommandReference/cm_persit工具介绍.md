@@ -1,4 +1,4 @@
-# cm\_persit工具介绍<a name="ZH-CN_TOPIC_0000001322542352"></a>
+# cm\_persit工具介绍
 
 ## 功能介绍<a name="section125419154813"></a>
 

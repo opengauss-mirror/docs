@@ -1,4 +1,4 @@
-# VACUUM<a name="ZH-CN_TOPIC_0289900615"></a>
+# VACUUM
 
 ## 功能描述<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>
 

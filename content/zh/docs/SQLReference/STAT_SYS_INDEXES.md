@@ -1,4 +1,4 @@
-# STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0245374689"></a>
+# STAT\_SYS\_INDEXES
 
 显示pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。
 
