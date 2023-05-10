@@ -125,6 +125,8 @@ gs_dumpall [OPTION]...
 
   不转储订阅。
 
+  
+
   > ![](public_sys-resources/icon-note.png) **说明：**
   >
   > 当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
