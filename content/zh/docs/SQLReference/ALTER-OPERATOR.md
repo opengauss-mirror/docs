@@ -1,4 +1,4 @@
-# ALTER OPERATOR<a name="ZH-CN_TOPIC_0000001127812609"></a>
+# ALTER OPERATOR
 
 ## 功能描述<a name="section113331284191"></a>
 

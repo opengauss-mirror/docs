@@ -1,4 +1,4 @@
-# SQLFreeHandle<a name="ZH-CN_TOPIC_0242371450"></a>
+# SQLFreeHandle
 
 ## 功能描述<a name="zh-cn_topic_0238272896_zh-cn_topic_0237120426_zh-cn_topic_0059779231_s93f9114d62c04cfa917e8ebc927ec8e9"></a>
 

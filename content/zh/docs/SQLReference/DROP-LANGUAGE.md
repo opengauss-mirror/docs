@@ -1,4 +1,4 @@
-# DROP LANGUAGE<a name="ZH-CN_TOPIC_0000001127872509"></a>
+# DROP LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>
 

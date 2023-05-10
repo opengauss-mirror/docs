@@ -1,4 +1,4 @@
-# gs\_restore<a name="ZH-CN_TOPIC_0249632267"></a>
+# gs\_restore
 
 ## 背景信息<a name="zh-cn_topic_0237152343_zh-cn_topic_0059777561_section182531928123515"></a>
 

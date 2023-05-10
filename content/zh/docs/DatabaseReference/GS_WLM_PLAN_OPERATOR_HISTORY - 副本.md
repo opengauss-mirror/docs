@@ -1,4 +1,4 @@
-# GS\_WLM\_PLAN\_OPERATOR\_HISTORY<a name="ZH-CN_TOPIC_0289900379"></a>
+# GS\_WLM\_PLAN\_OPERATOR\_HISTORY
 
 GS\_WLM\_PLAN\_OPERATOR\_HISTORY视图显示的是当前用户数据库主节点上执行作业结束后的执行计划算子级的相关记录。
 

@@ -1,4 +1,4 @@
-# SESSION\_TIME<a name="ZH-CN_TOPIC_0245374735"></a>
+# SESSION\_TIME
 
 用于统计当前节点会话线程的运行时间信息，及各执行阶段所消耗时间。
 

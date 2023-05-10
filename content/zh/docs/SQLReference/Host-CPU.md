@@ -1,4 +1,4 @@
-# Host CPU<a name="ZH-CN_TOPIC_0000001260195073"></a>
+# Host CPU
 
 Host CPU列名称及描述如下表所示。
 

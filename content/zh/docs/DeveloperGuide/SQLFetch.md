@@ -1,4 +1,4 @@
-# SQLFetch<a name="ZH-CN_TOPIC_0242371447"></a>
+# SQLFetch
 
 ## 功能描述<a name="zh-cn_topic_0238272893_zh-cn_topic_0237120423_zh-cn_topic_0059777989_se050a9bc14bc47f1bb3b6d4650b37d67"></a>
 

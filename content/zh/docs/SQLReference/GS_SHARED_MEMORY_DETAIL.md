@@ -1,4 +1,4 @@
-# GS_SHARED\_MEMORY\_DETAIL<a name="ZH-CN_TOPIC_0245374667"></a>
+# GS_SHARED\_MEMORY\_DETAIL
 
 查询当前节点所有已产生的共享内存上下文的使用信息。
 

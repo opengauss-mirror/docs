@@ -1,4 +1,4 @@
-# GLOBAL\_FILE\_IOSTAT<a name="ZH-CN_TOPIC_0245374672"></a>
+# GLOBAL\_FILE\_IOSTAT
 
 得到所有节点上的数据文件IO统计信息。
 

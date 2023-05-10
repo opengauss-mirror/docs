@@ -1,4 +1,4 @@
-# ALTER SCHEMA<a name="ZH-CN_TOPIC_0289900025"></a>
+# ALTER SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283136607_zh-cn_topic_0237122070_zh-cn_topic_0059779037_s806d414edb004fa89cd50a1166d1136e"></a>
 

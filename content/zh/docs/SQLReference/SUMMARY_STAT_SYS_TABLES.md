@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_SYS\_TABLES<a name="ZH-CN_TOPIC_0245374687"></a>
+# SUMMARY\_STAT\_SYS\_TABLES
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。
 

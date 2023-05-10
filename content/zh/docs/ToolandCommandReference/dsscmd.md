@@ -1,4 +1,4 @@
-# dsscmd<a name="ZH-CN_TOPIC_0000001321698602"></a>
+# dsscmd
 
 ## 概述<a name="section1377524355216"></a>
 

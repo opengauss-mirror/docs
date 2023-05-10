@@ -1,4 +1,4 @@
-# 安全和认证（postgresql.conf）<a name="ZH-CN_TOPIC_0242371486"></a>
+# 安全和认证（postgresql.conf）
 
 介绍设置客户端和服务器的安全认证方式的相关参数。
 

@@ -1,4 +1,4 @@
-# DCF参数设置<a name="ZH-CN_TOPIC_0000001083207760"></a>
+# DCF参数设置
 
 ## enable\_dcf<a name="section14941640131"></a>
 

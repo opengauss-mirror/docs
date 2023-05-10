@@ -1,4 +1,4 @@
-# PG\_INDEXES<a name="ZH-CN_TOPIC_0289900118"></a>
+# PG\_INDEXES
 
 PG\_INDEXES视图提供对数据库中每个索引的有用信息的访问。
 

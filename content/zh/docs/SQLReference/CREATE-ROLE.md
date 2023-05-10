@@ -1,4 +1,4 @@
-# CREATE ROLE<a name="ZH-CN_TOPIC_0289900481"></a>
+# CREATE ROLE
 
 ## 功能描述<a name="zh-cn_topic_0283136858_zh-cn_topic_0237122112_zh-cn_topic_0059778189_s088f05fb7ae447c5b4c28bf78f6a0a56"></a>
 

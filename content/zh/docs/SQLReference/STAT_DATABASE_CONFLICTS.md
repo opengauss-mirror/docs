@@ -1,4 +1,4 @@
-# STAT\_DATABASE\_CONFLICTS<a name="ZH-CN_TOPIC_0245374701"></a>
+# STAT\_DATABASE\_CONFLICTS
 
 显示当前节点数据库冲突状态的统计信息。
 

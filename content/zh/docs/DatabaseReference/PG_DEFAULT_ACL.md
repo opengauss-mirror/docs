@@ -1,4 +1,4 @@
-# PG\_DEFAULT\_ACL<a name="ZH-CN_TOPIC_0289900956"></a>
+# PG\_DEFAULT\_ACL
 
 PG\_DEFAULT\_ACL系统表存储为新建对象设置的初始权限。
 

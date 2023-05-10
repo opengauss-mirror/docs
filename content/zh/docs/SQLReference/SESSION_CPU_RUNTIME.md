@@ -1,4 +1,4 @@
-# SESSION\_CPU\_RUNTIME<a name="ZH-CN_TOPIC_0245374747"></a>
+# SESSION\_CPU\_RUNTIME
 
 SESSION\_CPU\_RUNTIME视图显示和当前用户执行复杂作业（正在运行）时的负载管理CPU使用的信息。
 

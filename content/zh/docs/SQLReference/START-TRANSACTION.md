@@ -1,4 +1,4 @@
-# START TRANSACTION<a name="ZH-CN_TOPIC_0242370656"></a>
+# START TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>
 

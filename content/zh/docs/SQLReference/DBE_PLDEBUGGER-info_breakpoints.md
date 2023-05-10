@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.info\_breakpoints<a name="ZH-CN_TOPIC_0000001162605977"></a>
+# DBE\_PLDEBUGGER.info\_breakpoints
 
 debug端调试过程中，调用info\_breakpoints，查看当前的函数断点。
 

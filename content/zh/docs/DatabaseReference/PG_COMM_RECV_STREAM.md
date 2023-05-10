@@ -1,4 +1,4 @@
-# PG\_COMM\_RECV\_STREAM<a name="ZH-CN_TOPIC_0311526903"></a>
+# PG\_COMM\_RECV\_STREAM
 
 PG\_COMM\_RECV\_STREAM视图展示节点上所有的通信库接收流状态。
 

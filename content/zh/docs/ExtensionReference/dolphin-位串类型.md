@@ -1,4 +1,4 @@
-# 位串类型<a name="ZH-CN_TOPIC_0289900674"></a>
+# 位串类型
 
 相比于原始的openGauss，dolphin对于位串类型的修改主要为：
 

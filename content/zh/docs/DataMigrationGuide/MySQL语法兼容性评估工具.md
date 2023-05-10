@@ -1,4 +1,4 @@
-# MySQL语法兼容性评估工具<a name="ZH-CN_TOPIC_0000001245957397"></a>
+# MySQL语法兼容性评估工具
 
 本工具支持利用已有的openGauss节点评估数据SQL文本在openGauss的兼容性。包含但不限于以下限制：
 

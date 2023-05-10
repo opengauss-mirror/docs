@@ -1,4 +1,4 @@
-# DBE\_PLDEBUGGER.delete\_breakpoint<a name="ZH-CN_TOPIC_0000001116086116"></a>
+# DBE\_PLDEBUGGER.delete\_breakpoint
 
 debug端调试过程中，调用delete\_breakpoint删除已有的断点。
 

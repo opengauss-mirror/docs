@@ -1,4 +1,4 @@
-# PQsendQueryParams<a name="ZH-CN_TOPIC_0242380583"></a>
+# PQsendQueryParams
 
 ## 功能描述<a name="zh-cn_topic_0241735628_section10518135331919"></a>
 

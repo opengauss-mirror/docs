@@ -1,4 +1,4 @@
-# 开启RemoveIPC引起的core问题<a name="ZH-CN_TOPIC_0289900135"></a>
+# 开启RemoveIPC引起的core问题
 
 ## 问题现象<a name="zh-cn_topic_0283136554_section54529241124"></a>
 

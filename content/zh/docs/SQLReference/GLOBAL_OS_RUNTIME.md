@@ -1,4 +1,4 @@
-# GLOBAL\_OS\_RUNTIME<a name="ZH-CN_TOPIC_0245374657"></a>
+# GLOBAL\_OS\_RUNTIME
 
 提供openGauss中所有正常节点下的操作系统运行状态信息。
 

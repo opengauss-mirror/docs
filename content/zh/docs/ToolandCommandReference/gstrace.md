@@ -1,4 +1,4 @@
-# gstrace<a name="ZH-CN_TOPIC_0289899251"></a>
+# gstrace
 
 ## 功能介绍<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
 

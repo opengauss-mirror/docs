@@ -1,4 +1,4 @@
-# openGauss事务<a name="ZH-CN_TOPIC_0289900431"></a>
+# openGauss事务
 
 介绍openGauss事务隔离、事务只读、最大prepared事务数、维护模式目的参数设置及取值范围等内容。
 

@@ -1,4 +1,4 @@
-# CREATE AGGREGATE<a name="ZH-CN_TOPIC_0000001127460521"></a>
+# CREATE AGGREGATE
 
 ## 功能描述<a name="section12436651105814"></a>
 

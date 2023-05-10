@@ -1,4 +1,4 @@
-# PG\_DESCRIPTION<a name="ZH-CN_TOPIC_0289900837"></a>
+# PG\_DESCRIPTION
 
 PG\_DESCRIPTION系统表可以给每个数据库对象存储一个可选的描述（注释）。许多内置的系统对象的描述提供了PG\_DESCRIPTION的初始内容。
 

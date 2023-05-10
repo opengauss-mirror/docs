@@ -1,4 +1,4 @@
-# AI4DB: 慢SQL根因分析<a name="ZH-CN_TOPIC_0000001240824997"></a>
+# AI4DB: 慢SQL根因分析
 
 -   **[概述](Slow-Query-Diagnosis-慢SQL根因分析概述.md)**  
 

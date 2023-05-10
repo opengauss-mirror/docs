@@ -1,4 +1,4 @@
-# DROP RESOURCE POOL<a name="ZH-CN_TOPIC_0000001193987659"></a>
+# DROP RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059778399_sa24aa65d84e94a079fb987b25652dd8d"></a>
 

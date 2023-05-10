@@ -1,4 +1,4 @@
-# Snowball词典<a name="ZH-CN_TOPIC_0289900109"></a>
+# Snowball词典
 
 Snowball词典模板支持词干分析词典，基于Martin Porter的Snowball项目，内置有许多语言的词干分析算法。openGauss中预定义有多种语言的Snowball词典，可通过系统表[PG\_TS\_DICT](../DatabaseReference/PG_TS_DICT.md)查看预定义的词干分析词典以及支持的语言词干分析算法。
 

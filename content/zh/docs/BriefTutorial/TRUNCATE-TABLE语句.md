@@ -1,4 +1,4 @@
-# TRUNCATE TABLE语句<a name="ZH-CN_TOPIC_0000001180098776"></a>
+# TRUNCATE TABLE语句
 
 清理表数据，TRUNCATE TABLE用于删除表的数据，但不删除表结构。也可以用DROP TABLE删除表，但是这个命令会连表的结构一起删除，如果想插入数据，需要重新建立这张表。
 

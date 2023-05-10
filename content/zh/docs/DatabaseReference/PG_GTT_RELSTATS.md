@@ -1,4 +1,4 @@
-# PG\_GTT\_RELSTATS<a name="ZH-CN_TOPIC_0289900546"></a>
+# PG\_GTT\_RELSTATS
 
 PG\_GTT\_RELSTATS视图查看当前会话所有全局临时表基本信息，调用pg\_get\_gtt\_relstats函数。
 

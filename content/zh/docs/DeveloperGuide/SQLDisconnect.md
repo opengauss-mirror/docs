@@ -1,4 +1,4 @@
-# SQLDisconnect<a name="ZH-CN_TOPIC_0242371444"></a>
+# SQLDisconnect
 
 ## 功能描述<a name="zh-cn_topic_0238272890_zh-cn_topic_0237120420_zh-cn_topic_0059778556_sf1f063f9cda741e3bddd12ffff9982ea"></a>
 

@@ -1,4 +1,4 @@
-# ANALYZE | ANALYSE<a name="ZH-CN_TOPIC_0289900881"></a>
+# ANALYZE | ANALYSE
 
 ## 功能描述<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_s3b85e88124004279b0fccf70b5953039"></a>
 

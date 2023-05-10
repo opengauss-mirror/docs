@@ -1,4 +1,4 @@
-# 使用指导<a name="ZH-CN_TOPIC_0000001316625936"></a>
+# 使用指导
 
 1.  设置采样方式为按照采样率采样，即设置GUC参数default\_statistics\_target为\[-100, -1\]之间的整数，表示采样百分比。
 2.  使用ANALYZE\(\(\[column\_name,\]\)\) 进行数据统计和模型创建。

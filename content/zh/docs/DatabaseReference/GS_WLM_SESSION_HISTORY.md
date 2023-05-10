@@ -1,4 +1,4 @@
-# GS\_WLM\_SESSION\_HISTORY<a name="ZH-CN_TOPIC_0000001105522102"></a>
+# GS\_WLM\_SESSION\_HISTORY
 
 GS\_WLM\_SESSION\_HISTORY视图显示当前用户在数据库实例上执行作业结束后的负载管理记录。查询该视图需要sysadmin或者monitor admin权限。
 

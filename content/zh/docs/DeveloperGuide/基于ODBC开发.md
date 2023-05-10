@@ -1,4 +1,4 @@
-# 基于ODBC开发<a name="ZH-CN_TOPIC_0244721233"></a>
+# 基于ODBC开发
 
 -   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
 

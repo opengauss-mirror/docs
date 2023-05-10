@@ -1,4 +1,4 @@
-# 使用kubernetes部署分布式数据库<a name="ZH-CN_TOPIC_0000001264707841"></a>
+# 使用kubernetes部署分布式数据库
 
 ## 可获得性<a name="section3594727121215"></a>
 

@@ -1,4 +1,4 @@
-# GLOBAL\_GET\_BGWRITER\_STATUS<a name="ZH-CN_TOPIC_0281105078"></a>
+# GLOBAL\_GET\_BGWRITER\_STATUS
 
 GLOBAL\_GET\_BGWRITER\_STATUS视图显示所有实例bgwriter线程刷页信息，候选buffer链中页面个数，buffer淘汰信息。
 

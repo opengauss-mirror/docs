@@ -1,4 +1,4 @@
-# 安装openGauss<a name="ZH-CN_TOPIC_0000001223947251"></a>
+# 安装openGauss
 
 openGauss支持以脚本方式进行极简安装。
 

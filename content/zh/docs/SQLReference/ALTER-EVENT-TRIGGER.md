@@ -1,4 +1,4 @@
-# ALTER EVENT TRIGGER<a name="ZH-CN_TOPIC_0289900323"></a>
+# ALTER EVENT TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137014_zh-cn_topic_0271320281_zh-cn_topic_0059777936_sb9efc89be09141c3b332116dd8c2b35d"></a>
 

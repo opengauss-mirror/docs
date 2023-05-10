@@ -1,4 +1,4 @@
-# SELECT HINT<a name="ZH-CN_TOPIC_0000001096400532"></a>
+# SELECT HINT
 
 ## 功能描述<a name="section290819468377"></a>
 

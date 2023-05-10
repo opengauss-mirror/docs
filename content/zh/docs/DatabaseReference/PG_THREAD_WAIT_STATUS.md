@@ -1,4 +1,4 @@
-# PG\_THREAD\_WAIT\_STATUS<a name="ZH-CN_TOPIC_0289900410"></a>
+# PG\_THREAD\_WAIT\_STATUS
 
 通过PG\_THREAD\_WAIT\_STATUS视图可以检测当前实例中工作线程（backend thread）以及辅助线程（auxiliary thread）的阻塞等待情况。
 

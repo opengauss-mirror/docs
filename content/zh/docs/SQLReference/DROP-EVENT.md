@@ -1,4 +1,4 @@
-# DROP EVENT<a name="ZH-CN_TOPIC_0000001503113597"></a>
+# DROP EVENT
 
 ## 功能描述<a name="section5400959952"></a>
 

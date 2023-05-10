@@ -1,4 +1,4 @@
-# gs\_guc<a name="ZH-CN_TOPIC_0289899223"></a>
+# gs\_guc
 
 ## 背景信息<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>
 

@@ -1,4 +1,4 @@
-# java.sql.Driver<a name="ZH-CN_TOPIC_0289900174"></a>
+# java.sql.Driver
 
 java.sql.Driver是数据库驱动接口。
 

@@ -1,4 +1,4 @@
-# connection.close\(\)<a name="ZH-CN_TOPIC_0000001127310749"></a>
+# connection.close\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 

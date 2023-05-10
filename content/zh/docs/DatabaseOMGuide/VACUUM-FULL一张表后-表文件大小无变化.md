@@ -1,4 +1,4 @@
-# VACUUM FULL一张表后，表文件大小无变化<a name="ZH-CN_TOPIC_0291615102"></a>
+# VACUUM FULL一张表后，表文件大小无变化
 
 ## 问题现象<a name="section6396133915314"></a>
 

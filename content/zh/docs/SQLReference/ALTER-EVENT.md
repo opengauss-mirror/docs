@@ -1,4 +1,4 @@
-# ALTER EVENT<a name="ZH-CN_TOPIC_0000001503472553"></a>
+# ALTER EVENT
 
 ## 功能描述<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>
 

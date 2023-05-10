@@ -1,4 +1,4 @@
-# GLOBAL\_LOCKS<a name="ZH-CN_TOPIC_0245374831"></a>
+# GLOBAL\_LOCKS
 
 GLOBAL\_LOCKS视图用于查看各节点各打开事务所持有的锁信息。
 

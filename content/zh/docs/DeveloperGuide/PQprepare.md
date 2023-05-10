@@ -1,4 +1,4 @@
-# PQprepare<a name="ZH-CN_TOPIC_0242380578"></a>
+# PQprepare
 
 ## 功能描述<a name="zh-cn_topic_0241735620_section1434210205519"></a>
 

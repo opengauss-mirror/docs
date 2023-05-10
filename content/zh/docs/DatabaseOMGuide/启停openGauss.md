@@ -1,4 +1,4 @@
-# 启停openGauss<a name="ZH-CN_TOPIC_0242215008"></a>
+# 启停openGauss
 
 ## 启动openGauss<a name="zh-cn_topic_0237088789_zh-cn_topic_0059777680_se84dd72782a34e9b8b1fb962d2842afa"></a>
 

@@ -1,4 +1,4 @@
-# MOT隔离级别<a name="ZH-CN_TOPIC_0280525158"></a>
+# MOT隔离级别
 
 即使MOT完全兼容ACID，openGauss 1.0并非支持所有的隔离级别。下表介绍了各隔离级别，以及MOT支持和不支持的内容。
 

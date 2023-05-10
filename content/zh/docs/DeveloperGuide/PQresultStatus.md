@@ -1,4 +1,4 @@
-# PQresultStatus<a name="ZH-CN_TOPIC_0242380579"></a>
+# PQresultStatus
 
 ## 功能描述<a name="zh-cn_topic_0241735621_section17608142135118"></a>
 
