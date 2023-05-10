@@ -53,7 +53,7 @@ GS\_GLOBAL\_CHAIN系统表记录用户对防篡改用户表的修改操作信息
 </td>
 <td class="cellrowborder" valign="top" width="24.09240924092409%" headers="mcps1.2.4.1.2 "><p id="p758341211398"><a name="p758341211398"></a><a name="p758341211398"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.84588458845885%" headers="mcps1.2.4.1.3 "><p id="p3584171213914"><a name="p3584171213914"></a><a name="p3584171213914"></a>模式Oid，被修改的防篡改用户表所属的namesapce oid。</p>
+<td class="cellrowborder" valign="top" width="58.84588458845885%" headers="mcps1.2.4.1.3 "><p id="p3584171213914"><a name="p3584171213914"></a><a name="p3584171213914"></a>模式Oid，被修改的防篡改用户表所属的namespace oid。</p>
 </td>
 </tr>
 <tr id="row18804918103910"><td class="cellrowborder" valign="top" width="17.06170617061706%" headers="mcps1.2.4.1.1 "><p id="p6805191853915"><a name="p6805191853915"></a><a name="p6805191853915"></a>relname</p>
