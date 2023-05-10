@@ -78,26 +78,18 @@
   
 -   row\_clause子语法用于设置分区表的行迁移开关。
     
-        ```
-        { ENABLE | DISABLE } ROW MOVEMENT
     ```
-    
+    { ENABLE | DISABLE } ROW MOVEMENT
     ```
     
 -   merge\_clause子语法用于把多个分区合并成一个分区。
     
         MERGE PARTITIONS { partition_name } [, ...] INTO PARTITION partition_name 
             [ TABLESPACE tablespacename ] [ UPDATE GLOBAL INDEX ]
-    ```
-    
-    ```
     
 -   modify\_clause子语法用于设置分区索引是否可用。
     
         MODIFY PARTITION partition_name { UNUSABLE LOCAL INDEXES | REBUILD UNUSABLE LOCAL INDEXES }
-    ```
-    
-    ```
     
 - split\_clause子语法用于把一个分区切割成多个分区。
 
@@ -145,7 +137,7 @@
         
         ```
 
- -   add\_clause子语法用于为指定的分区表添加一个或多个分区。
+ - add\_clause子语法用于为指定的分区表添加一个或多个分区。
 
     ```
     ADD PARTITION ( partition_col1_name = partition_col1_value [, partition_col2_name = partition_col2_value ] [, ...] )
@@ -155,14 +147,21 @@
     ADD {partition_less_than_item | partition_start_end_item| partition_list_item }
     ```
 
+    
+
     分区项partition\_list\_item的语法如下。
+
+    
 
     ```
     PARTITION partition_name VALUES (list_values_clause) 
         [ TABLESPACE tablespacename ]
     ```
 
+    
+
     >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >
     >-   partition\_list\_item仅支持的1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
     >-   间隔/哈希分区表不支持添加分区。
 
