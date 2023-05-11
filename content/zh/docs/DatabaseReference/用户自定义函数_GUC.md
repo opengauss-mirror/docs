@@ -1,4 +1,4 @@
-# 用户自定义函数<a name="ZH-CN_TOPIC_0000001130221229"></a>
+# 用户自定义函数
 
 ## udf\_memory\_limit<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section1765913299426"></a>
 
@@ -42,7 +42,7 @@
 -   JDK8 JVM系统属性参数（以–D开头如–Djava.ext.dirs，可参见JDK[官方](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)说明）
 -   用户自定义参数（以–D开头，如–Duser.defined.option）
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >如果用户在pljava\_vmoptions中设置参数不满足上述取值范围，会在使用PL/Java语言函数时报错。此参数的详细说明参见[PL/pgSQL语言函数](../SQLReference/PL-pgSQL语言函数.md)。
 
 **默认值：** 空

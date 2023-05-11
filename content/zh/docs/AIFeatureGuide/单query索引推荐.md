@@ -1,4 +1,4 @@
-# 单query索引推荐<a name="ZH-CN_TOPIC_0296549246"></a>
+# 单query索引推荐
 
 单query索引推荐功能支持用户在数据库中直接进行操作，本功能基于查询语句的语义信息和数据库的统计信息，对用户输入的单条查询语句生成推荐的索引。本功能涉及的函数接口如下。
 
@@ -23,7 +23,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 >-   本功能仅支持单条SELECT类型的语句，不支持其他类型的SQL语句。  
 >-   本功能暂不支持列存表、段页式表、普通视图、物化视图、全局临时表以及密态数据库。  
@@ -74,6 +74,6 @@ openGauss=# select "table", "column", "indextype" from gs_index_advise('select n
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >系统函数gs\_index\_advise\(\)的参数是文本型，如果参数中存在如单引号（'）等特殊字符，可以使用单引号（'）进行转义，可参考上述示例。
 

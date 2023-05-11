@@ -1,4 +1,4 @@
-# 示例：常用操作<a name="ZH-CN_TOPIC_0000001127192087"></a>
+# 示例：常用操作
 
 ```
 import psycopg2

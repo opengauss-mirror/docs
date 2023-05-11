@@ -1,4 +1,4 @@
-# MOT样例TPC-C基准<a name="ZH-CN_TOPIC_0280525151"></a>
+# MOT样例TPC-C基准
 
 ## TPC-C简介<a name="section46845508"></a>
 
@@ -110,7 +110,7 @@ tpm-C指标是每分钟执行的新订单事务数。考虑到事务中所需的
 
 tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >官方TPC-C基准规范可访问：[http://www.tpc.org/tpc\_documents\_current\_versions/pdf/tpc-c\_v5.11.0.pdf](http://www.tpc.org/tpc_documents_current_versions/pdf/tpc-c_v5.11.0.pdf)。本规范中的一些规则在行业中难以实现，因为对行业现状来说这些规则太严格了。例如：扩容规则（a） tpm-C/Warehouse必须大于9且小于12.86（要达到较高的tpm-C率，需要很高的仓库费率。这就意味着需要非常大的数据库和内存容量）以及规则（b）10倍终端\*仓库（意味着大量的模拟客户端）。
 
@@ -130,7 +130,7 @@ tpm-C指标单位表示为每分钟事务数-C，而C表示TPC-C特定基准。
 
 在下载的Java文件（与原始文件相比）中所做的唯一更改是注释错误日志打印，以进行序列化和重复键错误。这些错误在MOT中是正常的，因为MOT使用的是乐观并发控制（OCC）机制。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >基准测试使用标准交互式SQL模式执行，没有存储过程。
 
 ## 运行基准<a name="section59073002"></a>

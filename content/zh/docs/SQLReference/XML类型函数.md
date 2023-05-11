@@ -1,4 +1,4 @@
-# XML类型函数<a name="ZH-CN_TOPIC_0000001426952708"></a>
+# XML类型函数
 
 以下函数均继承自开源PG9.2。
 
@@ -49,7 +49,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   当一个字符串值在没有通过XMLPARSE或XMLSERIALIZE的情况下，与xml类型进行转换时，分别的选择DOCUMENT与CONTENT由"XML option" 会话配置参数决定，这个配置参数可以由标准命令来设置：
     >    ```
     >    SET XML OPTION { DOCUMENT | CONTENT };
@@ -364,7 +364,7 @@
 
     描述：产生XML数据映射和对应的XML模式，并把产生的结果链接在一起放在一个文档中。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   xpath相关函数仅支持 xpath\(\) 和 xpath\_exists\(\)、由于其使用xpath语言查询XML文档，而这些函数都依赖于libxml2 库，且这个库仅在Xpath1.0提供、所以对XPath的限制为1.0。
     >-   不支持xquery、xml extension、xslt。
 

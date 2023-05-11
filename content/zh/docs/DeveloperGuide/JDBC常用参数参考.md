@@ -1,4 +1,4 @@
-# JDBC常用参数参考<a name="ZH-CN_TOPIC_0000001399380057"></a>
+# JDBC常用参数参考
 
 ## targetServerType<a name="section556210112155"></a>
 
@@ -44,7 +44,7 @@
 
 **建议：**配置后会每次建连都会开启一个异步线程，在连接数较多的情况可能会导致客户端压力增大，如果业务确认需要此设置此参数，需要注意在集中式下建议调整为3\*connectTimeout防止在网络异常情况且第三个IP为主的情况下，无法连接。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >此参数设置后对于多ip而言，时间是尝试连接ip的时间，可能会出现因为设置的值较小导致后面的ip无法连接的问题，例如设置了三个ip，如果logintimeout为5s，但前两个ip建连总共用了5s，第三个ip会无法进行连接，在集中式环境下，此最后一个ip恰好为主机，可能会导致自动寻主失败。
 
 ## cancelSignalTimeout<a name="section158271453172310"></a>

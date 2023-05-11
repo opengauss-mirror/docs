@@ -1,4 +1,4 @@
-# DELETE<a name="ZH-CN_TOPIC_0289900955"></a>
+# DELETE
 
 ## 功能描述<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_se9507fb26df547a795ac7940e3a19ecf"></a>
 
@@ -107,7 +107,7 @@ DELETE [/*+ plan_hint */]
 
     using子句。
 
-      >![](public_sys-resources/icon-notice.gif) **须知：** 
+      >![](public_sys-resources/icon-notice.png) **须知：** 
       > 
     >当参数sql\_compatibility='B'或删除多张目标表时，using\_list指定关联表的集合时可以同时出现目标表，并且可以定义表的别名并在目标表中使用。其他情况下则目标表不可重复出现在using\_list中。
 

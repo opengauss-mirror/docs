@@ -1,4 +1,4 @@
-# PG\_TYPE\_NONSTRICT\_BASIC\_VALUE<a name="ZH-CN_TOPIC_0000001116241547"></a>
+# PG\_TYPE\_NONSTRICT\_BASIC\_VALUE
 
 PG\_TYPE\_NONSTRICT\_BASIC\_VALUE视图存储类型的基础值，用于insert values()的插入。默认只有系统管理员权限才可以访问此系统表，普通用户需要授权才可以访问。
 

@@ -1,4 +1,4 @@
-# PG\_DEPEND<a name="ZH-CN_TOPIC_0289900127"></a>
+# PG\_DEPEND
 
 PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允许DROP命令找出哪些其它对象必须由DROP CASCADE删除，或者是在DROP RESTRICT的情况下避免删除。
 

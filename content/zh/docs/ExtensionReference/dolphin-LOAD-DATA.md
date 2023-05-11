@@ -1,4 +1,4 @@
-# LOAD DATA<a name="ZH-CN_TOPIC_0289899980"></a>
+# LOAD DATA
 
 ## 功能描述<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s0d743b5d862d4cf1829449f474af6d7z"></a>
 
@@ -73,7 +73,7 @@
 
     取值范围：支持多字符换行符，但换行符不能超过10个字节。常见的换行符，如\\r、\\n、\\r\\n（设成0x0D、0x0A、0x0D0A效果是相同的），其他字符或字符串，如$、\#。
     
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >   
     >-   LINES TERMINATED BY参数不能和分隔符、null参数相同。    
     >-   LINES TERMINATED BY参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
@@ -92,7 +92,7 @@
     
     缺省值：双引号。
     
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   ENCLOSED BY参数不能和分隔符参数相同。
     >-   ENCLOSED BY参数只能是单字节的字符。

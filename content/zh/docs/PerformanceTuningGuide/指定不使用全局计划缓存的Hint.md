@@ -1,4 +1,4 @@
-# 指定不使用全局计划缓存的Hint<a name="ZH-CN_TOPIC_0000001096240528"></a>
+# 指定不使用全局计划缓存的Hint
 
 ## 功能描述<a name="section290819468377"></a>
 
@@ -10,7 +10,7 @@
 no_gpc
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >本参数仅在enable\_global\_plancache=on时对PBE执行的语句生效。
 
 ## 示例<a name="section5736356154"></a>

@@ -1,4 +1,4 @@
-# Query<a name="ZH-CN_TOPIC_0289900490"></a>
+# Query
 
 ## instr\_unique\_sql\_count<a name="zh-cn_topic_0283137149_zh-cn_topic_0237124756_section983311682019"></a>
 
@@ -16,7 +16,7 @@
 
 **默认值**：100
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >-   在开启自动淘汰的情况下，如果该值设置的较小，可能会导致系统频繁的进行自动淘汰，有可能会影响数据库系统性能，所以实际场景中建议不要将该值设置的过小，建议值为200000。
 >
 >-   在开启自动淘汰的情况下，如果该值设置的较大（例如38347922），清理过程中可能会引发大内存问题而无法清理。
@@ -146,7 +146,7 @@ full sql stat level为全量SQL跟踪级别，取值范围为OFF、L0、L1、L2
 
 slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >若全量SQL跟踪级别值为非OFF时，当前SQL跟踪级别值为全量SQL和慢SQL的较高级别（L2 \> L1 \> L0），级别说明请参见《数据库参考》的“系统表和系统视图 > 系统表 > STATEMENT_HISTORY”中的“STATEMENT_HISTORY字段”表格。
 
 **默认值：** OFF,L0
@@ -161,7 +161,7 @@ slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 
 **默认值：** off
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >由于快照有部分信息是来源于unique sql，所以开启自动淘汰的情况下，在生成wdr报告时，如果选择的起始快照和终止快照跨过了淘汰发生的时间，会导致无法生成wdr报告。
 
 ## enable\_slow\_query\_log（废弃）<a name="section19769519201515"></a>
@@ -183,7 +183,7 @@ slow sql stat level为慢SQL的跟踪级别，取值范围为OFF、L0、L1、L2
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >建议使用%转义字符定义日志文件名称，否则难以对日志文件进行有效的管理。
 

@@ -1,4 +1,4 @@
-# JDBC包、驱动类和环境类<a name="ZH-CN_TOPIC_0244720259"></a>
+# JDBC包、驱动类和环境类
 
 ## JDBC包<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s9694406852de4db0afcc99b19079f446"></a>
 
@@ -10,7 +10,7 @@ openGauss提供两种JDBCjar包：postgresql.jar和openGauss-jdbc-x.x.x.jar，�
 
 ## 驱动类<a name="zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s103697559c8d4cb68f396e18e3ae65a9"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >
 >+ openGauss在JDBC的使用上与PG的使用方法保持兼容。在同一个JVM虚拟机里加载PostgreSQL和openGauss的JDBC同名驱动时，可能存在org.postgresql.Driver驱动类冲突问题。
 >

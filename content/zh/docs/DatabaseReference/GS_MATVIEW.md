@@ -1,4 +1,4 @@
-# GS\_MATVIEW<a name="ZH-CN_TOPIC_0000001133666345"></a>
+# GS\_MATVIEW
 
 GS\_MATVIEW系统表提供了关于数据库中每一个物化视图的信息。
 

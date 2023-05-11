@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374694"></a>
+# GLOBAL\_STAT\_ALL\_TABLES
 
 得到各节点数据中每个表的一行（包括TOAST表）的统计信息。
 

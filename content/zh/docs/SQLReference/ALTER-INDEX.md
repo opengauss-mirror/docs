@@ -1,4 +1,4 @@
-# ALTER INDEX<a name="ZH-CN_TOPIC_0289900645"></a>
+# ALTER INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sfe4d0517393c4151ab84ea0450924b7c"></a>
 
@@ -88,7 +88,7 @@ ALTER INDEX用于修改现有索引的定义。
         [ MODIFY PARTITION index_partition_name ] UNUSABLE;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >列存表不支持该语法。
 
 

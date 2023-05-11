@@ -1,10 +1,10 @@
-# DROP RESOURCE POOL<a name="ZH-CN_TOPIC_0000001193987659"></a>
+# DROP RESOURCE POOL
 
 ## 功能描述<a name="zh-cn_topic_0059778399_sa24aa65d84e94a079fb987b25652dd8d"></a>
 
 删除一个资源池。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果某个角色已关联到该资源池，无法删除。
 
 ## 注意事项<a name="zh-cn_topic_0059778399_sac7b2d84ed1a4b7fba5c5a6497f822c1"></a>

@@ -1,4 +1,4 @@
-﻿# MySQL一键式迁移工具gs_rep_portal<a name="ZH-CN_TOPIC_0000001264707837"></a>
+﻿# MySQL一键式迁移工具gs_rep_portal
 
 ## 可获得性<a name="section56086982"></a>
 

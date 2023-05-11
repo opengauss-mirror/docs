@@ -1,4 +1,4 @@
-# CREATE EVENT<a name="ZH-CN_TOPIC_0000001503312881"></a>
+# CREATE EVENT
 
 ## 功能描述<a name="section189661819135511"></a>
 
@@ -88,7 +88,7 @@ openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE EVERY 1 minute DO in
 
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >-   定时任务创建完成后如果执行失败，失败原因可以通过SHOW EVENTS或在PG\_JOB表中查看。
 >-   当定时任务的待执行语句中进行涉及用户密码相关操作时（创建弱口令等），系统表及中会记录密码的明文。因此不建议用户在定时任务的待执行语句中进行涉及用户密码的相关操作。
 

@@ -1,4 +1,4 @@
-# TPCC运行时，注入磁盘满故障，TPCC卡住的问题<a name="ZH-CN_TOPIC_0289900262"></a>
+# TPCC运行时，注入磁盘满故障，TPCC卡住的问题
 
 ## 问题现象<a name="zh-cn_topic_0283136782_section526616331423"></a>
 

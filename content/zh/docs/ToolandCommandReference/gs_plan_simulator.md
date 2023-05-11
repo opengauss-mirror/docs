@@ -1,4 +1,4 @@
-# gs\_plan\_simulator<a name="ZH-CN_TOPIC_0000001151403222"></a>
+# gs\_plan\_simulator
 
 ## 背景信息<a name="section7471933144813"></a>
 

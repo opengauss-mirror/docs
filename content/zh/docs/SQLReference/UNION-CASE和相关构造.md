@@ -1,4 +1,4 @@
-# UNION，CASE和相关构造<a name="ZH-CN_TOPIC_0289900690"></a>
+# UNION，CASE和相关构造
 
 SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一个结果集。解析算法分别应用于联合查询的每个输出字段。INTERSECT和EXCEPT构造对不相同的类型使用和UNION相同的算法进行解析。CASE、ARRAY、VALUES、GREATEST和LEAST构造也使用同样的算法匹配它的部件表达式并且选择一个结果数据类型。
 
@@ -9,7 +9,7 @@ SQL UNION构造必须把那些可能不太相似的类型匹配起来成为一�
 -   如果输入不属于同一个类型范畴，失败。（unknown类型除外）
 - 如果输入类型是同一个类型范畴，则选择该类型范畴的首选类型。（例外：union操作会选择第一个分支的类型作为所选类型。）
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >系统表pg\_type中typcategory表示数据类型范畴，typispreferred表示是否是typcategory分类中的首选类型。
 

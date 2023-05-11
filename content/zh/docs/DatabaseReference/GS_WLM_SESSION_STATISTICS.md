@@ -1,4 +1,4 @@
-# GS\_WLM\_SESSION\_STATISTICS<a name="ZH-CN_TOPIC_0000001105202294"></a>
+# GS\_WLM\_SESSION\_STATISTICS
 
 GS\_WLM\_SESSION\_STATISTICS视图显示当前用户在数据库实例上正在执行的作业的负载管理记录。查询该视图需要sysadmin权限。
 

@@ -1,4 +1,4 @@
-# GS\_LABELS<a name="ZH-CN_TOPIC_0306525319"></a>
+# GS\_LABELS
 
 GS\_LABELS视图显示所有已配置的资源标签信息。需要有系统管理员或安全策略管理员权限才可以访问此视图。
 

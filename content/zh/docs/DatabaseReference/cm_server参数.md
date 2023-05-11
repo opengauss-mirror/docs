@@ -1,4 +1,4 @@
-# cm\_server参数<a name="ZH-CN_TOPIC_0295386223"></a>
+# cm\_server参数
 
 ## log\_dir<a name="zh-cn_topic_0059779078_sbb7ff995aa1a49b7b310730fcfd6adbd"></a>
 
@@ -303,7 +303,7 @@
 -   off表示不启用ssl。
 -   **默认值**：off
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >出于安全性考虑，建议不要关闭该配置。关闭后cm将**不使用**加密通信，所有信息明文传播，可能带来窃听、篡改、冒充等安全风险。
 
 

@@ -1,4 +1,4 @@
-# PG\_FOREIGN\_TABLE<a name="ZH-CN_TOPIC_0289900920"></a>
+# PG\_FOREIGN\_TABLE
 
 PG\_FOREIGN\_TABLE系统表存储外部表的辅助信息。
 

@@ -1,4 +1,4 @@
-# gs\_encrypt<a name="ZH-CN_TOPIC_0000001197874537"></a>
+# gs\_encrypt
 
 ## 背景信息<a name="section16490883164452"></a>
 
@@ -10,7 +10,7 @@ openGauss提供了gs\_encrypt工具为输入的明文字符串进行加密操作
 gs_encrypt [OPTION]... PLAINTEXT
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >-   “PLAINTEXT”前不需要加短选项或长选项。
 >-   “PLAINTEXT”是需要加密的明文字符串。
 
@@ -44,7 +44,7 @@ gs_encrypt [OPTION]... PLAINTEXT
 
     加密时使用的随机数，以base64编码。base64编码前的字符串长度必须为16。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >出于安全考虑，建议用户在使用gs\_encrypt工具前设置HISTCONTROL=ignorespace，强制不记录敏感历史命令，然后在执行gs\_encrypt命令行前面加空格。
 
 

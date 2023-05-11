@@ -1,4 +1,4 @@
-# dsscmd<a name="ZH-CN_TOPIC_0000001321698602"></a>
+# dsscmd
 
 ## 概述<a name="section1377524355216"></a>
 
@@ -96,7 +96,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd inq  <-t inq_type>
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >inq_type表示查询信息的类型。取值如下：
     >-   lun: 查询LUN信息。
     >-   reg: 查询reservations信息。
@@ -131,7 +131,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd unreghl [-t type] [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   type: 值为int类型，0表示不使用vg锁，非0表示使用vg锁，默认值为1。
 
 -   扫描并打开指定路径下指定用户和属组的盘符，不走服务端
@@ -140,7 +140,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd scandisk <-t type> <-p path> <-u user_name> <-g group_name>
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   type: 盘符类型，当前只支持block块设备。
     >-   [path][user_name][group_name]: 该字段中不能含有命令注入安全隐患的非法字符：
     >'|'， ';'， '&'， '$'， '<'， '>'， '`'， '\\\'， '\\''， '\\"'， '{'， '}'， '('， ')'， '['， ']'， '~'， '*'， '?'， ' '， '!'， '\n'。
@@ -178,7 +178,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd showdisk <-g vg_name> <-b block_id> <-n node_id> [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
     >-   如果指定参数-b block_id，则需指定-n node_id。
     >-   blocl_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
@@ -197,7 +197,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd du <-p path> [-f format] [-U UDS:socket_domain]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >format：支持3种参数，参数之间不需要任何分隔符。
     >-   B|K|M|G|T
     >    B: Byte, K: KB ,M: MB , G: GB, T: TB。
@@ -287,7 +287,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     表示目录或带路径的文件，需要带'+'且不支持使用相对路径，命名长度不能超过1K，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。文件名本身长度不能超过63位，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ', 其他字符不支持。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >dsscmd命令使用UDS:socket_domain的时候，需要与服务端通信，由于客户端和服务端通信的报文最长为1024，所以实际path支持的长度可能会少于1K。
 
 -   dir\_name

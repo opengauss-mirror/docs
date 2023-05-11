@@ -1,4 +1,4 @@
-# UPDATE<a name="ZH-CN_TOPIC_0289900207"></a>
+# UPDATE
 
 ## 功能描述<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>
 
@@ -60,7 +60,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
  -   sql_ignore_startegy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
-   >![](public_sys-resources/icon-note.gif) **说明：**
+   >![](public_sys-resources/icon-note.png) **说明：**
    >
    >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
 

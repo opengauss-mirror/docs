@@ -1,10 +1,10 @@
-# gstrace<a name="ZH-CN_TOPIC_0289899251"></a>
+# gstrace
 
 ## 功能介绍<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_zh-cn_topic_0059778103_s1d88b9452b2d4c15811c8ad2670b7682"></a>
 
 gstrace是openGauss提供的用来跟踪内核代码执行路径、记录内核数据结构、分析代码性能的工具。Trace的有限点位和数据在版本中被固化，无法动态添加和删除。
 
->![](public_sys-resources/icon-warning.gif) **警告：** 
+>![](public_sys-resources/icon-warning.png) **警告：** 
 >
 >1.  对内核dump指定内存变量的数据用于诊断分析，不存在直接指定任意寄存器或者内存地址的行为。读取的内存地址均是在开发阶段硬编码，没有任意地读取或者修改寄存器或内存的操作。
 >2.  Trace点可能涉及敏感数据，收集trace信息前需要同用户协商，授权和许可后方可收集。
@@ -13,7 +13,7 @@ gstrace是openGauss提供的用来跟踪内核代码执行路径、记录内核�
 >5.  Trace工具的权限为0700，仅限于数据库用户读、写和执行。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果进程异常终止，/dev/shm/ 目录下将会有gstrace\_trace\_cfg\_\*残留，可以手动清除。
 
 ## 语法<a name="zh-cn_topic_0287275941_zh-cn_topic_0237152426_section681720817204"></a>

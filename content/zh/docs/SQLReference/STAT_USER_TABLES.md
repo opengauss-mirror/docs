@@ -1,4 +1,4 @@
-# STAT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374680"></a>
+# STAT\_USER\_TABLES
 
 显示当前节点所有命名空间中用户自定义普通表的状态信息。
 

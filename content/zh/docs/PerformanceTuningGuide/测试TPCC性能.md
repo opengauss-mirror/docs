@@ -1,4 +1,4 @@
-# 测试TPCC性能<a name="ZH-CN_TOPIC_0263913274"></a>
+# 测试TPCC性能
 
 1.  下载TPCC标准测试工具BenchmarkSQL5.0。
 2.  将目录lib/postgresql下面的\*.jar 替换为openGauss适配的jar包。

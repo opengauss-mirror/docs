@@ -1,4 +1,4 @@
-# SUMMARY\_STATEMENT<a name="ZH-CN_TOPIC_0289900134"></a>
+# SUMMARY\_STATEMENT
 
 获得各数据库主节点的执行语句（归一化SQL）的全量信息（包含数据库节点）。
 

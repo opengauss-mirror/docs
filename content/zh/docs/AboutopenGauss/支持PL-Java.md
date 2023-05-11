@@ -1,4 +1,4 @@
-# 支持PL/Java<a name="ZH-CN_TOPIC_0000001135665711"></a>
+# 支持PL/Java
 
 ## 可获得性<a name="section56086982"></a>
 

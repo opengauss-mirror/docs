@@ -1,4 +1,4 @@
-# 使用gs\_restore命令导入数据<a name="ZH-CN_TOPIC_0000001208139521"></a>
+# 使用gs\_restore命令导入数据
 
 ## 操作场景<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section17330121375310"></a>
 
@@ -19,7 +19,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 
 ## 操作步骤<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section3467125218532"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议选择使用“-c”和“-e”参数。“-c”表示在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象；“-e”表示当发送SQL语句到数据库时如果出现错误请退出，默认状态下会继续，且在导入后会显示一系列错误信息。
 

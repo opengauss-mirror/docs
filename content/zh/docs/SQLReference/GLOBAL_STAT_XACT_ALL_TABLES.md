@@ -1,4 +1,4 @@
-# GLOBAL\_STAT\_XACT\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374706"></a>
+# GLOBAL\_STAT\_XACT\_ALL\_TABLES
 
 显示各节点的命名空间中所有普通表和toast表的事务状态信息。
 

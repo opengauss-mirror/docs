@@ -1,4 +1,4 @@
-# PG\_STATIO\_ALL\_INDEXES<a name="ZH-CN_TOPIC_0289900974"></a>
+# PG\_STATIO\_ALL\_INDEXES
 
 PG\_STATIO\_ALL\_INDEXES视图将包含当前数据库中的每个索引行，显示特定索引的I/O的统计。
 

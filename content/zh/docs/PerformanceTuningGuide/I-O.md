@@ -1,4 +1,4 @@
-# I/O<a name="ZH-CN_TOPIC_0245374523"></a>
+# I/O
 
 通过iostat、pidstat命令或openGauss健康检查工具查看openGauss内节点I/O繁忙度和吞吐量，分析是否存在由于I/O导致的性能瓶颈。
 
@@ -69,7 +69,7 @@
         vacuum full tablename;
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >![](public_sys-resources/icon-note.png) **说明：**   
         >建议用户在系统空闲时进行VACUUM FULL操作，VACUUM FULL操作会造成短时间内I/O负载重，反而不利于降低I/O。  
 
 

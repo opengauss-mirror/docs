@@ -1,4 +1,4 @@
-# gs\_check<a name="ZH-CN_TOPIC_0249632243"></a>
+# gs\_check
 
 ## 背景信息<a name="zh-cn_topic_0237152330_zh-cn_topic_0059777799_section2466014153117"></a>
 
@@ -837,7 +837,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >CheckNetSpeed检查项：
 >
 >-   CheckNetSpeed不支持-L本地检查模式，-L模式无法构造网络压力，检查的结果不准确。
@@ -870,7 +870,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
     scp scene_upgrade.xml SIA1000068994：home/package/script/gspylib/inspection/config/
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >home/package/script/gspylib/inspection/config就是新建的场景配置文件的绝对路径。
 

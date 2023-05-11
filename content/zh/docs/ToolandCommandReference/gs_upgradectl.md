@@ -1,4 +1,4 @@
-# gs\_upgradectl<a name="ZH-CN_TOPIC_0289899212"></a>
+# gs\_upgradectl
 
 ## 背景信息<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sca8f0f932903424f8ce649c929720f23"></a>
 
@@ -77,7 +77,7 @@
     gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   一旦提交操作完成，则不能再执行回滚操作。
 

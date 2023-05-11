@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_XACT\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374711"></a>
+# SUMMARY\_STAT\_XACT\_USER\_TABLES
 
 显示数据库内汇聚的命名空间中用户表的事务状态信息。
 

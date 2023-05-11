@@ -1,4 +1,4 @@
-# CREATE FOREIGN TABLE<a name="ZH-CN_TOPIC_0289900252"></a>
+# CREATE FOREIGN TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137606_section03743713018"></a>
 
@@ -151,7 +151,7 @@ where table_constraint can be:
                 这是一个布尔选项。如果为真，则声明字段的值不应该匹配空字符串（也就是，文件级别null选项）。与COPY的 FORCE\_NOT\_NULL选项里的字段相同。
 
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >file\_fdw更多使用请参见[file\_fdw](../DatabaseAdministrationGuide/file_fdw.md)。
 
 

@@ -1,4 +1,4 @@
-# 连接数据库（以SSL方式）<a name="ZH-CN_TOPIC_0000001162579686"></a>
+# 连接数据库（以SSL方式）
 
 用户通过JDBC连接openGauss服务器时，可以通过开启SSL加密客户端和服务器之间的通讯，为敏感数据在Internet上的传输提供了一种安全保障手段。本小节主要介绍应用程序通过JDBC如何采用SSL的方式连接openGauss。在使用本小节所描述的方法前，默认用户已经获取了服务端和客户端所需要的证书和私钥文件，关于证书等文件的获取请参考Openssl相关文档和命令。
 
@@ -40,7 +40,7 @@
 
    表示允许127.0.0.1/32网段的客户端以ssl认证方式连接到openGauss服务器。
 
-   >![](public_sys-resources/icon-notice.gif) **须知：** 
+   >![](public_sys-resources/icon-notice.png) **须知：** 
    >
    >-   如果服务端pg\_hba.conf文件中METHOD配置为cert，则只有客户端使用证书（client.crt）中所设置的用户名（common name）才能够成功连接数据库。如果设置为md5、sm3或sha256则对连接数据库的用户没有限制。
    >

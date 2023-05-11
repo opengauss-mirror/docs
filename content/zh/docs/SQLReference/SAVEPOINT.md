@@ -1,4 +1,4 @@
-# SAVEPOINT<a name="ZH-CN_TOPIC_0289899933"></a>
+# SAVEPOINT
 
 ## 功能描述<a name="zh-cn_topic_0283137144_zh-cn_topic_0237122183_zh-cn_topic_0059777880_section532518817713"></a>
 

@@ -1,4 +1,4 @@
-# kinit<a name="ZH-CN_TOPIC_0249632273"></a>
+# kinit
 
 ## 功能介绍<a name="zh-cn_topic_0237152430_section10172172474817"></a>
 

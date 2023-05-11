@@ -1,4 +1,4 @@
-# HashFunc函数<a name="ZH-CN_TOPIC_0311139289"></a>
+# HashFunc函数
 
 -   bucketabstime\(value，flag\)
 

@@ -1,4 +1,4 @@
-# ALTER MASKING POLICY<a name="ZH-CN_TOPIC_0306525300"></a>
+# ALTER MASKING POLICY
 
 ## 功能描述<a name="zh-cn_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>
 

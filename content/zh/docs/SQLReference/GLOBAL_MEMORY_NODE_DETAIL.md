@@ -1,4 +1,4 @@
-# GLOBAL\_MEMORY\_NODE\_DETAIL<a name="ZH-CN_TOPIC_0245374665"></a>
+# GLOBAL\_MEMORY\_NODE\_DETAIL
 
 显示当前openGauss中所有正常节点下的内存使用情况。
 

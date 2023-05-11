@@ -1,4 +1,4 @@
-# SNAPSHOT<a name="ZH-CN_TOPIC_0000001163839469"></a>
+# SNAPSHOT
 
 ## 功能描述<a name="section1590014447254"></a>
 

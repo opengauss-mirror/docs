@@ -1,4 +1,4 @@
-# ALTER TABLE<a name="ZH-CN_TOPIC_0289899912"></a>
+# ALTER TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
 
@@ -223,7 +223,7 @@
 
   用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 >涉及的参数说明可见[ALTER TABLE](../SQLReference/ALTER-TABLE.md)。
 

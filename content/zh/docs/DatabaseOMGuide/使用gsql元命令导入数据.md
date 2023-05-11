@@ -1,4 +1,4 @@
-# 使用gsql元命令导入数据<a name="ZH-CN_TOPIC_0242370286"></a>
+# 使用gsql元命令导入数据
 
 gsql工具提供了元命令\\copy进行数据导入。
 
@@ -79,7 +79,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     指定数据文件行数据的字段分隔符。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >   
     >-   分隔符不能是\\r和\\n。  
     >-   分隔符不能和null参数相同，CSV格式数据的分隔符不能和quote参数相同。  
@@ -127,7 +127,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 
     默认值：""。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >   
     >-   quote参数不能和分隔符、null参数相同。  
     >-   quote参数只能是单字节的字符。  

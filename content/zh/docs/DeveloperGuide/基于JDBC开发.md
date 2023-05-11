@@ -1,4 +1,4 @@
-# 基于JDBC开发<a name="ZH-CN_TOPIC_0244720258"></a>
+# 基于JDBC开发
 
 JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。openGauss库提供了对JDBC 4.0特性的支持，需要使用JDK1.8版本编译程序代码，不支持JDBC桥接ODBC方式。
 

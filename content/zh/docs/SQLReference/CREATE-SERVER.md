@@ -1,4 +1,4 @@
-# CREATE SERVER<a name="ZH-CN_TOPIC_0289899991"></a>
+# CREATE SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283137586_section1087614114391"></a>
 

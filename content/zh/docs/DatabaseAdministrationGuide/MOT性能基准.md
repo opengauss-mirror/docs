@@ -1,10 +1,10 @@
-# MOT性能基准<a name="ZH-CN_TOPIC_0280525170"></a>
+# MOT性能基准
 
 我们的性能测试是基于业界和学术界通用的TPC-C基准。
 
 测试使用了BenchmarkSQL（请参见[MOT样例TPC-C基准](MOT样例TPC-C基准.md)），并且使用交互式SQL命令而不是存储过程来生成工作负载。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >使用存储过程方法可能会产生更高的性能结果，因为它需要大大减少网络往返和数据库封装SQL处理周期。
 
 评估openGauss MOT性能和磁盘性能的所有测试都使用了同步日志记录和在MOT中优化的group-commit=on版本。

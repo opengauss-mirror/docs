@@ -1,4 +1,4 @@
-# TRUNCATE<a name="ZH-CN_TOPIC_0289900169"></a>
+# TRUNCATE
 
 ## 功能描述<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sf3e0cbc4893c4042ac208fca35e705e8"></a>
 
@@ -73,7 +73,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
     取值范围：需要进行删除数据分区的分区键的取值范围。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >使用PARTITION FOR子句时，partition\_value所在的整个分区会被清空。
 
 

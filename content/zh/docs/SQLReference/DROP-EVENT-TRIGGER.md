@@ -1,4 +1,4 @@
-# DROP EVENT TRIGGER<a name="ZH-CN_TOPIC_0289090035"></a>
+# DROP EVENT TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137186_zh-cn_topic_0231227156_zh-cn_topic_0059777895_sed6f06f3d4d94bb10c387592f98bacdb"></a>
 

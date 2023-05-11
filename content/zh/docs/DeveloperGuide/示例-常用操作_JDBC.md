@@ -1,4 +1,4 @@
-# 示例：常用操作<a name="ZH-CN_TOPIC_0289899917"></a>
+# 示例：常用操作
 
 ## 示例1<a name="zh-cn_topic_0283136826_zh-cn_topic_0237120386_zh-cn_topic_0213179152_zh-cn_topic_0189251739_section8820452474"></a>
 

@@ -1,4 +1,4 @@
-# PG\_OBJECT<a name="ZH-CN_TOPIC_0289900403"></a>
+# PG\_OBJECT
 
 PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视图、存储过程和函数）的创建用户、创建时间和最后修改时间。
 
@@ -66,7 +66,7 @@ PG\_OBJECT系统表存储限定类型对象（普通表、索引、序列、视�
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   无法记录初始化数据库（initdb）过程中所创建或修改的对象，即PG\_OBJECT无法查询到该对象记录。
 >-   对于升级前创建的对象，再次修改时会记录其修改时间（mtime），对表或索引执行DDL操作时会记录其所属事务的事务提交序列号（changecsn）。由于无法得知该对象创建时间，因此ctime和createcsn为空。

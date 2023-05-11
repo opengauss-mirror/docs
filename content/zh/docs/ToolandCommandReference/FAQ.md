@@ -1,7 +1,7 @@
-# FAQ<a name="ZH-CN_TOPIC_0249632272"></a>
+# FAQ
 
 
-## 执行命令报错“Failed to obtain the GPHOME”<a name="ZH-CN_TOPIC_0249632274"></a>
+## 执行命令报错“Failed to obtain the GPHOME”
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
 
@@ -29,7 +29,7 @@ echo $GPHOME
 vim /etc/profile
 ```
 
-## gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法<a name="ZH-CN_TOPIC_0255515980"></a>
+## gs\_ctl 重建备实例过程被中断导致秘钥文件不完整恢复方法
 
 ### 问题现象<a name="zh-cn_topic_0237152452_zh-cn_topic_0059779180_s9068f5a3fa2545e483455c23e895c088"></a>
 
@@ -73,12 +73,12 @@ read cipher file or random parameter file failed.
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >若备机数据库已停止，需要重新生成证书文件或者复制证书文件（$GAUSSHOME/share下的证书文件）到数据目录，启动备机并重建备实例。生成证书文件的相关操作请参见《数据库管理》。
 
 
 
-## 使用gs\_om -t status -\-all查询集群状态，长时间没有响应<a name="ZH-CN_TOPIC_0275124283"></a>
+## 使用gs\_om -t status -\-all查询集群状态，长时间没有响应
 
 ### 问题现象<a name="section434872073818"></a>
 
@@ -116,7 +116,7 @@ read cipher file or random parameter file failed.
    gs_om -t start
    ```
 
-## gs\_sshexkey 相同用户不同密码报错<a name="ZH-CN_TOPIC_0309176033"></a>
+## gs\_sshexkey 相同用户不同密码报错
 
 ### 问题现象<a name="section147641250161616"></a>
 

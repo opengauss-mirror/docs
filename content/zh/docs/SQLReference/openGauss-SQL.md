@@ -1,4 +1,4 @@
-# openGauss SQL<a name="ZH-CN_TOPIC_0289900158"></a>
+# openGauss SQL
 
 ## 什么是SQL<a name="zh-cn_topic_0283136913_zh-cn_topic_0237121924_section07961139165815"></a>
 

@@ -1,4 +1,4 @@
-# GS\_AUDITING\_POLICY\_ACCESS<a name="ZH-CN_TOPIC_0306525309"></a>
+# GS\_AUDITING\_POLICY\_ACCESS
 
 GS\_AUDITING\_POLICY\_ACCESS系统表记录与DML数据库相关操作的统一审计信息。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 

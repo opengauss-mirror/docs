@@ -1,4 +1,4 @@
-# PG\_RESOURCE\_POOL<a name="ZH-CN_TOPIC_0289899854"></a>
+# PG\_RESOURCE\_POOL
 
 PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。
 

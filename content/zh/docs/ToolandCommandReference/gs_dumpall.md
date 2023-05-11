@@ -1,4 +1,4 @@
-# gs\_dumpall<a name="ZH-CN_TOPIC_0249632251"></a>
+# gs\_dumpall
 
 ## 背景信息<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_section31221112348"></a>
 
@@ -121,13 +121,15 @@ gs_dumpall [OPTION]...
 
     该参数为扩展预留接口，不建议使用。
 
--    --no-subscriptions
+- --no-subscriptions
 
-    不转储订阅。
+  不转储订阅。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**
+  
 
-    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
+  > ![](public_sys-resources/icon-note.png) **说明：**
+  >
+  > 当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
 -   --no-tablespaces
 
@@ -197,7 +199,7 @@ gs_dumpall [OPTION]...
     使用管道传输密码，禁止在终端使用。
 
 
-![](public_sys-resources/icon-note.gif) **说明：**
+![](public_sys-resources/icon-note.png) **说明：**
 
 -   -g/--globals-only和-r/--roles-only不能同时使用。
 
@@ -276,7 +278,7 @@ gs\_dumpall恢复前需要所有必要的表空间目录为空；否则，对于
 
 使用gs\_dumpall一次导出openGauss的所有数据库。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。
 
 ```

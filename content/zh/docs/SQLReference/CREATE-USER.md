@@ -1,4 +1,4 @@
-# CREATE USER<a name="ZH-CN_TOPIC_0289899951"></a>
+# CREATE USER
 
 ## 功能描述<a name="zh-cn_topic_0283136891_zh-cn_topic_0237122125_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 

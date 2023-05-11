@@ -1,4 +1,4 @@
-# CREATE TRIGGER<a name="ZH-CN_TOPIC_0289900727"></a>
+# CREATE TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 
@@ -160,7 +160,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
   **表 1**  表和视图上支持的触发器种类：
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >关于触发器种类：
   >

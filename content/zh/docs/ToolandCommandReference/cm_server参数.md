@@ -1,4 +1,4 @@
-# cm\_server参数<a name="ZH-CN_TOPIC_0000001246287001"></a>
+# cm\_server参数
 
 ## log\_dir<a name="section21021611134413"></a>
 
@@ -278,7 +278,7 @@
 
 **默认值**：1
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >（opengauss只支持DCC或者share disk模式）。
 
 ## enable\_ssl<a name="section1910621118445"></a>
@@ -291,7 +291,7 @@
 -   off、no、false、0：表示不启用ssl。
 -   **默认值**：on
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >出于安全性考虑，建议不要关闭该配置。关闭后cm将**不使用**加密通信，所有信息明文传播，可能带来窃听、篡改、冒充等安全风险。
 
 

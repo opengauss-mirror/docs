@@ -1,4 +1,4 @@
-# GS\_WLM\_USER\_INFO<a name="ZH-CN_TOPIC_0289901012"></a>
+# GS\_WLM\_USER\_INFO
 
 用户统计信息视图。
 

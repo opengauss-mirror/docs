@@ -1,4 +1,4 @@
-# CREATE GROUP<a name="ZH-CN_TOPIC_0289900676"></a>
+# CREATE GROUP
 
 ## 功能描述<a name="zh-cn_topic_0283137568_zh-cn_topic_0237122105_zh-cn_topic_0059779249_sf157d08ffdd84191875e1481ee3a4626"></a>
 

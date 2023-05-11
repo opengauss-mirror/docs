@@ -1,4 +1,4 @@
-# PG\_STAT\_ACTIVITY\_NG<a name="ZH-CN_TOPIC_0000001197514779"></a>
+# PG\_STAT\_ACTIVITY\_NG
 
 PG\_STAT\_ACTIVITY\_NG视图显示在当前用户所属的逻辑数据库实例下，所有查询的相关信息。
 

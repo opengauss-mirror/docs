@@ -1,4 +1,4 @@
-# gs\_checkos<a name="ZH-CN_TOPIC_0249632239"></a>
+# gs\_checkos
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>
 
@@ -12,7 +12,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 - 只能使用root用户执行gs\_checkos命令。
 
-  ![](public_sys-resources/icon-note.gif) **说明：**
+  ![](public_sys-resources/icon-note.png) **说明：**
 
   该工具不支持独立调用，出于安全考虑，企业版安装方式下，前置完成后会自动删除。
 
@@ -45,7 +45,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     取值范围：A1...A14、B1...B8。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >A1...A14 表示只检查操作系统参数，并不设置。
     >B1...B8 表示将参数系统参数设置为期望值。
@@ -57,7 +57,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     主机名称列表文件。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-f和-h参数不能同时使用。
 
     取值范围：主机名称的列表。
@@ -275,7 +275,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。

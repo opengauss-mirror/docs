@@ -1,4 +1,4 @@
-# Utility<a name="ZH-CN_TOPIC_0245374811"></a>
+# Utility
 
 -   **[REPLICATION\_STAT](REPLICATION_STAT.md)**  
 -   **[GLOBAL\_REPLICATION\_STAT](GLOBAL_REPLICATION_STAT.md)**  

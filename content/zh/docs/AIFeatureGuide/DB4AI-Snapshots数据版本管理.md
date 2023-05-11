@@ -1,4 +1,4 @@
-# DB4AI-Snapshots数据版本管理<a name="ZH-CN_TOPIC_0000001149626401"></a>
+# DB4AI-Snapshots数据版本管理
 
 DB4AI-Snapshots是DB4AI模块用于管理数据集版本的功能。通过DB4ai-Snapshots组件，开发者可以简单、快速地进行特征筛选、类型转换等数据预处理操作，同时还可以像git一样对训练数据集进行版本控制。数据表快照创建成功后可以像视图一样进行使用，但是一经发布后，数据表快照便固化为不可变的静态数据，如需修改该数据表快照的内容，需要创建一个版本号不同的新数据表快照。
 
@@ -255,6 +255,6 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >命名空间DB4AI是本功能的私有域，不支持在DB4AI的命令空间下创建函数索引（functional index）。
 

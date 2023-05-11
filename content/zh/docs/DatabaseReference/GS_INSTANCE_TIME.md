@@ -1,4 +1,4 @@
-# GS\_INSTANCE\_TIME<a name="ZH-CN_TOPIC_0289900080"></a>
+# GS\_INSTANCE\_TIME
 
 提供当前集节点下的各种时间消耗信息，主要分为以下类型：
 

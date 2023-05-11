@@ -1,4 +1,4 @@
-# STAT\_DATABASE<a name="ZH-CN_TOPIC_0245374698"></a>
+# STAT\_DATABASE
 
 视图将包含本节点中每个数据库的统计信息。
 

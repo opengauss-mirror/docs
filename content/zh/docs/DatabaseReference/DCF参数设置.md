@@ -1,4 +1,4 @@
-# DCF参数设置<a name="ZH-CN_TOPIC_0000001083207760"></a>
+# DCF参数设置
 
 ## enable\_dcf<a name="section14941640131"></a>
 
@@ -367,5 +367,5 @@
 
 **默认值：** 空字符串
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >若配置了参数后某一group内所有节点均故障，在对其中某个节点做涉及节点build相关操作（节点修复、不换ip的节点替换）时，需要将该group从此参数列表中移除，待节点恢复正常后可将该group再次配置到此参数。

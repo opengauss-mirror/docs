@@ -1,4 +1,4 @@
-# cm\_ctl工具介绍<a name="ZH-CN_TOPIC_0000001201327140"></a>
+# cm\_ctl工具介绍
 
 cm\_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm\_ctl的主要功能有：
 
@@ -254,7 +254,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **说明：**   
+![](public_sys-resources/icon-note.png) **说明：**   
 
 此处列出的公共参数并不一定适用于所有命令，而是多个命令支持，为避免冗余信息，所以统一在此说明，详细的使用方法见以上使用方法，也可以使用cm_ctl --help进行查询。
 

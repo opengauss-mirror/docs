@@ -1,10 +1,10 @@
-# gs\_sshexkey<a name="ZH-CN_TOPIC_0249632281"></a>
+# gs\_sshexkey
 
 ## 背景信息<a name="zh-cn_topic_0237152423_zh-cn_topic_0059778349_section15111432124318"></a>
 
 openGauss在安装过程中，需要在openGauss中的节点间进行执行命令、传送文件等操作。因此，安装前需要确保互信是连通的。openGauss提供了gs\_sshexkey工具来帮助用户建立互信。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 > root用户互信可能会存在安全隐患，因此建议用户在使用完成后，立即删除各主机上root用户的互信。
 >
@@ -77,7 +77,7 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
     主机列表，列出所有需要建立互信主机的IP。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >确保hostfile文件中只配置主机IP（每行只写一个IP），不包含其它信息。
 
 -   -l

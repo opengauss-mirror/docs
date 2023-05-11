@@ -1,4 +1,4 @@
-# PG\_NAMESPACE<a name="ZH-CN_TOPIC_0289899902"></a>
+# PG\_NAMESPACE
 
 PG\_NAMESPACE系统表存储名称空间，即存储schema相关的信息。
 

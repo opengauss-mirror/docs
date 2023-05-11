@@ -1,4 +1,4 @@
-# 基于ODBC开发<a name="ZH-CN_TOPIC_0244721233"></a>
+# 基于ODBC开发
 
 -   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
 
@@ -55,7 +55,7 @@ UNIX/Linux系统下的驱动程序管理器主要有unixODBC和iODBC，在这选
 
 Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。  
 
 

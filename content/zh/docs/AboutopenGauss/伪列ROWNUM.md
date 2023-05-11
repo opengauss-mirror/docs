@@ -1,4 +1,4 @@
-# 伪列ROWNUM<a name="ZH-CN_TOPIC_0000001138590191"></a>
+# 伪列ROWNUM
 
 ## 可获得性<a name="section56086982"></a>
 

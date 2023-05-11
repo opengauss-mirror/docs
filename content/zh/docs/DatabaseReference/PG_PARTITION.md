@@ -1,4 +1,4 @@
-# PG\_PARTITION<a name="ZH-CN_TOPIC_0289899859"></a>
+# PG\_PARTITION
 
 PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）、分区（table partition）、分区上toast表和分区索引（index partition）四类对象的信息。分区表索引（partitioned index）的信息不在PG\_PARTITION系统表中保存。
 

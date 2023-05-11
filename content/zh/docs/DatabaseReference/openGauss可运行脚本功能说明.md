@@ -1,4 +1,4 @@
-# openGauss可运行脚本功能说明<a name="ZH-CN_TOPIC_0000001258392839"></a>
+# openGauss可运行脚本功能说明
 
 以下是openGauss常用可执行脚本，仅供openGauss接口使用。
 

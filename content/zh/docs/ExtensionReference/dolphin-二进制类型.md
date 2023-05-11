@@ -1,4 +1,4 @@
-# 二进制类型<a name="ZH-CN_TOPIC_0289900777"></a>
+# 二进制类型
 
 openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)。
 
@@ -124,7 +124,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   除了每列的大小限制以外，每个元组的总大小也不可超过1GB-8203字节（即1073733621字节）。
 >

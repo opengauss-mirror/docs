@@ -1,4 +1,4 @@
-# START TRANSACTION<a name="ZH-CN_TOPIC_0242370656"></a>
+# START TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>
 
@@ -44,7 +44,7 @@ BEGIN [ WORK | TRANSACTION ]
 
     指定事务隔离级别，它决定当一个事务中存在其他并发运行事务时它能够看到什么数据。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >在事务中第一个数据修改语句（SELECT、 INSERT、DELETE、UPDATE、FETCH、COPY）执行之后，事务隔离级别就不能再次设置。  
 
     取值范围：

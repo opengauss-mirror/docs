@@ -1,4 +1,4 @@
-# SQL by pass<a name="ZH-CN_TOPIC_0000001088566334"></a>
+# SQL by pass
 
 ## 可获得性<a name="section5309649"></a>
 

@@ -1,4 +1,4 @@
-# SHOW PRIVILEGES<a name="ZH-CN_TOPIC_0289900333"></a>
+# SHOW PRIVILEGES
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_e8462b6390eb094e5f9b12ad5b6a5275a"></a>
 

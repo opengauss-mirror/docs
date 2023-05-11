@@ -1,4 +1,4 @@
-# 使用gsql访问openGauss<a name="ZH-CN_TOPIC_0289900019"></a>
+# 使用gsql访问openGauss
 
 gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考《工具与命令参考》中“客户端工具 \> gsql”章节。
 
@@ -104,7 +104,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     > -   软件包相对位置为安装时所放位置，根据实际情况填写。
     > -   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
@@ -154,7 +154,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     postgres为需要连接的数据库名称，10.10.0.11为数据库主节点所在的服务器IP地址，jack为连接数据库的用户，8000为数据库主节点的端口号，Test@123为连接数据库用户jack的密码。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     > 
     >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
     >-   禁止使用omm用户进行远程连接数据库。  

@@ -1,4 +1,4 @@
-# WDR Snapshot生成性能报告<a name="ZH-CN_TOPIC_0289900439"></a>
+# WDR Snapshot生成性能报告
 
 基于WDR Snapshot数据表汇总、统计，生成性能报告，默认初始化用户或监控管理员用户可以生成报告。
 
@@ -32,7 +32,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../DatabaseReference/系�
    select create_wdr_snapshot();
    ```
 
-   >![](public_sys-resources/icon-note.gif) **说明：** 
+   >![](public_sys-resources/icon-note.png) **说明：** 
    >执行“cm\_ctl query -Cdvi”，回显中“Central Coordinator State”下显示的信息即为CCN信息。
 
 5. 执行如下命令，在本地生成HTML格式的WDR报告。
@@ -63,7 +63,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../DatabaseReference/系�
       select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
-      >![](public_sys-resources/icon-note.gif) **说明：** 
+      >![](public_sys-resources/icon-note.png) **说明：** 
       >当前openGauss的节点名固定是“dn\_6001\_6002\_6003”，也可直接代入。
 
       **表 1**  generate\_wdr\_report函数参数说明

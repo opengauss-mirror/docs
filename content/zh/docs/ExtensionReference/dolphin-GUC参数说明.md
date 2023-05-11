@@ -1,4 +1,4 @@
-# GUC参数说明<a name="ZH-CN_TOPIC_0289899843"></a>
+# GUC参数说明
 
 ## dolphin.sql\_mode<a name="section203671436821"></a>
 
@@ -797,7 +797,7 @@ SET
 
 该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
 >-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
@@ -849,7 +849,7 @@ openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = default';
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >该参数用于提供除法运算结果的小数位数，在通过该参数以及入参计算出小数位数之后，与openGauss原生计算的小数位数进行对比，获取两者中的较大值作为计算结果的小数位数。大多数情况下openGauss的小数位数会比MySQL高，所以该参数在设置的值不大的情况下效果暂时不明显。
 

@@ -1,4 +1,4 @@
-# MOT错误消息<a name="ZH-CN_TOPIC_0280525150"></a>
+# MOT错误消息
 
 错误可能由多种场景引起。所有错误都记录在数据库服务器日志文件中。此外，与用户相关的错误作为对查询、事务或存储过程执行或数据库管理操作的响应的一部分返回给用户。
 
@@ -91,7 +91,7 @@ MOT使用返回码（Return Code，RC）返回Postgres标准错误代码至封�
 
 MOT从内部返回Postgres代码（见下文）到数据库包，数据库封装根据标准的Postgres行为对其做出反应。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >提示信息中的%s、%u、%lu指代相应的错误信息（如查询、表名或其他信息）。
 >
 >-   %s：字符串

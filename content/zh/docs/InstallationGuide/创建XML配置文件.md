@@ -1,4 +1,4 @@
-# 创建XML配置文件<a name="ZH-CN_TOPIC_0270171699"></a>
+# 创建XML配置文件
 
 安装openGauss前需要创建cluster\_config.xml文件。cluster\_config.xml文件包含部署openGauss的服务器信息、安装路径、IP地址以及端口号等。用于告知openGauss如何部署。用户需根据不同场景配置对应的XML文件。
 
@@ -71,7 +71,7 @@
   </CLUSTER>
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
 >-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
@@ -220,7 +220,7 @@
 
 ## 配置Host基本信息
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >每台Host服务器都必须有如下信息，如下示例以node1为例。
 >
@@ -286,7 +286,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
 >示例：xml配置文件中同时配置backIp1和backIp2参数：
 >在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。

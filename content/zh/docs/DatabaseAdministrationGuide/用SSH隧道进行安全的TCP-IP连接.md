@@ -1,4 +1,4 @@
-# 用SSH隧道进行安全的TCP/IP连接<a name="ZH-CN_TOPIC_0246507952"></a>
+# 用SSH隧道进行安全的TCP/IP连接
 
 ## 背景信息<a name="zh-cn_topic_0237121093_zh-cn_topic_0059778333_section59301241111412"></a>
 
@@ -23,7 +23,7 @@ SSH服务和数据库运行在同一台服务器上。
 ssh -L 63333:localhost:8000 username@hostIP
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >
 >-   -L参数的第一串数字（63333）是通道本端的端口号，可以自由选择。  
 >-   第二串数字（8000）是通道远端的端口号，也就是服务器使用的端口号。  

@@ -1,4 +1,4 @@
-# OPERATOR\_RUNTIME<a name="ZH-CN_TOPIC_0245374844"></a>
+# OPERATOR\_RUNTIME
 
 OPERATOR\_RUNTIME视图显示当前用户正在执行的作业的算子相关信息。
 

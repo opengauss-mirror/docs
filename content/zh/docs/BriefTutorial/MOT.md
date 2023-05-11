@@ -1,4 +1,4 @@
-# MOT<a name="ZH-CN_TOPIC_0000001179976288"></a>
+# MOT
 
 openGauss引入了MOT（Memory-Optimized Table，MOT）存储引擎，它是一种事务性行存储，针对多核和大内存服务器进行了优化。MOT是openGauss数据库最先进的生产级特性（Beta版本），它为事务性工作负载提供更高的性能。MOT完全支持ACID特性，并包括严格的持久性和高可用性支持。企业可以在关键任务、性能敏感的在线事务处理（OLTP）中使用MOT，以实现高性能、高吞吐、可预测低延迟以及多核服务器的高利用率。MOT尤其适合在多路和多核处理器的现代服务器上运行，例如基于Arm/鲲鹏处理器的华为TaiShan服务器，以及基于x86的戴尔或类似服务器。
 
@@ -94,7 +94,7 @@ MOT可用于各种应用，例如：
 
     以授予数据库用户对MOT存储引擎的访问权限为例。每个数据库用户仅执行一次，通常在初始配置阶段完成。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >MOT通过外部数据封装器（Foreign Data Wrapper，FDW）机制与openGauss数据库集成，所以需要授权用户权限。
 
     要使特定用户能够创建和访问MOT（DDL、DML、SELECT），以下语句只执行一次：
@@ -154,7 +154,7 @@ MOT可用于各种应用，例如：
     create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) ;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >在MOT名字之前不需要指定FOREIGN关键字，因为它仅用于创建和删除表的命令。
 
 
@@ -186,7 +186,7 @@ MOT可用于各种应用，例如：
     6.  浏览或手动验证所有原始数据是否正确导入到新的MOT中。下面将举例说明。
     7.  恢复应用程序活动。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >由于表名称保持不变，应用程序查询和相关数据库存储过程将能够无缝访问新的MOT，而无需更改代码。请注意，MOT目前不支持跨引擎多表查询（如使用Join、Union和子查询）和跨引擎多表事务。因此，如果在多表查询、存储过程或事务中访问原始表，则必须将所有相关的磁盘表转换为MOT，或者更改应用程序或数据库中的相关代码。
 
 -   转换示例

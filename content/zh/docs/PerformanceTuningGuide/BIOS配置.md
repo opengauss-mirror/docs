@@ -1,4 +1,4 @@
-# BIOS配置<a name="ZH-CN_TOPIC_0263913266"></a>
+# BIOS配置
 
 1.  恢复BIOS出厂设置。
 2. 修改相关BIOS设置，如下所示：

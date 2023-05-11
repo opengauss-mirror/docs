@@ -1,8 +1,8 @@
-# DDL语法一览表<a name="ZH-CN_TOPIC_0289900414"></a>
+# DDL语法一览表
 
 DDL（Data Definition Language数据定义语言），用于定义或修改数据库中的对象。如：表、索引、视图等。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >openGauss不支持数据库主节点不完整时进行DDL操作。例如：openGauss中有1个数据库主节点故障时执行新建数据库、表等操作都会失败。
 

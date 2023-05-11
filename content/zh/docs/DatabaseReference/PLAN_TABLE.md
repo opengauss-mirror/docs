@@ -1,4 +1,4 @@
-# PLAN\_TABLE<a name="ZH-CN_TOPIC_0289900817"></a>
+# PLAN\_TABLE
 
 PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划信息的生命周期是session级别，session退出后相应的数据将被清除。同时不同session和不同user间的数据是相互隔离的。
 
@@ -79,7 +79,7 @@ PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   object\_type取值范围为[PG\_CLASS](PG_CLASS.md)中定义的relkind类型（TABLE普通表，INDEX索引，SEQUENCE序列，VIEW视图，COMPOSITE TYPE复合类型，TOASTVALUE TOAST表）和计划使用到的rtekind\(SUBQUERY,JOIN,FUNCTION,VALUES,CTE,REMOTE\_QUERY\)。
 >-   object\_owner对于RTE来说是计划中使用的对象描述，非用户定义的类型不存在object\_owner。

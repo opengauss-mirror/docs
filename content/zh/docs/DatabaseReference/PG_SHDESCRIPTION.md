@@ -1,4 +1,4 @@
-# PG\_SHDescription<a name="ZH-CN_TOPIC_0289900363"></a>
+# PG\_SHDescription
 
 PG\_SHDescription系统表为共享数据库对象存储可选的注释。可以使用COMMENT命令操作注释的内容，使用psql的\\d命令查看注释内容。
 

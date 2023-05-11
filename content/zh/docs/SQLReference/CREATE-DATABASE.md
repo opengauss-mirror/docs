@@ -1,4 +1,4 @@
-# CREATE DATABASE<a name="ZH-CN_TOPIC_0289900066"></a>
+# CREATE DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
@@ -704,12 +704,12 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   </tbody>
   </table>
 
-  >![](public_sys-resources/icon-caution.gif) **注意：** 
+  >![](public_sys-resources/icon-caution.png) **注意：** 
   >
   >需要注意并非所有的客户端API都支持上面列出的字符集。
   >SQL\_ASCII设置与其他设置表现得相当不同。如果服务器字符集是SQL\_ASCII，服务器把字节值0-127根据 ASCII标准解释，而字节值128-255则当作无法解析的字符。如果设置为SQL\_ASCII，就不会有编码转换。因此，这个设置基本不是用来声明所使用的指定编码， 因为这个声明会忽略编码。在大多数情况下，如果你使用了任何非ASCII数据，那么使用 SQL\_ASCII设置都是不明智的，因为OpenGauss将无法帮助你转换或者校验非ASCII字符。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
   >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
@@ -729,7 +729,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     指定新数据库使用的字符分类。例如，通过lc\_ctype = 'zh\_CN.gbk'设定该参数。该参数的使用会影响到字符的分类，如大写、小写和数字。默认是使用模板数据库的字符分类。
 
     取值范围：操作系统支持的字符分类。
-     >![](public_sys-resources/icon-note.gif) **说明：** 
+     >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >- 对于lc_collate和lc_ctype参数的取值范围，取决于本地环境支持的字符集。
     
@@ -742,7 +742,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。
   >-   将字符串转换成整数类型时，如果输入不合法，B兼容性会将输入转换为0，而其它兼容性则会报错。
@@ -758,7 +758,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
     数据库可以接受的并发连接数。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   系统管理员不受此参数的限制。
     >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。

@@ -1,4 +1,4 @@
-# mysql\_fdw<a name="ZH-CN_TOPIC_0272283427"></a>
+# mysql\_fdw
 
 mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。openGauss基于开源的[mysql\_fdw Release 2.5.3 版本](https://github.com/EnterpriseDB/mysql_fdw/archive/REL-2_5_3.tar.gz)进行开发适配。
 
