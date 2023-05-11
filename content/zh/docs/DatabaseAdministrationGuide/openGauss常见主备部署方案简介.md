@@ -2,9 +2,8 @@
 
 ## 单中心
 
-**图 1**  单中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
-    <img src="figures/Single-center-deployment.png" title="单中心部署图" style="zoom:80%;" />
-
+**图 1**  单中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a> 
+![](figures/Single-center-deployment.png)
 组网特点：
 单AZ部署，可以配置一个同步备一个异步备
 
@@ -21,8 +20,8 @@
 ## 同城双中心
 
 **图 2**  同城双中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
-    <img src="figures/Deployment-diagram-of-Two-Centers-in-the-Same-City.png" title="同城双中心部署图" style="zoom:80%;" />
 
+![](figures/Deployment-diagram-of-Two-Centers-in-the-Same-City.png)
 组网特点：
 同城两个AZ，相比单AZ可靠性更强，主中心和同城中心可以分别配置一个同步备
 
@@ -40,7 +39,9 @@
 ## 两地三中心
 
 **图 3**  两地三中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
-    <img src="figures/Deployment-diagram-of-Two-Places-and-Three-Centers.png" title="两地三中心部署图" style="zoom:80%;" />
+
+    
+![](figures/Deployment-diagram-of-Two-Places-and-Three-Centers.png)
 
 组网特点：
 两地三中心，每个AZ都保证至少有一个同步备，同时地点和中心数的增加，集群的可靠性能够达到最高
@@ -58,7 +59,7 @@
 ## 两地三中心流式容灾方案
 
 **图 4**  两地三中心流式容灾方案部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
-    <img src="figures/Two-locations-and-three-centers-flow-based-disaster-recovery-plan.png" title="两地三中心流式容灾方案部署图" style="zoom:80%;" />
+    ![](figures/Two-locations-and-three-centers-flow-based-disaster-recovery-plan.png)
 
 组网特点：
 双集群容灾方案，两个独立集群，主备集群组网方式可任意选择，备集群会选出首备连接主集群的主DN，灾备集群内都以级联备方式连接首备
