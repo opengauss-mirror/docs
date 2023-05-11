@@ -490,6 +490,7 @@ begin
 end;
 /
 -- 重命名指定模式下的触发器
+-- 由于重命名触发器不支持修改触发器所属模式，因此新触发器名不支持携带模式名
 alter trigger testscm.animals_trigger on testscm.animals_scm rename to animals_trigger_new;
 -- 删除指定模式下的触发器
 drop trigger testscm.animals_trigger_new;
