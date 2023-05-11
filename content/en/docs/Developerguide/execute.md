@@ -33,8 +33,7 @@ openGauss=# CREATE TABLE tpcds.reason (
     CD_DEMO_SK          INTEGER          NOT NULL,
     CD_GENDER           character(16)            ,
     CD_MARITAL_STATUS   character(100)
-)
-;
+);
 
 -- Insert data.
 openGauss=# INSERT INTO tpcds.reason VALUES(51, 'AAAAAAAADDAAAAAA', 'reason 51');
