@@ -146,7 +146,7 @@ openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀�
 -   openGauss社区
     -   微信公众号
 
-        <img src="figures/zh-cn_image_0000001235224851.jpg" style="zoom: 33%;" />
+        ![](figures/zh-cn_image_0000001235224851.jpg)
 
     -   [B站](https://space.bilibili.com/543286270?from=search&seid=7579369334374103192&spm_id_from=333.337.0.0)
     -   [CSDN](https://blog.csdn.net/weixin_49727236)
