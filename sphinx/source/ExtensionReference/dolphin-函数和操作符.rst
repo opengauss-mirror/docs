@@ -2,7 +2,7 @@
 ============
 
 .. toctree::
-			
+
     ../content/zh/docs/ExtensionReference/dolphin-赋值操作符
     ../content/zh/docs/ExtensionReference/dolphin-字符处理函数和操作符
     ../content/zh/docs/ExtensionReference/dolphin-数字操作函数和操作符

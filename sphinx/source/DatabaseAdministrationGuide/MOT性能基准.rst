@@ -2,7 +2,7 @@ MOT性能基准
 ===========
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseAdministrationGuide/MOT硬件
     ../content/zh/docs/DatabaseAdministrationGuide/MOT测试总结
     ../content/zh/docs/DatabaseAdministrationGuide/MOT高吞吐量

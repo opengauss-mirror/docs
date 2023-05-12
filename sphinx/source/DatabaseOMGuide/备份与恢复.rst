@@ -3,9 +3,9 @@
 .. toctree::
 
     ../content/zh/docs/DatabaseOMGuide/备份与恢复概述
-	../content/zh/docs/DatabaseOMGuide/配置文件的备份与恢复
+    ../content/zh/docs/DatabaseOMGuide/配置文件的备份与恢复
     ../content/zh/docs/DatabaseOMGuide/逻辑备份与恢复
-    ../content/zh/docs/DatabaseOMGuide/物理备份与恢复	
+    ../content/zh/docs/DatabaseOMGuide/物理备份与恢复
     ../content/zh/docs/DatabaseOMGuide/闪回恢复
     导出数据
     导入数据

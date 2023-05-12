@@ -2,7 +2,7 @@ GAUSS-02701----GAUSS-02800
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-02701----GAUSS-02710
     ../content/zh/docs/DatabaseReference/GAUSS-02711----GAUSS-02720
     ../content/zh/docs/DatabaseReference/GAUSS-02721----GAUSS-02730

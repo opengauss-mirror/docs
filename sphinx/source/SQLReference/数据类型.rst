@@ -21,5 +21,5 @@
     ../content/zh/docs/SQLReference/伪类型
     ../content/zh/docs/SQLReference/列存表支持的数据类型
     ../content/zh/docs/SQLReference/XML类型
-    ../content/zh/docs/SQLReference/账本数据库使用的数据类型		
-    ../content/zh/docs/SQLReference/SET类型		
+    ../content/zh/docs/SQLReference/账本数据库使用的数据类型
+    ../content/zh/docs/SQLReference/SET类型

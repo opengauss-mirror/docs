@@ -2,8 +2,8 @@ Forecast：趋势预测
 ===================
 
 .. toctree::
-	
-	
+
+
     ../content/zh/docs/AIFeatureGuide/Forecast-趋势预测概述
     ../content/zh/docs/AIFeatureGuide/Forecast-趋势预测环境部署
     ../content/zh/docs/AIFeatureGuide/Forecast-趋势预测使用指导

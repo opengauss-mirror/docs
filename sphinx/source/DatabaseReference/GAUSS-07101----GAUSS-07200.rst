@@ -2,7 +2,7 @@ GAUSS-07101----GAUSS-07200
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-07101----GAUSS-07110
     ../content/zh/docs/DatabaseReference/GAUSS-07111----GAUSS-07120
     ../content/zh/docs/DatabaseReference/GAUSS-07121----GAUSS-07130

@@ -2,7 +2,7 @@
 =====
 
 .. toctree::
-	
+
     ../content/zh/docs/DeveloperGuide/Database和Schema设计
     ../content/zh/docs/DeveloperGuide/表设计
     ../content/zh/docs/DeveloperGuide/规划存储模型

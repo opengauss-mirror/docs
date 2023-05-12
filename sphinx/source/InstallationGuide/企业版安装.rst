@@ -4,9 +4,9 @@
 ==========
 .. toctree::
 
-	
+
     安装准备
-	安装openGauss
+    安装openGauss
     ../content/zh/docs/InstallationGuide/创建数据库
     ../content/zh/docs/InstallationGuide/可选_设置备机可读
 

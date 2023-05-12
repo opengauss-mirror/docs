@@ -2,22 +2,11 @@
 ======
 .. toctree::
 
-	../content/zh/docs/AboutopenGauss/灰度升级
-	../content/zh/docs/AboutopenGauss/滚动升级
-	../content/zh/docs/AboutopenGauss/支持WDR诊断报告
-	../content/zh/docs/AboutopenGauss/慢SQL诊断
-	../content/zh/docs/AboutopenGauss/Session性能诊断
-	../content/zh/docs/AboutopenGauss/系统KPI辅助诊断
-	../content/zh/docs/AboutopenGauss/内置stack工具	
-	../content/zh/docs/AboutopenGauss/支持SQL-PATCH	
-
-
-		
-		
-		
-
-		
-	
-	
-	
-	
+    ../content/zh/docs/AboutopenGauss/灰度升级
+    ../content/zh/docs/AboutopenGauss/滚动升级
+    ../content/zh/docs/AboutopenGauss/支持WDR诊断报告
+    ../content/zh/docs/AboutopenGauss/慢SQL诊断
+    ../content/zh/docs/AboutopenGauss/Session性能诊断
+    ../content/zh/docs/AboutopenGauss/系统KPI辅助诊断
+    ../content/zh/docs/AboutopenGauss/内置stack工具
+    ../content/zh/docs/AboutopenGauss/支持SQL-PATCH

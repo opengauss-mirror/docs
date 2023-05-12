@@ -1,8 +1,8 @@
 控制语句
 ========
 
-.. toctree::	
-	
+.. toctree::
+
     返回语句
     ../content/zh/docs/SQLReference/条件语句
     ../content/zh/docs/SQLReference/循环语句
