@@ -5,12 +5,5 @@
 
 
     C-C++语言
-	../content/zh/docs/GettingStarted/Java
-	../content/zh/docs/GettingStarted/Python	
-            
-
-	
-	
-	
-
-
+    ../content/zh/docs/GettingStarted/Java
+    ../content/zh/docs/GettingStarted/Python

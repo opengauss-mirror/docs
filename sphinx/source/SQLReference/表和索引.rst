@@ -2,7 +2,7 @@
 ========
 
 .. toctree::
-	
+
     ../content/zh/docs/SQLReference/搜索表
     ../content/zh/docs/SQLReference/创建索引
     ../content/zh/docs/SQLReference/索引使用约束

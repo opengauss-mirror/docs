@@ -2,6 +2,6 @@
 ==========
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/查询和索引统计收集器
     ../content/zh/docs/DatabaseReference/性能统计

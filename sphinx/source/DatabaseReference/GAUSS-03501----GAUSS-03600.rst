@@ -2,7 +2,7 @@ GAUSS-03501----GAUSS-03600
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-03501----GAUSS-03510
     ../content/zh/docs/DatabaseReference/GAUSS-03511----GAUSS-03520
     ../content/zh/docs/DatabaseReference/GAUSS-03521----GAUSS-03530

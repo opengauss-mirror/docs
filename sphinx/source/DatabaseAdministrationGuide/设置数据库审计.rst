@@ -2,7 +2,7 @@
 ==============
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseAdministrationGuide/审计概述
     ../content/zh/docs/DatabaseAdministrationGuide/查看审计结果
     ../content/zh/docs/DatabaseAdministrationGuide/维护审计日志
