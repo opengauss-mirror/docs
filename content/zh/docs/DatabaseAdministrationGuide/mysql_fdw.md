@@ -26,7 +26,9 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 -   创建用户映射：**CREATE USER MAPPING**
 
--   创建外表：**CREATE FOREIGN TABLE**外表的表结构需要与MySQL/MariaDB侧的表结构保持一致。注意MySQL/MariaDB侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
+-   创建外表：**CREATE FOREIGN TABLE**
+
+    外表的表结构需要与MySQL/MariaDB侧的表结构保持一致。注意MySQL/MariaDB侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
 
 -   对外表做正常的操作，如**INSERT**、**UPDATE**、**DELETE**、**SELECT**、**EXPLAIN**、**ANALYZE**、**COPY**等。
 

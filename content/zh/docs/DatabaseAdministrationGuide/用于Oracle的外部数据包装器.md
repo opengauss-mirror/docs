@@ -26,7 +26,9 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   创建用户映射：**CREATE USER MAPPING**
 
--   创建外表：**CREATE FOREIGN TABLE**  外表的表结构需要与Oracle数据库中的表结构保持一致。注意Oracle server侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
+-   创建外表：**CREATE FOREIGN TABLE**
+    
+    外表的表结构需要与Oracle数据库中的表结构保持一致。注意Oracle server侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
 
 -   对外表做正常的操作，如**INSERT**、**UPDATE**、**DELETE**、**SELECT**、**EXPLAIN**、**ANALYZE**、**COPY**等。
 
