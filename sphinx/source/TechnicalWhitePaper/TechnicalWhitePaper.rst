@@ -11,5 +11,4 @@
     ../content/zh/docs/TechnicalWhitePaper/软硬件配置要求
     ../content/zh/docs/TechnicalWhitePaper/数据库核心技术
     ../content/zh/docs/TechnicalWhitePaper/技术指标
-    ../content/zh/docs/TechnicalWhitePaper/Glossary
-
+    ../content/zh/docs/TechnicalWhitePaper/术语表
