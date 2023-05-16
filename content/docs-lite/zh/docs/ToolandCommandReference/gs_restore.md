@@ -4,6 +4,8 @@
 
 gs\_restore是openGauss提供的针对gs\_dump导出数据的导入工具。通过此工具可将gs\_dump导出生成的文件进行导入。
 
+gs\_restore工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+
 主要功能包含：
 
 -   导入到数据库
