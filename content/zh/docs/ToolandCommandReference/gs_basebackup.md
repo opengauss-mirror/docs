@@ -4,6 +4,8 @@
 
 openGauss部署成功后，在数据库运行的过程中，会遇到各种问题及异常状态。openGauss提供了gs\_basebackup工具做基础的物理备份。gs\_basebackup的实现目标是对服务器数据库文件的二进制进行拷贝，其实现原理使用了复制协议。远程执行gs\_basebackup时，需要使用系统管理员账户。gs\_basebackup当前支持热备份模式和压缩格式备份模式。
 
+gs\_basebackup工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+
 >![](public_sys-resources/icon-note.png) **说明：** 
 
 >-   gs\_basebackup仅支持主机和备机的全量备份，不支持增量。
