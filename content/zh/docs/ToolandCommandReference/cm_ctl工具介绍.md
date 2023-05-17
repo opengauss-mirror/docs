@@ -238,7 +238,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="zh-cn_topic_0116784021_r477e0c6128994f0aa7d1bc5910ddc257"><td class="cellrowborder" valign="top" width="27.38%" headers="mcps1.2.3.1.1 "><p id="p122511250131212"><a name="p122511250131212"></a><a name="p122511250131212"></a>-t SECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.61999999999999%" headers="mcps1.2.3.1.2 "><p id="p1497155341214"><a name="p1497155341214"></a><a name="p1497155341214"></a>指定超时时间。</p>
+<td class="cellrowborder" valign="top" width="72.61999999999999%" headers="mcps1.2.3.1.2 "><p id="p1497155341214"><a name="p1497155341214"></a><a name="p1497155341214"></a>指定超时时间。超时后，会退出并报错。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0116784021_r8e84c6e9ea2c4544ba81838fade7c37f"><td class="cellrowborder" valign="top" width="27.38%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"><a name="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"></a><a name="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"></a>-V, --version</p>
