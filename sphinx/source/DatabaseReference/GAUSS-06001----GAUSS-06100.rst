@@ -2,7 +2,7 @@ GAUSS-06001----GAUSS-06100
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-06001----GAUSS-06010
     ../content/zh/docs/DatabaseReference/GAUSS-06011----GAUSS-06020
     ../content/zh/docs/DatabaseReference/GAUSS-06021----GAUSS-06030

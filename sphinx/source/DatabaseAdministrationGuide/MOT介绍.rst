@@ -7,6 +7,6 @@ MOT介绍
     ../content/zh/docs/DatabaseAdministrationGuide/MOT特性及价值
     ../content/zh/docs/DatabaseAdministrationGuide/MOT关键技术
     ../content/zh/docs/DatabaseAdministrationGuide/MOT应用场景
-	MOT性能基准
+    MOT性能基准
 
 

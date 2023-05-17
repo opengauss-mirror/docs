@@ -1,18 +1,10 @@
 工具链
 ======
 .. toctree::
-		
-	../content/zh/docs/AboutopenGauss/MySQL一键式迁移工具gs_rep_portal
-	../content/zh/docs/AboutopenGauss/全量迁移gs_mysync
-	../content/zh/docs/AboutopenGauss/增量迁移gs_replicate
-	../content/zh/docs/AboutopenGauss/反向迁移gs_replicate
-	../content/zh/docs/AboutopenGauss/数据校验gs_datacheck
-	../content/zh/docs/AboutopenGauss/openGauss客户端工具DataStudio
-		
-		
 
-		
-	
-	
-	
-	
+    ../content/zh/docs/AboutopenGauss/MySQL一键式迁移工具gs_rep_portal
+    ../content/zh/docs/AboutopenGauss/全量迁移gs_mysync
+    ../content/zh/docs/AboutopenGauss/增量迁移gs_replicate
+    ../content/zh/docs/AboutopenGauss/反向迁移gs_replicate
+    ../content/zh/docs/AboutopenGauss/数据校验gs_datacheck
+    ../content/zh/docs/AboutopenGauss/openGauss客户端工具DataStudio

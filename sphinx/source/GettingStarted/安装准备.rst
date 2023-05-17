@@ -4,12 +4,5 @@
 .. toctree::
 
 
-	../content/zh/docs/GettingStarted/获取安装包
-	../content/zh/docs/GettingStarted/准备软硬件安装环境
-	
-	
-	
-	
-
-
-
+    ../content/zh/docs/GettingStarted/获取安装包
+    ../content/zh/docs/GettingStarted/准备软硬件安装环境

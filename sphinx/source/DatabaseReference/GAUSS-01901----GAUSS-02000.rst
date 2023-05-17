@@ -2,7 +2,7 @@ GAUSS-01901----GAUSS-02000
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-01901----GAUSS-01910
     ../content/zh/docs/DatabaseReference/GAUSS-01911----GAUSS-01920
     ../content/zh/docs/DatabaseReference/GAUSS-01921----GAUSS-01930

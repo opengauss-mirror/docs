@@ -9,4 +9,4 @@ GAUSS-53000----GAUSS-53999
     ../content/zh/docs/DatabaseReference/GAUSS-53300----GAUSS-53399
     ../content/zh/docs/DatabaseReference/GAUSS-53400----GAUSS-53499
     ../content/zh/docs/DatabaseReference/GAUSS-53500----GAUSS-53599
-    ../content/zh/docs/DatabaseReference/GAUSS-53600----GAUSS-53699	
+    ../content/zh/docs/DatabaseReference/GAUSS-53600----GAUSS-53699

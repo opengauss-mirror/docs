@@ -13,4 +13,4 @@ DB4AI Schema
     ../content/zh/docs/SQLReference/DB4AI-MANAGE_SNAPSHOT_INTERNAL
     ../content/zh/docs/SQLReference/DB4AI-SAMPLE_SNAPSHOT
     ../content/zh/docs/SQLReference/DB4AI-PURGE_SNAPSHOT
-    ../content/zh/docs/SQLReference/DB4AI-PURGE_SNAPSHOT_INTERNAL	
+    ../content/zh/docs/SQLReference/DB4AI-PURGE_SNAPSHOT_INTERNAL

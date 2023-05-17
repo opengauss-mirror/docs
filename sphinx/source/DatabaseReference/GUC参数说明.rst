@@ -2,7 +2,7 @@ GUC参数说明
 ===========
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/文件位置
     ../content/zh/docs/DatabaseReference/GUC使用说明
     连接和认证
@@ -36,7 +36,7 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/HyperLogLog
     ../content/zh/docs/DatabaseReference/用户自定义函数-2
     ../content/zh/docs/DatabaseReference/定时任务
-    ../content/zh/docs/DatabaseReference/线程池		
+    ../content/zh/docs/DatabaseReference/线程池
     ../content/zh/docs/DatabaseReference/备份恢复
     ../content/zh/docs/DatabaseReference/Undo
     ../content/zh/docs/DatabaseReference/DCF参数设置

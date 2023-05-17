@@ -2,7 +2,7 @@ SQLdiag：慢SQL发现
 ==================
 
 .. toctree::
-	
+
     ../content/zh/docs/AIFeatureGuide/SQLdiag-慢SQL发现概述
     ../content/zh/docs/AIFeatureGuide/SQLdiag-慢SQL发现使用指导
     ../content/zh/docs/AIFeatureGuide/SQLdiag-慢SQL发现获取帮助

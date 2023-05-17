@@ -23,10 +23,9 @@
     ../content/zh/docs/SQLReference/PL-pgSQL语言函数
     ../content/zh/docs/SQLReference/触发器
     全文检索
-    ../content/zh/docs/SQLReference/扩展函数	
+    ../content/zh/docs/SQLReference/扩展函数
     ../content/zh/docs/SQLReference/扩展语法
     ../content/zh/docs/SQLReference/INSERT_RIGHT_REF_DEFAULT_VALUE
     GIN索引
-    ../content/zh/docs/SQLReference/系统操作	
+    ../content/zh/docs/SQLReference/系统操作
     Schema
-	

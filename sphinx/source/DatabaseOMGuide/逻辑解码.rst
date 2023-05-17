@@ -2,6 +2,6 @@
 ========
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseOMGuide/逻辑解码概述
-    ../content/zh/docs/DatabaseOMGuide/使用SQL函数接口进行逻辑解码	
+    ../content/zh/docs/DatabaseOMGuide/使用SQL函数接口进行逻辑解码

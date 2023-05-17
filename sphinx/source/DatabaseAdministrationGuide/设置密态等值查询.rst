@@ -2,7 +2,7 @@
 ================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseAdministrationGuide/密态等值查询概述
     ../content/zh/docs/DatabaseAdministrationGuide/使用gsql操作密态数据库
     ../content/zh/docs/DatabaseAdministrationGuide/使用JDBC操作密态数据库
