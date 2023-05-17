@@ -1,8 +1,8 @@
 GAUSS-04301----GAUSS-04400
 ==========================
 
-.. toctree::	
-	
+.. toctree::
+
     ../content/zh/docs/DatabaseReference/GAUSS-04301----GAUSS-04310
     ../content/zh/docs/DatabaseReference/GAUSS-04311----GAUSS-04320
     ../content/zh/docs/DatabaseReference/GAUSS-04321----GAUSS-04330

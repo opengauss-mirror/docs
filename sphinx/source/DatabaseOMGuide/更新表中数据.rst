@@ -1,7 +1,7 @@
 更新表中数据
 ============
 
-.. toctree::	
-	
+.. toctree::
+
     ../content/zh/docs/DatabaseOMGuide/使用DML命令更新表
     ../content/zh/docs/DatabaseOMGuide/使用合并方式更新和插入数据

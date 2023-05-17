@@ -129,7 +129,7 @@ SQL语法
     ../content/zh/docs/SQLReference/DROP-FOREIGN-DATA-WRAPPER
     ../content/zh/docs/SQLReference/DROP-FOREIGN-TABLE
     ../content/zh/docs/SQLReference/DROP-FUNCTION
-    ../content/zh/docs/SQLReference/DROP-GLOBAL-CONFIGURATION		
+    ../content/zh/docs/SQLReference/DROP-GLOBAL-CONFIGURATION
     ../content/zh/docs/SQLReference/DROP-GROUP
     ../content/zh/docs/SQLReference/DROP-INDEX
     ../content/zh/docs/SQLReference/DROP-LANGUAGE

@@ -2,7 +2,7 @@ SQL语法
 =======
 
 .. toctree::
-			
+
 
     ../content/zh/docs/ExtensionReference/dolphin-ALTER-FUNCTION
     ../content/zh/docs/ExtensionReference/dolphin-ALTER-PROCEDURE
@@ -30,11 +30,11 @@ SQL语法
     ../content/zh/docs/ExtensionReference/dolphin-DROP-DATABASE
     ../content/zh/docs/ExtensionReference/dolphin-DROP-INDEX
     ../content/zh/docs/ExtensionReference/dolphin-DROP-TABLESPACE
-    ../content/zh/docs/ExtensionReference/dolphin-EXECUTE	
+    ../content/zh/docs/ExtensionReference/dolphin-EXECUTE
     ../content/zh/docs/ExtensionReference/dolphin-EXPLAIN
-    ../content/zh/docs/ExtensionReference/dolphin-FLUSH-BINARY-LOGS				
+    ../content/zh/docs/ExtensionReference/dolphin-FLUSH-BINARY-LOGS
     ../content/zh/docs/ExtensionReference/dolphin-GRANT
-    ../content/zh/docs/ExtensionReference/dolphin-GRANT-REVOKE-PROXY 	
+    ../content/zh/docs/ExtensionReference/dolphin-GRANT-REVOKE-PROXY
     ../content/zh/docs/ExtensionReference/dolphin-INSERT
     ../content/zh/docs/ExtensionReference/dolphin-KILL
     ../content/zh/docs/ExtensionReference/dolphin-LOAD-DATA
@@ -73,5 +73,5 @@ SQL语法
     ../content/zh/docs/ExtensionReference/dolphin-SHOW-VARIABLES 
     ../content/zh/docs/ExtensionReference/dolphin-SHOW-WARNINGS
     ../content/zh/docs/ExtensionReference/dolphin-UPDATE
-    ../content/zh/docs/ExtensionReference/dolphin-USE-DB_NAME						
+    ../content/zh/docs/ExtensionReference/dolphin-USE-DB_NAME
     ../content/zh/docs/ExtensionReference/dolphin-SELECT-HINT

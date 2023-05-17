@@ -2,7 +2,7 @@
 =========
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseOMGuide/通过INSERT语句直接写入数据
     使用COPY-FROM-STDIN导入数据
     ../content/zh/docs/DatabaseOMGuide/使用gsql元命令导入数据

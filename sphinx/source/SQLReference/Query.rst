@@ -2,7 +2,7 @@ Query
 =====
 
 .. toctree::
-	
+
     ../content/zh/docs/SQLReference/STATEMENT
     ../content/zh/docs/SQLReference/SUMMARY_STATEMENT
     ../content/zh/docs/SQLReference/STATEMENT_COUNT

@@ -1,17 +1,7 @@
 中间件
 ======
-.. toctree::		
-	
-	../content/zh/docs/AboutopenGauss/分布式数据库能力
-	../content/zh/docs/AboutopenGauss/使用kubernetes部署分布式数据库
-	../content/zh/docs/AboutopenGauss/分布式分析能力
+.. toctree::
 
-		
-		
-		
-
-		
-	
-	
-	
-	
+    ../content/zh/docs/AboutopenGauss/分布式数据库能力
+    ../content/zh/docs/AboutopenGauss/使用kubernetes部署分布式数据库
+    ../content/zh/docs/AboutopenGauss/分布式分析能力

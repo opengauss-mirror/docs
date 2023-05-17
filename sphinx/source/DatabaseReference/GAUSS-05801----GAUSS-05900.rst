@@ -2,7 +2,7 @@ GAUSS-05801----GAUSS-05900
 ==========================
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseReference/GAUSS-05801----GAUSS-05810
     ../content/zh/docs/DatabaseReference/GAUSS-05811----GAUSS-05820
     ../content/zh/docs/DatabaseReference/GAUSS-05821----GAUSS-05830

@@ -2,7 +2,7 @@
 ==============
 
 .. toctree::
-	
+
     ../content/zh/docs/DatabaseAdministrationGuide/默认权限机制
     ../content/zh/docs/DatabaseAdministrationGuide/管理员
     ../content/zh/docs/DatabaseAdministrationGuide/三权分立

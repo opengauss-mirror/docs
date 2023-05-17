@@ -2,7 +2,6 @@
 =====
 
 .. toctree::
-	
+
     ../content/zh/docs/Developerguide/开发规范
-    工具对接
-    
+    工具对接   
