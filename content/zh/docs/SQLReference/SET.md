@@ -90,7 +90,7 @@
 
     用于指定当前会话的本地时区。
 
-    取值范围：有效的本地时区。该选项对应的运行时参数名称为TimeZone，DEFAULT缺省值为PRC。
+    取值范围：有效的本地时区。该选项对应的运行时参数名称为TimeZone，DEFAULT缺省值为GMT。
 
 -   **CURRENT\_SCHEMA**
 
