@@ -5,7 +5,7 @@ const versionObjZh = {
   },
   "5.0.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
-    downLink: "",
+    downLink: "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/openGauss-document-zh-5.0.0.zip",
   },
   "3.1.1": {
     homePath: "/docs/BriefTutorial/BriefTutorial.html",
