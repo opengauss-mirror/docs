@@ -16,7 +16,9 @@ postgres\_fdw插件默认参与编译，使用安装包安装好openGauss后，�
 
 -   创建用户映射：**CREATE USER MAPPING**
 
--   创建外表：**CREATE FOREIGN TABLE**  外表的表结构需要与远端openGauss侧的表结构保持一致。
+-   创建外表：**CREATE FOREIGN TABLE**  
+
+    外表的表结构需要与远端openGauss侧的表结构保持一致。
 
 -   对外表做正常的操作，如  **INSERT**、**UPDATE**、**DELETE**、**SELECT**、**EXPLAIN**、**ANALYZE**、**COPY**  等。
 
