@@ -33,11 +33,15 @@ EVENT event_name
 
 ## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 
--   definer
+-   DEFINER 
 
     定时任务待执行语句在执行时使用的权限。默认情况下使用当前创建定时任务者的权限，当definer被指定时，使用被指定用户用户权限。
 
     definer参数只有具有sysadmin权限的用户有权指定。
+
+-   ON SCHEDULE
+
+    定时任务执行时刻。其中schedule子句与[CREATE EVENT](CREATE-EVENT.md)中schedule一致。
 
 -   RENAME TO
 
@@ -51,11 +55,11 @@ EVENT event_name
 
     创建定时任务后，定时任务默认处于ENABLE状态，即到规定时间立即执行待执行语句。用户可以使用DISABLE关键字，改变定时任务的活动状态。DISABLE ON SLAVE表现与DISABLE一致。
 
--   COMMENT 'string'
+-   COMMENT 
 
     用户可以给定时任务添加注释，注释内容在GS\_JOB\_ATTRIBUTE表中查看。
 
--   event\_body
+-   DO
 
     定时任务待执行语句。
 
@@ -69,8 +73,10 @@ openGauss=# CREATE TABLE t_ev(num int);
 openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
 
 --修改定时任务
+--修改定时任务状态和待执行语句
 openGauss=# ALTER EVENT event_e1 ENABLE DO select 1;
 
+--修改定时任务名
 openGauss=# ALTER EVENT event_e1 RENAME TO event_ee;
 ```
 
