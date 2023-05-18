@@ -54,13 +54,26 @@ interval:
 
 ## 参数说明<a name="section169527814566"></a>
 
--   definer
+-   DEFINER
 
     定时任务待执行语句在执行时使用的权限。默认情况下使用当前创建定时任务者的权限，当definer被指定时，使用被指定用户用户权限。
 
     definer参数只有具有sysadmin权限的用户有权指定。
 
     
+
+- ON SCHEDULE
+
+  定时任务执行时刻。定时任务可以通过schedule设置为执行一次，也可以设置为执行多次：
+
+  -   AT timestamp \[+ INTERVAL interval\] 表示设置定时任务只在timestamp \[+ INTERVAL interval\] 时间点执行一次。
+  -   EVERY interval 表示设置定时任务在每隔interval时间后重复执行。
+      -   STARTS timestamp \[+ INTERVAL interval\] 用户可以给可重复执行的定时任务指定起始时间，即定时任务从timestamp \[+ INTERVAL interval\]时刻开始执行。当此参数为空时默认从当前时刻开始执行。
+      -   ENDS timestamp \[+ INTERVAL interval\] 用户可以给可重复执行的定时任务指定结束时间，即定时任务从timestamp \[+ INTERVAL interval\]时刻停止执行。当此参数为空时默认为3999-12-31 16:00:00。
+
+-   INTERVAL
+
+    时间间隔，interval由quantity数字和时间单位组成，例如1 YEAR。
 
 -   ON COMPLETION \[NOT\] PRESERVE
 
@@ -70,11 +83,11 @@ interval:
 
     创建定时任务后，定时任务默认处于ENABLE状态，即到规定时间立即执行待执行语句。用户可以使用DISABLE关键字，改变定时任务的活动状态。DISABLE ON SLAVE表现与DISABLE一致。
 
--   COMMENT 'string'
+-   COMMENT 
 
     用户可以给定时任务添加注释，注释内容在GS\_JOB\_ATTRIBUTE表中查看。
 
--   event\_body
+-   DO
 
     定时任务待执行语句。
 
@@ -84,8 +97,10 @@ interval:
 ```
 openGauss=# CREATE TABLE t_ev(num int);
 
+--创建一个执行一次的定时任务
 openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
 
+--创建一个每隔一分钟执行一次的定时任务
 openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE EVERY 1 minute DO insert into t_ev values(1);
 
 ```

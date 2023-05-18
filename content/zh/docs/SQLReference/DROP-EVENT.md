@@ -20,9 +20,6 @@ DROP EVENT [IF EXISTS] event_name
 
     如果定时任务不存在，会输出一个NOTICE。
 
--   name
-
-    要删除的现存定时任务名称。
 
 
 ## 示例<a name="section192526392717"></a>
