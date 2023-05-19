@@ -852,6 +852,7 @@ headless: true
 					-	[JSON-JSONB函数和操作符]({{< relref "./docs/ExtensionReference/dolphin-JSON-JSONB函数和操作符.md" >}})
 					-	[类型转换函数]({{< relref "./docs/ExtensionReference/dolphin-类型转换函数.md" >}})
 					-	[四则运算操作符兼容]({{< relref "./docs/ExtensionReference/dolphin-四则运算操作符兼容.md" >}})
+					-   [注释操作符]({{< relref "./docs/ExtensionReference/dolphin-注释操作符.md" >}})
 				-	[表达式]({{< relref "./docs/ExtensionReference/dolphin-表达式.md" >}})
 					-	[条件表达式]({{< relref "./docs/ExtensionReference/dolphin-表达式.md" >}})
 				-	[DDL语法一览表]({{< relref "./docs/ExtensionReference/dolphin-DDL语法一览表.md" >}})
