@@ -351,7 +351,7 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p106523513313"><a name="p106523513313"></a><a name="p106523513313"></a>[0-63]，  需要从0开始指定。</p>
 </td>
 </tr>
-<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable_dss</p>
+<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable-dss</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p145298413418"><a name="p145298413418"></a><a name="p145298413418"></a>开启ss_enable_dss功能。</p>
 </td>

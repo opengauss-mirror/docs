@@ -133,7 +133,7 @@ Compared with traditional gs\_initdb database creation, directories are classifi
         The following parameters are added:
 
         -   --**vgname** specifies the VG where the shared storage database is created. The VG name is related to the configuration item in the **dss\_vg\_conf.ini** file. The VG name must exist in the configuration file and start with a plus sign (+).
-        -   --**enable\_dss** indicates that the shared storage database created in DSS.
+        -   --**enable-dss** indicates that the shared storage database created in DSS.
         -   --**dms\_url "0:127.0.0.1:1611,1:127.0.0.1:1711"** indicates that format is *Instance\_ID***:***IP address***:***Port number*.
         -   -**I**: specifies the instance ID of the current node. The value ranges from 0 to 63.
         -   --**socketpath** specifies the location of the Unix domain socket used for the communication between the DSS client (DSS client dynamic library integrated into the executable file of the database) and the server.
