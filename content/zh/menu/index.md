@@ -2885,7 +2885,6 @@ headless: true
     		-   [GAUSS-53400 -- GAUSS-53499]({{< relref "./docs/DatabaseReference/GAUSS-53400----GAUSS-53499.md" >}})
     		-   [GAUSS-53500 -- GAUSS-53599]({{< relref "./docs/DatabaseReference/GAUSS-53500----GAUSS-53599.md" >}})
     		-   [GAUSS-53600 -- GAUSS-53699]({{< relref "./docs/DatabaseReference/GAUSS-53600----GAUSS-53699.md" >}})	
-    -   [openGauss可运行脚本功能说明]({{< relref "./docs/DatabaseReference/openGauss可运行脚本功能说明.md" >}})
     -   [通信矩阵]({{< relref "./docs/DatabaseReference/通信矩阵.md" >}})
 -   [附录]({{< relref "./docs/Appendix/附录.md" >}})
     -   [openGauss资源获取]({{< relref "./docs/Appendix/openGauss资源获取.md" >}})

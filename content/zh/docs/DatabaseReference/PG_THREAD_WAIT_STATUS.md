@@ -752,7 +752,7 @@ wait\_status列的等待状态有以下状态。
 </tr>
 <tr id="zh-cn_topic_0283136724_row8426111952114"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p9426111912211"><a name="zh-cn_topic_0283136724_p9426111912211"></a><a name="zh-cn_topic_0283136724_p9426111912211"></a>MultiXactMember Ctl</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p14426111922110"><a name="zh-cn_topic_0283136724_p14426111922110"></a><a name="zh-cn_topic_0283136724_p14426111922110"></a>保护MultiXact member的slrubuffer。</p>
+<td class="cellrowborder" valign="top" width="61.82%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_p14426111922110"><a name="zh-cn_topic_0283136724_p14426111922110"></a><a name="zh-cn_topic_0283136724_p14426111922110"></a>保护MultiXact member的slru buffer。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136724_row16796316172217"><td class="cellrowborder" valign="top" width="38.18%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_p3796201602217"><a name="zh-cn_topic_0283136724_p3796201602217"></a><a name="zh-cn_topic_0283136724_p3796201602217"></a>OldSerXid SLRU Ctl</p>
