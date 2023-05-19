@@ -236,7 +236,7 @@ headless: true
         -   [示例：jdbc主备集群负载均衡]({{< relref "./docs/Developerguide/示例-jdbc主备集群负载均衡.md" >}})
         -   [JDBC接口参考]({{< relref "./docs/DeveloperGuide/JDBC接口参考.md" >}})
         -   [JDBC常用参数参考]({{< relref "./docs/DeveloperGuide/JDBC常用参数参考.md" >}})
-    -   [基于ODBC开发]({{< relref "./docs/DeveloperGuide/基于ODBC开发.md" >}}
+    -   [基于ODBC开发]({{< relref "./docs/DeveloperGuide/基于ODBC开发.md" >}})
         -   [ODBC包及依赖的库和头文件]({{< relref "./docs/DeveloperGuide/ODBC包及依赖的库和头文件.md" >}})
         -   [Linux下配置数据源]({{< relref "./docs/DeveloperGuide/Linux下配置数据源.md" >}})
         -   [开发流程]({{< relref "./docs/DeveloperGuide/开发流程_ODBC.md" >}})
