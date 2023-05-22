@@ -6,11 +6,19 @@
 
 <!-- TOC -->
 
-- [配置数据库名称及各项目录](#配置数据库名称及各项目录)
-- [配置Host基本信息](#配置host基本信息)
-- [配置数据库主节点信息](#配置数据库主节点信息)
-- [配置CM_SERVER（主、非主）信息](#配置数据库主节点信息)
-- [示例](#示例)
+- [创建XML配置文件](#创建xml配置文件)
+  - [配置数据库名称及各项目录](#配置数据库名称及各项目录)
+  - [配置Host基本信息](#配置host基本信息)
+  - [配置数据库主节点信息](#配置数据库主节点信息)
+  - [配置CM\_SERVER（主、非主）信息](#配置cm_server主非主信息)
+  - [示例](#示例)
+    - [单节点配置文件](#单节点配置文件)
+    - [一主一备配置文件](#一主一备配置文件)
+    - [一主一备一级联配置文件](#一主一备一级联配置文件)
+    - [一主二备配置文件](#一主二备配置文件)
+    - [一主三备配置文件](#一主三备配置文件)
+    - [一主四备配置文件](#一主四备配置文件)
+    - [一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）](#一主四备配置文件支持自定义利用firstany设置同步备机)
 
 <!-- /TOC -->
 
@@ -270,7 +278,7 @@
 </tr>
 <tr id="zh-cn_topic_0249784567_row1883518127274"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p857520312368"><a name="zh-cn_topic_0249784567_p857520312368"></a><a name="zh-cn_topic_0249784567_p857520312368"></a>azPriority</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p8997131616389"><a name="zh-cn_topic_0249784567_p8997131616389"></a><a name="zh-cn_topic_0249784567_p8997131616389"></a>指定azPriority的优先级。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p8997131616389"><a name="zh-cn_topic_0249784567_p8997131616389"></a><a name="zh-cn_topic_0249784567_p8997131616389"></a>指定azPriority的优先级，azName值不同，azPriority的值也必须不同</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784567_row1776745213589"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p17976123919369"><a name="zh-cn_topic_0249784567_p17976123919369"></a><a name="zh-cn_topic_0249784567_p17976123919369"></a>backIp1</p>
