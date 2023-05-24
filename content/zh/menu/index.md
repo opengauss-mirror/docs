@@ -1301,6 +1301,7 @@ headless: true
             -   [空语句]({{< relref "./docs/SQLReference/空语句.md" >}})
             -   [错误捕获语句]({{< relref "./docs/SQLReference/错误捕获语句.md" >}})
             -   [GOTO语句]({{< relref "./docs/SQLReference/GOTO语句.md" >}})
+            -   [抛出错误语句]({{< relref "./docs/SQLReference/抛出错误语句.md" >}})
 		-   [事务管理]({{< relref "./docs/SQLReference/事务管理.md" >}})
     	-   [其他语句]({{< relref "./docs/SQLReference/其他语句.md" >}})
             -   [锁操作]({{< relref "./docs/SQLReference/锁操作.md" >}})
