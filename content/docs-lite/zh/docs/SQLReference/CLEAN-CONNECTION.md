@@ -49,7 +49,7 @@ CLEAN CONNECTION
 
 ```
 --创建jack用户。
-CREATE USER jack PASSWORD 'Bigdata123@';
+CREATE USER jack PASSWORD 'XXXXXXXX';
 
 --删除用户jack在数据库template1上的所有连接。
 CLEAN CONNECTION TO ALL FOR DATABASE template1 TO USER jack;
