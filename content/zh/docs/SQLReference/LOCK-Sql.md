@@ -8,7 +8,7 @@ openGauss在为一个引用了表的命令自动请求锁时，尽可能选择�
 
 ## 注意事项<a name="zh-cn_topic_0237122168_zh-cn_topic_0059778442_s7bddbed63c51406a8d5cff4c980420bf"></a>
 
--   LOCK TABLE只能在一个事务块的内部有用，因为锁在事务结束时就会被释放。出现在任意事务块外面的LOCK TABLE都会报错。
+-   LOCK TABLE只能在一个事务块的内部生效，因为锁在事务结束时就会被释放。出现在任意事务块外面的LOCK TABLE都会报错。
 -   如果没有声明锁模式，缺省为最严格的模式ACCESS EXCLUSIVE。
 -   LOCK TABLE ... IN ACCESS SHARE MODE需要在目标表上有SELECT权限。所有其他形式的LOCK需要UPDATE和/或DELETE权限。
 -   没有UNLOCK TABLE命令，锁总是在事务结束时释放。
