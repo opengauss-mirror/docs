@@ -37,7 +37,7 @@ ALTER SYNONYM synonym_name
 
 ```
 --创建系统管理员用户。
-openGauss=# CREATE USER sysadmin WITH SYSADMIN PASSWORD 'user@111';
+openGauss=# CREATE USER sysadmin WITH SYSADMIN PASSWORD 'XXXXXXXX';
 
 --切换管理员用户。
 openGauss=# \c - sysadmin
@@ -46,7 +46,7 @@ openGauss=# \c - sysadmin
 openGauss=# CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 --创建新用户u1。
-gaussdbopenGauss=# CREATE USER u1 PASSWORD 'user@111';
+gaussdbopenGauss=# CREATE USER u1 PASSWORD 'XXXXXXXX';
 
 --给新用户赋权限。
 openGauss=# GRANT ALL ON SCHEMA sysadmin TO u1;
