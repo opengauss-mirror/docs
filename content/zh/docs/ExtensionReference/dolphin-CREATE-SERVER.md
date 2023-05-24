@@ -50,7 +50,7 @@ CREATE SERVER server_name
 
         -   **database**  （默认为空）
 
-            无实际意义，仅做语法兼容。指定MySQL Server/MariaDB连接的数据库请在[CREATE FOREIGN TABLE](../SQLReference/CREATE-FOREIGN-TABLE.md)或[ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md)中完成。
+            无实际意义，仅做语法兼容。指定MySQL Server/MariaDB连接的数据库请在[CREATE FOREIGN TABLE](../SQLReference/CREATE-FOREIGN-TABLE.md)或[ALTER FOREIGN TABLE](../SQLReference/ALTER-FOREIGN-TABLE.md)中完成。
 
         -   **owner**  （默认为空）
 
