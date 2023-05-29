@@ -134,11 +134,6 @@ openGauss=# show warnings limit 2, 4;
  Warning |   64 | you don't own a lock of type ShareLock
 (2 rows)
 
-```
-(3 rows)
-```
-
-```sql
 --用sql_note控制存储note信息的开关。
 CREATE OR REPLACE FUNCTION TEST_FUNC(tempdata char) RETURNS VOID AS $$
 BEGIN

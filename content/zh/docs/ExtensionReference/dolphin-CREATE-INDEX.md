@@ -84,7 +84,7 @@
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
-```
+```sql
 --创建表tpcds.ship_mode_t1。
 openGauss=# create schema tpcds;
 openGauss=# CREATE TABLE tpcds.ship_mode_t1
@@ -198,7 +198,8 @@ openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ng
 CREATE INDEX
 ```
 
-##全文索引
+## 全文索引
+
 ```sql
 openGauss=# CREATE SCHEMA fulltext_test;
 CREATE SCHEMA
