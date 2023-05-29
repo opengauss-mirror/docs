@@ -4,6 +4,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 
 1. The DIV, MOD, XOR, and ^ operators are added.
 2. The truncate, rand, crc32, conv, float8\_bool, oct, and float4_bool functions are added.
+3. Implement the atan function to support the usage of atan(y, x).
 
 -   DIV
 
@@ -216,3 +217,19 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
    f
   (1 row)
   ~~~
+
+- atan\(y, x\)
+  
+  Description: Arc tangent of y/x.
+  
+  Return type: double precision
+  
+  Example:
+  
+  ```
+  openGauss=# SELECT atan(2, 1);
+        atan
+  ------------------
+   1.10714871779409
+  (1 row)
+  ```
