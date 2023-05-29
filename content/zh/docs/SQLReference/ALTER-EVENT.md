@@ -7,10 +7,10 @@
 ## 注意事项<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
 -   定时任务相关操作只有sql\_compatibility = 'B'时支持。
--   只有定时任务的所有者有权修改待修改的定时任务，系统管理员默认拥有修改所有定时任务的权限。
+-   只有定时任务的所有者有权修改待修改的定时任务，用户通过ALTER EVENT修改定时任务时需要拥有被指定schema的USAGE权限。系统管理员默认拥有修改所有定时任务的权限。
 -   可以通过SHOW  EVENTS或在PG\_JOB表中查看log\_user列来获得job的所有者信息
 -   修改定时任务时每次修改成功后会更新被修改job的所有者为当前用户，若修改定时任务时指定了definer，则更新为被指定的definer。
-- definer选项场景限制与[CREATE EVENT](CREATE-EVENT.md)章节中对definer限制场景一致。
+-   definer选项场景限制与[CREATE EVENT](CREATE-EVENT.md)章节中对definer限制场景一致。
 
   >![](public_sys-resources/icon-notice.png) **须知：** 
   >
