@@ -46,9 +46,9 @@ plsql_body
 /
 ```
 
-- 使用MySQL 的格式进行创建存储过程。
+- 使用MySQL的格式进行创建存储过程。
 
-  注意：使用MMySQL 的格式创建时，需要在客户端使用delimiter 命令设置结束符。
+  注意：使用MySQL的格式创建时，需要在客户端使用delimiter命令设置结束符。
 
 ```
 CREATE [ OR REPLACE ] PROCEDURE procedure_name
@@ -116,7 +116,7 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
 ## 示例<a name="zh-cn_topic_0283137438_zh-cn_topic_0237122132_zh-cn_topic_0059778658_s414adb8f7846482184cbbd960d4adfcf"></a>
 
-```
+```sql
 --创建存储过程使用单条查询语句，显示为CREATE FUNCTION
 openGauss=#  create procedure procxx() select a from t1;
 CREATE FUNCTION
