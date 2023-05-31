@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64```函数。
+2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64/uuid```函数。
 3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
@@ -168,6 +168,22 @@
      hex
     -------
      5c6e
+    (1 row)
+    ```
+
+-   uuid\(\)
+
+    描述：以UUID1的生成方式返回一个aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee格式的UUID。
+
+    返回值类型：varchar
+
+    示例：
+
+    ```
+    openGauss=# SELECT uuid();
+                     uuid                 
+    --------------------------------------
+     ea2beb80-0d1c-11cb-d2f8-5267477de699
     (1 row)
     ```
 
