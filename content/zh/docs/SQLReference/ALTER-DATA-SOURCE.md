@@ -76,7 +76,7 @@ openGauss=# CREATE DATA SOURCE ds_test1;
 openGauss=# ALTER DATA SOURCE ds_test1 RENAME TO ds_test;
 
 --修改属主。
-openGauss=# CREATE USER user_test1 IDENTIFIED BY 'Gs@123456';
+openGauss=# CREATE USER user_test1 IDENTIFIED BY 'XXXXXXXX';
 openGauss=# ALTER USER user_test1 WITH SYSADMIN;
 openGauss=# ALTER DATA SOURCE ds_test OWNER TO user_test1;
 
