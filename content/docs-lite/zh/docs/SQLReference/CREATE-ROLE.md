@@ -262,7 +262,7 @@ openGauss=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
 openGauss=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
 
 --修改角色manager的密码为abcd@123。
-openGauss=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
+openGauss=# ALTER ROLE manager IDENTIFIED BY '$$$$$$$$' REPLACE 'xxxxxxxxx';
 
 --修改角色manager为系统管理员。
 openGauss=# ALTER ROLE manager SYSADMIN;
