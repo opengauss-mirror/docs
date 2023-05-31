@@ -32,7 +32,7 @@ openGauss提供了在命令行下运行的数据库连接工具gsql。此工具�
 3.  首次登录建议修改密码以提高安全性。命令如下。
 
     ```
-    openGauss=# ALTER ROLE omm IDENTIFIED BY 'XXXXXXXX' REPLACE 'XXXXXXXX';
+    openGauss=# ALTER ROLE omm IDENTIFIED BY '$$$$$$$$' REPLACE 'XXXXXXXX';
     ```
 
 4.  gsql提供了高级功能方便您使用数据库。
