@@ -40,7 +40,7 @@ ALTER SYNONYM synonym_name
 openGauss=#  CREATE OR REPLACE SYNONYM t1 FOR ot.t1;
 
 --创建新用户u1。
-openGauss=# CREATE USER u1 PASSWORD 'user@111';
+openGauss=# CREATE USER u1 PASSWORD 'XXXXXXXX';
 
 --修改同义词t1的owner为u1。
 openGauss=# ALTER SYNONYM t1 OWNER TO u1;
