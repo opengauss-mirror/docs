@@ -7,7 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 -  在主库执行有效。
--  展示结果和select * from pg_stat_replication一致。
+-  展示结果和select * from pg_stat_get_wal_senders()一致。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -29,64 +29,79 @@ SHOW {SLAVE | REPLICA} STATUS [FOR CHANNEL channel]
 
 - **pid**
 
-       线程的PID。
+       walsender的线程号。
 
-- **usesysid**
+- **sender_pid**
 
-       用户系统ID。
+       walsender的pid相对的轻量级线程号。
 
-- **usename**
+- **local_role**
 
-       用户名。
+       主节点类型。
 
-- **application_name**
+- **peer_role**
 
-       程序名称。
+       备节点类型。
 
-- **client_addr**
+- **peer_state**
 
-       客户端地址。
-
-- **client_port**
-
-       客户端端口。
-
-- **backend_start**
-
-       程序启动时间。
+       备节点状态。
 
 - **state**
 
-       日志复制的状态：
-            追赶状态、
-            一致的流状态。
+       walsender状态。
+
+- **catchup_start**
+
+       catchup启动时间。
+
+- **catchup_end**
+
+       catchup结束时间。
 
 - **sender_sent_location**
 
-       发送端发送日志位置。
+       主节点发送位置。
+
+- **sender_write_location**
+
+       主节点落盘位置。
+
+- **sender_flush_location**
+
+       主节点flush磁盘位置。
+
+- **sender_replay_location**
+
+       主节点redo位置。
+
+- **receiver_received_location**
+
+       备节点接收位置。
 
 - **receiver_write_location**
 
-       接收端write日志位置。
+       备节点落盘位置。
 
 - **receiver_flush_location**
 
-       接收端flush日志位置。
+       备节点flush磁盘位置。
 
 - **receiver_replay_location**
 
-       接收端replay日志位置。
+       备节点redo磁盘位置。
+
+- **sync_percent**
+
+       同步百分比。
 
 - **sync_state**
-            
-       同步状态：
-            异步复制、
-            同步复制、
-            潜在同步者。
+
+       同步状态。
 
 - **sync_priority**
 
-       同步复制的优先级（0表示异步）。
+       同步复制的优先级。
 
 - **sync_most_available**
 
