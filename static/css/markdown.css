@@ -273,7 +273,7 @@
   color: var(--o-color-text1);
 }
 .markdown img {
-  max-width: 100%;
+  max-width: 70%;
   background-color: var(--o-color-greyblue3);
 }
 /* .markdown ul li a[href^="#"] {
