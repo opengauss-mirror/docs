@@ -48,7 +48,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 3.  首次登录建议修改密码。命令如下。
 
     ```
-    openGauss=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    openGauss=# ALTER ROLE omm IDENTIFIED BY '$$$$$$$$' REPLACE 'XXXXXXXX';
     ```
 
 4.  退出数据库。
@@ -120,7 +120,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
     scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
     ```
-        
+    
     其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
@@ -130,7 +130,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
     vi ~/.bashrc
     ```
-        
+    
     在其中输入如下内容后，使用“:wq!”命令保存并退出。
         
     ```

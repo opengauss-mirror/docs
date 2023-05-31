@@ -289,8 +289,8 @@ backupdb=# select * from hr.areas;
 示例十三：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。
 
 ```
-human_resource=# CREATE USER user1 IDENTIFIED BY "1234@abc";
-CREATE ROLE role1 with SYSADMIN IDENTIFIED BY "abc@1234";
+human_resource=# CREATE USER user1 IDENTIFIED BY "XXXXXXXX";
+CREATE ROLE role1 with SYSADMIN IDENTIFIED BY "XXXXXXXX";
 gs_restore -U user1 /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --role role1 --rolepassword abc@1234
 Password:
 restore operation successful
