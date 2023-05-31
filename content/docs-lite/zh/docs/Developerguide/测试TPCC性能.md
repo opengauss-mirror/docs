@@ -216,7 +216,7 @@
     1.  创建数据库用户。
 
         ```
-        create user bot identified by 'Gaussdba@Mpp' profile default; 
+        create user bot identified by 'XXXXXXXX' profile default; 
         alter user bot sysadmin; 
         create database tpcc1000 encoding 'UTF8' template=template0 owner tpcc5q;
         ```
