@@ -7,7 +7,11 @@
 ## 注意事项<a name="section7961133411551"></a>
 
 -   定时任务相关操作只有sql\_compatibility = 'B'时支持。
--   用户操作（创建/修改/删除）定时任务时，非sysadmin用户需要被sysadmin用户赋予操作定时任务的权限。定时任务操作权限与高级包DBE\_SCHEDULER中创建定时任务赋权操作一致。
+-   用户操作（创建/修改/删除）定时任务时，非sysadmin用户需要被sysadmin用户赋予操作定时任务的权限。
+    -   用户使用CREATE EVENT创建定时任务时，需要拥有创建定时任务schema的CREATE权限。
+    -   用户使用ALTER/DROP EVENT修改或删除定时任务时，需要拥有被指定schema的USAGE权限。
+    -   只有定时任务的属主有权ALTER或DROP定时任务。
+    -   定时任务的属主与被指定的definer保持一致，若创建定时任务时未指定definer，则默认为当前创建定时任务者。
 -   定时任务时间间隔interval表达式目前兼容了浮点数语法，例如interval 0.5 minute，但是计算时会将浮点数取整，所以不建议interval时间间隔使用浮点数形式。
 -   同一database下不支持同名定时任务。
 -   定时任务中待执行语句范围是除安全相关操作以外任意SQL语句，但对于某些有约束的语句会执行失败。例如：不支持通过复合语句创建database。
@@ -47,9 +51,8 @@ schedule: {
 }
 interval:
     quantity {YEAR | MONTH | DAY | HOUR | MINUTE | SECOND |
-              YEAR TO MONTH | DAY TO HOUR | DAY TO MINUTE |
-              DAY TO SECOND | HOUR TO MINUTE | HOUR TO SECOND | 
-              MINUTE TO SECOND}
+              YEAR_MONTH | DAY_OUR | DAY_MINUTE | DAY_SECOND |
+              HOUR_MINUTE | HOUR_SECOND | MINUTE_SECOND}
 ```
 
 ## 参数说明<a name="section169527814566"></a>

@@ -7,6 +7,7 @@
 ## 注意事项<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s5a554e8d15974449b7ffffee772b46f2"></a>
 
 定时任务相关操作只有sql\_compatibility = 'B'时支持。
+只有定时任务的所有者有权删除待修改的定时任务，用户通过DROP EVENT修改定时任务时需要拥有被指定schema的USAGE权限。系统管理员默认拥有删除所有定时任务的权限。
 
 ## 语法格式<a name="section157338176610"></a>
 
