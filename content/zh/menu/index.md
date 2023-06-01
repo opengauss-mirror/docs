@@ -396,6 +396,7 @@ headless: true
 		-   [资源池化架构]({{< relref "./docs/DatabaseAdministrationGuide/资源池化架构.md" >}})
 			-   [资源池化开发者环境部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化开发者环境部署.md" >}})
 			-   [资源池化当前架构特性约束]({{< relref "./docs/DatabaseAdministrationGuide/资源池化当前架构特性约束.md" >}})
+			-   [资源池化同城双中心部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化同城双中心部署.md" >}})
 	-   [创建和管理数据库]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理数据库.md" >}})
 	-   [创建和管理表空间]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理表空间.md" >}})
 	-   [数据库对象管理]({{< relref "./docs/DatabaseAdministrationGuide/数据库对象管理.md" >}})
