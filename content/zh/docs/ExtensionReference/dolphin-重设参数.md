@@ -213,6 +213,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
 ## 示例<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
 
+```sql
 --创建表test1。
 openGauss=# CREATE TABLE test1
 (
@@ -238,3 +239,4 @@ openGauss=# select a1,a2 from test1 group by a1;
 
 --删除表
 openGauss=# DROP TABLE test1;
+```
