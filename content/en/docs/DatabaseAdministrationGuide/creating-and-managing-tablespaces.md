@@ -146,14 +146,19 @@ In scenarios such as HCS, you are not advised to use user-defined tablespaces. T
     ```
 
 -   Delete a tablespace and related data.
-    -   Run the following command to delete user  **jack**:
+    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >
+    >Only the tablespace owner or system administrator can delete a tablespace.
+
+
+    1.  Run the following command to delete user  **jack**:
 
         ```
         openGauss=# DROP USER jack CASCADE;
         DROP ROLE
         ```
 
-    -   Run the following commands to delete tables  **foo**  and  **foo2**:
+    2.  Run the following commands to delete tables  **foo**  and  **foo2**:
 
         ```
         openGauss=# DROP TABLE foo;
@@ -166,15 +171,14 @@ In scenarios such as HCS, you are not advised to use user-defined tablespaces. T
         DROP TABLE
         ```
 
-    -   Run the following command to delete tablespace  **fspace**:
+    3.  Run the following command to delete tablespace  **fspace**:
 
         ```
         openGauss=# DROP TABLESPACE fspace;
         DROP TABLESPACE
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
-        >Only the tablespace owner or system administrator can delete a tablespace.
+
 
 
 
