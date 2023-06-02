@@ -67,5 +67,5 @@ PGresult *PQprepare(PGconn *conn,
 
 ## Example<a name="en-us_topic_0241735620_section13066285525"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 
