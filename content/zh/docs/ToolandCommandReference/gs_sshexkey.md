@@ -25,7 +25,7 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
 - 执行命令前，需要检查是否所有集群节点都支持expect命令，如果不支持请自行下载expect工具，建议使用expect version 5.45。
 
--   如果各主机安装并启动了SELinux服务，需要确保/root和/home目录安全上下文为默认值（root目录：system\_u:object\_r:home\_root\_t:s0，home目录：system\_u:object\_r:admin\_home\_t:s0）或者关闭掉SELinux服务。
+-   如果各主机安装并启动了SELinux服务，需要确保/root和/home目录安全上下文为默认值（root目录：system\_u:object\_r:admin\_home\_t:s0，home目录：system\_u:object\_r:home\_root\_t:s0）或者关闭掉SELinux服务。
 
     检查系统SELinux状态的方法：执行命令getenforce，如果返回结果是Enforcing ，说明SELinux安装并启用。
 
