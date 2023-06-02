@@ -233,7 +233,7 @@ $(function ($) {
               ...(window["addSearchBuriedData"] || {}),
               ...searchKeyObj,
             });
-            window.location.href = $(this).attr("href");
+            window.open($(this).attr("href"))
           });
       });
     },
