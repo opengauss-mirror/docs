@@ -5,7 +5,3 @@ Security certificates and keys generated using OpenSSL are configured in openGau
 -   **[Generating Certificates](generating-certificates.md)**  
 
 -   **[Replacing Certificates](replacing-certificates.md)**  
-
--   **[Primary/Standby Certificate Authentication Configuration](primary-standby-certificate-authentication-configuration.md)**  
-
-

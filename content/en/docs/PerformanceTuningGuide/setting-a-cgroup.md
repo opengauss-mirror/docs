@@ -310,7 +310,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 
 3.  Obtain the Cgroup configuration in a system view.
 
-    1.  Perform the steps in  [Using gsql to Connect to a Database](using-gsql-to-connect-to-a-database.md).
+    1.  Perform the steps in  [Using gsql to Connect to a Database](../DatabaseAdministrationGuide/using-gsql-to-operate-an-encrypted-database.md).
     2.  Obtain the configuration about all Cgroups in the system.
 
     ```

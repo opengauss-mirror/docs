@@ -4,7 +4,7 @@ openGauss text runs SQL statements to perform different system operations, such 
 
 ## Setting Variables<a name="en-us_topic_0283137188_en-us_topic_0237122047_en-us_topic_0059778982_s996115c71b8847e3a40822daef622a2a"></a>
 
-For details about how to set various parameters for a session or transaction, see  [SET](set-48.md).
+For details about how to set various parameters for a session or transaction, see  [SET](set.md).
 
 ## Displaying the Execution Plan<a name="en-us_topic_0283137188_en-us_topic_0237122047_en-us_topic_0059778982_s3e28880506ff4cc8a003199eb5d71864"></a>
 

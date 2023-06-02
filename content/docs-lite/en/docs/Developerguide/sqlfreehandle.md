@@ -50,5 +50,5 @@ If SQLFreeHandle returns  **SQL\_ERROR**, the handle is still valid.
 
 ## Example<a name="en-us_topic_0238272896_en-us_topic_0237120426_en-us_topic_0059779231_s877f1d1111e8452fbea6495355622686"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

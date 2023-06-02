@@ -1,6 +1,6 @@
 # THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0245374743"></a>
 
-**THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of the backend thread and auxiliary thread in the current instance. For details about events, see  [Table 2](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table38811324183420),  [Table 4](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table124603113369), and  [Table 5](../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table11826123533718).
+**THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of the backend thread and auxiliary thread in the current instance. For details about events, see  [Table 2](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table38811324183420),  [Table 4](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table124603113369), and  [Table 5](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table11826123533718).
 
 **Table  1**  THREAD\_WAIT\_STATUS columns
 
@@ -87,7 +87,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122639_p1551352718284"><a name="en-us_topic_0237122639_p1551352718284"></a><a name="en-us_topic_0237122639_p1551352718284"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122639_p951322714281"><a name="en-us_topic_0237122639_p951322714281"></a><a name="en-us_topic_0237122639_p951322714281"></a>Waiting status of the current thread. For details about the waiting status, see <a href="../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122639_p951322714281"><a name="en-us_topic_0237122639_p951322714281"></a><a name="en-us_topic_0237122639_p951322714281"></a>Waiting status of the current thread. For details about the waiting status, see <a href="../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122639_row16514172762814"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122639_p151472711288"><a name="en-us_topic_0237122639_p151472711288"></a><a name="en-us_topic_0237122639_p151472711288"></a>wait_event</p>

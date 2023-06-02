@@ -38,7 +38,7 @@ PG\_AUTH\_HISTORY系统表记录了角色的认证历史。需要有系统管理
 </td>
 <td class="cellrowborder" valign="top" width="26.027397260273972%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a9d80c274ee88472388852e363bf81d64"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a9d80c274ee88472388852e363bf81d64"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a9d80c274ee88472388852e363bf81d64"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="57.48425157484252%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"></a>角色密码密文，加密方式由GUC参数<a href="安全和认证（postgresql-conf）.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_se6b55c35b44945099d33b403a5a43bce">password_encryption_type</a>确定。</p>
+<td class="cellrowborder" valign="top" width="57.48425157484252%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"></a><a name="zh-cn_topic_0283137138_zh-cn_topic_0237122274_zh-cn_topic_0059778384_a996da8ed8bea4f3e83ee3fde51b54d33"></a>角色密码密文，加密方式由GUC参数<a href="安全和认证_postgresql-conf.md#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_se6b55c35b44945099d33b403a5a43bce">password_encryption_type</a>确定。</p>
 </td>
 </tr>
 </tbody>
