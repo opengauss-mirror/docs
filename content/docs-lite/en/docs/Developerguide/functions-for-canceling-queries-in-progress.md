@@ -4,7 +4,7 @@ A client application can use the functions described in this section to cancel a
 
 -   **[PQgetCancel](pqgetcancel.md)**  
 
--   **[PQfreeCancel](pqfreecancel.md)**  
+-   **[PQfreeCancel](pqfreecancel.mdd)**  
 
 -   **[PQcancel](pqcancel.md)**  
 

@@ -108,7 +108,7 @@ After the openGauss is uninstalled, execute the  **gs\_postuninstall**  script t
 
     unset MPPDB\_ENV\_SEPARATE\_PATH
 
-5. Delete the mutual trust between the users  **root**  on each openGauss database node. For details, see  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md).
+5. Delete the mutual trust between the users  **root**  on each openGauss database node. For details, see  [Establishing Mutual Trust Manually](initializing-the-installation-environment.md).
 
 6. Log out the **root** user.
 
