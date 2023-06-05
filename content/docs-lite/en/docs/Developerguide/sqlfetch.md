@@ -44,5 +44,5 @@ If SQLFetch returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the appli
 
 ## Example<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_s297ce23d9b4d4e6ab0f5888390604f41"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

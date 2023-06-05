@@ -74,5 +74,4 @@ If SQLGetData returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 
 ## Example<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_s69654c27e011474aa33ede59ff0961b8"></a>
 
-See  [Examples](examples.md).
-
+See  [Examples](example-odbc.md).

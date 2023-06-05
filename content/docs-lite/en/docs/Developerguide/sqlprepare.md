@@ -55,5 +55,5 @@ If SQLPrepare returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 
 ## Example<a name="en-us_topic_0238272898_en-us_topic_0237120428_en-us_topic_0059779125_sbf766eb45a5e442094a561b3036a4205"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

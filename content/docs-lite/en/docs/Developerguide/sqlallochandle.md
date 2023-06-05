@@ -57,5 +57,5 @@ If SQLAllocHandle returns  **SQL\_ERROR**  when it is used to allocate a non-env
 
 ## Example<a name="en-us_topic_0238272884_en-us_topic_0237120414_en-us_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

@@ -46,6 +46,6 @@ The ODBC interface is a set of API functions provided to users. This chapter des
 
 -   **[SQLSetStmtAttr](sqlsetstmtattr.md)**  
 
--   **[Examples](examples.md)**  
+-   **[Examples](example-odbc.md)**  
 
 

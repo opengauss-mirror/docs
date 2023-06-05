@@ -50,5 +50,5 @@ int PQcancel(PGcancel *cancel, char *errbuf, int errbufsize);
 
 ## Example<a name="en-us_topic_0241735638_section724101713148"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 

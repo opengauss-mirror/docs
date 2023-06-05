@@ -96,5 +96,5 @@ If SQLBindParameter returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, t
 
 ## Example<a name="en-us_topic_0238272887_en-us_topic_0237120417_en-us_topic_0059778788_sb33a1598a85f4ab581fd17d40e3db274"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

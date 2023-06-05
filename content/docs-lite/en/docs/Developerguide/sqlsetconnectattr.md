@@ -60,5 +60,4 @@ If SQLSetConnectAttr returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, 
 
 ## Example<a name="en-us_topic_0238272901_en-us_topic_0237120431_en-us_topic_0059777827_s25786d32524c458786d43445baa48941"></a>
 
-See  [Examples](examples.md).
-
+See  [Examples](example-odbc.md).

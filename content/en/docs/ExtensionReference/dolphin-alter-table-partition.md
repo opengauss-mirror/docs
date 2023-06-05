@@ -357,4 +357,4 @@ For details, see [Examples](create-table-partition.md#en-us_topic_0283136653_en-
 
 ## Helpful Links<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](create-table-partition.md), [DROP TABLE](drop-table.md)
+[CREATE TABLE PARTITION](../SQLReference/create-table-partition.md), [DROP TABLE](../SQLReference/drop-table.md)
