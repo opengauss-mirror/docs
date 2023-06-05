@@ -39,4 +39,4 @@ See [Examples](dolphin-create-database.md#en-us_topic_0283137050_en-us_topic_023
 
 ## Helpful Links<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_s5f331542a3f84ab58b896c25bfff41db"></a>
 
-[CREATE DATABASE](dolphin-CREATE-DATABASE.md),  [DROP DATABASE](dolphin-DROP-DATABASE.md)
+[CREATE DATABASE](dolphin-CREATE-DATABASE.md),  [DROP DATABASE](dolphin-drop-database.md)

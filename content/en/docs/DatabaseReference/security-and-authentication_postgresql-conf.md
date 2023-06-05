@@ -96,7 +96,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](en-us_topic_0289900924.md).
+**Value range**: a string. Separate multiple encryption algorithms by semicolons \(;\). For details about supported encryption algorithms, see  [Establishing Secure TCP/IP Connections in SSL Mode](../DatabaseAdministrationGuide/establishing-secure-tcp-ip-connections-in-ssl-mode.md).
 
 **Default value**:  **ALL**
 
@@ -165,7 +165,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## krb\_srvname<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s65aefa786b4f481da22dda86c00abb52"></a>
 
-**Parameter description**: Specifies the Kerberos service name. For details, see  [Configuring Client Access Authentication](en-us_topic_0289900238.md).
+**Parameter description**: Specifies the Kerberos service name. For details, see  [Configuring Client Access Authentication](../DatabaseAdministrationGuide/configuring-client-access-authentication.md).
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
