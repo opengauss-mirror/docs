@@ -1287,4 +1287,4 @@ Where create\_option is:
 
 ## Helpful Links<a name="en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s4e5ff679edd643b5a6cd6679fd1055a1"></a>
 
-[ALTER TABLE PARTITION](alter-table-partition.md), [DROP TABLE](drop-table.md)
+[ALTER TABLE PARTITION](../SQLReference/alter-table-partition.md), [DROP TABLE](../SQLReference/drop-table.md)
