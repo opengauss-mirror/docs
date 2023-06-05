@@ -11,7 +11,7 @@ Perform the following operations \(assuming that the license files are saved in 
 1.  Log in as the OS user omm to the primary node of the database.
 2.  Generate and import a certificate.
 
-    Generate an SSL certificate. For details, see  [Generating Certificates](en-us_topic_0000001162897862.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
+    Generate an SSL certificate. For details, see  [Generating Certificates](../DatabaseAdministrationGuide/generating-certificates.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
 
     Run the following command to query the data directory of the database node. The instance column indicates the data directory.
 

@@ -23,5 +23,5 @@ None
 
 ## Examples<a name="section4160944682"></a>
 
-For details, see  [Example: Common Operations](example-common-operations.md).
+For details, see  [Example: Common Operations](example-common-operations-psycopg.md).
 
