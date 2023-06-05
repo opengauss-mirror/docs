@@ -4,7 +4,7 @@
 
 -   **[Selecting a Storage Model](selecting-a-storage-model.md)**  
 
--   **[Using PCKs](using-pcks.md)**  
+-   **[Using PCKs](using-partial-cluster-keys-pcks.md.md)**  
 
 -   **[Using Partitioned Tables](using-partitioned-tables.md)**  
 

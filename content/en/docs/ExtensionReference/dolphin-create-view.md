@@ -97,7 +97,7 @@ If the view is automatically updatable, the system will convert any INSERT, UPDA
 
 If an automatically updatable view contains a WHERE condition, the condition restricts which rows of the underlying relationship can be modified by UPDATE and DELETE statements on the view. However, a row that can be modified by UPDATE may no longer meet the WHERE condition and thus is no longer visible through the view. Similarly, an INSERT command may insert rows that do not meet the WHERE condition, so the rows are not visible through the view. CHECK OPTION can be used to prevent INSERT and UPDATE commands from creating such rows that are not visible through the view.
 
-A more complex view that does not meet the preceding conditions is read-only by default. The system does not allow INSERT, UPDATE, or DELETE statements to be executed on this view. You can get the effect of an updatable view by creating INSTEAD OF triggers on the view, which must convert attempted insert operations on the view into appropriate actions on other tables. For more information, see [CREATE TRIGGER](create-trigger.md). Another way is to create a rule (see [CREATE RULE](create-rule.md)).
+A more complex view that does not meet the preceding conditions is read-only by default. The system does not allow INSERT, UPDATE, or DELETE statements to be executed on this view. You can get the effect of an updatable view by creating INSTEAD OF triggers on the view, which must convert attempted insert operations on the view into appropriate actions on other tables. For more information, see [CREATE TRIGGER](../SQLReference/create-trigger.md). Another way is to create a rule (see [CREATE RULE](../SQLReference/create-rule.md)).
 
 Note that the user who performs insert, update, or delete operations on a view must have the corresponding insert, update, or delete permissions on that view. In addition, the owner of the view must have the corresponding permissions on the underlying relationship, but the user who executes the view does not need any permissions on the underlying relationship.
 
@@ -117,4 +117,4 @@ openGauss=# DROP VIEW myView;
 
 ## Helpful Links<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
 
-[ALTER VIEW](alter-view.md) and [DROP VIEW](drop-view.md)
+[ALTER VIEW](../SQLReference/alter-view.md) and [DROP VIEW](../SQLReference/drop-view.md)

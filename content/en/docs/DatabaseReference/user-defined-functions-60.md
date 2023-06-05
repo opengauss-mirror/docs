@@ -43,7 +43,6 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](en-us_topic_0289901009.md).
+>If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](../SQLReference/pl-pgsql-functions.md).
 
 **Default value:**  empty
-

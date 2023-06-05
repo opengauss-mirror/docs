@@ -39,5 +39,5 @@ Call PQflush after sending any command or data over a non-blocking connection. I
 
 ## Example<a name="en-us_topic_0241735631_section1214255317311"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 

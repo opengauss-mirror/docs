@@ -74,5 +74,5 @@ PGresult contains a result tuple from the current command. This state occurs in 
 
 ## Example<a name="en-us_topic_0241735621_section4472558185413"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 
