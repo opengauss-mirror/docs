@@ -50,12 +50,17 @@ openGauss目前在以下环境中提供对ODBC3.5的支持。
 <td class="cellrowborder" valign="top" width="21.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237120405_p162863113411"><a name="zh-cn_topic_0237120405_p162863113411"></a><a name="zh-cn_topic_0237120405_p162863113411"></a>ARM64位</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237120405_row1728515110349"><td class="cellrowborder" valign="top" width="78.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237120405_p1028612118342"><a name="zh-cn_topic_0237120405_p1028612118342"></a><a name="zh-cn_topic_0237120405_p1028612118342"></a>windows <span>7/</span><span>8/</span><span>10</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="21.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237120405_p162863113411"><a name="zh-cn_topic_0237120405_p162863113411"></a><a name="zh-cn_topic_0237120405_p162863113411"></a>x86_32位</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 UNIX/Linux系统下的驱动程序管理器主要有unixODBC和iODBC，在这选择驱动管理器unixODBC-2.3.0作为连接数据库的组件。
 
-Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项。
+Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项，可以参考[odbc文档](https://gitee.com/opengauss/openGauss-connector-odbc/blob/master/windows/odbc-%E6%B5%8B%E8%AF%95.md)。
 
 >![](public_sys-resources/icon-note.png) **说明：**   
 >当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。  
