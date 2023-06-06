@@ -153,15 +153,10 @@
         let preList = $(".markdown pre");
         for (let i = 0; i < preList.length; i++) {
             let pre = preList[i];
-            let btn = $(`<span class='btn_pre_copy'>{{ i18n "copy_code" }}</span>`);
+            let btn = $(`<span class='btn_pre_copy'></span>`);
             btn.prependTo(pre);
         }
 
-        $('.btn_pre_copy').hover(function () {
-            $(this).css('background-image', 'url(/img/common/copyed.png)');
-        }, function () {
-            $(this).css('background-image', 'url(/img/common/copy.png)');
-        })
 
         $('.btn_pre_copy').click(function() {
             let copyNode = $("<textarea></textarea>");
@@ -173,9 +168,9 @@
             copyNode.select();
             document.execCommand("Copy");
             copyNode.remove();
-            $this.css('background-image', 'url(/img/common/copy-success.png)');
+            $this.addClass('ok');
             setTimeout(function () {
-                $this.css('background-image', 'url(/img/common/copy.png)');
+                $this.removeClass('ok');
             },1500)
         })
         window.lang = $('html').attr('lang');
