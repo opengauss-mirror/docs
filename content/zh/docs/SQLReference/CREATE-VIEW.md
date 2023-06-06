@@ -131,9 +131,11 @@ openGauss=# DELETE FROM ro_view1 WHERE a= 2;
 --创建check option视图
 openGauss=# CREATE VIEW ro_view2 AS SELECT a, b FROM base_tbl WHERE a > 10 WITH CHECK OPTION;
 
+--往基表插入视图不可见的数据
+openGauss=# INSERT INTO base_tbl values (15, 'insertTable');
+
 --插入、更新视图不可见数据失败
 openGauss=# INSERT INTO ro_view2 values (5, 'insertView');
-openGauss=# INSERT INTO base_tbl values (15, 'insertTable');
 openGauss=# UPDATE ro_view2 SET a = 5 WHERE a = 15;
 ```
 
