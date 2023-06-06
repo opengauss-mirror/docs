@@ -20,7 +20,7 @@ When this hint is used, errors are degraded in the following scenarios:
   -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
   
       >![](public_sys-resources/icon-note.gif) **NOTE**
-    >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](miscellaneous-parameters.md).
+    >For details about the GUC parameter **sql_ignore_strategy**, see [sql_ignore_strategy](../DatabaseReference/miscellaneous-parameters.md).
 
 - **The unique constraint is violated.**
 
