@@ -130,6 +130,12 @@
 
 -   **[SHOW-WARNINGS](dolphin-SHOW-WARNINGS.md)**
 
+-   **[SHOW ENGINES](dolphin-SHOW-ENGINES.md)**
+
+-   **[SHOW SLAVE STATUS](dolphin-SHOW-SLAVE-STATUS.md)**
+
+-   **[SHOW OPEN TABLES](dolphin-SHOW-OPEN-TABLES.md)**
+
 -   **[UPDATE](dolphin-UPDATE.md)**
 
 -   **[USE DB_NAME](dolphin-USE-DB_NAME.md)**  
