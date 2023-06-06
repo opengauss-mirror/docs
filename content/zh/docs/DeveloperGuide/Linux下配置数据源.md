@@ -210,7 +210,7 @@
         <td class="cellrowborder" valign="top" width="33.37%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p1626217582555"></a>GUC参数connection_info（参见<a href=连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）中显示驱动部署路径和进程属主用户的开关。</p>
         </td>
         <td class="cellrowborder" valign="top" width="36.059999999999995%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p42621158185515"></a>ConnectionExtraInfo=1</p>
-        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>中查询到。</p>
+        <div class="note" id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_note523613263217"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a><a name="zh-cn_topic_0283136654_zh-cn_topic_0237120407_p17978439306"></a>默认值为0。当设置为1时，ODBC驱动会将当前驱动的部署路径、进程属主用户上报到数据库中，记录在connection_info参数（参见<a href="连接设置.md#zh-cn_topic_0283136886_zh-cn_topic_0237124695_section4834457114318">connection_info</a>）里；同时可以在<a href="../DatabaseReference/PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>中查询到。</p>
         </div></div>
         </td>
         </tr>
@@ -498,7 +498,7 @@
     >-   但是当老版本升级到新版本时，由于哈希的不可逆性，所以数据库无法还原用户口令，进而生成新格式的哈希，所以仍然只保留了SHA256格式的哈希，导致仍然无法使用MD5做口令认证。  
     >-   MD5加密算法安全性低，存在安全风险，建议使用更安全的加密算法。  
 
-    要解决该问题，可以更新用户口令（参见[ALTER USER](../SQLReference/ALTER-USER.md)）；或者新建一个用户（参见[CREATE USER](../SQLReference/CREATE-USER.md)），赋于同等权限，使用新用户连接数据库。
+    要解决该问题，可以更新用户口令（参见[ALTER USER](../SQLReference/ALTER-USER.md)；或者新建一个用户（参见[CREATE USER](../SQLReference/CREATE-USER.md)，赋于同等权限，使用新用户连接数据库。
 
 -   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 

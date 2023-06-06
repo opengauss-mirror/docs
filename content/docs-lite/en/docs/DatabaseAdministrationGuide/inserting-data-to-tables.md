@@ -1,6 +1,6 @@
 # Inserting Data to Tables<a name="EN-US_TOPIC_0289900995"></a>
 
-A new table contains no data. You need to insert data to the table before using it. This section describes how to insert a row or multiple rows of data using the  **[INSERT](../SQLReference/insert.md)**  command and to insert data from a specified table. For details about how to insert a large amount of data to a table in batches, see  [Importing Data](importing-data.md).
+A new table contains no data. You need to insert data to the table before using it. This section describes how to insert a row or multiple rows of data using the  **[INSERT](../SQLReference/insert.md)**  command and to insert data from a specified table. For details about how to insert a large amount of data to a table in batches, see  [Importing Data](../DatabaseOMGuide/importing-data.md).
 
 ## Background<a name="en-us_topic_0283137618_en-us_topic_0237120300_en-us_topic_0059779039_s0ba8d61b4741479585fa6c86df04bad1"></a>
 

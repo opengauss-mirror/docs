@@ -7,7 +7,7 @@
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->**[wal\_level](en-us_topic_0289900114.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **archive**,  **hot\_standby**, or  **logical**  to allow the connection from standby servers.
+>**[wal\_level](settings-60.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **archive**,  **hot\_standby**, or  **logical**  to allow the connection from standby servers.
 
 **Value range:**  an integer ranging from 0 to 1024. The recommended value range is 8 to 100.
 
