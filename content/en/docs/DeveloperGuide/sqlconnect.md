@@ -79,5 +79,5 @@ If SQLConnect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 
 ## Example<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s941ebfb1b130484d9e8e7225aa91a590"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

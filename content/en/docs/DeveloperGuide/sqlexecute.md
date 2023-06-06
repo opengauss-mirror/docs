@@ -45,5 +45,5 @@ If SQLExecute returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 
 ## Example<a name="en-us_topic_0238272892_en-us_topic_0237120422_en-us_topic_0059778182_s224798c3974741f3976659ed7d6de926"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

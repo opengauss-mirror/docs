@@ -57,9 +57,9 @@ openGauss is running properly.
    openGauss=# GRANT ALL PRIVILEGES TO joe;
    ```
 
-   Use GRANT command to set related permissions. For specific operations, please refer to [GRANT](GRANT.md).
+   Use GRANT command to set related permissions. For specific operations, please refer to [GRANT](../SQLReference/grant.md).
 
-   **Note**: For details about how to create users, see  [Managing Users and Their Permissions](managing-users-and-their-permissions.md).
+   **Note**: For details about how to create users, see  [Managing Users and Their Permissions](../DatabaseAdministrationGuide/managing-users-and-their-permissions.md).
 
 4.  Create a database.
 
@@ -106,7 +106,7 @@ openGauss is running properly.
     CREATE DATABASE
     ```
 
-    _hr\_local_  indicates the tablespace name. For details about how to create a tablespace, see  [Creating and Managing Tablespaces](creating-and-managing-tablespaces.md).
+    _hr\_local_  indicates the tablespace name. For details about how to create a tablespace, see  [Creating and Managing Tablespaces](../DatabaseAdministrationGuide/creating-and-managing-tablespaces.md).
 
 5.  Create a table.
 
@@ -144,11 +144,11 @@ openGauss is running properly.
 
     **Note:**
 
-    -   By default, new database objects, such as the  **mytable**  table, are created in the  _$user_  schema. For more details about schemas, see  [Creating and Managing Schemas](creating-and-managing-schemas.md).
-    -   For more details about how to create a table, see  [Creating and Managing Tables](creating-and-managing-tables.md).
-    -   In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs. For details, see  [Querying System Catalogs](querying-system-catalogs.md).
+    -   By default, new database objects, such as the  **mytable**  table, are created in the  _$user_  schema. For more details about schemas, see  [Creating and Managing Schemas](../DatabaseAdministrationGuide/creating-and-managing-schemas.md).
+    -   For more details about how to create a table, see  [Creating and Managing Tables](../DatabaseAdministrationGuide/creating-and-managing-tables.md).
+    -   In addition to the created tables, a database contains many system catalogs. These system catalogs contain openGauss installation information and information about various queries and processes in openGauss. You can collect information about the database by querying system catalogs. For details, see  [Querying System Catalogs](../DatabaseReference/querying-a-system-catalog.md).
 
-        openGauss supports row and column storage, providing high query performance for interaction analysis in complex scenarios. For details about how to select a storage model, see  [Planning a Storage Model](planning-a-storage-model.md).
+        openGauss supports row and column storage, providing high query performance for interaction analysis in complex scenarios. For details about how to select a storage model, see  [Planning a Storage Model](../DeveloperGuide/planning-a-storage-model.md).
 
 
 

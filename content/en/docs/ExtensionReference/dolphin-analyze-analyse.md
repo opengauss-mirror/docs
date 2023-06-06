@@ -11,7 +11,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
 ## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**
-For details about the precautions, see [ANALYZE](analyze-analyse.md).
+For details about the precautions, see [ANALYZE](../SQLReference/analyze-analyse.md).
 
 ## Syntax<a name="en-us_topic_0283136969_en-us_topic_0237122086_en-us_topic_0059779340_sd95698dc205444ad9f4bbe049cc5d488"></a>
 
@@ -28,7 +28,7 @@ For details about the precautions, see [ANALYZE](analyze-analyse.md).
     It is used only for syntax and has no actual purpose.
 
 ![](public_sys-resources/icon-note.gif) **NOTE:**
-For details about the involved parameters, see [ANALYZE](analyze-analyse.md).
+For details about the involved parameters, see [ANALYZE](../SQLReference/analyze-analyse.md).
 
 ## Examples<a name="en-us_topic_0283136969_en-us_topic_0237122086_en-us_topic_0059779340_s70741e0e8d4843c29a3d2916af35ad25"></a>
 
@@ -85,4 +85,4 @@ openGauss=# DROP TABLE customer_par;
 
 ## Helpful Links<a name="section156744489391"></a>
 
-[ANALYZE](ANALYZE-ANALYSE.md)
+[ANALYZE](../SQLReference/analyze-analyse.md)

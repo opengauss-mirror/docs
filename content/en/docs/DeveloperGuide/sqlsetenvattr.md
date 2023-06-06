@@ -61,5 +61,5 @@ If SQLSetEnvAttr returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 
 ## Example<a name="en-us_topic_0238272902_en-us_topic_0237120432_en-us_topic_0059778852_s54d045c03fcc414bab03c37ea6e4da08"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 
