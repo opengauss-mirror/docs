@@ -3,7 +3,9 @@
 ## 单中心
 
 **图 1**  单中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a> 
+
 ![](figures/Single-center-deployment.png)
+
 组网特点：
 单AZ部署，可以配置一个同步备一个异步备
 
@@ -22,6 +24,7 @@
 **图 2**  同城双中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
 
 ![](figures/Deployment-diagram-of-Two-Centers-in-the-Same-City.png)
+
 组网特点：
 同城两个AZ，相比单AZ可靠性更强，主中心和同城中心可以分别配置一个同步备
 
@@ -40,7 +43,7 @@
 
 **图 3**  两地三中心部署图<a name="zh-cn_topic_0283139012_zh-cn_topic_0243295242_zh-cn_topic_0243253013_fig1843505845112"></a>  
 
-    
+
 ![](figures/Deployment-diagram-of-Two-Places-and-Three-Centers.png)
 
 组网特点：
