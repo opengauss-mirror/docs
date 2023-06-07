@@ -1,6 +1,6 @@
 # PG\_TOTAL\_USER\_RESOURCE\_INFO<a name="EN-US_TOPIC_0289900504"></a>
 
-**PG\_TOTAL\_USER\_RESOURCE\_INFO**  displays resource usage of all users. Only administrators can query this view. This view is valid only when  [use\_workload\_manager](en-us_topic_0289900033.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s9608d330c6a14d2cbd6ae75493437820)  is set to  **on**. I/O monitoring items are valid only when  **enable\_logical\_io\_statistics**  is set to  **on**.
+**PG\_TOTAL\_USER\_RESOURCE\_INFO**  displays resource usage of all users. Only administrators can query this view. This view is valid only when  [use\_workload\_manager](workload-management.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s9608d330c6a14d2cbd6ae75493437820)  is set to  **on**. I/O monitoring items are valid only when  **enable\_logical\_io\_statistics**  is set to  **on**.
 
 **Table  1**  PG\_TOTAL\_USER\_RESOURCE\_INFO columns
 
