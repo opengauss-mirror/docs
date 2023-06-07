@@ -16,6 +16,9 @@
 
 -   **[DCF](dcf.md)**  
 
--   **[SMP](smp.md)**  
+-   **[SMP](smp.md)** 
+
+-   **[Primary/Standby Shared Storage](primary-standby-shared-storage.md)** 
+
 
 
