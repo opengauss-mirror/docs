@@ -53,9 +53,9 @@ Windows has a native ODBC Driver Manager. You can locate  **Data Sources \(ODBC\
 
 -   **[Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md)**  
 
--   **[Development Process](development-process-1.md)**  
+-   **[Development Process](development-process-jdbc.md)**  
 
--   **[Example](example.md)**  
+-   **[Example](example-odbc.md)**  
 
 -   **[ODBC Interface Reference](odbc-interface-reference.md)**  
 

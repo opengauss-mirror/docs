@@ -1,16 +1,16 @@
 # Separation of Duties<a name="EN-US_TOPIC_0289900233"></a>
 
-Descriptions in  [Default Permission Mechanism](en-us_topic_0289899957.md)  and  [Administrator](administrator.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.
+Descriptions in  [Default Permission Mechanism](edefault-permission-mechanism.md)  and  [Administrator](administrators.md)  are about the initial situation after the database system is created. By default, a system administrator with the  **SYSADMIN**  attribute has the highest-level permissions.
 
 In actual service management, you can set separation of duties to prevent system administrators from having excessive centralized permissions, which may cause high risks. Some permissions of the system administrator are transferred to the security administrator and audit administrator, implementing separation of duties among the system administrator, security administrator, and audit administrator.
 
-After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](en-us_topic_0283136858.md).
+After separation of duties is enabled, a system administrator does not have the  **CREATEROLE**  attribute \(security administrator\) and  **AUDITADMIN**  attribute \(audit administrator\). That is, the system administrator does not have the permissions to create roles and users and the permissions to view and maintain database audit logs. For details about the  **CREATEROLE**  and  **AUDITADMIN**  attributes, see  [CREATE ROLE](../SQLReference/create-role.md).
 
 After separation of duties is enabled, system administrators have the permissions only for the objects owned by them.
 
 Separation of duties does not take effect for an initial user. Therefore, you are advised to use an initial user as a database administrator only for database management other than service running.
 
-To enable separation of duties, set  **[enableSeparationOfDuty](en-us_topic_0283136929.md#en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
+To enable separation of duties, set  **[enableSeparationOfDuty](../DatabaseReference/operation-auditing.md#en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6)**  to  **on**.
 
 For details about permission changes before and after enabling separation of duties, see  [Table 1](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t58384b51e1fd4e67ab393f4bb6103a16)  and  [Table 2](#en-us_topic_0283137357_en-us_topic_0237121101_en-us_topic_0155089861_t12fe700a5db44d748cb0dc123012289b).
 

@@ -2,7 +2,7 @@
 
 ## Connecting to an Encrypted Database<a name="section6796167162618"></a>
 
-For details about the JDBC connection parameters, see  [Development Based on JDBC](development-based-on-jdbc.md). To support JDBC operations on an encrypted database, set  **enable\_ce**  to  **1**. The following is an example:
+For details about the JDBC connection parameters, see  [Development Based on JDBC](../DeveloperGuide/development-based-on-jdbc.md). To support JDBC operations on an encrypted database, set  **enable\_ce**  to  **1**. The following is an example:
 
 ```
 public static Connection getConnect(String username, String passwd)

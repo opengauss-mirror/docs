@@ -6,9 +6,9 @@ Psycopg APIs are a set of methods provided for users. This section describes som
 
 -   **[connection.cursor\(\)](connection-cursor.md)**  
 
--   **[cursor.execute\(query,vars\_list\)](cursor-execute-query-vars_list.md)**  
+-   **[cursor.execute\(query,vars\_list\)](cursor-execute_query-vars_list.md )**  
 
--   **[curosr.executemany\(query,vars\_list\)](curosr-executemany-query-vars_list.md)**  
+-   **[curosr.executemany\(query,vars\_list\)](curosr-executemany_query-vars_list.md)**  
 
 -   **[connection.commit\(\)](connection-commit.md)**  
 
