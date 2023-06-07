@@ -1,6 +1,6 @@
 # GS\_WLM\_EC\_OPERATOR\_INFO<a name="EN-US_TOPIC_0289900046"></a>
 
-**GS\_WLM\_EC\_OPERATOR\_INFO**  records operator information after an Extension Connector job ends. If  **[enable\_resource\_record](en-us_topic_0289900033.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)**  is set to  **on**, the system imports records from  **GS\_WLM\_EC\_OPERATOR\_HISTORY**  to this system catalog every 3 minutes. This operation occupies storage space and affects performance. Only users with the  **sysadmin**  permission can query this system catalog.
+**GS\_WLM\_EC\_OPERATOR\_INFO**  records operator information after an Extension Connector job ends. If  **[enable\_resource\_record](workload-management.md#en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s77bd1023b63c4cd489760aa33f08d1ea)**  is set to  **on**, the system imports records from  **GS\_WLM\_EC\_OPERATOR\_HISTORY**  to this system catalog every 3 minutes. This operation occupies storage space and affects performance. Only users with the  **sysadmin**  permission can query this system catalog.
 
 **Table  1**  GS\_WLM\_EC\_OPERATOR\_INFO columns
 
