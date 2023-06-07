@@ -42,7 +42,7 @@ GaussDB Kernel supports the psycopg2 feature and allows psycopg2 to be connected
 
 -   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-(using-ssl).md)**  
 
--   **[Example: Common Operations](example-common-operations.md)**  
+-   **[Example: Common Operations](example-common-operations-psycopg)**  
 
 -   **[Psycopg API Reference](psycopg-api-reference.md)**  
 
