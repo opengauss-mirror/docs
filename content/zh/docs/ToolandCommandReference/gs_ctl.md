@@ -25,6 +25,7 @@ gs\_ctl参数可分为如下几类：
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
 -   copy参数，详细参见[表12](#table1451519418811)。
+-   资源池化build参数，详细请参见[表13](#table1451519418812)。
 
 **表 1**  option参数
 
@@ -352,6 +353,7 @@ gs\_ctl参数可分为如下几类：
 <p><li>  copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</p>
 <p> 默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
+ <p><li>  copy_cluster_full：在dorado容灾场景下，通过全量镜像的方式重新同步主机的数据目录。 </p>
 </div></div>
 </td>
 </tr>
@@ -559,6 +561,68 @@ gs\_ctl参数可分为如下几类：
 <ul><li>  copy_from_local：从本地往共享存储上拷贝。</li>
 <li> copy_from_share：从共享存储往本地存储上拷贝。</li>
 <li>force_copy_from_local：强制从本地往共享存储上拷贝。</li></ul></p>
+</td>
+</tr>
+</tbody>
+</table>
+**表 13**   资源池化build参数
+
+<a name="table1451519418812"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="31.45%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a3e6730e8b8ce49a5aa198182a721ccc5"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="47.43%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1e922689402e46a88e12d16055e73cfe"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1e922689402e46a88e12d16055e73cfe"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a1e922689402e46a88e12d16055e73cfe"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0287275989_row1566219017310"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p126622017319"><a name="zh-cn_topic_0287275989_p126622017319"></a><a name="zh-cn_topic_0287275989_p126622017319"></a>-b MODE</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1966215010318"><a name="zh-cn_topic_0287275989_p1966215010318"></a><a name="zh-cn_topic_0287275989_p1966215010318"></a>指定重建备机的模式。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p887411245513"><a name="zh-cn_topic_0287275989_p887411245513"></a><a name="zh-cn_topic_0287275989_p887411245513"></a>mode的取值：</p>
+ <p><li>  copy_cluster_full：资源池化执行build，必须结合dorado容灾场景，该参数表示在dorado容灾场景下通过全量镜像的方式重新同步主机的数据目录。 </p>
+ <p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：资源池化build只适用于主备集群间的跨集群build，不能用于资源池化单集群内的主备实例build</p>
+</div></div>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>-q</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>重建结束后，是否自动重启。</p>
+<p id="zh-cn_topic_0287275989_p858016150165"><a name="zh-cn_topic_0287275989_p858016150165"></a><a name="zh-cn_topic_0287275989_p858016150165"></a>指定参数场合，不自动重启。</p>
+<p id="zh-cn_topic_0287275989_p1232613751612"><a name="zh-cn_topic_0287275989_p1232613751612"></a><a name="zh-cn_topic_0287275989_p1232613751612"></a>未指定场合，自动重启，重启默认最大等待时间是60秒。如果在此时间内数据库未能启动成功，就会报不再等待，命令退出。此后可以通过gs_om -t status --detail或其他查看数据库状态的命令，来确认数据库是否启动成功。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p729832991415"><a name="zh-cn_topic_0287275989_p729832991415"></a><a name="zh-cn_topic_0287275989_p729832991415"></a>无参数</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--enable-dss</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>开启资源池化开关</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p729832991415"><a name="zh-cn_topic_0287275989_p729832991415"></a><a name="zh-cn_topic_0287275989_p729832991415"></a>无参数</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>-g</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>开启资源池化，指定节点做build。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a922e766e1f6e46629141bfed8e92b5f9"></a>取值范围：整型，[0-63]，需要从0开始</p>
+<p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a>默认值：0</p>
+<p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：-g入参参数是指资源池化节点id参数ss_instance_id</p>
+</td>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--vgname</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>卷组名</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5621183815134"><a name="p5621183815134"></a><a name="p5621183815134"></a>数据类型：字符串 。</p>
+<p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>例如：一个卷组“+data”或者两个卷组中间用“，”连接“<span>+data,+log</span>”。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--socketpath</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>dss实例进程使用的socket文件路径。</p>
+</td>
+<td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p17653151133119"><a name="p17653151133119"></a><a name="p17653151133119"></a>dss实例进程使用的socket文件路径。</p>
 </td>
 </tr>
 </tbody>
