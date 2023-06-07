@@ -476,17 +476,17 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </thead>
 <tbody><tr id="row1179553872111"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2795143815211"><a name="p2795143815211"></a><a name="p2795143815211"></a>创建一个新的插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p979553862118"><a name="p979553862118"></a><a name="p979553862118"></a><a href="CREATE-Extension.md">CREATE Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p979553862118"><a name="p979553862118"></a><a name="p979553862118"></a><a href="CREATE-EXTENSION.md">CREATE Extension</a></p>
 </td>
 </tr>
 <tr id="row147951638182114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p107951338122110"><a name="p107951338122110"></a><a name="p107951338122110"></a>修改插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4795163811210"><a name="p4795163811210"></a><a name="p4795163811210"></a><a href="ALTER-Extension.md">ALTER Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4795163811210"><a name="p4795163811210"></a><a name="p4795163811210"></a><a href="ALTER-EXTENSION.md">ALTER Extension</a></p>
 </td>
 </tr>
 <tr id="row2079513802114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p27951384218"><a name="p27951384218"></a><a name="p27951384218"></a>删除插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137959389213"><a name="p137959389213"></a><a name="p137959389213"></a><a href="DROP-Extension.md">DROP Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137959389213"><a name="p137959389213"></a><a name="p137959389213"></a><a href="DROP-EXTENSION.md">DROP Extension</a></p>
 </td>
 </tr>
 </tbody>

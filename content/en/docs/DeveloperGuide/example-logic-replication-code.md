@@ -2,7 +2,7 @@
 
 The following example demonstrates how to use the logical replication function through the JDBC API.
 
-For logical replication, in addition to the configuration items described in section [Logical Decoding](en-us_topic_0289900774.md), the following configuration items are added for streaming decoders such as JDBC:
+For logical replication, in addition to the configuration items described in section [Logical Decoding](../DatabaseOMGuide/logical-decoding.md), the following configuration items are added for streaming decoders such as JDBC:
 
 1.  Decoding thread concurrency
 
