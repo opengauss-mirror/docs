@@ -170,7 +170,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="18.22%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1412065518316"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a>A string in JSON format recording the driver type, driver version, driver deployment path, and process owner of the connected database. For details, see <a href="en-us_topic_0289900801.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
+<td class="cellrowborder" valign="top" width="48.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a><a name="en-us_topic_0283136816_en-us_topic_0237122439_p1612017551314"></a>A string in JSON format recording the driver type, driver version, driver deployment path, and process owner of the connected database. For details, see <a href="connection-settings.md#en-us_topic_0283136886_en-us_topic_0237124695_section4834457114318">connection_info</a>.</p>
 </td>
 </tr>
 <tr id="row1275719812594"><td class="cellrowborder" valign="top" width="33.33%" headers="mcps1.2.4.1.1 "><p id="p16757128145914"><a name="p16757128145914"></a><a name="p16757128145914"></a>unique_sql_id</p>
