@@ -837,6 +837,7 @@ headless: true
 					-	[枚举类型]({{< relref "./docs/ExtensionReference/dolphin-枚举类型.md" >}})
 					-	[布尔类型]({{< relref "./docs/ExtensionReference/dolphin-布尔类型.md" >}})
 					-	[二进制类型]({{< relref "./docs/ExtensionReference/dolphin-二进制类型.md" >}})
+					-	[类型转换]({{< relref "./docs/ExtensionReference/dolphin-类型转换.md" >}})
 				-	[函数和操作符]({{< relref "./docs/ExtensionReference/dolphin-函数和操作符.md" >}})
 					-	[赋值操作符]({{< relref "./docs/ExtensionReference/dolphin-赋值操作符.md" >}}) 
 					-	[字符处理函数和操作符]({{< relref "./docs/ExtensionReference/dolphin-字符处理函数和操作符.md" >}}) 
