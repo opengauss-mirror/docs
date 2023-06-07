@@ -19,35 +19,35 @@ You have the audit permission.
     </th>
     </tr>
     </thead>
-    <tbody><tr id="en-us_topic_0237121114_en-us_topic_0059778793_r2604828d09ad4f47ab4f2c1801948ebd"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p1759155401418"><a name="en-us_topic_0237121114_p1759155401418"></a><a name="en-us_topic_0237121114_p1759155401418"></a><a href="audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_sd283781eb52b490db30d6a5549f7db3e">audit_directory</a></p>
+    <tbody><tr id="en-us_topic_0237121114_en-us_topic_0059778793_r2604828d09ad4f47ab4f2c1801948ebd"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p1759155401418"><a name="en-us_topic_0237121114_p1759155401418"></a><a name="en-us_topic_0237121114_p1759155401418"></a><a href="../DatabaseReference/audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_sd283781eb52b490db30d6a5549f7db3e">audit_directory</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121114_en-us_topic_0059778793_acf56af2e70564f0aad2b714c6ab657f4"><a name="en-us_topic_0237121114_en-us_topic_0059778793_acf56af2e70564f0aad2b714c6ab657f4"></a><a name="en-us_topic_0237121114_en-us_topic_0059778793_acf56af2e70564f0aad2b714c6ab657f4"></a>Audit file storage directory</p>
     </td>
     <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121114_en-us_topic_0059778793_adaa9609514694908b74629047cbb90be"><a name="en-us_topic_0237121114_en-us_topic_0059778793_adaa9609514694908b74629047cbb90be"></a><a name="en-us_topic_0237121114_en-us_topic_0059778793_adaa9609514694908b74629047cbb90be"></a><span id="text78748185547"><a name="text78748185547"></a><a name="text78748185547"></a>/var/log/gaussdb</span>/<em id="i842352697172220"><a name="i842352697172220"></a><a name="i842352697172220"></a>User name</em>/pg_audit</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237121114_row3691171915118"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p125775410146"><a name="en-us_topic_0237121114_p125775410146"></a><a name="en-us_topic_0237121114_p125775410146"></a><a href="audit-switch.md#en-us_topic_0237124745_section939915522551">audit_resource_policy</a></p>
+    <tr id="en-us_topic_0237121114_row3691171915118"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p125775410146"><a name="en-us_topic_0237121114_p125775410146"></a><a name="en-us_topic_0237121114_p125775410146"></a><a href="../DatabaseReference/audit-switch.md#en-us_topic_0237124745_section939915522551">audit_resource_policy</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121114_p269312191114"><a name="en-us_topic_0237121114_p269312191114"></a><a name="en-us_topic_0237121114_p269312191114"></a>Policy for saving audit logs</p>
     </td>
     <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121114_p2693119412"><a name="en-us_topic_0237121114_p2693119412"></a><a name="en-us_topic_0237121114_p2693119412"></a><strong id="en-us_topic_0237121114_b16570143511185"><a name="en-us_topic_0237121114_b16570143511185"></a><a name="en-us_topic_0237121114_b16570143511185"></a>on</strong> (indicating that the space configuration policy is used)</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237121114_en-us_topic_0059778793_r4addc114b7bc4cb28f59858d1a31e01c"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p1154754131410"><a name="en-us_topic_0237121114_p1154754131410"></a><a name="en-us_topic_0237121114_p1154754131410"></a><a href="audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714">audit_space_limit</a></p>
+    <tr id="en-us_topic_0237121114_en-us_topic_0059778793_r4addc114b7bc4cb28f59858d1a31e01c"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p1154754131410"><a name="en-us_topic_0237121114_p1154754131410"></a><a name="en-us_topic_0237121114_p1154754131410"></a><a href="../DatabaseReference/audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714">audit_space_limit</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121114_en-us_topic_0059778793_ae74583aff2ed4414bf4d178de6d1965f"><a name="en-us_topic_0237121114_en-us_topic_0059778793_ae74583aff2ed4414bf4d178de6d1965f"></a><a name="en-us_topic_0237121114_en-us_topic_0059778793_ae74583aff2ed4414bf4d178de6d1965f"></a>Maximum storage space occupied by audit files</p>
     </td>
     <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121114_en-us_topic_0059778793_af2b1d30a53184505947fb653e984e6e6"><a name="en-us_topic_0237121114_en-us_topic_0059778793_af2b1d30a53184505947fb653e984e6e6"></a><a name="en-us_topic_0237121114_en-us_topic_0059778793_af2b1d30a53184505947fb653e984e6e6"></a>1GB</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237121114_row108931544517"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p35275441413"><a name="en-us_topic_0237121114_p35275441413"></a><a name="en-us_topic_0237121114_p35275441413"></a><a href="audit-switch.md#en-us_topic_0237124745_section149961828185211">audit_file_remain_time</a></p>
+    <tr id="en-us_topic_0237121114_row108931544517"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p35275441413"><a name="en-us_topic_0237121114_p35275441413"></a><a name="en-us_topic_0237121114_p35275441413"></a><a href="../DatabaseReference/audit-switch.md#en-us_topic_0237124745_section149961828185211">audit_file_remain_time</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121114_p13893114414110"><a name="en-us_topic_0237121114_p13893114414110"></a><a name="en-us_topic_0237121114_p13893114414110"></a>Minimum period for storing audit log files</p>
     </td>
     <td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237121114_p10893844513"><a name="en-us_topic_0237121114_p10893844513"></a><a name="en-us_topic_0237121114_p10893844513"></a>90</p>
     </td>
     </tr>
-    <tr id="en-us_topic_0237121114_en-us_topic_0059778793_rdc829df6e13b480a9a813d6d85854515"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p143544143"><a name="en-us_topic_0237121114_p143544143"></a><a name="en-us_topic_0237121114_p143544143"></a><a href="audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_s7fbbb3e514454b11aa33310454965b66">audit_file_remain_threshold</a></p>
+    <tr id="en-us_topic_0237121114_en-us_topic_0059778793_rdc829df6e13b480a9a813d6d85854515"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237121114_p143544143"><a name="en-us_topic_0237121114_p143544143"></a><a name="en-us_topic_0237121114_p143544143"></a><a href="../DatabaseReference/audit-switch.md#en-us_topic_0237124745_en-us_topic_0059777744_s7fbbb3e514454b11aa33310454965b66">audit_file_remain_threshold</a></p>
     </td>
     <td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237121114_en-us_topic_0059778793_a69fbe4f040e448379bd38496b8fa50fa"><a name="en-us_topic_0237121114_en-us_topic_0059778793_a69fbe4f040e448379bd38496b8fa50fa"></a><a name="en-us_topic_0237121114_en-us_topic_0059778793_a69fbe4f040e448379bd38496b8fa50fa"></a>Maximum number of audit files in the audit directory</p>
     </td>

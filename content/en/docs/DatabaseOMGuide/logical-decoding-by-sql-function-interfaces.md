@@ -4,14 +4,14 @@ In openGauss, you can call SQL functions to create, delete, and push logical rep
 
 ## Prerequisites<a name="en-us_topic_0283137322_en-us_topic_0237121453_section1288315272236"></a>
 
--   Currently, logical logs are extracted from host nodes. To perform logical replication, the GUC parameter  **[ssl](security-and-authentication-(postgresql-conf).md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  must be set to  **on**  on host nodes.
+-   Currently, logical logs are extracted from host nodes. To perform logical replication, the GUC parameter  **[ssl](../DatabaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)**  must be set to  **on**  on host nodes.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >For security purposes, ensure that SSL connections are enabled.
 
 
--   The GUC parameter  **[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **logical**.
--   The GUC parameter  **[max\_replication\_slots](sending-server.md#en-us_topic_0283137693_section7322161612568)**  is set to a value greater than or equal to the number of physical streaming replication slots and logical replication slots required by each node.
+-   The GUC parameter  **[wal\_level](../DatabaseReference/settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **logical**.
+-   The GUC parameter  **[max\_replication\_slots](../DatabaseReference/sending-server.md#en-us_topic_0283137693_section7322161612568)**  is set to a value greater than or equal to the number of physical streaming replication slots and logical replication slots required by each node.
 
     Physical streaming replication slots provide an automatic method to ensure that Xlogs are not removed from a primary node before they are received by all the standby nodes and secondary nodes. That is, physical replication slots are used to support primary/standby HA. The number of physical replication slots required by a database is equal to the ratio of standby and secondary nodes to the primary node. If an HA cluster has one primary node and three standby nodes, the number of required physical replication slots will be 3.
 

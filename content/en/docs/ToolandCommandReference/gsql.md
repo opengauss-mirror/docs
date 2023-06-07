@@ -2200,7 +2200,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     Connect to the database, and run  **show log\_hostname**  to check whether  **log\_hostname**  is enabled in the database.
 
-    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the primary database node is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of log\_hostname in section [Log Content](../DataBaseReference//logging-content.md). 
+    If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the primary database node is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of log\_hostname in section [Log Content](../DataBaseReference/logging-content.md). 
 
 -   The database kernel slowly runs the initialization statement.
 
@@ -2263,7 +2263,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     If they are different, set  **$PGHOST**  to the directory specified by  **unix\_socket\_directory**.
 
-    For more information about  **unix\_socket\_directory**, see [Connection Settings](../DataBaseReference/connection-settings.md). 
+    For more information about  **unix\_socket\_directory**, see [Connection Settings](../DatabbaseReference/connection-settings.md). 
 -   The "libpq.so" loaded mismatch the version of gsql, please check it.
 
     This problem occurs because the version of  **libpq.so**  used in the environment does not match that of  **gsql**. Run the  **ldd gsql**  command to check the version of the loaded  **libpq.so**, and then load correct  **libpq.so**  by modifying the environment variable  **LD\_LIBRARY\_PATH**.

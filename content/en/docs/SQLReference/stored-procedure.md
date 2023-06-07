@@ -1,12 +1,12 @@
 # Stored Procedure<a name="EN-US_TOPIC_0245374599"></a>
 
--   **[Stored Procedure](stored-procedure-21.md)**  
+-   **[Stored Procedure](stored-procedures.md)**  
 
 -   **[Data Types](data-types-22.md)**  
 
 -   **[Data Type Conversion](data-type-conversion.md)**  
 
--   **[Arrays and Records](arrays-and-records.md)**  
+-   **[Arrays and Records](arrays-sets-and-record.md)**  
 
 -   **[DECLARE Syntax](declare-syntax.md)**  
 

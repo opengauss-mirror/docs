@@ -71,7 +71,7 @@ Logical replication slot behavior parameters are mandatory and must be specified
 
     The value can be  **include-xids**,  **skip-empty-xacts**,  **include-timestamp**,  **only-local**,  **force-binary**,  **white-table-list**,  **standby-connection**,  **parallel-decode-num**,  **decode-style**, or  **sending-batch**.
 
-    For details, see [pg\_logical\_slot\_peek\_changes](../SQLReference/logical-replication-functions.md) and [Example: Logic Replication Code](../Developerguide/example-logic-replication-code.md).
+    For details, see [pg\_logical\_slot\_peek\_changes](../SQLReference/logical-replication-functions.md) and [Example: Logic Replication Code](../DeveloperGuide/example-logic-replication-code.md).
 
 -   -P, --plugin=PLUGIN
 
