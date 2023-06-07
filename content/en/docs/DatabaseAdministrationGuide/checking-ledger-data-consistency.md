@@ -6,7 +6,7 @@ The database is running properly, and a series of addition, deletion, and modifi
 
 ## Background<a name="en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   Currently, the ledger database provides two verification interfaces:  [ledger\_hist\_check\(text,...](en-us_topic_0000001147093197.md#li48809468134)  and  [ledger\_gchain\_check\(text...](en-us_topic_0000001147093197.md#li6880446141312). When a common user invokes a verification interface, only the tables that the user has the permission to access can be verified.
+-   Currently, the ledger database provides two verification interfaces:  [ledger\_hist\_check\(text,...](../SQLReference/ledger-database-functions.md#li48809468134)  and  [ledger\_gchain\_check\(text...](../SQLReference/ledger-database-functions.md#li6880446141312). When a common user invokes a verification interface, only the tables that the user has the permission to access can be verified.
 -   The interface for verifying the tamper-proof user table and user history table is  **pg\_catalog.ledger\_hist\_check**. To verify a table, run the following command:
 
     ```

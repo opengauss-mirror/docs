@@ -50,7 +50,7 @@ CREATE SERVER server_name
 
         -   **database** \(default value: empty\)
 
-            This option has no actual meaning and is used only for syntax compatibility. You can specify the database to be connected to MySQL Server or MariaDB by referring to [CREATE FOREIGN TABLE](create-foreign-table.md) and [ALTER FOREIGN TABLE](alter-foreign-table.md).
+            This option has no actual meaning and is used only for syntax compatibility. You can specify the database to be connected to MySQL Server or MariaDB by referring to [CREATE FOREIGN TABLE](../SQLReference/create-foreign-table.md) and [ALTER FOREIGN TABLE](../SQLReference/alter-foreign-table.md).
 
         -   **owner** \(default value: empty\)
 
@@ -75,4 +75,4 @@ CREATE SERVER
 
 ## Helpful Links<a name="en-us_topic_0283137586_section3901738174011"></a>
 
-[ALTER SERVER](dolphin-alter-server.md), [DROP SERVER](drop-server.md)
+[ALTER SERVER](dolphin-alter-server.md), [DROP SERVER](../SQLReference/drop-server.md)

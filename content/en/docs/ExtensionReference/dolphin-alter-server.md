@@ -53,7 +53,7 @@ Adds, modifies, or deletes parameters of an existing server. You can query exist
 
         -   **database** \(default value: empty\)
 
-            This option has no actual meaning and is used only for syntax compatibility. You can specify the database to be connected to MySQL Server or MariaDB by referring to [CREATE FOREIGN TABLE](create-foreign-table.md) and [ALTER FOREIGN TABLE](alter-foreign-table.md).
+            This option has no actual meaning and is used only for syntax compatibility. You can specify the database to be connected to MySQL Server or MariaDB by referring to [CREATE FOREIGN TABLE](../SQLReference/create-foreign-table.md) and [ALTER FOREIGN TABLE](../SQLReference/alter-foreign-table.md).
 
         -   **owner** \(default value: empty\)
 
@@ -82,4 +82,4 @@ ALTER SERVER
 
 ## Helpful Links<a name="en-us_topic_0283136932_section13898752175613"></a>
 
-[CREATE SERVER](dolphin-create-server.md) and [DROP SERVER](drop-server.md)
+[CREATE SERVER](dolphin-create-server.md) and [DROP SERVER](../SQLReference/drop-server.md)
