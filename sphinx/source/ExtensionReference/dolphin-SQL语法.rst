@@ -72,6 +72,9 @@ SQL语法
     ../content/zh/docs/ExtensionReference/dolphin-SHOW-TRIGGERS
     ../content/zh/docs/ExtensionReference/dolphin-SHOW-VARIABLES 
     ../content/zh/docs/ExtensionReference/dolphin-SHOW-WARNINGS
+    ../content/zh/docs/ExtensionReference/dolphin-SHOW-ENGINES
+    ../content/zh/docs/ExtensionReference/dolphin-SHOW-SLAVE-STATUS
+    ../content/zh/docs/ExtensionReference/dolphin-SHOW-OPEN-TABLES
     ../content/zh/docs/ExtensionReference/dolphin-UPDATE
     ../content/zh/docs/ExtensionReference/dolphin-USE-DB_NAME
     ../content/zh/docs/ExtensionReference/dolphin-SELECT-HINT

@@ -66,15 +66,15 @@ SHOW SLAVE HOSTS
 
 - **receiver_replay_location**
 
-      接收端replay日志位置。
+       接收端replay日志位置。
 
 - **sync_priority**
 
-      同步复制的优先级（0表示异步）。
+       同步复制的优先级（0表示异步）。
 
-- **sync_priority**
+- **sync_state**
             
-      同步状态：
+       同步状态：
             异步复制、
             同步复制、
             潜在同步者。
