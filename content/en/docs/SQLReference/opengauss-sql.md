@@ -1,4 +1,4 @@
-# openGauss SQL<a name="EN-US_TOPIC_0289900158"></a>
+sql-reference.md# openGauss SQL<a name="EN-US_TOPIC_0289900158"></a>
 
 ## What Is SQL?<a name="en-us_topic_0283136913_en-us_topic_0237121924_section07961139165815"></a>
 
@@ -12,7 +12,7 @@ SQL provides different statements to enable you to:
 -   Control the access to a database and its objects.
 -   Maintain the consistency and integrity of a database.
 
-SQL consists of commands and functions that are used to manage databases and database objects. SQL can also forcibly implement the rules for data types, expressions, and texts. Therefore,  [SQL Reference](sql-reference.md)  describes data types, expressions, functions, and operators in addition to SQL syntax.
+SQL consists of commands and functions that are used to manage databases and database objects. SQL can also forcibly implement the rules for data types, expressions, and texts. Therefore,  [SQL Reference](SQL-Reference.md)  describes data types, expressions, functions, and operators in addition to SQL syntax.
 
 ## Development of SQL Standards<a name="en-us_topic_0283136913_en-us_topic_0237121924_en-us_topic_0059778020_sf8ba5f5ea8ce4cd3b59402dcdc0f9d15"></a>
 

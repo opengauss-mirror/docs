@@ -16,7 +16,7 @@
 
 -   **[Unified Audit](unified-audit.md)**  
 
--   **[Dynamic Data Masking](dynamic-data-masking.md.md)**  
+-   **[Dynamic Data Masking](dynamic-data-masking.md)**  
 
 -   **[Row-Level Access Control](row-level-access-control.md)**  
 
