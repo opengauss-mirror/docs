@@ -22,7 +22,7 @@ SHOW [STORAGE] ENGINES
 
 - **Support**
 
-       存储引擎支持情况。
+       存储引擎支持情况，取值为DEFAULT、YES、NO。DEFAULT为默认创建该存储引擎的表，YES为可支持创建该存储引擎的表，NO为不支持。
 
 - **Comment**
 

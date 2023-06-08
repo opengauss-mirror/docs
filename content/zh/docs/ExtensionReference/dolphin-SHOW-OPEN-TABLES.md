@@ -2,11 +2,11 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-列出所有table缓存中打开的表。
+列出所有被打开的非临时表。
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--  b数据库的show open tables结果中Database字段是库名，openGauss中是表所在的模式名。
+-  MySQL数据库的show open tables结果中Database字段是库名，openGauss中是表所在的模式名。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
