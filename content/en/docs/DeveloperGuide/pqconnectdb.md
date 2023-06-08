@@ -23,7 +23,7 @@ PGconn *PQconnectdb(const char *conninfo);
 </thead>
 <tbody><tr id="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_r89c7807f135840058d4a248137b3ca08"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241735614_p144262583911"><a name="en-us_topic_0241735614_p144262583911"></a><a name="en-us_topic_0241735614_p144262583911"></a>conninfo</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>Connection string. For details about the fields in the string, see <a href="connection-characters.md">Connection Characters</a>.</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="en-us_topic_0241735614_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>Connection string. For details about the fields in the string, see <a href="link-parameters-libpq.md">Connection Characters</a>.</p>
 </td>
 </tr>
 </tbody>
@@ -40,5 +40,5 @@ PGconn *PQconnectdb(const char *conninfo);
 
 ## Example<a name="en-us_topic_0241735614_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-For details, see  [Example](example-20.md).
+For details, see  [Example](example-libpq.md).
 
