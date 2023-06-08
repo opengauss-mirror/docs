@@ -77,6 +77,7 @@
     >   
     >-   LINES TERMINATED BY参数不能和分隔符、null参数相同。    
     >-   LINES TERMINATED BY参数不能包含：.abcdefghijklmnopqrstuvwxyz0123456789。
+    >-   此参数的 \\r、\\n、\\r\\n 都表示的是转义含义（回车、换行），而文本中的 \\r、\\n、\\r\\n 表示的是字符串本身，两者是不同的。
 
 -   **CHARACTER SET 'charset\_name'**
     
