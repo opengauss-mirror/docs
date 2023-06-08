@@ -48,4 +48,4 @@ See  [Examples](create-index.md#en-us_topic_0283136578_en-us_topic_0237122106_en
 
 ## Helpful Links<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s299c55b981d1489986df6a6cf27b73d1"></a>
 
-[ALTER INDEX](alter-index.md)  and  [CREATE INDEX](create-index.md)
+[ALTER INDEX](../SQLReference/alter-index.md)  and  [CREATE INDEX](../SQLReference/create-index.md)
