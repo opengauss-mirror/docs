@@ -159,7 +159,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the name of the index method to be used.
 
-    For details about the value range, see [USING method](create-index).
+    For details about the value range, see [USING method](create-index.md).
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
@@ -341,7 +341,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   DELTAROW\_THRESHOLD
 
-        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **[enable\_delta\_store](en-us_topic_0289900911.md#en-us_topic_0283136577_en-us_topic_0237124705_section1035224982816)**  is set to  **on**. The parameter is only valid for column-store tables.
+        Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **enable\_delta\_store**  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: 0 to 9999. The default value is  **100**.
 
