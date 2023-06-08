@@ -141,4 +141,4 @@ openGauss=# DROP VIEW public.customer_details_view_v2;
 
 ## Helpful Links<a name="en-us_topic_0283137021_en-us_topic_0237122084_en-us_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
 
-[CREATE VIEW](create-view.md) and [DROP VIEW](drop-view.md)
+[CREATE VIEW](../SQLReference/create-view.md) and [DROP VIEW](../SQLReference/drop-view.md)

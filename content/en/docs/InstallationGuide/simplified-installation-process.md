@@ -4,9 +4,6 @@ The simplified installation process is intended for users in universities and te
 
 -   **[Preparing for Installation](preparing-for-installation.md)**  
 
--   **[Server Installation](Server-Installation.md)**
+-   **[Server Installation](Server-based-Installation.md)**
 
--   **[Container-based Installation](container-based-installation.md)**
-
-
-
+-   **[Container-based Installation](Container-based-Installation.md)**

@@ -25,25 +25,3 @@ GaussDB Kernel supports the psycopg2 feature and allows psycopg2 to be connected
 </tr>
 </tbody>
 </table>
-
--   **[Psycopg Package](psycopg-package.md)**  
-
--   **[Development Process](development-process.md)**  
-
--   **[Loading a Driver](loading-a-driver.md)**  
-
--   **[Connecting to a Database](connecting-to-a-database.md)**  
-
--   **[Executing SQL Statements](executing-sql-statements.md)**  
-
--   **[Processing the Result Set](processing-the-result-set.md)**  
-
--   **[Closing the Connection](closing-the-connection.md)**  
-
--   **[Connecting to the Database \(Using SSL\)](connecting-to-the-database-(using-ssl).md)**  
-
--   **[Example: Common Operations](example-common-operations-psycopg)**  
-
--   **[Psycopg API Reference](psycopg-api-reference.md)**  
-
-

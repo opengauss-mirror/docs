@@ -1,22 +1,5 @@
 # Publication-Subscription<a name="EN-US_TOPIC_0000001216402104"></a>
 
--   **[Publications](publications.md)**  
-
--   **[Subscriptions](subscriptions.md)**  
-
--   **[Conflicts](conflicts.md)**  
-
--   **[Restrictions](restrictions.md)**  
-
--   **[Architecture](architecture.md)**  
-
--   **[Monitoring](monitoring.md)**  
-
--   **[Security](security.md)**  
-
--   **[Configuration Settings](configuration-settings-25.md)**  
-
--   **[Quick Setup](quick-setup.md)**  
 
 Publication-subscription is implemented based on logical replication, with one or more subscribers subscribing to one or more publications on a publisher node. The subscriber pulls data from the publication they subscribe to.
 

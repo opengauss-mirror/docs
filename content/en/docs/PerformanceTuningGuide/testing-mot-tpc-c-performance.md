@@ -115,7 +115,7 @@ The tpm-C unit of measure is expressed as transactions-per-minute-C, whereas "C"
 
 ## System-Level Optimization<a name="section151521359126"></a>
 
-Follow the instructions in the  [MOT Server Optimization – x86](mot-server-optimization-x86.md)  section. The following section describes the key system-level optimizations for deploying the openGauss database on a Huawei Taishan server and on a Euler 2.8 operating system for ultimate performance.
+Follow the instructions in the  [MOT Server Optimization – x86](../DatabaseAdministrationGuide/mot-server-optimization-x86.md)  section. The following section describes the key system-level optimizations for deploying the openGauss database on a Huawei Taishan server and on a Euler 2.8 operating system for ultimate performance.
 
 ## BenchmarkSQL – An Open-Source TPC-C Tool<a name="section139937213415"></a>
 
