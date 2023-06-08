@@ -8,7 +8,7 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
 
 ## Adding, Modifying, and Deleting Users<a name="en-us_topic_0283136811_en-us_topic_0237121102_en-us_topic_0155089862_section1157510331121"></a>
 
--   To create a user, use the SQL statement  **[CREATE USER](en-us_topic_0289899951.md)**.
+-   To create a user, use the SQL statement  **[CREATE USER](../SQLReference/create-user.md)**.
 
     For example, create a user  **joe**  and set the  **CREATEDB**  attribute for the user.
 
@@ -17,16 +17,16 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
     CREATE ROLE
     ```
 
--   To create a system administrator, use the  **[CREATE USER](en-us_topic_0289899951.md)**  statement with the  **SYSADMIN**  parameter.
--   To delete an existing user, use  **[DROP USER](en-us_topic_0289900387.md)**.
--   To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](en-us_topic_0289900744.md)**.
--   To view a user list, query the  **[PG\_USER](en-us_topic_0289900531.md)**  view.
+-   To create a system administrator, use the  **[CREATE USER](../SQLReference/create-user.md)**  statement with the  **SYSADMIN**  parameter.
+-   To delete an existing user, use  **[DROP USER](../SQLReference/drop-user.md)**.
+-   To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](../SQLReference/alter-user-mapping.md)**.
+-   To view a user list, query the  **[PG\_USER](../DatabaseReference/pg_user.md)**  view.
 
     ```
     openGauss=# SELECT * FROM pg_user; 
     ```
 
--   To view user attributes, query the system catalog  **[PG\_AUTHID](en-us_topic_0289900706.md)**.
+-   To view user attributes, query the system catalog  **[PG\_AUTHID](../DatabaseReference/pg_authid.md)**.
 
     ```
     openGauss=# SELECT * FROM pg_authid; 
@@ -37,7 +37,7 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
 
 If multiple service departments use different database user accounts to perform service operations and a database maintenance department at the same level uses database administrator accounts to perform maintenance operations, service departments may require that database administrators, without specific authorization, can manage \(**DROP**,  **ALTER**, and  **TRUNCATE**\) their data but cannot access \(**INSERT**,  **DELETE**,  **UPDATE**,  **SELECT**, and  **COPY**\) the data. That is, the management permissions of database administrators for tables need to be isolated from their access permissions to improve the data security of common users.
 
-In  [separation-of-duties](en-us_topic_0289900233.md)  mode, a database administrator does not have permissions for the tables in schemas of other users. In this case, database administrators have neither management permissions nor access permissions, which does not meet the requirements of the service departments mentioned above. Therefore, openGauss provides private users to solve the problem. That is, create private users with the  **INDEPENDENT**  attribute in non-separation-of-duties mode.
+In  [separation-of-duties](separation-of-duties.md)  mode, a database administrator does not have permissions for the tables in schemas of other users. In this case, database administrators have neither management permissions nor access permissions, which does not meet the requirements of the service departments mentioned above. Therefore, openGauss provides private users to solve the problem. That is, create private users with the  **INDEPENDENT**  attribute in non-separation-of-duties mode.
 
 ```
 openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@abc";
