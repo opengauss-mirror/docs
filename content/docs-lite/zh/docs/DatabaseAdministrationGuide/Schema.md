@@ -12,7 +12,7 @@ Schema又称作模式。通过管理Schema，允许多个用户使用同一数�
 
 ## 创建、修改和删除Schema<a name="zh-cn_topic_0283137084_zh-cn_topic_0237121104_zh-cn_topic_0156599225_section0594124724510"></a>
 
--   要创建Schema，请使用[CREATE SCHEMA](../SQLReference/CREATE-SCHEMA.md)。默认初始用户和系统管理员可以创建Schema，其他用户需要具备数据库的CREATE权限才可以在该数据库中创建Schema，赋权方式请参考[GRANT](GRANT.md)中将数据库的访问权限赋予指定的用户或角色中的语法。
+-   要创建Schema，请使用[CREATE SCHEMA](../SQLReference/CREATE-SCHEMA.md)。默认初始用户和系统管理员可以创建Schema，其他用户需要具备数据库的CREATE权限才可以在该数据库中创建Schema，赋权方式请参考[GRANT](../SQLReference/GRANT.md)中将数据库的访问权限赋予指定的用户或角色中的语法。
 -   要更改Schema名称或者所有者，请使用[ALTER SCHEMA](../SQLReference/ALTER-SCHEMA.md)。Schema所有者可以更改Schema。
 -   要删除Schema及其对象，请使用[DROP SCHEMA](../SQLReference/DROP-SCHEMA.md)。Schema所有者可以删除Schema。
 -   要在Schema内创建表，请以schema\_name.table\_name格式创建表。不指定schema\_name时，对象默认创建到[搜索路径](#zh-cn_topic_0283137084_zh-cn_topic_0237121104_zh-cn_topic_0156599225_section03655314403)中的第一个Schema内。
