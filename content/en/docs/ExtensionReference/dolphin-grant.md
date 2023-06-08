@@ -110,4 +110,4 @@ GRANT INDEX TO TEST_USER;
 
 ## Helpful Links<a name="section156744489391"></a>
 
-[GRANT](GRANT.md)
+[GRANT](../SQLReference/GRANT.md)
