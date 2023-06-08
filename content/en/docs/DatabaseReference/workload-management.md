@@ -121,7 +121,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## enable\_user\_metric\_persistent<a name="en-us_topic_0283137479_en-us_topic_0237124729_section1255143891414"></a>
 
-**Parameter description**: Specifies whether the user historical resource monitoring dumping function is enabled. If this parameter is set to  **on**, data in the  **PG\_TOTAL\_USER\_RESOURCE\_INFO**  view is periodically sampled and saved to the system catalog  **[GS\_WLM\_USER\_RESOURCE\_HISTORY](en-us_topic_0289900046.md)**.
+**Parameter description**: Specifies whether the user historical resource monitoring dumping function is enabled. If this parameter is set to  **on**, data in the  **PG\_TOTAL\_USER\_RESOURCE\_INFO**  view is periodically sampled and saved to the system catalog  **[GS\_WLM\_USER\_RESOURCE\_HISTORY](gs_wlm_user_resource_history.md)**.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -149,7 +149,7 @@ If the value is greater than  **0**, the historical monitoring data of user reso
 
 ## enable\_instance\_metric\_persistent<a name="en-us_topic_0283137479_en-us_topic_0237124729_section18113133910385"></a>
 
-**Parameter description**: Specifies whether the instance resource monitoring data is dumped. When this parameter is set to  **on**, the instance monitoring data is saved to the system catalog  **[GS\_WLM\_INSTANCE\_HISTORY](en-us_topic_0289900166.md)**.
+**Parameter description**: Specifies whether the instance resource monitoring data is dumped. When this parameter is set to  **on**, the instance monitoring data is saved to the system catalog  **[GS\_WLM\_INSTANCE\_HISTORY]gs_wlm_instance_history.md)**.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

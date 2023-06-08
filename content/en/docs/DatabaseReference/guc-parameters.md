@@ -36,7 +36,7 @@
 
 -   **[Connection Pool Parameters](connection-pool-parameters.md)**
 
--   **[Transaction](transaction-60.md)**
+-   **[Transaction](opengauss-transaction.md)**
 
 -   **[Replication Parameters of Two Database Instances](replication-parameters-of-two-database-instances.md)**
 
@@ -48,7 +48,7 @@
 
 -   **[Miscellaneous Parameters](miscellaneous-parameters.md)**
 
--   **[Wait Events](wait_events.md)**
+-   **[Wait Events](wait-events.md)**
 
 -   **[Query](query-62.md)**
 
