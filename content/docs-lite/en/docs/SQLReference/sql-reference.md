@@ -1,6 +1,6 @@
 # SQL Reference<a name="EN-US_TOPIC_0289900204"></a>
 
--   **[openGauss SQL](SQL-language-structure-and-syntax.md)**  
+-   **[openGauss SQL](sql-syntax.md)**  
 
 -   **[Keywords](keywords.md)**  
 
