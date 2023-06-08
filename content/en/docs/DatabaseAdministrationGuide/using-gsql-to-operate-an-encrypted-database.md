@@ -9,7 +9,7 @@
     gsql -p PORT postgres -r -C
     ```
 
-3.  Create a CMK and a CEK. For details about the syntax for creating a CMK and CEK, see  [CREATE CLIENT MASTER KEY](en-us_topic_0294528088.md)  and  [CREATE COLUMN ENCRYPTION KEY](en-us_topic_0294528089.md).
+3.  Create a CMK and a CEK. For details about the syntax for creating a CMK and CEK, see  [CREATE CLIENT MASTER KEY](../SQLReference/create-client-master-key.md)  and  [CREATE COLUMN ENCRYPTION KEY](../create-column-encryption-key/create-column-encryption-key.md).
 
     ```
     -- Create a CMK.

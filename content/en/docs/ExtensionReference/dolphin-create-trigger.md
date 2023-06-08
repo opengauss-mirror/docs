@@ -69,7 +69,7 @@ Where **trigger\_order** is:
 
 -   **trigger\_name**
 
-    Specifies the name of the trigger to be created. This must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified — the trigger inherits the schema of its table. For a constraint trigger, this is also the name to use when modifying the trigger's behavior using [SET CONSTRAINTS](set-constraints.md).
+    Specifies the name of the trigger to be created. This must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified — the trigger inherits the schema of its table. For a constraint trigger, this is also the name to use when modifying the trigger's behavior using [SET CONSTRAINTS](../SQLReference/set-constraints.md).
 
     Value range: a string, which complies with the identifier naming convention and contains a maximum of 63 characters.
 
@@ -113,13 +113,13 @@ Where **trigger\_order** is:
 
     Specifies the start time of the trigger. It can only be specified for constraint triggers. Controls whether the constraint can be deferred.
 
-    For details, see  [CREATE TABLE](create-table.md).
+    For details, see  [CREATE TABLE](../SQLReference/create-table.md).
 
 -   **INITIALLY IMMEDIATE** **| INITIALLY DEFERRED**
 
     If a constraint is deferrable, the two clauses specify the default time to check the constraint, and can be specified only for constraint triggers.
 
-    For details, see  [CREATE TABLE](create-table.md).
+    For details, see  [CREATE TABLE](../SQLReference/create-table.md).
 
 -   **FOR EACH ROW | FOR EACH STATEMENT**
 
@@ -473,4 +473,4 @@ db_mysql=# create trigger if not exists animal_trigger1
 
 ## Helpful Links<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>
 
-[ALTER TRIGGER](alter-trigger.md),  [DROP TRIGGER](drop-trigger.md), and  [ALTER TABLE](alter-table.md)
+[ALTER TRIGGER](../SQLReference/alter-trigger.md),  [DROP TRIGGER](../SQLReference/drop-trigger.md), and  [ALTER TABLE](../SQLReference/alter-table.md)
