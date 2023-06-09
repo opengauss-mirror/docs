@@ -1667,6 +1667,7 @@ headless: true
         -   [gs\_tar]({{< relref "./docs/ToolandCommandReference/gs_tar.md" >}})
         -   [gs\_uninstall]({{< relref "./docs/ToolandCommandReference/gs_uninstall.md" >}})
         -   [gs\_upgradectl]({{< relref "./docs/ToolandCommandReference/gs_upgradectl.md" >}})
+        -   [gs\_upgradechk]({{< relref "./docs/ToolandCommandReference/gs_upgradechk.md" >}})
         -   [gs\_expansion]({{< relref "./docs/ToolandCommandReference/gs_expansion.md" >}})
         -   [gs\_dropnode]({{< relref "./docs/ToolandCommandReference/gs_dropnode.md" >}})
     	-   [gs\_probackup]({{< relref "./docs/ToolandCommandReference/gs_probackup.md" >}})
