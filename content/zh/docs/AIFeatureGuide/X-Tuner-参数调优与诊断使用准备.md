@@ -51,7 +51,7 @@ gs_dbmind component xtuner --help
 
 ## X-Tuner的配置文件说明<a name="section5892154973918"></a>
 
-X-Tuner在运行前需要加载配置文件，用户可以通过**  --help**命令查看默认加载的配置文件绝对路径：
+X-Tuner在运行前需要加载配置文件，用户可以通过 **--help** 命令查看默认加载的配置文件绝对路径：
 
 ```
 ...  
@@ -64,11 +64,11 @@ X-Tuner在运行前需要加载配置文件，用户可以通过**  --help**命�
 ...
 ```
 
-修改配置文件的配置项可以指引X-Tuner执行不同的动作，用户可以根据自己的不同需求来修改配置文件的内容，配置文件的配置项说明详见[表2](X-Tuner-参数调优与诊断命令参考.md#table10217184512711)。如果需要修改配置文件的加载路径，则可以通过选项**-x**命令行选项来指定。
+修改配置文件的配置项可以指引X-Tuner执行不同的动作，用户可以根据自己的不同需求来修改配置文件的内容，配置文件的配置项说明详见[表2](X-Tuner-参数调优与诊断命令参考.md#table10217184512711)。如果需要修改配置文件的加载路径，则可以通过选项 **-x** 命令行选项来指定。
 
 ## Benchmark的选择与配置<a name="section11685014422"></a>
 
-Benchmark的驱动脚本存放路径为X-Tuner目录（即**$GAUSSHOME**/bin/dbmind/components/xtuner，下同）的子目录benchmark中。X-Tuner自带常用的benchmark驱动脚本，例如基于时间周期的探测脚本（**默认**）、TPC-C、TPC-H等。X-Tuner通过调用benchmark/\_\_init\_\_.py文件中  **get\_benchmark\_instance\(\)**命令来加载不同的benchmark驱动脚本，获取benchmark驱动实例。其中，benchmark驱动脚本的格式说明如下：
+Benchmark的驱动脚本存放路径为X-Tuner目录（即 **$GAUSSHOME**/bin/dbmind/components/xtuner，下同）的子目录benchmark中。X-Tuner自带常用的benchmark驱动脚本，例如基于时间周期的探测脚本（**默认**）、TPC-C、TPC-H等。X-Tuner通过调用benchmark/\_\_init\_\_.py文件中  **get\_benchmark\_instance\(\)** 命令来加载不同的benchmark驱动脚本，获取benchmark驱动实例。其中，benchmark驱动脚本的格式说明如下：
 
 -   驱动脚本文件名：表示benchmark的名字，该名字用于表示驱动脚本的唯一性，可通过在X-Tuner的配置文件中的配置项**benchmark\_script**来指定选择加载哪个benchmark驱动脚本。
 -   驱动脚本内容三要素：path变量、cmd变量以及run函数。
