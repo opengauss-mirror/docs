@@ -1975,7 +1975,7 @@ The following functions provide server transaction information in an exportable 
 
 -   pg\_shared\_memory\_detail
 
-    Description: Returns usage information about all generated shared memory contexts. For details about each column, see  [GS\_SHARED\_MEMORY\_DETAIL](../SQLReference/GS_SHARED_MEMORY_DETAIL.md).
+    Description: Returns usage information about all generated shared memory contexts. For details about each column, see  [GS\_SHARED\_MEMORY\_DETAIL](../DatabaseReference/GS_SHARED_MEMORY_DETAIL.md).
 
     Parameter: nan
 
