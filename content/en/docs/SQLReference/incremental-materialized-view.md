@@ -1,9 +1,9 @@
 # Incremental Materialized View<a name="EN-US_TOPIC_0295970206"></a>
 
--   **[Overview](overview-51.md)**  
+-   **[Overview](incremental-materialized-view-overview.md)**  
 
--   **[Usage](usage-51.md)**  
+-   **[Usage](incremental-materialized-view-usage.md)**  
 
--   **[Support and Constraints](support-and-constraints-19.md)**  
+-   **[Support and Constraints](incremental-materialized-view-support-and-constraints.md)**  
 
 
