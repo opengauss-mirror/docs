@@ -2,7 +2,7 @@
 
 ## Prerequisites<a name="en-us_topic_0283136807_en-us_topic_0237120295_en-us_topic_0059779126_s82a10b03aef44f24a8b835912c58dd5b"></a>
 
-Only the database system administrator or users granted with database creation permissions can create a database. For details about how to grant database creation permissions to a user, see  [Managing Users and Their Permissions](en-us_topic_0000001208538067.md).
+Only the database system administrator or users granted with database creation permissions can create a database. For details about how to grant database creation permissions to a user, see  [Managing Users and Their Permissions](emanaging-users-and-their-permissions.md).
 
 ## Background<a name="en-us_topic_0283136807_en-us_topic_0237120295_en-us_topic_0059779126_s4b8e4eb214404dc8a2dfd174a7245290"></a>
 
@@ -92,7 +92,7 @@ To resolve this problem, you need to:
 
 4.  Delete the database.
 
-    You can run the  **[DROP DATABASE](en-us_topic_0000001163058100.md)**  command to delete a database. This command deletes the system catalog of the database and the database directory on the disk. Only the database owner or system administrator can delete a database. A database accessed by users cannot be deleted. You need to connect to another database before deleting this database.
+    You can run the  **[DROP DATABASE](../SQLReference/drop-database.md)**  command to delete a database. This command deletes the system catalog of the database and the database directory on the disk. Only the database owner or system administrator can delete a database. A database accessed by users cannot be deleted. You need to connect to another database before deleting this database.
 
     Run the following command to delete the database:
 
