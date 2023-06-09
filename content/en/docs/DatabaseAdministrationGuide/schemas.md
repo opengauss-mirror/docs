@@ -12,9 +12,9 @@ Database objects are generally created in the first schema in a database search 
 
 ## Creating, Modifying, and Deleting Schemas<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section0594124724510"></a>
 
--   To create a schema, use  **[CREATE SCHEMA](en-us_topic_0289901000.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](en-us_topic_0289900312.md).
--   To change the name or owner of a schema, use  **[ALTER SCHEMA](en-us_topic_0289900025.md)**. The schema owner can change the schema.
--   To delete a schema and its objects, use  [DROP SCHEMA](en-us_topic_0289900224.md). Schema owners can delete schemas.
+-   To create a schema, use  **[CREATE SCHEMA](../SQLReference/create-schema.md)**. By default, the initial user and system administrator can create schemas. Other users can create schemas in the database only when they have the CREATE permission on the database. For details about how to grant the permission, see the syntax in  [GRANT](../SQLReference/grant.md).
+-   To change the name or owner of a schema, use  **[ALTER SCHEMA](../SQLReference/alter-schema.md)**. The schema owner can change the schema.
+-   To delete a schema and its objects, use  [DROP SCHEMA](../SQLReference/drop-schema.md). Schema owners can delete schemas.
 -   To create a table in a schema, use the  *schema\*name_**.***table\*name_  format to specify the table. If  *schema\*name_  is not specified, the table will be created in the first schema in  [search path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403).
 -   To view the owner of a schema, perform the following join query on the system catalogs  **PG\_NAMESPACE**  and  **PG\_USER**. Replace  *schema\*name_  in the statement with the name of the schema to be queried.
 
@@ -37,9 +37,9 @@ Database objects are generally created in the first schema in a database search 
 
 ## Search Path<a name="en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403"></a>
 
-A search path is defined in the  **[search\_path](en-us_topic_0283136752.md#en-us_topic_0237124732_en-us_topic_0059779117_s304b0a206e2e4ca782210ffb66cbc4b0)**  parameter. The parameter value is a list of schema names separated by commas \(,\). If no target schema is specified during object creation, the object is added to the first schema listed in the search path. If there are objects with the same name across different schemas and no schema is specified for an object query, the object will be returned from the first schema containing the object in the search path.
+A search path is defined in the  **[search\_path](#en-us_topic_0283137084_en-us_topic_0237121104_en-us_topic_0156599225_section03655314403)**  parameter. The parameter value is a list of schema names separated by commas \(,\). If no target schema is specified during object creation, the object is added to the first schema listed in the search path. If there are objects with the same name across different schemas and no schema is specified for an object query, the object will be returned from the first schema containing the object in the search path.
 
--   To view the current search path, use  [SHOW](en-us_topic_0289900662.md).
+-   To view the current search path, use  [SHOW](../SQLReference/show.md).
 
     ```
     openGauss=# SHOW SEARCH_PATH;

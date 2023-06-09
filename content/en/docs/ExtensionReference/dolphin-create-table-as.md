@@ -63,4 +63,4 @@ openGauss=# DROP TABLE tpcds.store_returns;
 
 ## Helpful Links<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa0d9dc1ba4fb4ce58ecdfe391f0561d3"></a>
 
-[CREATE TABLE](create-table.md), [SELECT](select.md)
+[CREATE TABLE](../SQLReference/create-table.md), [SELECT](../SQLReference/select.md)
