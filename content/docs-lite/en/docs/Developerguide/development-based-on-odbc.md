@@ -49,14 +49,3 @@ Windows has a native ODBC Driver Manager. You can locate  **Data Sources \(ODBC\
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >The current database ODBC driver is based on an open-source version and may be incompatible with data types tinyint, smalldatetime, and nvarchar2.  
 
--   **[ODBC Packages, Dependent Libraries, and Header Files](odbc-packages-dependent-libraries-and-header-files.md)**  
-
--   **[Configuring a Data Source in the Linux OS](configuring-a-data-source-in-the-linux-os.md)**  
-
--   **[Development Process](development-process-1.md)**  
-
--   **[Example](example.md)**  
-
--   **[ODBC Interface Reference](odbc-interface-reference.md)**  
-
-
