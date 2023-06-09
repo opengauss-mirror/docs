@@ -59,7 +59,7 @@ openGauss正常运行。
 
     使用GRANT命令进行相关权限设置，具体操作请参考[GRANT](../SQLReference/GRANT.md)。
 
-    **引申信息：**关于数据库用户的更多信息请参考[管理用户及权限](../DatabaseAdministrationGuide/管理用户及权限.md)。
+    **引申信息：** 关于数据库用户的更多信息请参考[管理用户及权限](../DatabaseAdministrationGuide/管理用户及权限.md)。
 
 4.  创建数据库。
 
