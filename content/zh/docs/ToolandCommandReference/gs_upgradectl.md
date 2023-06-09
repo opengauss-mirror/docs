@@ -33,7 +33,7 @@
 -   执行升级的过程中请不要手动设置GUC参数。
 -   灰度升级中，升级的时候都会产生不超过10s的业务中断。
 -   升级过程中，必须保持内核版本与om版本一致才可执行om操作。这里的一致是指，内核代码和om代码都来自同一个软件包。如果执行了升级包的前置脚本却没有升级，或者升级回滚后没有执行基线包的前置脚本，就会造成内核代码和om代码的不一致。
--   升级过程中如果系统表新增了字段，升级后通过**\\d**命令将查看不到这些新增的字段。此时通过**select**命令可以查到这些新增的字段。
+-   升级过程中如果系统表新增了字段，升级后通过 **\\d** 命令将查看不到这些新增的字段。此时通过 **select** 命令可以查到这些新增的字段。
 -   升级需要guc参数enable\_stream\_replication=on，该参数为off时不允许升级。
 -   灰度升级中， 业务并发要小于200并发读加200并发写的情况。
 -   建议数据库节点磁盘使用率低于80%时再执行升级操作。
@@ -183,7 +183,7 @@ Successfully set finish flag.
 PreInstallationGuide succeeded.
 ```
 
-**示例二：**使用gs\_upgradectl脚本执行就地升级。
+**示例二**：使用gs\_upgradectl脚本执行就地升级。
 
 ```
 gs_upgradectl -t upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
@@ -219,7 +219,7 @@ Once the check done, please execute following command to commit upgrade:
     gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 ```
 
-**示例三：**使用gs\_upgradectl脚本执行自动回滚，撤销已经成功/失败的升级操作（升级回滚）。
+**示例三**：使用gs\_upgradectl脚本执行自动回滚，撤销已经成功/失败的升级操作（升级回滚）。
 
 ```
 gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
@@ -244,7 +244,7 @@ Successfully cleaned new install path.
 Rollback succeeded.
 ```
 
-**示例四：**使用gs\_upgradectl脚本执行升级后提交（升级提交）。
+**示例四**：使用gs\_upgradectl脚本执行升级后提交（升级提交）。
 
 ```
 gs_upgradectl -t commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
@@ -253,7 +253,7 @@ Successfully Cleaned old install path.
 Commit binary upgrade succeeded.
 ```
 
-**示例五：**使用gs\_upgradectl脚本执行指定节点升级。.
+**示例五**：使用gs\_upgradectl脚本执行指定节点升级。.
 
 升级部分指定节点
 ```
@@ -327,7 +327,7 @@ gs_upgradectl -t commit-upgrade -X /data/node2.xml
 Successfully upgrade all nodes.
 ```
 
-**示例六：**使用gs\_upgradectl脚本执行集群管理组件增量升级。
+**示例六**：使用gs\_upgradectl脚本执行集群管理组件增量升级。
 ```
 gs_upgradectl -t upgrade-cm --upgarde-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
 Start ot perform the upgrade of CM component in cluster.
