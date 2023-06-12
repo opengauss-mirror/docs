@@ -169,14 +169,14 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
 
-    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
+    2).  从网站[https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/postgis_2.4.2-2.patch](https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/postgis_2.4.2-2.patch)下载补丁文件到$GAUSSHOME目录，并打入补丁。
 
     ```
     cd $GAUSSHOME/postgis-xc/
     patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
-    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/Extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
+    3).  从网站[https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/extension_dependency.h](https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/extension_dependency.h)下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
@@ -258,7 +258,17 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ddes/dms/ss_common_attr.h
         ddes/dms/ss_init.h
         storage/dss/dss_api_def.h）七个头文件的名称
-        这些头文件在server仓库、src目录下，将其复制到编译安装好的数据库dest/include目录下，目录层级需要一一对应
+        这些头文件在openGauss-server仓库的src/include目录下，将其复制到\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
+        当然，有一个更加直接简单的方法，即执行下面的命令(\$CODE_BASE为openGauss-server的源代码目录)
+        ```
+        mkdir -p $GAUSSHOME/include/postgresql/server/storage/file/
+        mkdir -p $GAUSSHOME/include/postgresql/server/storage/dss/
+        mkdir -p $GAUSSHOME/include/postgresql/server/ddes/dms/
+        cp -r $CODE_BASE/src/include/storage/file/* $GAUSSHOME/include/postgresql/server/storage/file/
+        cp -r $CODE_BASE/src/include/storage/dss/* $GAUSSHOME/include/postgresql/server/storage/dss/
+        cp -r $CODE_BASE/src/include/ddes/dms/* $GAUSSHOME/include/postgresql/server/ddes/dms/
+        ```
+        这样就能一下子把所有缺失的头文件都补全进去。
 
     5).  omm用户执行下面的语句，完成PostGIS相关动态链接库在数据库实例节点中的分发。
 
