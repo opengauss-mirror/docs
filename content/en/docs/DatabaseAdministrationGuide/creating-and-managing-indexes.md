@@ -21,7 +21,7 @@ Indexes are created based on columns in database tables. Therefore, you must cor
 
 ## Procedure<a name="en-us_topic_0237120308_en-us_topic_0059777978_scba43baf1cd54d06a22160699ec2c658"></a>
 
-For details about how to create a partitioned table, see  [Creating and Managing Partitioned Tables](en-us_topic_0242370193.md).
+For details about how to create a partitioned table, see  [Creating and Managing Partitioned Tables](creating-and-managing-partitioned-tables.md).
 
 -   Creating an index
     -   Create the LOCAL index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name for a partitioned table.

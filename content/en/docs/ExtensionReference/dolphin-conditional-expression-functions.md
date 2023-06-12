@@ -2,7 +2,7 @@
 
 ## Precautions <a name="en-us_topic_0283137529_en-us_topic_0237122159_en-us_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
--   This section describes only the new conditional expression functions of Dolphin. For details about the conditional expression functions of the original openGauss, see [Conditional Expression Functions](conditional-expression-functions.md).
+-   This section describes only the new conditional expression functions of Dolphin. For details about the conditional expression functions of the original openGauss, see [Conditional Expression Functions](../SQLReference/conditional-expression-functions.md).
 
 ## Conditional Expression Functions<a name="en-us_topic_0283136903_en-us_topic_0237121986_en-us_topic_0059778809_s67706c61c09047c4bca384689f7f5c08"></a>
 
