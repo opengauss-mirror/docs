@@ -35,13 +35,13 @@
     <link href="/css/reset.css" rel="stylesheet" type="text/css">
     <link href="/css/revision_new.css" rel="stylesheet" type="text/css">
     <link href="/css/login.css" rel="stylesheet" type="text/css">
-    {{ if ne .Site.LanguageCode "ru"}}
-    <script src="{{ .Site.BaseURL }}js/analytics.js"></script>
-    {{ end }}
+    <link href="/css/highlightjs-theme.css" rel="stylesheet" type="text/css">
+    
     <script src="{{ .Site.BaseURL }}js/highlight.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/tex.min.js"></script>
-    <link href="/css/monokai.min.css" rel="stylesheet" type="text/css">
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="{{ .Site.BaseURL }}js/version-data.js"></script>
     <script src="{{ .Site.BaseURL }}js/init-theme.js"></script>
 </head>

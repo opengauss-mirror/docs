@@ -1,0 +1,98 @@
+/*!
+  Theme: Atelier Cave
+  Author: Bram de Haan (http://atelierbramdehaan.nl)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/
+pre ,code{
+  font-family: 'Helvetica', 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+
+code.hljs {
+  padding: 3px 5px
+}
+
+.hljs {
+  color: var(--o-color-text3);
+  background: var(--o-color-bg2)
+}
+
+.hljs ::selection,.hljs::selection {
+  background-color: var(--o-color-text4);
+  color: var(--o-color-text4)
+}
+
+.hljs-comment{
+  color: var(--o-color-neutral8)
+}
+.hljs-tag {
+  color: var(--o-color-neutral6)
+}
+
+.hljs-operator,.hljs-punctuation,.hljs-subst {
+  color: var(--o-color-text5)
+}
+
+.hljs-operator {
+  opacity: .7
+}
+
+.hljs-bullet,.hljs-deletion,.hljs-name,.hljs-selector-tag,.hljs-template-variable,.hljs-variable {
+  color: var(--o-color-red6)
+}
+
+.hljs-attr,.hljs-link,.hljs-literal,.hljs-number,.hljs-symbol,.hljs-variable.constant_ {
+  color: var(--o-color-green4)
+}
+
+.hljs-class .hljs-title,.hljs-title,.hljs-title.class_ {
+  color:  var(--o-color-brand1)
+}
+
+.hljs-strong {
+  font-weight: 700;
+  color:  var(--o-color-yellow4)
+}
+.hljs-params{
+  color: var(--o-color-red3)
+}
+.hljs-addition,.hljs-code,.hljs-string,.hljs-title.class_.inherited__ {
+  color: var(--o-color-orange2)
+}
+.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag {
+  font-weight: 700
+}
+
+.hljs-built_in,.hljs-doctag,.hljs-keyword.hljs-atrule,.hljs-quote,.hljs-regexp {
+  color:  var(--o-color-trafficpurple5)
+}
+}
+
+.hljs-attribute,.hljs-function .hljs-title,.hljs-section,.hljs-title.function_,.ruby .hljs-property {
+  color:  var(--o-color-trafficpurple3)
+}
+
+.diff .hljs-meta,.hljs-keyword,.hljs-template-tag,.hljs-type {
+  color: var(--o-color-text3)
+}
+
+.hljs-emphasis {
+  color:  var(--o-color-trafficpurple6);
+  font-style: italic
+}
+
+.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string {
+  color:  var(--o-color-red4);
+}
+
+.hljs-meta .hljs-keyword,.hljs-meta-keyword,.hljs-section, .hljs-title {
+  font-weight: 700
+}

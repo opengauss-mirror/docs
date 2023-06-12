@@ -1317,6 +1317,7 @@
 
 .right-nav .nav-item:nth-child(2) {
     background-image: url('../img/detail/inside2.png');
+    color: var(--o-color-text1);
 }
 
 .right-nav .nav-item:nth-child(3) {
@@ -1771,9 +1772,17 @@ pre {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-image: url(/img/common/copy.png);
-    background-repeat: no-repeat;
     background-size: 100% 100%;
+    -webkit-mask-image: url(../img/common/copy.svg);
+    mask-image: url(../img/common/copy.svg);
+    mask-size:cover;
+    -webkit-mask-size:cover;
+    background-color: #555;
+}
+.btn_pre_copy.ok{
+  -webkit-mask-image: url(../img/common/done.svg);
+    mask-image: url(../img/common/done.svg);
+    background-color: var(--o-color-brand1);
 }
 td pre{
     padding: 20px 0;
@@ -1792,8 +1801,7 @@ pre+blockquote{
     margin-top: 12px;
 }
 .btn_pre_copy:hover {
-    background-image: url(/img/common/copyed.png);
-    background-repeat: no-repeat;
+    background-color: var(--o-color-brand1);
 }
 
 code {
