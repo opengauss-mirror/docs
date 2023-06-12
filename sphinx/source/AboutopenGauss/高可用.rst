@@ -9,6 +9,7 @@
     ../content/zh/docs/AboutopenGauss/物理备份
     ../content/zh/docs/AboutopenGauss/作业失败自动重试
     ../content/zh/docs/AboutopenGauss/极致RTO
+    ../content/zh/docs/AboutopenGauss/极致RTO按需回放
     ../content/zh/docs/AboutopenGauss/基于Paxos协议的高可用
     ../content/zh/docs/AboutopenGauss/级联备机
     ../content/zh/docs/AboutopenGauss/延时回放
