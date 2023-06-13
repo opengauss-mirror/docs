@@ -169,7 +169,7 @@ select proc_oid, id, parent_id, substr(query, 0, 50), namespace, weight, total, 
 
 ## 其他
 
-另外，[PG_PROC](https://docs.opengauss.org/zh/docs/2.0.0/docs/DeveloperGuide/PG_PROC.html)系统表也可用于获取存储过程和函数的有关信息。
+另外，[PG_PROC](../DatabaseReference/PG_PROC.md)系统表也可用于获取存储过程和函数的有关信息。
 
 例如，存储过程内容的查询如下：
 
