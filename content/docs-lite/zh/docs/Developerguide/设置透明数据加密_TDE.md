@@ -7,7 +7,7 @@
 ## 前提条件<a name="section756657103117"></a>
 
 -   需要由密钥管理服务KMS对数据加密密钥提供保护，数据库可以正常访问KMS服务。KMS服务可在[华为云数据加密服务DEW](https://www.huaweicloud.com/product/dew.html)申请开通。
--   需要将GUC参数[enable\_tde](zh-cn_topic_0311764209.md#section17961238192110)设置为on，开启数据库透明数据加密开关。同时需正确设置数据库实例主密钥ID参数[tde\_cmk\_id](zh-cn_topic_0311764209.md#section4132027193410)。
+-   需要将GUC参数[enable\_tde](安全配置.md#section17961238192110)设置为on，开启数据库透明数据加密开关。同时需正确设置数据库实例主密钥ID参数[tde\_cmk\_id](安全配置.md#section4132027193410)。
 
 ## 背景信息<a name="section1049011225714"></a>
 

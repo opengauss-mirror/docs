@@ -100,7 +100,7 @@ openGauss社区按照不同的SIGs（Special Interest Groups）来组织，以�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2028452215599"><a name="p2028452215599"></a><a name="p2028452215599"></a>负责openGauss社区数据库安全技术的开发和维护。</p>
 </td>
 </tr>
-<tr id="row13284172285919"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1128582245913"><a name="p1128582245913"></a><a name="p1128582245913"></a><a href="https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification" target="_blank" rel="noopener noreferrer">DistributionCertification</a></p>
+<tr id="row13284172285919"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1128582245913"><a name="p1128582245913"></a><a name="p1128582245913"></a><a href="https://gitee.com/opengauss/compatible-certification" target="_blank" rel="noopener noreferrer">DistributionCertification</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1628592215594"><a name="p1628592215594"></a><a name="p1628592215594"></a>负责openGauss发行版认证流程、测试套件的定义和开发。</p>
 </td>
