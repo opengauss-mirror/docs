@@ -713,7 +713,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   >
   >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
   >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
-  >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](../DatabaseReference/PG_CONVERSION.MD)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
+  >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](../DatabaseReference/PG_CONVERSION.md)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
 
 
 -   **LC\_COLLATE \[ = \] lc\_collate**

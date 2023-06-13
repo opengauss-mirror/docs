@@ -75,5 +75,5 @@ CREATE SERVER
 
 ## 相关链接<a name="zh-cn_topic_0283137586_section3901738174011"></a>
 
-[ALTER SERVER](dolphin-ALTER-SERVER.md)，[DROP SERVER](DROP-SERVER.md)
+[ALTER SERVER](dolphin-ALTER-SERVER.md)，[DROP SERVER](../SQLReference/DROP-SERVER.md)
 
