@@ -28,7 +28,7 @@ DBE\_PERF Schema内视图主要用来诊断性能问题，也是WDR Snapshot的�
 
 -   **[Utility](Utility.md)**  
 
--   **[Lock](Lock.md)**  
+-   **[Lock](LOCK.md)**  
 
 -   **[Wait Events](Wait-Events.md)**  
 

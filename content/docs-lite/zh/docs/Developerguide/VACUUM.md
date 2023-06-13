@@ -97,7 +97,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
 -   **DELTAMERGE**
 
-    只针对列存表，将列存表的delta table中的数据转移到主表存储上。对列存表而言，此操作受[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)和[参数说明](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)中的deltarow\_threshold控制。
+    只针对列存表，将列存表的delta table中的数据转移到主表存储上。对列存表而言，此操作受[enable\_delta\_store](CREATE-TABLE.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)和[参数说明](CREATE-TABLE.md#zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428)中的deltarow\_threshold控制。
 
 
 ## 示例<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_s030f55570baf48f8978effdf4361bb45"></a>

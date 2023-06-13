@@ -2,13 +2,13 @@
 
 Psycopg接口是一套提供给用户的API方法，本节将对部分常用接口做具体描述。
 
--   **[psycopg2.connect\(\)](psycopg2-connect().md)**  
+-   **[psycopg2.connect\(\)](psycopg2-connect.md)**  
 
 -   **[connection.cursor\(\)](connection-cursor().md)**  
 
--   **[cursor.execute\(query,vars\_list\)](cursor-execute(query-vars_list).md)**  
+-   **[cursor.execute\(query,vars\_list\)](cursor-execute_query-vars_list.md)**  
 
--   **[curosr.executemany\(query,vars\_list\)](curosr-executemany(query-vars_list).md)**  
+-   **[curosr.executemany\(query,vars\_list\)](curosr-executemany_query-vars_list.md)**  
 
 -   **[connection.commit\(\)](connection-commit().md)**  
 
@@ -21,5 +21,3 @@ Psycopg接口是一套提供给用户的API方法，本节将对部分常用接�
 -   **[cursor.close\(\)](cursor-close().md)**  
 
 -   **[connection.close\(\)](connection-close().md)**  
-
-
