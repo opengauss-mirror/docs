@@ -16,7 +16,7 @@ openGauss是一款全面友好开放，携手伙伴共同打造的企业级开�
 
 -   **openGauss软件是开源的。**
 
-    开源意味着任何人都可以使用和修改软件。任何人都可以下载openGauss软件并使用它，而无需支付任何费用。如果您愿意，您可以研究源代码并对其进行更改以满足您的需要。openGauss软件使用木兰宽松许可证V2\([http://license.coscl.org.cn/MulanPSL2/](http://license.coscl.org.cn/MulanPSL2)\)来定义软件的使用范围。
+    开源意味着任何人都可以使用和修改软件。任何人都可以下载openGauss软件并使用它，而无需支付任何费用。如果您愿意，您可以研究源代码并对其进行更改以满足您的需要。openGauss软件使用木兰宽松许可证V2（[http://license.coscl.org.cn/MulanPSL2](http://license.coscl.org.cn/MulanPSL2)）来定义软件的使用范围。
 
 -   **openGauss数据库具有高性能、高可用、高安全、易运维、全开放的特点。**
     -   高性能
