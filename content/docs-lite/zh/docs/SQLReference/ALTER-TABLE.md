@@ -123,14 +123,14 @@
   >  启用trigger\_name所表示的单个触发器，或启用所有触发器，或仅启用用户触发器。
   >
   >+ **| ENABLE REPLICA TRIGGER trigger\_name**
-  >  触发器触发机制受配置变量[session\_replication\_role](../DataBaseReference/语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+  >  触发器触发机制受配置变量[session\_replication\_role](../DatabaseReference/语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
   >  配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
   >
   >+ **| ENABLE ALWAYS TRIGGER trigger\_name**
   >  无论当前复制模式如何，配置为ENABLE ALWAYS的触发器都将触发。
   >
   >+ **| DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
-  >  配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](../DataBaseReference/语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+  >  配置属于表的重写规则,已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](../DatabaseReference/语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
   >
   >+ **| DISABLE/ENABLE ROW LEVEL SECURITY**
   >  开启或关闭表的行访问控制开关。
@@ -141,8 +141,8 @@
   >  默认情况，表所有者不受行访问控制特性影响，但当强制开启表的行访问控制开关时，表的所有者（不包含系统管理员用户）会受影响。系统管理员可以绕过所有的行访问控制策略，不受影响。
   >
   >+ **| ENCRYPTION KEY ROTATION**
-  >
-  >  透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
+  >   
+  >     透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
   >
   >
   >  - **INHERIT parent\_table**
@@ -212,12 +212,12 @@
   | DELETE STATISTICS (( column_1_name, column_2_name [, ...] ))    
   | ALTER [ COLUMN ] column_name SET ( {attribute_option = value} [, ... ] )    
   | ALTER [ COLUMN ] column_name RESET ( attribute_option [, ... ] )    
-| ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
+  | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
   ```
 
   ![](public_sys-resources/icon-note.gif) **说明：** 
   
-  >- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] [ FIRST | AFTER column_name ]    **
+  >- **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] [ FIRST | AFTER column_name ]**
   >  向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。
   >
   >  - **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
@@ -252,11 +252,11 @@
   >  改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
   >  ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
   >
-  >  ```
-  >  ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
-  >  ```
+  >   ```
+  >   ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+  >   ```
   >
-  >  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+  >     这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
   >
   >- **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
   >  为一个字段设置或者删除缺省值。请注意缺省值只应用于随后的INSERT命令，它们不会修改表中已经存在的行。也可以为视图创建缺省，这个时候它们是在视图的ON INSERT规则应用之前插入到INSERT句中的。
@@ -746,7 +746,8 @@ openGauss=# alter table t1 alter index uniq_a visible;
 
 
 
-## 相关链接<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
+## 相关链接
+<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s489a6430be6447c193a4011257dc4994"></a>
 
 [CREATE TABLE](CREATE-TABLE.md)，[DROP TABLE](DROP-TABLE.md)
 

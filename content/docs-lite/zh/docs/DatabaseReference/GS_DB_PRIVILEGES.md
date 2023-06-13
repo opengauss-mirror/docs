@@ -24,7 +24,7 @@ GS\_DB\_PRIVILEGES系统视图记录ANY权限的授予情况，每条记录对�
 </td>
 <td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p12921140112719"><a name="p12921140112719"></a><a name="p12921140112719"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p79211402278"><a name="p79211402278"></a><a name="p79211402278"></a>用户拥有的ANY权限，取值参考<a href="GRANT.md#table1360121832117">表1</a>。</p>
+<td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p79211402278"><a name="p79211402278"></a><a name="p79211402278"></a>用户拥有的ANY权限，取值参考<a href="../SQLReference/GRANT.md#table1360121832117">表1</a>。</p>
 </td>
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>admin_option</p>
