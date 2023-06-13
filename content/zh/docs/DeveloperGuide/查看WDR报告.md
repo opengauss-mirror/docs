@@ -36,12 +36,12 @@ WDR报表主要内容如下表所示。
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul9162210192018"></a><a name="ul9162210192018"></a><ul id="ul9162210192018"><li>最消耗时间的等待时间分类。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
-<tr id="row159402050151318"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p6930825312"><a name="p6930825312"></a><a name="p6930825312"></a><a href="Host-CPU.md">Host CPU</a></p>
+<tr id="row159402050151318"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p6930825312"><a name="p6930825312"></a><a name="p6930825312"></a><a href="../SQLReference/Host-CPU.md">Host CPU</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul6732512112017"></a><a name="ul6732512112017"></a><ul id="ul6732512112017"><li>主机CPU消耗。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
-<tr id="row17551185391511"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1315310231485"><a name="p1315310231485"></a><a name="p1315310231485"></a><a href="IO-Profile.md">IO Profile</a></p>
+<tr id="row17551185391511"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p1315310231485"><a name="p1315310231485"></a><a name="p1315310231485"></a><a href="../SQLReference/IO-Profile.md">IO Profile</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul101821751121920"></a><a name="ul101821751121920"></a><ul id="ul101821751121920"><li>数据库或者节点维度的IO的使用情况。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
 </td>
@@ -56,7 +56,7 @@ WDR报表主要内容如下表所示。
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul16141716192014"></a><a name="ul16141716192014"></a><ul id="ul16141716192014"><li>节点范围的语句的时间分布信息。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>
 </tr>
-<tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="SQL-Statistics.md">SQL Statistics</a></p>
+<tr id="row849110591151"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p148180593320"><a name="p148180593320"></a><a name="p148180593320"></a><a href="../SQLReference/SQL-Statistics.md">SQL Statistics</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul275315279205"></a><a name="ul275315279205"></a><ul id="ul275315279205"><li>SQL语句各个维度性能统计，按以下维度排序展示：总时间、平均时间、CPU耗时、返回的行数、扫描的行数、执行次数、逻辑读、物理读。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
 </td>

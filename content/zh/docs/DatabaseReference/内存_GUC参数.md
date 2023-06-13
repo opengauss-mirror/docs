@@ -348,7 +348,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## memory\_trace\_level<a name="section198622451396"></a>
 
-**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](设置参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：枚举型
 
