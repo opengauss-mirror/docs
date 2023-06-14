@@ -41,7 +41,7 @@ openGauss提供涵盖11大类，26个子类的KPI，包括：Instance、File、O
 KPI指标内核的分布如[图1](#fig20286741318)所示。
 
 **图 1**  KPI指标内核分布<a name="fig20286741318"></a>  
-![](figures/KPI指标内核分布.png "KPI指标内核分布")
+![](figures/KPI-Indicator-Kernel-Distribution.png "KPI指标内核分布")
 
 ## 特性增强<a name="section161567423211"></a>
 

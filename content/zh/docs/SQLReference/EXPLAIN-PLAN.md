@@ -69,7 +69,7 @@ FOR statement ;
     SELECT * FROM PLAN_TABLE;
     ```
 
-    ![](figures/文档.png)
+    ![](figures/document.png)
 
 3.  清理PLAN\_TABLE表中的数据。
 
