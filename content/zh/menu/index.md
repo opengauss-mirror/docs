@@ -51,6 +51,7 @@ headless: true
 	    	-   [物理备份]({{< relref "./docs/AboutopenGauss/物理备份.md" >}})
 	    	-   [作业失败自动重试]({{< relref "./docs/AboutopenGauss/作业失败自动重试.md" >}})
 	    	-   [极致RTO]({{< relref "./docs/AboutopenGauss/极致RTO.md" >}})
+			-   [极致RTO按需回放]({{< relref "./docs/AboutopenGauss/极致RTO按需回放.md" >}})
 	    	-   [基于Paxos协议的高可用]({{< relref "./docs/AboutopenGauss/基于Paxos协议的高可用.md" >}})
 	    	-   [级联备机]({{< relref "./docs/AboutopenGauss/级联备机.md" >}})
 	    	-   [延时回放]({{< relref "./docs/AboutopenGauss/延时回放.md" >}})
