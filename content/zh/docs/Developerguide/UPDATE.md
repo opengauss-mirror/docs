@@ -54,7 +54,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   关键字详见[SELECT](SELECT.md)一节介绍
 
-  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)
+  示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)
 
 -   **alias**
 
