@@ -103,5 +103,5 @@ openGauss的Schema如下表所示。
 
 -   **[LOCKS](LOCKS.md)**  
 
--   **[RTO](RTO.md)**  
+-   **[RTO](RTO-RPO.md)**  
 

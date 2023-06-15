@@ -197,7 +197,7 @@ SQL on other openGauss需要unixODBC-2.3.4及openGauss ODBC，openGauss ODBC需�
     gs_guc reload -Z datanode -N Linux-235 -I all -c "listen_addresses='localhost,10.11.12.16'"
     ```
     
-    更详细的说明请参考章节[Linux下配置数据源](zh-cn_topic_0289900737.md)中的[7](zh-cn_topic_0289900737.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
+    更详细的说明请参考章节[Linux下配置数据源](Linux下配置数据源.md)中的[7](Linux下配置数据源.md#zh-cn_topic_0283136654_zh-cn_topic_0237120407_zh-cn_topic_0059778464_l4c0173b8af93447e91aba24005e368e5)。
 
     c.  在远端数据库实例DN设置认证方式。
 
