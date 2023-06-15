@@ -121,7 +121,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](系统性能快照.md#zh-c
         \o \a \t 
         ```
 
-6.  在/home/om/下根据需要[查看WDR报告](zh-cn_topic_0000001215195224.md)。
+6.  在/home/om/下根据需要[查看WDR报告](查看WDR报告.md)。
 
 ## 示例<a name="zh-cn_topic_0283137259_section65481355161913"></a>
 

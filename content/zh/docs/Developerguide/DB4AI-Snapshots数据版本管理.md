@@ -102,7 +102,7 @@ DB4AI-Snapshots的状态包括published、archived以及purged。其中，publis
             (1 row)
             ```
 
-            其中，“@”为数据表快照的版本分隔符，from子句后加上已存在的数据表快照，用法为“@”+版本号，USING关键字后加入可选的几个操作关键字（INSERT …/UPDATE …/DELETE …/ALTER …）,其中 “INSERT INTO”以及“DELETE FROM”语句中的“INTO”、“FROM”等与数据表快照名字相关联的子句可以省略，具体可以参考[AI特性函数](zh-cn_topic_0303599451.md)。
+            其中，“@”为数据表快照的版本分隔符，from子句后加上已存在的数据表快照，用法为“@”+版本号，USING关键字后加入可选的几个操作关键字（INSERT …/UPDATE …/DELETE …/ALTER …）,其中 “INSERT INTO”以及“DELETE FROM”语句中的“INTO”、“FROM”等与数据表快照名字相关联的子句可以省略，具体可以参考[AI特性函数](AI特性函数AI特性函数.md)。
 
             示例中，基于前述s1@1.0快照，插入2条数据，删除1条新的数据，新生成的快照s1@3.0，检索该s1@3.0：
 

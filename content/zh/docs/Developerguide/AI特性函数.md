@@ -68,7 +68,7 @@
 
     返回值类型：text
 
-    示例请参见[使用指导](使用指导-20.md)。
+  
 
 - encode\_plan\_node\(optname text, orientation text, strategy text, options text, dop int8, quals text, projection text\)
 
@@ -90,7 +90,7 @@
 
     返回值类型：startup\_time\_accuracy FLOAT8、  total\_time\_accuracy FLOAT8、  rows\_accuracy FLOAT8、 peak\_memory\_accuracy FLOAT8
 
-    示例请参见[使用指导](使用指导-20.md)。
+    
 
 -   track\_model\_train\_opt\(ip text, port text\)
 
@@ -100,8 +100,7 @@
 
     返回值类型：text
 
-    示例请参见[使用指导](使用指导-20.md)。
-
+    
 -   encode\_feature\_perf\_hist\(datname text\)
 
     描述：将目标数据库已收集的历史计划算子进行编码。
@@ -110,7 +109,7 @@
 
     返回值类型：queryid bigint、 plan\_node\_id int、 parent\_node\_id int、 left\_child\_id int、 right\_child\_id int, encode text、 startup\_time bigint、 total\_time bigint、 rows bigint、 peak\_memory int
 
-    示例请参见[使用指导](使用指导-20.md)。
+    
 
 -   gather\_encoding\_info\(datname text\)
 
@@ -120,7 +119,7 @@
 
     返回值类型：int
 
-    示例请参见[使用指导](使用指导-20.md)。
+  
 
 -   db4ai\_predict\_by\_bool \(text, VARIADIC "any"\)
 

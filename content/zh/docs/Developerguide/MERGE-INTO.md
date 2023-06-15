@@ -62,7 +62,7 @@ NOTICE: 'subquery' in the UPDATE and INSERT clauses are only avaliable in CENTRA
 
   如果value子句的值和指定分区不一致，会抛出异常。
 
-  示例详见[CREATE TABLE SUBPARTITION](zh-cn_topic_0000001198046401.md)。
+  示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)。
 
 - **alias**
 

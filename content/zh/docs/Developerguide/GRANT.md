@@ -547,7 +547,7 @@ GRANT的参数说明如下所示。
 
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](zh-cn_topic_0000001190922647.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
+>用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](Schema.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 
 ## 示例<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s724dfb1c8978412b95cb308b64dfa447"></a>
 
