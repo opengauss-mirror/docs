@@ -632,6 +632,9 @@
 -   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     为表或索引指定一个可选的存储参数。
+    > ![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE下的普通表和分区表）
 
 -   **tablespace\_name**
 
