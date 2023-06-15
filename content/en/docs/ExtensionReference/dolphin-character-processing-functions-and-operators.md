@@ -7,7 +7,6 @@ Compared with the original openGauss, Dolphin modifies character processing func
 3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
 4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
 5. The `LIKE/NOT LIKE` operator is modified.
-6. The `NAME_CONST` function is added.
 
 -   bit\_length\(string\)
 
@@ -787,19 +786,3 @@ Compared with the original openGauss, Dolphin modifies character processing func
        1267
       (1 row)
     ```
-
-- NAME\_CONST\(const name, const value\)
-  
-  Description: Returns a result set consisting of the specified column names and column values. The input parameter should be a parameter that can be converted to a const type, and does not accept function expressions or variables.
-
-  Return type: text
-
-  Example:
-
-  ```sql
-  SELECT NAME_CONST('abc', 123);
-     abc 
-    -----
-     123
-    (1 row)
-  ```
