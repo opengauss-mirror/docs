@@ -305,7 +305,7 @@ GS\_WLM\_SESSION\_INFO\_ALL视图显示在数据库实例上执行作业结束�
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0112535431_p76724153911"><a name="zh-cn_topic_0112535431_p76724153911"></a><a name="zh-cn_topic_0112535431_p76724153911"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0112535431_p1367104103912"><a name="zh-cn_topic_0112535431_p1367104103912"></a><a name="zh-cn_topic_0112535431_p1367104103912"></a>主要显示如下几类告警信息以及<a href="SQL自诊断.md">SQL自诊断调优相关告警</a>：<a name="ul1751385241714"></a><a name="ul1751385241714"></a><ul id="ul1751385241714"><li>Spill file size large than 256MB</li><li>Broadcast size large than 100MB</li><li>Early spill</li><li>Spill times is greater than 3</li><li>Spill on memory adaptive</li><li>Hash table conflict</li></ul>
+<td class="cellrowborder" valign="top" width="59.4059405940594%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0112535431_p1367104103912"><a name="zh-cn_topic_0112535431_p1367104103912"></a><a name="zh-cn_topic_0112535431_p1367104103912"></a>主要显示如下几类告警信息以及<a href="../PerformanceTuningGuide/SQL自诊断.md">SQL自诊断调优相关告警</a>：<a name="ul1751385241714"></a><a name="ul1751385241714"></a><ul id="ul1751385241714"><li>Spill file size large than 256MB</li><li>Broadcast size large than 100MB</li><li>Early spill</li><li>Spill times is greater than 3</li><li>Spill on memory adaptive</li><li>Hash table conflict</li></ul>
 </div>
 </td>
 </tr>
