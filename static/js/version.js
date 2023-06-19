@@ -1,42 +1,33 @@
 // 本文件存放控制版本相关的跳转及下载的代码
-$(document).ready(function () {
-  const version = window.location.pathname.split("/")[3];
-  function jumpDocsHome(lang, version) {
-    const versionObj = lang === "zh" ? versionObjZh : versionObjEn;
-    const link =
-      "/" +
-      lang +
-      "/docs/" +
-      version +
-      versionObj[version.split("-")[0]].homePath;
-    window.open(link, "_self");
-  }
-  // 读取数据生成版本切换的element元素
-  function createVersionSpan() {
-    const versionObj = lang === "zh" ? versionObjZh : versionObjEn;
-    let spanElement = "";
-    Object.keys(versionObj).forEach((key) => {
-      spanElement = spanElement + `<span>${key}</span>`;
-    });
-    $("#version-select .option,#menu-top-mobile .option").prepend(spanElement);
-  }
-  createVersionSpan();
-  // 控制中英文切换
-  $("#lang .lang-item,.theme-lang-mobile .lang a").click(function () {
-    const linkLang = $(this).attr("name");
-    jumpDocsHome(linkLang, version);
+function jumpDocsHome(lang, version) {
+  const versionObj = lang === 'zh' ? versionObjZh : versionObjEn;
+  const link =
+    '/' +
+    lang +
+    '/docs/' +
+    version +
+    versionObj[version.split('-')[0]].homePath;
+  window.open(link, '_self');
+}
+// 读取数据生成版本切换的element元素
+function createVersionSpan() {
+  const versionObj = lang === 'zh' ? versionObjZh : versionObjEn;
+  let spanElement = '';
+  Object.keys(versionObj).forEach((key) => {
+    spanElement =
+      spanElement +
+      `<p>
+      <span class="version-name">${key}</span>
+      <span class="version-state">(${versionObj[key].state})</span>
+      </p>`;
   });
-  // 控制版本切换
-  $("#version-select .option span,#menu-top-mobile .option>span").click(
-    function () {
-      jumpDocsHome(lang, $(this).html());
-    }
-  );
-  // 文档下载按钮生成
-  (function () {
-    const version = location.pathname.split("/")[3];
-    const versionObj = lang === "zh" ? versionObjZh : versionObjEn;
-    const svg = `<?xml version="1.0" encoding="UTF-8"?>
+  $('#version-select .option,#menu-top-mobile .option').prepend(spanElement);
+}
+// 文档下载按钮生成
+function createDownloadBtn() {
+  const version = location.pathname.split('/')[3];
+  const versionObj = lang === 'zh' ? versionObjZh : versionObjEn;
+  const svg = `<?xml version="1.0" encoding="UTF-8"?>
     <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>切片</title>
         <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,18 +42,32 @@ $(document).ready(function () {
             </g>
         </g>
     </svg>`;
-    let downLink = "";
-    if (versionObj[version] && versionObj[version].downLink) {
-      downLink = versionObj[version].downLink;
-    } else {
-      $(".sidebar .download-button").hide();
-    }
-    let downloadElement = null;
-    if (lang === "zh") {
-      downloadElement = `<button><a href="${downLink}">文档下载 ${svg}</a></button>`;
-    } else {
-      downloadElement = `<button><a href="${downLink}">Download ${svg}</a></button>`;
-    }
-    $(".sidebar .download-button").html(downloadElement);
-  })();
+  let downLink = '';
+  if (versionObj[version] && versionObj[version].downLink) {
+    downLink = versionObj[version].downLink;
+  } else {
+    $('.sidebar .download-button').hide();
+  }
+  let downloadElement = null;
+  if (lang === 'zh') {
+    downloadElement = `<button><a href="${downLink}">文档下载 ${svg}</a></button>`;
+  } else {
+    downloadElement = `<button><a href="${downLink}">Download ${svg}</a></button>`;
+  }
+  $('.sidebar .download-button').html(downloadElement);
+}
+$(document).ready(function () {
+  const lang = location.href.split('/')[3];
+  const version = window.location.pathname.split('/')[3];
+  createVersionSpan();
+  // 控制中英文切换
+  $('#lang .lang-item,.theme-lang-mobile .lang a').click(function () {
+    const linkLang = $(this).attr('name');
+    jumpDocsHome(linkLang, version);
+  });
+  // 控制版本切换
+  $('#version-select .option p,#menu-top-mobile .option>p').click(function () {
+    jumpDocsHome(lang, $(this).children('.version-name').html());
+  });
+  createDownloadBtn();
 });

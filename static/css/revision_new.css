@@ -374,12 +374,16 @@ body {
   #menu-top-mobile .option {
     background-color: var(--o-color-bg1);
   }
-  #menu-top-mobile .option > span {
+  #menu-top-mobile .option > p {
     display: block;
     margin-left: 16px;
     padding-top: 16px;
+    text-align: left;
   }
-  #menu-top-mobile .option > span:nth-last-of-type(1) {
+  #menu-top-mobile .option > p::before{
+    display: none;
+  }
+  #menu-top-mobile .option > p:nth-last-of-type(1) {
     padding-bottom: 16px;
   }
   #menu-top-mobile .option {

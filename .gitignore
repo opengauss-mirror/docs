@@ -9,3 +9,4 @@ resources/_gen.DS_Store
 /web-ui/package-lock.json
 public
 layouts/partials/docs/test.html
+node_modules
