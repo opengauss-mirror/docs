@@ -57,7 +57,7 @@ The local trust mechanism is configured for the openGauss image. Therefore, no p
 
 **Complexity requirements for openGauss password:**
 
-The password must contain at least eight characters, including uppercase letters, lowercase letters, digits, and special characters \(**\#?!@$%^&\*-**\).  **!$& **must be escaped using a backslash \(\\\).
+The password must contain at least eight characters, including uppercase letters, lowercase letters, digits, and special characters \(**\#?!@$%^&\*-**\).  **!$&** must be escaped using a backslash \(\\\).
 
 **GS\_NODENAME**
 

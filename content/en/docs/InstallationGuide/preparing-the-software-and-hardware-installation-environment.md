@@ -238,7 +238,7 @@ Currently, the installation can be performed only when the firewall is disabled.
 
 **Setting Character Set Parameters**
 
-Set the same character set for all database nodes. You can add  **export LANG=***Unicode*  to the  **/etc/profile**  file.
+Set the same character set for all database nodes. You can add  **export LANG=** *Unicode*  to the  **/etc/profile**  file.
 
 ```
 vim /etc/profile
