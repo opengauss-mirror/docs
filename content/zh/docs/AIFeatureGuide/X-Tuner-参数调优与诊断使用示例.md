@@ -83,7 +83,7 @@ gs_dbmind component xtuner recommend -f connection.json
 -   rl\_steps：训练过程的最大迭代步数。
 -   max\_episode\_steps：每个回合的最大步数。
 -   scenario：明确指定的workload类型，如果为auto则为自动判断。在不同模式下，推荐的调优参数列表也不一样。
--   tuning\_list：**用户指定需要调哪些参数，如果不指定，则根据workload类型自动推荐应该调的参数列表。**如需指定，则tuning\_list表示调优列表文件的路径。一个调优列表配置文件的文件内容示例如下：
+-   tuning\_list：**用户指定需要调哪些参数，如果不指定，则根据workload类型自动推荐应该调的参数列表。** 如需指定，则tuning\_list表示调优列表文件的路径。一个调优列表配置文件的文件内容示例如下：
 
     ```
     {
