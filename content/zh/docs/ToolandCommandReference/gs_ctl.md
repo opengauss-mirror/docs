@@ -190,14 +190,14 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_row79165943917"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p16108598396"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p16108598396"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p16108598396"></a>-T</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p110125916399"></a>-T 后面跟term，升主命令时会用此term作为主机term，build时会连接大于等于此term的主机进行build。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p2106594397"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p2106594397"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_p2106594397"></a>term的取值范围，无符号整型。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275989_row89351326193410"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p19935152683419"><a name="zh-cn_topic_0287275989_p19935152683419"></a><a name="zh-cn_topic_0287275989_p19935152683419"></a>-d</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p19935726153414"><a name="zh-cn_topic_0287275989_p19935726153414"></a><a name="zh-cn_topic_0287275989_p19935726153414"></a>打印更多调试信息</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p19935726153414"><a name="zh-cn_topic_0287275989_p19935726153414"></a><a name="zh-cn_topic_0287275989_p19935726153414"></a>打印更多调试信息。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1493592615345"><a name="zh-cn_topic_0287275989_p1493592615345"></a><a name="zh-cn_topic_0287275989_p1493592615345"></a>无参数</p>
 </td>
@@ -422,7 +422,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p75531421113819"><a name="p75531421113819"></a><a name="p75531421113819"></a>新增节点的DCF NODE ID。</p>
 </td>
-<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p175531121183815"><a name="p175531121183815"></a><a name="p175531121183815"></a>无符号整型</p>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p175531121183815"><a name="p175531121183815"></a><a name="p175531121183815"></a>无符号整型。</p>
 </td>
 </tr>
 <tr id="row19908138183919"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p199097386398"><a name="p199097386398"></a><a name="p199097386398"></a>-i, --ip</p>
@@ -582,7 +582,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p887411245513"><a name="zh-cn_topic_0287275989_p887411245513"></a><a name="zh-cn_topic_0287275989_p887411245513"></a>mode的取值：</p>
  <p><li>  copy_cluster_full：资源池化执行build，必须结合dorado容灾场景，该参数表示在dorado容灾场景下通过全量镜像的方式重新同步主机的数据目录。 </p>
- <p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：资源池化build只适用于主备集群间的跨集群build，不能用于资源池化单集群内的主备实例build</p>
+ <p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：资源池化build只适用于主备集群间的跨集群build，不能用于资源池化单集群内的主备实例build。</p>
 </div></div>
 </td>
 </tr>
@@ -597,7 +597,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--enable-dss</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>开启资源池化开关</p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>开启资源池化开关。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p729832991415"><a name="zh-cn_topic_0287275989_p729832991415"></a><a name="zh-cn_topic_0287275989_p729832991415"></a>无参数</p>
 </td>
@@ -612,7 +612,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--vgname</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>卷组名</p>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>卷组名。</p>
 </td>
 <td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5621183815134"><a name="p5621183815134"></a><a name="p5621183815134"></a>数据类型：字符串 。</p>
 <p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>例如：一个卷组“+data”或者两个卷组中间用“，”连接“<span>+data,+log</span>”。</p>
