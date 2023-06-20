@@ -181,7 +181,7 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 
 ## enable\_dolphin\_proto<a name="us_topic_0283136886_en-us_topic_0237124695_section48344571148818"></a>
 
-**Parameter descriptio：**Whether enable dolphin database protocol or not
+**Parameter descriptio**: Whether enable dolphin database protocol or not
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

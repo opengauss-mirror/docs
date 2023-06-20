@@ -10,11 +10,11 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 配置好源后，使用**yum install MariaDB-devel MariaDB-shared**安装相关开发库。另外**MariaDB-client**是MariaDB的客户端工具，也可以根据需要安装，用于连接MariaDB进行测试。
 
-安装好开发包后，就可以开始编译mysql\_fdw了。编译时需要在执行**configure**时，加入**--enable-mysql-fdw**选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考**软件安装编译**）
+安装好开发包后，就可以开始编译mysql\_fdw了。编译时需要在执行**configure**时，加入 **--enable-mysql-fdw** 选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考**软件安装编译**）
 
-编译完成后，编译产物为**mysql\_fdw.so**，位于安装目录的**lib/postgresql/** 下。mysql\_fdw相关的sql文件和control文件，位于安装目录的**share/postgresql/Extension/**下。
+编译完成后，编译产物为**mysql\_fdw.so**，位于安装目录的**lib/postgresql/** 下。mysql\_fdw相关的sql文件和control文件，位于安装目录的**share/postgresql/Extension/** 下。
 
-如果编译安装时，没有加入**--enable-mysql-fdw**选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql、mysql\_fdw--1.1.sql、mysql\_fdw--1.0.sql、mysql\_fdw.control**放到对应的安装目录**share/postgresql/Extension/**即可。
+如果编译安装时，没有加入 **--enable-mysql-fdw** 选项，可以在openGauss安装完成后，再次编译mysql\_fdw，然后手动将编译产物**mysql\_fdw.so**放到对应的安装目录**lib/postgresql/**，将**mysql\_fdw--1.0--1.1.sql、mysql\_fdw--1.1.sql、mysql\_fdw--1.0.sql、mysql\_fdw.control**放到对应的安装目录 **share/postgresql/Extension/** 即可。
 
 ## 使用mysql\_fdw<a name="section1776874817393"></a>
 
@@ -47,7 +47,7 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 -   创建USER MAPPING时使用的MariaDB/MySQL Server用户需要有远程连接MariaDB/MySQL Server及对表相关操作的权限。使用外表前，可以在openGauss server所在的机器上，使用MariaDB/MySQL Server的客户端，使用对应的用户名密码确认能否成功连接MariaDB/MySQL Server并进行操作。
 
--   对外表执行DML操作时，出现**Can't initialize character set SQL\_ASCII \(path: compiled\_in\)**错误。由于MariaDB不支持**SQL\_ASCII**编码格式，目前只能通过修改openGauss database的编码格式解决该问题。修改database编码格式的方式为**update pg\_database set encoding = pg\_char\_to\_encoding\('UTF-8'\) where datname = 'postgres';**  datname根据实际情况填写。注意修改完编码格式后，需要重新开启一个gsql会话，才能使mysql\_fdw使用更新后的参数。也可以通过在执行**gs\_initdb**时，使用**--locale=LOCALE**，指定默认的编码格式为**非SQL\_ASCII**编码。
+-   对外表执行DML操作时，出现**Can't initialize character set SQL\_ASCII \(path: compiled\_in\)**错误。由于MariaDB不支持**SQL\_ASCII**编码格式，目前只能通过修改openGauss database的编码格式解决该问题。修改database编码格式的方式为**update pg\_database set encoding = pg\_char\_to\_encoding\('UTF-8'\) where datname = 'postgres';**  datname根据实际情况填写。注意修改完编码格式后，需要重新开启一个gsql会话，才能使mysql\_fdw使用更新后的参数。也可以通过在执行**gs\_initdb**时，使用 **--locale=LOCALE** ，指定默认的编码格式为**非SQL\_ASCII**编码。
 
 
 ## 注意事项<a name="section17197204403"></a>
