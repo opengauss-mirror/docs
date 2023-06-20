@@ -483,7 +483,7 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
             id_rsa.pub                      100%  398     0.4KB/s   00:00    
             known_hosts                     100% 1089     1.1KB/s   00:00    
     
-4.  Run the  **ssh **_Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
+4.  Run the  **ssh** _Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
     ```
     plat1:~ # ssh plat2
