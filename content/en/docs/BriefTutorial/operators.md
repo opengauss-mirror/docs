@@ -4,7 +4,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
 
 ## Arithmetic Operators<a name="section168844437515"></a>
 
--   +
+-   \+
 
     Description: Addition
 
@@ -18,7 +18,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   -
+-   \-
 
     Description: Subtraction
 
