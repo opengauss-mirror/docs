@@ -41,4 +41,5 @@
     ../content/zh/docs/SQLReference/内部函数
     ../content/zh/docs/SQLReference/Global-SysCache特性函数
     ../content/zh/docs/SQLReference/数据损坏检测修复函数
+    ../content/zh/docs/SQLReference/资源池化函数
     ../content/zh/docs/SQLReference/废弃函数
