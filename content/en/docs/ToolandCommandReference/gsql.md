@@ -1273,6 +1273,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </tr>
 </tbody>
 </table>
+
 **Table  13**  Input and output meta-commands
 
 <a name="en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table62130565"></a>
