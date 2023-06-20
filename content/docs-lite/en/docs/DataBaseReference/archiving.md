@@ -25,14 +25,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   If both  **archive\_dest **and  **archive\_command **are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command **does not take effect.
+>-   If both  **archive\_dest** and  **archive\_command** are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command** does not take effect.
 >-   Any  **%p**  in the string is replaced by the absolute path of the file to archive, and any  **%f**  is replaced by only the file name. \(The relative path is relative to the data directory.\) Use  **%%**  to embed an actual  **%**  character in the command.
 >-   This command returns zero only if it succeeds. The command example is as follows:
 >    ```
 >    archive_command = 'cp --remove-destination %p /mnt/server/archivedir/%f' 
 >    ```
 >-   **--remove-destination**  indicates that files will be overwritten during the archiving.
->-   If there are multiple archive commands, write them to the shell script file and set  **archive\_command **to the command for executing the script. The command example is as follows:
+>-   If there are multiple archive commands, write them to the shell script file and set  **archive\_command** to the command for executing the script. The command example is as follows:
 >    ```
 >    -- Assume that multiple commands are as follows:
 >    test ! -f dir/%f && cp %p dir/%f
@@ -53,7 +53,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
->-   If both  **archive\_dest **and  **archive\_command **are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command **does not take effect.
+>-   If both  **archive\_dest** and  **archive\_command** are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command** does not take effect.
 >-   If the string is a relative path, it is relative to the data directory. The following is an example:
 >    ```
 >    archive_dest = '/mnt/server/archivedir/'
