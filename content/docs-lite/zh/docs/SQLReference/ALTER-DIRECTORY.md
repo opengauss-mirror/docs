@@ -8,6 +8,7 @@
 
 -   目前只支持修改directory属主。
 -   当enable\_access\_server\_directory=off时，只允许初始用户修改directory属主；当enable\_access\_server\_directory=on时，具有SYSADMIN权限的用户和directory对象的属主可以修改directory，且要求该用户是新属主的成员。
+-   当修改directory属主时，若新属主与原属主相同，视为未修改属主。即使用户没有修改DIERECTORY的权限，也不会报错。
 
 ## 语法格式<a name="zh-cn_topic_0283137159_zh-cn_topic_0237122058_section185432369210"></a>
 
