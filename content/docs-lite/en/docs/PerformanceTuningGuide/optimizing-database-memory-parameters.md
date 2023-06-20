@@ -12,7 +12,7 @@ Use the following formula to calculate the available memory for job execution:
 
 Therefore, the memory available to job execution depends on  **shared\_buffers**  and  **cstore\_buffers**.
 
-Views for logical memory management are provided to display the used memory and peak information in each database block. You can connect to a database node and run  **pg\_total\_memory\_detail **to query information about the memory usage on this database node.
+Views for logical memory management are provided to display the used memory and peak information in each database block. You can connect to a database node and run  **pg\_total\_memory\_detail** to query information about the memory usage on this database node.
 
 When the specified physical memory is insufficient,  **work\_mem**  determines whether to write additional operator calculation data into temporary tables based on query characteristics and concurrency. This reduces performance by five to 10 times and prolongs the query response time from seconds to minutes.
 

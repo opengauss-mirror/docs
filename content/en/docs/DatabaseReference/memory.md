@@ -42,7 +42,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**:  **on**
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
->-   If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit **to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
+>-   If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit** to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
 >-   If this parameter is set to  **off**, the memory used by the database is not limited. When a large number of concurrent or complex queries are performed, too much memory is used, which may cause OS OOM problems.
 
 ## max\_process\_memory<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
@@ -113,7 +113,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 16 to 1073741823. The unit is 8 KB.
 
-The value of  **segment\_buffers**\_buffers**  must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **segment\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to the value of  **BLCKSZ**.
+The value of  **segment\_buffers** must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **segment\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to the value of  **BLCKSZ**.
 
 **Default value**: 8 MB
 
