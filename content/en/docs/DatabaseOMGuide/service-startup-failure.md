@@ -20,11 +20,11 @@ The service startup failed.
 
     -   Log in to the node that cannot be started. Check the run logs and check whether the resources are insufficient or whether the parameter configurations meet internal constraints. For example, if the message "Out of memory" or the following error information is displayed, the resources are insufficient, the startup fails, or the configuration parameters do not meet the internal constraints.
 
-```
-FATAL: hot standby is not possible because max_connections = 10 is a lower setting than on the master server (its value was 100)
-```
+        ```
+        FATAL: hot standby is not possible because max_connections = 10 is a lower setting than on the master server (its value was 100)
+        ```
 
-    -   Check whether the GUC parameters are set to proper values. For example, check parameters, such as  **shared\_buffers**,  **effective\_cache\_size**, and  **bulk\_write\_ring\_size **that consume much resources, or parameter  **max\_connections**  that cannot be easily set to a value that is less than its last value. For details about how to view and set GUC parameters, see  [Configuring Running Parameters](en-us_topic_0289900453.md).
+    -   Check whether the GUC parameters are set to proper values. For example, check parameters, such as **shared\_buffers**, **effective\_cache\_size**, and **bulk\_write\_ring\_size** that consume much resources, or parameter  **max\_connections**  that cannot be easily set to a value that is less than its last value. For details about how to view and set GUC parameters, see  [Configuring Running Parameters](en-us_topic_0289900453.md).
 
 
 -   Check whether some DNs are abnormal. Check the status of each primary and standby instance in the current database using  **gs\_om -t status --detail**.

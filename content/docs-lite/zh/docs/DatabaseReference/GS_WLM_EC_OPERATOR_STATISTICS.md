@@ -2,7 +2,7 @@
 
 GS\_WLM\_EC\_OPERATOR\_STATISTICS视图显示当前用户正在执行的EC（Extension Connector）作业的算子相关信息。查询该视图需要sysadmin权限。
 
-**表 1** **表1 **GS\_WLM\_EC\_OPERATOR\_STATISTICS的字段
+**表 1** GS\_WLM\_EC\_OPERATOR\_STATISTICS的字段
 
 <a name="table33042210324"></a>
 <table><thead align="left"><tr id="row4340721123215"><th class="cellrowborder" valign="top" width="24.310000000000002%" id="mcps1.2.4.1.1"><p id="p13341202173211"><a name="p13341202173211"></a><a name="p13341202173211"></a>名称</p>
