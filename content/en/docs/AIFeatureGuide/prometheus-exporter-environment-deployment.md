@@ -58,7 +58,7 @@
 
     node\_exporter and opengauss\_exporter are deployed together on the device where the database is located. Multiple devices may exist. The parameters related to these devices are classified as \[EXPORTERS\]. The usernames and passwords of these database nodes must be the same as those of the database nodes. The deployment paths and SSL certificate paths must also be the same.
 
-    The **Targets** option of \[EXPORTERS\] indicates the monitored database instance objects. The format is *IP address***:***Port number***/***DB name*. Multiple database instances are separated by commas (,). Currently, the IP address is strongly verified, and the domain name cannot be entered.
+    The **Targets** option of \[EXPORTERS\] indicates the monitored database instance objects. The format is *IP address:Port number/DB name*. Multiple database instances are separated by commas (,). Currently, the IP address is strongly verified, and the domain name cannot be entered.
 
     For SSL certificate management, Prometheus does not support private key files that contain passwords. Therefore, the one-click deployment function does not support private key files that contain passwords on Prometheus.
 
