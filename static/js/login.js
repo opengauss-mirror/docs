@@ -184,7 +184,6 @@ var Login = {
           Object.prototype.toString.call(data) === '[object Object]'
         ) {
           this.setLogInfo(data, token);
-          this.saveUserAuth(token);
         }
       }).catch(() => {
         this.tokenFailIndicateLogin();
