@@ -46,7 +46,7 @@ WDR报表主要内容如下表所示。
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul101821751121920"></a><a name="ul101821751121920"></a><ul id="ul101821751121920"><li>数据库或者节点维度的IO的使用情况。</li><li>数据库、节点范围报表，cluster模式和node模式下均可查看此报表。</li></ul>
 </td>
 </tr>
-<tr id="row1212013312166"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p7991716336"><a name="p7991716336"></a><a name="p7991716336"></a><a href="../SQLReference/.md">Memory Statistics</a></p>
+<tr id="row1212013312166"><td class="cellrowborder" valign="top" width="25.130000000000003%" headers="mcps1.2.3.1.1 "><p id="p7991716336"><a name="p7991716336"></a><a name="p7991716336"></a><a href="../SQLReference/Memory-Statistics.md">Memory Statistics</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="74.87%" headers="mcps1.2.3.1.2 "><a name="ul4459131414205"></a><a name="ul4459131414205"></a><ul id="ul4459131414205"><li>内核内存使用分布。</li><li>节点范围报表，仅node模式下可查看此报表。</li></ul>
 </td>

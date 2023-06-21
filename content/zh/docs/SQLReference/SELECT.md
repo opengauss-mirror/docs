@@ -341,7 +341,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         CROSS JOIN等效于INNER JOIN ON（TRUE） ，即没有被条件删除的行。这种连接类型只是符号上的方便，因为它们与简单的FROM和WHERE的效果相同。
 
-        > ![img](https://docs.opengauss.org/zh/docs/5.0.0/docs/Developerguide/public_sys-resources/icon-note.png) **说明：** 必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join_condition、USING (join_column [， …]) 之一。但是它们不能出现在CROSS JOIN中。
+        > ![img](public_sys-resources/icon-note.png) **说明：** 必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON、join_condition、USING (join_column [， …]) 之一。但是它们不能出现在CROSS JOIN中。
 
       其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
 
