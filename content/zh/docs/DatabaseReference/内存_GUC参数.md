@@ -374,7 +374,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ##  resilience_memory_reject_percent
 
-**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](设置参数.md)中对应设置方法进行设置。
+**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：字符串，长度大于0
 
