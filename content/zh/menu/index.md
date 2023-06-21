@@ -111,7 +111,7 @@ headless: true
 	    -   [应用开发接口]({{< relref "./docs/AboutopenGauss/应用开发接口.md" >}})
 	    	-   [支持标准SQL]({{< relref "./docs/AboutopenGauss/支持标准SQL.md" >}})
 	    	-   [支持标准开发接口]({{< relref "./docs/AboutopenGauss/支持标准开发接口.md" >}})
-			-   [支持嵌入式SQL预处理器（ECPG）]({{< relref "./docs/AboutopenGauss/支持嵌入式SQL预处理器（ECPG）.md" >}})
+			-   [支持嵌入式SQL预处理器（ECPG）]({{< relref "./docs/AboutopenGauss/支持嵌入式SQL预处理器-ECPG.md" >}})
 	    	-   [PG接口兼容]({{< relref "./docs/AboutopenGauss/PG接口兼容.md" >}})
 	    	-   [支持PL/Java]({{< relref "./docs/AboutopenGauss/支持PL-Java.md" >}})
 	    	-   [MySQL兼容性增强]({{< relref "./docs/AboutopenGauss/MySQL兼容性增强.md" >}})
