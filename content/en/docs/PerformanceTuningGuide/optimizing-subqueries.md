@@ -12,8 +12,8 @@ In openGauss, subqueries can also be called sublinks based on the location of su
     In conclusion, a subquery is a RangeTblEntry and a sublink is an expression in the query parsing tree. A sublink can be found in constraint conditions and expressions. In openGauss, sublinks can be classified into the following types:
 
     -   exist\_sublink: corresponds to the  **EXIST**  and  **NOT EXIST**  statements.
-    -   any\_sublink: corresponding to the  _op_** ALL\(SELECT...\)**  statement.  _op_  can be the  **IN**,  **<**,  **\>**, or  **=**  operator.
-    -   all\_sublink: corresponding to the  _op_** ALL\(SELECT...\)**  statement.  _op_  can be the  **IN**,  **<**,  **\>**, or  **=**  operator.
+    -   any\_sublink: corresponding to the  _op_ **ALL\(SELECT...\)**  statement.  _op_  can be the  **IN**,  **<**,  **\>**, or  **=**  operator.
+    -   all\_sublink: corresponding to the  _op_ **ALL\(SELECT...\)**  statement.  _op_  can be the  **IN**,  **<**,  **\>**, or  **=**  operator.
     -   rowcompare\_sublink: corresponds to the  **RECORD **_op_** \(SELECT...\)**  statement.
     -   expr\_sublink: corresponds to the  **\(SELECT**_ with a single target list item..._**\)**  statement.
     -   array\_sublink: corresponds to the  **ARRAY\(SELECT...\)**  statement.
@@ -235,7 +235,7 @@ Filter: (c1 = t1.c1)
 
         the process of pulling up such a sublink is as follows:
 
-        1.  Extract  **opExpr**  from the  **OR**  clause in the  **WHERE **condition. The value is  **t1.a = \(select avg\(a\) from t3 where t1.b = t3.b\)**.
+        1.  Extract  **opExpr**  from the  **OR**  clause in the  **WHERE** condition. The value is  **t1.a = \(select avg\(a\) from t3 where t1.b = t3.b\)**.
         2.  The  **opExpr**  contains a subquery. If the subquery can be pulled up, the subquery is rewritten as  **select avg\(a\), t3.b from t3 group by t3.b**, generating the  **NOT NULL**  condition  **t3.b is not null**. The  **opExpr**  is replaced with this  **NOT NULL**  condition. In this case, the SQL statement changes to:
 
             ```
