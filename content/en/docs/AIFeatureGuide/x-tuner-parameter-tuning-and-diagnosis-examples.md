@@ -120,7 +120,7 @@ After the preceding configuration items are configured, run the following comman
 gs_dbmind component xtuner train -f connection.json
 ```
 
-After the training is complete, a model file is generated in the directory specified by the  **rl\_model\_path **configuration item.
+After the training is complete, a model file is generated in the directory specified by the  **rl\_model\_path** configuration item.
 
 ## Example of Using the tune Mode<a name="section1487391316816"></a>
 
@@ -128,11 +128,11 @@ The tune mode supports a plurality of algorithms, including a DDPG algorithm bas
 
 The configuration items related to the tune mode are as follows:
 
--   **tune\_strategy**: specifies the algorithm to be used for tuning. The value can be  **rl **\(using the reinforcement learning model\),  **gop **\(using the global optimization algorithm\), or  **auto **\(selected automatically\). If this parameter is set to  **rl**, RL-related configuration items take effect. In addition to the preceding configuration items that take effect in train mode, the  **test\_episode **configuration item also takes effect. This configuration item indicates the maximum number of episodes in the tuning process. This parameter directly affects the execution time of the tuning process. Generally, a larger value indicates longer time consumption.
+-   **tune\_strategy**: specifies the algorithm to be used for tuning. The value can be  **rl**\(using the reinforcement learning model\),  **gop**\(using the global optimization algorithm\), or  **auto**\(selected automatically\). If this parameter is set to **rl**, RL-related configuration items take effect. In addition to the preceding configuration items that take effect in train mode, the  **test\_episode** configuration item also takes effect. This configuration item indicates the maximum number of episodes in the tuning process. This parameter directly affects the execution time of the tuning process. Generally, a larger value indicates longer time consumption.
 -   **gop\_algorithm**: specifies a global optimization algorithm. The value can be  **bayes**  or  **pso**.
 -   **max\_iterations**: specifies the maximum number of iterations. A larger value indicates a longer search time and better search effect.
 -   **particle\_nums**: specifies the number of particles. This parameter is valid only for the PSO algorithm.
--   For details about  **scenario **and  **tuning\_list**, see the description of train mode.
+-   For details about  **scenario** and **tuning\_list**, see the description of train mode.
 
 After the preceding items are configured, run the following command to start tuning:
 
