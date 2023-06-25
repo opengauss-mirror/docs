@@ -64,7 +64,7 @@ GET DIAGNOSTICS @p1 = NUMBER, @p2 = ROW_COUNT;
 GET DIAGNOSTICS CONDITION 1 @p3 = RETURNED_SQLSTATE, @p4 = MESSAGE_TEXT;
 ```
 
->![](public_sys-resources/icon-note.png) **参数说明：**   
+>![](public_sys-resources/icon-note.gif) **参数说明：**   
 >
 >1. 关键字 CURRENT 表示从当前诊断区域检索信息。关键字 STACKED 意味着从第二个诊断区域检索信息，该区域仅在当前上下文是条件句柄时可用。如果两个关键字都未给定，则默认为使用当前诊断区域。
 >1. 用于存储项信息的有效 ***target\*** 指示符可以是存储过程或函数参数、用 DECLARE 声明的存储程序局部变量或用户定义的变量。
