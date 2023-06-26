@@ -145,7 +145,7 @@ openGauss=# SELECT * FROM test_datetime;
 ------------------------
  2020-11-08 02:31:25.96
  2020-11-12 23:45:12
-(3 rows)
+(2 rows)
 ```
 
 ### Timestamp Type Inputs
@@ -186,7 +186,7 @@ openGauss=# SELECT * FROM test_timestamp;
 ------------------------
  2012-10-22 20:07:23
  2020-11-12 23:45:12
-(3 rows)
+(2 rows)
     
 --Change the time zone.
 openGauss=# SET TIME ZONE UTC;
@@ -197,7 +197,7 @@ openGauss=# SELECT * FROM test_timestamp;
 ------------------------
  2012-10-22 12:07:23
  2020-11-12 15:45:12
-(3 rows)
+(2 rows)
 ```
 
 ### Input of the year/year(4) or year(2) type
