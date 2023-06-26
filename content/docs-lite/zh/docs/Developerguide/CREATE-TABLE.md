@@ -292,7 +292,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
   
   - DELTAROW\_THRESHOLD
   
-      指定列存表导入时小于多少行的数据进入delta表，只在GUC参数[enable\_delta\_store](zh-cn_topic_0289900911.md#zh-cn_topic_0283136577_zh-cn_topic_0237124705_section1035224982816)开启时生效。该参数只对列存表有效。
+      指定列存表导入时小于多少行的数据进入delta表，只在GUC参数enable\_delta\_store开启时生效。该参数只对列存表有效。
   
       取值范围：0～9999，默认值为100
   
