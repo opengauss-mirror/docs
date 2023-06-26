@@ -93,7 +93,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   查询LUN/注册信息
 
     ```
-    dsscmd inq  <-t inq_type>
+    dsscmd inq  <-t inq_type> [-D DSS_HOME]
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
