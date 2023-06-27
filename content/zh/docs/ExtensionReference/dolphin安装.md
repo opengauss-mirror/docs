@@ -13,7 +13,7 @@
 4. 创建B库并使用初始用户连接B库。
 
 ```
-create database db_name dbcompatibility 'B';
+openGauss=# create database db_name dbcompatibility 'B';
 ```
 
 
