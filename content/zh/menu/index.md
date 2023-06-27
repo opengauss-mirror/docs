@@ -1250,6 +1250,7 @@ headless: true
     	-   [Global SysCache特性函数]({{< relref "./docs/SQLReference/Global-SysCache特性函数.md" >}})
     	-   [数据损坏检测修复函数]({{< relref "./docs/SQLReference/数据损坏检测修复函数.md" >}})
     	-   [XML类型函数]({{< relref "./docs/SQLReference/XML类型函数.md" >}})
+    	-   [资源池化函数]({{< relref "./docs/SQLReference/资源池化函数.md" >}})
     	-   [废弃函数]({{< relref "./docs/SQLReference/废弃函数.md" >}})
     -   [类型转换]({{< relref "./docs/SQLReference/类型转换.md" >}})
         -   [概述]({{< relref "./docs/SQLReference/概述_类型转换.md" >}})
