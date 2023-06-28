@@ -12,6 +12,11 @@
 
 4. 创建B库并使用初始用户连接B库。
 
+```
+openGauss=# create database db_name dbcompatibility 'B';
+```
+
+
 ## OM安装
 
 1. om安装的openGauss。
