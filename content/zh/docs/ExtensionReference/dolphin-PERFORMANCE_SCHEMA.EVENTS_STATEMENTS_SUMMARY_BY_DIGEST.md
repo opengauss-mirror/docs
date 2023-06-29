@@ -4,7 +4,7 @@ PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_SUMMARY_BY_DIGEST视图。兼容Mysql对应
 >![](public_sys-resources/icon-note.png) **说明：** 
 >-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
 >-   底层访问dbe_perf.statement，dbe_perf.statement_history表，需要满足相关权限要求，并开启相关配置参数，如track_stmt_parameter=on, 设置track_stmt_stat_level, enable_thread_pool = off。
-
+>-   该视图显示语句上限受dbe_perf.statement的上限限制，可通过GUC参数instr_unique_sql_count调整。
 
 **表 1**  EVENTS_STATEMENTS_SUMMARY_BY_DIGEST字段
 
