@@ -45,6 +45,7 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/预留参数
     ../content/zh/docs/DatabaseReference/AI特性-GUC
     ../content/zh/docs/DatabaseReference/Global-SysCache参数
+    ../content/zh/docs/DatabaseReference/多级缓存管理参数
     ../content/zh/docs/DatabaseReference/资源池化参数
     ../content/zh/docs/DatabaseReference/高效数据压缩算法相关参数
     ../content/zh/docs/DatabaseReference/备机支持写语句参数

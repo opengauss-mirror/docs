@@ -1794,6 +1794,7 @@ headless: true
     	-   [预留参数]({{< relref "./docs/DatabaseReference/预留参数.md" >}})
     	-   [AI特性]({{< relref "./docs/DatabaseReference/AI特性-GUC.md" >}})
     	-   [Global SysCache参数]({{< relref "./docs/DatabaseReference/Global-SysCache参数.md" >}})
+    	-   [多级缓存管理参数]({{< relref "./docs/DatabaseReference/多级缓存管理参数.md" >}})
     	-   [资源池化参数]({{< relref "./docs/DatabaseReference/资源池化参数.md" >}})
     	-   [高效数据压缩算法相关参数]({{< relref "./docs/DatabaseReference/高效数据压缩算法相关参数.md" >}})
     	-   [备机支持写语句参数]({{< relref "./docs/DatabaseReference/备机支持写语句参数.md" >}})
