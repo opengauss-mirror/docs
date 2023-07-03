@@ -9,6 +9,7 @@
 5. 修改```like/not like ```操作符的表现。
 6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
 7. 新增```text_bool/varchar_bool/char_bool```函数。
+8. 新增```name_const```函数。
 
 -   bit\_length\(string\)
 
@@ -1008,4 +1009,18 @@
   (1 row)
   ```
 
- 
+-   name\_const\(const name, const value\)
+
+    描述：返回指定的列名和列值组成的结果集。输入参数应为可以转化为const类型的参数，不接受函数表达式或变量。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT name_const('abc', 123);
+     abc 
+    -----
+     123
+    (1 row)
+    ```
