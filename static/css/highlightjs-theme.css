@@ -46,11 +46,11 @@ code.hljs {
 }
 
 .hljs-bullet,.hljs-deletion,.hljs-name,.hljs-selector-tag,.hljs-template-variable,.hljs-variable {
-  color: var(--o-color-red6)
+  color: var(--o-color-brand4)
 }
 
 .hljs-attr,.hljs-link,.hljs-literal,.hljs-number,.hljs-symbol,.hljs-variable.constant_ {
-  color: var(--o-color-green4)
+  color: var(--o-color-yellow2)
 }
 
 .hljs-class .hljs-title,.hljs-title,.hljs-title.class_ {
@@ -62,7 +62,7 @@ code.hljs {
   color:  var(--o-color-yellow4)
 }
 .hljs-params{
-  color: var(--o-color-red3)
+  color: var(--o-color-brand2);
 }
 .hljs-addition,.hljs-code,.hljs-string,.hljs-title.class_.inherited__ {
   color: var(--o-color-orange2)
