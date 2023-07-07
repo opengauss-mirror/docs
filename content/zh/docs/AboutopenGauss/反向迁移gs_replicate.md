@@ -30,3 +30,13 @@ debezium opengauss connector的sink端，从kafka读取AVRO格式的数据，在
 ## 依赖关系<a name="section8406643144716"></a>
 
 依赖逻辑复制与发布订阅。
+
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+
+反向迁移社区地址：https://gitee.com/opengauss/debezium/tree/master 
+
+详细参考文档 [README.md](https://gitee.com/opengauss/debezium/blob/master/README.md) 
