@@ -91,7 +91,7 @@ String functions and operators provided by openGauss are for concatenating strin
     Example:
 
     ```
-    openGauss=# SELECT INSERT("begtut.com", 1, 6, "Example");
+    openGauss=# SELECT INSERT('begtut.com', 1, 6, 'Example');
     --------
     Example.com     
     (1 row)
