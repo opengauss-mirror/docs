@@ -276,7 +276,28 @@ LOCK的参数说明如下所示：
 
 ```
 --在执行删除操作时对一个有主键的表进行 SHARE ROW EXCLUSIVE 锁。
-openGauss=# CREATE TABLE tpcds.reason_t1 AS TABLE tpcds.reason;
+openGauss=# CREATE TABLE tpcds.reason_t1 (
+r_reason_sk integer,
+r_reason_id character(16),
+r_reason_desc character(100),
+primary key (r_reason_sk)
+);
+
+openGauss=# insert into tpcds.reason_t1 values (1, 'AAAAAAABAAAAAA','reason1');
+
+openGauss=# insert into tpcds.reason_t1 values (2, 'AAAAAAACAAAAAA','reason2');
+
+openGauss=# insert into tpcds.reason_t1 values (3, 'AAAAAAADAAAAAA','reason3');
+
+openGauss=# insert into tpcds.reason_t1 values (4, 'AAAAAAAEAAAAAA','reason4');
+
+openGauss=# insert into tpcds.reason_t1 values (5, 'AAAAAAAFAAAAAA','reason5');
+
+openGauss=# insert into tpcds.reason_t1 values (6, 'AAAAAAAGAAAAAA','reason6');
+
+openGauss=# insert into tpcds.reason_t1 values (7, 'AAAAAAAHAAAAAA','reason7');
+
+openGauss=# insert into tpcds.reason_t1 values (8, 'AAAAAAAIAAAAAA','reason8');
 
 openGauss=# START TRANSACTION;
 
