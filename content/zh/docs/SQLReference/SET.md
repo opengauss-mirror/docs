@@ -27,7 +27,7 @@
 -   设置客户端编码集。
 
     ```
-    SET [ SESSION | LOCAL ] NAMES encoding_name;
+    SET [ SESSION | LOCAL ] NAMES encoding_name [COLLATE collate_name];
     ```
 
 -   设置XML的解析方式。
@@ -111,6 +111,20 @@
     用于设置客户端的字符编码。等价于set client\_encoding to encoding\_name。
 
     取值范围：有效的字符编码。该选项对应的运行时参数名称为client\_encoding，默认编码为UTF8。
+
+    在兼容B模式（sql\_compatibility = 'B'），并且GUC参数b\_format\_behavior\_compat\_options设置值包含enable\_multi\_charset的场景下，
+
+    该选项额外还会将GUC参数character\_set\_connection设置成encoding\_name，用于设置字符串常量的默认字符集。若未指定COLLATE collate\_name选项，
+
+    则会将将GUC参数collation\_connection设置成当前encoding\_name的默认字符序。
+
+-   **COLLATE collate\_name**
+
+    该选项只有在兼容B模式下（sql\_compatibility = 'B'）支持，并且GUC参数b\_format\_behavior\_compat\_options设置值包含enable\_multi\_charset的场景下生效。
+
+    用于设置字符串常量的默认字符序，指定的collate\_name要属于指定的encoding\_name，将GUC参数collation\_connection设置成指定的collate\_name。
+
+    取值范围：有效的字符序名称。该选项对应的运行时GUC参数名称为collation\_connection。
 
 -   **XML OPTION option**
 

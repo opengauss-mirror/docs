@@ -444,27 +444,6 @@ openGauss=# set auto_increment_increment = default;
 SET
 ```
 
-## character_set_connection<a name="section203671436829"></a>
-
-**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示没有字符集引入程序时，使用该字符集。
-
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
-
-**取值范围**：字符串
-
-**默认值**：utf8
-
-**示例**：
-```
---设置character_set_connection为utf8
-openGauss=# set character_set_connection = utf8;
-WARNING:  Variable 'character_set_connection' has no actual meaning.
-SET
---设置character_set_connection为default
-openGauss=# set character_set_connection = default;
-SET
-```
-
 ## character_set_results<a name="section203671436830"></a>
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示服务端使用该字符集向客户端返回查询结果。
@@ -529,28 +508,6 @@ openGauss=# set collation_server = default;
 SET
 ```
 
-## collation_connection<a name="section203671436833"></a>
-
-**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接字符集使用该排序规则。
-
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
-
-**取值范围**：字符串
-
-**默认值**：无
-
-**示例**：
-```
---设置collation_connection为'collation_connection'
-openGauss=# set collation_connection = 'collation_connection';
-WARNING:  Variable 'collation_connection' has no actual meaning.
-SET
---设置collation_connection为default
-openGauss=# set collation_connection = default;
-SET
-```
-set lower_case_table_names = default;
-SET
 ## init_connect<a name="section203671436834"></a>
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接初始化时执行的SQL语句。
