@@ -17,8 +17,8 @@ START TRANSACTION
   [ 
     { 
        ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
-       | { READ WRITE | READ ONLY }
-     } [, ...] 
+       | { READ WRITE | READ ONLY } | WITH CONSISTENT SNAPSHOT
+    }  [, ...] 
   ];
 ```
 
@@ -58,6 +58,9 @@ BEGIN [ WORK | TRANSACTION ]
 
     指定事务访问模式（读/写或者只读）。
 
+-   **WITH CONSISTENT SNAPSHOT**
+
+    仅在可重复读隔离级别下生效，开启事务时即生成快照，其余隔离级别不生效，并产生告警。
 
 ## 示例<a name="zh-cn_topic_0283137090_zh-cn_topic_0237122192_zh-cn_topic_0059777519_s8c971e0651d14f0a96a3e8c8c3e4c4de"></a>
 
@@ -74,6 +77,17 @@ openGauss=# END;
 
 --以隔离级别为READ COMMITTED，读/写方式启动事务。
 openGauss=# START TRANSACTION ISOLATION LEVEL READ COMMITTED READ WRITE;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# COMMIT;
+
+--可重复读隔离级别下，带WITH CONSISTENT SNAPSHOT开启事务。
+openGauss=# START TRANSACTION WITH CONSISTENT SNAPSHOT;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# COMMIT;
+
+--非可重复读隔离级别下，带WITH CONSISTENT SNAPSHOT开启事务。
+openGauss=# START TRANSACTION WITH CONSISTENT SNAPSHOT;
+WARNING:  with constent snapshot only effected in repeatable read mode
 openGauss=# SELECT * FROM tpcds.reason;
 openGauss=# COMMIT;
 ```
