@@ -1,7 +1,7 @@
-# upgrade-checker
+# gs_upgradechk
 
 ## 简介
-upgrade-checker是一个升级之后元数据完整性的检测工具，由python3编写，在数据库升级之后，对元数据进行检验，检查在升级过程前后，是否出现元数据的损坏。目前仅支持检测builtin、initdb的元数据，对于用户所创建的表等，暂时不会进行检测。
+gs_upgradechk是一个升级之后元数据完整性的检测工具，由python3编写，在数据库升级之后，对元数据进行检验，检查在升级过程前后，是否出现元数据的损坏。目前仅支持检测builtin、initdb的元数据，对于用户所创建的表等，暂时不会进行检测。
 
 主要功能如下：
 - **导出**：基于某个数据库，生成一份元数据校验地图。
@@ -74,23 +74,25 @@ https://opengauss.obs.cn-south-1.myhuaweicloud.com/upgrade_checker/standard_meta
 
 ## 工具结构
 ```dir introduce
-upgrade-checker
-    |d-- utils                          工具代码-通用组件
-    |d-- style                          工具代码-报告风格
-    |d-- rules                          工具代码-规则组件
-    |f-- project.py                     工具代码
-    |f-- ..                             工具代码
-    |d-- dev                            开发者便携脚本
-    |d-- workspace                      工具工作目录
-        |d-- vmaps                        -基准校验地图存放位置
-        |d-- project_name-workspace       -某次检测的运行工作目录
-            |f-- run.log                    -运行日志
-    |d-- results                        工具结果目录
-        |f- user-created-vmap            -用户自己生成的校验地图
-        |f- report                       -某次检测的结果报告
-    |f-- README.md                      说明书
-|f-- main.py                        入口脚本
+| OM/scripts
+    |d-- upgrade-checker                工具主要代码等
+        |d-- utils                          工具代码-通用组件
+        |d-- style                          工具代码-报告风格
+        |d-- rules                          工具代码-规则组件
+        |f-- project.py                     工具代码
+        |f-- ..                             工具代码
+        |d-- dev                            开发者便携脚本
+        |d-- workspace                      工具默认工作目录[1]
+            |d-- vmaps                        -基准校验地图存放位置
+            |d-- project_name-workspace       -某次检测的运行工作目录
+                |f-- run.log                    -运行日志
+        |d-- results                        工具默认结果目录[2]
+            |f- user-created-vmap            -用户自己生成的校验地图
+            |f- report                       -某次检测的结果报告
+    |f-- gs_upgradechk                  工具入口脚本
 ```
+
+注意：[1]工具工作目录、[2]工具结果目录，正确配置OM环境变量时，会使用OM日志路径。
 
 ## 校验原理
 数据库元数据，实际就是对一张张系统表以及其数据、openGauss数据库二进制程序内硬编码的部分数据等。
