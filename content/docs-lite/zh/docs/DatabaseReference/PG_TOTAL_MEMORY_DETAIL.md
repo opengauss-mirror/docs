@@ -2,6 +2,8 @@
 
 PG\_TOTAL\_MEMORY\_DETAIL视图显示某个数据库节点内存使用情况。
 
+此视图依赖内存保护功能开启。
+
 **表 1**  PG\_TOTAL\_MEMORY\_DETAIL字段
 
 <a name="zh-cn_topic_0059778356_t11b74f8fb7cd4bd8b53f72d8a89440c9"></a>
