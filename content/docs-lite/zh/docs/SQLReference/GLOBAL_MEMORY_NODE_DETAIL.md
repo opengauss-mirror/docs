@@ -2,6 +2,8 @@
 
 显示当前openGauss中所有正常节点下的内存使用情况。
 
+此视图依赖内存保护功能开启。
+
 **表 1**  GLOBAL\_MEMORY\_NODE\_DETAIL字段
 
 <a name="zh-cn_topic_0283136701_zh-cn_topic_0237122561_table0610155043612"></a>
