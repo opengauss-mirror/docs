@@ -22,6 +22,282 @@
    - 字符串类型：在进行四则运算是统一转换为浮点类型
    - 时间日期类型：date固定转换为有符号整型，year固定转换为无符号整型；针对datetime、timestamp、time三个类型，如果没有指定typmod(表示毫秒和微秒)的话，就转换为有符号整型，否则会转换为一个定点数，其小数位数与指定的typmod相同。
 
+   具体的一些表达式返回值可以参考下面的表格：
+   
+   | **表达式**        | **参数为on时**       | **参数为off时**      |
+   | ------------- | ---------------- | ---------------- |
+   | int1+int1     | integer          | tinyint          |
+   | int1-int1     | integer          | tinyint          |
+   | int1*int1     | integer          | tinyint          |
+   | int1/int1     | numeric          | double precision |
+   | int1+uint1    | uint4            | uint1            |
+   | int1-uint1    | uint4            | uint1            |
+   | int1*uint1    | uint4            | uint1            |
+   | int1/uint1    | numeric          | double precision |
+   | int1+int2     | integer          | bigint           |
+   | int1-int2     | integer          | bigint           |
+   | int1*int2     | integer          | bigint           |
+   | int1/int2     | numeric          | double precision |
+   | int1+uint2    | uint4            | uint2            |
+   | int1-uint2    | uint4            | uint2            |
+   | int1*uint2    | uint4            | uint2            |
+   | int1/uint2    | numeric          | double precision |
+   | int1/int4     | numeric          | double precision |
+   | int1+uint4    | uint8            | uint4            |
+   | int1-uint4    | uint8            | uint4            |
+   | int1*uint4    | uint8            | uint4            |
+   | int1/uint4    | numeric          | double precision |
+   | int1/int8     | numeric          | double precision |
+   | int1/uint8    | numeric          | double precision |
+   | int1+bit1     | uint4            | double precision |
+   | int1-bit1     | uint4            | double precision |
+   | int1*bit1     | uint4            | double precision |
+   | int1/bit1     | numeric          | double precision |
+   | int1+bit64    | uint8            | double precision |
+   | int1-bit64    | uint8            | double precision |
+   | int1*bit64    | uint8            | double precision |
+   | int1/bit64    | numeric          | double precision |
+   | uint1+int1    | uint4            | uint1            |
+   | uint1-int1    | uint4            | uint1            |
+   | uint1*int1    | uint4            | uint1            |
+   | uint1/int1    | numeric          | double precision |
+   | uint1+uint1   | uint4            | uint1            |
+   | uint1-uint1   | uint4            | uint1            |
+   | uint1*uint1   | uint4            | uint1            |
+   | uint1/uint1   | numeric          | double precision |
+   | uint1+int2    | uint4            | uint2            |
+   | uint1-int2    | uint4            | uint2            |
+   | uint1*int2    | uint4            | uint2            |
+   | uint1/int2    | numeric          | double precision |
+   | uint1+uint2   | uint4            | uint2            |
+   | uint1-uint2   | uint4            | uint2            |
+   | uint1*uint2   | uint4            | uint2            |
+   | uint1/uint2   | numeric          | double precision |
+   | uint1+int4    | uint8            | uint4            |
+   | uint1-int4    | uint8            | uint4            |
+   | uint1*int4    | uint8            | uint4            |
+   | uint1/int4    | numeric          | double precision |
+   | uint1+uint4   | uint8            | uint4            |
+   | uint1-uint4   | uint8            | uint4            |
+   | uint1*uint4   | uint8            | uint4            |
+   | uint1/uint4   | numeric          | double precision |
+   | uint1/int8    | numeric          | double precision |
+   | uint1/uint8   | numeric          | double precision |
+   | uint1+bit1    | uint4            | uint8            |
+   | uint1-bit1    | uint4            | uint8            |
+   | uint1*bit1    | uint4            | uint8            |
+   | uint1/bit1    | numeric          | double precision |
+   | uint1/bit64   | numeric          | double precision |
+   | int2+int1     | integer          | bigint           |
+   | int2-int1     | integer          | bigint           |
+   | int2*int1     | integer          | bigint           |
+   | int2/int1     | numeric          | double precision |
+   | int2+uint1    | uint4            | uint2            |
+   | int2-uint1    | uint4            | uint2            |
+   | int2*uint1    | uint4            | uint2            |
+   | int2/uint1    | numeric          | double precision |
+   | int2+int2     | integer          | smallint         |
+   | int2-int2     | integer          | smallint         |
+   | int2*int2     | bigint           | smallint         |
+   | int2/int2     | numeric          | double precision |
+   | int2+uint2    | uint4            | uint2            |
+   | int2-uint2    | uint4            | uint2            |
+   | int2*uint2    | uint8            | uint2            |
+   | int2/uint2    | numeric          | double precision |
+   | int2+int4     | bigint           | integer          |
+   | int2-int4     | bigint           | integer          |
+   | int2*int4     | bigint           | integer          |
+   | int2/int4     | numeric          | double precision |
+   | int2+uint4    | uint8            | uint4            |
+   | int2-uint4    | uint8            | uint4            |
+   | int2*uint4    | uint8            | uint4            |
+   | int2/uint4    | numeric          | double precision |
+   | int2/int8     | numeric          | double precision |
+   | int2/uint8    | numeric          | double precision |
+   | int2+bit1     | uint4            | double precision |
+   | int2-bit1     | uint4            | double precision |
+   | int2*bit1     | uint4            | double precision |
+   | int2/bit1     | numeric          | double precision |
+   | int2+bit64    | uint8            | double precision |
+   | int2-bit64    | uint8            | double precision |
+   | int2*bit64    | uint8            | double precision |
+   | int2/bit64    | numeric          | double precision |
+   | uint2+int1    | uint4            | uint2            |
+   | uint2-int1    | uint4            | uint2            |
+   | uint2*int1    | uint4            | uint2            |
+   | uint2/int1    | numeric          | double precision |
+   | uint2+uint1   | uint4            | uint2            |
+   | uint2-uint1   | uint4            | uint2            |
+   | uint2*uint1   | uint4            | uint2            |
+   | uint2/uint1   | numeric          | double precision |
+   | uint2+int2    | uint4            | uint2            |
+   | uint2-int2    | uint4            | uint2            |
+   | uint2*int2    | uint8            | uint2            |
+   | uint2/int2    | numeric          | double precision |
+   | uint2+uint2   | uint4            | uint2            |
+   | uint2-uint2   | uint4            | uint2            |
+   | uint2*uint2   | uint8            | uint2            |
+   | uint2/uint2   | numeric          | double precision |
+   | uint2+int4    | uint8            | uint4            |
+   | uint2-int4    | uint8            | uint4            |
+   | uint2*int4    | uint8            | uint4            |
+   | uint2/int4    | numeric          | double precision |
+   | uint2+uint4   | uint8            | uint4            |
+   | uint2-uint4   | uint8            | uint4            |
+   | uint2*uint4   | uint8            | uint4            |
+   | uint2/uint4   | numeric          | double precision |
+   | uint2/int8    | numeric          | double precision |
+   | uint2/uint8   | numeric          | double precision |
+   | uint2+bit1    | uint4            | uint8            |
+   | uint2-bit1    | uint4            | uint8            |
+   | uint2*bit1    | uint4            | uint8            |
+   | uint2/bit1    | numeric          | double precision |
+   | uint2/bit64   | numeric          | double precision |
+   | int4/int1     | numeric          | double precision |
+   | int4+uint1    | uint8            | uint4            |
+   | int4-uint1    | uint8            | uint4            |
+   | int4*uint1    | uint8            | uint4            |
+   | int4/uint1    | numeric          | double precision |
+   | int4+int2     | bigint           | integer          |
+   | int4-int2     | bigint           | integer          |
+   | int4*int2     | bigint           | integer          |
+   | int4/int2     | numeric          | double precision |
+   | int4+uint2    | uint8            | uint4            |
+   | int4-uint2    | uint8            | uint4            |
+   | int4*uint2    | uint8            | uint4            |
+   | int4/uint2    | numeric          | double precision |
+   | int4+int4     | bigint           | integer          |
+   | int4-int4     | bigint           | integer          |
+   | int4*int4     | bigint           | integer          |
+   | int4/int4     | numeric          | double precision |
+   | int4+uint4    | uint8            | uint4            |
+   | int4-uint4    | uint8            | uint4            |
+   | int4*uint4    | uint8            | uint4            |
+   | int4/uint4    | numeric          | double precision |
+   | int4/int8     | numeric          | double precision |
+   | int4/uint8    | numeric          | double precision |
+   | int4+bit1     | uint8            | uint4            |
+   | int4-bit1     | uint8            | uint4            |
+   | int4*bit1     | uint8            | uint4            |
+   | int4/bit1     | numeric          | double precision |
+   | int4+bit64    | uint8            | uint4            |
+   | int4-bit64    | uint8            | uint4            |
+   | int4*bit64    | uint8            | uint4            |
+   | int4/bit64    | numeric          | double precision |
+   | uint4+int1    | uint8            | uint4            |
+   | uint4-int1    | uint8            | uint4            |
+   | uint4*int1    | uint8            | uint4            |
+   | uint4/int1    | numeric          | double precision |
+   | uint4+uint1   | uint8            | uint4            |
+   | uint4-uint1   | uint8            | uint4            |
+   | uint4*uint1   | uint8            | uint4            |
+   | uint4/uint1   | numeric          | double precision |
+   | uint4+int2    | uint8            | uint4            |
+   | uint4-int2    | uint8            | uint4            |
+   | uint4*int2    | uint8            | uint4            |
+   | uint4/int2    | numeric          | double precision |
+   | uint4+uint2   | uint8            | uint4            |
+   | uint4-uint2   | uint8            | uint4            |
+   | uint4*uint2   | uint8            | uint4            |
+   | uint4/uint2   | numeric          | double precision |
+   | uint4+int4    | uint8            | uint4            |
+   | uint4-int4    | uint8            | uint4            |
+   | uint4*int4    | uint8            | uint4            |
+   | uint4/int4    | numeric          | double precision |
+   | uint4+uint4   | uint8            | uint4            |
+   | uint4-uint4   | uint8            | uint4            |
+   | uint4*uint4   | uint8            | uint4            |
+   | uint4/uint4   | numeric          | double precision |
+   | uint4/int8    | numeric          | double precision |
+   | uint4/uint8   | numeric          | double precision |
+   | uint4+bit1    | uint8            | uint4            |
+   | uint4-bit1    | uint8            | uint4            |
+   | uint4*bit1    | uint8            | uint4            |
+   | uint4/bit1    | numeric          | double precision |
+   | uint4+bit64   | uint8            | uint4            |
+   | uint4-bit64   | uint8            | uint4            |
+   | uint4*bit64   | uint8            | uint4            |
+   | uint4/bit64   | numeric          | double precision |
+   | int8/int1     | numeric          | double precision |
+   | int8/uint1    | numeric          | double precision |
+   | int8/int2     | numeric          | double precision |
+   | int8/uint2    | numeric          | double precision |
+   | int8/int4     | numeric          | double precision |
+   | int8/uint4    | numeric          | double precision |
+   | int8/int8     | numeric          | double precision |
+   | int8/uint8    | numeric          | double precision |
+   | int8/bit1     | numeric          | double precision |
+   | int8/bit64    | numeric          | double precision |
+   | uint8/int1    | numeric          | double precision |
+   | uint8/uint1   | numeric          | double precision |
+   | uint8/int2    | numeric          | double precision |
+   | uint8/uint2   | numeric          | double precision |
+   | uint8/int4    | numeric          | double precision |
+   | uint8/uint4   | numeric          | double precision |
+   | uint8/int8    | numeric          | double precision |
+   | uint8/uint8   | numeric          | double precision |
+   | uint8/bit1    | numeric          | double precision |
+   | uint8/bit64   | numeric          | double precision |
+   | float4+float4 | double precision | real             |
+   | float4-float4 | double precision | real             |
+   | float4*float4 | double precision | real             |
+   | float4/float4 | double precision | real             |
+   | bit1+int1     | uint4            | double precision |
+   | bit1-int1     | uint4            | double precision |
+   | bit1*int1     | uint4            | double precision |
+   | bit1/int1     | numeric          | double precision |
+   | bit1+uint1    | uint4            | uint8            |
+   | bit1-uint1    | uint4            | uint8            |
+   | bit1*uint1    | uint4            | uint8            |
+   | bit1/uint1    | numeric          | double precision |
+   | bit1+int2     | uint4            | double precision |
+   | bit1-int2     | uint4            | double precision |
+   | bit1*int2     | uint4            | double precision |
+   | bit1/int2     | numeric          | double precision |
+   | bit1+uint2    | uint4            | uint8            |
+   | bit1-uint2    | uint4            | uint8            |
+   | bit1*uint2    | uint4            | uint8            |
+   | bit1/uint2    | numeric          | double precision |
+   | bit1+int4     | uint8            | uint4            |
+   | bit1-int4     | uint8            | uint4            |
+   | bit1*int4     | uint8            | uint4            |
+   | bit1/int4     | numeric          | double precision |
+   | bit1+uint4    | uint8            | uint4            |
+   | bit1-uint4    | uint8            | uint4            |
+   | bit1*uint4    | uint8            | uint4            |
+   | bit1/uint4    | numeric          | double precision |
+   | bit1/int8     | numeric          | double precision |
+   | bit1/uint8    | numeric          | double precision |
+   | bit1+bit1     | uint4            | numeric          |
+   | bit1-bit1     | uint4            | numeric          |
+   | bit1*bit1     | uint4            | numeric          |
+   | bit1+bit64    | uint8            | numeric          |
+   | bit1-bit64    | uint8            | numeric          |
+   | bit1*bit64    | uint8            | numeric          |
+   | bit64+int1    | uint8            | double precision |
+   | bit64-int1    | uint8            | double precision |
+   | bit64*int1    | uint8            | double precision |
+   | bit64/int1    | numeric          | double precision |
+   | bit64/uint1   | numeric          | double precision |
+   | bit64+int2    | uint8            | double precision |
+   | bit64-int2    | uint8            | double precision |
+   | bit64*int2    | uint8            | double precision |
+   | bit64/int2    | numeric          | double precision |
+   | bit64/uint2   | numeric          | double precision |
+   | bit64+int4    | uint8            | uint4            |
+   | bit64-int4    | uint8            | uint4            |
+   | bit64*int4    | uint8            | uint4            |
+   | bit64/int4    | numeric          | double precision |
+   | bit64+uint4   | uint8            | uint4            |
+   | bit64-uint4   | uint8            | uint4            |
+   | bit64*uint4   | uint8            | uint4            |
+   | bit64/uint4   | numeric          | double precision |
+   | bit64/int8    | numeric          | double precision |
+   | bit64/uint8   | numeric          | double precision |
+   | bit64+bit64   | uint8            | numeric          |
+   | bit64-bit64   | uint8            | numeric          |
+   | bit64*bit64   | uint8            | numeric          |
+
 
 
 ## 示例：
