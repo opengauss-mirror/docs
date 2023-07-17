@@ -1,20 +1,11 @@
 {{ template "_internal/google_analytics.html" . }}
-<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jq.base64.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/login.js"></script>
-<script src="{{ .Site.BaseURL }}js/jstree.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/sensorsdata.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/sensors.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.15/jstree.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/revision_new.js"></script>
 <script src="{{ .Site.BaseURL }}js/version.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        // function getRelativePath() {
-        //     var url = location.href;
-        //     var arrURL = url.split("//");
-        //     console.log(arrURL[1].substring(arrURL[1].indexOf("/")));
-        //     return arrURL[1].substring(arrURL[1].indexOf("/"));
-        // }
         function getCurrentID(wholeData, relativeURL) {
             for (var j in wholeData) {
                 var href = wholeData[j].a_attr.href;
@@ -53,7 +44,6 @@
                             link = aElement.attr("href");
                         }
                     }
-                    // var relativeURL = getRelativePath();
                     var relativeURL = location.pathname;
                     if (link != relativeURL) {
                         location.href = link;
@@ -63,7 +53,6 @@
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
                 $("#docs-menu").show();
-                // var relativeURL = getRelativePath();
                 var relativeURL = location.pathname;
                 var wholeData = $("#docstreeview").jstree().get_json();
                 var currentID = getCurrentID(wholeData, relativeURL);
@@ -80,7 +69,7 @@
                         tempNode.id = Arr[i].id;
                         var href = Arr[i].a_attr.href;
                         if (href === '#') {
-                            //转为jq对象特殊处理
+                            // 转为jq对象特殊处理
                             var jqNode = $(Arr[i].id);
                             tempNode.href = jqNode.find('a').attr('href');
                         } else {
@@ -148,7 +137,6 @@
                 }
             });
         }
- 
         /* 给每个pre添加复制代码功能 */
         let preList = $(".markdown pre");
         for (let i = 0; i < preList.length; i++) {
