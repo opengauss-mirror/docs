@@ -25,15 +25,13 @@ SELECT * FROM join_a a JOIN join_b b ON a.b = b.b;
 2.  建议在语句中手动添加JOIN列的非空判断，修改后的语句如下所示。
 
     ```
-    SELECT
-     * 
     SELECT * FROM join_a a JOIN join_b b ON a.b = b.b where a.b IS NOT NULL;
     ```
-
+    
     执行计划如下：
 
     ```
-                                                         QUERY PLAN
+                                                     QUERY PLAN
     ---------------------------------------------------------------------------------------------------------------------
      Hash Join  (cost=58.22..14560.97 rows=1063762 width=16) (actual time=13.237..13.247 rows=10 loops=1)
        Hash Cond: (a.b = b.b)
