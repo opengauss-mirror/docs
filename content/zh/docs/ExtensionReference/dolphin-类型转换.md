@@ -23,7 +23,7 @@
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|BIT转换数值类型可视作BIT转换UINT8后，再转换到目标类型，超出目标类型范围则溢出，严格模式下报错，非严格模式取目标类型最大值|BIT转换UINT8不存在负数，因此例如b'11111111'::tinyint不为-1，而是255::tinyint，溢出<br>到UINT4/UINT8/NUMERIC/FLOAT/DOUBLE的转换为隐式，其它为赋值|
-|DATE/DATETIME/TIMESTAMP/TIME|BIT转换时间日期类型，按当前字符集将BIT二进制编码转换为字符串后，转换为时间日期类型|转换级别为赋值|
+|DATE/DATETIME/TIMESTAMP/TIME|BIT转换时间日期类型，按当前字符集将BIT二进制编码转换为字符串后，转换为时间日期类型|转换规则为BIT到字符串到日期类型，与BIT到数字到日期类型表现不同。<br>转换级别为赋值|
 |YEAR|将二进制数值转换为十进制后，与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按当前字符集将BIT二进制编码转换为字符串|转换级别为赋值|
 |BINARY/VARBINARY|将二进制数值转换为十进制后，逐位数字按字符集转换|如b'11111'::binary，二进制11111转换十进制为31，3编码/x33，1编码/x31，结果为/x3331<br>转换级别为赋值|
@@ -134,7 +134,7 @@
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|用对应字符集解码后，按字符串字面数值转换|到DOUBLE的转换级别为隐式，其他为赋值|
 |DATE/DATETIME/TIMESTAMP/TIME|用对应字符集解码后，按对应格式进行转换，格式规则较多|转换级别为赋值|
 |YEAR|用对应字符集解码后，按字符串字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
-|CHAR/VARCHAR/TEXT|用对应字符集解码|转换级别为赋值|
+|CHAR/VARCHAR/TEXT|用对应字符集解码|BINARY/VARBINARY到TEXT的转换级别为隐式，其他为赋值|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|相似类型互转|BINARY/VARBINARY间转换级别为隐式，TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB间转换级别为隐式，其他为赋值|
 |ENUM|用对应字符集解码后，按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|用对应字符集解码后，按字符串转换为SET对应Lable的项|转换级别为赋值|
