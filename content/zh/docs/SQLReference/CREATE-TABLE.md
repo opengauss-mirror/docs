@@ -391,7 +391,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSTYPE
 
-        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE下的普通表和分区表）
+        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
 
         取值范围：0\~2，默认值为0。
 

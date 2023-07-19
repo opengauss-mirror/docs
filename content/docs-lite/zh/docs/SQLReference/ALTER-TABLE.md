@@ -634,7 +634,12 @@
     为表或索引指定一个可选的存储参数。
     > ![](public_sys-resources/icon-note.gif) **说明：** 
     >
-    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE下的普通表和分区表）
+    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
+    > -   修改行存压缩参数时，修改后的行存压缩参数需要满足建表时各行存压缩参数的数据范围和参数间的约束。
+    > -   分区表不支持修改分区级别的行存压缩参数，只能修改整个表的行存压缩属性，修改对所有分区生效。
+    > -   修改行存压缩参数时会重写整个表，期间对表加八级锁。
+    > -   修改行存压缩参数时会重建表， 如果表的数据库较大，该过程可能花费较长时间
+    > -   重建表期间openGauss会先生成新的数据文件，再删除旧的数据文件，需要事先保证有足够的空闲物理空间。
 
 -   **tablespace\_name**
 
