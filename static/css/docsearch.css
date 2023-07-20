@@ -54,6 +54,12 @@
     font-size: 20px;
     color: var(--o-color-text1);line-height: 28px;
 }
+.search-result ul li .res-title a{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    color: var(--o-color-text1);
+}
 .search-result ul li .res-title {
     cursor: pointer;
 }
