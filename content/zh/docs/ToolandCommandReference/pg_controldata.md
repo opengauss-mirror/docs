@@ -76,5 +76,5 @@ pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
 | --------------------- | ------------------------------------------------------------ |
 | normal                | 未进行按需回放                                               |
 | in on-demand build    | 按需回放中，集群在构建回放必须信息，暂不对外提供服务         |
-| in on-demand recovery | 按需回放中，集群对外提供服务，后台进行日志回放，该阶段仅支持部分SQL |
+| in on-demand redo     | 按需回放中，集群对外提供服务，后台进行日志回放，该阶段仅支持部分SQL |
 
