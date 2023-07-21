@@ -5,6 +5,7 @@ PERFORMANCE_SCHEMA.TABLE_IO_WAITS_SUMMARY_BY_TABLE视图，对表数据文件IO�
 >![](public_sys-resources/icon-note.png) **说明：** 
 >-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
 >-   底层访问DBE_PERF.FILE_IOSTAT，其中miniotim，avgiotim，maxiowtm的统计信息不区分读写，但mysql分读、写、等待、misc来统计min,max,avg。为尽量多的展示信息，都使用相同信息做展示。
+>-   区别于Mysql，会显示所有表的io wait数据，没有会显示全0，该表仅显示有io wait事件的表信息。
 
 **表 1**  TABLE_IO_WAITS_SUMMARY_BY_TABLE字段
 
