@@ -882,6 +882,7 @@ headless: true
 					-	[ALTER VIEW]({{< relref "./docs/ExtensionReference/dolphin-ALTER-VIEW.md" >}})
 					-	[ANALYZE ANALYSE]({{< relref "./docs/ExtensionReference/dolphin-ANALYZE-ANALYSE.md" >}})
 					-	[AST]({{< relref "./docs/ExtensionReference/dolphin-AST.md" >}})
+					-	[CALL]({{< relref "./docs/ExtensionReference/dolphin-CALL.md" >}})
 					-	[CHECKSUM TABLE]({{< relref "./docs/ExtensionReference/dolphin-CHECKSUM-TABLE.md" >}})  
 					-	[CREATE FUNCTION]({{< relref "./docs/ExtensionReference/dolphin-CREATE-FUNCTION.md" >}})
 					-	[CREATE INDEX]({{< relref "./docs/ExtensionReference/dolphin-CREATE-INDEX.md" >}})
