@@ -1209,6 +1209,7 @@ headless: true
     	-   [XML类型]({{< relref "./docs/SQLReference/XML类型.md" >}})
     	-   [账本数据库使用的数据类型]({{< relref "./docs/SQLReference/账本数据库使用的数据类型.md" >}})		
     	-   [SET类型]({{< relref "./docs/SQLReference/SET类型.md" >}})	
+    -   [字符集与字符序]({{< relref "./docs/SQLReference/字符集与字符序.md" >}})
     -   [函数和操作符]({{< relref "./docs/SQLReference/函数和操作符.md" >}})
         -   [逻辑操作符]({{< relref "./docs/SQLReference/逻辑操作符.md" >}})
         -   [比较操作符]({{< relref "./docs/SQLReference/比较操作符.md" >}})

@@ -2707,7 +2707,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 SET [ LOCAL | SESSION ]
     { {config_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT }}};
 SET [ SESSION | LOCAL ] TIME ZONE { timezone | LOCAL | DEFAULT };
-SET [ SESSION | LOCAL ] NAMES encoding_name;
+SET [ SESSION | LOCAL ] NAMES encoding_name [COLLATE collate_name];
 SET [ SESSION | LOCAL ]
     {CURRENT_SCHEMA { TO | = } { schema | DEFAULT }
     | SCHEMA 'schema'};
