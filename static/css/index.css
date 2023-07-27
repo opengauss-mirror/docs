@@ -132,46 +132,11 @@
 .search_right img {
   width: 100%;
 }
-
-#search-input {
-  margin-top: 40px;
-  position: relative;
-}
-
-#search-input input {
-  width: 78%;
-  font-size: var(--o-font-size-text);
-  height: 48px;
-  background: var(--o-color-bg-secondary);
-  border: 1px solid transparent;
-  padding-left: 40px;
-  color: var(--o-color-text1);
-}
-#search-input input::-webkit-input-placeholder {
-  font-size: var(--o-font-size-text);
-  line-height: 48px;
-  font-weight: 300;
-}
-#search-input input:focus {
-  outline: 1px solid var(--o-color-brand1);
-}
 .index-result {
   background-color: var(--o-color-bg1);
 }
 .index-result {
   padding-top: 40px;
-}
-#search-input i {
-  position: absolute;
-  left: 8px;
-  top: 12px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url(../img/search/search.svg) no-repeat 100%/100%;
-}
-.dark #search-input i {
-  background: url(../img/search/search-dark.svg) no-repeat 100%/100%;
 }
 
 #search_content {

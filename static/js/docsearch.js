@@ -91,12 +91,6 @@ $(function ($) {
             "</div>" +
             "</li>"
         );
-
-        // $(".search-result>ul li")
-        //   .find(".res-title")
-        //   .click(function () {
-        //     window.open($(this).attr("href"));
-        //   });
       });
     },
     escapeHTML: function (str) {
@@ -123,17 +117,14 @@ $(function ($) {
   $(".search-header>.icon-search").click(function () {
     keyword = $(".search-header>.search-text").val();
     $("#search_content").css("display", "block");
-    searchMethods.search(decodeURI(keyword), 1, "#baseof-pagination");
+    searchMethods.search(keyword, 1, "#baseof-pagination");
   });
 
-  $(".search-header>.search-text").bind("keypress", function (event) {
-    if (event.keyCode == "13") {
-      keyword = $(".search-header>.search-text").val();
-      $("#search_content").css("display", "block");
-      searchMethods.search(decodeURI(keyword), 1, "#baseof-pagination");
-    }
+  $(".search-header>.search-text").bind("change", function () {
+    keyword = $(".search-header>.search-text").val();
+    $("#search_content").css("display", "block");
+    searchMethods.search(keyword, 1, "#baseof-pagination");
   });
-
   $(document).ready(function () {
     $(".search-header>.search-text").blur(function () {
       var value = $(this).val();
@@ -143,23 +134,6 @@ $(function ($) {
         $(".search-result>#baseof-pagination").css("display", "none");
       }
     });
-  });
-
-  $("#search-input>.icon-search").click(function () {
-    keyword = $("#search-input>.search-text").val();
-    $("#search_content").css("display", "block");
-    searchMethods.search(decodeURI(keyword), 1, "#web-pagination");
-  });
-
-  $("#search-input>.search-text").bind("keyup", function (event) {
-    if (!$("#search-input>.search-text").val()) {
-      $("#search_content").css("display", "none");
-    }
-    if (event.keyCode == "13") {
-      keyword = $("#search-input>.search-text").val();
-      $("#search_content").css("display", "block");
-      searchMethods.search(decodeURI(keyword), 1, "#web-pagination");
-    }
   });
 
   $(".white_search").click(function () {
@@ -186,7 +160,7 @@ $(function ($) {
     .click(function () {
       keyword = $(".search-mobile").find("input").val();
       $(".search-result").css("display", "none");
-      searchMethods.search(decodeURI(keyword), 1, "#pagination");
+      searchMethods.search(keyword, 1, "#pagination");
     });
   $(".search-mobile input").keyup(function () {
     if ($(this).val() !== "") {
@@ -199,13 +173,10 @@ $(function ($) {
     $(".search-mobile input").val("");
     $(".icon-clear").hide();
   });
-  $(".search-mobile>.search-text").bind("keypress", function (event) {
-    if (event.keyCode == "13") {
-      keyword = $(".search-mobile>.search-text").val();
-
-      $(".search-result").css("display", "block");
-      searchMethods.search(decodeURI(keyword), 1, "#pagination");
-    }
+  $(".search-mobile>.search-text").bind("change", function () {
+    keyword = $(".search-mobile>.search-text").val();
+    $(".search-result").css("display", "block");
+    searchMethods.search(keyword, 1, "#pagination");
   });
   var versionText = lang === "zh" ? "版本" : "Version";
   var totalAmount = 0;
