@@ -1,0 +1,11 @@
+字符集与字符序
+============
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/数据库级字符集和字符序
+    ../content/zh/docs/SQLReference/模式级字符集和字符序
+    ../content/zh/docs/SQLReference/表级字符集和字符序
+    ../content/zh/docs/SQLReference/列级字符集和字符序
+    ../content/zh/docs/SQLReference/字符类型表达式的字符集和字符序
+    ../content/zh/docs/SQLReference/字符集和字符序合并规则
