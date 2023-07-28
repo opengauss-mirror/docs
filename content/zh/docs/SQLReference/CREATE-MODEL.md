@@ -71,7 +71,7 @@ CREATE MODEL price_model USING logistic_regression
  FEATURES size, lot
  TARGET price
  FROM HOUSES
- (WITH learning_rate=0.88, max_iterations=default);
+ WITH learning_rate=0.88, max_iterations=default;
 ```
 
 ## 相关链接<a name="section084411512195"></a>
