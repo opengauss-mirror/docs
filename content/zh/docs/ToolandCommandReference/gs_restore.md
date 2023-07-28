@@ -9,7 +9,7 @@ gs\_restore工具由操作系统用户omm执行。
 gs\_restore工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
 >![](public_sys-resources/icon-notice.png) **须知：**
->-   show create procedure/function等show create语句的database collation和collation connection与数据库的ic_collate相同，由于InitSession会重新初始化ic_collate参数，ic_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
+>-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   临时表不支持导入导出。
 
 主要功能包含：
