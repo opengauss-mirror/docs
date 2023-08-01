@@ -875,6 +875,11 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tbody>
 </table>
 
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>
+>- 在部署有CM工具的情况下，对于某些既可以直接调用内核工具，也可以调用CM工具进行执行的命令，如：switchover、build等，请优先使用CM工具，因为如果直接调用内核工具，有可能CM感知不到用户正在手动执行指令，进而误判集群状态异常。
+>- CM有进程保活功能，并且会实时监控集群状态并进行自动故障处理，如果运维人员需要手动处理集群状态或进行问题调试定位等，最好执行cm_ctl pause命令将CM服务暂停掉，否则可能会干扰运维操作，待运维操作完成后可以执行cm_ctl resume命令恢复CM服务。
+
 ## 命令参考<a name="section129433814222"></a>
 
 -   启动实例：
