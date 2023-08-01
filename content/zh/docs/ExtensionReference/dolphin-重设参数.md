@@ -14,6 +14,8 @@ openGauss提供了多种修改GUC参数的方法，用户可以方便的针对�
     -   内存单位有：KB（千字节）、MB（兆字节）和GB（吉字节）。
     -   时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
 
+-   使用 `SET paraname = value` 方式设置GUC参数时，支持设置value为NULL，效果为设置对应的参数值为空字符串（并非NULL）。
+
 
 具体参数说明请参见[dolphin-GUC参数说明](dolphin-GUC参数说明.md)。
 
