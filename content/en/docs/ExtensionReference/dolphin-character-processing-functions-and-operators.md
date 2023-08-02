@@ -7,6 +7,10 @@ Compared with the original openGauss, Dolphin modifies character processing func
 3. The performance of the length, bit_length, octet_length, convert, and format functions are modified.
 4. The XOR function of the `^` operator is added, and the `LIKE BINARY/NOT LIKE BINARY` operator is added.
 5. The `LIKE/NOT LIKE` operator is modified.
+6. The ```COMPRESS``` function is added.
+7. THe ```UNCOMPRESS``` function is added.
+8. THe ```UNCOMPRESSED_LENGTH``` function is added.
+9. THe ```WEIGHT_STRING``` function is added.
 
 -   bit\_length\(string\)
 
@@ -786,3 +790,85 @@ Compared with the original openGauss, Dolphin modifies character processing func
        1267
       (1 row)
     ```
+
+- compress(text)
+
+  Description: The purpose of the COMPRESS function is to compress the given string to save storage space.
+
+  Return type: bytea
+
+  Example:
+
+  ```
+  SELECT HEX(COMPRESS('2022-05-12 10:30:00'));
+                                hex                               
+  ----------------------------------------------------------------
+   13000000789c33323032d23530d53534523034b03236b032300000240b03a1
+  (1 row)
+  ```
+
+- uncompress(bytea)
+
+  Description: The purpose of the UNCOMPRESS function is to decompress the compressed binary data and return the original data.
+
+  Return type: text
+
+  Example:
+
+  ```
+  SELECT UNCOMPRESS(COMPRESS('2022-05-12 10:30:00'));
+       uncompress      
+  ---------------------
+   2022-05-12 10:30:00
+  (1 row)
+  ```
+
+- uncompressed_length(bytea)
+
+  Description: The purpose of the UNCOMPRESSED_LENGTH function is to return the length of the data after decompression. 
+
+  Return type: integer
+
+  Example:
+
+  ```
+  SELECT UNCOMPRESSED_LENGTH(COMPRESS('2022-05-12 10:30:00'));
+   uncompressed_length 
+  ---------------------
+                    19
+  (1 row)
+  ```
+
+- weight_string(str [as {char|binary}(n)] [level levels])  levels: n [asc|desc|reverse] [, n [asc|desc|reverse]] ...
+
+  Description: The WEIGHT_STRING function is an internal function used for testing and debugging character set sorting rules. It is used to get the weight of a string. It returns a binary string for comparing and sorting strings. str is the input string. The AS clause can convert the input string to ```CHAR(N)``` or ```BINARY(N)```. If the input string exceeds N, it will be truncated. If it is less than N, it will be padded with spaces (```AS CHAR```) or 0 (```AS BINARY```). The LEVEL clause specifies how to modify the calculation of the string. Only ```AS CHAR``` supports the LEVEL clause. After the LEVEL clause, three modifiers can be added: ```ASC```, ```DESC``` (bit inversion), ```REVERSE``` (byte order reversal). Only ```LEVEL 1 DESC``` and ```LEVEL 1 REVERSE``` are valid. LEVEL 2 to LEVEL 6 do not process the calculation string. 
+
+  Return type: bytea
+
+  Example:
+
+  ```
+  select hex(weight_string('abc' as binary(2)));
+   hex  
+  ------
+   6162
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 ));
+     hex    
+  ----------
+   00410042
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
+     hex    
+  ----------
+   ffbeffbd
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));
+     hex    
+  ----------
+   42004100
+  (1 row)
+  ```

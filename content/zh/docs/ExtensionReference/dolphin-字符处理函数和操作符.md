@@ -10,6 +10,10 @@
 6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
 7. 新增```text_bool/varchar_bool/char_bool```函数。
 8. 新增```name_const```函数。
+9. 新增```compress```函数。
+10. 新增```uncompress```函数。
+11. 新增```uncompressed_length```函数。
+12. 新增```weight_string```函数。
 
 -   bit\_length\(string\)
 
@@ -1009,7 +1013,7 @@
   (1 row)
   ```
 
--   name\_const\(const name, const value\)
+- name\_const\(const name, const value\)
 
     描述：返回指定的列名和列值组成的结果集。输入参数应为可以转化为const类型的参数，不接受函数表达式或变量。
 
@@ -1024,3 +1028,85 @@
      123
     (1 row)
     ```
+
+- compress(text)
+
+  描述：COMPRESS函数的作用是压缩指定的字符串，用于节省存储空间。
+
+  返回类型：bytea
+
+  示例：
+
+  ```
+  SELECT HEX(COMPRESS('2022-05-12 10:30:00'));
+                                hex                               
+  ----------------------------------------------------------------
+   13000000789c33323032d23530d53534523034b03236b032300000240b03a1
+  (1 row)
+  ```
+
+- uncompress(bytea)
+
+  描述：UNCOMPRESS函数的作用是解压缩压缩过的二进制数据，并返回原始数据。
+
+  返回类型：text
+
+  示例：
+
+  ```
+  SELECT UNCOMPRESS(COMPRESS('2022-05-12 10:30:00'));
+       uncompress      
+  ---------------------
+   2022-05-12 10:30:00
+  (1 row)
+  ```
+
+- uncompressed_length(bytea)
+
+  描述：UNCOMPRESSED_LENGTH函数的作用是返回经过压缩的数据在解压缩后的长度。
+
+  返回类型：integer
+
+  示例：
+
+  ```
+  SELECT UNCOMPRESSED_LENGTH(COMPRESS('2022-05-12 10:30:00'));
+   uncompressed_length 
+  ---------------------
+                    19
+  (1 row)
+  ```
+
+- weight_string(str [as {char|binary}(n)] [level levels])  levels: n [asc|desc|reverse] [, n [asc|desc|reverse]] ...
+
+  描述：WEIGHT_STRING函数是用于测试和调试字符集排序规则的函数。其用于获取字符串的权重，它返回一个二进制字符串，用于字符串的比较和排序。str是输入字符串，AS子句可以将输入字符串转化为```CHAR(N)```或者```BINARY(N)```类型。输入字符串如果超过N则会被截断，如果小于N则会被填充空格（```AS CHAR```）或0(```AS BINARY```)。LEVEL子句来指定计算字符串的修饰方式，仅```AS CHAR```支持。LEVEL子句后可以增加三种修饰符: ```ASC```、 ```DESC```（bit翻转）、 ```REVERSE```（字节顺序反转），其中仅```LEVEL 1 DESC```和```LEVEL 1 REVERSE```有效，LEVEL 2到LEVEL 6对计算字符串没有处理。
+
+  返回类型：bytea
+
+  示例：
+
+  ```
+  select hex(weight_string('abc' as binary(2)));
+   hex  
+  ------
+   6162
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 ));
+     hex    
+  ----------
+   00410042
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
+     hex    
+  ----------
+   ffbeffbd
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));
+     hex    
+  ----------
+   42004100
+  (1 row)
+  ```
