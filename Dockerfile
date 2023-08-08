@@ -1,4 +1,4 @@
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.16.1-20.03-lts-sp2
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.22.0-22.03-lts
 
 RUN yum -y update && yum install -y git curl tar
 
@@ -111,7 +111,13 @@ RUN cd /src/ && \
     chmod -R 755 /usr/share/nginx/html && \
     rm -rf /src/*
 
-ENV RUN_USER nginx
-ENV RUN_GROUP nginx
-EXPOSE 80
-ENTRYPOINT nginx -g "daemon off;"
+RUN touch /var/run/nginx.pid \
+    && chown -R nginx:nginx /var/log/nginx \
+    && chown -R nginx:nginx /var/run/nginx.pid \
+    && chown -R nginx:nginx /etc/nginx
+
+EXPOSE 8080
+
+USER nginx
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
