@@ -18,10 +18,6 @@ $(function ($) {
         data: JSON.stringify(postData),
         contentType: "application/json; charset=utf-8",
         datatype: "json",
-        headers: {
-          Authorization:
-            "Basic b3BlbmV1bGVyc2VydmVyOm9wZW5ldWxlcnNlcnZlckAxMjM0",
-        },
         success: function (data) {
           let dataArr = [];
           let pag = null;

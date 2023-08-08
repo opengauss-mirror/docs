@@ -140,47 +140,6 @@ $(function ($) {
       behavior: 'smooth',
     });
   });
-  $('#title-evaluate .evaluate')
-    .find('i')
-    .click(function () {
-      if (isEvaluate) {
-        return false;
-      } else {
-        let arr = urlArr[6].split('.');
-        let number = $(this).attr('key');
-        evaluateParams.name = decodeURI(arr[0]);
-        evaluateParams.path = urlArr[4] + '/' + urlArr[5] + '/' + urlArr[6];
-        evaluateParams.version = urlArr[3];
-        evaluateParams.stars = number;
-        $.ajax({
-          type: 'POST',
-          url: '/docs-search/docs/reviews',
-          data: JSON.stringify(evaluateParams),
-          contentType: 'application/json; charset=utf-8',
-          datatype: 'json',
-          headers: {
-            Authorization:
-              'Basic b3BlbmV1bGVyc2VydmVyOm9wZW5ldWxlcnNlcnZlckAxMjM0',
-          },
-          success: function () {
-            $('#title-evaluate .evaluate')
-              .find('i')
-              .slice(0, number)
-              .addClass('active');
-            isEvaluate = true;
-          },
-          error: function (data) {
-            console.error(data);
-          },
-        });
-      }
-    })
-    .mouseover(function () {
-      $(this).find('div').show();
-    })
-    .mouseleave(function () {
-      $('#title-evaluate .evaluate').find('i').find('div').hide();
-    });
   // 意见反馈
   $('.question').click(function () {
     const nowHref = location.pathname.replace('html', 'md');
