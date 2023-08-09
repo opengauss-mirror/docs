@@ -1,7 +1,4 @@
 <nav id="docs-menu">
-  {{ partial "docs/inject/menu-before" . }}
-
-
 {{ if .Site.Params.BookMenuBundle }}
 <div class="nav">
   <div id="docstreeview">
@@ -17,7 +14,6 @@
 
 </nav>
 
-<!-- Restore menu position as soon as possible to avoid flickering -->
 <script>
 (function() {
   var menu = document.querySelector("#docs-menu");

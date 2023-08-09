@@ -1,9 +1,9 @@
+// 搜索相关
 $(function ($) {
   var keyword = "";
   const lang = location.href.split("/")[3];
   var searchMethods = {
     search: function (value, page, el) {
-      // type: "docs",
       const version = location.pathname.split("/")[3];
       let postData = {
         keyword: value,
@@ -34,7 +34,7 @@ $(function ($) {
               type: 1,
               pageIndex: 1,
               pageSize: 10,
-              pageCount: pagecount,
+              pageCount: pageCount,
               total: totalAmount,
               jumper: false,
               singlePageHide: false,
@@ -45,7 +45,6 @@ $(function ($) {
                 searchMethods.search(decodeURI(keyword), index);
               },
             });
-            // $(".search-result>.title").find(".res-amount").text(totalAmount);
             $(".search-result>.title").find(".keyword").text(value);
           }
           searchMethods.solveData(dataArr, versionText, page);
@@ -94,8 +93,6 @@ $(function ($) {
         return (
           {
             "&": "&amp;",
-            // '<': '&lt;',
-            // '>': '&gt;',
             "'": "&#39;",
             '"': "&quot;",
           }[tag] || tag
@@ -103,6 +100,7 @@ $(function ($) {
       });
     },
   };
+  var pageCount = 5;
   $(".baseof_mask").click(function () {
     $(".baseof_mask").css("display", "none");
     $(".alert").css("display", "none");
@@ -176,10 +174,10 @@ $(function ($) {
   });
   var versionText = lang === "zh" ? "版本" : "Version";
   var totalAmount = 0;
-  var pagecount = 5;
+  
   var currentScreen = document.body.clientWidth;
   if (currentScreen <= 1000) {
-    pagecount = 3;
+    pageCount = 3;
   }
 
   if (typeof keyword === "undefined") {

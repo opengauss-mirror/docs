@@ -47,9 +47,6 @@
     display: flex;
     align-items: center;
 }
-#opt_user .logined {
-    /* display: none; */
-}
 #opt_user .opt-info {
     display: flex;
     align-items: center;

@@ -1,8 +1,5 @@
 'use strict';
-/**
- * @author xzx
- * @time 2020-09-11
- */
+// 分页器组件
 var lang = $('html').attr('lang');
 var __spreadArrays =
   (this && this.__spreadArrays) ||
@@ -14,7 +11,7 @@ var __spreadArrays =
         r[k] = a[j];
     return r;
   };
-var Pagination = /** @class */ (function () {
+var Pagination = (function () {
   function Pagination(options) {
     this.options = {
       // 容器

@@ -1,3 +1,4 @@
+// 账号登陆
 const LOGIN_INFO = {
   photo: '',
   username: '',

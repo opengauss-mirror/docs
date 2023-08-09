@@ -6,14 +6,11 @@
   <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
 
   <body>
-    <!-- <div class="feedback">
-      <img src="/img/detail/gift.png" title="点击参与有奖捉虫" alt="">
-  </div> -->
     <div id="all">
       <aside class="sidebar">
         <div id="menu-box">
           <div class="pc-logo">
-            <a href="javaScript:;"><img src="/img/logo-dark.svg" alt="logo" /></a>
+            <a><img src="/img/logo-dark.svg" alt="logo" /></a>
           </div>
           <div id="menu-top-mobile">
             <div class="logo-mobile">
@@ -46,7 +43,6 @@
             <input type="checkbox" class="switch" id="switchInput">
             <span class="text lite">{{ i18n "lite" }}</span>
           </div>
-          
           </div>
           {{ partial "docs/menu" . }}
           <div class="theme-lang-mobile">
@@ -69,12 +65,12 @@
         <div id="menu-mobile">
               <ul>
                 <li class="prev-mobile">
-                  <a href="javaScript:;"><i class="icon-prev"></i><span>{{ i18n "previous" }}</span></a>
+                  <a><i class="icon-prev"></i><span>{{ i18n "previous" }}</span></a>
                 </li>
                 <li class="sersion-mobile">
                 </li>
                 <li class="next-mobile">
-                  <a href="javaScript:;"><span>{{ i18n "next" }}</span><i class="icon-next"></i></a>
+                  <a><span>{{ i18n "next" }}</span><i class="icon-next"></i></a>
                 </li>
               </ul>
         </div>
@@ -105,19 +101,14 @@
             <div class="cancel-btn">{{ i18n "cancel" }}</div>
         </div>
             <div class="search-result search-result-mobile">
-                <!-- <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p> -->
                 <ul>
-
                 </ul>
                 <div id="pagination"></div>
             </div>
         </div>
     </div>
     </div>
-    <!-- /#all -->
-
     {{ partial "scripts.html" . }}
-    <script src="{{ .Site.BaseURL }}js/docdetail.js"></script>
     <script>
       $(document).ready(function () {
         if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {

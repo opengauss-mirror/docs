@@ -1,4 +1,4 @@
-// state表示该版本目前的周期状态：DEV(开发更新中)，LTS(长期维护中)，EOM(已结束维护)
+//放置版本数据 state表示该版本目前的周期状态：DEV(开发更新中)，LTS(长期维护中)，EOM(已结束维护)
 const versionObjZh = {
   latest: {
     homePath: '/docs/GettingStarted/GettingStarted.html',

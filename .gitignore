@@ -10,3 +10,4 @@ resources/_gen.DS_Store
 public
 layouts/partials/docs/test.html
 node_modules
+.hugo_build.lock
