@@ -23,6 +23,8 @@ gs\_ctl参数可分为如下几类：
 -   member参数，详细请参见[表8](#table1055392110383)。
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
+-   stack参数，详细参见[表11](#table1451519418888)。
+-   copy参数，详细参见[表12](#table1451519418811)。
 
     **表 1**  option参数
 
@@ -513,7 +515,7 @@ gs\_ctl参数可分为如下几类：
 **表 11**  stack参数
 
 
-
+<a name="table1451519418888"></a>
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p14281162351513"><a name="p14281162351513"></a><a name="p14281162351513"></a>参数说明</p>
@@ -527,6 +529,31 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p17282423191511"><a name="p17282423191511"></a><a name="p17282423191511"></a>用于指定需要获取调用栈的线程的lwtid。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p528252331511"><a name="p528252331511"></a><a name="p528252331511"></a>正整数</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 12**  copy参数
+
+<a name="table1451519418811"></a>
+
+<table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p14281162351513"><a name="p14281162351513"></a><a name="p14281162351513"></a>参数说明</p>
+</th>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p8281023191520"><a name="p8281023191520"></a><a name="p8281023191520"></a>取值范围</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row182819238154"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p42828237159"><a name="p42828237159"></a><a name="p42828237159"></a>-Q</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p17282423191511"><a name="p17282423191511"></a><a name="p17282423191511"></a>指定xlog日志拷贝方向。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p528252331511"><a name="p528252331511"></a><a name="p528252331511"></a>
+<ul><li>  copy_from_local：从本地往共享存储上拷贝。</li>
+<li> copy_from_share：从共享存储往本地存储上拷贝。</li>
+<li>force_copy_from_local：强制从本地往共享存储上拷贝。</li></ul></p>
 </td>
 </tr>
 </tbody>
