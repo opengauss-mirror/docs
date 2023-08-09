@@ -31,7 +31,6 @@
   .markdown {
     width: 100%;
     padding: var(--o-spacing-h5);
-    /* margin-top: var(--o-spacing-h5); */
     margin-bottom: var(--o-spacing-h2);
     background-color: var(--o-color-bg2);
     box-shadow: var(--o-shadow-sl1);
@@ -96,7 +95,6 @@
   }
 }
 .markdown h2 {
-  /* margin-top: var(--o-spacing-h2); */
   margin-bottom: var(--o-spacing-h3);
   font-size: var(--o-font-size-h5);
   line-height: var(--o-line-height-h5);
@@ -276,9 +274,6 @@
   max-width: 700px;
   background-color: var(--o-color-greyblue3);
 }
-/* .markdown ul li a[href^="#"] {
-  display: none;
-} */
 .markdown div[class*="language-"] {
   position: relative;
   margin: 8px 0;

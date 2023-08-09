@@ -85,11 +85,6 @@
 ._page_container ._jumper ._jumper_input:focus {
     border-color: var(--o-color-brand1);
 }
-
-/*._pages_1 li {
-    background-color: #f4f4f5;
-}*/
-
 ._active_1 {
     color: #fff !important;
     background-color: var(--o-color-brand1) !important;
