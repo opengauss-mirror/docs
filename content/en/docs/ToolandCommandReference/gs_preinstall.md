@@ -23,7 +23,7 @@
 -   Prepare the openGauss environment.
 
     ```
-    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=ENVFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
+    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--skip-os-check] [--env-var="ENVVAR" [...]] [--sep-env-file=ENVFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
     ```
 
 -   Display help information.
@@ -74,6 +74,10 @@
 -   --skip-os-set
 
     Specifies whether to set the parameter for the OS. By default, the parameter is set for the OS. If the parameter is specified, the configuration is dropped.
+
+-   --skip-os-check
+
+    Specifies whether to skip the parameter for the OS. By default, the parameter is check for the OS. If the parameter is specified, the configuration is dropped.
 
 -   --env-var="ENVVAR"
 
