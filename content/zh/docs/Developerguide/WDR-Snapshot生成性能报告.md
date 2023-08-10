@@ -14,7 +14,7 @@ WDR Snasphot在启动后（即参数[enable\_wdr\_snapshot](系统性能快照.m
     select * from snapshot.snapshot;
     ```
 
-2.  （可选）执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。
+2.  （可选）执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。可在单机节点或集群主节点上执行。
 
     ```
     select create_wdr_snapshot();
