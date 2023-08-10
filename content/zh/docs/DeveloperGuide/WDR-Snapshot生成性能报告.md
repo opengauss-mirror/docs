@@ -26,7 +26,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../DatabaseReference/系�
    select * from snapshot.snapshot;
    ```
 
-4. （可选）在CCN上执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。
+4. （可选）在单机节点或集群主节点上执行如下命令手动创建快照。数据库中只有一个快照或者需要查看在当前时间段数据库的监控数据，可以选择手动执行快照操作，该命令需要用户具有sysadmin权限。
 
    ```
    select create_wdr_snapshot();
