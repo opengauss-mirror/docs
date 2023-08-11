@@ -19,6 +19,7 @@ gs\_ctl参数可分为如下几类：
 -   switchover模式的参数，详细请参见[表5](#zh-cn_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31)。
 -   build参数，详细请参见[表6](#zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
 -   copy参数，详细参见[表7](#table65592307557)。
+-   stack参数，详细参见[表8](#table65592307777)。
 
     **表 1**  option参数
 
@@ -406,6 +407,8 @@ gs\_ctl参数可分为如下几类：
 
 
 **表 8**  stack参数
+
+<a name="table65592307777"></a>
 
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>

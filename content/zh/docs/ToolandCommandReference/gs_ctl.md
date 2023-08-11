@@ -24,6 +24,7 @@ gs\_ctl参数可分为如下几类：
 -   member参数，详细请参见[表8](#table1055392110383)。
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
+-   stack参数，详细参见[表11](#table14515194188888)。
 -   copy参数，详细参见[表12](#table1451519418811)。
 -   资源池化build参数，详细请参见[表13](#table1451519418812)。
 
@@ -280,6 +281,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
+
 **表 4**  stop和restart共有参数
 
 <a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a"></a>
@@ -496,6 +498,7 @@ gs\_ctl参数可分为如下几类：
 **表 10**  setrunmode参数
 
 <a name="table1451519418810"></a>
+
 <table><thead align="left"><tr id="row18516194117811"><th class="cellrowborder" valign="top" width="24.512451245124513%" id="mcps1.2.4.1.1"><p id="p65163416817"><a name="p65163416817"></a><a name="p65163416817"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="37.58375837583758%" id="mcps1.2.4.1.2"><p id="p155163416818"><a name="p155163416818"></a><a name="p155163416818"></a>参数说明</p>
@@ -530,6 +533,8 @@ gs\_ctl参数可分为如下几类：
 
 
 **表 11**  stack参数
+
+<a name="table14515194188888"></a>
 
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>
