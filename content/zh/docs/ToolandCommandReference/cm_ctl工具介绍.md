@@ -63,7 +63,7 @@ cm_ctl finishredo
 cm_ctl build [-c] [-n NODEID] [-D DATADIR [-t SECS] [-f] [-b full] [-j NUM]]
 cm_ctl check -B BINNAME -T DATAPATH
 cm_ctl stop [[-z AVAILABILITY_ZONE] | [-n NODEID [-D DATADIR]]] [-t SECS] [-m SHUTDOWN-MODE]
-cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
+cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-w] [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
 cm_ctl view [-v | -N | -n NODEID] [-l FILENAME]
 cm_ctl set [--log_level=LOG_LEVEL] [--cm_arbitration_mode=ARBITRATION_MODE] [--cm_switchover_az_mode=SWITCHOVER_AZ_MODE] [--cmsPromoteMode=CMS_PROMOTE_MODE -I INSTANCEID]
 cm_ctl set --param --agent | --server [-n [NODEID]] -k [PARAMETER]="[value]"
@@ -391,6 +391,13 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"><a name="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a><a name="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a>显示详细数据库实例状态。</p>
 <div class="note" id="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"><a name="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><a name="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"><a name="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a><a name="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a>数据库实例有如下几种状态：</p>
 <a name="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><a name="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><ul id="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"><li>Normal：表示数据库实例可用，且数据有冗余备份。所有进程都在运行，主备关系正常。</li><li>Degraded：表示数据库实例可用，但数据没有冗余备份。</li><li>Unavailable：表示数据库实例不可用。</li></ul>
+</div></div>
+</td>
+</tr>
+<tr id="zh-cn_topic_0116784021_ridcvw"><td class="cellrowborder" valign="top" width="19.43%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_rpidcvw"><a name="zh-cn_topic_0116784021_rpidcvw"></a><a name="zh-cn_topic_0116784021_rpidcvw"></a>-w</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_dpidcvw"><a name="zh-cn_topic_0116784021_dpidcvw"></a><a name="zh-cn_topic_0116784021_dpidcvw"></a>纵向分行显示数据库实例状态（与cms状态显示格式一致）。</p>
+<div class="note" id="zh-cn_topic_0116784021_vnidcvw"><a name="zh-cn_topic_0116784021_vnidcvw"></a><a name="zh-cn_topic_0116784021_vnidcvw"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0116784021_vnbidcvw"><a name="zh-cn_topic_0116784021_vnbidcvw"></a><a name="zh-cn_topic_0116784021_vnbidcvw"></a>-w参数需要和-v以及-C参数一起使用才能按主备关系成对纵向分行显示数据库实例状态，使用-w参数时，必须指定-C、-v参数。</p>
 </div></div>
 </td>
 </tr>
