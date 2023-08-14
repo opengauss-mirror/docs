@@ -470,7 +470,6 @@ $(function ($) {
   });
 
   $(".menu-item .menu-title").click(function () {
-    console.log(11)
     $(this).toggleClass("show");
     $(this).find(".icon-down").toggleClass("show");
     $(this).parent().find(".version-list").toggleClass("show");

@@ -108,7 +108,29 @@
         <div class="mask-mobile"></div>
         <div class="book-page container" id="page">
             <div class="page-content">
-                {{ partial "docMap.html" }}
+              {{ range where $.Page.Site.Pages "Type" "docmap" }}
+              <div class="doc-map">
+                <h1 class="map-title">{{ .Params.title }}</h1>
+                <div class="doc-map-main" id="markdown">
+                  {{ range .Params.module }}
+                    <h2 class="line-title bg-1" id="{{ .title }}">{{ .title }}</h2>
+                    <div class="line-main">
+                      <div class="link-list">
+                        {{ range .list }}
+                        <a
+                        target="_blank"
+                        href="{{ .download }}"
+                        >{{ .title }}</a>
+                        {{ end }}
+                    </div>
+                  </div>
+                  {{ end }}
+
+
+                 
+                </div>
+              </div>    
+              {{ end }}          
             </div>
             <aside class="book-toc">
               <ul id="toc-list"></ul>
