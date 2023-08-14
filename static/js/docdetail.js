@@ -91,10 +91,10 @@ $(function ($) {
     stars: 0,
   };
   evaluateParams.lang = lang;
-  var versionStr = urlArr[3].replace("-lite", "");
-  $("#version-select .option p,#menu-top-mobile .option>p").each(function () {
-    if ($(this).children(".version-name").html() === versionStr) {
-      $(this).addClass("active");
+  var versionStr = urlArr.length >= 4 ? urlArr[3].replace('-lite', '') : '';
+  $('#version-select .option p,#menu-top-mobile .option>p').each(function () {
+    if ($(this).children('.version-name').html() === versionStr) {
+      $(this).addClass('active');
     }
   });
   if (evaluateParams.lang === "en") {
@@ -371,6 +371,9 @@ $(function ($) {
     });
     // 查看该版本是否有轻量版，有轻量版才显示切换按钮
     (function switchVersionHidden() {
+      if(location.pathname.split("/").length < 4){
+        return ;
+      }
       const version = location.pathname.split("/")[3].split("-")[0];
       const versionData = lang === "zh" ? versionObjZh : versionObjEn;
       if (versionData[version].homeLitePath) {
@@ -455,12 +458,21 @@ $(function ($) {
     const mutation = new MutationObserver(addNavTitle);
     const config = { childList: true, subtree: true };
     const targetNode = document.getElementById("docstreeview");
-    mutation.observe(targetNode, config);
+    if(targetNode){
+      mutation.observe(targetNode, config);
+    }
     // 给较长的导航栏文字增加title end
     window.onload = function () {
       setTimeout(() => {
         handleNavScroll();
       }, 100);
     };
+  });
+
+  $(".menu-item .menu-title").click(function () {
+    console.log(11)
+    $(this).toggleClass("show");
+    $(this).find(".icon-down").toggleClass("show");
+    $(this).parent().find(".version-list").toggleClass("show");
   });
 });

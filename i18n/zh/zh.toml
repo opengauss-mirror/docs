@@ -181,3 +181,83 @@ other = "zh"
 other = "企业版"
 [lite]
 other = "轻量版"
+
+
+[doc_map]
+other = "文档地图"
+[know]
+other = "了解"
+[about_openGauss]
+other = "关于openGauss"
+[characteristic_description]
+other = "特性描述"
+[version_introduction]
+other = "版本介绍"
+[try]
+other = "试用"
+[try_me]
+other = "TRY ME"
+[deployment]
+other = "部署"
+[minimalist_server]
+other = "极简版服务器安装"
+[minimalist_container]
+other = "极简版容器安装"
+[OM_Enterprise]
+other = "企业版OM安装"
+[development]
+other = "开发"
+[jdbc]
+other = "基于JDBC开发"
+[odbc]
+other = "基于ODBC开发"
+[psycopg]
+other = "基于Psycopg开发"
+[libpq]
+other = "基于libpq开发"
+[import_export]
+other = "导入/导出"
+[maintenance]
+other = "运维"
+[operation_maintenance]
+other = "日常运维"
+[backup_recovery]
+other = "备份与恢复"
+[upgrade]
+other = "升级指南"
+[fault_diagnosis]
+other = "故障诊断指南"
+[commands_set]
+other = "openGauss命令集"
+[tuning]
+other = "调优"
+[system]
+other = "系统调优指南"
+[sql]
+other = "SQL调优指南"
+[tpcc]
+other = "TPCC性能调优指南"
+[wdr]
+other = "WDR解读指南"
+[tools]
+other = "工具"
+[cm]
+other = "统一数据库管理工具（CM）"
+[data_kit]
+other = "DataKit"
+[migration]
+other = "MySQL迁移工具"
+
+
+
+
+[lts_version]
+other = "长期支持版本 (LTS)"
+[innovation_version]
+other = "社区创新版本 (Preview)"
+[archive_version]
+other = "归档版本"
+[latest_version]
+other = "最新开发版本 (Latest)"
+[version_document]
+other = "版本文档"

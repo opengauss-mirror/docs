@@ -1,12 +1,15 @@
 // 本文件存放控制版本相关的跳转及下载的代码
 function jumpDocsHome(lang, version) {
   const versionObj = lang === 'zh' ? versionObjZh : versionObjEn;
-  const link =
-    '/' +
+  const link = version !== "" ?
+    "/" +
     lang +
-    '/docs/' +
+    "/docs/" +
     version +
-    versionObj[version.split('-')[0]].homePath;
+    versionObj[version.split("-")[0]].homePath :
+    "/" +
+    lang +
+    "/";
   window.open(link, '_self');
 }
 // 读取数据生成版本切换的element元素
@@ -58,7 +61,8 @@ function createDownloadBtn() {
 }
 $(document).ready(function () {
   const lang = location.href.split('/')[3];
-  const version = window.location.pathname.split('/')[3];
+  const paths = window.location.pathname.split("/");
+  const version = paths.length > 3 ? paths[3] : "";
   createVersionSpan();
   // 控制中英文切换
   $('#lang .lang-item,.theme-lang-mobile .lang a').click(function () {
@@ -70,4 +74,37 @@ $(document).ready(function () {
     jumpDocsHome(lang, $(this).children('.version-name').html());
   });
   createDownloadBtn();
+
+  const versionObj =
+    lang === "zh"
+      ? versionObjZh
+      : versionObjEn
+
+  let spanElement1 = "";
+  let spanElement2 = "";
+  Object.keys(versionObj).forEach((key) => {
+    if (versionObj[key].state === "LTS") {
+      spanElement1 =
+        spanElement1 +
+        `<li><a href="/${lang}/docs/${key}${versionObj[key].homePath}">${key}</a></li>`;
+    } else if (versionObj[key].state === "EOM") {
+      spanElement2 =
+        spanElement2 +
+        `<li><a href="/${lang}/docs/${key}/${versionObj[key].homePath}">${key}</a></li>`;
+    } else if (versionObj[key].state === "DEV") {
+      $(".latest-version").click(function () {
+        jumpDocsHome(lang, key);
+      });
+    }
+  });
+  // $(
+  //   "#left>.version-list,#h5_versions"
+  // ).prepend(spanElement1 + spanElement2);
+  $(
+    ".lts-version .version-list"
+  ).prepend(spanElement1);
+  $(
+    ".archive-version .version-list"
+  ).prepend(spanElement2);
+
 });

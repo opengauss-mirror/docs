@@ -78,6 +78,10 @@
         <div class="book-page container" id="page">
             <div class="page-content">
               <div class="docs-a docs-a-mobile">
+                <a class="jstree-anchor" href="/{{ .Site.LanguageCode }}/">
+                  {{ i18n "doc_map" }}
+                </a>
+                <i></i>
               </div>
                 {{ template "main" . }}
                 {{ partial "turn.html"}}
