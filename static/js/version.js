@@ -90,7 +90,7 @@ $(document).ready(function () {
     } else if (versionObj[key].state === "EOM") {
       spanElement2 =
         spanElement2 +
-        `<li><a href="/${lang}/docs/${key}/${versionObj[key].homePath}">${key}</a></li>`;
+        `<li><a href="/${lang}/docs/${key}${versionObj[key].homePath}">${key}</a></li>`;
     } else if (versionObj[key].state === "DEV") {
       $(".latest-version").click(function () {
         jumpDocsHome(lang, key);
