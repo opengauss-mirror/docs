@@ -132,6 +132,12 @@ html{
   font-size: 14px;
 }
 
+#all .menu-item.disabled{
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events:none;
+  cursor: not-allowed;
+}
+
 #all .menu-item,
 #all .latest-version {
   color: #fff;

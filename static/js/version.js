@@ -82,6 +82,7 @@ $(document).ready(function () {
 
   let spanElement1 = "";
   let spanElement2 = "";
+  let spanElement3 = "";
   Object.keys(versionObj).forEach((key) => {
     if (versionObj[key].state === "LTS") {
       spanElement1 =
@@ -95,16 +96,40 @@ $(document).ready(function () {
       $(".latest-version").click(function () {
         jumpDocsHome(lang, key);
       });
+    } else {
+      spanElement3 =
+        spanElement3 +
+        `<li><a href="/${lang}/docs/${key}${versionObj[key].homePath}">${key}</a></li>`;
     }
   });
-  // $(
-  //   "#left>.version-list,#h5_versions"
-  // ).prepend(spanElement1 + spanElement2);
-  $(
-    ".lts-version .version-list"
-  ).prepend(spanElement1);
-  $(
-    ".archive-version .version-list"
-  ).prepend(spanElement2);
+  if (spanElement1 !== "") {
+    $(".lts-version .version-list").prepend(spanElement1);
+    $(".lts-version").find(".menu-title").toggleClass("show");
+    $(".lts-version").find(".icon-down").toggleClass("show");
+    $(".lts-version").find(".version-list").toggleClass("show");
+  } else {
+    $(".lts-version").toggleClass("disabled");
+    $("#menu-top-mobile .lts-version").hide();
+  }
+
+  if (spanElement2 !== "") {
+    $(".archive-version .version-list").prepend(spanElement2);
+    $(".archive-version").find(".menu-title").toggleClass("show");
+    $(".archive-version").find(".icon-down").toggleClass("show");
+    $(".archive-version").find(".version-list").toggleClass("show");
+  } else {
+    $(".archive-version").toggleClass("disabled");
+    $("#menu-top-mobile .archive-version").hide();
+  }
+
+  if (spanElement3 !== "") {
+    $(".innovate .version-list").prepend(spanElement3);
+    $(".innovate").find(".menu-title").toggleClass("show");
+    $(".innovate").find(".icon-down").toggleClass("show");
+    $(".innovate").find(".version-list").toggleClass("show");
+  } else {
+    $(".innovate").toggleClass("disabled");
+    $("#menu-top-mobile .innovate").hide();
+  }
 
 });
