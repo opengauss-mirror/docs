@@ -24,7 +24,8 @@ gs\_ctl参数可分为如下几类：
 -   member参数，详细请参见[表8](#table1055392110383)。
 -   changerole参数，详细参见[表9](#table591372895218)。
 -   setrunmode参数，详细参见[表10](#table1451519418810)。
--   copy参数，详细参见[表11](#table1451519418811)。
+-   stack参数，详细参见[表11](#table14515194188888)。
+-   copy参数，详细参见[表12](#table1451519418811)。
 
 **表 1**  option参数
 
@@ -520,6 +521,7 @@ gs\_ctl参数可分为如下几类：
 
 **表 11**  stack参数
 
+<a name="#table14515194188888"></a>
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p14281162351513"><a name="p14281162351513"></a><a name="p14281162351513"></a>参数说明</p>

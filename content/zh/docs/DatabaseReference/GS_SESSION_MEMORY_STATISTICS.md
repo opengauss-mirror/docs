@@ -2,7 +2,7 @@
 
 GS\_SESSION\_MEMORY\_STATISTICS视图显示和当前用户执行复杂作业正在运行时的负载管理内存使用的信息。
 
-此视图需要资源管理功能(use_workload_manager)开启才会才会记录更新数据。
+此视图需要资源管理功能(use_workload_manager)开启才会记录更新数据。
 
 **表 1**  GS\_SESSION\_MEMORY\_STATISTICS字段
 
