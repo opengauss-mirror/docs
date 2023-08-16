@@ -5,6 +5,7 @@
 **表 1**  SUMMARY\_STATEMENT字段
 
 <a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_table1885642955515"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_row109937298552"><th class="cellrowborder" valign="top" width="26.669999999999998%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p2993152915559"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p2993152915559"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p2993152915559"></a><strong id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b12993142915554"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b12993142915554"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b12993142915554"></a>名称</strong></p>
 </th>
 <th class="cellrowborder" valign="top" width="17.54%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p18993429135515"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p18993429135515"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_p18993429135515"></a><strong id="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b10993172912559"><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b10993172912559"></a><a name="zh-cn_topic_0283136803_zh-cn_topic_0237122655_b10993172912559"></a>类型</strong></p>
@@ -322,6 +323,103 @@
 <td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>hash过程中，若发生落盘，使用的文件大小（单位：KB）。</p>
 </td>
 </tr>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>net_send_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>网络上的时间花销。（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt1_q</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>Q报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt2_simple_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>exec_simple_query执行耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt3_analyze_rewrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>pg_analyze_and_rewrite执行耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt4_plan_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>pg_plan_queries执行耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt5_light_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>exec_query_through_light_proxy执行耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt6_p</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>P报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt7_b</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>B报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt8_e</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>E报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt9_d</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>D报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt10_s</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>S报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt11_c</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>C报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt12_u</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>U报文执行的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt13_before_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>进入下一次报文处理前的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>srt14_after_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>完成报文处理后的耗时（单位：微秒)</p>
+</td>
+<tr id="row050425519126"><td class="cellrowborder" valign="top" width="26.669999999999998%" headers="mcps1.2.4.1.1 "><p id="p11831159191112"><a name="p11831159191112"></a><a name="p11831159191112"></a>rtt_unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.54%" headers="mcps1.2.4.1.2 "><p id="p48312598118"><a name="p48312598118"></a><a name="p48312598118"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.78999999999999%" headers="mcps1.2.4.1.3 "><p id="p9831459101120"><a name="p9831459101120"></a><a name="p9831459101120"></a>未知时间消耗，可能是session切换耗时（单位：微秒)</p>
+</td>
 </tbody>
 </table>
+
 
