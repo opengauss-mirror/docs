@@ -54,14 +54,14 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLE
 
 1. Download the openGauss source code and compile the openGauss source code according to the READMD.md file.
 2. Copy the preceding plug-ins to the `contrib` directory in the openGauss source code path. Run the `cd` command to go to the corresponding directory and run the `make install -sj` command.
-3. Copy the files required by the plug-in to the corresponding binary path. Generally, the files are `extesion.so`, `extension.sql`, and `extension.control`. The `assessment` plug-in contains the executable file `assessment_database`. In this example, the following files are involved: <font color='red'>If the binary in step 1 is used, skip this step.</font>
+3. Copy the files required by the plug-in to the corresponding binary path. Generally, the files are `extesion.so`, `extension.sql`, and `extension.control`. The `assessment` plug-in contains the executable file `gs_assessment`. In this example, the following files are involved: <font color='red'>If the binary in step 1 is used, skip this step.</font>
 
 **Dependency files of assessment**
 
 ```
 Binary path
 ├── bin
-│   └── ***assessment_database***
+│   └── ***gs_assessment***
 ├── lib
 │   └── postgresql
 │       └── ***assessment.so***
@@ -89,7 +89,7 @@ Binary path
 
 1. Ensure that a database is running and can be connected using the gsql command.
 
-2. Run the `assessment_database [args]` command, where **args** contains the following parameters:
+2. Run the `gs_assessment [args]` command, where **args** contains the following parameters:
 
 |          | Parameter| Description                                    | Usage                                  |
 | -------- | ---- |  ---------------------------------------- | -------------------------------------- |
@@ -108,17 +108,17 @@ Binary path
 Use gs\_initdb to initialize the database and start it. Assume that the startup port is 5432. In this case, you can run the `gsql -dpostgres -p5432` command to connect to the database. Assume that the input file is `test.sql`, the output report path is `result.html`, and the source database to be assessed is B. The command used for evaluation is as follows:
 
 ```shell
-assessment_database -p5432 -cB -ftest.sql -oresult.html
+gs_assessment -p5432 -cB -ftest.sql -oresult.html
 ```
 
 The following information is displayed:
 
 ```shell
-assessment_database: create database "assessment_197561" automatically.
-assessment_database: Create plugin[dolphin] automatically.
-assessment_database: Create extension[assessment] automatically.
-assessment_database: parse[100.00%]:35/35
-assessment_database: Create database assessment_197561 automatically, clear it manually!
+gs_assessment: create database "assessment_197561" automatically.
+gs_assessment: Create plugin[dolphin] automatically.
+gs_assessment: Create extension[assessment] automatically.
+gs_assessment: parse[100.00%]:35/35
+gs_assessment: Create database assessment_197561 automatically, clear it manually!
 ```
 
 #### Case 2:
@@ -126,7 +126,7 @@ assessment_database: Create database assessment_197561 automatically, clear it m
 Assume that a database node already exists remotely. You can connect to the database through **gsql -dpostgres -p5432 -h127.0.0.2 -Utest -W*** on the compatibility assessment node. Assume that the input file is **test.sql**, the output report path is **result.html**, and the source database to be assessed is B. The command used for assessment is as follows:
 
 ```shell
-assessment_database -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+gs_assessment -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
 ```
 
 #### case 3:
@@ -134,7 +134,7 @@ assessment_database -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.ht
 Assume that a remote database node exists and the **evaluation** database has been created for compatibility assessment. On the compatibility assessment node, you can connect to the database through **gsql -devalution -p5432 -h127.0.0.2 -Utest -W***. Assume that the input file is **test.sql** and the output report path is **result.html**. The assessment command is as follows:
 
 ```shell
-assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+gs_assessment -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
 ```
 
 That is, replace **-cB** in case 2 with **-devaluation** to specify the database.
