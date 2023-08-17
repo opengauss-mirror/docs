@@ -740,7 +740,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定兼容的数据库的类型，默认兼容O。
 
-  取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。
+  取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[dolphin限制](../ExtensionReference/dolphin限制.md)。
 
   >![](public_sys-resources/icon-note.png) **说明：** 
   >
