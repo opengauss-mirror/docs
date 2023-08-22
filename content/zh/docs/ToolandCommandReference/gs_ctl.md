@@ -121,6 +121,21 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>基于共享存储的双中心容灾模式，进行xlog日志拷贝。</p>
 </td>
 </tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>member</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>对成员节点的管理。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>changerole</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>改变节点角色。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>setrunmode</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>设置运行模式</p>
+</td>
+</tr>
 </tbody>
 </table>
 
