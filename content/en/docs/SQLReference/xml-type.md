@@ -29,7 +29,7 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:p** 
+>![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   The following operations are not supported for XML types:
 >    -   Logical expressions and, or, not.
 >    -   As partition key, secondary partition key, foreign key, primary key and unique constraint.
