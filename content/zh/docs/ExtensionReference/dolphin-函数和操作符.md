@@ -13,6 +13,7 @@
 -   **[逻辑操作符](dolphin-逻辑操作符.md)**  
 -   **[位串操作函数和操作符](dolphin-位串操作函数和操作符.md)**  
 -   **[JSON-JSONB函数和操作符](dolphin-JSON-JSONB函数和操作符.md)**
+-   **[JSON操作符兼容](dolphin-JSON操作符兼容.md)**
 -   **[类型转换函数](dolphin-类型转换函数.md)**  
 -   **[四则运算操作符兼容](dolphin-四则运算操作符兼容.md)**  
 -   **[注释操作符](dolphin-注释操作符.md)**  
