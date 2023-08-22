@@ -28,7 +28,7 @@ openGauss=# SELECT * FROM bit_type_t1;
 openGauss=# SELECT B'10'::bit(4);
   bit   
 --------
- 000010
+ 0010
 (1 row)
 
 --删除表。
