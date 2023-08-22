@@ -62,7 +62,7 @@ cm_ctl finishredo
 cm_ctl build [-c] [-n NODEID] [-D DATADIR [-t SECS] [-f] [-b full] [-j NUM]]
 cm_ctl check -B BINNAME -T DATAPATH
 cm_ctl stop [[-z AVAILABILITY_ZONE] | [-n NODEID [-D DATADIR]]] [-t SECS] [-m SHUTDOWN-MODE]
-cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
+cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-w] [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
 cm_ctl view [-v | -N | -n NODEID] [-l FILENAME]
 cm_ctl set [--log_level=LOG_LEVEL] [--cm_arbitration_mode=ARBITRATION_MODE] [--cm_switchover_az_mode=SWITCHOVER_AZ_MODE] [--cmsPromoteMode=CMS_PROMOTE_MODE -I INSTANCEID]
 cm_ctl set --param --agent | --server [-n [NODEID]] -k [PARAMETER]="[value]"
@@ -390,6 +390,13 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0116784021_a925da3184e614f288fce5a63a2916abf"><a name="en-us_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a><a name="en-us_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a>Displays the detailed database instance status.</p>
 <div class="note" id="en-us_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"><a name="en-us_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><a name="en-us_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><span class="notetitle"> Note: </span><div class="notebody"><p id="en-us_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"><a name="en-us_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a><a name="en-us_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a>A database instance can be in any of the following states:</p>
 <a name="en-us_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><a name="en-us_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><ul id="en-us_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"><li><strong>Normal</strong>: indicates that the database instance is available and data is backed up. All the processes are running and the primary-standby relationship is normal. </li><li><strong>Degraded</strong>: The database instance is available, but data is not backed up. </li><li><strong>Unavailable</strong>: The database instance is unavailable.</li></ul>
+</div></div>
+</td>
+</tr>
+<tr id="row1129820320157"><td class="cellrowborder" valign="top" width="19.43%" headers="mcps1.2.3.1.1 "><p id="p12982030155"><a name="p12982030155"></a><a name="p12982030155"></a>-w</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0116784021_a842704ebd6fc4221aaba924dc932ff55"><a name="en-us_topic_0116784021_a842704ebd6fc4221aaba924dc932ff55"></a><a name="en-us_topic_0116784021_a842704ebd6fc4221aaba924dc932ff55"></a>Display the database instance status in vertical rows (consistent with the CMS status display format).</p>
+<div class="note" id="en-us_topic_0116784021_nc60bc80c518c49eda2b35d562147346b"><a name="en-us_topic_0116784021_nc60bc80c518c49eda2b35d562147346b"></a><a name="en-us_topic_0116784021_nc60bc80c518c49eda2b35d562147346b"></a><span class="notetitle"> Note: </span><div class="notebody"><p id="en-us_topic_0116784021_af1994683c8554b83b1b0e4aabdbcf7cd"><a name="en-us_topic_0116784021_af1994683c8554b83b1b0e4aabdbcf7cd"></a><a name="en-us_topic_0116784021_af1994683c8554b83b1b0e4aabdbcf7cd"></a>The <strong>-w<strong> option must be used together with <strong>-v</strong> and <strong>-C</strong> to display detailed database instance status information in pairs vertically based on the primary and standby relationship. When <strong>-w</strong> is used, <strong>-C</strong> and <strong>-v</strong> must be specified.</p>
 </div></div>
 </td>
 </tr>
