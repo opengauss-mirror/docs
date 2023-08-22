@@ -209,6 +209,27 @@ LOCAL\_ACTIVE\_SESSION视图显示本节点上的ACTIVE SESSION PROFILE内存中
 <td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>全局会话ID。</p>
 </td>
 </tr>
+<tr id="row887111495812"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p487104912816"><a name="p487104912816"></a><a name="p487104912816"></a>xact_start_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p08711049881"><a name="p08711049881"></a><a name="p08711049881"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>事务开始时间。</p>
+</td>
+</tr>
+<tr id="row887111495812"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p487104912816"><a name="p487104912816"></a><a name="p487104912816"></a>query_start_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p08711049881"><a name="p08711049881"></a><a name="p08711049881"></a>timestamp with time zone</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>查询开始时间。</p>
+</td>
+</tr>
+<tr id="row887111495812"><td class="cellrowborder" valign="top" width="23.75%" headers="mcps1.2.4.1.1 "><p id="p487104912816"><a name="p487104912816"></a><a name="p487104912816"></a>state</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.990000000000002%" headers="mcps1.2.4.1.2 "><p id="p08711049881"><a name="p08711049881"></a><a name="p08711049881"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.26%" headers="mcps1.2.4.1.3 "><p id="p587111491981"><a name="p587111491981"></a><a name="p587111491981"></a>状态。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
