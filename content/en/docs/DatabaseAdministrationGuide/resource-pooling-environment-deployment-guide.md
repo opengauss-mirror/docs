@@ -17,7 +17,7 @@ Developers are advised to:
   - The following figure shows the resource pooling deployment.
 
 <p align="center"><b>Figure 1: openGauss resource pooling deployment</b></p>
-<div align="center"><img src="figures/dms1.JPG"/></div>
+<div align="center"><img src="figures/dms1.jpg"/></div>
 
   - In the installation package of the enterprise edition officially released in the community, if the resource pooling architecture needs to be set up, disk arrays, servers, and optical switches need to be prepared, and the CM and OM components need to be deployed.
 

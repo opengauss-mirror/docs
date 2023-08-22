@@ -2,7 +2,9 @@
 
 ## Single-Center Deployment
 
-**Figure 1** Single-center deployment<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
+**Figure 1** Single-center deployment
+
+<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
     <img src="figures/single-center-deployment.png" title="Single-center deployment" style="zoom:80%;" />
 
 Networking features:
@@ -20,7 +22,9 @@ Applicable to service systems that have low requirements on HA.
 
 ## Intra-City Dual-Center Deployment
 
-**Figure 2** Intra-city dual-center deployment<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
+**Figure 2** Intra-city dual-center deployment
+
+<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
     <img src="figures/intra-city-dual-center-deployment.png" title="Intra-city dual-center deployment" style="zoom:80%;" />
 
 Networking features:
@@ -39,7 +43,9 @@ Applicable to common service systems.
 
 ## Two-City Three-DC Deployment
 
-**Figure 3** Two-city three-dc deployment<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
+**Figure 3** Two-city three-dc deployment
+
+<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
     <img src="figures/two-city-three-dc-deployment.png" title="Two-city three-dc deployment" style="zoom:80%;" />
 
 Networking features:
@@ -57,7 +63,9 @@ Applicable to core and important service systems.
 
 ## Two-City Three-DC Streaming DR Solution
 
-**Figure 4** Two-city three-DC streaming DR solution<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
+**Figure 4** Two-city three-DC streaming DR solution
+
+<a name="en-us_topic_0283139012_en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a> 
     <img src="figures/two-city-three-dc-streaming-dr-solution.png" title="Two-city three-DC streaming DR solution" style="zoom:80%;" />
 
 Networking features:
