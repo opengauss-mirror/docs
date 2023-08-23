@@ -12,6 +12,21 @@
 -   PL\_COMPILATION\_TIME: compilation time of the PL/pgSQL stored procedure
 -   NET\_SEND\_TIME: time spent on the network
 -   DATA\_IO\_TIME: time spent on I/Os.
+-   SRT1_Q: Q报文件执行耗时
+-   SRT2_SIMPLE_QUERY
+-   SRT3_ANALYZE_REWRITE
+-   SRT4_PLAN_QUERY
+-   SRT5_LIGHT_QUERY
+-   SRT6_P
+-   SRT7_B
+-   SRT8_E
+-   SRT9_D
+-   SRT10_S
+-   SRT11_C
+-   SRT12_U
+-   SRT13_BEFORE_QUERY
+-   SRT14_AFTER_QUERY
+-   RTT_UNKNOWN
 
 **Table  1**  INSTANCE\_TIME columns
 
