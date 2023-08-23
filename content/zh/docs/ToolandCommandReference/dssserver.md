@@ -246,7 +246,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **取值范围：** 字符串。
 
-    **默认值：""**
+    **默认值：**""
 
 -   SSL\_PWD\_CIPHERTEXT
 
@@ -270,7 +270,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **取值范围：** 字符串。
 
-    **默认值：""**
+    **默认值：**""
 
 -   IMAGE\_NAMES
 
@@ -286,7 +286,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **取值范围：** 字符串。
 
-    **默认值：** “/etc/ceph/ceph.conf”
+    **默认值：** "/etc/ceph/ceph.conf"
 
 -   VOLUME\_TYPES
 
@@ -294,7 +294,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **取值范围：** 字符串。
 
-    **默认值：""**
+    **默认值：**""
 
 -   DSS\_CM\_SO\_NAME
 
@@ -302,8 +302,16 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **取值范围：** 字符串。
 
-    **默认值：""**
+    **默认值：**""
 
     >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >+ om安装后的默认值为libclient.so
+
+-   CLUSTER\_RUN\_MODE
+
+    **参数说明：** DORADO双集群启动模式。
+
+    **取值范围：**"cluster_primary" | "cluster_standby"
+
+    **默认值：**"cluster_primary"
