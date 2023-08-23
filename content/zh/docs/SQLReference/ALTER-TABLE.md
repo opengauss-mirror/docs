@@ -242,9 +242,13 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >
 >   向表中增加多列。
 >
-> + **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+> + **MODIFY \( \{ column\_name data\_type | column\_name \} \[, ...\] \)**
 >
 >   修改表已存在字段的数据类型。
+>
+> + **MODIFY \( \{ column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+>
+>   修改表已存在字段的约束，ENABLE启用约束。
 >
 > + **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
 >   修改表已存在字段的定义，将用新定义替换字段原定义，原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束等）不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段定义的同时修改字段在表中的位置。
