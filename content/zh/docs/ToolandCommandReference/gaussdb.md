@@ -195,6 +195,14 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"></a>-</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row14480017"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"></a>-z CLUSTER_RUN_MODE</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a>用于资源池化DORADO双集群，在启动时指定本集群的启动模式。</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a>CLUSTER_RUN_MODE可以取下面两个值：</p>
+<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><ul id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"><li>cluster_primary：以主集群模式启动。</li><li>cluster_standby：以备集群模式启动。</li></ul>
+</td>
+</tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row23184364"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"></a>-?, --help</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p38699208"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p38699208"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p38699208"></a>显示关于gaussdb命令行参数的帮助信息，然后退出。</p>
