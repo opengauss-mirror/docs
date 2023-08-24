@@ -27,12 +27,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-    ({ column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | table_indexclause
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
     [ AUTO_INCREMENT [ = ] value ]
+    [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
@@ -156,6 +157,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **AUTO\_INCREMENT**
 
     该关键字将字段指定为自动增长列。自动增长列必须是某个索引的第一个字段。
+
+    若在插入时不指定此列的值（或指定此列的值为0、NULL、DEFAULT），此列的值将由自增计数器自动增长得到。
+
+    若插入或更新此列为一个大于当前自增计数器的值，执行成功后，自增计数器将刷新为此值。
+
+    自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
+
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
+    >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型。
+    >-   每个表只能有一个自动增长列。
+    >-   自动增长列必须是主键约束或唯一约束的第一个字段。
+    >-   自动增长列不能指定DEFAULT缺省值。
+    >-   CHECK约束的表达式中不能含有自动增长列。
+    >-   可以指定自动增长列允许NULL，若不指定，默认自动增长列含有NOT NULL约束。
+    >-   含有自动增长列的表创建时，会创建一个依赖于此列的序列作为自增计数器，不允许通过序列相关功能修改或删除此序列，可以查看序列的值。
+    >-   本地临时表中的自动增长列不会创建序列。
+    >-   自动增长列不支持列式存储。
+    >-   自增计数器自增和刷新操作不会回滚。
 
 -   **AUTOEXTEND\_SIZE \[=\] value**
 
