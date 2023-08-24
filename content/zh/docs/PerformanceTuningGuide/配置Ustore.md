@@ -35,7 +35,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
   - **创建方式1：创建表时指定存储引擎类型**
 
   ```
-  create table test(id int, name varchar(10)) with (storage_type=ustore);
+  create table test(id int, age int, name varchar(10)) with (storage_type=ustore);
   ```
 
   - **创建方式2：GUC参数配置指定USTORE存储引擎**
@@ -51,7 +51,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
     2. 创建表。
 
        ```
-       create table test(id int, name varchar(10));
+       create table test(id int, age int, name varchar(10));
        ```
 
 -   **创建索引的方式**
