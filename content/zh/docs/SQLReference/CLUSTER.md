@@ -101,7 +101,7 @@ openGauss=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
 -- 对分区p3进行聚集。
 openGauss=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
 
--- 对数据库中可以进行聚集的表进聚集。
+-- 对数据库中可以进行聚集的表进行聚集。
 openGauss=# CLUSTER;
 
 --删除索引。
