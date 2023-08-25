@@ -112,7 +112,22 @@ gs\_ctl参数可分为如下几类：
     </td>
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1355652620520"><a name="p1355652620520"></a><a name="p1355652620520"></a>获取gaussdb调用栈。</p>
     </td>
-    </tr
+    </tr>
+    <tr id="row7555122616527"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p055613263521"><a name="p055613263521"></a><a name="p055613263521"></a>member</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1355652620520"><a name="p1355652620520"></a><a name="p1355652620520"></a>对成员节点的管理。</p>
+    </td>
+    </tr>
+    <tr id="row7555122616527"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p055613263521"><a name="p055613263521"></a><a name="p055613263521"></a>changerole</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1355652620520"><a name="p1355652620520"></a><a name="p1355652620520"></a>改变节点角色。</p>
+    </td>
+    </tr>
+    <tr id="row7555122616527"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p055613263521"><a name="p055613263521"></a><a name="p055613263521"></a>setrunmode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p1355652620520"><a name="p1355652620520"></a><a name="p1355652620520"></a>设置运行模式。</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
