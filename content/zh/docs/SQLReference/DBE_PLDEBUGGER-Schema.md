@@ -15,7 +15,7 @@ GRANT gs_role_pldebugger to user;
 
 -   准备调试
 
-    通过PG\_PROC，查找到待调试存储过程的oid，并执行DBE\_PLDEBUGGER.turn\_on\(oid\)。本客户端就会作为server端使用。
+    通过PG\_PROC，查找到待调试存储过程的oid，并执行DBE\_PLDEBUGGER.turn\_on\(oid\)。本客户端就会作为server端使用。调试匿名块时，执行DBE\_PLDEBUGGER.turn\_on\(0\)。
 
     ```
     openGauss=# CREATE OR REPLACE PROCEDURE test_debug ( IN  x INT) 
@@ -41,10 +41,20 @@ GRANT gs_role_pldebugger to user;
 
 -   开始调试
 
-    server端执行存储过程，会在存储过程内第一条SQL语句前hang住，等待debug端发送的调试消息。仅支持直接执行存储过程的调试，不支持通过trigger调用执行的存储过程调试。
+    server端执行存储过程，会在存储过程内第一条SQL语句前hang住，等待debug端发送的调试消息。仅支持直接执行存储过程的调试，不支持通过trigger调用执行的存储过程调试。匿名块在turn_on后输入执行即可。
 
     ```
     openGauss=# call test_debug(1);
+
+    # 匿名块
+    openGauss=# do $$
+    declare
+       # declaration_section
+    begin
+       # executable_section
+    end;
+    $$
+    LANGUAGE plpgsql;
     ```
 
     再起一个客户端，作为debug端，通过turn\_on返回的数据，调用DBE\_PLDEBUGGER.attach关联到该存储过程上进行调试。
@@ -218,7 +228,7 @@ GRANT gs_role_pldebugger to user;
     </tr>
     <tr id="row34281710909"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p7428111010014"><a name="p7428111010014"></a><a name="p7428111010014"></a><a href="DBE_PLDEBUGGER-info_code.md">DBE_PLDEBUGGER.info_code</a></p>
     </td>
-    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1442813107018"><a name="p1442813107018"></a><a name="p1442813107018"></a>debug和server端都可以调用，打印指定存储过程的源语句和各行对应的行号。</p>
+    <td class="cellrowborder" valign="top" width="65.4%" headers="mcps1.2.3.1.2 "><p id="p1442813107018"><a name="p1442813107018"></a><a name="p1442813107018"></a>debug和server端都可以调用，打印指定存储过程的源语句和各行对应的行号。info_code(0)可查看正在调试中的匿名块源语句和各行对应的行号。</p>
     </td>
     </tr>
     <tr id="row18493441451"><td class="cellrowborder" valign="top" width="34.599999999999994%" headers="mcps1.2.3.1.1 "><p id="p15849114410454"><a name="p15849114410454"></a><a name="p15849114410454"></a><a href="DBE_PLDEBUGGER-step.md">DBE_PLDEBUGGER.step</a></p>
