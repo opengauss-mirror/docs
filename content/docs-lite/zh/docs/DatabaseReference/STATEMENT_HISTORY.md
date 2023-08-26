@@ -6,8 +6,7 @@
 
 -   必须在postgres库内查询，其它库中不存数据。
 -   此系统表受track\_stmt\_stat\_level控制，默认为"OFF,L0"，第一部分控制Full SQL，第二部分控制Slow SQL，具体字段记录级别见下表。考虑性能影响，更改该参数的值时建议通过set方式设置，使该参数仅对当前会话生效。
--   对于Slow SQL，当track\_stmt\_stat\_level的值为非OFF时，且SQL执行时间超过log\_min\_duration\_statement，会记录为慢SQL。
--对于存储过程内的SQL语句(parent_unique_sql_id非0)，n_soft_parse、n_hard_parse、n_returned_rows需要设置参数instr_unique_sql_track_type为all才能记录，n_tuples_fetched、n_tuples_returned、n_tuples_inserted、n_tuples_updated、n_tuples_deleted、n_blocks_fetched、n_blocks_hit、db_time、pu_time、execution_time、parse_time、plan_time、rewrite_time、pl_execution_time、pl_compilation_time、data_io_time、net_send_info、net_recv_info、net_stream_send_info、net_stream_recv_info、lock_wait_count、lock_wait_time、lwlock_count、lwlock_wait_count、lwlock_ti、lwlock_wait_time、details、trace_id、advise、net_send_time、 srt1_q、 srt2_simple_query、 srt3_analyze_rewrite、 srt4_plan_query、 srt5_light_query、 srt6_p、 srt7_b、 srt8_e、 srt9_d、 srt10_s、 srt11_c、 srt12_u、 srt13_before_query、 srt14_after_query、rtt_unknown列不支持，记录的值没有实际意义。
+-   对于存储过程内的SQL语句(parent_query_id非0)，当设置instr_unique_sql_track_type为all时才可以记录，其中记录了query、query_plan、unique_query_id、parent_query_id、db_time、cpu_time、start_time、finish_time、is_slow_sql以及一些当前数据库使用信息的基本参数，n_tuples_fetched、n_tuples_returned、n_tuples_inserted、n_tuples_updated、n_tuples_deleted、n_blocks_fetched、n_blocks_hit、execution_time、parse_time、plan_time、rewrite_time、pl_execution_time、pl_compilation_time、data_io_time、net_send_info、net_recv_info、net_stream_send_info、net_stream_recv_info、lock_wait_count、lock_wait_time、lwlock_count、lwlock_wait_count、lwlock_ti、lwlock_wait_time、details、trace_id、advise、net_send_time、 srt1_q、 srt2_simple_query、 srt3_analyze_rewrite、 srt4_plan_query、 srt5_light_query、 srt6_p、 srt7_b、 srt8_e、 srt9_d、 srt10_s、 srt11_c、 srt12_u、 srt13_before_query、 srt14_after_query、rtt_unknown列不支持，记录的值没有实际意义。
 
 **表 1**  STATEMENT\_HISTORY字段
 
@@ -647,6 +646,14 @@
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
 </td>
 </tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>parent_query_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>存储过程中plsql父语句的信息。</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
 </tbody>
 </table>
 

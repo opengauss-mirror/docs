@@ -189,4 +189,5 @@ PG\_STAT\_ACTIVITY视图显示和当前用户查询相关的信息，字段保�
 </tr>
 </tbody>
 </table>
-
+注：目前支持记录存储过程中的PL/SQL信息，对于PL/SQL, query字段的显示稍有变化，会将目前执行的顶层语句，当前执行语句的上一层语句以及当前执行的语句一同放进query字段进行显示。
+结构如下：query string: 顶层调用的存储过程或函数 current level: 当前语句的父语句 ; execute stmt: 当前正在执行的语句
