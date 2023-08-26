@@ -40,7 +40,7 @@
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |BIT|数值类型转换BIT可视作数值类型转换BIT(64)后，再转换到目标BIT(n)，超长在严格模式下报错，非严格模式下为最大值（全1）。小数存在四舍五入|BIT(64)最高位可为符号位，因此-1::bit(8)不为'11111111'，而是64位1导致超长；<br>-1与UINT8_MAX均为64位1<br>到INT/BIGINT/UINT4/UINT8的转换级别为显式，其他为赋值|
-|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|数值类型间相互转换，存在四舍五入、精度丢失、溢出等情况。超出目标类型的表示范围则溢出，整数溢出规则为：严格模式下报错，非严格模式先截取目标类型数位表示范围的最大/小值（如UINT8有64个数位，超过64位表示范围的负数可截断为INT8的最小值，正数可截断为UINT8的最大值），转为无符号整数时，溢出的负数转换为对应的正补码, 源类型为NUMERIC时负数转换为0。转为有符号整数时，溢出的正数转换为对应的负整数，源类型为NUMERIC时正数截取为目标类型的最大值|转换级别为隐式|
+|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|数值类型间相互转换，存在四舍五入、精度丢失、溢出等情况。超出目标类型的表示范围则溢出，整数溢出规则为：转换级别为(1)隐式/赋值：严格模式下报错，非严格模式截断为目标类型最小/大值。(2)显式：先截取目标类型数位表示范围的最大/小值（如UINT8有64个数位，超过64位表示范围的负数截断为INT8的最小值，正数截断为UINT8的最大值），转为无符号整数时溢出的负数转换为对应的正补码, 转为有符号整数时溢出的正数转换为对应的负整数。(3)特殊情况：UINT8到INT8的隐式/赋值转换应用显式规则。目标类型为TINYINT/SMALLINT/INT显式转换应用隐式规则。源类型为浮点类型显式转换为有符号数应用隐式规则，转换为无符号数应用显式规则。与mysql差异：openGauss中超过INT8表示范围的数字是NUMERIC类型。源类型为NUMERIC时，三种级别的转换规则相同：转为无符号整数时负数截断为0。转为有符号整数时正数截取为目标类型的最大值|转换级别为隐式|
 |DATE|三位数为2000-0x-xx<br>四位数为2000-xx-xx<br>五位数为200x-xx-xx<br>六位数为20xx-xx-xx<br>七位数为0xxx-xx-xx<br>八位数为xxxx-xx-xx<br>小数部分忽略，无四舍五入|TINYINT/SMALLINT/INT到DATE的转换级别为隐式，UINT4到DATE的转换级别为显式，其他为赋值|
 |DATETIME/TIMESTAMP|八位数及以下日期部分与DATE相同，时间为00:00:00；九位数及以上优先时间：<br>九位数为2000-0x-xx xx:xx:xx<br>十位数为200x-xx-xx xx:xx:xx<br>十一位数为20xx-xx-xx xx:xx:xx<br>十二位数为0xxx-xx-xx xx:xx:xx<br>十三位数为xxxx-xx-xx xx:xx:xx<br>小数部分忽略，无四舍五入<br>|TINYINT/SMALLINT/INT/BIGINT/NUMERIC到DATETIME/TIMESTAMP的转换级别为隐式，UINT4/UINT8为显式，其他为赋值|
 |TIME|从秒开始逐位对应|B兼容性下的TIME类型取值范围为-838:59:59~838:59:59；<br>'12:34'::time，结果为12::34::00，也更符合日常使用习惯，但1234::time，结果为00::12::34，注意区分。关于字符类型更多转换规则详见具体介绍<br>TINYINT/SMALLINT/INT/BIGINT/NUMERIC到TIME的转换级别为隐式，UINT4为显式，其他为赋值|
@@ -117,7 +117,7 @@
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |BIT|将字符串转换为对应字符集十六进制编码后，再转换为二进制编码|转换级别为显式|
-|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字符串字面数值转换。超出目标类型的表示范围则溢出，整数溢出规则为：严格模式下报错，非严格模式先截取目标类型数位表示范围的最大/小值（如UINT8对应64个数位，超过64位表示范围的数可截断为INT8的最小值/UINT8的最大值），转为无符号整数时，负数转换为对应的正补码。转为有符号整数时，正数转换为对应的负整数|转换级别为隐式|
+|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字符串字面数值转换。超出目标类型的表示范围则溢出，整数溢出规则为：严格模式下报错，非严格模式在转换级别为(1)隐式/赋值：截断为目标类型最小/大值。(2)显式：先截取目标类型数位表示范围的最大/小值，转为无符号整数时溢出的负数转换为对应的正补码, 转为有符号整数时溢出的正数转换为对应的负整数|转换级别为隐式|
 |DATE/DATETIME/TIMESTAMP/TIME|按对应格式进行转换，格式规则较多|TEXT到TIMESTAMP/TIME转换级别为显式，其他为隐式|
 |YEAR|按字符串字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|字符串类型互转|转换级别为隐式|
