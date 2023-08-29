@@ -2,15 +2,15 @@
 
 ## Function<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-**INSERT**  inserts new rows into a table.
+**INSERT** inserts new rows into a table.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   You must have the  **INSERT**  permission on a table to insert data to it. If a user is granted with the  **INSERY ANY TABLE**  permission, the user has the  **USAGE**  permission on all schemas except system schemas and the  **INSERT**  permission on tables in these schemas.
--   Use of the  **RETURNING**  clause requires the  **SELECT**  permission on all columns mentioned in  **RETURNING**.
--   If  **ON DUPLICATE KEY UPDATE**  is used, you must have the  **SELECT **and  **UPDATE **permissions on the table and the  **SELECT **permission on the unique constraint \(primary key or unique index\).
--   If you use the  **query**  clause to insert rows from a query, you need to have the  **SELECT**  permission on any table or column used in the query.
--   When you connect to a database compatible to Teradata and  **td\_compatible\_truncation**  is  **on**, a long string will be automatically truncated. If later  **INSERT**  statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
+-   You must have the  **INSERT** permission on a table to insert data to it. If a user is granted with the **INSERY ANY TABLE** permission, the user has the **USAGE** permission on all schemas except system schemas and the  **INSERT** permission on tables in these schemas.
+-   Use of the **RETURNING** clause requires the **SELECT** permission on all columns mentioned in **RETURNING**.
+-   If **ON DUPLICATE KEY UPDATE** is used, you must have the **SELECT** and **UPDATE** permissions on the table and the **SELECT** permission on the unique constraint \(primary key or unique index\).
+-   If you use the **query** clause to insert rows from a query, you need to have the **SELECT** permission on any table or column used in the query.
+-   When you connect to a database compatible to Teradata and **td\_compatible\_truncation** is **on**, a long string will be automatically truncated. If later **INSERT** statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >If inserting multi-byte character data \(such as Chinese characters\) to a database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
@@ -87,10 +87,10 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
     Specifies the name of a column in a table.
 
     -   The column name can be qualified with a subfield name or array subscript, if needed.
-    -   Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or  **NULL**  if there is none. Inserting into only some fields of a composite column leaves the other fields null.
-    -   The target column names  **column\_name**  can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
-    -   The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the  **value **clause or  **query**.
-    -   The values provided by the  **value **clause and query are associated with the corresponding columns from left to right in the table.
+    -   Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or **NULL** if there is none. Inserting into only some fields of a composite column leaves the other fields null.
+    -   The target column names **column\_name** can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
+    -   The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the **value** clause or **query**.
+    -   The values provided by the **value** clause and query are associated with the corresponding columns from left to right in the table.
 
     Value range: an existing column
 
