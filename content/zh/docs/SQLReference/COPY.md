@@ -285,7 +285,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         在导入数据时，如果header选项为on，则数据文本第一行会被识别为标题行，会忽略此行。如果header为off，而数据文件中第一行会被识别为数据。
 
-        在导出数据时，如果header选项为on，则需要指定fileheader。如果header为off，则导出数据文件不包含标题行。
+        在导出数据时，如果header选项为on，且未指定fileheader，则将把表的列名信息导出到文件的第一行；如果指定了fileheader，则将把fileheader文件的第一行导出到最终输出文件的第一行。如果header为off，则导出数据文件不包含标题行。
 
         取值范围：true/on、false/off。
 
@@ -447,7 +447,7 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
         在导入数据时，如果header选项为on，则数据文本第一行会被识别为标题行，会忽略此行。如果header为off，而数据文件中第一行会被识别为数据。
 
-        在导出数据时，如果header选项为on，则需要指定fileheader。如果header为off，则导出数据文件不包含标题行。
+        在导出数据时，如果header选项为on，且未指定fileheader，则将把表的列名信息导出到文件的第一行；如果指定了fileheader，则将把fileheader文件的第一行导出到最终输出文件的第一行。如果header为off，则导出数据文件不包含标题行。
 
     - FILEHEADER
 
