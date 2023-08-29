@@ -41,7 +41,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  以操作系统用户omm登录数据库任一主机。
 
-    2).  创建GCC安装主目录$GAUSSHOME/gcc和代码下载目录$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\$GAUSSHOME/gcc/packages目录。
+    2).  创建GCC安装主目录\\$GAUSSHOME/gcc和代码下载目录\\$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\\$GAUSSHOME/gcc/packages目录。
 
     ```
     mkdir $GAUSSHOME/gcc
@@ -69,18 +69,18 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     mkdir $GAUSSHOME/gcc/gcc-7.3.0/depend/gcc
     ```
 
-    5).  安装gmp-4.3.2。
+    5).  安装gmp-6.1.0。
 
     进入$GAUSSHOME/gcc/packages/gmp-6.1.0目录，执行下列命令完成gmp安装操作:
 
     ```
     cd $GAUSSHOME/gcc/packages/gmp-6.1.0
-    ./configure --prefix $GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-4.3.2
+    ./configure --prefix $GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-6.1.0
     make -sj
     make install -sj
     ```
 
-    6).  安装mpfr-2.4.2。
+    6).  安装mpfr-3.1.4。
 
     进入$GAUSSHOME/gcc/packages/mpfr-3.1.4目录，执行以下命令完成mpfr安装操作:
 
@@ -257,8 +257,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ddes/dms/ss_dms_recovery.h
         ddes/dms/ss_common_attr.h
         ddes/dms/ss_init.h
-        storage/dss/dss_api_def.h）七个头文件的名称
-        这些头文件在openGauss-server仓库的src/include目录下，将其复制到\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
+        storage/dss/dss_api_def.h）等头文件的名称
+        这些头文件在openGauss-server仓库的src/include目录下，将其复制到\\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
         当然，有一个更加直接简单的方法，即执行下面的命令(\$CODE_BASE为openGauss-server的源代码目录)
         ```
         mkdir -p $GAUSSHOME/include/postgresql/server/storage/file/
@@ -280,8 +280,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 
-    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/Extension/postgis--2.4.2.sql
-    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/Extension/postgis.control
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis--2.4.2.sql
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/extension/postgis.control
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
     ```
@@ -292,7 +292,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     rm -rf $GAUSSHOME/postgis-xc
     ```
 
-    若用户不想保留GCC5.4编译器，可删除GCC5.4安装目录并在\~/.bashrc文件中删除安装GCC5.4时添加的环境配置信息。
+    若用户不想保留GCC7.3.0编译器，可删除GCC7.3.0安装目录并在\~/.bashrc文件中删除安装GCC7.3.0时添加的环境配置信息。
 
     ```
     rm -rf $GAUSSHOME/gcc
