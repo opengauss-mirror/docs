@@ -16,6 +16,7 @@
     ../content/zh/docs/ExtensionReference/dolphin-逻辑操作符
     ../content/zh/docs/ExtensionReference/dolphin-位串操作函数和操作符
     ../content/zh/docs/ExtensionReference/dolphin-JSON-JSONB函数和操作符
+    ../content/zh/docs/ExtensionReference/dolphin-JSON操作符兼容
     ../content/zh/docs/ExtensionReference/dolphin-类型转换函数
     ../content/zh/docs/ExtensionReference/dolphin-四则运算操作符兼容
     ../content/zh/docs/ExtensionReference/dolphin-表达式
