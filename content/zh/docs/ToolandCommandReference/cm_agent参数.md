@@ -204,19 +204,19 @@
 
 ## agent\_phony\_dead\_check\_interval<a name="section13310143113916"></a>
 
-**参数说明：**cm\_agent检测进程是否僵死的时间间隔。
+**参数说明：** cm\_agent检测进程是否僵死的时间间隔。
 
-**取值范围：**整型，\[0, 2147483647\]，单位：秒。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+**取值范围：** 整型，\[0, 2147483647\]，单位：秒。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
-**默认值：**10
+**默认值：** 10
 
 ## unix\_socket\_directory<a name="section931094316393"></a>
 
-**参数说明：**unix套接字的目录位置。通过cm\_ctl设置绝对路径时需要将路径用''把路径包含起来，例如：cm\_ctl set --param --agent -k unix\_socket\_directory="'/unix/dir'"。
+**参数说明：** unix套接字的目录位置。通过cm\_ctl设置绝对路径时需要将路径用''把路径包含起来，例如：cm\_ctl set --param --agent -k unix\_socket\_directory="'/unix/dir'"。
 
-**取值范围：**字符串，最大长度为1024。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+**取值范围：** 字符串，最大长度为1024。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
-**默认值：''**
+**默认值：'' **
 
 ## dilatation\_shard\_count\_for\_disk\_capacity\_alarm<a name="section827183713151"></a>
 
@@ -283,7 +283,7 @@
 
 **取值范围：** 整型，\[0, 2147483647\]，单位：毫秒。修改后需要重启cm\_agent才能生效。参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
-**默认值：**1000
+**默认值：** 1000
 
 ## enable\_ssl<a name="section1910621118445"></a>
 
