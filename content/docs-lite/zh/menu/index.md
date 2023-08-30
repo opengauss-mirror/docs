@@ -5,7 +5,7 @@ headless: true
 
 - [法律声明]({{< relref "./docs/ReleaseNotes/法律声明.md" >}})
 
--   [发行说明]({{< relref "./docs/ReleaseNotes/ReleaseNotes.md" >}})
+-   [发行说明]({{< relref "./docs/ReleaseNotes/Releasenotes.md" >}})
     -   [用户须知]({{< relref "./docs/ReleaseNotes/用户须知.md" >}})
     -   [版本介绍]({{< relref "./docs/ReleaseNotes/版本介绍.md" >}})
     -   [特性介绍]({{< relref "./docs/ReleaseNotes/特性介绍.md" >}})
