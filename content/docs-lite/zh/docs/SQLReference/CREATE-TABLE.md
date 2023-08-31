@@ -72,7 +72,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     ```
       [ CONSTRAINT [ constraint_name ] ]
     { CHECK ( expression ) |
-      UNIQUE [ index_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      UNIQUE [ index_name ][ USING method ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
       PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
       FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
@@ -563,13 +563,15 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 - **UNIQUE [KEY] index\_parameters**
 
-  **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
+  **UNIQUE \( column\_name \[ \( length \) \] \[, ... \] \) index\_parameters**
 
   UNIQUE约束表示表里的一个字段或多个字段的组合必须在全表范围内唯一。
 
   对于唯一约束，NULL被认为是互不相等的。
 
   UNIQUE KEY只能在sql\_compatibility='B'时使用，与UNIQUE语义相同。
+
+  column_name(length)是前缀键，详见：[前缀键说明](CREATE-INDEX.md#前缀键说明)。
 
 -   **PRIMARY KEY index\_parameters**
 
