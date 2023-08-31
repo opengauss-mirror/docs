@@ -6,4 +6,6 @@
 
 -   **[dolphin安装](dolphin安装.md)**  
 
+-   **[MySQL协议兼容](dolphin-MySQL协议兼容.md)**  
+
 -   **[dolphin语法介绍](dolphin语法介绍.md)**  
