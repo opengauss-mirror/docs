@@ -87,4 +87,28 @@ select `id`, `json1`, '{"num": 1, "name": "edf"}' as `jsonc`,
 |=<br/><=><br/>!=<br/><><br/><<br/><=<br/>><br/>>=|tinyint(unsigned)、smallint(unsigned)、integer(unsigned)、bigint(unsigned)、float4、float8、decimal/numeric、bit<br/>char、varchar、binary、varbinary、set、json、text<br/>date、datetime、timestamp、time、year<br/>boolean<br/><br/>注：不支持enum、tinyblob、blob、mediumblob、longblob，如blob>json报错：<br/>ERROR:  operator does not exist: blob > json<br/>HINT:No operator matches the given name and argument type(s). You might need to add explicit type casts.|json|
 |+<br/>-<br/>~<br/>@|N/A|json|
 |not|N/A|json|
+### 其他限制说明：
+- 不支持json类型与unknown类型的div, mod, xor操作符运算，报错如下：
+```
+testdb_m=# select jsonval div NULL from testtb_m;
+ERROR:  function pg_catalog.div(json, unknown) is not unique
+LINE 1: select jsonval div NULL from testtb_m;
+                       ^
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.
+CONTEXT:  referenced column: div
+
+testdb_m=# select jsonval mod NULL from testtb_m;
+ERROR:  function pg_catalog.b_mod(json, unknown) is not unique
+LINE 1: select jsonval mod NULL from testtb_m;
+                       ^
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.
+CONTEXT:  referenced column: b_mod
+
+testdb_m=# select jsonval xor NULL from testtb_m;
+ERROR:  function pg_catalog.xor(json, unknown) is not unique
+LINE 1: select jsonval xor NULL from testtb_m;
+                       ^
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.
+CONTEXT:  referenced column: xor
+```
 
