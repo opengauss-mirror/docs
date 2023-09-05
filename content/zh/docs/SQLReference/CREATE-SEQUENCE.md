@@ -15,13 +15,17 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 ## 语法格式<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section969884316205"></a>
+
+-   **IF NOT EXISTS**
+
+    如果已经存在相同名称的序列，不会报出错误，而会发出通知，通知此序列已存在。
 
 -   **name**
 
