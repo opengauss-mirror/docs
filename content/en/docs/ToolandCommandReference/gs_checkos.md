@@ -68,6 +68,10 @@
 
     Value range: openGauss host name. If no host is specified, the current host is checked.
 
+-   --skip-os-check
+
+    Specifies whether to skip the parameter for the OS. By default, the parameter is check for the OS. If the parameter is specified, the configuration is dropped.
+
 -   -X
 
     Specifies the openGauss XML configuration file.
