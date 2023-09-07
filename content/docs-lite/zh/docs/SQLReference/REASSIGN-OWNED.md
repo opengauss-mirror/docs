@@ -10,6 +10,7 @@ REASSIGN OWNED要求系统将当前数据库中old_role拥有的所有数据库�
 
 -   REASSIGN OWNED常用于在删除角色之前的准备工作。
 -   执行REASSIGN OWNED需要有原角色和目标角色上的权限。
+-   REASSIGN OWNED不会更改数据本身的所有权。
 
 ## 语法格式<a name="zh-cn_topic_0283136605_zh-cn_topic_0237122173_zh-cn_topic_0059779106_s94f37352d3b04fddaca3d0266fffa8d8"></a>
 
