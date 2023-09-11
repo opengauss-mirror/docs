@@ -868,3 +868,20 @@ SET
 openGauss=# set lower_case_table_names = default;
 SET
 ```
+
+## b\_compatibility\_show\_warning\_count
+
+**参数说明**：控制show warnings/erros语句，输出的error, warning, note信息的最大数量，默认值是64，该参数范围是0~65535。
+
+**取值范围**：整数型
+
+**默认值**：64
+
+**示例**：
+```sql
+openGauss=# show max_error_count;
+ max_error_count
+-----------------
+ 64
+(1 row)
+```
