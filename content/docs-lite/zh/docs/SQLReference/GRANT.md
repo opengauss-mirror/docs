@@ -12,6 +12,8 @@
 
     系统权限一般通过CREATE/ALTER ROLE语法来指定。其中，SYSADMIN权限可以通过GRANT/REVOKE ALL PRIVILEGE授予或撤销。但系统权限无法通过ROLE和USER的权限被继承，也无法授予PUBLIC。
 
+    有关系统权限的详细信息，请参见[CREATE-ROLE](../SQLReference/CREATE-ROLE.md)。
+
 -   **将数据库对象授权给角色或用户**
 
     将数据库对象（表和视图、指定字段、数据库、函数、模式、表空间等）的相关权限授予特定角色或用户；
@@ -55,7 +57,7 @@
 -   将表或视图的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
           | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -67,7 +69,7 @@
 -   将表中字段的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
+    GRANT { { { SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
           | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -166,7 +168,7 @@
 
     ```
     GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
-    	ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]
+    	ON { PROCEDURE {proc_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )} [, ...]}
     	TO { [ GROUP ] role_name | PUBLIC } [, ...]
     	[ WITH GRANT OPTION ];
     ```
@@ -314,7 +316,11 @@ GRANT的权限分类如下所示。
 
 -   **REFERENCES**
 
-    创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+    允许创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+
+-   **TRIGGER**
+
+    允许在指定的表、视图等上创建触发器。
 
 -   **CREATE**
     -   对于数据库，允许在数据库里创建新的模式。
@@ -324,6 +330,14 @@ GRANT的权限分类如下所示。
 -   **CONNECT**
 
     允许用户连接到指定的数据库。
+
+-   **TEMPORARY**
+
+    允许在指定的数据库中创建临时表。
+
+-   **TEMP**
+
+    TEMPORARY的缩略拼写。
 
 -   **EXECUTE**
 
