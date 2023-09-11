@@ -3,7 +3,7 @@
 
 .. toctree::
 
-    ../content/zh/docs/ExtensionReference/whale-字符处理函数和操作符
+    ../content/zh/docs/ExtensionReference/whale-字符串处理函数和操作符
     ../content/zh/docs/ExtensionReference/whale-数字操作函数和操作符
     ../content/zh/docs/ExtensionReference/whale-时间和日期处理函数和操作符
     ../content/zh/docs/ExtensionReference/whale-条件表达式函数
