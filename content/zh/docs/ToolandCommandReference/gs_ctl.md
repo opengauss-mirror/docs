@@ -356,6 +356,7 @@ gs\_ctl参数可分为如下几类：
 <p><li>  copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</p>
 <p><li>  cross_cluster_full：基于共享存储的同城双中心场景下的跨集群全量build。</p>
 <p><li>  cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build。</p>
+<p><li>  check：检测是否需要build，如果需要，返回build的类型。</p>
 <p> 默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
  <p><li>  cross_cluster_full：在dorado容灾场景下，通过全量镜像的方式重新同步主机的数据目录。 </p>
