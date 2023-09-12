@@ -216,7 +216,7 @@
 
 **取值范围：** 字符串，最大长度为1024。修改后可以reload生效，参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
-**默认值：'' **
+**默认值：** ''
 
 ## dilatation\_shard\_count\_for\_disk\_capacity\_alarm<a name="section827183713151"></a>
 
