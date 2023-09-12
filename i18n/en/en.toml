@@ -168,3 +168,18 @@ other = "https://www.openGauss.org/en/"
 other = "Enterprise"
 [lite]
 other = "Lite"
+
+
+[doc_map]
+other = "Doc Map"
+
+[lts_version]
+other = "长期支持版本 (LTS)"
+[innovation_version]
+other = "社区创新版本 (Preview)"
+[archive_version]
+other = "归档版本"
+[latest_version]
+other = "最新开发版本 (Latest)"
+[version_document]
+other = "版本文档"

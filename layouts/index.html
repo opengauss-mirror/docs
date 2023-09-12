@@ -1,14 +1,172 @@
-<!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-    {{ partial "head.html" . }}
+  {{ partial "head.html" . }}
+  <link href="{{ "css/docdetail.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/markdown.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/docsearch.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/docmap.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <link href="{{ "css/index.css"  | relURL }}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" type="text/css">
+  <body>
+    <div id="all">
+      <aside class="sidebar">
+        <div id="menu-box">
+          <div class="pc-logo">
+            <a href="javaScript:;"><img src="/img/logo-dark.svg" alt="logo" /></a>
+          </div>
+          <div id="menu-top-mobile">
+            <div class="logo-mobile">
+              <div class="logo-img">
+              </div>
+              <i class="icon-close"></i>
+            </div>
+            <div class="container menu-select-box">
+              <div class="latest-version">
+                <p class="latest-title">
+                    <span>{{i18n "latest_version"}}</span>
+                </p>
+              </div>
+              <div class="menu-item lts-version">
+                <p class="menu-title">
+                    <span>{{i18n "lts_version"}}</span>
+                    <i class="icon-down" ></i>
+                </p>
+                <ul class="version-list">
+                </ul>
+              </div>
+              <div class="menu-item innovate">
+                <p class="menu-title">
+                    <span>{{i18n "innovation_version"}}</span>
+                    <i class="icon-down" ></i>
+                </p>
+                <ul class="version-list">
+                </ul>
+              </div>
+              <div class="menu-item archive-version">
+                <p class="menu-title">
+                    <span>{{i18n "archive_version"}}</span>
+                    <i class="icon-down" ></i>
+                </p>
+                <ul class="version-list">
+    
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="version_document">
+            <p class="menu-title">
+                <span>{{i18n "version_document"}}</span>
+            </p>
+          </div>
+          <div class="latest-version">
+            <p class="latest-title">
+                <span>{{i18n "latest_version"}}</span>
+            </p>
+          </div>
+          <div class="menu-item lts-version">
+            <p class="menu-title">
+                <span>{{i18n "lts_version"}}</span>
+                <i class="icon-down" ></i>
+            </p>
+            <ul class="version-list">
+            </ul>
+          </div>
+          <div class="menu-item innovate">
+            <p class="menu-title">
+                <span>{{i18n "innovation_version"}}</span>
+                <i class="icon-down" ></i>
+            </p>
+            <ul class="version-list">
+            </ul>
+          </div>
+          <div class="menu-item archive-version">
+            <p class="menu-title">
+                <span>{{i18n "archive_version"}}</span>
+                <i class="icon-down" ></i>
+            </p>
+            <ul class="version-list">
 
-    <body>
-        <div id="all">
-            <div class="home-page container">
-                <img src="/img/logo.svg" alt="openGauss" />
-                <p>{{ .Site.Params.defaultDescription }}</p>
-                <a href={{.Site.Params.BookRepo }}>Gitee Code </a>
+            </ul>
+          </div>
+          
+        </div>
+        <div class="theme-lang-mobile">
+             <div class="lang">
+              <a name="zh">中文</a>
+              <a name="en">EN</a>
+             </div>
+             <div class="theme-change">
+              <i class="icon-theme light"></i>
+             </div>
+        </div>
+      </aside>
+       <div id="content">
+        {{ $versionArr := split $.File.Path "docs\\" }}
+        {{ $version := index $versionArr 1}}
+        {{ $version := split $version "\\" }}
+        {{ $version := index $version 0}}
+        {{ $lang := .Site.LanguageCode}}
+        {{ partial "nav.html" . }}
+        <div class="mask-mobile"></div>
+        <div class="book-page container" id="page">
+            <div class="page-content">
+              {{ range where $.Page.Site.Pages "Type" "docmap" }}
+              <div class="doc-map">
+                <h1 class="map-title">{{ .Params.title }}</h1>
+                <div class="doc-map-main" id="markdown">
+                  {{ range .Params.module }}
+                    <h2 class="line-title bg-1" id="{{ .title }}">{{ .title }}</h2>
+                    <div class="line-main">
+                      <div class="link-list">
+                        {{ range .list }}
+                        <a
+                        target="_blank"
+                        href="{{ .download }}"
+                        >{{ .title }}</a>
+                        {{ end }}
+                    </div>
+                  </div>
+                  {{ end }}
+
+
+                 
+                </div>
+              </div>    
+              {{ end }}          
+            </div>
+            <aside class="book-toc">
+              <ul id="toc-list"></ul>
+            </aside>
+        </div>
+            {{ partial "pcfooter.html" . }}
+      </div>
+      <div class="mask-search-mobile"></div>
+        <div class="searcher">
+          <div class="search-mobile">
+            <i class="icon-search" style="right: 0px;"></i>
+            <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+            <i class="icon-clear" ></i>
+            <div class="cancel-btn">{{ i18n "cancel" }}</div>
+        </div>
+            <div class="search-result search-result-mobile">
+                <!-- <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p> -->
+                <ul>
+
+                </ul>
+                <div id="pagination"></div>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    <script>
+      $(document).ready(function () {
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          const h = $('.page-content').height();
+          $('#content').height(h);
+			  }
+      });
+    </script>
+    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+  </body>
 </html>

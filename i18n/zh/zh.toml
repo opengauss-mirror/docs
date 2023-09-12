@@ -181,3 +181,18 @@ other = "zh"
 other = "企业版"
 [lite]
 other = "轻量版"
+
+
+[doc_map]
+other = "文档地图"
+
+[lts_version]
+other = "长期支持版本 (LTS)"
+[innovation_version]
+other = "社区创新版本 (Preview)"
+[archive_version]
+other = "归档版本"
+[latest_version]
+other = "最新开发版本 (Latest)"
+[version_document]
+other = "版本文档"

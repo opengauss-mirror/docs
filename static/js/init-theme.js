@@ -12,7 +12,7 @@ function initUrl() {
     );
   }
 }
-initUrl();
+//initUrl();
 const themeStyle = localStorage.getItem("opengauss-theme");
 const html = document.getElementsByTagName("html")[0];
 if (!themeStyle) {
@@ -22,7 +22,7 @@ if (!themeStyle) {
   html.classList.add(themeStyle);
 }
 (function () {
-  if (location.pathname.split("/")[3].includes("-lite")) {
-    html.classList.add("lite");
+  if (location.pathname.split('/').length >= 4 && location.pathname.split('/')[3].includes('-lite')) {
+    html.classList.add('lite');
   }
 })();

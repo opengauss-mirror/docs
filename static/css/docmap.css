@@ -1,0 +1,80 @@
+.line-title {
+  margin-top: 24px;
+  padding: 16px 24px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--o-color-white);
+  background-size: 100% 100%;
+}
+
+.doc-map-main {
+  max-width: 1140px;
+}
+
+.bg-1 {
+  background: url(/img/common/doc-map.png);
+}
+
+.line-main {
+  margin-top: 16px;
+  padding: 24px;
+  background-color: var(--o-color-bg2);
+}
+
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  font-size: 18px;
+}
+
+
+@media screen and (max-width:1620px) {
+  .doc-map {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width:1100px) {
+  .doc-map {
+    padding: 0 16px;
+    transform: none;
+  }
+
+  .map-title {
+    font-size: 16px;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .line-title {
+    margin-top: 16px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .line-title:first-child {
+    margin-top: 24px;
+  }
+
+  .line-main {
+    margin-top: 8px;
+    padding: 12px;
+  }
+
+  .line-main .link-list {
+    font-size: 12px;
+    gap: 8px 16px;
+
+  }
+}
+
+h1 {
+  text-align: left;
+  color: var(--o-color-text1);
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 300;
+}
