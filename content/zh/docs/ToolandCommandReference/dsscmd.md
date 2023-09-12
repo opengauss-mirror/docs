@@ -245,6 +245,14 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     ```
     dsscmd setcfg <-n name> <-v value> [-s scope] [-U UDS:socket_domain]
     ```
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >目前可以通过该接口设置的参数有：
+    _LOG_LEVEL，
+    _LOG_MAX_FILE_SIZE，
+    _LOG_BACKUP_FILE_COUNT，
+    _AUDIT_LEVEL，
+    _AUDIT_MAX_FILE_SIZE，
+    _AUDIT_BACKUP_FILE_COUNT。
 
 -   获取配置项信息
 
