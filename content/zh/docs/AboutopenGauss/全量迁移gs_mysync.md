@@ -36,4 +36,4 @@ gs_mysync工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 全量迁移社区地址：https://gitee.com/opengauss/openGauss-tools-chameleon
 
-详细参考文档： [chameleon使用指南.md](https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon使用指南.md) 
+详细参考文档： [chameleon使用指南.md](https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md) 
