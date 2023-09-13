@@ -396,6 +396,7 @@ headless: true
 		-   [两地三中心跨Region容灾]({{< relref "./docs/DatabaseAdministrationGuide/两地三中心跨Region容灾.md" >}})
 		-   [资源池化架构]({{< relref "./docs/DatabaseAdministrationGuide/资源池化架构.md" >}})
 			-   [资源池化开发者环境部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化开发者环境部署.md" >}})
+			-   [资源池化OM安装部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化OM安装部署.md" >}})
 			-   [资源池化当前架构特性约束]({{< relref "./docs/DatabaseAdministrationGuide/资源池化当前架构特性约束.md" >}})
 			-   [资源池化同城双中心部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化同城双中心部署.md" >}})
 			-   [资源池化日志合一同城双中心部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化日志合一同城双中心部署.md" >}})
