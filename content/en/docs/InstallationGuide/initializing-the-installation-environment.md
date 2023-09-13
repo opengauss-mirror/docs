@@ -64,21 +64,16 @@ tar -zxvf openGauss-1.1.0-openEuler-64bit-om.tar.gz
 cd /opt/software/openGauss/script
 ```
 
-5.For openEuler, run the following command to open the  **gspylib/common/CheckPythonVersion.py**  file and change  **if not pythonVersion == \(3, 6\):**  to  **if not pythonVersion \>= \(3, 6\):**. Press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
-```
-vi gspylib/common/CheckPythonVersion.py
-```
-
-6.If the openEuler operating system is used, run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
+5.If the openEuler operating system is used (openEuler 20.03), run the following command to open the  **performance.sh**  file, comment out  **sysctl -w vm.min\_free\_kbytes=112640 &\> /dev/null**  using the number sign \(\#\), press  **Esc**  to enter the command mode, and run the  **:wq**  command to save the modification and exit.
 
 ```
 vi /etc/profile.d/performance.sh
 ```
 
-7.To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.During pre-installation, the hostname is checked.
+6.To ensure successful installation, run the following command to check whether the values of  **hostname**  and  **/etc/hostname**  are the same.During pre-installation, the hostname is checked.
 
-8.Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
+7.Execute  **gs\_preinstall**  to configure the installation environment. If the shared environment is used, add the  **--sep-env-file=ENVFILE**  parameter to separate environment variables to avoid mutual impact with other users. The environment variable separation file path is specified by users.
 
 -   Execute  **gs\_preinstall**  in interactive mode. During the execution, the mutual trust between users  **root**  and between openGauss users is automatically established.
 
