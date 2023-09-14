@@ -315,3 +315,104 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     **取值范围：**"cluster_primary" | "cluster_standby"
 
     **默认值：**"cluster_primary"
+
+-   \_BLACKBOX_\_DETAIL\_ON
+
+    **参数说明：** 黑匣子日志开启时，是否要打印共享内存信息。
+
+    **取值范围：** 布尔型，FALSE/TRUE。TRUE表示当黑匣子日志开启时，打印共享内存信息；FALSE表示当黑匣子开启时，不打印共享内存信息。如果黑匣子功能没有开启，则该参数不生效。
+
+    **默认值：** FALSE
+
+-   WORK\_THREADS
+
+    **参数说明：** 控制单个reactor线程池线程的数量。
+
+    **取值范围：** 整型，16\~128。
+
+    **默认值：** 16
+
+-   IO\_THREADS
+
+    **参数说明：** 控制reactor的数量。
+
+    **取值范围：** 整型，1\~8。
+
+    **默认值：** 2
+
+## 日志<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_s2298a1889844418daec3743b9a4b57fb"></a>
+DSS日志类型如下：
+-   RUN日志
+
+打印数据库DSS模式下DSS运行RUN级别信息。如果DSS运行故障，且开启RUN级别日志，请查看dsscmd.rlog和dssinstance.rlog。
+
+日志目录：默认为$DSS_HOME/log/run。
+-   DEBUG日志
+
+打印数据库DSS模式下DSS运行DEBUG级别信息。如果DSS运行故障，且开启DEBUG级别日志，请查看dsscmd.dlog和dssinstance.dlog。
+
+日志目录：默认为$DSS_HOME/log/debug。
+-   操作日志
+
+打印数据库DSS模式下DSS运行OPER级别信息。如果DSS运行故障，且开启OPER级别日志，请查看dsscmd.olog。
+
+日志目录：默认为$DSS_HOME/log/oper。
+
+-   审计日志
+
+打印数据库DSS模式下DSS运行审计数据或者元数据进行修改或查询的信息。
+
+日志目录：默认为$DSS_HOME/log/audit。
+-   黑匣子日志
+
+打印数据库DSS模式下，dssserver进程异常终止时的异常基本信息。黑匣子日志默认开启，如需关闭，需配置参数_LOG_LEVEL=0, 重启dssserver后生效。
+
+日志目录：默认为$DSS_HOME/log/blackbox。
+
+DSS通过_LOG_LEVEL参数控制审计日志外的其他日志的记录情况。如果要记录多种日志类型，请将参数设置为各个日志类型对应的参数取值之和。各日志类型对应的参数取值见表1。
+
+**表 1**  日志类型对应的_LOG_LEVEL取值
+
+<a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_t1ca85b79b4344a59a8aca574c9fdc12f"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r5daad08487584e29aa6e6ad7f5a3edcd"><th class="cellrowborder" valign="top" width="33.08%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_afd61d293ec6840938510b01e9770512f"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_afd61d293ec6840938510b01e9770512f"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_afd61d293ec6840938510b01e9770512f"></a>日志类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="66.92%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a7be9ab09335f41e39e0ccb3152427ef7"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a7be9ab09335f41e39e0ccb3152427ef7"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a7be9ab09335f41e39e0ccb3152427ef7"></a>_LOG_LEVEL参数取值（十进制）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r047aa31b43af4aeb88a1c80c165a6710"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"></a>RUN ERROR</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"></a>1</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r8081f8a1ca494dff85307d299d3ab528"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"></a>RUN WARNING</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"></a>2</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_rb092b2f0586241e08c5b35bbc1e6b715"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"></a>RUN INFORMATION</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"></a>4</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r047aa31b43af4aeb88a1c80c165a6710"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aab1ebe4a89b1493094bfce58e66fec9d"></a>DEBUG ERROR</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a34e4633eff1a4681919b6c11a36482d2"></a>16</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r8081f8a1ca494dff85307d299d3ab528"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_aca0a2e2466da49caa92f0e21e25bbe37"></a>DEBUG WARNING</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p131616692420"></a>32</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_rb092b2f0586241e08c5b35bbc1e6b715"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p624572592420"></a>DEBUG INFORMATION</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a864026c549b54e6b8a8ae525e80e49ee"></a>64</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_r4ec86a23bd3049d3a49a00ee9900f1e8"><td class="cellrowborder" valign="top" width="33.08%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p561868592420"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p561868592420"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_zh-cn_topic_0058966253_p561868592420"></a>OPER LOG</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.92%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a5aff11a3f4ec49ffb548481d7592f801"><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a5aff11a3f4ec49ffb548481d7592f801"></a><a name="zh-cn_topic_0283137134_zh-cn_topic_0237122032_zh-cn_topic_0059778480_a5aff11a3f4ec49ffb548481d7592f801"></a>512</p>
+</td>
+</tbody>
+</table>
