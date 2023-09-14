@@ -264,6 +264,13 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"></a>以-S方式初始化的数据库后，创建的数据库用户权限受到限制，默认不再具有public schema的使用权限。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0287276015_row18628253172119"><td class="cellrowborder" valign="top" width="23.76%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb3b9f7b61294101b39eedd21feef973"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb3b9f7b61294101b39eedd21feef973"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_adb3b9f7b61294101b39eedd21feef973"></a>-g, --xlogpath=XLOGPATH</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a941fc47a24bf41ed93d91a2fc8fe28c9"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a941fc47a24bf41ed93d91a2fc8fe28c9"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a941fc47a24bf41ed93d91a2fc8fe28c9"></a>指定共享存储的xlog文件路径。</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.64%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"></a><a name="zh-cn_topic_0287276015_zh-cn_topic_0237152414_zh-cn_topic_0059778168_a6ef9874c80974ce3953e2aa1db0a0efb"></a>xlog文件路径，不能包括“|”, “;”，“&”，“$”，“<”，“>”，“`”，“\\”，“!”这几个字符。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
