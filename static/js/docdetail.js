@@ -434,7 +434,7 @@ $(function ($) {
       const href = $(this).attr("href");
       if (href && href.split("")[0] === "#") {
         $.each($("h2"), (value) => {
-          if (value.id.includes(href.replace("#", ""))) {
+          if (value.id && value.id.includes(href.replace("#", ""))) {
             $("html,body").animate(
               {
                 scrollTop: $("#" + value.id).offset().top,
