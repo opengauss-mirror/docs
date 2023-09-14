@@ -14,6 +14,8 @@
 
 -   **[ALTER TABLESPACE](dolphin-ALTER-TABLESPACE.md)**  
 
+-   **[ALTER VIEW](dolphin-ALTER-VIEW.md)**  
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
 -   **[AST](dolphin-AST.md)**
@@ -42,11 +44,15 @@
 
 -   **[CREATE TRIGGER](dolphin-CREATE-TRIGGER.md)**
 
--   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+-   **[CREATE VIEW](dolphin-CREATE-VIEW.md)**
 
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
 
+-   **[DO](dolphin-DO.md)**
+
 -   **[DROP DATABASE](dolphin-DROP-DATABASE.md)**  
+
+-   **[DROP INDEX](dolphin-DROP-INDEX.md)**
 
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
@@ -70,6 +76,8 @@
 
 -   **[PREPARE](dolphin-PREPARE.md)**
 
+-   **[RENAME TABLE](dolphin-RENAME-TABLE.md)**
+
 -   **[RENAME USER](dolphin-RENAME-USER.md)**
 
 -   **[REVOKE](dolphin-REVOKE.md)**
@@ -88,17 +96,17 @@
 
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
--   **[SHOW-CREATE-DATABASE](dolphin-SHOW-CREATE-DATABASE.md)**
+-   **[SHOW CREATE DATABASE](dolphin-SHOW-CREATE-DATABASE.md)**
 
--   **[SHOW-CREATE-FUNCTION](dolphin-SHOW-CREATE-FUNCTION.md)**
+-   **[SHOW CREATE FUNCTION](dolphin-SHOW-CREATE-FUNCTION.md)**
 
--   **[SHOW-CREATE-PROCEDURE](dolphin-SHOW-CREATE-PROCEDURE.md)**
+-   **[SHOW CREATE PROCEDURE](dolphin-SHOW-CREATE-PROCEDURE.md)**
 
--   **[SHOW-CREATE-TABLE](dolphin-SHOW-CREATE-TABLE.md)**
+-   **[SHOW CREATE TABLE](dolphin-SHOW-CREATE-TABLE.md)**
 
--   **[SHOW-CREATE-TRIGGER](dolphin-SHOW-CREATE-TRIGGER.md)**
+-   **[SHOW CREATE TRIGGER](dolphin-SHOW-CREATE-TRIGGER.md)**
 
--   **[SHOW-CREATE-VIEW](dolphin-SHOW-CREATE-VIEW.md)**
+-   **[SHOW CREATE VIEW](dolphin-SHOW-CREATE-VIEW.md)**
 
 -   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
 
