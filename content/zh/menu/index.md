@@ -985,7 +985,7 @@ headless: true
 				-	[函数和操作符]({{< relref "./docs/ExtensionReference/whale-函数和操作符.md" >}})
 					-	[字符串处理函数和操作符]({{< relref "./docs/ExtensionReference/whale-字符串处理函数和操作符.md" >}})
 					-	[数字操作函数和操作符]({{< relref "./docs/ExtensionReference/whale-数字操作函数和操作符.md" >}})
-					-	[时间和日期处理函数和操作符]({{< relref "./docs/ExtensionReference/whale-数字操作函数和操作符.md" >}})
+					-	[时间和日期处理函数和操作符]({{< relref "./docs/ExtensionReference/whale-时间和日期处理函数和操作符.md" >}})
 					-	[条件表达式函数]({{< relref "./docs/ExtensionReference/whale-条件表达式函数.md" >}})
 					-	[聚合函数和操作符]({{< relref "./docs/ExtensionReference/whale-聚合函数和操作符.md" >}})
 					-	[GMS_ALERT包函数]({{< relref "./docs/ExtensionReference/whale-GMS_ALERT包函数.md" >}})

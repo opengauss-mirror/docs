@@ -329,58 +329,6 @@
 
     ```
 
--   gms_pipe.reset_buffer()
-
-    描述：清空缓冲区。
-
-    返回值类型：void
-
-    示例：
-    ```
-    openGauss=# select gms_pipe.pack_message('this is the message3!');
-    pack_message
-    --------------
-
-    (1 row)
-
-    openGauss=# select gms_pipe.send_message('PipeTest');
-    send_message
-    --------------
-                0
-    (1 row)
-
-    openGauss=# select gms_pipe.receive_message('PipeTest');
-    receive_message
-    -----------------
-                0
-    (1 row)
-
-    openGauss=# select gms_pipe.receive_message('PipeTest');
-    receive_message
-    -----------------
-                0
-    (1 row)
-
-    openGauss=# select gms_pipe.next_item_type();
-    next_item_type
-    ----------------
-                11
-    (1 row)
-
-    openGauss=# select gms_pipe.reset_buffer();
-    reset_buffer
-    --------------
-
-    (1 row)
-
-    openGauss=# select gms_pipe.next_item_type();
-    next_item_type
-    ----------------
-                0
-    (1 row)
-
-    ```
-
 -   gms_pipe.purge(pipename text)
 
     描述：清空指定的管道。

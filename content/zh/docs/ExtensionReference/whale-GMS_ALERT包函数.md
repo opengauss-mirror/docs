@@ -68,9 +68,9 @@
     示例：
 
     ```
-    openGauss=# select gms_output.put('aaa');
-    put
-    -----
+    openGauss=# select gms_alert.signal('c1', 'this is message');
+    signal
+    --------
 
     (1 row)
 
