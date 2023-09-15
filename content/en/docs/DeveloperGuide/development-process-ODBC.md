@@ -102,7 +102,7 @@
 >![](public_sys-resources/icon-note.gif) **NOTE:**   
 >If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction. If one of the statements fails, the entire request will be rolled back.  
 
-> <img src="public_sys-resources/icon-danger.gif"> **警告：**   
+> <img src="public_sys-resources/icon-danger.gif"> **WARNING：**   
 >
 > ODBC is the central layer of the application program and the database. It is responsible for transmitting the SQL instructions issued by the application program to the database, and does not parse the SQL syntax by itself. Therefore, when an SQL statement with confidential information (such as a plaintext password) is written in an application, the confidential information will be exposed in the driver log.
 
