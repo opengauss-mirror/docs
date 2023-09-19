@@ -98,9 +98,9 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 
 
 
-1. DataKit使用文档和开发文档：[https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc](https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-visualtool/doc)
+1. DataKit使用文档和开发文档：[https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc](https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc)
 
-2. 基础运维插件：[https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops](https://gitee.com/opengauss/openGauss-workbench/tree/master/base-ops)
+2. 基础运维插件：[https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops](https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops)
 
 3. 其他插件：[https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins](https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins)
 
