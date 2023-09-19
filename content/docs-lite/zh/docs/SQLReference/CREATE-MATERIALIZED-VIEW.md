@@ -50,6 +50,10 @@ CREATE MATERIALIZED VIEW mv_name
 
     一个SELECT、TABLE 或者VALUES命令。这个查询将在一个安全受限的操作中运行。
 
+-   **[ WITH [ NO ] DATA ]**
+
+    创建表时，是否也插入查询到的数据。默认是要数据，选择“NO”参数时，则不要数据。
+
 
 ## 示例<a name="zh-cn_topic_0283136593_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
