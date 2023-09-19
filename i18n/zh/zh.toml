@@ -1,4 +1,10 @@
 #list page
+[description]
+other = "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。"
+
+[key_words]
+other = "openGauss,开源数据库,openGauss文档,开源社区"
+
 [version_text]
 other = "版本"
 

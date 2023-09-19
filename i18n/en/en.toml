@@ -1,4 +1,10 @@
 #list page
+[description]
+other = "Select the version and chapter of the openGauss documentation you want to view."
+
+[key_words]
+other = "openGauss,开源数据库,openGauss docs,开源社区"
+
 [login_text]
 other = "Login"
 
