@@ -651,7 +651,6 @@ headless: true
         -   [操作系统参数调优]({{< relref "./docs/PerformanceTuningGuide/操作系统参数调优.md" >}})
         -   [数据库系统参数调优]({{< relref "./docs/PerformanceTuningGuide/数据库系统参数调优.md" >}})
             -   [数据库内存参数调优]({{< relref "./docs/PerformanceTuningGuide/数据库内存参数调优.md" >}})
-            -   [数据库并发队列参数调优]({{< relref "./docs/PerformanceTuningGuide/数据库并发队列参数调优.md" >}})
         -   [配置向量化执行引擎]({{< relref "./docs/PerformanceTuningGuide/配置向量化执行引擎.md" >}})
         -   [配置SMP]({{< relref "./docs/PerformanceTuningGuide/配置SMP.md" >}})
             -   [SMP适用场景与限制]({{< relref "./docs/PerformanceTuningGuide/SMP适用场景与限制.md" >}})
