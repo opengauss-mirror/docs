@@ -17,3 +17,4 @@
     ../content/zh/docs/AboutopenGauss/行存转向量化
     ../content/zh/docs/AboutopenGauss/OCK加速数据传输
     ../content/zh/docs/AboutopenGauss/OCK-SCRLOCK加速分布式锁
+    ../content/zh/docs/AboutopenGauss/子事务并发回滚流程优化
