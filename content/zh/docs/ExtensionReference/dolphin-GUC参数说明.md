@@ -4,26 +4,28 @@
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function'
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
-1. sql_mode_strict：插入不符合当前列类型的值时,进行数据转换;分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar；
+-   sql_mode_strict：严格模式控制openGauss在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如何处理无效值或者空值。插入不符合当前列类型的值时，会进行数据转换；分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
-2. sql_mode_strict：插入的列值长度超过此列所限定的长度时,赋予该列最大或最小值，涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar;
+-   sql_mode_strict：插入的列值长度超过此列所限定的长度时，赋予该列最大或最小值，涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
-3. sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值;（涉及的类型同上）
+-   sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值；（涉及的类型同上面sql_mode_strict的描述）
 
-4. sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default;（涉及的类型同上）
+-   sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default；（涉及的类型同上面sql_mode_strict的描述）
 
-5. sql_mode_full_group：
+-   sql_mode_strict：对于不会改变数据的SQL语句，如`SELECT`，在严格模式下处理无效值或者空值时仅产生告警，不会报错。效果等同于没有开启严格模式。
+
+-   sql_mode_full_group：
     - 出现在select列表中的列（不使用聚合函数），是否一定要出现在group by子句中。当处在sql_mode_full_group模式（默认模式）下，如果select列表中的列没有使用聚合函数，也没有出现在group by子句，那么会报错，如果不在此模式下，则会执行成功，并在所有符合条件的元组中选取第一个元组。
     - 出现在order by中的列，是否一定要出现在distinct中（注意是distinct，不是distinct on）。当处在sql_mode_full_group模式（默认模式）下，不允许没有出现在distinct中的列出现在order by子句中，否则允许。
-6. pipes_as_concat：控制 || 当成连接符还是 或操作符
+-   pipes_as_concat：控制 || 当成连接符还是或操作符
 
-7. ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
+-   ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
 
-8. no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
+-   no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
 
     |参数|表现|
     |---|---|
@@ -32,7 +34,9 @@
     |sql_mode_strict|合法日期，无告警|
     |--|合法日期，无告警|
 
-9. pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+-   pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+
+-   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
