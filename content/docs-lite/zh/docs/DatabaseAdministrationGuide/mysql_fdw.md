@@ -10,6 +10,23 @@ mysql\_fdw是一款[开源插件](https://github.com/EnterpriseDB/mysql_fdw)。o
 
 配置好源后，使用**yum install MariaDB-devel MariaDB-shared**安装相关开发库。另外**MariaDB-client**是MariaDB的客户端工具，也可以根据需要安装，用于连接MariaDB进行测试。
 
+示例版本如下:
+
+操作系统: CentOS 7.6 x86
+
+yum安装的mysql开发库版本:
+
+```makefile
+[root@kwemhisprc10431 peilq_package]# yum list installed | grep mariadb
+MariaDB-common.x86_64                   10.5.6-1.el7.centos            @mariadb
+MariaDB-compat.x86_64                   10.5.6-1.el7.centos            @mariadb
+MariaDB-devel.x86_64                    10.5.6-1.el7.centos            @mariadb
+MariaDB-shared.x86_64                   10.5.6-1.el7.centos            @mariadb
+galera-4.x86_64                         26.4.5-1.el7.centos            @mariadb
+```
+
+
+
 安装好开发包后，就可以开始编译mysql\_fdw了。编译时需要在执行**configure**时，加入 **--enable-mysql-fdw** 选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考  **软件安装编译**  ）
 
 编译完成后，编译产物为**mysql\_fdw.so**  ，位于安装目录的**lib/postgresql/**  下。mysql\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/extension/** 下。
