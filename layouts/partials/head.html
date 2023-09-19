@@ -22,11 +22,8 @@
     {{ else }}
     <title>{{ $title -}} </title>
     {{ end }}
-    {{ if default .Summary .Description }}
-    <meta name="description" content="{{ default .Summary .Description }}">
-    {{ else if .Site.Params.DefaultDescription }}
-    <meta name="description" content="{{ .Site.Params.DefaultDescription }}">
-    {{ end }}
+    <meta name="description" content="{{ i18n "description" }}">
+    <meta name="keywords" content="{{ i18n "key_words" }}">
     <meta name="author" content="{{ .Site.Params.author }}" >
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
