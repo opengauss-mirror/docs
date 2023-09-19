@@ -63,7 +63,7 @@
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
-        RENAME { TO | AS } new_table_name;
+        RENAME [ TO | AS ] new_table_name;
     ```
 
 -   对表timestamp列添加ON UPDATE属性。
