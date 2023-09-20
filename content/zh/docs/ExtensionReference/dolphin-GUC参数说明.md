@@ -4,7 +4,7 @@
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero'
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
@@ -37,6 +37,15 @@
 -   pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
 
 -   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
+
+-   error_for_division_by_zero：控制除数为0时是否报错（包含 `/`， `mod`， `div`等除法含义的操作符），最终除0的表现还受严格模式的控制。
+
+    |参数|表现|
+    |---|---|
+    |error_for_division_by_zero, sql_mode_strict|除数为0，在SELECT场景下告警，其余场景报错|
+    |error_for_division_by_zero|除数为0，告警|
+    |sql_mode_strict|除数为0，无报错，无告警|
+    |--|除数为0，无报错，无告警|
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
