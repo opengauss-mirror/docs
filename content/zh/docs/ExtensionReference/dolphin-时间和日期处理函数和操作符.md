@@ -1202,7 +1202,33 @@ CONTEXT:  referenced column: subdate
 
 - date_bool(date)
 
-  描述：根据日期值中的年数返回布尔型（为零时返回false，否则返回true）。
+  描述：根据日期值返回布尔型（全零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  备注：当前版本不支持年月日中两项为零，如'0000-01-00'，将告警后转换为'0000-00-00'，因此date_bool('0000-01-00')返回false
+
+  示例：
+
+  ```
+  openGauss=# select date_bool('2022-08-20');
+   date_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select date_bool('0000-00-00');
+   date_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- time_bool(time)
+
+  描述：根据时间值返回布尔型（全零时返回false，否则返回true）。
 
   返回值类型：boolean
 
@@ -1217,32 +1243,8 @@ CONTEXT:  referenced column: subdate
   ```
 
   ```
-  openGauss=# select time_bool('00:50:00');
+  openGauss=# select time_bool('00:00:00');
    time_bool 
-  -----------
-   f
-  (1 row)
-  ```
-
-- time_bool(time)
-
-  描述：根据时间值中的小时数返回布尔型（为零时返回false，否则返回true）。
-
-  返回值类型：boolean
-
-  示例：
-
-  ```
-  openGauss=# select date_bool('2022-08-20');
-   date_bool 
-  -----------
-   t
-  (1 row)
-  ```
-
-  ```
-  openGauss=# select date_bool('0000-08-20');
-   date_bool 
   -----------
    f
   (1 row)
