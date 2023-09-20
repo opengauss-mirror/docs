@@ -22,6 +22,7 @@
 
     ```
     column_clause
+        | ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
         | {DISABLE | ENABLE} KEYS
         | DROP INDEX index_name [ RESTRICT | CASCADE ]
         | DROP PRIMARY KEY [ RESTRICT | CASCADE ]
@@ -51,6 +52,12 @@
         | UNION [=] (tbl_name[,tbl_name]...)
         | TABLESPACE tablespace_name [STORAGE DISK]
         | [TABLESPACE tablespace_name] STORAGE MEMORY
+    ```
+
+-   向表中增加多列。
+
+    ```
+    ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
     ```
 
 -   对一个表进行重建。
