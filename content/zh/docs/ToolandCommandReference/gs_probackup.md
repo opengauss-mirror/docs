@@ -24,7 +24,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
 -   当存在用户自定义表空间时，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份。
--   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
+-   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
@@ -113,7 +113,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup backup -B backup-path --instance=instance_name -b backup-mode
     [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
-    [--archive-timeout=timeout] [-t rwtimeout]
+    [--archive-timeout=timeout] [-t rw-timeout]
     [logging_options] [retention_options] [compression_options] [connection_options]
     [remote_options] [dss_options] [pinning_options][--backup-pg-replslot]
     [--help]
@@ -305,7 +305,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：300
 
--   -t rwtimeout
+-   -t rw-timeout
 
     以秒为单位的连接的超时时间。
 
