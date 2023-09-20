@@ -316,7 +316,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值：**"cluster_primary"
 
--   \_BLACKBOX_\_DETAIL\_ON
+-   \_BLACKBOX\_DETAIL\_ON
 
     **参数说明：** 黑匣子日志开启时，是否要打印共享内存信息。
 
