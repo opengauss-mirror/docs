@@ -427,7 +427,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     创建列表分区。partition\_key为分区键的名称。
 
-    -   对于partition\_key，列表分区策略的分区键仅支持1列。
+    -   对于partition\_key，列表分区策略的分区键最大支持16列。
     -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
     分区键支持的数据类型为：INT1、INT2、INT4、INT8、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575个。
