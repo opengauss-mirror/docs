@@ -215,6 +215,7 @@
 
 ```
 ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
+| ADD column_name data_type [ compress_mode ] [, ...]
 | MODIFY column_name data_type
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
@@ -242,46 +243,62 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >
 >   向表中增加多列。
 >
-> + **MODIFY \( \{ column\_name data\_type | column\_name \} \[, ...\] \)**
+> + **MODIFY \( \{ column\_name data\_type \} \[, ...\] \)**
 >
 >   修改表已存在字段的数据类型。
 >
-> + **MODIFY \( \{ column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+> + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] \[, ...\]**
+> + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NULL \[, ...\]**
 >
 >   修改表已存在字段的约束，ENABLE启用约束。
 >
 > + **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+> 
 >   修改表已存在字段的定义，将用新定义替换字段原定义，原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束等）不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段定义的同时修改字段在表中的位置。
+> 
 >   此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表，不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则。
+> 
 >   被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+> 
 >   被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+> 
 >   被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段完毕后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+> 
 >   修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
+> 
 >   此子句与上一子句中“MODIFY column\_name data\_type”部分语法相同，语义功能不同，当GUC参数b\_format\_behavior\_compat\_options含有'enable\_modify\_column'选项时，将按照此子句功能处理。
 >
 > + **CHANGE \[ COLUMN \] old\_column\_name new\_column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+> 
 >   修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。
+> 
 >   此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表。不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则
+> 
 >   被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+> 
 >   被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+> 
 >   被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段名称后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+> 
 >   修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
 >
 > + **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
 >
 >   从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
+> 
 >   DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
 >
 > + **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
 >
 >   改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
->    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
+> 
+>   ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
 >
->  ```
->  ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
->  ```
+>    ```
+>    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+>    ```
 >
->  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+>   这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
 >
 > - **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
 >
@@ -303,6 +320,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >   **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
 >
 >    设置/重置属性选项。
+> 
 >    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
 >
 > - **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
