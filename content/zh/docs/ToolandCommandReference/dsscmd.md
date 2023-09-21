@@ -23,7 +23,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   创建卷组
 
     ```
-    dsscmd cv <-g vg_name> <-v vol_name> [-s au_size] [-D DSS_HOME]
+    dsscmd cv <-g vg_name> <-v vol_name> [-s au_size]
     ```
 
     此处的vg\_name为卷组名，命名长度不能超过63，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
@@ -93,7 +93,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   查询LUN/注册信息
 
     ```
-    dsscmd inq  <-t inq_type> [-D DSS_HOME]
+    dsscmd inq  <-t inq_type>
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -104,7 +104,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   查询该节点是否注册
 
     ```
-    dsscmd inq_reg  <-i inst_id> [-D DSS_HOME]
+    dsscmd inq_reg  <-i inst_id>
     ```
 
 -   显示客户端信息
@@ -116,19 +116,19 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   从集群中踢出非当前节点，第一个参数是要移除的节点id
 
     ```
-    dsscmd kickh <-i inst_id> [-D DSS_HOME]
+    dsscmd kickh <-i inst_id>
     ```
 
 -   将节点添加到集群，不走服务端
 
     ```
-    dsscmd reghl [-D DSS_HOME]
+    dsscmd reghl
     ```
 
 -   将节点从集群中移除，不走服务端
 
     ```
-    dsscmd unreghl [-t type] [-D DSS_HOME]
+    dsscmd unreghl [-t type]
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -158,7 +158,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   读取dss文件内容
 
     ```
-    dsscmd examine <-p path> <-o offset> <-f format> [-s read_size] [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd examine <-p path> <-o offset> <-f format> [-s read_size] [-U UDS:socket_domain]
     ```
 
     此处format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
@@ -166,7 +166,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   读取磁阵文件内容
 
     ```
-    dsscmd dev <-p path> <-o offset> <-f format> [-D DSS_HOME]
+    dsscmd dev <-p path> <-o offset> <-f format>
     ```
 
     此处format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
@@ -174,8 +174,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   显示磁盘信息
 
     ```
-    dsscmd showdisk <-g vg_name> <-s struct_name> [-D DSS_HOME]
-    dsscmd showdisk <-g vg_name> <-b block_id> <-n node_id> [-D DSS_HOME]
+    dsscmd showdisk <-g vg_name> <-s struct_name>
+    dsscmd showdisk <-g vg_name> <-b block_id> <-n node_id>
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -269,7 +269,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   清理dss内部的锁资源
 
     ```
-    dsscmd clean_vglock [-D DSS_HOME]
+    dsscmd clean_vglock
     ```
 
 
