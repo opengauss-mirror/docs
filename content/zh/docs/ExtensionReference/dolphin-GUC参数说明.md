@@ -47,6 +47,8 @@
     |sql_mode_strict|除数为0，无报错，无告警|
     |--|除数为0，无报错，无告警|
 
+- block_return_multi_results: 控制在使用CALL语法调用存储过程时，存储过程中可以使用select语句进行查询并返回查询语句的结果。当不设置此参数时，存储过程中的查询语在执行时会报错，开启参数后，可以正常执行并立刻返回此查询语句的结果集，不等待存储过程执行完毕。开启后，使用CALL语法调用存储过程时，限制出参必须为用户自定义变量的格式。
+
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
 **示例**：
@@ -124,6 +126,33 @@ test_db=# select "a" from test;
  a
 (1 row)
 
+-- block_return_multi_results 效果展示 
+
+test_db=# set dolphin.sql_mode to 'block_return_multi_results';
+SET
+test_db=# create table tab_1143768(id int,pid int,a1 char(8));
+CREATE TABLE
+test_db=# insert into tab_1143768 values(1,2,'s'),(2,3,'b'),(3,4,'c'),(4,5,'d');
+INSERT 0 4
+--创建存储过程，包含查询语句
+
+test_db=# create or replace procedure pro_1143768()
+ as
+ begin
+ select * from tab_1143768 ;
+ end;
+ /
+CREATE PROCEDURE
+test_db=# call pro_1143768();
+ id | pid | a1
+----+-----+----
+  1 |   2 | s
+  2 |   3 | b
+  3 |   4 | c
+  4 |   5 | d
+(4 rows)
+
+CALL
 ```
 
 ## dolphin.b\_db\_timestamp<a name="section203671436822"></a>
