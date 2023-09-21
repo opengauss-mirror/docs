@@ -1,0 +1,12 @@
+资源池化
+==========
+
+.. toctree::
+
+    ../content/zh/docs/AboutopenGauss/资源池化特性说明
+    ../content/zh/docs/AboutopenGauss/资源池化性能优化
+    ../content/zh/docs/AboutopenGauss/备机事务内透明写转发
+    ../content/zh/docs/AboutopenGauss/DSS功能增强
+    ../content/zh/docs/AboutopenGauss/资源池化算子卸载
+    ../content/zh/docs/AboutopenGauss/基于Dorado存储同步复制的主备双集群容灾
+    ../content/zh/docs/AboutopenGauss/XLog按需回放

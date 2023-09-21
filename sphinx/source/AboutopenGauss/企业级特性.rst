@@ -22,4 +22,3 @@
     ../content/zh/docs/AboutopenGauss/外键锁增强
     ../content/zh/docs/AboutopenGauss/支持OLTP场景数据压缩
     ../content/zh/docs/AboutopenGauss/事件触发器
-    ../content/zh/docs/AboutopenGauss/资源池化
