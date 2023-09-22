@@ -1,15 +1,11 @@
 # dblink
 
-dblink是一个可以在openGauss数据库会话中连接到其它数据库的工具，同libpq支持的连接参数一致，可参考[链接参数](链接参数.md)，也可以在通过在连接串中增加drivername字段连接异构数据库。openGauss默认不编译dblink，下面依次介绍如何编译和使用dblink。
+dblink是一个可以在openGauss数据库会话中连接到其它数据库的工具，同libpq支持的连接参数一致，也可以在通过在连接串中增加drivername(对应odbc.ini文件中的数据源名称)字段通过ODBC连接异构数据库。
 
-## 编译dblink
-当前dblink的源码放在[contrib/dblink](https://gitee.com/opengauss/openGauss-server/tree/master/contrib/dblink)目录中。在编译安装完openGauss数据库之后，如果用户需要使用dblink，只需要进入上述目录执行如下即可完成dblink的编译安装。
-请在编译安装dblink之前提前安装好ODBC驱动程序
+libpq连接串详见：[链接参数](链接参数.md)
 
-```
-make
-make install
-```
+ODBC的使用方法详见：[ODBC](../GettingStarted/ODBC.md)
+
 
 ## 常用的dblink函数
 
@@ -18,7 +14,7 @@ make install
 
 -   conname         要使用的连接名。忽略这个参数将使用未命名连接。
 
--   connstr         如之前为dblink_connect所描述的一个连接信息字符串。
+-   connstr         一个连接信息字符串。
 
 -   sql             在远程数据库中执行的SQL查询，例如select * from foo。
 
