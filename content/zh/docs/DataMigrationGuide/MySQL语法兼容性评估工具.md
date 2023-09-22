@@ -1,161 +1,209 @@
 # MySQL语法兼容性评估工具
 
-本工具支持利用已有的openGauss节点评估数据SQL文本在openGauss的兼容性。包含但不限于以下限制：
+#### 工具介绍
 
-- 仅支持SQL文本文件输入，且SQL之间以`;`分割。
+openGauss兼容性评估工具，支持从多个场景下获取sql语句进行兼容性评估，并输出评估报告。
 
-- 不使用`dolphin`、`whale`等兼容性插件场景，不兼容语句的报错信息可能不准确。如果使用对应插件，需遵循插件使用约束。
+- 支持从mysql端采集sql语句，支持从mysql端采集以下几种sql类型：
 
-- 暂不支持`#`注释，请将文本内的`#`注释替换为`--`注释或直接删除。
+  - 对象定义语句（DDL）。
 
-- 存储过程、函数语句仅支持：创建体的合法性校验和函数体的语法兼容校验。
+  - 慢sql语句。此类sql通过查询mysql.slow_log表获得，需要用户开启慢sql记录至该表中。
 
-- 对于评估结果的准确率：
+  -  全量sql语句。此类sql通过查询mysql.general_log表获得，同样需要用户开启general log记录至该表中。
 
-   - 完全兼容：openGauss完全支持该语法。兼容结果可能依赖于传入SQL语句的前置执行结果，因此实际在openGauss内执行时不一定完全兼容。
+- 支持从文件中获取sql语句，支持以下几种文件类型：
 
-   - 语法兼容：openGauss支持该语法，但是实际使用过程中可能包含字段类型不支持、函数不存在等问题。
+  - sql文件。
 
-   - 语句不兼容：openGauss不支持该语法。
+  - mysql数据库生成的general log日志。
 
-   - 不支持评估：未考虑的语句。后续会陆续支持语句评估（例如create database等跨数据库影响语句）。
+  -  mysql数据库生成的slow log日志。
 
-   - 忽略语句：注释等。
-   
+  -  mybatis映射文件。
 
-### 代码获取
+评估报告中会展示每条sql语句的兼容性详情，包括完全兼容、语法兼容、不兼容、不支持评估。具体介绍参考兼容性评估插件：
+ https://gitee.com/opengauss/Plugin/tree/master/contrib/assessment
 
-- openGauss源码路径：
+社区提供兼容性评估工具软件包地址：
+https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/compatibility-assessment-5.1.0.tar.gz
 
-> https://gitee.com/opengauss/openGauss-server
+#### 源码安装
 
-- openGauss插件仓路径：
-
-> https://gitee.com/opengauss/Plugin
-
-### 编译插件
-
-- 必备插件
-
-| 必备插件           | 备注                             |
-| ------------------ | -------------------------------- |
-| contrib/assessment | 评估插件，包含插件so和可执行文件 |
-
-- 数据库运行时使用以下插件可以提高整体兼容率。
-
-| 可选插件（对应数据库兼容性插件） | 备注            |
-| -------------------------------- | --------------- |
-| contrib/dolphin             | B兼容数据库插件 |
-
-1. 下载openGauss源码，按照READMD.md指导编译openGauss源码。
-
-2. 将上述插件拷贝到openGauss源码路径的`contrib`路径下。`cd`进入对应目录后`make install -sj`。
-
-3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`Extension.sql`，`Extension.control`。`assessment`插件包含可执行文件`gs_assessment`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
-
-**assessment依赖文件**
+通过git命令下载源代码：
 
 ```
-二进制路径
-├── bin
-│   └── ***gs_assessment***
-├── lib
-│   └── postgresql
-│       └── ***assessment.so***
-└── share
-    └── postgresql
-        └── Extension
-            ├── ***assessment--1.0.sql***
-            └── ***assessment.control***
-```
-**dolphin依赖文件**
-
-```
-二进制路径
-├── lib
-│   └── postgresql
-│       └── ***dolphin.so***
-└── share
-    └── postgresql
-        └── Extension
-            ├── ***dolphin--1.0.sql***
-            └── ***dolphin.control***
+git clone https://gitee.com/opengauss/compatibility-assessment.git
 ```
 
-### 运行
+进入compatibility-assessment目录，执行sh build.sh进行编译获得可执行jar包compatibility-assessment-5.1.0-exec.jar。
 
-1. 确保有一个正在运行的数据库，且当前支持通过gsql命令连接数据库。
+java版本：open JDK11及以上
 
-2. 运行命令如下：`gs_assessment [args]`，其中args包含以下参数：
+maven版本：3.6.3及以上
 
-|          | 参数 | 描述                                     | 使用                                   |
-| -------- | ---- |  ---------------------------------------- | -------------------------------------- |
-| 连接参数 | p    |  端口（必选）                             | `-p 5432`                              |
-|          | d    | 数据库（可选）                           | `-d evaluation` |
-|          | U    |用户名（可选），如果支持本地连接，可不填 | `-U user`                |
-|          | W | 密码（可选），如果支持本地连接，可不填 | `-W ******` |
-| 兼容性评估 | c | 指定兼容类型（A\B\C\PG)，如果指定`d`参数，该参数不可设置。MySQL场景下请指定B。 | `-c B` |
-| 文件参数 | f | 评估SQL文件（必填） | `-f intput.sql` |
-|  | o | 输出文件（必填），一般输入html结尾文件 | `-o result.html` |
+#### 评估前准备
 
-### 举例
+在进行评估前，需要安装openGauss数据库节点，并保证该节点能加载到assessment插件，可选插件为dolphin插件。
 
-#### case 1:
+若在评估时指定评估库，则需要提前创建好评估库。创建评估库的步骤示例：
 
-通过gs_initdb初始化数据库并启动，假设启动端口为5432。此时可以通过`gsql -dpostgres -p5432`方式直接连接数据库。假设输入文件为`test.sql`，输出报告路径为`result.html`，评估的源数据库类型为B，则评估使用的命令为：
-
-```shell
-gs_assessment -p5432 -cB -ftest.sql -oresult.html
+```
+create database assessment_db dbcompatibility 'B';
+\c assessment_db;
+create extension assessment;
 ```
 
-此时回显信息为：
+社区提供的数据库二进制包中已包含对应插件。若需要手动编译插件，可参考
 
-```shell
-gs_assessment: create database "assessment_197561" automatically.
-gs_assessment: Create plugin[dolphin] automatically.
-gs_assessment: Create Extension[assessment] automatically.
-gs_assessment: 解析[100.00%]:35/35
-gs_assessment: Create database assessment_197561 automatically, clear it manually!
+https://gitee.com/opengauss/Plugin/tree/master/contrib/assessment
+
+#### 注意事项
+
+1、评估sql文件，文件中的sql以分号加回车分隔。若sql本身包含分号，限制在sql语句前后加上delimiter //和delimiter ;以保证正确解析sql语句。示例：
+
+```
+select * from t1;
+select * from
+t2;
+delimiter //
+create procedure showWebsite1() begin select * from website; end
+delimiter ;
 ```
 
-#### case 2:
+2、从mybatis的mapper文件中提取sql，原始xml文件中占位符#{}使用$1,$2...进行替换，占位符${field}直接替换为filed。对于动态sql标签，沿用mybatis原本的提取规则，但并不对动态标签属性进行类型的校验，仅提取静态sql片段。提取规则及举例如下：
 
-假设远程已经有数据库节点，在兼容性评估节点可以通过``gsql -dpostgres -p5432 -h127.0.0.2 -Utest -W***** `连接数据库。假设输入文件为`test.sql`，输出报告路径为`result.html`，评估的源数据库类型为B，则评估使用的命令为：
+- #####  foreach标签
 
-```shell
-gs_assessment -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+```
+<select id="queryDataByIds" resultType="com.wang.test.demo.entity.User">
+   select * from user where id in
+    <foreach collection="list" item="item" open="(" separator="," close=")">
+        #{item}
+    </foreach>
+</select>
+提取结果：select * from user where id in ($0)
 ```
 
-#### case 3:
+- #####  if标签
 
-假设远程已经有数据库节点，且自己创建了`evaluation`数据库用于兼容性评估。在兼容性评估节点可以通过``gsql -devalution -p5432 -h127.0.0.2 -Utest -W***** `连接数据库。期望通过假设输入文件为`test.sql`，输出报告路径为`result.html`，则评估使用的命令为：
+对if标签的提取规则为：将每个if标签中的sql片段提取后进行拼接得到最终的sql。
 
-```shell
-gs_assessment -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+```
+<select id="queryDataBySearch" resultType="com.wang.test.demo.entity.User">
+   select * from user
+   where stage = 'A'
+   <if test="age != null and age != ''">
+       and age =#{age}
+   </if>
+   <if test="name != null and name != ''">
+       and name =#{name}
+   </if>
+</select>
+提取结果：select * from user where stage = 'A' and age = $0 and name = $1
 ```
 
-即将`case 2`中的`-cB`换成`-devaluation`指定数据库即可。
+- ##### choose、when、otherwise标签
 
-### 结果
+提取choose标签中首个when标签的内容。
 
-评估工具最终会生成评估报告，以html形式展示。包含如下内容：语句、兼容类型、失败原因。兼容类型包括：语法兼容、完全兼容、语法不兼容、不支持评估。相关说明如下：
+```
+<select id="queryDataBySearchNew" resultType="com.wang.test.demo.entity.User">
+    select * from user
+    <where>
+        <choose>
+            <when test="age != null and age != ''">
+                and age =#{age}
+            </when>
+            <when test="name != null and name != ''">
+                and name =#{name}
+            </when>
+            <otherwise>
+                stage = 'A'
+            </otherwise>
+        </choose>
+    </where>
+</select>
+提取结果：select * from user where age = $1
+```
 
-- 完全兼容：openGauss完全支持该语法。执行结果依赖于数据库已有的表、函数、存储过程等。
+3、配置文件中opengauss端的用户名不能为数据库初始用户，因为opengauss端禁止使用数据库初始用户进行远程连接。
 
-- 语法兼容：openGauss支持该语法，但是实际使用过程中可能包含字段类型不支持、函数不存在等问题。
+#### 使用说明
 
-- 语句不兼容：openGauss不支持该语法。
- 
-- 不支持评估：未考虑的语句。后续会陆续支持语句评估（例如create database等跨数据库影响语句）。
+社区提供的兼容性评估工具软件包解压后包含start.sh，compatibility-assessment-5.1.0.jar和assessment.properties三个文件，分别为工具启动脚本，可执行jar包以及配置模板文件。
 
-### 原理
+评估使用如下命令启动：
 
-1. 首先存在一个正常运行的数据库节点，可以直接通过`gs_initdb`初始化。
+```
+sh start.sh -d [file|collect] -c assessment.properties -o report.html
+```
 
-2. 配置好对应连接参数，连接参数与`openGauss`的`gsql`连接方式是一致的。
+上述命令中，-d用于指定sql语句来源。file表示sql以文件形式输入，collect表示从mysql端采集数据。两种输入形式均需要在配置文件中配置相关的信息。
 
-3. 如果指定`-c 兼容类型`方式，工具会通过上述配置的连接参数连接到数据库，手动创建对应兼容类型评估数据库，再通过`create Extension`创建必要的插件。（如`assessment`、`dolphin`）。
+-c用于指定配置文件路径，该参数为可选。若不指定，则默认使用当前目录下的assessment.properties作为配置文件。
 
-4. 如果指定`-d database`方式，工具会在对应数据库创建插件。
+-o用于指定输出报告文件，该参数为可选。报告文件必须为.html格式，若不指定，则默认在当前路径下生成report.html文件。
 
-5. 在对应评估数据库评估。评估类型包含：语法树兼容评估、实际语句是否兼容评估。
+不同输入形式下，配置文件使用方法如下：
+
+- 若sql以文件形式出入(-d file)，需要配置输入文件的目录，示例如下：
+
+  ```
+  filedir = /data/testfiles/
+  
+  #opengauss端数据库用户，禁止使用数据库初始用户
+  opengauss.user = opengauss
+  opengauss.password = **********
+  opengauss.port = 5432
+  opengauss.host = 127.0.0.1
+  #指定评估库
+  opengauss.dbname = assessment_db
+  
+  #指定评估库和提供操作系统用户名和密码二选一
+  osuser = opengauss_init_user
+  ospassword = ***********
+  ```
+
+  配置完成配置文件后，通过执行如下命令进行评估：
+
+  ```
+  sh start.sh -d file -c assessment.properties -o report.html
+  ```
+
+  工具支持四种类型的输入文件，将不同类型的文件放入指定的目录下，工具扫描目录并通过后缀对文件类型进行识别，sql文件、general log日志、slow log日志、mybatis映射文件对应的后缀分别为：.sql， .general，.slow，.xml。为了区分general log日志和slow log日志，目前需要手动修改文件后缀名以便工具自动识别。
+
+- 若从mysql数据库端采集sql(-d collect)，需要在配置文件中指定评估类型，sql语句类型以及mysql数据库信息。示例如下：
+
+  ```
+  #评估类型，object:对象评估; sql：评估sql语句; all: 同时进行对象评估和sql语句评估。
+  assessmenttype = sql
+  #sql类型， slow：评估慢sql; general：评估全量sql。该参数仅需要在assessmenttype为sql或all时指定，用于表示需进行评估的sql语句类型
+  sqltype = slow
+  
+  mysql.password = ********
+  mysql.user = mysql
+  mysql.port = 3389
+  mysql.host = 127.0.0.1
+  #通过mysql数据库端获取sql时，需指定mysql端的库名
+  mysql.dbname = test
+  
+  opengauss.user = opengauss
+  opengauss.password = ***********
+  opengauss.port = 5432
+  opengauss.host = 127.0.0.1
+  opengauss.dbname = assessment_db
+  
+  #指定评估库和提供操作系统用户名和密码二选一
+  osuser = omm
+  ospassword = *********
+  ```
+
+  配置完成配置文件后，通过执行如下命令进行评估：
+
+  ```
+  sh start.sh -d collect -c assessment.properties -o report.html
+  ```
+
+  进行评估之前，用户可以手动创建好评估库，然后通过opengauss.dbname指定评估库；或者用户不指定评估库，通过提供数据库节点所在主机的操作系统用户名和密码，由工具自动创建评估库，工具自动创建评估库是通过ssh远程登陆到对应主机，并通过gsql连接到数据库节点，然后创建对应的评估库，所以使用这种方式进行评估时，用户需要保证osuser登录主机时能自动加载到数据库环境变量。当opengauss.dbname和(osuser, ospassword)同时指定时，会优先使用opengauss.dbname指定的库作为评估库。
+
