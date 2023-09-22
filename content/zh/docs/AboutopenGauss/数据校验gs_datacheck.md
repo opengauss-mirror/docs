@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section56086982"></a>
 
-本特性自openGauss 5.0.0版本开始引入。
+本特性自openGauss 3.0.0版本开始引入。
 
 ## 特性简介<a name="section35020791"></a>
 
@@ -27,7 +27,8 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对MySQL至ope
 
 ## 特性增强<a name="section28788730"></a>
 
-- 数据校验工具支持源端是openGauss的校验，包括全量校验与增量校验。
+- 自openGauss 5.1.0版本 数据校验工具支持源端是openGauss的校验，包括全量校验与增量校验。
+- 自openGauss 5.1.0版本 表记录抽取任务分片规则进行优化，实现抽取校验性能的提升。（ 在50张表每张表1千万记录场景下，校验性能使用sysbench模型以及t_datacheck_templete模型，校验速率达到20万条/秒，其中使用t_datacheck_templete模型可以达到（150+M/s） ）
 
 ## 特性约束<a name="section06531946143616"></a>
 
