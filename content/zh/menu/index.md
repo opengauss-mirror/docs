@@ -958,6 +958,7 @@ headless: true
 					-	[UPDATE]({{< relref "./docs/ExtensionReference/dolphin-UPDATE.md" >}})
 					-	[USE DB_NAME]({{< relref "./docs/ExtensionReference/dolphin-USE-DB_NAME.md" >}})						
 					-	[SELECT HINT]({{< relref "./docs/ExtensionReference/dolphin-SELECT-HINT.md" >}})
+				-   [别名]({{< relref "./docs/ExtensionReference/dolphin-单引号别名.md" >}})
 			-   [系统视图]({{< relref "./docs/ExtensionReference/dolphin-系统视图.md" >}})
 				-	[PG TYPE NONSTRICT BASIC VALUE]({{< relref "./docs/ExtensionReference/dolphin-PG_TYPE_NONSTRICT_BASIC_VALUE.md" >}})
 				-	[INDEX STATISTIC]({{< relref "./docs/ExtensionReference/dolphin-INDEX_STATISTIC.md" >}})
