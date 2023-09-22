@@ -27,7 +27,7 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对MySQL至ope
 
 ## 特性增强<a name="section28788730"></a>
 
-无。
+- 数据校验工具支持源端是openGauss的校验，包括全量校验与增量校验。
 
 ## 特性约束<a name="section06531946143616"></a>
 

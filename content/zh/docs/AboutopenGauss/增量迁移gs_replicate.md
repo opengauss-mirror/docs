@@ -20,7 +20,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 
 ## 特性增强<a name="section28788730"></a>
 
-无。
+- 增量迁移支持迁移进度与回放失败的SQL语句实时上报。
 
 ## 特性约束<a name="section06531946143616"></a>
 
@@ -44,6 +44,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
   ```
 
   因此，对于MySQL中的标识符命名，包括表名、列名等，需满足上述命名规范，否则在线迁移会报错。
+- 目前仅支持MySQL参数gtid_mode=on时的迁移进度上报。
 
 ## 依赖关系<a name="section57771982"></a>
 

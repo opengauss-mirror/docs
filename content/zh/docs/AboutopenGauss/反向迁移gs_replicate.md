@@ -16,7 +16,7 @@ debezium opengauss connector的sink端，从kafka读取AVRO格式的数据，在
 
 ## 特性增强<a name="section1340684315478"></a>
 
-无。
+- 反向迁移支持迁移进度与回放失败的SQL语句实时上报。
 
 ## 特性约束<a name="section06531946143616"></a>
 
