@@ -1,4 +1,4 @@
-# 同层参数化路径的Hint<a name="ZH-CN_TOPIC_0000001266694989"></a>
+# 同层参数化路径的Hint
 
 ## 功能描述<a name="section290819468377"></a>
 
@@ -11,7 +11,7 @@ predpush_same_level(src, dest)
 predpush_same_level(src1 src2 ..., dest)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >本参数仅在rewrite\_rule中的predpushforce选项打开时生效。
 
 ## 示例<a name="section5736356154"></a>
@@ -58,7 +58,7 @@ openGauss=# explain select /*+predpush_same_level(t1, t2)*/ * from t1, t2 where 
 (4 rows)
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   predpush\_same\_level可以指定多个src，但是所有的src必须在同一个条件中。
 >-   如果指定的src和dest条件不存在，或该条件不符合参数化路径要求，则本hint不生效。

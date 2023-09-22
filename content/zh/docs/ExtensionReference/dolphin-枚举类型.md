@@ -1,4 +1,4 @@
-# ENUM类型<a name="ZH-CN_TOPIC_0289900754"></a>
+# ENUM类型
 
 ENUM类型是一个字符串对象，其值是从创建表时在列定义时指定的枚值列表中选择的。要使用mysql兼容的enum类型，首先保证数据库是'B'类型：`CREATE DATABASE test_db with dbcompatibility='B';`
 

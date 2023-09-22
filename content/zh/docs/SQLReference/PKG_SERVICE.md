@@ -1,4 +1,4 @@
-# PKG\_SERVICE<a name="ZH-CN_TOPIC_0304085685"></a>
+# PKG\_SERVICE
 
 PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
 
@@ -498,7 +498,7 @@ PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
     job           OUT  INTEGER);
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >当创建一个定时任务（JOB）时，系统默认将当前数据库和用户名与当前创建的定时任务绑定起来。该接口函数可以通过call或select调用，如果通过select调用，可以不填写出参。如果在存储过程中，则需要通过perform调用该接口函数。如果提交的sql语句任务使用到非public的schema，应该指定表或者函数的schema，或者在sql语句前添加set current\_schema = xxx;语句。
 
     **表 11**  PKG\_SERVICE.JOB\_SUBMIT接口参数说明

@@ -1,4 +1,4 @@
-# START TRANSACTION<a name="ZH-CN_TOPIC_0242370656"></a>
+# START TRANSACTION
 
 ## 功能描述<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s7c3a854297a0489db05671ba82a741a8"></a>
 
@@ -17,8 +17,8 @@ START TRANSACTION
   [ 
     { 
        ISOLATION LEVEL { READ COMMITTED | SERIALIZABLE | REPEATABLE READ }
-       | { READ WRITE | READ ONLY }
-     } [, ...] 
+       | { READ WRITE | READ ONLY } | WITH CONSISTENT SNAPSHOT
+    }  [, ...] 
   ];
 ```
 
@@ -44,7 +44,7 @@ BEGIN [ WORK | TRANSACTION ]
 
     指定事务隔离级别，它决定当一个事务中存在其他并发运行事务时它能够看到什么数据。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >在事务中第一个数据修改语句（SELECT、 INSERT、DELETE、UPDATE、FETCH、COPY）执行之后，事务隔离级别就不能再次设置。  
 
     取值范围：
@@ -57,6 +57,9 @@ BEGIN [ WORK | TRANSACTION ]
 
     指定事务访问模式（读/写或者只读）。
 
+-   **WITH CONSISTENT SNAPSHOT**
+
+    仅在可重复读隔离级别下生效，开启事务时即生成快照，其余隔离级别不生效，并产生告警。
 
 ## 示例<a name="zh-cn_topic_0237122192_zh-cn_topic_0059777519_s8c971e0651d14f0a96a3e8c8c3e4c4de"></a>
 
@@ -73,6 +76,17 @@ openGauss=# END;
 
 --以隔离级别为READ COMMITTED，读/写方式启动事务。
 openGauss=# START TRANSACTION ISOLATION LEVEL READ COMMITTED READ WRITE;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# COMMIT;
+
+--可重复读隔离级别下，带WITH CONSISTENT SNAPSHOT开启事务。
+openGauss=# START TRANSACTION WITH CONSISTENT SNAPSHOT;
+openGauss=# SELECT * FROM tpcds.reason;
+openGauss=# COMMIT;
+
+--非可重复读隔离级别下，带WITH CONSISTENT SNAPSHOT开启事务。
+openGauss=# START TRANSACTION WITH CONSISTENT SNAPSHOT;
+WARNING:  with constent snapshot only effected in repeatable read mode
 openGauss=# SELECT * FROM tpcds.reason;
 openGauss=# COMMIT;
 ```

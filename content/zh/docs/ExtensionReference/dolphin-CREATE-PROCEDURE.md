@@ -1,4 +1,4 @@
-# CREATE PROCEDURE<a name="ZH-CN_TOPIC_0289900087"></a>
+# CREATE PROCEDURE
 
 ## 功能描述<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_s824c141a39964bd39575295aebb98d67"></a>
 
@@ -46,9 +46,9 @@ plsql_body
 /
 ```
 
-- 使用MySQL 的格式进行创建存储过程。
+- 使用MySQL的格式进行创建存储过程。
 
-  注意：使用MMySQL 的格式创建时，需要在客户端使用delimiter 命令设置结束符。
+  注意：使用MySQL的格式创建时，需要在客户端使用delimiter命令设置结束符。
 
 ```
 CREATE [ OR REPLACE ] PROCEDURE procedure_name
@@ -116,19 +116,22 @@ CREATE [ OR REPLACE ] PROCEDURE procedure_name
 
 ## 示例<a name="zh-cn_topic_0283137438_zh-cn_topic_0237122132_zh-cn_topic_0059778658_s414adb8f7846482184cbbd960d4adfcf"></a>
 
-```
---创建存储过程使用单条查询语句，显示为CREATE FUNCTION
+```sql
+--创建存储过程使用单条查询语句，显示为CREATE PROCEDURE
 openGauss=#  create procedure procxx() select a from t1;
-CREATE FUNCTION
+CREATE PROCEDURE
 
---结果集类似RETURNS SETOF RECORD
-openGauss=# select procxx();
- procxx
---------
- (1)
- (2)
+--调用时需要开启参数
+openGauss=# set dolphin.sql_mode = 'block_return_multi_results'; 
+SET
+openGauss=# call procxx();
+ a
+---
+ 1
+ 2
 (2 rows)
 
+CALL
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>

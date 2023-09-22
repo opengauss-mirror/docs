@@ -1,4 +1,4 @@
-# java.sql.Statement<a name="ZH-CN_TOPIC_0289900015"></a>
+# java.sql.Statement
 
 java.sql.Statement是SQL语句接口。
 
@@ -352,7 +352,7 @@ java.sql.Statement是SQL语句接口。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   通过setFetchSize可以减少结果集在客户端的内存占用情况。它的原理是通过将结果集打包成游标，然后分段处理，所以会加大数据库与客户端的通信量，会有性能损耗。
 >

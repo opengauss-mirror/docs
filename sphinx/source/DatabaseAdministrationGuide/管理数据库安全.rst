@@ -1,0 +1,15 @@
+管理数据库安全
+==============
+
+.. toctree::
+
+    客户端接入认证
+    管理用户及权限
+    设置数据库审计
+    设置密态等值查询
+    设置账本数据库
+    ../content/zh/docs/DatabaseAdministrationGuide/设置透明数据加密_TDE
+
+
+
+

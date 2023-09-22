@@ -1,4 +1,4 @@
-# SET<a name="ZH-CN_TOPIC_0289899950"></a>
+# SET
 
 ## 功能描述<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s8a5c6264f78f49e3aa93f388d68cd3e6"></a>
 
@@ -27,7 +27,7 @@
 -   设置客户端编码集。
 
     ```
-    SET [ SESSION | LOCAL ] NAMES encoding_name;
+    SET [ SESSION | LOCAL ] NAMES encoding_name [COLLATE collate_name];
     ```
 
 -   设置XML的解析方式。
@@ -90,7 +90,7 @@
 
     用于指定当前会话的本地时区。
 
-    取值范围：有效的本地时区。该选项对应的运行时参数名称为TimeZone，DEFAULT缺省值为PRC。
+    取值范围：有效的本地时区。该选项对应的运行时参数名称为TimeZone，DEFAULT缺省值为GMT。
 
 -   **CURRENT\_SCHEMA**
 
@@ -112,6 +112,20 @@
 
     取值范围：有效的字符编码。该选项对应的运行时参数名称为client\_encoding，默认编码为UTF8。
 
+    在兼容B模式（sql\_compatibility = 'B'），并且GUC参数b\_format\_behavior\_compat\_options设置值包含enable\_multi\_charset的场景下，
+
+    该选项额外还会将GUC参数character\_set\_connection设置成encoding\_name，用于设置字符串常量的默认字符集。若未指定COLLATE collate\_name选项，
+
+    则会将将GUC参数collation\_connection设置成当前encoding\_name的默认字符序。
+
+-   **COLLATE collate\_name**
+
+    该选项只有在兼容B模式下（sql\_compatibility = 'B'）支持，并且GUC参数b\_format\_behavior\_compat\_options设置值包含enable\_multi\_charset的场景下生效。
+
+    用于设置字符串常量的默认字符序，指定的collate\_name要属于指定的encoding\_name，将GUC参数collation\_connection设置成指定的collate\_name。
+
+    取值范围：有效的字符序名称。该选项对应的运行时GUC参数名称为collation\_connection。
+
 -   **XML OPTION option**
 
     用于设置XML的解析方式。
@@ -122,7 +136,7 @@
 
     可设置的运行时参数的名称。可用的运行时参数可以使用SHOW ALL命令查看。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >部分通过SHOW ALL查看的参数不能通过SET设置。如max\_datanodes。
 
 -   **value**
@@ -137,7 +151,7 @@
 
   声明的参数生效方式为superuser、user，可通过pg_settings系统视图的context字段确定，如果没有出现GLOBAL /SESSION，则SESSION为缺省值。支持config\_parameter赋值为表达式。
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   - SET SESSION/GLOBAL 语法只有在B模式下（sql_compatibility = B）支持，并且GUC参数enable_set_variable_b_format打开的场景下才支持（enable_set_variable_b_format = on)。
   - 使用@@config\_parameter进行操作符运算时，尽量使用空格隔开。比如set @config\_parameter1=@config\_parameter1*2; 命令中，会将=@当做操作符，可将其修改为set @config\_parameter1= @config\_parameter1 * 2 。
@@ -149,7 +163,7 @@
 
   自定义变量名。变量名只能由数字、字母、下划线（_），点（.）、$组成，如果使用单引号、双引号等引用是，则可以使用其他字符，如'var_name'，"var_name"，\`var_name\`。
 
-  > ![](public_sys-resources/icon-note.gif) **说明：** 
+  > ![](public_sys-resources/icon-note.png) **说明：** 
   >
   > -  SET自定义用户变量的只有在B模式下（sql_compatibility = B）支持，并且GUC参数enable_set_variable_b_format打开的场景下才支持（enable_set_variable_b_format = on）或者GUC参数b_format_behavior_compat_options设置值包含enable_set_variables的场景下也支持（即b_format_behavior_compat_options = 'enable_set_variables'）。
   > - 自定义变量只会存储整型，浮点型，字符串，位串和NULL。对于BOOLEAN，INT1，INT2，INT4，INT8类型会转为INT8类型；FLOAT4，FLOAT8，NUMBERIC会转化为FLOAT8进行存储（需要注意浮点型可能会有精度丢失）；BIT类型以BIT存储，VARBIT类型以VARBIT存储；NULL值以NULL存储；其他类型若可转化为字符串，则转为TEXT存储。
@@ -163,7 +177,7 @@
 
   表达式，支持可直接或间接转为整型，浮点型，字符串，位串和NULL的表达式。
 
-  > ![](public_sys-resources/icon-notice.gif) **注意：**   
+  > ![](public_sys-resources/icon-notice.png) **注意：**   
   >
   > 字符串表达式中避免包含口令等敏感信息的函数，如加解密类函数gs_encrypt，gs_decrypt等，防止敏感信息泄露。
 

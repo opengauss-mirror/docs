@@ -1,4 +1,4 @@
-# CREATE DATABASE<a name="ZH-CN_TOPIC_0289900066"></a>
+# CREATE DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
@@ -176,6 +176,25 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p1553814181058"><a name="p1553814181058"></a><a name="p1553814181058"></a>-</p>
   </td>
   </tr>
+
+
+  <tr id="row14537319923"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p20537161819516"><a name="p20537161819516"></a><a name="p20537161819516"></a>GB18030_2022</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p19537718856"><a name="p19537718856"></a><a name="p19537718856"></a>国家标准</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p55375181454"><a name="p55375181454"></a><a name="p55375181454"></a>中文</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p165371518757"><a name="p165371518757"></a><a name="p165371518757"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p18538918456"><a name="p18538918456"></a><a name="p18538918456"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p16538191811512"><a name="p16538191811512"></a><a name="p16538191811512"></a>1-4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p1553814181058"><a name="p1553814181058"></a><a name="p1553814181058"></a>-</p>
+    </td>
+    </tr>
+
+    
   <tr id="row2538161816511"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p853841815519"><a name="p853841815519"></a><a name="p853841815519"></a>GBK</p>
   </td>
   <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p25398185512"><a name="p25398185512"></a><a name="p25398185512"></a>扩展国家标准</p>
@@ -704,16 +723,17 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   </tbody>
   </table>
 
-  >![](public_sys-resources/icon-caution.gif) **注意：** 
+  >![](public_sys-resources/icon-caution.png) **注意：** 
   >
   >需要注意并非所有的客户端API都支持上面列出的字符集。
   >SQL\_ASCII设置与其他设置表现得相当不同。如果服务器字符集是SQL\_ASCII，服务器把字节值0-127根据 ASCII标准解释，而字节值128-255则当作无法解析的字符。如果设置为SQL\_ASCII，就不会有编码转换。因此，这个设置基本不是用来声明所使用的指定编码， 因为这个声明会忽略编码。在大多数情况下，如果你使用了任何非ASCII数据，那么使用 SQL\_ASCII设置都是不明智的，因为OpenGauss将无法帮助你转换或者校验非ASCII字符。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
   >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
-  >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](PG_CONVERSION.MD)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
+  >-  若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](../DatabaseReference/PG_CONVERSION.md)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
+  >-  若要指定数据库字符集编码为GB18030_2022，且客户端编码也要设置为GB18030时，必须确保客户端操作系统支持的GB18030字符集为2022版本，否则由于GB18030字符集自身的各版本间存在不完全兼容，可能导致数据的不一致性。同时，涉及到历史数据切换为GB18030_2022数据库时应当遵循切库流程，进行数据迁移操作。
 
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
@@ -729,9 +749,10 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     指定新数据库使用的字符分类。例如，通过lc\_ctype = 'zh\_CN.gbk'设定该参数。该参数的使用会影响到字符的分类，如大写、小写和数字。默认是使用模板数据库的字符分类。
 
     取值范围：操作系统支持的字符分类。
-     >![](public_sys-resources/icon-note.gif) **说明：** 
+     >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >- 对于lc_collate和lc_ctype参数的取值范围，取决于本地环境支持的字符集。
+    >- 当指定的字符编码集为GB18030_2022时，其LC_COLLATE和LC_CTYPE的取值范围与GB18030保持一致。
     
     
     >   例如：在Linux操作系统上，可通过locale -a命令获取操作系统支持的字符集列表，在应用lc_collate和lc_ctype参数时可从中选择用户需要的字符集和字符分类。   
@@ -740,9 +761,9 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定兼容的数据库的类型，默认兼容O。
 
-  取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。
+  取值范围：A、B、C、PG。分别表示兼容O、MY、TD和POSTGRES。在B兼容性场景下，必须加载dolphin插件才允许被连接。详见[dolphin限制](../ExtensionReference/dolphin限制.md)。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。
   >-   将字符串转换成整数类型时，如果输入不合法，B兼容性会将输入转换为0，而其它兼容性则会报错。
@@ -758,7 +779,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
     数据库可以接受的并发连接数。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   系统管理员不受此参数的限制。
     >-   connlimit数据库主节点单独统计，openGauss整体的连接数 = connlimit \* 当前正常数据库主节点个数。
@@ -839,5 +860,5 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'）时，必须指定template \[=\] template0。
+    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'/'GB18030_2022'）时，必须指定template \[=\] template0。
 

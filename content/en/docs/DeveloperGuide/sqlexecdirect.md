@@ -57,5 +57,5 @@ If SQLExecDirect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 
 ## Example<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_s8fbcb12db6c5494e98bac4b4820ecc3c"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

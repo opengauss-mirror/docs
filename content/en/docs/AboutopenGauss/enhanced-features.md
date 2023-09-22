@@ -84,7 +84,7 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     -   For DDL statements, only CREATE TABLE, DROP TABLE, and TRUNCATE TABLE are supported.
 
-        Partition management using DDL statements \(such as  **ADD PARTITION**,  **DROP PARTITION**,** MERGE PARTITION**,** and EXCHANGE**\) is supported.
+        Partition management using DDL statements \(such as  **ADD PARTITION**,  **DROP PARTITION** , **MERGE PARTITION** ,and **EXCHANGE** \) is supported.
 
         The  **CREATE TABLE LIKE**  statement is supported.
 

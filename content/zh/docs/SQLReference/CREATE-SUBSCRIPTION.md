@@ -1,4 +1,4 @@
-# CREATE SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001195412354"></a>
+# CREATE SUBSCRIPTION
 
 ## 功能描述<a name="section1941212243553"></a>
 
@@ -37,7 +37,7 @@ CREATE SUBSCRIPTION subscription_name
 
         发布端端口，此处的端口不能使用主端口，而应该使用主端口+1端口，否则会与线程池冲突。可以同时指定发布端主机和备机的端口，如果同时指定了多个端口，以英文逗号分隔。
 
-        >![](public_sys-resources/icon-notice.gif) **注意:**   
+        >![](public_sys-resources/icon-notice.png) **注意:**   
         >host和port的数量要一致，并且要一一对应。
 
     -   **dbname**

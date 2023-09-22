@@ -1,4 +1,4 @@
-# pg\_archivecleanup<a name="ZH-CN_TOPIC_0000001196676731"></a>
+# pg\_archivecleanup
 
 ## 功能介绍<a name="section125419154813"></a>
 

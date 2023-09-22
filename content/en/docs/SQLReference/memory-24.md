@@ -4,7 +4,7 @@
 
 -   **[GLOBAL\_MEMORY\_NODE\_DETAIL](global_memory_node_detail.md)**  
 
--   **[SHARED\_MEMORY\_DETAIL](shared_memory_detail.md)**  
+-   **[SHARED\_MEMORY\_DETAIL](gs_shared_memory_detail.md)**  
 
 -   **[GLOBAL\_SHARED\_MEMORY\_DETAIL](global_shared_memory_detail.md)**  
 

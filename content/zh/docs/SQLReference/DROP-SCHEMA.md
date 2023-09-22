@@ -1,4 +1,4 @@
-# DROP SCHEMA<a name="ZH-CN_TOPIC_0289900224"></a>
+# DROP SCHEMA
 
 ## 功能描述<a name="zh-cn_topic_0283137271_zh-cn_topic_0237122148_zh-cn_topic_0059778467_s13f49511137f4971b9f2c7f4b3ec109f"></a>
 
@@ -31,11 +31,11 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
     -   RESTRICT：如果模式包含任何对象，则删除失败（缺省行为）。
 
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >不要随意删除pg\_temp或pg\_toast\_temp开头的模式，这些模式是系统内部使用的，如果删除，可能导致无法预知的结果。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >无法删除当前模式。如果要删除当前模式，须切换到其他模式下。
 

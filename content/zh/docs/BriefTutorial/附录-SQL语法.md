@@ -1,4 +1,4 @@
-# 附录：SQL语法<a name="ZH-CN_TOPIC_0000001237263391"></a>
+# 附录：SQL语法
 
 ## ABORT<a name="section49831237711"></a>
 
@@ -2707,7 +2707,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 SET [ LOCAL | SESSION ]
     { {config_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT }}};
 SET [ SESSION | LOCAL ] TIME ZONE { timezone | LOCAL | DEFAULT };
-SET [ SESSION | LOCAL ] NAMES encoding_name;
+SET [ SESSION | LOCAL ] NAMES encoding_name [COLLATE collate_name];
 SET [ SESSION | LOCAL ]
     {CURRENT_SCHEMA { TO | = } { schema | DEFAULT }
     | SCHEMA 'schema'};

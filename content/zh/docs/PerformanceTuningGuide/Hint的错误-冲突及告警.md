@@ -1,4 +1,4 @@
-# Hint的错误、冲突及告警<a name="ZH-CN_TOPIC_0245374575"></a>
+# Hint的错误、冲突及告警
 
 Plan Hint的结果会体现在计划的变化上，可以通过explain来查看变化。
 
@@ -34,7 +34,7 @@ hint的错误分为以下类型：
 
         例如：nestloop \(t1 t2\) hashjoin \(t1 t2\)，则后面与前面冲突，此时hashjoin的hint失效。注意：nestloop\(t1 t2\)和no mergejoin\(t1 t2\)不冲突。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：**   
+        >![](public_sys-resources/icon-notice.png) **须知：**   
         >leading hint中的多个表会进行拆解。例如：leading \(\(t1 t2 t3\)\)会拆解成：leading\(\(t1 t2\)\) leading\(\(\(t1 t2\) t3\)\)，此时如果存在leading\(\(t2 t1\)\)，则两者冲突，后面的会被丢弃。（例外：指定内外表的hint若与不指定内外表的hint重复，则始终丢弃不指定内外表的hint。）  
 
 

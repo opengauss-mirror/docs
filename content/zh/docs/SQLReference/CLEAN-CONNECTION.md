@@ -1,4 +1,4 @@
-# CLEAN CONNECTION<a name="ZH-CN_TOPIC_0000001151746656"></a>
+# CLEAN CONNECTION
 
 ## 功能描述<a name="zh-cn_topic_0059779060_s1b14773726ac4469a14e509530a7a957"></a>
 
@@ -54,7 +54,7 @@ CLEAN CONNECTION
 
 ```
 --创建jack用户。
-CREATE USER jack PASSWORD 'Bigdata123@';
+CREATE USER jack PASSWORD 'XXXXXXXX';
 
 --删除用户jack在数据库template1上的所有连接。
 CLEAN CONNECTION TO ALL FOR DATABASE template1 TO USER jack;

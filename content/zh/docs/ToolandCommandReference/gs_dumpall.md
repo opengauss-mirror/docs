@@ -1,4 +1,4 @@
-# gs\_dumpall<a name="ZH-CN_TOPIC_0249632251"></a>
+# gs\_dumpall
 
 ## 背景信息<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_section31221112348"></a>
 
@@ -18,6 +18,12 @@ gs\_dumpall在导出openGauss所有数据库时分为两部分：
 -   gs\_dumpall通过调用gs\_dump来完成openGauss中各数据库的SQL脚本文件导出，该脚本文件包含将数据库恢复为其保存时的状态所需要的全部SQL语句。
 
 以上两部分导出的结果为纯文本格式的SQL脚本文件，使用gsql运行该脚本文件可以恢复openGauss数据库。
+
+gs\_dumpall工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+
+>![](public_sys-resources/icon-notice.png) **须知：**
+>-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
+>-   临时表不支持导入导出。
 
 ## 注意事项<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
@@ -121,13 +127,15 @@ gs_dumpall [OPTION]...
 
     该参数为扩展预留接口，不建议使用。
 
--    --no-subscriptions
+- --no-subscriptions
 
-    不转储订阅。
+  不转储订阅。
 
-    ![](public_sys-resources/icon-note.gif) **说明：**
+  
 
-    -   当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
+  > ![](public_sys-resources/icon-note.png) **说明：**
+  >
+  > 当不指定该选项时会转储订阅，但是转储订阅需要有管理员用户权限，所以如果是以普通用户执行gs_dump时，如果不指定该选项，会提示“WARNING: subscriptions not dumped because current user is not a superuser”。
 
 -   --no-tablespaces
 
@@ -197,7 +205,7 @@ gs_dumpall [OPTION]...
     使用管道传输密码，禁止在终端使用。
 
 
-![](public_sys-resources/icon-note.gif) **说明：**
+![](public_sys-resources/icon-note.png) **说明：**
 
 -   -g/--globals-only和-r/--roles-only不能同时使用。
 
@@ -276,7 +284,7 @@ gs\_dumpall恢复前需要所有必要的表空间目录为空；否则，对于
 
 使用gs\_dumpall一次导出openGauss的所有数据库。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >gs\_dumpall仅支持纯文本格式导出。所以只能使用gsql恢复gs\_dumpall导出的转储内容。
 
 ```

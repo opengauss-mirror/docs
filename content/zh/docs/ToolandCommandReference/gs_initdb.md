@@ -1,4 +1,4 @@
-# gs\_initdb<a name="ZH-CN_TOPIC_0249632240"></a>
+# gs\_initdb
 
 ## 简介<a name="section7777368159"></a>
 
@@ -10,7 +10,7 @@ gs\_initdb初始化数据库时，会创建数据库目录、生成系统表、�
 
 初始化数据库时会生成大量的系统表和视图，其中绝大部分都对任何数据库用户开放查看权限。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >pg\_user\_status、pg\_auth\_history系统表权限只对初始化数据库用户和sysadmin用户开放。
 
 **生成的数据库**
@@ -351,7 +351,7 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p106523513313"><a name="p106523513313"></a><a name="p106523513313"></a>[0-63]，  需要从0开始指定。</p>
 </td>
 </tr>
-<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable_dss</p>
+<tr id="row265245116311"><td class="cellrowborder" valign="top" width="15.939999999999998%" headers="mcps1.2.4.1.1 "><p id="p19911144512318"><a name="p19911144512318"></a><a name="p19911144512318"></a>--enable-dss</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.89%" headers="mcps1.2.4.1.2 "><p id="p145298413418"><a name="p145298413418"></a><a name="p145298413418"></a>开启ss_enable_dss功能。</p>
 </td>
@@ -384,6 +384,6 @@ zh_SG.gbk
 </tbody>
 </table>
 
-> ![](public_sys-resources/icon-note.gif) **说明：** 
+> ![](public_sys-resources/icon-note.png) **说明：** 
 > 资源池化下系统表存放在段页式中，unlogging表保持页式存储。
 

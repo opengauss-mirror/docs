@@ -1,6 +1,6 @@
-# 示例：jdbc主备集群负载均衡<a name="ZH-CN_TOPIC_0000001151910145"></a>
+# 示例：jdbc主备集群负载均衡
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >以下示例场景中node代表“host:port”，host为数据库服务器名称或IP地址，port为数据库服务器端口。
 
 
@@ -38,7 +38,7 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn
 jdbc:opengauss://node1,node2,node3/database?autoBalance=priority2
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >-   jdbc负载均衡根据url串中指定的节点集合识别集群，如果存在多个指定了相同节点集合和相同负载均衡模式的URL分别通过同一驱动建立连接，则jdbc会将其视为同一集群上的连接，并整体进行负载均衡。
 >-   jdbc支持的负载均衡是驱动级别的负载均衡，会对基于该驱动在同一集群上创建的连接负载均衡，不会基于该集群中各节点的实际连接数负载均衡，也不会基于其他驱动创建的连接负载均衡。
 >-   leastconn模式会开启心跳线程，每20秒执行一次监测连接有效性等定时任务。该功能的关闭机制为：心跳线程连续两次监测到已缓存的开启leastconn的连接数为0，则关闭心跳线程并清空leastconn功能缓存信息。
@@ -82,7 +82,7 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn&enableQuickAut
 jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn&enableQuickAutoBalance=true&maxIdleTimeBeforeTerminal=20&minReservedConPerCluster=20&minReservedConPerDatanode=20
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >-   jdbc只基于该驱动在同一集群上的连接负载均衡，同样触发快速负载均衡时，也只会关闭该驱动在某一集群上创建、并设置了相应参数的连接。
 >-   该功能需要通过调整参数来适应客户端的业务需求，jdbc本身无法感知到某一连接是否为实际业务所需的连接， 因此通过判断空闲连接的方式筛选可关闭连接。如果参数与实际业务需求不匹配，可能会出现用户持有连接被关闭的情况。
 >-   jdbc在进行快速负载均衡时，会根据设置的配置参数，筛选部分满足条件的连接关闭，如果此时大部分已有连接都不满足关闭条件，比如全部处于活跃状态，可能导致快速负载均衡结果较差。

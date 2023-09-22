@@ -124,6 +124,7 @@ openGauss=# SELECT * FROM test_time;
 - 对于'YYYYMMDDhhmmss' 和 'YYMMDDhhmmss' 格式，只有当字符串长度刚好为 8 或者 14 的时候，才会将字符串前4位字母识别为年的部分，其余都只会将前2位字母识别为年的部分
 - 对于输入为 YYYYMMDDhhmmss 或 YYMMDDhhmmss 格式，输入的整数长度应该为 6/8/12/14 其中之一，如果长度不满足这个要求，则相当于往整数前方添加零，直到长度符合 6/8/12/14 其中之一(长度为6对应为YYMMDD格式，长度为8对应为YYYYMMDD格式，长度为12对应为YYMMDDhhmmss格式，长度为14对应为YYYYMMDDhhmmss格式)
 - 类似兼容后的 date 类型，如果要想输入年份大于等于 10000 的时间戳，请使用 'YYYY-MM-DD hh:mm:ss\[.frac\]' 这种格式
+- 当输入的值发生舍入时，会对舍入后的值进行范围判断，当舍入后的值超出类型范围时，严格模式下报错，非严格模式下告警并返回全零。
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
@@ -145,7 +146,7 @@ openGauss=# SELECT * FROM test_datetime;
 ------------------------
  2020-11-08 02:31:25.96
  2020-11-12 23:45:12
-(3 rows)
+(2 rows)
 ```
 
 ### timestamp 类型输入
@@ -165,6 +166,7 @@ openGauss=# SELECT * FROM test_datetime;
 - 类似兼容后的 date 类型，如果要想输入年份大于等于 10000 的时间戳，请使用 'YYYY-MM-DD hh:mm:ss\[.frac\]' 这种格式
 - 注意，timestamp 类型在 MySQL 一端为不带时区的时间戳，而在 openGauss 一端为带时区的时间戳，实际上兼容后 timestamp 类型在内部会使用 timestamptz 类型存储，请用户在使用前注意这种区别，如想使用不带时区的时间戳，可以使用 datetime 类型。
 - 注意：由于 MySQL 一端没有 timestamp with\[out\] time zone 这种语法，但是我们仍然在 openGauss 保留这种语法。timestamp with time zone 等价于直接原来 openGauss timestamptz 类型，timestamp without time zone 等价于直接使用原来 openGauss 中的 timestamp 类型(并非兼容后的 timestamp 类型，是指 openGauss 原有的不带时区属性的 timestamp 类型)
+- 注意：当输入的值发生舍入时，会对舍入后的值进行范围判断，当舍入后的值超出类型范围时，严格模式下报错，非严格模式下告警并返回全零。
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
@@ -186,7 +188,7 @@ openGauss=# SELECT * FROM test_timestamp;
 ------------------------
  2012-10-22 20:07:23
  2020-11-12 23:45:12
-(3 rows)
+(2 rows)
     
 --变更时区。
 openGauss=# SET TIME ZONE UTC;
@@ -197,7 +199,7 @@ openGauss=# SELECT * FROM test_timestamp;
 ------------------------
  2012-10-22 12:07:23
  2020-11-12 15:45:12
-(3 rows)
+(2 rows)
 ```
 
 ### year/year(4)，year(2)类型输入

@@ -1,4 +1,4 @@
-# 增量迁移gs_replicate<a name="ZH-CN_TOPIC_0000001264707837"></a>
+# 增量迁移gs_replicate
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -49,3 +49,12 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 
 gs_replicate工具依赖MySQL一键式迁移工具gs_rep_portal。
 
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+
+增量迁移社区地址：https://gitee.com/opengauss/debezium/tree/master 
+
+详细参考文档 [README.md](https://gitee.com/opengauss/debezium/blob/master/README.md) 

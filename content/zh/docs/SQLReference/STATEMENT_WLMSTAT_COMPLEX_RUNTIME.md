@@ -1,4 +1,4 @@
-# STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME<a name="ZH-CN_TOPIC_0245374771"></a>
+# STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME
 
 STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME视图显示和当前用户执行作业正在运行时的负载管理相关信息。
 
@@ -144,7 +144,7 @@ STATEMENT\_WLMSTAT\_COMPLEX\_RUNTIME视图显示和当前用户执行作业正�
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ad3b34d321d354f54be7e810a9996517a"><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ad3b34d321d354f54be7e810a9996517a"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_ad3b34d321d354f54be7e810a9996517a"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"></a>语句当前的排队情况，包括：<a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"></a><ul id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"><li>Global：在全局队列中排队。</li><li>Respool：在资源池队列中排队。</li><li>CentralQueue：在中心协调节点（CCN）中排队。</li><li>Transaction：语句处于一个事务块中。</li><li>StoredProc：句处于一个存储过程中。</li><li>None：未在排队。</li><li>Forced None：事务块语句或存储过程语句由于超出设定的等待时间而强制执行。</li></ul>
+<td class="cellrowborder" valign="top" width="50.980000000000004%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_a082a0318ed814ee2aac76480f90c4c16"></a>语句当前的排队情况，包括：<a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"></a><a name="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"></a><ul id="zh-cn_topic_0237122667_zh-cn_topic_0059777813_u605036dd2e8e4ac5986769434c435b3c"><li>Global：在全局队列中排队。</li><li>Respool：在资源池队列中排队。</li><li>CentralQueue：在中心协调节点（CCN）中排队。</li><li>Transaction：语句处于一个事务块中。</li><li>StoredProc：语句处于一个存储过程中。</li><li>None：未在排队。</li><li>Forced None：事务块语句或存储过程语句由于超出设定的等待时间而强制执行。</li></ul>
 </div>
 </td>
 </tr>

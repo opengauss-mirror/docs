@@ -1,10 +1,10 @@
-# postgres\_fdw<a name="ZH-CN_TOPIC_0272283428"></a>
+# postgres\_fdw
 
 postgres\_fdw是一款开源插件，其代码随PostgreSQL源码一同发布。openGauss基于开源的PostgreSQL 9.4.26版本中的postgres\_fdw源码（[https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz](https://ftp.postgresql.org/pub/source/v9.4.26/postgresql-9.4.26.tar.gz)  ）进行开发适配。
 
 postgres\_fdw插件默认参与编译，使用安装包安装好openGauss后，可直接使用postgres\_fdw，无须其他操作。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >当前postgres\_fdw仅支持openGauss连接openGauss，不支持openGauss连接PostgreSQL。
 
@@ -16,7 +16,9 @@ postgres\_fdw插件默认参与编译，使用安装包安装好openGauss后，�
 
 -   创建用户映射：**CREATE USER MAPPING**
 
--   创建外表：**CREATE FOREIGN TABLE**  外表的表结构需要与远端openGauss侧的表结构保持一致。
+-   创建外表：**CREATE FOREIGN TABLE**  
+
+    外表的表结构需要与远端openGauss侧的表结构保持一致。
 
 -   对外表做正常的操作，如  **INSERT**、**UPDATE**、**DELETE**、**SELECT**、**EXPLAIN**、**ANALYZE**、**COPY**  等。
 

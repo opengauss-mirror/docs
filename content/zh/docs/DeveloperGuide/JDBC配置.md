@@ -1,4 +1,4 @@
-# JDBC配置<a name="ZH-CN_TOPIC_0000001149627971"></a>
+# JDBC配置
 
 目前，openGauss相关的第三方工具都是通过JDBC进行连接的，此部分将介绍工具配置时的注意事项。
 
@@ -30,7 +30,7 @@
     -   openGauss数据库实例所在主机的时区。
     -   openGauss数据库实例配置过程中时区。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >时区设置相关的操作，请参考《安装指南》中“企业版安装>安装准备>准备软硬件安装环境> 同步系统时间”章节内容。
 
 

@@ -1,9 +1,10 @@
-# 数字操作函数和操作符<a name="ZH-CN_TOPIC_0289900469"></a>
+# 数字操作函数和操作符
 
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
 
 1. 新增```DIV/MOD/XOR/^```操作符。
 2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool```函数。
+3. ```atan```函数支持```atan(y, x)```用法。
 
 -   DIV
 
@@ -234,4 +235,19 @@
   (1 row)
   ~~~
 
+- atan\(y, x\)
+  
+  描述：y/x的反正切。
+  
+  返回值类型：double precision
+  
+  示例：
+  
+  ```
+  openGauss=# SELECT atan(2, 1);
+        atan
+  ------------------
+   1.10714871779409
+  (1 row)
+  ```
   

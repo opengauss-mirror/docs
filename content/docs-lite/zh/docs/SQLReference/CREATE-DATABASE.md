@@ -176,6 +176,24 @@ CREATE DATABASE database_name
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p1553814181058"><a name="p1553814181058"></a><a name="p1553814181058"></a>-</p>
     </td>
     </tr>
+    
+
+    <tr id="row14537319923"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p20537161819516"><a name="p20537161819516"></a><a name="p20537161819516"></a>GB18030_2022</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p19537718856"><a name="p19537718856"></a><a name="p19537718856"></a>国家标准</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.53061224489796%" headers="mcps1.2.8.1.3 "><p id="p55375181454"><a name="p55375181454"></a><a name="p55375181454"></a>中文</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.040816326530612%" headers="mcps1.2.8.1.4 "><p id="p165371518757"><a name="p165371518757"></a><a name="p165371518757"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.5 "><p id="p18538918456"><a name="p18538918456"></a><a name="p18538918456"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.6 "><p id="p16538191811512"><a name="p16538191811512"></a><a name="p16538191811512"></a>1-4</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.7 "><p id="p1553814181058"><a name="p1553814181058"></a><a name="p1553814181058"></a>-</p>
+    </td>
+    </tr>
+
     <tr id="row2538161816511"><td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.1 "><p id="p853841815519"><a name="p853841815519"></a><a name="p853841815519"></a>GBK</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.285714285714285%" headers="mcps1.2.8.1.2 "><p id="p25398185512"><a name="p25398185512"></a><a name="p25398185512"></a>扩展国家标准</p>
@@ -712,7 +730,8 @@ CREATE DATABASE database_name
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >-   指定新的数据库字符集编码必须与所选择的本地环境中（LC\_COLLATE和LC\_CTYPE）的设置兼容。
     >-   当指定的字符编码集为GBK时，部分中文生僻字无法直接作为对象名。这是因为GBK第二个字节的编码范围在0x40-0x7E之间时，字节编码与ASCII字符@A-Z\[\\\]^\_\`a-z\{|\}重叠。其中@\[\\\]^\_'\{|\}是数据库中的操作符，直接作为对象名时，会语法报错。例如“侤”字，GBK16进制编码为0x8240，第二个字节为0x40，与ASCII“@”符号编码相同，因此无法直接作为对象名使用。如果确实要使用，可以在创建和访问对象时，通过增加双引号来规避这个问题。
-    >-   若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](PG_CONVERSION.MD)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
+    >-   若客户端编码为A，服务器端编码为B，则需要满足数据库中存在编码格式A与B的转换。数据库能够支持的所有的编码格式转换详见系统表[PG_CONVERSION](../DatabaseReference/PG_CONVERSION.md)（若无法转换，则建议客户端编码与服务器端编码保持一致，客户端编码可通过GUC参数client_encoding修改）。
+    >-  若要指定数据库字符集编码为GB18030_2022，且客户端编码也要设置为GB18030时，必须确保客户端操作系统支持的GB18030字符集为2022版本，否则由于GB18030字符集自身的各版本间存在不完全兼容，可能导致数据的不一致性。同时，涉及到历史数据切换为GB18030_2022数据库时应当遵循切库流程，进行数据迁移操作。
 
 -   **LC\_COLLATE \[ = \] lc\_collate**
 
@@ -730,6 +749,7 @@ CREATE DATABASE database_name
      >![](public_sys-resources/icon-note.gif) **说明：** 
     >
     >- 对于lc_collate和lc_ctype参数的取值范围，取决于本地环境支持的字符集。
+    >- 当指定的字符编码集为GB18030_2022时，其LC_COLLATE和LC_CTYPE的取值范围与GB18030保持一致。
     
     
     >   例如：在Linux操作系统上，可通过locale -a命令获取操作系统支持的字符集列表，在应用lc_collate和lc_ctype参数时可从中选择用户需要的字符集和字符分类。 
@@ -835,6 +855,6 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 -   **ENCODING   LC\_COLLATE     LC\_CTYPE**
 
-    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'）时，必须指定template \[=\] template0。
+    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'/'GB18030_2022'）时，必须指定template \[=\] template0。
 
 

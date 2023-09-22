@@ -1,0 +1,26 @@
+数据类型
+========
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/数值类型
+    ../content/zh/docs/SQLReference/货币类型
+    ../content/zh/docs/SQLReference/布尔类型
+    ../content/zh/docs/SQLReference/字符类型
+    ../content/zh/docs/SQLReference/二进制类型
+    ../content/zh/docs/SQLReference/日期-时间类型
+    ../content/zh/docs/SQLReference/几何类型
+    ../content/zh/docs/SQLReference/网络地址类型
+    ../content/zh/docs/SQLReference/位串类型
+    ../content/zh/docs/SQLReference/文本搜索类型
+    ../content/zh/docs/SQLReference/UUID类型
+    ../content/zh/docs/SQLReference/JSON-JSONB类型
+    ../content/zh/docs/SQLReference/HLL数据类型
+    ../content/zh/docs/SQLReference/范围类型
+    ../content/zh/docs/SQLReference/对象标识符类型
+    ../content/zh/docs/SQLReference/伪类型
+    ../content/zh/docs/SQLReference/列存表支持的数据类型
+    ../content/zh/docs/SQLReference/XML类型
+    ../content/zh/docs/SQLReference/账本数据库使用的数据类型
+    ../content/zh/docs/SQLReference/SET类型
+    ../content/zh/docs/SQLReference/字符集与字符序

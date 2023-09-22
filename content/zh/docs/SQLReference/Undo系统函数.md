@@ -1,4 +1,4 @@
-# Undo系统函数<a name="ZH-CN_TOPIC_0000001135762588"></a>
+# Undo系统函数
 
 -   gs\_undo\_meta\(type, zoneId, location\)
 
@@ -181,7 +181,7 @@
 
   备注：必须是系统管理员或者运维管理人员才能执行此函数。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >该接口当前仅支持USTORE数据表。
 
 ​       **表 4**  gs\_undo\_dump\_parsepage\_mv参数说明

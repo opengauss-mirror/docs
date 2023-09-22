@@ -1,0 +1,16 @@
+数据库对象管理
+==============
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/创建和管理schema
+    创建和管理普通表
+    ../content/zh/docs/DatabaseAdministrationGuide/创建和管理分区表
+    ../content/zh/docs/DatabaseAdministrationGuide/创建和管理索引
+    ../content/zh/docs/DatabaseAdministrationGuide/创建和管理视图
+    ../content/zh/docs/DatabaseAdministrationGuide/创建和管理序列
+
+
+
+

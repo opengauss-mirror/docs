@@ -29,12 +29,12 @@ PGconn *PQsetdbLogin(const char *pghost,
 </thead>
 <tbody><tr id="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_r89c7807f135840058d4a248137b3ca08"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241735615_p144262583911"><a name="en-us_topic_0241735615_p144262583911"></a><a name="en-us_topic_0241735615_p144262583911"></a>pghost</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>Name of the host to be connected. For details, see the <strong id="en-us_topic_0241735615_b10732648114112"><a name="en-us_topic_0241735615_b10732648114112"></a><a name="en-us_topic_0241735615_b10732648114112"></a>host</strong> field described in <a href="connection-characters.md">Connection Characters</a>.</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"><a name="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a><a name="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_ae9e04af441044a6581179c8dac3884f3"></a>Name of the host to be connected. For details, see the <strong id="en-us_topic_0241735615_b10732648114112"><a name="en-us_topic_0241735615_b10732648114112"></a><a name="en-us_topic_0241735615_b10732648114112"></a>host</strong> field described in <a href="link-parameters-libpq.md">Connection Characters</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_r2088b45aa8374f988b5b381a7e85ae5b"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241735615_p7393163933919"><a name="en-us_topic_0241735615_p7393163933919"></a><a name="en-us_topic_0241735615_p7393163933919"></a>pgport</p>
 </td>
-<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735615_p1339112395397"><a name="en-us_topic_0241735615_p1339112395397"></a><a name="en-us_topic_0241735615_p1339112395397"></a>Port number of the host server. For details, see the <strong id="en-us_topic_0241735615_b16496122464216"><a name="en-us_topic_0241735615_b16496122464216"></a><a name="en-us_topic_0241735615_b16496122464216"></a>port</strong> field described in <a href="connection-characters.md">Connection Characters</a>.</p>
+<td class="cellrowborder" valign="top" width="76.73%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0241735615_p1339112395397"><a name="en-us_topic_0241735615_p1339112395397"></a><a name="en-us_topic_0241735615_p1339112395397"></a>Port number of the host server. For details, see the <strong id="en-us_topic_0241735615_b16496122464216"><a name="en-us_topic_0241735615_b16496122464216"></a><a name="en-us_topic_0241735615_b16496122464216"></a>port</strong> field described in <a href="link-parameters-libpq.md">Connection Characters</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0241735615_en-us_topic_0237120432_en-us_topic_0059778852_re3c53307a0b8488f86edbf902499dcd5"><td class="cellrowborder" valign="top" width="23.27%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0241735615_p183774394393"><a name="en-us_topic_0241735615_p183774394393"></a><a name="en-us_topic_0241735615_p183774394393"></a>pgoptions</p>
@@ -76,5 +76,5 @@ PGconn *PQsetdbLogin(const char *pghost,
 
 ## Example<a name="en-us_topic_0241735615_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 

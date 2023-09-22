@@ -1,4 +1,4 @@
-# STAT\_USER\_INDEXES<a name="ZH-CN_TOPIC_0245374683"></a>
+# STAT\_USER\_INDEXES
 
 显示数据库中用户自定义普通表的索引状态信息。
 

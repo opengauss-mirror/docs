@@ -1,4 +1,4 @@
-# STATEMENT\_HISTORY<a name="ZH-CN_TOPIC_0301824804"></a>
+# STATEMENT\_HISTORY
 
 获得当前节点的执行语句的信息。查询系统表必须具有sysadmin权限。只可在系统库中查询到结果，用户库中无法查询。
 
@@ -7,7 +7,7 @@
 -   必须在postgres库内查询，其它库中不存数据。
 -   此系统表受track\_stmt\_stat\_level控制，默认为“OFF,L0”，第一部分控制Full SQL，第二部分控制Slow SQL，具体字段记录级别见下表。考虑性能影响，更改该参数的值时建议通过set方式设置，使该参数仅对当前会话生效。
 -   对于Slow SQL，当track\_stmt\_stat\_level的值为非OFF时，且SQL执行时间超过log\_min\_duration\_statement，会记录为慢SQL。
-对于存储过程内的SQL语句(parent_unique_sql_id非0)，n_soft_parse、n_hard_parse、n_returned_rows需要设置参数instr_unique_sql_track_type为all才能记录，n_tuples_fetched、n_tuples_returned、n_tuples_inserted、n_tuples_updated、n_tuples_deleted、n_blocks_fetched、n_blocks_hit、db_time、pu_time、execution_time、parse_time、plan_time、rewrite_time、pl_execution_time、pl_compilation_time、data_io_time、net_send_info、net_recv_info、net_stream_send_info、net_stream_recv_info、lock_wait_count、lock_wait_time、lwlock_count、lwlock_wait_count、lwlock_ti、lwlock_wait_time、details、trace_id、advise列不支持，记录的值没有实际意义。
+对于存储过程内的SQL语句(parent_unique_sql_id非0)，n_soft_parse、n_hard_parse、n_returned_rows需要设置参数instr_unique_sql_track_type为all才能记录，n_tuples_fetched、n_tuples_returned、n_tuples_inserted、n_tuples_updated、n_tuples_deleted、n_blocks_fetched、n_blocks_hit、db_time、pu_time、execution_time、parse_time、plan_time、rewrite_time、pl_execution_time、pl_compilation_time、data_io_time、net_send_info、net_recv_info、net_stream_send_info、net_stream_recv_info、lock_wait_count、lock_wait_time、lwlock_count、lwlock_wait_count、lwlock_ti、lwlock_wait_time、details、trace_id、advise、net_send_time、 srt1_q、 srt2_simple_query、 srt3_analyze_rewrite、 srt4_plan_query、 srt5_light_query、 srt6_p、 srt7_b、 srt8_e、 srt9_d、 srt10_s、 srt11_c、 srt12_u、 srt13_before_query、 srt14_after_query、rtt_unknown列不支持，记录的值没有实际意义。
 
 **表 1**  STATEMENT\_HISTORY字段
 
@@ -467,7 +467,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>等待事件和语句锁事件的列表。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L0时，开始记录等待事件的列表。显示当前语句event等待相关的统计信息。具体事件信息见<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4">等待状态列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420">轻量级锁等待事件列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369">IO等待事件列表</a>和<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718">事务锁等待事件列表</a>。关于每种事务锁对业务的影响程度，请参考<a href="LOCK-1.md">LOCK</a>语法小节的详细描述。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L2时，开始记录语句锁事件的列表。该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。该字段为二进制，需要借助解析函数pg_catalog.statement_detail_decode读取，见（<a href="其它函数.md#table9745177191215">表6</a>）。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>等待事件和语句锁事件的列表。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L0时，开始记录等待事件的列表。显示当前语句event等待相关的统计信息。具体事件信息见<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_zh-cn_topic_0059777957_t794f802302c24514a5db22d51eabacc4">等待状态列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table38811324183420">轻量级锁等待事件列表</a>、<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table124603113369">IO等待事件列表</a>和<a href="PG_THREAD_WAIT_STATUS.md#zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718">事务锁等待事件列表</a>。关于每种事务锁对业务的影响程度，请参考<a href="../SQLReference/LOCKS.md">LOCK</a>语法小节的详细描述。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录级别的值是L2时，开始记录语句锁事件的列表。该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。该字段为二进制，需要借助解析函数pg_catalog.statement_detail_decode读取，见（<a href="../SQLReference/其它函数.md#table9745177191215">表6</a>）。</p>
 <p id="p206443813496"><a name="p206443813496"></a><a name="p206443813496"></a>事件包括：</p>
 <a name="ul1619215224171"></a><a name="ul1619215224171"></a><ul id="ul1619215224171"><li>加锁开始</li><li>加锁结束</li><li>等锁开始</li><li>等锁结束</li><li>放锁开始</li><li>放锁结束</li><li>轻量级等锁开始</li><li>轻量级等锁结束</li></ul>
 </td>

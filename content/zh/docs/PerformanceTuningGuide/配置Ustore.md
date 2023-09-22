@@ -1,4 +1,4 @@
-# 配置Ustore<a name="ZH-CN_TOPIC_0000001179816320"></a>
+# 配置Ustore
 
 Ustore存储引擎，又名In-place Update存储引擎（原地更新），是openGauss 内核新增的一种存储模式。此前的版本使用的行存储引擎是Append Update（追加更新）模式。追加更新对于业务中的增、删以及HOT（HeapOnly Tuple）Update（即同一页面内更新）有很好的表现，但对于跨数据页面的非HOT UPDATE场景，垃圾回收不够高效。因此，Ustore存储引擎应运而生。
 
@@ -12,49 +12,47 @@ Ustore存储引擎结合UNDO空间，可以实现更高效、更全面的闪回�
 
 ## 核心优势<a name="section69751648124511"></a>
 
--   **高性能：**对插入、更新、删除等不同负载的业务，性能以及资源使用表现相对均衡。更新操作采用原地更新模式在频繁更新类的业务场景下可拥有更高、更平稳的性能表现。适应“短”（事务短）、“频”（更新操作频繁）、“快”（性能要求高）的典型OLTP类业务场景。
--   **高效存储：**支持最大限度的原位更新, 极大节约了空间；将回滚段、数据页面分离存储，具备更高效、平稳的IO使用能力，UNDO子系统采用NUMA-aware设计，具有更好的多核扩展性，UNDO空间统一分配，集中回收，复用效率更高，存储空间使用更加高效、平稳。
--   **细粒度资源控制：**Ustore引擎提供多维度的事务“监管”方式，可基于事务运行时长、单事务使用UNDO空间大小、以及整体UNDO空间限制等方式对事务运行进行“监管”，防止异常、非预期内的行为出现，方便数据库管理员对数据库系统资源使用进行规范和约束。
+-   **高性能：** 对插入、更新、删除等不同负载的业务，性能以及资源使用表现相对均衡。更新操作采用原地更新模式在频繁更新类的业务场景下可拥有更高、更平稳的性能表现。适应“短”（事务短）、“频”（更新操作频繁）、“快”（性能要求高）的典型OLTP类业务场景。
+-   **高效存储：** 支持最大限度的原位更新, 极大节约了空间；将回滚段、数据页面分离存储，具备更高效、平稳的IO使用能力，UNDO子系统采用NUMA-aware设计，具有更好的多核扩展性，UNDO空间统一分配，集中回收，复用效率更高，存储空间使用更加高效、平稳。
+-   **细粒度资源控制：** Ustore引擎提供多维度的事务“监管”方式，可基于事务运行时长、单事务使用UNDO空间大小、以及整体UNDO空间限制等方式对事务运行进行“监管”，防止异常、非预期内的行为出现，方便数据库管理员对数据库系统资源使用进行规范和约束。
 
 Ustore存储引擎可以在数据频繁更新场景下性能依旧稳如泰山，使业务系统运行更加平稳，适应更多业务场景和工作负载，特别是对性能和稳定性有更高要求的金融核心业务场景。
 
 ## 使用指导<a name="section2190298487"></a>
 
-USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎屏蔽了存储层实现的细节，SQL语法和原有的ASTORE存储引擎使用基本保持一致，唯一差别是建表和建索引有些细微区别。
+USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎屏蔽了存储层实现的细节，SQL语法和原有的ASTORE存储引擎使用基本保持一致，唯一差别是建表和建索引有些细微区别。
 
--   **创建表的方式**
+- **创建表的方式**
 
-    USTORE存储引擎含有undo log，创建USTORE存储引擎表的时候需要提前在postgresql.conf中配置undo\_zone\_count的值，该参数代表的时候undo log的一种资源个数，建议配置为16384，即“undo\_zone\_count=16384”，配置完成后要重启数据库。
+  USTORE存储引擎含有undo log，创建USTORE存储引擎表的时候需要提前在postgresql.conf中配置undo_zone_count的值，该参数代表的时候undo log的一种资源个数，建议配置为16384，即“undo_zone_count=16384”，配置完成后要重启数据库。
 
-    \[postgresql.conf配置\]
+  [postgresql.conf配置]
 
-    ```
-    undo_zone_count=16384
-    ```
+  ```
+  undo_zone_count=16384
+  ```
 
-    -   **创建方式1：创建表时指定存储引擎类型**
+  - **创建方式1：创建表时指定存储引擎类型**
 
-    ```
-    create table test(id int, name varchar(10)) with (storage_type=ustore);
-    ```
+  ```
+  create table test(id int, age int, name varchar(10)) with (storage_type=ustore);
+  ```
 
-    -   **创建方式2：GUC参数配置指定USTORE存储引擎**
+  - **创建方式2：GUC参数配置指定USTORE存储引擎**
 
+    1. 数据库启动之前，在postgresql.conf中设置“enable_default_ustore_table=on”，默认指定用户创建表时使用USTORE存储引擎。
 
-1.  数据库启动之前，在postgresql.conf中设置“enable\_default\_ustore\_table=on”，默认指定用户创建表时使用USTORE存储引擎。
+       [postgresql.conf配置]
 
-    \[postgresql.conf配置\]
+       ```
+       enable_default_ustore_table=on
+       ```
 
-    ```
-    enable_default_ustore_table=on
-    ```
+    2. 创建表。
 
-2.  创建表。
-
-    ```
-    create table test(id int, name varchar(10));
-    ```
-
+       ```
+       create table test(id int, age int, name varchar(10));
+       ```
 
 -   **创建索引的方式**
 

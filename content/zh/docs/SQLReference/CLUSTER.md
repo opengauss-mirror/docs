@@ -1,4 +1,4 @@
-# CLUSTER<a name="ZH-CN_TOPIC_0289899899"></a>
+# CLUSTER
 
 ## 功能描述<a name="zh-cn_topic_0283137352_zh-cn_topic_0237122092_zh-cn_topic_0059778981_s0e572999489a4677bdb5354183b3efbf"></a>
 
@@ -101,7 +101,7 @@ openGauss=# CLUSTER tpcds.inventory_p1 USING ds_inventory_p1_index1;
 -- 对分区p3进行聚集。
 openGauss=# CLUSTER tpcds.inventory_p1 PARTITION (p3) USING ds_inventory_p1_index1;
 
--- 对数据库中可以进行聚集的表进聚集。
+-- 对数据库中可以进行聚集的表进行聚集。
 openGauss=# CLUSTER;
 
 --删除索引。

@@ -1,4 +1,4 @@
-# java.sql.PreparedStatement<a name="ZH-CN_TOPIC_0289899873"></a>
+# java.sql.PreparedStatement
 
 java.sql.PreparedStatement是预处理语句接口。
 
@@ -346,7 +346,7 @@ java.sql.PreparedStatement是预处理语句接口。
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   addBatch\(\)、execute\(\)必须在clearBatch\(\)之后才能执行。
 

@@ -1,4 +1,4 @@
-# SET类型<a name="ZH-CN_TOPIC_0000001370104697"></a>
+# SET类型
 
 SET类型是一种包含字符串成员的集合类型，在表字段创建时定义。
 
@@ -110,5 +110,13 @@ SET类型是一种包含字符串成员的集合类型，在表字段创建时�
      lisi     | beijing,wuhan
     (2 rows)
     ```
+    
+- SET类型支持指定字符集、字符序语法。
+
+  指定 'B' 模式字符序后，会按字符序规则来排序、去重和校验SET成员重复值。具体字符集语法参考[字符集与字符序](字符集与字符序.md)。
+
+  ```
+  openGauss=# create table t_table_collation1(a set('aaa', 'bbb')) charset 'utf8';
+  ```
 
 

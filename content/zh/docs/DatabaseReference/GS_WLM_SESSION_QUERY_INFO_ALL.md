@@ -1,10 +1,11 @@
-# GS\_WLM\_SESSION\_QUERY\_INFO\_ALL<a name="ZH-CN_TOPIC_0000001105242266"></a>
+# GS\_WLM\_SESSION\_QUERY\_INFO\_ALL
 
 GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作业结束后的负载管理记录。此数据是从内核中转储到系统表中的数据。当设置GUC参数[enable\_resource\_record](负载管理.md)为on时，系统会定时（周期为3分钟）将内核中query信息导入GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。
 
 **表 1**  GS\_WLM\_SESSION\_QUERY\_INFO\_ALL字段
 
 <a name="zh-cn_topic_0112535431_table75981925115018"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0112535431_row14599225175020"><th class="cellrowborder" valign="top" width="19.752475247524753%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0112535431_p1359922545010"><a name="zh-cn_topic_0112535431_p1359922545010"></a><a name="zh-cn_topic_0112535431_p1359922545010"></a>名称</p>
 </th>
 <th class="cellrowborder" valign="top" width="16.683168316831683%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0112535431_p3599182520502"><a name="zh-cn_topic_0112535431_p3599182520502"></a><a name="zh-cn_topic_0112535431_p3599182520502"></a>类型</p>
@@ -383,21 +384,21 @@ GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作�
 </td>
 <td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p41501615510"><a name="p41501615510"></a><a name="p41501615510"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p915014613553"><a name="p915014613553"></a><a name="p915014613553"></a>内存使用量第5的节点名称。</p>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p915014613553"><a name="p915014613553"></a><a name="p915014613553"></a>内存使用量第2的节点名称。</p>
 </td>
 </tr>
 <tr id="row1532378115518"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p1332318845518"><a name="p1332318845518"></a><a name="p1332318845518"></a>mem_top3_node_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p183233825520"><a name="p183233825520"></a><a name="p183233825520"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1032478105519"><a name="p1032478105519"></a><a name="p1032478105519"></a>内存使用量第5的节点名称。</p>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1032478105519"><a name="p1032478105519"></a><a name="p1032478105519"></a>内存使用量第3的节点名称。</p>
 </td>
 </tr>
 <tr id="row621941095518"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p221916106554"><a name="p221916106554"></a><a name="p221916106554"></a>mem_top4_node_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p20219101095515"><a name="p20219101095515"></a><a name="p20219101095515"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p172206104551"><a name="p172206104551"></a><a name="p172206104551"></a>内存使用量第5的节点名称。</p>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p172206104551"><a name="p172206104551"></a><a name="p172206104551"></a>内存使用量第4的节点名称。</p>
 </td>
 </tr>
 <tr id="row512418122556"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p10124171255514"><a name="p10124171255514"></a><a name="p10124171255514"></a>mem_top5_node_name</p>
@@ -625,5 +626,126 @@ GS\_WLM\_SESSION\_QUERY\_INFO\_ALL系统表显示当前数据库实例执行作�
 <p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
 </td>
 </tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt1_q</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>Q报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt2_simple_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>exec_simple_query执行耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt3_analyze_rewrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>pg_analyze_and_rewrite执行耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt4_plan_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>pg_plan_queries执行耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt5_light_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>exec_query_through_light_proxy执行耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt6_p</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>P报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt7_b</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>B报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt8_e</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>E报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt9_d</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>D报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt10_s</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>S报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt11_c</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>C报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt12_u</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>U报文执行的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt13_before_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>进入下一次报文处理前的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>srt14_after_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>完成报文处理后的耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
+<tr id="row08655119712"><td class="cellrowborder" valign="top" width="19.752475247524753%" headers="mcps1.2.4.1.1 "><p id="p6865211476"><a name="p6865211476"></a><a name="p6865211476"></a>rtt_unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.683168316831683%" headers="mcps1.2.4.1.2 "><p id="p1370010910719"><a name="p1370010910719"></a><a name="p1370010910719"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="63.56435643564357%" headers="mcps1.2.4.1.3 "><p id="p1866611071"><a name="p1866611071"></a><a name="p1866611071"></a>未知时间消耗，可能是session切换耗时（单位：微秒)</p>
+<p id="p17677103410359"><a name="p17677103410359"></a><a name="p17677103410359"></a>取值为1时表示其为慢查询。</p>
+</td>
+</tr>
 </tbody>
 </table>
+

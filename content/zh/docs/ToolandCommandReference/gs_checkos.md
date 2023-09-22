@@ -1,4 +1,4 @@
-# gs\_checkos<a name="ZH-CN_TOPIC_0249632239"></a>
+# gs\_checkos
 
 ## 背景信息<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_section39821515163211"></a>
 
@@ -12,7 +12,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 - 只能使用root用户执行gs\_checkos命令。
 
-  ![](public_sys-resources/icon-note.gif) **说明：**
+  ![](public_sys-resources/icon-note.png) **说明：**
 
   该工具不支持独立调用，出于安全考虑，企业版安装方式下，前置完成后会自动删除。
 
@@ -45,7 +45,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     取值范围：A1...A14、B1...B8。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >A1...A14 表示只检查操作系统参数，并不设置。
     >B1...B8 表示将参数系统参数设置为期望值。
@@ -57,7 +57,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
     主机名称列表文件。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-f和-h参数不能同时使用。
 
     取值范围：主机名称的列表。
@@ -67,6 +67,10 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
     指定需要检查的主机名称，可以同时指定多个主机，主机之间使用“,”分割。
 
     取值范围：openGauss的主机名称。如果不指定主机，则检查当前主机。
+
+-   --skip-os-check
+
+    是否跳过A1-A14项检查。默认是全部检查。如果指定该参数则不对此项不进行检查。
 
 -   -X
 
@@ -195,7 +199,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 </td>
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ab7258b33d9104498928d2c464f027b6d"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ab7258b33d9104498928d2c464f027b6d"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ab7258b33d9104498928d2c464f027b6d"></a>时间一致性（Time consistency status）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"></a>时间一致性检查：确认ntp服务启动，<span id="text1241915274573"><a name="text1241915274573"></a><a name="text1241915274573"></a>openGauss</span>各个主机的系统时间误差不超过60s。</p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_abcca7e99b1724a8d979ce058b73e2b36"></a>时间一致性检查：确认ntp服务启动，<span id="text1241915274573"><a name="text1241915274573"></a><a name="text1241915274573"></a>openGauss</span>各个主机的系统时间误差不超过60s，在资源池化场景下不超过6s。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_r4928203b328e4631b6ac3a17fab90e7f"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a42626dd0bd2343b0a82d60fc7fbb41db"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a42626dd0bd2343b0a82d60fc7fbb41db"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a42626dd0bd2343b0a82d60fc7fbb41db"></a>A13</p>
@@ -275,7 +279,7 @@ gs\_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 > -   A6选项检查标准来自配置文件check\_list.conf下\[/etc/sysctl.conf\]、\[SUGGEST:/etc/sysctl.conf\]域：
 >    若\[/etc/sysctl.conf\]下参数值与系统实际参数值不同，A6检查提示Abnormal，可以使用B1参数进行设置。

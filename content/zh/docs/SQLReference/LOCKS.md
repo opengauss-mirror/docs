@@ -1,4 +1,4 @@
-# LOCKS<a name="ZH-CN_TOPIC_0289899932"></a>
+# LOCKS
 
 LOCKS视图用于查看各打开事务所持有的锁信息。
 

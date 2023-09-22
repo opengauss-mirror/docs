@@ -1,4 +1,4 @@
-# CREATE TABLE SUBPARTITION<a name="ZH-CN_TOPIC_0000001198046401"></a>
+# CREATE TABLE SUBPARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>
 
@@ -129,14 +129,14 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
     -   列约束：作为一个列定义的一部分，仅影响该列。
     -   表约束：不和某个列绑在一起，可以作用于多个列。
 
-     >![](public_sys-resources/icon-notice.gif) **须知：** 
+     >![](public_sys-resources/icon-notice.png) **须知：** 
         >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
 -   **index\_name**
 
     索引名。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
     >-   对于唯一键约束，constraint\_name和index\_name同时指定时，索引名以index\_name。
@@ -147,7 +147,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
 
@@ -155,7 +155,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -167,7 +167,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     这个子句为自动增长列指定一个初始值，value必须为正整数，不得超过2<sup>127</sup>-1。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >该子句仅在参数sql\_compatibility=B时有效。
 
@@ -191,10 +191,61 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：** 
             >
             >orientation不支持修改。
+    -   **COMPRESSTYPE**
 
+        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
+
+        取值范围：0\~2，默认值为0。
+
+    -   **COMPRESS\_LEVEL**
+
+        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+
+        取值范围：-31\~31，默认值为0。
+
+    -   **COMPRESS\_CHUNK_SIZE**
+
+        行存表参数，设置行存表压缩chunk块大小，仅当COMPRESSTYPE不为0时生效。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+         取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
+
+        默认值：4096
+
+    -  **COMPRESS_PREALLOC_CHUNKS**
+
+        行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+
+        取值范围：0\~7，默认值为0。
+
+        - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
+        - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+        - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+
+    -   **COMPRESS_BYTE_CONVERT**
+
+        行存表参数，设置行存表压缩字节转换预处理，仅当COMPRESSTYPE不为0时生效。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+
+        取值范围：布尔值，默认关闭。
+
+    -   **COMPRESS_DIFF_CONVERT**
+
+        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+
+        取值范围：布尔值，默认关闭。    
+        
+    -    STORAGE\_TYPE
+
+          指定存储引擎类型，该参数设置成功后就不再支持修改。
+
+          取值范围：
+
+          -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+
+          -   ASTORE，表示表支持Append-Only存储引擎。
+
+          默认值： 不指定表时，默认是Append-Only存储。
 -   **COMPRESSION**
     
     -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
@@ -304,7 +355,7 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   STORED关键字可省略，与不省略STORED语义相同。
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。

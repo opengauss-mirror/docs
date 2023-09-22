@@ -1,4 +1,4 @@
-# Synonym词典<a name="ZH-CN_TOPIC_0289900265"></a>
+# Synonym词典
 
 Synonym词典用于定义、识别token的同义词并转化，不支持词组（词组形式的同义词可用Thesaurus词典定义，详细请参见[Thesaurus词典](Thesaurus词典.md)）。
 

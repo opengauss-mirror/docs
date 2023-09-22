@@ -1,4 +1,4 @@
-# 磁盘满故障引起的core问题<a name="ZH-CN_TOPIC_0289900936"></a>
+# 磁盘满故障引起的core问题
 
 ## 问题现象<a name="zh-cn_topic_0283137100_zh-cn_topic_0059778167_s7a2ed06fefd0448fae90f40fe4291f8d"></a>
 

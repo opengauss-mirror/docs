@@ -1,6 +1,6 @@
 # GLOBAL\_THREAD\_WAIT\_STATUS<a name="EN-US_TOPIC_0245374744"></a>
 
-**GLOBAL\_THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of backend threads and auxiliary threads on all nodes.  For details about events, see  [Table 2](pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](pg_thread_wait_status.md#en-us_topic_0237122466_table38811324183420),  [Table 4](pg_thread_wait_status.md#en-us_topic_0237122466_table124603113369), and  [Table 5](pg_thread_wait_status.md#en-us_topic_0237122466_table11826123533718).
+**GLOBAL\_THREAD\_WAIT\_STATUS**  allows you to test the block waiting status of backend threads and auxiliary threads on all nodes.  For details about events, see  [Table 2](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4),  [Table 3](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table38811324183420),  [Table 4](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table124603113369), and  [Table 5](../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_table11826123533718).
 
 In  **GLOBAL\_THREAD\_WAIT\_STATUS**, you can see all the call hierarchy relationships between threads of the SQL statements on all nodes in openGauss, and the block waiting status for each thread. With this view, you can easily locate the causes of process hang and similar issues.
 
@@ -91,7 +91,7 @@ The definitions of  **GLOBAL\_THREAD\_WAIT\_STATUS**  and  **THREAD\_WAIT\_STATU
 </td>
 <td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122640_p192281733112915"><a name="en-us_topic_0237122640_p192281733112915"></a><a name="en-us_topic_0237122640_p192281733112915"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p1122820333294"><a name="en-us_topic_0237122640_p1122820333294"></a><a name="en-us_topic_0237122640_p1122820333294"></a>Waiting status of the current thread. For details about the waiting status, see <a href="../DataBaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122640_p1122820333294"><a name="en-us_topic_0237122640_p1122820333294"></a><a name="en-us_topic_0237122640_p1122820333294"></a>Waiting status of the current thread. For details about the waiting status, see <a href="../DatabaseReference/pg_thread_wait_status.md#en-us_topic_0237122466_en-us_topic_0059777957_t794f802302c24514a5db22d51eabacc4">Table 2</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122640_p3228113316292"><a name="en-us_topic_0237122640_p3228113316292"></a><a name="en-us_topic_0237122640_p3228113316292"></a>wait_event</p>

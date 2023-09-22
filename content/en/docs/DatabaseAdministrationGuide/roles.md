@@ -2,7 +2,7 @@
 
 A role is a set of users. After a role is granted to a user through  **GRANT**, the user will have all the permissions of the role. It is recommended that roles be used to efficiently grant permissions. For example, you can create different roles of design, development, and maintenance personnel, grant the roles to users, and then grant specific data permissions required by different users. When permissions are granted or revoked at the role level, these changes take effect on all members of the role.
 
-openGauss provides an implicitly defined group  **PUBLIC**  that contains all roles. By default, all new users and roles have the permissions of  **PUBLIC**. For details about the default permissions of  **PUBLIC**, see  [GRANT](en-us_topic_0000001208139281.md). To revoke permissions of  **PUBLIC**  from a user or role, or re-grant these permissions to them, add the  **PUBLIC**  keyword in the  **REVOKE**  or  **GRANT**  statement.
+openGauss provides an implicitly defined group  **PUBLIC**  that contains all roles. By default, all new users and roles have the permissions of  **PUBLIC**. For details about the default permissions of  **PUBLIC**, see  [GRANT](../SQLReference/grant.md). To revoke permissions of  **PUBLIC**  from a user or role, or re-grant these permissions to them, add the  **PUBLIC**  keyword in the  **REVOKE**  or  **GRANT**  statement.
 
 To view all roles, query the system catalog  **PG\_ROLES**.
 
@@ -12,11 +12,11 @@ SELECT * FROM PG_ROLES;
 
 ## Adding, Modifying, and Deleting Roles<a name="en-us_topic_0283137031_en-us_topic_0237121103_en-us_topic_0155089863_section16638951634"></a>
 
-In non-[Separation of Duties](en-us_topic_0000001208299253.md)  scenarios, a role can be created, modified, and deleted only by a system administrator or a user with the  **CREATEROLE**  attribute. In separation-of-duties scenarios, a role can be created, modified, and deleted only by an initial user or a user with the  **CREATEROLE**  attribute.
+In non-[Separation of Duties](separation-of-duties.md)  scenarios, a role can be created, modified, and deleted only by a system administrator or a user with the  **CREATEROLE**  attribute. In separation-of-duties scenarios, a role can be created, modified, and deleted only by an initial user or a user with the  **CREATEROLE**  attribute.
 
--   To create a role, use  **[CREATE ROLE](en-us_topic_0000001162739400.md)**.
--   To add or delete users in an existing role, use  **[ALTER ROLE](en-us_topic_0000001208538171.md)**.
--   To delete a role, use  **[DROP ROLE](en-us_topic_0000001163057706.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
+-   To create a role, use  **[CREATE ROLE](../SQLReference/create-role.md)**.
+-   To add or delete users in an existing role, use  **[ALTER ROLE](../SQLReference/alter-role.md)**.
+-   To delete a role, use  **[DROP ROLE](../SQLReference/drop-role.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
 
 ## Built-in roles<a name="section210351882916"></a>
 

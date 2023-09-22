@@ -112,4 +112,4 @@ REVOKE INDEX FROM TEST_USER;
 
 ## Helpful Links<a name="section156744489391"></a>
 
-[REVOKE](REVOKE.md)
+[REVOKE](../SQLReference/revoke.md)

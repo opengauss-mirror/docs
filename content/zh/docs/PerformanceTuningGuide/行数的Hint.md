@@ -1,4 +1,4 @@
-# 行数的Hint<a name="ZH-CN_TOPIC_0245374570"></a>
+# 行数的Hint
 
 ## 功能描述<a name="zh-cn_topic_0237121535_section290819468377"></a>
 

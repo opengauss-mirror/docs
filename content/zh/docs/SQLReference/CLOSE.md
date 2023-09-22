@@ -1,4 +1,4 @@
-# CLOSE<a name="ZH-CN_TOPIC_0289899821"></a>
+# CLOSE
 
 ## 功能描述<a name="zh-cn_topic_0283137397_zh-cn_topic_0237122091_zh-cn_topic_0059779164_sa18f3afba3784d76b0052fa2fa489b8c"></a>
 

@@ -4,7 +4,7 @@ An information schema named  **INFORMATION\_SCHEMA**  automatically exists in al
 
 Information schemas are inherited from the open-source PGXC and PG. For details, visit the following links to see the official PGXC and PG documents:
 
-http://postgres-xc.sourceforge.net/docs/1\_1/information-schema.html
+http://postgres-xc.sourceforge.net/docs/1_1/information-schema.html
 
 https://www.postgresql.org/docs/9.2/information-schema.html
 

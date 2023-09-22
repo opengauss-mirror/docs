@@ -1,4 +1,4 @@
-# cm\_ctl工具介绍<a name="ZH-CN_TOPIC_0000001201327140"></a>
+# cm\_ctl工具介绍
 
 cm\_ctl是openGauss提供的用来控制数据库实例服务的工具。该工具主要供OM调用，及数据库实例服务自恢复时使用。cm\_ctl的主要功能有：
 
@@ -63,7 +63,7 @@ cm_ctl finishredo
 cm_ctl build [-c] [-n NODEID] [-D DATADIR [-t SECS] [-f] [-b full] [-j NUM]]
 cm_ctl check -B BINNAME -T DATAPATH
 cm_ctl stop [[-z AVAILABILITY_ZONE] | [-n NODEID [-D DATADIR]]] [-t SECS] [-m SHUTDOWN-MODE]
-cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
+cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-w] [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
 cm_ctl view [-v | -N | -n NODEID] [-l FILENAME]
 cm_ctl set [--log_level=LOG_LEVEL] [--cm_arbitration_mode=ARBITRATION_MODE] [--cm_switchover_az_mode=SWITCHOVER_AZ_MODE] [--cmsPromoteMode=CMS_PROMOTE_MODE -I INSTANCEID]
 cm_ctl set --param --agent | --server [-n [NODEID]] -k [PARAMETER]="[value]"
@@ -238,7 +238,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="zh-cn_topic_0116784021_r477e0c6128994f0aa7d1bc5910ddc257"><td class="cellrowborder" valign="top" width="27.38%" headers="mcps1.2.3.1.1 "><p id="p122511250131212"><a name="p122511250131212"></a><a name="p122511250131212"></a>-t SECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.61999999999999%" headers="mcps1.2.3.1.2 "><p id="p1497155341214"><a name="p1497155341214"></a><a name="p1497155341214"></a>指定超时时间。</p>
+<td class="cellrowborder" valign="top" width="72.61999999999999%" headers="mcps1.2.3.1.2 "><p id="p1497155341214"><a name="p1497155341214"></a><a name="p1497155341214"></a>指定超时时间。超时后，会退出并报错。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0116784021_r8e84c6e9ea2c4544ba81838fade7c37f"><td class="cellrowborder" valign="top" width="27.38%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"><a name="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"></a><a name="zh-cn_topic_0116784021_a1e0cd0443cda4befb15b7b32ba4eea0e"></a>-V, --version</p>
@@ -254,7 +254,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **说明：**   
+![](public_sys-resources/icon-note.png) **说明：**   
 
 此处列出的公共参数并不一定适用于所有命令，而是多个命令支持，为避免冗余信息，所以统一在此说明，详细的使用方法见以上使用方法，也可以使用cm_ctl --help进行查询。
 
@@ -391,6 +391,13 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"><a name="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a><a name="zh-cn_topic_0116784021_a925da3184e614f288fce5a63a2916abf"></a>显示详细数据库实例状态。</p>
 <div class="note" id="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"><a name="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><a name="zh-cn_topic_0116784021_n40330e074da34b2da0c80b95a9493f29"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"><a name="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a><a name="zh-cn_topic_0116784021_a37464d4740da49ac813a633ba7dd3ad0"></a>数据库实例有如下几种状态：</p>
 <a name="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><a name="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"></a><ul id="zh-cn_topic_0116784021_uda4877377f8c4db6a498b7fed7873ea5"><li>Normal：表示数据库实例可用，且数据有冗余备份。所有进程都在运行，主备关系正常。</li><li>Degraded：表示数据库实例可用，但数据没有冗余备份。</li><li>Unavailable：表示数据库实例不可用。</li></ul>
+</div></div>
+</td>
+</tr>
+<tr id="zh-cn_topic_0116784021_ridcvw"><td class="cellrowborder" valign="top" width="19.43%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0116784021_rpidcvw"><a name="zh-cn_topic_0116784021_rpidcvw"></a><a name="zh-cn_topic_0116784021_rpidcvw"></a>-w</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0116784021_dpidcvw"><a name="zh-cn_topic_0116784021_dpidcvw"></a><a name="zh-cn_topic_0116784021_dpidcvw"></a>纵向分行显示数据库实例状态（与cms状态显示格式一致）。</p>
+<div class="note" id="zh-cn_topic_0116784021_vnidcvw"><a name="zh-cn_topic_0116784021_vnidcvw"></a><a name="zh-cn_topic_0116784021_vnidcvw"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0116784021_vnbidcvw"><a name="zh-cn_topic_0116784021_vnbidcvw"></a><a name="zh-cn_topic_0116784021_vnbidcvw"></a>-w参数需要和-v以及-C参数一起使用才能按主备关系成对纵向分行显示数据库实例状态，使用-w参数时，必须指定-C、-v参数。</p>
 </div></div>
 </td>
 </tr>
@@ -874,6 +881,11 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 </tbody>
 </table>
+
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>
+>- 在部署有CM工具的情况下，对于某些既可以直接调用内核工具，也可以调用CM工具进行执行的命令，如：switchover、build等，请优先使用CM工具，因为如果直接调用内核工具，有可能CM感知不到用户正在手动执行指令，进而误判集群状态异常。
+>- CM有进程保活功能，并且会实时监控集群状态并进行自动故障处理，如果运维人员需要手动处理集群状态或进行问题调试定位等，最好执行cm_ctl pause命令将CM服务暂停掉，否则可能会干扰运维操作，待运维操作完成后可以执行cm_ctl resume命令恢复CM服务。
 
 ## 命令参考<a name="section129433814222"></a>
 

@@ -1,4 +1,4 @@
-# 使用指导<a name="ZH-CN_TOPIC_0000001364336309"></a>
+# 使用指导
 
 假设指标采集系统运行正常，并且用户已经初始化了配置文件目录confpath，则可以通过下述命令实现本特性的功能：
 
@@ -18,6 +18,6 @@ gs_dbmind component anomaly_analysis --conf confpath --metric metric_name --star
 
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >在输入anomaly_analysis的参数时，start-time至少要比end-time早30秒以上。
 

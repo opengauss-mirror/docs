@@ -1,8 +1,8 @@
-# DDL语法一览表<a name="ZH-CN_TOPIC_0289900414"></a>
+# DDL语法一览表
 
 DDL（Data Definition Language数据定义语言），用于定义或修改数据库中的对象。如：表、索引、视图等。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >openGauss不支持数据库主节点不完整时进行DDL操作。例如：openGauss中有1个数据库主节点故障时执行新建数据库、表等操作都会失败。
 
@@ -476,17 +476,17 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </thead>
 <tbody><tr id="row1179553872111"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2795143815211"><a name="p2795143815211"></a><a name="p2795143815211"></a>创建一个新的插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p979553862118"><a name="p979553862118"></a><a name="p979553862118"></a><a href="CREATE-Extension.md">CREATE Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p979553862118"><a name="p979553862118"></a><a name="p979553862118"></a><a href="CREATE-EXTENSION.md">CREATE Extension</a></p>
 </td>
 </tr>
 <tr id="row147951638182114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p107951338122110"><a name="p107951338122110"></a><a name="p107951338122110"></a>修改插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4795163811210"><a name="p4795163811210"></a><a name="p4795163811210"></a><a href="ALTER-Extension.md">ALTER Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4795163811210"><a name="p4795163811210"></a><a name="p4795163811210"></a><a href="ALTER-EXTENSION.md">ALTER Extension</a></p>
 </td>
 </tr>
 <tr id="row2079513802114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p27951384218"><a name="p27951384218"></a><a name="p27951384218"></a>删除插件扩展</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137959389213"><a name="p137959389213"></a><a name="p137959389213"></a><a href="DROP-Extension.md">DROP Extension</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137959389213"><a name="p137959389213"></a><a name="p137959389213"></a><a href="DROP-EXTENSION.md">DROP Extension</a></p>
 </td>
 </tr>
 </tbody>

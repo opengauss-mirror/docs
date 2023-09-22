@@ -1,10 +1,10 @@
-# connection.rollback\(\)<a name="ZH-CN_TOPIC_0000001080371156"></a>
+# connection.rollback\(\)
 
 ## 功能描述<a name="section5708152714306"></a>
 
 此方法回滚当前挂起事务。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >执行关闭连接“close\(\)”而不先提交更改“commit\(\)”将导致执行隐式回滚。
 
 ## 原型<a name="section441681310810"></a>

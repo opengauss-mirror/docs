@@ -1,6 +1,6 @@
 # Setting Encrypted Equality Query<a name="EN-US_TOPIC_0000001149468043"></a>
 
--   **[Overview](overview-6.md)**  
+-   **[Overview](overview_setting-encrypted-equality-query.md)**  
 
 -   **[Using GSQL to Operate an Encrypted Database](using-gsql-to-operate-an-encrypted-database.md)**  
 

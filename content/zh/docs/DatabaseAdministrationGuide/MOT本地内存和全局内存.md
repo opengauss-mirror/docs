@@ -1,4 +1,4 @@
-# MOT本地内存和全局内存<a name="ZH-CN_TOPIC_0280525155"></a>
+# MOT本地内存和全局内存
 
 SILO管理本地内存和全局内存，如图1所示。
 
@@ -10,7 +10,7 @@ SILO管理本地内存和全局内存，如图1所示。
 本地内存与SILO增强并发控制的基本交互式事务流如下所示：
 
 **图 1**  私有（本地）内存（每个事务）和全局内存（所有核的所有事务）<a name="fig18716015"></a>  
-![](figures/私有（本地）内存（每个事务）和全局内存（所有核的所有事务）.png "私有（本地）内存（每个事务）和全局内存（所有核的所有事务）")
+![](figures/Private-memory-and-global-memory.png "私有（本地）内存（每个事务）和全局内存（所有核的所有事务）")
 
 具体请参见_Industrial-Strength OLTP Using Main Memory and Many-cores_<sup>\[</sup>[对比：磁盘与MOT](对比-磁盘与MOT.md)<sup>\]</sup>。
 

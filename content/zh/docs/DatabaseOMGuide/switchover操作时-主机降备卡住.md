@@ -1,4 +1,4 @@
-# switchover操作时，主机降备卡住<a name="ZH-CN_TOPIC_0291615094"></a>
+# switchover操作时，主机降备卡住
 
 ## 问题现象<a name="section6629536475"></a>
 

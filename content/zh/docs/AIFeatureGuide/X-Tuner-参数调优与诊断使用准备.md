@@ -1,4 +1,4 @@
-# 使用准备<a name="ZH-CN_TOPIC_0289900288"></a>
+# 使用准备
 
 ## 前提条件与使用事项<a name="zh-cn_topic_0283137591_section887921944913"></a>
 
@@ -13,7 +13,7 @@
 
 调优程序是一个独立于数据库内核之外的工具，需要提供数据库及其所在实例的用户名和登录密码信息，以便控制数据库执行benchmark进行性能测试；在启动调优程序前，要求用户测试环境交互正常，能够正常跑通benchmark测试脚本、能够正常连接数据库。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果需要调优的参数中，包含重启数据库后才能使修改生效的参数，那么在调优过程中数据库将会重启多次。如果用户的数据库正在执行作业，请慎用train与tune模式。
 
 调优程序X-Tuner包含三种运行模式，分别是:
@@ -22,11 +22,11 @@
 -   train：通过用户提供的benchmark信息，不断地进行参数修改和benchmark的执行。通过反复的迭代过程，训练强化学习模型，以便用户在后面通过tune模式加载该模型进行调优。
 -   tune：使用优化算法进行数据库参数的调优，当前支持两大类算法，一种是深度强化学习，另一种是全局搜索算法（全局优化算法）。深度强化学习模式要求先运行train模式，生成训练后的调优模型，而使用全局搜索算法则不需要提前进行训练，可以直接进行搜索调优。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >如果在tune模式下，使用深度强化学习算法，要求必须有一个训练好的模型，且要求**训练该模型时的参数与进行调优时的参数列表（包括max与min）必须一致**。
 
 **图 1**  X-Tuner结构图<a name="fig137427353816"></a>  
-![](figures/X-Tuner结构图.png "X-Tuner结构图")
+![](figures/x-tuner-structure.png "X-Tuner结构图")
 
 X-Tuner的整体架构如[图1 X-Tuner 结构图](#fig137427353816)所示，系统可以分为：
 
@@ -35,7 +35,7 @@ X-Tuner的整体架构如[图1 X-Tuner 结构图](#fig137427353816)所示，系�
 -   X-Tuner主体逻辑模块：通过Enviroment模块进行封装，每一个step就是一次调优过程。整个调优过程通过多个step进行迭代。
 -   benchmark：由用户指定的benchmark性能测试脚本，用于运行benchmark作业，通过跑分结果反映数据库系统性能优劣。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >应确保benchmark脚本跑分结果越大表示性能越好。
 >例如TPCH这种衡量SQL语句整体执行时长的benchmark，可以通过取总体执行时间的相反数作为benchmark的输出分数。
 
@@ -51,7 +51,7 @@ gs_dbmind component xtuner --help
 
 ## X-Tuner的配置文件说明<a name="section5892154973918"></a>
 
-X-Tuner在运行前需要加载配置文件，用户可以通过**  --help**命令查看默认加载的配置文件绝对路径：
+X-Tuner在运行前需要加载配置文件，用户可以通过 **--help** 命令查看默认加载的配置文件绝对路径：
 
 ```
 ...  
@@ -64,11 +64,11 @@ X-Tuner在运行前需要加载配置文件，用户可以通过**  --help**命�
 ...
 ```
 
-修改配置文件的配置项可以指引X-Tuner执行不同的动作，用户可以根据自己的不同需求来修改配置文件的内容，配置文件的配置项说明详见[表2](X-Tuner-参数调优与诊断命令参考.md#table10217184512711)。如果需要修改配置文件的加载路径，则可以通过选项**-x**命令行选项来指定。
+修改配置文件的配置项可以指引X-Tuner执行不同的动作，用户可以根据自己的不同需求来修改配置文件的内容，配置文件的配置项说明详见[表2](X-Tuner-参数调优与诊断命令参考.md#table10217184512711)。如果需要修改配置文件的加载路径，则可以通过选项 **-x** 命令行选项来指定。
 
 ## Benchmark的选择与配置<a name="section11685014422"></a>
 
-Benchmark的驱动脚本存放路径为X-Tuner目录（即**$GAUSSHOME**/bin/dbmind/components/xtuner，下同）的子目录benchmark中。X-Tuner自带常用的benchmark驱动脚本，例如基于时间周期的探测脚本（**默认**）、TPC-C、TPC-H等。X-Tuner通过调用benchmark/\_\_init\_\_.py文件中  **get\_benchmark\_instance\(\)**命令来加载不同的benchmark驱动脚本，获取benchmark驱动实例。其中，benchmark驱动脚本的格式说明如下：
+Benchmark的驱动脚本存放路径为X-Tuner目录（即 **$GAUSSHOME**/bin/dbmind/components/xtuner，下同）的子目录benchmark中。X-Tuner自带常用的benchmark驱动脚本，例如基于时间周期的探测脚本（**默认**）、TPC-C、TPC-H等。X-Tuner通过调用benchmark/\_\_init\_\_.py文件中  **get\_benchmark\_instance\(\)** 命令来加载不同的benchmark驱动脚本，获取benchmark驱动实例。其中，benchmark驱动脚本的格式说明如下：
 
 -   驱动脚本文件名：表示benchmark的名字，该名字用于表示驱动脚本的唯一性，可通过在X-Tuner的配置文件中的配置项**benchmark\_script**来指定选择加载哪个benchmark驱动脚本。
 -   驱动脚本内容三要素：path变量、cmd变量以及run函数。

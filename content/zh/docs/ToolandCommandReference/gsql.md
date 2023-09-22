@@ -1,4 +1,4 @@
-# gsql<a name="ZH-CN_TOPIC_0249632297"></a>
+# gsql
 
 gsql是openGauss提供在命令行下运行的数据库连接工具，可以通过此工具连接服务器并对其进行操作和维护，除了具备操作数据库的基本功能，gsql还提供了若干高级特性，便于用户使用。
 
@@ -6,15 +6,15 @@ gsql是openGauss提供在命令行下运行的数据库连接工具，可以通�
 
 **基本功能**
 
--   **连接数据库：**详细操作请参见《快速入门》中“访问openGauss \> 使用gsql访问openGauss”章节。
+-   **连接数据库**：详细操作请参见《快速入门》中“访问openGauss \> 使用gsql访问openGauss”章节。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >gsql创建连接时，数据库默认设置会有5分钟超时时间。如果在这个时间内，数据库未正确地接受连接并对身份进行认证，gsql将超时退出。
     >针对此问题，可以参考[常见问题处理](#section1780814211263)。
 
--   **执行SQL语句：**支持交互式地键入并执行SQL语句，也可以执行一个文件中指定的SQL语句。
--   **执行元命令：**元命令可以帮助管理员查看数据库对象的信息、查询缓存区信息、格式化SQL输出结果、以及连接到新的数据库等。元命令的详细说明请参见[元命令参考](#section17631544132716)。
+-   **执行SQL语句**：支持交互式地键入并执行SQL语句，也可以执行一个文件中指定的SQL语句。
+-   **执行元命令**：元命令可以帮助管理员查看数据库对象的信息、查询缓存区信息、格式化SQL输出结果、以及连接到新的数据库等。元命令的详细说明请参见[元命令参考](#section17631544132716)。
 
 **高级特性**
 
@@ -91,10 +91,10 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 
     gsql预定义了一些特殊变量，同时也规划了变量的取值。为了保证和后续版本最大限度地兼容，请避免以其他目的使用这些变量。所有特殊变量见[表2](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_table45814285)。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   所有特殊变量都由大写字母、数字和下划线组成。
-    >-   要查看特殊变量的默认值，请使用元命令**\\echo :**_varname_（例如\\echo :DBNAME）。
+    >-   要查看特殊变量的默认值，请使用元命令 **\\echo :**_varname_（例如\\echo :DBNAME）。
     
 
 **表 2**  特殊变量设置 <a name="zh-cn_topic_0237152142_zh-cn_topic_0059778819_zh-cn_topic_0058968129_table45814285"></a>
@@ -224,7 +224,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 
     执行以上命令，将会查询HR.areaS表。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >变量的值是逐字复制的，甚至可以包含不对称的引号或反斜杠命令。所以必须保证输入的内容有意义。
 
 -   <a name="li163671421104717"></a>提示符
@@ -451,7 +451,7 @@ gsql的高级特性如[表1](#zh-cn_topic_0237152142_zh-cn_topic_0059778819_t88d
 
     gsql工具使用-d参数指定目标数据库名、-U参数指定数据库用户名、-h参数指定主机名、-p参数指定端口号信息。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >- 若未指定数据库名称，则使用初始化时默认生成的数据库名称；
     >- 若未指定数据库用户名，则默认使用当前操作系统用户作为数据库用户名；
@@ -1173,7 +1173,7 @@ omm@[local] openGauss=#
 
 元命令的详细说明请参见[表11 一般的元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table23103470)、[表12 查询缓存区元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table8624338)、[表13 输入/输出元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table62130565)、[表14 显示信息元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table44907299)、[表16 格式化元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table53911699)、[表18 连接元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table37189353)、[表19 操作系统元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table32146234)、[表20 变量元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table50076468)和[表22 大对象元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table55465693)。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >以下命令中所提到的FILE代表文件路径。此路径可以是绝对路径（如/home/gauss/file.txt），也可以是相对路径（file.txt，file.txt会默认在用户执行gsql命令所在的路径下创建）。
 
 **表 11**  一般的元命令
@@ -1325,7 +1325,7 @@ omm@[local] openGauss=#
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >[表14 显示信息元命令](#zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_table44907299)中的选项S表示显示系统对象，PATTERN表示显示对象附加的描述信息。用来指定要被显示的对象名称。
 
 **表 14**  显示信息元命令
@@ -2166,6 +2166,7 @@ omm@[local] openGauss=#
 </tr>
 </tbody>
 </table>
+
 #### **PATTERN**
 
 很多\\d命令都可以用一个PATTERN参数来指定要被显示的对象名称。在最简单的情况下，PATTERN正好就是该对象的准确名称。在PATTERN中的字符通常会被变成小写形式（就像在SQL名称中那样），例如\\dt FOO将会显示名为foo的表。就像在SQL名称中那样，把PATTERN放在双引号中可以阻止它被转换成小写形式。如果需要在一个PATTERN中包括一个真正的双引号字符，则需要把它写成两个相邻的双引号，这同样是符合SQL引用标识符的规则。例如，\\dt "FOO""BAR"将显示名为FOO"BAR（不是foo"bar）的表。和普通的SQL名称规则不同，不能只在PATTERN的一部分周围放上双引号，例如\\dt FOO"FOO"BAR将会显示名为fooFOObar的表。
@@ -2262,7 +2263,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     数据库由于安全问题，禁止远程登录时使用trust模式。这时需要修改pg\_hba.conf里的连接认证信息。具体的设置信息请参见：《数据库管理指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >请不要修改pg\_hba.conf中openGauss主机的相关设置，否则可能导致数据库功能故障。建议业务应用部署在openGauss之外，而非openGauss内部。
 
@@ -2316,7 +2317,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
         GRANT CONNECT ON DATABASE postgres TO user1;
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >实际上，常见的许多错误操作也可能产生用户无法连接上数据库的现象。如用户连接的数据库不存在，用户名或密码输入错误等。这些错误操作在客户端工具也有相应的提示信息。
         >
         >```
@@ -2422,7 +2423,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     目标数据库主节点的pg\_hba.conf里配置了当前客户端IP使用“gss”方式来做认证，该认证算法不支持用作客户端的身份认证，请修改到"sha256"后再试。配置方法见《开发者指南》中“管理数据库安全 \> 客户端接入认证 \> 配置文件参考”章节 。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >- 请不要修改pg\_hba.conf中openGauss主机的相关设置，否则可能导致数据库功能故障。
     >- 建议业务应用部署在openGauss之外，而非openGauss内部。
@@ -2437,7 +2438,7 @@ DELIMITER命令为为客户端设置一个分隔符。当用户设置分隔符�
 
     解决此问题，重试便可。同时请尽可能避免在升级等运维操作过程中，在openGauss内部运行业务程序，避免升级时因替换文件产生此问题。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >此故障的core dump文件的可能堆栈是dl\_main及其子调用，它是操作系统用来初始化进程做共享动态库加载的。如果进程已经初始化，但是共享动态库还未加载完成，严格意义上来说，进程并未完全启动。
 

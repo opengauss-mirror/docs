@@ -1,4 +1,4 @@
-# UPDATE<a name="ZH-CN_TOPIC_0289900207"></a>
+# UPDATE
 
 ## 功能描述<a name="zh-cn_topic_0283137651_zh-cn_topic_0237122194_zh-cn_topic_0059778969_s85747c5f88e64562a8ff9ddacda19929"></a>
 
@@ -137,7 +137,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     一个表的表达式列表，允许在WHERE条件里使用其他表的字段。与在一个SELECT语句的FROM子句里声明表列表类似。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >目标表绝对不能出现在from\_list里，除非在使用一个自连接（此时它必须以from\_list的别名出现）。
 
 -   **condition**

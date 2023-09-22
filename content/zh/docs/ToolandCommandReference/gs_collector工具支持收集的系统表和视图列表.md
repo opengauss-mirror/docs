@@ -1,4 +1,4 @@
-# gs\_collector工具支持收集的系统表和视图列表<a name="ZH-CN_TOPIC_0249632269"></a>
+# gs\_collector工具支持收集的系统表和视图列表
 
 **表 1**  gs\_collector工具支持收集的系统表和视图列表
 

@@ -1,4 +1,4 @@
-# GS\_WLM\_PLAN\_ENCODING\_TABLE<a name="ZH-CN_TOPIC_0289899943"></a>
+# GS\_WLM\_PLAN\_ENCODING\_TABLE
 
 GS\_WLM\_PLAN\_ENCODING\_TABLE系统表显示计划算子级的编码信息，为机器学习模型的提供包括startup time、total time、peak memory、rows等标签值的训练、预测集。
 

@@ -168,6 +168,8 @@
 >-   通过reload模式设置或修改数据库节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后数据库各实例参数极短时间不一致。
 >-   gs\_guc设置浮点类型的参数时，由于浮点数在计算机中不能精确表示，所以参数值在误差范围1e-9内都可以设置成功。
 >-   gs\_guc设置整型类型的参数时，可以接受十进制、十六进制、八进制的数据，以0x开始表示十六进制，以0开始表示八进制，其他情况表示十进制。
+>-   gs\_guc设置string参数，参数中的单引号会计算字符。
+
 
 ## 命令参考<a name="zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
 
@@ -222,14 +224,15 @@
 
     取值范围：已经创建的逻辑数据库名称。
 
--   --ignore-node=NODES
+- --ignore-node=NODES
 
-    需要忽略的主机名称。
+  需要忽略的主机名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
-    >-   该参数不支持与-D一起使用。
-    >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >-   该参数必须与set/reload一起使用，且-Z只支持datanode/coordinator。
+  >-   该参数不支持与-D一起使用。
+  >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >-   --ignore-node必须在-N all时才可生效。
 
 -   -c parameter
 

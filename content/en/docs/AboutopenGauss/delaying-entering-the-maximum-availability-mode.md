@@ -16,7 +16,7 @@ This prevents the primary node from frequently switching between the maximum pro
 
 ## Description<a name="section54601932194912"></a>
 
-If  **most\_available\_sync**  is set to  **on**, when synchronous standby nodes are faulty in primary/standby scenarios and the number of configured synchronous standby nodes is insufficient \(for details, see the meaning of  **synchonous\_standby\_name**\), setting  **keep\_sync\_window**  will retain the maximum protection mode within the time window specified by  **keep\_sync\_window**. That is, committing transactions on the primary node is blocked, delaying the primary node to enter the maximum availability mode.
+If  **most\_available\_sync**  is set to  **on**, when synchronous standby nodes are faulty in primary/standby scenarios and the number of configured synchronous standby nodes is insufficient \(for details, see the meaning of  **synchronous\_standby\_name**\), setting  **keep\_sync\_window**  will retain the maximum protection mode within the time window specified by  **keep\_sync\_window**. That is, committing transactions on the primary node is blocked, delaying the primary node to enter the maximum availability mode.
 
 If synchronous standby nodes recover from faults and the number of synchronous standby nodes meets the configuration requirements, transactions are not blocked.
 

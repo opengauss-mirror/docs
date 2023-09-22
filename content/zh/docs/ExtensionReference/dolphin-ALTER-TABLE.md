@@ -1,4 +1,4 @@
-# ALTER TABLE<a name="ZH-CN_TOPIC_0289899912"></a>
+# ALTER TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
 
@@ -22,6 +22,7 @@
 
     ```
     column_clause
+        | ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
         | {DISABLE | ENABLE} KEYS
         | DROP INDEX index_name [ RESTRICT | CASCADE ]
         | DROP PRIMARY KEY [ RESTRICT | CASCADE ]
@@ -53,6 +54,12 @@
         | [TABLESPACE tablespace_name] STORAGE MEMORY
     ```
 
+-   向表中增加多列。
+
+    ```
+    ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
+    ```
+
 -   对一个表进行重建。
 
     ```
@@ -63,7 +70,7 @@
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
-        RENAME { TO | AS } new_table_name;
+        RENAME [ TO | AS ] new_table_name;
     ```
 
 -   对表timestamp列添加ON UPDATE属性。
@@ -223,7 +230,7 @@
 
   用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 
 >涉及的参数说明可见[ALTER TABLE](../SQLReference/ALTER-TABLE.md)。
 

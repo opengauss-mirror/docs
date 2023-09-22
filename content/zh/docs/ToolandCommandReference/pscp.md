@@ -1,4 +1,4 @@
-# pscp<a name="ZH-CN_TOPIC_0000001197541735"></a>
+# pscp
 
 ## 基本功能<a name="section1540721571112"></a>
 

@@ -1,9 +1,9 @@
-# MOT简介<a name="ZH-CN_TOPIC_0280525136"></a>
+# MOT简介
 
 openGauss引入了MOT存储引擎，它是一种事务性行存储，针对多核和大内存服务器进行了优化。MOT是openGauss数据库最先进的生产级特性，它为事务性工作负载提供更高的性能。MOT完全支持ACID特性，并包括严格的持久性和高可用性支持。企业可以在关键任务、性能敏感的在线事务处理（OLTP）中使用MOT，以实现高性能、高吞吐、可预测低延迟以及多核服务器的高利用率。MOT尤其适合在多路和多核处理器的现代服务器上运行，例如基于Arm/鲲鹏处理器的华为TaiShan服务器，以及基于x86的戴尔或类似服务器。
 
 **图 1**  openGauss内存优化存储引擎<a name="fig16939193016363"></a>  
-![](figures/openGauss内存优化存储引擎.png "openGauss内存优化存储引擎")
+![](figures/openGauss-Memory-optimized-storage-engine.png "openGauss内存优化存储引擎")
 
 如[图1](#fig16939193016363)所示，openGauss数据库内存优化存储引擎组件（绿色部分）负责管理MOT和事务。
 

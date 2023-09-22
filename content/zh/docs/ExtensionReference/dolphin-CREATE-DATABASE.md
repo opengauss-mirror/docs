@@ -1,4 +1,4 @@
-# CREATE DATABASE<a name="ZH-CN_TOPIC_0289900066"></a>
+# CREATE DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s3ea6af3a84d74f1ab7dceb8bb54ed134"></a>
 
@@ -35,7 +35,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   -   B兼容性下，仅在 dolphin.b_compatibility_mode 为on时支持该语法。
   -   使用该语法时，语法等效于CREATE SCHEMA，实际为创建SCHEMA语法, database\_name 为SCHEMA名称 。
@@ -59,4 +59,4 @@ openGauss=# drop database if exists test1;
 
 ## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
-[ALTER DATABASE](dolphin-ALTER-DATABASE.md)，[DROP DATABASE](dolphin-DROP-DATABASE.md),  [CREATE DATABASE](CREATE-DATABASE.md)
+[ALTER DATABASE](dolphin-ALTER-DATABASE.md)，[DROP DATABASE](dolphin-DROP-DATABASE.md),  [CREATE DATABASE](../SQLReference/CREATE-DATABASE.md)

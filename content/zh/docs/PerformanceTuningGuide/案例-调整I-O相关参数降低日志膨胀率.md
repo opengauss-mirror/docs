@@ -1,4 +1,4 @@
-# 案例：调整I/O相关参数降低日志膨胀率<a name="ZH-CN_TOPIC_0000001102191372"></a>
+# 案例：调整I/O相关参数降低日志膨胀率
 
 -   调整参数前的参数值：
     -   pagewriter\_sleep=2000ms
@@ -11,7 +11,7 @@
     -   max\_io\_capacity=300MB
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   将max\_io\_capacity调整小是因为，IO不会利用到之前参数的最大值，调整该值，是为了限制后端写进程IO的占用上限。
 >-   当日志量达到一定量时，日志才会触发回收，该值的计算方式是**：**wal\_keep\_segments + checkpoint\_segments \* 2  + 1 ，假设 checkpoint\_segments 设置128，wal\_keep\_segments 设置128，日志量就是 \(128 + 128 \* 2 + 1\) \* 16MB = 6GB。

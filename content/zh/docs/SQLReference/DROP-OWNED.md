@@ -1,4 +1,4 @@
-# DROP OWNED<a name="ZH-CN_TOPIC_0289900859"></a>
+# DROP OWNED
 
 ## 功能描述<a name="zh-cn_topic_0283136635_zh-cn_topic_0237122143_zh-cn_topic_0059777620_sa3265773225d4612b9bafd61c332eae0"></a>
 

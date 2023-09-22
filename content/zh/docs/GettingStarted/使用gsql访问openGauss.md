@@ -1,4 +1,4 @@
-# 使用gsql访问openGauss<a name="ZH-CN_TOPIC_0289900019"></a>
+# 使用gsql访问openGauss
 
 gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考《工具与命令参考》中“客户端工具 \> gsql”章节。
 
@@ -48,7 +48,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 3.  首次登录建议修改密码。命令如下。
 
     ```
-    openGauss=# ALTER ROLE omm IDENTIFIED BY 'Mypwd123' REPLACE 'XuanYuan@2012';
+    openGauss=# ALTER ROLE omm IDENTIFIED BY '$$$$$$$$' REPLACE 'XXXXXXXX';
     ```
 
 4.  退出数据库。
@@ -76,7 +76,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     连接成功后，系统显示类似如下信息：
 
     ```
-    gsql ((GaussDB Kernel VxxxRxxxCxxopenGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
+    gsql ((openGauss x.x.x build 50dc16a6) compiled at 2020-11-24 20:03:57 commit 1093 last mr 1793 debug)
     Non-SSL connection (SSL connection is recommended when requiring high-security)
     Type "help" for help.
     
@@ -104,7 +104,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     > -   软件包相对位置为安装时所放位置，根据实际情况填写。
     > -   不同的操作系统，工具包文件名称会有差异。请根据实际的操作系统类型选择对应的工具包。
 
@@ -120,7 +120,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
     scp -r /opt/huawei/install/app/bin root@10.10.0.30:/tmp/tools
     ```
-        
+    
     其中，/opt/huawei/install/app为clusterconfig.xml文件中配置的\{gaussdbAppPath\}路径，10.10.0.30为客户端主机ip。
 
     f.  登录客户端所在主机，设置环境变量。
@@ -130,7 +130,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     ```
     vi ~/.bashrc
     ```
-        
+    
     在其中输入如下内容后，使用“:wq!”命令保存并退出。
         
     ```
@@ -154,7 +154,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     postgres为需要连接的数据库名称，10.10.0.11为数据库主节点所在的服务器IP地址，jack为连接数据库的用户，8000为数据库主节点的端口号，Test@123为连接数据库用户jack的密码。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     > 
     >-   连接openGauss的机器与openGauss不在同一网段时，-h指定的IP地址应为Manager界面上所设的coo.cooListenIp2（应用访问IP）的取值。  
     >-   禁止使用omm用户进行远程连接数据库。  

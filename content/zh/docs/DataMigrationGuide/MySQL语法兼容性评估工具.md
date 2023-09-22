@@ -1,4 +1,4 @@
-# MySQL语法兼容性评估工具<a name="ZH-CN_TOPIC_0000001245957397"></a>
+# MySQL语法兼容性评估工具
 
 本工具支持利用已有的openGauss节点评估数据SQL文本在openGauss的兼容性。包含但不限于以下限制：
 
@@ -51,14 +51,14 @@
 
 2. 将上述插件拷贝到openGauss源码路径的`contrib`路径下。`cd`进入对应目录后`make install -sj`。
 
-3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`Extension.sql`，`Extension.control`。`assessment`插件包含可执行文件`assessment_database`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
+3. 将插件必须的文件拷贝到对应二进制路径下面。一般来说包含：`extesion.so`、`Extension.sql`，`Extension.control`。`assessment`插件包含可执行文件`gs_assessment`。本例中涉及文件如下：<font color='red'>如果使用的二进制为步骤1中的二进制，此步骤可以省略。</font>
 
 **assessment依赖文件**
 
 ```
 二进制路径
 ├── bin
-│   └── ***assessment_database***
+│   └── ***gs_assessment***
 ├── lib
 │   └── postgresql
 │       └── ***assessment.so***
@@ -86,7 +86,7 @@
 
 1. 确保有一个正在运行的数据库，且当前支持通过gsql命令连接数据库。
 
-2. 运行命令如下：`assessment_database [args]`，其中args包含以下参数：
+2. 运行命令如下：`gs_assessment [args]`，其中args包含以下参数：
 
 |          | 参数 | 描述                                     | 使用                                   |
 | -------- | ---- |  ---------------------------------------- | -------------------------------------- |
@@ -105,17 +105,17 @@
 通过gs_initdb初始化数据库并启动，假设启动端口为5432。此时可以通过`gsql -dpostgres -p5432`方式直接连接数据库。假设输入文件为`test.sql`，输出报告路径为`result.html`，评估的源数据库类型为B，则评估使用的命令为：
 
 ```shell
-assessment_database -p5432 -cB -ftest.sql -oresult.html
+gs_assessment -p5432 -cB -ftest.sql -oresult.html
 ```
 
 此时回显信息为：
 
 ```shell
-assessment_database: create database "assessment_197561" automatically.
-assessment_database: Create plugin[dolphin] automatically.
-assessment_database: Create Extension[assessment] automatically.
-assessment_database: 解析[100.00%]:35/35
-assessment_database: Create database assessment_197561 automatically, clear it manually!
+gs_assessment: create database "assessment_197561" automatically.
+gs_assessment: Create plugin[dolphin] automatically.
+gs_assessment: Create Extension[assessment] automatically.
+gs_assessment: 解析[100.00%]:35/35
+gs_assessment: Create database assessment_197561 automatically, clear it manually!
 ```
 
 #### case 2:
@@ -123,7 +123,7 @@ assessment_database: Create database assessment_197561 automatically, clear it m
 假设远程已经有数据库节点，在兼容性评估节点可以通过``gsql -dpostgres -p5432 -h127.0.0.2 -Utest -W***** `连接数据库。假设输入文件为`test.sql`，输出报告路径为`result.html`，评估的源数据库类型为B，则评估使用的命令为：
 
 ```shell
-assessment_database -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+gs_assessment -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
 ```
 
 #### case 3:
@@ -131,7 +131,7 @@ assessment_database -p5432 -cB -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.ht
 假设远程已经有数据库节点，且自己创建了`evaluation`数据库用于兼容性评估。在兼容性评估节点可以通过``gsql -devalution -p5432 -h127.0.0.2 -Utest -W***** `连接数据库。期望通过假设输入文件为`test.sql`，输出报告路径为`result.html`，则评估使用的命令为：
 
 ```shell
-assessment_database -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
+gs_assessment -p5432 -devaluation -h127.0.0.2 -Utest -W***** -ftest.sql -oresult.html
 ```
 
 即将`case 2`中的`-cB`换成`-devaluation`指定数据库即可。

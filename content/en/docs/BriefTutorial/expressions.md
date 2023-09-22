@@ -6,11 +6,11 @@ An expression is similar to a formula. You can use it in a query statement to se
 
 -   Logical expressions
 
-    [Logical Operators](../DeveloperGuide/operators.md#section2075011374558)  lists the operators and computation rules of logical expressions.
+    [Logical Operators](operators.md#section2075011374558)  lists the operators and computation rules of logical expressions.
 
 -   Comparison expressions
 
-    [Operators](../Developerguide/Operators.md)  lists the common comparison operators.
+    [Operators](operators.md)  lists the common comparison operators.
 
     In addition to comparison operators, you can also use the following sentence structures:
 

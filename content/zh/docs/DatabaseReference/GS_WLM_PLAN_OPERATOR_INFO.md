@@ -1,4 +1,4 @@
-# GS\_WLM\_PLAN\_OPERATOR\_INFO<a name="ZH-CN_TOPIC_0289900711"></a>
+# GS\_WLM\_PLAN\_OPERATOR\_INFO
 
 GS\_WLM\_PLAN\_OPERATOR\_INFO系统表显示执行作业结束后计划算子级的相关的记录。此数据是从内核中转储到系统表中的数据。
 

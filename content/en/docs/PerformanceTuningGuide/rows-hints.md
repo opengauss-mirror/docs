@@ -12,7 +12,7 @@ rows(table_list #|+|-|* const)
 
 ## Parameter Description<a name="en-us_topic_0237121535_section55696776143642"></a>
 
--   **\#**,  **+**,  **-**, and  **\***  are operators used for hinting the estimation.  **\#**  indicates that the original estimation is used without any calculation.  **+**,  **-**, and  **\***  indicate that the original estimation is calculated using these operators. The minimum calculation result is 1.  _table\_list_  specifies the tables to be joined. The values are the same as those of  **[table\_list](en-us_topic_0237121534.md#li1090312446510)**  in  [Join Operation Hints](join-operation-hints.md).
+-   **\#**,  **+**,  **-**, and  **\***  are operators used for hinting the estimation.  **\#**  indicates that the original estimation is used without any calculation.  **+**,  **-**, and  **\***  indicate that the original estimation is calculated using these operators. The minimum calculation result is 1.  _table\_list_  specifies the tables to be joined. The values are the same as those of  **[table\_list](join-operation-hints.md#li1090312446510)**  in  [Join Operation Hints](join-operation-hints.md).
 
 -   _const_  can be any non-negative number and supports scientific notation.
 

@@ -1,4 +1,4 @@
-# LLVM使用建议<a name="ZH-CN_TOPIC_0245374541"></a>
+# LLVM使用建议
 
 目前LLVM在数据库内核侧已默认打开，用户可结合上述的分析进行配置，总体建议如下：
 
@@ -15,6 +15,6 @@
     
     gdb打印全部堆栈的时候如果遇到该问题，也可以通过增栈深度的限制来避免。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >在资源许可的情况下，数据量越大，可获得的性能提升效果越好。  
 

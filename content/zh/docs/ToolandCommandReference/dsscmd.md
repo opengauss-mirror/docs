@@ -1,4 +1,4 @@
-# dsscmd<a name="ZH-CN_TOPIC_0000001321698602"></a>
+# dsscmd
 
 ## 概述<a name="section1377524355216"></a>
 
@@ -23,10 +23,10 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   创建卷组
 
     ```
-    dsscmd cv <-g vg_name> <-v vol_name> [-s au_size] [-D DSS_HOME]
+    dsscmd cv <-g vg_name> <-v vol_name> [-s au_size]  [-D DSS_HOME]
     ```
 
-    此处的vg\_name为卷组名，命名长度不能超过64，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
+    此处的vg\_name为卷组名，命名长度不能超过63，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
 
 -   显示卷组和磁盘使用信息
 
@@ -37,7 +37,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   卷组中添加卷
 
     ```
-    dsscmd adv <-g vg_name> <-v vol_name> [-U UDS:socket_domain]
+    dsscmd adv <-g vg_name> <-v vol_name> [-D DSS_HOME] [-U UDS:socket_domain]
     ```
 
     此处的vg\_name为卷组名，不需要以‘+’开头。
@@ -93,10 +93,10 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   查询LUN/注册信息
 
     ```
-    dsscmd inq  <-t inq_type>
+    dsscmd inq  <-t inq_type> [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >inq_type表示查询信息的类型。取值如下：
     >-   lun: 查询LUN信息。
     >-   reg: 查询reservations信息。
@@ -131,7 +131,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd unreghl [-t type] [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   type: 值为int类型，0表示不使用vg锁，非0表示使用vg锁，默认值为1。
 
 -   扫描并打开指定路径下指定用户和属组的盘符，不走服务端
@@ -140,20 +140,20 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd scandisk <-t type> <-p path> <-u user_name> <-g group_name>
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   type: 盘符类型，当前只支持block块设备。
     >-   [path][user_name][group_name]: 该字段中不能含有命令注入安全隐患的非法字符：
     >'|'， ';'， '&'， '$'， '<'， '>'， '`'， '\\\'， '\\''， '\\"'， '{'， '}'， '('， ')'， '['， ']'， '~'， '*'， '?'， ' '， '!'， '\n'。
     >-   user_name: 操作系统的用户名。
     >-   group_name: 操作系统的属组。
 
--   设置dss节点的auid
+-   展示auid。主要用于日志分析和问题定位。
 
     ```
     dsscmd auid <-a auid>
     ```
 
-    此处的auid是一个64位的值。
+    auid: 值为uint64类型，取值范围：0-18446744073709551615(即2^64-1)
 
 -   读取dss文件内容
 
@@ -166,7 +166,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   读取磁阵文件内容
 
     ```
-    dsscmd dev <-p path> <-o offset> <-f format> [-D DSS_HOME]
+    dsscmd dev <-p path> <-o offset> <-f format>
     ```
 
     此处format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
@@ -178,7 +178,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd showdisk <-g vg_name> <-b block_id> <-n node_id> [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
     >-   如果指定参数-b block_id，则需指定-n node_id。
     >-   blocl_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
@@ -197,7 +197,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd du <-p path> [-f format] [-U UDS:socket_domain]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >format：支持3种参数，参数之间不需要任何分隔符。
     >-   B|K|M|G|T
     >    B: Byte, K: KB ,M: MB , G: GB, T: TB。
@@ -232,17 +232,27 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd unlink <-p path> [-U UDS:socket_domain]
     ```
 
--   加密
+-   生成加密密码密文和密钥组件
 
     ```
     dsscmd encrypt
     ```
-
+    > <img src="public_sys-resources/icon-danger.png"> **警告：**   
+    >
+    > 生成加密密码密文和密钥组件属于高危操作，每次执行时，会产生新的加密密码密文和密钥组件。输入需和证书加密密码一致，否则会导致节点启动异常。
 -   设置配置项
 
     ```
     dsscmd setcfg <-n name> <-v value> [-s scope] [-U UDS:socket_domain]
     ```
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >目前可以通过该接口设置的参数有：
+    _LOG_LEVEL，
+    _LOG_MAX_FILE_SIZE，
+    _LOG_BACKUP_FILE_COUNT，
+    _AUDIT_LEVEL，
+    _AUDIT_MAX_FILE_SIZE，
+    _AUDIT_BACKUP_FILE_COUNT。
 
 -   获取配置项信息
 
@@ -287,12 +297,12 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     表示目录或带路径的文件，需要带'+'且不支持使用相对路径，命名长度不能超过1K，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。文件名本身长度不能超过63位，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ', 其他字符不支持。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >dsscmd命令使用UDS:socket_domain的时候，需要与服务端通信，由于客户端和服务端通信的报文最长为1024，所以实际path支持的长度可能会少于1K。
 
 -   dir\_name
 
-    目录名，命名长度不能超过64，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
+    目录名，命名长度不能超过63，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
 
 -   vol\_name
 
@@ -387,4 +397,18 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd ls -p +data/pg_xlog0 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
+-   显示dss节点的auid。
 
+    ```
+    dsscmd auid -a 1
+    ```
+-   生成加密密码密文和密钥组件。
+    执行如下命令生成SSL私钥，并在$DSS_HOME/dss_protect目录下生成密钥组件文件server.key.rand。
+
+    ```
+    dsscmd encrypt
+    Please enter password to encrypt:
+    *********
+    Please input password again:
+    *********
+    ```

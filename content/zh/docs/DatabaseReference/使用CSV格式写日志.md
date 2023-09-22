@@ -1,4 +1,4 @@
-# 使用CSV格式写日志<a name="ZH-CN_TOPIC_0242371514"></a>
+# 使用CSV格式写日志
 
 ## 前提条件<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>
 
@@ -184,7 +184,7 @@ application_name text
 COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >此处的日志名“logfile.csv”要换成实际生成的日志的名称。  
 
 ## 简化输入<a name="zh-cn_topic_0237124724_zh-cn_topic_0059779007_s7025be501c46413a9d63291fc8a2f130"></a>

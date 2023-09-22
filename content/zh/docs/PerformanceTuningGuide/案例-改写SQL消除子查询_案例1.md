@@ -1,4 +1,4 @@
-# 案例：**改写SQL消除子查询（案例1）**<a name="ZH-CN_TOPIC_0000001331070782"></a>
+# 案例：**改写SQL消除子查询（案例1）**
 
 ## 现象描述<a name="zh-cn_topic_0075873755_section58732893101941"></a>
 
@@ -49,6 +49,6 @@ group by  a.id;
 (9 rows)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >为了保证改写的等效性，在_normal\_date.id_加了_not null_约束。
 

@@ -1,4 +1,4 @@
-# DROP ROLE<a name="ZH-CN_TOPIC_0289900731"></a>
+# DROP ROLE
 
 ## 功能描述<a name="zh-cn_topic_0283136937_zh-cn_topic_0237122147_zh-cn_topic_0059778848_s77851fcd69534eafbd3b79f15670b201"></a>
 

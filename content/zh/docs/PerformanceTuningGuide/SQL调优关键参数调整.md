@@ -1,4 +1,4 @@
-# SQL调优关键参数调整<a name="ZH-CN_TOPIC_0289900358"></a>
+# SQL调优关键参数调整
 
 本节将介绍影响openGauss SQL调优性能的关键数据库主节点配置参数，配置方法参见[配置运行参数](../DatabaseReference/配置运行参数.md)。
 

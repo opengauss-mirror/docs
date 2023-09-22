@@ -1,4 +1,4 @@
-# PG\_AMOP<a name="ZH-CN_TOPIC_0289900719"></a>
+# PG\_AMOP
 
 PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果一个操作符是一个操作符族中的成员，则在这个表中会占据一行。一个族成员是一个search操作符或一个ordering操作符。一个操作符可以在多个族中出现，但是不能在一个族中的多个搜索位置或多个排序位置中出现。
 
@@ -39,7 +39,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_ac6ee0339c861452ebc935bc6f0f65dba"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a>操作符的左输入类型。可能取值及其描述见于pg_type.h。</p>
+<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a1e4d45fb99154eeaba5cb7f09ad3ade8"></a>操作符的左输入类型。可能取值及其描述见于系统表pg_type或查看源码中的pg_type.h文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_r77f955a33dbd44c181e272790b61786f"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aa9ce20a269e44885872fe3281a216b45"></a>amoprighttype</p>
@@ -48,7 +48,7 @@ PG\_AMOP系统表存储有关和访问方法操作符族关联的信息。如果
 </td>
 <td class="cellrowborder" valign="top" width="26.69%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_acfd4bb5cf9b348c4bc209cadd78eba6a"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a>操作符的右输入类型。可能取值及其描述见于pg_type.h。</p>
+<td class="cellrowborder" valign="top" width="33.650000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_a41d23917f5344595a96980a46a3068d9"></a>操作符的右输入类型。可能取值及其描述见于系统表pg_type或查看源码中的pg_type.h文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_r123c6b79378e4f35bd5b8aa18e564c27"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"></a><a name="zh-cn_topic_0283137662_zh-cn_topic_0237122268_zh-cn_topic_0059777617_aff10bc2961334e5fb5135841a64e5e87"></a>amopstrategy</p>

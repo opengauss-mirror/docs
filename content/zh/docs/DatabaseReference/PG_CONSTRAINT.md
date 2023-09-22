@@ -1,4 +1,4 @@
-# PG\_CONSTRAINT<a name="ZH-CN_TOPIC_0289899922"></a>
+# PG\_CONSTRAINT
 
 PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 
@@ -216,7 +216,7 @@ PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 </table>
 
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   consrc在被引用的对象改变之后不会被更新，它不会跟踪字段的名称修改。与其依赖这个字段，最好还是使用pg\_get\_constraintdef\(\)来抽取一个检查约束的定义。
 >-   pg\_class.relchecks需要和在此表上为给定关系找到的检查约束的数目一致。

@@ -1,10 +1,10 @@
-# ALTER TRIGGER<a name="ZH-CN_TOPIC_0289900315"></a>
+# ALTER TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
 修改触发器名称。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >目前只支持修改名称。
 

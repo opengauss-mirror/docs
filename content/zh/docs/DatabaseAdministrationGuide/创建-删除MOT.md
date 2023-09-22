@@ -1,4 +1,4 @@
-# 创建/删除MOT<a name="ZH-CN_TOPIC_0280525133"></a>
+# 创建/删除MOT
 
 创建MOT非常简单。只有MOT中的创建和删除表语句与openGauss中基于磁盘的表的语句不同。SELECT、DML和DDL的所有其他命令的语法对于MOT表和openGauss基于磁盘的表是一样的。
 

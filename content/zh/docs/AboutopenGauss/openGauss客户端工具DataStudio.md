@@ -1,4 +1,4 @@
-# openGauss客户端工具DataStudio<a name="ZH-CN_TOPIC_0000001220227672"></a>
+# openGauss客户端工具DataStudio
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -49,3 +49,8 @@ Data Studio作为一款配套openGauss数据库使用的客户端软件（当前
 
 当前只支持openGauss
 
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/DataStudio
+
+详细参考文档：DataStudio二进制包下docs目录《Data Studio 用户手册.pdf》

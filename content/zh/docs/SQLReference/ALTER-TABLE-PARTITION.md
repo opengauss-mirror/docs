@@ -1,4 +1,4 @@
-# ALTER TABLE PARTITION<a name="ZH-CN_TOPIC_0289900688"></a>
+# ALTER TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283137443_zh-cn_topic_0237122077_zh-cn_topic_0059778761_s4954d450a2e8434aa3abac355bac38e6"></a>
 
@@ -36,7 +36,7 @@
         action [, ... ];
     ```
 
-    其中action统指如下分区维护子语法。当存在多个分区维护子句时，保证了分区的连续性，无论这些子句的排序如何，GaussDB KernelopenGauss总会先执行DROP PARTITION再执行ADD PARTITION操作，最后顺序执行其它分区维护操作。
+    其中action统指如下分区维护子语法。当存在多个分区维护子句时，保证了分区的连续性，无论这些子句的排序如何，openGauss总会先执行DROP PARTITION再执行ADD PARTITION操作，最后顺序执行其它分区维护操作。
 
     ```
         move_clause  |
@@ -74,7 +74,7 @@
         -   普通表和分区表上不可以有动态数据脱敏，行访问控制约束。
         -   列表分区表，哈希分区表不能是列存储。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >-   完成交换后，普通表和分区的数据被置换，同时普通表和分区的表空间信息被置换。此时，普通表和分区的统计信息变得不可靠，需要对普通表和分区重新执行analyze。
         >-   由于非分区键不能建立本地唯一索引，只能建立全局唯一索引，所以如果普通表含有唯一索引时，可能会导致不能交换数据。
         >-   如果在普通表/分区表上进行了drop column操作，被删除的列依然物理存在，所以需要保证普通表和分区的被删除列也严格对齐才能交换成功。
@@ -92,7 +92,7 @@
             [ TABLESPACE tablespacename ] [ UPDATE GLOBAL INDEX ]
         ```
 
-    >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >![](public_sys-resources/icon-caution.png) **注意：** 
     >```
     >USTORE存储引擎表不支持在事务块中执行ALTER TABLE MERGE PARTITIONS的操作。
     >```
@@ -115,7 +115,7 @@
             AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：** 
             >-   列存分区表不支持切割分区。
             >-   切割点的大小要位于正在被切割的分区的分区键范围内，指定切割点的方式只能把一个分区切割成两个新分区。
 
@@ -125,7 +125,7 @@
             INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
             ```
 
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：** 
             >-   不指定切割点的方式，partition\_less\_than\_item指定的第一个新分区的分区键要大于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_less\_than\_item指定的最后一个分区的分区键要等于正在被切割的分区的分区键大小。
             >-   不指定切割点的方式，partition\_start\_end\_item指定的第一个新分区的起始点（如果存在的话）必须等于正在被切割的分区的前一个分区（如果存在的话）的分区键，partition\_start\_end\_item指定的最后一个分区的终止点（如果存在的话）必须等于正在被切割的分区的分区键。
             >-   partition\_less\_than\_item支持的分区键个数最多为4，而partition\_start\_end\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY RANGE\(parti...](CREATE-TABLE-PARTITION.md#zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)。
@@ -169,7 +169,7 @@
             [ TABLESPACE tablespacename ]
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >-   partition\_list\_item仅支持1个分区键，其支持的数据类型参见[PARTITION BY LIST\(partit...](CREATE-TABLE-PARTITION.md#li78182216171)。
         >-   间隔/哈希分区表不支持添加分区。
 
@@ -180,7 +180,7 @@
         DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >-   哈希分区表不支持删除分区。
         >-   当分区表只有一个分区时，不能删除该分区。
 
@@ -278,7 +278,7 @@
 
     在VALIDATION是WITH状态时，如果检查出普通表有不满足要交换分区的分区键范围的数据，那么把这些数据插入到正确的分区，如果路由不到任何分区，再报错。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >只有在VALIDATION是WITH状态时，才可以指定VERBOSE。
 
 -   **partition\_new\_name**

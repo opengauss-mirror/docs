@@ -56,7 +56,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
    - Password complexity
 
-     You must specify your password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules (see [password\_policy](security-and-authentication-(postgresql-conf).md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)). Otherwise, you are prompted to enter the password again. 
+     You must specify your password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules (see [password\_policy](../DatabaseReference/security-and-authentication_postgresql-conf.md#en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)). Otherwise, you are prompted to enter the password again. 
 
      -   If parameter **password\_policy** is set to **1**, the default password complexity rule is used to check passwords.
      -   If parameter **password\_policy** is set to **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to **0** because this operation poses security risks. Even if the setting is required, you must set **password\_policy** to **0** on all openGauss nodes.

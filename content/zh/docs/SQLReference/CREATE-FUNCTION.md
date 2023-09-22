@@ -1,4 +1,4 @@
-# CREATE FUNCTION<a name="ZH-CN_TOPIC_0289900779"></a>
+# CREATE FUNCTION
 
 ## 功能描述<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd4b3500e6b35475aa19a15933fec5720"></a>
 
@@ -24,6 +24,7 @@
 -   兼容Oracle风格的函数支持介于IS/AS与plsql\_body之间的注释的查看与导出、导入。
 -   不可与同一模式下已存在的synonym产生命名冲突。
 -   当language为internal时，自定义函数的参数类型和返回值类型（void除外）需要与引用的系统函数保持一致，参数个数超出系统函数的部分不做对比校验。当未指定strict时，此选项与系统函数保持一致。
+-   通过`CREATE OR REPLACE`语法替换已有的函数时，会一并重建依赖此函数的视图，函数中的参数数据类型变更等情况可能会导致重建视图失败，进而导致替换函数失败。此种情况下，建议先删除依赖的视图，再重建函数，再重新创建视图。
 
 ## 语法格式<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_s7109c8eddfba4ea0b3cc85d39d0ab774"></a>
 
@@ -105,7 +106,7 @@
 
     取值范围：IN、OUT、INOUT或VARIADIC。缺省值是IN。并且OUT和INOUT模式的参数不能用在RETURNS TABLE的函数定义中。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >VARIADIC用于声明数组类型的参数。
 
 -   **argtype**
@@ -146,14 +147,14 @@
 
   用以实现函数的语言的名称。可以是SQL、internal或者是用户定义的过程语言名称。为了保证向下兼容，该名称可以用单引号（包围）。若采用单引号，则引号内必须为小写。
 
-  > ![](public_sys-resources/icon-note.gif)**说明：** 
+  > ![](public_sys-resources/icon-note.png)**说明：** 
   > internel函数在定义时，如果AS指定为内部系统函数，则新创建函数的参数类型，参数个数，与返回值类型需要与内部系统函数保持一致，且需要有执行此内部系统函数的权限
 
 -   **WINDOW**
 
     表示该函数是窗口函数。替换函数定义时不能改变WINDOW属性。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >自定义窗口函数只支持LANGUAGE是internal，并且引用的内部函数必须是窗口函数。
 
 -   **IMMUTABLE**
@@ -260,7 +261,7 @@
 
     PL/SQL存储过程体。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
 
 

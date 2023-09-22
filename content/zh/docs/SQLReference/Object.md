@@ -1,4 +1,4 @@
-# Object<a name="ZH-CN_TOPIC_0245374679"></a>
+# Object
 
 -   **[STAT\_USER\_TABLES](STAT_USER_TABLES.md)**  
 

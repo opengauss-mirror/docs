@@ -1,4 +1,4 @@
-# \_PG\_USER\_MAPPINGS<a name="ZH-CN_TOPIC_0310260671"></a>
+# \_PG\_USER\_MAPPINGS
 
 存储从本地用户到远程的映射。该视图只有sysadmin权限可以查看。
 

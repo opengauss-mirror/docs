@@ -91,4 +91,4 @@ Compared with the original openGauss, Dolphin modifies the ALTER PROCEDURE synta
 
 ## Helpful Links<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sacb869eb702a48fdbb64acb219ced069"></a>
 
-[ALTER FUNCTION](ALTER-FUNCTION.md)
+[ALTER FUNCTION](../SQLReference/alter-function.md)

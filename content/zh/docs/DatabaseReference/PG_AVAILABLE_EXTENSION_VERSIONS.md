@@ -1,4 +1,4 @@
-# PG\_AVAILABLE\_Extension\_VERSIONS<a name="ZH-CN_TOPIC_0289900780"></a>
+# PG\_AVAILABLE\_Extension\_VERSIONS
 
 PG\_AVAILABLE\_Extension\_VERSIONS视图显示数据库中某些特性的扩展版本信息。
 

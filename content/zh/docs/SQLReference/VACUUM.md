@@ -1,4 +1,4 @@
-# VACUUM<a name="ZH-CN_TOPIC_0289900615"></a>
+# VACUUM
 
 ## 功能描述<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_sd160e2f29b7240d88e6b4e9c7c7b8ae3"></a>
 
@@ -52,7 +52,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
     选择“FULL”清理，这样可以恢复更多的空间，但是需要耗时更多，并且在表上施加了排他锁。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >使用FULL参数会导致统计信息丢失，如果需要收集统计信息，请在VACUUM FULL语句中加上analyze关键字。
 
 -   **FREEZE**
@@ -67,7 +67,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
   更新用于优化器的统计信息，以决定执行查询的最有效方法。
 
-  > **![](public_sys-resources/icon-note.gif)说明**
+  > **![](public_sys-resources/icon-note.png)说明**
   >
   > ustore分区表在autovacuum=analyze的时候也会触发vacuum。
 

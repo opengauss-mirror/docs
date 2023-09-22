@@ -10,7 +10,7 @@ An initial user bypasses all permission checks. You are advised to use an initia
 
 A system administrator is an account with the  **SYSADMIN**  attribute. By default, a database system administrator has the same permissions as object owners but does not have the object permissions in  **dbe\_perf**  mode.
 
-To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](alter-user.md)**  statement with  **SYSADMIN**  specified.
+To create a system administrator, connect to the database as the initial user or a system administrator and run the  **[CREATE USER](../SQLReference/create-user.md)**  or  **[ALTER USER](../SQLReference/alter-user.md)**  statement with  **SYSADMIN**  specified.
 
 ```
 CREATE USER sysadmin WITH SYSADMIN password "xxxxxxxxx";

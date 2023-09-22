@@ -34,6 +34,12 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
   ALTER SUBSCRIPTION name ENABLE
   ```
 
+- 禁用订阅。
+
+  ```
+  ALTER SUBSCRIPTION name DISABLE
+  ```
+
 - 更新CREATE SUBSCRIPTION中定义的属性。
 
   ```
@@ -62,17 +68,28 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
 
     该子句修改最初由CREATE SUBSCRIPTION设置的连接属性。
 
-- **ENABLE \(boolean\)**
+- **ENABLE**
 
-    指定订阅是否应该主动复制，或者是否应该只是设置，但尚未启动。默认值是true。
+    启用先前禁用的订阅，在事务结束时启动逻辑复制工作。
+
+- **DISABLE**
+
+    禁用正在运行的订阅，在事务结束时停止逻辑复制工作。
 
 - **SET \( subscription\_parameter \[= value\] \[, ... \] \)**
 
   该子句修改原先由CREATE SUBSCRIPTION设置的参数。允许的选项是slot\_name和synchronous\_commit。
 
   -   如果创建订阅时设置enabled为false，则slot\_name将被强制设置为NONE，即空值，即使用户指定了slot\_name的值，复制槽也不存在。
-  -   将enabled参数的值由false改为true，即启用订阅时，将会连接发布端创建复制槽，此时如果用户未指定slot\_name参数的值，则会使用默认值，即对应的订阅的名称。
+  -   将enabled参数的值由false改为true，如果是第一次启用订阅，将会连接发布端创建复制槽，此时如果用户未指定slot\_name参数的值，则会使用默认值，即对应的订阅的名称。
+  -   将enabled参数的值由true改为false，将会禁用订阅，暂停数据同步。
   -   当enabled为true，即订阅处于正常使用状态，不能修改slot\_name为空，但可以修改复制槽的名称为其他非空合法名称。
+
+  除了修改原先由CREATE SUBSCRIPTION设置的参数外，还允许设置skiplsn，说明如下。
+
+    -   **skiplsn \(string\)**
+
+        如果设置了skiplsn，则后续commit_lsn为该lsn的事务将会被跳过。
 
 - **REFRESH PUBLICATION**
 

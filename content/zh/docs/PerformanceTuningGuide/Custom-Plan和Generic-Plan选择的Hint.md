@@ -1,4 +1,4 @@
-# Custom Plan和Generic Plan选择的Hint<a name="ZH-CN_TOPIC_0000001096560522"></a>
+# Custom Plan和Generic Plan选择的Hint
 
 ## 功能描述<a name="section290819468377"></a>
 
@@ -19,7 +19,7 @@
     ```
 
 
->![](public_sys-resources/icon-note.gif) **说明：**
+>![](public_sys-resources/icon-note.png) **说明：**
 > 
 >-   对于非PBE方式执行的SQL语句，设置本hint不会影响执行方式。
 >-   本Hint的优先级仅高于基于代价的选择和plan\_cache\_mode参数，即plan\_cache\_mode无法强制选择执行方式的语句本hint也无法生效。

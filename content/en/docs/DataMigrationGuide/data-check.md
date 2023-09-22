@@ -18,18 +18,18 @@ The debezium service listens to the incremental data of the source MySQL databas
 
 - Server hardware specification:
 
-  - Memory：大于512GB.
+  - Memory: Greater than 512GB.
   - CPU: Kunpeng-920 2600MHZ 128 cores
   - Free Disk: 4 NVME hard disks, each with a capacity greater than 1TB.
   - Network card: Hi1822 gigabit network card, optical fiber interconnection.
 
 - Operating system requirements: openEuler-20.03-LTS (aarch64 architecture)
 
-- JDK ： JDK11+
+- JDK: JDK11+
 
-- MYSQL：Version 5.7+required
+- MYSQL: Version 5.7+required
 
-- openGauss：openGauss3.0.0+
+- openGauss: openGauss3.0.0+
 
   ```
   query openGauss synchronize_seqscans parameter, and set synchronize_seqscans off

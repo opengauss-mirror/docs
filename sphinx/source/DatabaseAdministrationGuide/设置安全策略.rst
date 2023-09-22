@@ -1,0 +1,8 @@
+设置安全策略
+============
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseAdministrationGuide/设置帐户安全策略
+    ../content/zh/docs/DatabaseAdministrationGuide/设置帐号有效期
+    ../content/zh/docs/DatabaseAdministrationGuide/设置密码安全策略

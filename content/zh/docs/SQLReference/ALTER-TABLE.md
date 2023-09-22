@@ -1,4 +1,4 @@
-# ALTER TABLE<a name="ZH-CN_TOPIC_0289899912"></a>
+# ALTER TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
 
@@ -139,7 +139,7 @@
 >
 >- **ENABLE REPLICA TRIGGER trigger\_name**
 >
->  触发器触发机制受配置变量[session\_replication\_role](../DataBaseReference/语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
+>  触发器触发机制受配置变量[session\_replication\_role](../DatabaseReference/语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，当复制角色为“origin”（默认值）或“local”时，将触发简单启用的触发器。
 >  配置为ENABLE REPLICA的触发器仅在会话处于“replica”模式时触发。
 >
 >- **ENABLE ALWAYS TRIGGER trigger\_name**
@@ -147,7 +147,7 @@
 >
 >- **DISABLE/ENABLE \[ REPLICA | ALWAYS \] RULE**
 >
->  配置属于表的重写规则，已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](../DataBaseReference/语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
+>  配置属于表的重写规则，已禁用的规则对系统来说仍然是可见的，只是在查询重写期间不被应用。语义为关闭/启动规则。由于关系到视图的实现，ON SELECT规则不可禁用。 配置为ENABLE REPLICA的规则将会仅在会话为"replica" 模式时启动，而配置为ENABLE ALWAYS的触发器将总是会启动，不考虑当前复制模式。规则触发机制也受配置变量[session\_replication\_role](../DatabaseReference/语句行为.md#zh-cn_topic_0237124732_zh-cn_topic_0059779117_sffbd1c48d86b4c3fa3287167a7810216)的影响，类似于上述触发器。
 >
 >- **DISABLE/ENABLE ROW LEVEL SECURITY**
 >
@@ -215,6 +215,7 @@
 
 ```
 ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
+| ADD column_name data_type [ compress_mode ] [, ...]
 | MODIFY column_name data_type
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
@@ -242,42 +243,62 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >
 >   向表中增加多列。
 >
-> + **MODIFY \( \{ column\_name data\_type | column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] | column\_name \[ CONSTRAINT constraint\_name \] NULL \} \[, ...\] \)**
+> + **MODIFY \( \{ column\_name data\_type \} \[, ...\] \)**
 >
 >   修改表已存在字段的数据类型。
 >
+> + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] \[, ...\]**
+> + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NULL \[, ...\]**
+>
+>   修改表已存在字段的约束，ENABLE启用约束。
+>
 > + **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+> 
 >   修改表已存在字段的定义，将用新定义替换字段原定义，原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束等）不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段定义的同时修改字段在表中的位置。
+> 
 >   此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表，不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则。
+> 
 >   被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+> 
 >   被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+> 
 >   被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段完毕后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+> 
 >   修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
+> 
 >   此子句与上一子句中“MODIFY column\_name data\_type”部分语法相同，语义功能不同，当GUC参数b\_format\_behavior\_compat\_options含有'enable\_modify\_column'选项时，将按照此子句功能处理。
 >
 > + **CHANGE \[ COLUMN \] old\_column\_name new\_column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+> 
 >   修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。
+> 
 >   此语法只能在参数sql\_compatibility='B'时使用。不支持列存表，不支持外表。不支持修改加密字段，不支持修改分区键字段的数据类型和排序规则，不支持修改规则引用的字段的数据类型和排序规则，不支持修改物化视图引用的字段的数据类型和排序规则
+> 
 >   被修改数据类型或排序规则的字段如果被一个生成列引用，这个生成列的数据将会重新生成。
+> 
 >   被修改字段若被一些对象依赖（比如：索引、独立对象约束、视图、触发器、行级访问控制策略等），修改字段过程中将会重建这些对象。若被修改后字段定义违反此类对象的约束，修改操作会失败，比如：修改作为视图结果列的字段的数据类型。请修改字段前评估这类影响。
+> 
 >   被修改字段若被一些对象调用（比如：自定义函数、存储过程等），修改字段不会处理这些对象。修改字段名称后，这些对象有可能出现不可用的情况，请修改字段前评估这类影响。
+> 
 >   修改字段的字符集或字符序会将字段中的数据转换为新的字符集进行编码。
 >
 > + **DROP \[ COLUMN \] \[ IF EXISTS \] column\_name \[ RESTRICT | CASCADE \]**
 >
 >   从表中删除一个字段，和这个字段相关的索引和表约束也会被自动删除。如果任何表之外的对象依赖于这个字段，必须声明CASCADE ，比如视图。
+> 
 >   DROP COLUMN命令并不是物理上把字段删除，而只是简单地把它标记为对SQL操作不可见。随后对该表的插入和更新将在该字段存储一个NULL。因此，删除一个字段是很快的，但是它不会立即释放表在磁盘上的空间，因为被删除了的字段占据的空间还没有回收。这些空间将在执行VACUUM时而得到回收。
 >
 > + **ALTER \[ COLUMN \] column\_name \[ SET DATA \] TYPE data\_type \[ COLLATE collation \] \[ USING expression \]**
 >
 >   改变表字段的数据类型。该字段涉及的索引和简单的表约束将被自动地转换为使用新的字段类型，方法是重新分析最初提供的表达式。
->    ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
+> 
+>   ALTER TYPE要求重写整个表的特性有时候是一个优点，因为重写的过程消除了表中没用的空间。比如，要想立刻回收被一个已经删除的字段占据的空间，最快的方法是
 >
->  ```
->  ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
->  ```
+>    ```
+>    ALTER TABLE table ALTER COLUMN anycol TYPE anytype;
+>    ```
 >
->  这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
+>   这里的anycol是任何在表中还存在的字段，而anytype是和该字段的原类型一样的类型。这样的结果是在表上没有任何可见的语意的变化，但是这个命令强制重写，这样就删除了不再使用的数据。
 >
 > - **ALTER \[ COLUMN \] column\_name \{ SET DEFAULT expression | DROP DEFAULT \}**
 >
@@ -299,6 +320,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >   **ALTER \[ COLUMN \] column\_name RESET \( attribute\_option \[, ... \] \)**
 >
 >    设置/重置属性选项。
+> 
 >    目前，属性选项只定义了n\_distinct和n\_distinct\_inherited。n\_distinct影响表本身的统计值，而n\_distinct\_inherited影响表及其继承子表的统计。目前，只支持SET/RESET n\_distinct参数，禁止SET/RESET n\_distinct\_inherited参数。
 >
 > - **ALTER \[ COLUMN \] column\_name SET STORAGE \{ PLAIN | EXTERNAL | EXTENDED | MAIN \}**
@@ -388,7 +410,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
         SET SCHEMA new_schema;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   这种形式把表移动到另外一个模式。相关的索引、约束都跟着移动。目前序列不支持改变schema。 若该表拥有序列，需要将序列删除，重建，或者取消拥有关系， 才能将表schema更改成功。
     >
@@ -445,7 +467,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
     -   在DROP CONSTRAINT操作中表示要删除的现有约束的名称。
     -   在ADD CONSTRAINT操作中表示新增的约束名称。
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >
         >对于新增约束，在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
@@ -454,7 +476,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     索引名称。
         
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >在ADD CONSTRAINT操作中：
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
@@ -467,7 +489,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
@@ -477,7 +499,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >在ADD CONSTRAINT中，ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -485,7 +507,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 -   **storage\_parameter**
@@ -539,7 +561,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   对于B模式数据库下（即sql\_compatibility = 'B'）还支持utf8mb4\_bin、utf8mb4\_general\_ci、utf8mb4\_unicode\_ci、binary字符序，部分说明见表字段的字符集说明（参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](CREATE-TABLE.md#table8163190152)）。
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
 
   >-   仅字符类型支持指定字符集，指定为binary字符集或字符序实际是将字符类型转化为对应的二进制类型，若类型映射不存在则报错。当前仅有TEXT类型转化为BLOB的映射。
   >-   除binary字符集和字符序外，当前仅支持指定与数据库编码相同的字符集。
@@ -550,7 +572,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     USING子句声明如何从旧的字段值里计算新的字段值；如果省略，缺省从旧类型向新类型的赋值转换。如果从旧数据类型到新类型没有隐含或者赋值的转换，则必须提供一个USING子句。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >ALTER TYPE的USING选项实际上可以声明涉及该行旧值的任何表达式，即它可以引用除了正在被转换的字段之外其他的字段。这样，就可以用ALTER TYPE语法做非常普遍性的转换。因为这个灵活性，USING表达式并没有作用于该字段的缺省值（如果有的话），结果可能不是缺省表达式要求的常量表达式。这就意味着如果从旧类型到新类型没有隐含或者赋值转换的话，即使存在USING子句，ALTER TYPE也可能无法把缺省值转换成新的类型。在这种情况下，应该用DROP DEFAULT先删除缺省，执行ALTER TYPE，然后使用SET DEFAULT增加一个合适的新缺省值。类似的考虑也适用于涉及该字段的索引和约束。
 
@@ -595,7 +617,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-  > ![](public_sys-resources/icon-note.gif) **说明：** 
+  > ![](public_sys-resources/icon-note.png) **说明：** 
   >
   > -   STORED关键字可省略，与不省略STORED语义相同。
   > -   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
@@ -653,7 +675,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   - INITIALLY DEFERRED：只有在事务结尾才检查它。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 -   **PARTIAL CLUSTER KEY**
@@ -663,6 +685,14 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 -   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
     为表或索引指定一个可选的存储参数。
+    > ![](public_sys-resources/icon-note.png) **说明：** 
+    >
+    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
+    > -   修改行存压缩参数时，修改后的行存压缩参数需要满足建表时各行存压缩参数的数据范围和参数间的约束。
+    > -   分区表不支持修改分区级别的行存压缩参数，只能修改整个表的行存压缩属性，修改对所有分区生效。
+    > -   修改行存压缩参数时会重写整个表，期间对表加八级锁。
+    > -   修改行存压缩参数时会重建表， 如果表的数据库较大，该过程可能花费较长时间
+    > -   重建表期间openGauss会先生成新的数据文件，再删除旧的数据文件，需要事先保证有足够的空闲物理空间。
 
 -   **tablespace\_name**
 
@@ -704,7 +734,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   新增列或修改列到column\_name之后。
 
-  > ![](public_sys-resources/icon-note.gif) **说明：** 
+  > ![](public_sys-resources/icon-note.png) **说明：** 
   >
   > -   列存表不支持FIRST | AFTER column\_name。
   > -   仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
@@ -729,7 +759,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   仅在sql\_compatibility='B'时支持该语法。修改表的默认字符序，单独指定时会将表的默认字符集设置为指定的字符序对应的字符集。字符序参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](CREATE-TABLE.md#table8163190152)。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >未显式指定表的字符集或字符序时，若指定了模式的默认字符集或字符序，表字符集和字符序将从模式上继承。若模式的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，表的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
 
 

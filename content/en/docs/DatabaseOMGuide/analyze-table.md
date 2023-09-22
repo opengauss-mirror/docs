@@ -4,7 +4,7 @@ The execution plan generator needs to use table statistics to generate the most 
 
 ## ANALYZE Table<a name="en-us_topic_0237121146_en-us_topic_0165786590_section147211861618"></a>
 
-**ANALYZE**  supports row-store and column-store tables.  **ANALYZE**  can also collect statistics about specified columns of a local table. For details on  **ANALYZE**, see  [ANALYZE | ANALYSE](analyze-analyse.md).
+**ANALYZE**  supports row-store and column-store tables.  **ANALYZE**  can also collect statistics about specified columns of a local table. For details on  **ANALYZE**, see  [ANALYZE | ANALYSE](../SQLReference/analyze-analyse.md).
 
 Update table statistics.
 
@@ -21,7 +21,7 @@ ANALYZE
 
 ## autoanalyze<a name="en-us_topic_0237121146_en-us_topic_0165786590_section1274813345166"></a>
 
-openGauss provides the GUC parameter  [autovacuum](automatic-vacuuming.md#en-us_topic_0237124730_en-us_topic_0059778244_s995913ca9df54ae5bb488d1e810bd824)  to specify whether to enable the autovacuum function of the database.
+openGauss provides the GUC parameter  [autovacuum](../DatabaseReference/automatic-vacuuming.md#en-us_topic_0237124730_en-us_topic_0059778244_s995913ca9df54ae5bb488d1e810bd824)  to specify whether to enable the autovacuum function of the database.
 
 If  **autovacuum**  is set to  **on**, the system will start the autovacuum thread to automatically analyze tables when the data volume in the table reaches the threshold. This is the autoanalyze function.
 
@@ -30,8 +30,8 @@ If  **autovacuum**  is set to  **on**, the system will start the autovacuum thre
 
 The autovacuum function also depends on the following two GUC parameters in addition to  **autovacuum**:
 
--   [track\_counts](query-and-index-statistics-collector.md#en-us_topic_0237124727_en-us_topic_0059779313_s3f4fb0b1004041f69e1454c701952411): This parameter must be set to  **on**  to enable statistics collection about the database.
--   [autovacuum\_max\_workers](automatic-vacuuming.md#en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673): This parameter must be set to a value greater than  **0**  to specify the maximum number of concurrent autovacuum threads.
+-   [track\_counts](../DatabaseReference/query-and-index-statistics-collector.md#en-us_topic_0237124727_en-us_topic_0059779313_s3f4fb0b1004041f69e1454c701952411): This parameter must be set to  **on**  to enable statistics collection about the database.
+-   [autovacuum\_max\_workers](../DatabaseReference/automatic-vacuuming.md#en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673): This parameter must be set to a value greater than  **0**  to specify the maximum number of concurrent autovacuum threads.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
 >-   The autoanalyze function supports the default sampling mode but not percentage sampling.  

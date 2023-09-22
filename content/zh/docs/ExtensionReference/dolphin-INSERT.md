@@ -1,4 +1,4 @@
-# INSERT<a name="ZH-CN_TOPIC_0289900448"></a>
+# INSERT
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
@@ -33,11 +33,11 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
   若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
 
-    -   sql_ignore_startegy为ignore_null时，忽略违反非空约束的行的INSERT操作，并继续执行剩余数据操作。
+    -   sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的INSERT操作，并继续执行剩余数据操作。
 
-    -   sql_ignore_startegy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
+    -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     >
     >GUC参数sql_ignore_strategy为枚举类型，可选值有：ignore_null, overwrite_null
 

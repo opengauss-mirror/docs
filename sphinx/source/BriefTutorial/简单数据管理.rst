@@ -1,4 +1,5 @@
-
+简单数据管理
+============
 .. toctree::
 
     ../content/zh/docs/BriefTutorial/创建数据库

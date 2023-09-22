@@ -127,7 +127,7 @@ After resource load management is enabled, the system automatically creates  **d
 
 ## Prerequisites<a name="section17352165513395"></a>
 
-You are familiar with the  [CREATE RESOURCE POOL](../SQLReference/create-resource-pool.md),  [ALTER RESOURCE POOL](alter-resource-pool.md), and  [DROP RESOURCE POOL](drop-resource-pool.md)syntax.
+You are familiar with the  [CREATE RESOURCE POOL](../SQLReference/create-resource-pool.md),  [ALTER RESOURCE POOL](../SQLReference/alter-resource-pool.md), and  [DROP RESOURCE POOL](../SQLReference/drop-resource-pool.md)syntax.
 
 ## **Procedure** <a name="en-us_topic_0066854608_section16606579202019"></a>
 

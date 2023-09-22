@@ -1,4 +1,4 @@
-# CREATE VIEW<a name="ZH-CN_TOPIC_0289900307"></a>
+# CREATE VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sc0d0ea7296f7418d8e0b1a8878cf72ba"></a>
 
@@ -12,13 +12,13 @@
 ## 语法格式<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
+CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
     [ WITH ( {view_option_name [= view_option_value]} [, ... ] ) ]
     AS query
     [ WITH [ CASCADED | LOCAL ] CHECK OPTION ];
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >-   创建视图时使用WITH\(security\_barrier\)可以创建一个相对安全的视图，避免攻击者利用低成本函数的RAISE语句打印出隐藏的基表数据。
 >-   当视图创建后，不允许使用REPLACE修改本视图当中的列名，也不允许删除列。
 
@@ -30,7 +30,14 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
 - **DEFINER = user**
 
-  指定user作为视图的属主。该选项尽在B兼容模式下使用。
+  指定user作为视图的属主。该选项仅在B兼容模式下使用。
+
+- **SQL SECURITY { DEFINER | INVOKER }**
+
+  指定视图调用时检查访问权限时要使用的鉴权用户。该选项仅在B兼容模式下使用。
+  - DEFINER: 默认值,表示使用视图的DEFINER权限对视图内部定义的关系鉴权。
+  - INVOKER: 表示使用视图当前的调用者的权限对视图内部定义的关系鉴权。
+  security_option 具有传递性，外层视图的security_option会影响内层视图对当前INVOKER的判断。
 
 -   **TEMP | TEMPORARY**
 
@@ -80,7 +87,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
         检查该视图和所有底层视图定义的条件。如果仅声明了CHECK OPTION，没有声明LOCAL和CASCADED，默认是CASCADED。
     
-    >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >![](public_sys-resources/icon-caution.png) **注意：** 
     >1. 只有在可自动更新、没有INSTEAD OF触发器或者INSTEAD规则的视图上才支持CHECK OPTION。如果一个自动更新的视图被定义在一个具有INSTEAD OF触发器的视图上，那么CHECK OPTION可以被用来检查该自动更新视图上的条件，但具有INSTEAD OF触发器的视图上的条件不会被检查。如果该视图或者任何底层关系具有导致INSERT或UPDATE命令被重写的INSTEAD规则，那么在被重写的查询中将忽略所有检查选项，包括任何来自定义在有STEAD规则关系上的可自动更新视图的检查。
     >2. 基于MySQL外表的视图不支持CHECK OPTION选项。
 
@@ -131,10 +138,16 @@ openGauss=# DELETE FROM ro_view1 WHERE a= 2;
 --创建check option视图
 openGauss=# CREATE VIEW ro_view2 AS SELECT a, b FROM base_tbl WHERE a > 10 WITH CHECK OPTION;
 
+--往基表插入视图不可见的数据
+openGauss=# INSERT INTO base_tbl values (15, 'insertTable');
+
 --插入、更新视图不可见数据失败
 openGauss=# INSERT INTO ro_view2 values (5, 'insertView');
-openGauss=# INSERT INTO base_tbl values (15, 'insertTable');
 openGauss=# UPDATE ro_view2 SET a = 5 WHERE a = 15;
+
+--创建视图指定security_option
+openGauss=# create or replace definer=use_a_1144425 view v1 as select * from sql_security_1144425;
+openGauss=# create sql security invoker view v2 as select * from sql_security_1144425;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>

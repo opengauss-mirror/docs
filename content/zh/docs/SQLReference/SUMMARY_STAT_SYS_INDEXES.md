@@ -1,4 +1,4 @@
-# SUMMARY\_STAT\_SYS\_INDEXES<a name="ZH-CN_TOPIC_0245374690"></a>
+# SUMMARY\_STAT\_SYS\_INDEXES
 
 openGauss内汇聚pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。
 

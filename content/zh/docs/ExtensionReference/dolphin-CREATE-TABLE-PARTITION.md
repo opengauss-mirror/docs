@@ -1,4 +1,4 @@
-# CREATE TABLE PARTITION<a name="ZH-CN_TOPIC_0289900346"></a>
+# CREATE TABLE PARTITION
 
 ## 功能描述<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_section1163224811518"></a>
 
@@ -125,7 +125,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   
 - 其中`col_name ( length )`为前缀键，column_name为前缀键的字段名，length为前缀长度。前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
   
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-  前缀键支持的索引方法：btree、ubtree。
     >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
     >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
@@ -244,7 +244,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   COLUMN：表的数据将以列式存储。
         -   ROW（缺省值）：表的数据将以行式存储。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >![](public_sys-resources/icon-notice.png) **须知：** 
             >orientation不支持修改。
         
     -    STORAGE\_TYPE
@@ -302,21 +302,21 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   （1）对于从句是VALUES LESS THAN的语法格式：
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >对于从句是VALUE LESS THAN的语法格式，范围分区策略的分区键最多支持4列。
 
   该情形下，分区键支持的数据类型为：TINYINT[UNSIGNED]、SMALLINT[UNSIGNED]、INTEGER[UNSIGNED]、BIGINT[UNSIGNED]、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、CHARACTER VARYING\(n\)、VARCHAR\(n\)、CHARACTER\(n\)、CHAR\(n\)、CHARACTER、CHAR、TEXT、NVARCHAR、NVARCHAR2、NAME、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
   （2）对于从句是START END的语法格式：
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >对于从句是START END的语法格式，范围分区策略的分区键仅支持1列。
 
   该情形下，分区键支持的数据类型为：TINYINT[UNSIGNED]、SMALLINT[UNSIGNED]、INTEGER[UNSIGNED]、BIGINT[UNSIGNED]、DECIMAL、NUMERIC、REAL、DOUBLE PRECISION、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
 
   （3）对于指定了INTERVAL子句的语法格式：
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >对于指定了INTERVAL子句的语法格式，范围分区策略的分区键仅支持1列。
 
   该情形下，分区键支持的数据类型为：TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。
@@ -325,7 +325,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   指定各分区的信息。partition\_name为范围分区的名称。partition\_value为范围分区的上边界，取值依赖于partition\_key的类型。MAXVALUE表示分区的上边界，它通常用于设置最后一个范围分区的上边界。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   每个分区都需要指定一个上边界。
   >-   分区上边界的类型应当和分区键的类型一致。
@@ -343,7 +343,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   interval\_value：对\[START，END\) 表示的范围进行切分，interval\_value是指定切分后每个分区的宽度，不可是MAXVALUE；如果（END-START）值不能整除以EVERY值，则仅最后一个分区的宽度小于EVERY值。
   -   MAXVALUE：表示最大值，它通常用于设置最后一个范围分区的上边界。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >1.  在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
   >2.  START END语法需要遵循以下限制：
   >    -   每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
@@ -364,14 +364,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
   -   STORE IN \(tablespace\_name \[, ... \] \)：指定存放自动创建分区的表空间列表，如果有指定，则自动创建的分区从表空间列表中循环选择使用，否则使用分区表默认的表空间。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >列存表不支持间隔分区。
 
 - **PARTITION BY LIST\(partition\_key\)**
 
   创建列表分区。partition\_key为分区键的名称。
 
-  -   对于partition\_key，列表分区策略的分区键仅支持1列。
+  -   对于partition\_key，列表分区策略的分区键最大支持16列。
   -   对于从句是VALUES \(list\_values\_clause\)的语法格式，list\_values\_clause中包含了对应分区存在的键值，推荐每个分区的键值数量不超过64个。
 
   分区键支持的数据类型为：INT1[UNSIGNED]、INT2[UNSIGNED]、INT4[UNSIGNED]、INT8[UNSIGNED]、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过 1048575 个。
@@ -395,7 +395,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   -   ENABLE（缺省值）：行迁移开关打开。
   -   DISABLE：行迁移开关关闭。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >列表/哈希分区表暂不支持ROW MOVEMENT。
 
 
@@ -429,7 +429,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
     >
     >-   不能为生成列指定默认值。

@@ -1,0 +1,9 @@
+资源负载管理
+============
+
+.. toctree::
+
+    ../content/zh/docs/PerformanceTuningGuide/资源负载管理概述
+    资源管理准备
+
+

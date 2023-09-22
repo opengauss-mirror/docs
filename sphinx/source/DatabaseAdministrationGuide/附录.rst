@@ -1,0 +1,7 @@
+附录
+====
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseAdministrationGuide/参考文献
+    ../content/zh/docs/DatabaseAdministrationGuide/术语表

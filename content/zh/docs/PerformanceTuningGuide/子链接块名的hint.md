@@ -1,4 +1,4 @@
-# 子链接块名的hint<a name="ZH-CN_TOPIC_0245374573"></a>
+# 子链接块名的hint
 
 ## 功能描述<a name="zh-cn_topic_0237121538_section290819468377"></a>
 
@@ -14,7 +14,7 @@ blockname (table)
 
 -   **table**表示为该子链接块hint的别名的名称。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >
 >-   **blockname hint**仅在对应的子链接块没有提升时才会被上层查询使用。目前支持的子链接提升包括IN子链接提升、EXISTS子链接提升和包含Agg等值相关子链接提升。该hint通常会和前面章节提到的hint联合使用。  
 >-   对于FROM关键字后的子查询，则需要使用子查询的别名进行hint，blockname hint不会被用到。  

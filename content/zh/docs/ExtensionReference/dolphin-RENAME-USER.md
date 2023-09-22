@@ -1,4 +1,4 @@
-# RENAME USER<a name="ZH-CN_TOPIC_0289900931"></a>
+# RENAME USER
 
 ## 功能描述<a name="zh-cn_topic_0283136462_zh-cn_topic_0237122152_zh-cn_topic_0059778107_s74e2e8764aa64af1b093f8f68069bce6"></a>
 

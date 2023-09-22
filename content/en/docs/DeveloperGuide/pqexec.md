@@ -47,5 +47,5 @@ The PQresultStatus function should be called to check the return value for any e
 
 ## Example<a name="en-us_topic_0241735619_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
-For details, see  [Example](example-3.md).
+For details, see  [Example](example-libpq.md).
 

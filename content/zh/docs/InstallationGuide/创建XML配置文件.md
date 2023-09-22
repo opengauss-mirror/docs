@@ -1,4 +1,4 @@
-# 创建XML配置文件<a name="ZH-CN_TOPIC_0270171699"></a>
+# 创建XML配置文件
 
 安装openGauss前需要创建cluster\_config.xml文件。cluster\_config.xml文件包含部署openGauss的服务器信息、安装路径、IP地址以及端口号等。用于告知openGauss如何部署。用户需根据不同场景配置对应的XML文件。
 
@@ -6,11 +6,19 @@
 
 <!-- TOC -->
 
-- [配置数据库名称及各项目录](#配置数据库名称及各项目录)
-- [配置Host基本信息](#配置host基本信息)
-- [配置数据库主节点信息](#配置数据库主节点信息)
-- [配置CM_SERVER（主、非主）信息](#配置数据库主节点信息)
-- [示例](#示例)
+- [创建XML配置文件](#创建xml配置文件)
+  - [配置数据库名称及各项目录](#配置数据库名称及各项目录)
+  - [配置Host基本信息](#配置host基本信息)
+  - [配置数据库主节点信息](#配置数据库主节点信息)
+  - [配置CM\_SERVER（主、非主）信息](#配置cm_server主非主信息)
+  - [示例](#示例)
+    - [单节点配置文件](#单节点配置文件)
+    - [一主一备配置文件](#一主一备配置文件)
+    - [一主一备一级联配置文件](#一主一备一级联配置文件)
+    - [一主二备配置文件](#一主二备配置文件)
+    - [一主三备配置文件](#一主三备配置文件)
+    - [一主四备配置文件](#一主四备配置文件)
+    - [一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）](#一主四备配置文件支持自定义利用firstany设置同步备机)
 
 <!-- /TOC -->
 
@@ -62,11 +70,16 @@
     <PARAM name="ss_interconnect_type" value="TCP"/>
     <!-- rdma绑定cpu序列  -->
     <PARAM name="ss_rdma_work_config" value="1 7"/>
+
+    <!-- VIP信息  -->
+    <PARAM name="floatIp1" value="10.10.10.100"/>
+    <PARAM name="floatIp2" value="20.20.20.100"/>
+    <PARAM name="floatIp3" value="30.30.30.100"/>
   
   </CLUSTER>
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   “/opt/huawei/install/om”存放互信等工具，为了避免权限问题，不要把实例数据目录放在此目录下。
 >-   安装目录和数据目录需为空或者不存在，否则可能导致安装失败。
@@ -88,7 +101,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="19" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
+<tbody><tr id="zh-cn_topic_0283136466_row2076785215584"><td class="cellrowborder" rowspan="20" valign="top" width="10.87108710871087%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p36371799101039"></a>整体信息</p>
 <p id="p8418171218599"><a name="p8418171218599"></a><a name="p8418171218599"></a></p>
 <p id="p090514610594"><a name="p090514610594"></a><a name="p090514610594"></a></p>
 <p id="p1982221273714"><a name="p1982221273714"></a><a name="p1982221273714"></a></p>
@@ -203,6 +216,11 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p1936335316521"><a name="p1936335316521"></a><a name="p1936335316521"></a><span id="ph1859724119315"><a name="ph1859724119315"></a><a name="ph1859724119315"></a>rdma用户态poll占用起止cpu</span><span id="ph17210345531"><a name="ph17210345531"></a><a name="ph17210345531"></a>，</span><span id="ph209312048739"><a name="ph209312048739"></a><a name="ph209312048739"></a>ss_interconnect_type</span><span id="ph88565498320"><a name="ph88565498320"></a><a name="ph88565498320"></a>为RDMA时有效，形如</span><span id="ph28400511657"><a name="ph28400511657"></a><a name="ph28400511657"></a>"10 15"</span><span id="ph128321249878"><a name="ph128321249878"></a><a name="ph128321249878"></a>，中间以空格分隔。</span></p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0249784567_row1999732255920"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p14456479368"><a name="zh-cn_topic_0249784567_p14456479368"></a><a name="zh-cn_topic_0249784567_p14456479368"></a>floatIp1、floatIp2、floatIp3</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a><a name="zh-cn_topic_0249784567_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p3419464101039"></a>虚拟ip。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -210,7 +228,7 @@
 
 ## 配置Host基本信息
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >每台Host服务器都必须有如下信息，如下示例以node1为例。
 >
@@ -260,7 +278,7 @@
 </tr>
 <tr id="zh-cn_topic_0249784567_row1883518127274"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p857520312368"><a name="zh-cn_topic_0249784567_p857520312368"></a><a name="zh-cn_topic_0249784567_p857520312368"></a>azPriority</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p8997131616389"><a name="zh-cn_topic_0249784567_p8997131616389"></a><a name="zh-cn_topic_0249784567_p8997131616389"></a>指定azPriority的优先级。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0249784567_p8997131616389"><a name="zh-cn_topic_0249784567_p8997131616389"></a><a name="zh-cn_topic_0249784567_p8997131616389"></a>指定azPriority的优先级，azName值不同，azPriority的值也必须不同</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0249784567_row1776745213589"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0249784567_p17976123919369"><a name="zh-cn_topic_0249784567_p17976123919369"></a><a name="zh-cn_topic_0249784567_p17976123919369"></a>backIp1</p>
@@ -276,7 +294,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >配置文件中所有IP参数（包含backIp、sshIp、listenIp等）均只支持配置一个IP。如果配置第二个IP参数，则不会读取第二个参数的配置值。
 >示例：xml配置文件中同时配置backIp1和backIp2参数：
 >在解析配置文件时仅读取backIp1参数的配置值，不会读取backIp2参数的配置值。
@@ -320,7 +338,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="8" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
+<tbody><tr id="zh-cn_topic_0283136469_row178502422283"><td class="cellrowborder" rowspan="9" valign="top" width="14.321432143214322%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p20621423101039"></a>DBnode</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.73257325732573%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p59722591101039"></a>dataNum</p>
 </td>
@@ -358,6 +376,16 @@
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，与dataNode1_syncNum参数二选一。如需配置，需要在所有的节点下同时配置。用于指定当前数据库中同步模式的备机节点方式、数量及顺序。syncNode_hostname中的hostname根据主机名自行替换。参数中指定同步备主机名存在且正确，同步备数量不能超过备选同步备主机个数。参数中FIRST与ANY不可以同时存在，ANY支持组合配置，FIRST不支持组合配置，具体见：一主四备配置文件（支持自定义利用FIRST、ANY设置同步备机）。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>dataListenIp1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，各节点监听ip，若不配置，则默认使用backIp1s的值  </p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136469_row122571559229"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_p1725855510222"><a name="zh-cn_topic_0283136469_p1725855510222"></a><a name="zh-cn_topic_0283136469_p1725855510222"></a>floatIpMap1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_p18258155510227"><a name="zh-cn_topic_0283136469_p18258155510227"></a><a name="zh-cn_topic_0283136469_p18258155510227"></a>可选参数，配置VIP时需要配置，表示floatIp与dataListenIp的对应关系，其顺序与dataListenIp1的顺序要相互对应  </p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -365,6 +393,10 @@
 
 
 ## 配置CM_SERVER（主、非主）信息
+
+CM支持两节点部署模式
+- CM集群最小节点数限制由3节点减少为2节点，带来显著的成本优势
+- 通过引入第三方网关IP，有效解决CM集群两节点部署模式下自仲裁问题，同时支持动态配置CM集群故障切换策略和数据库集群脑裂故障恢复策略，从而能够尽可能确保集群数据的完整性和一致性。
 
 **非CMS主节点配置以下信息。**
 

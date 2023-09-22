@@ -1,4 +1,4 @@
-# PG\_STATIO\_USER\_TABLES<a name="ZH-CN_TOPIC_0289899852"></a>
+# PG\_STATIO\_USER\_TABLES
 
 PG\_STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。
 

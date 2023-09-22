@@ -1,4 +1,4 @@
-# DROP USER<a name="ZH-CN_TOPIC_0289900387"></a>
+# DROP USER
 
 ## 功能描述<a name="zh-cn_topic_0283137192_zh-cn_topic_0237122158_zh-cn_topic_0059778403_sd8f7b55734434619b381d7be49aed2df"></a>
 
@@ -36,7 +36,7 @@ DROP USER [ IF EXISTS ] user_name [, ...] [ CASCADE | RESTRICT ];
     -   CASCADE：级联删除依赖用户的对象。
     -   RESTRICT：如果用户还有任何依赖的对象，则拒绝删除该用户（缺省行为）。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >
         >在openGauss中，存在一个配置参数enable\_kill\_query，此参数在配置文件postgresql.conf中。此参数影响级联删除用户对象的行为：
         >

@@ -1,4 +1,4 @@
-# GRANT<a name="ZH-CN_TOPIC_0289900312"></a>
+# GRANT
 
 ## 功能描述<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_s4bc6f47f2f9e45c18707d7219f3987ee"></a>
 
@@ -8,9 +8,12 @@
 
 -   **将系统权限授权给角色或用户**
 
-    系统权限又称为用户属性，包括SYSADMIN、CREATEDB、CREATEROLE、AUDITADMIN、MONADMIN、OPRADMIN、POLADMIN和LOGIN。
+    系统权限又称为用户属性，包括SYSADMIN、CREATEDB、CREATEROLE、AUDITADMIN、MONADMIN、OPRADMIN、POLADMIN、INHERIT、REPLICATION、VCADMIN和LOGIN等。
 
     系统权限一般通过CREATE/ALTER ROLE语法来指定。其中，SYSADMIN权限可以通过GRANT/REVOKE ALL PRIVILEGE授予或撤销。但系统权限无法通过ROLE和USER的权限被继承，也无法授予PUBLIC。
+
+    有关系统权限的详细信息，请参见[CREATE-ROLE](../SQLReference/CREATE-ROLE.md)。
+
 
 -   **将数据库对象授权给角色或用户**
 
@@ -55,7 +58,7 @@
 -   将表或视图的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
+    GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | ALTER | DROP | COMMENT | INDEX | VACUUM } [, ...] 
           | ALL [ PRIVILEGES ] }
         ON { [ TABLE ] table_name [, ...]
            | ALL TABLES IN SCHEMA schema_name [, ...] }
@@ -67,7 +70,7 @@
 -   将表中字段的访问权限赋予指定的用户或角色。
 
     ```
-    GRANT { {{ SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
+    GRANT { { { SELECT | INSERT | UPDATE | REFERENCES | COMMENT } ( column_name [, ...] )} [, ...] 
           | ALL [ PRIVILEGES ] ( column_name [, ...] ) }
         ON [ TABLE ] table_name [, ...]
         TO { [ GROUP ] role_name | PUBLIC } [, ...]
@@ -104,7 +107,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >本版本暂时不支持赋予域的访问权限。
 
 -   将客户端加密主密钥CMK的访问权限赋予指定的用户或角色。
@@ -153,7 +156,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-- 将存储过程的访问权限赋予给指定的用户或角色。
+-   将存储过程的访问权限赋予给指定的用户或角色。
 
   ```
   GRANT { { EXECUTE | ALTER | DROP | COMMENT } [, ...] | ALL [ PRIVILEGES ] }
@@ -161,8 +164,6 @@
   	TO { [ GROUP ] role_name | PUBLIC } [, ...]
   	[ WITH GRANT OPTION ];
   ```
-  
-
   
 -   将过程语言的访问权限赋予给指定的用户或角色。
 
@@ -182,7 +183,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >本版本暂时不支持大对象。
 
 -   将模式的访问权限赋予指定的用户或角色。
@@ -194,7 +195,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >将模式中的表或者视图对象授权给其他用户时，需要将表或视图所属的模式的USAGE权限同时授予该用户，若没有该权限，则只能看到这些对象的名称，并不能实际进行对象访问。 同名模式下创建表的权限无法通过此语法赋予，可以通过将角色的权限赋予其他用户或角色的语法，赋予同名模式下创建表的权限。
 
@@ -216,7 +217,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >本版本暂时不支持赋予类型的访问权限。
 
@@ -300,7 +301,11 @@ GRANT的权限分类如下所示。
 
 -   **REFERENCES**
 
-    创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+    允许创建一个外键约束，必须拥有参考表和被参考表的REFERENCES权限。
+
+-   **TRIGGER**
+
+    允许在指定的表、视图等上创建触发器。
 
 -   **CREATE**
     -   对于数据库，允许在数据库里创建新的模式。
@@ -310,6 +315,14 @@ GRANT的权限分类如下所示。
 -   **CONNECT**
 
     允许用户连接到指定的数据库。
+
+-   **TEMPORARY**
+
+    允许在指定的数据库中创建临时表。
+
+-   **TEMP**
+
+    TEMPORARY的缩略拼写。
 
 -   **EXECUTE**
 
@@ -457,7 +470,7 @@ GRANT的参数说明如下所示。
 -   如果用户有该对象上的部分权限，则GRANT命令只授予他有授权选项的权限。
 -   如果用户没有可用的授权选项，GRANT ALL PRIVILEGES形式将发出一个警告信息，其他命令形式将发出在命令中提到的且没有授权选项的相关警告信息。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >数据库系统管理员可以访问所有对象，而不会受对象的权限设置影响。这个特点类似Unix系统的root的权限。和root一样，除了必要的情况外，建议不要总是以系统管理员身份进行操作。
 
@@ -611,7 +624,7 @@ GRANT的参数说明如下所示。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >用户被授予任何一种ANY权限后，用户对public模式和用户模式具有USAGE权限，对[表1](../SQLReference/Schema.md#table167371825175015)中除public之外的系统模式没有USAGE权限。
 

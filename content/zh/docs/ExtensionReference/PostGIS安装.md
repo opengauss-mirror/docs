@@ -1,4 +1,4 @@
-# PostGIS安装<a name="ZH-CN_TOPIC_0000001201117578"></a>
+# PostGIS安装
 
 PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取。该Extension需使用GCC-7.3（GNU编译器套件）进行编译安装。
 
@@ -41,7 +41,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  以操作系统用户omm登录数据库任一主机。
 
-    2).  创建GCC安装主目录$GAUSSHOME/gcc和代码下载目录$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\$GAUSSHOME/gcc/packages目录。
+    2).  创建GCC安装主目录\\$GAUSSHOME/gcc和代码下载目录\\$GAUSSHOME/gcc/packages，并下载软件包gcc-7.3.0.tar.gz、gmp-6.1.0.tar.xz、mpc-1.0.3.tar.gz、mpfr-3.1.4.tar.gz至\\$GAUSSHOME/gcc/packages目录。
 
     ```
     mkdir $GAUSSHOME/gcc
@@ -69,18 +69,18 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     mkdir $GAUSSHOME/gcc/gcc-7.3.0/depend/gcc
     ```
 
-    5).  安装gmp-4.3.2。
+    5).  安装gmp-6.1.0。
 
     进入$GAUSSHOME/gcc/packages/gmp-6.1.0目录，执行下列命令完成gmp安装操作:
 
     ```
     cd $GAUSSHOME/gcc/packages/gmp-6.1.0
-    ./configure --prefix $GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-4.3.2
+    ./configure --prefix $GAUSSHOME/gcc/gcc-7.3.0/depend/gmp-6.1.0
     make -sj
     make install -sj
     ```
 
-    6).  安装mpfr-2.4.2。
+    6).  安装mpfr-3.1.4。
 
     进入$GAUSSHOME/gcc/packages/mpfr-3.1.4目录，执行以下命令完成mpfr安装操作:
 
@@ -169,14 +169,14 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     1).  从网站[https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz)获取PostGIS源码至$GAUSSHOME目录，下载压缩包，解压后需将文件夹重命名为postgis-xc。
 
-    2).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch 下载补丁文件到$GAUSSHOME目录，并打入补丁。
+    2).  从网站[https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/postgis_2.4.2-2.patch](https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/postgis_2.4.2-2.patch)下载补丁文件到$GAUSSHOME目录，并打入补丁。
 
     ```
     cd $GAUSSHOME/postgis-xc/
     patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
-    3).  从网站https://gitee.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/Extension\_dependency.h 下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
+    3).  从网站[https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/extension_dependency.h](https://gitee.com/opengauss/openGauss-third_party/blob/master/gpl_dependency/postgis/extension_dependency.h)下载postgis依赖头文件到$GAUSSHOME/include/postgresql/server/。
 
     4).  分别编译Geos、Proj、JSON-C、Libxml2、PostGIS并生成相关动态链接库。编译命令为：
 
@@ -257,13 +257,33 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ddes/dms/ss_dms_recovery.h
         ddes/dms/ss_common_attr.h
         ddes/dms/ss_init.h
-        storage/dss/dss_api_def.h）七个头文件的名称
-        这些头文件在server仓库、src目录下，将其复制到编译安装好的数据库dest/include目录下，目录层级需要一一对应
+        storage/dss/dss_api_def.h）等头文件的名称
+        这些头文件在openGauss-server仓库的src/include目录下，将其复制到\\$GAUSSHOME/include/postgresql/server下即可，但要注意目录层级必须与src/include目录保持一致，比如缺少的头文件是storage/file/fio_device.h，那需要创建的文件就是\\$GAUSSHOME/include/postgresql/server/storage/file/fio_device.h。
+        当然，有一个更加直接简单的方法，即执行下面的命令(\$CODE_BASE为openGauss-server的源代码目录)
+        ```
+        mkdir -p $GAUSSHOME/include/postgresql/server/storage/file/
+        mkdir -p $GAUSSHOME/include/postgresql/server/storage/dss/
+        mkdir -p $GAUSSHOME/include/postgresql/server/ddes/dms/
+        cp -r $CODE_BASE/src/include/storage/file/* $GAUSSHOME/include/postgresql/server/storage/file/
+        cp -r $CODE_BASE/src/include/storage/dss/* $GAUSSHOME/include/postgresql/server/storage/dss/
+        cp -r $CODE_BASE/src/include/ddes/dms/* $GAUSSHOME/include/postgresql/server/ddes/dms/
+        ```
+        这样就能一下子把所有缺失的头文件都补全进去。
 
     5).  omm用户执行下面的语句，完成PostGIS相关动态链接库在数据库实例节点中的分发。
 
     ```
-    mv $GAUSSHOME/lib/postgresql/postgis-2.4.so $GAUSSHOME/install/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis-2.4.so $GAUSSHOME/lib/postgresql/postgis-2.4.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/json/lib/libjson-c.so.2 $GAUSSHOME/lib/libjson-c.so.2 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/Extension/postgis--2.4.2.sql python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/Extension/postgis.control python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
+    mv $GAUSSHOME/lib/postgresql/postgis-2.4.so $GAUSSHOME/install/postgis-2.4.so
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis-2.4.so $GAUSSHOME/lib/postgresql/postgis-2.4.so
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/json/lib/libjson-c.so.2 $GAUSSHOME/lib/libjson-c.so.2
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis--2.4.2.sql
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/extension/postgis.control
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
     ```
 
     动态链接库分发脚本执行完毕后，可执行下列命令删除$GAUSSHOME/postgis安装目录。
@@ -272,7 +292,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     rm -rf $GAUSSHOME/postgis-xc
     ```
 
-    若用户不想保留GCC5.4编译器，可删除GCC5.4安装目录并在\~/.bashrc文件中删除安装GCC5.4时添加的环境配置信息。
+    若用户不想保留GCC7.3.0编译器，可删除GCC7.3.0安装目录并在\~/.bashrc文件中删除安装GCC7.3.0时添加的环境配置信息。
 
     ```
     rm -rf $GAUSSHOME/gcc

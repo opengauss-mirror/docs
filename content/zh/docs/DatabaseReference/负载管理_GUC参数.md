@@ -1,4 +1,4 @@
-# 负载管理<a name="ZH-CN_TOPIC_0289900033"></a>
+# 负载管理
 
 未对数据库资源做控制时，容易出现并发任务抢占资源导致操作系统过载甚至最终崩溃。操作系统过载时，其响应用户任务的速度会变慢甚至无响应；操作系统崩溃时，整个系统将无法对用户提供任何服务。openGauss的负载管理功能能够基于可用资源的多少均衡数据库的负载，以避免数据库系统过载。
 
@@ -13,7 +13,7 @@
 -   on表示打开资源管理。
 -   off表示关闭资源管理。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
 
     >-   当使用[表2](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中的方式二来修改参数值时，新参数值只能对更改操作执行后启动的线程生效。此外，对于后台线程以及线程复用执行的新作业，该参数值的改动不会生效。如果希望这类线程即时识别参数变化，可以使用kill session或重启节点的方式来实现。
     
@@ -78,7 +78,7 @@
 
 **默认值**：空
 
->![](public_sys-resources/icon-notice.gif) **须知：**
+>![](public_sys-resources/icon-notice.png) **须知：**
 >该参数不允许用户进行设置，建议保持默认值。
 
 ## enable\_resource\_track<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_sb8ca264785d649368247597883d52ffd"></a>
@@ -261,7 +261,7 @@
 
 **默认值**：on
 
-> ![](public_sys-resources/icon-notice.gif) **须知：** 
+> ![](public_sys-resources/icon-notice.png) **须知：** 
 > 黑匣子功能生成core文件依赖操作系统开放ptrace接口。若发生权限不足\(errno = 1\)，请确保/proc/sys/kernel/yama/ptrace\_scope配置合理。
 
 ## bbox\_dump\_count<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s03ba824694c84fdf8dad4f710d0e3a53"></a>
@@ -274,7 +274,7 @@
 
 **默认值**：8
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >在并发产生core文件时，core文件的产生个数可能大于bbox\_dump\_count。
 
 ## bbox\_dump\_path<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_zh-cn_topic_0059777791_s4fe2520e9c914f1293e1f9314db2d519"></a>
@@ -335,7 +335,7 @@
 
 **取值范围**：整型，1000～1000000
 
-**默认值：**6000
+**默认值：** 6000
 
 ## session\_respool<a name="zh-cn_topic_0283137479_zh-cn_topic_0237124729_section2673131522715"></a>
 

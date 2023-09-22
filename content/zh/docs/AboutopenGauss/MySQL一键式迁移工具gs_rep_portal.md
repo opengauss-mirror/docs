@@ -1,4 +1,4 @@
-﻿# MySQL一键式迁移工具gs_rep_portal<a name="ZH-CN_TOPIC_0000001264707837"></a>
+﻿# MySQL一键式迁移工具gs_rep_portal
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -36,3 +36,8 @@ gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了�
 
 依赖各迁移工具可以正常使用。
 
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 、 [portal与datakit的交互方式1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/portal与datakit的交互方式1.md) 、 [命令行参数名称及说明.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/命令行参数名称及说明.md) 、 [数据迁移全局配置表0.1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/数据迁移全局配置表0.1.md) 

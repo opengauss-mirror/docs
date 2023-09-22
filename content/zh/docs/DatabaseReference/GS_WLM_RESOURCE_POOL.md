@@ -1,4 +1,4 @@
-# GS\_WLM\_RESOURCE\_POOL<a name="ZH-CN_TOPIC_0289900979"></a>
+# GS\_WLM\_RESOURCE\_POOL
 
 这是资源池上的一些统计信息。
 

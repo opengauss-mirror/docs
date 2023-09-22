@@ -1,11 +1,12 @@
-# pg\_resetxlog<a name="ZH-CN_TOPIC_0249632285"></a>
+# pg\_resetxlog
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154813"></a>
 
 pg\_resetxlog是一个重新设置数据库事务文件的工具。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
->通过pg\_resetxlog重新设置之前，需要先停止数据库。
+>![](public_sys-resources/icon-caution.png) **注意：**<br/> 
+>通过pg\_resetxlog重新设置之前，需要先停止数据库。<br/> 
+>在共享存储模式，关闭数据库之后需要先手动开启dssserver，然后执行pg\_resetxlog操作。
 
 ## 前提条件<a name="zh-cn_topic_0237152442_section14602518109"></a>
 
@@ -27,7 +28,7 @@ OPTION取值如下所示：
 
 -   -e XIDEPOCH
 
-    设置下一个事务id。
+    设置下一个事务id的epoch值。
 
 -   -f
 
@@ -35,7 +36,7 @@ OPTION取值如下所示：
 
 -   -l xlogfile
 
-    为新的事务日志指定最小的WAL起始位置。
+    为新的事务日志指定最小的WAL起始位置。(注意：xlogfile的值要大于当前最大的xlog文件名，否则该参数不生效，将按照默认逻辑处理，即新的日志文件名为执行该命令前最后一个日志文件的文件名加1.)
 
 -   -m XID
 
@@ -89,7 +90,10 @@ pg_resetxlog [OPTION]... DATADIR
 ## 使用举例（资源池化模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
 
 ```
+export DSS_MAINTAIN=TRUE
+dssserver -D $DSS_HOME &
 pg_resetxlog [OPTION]... DATADIR --enable-dss --vgname=VGDATA --socketpath=SOCKETPATH
+export DSS_MAINTAIN=FALSE
 ```
 
 **资源池化模式使用说明：**

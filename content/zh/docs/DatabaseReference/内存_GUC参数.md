@@ -1,8 +1,8 @@
-# 内存<a name="ZH-CN_TOPIC_0289900310"></a>
+# 内存
 
 介绍与内存相关的参数设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >这些参数只能在数据库服务重新启动后生效。
 
 ## memorypool\_enable<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s630c23ad11044fafae4ed851bc89169a"></a>
@@ -30,7 +30,7 @@
 
 ## enable\_memory\_limit<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94"></a>
 
-**参数说明：**启用逻辑内存管理模块。
+**参数说明：** 启用逻辑内存管理模块。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -39,9 +39,9 @@
 -   on表示启用逻辑内存管理模块。
 -   off表示不启用逻辑内存管理模块。
 
-**默认值：**on
+**默认值：** on
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >
 >-   若max\_process\_memory-shared\_buffers-cstore\_buffers-元数据少于2G，openGauss强制把enable\_memory\_limit设置为off。其中元数据是openGauss内部使用的内存和部分并发参数，如max\_connections、thread\_pool\_attr、max\_prepared\_transactions等参数相关。
 >
@@ -49,24 +49,24 @@
 
 ## max\_process\_memory<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
 
-**参数说明：**设置一个数据库节点可用的最大物理内存。
+**参数说明：** 设置一个数据库节点可用的最大物理内存。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：整型，2\*1024\*1024～INT\_MAX，单位为KB。
 
-**默认值：**12GB
+**默认值：** 12GB
 
 **设置建议：**
 
 数据库节点上该数值需要根据系统物理内存及单节点部署主数据库节点个数决定。建议计算公式如下：\(物理内存大小 - vm.min\_free\_kbytes\) \\\* 0.7 / \(1 + 主节点个数\)。该系数的目的是尽可能保证系统的可靠性，不会因数据库内存膨胀导致节点OOM。这个公式中提到vm.min\_free\_kbytes，其含义是预留操作系统内存供内核使用，通常用作操作系统内核中通信收发内存分配，至少为5%内存。即，max\_process\_memory = 物理内存 \* 0.665 / \(1 + 主节点个数\)。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >当该值设置不合理，即大于服务器物理内存，可能导致操作系统OOM问题。
 
 ## enable\_memory\_context\_control<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_section83355314353"></a>
 
-**参数说明：**启用检查内存上下文是否超过给定限制的功能。仅适用于DEBUG版本。
+**参数说明：** 启用检查内存上下文是否超过给定限制的功能。仅适用于DEBUG版本。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -75,11 +75,11 @@
 -   on表示启用最大内存上下文限制检查功能。
 -   off表示关闭最大内存上下文限制检查功能。
 
-**默认值：**off
+**默认值：** off
 
 ## uncontrolled\_memory\_context<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_section93539377411"></a>
 
-**参数说明：**启用检查内存上下文是否超过给定限制的功能时，设置不受此功能约束。仅适用于DEBUG版本。
+**参数说明：** 启用检查内存上下文是否超过给定限制的功能时，设置不受此功能约束。仅适用于DEBUG版本。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -87,19 +87,19 @@
 
 **取值范围**：字符串
 
-**默认值：**空
+**默认值：** 空
 
 ## shared\_buffers<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s55a43fb6d0464430a59031671b37cd07"></a>
 
-**参数说明：**设置openGauss使用的共享内存大小。增加此参数的值会使openGauss比系统默认设置需要更多的System V共享内存。
+**参数说明：** 设置openGauss使用的共享内存大小。增加此参数的值会使openGauss比系统默认设置需要更多的System V共享内存。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，16 \~ 1073741823，单位为8KB。
+**取值范围：** 整型，16 \~ 1073741823，单位为8KB。
 
 shared\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8KB，即shared\_buffers需要设置为8KB整数倍。改变BLCKSZ的值会改变最小值。
 
-**默认值：**8MB
+**默认值：** 8MB
 
 **设置建议：**
 
@@ -116,15 +116,15 @@ shared\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8KB，�
 
 ## segment\_buffers<a name="section1581274312490"></a>
 
-**参数说明：**设置openGauss段页式元数据页的内存大小。
+**参数说明：** 设置openGauss段页式元数据页的内存大小。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值说明：**整型，16 \~ 1073741823，单位为8KB。
+**取值说明：** 整型，16 \~ 1073741823，单位为8KB。
 
 segment\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8KB，即segment\_buffers需要设置为8KB整数倍。改变BLCKSZ的值会改变最小值。
 
-**默认值：**8MB
+**默认值：** 8MB
 
 **设置建议：**
 
@@ -132,29 +132,29 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## bulk\_write\_ring\_size<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_sa239f9a6b4234f04949abc3615970502"></a>
 
-**参数说明：**大批量数据写入触发时（例如copy动作），该操作使用的环形缓冲区大小。
+**参数说明：** 大批量数据写入触发时（例如copy动作），该操作使用的环形缓冲区大小。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，16384 \~ 2147483647，单位为KB。
+**取值范围：** 整型，16384 \~ 2147483647，单位为KB。
 
-**默认值：**2GB
+**默认值：** 2GB
 
-**设置建议：**建议导入压力大的场景中增加数据库节点中此参数配置。
+**设置建议：** 建议导入压力大的场景中增加数据库节点中此参数配置。
 
 ## standby\_shared\_buffers\_fraction<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_sfda2b709d047441cab1a59ac63bccb08"></a>
 
-**参数说明：**备实例所在服务器使用shared\_buffers内存缓冲区大小的比例。
+**参数说明：** 备实例所在服务器使用shared\_buffers内存缓冲区大小的比例。
 
 该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**双精度浮点型，0.1\~1.0
+**取值范围：** 双精度浮点型，0.1\~1.0
 
-**默认值：**0.3
+**默认值：** 0.3
 
 ## temp\_buffers<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s2a60d22e5f524adbbf493dfe3a29a4c6"></a>
 
-**参数说明：**设置每个数据库会话使用的LOCAL临时缓冲区的大小。
+**参数说明：** 设置每个数据库会话使用的LOCAL临时缓冲区的大小。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -162,37 +162,37 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 一个会话将按照temp\_buffers给出的限制，根据需要分配临时缓冲区。如果在一个并不需要大量临时缓冲区的会话里设置一个大的数值，其开销只是一个缓冲区描述符的大小。当缓冲区被使用，就会额外消耗8192字节。
 
-**取值范围：**整型，100\~1073741823，单位为8KB。
+**取值范围：** 整型，100\~1073741823，单位为8KB。
 
-**默认值：**1MB
+**默认值：** 1MB
 
 ## max\_prepared\_transactions<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s0baf9251722144d492151b31104dd73c"></a>
 
-**参数说明：**设置可以同时处于“预备”状态的事务的最大数目。增加此参数的值会使openGauss比系统默认设置需要更多的System V共享内存。
+**参数说明：** 设置可以同时处于“预备”状态的事务的最大数目。增加此参数的值会使openGauss比系统默认设置需要更多的System V共享内存。
 
 当openGauss部署为主备双机时，在备机上此参数的设置必须要高于或等于主机上的，否则无法在备机上进行查询操作。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，0\~262143。
+**取值范围：** 整型，0\~262143。
 
-**默认值：**10
+**默认值：** 10
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >一般不需要对事务显式进行PREPARE操作，如果业务对事务进行显示PREPARE操作，为避免在准备步骤失败，需要调大该值，大于需要进行PREPARE业务的并发数。
 
 ## work\_mem<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e"></a>
 
-**参数说明：**设置内部排序操作和Hash表在开始写入临时磁盘文件之前使用的内存大小。ORDER BY、DISTINCT和merge joins都要用到排序操作。Hash表在散列连接、散列为基础的聚集、散列为基础的IN子查询处理中都要用到。
+**参数说明：** 设置内部排序操作和Hash表在开始写入临时磁盘文件之前使用的内存大小。ORDER BY、DISTINCT和merge joins都要用到排序操作。Hash表在散列连接、散列为基础的聚集、散列为基础的IN子查询处理中都要用到。
 
 对于复杂的查询，可能会同时并发运行好几个排序或者散列操作，每个都可以使用此参数所声明的内存量，不足时会使用临时文件。同样，好几个正在运行的会话可能会同时进行排序操作。因此使用的总内存可能是work\_mem的好几倍。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，64\~2147483647，单位为KB。
+**取值范围：** 整型，64\~2147483647，单位为KB。
 
-**默认值：**64MB
+**默认值：** 64MB
 
 **设置建议：**
 >
@@ -205,15 +205,15 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## query\_mem<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_section12283034151318"></a>
 
-**参数说明：**设置执行作业所使用的内存。
+**参数说明：** 设置执行作业所使用的内存。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**0，或大于32M的整型，默认单位为KB。
+**取值范围：** 0，或大于32M的整型，默认单位为KB。
 
-**默认值：**0
+**默认值：** 0
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   如果设置的query\_mem值大于0，在生成执行计划时，优化器会将作业的估算内存调整为该值。
 >
@@ -221,15 +221,15 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## query\_max\_mem<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_section1258420917117"></a>
 
-**参数说明：**设置执行作业所能够使用的最大内存。
+**参数说明：** 设置执行作业所能够使用的最大内存。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**0，或大于32M的整型，默认单位为KB。
+**取值范围：** 0，或大于32M的整型，默认单位为KB。
 
-**默认值：**0
+**默认值：** 0
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   如果设置的query\_max\_mem值大于0，当作业执行时所使用内存超过该值时，将报错退出。
 >
@@ -237,13 +237,13 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## maintenance\_work\_mem<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s123a0cc8d6434028a6709bbfa876e8b0"></a>
 
-**参数说明：**设置在维护性操作（比如VACUUM、CREATE INDEX、ALTER TABLE ADD FOREIGN KEY等）中可使用的最大的内存。该参数的设置会影响VACUUM、VACUUM FULL、CLUSTER、CREATE INDEX的执行效率。
+**参数说明：** 设置在维护性操作（比如VACUUM、CREATE INDEX、ALTER TABLE ADD FOREIGN KEY等）中可使用的最大的内存。该参数的设置会影响VACUUM、VACUUM FULL、CLUSTER、CREATE INDEX的执行效率。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，1024\~INT\_MAX，单位为KB。
+**取值范围：** 整型，1024\~INT\_MAX，单位为KB。
 
-**默认值：**16MB
+**默认值：** 16MB
 
 **设置建议：**
 
@@ -253,41 +253,41 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## psort\_work\_mem<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_scb2890bc578f4811b63b341f7866057a"></a>
 
-**参数说明：**设置列存表在进行局部排序中，在开始写入临时磁盘文件之前使用的内存大小。带partial cluster key的表、带索引的表插入、创建表索引、删除表和更新表都会用到。
+**参数说明：** 设置列存表在进行局部排序中，在开始写入临时磁盘文件之前使用的内存大小。带partial cluster key的表、带索引的表插入、创建表索引、删除表和更新表都会用到。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >同样，多个正在运行的会话可能会同时进行表的局部排序操作。因此，使用的总内存可能是psort\_work\_mem的几倍。
 
-**取值范围：**整型64\~2147483647，单位为KB。
+**取值范围：** 整型64\~2147483647，单位为KB。
 
-**默认值：**512MB
+**默认值：** 512MB
 
 ## max\_loaded\_cudesc<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s180b94f02cee4806be39f36f8d2e2a28"></a>
 
-**参数说明：**设置列存表在做扫描时，每列缓存cudesc信息的个数。增大设置会提高查询性能，但也会增加内存占用，特别是当列存表的列非常多时。
+**参数说明：** 设置列存表在做扫描时，每列缓存cudesc信息的个数。增大设置会提高查询性能，但也会增加内存占用，特别是当列存表的列非常多时。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >max\_loaded\_cudesc设置过高时，有可能引起内存分配不足。
 
-**取值范围：**100\~1073741823。
+**取值范围：** 100\~1073741823。
 
-**默认值：**1024
+**默认值：** 1024
 
 ## max\_stack\_depth<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s7417ae6acda9409f8ff99365a0e8bb11"></a>
 
-**参数说明：**设置openGauss执行堆栈的最大安全深度。需要这个安全界限是因为在服务器里，并非所有程序都检查了堆栈深度，只是在可能递规的过程，比如表达式计算这样的过程里面才进行检查。
+**参数说明：** 设置openGauss执行堆栈的最大安全深度。需要这个安全界限是因为在服务器里，并非所有程序都检查了堆栈深度，只是在可能递规的过程，比如表达式计算这样的过程里面才进行检查。
 
 该参数属于SUSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，100\~INT\_MAX，单位为KB。
+**取值范围：** 整型，100\~INT\_MAX，单位为KB。
 
-**默认值：**2MB
+**默认值：** 2MB
 
 **设置原则：**
 > - 数据库需要预留640KB堆栈深度，因此，此参数的最佳设置是=操作系统内核允许的最大值（就是ulimit -s的设置）- 640KB。
@@ -297,13 +297,13 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## cstore\_buffers<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s00a05d7c1a374988b114e167735a552d"></a>
 
-**参数说明：**设置列存所使用的共享缓冲区的大小。
+**参数说明：** 设置列存所使用的共享缓冲区的大小。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，16384～1073741823，单位为KB。
+**取值范围：** 整型，16384～1073741823，单位为KB。
 
-**默认值：**1GB
+**默认值：** 1GB
 
 **设置建议**：
 
@@ -311,13 +311,13 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## bulk\_read\_ring\_size<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_s43b2a38b07f647039f73f31d71db7b26"></a>
 
-**参数说明：**大批量数据查询时（例如大表扫描），该操作使用的环形缓冲区大小。
+**参数说明：** 大批量数据查询时（例如大表扫描），该操作使用的环形缓冲区大小。
 
 该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围：**整型，256\~2147483647，单位为KB。
+**取值范围：** 整型，256\~2147483647，单位为KB。
 
-**默认值：**16MB
+**默认值：** 16MB
 
 ## enable\_early\_free<a name="zh-cn_topic_0283137548_zh-cn_topic_0237124743_section18463123172910"></a>
 
@@ -346,9 +346,35 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **默认值**：256MB
 
+## memory\_trace\_level<a name="section198622451396"></a>
+
+**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：枚举型
+
+-   none：表示不记录内存申请信息。
+-   level1：动态内存使用超过最大动态内存的90%后，会记录以下信息，并将记录的内存信息保存在$GAUSSLOG/mem\_log目录下。
+    -   全局内存概况。
+    -   instance，session，thread三种类型的所有内存上下文中内存占用前20的内存上下文的内存使用情况。
+    -   每个内存上下文的totalsize、freesize字段。
+
+-   level2：动态内存使用超过最大动态内存的90%后，会记录以下信息，并将记录的内存信息保存在$GAUSSLOG/mem\_log目录下。
+    -   全局内存概况。
+    -   instance，session，thread三种类型的所有内存上下文中内存占用前20的内存上下文的内存使用情况。
+    -   每个内存上下文的totalsize，freesize字段。
+    -   每个内存上下文上所有内存申请的详细信息，包含申请内存所在的文件，行号和大小。
+
+**默认值**：level1
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   该参数设置为level2后，会记录每个内存上下文的内存申请详情（file，line，size字段），会对性能影响较大，需慎重设置。
+>-   记录的内存快照信息可以通过系统函数gs\_get\_history\_memory\_detail\(cstring\)查询，函数详情请参考“SQL参考 \> 函数和操作符 \> 统计信息函数”章节查询。
+>-   记录的内存上下文是经过将同一类型所有重名的内存上下文进行汇总之后得到的。
+
 ##  resilience_memory_reject_percent
 
-**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](https://gitee.com/opengauss/docs/blob/33dd523b07ca669b90346b9831510ee891c05069/content/docs-lite/zh/docs/DeveloperGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：字符串，长度大于0
 
@@ -367,7 +393,7 @@ resilience_memory_reject_percent = '70,90'
 
 表示内存使用超过最大内存上限的90%后禁止新连接接入并kill堆积的会话，kill会话过程中内存恢复到最大内存的70%以下时停止kill会话并允许新连接接入。
 
-> ![](public_sys-resources/icon-notice.gif) **须知：**
+> ![](public_sys-resources/icon-notice.png) **须知：**
 >
 > - 最大动态内存和已使用的动态内存可以通过gs_total_memory_detail视图查询获得，最大动态内存：max_dynamic_memory，已使用的动态内存：dynamic_used_memory。
 > - 该参数如果设置的百分比过小，则会频繁触发内存过载逃生流程，会使正在执行的会话被强制退出，新连接短时间接入失败，需要根据实际内存使用情况慎重设置。

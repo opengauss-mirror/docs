@@ -1,8 +1,10 @@
 # file\_fdw<a name="EN-US_TOPIC_0000001116194726"></a>
 
-The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the  **COPY FROM**  command. For details, see  [COPY](copy.md). file\_fdw is only used to access readable data files, but cannot write data to the data files.
+The file\_fdw module provides the external data wrapper file\_fdw, which can be used to access data files in the file system of a server. The format of the data files must be readable by the  **COPY FROM**  command. For details, see  [COPY](../SQLReference/copy.md). file\_fdw is only used to access readable data files, but cannot write data to the data files.
 
 By default, the file\_fdw is compiled in openGauss. During database initialization, the plug-in is created in the  **pg\_catalog**  schema.
+
+The server and foreign table corresponding to file\_fdw can be created only by the initial user of the database or the O&M administrator who enables the O&M mode.
 
 When you create a foreign table using file\_fdw, you can add the following options:
 
@@ -12,7 +14,7 @@ When you create a foreign table using file\_fdw, you can add the following optio
 
 -   format
 
-    File format of the remote server, which is the same as the  **FORMAT**  option in the  **COPY**  statement. The value can be  **text**,  **csv**,  **binary**, or  **fixed**.
+    File format of the remote server, which is the same as the  **FORMAT**  option in the  **COPY**  statement. The value can be  **text**,  **csv**, or  **binary**.
 
 -   header
 

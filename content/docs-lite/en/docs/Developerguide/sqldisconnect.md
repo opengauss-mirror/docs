@@ -42,5 +42,5 @@ If SQLDisconnect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 
 ## Example<a name="en-us_topic_0238272890_en-us_topic_0237120420_en-us_topic_0059778556_sb7797f4e64534d1f85c319d5433804d4"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

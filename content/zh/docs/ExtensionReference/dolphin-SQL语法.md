@@ -1,4 +1,4 @@
-# SQL语法<a name="ZH-CN_TOPIC_0289900416"></a>
+# SQL语法
 
 -   **[ALTER DATABASE](dolphin-ALTER-DATABASE.md)**
 
@@ -14,9 +14,13 @@
 
 -   **[ALTER TABLESPACE](dolphin-ALTER-TABLESPACE.md)**  
 
+-   **[ALTER VIEW](dolphin-ALTER-VIEW.md)**  
+
 -   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
 
 -   **[AST](dolphin-AST.md)**
+
+-   **[CALL](dolphin-CALL.md)**
 
 -   **[CHECKSUM TABLE](dolphin-CHECKSUM-TABLE.md)**  
 
@@ -40,11 +44,15 @@
 
 -   **[CREATE TRIGGER](dolphin-CREATE-TRIGGER.md)**
 
--   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
+-   **[CREATE VIEW](dolphin-CREATE-VIEW.md)**
 
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
 
+-   **[DO](dolphin-DO.md)**
+
 -   **[DROP DATABASE](dolphin-DROP-DATABASE.md)**  
+
+-   **[DROP INDEX](dolphin-DROP-INDEX.md)**
 
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
@@ -68,6 +76,8 @@
 
 -   **[PREPARE](dolphin-PREPARE.md)**
 
+-   **[RENAME TABLE](dolphin-RENAME-TABLE.md)**
+
 -   **[RENAME USER](dolphin-RENAME-USER.md)**
 
 -   **[REVOKE](dolphin-REVOKE.md)**
@@ -86,17 +96,17 @@
 
 -   **[SHOW COLUMNS](dolphin-SHOW_COLUMNS.md)**  
 
--   **[SHOW-CREATE-DATABASE](dolphin-SHOW-CREATE-DATABASE.md)**
+-   **[SHOW CREATE DATABASE](dolphin-SHOW-CREATE-DATABASE.md)**
 
--   **[SHOW-CREATE-FUNCTION](dolphin-SHOW-CREATE-FUNCTION.md)**
+-   **[SHOW CREATE FUNCTION](dolphin-SHOW-CREATE-FUNCTION.md)**
 
--   **[SHOW-CREATE-PROCEDURE](dolphin-SHOW-CREATE-PROCEDURE.md)**
+-   **[SHOW CREATE PROCEDURE](dolphin-SHOW-CREATE-PROCEDURE.md)**
 
--   **[SHOW-CREATE-TABLE](dolphin-SHOW-CREATE-TABLE.md)**
+-   **[SHOW CREATE TABLE](dolphin-SHOW-CREATE-TABLE.md)**
 
--   **[SHOW-CREATE-TRIGGER](dolphin-SHOW-CREATE-TRIGGER.md)**
+-   **[SHOW CREATE TRIGGER](dolphin-SHOW-CREATE-TRIGGER.md)**
 
--   **[SHOW-CREATE-VIEW](dolphin-SHOW-CREATE-VIEW.md)**
+-   **[SHOW CREATE VIEW](dolphin-SHOW-CREATE-VIEW.md)**
 
 -   **[SHOW DATABASES](dolphin-SHOW-DATABASES.md)** 
 
@@ -129,6 +139,12 @@
 -   **[SHOW-VARIABLES](dolphin-SHOW-VARIABLES.md)**
 
 -   **[SHOW-WARNINGS](dolphin-SHOW-WARNINGS.md)**
+
+-   **[SHOW ENGINES](dolphin-SHOW-ENGINES.md)**
+
+-   **[SHOW SLAVE STATUS](dolphin-SHOW-SLAVE-STATUS.md)**
+
+-   **[SHOW OPEN TABLES](dolphin-SHOW-OPEN-TABLES.md)**
 
 -   **[UPDATE](dolphin-UPDATE.md)**
 

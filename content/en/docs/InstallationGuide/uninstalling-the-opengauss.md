@@ -72,7 +72,7 @@ After the openGauss is uninstalled, execute the  **gs\_postuninstall**  script t
 
 2.  Check whether the mutual trust has been established between the users  **root**. If not, manually establish the mutual trust. For details, see  [Establishing Mutual Trust Manually](initializing-the-installation-environment.md).
 
-    Run the  **ssh **_Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
+    Run the  **ssh** _Host name_  command to check whether mutual trust has been successfully established. Then, enter  **exit**.
 
     ```
     plat1:~ # ssh plat2 
@@ -108,7 +108,7 @@ After the openGauss is uninstalled, execute the  **gs\_postuninstall**  script t
 
     unset MPPDB\_ENV\_SEPARATE\_PATH
 
-5. Delete the mutual trust between the users  **root**  on each openGauss database node. For details, see  [Establishing Mutual Trust Manually](establishing-mutual-trust-manually.md).
+5. Delete the mutual trust between the users  **root**  on each openGauss database node. For details, see  [Establishing Mutual Trust Manually](initializing-the-installation-environment.md).
 
 6. Log out the **root** user.
 

@@ -1,6 +1,6 @@
-# GS\_THREAD\_MEMORY\_CONTEXT<a name="ZH-CN_TOPIC_0289900729"></a>
+# GS\_THREAD\_MEMORY\_CONTEXT
 
-GS\_THREAD\_MEMORY\_CONTEXT视图统计所有的线程的内存使用情况，以MemoryContext节点来统计。该视图在关闭线程池（enable\_thread\_pool = off）时等价于GS\_SESSION\_MEMORY\_DETAIL视图。当GUC参数enable\_memory\_limit的值为off时，本视图不可用。
+GS\_THREAD\_MEMORY\_CONTEXT视图统计所有的线程的内存使用情况，以MemoryContext节点来统计。该视图在关闭线程池（enable\_thread\_pool = off）时等价于GS\_SESSION\_MEMORY\_DETAIL视图。
 
 其中内存上下文“TempSmallContextGroup”，记录当前线程中所有内存上下文字段“totalsize”小于8192字节的信息汇总，并且内存上下文统计计数记录到“usedsize”字段中。所以在视图中，“TempSmallContextGroup”内存上下文中的“totalsize”和“freesize”是该线程中所有内存上下文“totalsize”小于8192字节的汇总总和，usedsize字段表示统计的内存上下文个数。
 

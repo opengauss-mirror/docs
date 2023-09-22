@@ -1,4 +1,4 @@
-# SHOW EVENTS<a name="ZH-CN_TOPIC_0000001503604049"></a>
+# SHOW EVENTS
 
 ## 功能描述<a name="section5400959952"></a>
 
@@ -18,15 +18,15 @@ SHOW EVENTS
 
 ## 参数说明<a name="section652211111716"></a>
 
--   \{FROM | IN\} schema\_name
+-   \{FROM | IN\} 
 
     指定要查询的schema，默认情况下为当前schema。
 
--   LIKE 'pattern'
+-   LIKE 
 
     LIKE可以模式匹配定时任务名称，不指定则打印当前schema下所有定时任务
 
--   WHERE condition
+-   WHERE 
 
     WHERE子句构成一个行选择表达式，用来缩小SHOW EVENTS查询的范围。condition是返回值为布尔型的任意表达式，任何不满足该条件的行都不会被检索。
 

@@ -1,4 +1,4 @@
-# GLOBAL\_WORKLOAD\_TRANSACTION<a name="ZH-CN_TOPIC_0245374727"></a>
+# GLOBAL\_WORKLOAD\_TRANSACTION
 
 显示各节点上的workload的负载信息。
 

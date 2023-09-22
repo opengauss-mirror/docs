@@ -1,4 +1,4 @@
-# Java<a name="ZH-CN_TOPIC_0000001225258427"></a>
+# Java
 
 JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。openGauss库提供了对JDBC 4.0特性的支持，需要使用JDK1.8版本编译程序代码，不支持JDBC桥接ODBC方式。
 
@@ -33,7 +33,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 示例：
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >下面示例中黑体加下划线的字段需要替换成用户自己的信息，其中：  
 >
 >-   **<u>127.0.0.1</u>**：数据库所在的主机地址。  
@@ -252,7 +252,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 ## 插入操作<a name="section1603173921418"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >插入操作执行前需要确保执行了[创建表](#section1969315347146)操作，表名为test，表结构如下。
 >```
 >create table test (id int,name varchar (10));
@@ -348,7 +348,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 ## SELECT操作<a name="section138138476141"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
 -   使用prepareStatement执行查询操作可以使用预编译，动态的添加参数也可以执行普通的SQL语句。
@@ -426,7 +426,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 ## 更新操作<a name="section112861325191512"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >请先完成[创建表](#section1969315347146)和[插入操作](#section1603173921418)。
 
 -   使用Statement执行更新操作，然后执行查询语句判断更新是否成功。

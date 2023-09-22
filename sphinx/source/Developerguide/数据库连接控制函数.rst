@@ -1,13 +1,13 @@
-
+数据库连接控制函数
+=====
 
 .. toctree::
 
-    ../content/zh/docs/Developerguide/PQconnectdbParams
-    ../content/zh/docs/Developerguide/PQconnectdb
-    ../content/zh/docs/Developerguide/PQconninfoParse
-    ../content/zh/docs/Developerguide/PQconnectStart
-    ../content/zh/docs/Developerguide/PQerrorMessage
-    ../content/zh/docs/Developerguide/PQsetdbLogin
-    ../content/zh/docs/Developerguide/PQfinish
-    ../content/zh/docs/Developerguide/PQreset
-    ../content/zh/docs/Developerguide/PQstatus
+    ../content/zh/docs/DeveloperGuide/PQconnectdbParams
+    ../content/zh/docs/DeveloperGuide/PQconnectdb
+    ../content/zh/docs/DeveloperGuide/PQconninfoParse
+    ../content/zh/docs/DeveloperGuide/PQconnectStart
+    ../content/zh/docs/DeveloperGuide/PQerrorMessage
+    ../content/zh/docs/DeveloperGuide/PQsetdbLogin
+    ../content/zh/docs/DeveloperGuide/PQfinish
+    ../content/zh/docs/DeveloperGuide/PQreset

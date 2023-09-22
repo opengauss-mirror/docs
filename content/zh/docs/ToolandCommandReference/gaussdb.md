@@ -1,4 +1,4 @@
-# gaussdb<a name="ZH-CN_TOPIC_0249632245"></a>
+# gaussdb
 
 ## 背景信息<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_section2761723143810"></a>
 
@@ -14,7 +14,7 @@ gaussdb [OPTION]...
 
 客户端应用程序为了访问数据库，将连接（通过网络或本地）到一个正在运行的gaussdb进程。然后该进程实例会启动一个独立的线程来处理这个连接。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >通过gaussdb启动数据库时，需要再开一个窗口来连接到数据库，也可以使用&符号使程序在后台执行。
 
 一个gaussdb进程总是管理来自同一个数据库的数据。一个系统上可以同时运行多个gaussdb进程，只要使用不同的数据目录和不同的端口号。gaussdb启动时需要知道数据目录的位置，该位置必须通过-D指定。通常，-D直接指向由gs\_initdb创建的数据库目录。
@@ -193,6 +193,14 @@ gaussdb接受[表1](#zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a>描述配置参数然后退出。</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_a620e8e59e1e54cd6944678134188fa6a"></a>-</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row14480017"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p4130578"></a>-z CLUSTER_RUN_MODE</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p48074570"></a>用于资源池化DORADO双集群，在启动时指定本集群的启动模式。</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.89%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_ad48af41abfc847d4be5addc3a2eab10c"></a>CLUSTER_RUN_MODE可以取下面两个值：</p>
+<a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"></a><ul id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_u3805d8a1137d446ab9ec6cdaf4c55193"><li>cluster_primary：以主集群模式启动。</li><li>cluster_standby：以备集群模式启动。</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_row23184364"><td class="cellrowborder" valign="top" width="25.31%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"></a><a name="zh-cn_topic_0237152404_zh-cn_topic_0059777816_zh-cn_topic_0058968126_p32410609"></a>-?, --help</p>
@@ -424,7 +432,7 @@ ps -ef | grep gaussdb
 
 无法绑定端口的错误信息可能表明该端口已经被其他非openGauss进程使用。如果终止gaussdb后又马上用同一端口号运行它，也可能得到错误信息。这时，必须多等几秒，等操作系统关闭了该端口再试。最后，如果使用了一个操作系统认为是保留的端口，也可能导致这个错误信息。例如：Unix版本认为低于1024的端口号是“可信任的”，因而只有Unix系统管理员可以使用它们。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 
 >-   如果有可能，不要使用SIGKILL杀死主进程。这样会阻止gaussdb在退出前释放它持有的系统资源（例如共享内存和信号灯）。这样可能会影响到将来启动新的进程。
 >-   可以使用SIGTERM、SIGINT、SIGQUIT信号正常结束服务器进程。第一个信号将等待所有的客户端退出后才退出。第二个将强制断开所有客户端，而第三个将不停止立刻退出，导致在重启时的恢复运行。
@@ -442,7 +450,7 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 
 用-D给服务器提供正确的数据库目录的路径。同时还要声名已存在的特定数据库名称。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 
 >-   通常，独立运行的服务器把换行符当做命令输入完成字符；要想把一行分成多行写，必需在除最后一个换行符以外的每个换行符前面敲一个反斜杠。
 >-   如果使用了-j命令行选项，新行将不被当作命令结束符。此时服务器将从标准输入一直读取到EOF标志为止，然后把所有读到的内容当作一个完整的命令字符串看待，并且反斜杠与换行符也被当作普通字符来看待。

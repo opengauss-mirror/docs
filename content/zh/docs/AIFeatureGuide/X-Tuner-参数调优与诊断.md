@@ -1,4 +1,4 @@
-# X-Tuner：参数调优与诊断<a name="ZH-CN_TOPIC_0289899994"></a>
+# X-Tuner：参数调优与诊断
 
 -   **[概述](X-Tuner-参数调优与诊断概述.md)**  
 

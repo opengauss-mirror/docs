@@ -17,6 +17,12 @@ gs\_dumpall在导出所有数据库时分为两部分：
 
 以上两部分导出的结果为纯文本格式的SQL脚本文件，使用[gsql](gsql.md)运行该脚本文件可以恢复数据库。
 
+gs\_dumpall工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+
+>![](public_sys-resources/icon-notice.png) **须知：**
+>-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
+>-   临时表不支持导入导出。
+
 ## 注意事项<a name="zh-cn_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
 -   禁止修改导出的文件和内容，否则可能无法恢复成功。

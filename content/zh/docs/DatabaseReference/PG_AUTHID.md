@@ -1,4 +1,4 @@
-# PG\_AUTHID<a name="ZH-CN_TOPIC_0289900706"></a>
+# PG\_AUTHID
 
 PG\_AUTHID系统表存储有关数据库认证标识符（角色）的信息。角色把“用户”的概念包含在内。一个用户实际上就是一个rolcanlogin标志被设置的角色。任何角色（不管rolcanlogin设置与否）都能够把其他角色作为成员。
 

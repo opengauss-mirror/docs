@@ -1,4 +1,4 @@
-# PG\_SUBSCRIPTION<a name="ZH-CN_TOPIC_0000001198917452"></a>
+# PG\_SUBSCRIPTION
 
 系统表PG\_SUBSCRIPTION包含所有现有的逻辑复制订阅。需要有系统管理员权限才可以访问此系统表。
 
@@ -76,6 +76,20 @@
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p513754355316"><a name="p513754355316"></a><a name="p513754355316"></a>text[]</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13137204313536"><a name="p13137204313536"></a><a name="p13137204313536"></a>被订阅的publication名称的数组。这些引用的是发布者服务器上的publication。</p>
+</td>
+</tr>
+<tr id="row18136114310540"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p913764314534"><a name="p913764314534"></a><a name="p913764314534"></a>subbinary</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p513754355317"><a name="p513754355317"></a><a name="p513754355317"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13137204313537"><a name="p13137204313537"></a><a name="p13137204313537"></a>如果为真，发布端和订阅端之间传输数据是以二进制的格式进行传输。</p>
+</td>
+</tr>
+<tr id="row18136114310541"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p913764314535"><a name="p913764314535"></a><a name="p913764314535"></a>subskiplsn</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p513754355318"><a name="p513754355318"></a><a name="p513754355318"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13137204313538"><a name="p13137204313538"></a><a name="p13137204313538"></a>commit_lsn为该lsn的事务会被跳过，不被应用。</p>
 </td>
 </tr>
 </tbody>

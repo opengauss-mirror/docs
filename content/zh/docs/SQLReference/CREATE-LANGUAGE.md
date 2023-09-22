@@ -1,4 +1,4 @@
-# CREATE LANGUAGE<a name="ZH-CN_TOPIC_0000001080607732"></a>
+# CREATE LANGUAGE
 
 ## 功能描述<a name="section113331284191"></a>
 

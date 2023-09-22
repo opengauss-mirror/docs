@@ -1,6 +1,6 @@
-# 环境部署<a name="ZH-CN_TOPIC_0000001196145058"></a>
+# 环境部署
 
-1.  用户可以从Prometheus的官网上下载Prometheus-server和node-exporter，然后根据官方文档中的说明启动它们；也可以通过DBMind提供的快捷部署工具进行部署；如果用户自行部署，则可以跳到**[部署过程中为支持部署位置正确以及后续的运行和监测...](#li353612310452)。**
+1.  用户可以从Prometheus的官网上下载Prometheus-server和node-exporter，然后根据官方文档中的说明启动它们；也可以通过DBMind提供的快捷部署工具进行部署；如果用户自行部署，则可以跳到 **[部署过程中为支持部署位置正确以及后续的运行和监测...](#li353612310452)。**
 2.  通过命令行进行Prometheus和所有exporter的快捷部署，第一次安装需要确保有网络连接，输入参数为--online。
 
     ```
@@ -13,12 +13,12 @@
     gs_dbmind component deployment --offline
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >一键部署工具如涉及多节点，建议在内部网络下使用。
 
     如采用一键式部署，Prometheus和node\_exporter的软件压缩包下载路径以及解压缩路径在用户的家目录$HOME下。
 
-3.  <a name="li353612310452"></a>部署过程中为支持部署位置正确以及后续的运行和监测正常运行，程序会要求用户互动性地输入一些参数，主要包括以下内容，**应当注意到的是Prometheus和node-exporter的默认侦听地址是0.0.0.0，由于Prometheus和node-exporter属于开源软件，DBMind也无法获知用户希望绑定的IP地址，故无法直接进行修改，需要用户进行配置。**但是在安装过程中，DBMind会给予用户相应的提示，提示用户将侦听地址绑定到具体的某个IP地址上。下面是部署工具的配置文件示例，该工具会进行交互式配置，不建议用户手动修改。配置文件如下：
+3.  <a name="li353612310452"></a>部署过程中为支持部署位置正确以及后续的运行和监测正常运行，程序会要求用户互动性地输入一些参数，主要包括以下内容，**应当注意到的是Prometheus和node-exporter的默认侦听地址是0.0.0.0，由于Prometheus和node-exporter属于开源软件，DBMind也无法获知用户希望绑定的IP地址，故无法直接进行修改，需要用户进行配置。** 但是在安装过程中，DBMind会给予用户相应的提示，提示用户将侦听地址绑定到具体的某个IP地址上。下面是部署工具的配置文件示例，该工具会进行交互式配置，不建议用户手动修改。配置文件如下：
 
     ```
     [DOWNLOADING]
@@ -64,7 +64,7 @@
 
     用户需要提前把\[PROMETHEUS\]和\[EXPORTERS\]需要的证书文件放置在各节点一致的路径下，如果是多节点部署，不同节点之间的证书文件路径必须一致。如果路径出现不正确的情况下，当各个组件运行时没有检测到证书文件时，会进行报警并退出运行。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   由于Prometheus和node-exporter不支持带有密码的SSL私钥文件，所以目前我们在Prometheus和node-exporter上并不提供对SSL证书文件的支持。当前所有的SSL证书都指的是exporter组件使用的SSL证书。Prometheus当前版本仅支持sans格式的证书。
     >-   对于多节点的情况，如果需要远程连接数据库，需要先将主控节点的地址信息更新到分节点的数据库的pg\_hba.conf文件中并重启数据库，否则会出现校验失败。
@@ -157,7 +157,7 @@
 
 其中，提供的exporter组件默认采用Https通信协议，因此需要用户默认提供SSL证书和秘钥文件，并通过--ssl-keyfile、--ssl-certfile 以及 --ssl-ca-file 提供。若用户不希望使用Https协议，则可以通过--disable-https 选项禁用该模式。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >由于openGauss默认模式下的通信加密协议与PostgreSQL不兼容，故导致通过PyPI源安装的基于PostgreSQL编译的Python驱动psycopg2-binary默认无法连接至openGauss数据库。
 >因此，需要用户自行编译psycopg2或修改GUC参数进行适配。也可通过openGauss官方网站下载基于openGauss编译的psycopg2（_官方网站仅提供部分Python版本的编译包，需要用户鉴别是否与当前Python运行时版本一致_）。

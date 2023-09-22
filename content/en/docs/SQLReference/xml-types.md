@@ -364,7 +364,7 @@ The following functions are inherited from the open source PG9.2.
 
     Description: Generate XML data mapping and corresponding XML schema, and link the generated results together in a document.
 
-    >![](public_sys-resources/icon-note.gif) **explain：** 
+    >![](public_sys-resources/icon-note.gif) **explain:** 
     >-   Xpath related functions only support xpath () and xpath_ Exists (). Because it uses the xpath language to query XML documents, these functions rely on the libxml2 library, which is only available in Xpath 1.0, so XPath is limited to 1.0.
     >-   Xquery, xml extension, and xslt are not supported.
 

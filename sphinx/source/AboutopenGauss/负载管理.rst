@@ -1,0 +1,6 @@
+负载管理
+========
+
+.. toctree::
+
+    ../content/zh/docs/AboutopenGauss/支持I层高时延逃生能力

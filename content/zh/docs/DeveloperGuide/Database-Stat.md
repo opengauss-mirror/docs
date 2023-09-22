@@ -1,4 +1,4 @@
-# Database Stat<a name="ZH-CN_TOPIC_0000001259955049"></a>
+# Database Stat
 
 Database Stat列名称及描述如下表所示。
 

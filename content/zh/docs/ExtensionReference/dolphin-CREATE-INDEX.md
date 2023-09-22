@@ -1,4 +1,4 @@
-# CREATE INDEX<a name="ZH-CN_TOPIC_0289900160"></a>
+# CREATE INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s2baab5c876044795a12b5949f22d2144"></a>
 
@@ -18,7 +18,8 @@
 ## 注意事项<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
-    新增支持option的无序排列。
+-   新增支持option的无序排列。
+-   原始openGauss中，索引名是schema级别唯一的，创建索引时如果索引名重复了会报错。在dolphin插件中，如果GUC参数`dolphin.b_compatibility_mode`为on，当索引名重复时，会自动生成一个不重复的索引名做替代，并告警提示。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -60,7 +61,7 @@
 
     前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     > -  前缀键支持的索引方法：btree、ubtree。
     > -  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
     > -  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
@@ -84,7 +85,7 @@
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
-```
+```sql
 --创建表tpcds.ship_mode_t1。
 openGauss=# create schema tpcds;
 openGauss=# CREATE TABLE tpcds.ship_mode_t1
@@ -196,9 +197,19 @@ openGauss=# create table cgin_create_test(a int, b text) with (orientation = col
 CREATE TABLE
 openGauss=# create index cgin_test on cgin_create_test using gin(to_tsvector('ngram', b));
 CREATE INDEX
+
+--索引名重复的场景，打开dolphin.b_compatibility_mode后，重复索引名将自动替换成其他不重复的名字
+openGauss=# set dolphin.b_compatibility_mode to on;
+SET
+openGauss=# create table t1(id int,index idx_id(id));
+CREATE TABLE
+openGauss=# create table t2(id int,index idx_id(id));
+WARNING:  index "idx_id" already exists, change index name to "t2_id_idx"
+CREATE TABLE
 ```
 
-##全文索引
+## 全文索引
+
 ```sql
 openGauss=# CREATE SCHEMA fulltext_test;
 CREATE SCHEMA

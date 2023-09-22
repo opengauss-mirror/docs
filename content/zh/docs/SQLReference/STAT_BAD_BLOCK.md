@@ -1,4 +1,4 @@
-# STAT\_BAD\_BLOCK<a name="ZH-CN_TOPIC_0245374716"></a>
+# STAT\_BAD\_BLOCK
 
 获得当前节点表、索引等文件的读取失败信息。
 

@@ -1,4 +1,4 @@
-# 基于ODBC开发<a name="ZH-CN_TOPIC_0244721233"></a>
+# 基于ODBC开发
 
 -   **[ODBC包及依赖的库和头文件](ODBC包及依赖的库和头文件.md)**  
 
@@ -6,7 +6,9 @@
 
 -   **[开发流程](开发流程_ODBC.md)**  
 
--   **[示例](示例-常用功能和批量绑定.md.md)**  
+-   **[示例](示例-常用功能和批量绑定.md)**  
+
+-   **[典型应用场景配置](典型应用场景配置.md)**
 
 -   **[ODBC接口参考](ODBC接口参考.md)**  
 
@@ -15,7 +17,7 @@ ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公�
 ODBC的系统结构参见[图1](#fig1255101034110)。
 
 **图 1**  ODBC系统机构<a name="fig1255101034110"></a>  
-![](figures/ODBC系统机构.png "ODBC系统机构")
+![](figures/ODBC-System-Organization.png "ODBC系统机构")
 
 openGauss目前在以下环境中提供对ODBC3.5的支持。
 
@@ -48,14 +50,19 @@ openGauss目前在以下环境中提供对ODBC3.5的支持。
 <td class="cellrowborder" valign="top" width="21.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237120405_p162863113411"><a name="zh-cn_topic_0237120405_p162863113411"></a><a name="zh-cn_topic_0237120405_p162863113411"></a>ARM64位</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237120405_row1728515110349"><td class="cellrowborder" valign="top" width="78.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237120405_p1028612118342"><a name="zh-cn_topic_0237120405_p1028612118342"></a><a name="zh-cn_topic_0237120405_p1028612118342"></a>windows <span>7/</span><span>8/</span><span>10</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="21.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237120405_p162863113411"><a name="zh-cn_topic_0237120405_p162863113411"></a><a name="zh-cn_topic_0237120405_p162863113411"></a>x86_32位</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 UNIX/Linux系统下的驱动程序管理器主要有unixODBC和iODBC，在这选择驱动管理器unixODBC-2.3.0作为连接数据库的组件。
 
-Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项。
+Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项，可以参考<a href="https://gitee.com/opengauss/openGauss-connector-odbc/blob/master/windows/odbc-%E6%B5%8B%E8%AF%95.md " target="_blank">odbc文档</a>。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >当前数据库ODBC驱动基于开源版本，对于tinyint、smalldatetime、nvarchar、nvarchar2类型，在获取数据类型的时候，可能会出现不兼容。  
 
 

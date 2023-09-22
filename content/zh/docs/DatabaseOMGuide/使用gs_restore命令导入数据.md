@@ -1,4 +1,4 @@
-# 使用gs\_restore命令导入数据<a name="ZH-CN_TOPIC_0000001208139521"></a>
+# 使用gs\_restore命令导入数据
 
 ## 操作场景<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section17330121375310"></a>
 
@@ -19,7 +19,7 @@ gs\_restore工具在导入时，允许用户选择需要导入的内容，并支
 
 ## 操作步骤<a name="zh-cn_topic_0283137171_zh-cn_topic_0237121137_section3467125218532"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >gs\_restore默认是以追加的方式进行数据导入。为避免多次导入造成数据异常，在进行导入时，建议选择使用“-c”和“-e”参数。“-c”表示在重新创建数据库对象前，清理（删除）已存在于将要还原的数据库中的数据库对象；“-e”表示当发送SQL语句到数据库时如果出现错误请退出，默认状态下会继续，且在导入后会显示一系列错误信息。
 
@@ -289,8 +289,8 @@ backupdb=# select * from hr.areas;
 示例十三：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。
 
 ```
-human_resource=# CREATE USER user1 IDENTIFIED BY "1234@abc";
-CREATE ROLE role1 with SYSADMIN IDENTIFIED BY "abc@1234";
+human_resource=# CREATE USER user1 IDENTIFIED BY "XXXXXXXX";
+CREATE ROLE role1 with SYSADMIN IDENTIFIED BY "XXXXXXXX";
 gs_restore -U user1 /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --role role1 --rolepassword abc@1234
 Password:
 restore operation successful

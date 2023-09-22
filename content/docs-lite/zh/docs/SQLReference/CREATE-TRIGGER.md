@@ -490,10 +490,35 @@ begin
 end;
 /
 -- 重命名指定模式下的触发器
+-- 由于重命名触发器不支持修改触发器所属模式，因此新触发器名不支持携带模式名
 alter trigger testscm.animals_trigger on testscm.animals_scm rename to animals_trigger_new;
 -- 删除指定模式下的触发器
 drop trigger testscm.animals_trigger_new;
 drop trigger if exists testscm.animals_trigger_new;
+-- 当删除触发器不指定所在表时，若存在多个同名触发器，不支持通过指定触发器的模式名来确定所在表以及触发器，如下示例：
+testdb_m=# create schema testscm;
+CREATE SCHEMA
+testdb_m=# create table food (id int, foodtype varchar(32), remark varchar(32), time_flag timestamp);
+CREATE TABLE
+testdb_m=# create table animals (id int, name char(30));
+CREATE TABLE
+testdb_m=# create table testscm.animals_scm (id int, name char(30));
+CREATE TABLE
+testdb_m=# create or replace function food_function() returns trigger as
+testdb_m-# $$
+testdb_m$# declare
+testdb_m$# begin
+testdb_m$#     insert into food(id, foodtype, remark, time_flag) values (1,'bamboo', 'healthy', now());
+testdb_m$# return new;
+testdb_m$# end
+testdb_m$# $$ language plpgsql;
+CREATE FUNCTION
+testdb_m=# create trigger animals_trigger before insert on animals for each row execute procedure food_function();
+CREATE TRIGGER
+testdb_m=# create trigger testscm.animals_trigger before insert on testscm.animals_scm for each row execute procedure food_function();
+CREATE TRIGGER
+testdb_m=# drop TRIGGER testscm.animals_trigger;
+ERROR:  trigger named "animals_trigger" has more than one trigger, please use drop trigger on syntax
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>

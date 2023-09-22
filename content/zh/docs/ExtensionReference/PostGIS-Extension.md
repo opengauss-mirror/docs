@@ -1,4 +1,4 @@
-# PostGIS Extension<a name="ZH-CN_TOPIC_0000001245957397"></a>
+# PostGIS Extension
 
 -   **[PostGIS概述](PostGIS概述.md)**  
 

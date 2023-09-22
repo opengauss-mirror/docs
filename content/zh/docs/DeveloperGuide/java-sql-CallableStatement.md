@@ -1,4 +1,4 @@
-# java.sql.CallableStatement<a name="ZH-CN_TOPIC_0289900773"></a>
+# java.sql.CallableStatement
 
 java.sql.CallableStatement是存储过程执行接口。
 
@@ -192,7 +192,7 @@ java.sql.CallableStatement是存储过程执行接口。
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >
 >-   不允许含有OUT参数的语句执行批量操作。
 >

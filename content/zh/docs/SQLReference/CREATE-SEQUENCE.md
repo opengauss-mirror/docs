@@ -1,4 +1,4 @@
-# CREATE SEQUENCE<a name="ZH-CN_TOPIC_0289899862"></a>
+# CREATE SEQUENCE
 
 ## 功能描述<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section11152141914129"></a>
 
@@ -15,13 +15,17 @@ CREATE SEQUENCE用于向当前数据库里增加一个新的序列。序列的Ow
 ## 语法格式<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137208_zh-cn_topic_0237122114_zh-cn_topic_0059778825_section969884316205"></a>
+
+-   **IF NOT EXISTS**
+
+    如果已经存在相同名称的序列，不会报出错误，而会发出通知，通知此序列已存在。
 
 -   **name**
 
@@ -53,7 +57,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为1，表示一次只能生成一个值，也就是没有缓存。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >不建议同时定义cache和maxvalue或minvalue。因为定义cache后不能保证序列的连续性，可能会产生空洞，造成序列号段浪费。
 
@@ -75,7 +79,7 @@ CREATE  [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
 
     缺省值为OWNED BY NONE，表示不存在这样的关联。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >通过OWNED BY创建的Sequence不建议用于其他表，如果希望多个表共享Sequence，该Sequence不应该从属于特定表。
 

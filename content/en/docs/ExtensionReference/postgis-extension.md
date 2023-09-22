@@ -1,6 +1,6 @@
 # PostGIS Extension<a name="EN-US_TOPIC_0000001245957397"></a>
 
--   **[Overview](overview.md)**  
+-   **[Overview](overview-PostGIS.md)**  
 
 -   **[Installing PostGIS](installing-postgis.md)**  
 

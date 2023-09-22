@@ -72,5 +72,5 @@ If SQLBindCol returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 
 ## Example<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_sd5d16919fd6141598535fc735a91d4df"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

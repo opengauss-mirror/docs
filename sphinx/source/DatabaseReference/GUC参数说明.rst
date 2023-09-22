@@ -1,0 +1,51 @@
+GUC参数说明
+===========
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseReference/文件位置
+    ../content/zh/docs/DatabaseReference/GUC使用说明
+    连接和认证
+    资源消耗
+    预写式日志
+    双机复制
+    ../content/zh/docs/DatabaseReference/内存表
+    查询规划
+    错误报告和日志
+    ../content/zh/docs/DatabaseReference/告警检测
+    运行时统计
+    ../content/zh/docs/DatabaseReference/负载管理
+    ../content/zh/docs/DatabaseReference/自动清理
+    客户端连接缺省设置
+    ../content/zh/docs/DatabaseReference/锁管理
+    版本和平台兼容性
+    ../content/zh/docs/DatabaseReference/容错性
+    ../content/zh/docs/DatabaseReference/连接池参数
+    ../content/zh/docs/DatabaseReference/openGauss事务
+    ../content/zh/docs/DatabaseReference/双数据库实例复制参数
+    ../content/zh/docs/DatabaseReference/开发人员选项
+    审计
+    CM相关参数
+    ../content/zh/docs/DatabaseReference/升级参数
+    ../content/zh/docs/DatabaseReference/其它选项
+    ../content/zh/docs/DatabaseReference/等待事件
+    ../content/zh/docs/DatabaseReference/Query-22
+    ../content/zh/docs/DatabaseReference/系统性能快照
+    ../content/zh/docs/DatabaseReference/安全配置
+    ../content/zh/docs/DatabaseReference/全局临时表
+    ../content/zh/docs/DatabaseReference/HyperLogLog
+    ../content/zh/docs/DatabaseReference/用户自定义函数-2
+    ../content/zh/docs/DatabaseReference/定时任务
+    ../content/zh/docs/DatabaseReference/线程池
+    ../content/zh/docs/DatabaseReference/备份恢复
+    ../content/zh/docs/DatabaseReference/Undo
+    ../content/zh/docs/DatabaseReference/DCF参数设置
+    ../content/zh/docs/DatabaseReference/闪回相关参数
+    ../content/zh/docs/DatabaseReference/回滚相关参数
+    ../content/zh/docs/DatabaseReference/预留参数
+    ../content/zh/docs/DatabaseReference/AI特性-GUC
+    ../content/zh/docs/DatabaseReference/Global-SysCache参数
+    ../content/zh/docs/DatabaseReference/多级缓存管理参数
+    ../content/zh/docs/DatabaseReference/资源池化参数
+    ../content/zh/docs/DatabaseReference/高效数据压缩算法相关参数
+    ../content/zh/docs/DatabaseReference/备机支持写语句参数

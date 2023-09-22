@@ -1,4 +1,4 @@
-# PQsendQueryPrepared<a name="ZH-CN_TOPIC_0242380585"></a>
+# PQsendQueryPrepared
 
 ## 功能描述<a name="zh-cn_topic_0241735630_section1390173422515"></a>
 

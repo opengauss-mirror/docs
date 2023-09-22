@@ -1,4 +1,4 @@
-# ALTER MASKING POLICY<a name="ZH-CN_TOPIC_0306525300"></a>
+# ALTER MASKING POLICY
 
 ## 功能描述<a name="zh-cn_topic_0059778839_s878bf4f1569c4d2f87e056f26372448e"></a>
 
@@ -96,8 +96,8 @@
 
 ```
 --创建dev_mask和bob_mask用户。
-openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
-openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'xxxxxxxx';
+openGauss=# CREATE USER bob_mask PASSWORD 'xxxxxxxx';
 
 --创建一个表tb_for_masking
 openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);

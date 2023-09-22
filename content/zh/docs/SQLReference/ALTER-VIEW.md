@@ -1,4 +1,4 @@
-# ALTER VIEW<a name="ZH-CN_TOPIC_0289900061"></a>
+# ALTER VIEW
 
 ## 功能描述<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_section1274412112511"></a>
 
@@ -66,11 +66,11 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 - 设置视图的定义（该语法仅支持在B兼容模式下才能使用）
 
   ```
-  ALTER [DEFINER = user] VIEW view_name [ ( column_name [, ...] ) ]
-      AS query [WITH [CASCADE | LOCAL] CHECK OPTION];
+  ALTER [DEFINER = user] [ security_option ] VIEW view_name [ ( column_name [, ...] ) ]
+      AS query [WITH [CASCADE | LOCAL] CHECK OPTION];  
   ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >![](public_sys-resources/icon-note.png) **说明：**   
     >ALTER VIEW AS 中的 query 新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列。
 
 ## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
@@ -107,6 +107,11 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
 
     视图的新模式。
 
+-   **security_option**
+    指定视图的鉴权规则。
+
+    取值范围： SQL SECURITY { DEFINER | INVOKER }
+
 -   **view\_option\_name \[ = view\_option\_value \]**
 
     该子句为视图指定一个可选的参数。
@@ -140,6 +145,9 @@ openGauss=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 
 --删除视图。
 openGauss=# DROP VIEW public.customer_details_view_v2;
+
+--修改视图的鉴权规则
+openGauss=# ALTER sql security definer VIEW v2 AS select * from sql_security_1144425;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>

@@ -1,0 +1,16 @@
+系统调优指南
+============
+
+.. toctree::
+
+    ../content/zh/docs/PerformanceTuningGuide/操作系统参数调优
+    数据库系统参数调优
+    ../content/zh/docs/PerformanceTuningGuide/配置向量化执行引擎
+    配置SMP
+    配置LLVM
+    ../content/zh/docs/PerformanceTuningGuide/配置Ustore
+    ../content/zh/docs/PerformanceTuningGuide/配配置并行查询功能
+    资源负载管理
+
+
+

@@ -1,4 +1,4 @@
-# gs\_probackup<a name="ZH-CN_TOPIC_0289899221"></a>
+# gs\_probackup
 
 ## 背景信息<a name="zh-cn_topic_0287276008_section779474172017"></a>
 
@@ -8,6 +8,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   可备份外部目录的内容，如脚本文件、配置文件、日志文件、dump文件等。
 -   支持增量备份、定期备份和远程备份。
 -   可设置备份的留存策略。
+-   支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
 ## 前提条件<a name="zh-cn_topic_0287276008_section95951827112520"></a>
 
@@ -23,7 +24,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
 -   当存在用户自定义表空间时，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份。
--   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
+-   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
@@ -112,7 +113,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     gs_probackup backup -B backup-path --instance=instance_name -b backup-mode
     [-D pgdata-path] [-C] [-S slot-name] [--temp-slot] [--backup-pg-log] [-j threads_num] [--progress]
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
-    [--archive-timeout=timeout] [-t rwtimeout]
+    [--archive-timeout=timeout] [-t rw-timeout]
     [logging_options] [retention_options] [compression_options] [connection_options]
     [remote_options] [dss_options] [pinning_options][--backup-pg-replslot]
     [--help]
@@ -304,7 +305,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     默认值：300
 
--   -t rwtimeout
+-   -t rw-timeout
 
     以秒为单位的连接的超时时间。
 
@@ -348,7 +349,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **恢复目标相关参数\(recovery\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >当前不支持配置连续的WAL归档的PITR，因而使用这些参数会有一定限制，具体如下描述。
 >如果需要使用持续归档的WAL日志进行PITR恢复，请按照下面描述的步骤：
@@ -385,7 +386,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **留存相关参数\(retention\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >可以和backup和delete命令一起使用这些参数。
 
 -   --retention-redundancy=_retention-redundancy_
@@ -424,7 +425,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **固定备份相关参数\(pinning\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >如果要将某些备份从已建立的留存策略中排除，可以和backup和set-backup命令一起使用这些参数。
 
 -   --ttl=_interval_
@@ -497,7 +498,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **连接相关参数\(connection\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >可以和backup命令一起使用这些参数。
 
 -   -d  _dbname_, --pgdatabase=_dbname_
@@ -538,7 +539,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **压缩相关参数\(compression\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >可以和backup命令一起使用这些参数。
 
 -   --compress-algorithm=_compress-algorithm_
@@ -566,7 +567,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ### **远程模式相关参数\(remote\_options\)**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >通过SSH远程运行gs\_probackup操作的相关参数。可以和add-instance、set-config、backup、restore命令一起使用这些参数。
 
 -   --remote-proto=_protocol_
@@ -611,7 +612,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
   例如：--ssh-options='-c cipher\_spec -F configfile'
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >
   >
@@ -724,7 +725,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 7. 将主机的dn目录中的如下文件拷贝出来（当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群，需要执行该操作，否则跳过）。
 
    ```
-   cacert.pem server.crt server.key server.key.cipher server.key.rand
+   cacert.pem server.crt server.key server.key.cipher server.key.rand postgresql.conf pg_hba.conf
    ```
    **说明：** 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，集群之间用于认证的证书会发生变化，因此需要将当前集群的拷贝下来防止恢复后被备份文件中的证书覆盖导致无法和备机通信。
 
@@ -732,6 +733,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
    ```
    rm -rf primary_dir/*
+   export DSS_MAINTAIN=TRUE
    dssserver -D $DSS_HOME &
    ```
 
@@ -739,6 +741,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
    ```
    gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
+   export DSS_MAINTAIN=FALSE
    ```
 
 10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
@@ -749,7 +752,9 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     ```
     rm -rf standby_dir/*
+    export DSS_MAINTAIN=TRUE
     dssserver -D $DSS_HOME &
+    export DSS_MAINTAIN=FALSE
     ```
 
 13. 在备机执行初始化操作。

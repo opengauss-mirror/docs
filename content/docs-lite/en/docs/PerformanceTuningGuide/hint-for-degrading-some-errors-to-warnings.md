@@ -1,4 +1,4 @@
-# Hint for Degrading Some Errors to Warnings<a name="EN-US_TOPIC_0245374572"></a>.
+# Hint for Degrading Some Errors to Warnings<a name="EN-US_TOPIC_0245374572"></a>
 
 ## Function<a name="en-us_topic_0237121537_section290819468377"></a>
 

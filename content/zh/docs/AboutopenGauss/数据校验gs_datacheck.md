@@ -1,4 +1,4 @@
-# 数据校验 gs_datacheck <a name="ZH-CN_TOPIC_0000001264707837"></a>
+# 数据校验 gs_datacheck 
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -47,3 +47,12 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对MySQL至ope
 
 无。
 
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+
+数据校验社区地址：https://gitee.com/opengauss/openGauss-tools-datachecker-performance
+
+详细参考文档： [校验工具使用指导.md](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/校验工具使用指导.md) 

@@ -1,4 +1,4 @@
-# GS\_WLM\_OPERATOR\_INFO<a name="ZH-CN_TOPIC_0289900540"></a>
+# GS\_WLM\_OPERATOR\_INFO
 
 GS\_WLM\_OPERATOR\_INFO系统表显示执行作业结束后的算子相关的记录。此数据是从内核中转储到系统表中的数据。查询该系统表需要sysadmin权限，且仅在数据库postgres下面查询时有数据。
 

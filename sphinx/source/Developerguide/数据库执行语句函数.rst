@@ -1,16 +1,16 @@
-
+数据库执行语句函数
+=====
 
 .. toctree::
 
-    ../content/zh/docs/Developerguide/PQclear
-    ../content/zh/docs/Developerguide/PQexec
-    ../content/zh/docs/Developerguide/PQexecParams
-    ../content/zh/docs/Developerguide/PQexecParamsBatch
-    ../content/zh/docs/Developerguide/PQexecPrepared
-    ../content/zh/docs/Developerguide/PQexecPreparedBatch
-    ../content/zh/docs/Developerguide/PQfname
-    ../content/zh/docs/Developerguide/PQgetvalue
-    ../content/zh/docs/Developerguide/PQnfields
-    ../content/zh/docs/Developerguide/PQntuples
-    ../content/zh/docs/Developerguide/PQprepare
-    ../content/zh/docs/Developerguide/PQresultStatus
+    ../content/zh/docs/DeveloperGuide/PQclear
+    ../content/zh/docs/DeveloperGuide/PQexec
+    ../content/zh/docs/DeveloperGuide/PQexecParams
+    ../content/zh/docs/DeveloperGuide/PQexecParamsBatch
+    ../content/zh/docs/DeveloperGuide/PQexecPrepared
+    ../content/zh/docs/DeveloperGuide/PQexecPreparedBatch
+    ../content/zh/docs/DeveloperGuide/PQfname
+    ../content/zh/docs/DeveloperGuide/PQgetvalue
+    ../content/zh/docs/DeveloperGuide/PQnfields
+    ../content/zh/docs/DeveloperGuide/PQntuples
+    ../content/zh/docs/DeveloperGuide/PQprepare

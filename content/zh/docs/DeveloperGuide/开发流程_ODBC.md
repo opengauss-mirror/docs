@@ -1,7 +1,7 @@
-# 开发流程<a name="ZH-CN_TOPIC_0244721237"></a>
+# 开发流程
 
 **图 1**  ODBC开发应用程序的流程<a name="zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/ODBC开发应用程序的流程.png "ODBC开发应用程序的流程")
+![](figures/The-process-of-developing-application-programs-using-ODBC.png "ODBC开发应用程序的流程")
 
 ## 开发流程中涉及的API<a name="zh-cn_topic_0237120409_zh-cn_topic_0059778957_sc80403b34b784a2cbb2e52f9e00c3f7e"></a>
 
@@ -99,10 +99,10 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
+>![](public_sys-resources/icon-note.png) **说明：**   
 >数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，同时如果其中有一个语句失败，那么整个请求都将会被回滚。  
 
-> <img src="public_sys-resources/icon-danger.gif"> **警告：**   
+> <img src="public_sys-resources/icon-danger.png"> **警告：**   
 >
 > ODBC为应用程序与数据库的中心层，负责把应用程序发出的SQL指令传到数据库当中，自身并不解析SQL语法。故在应用程序中写入带有保密信息的SQL语句时（如明文密码），保密信息会被暴露在驱动日志中。
 

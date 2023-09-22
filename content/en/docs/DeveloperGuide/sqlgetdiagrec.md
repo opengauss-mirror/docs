@@ -155,5 +155,5 @@ If an ODBC function returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, t
 
 ## Example<a name="en-us_topic_0238272900_en-us_topic_0237120430_en-us_topic_0059778032_sf24dafb7ecbe4978ac9b0c0da42eaa19"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

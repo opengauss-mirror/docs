@@ -1,11 +1,11 @@
-# ODBC<a name="ZH-CN_TOPIC_0000001233927853"></a>
+# ODBC
 
 ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。
 
 ODBC的系统结构参见[图1](#zh-cn_topic_0283137057_fig1255101034110)。
 
 **图 1**  ODBC系统机构<a name="zh-cn_topic_0283137057_fig1255101034110"></a>  
-![](figures/ODBC系统机构.png "ODBC系统机构")
+![](figures/ODBC-System-Organization.png "ODBC系统机构")
 
 openGauss目前在以下环境中提供对ODBC的支持。
 
@@ -339,7 +339,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
         </tbody>
         </table>
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >SSL模式：
         >保证client.key\*系列文件为600权限：
         >退回根目录，创建.postgresql目录，并将root.crt，client.crt，client.key，client.key.cipher，client.key.rand，client.req，server.crt，server.key，server.key.cipher，server.key.rand，server.req放在此路径下。
@@ -377,7 +377,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >![](public_sys-resources/icon-note.png) **说明：**   
         >-   -N all表示openGauss中的所有主机。  
         >-   -I all表示主机中的所有实例。  
         >-   -h表示指定需要在“pg\_hba.conf”增加的语句。  
@@ -449,7 +449,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
 ## 开发流程<a name="section3537202314458"></a>
 
 **图 2**  ODBC开发应用程序的流程<a name="zh-cn_topic_0283137079_zh-cn_topic_0237120409_zh-cn_topic_0059778957_fba9450765c4b4dc8b2809b91c8de76b3"></a>  
-![](figures/ODBC开发应用程序的流程.png "ODBC开发应用程序的流程")
+![](figures/The-process-of-developing-application-programs-using-ODBC.png "ODBC开发应用程序的流程")
 
 ## 常用接口<a name="section1274764216461"></a>
 
@@ -547,7 +547,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >数据库中收到的一次执行请求（不在事务块中），如果含有多条语句，将会被打包成一个事务，同时如果其中有一个语句失败，那么整个请求都将会被回滚。
 
 ## 连接数据库<a name="section472715438471"></a>

@@ -21,6 +21,8 @@
 
 - 多个index_hint 连用等价index_list 中写多个索引名字。
 
+- IGNORE INDEX 所指定要忽略的索引的级别是更高的，意味着当IGNORE INDEX指定了某个索引要被忽略时，不会考虑是否有其他HINT指定要使用这个索引。
+
 ## 语法格式
 
 ```
@@ -29,8 +31,8 @@ tbl_name [ partition_clause ] [ [ AS ] alias ] [ index_hint_list ]
 index_hint_list:
     index_hint [ index_hint ]
 index_hint:
-    USE {INDEX | KEY} ( [ index_list ] )
-  | FORCE { INDEX | KEY } ( index_list )
+    USE { INDEX | KEY } ( [ index_list ] )
+  | { FORCE | IGNORE } { INDEX | KEY } ( index_list )
 index_list:
     index_name [ , index_name ] ...
 ```
@@ -56,4 +58,12 @@ openGauss=# explain (costs off,verbose true  )select * from db_1097149_tb force 
    Index Cond: ((db_1097149_tb.col4)::text = 'a'::text)
    Filter: (db_1097149_tb.col2 = 3)
 (4 rows)
+
+openGauss=# explain (costs off) select * from db_1130449_tb IGNORE INDEX (index_1130449) where col2= 3;
+        QUERY PLAN         
+---------------------------
+ Seq Scan on db_1130449_tb
+   Filter: (col2 = 3)
+(2 rows)
+
 ```

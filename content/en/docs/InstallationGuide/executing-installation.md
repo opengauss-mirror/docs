@@ -4,7 +4,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 ## Prerequisites<a name="en-us_topic_0283136467_en-us_topic_0241805806_en-us_topic_0085434626_en-us_topic_0059782015_s2035de58d7ef4acc937b8f94c0ed368b"></a>
 
--   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [Creating the Required User Account and Configuring the Installation Environment](creating-the-required-user-account-and-configuring-the-installation-environment.md).
+-   You have successfully executed the  **gs\_preinstall**  script. that is, you have completed operations described in  [initializing the installation environment](initializing-the-installation-environment.md).
 -   All the server OSs and networks are functioning properly.
 -   You have checked that the  **locale**  parameter for each server is set to the same value.
 

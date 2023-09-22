@@ -1,4 +1,4 @@
-# PG\_AMPROC<a name="ZH-CN_TOPIC_0289900475"></a>
+# PG\_AMPROC
 
 PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过程的信息。每个属于某个操作符族的支持过程都占有一行。
 
@@ -39,7 +39,7 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </td>
 <td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_ad6865fbdec414d1f940666cd5cb0ae5e"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a>相关操作符的左输入数据类型。可能取值及其描述见于pg_type.h。</p>
+<td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a0a14b8ebbab0446b978888027039a861"></a>相关操作符的左输入数据类型。可能取值及其描述见于系统表pg_type或查看源码中的pg_type.h文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_rc15fc41890c64c4fbae83a345bd7466a"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a6c8f488dbcab4be6a84bd2c884c7ae83"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a6c8f488dbcab4be6a84bd2c884c7ae83"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a6c8f488dbcab4be6a84bd2c884c7ae83"></a>amprocrighttype</p>
@@ -48,7 +48,7 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </td>
 <td class="cellrowborder" valign="top" width="25.94%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a59583e3a3d8446e795b0d389d09997e6"></a><a href="PG_TYPE.md">PG_TYPE</a>.oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a>相关操作符的右输入数据类型。可能取值及其描述见于pg_type.h。</p>
+<td class="cellrowborder" valign="top" width="40.98%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a99330251d63c469582bc507a075e98ab"></a>相关操作符的右输入数据类型。可能取值及其描述见于系统表pg_type或查看源码中的pg_type.h文件。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_r4f9b582d22154188ad45298d86480fcb"><td class="cellrowborder" valign="top" width="21.05%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a508feb870222474ba8a341e18f6b9ac6"><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a508feb870222474ba8a341e18f6b9ac6"></a><a name="zh-cn_topic_0283136801_zh-cn_topic_0237122269_zh-cn_topic_0059779370_a508feb870222474ba8a341e18f6b9ac6"></a>amprocnum</p>

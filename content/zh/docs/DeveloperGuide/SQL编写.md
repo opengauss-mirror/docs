@@ -1,4 +1,4 @@
-# SQL编写<a name="ZH-CN_TOPIC_0000001149508025"></a>
+# SQL编写
 
 ## DDL<a name="section60205875143313"></a>
 
@@ -149,10 +149,9 @@
   SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T2 WHERE T1.C1=T2.C2);
   ```
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   如果不能保证T1.C1列的值为NOT NULL的情况下，就不能进行上述改写。
-
   >-   如果T1.C1为子查询的输出，要根据业务逻辑确认其输出是否为NOT NULL。
 
 -   【建议】通过游标进行翻页查询，而不是使用LIMIT OFFSET语法，避免多次执行带来的资源开销。游标必须在事务中使用，执行完后务必关闭游标并提交事务。

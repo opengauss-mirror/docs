@@ -184,4 +184,4 @@ CREATE INDEX
 
 ## Helpful Links<a name="section156744489391"></a>
 
-[CREATE INDEX](CREATE-INDEX.md)
+[CREATE INDEX](../SQLReference/CREATE-INDEX.md)

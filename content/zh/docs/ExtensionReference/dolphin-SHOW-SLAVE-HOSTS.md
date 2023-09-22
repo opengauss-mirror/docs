@@ -1,4 +1,4 @@
-# SHOW SLAVE HOSTS <a name="ZH-CN_TOPIC_0289900448"></a>
+# SHOW SLAVE HOSTS 
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
@@ -12,8 +12,7 @@
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
-SHOW SLAVE HOSTS
-
+{SHOW SLAVE HOSTS | SHOW REPLICAS}
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
@@ -66,15 +65,15 @@ SHOW SLAVE HOSTS
 
 - **receiver_replay_location**
 
-      接收端replay日志位置。
+       接收端replay日志位置。
 
 - **sync_priority**
 
-      同步复制的优先级（0表示异步）。
+       同步复制的优先级（0表示异步）。
 
-- **sync_priority**
+- **sync_state**
             
-      同步状态：
+       同步状态：
             异步复制、
             同步复制、
             潜在同步者。
@@ -83,6 +82,24 @@ SHOW SLAVE HOSTS
 
 ```
 openGauss=# show slave hosts;
+-[ RECORD 1 ]------------+----------------------------------
+pid                      | 140395615176448
+usesysid                 | 10
+usename                  | opengauss
+application_name         | WalSender to Standby[walreceiver]
+client_addr              | 127.0.0.1
+client_hostname          |
+client_port              | 43174
+backend_start            | 2022-08-23 18:41:12.398717+08
+state                    | Streaming
+sender_sent_location     | 0/1098BB08
+receiver_write_location  | 0/1098BB08
+receiver_flush_location  | 0/1098BB08
+receiver_replay_location | 0/1098BB08
+sync_priority            | 1
+sync_state               | Sync
+
+openGauss=# show replicas;
 -[ RECORD 1 ]------------+----------------------------------
 pid                      | 140395615176448
 usesysid                 | 10

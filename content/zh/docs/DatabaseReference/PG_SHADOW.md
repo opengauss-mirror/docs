@@ -1,4 +1,4 @@
-# PG\_SHADOW<a name="ZH-CN_TOPIC_0289900422"></a>
+# PG\_SHADOW
 
 PG\_SHADOW视图显示了所有在PG\_AUTHID中标记了rolcanlogin的角色的属性。
 

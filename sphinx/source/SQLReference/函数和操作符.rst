@@ -1,0 +1,45 @@
+函数和操作符
+============
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/逻辑操作符
+    ../content/zh/docs/SQLReference/比较操作符
+    ../content/zh/docs/SQLReference/字符处理函数和操作符
+    ../content/zh/docs/SQLReference/二进制字符串函数和操作符
+    ../content/zh/docs/SQLReference/位串函数和操作符
+    ../content/zh/docs/SQLReference/模式匹配操作符
+    ../content/zh/docs/SQLReference/数字操作函数和操作符
+    ../content/zh/docs/SQLReference/时间和日期处理函数和操作符
+    ../content/zh/docs/SQLReference/类型转换函数
+    ../content/zh/docs/SQLReference/几何函数和操作符
+    ../content/zh/docs/SQLReference/网络地址函数和操作符
+    ../content/zh/docs/SQLReference/文本检索函数和操作符
+    ../content/zh/docs/SQLReference/JSON-JSONB函数和操作符
+    ../content/zh/docs/SQLReference/HLL函数和操作符
+    ../content/zh/docs/SQLReference/SEQUENCE函数
+    ../content/zh/docs/SQLReference/数组函数和操作符
+    ../content/zh/docs/SQLReference/范围函数和操作符
+    ../content/zh/docs/SQLReference/聚集函数
+    ../content/zh/docs/SQLReference/窗口函数
+    ../content/zh/docs/SQLReference/安全函数
+    ../content/zh/docs/SQLReference/账本数据库的函数
+    ../content/zh/docs/SQLReference/密态等值的函数
+    ../content/zh/docs/SQLReference/返回集合的函数
+    ../content/zh/docs/SQLReference/条件表达式函数
+    ../content/zh/docs/SQLReference/系统信息函数
+    系统管理函数
+    ../content/zh/docs/SQLReference/统计信息函数
+    ../content/zh/docs/SQLReference/触发器函数
+    ../content/zh/docs/SQLReference/HashFunc函数
+    ../content/zh/docs/SQLReference/提示信息函数
+    ../content/zh/docs/SQLReference/全局临时表函数
+    ../content/zh/docs/SQLReference/故障注入系统函数
+    ../content/zh/docs/SQLReference/AI特性函数
+    ../content/zh/docs/SQLReference/动态数据脱敏函数
+    ../content/zh/docs/SQLReference/其他系统函数
+    ../content/zh/docs/SQLReference/内部函数
+    ../content/zh/docs/SQLReference/Global-SysCache特性函数
+    ../content/zh/docs/SQLReference/数据损坏检测修复函数
+    ../content/zh/docs/SQLReference/资源池化函数
+    ../content/zh/docs/SQLReference/废弃函数

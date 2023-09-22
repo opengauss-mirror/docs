@@ -1,4 +1,4 @@
-# 扩展FDW与其他openGauss特性<a name="ZH-CN_TOPIC_0280525160"></a>
+# 扩展FDW与其他openGauss特性
 
 openGauss基于PostgreSQL，而PostgreSQL没有内置存储引擎适配器，如MySQL的handlerton。为了使MOT存储引擎能够集成到openGauss中，我们利用并扩展了现有的FDW机制。随着FDW引入PostgreSQL 9.1，现在可以将这些外表和数据源呈现为统一、本地可访问的关系来访问外部管理的数据库。
 
@@ -9,7 +9,7 @@ openGauss基于PostgreSQL，而PostgreSQL没有内置存储引擎适配器，如
 下图显示了MOT存储引擎如何嵌入到openGauss中及其对数据库功能的双向访问。
 
 **图 1**  openGauss内置MOT存储引擎——外部数据库的FDW访问<a name="fig23070208"></a>  
-![](figures/MOT架构.png "MOT架构")
+![](figures/MOT-architecture.png "MOT架构")
 
 我们通过扩展和修改FdwRoutine结构来扩展FDW的能力，以便引入在MOT引入之前不需要的特性和调用。例如，新增了对以下功能的支持：添加索引、删除索引/表、截断、真空和表/索引内存统计。重点放在了FdwRoutine结构与openGauss日志、复制和检查点机制的集成，以便通过故障为跨表事务提供一致性。在这种情况下，MOT本身有时会通过FDW层发起对openGauss功能的调用。
 
@@ -35,8 +35,8 @@ MOT DW机制将指令传递给MOT存储引擎，用于实际建表。同样，�
 存储引擎负责存储、读取、更新和删除底层内存和存储系统中的数据。存储引擎不处理日志、检查点和恢复，特别是因为某些事务包含多个不同存储引擎的表。因此，为了数据持久化和复制，openGauss封装使用如下高可用性设施：
 
 -   **持久性**：MOT引擎通过WAL记录使数据持久化，WAL记录使用openGauss的XLOG接口。这为openGauss提供了使用相同API进行复制的好处。具体请参见[MOT持久性概念](MOT持久性概念.md)。
--   **检查点设定：**通过向openGauss Checkpointer注册回调来启用MOT检查点每当执行通用数据库检查点时，MOT检查点也被调用。MOT保留了检查点的日志序列号（LSN），以便与openGauss恢复对齐。MOT Checkpointing算法是高度优化的异步算法，不会停止并发事务。具体请参见[MOT检查点概念](MOT检查点概念.md)。
--   **恢复：**启动时，openGauss首先调用MOT回调，通过加载到内存行并创建索引来恢复MOT检查点，然后根据检查点的LSN重放记录来执行WAL恢复。MOT检查点使用多线程并行恢复，每个线程读取不同的数据段。这使MOT检查点在多核硬件上的恢复速度相当快，尽管可能比仅重放WAL记录的基于磁盘的表慢一些。具体请参见[MOT恢复概念](MOT恢复概念.md)。
+-   **检查点设定**：通过向openGauss Checkpointer注册回调来启用MOT检查点每当执行通用数据库检查点时，MOT检查点也被调用。MOT保留了检查点的日志序列号（LSN），以便与openGauss恢复对齐。MOT Checkpointing算法是高度优化的异步算法，不会停止并发事务。具体请参见[MOT检查点概念](MOT检查点概念.md)。
+-   **恢复**：启动时，openGauss首先调用MOT回调，通过加载到内存行并创建索引来恢复MOT检查点，然后根据检查点的LSN重放记录来执行WAL恢复。MOT检查点使用多线程并行恢复，每个线程读取不同的数据段。这使MOT检查点在多核硬件上的恢复速度相当快，尽管可能比仅重放WAL记录的基于磁盘的表慢一些。具体请参见[MOT恢复概念](MOT恢复概念.md)。
 
 ## VACUUM和DROP<a name="section601931"></a>
 

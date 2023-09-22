@@ -1,4 +1,4 @@
-# CREATE TRIGGER<a name="ZH-CN_TOPIC_0289900727"></a>
+# CREATE TRIGGER
 
 ## 功能描述<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s08b0f056b5f14492970a9037c63fa70c"></a>
 
@@ -72,7 +72,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
 -   **trigger\_name**
 
-    触发器名称，该名称不能限定模式，因为触发器自动继承其所在表的模式，且同一个表的触发器不能重名。 对于约束触发器，使用[SET CONSTRAINTS](../SQLReference/SET-CONSTRAINTS.md)修改触发器行为时也使用此名称。
+    触发器名称，该名称在mysql兼容风格语法中可以指定模式，触发器模式必须与其所在表的模式相同，若不限定模式，触发器自动继承其所在表的模式，且同一个表的触发器不能重名。 对于约束触发器，使用[SET CONSTRAINTS](../SQLReference/SET-CONSTRAINTS.md)修改触发器行为时也使用此名称。
 
     取值范围：符合标识符命名规范的字符串，且最大长度不超过63个字符。
 
@@ -165,7 +165,7 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
   当设置了分隔符后，使用MySQL 风格的创建触发器的语法，trigger_body 的格式是按照MySQL 的格式规定书写的，declare 段落需要写在begin ... end段落之间。
   
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >关于触发器种类：
   >
@@ -492,6 +492,56 @@ db_mysql=# create trigger animal_trigger_single
           after insert on animals
           for each row
           insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
+
+--在指定模式下创建、重命名、删除触发器语法，触发器的模式需要与表模式相同
+create schema testscm;
+create table food (id int, foodtype varchar(32), remark varchar(32), time_flag timestamp);
+create table testscm.animals_scm (id int, name char(30));
+-- 在指定模式下创建触发器
+create trigger testscm.animals_trigger
+after insert on testscm.animals_scm
+for each row
+begin
+    insert into food(id, foodtype, remark, time_flag) values (1,'bamboo', 'healthy', now());
+end;
+/
+create trigger if not exists testscm.animals_trigger
+after insert on testscm.animals_scm
+for each row
+begin
+    insert into food(id, foodtype, remark, time_flag) values (1,'bamboo', 'healthy', now());
+end;
+/
+-- 重命名指定模式下的触发器
+-- 由于重命名触发器不支持修改触发器所属模式，因此新触发器名不支持携带模式名
+alter trigger testscm.animals_trigger on testscm.animals_scm rename to animals_trigger_new;
+-- 删除指定模式下的触发器
+drop trigger testscm.animals_trigger_new;
+drop trigger if exists testscm.animals_trigger_new;
+-- 当删除触发器不指定所在表时，若存在多个同名触发器，不支持通过指定触发器的模式名来确定所在表以及触发器，如下示例：
+testdb_m=# create schema testscm;
+CREATE SCHEMA
+testdb_m=# create table food (id int, foodtype varchar(32), remark varchar(32), time_flag timestamp);
+CREATE TABLE
+testdb_m=# create table animals (id int, name char(30));
+CREATE TABLE
+testdb_m=# create table testscm.animals_scm (id int, name char(30));
+CREATE TABLE
+testdb_m=# create or replace function food_function() returns trigger as
+testdb_m-# $$
+testdb_m$# declare
+testdb_m$# begin
+testdb_m$#     insert into food(id, foodtype, remark, time_flag) values (1,'bamboo', 'healthy', now());
+testdb_m$# return new;
+testdb_m$# end
+testdb_m$# $$ language plpgsql;
+CREATE FUNCTION
+testdb_m=# create trigger animals_trigger before insert on animals for each row execute procedure food_function();
+CREATE TRIGGER
+testdb_m=# create trigger testscm.animals_trigger before insert on testscm.animals_scm for each row execute procedure food_function();
+CREATE TRIGGER
+testdb_m=# drop TRIGGER testscm.animals_trigger;
+ERROR:  trigger named "animals_trigger" has more than one trigger, please use drop trigger on syntax
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sf40b399700a74bd7b2d37e445d057f6e"></a>

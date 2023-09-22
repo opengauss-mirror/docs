@@ -1,4 +1,4 @@
-# 时间和日期处理函数和操作符<a name="ZH-CN_TOPIC_0289900496"></a>
+# 时间和日期处理函数和操作符
 
 ## 时间/日期函数<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436"></a>
 
@@ -273,6 +273,7 @@
   函数原型:
 
   `DATE MAKEDATE(int8 year, int8 dayofyear)`
+  
   功能描述：
 
   给定年份和天数，返回该年份在此年份天数下日期值。
@@ -1201,7 +1202,33 @@ CONTEXT:  referenced column: subdate
 
 - date_bool(date)
 
-  描述：根据日期值中的年数返回布尔型（为零时返回false，否则返回true）。
+  描述：根据日期值返回布尔型（全零时返回false，否则返回true）。
+
+  返回值类型：boolean
+
+  备注：当前版本不支持年月日中两项为零，如'0000-01-00'，将告警后转换为'0000-00-00'，因此date_bool('0000-01-00')返回false
+
+  示例：
+
+  ```
+  openGauss=# select date_bool('2022-08-20');
+   date_bool 
+  -----------
+   t
+  (1 row)
+  ```
+
+  ```
+  openGauss=# select date_bool('0000-00-00');
+   date_bool 
+  -----------
+   f
+  (1 row)
+  ```
+
+- time_bool(time)
+
+  描述：根据时间值返回布尔型（全零时返回false，否则返回true）。
 
   返回值类型：boolean
 
@@ -1216,32 +1243,8 @@ CONTEXT:  referenced column: subdate
   ```
 
   ```
-  openGauss=# select time_bool('00:50:00');
+  openGauss=# select time_bool('00:00:00');
    time_bool 
-  -----------
-   f
-  (1 row)
-  ```
-
-- time_bool(time)
-
-  描述：根据时间值中的小时数返回布尔型（为零时返回false，否则返回true）。
-
-  返回值类型：boolean
-
-  示例：
-
-  ```
-  openGauss=# select date_bool('2022-08-20');
-   date_bool 
-  -----------
-   t
-  (1 row)
-  ```
-
-  ```
-  openGauss=# select date_bool('0000-08-20');
-   date_bool 
   -----------
    f
   (1 row)

@@ -15,13 +15,17 @@
 ## Syntax<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section1963019544155"></a>
 
 ```
-CREATE [ LARGE ] SEQUENCE name [ INCREMENT [ BY ] increment ]
+CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [ MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE] 
     [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] 
     [ OWNED BY { table_name.column_name | NONE } ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137208_en-us_topic_0237122114_en-us_topic_0059778825_section969884316205"></a>
+
+-   **IF NOT EXISTS**
+
+    If a sequence with the same name already exists, no error will be reported, but a notification will be issued to inform that the sequence already exists.
 
 -   **name**
 

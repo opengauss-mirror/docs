@@ -22,7 +22,7 @@ The SMP feature improves the performance through operator parallelism and occupi
 
     -   The following uses the  **TPCH Q1**  parallel plan as an example.
 
-        ![](figures/en-us_image_0000001234211585.png)
+         ![](figures/zh-cn_image_0000001156347657.png)
 
         In this plan, the Scan and HashAgg operators are processed in parallel, and the Local Gather operator is added for data exchange. Operator 3 is a Local Gather operator. "dop: 1/4" indicates that the degree of parallelism of the sender thread is 4 and the degree of parallelism of the receiver thread is 1. That is, the lower-layer HashAggregate operator 4 is executed based on the degree of parallelism 4, the upper-layer operators 1 and 2 are executed in serial mode, and operator 3 aggregates data of parallel threads within the instance.
 

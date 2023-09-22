@@ -1,4 +1,4 @@
-# ALTER SERVER<a name="ZH-CN_TOPIC_0289900400"></a>
+# ALTER SERVER
 
 ## 功能描述<a name="zh-cn_topic_0283136932_section7100616165720"></a>
 
@@ -53,7 +53,7 @@
 
         -   **database**  （默认为空）
 
-            无实际意义，仅做语法兼容。指定MySQL Server/MariaDB连接的数据库请在[CREATE FOREIGN TABLE](../SQLReference/CREATE-FOREIGN-TABLE.md)或[ALTER FOREIGN TABLE](ALTER-FOREIGN-TABLE.md)中完成。
+            无实际意义，仅做语法兼容。指定MySQL Server/MariaDB连接的数据库请在[CREATE FOREIGN TABLE](../SQLReference/CREATE-FOREIGN-TABLE.md)或[ALTER FOREIGN TABLE](../SQLReference/ALTER-FOREIGN-TABLE.md)中完成。
 
         -   **owner**  （默认为空）
 
@@ -82,5 +82,5 @@ ALTER SERVER
 
 ## 相关链接<a name="zh-cn_topic_0283136932_section13898752175613"></a>
 
-[CREATE SERVER ](dolphin-CREATE-SERVER.md)，[DROP SERVER](DROP-SERVER.md)
+[CREATE SERVER ](dolphin-CREATE-SERVER.md)，[DROP SERVER](../SQLReference/DROP-SERVER.md)
 

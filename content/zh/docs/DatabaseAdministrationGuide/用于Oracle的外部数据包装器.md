@@ -1,4 +1,4 @@
-# oracle\_fdw用于oracle的外部数据包装器<a name="ZH-CN_TOPIC_0272283426"></a>
+# oracle\_fdw用于oracle的外部数据包装器
 
 oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包装器，是一款[开源插件](https://github.com/laurenz/oracle_fdw)。openGauss基于开源的[oracle\_fdw Release 2.2.0 版本](https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_2_0.tar.gz)进行开发适配。
 
@@ -12,9 +12,9 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 安装好开发包后，就可以开始编译oracle\_fdw了。编译时需要在执行**configure**时，加入  **--enable-oracle-fdw**  选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考  **软件安装编译**  ）
 
-编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/**下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/Extension/**下。
+编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/** 下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/Extension/** 下。
 
-如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql、oracle\_fdw--1.1.sql、oracle\_fdw.control**放到对应的安装目录  **share/postgresql/Extension/**即可。
+如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql、oracle\_fdw--1.1.sql、oracle\_fdw.control**放到对应的安装目录  **share/postgresql/Extension/** 即可。
 
 ## 使用oracle\_fdw<a name="section15777182920432"></a>
 
@@ -26,7 +26,9 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 -   创建用户映射：**CREATE USER MAPPING**
 
--   创建外表：**CREATE FOREIGN TABLE**  外表的表结构需要与Oracle数据库中的表结构保持一致。注意Oracle server侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
+-   创建外表：**CREATE FOREIGN TABLE**
+    
+    外表的表结构需要与Oracle数据库中的表结构保持一致。注意Oracle server侧的表的第一个字段必须具有唯一性约束（如PRIMARY KEY、UNIQUE等）。
 
 -   对外表做正常的操作，如**INSERT**、**UPDATE**、**DELETE**、**SELECT**、**EXPLAIN**、**ANALYZE**、**COPY**等。
 

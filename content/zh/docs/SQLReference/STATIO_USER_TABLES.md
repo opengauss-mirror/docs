@@ -1,4 +1,4 @@
-# STATIO\_USER\_TABLES<a name="ZH-CN_TOPIC_0245374773"></a>
+# STATIO\_USER\_TABLES
 
 STATIO\_USER\_TABLES视图显示命名空间中所有用户关系表的IO状态信息。
 

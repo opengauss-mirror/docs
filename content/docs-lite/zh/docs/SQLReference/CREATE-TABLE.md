@@ -15,6 +15,7 @@
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL和DEFAULT常量值、UNIQUE和PRIMARY KEY。
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
+-   列存表的字段的字符集必须与数据库字符集一致。
 -   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte（由于数据存储形式原因，实际上限略小于8192 byte），text、varchar、char等长度可变的类型除外。
 -   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
@@ -356,47 +357,44 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
       取值范围：0\~3，默认值为0。
 
-  - COMPRESSTYPE
+  -   COMPRESSTYPE
 
-    行存表参数，设置行存表压缩算法。1代表pglz算法，2代表zstd算法，默认不压缩。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
 
-    取值范围：0\~2，默认值为0。
+      取值范围：0\~2，默认值为0。
 
-  - COMPRESS\_LEVEL
+  -   COMPRESS\_LEVEL
 
-    行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
-    取值范围：-31\~31，默认值为0。
+      取值范围：-31\~31，默认值为0。
 
-  - COMPRESS\_CHUNK_SIZE
+  -   COMPRESS\_CHUNK_SIZE
 
-    行存表参数，设置行存表压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩chunk块大小，仅当COMPRESSTYPE不为0时生效。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+      取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
 
-    取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
-
-    默认值：4096
+      默认值：4096
 
   - COMPRESS_PREALLOC_CHUNKS
 
-    行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。（仅支持ASTORE下的普通表）
+    行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
     取值范围：0\~7，默认值为0。
 
     - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
-    
-  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+    - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
+    - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
 
-  - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+  -   COMPRESS_BYTE_CONVERT
 
-  - COMPRESS_BYTE_CONVERT
+      行存表参数，设置行存表压缩字节转换预处理，仅当COMPRESSTYPE不为0时生效。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
-    行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+      取值范围：布尔值，默认关闭。
 
-    取值范围：布尔值，默认关闭。
+  -   COMPRESS_DIFF_CONVERT
 
-  - COMPRESS_DIFF_CONVERT
-
-    行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+      行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
       取值范围：布尔值，默认关闭。
 

@@ -1,4 +1,4 @@
-# ALTER DEFAULT PRIVILEGES<a name="ZH-CN_TOPIC_0289900961"></a>
+# ALTER DEFAULT PRIVILEGES
 
 ## 功能描述<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_sb6d50f1fe847446bb5943799163d59fb"></a>
 
@@ -178,7 +178,7 @@ ALTER DEFAULT PRIVILEGES
     取值范围：已存在的角色名称。
 
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >如果想删除一个被赋予了默认权限的角色，有必要恢复改变的缺省权限或者使用DROP OWNED BY来为角色脱离缺省的权限记录。
 
 ## 示例<a name="zh-cn_topic_0283136687_zh-cn_topic_0237122057_zh-cn_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>

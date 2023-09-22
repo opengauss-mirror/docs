@@ -1,6 +1,6 @@
 # Data Types<a name="EN-US_TOPIC_0289900421"></a>
 
-openGauss supports implicit conversions between certain data types. For details, see[PG\_CAST](../DatabaseReference/pg_cast.md)  .
+openGauss supports implicit conversions between certain data types. For details, see [PG\_CAST](../DatabaseReference/pg_cast.md)  .
 
 -   **[Numeric Types](numeric-types.md)**  
 

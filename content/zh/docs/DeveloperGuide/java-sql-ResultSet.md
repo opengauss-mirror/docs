@@ -1,4 +1,4 @@
-# java.sql.ResultSet<a name="ZH-CN_TOPIC_0289900530"></a>
+# java.sql.ResultSet
 
 java.sql.ResultSet是执行结果集接口。
 
@@ -955,7 +955,7 @@ java.sql.ResultSet是执行结果集接口。
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   一个Statement不能有多个处于“open”状态的ResultSet。
 

@@ -1,4 +1,4 @@
-# 赋值语句<a name="ZH-CN_TOPIC_0289899984"></a>
+# 赋值语句
 
 ## 注意事项
 
@@ -45,7 +45,7 @@ END;
 /
 ```
 
-> ![](public_sys-resources/icon-notice.gif) **须知：** 
+> ![](public_sys-resources/icon-notice.png) **须知：** 
 >
 > * 在begin...end之间可以通过set variable\_name :=(=) value来对变量进行赋值。
 

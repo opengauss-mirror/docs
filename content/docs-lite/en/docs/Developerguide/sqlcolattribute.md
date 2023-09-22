@@ -78,5 +78,5 @@ If SQLColAttribute returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, th
 
 ## Example<a name="en-us_topic_0238272888_en-us_topic_0237120418_en-us_topic_0059778558_sa0124e0144e742c989a8b2f0e52adfd6"></a>
 
-See  [Examples](examples.md).
+See  [Examples](example-odbc.md).
 

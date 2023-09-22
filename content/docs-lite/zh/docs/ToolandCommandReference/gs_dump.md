@@ -17,6 +17,13 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 -   纯文本格式的SQL脚本文件：包含将数据库恢复为其保存时的状态所需的SQL语句。通过[gsql](gsql.md)运行该SQL脚本文件，可以恢复数据库。即使在其他主机和其他数据库产品上，只要对SQL脚本文件稍作修改，也可以用来重建数据库。
 -   归档格式文件：包含将数据库恢复为其保存时的状态所需的数据，可以是tar格式、目录归档格式或自定义归档格式，详见[表1](#zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)。
 
+gs\_dump工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+
+>![](public_sys-resources/icon-notice.png) **须知：**
+>-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
+>-   导出物化视图时，不支持导出物化视图中的数据。
+>-   临时表不支持导入导出。
+
 ## 主要功能<a name="zh-cn_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
 gs\_dump可以创建四种不同的导出文件格式，通过**\[**-F或者--format=**\]**选项指定，具体如[表1](#zh-cn_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5)所示。

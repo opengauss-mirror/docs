@@ -1,4 +1,4 @@
-# 全量迁移gs_mysync<a name="ZH-CN_TOPIC_0000001264707837"></a>
+# 全量迁移gs_mysync
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -28,3 +28,12 @@ gs_mysync工具提供数据全量复制功能，使得数据可以从MySQL迁移
 
 gs_mysync工具依赖MySQL一键式迁移工具gs_rep_portal。
 
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+
+全量迁移社区地址：https://gitee.com/opengauss/openGauss-tools-chameleon
+
+详细参考文档： [chameleon使用指南.md](https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md) 

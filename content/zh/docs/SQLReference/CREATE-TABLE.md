@@ -1,4 +1,4 @@
-# CREATE TABLE<a name="ZH-CN_TOPIC_0289900279"></a>
+# CREATE TABLE
 
 ## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 
@@ -15,6 +15,7 @@
 -   列存表的表级约束只支持PARTIAL CLUSTER KEY、UNIQUE、PRIAMRY KEY，不支持外键等表级约束。
 -   列存表的字段约束只支持NULL、NOT NULL、DEFAULT常量值、UNIQUE和PRIMARY KEY。
 -   列存表支持delta表，受参数enable\_delta\_store控制是否开启，受参数deltarow\_threshold控制进入delta表的阀值。
+-   列存表的字段的字符集必须与数据库字符集一致。
 -   使用JDBC时，支持通过PrepareStatement对DEFAULT值进行参数化设置。
 -   每张表的列数最大为1600，具体取决于列的类型，所有列的大小加起来不能超过8192 byte（由于数据存储形式原因，实际上限略小于8192 byte），text、varchar、char等长度可变的类型除外。
 -   被授予CREATE ANY TABLE权限的用户，可以在public模式和用户模式下创建表。如果想要创建包含serial类型列的表，还需要授予CREATE ANY SEQUENCE创建序列的权限。
@@ -118,13 +119,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   本地临时表通过每个会话独立的以pg\_temp开头的schema来保证只对当前会话可见，因此，不建议用户在日常操作中手动删除以pg\_temp、pg\_toast\_temp开头的schema。
     >-   如果建表时不指定TEMPORARY/TEMP关键字，而指定表的schema为当前会话的pg\_temp\_开头的schema，则此表会被创建为临时表。
     >-   ALTER/DROP全局临时表和索引，如果其它会话正在使用它，禁止操作（ALTER INDEX index\_name REBUILD除外）。
     >-   全局临时表的DDL只会影响当前会话的用户数据和索引。例如truncate、reindex、analyze只对当前会话有效。
-    >-   全局临时表功能可以通过设置GUC参数[max_active_global_temporary_table](../DataBaseReference/全局临时表.md#section18307271684)控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
+    >-   全局临时表功能可以通过设置GUC参数[max_active_global_temporary_table](../DatabaseReference/全局临时表.md#section18307271684)控制是否启用。如果max\_active\_global\_temporary\_table=0，关闭全局临时表功能。
     >-   临时表只对当前会话可见，因此不支持与\\parallel on并行执行一起使用。
     >-   临时表不支持主备切换。
     >-   全局临时表不响应自动清理，在长链接场景使用时尽量使用on commit delete rows的全局临时表，或定期手动执行vacuum，否则可能导致clog日志不回收。
@@ -137,7 +138,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   要创建的表名。
 
-  ![](public_sys-resources/icon-notice.gif) **须知：** 
+  ![](public_sys-resources/icon-notice.png) **须知：** 
   
   物化视图的一些处理逻辑会通过表名的前缀来识别是不是物化视图日志表和物化视图关联表，因此，用户不要创建表名以mlog\_或matviewmap\_为前缀的表，否则会影响此表的一些功能。
 
@@ -149,7 +150,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     建表时指定的约束名称。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >在B模式数据库下（即sql\_compatibility = 'B'）constraint\_name为可选项，在其他模式数据库下，必须加上constraint\_name。
 
@@ -157,7 +158,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     索引名。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   index\_name仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   对于外键约束，constraint\_name和index\_name同时指定时，索引名为constraint\_name。
@@ -169,7 +170,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     取值范围参考[参数说明](CREATE-INDEX.md)中的USING method。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
     >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
@@ -178,7 +179,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     ASC表示指定按升序排序（默认）。DESC指定按降序排序。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >ASC|DESC只在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库不支持。
 
@@ -186,7 +187,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     创建一个基于该表的一个或多个字段的表达式索引约束，必须写在圆括弧中。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >表达式索引只在B模式数据库下支持（即sql\_compatibility = 'B'），其他模式数据库不支持。
 
@@ -310,7 +311,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
     -   ATUO_INCREMENT列需要为主键或唯一约束的第一个字段，若复制包含AUTO_INCREAMENT列的表时指定EXCLUDING INDEX，将会报错。其中AUTO_INCREAMENT只在B库中生效。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   如果源表包含serial、bigserial、smallserial、largeserial类型，或者源表字段的默认值是sequence，且sequence属于源表（通过CREATE SEQUENCE ... OWNED BY创建），这些Sequence不会关联到新表中，新表中会重新创建属于自己的sequence。这和之前版本的处理逻辑不同。如果用户希望源表和新表共享Sequence，需要首先创建一个共享的Sequence（避免使用OWNED BY），并配置为源表字段默认值，这样创建的新表会和源表共享该Sequence。
     >
@@ -326,7 +327,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >使用任意精度类型Numeric定义列时，建议指定精度p以及刻度s。在不指定精度和刻度时，会按输入的显示出来。
 
@@ -391,27 +392,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     -   COMPRESSTYPE
 
-        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数生效后不允许修改。（仅支持ASTORE下的普通表）
+        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
 
         取值范围：0\~2，默认值为0。
 
     -   COMPRESS\_LEVEL
 
-        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改，修改后影响变更数据、新增数据的压缩等级。（仅支持ASTORE下的普通表）
+        行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
         取值范围：-31\~31，默认值为0。
 
     -   COMPRESS\_CHUNK_SIZE
 
-        行存表参数，设置行存表压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数生效后不允许修改。（仅支持ASTORE下的普通表）
-
+        行存表参数，设置行存表压缩chunk块大小，仅当COMPRESSTYPE不为0时生效。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
         取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
     
         默认值：4096
 
     - COMPRESS_PREALLOC_CHUNKS
 
-      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改，修改后影响变更数据、新增数据的预分配数量。（仅支持ASTORE下的普通表）
+      行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
       取值范围：0\~7，默认值为0。
 
@@ -419,17 +419,17 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
       - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
     
-  - COMPRESS_BYTE_CONVERT
+    -   COMPRESS_BYTE_CONVERT
 
-      行存表参数，设置行存表压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节转换预处理。当`COMPRESS_DIFF_CONVERT`为真时，该值不允许修改为假。
+        行存表参数，设置行存表压缩字节转换预处理，仅当COMPRESSTYPE不为0时生效。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
-      取值范围：布尔值，默认关闭。
+        取值范围：布尔值，默认关闭。
 
-  - COMPRESS_DIFF_CONVERT
+    -   COMPRESS_DIFF_CONVERT
 
-      行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改后决定变更数据、新增数据是否进行字节差分预处理。
+        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
-      取值范围：布尔值，默认关闭。
+        取值范围：布尔值，默认关闭。
 
   - MAX\_BATCHROW
 
@@ -532,7 +532,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     声明为字段约束的检查约束应该只引用该字段的数值，而在表约束里出现的表达式可以引用多个字段。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >expression表达式中，如果存在“<\>NULL”或“！=NULL”，这种写法是无效的，需要写成“is NOT NULL”。
 
@@ -547,7 +547,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   该子句将字段创建为生成列，生成列的值在写入（插入或更新）数据时由generation\_expr计算得到，STORED表示像普通列一样存储生成列的值。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   STORED关键字可省略，与不省略STORED语义相同。
   >-   生成表达式不能以任何方式引用当前行以外的其他数据。生成表达式不能引用其他生成列，不能引用系统列。生成表达式不能返回结果集，不能使用子查询，不能使用聚集函数，不能使用窗口函数。生成表达式调用的函数只能是不可变（IMMUTABLE）函数。
@@ -570,10 +570,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     自增初始值由“AUTO\_INCREMENT \[ = \] value”子句设置，若不设置，默认为1。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
-    >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型、布尔类型。
+    >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型。
     >-   每个表只能有一个自动增长列。
     >-   自动增长列必须是主键约束或唯一约束的第一个字段。
     >-   自动增长列不能指定DEFAULT缺省值。
@@ -593,7 +593,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   仅在sql\_compatibility='B'时支持该语法。指定表的默认字符序，单独指定时会将表的默认字符集设置为指定的字符序对应的字符集。字符序参见[表1 B模式（即sql\_compatibility = 'B'）下支持的字符集和字符序介绍](#table8163190152)。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >未显式指定表的字符集或字符序时，若指定了模式的默认字符集或字符序，表字符集和字符序将从模式上继承。若模式的默认字符集或字符序不存在，当b\_format\_behavior\_compat\_options = 'default\_collation'时，表的字符集和字符序将继承当前数据库的字符集及其对应的默认字符序。
 
 - **UNIQUE \[KEY\] index\_parameters**
@@ -638,7 +638,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
-  ![](public_sys-resources/icon-note.gif) **说明：** 
+  ![](public_sys-resources/icon-note.png) **说明：** 
   Ustore表不支持**DEFERRABLE以及INITIALLY  DEFERRED**关键字。
 
 - **COMMENT text**
@@ -1316,7 +1316,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
     -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
 

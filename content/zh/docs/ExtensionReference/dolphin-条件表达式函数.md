@@ -1,4 +1,4 @@
-# 条件表达式函数<a name="ZH-CN_TOPIC_0289900535"></a>
+# 条件表达式函数
 
 ## 注意事项<a name="zh-cn_topic_0283137529_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s115556a9029e407ca47ff01fea8de0cb"></a>
 
@@ -54,7 +54,7 @@
   示例：
 
   ```
-  openGauss=# SELECT ifnull('hello');
+  openGauss=# SELECT isnull('hello');
   ?column?  
   --------
         f 

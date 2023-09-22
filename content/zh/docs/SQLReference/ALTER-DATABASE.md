@@ -1,4 +1,4 @@
-# ALTER DATABASE<a name="ZH-CN_TOPIC_0289900461"></a>
+# ALTER DATABASE
 
 ## 功能描述<a name="zh-cn_topic_0283136981_zh-cn_topic_0237122055_zh-cn_topic_0059779247_sbb9c79973fbf4b4b8f8e8355b0f67f63"></a>
 
@@ -42,7 +42,7 @@
     ALTER DATABASE database_name 
         SET TABLESPACE new_tablespace;
     ```
-     >![](public_sys-resources/icon-note.gif) **说明：** 
+     >![](public_sys-resources/icon-note.png) **说明：** 
         >
         > 如果该数据库中的某些表或对象已经创建在new_tablespace下，则无法将该数据库的默认表空间修改为new_tablespace，执行会报错。
 
@@ -67,7 +67,7 @@
     ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   修改数据库的对象隔离属性时须连接至该数据库，否则无法更改。
     >
@@ -131,7 +131,7 @@
     重置全部的数据库会话参数值。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   修改数据库默认表空间，会将旧表空间中的所有表和索引转移到新表空间中，该操作不会影响其他非默认表空间中的表和索引。
 >

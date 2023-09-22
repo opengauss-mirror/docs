@@ -1,67 +1,31 @@
-# GUC参数说明<a name="ZH-CN_TOPIC_0289899843"></a>
+# GUC参数说明
 
 ## dolphin.sql\_mode<a name="section203671436821"></a>
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero'
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
-1. sql_mode_strict：插入不符合当前列类型的值时,进行数据转换;分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar；
+-   sql_mode_strict：严格模式控制openGauss在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如何处理无效值或者空值。插入不符合当前列类型的值时，会进行数据转换；分两种场景，insert into table values(…) 和insert into table select … 主要涉及到各种数据类型之间的互相转换，目前涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
-2. sql_mode_strict：插入的列值长度超过此列所限定的长度时,赋予该列最大或最小值，涉及的类型有tinyint[unsigned],smallint[unsigned],int[unsigned],bigint[unsigned],float,double,numeric,clob,char和varchar;
+-   sql_mode_strict：插入的列值长度超过此列所限定的长度时，赋予该列最大或最小值，涉及的类型有tinyint[unsigned]，smallint[unsigned]，int[unsigned]，bigint[unsigned]，float，double，numeric，clob，char和varchar；
 
-3. sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值;（涉及的类型同上）
+-   sql_mode_strict：insert时，属性是非空且没有默认值的列，且没有在insert的列表中，则为其添加默认值；（涉及的类型同上面sql_mode_strict的描述）
 
-4. sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default;（涉及的类型同上）
+-   sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default；（涉及的类型同上面sql_mode_strict的描述）
 
-5. sql_mode_full_group：
+-   sql_mode_strict：对于不会改变数据的SQL语句，如`SELECT`，在严格模式下处理无效值或者空值时仅产生告警，不会报错。效果等同于没有开启严格模式。
+
+-   sql_mode_full_group：
     - 出现在select列表中的列（不使用聚合函数），是否一定要出现在group by子句中。当处在sql_mode_full_group模式（默认模式）下，如果select列表中的列没有使用聚合函数，也没有出现在group by子句，那么会报错，如果不在此模式下，则会执行成功，并在所有符合条件的元组中选取第一个元组。
     - 出现在order by中的列，是否一定要出现在distinct中（注意是distinct，不是distinct on）。当处在sql_mode_full_group模式（默认模式）下，不允许没有出现在distinct中的列出现在order by子句中，否则允许。
-6. pipes_as_concat：控制 || 当成连接符还是 或操作符
+-   pipes_as_concat：控制 || 当成连接符还是或操作符
 
-7. ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。当关闭ansi_quotes时，会导致部分元命令失效，失效的元命令如下表所示：
+-   ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
 
-   | 参数                        | 参数说明                                                     |
-   | --------------------------- | ------------------------------------------------------------ |
-   | \d[S+]                      | 列出当前search_path中模式下所有的表、视图和序列。当search_path中不同模式存在同名对象时，只显示search_path中位置靠前模式下的同名对象。 |
-   | \d+ [PATTERN]               | 列出所有表、视图和索引。 |
-   | \da[S] [PATTERN]            | 列出所有可用的聚集函数以及它们操作的数据类型和返回值类型。   |
-   | \db[+] [PATTERN]            | 列出所有可用的表空间。                                       |
-   | \dc[S+] [PATTERN]           | 列出所有字符集之间的可用转换。                               |
-   | \dC[+] [PATTERN]            | 列出所有类型转换。                                           |
-   | \dd[S] [PATTERN]            | 显示所有匹配PATTERN的描述。                                  |
-   | \ddp [PATTERN]              | 显示所有默认的使用权限。                                     |
-   | \dD[S+] [PATTERN]           | 列出所有可用域。                                             |
-   | \ded[+] [PATTERN]           | 列出所有的Data Source对象。                                  |
-   | \det[+] [PATTERN]           | 列出所有的外部表。                                           |
-   | \des[+] [PATTERN]           | 列出所有的外部服务器。                                       |
-   | \deu[+] [PATTERN]           | 列出用户映射信息。                                           |
-   | \dew[+] [PATTERN]           | 列出封装的外部数据。                                         |
-   | \df[antw][S+] [PATTERN]     | 列出所有可用函数以及它们的参数和返回的数据类型。a代表聚集函数，n代表普通函数，t代表触发器，w代表窗口函数。 |
-   | \dF[+] [PATTERN]            | 列出所有的文本搜索配置信息。                                 |
-   | \dFd[+] [PATTERN]           | 列出所有的文本搜索字典。                                     |
-   | \dFp[+] [PATTERN]           | 列出所有的文本搜索分析器。                                   |
-   | \dFt[+] [PATTERN]           | 列出所有的文本搜索模板。                                     |
-   | \dl                         | \lo_list的别名，显示一个大对象的列表。                       |
-   | \dL[S+] [PATTERN]           | 列出可用的程序语言。                                         |
-   | \dm[S+] [PATTERN]           | 列出物化视图                                                 |
-   | \dn[S+] [PATTERN]           | 列出所有的模式（名称空间）。                                 |
-   | \do[S] [PATTERN]            | 列出所有可用的操作符以及它们的操作数和返回的数据类型。       |
-   | \dO[S+] [PATTERN]           | 列出排序规则                                                 |
-   | \dp [PATTERN]               | 列出一列可用的表、视图以及相关的权限信息。                   |
-   | \dT[S+] [PATTERN]           | 列出所有的数据类型。                                         |
-   | \dE[S+] [PATTERN]           | 这一组命令，字母E、i、s、t和v分别代表着外部表、索引、序列、表和视图。可以以任意顺序指定其中一个或者它们的组合来列出这些对象。例如：\dit列出所有的索引和表。在命令名称后面追加+，则每一个对象的物理尺寸以及相关的描述也会被列出。 |
-   | \dx[+] [PATTERN]            | 列出安装数据库的扩展信息。                                   |
-   | \l[+]                       | 列出服务器上所有数据库的名称、所有者、字符集编码以及使用权限。 |
-   | \z [PATTERN]                | 列出数据库中所有表、视图和序列以及它们相关的访问特权。       |
-
-  ansi_quotes关闭情况下，如果需要用到数据库关键字作为对象标识符，或者出于规范性要求需要包裹所有对象标识符，可以使用反引号(`)替代双引号。
-
-  使用反引号(`)的情况下，表名称（受到参数lower_case_table_names控制）之外，其他包围的列名称，索引名称等都会做自动的小写化处理，返回数据的列也均为小写名称。
-
-8. no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
+-   no_zero_date：控制 '0000-00-00' 是否为合法日期，支持DATE、DATETIME类型
 
     |参数|表现|
     |---|---|
@@ -70,7 +34,18 @@
     |sql_mode_strict|合法日期，无告警|
     |--|合法日期，无告警|
 
-9. pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+-   pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
+
+-   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
+
+-   error_for_division_by_zero：控制除数为0时是否报错（包含 `/`， `mod`， `div`等除法含义的操作符），最终除0的表现还受严格模式的控制。
+
+    |参数|表现|
+    |---|---|
+    |error_for_division_by_zero, sql_mode_strict|除数为0，在SELECT场景下告警，其余场景报错|
+    |error_for_division_by_zero|除数为0，告警|
+    |sql_mode_strict|除数为0，无报错，无告警|
+    |--|除数为0，无报错，无告警|
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
@@ -371,6 +346,7 @@ dayname
 3. (数字类型异或) [^](dolphin-数字操作函数和操作符.md#ZH-CN_TOPIC_0289900469)
 4. [&&](dolphin-逻辑操作符.md#ZH-CN_TOPIC_0289900469)
 5. [#](dolphin-注释操作符.md#ZH-CN_TOPIC_0289900280)
+6. [四则运算操作符兼容](dolphin-四则运算操作符兼容.md#ZH-CN_TOPIC_0289900280)
 
 影响的函数有：
 1. [LAST_DAY](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
@@ -379,8 +355,10 @@ dayname
 4. [EXTRACT](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 5. [CAST](dolphin-类型转换函数.md)
 
-其他影响的参数：
+其他影响的功能：
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
+2. [CREATE INDEX](dolphin-CREATE-INDEX.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
+3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin-二进制类型.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
@@ -440,27 +418,6 @@ WARNING:  Variable 'character_set_client' has no actual meaning.
 SET
 --设置character_set_client为default
 openGauss=# set auto_increment_increment = default;
-SET
-```
-
-## character_set_connection<a name="section203671436829"></a>
-
-**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示没有字符集引入程序时，使用该字符集。
-
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
-
-**取值范围**：字符串
-
-**默认值**：utf8
-
-**示例**：
-```
---设置character_set_connection为utf8
-openGauss=# set character_set_connection = utf8;
-WARNING:  Variable 'character_set_connection' has no actual meaning.
-SET
---设置character_set_connection为default
-openGauss=# set character_set_connection = default;
 SET
 ```
 
@@ -528,28 +485,6 @@ openGauss=# set collation_server = default;
 SET
 ```
 
-## collation_connection<a name="section203671436833"></a>
-
-**参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接字符集使用该排序规则。
-
-该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
-
-**取值范围**：字符串
-
-**默认值**：无
-
-**示例**：
-```
---设置collation_connection为'collation_connection'
-openGauss=# set collation_connection = 'collation_connection';
-WARNING:  Variable 'collation_connection' has no actual meaning.
-SET
---设置collation_connection为default
-openGauss=# set collation_connection = default;
-SET
-```
-set lower_case_table_names = default;
-SET
 ## init_connect<a name="section203671436834"></a>
 
 **参数说明**：该参数目前未实现其具体意义。参数值为字符串类型，表示连接初始化时执行的SQL语句。
@@ -796,7 +731,7 @@ SET
 
 该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
 >-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
@@ -848,7 +783,7 @@ openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = default';
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >该参数用于提供除法运算结果的小数位数，在通过该参数以及入参计算出小数位数之后，与openGauss原生计算的小数位数进行对比，获取两者中的较大值作为计算结果的小数位数。大多数情况下openGauss的小数位数会比MySQL高，所以该参数在设置的值不大的情况下效果暂时不明显。
 
@@ -909,4 +844,21 @@ SET
 --设置lower_case_table_names为default
 openGauss=# set lower_case_table_names = default;
 SET
+```
+
+## b\_compatibility\_show\_warning\_count
+
+**参数说明**：控制show warnings/erros语句，输出的error, warning, note信息的最大数量，默认值是64，该参数范围是0~65535。
+
+**取值范围**：整数型
+
+**默认值**：64
+
+**示例**：
+```sql
+openGauss=# show max_error_count;
+ max_error_count
+-----------------
+ 64
+(1 row)
 ```

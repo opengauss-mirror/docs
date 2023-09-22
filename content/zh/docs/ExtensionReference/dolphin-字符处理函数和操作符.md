@@ -1,14 +1,19 @@
-# 字符处理函数和操作符<a name="ZH-CN_TOPIC_0289900656"></a>
+# 字符处理函数和操作符
 
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64```函数。
+2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64/uuid```函数。
 3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
 6. 新增```!```操作符，可在表达式前使用，其效果与NOT一致。
 7. 新增```text_bool/varchar_bool/char_bool```函数。
+8. 新增```name_const```函数。
+9. 新增```compress```函数。
+10. 新增```uncompress```函数。
+11. 新增```uncompressed_length```函数。
+12. 新增```weight_string```函数。
 
 -   bit\_length\(string\)
 
@@ -168,6 +173,22 @@
      hex
     -------
      5c6e
+    (1 row)
+    ```
+
+-   uuid\(\)
+
+    描述：以UUID1的生成方式返回一个aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee格式的UUID。
+
+    返回值类型：varchar
+
+    示例：
+
+    ```
+    openGauss=# SELECT uuid();
+                     uuid                 
+    --------------------------------------
+     ea2beb80-0d1c-11cb-d2f8-5267477de699
     (1 row)
     ```
 
@@ -444,7 +465,7 @@
 
 -   field(str, str1,str2,str3,...)
 
-    描述：获取str在后面strn中的位置，不区分大小写。
+    描述：获取str在后面strn中的位置。
 
     返回值类型：int
 
@@ -460,14 +481,14 @@
     
 -   find_in_set(str, strlist)
 
-    描述：获取str在后面strlist中的位置，不区分大小写,strlist以，分割。
+    描述：获取str在后面strlist中的位置，strlist以```,```分割。
 
     返回值类型：int
 
     示例：
 
     ```
-    b_compatibility_database=# select find_in_set('ceshi','wo','ceshi,ni,wo,ta');
+    b_compatibility_database=# select find_in_set('wo','ceshi,ni,wo,ta');
     find_in_set 
     -------------
             3
@@ -634,6 +655,8 @@
 
     返回值类型：text
     
+    注意：必须输入前三个参数。第一个参数（bits）需要输入数字，第二个参数（on）和第三个参数（off）需要输入字符串。对于缺省的后两个参数，默认采用`，`和`64`进行执行；最后一位如果为负数或者大于64，都默认按64处理。
+
     示例：
     ```sql
     openGauss=# SELECT EXPORT_SET(5,'Y','N',',',5);
@@ -678,10 +701,10 @@
 
     例子2：YWI=
 
-    1. 字符串用二进制表示为：00011000(Y)00010110(W)00001000(I)。
-    2. 去掉每个字节高位的两个0后变成：011000 010110 001000。
-    3. 由于末尾有一个'='，则第三个字节末尾的0也要去掉再拼接：01100001 01100010。
-    4. 故解码结果为ab。
+    5. 字符串用二进制表示为：00011000(Y)00010110(W)00001000(I)。
+    6. 去掉每个字节高位的两个0后变成：011000 010110 001000。
+    7. 由于末尾有一个'='，则第三个字节末尾的0也要去掉再拼接：01100001 01100010。
+    8. 故解码结果为ab。
 
     示例：
   
@@ -827,6 +850,7 @@
   - 如果输入的是NULL或者包含非十六进制字符，那么返回的结果为NULL。
   - 若输入的是数字，则将数字转成字符串后进行解码，如需将十六进制数转为十进制数，则需要使用其它的函数
   - 编码解码规则与函数HEX相同。
+  - 如果解码出来的字符是非可视字符，则会按16进制显示对应的数值，例如解码的数字位6，没有对应的可视字符，则显示为`\x06`，这一点与mysql不同。
 
   例子1：4142
 
@@ -989,4 +1013,100 @@
   (1 row)
   ```
 
- 
+- name\_const\(const name, const value\)
+
+    描述：返回指定的列名和列值组成的结果集。输入参数应为可以转化为const类型的参数，不接受函数表达式或变量。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT name_const('abc', 123);
+     abc 
+    -----
+     123
+    (1 row)
+    ```
+
+- compress(text)
+
+  描述：COMPRESS函数的作用是压缩指定的字符串，用于节省存储空间。
+
+  返回类型：bytea
+
+  示例：
+
+  ```
+  SELECT HEX(COMPRESS('2022-05-12 10:30:00'));
+                                hex                               
+  ----------------------------------------------------------------
+   13000000789c33323032d23530d53534523034b03236b032300000240b03a1
+  (1 row)
+  ```
+
+- uncompress(bytea)
+
+  描述：UNCOMPRESS函数的作用是解压缩压缩过的二进制数据，并返回原始数据。
+
+  返回类型：text
+
+  示例：
+
+  ```
+  SELECT UNCOMPRESS(COMPRESS('2022-05-12 10:30:00'));
+       uncompress      
+  ---------------------
+   2022-05-12 10:30:00
+  (1 row)
+  ```
+
+- uncompressed_length(bytea)
+
+  描述：UNCOMPRESSED_LENGTH函数的作用是返回经过压缩的数据在解压缩后的长度。
+
+  返回类型：integer
+
+  示例：
+
+  ```
+  SELECT UNCOMPRESSED_LENGTH(COMPRESS('2022-05-12 10:30:00'));
+   uncompressed_length 
+  ---------------------
+                    19
+  (1 row)
+  ```
+
+- weight_string(str [as {char|binary}(n)] [level levels])  levels: n [asc|desc|reverse] [, n [asc|desc|reverse]] ...
+
+  描述：WEIGHT_STRING函数是用于测试和调试字符集排序规则的函数。其用于获取字符串的权重，它返回一个二进制字符串，用于字符串的比较和排序。str是输入字符串，AS子句可以将输入字符串转化为```CHAR(N)```或者```BINARY(N)```类型。输入字符串如果超过N则会被截断，如果小于N则会被填充空格（```AS CHAR```）或0(```AS BINARY```)。LEVEL子句来指定计算字符串的修饰方式，仅```AS CHAR```支持。LEVEL子句后可以增加三种修饰符: ```ASC```、 ```DESC```（bit翻转）、 ```REVERSE```（字节顺序反转），其中仅```LEVEL 1 DESC```和```LEVEL 1 REVERSE```有效，LEVEL 2到LEVEL 6对计算字符串没有处理。
+
+  返回类型：bytea
+
+  示例：
+
+  ```
+  select hex(weight_string('abc' as binary(2)));
+   hex  
+  ------
+   6162
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 ));
+     hex    
+  ----------
+   00410042
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
+     hex    
+  ----------
+   ffbeffbd
+  (1 row)
+
+  select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));
+     hex    
+  ----------
+   42004100
+  (1 row)
+  ```

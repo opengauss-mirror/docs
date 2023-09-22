@@ -1,4 +1,4 @@
-# BEGIN<a name="ZH-CN_TOPIC_0289900173"></a>
+# BEGIN
 
 ## 功能描述<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_s575f09bb20db48a4a74f6544c1593758"></a>
 
@@ -8,7 +8,7 @@ BEGIN可以用于开始一个匿名块，也可以用于开始一个事务。本
 
 ## 注意事项<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_sdc4b0a2020cb4122a1e23f44459b54dc"></a>
 
-无。
+-   在gsql中使用BEGIN开启事务执行SQL语句时，请勿将BEGIN与需要执行的SQL语句写在一行，因为与存储过程、匿名块等语法相关，可能会出现获取结果次数异常的情况。
 
 ## 语法格式<a name="zh-cn_topic_0283137310_zh-cn_topic_0237122087_zh-cn_topic_0059778122_s9591de70a4254764b3ec5daed66d030a"></a>
 

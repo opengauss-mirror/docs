@@ -218,4 +218,4 @@ openGauss=# DROP TABLE value_test.
 
 ## Helpful Links<a name="section156744489391"></a>
 
-[INSERT](INSERT.md)
+[INSERT](../SQLReference/insert.md)

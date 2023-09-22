@@ -128,7 +128,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
        >
        >-   The first new partition key specified by partition\_less\_than\_item should be greater than that of the previously split partition (if any), and the last partition key specified by partition\_less\_than\_item should equal that of the partition being split.
        >-   The start point (if any) of the first new partition specified by **partition\_start\_end\_item** must be equal to the partition key (if any) of the previous partition. The end point (if any) of the last partition specified by **partition\_start\_end\_item** must be equal to the partition key of the splitting partition.
-       >-   partition\_less\_than\_item supports a maximum of 4 partition keys, while partition\_start\_end\_item supports only one partition key. For details about the supported data types, see [PARTITION BY RANGE(parti....](create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)
+       >-   partition\_less\_than\_item supports a maximum of 4 partition keys, while partition\_start\_end\_item supports only one partition key. For details about the supported data types, see [PARTITION BY RANGE(parti....](../SQLReference/create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_l00efc30fe63048ffa2ef68c5b18bb455)
        >-   partition\_less\_than\_item and partition\_start\_end\_item cannot be used in the same statement. There is no restriction on different split statements.
 
  -   The syntax of **partition\_less\_than\_item** is as follows:
@@ -138,7 +138,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
             [ TABLESPACE tablespacename ]
         ```
 
- -   The syntax of **partition\_start\_end\_item** is as follows. For details about the constraints, see [START END](create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_li2094151861116).
+ -   The syntax of **partition\_start\_end\_item** is as follows. For details about the constraints, see [START END](../SQLReference/create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_li2094151861116).
 
         ```
         PARTITION partition_name {
@@ -169,7 +169,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
     ```
 
     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
-    >-   partition\_list\_item supports only one partition key. For details about the supported data types, see [PARTITION BY LIST\(partit...](create-table-partition.md#li78182216171).
+    >-   partition\_list\_item supports only one partition key. For details about the supported data types, see [PARTITION BY LIST\(partit...](../SQLReference/create-table-partition.md#li78182216171).
     >-   Interval and hash partitioned tables do not support partition addition.
 
 -   The **drop\_clause** syntax is used to remove a partition from a specified partitioned table.
@@ -353,8 +353,8 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
 
 ## Examples<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s50d0d11ee3074db6911f91d1d9e31fbd"></a>
 
-For details, see [Examples](create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842) in CREATE TABLE PARTITION.
+For details, see [Examples](../SQLReference/create-table-partition.md#en-us_topic_0283136653_en-us_topic_0237122119_en-us_topic_0059777586_s43dd49de892344bf89e6f56f17404842) in CREATE TABLE PARTITION.
 
 ## Helpful Links<a name="en-us_topic_0283137443_en-us_topic_0237122077_en-us_topic_0059778761_s267aeb502b5546f69f580c79c0a728df"></a>
 
-[CREATE TABLE PARTITION](create-table-partition.md), [DROP TABLE](drop-table.md)
+[CREATE TABLE PARTITION](../SQLReference/create-table-partition.md), [DROP TABLE](../SQLReference/drop-table.md)

@@ -1,4 +1,4 @@
-# WDR Snapshot Schema<a name="ZH-CN_TOPIC_0245374862"></a>
+# WDR Snapshot Schema
 
 WDR Snapshot在启动后（打开参数[enable\_wdr\_snapshot](../DatabaseReference/系统性能快照.md#zh-cn_topic_0237124757_section983311682019)），会在用户表空间"pg\_default"，数据库"postgres"下新建schema "snapshot"，用于持久化WDR快照数据。默认初始化用户或monadmin用户可以访问Snapshot Schema。
 

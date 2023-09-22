@@ -1,4 +1,4 @@
-# XML类型<a name="ZH-CN_TOPIC_0289900228"></a>
+# XML类型
 
 XML数据类型可以被用来存储XML数据。它的内部格式和TEXT类型相同，它比直接在一个TEXT域中存储XML数据的优势在于：它会使用LIBXML2对于XML格式文本的处理能力，检查输入值的结构是不是符合XML标准，并且基于LIBXML2提供了支持函数用于在其上执行类型安全的操作。
 
@@ -29,7 +29,7 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >-   XML类型不支持如下操作：
 >    -   逻辑表达式and、or、not。
 >    -   作为分区键、二级分区键、外键、主键、唯一约束。

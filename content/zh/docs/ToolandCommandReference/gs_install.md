@@ -1,4 +1,4 @@
-# gs\_install<a name="ZH-CN_TOPIC_0249632258"></a>
+# gs\_install
 
 ## 背景信息<a name="zh-cn_topic_0237152416_zh-cn_topic_0059778040_section551843134215"></a>
 
@@ -20,7 +20,7 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
     gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE]  
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >安装时若不指定字符集，默认字符集为SQL\_ASCII，为简化和统一区域loacle默认设置为C，若想指定其他字符集和区域，请在安装时使用参数--gsinit-parameter="--locale=LOCALE"来指定，LOCALE为新数据库设置缺省的区域。
 
 -   显示帮助信息

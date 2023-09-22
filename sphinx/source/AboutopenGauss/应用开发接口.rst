@@ -1,0 +1,11 @@
+应用开发接口
+============
+
+.. toctree::
+
+    ../content/zh/docs/AboutopenGauss/支持标准SQL
+    ../content/zh/docs/AboutopenGauss/支持标准开发接口
+    ../content/zh/docs/AboutopenGauss/支持嵌入式SQL预处理器ECPG
+    ../content/zh/docs/AboutopenGauss/PG接口兼容
+    ../content/zh/docs/AboutopenGauss/支持PL-Java
+    ../content/zh/docs/AboutopenGauss/MySQL兼容性增强

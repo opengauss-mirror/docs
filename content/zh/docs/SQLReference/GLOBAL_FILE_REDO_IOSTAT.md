@@ -1,4 +1,4 @@
-# GLOBAL\_FILE\_REDO\_IOSTAT<a name="ZH-CN_TOPIC_0245374675"></a>
+# GLOBAL\_FILE\_REDO\_IOSTAT
 
 得到openGauss内各节点的Redo（WAL）相关统计信息。
 

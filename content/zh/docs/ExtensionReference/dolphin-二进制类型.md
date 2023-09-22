@@ -1,4 +1,4 @@
-# 二进制类型<a name="ZH-CN_TOPIC_0289900777"></a>
+# 二进制类型
 
 openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_t910f42f45b374d94afe2798c42fc5ef6)。
 
@@ -29,7 +29,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 <p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a>BLOB类型仅在dolphin.b_compatibility_mode为on的情况下才能够兼容MySQL数据库接收普通字符串输入的功能。</p>
 </div></div>
 </td>
-<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>最大为32TB（即35184372088832字节）。</p>
+<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>最大为1GB-8203字节（即1073733621字节）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_rf63072d5d612426f9aab20483b0b4838"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a>TINYBLOB</p>
@@ -124,7 +124,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   除了每列的大小限制以外，每个元组的总大小也不可超过1GB-8203字节（即1073733621字节）。
 >

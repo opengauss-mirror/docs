@@ -1,4 +1,4 @@
-# Plan Hint调优概述<a name="ZH-CN_TOPIC_0245374567"></a>
+# Plan Hint调优概述
 
 Plan Hint为用户提供了直接影响执行计划生成的手段，用户可以通过指定join顺序、join、scan方法、指定结果行数等多个手段来进行执行计划的调优，以提升查询的性能。
 
@@ -22,7 +22,7 @@ select /*+ <plan_hint1> <plan_hint2> */ * from t1, (select /*+ <plan_hint3> */ f
 
 其中<plan\_hint1\>，<plan\_hint2\>为外层查询的hint，<plan\_hint3\>为内层子查询的hint。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
+>![](public_sys-resources/icon-notice.png) **须知：**   
 >如果在视图定义（CREATE VIEW）时指定hint，则在该视图每次被应用时会使用该hint。  
 >当使用random plan功能（参数plan\_mode\_seed不为0）时，查询指定的plan hint不会被使用。  
 

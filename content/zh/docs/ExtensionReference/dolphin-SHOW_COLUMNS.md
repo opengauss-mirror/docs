@@ -1,4 +1,4 @@
-# SHOW COLUMNS<a name="ZH-CN_TOPIC_0289900448"></a>
+# SHOW COLUMNS
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
@@ -102,8 +102,8 @@ openGauss=# show full columns from tst_t1 where Type='text';
  addr_code | text | NULL      | YES  |     | NULL    |       | UPDATE,SELECT,REFERENCES,INSERT,COMMENT | 
 
 --显示权限过滤
-openGauss=# CREATE USER tst_u1 PASSWORD 'tst_u1@123';
-openGauss=# SET ROLE tst_u1 PASSWORD 'tst_u1@123';
+openGauss=# CREATE USER tst_u1 PASSWORD 'XXXXXXXX';
+openGauss=# SET ROLE tst_u1 PASSWORD 'XXXXXXXX';
 opengauss=> SET SEARCH_PATH TO tst_schema1;
 
 openGauss=> show full columns from tst_t1;
@@ -113,7 +113,7 @@ openGauss=> show full columns from tst_t1;
 
 openGauss=# RESET ROLE;
 opengauss=# GRANT SELECT (addr, phone) on tst_t1 to tst_u1;
-openGauss=# SET ROLE tst_u1 PASSWORD 'tst_u1@123';
+openGauss=# SET ROLE tst_u1 PASSWORD 'XXXXXXXX';
 
 opengauss=> SET SEARCH_PATH TO tst_schema1;
 openGauss=> show full columns from tst_t1;

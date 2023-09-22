@@ -1,4 +1,4 @@
-# DCL语法一览表<a name="ZH-CN_TOPIC_0289900059"></a>
+# DCL语法一览表
 
 DCL（Data Control Language数据控制语言），是用来创建用户角色、设置或更改数据库用户或角色权限的语句。
 
@@ -21,7 +21,7 @@ openGauss支持使用SHOW命令展示各种对象信息。所涉及的SQL语句�
 </tr>
 <tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_296621ec293a14518ed0a26f8991c196d"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_98879ab521de11553a0e799f3d76ab421"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_98879ab521de11553a0e799f3d76ab421"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_98879ab521de11553a0e799f3d76ab421"></a>查看当前权限信息清单</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"></a><a href="dolphin-SHOW-PROCESSLIST.md">SHOW PRIVILEGES</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_42cfe769bc0303e12ab7926322f857cfb"></a><a href="dolphin-SHOW_PRIVILEGES.md">SHOW PRIVILEGES</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_r1e01fd5954b8406db272bb20e836b348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a><a name="zh-cn_topic_0283136632_zh-cn_topic_0237122051_zh-cn_topic_0059777960_a3fdb3703e8c540498286e0f04724b78d"></a>查当前外部连接（或内部线程）相关信息</p>

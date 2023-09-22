@@ -1,0 +1,7 @@
+返回语句
+========
+
+.. toctree::
+
+    ../content/zh/docs/SQLReference/RETURN
+    ../content/zh/docs/SQLReference/RETURN-NEXT及RETURN-QUERY

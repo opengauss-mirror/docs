@@ -317,4 +317,4 @@ openGauss=# DROP TABLE tpcds.customer_address_p1;
 
 ## Helpful Links<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
-[ANALYZE | ANALYSE](analyze-analyse.md), [DESCRIBE](dolphin-describe-table.md)
+[ANALYZE | ANALYSE](dolphin-analyze-analyse.md), [DESCRIBE](dolphin-describe-table.md)

@@ -6,7 +6,7 @@ Updates data in a table. Changes the values of the specified columns in all rows
 
 ## Precautions<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
--   This section describes only the new syntax of Dolphin. The UPDATE syntax of openGauss is not modified. For details about the UPDATE syntax of the original openGauss, see section [UPDATE](update.md).
+-   This section describes only the new syntax of Dolphin. The UPDATE syntax of openGauss is not modified. For details about the UPDATE syntax of the original openGauss, see section [UPDATE](../SQLReference/update.md).
 
 ## Syntax<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 

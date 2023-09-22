@@ -1,0 +1,14 @@
+管理用户及权限
+==============
+
+.. toctree::
+
+    ../content/zh/docs/DatabaseAdministrationGuide/默认权限机制
+    ../content/zh/docs/DatabaseAdministrationGuide/管理员
+    ../content/zh/docs/DatabaseAdministrationGuide/三权分立
+    ../content/zh/docs/DatabaseAdministrationGuide/用户
+    ../content/zh/docs/DatabaseAdministrationGuide/角色
+    ../content/zh/docs/DatabaseAdministrationGuide/Schema
+    ../content/zh/docs/DatabaseAdministrationGuide/用户权限设置
+    ../content/zh/docs/DatabaseAdministrationGuide/行级访问控制
+    设置安全策略

@@ -1,4 +1,4 @@
-# PG\_TABLES<a name="ZH-CN_TOPIC_0289900821"></a>
+# PG\_TABLES
 
 PG\_TABLES视图提供了对数据库中每个表访问的有用信息。
 

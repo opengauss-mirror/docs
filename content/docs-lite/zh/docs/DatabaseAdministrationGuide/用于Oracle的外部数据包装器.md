@@ -12,9 +12,9 @@ oracle\_fdw（foreign data wrapper for oracle）用于Oracle的外部数据包�
 
 安装好开发包后，就可以开始编译oracle\_fdw了。编译时需要在执行**configure**时，加入  **--enable-oracle-fdw**  选项。后续按照正常的openGauss编译方式编译即可。（openGauss的编译参考  **软件安装编译**  ）
 
-编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/**下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/extension/**下。
+编译完成后，编译产物为  **oracle\_fdw.so**，位于安装目录的  **lib/postgresql/** 下。oracle\_fdw相关的sql文件和control文件，位于安装目录的  **share/postgresql/extension/** 下。
 
-如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql，oracle\_fdw--1.1.sql，oracle\_fdw.control**放到对应的安装目录  **share/postgresql/extension/**即可。
+如果编译安装时，没有加入  **--enable-oracle-fdw**  选项，可以在openGauss安装完成后，再次编译oracle\_fdw，然后手动将编译产物  **oracle\_fdw.so**放到对应的安装目录  **lib/postgresql/**  ，将  **oracle\_fdw--1.0--1.1.sql，oracle\_fdw--1.1.sql，oracle\_fdw.control**放到对应的安装目录  **share/postgresql/extension/** 即可。
 
 ## 使用oracle\_fdw<a name="zh-cn_topic_0283137635_section15777182920432"></a>
 

@@ -19,6 +19,7 @@ gs\_ctl参数可分为如下几类：
 -   switchover模式的参数，详细请参见[表5](#zh-cn_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31)。
 -   build参数，详细请参见[表6](#zh-cn_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b)。
 -   copy参数，详细参见[表7](#table65592307557)。
+-   stack参数，详细参见[表8](#table65592307777)。
 
     **表 1**  option参数
 
@@ -353,7 +354,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"><a name="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"></a><a name="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"></a>mode的取值：</p>
 <a name="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"></a><a name="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"></a><ul id="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"><li>full：通过全量镜像的方式重新同步<span id="text7129133232312"><a name="text7129133232312"></a><a name="text7129133232312"></a>DN</span>主机的数据目录。</li><li>incremental：通过解析Xlog日志获取主备<span id="text12237633132310"><a name="text12237633132310"></a><a name="text12237633132310"></a>DN</span>差异的数据进行增量修复备<span id="text19941835102316"><a name="text19941835102316"></a><a name="text19941835102316"></a>DN</span>。<div class="warning" id="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"><a name="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"></a><a name="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"></a><span class="warningtitle"> 警告： </span><div class="warningbody"><a name="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"></a><a name="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"></a><ul id="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"><li>增量重建适用于主备双主等因日志造成的不一致场景。</li><li>备机数据文件损坏、数据目录丢失等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重新修复备机。</li></ul>
 </div></div>
-</li><li>auto(不指定)：先增量，根据失败后是否可以再增量选择继续增量或者全量，三次增量失败后进行全量。</li><li>standby_full：使用备机重建备机或容灾场景下的首备重建灾备数据库实例内故障的备机</li><li>copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。</li><li>copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</li><li>cross_cluster_full：基于共享存储的同城双中心场景下的跨集群全量build</li><li>cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build</li></ul>
+</li><li>auto(不指定)：先增量，根据失败后是否可以再增量选择继续增量或者全量，三次增量失败后进行全量。</li><li>standby_full：使用备机重建备机或容灾场景下的首备重建灾备数据库实例内故障的备机</li><li>copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。</li><li>copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</li><li>cross_cluster_full：基于共享存储的同城双中心场景下的跨集群全量build</li><li>cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build</li><li>check：检测是否需要build，如果需要，返回build的类型。</li></ul>
 <p id="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"><a name="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"></a><a name="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"></a>默认值：auto</p>
 </td>
 </tr>
@@ -406,6 +407,8 @@ gs\_ctl参数可分为如下几类：
 
 
 **表 8**  stack参数
+
+<a name="table65592307777"></a>
 
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>

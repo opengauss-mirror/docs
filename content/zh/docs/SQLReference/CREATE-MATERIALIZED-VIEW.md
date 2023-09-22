@@ -1,4 +1,4 @@
-# CREATE MATERIALIZED VIEW<a name="ZH-CN_TOPIC_0289899973"></a>
+# CREATE MATERIALIZED VIEW
 
 CREATE MATERIALIZED VIEW会创建一个全量物化视图，并且后续可以使用REFRESH MATERIALIZED VIEW（全量刷新）刷新物化视图的数据。
 
@@ -49,6 +49,10 @@ CREATE MATERIALIZED VIEW mv_name
 -   **AS query**
 
     一个SELECT、TABLE 或者VALUES命令。这个查询将在一个安全受限的操作中运行。
+
+-   **[ WITH [ NO ] DATA ]**
+
+    创建表时，是否也插入查询到的数据。默认是要数据，选择“NO”参数时，则不要数据。
 
 
 ## 示例<a name="zh-cn_topic_0283136593_zh-cn_topic_0237122118_zh-cn_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>

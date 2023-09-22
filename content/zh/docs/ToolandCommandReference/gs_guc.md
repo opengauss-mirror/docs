@@ -1,4 +1,4 @@
-# gs\_guc<a name="ZH-CN_TOPIC_0289899223"></a>
+# gs\_guc
 
 ## 背景信息<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s59e576e934094b3c9a54d6ed555b5671"></a>
 
@@ -24,7 +24,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为client，则会生成这两个文件。其中“client.key.cipher”存储用户密码的密文，“client.key.rand”存储的是加密因子。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >“client.key.cipher”和“client.key.rand”是不指定-U选项时生成的密文文件和加密因子文件。如果通过-U指定了用户名，则会生成以用户名开头的文件。以指定-U test为例，生成的文件名为:“test.key.cipher、test.key.rand”。
 
@@ -33,7 +33,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     使用gs\_guc encrypt命令加密用户密码时，如果指定的-M的值为source，则会生成这两个文件。其中“datasource.key.cipher”存储用户密码的密文，“datasource.key.rand”存储的是加密因子。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-    “datasource.key.cipher”和“datasource.key.rand”是创建Data Source对象时调用的密钥文件。gs\_guc生成时即有读权限。使用前需将这两个文件放入各节点目录$GAUSSHOME/bin，且确保具有读权限。gs\_ssh工具可以协助您快速将文件放入集群各节点对应目录下。
     >
@@ -76,7 +76,7 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc {set | reload} -Z NODE-TYPE [-N NODE-NAME] {-I INSTANCE-NAME | -D DATADIR} -h "HOSTTYPE DATABASE USERNAME HOSTNAME AUTHMEHOD authentication-options"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   AUTHMEHOD后的authentication-options为可选参数，AUTHMEHOD支持以下选项：
     > 
@@ -128,7 +128,7 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc encrypt [-M keymode] -K password [-U username] -D DATADIR
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<16）和密码复杂度要求，如果不满足，将会报错。此密码用于保证生成密码文件的安全性和唯一性，用户无需保存或记忆。
     > 
@@ -140,7 +140,7 @@ gs\_guc工具由操作系统用户omm执行。
     gs_guc generate [-o prefix] [-S cipherkey] -D DATADIR
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   -o是输出cipher和rand文件前缀名称，默认输出文件名前缀为obsserver。其内容仅支持数字、字母和下划线。
     > 
@@ -149,7 +149,7 @@ gs\_guc工具由操作系统用户omm执行。
     >-   使用gs\_guc encrypt或generate命令生成加密密码和加密因子文件时只是参数不同，本质上是一样的。生成过程中会使用随机数作为加密密钥材料和盐值，因此是每次生成的文件都是不同的。每次生成的加密密码和加密因子文件需要成对使用，不能更换或交替使用，加密和解密时需要使用相同的加密密码和加密因子文件。
 
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >
 >-   gs\_guc工具不支持参数值中包含'\#'的设置。可以使用vi工具通过手工修改配置文件来设置。
 >
@@ -168,6 +168,12 @@ gs\_guc工具由操作系统用户omm执行。
 >-   如果同一个配置参数在配置文件里面出现多行，且有两行或多于两行同时生效（即没有用“\#”注释掉），那么只有最后一个配置参数会被设置，而前面的都会被忽略。
 >
 >-   通过reload模式设置或修改openGauss节点配置文件（postgresql.conf）的参数，生效存在短暂延迟，有可能导致配置后openGauss各实例参数极短时间不一致。
+>
+>-   gs\_guc设置浮点类型的参数时，由于浮点数在计算机中不能精确表示，所以参数值在误差范围1e-9内都可以设置成功。
+>
+>-   gs\_guc设置整型类型的参数时，可以接受十进制、十六进制、八进制的数据，以0x开始表示十六进制，以0开始表示八进制，其他情况表示十进制。
+>
+>-   gs\_guc设置string参数，参数中的单引号会计算字符。
 
 ## 命令参考<a name="zh-cn_topic_0287276018_zh-cn_topic_0237152338_zh-cn_topic_0059778019_s9f42fc33773a49829076e2e0121d9a5f"></a>
 
@@ -197,7 +203,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   暂不支持一次设置中指定多个-N参数，指定多个-N会报错。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >需依赖静态文件，仅在om安装的情况下有效，编译安装由于没有静态文件，所以无效。
 
@@ -211,7 +217,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   暂不支持一次设置中指定多个-N参数，指定多个-N会报错。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >需依赖静态文件，仅在om安装的情况下有效，编译安装由于没有静态文件，所以无效。
 
@@ -219,7 +225,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   需要执行命令的openGauss实例路径。使用encrypt命令时，此参数表示指定的密码文件生成的路径。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   与“-I” 不能一块使用
 
@@ -227,7 +233,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     要设定的openGauss配置参数的名称和参数值。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   如果参数是一个字符串变量，则使用-c parameter="'value'"或者使用-c "parameter = 'value'"。
     >-   如果需要配置的value内容中包含双引号, 则需要在双引号前加上转义符。例如value为a"b"c, 则命令为-c " parameter = 'a\\"b\\"c' "
@@ -244,7 +250,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     要设定的逻辑数据库名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   该参数必需同-Z datanode一起使用。即gs\_guc只允许作用于逻辑数据库的DN实例。
     >
@@ -256,11 +262,12 @@ gs\_guc工具由操作系统用户omm执行。
 
   需要忽略的主机名称。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >-   该参数必须与set/reload一起使用，且-Z只支持datanode。
   >-   该参数不支持与-D一起使用。
   >-   在与reload一起使用时，如果--ignore-node没有指定主节点，则集群中所有节点的参数依然会全部同步修改。
+  >-   --ignore-node必须在-N all时才可生效。
 
 -   -c parameter
 
@@ -297,7 +304,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   详细的参数说明请参见“pg\_hba.conf”配置文件中的描述。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >指定-h的情况下，默认会尝试修改所有节点的pg\_hba文件，但是如果是编译安装，由于没有静态文件，可以成功修改本节点的pg\_hba文件，但是会提示静态文件不存在。
 
@@ -313,7 +320,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     设定该密码在数据库运行过程中，用于服务端\(server\)、客户端\(client\)还是创建Data Source对象时调用。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >在使用ssl功能时，会涉及到服务端证书和私钥文件的加密密码和客户端证书和私钥文件的加密密码，在加密存储加密密码时，需要指定模式，否则默认是生成服务端的密码文件。
 
@@ -333,7 +340,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     指定要加密的用户，隶属于OS用户。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >openGauss可以为每个用户配置不同的ssl证书和私钥文件，指定该选项，可以生成按用户名区分的密码文件。
 
@@ -355,7 +362,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     取值范围：datanode。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >数据库实例节点类型有coordinator、datanode、cmserver、cmagent和gtm。openGauss只能取值为datanode，当NODE-TYPE为datanode时，对应数据库的数据目录中的配置文件postgresql.conf。
 

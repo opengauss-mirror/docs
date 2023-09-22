@@ -1,4 +1,4 @@
-# Schema<a name="ZH-CN_TOPIC_0000001190922647"></a>
+# Schema
 
 openGauss的Schema如下表所示。
 

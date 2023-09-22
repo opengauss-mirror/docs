@@ -1,10 +1,10 @@
-# DBE\_PLDEVELOPER.gs\_source<a name="ZH-CN_TOPIC_0000001214644937"></a>
+# DBE\_PLDEVELOPER.gs\_source
 
 用于记录PLPGSQL对象（存储过程、函数、包、包体）编译相关信息，具体内容见下列字段描述。
 
-打开plsql\_show\_all\_error参数后，会把成功或失败的PLPGSQL对象编译信息记录在此表中，如果关闭plsql\_show\_all\_error参数则只会将正确的编译相关信息插入此表中。
+无论PLPGSQL对象编译成功或失败，均会把编译信息记录在此表中。
 
-> ![](public_sys-resources/icon-caution.gif) **注意：** 
+> ![](public_sys-resources/icon-caution.png) **注意：** 
 >
 > - gs_source表中只记录用户定义的原始对象语句，即使用户使用了ALTER改变了创建的SCHEMA或者名字，gs_source表中的信息也不会发生变化，如果用户更改了对象的SCHEMA或者名字，会导致用户在删除对象后，对象仍存在于gs_source表中。
 >

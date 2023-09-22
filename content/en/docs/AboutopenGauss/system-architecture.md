@@ -1,51 +1,33 @@
 # System Architecture<a name="EN-US_TOPIC_0289896518"></a>
 
-openGauss is a standalone database where data is stored on a single physical node and data access tasks are pushed to service nodes. In this way, high concurrency of servers enables quick data processing. In addition, data can be copied to the standby server through log replication, ensuring high reliability and scalability.
+Digital technologies are accelerating the implementation of industry applications and support abundant online applications and services. Industry digitalization accelerates the generation of massive data. Multiple data types, such as graphs, flows, time sequences, and map spaces, are emerging one after another, requiring different computing architectures for processing. The computing requirements of databases evolve from general-purpose CPUs to diversified computing such as GPUs and NPUs. In addition, to effectively meet the ultimate requirements of large-scale databases for reliability, performance, and usability, databases in the industry gradually adopt a unified and standard resource pooling architecture.
+
+ To address the evolution trend of diversified computing, openGauss implements a resource pooling architecture and decouples computing, memory, and storage for the first time. Layer-by-layer pooling brings better resource scheduling efficiency, better processing performance, and innovation agility. Based on the trend of multi-mode data convergence, the HTAP architecture is implemented. In addition, the data processing capabilities of different models, such as graph databases and time series databases, are jointly developed in the openGauss community. This enables openGauss to implement multi-mode data convergence processing and analysis.
+
+The future-oriented openGauss resource pooling architecture consists of three pooling layers, one platform, and one standard. The following figure shows the architecture.
+
+ ![Architecture](figures/opengauss-resource-pooling-architecture.png)           
+
+
+Three pooling layers include storage pooling, memory pooling, and compute pooling. Storage pooling supports multiple types of storage, such as distributed storage and enterprise storage. One data service can be used for multiple types of computing. The NDP technology of SQL operator offloading greatly improves SQL processing efficiency and reduces network I/O traffic. Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RoCE and SCM hardware are used to implement ultimate commit acceleration and large-capacity memory access. Computing pooling supports diversified computing power. Based on computing power such as x86 and Kunpeng, it provides applications with comprehensive data services such as TP row store acceleration, AP column store acceleration, and AI training and inference. Above the three-layer pooling, it is a full-scenario SQL standard that provides applications with a series of query interfaces for data analysis, AI inference, and graph query, fully unleashing data value. In addition, the integrated platform implements intelligent O&M, cluster management, and resource orchestration capabilities to ensure stable running and elastic scaling of databases under heavy loads.
 
 ## Software Architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_section1940043819751"></a>
 
-openGauss is a standalone database and can be deployed in primary/standby mode.
+The following figure shows the logical architecture of resource pooling in openGauss 5.0.0.
 
-openGauss shows the logical components of  [Figure 1](#en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411).
+**Figure 1** openGauss logical architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a> 
 
-**Figure  1**  openGauss logical components<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_fig5205420191411"></a>  
-![](figures/opengauss-logical-components.png "opengauss-logical-components")
+![openGauss logical architecture](figures/opengauss-logical-architecture.png)
 
-**Table  1**  Architecture description
+The openGauss resource pooling architecture supports one primary node and seven standby nodes. The primary node supports read and write, and the standby node supports scale-out read capability to meet the performance requirements of typical loads in the real world. Real-time data consistency among multiple nodes supports transparent expansion of data consistency-sensitive application loads from a single node to multiple nodes. It eliminates the overhead of traditional primary/standby log replication, reducing storage costs by more than 50%. The lightweight RPC framework is implemented based on the high-performance RDMA network, significantly reducing the CPU resource overhead and achieving μs-level network latency. The multi-level cache capability of SCM improves performance by 30% at the same memory cost.
 
-<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_table5479978919151"></a>
-<table><thead align="left"><tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row4411284819151"><th class="cellrowborder" valign="top" width="14.469999999999999%" id="mcps1.2.3.1.1"><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p404366191511"></a>Name</p>
-</th>
-<th class="cellrowborder" valign="top" width="85.53%" id="mcps1.2.3.1.2"><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p7387596191511"></a>Description</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row3200216592122"><td class="cellrowborder" valign="top" width="14.469999999999999%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1877290192147"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1877290192147"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1877290192147"></a>OM</p>
-</td>
-<td class="cellrowborder" valign="top" width="85.53%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p4420997892147"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p4420997892147"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p4420997892147"></a>Operation Manager (OM) It provides management interfaces and tools for routine maintenance and configuration management of the database.</p>
-</td>
-</tr>
-<tr id="row1994922718146"><td class="cellrowborder" valign="top" width="14.469999999999999%" headers="mcps1.2.3.1.1 "><p id="p5949127181415"><a name="p5949127181415"></a><a name="p5949127181415"></a>CM</p>
-</td>
-<td class="cellrowborder" valign="top" width="85.53%" headers="mcps1.2.3.1.2 "><p id="p13949152731411"><a name="p13949152731411"></a><a name="p13949152731411"></a>Acronym for cluster manager, a database management module. It manages and monitors the running status of functional units and physical resources in a database system, ensuring stable running of the entire system.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row6476976919151"><td class="cellrowborder" valign="top" width="14.469999999999999%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p11262944162914"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p11262944162914"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p11262944162914"></a>Client driver</p>
-</td>
-<td class="cellrowborder" valign="top" width="85.53%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p23234897162914"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p23234897162914"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p23234897162914"></a>Client driver receives access requests from the application layer and returns execution results. It communicates with <span id="text1113502285312"><a name="text1113502285312"></a><a name="text1113502285312"></a>openGauss</span> instances, sends application SQL commands, and receives <span id="text51351822125311"><a name="text51351822125311"></a><a name="text51351822125311"></a>openGauss</span> execution results.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row5813821019151"><td class="cellrowborder" valign="top" width="14.469999999999999%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p29314576162914"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p29314576162914"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p29314576162914"></a><span id="text6736142565318"><a name="text6736142565318"></a><a name="text6736142565318"></a>openGauss</span> (primary/standby)</p>
-</td>
-<td class="cellrowborder" valign="top" width="85.53%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1933624014508"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1933624014508"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p1933624014508"></a><span id="text12102162717535"><a name="text12102162717535"></a><a name="text12102162717535"></a>openGauss</span> primary/standby DN stores service data, executes data query tasks, and returns execution results.</p>
-<p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p56577630162914"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p56577630162914"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p56577630162914"></a><span id="text4319172855317"><a name="text4319172855317"></a><a name="text4319172855317"></a>openGauss</span> supports one primary and multiple standbys. You are advised to deploy them on different physical nodes.</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_row4354812919183"><td class="cellrowborder" valign="top" width="14.469999999999999%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p553181019183"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p553181019183"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p553181019183"></a>Storage</p>
-</td>
-<td class="cellrowborder" valign="top" width="85.53%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p64149272191943"><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p64149272191943"></a><a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_p64149272191943"></a>Functions as the server's local storage resources to store data permanently.</p>
-</td>
-</tr>
-</tbody>
-</table>
 
+**Table 1** Architecture description
+
+| Name  | Description                                                                                    |
+|------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| DMS  | DMS is a dynamic library integrated in the database. It transmits page content through the TCP/RDMA network, integrates the primary and standby memories, and provides the memory pooling capability to implement real-time consistent read on the standby node.                                                                 |
+| DSS  | DSS is an independent process that directly manages raw devices of disk arrays and provides capabilities similar to distributed file systems for external systems. The shared memory and client API dynamic library provide the database with the capabilities of creating files, deleting files, expanding and shrinking files, and reading and writing files.                                                 |
+| Shared storage| The enterprise-level storage and distributed storage are supported. Compared with traditional database creation, resource pooling classifies directories into three types: exclusively used and not shared by each instance, exclusively used and shared by each instance, and shared by all instances. The directories to be shared must be stored on the shared storage, and the directories that are not shared must be stored on the local disk. In addition, to create a database on the standby node, you only need to create a directory that belongs to the standby node. You do not need to create a directory structure shared by all instances.|
+| OCK-RDMA | OCK RDMA can be used to reduce the latency of DMS primary/standby page switching. After OCK RDMA is enabled, the consistent read latency of the standby node is improved by over 20%.|
+|SCM      | SCM acceleration based on persistent memory improves performance by 30% at the same memory cost.|

@@ -69,7 +69,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## dirty\_page\_percent\_max<a name="section1413763444211"></a>
 
-**Parameter description**: Specifies the percentage of dirty pages to  **shared\_buffers **after the incremental checkpoint is enabled. When the value of this parameter is reached, the background page flush thread flushes dirty pages based on the maximum value of max\_io\_capacity.
+**Parameter description**: Specifies the percentage of dirty pages to  **shared\_buffers** after the incremental checkpoint is enabled. When the value of this parameter is reached, the background page flush thread flushes dirty pages based on the maximum value of max\_io\_capacity.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

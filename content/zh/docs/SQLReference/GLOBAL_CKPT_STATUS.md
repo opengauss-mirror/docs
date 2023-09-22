@@ -1,4 +1,4 @@
-# GLOBAL\_CKPT\_STATUS<a name="ZH-CN_TOPIC_0245374819"></a>
+# GLOBAL\_CKPT\_STATUS
 
 GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和各类日志刷页情况。
 

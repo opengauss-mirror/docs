@@ -1,4 +1,4 @@
-# SHOW INDEX<a name="ZH-CN_TOPIC_0289900448"></a>
+# SHOW INDEX
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
@@ -39,11 +39,11 @@ SHOW { INDEX | INDEXES | KEYS }
 | Column_name   | 索引列的列名                                                 |
 | Collation     | 取值有A（默认，升序），D（降序）、NULL（索引不支持排序）     |
 | Cardinality   | 根据pg_statistic.stadistinct和pg_class.reltuples计算得到：<br>stadistinct > 0: stadistinct<br>stadistinct = 0: NULL<br>stadistinct < 0: reltuples * stadistinct * -1 |
-| Sub_part      | 索引前缀。如果该列仅被部分索引，则是索引字符的数量；如果整个列都被索引，则是NULL。当前不支持前缀索引，NULL                                         |
+| Sub_part      | 索引前缀。如果该列仅被部分索引，则是索引字符的数量；如果整个列都被索引，则是NULL。当前不支持前缀索引，恒为NULL                                         |
 | Packed        | 如何打包key值，create table时指定pack_keys；否则返回NULL。当前不支持，为NULL |
-| Null          | 可能包含NULL值则是YES，否则为''                              |
+| Null          | 可能包含NULL值则是YES，否则为空字符串''                              |
 | Index_type    | 使用的索引方法：BTREE、HASH等                 |
-| Comment       | pg_index表中记录的indisusable为true则显示disabled，false则显示''               |
+| Comment       | pg_index表中记录的indisusable为true则显示disabled，false则显示空字符串''               |
 | Index_comment | 创建索引时COMMENT指定的注释信息                              |
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>

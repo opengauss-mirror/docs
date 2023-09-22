@@ -1,4 +1,4 @@
-# JSON/JSONB函数和操作符<a name="ZH-CN_TOPIC_0289900983"></a>
+# JSON/JSONB函数和操作符
 
 JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
@@ -114,7 +114,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >对于 \#\> 和 \#\>\> 操作符，当给出的路径无法查找到数据时，不会报错，会返回空。
 
 **表 2** **JSONB额外支持操作符**

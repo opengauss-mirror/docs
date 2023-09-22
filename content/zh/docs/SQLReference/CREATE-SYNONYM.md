@@ -1,4 +1,4 @@
-# CREATE SYNONYM<a name="ZH-CN_TOPIC_0289900787"></a>
+# CREATE SYNONYM
 
 ## 功能描述<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
 
@@ -37,7 +37,7 @@ CREATE [ OR REPLACE ] SYNONYM synonym_name
 
     取值范围：字符串，要符合标识符的命名规范。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**
+    >![](public_sys-resources/icon-note.png) **说明：**
     > 
     >object\_name可以是不存在的对象名称。
 

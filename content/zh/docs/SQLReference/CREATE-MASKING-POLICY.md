@@ -1,4 +1,4 @@
-# CREATE MASKING POLICY<a name="ZH-CN_TOPIC_0306525303"></a>
+# CREATE MASKING POLICY
 
 ## 功能描述<a name="section1163224811518"></a>
 
@@ -88,8 +88,8 @@ CREATE MASKING POLICY policy_name masking_clause[, ...]* policy_filter [ENABLE |
 
 ```
 --创建dev_mask和bob_mask用户。
-openGauss=# CREATE USER dev_mask PASSWORD 'dev@1234';
-openGauss=# CREATE USER bob_mask PASSWORD 'bob@1234';
+openGauss=# CREATE USER dev_mask PASSWORD 'XXXXXXXX';
+openGauss=# CREATE USER bob_mask PASSWORD 'XXXXXXXX';
 
 --创建一个表tb_for_masking
 openGauss=# CREATE TABLE tb_for_masking(col1 text, col2 text, col3 text);

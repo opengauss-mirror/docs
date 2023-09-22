@@ -1,4 +1,4 @@
-# SEQUENCE函数<a name="ZH-CN_TOPIC_0289899881"></a>
+# SEQUENCE函数
 
 序列函数为用户从序列对象中获取后续的序列值提供了简单的多用户安全的方法。
 
@@ -6,11 +6,11 @@
 
   描述：递增序列并返回新值。
 
-  >![](public_sys-resources/icon-note.gif) **说明：** 
+  >![](public_sys-resources/icon-note.png) **说明：** 
   >
   >为了避免从同一个序列获取值的并发事务被阻塞，nextval操作不会回滚；也就是说，一旦一个值已经被抓取，那么就认为它已经被用过了，并且不会再被返回。即使该操作处于事务中，当事务之后中断，或者如果调用查询结束不使用该值，也是如此。这种情况将在指定值的顺序中留下未使用的“空洞”。因此，openGauss序列对象不能用于获得“无间隙”序列。
 
-  >![](public_sys-resources/icon-notice.gif) **须知：** 
+  >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >nextval函数只能在主机上执行，备机不支持执行此函数。
 
@@ -114,12 +114,12 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >Setval后当前会话会立刻生效，但如果其他会话有缓存的序列值，只能等到缓存值用尽才能感知Setval的作用。所以为了避免序列值冲突，setval要谨慎使用。
 因为序列是非事务的，setval造成的改变不会由于事务的回滚而撤销。
 
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >nextval函数只能在主机上执行，备机不支持执行此函数。
 
@@ -156,7 +156,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >
     >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)是会话级别的函数，若当前会话未对自动增长列插入任何数据，last\_insert\_id\(\)返回值为0。
     >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)仅在参数sql\_compatibility=B时可用。

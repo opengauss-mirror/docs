@@ -1,4 +1,4 @@
-# MOT恢复时间目标（RTO）和冷启动时间<a name="ZH-CN_TOPIC_0280525098"></a>
+# MOT恢复时间目标（RTO）和冷启动时间
 
 ## 高可用RTO
 
@@ -8,7 +8,7 @@ MOT完全集成到openGauss中，包括支持主备部署的高可用场景。WA
 
 **openGauss（包括MOT）的RTO小于10秒，这要归功于其并行恢复机制。**
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >灾难发生后必须恢复业务流程，避免导致连续性中断相关的不可接受的后果，而RTO表示的就是这段流程的持续时间和业务级别。换句话说，RTO就是在回答这个问题：在通知业务流程中断后，需要多长时间才能恢复？
 
 ## 冷启动恢复时间
@@ -20,12 +20,12 @@ MOT测试使用40 GB/s的ARM磁盘测试，可以在100 GB/s的时间内加载�
 冷启动过程和从磁盘加载数据到MOT所需时间如下图所示。
 
 **图 1**  冷启动时间性能基准<a name="fig46666290"></a>  
-![](figures/cold-start-time-performance-benchmarks2 (1).png "冷启动时间性能基准")
+![](figures/cold-start-time-performance-benchmarks2.png "冷启动时间性能基准")
 
--   数据库大小：加载整个数据库（每数据库GB）的总时间由蓝色线条和左侧的Y轴**时间（秒）**表示。
--   吞吐量：数据库每秒GB吞吐量由橙色线和右侧的Y轴**吞吐量GB/秒**表示。
+-   数据库大小：加载整个数据库（每数据库GB）的总时间由蓝色线条和左侧的Y轴 **时间（秒）** 表示。
+-   吞吐量：数据库每秒GB吞吐量由橙色线和右侧的Y轴 **吞吐量GB/秒** 表示。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+>![](public_sys-resources/icon-note.png) **说明：** 
 >测试过程中表现的性能与SSD硬件的带宽非常接近。因此，可以在不同的平台上实现更高（或更低）的性能。
 
 

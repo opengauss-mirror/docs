@@ -1,4 +1,4 @@
-# STATIO\_ALL\_TABLES<a name="ZH-CN_TOPIC_0245374791"></a>
+# STATIO\_ALL\_TABLES
 
 STATIO\_ALL\_TABLES视图将包含数据库中每个表（包括TOAST表）的一行，显示出特定表I/O的统计。
 

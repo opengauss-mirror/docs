@@ -1,4 +1,4 @@
-# SET PASSWORD <a name="ZH-CN_TOPIC_0289900448"></a>
+# SET PASSWORD 
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
@@ -49,16 +49,16 @@ password_option: {
 
 ```
 --修改指定用户密码
-openGauss=# create user user1 with password 'abcd@123';
+openGauss=# create user user1 with password 'XXXXXXXX';
 CREATE ROLE
-openGauss=# set password for user1 = 'abcd@124';
+openGauss=# set password for user1 = 'XXXXXXXX';
 ALTER ROLE
 
 --修改当前用户密码
-openGauss=# set password = 'abcd@123';
+openGauss=# set password = 'XXXXXXXX';
 ALTER ROLE
-openGauss=# set password for current_user = 'abcd@123';
+openGauss=# set password for current_user = 'XXXXXXXXX';
 ALTER ROLE
-openGauss=# set password for current_user() = 'abcd@123';
+openGauss=# set password for current_user() = 'XXXXXXXX';
 ALTER ROLE
 ```

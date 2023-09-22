@@ -1,4 +1,4 @@
-# 使用指导<a name="ZH-CN_TOPIC_0000001196305050"></a>
+# 使用指导
 
 用户可通过gs\_dbmind命令启动对应的exporter。下面为用户演示一个完整的Prometheus监控平台的搭建过程。
 
@@ -49,7 +49,7 @@
     ```
 
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 
 >- openGauss-exporter中连接数据库的用户需要monitor admin或以上权限，否则会出现部分指标无法采集的情况。同时openGauss-exporter不支持使用数据库初始用户来进行数据采集。
 >- oepnGauss-exporter链接的数据库用户需要获取dbe\_perf模式下的数据，因此需要保证其具有该视图的权限。
