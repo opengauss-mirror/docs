@@ -1338,3 +1338,44 @@ wait\_status列的等待状态有以下状态。
 </tbody>
 </table>
 
+**表 6**  MES等待事件列表
+<a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_table11826123533718"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row2994124219379"><th class="cellrowborder" valign="top" width="37.6%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p6994174220376"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p6994174220376"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p6994174220376"></a>wait_event类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="62.4%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p7994184218371"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p7994184218371"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p7994184218371"></a>类型描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row1388753563718"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p78871035193711"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p78871035193711"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p78871035193711"></a>Connect</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p18871355377"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p18871355377"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p18871355377"></a>连接信息。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row5887103510377"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p158876355377"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p158876355377"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p158876355377"></a>Heartbeat</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p20887335153716"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p20887335153716"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p20887335153716"></a>心跳信息。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row17887835113717"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p14887203516376"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p14887203516376"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p14887203516376"></a>AsyncMsg</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p98877351377"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p98877351377"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p98877351377"></a>异步消息。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row9887123514375"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p288723583714"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p288723583714"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p288723583714"></a>SynchReq</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1388733513377"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1388733513377"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1388733513377"></a>同步请求</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row148871935123710"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p188719356372"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p188719356372"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p188719356372"></a>SynchAck</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1188753543717"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1188753543717"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1188753543717"></a>同步确认。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_row58872359376"><td class="cellrowborder" valign="top" width="37.6%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p488720358370"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p488720358370"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p488720358370"></a>ForwardReq</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.4%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1788783511376"><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1788783511376"></a><a name="zh-cn_topic_0283136724_zh-cn_topic_0237122466_p1788783511376"></a>转发请求。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
