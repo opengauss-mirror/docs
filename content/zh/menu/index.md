@@ -139,6 +139,7 @@ headless: true
 	    	-   [全量迁移gs_mysync]({{< relref "./docs/AboutopenGauss/全量迁移gs_mysync.md" >}})
 	    	-   [增量迁移gs_replicate(MySQL -\> openGauss)]({{< relref "./docs/AboutopenGauss/增量迁移gs_replicate.md" >}})
 	    	-   [反向迁移gs_replicate(openGauss -\> MySQL)]({{< relref "./docs/AboutopenGauss/反向迁移gs_replicate.md" >}})
+			-   [反向全量迁移(openGauss -\> MySQL)]({{< relref "./docs/AboutopenGauss/反向全量迁移.md" >}})
 	    	-   [数据校验gs_datacheck]({{< relref "./docs/AboutopenGauss/数据校验gs_datacheck.md" >}})
 	    	-   [openGauss客户端工具DataStudio]({{< relref "./docs/AboutopenGauss/openGauss客户端工具DataStudio.md" >}})
 	    -   [中间件]({{< relref "./docs/AboutopenGauss/中间件.md" >}})
