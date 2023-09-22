@@ -21,6 +21,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 ## 特性增强<a name="section28788730"></a>
 
 - 增量迁移支持迁移进度与回放失败的SQL语句实时上报。
+- 增量迁移支持断点续传功能，可满足工具中断重启后数据持续迁移，中断期间的增量数据不遗漏。
 
 ## 特性约束<a name="section06531946143616"></a>
 
