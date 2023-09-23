@@ -80,7 +80,7 @@ headless: true
             -   [DSS功能增强]({{< relref "./docs/AboutopenGauss/DSS功能增强.md" >}})
             -   [资源池化算子卸载]({{< relref "./docs/AboutopenGauss/资源池化算子卸载.md" >}})
             -   [基于Dorado存储同步复制的主备双集群容灾]({{< relref "./docs/AboutopenGauss/基于Dorado存储同步复制的主备双集群容灾.md" >}})
-            -   [XLog按需回放]({{< relref "./docs/AboutopenGauss/XLog按需回放.md" >}})
+            -   [极致RTO按需回放]({{< relref "./docs/AboutopenGauss/极致RTO按需回放.md" >}})
 	    -   [数据库安全]({{< relref "./docs/AboutopenGauss/数据库安全.md" >}})
 	    	-   [访问控制模型]({{< relref "./docs/AboutopenGauss/访问控制模型.md" >}})
 	    	-   [控制权和访问权分离]({{< relref "./docs/AboutopenGauss/控制权和访问权分离.md" >}})
