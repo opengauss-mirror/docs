@@ -21,3 +21,4 @@
     ../content/zh/docs/AboutopenGauss/支持global-syscache
     ../content/zh/docs/AboutopenGauss/支持备机build备机
     ../content/zh/docs/AboutopenGauss/两地三中心跨Region容灾
+    ../content/zh/docs/AboutopenGauss/主备高可用能力增强
