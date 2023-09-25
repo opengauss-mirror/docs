@@ -171,6 +171,10 @@ openGauss=# SELECT * FROM test_datetime;
 示例(注意下方 openGauss 数据库兼容性为 b)
 
 ```sql
+--设置时区。
+openGauss=# SET TIME ZONE PRC;
+SET
+
 --创建表。
 openGauss=# CREATE TABLE test_timestamp(
 openGauss(# ts timestamp(2));
@@ -186,8 +190,8 @@ INSERT 0 1
 openGauss=# SELECT * FROM test_timestamp;
            ts           
 ------------------------
- 2012-10-22 20:07:23
- 2020-11-12 23:45:12
+ 2012-10-22 20:07:23+08
+ 2020-11-12 23:45:12+08
 (2 rows)
     
 --变更时区。
@@ -197,8 +201,8 @@ SET
 openGauss=# SELECT * FROM test_timestamp;
            ts           
 ------------------------
- 2012-10-22 12:07:23
- 2020-11-12 15:45:12
+ 2012-10-22 12:07:23+00
+ 2020-11-12 15:45:12+00
 (2 rows)
 ```
 
