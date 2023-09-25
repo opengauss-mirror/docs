@@ -1,4 +1,4 @@
-# 全量迁移gs_mysync
+﻿# 全量迁移gs_mysync
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -15,6 +15,7 @@ gs_mysync工具是一个基于Python语言的MySQL到openGauss的复制工具。
 ## 特性描述<a name="section18111828"></a>
 
 gs_mysync工具提供数据全量复制功能，使得数据可以从MySQL迁移至openGauss数据库。对于数据的全量迁移，gs_mysync工具中存储了MySQL数据类型与openGauss数据类型之间的映射关系，可支持MySQL中各种数据类型的迁移。特别地，对于MySQL中的浮点数据类型，包括decimal、dec、numeric、float、float4、float8、real、double、double precision、fixed数据类型，若数据类型中显示指定或默认含有精度，将转化为openGauss中的number[p, s\]类型；若数据类型中未显示指定精度，将转化为openGauss中的number数据类型，基于此，可保证离线迁移和在线迁移后数据精度不丢失。
+gs_mysync工具支持在指定版本和架构的系统（包括CentOS7、openEuler20.03、openEuler22.03系统版本，x86_64和aarch64架构）上进行离线安装，无需连接外部网络。
 
 ## 特性增强<a name="section28788730"></a>
 
