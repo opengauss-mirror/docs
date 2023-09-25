@@ -9,4 +9,4 @@
     ../content/zh/docs/AboutopenGauss/DSS功能增强
     ../content/zh/docs/AboutopenGauss/资源池化算子卸载
     ../content/zh/docs/AboutopenGauss/基于Dorado存储同步复制的主备双集群容灾
-    ../content/zh/docs/AboutopenGauss/XLog按需回放
+    ../content/zh/docs/AboutopenGauss/极致RTO按需回放
