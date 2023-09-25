@@ -84,6 +84,21 @@
 
 **默认值：** off
 
+## ssl\_use_tlcp<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_section1652594319820"></a>
+
+**参数说明：** 设置服务器端是否使用TLCP连接，该参数只有当参数[ssl](#zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa)为on时才有效。请在使用这个选项之前阅读[使用gsql访问openGauss](../GettingStarted/使用gsql访问openGauss.md)。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：** 布尔型
+
+-   on表示服务器端启用TLCP连接。
+-   off表示服务器端不启用TLCP连接，而是使用TLS连接。
+
+
+
+**默认值：** off
+
 ## ssl\_ciphers<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s83e68216730542489adc97d0ba080289"></a>
 
 **参数说明：** 指定SSL支持的加密算法列表，仅sysadmin用户可以访问。
@@ -110,7 +125,7 @@
 
 ## ssl\_cert\_file<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s68c117bf68b5461091ef26231ceb314d"></a>
 
-**参数说明：** 指定包含SSL服务器证书的文件的名称，其相对路径是相对于数据目录的。
+**参数说明：** 对于TLS连接，该参数指定服务器证书文件的名称；对于TLCP连接，该参数指定服务器用于验证签名的证书文件的名称。其相对路径是相对于数据目录的。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -118,15 +133,35 @@
 
 **默认值：** server.crt
 
+## ssl\_enc\_cert\_file<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s68c117bf68b5461091ef26231ceb314d"></a>
+
+**参数说明：** 该参数指定TLCP连接时服务器用于加密的证书文件的名称，其相对路径是相对于数据目录的。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：** 字符串
+
+**默认值：** server_enc.crt
+
 ## ssl\_key\_file<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s102e03361bf949d88525e779b5284404"></a>
 
-**参数说明：** 指定包含SSL私钥的文件名称，其相对路径是相对于数据目录的。
+**参数说明：** 对于TLS连接，该参数指定服务器私钥文件的名称；对于TLCP连接，该参数指定服务器用于签名的私钥文件的名称。其相对路径是相对于数据目录的。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围：** 字符串
 
 **默认值：** server.key
+
+## ssl\_enc\_key\_file<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_s102e03361bf949d88525e779b5284404"></a>
+
+**参数说明：** 该参数指定TLCP连接时服务器用于解密的私钥文件的名称，其相对路径是相对于数据目录的。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围：** 字符串
+
+**默认值：** server_enc.key
 
 ## ssl\_ca\_file<a name="zh-cn_topic_0283137371_zh-cn_topic_0237124696_zh-cn_topic_0059778664_saaa8bf78f4314b5db5a3b6e9f06a96f9"></a>
 

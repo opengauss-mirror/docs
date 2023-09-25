@@ -4,9 +4,13 @@
 
 openGauss支持SSL标准协议（TLS 1.2），SSL协议是安全性更高的协议标准，它们加入了数字签名和数字证书来实现客户端和服务器的双向身份验证，保证了通信双方更加安全的数据传输。
 
+openGuass支持TLCP协议，TLCP采用国密算法进行身份认证和安全传输，它采用SM2双证书体系，分别用于签名认证和传输数据的加密。
+
 ## 前提条件<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s2d0511630ed840d180c92fa6bdecb54b"></a>
 
 从CA认证中心申请到正式的服务器、客户端的证书和密钥。（假设服务器的私钥为server.key，证书为server.crt，客户端的私钥为client.key，证书为client.crt，CA根证书名称为cacert.pem。）
+
+对于TLCP连接，需要配置双证书。（假设服务器用于签名认证的证书私钥对为server.crt、server.key，用于数据加密传输的证书私钥对为server_enc.crt、server_enc.key ；客户端用于签名验签的证书私钥对为client.crt，client.key，用于数据加密传输的证书私钥对为 client_enc.crt，client_enc.key; CA根证书名称为cacert.pem。）
 
 ## 注意事项<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s014a1b1bc72240bb9bbbad5e064bf6d3"></a>
 
@@ -30,6 +34,11 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     export PGSSLKEY="/home/omm/client.key"
     export PGSSLMODE="verify-ca"
     export PGSSLROOTCERT="/home/omm/cacert.pem"
+
+    TCLP连接需要额外配置如下参数：
+    expprt PGSSLTLCP=1
+    export PGSSLENCCERT="/home/omm/client_enc.crt"
+    export PGSSLENCKEY="/home/omm/client_enc.key"
     ```
 
     单向认证需要配置如下参数：
@@ -48,6 +57,10 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     chmod 600 client.crt
     chmod 600 client.key.cipher
     chmod 600 client.key.rand
+    chmod 600 client_enc.key
+    chmod 600 client_enc.crt
+    chmod 600 client_enc.key.cipher
+    chmod 600 client_enc.key.rand
     chmod 600 cacert.pem
     ```
 
@@ -60,6 +73,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 **表 1**  认证方式
 
 <a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_table56811076112938"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_row57505105112938"><th class="cellrowborder" valign="top" width="14.321432143214322%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p27401952112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p27401952112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p27401952112938"></a>认证方式</p>
 </th>
 <th class="cellrowborder" valign="top" width="26.912691269126913%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p4965635112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p4965635112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p4965635112938"></a>含义</p>
@@ -70,12 +84,22 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_row50170168112938"><td class="cellrowborder" valign="top" width="14.321432143214322%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a>双向认证（推荐）</p>
+<tbody><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_row50170168112938"><td class="cellrowborder" valign="top" width="14.321432143214322%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a>双向认证-TLS（推荐）</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.912691269126913%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"></a>客户端验证服务器证书的有效性，同时服务器端也要验证客户端证书的有效性，只有认证成功，连接才能建立。</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.73337333733373%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"></a>设置如下环境变量：</p>
 <a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"></a><ul id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"><li>PGSSLCERT</li><li>PGSSLKEY</li><li>PGSSLROOTCERT</li><li>PGSSLMODE</li></ul>
+</td>
+<td class="cellrowborder" valign="top" width="25.032503250325032%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"></a>该方式应用于安全性要求较高的场景。使用此方式时，建议设置客户端的PGSSLMODE变量为verify-ca。确保了网络数据的安全性。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_row50170168112938"><td class="cellrowborder" valign="top" width="14.321432143214322%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p37251814112938"></a>双向认证-TLCP（推荐）</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.912691269126913%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p64606997112938"></a>客户端验证服务器证书的有效性，同时服务器端也要验证客户端证书的有效性，只有认证成功，连接才能建立。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.73337333733373%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33178696112938"></a>设置如下环境变量：</p>
+<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"></a><ul id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ul30172812112938"><li>PGSSLTLCP</li><li>PGSSLCERT</li><li>PGSSLKEY</li><li>PGSSLENCCERT</li><li>PGSSENCLKEY</li><li>PGSSLROOTCERT</li><li>PGSSLMODE</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25.032503250325032%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_p33366049163212"></a>该方式应用于安全性要求较高的场景。使用此方式时，建议设置客户端的PGSSLMODE变量为verify-ca。确保了网络数据的安全性。</p>
 </td>
@@ -124,20 +148,49 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"></a>默认值：</strong>off</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_row1718919547"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p147198175416"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p147198175416"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p147198175416"></a>ssl_use_tlcp</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p107191816542"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p107191816542"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p107191816542"></a>设置是否使用TLCP连接。该参数只有当参数ssl为on时才有效。</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_ul9729101110562"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_ul9729101110562"></a><ul id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_ul9729101110562"><li>on：服务器端启用TLCP连接功能。</li><li>off：服务器端不启用TLCP连接功能，仍使用TLS连接。</li></ul>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_p27375114565"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_b13740311145611"></a>默认值：</strong>off</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_rf42bf8261c33449d81f47597005cc921"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"></a>ssl_cert_file</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a>指定服务器证书文件，包含服务器端的公钥。服务器证书用以表明服务器身份的合法性，公钥将发送给对端用来对数据进行加密。</p>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a>对于TLS连接，该参数指定服务器证书文件，包含服务器端的公钥。服务器证书用以表明服务器身份的合法性，公钥将发送给对端用来对数据进行加密。</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a>对于TLCP连接，该参数指定服务器用于验证签名的证书文件，包含验证签名所用的公钥。公钥将发送给客户端用来对服务器的签名进行验签，用以表明服务器身份的合法性</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"></a>请以实际的证书名为准，其相对路径是相对于数据目录的。</p>
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"></a>默认值</strong>：server.crt</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_rf42bf8261c33449d81f47597005cc921"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab54fc74b77a947758ad07edafe3242c6"></a>ssl_enc_cert_file</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_af7e1c5cfb5564347bf83b9fe7c30ce98"></a>仅在TLCP连接中生效。
+</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a>指定服务器加密证书文件，包含服务器端用于加密的公钥。公钥将发送给对端用来对数据进行加密</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac39b64f03d7b4436bbd40702d7702f23"></a>请以实际的证书名为准，其相对路径是相对于数据目录的。</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a26a9debdb76c4f9f868e2300d4c754ab"></a>默认值</strong>：server_enc.crt</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r363a401628b24282abc3f1cdf73e8597"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"></a>ssl_key_file</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a>指定服务器私钥文件，用以对公钥加密的数据进行解密。</p>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a>对于TLS连接，该参数指定服务器私钥文件，用以对公钥加密的数据进行解密。</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a>对于TLCP连接，该参数指定服务器的签名私钥文件，包含签名所用的私钥。</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"></a>请以实际的服务器私钥名称为准，其相对路径是相对于数据目录的。</p>
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"></a>默认值</strong>：server.key</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r363a401628b24282abc3f1cdf73e8597"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a9b5c46beb9eb44e9aa256f3973f2d750"></a>ssl_enc_key_file</p>
+</td>
+<td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ac598d3d36b3941baae002ea7f2f451c1"></a>仅在TLCP连接中生效。</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a664d0b1aef30486984fefff03da81069"></a>指定服务器解密私钥文件，用以对公钥加密的数据进行解密。</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_afb7486cbf3084019a8ffc19bd84a04a7"></a>请以实际的服务器私钥名称为准，其相对路径是相对于数据目录的。</p>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a380bb8ec22cd4a0aab77a39e0812e50c"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c2fccd4f6584f2884d7cdca626cabb0"></a>默认值</strong>：server_enc.key</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r74a3af8366084457820934fb79b845a2"><td class="cellrowborder" valign="top" width="17.5017501750175%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c791fbe6c1c405f9c783ae7a14d6e11"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c791fbe6c1c405f9c783ae7a14d6e11"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c791fbe6c1c405f9c783ae7a14d6e11"></a>ssl_ca_file</p>
@@ -160,7 +213,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </td>
 <td class="cellrowborder" valign="top" width="43.90439043904391%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a6632087907ee43c8a83118fb87c7792c"></a>SSL通讯使用的加密算法。</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a>本产品支持的加密算法的详细信息请参见<a href="#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07">表4</a>。</p>
+<td class="cellrowborder" valign="top" width="38.59385938593859%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a108418129ede48d1ad382b8cc2b14501"></a>本产品支持的加密算法的详细信息请参见<a href="#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07">表4</a>,<a href="#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb08">表5</a>。</p>
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ae891de4194c24665b2c263c7ee653fcc"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a3a6dddd70ef64698b7dbaa4645c614e7"></a>默认值：</strong>ALL，表示允许对端使用产品支持的所有加密算法，但不包含ADH、LOW、EXP、MD5算法。</p>
 </td>
 </tr>
@@ -174,6 +227,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </tr>
 </tbody>
 </table>
+
 
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
@@ -192,22 +246,52 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r63de0425aa9e48648eddee2052c34099"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a>PGSSLCERT</p>
+<tbody>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r63de0425aa9e48648eddee2052c34099"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a>PGSSLTLCP</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>指定客户端证书文件，包含客户端的公钥。客户端证书用以表明客户端身份的合法性，公钥将发送给对端用来对数据进行加密。</p>
+<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>客户端是否使用TLCP连接。</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.61%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aee9d6bd66fde45c2bfa2efab0cf85cee"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aee9d6bd66fde45c2bfa2efab0cf85cee"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aee9d6bd66fde45c2bfa2efab0cf85cee"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a10d47a31a1c542e2afa4193adcbf332b"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a10d47a31a1c542e2afa4193adcbf332b"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a10d47a31a1c542e2afa4193adcbf332b"></a>取值及含义：</strong></p>
+<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_u5a3aa83f2351407caf0185281284d463"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_u5a3aa83f2351407caf0185281284d463"></a><ul id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_u5a3aa83f2351407caf0185281284d463"><li>1：使用TLCP连接。</li><li>0：不使用TLCP连接</li></ul>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ad3fef165034244089c01c2d643a6ffdf"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ad3fef165034244089c01c2d643a6ffdf"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ad3fef165034244089c01c2d643a6ffdf"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2364f46f3816402a8672d4288826bda0"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2364f46f3816402a8672d4288826bda0"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2364f46f3816402a8672d4288826bda0"></a>默认值：</strong>0</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r63de0425aa9e48648eddee2052c34099"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a>PGSSLCERT</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>对于TLS连接，该变量指定客户端证书文件，包含客户端的公钥。客户端证书用以表明客户端身份的合法性，公钥将发送给对端用来对数据进行加密。</p><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>对于TLCP连接，该变量指定客户端用于验签的证书文件，包含验证签名所用的公钥。公钥将发送给服务器用来对客户端的签名进行验签，从而验证客户端身份的合法性。</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.61%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a>必须包含文件的绝对路径，如：<pre class="screen" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a>export PGSSLCERT='</strong><em id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a>/home/<span id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a>omm</span>/client.crt</em><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a>'</strong></pre>
 </div>
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a>默认值</strong>：空</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r63de0425aa9e48648eddee2052c34099">
+<td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a>PGSSLENCCERT</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>该变量仅在TLCP连接时生效。指定客户端用于加密的证书文件，包含客户端用于加密的公钥。公钥将发送给对端用来对数据进行加密。</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.61%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a>必须包含文件的绝对路径，如：<pre class="screen" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a>export PGSSLENCCERT='</strong><em id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a>/home/<span id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a>omm</span>/client_enc.crt</em><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a>'</strong></pre>
+</div>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a>默认值</strong>：空</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r9b2094fa73ea44a7bf3381223937f92d"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c015bd8e62a452ab7e647e7d56e65bf"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c015bd8e62a452ab7e647e7d56e65bf"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a2c015bd8e62a452ab7e647e7d56e65bf"></a>PGSSLKEY</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a>指定客户端私钥文件，用以对公钥加密的数据进行解密。</p>
+<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a>对于TLS连接，该变量指定客户端私钥文件，用以对公钥加密的数据进行解密。</p>
+ <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aaa8e11b80a95489c8a5ab1d3df31ca1a"></a>对于TLCP连接，该参数指定客户端用于签名的私钥文件，包含签名所用的私钥。</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.61%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a953393a0d05f4b8a8a379fc52554c838"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a953393a0d05f4b8a8a379fc52554c838"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a953393a0d05f4b8a8a379fc52554c838"></a>必须包含文件的绝对路径，如：<pre class="screen" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s65d035eba41841268050e954fe6c267d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s65d035eba41841268050e954fe6c267d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s65d035eba41841268050e954fe6c267d"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab3e81ef48496427eb74fb938a002005e"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab3e81ef48496427eb74fb938a002005e"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab3e81ef48496427eb74fb938a002005e"></a>export PGSSLKEY='</strong><em id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_zh-cn_topic_0058967691_i162643549168"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_zh-cn_topic_0058967691_i162643549168"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_zh-cn_topic_0058967691_i162643549168"></a>/home/<span id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text949101441812"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text949101441812"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text949101441812"></a>omm</span>/client.key</em><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a5a688b42a9104dd99057216f18858d1d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a5a688b42a9104dd99057216f18858d1d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a5a688b42a9104dd99057216f18858d1d"></a>'</strong></pre>
 </div>
 <p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab15b4d40daf04a32b1d42d1defd838ba"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab15b4d40daf04a32b1d42d1defd838ba"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab15b4d40daf04a32b1d42d1defd838ba"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab803f48b32da47b583c01a6447e4b868"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab803f48b32da47b583c01a6447e4b868"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab803f48b32da47b583c01a6447e4b868"></a>默认值</strong>：空</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r63de0425aa9e48648eddee2052c34099"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a79f122f5e8864d49958a01e2599232e2"></a>PGSSLENCKEY</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.33%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>该变量仅在TLCP连接时生效。</p><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a849a7114de984baa835520125891cc4c"></a>指定客户端用于解密的私钥文件，用于对公钥加密的数据进行解密。</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.61%" headers="mcps1.2.4.1.3 "><div class="p" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aab9afb2d4ccb486584dc34925557eb5b"></a>必须包含文件的绝对路径，如：<pre class="screen" id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_sd1ee55d896da429d8a382c764a33570f"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a0f79a57644854daaa7f0df3980c60d36"></a>export PGSSLENCKEY='</strong><em id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a175d9cc2e30e4403a0f6963f5320c59d"></a>/home/<span id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_text81201061813"></a>omm</span>/client_enc.key</em><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_aa07fe7719cf14a08942946453726693d"></a>'</strong></pre>
+</div>
+<p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a659d086b20fd47b4998a10ba22739753"></a><strong id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab05988be024e4d0ab963f40a2ce47abe"></a>默认值</strong>：空</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_rb472cd1e8b42453f9a0b255b07416f14"><td class="cellrowborder" valign="top" width="13.059999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a54a9c62cc83c4c749125c3d9bad6e67e"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a54a9c62cc83c4c749125c3d9bad6e67e"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a54a9c62cc83c4c749125c3d9bad6e67e"></a>PGSSLMODE</p>
@@ -239,6 +323,8 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </tr>
 </tbody>
 </table>
+
+
 
 服务器端参数ssl、require\_ssl与客户端参数sslmode配置组合结果如下：
 
@@ -427,12 +513,14 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </tr>
 </tbody>
 </table>
+SSL传输支持一系列不同强度的加密和认证算法。用户可以通过修改postgresql.conf中的ssl\_ciphers参数指定数据库服务器使用的加密算法。
 
-SSL传输支持一系列不同强度的加密和认证算法。用户可以通过修改postgresql.conf中的ssl\_ciphers参数指定数据库服务器使用的加密算法。目前本产品SSL支持的加密算法如[表4](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07)所示。
+目前本产品TLS连接支持的加密算法如[表4](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07)所示。
 
-**表 4**  加密算法套件
+**表 4**  加密算法套件-TLS
 
 <a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb07"></a>
+
 <table><thead align="left"><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r247fd0c58b8a4b41a8044e4168920ac6"><th class="cellrowborder" valign="top" width="32.77327732773277%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"></a>OpenSSL套件名</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.04410441044104%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a97c340deb96a4a82b48bad779dcbb0e8"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a97c340deb96a4a82b48bad779dcbb0e8"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a97c340deb96a4a82b48bad779dcbb0e8"></a><strong id="b12434583810"><a name="b12434583810"></a><a name="b12434583810"></a>IANA套件名</strong></p>
@@ -486,14 +574,83 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </tbody>
 </table>
 
+目前本产品TLCP连接支持的加密算法如[表5](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb08)所示。
+
+**表 5**  加密算法套件-TLCP
+
+<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t34eea0830ef94be1a866f0410ba3eb08"></a>
+
+<table><thead align="left"><tr id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_r247fd0c58b8a4b41a8044e4168920ac6"><th class="cellrowborder" valign="top" width="32.77327732773277%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_a473eced6f3d44a2d8b8fff1d48d3d5d9"></a>国密套件名</p>
+</th>
+<th class="cellrowborder" valign="top" width="26.18261826182618%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab20c75899c5e492a84106e23fc4dbe7c"><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab20c75899c5e492a84106e23fc4dbe7c"></a><a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_ab20c75899c5e492a84106e23fc4dbe7c"></a>安全程度</p>
+</th>
+</tr>
+</thead>
+<tbody>
+ <tr id="row1673918915224"><td class="cellrowborder" valign="top" width="32.77327732773277%" headers="mcps1.2.4.1.1 "><p id="p19740189202210"><a name="p19740189202210"></a><a name="p19740189202210"></a>ECDHE-SM4-SM3</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.18261826182618%" headers="mcps1.2.4.1.3 "><p id="p1774010914227"><a name="p1774010914227"></a><a name="p1774010914227"></a>HIGH</p>
+</td>
+</tr>
+<tr id="row1673918915224"><td class="cellrowborder" valign="top" width="32.77327732773277%" headers="mcps1.2.4.1.1 "><p id="p19740189202210"><a name="p19740189202210"></a><a name="p19740189202210"></a>ECDHE-SM4-GCM-SM3</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.18261826182618%" headers="mcps1.2.4.1.3 "><p id="p1774010914227"><a name="p1774010914227"></a><a name="p1774010914227"></a>HIGH</p>
+</td>
+</tr>
+<tr id="row1673918915224"><td class="cellrowborder" valign="top" width="32.77327732773277%" headers="mcps1.2.4.1.1 "><p id="p19740189202210"><a name="p19740189202210"></a><a name="p19740189202210"></a>ECC-SM4-SM3</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.18261826182618%" headers="mcps1.2.4.1.3 "><p id="p1774010914227"><a name="p1774010914227"></a><a name="p1774010914227"></a>HIGH</p>
+</td>
+</tr>
+ <tr id="row1673918915224"><td class="cellrowborder" valign="top" width="32.77327732773277%" headers="mcps1.2.4.1.1 "><p id="p19740189202210"><a name="p19740189202210"></a><a name="p19740189202210"></a>ECC-SM4-GCM-SM3</p>
+</td>
+<td class="cellrowborder" valign="top" width="26.18261826182618%" headers="mcps1.2.4.1.3 "><p id="p1774010914227"><a name="p1774010914227"></a><a name="p1774010914227"></a>HIGH</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >
->-   目前只支持上表中的6种加密算法套件。
->-   配置参数ssl\_ciphers的默认值为ALL，表示支持上表中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
->-   如需指定以上加密算法套件，可以设置ssl\_ciphers为上表中OpenSSL套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：
->    ```
->    ssl_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
->    ```
->-   SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。
->-   在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。
+>- 目前只支持表4和表5中的10种加密算法套件。
+>
+>- 配置参数ssl\_ciphers的默认值为ALL，表示支持表4和表5中的所有加密算法。为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
+>
+>- 如需指定以上加密算法套件，可以设置ssl\_ciphers为表4中OpenSSL套件名称或表5中的国密套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：
+>
+>  ```
+>  ssl_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
+>  ```
+>- SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。
+>
+>- 在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。
+
+
+
+服务端参数 ssl_ciphers、ssl_use_tlcp与实际证书生成算法、客户端参数PGSSLTLCP配置需要组合正确才能正常建立ssl连接：
+
+- ssl_use_tlcp与ssl_ciphers的值需要互相匹配,否则数据库无法启动。即ssl_use_tlcp开启时，ssl_ciphers需要包含国密算法套件，ssl_use_tlcp关闭时，ssl_ciphers需包含TLS相关套件。
+
+- ssl_use_tlcp 与 实际证书生成算法、客户端参数PGSSLTLCP配置组合结果如下：
+
+  | 服务端ssl_use_tlcp | 证书生成算法 | 客户端参数PGSSLTLCP | 结果                       |
+  | ------------------ | ------------ | ------------------- | -------------------------- |
+  | on                 | sm2          | 1                   | 成功建立使用TLCP协议的连接 |
+  | on                 | sm2          | 0                   | ssl连接失败                |
+  | on                 | 非sm2        | 1                   | ssl连接失败                |
+  | on                 | 非sm2        | 0                   | ssl连接失败                |
+  | off                | sm2          | 1                   | ssl连接失败                |
+  | off                | sm2          | 0                   | ssl连接失败                |
+  | off                | 非sm2        | 1                   | ssl连接失败                |
+  | off                | 非sm2        | 0                   | 成功建立使用TLS协议的连接  |
+
+  上表中，默认以下条件：
+
+  - 服务器ssl = on
+  - 客户端sslmode 为verify-ca 或verify-full
+  - sm2算法生成证书时，服务器默认配置了ssl_cert_file、ssl_enc_cert_file、ssl_key_file、ssl_enc_key_file参数，客户端默认配置了PGSSLCERT、PGSSLENCCERT、PGSSLKEY、PGSSLENCKEY参数；
+  - 非sm2算法生成证书时，服务器默认配置了ssl_cert_file、ssl_key_file参数，客户端默认配置了PGSSLCERT、PGSSLKEY参数。
+
 
