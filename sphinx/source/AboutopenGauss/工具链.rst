@@ -2,6 +2,7 @@
 ======
 .. toctree::
 
+    ../content/zh/docs/AboutopenGauss/工具链_DataKit
     ../content/zh/docs/AboutopenGauss/MySQL一键式迁移工具gs_rep_portal
     ../content/zh/docs/AboutopenGauss/全量迁移gs_mysync
     ../content/zh/docs/AboutopenGauss/增量迁移gs_replicate

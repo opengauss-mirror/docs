@@ -138,6 +138,7 @@ headless: true
 	    		-   [智能基数估计]({{< relref "./docs/AboutopenGauss/智能基数估计.md" >}})
 	    		-   [自适应计划选择]({{< relref "./docs/AboutopenGauss/自适应计划选择.md" >}})				
 	    -   [工具链]({{< relref "./docs/AboutopenGauss/工具链.md" >}})
+	    	-   [DataKit]({{< relref "./docs/AboutopenGauss/工具链_DataKit.md" >}})
 	    	-   [MySQL一键式迁移]({{< relref "./docs/AboutopenGauss/MySQL一键式迁移工具gs_rep_portal.md" >}})
 	    	-   [全量迁移gs_mysync]({{< relref "./docs/AboutopenGauss/全量迁移gs_mysync.md" >}})
 	    	-   [增量迁移gs_replicate(MySQL -\> openGauss)]({{< relref "./docs/AboutopenGauss/增量迁移gs_replicate.md" >}})

@@ -1,106 +1,62 @@
-# DataKit
+﻿# DataKit
 
-## 功能介绍
+## 可获得性<a name="section56086982"></a>
 
-openGauss的开发运维涉及到很多复杂操作，DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。
+本特性自openGauss 5.0.0版本开始引入。
 
-DataKit是一个以资源（物理机，数据库）为底座的开发运维工具，将上层的开发运维工具插件化，各插件之间相互独立，方便用户按需引入。各插件围绕DataKit的资源中心进行扩展开，完成数据库的运维，监控，迁移，开发，建模等复杂的操作。
+## 特性简介<a name="section35020791"></a>
 
-## 原理简介
+DataKit是基于Web的openGauss的可视化的平台系统，目的是方便客户使用和管理openGauss可视化工具，可以为客户降低openGauss数据库安装使用门槛，做到安全中心管理，插件管理，以及其它功能包括一键化部署、卸载、组件化安装、多版本升级、日常运维和。
+## 客户价值<a name="section46751668"></a>
 
-DataKit是基于spring-brick开发的插件化的工具，前台使用vue，后台使用spring-bot技术栈。DataKit基座提供资源管理，安全中心，日志中心等基础的公共能力，具体的数据库安装，运维，监控，数据迁移等能力是基于spring-brick开发的插件工具，可以灵活的在基座上面安装卸载，方便客户按需使用。
+openGauss的安装、运维场景对于初级用户或单纯想要测试openGauss数据库基本特性的使用者来说技术难度较大、过程较为复杂、学习曲线较为陡峭，尤其企业版安装对一般用户来说操作难度很大。使用可视化运维平台可以屏蔽openGauss的技术细节，让普通用户能够快速上手体验功能，让运维人员能够快速在企业环境中部署、卸载各类openGauss集群，减少了用户的学习成本和运维成本，实现了对openGauss各种常见操作的可视化，屏蔽了各种不同openGauss版本中的运维命令差异，可以让用户使用相同的方式操作数据库，不用知道命令细节也可以使用openGauss数据库的各项能力，让用户可以专注于自身的业务领域。
+## 特性描述<a name="section18111828"></a>
 
-## 特性优势
+DataKit是基于Web的openGauss的可视化的平台系统，目的是方便客户使用和管理openGauss可视化工具，可以为客户降低openGauss数据库安装使用门槛，做到安全中心管理，插件管理，以及其它功能包括一键化部署、卸载、组件化安装、多版本升级、日常运维和。
 
-本项目是基于Web的openGauss的可视化的一体化工具：DataKit，目的是方便客户使用和管理openGauss可视化工具，可以为客户降低openGauss数据库安装使用门槛，做到安全中心管理，插件管理，以及其它功能包括一键化部署、卸载、组件化安装、多版本升级和日常运维。
+## 特性增强<a name="section28788730"></a>
 
-## 环境准备
+业务开发插件：\
+1、增强数据库对象管理：\
+1）函数/过程调试能力：支持子函数进入/退出调试、调试存储过程覆盖度查看、导航栏显示package、调试package里的函数/过程\
+2）视图管理：支持编辑视图名称/模式/代码\
+3）模式管理：支持创建/编辑/删除模式\
+4）支持普通表和分区表管理：表数据：增/删/改/条件筛选/排序筛选/分页查询数据、导入表数据
+表管理：列/索引/约束的增/删/改/查、清空/截断/删除/分析表\
+5）导出DDL和数据：支持导出模式DDL/DDL和数据、导出函数/过程DDL、导出表DDL/DDL和数据/数据、导出序列DDL/DDL和数据、导出视图DDL\
+6）用户/角色管理：支持创建/删除用户/角色\
+2、增强SQL终端管理：支持导入/导出SQL脚本、SQL助手、切换连接终端、重命名终端、查询执行历史\
+3、页面窗口优化：窗口支持拖动
 
-X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
+实例监控插件：\
+1、完善监控指标体系和下钻能力，增强从指标分析问题的能力\
+2、支持集群的健康、延迟和资源压力监控\
+3、支持通过ASP分析历史数据库问题
 
-## 操作步骤
+智能诊断插件：\
+1、支持基于专家知识库、历史视图和指标分析历史问题，智能给出问题根因与优化建议\
+2、优化SQL诊断任务流程，丰富诊断知识库
 
-1.  创建工作目录：
+告警监控：\
+1、支持多种通知渠道，支持自定义通知内容\
+2、提供内置规则和自定义规则，支持基于指标和日志的告警\
+3、可通过模板、配置等功能对不同数据库灵活配置所需的告警规则
 
-    ```
-    mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
-    ```
-    
-1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：[https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)
+## 特性约束<a name="section06531946143616"></a>
 
-3. 将配置文件application-temp.yml传至/ops/server/openGauss-visualtool/config/下。配置文件内容如下：
+- 当前平台运行依赖于openJdk11。
 
-   ```
-   system:
-     # File storage path
-     defaultStoragePath: /ops/files
-     # Whitelist control switch
-     whitelist:
-       enabled: false
-   server:
-     port: 9494
-     ssl:
-       key-store: /ops/ssl/keystore.p12
-       key-store-password: password
-       key-store-type: PKCS12
-       enabled: true
-     servlet:
-       context-path: /
-   logging:
-     file:
-       path: /ops/server/openGauss-visualtool/logs/
-   spring:
-     datasource:
-       type: com.alibaba.druid.pool.DruidDataSource
-       driver-class-name: org.opengauss.Driver
-       url: jdbc:opengauss://ip:port/database?currentSchema=public
-       username: dbuser
-       password: dbpassword
-       druid:
-         test-while-idle: false
-         test-on-borrow: true
-         validation-query: "select 1"
-         validation-query-timeout: 30000
-   ```
+- 平台使用的数据库，当前仅支持openGauss数据库，并且需要提前创建database。
 
-4. 将ssl文件传置/ops/ssl/下，生成ssl文件示例（生成ssl的java必须跟运行DataKit是一个java版本）：
+- 需要将部署服务器IP配置在平台使用的数据库（openGauss）的白名单列表中。
 
-   ```
-   keytool -genkey -noprompt \
-       -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN"\
-       -alias opengauss\
-       -storetype PKCS12 \
-       -keyalg RSA \
-       -keysize 2048 \
-       -keystore /ops/ssl/keystore.p12 \
-       -validity 3650 \
-       -storepass password
-   ```
+- 平台默认的登录账号密码：admin/admin123，请在首次登录后及时修改密码。
 
-   
+## 依赖关系<a name="section57771982"></a>
 
-2.  修改application-temp.yml文件中的数据链链接ip、port、database、dbuser、dbpassword。
+无
 
-2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）。
-
-7. 切换到ops用户，进入/ops/server/openGauss-visualtool目录，执行启动命令：
-
-   ```
-   nohup java -Xms2048m -Xmx4096m -jar /ops/server/openGauss-visualtool/visualtool-main.jar --spring.profiles.active=temp >/ops/server/openGauss-visualtool/logs/visualtool-main.out 2>&1 &\
-   ```
-
-
-## 卸载工具
-
-DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
-
-## DataKit源码链接和使用说明
-
-源码：https://gitee.com/opengauss/openGauss-workbench/tree/master
-
-使用说明： https://gitee.com/opengauss/openGauss-workbench/blob/master/openGauss-datakit/README.md
-
-## 插件说明
+## 功能插件
 
 <a name="table1652718018281"></a>
 <table><tbody>
@@ -163,3 +119,9 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 </tr>
 </tbody>
 </table>
+
+## 参考文档<a name="section57771982"></a>
+
+开源社区地址： https://gitee.com/opengauss/openGauss-workbench/tree/master
+
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-workbench/tree/master/README.md)
