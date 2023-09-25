@@ -18,7 +18,7 @@
 
 ## 特性增强<a name="section1340684315478"></a>
 
-DSS支持NoF/NoF+接口。
+openGauss 5.1.0版本实现DSS支持NoF/NoF+接口。
 
 ## 特性约束<a name="section06531946143616"></a>
 
