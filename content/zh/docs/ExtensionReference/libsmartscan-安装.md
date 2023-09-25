@@ -13,7 +13,7 @@ mkdir log
 export UCX_NET_DEVCES=enp132s0 #enp132s0为libsmartscan监听ip对应的网口
 export UCX_TLS=tcp
 export UCX_IB_REG_METHODS=rcache,odp,direct
-export LD_LIBRARY_PATH=/path/to/Libsmartscan_5.1.0_openEuler_aarch64/Libsmartscan_ThirdParty
+export LD_LIBRARY_PATH=/path/to/Libsmartscan_5.1.0_openEuler_aarch64/LibSmartScan_ThirdParty
 /rpc/openEuler_2003_armlib:$LD_LIBRARY_PATH
 ```
 
