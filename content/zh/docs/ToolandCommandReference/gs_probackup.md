@@ -733,16 +733,16 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
    ```
    rm -rf primary_dir/*
-   export DSS_MAINTAIN=TRUE
-   dssserver -D $DSS_HOME &
+   dssserver -M -D $DSS_HOME &
    ```
 
 9. 在主机执行恢复操作。
 
    ```
    gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
-   export DSS_MAINTAIN=FALSE
+   kill -9 xxx(dssserver的pid)  或  dsscmd stopdss
    ```
+   **说明：** 确保dssserver进程关闭后再执行后续操作
 
 10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
 
@@ -752,9 +752,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
     ```
     rm -rf standby_dir/*
-    export DSS_MAINTAIN=TRUE
-    dssserver -D $DSS_HOME &
-    export DSS_MAINTAIN=FALSE
+    dssserver -M -D $DSS_HOME &
     ```
 
 13. 在备机执行初始化操作。
@@ -766,7 +764,14 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 14. 用步骤11中拷贝的dn目录覆盖初始化完毕后备机生成的dn目录。
 
-15. 在主机启动集群。
+15. 查看是否生成pg_xlogn与pg_doublewriten(n为节点id)，关闭dssserver进程。
+
+    ```
+    dsscmd ls -p +data
+    kill -9 xxx(dssserver的pid)  或  dsscmd stopdss
+    ```
+
+16. 在主机启动集群。
 
     ```
     cm_ctl start
