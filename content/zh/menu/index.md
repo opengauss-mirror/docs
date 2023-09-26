@@ -66,6 +66,7 @@ headless: true
 	    	-   [支持备机build备机]({{< relref "./docs/AboutopenGauss/支持备机build备机.md" >}})
             -   [两地三中心跨Region容灾]({{< relref "./docs/AboutopenGauss/两地三中心跨Region容灾.md" >}})
 	    	-   [主备高可用能力增强]({{< relref "./docs/AboutopenGauss/主备高可用能力增强.md" >}})
+	    	-   [表级别并行恢复优化]({{< relref "./docs/AboutopenGauss/表级别并行恢复优化.md" >}})
 	    -   [维护性]({{< relref "./docs/AboutopenGauss/维护性.md" >}})
 	    	-   [灰度升级]({{< relref "./docs/AboutopenGauss/灰度升级.md" >}})
 	    	-   [指定节点升级]({{< relref "./docs/AboutopenGauss/指定节点升级.md" >}})
