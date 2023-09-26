@@ -53,10 +53,10 @@ gs_replicate工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址：[openGauss-migration-portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0)
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md) 
 
-增量迁移社区地址：https://gitee.com/opengauss/debezium/tree/master 
+增量迁移社区地址：[debezium](https://gitee.com/opengauss/debezium/tree/5.1.0)
 
-详细参考文档 [README.md](https://gitee.com/opengauss/debezium/blob/master/README.md) 
+详细参考文档：[README.md](https://gitee.com/opengauss/debezium/blob/5.1.0/README.md) 

@@ -34,10 +34,10 @@ debezium opengauss connector的sink端，从kafka读取AVRO格式的数据，在
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址：[openGauss-migration-portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0)
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md) 
 
-反向迁移社区地址：https://gitee.com/opengauss/debezium/tree/master 
+反向迁移社区地址：[debezium](https://gitee.com/opengauss/debezium/tree/5.1.0)
 
-详细参考文档 [README.md](https://gitee.com/opengauss/debezium/blob/master/README.md) 
+详细参考文档： [README.md](https://gitee.com/opengauss/debezium/blob/5.1.0/README.md) 
