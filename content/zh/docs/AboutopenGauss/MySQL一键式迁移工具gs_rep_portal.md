@@ -27,8 +27,6 @@ gs_rep_portal支持全量迁移工具在指定版本和架构的系统上进行�
 
 - 同一个迁移计划的增量迁移和反向迁移不会同时开启，如果一个计划中包含了增量迁移和反向迁移，那么需要用户手动停止增量迁移，启动反向迁移。当用户启动反向迁移之后，无法再启动增量迁移。
 
-- 用户在停止增量迁移之后到启动反向迁移之前，禁止向openGauss进行作业，否则会导致这之间的数据丢失。
-
 - portal使用的workspace.id只能为小写字母与数字的组合。
 
 - portal在启动多个计划时，需要保证MySQL数据库实例各不相同，openGauss端数据库各不相同，且同一个MySQL数据库实例和openGauss端数据库的增量迁移和反向迁移不能同时开启。
@@ -41,4 +39,4 @@ gs_rep_portal支持全量迁移工具在指定版本和架构的系统上进行�
 
 开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 、 [portal与datakit的交互方式1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/portal与datakit的交互方式1.md) 、 [命令行参数名称及说明.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/命令行参数名称及说明.md) 、 [数据迁移全局配置表0.1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/数据迁移全局配置表0.1.md) 
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md) 、 [命令行参数名称及说明.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/命令行参数名称及说明.md)
