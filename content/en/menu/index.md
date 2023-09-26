@@ -853,6 +853,7 @@ headless: true
     	        	-	[Conditional Expression Functions]({{< relref "./docs/ExtensionReference/dolphin-conditional-expression-functions.md" >}})
     	        	-	[Aggregate Functions]({{< relref "./docs/ExtensionReference/dolphin-aggregate-functions.md" >}})
     	        	-	[System Information Functions]({{< relref "./docs/ExtensionReference/dolphin-system-information-functions.md" >}})
+    	        	-	[Password Functions]({{< relref "./docs/ExtensionReference/dolphin-password-functions.md" >}})
     	        	-	[Logical Operators]({{< relref "./docs/ExtensionReference/dolphin-logical-operators.md" >}}) 
     	        	-	[Bit String Functions and Operators]({{< relref "./docs/ExtensionReference/dolphin-bit-string-functions-and-operators.md" >}})
     	        	-	[JSON-JSONB Functions and Operators]({{< relref "./docs/ExtensionReference/dolphin-json-jsonb-functions-and-operators.md" >}})

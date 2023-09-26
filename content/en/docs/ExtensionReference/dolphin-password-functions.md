@@ -12,7 +12,7 @@
     Example:
 
     ```
-    openGauss=# select set_native_password('omm', 'Gauss@123');
+    openGauss=# select set_native_password('omm', 'xxxxxx');
         set_native_password            
     ------------------------------------------
     676a8fd5633248f6f59e17d4939f7f6e7093c350
