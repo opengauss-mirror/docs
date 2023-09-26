@@ -6,5 +6,6 @@
     ../content/zh/docs/AboutopenGauss/全量迁移gs_mysync
     ../content/zh/docs/AboutopenGauss/增量迁移gs_replicate
     ../content/zh/docs/AboutopenGauss/反向迁移gs_replicate
+    ../content/zh/docs/AboutopenGauss/反向全量迁移
     ../content/zh/docs/AboutopenGauss/数据校验gs_datacheck
     ../content/zh/docs/AboutopenGauss/openGauss客户端工具DataStudio
