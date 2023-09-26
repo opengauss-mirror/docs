@@ -248,9 +248,12 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 >   修改表已存在字段的数据类型。
 >
 > + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] \[, ...\]**
+>
+>   为表的某列添加NOT NULL约束，默认启用约束。加上ENABLE也表示默认启用约束。目前暂不支持禁用约束选项。
+>
 > + **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NULL \[, ...\]**
 >
->   修改表已存在字段的约束，ENABLE启用约束。
+>   为表的某列移除NOT NULL约束。
 >
 > + **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
 > 
