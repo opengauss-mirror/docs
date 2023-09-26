@@ -26,7 +26,7 @@ CHECKSUM TABLE tbl_name [, tbl_name] ... [QUICK | EXTENDED]
    
 - **[QUICK | EXTENDED]**
 
-   校验模式，只支持EXTENDED（也即默认值）。
+   校验模式，其中QUICK为表支持记录并实时在线更新校验和，EXTENDED则为基于一行一行计算的校验和,当只支持EXTENDED（也即默认值）。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
