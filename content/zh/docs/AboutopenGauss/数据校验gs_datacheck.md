@@ -50,10 +50,11 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对MySQL至ope
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址： [gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0/)
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md) 
 
-数据校验社区地址：https://gitee.com/opengauss/openGauss-tools-datachecker-performance
+数据校验社区地址：[gs_datacheck](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/tree/5.1.0/)
 
-详细参考文档： [校验工具使用指导.md](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/校验工具使用指导.md) 
+详细参考文档： [校验工具使用指导.md](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/5.1.0/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md) 
+
