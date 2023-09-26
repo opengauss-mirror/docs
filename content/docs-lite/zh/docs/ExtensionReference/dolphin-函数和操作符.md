@@ -10,6 +10,7 @@
 -   **[条件表达式函数](dolphin-条件表达式函数.md)**  
 -   **[聚集函数](dolphin-聚集函数.md)**  
 -   **[系统信息函数](dolphin-系统信息函数.md)**  
+-   **[密码设置函数](dolphin-密码函数.md)**  
 -   **[逻辑操作符](dolphin-逻辑操作符.md)**  
 -   **[位串操作函数和操作符](dolphin-位串操作函数和操作符.md)**  
 -   **[JSON-JSONB函数和操作符](dolphin-JSON-JSONB函数和操作符.md)**

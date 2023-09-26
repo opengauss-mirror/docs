@@ -13,6 +13,7 @@
     ../content/zh/docs/ExtensionReference/dolphin-条件表达式函数
     ../content/zh/docs/ExtensionReference/dolphin-聚集函数
     ../content/zh/docs/ExtensionReference/dolphin-系统信息函数
+    ../content/zh/docs/ExtensionReference/dolphin-密码函数
     ../content/zh/docs/ExtensionReference/dolphin-逻辑操作符
     ../content/zh/docs/ExtensionReference/dolphin-位串操作函数和操作符
     ../content/zh/docs/ExtensionReference/dolphin-JSON-JSONB函数和操作符
