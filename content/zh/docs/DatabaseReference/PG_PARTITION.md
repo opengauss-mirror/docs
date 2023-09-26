@@ -245,7 +245,6 @@ PG\_PARTITION系统表存储数据库内所有分区表（partitioned table）�
 <p id="p1526511328252"><a name="p1526511328252"></a><a name="p1526511328252"></a>subpartitionno是一个永久自增列，可以通过语法ALTER TABLE t_name RESET PARTITION或者VACUUM FULL命令重置/回收。</p>
 </td>
 </tr>
-</tr>
 <tr id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_row3779121519563"><td class="cellrowborder" valign="top" width="25.44%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p27801115115615"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p27801115115615"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p27801115115615"></a>partkeyexpr</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.97%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p12781131555614"><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p12781131555614"></a><a name="zh-cn_topic_0283136920_zh-cn_topic_0237122306_p12781131555614"></a>text</p>
