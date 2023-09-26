@@ -876,6 +876,7 @@ headless: true
 					-	[条件表达式函数]({{< relref "./docs/ExtensionReference/dolphin-条件表达式函数.md" >}})
 					-	[聚集函数]({{< relref "./docs/ExtensionReference/dolphin-聚集函数.md" >}})
 					-	[系统信息函数]({{< relref "./docs/ExtensionReference/dolphin-系统信息函数.md" >}})
+                	-	[密码设置函数]({{< relref "./docs/ExtensionReference/dolphin-密码函数.md" >}})
 					-	[逻辑操作符]({{< relref "./docs/ExtensionReference/dolphin-逻辑操作符.md" >}}) 
 					-	[位串操作函数和操作符]({{< relref "./docs/ExtensionReference/dolphin-位串操作函数和操作符.md" >}})
 					-	[JSON-JSONB函数和操作符]({{< relref "./docs/ExtensionReference/dolphin-JSON-JSONB函数和操作符.md" >}})
