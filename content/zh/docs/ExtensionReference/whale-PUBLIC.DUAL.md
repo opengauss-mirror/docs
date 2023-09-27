@@ -2,12 +2,7 @@
 
 PUBLIC.DUAL视图，兼容O*对应视图，仅在A库创建。
 
->![](public_sys-resources/icon-note.png) **说明：** 
->-   很多列openGauss并没有与Mysql相对应的信息，或者暂时不支持的输出，为了最大限度保持兼容性，用NULL填充。
->-   底层访问pg_stat_activity，dbe_perf.statement，dbe_perf.statement_history表。来自dbe_perf.statement，dbe_perf.statement_history表的信息（如digest_text,schema_name等），需要满足相关权限要求，并开启相关配置参数，如track_stmt_parameter=on, 设置track_stmt_stat_level, enable_thread_pool = off，才能显示。
->-   如果query执行完毕，query_id，unique_sql_id清零,则无法显示来自dbe_perf.statement，dbe_perf.statement_history表的相关信息。
-
-**表 1**  EVENTS_STATEMENTS_CURRENT字段
+**表 1**  PUBLIC.DUAL字段
 
 <a name="zh-cn_topic_0059777917_t0df1b611492d4f07b1d6e42373142023"></a>
 

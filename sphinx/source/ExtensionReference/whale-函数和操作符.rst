@@ -8,6 +8,11 @@
     ../content/zh/docs/ExtensionReference/whale-时间和日期处理函数和操作符
     ../content/zh/docs/ExtensionReference/whale-条件表达式函数
     ../content/zh/docs/ExtensionReference/whale-聚集函数
+    ../content/zh/docs/ExtensionReference/whale-系统信息函数
+    ../content/zh/docs/ExtensionReference/whale-PLVCHR包函数
+    ../content/zh/docs/ExtensionReference/whale-PLVDATE包函数
+    ../content/zh/docs/ExtensionReference/whale-PLVSTR包函数
+    ../content/zh/docs/ExtensionReference/whale-PLVSUBST包函数
     ../content/zh/docs/ExtensionReference/whale-GMS_ALERT包函数
     ../content/zh/docs/ExtensionReference/whale-GMS_ASSERT包函数
     ../content/zh/docs/ExtensionReference/whale-GMS_OUTPUT包函数
