@@ -187,7 +187,7 @@
 
     ```
 
--   orafce.lpad(source text, len int, [, pattern text])
+-   orafce.lpad(source text, len int [, pattern text])
 
     描述：向source的左边填充pattern，直到长度为len为止。
 
@@ -232,7 +232,7 @@
 
     ```
 
--   orafce.rpad(source, len, [, pattern])
+-   orafce.rpad(source, len [, pattern])
 
     描述：向source的右边填充pattern，直到长度为len为止。
 
@@ -574,3 +574,253 @@
     (1 row)
 
     ```
+
+-   orafce.regexp_replace(string text, pattern text, replace_string text[ ,position int[ ,occurence int[ ,flags text]]])
+
+    描述：返回源字符串的修改版本，其中源字符串中出现的POSIX正则表达式模式将被指定的替换字符串替换。如果找不到匹配项，或者查询的出现次数超过了匹配次数，则返回未受影响的源字符串。
+
+    参数说明：
+
+    - string：用于匹配的源字符串。
+
+    - pattern：用于匹配的正则表达式模式串。
+    
+    - replace_string：用于替换能正确匹配模式串的字符串。
+
+    - position：表示从源字符串的第几个字符开始匹配，为可选参数，默认值为1，表示从头开始。
+
+    - occurence：表示获取第occurence个匹配子串的位置，为可选参数，默认值为0，表示获取所有的匹配成功的子串。
+
+    - flags：可选参数，包含零个或多个改变函数匹配行为的单字母标记。其中：m表示按照多行模式匹配。SQL语法兼容A和B的情况下，n选项在GUC参数behavior_compat_options值包含aformat_regexp_match时，表示 . 能够匹配 '\n' 字符，flags中没有指定n时，默认.不能匹配 '\n' 字符；值不包含aformat_regexp_match时，. 默认能匹配'\n'字符。n选项的含义与m选项一致。可选的参数包括b，c，e，i，m，n，p，q，s，t，w，x。
+
+    返回值类型：text
+
+    示例：
+    ```
+    openGauss=# SELECT orafce.REGEXP_REPLACE('number   your     street,    zipcode  town, FR', '( ){2,}', ' ', 9);
+                regexp_replace
+    ----------------------------------------
+    number   your street, zipcode town, FR
+    (1 row)
+
+    openGauss=# SELECT orafce.REGEXP_REPLACE('number   your     street,    zipcode  town, FR', '( ){2,}', ' ', 9, 2);
+                regexp_replace
+    ---------------------------------------------
+    number   your     street, zipcode  town, FR
+    (1 row)
+
+    ```
+
+-   orafce.replace_empty_strings()
+
+    描述：是一个触发器函数，会将文本中的空字符串转换为NULL。
+
+    返回值类型：trigger
+
+    示例：
+
+    ```
+    openGauss=# -- 该参数允许openGauss在A兼容模式下接受空字符串
+    openGauss=# set behavior_compat_options to 'accept_empty_str';
+    SET
+    openGauss=# -- 将NULL的输出设定为'<NULL>'
+    openGauss=# \pset null '<NULL>'
+    Null display is "<NULL>".
+    openGauss=# create table test(id int, name text);
+    CREATE TABLE
+    openGauss=# insert into test values(1, ''), (2, null);
+    INSERT 0 2
+    openGauss=# select * from test;
+    id |  name
+    ----+--------
+    1 |
+    2 | <NULL>
+    (2 rows)
+
+    openGauss=# 
+    openGauss=# create trigger test_trg BEFORE INSERT OR UPDATE  ON test FOR EACH ROW EXECUTE PROCEDURE orafce.replace_empty_strings();
+    WARNING:  Trigger function with non-plpgsql type is not recommended.
+    DETAIL:  Non-plpgsql trigger function are not shippable by default.
+    HINT:  Unshippable trigger may lead to bad performance.
+    CREATE TRIGGER
+    openGauss=# insert into test values(3, '');
+    WARNING:  Field "name" of table "test" is empty string (replaced by NULL).
+    INSERT 0 1
+    openGauss=# select * from test;
+    id |  name
+    ----+--------
+    1 |
+    2 | <NULL>
+    3 | <NULL>
+    (3 rows)
+
+
+    ```
+
+-   orafce.replace_null_strings()
+
+    描述：是一个触发器函数，会将文本中的NULL转换为空字符串。
+
+    返回值类型：trigger
+
+    示例：
+
+    ```
+    openGauss=# -- 该参数允许openGauss在A兼容模式下接受空字符串
+    openGauss=# set behavior_compat_options to 'accept_empty_str';
+    SET
+    openGauss=# -- 将NULL的输出设定为'<NULL>'
+    openGauss=# \pset null '<NULL>'
+    Null display is "<NULL>".
+    openGauss=# create table test(id int, name text);
+    CREATE TABLE
+    openGauss=# insert into test values(1, ''), (2, null);
+    INSERT 0 2
+    openGauss=# select * from test;
+    id |  name
+    ----+--------
+    1 |
+    2 | <NULL>
+    (2 rows)
+
+    openGauss=# 
+    openGauss=# create trigger test_trg BEFORE INSERT OR UPDATE  ON test FOR EACH ROW EXECUTE PROCEDURE orafce.replace_null_strings();
+    WARNING:  Trigger function with non-plpgsql type is not recommended.
+    DETAIL:  Non-plpgsql trigger function are not shippable by default.
+    HINT:  Unshippable trigger may lead to bad performance.
+    CREATE TRIGGER
+    openGauss=# insert into test values(3, '');
+    INSERT 0 1
+    openGauss=# select * from test;
+    id |  name
+    ----+--------
+    1 |
+    2 | <NULL>
+    3 |
+    (3 rows)
+
+    ```
+
+-   orafce.unistr(seq text)
+
+    描述：用unicode字符替换unicode转义序列。
+
+    参数说明：
+
+    - seq：要被转换的序列。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    openGauss=# SELECT orafce.unistr('\0441\043B\043E\043D');
+    unistr
+    --------
+    слон
+    (1 row)
+
+    openGauss=# SELECT orafce.unistr('d\u0061t\U00000061');
+    unistr
+    --------
+    data
+    (1 row)
+
+    ```
+
+-   substrb(str varchar2, start integer [, len integer])
+
+    描述：从指定字节位置（从1开始）开始的输入varchar2字符串中提取指定数量的字节，并作为varchar2串返回
+
+    参数说明：
+
+    - str：源字符串。
+
+    - start：截取的起点（按字节数进行计算）。
+
+    - len：可选参数，表示截取的长度（按字节数计算），缺省时会截取到源字符串终点。
+
+    返回值类型：varchar2
+
+    示例：
+    ```
+    openGauss=# -- 日语符号三个字节，ABC各占一个字节，所以从'り'开始截取
+    openGauss=# SELECT substrb('ABCありがとう'::VARCHAR2, 7);
+    substrb
+    ----------
+    りがとう
+    (1 row)
+
+    openGauss=# -- 截取6字节，所以只截取两个日语字符
+    openGauss=# SELECT substrb('ABCありがとう'::VARCHAR2, 7, 6);
+    substrb
+    ---------
+    りが
+    (1 row)
+
+    ```
+
+-   lengthb(str varchar2)
+
+    描述：获取字符串的长度（单位为字节）。
+
+    参数说明：
+
+    - str：源字符串。
+
+    返回值类型：int
+
+    示例：
+    ```
+    openGauss=# select lengthb('ABCありがとう'::VARCHAR2);
+    lengthb
+    ---------
+        18
+    (1 row)
+
+    ```
+
+-   orafce.orafce_concat2(str1 varchar2, str2 varchar2)
+
+    描述：拼接两个字符串并返回。
+
+    参数描述：
+
+    - str1：待拼接字符串。
+
+    - str2：待拼接字符串。
+
+    返回值类型：varchar2
+
+    示例：
+    ```
+    openGauss=# select orafce.orafce_concat2('Hello '::varchar2, 'World'::varchar2);
+    orafce_concat2
+    ----------------
+    Hello World
+    (1 row)
+
+    ```
+
+-   orafce.orafce_concat2(str1 nvarchar2, str2 nvarchar2)
+
+    描述：拼接两个字符串并返回。
+
+    参数描述：
+
+    - str1：待拼接字符串。
+
+    - str2：待拼接字符串。
+
+    返回值类型：nvarchar2
+
+    示例：
+    ```
+    openGauss=# select orafce.orafce_concat2('Hello '::nvarchar2, 'World'::nvarchar2);
+    orafce_concat2
+    ----------------
+    Hello World
+    (1 row)
+
+    ```
+
