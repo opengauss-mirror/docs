@@ -173,6 +173,8 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
 
     ```
     cd $GAUSSHOME/postgis-xc/
+    # 由于raster插件相关的文件非Linux格式，所以在patch之前，需要先进行格式转换，若无dos2unix则先安装此工具
+    dos2unix postgis-2.4.2/postgis_raster--2.4.2.sql
     patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
     ```
 
@@ -243,7 +245,10 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ```
         cd $GAUSSHOME/postgis-xc/postgis-2.4.2
         chmod +x ./configure
-        ./configure --prefix=$GAUSSHOME/install/postgis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json  --with-xml2config=$GAUSSHOME/install/libxml2/bin/xml2-config   --without-raster --without-topology CFLAGS='-O2 -fpermissive -DPGXC  -pthread -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -DMEMORY_CONTEXT_CHECKING -w'  CC=g++
+        # 以下配置包含raster、topology等部分，如不需要可以删除，具体配置可以参考postgis相关文档，若移除则后面的文件拷贝中不需要拷贝相关文件
+        ./configure --prefix=$GAUSSHOME/install/pggis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json \
+                     --with-xml2config=$GAUSSHOME/install/libxml2/bin/xml2-config --with-raster --with-gdalconfig=$GAUSSHOME/install/gdal/bin/gdal-config --with-topology --without-address-standardizer \
+                     CFLAGS='-O2 -fpermissive -DPGXC -pthread -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -DMEMORY_CONTEXT_CHECKING -w' CC=g++
         make -sj
         make install -sj
         ```
@@ -270,6 +275,15 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         ```
         这样就能一下子把所有缺失的头文件都补全进去。
 
+        若出现 postgis_topology.c:249:54: error:base operand of '->' has non-pointer type  'FormData_pg_attribute' ...的报错，则将 postgis-2.4.2/topology/postgis_topology.c 下249行的最后一个箭头操作符“->”改为点操作符“.”，然后重新编译。
+        ```cpp
+          topo->geometryOID = SPI_tuptable->tupdesc->attrs[3]->atttypid;
+        ```
+        改为：
+        ```cpp
+          topo->geometryOID = SPI_tuptable->tupdesc->attrs[3].atttypid;
+        ```
+
     5).  omm用户执行下面的语句，完成PostGIS相关动态链接库在数据库实例节点中的分发。
 
     ```
@@ -279,11 +293,19 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos_c.so.1 $GAUSSHOME/lib/libgeos_c.so.1
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/proj/lib/libproj.so.9 $GAUSSHOME/lib/libproj.so.9
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/geos/lib/libgeos-3.6.2.so $GAUSSHOME/lib/libgeos-3.6.2.so
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/gdal/lib/libgdal.so.1.18.0 $GAUSSHOME/lib/libgdal.so.1
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/install/postgis2.4.2/lib/liblwgeom-2.4.so.0 $GAUSSHOME/lib/liblwgeom-2.4.so.0 
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis--2.4.2.sql
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis.control $GAUSSHOME/share/postgresql/extension/postgis.control
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/pgsql2shp $GAUSSHOME/bin/pgsql2shp
     python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/bin/shp2pgsql $GAUSSHOME/bin/shp2pgsql
+    
+    # 若未编译raster和topology部件，则不执行以下指令
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis_raster--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis_raster--2.4.2.sql
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/postgis_raster.control $GAUSSHOME/share/postgresql/extension/postgis_raster.control
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/extensions/postgis_topology/sql/postgis_topology--2.4.2.sql $GAUSSHOME/share/postgresql/extension/postgis_topology--2.4.2.sql
+    python $GAUSSHOME/bin/transfer.py 1 $GAUSSHOME/postgis-xc/postgis-2.4.2/extensions/postgis_topology/postgis_topology.control $GAUSSHOME/share/postgresql/extension/postgis_topology.control
+    
     ```
 
     动态链接库分发脚本执行完毕后，可执行下列命令删除$GAUSSHOME/postgis安装目录。
