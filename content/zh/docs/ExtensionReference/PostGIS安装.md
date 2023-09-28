@@ -246,7 +246,7 @@ PostGIS Extension源码包可通过网站[https://opengauss.obs.cn-south-1.myhua
         cd $GAUSSHOME/postgis-xc/postgis-2.4.2
         chmod +x ./configure
         # 以下配置包含raster、topology等部分，如不需要可以删除，具体配置可以参考postgis相关文档，若移除则后面的文件拷贝中不需要拷贝相关文件
-        ./configure --prefix=$GAUSSHOME/install/pggis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json \
+        ./configure --prefix=$GAUSSHOME/install/postgis2.4.2 --with-pgconfig=$GAUSSHOME/bin/pg_config --with-projdir=$GAUSSHOME/install/proj --with-geosconfig=$GAUSSHOME/install/geos/bin/geos-config --with-jsondir=$GAUSSHOME/install/json \
                      --with-xml2config=$GAUSSHOME/install/libxml2/bin/xml2-config --with-raster --with-gdalconfig=$GAUSSHOME/install/gdal/bin/gdal-config --with-topology --without-address-standardizer \
                      CFLAGS='-O2 -fpermissive -DPGXC -pthread -D_THREAD_SAFE -D__STDC_FORMAT_MACROS -DMEMORY_CONTEXT_CHECKING -w' CC=g++
         make -sj
