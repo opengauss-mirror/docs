@@ -3,16 +3,6 @@
 const pathName = location.pathname;
 const langStr = pathName.split("/")[1];
 const versionObj = langStr === "zh" ? versionObjZh : versionObjEn;
-const newVersion = Object.keys(versionObj)[1];
-function initUrl() {
-  if (pathName === "/zh/" || pathName === "/en/") {
-    window.open(
-      `/${langStr}/docs/${newVersion}` + versionObj[newVersion].homePath,
-      "_self"
-    );
-  }
-}
-//initUrl();
 const themeStyle = localStorage.getItem("opengauss-theme");
 const html = document.getElementsByTagName("html")[0];
 if (!themeStyle) {
