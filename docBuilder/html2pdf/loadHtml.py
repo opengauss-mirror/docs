@@ -24,7 +24,6 @@ def remove_relations_div_tags(html_content):
     div_tags = soup.find_all('div', class_='relations')
     for div_tag in div_tags:
         div_tag.decompose()
-
     modified_html = str(soup)
     return modified_html
 
@@ -163,10 +162,10 @@ def append_html_files(folder_path, html_file_path):
                 html_content =remove_sphinxsidebar_div_tags(html_content)
                 html_content =remove_logo_h1_tags(html_content)
                 html_content =remove_h3_tags(html_content)
-                html_content =modify_section_id(html_content)
-                html_content =modify_section_id_1(html_content)
-                html_content =remove_toctree_li_tags(html_content)
-                html_content =modify_a_href(html_content)
+                # html_content =modify_section_id(html_content)
+                # html_content =modify_section_id_1(html_content)
+                # html_content =remove_toctree_li_tags(html_content)
+                # html_content =modify_a_href(html_content)
                 html_file.write(html_content)
                 html_file.write('\n')  
 
@@ -181,12 +180,11 @@ def process_index_html(folder_path,path):
                 
       with open(path, 'w',encoding='utf-8') as file:
         html_content = strip_chars(html_content)
-        html_content =remove_relations_div_tags(html_content)
+        html_content = remove_relations_div_tags(html_content)
         html_content = remove_sphinxsidebar_div_tags(html_content)
         html_content = modify_li_href(html_content,'toctree-l1')
         html_content = modify_section_id_to_match(html_content,'toctree-l2')
         html_content = modify_section_id_to_match(html_content,'toctree-l3')
-       
         html_content = remove_class_tags(html_content,'toctree-l')
         file.write(html_content)
             
@@ -219,7 +217,6 @@ def modify_section_id_to_match(html, token):
     soup = BeautifulSoup(html, 'html.parser')
     li_tags = soup.find_all('li', class_=token)
     for li_tag in li_tags:
-
         a_tag = li_tag.find('a', class_='reference internal')
         if a_tag:
             href = a_tag['href']
@@ -230,10 +227,7 @@ def modify_section_id_to_match(html, token):
             else:
                 modified_href = href.split('/')[-1].split('.')[0]
                 modified_href = f'#{urllib.parse.unquote(modified_href)}' 
-
             a_tag['href'] = modified_href
-
-
     return str(soup)
 
 
