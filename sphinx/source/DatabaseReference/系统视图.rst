@@ -24,6 +24,7 @@
     ../content/zh/docs/DatabaseReference/GS_SESSION_MEMORY_STATISTICS
     ../content/zh/docs/DatabaseReference/GS_SESSION_STAT
     ../content/zh/docs/DatabaseReference/GS_SESSION_TIME
+    ../content/zh/docs/DatabaseReference/GS_SHARED_MEMORY_DETAIL
     ../content/zh/docs/DatabaseReference/GS_SQL_COUNT
     ../content/zh/docs/DatabaseReference/GS_STAT_SESSION_CU
     ../content/zh/docs/DatabaseReference/GS_THREAD_MEMORY_CONTEXT

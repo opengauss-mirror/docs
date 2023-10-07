@@ -3,5 +3,5 @@
 
 .. toctree::
 
-    ../content/zh/docs/Developerguide/开发规范
+    ../content/zh/docs/DeveloperGuide/开发规范
     工具对接   
