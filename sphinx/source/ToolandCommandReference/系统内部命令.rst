@@ -16,6 +16,7 @@
     ../content/zh/docs/ToolandCommandReference/gs_tar
     ../content/zh/docs/ToolandCommandReference/gs_uninstall
     ../content/zh/docs/ToolandCommandReference/gs_upgradectl
+   ../content/zh/docs/ToolandCommandReference/gs_upgradechk
     ../content/zh/docs/ToolandCommandReference/gs_expansion
     ../content/zh/docs/ToolandCommandReference/gs_dropnode
     ../content/zh/docs/ToolandCommandReference/gs_probackup

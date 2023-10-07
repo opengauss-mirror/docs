@@ -7,6 +7,7 @@ DBE_PLDEBUGGER Schema
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-turn_off
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-local_debug_server_info
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-attach
+    ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-info_locals
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-next
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-continue
     ../content/zh/docs/SQLReference/DBE_PLDEBUGGER-abort
