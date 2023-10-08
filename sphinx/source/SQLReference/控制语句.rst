@@ -11,3 +11,4 @@
     ../content/zh/docs/SQLReference/错误捕获语句
     ../content/zh/docs/SQLReference/GOTO语句
     ../content/zh/docs/SQLReference/抛出错误语句
+   ../content/zh/docs/SQLReference/GET-DIAGNOSTICS
