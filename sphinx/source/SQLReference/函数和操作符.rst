@@ -31,6 +31,7 @@
     系统管理函数
     ../content/zh/docs/SQLReference/统计信息函数
     ../content/zh/docs/SQLReference/触发器函数
+   ../content/zh/docs/SQLReference/事件触发器函数
     ../content/zh/docs/SQLReference/HashFunc函数
     ../content/zh/docs/SQLReference/提示信息函数
     ../content/zh/docs/SQLReference/全局临时表函数
@@ -41,5 +42,6 @@
     ../content/zh/docs/SQLReference/内部函数
     ../content/zh/docs/SQLReference/Global-SysCache特性函数
     ../content/zh/docs/SQLReference/数据损坏检测修复函数
+    ../content/zh/docs/SQLReference/XML类型函数
     ../content/zh/docs/SQLReference/资源池化函数
     ../content/zh/docs/SQLReference/废弃函数
