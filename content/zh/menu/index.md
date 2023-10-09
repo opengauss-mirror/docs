@@ -24,6 +24,7 @@ headless: true
     -   [部署方案]({{< relref "./docs/TechnicalWhitePaper/部署方案.md" >}})
     -   [典型组网]({{< relref "./docs/TechnicalWhitePaper/典型组网.md" >}})
     -   [软硬件配置要求]({{< relref "./docs/TechnicalWhitePaper/软硬件配置要求.md" >}})
+    -   [运行环境]({{< relref "./docs/AboutopenGauss/运行环境.md" >}})
     -   [技术指标]({{< relref "./docs/TechnicalWhitePaper/技术指标.md" >}})
     -   [数据库核心技术]({{< relref "./docs/TechnicalWhitePaper/数据库核心技术.md" >}})
     -   [基本功能和特性]({{< relref "./docs/AboutopenGauss/基本功能和特性.md" >}})
