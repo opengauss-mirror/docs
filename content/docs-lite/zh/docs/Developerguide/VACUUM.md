@@ -45,6 +45,11 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
         [ table_name [ (column_name [, ...] ) ] ] [ PARTITION ( partition_name ) | SUBPARTITION ( subpartition_name ) ];
     ```
 
+- 回收站delta表的冗余空间，仅支持列存表。
+
+  ```
+  VACUUM DELTAMERGE table_name;
+  ```
 
 ## 参数说明<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_sbca5ac35b0f942659382ddcabe74ee42"></a>
 
