@@ -375,8 +375,8 @@
 -   重命名表。对名称的修改不会影响所存储的数据。
 
     ```
-    ALTER TABLE [ IF EXISTS ] table_name 
-        RENAME TO new_table_name;
+    ALTER TABLE [ IF EXISTS ] [schema_name.]table_name 
+        RENAME TO [new_schema_name.]new_table_name;
     ```
 
 -   重命名表中指定的列。
