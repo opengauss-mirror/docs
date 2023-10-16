@@ -12,7 +12,7 @@
 6. 新增```float4/float```支持可选的修饰符(n)，即支持```float4(n)/float(n)```的用法，当n在 [1,24]之间时，```float4(n)/float(n)```代表单精度浮点数；当n在 [25,53]之间时，```float4(n)/float(n)```代表双精度浮点数。
 7. 对于```decimal/dec/fixed/numeric```数据类型，在未指定精度的情况下，默认精度为```(10,0)```，即总位数为10，小数位数为0。
 8. 新增```UNSIGNED INT/TINYINT/SMALLINT/BIGINT```类型，与普通整型相比，其最高位是数字位而非符号位；此外，在openGauss中，TINYINT默认为无符号类型，而在B库中则默认是有符号的。
-9. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。
+9. 新增zerofill属性修饰，只是语法上的支持，实际并没有填充零的效果。与UNSIGNED的作用等价。zerofill仅支持作用于整型类型（int、tinyint、smallint、mediumint、bigint）。
 10. 新增cast函数类型转换参数signed/unsigned，其中cast as unsigned将类型转换为uint8，cast as signed将类型转换为int8.
 11. 新增```float(p,s)，double(p,s)，real(p,s)，double precision(p,s)```的语法，其中```float(p,s)，real(p,s)，double precision(p,s)```大致等价于```dec(p,s)```，与```dec(p,s)```不同的是，```float(p,s)，real(p,s)，double precision(p,s)```的p和s必须为整数，而```double(p,s)```则完全等价于```dec(p,s)```。舍入方式为四舍五入。
 
