@@ -62,6 +62,10 @@ pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
 
 在资源池化模式，-I后面的参数为要查看的控制文件对应节点的节点id，VGDATA为集群的共享数据目录（例如数据目录为+data）。
 
+当输入包含VGDATA时，会自动开启--enable-dss。
+
+可不指定--socketpath，默认为$DSS_HOME/.dss_unix_d_socket。
+
 使用该工具时请保证dssserver启动，如果使用了cm组件，且本节点处于stop状态时，请先开启dss手动控制模式，再启动dssserver
 
     ```
