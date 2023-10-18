@@ -73,7 +73,7 @@ openGauss=# SAVEPOINT my_savepoint;
 --插入数据。
 openGauss=# INSERT INTO table2 VALUES (4);
 
---回滚保存点。
+--删除保存点。
 openGauss=# RELEASE SAVEPOINT my_savepoint;
 
 --提交事务。

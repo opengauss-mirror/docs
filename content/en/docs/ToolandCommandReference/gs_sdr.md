@@ -120,8 +120,8 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         ```
         {"remoteClusterConf": {"port": 26000, "shards": [[{"ip": "10.244.45.144", "dataIp": "172.31.2.200"}, {"ip": "10.244.45.40", "dataIp": "172.31.0.38"}, {"ip": "10.244.46.138", "dataIp": "172.31.11.145"}, {"ip": "10.244.48.60", "dataIp": "172.31.9.37"}, {"ip": "10.244.47.240", "dataIp": "172.31.11.125"}]]}, "localClusterConf": {"port": 26000, "shards": [[{"ip": "10.244.44.216", "dataIp": "172.31.12.58"}, {"ip": "10.244.45.120", "dataIp": "172.31.0.91"}]]}}
         Parameter description:
-        # remoteClusterConf: DN shard information of the peer cluster. In the preceding command, port indicates the port of the primary DN in the peer cluster, and {"ip": "10.244.45.144", "dtaIp": "172.31.2.200"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the peer cluster.
-        # localClusterConf: DN shard information of the cluster. In the preceding command, port indicates the port of the primary DN in the cluster, and {"ip": "10.244.44.216", "dtaIp": "172.31.12.58"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the cluster.
+        # remoteClusterConf: DN shard information of the peer cluster. In the preceding command, port indicates the port of the primary DN in the peer cluster, and {"ip": "10.244.45.144", "dataIp": "172.31.2.200"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the peer cluster.
+        # localClusterConf: DN shard information of the cluster. In the preceding command, port indicates the port of the primary DN in the cluster, and {"ip": "10.244.44.216", "dataIp": "172.31.12.58"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the cluster.
         ```
 
         >![](public_sys-resources/icon-note.gif) **NOTE:**
