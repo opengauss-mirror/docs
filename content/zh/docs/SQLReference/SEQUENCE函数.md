@@ -121,7 +121,7 @@
 
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >
-    >nextval函数只能在主机上执行，备机不支持执行此函数。
+    >setval函数只能在主机上执行，备机不支持执行此函数。
 
 - pg_sequence_last_value(sequence_oid oid, OUT cache_value int16, OUT last_value int16)
 
