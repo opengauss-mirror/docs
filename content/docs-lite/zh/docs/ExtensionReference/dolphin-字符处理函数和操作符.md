@@ -640,7 +640,7 @@
   示例：
   
   ```
-    openGauss=# SELECT instr('abcdabcdabcd', 'bcd', 2);
+    openGauss=# SELECT substring_index('abcdabcdabcd', 'bcd', 2);
      substring_index 
     -----------------
      abcda
