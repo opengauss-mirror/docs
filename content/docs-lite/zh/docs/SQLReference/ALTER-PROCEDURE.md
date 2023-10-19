@@ -13,6 +13,7 @@
 -   只有系统管理员和初始化用户可以将procedure的schema修改成public。
 -   重命名存储过程时，不能与当前模式下已经存在的synonym产生命名冲突。
 -   修改存储过程的模式时，不能与新模式下已经存在的synonym产生命名冲突。
+-   重编译存储过程时，对于PACKAGE中定义的存储过程需要使用ALTER PACKAGE语句。
 
 ## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
@@ -61,6 +62,11 @@
         SET SCHEMA new_schema;
     ```
 
+-   重编译存储过程。
+
+    ```
+    ALTER PROCEDURE procedure_name COMPILE;
+    ```
 
 ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 

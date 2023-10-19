@@ -1462,6 +1462,8 @@ headless: true
 	        -   [GS\_COLUMN\_KEYS]({{< relref "./docs/DatabaseReference/GS_COLUMN_KEYS.md" >}})
 	        -   [GS\_COLUMN\_KEYS\_ARGS]({{< relref "./docs/DatabaseReference/GS_COLUMN_KEYS_ARGS.md" >}})
 	        -   [GS\_DB\_PRIVILEGE]({{< relref "./docs/DatabaseReference/GS_DB_PRIVILEGE.md" >}})
+    		-   [GS\_DEPENDENCIES]({{< relref "./docs/DatabaseReference/GS_DEPENDENCIES.md" >}})
+    		-   [GS\_DEPENDENCIES\_OBJ]({{< relref "./docs/DatabaseReference/GS_DEPENDENCIES_OBJ.md" >}})
 	        -   [GS\_ENCRYPTED\_COLUMNS]({{< relref "./docs/DatabaseReference/GS_ENCRYPTED_COLUMNS.md" >}})
 	        -   [GS\_ENCRYPTED\_PROC]({{< relref "./docs/DatabaseReference/GS_ENCRYPTED_PROC.md" >}})
 	        -   [GS\_GLOBAL\_CHAIN]({{< relref "./docs/DatabaseReference/GS_GLOBAL_CHAIN.md" >}})
