@@ -24,7 +24,6 @@ FOR statement ;
 
 ## 注意事项<a name="zh-cn_topic_0283136849_zh-cn_topic_0237122164_zh-cn_topic_0165816825_section74641935135611"></a>
 
--   EXPLAIN PLAN不支持在数据库节点上执行。
 -   对于执行错误的SQL无法进行计划信息的收集。
 -   PLAN\_TABLE中的数据是session级生命周期并且session隔离和用户隔离，用户只能看到当前session、当前用户的数据。
 

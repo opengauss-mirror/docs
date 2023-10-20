@@ -479,7 +479,7 @@
     (1 row)
     ```
     
--   find_in_set(str, strlist)
+-   find_int_set(str, strlist)
 
     描述：获取str在后面strlist中的位置，strlist以```,```分割。
 
@@ -488,8 +488,8 @@
     示例：
 
     ```
-    b_compatibility_database=# select find_in_set('wo','ceshi,ni,wo,ta');
-    find_in_set 
+    b_compatibility_database=# select find_int_set('wo','ceshi,ni,wo,ta');
+    find_int_set 
     -------------
             3
     (1 row)
