@@ -50,7 +50,7 @@ The following shows the differences between two user experiences – Pessimistic
 In this example, the following table test command is run –
 
 ```
-table “TEST” – create table test (x int, y int, z int, primary key(x));
+table "TEST" – create table test (x int, y int, z int, primary key(x));
 ```
 
 This example describes two aspects of the same test – user experience \(operations in the example\) and retry requirements.

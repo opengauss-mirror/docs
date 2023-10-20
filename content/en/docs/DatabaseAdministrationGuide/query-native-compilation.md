@@ -36,8 +36,8 @@ while (rs1.next()) {…}
 // Example 2: PREPARE with bind settings
 String sqlStmt = "SELECT * FROM employees where first_name=? and last_name like ?";
 PreparedStatement prepStmt2 = conn.prepareStatement(sqlStmt);
-prepStmt2.setString(1, "Mark"); // first name “Mark”
-prepStmt2.setString(2, "%n%"); // last name contains a letter “n”
+prepStmt2.setString(1, "Mark"); // first name "Mark"
+prepStmt2.setString(2, "%n%"); // last name contains a letter "n"
 ResultSet rs2 = prepStmt2.executeQuery())
 while (rs2.next()) {…}
 ```
