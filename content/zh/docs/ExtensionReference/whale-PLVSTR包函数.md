@@ -442,7 +442,7 @@
 
 -   plvstr.rpart(str text, div text [, start_arg int [, nth int [, all_if_notfound bool]]])
 
-    描述：在str中查找分隔符div并进行分割，返回分割完成之后左半边部分。
+    描述：在str中查找分隔符div并进行分割，返回分割完成之后右半边部分。
 
     参数说明：
 
@@ -538,7 +538,7 @@
 
 -   plvstr.rstrip(str text, substr text [, num int])
 
-    描述：从str的左边开始匹配substr并删除匹配到的子串，直到匹配数目满足num或匹配失败为止。
+    描述：从str的右边开始匹配substr并删除匹配到的子串，直到匹配数目满足num或匹配失败为止。
 
     参数说明：
 
