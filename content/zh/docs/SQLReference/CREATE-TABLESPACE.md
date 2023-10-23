@@ -74,6 +74,14 @@ WITH ( {filesystem= { 'general'| "general" | general} |
 
     取值范围：字符串格式为正整数+单位，单位当前支持K/M/G/T/P。解析后的数值以K为单位，且范围不能够超过64比特表示的有符号整数，即1KB\~9007199254740991KB。
 
+-   **filesystem**
+
+    指定表空间的文件系统。
+
+    取值范围：general。
+
+    默认值：general。
+
 -   **random\_page\_cost**
 
     指定随机读取page的开销。
