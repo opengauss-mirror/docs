@@ -837,7 +837,7 @@ headless: true
 			-   [反向迁移]({{< relref "./docs/DataMigrationGuide/反向迁移.md" >}})
 			-   [数据校验]({{< relref "./docs/DataMigrationGuide/数据校验.md" >}})
 -   [插件参考]({{< relref "./docs/ExtensionReference/Extension.md" >}})
-	-    [NDPPlugin Extension]({{< relref "./docs/ExtensionReference/ndpplugin-Extension.md" >}})
+	-   [NDPPlugin Extension]({{< relref "./docs/ExtensionReference/ndpplugin-Extension.md" >}})
 		-   [NDPPlugin概述]({{< relref "./docs/ExtensionReference/ndpplugin概述.md" >}})
 		-   [NDPPlugin安装]({{< relref "./docs/ExtensionReference/ndpplugin安装.md" >}})
 		-   [NDPPlugin限制]({{< relref "./docs/ExtensionReference/ndpplugin限制.md" >}})
