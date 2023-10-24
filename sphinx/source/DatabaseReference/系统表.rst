@@ -13,6 +13,8 @@
     ../content/zh/docs/DatabaseReference/GS_COLUMN_KEYS
     ../content/zh/docs/DatabaseReference/GS_COLUMN_KEYS_ARGS
     ../content/zh/docs/DatabaseReference/GS_DB_PRIVILEGE
+    ../content/zh/docs/DatabaseReference/GS_DEPENDENCIES
+    ../content/zh/docs/DatabaseReference/GS_DEPENDENCIES_OBJ
     ../content/zh/docs/DatabaseReference/GS_ENCRYPTED_COLUMNS
     ../content/zh/docs/DatabaseReference/GS_ENCRYPTED_PROC
     ../content/zh/docs/DatabaseReference/GS_GLOBAL_CHAIN
