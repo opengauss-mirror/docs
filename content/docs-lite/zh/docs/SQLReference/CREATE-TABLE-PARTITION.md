@@ -60,11 +60,12 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
     [ COMMENT {=| } 'text' ]
-      {RANGE [COLUMNS] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] [ PARTITIONS integer ] ( partition_less_than_item [, ... ] )} |
-        {RANGE [COLUMNS] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] [ PARTITIONS integer ] ( partition_start_end_item [, ... ] )} |
-        {LIST [COLUMNS] (partition_key) [ PARTITIONS integer ] ( PARTITION partition_name VALUES [IN] (list_values) [TABLESPACE [=] tablespace_name][, ... ]）} |
-        {{HASH | KEY} (partition_key) [ PARTITIONS integer ] ( PARTITION partition_name [TABLESPACE [=] tablespace_name][, ... ]）}
-    } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
+    PARTITION BY { 
+        {VALUES (partition_key)} |
+        {RANGE [ COLUMNS ] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN ( tablespace_name [, ...] ) ] ] [ PARTITIONS integer ] ( partition_less_than_item [, ... ] )} |
+        {RANGE [ COLUMNS ] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN ( tablespace_name [, ...] ) ] ] [ PARTITIONS integer ] ( partition_start_end_item [, ... ] )} |
+        {{{LIST [ COLUMNS ]} | HASH | KEY} (partition_key) [ PARTITIONS integer ] (PARTITION partition_name [ VALUES [ IN ] (list_values_clause) ] opt_table_space ) }
+    } [ { ENABLE | DISABLE } ROW MOVEMENT ];
 ```
 
 -   列约束column\_constraint：
@@ -229,6 +230,14 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >
     >该子句仅在参数sql\_compatibility=B时有效。
 
+-   **\[ DEFAULT \] CHARACTER SET | CHARSET \[ = \] default_charset \]**
+
+    指定模式的默认字符集，单独指定时会将模式的默认字符序设置为指定的字符集的默认字符序。
+
+-   **\[ \[ DEFAULT \] COLLATE \[ = \] default_collation**
+
+    指定模式的默认字符序，单独指定时会将模式的默认字符集设置为指定的字符序对应的字符集。
+
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
 
     这个子句为表或索引指定一个可选的存储参数。参数的详细描述如下所示：
@@ -347,7 +356,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     指定新表将要在tablespace\_name表空间内创建。如果没有声明，将使用默认表空间。
 
--   **PARTITION BY RANGE\(partition\_key\)**
+-   **TO \{ GROUP groupname | NODE \( nodename \[, … \] \) \}**
+
+    此语法仅在扩展模式（GUC参数support_extended_features为on时）下可用。该模式谨慎打开，主要供内部扩容工具使用，一般用户不应使用该模式。
+
+-   **PARTITION BY VALUES \(partition\_key\)**
+
+    创建数值分区。partition\_key为分区键的名称。
+
+-   **PARTITION BY RANGE \[COLUMNS\]\(partition\_key\)**
 
     创建范围分区。partition\_key为分区键的名称。
 
