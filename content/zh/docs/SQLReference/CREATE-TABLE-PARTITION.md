@@ -51,17 +51,22 @@
 
 ```
 CREATE TABLE [ IF NOT EXISTS ] partition_table_name
-( [ 
-    { column_name data_type [ COLLATE collation ] [ column_constraint [ ... ] ]
+( [
+  { column_name data_type [ CHARACTER SET | CHARSET charset ]
+    [ COLLATE collation ] [ column_constraint [ ... ] ]
     | table_constraint
-    | LIKE source_table [ like_option [...] ] }[, ... ]
+    | LIKE source_table [ like_option [...] ] }
+    [, ... ]
 ] )
     [ AUTO_INCREMENT [ = ] value ]
+    [ [ DEFAULT ] CHARACTER SET | CHARSET [ = ] default_charset ][ [ DEFAULT ] COLLATE [ = ] default_collation ]
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
-    [ COMMENT {=| } 'text' ]
-    PARTITION BY { 
+    [ DISTRIBUTE BY { REPLICATION | { [ HASH ] ( column_name ) } } ]
+    NOTICE: DISTRIBUTE BY is only avaliable in DISTRIBUTED mode!
+    [ TO { GROUP groupname | NODE ( nodename [, ... ] ) } ]
+    PARTITION BY {
         {VALUES (partition_key)} |
         {RANGE [ COLUMNS ] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN ( tablespace_name [, ...] ) ] ] [ PARTITIONS integer ] ( partition_less_than_item [, ... ] )} |
         {RANGE [ COLUMNS ] (partition_key) [ INTERVAL ('interval_expr') [ STORE IN ( tablespace_name [, ...] ) ] ] [ PARTITIONS integer ] ( partition_start_end_item [, ... ] )} |
