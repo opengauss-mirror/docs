@@ -47,7 +47,28 @@
     PACKAGE BODY\(包体内\)定义了包的私有变量、函数等。如果变量或者函数没有在PACKAGE SPECIFICATION中声明过，那么这个变量或者函数则为私有变量或者函数。
 
     PACKAGE BODY也可以声明实例化部分，用来初始化package，详见示例。
+## 参数说明
+-    OR REPLACE
 
+
+     当存在同名的PACKAGE时，替换原来的定义。
+-    package_name
+
+     创建的PACKAGE名称，可以带有模式名。
+     
+     取值范围：字符串，要符合标识符的命名规范。
+-    invoker_rights_clause
+     
+     可以被声明为AUTHID DEFINER或者AUTHID CURRENT_USER，分别为定义者权限和调用者权限。
+-    item_list_1
+
+     声明的变量、存储过程、函数等。
+-   declare_section
+
+     声明部分，PACKAGE SPECIFICATION中声明的变量、存储过程、函数的具体定义。
+-    initialize_section
+
+     初始化变量并设置一次性的步骤。
 
 ## 示例<a name="section1114514478590"></a>
 
