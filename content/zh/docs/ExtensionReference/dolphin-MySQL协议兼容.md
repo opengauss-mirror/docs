@@ -1,4 +1,4 @@
-﻿# MySQL协议兼容
+# MySQL协议兼容
 
 -   openGauss通过抽象协议层接口，在dolphin插件中实现了MySQL协议兼容，用户在设置相关参数后，可通过MySQL的JDBC driver或者MySQL命令行客户端，直接连接openGauss。
 
@@ -9,7 +9,7 @@
 
 ## 当前支持的MySQL客户端版本
 
--   MySQL JDBC driver： 5.1.47~5.1.49
+-   MySQL JDBC driver： 5.1.47
 -   MySQL 命令行客户端： 5.7.26~5.7.42
 
 ## 约束
