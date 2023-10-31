@@ -101,5 +101,33 @@ GLOBAL\_THREAD\_WAIT\_STATUS视图和THREAD\_WAIT\_STATUS视图列定义完全�
 <td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>如果wait_status是acquire lock、acquire lwlock、wait io三种类型，此列描述具体的锁、轻量级锁、IO的信息。否则是空。</p>
 </td>
 </tr>
+<tr id="row1934419361215"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p734417363218"><a name="p734417363218"></a><a name="p734417363218"></a>locktag</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p03448361211"><a name="p03448361211"></a><a name="p03448361211"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p20344163692117"><a name="p20344163692117"></a><a name="p20344163692117"></a>当前线程正在等待锁的信息。</p>
+</td>
+</tr>
+<tr id="row98931538122110"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p6893738102112"><a name="p6893738102112"></a><a name="p6893738102112"></a>lockmode</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p10893838162120"><a name="p10893838162120"></a><a name="p10893838162120"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p1589313388211"><a name="p1589313388211"></a><a name="p1589313388211"></a>当前线程正等待获取的锁模式。包含表级锁、行级锁、页级锁下的各模式。</p>
+</td>
+</tr>
+<tr id="row1019514122113"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p10195134152115"><a name="p10195134152115"></a><a name="p10195134152115"></a>block_sessionid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p10195441162112"><a name="p10195441162112"></a><a name="p10195441162112"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p1919512419218"><a name="p1919512419218"></a><a name="p1919512419218"></a>阻塞当前线程获取锁的会话标识。</p>
+</td>
+</tr>
+<tr id="row38944434217"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="p689410434213"><a name="p689410434213"></a><a name="p689410434213"></a>global_sessionid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="p168941543112113"><a name="p168941543112113"></a><a name="p168941543112113"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="p128940436213"><a name="p128940436213"></a><a name="p128940436213"></a>全局会话ID。</p>
+</td>
+</tr>
 </tbody>
 </table>
