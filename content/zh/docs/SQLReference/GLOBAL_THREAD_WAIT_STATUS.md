@@ -101,5 +101,33 @@ GLOBAL\_THREAD\_WAIT\_STATUS视图和THREAD\_WAIT\_STATUS视图列定义完全�
 <td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>如果wait_status是acquire lock、acquire lwlock、wait io三种类型，此列描述具体的锁、轻量级锁、IO的信息。否则是空。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p3228113316292"><a name="zh-cn_topic_0237122640_p3228113316292"></a><a name="zh-cn_topic_0237122640_p3228113316292"></a>locktag</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p102281933132919"><a name="zh-cn_topic_0237122640_p102281933132919"></a><a name="zh-cn_topic_0237122640_p102281933132919"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>当前线程正在等待锁的信息。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p3228113316292"><a name="zh-cn_topic_0237122640_p3228113316292"></a><a name="zh-cn_topic_0237122640_p3228113316292"></a>lockmode</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p102281933132919"><a name="zh-cn_topic_0237122640_p102281933132919"></a><a name="zh-cn_topic_0237122640_p102281933132919"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>当前线程正等待获取的锁模式。包含表级锁、行级锁、页级锁下的各模式。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p3228113316292"><a name="zh-cn_topic_0237122640_p3228113316292"></a><a name="zh-cn_topic_0237122640_p3228113316292"></a>block_sessionid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p102281933132919"><a name="zh-cn_topic_0237122640_p102281933132919"></a><a name="zh-cn_topic_0237122640_p102281933132919"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>阻塞当前线程获取锁的会话标识。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237122640_row142282033152915"><td class="cellrowborder" valign="top" width="17.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237122640_p3228113316292"><a name="zh-cn_topic_0237122640_p3228113316292"></a><a name="zh-cn_topic_0237122640_p3228113316292"></a>global_sessionid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.8%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237122640_p102281933132919"><a name="zh-cn_topic_0237122640_p102281933132919"></a><a name="zh-cn_topic_0237122640_p102281933132919"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.93%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237122640_p122291833182913"><a name="zh-cn_topic_0237122640_p122291833182913"></a><a name="zh-cn_topic_0237122640_p122291833182913"></a>全局会话ID。</p>
+</td>
+</tr>
 </tbody>
 </table>
