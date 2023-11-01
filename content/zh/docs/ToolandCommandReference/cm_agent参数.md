@@ -325,7 +325,7 @@
 
 -   off、no、false、0：表示不重启datanode进程。
 
-**默认值**：
+**默认值**：off
 
 ## event_triggers
 
