@@ -20,6 +20,16 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
+## enable\_segment<a name="section182244334911"></a>
+
+**Parameter description**: Specify whether to use segment page storage by default. When this parameter is on, segment page storage is used by default. It should be noted that during the installation process under Resource Pooling, it will be automatically set to on to improve ease of use.
+
+This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range:**  \[off,on\]
+
+**Default value**:  **off**
+
 ## reserve\_space\_for\_nullable\_atts<a name="section475852314301"></a>
 
 **Parameter description**: Specifies whether to reserve space for the nullable attribute of an Ustore table. If this parameter is set to  **on**, space is reserved for the nullable attribute of the Ustore table by default.
