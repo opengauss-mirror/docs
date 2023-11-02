@@ -388,6 +388,7 @@ dayname
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 2. [CREATE INDEX](dolphin-CREATE-INDEX.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
 3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin-二进制类型.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
+4. [影响日期类型时间类型（Date、Time、Timestamp、DateTime等）显式转换或者Function转换时输入值为非法值时的输出值](dolphin-日期-时间类型.md)
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
