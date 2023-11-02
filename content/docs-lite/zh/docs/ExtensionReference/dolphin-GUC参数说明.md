@@ -370,12 +370,11 @@ dayname
 
 当前影响的操作符有：
 
-1. [LIKE/NOT LIKE](dolphin-字符处理函数和操作符.md#ZH-CN_TOPIC_0289900656)
+1. [四则运算操作符兼容](dolphin-四则运算操作符兼容.md#ZH-CN_TOPIC_0289900280)
 2. (字符类型异或) [^](dolphin-字符处理函数和操作符.md#ZH-CN_TOPIC_0289900656)
 3. (数字类型异或) [^](dolphin-数字操作函数和操作符.md#ZH-CN_TOPIC_0289900469)
 4. [&&](dolphin-逻辑操作符.md#ZH-CN_TOPIC_0289900469)
 5. [#](dolphin-注释操作符.md#ZH-CN_TOPIC_0289900280)
-6. [四则运算操作符兼容](dolphin-四则运算操作符兼容.md#ZH-CN_TOPIC_0289900280)
 
 影响的函数有：
 1. [LAST_DAY](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
