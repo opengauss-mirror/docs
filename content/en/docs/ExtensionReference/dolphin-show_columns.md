@@ -104,7 +104,7 @@ openGauss=# show full columns from tst_t1 where Type='text';
 --Display permission filtering
 openGauss=# CREATE USER tst_u1 PASSWORD 'tst_u1@123';
 openGauss=# SET ROLE tst_u1 PASSWORD 'tst_u1@123';
-opengauss=> SET SEARCH_PATH TO tst_schema1;
+openGauss=> SET SEARCH_PATH TO tst_schema1;
 
 openGauss=> show full columns from tst_t1;
  Field | Type | Collation | Null | Key | Default | Extra | Privileges | Comment 
@@ -112,10 +112,10 @@ openGauss=> show full columns from tst_t1;
 (0 rows)
 
 openGauss=# RESET ROLE;
-opengauss=# GRANT SELECT (addr, phone) on tst_t1 to tst_u1;
+openGauss=# GRANT SELECT (addr, phone) on tst_t1 to tst_u1;
 openGauss=# SET ROLE tst_u1 PASSWORD 'tst_u1@123';
 
-opengauss=> SET SEARCH_PATH TO tst_schema1;
+openGauss=> SET SEARCH_PATH TO tst_schema1;
 openGauss=> show full columns from tst_t1;
   Field   | Type | Collation | Null | Key | Default | Extra | Privileges  | Comment 
 -----------+------+-----------+------+-----+---------+-------+------------------+---------
