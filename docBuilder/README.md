@@ -1,6 +1,6 @@
 # 简介
 
-本工具基于sphinx，用于将openGuass的文档转换成html，pdf格式。
+本工具基于sphinx，用于将openGauss的文档转换成html，pdf格式。
 
 # 环境
 
