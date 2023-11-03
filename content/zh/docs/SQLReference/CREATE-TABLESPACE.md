@@ -17,14 +17,21 @@
 
 ```
 CREATE TABLESPACE tablespace_name
-    [ OWNER user_name ] [RELATIVE] LOCATION 'directory' [ MAXSIZE 'space_size' ]
-    [with_option_clause];
+    {[ OWNER user_name ] [RELATIVE] LOCATION 'directory' [ MAXSIZE 'space_size' ]
+    [with_option_clause]} |
+    {[LOGGING | NOLOGGING] DATAFILE 'directory' [SIZE space_size space_size_unit] [REUSE]
+    [AUTOEXTEND ON [NEXT next_size next_size_unit] [MAXSIZE 'autoextend_size'] | AUTOEXTEND OFF]} |
+    {DATAFILE 'directory' [SIZE space_size space_size_unit] [REUSE]
+    [AUTOEXTEND ON [NEXT next_size next_size_unit] [MAXSIZE 'autoextend_size'] | AUTOEXTEND OFF] {LOGGING | NOLOGGING}};
 ```
 
 其中普通表空间的with\_option\_clause为：
 
 ```
 WITH ( {filesystem= { 'general'| "general" | general} |
+    address = { 'ip:port[,...]' } |
+    cfgpath = { 'path' } |
+    storepath = { 'rootpath' } |
     random_page_cost = { 'value ' | value } |
     seq_page_cost = { 'value ' | value }}[,...])
 ```
@@ -82,6 +89,24 @@ WITH ( {filesystem= { 'general'| "general" | general} |
 
     默认值：general。
 
+-   **address**
+
+    指定表空间的地址服务器。
+
+    取值范围：有效的ip:有效的端口。
+
+-   **cfgpath**
+
+    指定表空间的配置信息路径。
+
+    取值范围：字符串，有效的目录。
+
+-   **storepath**
+
+    指定表空间的存储信息路径。
+
+    取值范围：字符串，有效的目录。
+
 -   **random\_page\_cost**
 
     指定随机读取page的开销。
@@ -127,6 +152,32 @@ openGauss=# DROP TABLESPACE ds_location3;
 --删除用户。
 openGauss=# DROP ROLE joe;
 openGauss=# DROP ROLE jay;
+
+--创建general文件系统的表空间
+openGauss=# CREATE TABLESPACE ds_location1 RELATIVE LOCATION 'tablespace/tablespace_1' WITH (filesystem = 'general');
+
+--创建地址服务器为10.10.10.10:1111的表空间
+openGauss=# CREATE TABLESPACE ds_location2 RELATIVE LOCATION 'tablespace/tablespace_2' WITH (address = '10.10.10.10:1111');
+
+--创建配置信息路径为'/data/omm/cfg/'的表空间
+openGauss=# CREATE TABLESPACE ds_location3 RELATIVE LOCATION 'tablespace/tablespace_3' WITH (cfgpath = '/data/omm/cfg/');
+
+--创建存储信息路径为'/data/omm/store/'的表空间
+openGauss=# CREATE TABLESPACE ds_location4 RELATIVE LOCATION 'tablespace/tablespace_4' WITH (cfgpath = '/data/omm/store/');
+
+--创建随机读取page的开销为1的表空间
+openGauss=# CREATE TABLESPACE ds_location5 RELATIVE LOCATION 'tablespace/tablespace_5' WITH (random_page_cost = 1);
+
+--创建顺序读取page的开销为1的表空间
+openGauss=# CREATE TABLESPACE ds_location6 RELATIVE LOCATION 'tablespace/tablespace_6' WITH (seq_page_cost = 1);
+
+--删除表空间
+openGauss=# DROP TABLESPACE ds_location1;
+openGauss=# DROP TABLESPACE ds_location2;
+openGauss=# DROP TABLESPACE ds_location3;
+openGauss=# DROP TABLESPACE ds_location4;
+openGauss=# DROP TABLESPACE ds_location5;
+openGauss=# DROP TABLESPACE ds_location6;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s59e2126c54fc4725a3a50713b9163304"></a>
