@@ -22,8 +22,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
-    [ DISTRIBUTE BY { REPLICATION | { [HASH] ( cloume_name ) } } ]
-    [ TO { GROUP group_name | NODE ( nodename [ , ... ] ) } ]
     AS query
     [ WITH [ NO ] DATA ];
 ```
