@@ -27,7 +27,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | table_indexclause
         | LIKE source_table [ like_option [...] ] }
@@ -177,6 +177,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   本地临时表中的自动增长列不会创建序列。
     >-   自动增长列不支持列式存储。
     >-   自增计数器自增和刷新操作不会回滚。
+
+-   **BINARY**
+
+    该关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。
+
+-   **ASCII**
+
+    该关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
 -   **AUTOEXTEND\_SIZE \[=\] value**
 

@@ -22,7 +22,7 @@
 
     ```
     column_clause
-        | ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
+        | ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
         | {DISABLE | ENABLE} KEYS
         | DROP INDEX index_name [ RESTRICT | CASCADE ]
         | DROP PRIMARY KEY [ RESTRICT | CASCADE ]
@@ -54,10 +54,10 @@
         | [TABLESPACE tablespace_name] STORAGE MEMORY
     ```
 
--   向表中增加多列。
+	-   向表中增加多列。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。 ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
     ```
-    ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
+    ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
     ```
 
 -   对一个表进行重建。
@@ -229,6 +229,27 @@
 - **\[TABLESPACE tablespace\_name\] STORAGE MEMORY**
 
   用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
+
+
+其中列相关的操作column_clause可以是以下子句之一：
+
+```
+ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
+| MODIFY [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
+| CHANGE [ COLUMN ] old_column_name new_column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
+```
+
+- **ADD \[ COLUMN \] column\_name data\_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
+
+ 向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
+
+- **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] [BINARY | ASCII] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+
+ 修改表已存在字段的定义，将用新定义替换字段原定义，原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束等）不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段定义的同时修改字段在表中的位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
+
+- **CHANGE \[ COLUMN \] old\_column\_name new\_column\_name data\_type \[ CHARACTER SET | CHARSET charset \] [BINARY | ASCII] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
+
+ 修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 
