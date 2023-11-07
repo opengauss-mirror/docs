@@ -1,4 +1,4 @@
-# JSON/JSONB函数和操作符<a name="ZH-CN_TOPIC_0289900983"></a>
+# JSON/JSONB函数和操作符
 
 JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
@@ -114,7 +114,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 </tbody>
 </table>
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：** 
 >对于 \#\> 和 \#\>\> 操作符，当给出的路径无法查找到数据时，不会报错，会返回空。
 
 **表 2** **JSONB额外支持操作符**
@@ -229,8 +229,18 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1182661311019"><a name="p1182661311019"></a><a name="p1182661311019"></a>/</p>
 </td>
 </tr>
+<tr id="row1482631313106"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p13826141318107"><a name="p13826141318107"></a><a name="p13826141318107"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.2 "><p id="p2826813141014"><a name="p2826813141014"></a><a name="p2826813141014"></a>text[]</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="p1082661341014"><a name="p1082661341014"></a><a name="p1082661341014"></a>删除JSONB对象中指定路径的键和对应的值,同函数jsonb_delete。</p>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="p1182661311019"><a name="p1182661311019"></a><a name="p1182661311019"></a>/</p>
+</td>
+</tr>
 </tbody>
 </table>
+
 
 ## **JSON/JSONB支持的函数**<a name="section845725420151"></a>
 
@@ -359,7 +369,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     示例：
 
     ```
-      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+      openGauss=# select json_extract_path_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_op
       ---------------------
        "stringy"
@@ -393,7 +403,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     示例：
 
     ```
-     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', 'f4','f6');
+     openGauss=# select json_extract_path_text_op('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}', ARRAY['f4','f6']);
        json_extract_path_text_op
       --------------------------
        "stringy"
@@ -839,21 +849,21 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   ```
 
 
--   - jsonb\_cmp\(jsonb, jsonb\)
+- jsonb\_cmp\(jsonb, jsonb\)
 
-    描述：比较大小，正数代表大于，负数代表小于，0表示相等。
+  描述：比较大小，正数代表大于，负数代表小于，0表示相等。
 
-    返回类型：integer
+  返回类型：integer
 
-    示例：
+  示例：
 
-    ```
-    openGauss=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_cmp
-      -----------
-              -1
-      (1 row)
-    ```
+  ```
+  openGauss=# select jsonb_cmp('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_cmp
+    -----------
+            -1
+    (1 row)
+  ```
 
 
 - jsonb\_eq\(jsonb, jsonb\)
@@ -873,21 +883,21 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   ```
 
 
--   - jsonb\_ne\(jsonb, jsonb\)
+- jsonb\_ne\(jsonb, jsonb\)
 
-    描述：同操作符 \`<\>\`, 比较两个值的大小。
+  描述：同操作符 \`<\>\`, 比较两个值的大小。
 
-    返回类型：bool
+  返回类型：bool
 
-    示例：
+  示例：
 
-    ```
-      openGauss=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
-       jsonb_ne
-      ----------
-       t
-      (1 row)
-    ```
+  ```
+    openGauss=# select jsonb_ne('["a", "b"]', '{"a":1, "b":2}');
+     jsonb_ne
+    ----------
+     t
+    (1 row)
+  ```
 
 
 - jsonb\_gt\(jsonb, jsonb\)
@@ -990,6 +1000,64 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   (1 row)
   ```
 
+- jsonb_insert\(target jsonb, path jsonpath, new_value jsonb, skip_existing boolean DEFAULT false)
+
+  描述：
+
+  - target：要插入对象的目标JSONB值。
+  - path：指定要插入对象的路径。可以是一个JSONPath表达式，也可以是一个由键组成的数组。例如，'{hobbies, -1}'表示在名为hobbies的数组中的最后一个位置插入对象。
+  - new_value：要插入的新对象。
+  - skip_existing：可选参数，表示如果插入的对象已经存在，则是否跳过插入操作。默认值为false，表示不跳过插入。
+  
+  返回类型：jsonb
+  
+  示例：
+  
+  ```
+  openGauss=# select jsonb_insert('{"a": [0,1,2]}', '{a, 1}', '"new_value"');
+           jsonb_insert          
+  -------------------------------
+   {"a": [0, "new_value", 1, 2]}
+  (1 row)
+  ```
+  
+- jsonb_delete\(jsonb, text[])
+
+  描述：该函数接受两个参数：要删除字段的 JSONB 对象和要删除的字段路径。这个函数返回一个新的 JSONB 对象，其中指定的字段已被删除。
+
+  返回类型：jsonb
+  
+  示例：
+  
+  ```
+  openGauss=# select jsonb_delete('{"a":1 , "b":2, "c":3}'::jsonb, 'a'::text);
+     jsonb_delete   
+  ------------------
+   {"b": 2, "c": 3}
+  (1 row)
+  ```
+  
+- jsonb_set\(target jsonb, path text[], new_value jsonb[, create_missing boolean]\)
+
+  描述：用于修改 JSONB 类型的值。它可以用于更新 JSONB 对象中的指定路径上的值，或者在指定路径上插入新的键值对。
+
+  - target：要修改的JSONB值。
+  - path：指定要修改的路径，以数组形式表示。每个数组元素都是一个键或索引，用于定位 JSONB 值的位置。例如，[‘a’, ‘b’, ‘c’] 表示要修改的路径为 target->‘a’->‘b’->‘c’。
+  - new_value：要设置的新值，必须是一个合法的 JSONB 值。
+  - create_missing：可选参数，指定是否在路径上创建缺失的键。默认情况下，如果路径上的键不存在，则不会创建缺失的键。如果设置为 true，则会创建缺失的键。
+  
+  返回类型：integer
+  
+  示例：
+  
+  ```
+  openGauss=# select jsonb_set('{"n":null, "a":1, "b":[1,2], "c":{"1":2}, "d":{"1":[2,3]}}'::jsonb, '{n}', '[1,2,3]');
+                          jsonb_set                         
+  ----------------------------------------------------------
+   {"a": 1, "b": [1, 2], "c": {"1": 2}, "d": {"1": [2, 3]}}
+  (1 row)
+  ```
+  
 - 其他函数
 
   描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。
@@ -1010,5 +1078,4 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
    json_object_agg_transfn
    json_object_agg_finalfn
   ```
-
 
