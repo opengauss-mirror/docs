@@ -59,7 +59,7 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=priority2
 
   取值范围：[0, 9223372036854775)内的整数。
 
-  默认值：0。
+  默认值：30。
 
 * minReservedConPerCluster：jdbc触发快速负载均衡时，集群内空闲连接的最小保留百分比。默认情况下，jdbc触发快速负载均衡时，所有被筛选出来的空闲连接都会被关闭。设置该参数可以在触发快速负载均衡时，jdbc至少保留集群内空闲连接的minReservedConPerCluster%。该参数针对集群生效，如果存在多个配置了相同节点并开启快速负载均衡功能的URL都设置了该参数，则取最小值。
 
