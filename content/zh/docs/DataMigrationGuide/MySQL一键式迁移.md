@@ -396,7 +396,7 @@ sh gs_rep_portal.sh run_reverse_migration 3 &
 | start_plan3                                 | 开始默认计划plan3                                            |
 | start_current_plan                          | 开始自定义计划                                               |
 | show_plans                                  | 显示默认计划                                                 |
-| show_information                            | 显示数据库相关信息，包括mysql和openGuass端的数据库名、用户名、密码、ip、端口等 |
+| show_information                            | 显示数据库相关信息，包括mysql和openGauss端的数据库名、用户名、密码、ip、端口等 |
 | stop_plan                                   | 停止计划                                                     |
 
 用户也可以在/ops/portal/config目录的currentPlan文件中自定义迁移计划，但自定义迁移计划需要遵守以下规则：
