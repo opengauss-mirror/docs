@@ -25,7 +25,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   准备openGauss环境
 
     ```
-    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
+    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive] [--enable-perf-config]
     ```
 
 -   显示帮助信息
@@ -118,6 +118,10 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     -   当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
     -   当指定该参数时，为非交互模式，不需要进行人机交互。
+    
+-   --enable-perf-config
+
+    在preinstall结束后，调用gs_perfconfig调整操作系统配置，以使openGauss获得比较好的性能。
 
 -   -?, --help
 
