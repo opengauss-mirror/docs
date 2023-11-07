@@ -560,7 +560,7 @@
 
 - like/not like
 
-  描述：判断字符串能否匹配上LIKE后的模式字符串。opengauss的原like为大小写敏感匹配，现将其改为当```dolphin.b_compatibility_mode```为```TRUE```时大小写不敏感匹配，当```dolphin.b_compatibility_mode```为```FALSE```时大小写敏感匹配。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
+  描述：判断字符串能否匹配上LIKE后的模式字符串。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
 
   注意事项：
 
@@ -572,19 +572,13 @@
   示例：
 
   ```
-  openGauss=# SELECT 'a' like 'A' as result;
-   result
-  ------------
-           t
-  (1 row)
-  
   openGauss=# SELECT 'abc' like 'a' as result;
    result
   ------------
             f
   (1 row)
   
-  openGauss=# SELECT 'abc' like 'A%' as result;
+  openGauss=# SELECT 'abc' like 'a%' as result;
    result
   ------------
             t
