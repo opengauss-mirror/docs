@@ -4,7 +4,7 @@
 
 **取值范围**：字符串
 
-**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero,treat_bxconst_as_bit'
+**默认值**：'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero'
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报warning。同样，设置时候，如果新值非法，则报warning并且不修改老值。当前有几种场景会用到sql\_mode：
 
@@ -49,7 +49,14 @@
 
 - block_return_multi_results: 控制在使用CALL语法调用存储过程时，存储过程中可以使用select语句进行查询并返回查询语句的结果。当不设置此参数时，存储过程中的查询语在执行时会报错，开启参数后，可以正常执行并立刻返回此查询语句的结果集，不等待存储过程执行完毕。开启后，使用CALL语法调用存储过程时，限制出参必须为用户自定义变量的格式。
 
-- treat_bxconst_as_bit: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为bit类型进行存储和使用。当不设置此参数时，将b''、x''数据作为binary类型进行存储和使用。
+-   treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
+
+    |语句|不设置treat_bxconst_as_binary表现|设置treat_bxconst_as_binary表现|Mysql表现|
+    |---|---|---|---|
+    |select b'110010'|50|'2'|2|
+    |select conv(b'110010', 16, 10)|50|2|2|
+    |select b'110010' + 1;|51|3|51|
+    |create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit;|12850|34|12850|
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
