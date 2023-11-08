@@ -855,7 +855,7 @@ ALTER VIEW [ IF EXISTS ] view_name
     [ table_name [ ( column_name [, ...] ) ] ];
 {ANALYZE | ANALYSE} [ VERBOSE ]
     [ table_name [ ( column_name [, ...] ) ] ]
-    PARTITION patrition_name;
+    PARTITION partition_name;
 {ANALYZE | ANALYSE} [ VERBOSE ]
     { foreign_table_name | FOREIGN TABLES };
 {ANALYZE | ANALYSE} [ VERBOSE ]
@@ -864,7 +864,7 @@ ALTER VIEW [ IF EXISTS ] view_name
 {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE}
     table_name|index_name [CASCADE];
 {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE}
-    table_name PARTITION (patrition_name) [CASCADE];
+    table_name PARTITION (partition_name) [CASCADE];
 ```
 
 ## ANONYMOUS BLOCK<a name="section48601152113011"></a>

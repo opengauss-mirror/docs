@@ -30,7 +30,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
     ```
     { ANALYZE | ANALYSE } [ VERBOSE ]
         [ table_name [ ( column_name [, ...] ) ] ]
-        PARTITION ( patrition_name ) ;
+        PARTITION ( partition_name ) ;
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -88,7 +88,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
 -   Check the data files of the table partition.
 
     ```
-    {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
+    {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(partition_name)}[CASCADE];
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
