@@ -362,7 +362,7 @@ openGauss=# SELECT * FROM graderecord PARTITION (pass_1);
  210311 | Jerry                | 21.04                |    60
 (5 rows)
 
--- Query data in the execllent partition of the graderecord table.
+-- Query data in the excellent partition of the graderecord table.
 openGauss=# SELECT * FROM graderecord PARTITION (excellent);
  number |         name         |        class         | grade
 --------+----------------------+----------------------+-------
@@ -518,7 +518,7 @@ openGauss=# SELECT * FROM graderecord PARTITION (pass_1);
  210311 | Jerry                | 21.04                |    60
 (5 rows)
 
--- Query data in the execllent partition of the graderecord table.
+-- Query data in the excellent partition of the graderecord table.
 openGauss=# SELECT * FROM graderecord PARTITION (excellent);
  number |         name         |        class         | grade
 --------+----------------------+----------------------+-------
@@ -597,7 +597,7 @@ openGauss=# SELECT * FROM graderecord PARTITION (pass);
  210311 | Jerry                | 21.04                |    60
 (5 rows)
 
--- Query data in the execllent partition of the graderecord table.
+-- Query data in the excellent partition of the graderecord table.
 openGauss=# SELECT * FROM graderecord PARTITION (excellent);
  number |         name         |        class         | grade
 --------+----------------------+----------------------+-------
