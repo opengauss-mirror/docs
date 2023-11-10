@@ -48,3 +48,5 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/资源池化参数
     ../content/zh/docs/DatabaseReference/高效数据压缩算法相关参数
     ../content/zh/docs/DatabaseReference/备机支持写语句参数
+    ../content/zh/docs/DatabaseReference/数据导入导出
+    ../content/zh/docs/DatabaseReference/分隔符
