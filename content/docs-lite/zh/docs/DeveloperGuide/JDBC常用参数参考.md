@@ -107,3 +107,8 @@
 
 **建议**： 根据业务特征进行调整，如果基于性能或者其它方面考虑，需要关闭autocommit时，需要应用程序自己来保证事务的提交。例如，在指定的业务SQL执行完之后做显式提交，特别是客户端退出之前务必保证所有的事务已经提交。
 
+## bitToString<a name="section710434213265"></a>
+
+**作用**： 值为false时，bit或者bit(n)类型getObject返回的类型为Boolean类型；值为true时，bit或者bit(n)类型的getObject返回的结果自动转换为String类型。
+
+**建议**： 默认值为false。请根据业务特征进行调整，如果使用bit或者bit(n)类型是标准的1位插入0/1时可以设置此值为false; 而如果使用的是非标准0/1，如"1111"，那么就必须设置此值为true,否则getObject或者getBit将抛出转换错误。
