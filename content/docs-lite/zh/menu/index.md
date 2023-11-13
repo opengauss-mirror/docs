@@ -1759,6 +1759,8 @@ headless: true
 		-   [Global SysCache参数]({{< relref "./docs/DatabaseReference/Global-SysCache参数.md" >}})
 		-   [高效数据压缩算法相关参数]({{< relref "./docs/DatabaseReference/高效数据压缩算法相关参数.md" >}})
 		-   [大页内存]({{< relref "./docs/DatabaseReference/大页内存.md" >}})
+		-   [数据导入导出]({{< relref "./docs/DatabaseReference/数据导入导出.md" >}})
+		-   [分隔符]({{< relref "./docs/DatabaseReference/分隔符.md" >}})
 	-   [错误码参考]({{< relref "./docs/DatabaseReference/错误码参考.md" >}})
 	    -   [SQL标准错误码说明]({{< relref "./docs/DatabaseReference/SQL标准错误码说明.md" >}})
 	    -   [第三方库错误码说明]({{< relref "./docs/DatabaseReference/第三方库错误码说明.md" >}})
