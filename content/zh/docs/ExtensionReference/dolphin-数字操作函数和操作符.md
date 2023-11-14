@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
 
 1. 新增```DIV/MOD/XOR/^```操作符。
-2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool```函数。
+2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool/random_bytes```函数。
 3. ```atan```函数支持```atan(y, x)```用法。
 
 -   DIV
@@ -77,6 +77,38 @@
            rand
     -------------------
      0.254671605769545
+    (1 row)
+    ```
+
+-   rand\(seed int\)
+
+    描述：根据入参设置随机数种子，随后生成0.0到1.0之间的随机数。等价于setseed+random。种子的有效值范围为 [-2^63, 2^64 - 1]。
+
+    返回值类型：double precision
+
+    示例：
+
+    ```
+    openGauss=# SELECT rand(1);
+           rand
+    -------------------
+     0.0416303444653749
+    (1 row)
+    ```
+
+-   random_bytes\(len int\)
+
+    描述：生成指定长度的随机二进制buffer。长度的有效值范围为[1, 1024]。
+
+    返回值类型：blob
+
+    示例：
+
+    ```
+    openGauss=# SELECT random_bytes(1);
+     random_bytes
+    --------------
+     1F
     (1 row)
     ```
 
