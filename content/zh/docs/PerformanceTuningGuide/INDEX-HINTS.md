@@ -41,7 +41,7 @@ index_list:
 
 - **index_list**
 
-  索引的名称，使用逗号分隔。
+  索引的名称，使用逗号分隔。当加载dolpin插件时，此处可以使用PRIMARY关键字，表示使用这个表的主键索引。
 
 - **tbl_name**
 
@@ -65,5 +65,14 @@ openGauss=# explain (costs off) select * from db_1130449_tb IGNORE INDEX (index_
  Seq Scan on db_1130449_tb
    Filter: (col2 = 3)
 (2 rows)
+
+-- PRIMARY示例
+openGauss=# explain (costs off) select a from t1 force index(primary) where a > 2 order by a;
+             QUERY PLAN              
+-------------------------------------
+ [Bypass]
+ Index Only Scan using t1_pkey on t1
+   Index Cond: (a > 2)
+(3 rows)
 
 ```
