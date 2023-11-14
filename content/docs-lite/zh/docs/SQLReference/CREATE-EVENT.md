@@ -51,7 +51,7 @@ schedule: {
 }
 interval:
     quantity {YEAR | MONTH | DAY | HOUR | MINUTE | SECOND |
-              YEAR_MONTH | DAY_OUR | DAY_MINUTE | DAY_SECOND |
+              YEAR_MONTH | DAY_HOUR | DAY_MINUTE | DAY_SECOND |
               HOUR_MINUTE | HOUR_SECOND | MINUTE_SECOND}
 ```
 
