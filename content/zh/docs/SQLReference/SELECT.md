@@ -652,7 +652,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     FOR KEY SHARE行为与FOR SHARE类似，不过锁较弱：SELECT FOR UPDATE会被阻塞，但是SELECT FOR NO KEY UPDATE不会被阻塞。一个键共享锁会阻塞其他事务执行修改键值的DELETE或者UPDATE，但不会阻塞其他UPDATE，也不会阻止SELECT FOR NO KEY UPDATE、SELECT FOR SHARE或者SELECT FOR KEY SHARE。
 
-    为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，将会立即汇报一个错误，而不是等待。
+    为了避免操作等待其他事务提交，可使用NOWAIT选项，如果被选择的行不能立即被锁住，将会立即汇报一个错误，而不是等待。WAIT N选项，如果被选择的行不能立即被锁住，等待N秒（其中，N为int类型，取值范围：0 <= N <= 2147483），N秒内获取锁则正常执行，否则报错。
 
     如果在锁定子句中明确指定了表名称，则只有这些指定的表被锁定，其他在SELECT中使用的表将不会被锁定。否则，将锁定该命令中所有使用的表。
 
