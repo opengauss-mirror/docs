@@ -2,7 +2,7 @@
 
 商业规则和业务逻辑可以通过程序存储在openGauss中，这个程序就是存储过程。
 
-存储过程是SQL和PL/SQL的组合。存储过程使执行商业规则的代码可以从应用程序中移动到数据库。从而，代码存储一次能够被多个程序使用。。用户可以进行反复调用，从而减少SQL语句的重复编写数量，提高工作效率。
+存储过程是SQL和PL/SQL的组合。存储过程使执行商业规则的代码可以从应用程序中移动到数据库。从而，代码存储一次能够被多个程序使用。用户可以进行反复调用，从而减少SQL语句的重复编写数量，提高工作效率。
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
@@ -12,7 +12,7 @@
   CREATE PROCEDURE procedure_name
       [ ( {[ argname ] [ argmode ] argtype [ = expression ]}[,...]) ]
       { IS | AS } 
-      BRGIN
+      BEGIN
         procedure_body
       END
   /
@@ -74,7 +74,7 @@
 
   语法格式要求，必须写其中一个。两个相同。
 
-- **BRGIN、END**
+- **BEGIN、END**
 
   语法格式要求，必须写。
 
