@@ -3,7 +3,7 @@
 other = "Select the version and chapter of the openGauss documentation you want to view."
 
 [key_words]
-other = "openGauss,开源数据库,openGauss docs,开源社区"
+other = "openGauss,Open source database,openGauss docs,open source community"
 
 [login_text]
 other = "Login"
@@ -72,67 +72,67 @@ other = "Next"
 other = "Rating"
 
 [issue_1]
-other = "规范和低错类"
+other = "Norms and Low Error Categories"
 
 [issue_2]
-other = "易用性"
+other = "Ease of use"
 
 [issue_3]
-other = "正确性"
+other = "Correctness"
 
 [issue_4]
-other = "风险提示"
+other = "Risk Reminder"
 
 [issue_5]
-other = "内容合规"
+other = "Content Compliance"
 
 [issue_title]
-other = "有奖捉虫"
+other = "Rewarded insect catching"
 
 [issue_part]
-other = "“有虫”文档片段"
+other = "Fragment of document with insects"
 
 [issue_reason]
-other = "存在的问题"
+other = "Existing problems"
 
 [satisfaction]
-other = "您对文档的总体满意度"
+other = "Your overall satisfaction with the document"
 
 [low_score]
-other = "非常不满意"
+other = "Very dissatisfied"
 
 [high_score]
-other = "非常满意"
+other = "Very satisfied"
 
 [join_reason]
-other = "请问是什么原因让您参与到这个问题中"
+other = "May I ask what caused you to be involved in this issue"
 
 [own_job]
-other = "本职工作"
+other = "My job"
 
 [job_wanted]
-other = "求职"
+other = "Job search"
 
 [technology]
-other = "技术兴趣"
+other = "Technical Interest"
 
 [study]
-other = "学习"
+other = "Learning"
 
 [email]
-other = "您的邮箱"
+other = "Your email"
 
 [text_email]
-other = "我们可能针对您提出的问题，向您发送邮件反馈进行方案。如有获奖信息，也会通过此方式通知您。"
+other = "We may send you feedback via email regarding your questions and propose solutions. If there is any award information, we will also notify you through this method."
 
 [privacy_text]
-other = "您理解并同意，您填写并提交的内容，即视为您已充分阅读并同意openGauss的"
+other = "You understand and agree that the content you fill out and submit is deemed to have fully read and agreed to openGauss"
 
 [privacy_link]
-other = "隐私声明"
+other = "Privacy Statement"
 
 [btn_submit]
-other = "创Issue赢奖品"
+other = "Create an Issue to Win a Prize"
 
 [back]
 other = "Top"
@@ -180,12 +180,12 @@ other = "Lite"
 other = "Doc Map"
 
 [lts_version]
-other = "长期支持版本 (LTS)"
+other = "Long term Support Version (LTS)"
 [innovation_version]
-other = "社区创新版本 (Preview)"
+other = "Community Innovation Version (Preview)"
 [archive_version]
-other = "归档版本"
+other = "Archived version"
 [latest_version]
-other = "最新开发版本 (Latest)"
+other = "Latest development version"
 [version_document]
-other = "版本文档"
+other = "Version document"

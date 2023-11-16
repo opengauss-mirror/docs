@@ -4,84 +4,84 @@ title = "Doc Map"
 [[module]] 
     title = "了解"
     [[module.list]]
-        title= "关于openGauss"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/TechnicalWhitePaper/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html"
+        title= "AboutopenGauss"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/AboutopenGauss/about-openGauss.html"
     [[module.list]]
-        title= "特性描述"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/AboutopenGauss/CharacteristicDescription.html"
+        title= "Characteristic Description"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/AboutopenGauss/CharacteristicDescription.html"
     [[module.list]]
-        title= "版本介绍"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/ReleaseNotes/%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D.html"   
+        title= "versions"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/ReleaseNotes/versions.html"   
 [[module]] 
-    title = "部署"
+    title = "Installation"
     [[module.list]]
-        title= "极简版服务器安装"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85.html"
+        title= "Simplified Installation Process"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/InstallationGuide/simplified-installation-process.html"
     [[module.list]]
-        title= "极简版容器安装"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85.html"
+        title= "Container-based Installation"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/InstallationGuide/Container-based-Installation.html"
     [[module.list]]
-        title= "企业版OM安装"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85openGauss.html"  
+        title= "installing-the-opengauss"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/InstallationGuide/installing-the-opengauss.html"  
 [[module]] 
-    title = "开发"
+    title = "Development"
     [[module.list]]
-        title= "基于JDBC开发"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91.html"
+        title= "Development Based on JDBC"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DeveloperGuide/development-based-on-jdbc.html"
     [[module.list]]
-        title= "基于ODBC开发"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91.html"
+        title= "Development Based on ODBC"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DeveloperGuide/development-based-on-odbc.html"
     [[module.list]]
-        title= "基于Psycopg开发"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91.html"   
+        title= "Psycopg-Based Development"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DeveloperGuide/psycopg-based-development.html"   
     [[module.list]]
-        title= "基于libpq开发"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DeveloperGuide/%E5%9F%BA%E4%BA%8Elibpq%E5%BC%80%E5%8F%91.html"      
+        title= "Development Based on libpq"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DeveloperGuide/development-based-on-libpq.html"      
     [[module.list]]
-        title= "数据导入/导出"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DatabaseOMGuide/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE.html"           
+        title= "Importing/Exporting  Data"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DatabaseOMGuide/importing-data.html"           
 [[module]] 
-    title = "运维"
+    title = "Operations and Maintenance"
     [[module.list]]
-        title= "日常运维"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DatabaseOMGuide/%E5%90%AF%E5%81%9CopenGauss.html"
+        title= "Daily Operation"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DatabaseOMGuide/starting-and-stopping-opengauss.html"
     [[module.list]]
-        title= "备份与恢复"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DatabaseOMGuide/%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D.html"   
+        title= "Backup and Restoration"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DatabaseOMGuide/backup-and-restoration.html"   
     [[module.list]]
-        title= "升级指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DatabaseOMGuide/upgrade.html"      
+        title= "Upgrade"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DatabaseOMGuide/upgradeuguide.html"      
     [[module.list]]
-        title= "故障诊断指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DatabaseOMGuide/%E5%B8%B8%E8%A7%81%E6%95%85%E9%9A%9C%E5%AE%9A%E4%BD%8D%E6%89%8B%E6%AE%B5.html"      
+        title= "Common Fault Locating Methods"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DatabaseOMGuide/common-fault-locating-methods.html"      
     [[module.list]]
-        title= "openGauss命令集"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/ToolandCommandReference/%E5%B7%A5%E5%85%B7%E4%B8%80%E8%A7%88%E8%A1%A8.html" 
+        title= "openGaussTool and Command Reference"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/ToolandCommandReference/tool-overview.html" 
 [[module]] 
-    title = "调优"
+    title = "Optimization"
     [[module.list]]
-        title= "系统调优指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/PerformanceTuningGuide/%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98%E6%8C%87%E5%8D%97.html"
+        title= "System Optimization"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/system-optimization.html"
     [[module.list]]
-        title= "SQL调优指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/PerformanceTuningGuide/SQL%E8%B0%83%E4%BC%98%E6%8C%87%E5%8D%97.html"   
+        title= "SQL Optimization"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/sql-optimization.html   
     [[module.list]]
-        title= "TPCC性能调优指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/PerformanceTuningGuide/TPCC%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E6%B5%8B%E8%AF%95%E6%8C%87%E5%AF%BC.html"      
+        title= "TPC-C Performance Tuning Test Guide"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/tpc-c-performance-tuning-test-guide.html"      
     [[module.list]]
-        title= "WDR解读指南"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/SQLReference/WDR-Snapshot-Schema.html"       
+        title= "WDR Snapshot Schema"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/SQLReference/wdr-snapshot-schema.html"       
 [[module]] 
-    title = "工具"
+    title = "Tool"
     [[module.list]]
-        title= "统一数据库管理工具（CM）"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/ToolandCommandReference/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86.html"
+        title= "Unified Database Management Tool"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/ToolandCommandReference/unified-database-management-tool.html"
     [[module.list]]
         title= "DataKit"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/ToolandCommandReference/DataKit.html"   
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/ToolandCommandReference/datakit.html"   
     [[module.list]]
-        title= "MySQL迁移工具"
-        download = "https://docs.opengauss.org/zh/docs/5.0.0/docs/DataMigrationGuide/%E8%BF%81%E7%A7%BBMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss.html"                
+        title= "Migrating"
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/DataMigrationGuide/migrating-data-from-mysql-database-to-opengauss.html"                
 +++  
 
 
