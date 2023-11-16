@@ -64,7 +64,7 @@ title = "Doc Map"
         download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/system-optimization.html"
     [[module.list]]
         title= "SQL Optimization"
-        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/sql-optimization.html   
+        download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/sql-optimization.html"  
     [[module.list]]
         title= "TPC-C Performance Tuning Test Guide"
         download = "https://docs-opengauss.osinfra.cn/en/docs/latest/docs/PerformanceTuningGuide/tpc-c-performance-tuning-test-guide.html"      
