@@ -73,7 +73,7 @@ Session采样数据分为两级，如[图1](#fig197862247217)所示：
    SELECT sessionid, start_time, event, COUNT(*)
        FROM dbe_perf.local_active_session
    WHERE sample_time > now() - 5 / (24 * 60)
-       GROUP BY sessionid, start_time, event) as t ORDER BY SUM(t.count) OVER \(PARTITION BY t. sessionid, start_time)DESC, t.event;
+       GROUP BY sessionid, start_time, event) as t ORDER BY SUM(t.count) OVER (PARTITION BY t. sessionid, start_time)DESC, t.event;
    ```
 
 6. 最近五分钟比较占资源的SQL把资源都消耗在哪些event上
