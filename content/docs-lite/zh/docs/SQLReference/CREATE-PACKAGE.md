@@ -69,7 +69,7 @@
      声明部分，PACKAGE SPECIFICATION中声明的变量、存储过程、函数的具体定义。
 -    initialize_section
 
-     初始化变量并设置一次性的步骤。
+     初始化变量并设置一次性的步骤。首次引用包时，对于每个会话包初始化部分中的语句会执行一次。
 ## 示例<a name="section1114514478590"></a>
 
 -   CREATE PACKAGE SPECIFICATION示例
