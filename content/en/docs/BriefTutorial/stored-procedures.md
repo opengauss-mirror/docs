@@ -74,7 +74,7 @@ A stored procedure is a set of SQL statements that can implement a specific func
 
     Required for the syntax.
 
--   **procedure\_bod**y
+-   **procedure\_body**
 
     Specifies the stored procedure content.
 

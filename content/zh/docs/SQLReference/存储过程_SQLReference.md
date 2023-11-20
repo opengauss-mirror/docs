@@ -78,7 +78,7 @@
 
   语法格式要求，必须写。
 
-- **procedure\_bod**y
+- **procedure\_body**
 
   存储过程内容。
 
