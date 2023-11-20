@@ -20,6 +20,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 - table前不能添加foreign选项，包括外表、mot表的创建。
 - 默认复制源表的索引，若不希望复制索引，需要手动指定EXCLUDING INDEXES。
 - 默认复制源分区表的分区，若不希望复制分区，需要手动指定EXCLUDING PARTITION。
+- 默认复制字段的DEFAULT值，若不希望复制DEFAULT值，需要手动指定EXCLUDING DEFAULTS。
 - 对于含索引的分区表，若只指定EXCLUDING PARTITION，由于默认复制分区，将会报错，因为普通表不支持分区索引。
 - 只支持复制range分区表的分区，对于hash、list分区表，由于默认复制分区，会直接报错，需要手动指定EXCLUING PARTITION。二级分区只支持复制range-range分区，处理方法同上。
 
