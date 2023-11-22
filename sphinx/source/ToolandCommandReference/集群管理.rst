@@ -8,4 +8,4 @@
     ../content/zh/docs/ToolandCommandReference/安装和卸载工具介绍
     ../content/zh/docs/ToolandCommandReference/安全设计
     CM配置参数介绍
- 
+    ../content/zh/docs/ToolandCommandReference/CM错误日志信息参考
