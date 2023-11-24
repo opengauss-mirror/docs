@@ -1,6 +1,5 @@
-# ndpplugin 系统视图
+# NDPPlugin 系统视图
 
-pushdown_statics
 pushdown_statics视图显示下推查询基础统计信息。
 |名称|类型|描述|
 | ------------ | ------------ | ------------ |
