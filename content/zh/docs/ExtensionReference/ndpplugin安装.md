@@ -1,6 +1,6 @@
-# ndpplugin安装
+# NDPPlugin安装
 
-openGauss-5.1.0版本已经默认编译安装ndpplugin插件，使用步骤如下：
+openGauss-5.1.0版本已经默认编译安装NDPPlugin插件，使用步骤如下：
 
 1.获取LibSmartScan_5.1.0_openEuler_aarch64.tar.gz并解压。
 ```

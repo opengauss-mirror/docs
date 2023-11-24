@@ -1,6 +1,6 @@
-# ndpplugin 查看视图
+# NDPPlugin 查看视图
 
-ndpplugin视图用于查看查询语句下推详细统计信息，帮助用户判断语句下推情况。
+NDPPlugin视图用于查看查询语句下推详细统计信息，帮助用户判断语句下推情况。
 
 ```
 openGauss=# select * from pushdown_statics();
