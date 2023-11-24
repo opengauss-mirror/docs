@@ -9,8 +9,11 @@ dssserver是独立进程，直接管理磁阵裸设备，并对外提供类似�
 启动dssserver进程
 
 ```
-dssserver -D $DSS_HOME
+dssserver -D $DSS_HOME [-M]
 ```
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>-M为DSS MAINTAIN模式，仅供开发者调试及相关工具配合使用，随意使用可能导致数据无法恢复，严禁多节点MAINTAIN模式启动
 
 ## 参数说明<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_s2298a1889844418daec3743b9a4b57fb"></a>
 
