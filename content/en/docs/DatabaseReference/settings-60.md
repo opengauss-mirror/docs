@@ -145,11 +145,11 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## wal\_buffers<a name="en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_sce544e842a94430abad77f1ae64406af"></a>
 
-**Parameter description**: Specifies the number of  **XLOG\_BLCKSZ**  used for storing WAL data. The size of each  **XLOG\_BLCKSZ**  is 8 KB.
+**Parameter description**: Specifies the number of  **XLOG\_BLCKSZ**  used for storing WAL data. The size of each  **XLOG\_BLCKSZ**  is 8 kB.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range:**  –1 to 2<sup>18</sup>. The minimum value is –1 and the maximum value is 262144. The unit is 8 KB.
+**Value range:**  –1 to 2<sup>18</sup>. The minimum value is –1 and the maximum value is 262144. The unit is 8 kB.
 
 -   If this parameter is set to –1, the value of  **wal\_buffers**  is automatically adjusted to 1/64 of  **shared\_buffers**. The minimum value is 8  **XLOG\_BLCKSZ**  and the maximum value is 2048  **XLOG\_BLCKSZ**, if the automatically adjusted value is less than the minimum value, the value is adjusted to the minimum value. If the automatically adjusted value is greater than the maximum value, the value is adjusted to the maximum value.
 -   If this parameter is set to a value other than  **–1**  and smaller than  **4**, the value  **4**  is used.
@@ -211,9 +211,9 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 This parameter is a fixed INTERNAL parameter and cannot be modified.
 
-**Value range**: an integer. The unit is 8 KB.
+**Value range**: an integer. The unit is 8 kB.
 
-**Default value**:  **16 MB**  \(2048 x 8 KB\)
+**Default value**:  **16 MB**  \(2048 x 8 kB\)
 
 ## walwriter\_cpu\_bind<a name="section15983031593"></a>
 

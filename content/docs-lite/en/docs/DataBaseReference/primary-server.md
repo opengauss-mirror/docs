@@ -118,9 +118,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 4096 to 1072693248. The unit is KB.
+**Value range**: an integer ranging from 4096 to 1072693248. The unit is kB.
 
-**Default value**: 4 MB \(4096 KB\)
+**Default value**: 4 MB \(4096 kB\)
 
 ## walsender\_max\_send\_size<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sbef7a545706e4995b7028b980cdcb35a"></a>
 
@@ -128,9 +128,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 8 to  _INT\_MAX_. The unit is KB.
+**Value range**: an integer ranging from 8 to  _INT\_MAX_. The unit is kB.
 
-**Default value**:  **8 MB**  \(8192 KB\)
+**Default value**:  **8 MB**  \(8192 kB\)
 
 ## enable\_data\_replicate<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_sa5d3c2e3d3954dd9a4b9c84024c7b63c"></a>
 

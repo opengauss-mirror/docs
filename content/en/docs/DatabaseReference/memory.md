@@ -24,7 +24,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 128 x 1024 to  *INT\*MAX_/2. The unit is KB.
+**Value range**: an integer ranging from 128 x 1024 to  *INT\*MAX_/2. The unit is kB.
 
 **Default value**:  **512 MB**
 
@@ -51,13 +51,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 2 x 1024 x 1024 to  *INT\*MAX_. The unit is KB.
+**Value range**: an integer ranging from 2 x 1024 x 1024 to  *INT\*MAX_. The unit is kB.
 
 **Default value**:  **12 GB**
 
 **Setting suggestions**:
 
-The value on the database node is determined based on the physical memory of the system and the number of master database nodes deployed on a single node. The recommended calculation formula is as follows: \(Physical memory – vm.min\_free\_kbytes\) \\ x 0.7 /\(1 + Number of primary nodes\) This parameter is used to prevent node OOM caused by memory usage increase, ensuring system reliability.  **vm.min\_free\_kbytes**  indicates the OS memory reserved for the kernel to receive and send data. Its value is at least 5% of the total memory. That is, max\_process\_memory = Physical memory x 0.665 / \(1 + Number of primary nodes\)
+The value on the database node is determined based on the physical memory of the system and the number of master database nodes deployed on a single node. The recommended calculation formula is as follows: \(Physical memory – vm.min\_free\_kBytes\) \\ x 0.7 /\(1 + Number of primary nodes\) This parameter is used to prevent node OOM caused by memory usage increase, ensuring system reliability.  **vm.min\_free\_kbytes**  indicates the OS memory reserved for the kernel to receive and send data. Its value is at least 5% of the total memory. That is, max\_process\_memory = Physical memory x 0.665 / \(1 + Number of primary nodes\)
 
 >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
 >If this parameter is set to a value greater than the physical memory of the server, the OS OOM problem may occur.
@@ -93,9 +93,9 @@ During the query, the title meaning string "MemoryContext white list:" is added 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 16 to 1073741823. The unit is 8 KB.
+**Value range**: an integer ranging from 16 to 1073741823. The unit is 8 kB.
 
-The value of  **shared\_buffers**  must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **shared\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to  **BLCKSZ**.
+The value of  **shared\_buffers**  must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 kB**. That is, the value of  **shared\_buffers**  must be an integer multiple of 8 kB. The minimum value changes according to  **BLCKSZ**.
 
 **Default value**:  **8 MB**
 
@@ -111,9 +111,9 @@ If  **shared\_buffers**  is set to a larger value, increase the value of  **chec
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 16 to 1073741823. The unit is 8 KB.
+**Value range**: an integer ranging from 16 to 1073741823. The unit is 8 kB.
 
-The value of  **segment\_buffers** must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 KB**. That is, the value of  **segment\_buffers**  must be an integer multiple of 8 KB. The minimum value changes according to the value of  **BLCKSZ**.
+The value of  **segment\_buffers** must be an integer multiple of  **BLCKSZ**. Currently,  **BLCKSZ**  is set to  **8 kB**. That is, the value of  **segment\_buffers**  must be an integer multiple of 8 kB. The minimum value changes according to the value of  **BLCKSZ**.
 
 **Default value**: 8 MB
 
@@ -129,7 +129,7 @@ If this parameter is set to a small value, it takes a long time to create a segm
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 16384 to 2147483647. The unit is KB.
+**Value range**: an integer ranging from 16384 to 2147483647. The unit is kB.
 
 **Default value**:  **2 GB**
 
@@ -155,7 +155,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 A session allocates temporary buffers based on the value of  **temp\_buffers**. If a large value is set in a session that does not require many temporary buffers, only the overhead of one buffer descriptor is added. If a buffer is used, additional 8192 bytes will be consumed for it.
 
-**Value range**: an integer ranging from 100 to 1073741823. The unit is 8 KB.
+**Value range**: an integer ranging from 100 to 1073741823. The unit is 8 kB.
 
 **Default value**:  **1 MB**
 
@@ -182,7 +182,7 @@ In a complex query, several sort or hash operations may run in parallel; each op
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 64 to 2147483647. The unit is KB.
+**Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
 
 **Default value**:  **64 MB**
 
@@ -200,7 +200,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: 0 or an integer greater than 32 MB. The default unit is KB.
+**Value range**: 0 or an integer greater than 32 MB. The default unit is kB.
 
 **Default value**:  **0**
 
@@ -214,7 +214,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: 0 or an integer greater than 32 MB. The default unit is KB.
+**Value range**: 0 or an integer greater than 32 MB. The default unit is kB.
 
 **Default value**:  **0**
 
@@ -228,7 +228,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 1024 to  *INT\*MAX_. The unit is KB.
+**Value range**: an integer ranging from 1024 to  *INT\*MAX_. The unit is kB.
 
 **Default value**:  **16 MB**
 
@@ -247,7 +247,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >Such operations may be performed in multiple running sessions concurrently. Therefore, the total memory used may be many times the value of  **psort\_work\_mem**.
 
-**Value range**: an integer ranging from 64 to 2147483647. The unit is KB.
+**Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
 
 **Default value**:  **512 MB**
 
@@ -270,18 +270,18 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 100 to  *INT\*MAX_. The unit is KB.
+**Value range**: an integer ranging from 100 to  *INT\*MAX_. The unit is kB.
 
 **Default value**:
 
--   If the value of  **ulimit -s**  minus 640 KB is greater than or equal to 2 MB, the default value of this parameter is  **2 MB**.
--   If the value of  **ulimit -s**  minus 640 KB is less than 2 MB, the default value of this parameter is the value of  **ulimit -s**  minus 640 KB.
+-   If the value of  **ulimit -s**  minus 640 kB is greater than or equal to 2 MB, the default value of this parameter is  **2 MB**.
+-   If the value of  **ulimit -s**  minus 640 kB is less than 2 MB, the default value of this parameter is the value of  **ulimit -s**  minus 640 kB.
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >When setting this parameter, comply with the following principles:
->-   The database needs to reserve 640 KB stack depth. Therefore, the ideal value of this parameter is the actual stack size limit enforced by the OS kernel \(as set by  **ulimit -s**\) minus 640 KB.
->-   If the value of this parameter is greater than the value of  **ulimit -s**  minus 640 KB before the database is started, the database fails to be started. During database running, if the value of this parameter is greater than the value of  **ulimit -s**  minus 640 KB, this parameter does not take effect.
->-   If the value of  **ulimit -s**  minus 640 KB is less than the minimum value of this parameter, the database fails to be started.
+>-   The database needs to reserve 640 kB stack depth. Therefore, the ideal value of this parameter is the actual stack size limit enforced by the OS kernel \(as set by  **ulimit -s**\) minus 640 kB.
+>-   If the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB before the database is started, the database fails to be started. During database running, if the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB, this parameter does not take effect.
+>-   If the value of  **ulimit -s**  minus 640 kB is less than the minimum value of this parameter, the database fails to be started.
 >-   Setting this parameter to a value greater than the actual kernel limit means that a running recursive function may crash an individual backend process.
 >-   Since not all OSs provide this function, you are advised to set a specific value for this parameter.
 >-   The default value is  **2 MB**, which is relatively small and does not easily cause system breakdown.
@@ -292,7 +292,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 16384 to 1073741823. The unit is KB.
+**Value range**: an integer ranging from 16384 to 1073741823. The unit is kB.
 
 **Default value**:  **1 GB**
 
@@ -306,7 +306,7 @@ Column-store tables use the shared buffer specified by  **cstore\_buffers**  ins
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 256 to 2147483647. The unit is KB.
+**Value range**: an integer ranging from 256 to 2147483647. The unit is kB.
 
 **Default value**:  **16 MB**
 
@@ -333,6 +333,6 @@ If  **enable\_global\_plancache** is enabled,  **local\_syscache\_threshold** do
 
 If  **enable\_global\_syscache**  and  **enable\_thread\_pool**  are enabled, this parameter indicates the total cache size of the current thread and sessions bound to the current thread.
 
-**Value range**: an integer ranging from 1 x 1024 to 512 x 1024. The unit is KB.
+**Value range**: an integer ranging from 1 x 1024 to 512 x 1024. The unit is kB.
 
 **Default value**: **256MB**

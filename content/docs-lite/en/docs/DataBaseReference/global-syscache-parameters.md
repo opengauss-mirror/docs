@@ -21,7 +21,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 The  **enable\_global\_syscache**  parameter must be enabled.
 
-**Value range**: an integer ranging from 16384 to 1073741824. The unit is KB.
+**Value range**: an integer ranging from 16384 to 1073741824. The unit is kB.
 
 Default value:  **65536**
 
@@ -31,6 +31,6 @@ That is,  **global\_syscache\_threshold**  =  **min\(count\(hot dbs\)**,  **coun
 
 The number of hot databases refers to the number of frequently accessed databases. In thread pool mode, the number of threads is the sum of the number of threads in the thread pool and the number of background threads. In non-thread pool mode, the number of hot databases is used.
 
-**memofdb**  indicates the average memory allocated to each database. The background noise memory of each database is 2 MB. Each time a table or index is added, 11 KB memory is added.
+**memofdb**  indicates the average memory allocated to each database. The background noise memory of each database is 2 MB. Each time a table or index is added, 11 kB memory is added.
 
 If this parameter is set to a small value, memory is frequently evicted, and a large number of memory fragments cannot be recycled. As a result, memory control fails.

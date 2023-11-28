@@ -234,7 +234,7 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is KB.
+**Value range**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is kB.
 
 **Default value**:  **4 MB**
 
