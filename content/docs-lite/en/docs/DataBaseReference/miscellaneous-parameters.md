@@ -76,7 +76,7 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 This parameter is a fixed INTERNAL parameter and cannot be modified.
 
-**Unit**: 8 KB
+**Unit**: 8 kB
 
 **Default value**: 131072, that is, 1 GB
 

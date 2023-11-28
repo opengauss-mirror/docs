@@ -11,7 +11,7 @@ openGauss provides multiple methods to set GUC parameters for databases, users, 
 
 -   For parameters using units, specify their units during the setting, or default units are used.
     -   The default units are specified in the **unit** column of **pg\_settings**.
-    -   The unit of memory can be KB, MB, or GB.
+    -   The unit of memory can be kB, MB, or GB.
     -   The unit of time can be ms, s, min, h, or d.
 
 

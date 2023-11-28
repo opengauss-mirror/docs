@@ -358,7 +358,7 @@ You are not advised to set  **cgroup\_name**  and  **session\_respool**  at the 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 5 x 1024 to 50% of  **max\_process\_memory**. The unit is KB.
+**Value range**: an integer ranging from 5 x 1024 to 50% of  **max\_process\_memory**. The unit is kB.
 
 **Default value**:  **5MB**
 
@@ -381,7 +381,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 10 x 1024 to 50% of  **max\_process\_memory**. The unit is KB.
+**Value range**: an integer ranging from 10 x 1024 to 50% of  **max\_process\_memory**. The unit is kB.
 
 **Default value:** **10 MB**
 

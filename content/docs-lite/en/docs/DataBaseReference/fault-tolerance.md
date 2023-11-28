@@ -60,9 +60,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: an integer ranging from 8 to 128. The unit is KB.
+**Value range**: an integer ranging from 8 to 128. The unit is kB.
 
-**Default value**:  **8 KB**
+**Default value**:  **8 kB**
 
 ## max\_cn\_temp\_file\_size<a name="en-us_topic_0283137273_en-us_topic_0237124739_section37665521353"></a>
 
@@ -70,7 +70,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: an integer ranging from 0 to 10485760. The unit is KB.
+**Value range**: an integer ranging from 0 to 10485760. The unit is kB.
 
 **Default value**:  **5 GB**
 

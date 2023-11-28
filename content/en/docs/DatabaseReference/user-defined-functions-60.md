@@ -6,7 +6,7 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer. The value range is from 200 x 1024 to  _max\_process\_memory_  and the unit is KB.
+**Value range**: an integer. The value range is from 200 x 1024 to  _max\_process\_memory_  and the unit is kB.
 
 **Default value**:  **200 MB**
 
@@ -16,7 +16,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 KB to 2147483647 KB. The unit can also be MB or GB.  **0**  indicates that the memory is not limited.
+**Value range**: an integer ranging from 0 kB to 2147483647 kB. The unit can also be MB or GB.  **0**  indicates that the memory is not limited.
 
 **Default value**:  **0**
 
@@ -26,7 +26,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-Value range: an integer ranging from 0KB to 2147483647KB. The unit can also be MB or GB.
+Value range: an integer ranging from 0kB to 2147483647kB. The unit can also be MB or GB.
 
 **Default value**:  **1GB**
 
