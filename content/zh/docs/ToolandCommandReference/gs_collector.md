@@ -42,8 +42,9 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p8657174819262"><a name="zh-cn_topic_0237152334_p8657174819262"></a><a name="zh-cn_topic_0237152334_p8657174819262"></a>DataNode</p>
 <p id="zh-cn_topic_0237152334_p46574483267"><a name="zh-cn_topic_0237152334_p46574483267"></a><a name="zh-cn_topic_0237152334_p46574483267"></a>ClusterManager</p>
+<p id="zh-cn_topic_0237152334_p46574483267"><a name="zh-cn_topic_0237152334_p46574483267"></a><a name="zh-cn_topic_0237152334_p46574483267"></a>DSS</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集DataNode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237152334_ul122531334158"></a><a name="zh-cn_topic_0237152334_ul122531334158"></a><ul id="zh-cn_topic_0237152334_ul122531334158"><li>收集DataNode的pg_log和gs_profile</li><li>收集ClusterManager的日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>om</li><li>gs_ctl</li><li>gs_guc</li><li>gs_initdb</li></ul><li>收集资源池化日志信息包括：<a name="zh-cn_topic_0237152334_ul19311954111513"></a><a name="zh-cn_topic_0237152334_ul19311954111513"></a><ul id="zh-cn_topic_0237152334_ul19311954111513"><li>$DSS_HOME/log</li><li>pg_log/DMS</li><li>pg_log/DSS</li></ul>
 </li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p1014133162314"><a name="zh-cn_topic_0237152334_p1014133162314"></a><a name="zh-cn_topic_0237152334_p1014133162314"></a>是</p>
@@ -83,7 +84,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p566195453213"><a name="zh-cn_topic_0237152334_p566195453213"></a><a name="zh-cn_topic_0237152334_p566195453213"></a>DataNode</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p0174312313"><a name="zh-cn_topic_0237152334_p0174312313"></a><a name="zh-cn_topic_0237152334_p0174312313"></a>通过时间筛选收集xlog。</p>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p0174312313"><a name="zh-cn_topic_0237152334_p0174312313"></a><a name="zh-cn_topic_0237152334_p0174312313"></a>通过时间筛选收集xlog。资源池化模式通过指定文件数量，收集磁阵中最新生成的xlog。</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p16174392310"><a name="zh-cn_topic_0237152334_p16174392310"></a><a name="zh-cn_topic_0237152334_p16174392310"></a>否</p>
 </td>
@@ -93,6 +94,26 @@
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>*</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集计划复现信息：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>用户输入*表示收集所有数据库上的计划复现信息。</li><li>用户输入具体的数据库名称表示收集指定数据库上的计划复现信息。</li></ul>
+</div>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237152334_row6136229183317"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p9138429193316"><a name="zh-cn_topic_0237152334_p9138429193316"></a><a name="zh-cn_topic_0237152334_p9138429193316"></a>DssConfig</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>*</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集dss配置文件：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>dss_inst.ini</li><li>dss_vg_conf.ini</li></ul>
+</div>
+</td>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237152334_row6136229183317"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p9138429193316"><a name="zh-cn_topic_0237152334_p9138429193316"></a><a name="zh-cn_topic_0237152334_p9138429193316"></a>DssDiskInfo</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>vgname</p><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>pri_vgname</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集vgname、pri_vgname信息包括：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>卷组和磁盘使用信息。</li><li>磁盘信息。</li><li>LUN及注册信息。</li></ul>
 </div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
@@ -166,6 +187,8 @@
 
   Interval和Count可以不指定，如果没有指定Count，则默认收集一次。如果没有指定Interval则表示间隔为0秒，Interval和Count的值不能小于0。
 
+  FileNumber的值不能小于0。
+
   如果不指定则使用默认的配置文件。
 
   配置文件格式采用json格式，模板如下：
@@ -174,7 +197,7 @@
   {
       "Collect":
       [
-          {"TypeName": "name", "Content":"value","Interval":"seconds", "Count":"count"}
+          {"TypeName": "name", "Content":"value","Interval":"seconds", "Count":"count", "FileNumber":"number"}
       ]
   }
   ```
@@ -183,6 +206,7 @@
   >
   >TypeName和对应的Content取值范围见表1gs\_collector内容收集对照表。
   >对于Log、CoreDump、Config和XLog四种类型，Interval和Count参数不生效。
+  >FileNumber仅用于资源池化模式收集XLog，指定收集的XLog文件数量。
 
   默认配置文件内容如下：
 
@@ -190,10 +214,12 @@
   {
   "Collect":
   [
-  {"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1"},
-  {"TypeName": "Log", "Content" : "DataNode,ClusterManager", "Interval":"0", "Count":"1"},
-  {"TypeName": "Database", "Content": "pg_locks,pg_stat_activity,pg_thread_wait_status","Interval":"0", "Count":"1"},
-  {"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1"}
+  {"TypeName": "System", "Content":"RunTimeInfo, HardWareInfo","Interval":"0", "Count":"1", "FileNumber":"0"},
+  {"TypeName": "Log", "Content" : "DataNode,ClusterManager,DSS", "Interval":"0", "Count":"1", "FileNumber":"0"},
+  {"TypeName": "Database", "Content": "pg_locks,pg_stat_activity,pg_thread_wait_status","Interval":"0", "Count":"1", "FileNumber":"0"},
+  {"TypeName": "Config", "Content": "DataNode", "Interval":"0", "Count":"1", "FileNumber":"0"},
+  {"TypeName": "DssConfig", "Content": "DataNode", "Interval":"0", "Count":"1", "FileNumber":"0"},
+  {"TypeName": "DssDiskInfo", "Content": "vgname, pri_vgname", "Interval":"0", "Count":"1", "FileNumber":"0"}
   ]
   }
   ```
@@ -221,6 +247,8 @@
     日志收集时的收集速率，输入格式为非负整数，单位为MB/s。
 
     该参数主要是为了防止日志收集过程中产生过高的磁盘或网络IO，导致数据库节点故障（如果它们与$GAUSSLOG/$PGHOST部署在同一个磁盘上）。该值应当不超过openGauss内上述磁盘IO与网络IO速率的最小值的1/3。
+
+    资源池化下允许指定该参数，但是不生效。
 
 -   -?, --help
 
@@ -313,3 +341,102 @@ tar -zxvf log_20200624_134548540916.tar.gz
 ./gs_profile/dn_6001_6002/postgresql-2020-06-24_114043.prf
 ```
 
+资源池化模式查看收集到的统计信息。
+
+```
+tar -zxvf $GAUSSLOG/collector_20231128_175344.tar.gz
+collector_20231128_175344/
+collector_20231128_175344/plat1.tar.gz
+collector_20231128_175344/Detail.log
+collector_20231128_175344/Summary.log
+cd collector_20231128_175344/
+tar -zxvf plat1.tar.gz
+plat1/
+plat1/planSimulatorfiles/
+plat1/gstackfiles/
+plat1/catalogfiles/
+plat1/catalogfiles/dn_6001_pg_thread_wait_status_20231128_175353339795.csv
+plat1/catalogfiles/gs_clean_20231128_175353466332.txt
+plat1/catalogfiles/dn_6001_pg_stat_activity_20231128_175353203128.csv
+plat1/catalogfiles/dn_6001_pg_locks_20231128_175353066230.csv
+plat1/logfiles/
+plat1/logfiles/log_20231128_175354071864.tar.gz
+plat1/configfiles/
+plat1/configfiles/pg_cotrol
+plat1/configfiles/config_20231128_175355276285/
+plat1/configfiles/config_20231128_175355276285/dn_6001/
+plat1/configfiles/config_20231128_175355276285/dn_6001/pg_ident.conf
+plat1/configfiles/config_20231128_175355276285/dn_6001/postgresql.conf
+plat1/configfiles/config_20231128_175355276285/dn_6001/pg_hba.conf
+plat1/configfiles/config_20231128_175355276285/dn_6001/gaussdb.state
+plat1/systemfiles/
+plat1/systemfiles/database_system_info_20231128_175349300695.txt
+plat1/systemfiles/OS_information_20231128_175345132506.txt
+plat1/xlogfiles/
+plat1/coreDumpfiles/
+plat1/dssdiskinfo/
+plat1/dssdiskinfo/disk/
+plat1/dssdiskinfo/disk/p0/
+plat1/dssdiskinfo/disk/p0/root_ft_block
+plat1/dssdiskinfo/disk/p0/vg_header
+plat1/dssdiskinfo/disk/p0/volume_ctrl
+plat1/dssdiskinfo/disk/p0/core_ctrl
+plat1/dssdiskinfo/disk/data/
+plat1/dssdiskinfo/disk/data/root_ft_block
+plat1/dssdiskinfo/disk/data/vg_header
+plat1/dssdiskinfo/disk/data/volume_ctrl
+plat1/dssdiskinfo/disk/data/core_ctrl
+plat1/dssdiskinfo/inq/
+plat1/dssdiskinfo/inq/lun
+plat1/dssdiskinfo/inq/reg
+plat1/dssdiskinfo/vg_info
+plat1/dssconfigfiles/
+plat1/dssconfigfiles/dss_vg_conf.ini
+plat1/dssconfigfiles/dss_inst.ini
+cd plat1/logfiles/
+tar -zxvf log_20231128_175354071864.tar.gz
+./
+./cm/
+./cm/cm_client/
+./cm/cm_client/dss-2023-11-28_153931-current.log
+./cm/cm_client/dms_res-2023-11-28_153936-current.log
+./cm/cm_agent/
+./cm/cm_agent/pg_log/
+./cm/cm_agent/pg_log/postgresql-2023-11-28_073928.log
+./cm/cm_agent/system_alarm-2023-11-28_153928-current.log
+./cm/cm_agent/cm_agent-2023-11-28_153928-current.log
+./cm/cm_ctl/
+./cm/cm_ctl/cm_ctl-2023-11-28_153742-current.log
+./cm/cm_server/
+./cm/cm_server/system_alarm-2023-11-28_153928-current.log
+./cm/cm_server/key_event-2023-11-28_153928-current.log
+./cm/cm_server/cm_server-2023-11-28_153928-current.log
+./cm/om_monitor/
+./cm/om_monitor/om_monitor-2023-11-28_153800-current.log
+./cm/om_monitor/system_alarm-2023-11-28_153800-current.log
+./pg_log/
+./pg_log/DMS/
+./pg_log/DMS/dms.rlog
+./pg_log/dn_6001/
+./pg_log/dn_6001/postgresql-2023-11-28_153934.log
+./pg_log/DSS/
+./pg_log/DSS/dss.rlog
+./bin/
+./bin/gs_guc/
+./bin/gs_guc/gs_guc-2023-11-28_153911-current.log
+./bin/gs_cgroup/
+./bin/gs_cgroup/gs_cgroup-2023-11-28_153446.log
+./bin/gs_initdb/
+./bin/gs_initdb/gs_initdb-2023-11-28_153804-current.log
+./gs_profile/
+./gs_profile/dn_6001_6002/
+./gs_profile/dn_6001_6002/postgresql-2023-11-28_153934.prf
+./om/
+./om/gs_local-2023-11-28_153139.log
+./om/gs_preinstall-2023-11-28_153108.log
+./om/gs_install-2023-11-28_153658.log
+./DSSLog/
+./DSSLog/dsscmd.rlog
+./DSSLog/dssinstance.rlog
+
+```
