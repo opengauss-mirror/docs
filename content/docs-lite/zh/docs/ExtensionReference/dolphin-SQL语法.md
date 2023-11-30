@@ -16,7 +16,7 @@
 
 -   **[ALTER VIEW](dolphin-ALTER-VIEW.md)**  
 
--   **[ANALYZE | ANALYSE](dolphin-ANALYZE-ANALYSE.md)**
+-   **[ANALYZE](dolphin-ANALYZE.md)**
 
 -   **[AST](dolphin-AST.md)**
 

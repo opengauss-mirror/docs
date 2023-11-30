@@ -29,7 +29,7 @@
 -   修改表分区主语法。
 
     ```
-    ALTER TABLE [ IF EXISTS ] { table_name  [*] | ONLY table_name | ONLY ( table_name  )}
+    ALTER TABLE [ IF EXISTS ] { table_name  [*] | (ONLY) table_name | (ONLY) ( table_name  )}
         action [, ... ];
     ```
 
@@ -62,7 +62,7 @@
 
       ```
       EXCHANGE PARTITION { ( partition_name ) | FOR ( partition_value [, ...] ) } 
-          WITH TABLE {[ ONLY ] ordinary_table_name | ordinary_table_name * | ONLY ( ordinary_table_name )} 
+          WITH TABLE {[ (ONLY) ] ordinary_table_name | ordinary_table_name * | (ONLY) ( ordinary_table_name )} 
           [ { WITH | WITHOUT } VALIDATION ] [ VERBOSE ] [ UPDATE GLOBAL INDEX ]
       ```
 
@@ -196,7 +196,7 @@
 -   修改表分区名称的语法。
 
     ```
-    ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name  )}
+    ALTER TABLE [ IF EXISTS ] { table_name [*] | (ONLY) table_name | (ONLY) ( table_name  )}
         RENAME PARTITION { partion_name | FOR ( partition_value [, ...] ) } TO partition_new_name;
     ```
 

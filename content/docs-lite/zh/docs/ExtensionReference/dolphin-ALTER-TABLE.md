@@ -14,7 +14,7 @@
 -   修改表的定义。
 
     ```
-    ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
+    ALTER TABLE [ IF EXISTS ] { table_name [*] | (ONLY) table_name | (ONLY) ( table_name ) }
         action [, ... ];
     ```
 
