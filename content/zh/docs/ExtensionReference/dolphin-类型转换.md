@@ -8,6 +8,7 @@
 - CHAR/VARCHAR/TEXT/BINARY/VARBINARY/TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 - ENUM/SET/JSON
 
+另外，增加了DATETIME/TIMESTAMP向BOOL的转换规则。
 其中，两个类型间的转换规则存在隐式（IMPLICIT, i）、赋值（ASSIGNMENT, a）、显式（EXPLICIT, e），三个级别，可通过系统表 pg_cast 的 castcontext 字段进行查看。三个级别的转换规则适用范围如下：
 
 - 'e'：表示只支持显式转换（使用CAST或::语法）。
@@ -81,6 +82,7 @@
 |ENUM|按对应显示格式字符串转换，转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|按对应显示格式字符串转换，转换为SET对应Lable的项|转换级别为赋值|
 |JSON|按对应显示格式字符串转换，双引号包裹|转换级别为显式|
+|BOOL|正常合法时间为TRUE，但全0时间为FALSE|转换级别为赋值|
 
 #### 源类型：TIME
 
