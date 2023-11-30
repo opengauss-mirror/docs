@@ -1,15 +1,6 @@
-// 本文件为非搜索的其他功能相关代码如上下翻页、面包屑内容等
-
-// 本函数为模拟a标签打开新网页进而避免使用window.open被拦截
-function openUrl(url = "#", target = "_blank") {
-  let tempALink = document.createElement("a");
-  tempALink.setAttribute("target", target);
-  tempALink.setAttribute("id", "openWin");
-  tempALink.setAttribute("href", url);
-  document.body.appendChild(tempALink);
-  document.getElementById("openWin").click();
-  document.body.removeChild(tempALink);
-}
+/**
+ * @file 本文件为非搜索的其他功能相关代码如上下翻页、面包屑内容等
+ */
 // 面包屑内容的读取与生成
 function getTreeLink() {
   setTimeout(function () {
@@ -133,35 +124,6 @@ $(function ($) {
     $("#menu-top-mobile .menu-select-box .option").toggleClass("option-show");
     $(".icon-servision").toggleClass("icon-open");
     e.stopPropagation();
-  });
-  // 回到顶部
-  $("#title-evaluate .gotop").click(function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-  // 意见反馈
-  $(".question").click(function () {
-    const nowHref = location.pathname.replace("html", "md");
-    const hrefArray = nowHref.split("/");
-    const version = hrefArray[3];
-    const lang = hrefArray[1];
-    let targetHref = "";
-    if (version.includes("lite")) {
-      targetHref = nowHref.replace(
-        `/${lang}/docs/${version}/`,
-        `/${version
-          .replace("-lite", "")
-          .replace("latest", "master")}/content/docs-lite/${lang}/`
-      );
-    } else {
-      targetHref = nowHref.replace(
-        `/${lang}/docs/${version}/`,
-        `/${version.replace("latest", "master")}/content/${lang}/`
-      );
-    }
-    openUrl("https://gitee.com/opengauss/docs/blob" + targetHref);
   });
   getTreeLink();
   $(document).ready(function () {

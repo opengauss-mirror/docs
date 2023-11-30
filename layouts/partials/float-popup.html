@@ -1,0 +1,41 @@
+<div class="o-popup1">
+  <div class="icon-cancel">{{ partial "svg/icon-cancel.html" . }}</div>
+  <div class="slider">
+    <p class="slider-title">
+      您对
+      <span class="title-name"> openGauss文档 </span>
+      的整体满意度如何？
+    </p>
+    <div class="slider-body">
+      <div class="slider-tip">0</div>
+      <div class="slider-tip-mb"></div>
+      <div class="slider-track">
+        <div class="slider-handle" id="sliderHandle"></div>
+        <div class="mark">
+          <div class="item-box"></div>
+        </div>
+        <div class="pre-mark"></div>
+      </div>
+    </div>
+    <div class="grade-info"><span>0-不满意</span><span>10-非常满意</span></div>
+  </div>
+  <div class="reason">
+    <div class="input-area">
+      <textarea id="textarea-input" maxlength="500"></textarea>
+      <p><span>0</span>/500</p>
+    </div>
+    <p class="more-info">
+      感谢您的反馈，如需帮助可联系<a
+        href="mailto:contact@opengauss.org"
+        >contact@opengauss.org
+      </a>
+    </p>
+    <div class="submit-btn">
+      <button class="o-button">提交</button>
+    </div>
+  </div>
+  <div class="submit-btn-mb">
+    <button class="o-button cancel-btn">取消</button>
+    <button class="o-button confirm-btn forbidden">确认</button>
+  </div>
+</div>

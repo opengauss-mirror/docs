@@ -1,0 +1,19 @@
+<div class="float-mobile">
+  <div class="float-head">
+    <div class="head-title" @click="toggleDialogVisible">
+      <div class="icon-box icon-smile">
+        {{ partial "svg/icon-smile-mobile.html" . }}
+      </div>
+      <p>
+        您对
+        <span class="title-name"> openGauss文档 </span>
+        的整体满意度如何？
+      </p>
+    </div>
+    <div class="icon-cancel">{{ partial "svg/icon-cancel.html" . }}</div>
+  </div>
+  <div class="float-content">
+    <div class="float-mask"></div>
+    {{ partial "float-popup.html" . }}
+  </div>
+</div>
