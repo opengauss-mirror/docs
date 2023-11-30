@@ -1,8 +1,6 @@
 # PG\_PREPARED\_STATEMENTS<a name="ZH-CN_TOPIC_0289900229"></a>
 
-PG\_PREPARED\_STATEMENTS视图能够显示当前会话或其他会话以及整个数据库实例的预备语句。当通过"select * from pg_prepared_statement()"，即不传入参数查看视图时，可以查看当前会话的所以预备语句。
-当通过"select * from pg_prepared_statement(sessionid)",即传入参数（参数为需要查询会话的id）查看视图时能够显示指定会话id的预备语句，若传入参数为0时，能够显示整个数据库实例的预备语句。
-当不传入参数时，即查询当前会话的预备语句时，视图只显示"name","statement","prepare_time","parameter_types","from_sql"字段。传入参数时，视图能显示所有字段。
+PG\_PREPARED\_STATEMENTS视图整个数据库实例的预备语句。
 
 **表 1**  PG\_PREPARED\_STATEMENTS字段
 
@@ -15,21 +13,7 @@ PG\_PREPARED\_STATEMENTS视图能够显示当前会话或其他会话以及整�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_r70b979ea9a8c44088f169a2ed862a5e8"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a>sessionid</p>
-</td>
-<td class="cellrowborder" valign="top" width="20.69%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"></a>会话的标识符。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_r70b979ea9a8c44088f169a2ed862a5e8"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a>username</p>
-</td>
-<td class="cellrowborder" valign="top" width="20.69%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.76%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a382f47d73e7848e19eb1855c75c577e6"></a>会话所属用户。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_r70b979ea9a8c44088f169a2ed862a5e8"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a>name</p>
+<tbody><tr id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_r70b979ea9a8c44088f169a2ed862a5e8"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_a189be4244ba24464883ea28942896966"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.69%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a><a name="zh-cn_topic_0283136606_zh-cn_topic_0237122425_zh-cn_topic_0059778133_ab01485ca1bd84a359dfeeb153ad699f9"></a>text</p>
 </td>
