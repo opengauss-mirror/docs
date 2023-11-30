@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/robot</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="下载体验openEuler-赢开源三周年纪念礼包！" transform="translate(-1823.000000, -1308.000000)">
+            <g id="编组-6备份" transform="translate(1810.000000, 1193.000000)">
+                <g id="icon/robot" transform="translate(13.000000, 115.000000)">
+                    <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                    <g filter="url(#filter-1)" id="icon-robot">
+                        <g transform="translate(1.000000, 1.000000)">
+                            <rect id="矩形" stroke="#000000" stroke-width="2" x="3.3" y="7.7" width="15.4" height="9.9" rx="1"></rect>
+                            <circle id="椭圆形" fill="#000000" fill-rule="nonzero" cx="7.7" cy="12.1" r="1.1"></circle>
+                            <circle id="椭圆形" fill="#000000" fill-rule="nonzero" cx="14.3" cy="12.1" r="1.1"></circle>
+                            <circle id="椭圆形" fill="#000000" fill-rule="nonzero" cx="11" cy="2.2" r="2.2"></circle>
+                            <path d="M-0.65,11.55 L2.85,11.55 C3.40228475,11.55 3.85,11.9977153 3.85,12.55 L3.85,12.75 C3.85,13.3022847 3.40228475,13.75 2.85,13.75 L-0.65,13.75 C-1.20228475,13.75 -1.65,13.3022847 -1.65,12.75 L-1.65,12.55 C-1.65,11.9977153 -1.20228475,11.55 -0.65,11.55 Z" id="矩形" fill="#000000" fill-rule="nonzero" transform="translate(1.100000, 12.650000) rotate(90.000000) translate(-1.100000, -12.650000) "></path>
+                            <path d="M19.15,11.55 L22.65,11.55 C23.2022847,11.55 23.65,11.9977153 23.65,12.55 L23.65,12.75 C23.65,13.3022847 23.2022847,13.75 22.65,13.75 L19.15,13.75 C18.5977153,13.75 18.15,13.3022847 18.15,12.75 L18.15,12.55 C18.15,11.9977153 18.5977153,11.55 19.15,11.55 Z" id="矩形" fill="#000000" fill-rule="nonzero" transform="translate(20.900000, 12.650000) rotate(90.000000) translate(-20.900000, -12.650000) "></path>
+                            <path d="M9.8,4.4 L12.2,4.4 C12.7522847,4.4 13.2,4.84771525 13.2,5.4 L13.2,5.6 C13.2,6.15228475 12.7522847,6.6 12.2,6.6 L9.8,6.6 C9.24771525,6.6 8.8,6.15228475 8.8,5.6 L8.8,5.4 C8.8,4.84771525 9.24771525,4.4 9.8,4.4 Z" id="矩形" fill="#000000" fill-rule="nonzero" transform="translate(11.000000, 5.500000) rotate(90.000000) translate(-11.000000, -5.500000) "></path>
+                            <rect id="矩形" fill="#000000" fill-rule="nonzero" transform="translate(11.000000, 20.900000) rotate(-180.000000) translate(-11.000000, -20.900000) " x="6.6" y="19.8" width="8.8" height="2.2" rx="1"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

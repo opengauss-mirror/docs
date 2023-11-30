@@ -14,7 +14,7 @@ $(function ($) {
       };
       $.ajax({
         type: "POST",
-        url: "/docs-search/search/sort/docs",
+        url: "/api-search/search/sort/docs",
         data: JSON.stringify(postData),
         contentType: "application/json; charset=utf-8",
         datatype: "json",

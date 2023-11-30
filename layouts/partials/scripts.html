@@ -1,8 +1,12 @@
 {{ template "_internal/google_analytics.html" . }}
 <script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/jstree.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/utils.js"></script>
 <script src="{{ .Site.BaseURL }}js/docdetail.js"></script>
 <script src="{{ .Site.BaseURL }}js/version.js"></script>
+<script src="{{ .Site.BaseURL }}js/docsearch.js"></script>
+<script src="{{ .Site.BaseURL }}js/pagination.js"></script>
+<script src="{{ .Site.BaseURL }}js/float.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     function getCurrentID(wholeData, relativeURL) {
@@ -187,5 +191,13 @@
     });
     let homeUrl = "/" + lang + "/";
     $(".nav-menu>.sidebar").find("a").attr("href", homeUrl);
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+      const h = $('.book-page').height();
+      $('#content').height(h);
+    }
   });
 </script>

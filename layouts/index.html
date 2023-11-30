@@ -46,7 +46,6 @@
                     <i class="icon-down" ></i>
                 </p>
                 <ul class="version-list">
-    
                 </ul>
               </div>
             </div>
@@ -88,8 +87,6 @@
               </ul>
             </div>
           </div>
-    
-          
         </div>
         <div class="theme-lang-mobile">
              <div class="lang">
@@ -109,7 +106,7 @@
         {{ $lang := .Site.LanguageCode}}
         {{ partial "nav.html" . }}
         <div class="mask-mobile"></div>
-        <div class="book-page container" id="page">
+        <div class="book-page container map-page" id="page">
             <div class="page-content">
               {{ range where $.Page.Site.Pages "Type" "docmap" }}
               <div class="doc-map">
@@ -139,7 +136,8 @@
               <ul id="toc-list"></ul>
             </aside>
         </div>
-            {{ partial "pcfooter.html" . }}
+        {{ partial "float-mobile.html" . }}
+        {{ partial "pcfooter.html" . }}
       </div>
       <div class="mask-search-mobile"></div>
         <div class="searcher">
@@ -150,26 +148,14 @@
             <div class="cancel-btn">{{ i18n "cancel" }}</div>
         </div>
             <div class="search-result search-result-mobile">
-                <!-- <p class="title">{{ i18n "result_1" }}<span class="res-amount main-text"></span>{{ i18n "result_2" }}<span class="keyword main-text"></span>{{ i18n "result_3" }}</p> -->
                 <ul>
-
                 </ul>
                 <div id="pagination"></div>
             </div>
         </div>
     </div>
     <!-- /#all -->
-
+    {{ partial "inside-nav.html" . }}
     {{ partial "scripts.html" . }}
-    <script>
-      $(document).ready(function () {
-        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-          const h = $('.page-content').height();
-          $('#content').height(h);
-			  }
-      });
-    </script>
-    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
-    <script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>

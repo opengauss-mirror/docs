@@ -85,7 +85,7 @@
               </div>
                 {{ template "main" . }}
                 {{ partial "turn.html"}}
-                {{ partial "insideNav.html"}}
+                {{ partial "inside-nav.html"}}
             </div>
             <aside class="book-toc">
               <ul id="toc-list"></ul>
@@ -113,15 +113,5 @@
     </div>
     </div>
     {{ partial "scripts.html" . }}
-    <script>
-      $(document).ready(function () {
-        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-          const h = $('.book-page').height();
-          $('#content').height(h);
-			  }
-      });
-    </script>
-    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
-    <script src="{{ "js/docsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>
