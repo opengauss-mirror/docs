@@ -159,7 +159,7 @@ $(document).ready(() => {
 
     $.ajax({
       type: "POST",
-      url: "/api-search/query/nps?community=opengauss",
+      url: "/api-search/search/nps?community=opengauss",
       data: JSON.stringify(postData),
       contentType: "application/json; charset=utf-8",
       datatype: "json",
