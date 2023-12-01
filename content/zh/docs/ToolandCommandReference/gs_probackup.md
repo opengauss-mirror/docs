@@ -24,7 +24,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
 -   在非资源池化模式下，当存在用户自定义表空间时，如果该表空间的路径不在PGDATA目录下，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份；在资源池化模式下，当前只支持相对路径表空间，因此存在自定义表空间时不需要指定 --external-dir 参数。
--   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
+-   当备份的规模比较大或在备份同时执行业务时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
+-   资源池化模式下，恢复到不同集群需先执行全量恢复。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
@@ -319,7 +320,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   -I, --incremental-mode=none|checksum|lsn
 
-    若PGDATA中可用的有效页没有修改，则重新使用它们。
+    若PGDATA中可用的有效页没有修改，则重新使用它们，在增量恢复时，需手动指定该参数为checksum或lsn。
 
     默认值：none
 
