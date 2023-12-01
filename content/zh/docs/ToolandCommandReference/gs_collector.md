@@ -236,11 +236,11 @@
 
 -   --begin-time
 
-    日志的开始时间。输入格式为“yyyymmdd hh:mm”。
+    日志的开始时间。输入格式为“yyyymmdd hh:mm”。该值需要比日志的最后修改时间小。
 
 -   --end-time
 
-    日志的结束时间。输入格式为“yyyymmdd hh:mm”。
+    日志的结束时间。输入格式为“yyyymmdd hh:mm”。该值需要比日志的创建时间大，且需大于--begin-time设置的时间。
 
 -   --speed-limit
 
