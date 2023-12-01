@@ -28,7 +28,7 @@ i {
     text-align: center;
 }
 .not-found img {
-    height: 400px;
+    width: 424px;
     display: block;
     margin: 0 auto;
 }
@@ -466,16 +466,15 @@ i {
         display: block;
     }
     .not-found {
-        margin-top: 40px !important;
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .not-found img {
-        height: 272px;
+        width: 100vw;
         margin: 30px auto 0 auto;
     }
-    
+
     .not-found span {
         font-size: 24px;
         line-height: 34px;
