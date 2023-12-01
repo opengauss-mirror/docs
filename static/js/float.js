@@ -145,18 +145,6 @@ $(document).ready(() => {
       feedbackText: inputText,
       feedbackValue: score,
     };
-    (function () {
-      handleTip("success");
-      const submitTime = new Date().valueOf();
-      if (window.innerWidth < 1100) {
-        localStorage.setItem("submit-time-mobile", JSON.stringify(submitTime));
-      } else {
-        localStorage.setItem("submit-time", JSON.stringify(submitTime));
-      }
-      setInit();
-      $(".float-mobile").remove();
-    })();
-
     $.ajax({
       type: "POST",
       url: "/api-search/search/nps?community=opengauss",
@@ -176,13 +164,15 @@ $(document).ready(() => {
           } else {
             localStorage.setItem("submit-time", JSON.stringify(submitTime));
           }
-          setInit();
+          $(".float-mobile").remove();
         } else {
           handleTip("error", res.msg);
         }
+        setInit();
       },
       error: function () {
         handleTip("error");
+        setInit();
       },
     });
   }
