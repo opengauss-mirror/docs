@@ -61,7 +61,7 @@ You have two ways to create a skin. The simplest way is to create it in the ```l
 
 Your second choice is to create it in a sub-directory of the ```themes/``` directory. If you do, then you must always tell Hugo where to search for the skin. It’s extra work, though, so why bother with it?
 
-The difference between creating a skin in ```layouts/``` and creating it in ```themes/``` is very subtle. A skin in ```layouts/``` can’t be customized without updating the templates and static files that it is built from. A skin created in ```themes/```, on the other hand, can be and that makes it easier for other people to use it.
+The difference between creating a skin in ```layouts/``` and creating it in ```themes/``` is very subtle. A skin in ```layouts/``` can't be customized without updating the templates and static files that it is built from. A skin created in ```themes/```, on the other hand, can be and that makes it easier for other people to use it.
 
 The rest of this tutorial will call a skin created in the ```themes/``` directory a theme.
 
@@ -97,7 +97,7 @@ Hugo uses template files to render content into HTML. Template files are a bridg
 
 There are three types of templates: single, list, and partial. Each type takes a bit of content as input and transforms it based on the commands in the template.
 
-Hugo uses its knowledge of the content to find the template file used to render the content. If it can’t find a template that is an exact match for the content, it will shift up a level and search from there. It will continue to do so until it finds a matching template or runs out of templates to try. If it can’t find a template, it will use the default template for the site.
+Hugo uses its knowledge of the content to find the template file used to render the content. If it can't find a template that is an exact match for the content, it will shift up a level and search from there. It will continue to do so until it finds a matching template or runs out of templates to try. If it can't find a template, it will use the default template for the site.
 
 Please note that you can use the front matter to influence Hugo’s choice of templates.
 
