@@ -10,6 +10,8 @@ gs\_ctl工具由操作系统用户omm执行。
 -   在不停止数据库的情况下，重新加载配置文件（postgresql.conf，pg\_hba.conf）。
 -   主备切换、主备状态查询、重建和重建状态查询。
 
+gs\_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
+
 ## 参数说明<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_sfeccdff45fda4d8dacf4cefb2b8103f8"></a>
 
 gs\_ctl参数可分为如下几类：
