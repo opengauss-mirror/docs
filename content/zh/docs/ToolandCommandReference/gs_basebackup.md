@@ -6,6 +6,8 @@ openGauss部署成功后，在数据库运行的过程中，会遇到各种问�
 
 gs\_basebackup工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
+gs\_basebackup工具支持打印进度，会根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
+
 >![](public_sys-resources/icon-note.png) **说明：** 
 
 >-   gs\_basebackup仅支持主机和备机的全量备份，不支持增量。

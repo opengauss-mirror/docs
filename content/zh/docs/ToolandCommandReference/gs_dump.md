@@ -21,6 +21,8 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 
 gs\_dump工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
+gs\_dump工具支持使用过程中打印进度。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
+
 >![](public_sys-resources/icon-notice.png) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   导出物化视图时，不支持导出物化视图中的数据。
