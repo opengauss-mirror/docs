@@ -2,7 +2,7 @@
 
 ## 功能描述
 
-显示当前会话执行的sql，所产生的信息(包含errrors, warnings, notes)。
+显示当前会话执行的sql，所产生的信息(包含errors, warnings, notes)。
 
 ## 注意事项
 
