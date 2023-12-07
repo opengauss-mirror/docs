@@ -17,7 +17,7 @@
 
 spqplugin.cluster_map格式：
 pgxc_node_name|ip|port|nodeoid|comm_control_port|comm_sctp_port
-- pgxc_node_name 当前计算节点名称，与guc参数[pgxc_node_name](../DatabaseReference/openGauss事务.md)一致。
+- pgxc_node_name 当前计算节点名称，与guc参数[pgxc_node_name](../DatabaseReference/openGauss事务.md)一致。且各个计算节点配置的节点名称应互不相同。
 - ip 当前计算节点用于libcomm通信的ip地址，建议与集群通信ip配置为不同网段，避免相互之间网络影响。
 - port 当前数据库端口。
 - nodeoid 预留参数，建议配置为0。
@@ -767,3 +767,25 @@ spqplugin.cluster_map = 'node1|x.x.x.x|12300|0|12340|12330,node2|x.x.x.x|12300|0
 -   off表示不允许多机并行修剪预处理时未使用的计算列。
 
 **默认值**：on
+
+## spqplugin.spq_enable_btbuild
+
+**参数说明**：参数值为布尔类型，该参数用于多机并行创建btree索引。
+
+**取值范围**：布尔型
+
+-   on表示使用多机并行创建btree索引。
+-   off表示不使用多机并行创建btree索引，使用内核原有功能。
+
+**默认值**：off
+
+## spqplugin.spq_enable_btbuild_cic
+
+**参数说明**：参数值为布尔类型，该参数用于多机并行在线创建btree索引。
+
+**取值范围**：布尔型
+
+-   on表示使用多机并行在线创建btree索引。
+-   off表示不使用多机并行在线创建btree索引，使用内核原有功能。
+
+**默认值**：off
