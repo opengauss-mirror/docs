@@ -1,7 +1,10 @@
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.22.0-22.03-lts
 
-RUN yum -y update && yum install -y git curl tar
-
+RUN sed -i "s|repo.openeuler.org|mirrors.pku.edu.cn/openeuler|g" /etc/yum.repos.d/openEuler.repo && \
+    yum -y update && \
+    yum install -y git curl tar && \
+    git config --global http.postBuffer 1048576000 && \
+    git config --global https.postBuffer 1048576000
 
 ENV HUGO_VERSION=0.104.3
 
