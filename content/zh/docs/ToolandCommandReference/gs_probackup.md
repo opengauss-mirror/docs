@@ -321,7 +321,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   -I, --incremental-mode=none|checksum|lsn
 
-    若PGDATA中可用的有效页没有修改，则重新使用它们，在增量恢复时，需手动指定该参数为checksum或lsn。
+    若PGDATA中可用的有效页没有修改，则重新使用它们。
 
     默认值：none
 
@@ -781,6 +781,8 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 ## cm工具管理集群增量恢复流程（资源池化模式）
 
+   **说明：** 当恢复的集群相当于备份来讲重新安装过或者不是原来的集群时，需要参考上面全量备份恢复流程中第7步和第11步，替换集群间认证的证书。
+
 1. 执行cm_ctl stop关闭集群。
 
    ```
@@ -798,7 +800,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
    ```
    gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id -I incremental-mode
    ```
-   **说明：** 在增量恢复时，无需先清空dn目录和磁阵，也不需要在备节点执行进行一系列操作。
+   **说明：** 在增量恢复时，无需先清空dn目录和磁阵，也不需要在备节点执行进行一系列操作，因此需要指定参数-I为lsn或checksum，不能指定为none。
 
 4. 关闭dssserver。
 
@@ -811,6 +813,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     ```
     cm_ctl start
     ```
+
 
 
 ## 故障处理<a name="section1494010372368"></a>
