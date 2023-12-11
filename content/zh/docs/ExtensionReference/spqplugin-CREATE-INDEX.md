@@ -41,10 +41,32 @@ Indexes:
 Has OIDs: no
 Options: orientation=row, compression=no
 
+--删除索引。
+openGauss=# drop index idx1;
+
+--在表t1上的c1字段上创建在线B-tree索引。
+openGauss=# set spqplugin.spq_enable_btbuild = on;
+openGauss=# set spqplugin.spq_enable_btbuild_cic = on;
+SET
+SET
+openGauss=# create index concurrently idx1 on t1 (c1) with (spq_build=on);
+CREATE INDEX
+openGauss=# \d+ t1
+                             Table "public.t1"
+ Column |     Type     | Modifiers | Storage  | Stats target | Description
+--------+--------------+-----------+----------+--------------+-------------
+ c1     | integer      |           | plain    |              |
+ c2     | character(1) |           | extended |              |
+Indexes:
+    "idx1" btree (c1) WITH (spq_build=finish) TABLESPACE pg_default
+Has OIDs: no
+Options: orientation=row, compression=no
+
 --删除索引、表。
 openGauss=# drop index idx1;
 openGauss=# drop table t1;
 ```
+
 目前仅支持btree索引多机并行。
 
 ## 相关链接
