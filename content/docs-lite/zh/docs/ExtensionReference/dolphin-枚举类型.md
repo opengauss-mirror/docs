@@ -75,3 +75,4 @@ SELECT name, gender FROM staff WHERE gender = 1;
 * ENUM的定义中的不能包含重复的枚举值。
 * ENUM的值支持的字符串最大长度为63。
 * ENUM的枚举值没有最大元素个数的限制。
+* ENUM的枚举值不能存在尾部空格，若存在会trim掉后存储。
