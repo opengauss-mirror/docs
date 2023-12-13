@@ -55,6 +55,17 @@
 <td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p1133282216262"><a name="p1133282216262"></a><a name="p1133282216262"></a>如果为真，为publication中的表复制DELETE操作。</p>
 </td>
 </tr>
+<tr id="row1331192214267"><td class="cellrowborder" valign="top" width="14.591459145914593%" headers="mcps1.2.4.1.1 "><p id="p12332122252613"><a name="p12332122252613"></a><a name="p12332122252613"></a>pubddl</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.74197419741974%" headers="mcps1.2.4.1.2 "><p id="p11332722192612"><a name="p11332722192612"></a><a name="p11332722192612"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="65.66656665666567%" headers="mcps1.2.4.1.3 "><p id="p1133282216262"><a name="p1133282216262"></a><a name="p1133282216262"></a>
+<li>发布时没有指定ddl，其值为0。</li>
+<li>指定ddl='table'时，其值为1。</li>
+<li>指定ddl='all'时，其值为-1。</li>
+</p>
+</td>
+</tr>
 </tbody>
 </table>
 
