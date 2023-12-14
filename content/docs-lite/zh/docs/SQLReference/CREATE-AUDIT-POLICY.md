@@ -46,7 +46,7 @@ CREATE AUDIT POLICY [ IF NOT EXISTS ] policy_name { { privilege_audit_clause | a
 
 -   **DDL**
 
-    指的是针对数据库执行如下操作时进行审计，目前支持：CREATE、ALTER、DROP、ANALYZE、COMMENT、GRANT、REVOKE、SET、SHOW、LOGIN\_ANY、LOGIN\_FAILURE、LOGIN\_SUCCESS、LOGOUT。
+    指的是针对数据库执行如下操作时进行审计，目前支持：CREATE、ALTER、DROP、ANALYZE、COMMENT、GRANT、REVOKE、SET、SHOW。
 
 -   **ALL**
 
