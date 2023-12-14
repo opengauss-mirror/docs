@@ -17,6 +17,7 @@ ENUM类型是一个字符串对象，其值是从创建表时在列定义时指�
   ---------+--------
     Tom    |  male
   (1 row)
+  ```
   
 * 枚举值字符串中不能包含`'anonymous_enum'`，同时不能将一个已有的类型重命名为包含`'anonymous_enum'`的名称，如果包含，会报错：
 
@@ -75,3 +76,4 @@ SELECT name, gender FROM staff WHERE gender = 1;
 * ENUM的定义中的不能包含重复的枚举值。
 * ENUM的值支持的字符串最大长度为63。
 * ENUM的枚举值没有最大元素个数的限制。
+* ENUM的枚举值不能存在尾部空格，若存在会trim掉后存储。
