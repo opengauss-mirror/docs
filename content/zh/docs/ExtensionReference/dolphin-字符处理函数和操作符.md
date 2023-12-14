@@ -134,7 +134,7 @@
     (1 row)
     ```
 
-- hex\(number or string or bytea or bit\)
+- hex\(number or string or bytea or bit or blob\)
 
   描述：把数字、字符、二进制字符类型或位串类型转换成十六进制表现形式
 
@@ -174,6 +174,21 @@
     -------
      5c6e
     (1 row)
+
+    openGauss=# set dolphin.b_compatibility_mode to on; -- 需要打开dolphin.b_compatibility_mode让blob可以适配B兼容模式下的输入
+    SET
+    openGauss=# create table t1 (c1 tinyblob, c2 blob, c3 mediumblob, c4 longblob);
+    CREATE TABLE
+    openGauss=# insert into t1 values('aa', 'aa', 'aa', 'aa');
+    INSERT 0 1
+    openGauss=# insert into t1 values(12312, 12312, 12312, 12312);
+    INSERT 0 1
+    openGauss=# select hex(c1) as "tinyblob_result", hex(c2) as "blob_result", hex(c3) as "mediumblob_result", hex(c4) as "longblob_result" from t1;
+    tinyblob_result | blob_result | mediumblob_result | longblob_result
+    -----------------+-------------+-------------------+-----------------
+    6161            | 6161        | 6161              | 6161
+    3132333132      | 3132333132  | 3132333132        | 3132333132
+    (2 rows)
     ```
 
 -   uuid\(\)
