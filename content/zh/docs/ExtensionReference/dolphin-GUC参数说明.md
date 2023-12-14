@@ -806,7 +806,7 @@ openGauss=# set dolphin.optimizer_switch = 'default';
 openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = default';
 ```
 
-## dolphin.dolphin.div_precision_increment<a name="section203671436846"></a>
+## dolphin.div_precision_increment<a name="section203671436846"></a>
 
 **参数说明**：此变量指定使用/运算符执行除法运算的结果的小数位数。
 
