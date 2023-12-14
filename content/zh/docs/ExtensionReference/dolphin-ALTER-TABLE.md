@@ -239,7 +239,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 | CHANGE [ COLUMN ] old_column_name new_column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [{[ COLLATE collation ] | [ column_constraint ]} [ ... ] ] [FIRST | AFTER column_name]
 ```
 
-- **ADD \[ COLUMN \] column\_name data\_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
+- **ADD \[ COLUMN \] column\_name data\_type [ CHARACTER SET | CHARSET charset ] [BINARY | ASCII] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
 
  向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
