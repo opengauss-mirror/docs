@@ -584,7 +584,8 @@ gs\_ctl参数可分为如下几类：
 </tr>
 </tbody>
 </table>
-**表 13**   资源池化build参数
+
+**表 13**  资源池化build参数
 
 <a name="table1451519418812"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r991543695e1942e391e7bb42b7c235fe"><th class="cellrowborder" valign="top" width="21.12%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a98babff2b333444a8845163c25408eac"></a>参数</p>
@@ -601,6 +602,7 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p887411245513"><a name="zh-cn_topic_0287275989_p887411245513"></a><a name="zh-cn_topic_0287275989_p887411245513"></a>mode的取值：</p>
  <p><li>  cross_cluster_full：资源池化执行build，必须结合dorado容灾场景，该参数表示在dorado容灾场景下通过全量镜像的方式重新同步主机的数据目录。 </p>
+ <p><li>  check：判断是否需要build </p>
  <p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：资源池化build只适用于主备集群间的跨集群build，不能用于资源池化单集群内的主备实例build。</p>
 </div></div>
 </td>
