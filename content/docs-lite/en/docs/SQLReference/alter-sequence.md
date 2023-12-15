@@ -7,7 +7,7 @@
 ## Precautions<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sfccb497f01564edb804ecee58fe2698c"></a>
 
 -   Only the owner of a sequence, a user granted the ALTER permission on a sequence, or a user granted the ALTER ANY SEQUENCE permission on a sequence can run the **ALTER SEQUENCE** command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
--   In the current version, you can modify only the owner, owning column, and maximum value. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
+-   In the current version, you can modify only the step, the maximum value, the minimum value, the start value, the number of cached values, cycle, restart, the owner and the owning column. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
 -   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
 -   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
@@ -15,11 +15,12 @@
 
 ## Syntax<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
--   Change the owning column of a sequence.
+-   Change the parameters of a sequence.
 
     ```
-    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name 
-        [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE | CACHE cache]
+    ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name [ INCREMENT [ BY ] increment ]
+        [ MINVALUE minvalue | NO MINVALUE | NOMINVALUE ] [MAXVALUE maxvalue | NO MAXVALUE | NOMAXVALUE]
+        [ START [ WITH ] start ] [ CACHE cache ] [ [ NO ] CYCLE | NOCYCLE ] [ RESTART [ WITH ] restart ] 
         [ OWNED BY { table_name.column_name | NONE } ] ;
     ```
 
@@ -41,9 +42,38 @@
 
     Sends a notice instead of an error when you are modifying a nonexisting sequence.
 
+-   INCREMENT
+
+    Specifies the step for the sequence.
+
+-   MINVALUE minvalue | NO MINVALUE| NOMINVALUE
+    Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>+1** or **-2<sup>127</sup>+1** if it's also a LARGE sequence.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
+
+-   MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE
+
+    Specifies the maximum value of the sequence. If  **MAXVALUE**  is not declared, or  **NO MAXVALUE**  is declared, the default value of the ascending sequence is  **2<sup>63</sup>-1** or **2<sup>127</sup>-1** if it's also a LARGE sequence, and that of the descending sequence is  **-1**.  **NOMAXVALUE**  is equivalent to  **NO MAXVALUE**.
+
+-   START
+
+    Specifies the start value of the sequence.
+
 -   CACHE
 
     Specifies the number of sequences stored in the memory for quick access purposes. If this parameter is not specified, the old cache value is retained.
+
+-   CYCLE
+
+    Recycles sequences after the number of sequences reaches  **maxvalue**  or  **minvalue**.
+
+    If  **NO CYCLE**  is specified, any invocation of  **nextval**  would return an error after the number of sequences reaches  **maxvalue**  or  **minvalue**.
+
+    **NOCYCLE**  is equivalent to  **NO CYCLE**.
+
+    If  **CYCLE**  is specified, the sequence uniqueness cannot be ensured.
+
+-   RESTART
+
+    Specifies the nextval of the sequence. If the value of restart is not specified, the sequence will restart from its start value by default.
 
 -   OWNED BY
 
@@ -71,6 +101,27 @@ openGauss=# CREATE TABLE T1(C1 bigint default nextval('serial'));
 
 -- Change the owning column of serial to T1.C1.
 openGauss=# ALTER SEQUENCE serial OWNED BY T1.C1;
+
+--Change the step of serial to 2
+openGauss=# ALTER SEQUENCE serial INCREMENT 2;
+
+--Change the minimum value of serial to 90
+openGauss=# ALTER SEQUENCE serial MINVALUE 90;
+
+--Change the maximum value of serial to 200
+openGauss=# ALTER SEQUENCE serial MAXVALUE 200;
+
+--Change the start value of serial to 90
+openGauss=# ALTER SEQUENCE serial START 90;
+
+--Change the number of cached value of serial to 10
+openGauss=# ALTER SEQUENCE serial CACHE 10;
+
+--Change serial to be a cycle
+openGauss=# ALTER SEQUENCE serial CYCLE;
+
+--Change serial to restart from 100
+openGauss=# ALTER SEQUENCE serial RESTART 100;
 
 -- Delete a sequence and a table.
 openGauss=# DROP SEQUENCE serial cascade;
