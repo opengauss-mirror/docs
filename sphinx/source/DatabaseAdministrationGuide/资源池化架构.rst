@@ -6,5 +6,6 @@
 
     ../content/zh/docs/DatabaseAdministrationGuide/资源池化开发者环境部署
     ../content/zh/docs/DatabaseAdministrationGuide/资源池化OM安装部署
+    ../content/zh/docs/DatabaseAdministrationGuide/资源池化POC性能测试指南
     ../content/zh/docs/DatabaseAdministrationGuide/资源池化当前架构特性约束
     ../content/zh/docs/DatabaseAdministrationGuide/资源池化同城双中心部署
