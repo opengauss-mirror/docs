@@ -8,6 +8,10 @@ gs_upgradechk是一个升级之后元数据完整性的检测工具，由python3
 - **校验**：基于某个元数据校验地图，对数据库进行元数据的校验，并生成报告。
 
 
+## 约束
+- 仅支持校验A兼容性的数据库
+
+
 ## 如何使用
 在安装了openGauss的环境上，使用如下命令运行此工具：
 ```angular2html
@@ -42,34 +46,6 @@ config-params支持的参数选项及其默认值如下
 https://opengauss.obs.cn-south-1.myhuaweicloud.com/upgrade_checker/standard_meta_verify_map_XX_X.X.X.vmap
 ```
 其中`XX`表示工具版本，`X.X.X`表示openGauss版本
-
-## 版本支持
-工具版本与对应所支持的openGauss版本如下：
-<table>
-  <thead align="left">
-    <tr>
-      <th class="cellrowborder" valign="top"><p>工具版本</p></th>
-      <th class="cellrowborder" valign="top"><p>版本git id</p></th>
-      <th class="cellrowborder" valign="top"><p>支持openGauss</p></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="cellrowborder" valign="top"><p> 最新 </p></td>
-      <td class="cellrowborder" valign="top"><p> - </p></td>
-      <td class="cellrowborder" valign="top"><p> 3.0.3+，5.0.X，5.1.X </p></td>
-    </tr>
-    <tr>
-      <td class="cellrowborder" valign="top"><p> 5010000 </p></td>
-      <td class="cellrowborder" valign="top"><p> - </p></td>
-      <td class="cellrowborder" valign="top"><p> 3.0.3+，5.0.X，5.1.X </p></td>
-    </tr>
-  </tbody>
-</table>
-
-其中：`X`代表通配符，即全系列产品；`N+`代表范围，即N和之后的版本。
-
-在openGauss升级时，按照新数据库的版本选择本工具版本
 
 
 ## 工具结构
