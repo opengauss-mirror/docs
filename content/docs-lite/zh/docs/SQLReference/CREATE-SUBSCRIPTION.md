@@ -81,6 +81,10 @@ CREATE SUBSCRIPTION subscription_name
 
         该参数指定是否需要该订阅对应的发布端以二进制格式发送数据，为true表示需要以二进制发送，为false表示不以二进制格式而知以默认的文本格式发送。默认值false。
 
+    -   **matchddlowner (boolean)**
+
+        指定订阅端在应用DDL操作时，是否切换到DDL日志信息中指定owner用户。
+
 
 
 ## 示例<a name="section1399192015610"></a>
