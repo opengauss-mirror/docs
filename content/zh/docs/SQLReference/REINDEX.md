@@ -17,6 +17,8 @@ REINDEX DATABASE和SYSTEM这种形式的重建索引不能在事务块中执行�
 
 REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 
+不能在事务中reindex系统表。
+
 ## 语法格式<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_s2ba0db3344cd44189859fbd0cefdd97f"></a>
 
 -   重建普通索引。
@@ -43,6 +45,8 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 -   **INTERNAL TABLE**
 
     重建列存表的Desc表的索引，如果表有从属的“TOAST”表，则这个表也会重建索引。
+	此种情况大多用于故障恢复，不建议进行并发操作。
+
     
     -  不支持CONCURRENTLY方式重建索引，REINDEX INTERNAL TABLE CONCURRENTLY相当于执行REINDEX INTERNAL TABLE。
 
@@ -164,19 +168,3 @@ openGauss=# REINDEX TABLE CONCURRENTLY tpcds.customer_t1;
 --删除tpcds.customer_t1表。
 openGauss=# DROP TABLE tpcds.customer_t1;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_section21815038152246"></a>
-
--   INTERNAL TABLE
-
-    此种情况大多用于故障恢复，不建议进行并发操作。
-
--   DATABASE
-
-    不能在事务中reindex database。
-
--   SYSTEM
-
-    不能在事务中reindex系统表。
-
-

@@ -119,13 +119,3 @@ openGauss=# VACUUM (VERBOSE, ANALYZE) tpcds.reason;
 openGauss=# DROP INDEX ds_reason_index1 CASCADE;
 openGauss=# DROP TABLE tpcds.reason;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283137096_zh-cn_topic_0237122195_zh-cn_topic_0059777503_section34774208154224"></a>
-
--   vacuum
-    -   VACUUM不能在事务块内执行。
-    -   建议生产数据库经常清理（至少每晚一次），以保证不断地删除失效的行。尤其是在增删了大量记录后，对相关表执行VACUUM ANALYZE命令。
-    -   不建议日常使用FULL选项，但是可以在特殊情况下使用。例如，一个例子就是在用户删除了一个表的大部分行之后，希望从物理上缩小该表以减少磁盘空间占用。
-    -   执行VACUUM FULL操作时，建议首先删除相关表上的所有索引，再运行VACUUM FULL命令，最后重建索引。
-
-

@@ -9,6 +9,9 @@ SELECT INTO用于根据查询结果创建一个新表，并且将查询到的数
 ## 注意事项<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_seabd3b47a66045ed92ad80da65bd79cc"></a>
 
 CREATE TABLE AS的作用和SELECT INTO类似，且提供了SELECT INTO所提供功能的超集。建议使用CREATE TABLE AS语法替代SELECT INTO，因为SELECT INTO不能在存储过程中使用。
+不建议在事务中reindex database。
+不建议在事务中reindex系统表。
+
 
 ## 语法格式<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_s95d36c6f79da4133a55b3776c59d3449"></a>
 
@@ -82,14 +85,4 @@ openGauss=# DROP TABLE tpcds.reason_t1;
 ## 相关链接<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_se82df922609a4e8eb3a6d6a011e508a6"></a>
 
 [SELECT](SELECT.md)
-
-## 优化建议<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_section21815038152246"></a>
-
--   **DATABASE**
-
-    不建议在事务中reindex database。
-
--   **SYSTEM**
-
-    不建议在事务中reindex系统表。
 
