@@ -33,7 +33,7 @@
 - drop tablespace： 
     - 触发条件：删除tablespace 
    - 处理方案：等待max_standby_streaming_delay时间后，发送cancel消息取消冲突的查询。
-- vacuum清理（仅在参数enable_exrto_standby_read_opt开启下，会产生冲突）。 
+- vacuum清理（仅在参数exrto_standby_read_optt开启下，会产生冲突）。 
     - 触发条件：vacuum操作。 
     - 处理方案：等待max_standby_streaming_delay时间后，发送cancel消息取消冲突的查询。
 
@@ -63,7 +63,7 @@
 
 4.当查询和回放有锁相关等冲突时，和并行回放备机读相同，取消查询由参数max_standby_streaming_delay控制。
 
- 5.在开启参数enable_exrto_standby_read_opt的情况下，回放vacuum相关的清理日志时会发生冲突，和并行回放备机读相同，取消查询由参数max_standby_streaming_delay控制。
+ 5.在开启参数exrto_standby_read_opt的情况下，回放vacuum相关的清理日志时会发生冲突，和并行回放备机读相同，取消查询由参数max_standby_streaming_delay控制。
 
 ## 依赖关系<a name="section57771982"></a>
 
