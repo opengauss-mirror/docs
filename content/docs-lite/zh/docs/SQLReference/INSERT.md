@@ -15,6 +15,8 @@
 - 如果使用query子句插入来自查询里的数据行，用户还需要拥有在查询里使用的表的SELECT权限。
 
 - 生成列不能被直接写入。在INSERT命令中不能为生成列指定值，但是可以指定关键字DEFAULT。
+- 通过insert语句批量插入数据时，建议将多条记录合并入一条语句中执行插入，以提高数据加载性能。例如，INSERT INTO sections VALUES \(30, 'DatabaseAdministrationGuide', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);
+
 
 -   当连接到TD兼容的数据库时，td\_compatible\_truncation参数设置为on时，将启用超长字符串自动截断功能，在后续的insert语句中（不包含外表的场景下），对目标表中char和varchar类型的列上插入超长字符串时，系统会自动按照目标表中相应列定义的最大长度对超长字符串进行截断。
 
@@ -219,11 +221,3 @@ INSERT INTO upser VALUES (5, c1 + 100, 100), (6, c1 + 100, 100), (7, c1 + 100, 1
     ON DUPLICATE KEY UPDATE c2 = c1 + c2, c3 = c2 + c3;
 SELECT * FROM upser ORDER BY c1;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_section3855297014560"></a>
-
--   VALUES
-
-    通过insert语句批量插入数据时，建议将多条记录合并入一条语句中执行插入，以提高数据加载性能。例如，INSERT INTO sections VALUES \(30, 'DatabaseAdministrationGuide', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);
-
-
