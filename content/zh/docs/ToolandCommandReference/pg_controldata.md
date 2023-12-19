@@ -33,7 +33,7 @@ OPTION取值如下所示
 
 -   --socketpath=SOCKETPATH
 
-    资源池化参数，dss实例进程使用的socket文件路径，仅支持绝对路径。
+    资源池化参数，dss实例进程使用的socket文件路径，仅支持绝对路径，可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
 
 -   -V, --version
 
@@ -66,7 +66,7 @@ pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
 
 可不指定--socketpath，默认为$DSS_HOME/.dss_unix_d_socket。
 
-使用该工具时请保证dssserver启动，如果使用了cm组件，且本节点处于stop状态时，请先开启dss手动控制模式，再启动dssserver
+使用该工具时请保证dssserver启动，如果使用了cm组件，且本节点处于stop状态时，请先开启dss手动控制模式，再启动dssserver。
 
     ```
     export DSS_MAINTAIN=TRUE    //开启dss手动控制模式
@@ -74,7 +74,7 @@ pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
     export DSS_MAINTAIN=FALSE   //关闭dss手动控制模式
     ```
 
-本工具支持资源池化集群进行极致RTO按需回放时，查询集群回放状态，使用时请使用该工具查询reformer页信息（即instance_id为64），对应信息如下
+本工具支持资源池化集群进行极致RTO按需回放时，查询集群回放状态，使用时请使用该工具查询reformer页信息（即instance_id为64），对应信息如下：
 
 | Cluster status        | 集群按需回放状态                                             |
 | --------------------- | ------------------------------------------------------------ |

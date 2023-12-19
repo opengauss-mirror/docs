@@ -60,7 +60,7 @@ OPTION取值如下所示：
 
 -   --socketpath=SOCKETPATH
 
-    资源池化参数，dss实例进程使用的socket文件路径，仅支持绝对路径, 可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
+    资源池化参数，dss实例进程使用的socket文件路径，仅支持绝对路径，可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
 
 -   --vgname=VGDATA
 

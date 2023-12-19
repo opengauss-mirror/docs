@@ -227,7 +227,7 @@ gs\_guc工具由操作系统用户omm执行。
 
   >![](public_sys-resources/icon-note.png) **说明：** 
   >
-  >-   与“-I” 不能一块使用
+  >-   与“-I” 不能一块使用。
 
 -   -c parameter=value
 

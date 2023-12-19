@@ -15,6 +15,12 @@ dssserver -D $DSS_HOME [-M]
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >-M为DSS MAINTAIN模式，仅供开发者调试及相关工具配合使用，随意使用可能导致数据无法恢复，严禁多节点MAINTAIN模式启动
 
+显示帮助信息
+
+```
+dssserver -h
+```
+
 ## 参数说明<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_s2298a1889844418daec3743b9a4b57fb"></a>
 
 dssserver作为一个独立的进程，在启动之前需要提供配置文件dss\_inst.ini，相关的配置参数整理如下：

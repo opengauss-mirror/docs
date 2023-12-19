@@ -169,7 +169,9 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd dev <-p path> <-o offset> <-f format>
     ```
 
-    此处format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
+    >-   path指定的为路径为路径为磁盘路径，可通过$DSS_HOME/cfg/dss_vg_conf.ini文件获取磁盘路径。
 
 -   显示磁盘信息
 
@@ -181,7 +183,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     >![](public_sys-resources/icon-note.png) **说明：** 
     >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
     >-   如果指定参数-b block_id，则需指定-n node_id。
-    >-   blocl_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
+    >-   block_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
 
 -   重命名文件名
 
@@ -279,9 +281,9 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     d显示详细信息，t显示表中的信息。
 
--   au\_size：
+-   au\_size
 
-    au的大小，单位KB，范围为2MB-64MB。
+    au的大小，单位KB，范围为2MB-64MB，默认大小为2MB。
 
 -   vg\_name
 
@@ -335,6 +337,10 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   value
 
     配置项的值。
+
+-   offset
+
+    偏移长度，只能是512的整数倍。
 
 -   scope
 
