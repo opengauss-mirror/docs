@@ -190,6 +190,7 @@ headless: true
             - [准备软硬件安装环境]({{< relref "./docs/InstallationGuide/准备软硬件安装环境_企业版.md" >}})
             - [了解安装用户及用户组]({{< relref "./docs/InstallationGuide/了解安装用户及用户组.md" >}})
         - [安装openGauss]({{< relref "./docs/InstallationGuide/安装openGauss.md" >}})
+            - [一站式安装指南]({{< relref "./docs/InstallationGuide/一站式安装指南.md" >}})
             - [创建XML配置文件]({{< relref "./docs/InstallationGuide/创建XML配置文件.md" >}})
             - [初始化安装环境]({{< relref "./docs/InstallationGuide/初始化安装环境.md" >}})
             - [执行安装]({{< relref "./docs/InstallationGuide/执行安装.md" >}})
