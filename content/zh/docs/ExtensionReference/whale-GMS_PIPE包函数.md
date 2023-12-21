@@ -9,8 +9,8 @@
         - Character 类型
         - Integer 类型
         - NUMERIC 类型
-        - DATE 类型
-        - TIMESTAMP 类型
+        - DATE 类型(实际上是TIMESTAMP类型，A兼容性下语法解析器会自动将DATE类型转换为TIMESTAMP类型)
+        - TIMESTAMPTZ 类型
         - BYTEA 类型
         - RECORD 类型
 
@@ -91,7 +91,7 @@
 
     描述：在本地缓冲区中接收date类型的消息。
 
-    返回值类型：date
+    返回值类型：date(实际上是timestamp类型，openGauss在A兼容模式下会自动将date类型转换为timestamp类型)
 
     示例：
 
@@ -108,7 +108,7 @@
 
     描述：在本地缓冲区中接收date类型的消息。
 
-    返回值类型：date
+    返回值类型：timestamptz
 
     示例：
 
