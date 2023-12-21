@@ -13,6 +13,13 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd --help
     ```
 
+-   显示所有帮助信息
+
+    ```
+    dsscmd -a
+    dsscmd --all
+    ```
+
 -   显示dss的版本号
 
     ```
@@ -52,6 +59,12 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     ```
     dsscmd touch <-p path> [-U UDS:socket_domain]
+    ```
+
+-   显示API调用时间
+
+    ```
+    dsscmd ts [-U UDS:socket_domain]
     ```
 
 -   显示路径下文件信息
