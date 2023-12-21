@@ -183,11 +183,3 @@ openGauss=# DROP TABLESPACE ds_location6;
 ## 相关链接<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_s59e2126c54fc4725a3a50713b9163304"></a>
 
 [CREATE DATABASE](CREATE-DATABASE.md)，[CREATE TABLE](CREATE-TABLE.md)，[CREATE INDEX](CREATE-INDEX.md)，[DROP TABLESPACE](DROP-TABLESPACE.md)，[ALTER TABLESPACE](ALTER-TABLESPACE.md)
-
-## 优化建议<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_section60380346161036"></a>
-
--   create tablespace
-
-    不建议在事务内部创建表空间。
-
-

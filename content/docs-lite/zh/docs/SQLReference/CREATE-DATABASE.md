@@ -49,6 +49,11 @@ CREATE DATABASE database_name
     指定数据库使用的字符编码，可以是字符串（如'SQL\_ASCII'）、整数编号。
 
     不指定时，默认使用模版数据库的编码。模板数据库template0和template1的编码默认与操作系统环境相关。template1不允许修改字符编码，因此若要变更编码，请使用template0创建数据库。
+	
+-   **ENCODING**
+
+    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'/'GB18030_2022'）时，必须指定template \[=\] template0。
+	
 
     常用取值：GBK、UTF8、Latin1、GB10830等，具体支持的字符集如下：
 
@@ -845,16 +850,3 @@ openGauss=# DROP DATABASE ora_compatible_db;
 ## 相关链接<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_s4693856e1f6240dc98de7d6faf52f136"></a>
 
 [ALTER DATABASE](ALTER-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
-
-## 优化建议<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_section8189694144220"></a>
-
--   **create database**
-
-    事务中不支持创建database。
-
-
--   **ENCODING   LC\_COLLATE     LC\_CTYPE**
-
-    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'/'GB18030_2022'）时，必须指定template \[=\] template0。
-
-

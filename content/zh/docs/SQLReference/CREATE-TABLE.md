@@ -22,6 +22,8 @@
 -   不可与同一模式下已存在的synonym产生命名冲突。
 -   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
 
+
+
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
 创建表。
@@ -106,6 +108,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     使用场景：非日志表不能保证数据的安全性，用户应该在确保数据已经做好备份的前提下使用，例如系统升级时进行数据的备份。
 
     故障处理：当异常关机等操作导致非日志表上的索引发生数据丢失时，用户应该对发生错误的索引进行重建。
+	-   UNLOGGED表和表上的索引因为数据写入时不通过WAL日志机制，写入速度远高于普通表。因此，可以用于缓冲存储复杂查询的中间结果集，增强复杂查询的性能。
+    -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
 
 -   **GLOBAL | LOCAL**
 
@@ -118,6 +122,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     全局临时表的元数据对所有会话可见，会话结束后元数据继续存在。会话与会话之间的用户数据、索引和统计信息相互隔离，每个会话只能看到和更改自己提交的数据。全局临时表有两种模式：一种是基于会话级别的\(ON COMMIT PRESERVE ROWS\), 当会话结束时自动清空用户数据；一种是基于事务级别的\(ON COMMIT DELETE ROWS\), 当执行commit或rollback时自动清空用户数据。建表时如果没有指定ON COMMIT选项，则缺省为会话级别。与本地临时表不同，全局临时表建表时可以指定非pg\_temp\_开头的schema。
 
     本地临时表只在当前会话可见，本会话结束后会自动删除。因此，在除当前会话连接的数据库节点故障时，仍然可以在当前会话上创建和使用临时表。由于临时表只在当前会话创建，对于涉及对临时表操作的DDL语句，会产生DDL失败的报错。因此，建议DDL语句中不要对临时表进行操作。TEMP和TEMPORARY等价。
+	
+	-   临时表只在当前会话可见，会话结束后会自动删除。
 
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >
@@ -310,6 +316,9 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
     -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION和INCLUDING RELOPTIONS的内容。
     -   ATUO_INCREMENT列需要为主键或唯一约束的第一个字段，若复制包含AUTO_INCREAMENT列的表时指定EXCLUDING INDEX，将会报错。其中AUTO_INCREAMENT只在B库中生效。
+	-   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
+   
+ 
 
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >
@@ -1277,62 +1286,3 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 ## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
 [ALTER TABLE](ALTER-TABLE.md)，[DROP TABLE](DROP-TABLE.md)，[CREATE TABLESPACE](CREATE-TABLESPACE.md)
-
-## 优化建议<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_section29320865113651"></a>
-
--   UNLOGGED
-    -   UNLOGGED表和表上的索引因为数据写入时不通过WAL日志机制，写入速度远高于普通表。因此，可以用于缓冲存储复杂查询的中间结果集，增强复杂查询的性能。
-    -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
-
--   TEMPORARY | TEMP
-    
-    -   临时表只在当前会话可见，会话结束后会自动删除。
-    
--   LIKE
-    
-    -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-    
--   LIKE INCLUDING DEFAULTS
-    
-    -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
-    
--   LIKE INCLUDING CONSTRAINTS
-    
-    -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-    
--   LIKE INCLUDING INDEXES
-    
-    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    
--   LIKE INCLUDING STORAGE
-    
-    -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
-    
--   LIKE INCLUDING COMMENTS
-    
-    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    
--   LIKE INCLUDING PARTITION
-
-    -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
-
-    >![](public_sys-resources/icon-notice.png) **须知：** 
-    >
-    >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
-
--   LIKE INCLUDING RELOPTIONS
-    
-    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-    
--   LIKE INCLUDING ALL
-    
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
-    
--   ORIENTATION ROW
-    
-    -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
-    
--   ORIENTATION COLUMN
-    
-    -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
-

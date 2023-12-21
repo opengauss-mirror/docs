@@ -142,19 +142,3 @@ openGauss=# REINDEX TABLE tpcds.customer_t1;
 --删除tpcds.customer_t1表。
 openGauss=# DROP TABLE tpcds.customer_t1;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283137442_zh-cn_topic_0237122174_zh-cn_topic_0059777511_section21815038152246"></a>
-
--   INTERNAL TABLE
-
-    此种情况大多用于故障恢复，不建议进行并发操作。
-
--   DATABASE
-
-    不能在事务中reindex database。
-
--   SYSTEM
-
-    不能在事务中reindex系统表。
-
-
