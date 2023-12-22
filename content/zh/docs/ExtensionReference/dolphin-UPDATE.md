@@ -15,7 +15,7 @@
 ```
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-UPDATE [/*+ plan_hint */] [IGNORE] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
+UPDATE [/*+ plan_hint */] [IGNORE] [ (ONLY) ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]

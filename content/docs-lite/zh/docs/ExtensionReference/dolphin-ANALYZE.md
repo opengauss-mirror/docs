@@ -1,4 +1,4 @@
-# ANALYZE | ANALYSE
+# ANALYZE
 
 ## 功能描述<a name="zh-cn_topic_0283136969_zh-cn_topic_0237122086_zh-cn_topic_0059779340_s3b85e88124004279b0fccf70b5953039"></a>
 
@@ -6,7 +6,7 @@
 
 如果没有指定参数，ANALYZE会分析当前数据库中的每个表和分区表。同时也可以通过指定table\_name、column和partition\_name参数把分析限定在特定的表、列或分区表中。
 
-ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表）的数据文件是否损坏。
+ANALYZE VERIFY用于检测数据库中普通表（行存表、列存表）的数据文件是否损坏。
 
 ## 注意事项<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
@@ -18,7 +18,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 -   收集表的统计信息
 
     ```
-    {ANALYZE | ANALYSE} [ VERBOSE ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
+    { ANALYZE } [ VERBOSE ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
