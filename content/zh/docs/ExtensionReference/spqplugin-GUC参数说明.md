@@ -16,17 +16,14 @@
 **取值范围**：字符串
 
 spqplugin.cluster_map格式：
-pgxc_node_name|ip|port|nodeoid|comm_control_port|comm_sctp_port
+pgxc_node_name|ip|port
 - pgxc_node_name 当前计算节点名称，与guc参数[pgxc_node_name](../DatabaseReference/openGauss事务.md)一致。且各个计算节点配置的节点名称应互不相同。
 - ip 当前计算节点用于libcomm通信的ip地址，建议与集群通信ip配置为不同网段，避免相互之间网络影响。
 - port 当前数据库端口。
-- nodeoid 预留参数，建议配置为0。
-- comm_control_port 当前计算节点libcomm通信端口，与guc参数comm_control_port一致。
-- comm_sctp_port 当前计算节点libcomm通信端口，与guc参数comm_sctp_port一致。
 
 以两节点为例，参数配置为：
 ```
-spqplugin.cluster_map = 'node1|x.x.x.x|12300|0|12340|12330,node2|x.x.x.x|12300|0|12340|12330'
+spqplugin.cluster_map = 'node1|x.x.x.x|12300,node2|x.x.x.x|12300'
 ```
 
 **默认值**：NULL（默认为空值，即不指定多机节点）

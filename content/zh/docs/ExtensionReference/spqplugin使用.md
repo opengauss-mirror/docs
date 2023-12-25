@@ -11,7 +11,7 @@ pgxc_node_name = 'node1'
 comm_sctp_port = 12330
 comm_control_port = 12340
 shared_preload_libraries = 'spqplugin'
-spqplugin.cluster_map = 'node1|x.x.x.x|12300|1|12340|12330,node2|x.x.x.x|12300|1|12340|12330'
+spqplugin.cluster_map = 'node1|x.x.x.x|12300,node2|x.x.x.x|12300'
 spqplugin.enable_spq = on
 ```
 node2:
@@ -21,7 +21,7 @@ pgxc_node_name = 'node2'
 comm_sctp_port = 12330
 comm_control_port = 12340
 shared_preload_libraries = 'spqplugin'
-spqplugin.cluster_map = 'node1|x.x.x.x|12300|1|12340|12330,node2|x.x.x.x|12300|1|12340|12330'
+spqplugin.cluster_map = 'node1|x.x.x.x|12300,node2|x.x.x.x|12300'
 spqplugin.enable_spq = on
 ```
 
