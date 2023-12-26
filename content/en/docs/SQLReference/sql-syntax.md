@@ -64,6 +64,8 @@
 
 -   **[ALTER TABLE](alter-table.md)**  
 
+-   **[ALTER TABLE INHERIT](alter-table-inherit.md)**  
+
 -   **[ALTER TABLE PARTITION](alter-table-partition.md)**  
 
 -   **[ALTER TABLE SUBPARTITION](alter-table-subpartition.md)**  
@@ -173,6 +175,8 @@
 -   **[CREATE TABLE](create-table.md)**  
 
 -   **[CREATE TABLE AS](create-table-as.md)**  
+
+-   **[CREATE TABLE INHERITS](create-table-inherits.md)**  
 
 -   **[CREATE TABLE PARTITION](create-table-partition.md)**  
 
