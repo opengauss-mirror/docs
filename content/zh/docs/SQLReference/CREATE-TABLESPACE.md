@@ -133,10 +133,6 @@ openGauss=# DROP ROLE jay;
 
 [CREATE DATABASE](CREATE-DATABASE.md)，[CREATE TABLE](CREATE-TABLE.md)，[CREATE INDEX](CREATE-INDEX.md)，[DROP TABLESPACE](DROP-TABLESPACE.md)，[ALTER TABLESPACE](ALTER-TABLESPACE.md)
 
-## 优化建议<a name="zh-cn_topic_0283137328_zh-cn_topic_0237122120_zh-cn_topic_0059777670_section60380346161036"></a>
 
--   create tablespace
-
-    不建议在事务内部创建表空间。
 
 

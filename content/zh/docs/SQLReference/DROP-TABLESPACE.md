@@ -39,10 +39,3 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name;
 
 [ALTER TABLESPACE](ALTER-TABLESPACE.md)，  [CREATE TABLESPACE](CREATE-TABLESPACE.md)
 
-## 优化建议<a name="zh-cn_topic_0283137549_zh-cn_topic_0237122153_zh-cn_topic_0059779073_section29255108114255"></a>
-
--   drop database
-
-    不支持在事务中删除database。
-
-

@@ -9,6 +9,7 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 -   表的所有者、被授予了表DELETE权限的用户或被授予DELETE ANY TABLE权限的用户有权删除表中数据，系统管理员默认拥有此权限。同时也必须有USING子句引用的表以及condition上读取的表的SELECT权限。
 -   对于列存表，暂时不支持RETURNING子句。
 -   对于多表删除语法，仅在参数sql\_compatibility=B时生效，暂时不支持对列存表、视图和含有RULE的表进行多表删除。
+-   如果要删除表中的所有记录，建议使用truncate语法。
 
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
@@ -152,11 +153,3 @@ openGauss=# DELETE FROM a,b USING tpcds.customer_address a,tpcds.customer_addres
 或者
 openGauss=# DELETE a,b FROM tpcds.customer_address a,tpcds.customer_address_bak b where a.ca_address_sk = b.ca_address_sk and a.ca_address_sk < 50;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_section50155651112741"></a>
-
--   delete
-
-    如果要删除表中的所有记录，建议使用truncate语法。
-
-
