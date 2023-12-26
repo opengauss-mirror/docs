@@ -255,7 +255,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 
 - --socketpath
 
-  dss进程socket文件路径, 可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
+  dss进程socket文件路径，可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
 
 ### **备份相关参数**
 
