@@ -1,17 +1,7 @@
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.22.0-22.03-lts
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx-hugo:1.24.0-22.03-lts-sp1-0.104.3
 
-RUN sed -i "s|repo.openeuler.org|mirrors.pku.edu.cn/openeuler|g" /etc/yum.repos.d/openEuler.repo && \
-    yum -y update && \
-    yum install -y git curl tar && \
-    git config --global http.postBuffer 1048576000 && \
+RUN git config --global http.postBuffer 1048576000 && \
     git config --global https.postBuffer 1048576000
-
-ENV HUGO_VERSION=0.104.3
-
-RUN mkdir -p /usr/local/src && \
-    cd /usr/local/src && \
-    curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | tar -xz && \
-    mv hugo /usr/local/bin/
 
 RUN mkdir -p /src/
 COPY . /src/website
@@ -121,7 +111,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/5.1.0-lite/ && \
     cp -rf /src/5.1.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.1.0-lite/ && \
 
-    cd /src/website && /usr/local/bin/hugo -b / && /usr/local/bin/hugo --gc --minify && \
+    cd /src/website && hugo -b / --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html && \
     rm -rf /src/*
