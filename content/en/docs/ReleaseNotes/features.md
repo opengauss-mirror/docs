@@ -46,7 +46,13 @@ This section describes openGauss 5.0.0. Compared with openGauss 3.1.0, it has th
     -   Predicate optimization: New pushdown predicates are obtained through predicate equivalence inference.
     -   Scan operator optimization: The index scanning and full table scanning operators are optimized.
     -   Aggregate operator optimization: The performance of the aggregate operators is optimized.
-    
+
+-   High performance: SCRLock provides the distributed lock capability to improve distributed lock performance.
+
+    -   SCRLock provides distributed locks in optimistic mode based on the RDMA protocol. The RDMA network improves the efficiency of obtaining locks, and the optimistic mode features a simplified process.
+    -   SCRLock ensures lock fairness and prevents permanent waiting events in a cluster.
+    -   SCRLock also provides the local lock cache capability to reduce the frequency of obtaining remote locks, reducing the latency. 
+
 -   High security: user-level audit.
     
     -   User-level audit is supported. The GUC parameter **full\_audit\_users** is added to set the list of audited users. Audit logs are recorded for all SQL statements executed by users in the list. Administrators' operations can be fully audited to audit administrators' access to user data.
@@ -93,7 +99,11 @@ This section describes openGauss 5.0.0. Compared with openGauss 3.1.0, it has th
     -   Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RDMA-accelerated RoCE hardware is used to achieve ultra-low latency and high throughput communication across nodes.
     -   Computing pooling supports diversified computing power. ShardingSphere is used to build the openGauss distributed computing capability, achieving 32-node networking performance > 21 million tpmC.
     -   In terms of cluster management, technologies such as dual heartbeat detection, shared disk quorum , and I/O fencing are used to automatically detect, rectify, and isolate cluster node faults, providing a highly reliable running environment for resource pooling.   
-    
+
+-   Enterprise-level feature: UWAL accelerates the WAL performance of the database.
+    -   The database and UWAL component are combined to accelerate the WAL performance of the database.
+    -   This feature solves the problem of performance loss during active/standby streaming replication and improves the performance of active/standby transaction submission as well as streaming replication and transmission.  
+
 -   Application development interface: enhanced JDBC capabilities.
 
     -   Quick load balancing can be triggered when the cluster status changes.
