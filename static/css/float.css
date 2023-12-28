@@ -4,6 +4,11 @@
   bottom: 200px;
   width: 48px;
 }
+@media screen and (max-width: 1480px) {
+  .float-wrap {
+    right: 6px;
+  }
+}
 [lang="en"] .float-wrap {
   width: 68px;
 }
@@ -88,7 +93,7 @@
   width: 0;
   height: 100%;
   border-radius: 4px;
-  background-image: linear-gradient(90deg,#b461f6 0%,#7d32ea 100%);
+  background-image: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -146,7 +151,7 @@
   left: 0%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  background: linear-gradient(90deg,#b461f6 0%,#7d32ea 100%);
+  background: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
   border: 6px solid var(--o-color-bg2);
   box-shadow: var(--o-shadow-l2);
   z-index: 9;

@@ -19,11 +19,6 @@
 }
 @media (max-width: 1439px) {
   .markdown {
-    width: calc(100% - 48px);
-  }
-}
-@media (max-width: 1100px) {
-  .markdown {
     width: 100%;
   }
 }
