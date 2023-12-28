@@ -18,7 +18,7 @@ ANALYZE VERIFY用于检测数据库中普通表（行存表、列存表）的数
 -   收集表的统计信息
 
     ```
-    { ANALYZE } [ VERBOSE ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
+    { ANALYZE } [ (VERBOSE) ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>

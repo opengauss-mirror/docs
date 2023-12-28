@@ -32,7 +32,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 15. 改变关键字```REJECT、LESS、MODEIFY、USER、COLLATION、FREEZE、VERBOSE、DO、END```由保留字调整为非保留关键字。
 16. 改变关键字```RECYCLEBIN、NOTNULL、BODY```由保留（可以是函数或类型）变为非保留关键字。
 17. 移除关键字```ANALYSE、BUCKETS、ROWNUM、EXCLUDED、MINUS```。
-18. 移除关键字```COMACT```，由保留（可以是函数或类型）调整为非关键字。
+18. 移除关键字```COMPACT```，由保留（可以是函数或类型）调整为非关键字。
 
 **表 1**  SQL关键字
 
