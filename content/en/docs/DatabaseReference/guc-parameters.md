@@ -82,4 +82,8 @@
 
 -   **[Global SysCache Parameters](global-syscache-parameters.md)**
 
+-   **[Resource Pooling Parameters](resource-pooling-parameters.md)**
+
+-   **[UWAL Parameters](uwal-parameters.md)**
+
 -   **[Parameters Related to Efficient Data Compression Algorithms](parameters-related-to-efficient-data-compression-algorithms.md)**
