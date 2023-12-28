@@ -788,6 +788,12 @@ body {
   width: 200px;
   height: calc(100vh - 500px);
 }
+@media screen and (max-width: 1620px){
+  .book-toc.map-aside{
+    width: 120px;
+    right: 0;
+  }
+}
 .book-toc::before {
   display: block;
   content: "";
