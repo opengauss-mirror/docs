@@ -70,7 +70,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 -   显示SQL语句的执行计划，且要按顺序给出选项。
 
     ```
-    {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  }  ] [ VERBOSE  ]  | PERFORMANCE  } statement;
+    {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  }  ] [ (VERBOSE)  ]  | PERFORMANCE  } statement;
     ```
 
 
