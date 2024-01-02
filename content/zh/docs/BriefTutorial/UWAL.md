@@ -263,7 +263,7 @@ UWAL提供简易部署脚本，支持一键部署。
         </th>
         <th class="cellrowborder" valign="top" width="9.98%" id="mcps1.1.6.1.4"><p id="p756568792"><a name="p756568792"></a><a name="p756568792"></a>取值范围</p>
         </th>
-        <th class="cellrowborder" valign="top" width="7.04%" id="mcps1.1.6.1.5"><p id="p056519819914"><a name="p056519819914"></a><a name="p056519819914"></a>缺省值</p>
+        <th class="cellrowborder" valign="top" width="7.04%" id="mcps1.1.6.1.5"><p id="p056519819914"><a name="p056519819914"></a><a name="p056519819914"></a>默认值</p>
         </th>
         </tr>
         </thead>
