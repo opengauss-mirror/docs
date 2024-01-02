@@ -8,6 +8,8 @@
 
 **取值范围**： 字符串，其中空字符串表示没有配置第N个节点信息。
 
+**默认值**： 空字符串
+
 
 ## enable\_uwal<a name="section14941640131"></a>
 
@@ -16,6 +18,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型，on、off。on表示开启UWAL功能，off表示关闭UWAL功能。
+
+**默认值**： off
 
 
 ## uwal\_config<a name="section14941640131"></a>
@@ -26,6 +30,8 @@
 
 **取值范围**： JSON类型的字符串。
 
+**默认值**： 空字符串
+
 
 ## uwal\_disk\_size<a name="section14941640131"></a>
 
@@ -34,6 +40,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，最小值：8589934592；最大值：4398046511104。
+
+**默认值**： 8589934592
 
 
 ## uwal\_devices\_path<a name="section14941640131"></a>
@@ -44,6 +52,8 @@
 
 **取值范围**： 字符串，文件存放路径组成的字符串。
 
+**默认值**： 空字符串
+
 
 ## uwal\_log\_path<a name="section14941640131"></a>
 
@@ -52,6 +62,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串，文件存放路径组成的字符串。
+
+**默认值**： 空字符串
 
 
 
@@ -63,6 +75,8 @@
 
 **取值范围**： 布尔型，true、false。true表示开启压缩传输，false表示关闭压缩传输。
 
+**默认值**： false
+
 
 ## uwal\_rpc\_flowcontrol\_switch<a name="section14941640131"></a>
 
@@ -71,6 +85,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型，on、off。on表示打开纯异步备库流开关，off表示关闭纯异步备库流开关。
+
+**默认值**： off
 
 
 ## uwal\_rpc\_flowcontrol\_value<a name="section14941640131"></a>
@@ -81,6 +97,8 @@
 
 **取值范围**： 整型，8～2048，单位：MB。
 
+**默认值**： 128
+
 
 ## uwal\_async\_append\_switch<a name="section14941640131"></a>
 
@@ -90,15 +108,7 @@
 
 **取值范围**： 布尔型，true、false。true表示使用异步写，false表示使用同步写。
 
-
-
-## application\_name<a name="section14941640131"></a>
-
-**参数说明**：当前连接请求当中，所使用的客户端名称。
-
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
-
-**取值范围**： 任意字符串。
+**默认值**： false
 
 
 
@@ -112,6 +122,8 @@
 
 **取值范围**： 整型，0～7。
 
+**默认值**： None
+
 
 ## uwal\_ip<a name="section14941640131"></a>
 
@@ -120,6 +132,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串，IPv4。
+
+**默认值**： 空字符串
 
 
 ## uwal\_port<a name="section14941640131"></a>
@@ -130,6 +144,8 @@
 
 **取值范围**： 整型，9000～65535。
 
+**默认值**： None
+
 
 ## uwal\_protocol<a name="section14941640131"></a>
 
@@ -138,6 +154,8 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串，rcp、rdma。
+
+**默认值**： tcp
 
 
 ## cpu\_bind\_switch<a name="section14941640131"></a>
@@ -148,6 +166,8 @@
 
 **取值范围**： 字符串，true、false。true表示开启绑核，false表示关闭绑核。
 
+**默认值**： false
+
 
 ## cpu\_bind\_start<a name="section14941640131"></a>
 
@@ -157,6 +177,8 @@
 
 **取值范围**： 整型，0～1024。
 
+**默认值**： 1
+
 
 ## cpu\_bind\_num<a name="section14941640131"></a>
 
@@ -165,3 +187,5 @@
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，2～16。
+
+**默认值**： 3
