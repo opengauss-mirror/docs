@@ -2,7 +2,7 @@
 
 ## Availability<a name="section14611198203513"></a>
 
-This feature is introduced in openGauss 5.1.1.
+This feature is introduced in openGauss 5.0.0.
 
 ## Introduction<a name="section1044295211352"></a>
 
