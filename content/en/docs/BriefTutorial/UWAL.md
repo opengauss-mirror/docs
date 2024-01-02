@@ -405,6 +405,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </th>
             <th class="cellrowborder" valign="top" width="24.2019470228662%" id="mcps1.2.5.1.4"><p id="p756568792"><a name="p756568792"></a><a name="p756568792"></a>Value Range</p>
             </th>
+            <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.5"><p id="p756568799"><a name="p756568799"></a><a name="p756568799"></a>Default Value</p>
+            </th>
             </tr>
             </thead>
             <tbody><tr id="row1344716210013"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p15447202403"><a name="p15447202403"></a><a name="p15447202403"></a>replconninfo{N}</p>
@@ -415,6 +417,9 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>Character string. An empty string indicates that no information about the <em id="i13952538174210"><a name="i13952538174210"></a><a name="i13952538174210"></a>N</em>th node is configured.</p>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>Empty string</p>
+            </td>
+            </td>
             </tr>
             <tr id="row14252637115317"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p8252203735311"><a name="p8252203735311"></a><a name="p8252203735311"></a>enable_uwal</p>
             </td>
@@ -424,6 +429,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul1730195610532"></a><a name="ul1730195610532"></a><ul id="ul1730195610532"><li><strong id="b1452384910287"><a name="b1452384910287"></a><a name="b1452384910287"></a>on</strong>: enable.</li><li><strong id="b6504818122920"><a name="b6504818122920"></a><a name="b6504818122920"></a>off</strong>: disable.</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>off</p>
+            </td>
             </tr>
             <tr id="row459675018428"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p859675013425"><a name="p859675013425"></a><a name="p859675013425"></a>uwal_config</p>
             </td>
@@ -432,6 +439,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1473010295313"><a name="p1473010295313"></a><a name="p1473010295313"></a>UWAL configuration.</p>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p059665015426"><a name="p059665015426"></a><a name="p059665015426"></a>Character string of the JSON type.</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>Empty string</p>
             </td>
             </tr>
             <tr id="row4407698390"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1840715973919"><a name="p1840715973919"></a><a name="p1840715973919"></a>uwal_disk_size</p>
@@ -443,6 +452,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p16829854115014"><a name="p16829854115014"></a><a name="p16829854115014"></a>Minimum value: <strong id="b76064162412"><a name="b76064162412"></a><a name="b76064162412"></a>8589934592</strong></p>
             <p id="p17120172118219"><a name="p17120172118219"></a><a name="p17120172118219"></a>Maximum value: <strong id="b4234201910417"><a name="b4234201910417"></a><a name="b4234201910417"></a>4398046511104</strong></p>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>8589934592</p>
+            </td>
             </tr>
             <tr id="row124911412194316"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1849211210431"><a name="p1849211210431"></a><a name="p1849211210431"></a>uwal_devices_path</p>
             </td>
@@ -452,6 +463,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p13444115913211"><a name="p13444115913211"></a><a name="p13444115913211"></a>Character string of the file storage path.</p>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>Empty string</p>
+            </td>
             </tr>
             <tr id="row138231819439"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1138281811439"><a name="p1138281811439"></a><a name="p1138281811439"></a>uwal_log_path</p>
             </td>
@@ -459,7 +472,10 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1832318524495"><a name="p1832318524495"></a><a name="p1832318524495"></a>Path for storing UWAL log files. The path must be an existing path.</p>
             </td>
-            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p19301132112335"><a name="p19301132112335"></a><a name="p19301132112335"></a>Character string of the file storage path.</p>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p19301132112336"><a name="p19301132112336"></a><a name="p19301132112336"></a>Character string of the file storage path.</p>
+            </td>
+            </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p19301132112335"><a name="p19301132112335"></a><a name="p19301132112335"></a>Empty string</p>
             </td>
             </tr>
             <tr id="row15325134455119"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p143269444516"><a name="p143269444516"></a><a name="p143269444516"></a>uwal_rpc_compression_switch</p>
@@ -470,6 +486,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul723414185211"></a><a name="ul723414185211"></a><ul id="ul723414185211"><li><strong id="b46211635163012"><a name="b46211635163012"></a><a name="b46211635163012"></a>true</strong>: enable.</li><li><strong id="b1526114493016"><a name="b1526114493016"></a><a name="b1526114493016"></a>false</strong>: disable.</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>false</p>
+            </td>
             </tr>
             <tr id="row20803334125218"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p680363414522"><a name="p680363414522"></a><a name="p680363414522"></a>uwal_rpc_flowcontrol_switch</p>
             </td>
@@ -478,6 +496,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1560715215815"><a name="p1560715215815"></a><a name="p1560715215815"></a>Specifies whether to enable flow control for the asynchronous standby database. This parameter is set on the active database.</p>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li><strong id="b3132859183014"><a name="b3132859183014"></a><a name="b3132859183014"></a>on</strong>: enable.</li><li><strong id="b024329143120"><a name="b024329143120"></a><a name="b024329143120"></a>off</strong>: disable.</li></ul>
+            </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>off</p>
             </td>
             </tr>
             <tr id="row1861817512539"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p106188514539"><a name="p106188514539"></a><a name="p106188514539"></a>uwal_rpc_flowcontrol_value</p>
@@ -488,6 +508,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p637754013113"><a name="p637754013113"></a><a name="p637754013113"></a>8–2048</p>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>128</p>
+            </td>
             </tr>
             <tr id="row10727151734917"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p177273171495"><a name="p177273171495"></a><a name="p177273171495"></a>uwal_async_append_switch</p>
             </td>
@@ -497,6 +519,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul3411546175514"></a><a name="ul3411546175514"></a><ul id="ul3411546175514"><li><strong id="b23191546183114"><a name="b23191546183114"></a><a name="b23191546183114"></a>true</strong>: Asynchronous write is used.</li><li><strong id="b1279241123217"><a name="b1279241123217"></a><a name="b1279241123217"></a>false</strong>: Synchronous write is used.</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>false</p>
+            </td>
             </tr>
             <tr id="row152985345311"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p92987341734"><a name="p92987341734"></a><a name="p92987341734"></a>application_name</p>
             </td>
@@ -505,6 +529,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1529919348319"><a name="p1529919348319"></a><a name="p1529919348319"></a>Specifies the client name used in the current connection request.</p>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p1529911344310"><a name="p1529911344310"></a><a name="p1529911344310"></a>Any character string.</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="8%" headers="mcps1.2.5.1.5 "><p id="p4447122007"><a name="p4447122007"></a><a name="p4447122007"></a>Empty string</p>
             </td>
             </tr>
             </tbody>
@@ -521,6 +547,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </th>
             <th class="cellrowborder" valign="top" width="30.808366308648953%" id="mcps1.2.5.1.4"><p id="p4146124313457"><a name="p4146124313457"></a><a name="p4146124313457"></a>Value Range</p>
             </th>
+            <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.5"><p id="p4146124313458"><a name="p4146124313458"></a><a name="p4146124313458"></a>Default Value</p>
+            </th>
             </tr>
             </thead>
             <tbody><tr id="row1840492611441"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p159511917154511"><a name="p159511917154511"></a><a name="p159511917154511"></a>uwal_nodeid</p>
@@ -531,6 +559,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>0–7</p>
             </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>None</p>
+            </td>
             </tr>
             <tr id="row4404142620442"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p69511017174510"><a name="p69511017174510"></a><a name="p69511017174510"></a>uwal_ip</p>
             </td>
@@ -539,6 +569,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="37.79536461277557%" headers="mcps1.2.5.1.3 "><p id="p1795101715458"><a name="p1795101715458"></a><a name="p1795101715458"></a>UWAL listening address, which is the input parameter name when the UwalInit() function is invoked.</p>
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p795111794512"><a name="p795111794512"></a><a name="p795111794512"></a>IPv4</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>Empty string</p>
             </td>
             </tr>
             <tr id="row44041726104418"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p14951161784518"><a name="p14951161784518"></a><a name="p14951161784518"></a>uwal_port</p>
@@ -549,6 +581,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p119516171453"><a name="p119516171453"></a><a name="p119516171453"></a>9000–65535</p>
             </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>None</p>
+            </td>
             </tr>
             <tr id="row14404182611442"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p8951161719452"><a name="p8951161719452"></a><a name="p8951161719452"></a>uwal_protocol</p>
             </td>
@@ -557,6 +591,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="37.79536461277557%" headers="mcps1.2.5.1.3 "><p id="p695113171452"><a name="p695113171452"></a><a name="p695113171452"></a>(Optional) Connection protocol of the current node, which is the input parameter name when the UwalInit() function is invoked.</p>
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><a name="ul795119174457"></a><a name="ul795119174457"></a><ul id="ul795119174457"><li>tcp</li><li>rdma</li></ul>
+            </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>tcp</p>
             </td>
             </tr>
             <tr id="row7404142611449"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p59524178454"><a name="p59524178454"></a><a name="p59524178454"></a>cpu_bind_switch</p>
@@ -567,6 +603,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><a name="ul495219179451"></a><a name="ul495219179451"></a><ul id="ul495219179451"><li><strong id="b333733943320"><a name="b333733943320"></a><a name="b333733943320"></a>true</strong>: enable.</li><li><strong id="b1915194816338"><a name="b1915194816338"></a><a name="b1915194816338"></a>false</strong>: disable.</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>false</p>
+            </td>
             </tr>
             <tr id="row19404926124410"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p1695231715458"><a name="p1695231715458"></a><a name="p1695231715458"></a>cpu_bind_start</p>
             </td>
@@ -576,6 +614,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p49528172459"><a name="p49528172459"></a><a name="p49528172459"></a>0–1024</p>
             </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>1</p>
+            </td>
             </tr>
             <tr id="row204058264440"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p4952717194510"><a name="p4952717194510"></a><a name="p4952717194510"></a>cpu_bind_num</p>
             </td>
@@ -584,6 +624,8 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             <td class="cellrowborder" valign="top" width="37.79536461277557%" headers="mcps1.2.5.1.3 "><p id="p89529171458"><a name="p89529171458"></a><a name="p89529171458"></a>(Optional) Number of CPU cores bound to UWAL.</p>
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p1795231715454"><a name="p1795231715454"></a><a name="p1795231715454"></a>2–16</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.5 "><p id="p595111754513"><a name="p595111754513"></a><a name="p595111754513"></a>3</p>
             </td>
             </tr>
             </tbody>
