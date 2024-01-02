@@ -1,4 +1,4 @@
-# 支持UWAL特性<a name="ZH-CN_TOPIC_0000001687210125"></a>
+# UWAL特性<a name="ZH-CN_TOPIC_0000001687210125"></a>
 
 ## 可获得性<a name="section14611198203513"></a>
 
