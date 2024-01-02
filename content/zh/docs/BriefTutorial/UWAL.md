@@ -402,6 +402,8 @@ UWAL提供简易部署脚本，支持一键部署。
             </th>
             <th class="cellrowborder" valign="top" width="24.2019470228662%" id="mcps1.2.5.1.4"><p id="p756568792"><a name="p756568792"></a><a name="p756568792"></a>取值范围</p>
             </th>
+            <th class="cellrowborder" valign="top" width="24.2019470228662%" id="mcps1.2.5.1.4"><p id="p756568792"><a name="p756568792"></a><a name="p756568792"></a>默认值</p>
+            </th>
             </tr>
             </thead>
             <tbody><tr id="row1344716210013"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p15447202403"><a name="p15447202403"></a><a name="p15447202403"></a>replconninfo{N}</p>
@@ -412,6 +414,8 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>字符串。其中空字符串表示没有配置第N个节点信息。</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>空字符串</p>
+            </td>
             </tr>
             <tr id="row14252637115317"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p8252203735311"><a name="p8252203735311"></a><a name="p8252203735311"></a>enable_uwal</p>
             </td>
@@ -421,6 +425,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul1730195610532"></a><a name="ul1730195610532"></a><ul id="ul1730195610532"><li>on，表示开启UWAL功能。</li><li>off，表示关闭UWAL功能。</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>off</p>
             </tr>
             <tr id="row459675018428"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p859675013425"><a name="p859675013425"></a><a name="p859675013425"></a>uwal_config</p>
             </td>
@@ -430,6 +435,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p059665015426"><a name="p059665015426"></a><a name="p059665015426"></a>JSON类型的字符串。</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>空字符串</p>
             </tr>
             <tr id="row4407698390"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1840715973919"><a name="p1840715973919"></a><a name="p1840715973919"></a>uwal_disk_size</p>
             </td>
@@ -440,6 +446,7 @@ UWAL提供简易部署脚本，支持一键部署。
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p16829854115014"><a name="p16829854115014"></a><a name="p16829854115014"></a>最小值：8589934592</p>
             <p id="p17120172118219"><a name="p17120172118219"></a><a name="p17120172118219"></a>最大值：4398046511104</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>8589934592</p>
             </tr>
             <tr id="row124911412194316"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1849211210431"><a name="p1849211210431"></a><a name="p1849211210431"></a>uwal_devices_path</p>
             </td>
@@ -449,6 +456,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p13444115913211"><a name="p13444115913211"></a><a name="p13444115913211"></a>文件存放路径组成的字符串。</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>空字符串</p>
             </tr>
             <tr id="row138231819439"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p1138281811439"><a name="p1138281811439"></a><a name="p1138281811439"></a>uwal_log_path</p>
             </td>
@@ -458,6 +466,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p19301132112335"><a name="p19301132112335"></a><a name="p19301132112335"></a>文件存放路径组成的字符串。</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>空字符串</p>
             </tr>
             <tr id="row15325134455119"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p143269444516"><a name="p143269444516"></a><a name="p143269444516"></a>uwal_rpc_compression_switch</p>
             </td>
@@ -467,6 +476,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul723414185211"></a><a name="ul723414185211"></a><ul id="ul723414185211"><li>true，表示开启压缩传输。</li><li>false，表示关闭压缩传输。</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>false</p>
             </tr>
             <tr id="row20803334125218"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p680363414522"><a name="p680363414522"></a><a name="p680363414522"></a>uwal_rpc_flowcontrol_switch</p>
             </td>
@@ -476,6 +486,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li>on，表示打开纯异步备库流开关。</li><li>off，表示关闭纯异步备库流开关。</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>off</p>
             </tr>
             <tr id="row1861817512539"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p106188514539"><a name="p106188514539"></a><a name="p106188514539"></a>uwal_rpc_flowcontrol_value</p>
             </td>
@@ -485,6 +496,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p637754013113"><a name="p637754013113"></a><a name="p637754013113"></a>8～2048</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>128</p>
             </tr>
             <tr id="row10727151734917"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p177273171495"><a name="p177273171495"></a><a name="p177273171495"></a>uwal_async_append_switch</p>
             </td>
@@ -494,6 +506,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul3411546175514"></a><a name="ul3411546175514"></a><ul id="ul3411546175514"><li>true，表示使用异步写。</li><li>false，表示使用同步写。</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>false</p>
             </tr>
             <tr id="row152985345311"><td class="cellrowborder" valign="top" width="23.126556486302924%" headers="mcps1.2.5.1.1 "><p id="p92987341734"><a name="p92987341734"></a><a name="p92987341734"></a>application_name</p>
             </td>
@@ -503,6 +516,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p1529911344310"><a name="p1529911344310"></a><a name="p1529911344310"></a>任意字符串。</p>
             </td>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>空字符串</p>
             </tr>
             </tbody>
             </table>
@@ -518,6 +532,8 @@ UWAL提供简易部署脚本，支持一键部署。
             </th>
             <th class="cellrowborder" valign="top" width="30.808366308648953%" id="mcps1.2.5.1.4"><p id="p4146124313457"><a name="p4146124313457"></a><a name="p4146124313457"></a>取值范围</p>
             </th>
+            <th class="cellrowborder" valign="top" width="30.808366308648953%" id="mcps1.2.5.1.4"><p id="p4146124313457"><a name="p4146124313457"></a><a name="p4146124313457"></a>默认值</p>
+            </th>
             </tr>
             </thead>
             <tbody><tr id="row1840492611441"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p159511917154511"><a name="p159511917154511"></a><a name="p159511917154511"></a>uwal_nodeid</p>
@@ -528,6 +544,8 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>0～7</p>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>None</p>
+            </td>
             </tr>
             <tr id="row4404142620442"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p69511017174510"><a name="p69511017174510"></a><a name="p69511017174510"></a>uwal_ip</p>
             </td>
@@ -536,6 +554,8 @@ UWAL提供简易部署脚本，支持一键部署。
             <td class="cellrowborder" valign="top" width="37.79536461277557%" headers="mcps1.2.5.1.3 "><p id="p1795101715458"><a name="p1795101715458"></a><a name="p1795101715458"></a>UWAL侦听地址，调用UwalInit()函数时传入的参数名。</p>
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p795111794512"><a name="p795111794512"></a><a name="p795111794512"></a>IPv4</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>空字符串</p>
             </td>
             </tr>
             <tr id="row44041726104418"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p14951161784518"><a name="p14951161784518"></a><a name="p14951161784518"></a>uwal_port</p>
@@ -546,6 +566,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p119516171453"><a name="p119516171453"></a><a name="p119516171453"></a>9000～65535</p>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>None</p>
             </tr>
             <tr id="row14404182611442"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p8951161719452"><a name="p8951161719452"></a><a name="p8951161719452"></a>uwal_protocol</p>
             </td>
@@ -555,6 +576,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><a name="ul795119174457"></a><a name="ul795119174457"></a><ul id="ul795119174457"><li>tcp</li><li>rdma</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>tcp</p>
             </tr>
             <tr id="row7404142611449"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p59524178454"><a name="p59524178454"></a><a name="p59524178454"></a>cpu_bind_switch</p>
             </td>
@@ -564,6 +586,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><a name="ul495219179451"></a><a name="ul495219179451"></a><ul id="ul495219179451"><li>true，表示开启绑核。</li><li>false，表示关闭绑核。</li></ul>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>false</p>
             </tr>
             <tr id="row19404926124410"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p1695231715458"><a name="p1695231715458"></a><a name="p1695231715458"></a>cpu_bind_start</p>
             </td>
@@ -573,6 +596,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p49528172459"><a name="p49528172459"></a><a name="p49528172459"></a>0～1024</p>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>1</p>
             </tr>
             <tr id="row204058264440"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p4952717194510"><a name="p4952717194510"></a><a name="p4952717194510"></a>cpu_bind_num</p>
             </td>
@@ -582,6 +606,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p1795231715454"><a name="p1795231715454"></a><a name="p1795231715454"></a>2～16</p>
             </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>3</p>
             </tr>
             </tbody>
             </table>
