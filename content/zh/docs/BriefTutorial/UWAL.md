@@ -83,7 +83,7 @@ UWAL提供简易部署脚本，支持一键部署。
 
 - 操作步骤
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >![](public_sys-resources/icon-note.png) **说明：** 
     >以下操作除特殊说明外，默认只在主节点进行操作。
 
     1.  将安装包上传至节点，在安装包所在目录执行以下命令赋予openGauss数据库用户操作权限。
@@ -92,7 +92,7 @@ UWAL提供简易部署脚本，支持一键部署。
         chown omm:dbgrp OCK_UWAL_23.0.0_openeuler_22.03-aarch64_gcc10.tar.gz
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   omm：数据库管理用户名。
         >-   dbgrp：数据库管理用户组。
 
@@ -168,7 +168,7 @@ UWAL提供简易部署脚本，支持一键部署。
         </tbody>
         </table>
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >如果重复解压源文件，需清理以上文件后再解压。
 
     4.  使用“bin“目录下的verification二进制，进行软件包签名验证。
@@ -177,7 +177,7 @@ UWAL提供简易部署脚本，支持一键部署。
         ./bin/verification OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.cms OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.txt
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >verification可执行二进制需要三个参数，按先后顺序分别是：源文件、签名文件、描述文件。
 
         -   验证成功控制台会输出：
@@ -204,7 +204,7 @@ UWAL提供简易部署脚本，支持一键部署。
             Verify the sha file failed.
             ```
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >![](public_sys-resources/icon-note.png) **说明：** 
             >校验失败说明此安装包已被篡改，建议重新获取安装包后再次校验。
 
     5.  安装包验证成功后，进入“scripts“目录，准备执行部署脚本。
@@ -219,7 +219,7 @@ UWAL提供简易部署脚本，支持一键部署。
         sh ock_uwal_install.sh -H '192.168.4.164 192.168.4.165 192.168.4.166' -U omm -D /home/omm/lib
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   -H：集群IP地址。例如：'_192.168.4.164 192.168.4.165 192.168.4.166_'
         >-   -U：数据库管理用户名。例如：omm
         >-   -D：“$\{GAUSSHOME\}/lib“库路径。例如：“/home/omm/lib“
@@ -237,7 +237,7 @@ UWAL提供简易部署脚本，支持一键部署。
         source ~/.bashrc
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **须知：** 
+        >![](public_sys-resources/icon-notice.png) **须知：** 
         >此步骤也需要在备节点执行。
 
     9.  （可选）UWAL组件依赖HCOM组件进行RPC通信，用户可根据需要配置以下环境变量。
@@ -351,7 +351,7 @@ UWAL提供简易部署脚本，支持一键部署。
 ### 启用UWAL特性
 启用UWAL特性，需要通过修改配置文件，重启数据库使其生效。
 
->![](public_sys-resources/icon-notice.gif) **须知：** 
+>![](public_sys-resources/icon-notice.png) **须知：** 
 >UWAL特性一旦开启，不支持关闭。
 
 - 前提条件
@@ -384,7 +384,7 @@ UWAL提供简易部署脚本，支持一键部署。
             application_name = 'node201'
             ```
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >![](public_sys-resources/icon-note.png) **说明：** 
             >-   一主两备，需要在“replconninfo1“参数的下一行添加“replconninfo2“参数，如：
             >    ```
             >    replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
@@ -601,7 +601,7 @@ UWAL提供简易部署脚本，支持一键部署。
             cm_ctl start
             ```
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >![](public_sys-resources/icon-note.png) **说明：** 
             >如果启动失败请根据openGauss日志目录下的“postgresql-YYYY-MM-DD\_HHMMSS.log”日志信息排查错误。
 
     4.  验证UWAL特性是否启用成功。
@@ -619,7 +619,7 @@ UWAL提供简易部署脚本，支持一键部署。
         (1 row)
         ```
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >![](public_sys-resources/icon-note.png) **说明：** 
         >-   -p 16600：16600为数据库端口号，请根据实际情况修改。
         >-   如需查看启用UWAL特性的日志文件，可进入“uwal\_log\_path“对的路径执行以下命令。
         >    ```
