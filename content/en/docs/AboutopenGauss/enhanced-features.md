@@ -334,6 +334,12 @@ User authentication modes \(gsql, JDBC, and ODBC\) support the SM3 algorithm. AP
 
 The syntax and semantics of the SQL engine are decoupled to implement plug-ins for the syntax and semantics layers of openGauss and decouple the syntax module of heterogeneous databases from the openGauss Kernel. Operator plug-ins are supported, implementing plug-ins for specific operators from plan creation, optimization, to execution.
 
+## UWAL
+This feature combines the database and a Huawei-developed Unified Write-Ahead Log \(UWAL\) component to improve the performance of active/standby transaction submission as well as stream replication and transmission, accelerating the Write-Ahead Log \(WAL\) performance of the database.
+
+## SCRLock
+When resource pooling is enabled, Smart Cached Remote Lock \(SCRLock\) can be used to provide the distributed lock capability, improving distributed lock performance.
+
 ## Others<a name="section136625208413"></a>
 
 -   UPSERT supports subqueries.

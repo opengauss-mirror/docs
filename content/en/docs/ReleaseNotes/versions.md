@@ -24,6 +24,7 @@ openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is thre
 
 - New functions:
   -   High performance: The performance of basic operators is improved. (For details, see the feature description.)
+  -   High performance: The SCRLock feature improves distributed lock performance. 
   -   High security: user-level audit.
   -   High availability: CM supports VIP management.
   -   High availability: CM can be deployed on two nodes.
@@ -32,6 +33,7 @@ openGauss 5.0.0 is the third LTS version of openGauss, and its lifecycle is thre
   -   High intelligence: Exception detection supports self-configuration.
   -   Enterprise-level feature: event trigger.
   -   Enterprise-level feature: openGauss resource pooling architecture is implemented based on storage pooling, memory pooling, and computing pooling (beta feature).
+  -   Enterprise-level feature: The Unified Write-Ahead Log \(UWAL\) feature accelerates the Write-Ahead Log \(WAL\) performance of the database.
   -   Application development interface: enhanced JDBC capabilities.
   -   Middleware: ShardingSphere supports read/write isolation in multiple modes and cross-database query.
   -   Middleware: 32-node networking performance of openGauss+ShardingSphere > 21 million tpmC

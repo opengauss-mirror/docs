@@ -20,5 +20,9 @@
 
 -   **[Primary/Standby Shared Storage](primary-standby-shared-storage.md)** 
 
+-   **[Resource Pooling](resource-pooling.md)**
+
+-   **[UWAL](UWAL.md)**
+
 
 
