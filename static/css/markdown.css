@@ -47,6 +47,19 @@
   text-decoration: underline;
   color: var(--o-color-brand2);
 }
+.markdown p{
+  position: relative;
+}
+.markdown p a[name]{
+  display: block;
+  position: absolute;
+  top: -60px;
+}
+@media screen and (max-width: 768px)  {
+  .markdown p a[name]{
+    top: -92px;
+  }
+}
 .markdown h1,
 .markdown h2,
 .markdown h3,
