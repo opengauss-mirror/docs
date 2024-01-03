@@ -189,3 +189,47 @@ By default, a new log file is generated at 0:00 every day, or when the latest lo
 Content of a line in a database log:
 
 *Host name*+*Date*+*Time*+*Instance name*+*Thread number*+*Log content*
+
+## Log Translation<a name="section4543155110159"></a>
+
+Logs of openGauss are written in English by default, but openGauss supports translating them into other languages including Chinese.
+
+**Procedure**
+
+1. Install gettext tools
+
+2. Build openGauss with parameter `--enable-nls`
+
+    ```
+    ./configure --enable-nls="zh_CN" --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib && make && make install
+    ```
+
+    Note that if no argument is given for option `--enable-nls`, openGauss will enable native language support for all languages it can support. 
+
+3. Make a translation
+
+    Usually there is no need to make a new translation text, except for building a new project.
+
+    ```
+    make init-po
+    ```
+
+4. Update the translation
+
+    ```
+    make update-po
+    ```
+
+    Running this command creates a new translation file `zh_CN.po.new` based on the old file `zh_CN.po`. Check out new translations in `zh_CN.po.new` corresponding to newly added English texts. Some translations may be tagged with `fuzzy`, indicating these translations may be confusing, and requires manual revision. When the revision is done, rename file `zh_CN.po.new` to `zh_CN.po`, and run the following command:
+
+    ```
+    make install
+    ```
+
+    >![](public_sys-resources/icon-caution.gif) **CAUTION：** 
+    > If the target language's grammar requires to swap mutiple format effectors' order, the older version of secure c that openGauss depends on don't support reordering format effectors in ways like `%2$s %1$s`. The latest version of secure c does support this kind of method, but you may need manually update the secure c in binarylibs to the latest version.
+    > If charsets specified by system environment variables `LC_CTYPE`, `LC_MESSAGES`, and guc parameter `lc_messages` don't match with each other, it may lead to garbled codes in logs of main threads and backend threads. To avoid this, when detected mismatch between system environment variables `LC_CTYPE`, `LC_MESSAGES`, and guc parameter `lc_messages`, openGauss will automatically disable its native language support.
+    > If the database is encoded by charsets other than utf-8, make sure the values of environment variable `LC_CTYPE`, `LC_MESSAGES` and guc parameter `lc_messages` match with it, otherwise user data that is not encoded by utf-8/ascii may also lead to garbled codes in logs.
+    > `gettext` will cache its translation result, whether the result meets the expectation or not. And later translation will reuse this cache as well.
+    > If the database is encoded by GBK, and when the user data encoded by GBK is written to logs, the co-existence of characters encoded by GBK and those encoded by UTF-8 may also lead to garbled codes.
+    > A guc parameter `enable_nls` is added to determine whether to enable native language support or not. You may set its value to `off` when native language support is significantly degrading the performance of openGauss (usually when logging at a low level with high concurrency). Note that for now the parameter can only control elog's translation.
