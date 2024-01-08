@@ -29,7 +29,7 @@ Obtain the UWAL installation package from the openGauss community.
 </td>
 <td class="cellrowborder" valign="top" width="36.86368636863686%" headers="mcps1.2.4.1.2 "><p id="p2314662389"><a name="p2314662389"></a><a name="p2314662389"></a>The model is subject to the actual environment, for example, Mellanox CX4/CX5 NICs.</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p43144633810"><a name="p43144633810"></a><a name="p43144633810"></a>It must support RDMA and Ethernet, and the RDMA protocol must be enabled. For details, refer to the <em id="i647912313544"><a name="i647912313544"></a><a name="i647912313544"></a>RDMA Network Guide</em>.</p>
+<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p43144633810"><a name="p43144633810"></a><a name="p43144633810"></a>It must support RDMA and Ethernet, and the RDMA protocol must be enabled. For details, refer to the <a href="https://opengauss.org/en/blogs/RDMA/RDMA_Network_Guide.html" target="_blank" rel="noopener noreferrer">RDMA Network Guide</a>.</p>
 </td>
 </tr>
 <tr id="row19957153511363"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p58101109381"><a name="p58101109381"></a><a name="p58101109381"></a>OS</p>
