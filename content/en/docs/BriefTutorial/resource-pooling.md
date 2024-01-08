@@ -29,7 +29,7 @@ Obtain the UWAL installation package from the openGauss community.
 </td>
 <td class="cellrowborder" valign="top" width="36.86368636863686%" headers="mcps1.2.4.1.2 "><p id="p2314662389"><a name="p2314662389"></a><a name="p2314662389"></a>The model is subject to the actual environment, for example, Mellanox CX4/CX5 NICs.</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p43144633810"><a name="p43144633810"></a><a name="p43144633810"></a>It must support RDMA and Ethernet, and the RDMA protocol must be enabled. For details, refer to the <a href="https://opengauss.org/en/blogs/RDMA/RDMA_Network_Guide.html" target="_blank" rel="noopener noreferrer">RDMA Network Guide</a>.</p>
+<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p43144633810"><a name="p43144633810"></a><a name="p43144633810"></a>It must support RDMA and Ethernet, and the RDMA protocol must be enabled. For details, refer to <a href="https://opengauss.org/en/blogs/RDMA/RDMA_Network_Guide.html" target="_blank" rel="noopener noreferrer">RDMA Network Guide</a>.</p>
 </td>
 </tr>
 <tr id="row19957153511363"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p58101109381"><a name="p58101109381"></a><a name="p58101109381"></a>OS</p>
@@ -39,7 +39,7 @@ Obtain the UWAL installation package from the openGauss community.
 <a name="ul1811151093816"></a><a name="ul1811151093816"></a><ul id="ul1811151093816"><li>x86<a name="ul48111610133812"></a><a name="ul48111610133812"></a><ul id="ul48111610133812"><li>openEuler 22.03 LTS</li><li>openEuler 20.03 LTS</li><li>openEuler 20.03 LTS SP1</li><li>openEuler 20.03 LTS SP3</li></ul>
 </li></ul>
 </td>
-<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p8811910113812"><a name="p8811910113812"></a><a name="p8811910113812"></a>For the same SP version, if the kernel minor versions are inconsistent or an incompatibility error is reported during kernel component installation, you need to modify the OS <strong id="b201821433204314"><a name="b201821433204314"></a><a name="b201821433204314"></a>weak-modules</strong> script. For details, refer to the <em id="i242714361010"><a name="i242714361010"></a><a name="i242714361010"></a>Modification of the weak-modules Script for OS Compatibility</em>.</p>
+<td class="cellrowborder" valign="top" width="29.8029802980298%" headers="mcps1.2.4.1.3 "><p id="p8811910113812"><a name="p8811910113812"></a><a name="p8811910113812"></a>For the same SP version, if the kernel minor versions are inconsistent or an incompatibility error is reported during kernel component installation, you need to modify the OS <strong id="b201821433204314"><a name="b201821433204314"></a><a name="b201821433204314"></a>weak-modules</strong> script. For details, refer to <a id="i242714361010"><a href="https://opengauss.org/en/blogs/weak-modules/Modification_of_the_weak-modules_Script_for_OS_Compatibility.html" target="_blank" rel="noopener noreferrer">Modification of the weak-modules Script for OS Compatibility</a>.</p>
 </td>
 </tr>
 <tr id="row129584352361"><td class="cellrowborder" rowspan="2" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p177171738193816"><a name="p177171738193816"></a><a name="p177171738193816"></a>Software</p>
