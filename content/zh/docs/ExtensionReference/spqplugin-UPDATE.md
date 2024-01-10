@@ -26,19 +26,20 @@ openGauss=# set spqplugin.spq_optimizer_enable_dml_constraints = true;
 SET
 openGauss=# set spqplugin.spq_enable_update = on;
 SET
+openGauss=# set query_dop = 2;
+SET
 --查看多机计划。
 openGauss=# explain update t1 set c1 = 2 where c1 < 2;
                                                QUERY PLAN
----------------------------------------------------------------------------------------------------------
- Streaming (type: GATHER)  (cost=0.00..0.00 rows=0 width=0)
-   ->  Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..0.00 rows=0 width=0)
-         ->  Update on t1  (cost=0.00..431.03 rows=1 width=1)
-               ->  SPQ Result  (cost=0.00..0.00 rows=0 width=0)
-                     ->  Streaming(type: DML REDISTRIBUTE dop: 3/2)  (cost=0.00..431.00 rows=2 width=26)
-                           ->  Split  (cost=0.00..431.00 rows=2 width=26)
-                                 ->  Spq Seq Scan on t1  (cost=0.00..431.00 rows=1 width=15)
-                                       Filter: (c1 < 2)
-(8 rows)
+---------------------------------------------------------------------------------------------------
+ Streaming (type: GATHER)  (cost=0.00..0.00 rows=0 width=1)
+   ->  Update on t1  (cost=0.00..431.03 rows=1 width=1)
+         ->  SPQ Result  (cost=0.00..0.00 rows=0 width=0)
+               ->  Streaming(type: DML REDISTRIBUTE dop: 1/2)  (cost=0.00..431.00 rows=2 width=22)
+                     ->  Split  (cost=0.00..431.00 rows=2 width=22)
+                           ->  Spq Seq Scan on t1  (cost=0.00..431.00 rows=1 width=11)
+                                 Filter: (c1 < 2)
+(7 rows)
 
 --删除表。
 openGauss=# drop table t1;

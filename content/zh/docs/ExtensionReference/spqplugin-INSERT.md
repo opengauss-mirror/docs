@@ -29,18 +29,20 @@ openGauss=# set spqplugin.spq_optimizer_enable_dml_constraints = true;
 SET
 openGauss=# set spqplugin.spq_enable_insert_select = on;
 SET
+openGauss=# set query_dop = 2;
+SET
 
 --查看多机计划。
 openGauss=# explain insert into t2 select * from t1;
                                                QUERY PLAN
----------------------------------------------------------------------------------------------------------
- Streaming (type: GATHER)  (cost=0.00..0.00 rows=0 width=0)
-   ->  Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..0.00 rows=0 width=0)
-         ->  Insert on t2  (cost=0.00..431.01 rows=1 width=5)
-               ->  SPQ Result  (cost=0.00..0.00 rows=0 width=0)
-                     ->  Streaming(type: DML REDISTRIBUTE dop: 3/2)  (cost=0.00..431.00 rows=1 width=16)
-                           ->  Spq Seq Scan on t1  (cost=0.00..431.00 rows=1 width=5)
-(6 rows)
+---------------------------------------------------------------------------------------------------
+ Streaming (type: GATHER)  (cost=0.00..0.00 rows=0 width=5)
+   ->  Insert on t2  (cost=0.00..431.01 rows=1 width=5)
+         ->  SPQ Result  (cost=0.00..0.00 rows=0 width=0)
+               ->  Streaming(type: DML REDISTRIBUTE dop: 1/2)  (cost=0.00..431.00 rows=1 width=16)
+                     ->  Spq Seq Scan on t1  (cost=0.00..431.00 rows=1 width=5)
+(5 rows)
+
 
 --删除表。
 openGauss=# drop table t1;
