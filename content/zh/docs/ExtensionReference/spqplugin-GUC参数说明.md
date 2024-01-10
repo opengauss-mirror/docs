@@ -786,3 +786,58 @@ spqplugin.cluster_map = 'node1|x.x.x.x|12300,node2|x.x.x.x|12300'
 -   off表示不使用多机并行在线创建btree索引，使用内核原有功能。
 
 **默认值**：off
+
+## spqplugin.spq_enable_insert_select
+
+**参数说明**：参数值为布尔类型，该参数用于控制多机并行insert操作。
+
+**取值范围**：布尔型
+
+-   on表示使用多机并行插入数据。
+-   off表示不使用多机并行插入数据，使用内核原有功能。
+
+**默认值**：off
+
+## spqplugin.spq_enable_insert_from_tableless
+
+**参数说明**：参数值为布尔类型，该参数用于控制多机并行不带子查询的insert操作。
+
+**取值范围**：布尔型
+
+-   on表示允许多机并行不带子查询的insert操作。
+-   off表示使用多机并行insert的语句需要带有子查询。
+
+**默认值**：off
+
+## spqplugin.spq_enable_insert_order_sensitive
+
+**参数说明**：参数值为布尔类型，该参数用于保证按照查询结果的顺序写入数据。
+
+**取值范围**：布尔型
+
+-   on表示按照查询结果的顺序写入数据。
+-   off表示不保证写入数据的顺序。
+
+**默认值**：off
+
+## spqplugin.spq_enable_delete
+
+**参数说明**：参数值为布尔类型，该参数用于控制多机并行delete操作。
+
+**取值范围**：布尔型
+
+-   on表示使用多机并行删除数据。
+-   off表示不使用多机并行删除数据，使用内核原有功能。
+
+**默认值**：off
+
+## spqplugin.spq_enable_update
+
+**参数说明**：参数值为布尔类型，该参数用于控制多机并行update操作。
+
+**取值范围**：布尔型
+
+-   on表示使用多机并行更新数据。
+-   off表示不使用多机并行更新数据，使用内核原有功能。
+
+**默认值**：off

@@ -27,8 +27,14 @@ spqplugin.enable_spq = on
 
 ## 使用插件
 
-多机并行功能目前支持部分DQL、DDL，详情参考：
+多机并行功能目前支持部分DQL、DDL、DML，详情参考：
 
-[SELECT](../SQLReference/SELECT.md)
+[SELECT](spqplugin-SELECT.md)
 
-[CREATE INDEX](../SQLReference/CREATE-INDEX.md)
+[CREATE INDEX](spqplugin-CREATE-INDEX.md)
+
+[INSERT](spqplugin-INSERT.md)
+
+[DELETE](spqplugin-DELETE.md)
+
+[UPDATE](spqplugin-UPDATE.md)
