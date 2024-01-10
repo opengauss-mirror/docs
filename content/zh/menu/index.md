@@ -919,6 +919,7 @@ headless: true
 					-	[DO]({{< relref "./docs/ExtensionReference/dolphin-DO.md" >}})
 					-	[DROP DATABASE]({{< relref "./docs/ExtensionReference/dolphin-DROP-DATABASE.md" >}})
 					-	[DROP INDEX]({{< relref "./docs/ExtensionReference/dolphin-DROP-INDEX.md" >}})
+					-	[DROP TABLES]({{< relref "./docs/ExtensionReference/dolphin-DROP-TABLES.md" >}})
 					-	[DROP TABLESPACE]({{< relref "./docs/ExtensionReference/dolphin-DROP-TABLESPACE.md" >}})
 					-	[EXECUTE]({{< relref "./docs/ExtensionReference/dolphin-EXECUTE.md" >}})	
 					-	[EXPLAIN]({{< relref "./docs/ExtensionReference/dolphin-EXPLAIN.md" >}})

@@ -54,6 +54,8 @@
 
 -   **[DROP INDEX](dolphin-DROP-INDEX.md)**
 
+-   **[DROP TABLES](dolphin-DROP-TABLES.md)**  
+
 -   **[DROP TABLESPACE](dolphin-DROP-TABLESPACE.md)**  
 
 -   **[EXECUTE](dolphin-EXECUTE.md)**  

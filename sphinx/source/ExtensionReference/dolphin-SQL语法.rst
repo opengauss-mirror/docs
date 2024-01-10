@@ -29,6 +29,7 @@ SQL语法
     ../content/zh/docs/ExtensionReference/dolphin-DO
     ../content/zh/docs/ExtensionReference/dolphin-DROP-DATABASE
     ../content/zh/docs/ExtensionReference/dolphin-DROP-INDEX
+    ../content/zh/docs/ExtensionReference/dolphin-DROP-TABLES
     ../content/zh/docs/ExtensionReference/dolphin-DROP-TABLESPACE
     ../content/zh/docs/ExtensionReference/dolphin-EXECUTE
     ../content/zh/docs/ExtensionReference/dolphin-EXPLAIN
