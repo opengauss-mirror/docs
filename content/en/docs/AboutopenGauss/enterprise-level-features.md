@@ -35,3 +35,5 @@
 -   **[Foreign Key Lock Enhancement](foreign-key-lock-enhancement.md)**
 
 -   **[Data Compression in OLTP Scenarios](data-compression-in-oltp-scenarios.md)**
+
+-   **[UWAL](uwal.md)** 
