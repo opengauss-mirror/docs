@@ -1,4 +1,4 @@
-# gs\_expansion
+# gs_expansion
 
 ## 背景信息
 
@@ -26,7 +26,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 - 正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息。
 
-- 只能使用root用户执行gs_expansion命令。
+- 使用root或普通用户执行gs_expansion命令。
 
 - 不允许同时在主节点上执行gs_dropnode命令删除其他备机。
 
