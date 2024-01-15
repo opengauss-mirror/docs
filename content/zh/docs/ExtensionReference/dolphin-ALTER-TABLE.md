@@ -8,6 +8,7 @@
 
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
 -   当一条语句下有多条子命令时，drop index和rename index会优先其他子命令执行，这两种命令的优先级一致。
+-   生成列语法支持忽略GENERATED ALWAYS。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
@@ -54,7 +55,27 @@
         | [TABLESPACE tablespace_name] STORAGE MEMORY
     ```
 
-	-   向表中增加多列。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。 ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
+    其中列约束column_constraint为：
+
+```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      [GENERATED ALWAYS] AS ( generation_expr ) [STORED] |
+      AUTO_INCREMENT |
+      ON UPDATE update_expr |
+      UNIQUE [KEY] index_parameters |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
+      PRIMARY KEY index_parameters |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
+```
+
+    -   向表中增加多列。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。 ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
     ```
     ALTER TABLE ADD [ COLUMN ] ( { column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ … ] ] } [, …] )
