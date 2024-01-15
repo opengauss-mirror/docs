@@ -1,10 +1,11 @@
 # 数字操作函数和操作符
 
-相比于原始的openGauss，dolphin对于时间/日期函数的修改主要为:
+相比于原始的openGauss，dolphin对于数字操作函数和操作符的修改主要为:
 
 1. 新增```DIV/MOD/XOR/^```操作符。
 2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool/random_bytes```函数。
 3. ```atan```函数支持```atan(y, x)```用法。
+3. 修改exp函数支持结果返回0。
 
 -   DIV
 
@@ -282,4 +283,29 @@
    1.10714871779409
   (1 row)
   ```
-  
+
+- exp\(x\)
+
+  描述：自然指数。
+
+  返回值类型：dp or numeric，不考虑隐式类型转换的情况下与输入相同。dolphin.b_compatibility_mode=off时不支持结果为0。
+
+  示例：
+
+  ```
+  openGauss=# SELECT exp(1.0);
+          exp
+  --------------------
+   2.7182818284590452
+  (1 row)
+  ```
+
+  ```
+  openGauss=# set dolphin.b_compatibility_mode = on;
+  SET
+  openGauss=# SELECT exp(-1000);
+   exp
+  -----
+     0
+  (1 row)
+  ```
