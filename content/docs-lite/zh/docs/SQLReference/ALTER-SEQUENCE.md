@@ -8,7 +8,7 @@
 
 -   序列的所有者或者被授予了序列ALTER权限的用户或者被授予了ALTER ANY SEQUENCE权限的用户才能执行ALTER SEQUENCE命令，系统管理员默认拥有该权限。但要修改序列的所有者，当前用户必须是该序列的所有者或者系统管理员，且该用户是新所有者角色的成员。
 -   当前版本仅支持修改步长、最大值、最小值、起始值、缓冲值、是否循环、重新开始、归属列和拥有者。若要修改其他参数，可以删除重建，并用Setval函数恢复当前值。
--   ALTER SEQUENCE MAXVALUE不支持在事务、函数和存储过程中使用。
+-   ALTER SEQUENCE MAXVALUE不支持在函数和存储过程中使用。
 -   修改序列的最大值后，会清空该序列在所有会话的cache。
 -   如果Sequence被创建时使用了LARGE标识，则ALTER时也需要使用LARGE标识。
 -   ALTER SEQUENCE会阻塞nextval、setval、currval和lastval的调用。

@@ -8,7 +8,7 @@
 
 -   Only the owner of a sequence, a user granted the ALTER permission on a sequence, or a user granted the ALTER ANY SEQUENCE permission on a sequence can run the **ALTER SEQUENCE** command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
 -   In the current version, you can modify only the step, the maximum value, the minimum value, the start value, the number of cached values, cycle, restart, the owner and the owning column. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
--   **ALTER SEQUENCE MAXVALUE**  cannot be used in transactions, functions, and stored procedures.
+-   **ALTER SEQUENCE MAXVALUE**  cannot be used in functions and stored procedures.
 -   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
 -   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
 -   The  **ALTER SEQUENCE**  statement blocks the invocation of  **nextval**,  **setval**,  **currval**, and  **lastval**.
