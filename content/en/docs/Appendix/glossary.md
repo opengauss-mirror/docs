@@ -492,7 +492,7 @@ id="row514554416511"><td class="cellrowborder" valign="top" width="25%" headers=
 <tr 
 id="row415161252811"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p615191272818"><a name="p615191272818"></a><a name="p615191272818"></a>SCRLock</p>
 </td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p3151161252812"><a name="p3151161252812"></a><a name="p3151161252812"></a>Smart-Cached Remote Lock (SCRLock) is a distributed lock SDK with local lock cache.</p>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p3151161252812"><a name="p3151161252812"></a><a name="p3151161252812"></a>Smart Cached Remote Lock (SCRLock) is a distributed lock SDK with local lock cache. Based on new network media, SCRLock accelerates remomte lock access and improves application operation performance.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row75557259138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"></a>SCTP</p>
@@ -657,7 +657,7 @@ id="row10339161213301"><td class="cellrowborder" valign="top" width="25%" header
 </tr>
 <tr id="row312755015467"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p223319521930"><a name="p223319521930"></a><a name="p223319521930"></a>UWAL</p>
 </td>
-<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p223375212313"><a name="p223375212313"></a><a name="p223375212313"></a>Unified Write-Ahead Log (UWAL) is a common component developed by Huawei. It is used to improve the performance of active/standby transaction submission as well as streaming replication and transmission.</p>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p223375212313"><a name="p223375212313"></a><a name="p223375212313"></a>Unified Write-Ahead Log (UWAL) is a common component developed by Huawei.Based on solid-state drives and new storage media, UWAL provides the unified write-ahead logging capability to improve the performance of active/standby transaction submission as well as streaming replication and transmission of databases.</p>
 </td>
 </tr>
 <tr id="row17137530173510"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6137193014355"><a name="p6137193014355"></a><a name="p6137193014355"></a>TransactionSlot</p>

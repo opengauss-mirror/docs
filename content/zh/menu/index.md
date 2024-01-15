@@ -44,7 +44,7 @@ headless: true
 	    	-   [Parallel Page-based Redo For Ustore]({{< relref "./docs/AboutopenGauss/Parallel-Page-based-Redo-For-Ustore.md" >}})
 	    	-   [行存转向量化]({{< relref "./docs/AboutopenGauss/行存转向量化.md" >}})
 	    	-   [OCK加速数据传输]({{< relref "./docs/AboutopenGauss/OCK加速数据传输.md" >}})
-	    	-   [OCK SCRLOCK加速分布式锁]({{< relref "./docs/AboutopenGauss/OCK-SCRLOCK加速分布式锁.md" >}})
+	    	-   [SCRLock加速分布式锁]({{< relref "./docs/AboutopenGauss/SCRLock加速分布式锁.md" >}})
          	-   [子事务并发回滚流程优化]({{< relref "./docs/AboutopenGauss/子事务并发回滚流程优化.md" >}})
          	-   [大页内存]({{< relref "./docs/AboutopenGauss/大页内存.md" >}})
 	    -   [高可用]({{< relref "./docs/AboutopenGauss/高可用.md" >}})
