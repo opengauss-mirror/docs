@@ -392,6 +392,7 @@ dayname
 4. [EXTRACT](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 5. [CAST](dolphin-类型转换函数.md)
 5. [exp](dolphin-数字操作函数和操作符.md)
+6. [convert](dolphin-字符处理函数和操作符.md)
 
 其他影响的功能：
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
