@@ -41,9 +41,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ TABLESPACE tablespace_name ]
     [ COMMENT {=| } 'text' ];
     [ create_option ]
+```
 
-其中create_option为：
-
+-   其中create_option为：
+```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
         [ COMPRESS | NOCOMPRESS ]
@@ -77,6 +78,18 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ [TABLESPACE tablespace_name] STORAGE MEMORY ]
 
     除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+```
+
+-   其中表约束table_constraint为：
+```
+    [ CONSTRAINT [ constraint_name ] ]
+    { CHECK ( expression ) |
+      UNIQUE [ index_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) | COMMENT {=| } 'text' }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 ```
 
 - 创建表上索引table_indexclause：
