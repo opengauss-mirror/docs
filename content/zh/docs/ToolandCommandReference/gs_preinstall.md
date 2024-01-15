@@ -1,15 +1,15 @@
-# gs\_preinstall
+# gs_preinstall
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>
 
-openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，以保证openGauss安装的正常进行。
+openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，以保证openGauss安装的正常进行。
 
 ## 注意事项<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s87eb073560414bc5ba369786f06cbb10"></a>
 
 -   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
 -   xml文件中各主机的名称与IP映射配置正确。
--   只能使用root用户执行gs\_preinstall命令。
--   执行gs\_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
+-   使用root或普通用户执行gs_preinstall命令。
+-   使用root用户执行gs_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
 -   gs_preinstall指定的用户不支持使用-d手动选定家目录，仅支持系统默认创建的/home下和用户同名的/home目录。
 -   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
