@@ -1,8 +1,8 @@
-# INDEX\_STAITISTIC
+# INDEX\_STATISTIC
 
-INDEX\_STAITISTIC视图存储当前数据库的索引信息。
+INDEX\_STATISTIC视图存储当前数据库的索引信息。
 
-**表 1**  INDEX\_STAITISTIC字段
+**表 1**  INDEX\_STATISTIC字段
 
 <a name="zh-cn_topic_0059777917_t0df1b611492d4f07b1d6e42373142023"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0059777917_rab2e23b3e0f34f37b75a508b8269f07a"><th class="cellrowborder" valign="top" width="18.82%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0059777917_a32924e78d0334e82a36a777752a0b52b"><a name="zh-cn_topic_0059777917_a32924e78d0334e82a36a777752a0b52b"></a><a name="zh-cn_topic_0059777917_a32924e78d0334e82a36a777752a0b52b"></a>名称</p>
