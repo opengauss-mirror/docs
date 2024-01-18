@@ -383,12 +383,12 @@
     (1 row)
     ```
 
--   convert(expr using transcoding_name)
+-   convert(expr using transcoding_name), convert(expr, type_name)
 
-    描述：通过transcoding_name指定的编码方式转换expr;
-    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。
+    描述：通过transcoding_name指定的编码方式转换expr;或者将指定内容转换为对应的数据类型
+    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。对于convert(expr, type_name)场景，当dolphin.b_compatibility_mode为on时，如果type_name为char，实际会转换成varchar。为off时仍保持原始openGauss表现，转换成char。
 
-    返回值类型：text
+    返回值类型：text或者type_name指定的数据类型
 
     示例：
 
