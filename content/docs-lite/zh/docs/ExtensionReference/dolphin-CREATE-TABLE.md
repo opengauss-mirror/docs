@@ -23,6 +23,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 - 默认复制字段的DEFAULT值，若不希望复制DEFAULT值，需要手动指定EXCLUDING DEFAULTS。
 - 对于含索引的分区表，若只指定EXCLUDING PARTITION，由于默认复制分区，将会报错，因为普通表不支持分区索引。
 - 只支持复制range分区表的分区，对于hash、list分区表，由于默认复制分区，会直接报错，需要手动指定EXCLUING PARTITION。二级分区只支持复制range-range分区，处理方法同上。
+- 生成列语法支持忽略GENERATED ALWAYS。
 
 创建表。
 
@@ -92,6 +93,25 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 ```
 
+-   其中列约束column_constraint为：
+```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      [GENERATED ALWAYS] AS ( generation_expr ) [STORED] |
+      AUTO_INCREMENT |
+      ON UPDATE update_expr |
+      UNIQUE [KEY] index_parameters |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
+      PRIMARY KEY index_parameters |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
+```
+
 - 创建表上索引table_indexclause：
 
   ```sql
@@ -150,19 +170,23 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
     ```
 
+-   **CHARACTER SET | CHARSET charset**
+
+    用于指定表字段的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。支持ASCII和BINARY字符集。
+
 -   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
-    对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。
+    对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。支持BINARY字符序。
 
 -   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
-    用于选择表所使用的字符集；目前该特性仅有语法支持，不实现功能。
+    用于选择表所使用的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。支持ASCII和BINARY字符集。
 
 -   **COLLATE \[=\] collation_name**
 
-    用于选择表所使用的排序规则；目前该特性仅有语法支持，不实现功能。
+    用于选择表所使用的排序规则，如果没有指定，则使用默认的排序规则。支持BINARY字符序。
 
 -   **ROW_FORMAT \[=\] row_format_name**
 
