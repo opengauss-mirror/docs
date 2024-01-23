@@ -34,14 +34,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         | table_indexclause
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
-    [ AUTO_INCREMENT [ = ] value ]
-    [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ]
-    [ WITH ( {storage_parameter = value} [, ... ] ) ]
-    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
-    [ COMPRESS | NOCOMPRESS ]
-    [ TABLESPACE tablespace_name ]
-    [ COMMENT {=| } 'text' ];
-    [ create_option ]
+    [ create_option [ ...]]
 ```
 
 -   其中create_option为：
@@ -49,19 +42,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
         [ COMPRESS | NOCOMPRESS ]
-        [ TABLESPACE tablespace_name ]
-        [ COMPRESSION [=] compression_arg ]
-        [ ENGINE [=] engine_name ]
-        [ COLLATE [=] collation_name ]
-        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
-        [ ROW_FORMAT [=] row_format_name ]
+        [ create_table_option [[,] ...]]
+
+    除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+```
+
+-   其中create_table_option为：
+```
         [ AUTOEXTEND_SIZE [=] value ]
+        [ AUTO_INCREMENT [=] value ]
         [ AVG_ROW_LENGTH [=] value ]
+        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
         [ CHECKSUM [=] value ]
+        [ [DEFAULT] COLLATE [=] collation_name ]
+        [ COMMENT [=] 'text' ]
+        [ COMPRESSION [=] compression_arg ]
         [ CONNECTION [=] 'connect_string' ]
         [ {DATA | INDEX} DIRECTORY [=] 'absolute path to directory' ]
         [ DELAY_KEY_WRITE [=] value ]
         [ ENCRYPTION [=] 'encryption_string' ]
+        [ ENGINE [=] engine_name ]
         [ ENGINE_ATTRIBUTE [=] 'string' ]
         [ INSERT_METHOD [=] { NO | FIRST | LAST } ]
         [ KEY_BLOCK_SIZE [=] value ]
@@ -69,16 +69,17 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ MIN_ROWS [=] value ]
         [ PACK_KEYS [=] value ]
         [ PASSWORD [=] 'password' ]
+        [ ROW_FORMAT [=] row_format_name ]
         [ START TRANSACTION ]
         [ SECONDARY_ENGINE_ATTRIBUTE [=] 'string' ]
         [ STATS_AUTO_RECALC [=] value ]
         [ STATS_PERSISTENT [=] value ]
         [ STATS_SAMPLE_PAGES [=] value ]
-        [ UNION [=] (tbl_name[,tbl_name]...) ]
-        [ TABLESPACE tablespace_name STORAGE DISK ]
+        [ TABLESPACE tablespace_name [STORAGE DISK] ]
         [ [TABLESPACE tablespace_name] STORAGE MEMORY ]
+        [ UNION [=] (tbl_name[,tbl_name]...) ]
 
-    除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+    允许输入多次同一种create_table_option，以最后一次的输入为准。
 ```
 
 -   其中表约束table_constraint为：

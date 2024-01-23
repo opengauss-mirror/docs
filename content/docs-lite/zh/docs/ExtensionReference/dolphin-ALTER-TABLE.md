@@ -31,9 +31,19 @@
         | RENAME INDEX index_name to new_index_name
         | ADD table_indexclause
         | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
+        | alter_table_option [[,] ...]
+    ```
+
+    其中具体表选项alter_table_option为：
+
+    ```
         | AUTOEXTEND_SIZE [=] value
+        | AUTO_INCREMENT [=] value
         | AVG_ROW_LENGTH [=] value
+        | [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name
         | CHECKSUM [=] value
+        | [DEFAULT] COLLATE [=] collation_name
+        | COMMENT [=] 'text'
         | CONNECTION [=] 'connect_string'
         | {DATA | INDEX} DIRECTORY [=] 'absolute path to directory'
         | DELAY_KEY_WRITE [=] value
@@ -45,6 +55,7 @@
         | MIN_ROWS [=] value
         | PACK_KEYS [=] value
         | PASSWORD [=] 'password'
+        | ROW_FORMAT [=] row_format_name
         | START TRANSACTION
         | SECONDARY_ENGINE_ATTRIBUTE [=] 'string'
         | STATS_AUTO_RECALC [=] value
