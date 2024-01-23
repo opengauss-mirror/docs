@@ -8,7 +8,7 @@
 - CHAR/VARCHAR/TEXT/BINARY/VARBINARY/TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 - ENUM/SET/JSON
 
-另外，增加了DATETIME/TIMESTAMP向BOOL的转换规则。
+另外，增加了DATETIME/TIMESTAMP、YEAR、BINARY/VARBINARY、TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB、ENUM、SET向BOOL的转换规则。
 其中，两个类型间的转换规则存在隐式（IMPLICIT, i）、赋值（ASSIGNMENT, a）、显式（EXPLICIT, e），三个级别，可通过系统表 pg_cast 的 castcontext 字段进行查看。三个级别的转换规则适用范围如下：
 
 - 'e'：表示只支持显式转换（使用CAST或::语法）。
@@ -113,6 +113,7 @@
 |ENUM|按数值对应ENUM编号进行转换|转换级别为赋值|
 |SET|按数值对应SET编号进行转换|转换级别为赋值|
 |JSON|按数值转换，与字符串类似|转换级别为显式|
+|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为隐式|
 
 #### 源类型：CHAR/VARCHAR/TEXT
 
@@ -141,6 +142,7 @@
 |ENUM|用对应字符集解码后，按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|用对应字符集解码后，按字符串转换为SET对应Lable的项|转换级别为赋值|
 |JSON|BANARY转JSON显示为"base64:type254:xxx"<br>VARBANARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
+|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：ENUM
 
@@ -154,6 +156,7 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|取对应项Lable字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |SET|转换为Label字符串相同的项|转换级别为赋值|
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
+|BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：SET
 
@@ -167,6 +170,7 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|取对应项Lable字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|转换为Label字符串相同的项|转换级别为赋值|
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
+|BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：JSON
 
