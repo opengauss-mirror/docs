@@ -15,6 +15,8 @@
 
 3. statement 中的绑定参数支持使用```?```，需要先将```dolphin.b_compatibility_mode```设置为```on```，且不能同时在一个语句中同时使用```$```和```?```作为参数占位符。将```dolphin.b_compatibility_mode```设置为```on```后，```?```将不能作为操作符使用。
 
+4. 使用 PREPARE 语法创建出的预备语句，若当前会话已经存在一个同名的预备语句，则使用新创建出来的预备语句替换已经存在的预备语句。
+
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
 ```
@@ -58,5 +60,21 @@ openGauss=# EXECUTE stmt1 USING 6,8;
  test
 ------
    10
+(1 row)
+
+--预备语句的替换样例
+openGauss=# prepare pstmt from select 123 as a;
+PREPARE
+openGauss=# execute pstmt;
+  a
+-----
+ 123
+(1 row)
+openGauss=# prepare pstmt from select 1234 as a;
+PREPARE
+openGauss=# execute pstmt;
+  a
+------
+ 1234
 (1 row)
 ```
