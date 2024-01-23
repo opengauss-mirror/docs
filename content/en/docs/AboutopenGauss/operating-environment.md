@@ -13,6 +13,7 @@ openGauss supports:
 -   Arm:
     -   openEuler 20.03 LTS \(recommended\)
     -   openEuler 22.03 LTS
+	-   UOS V20
     -   Kirin V10
     -   Asianux 7.5
     
