@@ -36,3 +36,4 @@ SELECT set_native_password('proto_test', 'Proto_test123');
 >-   enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
 >-   使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../DatabaseAdministrationGuide/配置客户端接入认证.md)。
 >-   使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
+>-   备机的可连接性受参数[hot_standby](../DatabaseReference/备服务器.md)和[dolphin_standby](../DatabaseReference/连接设置.md)参数控制。
