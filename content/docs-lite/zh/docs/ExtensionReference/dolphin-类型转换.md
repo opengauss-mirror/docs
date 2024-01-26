@@ -15,6 +15,8 @@
 - 'a'：表示支持给目标列赋值时转换，同时支持显式转换。
 - 'i'：表示支持表达式（函数、操作符等）隐式转化，同时支持赋值、显式转换。
 
+增加了UINT4、BOOL、CHAR、VARCHAR、TEXT向YEAR的赋值转换规则。
+
 ### 转换规则
 
 下列转换规则需GUC参数dolphin.b_compatibility_mode为on
@@ -45,7 +47,7 @@
 |DATE|三位数为2000-0x-xx<br>四位数为2000-xx-xx<br>五位数为200x-xx-xx<br>六位数为20xx-xx-xx<br>七位数为0xxx-xx-xx<br>八位数为xxxx-xx-xx<br>小数部分忽略，无四舍五入|TINYINT/SMALLINT/INT到DATE的转换级别为隐式，UINT4到DATE的转换级别为显式，其他为赋值|
 |DATETIME/TIMESTAMP|八位数及以下日期部分与DATE相同，时间为00:00:00；九位数及以上优先时间：<br>九位数为2000-0x-xx xx:xx:xx<br>十位数为200x-xx-xx xx:xx:xx<br>十一位数为20xx-xx-xx xx:xx:xx<br>十二位数为0xxx-xx-xx xx:xx:xx<br>十三位数为xxxx-xx-xx xx:xx:xx<br>小数部分忽略，无四舍五入<br>|TINYINT/SMALLINT/INT/BIGINT/NUMERIC到DATETIME/TIMESTAMP的转换级别为隐式，UINT4/UINT8为显式，其他为赋值|
 |TIME|从秒开始逐位对应|B兼容性下的TIME类型取值范围为-838:59:59~838:59:59；<br>'12:34'::time，结果为12::34::00，也更符合日常使用习惯，但1234::time，结果为00::12::34，注意区分。关于字符类型更多转换规则详见具体介绍<br>TINYINT/SMALLINT/INT/BIGINT/NUMERIC到TIME的转换级别为隐式，UINT4为显式，其他为赋值|
-|YEAR|0为0<br>一位数200x<br>两位数20xx<br>四位数xxxx<br>小数存在四舍五入|YEAR类型的取值范围为0、1901~2155<br>TINYINT/SMALLINT/INT到YEAR的转换级别为隐式，UINT4为显式，其他为赋值|
+|YEAR|0为0<br>一位数200x<br>两位数20xx<br>四位数xxxx<br>小数存在四舍五入|YEAR类型的取值范围为0、1901~2155<br>TINYINT/SMALLINT/INT到YEAR的转换级别为隐式，其他为赋值|
 |CHAR/VARCHAR/TEXT|按数值转换为字符串|到TEXT的转换级别均为隐式<br>UINT1/UINT2/UINT4/UINT8到CHAR/VARCHAR的转换级别为赋值，其他为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按数值转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按数值对应ENUM编号进行转换<br>小数部分忽略，无四舍五入|转换级别为赋值|
@@ -122,7 +124,7 @@
 |BIT|将字符串转换为对应字符集十六进制编码后，再转换为二进制编码|转换级别为显式|
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字符串字面数值转换。超出目标类型的表示范围则溢出，整数溢出规则为：严格模式下报错，非严格模式在转换级别为(1)隐式/赋值：截断为目标类型最小/大值。(2)显式：先截取目标类型数位表示范围的最大/小值，转为无符号整数时溢出的负数转换为对应的正补码, 转为有符号整数时溢出的正数转换为对应的负整数|转换级别为隐式|
 |DATE/DATETIME/TIMESTAMP/TIME|按对应格式进行转换，格式规则较多|TEXT到TIMESTAMP/TIME转换级别为显式，其他为隐式|
-|YEAR|按字符串字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|先转换为BIGINT类型，再转换为YEAR类型|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|字符串类型互转|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按字符串转换为ENUM对应Lable的项|转换级别为赋值|
@@ -185,4 +187,8 @@
 |ENUM|按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|按字符串转换为SET对应Lable的项|转换级别为隐式|
 
+#### 源类型：BOOL
 
+|目标类型|转换规则描述|备注|
+|--|--|--|
+|YEAR|先转换为BIGINT类型，再转换为YEAR类型|转换级别为赋值|
