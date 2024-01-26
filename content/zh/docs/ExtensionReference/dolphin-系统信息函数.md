@@ -20,6 +20,24 @@
 
     备注：database返回在搜索路径中第一个顺位有效的模式名。（如果搜索路径为空则返回NULL，没有有效的模式名也返回NULL）。如果创建表或者其他命名对象时没有声明目标模式，则将使用这些对象的模式。
 
+-   current_role\(\)
+
+    描述：当前执行环境下的用户名。
+
+    返回值类型：name
+
+    示例：
+
+    ```
+    openGauss=# SELECT current_role();
+     current_user
+    ----------
+     omm
+    (1 row)
+    ```
+
+    备注：current_role()是用于权限检查的用户标识。通常，他表示会话用户，但是可以通过SET ROLE改变他。在函数执行的过程中随着属性SECURITY DEFINER的改变，其值也会改变。
+
 -   uuid_short\(\)
 
     描述：当前数据库的uuid_short信息。
