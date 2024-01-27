@@ -439,6 +439,22 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
         取值范围：布尔值，默认关闭。
+    
+    -   AUTOVACUUM_ENABLED
+    
+        需数据库打开autovacuum功能模块时，单独设置此表是否进行autovacuum。
+        
+        取值范围：布尔值，默认开启。
+        
+    -   AUTOVACUUM、AUTOANALYZE相关参数
+    
+        参数有：AUTOVACUUM_VACUUM_THREASHOLD、AUTOVACUUM_ANALYZE_THREASHOLD、AUTOVACUUM_VACUUM_COST_DELAY、AUTOVACUUM_VACUUM_COST_LIMIT、AUTOVACUUM_FREEZE_MIN_AGE、AUTOVACUUM_FREEZE_MAX_AGE、AUTOVACUUM_FREEZE_TABLE_AGE、AUTOVACUUM_VACUUM_SCALE_FACTOR、AUTOVACUUM_ANALYZE_SCALE_FACTOR
+        
+        单独设置此表的autovacuum、autoanalyze相关功能参数配置，与同名GUC功能相同，优先生效此处的配置。
+        
+        取值范围：与同名GUC相同
+    
+    
 
   - MAX\_BATCHROW
 

@@ -447,6 +447,21 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       取值范围：B模式数据库中独立支持的字符序的oid。
   
       默认值：0。
+      
+  -   AUTOVACUUM_ENABLED
+  
+      需数据库打开autovacuum功能时，单独设置此表是否进行autovacuum。
+      
+      取值范围：布尔值，默认开启。
+      
+  -   AUTOVACUUM、AUTOANALYZE相关参数
+  
+      参数有：AUTOVACUUM_VACUUM_THREASHOLD、AUTOVACUUM_ANALYZE_THREASHOLD、AUTOVACUUM_VACUUM_COST_DELAY、AUTOVACUUM_VACUUM_COST_LIMIT、AUTOVACUUM_FREEZE_MIN_AGE、AUTOVACUUM_FREEZE_MAX_AGE、AUTOVACUUM_FREEZE_TABLE_AGE、AUTOVACUUM_VACUUM_SCALE_FACTOR、AUTOVACUUM_ANALYZE_SCALE_FACTOR
+      
+      单独设置此表的autovacuum、autoanalyze相关功能参数配置，与同名GUC功能相同，优先生效此处的配置。
+      
+      取值范围：与同名GUC相同。
+    
   
 -   **WITHOUT OIDS**
 
