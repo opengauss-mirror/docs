@@ -336,3 +336,30 @@ If  **enable\_global\_plancache **is enabled,  **local\_syscache\_threshold **do
 **Value range**: an integer ranging from 1 x 1024 to 512 x 1024. The unit is kB.
 
 **Default value:** **256MB**
+
+## heap_bulk_read_size
+
+**Parameter description**: This parameter controls the pre-read batch data size for linear scans of heap tables. The pre-read feature allows multiple pages to be read at once during heap table linear scans, avoiding the need to read only one page at a time. This functionality is available only for non-segmented, row-storage engine-based, uncompressed tables in heap table linear scans. It specifies the pre-read batch data size, and during query execution, this can be rounded to the nearest number of pages based on page size.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Int, 0~512, the unit is "kB".
+
+**Default value:** 0kB indicates that 0kB is pre-read at a time, and the heap table pre-read feature is turned off.
+
+**Advertisement:**
+If pre-read feature is enabled, a larger pre-read size threshold is not necessarily better. It is recommended to set it between 64kB and 128kB. Exceeding this recommended threshold might actually lead to a deterioration in query performance.
+
+## vacuum_bulk_read_size
+
+**Parameter description**: This parameter is used to control the pre-read batch data size in medium-scale heap page cleanup. It functions similarly to the heap table linear pre-read feature, allowing multiple pages to be read at once during the linear scan of heap tables in medium-scale garbage collection. This approach avoids reading only one page at a time, thereby enhancing the efficiency of garbage collection.
+
+This parameter is a PGC_SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+
+**Value range**: Int, 0~512, the unit is "kB".
+
+**Default value:** 0kB indicates that 0kB is pre-read at a time, and the garbage collection pre-read feature is turned off.
+
+**Advertisement:**
+If the pre-read feature is enabled for medium-scale heap page cleaning, the size threshold for this parameter is not necessarily better when larger. It is recommended to set it to 64kB. Performance improvements above this recommended threshold are marginal and may even lead to a degradation in cleaning performance.
