@@ -343,12 +343,12 @@ If  **enable\_global\_plancache **is enabled,  **local\_syscache\_threshold **do
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: Int, 0~512, the unit is "kB".
+**Value range**: Int, 0~64, the unit is "8kB".
 
 **Default value:** 0kB indicates that 0kB is pre-read at a time, and the heap table pre-read feature is turned off.
 
 **Advertisement:**
-If pre-read feature is enabled, a larger pre-read size threshold is not necessarily better. It is recommended to set it between 64kB and 128kB. Exceeding this recommended threshold might actually lead to a deterioration in query performance.
+If pre-read feature is enabled, a larger pre-read size threshold is not necessarily better. It is recommended to set it between 64kB and 256kB. Performance improvements above this recommended threshold are limited and may even lead to a degradation in querying performance.
 
 ## vacuum_bulk_read_size
 
@@ -357,9 +357,9 @@ If pre-read feature is enabled, a larger pre-read size threshold is not necessar
 This parameter is a PGC_SIGHUP parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 
-**Value range**: Int, 0~512, the unit is "kB".
+**Value range**: Int, 0~64, the unit is "8kB".
 
 **Default value:** 0kB indicates that 0kB is pre-read at a time, and the garbage collection pre-read feature is turned off.
 
 **Advertisement:**
-If the pre-read feature is enabled for medium-scale heap page cleaning, the size threshold for this parameter is not necessarily better when larger. It is recommended to set it to 64kB. Performance improvements above this recommended threshold are marginal and may even lead to a degradation in cleaning performance.
+If the pre-read feature is enabled for medium-scale heap page cleaning, the size threshold for this parameter is not necessarily better when larger. It is recommended to set it to 64kB. Performance improvements above this recommended threshold are limited and may even lead to a degradation in cleaning performance.
