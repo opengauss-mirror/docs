@@ -8,6 +8,7 @@ GRANT用于授予一个或多个角色的权限。
 
    本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
    增加ALTER ROUTINE、CRAETE ROUTINE、CREATE TEMPORARY TABLES、CREATE USER、CREATE TABLESPACE、INDEX权限。增加USAGE语法。
+   增加GRANT role_name TO role_name语法。
 ## 语法格式<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
 -   新增```ALTER ROUTINE```权限
@@ -88,6 +89,14 @@ GRANT USAGE
   ON *.* TO role_name
   IDENTIFIED BY [PASSWORD] password_string;
 ```
+-   新增```GRANT role_name TO role_name```语法
+
+授予一个角色的权限给另一个角色
+
+修改后的语法说明为：
+```
+GRANT role_name TO role_name [ WITH GRANT OPTION ];
+```
 ## 参数说明<a name="zh-cn_topic_0283137669_zh-cn_topic_0237122179_zh-cn_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
 
 N/A
@@ -125,6 +134,22 @@ ALTER ROLE
 openGauss=# GRANT USAGE ON *.* TO new_user IDENTIFIED BY 'new_password-1234';
 WARNING:  Using GRANT statement to modify existing user's password is deprecated and will be removed in future release. Use ALTER USER statement for this operation.
 ALTER ROLE
+```
+```
+openGauss=# CREATE USER user1 IDENTIFIED BY 'test-1234';
+NOTICE:  The iteration value of password is not recommended.Setting the iteration value too small reduces the security of the password, and setting it too large results in performance degradation.
+CREATE ROLE
+openGauss=# CREATE USER user2 IDENTIFIED BY 'test-1234';
+NOTICE:  The iteration value of password is not recommended.Setting the iteration value too small reduces the security of the password, and setting it too large results in performance degradation.
+CREATE ROLE
+openGauss=# GRANT user1 TO user2;
+GRANT ROLE
+openGauss=# GRANT 'user1' TO user2;
+NOTICE:  role "user2" is already a member of role "user1"
+GRANT ROLE
+openGauss=# GRANT user1 TO 'user2';
+NOTICE:  role "user2" is already a member of role "user1"
+GRANT ROLE
 ```
 
 ## 相关链接<a name="section156744489391"></a>
