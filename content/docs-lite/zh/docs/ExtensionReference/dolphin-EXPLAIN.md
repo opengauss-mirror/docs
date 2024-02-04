@@ -186,7 +186,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
     
     指定输出格式。
   
-    取值范围：JSON 或 TRADITIONAL。
+    取值范围：TRADITIONAL 、JSON 或 TREE。
 
     默认值：TRADITIONAL
 
