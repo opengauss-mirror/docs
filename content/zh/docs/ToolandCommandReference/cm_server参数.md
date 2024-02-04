@@ -96,7 +96,7 @@
 
 **默认值**： 10
 
-## cm\_server\_arbitrate\_delay\_incrememtal\_time\_out<a name="section116431649142414"></a>
+## cm\_server\_arbitrate\_delay\_incremental\_time\_out<a name="section116431649142414"></a>
 
 **参数说明**： cm\_server仲裁延迟增量时长。cm\_server主断连后，仲裁启动计时开始，经过仲裁延迟时长后，将选出新的cm\_server主。其中仲裁延迟时长由仲裁延迟基础时长、节点index（server ID序号）和增量时长共同决定。公式为：仲裁延迟时长=仲裁延迟基础时长+节点index\*仲裁延迟增量时长参数。
 
