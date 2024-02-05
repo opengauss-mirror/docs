@@ -10,6 +10,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 4. 对```BINARY```类型的输入函数进行了修改，可支持MySQL数据库中的转义字符识别。
 5. 对```BINARY/VARBINARY```类型的输出函数进行了修改，可以支持MySQL数据库中按存储字节内容输出的格式，但是由于openGauss本身的限制，字节0x00只能用'\\'字符和'0'字符进行表示。
 6. 新增BIANRY EXPR用法，用在任意表达式前的BINARY 关键字，表示将此表达式转化为二进制类型;
+7. 新增BLOB(n)用法。BLOB可以通过BLOB(n)来控制选择的数据类型。
 
 **表 1**  二进制类型
 
@@ -31,6 +32,16 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>最大为1GB-8203字节（即1073733621字节）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_rf63072d5d612426f9aab20483b0b4838"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a>BLOB(n)</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"></a>二进制大对象。</p>
+<div class="note" id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a>列存不支持BLOB(n)类型。</p>
+<p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a>当0<=n<2^8时，blob(n)为TINYBLOB类型；当2^8<=n<2^16时，BLOB(n)为BLOB类型；当2^16<=n<2^24时，BLOB(n)为MEDIUMBLOB类型；当2^24<=n<2^32时，BLOB(n)为LONGBLOB类型。</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>参考对应类型的存储空间</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_rf63072d5d612426f9aab20483b0b4838"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aba12e41a8ee040d7a4a651a639d6574a"></a>TINYBLOB</p>
