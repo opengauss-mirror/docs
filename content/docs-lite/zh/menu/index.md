@@ -1438,6 +1438,7 @@ headless: true
 		-   [gs\_dumpall]({{< relref "./docs/ToolandCommandReference/gs_dumpall.md" >}})
 		-   [gs\_guc]({{< relref "./docs/ToolandCommandReference/gs_guc.md" >}})
 		-   [gs\_restore]({{< relref "./docs/ToolandCommandReference/gs_restore.md" >}})
+		-   [gs\_retrieve]({{< relref "./docs/ToolandCommandReference/gs_retrieve.md" >}})
 	-   [系统内部命令]({{< relref "./docs/ToolandCommandReference/系统内部命令.md" >}})
 		-   [gaussdb]({{< relref "./docs/ToolandCommandReference/gaussdb.md" >}})
 		-   [gs\_ctl]({{< relref "./docs/ToolandCommandReference/gs_ctl.md" >}})

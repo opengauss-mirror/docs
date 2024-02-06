@@ -1760,6 +1760,7 @@ headless: true
         -   [gs\_restore]({{< relref "./docs/ToolandCommandReference/gs_restore.md" >}})
         -   [gs\_ssh]({{< relref "./docs/ToolandCommandReference/gs_ssh.md" >}})
     	-   [gs\_sdr]({{< relref "./docs/ToolandCommandReference/gs_sdr.md" >}})
+        -   [gs\_retrieve]({{< relref "./docs/ToolandCommandReference/gs_retrieve.md" >}})
     -   [系统内部命令]({{< relref "./docs/ToolandCommandReference/系统内部命令.md" >}})
         -   [dsscmd]({{< relref "./docs/ToolandCommandReference/dsscmd.md" >}})
         -   [dssserver]({{< relref "./docs/ToolandCommandReference/dssserver.md" >}})
