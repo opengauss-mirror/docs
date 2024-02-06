@@ -14,17 +14,17 @@ LOCK TABLES使用后，会让接下来的sql处于事务状态中，所以需要
 
 -   上锁
     ```
-    LOCK TABLES namelist READ/WRITE
+    LOCK {TABLE | TABLES} namelist READ/WRITE
     ```
 
 -   让当前session处于只读表的状态
     ```
-    FLUSH TABLES WITH READ LOCK
+    FLUSH {TABLE | TABLES} WITH READ LOCK
     ```
 
 -   解锁
     ```
-    UNLOCK TABLES
+    UNLOCK {TABLE | TABLES}
     ```
 
 ## 参数说明<a name="section6973139183420"></a>
@@ -44,6 +44,10 @@ LOCK TABLES使用后，会让接下来的sql处于事务状态中，所以需要
     -   **WRITE**
 
         写锁，这个模式保证其所有者（事务）是可以访问该表的唯一事务。
+
+-   **TABLE | TABLES**
+
+    在LOCK TABLES、FLUSH TABLES、UNLOCK TABLES语句中，TABLE和TABLES是同义词。
 
 
 
