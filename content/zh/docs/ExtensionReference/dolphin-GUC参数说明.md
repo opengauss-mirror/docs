@@ -384,6 +384,8 @@ dayname
 3. (数字类型异或) [^](dolphin-数字操作函数和操作符.md#ZH-CN_TOPIC_0289900469)
 4. [&&](dolphin-逻辑操作符.md#ZH-CN_TOPIC_0289900469)
 5. [#](dolphin-注释操作符.md#ZH-CN_TOPIC_0289900280)
+6. [!](dolphin-字符处理函数和操作符.md)
+7. [JSON操作符](dolphin-JSON操作符兼容.md)
 
 影响的函数有：
 1. [LAST_DAY](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
@@ -393,6 +395,7 @@ dayname
 5. [CAST](dolphin-类型转换函数.md)
 5. [exp](dolphin-数字操作函数和操作符.md)
 6. [convert](dolphin-字符处理函数和操作符.md)
+7. [json_object](dolphin-JSON-JSONB函数和操作符.md)
 
 其他影响的功能：
 1. [?](dolphin-PREPARE.md#zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
@@ -400,6 +403,10 @@ dayname
 3. [TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB的输入功能](dolphin-二进制类型.md#zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s31780559299b4f62bec935a2c4679b84)
 4. [影响日期类型时间类型（Date、Time、Timestamp、DateTime等）显式转换或者Function转换时输入值为非法值时的输出值](dolphin-日期-时间类型.md)
 5. 默认排序功能：控制ORDER BY排序中NULL是否为最小值。ON表示NULL为最小值，OFF表示保持内核原有能力：NULL为最大值。
+6. [数据类型转换](dolphin-类型转换.md)
+7. [CREAET DATABASE](dolphin-CREATE-DATABASE.md)
+8. [ALTER DATABASE](dolphin-ALTER-DATABASE.md)
+9. [DROP DATABASE](dolphin-DROP-DATABASE.md)
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
