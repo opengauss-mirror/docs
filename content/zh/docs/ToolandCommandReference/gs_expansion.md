@@ -22,11 +22,11 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 - 在新增的扩容备机上创建好与主机上相同的用户和用户组。
 
-- 已存在的数据库节点和新增的扩容节点之间需要建立好root用户互信以及数据库管理用户（如omm）的互信。
-
-- 正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息。
+- 执行扩容工具中添加了-X参数，那么需要正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息；如果没有-X参数，那么不需要配置xml文件，扩容工具会自动生成xml文件，生成的xml在子用户的家目录下，文件名是xml_file_xxx.xml，xxx是时间戳。
 
 - 使用root或普通用户执行gs_expansion命令。
+
+- 如果使用普通用户执行gs_expansion命令，需要手动将节点的映射关系写入/etc/hosts文件中，所有节点都得写入（也可以使用om提供的gs_sshexkey工具，只有在root用户下才会将映射关系写入到/etc/hosts文件中）。
 
 - 不允许同时在主节点上执行gs_dropnode命令删除其他备机。
 
@@ -49,7 +49,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 -   备机扩容
 
     ```
-    ./gs_expansion -U USER -G GROUP -X XMLFILE -h hostlist [-L]  
+    ./gs_expansion -U USER -G GROUP [-X XMLFILE] -h hostlist [-L]  
     ```
 
 -   显示帮助信息
@@ -81,7 +81,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 -   -X
 
-    openGauss配置文件路径。
+    如果配置了该参数，那么扩容备机时会使用该参数指定的xml文件；如果没有配置该参数，那么在扩容的时候会自动生成对应的xml文件，生成的xml文件在子用户的家目录下，文件名是xml_output_xxx.xml，xxx是时间戳。
 
     取值范围：xml文件的存储路径。xml文件里面需要包含已安装的数据库以及新增扩容数据库所有节点配置信息。
 
@@ -123,6 +123,8 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 使用gs_expansion扩容步骤。
 
+扩容工具带-X参数
+
 ```
 plat1:/opt/software/openGauss/script # ./gs_expansion -U omm -G dbgrp -X /home/omm/cluster_config.xml -h 192.168.0.1
 Start expansion without cluster manager component.
@@ -151,6 +153,48 @@ End to generate and send cluster static file.
 Expansion results:
 192.168.0.1:   Success
 Expansion Finish.
+```
+
+扩容工具不带-X参数
+```
+./gs_expansion -U omm -G dbgrp -h 192.168.0.1
+Start generate xml
+Successfully generate xml, the xml file is /home/omm/xml_output_20240207105448.xml
+The cluster no need create ssh trust
+Start expansion with cluster manager component.
+Start to send soft to each standby nodes.
+End to send soft to each standby nodes.
+Success to send XML to new nodes
+Start to perform perinstall on nodes: ['yc-0003']
+Preinstall command is: /tmp/gs_expansion_2024-02-07_10_54_50_690269/pkg/script/gs_preinstall -U lh -G lh -X /home/omm/xml_output_20240207105448.xml -L --sep-env-file=/data/omm/env/env10 --non-interactive 2>&1
+Success to perform perinstall on nodes ['yc-0003']
+Installing applications on all new nodes.
+Install on new node output: [SUCCESS] yc-0003:
+Using omm:dbgrp to install database.
+Using installation program path : /data/omm/openGauss/app
+Command for creating symbolic link: ln -snf /data/omm/openGauss/app_452e573e /data/omm/openGauss/app.
+Decompressing bin file.
+Decompress CM package command: export LD_LIBRARY_PATH=$GPHOME/script/gspylib/clib:$LD_LIBRARY_PATH && tar -zxf "/data/omm/openGauss/tool/script/os_platform/./../../openGauss-6.0.0-CentOS-64bit-cm.tar.gz" -C "/data/omm/openGauss/app"
+Decompress CM package successfully.
+Successfully decompressed bin file.
+Modifying Alarm configuration.
+Modifying user's environmental variable $GAUSS_ENV.
+Successfully modified user's environmental variable $GAUSS_ENV.
+Fixing file permission.
+Set Cgroup config file to appPath.
+Successfully Set Cgroup.
+
+Successfully installed APP on nodes ['yc-0003'].
+success to send all CA file.
+Success to init instance on nodes ['yc-0003']
+Start to generate and send cluster static file.
+End to generate and send cluster static file.
+The current cluster does not support VIP.
+Ready to perform command on node [yc-0003]. Command is : source /data/omm/env/env10;gs_guc set -D /data/omm/openGauss/data/dn1 -h 'host    all    lh    192.168.0.1/32    trust' -h 'host    all    all    192.168.0.1/32    sha256'
+Successfully set hba on all nodes.
+Remove dynamic_config_file and CM metadata directory on all nodes.
+Expansion results:
+192.168.0.1:  Success
 ```
 
 >![](public_sys-resources/icon-notice.png) **须知：**
