@@ -62,7 +62,7 @@
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字面数值逐位转换为十进制数值|到TINYINT/SMALLINT/UINT1/UINT2的转换级别为赋值，其他为隐式|
 |DATETIME/TIMESTAMP|日期不变，时间为00:00:00|转换级别为隐式|
 |TIME|00::00::00|转换级别为赋值|
-|YEAR|按字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|抽取出DATE类型中年的部分作为YEAR|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按对应显示格式转换为字符串|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按对应显示格式转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按对应显示格式字符串转换，转换为ENUM对应Lable的项|转换级别为赋值|
@@ -78,7 +78,7 @@
 |DATE|保留日期部分|转换级别为赋值|
 |TIMESTAMP/DATETIME|DATETIME与TIMESTAMP的区别为前者不带时区(timezone)信息，后者带|DATETIME到TIMESTAMP转换级别为隐式，TIMESTAMP到DATETIME转换级别为赋值|
 |TIME|保留时间部分|DATETIME到TIME转换级别为隐式，TIMESTAMP到TIME转换级别为赋值|
-|YEAR|按字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|抽取DATETIME和TIMESTAMP类型中年的部分作为YEAR|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按对应显示格式转换为字符串|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按对应显示格式转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按对应显示格式字符串转换，转换为ENUM对应Lable的项|转换级别为赋值|
