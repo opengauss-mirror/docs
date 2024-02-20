@@ -286,7 +286,7 @@ backupdb=# select * from hr.areas;
 (4 rows)
 ```
 
-示例十三：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。
+示例十三：用户user1不具备将导出文件中数据导入至数据库backupdb的权限，而角色role1具备该权限，要实现将文件数据导入数据库backupdb，可以在导入命令中设置--role角色为role1，使用role1的权限，完成导入目的。
 
 ```
 human_resource=# CREATE USER user1 IDENTIFIED BY "XXXXXXXX";
