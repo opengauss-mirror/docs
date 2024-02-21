@@ -223,6 +223,17 @@ openGauss=# SELECT * FROM test_timestamp;
 
 - 三种类型都接受相同的输入格式和范围，区别仅在于 year(2) 类型输出格式只为 2 位数
 - 如果输入'0'，openGauss 会解析成为 2000 年；但是当输入的是整数0，openGauss 会解析成为 0，表示 year类型的 0 值
+- MySQL中不支持使用DATE, DATETIME, TIMESTAMP直接赋值到YEAR类型，但是openGuass支持。如下示例Update语句Mysql执行失败，openGauss执行成功。
+
+  ```
+  create table t1(`year` year, `date` date);
+  insert into t1 values ('2024', '2024-01-01');
+  
+  -- 将DATE类型赋值为YEAR类型，MySQL执行失败，但是openGuass执行成功
+  update t1 set `year` = `date`;
+  ```
+
+  
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
