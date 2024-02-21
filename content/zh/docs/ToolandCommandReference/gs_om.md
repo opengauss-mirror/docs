@@ -72,6 +72,14 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t kerberos -m [install|uninstall] -U USER [-l LOGFILE] [--krb-client|--krb-server]
     ```
 
+-   根据当前集群状态生成xml配置文件，生成的xml文件在当前用户家目录下，文件名是xml_output_时间戳.xml。
+   
+    注：不支持级联备，不支持cmvip功能，最多支持一主八备。
+
+    ```
+    gs_om -t generate_xml [--add-hostname=hostname1,hostname2] [--add-hostip=hostip1,hostip2]
+    ```
+
 -   显示帮助信息
 
     ```
@@ -279,6 +287,18 @@ gs\_om参数可以分为如下几类：
     - -L
     
       制定该参数时，仅对当前节点进行。
+
+
+-   根据当前集群状态生成xml配置文件参数。
+    -   --add-hostname
+ 
+        指定主机名，多个主机名用逗号隔开。
+  
+    -   --add-hostip
+   
+        指定主机ip，多个主机ip用逗号隔开，主机名和主机ip一一对应。
+
+    注：指定该参数时，会获取当前集群的信息和要添加的该主机信息；不指定时，会获取当前集群的信息；指定了add-hostname必须指定add-hostip。
 
 
 
@@ -600,5 +620,13 @@ gs\_om参数可以分为如下几类：
     Send message to the 数据库节点 instances to reload the license file.
     Remove the backup license file on all of the cluster hosts.
     License unregister successfully.
+    ```
+
+-   根据当前集群状态生成xml配置文件
+  
+    ```
+    gs_om -t generate_xml --add-hostname=open1 --add-hostip=192.168.0.11
+    Start generate xml.
+    Successfully generated xml. the xml is /home/xxx/xml_output_20240221103102.xml
     ```
 
