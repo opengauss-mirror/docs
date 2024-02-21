@@ -1,4 +1,4 @@
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx-hugo:1.24.0-22.03-lts-sp1-0.104.3
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx-hugo:1.24.0-22.03-lts-sp1-0.121.1
 
 RUN git config --global http.postBuffer 1048576000 && \
     git config --global https.postBuffer 1048576000

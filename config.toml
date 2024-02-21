@@ -15,8 +15,9 @@ uglyURLs = true
 buildFuture = true
 [markup]
   [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.typographer]
+      enDash = '--'
 # Define the number of posts per page
 paginate = 10
 
