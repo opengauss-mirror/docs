@@ -1002,6 +1002,16 @@ openGauss=# \sf
 <td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p58636730"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636730"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636730"></a>Displays a list of all <span id="text5179161743020"><a name="text5179161743020"></a><a name="text5179161743020"></a><span id="text18179111714306"><a name="text18179111714306"></a><a name="text18179111714306"></a>openGauss</span></span> large objects stored in the database, along with the comments provided for them.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0059778645_en-us_topic_0058968158_row5164077"><td class="cellrowborder" valign="top" width="28.249999999999996%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p15636992"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p15636992"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p15636992"></a>\lo_import [FILEPATH]</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p58636731"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636731"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636731"></a>Import a large object<span id="text5179161743020"><a name="text5179161743020"></a><a name="text5179161743020"></a><span id="text18179111714306"><a name="text18179111714306"></a><a name="text18179111714306"></a>openGauss</span></span> large objects stored in the database, along with the comments provided for them.</p>
+</td>
+</tr>
+<tr id="en-us_topic_0059778645_en-us_topic_0058968158_row5164078"><td class="cellrowborder" valign="top" width="28.249999999999996%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p15636993"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p15636993"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p15636993"></a>\lo_export [OID] [FILEPATH]</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0059778645_en-us_topic_0058968158_p58636732"><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636732"></a><a name="en-us_topic_0059778645_en-us_topic_0058968158_p58636732"></a>Export a large object<span id="text5179161743020"><a name="text5179161743020"></a><a name="text5179161743020"></a><span id="text18179111714306"><a name="text18179111714306"></a><a name="text18179111714306"></a>openGauss</span></span> large objects stored in the database, along with the comments provided for them.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
