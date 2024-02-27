@@ -135,3 +135,55 @@ openGauss=#  select t1.c1 from t1 where t1.c1 = (select t2.c1 from t2 where t1.c
 ERROR:  more than one row returned by a subquery used as an expression
 ```
 
+## 去除多余distinct和group by子句remove_redundant_distinct_group_by<a name="section20180151614545"></a>
+
+子查询提升需要保证没有distinct、group by子句，而对于如下ANY_sublink的语句：
+
+explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select t2.c1 from t2 group by t2.c1);
+
+或者
+
+explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select distinct t2.c1 from t2);
+
+可以发现distinct或group by对子查询的结果并无影响，仅做了去重，在in场景下并无意义，可以直接去除，重写为：
+
+explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select t2.c1 from t2);
+
+具体的执行计划变更如下：
+
+```
+openGauss=# explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select t2.c1 from t2 group by t2.c1);
+                                    QUERY PLAN
+----------------------------------------------------------------------------------
+ Hash Right Semi Join  (cost=52.01..56.79 rows=6 width=4)
+   Hash Cond: (t2.c1 = t1.c1)
+   ->  HashAggregate  (cost=36.86..38.86 rows=200 width=4)
+         Group By Key: t2.c1
+         ->  Seq Scan on t2  (cost=0.00..31.49 rows=2149 width=4)
+   ->  Hash  (cost=15.01..15.01 rows=11 width=4)
+         ->  Bitmap Heap Scan on t1  (cost=4.34..15.01 rows=11 width=4)
+               Recheck Cond: (c2 = 5)
+               ->  Bitmap Index Scan on t1_idx  (cost=0.00..4.33 rows=11 width=0)
+                     Index Cond: (c2 = 5)
+(10 rows)
+
+openGauss=# set rewrite_rule = 'remove_redundant_distinct_group_by';
+SET
+openGauss=# explain select t1.c1 from t1 where t1.c2 = 5 and t1.c1 in (select t2.c1 from t2 group by t2.c1);
+                                 QUERY PLAN
+-----------------------------------------------------------------------------
+ Nested Loop Semi Join  (cost=4.34..23.55 rows=6 width=4)
+   ->  Bitmap Heap Scan on t1  (cost=4.34..15.01 rows=11 width=4)
+         Recheck Cond: (c2 = 5)
+         ->  Bitmap Index Scan on t1_idx  (cost=0.00..4.33 rows=11 width=0)
+               Index Cond: (c2 = 5)
+   ->  Index Only Scan using t2_idx on t2  (cost=0.00..4.47 rows=11 width=4)
+         Index Cond: (c1 = t1.c1)
+(7 rows)
+```
+
+原先扫描t2表时，由于存在group by子句，导致t2.c1 = t1.c1过滤条件无法下推到扫描中，需要做全表扫描。如果打开remove_redundant_distinct_group_by参数，去掉了group by子句，选择了参数化路径，提升了查询性能。
+
+需要注意的是，即使打开了该参数，部分场景也不会做该优化，原因是可能会影响结果：
+* 对于distinct场景，使用了distinct on子句或limit子句。
+* 对于group by场景，使用了聚集函数、窗口函数、having子句、groupingSets或limit子句。
