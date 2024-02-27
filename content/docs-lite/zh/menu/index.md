@@ -608,6 +608,7 @@ headless: true
 		-   [Dolphin概述]({{< relref "./docs/ExtensionReference/dolphin概述.md" >}})
 		-   [Dolphin限制]({{< relref "./docs/ExtensionReference/dolphin限制.md" >}})
 		-   [Dolphin不支持语法]({{< relref "./docs/ExtensionReference/dolphin-不支持语法.md" >}})
+		-   [未兼容MySQL特性列表]({{< relref "./docs/ExtensionReference/dolphin-未兼容MySQL特性列表.md" >}})
 		-   [MySQL协议兼容]({{< relref "./docs/ExtensionReference/dolphin-MySQL协议兼容.md" >}})
 		-   [Dolphin语法介绍]({{< relref "./docs/ExtensionReference/dolphin语法介绍.md" >}})
 			-   [SQL参考]({{< relref "./docs/ExtensionReference/dolphin-SQL参考.md" >}})
