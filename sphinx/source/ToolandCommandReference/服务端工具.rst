@@ -16,4 +16,5 @@
     ../content/zh/docs/ToolandCommandReference/gs_restore
     ../content/zh/docs/ToolandCommandReference/gs_ssh
     ../content/zh/docs/ToolandCommandReference/gs_sdr
+    ../content/zh/docs/ToolandCommandReference/gs_retrieve
 
