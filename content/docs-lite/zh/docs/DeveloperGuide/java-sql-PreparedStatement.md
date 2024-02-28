@@ -358,3 +358,5 @@ java.sql.PreparedStatement是预处理语句接口。
 
 >-   executeLargeUpdate\(\)方法必须在JDBC4.2及以上使用。
 
+>-   setObject(int parameterIndex, Object x, int targetSqlType)方法的targetSqlType参数不支持blob、clob类型。
+
