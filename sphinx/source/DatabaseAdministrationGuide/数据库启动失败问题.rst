@@ -1,0 +1,11 @@
+常见故障案例（资源池化开发者环境）
+================
+
+.. toctree::
+
+
+    ../content/zh/docs/DatabaseAdministrationGuide/gs_ctl_start失败
+    ../content/zh/docs/DatabaseAdministrationGuide/无法单独拉起节点
+    ../content/zh/docs/DatabaseAdministrationGuide/DMS组件版本号错
+    ../content/zh/docs/DatabaseAdministrationGuide/dssserver端口号错误
+  
