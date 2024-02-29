@@ -83,7 +83,7 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 -   -i
 
-    指定检查项编号，-i参数值不区分大小写。格式：-i PMK、-i SSD。
+    指定检查项编号，-i参数值不区分大小写。格式：-i PMK(Platter Magnetic Disk)机械硬盘、-i SSD(Solid State Drive)固态硬盘。
 
     取值范围：PMK、SSD。
 
