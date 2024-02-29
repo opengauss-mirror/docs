@@ -775,6 +775,7 @@ headless: true
         -   [案例：改建分区表]({{< relref "./docs/PerformanceTuningGuide/案例-改建分区表.md" >}})
         -   [案例：改写SQL消除子查询（案例1）]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除子查询_案例1.md" >}})
         -   [案例：改写SQL消除子查询（案例2）]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除子查询_案例2.md" >}})
+        -   [案例：改写SQL消除子查询与使用并行查询]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除子查询与使用并行查询.md" >}})
         -   [案例：改写SQL消除in-clause]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除in-clause.md" >}})
         -   [案例：修改启动参数解决TPCC大幅度波动]({{< relref "./docs/PerformanceTuningGuide/案例-修改启动参数解决TPCC大幅度波动.md" >}})
 -   [AI特性指南]({{< relref "./docs/AIFeatureGuide/AI特性.md" >}})
