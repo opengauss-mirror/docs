@@ -1661,7 +1661,7 @@ headless: true
 	-   [Cluster Manager]({{< relref "./docs/ToolandCommandReference/unified-database-management-tool.md" >}})
     	-   [Features]({{< relref "./docs/ToolandCommandReference/features.md" >}})
     	-   [cm\_ctl]({{< relref "./docs/ToolandCommandReference/cm_ctl.md" >}})
-    	-   [cm\_persit]({{< relref "./docs/ToolandCommandReference/cm_persit.md" >}})
+    	-   [cm\_persist]({{< relref "./docs/ToolandCommandReference/cm_persist.md" >}})
     	-   [cm\_install and cm\_uninstall]({{< relref "./docs/ToolandCommandReference/cm_install-and-cm_uninstall.md" >}})
     	-   [Security Design]({{< relref "./docs/ToolandCommandReference/security-design.md" >}})
     	-   [CM Parameters]({{< relref "./docs/ToolandCommandReference/cm-parameters.md" >}})

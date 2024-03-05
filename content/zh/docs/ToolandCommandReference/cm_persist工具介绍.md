@@ -1,4 +1,4 @@
-# cm\_persit工具介绍
+# cm\_persist工具介绍
 
 ## 功能介绍<a name="section125419154813"></a>
 
