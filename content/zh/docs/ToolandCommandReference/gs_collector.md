@@ -103,10 +103,10 @@
 </td>
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p713892916335"><a name="zh-cn_topic_0237152334_p713892916335"></a><a name="zh-cn_topic_0237152334_p713892916335"></a>*</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集dss配置文件：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>dss_inst.ini</li><li>dss_vg_conf.ini</li></ul>
+<td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集dss配置文件：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>dss_cm_conf.ini</li><li>dss_inst.ini</li><li>dss_vg_conf.ini</li></ul>
 </div>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>是</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152334_row6136229183317"><td class="cellrowborder" valign="top" width="15.6%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237152334_p9138429193316"><a name="zh-cn_topic_0237152334_p9138429193316"></a><a name="zh-cn_topic_0237152334_p9138429193316"></a>DssDiskInfo</p>
@@ -116,7 +116,7 @@
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><div class="p" id="zh-cn_topic_0237152334_p45021115203417"><a name="zh-cn_topic_0237152334_p45021115203417"></a><a name="zh-cn_topic_0237152334_p45021115203417"></a>收集vgname、pri_vgname信息包括：<a name="zh-cn_topic_0237152334_ul16465440162515"></a><a name="zh-cn_topic_0237152334_ul16465440162515"></a><ul id="zh-cn_topic_0237152334_ul16465440162515"><li>卷组和磁盘使用信息。</li><li>磁盘信息。</li><li>LUN及注册信息。</li></ul>
 </div>
 </td>
-<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>否</p>
+<td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p8138132953313"><a name="zh-cn_topic_0237152334_p8138132953313"></a><a name="zh-cn_topic_0237152334_p8138132953313"></a>是</p>
 </td>
 </tr>
 </tbody>
