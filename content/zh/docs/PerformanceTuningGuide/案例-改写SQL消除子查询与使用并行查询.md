@@ -36,6 +36,7 @@ GROUP BY a.type1;
 ## 优化分析
 
 原始SQL执行计划如下：
+
 ![original_plan](figures/perf_case-sql_smp-original_plan.png)
 
 根据执行计划可知，此SQL存在大量子查询，且大部分耗时为以下部分：
@@ -55,6 +56,7 @@ JOIN t_Column m ON m.type = i.type AND m.STATUS = 'Y'
 WHERE NAME IS NOT NULL AND i.STATUS = 'Y' and i.type is not null
 ```
 子查询执行计划：
+
 ![original_subplan](figures/perf_case-sql_smp-original_subplan.png)
 
 在这种场景下，改写消除子查询无明显性能提升，由于并行查询（SMP）不支持子查询算子，因此原 SQL 也无法直接使用并行查询。 此时需要先改造SQL，消除子查询才能使用并行特性。
@@ -104,6 +106,7 @@ set rewrite_rule='magicset,intargetlist';
 ```
 
 最终执行计划如下：
+
 ![perf_case-sql_smp-final_plan_p1](figures/perf_case-sql_smp-final_plan_p1.png)
 ![perf_case-sql_smp-final_plan_p2](figures/perf_case-sql_smp-final_plan_p2.png)
 
