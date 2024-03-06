@@ -6,7 +6,7 @@ At the time of a Checkpoint, all dirty data pages are flushed to disk and a spec
 
 The data is stored directly in memory. The MOT does not store its data it the same way as openGauss so that the concept of dirty pages does not exist.
 
-For this reason, we have researched and implemented the CALC algorithm, which is described in the paper named Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOND 2016 from Yale University.
+For this reason, we have researched and implemented the CALC algorithm, which is described in the paper named Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOD 2016 from Yale University.
 
 Low-overhead asynchronous checkpointing in main-memory database systems.
 

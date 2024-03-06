@@ -6,7 +6,7 @@
 
 数据直接存储在内存中。MOT没有像openGauss那样存储数据，因此不存在脏页的概念。
 
-为此，我们研究并实现了CALC算法，该算法在耶鲁大学发布的Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOND 2016中得到了描述。
+为此，我们研究并实现了CALC算法，该算法在耶鲁大学发布的Low-Overhead Asynchronous Checkpointing in Main-Memory Database Systems, SIGMOD 2016中得到了描述。
 
 主内存数据库系统中的低开销异步检查点<sup>\[</sup>[对比：磁盘与MOT](对比-磁盘与MOT.md)<sup>\]</sup>。
 
