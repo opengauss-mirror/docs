@@ -7,12 +7,13 @@
 1. 新增```dayofmonth/dayofweek/dayofyear/hour/microsecond/minute/quarter/second/weekday/weekofyear/year/current_date```函数。
 2. 新增```curdate/current_time/curtime/current_timestamp/localtime/localtimestamp/now/sysdate```函数。
 3. 新增```makedate/maketime/period_add/period_diff/sec_to_time/subdate```函数。
-4. 新增```subtime/timediff/time/time_format/timestamp/timestamppadd```函数。
+4. 新增```subtime/timediff/time/time_format/timestamp/timestampadd```函数。
 5. 新增`to_days/to_seconds/unix_timestamp/utc_date/utc_time/utc_timestamp`函数。
 6. 新增```date_bool/time_bool```函数。
 7. 新增```dayname/monthname/time_to_sec/month/day/date/week/yearweek```函数，修改了```last_day```函数。
 8. 新增```datediff/from_days/convert_tz/date_add/date_sub/adddate/addtime```函数，修改了```timestampdiff```函数。
 9. 新增```get_format/date_format/from_unixtime/str_to_date```函数，修改了```extract```函数。
+10. 新增```sleep```函数
 
 - curdate\(\)
 
@@ -1988,7 +1989,7 @@ CONTEXT:  referenced column: subdate
   13:12:12
   (1 row)
   ```
-- sleep\(duration \)
+- sleep\(duration\)
 
   描述：睡眠 duration 秒， 然后返回0
 
