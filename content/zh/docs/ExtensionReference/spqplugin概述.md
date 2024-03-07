@@ -1,0 +1,4 @@
+# spqplugin概述
+
+openGauss提供spqpluign Extension（版本为spqplugin-1.0.0）。SPQ(SharedEverything Parallel Query)是在openGauss开源数据库上的一个多机并行查询框架，该框架部署在资源池化场景内，该场景下集群部署的为一写多读架构，集群下存在一个写/读节点和多个读节点，目前的集群只存在同时一个读节点查询的能力，集群的查询性能非常受限。
+SPQ基于的是sharedEverything分布式架构，所有节点都共享集群内的资源，通过执行计划的split和执行、汇聚等实现所有读节点并行查询，充分发挥集群的OLAP能力。使资源池化同时具备较强的TP和AP能力。

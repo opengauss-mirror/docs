@@ -15,7 +15,7 @@
 
 打开“content”文件夹，该文件夹包含了openGauss轻量版和企业版两个版本的文档。
 
-- "content/docs-lite"对应的文件夹表示openGuass轻量版文档，里面包含中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档。
+- "content/docs-lite"对应的文件夹表示openGauss轻量版文档，里面包含中文（“zh”文件夹）和英文（“en”文件夹）两种语言文档。
 - "content/zh"和"content/en"对应的文件夹表示openGauss企业版中文和英文两种语言文档。
 
 以中文文档举例进行说明。 在“zh”文件夹中，“docs”文件夹包含了具体文档的内容，“menu”包含了文档的大纲内容。

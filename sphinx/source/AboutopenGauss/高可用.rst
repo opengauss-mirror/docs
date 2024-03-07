@@ -9,7 +9,6 @@
     ../content/zh/docs/AboutopenGauss/物理备份
     ../content/zh/docs/AboutopenGauss/作业失败自动重试
     ../content/zh/docs/AboutopenGauss/极致RTO
-    ../content/zh/docs/AboutopenGauss/极致RTO按需回放
     ../content/zh/docs/AboutopenGauss/基于Paxos协议的高可用
     ../content/zh/docs/AboutopenGauss/级联备机
     ../content/zh/docs/AboutopenGauss/延时回放
@@ -21,3 +20,5 @@
     ../content/zh/docs/AboutopenGauss/支持global-syscache
     ../content/zh/docs/AboutopenGauss/支持备机build备机
     ../content/zh/docs/AboutopenGauss/两地三中心跨Region容灾
+    ../content/zh/docs/AboutopenGauss/主备高可用能力增强
+    ../content/zh/docs/AboutopenGauss/表级别并行恢复优化

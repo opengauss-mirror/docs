@@ -89,6 +89,10 @@ CREATE SUBSCRIPTION subscription_name
 
         因为该选项设置为false时不会建立连接，因此表没有被订阅，所以当启用订阅后，不会复制任何内容。需要执行ALTER SUBSCRIPTION ... REFRESH PUBLICATION才能订阅表。
 
+    -   **matchddlowner (boolean)**
+
+        指定订阅端在应用DDL操作时，是否切换到DDL日志信息中指定owner用户。
+
 ## 示例<a name="section1399192015610"></a>
 
 ```

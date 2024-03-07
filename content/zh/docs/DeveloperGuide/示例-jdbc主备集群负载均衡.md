@@ -59,7 +59,7 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=priority2
 
   取值范围：[0, 9223372036854775)内的整数。
 
-  默认值：0。
+  默认值：30。
 
 * minReservedConPerCluster：jdbc触发快速负载均衡时，集群内空闲连接的最小保留百分比。默认情况下，jdbc触发快速负载均衡时，所有被筛选出来的空闲连接都会被关闭。设置该参数可以在触发快速负载均衡时，jdbc至少保留集群内空闲连接的minReservedConPerCluster%。该参数针对集群生效，如果存在多个配置了相同节点并开启快速负载均衡功能的URL都设置了该参数，则取最小值。
 
@@ -82,8 +82,67 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn&enableQuickAut
 jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn&enableQuickAutoBalance=true&maxIdleTimeBeforeTerminal=20&minReservedConPerCluster=20&minReservedConPerDatanode=20
 ```
 
->![](public_sys-resources/icon-caution.png) **注意：** 
+>![](public_sys-resources/icon-caution.png) **注意：**
 >-   jdbc只基于该驱动在同一集群上的连接负载均衡，同样触发快速负载均衡时，也只会关闭该驱动在某一集群上创建、并设置了相应参数的连接。
 >-   该功能需要通过调整参数来适应客户端的业务需求，jdbc本身无法感知到某一连接是否为实际业务所需的连接， 因此通过判断空闲连接的方式筛选可关闭连接。如果参数与实际业务需求不匹配，可能会出现用户持有连接被关闭的情况。
 >-   jdbc在进行快速负载均衡时，会根据设置的配置参数，筛选部分满足条件的连接关闭，如果此时大部分已有连接都不满足关闭条件，比如全部处于活跃状态，可能导致快速负载均衡结果较差。
 >-   jdbc快速负载均衡功能会额外开启心跳线程用于分阶段关闭空闲连接。由于快速负载均衡依赖于leastconn模式，因此该功能的关闭机制与leastconn模式相同。
+
+## statement 级别负载均衡功能说明
+jdbc 可以通过在 URL 中指定 enableStatementLoadBalance=true 参数，启用语句级别的负载均衡功能。启用该功能后，jdbc 会在执行每一条 SQL 语句时，根据 SQL 语句的解析结果判断，若是读操作根据指定的负载均衡模式路由到备库，写操作路由到主库。目前，jdbc 提供了 roundrobin、priority roundrobin、shuffle 语句级别的负载均衡模式。也可以通过将可选的 targetServerType 参数设置为 master/slave 来强制路由到主库或备库，通过可选的 writeDataSourceAddress 参数手动指定主库。
+示例如下：
+* roundrobin
+  轮询模式，即与URL串上的候选节点轮流建立连接。取值："roundrobin"、"true"、"balance"。
+  * 假如客户端想使用轮询模式连接一主两备集群，通过 enableStatementLoadBalance=true 参数启用语句级别负载均衡。则在同一个连接里每次执行 SQL 语句，会根据 roundrobin 算法路由到指定节点，如下配置：
+  ```
+  jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=roundrobin
+  ```
+  * 假如客户端想在同一个连接内，使用轮询模式轮流访问一主两备集群的备机，对备机做只读操作，可以使用如下配置：
+  ```
+  jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=roundrobin&targetServerType=slave
+  ```
+  * 假如客户端想在同一个连接内，只连接一主两备集群的主机，避免写操作路由到备机，可以使用如下配置：
+  ```
+  jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=roundrobin&targetServerType=master
+  ```
+  * 假如客户端通过 writeDataSourceAddress 参数手动指定了主库，则不需要 jdbc 额外对候选节点依次建立连接判断出主库，可以使用如下配置：
+  ```
+  jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=roundrobin&writeDataSourceAddress=node1
+  ```
+* shuffle：
+  随机模式，同一个连接里的每次 SQL 操作都随机选择 URL 串中的某个节点建立连接。取值："shuffle"。通过 enableStatementLoadBalance=true 参数启用语句级别负载均衡，使用随机模式连接一主两备集群的参考配置如下：
+```
+jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=shuffle
+```
+* priority roundrobin：
+  带优先级的轮询模式，同一个连接里的每次 SQL 操作，会优先对前n个候选节点做轮询建连，取值："proprity[n]"，n为非负整数。通过 enableStatementLoadBalance=true 参数启用语句级别负载均衡，以一主两备集群为例，如果客户端想要优先在主机和备机1上执行业务，备机2只作为其他节点异常时的备用节点，可以设置该参数：
+```
+jdbc:opengauss://node1,node2,node3/database?enableStatementLoadBalance=true&autoBalance=priority2
+```
+
+依赖：
+本功能依赖 Apache ShardingSphere 提供的 openGauss 解析 Jar 包做 SQL 解析，如果使用 Maven，依赖如下：
+```xml
+<!-- 其中 shardingsphere.version 不低于 5.4.0 -->
+<dependency>
+    <groupId>org.apache.shardingsphere</groupId>
+    <artifactId>shardingsphere-parser-sql-engine</artifactId>
+    <version>${shardingsphere.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.shardingsphere</groupId>
+    <artifactId>shardingsphere-parser-sql-opengauss</artifactId>
+    <version>${shardingsphere.version}</version>
+</dependency>
+```
+
+完整的 Jar 包依赖如下：
+```
+shardingsphere-infra-util-5.4.0.jar
+shardingsphere-parser-sql-engine-5.4.0.jar
+shardingsphere-parser-sql-opengauss-5.4.0.jar
+shardingsphere-parser-sql-spi-5.4.0.jar
+shardingsphere-parser-sql-statement-5.4.0.jar
+antlr4-runtime-4.10.1.jar
+caffeine-2.9.3.jar
+```

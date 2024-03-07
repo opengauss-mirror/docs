@@ -35,6 +35,8 @@ Data Studio作为一款配套openGauss数据库使用的客户端软件（当前
 -   SQL 格式化
 -   SQL 执行历史记录
 -   显示执行计划、ER图
+-   解除下列类型的编辑限制：int1，nvarchar2，interval，blob，clob，varbit，box，path，circle，lseg，point，polygon
+-   支持dolphin插件的新增类型：year, uint1，uint2，uint4，uint8； binary，varbinary， tinyblob，mediumblob，longblob， set，enum
 
 ## 特性增强<a name="section28788730"></a>
 

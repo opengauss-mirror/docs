@@ -946,7 +946,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 -   设置CM参数：
 
     ```
-    cm_ctl set --param --agent | --server [-n NODEID] -k "PARAMETER='value'"
+    cm_ctl set --param --agent | --server [-n NODEID] -k PARAMETER="'value'"
     ```
 
 -   获取参数：

@@ -161,16 +161,16 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## ss_enable_scrlock 
 
-**Parameter description:** Specifies whether to use scrlock.
+**Parameter description:** Specifies whether to enable SCRLock.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: Boolean. The value can be **on** or **off**. **on** indicates that scrlock is enabled, and **off** indicates that scrlock is disabled.
+**Value range**: Boolean. The value can be **on** or **off**. **on** indicates that SCRLock is enabled, and **off** indicates that SCRLock is disabled.
 
 **Default value**: **off**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
->scrlock requires the CX5 NIC and depends on the OCK RDMA dynamic library. Before enabling this function, ensure that the configuration is correct.
+>SCRLock requires the CX5 NIC and depends on the OCK RDMA dynamic library. Before enabling this function, ensure that the configuration is correct.
 
 ## ss_enable_scrlock_sleep_mode 
 
@@ -178,26 +178,26 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: Boolean. The value can be **on** or **off**. **on** indicates that the scrlock sleep mode is enabled, and **off** indicates that the scrlock sleep mode is disabled.
+**Value range**: Boolean. The value can be **on** or **off**. **on** indicates that the SCRLock sleep mode is enabled, and **off** indicates that the SCRLock sleep mode is disabled.
 
 **Default value**: **on**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
->The scrlock sleep mode reduces the CPU usage of the scrlock but increases the scrlock delay.
+>The SCRLock sleep mode reduces the CPU usage of the SCRLock but increases the SCRLock delay.
 
 ## ss_scrlock_server_port 
 
-**Parameter description:** Specifies the listening port number of the scrlock server.
+**Parameter description:** Specifies the listening port number of the SCRLock server.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range:** an integer ranging from 0 to 65536
+**Value range:** an integer ranging from 1024 to 65535
 
 **Default value**: **8000**
 
 ## ss_scrlock_worker_count 
 
-**Parameter description:** Specifies the number of workers on the scrlock client.
+**Parameter description:** Specifies the number of workers on the SCRLock client.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
@@ -207,27 +207,27 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## ss_scrlock_worker_bind_core  
 
-**Parameter description:** Specifies the start and end CPUs used on the scrlock worker.
+**Parameter description:** Specifies the start and end CPUs used on the SCRLock worker.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: a string in the format of *start CPU* *end CPU* \(separated by a space\), for example, **10 15**
+**Value range**: Character string, Format: "Start_CPU_core_index End_CPU_core_index". Separate the two indexes with a space. Example: **10 15**
 
 **Default value**: **""**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
->-   This parameter can be left blank. In this case, the scrlock worker is not bound to any CPU.
+>-   This parameter can be left blank. In this case, the SCRLock worker is not bound to any CPU.
 >-   The value of start and end CPUs must be greater than or equal to 2.
 
 ## ss_scrlock_server_bind_core  
 
-**Parameter description:** Specifies the start and end CPUs used on the scrlock server.
+**Parameter description:** Specifies the start and end CPUs used on the SCRLock server.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: a string in the format of *start CPU* *end CPU* \(separated by a space\), for example, **10 15**
+**Value range**: Character string, Format: "Start_CPU_core_index End_CPU_core_index". Separate the two indexes with a space. Example: **10 15**
 
 **Default value**: **""**
 
 >![](public_sys-resources/icon-note.gif) **NOTE:**
->This parameter can be left blank, which is equivalent to "0 0". That is, the scrlock server occupies CPU 0.
+>This parameter can be left blank, which is equivalent to "0 0". That is, the SCRLock server occupies CPU 0.

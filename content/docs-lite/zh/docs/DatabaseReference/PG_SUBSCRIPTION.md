@@ -92,6 +92,13 @@
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13137204313538"><a name="p13137204313538"></a><a name="p13137204313538"></a>commit_lsn为该lsn的事务会被跳过，不被应用。</p>
 </td>
 </tr>
+<tr id="row18136114310541"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p913764314535"><a name="p913764314535"></a><a name="p913764314535"></a>submatchddlowner</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p513754355318"><a name="p513754355318"></a><a name="p513754355318"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13137204313538"><a name="p13137204313538"></a><a name="p13137204313538"></a>当订阅时指定选项matchddlowner为false时，该值为false，默认为true。该选项指示订阅端在应用DDL操作时，是否切换到DDL日志信息中指定owner用户。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

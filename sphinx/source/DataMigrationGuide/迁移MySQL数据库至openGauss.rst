@@ -3,7 +3,8 @@
 
 .. toctree::
 
-    ../content/zh/docs/DataMigrationGuide/全量迁移
+    ../content/zh/docs/DataMigrationGuide/MySQL一键式迁移   
+	../content/zh/docs/DataMigrationGuide/全量迁移
     ../content/zh/docs/DataMigrationGuide/增量迁移
     ../content/zh/docs/DataMigrationGuide/反向迁移
     ../content/zh/docs/DataMigrationGuide/数据校验

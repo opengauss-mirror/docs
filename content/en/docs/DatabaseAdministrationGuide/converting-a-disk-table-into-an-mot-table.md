@@ -26,7 +26,7 @@ To covert a disk-based table into an MOT table, perform the following –
 6.  Visually/manually verify that all the original data was imported correctly into the new MOT table. An example is provided below.
 7.  Resume application activity.
 
-**IMPORTANT Note** **–**  In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT table seamlessly without code changes. An additional method is to copy data from a regular (Heap) table into the new MOT table by using an “INSERT INTO SELECT” statement.
+**IMPORTANT Note** **–**  In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT table seamlessly without code changes. An additional method is to copy data from a regular (Heap) table into the new MOT table by using an "INSERT INTO SELECT" statement.
 ```
 INSERT INTO [MOT_table] SELECT * FROM [PG_table] WHERE condition;
 ```

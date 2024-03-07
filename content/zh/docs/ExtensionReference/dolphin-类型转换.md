@@ -8,11 +8,14 @@
 - CHAR/VARCHAR/TEXT/BINARY/VARBINARY/TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 - ENUM/SET/JSON
 
+另外，增加了DATETIME/TIMESTAMP、YEAR、BINARY/VARBINARY、TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB、ENUM、SET向BOOL的转换规则。
 其中，两个类型间的转换规则存在隐式（IMPLICIT, i）、赋值（ASSIGNMENT, a）、显式（EXPLICIT, e），三个级别，可通过系统表 pg_cast 的 castcontext 字段进行查看。三个级别的转换规则适用范围如下：
 
 - 'e'：表示只支持显式转换（使用CAST或::语法）。
 - 'a'：表示支持给目标列赋值时转换，同时支持显式转换。
 - 'i'：表示支持表达式（函数、操作符等）隐式转化，同时支持赋值、显式转换。
+
+增加了UINT4、BOOL、CHAR、VARCHAR、TEXT向YEAR的赋值转换规则。
 
 ### 转换规则
 
@@ -23,7 +26,7 @@
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|BIT转换数值类型可视作BIT转换UINT8后，再转换到目标类型，超出目标类型范围则溢出，严格模式下报错，非严格模式取目标类型最大值|BIT转换UINT8不存在负数，因此例如b'11111111'::tinyint不为-1，而是255::tinyint，溢出<br>到UINT4/UINT8/NUMERIC/FLOAT/DOUBLE的转换为隐式，其它为赋值|
-|DATE/DATETIME/TIMESTAMP/TIME|BIT转换时间日期类型，按当前字符集将BIT二进制编码转换为字符串后，转换为时间日期类型|转换规则为BIT到字符串到日期类型，与BIT到数字到日期类型表现不同。<br>转换级别为赋值|
+|DATE/DATETIME/TIMESTAMP/TIME|BIT转换时间日期类型，按当前字符集将BIT二进制编码转换为字符串后，转换为时间日期类型|转换规则为BIT到数字到日期类型。<br>转换级别为赋值|
 |YEAR|将二进制数值转换为十进制后，与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按当前字符集将BIT二进制编码转换为字符串|转换级别为赋值|
 |BINARY/VARBINARY|将二进制数值转换为十进制后，逐位数字按字符集转换|如b'11111'::binary，二进制11111转换十进制为31，3编码/x33，1编码/x31，结果为/x3331<br>转换级别为赋值|
@@ -39,12 +42,12 @@
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
-|BIT|数值类型转换BIT可视作数值类型转换BIT(64)后，再转换到目标BIT(n)，超长在严格模式下报错，非严格模式下为最大值（全1）。小数存在四舍五入|BIT(64)最高位可为符号位，因此-1::bit(8)不为'11111111'，而是64位1导致超长；<br>-1与UINT8_MAX均为64位1<br>到INT/BIGINT/UINT4/UINT8的转换级别为显式，其他为赋值|
+|BIT|数值类型转换BIT可视作数值类型转换BIT(64)后，再转换到目标BIT(n)，超长在严格模式下报错，非严格模式下为最大值（全1）。小数存在四舍五入|BIT(64)最高位可为符号位，因此-1::bit(8)不为'11111111'，而是64位1导致超长；<br>-1与UINT8_MAX均为64位1<br>转换级别为赋值|
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|数值类型间相互转换，存在四舍五入、精度丢失、溢出等情况。超出目标类型的表示范围则溢出，整数溢出规则为：转换级别为(1)隐式/赋值：严格模式下报错，非严格模式截断为目标类型最小/大值。(2)显式：先截取目标类型数位表示范围的最大/小值（如UINT8有64个数位，超过64位表示范围的负数截断为INT8的最小值，正数截断为UINT8的最大值），转为无符号整数时溢出的负数转换为对应的正补码, 转为有符号整数时溢出的正数转换为对应的负整数。(3)特殊情况：UINT8到INT8的隐式/赋值转换应用显式规则。目标类型为TINYINT/SMALLINT/INT显式转换应用隐式规则。源类型为浮点类型显式转换为有符号数应用隐式规则，转换为无符号数应用显式规则。与mysql差异：openGauss中超过INT8表示范围的数字是NUMERIC类型。源类型为NUMERIC时，三种级别的转换规则相同：转为无符号整数时负数截断为0。转为有符号整数时正数截取为目标类型的最大值|转换级别为隐式|
 |DATE|三位数为2000-0x-xx<br>四位数为2000-xx-xx<br>五位数为200x-xx-xx<br>六位数为20xx-xx-xx<br>七位数为0xxx-xx-xx<br>八位数为xxxx-xx-xx<br>小数部分忽略，无四舍五入|TINYINT/SMALLINT/INT到DATE的转换级别为隐式，UINT4到DATE的转换级别为显式，其他为赋值|
 |DATETIME/TIMESTAMP|八位数及以下日期部分与DATE相同，时间为00:00:00；九位数及以上优先时间：<br>九位数为2000-0x-xx xx:xx:xx<br>十位数为200x-xx-xx xx:xx:xx<br>十一位数为20xx-xx-xx xx:xx:xx<br>十二位数为0xxx-xx-xx xx:xx:xx<br>十三位数为xxxx-xx-xx xx:xx:xx<br>小数部分忽略，无四舍五入<br>|TINYINT/SMALLINT/INT/BIGINT/NUMERIC到DATETIME/TIMESTAMP的转换级别为隐式，UINT4/UINT8为显式，其他为赋值|
 |TIME|从秒开始逐位对应|B兼容性下的TIME类型取值范围为-838:59:59~838:59:59；<br>'12:34'::time，结果为12::34::00，也更符合日常使用习惯，但1234::time，结果为00::12::34，注意区分。关于字符类型更多转换规则详见具体介绍<br>TINYINT/SMALLINT/INT/BIGINT/NUMERIC到TIME的转换级别为隐式，UINT4为显式，其他为赋值|
-|YEAR|0为0<br>一位数200x<br>两位数20xx<br>四位数xxxx<br>小数存在四舍五入|YEAR类型的取值范围为0、1901~2155<br>TINYINT/SMALLINT/INT到YEAR的转换级别为隐式，UINT4为显式，其他为赋值|
+|YEAR|0为0<br>一位数200x<br>两位数20xx<br>四位数xxxx<br>小数存在四舍五入|YEAR类型的取值范围为0、1901~2155<br>TINYINT/SMALLINT/INT到YEAR的转换级别为隐式，其他为赋值|
 |CHAR/VARCHAR/TEXT|按数值转换为字符串|到TEXT的转换级别均为隐式<br>UINT1/UINT2/UINT4/UINT8到CHAR/VARCHAR的转换级别为赋值，其他为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按数值转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按数值对应ENUM编号进行转换<br>小数部分忽略，无四舍五入|转换级别为赋值|
@@ -59,7 +62,7 @@
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字面数值逐位转换为十进制数值|到TINYINT/SMALLINT/UINT1/UINT2的转换级别为赋值，其他为隐式|
 |DATETIME/TIMESTAMP|日期不变，时间为00:00:00|转换级别为隐式|
 |TIME|00::00::00|转换级别为赋值|
-|YEAR|按字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|抽取出DATE类型中年的部分作为YEAR|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按对应显示格式转换为字符串|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按对应显示格式转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按对应显示格式字符串转换，转换为ENUM对应Lable的项|转换级别为赋值|
@@ -75,12 +78,13 @@
 |DATE|保留日期部分|转换级别为赋值|
 |TIMESTAMP/DATETIME|DATETIME与TIMESTAMP的区别为前者不带时区(timezone)信息，后者带|DATETIME到TIMESTAMP转换级别为隐式，TIMESTAMP到DATETIME转换级别为赋值|
 |TIME|保留时间部分|DATETIME到TIME转换级别为隐式，TIMESTAMP到TIME转换级别为赋值|
-|YEAR|按字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|抽取DATETIME和TIMESTAMP类型中年的部分作为YEAR|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|按对应显示格式转换为字符串|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按对应显示格式转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按对应显示格式字符串转换，转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|按对应显示格式字符串转换，转换为SET对应Lable的项|转换级别为赋值|
 |JSON|按对应显示格式字符串转换，双引号包裹|转换级别为显式|
+|BOOL|正常合法时间为TRUE，但全0时间为FALSE|转换级别为赋值|
 
 #### 源类型：TIME
 
@@ -111,6 +115,7 @@
 |ENUM|按数值对应ENUM编号进行转换|转换级别为赋值|
 |SET|按数值对应SET编号进行转换|转换级别为赋值|
 |JSON|按数值转换，与字符串类似|转换级别为显式|
+|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为隐式|
 
 #### 源类型：CHAR/VARCHAR/TEXT
 
@@ -119,7 +124,7 @@
 |BIT|将字符串转换为对应字符集十六进制编码后，再转换为二进制编码|转换级别为显式|
 |TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|按字符串字面数值转换。超出目标类型的表示范围则溢出，整数溢出规则为：严格模式下报错，非严格模式在转换级别为(1)隐式/赋值：截断为目标类型最小/大值。(2)显式：先截取目标类型数位表示范围的最大/小值，转为无符号整数时溢出的负数转换为对应的正补码, 转为有符号整数时溢出的正数转换为对应的负整数|转换级别为隐式|
 |DATE/DATETIME/TIMESTAMP/TIME|按对应格式进行转换，格式规则较多|TEXT到TIMESTAMP/TIME转换级别为显式，其他为隐式|
-|YEAR|按字符串字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
+|YEAR|先转换为BIGINT类型，再转换为YEAR类型|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|字符串类型互转|转换级别为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按字符串转换为ENUM对应Lable的项|转换级别为赋值|
@@ -139,6 +144,7 @@
 |ENUM|用对应字符集解码后，按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|用对应字符集解码后，按字符串转换为SET对应Lable的项|转换级别为赋值|
 |JSON|BANARY转JSON显示为"base64:type254:xxx"<br>VARBANARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
+|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：ENUM
 
@@ -152,6 +158,7 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|取对应项Lable字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |SET|转换为Label字符串相同的项|转换级别为赋值|
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
+|BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：SET
 
@@ -165,6 +172,7 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|取对应项Lable字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|转换为Label字符串相同的项|转换级别为赋值|
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
+|BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：JSON
 
@@ -179,4 +187,8 @@
 |ENUM|按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|按字符串转换为SET对应Lable的项|转换级别为隐式|
 
+#### 源类型：BOOL
 
+|目标类型|转换规则描述|备注|
+|--|--|--|
+|YEAR|先转换为BIGINT类型，再转换为YEAR类型|转换级别为赋值|

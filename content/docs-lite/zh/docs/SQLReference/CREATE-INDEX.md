@@ -433,29 +433,3 @@ CREATE INDEX
 ## 相关链接<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa839a210de6a48efa3945de3e1d661fc"></a>
 
 [ALTER INDEX](ALTER-INDEX.md)，[DROP INDEX](DROP-INDEX.md)
-
-## 优化建议<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_section3814797010859"></a>
-
--   create index
-
-    建议仅在匹配如下条件之一时创建索引：
-
-    -   经常执行查询的字段。
-    -   在连接条件上创建索引，对于存在多字段连接的查询，建议在这些字段上建立组合索引。例如，select \* from t1 join t2 on t1.a=t2.a and t1.b=t2.b，可以在t1表上的a，b字段上建立组合索引。
-    -   where子句的过滤条件字段上（尤其是范围条件）。
-    -   在经常出现在order by、group by和distinct后的字段。
-
-    约束限制：
-
-    -   分区表上不支持创建部分索引。
-
-    -   分区表创建GLOBAL索引时，存在以下约束条件：
-        -   不支持表达式索引、部分索引
-        -   不支持列存表
-        -   仅支持B-tree索引
-
-    -   在相同属性列上，分区LOCAL索引与GLOBAL索引不能共存。
-    -   GLOBAL索引，最大支持31列。
-    -   如果alter语句不带有UPDATE GLOBAL INDEX，那么原有的GLOBAL索引将失效，查询时将使用其他索引进行查询；如果alter语句带有UPDATE GLOBAL INDEX，原有的GLOBAL索引仍然有效，并且索引功能正确。
-    -   对于分区表的local unique索引，索引键必须包含所有的分区键。
-

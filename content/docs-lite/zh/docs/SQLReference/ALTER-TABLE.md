@@ -20,7 +20,8 @@
 -   重命名时，不能与当前模式下已存在的synonym产生命名冲突。
 -   修改模式时，不能与新模式下已存在的synonym产生命名冲突。
 -   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
--   使用FIRST | AFTER column\_name新增列或修改列，或修改字段的字符集，会带来全表更新开销，影响在线业务。
+-   使用FIRST | AFTER column\_name新增列或修改列，或修改字段的字符集，会带来全表更新开销，影响在线业务。向已有的字段之间新插入列时，需要保证引用了字段的视图对象有效。
+-   删除被视图引用的表字段或修改表字段类型以及字段长度时，将引用视图和物化视图置为无效状态，在查询无效视图或通过无效视图更新、删除和新增表记录以及全量更新物化视图时，检查无效的视图和物化视图引用的表字段是否全部存在，如果存在恢复视图和物化视图的有效状态并返回查询结果，否则报错提示查询无效视图。
 
 ## 语法格式<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
@@ -231,9 +232,12 @@
   >    修改表已存在字段的数据类型。
   >
   >  - **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NOT NULL \[ ENABLE \] \[, ...\]**
+  >
+  >    为表的某列添加NOT NULL约束，默认启用约束。加上ENABLE也表示默认启用约束。目前暂不支持禁用约束选项。
+  >
   >  - **MODIFY column\_name \[ CONSTRAINT constraint\_name \] NULL \[, ...\]**
   >
-  >    修改表已存在字段的约束，ENABLE启用约束。
+  >    为表的某列移除NOT NULL约束。
   >
   >  - **MODIFY \[ COLUMN \] column\_name data\_type \[ CHARACTER SET | CHARSET charset \] \[\{\[ COLLATE collation \] | \[ column\_constraint \]\} \[ ... \] \] \[FIRST | AFTER column\_name\]**
   >
@@ -372,8 +376,8 @@
 -   重命名表。对名称的修改不会影响所存储的数据。
 
     ```
-    ALTER TABLE [ IF EXISTS ] table_name 
-        RENAME TO new_table_name;
+    ALTER TABLE [ IF EXISTS ] [schema_name.]table_name 
+        RENAME TO [new_schema_name.]new_table_name;
     ```
 
 -   重命名表中指定的列。
@@ -663,7 +667,7 @@
 
 -   **WITH \( \{storage\_parameter = value\} \[, ... \] \)**
 
-    为表或索引指定一个可选的存储参数。
+    为表或索引指定一个可选的存储参数，详见[CREATE TABLE](CREATE-TABLE.md)语法相关字段的介绍。
     > ![](public_sys-resources/icon-note.gif) **说明：** 
     >
     > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）

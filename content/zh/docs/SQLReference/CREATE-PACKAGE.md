@@ -22,6 +22,7 @@
 -   package默认为SECURITY INVOKER权限，如果想将默认行为改为SECURITY DEFINER权限，需要设置guc参数behavior\_compat\_options='plsql\_security\_definer'。
 -   被授予CREATE ANY PACKAGE权限的用户，可以在public模式和用户模式下创建PACKAGE。
 -   如果需要创建带有特殊字符的package名，特殊字符中不能含有空格，并且最好设置GUC参数behavior\_compat\_options="skip\_insert\_gs\_source",否则可能引起报错。
+-   允许创建package时忽略依赖关系进行创建，并对未定义的类型/存储过程/函数/包变量提供告警功能，需要设置guc参数behavior\_compat\_options='plpgsql\_dependency'。
 
 ## 语法格式<a name="section4157123095714"></a>
 
@@ -48,6 +49,27 @@
 
     PACKAGE BODY也可以声明实例化部分，用来初始化package，详见示例。
 
+## 参数说明
+-    OR REPLACE
+
+     当存在同名的PACKAGE时，替换原来的定义。
+-    package_name
+
+     创建的PACKAGE名称，可以带有模式名。
+     
+     取值范围：字符串，要符合标识符的命名规范。
+-    invoker_rights_clause
+     
+     可以被声明为AUTHID DEFINER或者AUTHID CURRENT_USER，分别为定义者权限和调用者权限。
+-    item_list_1
+
+     声明的变量、存储过程、函数等。
+-   declare_section
+
+     声明部分，PACKAGE SPECIFICATION中声明的变量、存储过程、函数的具体定义。
+-    initialize_section
+
+     初始化变量并设置一次性的步骤。首次引用包时，对于每个会话包初始化部分中的语句会执行一次。
 
 ## 示例<a name="section1114514478590"></a>
 

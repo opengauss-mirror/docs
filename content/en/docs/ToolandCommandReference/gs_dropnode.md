@@ -27,6 +27,8 @@
 
 -   When the streaming DR function is used, this tool is not supported.
 
+-   If the CM component exists, the last standby node cannot be deleted.
+
 ## Prerequisite<a name="section171227231492"></a>
 
 -   Perform standby node deletion only on the primary node.

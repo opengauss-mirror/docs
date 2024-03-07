@@ -36,9 +36,9 @@ CALL [schema.|package.] {func_name| procedure_name} ( param_expr );
 
     取值范围：已存在的函数参数名称或存储过程参数名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >
-    >参数可以包含入参（参数名和类型之间指定“IN”关键字）和出参（参数名和类型之间指定“OUT”关键字），使用CALL命令调用函数或存储过程时，对于非重载的函数，参数列表必须包含出参，出参可以传入一个变量或者任一常量，详见[示例](#zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0)。对于重载的package函数，参数列表里可以忽略出参，忽略出参时可能会导致函数找不到。包含出参时，出参只能是常量。
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >参数可以包含入参（参数名和类型之间指定“IN”关键字）和出参（参数名和类型之间指定“OUT”关键字），使用CALL命令调用函数或存储过程时，对于非重载的函数，参数列表必须包含出参，出参可以传入一个变量或者任一常量。对于重载的package函数，参数列表里可以忽略出参（此处如果想创建只有出参不同入参相同的重载函数，需要set behavior_compat_options ="proc_outparam_override"
+    ），忽略出参时可能会导致函数找不到，因为其本质是调用了另一个同名的不含出参的重载函数。包含出参时，出参只能是常量。以上两种情况详见[示例](#zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0)
 
 
 ## 示例<a name="zh-cn_topic_0283137636_zh-cn_topic_0237122088_zh-cn_topic_0059778236_s299dc001fa4b48cd9b56412a73db23c0"></a>
@@ -76,5 +76,35 @@ openGauss=# CALL func_increment_sql(1,2,1);
 
 --删除函数。
 openGauss=# DROP FUNCTION func_increment_sql;
+
+--创建package属性的重载函数并通过call调用
+openGauss=# set behavior_compat_options ="proc_outparam_override";
+openGauss=# CREATE OR REPLACE PACKAGE test_overload IS
+function testp(a int) return int;
+function testp(a int, b out int) return int;
+end test_overload;
+/
+
+openGauss=# create or replace package body test_overload --创建package body
+is                               
+function testp(a int) return int
+is                
+Begin
+raise notice 'func without out_arg';
+return a;
+end;
+function testp(a int, b out int)
+return int
+is
+begin
+b:=1;
+Raise notice 'func with out_arg';
+return 2;
+end;
+end test_overload;
+/
+
+openGauss=# call test_overload.testp(1);--调用忽略出参
+openGauss=# call test_overload.testp(1,2);--调用包含出参
 ```
 

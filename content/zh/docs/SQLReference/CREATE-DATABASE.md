@@ -851,14 +851,3 @@ openGauss=# DROP DATABASE ora_compatible_db;
 
 [ALTER DATABASE](ALTER-DATABASE.md)，[DROP DATABASE](DROP-DATABASE.md)
 
-## 优化建议<a name="zh-cn_topic_0283137050_zh-cn_topic_0237122099_zh-cn_topic_0059778277_section8189694144220"></a>
-
--   **create database**
-
-    事务中不支持创建database。
-
-
--   **ENCODING   LC\_COLLATE     LC\_CTYPE**
-
-    当新建数据库Encoding与模板数据库（SQL\_ASCII）不匹配（为'GBK' /'UTF8'/'LATIN1'/'GB18030'/'GB18030_2022'）时，必须指定template \[=\] template0。
-

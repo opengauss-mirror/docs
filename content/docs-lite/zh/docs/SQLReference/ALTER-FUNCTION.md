@@ -15,6 +15,7 @@
 -   修改函数的模式时，不能与新模式下已经存在的synonym产生命名冲突。
 -   仅有初始化用户或者创建该存储过程的用户可以修改存储过程为定义者权限的存储过程。 
 -   打开三权分立时，即使是sysadmin权限用户，也需要校验用户的组权限。
+-   重编译函数时，对于PACKAGE中定义的函数需要使用ALTER PACKAGE语句。
 
 ## 语法格式<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
@@ -63,6 +64,11 @@
         SET SCHEMA new_schema;
     ```
 
+-   重编译函数。
+
+    ```
+    ALTER FUNCTION function_name COMPILE;
+    ```
 
 ## 参数说明<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 

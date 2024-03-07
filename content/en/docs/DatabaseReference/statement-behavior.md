@@ -234,7 +234,19 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
-**Value range**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is KB.
+**Value range**: an integer. The minimum value is 64 and the maximum value is INT\_MAX. The default unit is kB.
 
 **Default value**:  **4 MB**
 
+## enable\_ignore\_case\_in\_dquotes<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s598902a20151984b90b6d32d87bc77a0"></a>
+
+**Parameter description**: Sets whether case is ignored even if the identifier contains double quotes, including database names, table names, column names, sequence names, view names, materialized view names, function names, procedure names, type names, user names, and role names.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+**Value range**: Boolean
+
+-   **on**  indicates that case is ignored when double quotes are used.
+-   **off**  indicates that case is not ignored when double quotes are used.
+
+**Default value**:  **off**

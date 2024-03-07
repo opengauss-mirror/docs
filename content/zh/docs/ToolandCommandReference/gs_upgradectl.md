@@ -14,6 +14,8 @@
 
 指定节点升级：指定节点升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
 
+目前就地升级与灰度升级支持进度打印，根据程序执行的流程打印进度。
+
 ## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
 -   升级操作不能和扩容、缩容同时执行。
@@ -186,7 +188,7 @@ PreInstallationGuide succeeded.
 **示例二**：使用gs\_upgradectl脚本执行就地升级。
 
 ```
-gs_upgradectl -t upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
+gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Rollback succeeded.
@@ -247,7 +249,7 @@ Rollback succeeded.
 **示例四**：使用gs\_upgradectl脚本执行升级后提交（升级提交）。
 
 ```
-gs_upgradectl -t commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
+gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
 Commit binary upgrade succeeded.

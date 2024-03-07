@@ -55,7 +55,6 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 
     ```
     ANALYZE [ boolean ] |
-        ANALYSE [ boolean ] |
         VERBOSE [ boolean ] |
         COSTS [ boolean ] |
         CPU [ boolean ] |
@@ -71,7 +70,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 -   显示SQL语句的执行计划，且要按顺序给出选项。
 
     ```
-    {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  | ANALYSE  }  ] [ VERBOSE  ]  | PERFORMANCE  } statement;
+    {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  }  ] [ (VERBOSE)  ]  | PERFORMANCE  } statement;
     ```
 
 
@@ -81,7 +80,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
 
     指定要分析的SQL语句。
 
--   **ANALYZE boolean | ANALYSE boolean**
+-   **ANALYZE boolean**
 
     显示实际运行时间和其他统计数据。
 
@@ -187,7 +186,7 @@ EXPLAIN 和 [DESCRIBE](dolphin-DESCRIBE-TABLE.md) 互为同义词，可以用于
     
     指定输出格式。
   
-    取值范围：JSON 或 TRADITIONAL。
+    取值范围：TRADITIONAL 、JSON 或 TREE。
 
     默认值：TRADITIONAL
 
@@ -293,5 +292,5 @@ opengauss=# explain test_t;
 
 ## 相关链接<a name="zh-cn_topic_0283136728_zh-cn_topic_0237122163_zh-cn_topic_0059777774_scfac1ca9cbb74e3d891c918580e6b393"></a>
 
-[ANALYZE | ANALYSE](../SQLReference/ANALYZE-ANALYSE.md)，[DESCRIBE](dolphin-DESCRIBE-TABLE.md)
+[ANALYZE](../SQLReference/ANALYZE-ANALYSE.md)，[DESCRIBE](dolphin-DESCRIBE-TABLE.md)
 

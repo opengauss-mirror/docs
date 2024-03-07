@@ -139,7 +139,7 @@ openGauss provides a  [blog](https://opengauss.org/zh/blogs/)  section, where us
 
 ## Mailing List<a name="section18179203094610"></a>
 
-The openGauss community uses the mailing list for online communication. We sincerely invite you to participate indiscussions through the mailing list. For details, see  [Communication](https://opengauss.org/zh/community/onlineCommunication/).
+The openGauss community uses the mailing list for online communication. We sincerely invite you to participate in discussions via the mailing list. For details, see  [Communication](https://opengauss.org/zh/community/onlineCommunication/).
 
 ## Learning Platform<a name="section7788161704417"></a>
 

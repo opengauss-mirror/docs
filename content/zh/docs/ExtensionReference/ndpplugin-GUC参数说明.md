@@ -1,4 +1,4 @@
-# ndpplugin GUC参数说明
+# NDPPlugin GUC参数说明
 
 ## ndpplugin.enable_ndp
 

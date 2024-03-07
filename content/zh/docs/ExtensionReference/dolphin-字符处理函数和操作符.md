@@ -134,7 +134,7 @@
     (1 row)
     ```
 
-- hex\(number or string or bytea or bit\)
+- hex\(number or string or bytea or bit or blob\)
 
   描述：把数字、字符、二进制字符类型或位串类型转换成十六进制表现形式
 
@@ -174,6 +174,21 @@
     -------
      5c6e
     (1 row)
+
+    openGauss=# set dolphin.b_compatibility_mode to on; -- 需要打开dolphin.b_compatibility_mode让blob可以适配B兼容模式下的输入
+    SET
+    openGauss=# create table t1 (c1 tinyblob, c2 blob, c3 mediumblob, c4 longblob);
+    CREATE TABLE
+    openGauss=# insert into t1 values('aa', 'aa', 'aa', 'aa');
+    INSERT 0 1
+    openGauss=# insert into t1 values(12312, 12312, 12312, 12312);
+    INSERT 0 1
+    openGauss=# select hex(c1) as "tinyblob_result", hex(c2) as "blob_result", hex(c3) as "mediumblob_result", hex(c4) as "longblob_result" from t1;
+    tinyblob_result | blob_result | mediumblob_result | longblob_result
+    -----------------+-------------+-------------------+-----------------
+    6161            | 6161        | 6161              | 6161
+    3132333132      | 3132333132  | 3132333132        | 3132333132
+    (2 rows)
     ```
 
 -   uuid\(\)
@@ -368,12 +383,12 @@
     (1 row)
     ```
 
--   convert(expr using transcoding_name)
+-   convert(expr using transcoding_name), convert(expr, type_name)
 
-    描述：通过transcoding_name指定的编码方式转换expr;
-    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。
+    描述：通过transcoding_name指定的编码方式转换expr;或者将指定内容转换为对应的数据类型
+    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。对于convert(expr, type_name)场景，当dolphin.b_compatibility_mode为on时，如果type_name为char，实际会转换成varchar。为off时仍保持原始openGauss表现，转换成char。
 
-    返回值类型：text
+    返回值类型：text或者type_name指定的数据类型
 
     示例：
 
@@ -479,7 +494,7 @@
     (1 row)
     ```
     
--   find_in_set(str, strlist)
+-   find_int_set(str, strlist)
 
     描述：获取str在后面strlist中的位置，strlist以```,```分割。
 
@@ -488,8 +503,8 @@
     示例：
 
     ```
-    b_compatibility_database=# select find_in_set('wo','ceshi,ni,wo,ta');
-    find_in_set 
+    b_compatibility_database=# select find_int_set('wo','ceshi,ni,wo,ta');
+    find_int_set 
     -------------
             3
     (1 row)
@@ -560,7 +575,7 @@
 
 - like/not like
 
-  描述：判断字符串能否匹配上LIKE后的模式字符串。opengauss的原like为大小写敏感匹配，现将其改为当```dolphin.b_compatibility_mode```为```TRUE```时大小写不敏感匹配，当```dolphin.b_compatibility_mode```为```FALSE```时大小写敏感匹配。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
+  描述：判断字符串能否匹配上LIKE后的模式字符串。若字符串与提供的模式匹配，则like表达式返回真(ilike返回假)。
 
   注意事项：
 
@@ -572,19 +587,13 @@
   示例：
 
   ```
-  openGauss=# SELECT 'a' like 'A' as result;
-   result
-  ------------
-           t
-  (1 row)
-  
   openGauss=# SELECT 'abc' like 'a' as result;
    result
   ------------
             f
   (1 row)
   
-  openGauss=# SELECT 'abc' like 'A%' as result;
+  openGauss=# SELECT 'abc' like 'a%' as result;
    result
   ------------
             t
@@ -640,7 +649,7 @@
   示例：
   
   ```
-    openGauss=# SELECT instr('abcdabcdabcd', 'bcd', 2);
+    openGauss=# SELECT substring_index('abcdabcdabcd', 'bcd', 2);
      substring_index 
     -----------------
      abcda
@@ -843,16 +852,17 @@
   
   描述：将一个十六进制编码的字符串解码，一个十六进制字符变成4位二进制，两个十六进制字符（8位）解码为一个字符，返回字符串的解码结果。若十六进制字符串的字符数不为偶数，则在高位补0。若输入的是二进制格式的字符串，则返回NULL。
 
-  返回值类型：text
+  返回值类型：longblob
 
   注意事项
 
+  - mysql中返回的是二进制类型，依据长度可以是varbinary、mediumblob或longblob，openGauss没有这种机制，所以以最长的longblob为准。
   - 如果输入的是NULL或者包含非十六进制字符，那么返回的结果为NULL。
   - 若输入的是数字，则将数字转成字符串后进行解码，如需将十六进制数转为十进制数，则需要使用其它的函数
   - 编码解码规则与函数HEX相同。
-  - 如果解码出来的字符是非可视字符，则会按16进制显示对应的数值，例如解码的数字位6，没有对应的可视字符，则显示为`\x06`，这一点与mysql不同。
+  - 该函数的打印受制于longblob，默认情况下打印的是十六进制的字符串，需要把bytea_output设置为escape才会打印原字符。
 
-  例子1：4142
+  例子1：4142(默认先把该byateoutput设置为escape)
 
   1. 将每个十六进制字符用4位二进制表示，若十六进制字符数不为偶数，则在高位补0：0100(4)0001(1)0100(4)0010(2)
   2. 每8位组成一个字符：01000001 01000010
@@ -861,6 +871,7 @@
     示例：
   
     ```sql
+      SET bytea_output to 'escape';
       SELECT UNHEX('6f70656e4761757373');
         unhex   
       -----------

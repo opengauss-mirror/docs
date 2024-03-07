@@ -374,5 +374,162 @@ IP address of the node where the <td class="cellrowborder" valign="top" width="8
 <td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>AI</p>
 </td>
 </tr>
+
+<tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the UWAL service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>IP address configured by openGauss for UWAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p1986211480359"><a name="p1986211480359"></a><a name="p1986211480359"></a>Random</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p586274819359"><a name="p586274819359"></a><a name="p586274819359"></a>Server running the UWAL service</p>
+</td>
+IP address of the node where the <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p1286284811353"><a name="p1286284811353"></a><a name="p1286284811353"></a>IP address configured by openGauss for UWAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p786394819355"><a name="p786394819355"></a><a name="p786394819355"></a>The value ranges from 9000 to 65535 and defaults to 9999.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p15863648123512"><a name="p15863648123512"></a><a name="p15863648123512"></a>TCP</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p179931754194611"><a name="p179931754194611"></a><a name="p179931754194611"></a>This port is used to listen to TCP connections.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p135712224815"><a name="p135712224815"></a><a name="p135712224815"></a>Yes.The value is transferred through the UWAL interface when the UWAL service is running.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p886319489359"><a name="p886319489359"></a><a name="p886319489359"></a>TLS</p>
+</td>
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p3864164893515"><a name="p3864164893515"></a><a name="p3864164893515"></a>TLS_AES_128_GCM_SHA258</p>
+</td>
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p182222038155116"><a name="p182222038155116"></a><a name="p182222038155116"></a>Data plane</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 5.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+</td>
+</tr>
+
+<tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the UWAL service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>IP address configured by openGauss for UWAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p1986211480359"><a name="p1986211480359"></a><a name="p1986211480359"></a>Random</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p586274819359"><a name="p586274819359"></a><a name="p586274819359"></a>Server running the UWAL service</p>
+</td>
+IP address of the node where the <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p1286284811353"><a name="p1286284811353"></a><a name="p1286284811353"></a>IP address configured by openGauss for UWAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p786394819355"><a name="p786394819355"></a><a name="p786394819355"></a>The value ranges from 9000 to 65535 and defaults to 9999.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p15863648123512"><a name="p15863648123512"></a><a name="p15863648123512"></a>RDMA</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p179931754194611"><a name="p179931754194611"></a><a name="p179931754194611"></a>If the RDMA protocol is selected, two ports are required. One is the port number for TCP communication, which is transferred through the UWAL interface. The other is port unmber for RDMA communication, which is the port number transferred through the WAL interface plus 1.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p135712224815"><a name="p135712224815"></a><a name="p135712224815"></a>Yes.The value is transferred through the UWAL interface when the UWAL service is running.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p886319489359"><a name="p886319489359"></a><a name="p886319489359"></a>TLS</p>
+</td>
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p3864164893515"><a name="p3864164893515"></a><a name="p3864164893515"></a>EVP_aes_128_gcm</p>
+</td>
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p182222038155116"><a name="p182222038155116"></a><a name="p182222038155116"></a>Data plane</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 5.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+</td>
+</tr>
+
+
+<tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>IP address configured by openGauss for the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p1986211480359"><a name="p1986211480359"></a><a name="p1986211480359"></a>Random</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p586274819359"><a name="p586274819359"></a><a name="p586274819359"></a>RDMA/UB NIC</p>
+</td>
+IP address of the node where the <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p1286284811353"><a name="p1286284811353"></a><a name="p1286284811353"></a>IP address configured by openGauss for the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p786394819355"><a name="p786394819355"></a><a name="p786394819355"></a>The value ranges from 1024 to 65535 and defaults to 21616.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p15863648123512"><a name="p15863648123512"></a><a name="p15863648123512"></a>TCP</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p179931754194611"><a name="p179931754194611"></a><a name="p179931754194611"></a>The default service port number of the DLock primary server for the client is 21616. If the configured port number is within the port range of new connections, the port number may bei occupied. As a result, the server init/reinit operation fails. It is recommended that the port number be out of the port number range of new connections or the management service port number be configured in ip_local_reserved_ports.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p135712224815"><a name="p135712224815"></a><a name="p135712224815"></a>Yes, which can be configured when the server is started.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p886319489359"><a name="p886319489359"></a><a name="p886319489359"></a>SSL authentication. The earliest protocol version supported is TLS1_3_VERSION.</p>
+</td>
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p3864164893515"><a name="p3864164893515"></a><a name="p3864164893515"></a>The cipher suite is TLS_AES_256_GCM_SHA384.</p>
+</td>
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p182222038155116"><a name="p182222038155116"></a><a name="p182222038155116"></a>DLock management plane</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 5.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>Distributed service scenarios such as databases and big data.</p>
+</td>
+</tr>
+
+<tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>IP address configured by openGauss for the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p1986211480359"><a name="p1986211480359"></a><a name="p1986211480359"></a>Random</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p586274819359"><a name="p586274819359"></a><a name="p586274819359"></a>RDMA/UB NIC</p>
+</td>
+IP address of the node where the <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p1286284811353"><a name="p1286284811353"></a><a name="p1286284811353"></a>IP address configured by openGauss for the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p786394819355"><a name="p786394819355"></a><a name="p786394819355"></a>Value ranges: 1024-65535</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p15863648123512"><a name="p15863648123512"></a><a name="p15863648123512"></a>TCP</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p179931754194611"><a name="p179931754194611"></a><a name="p179931754194611"></a>DLock uses the URMA component as the underlying communication library. URMA applies for a listening port from the system to exchange information required for RDMA connection setup.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p135712224815"><a name="p135712224815"></a><a name="p135712224815"></a>No, which is allocated by the system.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p886319489359"><a name="p886319489359"></a><a name="p886319489359"></a>None</p>
+</td>
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p3864164893515"><a name="p3864164893515"></a><a name="p3864164893515"></a>None</p>
+</td>
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p182222038155116"><a name="p182222038155116"></a><a name="p182222038155116"></a>URMA management plane</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 5.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>In the RDMA scenario, this port is used to exchange information required for connection setup on the data plane. User data is not involved, and thus authentication and encryption are not required. Even if the connection is hijacked or forged, the security of the data plane is not affected.</p>
+</td>
+</tr>
+
+<tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the distributed lock service</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.3 "><p id="p1986211480359"><a name="p1986211480359"></a><a name="p1986211480359"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.4 "><p id="p586274819359"><a name="p586274819359"></a><a name="p586274819359"></a>RDMA/UB NIC</p>
+</td>
+IP address of the node where the <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.5 "><p id="p1286284811353"><a name="p1286284811353"></a><a name="p1286284811353"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.6 "><p id="p786394819355"><a name="p786394819355"></a><a name="p786394819355"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.7 "><p id="p15863648123512"><a name="p15863648123512"></a><a name="p15863648123512"></a>RoCE v2</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.8 "><p id="p179931754194611"><a name="p179931754194611"></a><a name="p179931754194611"></a>The RDMA scenario does not involve the concept of port.</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.9 "><p id="p135712224815"><a name="p135712224815"></a><a name="p135712224815"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.10 "><p id="p886319489359"><a name="p886319489359"></a><a name="p886319489359"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="6.9520856256877055%" headers="mcps1.2.13.1.11 "><p id="p3864164893515"><a name="p3864164893515"></a><a name="p3864164893515"></a>The cipher suite is TLS_AES_256_GCM_SHA384.</p>
+</td>
+<td class="cellrowborder" valign="top" width="7.5222566770031%" headers="mcps1.2.13.1.12 "><p id="p182222038155116"><a name="p182222038155116"></a><a name="p182222038155116"></a>Data plane</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>openGauss 5.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>None</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.13.1.10 "><p id="p91642512195"><a name="p91642512195"></a><a name="p91642512195"></a>The DLock management plane is responsible for authentication, and the encryption and decryption keys are obtained through interaction with this plane.</p>
+</td>
+</tr>
+
 </tbody>
 </table>

@@ -1,4 +1,4 @@
-# 全量迁移gs_mysync
+﻿# 全量迁移gs_mysync
 
 ## 可获得性<a name="section56086982"></a>
 
@@ -14,7 +14,11 @@ gs_mysync工具是一个基于Python语言的MySQL到openGauss的复制工具。
 
 ## 特性描述<a name="section18111828"></a>
 
-gs_mysync工具提供数据全量复制功能，使得数据可以从MySQL迁移至openGauss数据库。对于数据的全量迁移，gs_mysync工具中存储了MySQL数据类型与openGauss数据类型之间的映射关系，可支持MySQL中各种数据类型的迁移。特别地，对于MySQL中的浮点数据类型，包括decimal、dec、numeric、float、float4、float8、real、double、double precision、fixed数据类型，若数据类型中显示指定或默认含有精度，将转化为openGauss中的number[p, s\]类型；若数据类型中未显示指定精度，将转化为openGauss中的number数据类型，基于此，可保证离线迁移和在线迁移后数据精度不丢失。
+gs_mysync工具提供数据全量复制功能，使得数据可以从MySQL迁移至openGauss数据库。对于数据的全量迁移，gs_mysync工具中存储了MySQL数据类型与openGauss数据类型之间的映射关系，可支持MySQL中各种数据类型的迁移。
+
+gs_mysync工具支持在指定版本和架构的系统（包括CentOS7、openEuler20.03、openEuler22.03系统版本，x86_64和aarch64架构）上进行离线安装，无需连接外部网络。
+
+gs_mysync工具全量数据导入支持两种方式：(1) 从MySQL库查询数据导入openGauss；(2)从指定CSV文件导入特定的表数据。其中方式二为5.1.0版本新增特性，通过合理配置csv_dir、contain_columns、column_split三个参数，可采用方式二进行数据导入，以提高全量迁移的性能。
 
 ## 特性增强<a name="section28788730"></a>
 
@@ -30,10 +34,11 @@ gs_mysync工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址：[gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0) 
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+详细参考文档： <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a> 
 
-全量迁移社区地址：https://gitee.com/opengauss/openGauss-tools-chameleon
+全量迁移社区地址：[gs_mysync](https://gitee.com/opengauss/openGauss-tools-chameleon/tree/5.1.0/)
 
-详细参考文档： [chameleon使用指南.md](https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md) 
+详细参考文档： <a href="https://gitee.com/opengauss/openGauss-tools-chameleon/blob/5.1.0/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a>
+

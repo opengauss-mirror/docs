@@ -1,15 +1,15 @@
-# gs\_preinstall
+# gs_preinstall
 
 ## 背景信息<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_section68942744218"></a>
 
-openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，以保证openGauss安装的正常进行。
+openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，以保证openGauss安装的正常进行。
 
 ## 注意事项<a name="zh-cn_topic_0237152419_zh-cn_topic_0059778992_s87eb073560414bc5ba369786f06cbb10"></a>
 
 -   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
 -   xml文件中各主机的名称与IP映射配置正确。
--   只能使用root用户执行gs\_preinstall命令。
--   执行gs\_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
+-   使用root或普通用户执行gs_preinstall命令。
+-   使用root用户执行gs_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
 -   gs_preinstall指定的用户不支持使用-d手动选定家目录，仅支持系统默认创建的/home下和用户同名的/home目录。
 -   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
@@ -25,7 +25,7 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 -   准备openGauss环境
 
     ```
-    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive]
+    gs_preinstall -U USER -G GROUP -X XMLFILE [-L] [--skip-os-set] [--env-var="ENVVAR" [...]] [--sep-env-file=MPPRCFILE] [--skip-hostname-set] [-l LOGFILE] [--non-interactive] [--enable-perf-config]
     ```
 
 -   显示帮助信息
@@ -77,10 +77,6 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     是否设置操作系统参数。默认设置系统参数。如果指定该参数则不设置。
 
--   --skip-os-check
-
-    是否跳过A1-A14项检查。默认是全部检查。如果指定该参数则不对此项不进行检查。
-
 -   --env-var="ENVVAR"
 
     配置普通用户环境变量。可以指定多个。
@@ -104,6 +100,10 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     是否使用om提供的三方库。默认使用，如果指定该参数则不使用。
 
+-   --one-stop-install
+  
+    一站式安装数据库。默认不使用，如果指定该参数，表示通过命令行交互式进行预安装。
+
 - -l
 
   指定日志文件名及路径。在内部会自动给日志名添加一个时间戳。
@@ -118,6 +118,10 @@ openGauss提供了gs\_preinstall工具来帮助完成openGauss的环境配置，
 
     -   当不指定该参数时，则为安全交互模式，在此模式下用户需要人机交互输入密码。
     -   当指定该参数时，为非交互模式，不需要进行人机交互。
+    
+-   --enable-perf-config
+
+    在preinstall结束后，调用gs_perfconfig调整操作系统配置，以使openGauss获得比较好的性能。
 
 -   -?, --help
 

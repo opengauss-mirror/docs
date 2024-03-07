@@ -17,7 +17,7 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 -   安装openGauss
 
     ```
-    gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE]  
+    gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE] [--enable-perf-config] 
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -73,6 +73,10 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 -   --alarm-component=alarm\_component
 
     指定告警上报组件的绝对路径。
+
+-   --enable-perf-config
+
+    在install结束后，调用gs_perfconfig调整数据库配置，以使openGauss获得比较好的性能。
 
 -   -?, --help
 

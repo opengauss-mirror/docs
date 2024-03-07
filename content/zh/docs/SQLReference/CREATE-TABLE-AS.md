@@ -22,6 +22,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ COMPRESS | NOCOMPRESS ]
     [ TABLESPACE tablespace_name ]
+    [ DISTRIBUTE BY { REPLICATION | { [HASH] ( cloume_name ) } } ]
+    [ TO { GROUP group_name | NODE ( nodename [ , ... ] ) } ]
     AS query
     [ WITH [ NO ] DATA ];
 ```
@@ -195,6 +197,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
 
     若有唯一性约束列，插入数据时，对重复数据的处理行为进行设置。
 
+-    **DISTRIBUTE BY**
+
+     指定表如何分布和复制。当前版本不支持。
+
+-   **TO { GROUP group_name | GROUP ( nodename [ , ... ] ) }**
+
+    TO GROUP指定表所在的GROUP，TO NODE主要供内部扩容工具使用。当前版本不支持。
 -   **AS query**
 
     一个SELECT VALUES命令。

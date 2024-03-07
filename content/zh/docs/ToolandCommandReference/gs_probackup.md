@@ -10,10 +10,12 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   可设置备份的留存策略。
 -   支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
+gs\_probackup目前支持进度打印，会分别在文件备份、文件验证阶段、文件同步阶段以及文件恢复阶段，根据已经完成的文件数比总文件数打印进度。
+
 ## 前提条件<a name="zh-cn_topic_0287276008_section95951827112520"></a>
 
 -   可以正常连接openGauss数据库。
--   若要使用PTRACK增量备份，需在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”。
+-   若要使用PTRACK增量备份，需在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”或通过gs\_guc工具进行设置。
 -   为了防止xlog在传输结束前被清理，请适当调高postgresql.conf文件中wal_keep_segements的值。
 
 ## 限制说明<a name="zh-cn_topic_0287276008_section6439171332614"></a>
@@ -23,15 +25,17 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   如果要通过ssh在远程模式下备份数据库，需要在本地和远程主机安装相同主版本的数据库，并通过ssh-copy-id remote\_user@remote\_host命令设置本地主机备份用户和远程主机数据库用户的无密码ssh连接。
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
--   当存在用户自定义表空间时，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份。
--   当备份的规模比较大时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
+-   在非资源池化模式下，当存在用户自定义表空间时，如果该表空间的路径不在PGDATA目录下，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份；在资源池化模式下，当前只支持相对路径表空间，因此存在自定义表空间时不需要指定 --external-dir 参数。
+-   当备份的规模比较大或在备份同时执行业务时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
+-   资源池化模式下，恢复到不同集群需先执行全量恢复。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
 -   当使用远程备份时，请确保远程机器和备份机器的时钟同步，以防止使用--recovery-target-time恢复的场合,启动gaussdb时有可能会失败。
 -   当远程备份有效时\(remote-proto=ssh\)，请确保-h和--remote-host指定的是同一台机器。当远程备份无效时，如果指定了-h选项，请确保-h指定的是本机地址或本机主机名。
 -   当前仅支持备份发布订阅的逻辑复制槽。
 -   备份时，请确保服务器用户对备份的目录下所有文件有读写的权限，以防止在恢复时因权限不足的问题而失败。
--   在资源池化模式下当前仅支持本地主机全量备份和全量恢复。
+-   在资源池化模式下当前仅支持本地主机操作。
 -   备份将执行checkpoint与xlog switch操作，此行为将产生新的xlog，并提交事务。一主一备或一主多备场景备份时，若配置文件中synchronous_commit设置为on，备机关停可能会导致主机同步提交事务失败，进而导致备份失败。此场景下，请确认各节点状态正常，或将synchronous_commit设置为off以避免备份失败。
+-   在开启enable_cbm_tracking后，不能直接执行增量备份，需要先执行全量备份，即使在开启参数之前已经执行过全量备份。
 
 ## 命令说明<a name="zh-cn_topic_0287276008_section86861610172816"></a>
 
@@ -239,7 +243,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 - --enable-dss
 
-  开启资源池化模式。
+  开启资源池化模式。当输入包含vgname时，会自动开启该参数。
 
 - --instance-id
 
@@ -251,7 +255,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 - --socketpath
 
-  dss进程socket文件路径。
+  dss进程socket文件路径，可不指定，默认值为$DSS_HOME/.dss_unix_d_socket。
 
 ### **备份相关参数**
 
@@ -283,7 +287,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   -E  _external-directories-paths_, --external-dirs=_external-directories-paths_
 
-    将指定的目录包含到备份中。此选项对于备份位于数据目录外部的脚本、sql转储和配置文件很有用。如果要备份多个外部目录，请在Unix上用冒号分隔它们的路径。
+    将指定的目录包含到备份中。此选项对于备份位于数据目录外部的脚本、sql转储和配置文件很有用。如果要备份多个外部目录，请在Unix上用冒号分隔它们的路径。目前只支持指定文件系统中的目录，不支持指定共享存储中的目录。
 
     例如：-E /tmp/dir1:/tmp/dir2
 
@@ -325,11 +329,11 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 
 -   --external-mapping=_OLDDIR=NEWDIR_
 
-    在恢复时，将包含在备份中的外部目录从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_都必须是绝对路径。如果路径中包含“=”，则使用反斜杠转义。此选项可为多个目录多次指定。
+    在恢复时，将包含在备份中的外部目录从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_都必须是绝对路径。如果路径中包含“=”，则使用反斜杠转义。此选项可为多个目录多次指定。目前只支持指定文件系统中的目录，不支持指定共享存储中的目录。
 
 -   -T  _OLDDIR=NEWDIR_, --tablespace-mapping=_OLDDIR=NEWDIR_
 
-    在恢复时，将表空间从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_必须都是绝对路径。如果路径中包含“=”，则使用反斜杠转义。多个表空间可以多次指定此选项。此选项必须和--external-mapping一起使用。
+    在恢复时，将表空间从_OLDDIR_重新定位到_NEWDIR_目录。_OLDDIR_和_NEWDIR_必须都是绝对路径。如果路径中包含“=”，则使用反斜杠转义。多个表空间可以多次指定此选项。此选项必须和--external-mapping一起使用。目前只支持指定文件系统中的目录，不支持指定共享存储中的目录。
 
 -   --skip-external-dirs
 
@@ -772,6 +776,41 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
     ```
 
 16. 在主机启动集群。
+
+    ```
+    cm_ctl start
+    ```
+
+## cm工具管理集群增量恢复流程（资源池化模式）
+
+   **说明：** 当恢复的集群相当于备份来讲重新安装过或者不是原来的集群时，需要参考上面全量备份恢复流程中第7步和第11步，替换集群间认证的证书。
+
+1. 执行cm_ctl stop关闭集群。
+
+   ```
+   cm_ctl stop
+   ```
+
+2. 主机启动dssserver。
+
+   ```
+   dssserver -M -D $DSS_HOME &
+   ```
+
+3. 在主机执行恢复操作。
+
+   ```
+   gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id -I incremental-mode
+   ```
+   **说明：** 在增量恢复时，无需先清空dn目录和磁阵，也不需要在备节点执行进行一系列操作，因此需要指定参数-I为lsn或checksum，不能指定为none。
+
+4. 关闭dssserver。
+
+   ```
+   kill -9 xxx(dssserver的pid)  或  dsscmd stopdss
+   ```
+
+5. 在主机启动集群。
 
     ```
     cm_ctl start

@@ -43,6 +43,14 @@ CREATE PUBLICATION name
 
     这个参数决定了哪些DML操作可以发布给订阅者。该值是一个用逗号分隔的操作列表，允许的操作是insert、update和delete，不指定则默认发布所有的动作。该选项的默认值是'insert, update, delete'。
 
+    - **ddl \(string\)**
+
+    这个参数决定了哪些DDL操作可以发布给订阅者。该值是一个用逗号分隔的操作列表，允许的操作是none、table、all，不指定则默认不发布DDL操作。该选项的默认值是'none'.
+
+    none: 表示不发布DDL操作
+    table: 表示只发布数据表的DDL操作
+    all: 表示发布所有的DDL操作，目前支持的对象类型有TABLE和INDEX，设置为该值时，只允许 FOR ALL TABLES 选项
+
 ## **示例**<a name="section109371845154215"></a>
 
 ```
@@ -58,6 +66,10 @@ ALTER PUBLICATION insert_only SET (publish='insert,update,delete');
 ALTER PUBLICATION insert_only ADD TABLE mydata2;
 --删除发布。
 DROP PUBLICATION insert_only;
+--创建一个发布，发布所有的DDL操作
+CREATE PUBLICATION ddl_all FOR ALL TABLES WITH (ddl='all');
+--创建一个发布，发布类型为TABLE的DDL操作
+CREATE PUBLICATION ddl_all FOR ALL TABLES WITH (ddl='table');
 ```
 
 ## 相关链接<a name="section871143685317"></a>

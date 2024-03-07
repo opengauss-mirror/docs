@@ -406,3 +406,16 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 -   **off**  or  **false**  indicates that generation of ADIO logs is not allowed.
 
 **Default value**:  **off**
+
+## enable\_nls<a name="en-us_topic_0283137548_en-us_topic_0237124744_en-us_topic_0059778871_sf839417816c74a37a3bdb4138d946c55"></a>
+
+**Parameter description**: Specifies whether to enable native language support for logs. 
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**: Boolean
+
+-   **on**  or  **true**  indicates that native language support of logs is enabled.
+-   **off**  or  **false**  indicates that native language support of logs is not enabled.
+
+**Default value**:  **off**

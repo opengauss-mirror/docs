@@ -23,6 +23,7 @@ CLUSTER指定openGauss通过索引名指定的索引聚簇由表名指定的表�
 -   因为优化器记录着有关表的排序的统计，所以建议在新近聚簇的表上运行ANALYZE。否则，优化器可能会选择很差劲的查询规划。
 -   CLUSTER不允许在事务中执行。
 -   如果没有打开xc\_maintenance\_mode参数，那么CLUSTER操作将跳过所有系统表。
+-   段页式表不支持CLUSTER操作。
 
 ## 语法格式<a name="zh-cn_topic_0283137352_zh-cn_topic_0237122092_zh-cn_topic_0059778981_s893ab8c9210b4276b975b47546c2f17e"></a>
 
@@ -110,11 +111,3 @@ openGauss=# DROP INDEX tpcds.ds_inventory_p1_index1;
 --删除分区表。
 openGauss=# DROP TABLE tpcds.inventory_p1;
 ```
-
-## 优化建议<a name="zh-cn_topic_0283137352_zh-cn_topic_0237122092_zh-cn_topic_0059778981_section8558510163121"></a>
-
--   cluster
-    -   建议在新近聚簇的表上运行ANALYZE。否则，优化器可能会选择很差劲的查询规划。
-    -   不允许在事务中执行CLUSTER。
-
-

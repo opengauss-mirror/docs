@@ -471,7 +471,7 @@ openGauss=# select * from dbe_perf.statement;
 
 - instr_unique_sql_count：允许记录在内存中的SQL总数量。每次修改此参数，都会重置掉内存中已经存在的所有的归一化SQL。
 
-- instr_unique_sql_track_type：归一化SQL追踪的方式，参数取值为top、all，目前仅支持top，对于存储过程，仅记录最外层调用而非所有SQL。
+- instr_unique_sql_track_type：归一化SQL追踪的方式，参数取值为top、all，为top时只支持记录最外层调用的语句，为all时则可记录函数及存储过程内的语句。
 
 - enable_auto_clean_unique_sql：是否打开归一化SQL的自动清理机制，当记录达到上限后，可以自动随机清理其中10%的记录。如果不打开，则会记录错误日志，SQL相关内容也不会记录到内存中。
 

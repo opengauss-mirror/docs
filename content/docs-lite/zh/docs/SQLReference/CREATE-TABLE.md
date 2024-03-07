@@ -447,6 +447,21 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       取值范围：B模式数据库中独立支持的字符序的oid。
   
       默认值：0。
+      
+  -   AUTOVACUUM_ENABLED
+  
+      需数据库打开autovacuum功能时，单独设置此表是否进行autovacuum。
+      
+      取值范围：布尔值，默认开启。
+      
+  -   AUTOVACUUM、AUTOANALYZE相关参数
+  
+      参数有：AUTOVACUUM_VACUUM_THREASHOLD、AUTOVACUUM_ANALYZE_THREASHOLD、AUTOVACUUM_VACUUM_COST_DELAY、AUTOVACUUM_VACUUM_COST_LIMIT、AUTOVACUUM_FREEZE_MIN_AGE、AUTOVACUUM_FREEZE_MAX_AGE、AUTOVACUUM_FREEZE_TABLE_AGE、AUTOVACUUM_VACUUM_SCALE_FACTOR、AUTOVACUUM_ANALYZE_SCALE_FACTOR
+      
+      单独设置此表的autovacuum、autoanalyze相关功能参数配置，与同名GUC功能相同，优先生效此处的配置。
+      
+      取值范围：与同名GUC相同。
+    
   
 -   **WITHOUT OIDS**
 
@@ -1244,62 +1259,3 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 ## 相关链接<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_scd5caca899f849f697cb50d76c49de4c"></a>
 
 [ALTER TABLE](ALTER-TABLE.md)，[DROP TABLE](DROP-TABLE.md)，[CREATE TABLESPACE](CREATE-TABLESPACE.md)
-
-## 优化建议<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_section29320865113651"></a>
-
--   UNLOGGED
-    -   UNLOGGED表和表上的索引因为数据写入时不通过WAL日志机制，写入速度远高于普通表。因此，可以用于缓冲存储复杂查询的中间结果集，增强复杂查询的性能。
-    -   UNLOGGED表无主备机制，在系统故障或异常断点等情况下，会有数据丢失风险，因此，不可用来存储基础数据。
-
--   TEMPORARY | TEMP
-    
-    -   临时表只在当前会话可见，会话结束后会自动删除。
-    
--   LIKE
-    
-    -   新表自动从这个表中继承所有字段名及其数据类型和非空约束，新表与源表之间在创建动作完毕之后是完全无关的。
-    
--   LIKE INCLUDING DEFAULTS
-    
-    -   源表上的字段缺省表达式只有在指定INCLUDING DEFAULTS时，才会复制到新表中。缺省是不包含缺省表达式的，即新表中的所有字段的缺省值都是NULL。
-    
--   LIKE INCLUDING CONSTRAINTS
-    
-    -   源表上的CHECK约束仅在指定INCLUDING CONSTRAINTS时，会复制到新表中，而其他类型的约束永远不会复制到新表中。非空约束总是复制到新表中。此规则同时适用于表约束和列约束。
-    
--   LIKE INCLUDING INDEXES
-    
-    -   如果指定了INCLUDING INDEXES，则源表上的索引也将在新表上创建，默认不建立索引。
-    
--   LIKE INCLUDING STORAGE
-    
-    -   如果指定了INCLUDING STORAGE，则复制列的STORAGE设置会复制到新表中，默认情况下不包含STORAGE设置。
-    
--   LIKE INCLUDING COMMENTS
-    
-    -   如果指定了INCLUDING COMMENTS，则源表列、约束和索引的注释会复制到新表中。默认情况下，不复制源表的注释。
-    
--   LIKE INCLUDING PARTITION
-
-    -   如果指定了INCLUDING PARTITION，则源表的分区定义会复制到新表中，同时新表将不能再使用PARTITION BY子句。默认情况下，不拷贝源表的分区定义。
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >列表/哈希分区表暂不支持LIKE INCLUDING PARTITION。
-
--   LIKE INCLUDING RELOPTIONS
-    
-    -   如果指定了INCLUDING RELOPTIONS，则源表的存储参数（即源表的WITH子句）会复制到新表中。默认情况下，不复制源表的存储参数。
-    
--   LIKE INCLUDING ALL
-    
-    -   INCLUDING ALL包含了INCLUDING DEFAULTS、INCLUDING CONSTRAINTS、INCLUDING INDEXES、INCLUDING STORAGE、INCLUDING COMMENTS、INCLUDING PARTITION、INCLUDING RELOPTIONS的内容。
-    
--   ORIENTATION ROW
-    
-    -   创建行存表，行存储适合于OLTP业务，此类型的表上交互事务比较多，一次交互会涉及表中的多个列，用行存查询效率较高。
-    
--   ORIENTATION COLUMN
-    
-    -   创建列存表，列存储适合于数据仓库业务，此类型的表上会做大量的汇聚计算，且涉及的列操作较少。
-
-

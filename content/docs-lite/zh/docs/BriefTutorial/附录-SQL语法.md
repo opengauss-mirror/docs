@@ -652,6 +652,12 @@ where table_constraint_using_index can be:
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 ```
 
+## ALTER TABLE INHERIT<a name="section1682339619432"></a>
+
+```
+ALTER TABLE table_name { inherit | no inherit } parent_name;
+```
+
 ## ALTER TABLE PARTITION<a name="section1482194619287"></a>
 
 ```
@@ -855,7 +861,7 @@ ALTER VIEW [ IF EXISTS ] view_name
     [ table_name [ ( column_name [, ...] ) ] ];
 {ANALYZE | ANALYSE} [ VERBOSE ]
     [ table_name [ ( column_name [, ...] ) ] ]
-    PARTITION patrition_name;
+    PARTITION partition_name;
 {ANALYZE | ANALYSE} [ VERBOSE ]
     { foreign_table_name | FOREIGN TABLES };
 {ANALYZE | ANALYSE} [ VERBOSE ]
@@ -864,7 +870,7 @@ ALTER VIEW [ IF EXISTS ] view_name
 {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE}
     table_name|index_name [CASCADE];
 {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE}
-    table_name PARTITION (patrition_name) [CASCADE];
+    table_name PARTITION (partition_name) [CASCADE];
 ```
 
 ## ANONYMOUS BLOCK<a name="section48601152113011"></a>
@@ -1685,6 +1691,18 @@ PARTITION partition_name {
         {START(partition_value)} |
         {END({partition_value | MAXVALUE})}
 } [TABLESPACE tablespace_name]
+```
+
+## CREATE TABLE INHERITS<a name="section1828112861426"></a>
+
+根据查询结果创建表。
+
+```
+CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] 
+TABLE inherit_table_name( [ {LIKE fathername} [INCLUDING ALL]} ] )
+[ INHERITS ( parent_table [, ... ] ) ]
+[ WITH ( {storage_parameter = value} [, ... ] ) ]
+[ TABLESPACE tablespace_name ];
 ```
 
 ## CREATE TABLESPACE<a name="section828573624117"></a>

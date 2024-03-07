@@ -52,6 +52,12 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p482369138"></a>Acronym for command-line interface. A means of communication between a program and its user, based solely on textual input and output. Commands are input with the help of a keyboard or similar device and are interpreted and executed by the program. Results are output as text or graphics to the terminal.</p>
 </td>
 </tr>
+<tr 
+id="row55701559701"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p05701459904"><a name="p05701459904"></a><a name="p05701459904"></a>CM</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p05705593019"><a name="p05705593019"></a><a name="p05705593019"></a>The cluster manager (CM) is a database management module. It supports customized resource monitoring and provides capabilities such as monitoring of the primary/standby database status, network communication faults, file system faults, and automatic primary/standby switchover upon faults. It also provides various database management capabilities, such as starting and stopping nodes and instances, querying database instance status, performing primary/standby switchover, and managing logs. The capability of remotely querying and receiving cluster status through REST interfaces is also provided.</p>
+</td>
+</tr>
 <tr id="row12703164422712"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p54125431608"><a name="p54125431608"></a><a name="p54125431608"></a>CMK</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p14412134312014"><a name="p14412134312014"></a><a name="p14412134312014"></a>Acronym for client master key in the full encryption scenario. </p>
@@ -112,6 +118,12 @@
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row51747249138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p164995069138"></a>DML</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p613916499138"></a>Acronym for data manipulation language.</p>
+</td>
+</tr>
+<tr 
+id="row19476234201112"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p42321652431"><a name="p42321652431"></a><a name="p42321652431"></a>DRAM</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p152327524313"><a name="p152327524313"></a><a name="p152327524313"></a>Dynamic random-access memory (DRAM) is the most common mode of computer storage. If a computer is powered off, all data stored in this mode will be lost. Therefore, this mode is not applicable to long-term data storage. DRAM highlights fast speed, which is faster than the flash memory and other non-dynamic storage media.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row82781239138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p665481989138"></a>backup</p>
@@ -256,6 +268,12 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p526402119138"></a>Acronym for host-based authentication which allows hosts to authenticate on behalf of all or some of that particular host's users. Those accounts can be all of the accounts on a system or a subset designated by the <strong id="b242511811378"><a name="b242511811378"></a><a name="b242511811378"></a>Match</strong> directive. This type of authentication can be useful for managing computing and other fairly homogenous pools of machines. In all, three files on the server and one file on the client must be modified to prepare for host-based authentication.</p>
 </td>
 </tr>
+<tr 
+id="row74511334914"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p04541314915"><a name="p04541314915"></a><a name="p04541314915"></a>HCOM</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p134515135496"><a name="p134515135496"></a><a name="p134515135496"></a>High-performance communication component.</p>
+</td>
+</tr>
 <tr id="row1186012513118"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p386112511914"><a name="p386112511914"></a><a name="p386112511914"></a>IV</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p2086195116111"><a name="p2086195116111"></a><a name="p2086195116111"></a>Acronym for initialization vector. An IV is a block used for random encryption in many encryption modes. Therefore, different ciphertexts may be generated by using the same plaintext and key.</p>
@@ -374,6 +392,12 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p402324259138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p402324259138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p402324259138"></a>NameNode is the centerpiece of an HDFS, managing the namespace of the file system and client access to files.</p>
 </td>
 </tr>
+<tr 
+id="row9727145631815"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p1872785681820"><a name="p1872785681820"></a><a name="p1872785681820"></a>NVMe</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p1072711564188"><a name="p1072711564188"></a><a name="p1072711564188"></a>Non-Volatile Memory express (NVMe) is a logical-device interface specification similar to AHCI and equivalent to the application layer in the communication protocol. It is used for accessing a computer's non-volatile storage media usually attached via PCI Express (PCIe) bus (e.g., SSDs with flash memory). The PCIe bus protocol is not necessarily required.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_row13039022172831"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p50242341172831"><a name="en-us_topic_0283139955_p50242341172831"></a><a name="en-us_topic_0283139955_p50242341172831"></a>OM</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p43097830172831"><a name="en-us_topic_0283139955_p43097830172831"></a><a name="en-us_topic_0283139955_p43097830172831"></a>Acronym for operations management. It provides management interfaces and tools for routine maintenance and configuration management of the database.</p>
@@ -438,6 +462,12 @@
 <p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p328439479138"></a>After receiving and accepting a connection request from the standby node, the primary node creates a WAL sender thread to interact with the standby node.</p>
 </td>
 </tr>
+<tr 
+id="row1929055083217"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p223217521131"><a name="p223217521131"></a><a name="p223217521131"></a>RDMA</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p1746742103613"><a name="p1746742103613"></a><a name="p1746742103613"></a>Remote direct memory access (RDMA) is a technology that enables a computer to directly access the memory of another computer over a network. It allows the network adapter to directly access the application storage and supports zero-copy network communication.</p>
+</td>
+</tr>
 <tr id="en-us_topic_0283139955_row5935841174156"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p53422575174156"><a name="en-us_topic_0283139955_p53422575174156"></a><a name="en-us_topic_0283139955_p53422575174156"></a>RHEL</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p32261284174156"><a name="en-us_topic_0283139955_p32261284174156"></a><a name="en-us_topic_0283139955_p32261284174156"></a>Acronym for Red Hat Enterprise Linux.</p>
@@ -451,6 +481,18 @@
 <tr id="row123032460014"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p10303846709"><a name="p10303846709"></a><a name="p10303846709"></a>RK</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p2303134618013"><a name="p2303134618013"></a><a name="p2303134618013"></a>Acronym for root key.</p>
+</td>
+</tr>
+<tr 
+id="row514554416511"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p5145744957"><a name="p5145744957"></a><a name="p5145744957"></a>RPC</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p161459444513"><a name="p161459444513"></a><a name="p161459444513"></a>A remote procedure call (RPC) is a computer communication protocol that allows a computer program to cause a subroutine or procedure to execute in another address space (commonly on another computer on a shared network) without the programmer explicitly coding the details for this remote interaction. If the involved software uses object-oriented programming, a remote procedure call can be referred to as a remote call or remote method invocation (RMI), for example, Java RMI.</p>
+</td>
+</tr>
+<tr 
+id="row415161252811"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p615191272818"><a name="p615191272818"></a><a name="p615191272818"></a>SCRLock</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p3151161252812"><a name="p3151161252812"></a><a name="p3151161252812"></a>Smart Cached Remote Lock (SCRLock) is a distributed lock SDK with local lock cache. Based on new network media, SCRLock accelerates remomte lock access and improves application operation performance.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row75557259138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p80340269138"></a>SCTP</p>
@@ -496,6 +538,12 @@
 <tr id="en-us_topic_0283139955_row19359741202514"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_p15361134112257"><a name="en-us_topic_0283139955_p15361134112257"></a><a name="en-us_topic_0283139955_p15361134112257"></a>TCP</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283139955_p636124117252"><a name="en-us_topic_0283139955_p636124117252"></a><a name="en-us_topic_0283139955_p636124117252"></a>Acronym for transmission control protocol. It splits data into packets which are sent through the Internet protocol (IP), and checks and reassembles packets received through IP to obtain original information. TCP is a connection-oriented, reliable protocol that ensures information correctness in transmission.</p>
+</td>
+</tr>
+<tr 
+id="row10339161213301"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p20339912123010"><a name="p20339912123010"></a><a name="p20339912123010"></a>TLS</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p933981233012"><a name="p933981233012"></a><a name="p933981233012"></a>Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are cryptographic protocols that provide communications security over a computer network.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_row118471319138"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p200935759138"><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p200935759138"></a><a name="en-us_topic_0283139955_en-us_topic_0085413843_en-us_topic_0059777370_p200935759138"></a>trace</p>
@@ -591,6 +639,7 @@
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p94919350162"><a name="p94919350162"></a><a name="p94919350162"></a>Alias for the in-place update storage engine which solves the problems of space expansion and large tuples of the Append update storage engine. The design of efficient rollback segments is the basis of the in-place update storage engine.</p>
 </td>
 </tr>
+
 <tr id="row11884155614313"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p888485653118"><a name="p888485653118"></a><a name="p888485653118"></a>Undo Record</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p48851256173120"><a name="p48851256173120"></a><a name="p48851256173120"></a>An undo record can be inserted, queried, and organized. It connects to the ustore through the northbound interface and connects to the buffer pool through the southbound interface.</p>
@@ -604,6 +653,11 @@
 <tr id="row18589427163515"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p958932733510"><a name="p958932733510"></a><a name="p958932733510"></a>Undo Zone</p>
 </td>
 <td class="cellrowborder" valign="top" width="81%" headers="mcps1.2.3.1.2 "><p id="p155891327133518"><a name="p155891327133518"></a><a name="p155891327133518"></a>Be bound to service threads and manages the undo logical resources of each service thread.</p>
+</td>
+</tr>
+<tr id="row312755015467"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.3.1.1 "><p id="p223319521930"><a name="p223319521930"></a><a name="p223319521930"></a>UWAL</p>
+</td>
+<td class="cellrowborder" valign="top" width="75%" headers="mcps1.2.3.1.2 "><p id="p223375212313"><a name="p223375212313"></a><a name="p223375212313"></a>Unified Write-Ahead Log (UWAL) is a common component developed by Huawei.Based on solid-state drives and new storage media, UWAL provides the unified write-ahead logging capability to improve the performance of active/standby transaction submission as well as streaming replication and transmission of databases.</p>
 </td>
 </tr>
 <tr id="row17137530173510"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.3.1.1 "><p id="p6137193014355"><a name="p6137193014355"></a><a name="p6137193014355"></a>TransactionSlot</p>

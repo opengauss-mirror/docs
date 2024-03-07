@@ -10,7 +10,7 @@ A stored procedure is a set of SQL statements that can implement a specific func
     CREATE PROCEDURE procedure_name
         [ ( {[ argname ] [ argmode ] argtype [ = expression ]}[,...]) ]
         { IS | AS } 
-        BRGIN
+        BEGIN
           procedure_body
         END
     /
@@ -70,11 +70,11 @@ A stored procedure is a set of SQL statements that can implement a specific func
 
     Required for the syntax. One of them must be provided. They have the same function.
 
--   **BRGIN, END**
+-   **BEGIN, END**
 
     Required for the syntax.
 
--   **procedure\_bod**y
+-   **procedure\_body**
 
     Specifies the stored procedure content.
 

@@ -256,6 +256,15 @@ The following table describes the parameters.
 <td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136302_p371302154814"><a name="en-us_topic_0283136302_p371302154814"></a><a name="en-us_topic_0283136302_p371302154814"></a>If this option is used, the CPU of the Kunpeng platform is not optimized.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0283136302_row1271210213486"><td class="cellrowborder" valign="top" width="14.84148414841484%" headers="mcps1.2.5.1.1 "><p id="en-us_topic_0283136302_p3713112184818"><a name="en-us_topic_0283136302_p3713112184818"></a><a name="en-us_topic_0283136302_p3713112184818"></a>-nls</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.4020402040204%" headers="mcps1.2.5.1.2 "><p id="en-us_topic_0283136302_p11982718195611"><a name="en-us_topic_0283136302_p11982718195611"></a><a name="en-us_topic_0283136302_p11982718195611"></a>Do not use this option.</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.992199219921993%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0283136302_p12969132175621"><a name="en-us_topic_0283136302_p12969132175621"></a><a name="en-us_topic_0283136302_p12969132175621"></a>-nls</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.76427642764276%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283136302_p371302154815"><a name="en-us_topic_0283136302_p371302154815"></a><a name="en-us_topic_0283136302_p371302154815"></a>Enable native language support for logs.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

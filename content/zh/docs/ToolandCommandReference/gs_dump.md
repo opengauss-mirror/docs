@@ -21,6 +21,8 @@ gs\_dump支持将数据库信息导出至纯文本格式的SQL脚本文件或其
 
 gs\_dump工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
+gs\_dump工具支持使用过程中打印进度。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
+
 >![](public_sys-resources/icon-notice.png) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   导出物化视图时，不支持导出物化视图中的数据。
@@ -92,6 +94,8 @@ gs\_dump可以创建四种不同的导出文件格式，通过“-F”或者“-
 可以使用gs\_dump程序将文件压缩为目录归档或自定义归档导出文件，减少导出文件的大小。生成目录归档或自定义归档导出文件时，默认进行中等级别的压缩。gs\_dump程序无法压缩已归档导出文件。
 
 ## 注意事项<a name="zh-cn_topic_0237152335_zh-cn_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
+
+- gs_dump仅用于主库（Primary），不支持导出备库（Standby）和级联备（Cascade Standby）的数据。
 
 - 禁止修改-F c/d/t 格式导出的文件和内容，否则可能无法恢复成功。对于-F p 格式导出的文件，如有需要，可根据需要谨慎编辑导出文件。
 

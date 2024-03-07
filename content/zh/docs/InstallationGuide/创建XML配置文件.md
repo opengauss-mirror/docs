@@ -70,6 +70,22 @@
     <PARAM name="ss_interconnect_type" value="TCP"/>
     <!-- rdma绑定cpu序列  -->
     <PARAM name="ss_rdma_work_config" value="1 7"/>
+    <!-- 是否开启uwal -->
+    <PARAM name="enable_uwal" value="on"/>
+    <!-- uwal文件大小 -->
+    <PARAM name="uwal_disk_size" value="8589934592"/>
+    <!-- uwal日志路径 -->
+    <PARAM name="uwal_log_path" value="'/home/omm/data/log/omm/omm/pg_log'"/>
+    <!-- uwal压缩开关 -->
+    <PARAM name="uwal_rpc_compression_switch" value="false"/>
+    <!-- uwal流控开关 -->
+    <PARAM name="uwal_rpc_flowcontrol_switch" value="false"/>
+    <!-- uwal流控值 -->
+    <PARAM name="uwal_rpc_flowcontrol_value" value="128"/>
+    <!-- uwal异步写开关 -->
+    <PARAM name="uwal_async_append_switch" value="false"/>
+    <!-- uwal挂载路径 -->
+    <PARAM name="uwal_devices_path" value="'/home/omm/data/dn'"/>
 
     <!-- VIP信息  -->
     <PARAM name="floatIp1" value="10.10.10.100"/>

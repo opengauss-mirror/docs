@@ -99,7 +99,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-**Value range**: an integer ranging from 0 to 2147483647. The unit is KB.  **0**  indicates that the renegotiation mechanism is disabled.
+**Value range**: an integer ranging from 0 to 2147483647. The unit is kB.  **0**  indicates that the renegotiation mechanism is disabled.
 
 **Default value**:  **0**
 

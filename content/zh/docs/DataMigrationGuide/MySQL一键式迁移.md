@@ -10,8 +10,6 @@ gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了�
 
 - 同一个迁移计划的增量迁移和反向迁移不会同时开启，如果一个计划中包含了增量迁移和反向迁移，那么需要用户手动停止增量迁移，启动反向迁移。当用户启动反向迁移之后，无法再启动增量迁移。
 
-- 用户在停止增量迁移之后到启动反向迁移之前，禁止向openGauss进行作业，否则会导致这之间的数据丢失。
-
 - portal使用的workspace.id只能为小写字母与数字的组合。
 
 - portal在启动多个计划时，需要保证MySQL数据库实例各不相同，openGauss端数据库各不相同，且同一个MySQL数据库实例和openGauss端数据库的增量迁移和反向迁移不能同时开启。
@@ -47,21 +45,19 @@ portal/
 		portal.log 
 	pkg/           
 		chameleon/
-			chameleon-5.0.0-py3-none-any.whl
+			chameleon-5.1.0-py3-none-any.whl
 		datacheck/
-			openGauss-datachecker-performance-5.0.0.tar.gz
+			gs_datacheck-5.1.0.tar.gz
 		debezium/
 			confluent-community-5.5.1-2.12.zip
-			debezium-connector-mysql-1.8.1.Final-plugin.tar.gz
-			debezium-connector-opengauss-1.8.1.Final-plugin.tar.gz
-			kafka_2.13-3.2.3.tgz
+			replicate-mysql2openGauss-5.1.0.tar.gz
+			replicate-openGauss2mysql-5.1.0.tar.gz
 	tmp/
 	tools/
 		chameleon/
 		datacheck/
 		debezium/
 			confluent-5.5.1/
-			kafka_2.13-3.2.3/
 			plugin/
 				debezium-connector-mysql/
 				debezium-connector-opengauss/
@@ -100,21 +96,30 @@ maven版本：3.8.1以上
 
 ### 安装包安装：
 
-下载链接：
+如果用户的系统版本不在以下版本中，则内网场景下可能无法安装portal，此时安装portal需要保证pip3 install功能可用，可以连接外部网络的场景下安装portal不受系统版本影响。
 
-https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz
+各系统版本和架构对应的portal下载链接如下：
 
-1.下载gs_rep_portal安装包
+| 系统名称       | 系统架构 | 下载链接                                                     |
+| :------------- | -------- | ------------------------------------------------------------ |
+| centos7        | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/centos7/PortalControl-5.1.0-x86_64.tar.gz |
+| openEuler20.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openEuler20.03/PortalControl-5.1.0-x86_64.tar.gz |
+| openEuler20.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openEuler20.03/PortalControl-5.1.0-aarch64.tar.gz |
+| openEuler22.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openEuler22.03/PortalControl-5.1.0-x86_64.tar.gz |
+| openEuler22.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/openEuler22.03/PortalControl-5.1.0-aarch64.tar.gz |
 
-   ```
-wget -c https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz
-   ```
+1.根据系统版本下载对应版本的portal（这里以centos系统x86架构为例）
 
-2.解压gs_rep_portal安装包
+```
+wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/centos7/PortalControl-5.1.0-x86_64.tar.gz
+```
 
-   ```
-tar -zxvf PortalControl-5.0.0.tar.gz
-   ```
+2.解压，并进入portal对应目录
+
+```
+tar -zxvf PortalControl-5.1.0-x86_64.tar.gz
+cd portal
+```
 
 ## 启动方式
 
@@ -134,58 +139,61 @@ portal会在workspace文件夹下创造对应id的文件夹，并将执行任务
 sh gs_rep_portal.sh help &
    ```
 
-参数优先级： workspace下设置的参数 > 公共空间参数。如果使用的workspace.id和之前存在的workspace.id相同的话将沿用之前的workspace里面的参数，如果不同的话，那么portal将从config文件夹中复制一份配置文件到id对应的workspace下面作为这个任务的配置文件。
-
-建议每次运行迁移任务时使用不同的workspace.id。
+portal执行任务时将从config文件夹中复制一份配置文件到id对应的workspace下面作为这个任务的配置文件，建议每次运行迁移任务时使用不同的workspace.id。
 
 ### 安装迁移工具
 
 迁移功能与对应的迁移工具如下表所示：
 
-| 迁移功能                           | 使用工具                                       |
-| ---------------------------------- | ---------------------------------------------- |
-| 全量迁移                           | chameleon                                      |
-| 增量迁移                           | kafka、confluent、debezium-connector-mysql     |
-| 反向迁移                           | kafka、confluent、debezium-connector-opengauss |
-| 数据校验（包括全量校验和增量校验） | kafka、confluent、datacheck                    |
+| 迁移功能                           | 使用工具                             |
+| ---------------------------------- | ------------------------------------ |
+| 全量迁移                           | chameleon                            |
+| 增量迁移                           | confluent、replicate-mysql2openGauss |
+| 反向迁移                           | confluent、replicate-openGauss2mysql |
+| 数据校验（包括全量校验和增量校验） | confluent、gs_datacheck              |
 
 各工具推荐版本：
 
-| 工具                         | 版本       |
-| ---------------------------- | ---------- |
-| chameleon                    | 5.0.0      |
-| kafka                        | 2.13-3.2.3 |
-| confluent                    | 5.5.1      |
-| datacheck                    | 5.0.0      |
-| debezium-connector-mysql     | 1.8.1      |
-| debezium-connector-opengauss | 1.8.1      |
+| 工具                      | 版本  |
+| ------------------------- | ----- |
+| chameleon                 | 5.1.0 |
+| confluent                 | 5.5.1 |
+| gs_datacheck              | 5.1.0 |
+| replicate-mysql2openGauss | 5.1.0 |
+| replicate-openGauss2mysql | 5.1.0 |
 
 在/ops/portal/config目录的toolspath.properties文件中修改工具安装路径，其中文件夹要以/结尾：
 
 | 参数名称                     | 参数说明                                                     |
 | ---------------------------- | ------------------------------------------------------------ |
-| chameleon.venv.path          | 变色龙虚拟环境所在位置                                       |
+| tools.version                | 迁移工具版本                                                 |
+| system.name                  | 系统名称                                                     |
+| system.arch                  | 系统架构                                                     |
+| chameleon.install.path       | 变色龙工具整体安装路径                                       |
+| chameleon.venv.path          | 变色龙虚拟环境所在路径                                       |
+| chameleon.path               | 变色龙工作目录                                               |
+| chameleon.pkg.url            | 变色龙的安装包下载链接                                       |
 | chameleon.pkg.path           | 变色龙的安装包所在路径                                       |
 | chameleon.pkg.name           | 变色龙的安装包名                                             |
-| chameleon.pkg.url            | 变色龙的安装包下载链接                                       |
-| debezium.path                | debezium+kafka所在路径（默认kafka、confluent、connector都安装在该路径下） |
-| kafka.path                   | kafka所在路径                                                |
+| debezium.path                | debezium+confluent所在路径（默认confluent、connector都安装在该路径下） |
 | confluent.path               | confluent所在路径                                            |
 | connector.path               | connector所在路径                                            |
-| debezium.pkg.path            | debezium+kafka安装包所在路径（默认kafka、confluent、connector安装包都在该路径下） |
-| kafka.pkg.name               | kafka安装包名                                                |
-| kafka.pkg.url                | kafka安装包下载链接                                          |
-| confluent.pkg.name           | confluent安装包名                                            |
+| connector.mysql.path         | mysql connector所在路径                                      |
+| connector.opengauss.path     | opengauss connector所在路径                                  |
 | confluent.pkg.url            | confluent安装包下载链接                                      |
-| connector.mysql.pkg.name     | mysql connector安装包名                                      |
 | connector.mysql.pkg.url      | mysql connector安装包下载链接                                |
-| connector.opengauss.pkg.name | opengauss connector安装包名                                  |
 | connector.opengauss.pkg.url  | opengauss connector安装包下载链接                            |
+| debezium.pkg.path            | debezium+confluent安装包所在路径                             |
+| confluent.pkg.name           | confluent安装包名                                            |
+| connector.mysql.pkg.name     | mysql connector安装包名                                      |
+| connector.opengauss.pkg.name | opengauss connector安装包名                                  |
+| datacheck.pkg.url            | datacheck安装包下载链接                                      |
 | datacheck.install.path       | datacheck安装路径                                            |
 | datacheck.path               | datacheck所在路径                                            |
 | datacheck.pkg.path           | datacheck安装包所在路径                                      |
 | datacheck.pkg.name           | datacheck安装包名                                            |
-| datacheck.pkg.url            | datacheck安装包下载链接                                      |
+| datacheck.extract.jar.name   | datacheck抽取jar包名                                         |
+| datacheck.check.jar.name     | datacheck校验jar包名                                         |
 
 工具的安装支持离线安装和在线安装：
 
@@ -252,8 +260,7 @@ sh gs_rep_portal.sh install_mysql_all_migration_tools 1 &
 注意事项：
 
 - zookeeper默认端口2181、kafka默认端口9092、schema-registry默认端口8081不会自动分配，其余工具均会自动分配端口。用户如果需要修改工具的端口，请不要修改IP。如果需要修改kafka的端口，要注意将kafka的文件中的参数listeners的值修改为PLAINTEXT://localhost:要配置的端口。
-- 下表使用${config}代表/ops/portal/config目录，即公共空间配置的参数。如果想修改某个workspace的参数，比如workspace.id=2的计划的参数，请将/ops/portal/config替换为/ops/portal/workspace/2/config。
-- 下表使用${kafka.path}代表/ops/portal/config目录的toolspath.properties文件里面kafka.path的值。
+- 下表使用${config}代表/ops/portal/config目录，即公共空间配置的参数。
 - 下表使用${confluent.path}代表/ops/portal/config目录的toolspath.properties文件里面confluent.path的值。
 - 每次创建新的任务时，/ops/portal/config/debezium目录的connect-avro-standalone.properties文件会被自动复制成四份并修改端口。
 
@@ -268,11 +275,11 @@ sh gs_rep_portal.sh install_mysql_all_migration_tools 1 &
 	</tr>
 	<tr>
 		<td>zookeeper</td>    
-		<td>${kafka.path}/config/zookeeper.properties</td>  
+		<td>${confluent.path}/etc/kafka/zookeeper.properties</td>  
 	</tr>
 	<tr>
 		<td>kafka</td>    
-		<td>${kafka.path}/config/server.properties</td>
+		<td>${confluent.path}/etc/kafka/server.properties</td>
 	</tr>
 	<tr>
 		<td>schema-registry</td>    
@@ -309,6 +316,7 @@ sh gs_rep_portal.sh install_mysql_all_migration_tools 1 &
 		<td>${config}/datacheck/application.yml </td>  
 	</tr>
 </table>
+
 
 ## 执行迁移计划
 
@@ -388,7 +396,7 @@ sh gs_rep_portal.sh run_reverse_migration 3 &
 | start_plan3                                 | 开始默认计划plan3                                            |
 | start_current_plan                          | 开始自定义计划                                               |
 | show_plans                                  | 显示默认计划                                                 |
-| show_information                            | 显示数据库相关信息，包括mysql和openGuass端的数据库名、用户名、密码、ip、端口等 |
+| show_information                            | 显示数据库相关信息，包括mysql和openGauss端的数据库名、用户名、密码、ip、端口等 |
 | stop_plan                                   | 停止计划                                                     |
 
 用户也可以在/ops/portal/config目录的currentPlan文件中自定义迁移计划，但自定义迁移计划需要遵守以下规则：
@@ -461,16 +469,16 @@ sh gs_rep_portal.sh uninstall_mysql_all_migration_tools 1 &
 
 ## 完整数据迁移流程
 
-1.下载gs_rep_portal安装包
+1.根据系统版本下载对应版本的portal（这里以centos系统x86架构为例）
 
    ```
-wget -c https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz
+wget -c https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/centos7/PortalControl-5.1.0-x86_64.tar.gz
    ```
 
 2.解压gs_rep_portal安装包
 
    ```
-tar -zxvf PortalControl-5.0.0.tar.gz
+tar -zxvf PortalControl-5.1.0-x86_64.tar.gz
    ```
 
 3.在/ops/portal/config目录的toolspath.properties文件中修改安装路径，然后启动命令安装

@@ -15,6 +15,7 @@ gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了�
 ## 特性描述<a name="section18111828"></a>
 
 gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了全量迁移、增量迁移、反向迁移、数据校验的工具。gs_rep_portal支持以上工具的一键式安装上述工具，设定迁移任务，任务根据用户设定的执行计划顺序的调用相应工具完成每个迁移步骤，并能实时展示每个步骤的状态、进度、异常原因等。
+gs_rep_portal支持全量迁移工具在指定版本和架构的系统上进行离线安装。
 
 ## 特性增强<a name="section28788730"></a>
 
@@ -25,8 +26,6 @@ gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了�
 - portal在执行增量迁移、反向迁移、增量校验时需要使用curl工具。
 
 - 同一个迁移计划的增量迁移和反向迁移不会同时开启，如果一个计划中包含了增量迁移和反向迁移，那么需要用户手动停止增量迁移，启动反向迁移。当用户启动反向迁移之后，无法再启动增量迁移。
-
-- 用户在停止增量迁移之后到启动反向迁移之前，禁止向openGauss进行作业，否则会导致这之间的数据丢失。
 
 - portal使用的workspace.id只能为小写字母与数字的组合。
 
@@ -40,4 +39,4 @@ gs_rep_portal是一个用Java编写的，在linux系统上运行的，集成了�
 
 开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 、 [portal与datakit的交互方式1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/portal与datakit的交互方式1.md) 、 [命令行参数名称及说明.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/命令行参数名称及说明.md) 、 [数据迁移全局配置表0.1.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/数据迁移全局配置表0.1.md) 
+详细参考文档：<a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>  、 <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/命令行参数名称及说明.md ">命令行参数名称及说明.md</a>

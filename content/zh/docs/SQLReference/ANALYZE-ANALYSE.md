@@ -30,7 +30,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
     ```
     { ANALYZE | ANALYSE } [ VERBOSE ]
         [ table_name [ ( column_name [, ...] ) ] ]
-        PARTITION ( patrition_name ) ;
+        PARTITION ( partition_name ) ;
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -88,7 +88,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 -   检测表分区的数据文件
 
     ```
-    {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(patrition_name)}[CASCADE];
+    {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(partition_name)}[CASCADE];
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 

@@ -21,6 +21,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 ## 特性增强<a name="section28788730"></a>
 
 - 增量迁移支持迁移进度与回放失败的SQL语句实时上报。
+- 增量迁移支持断点续传功能，可满足工具中断重启后数据持续迁移，中断期间的增量数据不遗漏。
 
 ## 特性约束<a name="section06531946143616"></a>
 
@@ -52,10 +53,11 @@ gs_replicate工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址：[gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0)
 
-详细参考文档： [README.md](https://gitee.com/opengauss/openGauss-migration-portal/blob/master/README.md) 
+详细参考文档： <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>
 
-增量迁移社区地址：https://gitee.com/opengauss/debezium/tree/master 
+增量迁移社区地址：[gs_replicate](https://gitee.com/opengauss/debezium/tree/5.1.0)
 
-详细参考文档 [README.md](https://gitee.com/opengauss/debezium/blob/master/README.md) 
+详细参考文档：<a href="https://gitee.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a> 
+

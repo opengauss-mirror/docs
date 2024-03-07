@@ -83,15 +83,3 @@ openGauss=# DROP TABLE tpcds.reason_t1;
 ## 相关链接<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_se82df922609a4e8eb3a6d6a011e508a6"></a>
 
 [SELECT](SELECT.md)
-
-## 优化建议<a name="zh-cn_topic_0283137419_zh-cn_topic_0237122185_zh-cn_topic_0059779381_section21815038152246"></a>
-
--   **DATABASE**
-
-    不建议在事务中reindex database。
-
--   **SYSTEM**
-
-    不建议在事务中reindex系统表。
-
-

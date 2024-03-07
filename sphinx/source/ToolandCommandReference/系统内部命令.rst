@@ -10,12 +10,14 @@
     ../content/zh/docs/ToolandCommandReference/gs_ctl
     ../content/zh/docs/ToolandCommandReference/gs_initdb
     ../content/zh/docs/ToolandCommandReference/gs_install
+    ../content/zh/docs/ToolandCommandReference/gs_perfconfig
     ../content/zh/docs/ToolandCommandReference/gs_postuninstall
     ../content/zh/docs/ToolandCommandReference/gs_preinstall
     ../content/zh/docs/ToolandCommandReference/gs_sshexkey
     ../content/zh/docs/ToolandCommandReference/gs_tar
     ../content/zh/docs/ToolandCommandReference/gs_uninstall
     ../content/zh/docs/ToolandCommandReference/gs_upgradectl
+   ../content/zh/docs/ToolandCommandReference/gs_upgradechk
     ../content/zh/docs/ToolandCommandReference/gs_expansion
     ../content/zh/docs/ToolandCommandReference/gs_dropnode
     ../content/zh/docs/ToolandCommandReference/gs_probackup

@@ -20,45 +20,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 - table前不能添加foreign选项，包括外表、mot表的创建。
 - 默认复制源表的索引，若不希望复制索引，需要手动指定EXCLUDING INDEXES。
 - 默认复制源分区表的分区，若不希望复制分区，需要手动指定EXCLUDING PARTITION。
+- 默认复制字段的DEFAULT值，若不希望复制DEFAULT值，需要手动指定EXCLUDING DEFAULTS。
 - 对于含索引的分区表，若只指定EXCLUDING PARTITION，由于默认复制分区，将会报错，因为普通表不支持分区索引。
 - 只支持复制range分区表的分区，对于hash、list分区表，由于默认复制分区，会直接报错，需要手动指定EXCLUING PARTITION。二级分区只支持复制range-range分区，处理方法同上。
+- 生成列语法支持忽略GENERATED ALWAYS。
 
 创建表。
 
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
-    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [BINARY | ASCII] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
         | table_constraint
         | table_indexclause
         | LIKE source_table [ like_option [...] ] }
         [, ... ])
-    [ AUTO_INCREMENT [ = ] value ]
-    [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ]
-    [ WITH ( {storage_parameter = value} [, ... ] ) ]
-    [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
-    [ COMPRESS | NOCOMPRESS ]
-    [ TABLESPACE tablespace_name ]
-    [ COMMENT {=| } 'text' ];
-    [ create_option ]
+    [ create_option [ ...]]
+```
 
-其中create_option为：
-
+-   其中create_option为：
+```
         [ WITH ( {storage_parameter = value} [, ... ] ) ]
         [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
         [ COMPRESS | NOCOMPRESS ]
-        [ TABLESPACE tablespace_name ]
-        [ COMPRESSION [=] compression_arg ]
-        [ ENGINE [=] engine_name ]
-        [ COLLATE [=] collation_name ]
-        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
-        [ ROW_FORMAT [=] row_format_name ]
+        [ create_table_option [[,] ...]]
+
+    除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+```
+
+-   其中create_table_option为：
+```
         [ AUTOEXTEND_SIZE [=] value ]
+        [ AUTO_INCREMENT [=] value ]
         [ AVG_ROW_LENGTH [=] value ]
+        [ [DEFAULT] { CHARSET | CHARACTER SET } [=] charset_name ]
         [ CHECKSUM [=] value ]
+        [ [DEFAULT] COLLATE [=] collation_name ]
+        [ COMMENT [=] 'text' ]
+        [ COMPRESSION [=] compression_arg ]
         [ CONNECTION [=] 'connect_string' ]
         [ {DATA | INDEX} DIRECTORY [=] 'absolute path to directory' ]
         [ DELAY_KEY_WRITE [=] value ]
         [ ENCRYPTION [=] 'encryption_string' ]
+        [ ENGINE [=] engine_name ]
         [ ENGINE_ATTRIBUTE [=] 'string' ]
         [ INSERT_METHOD [=] { NO | FIRST | LAST } ]
         [ KEY_BLOCK_SIZE [=] value ]
@@ -66,16 +69,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ MIN_ROWS [=] value ]
         [ PACK_KEYS [=] value ]
         [ PASSWORD [=] 'password' ]
+        [ ROW_FORMAT [=] row_format_name ]
         [ START TRANSACTION ]
         [ SECONDARY_ENGINE_ATTRIBUTE [=] 'string' ]
         [ STATS_AUTO_RECALC [=] value ]
         [ STATS_PERSISTENT [=] value ]
         [ STATS_SAMPLE_PAGES [=] value ]
-        [ UNION [=] (tbl_name[,tbl_name]...) ]
-        [ TABLESPACE tablespace_name STORAGE DISK ]
+        [ TABLESPACE tablespace_name [STORAGE DISK] ]
         [ [TABLESPACE tablespace_name] STORAGE MEMORY ]
+        [ UNION [=] (tbl_name[,tbl_name]...) ]
 
-    除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
+    允许输入多次同一种create_table_option，以最后一次的输入为准。
+```
+
+-   其中表约束table_constraint为：
+```
+    [ CONSTRAINT [ constraint_name ] ]
+    { CHECK ( expression ) |
+      UNIQUE [ index_name ][ USING method ] ( { { column_name | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      PRIMARY KEY [ USING method ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) | COMMENT {=| } 'text' }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+```
+
+-   其中列约束column_constraint为：
+```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      [GENERATED ALWAYS] AS ( generation_expr ) [STORED] |
+      AUTO_INCREMENT |
+      ON UPDATE update_expr |
+      UNIQUE [KEY] index_parameters |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
+      PRIMARY KEY index_parameters |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
 ```
 
 - 创建表上索引table_indexclause：
@@ -136,19 +171,23 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
     ```
 
+-   **CHARACTER SET | CHARSET charset**
+
+    用于指定表字段的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。支持ASCII和BINARY字符集。
+
 -   **COLLATE collation**
 
     COLLATE子句指定列的排序规则（该列必须是可排列的数据类型）。如果没有指定，则使用默认的排序规则。排序规则可以使用“select \* from pg\_collation;”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
-    对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。
+    对未被支持的排序规则，数据库将发出警告，并将该列设置为默认的排序规则。支持BINARY字符序。
 
 -   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
-    用于选择表所使用的字符集；目前该特性仅有语法支持，不实现功能。
+    用于选择表所使用的字符集，单独指定时会将字段的字符序设置为指定的字符集的默认字符序。支持ASCII和BINARY字符集。
 
 -   **COLLATE \[=\] collation_name**
 
-    用于选择表所使用的排序规则；目前该特性仅有语法支持，不实现功能。
+    用于选择表所使用的排序规则，如果没有指定，则使用默认的排序规则。支持BINARY字符序。
 
 -   **ROW_FORMAT \[=\] row_format_name**
 
@@ -177,6 +216,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   本地临时表中的自动增长列不会创建序列。
     >-   自动增长列不支持列式存储。
     >-   自增计数器自增和刷新操作不会回滚。
+
+-   **BINARY**
+
+    该关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。
+
+-   **ASCII**
+
+    该关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
 -   **AUTOEXTEND\_SIZE \[=\] value**
 

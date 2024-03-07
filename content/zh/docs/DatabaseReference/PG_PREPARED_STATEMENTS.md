@@ -1,6 +1,6 @@
 # PG\_PREPARED\_STATEMENTS
 
-PG\_PREPARED\_STATEMENTS视图显示当前会话所有可用的预备语句。
+PG\_PREPARED\_STATEMENTS视图显示当前会话所有可用预备语句。
 
 **表 1**  PG\_PREPARED\_STATEMENTS字段
 

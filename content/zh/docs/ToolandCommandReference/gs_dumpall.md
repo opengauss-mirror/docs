@@ -21,12 +21,16 @@ gs\_dumpall在导出openGauss所有数据库时分为两部分：
 
 gs\_dumpall工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
 
+gs\_dumpall工具支持使用过程中打印进度。会依次对每个数据库进行转存，每个数据库的流程中都与使用gs\_dump时的进度打印相同。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
+
+
 >![](public_sys-resources/icon-notice.png) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   临时表不支持导入导出。
 
 ## 注意事项<a name="zh-cn_topic_0237152336_zh-cn_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
+-   gs_dumpall仅用于主库（Primary），不支持导出备库（Standby）和级联备（Cascade Standby）的数据。
 -   禁止修改导出的文件和内容，否则可能无法恢复成功。
 -   为了保证数据一致性和完整性，gs\_dumpall会对需要转储的表设置共享锁。如果某张表在别的事务中设置了共享锁，gs\_dumpall会等待此表的锁释放后锁定此表。如果无法在指定时间内锁定某张表，转储会失败。用户可以通过指定--lock-wait-timeout选项，自定义等待锁超时时间。
 -   由于gs\_dumpall读取所有数据库中的表，因此必须以openGauss管理员身份进行连接，才能导出完整文件。在使用gsql执行脚本文件导入时，同样需要管理员权限，以便添加用户和组以及创建数据库。

@@ -3,12 +3,12 @@ GUC参数说明
 
 .. toctree::
 
-    ../content/zh/docs/DatabaseReference/文件位置
     ../content/zh/docs/DatabaseReference/GUC使用说明
+    ../content/zh/docs/DatabaseReference/文件位置
     连接和认证
     资源消耗
     预写式日志
-    双机复制
+    ../content/zh/docs/DatabaseReference/双机复制
     ../content/zh/docs/DatabaseReference/内存表
     查询规划
     错误报告和日志
@@ -49,3 +49,6 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/资源池化参数
     ../content/zh/docs/DatabaseReference/高效数据压缩算法相关参数
     ../content/zh/docs/DatabaseReference/备机支持写语句参数
+    ../content/zh/docs/DatabaseReference/大页内存
+    ../content/zh/docs/DatabaseReference/数据导入导出
+    ../content/zh/docs/DatabaseReference/分隔符
