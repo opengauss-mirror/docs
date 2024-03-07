@@ -2,7 +2,7 @@
 
 ## Availability<a name="section147531742205517"></a>
 
-This feature is available since openGauss 1.1.0. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.global\_slow\_query\_hisotry, and dbe\_perf.global\_slow\_query\_info.
+This feature is available since openGauss 1.1.0. The following slow SQL views have been discarded before reconstruction: dbe\_perf.gs\_slow\_query\_info, dbe\_perf.gs\_slow\_query\_history, dbe\_perf.global\_slow\_query\_history, and dbe\_perf.global\_slow\_query\_info.
 
 This feature is available since openGauss 3.1.0.
 
