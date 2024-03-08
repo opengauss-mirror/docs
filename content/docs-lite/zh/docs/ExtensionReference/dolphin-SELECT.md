@@ -49,7 +49,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
     |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
-    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+    |(from_item [, ...], from_item)}
     ```
 
 - 其中不写FROM 子句的情况等价于：
