@@ -1,6 +1,6 @@
 # MOT Scale-up Architecture<a name="EN-US_TOPIC_0270171513"></a>
 
-To  **scale up**  means to add additional cores to the  _same machine_  in order to add computing power. To scale up refers to the most common traditional form of adding computing power in a machine that has a single pair of controllers and multiple cores. Scale-up architecture is limited by the scalability limits of a machine’s controller.
+To  **scale up**  means to add additional cores to the  _same machine_  in order to add computing power. To scale up refers to the most common traditional form of adding computing power in a machine that has a single pair of controllers and multiple cores. Scale-up architecture is limited by the scalability limits of a machine's controller.
 
 ## Technical Requirements<a name="section189641734143315"></a>
 
@@ -79,5 +79,5 @@ The following is an additional example that shows a test on an x86-based server 
 
 
 
-The chart shows that MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. MOT consumes more and more of the CPU correlating to the increase of the quantity of cores. Other industry solutions do not increase and sometimes show slightly degraded performance, which is a well-known problem in the database industry that affects customers’ CAPEX and OPEX expenses and operational efficiency.
+The chart shows that MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. MOT consumes more and more of the CPU correlating to the increase of the quantity of cores. Other industry solutions do not increase and sometimes show slightly degraded performance, which is a well-known problem in the database industry that affects customers' CAPEX and OPEX expenses and operational efficiency.
 

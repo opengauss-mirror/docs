@@ -16,7 +16,7 @@ Even so, users can already start realizing MOT's performance benefits on both lo
 
 ## Memory<a name="section1294374584217"></a>
 
-MOT supports standard RAM/DRAM for its data and transaction management. All MOT tables’ data and indexes reside in-memory; therefore, the memory capacity must support the data capacity and still have space for further growth. For detailed information about memory requirements and planning, see the  [MOT Memory and Storage Planning](mot-memory-and-storage-planning.md)__section.
+MOT supports standard RAM/DRAM for its data and transaction management. All MOT tables' data and indexes reside in-memory; therefore, the memory capacity must support the data capacity and still have space for further growth. For detailed information about memory requirements and planning, see the  [MOT Memory and Storage Planning](mot-memory-and-storage-planning.md)__section.
 
 ## Storage IO<a name="section8264125484218"></a>
 
