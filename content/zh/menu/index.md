@@ -1845,7 +1845,7 @@ headless: true
     -   [集群管理（Cluster Manager）]({{< relref "./docs/ToolandCommandReference/集群管理.md" >}})
     	-   [特性介绍]({{< relref "./docs/ToolandCommandReference/特性介绍.md" >}})
     	-   [cm\_ctl工具介绍]({{< relref "./docs/ToolandCommandReference/cm_ctl工具介绍.md" >}})
-    	-   [cm\_persit工具介绍]({{< relref "./docs/ToolandCommandReference/cm_persit工具介绍.md" >}})
+    	-   [cm\_persist工具介绍]({{< relref "./docs/ToolandCommandReference/cm_persist工具介绍.md" >}})
     	-   [安装和卸载工具介绍]({{< relref "./docs/ToolandCommandReference/安装和卸载工具介绍.md" >}})
     	-   [安全设计]({{< relref "./docs/ToolandCommandReference/安全设计.md" >}})
     	-   [CM配置参数介绍]({{< relref "./docs/ToolandCommandReference/CM配置参数介绍.md" >}})
