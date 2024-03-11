@@ -1,0 +1,6 @@
+资源池化可维护性增强
+==========
+
+.. toctree::
+
+    ../content/zh/docs/AboutopenGauss/gs_collector适配资源池化
