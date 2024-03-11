@@ -98,6 +98,7 @@ headless: true
             -   [DSS功能增强]({{< relref "./docs/AboutopenGauss/DSS功能增强.md" >}})
             -   [资源池化算子卸载]({{< relref "./docs/AboutopenGauss/资源池化算子卸载.md" >}})
             -   [基于Dorado存储同步复制的主备双集群容灾]({{< relref "./docs/AboutopenGauss/基于Dorado存储同步复制的主备双集群容灾.md" >}})
+			-   [基于流复制的资源池化主备双集群容灾]({{< relref "./docs/AboutopenGauss/基于流复制的资源池化主备双集群容灾.md" >}})
             -   [极致RTO按需回放]({{< relref "./docs/AboutopenGauss/极致RTO按需回放.md" >}})
 			-   [DSS线程池]({{< relref "./docs/AboutopenGauss/DSS线程池.md" >}})
 			-   [资源池化多机并行]({{< relref "./docs/AboutopenGauss/资源池化多机并行.md" >}})

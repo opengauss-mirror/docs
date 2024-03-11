@@ -267,7 +267,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     _LOG_BACKUP_FILE_COUNT，
     _AUDIT_LEVEL，
     _AUDIT_MAX_FILE_SIZE，
-    _AUDIT_BACKUP_FILE_COUNT。
+    _AUDIT_BACKUP_FILE_COUNT，
+    CLUSTER_RUN_MODE。
 
 -   获取配置项信息
 
