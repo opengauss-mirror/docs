@@ -22,3 +22,4 @@
     ../content/zh/docs/AboutopenGauss/两地三中心跨Region容灾
     ../content/zh/docs/AboutopenGauss/主备高可用能力增强
     ../content/zh/docs/AboutopenGauss/表级别并行恢复优化
+    ../content/zh/docs/AboutopenGauss/异步备升主数据找回能力
