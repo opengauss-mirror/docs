@@ -53,6 +53,7 @@ headless: true
 	    	-   [支持Global SysCache]({{< relref "./docs/AboutopenGauss/支持Global-SysCache.md" >}})
 	    	-   [主备高可用能力增强]({{< relref "./docs/AboutopenGauss/主备高可用能力增强.md" >}})
 	    	-   [表级别并行恢复优化]({{< relref "./docs/AboutopenGauss/表级别并行恢复优化.md" >}})
+	    	-   [异步备升主数据找回能力]({{< relref "./docs/AboutopenGauss/异步备升主数据找回能力.md" >}})
 	    -   [维护性]({{< relref "./docs/AboutopenGauss/维护性.md" >}})
 	    	-   [灰度升级]({{< relref "./docs/AboutopenGauss/灰度升级.md" >}})
 	    	-   [支持WDR诊断报告]({{< relref "./docs/AboutopenGauss/支持WDR诊断报告.md" >}})
