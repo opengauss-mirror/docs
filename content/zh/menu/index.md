@@ -1745,7 +1745,7 @@ headless: true
 				-   [SQL Detail]({{< relref "./docs/SQLReference/SQL-Detail.md" >}})
 		-	[PROC Coverage Schema]({{< relref "./docs/SQLReference/PROC-Coverage-Schema.md" >}})
 			-   [COVERAGE.PROC_COVERAGE]({{< relref "./docs/SQLReference/coverage-proc_coverage.md" >}})
-			-   [PROC Coverage生成存储过程覆盖率报告]({{< relref "./docs/SQLReference/PROC-Coverage 生成存储过程覆盖率报告.md" >}})
+			-   [PROC Coverage生成存储过程覆盖率报告]({{< relref "./docs/SQLReference/PROC-Coverage-生成存储过程覆盖率报告.md" >}})
 		-   [DBE\_PLDEBUGGER Schema]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-Schema.md" >}})
 			-   [DBE\_PLDEBUGGER.turn\_on]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-turn_on.md" >}})
 			-   [DBE\_PLDEBUGGER.turn\_off]({{< relref "./docs/SQLReference/DBE_PLDEBUGGER-turn_off.md" >}})
