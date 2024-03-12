@@ -136,7 +136,7 @@
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |BIT|将对应字符集的十六进制编码转换为二进制编码|转换级别为赋值|
-|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|用对应字符集解码后，按字符串字面数值转换|到DOUBLE的转换级别为隐式，其他为赋值|
+|TINYINT/SMALLINT/INT/BIGINT<br>UINT1/UINT2/UINT4/UINT8<br>NUMERIC/FLOAT/DOUBLE|用对应字符集解码后，按字符串字面数值转换|到DOUBLE的转换级别为隐式，其他为赋值<br>当解码后的字符串不能完全转换为数值时，会产生告警，<br>区别于Mysql下TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB与TINYINT/SMALLINT/INT/BIGINT/UINT1/UINT2/UINT4/UINT8/NUMERIC/FLOAT/DOUBLE进行=/<>/!=/</<=/>/>=等比较运算时不会产生告警。|
 |DATE/DATETIME/TIMESTAMP/TIME|用对应字符集解码后，按对应格式进行转换，格式规则较多|转换级别为赋值|
 |YEAR|用对应字符集解码后，按字符串字面数值进行转换，规则与数值类型转YEAR规则相同|YEAR类型的取值范围为0、1901~2155<br>转换级别为赋值|
 |CHAR/VARCHAR/TEXT|用对应字符集解码|BINARY/VARBINARY到TEXT的转换级别为隐式，其他为赋值|
