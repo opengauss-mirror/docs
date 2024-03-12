@@ -291,19 +291,6 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
     >
     >-   生成列的权限控制和普通列一样。
-    > 
-    >
-    >-   不能为生成列指定默认值。
-    >
-    >-   生成列不能作为分区键的一部分。
-    >
-    >-   生成列不能和ON UPDATE约束字句的CASCADE、SET NULL、SET DEFAULT动作同时指定。生成列不能和ON DELETE约束字句的SET NULL、SET DEFAULT动作同时指定。
-    >
-    >-   修改和删除生成列的方法和普通列相同。删除生成列依赖的普通列，生成列被自动删除。不能改变生成列所依赖的列的类型。
-    >
-    >-   生成列不能被直接写入。在INSERT或UPDATE命令中, 不能为生成列指定值, 但是可以指定关键字DEFAULT。
-    >
-    >-   生成列的权限控制和普通列一样。
     >
     >-   列存表、内存表MOT不支持生成列。外表中仅postgres\_fdw支持生成列。
 
