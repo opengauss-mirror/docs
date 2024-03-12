@@ -27,6 +27,7 @@
 
 支持使用`0x`的方式作为十六进制数输入。
 
+支持MySQL协议兼容，通过MySQL的JDBC driver或者MySQL命令行客户端，直接连接openGauss，通过参数hot_standby、dolphin_hot_standby控制备机的可连接性。
 
 ## 客户价值
 
