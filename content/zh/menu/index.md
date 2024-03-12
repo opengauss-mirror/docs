@@ -102,6 +102,8 @@ headless: true
             -   [极致RTO按需回放]({{< relref "./docs/AboutopenGauss/极致RTO按需回放.md" >}})
 			-   [DSS线程池]({{< relref "./docs/AboutopenGauss/DSS线程池.md" >}})
 			-   [资源池化多机并行]({{< relref "./docs/AboutopenGauss/资源池化多机并行.md" >}})
+			-   [资源池化可维护性增强]({{< relref "./docs/AboutopenGauss/资源池化可维护性增强.md" >}})
+                -   [gs_collector适配资源池化]({{< relref "./docs/AboutopenGauss/gs_collector适配资源池化.md" >}})
 		-   [企业级特性]({{< relref "./docs/AboutopenGauss/企业级特性.md" >}})
 	    	-   [函数及存储过程支持]({{< relref "./docs/AboutopenGauss/函数及存储过程支持.md" >}})
 	    	-   [支持SQL hint]({{< relref "./docs/AboutopenGauss/支持SQL-hint.md" >}})
