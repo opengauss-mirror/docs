@@ -131,6 +131,8 @@
 |SET|按字符串转换为SET对应Lable的项|转换级别为隐式|
 |JSON|按合法的JSON字符串格式进行转换|转换级别为显式|
 
+- TEXT类型用于数值上下文中，如参与数值运算、与数值进行比较、作为参数传给入参类型为数值的函数，以上场景涉及TEXT类型到数值类型的转换，MySQL对非法格式进行截断处理，不会产生告警。但涉及到TEXT类型数据插入数值类型列时，MySQL会产生告警/报错；openGauss对以上场景均采用更严格的告警/报错。
+
 #### 源类型：BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 
 |目标类型|转换规则描述|备注|
