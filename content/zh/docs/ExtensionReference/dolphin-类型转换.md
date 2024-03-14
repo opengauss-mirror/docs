@@ -145,8 +145,8 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|相似类型互转|BINARY/VARBINARY间转换级别为隐式，TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB间转换级别为隐式，其他为赋值|
 |ENUM|用对应字符集解码后，按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|用对应字符集解码后，按字符串转换为SET对应Lable的项|转换级别为赋值|
-|JSON|BANARY转JSON显示为"base64:type254:xxx"<br>VARBANARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
-|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
+|JSON|BINARY转JSON显示为"base64:type254:xxx"<br>VARBINARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
+|BOOLEAN|BINARY先转换为CHAR类型，VARBINARY先转换为VARCHAR类型，其他先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：ENUM
 
