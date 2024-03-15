@@ -61,6 +61,7 @@ SQL语法
     ../content/zh/docs/SQLReference/COMMIT-END
     ../content/zh/docs/SQLReference/COMMIT-PREPARED
     ../content/zh/docs/SQLReference/COPY
+    ../content/zh/docs/SQLReference/CREATE-ACCESS-METHOD
     ../content/zh/docs/SQLReference/CREATE-AGGREGATE
     ../content/zh/docs/SQLReference/CREATE-AUDIT-POLICY
     ../content/zh/docs/SQLReference/CREATE-CAST
@@ -115,6 +116,7 @@ SQL语法
     ../content/zh/docs/SQLReference/DELETE
     ../content/zh/docs/SQLReference/DO
     ../content/zh/docs/SQLReference/DELIMITER
+    ../content/zh/docs/SQLReference/DROP-ACCESS-METHOD
     ../content/zh/docs/SQLReference/DROP-AGGREGATE
     ../content/zh/docs/SQLReference/DROP-AUDIT-POLICY
     ../content/zh/docs/SQLReference/DROP-CAST
