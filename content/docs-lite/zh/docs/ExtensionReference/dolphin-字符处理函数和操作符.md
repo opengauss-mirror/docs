@@ -134,7 +134,7 @@
     (1 row)
     ```
 
-- hex\(number or string or bytea or bit or bit\)
+- hex\(number or string or bytea or bit or blob or enum\)
 
   描述：把数字、字符、二进制字符类型或位串类型转换成十六进制表现形式
 
@@ -189,6 +189,24 @@
     6161            | 6161        | 6161              | 6161
     3132333132      | 3132333132  | 3132333132        | 3132333132
     (2 rows)
+    
+    openGauss=# set dolphin.b_compatibility_mode to on;
+    SET
+    openGauss=# create table enum_to_hex(c enum('a','b','c'));
+    CREATE TABLE
+    openGauss=# insert into enum_to_hex values(1);
+    INSERT 0 1
+    openGauss=# insert into enum_to_hex values(2);
+    INSERT 0 1
+    openGauss=# insert into enum_to_hex values(3);
+    INSERT 0 1
+    openGauss=# select hex(c) from enum_to_hex;
+     hex 
+    -----
+     61
+     62
+     63
+    (3 rows)
     ```
 
 -   uuid\(\)
