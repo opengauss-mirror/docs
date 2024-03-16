@@ -14,3 +14,4 @@
     ../content/zh/docs/AboutopenGauss/极致RTO按需回放
     ../content/zh/docs/AboutopenGauss/DSS线程池
     ../content/zh/docs/AboutopenGauss/资源池化可维护性增强
+    ../content/zh/docs/AboutopenGauss/在线reform
