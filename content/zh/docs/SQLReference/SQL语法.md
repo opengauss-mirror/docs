@@ -112,6 +112,8 @@
 
 -   **[COPY](COPY.md)**  
 
+-   **[CREATE ACCESS METHOD](CREATE-ACCESS-METHOD.md)** 
+
 -   **[CREATE AGGREGATE](CREATE-AGGREGATE.md)**  
 
 -   **[CREATE AUDIT POLICY](CREATE-AUDIT-POLICY.md)**  
@@ -217,6 +219,8 @@
 -   **[DELETE](DELETE.md)**  
 
 -   **[DO](DO.md)**  
+
+-   **[DROP ACCESS METHOD](DROP-ACCESS-METHOD.md)** 
 
 -   **[DROP AGGREGATE](DROP-AGGREGATE.md)**  
 
