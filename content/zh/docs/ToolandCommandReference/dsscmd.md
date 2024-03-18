@@ -44,10 +44,12 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   卷组中添加卷
 
     ```
-    dsscmd adv <-g vg_name> <-v vol_name> [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd adv <-g vg_name> <-v vol_name> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
     ```
-
-    此处的vg\_name为卷组名，不需要以‘+’开头。
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   此处的vg\_name为卷组名，不需要以‘+’开头。
+    >-   dsscmd adv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
+    >-   在不带CM的集群的场景（即维护模式）下，在线adv之后需要用户手动注册（dsscmd reghl)。
 
 -   新建目录
 
@@ -90,10 +92,35 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   删除卷组中的卷
 
     ```
-    dsscmd rmv <-g vg_name> <-v vol_name> [-U UDS:socket_domain]
+    dsscmd rmv <-g vg_name> <-v vol_name> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
     ```
 
-    此处的vg_name为卷组名，不需要以‘+’开头。
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   此处的vg\_name为卷组名，不需要以‘+’开头。
+    >-   dsscmd rmv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
+    >-   rmv删除的是未被使用的是非入口盘（即dsscmd adv命令添加的卷）。
+
+-   替换卷组中的卷
+
+    ```
+    dsscmd repl <-g vg_name> <-o old_vol> <-n new_vol> [-f] [-D DSS_HOME]
+    ```
+
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   此处的vg\_name为卷组名，不需要以‘+’开头。
+    >-   dsscmd repl只支持全离线操作。-f参数表示强制离线，未输入报错返回。全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
+    >-   repl执行之前，需要用户手动将old_vol拷贝到new_vol，需要用户保证拷贝的准确性和完整性，new_vol的大小不能小于old_vol的水位线。
+    >-   入口盘（即dsscmd cv命令添加的卷）被替换之后，需要用户手动修改每个节点的配置项信息dss_vg_conf.ini。
+
+-   若离线adv/rmv/repl元数据修改失败，回滚卷组。
+
+    ```
+    dsscmd rollback <-g vg_name> [-f] [-D DSS_HOME]
+    ```
+
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   此处的vg\_name为卷组名，不需要以‘+’开头。
+    >-   dsscmd rollback只支持全离线操作。-f参数表示强制离线，未输入报错返回。全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
 
 -   删除目录及其内容
 
@@ -320,9 +347,9 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     目录名，命名长度不能超过63，仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' 。其他字符不支持。
 
--   vol\_name
+-   vol\_name|old\_vol|new\_vol
 
-    卷名。文件命名长度不能超过1K（包括目录），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
+    卷名。文件命名长度不能超过63（包括目录），仅支持数字，大小写字母，和部分特殊字符 ' \_ ' , ' . ' , ' - ' ,'\\'，其中'\\'是分隔符。其他字符不支持。
 
 -   -D
 
@@ -365,6 +392,9 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     -   memory：表示在内存中进行修改，立即生效。
     -   pfile：表示在pfile中进行修改，修改后需要重启数据库才能生效。
     -   both：表示既在内存也在pfile中进行修改。
+-   -f
+
+    用于表示在线还是离线。默认不加-f，表示在线。
 
 
 ## 使用示例<a name="section192337387165"></a>
@@ -376,6 +406,23 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd cv -g log -v /dev/tpcc_log -s 65536 -D /home/ss_test/dss_home
     ```
 
+-   离线创建卷组中的卷dev/tpcc_adv，/dev/tpcc_adv的大小为512M，-D指定dss\_home。
+
+    ```
+    dsscmd adv -g data -v /dev/tpcc_adv -f -D /home/ss_test/dss_home
+    ```
+
+-   离线替换卷组中的卷dev/tpcc_adv，-D指定dss\_home。
+
+    ```
+    dd if=/dev/tpcc_adv bs=1024 count=500000 of=/dev/tpcc_repl conv=notrunc
+    dsscmd repl -g data -o /dev/tpcc_adv -n /dev/tpcc_repl -f -D /home/ss_test/dss_home
+    ```
+-   离线删除卷组中的卷dev/tpcc_repl，-D指定dss\_home。
+
+    ```
+    dsscmd rmv -g data -v /dev/tpcc_repl -f -D /home/ss_test/dss_home
+    ```
 
 -   创建文件夹pg\_xlog0 ，UDS指定dss进程的socket文件。
 
