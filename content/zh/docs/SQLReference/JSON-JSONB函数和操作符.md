@@ -1002,7 +1002,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 - jsonb_insert\(target jsonb, path jsonpath, new_value jsonb, skip_existing boolean DEFAULT false)
 
-  描述：
+  描述：JSONB_INSERT函数用于将一个新值插入到JSONB值中的指定路径位置。函数返回在给定路径上插入了指定新值后的JSONB值。
 
   - target：要插入对象的目标JSONB值。
   - path：指定要插入对象的路径。可以是一个JSONPath表达式，也可以是一个由键组成的数组。例如，'{hobbies, -1}'表示在名为hobbies的数组中的最后一个位置插入对象。
@@ -1011,6 +1011,11 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   
   返回类型：jsonb
   
+  注意事项：
+
+  - 路径中的所有前值都必须存在，否则将原封不动地返回target（原JSONB值）。 
+  - 如果最后一个路径值是超出范围的数组索引，则新值将添加到数组的开头（如果索引为负）或数组的末尾（如果索引为正）。
+
   示例：
   
   ```
@@ -1047,6 +1052,12 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   - create_missing：可选参数，指定是否在路径上创建缺失的键。默认情况下，如果路径上的键不存在，则不会创建缺失的键。如果设置为 true，则会创建缺失的键。
   
   返回类型：integer
+
+  注意事项：
+
+  - 路径中的所有前值都必须存在，否则将不加改变地返回target。 
+  - 出现在路径中的负整数从从JSON数组的path末尾开始计数。
+  - 如果最后一个路径步骤是超出范围的数组索引，并且create_missing为真，则新值将添加到数组的开头（如果索引为负），或添加到数组的结尾（如果索引为正）。
   
   示例：
   
