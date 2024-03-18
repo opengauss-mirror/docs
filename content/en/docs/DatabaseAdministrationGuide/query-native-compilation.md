@@ -8,7 +8,7 @@ This division of labor avoids repetitive parse analysis operations. In this way,
 
 ## Query Compilation – PREPARE Statement<a name="section25681763321"></a>
 
-To use MOT’s native query compilation, call the PREPARE client statement before the query is executed. This instructs MOT to pre-compile the query and/or to pre-load previously pre-compiled code from a cache.
+To use MOT's native query compilation, call the PREPARE client statement before the query is executed. This instructs MOT to pre-compile the query and/or to pre-load previously pre-compiled code from a cache.
 
 The following is an example of PREPARE syntax in SQL –
 

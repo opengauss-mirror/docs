@@ -19,7 +19,7 @@ Afterwards, use the following script to export this secondary disk table and the
 To covert a disk-based table into an MOT table, perform the following –
 
 1.  Suspend application activity.
-2.  Use  **gs\_dump**  tool to dump the table’s data into a physical file on disk. Make sure to use the  **data only**.
+2.  Use  **gs\_dump**  tool to dump the table's data into a physical file on disk. Make sure to use the  **data only**.
 3.  Rename your original disk-based table.
 4.  Create an MOT table with the same table name and schema. Make sure to use the create FOREIGN keyword to specify that it will be an MOT table.
 5.  Use  **gs\_restore**  to load/restore data from the disk file into the database table.

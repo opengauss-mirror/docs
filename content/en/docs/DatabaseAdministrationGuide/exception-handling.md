@@ -1,6 +1,6 @@
 # Exception Handling<a name="EN-US_TOPIC_0276133418"></a>
 
-The persistence module handles exceptions by using the Postgres error reporting infrastructure \(ereport\). An error message is recorded in the system log for each error condition. In addition, the error is reported to the envelope using Postgres’s built-in error reporting infrastructure.
+The persistence module handles exceptions by using the Postgres error reporting infrastructure \(ereport\). An error message is recorded in the system log for each error condition. In addition, the error is reported to the envelope using Postgres's built-in error reporting infrastructure.
 
 The following exceptions are reported by this module –
 

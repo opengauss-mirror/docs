@@ -19,13 +19,14 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
     -   **parameter**: specifies cursor parameters. Only input parameters are allowed in the following format:
 
         ```
-        parameter_name datatype
+        parameter_name datatype default_expr
         ```
 
     -   **select\_statement**: specifies a query statement.
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
     >The system automatically determines whether the cursor can be used for backward fetches based on the execution plan.  
+    >We support specifying default expressions for cursor arguments when declaring cursors. It's recommended to declare arguments without default expressions before declaring arguments with default expressions: for any argument that is declared ahead of the last argument without default expression, its default expression will be ignored.
 
     **Define a dynamic cursor:**  Define a  **ref**  cursor, which means that the cursor can be opened dynamically by a set of static SQL statements. First define the type of the  **ref**  cursor first and then the cursor variable of this cursor type. Dynamically bind a  **SELECT**  statement through  **OPEN FOR**  when the cursor is opened.
 

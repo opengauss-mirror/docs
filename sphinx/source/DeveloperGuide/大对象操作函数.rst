@@ -1,0 +1,16 @@
+大对象操作函数
+=====
+
+.. toctree::
+
+    ../content/zh/docs/DeveloperGuide/lo_create
+    ../content/zh/docs/DeveloperGuide/lo_import
+    ../content/zh/docs/DeveloperGuide/lo_export
+    ../content/zh/docs/DeveloperGuide/lo_open
+    ../content/zh/docs/DeveloperGuide/lo_write
+    ../content/zh/docs/DeveloperGuide/lo_read
+    ../content/zh/docs/DeveloperGuide/lo_lseek
+    ../content/zh/docs/DeveloperGuide/lo_tell
+    ../content/zh/docs/DeveloperGuide/lo_truncate
+    ../content/zh/docs/DeveloperGuide/lo_close
+    ../content/zh/docs/DeveloperGuide/lo_unlink

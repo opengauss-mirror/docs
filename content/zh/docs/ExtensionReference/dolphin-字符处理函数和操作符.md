@@ -134,7 +134,7 @@
     (1 row)
     ```
 
-- hex\(number or string or bytea or bit or blob\)
+- hex\(number or string or bytea or bit or blob or enum\)
 
   描述：把数字、字符、二进制字符类型或位串类型转换成十六进制表现形式
 
@@ -166,13 +166,13 @@
     openGauss=# select hex(b'1111');
      hex
     -----
-     0f
+     0F
     (1 row)
 
     openGauss=# select hex('\n');
      hex
     -------
-     5c6e
+     5C6E
     (1 row)
 
     openGauss=# set dolphin.b_compatibility_mode to on; -- 需要打开dolphin.b_compatibility_mode让blob可以适配B兼容模式下的输入
@@ -189,6 +189,24 @@
     6161            | 6161        | 6161              | 6161
     3132333132      | 3132333132  | 3132333132        | 3132333132
     (2 rows)
+    
+    openGauss=# set dolphin.b_compatibility_mode to on;
+    SET
+    openGauss=# create table enum_to_hex(c enum('a','b','c'));
+    CREATE TABLE
+    openGauss=# insert into enum_to_hex values(1);
+    INSERT 0 1
+    openGauss=# insert into enum_to_hex values(2);
+    INSERT 0 1
+    openGauss=# insert into enum_to_hex values(3);
+    INSERT 0 1
+    openGauss=# select hex(c) from enum_to_hex;
+     hex 
+    -----
+     61
+     62
+     63
+    (3 rows)
     ```
 
 -   uuid\(\)
@@ -1052,7 +1070,7 @@
   SELECT HEX(COMPRESS('2022-05-12 10:30:00'));
                                 hex                               
   ----------------------------------------------------------------
-   13000000789c33323032d23530d53534523034b03236b032300000240b03a1
+   13000000789C33323032D23530D53534523034B03236B032300000240B03A1
   (1 row)
   ```
 
@@ -1112,7 +1130,7 @@
   select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
      hex    
   ----------
-   ffbeffbd
+   FFBEFFBD
   (1 row)
 
   select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));

@@ -54,6 +54,8 @@
 
 -   **[Statistics Information Functions](statistics-information-functions.md)**  
 
+-   **[Large Object Operation Functions](large-object-operation-functions.md)**  
+
 -   **[Trigger Functions](trigger-functions.md)**  
 
 -   **[Hash Function](hash-function.md)**  

@@ -10,5 +10,7 @@
     ../content/zh/docs/AboutopenGauss/资源池化算子卸载
     ../content/zh/docs/AboutopenGauss/资源池化多机并行
     ../content/zh/docs/AboutopenGauss/基于Dorado存储同步复制的主备双集群容灾
+    ../content/zh/docs/AboutopenGauss/基于流复制的资源池化主备双集群容灾
     ../content/zh/docs/AboutopenGauss/极致RTO按需回放
     ../content/zh/docs/AboutopenGauss/DSS线程池
+    ../content/zh/docs/AboutopenGauss/资源池化可维护性增强

@@ -4,6 +4,8 @@
 
 -   **[Database Statement Execution Functions](database-statement-execution-functions.md)**  
 
+-   **[Large Object Operation Functions](large-object-operation-functions.md)** 
+
 -   **[Functions for Asynchronous Command Processing](functions-for-asynchronous-command-processing.md)**  
 
 -   **[Functions for Canceling Queries in Progress](functions-for-canceling-queries-in-progress.md)**  

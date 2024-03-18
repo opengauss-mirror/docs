@@ -21,6 +21,15 @@
 
 支持schema级、表级、列级设置和修改默认字符集和排序规则。
 
+支持rand(N)/random_bytes(N)函数。
+
+支持使用ASCII/BINARY作为列属性。
+
+支持使用`0x`的方式作为十六进制数输入。
+
+支持MySQL协议兼容，通过MySQL的JDBC driver或者MySQL命令行客户端，直接连接openGauss，通过参数hot_standby、dolphin_hot_standby控制备机的可连接性。
+
+支持B库字符序右模糊匹配时走索引扫描。会将匹配条件转换为大于等于和小于等于两个不等式作为索引条件。
 
 ## 客户价值
 

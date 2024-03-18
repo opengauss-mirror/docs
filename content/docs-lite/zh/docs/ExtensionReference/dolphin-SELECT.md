@@ -49,8 +49,13 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
     |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
-    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+    |(from_item [, ...], from_item)}
     ```
+
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >当开启dolphin.b_compatibility_mode时，table_name后不带as的场景下，只允许接alias，不允许接alias(column_alias)。
+    >即[ (ONLY) ] table_name [ * ] [ partition_clause ] [ AS alias [ ( column_alias [, ...] ) ] | alias ]
 
 - 其中不写FROM 子句的情况等价于：
 

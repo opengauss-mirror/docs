@@ -1,4 +1,4 @@
-# cm\_persit<a name="EN-US_TOPIC_0000001322542352"></a>
+# cm\_persist<a name="EN-US_TOPIC_0000001322542352"></a>
 
 ## Function<a name="section125419154813"></a>
 

@@ -163,13 +163,13 @@ Compared with the original openGauss, Dolphin modifies character processing func
     openGauss=# select hex(b'1111');
      hex
     -----
-     0f
+     0F
     (1 row)
 
     openGauss=# select hex('\n');
      hex
     -------
-     5c6e
+     5C6E
     (1 row)
     ```
 
@@ -803,7 +803,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
   SELECT HEX(COMPRESS('2022-05-12 10:30:00'));
                                 hex                               
   ----------------------------------------------------------------
-   13000000789c33323032d23530d53534523034b03236b032300000240b03a1
+   13000000789C33323032D23530D53534523034B03236B032300000240B03A1
   (1 row)
   ```
 
@@ -863,7 +863,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
   select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
      hex    
   ----------
-   ffbeffbd
+   FFBEFFBD
   (1 row)
 
   select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));

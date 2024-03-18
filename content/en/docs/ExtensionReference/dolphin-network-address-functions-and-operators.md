@@ -92,12 +92,12 @@ openGauss provides network-related functions.
     openGauss=# SELECT HEX(INET6_ATON('fdfe::5a55:caff:fefa:9089'));
                   hex
     ----------------------------------
-     fdfe0000000000005a55cafffefa9089
+     FDFE0000000000005A55CAFFFEFA9089
     (1 row)
      openGauss=# SELECT HEX(INET6_ATON('10.0.5.9'));
        hex
     ----------
-     0a000509
+     0A000509
     (1 row)
     ```
 

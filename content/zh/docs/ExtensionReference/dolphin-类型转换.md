@@ -131,6 +131,8 @@
 |SET|按字符串转换为SET对应Lable的项|转换级别为隐式|
 |JSON|按合法的JSON字符串格式进行转换|转换级别为显式|
 
+- TEXT类型用于数值上下文中，如参与数值运算、与数值进行比较、作为参数传给入参类型为数值的函数，以上场景涉及TEXT类型到数值类型的转换，MySQL对非法格式进行截断处理，不会产生告警。但涉及到TEXT类型数据插入数值类型列时，MySQL会产生告警/报错；openGauss对以上场景均采用更严格的告警/报错。
+
 #### 源类型：BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 
 |目标类型|转换规则描述|备注|
@@ -143,8 +145,8 @@
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|相似类型互转|BINARY/VARBINARY间转换级别为隐式，TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB间转换级别为隐式，其他为赋值|
 |ENUM|用对应字符集解码后，按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|用对应字符集解码后，按字符串转换为SET对应Lable的项|转换级别为赋值|
-|JSON|BANARY转JSON显示为"base64:type254:xxx"<br>VARBANARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
-|BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
+|JSON|BINARY转JSON显示为"base64:type254:xxx"<br>VARBINARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
+|BOOLEAN|BINARY先转换为CHAR类型，VARBINARY先转换为VARCHAR类型，其他先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
 
 #### 源类型：ENUM
 

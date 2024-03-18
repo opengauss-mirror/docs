@@ -2164,6 +2164,16 @@ omm@[local] openGauss=#
 <td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636730"><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636730"></a><a name="zh-cn_topic_0237152146_zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636730"></a>显示一个目前存储在该数据库里的所有openGauss大对象和提供给他们的注释。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_row5164077"><td class="cellrowborder" valign="top" width="28.249999999999996%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636992"><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636992"></a><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636992"></a>\lo_import [FILEPATH]</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059778645_zh-cn_topic_0058968158__p58636731"><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158__p58636731"></a><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636731"></a>导入一个大对象<span id="text5179161743020"><a name="text5179161743020"></a><a name="text5179161743020"></a><span id="text18179111714306"><a name="text18179111714306"></a><a name="text18179111714306"></a>openGauss</span></span> 显示一个目前存储在该数据库里的所有openGauss大对象和提供给他们的注释。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_row5164078"><td class="cellrowborder" valign="top" width="28.249999999999996%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636993"><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636993"></a><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p15636993"></a>\lo_export oid filePath</p>
+</td>
+<td class="cellrowborder" valign="top" width="71.75%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636732"><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636732"></a><a name="zh-cn_topic_0059778645_zh-cn_topic_0058968158_p58636732"></a>导出一个大对象<span id="text5179161743020"><a name="text5179161743020"></a><a name="text5179161743020"></a><span id="text18179111714306"><a name="text18179111714306"></a><a name="text18179111714306"></a>openGauss</span></span> 显示一个目前存储在该数据库里的所有openGauss大对象和提供给他们的注释。</p>
+</td>
+</tr>
 </tbody>
 </table>
 

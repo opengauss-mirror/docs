@@ -34,9 +34,21 @@
 
 备注：
 
-- 输入必须为有效日期，不支持月份或者日期为零值
+- 输入必须为有效日期，不支持月份或者日期为零值，月份或者日期出现为0的时候，表现与mysql在sql_mode中打开NO_ZERO_IN_DATE行为一致，具体表现如下所示：
+
+  | openGuass dolphin.sql_mode配置值                 | 所等价的mysql sql_mode配置值                                 |
+  | ------------------------------------------------ | ------------------------------------------------------------ |
+  | dolphin.sql_mode=’sql_mode_strict，no_zero_date‘ | sql_mode=’STRICT_TRANS_TABLES，NO_ZERO_IN_DATE，NO_ZERO_DATE‘ |
+  | dolphin.sql_mode=’sql_mode_strict‘               | sql_mode=’STRICT_TRANS_TABLES，NO_ZERO_IN_DATE‘              |
+  | dolphin.sql_mode=’no_zero_date‘                  | sql_mode=’NO_ZERO_IN_DATE，NO_ZERO_DATE‘                     |
+  | dolphin.sql_mode=’‘                              | sql_mode=’NO_ZERO_IN_DATE‘                                   |
+
+  
+
 - 由于 MySQL 原本的年份取值范围在 10000 以内，因此由于 MySQL 原本的年份取值范围在 10000 以内，因此如果想要输入大于等于 10000 年份的日期，请使用 'YYYY-MM-DD' 这种格式，例如 '10100-12-12'
-- 允许输入 0000 年，同时在 openGauss 中，认为 0000 年为闰年，可以输入 0000-2-29 (MySQL 不允许)
+
+- openGuass关闭dolphin.sql_mode的no_zero_date时允许输入 0000 年，同时在 openGauss 中，认为 0000 年为闰年，可以输入 0000-2-29 (MySQL 不允许)
+
 - 对于输入值为非法数据场景，dolphin.b_compatibility_mode开启时，显式转换（如select cast('2022-05-05 20:70' as date)）和function转换（如select date('2022-15-05')）场景下返回NULL，dolphin.b_compatibility_mode关闭时则返回0或者错误。
 
 示例(注意下方 openGauss 数据库兼容性为 b)
@@ -122,7 +134,8 @@ openGauss=# SELECT * FROM test_time;
 
 备注：
 
-- 输入必须为有效日期，不支持月份或者日期为零值
+- 输入必须为有效日期，不支持月份或者日期为零值，月份或者日期出现为0的时候，表现与mysql在sql_mode中打开NO_ZERO_IN_DATE行为一致，具体见Date类型。
+- openGuass关闭dolphin.sql_mode的no_zero_date时可以兼容年月日均为0的时间，包括兼容年月日为0但时分秒不为0的datetime。
 - 对于'YYYYMMDDhhmmss' 和 'YYMMDDhhmmss' 格式，只有当字符串长度刚好为 8 或者 14 的时候，才会将字符串前4位字母识别为年的部分，其余都只会将前2位字母识别为年的部分
 - 对于输入为 YYYYMMDDhhmmss 或 YYMMDDhhmmss 格式，输入的整数长度应该为 6/8/12/14 其中之一，如果长度不满足这个要求，则相当于往整数前方添加零，直到长度符合 6/8/12/14 其中之一(长度为6对应为YYMMDD格式，长度为8对应为YYYYMMDD格式，长度为12对应为YYMMDDhhmmss格式，长度为14对应为YYYYMMDDhhmmss格式)
 - 类似兼容后的 date 类型，如果要想输入年份大于等于 10000 的时间戳，请使用 'YYYY-MM-DD hh:mm:ss\[.frac\]' 这种格式
@@ -164,7 +177,8 @@ openGauss=# SELECT * FROM test_datetime;
 
 备注：
 
-- 输入必须为有效日期，不支持月份或者日期为零值
+- 输入必须为有效日期，不支持月份或者日期为零值，月份或者日期出现为0的时候，表现与mysql在sql_mode中打开NO_ZERO_IN_DATE行为一致，具体见Date类型。
+- openGuass关闭dolphin.sql_mode的no_zero_date时可以兼容年月日均为0的时间，包括兼容年月日为0但时分秒不为0的timestamp。
 - 兼容的 timestamp 类型允许在格式'YYYY-MM-DD hh:mm:ss\[.frac\]'后面带上时区的偏移信息\[+/-hh:mm:ss\]
 - 类似兼容后的 date 类型，如果要想输入年份大于等于 10000 的时间戳，请使用 'YYYY-MM-DD hh:mm:ss\[.frac\]' 这种格式
 - 注意，timestamp 类型在 MySQL 一端为不带时区的时间戳，而在 openGauss 一端为带时区的时间戳，实际上兼容后 timestamp 类型在内部会使用 timestamptz 类型存储，请用户在使用前注意这种区别，如想使用不带时区的时间戳，可以使用 datetime 类型。
