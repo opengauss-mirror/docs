@@ -276,7 +276,7 @@
 
 **取值范围**：整型。0：ETCD；1：DCC；2：share disk。修改后需要重启cm\_server才能生效。参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
 
-**默认值**：传统集群（0），资源池化（2）
+**默认值**：1
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 >（opengauss只支持DCC或者share disk模式）。
