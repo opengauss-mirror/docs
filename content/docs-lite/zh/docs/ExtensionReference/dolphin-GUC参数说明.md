@@ -409,6 +409,7 @@ dayname
 9. [DROP DATABASE](dolphin-DROP-DATABASE.md)
 10. [SELECT](dolphin-SELECT.md)
 11. IS [NOT] UNKNOWN子句：该子句含义为判断是否为空，参数控制是否转换为bool类型之后再判断。ON表示不转换，OFF表示转换。
+12. [布尔类型](dolphin-布尔类型.md)
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
