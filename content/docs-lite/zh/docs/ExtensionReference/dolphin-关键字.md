@@ -33,6 +33,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 16. 改变关键字```RECYCLEBIN、NOTNULL、BODY```由保留（可以是函数或类型）变为非保留关键字。
 17. 移除关键字```ANALYSE、BUCKETS、ROWNUM、EXCLUDED、MINUS```。
 18. 移除关键字```COMPACT```，由保留（可以是函数或类型）调整为非关键字。
+19. 新增关键字```WEEK_P```。
 
 **表 1**  SQL关键字
 
@@ -8019,6 +8020,15 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="p1186914583253"><a name="p1186914583253"></a><a name="p1186914583253"></a>-</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p186975819256"><a name="p186975819256"></a><a name="p186975819256"></a>-</p>
+</td>
+</tr>
+<tr id="row4124237174610"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p10124437104611"><a name="p10124437104611"></a><a name="p10124437104611"></a>WEEK_P</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p012423724611"><a name="p012423724611"></a><a name="p012423724611"></a>非保留</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="p12124123717465"><a name="p12124123717465"></a><a name="p12124123717465"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p181244379466"><a name="p181244379466"></a><a name="p181244379466"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row9976675"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p371151"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p371151"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p371151"></a>WHEN</p>
