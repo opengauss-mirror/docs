@@ -284,7 +284,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-z</p>
 </td>
 <td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>将主机切换到-z参数指定的AZ。</p>
-<div class="note" id="note2022865851012"><a name="note2022865851012"></a><a name="note2022865851012"></a><span class="notetitle"> 注意： </span><div class="notebody"><a name="ul1722865861017"></a><a name="ul1722865861017"></a><ul id="ul1722865861017"><li>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pgxc_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</li>
+<div class="note" id="note2022865851012"><a name="note2022865851012"></a><a name="note2022865851012"></a><span class="notetitle"> 注意： </span><div class="notebody"><a name="ul1722865861017"></a><a name="ul1722865861017"></a><ul id="ul1722865861017"><li>switchover为维护操作：确保数据库实例状态正常，所有业务结束，并使用pg_get_senders_catchup_time()视图查询无主备追赶后，再进行switchover操作。</li>
 </div></div>
 </td>
 </tr>
