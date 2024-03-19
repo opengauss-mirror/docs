@@ -48,6 +48,7 @@ headless: true
          	-   [子事务并发回滚流程优化]({{< relref "./docs/AboutopenGauss/子事务并发回滚流程优化.md" >}})
          	-   [大页内存]({{< relref "./docs/AboutopenGauss/大页内存.md" >}})
          	-   [堆表支持预读]({{< relref "./docs/AboutopenGauss/堆表支持预读.md" >}})
+         	-   [开箱即用]({{< relref "./docs/AboutopenGauss/开箱即用.md" >}})
 	    -   [高可用]({{< relref "./docs/AboutopenGauss/高可用.md" >}})
 	    	-   [主备机]({{< relref "./docs/AboutopenGauss/主备机.md" >}})
 	    	-   [逻辑复制]({{< relref "./docs/AboutopenGauss/逻辑复制.md" >}})

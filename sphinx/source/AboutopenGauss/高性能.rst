@@ -20,3 +20,4 @@
     ../content/zh/docs/AboutopenGauss/子事务并发回滚流程优化
     ../content/zh/docs/AboutopenGauss/大页内存
     ../content/zh/docs/AboutopenGauss/堆表支持预读
+    ../content/zh/docs/AboutopenGauss/开箱即用
