@@ -279,7 +279,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-f</p>
 </td>
-<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>指定进行-f类型switchover。使用方式：cm_ctl switchover -n NODEID -D DATADIR -f。</p>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p1722775811018"><a name="p1722775811018"></a><a name="p1722775811018"></a>指定进行-f类型switchover。不等待客户端中断连接，所有活跃事务都被回滚并且客户端都被强制断开，然后服务器将被切换，且不做checkpoint。使用方式：cm_ctl switchover -n NODEID -D DATADIR -f。</p>
 </tr>
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-z</p>
 </td>
