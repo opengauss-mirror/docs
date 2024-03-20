@@ -1,8 +1,8 @@
 # Schema<a name="ZH-CN_TOPIC_0000001190922647"></a>
 
-的Schema如下表所示。
+openGauss支持的Schema如下表所示。
 
-**表 1**  支持的Schema
+**表 1**  openGauss支持的Schema
 
 <a name="table167371825175015"></a>
 <table><thead align="left"><tr id="row1737325195017"><th class="cellrowborder" valign="top" width="18.18%" id="mcps1.2.3.1.1"><p id="p2737152535018"><a name="p2737152535018"></a><a name="p2737152535018"></a>Schema名称</p>
@@ -77,6 +77,11 @@
 <tr id="row1468517540103"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p2714747103516"><a name="p2714747103516"></a><a name="p2714747103516"></a>dbe_pldeveloper</p>
 </td>
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p871412470352"><a name="p871412470352"></a><a name="p871412470352"></a>用户存储过程编译调试。</p>
+</td>
+</tr>
+<tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>proc_coverage</p>
+</td>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>用于记录存储过程覆盖率相关信息。</p>
 </td>
 </tr>
 </tbody>

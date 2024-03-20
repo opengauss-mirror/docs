@@ -1,6 +1,6 @@
 # Schema
 
-openGauss的Schema如下表所示。
+openGauss支持的Schema如下表所示。
 
 **表 1**  openGauss支持的Schema
 
@@ -69,6 +69,11 @@ openGauss的Schema如下表所示。
 <tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>pkg_service</p>
 </td>
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>用于管理package服务相关信息。</p>
+</td>
+</tr>
+<tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>proc_coverage</p>
+</td>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>用于记录存储过程覆盖率相关信息。</p>
 </td>
 </tr>
 </tbody>
