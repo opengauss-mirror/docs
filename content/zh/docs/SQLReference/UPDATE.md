@@ -151,6 +151,15 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   LIMIT子句
 
     关键字详见[SELECT](SELECT.md)一节介绍
+
+-   **RETURNING**
+
+    返回实际更新的行，RETURNING列表的语法与SELECT的输出列表一致。
+
+    ```
+    [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ]
+    ```
+
 -   **output\_expression**
 
     在所有需要更新的行都被更新之后，UPDATE命令用于计算返回值的表达式。
@@ -182,6 +191,9 @@ openGauss=# SELECT * FROM student1;
 
 --直接更新所有记录的值。
 openGauss=# UPDATE student1 SET classno = classno*2;
+
+--直接更新所有记录的值并返回记录。
+openGauss=# UPDATE student1 SET classno = classno/2 RETURNING *;
 
 --查看数据。
 openGauss=# SELECT * FROM student1;
