@@ -4,3 +4,4 @@
 .. toctree::
 
     ../content/zh/docs/AboutopenGauss/gs_collector适配资源池化
+    ../content/zh/docs/AboutopenGauss/DMS资源统计视图
