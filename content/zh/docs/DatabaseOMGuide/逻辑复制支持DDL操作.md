@@ -33,11 +33,7 @@ CREATE PUBLICATION pub_name FOR ALL TABLES with(publish='insert,update,delete,tr
 
 - **ddl='table'**
 
-    `ddl='table'`为语法扩充，表示支持TABLE相关的DDL语法。如果需要其他DDL语法，则设置`ddl='all'`。
-
-    ><div><img src="image/img1.png" style="zoom:75%"></div>
-    >
-    >在设置`ddl='all'`时，只允许`FOR ALL TABLES`选项。
+    `ddl='table'`为语法扩充，表示支持TABLE相关的DDL语法。如果需要其他DDL语法，则设置`ddl='all'`。在设置`ddl='all'`时，只允许`FOR ALL TABLES`选项。
 
 
 ## 示例
@@ -108,9 +104,7 @@ SELECT * FROM pg_publication;
 
 4、在从库创建订阅(一定要保证先创建发布端)。
 
-><div><img src="image/img1.png" style="zoom:75%"></div>
->
->创建订阅时指定的端口应为主库端口+1。用户应该对连接信息做相应修改。
+创建订阅时指定的端口应为主库端口+1。用户应该对连接信息做相应修改。
 
 ```sql
 CREATE SUBSCRIPTION sub1 CONNECTION 'host=xxx.xx.xxx.xxx port=xxxx user=vbadmin dbname=dzy_soudb password=xxxxxx' PUBLICATION pub1;
