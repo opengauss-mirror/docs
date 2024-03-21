@@ -106,7 +106,7 @@
         {{ $lang := .Site.LanguageCode}}
         {{ partial "nav.html" . }}
         <div class="mask-mobile"></div>
-        <div class="book-page container map-page" id="page">
+        <main class="book-page container map-page" id="page">
             <div class="page-content">
               {{ range where $.Page.Site.Pages "Type" "docmap" }}
               <div class="doc-map">
@@ -129,10 +129,10 @@
               </div>
               {{ end }}
             </div>
-            <aside class="book-toc map-aside">
+            <div class="book-toc map-aside">
               <ul id="toc-list"></ul>
-            </aside>
-        </div>
+            </div>
+        </main>
         {{ partial "float-mobile.html" . }}
         {{ partial "pcfooter.html" . }}
       </div>

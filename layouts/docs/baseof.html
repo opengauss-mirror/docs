@@ -75,7 +75,7 @@
               </ul>
         </div>
         <div class="mask-mobile"></div>
-        <div class="book-page container" id="page">
+        <main class="book-page container" id="page">
             <div class="page-content">
               <div class="docs-a docs-a-mobile">
                 <a class="jstree-anchor" href="/{{ .Site.LanguageCode }}/">
@@ -87,13 +87,13 @@
                 {{ partial "turn.html"}}
                 {{ partial "inside-nav.html"}}
             </div>
-            <aside class="book-toc">
+            <div class="book-toc">
               <ul id="toc-list"></ul>
-            </aside>
+            </div>
             <div class="date-box">
              openGauss {{.Date.Format "2006-01-02 15:04:05"}}
             </div>
-        </div>
+        </main>
             {{ partial "pcfooter.html" . }}
       </div>
       <div class="mask-search-mobile"></div>
