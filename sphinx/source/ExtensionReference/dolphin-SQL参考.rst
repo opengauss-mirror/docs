@@ -11,3 +11,4 @@ SQL参考
     ../content/zh/docs/ExtensionReference/dolphin-DML语法一览表
     ../content/zh/docs/ExtensionReference/dolphin-DCL语法一览表
     dolphin-SQL语法
+    dolphin-at-variable变量
