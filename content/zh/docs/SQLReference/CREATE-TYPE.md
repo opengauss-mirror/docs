@@ -84,6 +84,10 @@ CREATE TYPE name AS TABLE OF data_type
 
 复合类型
 
+-   **OR REPLACE**
+
+    如果已存在同名类型，则替换它而不是创建一个新类型。
+
 -   **name**
 
     要创建的类型的名称（可以被模式限定）。
