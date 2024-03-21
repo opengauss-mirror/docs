@@ -127,6 +127,15 @@ DELETE [/*+ plan_hint */]
 -   LIMIT子句
 
     关键字详见[SELECT](SELECT.md)一节介绍
+
+-   **RETURNING**
+
+    返回实际删除的行，RETURNING列表的语法与SELECT的输出列表一致。
+
+    ```
+    [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ]
+    ```
+
 -   **output\_expr**
 
     DELETE命令删除行之后计算输出结果的表达式。该表达式可以使用表的任意字段。可以使用\*返回被删除行的所有字段。
@@ -146,6 +155,9 @@ openGauss=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_addr
 
 --删除tpcds.customer_address_bak中ca_address_sk小于14888的职员。
 openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 14888;
+
+--删除tpcds.customer_address_bak中ca_address_sk小于20000的职员并返回记录。
+openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 20000 RETURNING *;
 
 --删除tpcds.customer_address_bak中所有数据。
 openGauss=# DELETE FROM tpcds.customer_address_bak;
