@@ -136,6 +136,10 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
 
     返回实际插入的行，RETURNING列表的语法与SELECT的输出列表一致。注意：INSERT ON DUPLICATE KEY UPDATE不支持RETURNING子句。
 
+    ```
+    [ RETURNING {* | {output_expression [ [ AS ] output_name ] }[, ...]} ]
+    ```
+
 -   **output\_expression**
 
     INSERT命令在每一行都被插入之后用于计算输出结果的表达式。
@@ -196,6 +200,9 @@ openGauss=# CREATE UNIQUE INDEX reason_t2_u_index ON tpcds.reason_t2(r_reason_sk
 --向表中插入多条记录，如果冲突则更新冲突数据行中r_reason_id字段为'BBBBBBBBCAAAAAAA'。
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5'),(6, 'AAAAAAAADAAAAAAA', 'reason6') ON DUPLICATE KEY UPDATE r_reason_id = 'BBBBBBBBCAAAAAAA';
 
+--向表中插入并返回一条记录。
+openGauss=# INSERT INTO tpcds.reason_t2 VALUES (7, 'AAAAAAAABAAAAAAA', 'reason7') RETURNING *;
+
 --删除表tpcds.reason_t2。
 openGauss=# DROP TABLE tpcds.reason_t2;
 ```
@@ -208,6 +215,7 @@ CREATE DATABASE mydb_b WITH DBCOMPATIBILITY 'B';
 CREATE TABLE test_order_t(n1 INT DEFAULT 100, n2 INT DEFAULT 100, s INT);
 INSERT INTO test_order_t VALUES(1000, 1000, n1 + n2);
 INSERT INTO test_order_t(s, n1, n2) VALUES(n1 + n2, 300,  300);
+INSERT INTO test_order_t(s, n1, n2) VALUES(300, 300, 300) RETURNING *;
 SELECT * FROM test_order_t;
 
 --  ON DUPLICATE KEY UPDATE右值引用示例：

@@ -418,7 +418,7 @@ dayname
 -   on表示使用新增兼容性功能。
 -   off表示关闭兼容性功能，使用内核原有功能。
 
-**默认值**：off
+**默认值**：on
 
 ## version_comment<a name="section203671436826"></a>
 
