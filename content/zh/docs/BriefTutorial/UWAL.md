@@ -7,7 +7,7 @@
 
 ## 安装准备
 ### 获取安装包
-请通过openGauss社区获取UWAL安装包：Link。
+请通过openGauss社区RM SIG获取UWAL安装包。
 ### 环境要求
 
 <a name="table9128736162712"></a>
