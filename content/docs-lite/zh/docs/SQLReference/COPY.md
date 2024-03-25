@@ -24,27 +24,40 @@ COPY FROM从一个文件拷贝数据到一个表，COPY TO把一个表的数据�
 
 ## 语法格式<a name="zh-cn_topic_0283136676_zh-cn_topic_0237122096_zh-cn_topic_0059778766_s85a73a9ad894403da754c5d6b3d8210f"></a>
 
-- 从一个文件拷贝数据到一个表。
+- 从一个文件复制数据到一个表。
+  ```
+    COPY table_name [ ( column_name [, ...] ) ]
 
-  ```
-  COPY table_name [ ( column_name [, ...] ) ]
-      FROM { 'filename' | STDIN }
-      [ [ USING ] DELIMITERS 'delimiters' ]
-      [ WITHOUT ESCAPING ]
-      [ LOG ERRORS ]
-      [ LOG ERRORS DATA ]
-      [ REJECT LIMIT 'limit' ]
-      [ [ WITH ] ( option [, ...] ) ]
-      | copy_option
-      | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ]
-      | [ TRANSFORM ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] ) ];
-  ```
+    FROM { 'filename' | STDIN }
+
+    [ [ USING ] DELIMITERS 'delimiters' ]
+
+    [ WITHOUT ESCAPING ]
+
+    [ LOG ERRORS ]
+
+    [ LOG ERRORS DATA ]
+
+    [ REJECT LIMIT 'limit' ]
+
+    [ [ WITH ]
+
+        ( option [, ...] )
+
+        | ( copy_option [, ...] )
+
+        | [ TRANSFORM ( { column_name [ data_type ] [ AS transform_expr ] } [, ...] ) ]
+
+        | [ FIXED FORMATTER ( { column_name( offset, length ) } [, ...] ) ]
+
+    ]
+    ```
+
+  
 
   >![](public_sys-resources/icon-note.gif) **说明：** 
   >
-  >+  fixed formatter与copy_option语法兼容，与 option语法不兼容。
-  >+ copy_option和option语法不兼容。
-  >+ transfrom可以和copy_option、fixed formatter配合使用。
+  >+  上述语法中fixed formatter与copy_option语法兼容、与option语法不兼容；copy_option与option语法不兼容；transform与copy_option、fixed formatter语法兼容。
 
 -   把一个表的数据拷贝到一个文件。
 
