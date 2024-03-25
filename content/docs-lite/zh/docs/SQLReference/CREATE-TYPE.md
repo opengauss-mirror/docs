@@ -43,10 +43,10 @@
 ## 语法格式<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE TYPE name AS
+CREATE [OR REPLACE] TYPE name AS
     ( [ attribute_name data_type [ COLLATE collation ] [, ... ] ] )
 
-CREATE TYPE name (
+CREATE [OR REPLACE] TYPE name (
     INPUT = input_function,
     OUTPUT = output_function
     [ , RECEIVE = receive_function ]
@@ -81,6 +81,10 @@ CREATE TYPE name AS TABLE OF data_type
 ## 参数说明<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
 复合类型
+
+-   **OR REPLACE**
+
+    如果已存在同名类型，则替换它而不是创建一个新类型。
 
 -   **name**
 
