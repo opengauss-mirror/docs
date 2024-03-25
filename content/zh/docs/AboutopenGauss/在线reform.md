@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section15406143204715"></a>
 
-本特性自openGauss 6.0.0版本开始引入，仅适用于资源池化架构。
+本特性自openGauss 6.0.0-RC1版本开始引入，仅适用于资源池化架构。
 
 ## 特性简介<a name="section740615433477"></a>
 
@@ -31,7 +31,7 @@ reformer锁由CM（集群资源管理软件，Cluster Manager）提供，各个D
 对于复杂场景，例如主节点被踢出集群+新节点（备机）加入，根据reformer锁信息出现了节点间的变化，由failover reform处理。例如备机故障重启+（另一个备机）被踢出，reformer信息没有出现变化，属于normal reform。
 对于swithover reform是由一个稳定集群下进行，在叠加故障下，不会进行switchover。对于full clean reform，如果出现叠加故障，根据锁信息的是否变更，由failover reform或者normal reform进行处理。
 
-在6.0.0版本之前，所有场景下的reform需要集群中所有节点中断业务，对应的业务线程全部退出。这一做法影响业务的运行，对此我们提出**在线reform**。
+在6.0.0-RC1版本之前，所有场景下的reform需要集群中所有节点中断业务，对应的业务线程全部退出。这一做法影响业务的运行，对此我们提出**在线reform**。
 
 在线的含义：在reform过程中，非故障的节点在reform前进行的业务不会因为发生reform而被中断，在reform结束后可以继续运行。
 

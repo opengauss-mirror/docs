@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section56086982"></a>
 
-本特性自openGauss 6.0.0版本开始引入。
+本特性自openGauss 6.0.0-RC1版本开始引入。
 
 ## 特性简介<a name="section35020791"></a>
 
@@ -26,7 +26,7 @@ openGauss的安装流程中，在预安装的时候使用的是root用户，到�
 
 ## 特性增强<a name="section28788730"></a>
 
-自openGauss 6.0.0版本，用户可以使用普通用户来安装，校验，扩容数据库，这在一定程度上解决了普通用户没有root用户权限的问题；当然了对于以前使用root操作也可以进行了保留。
+自openGauss 6.0.0-RC1版本，用户可以使用普通用户来安装，校验，扩容数据库，这在一定程度上解决了普通用户没有root用户权限的问题；当然了对于以前使用root操作也可以进行了保留。
 
 本次适配涉及的工具有：gs_preinstall，gs_checkos，gs_expansion。
 
