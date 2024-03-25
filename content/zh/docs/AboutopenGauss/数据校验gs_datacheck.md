@@ -29,7 +29,7 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对MySQL至ope
 
 - 自openGauss 5.1.0版本 数据校验工具支持源端是openGauss的校验，包括全量校验与增量校验。
 - 自openGauss 5.1.0版本 表记录抽取任务分片规则进行优化，实现抽取校验性能的提升。（ 在50张表每张表1千万记录场景下，校验性能使用sysbench模型以及t_datacheck_templete模型，校验速率达到20万条/秒，其中使用t_datacheck_templete模型可以达到（150+M/s） ）（具体模型参考 **https://gitee.com/opengauss/openGauss-tools-datachecker-performance**中《校验工具使用指导.md 》7.1章节，表设计）
-- 自openGauss 5.1.1版本 数据校验实现大表分片校验，提升抽取校验整体性能。具体参数配置参考《校验工具使用指导》( **https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md**）中7.4章节的数据校验调优配置。
+- 自openGauss 6.0.0-RC1版本 数据校验实现大表分片校验，提升抽取校验整体性能。具体参数配置参考《校验工具使用指导》( **https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md**）中7.4章节的数据校验调优配置。
 
 ## 特性约束<a name="section06531946143616"></a>
 
