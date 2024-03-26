@@ -1551,7 +1551,7 @@ CONTEXT:  referenced column: subdate
 
 - timestampdiff\(unit,datetime expr1,datetime expr2\)
 
-  描述：函数返回两个日期参数expr2 - expr1的值，这两个参数都有可能是datetime或者是date，如果参数是date，则认为时间部分为0。计算差值之后，将计算结果转换成指定单位显示。unit有以下值：MICROSECOND , SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, 或者是 YEAR。当输入参数不合法时，此函数返回NULL。
+  描述：函数返回两个日期参数expr2 - expr1的值，这两个参数都有可能是datetime或者是date，如果参数是date，则认为时间部分为0。计算差值之后，将计算结果转换成指定单位显示。unit有以下值：MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, YEAR, SQL_TSI_SECOND, SQL_TSI_MINUTE, SQL_TSI_HOUR, SQL_TSI_DAY, SQL_TSI_WEEK, SQL_TSI_MONTH, SQL_TSI_QUARTER, SQL_TSI_YEAR。当输入参数不合法时，此函数返回NULL。
 
   返回值类型：bigint（代表以指定单位显示的差值）
 
