@@ -176,7 +176,7 @@ Using omm:dbgrp to install database.
 Using installation program path : /data/omm/openGauss/app
 Command for creating symbolic link: ln -snf /data/omm/openGauss/app_452e573e /data/omm/openGauss/app.
 Decompressing bin file.
-Decompress CM package command: export LD_LIBRARY_PATH=$GPHOME/script/gspylib/clib:$LD_LIBRARY_PATH && tar -zxf "/data/omm/openGauss/tool/script/os_platform/./../../openGauss-6.0.0-CentOS-64bit-cm.tar.gz" -C "/data/omm/openGauss/app"
+Decompress CM package command: export LD_LIBRARY_PATH=$GPHOME/script/gspylib/clib:$LD_LIBRARY_PATH && tar -zxf "/data/omm/openGauss/tool/script/os_platform/./../../openGauss-x.x.x-CentOS-64bit-cm.tar.gz" -C "/data/omm/openGauss/app"
 Decompress CM package successfully.
 Successfully decompressed bin file.
 Modifying Alarm configuration.
