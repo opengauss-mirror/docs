@@ -51,12 +51,25 @@
 
 -   treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
 
-    |语句|不设置treat_bxconst_as_binary表现|设置treat_bxconst_as_binary表现|Mysql表现|
-    |---|---|---|---|
-    |select b'110010'|50|'2'|2|
-    |select conv(b'110010', 16, 10)|50|2|2|
-    |select b'110010' + 1;|51|3|51|
-    |create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit;|12850|34|12850|
+    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql表现 |
+    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- |
+    | select b'110010'                                             | 50                                | '2'                             | 2         |
+    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         |
+    | select b'110010' + 1;                                        | 51                                | 3                               | 51        |
+    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 34                              | 12850     |
+    
+- not_escape_zero_in_binary：对于binary类型是否取消将\0字符转义成\000字符输出，该参数只影响JDBC的输出结果，具体表现如下所示：
+
+  ```
+  select cast('2024' as binary(10))
+  --开启not_escape_zero_in_binary时候的输出结果结果如下：
+  32303234000000000000
+  
+  --关闭not_escape_zero_in_binary时候的输出结果结果如下：
+  323032345C3030305C3030305C3030305C3030305C3030305C303030
+  ```
+
+
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
