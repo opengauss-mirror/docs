@@ -64,7 +64,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES [IN] (list_values_clause)] opt_table_space )}
+        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES [IN] (list_values_clause)] opt_table_space [part_option [ ...]])}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
     [create_option]
 
@@ -76,6 +76,16 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     [ ENGINE [=] engine_name ]
 	除了WITH选项外允许输入多次同一种create_option，以最后一次的输入为准。
 ```
+
+其中参数part_option为：
+
+  ```
+  part_option:{
+          COMMENT [=] 'string'
+        | [STORAGE] ENGINE [=] engine_name
+  }
+  ```
+
 
 -   列约束column\_constraint：
 
@@ -159,7 +169,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   partition\_less\_than\_item：
 
     ```
-    PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) | MAXVALUE [TABLESPACE tablespace_name]
+    PARTITION partition_name VALUES LESS THAN ( { partition_value | MAXVALUE } ) | MAXVALUE [TABLESPACE tablespace_name] [part_option [ ...]]
     ```
 
 -   partition\_start\_end\_item：
@@ -170,7 +180,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
             {START(partition_value) END ({partition_value | MAXVALUE}) | MAXVALUE} |
             {START(partition_value)} |
             {END ({partition_value | MAXVALUE}) | MAXVALUE}
-    } [TABLESPACE tablespace_name]
+    } [TABLESPACE tablespace_name] [part_option [ ...]]
     ```
 
 
