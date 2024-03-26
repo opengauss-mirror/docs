@@ -257,19 +257,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     -   TABLESAMPLE  _sampling\_method_  \(  _argument_  \[, ...\] \) \[ REPEATABLE \(  _seed_  \) \]
 
-        _table\_name_ 之后的TABLESAMPLE子句表示应该用指定的 _sampling\_method_ 来检索表中行的子集。_sampling\_method_ 可以被指定为以下方法：
+        _table\_name_ 之后的TABLESAMPLE子句表示应该用指定的 _sampling\_method_ 来检索表中行的子集。
 
-        - bernoulli，按行采样。
-        - system，按块(页)采样。
-        - hybrid，混合采样，_argument_ 可以分别指定按行采样和按块(页)采样的百分比。
-      
-        其中bernoulli方法对应O\*兼容性的SAMPLE子句；system方法对应O\*兼容性的SAMPLE BLOCK子句；
-        
-        _argument_ 部分用来指定采样百分比，取值范围是`[0.000001,100)`。
-
-        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的种子值，种子值的取值范围是`[0,4294967295]`，对应O\*兼容性的SEED子句。如果查询时表没有被更改，指定相同种子和 _argument_ 值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
-
-        _table\_name_ 可以是普通表，分区表，普通视图，物化视图和键保留（key-preserved）的连接视图；普通视图指在单表上查询创建的视图；键保留的连接视图指对键保留表进行连接操作后创建的视图，但不支持对包含超过一个非键保留表的连接视图进行数据采样。
+        可选的REPEATABLE子句指定一个用于产生采样方法中随机数的 _种子_ 数。种子值可以是任何非空常量值。如果查询时表没有被更改，指定相同种子和 _argument_ 值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
 
     -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
 
