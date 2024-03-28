@@ -22,7 +22,7 @@ gs_mysync工具全量数据导入支持两种方式：(1) 从MySQL库查询数�
 
 ## 特性增强<a name="section28788730"></a>
 
-无。
+- 自openGauss 6.0.0-RC1版本，全量迁移支持与数据校验协同进行，在进行多表迁移时，单个表迁移完成后即可进行数据校验，缩短整体迁移校验时间。该特性全量迁移侧详细信息可参考<a href="https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a> 中参数with_datacheck相关描述。
 
 ## 特性约束<a name="section06531946143616"></a>
 
