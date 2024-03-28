@@ -108,6 +108,7 @@ headless: true
 			-   [资源池化可维护性增强]({{< relref "./docs/AboutopenGauss/资源池化可维护性增强.md" >}})
                 -   [gs_collector适配资源池化]({{< relref "./docs/AboutopenGauss/gs_collector适配资源池化.md" >}})
 				-   [DMS资源统计视图]({{< relref "./docs/AboutopenGauss/DMS资源统计视图.md" >}})
+				-   [gs_probackup适配资源池化]({{< relref "./docs/AboutopenGauss/gs_probackup适配资源池化.md" >}})
 			-   [在线reform]({{< relref "./docs/AboutopenGauss/在线reform.md" >}})
 			-   [MES worker线程池化]({{< relref "./docs/AboutopenGauss/MES-worker线程池化.md" >}})
 		-   [企业级特性]({{< relref "./docs/AboutopenGauss/企业级特性.md" >}})
