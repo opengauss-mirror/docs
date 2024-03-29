@@ -117,6 +117,18 @@ DataKit是基于Web的openGauss的可视化的平台系统，目的是方便客�
 <td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/openGauss-tools-monitor">openGauss-tools-monitor</a></td>
 <td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/openGauss-tools-monitor/README.md ">openGauss-tools-monitor使用说明</a></td>
 </tr>
+<tr> 
+<td>兼容性评估插件</td>
+<td>支持从多个场景下获取sql语句进行兼容性评估，并输出评估报告</td>
+<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/compatibility-assessment">compatibility-assessment</a></td>
+<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/compatibility-assessment/README.md ">compatibility-assessment使用说明</a></td>
+</tr>
+<tr> 
+<td>数据库智能参数调优插件</td>
+<td>负载特征分析、负载生成、离线调优、在线调优、优化opengauss数据库的参数配置</td>
+<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/intelligent-parameter-tuning"> intelligent-parameter-tuning</a></td>
+<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/intelligent-parameter-tuning/README.md "> intelligent-parameter-tuning使用说明</a></td>
+</tr>
 </tbody>
 </table>
 
