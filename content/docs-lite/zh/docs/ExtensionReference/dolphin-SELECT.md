@@ -18,6 +18,12 @@ SELECT语句就像叠加在数据库表上的过滤器，利用SQL关键字从�
 
 -   新增FROM DUAL 语法，含义等同于不写FROM子句，是为了满足那些要求所有SELECT语句都应该包含FROM的情况。
 
+-   SELECT语法的output_name部分名称，可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
+
+-   在openGauss中，支持a!作为阶乘计算，这种计算在MySQL并未支持，与关键字不带引号作为别名存在实现冲突，后续dolphin中放弃支持。
+
+-   SELECT语法中的from_item部分，表的别名也可以在不带引号不使用AS的情况下，使用关键字作为别名。此处关键字可用范围由于实现差异与MySQL比较尚存差异，详细的不一致列表参考文末说明。
+
 ## 语法格式<a name="zh-cn_topic_0283136463_zh-cn_topic_0237122184_zh-cn_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
 -   查询数据
@@ -590,7 +596,61 @@ DROP SCHEMA
 openGauss=# reset current_schema;
 RESET
 ```
+## 不带引号不带AS情况下，关键字作为别名的限制
 
+除了本身不在MySQL中作为别名可以支持的范围之外，额外还有以下关键字不支持在不带引号不带AS的状况下作为别名：
+
+列别名目前不支持的范围：
+
+- any
+- cube
+- day
+- dumpfile
+- except
+- formatter
+- function
+- hour
+- include
+- intersect
+- grouping
+- minute
+- month
+- prior
+- proxy
+- routine
+- row_format
+- rows
+- second
+- system
+- tablespace
+- target
+- time_format
+- timestamp_format
+- warnings
+- window
+- within
+- without
+- year
+- current_schema
+- overlaps
+- array
+- asymmetric
+- offset
+- returning
+- symmetric
+
+表别名目前不支持的范围：
+
+- except
+- intersect
+- window
+- tablesample
+- timecapsule
+- array
+- asymmetric
+- offset
+- returning
+- symmetric
 ## 相关链接<a name="section156744489391"></a>
 
 [SELECT](../SQLReference/SELECT.md)
