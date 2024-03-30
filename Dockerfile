@@ -111,6 +111,17 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/5.1.0-lite/ && \
     cp -rf /src/5.1.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.1.0-lite/ && \
 
+    git clone -b 6.0.0-RC1 https://gitee.com/opengauss/docs 6.0.0-RC1/docs && \
+    mkdir -p /src/website/content/zh/docs/6.0.0-RC1 && \
+    cp -rf /src/6.0.0-RC1/docs/content/zh/* /src/website/content/zh/docs/6.0.0-RC1 && \
+    mkdir -p /src/website/content/en/docs/6.0.0-RC1 && \
+    cp -rf /src/6.0.0-RC1/docs/content/en/* /src/website/content/en/docs/6.0.0-RC1 && \
+
+    mkdir -p /src/website/content/zh/docs/6.0.0-RC1-lite/ && \
+    cp -rf /src/6.0.0-RC1/docs/content/docs-lite/zh/* /src/website/content/zh/docs/6.0.0-RC1-lite/ && \
+    mkdir -p /src/website/content/en/docs/6.0.0-RC1-lite/ && \
+    cp -rf /src/6.0.0-RC1/docs/content/docs-lite/en/* /src/website/content/en/docs/6.0.0-RC1-lite/ && \
+
     cd /src/website && hugo -b / --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html && \
