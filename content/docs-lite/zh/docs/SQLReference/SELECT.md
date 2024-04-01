@@ -401,6 +401,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **CONNECT BY子句**
 
     CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR KEY SHARE/SHARE/NO KEY UPDATE/UPDATE锁）
+    除此之外，PRIOR关键字还可以用在目标列中，允许用户通过目标列获取上一层的值。
     ```
     openGauss=# create table test(name varchar, id int, fatherid int);
     openGauss=# insert into test values('A', 1, 0), ('B', 2, 1), ('C', 3, 1), ('D', 4, 1), ('E', 5, 2);
@@ -413,6 +414,17 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     B    |  2 |        1
     E    |  5 |        2
     (5 rows)
+
+    select prior name as father, name as son, prior id as father_id, id as son_id, fatherid as fatherid_in_tab from test start with id = 1 connect by prior id = fatherid order siblings by id desc;
+    father | son | father_id | son_id | fatherid_in_tab
+    --------+-----+-----------+--------+-----------------
+            | A   |           |      1 |               0
+    A      | D   |         1 |      4 |               1
+    A      | C   |         1 |      3 |               1
+    A      | B   |         1 |      2 |               1
+    B      | E   |         2 |      5 |               2
+    (5 rows)
+
     ```
     Start with语句的执行流程是：
     1. 由 start with 区域的条件选择初始的数据集。上述例子里，先把 ('A', 1, 0) 选择出来。然后把初始的数据集设置为工作集。
