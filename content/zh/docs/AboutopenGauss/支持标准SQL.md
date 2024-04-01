@@ -22,6 +22,8 @@ openGauss数据库支持SQL:2011大部分的核心特性，同时还支持部分
 
 支持ALTER TABLE语句修改表字段和引用视图解耦。
 
+支持SELECT语句支持TABLESAMPLE子句实现数据采样。
+
 ## 特性约束<a name="section06531946143616"></a>
 
 无。
