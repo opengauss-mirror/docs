@@ -368,4 +368,32 @@
     >-   xpath相关函数仅支持 xpath\(\) 和 xpath\_exists\(\)、由于其使用xpath语言查询XML文档，而这些函数都依赖于libxml2 库，且这个库仅在Xpath1.0提供、所以对XPath的限制为1.0。
     >-   不支持xquery、xml extension、xslt。
 
+-   EXTRACT(XMLType_instance, XPath_string)
 
+    描述：依据 Xpath 抽取一个 XML 片段，其结果是 Xpath 匹配到的所有节点的拼接。
+
+    返回值类型：xml
+
+-   XMLSEQUENCE( XMLType_instance)
+
+    描述：该函数用于将 XML 文档内容转换为一个包含 XML 元素的 VARRAY。它将 XML 文档中的每个元素作为行返回，从而形成了一个包含 XML 元素的集合。
+
+    返回值类型：xml 集合
+
+-   EXTRACTVALUE(XMLType_instance, XPath_string)
+
+    描述：该函数依据 Xpath 抽取一个 XML 片段并返回标量值。
+
+    返回值类型：xml
+
+-   EXISTSNODE(XMLType_instance, XPath_string)
+
+    描述：确定使用指定路径遍历XML文档是否会产生任何节点。
+
+    返回值类型：int1
+
+-   APPENDCHILD(newchild)
+
+    描述：把新的子节点追加到节点的子节点列表的末尾。
+
+    返回值类型：xml
