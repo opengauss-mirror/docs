@@ -134,7 +134,7 @@
 -   日志收集（非root用户）
 
     ```
-    gs_collector --begin-time="BEGINTIME" --end-time="ENDTIME" [-h HOSTNAME | -f HOSTFILE] [--keyword=KEYWORD] [--speed-limit=SPEED] [-o OUTPUT] [-l LOGFILE] [-C CONFIGFILE]
+    gs_collector --begin-time="BEGINTIME" --end-time="ENDTIME" [-h HOSTNAME | -f HOSTFILE] [--keyword=KEYWORD] [--speed-limit=SPEED] [-o OUTPUT] [-l LOGFILE] [-C CONFIGFILE] [--timeout=TIMEOUT]
     ```
 
 -   显示帮助信息
@@ -249,6 +249,10 @@
     该参数主要是为了防止日志收集过程中产生过高的磁盘或网络IO，导致数据库节点故障（如果它们与$GAUSSLOG/$PGHOST部署在同一个磁盘上）。该值应当不超过openGauss内上述磁盘IO与网络IO速率的最小值的1/3。
 
     资源池化下允许指定该参数，但是不生效。
+
+-   --timeout
+
+    日志与xlog收集时最长收集时间，输入格式为非负整数，单位为s。
 
 -   -?, --help
 
