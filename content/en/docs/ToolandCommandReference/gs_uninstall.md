@@ -9,7 +9,7 @@ openGauss provides the  **gs\_uninstall**  tool to uninstall a cluster.
 -   Uninstalling openGauss
 
     ```
-    gs_uninstall [--delete-data] [-L] [-l LOGFILE]
+    gs_uninstall [--delete-data] [--clear-disk]  [-L] [-l LOGFILE]
     ```
 
 -   Display help information.
@@ -30,6 +30,10 @@ openGauss provides the  **gs\_uninstall**  tool to uninstall a cluster.
 -   --delete-data
 
     Deletes the data file.
+
+-   --clear-disk
+
+    Clearing data on LUNs in the scenario of resource pooling.
 
 -   -L
 

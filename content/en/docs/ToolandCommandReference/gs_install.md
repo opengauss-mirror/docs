@@ -17,7 +17,7 @@ Installation and deployment of openGauss require you to specify a configuration 
 -   Install openGauss.
 
     ```
-    gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE]  
+    gs_install -X XMLFILE [--gsinit-parameter="PARAMETER" [...]] [--dn-guc="PARAMETER" [...]] [--alarm-component=ALARMCOMPONENT] [--time-out=SECS] [-l LOGFILE] [--enable-perf-config] [--dorado-cluster-mode="PARAMETER"]   
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
@@ -72,6 +72,18 @@ Installation and deployment of openGauss require you to specify a configuration 
 -   --alarm-component=alarm\_component
 
     Specifies the absolute path of the component to report alarms.
+
+-   --enable-perf-config
+
+    After the installation is complete, use gs_perfconfig to adjust the database configuration to achieve better performance for openGauss.
+
+-   --dorado-cluster-mode=PARAM
+
+    Specify the cluster mode for the storage device, dorado-cluster-mode can be set to either the primary cluster or the standby cluster.
+
+    Value range:
+    - primary:Installing the primary cluster of Dorado dual-cluster with resource pooling.
+    - standby:Installing the standby cluster of Dorado dual-cluster with resource pooling.
 
 -   -?, --help
 
