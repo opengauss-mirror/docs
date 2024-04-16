@@ -136,6 +136,10 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
         Default value: **1200**
 
+        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >
+        >It is important to note that the build and start clusters each have their own timeout settings. For the build cluster, the default timeout is set at 1,209,600 seconds (14 days), and if the build operation is not completed within this time frame, it will automatically exit. As for the start cluster, the default timeout is set at 3,600*24*7 seconds (one week). That is, if the start operation is not completed within one week, it will automatically exit. If the --time-out=SECS parameter is not specified, then in the build cluster, the process will not automatically exit after a timeout of 1200 seconds; similarly, in the start cluster, it will not automatically exit after a timeout of 1200 seconds.
+
 
 -   Parameters for switching a DR node to primary:
     
