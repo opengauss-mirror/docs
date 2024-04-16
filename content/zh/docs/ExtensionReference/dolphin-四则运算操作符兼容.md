@@ -6,7 +6,7 @@
 
    - 数字类型：tinyint(**unsigned**)、smallint(**unsigned**)、integer(**unsigned**)、bigint(**unsigned**)、float4、float8、decimal/numeric以及bit。
    - 字符串类型：char、varchar、binary、varbinary、tinyblob、blob、mediumblob、longblob、enum、set、json以及text（**目前openGauss没有实际上的tinytext、mediumtext和longtext，因此不考虑**）。
-   - 时间日期类型：date、datetime、timestamp、time、year。
+   - 时间日期类型：date、datetime、timestamp、time、year、INTERVAL表达式。
 
 2. 一些原操作符返回值兼容MySQL，具体的兼容规则如下：
 
@@ -16,11 +16,14 @@
    - 定点型 X 定点型：针对"+"、"-"、"*"、"/"四则运算，返回定点型。
    - 定点型 X 浮点型：针对"+"、"-"、"*"、"/"四则运算，返回浮点型。
    - 浮点型 X 浮点型：针对"+"、"-"、"*"、"/"四则运算，返回浮点型。
+   - 数字类型/字符串类型/时间日期类型 X INTERVAL表达式：针对"+"、"-"这两个运算符，返回TEXT类型。
 
    基于上述规则，只需要运用字符串类型、时间类型等的类型转换规则，就可以推算出这些类型进行混合运算时的返回值，类型转换规则如下：
 
    - 字符串类型：在进行四则运算是统一转换为浮点类型
-   - 时间日期类型：date固定转换为有符号整型，year固定转换为无符号整型；针对datetime、timestamp、time三个类型，如果没有指定typmod(表示毫秒和微秒)的话，就转换为有符号整型，否则会转换为一个定点数，其小数位数与指定的typmod相同。
+   - 时间日期类型：
+       - date + INTERVAL expr unit或date - INTERVAL expr unit分别是函数DATE_ADD(date, INTERVAL expr unit)或DATE_SUB(date, INTERVAL expr unit)的同义词。此外date + INTERVAL expr unit允许左右两边操作数交换而date - INTERVAL expr unit不允许交换。
+       - 当操作数中没有INTERVAL表达式时，date固定转换为有符号整型，year固定转换为无符号整型；针对datetime、timestamp、time三个类型，如果没有指定typmod(表示毫秒和微秒)的话，就转换为有符号整型，否则会转换为一个定点数，其小数位数与指定的typmod相同。
 
    具体的一些表达式返回值可以参考下面的表格：
    
@@ -362,6 +365,11 @@ select 1::int4 - '12:12:12.36'::time(3);
 select 1::int4 * '12:12:12.36'::time(3);
 select 1::int4 / '12:12:12.36'::time(3);
 
+-- 数字类型/字符串类型/时间日期类型 X INTERVAL表达式
+select '2020-01-01'::text + interval 1 day;
+select interval 1 hour + '2020-01-01'::date;
+select 20200101::int4 - interval 1 minute;
+
 ```
 
 结果：
@@ -595,6 +603,25 @@ test_db=# select 1::int4 / '12:12:12.36'::time(3);
           ?column?          
 ----------------------------
  0.000008249983747532017362
+(1 row)
+
+test_db=# -- 数字类型/字符串类型/时间日期类型 X INTERVAL表达式
+test_db=# select '2020-01-01'::text + interval 1 day;
+  ?column?  
+------------
+ 2020-01-02
+(1 row)
+
+test_db=# select interval 1 hour + '2020-01-01'::date;
+      ?column?       
+---------------------
+ 2020-01-01 01:00:00
+(1 row)
+
+test_db=# select 20200101::int4 - interval 1 minute;
+      ?column?       
+---------------------
+ 2019-12-31 23:59:00
 (1 row)
 
 ```
