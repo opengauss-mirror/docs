@@ -9,7 +9,7 @@ openGauss提供了gs\_uninstall工具来帮助完成openGauss的卸载。
 -   卸载openGauss
 
     ```
-    gs_uninstall [--delete-data] [-L] [-l LOGFILE]
+    gs_uninstall [--delete-data] [--clear-disk] [-L] [-l LOGFILE]
     ```
 
 -   显示帮助信息
@@ -31,6 +31,10 @@ openGauss提供了gs\_uninstall工具来帮助完成openGauss的卸载。
 
     删除数据文件。
 
+-   --clear-disk
+
+    清除资源池化场景下LUN上的数据。
+    
 -   -L
 
     只卸载本地主机。如果openGauss内某主机做单点卸载后，openGauss不能再做全量卸载。
