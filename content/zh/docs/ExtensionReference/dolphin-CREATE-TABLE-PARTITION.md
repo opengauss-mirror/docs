@@ -64,7 +64,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES [IN] (list_values_clause)] opt_table_space [part_option [ ...]])}
+        {LIST (partition_key) [ PARTITIONS opt_partitions_num ] (PARTITION partition_name [VALUES [IN] (list_values_clause) ] opt_table_space )} |
+        {HASH (partition_key) [ PARTITIONS opt_partitions_num ] [ (PARTITION partition_name opt_table_space) ]} |
+        {KEY (opt_partition_key) [ PARTITIONS opt_partitions_num ] [ (PARTITION partition_name opt_table_space) ]}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
     [create_option]
 
@@ -393,6 +395,15 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   对于partition\_key，哈希分区策略的分区键仅支持1列。
 
   分区键支持的数据类型为：INT1[UNSIGNED]、INT2[UNSIGNED]、INT4[UNSIGNED]、INT8[UNSIGNED]、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]、DATE。分区个数不能超过1048575 个。
+
+- **PARTITION BY KEY\(opt\_partition\_key\)**
+
+  创建键分区。opt\_partition\_key是可选的，其表示分区键的名称。
+
+  对于opt\_partition\_key，当用户明确提供了分区键时，键分区策略的分区键仅支持1列。当用户没有提供分区键时，将使用表的主键为分区键。目前组合键是不支持的。
+
+  分区键支持的数据类型为：INT1[UNSIGNED]、INT2[UNSIGNED]、INT4[UNSIGNED]、INT8[UNSIGNED]、NUMERIC、VARCHAR\(n\)、CHAR、BPCHAR、TEXT、NVARCHAR、NVARCHAR2、TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]、TIMESTAMP\[\(p\)\] \[WITH TIME 
+  ZONE\]、DATE。分区个数不能超过1048575 个。
 
 - **\{ ENABLE | DISABLE \} ROW MOVEMENT**
 
