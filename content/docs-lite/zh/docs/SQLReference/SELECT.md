@@ -89,7 +89,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
     |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
-    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
+    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+    |rotate_clause
+    |notrotate_clause}
     ```
 
 -   其中group子句为：
@@ -379,6 +381,85 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     用于连接的查询源对象的名称。
 
+- rotate_clause
+
+    用于实现将查询结果行转列输出。
+	其语法格式如下：
+	  	rotate_clause : {
+				ROTATE
+				( aggregate_function ( expr ) [[AS] alias ]
+					[, aggregate_function ( expr ) [[AS] alias ] ] ...
+				rotate_for_clause
+				rotate_in_clause )
+        }
+
+    该子句涉及的元素如下所示。
+
+    - ROTATE       
+
+      用于实现将查询结果行转列的关键字。
+
+    - aggregate_function       
+
+      使用的聚合函数名称。
+
+    - expr       
+
+      聚合函数参数列表。
+
+    - alias       
+
+      聚合操作别名。
+      
+    - rotate_for_clause       
+
+      用于做行转列的列名，其语法格式如下：
+
+            rotate_for_clause: {
+                FOR { column | ( column [, column]... ) }
+            }
+
+    - rotate_in_clause       
+
+      用于做行转列的列中的参数，其语法格式如下：
+
+            rotate_in_clause: {
+                IN ( { { expr | ( expr [, expr]... ) } [ [ AS] alias] }
+                    [, { { expr | ( expr [, expr]... ) } [ [ AS] alias] }]...
+                )
+            }
+
+- notrotate_clause
+
+    用于实现将查询结果行转列输出。
+	其语法格式如下：
+        notrotate_clause : {
+                NOT ROTATE 
+                [ {INCLUDE | EXCLUDE } NULLS ]
+                ( { column | ( column [, column]... ) }
+                    rotate_for_clause
+                    unrotate_in_clause
+                )
+        }
+	  	
+    该子句涉及的元素如下所示。
+
+    - NOT ROTATE       
+
+      用于实现将查询结果列转行的关键字。
+
+    - unrotate_in_clause      
+
+      用于做列转行的列名，其语法格式如下：
+      
+            unrotate_in_clause : {
+                IN
+                ( { column | ( column [, column]... ) }
+                    [ AS { constant | ( constant [, constant]... ) } ]
+                    [, { column | ( column [, column]... ) }
+                    [ AS { constant | ( constant [, constant]... ) } ]]...
+                )
+            }
 
 -   **WHERE子句**
 
@@ -931,4 +1012,40 @@ set dolphin.sql_mode = '';
 -- 所以当去重列与排序列的数据值没有一一对应时，可能会由于数据的插入顺序、数据量等不一致而导致最终输出结果不一样。
 SELECT DISTINCT name FROM my_tbl ORDER BY score;
 ```
+--查询结果行列转换示例
+--创建表original_orders
+openGauss=#  create table original_orders (id int, year int, order_mode text, order_total int);
+--向表original_orders中插入记录
+openGauss=#  insert into original_orders values (1,2020,'direct',5000), (2,2020,'online',1000), (3,2021,'online',1000), (4,2021,'direct',1000), (5,2022,'direct',5000), (6,2020,'direct',500);
+openGauss=#  select * from original_orders;
+ id | year | order_mode | order_total
+----+------+------------+-------------
+  1 | 2020 | direct     |        5000
+  2 | 2020 | online     |        1000
+  3 | 2021 | online     |        1000
+  4 | 2021 | direct     |        1000
+  5 | 2022 | direct     |        5000
+  6 | 2020 | direct     |         500
+(6 rows)
 
+--使用rotate将表original_orders中数据行转列输出
+openGauss=# select * from ( select year, order_mode, order_total from original_orders) rotate (sum(order_total) for order_mode in ('direct' as store, 'online' as internet)) order by year;
+ year | store | internet
+------+-------+----------
+ 2020 |  5500 |     1000
+ 2021 |  1000 |     1000
+ 2022 |  5000 |
+(3 rows)
+
+--创建表rotate_orders
+openGauss=# create table rotate_orders as (select * from (select year, order_mode, order_total from original_orders) as t rotate (sum(order_total) for order_mode in ('direct' as store, 'online' as internet)) order by year);
+--使用not rotate将表rotate_orders中数据列转行输出
+openGauss=# select * from rotate_orders not rotate ( yearly_total for order_mode in ( store as 'direct', internet as 'online'));
+ year | order_mode | yearly_total
+------+------------+--------------
+ 2020 | direct     |         5500
+ 2021 | direct     |         1000
+ 2022 | direct     |         5000
+ 2020 | online     |         1000
+ 2021 | online     |         1000
+(5 rows)
