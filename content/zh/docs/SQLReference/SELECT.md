@@ -1010,7 +1010,9 @@ set dolphin.sql_mode = '';
 -- 所以当去重列与排序列的数据值没有一一对应时，可能会由于数据的插入顺序、数据量等不一致而导致最终输出结果不一样。
 SELECT DISTINCT name FROM my_tbl ORDER BY score;
 ```
+
 --查询结果行列转换示例
+```
 --创建表original_orders
 openGauss=#  create table original_orders (id int, year int, order_mode text, order_total int);
 --向表original_orders中插入记录
@@ -1047,3 +1049,4 @@ openGauss=# select * from rotate_orders not rotate ( yearly_total for order_mode
  2020 | online     |         1000
  2021 | online     |         1000
 (5 rows)
+```
