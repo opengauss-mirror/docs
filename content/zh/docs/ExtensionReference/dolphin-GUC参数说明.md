@@ -16,6 +16,8 @@
 
 -   sql_mode_strict：支持对属性是非空且没有默认值的列显式插入default；（涉及的类型同上面sql_mode_strict的描述）
 
+-   sql_mode_strict：关闭时，支持对属性是非空的列插入NULL值。具体行为受sql_ignore_strategy控制，overwrite_null时插入默认值，ignore_null时忽略该行；且仅在非显式插入单行NULL值生效。（涉及的类型同上面sql_mode_strict的描述）
+
 -   sql_mode_strict：对于不会改变数据的SQL语句，如`SELECT`，在严格模式下处理无效值或者空值时仅产生告警，不会报错。效果等同于没有开启严格模式。
 
 -   sql_mode_full_group：
