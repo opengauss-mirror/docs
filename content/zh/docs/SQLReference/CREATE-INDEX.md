@@ -23,6 +23,7 @@
 -   HASH索引目前仅限于行存表索引、临时表索引和分区表LOCAL索引，且不支持创建多字段索引。
 -   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 -   如果表达式索引中调用的是用户自定义函数，按照函数创建者权限执行表达式索引函数。
+-   仅支持在B兼容性数据库下指定COMMENT。
 -   分区表上不支持创建部分索引。
 -   分区表创建GLOBAL索引时，存在以下约束条件：
     -   不支持表达式索引、部分索引
@@ -45,6 +46,7 @@
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
       [ TABLESPACE tablespace_name ]
       [ COMMENT text ]
+      [ VISIBLE | INVISIBLE ]
       [ WHERE predicate ];
   ```
 
@@ -57,6 +59,8 @@
         [ INCLUDE ( column_name [, ...] )]
         [ WITH ( { storage_parameter = value } [, ...] ) ]
         [ TABLESPACE tablespace_name ]
+        [ COMMENT text ]
+        [ VISIBLE | INVISIBLE ]
         [ WHERE predicate ];
     ```
 
@@ -250,6 +254,10 @@
 
     指定索引的注释，如果没有声明则注释为空。
 
+-   **VISIBLE | INVISIBLE**
+
+    指定索引是否可见，如果没有声明则默认为VISIBLE。
+
 - **WHERE predicate**
 
   创建一个部分索引。部分索引是一个只包含表的一部分记录的索引，通常是该表中比其他部分数据更有用的部分。例如，有一个表，表里包含已记账和未记账的定单，未记账的定单只占表的一小部分而且这部分是最常用的部分，此时就可以通过只在未记账部分创建一个索引来改善性能。另外一个可能的用途是使用带有UNIQUE的WHERE强制一个表的某个子集的唯一性。
@@ -347,11 +355,23 @@ openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建SM_SHIP_MODE_SK大于10的部分索引。
 openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
 
+--在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建索引并隐藏。
+openGauss=# CREATE INDEX tpcds.ds_ship_mode_t1_index6 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) INVISIBLE;
+
+--在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建索引并可见。
+openGauss=# CREATE INDEX tpcds.ds_ship_mode_t1_index6 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) VISIBLE;
+
 --重命名一个现有的索引。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
 
 --设置索引不可用。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
+
+--设置索引隐藏。
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 INVISIBLE;
+
+--设置索引可见。
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 VISIBLE;
 
 --重建索引。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
