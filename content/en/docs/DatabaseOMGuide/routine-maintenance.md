@@ -1669,7 +1669,7 @@ When data deletion is repeatedly performed in the database, index keys will be d
 
 The database supports B-tree indexes. Recreating a B-tree index routinely helps improve query efficiency.
 
--   If a large amount of data is deleted, index keys on the index pages will be deleted. As a result, the number of index pages reduces and index bloat occurs. Recreating an index helps reclaim wasted space.
+-   If a large amount of data is deleted, index keys on the index pages will be deleted. But index pages will not be directly deleted, that is the number of index pages will not decrease, then index bloat occurs. Recreating an index helps reclaim wasted space.
 -   In a newly created index, pages with adjacent logical structures tend to have adjacent physical structures. Therefore, a new index achieves a higher access speed than an index that has been updated for multiple times.
 
 ### Methods<a name="en-us_topic_0237088811_section1483310439110"></a>
