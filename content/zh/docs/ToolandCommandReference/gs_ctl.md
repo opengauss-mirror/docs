@@ -445,6 +445,28 @@ gs_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>无参数</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-D /PATH/TO/DATADIR</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>指定数据目录的位置，查询数据库状态，显示当前数据库的数据目录以及运行状态等信息。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>DATADIR的取值必须为有效的数据目录</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-U USERNAME</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>查询受密码保护的数据库集群，可以使用-U选项来指定用户名</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>取值范围：openGauss中存在的用户。</p>
+<p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-P PASSWORD</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>查询受密码保护的数据库集群，可以使用-P选项来指定密码，一般与-U配合使用</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>-</p>
+</td>
+</tr>
 </tbody>
 </table>
 
