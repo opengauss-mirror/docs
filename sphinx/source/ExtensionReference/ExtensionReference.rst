@@ -4,7 +4,8 @@
 
     NDPplugin-Extension
     dolphin-Extension
-    PostGIS-Extension   
+    PostGIS-Extension
+    gms_stats-Extension   
     datavec-Extension
     whale-Extension
 
