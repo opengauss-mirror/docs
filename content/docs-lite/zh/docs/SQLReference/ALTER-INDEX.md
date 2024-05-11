@@ -30,6 +30,10 @@ ALTER INDEX用于修改现有索引的定义。
 
     用于设置表或者索引分区上的索引不可用。
 
+-   INVISIBLE / VISIBLE
+
+    用于设置表索引隐藏/可见。
+
 -   REBUILD \[ PARTITION index\_partition\_name \]
 
     用于重建表或者索引分区上的索引。
@@ -90,6 +94,14 @@ ALTER INDEX用于修改现有索引的定义。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >列存表不支持该语法。
+
+
+-   设置表索引隐藏/可见。
+
+    ```
+    ALTER INDEX [ IF EXISTS ] index_name 
+        INVISIBLE / VISIBLE;
+    ```
 
 
 -   重建表索引或索引分区。
