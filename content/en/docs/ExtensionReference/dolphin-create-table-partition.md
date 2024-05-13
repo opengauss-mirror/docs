@@ -60,7 +60,9 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
      PARTITION BY { 
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_less_than_item [, ... ] )} |
         {RANGE (partition_key) [ INTERVAL ('interval_expr') [ STORE IN (tablespace_name [, ... ] ) ] ] ( partition_start_end_item [, ... ] )} |
-        {LIST | HASH (partition_key) (PARTITION partition_name [VALUES [IN] (list_values_clause)] opt_table_space )}
+        {LIST (partition_key) [ PARTITIONS opt_partitions_num ] (PARTITION partition_name [VALUES [IN] (list_values_clause) ] opt_table_space )} |
+        {HASH (partition_key) [ PARTITIONS opt_partitions_num ] [ (PARTITION partition_name opt_table_space) ]} |
+        {KEY (opt_partition_key) [ PARTITIONS opt_partitions_num ] [ (PARTITION partition_name opt_table_space) ]}
     } [ { ENABLE | DISABLE } ROW MOVEMENT ]; 
     [create_option]
 
@@ -376,6 +378,14 @@ Where create\_option is:
   Create a hash partition. partition\_key indicates the name of the partition key.
 
   For **partition\_key**, the hash partitioning policy supports only one column of partition keys.
+
+  Data types supported by the partition keys are as follows: INT1[UNSIGNED], INT2[UNSIGNED], INT4[UNSIGNED], INT8[UNSIGNED], NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
+
+- **PARTITION BY KEY\(opt\_partition\_key\)**
+
+  Create a key partition. opt\_partition\_key is optional, and it indicates the name of the partition key.
+
+  For **opt\_partition\_key**, when user explicitly provides the partition key, the key partitioning policy supports only one column of partition keys. When no partition keys are provided, the table's primary key is used. Currently composite primary keys are not supported.
 
   Data types supported by the partition keys are as follows: INT1[UNSIGNED], INT2[UNSIGNED], INT4[UNSIGNED], INT8[UNSIGNED], NUMERIC, VARCHAR\(n\), CHAR, BPCHAR, TEXT, NVARCHAR, NVARCHAR2, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE. The number of partitions cannot exceed 1048575.
 

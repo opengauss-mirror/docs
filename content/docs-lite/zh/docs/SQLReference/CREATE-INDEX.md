@@ -23,7 +23,7 @@
 -   HASH索引目前仅限于行存表索引、临时表索引和分区表LOCAL索引，且不支持创建多字段索引。
 -   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 -   如果表达式索引中调用的是用户自定义函数，按照函数创建者权限执行表达式索引函数。
--   仅支持在B兼容性数据库下指定COMMENT和可见性VISIBLE\INVISIBLE。
+-   仅支持在B兼容性数据库下指定COMMENT。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
@@ -339,11 +339,23 @@ openGauss=# CREATE INDEX ds_ship_mode_t1_index2 ON tpcds.ship_mode_t1(SUBSTR(SM_
 --在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建SM_SHIP_MODE_SK大于10的部分索引。
 openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index3 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) WHERE SM_SHIP_MODE_SK>10;
 
+--在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建索引并隐藏。
+openGauss=# CREATE INDEX tpcds.ds_ship_mode_t1_index6 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) INVISIBLE;
+
+--在表tpcds.ship_mode_t1上的SM_SHIP_MODE_SK字段上创建索引并可见。
+openGauss=# CREATE INDEX tpcds.ds_ship_mode_t1_index6 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK) VISIBLE;
+
 --重命名一个现有的索引。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index1 RENAME TO ds_ship_mode_t1_index5;
 
 --设置索引不可用。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 UNUSABLE;
+
+--设置索引隐藏。
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 INVISIBLE;
+
+--设置索引可见。
+openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 VISIBLE;
 
 --重建索引。
 openGauss=# ALTER INDEX tpcds.ds_ship_mode_t1_index2 REBUILD;
