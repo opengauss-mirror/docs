@@ -479,3 +479,34 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     Please input password again:
     *********
     ```
+-   显示共享内存信息
+
+    ```
+    dsscmd showmem <-g vg_name> <-s struct_name> [-U UDS:socket_domain]
+    dsscmd showmem <-g vg_name> <-b block_id> <-i index_id> [-U UDS:socket_domain]
+    dsscmd showmem <-g vg_name> <-f fid> <-n node_id> [-o offset] [-z size] [-U UDS:socket_domain]
+    dsscmd showmem <-p path> [-o offset] [-z size] [-U UDS:socket_domain]
+
+    ```
+
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
+    >-   block_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
+    >-   如果指定参数-b block_id，则需指定-i index_id。如果要查找的block_id是ft_block， 则index_id取值为0；如果要查找的block_id是fs_block，则index_id取值为[0, 2041)。
+    >-   path为待查询的全路径。
+
+-   从黑匣子中生成的共享内存文件获取共享内存信息
+
+    ```
+    dsscmd fshowmem <-m memory_file_path> <-g vg_name> <-s struct_name> [-D DSS_HOME]
+    dsscmd fshowmem <-m memory_file_path> <-g vg_name> <-b block_id> <-i index_id> [-D DSS_HOME]
+    dsscmd fshowmem <-m memory_file_path> <-g vg_name> <-f fid> <-n node_id> [-o offset] [-z size] [-D DSS_HOME]
+    dsscmd fshowmem <-m memory_file_path> <-g vg_name> <-p path> [-o offset] [-z size] [-D DSS_HOME]
+
+    ```
+    >![](public_sys-resources/icon-note.png) **说明：** 
+    >-   struct_name: 指定输出信息的文件类型。取值范围: core\_ctrl、vg\_header、volume\_ctrl、root\_ft\_block。
+    >-   block_id是一个64位的值，前10位是volume_id，34位是au_id，17位是block_id,最后3位是预留。
+    >-   如果指定参数-b block_id，则需指定-i index_id。如果要查找的block_id是ft_block， 则index_id取值为0；如果要查找的block_id是fs_block，则index_id取值为[0, 2041)。
+    >-   path为待查询的全路径。如果path的中间节点为link类型，则不支持查询。
+    >-   memory_file_path: 指定输入的黑匣子文件路径。
