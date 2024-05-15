@@ -52,6 +52,66 @@ Backup control functions help with online backup.
     (1 row)
     ```
 
+-   gs\_get\_recv\_locations\(\)
+
+    Description: Obtain the synchronization position of the current transaction log on the standby machine,even if the primary is down, it can still be queried.
+
+    Return type: record
+
+    **Table 1** Return value description
+
+    <a name="table9745177191215"></a>
+    <table><thead align="left"><tr id="row127451717124"><th class="cellrowborder" valign="top" width="20.242024202420243%" id="mcps1.2.4.1.1"><p id="p1974687151213"><a name="p1974687151213"></a><a name="p1974687151213"></a>parameter</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="22.06220622062206%" id="mcps1.2.4.1.2"><p id="p147461271125"><a name="p147461271125"></a><a name="p147461271125"></a>type</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="57.69576957695769%" id="mcps1.2.4.1.3"><p id="p197461975128"><a name="p197461975128"></a><a name="p197461975128"></a>describe</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row167467711212"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p197461379124"><a name="p197461379124"></a><a name="p197461379124"></a>received_lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p137462712123"><a name="p137462712123"></a><a name="p137462712123"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p138588178133"><a name="p138588178133"></a><a name="p138588178133"></a>Latest lsn received
+</p>
+    </td>
+    </tr>
+    <tr id="row187462714127"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p1674617710129"><a name="p1674617710129"></a><a name="p1674617710129"></a>write_lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p17746137131219"><a name="p17746137131219"></a><a name="p17746137131219"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p246504413137"><a name="p246504413137"></a><a name="p246504413137"></a>The latest lsn written to the disk
+</p>
+    </td>
+    </tr>
+    <tr id="row17254145010126"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p225445020123"><a name="p225445020123"></a><a name="p225445020123"></a>flush_lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p1025485020129"><a name="p1025485020129"></a><a name="p1025485020129"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p246504413137"><a name="p246504413137"></a><a name="p246504413137"></a>The latest lsn flashed</p>
+    </td>
+    </tr>
+     <tr id="row187462714127"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p1674617710129"><a name="p1674617710129"></a><a name="p1674617710129"></a>replay_lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="22.06220622062206%" headers="mcps1.2.4.1.2 "><p id="p17746137131219"><a name="p17746137131219"></a><a name="p17746137131219"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.69576957695769%" headers="mcps1.2.4.1.3 "><p id="p246504413137"><a name="p246504413137"></a><a name="p246504413137"></a>The latest lsn replayed </p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    Example:
+
+    ```
+    openGauss=# SELECT * FROM gs_get_recv_locations();
+    received_lsn | write_lsn  | flush_lsn  | replay_lsn
+    -------------+------------+------------+------------
+    0/42CE1340   | 0/42CE1340 | 0/42CE1340 | 0/42CC9078
+    (1 row)
+    ```
+
 -   pg\_stop\_backup\(\)
 
     Description: Completes online backup \(restricted to the system administrator or replication roles\).
