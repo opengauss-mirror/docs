@@ -4,7 +4,7 @@
 
 相比于原始的openGauss，dolphin对于数值类型的修改主要为:
 
-1. 新增```INT/TINYINT/SMALLINT/BIGINT```支持可选的修饰符(n)，即支持```TINYINT(n)/SMALLINT(n)/BIGINT(n)```的用法，n无实际意义，不影响任何表现。
+1. 新增```INT/TINYINT/SMALLINT/BIGINT```支持可选的修饰符(n)，即支持```TINYINT(n)/SMALLINT(n)/BIGINT(n)```的用法，n的作用仅在tinyint(1)和tinyint(1) unsigned类型时JDBC的getObject接口会将数据自动转换成boolean类型返回，除此之外的其他场景无实际意义，不影响任何表现。
 2. 新增```MEDIUMINT(n)```数据类型，是INT4的别名，n无实际作用，不影响任何表现。存储空间为4字节，数据范围为```-2,147,483,648 ~ +2,147,483,647```。
 3. 新增```FIXED[(p[,s])]```数据类型，是NUMERIC类型的别名。用户声明精度。每四位（十进制位）占用两个字节，然后在整个数据上加上八个字节的额外开销。未指定精度的情况下，小数点前最大131,072位，小数点后最大16,383位。
 4. 新增```float4(p[,s])```的方式，等价于```dec(p[,s])```。
@@ -31,7 +31,7 @@
 </thead>
 <tbody><tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r3050263e19334c3e88817869fc64acf3"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"></a>TINYINT(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a>微整数，别名为INT1。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a>微整数，别名为INT1。n的主要作用是n为1的时候JDBC的getObject接口会将数据自动转换成boolean类型返回，除此之外无其他的实际作用，取整范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a>1字节</p>
 </td>
@@ -40,7 +40,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row47768271"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a>SMALLINT(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a>小范围整数，别名为INT2。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a>小范围整数，别名为INT2。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"></a>2字节</p>
 </td>
@@ -49,7 +49,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row26224259"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a>INTEGER(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>常用的整数，别名为INT4。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>常用的整数，别名为INT4。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a>4字节</p>
 </td>
@@ -58,7 +58,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row26224259"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a>MEDIUMINT(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>INT4的别名，n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>INT4的别名，n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a>4字节</p>
 </td>
@@ -67,7 +67,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row14545806"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"></a>BIGINT(n)</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a>大范围的整数，别名为INT8。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a>大范围的整数，别名为INT8。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"></a>8字节</p>
 </td>
@@ -76,7 +76,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_r3050263e19334c3e88817869fc64acf3"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_ae7b8e76ad5b243cd9fd5522f5ed9f7a4"></a>TINYINT(n) UNSIGNED</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a>无符号微整数，别名为UINT1。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_a55039338bad74e2bac3a5abfeca8d277"></a>无符号微整数，别名为UINT1。n的主要作用是n为1的时候JDBC的getObject接口会将数据自动转换成boolean类型返回，除此之外无其他的实际作用，取整范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_abeccdff96ab94fb3bddd0781d38e4ac7"></a>1字节</p>
 </td>
@@ -85,7 +85,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row47768271"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p44024715"></a>SMALLINT(n) UNSIGNED</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a>无符号小范围整数，别名为UINT2。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9232188"></a>无符号小范围整数，别名为UINT2。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p9609802"></a>2字节</p>
 </td>
@@ -94,7 +94,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row26224259"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a>INTEGER(n) UNSIGNED</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>无符号整数，别名为UINT4。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>无符号整数，别名为UINT4。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a>4字节</p>
 </td>
@@ -103,7 +103,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row26224259"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p43790198"></a>MEDIUMINT(n) UNSIGNED</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>UINT4的别名，n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57345187"></a>UINT4的别名，n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p14448560"></a>4字节</p>
 </td>
@@ -112,7 +112,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_row14545806"><td class="cellrowborder" valign="top" width="17.17171717171717%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56293934"></a>BIGINT(n) UNSIGNED</p>
 </td>
-<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a>大范围的无符号整数，别名为UINT8。n无实际作用，不影响任何表现。</p>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p56810569"></a>大范围的无符号整数，别名为UINT8。n无实际作用，不影响任何表现，取值范围为1-255。</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.121212121212121%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"></a><a name="zh-cn_topic_0283136992_zh-cn_topic_0237121927_zh-cn_topic_0059778296_zh-cn_topic_0058965945_p57196534"></a>8字节</p>
 </td>
@@ -121,6 +121,7 @@
 </tr>
 </tbody>
 </table>
+
 
 示例：
 
@@ -137,14 +138,14 @@ openGauss=# CREATE TABLE int_type_t1
 
 --查看表结构。
 openGauss=# \d int_type_t1
-   Table "public.int_type_t1"
- Column  |   Type   | Modifiers
----------+----------+-----------
- it_col1 | tinyint  |
- it_col2 | smallint |
- it_col3 | integer  |
- it_col4 | bigint   |
- it_col5 | integer  |
+     Table "public.int_type_t1"
+ Column  |     Type     | Modifiers
+---------+--------------+-----------
+ IT_COL1 | tinyint(10)  |
+ IT_COL2 | smallint(20) |
+ IT_COL3 | integer(30)  |
+ IT_COL4 | bigint(40)   |
+ IT_COL5 | integer(50)  |
 
 --创建带zerofill属性字段的表。
 openGauss=# CREATE TABLE int_type_t2
@@ -159,13 +160,13 @@ openGauss=# CREATE TABLE int_type_t2
 --查看表结构。
 openGauss=# \d int_type_t2
    Table "public.int_type_t2"
- Column  | Type  | Modifiers
----------+-------+-----------
- it_col1 | uint1 |
- it_col2 | uint2 |
- it_col3 | uint4 |
- it_col4 | uint8 |
- it_col5 | uint4 |
+ Column  |   Type    | Modifiers
+---------+-----------+-----------
+ IT_COL1 | uint1(10) |
+ IT_COL2 | uint2(20) |
+ IT_COL3 | uint4(30) |
+ IT_COL4 | uint8(40) |
+ IT_COL5 | uint4(50) |
 
 --删除表。
 openGauss=# DROP TABLE int_type_t1, int_type_t2;
