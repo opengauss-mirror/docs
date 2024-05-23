@@ -9,7 +9,7 @@
 -   **on**  indicates that the thread pool function is enabled.
 -   **off**  indicates that the thread pool function is disabled.
 
-Note: When the thread pool function is enabled, applications need to use the HA port to connect to the database.
+Note: When the thread pool function is enabled, logical replication applications need to use the HA port to connect to the database.
 
 **Default value**:  **off**
 
