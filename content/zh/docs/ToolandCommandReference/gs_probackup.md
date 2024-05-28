@@ -673,6 +673,8 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
     ```
+    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >在恢复备份时，必须先将原始实例目录（参数-D后面的目录）下面的内容清空。
 
 
 ## cm工具管理集群全量备份恢复流程（资源池化模式）
