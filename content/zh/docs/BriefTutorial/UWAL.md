@@ -351,8 +351,6 @@ UWAL提供简易部署脚本，支持一键部署。
 ### 启用UWAL特性
 启用UWAL特性，需要通过修改配置文件，重启数据库使其生效。
 
->![](public_sys-resources/icon-notice.png) **须知：** 
->UWAL特性一旦开启，不支持关闭。
 
 - 前提条件
     -   主备节点已安装包含UWAL特性的openGauss版本。
@@ -482,9 +480,9 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="8.071088974417027%" headers="mcps1.2.5.1.2 "><p id="p26042047125212"><a name="p26042047125212"></a><a name="p26042047125212"></a>布尔型</p>
             </td>
-            <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1560715215815"><a name="p1560715215815"></a><a name="p1560715215815"></a>纯异步备库流控开关，在主库设置。</p>
+            <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1560715215815"><a name="p1560715215815"></a><a name="p1560715215815"></a>UWAL流控开关，在主库设置。</p>
             </td>
-            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li>on，表示打开纯异步备库流开关。</li><li>off，表示关闭纯异步备库流开关。</li></ul>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li>on，表示打开>UWAL流控开关。</li><li>off，表示关闭>UWAL流控开关。</li></ul>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>off</p>
             </tr>
@@ -492,7 +490,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="8.071088974417027%" headers="mcps1.2.5.1.2 "><p id="p3618115110538"><a name="p3618115110538"></a><a name="p3618115110538"></a>整型</p>
             </td>
-            <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p176184512531"><a name="p176184512531"></a><a name="p176184512531"></a>纯异步备库接收阈值。单位：MB。</p>
+            <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p176184512531"><a name="p176184512531"></a><a name="p176184512531"></a>UWAL接收阈值。单位：MB。</p>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p637754013113"><a name="p637754013113"></a><a name="p637754013113"></a>8～2048</p>
             </td>
@@ -578,6 +576,18 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>tcp</p>
             </tr>
+
+            <tr id="row14404182611442"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p8951161719452"><a name="p8951161719452"></a><a name="p8951161719452"></a>uwal_replinodes</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="11.430186546071225%" headers="mcps1.2.5.1.2 "><p id="p149511317134514"><a name="p149511317134514"></a><a name="p149511317134514"></a>数组</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="37.79536461277557%" headers="mcps1.2.5.1.3 "><p id="p695113171452"><a name="p695113171452"></a><a name="p695113171452"></a>远端节点类型。id为远端节点对应的uwal_nodeid，protocol与id对应远端节点的uwal_protocol保持一致，可选。</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><a name="ul795119174457"></a><a name="ul795119174457"></a><ul id="ul795119174457"><li>id：0~7</li><li>protocol：<ul id="ul795119174457"><li>tcp</li><li>rdma</li></ul></li></ul>
+            </td>
+            <td class="cellrowborder" valign="top" width="30.808366308648953%" headers="mcps1.2.5.1.4 "><p id="p595111754512"><a name="p595111754512"></a><a name="p595111754512"></a>tcp</p>
+            </tr>
+
             <tr id="row7404142611449"><td class="cellrowborder" valign="top" width="19.966082532504238%" headers="mcps1.2.5.1.1 "><p id="p59524178454"><a name="p59524178454"></a><a name="p59524178454"></a>cpu_bind_switch</p>
             </td>
             <td class="cellrowborder" valign="top" width="11.430186546071225%" headers="mcps1.2.5.1.2 "><p id="p139521917124511"><a name="p139521917124511"></a><a name="p139521917124511"></a>字符串</p>
@@ -651,3 +661,71 @@ UWAL提供简易部署脚本，支持一键部署。
         >    cat uwal*.log
         >    ```
 
+
+### 关闭UWAL特性
+关闭UWAL特性，需要重启数据库使配置生效。
+- 操作步骤
+    
+    1. 执行 **pg_switch_xlog()** 命令，切换到一个新的事务日志文件，将当前日志文件归档。
+        ```
+        gsql -d postgres -p 5432 -c "select pg_switch_xlog()"
+        ```
+        >![](public_sys-resources/icon-note.png) **说明：** 
+        >-   -p 5432：5432为数据库端口号，请根据实际情况修改。
+
+    2. 执行**CHECKPOINT**命令，设置事务日志检查点。
+        ```
+        gsql -d postgres -p 5432 -c "CHECKPOINT"
+        ```
+
+    3.  停止openGauss。
+
+        ```
+        cm_ctl stop
+        ```
+
+    4. 补全事务日志文件，并替换原生路径下的事务日志文件。
+        1. 查看生成的事务日志文件，最新的文件应小于单个事务日志文件大小（例如16MB），将其补全。
+
+            ```
+            dd if=000000010000000000000005 of=5.align bs=16M conv=sync
+            ```
+            >![](public_sys-resources/icon-note.png) **说明：** 
+            >-   000000010000000000000005：最新的事务日志文件名，由数据库操作自动生成，文件名不固定。
+            >-   5.align：补全为16MB的事务日志文件名，由用户自定义。
+
+        2.  用补全的事务日志文件替换原生的事务日志文件。
+
+            ```
+            cp 5.align pg_xlog/000000010000000000000005
+            ```
+
+    5.  配置数据库根目录下的postgresql.conf文件,关闭UWAL。
+        1.  打开postgresql.conf文件。
+
+            ```
+            vim postgresql.conf
+            ```
+
+        2.  按“i”进入编辑模式。将参数“enable\_uwal“的值改为“off“，关闭UWAL特性。
+
+            ```
+            enable_uwal = off
+            ```
+
+        3.  按“Esc”键，输入 **:wq!**，按“Enter”保存并退出编辑。
+
+    6.  （可选）如需卸载UWAL特性可执行此步骤。删除UWAL动态库文件，并清除环境变量。
+
+        ```
+        rm -f /home/omm/lib/libuwal.so
+        unset OCK_UWAL_LIB_PATH
+        ```
+
+        其中，“/home/omm/lib/”表示libuwal.so所在目录的绝对路径。
+
+    7.  重启openGauss。
+
+        ```
+        cm_ctl start
+        ```
