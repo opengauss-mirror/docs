@@ -52,3 +52,4 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/大页内存
     ../content/zh/docs/DatabaseReference/数据导入导出
     ../content/zh/docs/DatabaseReference/分隔符
+    ../content/zh/docs/DatabaseReference/行列转换参数
