@@ -482,7 +482,7 @@ UWAL提供简易部署脚本，支持一键部署。
             </td>
             <td class="cellrowborder" valign="top" width="44.60040751641386%" headers="mcps1.2.5.1.3 "><p id="p1560715215815"><a name="p1560715215815"></a><a name="p1560715215815"></a>UWAL流控开关，在主库设置。</p>
             </td>
-            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li>on，表示打开>UWAL流控开关。</li><li>off，表示关闭>UWAL流控开关。</li></ul>
+            <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><a name="ul175600166531"></a><a name="ul175600166531"></a><ul id="ul175600166531"><li>on，表示打开UWAL流控开关。</li><li>off，表示关闭UWAL流控开关。</li></ul>
             </td>
             <td class="cellrowborder" valign="top" width="24.2019470228662%" headers="mcps1.2.5.1.4 "><p id="p11263735204712"><a name="p11263735204712"></a><a name="p11263735204712"></a>off</p>
             </tr>
