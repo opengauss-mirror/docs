@@ -15,7 +15,7 @@
 -   不支持闪回表的对象类型：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、序列表、hashbucket表。
 -   闪回点和当前点之间，执行过修改表结构或影响物理存储的语句（DDL、DCL、VACUUM FULL），闪回失败。
 
--   执行闪回删除需要用户具有如下权限：用户必须具有垃圾对象所在schema的create和usage权限，并且用户必须是schema的所有者或者是垃圾对象的所有者。
+-   执行闪回DROP需要用户具有如下权限：用户必须具有垃圾对象所在schema的create和usage权限，并且用户必须是schema的所有者或者是垃圾对象的所有者。
 
     执行闪回TRUNCATE需要用户具有如下权限：用户必须具有垃圾对象所在schema的create和usage权限，并且用户必须是schema的所有者或者是垃圾对象的所有者，另外用户必须具有垃圾对象的TRUNCATE权限。
 
@@ -83,7 +83,7 @@ TIMECAPSULE TABLE [ schema.]table_name TO {CSN expr | TIMESTAMP expr | BEFORE { 
 
 ```
 -- 删除表tpcds.reason_t2
-DROP TABLE IF EXISTS tpcds.reason_t2;
+openGauss=# DROP TABLE IF EXISTS tpcds.reason_t2;
 -- 创建表tpcds.reason_t2
 openGauss=# CREATE TABLE tpcds.reason_t2
  (

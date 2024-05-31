@@ -184,66 +184,66 @@
   >![](public_sys-resources/icon-note.png) **说明：** 
   >该接口当前仅支持USTORE数据表。
 
-​       **表 4**  gs\_undo\_dump\_parsepage\_mv参数说明
+    **表 2**  gs\_undo\_dump\_parsepage\_mv参数说明
 
-<table><thead align="left"><tr id="row2994153425611"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p99941234135610"><a name="p99941234135610"></a><a name="p99941234135610"></a>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="11.97%" id="mcps1.2.5.1.2"><p id="p3994113411568"><a name="p3994113411568"></a><a name="p3994113411568"></a>参数名</p>
-</th>
-<th class="cellrowborder" valign="top" width="15.32%" id="mcps1.2.5.1.3"><p id="p189946342567"><a name="p189946342567"></a><a name="p189946342567"></a>类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="61.019999999999996%" id="mcps1.2.5.1.4"><p id="p899410346569"><a name="p899410346569"></a><a name="p899410346569"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row16994143445619"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p11994153412565"><a name="p11994153412565"></a><a name="p11994153412565"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p114021312413"><a name="p114021312413"></a><a name="p114021312413"></a>relpath</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p16994183413569"><a name="p16994183413569"></a><a name="p16994183413569"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p54991729453"><a name="p54991729453"></a><a name="p54991729453"></a>ustore表数据文件相对路径，相对路径格式为：tablespace name/database oid/relfilenode，例如base/16603/16384, 表对应数据文件的相对路径查找可以通过pg_relation_filepath('tablename')查询。</p>
-</td>
-</tr>
-<tr id="row17994123411562"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p28201445235"><a name="p28201445235"></a><a name="p28201445235"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p53919138411"><a name="p53919138411"></a><a name="p53919138411"></a>blkno</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p12994103420564"><a name="p12994103420564"></a><a name="p12994103420564"></a>bigint</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><a name="ul173826296448"></a><a name="ul173826296448"></a><ul id="ul173826296448"><li>-1 解析所有block页面。</li><li>0-MaxBlocNumber 解析指定的block页面。</li></ul>
-</td>
-</tr>
-<tr id="row29944347562"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p2994183415620"><a name="p2994183415620"></a><a name="p2994183415620"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p0371613945"><a name="p0371613945"></a><a name="p0371613945"></a>reltype</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p188631948943"><a name="p188631948943"></a><a name="p188631948943"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p1061215817105"><a name="p1061215817105"></a><a name="p1061215817105"></a>表类型，目前仅支持ustore数据表，取值为uheap。</p>
-</td>
-</tr>
-<tr id="row179951634105614"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p09953342561"><a name="p09953342561"></a><a name="p09953342561"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p13619135414"><a name="p13619135414"></a><a name="p13619135414"></a>rmem</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p1199573415619"><a name="p1199573415619"></a><a name="p1199573415619"></a>boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><a name="ul13872183415441"></a><a name="ul13872183415441"></a><ul id="ul13872183415441"><li>false</li><li>true</li></ul>
-<p id="p1950484511553"><a name="p1950484511553"></a><a name="p1950484511553"></a>目前仅支持false，从磁盘文件上解析对应的页面。</p>
-</td>
-</tr>
-<tr id="row69951834175613"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p20995634195613"><a name="p20995634195613"></a><a name="p20995634195613"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p23213249"><a name="p23213249"></a><a name="p23213249"></a>output</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p1999518348564"><a name="p1999518348564"></a><a name="p1999518348564"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p186811215171114"><a name="p186811215171114"></a><a name="p186811215171114"></a>解析结果文件的绝对路径。</p>
-</td>
-</tr>
-</tbody>
-</table>
+    <table><thead align="left"><tr id="row2994153425611"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p99941234135610"><a name="p99941234135610"></a><a name="p99941234135610"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="11.97%" id="mcps1.2.5.1.2"><p id="p3994113411568"><a name="p3994113411568"></a><a name="p3994113411568"></a>参数名</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="15.32%" id="mcps1.2.5.1.3"><p id="p189946342567"><a name="p189946342567"></a><a name="p189946342567"></a>类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="61.019999999999996%" id="mcps1.2.5.1.4"><p id="p899410346569"><a name="p899410346569"></a><a name="p899410346569"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row16994143445619"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p11994153412565"><a name="p11994153412565"></a><a name="p11994153412565"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p114021312413"><a name="p114021312413"></a><a name="p114021312413"></a>relpath</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p16994183413569"><a name="p16994183413569"></a><a name="p16994183413569"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p54991729453"><a name="p54991729453"></a><a name="p54991729453"></a>ustore表数据文件相对路径，相对路径格式为：tablespace name/database oid/relfilenode，例如base/16603/16384, 表对应数据文件的相对路径查找可以通过pg_relation_filepath('tablename')查询。</p>
+    </td>
+    </tr>
+    <tr id="row17994123411562"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p28201445235"><a name="p28201445235"></a><a name="p28201445235"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p53919138411"><a name="p53919138411"></a><a name="p53919138411"></a>blkno</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p12994103420564"><a name="p12994103420564"></a><a name="p12994103420564"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><a name="ul173826296448"></a><a name="ul173826296448"></a><ul id="ul173826296448"><li>-1 解析所有block页面。</li><li>0-MaxBlocNumber 解析指定的block页面。</li></ul>
+    </td>
+    </tr>
+    <tr id="row29944347562"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p2994183415620"><a name="p2994183415620"></a><a name="p2994183415620"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p0371613945"><a name="p0371613945"></a><a name="p0371613945"></a>reltype</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p188631948943"><a name="p188631948943"></a><a name="p188631948943"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p1061215817105"><a name="p1061215817105"></a><a name="p1061215817105"></a>表类型，目前仅支持ustore数据表，取值为uheap。</p>
+    </td>
+    </tr>
+    <tr id="row179951634105614"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p09953342561"><a name="p09953342561"></a><a name="p09953342561"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p13619135414"><a name="p13619135414"></a><a name="p13619135414"></a>rmem</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p1199573415619"><a name="p1199573415619"></a><a name="p1199573415619"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><a name="ul13872183415441"></a><a name="ul13872183415441"></a><ul id="ul13872183415441"><li>false</li><li>true</li></ul>
+    <p id="p1950484511553"><a name="p1950484511553"></a><a name="p1950484511553"></a>目前仅支持false，从磁盘文件上解析对应的页面。</p>
+    </td>
+    </tr>
+    <tr id="row69951834175613"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p20995634195613"><a name="p20995634195613"></a><a name="p20995634195613"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.97%" headers="mcps1.2.5.1.2 "><p id="p23213249"><a name="p23213249"></a><a name="p23213249"></a>output</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p1999518348564"><a name="p1999518348564"></a><a name="p1999518348564"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p186811215171114"><a name="p186811215171114"></a><a name="p186811215171114"></a>解析结果文件的绝对路径。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 ​		
 
@@ -253,7 +253,7 @@
 
   返回值类型：record
 
-  **表 5**  gs\_undo\_meta\_dump\_zone参数说明
+  **表 3**  gs\_undo\_meta\_dump\_zone参数说明
 
   <table><thead align="left"><tr id="row104767126176"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p194776121179"><a name="p194776121179"></a><a name="p194776121179"></a>参数类型</p>
   </th>
@@ -348,7 +348,7 @@
 
   返回值类型：record
 
-  **表 6**  gs\_undo\_meta\_dump\_spaces参数说明
+  **表 4**  gs\_undo\_meta\_dump\_spaces参数说明
 
   <table><thead align="left"><tr id="row35031824143712"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p4503132493717"><a name="p4503132493717"></a><a name="p4503132493717"></a>参数类型</p>
   </th>
@@ -453,102 +453,102 @@
 
   返回值类型：record
 
-​		**表 7**  gs\_undo\_meta\_dump\_slot参数说明
+    **表 5**  gs\_undo\_meta\_dump\_slot参数说明
 
-<table><thead align="left"><tr id="row106351728144811"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p18635102834810"><a name="p18635102834810"></a><a name="p18635102834810"></a>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="17.740000000000002%" id="mcps1.2.5.1.2"><p id="p1663618283486"><a name="p1663618283486"></a><a name="p1663618283486"></a>参数名</p>
-</th>
-<th class="cellrowborder" valign="top" width="10.51%" id="mcps1.2.5.1.3"><p id="p36364281484"><a name="p36364281484"></a><a name="p36364281484"></a>类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="60.06%" id="mcps1.2.5.1.4"><p id="p156361228194819"><a name="p156361228194819"></a><a name="p156361228194819"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row66361528104811"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p166361128164816"><a name="p166361128164816"></a><a name="p166361128164816"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p86369289486"><a name="p86369289486"></a><a name="p86369289486"></a>zone_id</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p19636228124820"><a name="p19636228124820"></a><a name="p19636228124820"></a>int</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><div class="p" id="p1137101819407"><a name="p1137101819407"></a><a name="p1137101819407"></a>Undo zone编号：<a name="ul914215547114"></a><a name="ul914215547114"></a><ul id="ul914215547114"><li>-1：查询所有Undo zone。</li><li>0-1,048,575：查询对应zone_id编号的undo zone元信息。</li></ul>
-</div>
-</td>
-</tr>
-<tr id="row13636102812482"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p06361528154815"><a name="p06361528154815"></a><a name="p06361528154815"></a>输入参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p1763682817483"><a name="p1763682817483"></a><a name="p1763682817483"></a>read_memory</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p1663617282485"><a name="p1663617282485"></a><a name="p1663617282485"></a>boolean</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><a name="ul217101512216"></a><a name="ul217101512216"></a><ul id="ul217101512216"><li>true：从当前内存中读取。</li><li>false：从物理文件中读取。</li></ul>
-</td>
-</tr>
-<tr id="row1863642816485"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p963632815483"><a name="p963632815483"></a><a name="p963632815483"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p263662854813"><a name="p263662854813"></a><a name="p263662854813"></a>zone_id</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p9636202874815"><a name="p9636202874815"></a><a name="p9636202874815"></a>int</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p3636102874815"><a name="p3636102874815"></a><a name="p3636102874815"></a>Undo zone编号。</p>
-</td>
-</tr>
-<tr id="row26361028154815"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p166361728184816"><a name="p166361728184816"></a><a name="p166361728184816"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p14175929114918"><a name="p14175929114918"></a><a name="p14175929114918"></a>allocate</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p66371528144819"><a name="p66371528144819"></a><a name="p66371528144819"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1263722824818"><a name="p1263722824818"></a><a name="p1263722824818"></a>Undo transaction slot分配位置。</p>
-</td>
-</tr>
-<tr id="row1663712819485"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p1363720289482"><a name="p1363720289482"></a><a name="p1363720289482"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p12637162818489"><a name="p12637162818489"></a><a name="p12637162818489"></a>recycle</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p763752814484"><a name="p763752814484"></a><a name="p763752814484"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1563742810485"><a name="p1563742810485"></a><a name="p1563742810485"></a>Undo transaction slot回收位置。</p>
-</td>
-</tr>
-<tr id="row1863792816487"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116371428134812"><a name="p116371428134812"></a><a name="p116371428134812"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p2063720289486"><a name="p2063720289486"></a><a name="p2063720289486"></a>frozen_xid</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p14637428164814"><a name="p14637428164814"></a><a name="p14637428164814"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1163732810485"><a name="p1163732810485"></a><a name="p1163732810485"></a>frozen xid，用于可见性判断。</p>
-</td>
-</tr>
-<tr id="row1263742874817"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p763722817485"><a name="p763722817485"></a><a name="p763722817485"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p20488174610499"><a name="p20488174610499"></a><a name="p20488174610499"></a>global_frozen_xid</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p3637228164819"><a name="p3637228164819"></a><a name="p3637228164819"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p169062775212"><a name="p169062775212"></a><a name="p169062775212"></a>全局最小的frozen xid，小于该xid的事务可见。</p>
-</td>
-</tr>
-<tr id="row863711287480"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116381628164819"><a name="p116381628164819"></a><a name="p116381628164819"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p1063882834816"><a name="p1063882834816"></a><a name="p1063882834816"></a>recycle_xid</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p3638202894817"><a name="p3638202894817"></a><a name="p3638202894817"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p16381928194818"><a name="p16381928194818"></a><a name="p16381928194818"></a>回收到的xid，小于该xid的事务被回收。</p>
-</td>
-</tr>
-<tr id="row888819568497"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p11503711502"><a name="p11503711502"></a><a name="p11503711502"></a>输出参数</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p20889145684910"><a name="p20889145684910"></a><a name="p20889145684910"></a>global_recycle_xid</p>
-</td>
-<td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p10136915175013"><a name="p10136915175013"></a><a name="p10136915175013"></a>text</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p476415267531"><a name="p476415267531"></a><a name="p476415267531"></a>全局最小的recycle xid，小于该xid的事务被回收。</p>
-</td>
-</tr>
-</tbody>
-</table>
+    <table><thead align="left"><tr id="row106351728144811"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p18635102834810"><a name="p18635102834810"></a><a name="p18635102834810"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="17.740000000000002%" id="mcps1.2.5.1.2"><p id="p1663618283486"><a name="p1663618283486"></a><a name="p1663618283486"></a>参数名</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="10.51%" id="mcps1.2.5.1.3"><p id="p36364281484"><a name="p36364281484"></a><a name="p36364281484"></a>类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="60.06%" id="mcps1.2.5.1.4"><p id="p156361228194819"><a name="p156361228194819"></a><a name="p156361228194819"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row66361528104811"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p166361128164816"><a name="p166361128164816"></a><a name="p166361128164816"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p86369289486"><a name="p86369289486"></a><a name="p86369289486"></a>zone_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p19636228124820"><a name="p19636228124820"></a><a name="p19636228124820"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><div class="p" id="p1137101819407"><a name="p1137101819407"></a><a name="p1137101819407"></a>Undo zone编号：<a name="ul914215547114"></a><a name="ul914215547114"></a><ul id="ul914215547114"><li>-1：查询所有Undo zone。</li><li>0-1,048,575：查询对应zone_id编号的undo zone元信息。</li></ul>
+    </div>
+    </td>
+    </tr>
+    <tr id="row13636102812482"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p06361528154815"><a name="p06361528154815"></a><a name="p06361528154815"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p1763682817483"><a name="p1763682817483"></a><a name="p1763682817483"></a>read_memory</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p1663617282485"><a name="p1663617282485"></a><a name="p1663617282485"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><a name="ul217101512216"></a><a name="ul217101512216"></a><ul id="ul217101512216"><li>true：从当前内存中读取。</li><li>false：从物理文件中读取。</li></ul>
+    </td>
+    </tr>
+    <tr id="row1863642816485"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p963632815483"><a name="p963632815483"></a><a name="p963632815483"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p263662854813"><a name="p263662854813"></a><a name="p263662854813"></a>zone_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p9636202874815"><a name="p9636202874815"></a><a name="p9636202874815"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p3636102874815"><a name="p3636102874815"></a><a name="p3636102874815"></a>Undo zone编号。</p>
+    </td>
+    </tr>
+    <tr id="row26361028154815"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p166361728184816"><a name="p166361728184816"></a><a name="p166361728184816"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p14175929114918"><a name="p14175929114918"></a><a name="p14175929114918"></a>allocate</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p66371528144819"><a name="p66371528144819"></a><a name="p66371528144819"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1263722824818"><a name="p1263722824818"></a><a name="p1263722824818"></a>Undo transaction slot分配位置。</p>
+    </td>
+    </tr>
+    <tr id="row1663712819485"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p1363720289482"><a name="p1363720289482"></a><a name="p1363720289482"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p12637162818489"><a name="p12637162818489"></a><a name="p12637162818489"></a>recycle</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p763752814484"><a name="p763752814484"></a><a name="p763752814484"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1563742810485"><a name="p1563742810485"></a><a name="p1563742810485"></a>Undo transaction slot回收位置。</p>
+    </td>
+    </tr>
+    <tr id="row1863792816487"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116371428134812"><a name="p116371428134812"></a><a name="p116371428134812"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p2063720289486"><a name="p2063720289486"></a><a name="p2063720289486"></a>frozen_xid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p14637428164814"><a name="p14637428164814"></a><a name="p14637428164814"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p1163732810485"><a name="p1163732810485"></a><a name="p1163732810485"></a>frozen xid，用于可见性判断。</p>
+    </td>
+    </tr>
+    <tr id="row1263742874817"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p763722817485"><a name="p763722817485"></a><a name="p763722817485"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p20488174610499"><a name="p20488174610499"></a><a name="p20488174610499"></a>global_frozen_xid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p3637228164819"><a name="p3637228164819"></a><a name="p3637228164819"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p169062775212"><a name="p169062775212"></a><a name="p169062775212"></a>全局最小的frozen xid，小于该xid的事务可见。</p>
+    </td>
+    </tr>
+    <tr id="row863711287480"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116381628164819"><a name="p116381628164819"></a><a name="p116381628164819"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p1063882834816"><a name="p1063882834816"></a><a name="p1063882834816"></a>recycle_xid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p3638202894817"><a name="p3638202894817"></a><a name="p3638202894817"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p16381928194818"><a name="p16381928194818"></a><a name="p16381928194818"></a>回收到的xid，小于该xid的事务被回收。</p>
+    </td>
+    </tr>
+    <tr id="row888819568497"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p11503711502"><a name="p11503711502"></a><a name="p11503711502"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p20889145684910"><a name="p20889145684910"></a><a name="p20889145684910"></a>global_recycle_xid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="10.51%" headers="mcps1.2.5.1.3 "><p id="p10136915175013"><a name="p10136915175013"></a><a name="p10136915175013"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.06%" headers="mcps1.2.5.1.4 "><p id="p476415267531"><a name="p476415267531"></a><a name="p476415267531"></a>全局最小的recycle xid，小于该xid的事务被回收。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 ​	  
 
@@ -558,7 +558,7 @@
 
   返回值类型：record
 
-  **表 8**  gs\_undo\_translot\_dump\_slot参数说明
+  **表 6**  gs\_undo\_translot\_dump\_slot参数说明
 
   <a name="table103190399558"></a>
 
@@ -655,7 +655,7 @@
 
   返回值类型：record
 
-  **表 9**  gs\_undo\_translot\_dump\_xid参数说明
+  **表 7**  gs\_undo\_translot\_dump\_xid参数说明
 
   <a name="table67406221875"></a>
 
@@ -751,7 +751,7 @@
 
   返回值类型：record
 
-  **表 10**  gs\_undo\_dump\_record参数说明
+  **表 8**  gs\_undo\_dump\_record参数说明
 
   <a name="table1421185181117"></a>
 
@@ -972,7 +972,7 @@
 
   返回值类型：record
 
-  **表 11**  gs\_undo\_dump\_xid参数说明
+  **表 9**  gs\_undo\_dump\_xid参数说明
 
   <a name="table199172030162413"></a>
 

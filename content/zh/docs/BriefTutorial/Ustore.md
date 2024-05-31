@@ -34,26 +34,26 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
 
     -   **创建方式1：创建表时指定存储引擎类型**
 
-    ```
-    create table test(id int, name varchar(10)) with (storage_type=ustore);
-    ```
+        ```
+        create table test(id int, int age, name varchar(10)) with (storage_type=ustore);
+        ```
 
     -   **创建方式2：GUC参数配置指定USTORE存储引擎**
 
 
-1.  数据库启动之前，在postgresql.conf中设置“enable\_default\_ustore\_table=on”，默认指定用户创建表时使用USTORE存储引擎。
+    1.  数据库启动之前，在postgresql.conf中设置“enable\_default\_ustore\_table=on”，默认指定用户创建表时使用USTORE存储引擎。
 
-    \[postgresql.conf配置\]
+        \[postgresql.conf配置\]
 
-    ```
-    enable_default_ustore_table=on
-    ```
+        ```
+        enable_default_ustore_table=on
+        ```
 
-2.  创建表。
+    2.  创建表。
 
-    ```
-    create table test(id int, name varchar(10));
-    ```
+        ```
+        create table test(id int, int age, name varchar(10));
+        ```
 
 
 -   **创建索引的方式**
@@ -75,7 +75,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
     -   **创建方式1：不指定创建索引类型，默认创建UBtree索引**
 
         ```
-        openGauss=# create index ubt_idx on test(age);
+        create index ubt_idx on test(age);
         ```
 
         ```
@@ -95,7 +95,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
     -   **创建方式2：创建索引时使用using关键字指定索引类型为“ubtree”**
 
         ```
-        openGauss=# create index ubt_idx on test using ubtree(age);
+        create index ubt_idx on test using ubtree(age);
         ```
 
         ```
