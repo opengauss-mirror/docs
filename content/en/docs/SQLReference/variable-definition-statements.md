@@ -62,6 +62,55 @@ my_name cur.firstname%TYPE
 my_employee2 cur -- For the cursor defined in a package, %ROWTYPE can be omitted.
 ```
 
+ROWTYPE for cursor supports the following features:
+-   Turn on the precompile switch can detect whether the table involved in the cursor exists or not, and whether the corresponding columns in the table exist or not, so that it can throw an error when creating a function, procedure, or package.
+-   Turn off the precompile switch can create functions, stored procedures, and packages successfully regardless of the existence of the cursor's table or columns in the table.
+-   Variables defined by ROWTYPE can be assigned values even if there is no data in the table involved in the cursor.
+-   if a column table involved in the cursor has a default value, ROWTYPE only gets the type and does not inherit the default value and constraints.
+-   Support for data insertion in PL using ROWTYPE non-virtualized columns.
+-   Re-query the table structure involved in the cursor each time when executing functions, procedures, or packages to accommodate changes in the table structure.
+-   Can assign a value to a RECORD type variable using the variables defined by the cur%ROWTYPE.
+-   Can assign default values to variables defined by the cur%ROWTYPE.
+
+Test case:
+```
+set behavior_compat_options='allow_procedure_compile_check';
+
+create table int4_table(a NUMBER, b VARCHAR2(5));
+insert into int4_table(a) values(3,'johan');
+create table int_table(a NUMBER, d NUMBER, b VARCHAR2(5));
+insert into int_table(a, d, b) values(3, 6,'johan');
+
+create or replace package pck1 is
+cursor cur1 is select * from int4_table;
+var1 cur1%rowtype:=(3, 'ada');
+procedure ppp1;
+procedure ppp2(a cur1%rowtype);
+end pck1;
+/
+
+create or replace package body pck1 is
+procedure ppp1() is
+cursor cur2 is select * from int_table;
+begin
+open cur2;
+fetch cur2 into var1;
+ppp2(var1);
+raise info '%', var1.a;
+end;
+
+procedure ppp2(a cur1%rowtype) is
+begin
+    raise info '%', a.a;
+end;
+end pck1;
+/
+
+call pck1.ppp1();
+ALTER TABLE int_table DROP COLUMN d;
+call pck1.ppp1();
+```
+
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type, a column type of a variable of the cross-package composite type, or a column type of a cursor variable of the cross-package type.
 >-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable and the type of a cross-package cursor.
