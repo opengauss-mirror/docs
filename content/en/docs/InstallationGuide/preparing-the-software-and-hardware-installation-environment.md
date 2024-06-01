@@ -112,44 +112,14 @@ You are advised to use the default installation packages of the following depend
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p101791116151915"><a name="en-us_topic_0283136474_p101791116151915"></a><a name="en-us_topic_0283136474_p101791116151915"></a>0.3.109-13</p>
 </td>
 </tr>
-<tr id="en-us_topic_0283136474_row1617981631914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p171794161195"><a name="en-us_topic_0283136474_p171794161195"></a><a name="en-us_topic_0283136474_p171794161195"></a>flex</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p1317921651912"><a name="en-us_topic_0283136474_p1317921651912"></a><a name="en-us_topic_0283136474_p1317921651912"></a>2.5.31 or later</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136474_row1017911165191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p1617931661912"><a name="en-us_topic_0283136474_p1617931661912"></a><a name="en-us_topic_0283136474_p1617931661912"></a>bison</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p917919167196"><a name="en-us_topic_0283136474_p917919167196"></a><a name="en-us_topic_0283136474_p917919167196"></a>2.7-4</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136474_row8179181610191"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p101791416191912"><a name="en-us_topic_0283136474_p101791416191912"></a><a name="en-us_topic_0283136474_p101791416191912"></a>ncurses-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p0179161651913"><a name="en-us_topic_0283136474_p0179161651913"></a><a name="en-us_topic_0283136474_p0179161651913"></a>5.9-13.20130511</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136474_row10179416191912"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p1117941618198"><a name="en-us_topic_0283136474_p1117941618198"></a><a name="en-us_topic_0283136474_p1117941618198"></a>glibc-devel</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p5179191616190"><a name="en-us_topic_0283136474_p5179191616190"></a><a name="en-us_topic_0283136474_p5179191616190"></a>2.17-111</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136474_row317914169193"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p201791916201910"><a name="en-us_topic_0283136474_p201791916201910"></a><a name="en-us_topic_0283136474_p201791916201910"></a>patch</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p1018051610198"><a name="en-us_topic_0283136474_p1018051610198"></a><a name="en-us_topic_0283136474_p1018051610198"></a>2.7.1-10</p>
-</td>
-</tr>
-<tr id="en-us_topic_0283136474_row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p76711825134912"><a name="en-us_topic_0283136474_p76711825134912"></a><a name="en-us_topic_0283136474_p76711825134912"></a>redhat-lsb-core</p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p1567262515496"><a name="en-us_topic_0283136474_p1567262515496"></a><a name="en-us_topic_0283136474_p1567262515496"></a>4.1</p>
-</td>
-</tr>
 <tr id="en-us_topic_0283136474_row9187524151412"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0283136474_p1718842421419"><a name="en-us_topic_0283136474_p1718842421419"></a><a name="en-us_topic_0283136474_p1718842421419"></a>readline-devel</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283136474_p0189112418140"><a name="en-us_topic_0283136474_p0189112418140"></a><a name="en-us_topic_0283136474_p0189112418140"></a>7.0-13</p>
 </td>
 </tr>
-<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>libnsl (in the openEuler + x86 environment)</p>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>expect</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>2.28-36</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>--</p>
 </td>
 </tr>
 </tbody>
