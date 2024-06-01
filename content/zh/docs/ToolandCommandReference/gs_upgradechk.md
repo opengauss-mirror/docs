@@ -9,7 +9,7 @@ gs_upgradechk是一个升级之后元数据完整性的检测工具，由python3
 
 
 ## 约束
-- 仅支持校验A兼容性的数据库
+- 默认仅支持校验A兼容性的数据库，除非使用参数特别指明。
 
 
 ## 如何使用
@@ -33,6 +33,7 @@ config-params支持的参数选项及其默认值如下
 -M  | --report-mode : summary
 -v  | --vmap : ''
 -d  | --debug
+-D  | --database
 ```
 
 - port：数据库端口号。
@@ -40,6 +41,7 @@ config-params支持的参数选项及其默认值如下
 - report-format：校验报告格式，当前仅支持markdown。
 - report-mode：校验报告详细程度，支持`summary`和`detail`两种模式，默认`summary`模式。此选项仅会影响生成的报告的详细程度，并不影响校验内容的多少，`detail`仅是会把所有的校验规则无论对错都整理输出，报告整理比较耗时，而`summary`则仅整理输出错误的内容。
 - vmap：指定的元数据校验地图。若指定了，则在校验时会使用指定vmap，否则会自动检测目标数据库版本并在网上下载和使用我们生成好的vmap。
+- database：指定使用某个数据库进行导出或校验，可指定非A库。
 
 默认标准vmap下载地址如下：
 ```angular2html
