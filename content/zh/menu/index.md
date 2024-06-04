@@ -1474,6 +1474,7 @@ headless: true
             -   [返回语句]({{< relref "./docs/SQLReference/返回语句.md" >}})
                 -   [RETURN]({{< relref "./docs/SQLReference/RETURN.md" >}})
                 -   [RETURN NEXT及RETURN QUERY]({{< relref "./docs/SQLReference/RETURN-NEXT及RETURN-QUERY.md" >}})
+                -   [PIPE ROW]({{< relref "./docs/SQLReference/PIPE-ROW.md" >}})
             -   [条件语句]({{< relref "./docs/SQLReference/条件语句.md" >}})
             -   [循环语句]({{< relref "./docs/SQLReference/循环语句.md" >}})
             -   [分支语句]({{< relref "./docs/SQLReference/分支语句.md" >}})
