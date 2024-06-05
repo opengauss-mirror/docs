@@ -11,40 +11,50 @@ ALTER SYSTEM KILL SESSION命令用于结束一个会话。
 ## 语法格式<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>
 
 ```
-ALTER SYSTEM KILL SESSION 'session_sid, serial' [ IMMEDIATE ];
+ALTER SYSTEM KILL SESSION 'thread_id, session_id' [ IMMEDIATE ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>
 
--   **session\_sid, serial**
+-   **thread_id, session_id**
 
-    会话的SID和SERIAL（获取方法请参考示例）。
+    会话对应的的线程ID和会话的SID
 
 -   **IMMEDIATE**
 
     表明会话将在命令执行后立即结束。
 
-
 ## 示例<a name="zh-cn_topic_0283137036_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s731ce019d40848b1aa9b394fd2484a33"></a>
 
 ```
---查询会话信息。
-openGauss=# 
-SELECT sa.sessionid AS sid,0::integer AS serial#,ad.rolname AS username FROM pg_stat_get_activity(NULL) AS sa
-LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)WHERE sa.application_name <> 'JobScheduler';
-       sid       | serial# | username 
------------------+---------+----------
- 140131075880720 |       0 | omm
- 140131025549072 |       0 | omm
- 140131073779472 |       0 | omm
- 140131071678224 |       0 | omm
- 140131125774096 |       0 | 
- 140131127875344 |       0 | 
- 140131113629456 |       0 | 
- 140131094742800 |       0 | 
-(8 rows)
+-- 查询当前是否开启线程池模式
+openGauss=# show enable_thread_pool;
+ enable_thread_pool
+--------------------
+ off
+(1 row)
 
---结束SID为140131075880720的会话。
-openGauss=#  ALTER SYSTEM KILL SESSION '140131075880720,0' IMMEDIATE;
+-- 查询会话信息。
+openGauss=# select pid, sessionid, usename, application_name from pg_stat_activity where usename = 'omm';
+       pid       |    sessionid    | usename  |    application_name
+-----------------+-----------------+----------+------------------------
+ 140114517817088 | 140114517817088 | omm      | gsql
+ 140114743260928 | 140114743260928 | omm      | WLMArbiter
+ 140114791495424 | 140114791495424 | omm      | workload
+ 140114766329600 | 140114766329600 | omm      | WorkloadMonitor
+ 140115301627648 | 140115301627648 | omm      | CfsShrinker
+ 140115220821760 | 140115220821760 | omm      | statement flush thread
+ 140115240285952 | 140115240285952 | omm      | Asp
+ 140115336230656 | 140115336230656 | omm      | TxnSnapCapturer
+ 140115460486912 | 140115460486912 | omm      | JobScheduler
+ 140115380795136 | 140115380795136 | omm      | ApplyLauncher
+ 140115266434816 | 140115266434816 | omm      | PercentileJob
+(11 rows)
+
+-- 结束当前gsql连接会话，当前会话会断开并重新连接
+openGauss=# ALTER SYSTEM KILL SESSION '140114517817088, 140114517817088';
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+The connection to the server was lost. Attempting reset: Succeeded.
 ```
 
