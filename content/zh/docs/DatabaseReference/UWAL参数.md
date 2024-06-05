@@ -80,18 +80,18 @@
 
 ## uwal\_rpc\_flowcontrol\_switch<a name="section14941640131"></a>
 
-**参数说明**： 纯异步备库流控开关，在主库设置。
+**参数说明**： UWAL流控开关，在主库设置。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
-**取值范围**： 布尔型，on、off。on表示打开纯异步备库流开关，off表示关闭纯异步备库流开关。
+**取值范围**： 布尔型，on、off。on表示打开UWAL流控开关，off表示关闭UWAL流控开关。
 
 **默认值**： off
 
 
 ## uwal\_rpc\_flowcontrol\_value<a name="section14941640131"></a>
 
-**参数说明**： 纯异步备库接收阈值。
+**参数说明**： UWAL接受阈值。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -116,7 +116,7 @@
 
 ## uwal\_nodeid<a name="section14941640131"></a>
 
-**参数说明**：当前UWAL节点的ID。
+**参数说明**：当前UWAL节点的id。
 
 该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -156,6 +156,18 @@
 **取值范围**： 字符串，rcp、rdma。
 
 **默认值**： tcp
+
+
+## uwal\_replinodes<a name="section14941640131"></a>
+
+**参数说明**：远端节点类型。id为远端节点对应的uwal_nodeid，protocol与id对应远端节点的uwal_protocol保持一致，可选。
+
+该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 数组，id：0~7；protocol：tcp、rdma。
+
+**默认值**： tcp
+
 
 
 ## cpu\_bind\_switch<a name="section14941640131"></a>
