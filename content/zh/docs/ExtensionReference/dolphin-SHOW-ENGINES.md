@@ -44,13 +44,13 @@ SHOW [STORAGE] ENGINES
 
 ```
 testdb_m=# show storage engines;
- Engine  | Support |            Comment             | Transactions | XA | Savepoints 
----------+---------+--------------------------------+--------------+----+------------
- ASTORE  | DEFAULT | Append Update Storage Engine   | YES          |    | YES
- USTORE  | YES     | In-place Update Storage Engine | YES          |    | YES
- row     | DEFAULT | Row-Oriented Table             | YES          |    | YES
- column  | YES     | Column-Oriented Table          | YES          |    | YES
- mot_fdw | NO      | Memory-Optimized Table         | YES          |    | NO
+ Engine  | Support |            Comment                    | Transactions | XA | Savepoints 
+---------+---------+---------------------------------------+--------------+----+------------
+ ASTORE  | DEFAULT | Append Update Storage Engine          | YES          |    | YES
+ USTORE  | YES     | In-place Update Storage Engine        | YES          |    | YES
+ row     | DEFAULT | Row-Oriented Table Storage Engine     | YES          |    | YES
+ column  | YES     | Column-Oriented Table Storage Engine  | YES          |    | YES
+ mot_fdw | NO      | Memory-Optimized Table Storage Engine | YES          |    | NO
 (5 rows)
 
 ```

@@ -73,7 +73,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
     -   **创建方式1：不指定创建索引类型，默认创建UBtree索引**
 
         ```
-        openGauss=# create index ubt_idx on test(age);
+        create index ubt_idx on test(age);
         ```
 
         ```
@@ -93,7 +93,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
     -   **创建方式2：创建索引时使用using关键字指定索引类型为“ubtree”**
 
         ```
-        openGauss=# create index ubt_idx on test using ubtree(age);
+        create index ubt_idx on test using ubtree(age);
         ```
 
         ```
