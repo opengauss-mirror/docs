@@ -1590,7 +1590,7 @@ headless: true
 	        -   [PGXC\_NODE]({{< relref "./docs/DatabaseReference/PGXC_NODE.md" >}})
 	        -   [PGXC\_SLICE]({{< relref "./docs/DatabaseReference/PGXC_SLICE.md" >}})
 	        -   [PLAN\_TABLE\_DATA]({{< relref "./docs/DatabaseReference/PLAN_TABLE_DATA.md" >}})
-	        -   [STATEMENT\_HISTORY]({{< relref "./docs/DatabaseReference/STATEMENT_HISTORY.md" >}})	         
+	        -   [STATEMENT\_HISTORY]({{< relref "./docs/DatabaseReference/STATEMENT_HISTORY.md" >}})	       
 	    -   [系统视图]({{< relref "./docs/DatabaseReference/系统视图.md" >}})
 	        -   [GET\_GLOBAL\_PREPARED\_XACTS（废弃）]({{< relref "./docs/DatabaseReference/GET_GLOBAL_PREPARED_XACTS_废弃.md" >}})
 	        -   [GS\_AUDITING]({{< relref "./docs/DatabaseReference/GS_AUDITING.md" >}})
