@@ -1,0 +1,3 @@
+# gms_output概述
+
+gms_output是一个基于openGauss的插件，为用户提供了将文本行写入内存、供以后提取和显示的功能。目前支持的接口有：GMS_OUTPUT.ENABLE、GMS_OUTPUT.GET_LINE、GMS_OUTPUT.GET_LINES、GMS_OUTPUT.NEW_LINE、GMS_OUTPUT.PUT、GMS_OUTPUT.PUT_LINE、GMS_OUTPUT.DISABLE。
