@@ -655,6 +655,8 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup init -B backup-path
     ```
+     >![](public_sys-resources/icon-notice.png) **注意：** 
+  >在非资源池化模式下，虽然指定目录下会创建wal子目录，但WAL文件（即pg_xlog文件）会存放在backups目录下。
 
 2.  添加一个新的备份实例。gs\_probackup可以在同一个备份目录下存放多个数据库实例的备份。
 
