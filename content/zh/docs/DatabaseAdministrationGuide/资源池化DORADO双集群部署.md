@@ -324,6 +324,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     
         设置主集群cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
+        cm_ctl set --param --server -k ss_double_cluster_mode=1
     
         启动主集群
         cm_ctl start
@@ -368,6 +369,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     第十一步： 配置备集群cm参数，重新拉起备集群
     
         cm_ctl set --param --agent -k ss_double_cluster_mode=2
+        cm_ctl set --param --server -k ss_double_cluster_mode=2
         在$DSS_HOME/cfg/dss_inst.ini文件中增加一行（备集群所有节点都需要修改，dsscmd setcfg需要dssserver在线，所以这里手动修改）
         CLUSTER_RUN_MODE=cluster_standby
     
@@ -483,6 +485,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         3. 在原备集群修改dss参数与cm参数
         dsscmd setcfg -n CLUSTER_RUN_MODE -v cluster_primary
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
+        cm_ctl set --param --server -k ss_double_cluster_mode=1
         cm_ctl reload --param --agent
 
         4. 在原备集群首备节点执行
@@ -502,6 +505,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         CLUSTER_RUN_MODE=cluster_standby
         设置cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=2
+        cm_ctl set --param --server -k ss_double_cluster_mode=2
 
         8. 在deveice manage上调整同步pair：1.启用从资源保护，2.同步
 
