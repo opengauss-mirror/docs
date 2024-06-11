@@ -57,6 +57,7 @@ openGauss=# select schemaname, tablename, attname, avg_width, most_common_vals, 
  gms_stats_test | normal_table    | b       |        11 | {"abc       "}   | {1}
  gms_stats_test | partition_table | a       |         4 |                  | 
 (5 rows)
+```
 
 ## 删除Extension<a name="section1587441381220"></a>
 
@@ -65,6 +66,8 @@ openGauss=# select schemaname, tablename, attname, avg_width, most_common_vals, 
 ```
 openGauss=# DROP Extension gms_stats [CASCADE];
 ```
+
+
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 >
