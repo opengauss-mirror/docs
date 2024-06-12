@@ -98,7 +98,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     >![](public_sys-resources/icon-note.png) **说明：** 
     >-   此处的vg\_name为卷组名，不需要以‘+’开头。
     >-   dsscmd rmv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
-    >-   rmv删除的是未被使用的是非入口盘（即dsscmd adv命令添加的卷）。
+    >-   rmv删除的是未被使用的非入口盘（即dsscmd adv命令添加的卷）。
 
 -   替换卷组中的卷
 
