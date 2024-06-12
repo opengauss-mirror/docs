@@ -1826,6 +1826,7 @@ headless: true
     -   [工具一览表]({{< relref "./docs/ToolandCommandReference/工具一览表.md" >}})
     -   [客户端工具]({{< relref "./docs/ToolandCommandReference/客户端工具.md" >}})
     	-   [gsql]({{< relref "./docs/ToolandCommandReference/gsql.md" >}})	
+		-   [gs\_loader]({{< relref "./docs/ToolandCommandReference/gs_loader.md" >}})	
     -   [服务端工具]({{< relref "./docs/ToolandCommandReference/服务端工具.md" >}})
         -   [gs\_cgroup]({{< relref "./docs/ToolandCommandReference/gs_cgroup.md" >}})
         -   [gs\_check]({{< relref "./docs/ToolandCommandReference/gs_check.md" >}})
