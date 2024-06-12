@@ -372,8 +372,8 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         取值范围：
 
-        -   USTORE，表示表支持Inplace-Update存储引擎。
-        -   ASTORE，表示表支持Append-Only存储引擎。
+        -   USTORE，表示表支持Inplace-Update存储引擎，仅支持行存储，不支持列存储。
+        -   ASTORE，表示表支持Append-Only存储引擎，仅支持行存储，不支持列存储。
 
         默认值：
 
