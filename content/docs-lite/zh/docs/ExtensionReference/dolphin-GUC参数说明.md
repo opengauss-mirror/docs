@@ -833,13 +833,13 @@ optimizer_switch='command[,command]...'
 
 **示例**：
 ```
--- 设置use_invisible_index为on
+-- 设置use_invisible_indexes为on
 openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes = on';
 
 -- 设置dolphin.optimizer_switch为defalut，表示所有控制选项都设置为默认值
 openGauss=# set dolphin.optimizer_switch = 'default';
 
--- 表示仅设置use_invisible_index选项为默认值
+-- 表示仅设置use_invisible_indexes选项为默认值
 openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes = default';
 ```
 
