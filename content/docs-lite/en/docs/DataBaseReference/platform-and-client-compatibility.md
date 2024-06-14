@@ -28,6 +28,16 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **DD-Mon-YYYY HH:MI:SS.FF AM**
 
+## nls\_length\_semantics<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sd50fac6da781483cae15aaa57243b89f"></a>
+
+**Parameter description:**：Set the default semantics of the string type, set it to BYTE, calculate the string length by bytes, and set it to CHAR, calculate the string length by characters.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**：a string
+
+**Default value**：BYTE
+
 ## max\_function\_args<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_s1a3d3c95fbda4e20a65cb3400cf6a418"></a>
 
 **Parameter description**: Specifies the maximum number of parameters allowed for a function.
