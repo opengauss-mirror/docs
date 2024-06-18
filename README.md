@@ -38,6 +38,8 @@
 | PerformanceTuningGuide | 性能调优指南 |
 | InstallationGuide   | 安装指南   |
 | ReleaseNotes        | 发行说明   |
+| SecBaseline        | 安全配置基线   |
+| SecHarden        | 安全加固指南   |
 | SQLReference | SQL参考 |
 | TechnicalWhitePaper | 技术白皮书 |
 | ToolandCommandReference | 工具与命令参考 |
