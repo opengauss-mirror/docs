@@ -21,9 +21,10 @@ In the preceding information:
 >-   In openGauss, an array automatically increases. If an access violation occurs, a null value is returned, and no error message is reported.
 >-   The scope of an array type defined in a stored procedure takes effect only in this stored procedure.
 >-   It is recommended that you use one of the preceding methods to define an array type. If both methods are used to define the same array type, openGauss prefers the array type defined in a stored procedure to declare array variables.
->-   **data\_type**  can also be the record type defined in a stored procedure \(anonymous blocks are not supported\), but cannot be the array or set type defined in the stored procedure.
+>-   **data\_type**  can also be the record type defined in a stored procedure \(anonymous blocks are not supported\), array or set type defined in the stored procedure.
+>-   When declaring a nested array, that is, when the **data\_type** of an **array\_type** is defined to be an array, a record or a set, the maxium layers of nested type allowed is 6. Also, it's not allowed to assign an array variable or a table variable to a nested array's element directly
 
-openGauss supports access to array elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **exists**,  **trim**,  **next**, and  **delete**  functions.
+openGauss supports access to array elements by using parentheses, and it also supports the  **extend**,  **count**,  **first**,  **last**,  **prior**,  **exists**,  **trim**,  **next**, and  **delete**  functions. However, they're not recommended for accessing elements of nested arrays that are refered by subscripts (even if the elements are of array or table type).
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   If a stored procedure contains a DML statement \(such as SELECT, UPDATE, INSERT, and DELETE\), you are advised to use square brackets to access array elements. Using parentheses will access arrays by default. If no array exists, function expressions will be identified.
