@@ -40,10 +40,33 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
     函数参数的类型
 
+-   **CASCADE**
+
+    自动删除依赖于该函数的对象（例如操作符和触发器），并删除所有依赖于这些对象的对象。
+
+-   **RESTRICT**
+
+    不删除依赖于该函数的对象（默认）。
 
 ## 示例<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
 
-请参见的[示例](CREATE-FUNCTION.md#zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821)。
+以下命令删除平方根函数：
+
+```
+DROP FUNCTION sqrt(integer);
+```
+
+如果函数名在其模式中是唯一的，则可以在不带参数列表的情况下引用它，以下命令会删除具有任意数量参数的函数（包括零）：
+
+```
+DROP FUNCTION update_employee_salaries;
+```
+
+与此不同的是，以下命令删除的函数具有的参数个数为零：
+
+```
+DROP FUNCTION update_employee_salaries();
+```
 
 ## 相关链接<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_sf722b7d9e13547449d559364553b790a"></a>
 
