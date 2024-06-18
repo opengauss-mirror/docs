@@ -1135,6 +1135,7 @@ headless: true
             -   [子查询表达式]({{< relref "./docs/SQLReference/子查询表达式.md" >}})
             -   [数组表达式]({{< relref "./docs/SQLReference/数组表达式.md" >}})
             -   [行表达式]({{< relref "./docs/SQLReference/行表达式.md" >}})
+    	    -   [游标表达式]({{< relref "./docs/SQLReference/游标表达式.md" >}})
     	-   [DDL语法一览表]({{< relref "./docs/SQLReference/DDL语法一览表.md" >}})
     	-   [DML语法一览表]({{< relref "./docs/SQLReference/DML语法一览表.md" >}})
     	-   [DCL语法一览表]({{< relref "./docs/SQLReference/DCL语法一览表.md" >}})
