@@ -106,7 +106,7 @@ gs_ctl参数可分为如下几类：
 </tr>
 <tr id="row1950717022218"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p45078017224"><a name="p45078017224"></a><a name="p45078017224"></a>kill</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>允许用于 kill 的信号名称包括：ABRT、HUP、INT、QUIT、TERM、USR1、USR2。</p>
 </td>
 </tr>
 <tr id="row850715016228"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p13507150102218"><a name="p13507150102218"></a><a name="p13507150102218"></a>querybuild</p>
@@ -157,7 +157,7 @@ gs_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r6ae94b168ff1431ebeb1d02a8183345a"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a>-D, --pgdata=DATADIR</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。如果省略了-D选项，将使用环境变量PGDATA。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a>DATADIR的取值必须为有效的数据目录。</p>
 </td>
@@ -481,11 +481,11 @@ gs_ctl参数可分为如下几类：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row105111348144312"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1351220486434"><a name="p1351220486434"></a><a name="p1351220486434"></a>--operation</p>
+<tbody><tr id="row105111348144312"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1351220486434"><a name="p1351220486434"></a><a name="p1351220486434"></a>-O, --operation</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p155120484435"><a name="p155120484435"></a><a name="p155120484435"></a>openGauss数据库实例，DCF模式下，增删节点的操作。</p>
 </td>
-<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><a name="ul3915143164414"></a><a name="ul3915143164414"></a><ul id="ul3915143164414"><li>add： 向数据库实例的DCF节点配置中增加一个节点。</li><li>remove：从数据库实例DCF节点配置中删除一个节点。</li></ul>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><a name="ul3915143164414"></a><a name="ul3915143164414"></a><ul id="ul3915143164414"><li>add： 向数据库实例的DCF节点配置中增加一个节点。</li><li>remove：从数据库实例DCF节点配置中删除一个节点。</li></li><li>change：从数据库实例DCF节点配置中更改一个节点。</li></ul>
 </td>
 </tr>
 <tr id="row055332143813"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1553821183814"><a name="p1553821183814"></a><a name="p1553821183814"></a>-u, --nodeid</p>
@@ -714,7 +714,7 @@ gs_ctl参数可分为如下几类：
 <p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>例如：一个卷组“+data”或者两个卷组中间用“，”连接“<span>+data,+log</span>”。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--socketpath</p>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--socketpath=socketpath</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>dss实例进程使用的socket文件路径。</p>
 </td>
