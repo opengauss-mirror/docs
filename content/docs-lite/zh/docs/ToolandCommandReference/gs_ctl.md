@@ -8,6 +8,8 @@ gs\_ctl是openGauss提供的数据库服务控制工具，可以用来启停数�
 -   在不停止数据库的情况下，重新加载配置文件（postgresql.conf，pg\_hba.conf）。
 -   主备切换、主备状态查询、DN重建和重建状态查询。
 
+gs\_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
+
 ## 参数说明<a name="zh-cn_topic_0059777628_sfeccdff45fda4d8dacf4cefb2b8103f8"></a>
 
 gs\_ctl参数可分为如下几类：
@@ -87,7 +89,7 @@ gs\_ctl参数可分为如下几类：
     </tr>
     <tr id="zh-cn_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>允许用于 kill 的信号名称包括：ABRT、HUP、INT、QUIT、TERM、USR1、USR2。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
@@ -129,7 +131,7 @@ gs\_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="zh-cn_topic_0059777628_r6ae94b168ff1431ebeb1d02a8183345a"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"><a name="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a><a name="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a>-D, --pgdata=DATADIR</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。</p>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。如果省略了-D选项，将使用环境变量PGDATA。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"><a name="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a><a name="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a>DATADIR的取值必须为有效的数据目录。</p>
 </td>
@@ -178,7 +180,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"><a name="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a><a name="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a>-M后面需要跟SERVERMODE参数，表示在启动时指定数据库的启动模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"><a name="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a><a name="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a>SERVERMODE的取值范围：</p>
-<a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
+<a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>cascade_standby：本端以级联备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
 </td>
 </tr>
 <tr id="row79165943917"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="p16108598396"><a name="p16108598396"></a><a name="p16108598396"></a>-T</p>
@@ -225,6 +227,15 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：<span id="text72241417113710"><a name="text72241417113710"></a><a name="text72241417113710"></a>openGauss</span>中存在的用户。</p>
 <p id="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-Z NODE-TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a>参数可以设置为 "single_node"。</p>
+<div class="note" id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a>在完全单机的情况下，如果wal_level是WAL_LEVEL_MINIMAL，或者max_wal_senders<1，并且数据库启动模式是primary/standby/pending模式，则gs_ctl start命令需要加-Z single_node参数。</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
@@ -354,7 +365,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"><a name="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"></a><a name="zh-cn_topic_0059777628_a84aa453a36684f2a9ccf0235593c6b5e"></a>mode的取值：</p>
 <a name="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"></a><a name="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"></a><ul id="zh-cn_topic_0059777628_u469f33da2f8c41cdaeee8bef59bde778"><li>full：通过全量镜像的方式重新同步<span id="text7129133232312"><a name="text7129133232312"></a><a name="text7129133232312"></a>DN</span>主机的数据目录。</li><li>incremental：通过解析Xlog日志获取主备<span id="text12237633132310"><a name="text12237633132310"></a><a name="text12237633132310"></a>DN</span>差异的数据进行增量修复备<span id="text19941835102316"><a name="text19941835102316"></a><a name="text19941835102316"></a>DN</span>。<div class="warning" id="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"><a name="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"></a><a name="zh-cn_topic_0059777628_n152c48123e374a95ae8bb47a336519e7"></a><span class="warningtitle"> 警告： </span><div class="warningbody"><a name="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"></a><a name="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"></a><ul id="zh-cn_topic_0059777628_ued3f74532e534b8bb3c4db2a8756d588"><li>增量重建适用于主备双主等因日志造成的不一致场景。</li><li>备机数据文件损坏、数据目录丢失等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重新修复备机。</li></ul>
 </div></div>
-</li><li>auto(不指定)：先增量，根据失败后是否可以再增量选择继续增量或者全量，三次增量失败后进行全量。</li><li>standby_full：使用备机重建备机或容灾场景下的首备重建灾备数据库实例内故障的备机</li><li>copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。</li><li>copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</li><li>cross_cluster_full：基于共享存储的同城双中心场景下的跨集群全量build</li><li>cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build</li></ul>
+</li><li>auto(不指定)：先增量，根据失败后是否可以再增量选择继续增量或者全量，三次增量失败后进行全量。</li><li>standby_full：使用备机重建备机或容灾场景下的首备重建灾备数据库实例内故障的备机。</li><li>copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。</li><li>copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</li><li>cross_cluster_full：在dorado容灾场景下，通过全量镜像的方式重新同步主机的数据目录。</li><li>cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build。</li><li>check：检测是否需要build，如果需要，返回build的类型。</li></ul>
 <p id="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"><a name="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"></a><a name="zh-cn_topic_0059777628_a786e85419cc24ddbbdd68e0ae53f18e4"></a>默认值：auto</p>
 </td>
 </tr>
@@ -407,7 +418,8 @@ gs\_ctl参数可分为如下几类：
 
 
 **表 8**  stack参数
-<a name="#table65592307777"></a>
+
+<a name="table65592307777"></a>
 
 <table><thead align="left"><tr id="row42811823161519"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p6281122391516"><a name="p6281122391516"></a><a name="p6281122391516"></a>参数</p>
 </th>
