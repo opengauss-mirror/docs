@@ -89,7 +89,7 @@ gs\_ctl参数可分为如下几类：
     </tr>
     <tr id="zh-cn_topic_0059777628_r35e8037818c84fdeafe486b78988f621"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"><a name="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a><a name="zh-cn_topic_0059777628_a988038b433da4187a1c13d0b953ce677"></a>kill</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a><a name="zh-cn_topic_0059777628_ace0b93e9463342b2b8ff00cf1a70f9eb"></a>给指定的进程发送信号量。</p><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>允许用于 kill 的信号名称包括：ABRT、HUP、INT、QUIT、TERM、USR1、USR2。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0059777628_r49b9f0118eb54e7da572b7511322b93d"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"><a name="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a><a name="zh-cn_topic_0059777628_adccdef7fcf8b42f5bd5f7d70d8412846"></a>querybuild</p>
@@ -131,7 +131,7 @@ gs\_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="zh-cn_topic_0059777628_r6ae94b168ff1431ebeb1d02a8183345a"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"><a name="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a><a name="zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a>-D, --pgdata=DATADIR</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。</p>
+<td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。如果省略了-D选项，将使用环境变量PGDATA。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"><a name="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a><a name="zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a>DATADIR的取值必须为有效的数据目录。</p>
 </td>
@@ -180,7 +180,7 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="30.87691230876913%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"><a name="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a><a name="zh-cn_topic_0059777628_adc2efb8705614ebea2da5b1f32f126a5"></a>-M后面需要跟SERVERMODE参数，表示在启动时指定数据库的启动模式。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"><a name="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a><a name="zh-cn_topic_0059777628_a0a0b08af01b940589b8c259607d1ccc6"></a>SERVERMODE的取值范围：</p>
-<a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
+<a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><a name="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"></a><ul id="zh-cn_topic_0059777628_u09654e02b6264b058493a0ce3b2ded8a"><li>primary：本端以主机模式启动。</li><li>standby：本端以备机模式启动。</li><li>cascade_standby：本端以级联备机模式启动。</li><li>pending：本端处于等待状态，等待提升为主机或者备机。</li></ul>
 </td>
 </tr>
 <tr id="row79165943917"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="p16108598396"><a name="p16108598396"></a><a name="p16108598396"></a>-T</p>
@@ -227,6 +227,15 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：<span id="text72241417113710"><a name="text72241417113710"></a><a name="text72241417113710"></a>openGauss</span>中存在的用户。</p>
 <p id="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-Z NODE-TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a>参数可以设置为 "single_node"。</p>
+<div class="note" id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a>在完全单机的情况下，如果wal_level是WAL_LEVEL_MINIMAL，或者max_wal_senders<1，并且数据库启动模式是primary/standby/pending模式，则gs_ctl start命令需要加-Z single_node参数。</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.087791220877914%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
