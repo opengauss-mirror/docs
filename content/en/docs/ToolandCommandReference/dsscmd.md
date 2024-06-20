@@ -52,8 +52,9 @@ When the openGauss is deployed in shared storage mode and the ss\_enable\_dss fu
 -   Display information about files in the path.
 
     ```
-    dsscmd ls <-p path> [-m measure_type] [-U UDS:socket_domain]
+    dsscmd ls <-p path> [-m measure_type] [-w min_inited_size] [-U UDS:socket_domain]
     ```
+    Valid value range of parameter -w is {0, 1}, 0: not show min_inited_size, 1: show min_inited_size.
 
 -   Copy information from the source file to the target file.
 
