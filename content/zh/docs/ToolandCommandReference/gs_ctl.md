@@ -1,20 +1,20 @@
-# gs\_ctl
+# gs_ctl
 
 ## 背景信息<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_saed7059efc5d469189c9e53a984ba786"></a>
 
-gs\_ctl是openGauss提供的数据库服务控制工具，可以用来启停数据库服务和查询数据库状态。主要供openGauss管理模块调用。
+gs_ctl是openGauss提供的数据库服务控制工具，可以用来启停数据库服务和查询数据库状态。主要供openGauss管理模块调用。
 
-gs\_ctl工具由操作系统用户omm执行。
+gs_ctl工具由操作系统用户omm执行。
 
 -   启动、停止、重启openGauss节点。
 -   在不停止数据库的情况下，重新加载配置文件（postgresql.conf，pg\_hba.conf）。
 -   主备切换、主备状态查询、重建和重建状态查询。
 
-gs\_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
+gs_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
 
 ## 参数说明<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_sfeccdff45fda4d8dacf4cefb2b8103f8"></a>
 
-gs\_ctl参数可分为如下几类：
+gs_ctl参数可分为如下几类：
 
 -   option参数，详细请参见[表1](#table145081017222)。
 -   公共参数，详细请参见[表2](#zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68)。
@@ -33,7 +33,7 @@ gs\_ctl参数可分为如下几类：
 **表 1**  option参数
 
 <a name="table145081017222"></a>
-    
+
 <table><thead align="left"><tr id="row750120016228"><th class="cellrowborder" valign="top" width="25.3%" id="mcps1.2.3.1.1"><p id="p125001701227"><a name="p125001701227"></a><a name="p125001701227"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="74.7%" id="mcps1.2.3.1.2"><p id="p1350113042215"><a name="p1350113042215"></a><a name="p1350113042215"></a>参数说明</p>
@@ -106,7 +106,7 @@ gs\_ctl参数可分为如下几类：
 </tr>
 <tr id="row1950717022218"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p45078017224"><a name="p45078017224"></a><a name="p45078017224"></a>kill</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>给指定的进程发送信号量。</p><p id="p45073013225"><a name="p45073013225"></a><a name="p45073013225"></a>允许用于 kill 的信号名称包括：ABRT、HUP、INT、QUIT、TERM、USR1、USR2。</p>
 </td>
 </tr>
 <tr id="row850715016228"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p13507150102218"><a name="p13507150102218"></a><a name="p13507150102218"></a>querybuild</p>
@@ -122,6 +122,21 @@ gs\_ctl参数可分为如下几类：
 <tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>copy</p>
 </td>
 <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>基于共享存储的双中心容灾模式，进行xlog日志拷贝。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>member</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>对成员节点的管理。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>changerole</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>改变节点角色。</p>
+</td>
+</tr>
+<tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>setrunmode</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>设置运行模式。</p>
 </td>
 </tr>
 </tbody>
@@ -142,7 +157,7 @@ gs\_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r6ae94b168ff1431ebeb1d02a8183345a"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9e74fdf5ce3d46778827a47d380b2ea5"></a>-D, --pgdata=DATADIR</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。</p>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a4b9205991e3849a7a44b9a3ac909dc85"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。如果省略了-D选项，将使用环境变量PGDATA。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a5ad801744e3b4022a7dbdc1cd590100e"></a>DATADIR的取值必须为有效的数据目录。</p>
 </td>
@@ -228,6 +243,15 @@ gs\_ctl参数可分为如下几类：
 </td>
 <td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9a836135fb374d04b5806858c044cde5"></a>取值范围：openGauss中存在的用户。</p>
 <p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a36dd99768f494af69454ba3bff85dc3d"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-Z NODE-TYPE</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.846915308469153%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a6a27bbf91dbb433880d743b86417fb26"></a>参数可以设置为 "single_node"。</p>
+<div class="note" id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_ne6f7bcb5417f4c138370cbce3b36ef7e"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_abacde9d6a0a0402c9bfd182eeda50b4e"></a>在完全单机的情况下，如果wal_level是WAL_LEVEL_MINIMAL，或者max_wal_senders<1，并且数据库启动模式是primary/standby/pending模式，则gs_ctl start命令需要加-Z single_node参数。</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="47.03529647035297%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_afcd7cb5814f3493386a8ebfe513f3bda"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_r4e2f2b577bcb4896bff694fd6fea6e41"><td class="cellrowborder" valign="top" width="22.117788221177882%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_af0e38378554e49f69576073cc765f909"></a>-?, -h, --help</p>
@@ -369,7 +393,7 @@ gs\_ctl参数可分为如下几类：
 <p><li>  check：检测是否需要build，如果需要，返回build的类型。</p>
 <p> 默认值：auto</p>
 <div class="note" id="note548824714012"><a name="note548824714012"></a><a name="note548824714012"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13488174715402"><a name="p13488174715402"></a><a name="p13488174715402"></a>重建级联备机需要加上-M cascade_standby参数。</p>
- 
+
 </div></div>
 </td>
 </tr>
@@ -389,6 +413,14 @@ gs\_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0287275989_p1232613751612"><a name="zh-cn_topic_0287275989_p1232613751612"></a><a name="zh-cn_topic_0287275989_p1232613751612"></a>未指定场合，自动重启，重启默认最大等待时间是60秒。如果在此时间内数据库未能启动成功，就会报不再等待，命令退出。此后可以通过gs_om -t status --detail或其他查看数据库状态的命令，来确认数据库是否启动成功。</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p729832991415"><a name="zh-cn_topic_0287275989_p729832991415"></a><a name="zh-cn_topic_0287275989_p729832991415"></a>无参数</p>
+</td>
+</tr>
+<tr id="row168586599123"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p118591859191216"><a name="p118591859191216"></a><a name="p118591859191216"></a>-C CONNECTOR</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p785955931215"><a name="p785955931215"></a><a name="p785955931215"></a>到源端DN的连接串，通过连接源端DN进行本节点上DN的重建。只支持备机到备机的连接。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="p201453514356"><a name="p201453514356"></a><a name="p201453514356"></a>连接串包含本节点待重建DN的IP和端口和源端DN的IP和端口，格式如下：</p>
+<pre class="screen" id="screen1930864312338"><a name="screen1930864312338"></a><a name="screen1930864312338"></a>'localhost=Local DN IP localport=Local DN Port+1 remotehost=DN IP remoteport=DN Port+1'</pre>
 </td>
 </tr>
 </tbody>
@@ -413,6 +445,28 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>无参数</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-D /PATH/TO/DATADIR</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>指定数据目录的位置，查询数据库状态，显示当前数据库的数据目录以及运行状态等信息。</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>DATADIR的取值必须为有效的数据目录</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-U USERNAME</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>查询受密码保护的数据库集群，可以使用-U选项来指定用户名</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>取值范围：openGauss中存在的用户。</p>
+<p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>默认值：省略此参数则使用与当前操作系统用户同名的用户。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275989_row386211112337"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p68621111193318"><a name="zh-cn_topic_0287275989_p68621111193318"></a><a name="zh-cn_topic_0287275989_p68621111193318"></a>-P PASSWORD</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p1886241133318"><a name="zh-cn_topic_0287275989_p1886241133318"></a><a name="zh-cn_topic_0287275989_p1886241133318"></a>查询受密码保护的数据库集群，可以使用-P选项来指定密码，一般与-U配合使用</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p1186261112338"><a name="zh-cn_topic_0287275989_p1186261112338"></a><a name="zh-cn_topic_0287275989_p1186261112338"></a>-</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -427,11 +481,11 @@ gs\_ctl参数可分为如下几类：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row105111348144312"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1351220486434"><a name="p1351220486434"></a><a name="p1351220486434"></a>--operation</p>
+<tbody><tr id="row105111348144312"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1351220486434"><a name="p1351220486434"></a><a name="p1351220486434"></a>-O, --operation</p>
 </td>
 <td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p155120484435"><a name="p155120484435"></a><a name="p155120484435"></a>openGauss数据库实例，DCF模式下，增删节点的操作。</p>
 </td>
-<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><a name="ul3915143164414"></a><a name="ul3915143164414"></a><ul id="ul3915143164414"><li>add： 向数据库实例的DCF节点配置中增加一个节点。</li><li>remove：从数据库实例DCF节点配置中删除一个节点。</li></ul>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><a name="ul3915143164414"></a><a name="ul3915143164414"></a><ul id="ul3915143164414"><li>add： 向数据库实例的DCF节点配置中增加一个节点。</li><li>remove：从数据库实例DCF节点配置中删除一个节点。</li></li><li>change：从数据库实例DCF节点配置中更改一个节点。</li></ul>
 </td>
 </tr>
 <tr id="row055332143813"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p1553821183814"><a name="p1553821183814"></a><a name="p1553821183814"></a>-u, --nodeid</p>
@@ -460,6 +514,20 @@ gs\_ctl参数可分为如下几类：
 <td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"><a name="zh-cn_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"></a><a name="zh-cn_topic_0059778753_a03ce63a0d3c4492cb1b6b6133c49f087"></a>指定数据目录的位置。若指定目录中包含配置文件postgresql.conf，且配置文件内data_directory值与-D指定目录不同，将优先按data_directory目录执行。</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"><a name="zh-cn_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"></a><a name="zh-cn_topic_0059778753_af25a984dccd446fcb0332a6dacd533e9"></a>DATADIR的取值：用户自定义。</p>
+</td>
+</tr>
+<tr id="row3672156133914"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p18672105611397"><a name="p18672105611397"></a><a name="p18672105611397"></a>-G</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p967211565397"><a name="p967211565397"></a><a name="p967211565397"></a>用于设置DCF中的组号。</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p206721056183917"><a name="p206721056183917"></a><a name="p206721056183917"></a>整型。</p>
+</td>
+</tr>
+<tr id="row3672156133914"><td class="cellrowborder" valign="top" width="24.072407240724072%" headers="mcps1.2.4.1.1 "><p id="p18672105611397"><a name="p18672105611397"></a><a name="p18672105611397"></a>--priority</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.53345334533453%" headers="mcps1.2.4.1.2 "><p id="p967211565397"><a name="p967211565397"></a><a name="p967211565397"></a>用于设置DCF中的优先级。</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.394139413941396%" headers="mcps1.2.4.1.3 "><p id="p206721056183917"><a name="p206721056183917"></a><a name="p206721056183917"></a>整型。</p>
 </td>
 </tr>
 </tbody>
@@ -631,6 +699,13 @@ gs\_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a><a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_a9fe1c06008014c0a87419691c6a20e1e"></a>默认值：0</p>
 <p id="zh-cn_topic_0287275989_p452620194414"><a name="zh-cn_topic_0287275989_p452620194414"></a><a name="zh-cn_topic_0287275989_p452620194414"></a>提示：-g入参参数是指资源池化节点id参数ss_instance_id</p>
 </td>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--instance-id=instance_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>启用dss和dms时，实例的ID号。</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.169999999999998%" headers="mcps1.2.4.1.3 "><p id="p5621183815134"><a name="p5621183815134"></a><a name="p5621183815134"></a>正整数。</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--vgname</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>卷组名。</p>
@@ -639,7 +714,7 @@ gs\_ctl参数可分为如下几类：
 <p id="p186081732131313"><a name="p186081732131313"></a><a name="p186081732131313"></a>例如：一个卷组“+data”或者两个卷组中间用“，”连接“<span>+data,+log</span>”。</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--socketpath</p>
+<tr id="zh-cn_topic_0287275989_row2029662921416"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0287275989_p62971529151411"><a name="zh-cn_topic_0287275989_p62971529151411"></a><a name="zh-cn_topic_0287275989_p62971529151411"></a>--socketpath=socketpath</p>
 </td>
 <td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0287275989_p13298629141413"><a name="zh-cn_topic_0287275989_p13298629141413"></a><a name="zh-cn_topic_0287275989_p13298629141413"></a>dss实例进程使用的socket文件路径。</p>
 </td>
