@@ -928,3 +928,17 @@ openGauss=# show max_error_count;
  64
 (1 row)
 ```
+
+## dolphin.cmpt\_version
+
+**参数说明**：控制兼容MySQL的版本。
+
+当前影响的函数响的函数有：
+1.[DATE_ADD](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+2.[DATE_SUB](dolphin-时间和日期处理函数和操作符.md#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
+
+ 该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：枚举类型
+
+**默认值**：5.7
