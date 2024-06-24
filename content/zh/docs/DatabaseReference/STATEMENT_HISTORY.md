@@ -510,6 +510,151 @@
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
 </td>
 </tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>net_send_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>网络上的时间花销。</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt1_q</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>Q报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt2_simple_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>exec_simple_query执行耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt3_analyze_rewrite</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>pg_analyze_and_rewrite执行耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt4_plan_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>pg_plan_queries执行耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt5_light_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>exec_query_through_light_proxy执行耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt6_p</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>P报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt7_b</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>B报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt8_e</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>E报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt9_d</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>D报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt10_s</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>S报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt11_c</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>C报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt12_u</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>U报文执行的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt13_before_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>进入下一次报文处理前的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>srt14_after_query</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>完成报文处理后的耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+</tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>rtt_unknown</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>未知时间消耗，可能是session切换耗时</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p3950193841719"><a name="p3950193841719"></a><a name="p3950193841719"></a>L0</p>
+</td>
+
+</tr>
 </tbody>
 </table>
 
