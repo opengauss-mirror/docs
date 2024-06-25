@@ -488,7 +488,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **CONNECT BY子句**
 
-    CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR KEY SHARE/SHARE/NO KEY UPDATE/UPDATE锁）
+    CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR(即PRIOR ColumnRef的形式)，不支持对表达式、类型转换指定PRIOR关键字(即PRIOR expr的形式)。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR KEY SHARE/SHARE/NO KEY UPDATE/UPDATE锁）。
     除此之外，PRIOR关键字还可以用在目标列中，允许用户通过目标列获取上一层的值。
     ```
     openGauss=# create table test(name varchar, id int, fatherid int);

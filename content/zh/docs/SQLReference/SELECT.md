@@ -502,7 +502,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     B      | E   |         2 |      5 |               2
     (5 rows)
     ```
-    CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR，不支持对表达式、类型转换指定PRIOR关键字。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR KEY SHARE/SHARE/NO KEY UPDATE/UPDATE锁）。
+    CONNECT BY代表递归连接条件，CONNECT BY条件中可以对列指定PRIOR关键字代表以这列为递归键进行递归。当前约束只能对表中的列指定PRIOR(即PRIOR ColumnRef的形式)，不支持对表达式、类型转换指定PRIOR关键字(即PRIOR expr的形式)。若在递归连接条件前加NOCYCLE，则表示遇到循环记录时停止递归。（注：含START WITH .. CONNECT BY子句的SELECT语句不支持使用FOR KEY SHARE/SHARE/NO KEY UPDATE/UPDATE锁）。
 
     Start with语句的执行流程是：
     1. 由 start with 区域的条件选择初始的数据集。上述例子里，先把 ('A', 1, 0) 选择出来。然后把初始的数据集设置为工作集。
