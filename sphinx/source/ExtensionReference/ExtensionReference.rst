@@ -9,6 +9,4 @@
     gms_output-Extension   
     datavec-Extension
     gms_profiler-Extension
-    whale-Extension
-
 

@@ -3,7 +3,7 @@
 This tool can use the existing openGauss node to assess the compatibility of data SQL text in openGauss. The restrictions include but are not limited to the following:
 - Only SQL text files are supported, and SQL statements are separated by semicolons (;).
 
-- If compatible plug-ins such as Dolphin and Whale are not used, the error information about incompatible statements may be inaccurate. If the corresponding plug-in is used, comply with the plug-in usage restrictions.
+- If compatible plug-ins such as Dolphin are not used, the error information about incompatible statements may be inaccurate. If the corresponding plug-in is used, comply with the plug-in usage restrictions.
 
 - The comment tag (#) is not supported currently. Replace the comment tag (#) in the text with `--` or delete it.
 
