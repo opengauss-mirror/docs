@@ -1,4 +1,3 @@
-# SQL参考
 
 # SQL参考<a name="ZH-CN_TOPIC_0289900204"></a>
 
