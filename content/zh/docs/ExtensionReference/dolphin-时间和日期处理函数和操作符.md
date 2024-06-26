@@ -1600,7 +1600,7 @@ CONTEXT:  referenced column: subdate
 
 - DATE\_ADD\(date/datetime/time, interval expr unit\)
 
-  描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。
+  描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当dolphin.cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
   
   返回值类型：
   
@@ -1642,7 +1642,7 @@ CONTEXT:  referenced column: subdate
   
 - DATE\_SUB\(date/datetime/time, interval expr unit\)
 
-  描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。
+  描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当dolphin.cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
   
   返回值类型：
   
