@@ -133,7 +133,7 @@ UWAL提供简易部署脚本，支持一键部署。
     3.  解压源文件压缩包。
 
         ```
-        tar -xzvf OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz
+        tar -xzvf OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz
         ```
 
         解压后得到如下文件。
@@ -174,7 +174,9 @@ UWAL提供简易部署脚本，支持一键部署。
     4.  使用“bin“目录下的verification二进制，进行软件包签名验证。
 
         ```
-        ./bin/verification OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.cms OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.txt
+        ./bin/verification OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz 
+        OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz.cms 
+        OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz.txt
         ```
 
         >![](public_sys-resources/icon-note.png) **说明：** 
@@ -183,7 +185,7 @@ UWAL提供简易部署脚本，支持一键部署。
         -   验证成功控制台会输出：
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             Verify the source file passed.
             Verify the sha file passed.
             ```
@@ -191,7 +193,7 @@ UWAL提供简易部署脚本，支持一键部署。
         -   验证失败控制台会输出：
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             ...
             Verify the source file failed.
             ```
@@ -199,7 +201,7 @@ UWAL提供简易部署脚本，支持一键部署。
             或者
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             ...
             Verify the sha file failed.
             ```
