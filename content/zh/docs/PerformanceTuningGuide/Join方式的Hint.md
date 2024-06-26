@@ -33,3 +33,6 @@ select /*+ nestloop(store_sales store_returns item) */ i_product_name product_na
 
 ![](figures/zh-cn_image_0253032870.png)
 
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>在mysql兼容性下，当查询的列的类型为set时，禁用mergejoin计划，即使用hint提示走mergejoin也无效。
