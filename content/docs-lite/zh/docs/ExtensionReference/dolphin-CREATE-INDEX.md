@@ -20,7 +20,7 @@
 -   本章节只包含dolphin新增的语法，原openGauss的语法未做删除和修改。
 -   新增支持option的无序排列。
 -   原始openGauss中，索引名是schema级别唯一的，创建索引时如果索引名重复了会报错。在dolphin插件中，如果GUC参数`dolphin.b_compatibility_mode`为on，当索引名重复时，会自动生成一个不重复的索引名做替代，并告警提示。
--   如果GUC参数`dolphin.b_compatibility_mode`为on，创建索引默认为NULLS FIRST索引。
+-   如果GUC参数`dolphin.b_compatibility_mode`为on且`dolphin_nulls_minimal_policy`为on，创建索引默认为NULLS FIRST索引。如果是倒序索引，索引默认为NULLS LAST，以便兼容null值为最小值的表现行为。
 
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>

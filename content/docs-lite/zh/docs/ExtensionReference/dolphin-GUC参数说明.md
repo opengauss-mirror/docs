@@ -435,6 +435,27 @@ dayname
 
 **默认值**：on
 
+## dolphin.nulls_minimal_policy
+
+**参数说明**：仅在dolphin.b_compatibility_mode为ON时这个参数才生效。参数控制NULL值在openGauss内的表现行为。在默认场景下，请不要主动修改该参数，否则可能导致openGauss在一些行为的表现不一致。当参数为ON表示NULL值为最小值，当参数为OFF时继承openGauss默认行为：NULL为最大值。目前该参数控制了以下行为：
+
+1. 分区表NULL值分区：参数打开时，NULL值会被插入到最小分区，反之会被插入最大分区。
+2. 查询行为：参数打开时，如果是ORDER BY排序行为，针对ASC排序时，会默认添加NULLS FIRST,针对DESC排序时，会默认添加NULLS LAST。
+3. 索引行为：参数打开时，升序ASC索引默认添加NULLS FIRST，降序DESC索引默认添加NULLS FISRT。
+4. 索引显示：参数打开时，通过\d等方式查询索引行为，如果索引为升序索引，将会默认隐藏NULLS FIRST；如果索引为降序索引，将会默认隐藏NULLS LAST。
+
+**取值范围**：布尔型
+
+-   on表示使用新增兼容性功能。需要在dolphin.b_compatibility_mode同为ON时才生效。
+-   off表示关闭兼容性功能，使用内核原有功能。
+
+**默认值**：on。
+
+**其它**：在默认场景下，请不要主动修改该参数，否则可能导致openGauss在一些行为的表现不一致。
+
+1. 修改前后(ON修改为OFF或者OFF修改为ON），会导致NULL值插入的分区可能不一致，最终导致一些查询结果缺少一些NULL值记录。
+2. 修改前后(ON修改为OFF或者OFF修改为ON），由于索引的默认行为变更，可能导致一些执行计划产生变化（如不能只用索引等）。
+
 ## version_comment<a name="section203671436826"></a>
 
 **参数说明**：该参数目前为只读参数，且未实现其具体意义。参数值为字符串类型，表示数据库服务端及许可证信息。
