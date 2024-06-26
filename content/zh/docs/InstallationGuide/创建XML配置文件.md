@@ -179,7 +179,7 @@
 </tr>
 <tr id="row12418151285918"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p104180128590"><a name="p104180128590"></a><a name="p104180128590"></a>enable_dcf</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p44181412175911"><a name="p44181412175911"></a><a name="p44181412175911"></a>是否开启DCF模式。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p44181412175911"><a name="p44181412175911"></a><a name="p44181412175911"></a>是否开启DCF模式。资源池化不支持dcf模式。</span></p>
 </td>
 </tr>
 <tr id="row490515610593"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p19056695920"><a name="p19056695920"></a><a name="p19056695920"></a>dcf_config</p>
@@ -189,7 +189,7 @@
 </tr>
 <tr id="row19822181216374"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p7822412123718"><a name="p7822412123718"></a><a name="p7822412123718"></a><span id="ph9894173393710"><a name="ph9894173393710"></a><a name="ph9894173393710"></a>enable_dss</span></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p3822151223719"><a name="p3822151223719"></a><a name="p3822151223719"></a><span id="ph926135011373"><a name="ph926135011373"></a><a name="ph926135011373"></a>资源池化模式开关</span><span id="ph991191210218"><a name="ph991191210218"></a><a name="ph991191210218"></a><span id="ph1716615151418"><a name="ph1716615151418"></a><a name="ph1716615151418"></a>，取值范围on/off，默认为off，</span>资源池化不支持dcf模式。</span></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p3822151223719"><a name="p3822151223719"></a><a name="p3822151223719"></a><span id="ph926135011373"><a name="ph926135011373"></a><a name="ph926135011373"></a>资源池化模式开关</span><span id="ph991191210218"><a name="ph991191210218"></a><a name="ph991191210218"></a><span id="ph1716615151418"><a name="ph1716615151418"></a><a name="ph1716615151418"></a>，取值范围on/off，默认为off，</span></p>
 </td>
 </tr>
 <tr id="row37942023183718"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p779592320372"><a name="p779592320372"></a><a name="p779592320372"></a><span id="ph165120406388"><a name="ph165120406388"></a><a name="ph165120406388"></a>dss_home</span></p>
