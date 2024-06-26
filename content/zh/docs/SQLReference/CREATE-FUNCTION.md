@@ -52,6 +52,7 @@
           | ROWS result_rows
           | SET configuration_parameter { {TO | =} value | FROM CURRENT }
           | COMMENT 'text' 
+          | pipelined_clause
       ] [...]
       {
           AS 'definition'
@@ -79,6 +80,7 @@
             | ROWS result_rows
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
             | COMMENT 'text' 
+            | pipelined_clause
          ][...]
          {
             IS | AS
@@ -264,6 +266,21 @@
 
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
+
+-   **pipelined_clause**
+
+    指定函数为可以返回行集合（可以是嵌套表或数组）的函数，您可以像查询物理表一样查询函数或者将其赋值给集合变量。
+    如果函数指定了该选项，可以通过在FROM子句中使用TABLE调用管道函数。（TABLE可以省略）。如果函数不存在入参，省略入参。例如：
+
+    ```sql
+     SELECT * FROM TABLE(table_function_name(parameter_list));
+     -- 或者
+     SELECT * FROM table_function_name(parameter_list);
+     -- 或者（函数不存在入参）
+     SELECT * FROM TABLE(table_function_name);
+    ```
+
+    取值范围：PIPELINED
 
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
