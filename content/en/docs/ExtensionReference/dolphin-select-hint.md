@@ -20,7 +20,7 @@ set_var(param = value)
     Currently, the following parameters can be set and take effect by using hints:
     -   Boolean
 
-        enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable\_tidscan, partition\_iterator\_elimination, partition\_page\_estimation, enable\_functional\_dependency, var\_eq\_const\_selectivity,
+        enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable_incremental_sort, enable\_tidscan, partition\_iterator\_elimination, partition\_page\_estimation, enable\_functional\_dependency, var\_eq\_const\_selectivity,
 
     -   Integer
 
