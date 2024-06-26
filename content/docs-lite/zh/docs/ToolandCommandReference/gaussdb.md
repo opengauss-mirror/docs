@@ -403,8 +403,7 @@ gaussdb接受[表1](#zh-cn_topic_0059777816_zh-cn_topic_0058968126_table57797050
 </tbody>
 </table>
 
-除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。例如，--enable\_fast\_query\_shipping=off
-
+除以上参数外，出现在postgres.conf中的所有参数，均可以用--guc\_name=guc\_value的方式在gaussdb启动时传给gaussdb。
 ## 环境变量<a name="zh-cn_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
 -   PGLINETENCODING：客户端使用的缺省字符编码。客户端可以独立地覆盖它。这个值也可以在配置文件里设置。

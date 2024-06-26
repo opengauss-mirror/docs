@@ -810,7 +810,7 @@ SET
 
   | 选项名               | 默认   | 功能                |
   | ------------------- | ------ | ------------------- | 
-  |use_invisible_index	| off    | 控制是否使用不可见索引 |
+  |use_invisible_indexes	| off    | 控制是否使用不可见索引 |
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -831,14 +831,14 @@ optimizer_switch='command[,command]...'
 
 **示例**：
 ```
--- 设置use_invisible_index为on
-openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = on';
+-- 设置use_invisible_indexes为on
+openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes = on';
 
 -- 设置dolphin.optimizer_switch为defalut，表示所有控制选项都设置为默认值
 openGauss=# set dolphin.optimizer_switch = 'default';
 
--- 表示仅设置use_invisible_index选项为默认值
-openGauss=# set dolphin.optimizer_switch = 'use_invisible_index = default';
+-- 表示仅设置use_invisible_indexes选项为默认值
+openGauss=# set dolphin.optimizer_switch = 'use_invisible_indexes = default';
 ```
 
 ## dolphin.div_precision_increment<a name="section203671436846"></a>

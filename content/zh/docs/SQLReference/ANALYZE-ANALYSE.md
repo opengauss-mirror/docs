@@ -74,7 +74,7 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 -   检测表和索引的数据文件
 
     ```
-    {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name|index_name [CASCADE];
+   {ANALYZE | ANALYSE} VERIFY { FAST | COMPLETE } { table_name | index_name } [CASCADE];
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
