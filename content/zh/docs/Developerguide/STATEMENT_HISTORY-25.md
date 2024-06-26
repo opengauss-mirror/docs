@@ -13,14 +13,14 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row16491158192819"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p1149178122814"><a name="p1149178122814"></a><a name="p1149178122814"></a>dbname</p>
+<tbody><tr id="row16491158192819"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p1149178122814"><a name="p1149178122814"></a><a name="p1149178122814"></a>db_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.602160216021602%" headers="mcps1.2.4.1.2 "><p id="p124911782289"><a name="p124911782289"></a><a name="p124911782289"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.265626562656266%" headers="mcps1.2.4.1.3 "><p id="p1445326163513"><a name="p1445326163513"></a><a name="p1445326163513"></a>数据库名称。</p>
 </td>
 </tr>
-<tr id="row14915892817"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174910812286"><a name="p174910812286"></a><a name="p174910812286"></a>schemaname</p>
+<tr id="row14915892817"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174910812286"><a name="p174910812286"></a><a name="p174910812286"></a>schema_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.602160216021602%" headers="mcps1.2.4.1.2 "><p id="p1949128172817"><a name="p1949128172817"></a><a name="p1949128172817"></a>name</p>
 </td>
