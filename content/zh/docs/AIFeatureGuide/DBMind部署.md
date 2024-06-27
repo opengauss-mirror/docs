@@ -26,8 +26,10 @@ useradd -m test_user -d /home/test_user
 
 | File Name     | Download Address                                             | OS/Arch      |
 | ------------- | ------------------------------------------------------------ | ------------ |
-| DBMind        | [dbmind-installer-x86_64-python3.10.sh.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dbmind/latest/x86/dbmind-installer-x86_64-python3.10.sh.tar.gz) | linux/x86_64 |
-| DBMind        | [dbmind-installer-aarch64-python3.10.sh.tar.gz](https://gitee.com/link?target=https%3A%2F%2Fopengauss.obs.cn-south-1.myhuaweicloud.com%2Fdbmind%2Flatest%2Farm%2Fdbmind-installer-aarch64-python3.10.sh.tar.gz) | linux/arm64  |
+| DBMind        | [dbmind-installer-x86_64-python3.11.sh.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/dbmind/x86/dbmind-installer-x86_64-python3.11.sh.tar.gz)  | DBMind X86|
+| DBMind        |[dbmind-installer-x86_64-python3.11.sh.tar.gz.sha256](https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/dbmind/x86/dbmind-installer-x86_64-python3.11.sh.tar.gz.sha256)  | DBMind X86 SHA256 |
+| DBMind        |[dbmind-installer-aarch64-python3.11.sh.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/dbmind/arm/dbmind-installer-aarch64-python3.11.sh.tar.gz) | DBMind ARM  |
+| DBMind        |  [dbmind-installer-aarch64-python3.11.sh.tar.gz.sha256](https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/dbmind/arm/dbmind-installer-aarch64-python3.11.sh.tar.gz.sha256) | DBMind ARM SHA256  |
 | Prometheus    | [prometheus-2.43.0.linux-amd64.tar.gz](https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz) | linux/x86_64 |
 | Prometheus    | [prometheus-2.43.0.linux-arm64.tar.gz](https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-arm64.tar.gz) | linux/arm64  |
 | node_exporter | [node_exporter-1.5.0.linux-amd64.tar.gz](https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz) | linux/x86_64 |
