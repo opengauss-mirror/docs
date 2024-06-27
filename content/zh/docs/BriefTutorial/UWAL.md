@@ -133,7 +133,7 @@ UWAL提供简易部署脚本，支持一键部署。
     3.  解压源文件压缩包。
 
         ```
-        tar -xzvf OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz
+        tar -xzvf OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz
         ```
 
         解压后得到如下文件。
@@ -174,7 +174,8 @@ UWAL提供简易部署脚本，支持一键部署。
     4.  使用“bin“目录下的verification二进制，进行软件包签名验证。
 
         ```
-        ./bin/verification OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.cms OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.txt
+        ./bin/verification OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz.cms 
+        OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz.txt
         ```
 
         >![](public_sys-resources/icon-note.png) **说明：** 
@@ -183,7 +184,7 @@ UWAL提供简易部署脚本，支持一键部署。
         -   验证成功控制台会输出：
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             Verify the source file passed.
             Verify the sha file passed.
             ```
@@ -191,7 +192,7 @@ UWAL提供简易部署脚本，支持一键部署。
         -   验证失败控制台会输出：
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             ...
             Verify the source file failed.
             ```
@@ -199,7 +200,7 @@ UWAL提供简易部署脚本，支持一键部署。
             或者
 
             ```
-            Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
+            Starting to verify OCK_UWAL_23.0.0_openeuler_aarch64.tar.gz...
             ...
             Verify the sha file failed.
             ```
@@ -371,7 +372,7 @@ UWAL提供简易部署脚本，支持一键部署。
             ```
             replconninfo1='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.207 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.207 remoteuwalport=9991'
             enable_uwal = on
-            uwal_config = '{"uwal_nodeid": 0, "uwal_ip": "10.10.10.201", "uwal_port": 9991, "uwal_protocol": "tcp", "cpu_bind_switch": "true", "cpu_bind_start": 1, "cpu_bind_num": 3}'
+            uwal_config = '{"uwal_nodeid": 0, "uwal_ip": "10.10.10.201", "uwal_port": 9991, "uwal_protocol": "tcp", "uwal_replinodes": [{"id": 1, "protocol": "tcp"}], "cpu_bind_switch": "true", "cpu_bind_start": 1, "cpu_bind_num": 3}'
             uwal_disk_size = 8589934592
             uwal_devices_path = '/home/Data/uwal/'
             uwal_log_path = '/home/Data/opengauss_master/uwal_log'
