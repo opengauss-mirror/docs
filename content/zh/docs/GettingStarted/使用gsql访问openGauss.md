@@ -1,6 +1,6 @@
 # 使用gsql访问openGauss
 
-gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考《工具与命令参考》中“客户端工具 \> gsql”章节。
+gsql是openGauss提供的在命令行下运行的数据库连接工具。此工具除了具备操作数据库的基本功能，还提供了若干高级特性，便于用户使用。本节只介绍如何使用gsql连接数据库，关于gsql使用方法的更多信息请参考[《工具与命令参考》中“客户端工具 \> gsql”](../ToolandCommandReference/gsql.md)章节。
 
 ## 注意事项<a name="zh-cn_topic_0283137029_zh-cn_topic_0237120292_zh-cn_topic_0062050379_s8dfe50d001084ac9ad79a79a8f471e8a"></a>
 
