@@ -679,8 +679,6 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
   - INITIALLY DEFERRED：只有在事务结尾才检查它。
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
-    >Ustore表不支持新增DEFERRABLE 以及 INITIALLY  DEFERRED约束。
 
 -   **PARTIAL CLUSTER KEY**
 
