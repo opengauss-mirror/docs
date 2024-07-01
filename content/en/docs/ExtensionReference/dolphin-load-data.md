@@ -130,7 +130,8 @@ openGauss=# CREATE TABLE load_t1
 --Copy data from the /home/omm/test.csv file to the load_t1 table.
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1;
 
---Copy data from the /home/omm/test.csv file to the load_t1 table. The parameters are as follows: '\t' (fields terminated by E'\t') indicates a column separator, '\r' (lines terminated by E'\r') indicates a newline character, and (IGNORE 2 LINES) indicates that the first two lines are skipped.
+--Copy data from the /home/omm/test.csv file to the load_t1 table. The parameters are as follows: ',' (fields terminated by ',') indicates a column separator, '\n' (lines terminated by E'\n') indicates a newline character, and (IGNORE 2 LINES) indicates that the first two lines are skipped.
+openGauss=# SET dolphin.sql_mode = '';
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1 fields terminated by ',' lines terminated by E'\n' IGNORE 2 LINES;
 
 openGauss=# select * from load_t1;
