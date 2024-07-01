@@ -46,8 +46,6 @@ WHERE EXISTS
 根据SQL语意等价改写SQL消除SubPlan如下：
 
 ```
-update normal_date n set time = (
-    select time from normal_date_part p where p.id = n.id
-);
+update normal_date n set time = p.time from normal_date_part p where p.id = n.id;
 ```
 
