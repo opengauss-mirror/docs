@@ -905,10 +905,12 @@
   openGauss=# select !!10;
   ERROR:  Operator '!!' is deprecated when b_compatibility_mode is on. Please use function factorial().
   
-  openGauss=# select 10!;
-  ERROR:  Operator '!' behind expression is deprecated when b_compatibility_mode is on. Please use function factorial().
+  test_b=# select 10!;
+  ERROR:  syntax error at or near ";"
+  LINE 1: select 10!;
+                    ^
   ```
-
+  
 - text_bool(text)
 
   描述：先截取输入文本首部的数值部分（包括整数、小数、正负数），丢弃剩下的非数值部分。若截取得到的数值部分等于0，则函数返回逻辑假；否则函数返回逻辑真。若输入文本首部不是数值，则直接返回逻辑假。
