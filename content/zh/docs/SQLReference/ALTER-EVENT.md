@@ -70,7 +70,7 @@ EVENT event_name
 --创建一个定时任务
 openGauss=# CREATE TABLE t_ev(num int);
 
-openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
+openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate() + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
 
 --修改定时任务
 --修改定时任务状态和待执行语句
