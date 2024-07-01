@@ -129,34 +129,44 @@
 
   返回类型：int16，int16
 
--   last\_insert\_id\(\)
+  示例：
 
-    描述：获取最近一次为自动增长列成功插入的第一个自动生成的值。
+```sql
+openGauss=# select * from pg_sequence_last_value('seqDemo'::regclass);
+ cache_value | last_value
+-------------+------------
+          20 |        120
+(1 row)
+```
 
-    返回类型：int16
+- last\_insert\_id\(\)
 
--   last\_insert\_id\(int16\)
+  描述：获取最近一次为自动增长列成功插入的第一个自动生成的值。
 
-    描述：设置下一次last\_insert\_id\(\)函数的返回值，并返回此值。若参数为NULL，将下一次last\_insert\_id\(\)函数的返回值设为0，此函数返回NULL。
+  返回类型：int16
 
-    返回值类型：int16
+- last\_insert\_id\(int16\)
 
-    示例：
+  描述：设置下一次last\_insert\_id\(\)函数的返回值，并返回此值。若参数为NULL，将下一次last\_insert\_id\(\)函数的返回值设为0，此函数返回NULL。
 
-    ```
-    openGauss=# select last_insert_id(100);
-     last_insert_id
-    ----------------
-                100
-    (1 row)
-    openGauss=# select last_insert_id();
-     last_insert_id
-    ----------------
-                100
-    (1 row)
-    ```
+  返回值类型：int16
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
-    >
-    >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)是会话级别的函数，若当前会话未对自动增长列插入任何数据，last\_insert\_id\(\)返回值为0。
-    >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)仅在参数sql\_compatibility=B时可用。
+  示例：
+
+  ```
+  openGauss=# select last_insert_id(100);
+   last_insert_id
+  ----------------
+              100
+  (1 row)
+  openGauss=# select last_insert_id();
+   last_insert_id
+  ----------------
+              100
+  (1 row)
+  ```
+
+  >![](public_sys-resources/icon-note.png) **说明：** 
+  >
+  >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)是会话级别的函数，若当前会话未对自动增长列插入任何数据，last\_insert\_id\(\)返回值为0。
+  >-   last\_insert\_id\(\)和last\_insert\_id\(int16\)仅在参数sql\_compatibility=B时可用。
