@@ -303,6 +303,16 @@ PG\_AM系统表存储有关索引访问方法的信息。系统支持的每种�
 <td class="cellrowborder" valign="top" width="46.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5d207d29b2cc42818fd49becd9d965f6"><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5d207d29b2cc42818fd49becd9d965f6"></a><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a5d207d29b2cc42818fd49becd9d965f6"></a>为一个索引分析和确认reloptions的函数。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_r0e2393f3b3d44a23af49b45fb17983b6"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a404cbf39ee7241a18b44c8c4efb001e3"><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a404cbf39ee7241a18b44c8c4efb001e3"></a><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_a404cbf39ee7241a18b44c8c4efb001e3"></a>amoptions</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.489999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa15c794661b04f138fadcf9e1c16291d"><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa15c794661b04f138fadcf9e1c16291d"></a><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_aa15c794661b04f138fadcf9e1c16291d"></a>regproc</p>
+</td>
+<td class="cellrowborder" valign="top" width="23.830000000000002%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_ad88a296c50144d7e9b309fad992c30e7"><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_ad88a296c50144d7e9b309fad992c30e7"></a><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0059779011_ad88a296c50144d7e9b309fad992c30e7"></a><a href="PG_PROC.md">PG_PROC</a>.proname</p>
+</td>
+<td class="cellrowborder" valign="top" width="46.52%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0159779011_a5d207d29b2cc42818fd49becd9d965f6"><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0159779011_a5d207d29b2cc42818fd49becd9d965f6"></a><a name="zh-cn_topic_0283137189_zh-cn_topic_0237122267_zh-cn_topic_0159779011_a5d207d29b2cc42818fd49becd9d965f6"></a>
+负责提供有关该访问方法信息的处理器函数的OID</p>
+</td>
+</tr>
 </tbody>
 </table>
 
