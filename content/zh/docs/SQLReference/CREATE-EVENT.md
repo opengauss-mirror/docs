@@ -99,7 +99,7 @@ interval:
 openGauss=# CREATE TABLE t_ev(num int);
 
 --创建一个执行一次的定时任务
-openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
+openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE AT sysdate() + interval 5 second + interval 33 minute DISABLE DO insert into t_ev values(0);
 
 --创建一个每隔一分钟执行一次的定时任务
 openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE EVERY 1 minute DO insert into t_ev values(1);
