@@ -130,7 +130,8 @@ openGauss=# CREATE TABLE load_t1
 --从/home/omm/test.csv文件拷贝数据到表load_t1。
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1;
 
---从/home/omm/test.csv文件拷贝数据到表load_t1，使用参数如下：字段分隔符为'\t' (fields terminated by E'\t') 换行符为'\r' (lines terminated by E'\r') 跳过前两行 (IGNORE 2 LINES)。
+--从/home/omm/test.csv文件拷贝数据到表load_t1，使用参数如下：字段分隔符为',' (fields terminated by ',') 换行符为'\n' (lines terminated by E'\n') 跳过前两行 (IGNORE 2 LINES)。
+openGauss=# SET dolphin.sql_mode = '';
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1 fields terminated by ',' lines terminated by E'\n' IGNORE 2 LINES;
 
 openGauss=# select * from load_t1;
