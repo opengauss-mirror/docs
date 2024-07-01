@@ -1598,9 +1598,9 @@ CONTEXT:  referenced column: subdate
   (1 row)
   ```
 
-- DATE\_ADD\(date/datetime/time, interval expr unit\)
+- DATE\_ADD\(date/time, interval expr unit\)
 
-  描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
+  描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为date/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的加法。expr1为time类型的数据时，函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
   
   返回值类型：
   
@@ -1639,10 +1639,36 @@ CONTEXT:  referenced column: subdate
   2022-01-01 00:00:01
   (1 row)
   ```
-  
-- DATE\_SUB\(date/datetime/time, interval expr unit\)
 
-  描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为date/datetime/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当dolphin.cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
+- DATE\_ADD\(datetime/timestamp, interval expr unit\)
+
+  描述：该函数执行日期时间加法运算，返回exrp1加expr2的结果。expr1可以为datetime/timestamp类型的数据，expr2代表interval值。
+
+  返回值类型：
+
+  - 该函数返回值类型与第一参数类型相同。
+
+  备注：
+
+  - openGauss目前INTERVAL后不支持运算表达式。
+
+  - 兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，openGauss表现与MySQL一致：将日期部分置为'0000-00-00'，时间部分结果视具体计算结果而定。
+
+  示例：
+
+  ```
+  openGauss=# SELECT DATE_ADD(datetime'2022-01-01 01:01:01', INTERVAL 1 YEAR);
+      date_add
+  ---------------------
+  2023-01-01 01:01:01
+  (1 row)
+  ```
+  
+- DATE\_SUB\(date//time, interval expr unit\)
+
+  描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为date/time类型的数据，expr2代表interval值。expr1为time类型的数据时，只能在显示声明参数类型为time时才能实现对time的减法。expr1为time类型的数据时，函数结果受guc参数dolphin.cmpt_version影响。当dolphin.cmpt_version为8.0时，如果INTERVAL的单位包含YEAR、MONTH、DAY部分, 则返回结果为DATETIME格式，初始日期为当前日期，否则返回结果为TIME格式；当dolphin.cmpt_version为5.7时，当INTERVAL的单位包含YEAR、MONTH部分, 则返回结果为NULL，否则返回结果为TIME格式。
   
   返回值类型：
   
@@ -1679,6 +1705,31 @@ CONTEXT:  referenced column: subdate
       date_sub       
   ---------------------
   2021-12-31 23:59:59
+  (1 row)
+  ```
+- DATE\_SUB\(datetime/timestamp, interval expr unit\)
+
+  描述：该函数执行日期时间减法运算，返回exrp1减expr2的结果。expr1可以为datetime/timestamp类型的数据，expr2代表interval值。
+
+  返回值类型：
+
+  - 该函数返回值类型与第一参数类型相同。
+
+  备注：
+
+  - openGauss目前INTERVAL后不支持运算表达式。
+
+  - 兼容MySQL插表时的严格模式和非严格模式表现。
+
+  - 若计算结果为datetime并且在[0000-1-1 00:00:00.000000, 9999-12-31 23:59:59.999999]范围内，但小于'0001-1-1 00:00:00.000000'，openGauss表现与MySQL一致：将日期部分置为'0000-00-00'，时间部分结果视具体计算结果而定。
+
+  示例：
+
+  ```
+  openGauss=# SELECT DATE_SUB(datetime'2022-01-01 01:01:01', INTERVAL 1 YEAR);
+      date_add
+  ---------------------
+  2021-01-01 01:01:01
   (1 row)
   ```
   
