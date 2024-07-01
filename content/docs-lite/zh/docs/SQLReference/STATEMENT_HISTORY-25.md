@@ -13,14 +13,14 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row16491158192819"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p1149178122814"><a name="p1149178122814"></a><a name="p1149178122814"></a>dbname</p>
+<tbody><tr id="row16491158192819"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p1149178122814"><a name="p1149178122814"></a><a name="p1149178122814"></a>db_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.602160216021602%" headers="mcps1.2.4.1.2 "><p id="p124911782289"><a name="p124911782289"></a><a name="p124911782289"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.265626562656266%" headers="mcps1.2.4.1.3 "><p id="p1445326163513"><a name="p1445326163513"></a><a name="p1445326163513"></a>数据库名称。</p>
 </td>
 </tr>
-<tr id="row14915892817"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174910812286"><a name="p174910812286"></a><a name="p174910812286"></a>schemaname</p>
+<tr id="row14915892817"><td class="cellrowborder" valign="top" width="22.132213221322132%" headers="mcps1.2.4.1.1 "><p id="p174910812286"><a name="p174910812286"></a><a name="p174910812286"></a>schema_name</p>
 </td>
 <td class="cellrowborder" valign="top" width="21.602160216021602%" headers="mcps1.2.4.1.2 "><p id="p1949128172817"><a name="p1949128172817"></a><a name="p1949128172817"></a>name</p>
 </td>
@@ -379,7 +379,7 @@
 <td class="cellrowborder" valign="top" width="56.265626562656266%" headers="mcps1.2.4.1.3 "><p id="p1233419891920"><a name="p1233419891920"></a><a name="p1233419891920"></a>驱动传入的trace id，与应用的一次请求相关联。</p>
 </td>
 </tr>
-<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>advise text</p>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>advise</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>text</p>
 </td>
