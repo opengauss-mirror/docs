@@ -74,6 +74,10 @@ ALTER VIEW更改视图的各种辅助属性。（如果用户是更改视图的�
     >ALTER VIEW AS 中的 query 新查询不能改变原查询的列定义，包括顺序、列名、数据类型、类型精度等，只可在列表末尾添加其他的列，且需要保证当前操作的视图对象有效。
 ## 参数说明<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_sf6542f9e45da4efcad90878c3159a286"></a>
 
+- **DEFINER = user**
+
+  指定user作为视图的属主。该选项仅在B兼容模式下使用。
+
 -   **IF EXISTS**
 
     使用这个选项，如果视图不存在时不会产生错误，仅有会有一个提示信息。
@@ -139,6 +143,12 @@ openGauss=# ALTER VIEW tpcds.customer_details_view_v2 SET schema public;
 
 --删除视图。
 openGauss=# DROP VIEW public.customer_details_view_v2;
+
+--修改视图的鉴权规则
+openGauss=# ALTER sql security definer VIEW v2 AS select * from sql_security_1144425;
+
+--修改视图的定义者
+openGauss=# ALTER definer=use_a_1144425 VIEW v2 as select * from sql_security_1144425；
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137021_zh-cn_topic_0237122084_zh-cn_topic_0059778428_s0c3f488fdb90433797e7d1561d9a074d"></a>
