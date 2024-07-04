@@ -2,7 +2,7 @@
 
 ## 可获得性<a name="section1964504520318"></a>
 
-本特性自openGauss 3.0.0版本开始引入。
+本特性自openGauss 3.1.0版本开始引入。
 
 ## 特性简介<a name="section1167555239"></a>
 
@@ -21,59 +21,118 @@ SQL PATCH的实现当前基于Unique SQL ID，所以需要打开相关的运维�
 场景一：使用SQL PATCH对特定语句进行Hint调优。
 
 ```
+openGauss=# CREATE TABLE hint_t1 (a int, b int, c int);
+CREATE TABLE
+openGauss=# CREATE UNIQUE INDEX t1 ON hint_t1(a);
+CREATE INDEX
+openGauss=# CREATE OR REPLACE FUNCTION batch_insert()
+openGauss-# RETURNS int AS $$
+openGauss$# DECLARE
+openGauss$# i INT;
+openGauss$# start INT;
+openGauss$#     row_count INT := 1000;
+openGauss$# BEGIN
+openGauss$# SELECT COUNT(*) INTO start FROM hint_t1;
+openGauss$#     FOR i IN SELECT generate_series(1, row_count) LOOP
+openGauss$#         INSERT INTO hint_t1 VALUES (start + i, start + i, start + i);
+openGauss$#     END LOOP;
+openGauss$#
+openGauss$# RETURN row_count;
+openGauss$# END;
+openGauss$# $$ LANGUAGE plpgsql;
+
+select batch_insert();
+CREATE FUNCTION
+openGauss=#
+openGauss=# select batch_insert();
+ batch_insert
+--------------
+         1000
+(1 row)
+
 openGauss=# set track_stmt_stat_level = 'L1,L1'; --打开FullSQL统计信息
 SET
-openGauss=# select * from hint_t1 t1 where t1.a = 1; --执行SQL语句
- a | b | c
----+---+---
- 1 | 1 | 1
-(1 row)
-openGauss=# select unique_query_id, query, query_plan from dbe_perf.statement_history where query like '%hint_t1%'; --获取查询计划和Unique SQL ID
--[ RECORD 1 ]---+----------------------------------------------------------------------------------------------
-unique_query_id | 2578396627
-query           | select * from hint_t1 t1 where t1.a = ?;
-query_plan      | Datanode Name: sgnode
-                | Bitmap Heap Scan on hint_t1 t1  (cost=4.33..15.70 rows=10 p-time=0 p-rows=0 width=12)
-                |   Recheck Cond: (a = '***')
-                |   ->  Bitmap Index Scan on hint_t1_a_idx  (cost=0.00..4.33 rows=10 p-time=0 p-rows=0 width=0)
-                |         Index Cond: (a = '***')
+openGauss=# select * from hint_t1 where a in (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+  a  |  b  |  c
+-----+-----+-----
+  10 |  10 |  10
+  20 |  20 |  20
+  30 |  30 |  30
+  40 |  40 |  40
+  50 |  50 |  50
+  60 |  60 |  60
+  70 |  70 |  70
+  80 |  80 |  80
+  90 |  90 |  90
+ 100 | 100 | 100
+(10 rows)
+
+openGauss=# \x
+Expanded display is on.
+openGauss=# select unique_query_id, query, query_plan from dbe_perf.statement_history where query like '%hint_t1%';
+-[ RECORD 1 ]---+------------------------------------------------------------------
+unique_query_id | 1432981246
+query           | select * from hint_t1 where a in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+query_plan      | Datanode Name: db1
+                | Bitmap Heap Scan on hint_t1  (cost=22.59..33.24 rows=10 width=12)
+                |   Recheck Cond: (a = ANY ('***'::integer[]))
+                |   ->  Bitmap Index Scan on t1  (cost=0.00..22.59 rows=10 width=0)
+                |         Index Cond: (a = ANY ('***'::integer[]))
                 |
                 |
-openGauss=# select * from dbe_sql_util.create_hint_sql_patch('patch1', 2578396627, 'indexscan(t1)'); -- 对指定的Unique SQL ID指定Hint Patch
+
+openGauss=# select * from dbe_sql_util.create_hint_sql_patch('patch1', 1432981246, 'indexscan(hint_t1)'); -- 对指定的Unique SQL ID指定Hint Patch
 -[ RECORD 1 ]---------+--
 create_hint_sql_patch | t
-openGauss=# explain select * from hint_t1 t1 where t1.a = 1; -- 通过explain可以确认Hint是否生效
+
+openGauss=# \x
+Expanded display is off.
+openGauss=# explain select * from hint_t1 where a in (10, 20, 30, 40, 50, 60, 70, 80, 90, 100); -- 通过explain可以确认Hint是否生效
 NOTICE:  Plan influenced by SQL hint patch
-                                    QUERY PLAN
------------------------------------------------------------------------------------
- [Bypass]
- Index Scan using hint_t1_a_idx on hint_t1 t1  (cost=0.00..32.43 rows=10 width=12)
-   Index Cond: (a = 1)
-(3 rows)
-openGauss=# select * from hint_t1 t1 where t1.a = 1; -- 再次执行语句
- a | b | c
----+---+---
- 1 | 1 | 1
-(1 row)
-openGauss=# select unique_query_id, query, query_plan from dbe_perf.statement_history where query like '%hint_t1%'; -- 可以看到新的执行记录计划已改变
--[ RECORD 1 ]---+--------------------------------------------------------------------------------------------------
-unique_query_id | 2578396627
-query           | select * from hint_t1 t1 where t1.a = ?;
-query_plan      | Datanode Name: sgnode
-                | Bitmap Heap Scan on hint_t1 t1  (cost=4.33..15.70 rows=10 p-time=0 p-rows=0 width=12)
-                |   Recheck Cond: (a = '***')
-                |   ->  Bitmap Index Scan on hint_t1_a_idx  (cost=0.00..4.33 rows=10 p-time=0 p-rows=0 width=0)
-                |         Index Cond: (a = '***')
+                               QUERY PLAN
+-------------------------------------------------------------------------
+ Index Scan using t1 on hint_t1  (cost=0.01..50.69 rows=10 width=12)
+   Index Cond: (a = ANY ('{10,20,30,40,50,60,70,80,90,100}'::integer[]))
+(2 rows)
+
+openGauss=# select * from hint_t1 where a in (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+  a  |  b  |  c
+-----+-----+-----
+  10 |  10 |  10
+  20 |  20 |  20
+  30 |  30 |  30
+  40 |  40 |  40
+  50 |  50 |  50
+  60 |  60 |  60
+  70 |  70 |  70
+  80 |  80 |  80
+  90 |  90 |  90
+ 100 | 100 | 100
+(10 rows)
+
+openGauss=# \x
+Expanded display is on.
+openGauss=# select unique_query_id, query, query_plan from dbe_perf.statement_history where query like '%hint_t1%'; -- 可以看到新的执行计划已经改变了
+-[ RECORD 1 ]---+--------------------------------------------------------------------
+unique_query_id | 1432981246
+query           | select * from hint_t1 where a in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+query_plan      | Datanode Name: db1
+                | Bitmap Heap Scan on hint_t1  (cost=22.59..33.24 rows=10 width=12)
+                |   Recheck Cond: (a = ANY ('***'::integer[]))
+                |   ->  Bitmap Index Scan on t1  (cost=0.00..22.59 rows=10 width=0)
+                |         Index Cond: (a = ANY ('***'::integer[]))
                 |
                 |
--[ RECORD 2 ]---+--------------------------------------------------------------------------------------------------
-unique_query_id | 2578396627
-query           | select * from hint_t1 t1 where t1.a = ?;
-query_plan      | Datanode Name: sgnode
-                | Index Scan using hint_t1_a_idx on hint_t1 t1  (cost=0.00..8.27 rows=1 p-time=0 p-rows=0 width=12)
-                |   Index Cond: (a = '***')
+-[ RECORD 2 ]---+--------------------------------------------------------------------
+unique_query_id | 1432981246
+query           | select * from hint_t1 where a in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+query_plan      | Datanode Name: db1
+                | Index Scan using t1 on hint_t1  (cost=0.01..50.69 rows=10 width=12)
+                |   Index Cond: (a = ANY ('***'::integer[]))
                 |
                 |
+
+
 ```
 
 场景二：使用SQL PATCH对特定语句进行提前报错规避。
