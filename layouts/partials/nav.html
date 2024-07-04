@@ -13,12 +13,24 @@
         </div>
         <div id="result-container">
           <div class="search-header">
-            <i class="icon-search"></i>
-            <input type="text" class="search-text" placeholder="{{ i18n
-            "search_placeholder" }}" />
+            <div class="search-version-select">
+              <span class="prefix-text">{{ i18n "version_text" }}：</span>
+              <span class="version">{{ i18n "version_all" }}</span>
+              <div class="search-version-select-option-panel">
+                <div class="search-version-select-option">{{ i18n "version_all" }}</div>
+              </div>
+            </div>
+            <div class="search-input-wrap">
+              <i class="icon-search"></i>
+              <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+            </div>
           </div>
           <div class="search-result" class="container result-style">
             <ul style="border: none"></ul>
+            <div class="no-data" style="display: none;">
+              <img class="empty-img" src="/img/search/no-data.png" alt="" />
+              <span class="empty-tip">{{ i18n "search_no_data_tip" }}</span>
+            </div>
             <div id="baseof-pagination"></div>
           </div>
         </div>

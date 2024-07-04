@@ -202,3 +202,9 @@ other = "归档版本"
 other = "最新开发版本 (Latest)"
 [version_document]
 other = "版本文档"
+
+[version_all]
+other = "全部版本"
+
+[search_no_data_tip]
+other = "未搜索到内容"

@@ -2,7 +2,7 @@
 title = "Doc Map"
 
 [[module]]
-    title = "了解"
+    title = "Introduction"
     [[module.list]]
         title= "AboutopenGauss"
         download = "/en/docs/latest/docs/AboutopenGauss/about-openGauss.html"
