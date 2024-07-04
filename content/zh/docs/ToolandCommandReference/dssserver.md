@@ -197,9 +197,9 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **参数说明**： 消息接收内存池大小。
 
-    **取值范围**： 整型，1M\~1G。
+    **取值范围**： 整型，9M\~1G。
 
-    **默认值**： 16M
+    **默认值**： 42M
 
 -   MES\_ELAPSED\_SWITCH
 
@@ -209,7 +209,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     **默认值**： FALSE
 
--   DISK\_LOCK\_FILE\_PATH
+-   _DISK\_LOCK\_FILE\_PATH
 
     **参数说明**：STORAGE\_MODE为DISK时，所用锁的文件保存路径。
 
@@ -324,6 +324,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     **取值范围**："cluster_primary" | "cluster_standby"
 
     **默认值**："cluster_primary"
+    
 
 -   \_BLACKBOX\_DETAIL\_ON
 
@@ -332,7 +333,20 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     **取值范围**： 布尔型，FALSE/TRUE。TRUE表示当黑匣子日志开启时，打印共享内存信息；FALSE表示当黑匣子开启时，不打印共享内存信息。如果黑匣子功能没有开启，则该参数不生效。
 
     **默认值**： FALSE
+-   \_ENABLE\_CORE\_STATE\_COLLECT
 
+    **参数说明**：控制节点异常coredump时，是否会在DSS_HOME目录下生成临时文件dss.core.file。
+
+    **取值范围**： 布尔型，FALSE/TRUE。TRUE表示节点异常coredump时，会在DSS_HOME目录下生成临时文件dss.core.file；FALSE表示节点异常coredump时，不会在DSS_HOME目录下生成临时文件dss.core.file。
+
+    **默认值**： FALSE
+-   DELAY\_CLEAN\_INTERVAL
+
+    **参数说明**： 主机后台延时清理线程的执行时间间隔。
+
+    **取值范围**： 整型，5\~1000000。单位：秒。
+
+    **默认值**： 300
 -   WORK\_THREADS
 
     **参数说明**： 控制单个reactor线程池线程的数量。
@@ -348,6 +362,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
     **取值范围**： 整型，1\~8。
 
     **默认值**： 2
+
 
 ## 日志<a name="zh-cn_topic_0287276000_zh-cn_topic_0237152404_zh-cn_topic_0059777816_s2298a1889844418daec3743b9a4b57fb"></a>
 DSS日志类型如下：
