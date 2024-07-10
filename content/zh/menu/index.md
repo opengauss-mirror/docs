@@ -234,6 +234,8 @@ headless: true
 		-   [约束]({{< relref "./docs/BriefTutorial/约束.md" >}})
 		-   [JOIN]({{< relref "./docs/BriefTutorial/JOIN.md" >}})
 		-   [NULL值]({{< relref "./docs/BriefTutorial/NULL值.md" >}})
+		-   [IS [NOT] NAN]({{< relref "./docs/BriefTutorial/IS-[NOT]-NAN语句.md" >}})
+		-   [IS [NOT] INFINITE]({{< relref "./docs/BriefTutorial/IS-[NOT]-INFINITE语句.md" >}})
 		-   [UNION子句]({{< relref "./docs/BriefTutorial/UNION子句.md" >}})
 		-   [别名]({{< relref "./docs/BriefTutorial/别名.md" >}})
 		-   [索引]({{< relref "./docs/BriefTutorial/索引.md" >}})
