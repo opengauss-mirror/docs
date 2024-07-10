@@ -375,6 +375,12 @@ openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生�
 --修改触发器
 openGauss=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl RENAME TO delete_trigger_renamed;
 
+--ALTER TRIGGER 方式禁用insert_trigger触发器
+openGauss=# ALTER TRIGGER insert_trigger DISABLE;
+
+--ALTER TRIGGER 方式启用insert_trigger触发器
+openGauss=# ALTER TRIGGER insert_trigger ENABLE;
+
 --禁用insert_trigger触发器
 openGauss=# ALTER TABLE test_trigger_src_tbl DISABLE TRIGGER insert_trigger;  
 
