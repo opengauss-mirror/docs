@@ -9,6 +9,7 @@ gs\_probackup是一个用于管理openGauss数据库备份和恢复的工具。�
 -   支持增量备份、定期备份和远程备份。
 -   可设置备份的留存策略。
 -   支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQL兼容性需求）
+-   支持备份到兼容S3协议的对象存储
 
 gs\_probackup目前支持进度打印，会分别在文件备份、文件验证阶段、文件同步阶段以及文件恢复阶段，根据已经完成的文件数比总文件数打印进度。
 
@@ -36,6 +37,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 -   在资源池化模式下当前仅支持本地主机操作。
 -   备份将执行checkpoint与xlog switch操作，此行为将产生新的xlog，并提交事务。一主一备或一主多备场景备份时，若配置文件中synchronous_commit设置为on，备机关停可能会导致主机同步提交事务失败，进而导致备份失败。此场景下，请确认各节点状态正常，或将synchronous_commit设置为off以避免备份失败。
 -   在开启enable_cbm_tracking后，不能直接执行增量备份，需要先执行全量备份，即使在开启参数之前已经执行过全量备份。
+-   备份到兼容S3协议的对象存储时，请确保对象存储服务已经开通，可以获取到ak和sk，并且已经创建好bucket。备份到对象存储特性目前不支持执行merge子命令。
 
 ## 功能说明<a name="zh-cn_topic_0287276008_section86861610172815"></a>
 
@@ -76,7 +78,7 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
     [-E external-directories-paths]
-    [remote_options] [dss_options]
+    [remote_options] [dss_options] [s3_options]
     [--help]
     ```
 
@@ -84,6 +86,7 @@ gs\_probackup工具的主要功能如下：
 
     ```
     gs_probackup del-instance -B backup-path --instance=instance_name
+    [s3_options]
     [--help]
     ```
 
@@ -95,7 +98,7 @@ gs\_probackup工具的主要功能如下：
     [--retention-redundancy=retention-redundancy] [--retention-window=retention-window] [--wal-depth=wal-depth]
     [--compress-algorithm=compress-algorithm] [--compress-level=compress-level]
     [-d dbname] [-h hostname] [-p port] [-U username]
-    [logging_options] [remote_options] [dss_options]
+    [logging_options] [remote_options] [dss_options] [s3_options]
     [--help]
     ```
 
@@ -104,6 +107,7 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup set-backup -B backup-path --instance=instance_name -i backup-id
     [--note=text] [pinning_options]
+    [s3_options] [--s3-status=s3|local]
     [--help]
     ```
 
@@ -112,6 +116,7 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup show-config -B backup-path --instance=instance_name
     [--format=plain|json]
+    [s3_options]
     [--help]
     ```
 
@@ -120,6 +125,7 @@ gs\_probackup工具的主要功能如下：
     ```
     gs_probackup show -B backup-path
     [--instance=instance_name [-i backup-id]] [--archive] [--format=plain|json]
+    [s3_options]
     [--help]
     ```
 
@@ -131,7 +137,7 @@ gs\_probackup工具的主要功能如下：
     [--no-validate] [--skip-block-validation] [-E external-directories-paths] [--no-sync] [--note=text]
     [--archive-timeout=timeout] [-t rw-timeout]
     [logging_options] [retention_options] [compression_options] [connection_options]
-    [remote_options] [dss_options] [pinning_options][--backup-pg-replslot]
+    [remote_options] [dss_options] [pinning_options][--backup-pg-replslot] [s3_options]
     [--help]
     ```
 
@@ -141,7 +147,7 @@ gs\_probackup工具的主要功能如下：
     gs_probackup restore -B backup-path --instance=instance_name
     [-D pgdata-path] [-i backup_id] [-j threads_num] [--progress] [--force] [--no-sync] [--no-validate] [--skip-block-validation]
     [--external-mapping=OLDDIR=NEWDIR] [-T OLDDIR=NEWDIR] [--skip-external-dirs] [-I incremental_mode]
-    [recovery_options] [remote_options] [dss_options] [logging_options]
+    [recovery_options] [remote_options] [dss_options] [logging_options] [s3_options]
     [--help]
     ```
 
@@ -161,7 +167,7 @@ gs\_probackup工具的主要功能如下：
     [--delete-wal] [-j threads_num] [--progress]
     [--retention-redundancy=retention-redundancy] [--retention-window=retention-window]
     [--wal-depth=wal-depth] [--dry-run]
-    [logging_options]
+    [logging_options] [s3_options]
     [--help]
     ```
 
@@ -173,7 +179,7 @@ gs\_probackup工具的主要功能如下：
     [-j threads_num] [--progress] [--skip-block-validation]
     [--recovery-target-time=time | --recovery-target-xid=xid | --recovery-target-lsn=lsn | --recovery-target-name=target-name]
     [--recovery-target-inclusive=boolean]
-    [logging_options]
+    [logging_options] [s3_options]
     [--help] 
     ```
 
@@ -647,6 +653,49 @@ gs\_probackup工具的主要功能如下：
   >LOG: remote request lsn/crc: [xxxxx] local max lsn/crc: [xxxxx]
   >```
 
+### **兼容S3协议对象存储相关参数\(s3\_options\)**
+-   --media-type=_type_
+
+    指定存储备份的介质类型。取值包括：
+
+    s3：备份到兼容S3协议的对象存储。
+
+    disk：备份到磁盘，不启用备份到对象存储的功能。这是默认值。
+
+    不需要备份到远程对象存储时，可以省略此参数。
+
+-   --access-id=_ak_
+
+    开通对象存储服务后获取的 Access Key Id，用于标示用户。设置 media-type 为 s3 时不可为空。
+
+-   --access-key=_sk_
+
+    开通对象存储服务后获取的 Secret Access Key，用于验证用户身份的密钥。设置 media-type 为 s3 时不可为空。
+
+-   --access-bucket=_bucket_
+
+    用户在对象存储上创建的桶的名字。设置 media-type 为 s3 时不可为空。
+
+-   --endpoint=_endpoint_
+
+    访问兼容S3协议对象存储的访问域名，可以是 ip:port 的形式。设置 media-type 为 s3 时不可为空。
+
+-   --region=_region_
+
+    对象存储服务的地理区域，可选参数。值可以为空。
+
+-   --s3-status=_status_
+
+    当前备份集的状态，取值包括：
+
+    s3：备份集位于兼容S3协议的对象存储服务器上，此时执行restore/validate子命令将从对象存储下载回备份集文件。
+
+    local：备份集已从对象存储下载回本地，此时执行restore/validate子命令将优先读取本地文件，如果本地文件不能正常恢复/验证将会报错。
+
+    unknown：未设置 media-type 为 s3 时进行备份的备份集状态，无实际意义。
+
+    可通过set-backup子命令进行设置，通过show子命令查看。
+    
 
 ## 备份指令执行顺序（非资源池化模式）<a name="zh-cn_topic_0287276008_section1735727125216"></a>
 
