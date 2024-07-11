@@ -209,7 +209,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   读取磁阵文件内容
 
     ```
-    dsscmd dev <-p path> <-o offset> <-f format>
+    dsscmd dev <-v vol_path> <-o offset> <-f format>
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -301,6 +301,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     CLUSTER_RUN_MODE,
     _BLACKBOX_DETAIL_ON,
     _ENABLE_CORE_STATE_COLLECT,
+    MES_WAIT_TIMEOUT,
     DELAY_CLEAN_INTERVAL。
 
 -   获取配置项信息
