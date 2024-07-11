@@ -1,5 +1,10 @@
 // 本文件存放控制版本相关的跳转及下载的代码
 function jumpDocsHome(lang, version) {
+  // 聚合页没有版本，直接用语言进行跳转对应页面
+  if (!version) {
+    window.open(`/${lang}`, "_self");
+    return;
+  }
   const versionObj = lang === "zh" ? versionObjZh : versionObjEn;
   // 修复版本号中划线
   const path =

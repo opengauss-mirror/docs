@@ -139,14 +139,27 @@
       <div class="mask-search-mobile"></div>
         <div class="searcher">
           <div class="search-mobile">
-            <i class="icon-search" style="right: 0px;"></i>
-            <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
-            <i class="icon-clear" ></i>
-            <div class="cancel-btn">{{ i18n "cancel" }}</div>
+            <div class="search-version-select-mb">
+              <span class="prefix-text">{{ i18n "version_text" }}: </span>
+              <span class="version">{{ i18n "version_all" }}</span>
+              <div class="search-version-select-option-panel-mb">
+                <div class="search-version-select-option-mb">{{ i18n "version_all" }}</div>
+              </div>
+            </div>
+            <div class="search-wrap-mb">
+              <i class="icon-search search-icon-mb" style="right: 0px;"></i>
+              <input type="text" class="search-text" placeholder="{{ i18n "search_placeholder" }}" />
+              <i class="icon-clear search-clear-icon-mb" ></i>
+              <div class="cancel-btn">{{ i18n "cancel" }}</div>
+            </div>
         </div>
             <div class="search-result search-result-mobile">
                 <ul>
                 </ul>
+                <div class="no-data-mobile" style="display: none;">
+                  <img class="empty-img-mobile" src="/img/search/no-data.png" alt="" />
+                  <span class="empty-tip-mobile">{{ i18n "search_no_data_tip" }}</span>
+                </div>
                 <div id="pagination"></div>
             </div>
         </div>

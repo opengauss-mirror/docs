@@ -189,3 +189,9 @@ other = "Archived version"
 other = "Latest development version"
 [version_document]
 other = "Version document"
+
+[version_all]
+other = "All"
+
+[search_no_data_tip]
+other = "No content found."

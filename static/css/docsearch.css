@@ -188,3 +188,22 @@
 .search-result-mobile::-webkit-scrollbar{
     display: none !important;
 }
+
+.search-result-mobile .no-data-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.search-result-mobile .no-data-mobile .empty-img-mobile {
+    width: 160px;
+    height: 140px;
+}
+
+.search-result-mobile .no-data-mobile .empty-tip-mobile {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--o-color-text1);
+}
