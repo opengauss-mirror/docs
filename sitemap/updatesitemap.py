@@ -74,7 +74,10 @@ def create_xml(data, xml_name):
         f1.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         f1.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for url in data:
-            f1.write(f'<url><loc>{url.strip()}</loc><lastmod>{formated_d}</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>\n')
+            line_txt = f'<url><loc>{url.strip()}</loc><lastmod>{formated_d}</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>\n'
+            if '&' in line_txt:
+                continue
+            f1.write(line_txt)
         f1.write('</urlset>\n')
 
 
