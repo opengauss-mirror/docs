@@ -83,6 +83,7 @@
     ../content/zh/docs/DatabaseReference/PG_PARTITION
     ../content/zh/docs/DatabaseReference/PG_PLTEMPLATE
     ../content/zh/docs/DatabaseReference/PG_PROC
+    ../content/zh/docs/DatabaseReference/PG_PROC_EXT
     ../content/zh/docs/DatabaseReference/PG_PUBLICATION
     ../content/zh/docs/DatabaseReference/PG_PUBLICATION_REL
     ../content/zh/docs/DatabaseReference/PG_RANGE

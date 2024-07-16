@@ -1573,6 +1573,7 @@ headless: true
 	        -   [PG\_PARTITION]({{< relref "./docs/DatabaseReference/PG_PARTITION.md" >}})
 	        -   [PG\_PLTEMPLATE]({{< relref "./docs/DatabaseReference/PG_PLTEMPLATE.md" >}})
 	        -   [PG\_PROC]({{< relref "./docs/DatabaseReference/PG_PROC.md" >}})
+			-   [PG\_PROC\_EXT]({{< relref "./docs/DatabaseReference/PG_PROC_EXT.md" >}})
 	        -   [PG\_PUBLICATION]({{< relref "./docs/DatabaseReference/PG_PUBLICATION.md" >}})
 	        -   [PG\_PUBLICATION\_REL]({{< relref "./docs/DatabaseReference/PG_PUBLICATION_REL.md" >}})
 	        -   [PG\_RANGE]({{< relref "./docs/DatabaseReference/PG_RANGE.md" >}})
