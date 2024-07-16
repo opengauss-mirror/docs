@@ -191,10 +191,6 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >
-    >本版本暂时不支持大对象。
-
 -   将模式的访问权限赋予指定的用户或角色。
 
     ```
