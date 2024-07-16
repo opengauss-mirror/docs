@@ -75,8 +75,6 @@ def create_xml(data, xml_name):
         f1.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for url in data:
             line_txt = f'<url><loc>{url.strip()}</loc><lastmod>{formated_d}</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>\n'
-            if '&' in line_txt:
-                continue
             f1.write(line_txt)
         f1.write('</urlset>\n')
 
@@ -103,6 +101,25 @@ def assemble_sitemap(htmls, path):
     # create_xml(un_docs_zh, '\\opengauss\\sitemap-zh.xml')
     # create_xml(un_docs_en, '\\opengauss\\sitemap-en.xml')
 
+def filter_txt(path):
+    with open(path, "r", encoding="utf-8") as f1:
+        dat1 = f1.readlines()
+    res = []
+    for i in range(len(dat1)):
+        dat = dat1[i]
+        if "&" in dat:
+            pass
+        elif "1.1.0" in dat:
+            pass
+        else:
+            res.append(dat)
+
+    with open(path, "w", encoding="utf-8") as f2:
+        f2.writelines(res)
+
+def filter_sitemap(path):
+    filter_txt(path + "/" + 'sitemap-zh.xml')
+    filter_txt(path + "/" + 'sitemap-en.xml')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="path")
@@ -119,3 +136,5 @@ if __name__ == "__main__":
     htmls = get_penGauss_htmls(args.index1, args.index2, args.esurl, args.auth, args.docsurl, args.gaussurl)
 
     assemble_sitemap(htmls, args.path)
+
+    filter_sitemap(args.path)
