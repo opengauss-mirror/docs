@@ -44,7 +44,7 @@ openGauss has a large object facility, which provides stream-style access to use
 
     Return type：int4
 
--   lowrite\(fd int4, data text\)
+-   lowrite\(fd int4, data bytea\)
 
     Description：Writes data to large object descriptor fd. The fd argument must have been returned by a previous lo\_open. The number of bytes actually written is returned, in the event of an error, the return value is -1.
     Return type：int4
