@@ -2,6 +2,13 @@
 
 得到openGauss内各节点的Redo（WAL）相关统计信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_FILE_REDO_IOSTAT;
+ node_name | phywrts | phyblkwrt | writetim | avgiotim | lstiotim | miniotim | maxiowtm 
+-----------+---------+-----------+----------+----------+----------+----------+----------
+```
+
 **表 1**  GLOBALXC\_FILE\_REDO\_IOSTAT字段
 
 <a name="zh-cn_topic_0237122571_table565454216136"></a>

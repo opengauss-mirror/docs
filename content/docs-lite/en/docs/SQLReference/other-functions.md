@@ -961,7 +961,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="15.48154815481548%" headers="mcps1.2.4.1.2 "><p id="p16496751123"><a name="p16496751123"></a><a name="p16496751123"></a>Oid</p>
     </td>
-    <td class="cellrowborder" valign="top" width="64.27642764276428%" headers="mcps1.2.4.1.3 "><a name="ul10496951120"></a><a name="ul10496951120"></a><ul id="ul10496951120"><li>Index file relfilenode, which can be queried using <strong id="b4513314174510"><a name="b4513314174510"></a><a name="b4513314174510"></a>select relfilenode from pg_class where relname='</strong><em id="i136011434454"><a name="i136011434454"></a><a name="i136011434454"></a>Index file name</em><strong id="b64862162458"><a name="b64862162458"></a><a name="b64862162458"></a>'</strong>.</li></ul>
+    <td class="cellrowborder" valign="top" width="64.27642764276428%" headers="mcps1.2.4.1.3 "><a name=""></a><a name="ul10496951120"></a><ul id="ul10496951120"><li>Index file relfilenode, which can be queried using <strong id="b4513314174510"><a name="b4513314174510"></a><a name="b4513314174510"></a>select relfilenode from pg_class where relname='</strong><em id="i136011434454"><a name="i136011434454"></a><a name="i136011434454"></a>Index file name</em><strong id="b64862162458"><a name="b64862162458"></a><a name="b64862162458"></a>'</strong>.</li></ul>
     </td>
     </tr>
     <tr id="row44968519214"><td class="cellrowborder" valign="top" width="20.242024202420243%" headers="mcps1.2.4.1.1 "><p id="p12738153011817"><a name="p12738153011817"></a><a name="p12738153011817"></a>blkno</p>

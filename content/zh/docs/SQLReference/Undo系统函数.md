@@ -30,6 +30,128 @@
 
     返回值类型：record
 
+    示例：
+    ```sql
+    openGauss=# select * from gs_undo_meta(0, -1, 0);
+     zoneId | persistType |      insert      |     discard      |       end        |       used       |       lsn        |    pid     
+    --------+-------------+------------------+------------------+------------------+------------------+------------------+------------
+    ```
+
+    **表 1**  gs\_undo\_meta参数说明
+
+    <a name="table4929155865120"></a>
+    <table><thead align="left"><tr id="row13930125855115"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p1066133922414"><a name="p1066133922414"></a><a name="p1066133922414"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="25.740000000000002%" id="mcps1.2.5.1.2"><p id="p193010585512"><a name="p193010585512"></a><a name="p193010585512"></a>参数名</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="11.799999999999999%" id="mcps1.2.5.1.3"><p id="p093095865119"><a name="p093095865119"></a><a name="p093095865119"></a>类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="50.77%" id="mcps1.2.5.1.4"><p id="p139301758195120"><a name="p139301758195120"></a><a name="p139301758195120"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1293055855112"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116611939192415"><a name="p116611939192415"></a><a name="p116611939192415"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p19930165811520"><a name="p19930165811520"></a><a name="p19930165811520"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p3930858115121"><a name="p3930858115121"></a><a name="p3930858115121"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p2609091131"><a name="p2609091131"></a><a name="p2609091131"></a>元信息类型。</p>
+    </td>
+    </tr>
+    <tr id="row8748191322516"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p177491413152511"><a name="p177491413152511"></a><a name="p177491413152511"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p187491113182512"><a name="p187491113182512"></a><a name="p187491113182512"></a>zoneId</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p9749613102518"><a name="p9749613102518"></a><a name="p9749613102518"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p310222103120"><a name="p31022210320"></a><a name="p31022210320"></a>Undo zone 编号</p>
+    </td>
+    </tr>
+    <tr id="row1732619109253"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p19327171022513"><a name="p19327171022513"></a><a name="p19327171022513"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p15327131013260"><a name="p15327131013260"></a><a name="p15327131013260"></a>location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p1332711062512"><a name="p1332711062512"></a><a name="p1332711062512"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1532721018257"><a name="p1532721018257"></a><a name="p1532721018257"></a>读取位置。</p>
+    </td>
+    </tr>
+    <tr id="row1782363132511"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p16823932260"><a name="p16823932260"></a><a name="p16823932260"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p4823113182518"><a name="p4823113182518"></a><a name="p4823113182518"></a>zoneId</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p1782317372516"><a name="p1782317372516"></a><a name="p1782317372516"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p118231435257"><a name="p118231435257"></a><a name="p118231435257"></a>Undo zone 编号。</p>
+    </td>
+    </tr>
+    <tr id="row156126595242"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p10613659172411"><a name="p10613659172411"></a><a name="p10613659172411"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p66131659132417"><a name="p66131659132417"></a><a name="p66131659132417"></a>persistType</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p66131859182420"><a name="p66131859182420"></a><a name="p66131859182420"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p5810145016517"><a name="p5810145016517"></a><a name="p5810145016517"></a>持久化级别。</p>
+    </td>
+    </tr>
+    <tr id="row126656371915"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p2665113711117"><a name="p2665113711117"></a><a name="p2665113711117"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p366519371214"><a name="p366519371214"></a><a name="p366519371214"></a>insert</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p46651437315"><a name="p46651437315"></a><a name="p46651437315"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p766515372114"><a name="p766515372114"></a><a name="p766515372114"></a>下一条插入的 undo 记录位置。</p>
+    </td>
+    </tr>
+    <tr id="row187623392014"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p12762193910118"><a name="p12762193910118"></a><a name="p12762193910118"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p12762193914115"><a name="p12762193914115"></a><a name="p12762193914115"></a>discard</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p187620393118"><a name="p187620393118"></a><a name="p187620393118"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p14762839515"><a name="p14762839515"></a><a name="p14762839515"></a>普通回收到的 undo 记录位置。</p>
+    </td>
+    </tr>
+    <tr id="row9321124111121"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p1232117412015"><a name="p1232117412015"></a><a name="p1232117412015"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p4321134119112"><a name="p4321134119112"></a><a name="p4321134119112"></a>end</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p123224411117"><a name="p123224411117"></a><a name="p123224411117"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1532212411219"><a name="p1532212411219"></a><a name="p1532212411219"></a>结束插入 undo 记录位置。</p>
+    </td>
+    </tr>
+    <tr id="row197899421916"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p478912427114"><a name="p478912427114"></a><a name="p478912427114"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p07891421716"><a name="p07891421716"></a><a name="p07891421716"></a>used</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p167893427112"><a name="p167893427112"></a><a name="p167893427112"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p47897421317"><a name="p47897421317"></a><a name="p47897421317"></a>已使用的 Undo Zone 信息。</p>
+    </td>
+    </tr>
+    <tr id="row161246451120"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p61247451515"><a name="p61247451515"></a><a name="p61247451515"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p01241545714"><a name="p01241545714"></a><a name="p01241545714"></a>lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p4124124514114"><a name="p4124124514114"></a><a name="p4124124514114"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1812420456111"><a name="p1812420456111"></a><a name="p1812420456111"></a>修改zone的lsn。</p>
+    </td>
+    </tr>
+    <tr id="row161246451121"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p61247451516"><a name="p61247451516"></a><a name="p61247451516"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p01241545715"><a name="p01241545715"></a><a name="p01241545715"></a>pid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p4124124514115"><a name="p4124124514115"></a><a name="p4124124514115"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1812420456112"><a name="p1812420456112"></a><a name="p1812420456112"></a>进程ID。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>    
+
 -   gs\_undo\_translot\(location, zoneId\)
 
     描述：Undo事务槽信息。
@@ -50,13 +172,114 @@
 
     返回值类型：record
 
+    示例：
+    ```sql
+    openGauss=# select * from gs_undo_translot(0, -1);
+     groupId | xactId | startUndoPtr | endUndoPtr | lsn | slot_states 
+    ---------+--------+--------------+------------+-----+-------------
+    ```
+    **表 2**  gs\_undo\_translot参数说明
+
+    <a name="table4929155865121"></a>
+    <table><thead align="left"><tr id="row13930125855115"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p1066133922415"><a name="p1066133922415"></a><a name="p1066133922415"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="25.740000000000002%" id="mcps1.2.5.1.2"><p id="p193010585513"><a name="p193010585513"></a><a name="p193010585513"></a>参数名</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="11.799999999999999%" id="mcps1.2.5.1.3"><p id="p093095865120"><a name="p093095865120"></a><a name="p093095865120"></a>类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="50.77%" id="mcps1.2.5.1.4"><p id="p139301758195121"><a name="p139301758195121"></a><a name="p139301758195121"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1293055855112"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p116611939192416"><a name="p116611939192416"></a><a name="p116611939192416"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p19930165811521"><a name="p19930165811521"></a><a name="p19930165811521"></a>location</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p3930858115122"><a name="p3930858115122"></a><a name="p3930858115122"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p2609091132"><a name="p2609091132"></a><a name="p2609091132"></a>读取位置。</p>
+    </td>
+    </tr>
+    <tr id="row8748191322516"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p177491413152512"><a name="p177491413152512"></a><a name="p177491413152512"></a>输入参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p187491113182513"><a name="p187491113182513"></a><a name="p187491113182513"></a>zoneId</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p9749613102519"><a name="p9749613102519"></a><a name="p9749613102519"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p310222103121"><a name="p31022210321"></a><a name="p31022210321"></a>Undo zone 编号</p>
+    </td>
+    </tr>
+    <tr id="row1732619109254"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p19327171022514"><a name="p19327171022514"></a><a name="p19327171022514"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p15327131013261"><a name="p15327131013261"></a><a name="p15327131013261"></a>groupId</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p1332711062513"><a name="p1332711062513"></a><a name="p1332711062513"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1532721018258"><a name="p1532721018258"></a><a name="p1532721018258"></a>持久化级别。</p>
+    </td>
+    </tr>
+    <tr id="row1782363132512"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p16823932261"><a name="p16823932261"></a><a name="p16823932261"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p4823113182519"><a name="p4823113182519"></a><a name="p4823113182519"></a>xactId</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p1782317372517"><a name="p1782317372517"></a><a name="p1782317372517"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p118231435258"><a name="p118231435258"></a><a name="p118231435258"></a>事物 id 。</p>
+    </td>
+    </tr>
+    <tr id="row156126595243"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p10613659172412"><a name="p10613659172412"></a><a name="p10613659172412"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p66131659132418"><a name="p66131659132418"></a><a name="p66131659132418"></a>startUndoPtr</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p66131859182421"><a name="p66131859182421"></a><a name="p66131859182421"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p5810145016518"><a name="p5810145016518"></a><a name="p5810145016518"></a>slot 对应事物起始插入 undo 记录位置。</p>
+    </td>
+    </tr>
+    <tr id="row126656371916"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p2665113711118"><a name="p2665113711118"></a><a name="p2665113711118"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p366519371215"><a name="p366519371215"></a><a name="p366519371215"></a>endUndoPtr</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p46651437316"><a name="p46651437316"></a><a name="p46651437316"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p766515372115"><a name="p766515372115"></a><a name="p766515372115"></a>slot 对应事物结束插入 undo 记录位置。</p>
+    </td>
+    </tr>
+    <tr id="row187623392015"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p12762193910119"><a name="p12762193910119"></a><a name="p12762193910119"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p12762193914116"><a name="p12762193914116"></a><a name="p12762193914116"></a>lsn</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p187620393119"><a name="p187620393119"></a><a name="p187620393119"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p14762839516"><a name="p14762839516"></a><a name="p14762839516"></a>修改 slot 的 lsn 。</p>
+    </td>
+    </tr>
+    <tr id="row9321124111122"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p1232117412016"><a name="p1232117412016"></a><a name="p1232117412016"></a>输出参数</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.740000000000002%" headers="mcps1.2.5.1.2 "><p id="p4321134119113"><a name="p4321134119113"></a><a name="p4321134119113"></a>slot_states</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p123224411118"><a name="p123224411118"></a><a name="p123224411118"></a>int</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p1532212411220"><a name="p1532212411220"></a><a name="p1532212411220"></a>事物状态。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>  
+
 -   gs\_stat\_undo\(\)
 
     描述：Undo统计信息。
 
     返回值类型：record
 
-    **表 1**  gs\_stat\_undo参数说明
+    示例：
+    ```sql
+    openGauss=# select * from gs_stat_undo();
+     curr_used_zone_count |   top_used_zones    | curr_used_undo_size | undo_threshold | global_recycle_xid | oldest_xmin | total_undo_chain_len | max_undo_chain_len | create_undo_file_count | discard_undo_file_count 
+    ----------------------+---------------------+---------------------+----------------+--------------------+-------------+----------------------+--------------------+------------------------+-------------------------
+    ```
+
+    **表 3**  gs\_stat\_undo参数说明
 
     <a name="table4929155865119"></a>
     <table><thead align="left"><tr id="row13930125855114"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p1066133922413"><a name="p1066133922413"></a><a name="p1066133922413"></a>参数类型</p>
@@ -173,6 +396,13 @@
 
     返回值类型：record
 
+    示例：
+    ```sql
+    openGauss=# select * from gs_undo_record(4698);
+     undoptr | xid |       cid        |      reloid      |   relfilenode    |      utype       |     blkprev      |     blockno      |      uoffset     |     prevurp      |    payloadlen    
+    ---------+-----+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------
+    ```
+
 + gs\_undo\_dump\_parsepage\_mv\(relpath text, blkno bigint, reltype text, rmem boolean\)
 
   描述：解析ustore数据表磁盘页面的页头信息，每个元组的头部信息，标识位信息以及所有可以查询到undo历史版本信息。
@@ -184,7 +414,14 @@
   >![](public_sys-resources/icon-note.png) **说明：** 
   >该接口当前仅支持USTORE数据表。
 
-    **表 2**  gs\_undo\_dump\_parsepage\_mv参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_dump_parsepage_mv('base/16384/16391', -1, 'uheap', false);
+                  output                   
+    -------------------------------------------
+  ```
+
+    **表 4**  gs\_undo\_dump\_parsepage\_mv参数说明
 
     <table><thead align="left"><tr id="row2994153425611"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p99941234135610"><a name="p99941234135610"></a><a name="p99941234135610"></a>参数类型</p>
     </th>
@@ -253,7 +490,14 @@
 
   返回值类型：record
 
-  **表 3**  gs\_undo\_meta\_dump\_zone参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_meta_dump_zone(-1, true);
+   zone_id | persist_type | insert | discard | forcediscard |   lsn    
+  ---------+--------------+--------+---------+--------------+----------
+  ```
+
+  **表 5**  gs\_undo\_meta\_dump\_zone参数说明
 
   <table><thead align="left"><tr id="row104767126176"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p194776121179"><a name="p194776121179"></a><a name="p194776121179"></a>参数类型</p>
   </th>
@@ -348,7 +592,14 @@
 
   返回值类型：record
 
-  **表 4**  gs\_undo\_meta\_dump\_spaces参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_meta_dump_spaces(-1, true);
+   zone_id | undorecord_space_tail | undorecord_space_head | undorecord_space_lsn | undoslot_space_tail | undoslot_space_head | undoreslot_space_lsn 
+  ---------+-----------------------+-----------------------+----------------------+---------------------+---------------------+----------------------
+  ```
+
+  **表 6**  gs\_undo\_meta\_dump\_spaces参数说明
 
   <table><thead align="left"><tr id="row35031824143712"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p4503132493717"><a name="p4503132493717"></a><a name="p4503132493717"></a>参数类型</p>
   </th>
@@ -453,7 +704,14 @@
 
   返回值类型：record
 
-    **表 5**  gs\_undo\_meta\_dump\_slot参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_meta_dump_slot(-1, true);
+   zone_id | allocate | recycle | frozen_xid | global_frozen_xid | recycle_xid | global_recycle_xid 
+  ---------+----------+---------+------------+-------------------+-------------+--------------------
+  ```
+
+    **表 7**  gs\_undo\_meta\_dump\_slot参数说明
 
     <table><thead align="left"><tr id="row106351728144811"><th class="cellrowborder" valign="top" width="11.690000000000001%" id="mcps1.2.5.1.1"><p id="p18635102834810"><a name="p18635102834810"></a><a name="p18635102834810"></a>参数类型</p>
     </th>
@@ -558,7 +816,14 @@
 
   返回值类型：record
 
-  **表 6**  gs\_undo\_translot\_dump\_slot参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_translot_dump_slot(-1, true);
+   zone_id | slot_xid | start_undoptr | end_undoptr | slot_ptr | slot_states 
+  ---------+----------+---------------+-------------+----------+-------------
+  ```
+
+  **表 8**  gs\_undo\_translot\_dump\_slot参数说明
 
   <a name="table103190399558"></a>
 
@@ -655,7 +920,14 @@
 
   返回值类型：record
 
-  **表 7**  gs\_undo\_translot\_dump\_xid参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_translot_dump_xid('14249', true);
+   zone_id | slot_xid | start_undoptr | end_undoptr | slot_ptr | slot_states 
+  ---------+----------+---------------+-------------+----------+-------------
+  ```
+
+  **表 9**  gs\_undo\_translot\_dump\_xid参数说明
 
   <a name="table67406221875"></a>
 
@@ -751,7 +1023,14 @@
 
   返回值类型：record
 
-  **表 8**  gs\_undo\_dump\_record参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_dump_record(4698);
+   undoptr | xactid |       cid        |      reloid      |   relfilenode    |      utype       |     blkprev      |     blockno      |     uoffset      |     prevurp      |    payloadlen    |    oldxactid     |   partitionoid   |    tablespace    | alreadyread_bytes | prev_undorec_len | td_id | reserved | flag | flag2 | t_hoff 
+  ---------+--------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-------------------+------------------+-------+----------+------+-------+--------
+  ```
+
+  **表 10**  gs\_undo\_dump\_record参数说明
 
   <a name="table1421185181117"></a>
 
@@ -972,7 +1251,14 @@
 
   返回值类型：record
 
-  **表 9**  gs\_undo\_dump\_xid参数说明
+  示例：
+  ```sql
+  openGauss=# select * from gs_undo_dump_xid('14249');
+   undoptr | xactid | cid | reloid | relfilenode | utype | blkprev | blockno | uoffset | prevurp | payloadlen | oldxactid | partitionoid | tablespace | alreadyread_bytes | prev_undorec_len | td_id | reserved | flag | flag2 | t_hoff 
+  ---------+--------+-----+--------+-------------+-------+---------+---------+---------+---------+------------+-----------+--------------+------------+-------------------+------------------+-------+----------+------+-------+--------
+  ```
+
+  **表 11**  gs\_undo\_dump\_xid参数说明
 
   <a name="table199172030162413"></a>
 

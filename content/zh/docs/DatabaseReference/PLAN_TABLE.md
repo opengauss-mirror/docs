@@ -2,6 +2,13 @@
 
 PLAN\_TABLE显示用户通过执行EXPLAIN PLAN收集到的计划信息。计划信息的生命周期是session级别，session退出后相应的数据将被清除。同时不同session和不同user间的数据是相互隔离的。
 
+示例：
+```sql
+openGauss=# select * from PLAN_TABLE;
+ statement_id | plan_id | id | operation | options | object_name | object_type | object_owner | projection | cost | cardinality 
+--------------+---------+----+-----------+---------+-------------+-------------+--------------+------------+------+-------------
+```
+
 **表 1**  PLAN\_TABLE字段
 
 <a name="zh-cn_topic_0283136778_zh-cn_topic_0237122502_zh-cn_topic_0165900117_t749b1c370b1e4c81a41d5c7966458cb2"></a>

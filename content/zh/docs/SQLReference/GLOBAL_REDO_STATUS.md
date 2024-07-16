@@ -2,6 +2,13 @@
 
 GLOBAL\_REDO\_STATUS视图显示openGauss实例的日志回放情况。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_REDO_STATUS;
+ node_name | redo_start_ptr | redo_start_time | redo_done_time | curr_time | min_recovery_point | read_ptr | last_replayed_read_ptr | recovery_done_ptr | read_xlog_io_counter | read_xlog_io_total_dur | read_data_io_counter | read_data_io_total_dur | write_data_io_counter | write_data_io_total_dur | process_pending_counter | process_pending_total_dur | apply_counter | apply_total_dur | speed | local_max_ptr | primary_flush_ptr |   worker_info    
+-----------+----------------+-----------------+----------------+-----------+--------------------+----------+------------------------+-------------------+----------------------+------------------------+----------------------+------------------------+-----------------------+-------------------------+-------------------------+---------------------------+---------------+-----------------+-------+---------------+-------------------+------------------
+```
+
 **表 1**  GLOBAL\_REDO\_STATUS字段
 
 <a name="zh-cn_topic_0237122720_zh-cn_topic_0059778133_tc25f02433de2419f8da4d0a8c2c8e562"></a>

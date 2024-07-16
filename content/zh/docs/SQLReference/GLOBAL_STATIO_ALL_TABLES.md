@@ -2,6 +2,13 @@
 
 GLOBAL\_STATIO\_ALL\_TABLES视图将包含各节点的数据库中每个表（包括TOAST表）的I/O的统计。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_STATIO_ALL_TABLES;
+ node_name | relid |     schemaname     |            relname            | heap_blks_read | heap_blks_hit | idx_blks_read | idx_blks_hit | toast_blks_read | toast_blks_hit | tidx_blks_read | tidx_blks_hit 
+-----------+-------+--------------------+-------------------------------+----------------+---------------+---------------+--------------+-----------------+----------------+----------------+---------------
+```
+
 **表 1**  GLOBAL\_STATIO\_ALL\_TABLES字段
 
 <a name="zh-cn_topic_0237122689_table175055113230"></a>

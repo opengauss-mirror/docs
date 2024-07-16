@@ -2,6 +2,13 @@
 
 显示openGauss内汇聚的命名空间中所有普通表和toast表的事务状态信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.SUMMARY_STAT_XACT_ALL_TABLES;
+     schemaname     |            relname            | seq_scan | seq_tup_read | idx_scan | idx_tup_fetch | n_tup_ins | n_tup_upd | n_tup_del | n_tup_hot_upd 
+--------------------+-------------------------------+----------+--------------+----------+---------------+-----------+-----------+-----------+---------------
+```
+
 **表 1**  SUMMARY\_STAT\_XACT\_ALL\_TABLES字段
 
 <a name="zh-cn_topic_0237122601_table15289132975914"></a>

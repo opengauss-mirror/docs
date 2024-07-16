@@ -2,6 +2,13 @@
 
 PG\_STAT\_USER\_INDEXES视图显示数据库中用户自定义普通表和toast表的索引状态信息。
 
+示例：
+```sql
+openGauss=# select * from PG_STAT_USER_INDEXES;
+ relid | indexrelid |   schemaname    |  relname  |   indexrelname   | idx_scan | idx_tup_read | idx_tup_fetch 
+-------+------------+-----------------+-----------+------------------+----------+--------------+---------------
+```
+
 **表 1**  PG\_STAT\_USER\_INDEXES字段
 
 <a name="zh-cn_topic_0283137388_zh-cn_topic_0237122448_zh-cn_topic_0059777687_tc23ffa4000e9413e93247e60610950ea"></a>

@@ -2,6 +2,13 @@
 
 GLOBAL\_STATIO\_SYS\_TABLES视图显示各节点的命名空间中所有系统表的IO状态信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_STATIO_SYS_TABLES;
+ node_name | relid |     schemaname     |            relname            | heap_blks_read | heap_blks_hit | idx_blks_read | idx_blks_hit | toast_blks_read | toast_blks_hit | tidx_blks_read | tidx_blks_hit 
+-----------+-------+--------------------+-------------------------------+----------------+---------------+---------------+--------------+-----------------+----------------+----------------+---------------
+```
+
 **表 1**  GLOBAL\_STATIO\_SYS\_TABLES字段
 
 <a name="zh-cn_topic_0237122680_table9244183301519"></a>
