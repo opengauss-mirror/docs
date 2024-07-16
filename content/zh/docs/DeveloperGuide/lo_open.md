@@ -42,7 +42,7 @@ int lo_open(PGconn* conn, Oid lobjId, int mode);
 
 ## 返回值<a name="zh-cn_topic_0241735613_zh-cn_topic_0237120433_zh-cn_topic_0059777949_s25d37c96151c49ef8117dc53bda2bf2c"></a>
 
-int：成功时返回1，失败时返回-1。
+int：成功时返回非负文件描述符，失败时返回-1。
 
 ## 示例<a name="zh-cn_topic_0241735622_section185045611593"></a>
 

@@ -42,7 +42,7 @@ int lo_open(PGconn* conn, Oid lobjId, int mode);
 
 ## Return Value<a name="en-us_topic_0241735613_en-us_topic_0237120433_en-us_topic_0059777949_s25d37c96151c49ef8117dc53bda2bf2c"></a>
 
-**int** Returns 1 on success and -1 on failure.
+**int** Returns nonnegative file descriptor on success and -1 on failure.
 
 ## Example<a name="en-us_topic_0241735638_section724101713155"></a>
 
