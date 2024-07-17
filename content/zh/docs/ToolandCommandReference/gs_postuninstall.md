@@ -8,7 +8,7 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 
 -   openGauss卸载执行成功。
 -   root用户互信可用。
--   只能使用root用户执行gs\_postuninstall命令。
+-   只能使用root用户在原安装包的script下执行./gs\_postuninstall命令。
 
 ## 语法<a name="zh-cn_topic_0237152418_zh-cn_topic_0059778816_sad653bfd058a483ab93629bd7b66fc5d"></a>
 
@@ -84,7 +84,8 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 清理主机的环境
 
 ```
-gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
+cd /opt/software/openGauss/script
+./gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
 Parsing the configuration file.
 Successfully parsed the configuration file.
 Check log file path.
