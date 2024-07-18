@@ -43,7 +43,7 @@ GS\_AUDITING\_POLICY\_FILTERS系统表记录统一审计相关的过滤策略相
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="28.24282428242824%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>modifydate</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.38263826382638%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamp</p>
+<td class="cellrowborder" valign="top" width="26.38263826382638%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamptz</p>
 </td>
 <td class="cellrowborder" valign="top" width="45.374537453745376%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>创建或修改的最新时间戳。</p>
 </td>
