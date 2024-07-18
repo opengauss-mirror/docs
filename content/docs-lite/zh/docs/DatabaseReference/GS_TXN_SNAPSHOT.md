@@ -15,7 +15,7 @@ GS\_TXN\_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护�
 </thead>
 <tbody><tr id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_row770433620196"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"></a>snptime</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a>timestamp</p>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a>timestamptz</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"></a>快照捕获时间</p>
 </td>
