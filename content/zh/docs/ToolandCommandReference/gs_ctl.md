@@ -385,10 +385,11 @@ gs_ctl参数可分为如下几类：
 <p id="zh-cn_topic_0287275989_p643515574347"></a> <ul>-  增量重建不适用于一主一备并且没有开启最大高可用的场景，此种场景下需要使用全量重建或者开启最大高可用后再进行增量重建。</ul></p>
 <p id="zh-cn_topic_0287275989_p105751436553"></a><ul>- 备机数据文件损坏、数据目录丢失 等故障通过增量重建的方式无法修复，此时可通过全量重建的方式重 新修复备机。</ul></p>
 <p ></a><li> auto（不指定）：先增量，根据失败 后是否可以再增量选择继续增量或 者全量，三次增量失败后进行全量。</li></p>
- <p>  <li> standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C参数指定镜像的ip和port。</p>
- <p><li>  copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。 </p>
+<p>  <li> standby_full：通过指定的备机ip和port全量重建故障备机。使用该参数时需要同时使用-C参数指定镜像的ip和port。</p>
+<p><li>  copy_secure_files：在流式容灾场景下，获取指定节点数据目录下gs_secure_files目录对应内容。 </p>
 <p><li>  copy_upgrade_file：在dorado容灾场景下，获取指定节点下升级所需指定文件。</p>
 <p><li>  cross_cluster_full：在dorado容灾场景下，通过全量镜像的方式重新同步主机的数据目录。</p>
+<p><li>  cross_cluster_standby_full：在dorado容灾场景下，通过全量镜像的方式重新同步备机的数据目录。 </p>
 <p><li>  cross_cluster_incremental：基于共享存储的同城双中心场景下的跨集群增量build。</p>
 <p><li>  check：检测是否需要build，如果需要，返回build的类型。</p>
 <p> 默认值：auto</p>
