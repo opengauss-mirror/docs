@@ -43,7 +43,7 @@ GS\_AUDITING\_POLICY\_ACCESS系统表记录与DML数据库相关操作的统一�
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="17.401740174017398%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>modifydate</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.86328632863286%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamp without time zone</p>
+<td class="cellrowborder" valign="top" width="32.86328632863286%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamp</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.734973497349735%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>创建或修改的最新时间戳。</p>
 </td>
