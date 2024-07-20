@@ -120,11 +120,21 @@ The sequence functions provide a simple method to ensure security of multiple us
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
 
 
--   pg\_sequence\_last\_value\(sequence\_oid oid, OUT cache\_value int16, OUT last\_value int16\)
+- pg\_sequence\_last\_value\(sequence\_oid oid, OUT cache\_value int16, OUT last\_value int16\)
 
-    Description: Obtains the parameters of a specified sequence, including the cache value and current value.
+  Description: Obtains the parameters of a specified sequence, including the cache value and current value.
 
-    Return type: int16, int16
+  Return type: int16, int16
+
+  Example:
+
+  ```sql
+  openGauss=# select * from pg_sequence_last_value('seqDemo'::regclass);
+   cache_value | last_value
+  -------------+------------
+            20 |        120
+  (1 row)
+  ```
 
 -   last\_insert\_id\(\)
 
