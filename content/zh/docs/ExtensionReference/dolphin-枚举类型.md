@@ -11,7 +11,7 @@ ENUM类型是一个字符串对象，其值是从创建表时在列定义时指�
     name VARCHAR(40),
     gender ENUM('male', 'female')
   );
-  INSERT INO staff (name, gender) VALUES ('Tom','male'), ('Jenny','female')
+  INSERT INO staff (name, gender) VALUES ('Tom','male'), ('Jenny','female');
   SELECT name, gender FROM staff WHERE gender = 'male';
     name   | gender  
   ---------+--------
@@ -45,7 +45,7 @@ ENUM类型是一个字符串对象，其值是从创建表时在列定义时指�
 * 可以使用索引号在ENUM中插入枚举值，也可以在WHERE子句中使用索引号筛选枚举值，如下所示：
 
 ```sql
-INSERT INTO staff (name, size) VALUES ('Jone',1);
+INSERT INTO staff (name, gender) VALUES ('Jone',1);
 SELECT name, gender FROM staff WHERE gender = 1;
    name    | gender  
 ------------+-------

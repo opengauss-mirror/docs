@@ -86,8 +86,7 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 清理主机的环境
 
 ```
-source /home/omm/om_env #环境变量分离模式
-source /home/omm/.bashrc #环境变量不分离模式
+source /home/omm/om_env #环境变量分离模式；#环境变量不分离模式 source /home/omm/.bashrc 
 gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
 Parsing the configuration file.
 Successfully parsed the configuration file.

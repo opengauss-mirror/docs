@@ -156,3 +156,12 @@ select generate_series(1,10) MINUS select generate_series(2,10);
 -- 可用的相关语法
 select generate_series(1,10) EXCEPT select generate_series(2,10);
 ```
+
+## 阶乘运算符！
+openGauss可以使用！做结尾得到阶乘。后续！作阶乘功能将不可用，使用factorial函数替换。
+```sql
+-- 原先支持的语法如，后续将不再支持
+select 10！;
+-- 可用的相关语法
+select factorial(10);
+```
