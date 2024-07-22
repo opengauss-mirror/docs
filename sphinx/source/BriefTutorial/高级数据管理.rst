@@ -5,6 +5,8 @@
     ../content/zh/docs/BriefTutorial/约束
     ../content/zh/docs/BriefTutorial/JOIN
     ../content/zh/docs/BriefTutorial/NULL值
+	../content/zh/docs/BriefTutorial/IS [NOT] NAN
+	../content/zh/docs/BriefTutorial/IS [NOT] INFINITE
     ../content/zh/docs/BriefTutorial/UNION子句
     ../content/zh/docs/BriefTutorial/别名
     ../content/zh/docs/BriefTutorial/索引
