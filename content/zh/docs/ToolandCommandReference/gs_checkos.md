@@ -17,6 +17,7 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
   ![](public_sys-resources/icon-note.png) **说明：**
 
   若为环境变量分离的模式安装的数据库，root和普通用户在使用该工具前都需要source环境变量分离文件ENVFILE。
+  若为环境变量不分离的模式安装的数据库，root在使用该工具时需要source安装用户的.bashrc文件
 
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
