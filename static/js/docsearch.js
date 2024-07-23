@@ -48,7 +48,7 @@ $(function ($) {
             });
             $(".search-result>.title").find(".keyword").text(value);
           }
-          searchMethods.solveData(dataArr, versionText, el, value);
+          searchMethods.solveData(dataArr, versionText, el);
         },
         error: function () {
           totalAmount = 0;
@@ -56,18 +56,16 @@ $(function ($) {
         },
       });
     },
-    solveData: function (result, text, el, searchText) {
+    solveData: function (result, text, el) {
       $(".search-result>ul").empty();
       if (!result.length) {
         $("#search_content").hide();
-        if (searchText.trim() !== '') {
-          if (el === "#pagination") {
-            $(".search-result #pagination").hide();
-            $(".search-result .no-data-mobile").show();
-          } else {
-            $(".search-result #baseof-pagination").hide();
-            $(".search-result .no-data").show();
-          }
+        if (el === "#pagination") {
+          $(".search-result #pagination").hide();
+          $(".search-result .no-data-mobile").show();
+        } else {
+          $(".search-result #baseof-pagination").hide();
+          $(".search-result .no-data").show();
         }
         return;
       }
