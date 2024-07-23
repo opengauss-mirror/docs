@@ -1045,6 +1045,7 @@ headless: true
 					-	[UPDATE]({{< relref "./docs/ExtensionReference/dolphin-UPDATE.md" >}})
 					-	[USE DB_NAME]({{< relref "./docs/ExtensionReference/dolphin-USE-DB_NAME.md" >}})						
 					-	[SELECT HINT]({{< relref "./docs/ExtensionReference/dolphin-SELECT-HINT.md" >}})
+					-	[JOIN]({{< relref "./docs/ExtensionReference/dolphin-JOIN.md" >}})
 				-   [别名]({{< relref "./docs/ExtensionReference/dolphin-单引号别名.md" >}})
 				-	[@variable变量]({{< relref "./docs/ExtensionReference/dolphin-at-variable变量.md" >}})
 			-   [系统视图]({{< relref "./docs/ExtensionReference/dolphin-系统视图.md" >}})
