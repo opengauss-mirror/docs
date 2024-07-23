@@ -22,6 +22,8 @@
     {{ else }}
     <title>{{ $title -}} </title>
     {{ end }}
+    <meta name="date" content="{{time.Now | time.Format "2006-01-02 15:04:05"}}" >
+    <meta name="last-modified" content="{{time.Now | time.Format "2006-01-02 15:04:05"}}" >
     <meta name="description" content="{{ i18n "description" }}">
     <meta name="keywords" content="{{ i18n "key_words" }}">
     <meta name="author" content="{{ .Site.Params.author }}" >
