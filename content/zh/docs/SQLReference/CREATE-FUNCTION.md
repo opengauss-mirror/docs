@@ -81,6 +81,7 @@
             | SET configuration_parameter { {TO | =} value | FROM CURRENT }
             | COMMENT 'text' 
             | pipelined_clause
+            | parallel_enable_clause
          ][...]
          {
             IS | AS
@@ -88,6 +89,17 @@
     /
     ```
 
+    -   其中并行参数parallel_enable_clause为：
+
+        ```
+        PARALLEL_ENABLE
+        [ ( PARTITION argument BY
+            { ANY
+              | HASH (column [, column])
+            }
+          )
+        ]
+        ```
 
 ## 参数说明<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
@@ -281,6 +293,25 @@
     ```
 
     取值范围：PIPELINED
+
+-   **parallel_enable_clause**
+
+    指定函数是否可以并行。其中PARTITION BY子句仅支持函数入参中有游标类型时指定。
+
+    参数的详细描述如下所示。
+
+    -   argument
+
+        指定入参中并行的游标名。
+
+    -   ANY | HASH (column [,column])
+
+        指定并行游标对数据分布的方式，目前支持ANY和HASH。指定为HASH时需要指定一个或多个列名。
+
+    >![](public_sys-resources/icon-notice.png) **须知：** 
+    > 1. 函数体内对指定的并行游标的操作仅支持直接FETCH CURSOR，当存在FETCH ABSOLUTE/RELATIVE/BACKWARD/PRIOR CURSOR操作时会报错。
+    > 2. 指定了该子句，即默认设置了IMMUTABLE，且不允许同时设置STABLE/VOLATILE。
+    > 3. 该子句仅在A兼容性的数据库下支持。
 
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
