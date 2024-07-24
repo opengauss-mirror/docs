@@ -16,7 +16,7 @@ openGauss提供了gs_perfconfig工具帮助对openGauss进行性能调整。包�
 
 
 ## 语法参数
-gs_perfconfig的参数一共分为四个大项，对应四个功能动作：调整（`tune`）, 恢复（`revocer`）, 预设（`preset`）, 帮助（`help`）。
+gs_perfconfig的参数一共分为四个大项，对应四个功能动作：调整（`tune`）, 恢复（`recover`）, 预设（`preset`）, 帮助（`help`）。
 
 - **性能配置调整**
 ```
@@ -45,7 +45,7 @@ gs_perfconfig tune [ -t [ all,os,setup,guc,suggest ] ] [ --apply ] [ -y ] [ --en
 gs_perfconfig recover [ -y ]
 ```
 
-每一次`--apply`的调整动作，都会生成一份回退方案`anti.log`，`anti.log`仅会保存一份。使用`revocer`命令，可以读取重放`anti.log`，对上一次的调整内容斤进行回退。
+每一次`--apply`的调整动作，都会生成一份回退方案`anti.log`，`anti.log`仅会保存一份。使用`recover`命令，可以读取重放`anti.log`，对上一次的调整内容斤进行回退。
 
 `-y`表示接受回滚过程中，会重启数据库、回退参数配置等操作。
 
