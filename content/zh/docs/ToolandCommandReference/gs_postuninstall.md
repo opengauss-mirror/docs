@@ -8,7 +8,9 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 
 -   openGauss卸载执行成功。
 -   root用户互信可用。
--   只能使用root用户在原安装包的script下执行./gs\_postuninstall命令。
+-   只能使用root用户执行gs_postuninstall命令(执行前需source安装用户的环境变量)
+-   若为环境变量分离的模式安装的数据库，root和普通用户在使用该工具前都需要source环境变量分离文件ENVFILE；
+-   若为环境变量不分离的模式，root用户在使用该工具时需要source安装用户的.bashrc文件
 
 ## 语法<a name="zh-cn_topic_0237152418_zh-cn_topic_0059778816_sad653bfd058a483ab93629bd7b66fc5d"></a>
 
@@ -84,8 +86,8 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 清理主机的环境
 
 ```
-cd /opt/software/openGauss/script
-./gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
+source /home/omm/om_env #环境变量分离模式；#环境变量不分离模式 source /home/omm/.bashrc 
+gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
 Parsing the configuration file.
 Successfully parsed the configuration file.
 Check log file path.
