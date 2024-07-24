@@ -4,7 +4,7 @@
 ```
 INTERVAL expr unit
 ```
-说明：expr为一个数量值，unit为expr的单位。unit允许的取值和对应的expr取值格式可参考[表1](#intervalexpr_unit_expr_tbl)。
+说明：expr为一个表达式，unit为expr的单位。unit允许的取值和对应的expr常量取值格式可参考[表1](#intervalexpr_unit_expr_tbl)。expr支持运算表达式、列引用和绑定参数用法。
 
 注：若expr值的组成部分个数少于unit对应的标准形式时，将expr值的各个划分部分从右到左依次填充到unit对应标准形式中。例如：对于时间单位unit为DAY_SECOND，若expr为‘1 10’，则最终表示的时间间隔值为‘0 00:01:10’。
 
@@ -96,6 +96,12 @@ INTERVAL expr unit
 </td>
 </tr>
 <tr>
+<td class="cellrowborder" valign="top" width="50%"><p>HOUR_MICROSECOND</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%"><p>'HOURS:MINUTES:SECONDS.MICROSECONDS'</p>
+</td>
+</tr>
+<tr>
 <td class="cellrowborder" valign="top" width="50%"><p>HOUR_SECOND</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%"><p>'HOURS:MINUTES:SECONDS'</p>
@@ -163,6 +169,33 @@ test_db=# select '1997-12-11' + interval '1 10' day_second;
       ?column?       
 ---------------------
  1997-12-11 00:01:10
+(1 row)
+
+-- 运算表达式
+test_db=# select '1997-12-11' + interval 1 + 2 * 3 day;
+  ?column?  
+------------
+ 1997-12-18
+(1 row)
+
+-- 列引用
+test_db=# create table t1 (c1 int);
+CREATE TABLE
+test_db=# insert into t1 values(1);
+INSERT 0 1
+test_db=# select '1997-12-11' + interval c1 + 2 year from t1;
+  ?column?  
+------------
+ 2000-12-11
+(1 row)
+
+-- 绑定参数
+test_db=# prepare stmt as 'select ? + interval ? hour';
+PREPARE
+test_db=# execute stmt('1997-12-11', 20);
+      ?column?       
+---------------------
+ 1997-12-11 20:00:00
 (1 row)
 
 ```

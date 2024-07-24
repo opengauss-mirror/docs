@@ -79,3 +79,4 @@ SQL语法
     ../content/zh/docs/ExtensionReference/dolphin-UPDATE
     ../content/zh/docs/ExtensionReference/dolphin-USE-DB_NAME
     ../content/zh/docs/ExtensionReference/dolphin-SELECT-HINT
+    ../content/zh/docs/ExtensionReference/dolphin-JOIN
