@@ -501,6 +501,8 @@ PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
     >![](public_sys-resources/icon-note.png) **说明：** 
     >当创建一个定时任务（JOB）时，系统默认将当前数据库和用户名与当前创建的定时任务绑定起来。该接口函数可以通过call或select调用，如果通过select调用，可以不填写出参。如果在存储过程中，则需要通过perform调用该接口函数。如果提交的sql语句任务使用到非public的schema，应该指定表或者函数的schema，或者在sql语句前添加set current\_schema = xxx;语句。
 
+    >**注意：** 在创建定时任务时，默认的sysdate为创建该定时任务所对应的客户端时间，而非服务器时间。例如服务器有默认参数timezone='US/Eastern'，当我们在客户端中修改了timezone=PRC后，创建定时任务的sysdate的时间就变成了PRC时区下对应的时间。
+
     **表 11**  PKG\_SERVICE.JOB\_SUBMIT接口参数说明
 
     <a name="zh-cn_topic_0059779362_table8990101441711"></a>
