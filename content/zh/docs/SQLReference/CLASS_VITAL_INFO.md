@@ -2,6 +2,13 @@
 
 CLASS\_VITAL\_INFO视图用于做WDR时校验相同的表或者索引的oid是否一致。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.CLASS_VITAL_INFO;
+ relid |     schemaname     |                    relname                     | relkind 
+-------+--------------------+------------------------------------------------+---------
+```
+
 **表 1**  CLASS\_VITAL\_INFO字段
 
 <a name="zh-cn_topic_0237122722_table1351144175016"></a>

@@ -2,6 +2,13 @@
 
 显示各节点的命名空间中所有普通表和toast表的事务状态信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_STAT_XACT_ALL_TABLES;
+ node_name | relid |     schemaname     |            relname            | seq_scan | seq_tup_read | idx_scan | idx_tup_fetch | n_tup_ins | n_tup_upd | n_tup_del | n_tup_hot_upd 
+-----------+-------+--------------------+-------------------------------+----------+--------------+----------+---------------+-----------+-----------+-----------+---------------
+```
+
 **表 1**  GLOBAL\_STAT\_XACT\_ALL\_TABLES字段
 
 <a name="zh-cn_topic_0237122602_table1343541913012"></a>

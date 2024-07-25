@@ -2,6 +2,13 @@
 
 PG\_STATIO\_SYS\_TABLES视图显示命名空间中所有系统表的IO状态信息。
 
+示例：
+```sql
+openGauss=# select * from PG_STATIO_SYS_TABLES;
+ relid |     schemaname     |            relname            | heap_blks_read | heap_blks_hit | idx_blks_read | idx_blks_hit | toast_blks_read | toast_blks_hit | tidx_blks_read | tidx_blks_hit 
+-------+--------------------+-------------------------------+----------------+---------------+---------------+--------------+-----------------+----------------+----------------+---------------
+```
+
 **表 1**  PG\_STATIO\_SYS\_TABLES字段
 
 <a name="zh-cn_topic_0283137142_zh-cn_topic_0237122462_zh-cn_topic_0059777862_tfa0c5848647e4ee0967330df8b816560"></a>

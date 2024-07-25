@@ -2,6 +2,13 @@
 
 得到各节点pg\_catalog、information\_schema以及pg_toast模式下的所有系统表的统计信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_STAT_SYS_TABLES;
+ node_name | relid |     schemaname     |            relname            | seq_scan | seq_tup_read | idx_scan | idx_tup_fetch | n_tup_ins | n_tup_upd | n_tup_del | n_tup_hot_upd | n_live_tup | n_dead_tup | last_vacuum | last_autovacuum | last_analyze | last_autoanalyze | vacuum_count | autovacuum_count | analyze_count | autoanalyze_count 
+-----------+-------+--------------------+-------------------------------+----------+--------------+----------+---------------+-----------+-----------+-----------+---------------+------------+------------+-------------+-----------------+--------------+------------------+--------------+------------------+---------------+-------------------
+```
+
 **表 1**  GLOBAL\_STAT\_SYS\_TABLES字段
 
 <a name="zh-cn_topic_0237122584_table1734452764219"></a>

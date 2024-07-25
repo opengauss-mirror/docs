@@ -2,6 +2,13 @@
 
 GLOBAL\_CKPT\_STATUS视图用于显示openGauss所有实例的检查点信息和各类日志刷页情况。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.GLOBAL_CKPT_STATUS;
+ node_name | ckpt_redo_point | ckpt_clog_flush_num | ckpt_csnlog_flush_num | ckpt_multixact_flush_num | ckpt_predicate_flush_num | ckpt_twophase_flush_num 
+-----------+-----------------+---------------------+-----------------------+--------------------------+--------------------------+-------------------------
+```
+
 **表 1**  GLOBAL\_CKPT\_STATUS字段
 
 <a name="zh-cn_topic_0237122715_table421592221420"></a>

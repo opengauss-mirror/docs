@@ -2,6 +2,13 @@
 
 gs\_recyclebin描述了回收站对象的详细信息。
 
+示例：
+```sql
+openGauss=# select * from gs_recyclebin;
+ rcybaseid | rcydbid | rcyrelid | rcyname | rcyoriginname | rcyoperation | rcytype | rcyrecyclecsn | rcyrecycletime | rcycreatecsn | rcychangecsn | rcynamespace | rcyowner | rcytablespace | rcyrelfilenode | rcycanrestore | rcycanpurge | rcyfrozenxid | rcyfrozenxid64 
+-----------+---------+----------+---------+---------------+--------------+---------+---------------+----------------+--------------+--------------+--------------+----------+---------------+----------------+---------------+-------------+--------------+----------------
+```
+
 **表 1**  gs\_recyclebin字段
 
 <a name="table165293775215"></a>

@@ -2,6 +2,13 @@
 
 本节点内数据库中每个表（包括TOAST表）的一行的统计信息。
 
+示例：
+```sql
+openGauss=# select * from DBE_PERF.STAT_ALL_TABLES;
+ relid |     schemaname     |            relname            | seq_scan | seq_tup_read | idx_scan | idx_tup_fetch | n_tup_ins | n_tup_upd | n_tup_del | n_tup_hot_upd | n_live_tup | n_dead_tup | last_vacuum | last_autovacuum | last_analyze | last_autoanalyze | vacuum_count | autovacuum_count | analyze_count | autoanalyze_count 
+-------+--------------------+-------------------------------+----------+--------------+----------+---------------+-----------+-----------+-----------+---------------+------------+------------+-------------+-----------------+--------------+------------------+--------------+------------------+---------------+-------------------
+```
+
 **表 1**  STAT\_ALL\_TABLES字段
 
 <a name="zh-cn_topic_0237122588_table81151723114516"></a>

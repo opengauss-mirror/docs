@@ -2,6 +2,13 @@
 
 得到各节点pg\_catalog、information\_schema以及pg\_toast模式中所有系统表的索引状态信息。
 
+  示例：
+  ```sql
+  openGauss=# select * from DBE_PERF.GLOBAL_STAT_SYS_INDEXES;
+   node_name | relid | indexrelid | schemaname |            relname            |                  indexrelname                  | idx_scan | idx_tup_read | idx_tup_fetch 
+  -----------+-------+------------+------------+-------------------------------+------------------------------------------------+----------+--------------+---------------
+  ```
+
 **表 1**  GLOBAL\_STAT\_SYS\_INDEXES字段
 
 <a name="zh-cn_topic_0237122587_table7641183314448"></a>
