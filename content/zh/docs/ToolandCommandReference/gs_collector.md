@@ -74,7 +74,7 @@
 <td class="cellrowborder" valign="top" width="29.470000000000002%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237152334_p86827507318"><a name="zh-cn_topic_0237152334_p86827507318"></a><a name="zh-cn_topic_0237152334_p86827507318"></a>gs_ctl、gaussdb、GaussMaster、AioWorker、AlarmChecker、Archiver、Auditor、AutoVacLauncher、AutoVacWorker、AuxMain、BackendMode、BgWriter、BootStrap、Catchup、CBMWriter、Checkpointer、CommAuxStream、CommPoolCleaner、CommRcvStream、CommRcvWorker、CommSendStream、CpMonitor、DataRcvWriter、DataReceiver、DataSender、ExtremeRTO、FencedUDFMaster、Heartbeater、JobExecutor、JobScheduler、LWLockMonitor、PageWriter、ParallelRecov、PercentileJob、Reaper、RemoteSrv、StartupProcess、StatCollector、Stream、SysLogger、ThdPoolListener、TwoPhaseCleaner、WalRcvWriter、WalReceiver、WalSender、WalWriter、WDRSnapshot、WlmArbiter、WlmCollector、WlmMonitor</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.93%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0237152334_p5229047123010"><a name="zh-cn_topic_0237152334_p5229047123010"></a><a name="zh-cn_topic_0237152334_p5229047123010"></a>通过时间筛选gaussdb进程的core文件。</p>
-<div class="caution" id="zh-cn_topic_0237152334_note1316119421297"><a name="zh-cn_topic_0237152334_note1316119421297"></a><a name="zh-cn_topic_0237152334_note1316119421297"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="zh-cn_topic_0237152334_p016104214295"><a name="zh-cn_topic_0237152334_p016104214295"></a><a name="zh-cn_topic_0237152334_p016104214295"></a>关于Core的配置和方式请按照如下要求：在/proc/sys/opengauss/core_pattern文件中添加core文件的格式：core-%e-%p-%t。</p>
+<div class="caution" id="zh-cn_topic_0237152334_note1316119421297"><a name="zh-cn_topic_0237152334_note1316119421297"></a><a name="zh-cn_topic_0237152334_note1316119421297"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="zh-cn_topic_0237152334_p016104214295"><a name="zh-cn_topic_0237152334_p016104214295"></a><a name="zh-cn_topic_0237152334_p016104214295"></a>关于Core的配置和方式请按照如下要求：在/proc/sys/kernel/core_pattern文件中添加core文件的格式：core-%e-%p-%t。</p>
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0237152334_p181614310230"><a name="zh-cn_topic_0237152334_p181614310230"></a><a name="zh-cn_topic_0237152334_p181614310230"></a>否</p>
@@ -252,7 +252,7 @@
 
 -   --timeout
 
-    日志与xlog收集时最长收集时间，输入格式为非负整数，单位为s。
+    日志、xlog与core文件收集时最长收集时间，输入格式为非负整数，单位为s。
 
 -   -?, --help
 
