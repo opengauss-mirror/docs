@@ -2,7 +2,7 @@
 # SQL参考<a name="ZH-CN_TOPIC_0289900204"></a>
 
 
--   **[openGauss SQL](openGauss-SQL.md.md)**  
+-   **[openGauss SQL](openGauss-SQL.md)**  
 
 -   **[SQL语法格式说明](SQL语法格式说明.md)**
 
