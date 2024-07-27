@@ -1809,6 +1809,7 @@ headless: true
         -   [gs\_cgroup]({{< relref "./docs/ToolandCommandReference/gs_cgroup.md" >}})
         -   [gs\_check]({{< relref "./docs/ToolandCommandReference/gs_check.md" >}})
         -   [gs\_checkos]({{< relref "./docs/ToolandCommandReference/gs_checkos.md" >}})
+        -   [gs\_checkse]({{< relref "./docs/ToolandCommandReference/gs_checkse.md" >}})
         -   [gs\_checkperf]({{< relref "./docs/ToolandCommandReference/gs_checkperf.md" >}})
         -   [gs\_collector]({{< relref "./docs/ToolandCommandReference/gs_collector.md" >}})
         -   [gs\_dump]({{< relref "./docs/ToolandCommandReference/gs_dump.md" >}})
