@@ -309,7 +309,7 @@
         指定并行游标对数据分布的方式，目前支持ANY和HASH。指定为HASH时需要指定一个或多个列名。
 
     >![](public_sys-resources/icon-notice.png) **须知：** 
-    > 1. 函数体内对指定的并行游标的操作仅支持直接FETCH CURSOR，当存在FETCH ABSOLUTE/RELATIVE/BACKWARD/PRIOR CURSOR操作时会报错。
+    > 1. 函数体内对指定的并行游标的操作仅支持直接FETCH CURSOR，当存在FETCH FIRST/LAST/ABSOLUTE/RELATIVE/BACKWARD/PRIOR CURSOR等操作时会报错。
     > 2. 指定了该子句，即默认设置了IMMUTABLE，且不允许同时设置STABLE/VOLATILE。
     > 3. 该子句仅在A兼容性的数据库下支持。
 
