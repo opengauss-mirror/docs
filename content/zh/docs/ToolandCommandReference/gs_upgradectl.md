@@ -331,7 +331,7 @@ Successfully upgrade all nodes.
 
 **示例六**：使用gs\_upgradectl脚本执行集群管理组件增量升级。
 ```
-gs_upgradectl -t upgrade-cm --upgarde-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
+gs_upgradectl -t upgrade-cm --upgrade-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
 Start ot perform the upgrade of CM component in cluster.
 Ready to transform CM package to all nodes.
 Send CM package to all nodes successfully.
