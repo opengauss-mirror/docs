@@ -136,6 +136,11 @@ Time Model名称及描述如下表所示。
 <td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p18205113910376"><a name="p18205113910376"></a><a name="p18205113910376"></a>未知时间消耗，可能是session切换耗时（单位：微秒）。</p>
 </td>
 </tr>
+<tr id="row1395913276256"><td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.3.1.1 "><p id="p17205203919375"><a name="p17205203919375"></a><a name="p17205203919375"></a>NET_TRANS_TIME</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.83%" headers="mcps1.2.3.1.2 "><p id="p18205113910376"><a name="p18205113910376"></a><a name="p18205113910376"></a>驱动执行sql的全链路网络耗时，当前仅支持jdbc驱动。（单位：微秒）</p>
+</td>
+</tr>
 </tbody>
 </table>
 
