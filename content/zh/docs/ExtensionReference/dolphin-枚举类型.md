@@ -11,7 +11,7 @@ ENUM类型是一个字符串对象，其值是从创建表时在列定义时指�
     name VARCHAR(40),
     gender ENUM('male', 'female')
   );
-  INSERT INO staff (name, gender) VALUES ('Tom','male'), ('Jenny','female');
+  INSERT INTO staff (name, gender) VALUES ('Tom','male'), ('Jenny','female');
   SELECT name, gender FROM staff WHERE gender = 'male';
     name   | gender  
   ---------+--------
