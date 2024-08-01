@@ -579,9 +579,10 @@ PKG\_SERVICE支持的所有接口请参见[表1](#table35465232913)。
     示例：
 
     ```
-    SELECT PKG_SERVICE.JOB_SUBMIT(NULL, 'call pro_xxx();', to_date('20180101','yyyymmdd'),'sysdate+1');
+
+    SELECT PKG_SERVICE.JOB_SUBMIT(NULL,'callpro_xxx();',to_date('20180101', 'yyyymmdd'),'sysdate()');
     
-    SELECT PKG_SERVICE.JOB_SUBMIT(NULL, 'call pro_xxx();', to_date('20180101','yyyymmdd'),'sysdate+1.0/24');
+    SELECT PKG_SERVICE.JOB_SUBMIT(NULL,'callpro_xxx();',to_date('20180101', 'yyyymmdd'),'sysdate() ,0/24');
     
     CALL PKG_SERVICE.JOB_SUBMIT(NULL, 'INSERT INTO T_JOB  VALUES(1);  call pro_1(); call pro_2();', add_months(to_date('201701','yyyymm'),1), 'date_trunc(''day'',SYSDATE) + 1 +(8*60+30.0)/(24*60)' ,:jobid);
     

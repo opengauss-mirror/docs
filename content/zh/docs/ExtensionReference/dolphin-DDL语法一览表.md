@@ -283,4 +283,6 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 <td class="cellrowborder" valign="top" width= "50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_94328d89eee2bb036117cb809fff43b454"></a><a href="dolphin-CREATE-TRIGGER.md">CREATE TRIGGER</a></p>
 </td>
 </tr>
+</tbody>
+</table>
 
