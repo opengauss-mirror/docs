@@ -237,7 +237,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## wal\_file\_init\_num<a name="section11176351456"></a>
 
-**Parameter description**: Specifies the number of Xlog segment files to be created by the WAL writer. If the number of remaining Xlog segment files is less then 20% of the value, more will be created.
+**Parameter description**: Specifies the number of Xlog segment files to be created by the WAL writer.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
