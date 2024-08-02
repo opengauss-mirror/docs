@@ -216,6 +216,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   本地临时表中的自动增长列不会创建序列。
     >-   自动增长列不支持列式存储。
     >-   自增计数器自增和刷新操作不会回滚。
+    >-   因精度问题，自增值较大时，FLOAT/DOUBLE类型自增后可能重复报错，可见文末示例。
 
 -   **BINARY**
 
@@ -606,4 +607,18 @@ Indexes:
 
 openGauss=# create table table_ddl_0154(col1 int,col2 varchar(64), FULLTEXT idx_ddl_0154(col2));
 CREATE TABLE
+openGauss=# create table t2 (a float primary key auto_increment);
+NOTICE:  CREATE TABLE will create implicit sequence "t2_a_seq" for serial column "t2.a"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "t2_pkey" for table "t2"
+CREATE TABLE
+openGauss=# alter table t2 auto_increment = 16777216;
+ALTER TABLE
+openGauss=# insert into t2 values (null);
+INSERT 0 1
+-- float类型能精确表示的上限为16777216，自增到16777217时存储的值与16777216一致，导致主键冲突
+openGauss=# insert into t2 values (null);
+ERROR:  duplicate key value violates unique constraint "t2_pkey"
+DETAIL:  Key (a)=(1.67772e+07) already exists.
+openGauss=# insert into t2 values (null);
+INSERT 0 1
 ```
