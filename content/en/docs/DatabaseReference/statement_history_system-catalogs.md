@@ -189,7 +189,7 @@ The constraints on the query of this system catalog are as follows:
 </td>
 <td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p150795912247"><a name="p150795912247"></a><a name="p150795912247"></a>Statement execution plan.</p>
 </td>
-<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p1328731383018"><a name="p1328731383018"></a><a name="p1328731383018"></a>L1</p>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.5.1.4 "><p id="p1328731383018"><a name="p1328731383018"></a><a name="p1328731383018"></a>L0</p>
 </td>
 </tr>
 <tr id="row17775052123118"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1250610593248"><a name="p1250610593248"></a><a name="p1250610593248"></a>n_returned_rows</p>
