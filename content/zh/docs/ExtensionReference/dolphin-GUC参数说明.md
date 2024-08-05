@@ -964,3 +964,34 @@ openGauss=# show max_error_count;
 **取值范围**：枚举类型
 
 **默认值**：5.7
+
+## dolphin.use_const_value_as_colname
+
+**参数说明**：该参数用于控制在常量输出的场景下，是否直接使用常量的值作为列名。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+**默认值**：FALSE
+
+**示例**：
+
+```
+openGauss=# set dolphin.use_const_value_as_colname = false;
+SET
+openGauss=# select 1,1.23;
+ ?column? | ?column?
+----------+----------
+        1 |     1.23
+(1 row)
+
+openGauss=# set dolphin.use_const_value_as_colname = true;
+SET
+openGauss=# select 1,1.23;
+ 1 | 1.23
+---+------
+ 1 | 1.23
+(1 row)
+```
+
