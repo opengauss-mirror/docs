@@ -30,7 +30,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   创建卷组
 
     ```
-    dsscmd cv <-g vg_name> <-v vol_name> [-s au_size]  [-D DSS_HOME]
+    dsscmd cv <-g vg_name> <-v vol_path> [-s au_size]  [-D DSS_HOME]
     ```
 
     此处的vg\_name为卷组名，命名长度不能超过63，仅支持数字，大小写字母，和部分特殊字符 '_ ' , ' . ' , ' - ' 。其他字符不支持。
@@ -44,12 +44,12 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   卷组中添加卷
 
     ```
-    dsscmd adv <-g vg_name> <-v vol_name> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd adv <-g vg_name> <-v vol_path> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
     ```
     >![](public_sys-resources/icon-note.png) **说明：** 
     >-   此处的vg\_name为卷组名，不需要以‘+’开头。
     >-   dsscmd adv支持在线和全离线操作。-f参数表示强制离线，全离线由用户侧保证，可通过cm_ctl query -Cvid进行查询。
-    >-   在不带CM的集群的场景（即维护模式）下，在线adv之后需要用户手动注册（dsscmd reghl)。
+    >-   在不带CM的集群的场景（即维护模式）下，在线adv之后需要用户手动注册（dsscmd reghl）。
 
 -   新建目录
 
@@ -95,7 +95,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   删除卷组中的卷
 
     ```
-    dsscmd rmv <-g vg_name> <-v vol_name> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
+    dsscmd rmv <-g vg_name> <-v vol_path> [-f] [-D DSS_HOME] [-U UDS:socket_domain]
     ```
 
     >![](public_sys-resources/icon-note.png) **说明：** 
@@ -214,7 +214,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     >![](public_sys-resources/icon-note.png) **说明：** 
     >-   format为读取文件内容的格式，取值范围为：c char、h unsigned short、u unsigned int、l unsigned long、s string、x hex。
-    >-   path指定的为路径为路径为磁盘路径，可通过$DSS_HOME/cfg/dss_vg_conf.ini文件获取磁盘路径。
+    >-   path指定的路径为磁盘路径，可通过$DSS_HOME/cfg/dss_vg_conf.ini文件获取磁盘路径。
 
 -   显示磁盘信息
 
@@ -308,6 +308,12 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 
     ```
     dsscmd getcfg <-n name> [-U UDS:socket_domain]
+    ```
+
+-   获取dss服务端状态信息
+
+    ```
+    dsscmd getstatus [-U UDS:socket_domain]
     ```
 
 -   通知dss服务端进行优雅退出，异步关闭dssserver进程
