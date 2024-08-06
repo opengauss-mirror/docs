@@ -210,7 +210,7 @@ mot.conf文件与postgresql.conf配置文件在同一文件夹下。
     有效值为fill-socket-first、equal-per-socket、fill-physical-first、none。
 
     -   Fill-socket-first将线程连接到同一个槽位的核上，直到槽位已满，然后移动到下一个槽位。
-    -   Equal-per-socket使线程均匀分布在所有槽位中。
+    -   Equal-per-socket使线程均匀分布在所有槽位中。选择该亲和模式需要确保每个槽位的CPU核数相等，否则会导致数据库服务器启动失败，对于这种情况，可以修改参数为其他两种亲和模式。
     -   Fill-physical-first将线程连接到同一个槽位中的物理核，直到用尽所有物理核，然后移动到下一个槽位。当所有物理核用尽时，该过程再次从超线程核开始。
     -   None禁用任何亲和配置，并让系统调度程序确定每个线程调度在哪个核上运行。
 
