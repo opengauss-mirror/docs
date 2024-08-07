@@ -1430,6 +1430,7 @@ headless: true
     		-   [支持和约束]({{< relref "./docs/SQLReference/支持和约束-1.md" >}})
     -   [游标]({{< relref "./docs/SQLReference/游标.md" >}})
     -   [匿名块]({{< relref "./docs/SQLReference/匿名块.md" >}})
+    -   [子类型]({{< relref "./docs/SQLReference/子类型.md" >}})
     -   [存储过程]({{< relref "./docs/SQLReference/存储过程.md" >}})
         -   [存储过程]({{< relref "./docs/SQLReference/存储过程_SQLReference.md" >}})
         -   [数据类型]({{< relref "./docs/SQLReference/数据类型_SQLReference.md" >}})

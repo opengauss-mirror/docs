@@ -925,6 +925,7 @@ headless: true
 			-   [Usage]({{< relref "./docs/SQLReference/usage-33.md" >}})
 			-   [Support and Constraints]({{< relref "./docs/SQLReference/support-and-constraints-34.md" >}})
 	-   [Cursors]({{< relref "./docs/SQLReference/cursors.md" >}})
+    -   [Subtype]({{< relref "./docs/SQLReference/subtype.md" >}})
 	-   [Anonymous Blocks]({{< relref "./docs/SQLReference/anonymous-blocks-1.md" >}})
 	-   [Stored Procedure]({{< relref "./docs/SQLReference/stored-procedure.md" >}})
 		-   [Stored Procedure]({{< relref "./docs/SQLReference/stored-procedure-21.md" >}})

@@ -1288,6 +1288,7 @@ headless: true
 			-   [Support and Constraints]({{< relref "./docs/SQLReference/incremental-materialized-view-support-and-constraints.md" >}})
 	-   [Cursors]({{< relref "./docs/SQLReference/cursors.md" >}})
 	-   [Anonymous Blocks]({{< relref "./docs/SQLReference/anonymous-blocks.md" >}})
+    -   [Subtype]({{< relref "./docs/SQLReference/subtype.md" >}})
 	-   [Stored Procedure]({{< relref "./docs/SQLReference/stored-procedure.md" >}})
 		-   [Stored Procedure]({{< relref "./docs/SQLReference/stored-procedures.md" >}})
 		-   [Data Types]({{< relref "./docs/SQLReference/data-types-22.md" >}})
