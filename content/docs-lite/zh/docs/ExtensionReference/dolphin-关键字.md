@@ -34,8 +34,8 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 17. 移除关键字```ANALYSE、BUCKETS、ROWNUM、EXCLUDED、MINUS```。
 18. 移除关键字```COMPACT```，由保留（可以是函数或类型）调整为非关键字。
 19. 新增关键字```WEEK_P```。
-19. 改变关键字```SHRINK、PERFORMANCE```等级，由保留关键字调整为非保留（不能是函数或类型）关键字。
-20. 新增```STRAIGHT_JOIN```，作为保留关键字。
+20. 改变关键字```SHRINK、PERFORMANCE```等级，由保留关键字调整为非保留关键字。
+21. 新增```STRAIGHT_JOIN```，作为保留关键字。
 
 **表 1**  SQL关键字
 
@@ -5303,7 +5303,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 </tr>
 <tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_rf6729491d68d4a6b80591f7fd83e15d5"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a5591131e61434d70847abe3f36ebd12f"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a5591131e61434d70847abe3f36ebd12f"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a5591131e61434d70847abe3f36ebd12f"></a>PERFORMANCE</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"></a>非保留（不能是函数或类型）</p>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_a2f5fce8d2fe347aca1230a930f56da46"></a>非保留</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_ada0dc101fb604a92857e7848df9d786f"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_ada0dc101fb604a92857e7848df9d786f"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_ada0dc101fb604a92857e7848df9d786f"></a>-</p>
 </td>
@@ -6484,7 +6484,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p49384997"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p49384997"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p49384997"></a>-</p>
 </td>
 </tr>
-<tr><td>SHRINK</td><td>非保留（不能是函数或类型）</td><td>-</td><td>-</td></tr>
+<tr><td>SHRINK</td><td>非保留</td><td>-</td><td>-</td></tr>
 <tr id="zh-cn_topic_0283137559_row13797327133014"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_p1379915275307"><a name="zh-cn_topic_0283137559_p1379915275307"></a><a name="zh-cn_topic_0283137559_p1379915275307"></a>SHUTDOWN</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_p197996277307"><a name="zh-cn_topic_0283137559_p197996277307"></a><a name="zh-cn_topic_0283137559_p197996277307"></a>非保留</p>
