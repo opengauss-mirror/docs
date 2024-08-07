@@ -636,6 +636,24 @@
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.4.1.4 "><p id="p19286111393017"><a name="p19286111393017"></a><a name="p19286111393017"></a>L0</p>
 </td>
 </tr>
+<tr id="row16949138161715"><td class="cellrowborder" valign="top" width="20.46795320467953%" headers="mcps1.2.5.1.1 "><p id="p1895014383177"><a name="p1895014383177"></a><a name="p1895014383177"></a>parent_query_id</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.5.1.2 "><p id="p13950113891718"><a name="p13950113891718"></a><a name="p13950113891718"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.5.1.3 "><p id="p4950638101710"><a name="p4950638101710"></a><a name="p4950638101710"></a>存储过程中plsql父语句的信息。</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.4.1.4 "><p id="p19286111393017"><a name="p19286111393017"></a><a name="p19286111393017"></a>L0</p>
+</td>
+</tr>
+<tr id="row19410184911116"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p9214257135413"><a name="p9214257135413"></a><a name="p9214257135413"></a>net_trans_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p5214257155418"><a name="p5214257155418"></a><a name="p5214257155418"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p2021410575548"><a name="p2021410575548"></a><a name="p2021410575548"></a>驱动执行sql的全链路网络耗时，当前仅支持jdbc驱动。</p>
+</td>
+<td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.4.1.4 "><p id="p19286111393017"><a name="p19286111393017"></a><a name="p19286111393017"></a>L0</p>
+</td>
+</tr>
 </tbody>
 </table>
 
