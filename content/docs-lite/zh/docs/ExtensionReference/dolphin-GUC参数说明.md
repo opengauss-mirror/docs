@@ -994,3 +994,27 @@ openGauss=# select 1,1.23;
 (1 row)
 ```
 
+## dolphin.support_interval_to
+
+**参数说明**：该参数用于控制是否支持interval xxx to xxx类型, 如interval year to month，表现与interval year_month相同。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+**默认值**：off
+
+**示例**：
+```
+openGauss=# set dolphin.support_interval_to = off;
+SET
+openGauss=# SELECT date_sub('1992-12-31 00:00:00.0',INTERVAL '1' YEAR TO MONTH);
+ERROR:  interval year to month is not supported
+openGauss=# set dolphin.support_interval_to = on;
+SET
+openGauss=# SELECT date_sub('1992-12-31 00:00:00.0',INTERVAL '1' YEAR TO MONTH);
+      date_sub
+---------------------
+ 1992-11-30 00:00:00
+(1 row)
+```
