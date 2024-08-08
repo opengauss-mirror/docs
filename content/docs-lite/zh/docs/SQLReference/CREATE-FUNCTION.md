@@ -309,6 +309,8 @@
     > 1. 函数体内对指定的并行游标的操作仅支持直接FETCH CURSOR，当存在FETCH FIRST/LAST/ABSOLUTE/RELATIVE/BACKWARD/PRIOR CURSOR等操作时会报错。
     > 2. 指定了该子句，即默认设置了IMMUTABLE，且不允许同时设置STABLE/VOLATILE。
     > 3. 该子句仅在A兼容性的数据库下支持。
+    > 4. 函数并行仅支持游标表达式作为入参。
+    > 5. 支持plan hint指定query dop参数使函数并行，但需要游标表达式同样指定query_dop，仅指定函数的query_dop hint无法走并行（可见下方示例）。
 
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
@@ -423,6 +425,55 @@ end;
 /
 ERROR:  when invoking function func1, no destination for argments "b"
 CONTEXT:  compilation of PL/pgSQL function "inline_code_block" near line 3
+
+-- 函数支持并行参数示例
+openGauss=# create table employees (employee_id number(6), department_id NUMBER);
+openGauss=#
+openGauss=# BEGIN
+   FOR i IN 1..999999 LOOP
+      INSERT INTO employees VALUES (i, 60);
+   END LOOP;
+   COMMIT;
+END;
+/
+openGauss=# CREATE TYPE my_outrec_typ AS (employee_id numeric(6,0), department_id numeric);
+
+-- 创建函数，指定PARALLEL_ENABLE
+openGauss=# CREATE OR REPLACE FUNCTION hash_srf (p SYS_REFCURSOR) RETURN setof my_outrec_typ parallel_enable (partition p by hash(employee_id)) IS
+    out_rec my_outrec_typ := my_outrec_typ(NULL, NULL);
+BEGIN
+    LOOP
+        FETCH p INTO out_rec.employee_id, out_rec.department_id;  -- input row
+        EXIT WHEN p%NOTFOUND;
+        return next out_rec;
+    END LOOP;
+    RETURN;
+END hash_srf;
+/
+
+openGauss=# set query_dop = 4;
+-- 函数并行
+openGauss=# explain (costs off) select * from hash_srf(cursor (select * from employees));
+               QUERY PLAN
+----------------------------------------
+ Streaming(type: LOCAL GATHER dop: 1/4)
+   ->  Function Scan on hash_srf
+(2 rows)
+
+openGauss=# set query_dop = 1;
+-- 仅支持函数的query_dop hint无法走并行计划
+openGauss=# explain (costs off) select /*+ set(query_dop 4) */ * from hash_srf(cursor (select * from employees));
+        QUERY PLAN
+---------------------------
+ Function Scan on hash_srf
+(1 row)
+-- 需同时指定游标表达式的query_dop hint
+openGauss=# explain (costs off) select /*+ set(query_dop 4) */ * from hash_srf(cursor (select /*+ set(query_dop 4) */ * from employees));
+               QUERY PLAN
+----------------------------------------
+ Streaming(type: LOCAL GATHER dop: 1/4)
+   ->  Function Scan on hash_srf
+(2 rows)
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
