@@ -125,7 +125,7 @@
 
 ## upgrade\_from<a name="section033218255523"></a>
 
-**Parameter description**: Specifies the internal version number of the database before an in-place upgrade. Do not modify the value of this parameter.
+**Parameter description**: Specifies the internal version number of the database before an upgrade. Do not modify the value of this parameter.
 
 **Value range**: a non-negative integer You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 

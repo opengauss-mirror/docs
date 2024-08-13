@@ -1,6 +1,6 @@
 # Performing the Upgrade<a name="EN-US_TOPIC_0305491427"></a>
 
-This section describes how to perform the in-place upgrade and gray upgrade.
+This section describes how to perform the gray upgrade.
 
 ## Procedure<a name="section17506731105516"></a>
 
@@ -18,7 +18,7 @@ This section describes how to perform the in-place upgrade and gray upgrade.
     cd /opt/software/gaussdb_upgrade/script
     ```
 
-5.  Execute the  **gs\_preinstall**  script before in-place upgrade or gray upgrade.
+5.  Execute the  **gs\_preinstall**  script before gray upgrade.
 
     ```
     ./gs_preinstall -U omm -G dbgrp  -X /opt/software/GaussDB_Kernel/clusterconfig.xml
@@ -30,15 +30,9 @@ This section describes how to perform the in-place upgrade and gray upgrade.
     su - omm
     ```
 
-7.  If the database is normal, run the following command to perform the in-place upgrade or gray upgrade:
+7.  If the database is normal, run the following command to perform the gray upgrade:
 
-    Example 1: Use the  **gs\_upgradectl**  script to perform an in-place upgrade.
-
-    ```
-    gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml
-    ```
-
-    Example 2: Execute the  **gs\_upgradectl**  script to perform a gray upgrade.
+    Example 1: Execute the  **gs\_upgradectl**  script to perform a gray upgrade.
 
     ```
     gs_upgradectl -t auto-upgrade -X /opt/software/GaussDB_Kernel/clusterconfig.xml --grey
