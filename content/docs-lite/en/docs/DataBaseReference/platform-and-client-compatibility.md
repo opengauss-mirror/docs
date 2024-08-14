@@ -272,6 +272,46 @@ numeric
 <td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="p1276918101287"><a name="p1276918101287"></a><a name="p1276918101287"></a>Determines the behavior when char(n) types are converted to other variable-length string types. By default, spaces at the end are omitted when the char(n) type is converted to other variable-length string types. After this parameter is enabled, spaces at the end are not omitted during conversion. In addition, if the length of the char(n) type exceeds the length of other variable-length string types, an error is reported. This parameter is valid only when <strong id="b693483313315"><a name="b693483313315"></a><a name="b693483313315"></a>sql_compatibility</strong> is set to <strong id="b36041037153118"><a name="b36041037153118"></a><a name="b36041037153118"></a>A</strong>.</p>
 </td>
 </tr>
+<tr id="row18735102912057"><td class="cellrowborder" valign="top" width="24.43%" headers="mcps1.2.3.1.1 "><p id="p1973572931511"><a name="p1973572931511"></a><a name="p1973572931511"></a>disable_record_type_in_dml</p></td>
+<td class="cellrowborder" valign="top" width="75.57000000000001%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0283137574_en-us_topic_0237124754_p17481162111477"><a name="en-us_topic_0283137574_en-us_topic_0237124754_p17481162111477"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_p17481162111477"></a>Prohibit inserting virtual columns. After enabling this option will prohibit to use record type variables as insertion values in insert statements.</p>
+<a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"></a><pre class="screen" codetype="Sql" id="en-us_topic_0283137574_en-us_topic_0237124754_screen17865171482915"><span id="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a><a name="en-us_topic_0283137574_en-us_topic_0237124754_text19711022217"></a>
+create table t1(col1 varchar(10),col varchar(10));
+create table t2(col1 varchar(10),col varchar(10));
+set behavior_compat_options='disable_record_type_in_dml';
+insert into t1 values('one','two');
+declare
+  cursor cur1 is select * from t1;
+  source cur1%rowtype:=('ten','wtu');
+begin
+  for source in cur1
+  loop
+    raise notice '%',source;
+    insert into t2 values(source);
+  end loop; 
+end;
+/
+ERROR:  The record type variable cannot be used as an insertion value.
+CONTEXT:  SQL statement "insert into t2 values(source)"
+PL/pgSQL function inline_code_block line 7 at SQL statement
+
+set behavior_compat_options='';
+insert into t1 values('one','two');
+declare
+  cursor cur1 is select * from t1;
+  source cur1%rowtype:=('ten','wtu');
+begin
+  for source in cur1
+  loop
+    raise notice '%',source;
+    insert into t2 values(source);
+  end loop; 
+end;
+/
+NOTICE:  (one,two)
+NOTICE:  (one,two)
+</span>
+</td>
+</tr>
 </tbody>
 </table>
 
