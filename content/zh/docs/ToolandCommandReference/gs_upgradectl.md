@@ -8,13 +8,13 @@
 
 用户挑选升级方式后，系统会自动判断并选择合适的升级策略。
 
-就地升级：升级期间需停止业务进行，一次性升级所有节点。
+就地升级：升级期间需停止业务进行，一次性升级所有节点 (6.0.0版本开始就地升级功能废弃，不再维护，即便升级参数指定为就地升级也会默认转换为灰度升级)。
 
 灰度升级：灰度升级支持全业务操作，也是一次性升级所有节点（openGauss1.1.0版本之后的版本支持该功能）。
 
 指定节点升级：指定节点升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
 
-目前就地升级与灰度升级支持进度打印，根据程序执行的流程打印进度。
+灰度升级支持进度打印，根据程序执行的流程打印进度。
 
 ## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
@@ -70,7 +70,7 @@
 -   自动回滚升级
 
     ```
-    gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE] [--force]
+    gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE]
     ```
 
 -   升级提交
@@ -129,7 +129,7 @@
 
 -   --force
 
-    当openGauss状态不正常，无法支持正常回滚时，用此参数进行强制回滚操作。
+    当openGauss状态不正常，无法支持正常回滚时，用此参数进行强制回滚操作 (6.0.0版本开始强制回滚参数废弃不在维护)。
 
 
 ## 示例<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
@@ -185,10 +185,10 @@ Successfully set finish flag.
 PreInstallationGuide succeeded.
 ```
 
-**示例二**：使用gs\_upgradectl脚本执行就地升级。
+**示例二**：使用gs\_upgradectl脚本执行灰度升级。
 
 ```
-gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
+gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Rollback succeeded.

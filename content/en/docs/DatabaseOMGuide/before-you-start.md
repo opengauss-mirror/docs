@@ -12,11 +12,11 @@ This section describes how to select an upgrade mode.
 
 You can determine whether to upgrade the existing system based on the new features provided by the openGauss and the current database status.
 
-Currently, in-place upgrade and gray upgrade are supported. The upgrade modes are classified into major version upgrade and minor version upgrade. A minor version upgrade is one during which the version number remains unchanged. Otherwise, the upgrade is a major version upgrade. View the version number of the upgrade software package in the second line of the **version.cfg** file in the upgrade package. You can view the version of the current version in the second line of the **upgrade_version** file in *$GAUSSHOME***/bin**.
+Currently, gray upgrade are supported. The upgrade modes are classified into major version upgrade and minor version upgrade. A minor version upgrade is one during which the version number remains unchanged. Otherwise, the upgrade is a major version upgrade. View the version number of the upgrade software package in the second line of the **version.cfg** file in the upgrade package. You can view the version of the current version in the second line of the **upgrade_version** file in *$GAUSSHOME***/bin**.
 
 After you select an upgrade mode, the system automatically determines and selects a proper upgrade policy.
 
-In-place upgrade: During the upgrade, services must be stopped and all nodes must be upgraded at a time.
+In-place upgrade: During the upgrade, services must be stopped and all nodes must be upgraded at a time. (Starting from version 6.0.0, the In-place upgrade function will no longer be maintained, and gray upgrade will be used by default.)
 
 Gray upgrade: supports operations on all service during the upgrade and upgrades all nodes at a time. \(This function is supported in versions later than openGauss 1.1.0.\)
 

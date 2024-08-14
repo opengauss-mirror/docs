@@ -12,11 +12,8 @@ This section describes how to roll back to the source version.
     ```
 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >If the database is abnormal, run the following command to forcibly roll back the upgrade:
+    >If the database is abnormal, fix cluseter status and rollback again:
     >
-    >```
-    >gs_upgradectl -t auto-rollback -X /opt/software/GaussDB_Kernel/clusterconfig.xml --force
-    >```
     >openGauss 3.X uses a new method to establish mutual trust relationship. If openGauss 2.X is upgraded to openGauss 3.X and then rolled back, perform the following steps after the rollback command is executed and before running the gs_preinstall command in the old package:
     >
     >1. Delete the **/root/gauss\_om/***Database username* \(for example, **omm**\) directory on each node in the cluster.

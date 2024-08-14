@@ -8,7 +8,7 @@ Currently, in-place upgrade and gray upgrade are supported. The upgrade modes ar
 
 After you select an upgrade mode, the system automatically determines and selects a proper upgrade policy.
 
-In-place upgrade: During the upgrade, services must be stopped and all nodes must be upgraded at a time.
+In-place upgrade: During the upgrade, services must be stopped and all nodes must be upgraded at a time . (Starting from version 6.0.0, the In-place upgrade function will no longer be maintained, and gray upgrade will be used by default.)
 
 Gray upgrade: supports operations on all service during the upgrade and upgrades all nodes at a time. \(This function is supported in versions later than openGauss 1.1.0.\)
 
@@ -127,6 +127,7 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 -   --force
 
     If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
+    (Starting from version 6.0.0, force rollback parameter is no longer maintained.)
 
 
 ## Examples<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
