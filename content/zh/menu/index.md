@@ -1820,6 +1820,7 @@ headless: true
         -   [gs\_retrieve]({{< relref "./docs/ToolandCommandReference/gs_retrieve.md" >}})
     -   [系统内部命令]({{< relref "./docs/ToolandCommandReference/系统内部命令.md" >}})
         -   [dsscmd]({{< relref "./docs/ToolandCommandReference/dsscmd.md" >}})
+        -   [dsstbox]({{< relref "./docs/ToolandCommandReference/dsstbox.md" >}})
         -   [dssserver]({{< relref "./docs/ToolandCommandReference/dssserver.md" >}})
         -   [gaussdb]({{< relref "./docs/ToolandCommandReference/gaussdb.md" >}})
         -   [gs\_backup]({{< relref "./docs/ToolandCommandReference/gs_backup.md" >}})
