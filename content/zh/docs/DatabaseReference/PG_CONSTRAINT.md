@@ -212,6 +212,13 @@ PG\_CONSTRAINT系统表存储表上的检查约束、主键和唯一约束。
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1510462744415"><a name="p1510462744415"></a><a name="p1510462744415"></a>不用做约束，但是会包含在INDEX中的属性列。</p>
 </td>
 </tr>
+<tr id="row076712081518"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p0104142718449"><a name="p0104142718449"></a><a name="p0104142718449"></a>condisable</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p1410412276446"><a name="p1410412276446"></a><a name="p1410412276446"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1510462744415"><a name="p1510462744415"></a><a name="p1510462744415"></a>约束是否不使能。目前，只有PRIMARY KEY、UNIQUE和CHECK约束可将其设置为TRUE。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
