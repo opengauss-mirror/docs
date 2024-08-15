@@ -497,7 +497,13 @@
 </td>
 <td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p2021410575548"><a name="p2021410575548"></a><a name="p2021410575548"></a>未知时间消耗，可能是session切换耗时（单位：微秒)</p>
 </td>
-
+</tr>
+<tr id="row19410184911116"><td class="cellrowborder" valign="top" width="26.58%" headers="mcps1.2.4.1.1 "><p id="p9214257135413"><a name="p9214257135413"></a><a name="p9214257135413"></a>net_trans_time</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.81%" headers="mcps1.2.4.1.2 "><p id="p5214257155418"><a name="p5214257155418"></a><a name="p5214257155418"></a>bigint</p>
+</td>
+<td class="cellrowborder" valign="top" width="56.61000000000001%" headers="mcps1.2.4.1.3 "><p id="p2021410575548"><a name="p2021410575548"></a><a name="p2021410575548"></a>驱动执行sql的全链路网络耗时，当前仅支持jdbc驱动。（单位：微秒）</p>
+</td>
 </tr>
 </tbody>
 </table>
