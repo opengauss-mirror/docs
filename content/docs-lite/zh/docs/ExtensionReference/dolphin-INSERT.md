@@ -214,7 +214,7 @@ openGauss=# select * from value_test;
 (1 row)
 
 --删除表value_test。
-openGauss=# DROP TABLE 删除表value_test。;
+openGauss=# DROP TABLE value_test;
 ```
 
 ## 相关链接<a name="section156744489391"></a>
