@@ -130,6 +130,8 @@ openGauss=# CREATE TABLE load_t1
 
 --从/home/omm/test.csv文件拷贝数据到表load_t1。
 openGauss=# LOAD DATA INFILE '/home/omm/test.csv' INTO TABLE load_t1;
+ERROR:  invalid input syntax for type integer: "1,a,b,c,d,e"
+CONTEXT:  COPY load_t1, line 1, column SM_SHIP_MODE_SK: "1,a,b,c,d,e"
 
 --从/home/omm/test.csv文件拷贝数据到表load_t1，使用参数如下：字段分隔符为',' (fields terminated by ',') 换行符为'\n' (lines terminated by E'\n') 跳过前两行 (IGNORE 2 LINES)。
 openGauss=# SET dolphin.sql_mode = '';
