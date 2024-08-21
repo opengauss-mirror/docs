@@ -63,7 +63,7 @@ CREATE DATABASE dzy_soudb;
 4、在订阅端执行加密操作。
 
 ```sql
-vb_guc generate -S Aa123456 -D $GAUSSHOME/bin -o subscription
+gs_guc generate -S Aa123456 -D $GAUSSHOME/bin -o subscription
 ```
 
 5、在订阅端创建数据库dzy_desdb。
