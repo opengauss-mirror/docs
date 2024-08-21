@@ -23,6 +23,11 @@ PIPE ROW语句只能出现指定了PIPELINED的函数主体中，它向函数的
 ## 示例
 
 ```
+CREATE TYPE t_tf_row as (
+    id number,
+    description varchar2(50)
+);
+CREATE TYPE t_tf_tab is table of t_tf_row;
 CREATE OR REPLACE FUNCTION get_tab_ptf(p_rows in number) returns t_tf_tab pipelined LANGUAGE plpgsql AS
 $BODY$
 declare result t_tf_row;
