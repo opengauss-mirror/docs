@@ -468,112 +468,133 @@
     (1 row)
     ```
 
--   right\(str text, n int\)
+- right\(str text, n int\)
 
-    描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
+  描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
 
-    返回值类型：text
+  返回值类型：text
 
-    示例：
+  示例：
 
-    ```
-    test_db=# select right('abcde', 2);
-    right
-    -------
-    de
-    (1 row)
+  ```
+  test_db=# select right('abcde', 2);
+  right
+  -------
+  de
+  (1 row)
+  
+  test_db=# select right('abcde', 0);
+  right
+  -------
+  
+  (1 row)
+  
+  test_db=# select right('abcde', -2);
+  right
+  -------
+  
+  (1 row)
+  ```
 
-    test_db=# select right('abcde', 0);
-    right
-    -------
+- mid(str text, pos int, len int)
 
-    (1 row)
+  描述：返回str字符串从pos开始，长度为len个字符的子字符串。如果pos为负数，则从末尾开始计算位置。
 
-    test_db=# select right('abcde', -2);
-    right
-    -------
+  返回值类型：text
 
-    (1 row)
-    ```
+  示例：
 
--   field(str, str1,str2,str3,...)
+  ```sql
+  db_m=# select mid('abcdef', 2, 2);
+   mid
+  -----
+   bc
+  (1 row)
+  
+  db_m=# select mid('abcdef', -2, 2);
+   mid
+  -----
+   ef
+  (1 row)
 
-    描述：获取str在后面strn中的位置。
+- field(str, str1,str2,str3,...)
 
-    返回值类型：int
+  描述：获取str在后面strn中的位置。
 
-    示例：
+  返回值类型：int
 
-    ```
-    b_compatibility_database=# select field('ceshi','wo','ceshi','disange');
-    field 
-    -------
-        2
-    (1 row)
-    ```
-    
--   find_int_set(str, strlist)
+  示例：
 
-    描述：获取str在后面strlist中的位置，strlist以```,```分割。
+  ```
+  b_compatibility_database=# select field('ceshi','wo','ceshi','disange');
+  field 
+  -------
+      2
+  (1 row)
+  ```
 
-    返回值类型：int
+- find_int_set(str, strlist)
 
-    示例：
+  描述：获取str在后面strlist中的位置，strlist以```,```分割。
 
-    ```
-    b_compatibility_database=# select find_int_set('wo','ceshi,ni,wo,ta');
-    find_int_set 
-    -------------
-            3
-    (1 row)
-    ```
+  返回值类型：int
 
--   space(number)
+  示例：
 
-    描述：返回N个空格
+  ```
+  b_compatibility_database=# select find_int_set('wo','ceshi,ni,wo,ta');
+  find_int_set 
+  -------------
+          3
+  (1 row)
+  ```
 
-    返回值类型：text
+- space(number)
 
-    示例：
+  描述：返回N个空格
 
-    ```
-    b_compatibility_database=# select space('5');
-    space 
-    -------
-        
-    (1 row)
-    ```
+  返回值类型：text
 
--   soundex(str)
+  示例：
 
-    描述：返回描述指定字符串的语音表示的字母数字模式的算法
+  ```
+  b_compatibility_database=# select space('5');
+  space 
+  -------
+      
+  (1 row)
+  ```
 
-    返回值类型：text
+- soundex(str)
 
-    示例：
+  描述：返回描述指定字符串的语音表示的字母数字模式的算法
 
-    ```
-    b_compatibility_database=# select soundex('abcqwcaa');
-    soundex 
-    ---------
-    A120
-    (1 row)
-    ```
+  返回值类型：text
 
--   make_set(number, string1, string2, ...)
+  示例：
 
-    描述：返回一个由number中设置了相应位的字符串组成的设置值（包含子字符串的字符串，以,分隔）。string1对应位0，string2对应位1，依此类推。
-    string1，string2，...中的NULL值不添加到结果中。
+  ```
+  b_compatibility_database=# select soundex('abcqwcaa');
+  soundex 
+  ---------
+  A120
+  (1 row)
+  ```
 
-    返回值类型：text
+- make_set(number, string1, string2, ...)
 
-    ```sql
-    select make_set(1|4, 'one', 'two', NULL, 'four');
-     make_set 
-    ----------
-     one
-    (1 row)
-    ```
+  描述：返回一个由number中设置了相应位的字符串组成的设置值（包含子字符串的字符串，以,分隔）。string1对应位0，string2对应位1，依此类推。
+  string1，string2，...中的NULL值不添加到结果中。
+
+  返回值类型：text
+
+  ```sql
+  select make_set(1|4, 'one', 'two', NULL, 'four');
+   make_set 
+  ----------
+   one
+  (1 row)
+  ```
 
 - ^
 
@@ -659,13 +680,13 @@
   ```
 
 - substring_index(str, delim, count)
-  
+
   描述：substring_index(str, delim, count)返回str的开始位置至匹配到第count次delim的位置之间的子字符串，count表示匹配的次数。若count为正数，则从str的左边开始匹配，并返回匹配位置左边的子字符串；若count为负数，则从str的右边开始匹配，并返回匹配位置右边的子字符串。count取值范围为INT64_MIN～INT64_MAX。
-  
+
   返回值类型：text
-  
+
   示例：
-  
+
   ```
     openGauss=# SELECT substring_index('abcdabcdabcd', 'bcd', 2);
      substring_index 
@@ -1122,19 +1143,19 @@
   ------
    6162
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 ));
      hex    
   ----------
    00410042
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
      hex    
   ----------
    FFBEFFBD
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));
      hex    
   ----------
