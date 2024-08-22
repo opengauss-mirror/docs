@@ -468,33 +468,55 @@
     (1 row)
     ```
 
--   right\(str text, n int\)
+- right\(str text, n int\)
 
-    描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
+  描述：返回字符串中的后n个字符。当n是负值时，当做0处理。
 
-    返回值类型：text
+  返回值类型：text
 
-    示例：
+  示例：
 
-    ```
-    test_db=# select right('abcde', 2);
-    right
-    -------
-    de
-    (1 row)
+  ```
+  test_db=# select right('abcde', 2);
+  right
+  -------
+  de
+  (1 row)
+  
+  test_db=# select right('abcde', 0);
+  right
+  -------
+  
+  (1 row)
+  
+  test_db=# select right('abcde', -2);
+  right
+  -------
+  
+  (1 row)
+  ```
 
-    test_db=# select right('abcde', 0);
-    right
-    -------
+- mid(str text, pos int, len int)
 
-    (1 row)
+  描述：返回str字符串从pos开始，长度为len个字符的子字符串。如果pos为负数，则从末尾开始计算位置。
 
-    test_db=# select right('abcde', -2);
-    right
-    -------
+  返回值类型：text
 
-    (1 row)
-    ```
+  示例：
+
+  ```sql
+  db_m=# select mid('abcdef', 2, 2);
+   mid
+  -----
+   bc
+  (1 row)
+  
+  db_m=# select mid('abcdef', -2, 2);
+   mid
+  -----
+   ef
+  (1 row)
+  ```
 
 -   field(str, str1,str2,str3,...)
 
@@ -1122,19 +1144,19 @@
   ------
    6162
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 ));
      hex    
   ----------
    00410042
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 DESC));
      hex    
   ----------
    FFBEFFBD
   (1 row)
-
+  
   select hex(weight_string('abc' as char(2) LEVEL 1 REVERSE));
      hex    
   ----------
