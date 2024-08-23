@@ -20,6 +20,8 @@
 
 按需回放极致RTO开关开启后，故障恢复时仅构建恢复所必须的内容，不进行实际回放，之后立即对外提供服务，降低RTO。在对外提供服务后，在后台继续进行日志回放，并由用户需要触发按需回放，保证用户获得数据最新（即结果与未发生故障时前一致）。
 
+按需回放在control文件的Cluster Status项新增两种状态："in on-demand build"、"in on-demand redo"(详见[pg_controldata](../ToolandCommandReference/pg_controldata.md))。开启按需回放功能，发生failover时，新主节点先将控制文件中cluster Status置为"in on-demand build"，进入按需回放的构建阶段，此时集群在构建回放必须信息，不能对外提供服务。构建完成后，会将控制文件中cluster Status置为"in on-demand redo"，进入按需回放的回放阶段，此时可以对外提供服务，同时进行日志回放，直至回放完毕。如果主节点在按需回放两个阶段未能全部完成的情况下退出，作为逃生手段，新主节点会以极致RTO模式进行故障恢复。
+
 ## 特性增强
 
 1. 按需回放支持实时构建
@@ -34,7 +36,7 @@
 ## 特性约束
 
 -   本特性仅支持在资源池化部署下使用。
--   在对外提供服务后，数据库仍在后台进行回放，直到全部内容完成后退出回放，该阶段称为“按需回放阶段”。按需回放阶段仅支持部分类型SQL语法（INSERT/UPDATE/DELETE/SELECT/SET/SHOW），该状态请使用pg_controldata工具查询。
+-   在对外提供服务后，数据库仍在后台进行回放，直到全部内容完成后退出回放，该阶段称为“按需回放阶段”。按需回放阶段仅支持部分类型SQL语法（INSERT/UPDATE/DELETE/SELECT/SET/SHOW）及部分ddl(详见[特性增强](../AboutopenGauss/极致RTO按需回放.md#特性增强))，该状态请使用pg_controldata工具查询。
 -   按需回放阶段禁用autovacuum。
 -   实时构建能力仅在备机failover场景生效。
 -   当前不支持多备机情况下，优先选择实时构建节点升主。
