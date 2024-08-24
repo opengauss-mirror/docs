@@ -1061,3 +1061,66 @@ openGauss=# select * from test_bit;
 (1 row)
 ```
 
+## dolphin.treat_float_with_precision_as_float_type
+
+**参数说明**：该参数打开后，double(p,s)和float(p,s)类型将忽略精度信息，当成double和float处理。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+**默认值**：false
+
+**示例**：
+
+```
+openGauss=# set dolphin.treat_float_with_precision_as_float_type=off;
+SET
+openGauss=# create table test1(c1 double, c2 double(10, 0), c3 double(15, 3), c4 float, c5 float4, c6 float4(10, 0), c7 float4(7, 5), c8 float(10, 0), c9 float(7, 5), c10 float4(5));
+CREATE TABLE
+openGauss=# \d+ test1
+                             Table "public.test1"
+ Column |       Type       | Modifiers | Storage | Stats target | Description
+--------+------------------+-----------+---------+--------------+-------------
+ c1     | double precision |           | plain   |              |
+ c2     | real             |           | plain   |              |
+ c3     | numeric(15,3)    |           | main    |              |
+ c4     | real             |           | plain   |              |
+ c5     | real             |           | plain   |              |
+ c6     | numeric(10,0)    |           | main    |              |
+ c7     | numeric(7,5)     |           | main    |              |
+ c8     | real             |           | plain   |              |
+ c9     | numeric(7,5)     |           | main    |              |
+ c10    | real             |           | plain   |              |
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# set dolphin.treat_float_with_precision_as_float_type=on;
+SET
+openGauss=# create table test2(c1 double, c2 double(10, 0), c3 double(15, 3), c4 float, c5 float4, c6 float4(10, 0), c7 float4(7, 5), c8 float(10, 0), c9 float(7, 5), c10 float4(5));
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+NOTICE:  it may cause the result in loss of precision when using float4 or float8 with precision and dolphin.treat_float_with_precision_as_float_type is on.
+CREATE TABLE
+openGauss=# \d+ test2
+                             Table "public.test2"
+ Column |       Type       | Modifiers | Storage | Stats target | Description
+--------+------------------+-----------+---------+--------------+-------------
+ c1     | double precision |           | plain   |              |
+ c2     | double precision |           | plain   |              |
+ c3     | double precision |           | plain   |              |
+ c4     | real             |           | plain   |              |
+ c5     | real             |           | plain   |              |
+ c6     | real             |           | plain   |              |
+ c7     | real             |           | plain   |              |
+ c8     | real             |           | plain   |              |
+ c9     | real             |           | plain   |              |
+ c10    | real             |           | plain   |              |
+Has OIDs: no
+Options: orientation=row, compression=no
+```
+
