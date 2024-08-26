@@ -4,7 +4,7 @@
 
 ### 说明
 
-WAL（Write Ahead Log）即预写式日志，是数据库用于恢复事务持久性的一种机制。`wal_level`决定了写入WAL的信息量。为了在备机上开启只读查询，`wal_level`需要在主机上设置成`hot_standby`，并且备机设置`hot_standby`参数为`on`。对于分布式环境，不支持设置`hot_standby`为`off`，因此`wal_level`不可设置为`archive`或`minimal`，否则数据库将无法启动。建议设置`wal_level`参数为默认值`hot_standby`。
+WAL（Write Ahead Log）即预写式日志，是数据库用于恢复事务持久性的一种机制。`wal_level`决定了写入WAL的信息量。为了在备机上开启只读查询，`wal_level`需要在主机上设置成`hot_standby`，并且备机设置`hot_standby`参数为`on`。
 
 ### 实现
 
