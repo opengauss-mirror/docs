@@ -12,11 +12,6 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 
 - 使用普通用户执行gs_checkse命令。
 
-  ![](public_sys-resources/icon-note.png) **说明：**
-
-  若为gs_initdb命令安装的数据库，需先解压om包，在script目录下先执行`./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml`命令进行环境配置,omm和dbgrp为数据库安装用户和用户组，-X后文件为数据库XML配置文件，可以为空或不存在。
-  然后可以在script目录下执行`./gs_checkse -i A`等命令对数据库安全配置进行检查。
-
 ## 语法<a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_s991d75846f4c48a298084c67b46b40ee"></a>
 
 -   检查数据库安全配置信息
@@ -85,9 +80,9 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 
 -   -l
 
-    指定日志文件及存放路径。
+    指定日志文件及存放路径，若不指定则在日志目录下的用户目录的om目录下。
 
-    默认值：/tmp/gs\_checkse/gs\_checkse-YYYY-MM-DD\_hhmmss.log。
+    默认值：${GAUSSLOG}/omm/om/gs\_checkse-YYYY-MM-DD\_hhmmss.log。
 
 -   -?, --help
 
@@ -191,8 +186,8 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 </td>
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a6396a280d13e415db90c18f43bbe91b0"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a6396a280d13e415db90c18f43bbe91b0"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a6396a280d13e415db90c18f43bbe91b0"></a>设置连接配置（Set Connection configuration）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"></a><p>侦听主机IP地址设置：当参数值为 * 时，进行修改设置</p><p>数据库实例的最大连接数设置：当参数值不为5000时，进行修改设置为默认值为5000</p><p>Database的最大连接数设置：当参数值为-1时表示不限制连接，进行修改设置</p>
-<p>管理员使用的连接数设置：当参数值不为3时，进行修改设置</p><p>用户的最大连接数设置：当用户允许无限制连接时进行修改设置</p><p>UNIX域套接字的访问权限设置：当参数值不为0700时，进行修改设置</p><p>服务端使能SSL连接设置：确保该功能开启，如果不开启则修改设置</p></p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_aa71185e87002408d98a19dc37eda29a4"></a><p>侦听主机IP地址设置：当参数值为 * 时，进行修改设置</p><p>数据库实例的最大连接数设置：当参数值不为5000时，进行修改设置为默认值为5000</p><p>Database的最大连接数设置：当参数值为-1或大于1024时表示不限制连接，进行修改设置为1024</p>
+<p>管理员使用的连接数设置：当参数值不为3时，进行修改设置</p><p>用户的最大连接数设置：当用户允许无限制连接时，进行修改设置为1024</p><p>UNIX域套接字的访问权限设置：当参数值不为0700时，进行修改设置</p><p>服务端使能SSL连接设置：确保该功能开启，如果不开启则修改设置</p></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_r11c8b6aa951b4435b59f1db495499c16"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p37709081505"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p37709081505"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p37709081505"></a>B2</p>
@@ -232,8 +227,8 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p130471551506"></a>设置数据库审计（Set Database auditing）</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p501866071506"></a>数据库审计功能设置：如果数据库审计功能为开启，将该功能开启。</p><p>用户登录和注销审计设置：当参数值不为7时，对其进行修改设置</p>
-<p>数据库启动、停止、恢复和切换审计设置：当参数值不为1时，对参数进行修改</p><p>用户锁定和解锁审计设置：当参数值不为1时，对其进行修改设置</p><p>权限授予和回收审计设置：当参数值不为1时，对其进行修改设置</p><p>数据库对象的添加、删除、修改和审计设置：当参数之小于12295时，对其进行设置为默认值12295</p><p>数据库对象的查询审计设置：当参数值不为1时，对其进行修改设置</p><p>审计优先策略设置：当该功能未开启时，进行设置开启</p><p>单个文件的最长记录时间设置：当单个记录时间不为1d时，进行设置推荐设置为默认值1d</p><p>单个审计日志文件的最大容量设置：当参数值不为10MB时，进行设置推荐设置为10MB</p>
-<p>所有审计日志文件占用的最大磁盘空间设置：当参数值不为1GB时，进行设置推荐配置不小于1GB</p><p>审计日志文件最大数目设置：当参数值不为1024时，进行设置推荐设置为默认值1024</p>
+<p>数据库启动、停止、恢复和切换审计设置：当参数值不为1时，对参数进行修改</p><p>用户锁定和解锁审计设置：当参数值不为1时，对其进行修改设置</p><p>权限授予和回收审计设置：当参数值不为1时，对其进行修改设置</p><p>数据库对象的添加、删除、修改和审计设置：当参数之小于67121159时，对其进行设置为默认值67121159</p><p>数据库对象的查询审计设置：当参数值不为1时，对其进行修改设置</p><p>审计优先策略设置：当该功能未开启时，进行设置开启</p><p>单个文件的最长记录时间设置：当单个记录时间不为1d时，进行设置推荐设置为默认值1d</p><p>单个审计日志文件的最大容量设置：当参数值不为10MB时，进行设置推荐设置为10MB</p>
+<p>所有审计日志文件占用的最大磁盘空间设置：当参数值不为1GB时，进行设置推荐配置不小于1GB</p><p>审计日志文件最大数目设置：当参数值不为1048576时，进行设置推荐设置为默认值1048576</p>
 </td>
 </tr>
 <tr id="row1725332313128"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="p4254202319125"><a name="p4254202319125"></a><a name="p4254202319125"></a>B7</p>
@@ -248,7 +243,7 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 </td>
 <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="p8254132331214"><a name="p8254132331214"></a><a name="p8254132331214"></a>设置备份配置（Set Backup configuration）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>WAL信息记录级别设置：检查该参数的值是否为hot_standby，如果不是进行设置修改</p><p>归档模式设置：当该功能未开启时，进行修改设置开启</p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="p525442331211"><a name="p525442331211"></a><a name="p525442331211"></a>WAL信息记录级别设置：检查该参数的值是否为hot_standby，如果不是进行设置修改</p>
 </td>
 </tr>
 <tr id="row1725332313128"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="p4254202319125"><a name="p4254202319125"></a><a name="p4254202319125"></a>B9</p>
