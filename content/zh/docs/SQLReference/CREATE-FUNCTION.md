@@ -274,10 +274,26 @@
 
 -   **plsql\_body**
 
-    PL/SQL存储过程体。
+    PL/SQL存储过程体。用于O风格创建函数时，PL/SQL结尾的end后可以加上tag标签以兼容指定函数名的情况，目前tag标签也可以不与函数名一致。例如：
+    ```sql
+    CREATE OR REPLACE FUNCTION f1 (p int) RETURN int IS 
+    begin
+        RETURN 1;
+    END f1;
+    /
 
+    CREATE OR REPLACE FUNCTION f2 (p int) RETURN int IS 
+    begin
+        RETURN 1;
+    END f3;
+    /
+    ```
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >当在函数体中创建用户时，日志中会记录密码的明文。因此不建议用户在函数体中创建用户。
+
+-   **plpgsql\_body**
+
+    PL/pgSQL函数体。用于PostgreSQL风格创建函数时，language指定为plpgsql的情况。详见[PL/pgSQL语言函数](PL-pgSQL语言函数.md)。
 
 -   **pipelined_clause**
 

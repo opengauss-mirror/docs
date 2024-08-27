@@ -40,6 +40,9 @@
   赋值示例： x my_type := my_type(1);
 
 - 构造器可以应用于赋值语句或者打开游标的语句中，但是不能直接在外层的sql或者存储过程中的PL/SQL中使用。
+
+- 嵌套的集合类型只能在存储过程的DECLARE中进行定义，不支持使用CREATE TYPE创建。详见[集合类型的使用](https://docs-opengauss.osinfra.cn/zh/docs/latest/docs/SQLReference/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8.html)。
+  
 ## 语法格式<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
