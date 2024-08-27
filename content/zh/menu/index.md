@@ -697,6 +697,7 @@ headless: true
 			-   [磁盘权限问题]({{< relref "./docs/DatabaseOMGuide/磁盘权限问题.md" >}})
 		-   [资源池化企业版使用阶段问题]({{< relref "./docs/DatabaseOMGuide/资源池化企业版使用阶段问题.md" >}})
 		    -   [节点启动失败]({{< relref "./docs/DatabaseOMGuide/节点启动失败.md" >}})
+			-   [系统重启后磁盘无权限问题]({{< relref "./docs/DatabaseOMGuide/系统重启后磁盘无权限问题.md" >}})
 			-   [cm_ctl_stop集群失败]({{< relref "./docs/DatabaseOMGuide/cm_ctl_stop集群失败.md" >}})
 			-   [数据库启动失败]({{< relref "./docs/DatabaseOMGuide/数据库启动失败.md" >}})
 			-   [数据库重启失败]({{< relref "./docs/DatabaseOMGuide/数据库重启失败.md" >}})

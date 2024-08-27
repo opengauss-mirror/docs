@@ -1,0 +1,39 @@
+# 系统重启后磁盘无权限问题
+
+## 现象
+操作系统重启或重新分配磁阵之后数据库启动失败，节点状态为Down Unknown。
+
+## 定位过程
+
+1.查看cm_agent日志，发现以下日志，发现磁盘权限存在问题。
+
+    ```
+    VotingDisk ERROR:[InitVotingDiskHandler] open disk /dev/sdf failed, errno 13.
+    ll /dev/sdf 查到的权限为root disk
+    ```
+
+2.查看其他磁盘的权限，发现用户没有了共享存储使用的盘的权限。
+
+    ```
+    ll /dev/disk | grep $USER返回结果为空
+    ```
+
+3.在root用户下，手动修改磁盘权限，数据库启动成功，以omm用户为例。
+
+    ```
+    查看xml文件，获取到共享存储使用的磁盘。(建议使用lsscsi -is查看设备标识符，确定对应的盘符。)
+    chown -R omm:omm /dev/xxx
+    如果多个节点权限异常，每个节点都需要修改。
+    ```
+
+4，查看数据库状态，显示状态正常，确实是磁盘权限导致。
+
+    ```
+    cm_ctl query -Cv
+    ```
+
+## 原因
+用户对磁盘没有权限。
+
+## 解决方案
+需要以root用户手动修改磁盘权限。

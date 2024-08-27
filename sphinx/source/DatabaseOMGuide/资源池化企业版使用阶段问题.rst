@@ -4,6 +4,7 @@
 .. toctree::
 
     ../content/zh/docs/DatabaseOMGuide/节点启动失败
+    ../content/zh/docs/DatabaseOMGuide/系统重启后磁盘无权限问题
     ../content/zh/docs/DatabaseOMGuide/cm_ctl_stop集群失败
     ../content/zh/docs/DatabaseOMGuide/数据库启动失败
     ../content/zh/docs/DatabaseOMGuide/数据库重启失败
