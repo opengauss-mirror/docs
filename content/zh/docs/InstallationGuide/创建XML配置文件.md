@@ -665,8 +665,8 @@ CM支持两节点部署模式
 	    <PARAM name="cmServerPortBase" value="15300"/> 
 	    <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
 	    <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
-	    <!-- cmServerlevel目前只支持1 --> 
-	    <PARAM name="cmServerlevel" value="1"/> 
+	    <!-- cmServerLevel目前只支持1 --> 
+	    <PARAM name="cmServerLevel" value="1"/> 
 	    <!-- cms主及所有备的hostname --> 
 	    <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/>       
 	   
@@ -740,7 +740,7 @@ CM支持两节点部署模式
             <PARAM name="cmServerPortBase" value="15000"/> 
             <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
             <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3"/> 
-            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerLevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	    <!--dn--> 
@@ -812,7 +812,7 @@ CM支持两节点部署模式
             <PARAM name="cmServerPortBase" value="15000"/> 
             <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/> 
             <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4"/> 
-            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerLevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	    <!--dn--> 
@@ -897,7 +897,7 @@ CM支持两节点部署模式
             <PARAM name="cmServerPortBase" value="15000"/> 
             <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
             <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
-            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerLevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	    <!--dn--> 
@@ -995,7 +995,7 @@ CM支持两节点部署模式
             <PARAM name="cmServerPortBase" value="15000"/> 
             <PARAM name="cmServerListenIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
             <PARAM name="cmServerHaIp1" value="192.168.0.1,192.168.0.2,192.168.0.3,192.168.0.4,192.168.0.5"/> 
-            <PARAM name="cmServerlevel" value="1"/> 
+            <PARAM name="cmServerLevel" value="1"/> 
             <PARAM name="cmServerRelation" value="node1_hostname,node2_hostname,node3_hostname,node4_hostname,node5_hostname"/> 
             <PARAM name="cmDir" value="/opt/huawei/data/cmserver"/> 
 	    <!--dn--> 
