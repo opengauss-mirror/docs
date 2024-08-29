@@ -91,7 +91,7 @@ Xstore 和 Astore 共用事务管理，并发控制、缓冲区管理、检查�
 </tr>
 <tr id="zh-cn_topic_0243295239_zh-cn_topic_0240782908_row18811277561"><td class="cellrowborder" valign="top" width="7.830783078307831%" headers="mcps1.2.8.1.1 "><p id="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p9881162744626"><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p9881162744626"></a><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p9881162744626"></a>多版本索引</p>
 </td>
-<td class="cellrowborder" valign="top" width="11.561156115611562%" headers="mcps1.2.8.1.2 "><p id="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"></a><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"></a>包括 Xstore 专用多版本索引 UBtree的页面结构、查询、修改、可见性检查、垃圾回收等模块。</p>
+<td class="cellrowborder" valign="top" width="11.561156115611562%" headers="mcps1.2.8.1.2 "><p id="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"></a><a name="zh-cn_topic_0243295239_zh-cn_topic_0240782908_p288192718563"></a>包括 Xstore 专用多版本索引 XBtree的页面结构、查询、修改、可见性检查、垃圾回收等模块。</p>
 </td>
 </tr>
 </tbody>
@@ -169,7 +169,7 @@ Xstore 在获取元组时，会先检查对应的事务目录。事务目录分�
 
 ### 多版本索引
 
-openGauss实现了多版本索引 UBtree ，是专用于 Xstore 的 Btree 索引的变种，相比于原有的 Btree 索引有以下差异。
+openGauss实现了多版本索引 XBtree ，是专用于 Xstore 的 Btree 索引的变种，相比于原有的 Btree 索引有以下差异。
 1. 支持索引数据的多版本管理以及可见性检查，能够自主鉴别旧版本元组并进行回收，同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( Index Only Scan ) 性能有所提升。
 2. 在索引插入操作之外，增加了索引删除操作，用于对被删除或修改的元组对应的索引元组进行标记。
 3. 索引按照 key + TID 的顺序排序，索引列相同的元组按照对应元组的 TID 作为第二关键字进行排序。会将 xmin、xmax 追加到 key 的后面。
@@ -177,19 +177,19 @@ openGauss实现了多版本索引 UBtree ，是专用于 Xstore 的 Btree 索引
 5. 不依赖Vacuum进行旧版本清理。独立的空间回收能力，索引与堆表解耦，可独立清理，IO平稳度更优。
 
 
-**图 6**  UBtree结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
-![](figures/UBTREEStructe.png "UBtree结构")
+**图 6**  XBtree结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
+![](figures/UBTREEStructe.png "XBtree结构")
 
 
 #### 索引页面组织
 
-多版本索引层次结构与 Btree 索引基本相同，非叶子节点与 Btree 索引保持一致，仅页尾的Special字段有所不同，下图为UBtree叶子页面结构：
+多版本索引层次结构与 Btree 索引基本相同，非叶子节点与 Btree 索引保持一致，仅页尾的Special字段有所不同，下图为XBtree叶子页面结构：
 
-**图 7**  UBtree叶子页面结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574713"></a>  
-![](figures/ubtreeTreePage.png "UBtree叶子页面结构")
+**图 7**  XBtree叶子页面结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574713"></a>  
+![](figures/ubtreeTreePage.png "XBtree叶子页面结构")
 
 
-与Astore堆页面中维护版本信息的方法类似，UBtree 的叶子节点中每个索引元组尾部都附加了对应的 xmin 和 xmax。索引只是用于加速搜索的结构，本身不与历史版本的概念强相关，仅通过xmin 来标识这个索引元组是从什么时候开始有效的，又是从什么时候被删除的，而不是像astore中堆元组一样会有指向旧版本元组的指针。
+与Astore堆页面中维护版本信息的方法类似，XBtree 的叶子节点中每个索引元组尾部都附加了对应的 xmin 和 xmax。索引只是用于加速搜索的结构，本身不与历史版本的概念强相关，仅通过xmin 来标识这个索引元组是从什么时候开始有效的，又是从什么时候被删除的，而不是像astore中堆元组一样会有指向旧版本元组的指针。
 
 新插入的索引元组尾部用于存放 xmin 和 xmax 空间，在索引插入函数执行的过程中预留出来。预留的空间及 xmin 在索引元组插入时通过索引元组页面插入函数写入页面，而 xmax 在索引元组删除时通过索引元组页面删除函数写出页面。
 
@@ -199,7 +199,7 @@ openGauss实现了多版本索引 UBtree ，是专用于 Xstore 的 Btree 索引
 #### 索引操作
 对于原有的 Btree 索引而言，主要有四类操作，索引创建、索引扫描、索引插入及索引删除。
 -   **Create操作**：创建索引时需要依靠扫描函数扫描对应的 Xstore 表，并取出每个元组的最新版本及其对应的 xmin 和 xmax。若某个元组存在被原定更新的旧版本，会复用 Astore 原有的逻辑，禁止隔离级别为可重复读的老事务访问。创建过程中会接受扫描后传来的元组，并将其按照索引列和 TID 进行排序后依次插入到索引页面中，并构建相应的原页面及上层页面。整个创建流程需要将所有的页面都记录到 XLOG 中，并强制将存储管理中的内容刷到永久存储介质后才算成功结束。
--   **Scan操作**：用户在读取数据时，可通过使用索引扫描加速，索引扫描与 Btree 索引基本一致，UBtree 支持索引数据的多版本管理及可见性检查同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( IndexOnly Scan )性能有所提升。对于索引扫描:
+-   **Scan操作**：用户在读取数据时，可通过使用索引扫描加速，索引扫描与 Btree 索引基本一致，XBtree 支持索引数据的多版本管理及可见性检查同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( IndexOnly Scan )性能有所提升。对于索引扫描:
     1. 若索引列包含所有扫描列 ( IndexOnly Scan )，则通过扫描条件在索引上进行二分查找，找到符合条件元组即可返回数据；
     2. 若索引列不包含所有扫描列 ( Index Scan )，则通过扫描条件在索引上进行二分查找，找到符合条件元组的 TID，再通过 TID 到数据表上查找对应的数据元组。如图 8 所示：
 
@@ -209,16 +209,16 @@ openGauss实现了多版本索引 UBtree ，是专用于 Xstore 的 Btree 索引
     <img src="figures/ScanOperator.png" height=600px style="margin:auto;">
 </div>
 
--   **Insert操作**：UBtree的插入逻辑基本不变，只需增加索引插入时直接获取事务信息填写xmin字段。
--   **Delete操作**：UBtree额外增加了索引删除流程，索引删除主要步骤与插入相似，获取事务信息填写 xmax 字段 ( btree索引不维护版本信息，不需要删除操作 ),同时更新页面上的 active_tuple_count，若 active_tuple_count 被减为0，则尝试页面回收。
--   **Update操作**：对于 Xstore 而言，数据更新对 UBtree 索引列的操作也与 Astore 有所不同，数据更新包含两种情况：索引列和非索引列更新，下图为 UBtree 在数据发生更新时的处理流程：
+-   **Insert操作**：XBtree的插入逻辑基本不变，只需增加索引插入时直接获取事务信息填写xmin字段。
+-   **Delete操作**：XBtree额外增加了索引删除流程，索引删除主要步骤与插入相似，获取事务信息填写 xmax 字段 ( btree索引不维护版本信息，不需要删除操作 ),同时更新页面上的 active_tuple_count，若 active_tuple_count 被减为0，则尝试页面回收。
+-   **Update操作**：对于 Xstore 而言，数据更新对 XBtree 索引列的操作也与 Astore 有所不同，数据更新包含两种情况：索引列和非索引列更新，下图为 XBtree 在数据发生更新时的处理流程：
 
 **图 9**  update 操作<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574913"></a>  
 ![](figures/update.png "update 操作")
 
-在非索引列更新的情况下，索引不发生任何变化，index tuple 仍指向第一次插入的 data tuple，Uheap 不会插入新的 data tuple，而是修改当下 data tuple 并将历史数据存入Undo中。
+在非索引列更新的情况下，索引不发生任何变化，index tuple 仍指向第一次插入的 data tuple，Xheap 不会插入新的 data tuple，而是修改当下 data tuple 并将历史数据存入Undo中。
 
-在索引列更新的情况下，UBtree 也会插入新的 index tuple，但是会指向同一个 data linepointer 和同一个 data tuple，扫描旧版本的数据则需要从 Undo 中读取。
+在索引列更新的情况下，XBtree 也会插入新的 index tuple，但是会指向同一个 data linepointer 和同一个 data tuple，扫描旧版本的数据则需要从 Undo 中读取。
 
 ### 空间管理与回收
 
@@ -228,10 +228,10 @@ openGauss实现了多版本索引 UBtree ，是专用于 Xstore 的 Btree 索引
 
 Xstore 中堆页面的自治式空间管理，建立在与 Astore 类似的轻量级堆页面清理机制的基础上。在执行 DML 及 DQL 操作的过程中，Xstore 都会进行堆数据页面清理，以取代 VACUUM 清理机制。
 
-对于 Astore 而言，复用数据元组的行指针前必须保证对应的索引元组已经被清理。这是为了防止通过索引元组访问已经被复用的行指针，导致取到错误的数据。在 Astore 中需要通过 VACUUM 操作将这样的无效索引元组统一清除掉后才能复用行指针，这使得堆页面和索引页面的清理逻辑耦合在一起，也会导致间断性的大量 I/O。在 Xstore 中能高效地单独进行数据和索引页面的清理，因为带有版本信息的 UBtree 能够独立检测并过滤掉无效的索引元组，不会通过无效索引元组访问对应的数据表。
+对于 Astore 而言，复用数据元组的行指针前必须保证对应的索引元组已经被清理。这是为了防止通过索引元组访问已经被复用的行指针，导致取到错误的数据。在 Astore 中需要通过 VACUUM 操作将这样的无效索引元组统一清除掉后才能复用行指针，这使得堆页面和索引页面的清理逻辑耦合在一起，也会导致间断性的大量 I/O。在 Xstore 中能高效地单独进行数据和索引页面的清理，因为带有版本信息的 XBtree 能够独立检测并过滤掉无效的索引元组，不会通过无效索引元组访问对应的数据表。
 
 #### 自治式索引页面空间管理
-索引页面的空间管理不依靠 FSM 数据结构，而是依靠特有的 URQ ( UBtree Recycle Queue ) 结构，简称为回收队列。
+索引页面的空间管理不依靠 FSM 数据结构，而是依靠特有的 XRQ ( XBtree Recycle Queue ) 结构，简称为回收队列。
 
 索引中的回收队列分为两部分，一部分是潜在空页队列 ( Potential Empty Page Queue ) ，一部分是可用页面队列 ( Available Page Queue ) 。两个队列都是跨页面的循环队列，其中每个元素都会储存 blkno 以及 XID。其中 blkno 表示该元素对应索引页面的 block number；XID 表示该页面在哪个时刻能够被回收或复用。这些元素在循环队列单个页内按照 XID 的顺序进行排序，以便于快速找到 XID 小（最可能被回收或复用）的页面。其结构如图所示。
 
