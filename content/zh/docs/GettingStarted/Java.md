@@ -31,7 +31,7 @@ JDBC提供了三个方法，用于创建数据库连接。
     包含Statement两个方法，但使用不太一样，要先在conn.prepareStatement\(\)中写入语句，之后根据需要再执行execute或executeQuery，这两个方法里面入参为空。如果SQL语句中有变量，建议使用PreparedStatement进行操作可以有效防止SQL注入，使用?替换掉变量，之后使用setObject方法对其赋值。
 
 
-示例：
+## 创建数据库连接<a name="section1969315347146"></a>
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 >下面示例中黑体加下划线的字段需要替换成用户自己的信息，其中：  
@@ -85,7 +85,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   DriverManager.getConnection\(String url, Properties info\);
 
-    此方法的用户名密码等参数均在Properties 对象的实例通过setProperty添加。
+    此连接方法的用户名密码等参数均在Properties 对象的实例通过setProperty添加。
 
     ```
     import java.sql.Connection;
@@ -127,7 +127,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   DriverManager.getConnection\(String url, String user, String password\);
 
-    此方法需要将用户名和密码作为变量输入。
+    此连接方法需要将用户名和密码作为变量输入。
 
     ```
     import java.sql.Connection;
