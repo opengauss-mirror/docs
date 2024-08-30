@@ -162,7 +162,7 @@
 <tr id="zh-cn_topic_0283136466_row13251729125910"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p63389166101039"></a>tmpMppdbPath</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136466_p79071485351"><a name="zh-cn_topic_0283136466_p79071485351"></a><a name="zh-cn_topic_0283136466_p79071485351"></a>数据库临时文件存放目录。</p>
-<p id="zh-cn_topic_0283136466_p29071084358"><a name="zh-cn_topic_0283136466_p29071084358"></a><a name="zh-cn_topic_0283136466_p29071084358"></a>若不配置tmpMppdbPath，默认存放在/opt/huawei/wisequery/安装用户名_mppdb目录下，其中"opt/huawei/wisequery"是默认指定的数据库系统工具目录。</p>
+<p id="zh-cn_topic_0283136466_p29071084358"><a name="zh-cn_topic_0283136466_p29071084358"></a><a name="zh-cn_topic_0283136466_p29071084358"></a>若不配置tmpMppdbPath，默认存放在/opt/huawei/wisequery/安装用户名_mppdb目录下，其中"opt/huawei/wisequery"是默认指定的数据库系统工具目录，数据库安装时unix_socket_directory默认配置使用了该路径。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136466_row123267298592"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a><a name="zh-cn_topic_0283136466_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p2890619101039"></a>gaussdbToolPath</p>
