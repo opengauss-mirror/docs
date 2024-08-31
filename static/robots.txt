@@ -1,5 +1,5 @@
 User-agent:*
 Allow: /
 
-Sitemap:https://docs-opengauss.osinfra.cn/sitemap-zh.xml
-Sitemap:https://docs-opengauss.osinfra.cn/sitemap-en.xml
+Sitemap:https://docs.opengauss.org/sitemap-zh.xml
+Sitemap:https://docs.opengauss.org/sitemap-en.xml
