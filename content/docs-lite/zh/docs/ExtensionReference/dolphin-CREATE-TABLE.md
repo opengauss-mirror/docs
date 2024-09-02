@@ -208,7 +208,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >-   仅在参数sql\_compatibility=B时可以指定自动增长列。
     >-   自动增长列数据类型只能为整数类型、4字节或8字节浮点类型。
     >-   每个表只能有一个自动增长列。
-    >-   自动增长列必须是主键约束或唯一约束的第一个字段。
+    >-   自动增长列必须是索引的第一个字段。
     >-   自动增长列不能指定DEFAULT缺省值。
     >-   CHECK约束的表达式中不能含有自动增长列。
     >-   可以指定自动增长列允许NULL，若不指定，默认自动增长列含有NOT NULL约束。
