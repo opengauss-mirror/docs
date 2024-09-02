@@ -892,35 +892,6 @@ The following functions of openGauss use internal data types, which cannot be di
     <td class="cellrowborder" valign="top" width="14.175747275817258%"><p id="p127452514718"><a name="p127452514718"></a><a name="p127452514718"></a>large_seq_upgrade_ntree</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.395681295611315%"><p id="p6745185114719"><a name="p6745185114719"></a><a name="p6745185114719"></a>-</p>
-    </tr>
-    <tr id="row138945514620"> <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518478"><a name="p1574418518478"></a><a name="p1574418518478"></a>bpcharc</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518479"><a name="p1574418518479"></a><a name="p1574418518479"></a>bpcharcin</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518480"><a name="p1574418518480"></a><a name="p1574418518480"></a>bpcharcout</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518481"><a name="p1574418518481"></a><a name="p1574418518481"></a>bpcharcrecv</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518482"><a name="p1574418518482"></a><a name="p1574418518482"></a>bpcharcsend</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518483"><a name="p1574418518483"></a><a name="p1574418518483"></a>bpcharctypmodein</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518484"><a name="p1574418518484"></a><a name="p1574418518484"></a>bpcharctypmodout</p>
-    </td>
-    </tr>
-    <tr id="row16394655134616"> <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518485"><a name="p1574418518485"></a><a name="p1574418518485"></a>varcharc</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518486"><a name="p1574418518486"></a><a name="p1574418518486"></a>varcharcin</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518487"><a name="p1574418518487"></a><a name="p1574418518487"></a>varcharcout</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518488"><a name="p1574418518488"></a><a name="p1574418518488"></a>varcharcrecv</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518489"><a name="p1574418518489"></a><a name="p1574418518489"></a>varcharcsend</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518490"><a name="p1574418518490"></a><a name="p1574418518490"></a>varcharctypmodin</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p1574418518491"><a name="p1574418518491"></a><a name="p1574418518491"></a>varcharctypmodout</p>
     </td>
     </tr>
     </tbody>
