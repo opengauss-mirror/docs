@@ -106,6 +106,11 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p893712430509"><a name="p893712430509"></a><a name="p893712430509"></a>Copies Xlogs in the dual-center DR mode based on shared storage.</p>
     </td>
     </tr>
+    <tr id="row5751355124"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p16726925134714"><a name="p16726925134714"></a><a name="p16726925134714"></a>startwalrcv</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p137261925144719"><a name="p137261925144719"></a><a name="p137261925144719"></a>Find a valid Xlog tail by preparsing Xlogs and start walreceiver thread for receiving Xlogs.</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
