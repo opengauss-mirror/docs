@@ -767,7 +767,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
   >
   >-   A兼容性下，数据库将空字符串作为NULL处理，数据类型DATE会被替换为TIMESTAMP\(0\) WITHOUT TIME ZONE。
   >-   将字符串转换成整数类型时，如果输入不合法，B兼容性会将输入转换为0，而其它兼容性则会报错。
-  >-   PG兼容性下，CHAR和VARCHAR以字符为计数单位，其它兼容性以字节为计数单位。例如，对于UTF-8字符集，CHAR\(3\)在PG兼容性下能存放3个中文字符，而在其它兼容性下只能存放1个中文字符。
+  >-   B和PG兼容性下，CHAR和VARCHAR以字符为计数单位，其它兼容性以字节为计数单位。例如，对于UTF-8字符集，CHAR\(3\)在B和PG兼容性下能存放3个中文字符，而在其它兼容性下只能存放1个中文字符。
 
 -   **TABLESPACE \[ = \] tablespace\_name**
 
