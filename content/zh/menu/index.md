@@ -1535,7 +1535,6 @@ headless: true
     		-   [\_PG\_FOREIGN\_TABLE\_COLUMNS]({{< relref "./docs/SQLReference/_PG_FOREIGN_TABLE_COLUMNS.md" >}})
     		-   [\_PG\_FOREIGN\_TABLES]({{< relref "./docs/SQLReference/_PG_FOREIGN_TABLES.md" >}})
     		-   [\_PG\_USER\_MAPPINGS]({{< relref "./docs/SQLReference/_PG_USER_MAPPINGS.md" >}})
-    		-   [INFORMATION\_SCHEMA\_CATALOG\_NAME]({{< relref "./docs/SQLReference/INFORMATION_SCHEMA_CATALOG_NAME.md" >}})
     	-   [DBE\_PERF Schema]({{< relref "./docs/SQLReference/DBE_PERF-Schema.md" >}})
     		-   [OS]({{< relref "./docs/SQLReference/OS.md" >}})
     			-   [OS\_RUNTIME]({{< relref "./docs/SQLReference/OS_RUNTIME.md" >}})

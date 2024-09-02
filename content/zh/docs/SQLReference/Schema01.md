@@ -31,6 +31,16 @@ openGauss支持的Schema如下表所示。
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p01071338155015"><a name="p01071338155015"></a><a name="p01071338155015"></a>DBE_PERF Schema内视图主要用来诊断性能问题，也是WDR Snapshot的数据来源。数据库安装后，默认只有初始用户和监控管理员具有模式dbe_perf的权限，有权查看该模式下的视图和函数。</p>
 </td>
 </tr>
+<tr id="row71079385505"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p51071638195015"><a name="p51071638195015"></a><a name="p51071638195015"></a>dbe_pldeveloper</p>
+</td>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p01071338155016"><a name="p01071338155016"></a><a name="p01071338155016"></a>用于记录PLPGSQL包、函数及存储过程中需要记录的信息。</p>
+</td>
+</tr>
+<tr id="row71079385504"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p61071638195016"><a name="p61071638195016"></a><a name="p61071638195016"></a>dbe_sql_util</p>
+</td>
+<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p11071338155015"><a name="p11071338155015"></a><a name="p11071338155015"></a>用于管理SQL PATCH的工具，包括创建、删除、开启、禁用SQL PATCH等系统函数。</p>
+</td>
+</tr>
 <tr id="row121785110204"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p10179171112017"><a name="p10179171112017"></a><a name="p10179171112017"></a>dbe_pldebugger</p>
 </td>
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p917920152013"><a name="p917920152013"></a><a name="p917920152013"></a>用于调试plpgsql函数及存储过程。</p>
@@ -46,21 +56,6 @@ openGauss支持的Schema如下表所示。
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p168881754115817"><a name="p168881754115817"></a><a name="p168881754115817"></a>用于分布列推荐，openGauss不可用。</p>
 </td>
 </tr>
-<tr id="row18692185181917"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p6693651191"><a name="p6693651191"></a><a name="p6693651191"></a>sys</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1969315551917"><a name="p1969315551917"></a><a name="p1969315551917"></a>用于提供系统信息视图接口。</p>
-</td>
-</tr>
-<tr id="row1352310259568"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p85233259564"><a name="p85233259564"></a><a name="p85233259564"></a>pg_catalog</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1852318258569"><a name="p1852318258569"></a><a name="p1852318258569"></a>用于维护系统的catalog信息，包含系统表和所有内置数据类型、函数、操作符。</p>
-</td>
-</tr>
-<tr id="row11852338507"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p15853438700"><a name="p15853438700"></a><a name="p15853438700"></a>pg_toast</p>
-</td>
-<td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p18853138309"><a name="p18853138309"></a><a name="p18853138309"></a>用于存储大对象（系统内部使用）。</p>
-</td>
-</tr>
 <tr id="row035912711315"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p143601970314"><a name="p143601970314"></a><a name="p143601970314"></a>public</p>
 </td>
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p63601871233"><a name="p63601871233"></a><a name="p63601871233"></a>公共模式，缺省时，创建的表（以及其它对象）自动放入该模式。</p>
@@ -71,7 +66,7 @@ openGauss支持的Schema如下表所示。
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>用于管理package服务相关信息。</p>
 </td>
 </tr>
-<tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>proc_coverage</p>
+<tr id="row1057751281014"><td class="cellrowborder" valign="top" width="18.18%" headers="mcps1.2.3.1.1 "><p id="p557718129103"><a name="p557718129103"></a><a name="p557718129103"></a>coverage</p>
 </td>
 <td class="cellrowborder" valign="top" width="81.82000000000001%" headers="mcps1.2.3.1.2 "><p id="p1257741271011"><a name="p1257741271011"></a><a name="p1257741271011"></a>用于记录存储过程覆盖率相关信息。</p>
 </td>
@@ -79,29 +74,12 @@ openGauss支持的Schema如下表所示。
 </tbody>
 </table>
 
--   **[USER\_TRANSACTION](USER_TRANSACTION.md)**  
+-   **[GS\_SLOW\_QUERY\_INFO（废弃）](GS_SLOW_QUERY_INFO_废弃.md)**  </a>显示当前节点上已经转储的慢查询信息。</p>
 
--   **[GLOBAL\_USER\_TRANSACTION](GLOBAL_USER_TRANSACTION.md)**  
+-   **[GS\_SLOW\_QUERY\_HISTORY（废弃）](GS_SLOW_QUERY_HISTORY_废弃.md)**  </a>显示当前节点上未转储的慢查询信息。</p>
 
--   **[TRANSACTIONS\_RUNNING\_XACTS](TRANSACTIONS_RUNNING_XACTS.md)**  
+-   **[GLOBAL\_SLOW\_QUERY\_HISTORY（废弃）](GLOBAL_SLOW_QUERY_HISTORY_废弃.md)**  </a>显示所有节点上未转储的慢查询信息。</p>
 
--   **[SUMMARY\_TRANSACTIONS\_RUNNING\_XACTS](SUMMARY_TRANSACTIONS_RUNNING_XACTS.md)**  
+-   **[GLOBAL\_SLOW\_QUERY\_INFO（废弃）](GLOBAL_SLOW_QUERY_INFO_废弃.md)**  </a>显示所有节点上已经转储的慢查询信息。</p>
 
--   **[GLOBAL\_TRANSACTIONS\_RUNNING\_XACTS](GLOBAL_TRANSACTIONS_RUNNING_XACTS.md)**  
-
--   **[GS\_SLOW\_QUERY\_INFO（废弃）](GS_SLOW_QUERY_INFO_废弃.md)**  
-
--   **[GS\_SLOW\_QUERY\_HISTORY（废弃）](GS_SLOW_QUERY_HISTORY_废弃.md)**  
-
--   **[GLOBAL\_SLOW\_QUERY\_HISTORY（废弃）](GLOBAL_SLOW_QUERY_HISTORY_废弃.md)**  
-
--   **[GLOBAL\_SLOW\_QUERY\_INFO（废弃）](GLOBAL_SLOW_QUERY_INFO_废弃.md)**  
-
--   **[GLOBAL\_SINGLE\_FLUSH\_DW\_STATUS](GLOBAL_SINGLE_FLUSH_DW_STATUS.md)**  
-
--   **[GLOBAL\_CANDIDATE\_STATUS](GLOBAL_CANDIDATE_STATUS.md)**  
-
--   **[LOCKS](LOCKS.md)**  
-
--   **[RTO](RTO-RPO.md)**  
 
