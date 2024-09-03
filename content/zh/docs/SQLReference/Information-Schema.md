@@ -20,6 +20,5 @@ https://www.postgresql.org/docs/9.2/information-schema.html
 
 -   **[\_PG\_USER\_MAPPINGS](_PG_USER_MAPPINGS.md)**  
 
--   **[INFORMATION\_SCHEMA\_CATALOG\_NAME](INFORMATION_SCHEMA_CATALOG_NAME.md)**  
 
 
