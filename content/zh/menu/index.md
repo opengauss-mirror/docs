@@ -1942,7 +1942,6 @@ headless: true
     	-   [定时任务]({{< relref "./docs/DatabaseReference/定时任务.md" >}})
     	-   [线程池]({{< relref "./docs/DatabaseReference/线程池.md" >}})		
     	-   [备份恢复]({{< relref "./docs/DatabaseReference/备份恢复.md" >}})
-    	-   [Undo]({{< relref "./docs/DatabaseReference/Undo.md" >}})
     	-   [DCF参数设置]({{< relref "./docs/DatabaseReference/DCF参数设置.md" >}})
     	-   [闪回相关参数]({{< relref "./docs/DatabaseReference/闪回相关参数.md" >}})
     	-   [回滚相关参数]({{< relref "./docs/DatabaseReference/回滚相关参数.md" >}})
