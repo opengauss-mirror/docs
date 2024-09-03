@@ -20,17 +20,9 @@ Ustore存储引擎可以在数据频繁更新场景下性能依旧稳如泰山�
 
 ## 使用指导<a name="section2190298487"></a>
 
-USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎屏蔽了存储层实现的细节，SQL语法和原有的ASTORE存储引擎使用基本保持一致，唯一差别是建表和建索引有些细微区别。
+Ustore与原有的ASTORE(Append Update)存储引擎并存。Ustore存储引擎屏蔽了存储层实现的细节，SQL语法和原有的ASTORE存储引擎使用基本保持一致，唯一差别是建表和建索引有些细微区别。
 
 - **创建表的方式**
-
-  USTORE存储引擎含有undo log，创建USTORE存储引擎表的时候需要提前在postgresql.conf中配置undo_zone_count的值，该参数代表的时候undo log的一种资源个数，建议配置为16384，即“undo_zone_count=16384”，配置完成后要重启数据库。
-
-  [postgresql.conf配置]
-
-  ```
-  undo_zone_count=16384
-  ```
 
   - **创建方式1：创建表时指定存储引擎类型**
 
@@ -38,9 +30,9 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
   create table test(id int, age int, name varchar(10)) with (storage_type=ustore);
   ```
 
-  - **创建方式2：GUC参数配置指定USTORE存储引擎**
+  - **创建方式2：GUC参数配置指定Ustore存储引擎**
 
-    1. 数据库启动之前，在postgresql.conf中设置“enable_default_ustore_table=on”，默认指定用户创建表时使用USTORE存储引擎。
+    1. 数据库启动之前，在postgresql.conf中设置“enable_default_ustore_table=on”，默认指定用户创建表时使用Ustore存储引擎。
 
        [postgresql.conf配置]
 
@@ -56,7 +48,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
 
 -   **创建索引的方式**
 
-    USTORE存储引擎使用的索引为UBtree， UBtree是专门给USTORE存储引擎开发的索引，也是该引擎目前唯一支持的索引类型。
+    Ustore存储引擎使用的索引为UBtree， UBtree是专门给Ustore存储引擎开发的索引，也是该引擎目前唯一支持的索引类型。
 
     假定有如下test表结构，计划在test表的age列上增加一个UBtree索引。
 
@@ -90,7 +82,7 @@ USTORE与原有的ASTORE(Append Update)存储引擎并存。USTORE存储引擎�
         Options: orientation=row, storage_type=ustore, compression=no
         ```
 
-    -   **创建方式2：创建索引时使用using关键字指定索引类型为“ubtree”**
+    -   **创建方式2：创建索引时使用using关键字指定索引类型为“UBtree”**
 
         ```
         create index ubt_idx on test using ubtree(age);
