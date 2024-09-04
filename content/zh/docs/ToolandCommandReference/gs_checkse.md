@@ -54,7 +54,7 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
     主机名称列表文件。
 
     >![](public_sys-resources/icon-note.png) **说明：** 
-    >-f和-h参数不能同时使用。
+    >-f和-h参数不能同时使用，-f或-h指定多个节点时，需要保证hot_standby为on。
 
     取值范围：主机名称的列表。
 
