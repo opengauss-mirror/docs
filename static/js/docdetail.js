@@ -283,7 +283,7 @@ $(function ($) {
             let version = href.split("/")[5];
             const versionData = lang === "zh" ? versionObjZh : versionObjEn;
             if (version.includes("-lite")) {
-              version = version.split("-")[0];
+              version = version.split("-lite")[0];
               window.open(
                 location.origin +
                   `/${lang}/docs/${version}-lite/${versionData[version].homeLitePath}`,
@@ -336,7 +336,7 @@ $(function ($) {
       if(location.pathname.split("/").length < 4){
         return ;
       }
-      const version = location.pathname.split("/")[3].split("-")[0];
+      const version = location.pathname.split("/")[3].split("-lite")[0];
       const versionData = lang === "zh" ? versionObjZh : versionObjEn;
       if (versionData[version].homeLitePath) {
         $(".switch-version").addClass("switch-show");
