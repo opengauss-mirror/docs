@@ -101,7 +101,7 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
 
 - **DROP PRIMARY KEY [ RESTRICT | CASCADE ]**
 
-  Deletes the foreign key of a table.
+  Deletes the primary key of a table.
 
 - **DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]**
 
