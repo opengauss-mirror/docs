@@ -1092,7 +1092,7 @@ headless: true
 		-   [增量物化视图]({{< relref "./docs/SQLReference/增量物化视图.md" >}})
 			-   [概述]({{< relref "./docs/SQLReference/概述-28.md" >}})
 			-   [使用]({{< relref "./docs/SQLReference/使用-29.md" >}})
-			-   [支持和约束]({{< relref "./docs/SQLReference/支持和约束-30.md" >}})
+			-   [支持和约束]({{< relref "./docs/SQLReference/支持和约束-1.md" >}})
 	-   [游标]({{< relref "./docs/SQLReference/游标.md" >}})
 	-   [匿名块]({{< relref "./docs/SQLReference/匿名块-1.md" >}})
 	-   [存储过程]({{< relref "./docs/SQLReference/存储过程.md" >}})
