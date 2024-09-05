@@ -34,7 +34,7 @@ ANALYZE VERBOSE;
 
 ### 语法变更说明
 
-- 禁用VACCUM相关选项如：COMPACT。
+- 禁用VACUUM相关选项如：COMPACT。
 
 ```sql
 -- 原先支持的语法如，后续将不再支持
