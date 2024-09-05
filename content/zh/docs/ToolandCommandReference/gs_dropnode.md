@@ -30,11 +30,15 @@ openGauss提供了gs_dropnode工具从一主多备的数据库中移除不需要
 
 -   当目标备机被移除后，如果需要以单机方式使用目标备机且保留原数据，请在目标备机上先执行**gs\_guc set -D _/gaussdb/data/dbnode_ -c “replconninfo*X*”** 其中 _/gaussdb/data/dbnode_ 表示数据目录，_replconninfoX_ 表示主备集群中的除本节点外的其他节点，比如一主一备则需要配置 _replconninfo1_, 一主两备需要配置 _replconninfo1_ 和 _replconninfo2_, 以此类推；如果无需保留原数据，请先执行**gs\_uninstall --delete-data -L**命令卸载后重新安装。
 
-- 当目标备机被移除后，如果需要以备机方式使用目标备机，请参考[gs\_expansion](gs_expansion.md)命令重新将目标备机添加到集群中。
+- 当目标备机被移除后，如果需要以备机方式使用目标备机，请参考[gs\_expansion](gs_expansion.md)命令重新将目标备机添加到集群中，资源池化模式不支持重新添加目标备机。
 
 -   使用流式容灾功能时，不支持此工具。
 
 -   存在CM组件时，不能删除最后一个备机节点。
+
+-   资源池化模式目前只支持离线扩缩容。
+
+-   资源池化模式下执行gs_dropnode将中断数据库业务，在实验室环境且低压力条件下测得业务中断时间为1min左右；如果需要执行gs_dropnode命令，请在业务低谷期进行，建议在执行命令前做一次checkpoint。
 
 ## 前提条件
 
