@@ -156,6 +156,8 @@ An operator in openGauss is a reserved keyword or character, and it is generally
 
     Description: Factorial
 
+    WARNING:  unsupported in b compatibility mode
+
     Example:
 
     ```
@@ -169,6 +171,8 @@ An operator in openGauss is a reserved keyword or character, and it is generally
 -   !!
 
     Description: Factorial \(prefix operator\)
+
+    WARNING:  unsupported in b compatibility mode
 
     Example:
 
