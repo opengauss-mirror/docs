@@ -1475,6 +1475,7 @@ headless: true
             -   [显式游标]({{< relref "./docs/SQLReference/显式游标.md" >}})
             -   [隐式游标]({{< relref "./docs/SQLReference/隐式游标.md" >}})
             -   [游标循环]({{< relref "./docs/SQLReference/游标循环.md" >}})
+            -   [支持游标作为插入值]({{< relref "./docs/SQLReference/支持游标作为插入值.md" >}})
         -   [高级包]({{< relref "./docs/SQLReference/高级包.md" >}})
     		-   [基础接口]({{< relref "./docs/SQLReference/基础接口.md" >}})
     			-   [PKG\_SERVICE]({{< relref "./docs/SQLReference/PKG_SERVICE.md" >}})
