@@ -518,3 +518,22 @@
 -   2表示以资源池化备集群模式启动。
 
 **默认值**： 0
+
+## enable_set_most_available_sync
+
+**参数说明**： 是否允许CM管理数据库最大可用模式参数most_available_sync，默认禁止管理。
+
+**取值范围**： 布尔型。修改后可以reload生效。参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+
+-   on、yes、true、1：表示允许CM管理最大可用模式参数。
+-   off、no、false、0：表示禁止CM管理最大可用模式参数。
+
+**默认值**：off
+
+## cmserver_set_most_available_sync_delay_time
+
+**参数说明**：当cm_server检测到db主机因为同步备机数量不足被hang住时下发命令开启/关闭最大可用模式的延迟时间。
+
+**取值范围**： 整型，[0,10]。修改后可以reload生效。参数修改请参考[表 set cm参数](cm_ctl工具介绍.md#table10437204416514)进行设置。
+
+**默认值**：6
