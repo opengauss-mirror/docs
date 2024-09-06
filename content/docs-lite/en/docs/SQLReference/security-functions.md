@@ -395,6 +395,20 @@
     <td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615159"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615159"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615159"></a>Remote port</p>
     </td>
     </tr>
+    <tr id="en-us_topic_0283137444_en-us_topic_0237121984_row11677166201519"><td class="cellrowborder" valign="top" width="19.09%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611166"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611166"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611166"></a>sha_code</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p667876121525"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p667876121525"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p667876121525"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615166"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615166"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615166"></a>Sha code</p>
+    </td>
+    </tr>
+    <tr id="en-us_topic_0283137444_en-us_topic_0237121984_row11677166201526"><td class="cellrowborder" valign="top" width="19.09%" headers="mcps1.1.4.1.1 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611173"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611173"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1767716611173"></a>verify_result</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21%" headers="mcps1.1.4.1.2 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p667876121532"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p667876121532"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p667876121532"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="59.91%" headers="mcps1.1.4.1.3 "><p id="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615173"><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615173"></a><a name="en-us_topic_0283137444_en-us_topic_0237121984_p1367813615173"></a>Verify result</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
