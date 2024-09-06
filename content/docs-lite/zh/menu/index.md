@@ -87,6 +87,7 @@ headless: true
             - [支持HyperLogLog]({{< relref "./docs/AboutopenGauss/支持HyperLogLog.md" >}})
             - [在线添加索引]({{< relref "./docs/AboutopenGauss/在线添加索引.md" >}})
             - [自治事务]({{< relref "./docs/AboutopenGauss/自治事务.md" >}})
+            - [管道函数]({{< relref "./docs/AboutopenGauss/管道函数.md" >}})
             - [全局临时表]({{< relref "./docs/AboutopenGauss/全局临时表.md" >}})
             - [伪列ROWNUM]({{< relref "./docs/AboutopenGauss/伪列ROWNUM.md" >}})
             - [支持存储过程调试]({{< relref "./docs/AboutopenGauss/支持存储过程调试.md" >}})
