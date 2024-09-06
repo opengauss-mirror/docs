@@ -63,7 +63,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     如果用户不知道所有字段的数值，可以忽略其中的一些。没有数值的字段将被填充为字段的缺省值。例如：
 
     ```
-    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_first_name) VALUES (3769, 'Grace');
+    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id) VALUES (3769, 'hello');
     INSERT 0 1
     等同于
     openGauss=# INSERT INTO customer_t1 VALUES (3769, 'hello');
