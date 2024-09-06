@@ -129,6 +129,7 @@ headless: true
 	    	-   [发布订阅]({{< relref "./docs/AboutopenGauss/发布订阅.md" >}})
 	    	-   [外键锁增强]({{< relref "./docs/AboutopenGauss/外键锁增强.md" >}})
 	    	-   [支持OLTP场景数据压缩]({{< relref "./docs/AboutopenGauss/支持OLTP场景数据压缩.md" >}})
+			-   [支持特殊浮点数]({{< relref "./docs/AboutopenGauss/支持特殊浮点数.md" >}})
 	    	-   [事件触发器]({{< relref "./docs/AboutopenGauss/事件触发器.md" >}})
 			-   [支持UWAL特性]({{< relref "./docs/AboutopenGauss/支持UWAL特性.md" >}})
 	    -   [应用开发接口]({{< relref "./docs/AboutopenGauss/应用开发接口.md" >}})
