@@ -12,6 +12,12 @@ In-place upgrade: During the upgrade, services must be stopped and all nodes mus
 
 Gray upgrade: supports operations on all service during the upgrade and upgrades all nodes at a time. \(This function is supported in versions later than openGauss 1.1.0.\)
 
+Upgrade of specified nodes: Upgrade a specified node to support full-service operations, you can upgrade some specified nodes first, and then upgrade the remaining nodes (versions later than openGauss 3.1.0 support this function).
+
+Upgrade status query: The upgrade status is automatically recorded after each upgrade operation, and the upgrade status can be queried in real time.
+
+Grayscale upgrade supports progress printing, and the progress is printed according to the process executed by the program.
+
 ## Precautions<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
 
 -   Do not perform the upgrade, scale-out, and scale-in at the same time.
@@ -40,94 +46,104 @@ Gray upgrade: supports operations on all service during the upgrade and upgrades
 
 ## Syntax<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
--   Display help information.
+- Display help information.
 
-    ```
-    gs_upgradectl -? | --help
-    ```
+  ```
+  gs_upgradectl -? | --help
+  ```
 
--   Display version information.
+- Display version information.
 
-    ```
-    gs_upgradectl -V | --version
-    ```
+  ```
+  gs_upgradectl -V | --version
+  ```
 
--   Select an upgrade policy.
+- Select an upgrade policy.
 
-    ```
-    gs_upgradectl -t chose-strategy [-l LOGFILE]
-    ```
+  ```
+  gs_upgradectl -t chose-strategy [-l LOGFILE]
+  ```
 
--   Automatically upgrade openGauss
+- Automatically upgrade openGauss
 
-    ```
-    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
-    ```
+  ```
+  gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
+  ```
 
--   Automatically roll back the upgrade.
+- Automatically roll back the upgrade.
 
-    ```
-    gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE] [--force]
-    ```
+  ```
+  gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE] [--force]
+  ```
 
--   Submit the upgrade project.
+- Upgrade status query.
 
-    ```
-    gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
-    ```
+  ```
+  gs_upgradectl -S show-step
+  ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
-    >
-    >-   Once the operation is complete, the rollback operation cannot be performed.
+- Submit the upgrade project.
+
+  ```
+  gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
+  ```
+
+  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >
+  >-   Once the operation is complete, the rollback operation cannot be performed.
 
 
 ## Parameter Description<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
 
--   -t
+- -t
 
-    Specifies the  **gs\_upgradectl**  command type.
+  Specifies the  **gs\_upgradectl**  command type.
 
-    Valid value: chose-strategy, auto-upgrade, auto-rollback, and commit-upgrade
+  Valid value: chose-strategy, auto-upgrade, auto-rollback, and commit-upgrade
 
--   -l
+- -S
 
-    Records log information during the upgrade or rollback.
+  Upgrade status query.
 
-    Value range: any existing absolute path that can be accessed
+- -l
 
-    Default value:  **/var/log/gaussdb/**_User name_**/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log**
+  Records log information during the upgrade or rollback.
 
--   -?, --help
+  Value range: any existing absolute path that can be accessed
 
-    Displays help information.
+  Default value:  **/var/log/gaussdb/**_User name_**/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log**
 
--   -V, --version
+- -?, --help
 
-    Displays version information.
+  Displays help information.
 
--   -X
+- -V, --version
 
-    Specifies the openGauss configuration file.
+  Displays version information.
 
-    Value range: storage paths of XML files
+- -X
 
--   --grey
+  Specifies the openGauss configuration file.
 
-    Perform gray upgrade.
+  Value range: storage paths of XML files
 
--   -h
-    upgrade specified and partial nodes, this parameter must be used with --grey.
+- --grey
 
-    Value range: single node or multiple node
+  Perform gray upgrade.
 
--   --continue
+- -h
+  upgrade specified and partial nodes, this parameter must be used with --grey.
 
-    upgrade the remaining upgrade, this parameter must be used with --grey.
+  Value range: single node or multiple node
 
--   --force
+- --continue
 
-    If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
-    (Starting from version 6.0.0, force rollback parameter is no longer maintained.)
+  upgrade the remaining upgrade, this parameter must be used with --grey.
+
+- --force
+
+  If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
+  (Starting from version 6.0.0, force rollback parameter is no longer maintained.)
 
 
 ## Examples<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
@@ -327,4 +343,42 @@ gs_upgradectl -t commit-upgrade -X /data/node2.xml
 Successfully upgrade all nodes.
 ```
 
+Example 6: Use the gs_upgradectl script to perform incremental upgrades of cluster management components.
+
+```
+gs_upgradectl -t upgrade-cm --upgrade-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
+Start ot perform the upgrade of CM component in cluster.
+Ready to transform CM package to all nodes.
+Send CM package to all nodes successfully.
+Start to record origin cluster state.
+cluster origin state is : [Normal]
+Start to prepare CM componet files on all nodes.
+Prepare upgrade CM component files successfully.
+Start to upgrade CM component on all nodes.
+Upgrade CM component files successfully.
+Finial check cluster:
+Cluster state check unavailale.
+Cluster state is : [Normal]
+Cluster state is : [Normal]
+Cluster state is : [Normal]
+The cluster status check is available.
+Upgrade CM component successfully.
+```
+
+Example 7: Use gs_upgradectl script to perform an upgrade status query.
+
+```
+gs_upgradectl -S show-step
+doShowUpgradeStep in UpgradeImpl
+Cluster Nodes are ['node1', 'node2']. 
+Successfully execute command on all nodes.
+
+Output:
+[SUCCESS] node1:
+gsql (openGauss 6.0.0-RC1 build ed7f8e37) compiled at 2024-03-31 11:59:31 commit 0 last mr  
+[SUCCESS] node2:
+gsql (openGauss 6.0.0-RC1 build ed7f8e37) compiled at 2024-03-31 11:59:31 commit 0 last mr  
+
+Cluster Not in Upgrading or have been run `upgrade-commit`.
+```
 
