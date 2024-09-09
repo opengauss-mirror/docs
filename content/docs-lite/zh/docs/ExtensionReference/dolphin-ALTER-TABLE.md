@@ -164,7 +164,7 @@
 
 - **DROP PRIMARY KEY [ RESTRICT | CASCADE ]**
 
-  删除一个表的外键。
+  删除一个表的主键。
 
 - **DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]**
 
