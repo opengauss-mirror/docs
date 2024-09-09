@@ -22,4 +22,5 @@
     ../content/zh/docs/AboutopenGauss/发布订阅
     ../content/zh/docs/AboutopenGauss/外键锁增强
     ../content/zh/docs/AboutopenGauss/支持OLTP场景数据压缩
+    ../content/zh/docs/AboutopenGauss/支持特殊浮点数
     ../content/zh/docs/AboutopenGauss/事件触发器
