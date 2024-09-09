@@ -102,6 +102,7 @@ headless: true
 	    	-   [支持标准开发接口]({{< relref "./docs/AboutopenGauss/支持标准开发接口.md" >}})
 	    	-   [PG接口兼容]({{< relref "./docs/AboutopenGauss/PG接口兼容.md" >}})
 	    	-   [支持PL/Java]({{< relref "./docs/AboutopenGauss/支持PL-Java.md" >}})
+	    	-   [MySQL兼容性增强]({{< relref "./docs/AboutopenGauss/MySQL兼容性增强.md" >}})
 	    -   [AI能力]({{< relref "./docs/AboutopenGauss/AI能力.md" >}})
         -   [AI4DB: 数据库自治运维]({{< relref "./docs/AboutopenGauss/AI4DB-数据库自治运维.md" >}})
             -   [数据库指标采集、预测与异常监控]({{< relref "./docs/AboutopenGauss/数据库指标采集-预测与异常监控.md" >}})
