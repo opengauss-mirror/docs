@@ -841,3 +841,15 @@ spqplugin.cluster_map = 'node1|x.x.x.x|12300,node2|x.x.x.x|12300'
 -   off表示不使用多机并行更新数据，使用内核原有功能。
 
 **默认值**：off
+
+## comm_max_stream
+
+**参数说明**: 参数值为整数，该参数用于限制多机并行中两个节点间最大stream个数（streamID个数）。
+
+-   计算公式：  dop * dop * stream个数
+-   若链接多个QE节点: (dop * dop * stream个数) * QE节点数
+-   同时运行多个plan共用当前所有streamID，因此总stream数需要每个plan的stream个数相加
+
+**取值范围**：1\~60000
+
+**默认值**：1024
