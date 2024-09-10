@@ -202,7 +202,7 @@
 
 ## datastorage\_threshold\_value\_check<a name="section121051111164418"></a>
 
-**Parameter description**: Specifies the usage threshold of a read-only disk in a database. When the disk usage of the data directory exceeds the specified value, the database is automatically set to read-only.
+**Parameter description**: Specifies the usage threshold of a read-only disk in a database. When the disk usage of the data directory or the symbolic links (mainly for base、global、pg_xlog、pg_tblspc and the following tablespaces) correspond to the real directory exceeds the specified value, the database is automatically set to read-only.
 
 **Value range**: an integer, in the range \[1,99\]. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 

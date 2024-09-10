@@ -102,6 +102,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
@@ -114,6 +115,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       PRIMARY KEY ( column_name [, ... ] ) index_parameters |
       FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
@@ -483,6 +485,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     一个表只能声明一个主键。
 
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
+
 -   **DEFERRABLE | NOT DEFERRABLE**
 
     这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
@@ -499,7 +508,6 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 -   **USING INDEX TABLESPACE tablespace\_name**
 
     为UNIQUE或PRIMARY KEY约束相关的索引声明一个表空间。如果没有提供这个子句，这个索引将在default\_tablespace中创建，如果default\_tablespace为空，将使用数据库的缺省表空间。
-
 
 ## 示例<a name="zh-cn_topic_0283136653_zh-cn_topic_0237122119_zh-cn_topic_0059777586_s43dd49de892344bf89e6f56f17404842"></a>
 

@@ -334,7 +334,9 @@
                 PRIMARY KEY index_parameters |
                 ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |                                                                                  
                 REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-                    [ ON DELETE action ] [ ON UPDATE action ] }    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+                    [ ON DELETE action ] [ ON UPDATE action ] }    
+                [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
+                [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
   [ COMMENT 'text' ]
   ```
 
@@ -351,6 +353,7 @@
     ```
     [ CONSTRAINT constraint_name ]
         { UNIQUE | PRIMARY KEY } USING INDEX index_name
+        [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     ```
 
@@ -364,6 +367,7 @@
           PARTIAL CLUSTER KEY ( column_name [, ... ]  }
           FOREIGN KEY [ idx_name ] ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
              [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+        [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]             
         [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
         [ COMMENT 'text' ]
     ```
@@ -652,6 +656,13 @@
     -   CASCADE：删除新表中任何引用了被删除行的行，或更新新表中引用行的字段值为被参考字段的新值。
     -   SET NULL：设置引用字段为NULL。
     -   SET DEFAULT：设置引用字段为它们的缺省值。
+
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
 
 -   **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
 

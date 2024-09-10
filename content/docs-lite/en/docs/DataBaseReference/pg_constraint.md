@@ -212,6 +212,13 @@
 <td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1510462744415"><a name="p1510462744415"></a><a name="p1510462744415"></a>Not for constraint, but will be included in the attribute column of <strong id="b9489102911254"><a name="b9489102911254"></a><a name="b9489102911254"></a>INDEX</strong>.</p>
 </td>
 </tr>
+<tr id="row076712081518"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p0104142718449"><a name="p0104142718449"></a><a name="p0104142718449"></a>condisable</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.4.1.2 "><p id="p1410412276446"><a name="p1410412276446"></a><a name="p1410412276446"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.49999999999999%" headers="mcps1.2.4.1.3 "><p id="p1510462744415"><a name="p1510462744415"></a><a name="p1510462744415"></a>Whether the constraint is disable Currently, it can be set to true only for primary key, unique and check constraints.</p>
+</td>
+</tr>
 </tbody>
 </table>
 

@@ -18,7 +18,7 @@ Database security is essential for a database system.  GaussDB 200  writes all u
 
 ## Enhancements<a name="section3231685"></a>
 
-None
+version 6.0.0: Integrate tool audit log  into databases to monitor activities such as backup, recovery, and other operations.
 
 ## Constraints<a name="section06531946143616"></a>
 

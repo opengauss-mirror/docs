@@ -23,7 +23,7 @@
 UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
-    [ FROM from_list] [ WHERE condition ]
+    [ FROM from_list] [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
     [ LIMIT { count } ]
     [ RETURNING {* 
@@ -143,6 +143,10 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 -   **condition**
 
     一个返回Boolean类型结果的表达式。只有这个表达式返回true的行才会被更新。不建议使用int等数值类型作为condition，因为int等数值类型可以隐式转换为bool值（非0值隐式转换为true，0转换为false），可能导致非预期的结果。
+
+-   **WHERE CURRENT OF cursor\_name**
+
+    当前不支持，仅保留语法接口。
 
 -   ORDER BY子句
 

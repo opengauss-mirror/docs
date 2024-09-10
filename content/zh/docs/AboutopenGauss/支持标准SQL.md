@@ -22,11 +22,23 @@ openGauss数据库支持SQL:2011大部分的核心特性，同时还支持部分
 
 支持ALTER TABLE语句修改表字段和引用视图解耦。
 
-支持SELECT语句支持TABLESAMPLE子句实现数据采样。
+支持TABLESAMPLE子句实现数据采样。
+
+支持带外层PRIOR关键字的CONNECT BY子句。
+
+以下特性自openGauss 6.0.0开始支持：
+
+支持to_binary_float(expr default return_expr on conversion error)。
+
+支持IS [NOT] NAN、IS [NOT] INFINITE。
+
+支持float(n)范围为`1~126`。
+
+支持numeric(p, s)类型中参数`s`允许为负数。
 
 ## 特性约束<a name="section06531946143616"></a>
 
-无。
+float(n)范围支持`1~126`需要开启参数`behavior_compat_options='float_as_numeric'`。
 
 ## 依赖关系<a name="section8351126"></a>
 

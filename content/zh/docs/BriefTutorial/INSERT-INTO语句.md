@@ -34,7 +34,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
 
     赋予对应column的一个有效表达式或值：
 
-    -   向表中字段插入单引号 " ' "时需要使用单引号自身进行转义。
+    -   向表中字段插入单引号“'”时需要使用单引号自身进行转义。
     -   如果插入行的表达式不是正确的数据类型，系统试图进行类型转换，若转换不成功，则插入数据失败，系统返回错误信息。
 
 -   **DEFAULT**
@@ -63,7 +63,7 @@ INSERT INTO table_name [ ( column_name [, ...] ) ]
     如果用户不知道所有字段的数值，可以忽略其中的一些。没有数值的字段将被填充为字段的缺省值。例如：
 
     ```
-    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_first_name) VALUES (3769, 'Grace');
+    openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id) VALUES (3769, 'hello');
     INSERT 0 1
     等同于
     openGauss=# INSERT INTO customer_t1 VALUES (3769, 'hello');
