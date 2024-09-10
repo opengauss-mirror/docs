@@ -20,7 +20,7 @@ openGauss  supports functions and stored procedures compliant with the SQL stand
 
 ## Enhancements<a name="section28788730"></a>
 
-None.
+Support for using default argument values for cursors in PL/SQL.
 
 ## Constraints<a name="section06531946143616"></a>
 
