@@ -620,6 +620,7 @@ where column_constraint can be:
       ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
         [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where compress_mode can be:
 { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
@@ -631,6 +632,7 @@ where table_constraint can be:
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
       FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
         [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where index_parameters can be:
 [ WITH ( {storage_parameter = value} [, ... ] ) ]
@@ -638,6 +640,7 @@ where index_parameters can be:
 where table_constraint_using_index can be:
 [ CONSTRAINT constraint_name ]
     { UNIQUE | PRIMARY KEY } USING INDEX index_name
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 ```
 
@@ -1575,6 +1578,7 @@ where column_constraint can be:
   ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
   REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE action ] [ ON UPDATE action ] }
+[ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where table_constraint can be:
 [ CONSTRAINT constraint_name ]
@@ -1584,6 +1588,7 @@ where table_constraint can be:
   PARTIAL CLUSTER KEY ( column_name [, ... ] ) |
   FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+[ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where compress_mode can be:
 { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
@@ -1646,6 +1651,7 @@ where column_constraint can be:
   PRIMARY KEY index_parameters |
   REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE action ] [ ON UPDATE action ] }
+[ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where table_constraint can be:
 [ CONSTRAINT constraint_name ]
@@ -1654,6 +1660,7 @@ where table_constraint can be:
   PRIMARY KEY ( column_name [, ... ] ) index_parameters |
   FOREIGN KEY ( column_name [, ... ] ) REFERENCES reftable [ ( refcolumn [, ... ] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] }
+[ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
 [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 where index_parameters can be:
 [ WITH ( {storage_parameter = value} [, ... ] ) ]

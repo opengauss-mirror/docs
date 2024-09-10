@@ -50,7 +50,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 ## Linux下的ODBC包<a name="section1352910461980"></a>
 
-从发布包中获取，包名为openGauss-\*.\*.0-ODBC.tar.gz。Linux环境下，开发应用程序要用到unixODBC提供的头文件（sql.h、sqlext.h等）和库libodbc.so。这些头文件和库可从unixODBC-2.3.0的安装包中获得。
+从发布包中获取，包名为openGauss-\*.\*.0-ODBC.tar.gz。Linux环境下，开发应用程序要用到unixODBC提供的头文件（sql.h、sqlext.h等）和库libodbc.so。这些头文件和库可从unixODBC-2.3.9的安装包中获得。
 
 ## 配置数据源<a name="section12696151016177"></a>
 
@@ -62,7 +62,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 2.  安装unixODBC。如果机器上已经安装了其他版本的unixODBC，可以直接覆盖安装。
 
-    目前不支持unixODBC-2.2.1版本。以unixODBC-2.3.0版本为例，在客户端执行如下命令安装unixODBC。默认安装到“/usr/local”目录下，生成数据源文件到 “/usr/local/etc”目录下，库文件生成在“/usr/local/lib”目录。
+    目前不支持unixODBC-2.2.1版本。以unixODBC-2.3.9版本为例，在客户端执行如下命令安装unixODBC。默认安装到“/usr/local”目录下，生成数据源文件到 “/usr/local/etc”目录下，库文件生成在“/usr/local/lib”目录。
 
     ```
     tar zxvf unixODBC-2.3.9.tar.gz

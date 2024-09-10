@@ -74,27 +74,31 @@ ROWTYPE for cursor supports the following features:
 
 Test case:
 ```
+-- Turn on the precompile switch
 set behavior_compat_options='allow_procedure_compile_check';
 
+-- Creating the table used by the cursor and inserting data
 create table int4_table(a NUMBER, b VARCHAR2(5));
-insert into int4_table(a) values(3,'johan');
+insert into int4_table(a, b) values(3,'johan');
 create table int_table(a NUMBER, d NUMBER, b VARCHAR2(5));
 insert into int_table(a, d, b) values(3, 6,'johan');
 
+-- Creating package
 create or replace package pck1 is
 cursor cur1 is select * from int4_table;
-var1 cur1%rowtype:=(3, 'ada');
+var1 cur1%rowtype:=(3, 'ada');-- Use rowtype to get the actual type of the cursor and define a public variable
 procedure ppp1;
 procedure ppp2(a cur1%rowtype);
 end pck1;
 /
 
+-- Creating package body
 create or replace package body pck1 is
 procedure ppp1() is
 cursor cur2 is select * from int_table;
 begin
 open cur2;
-fetch cur2 into var1;
+fetch cur2 into var1;-- when var1 and cursor cur2 have different query lengths throw error
 ppp2(var1);
 raise info '%', var1.a;
 end;
@@ -106,14 +110,30 @@ end;
 end pck1;
 /
 
-call pck1.ppp1();
-ALTER TABLE int_table DROP COLUMN d;
-call pck1.ppp1();
+openGauss=# call pck1.ppp1();-- var1 has 2 columns that do not match the length of the cursor cur2 query result
+ERROR:  number of source and target fields in assignment does not match
+DETAIL:  strict_multi_assignment check is active.
+HINT:  Make sure the query returns the exact list of columns.
+CONTEXT:  PL/pgSQL function ppp1() line 4 at FETCH
+
+openGauss=# ALTER TABLE int_table DROP COLUMN d;-- Delete 1 column of the table
+ALTER TABLE
+
+openGauss=# call pck1.ppp1();-- Success
+INFO:  3
+CONTEXT:  SQL statement "CALL ppp2(var1)"
+PL/pgSQL function ppp1() line 5 at PERFORM
+INFO:  3
+ ppp1
+------
+
+(1 row)
 ```
 
 >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
 >-   **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type, a column type of a variable of the cross-package composite type, or a column type of a cursor variable of the cross-package type.
 >-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable and the type of a cross-package cursor.
+>-   **%ROWTYPE** cannot reference nested cursors.
 
 ## Scope of a Variable<a name="en-us_topic_0283136825_en-us_topic_0237122221_en-us_topic_0059777427_s22f3ff2c9c4344a99fd2a028a86620bf"></a>
 

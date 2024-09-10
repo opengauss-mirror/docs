@@ -18,7 +18,9 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 
 ## 特性增强<a name="section21149265913"></a>
 
-无。
+-   openGauss 6.0.0 新增支持如下场景的并行：
+    -   cmd中声明的NO SCROLL游标和作为并行函数入参的游标表达式支持并行。
+    -   存在游标表达式入参的函数，如果创建时指定parallel_enable_clause，作为表函数执行支持并行。具体说明和约束请参见[CREATE-FUNCTION](../SQLReference/CREATE-FUNCTION.md)。
 
 ## 特性约束<a name="section51513617597"></a>
 
@@ -31,7 +33,6 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 -   查询语句中带有median操作的查询不支持并行执行。
 -   物化视图的更新不支持并行执行。
 -   会触发trigger的查询不支持并行执行，特别的，对包含外键的表执行INSERT/UPDATE/DELETE操作会触发trigger。 
--   ustore引擎不支持并行执行。 
 -   包含rownum的查询不支持并行执行。
 -   涉及拼接大于1G的LOB的语句不支持并行执行。
 

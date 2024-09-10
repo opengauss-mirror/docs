@@ -154,6 +154,8 @@
 
     Description: Factorial
 
+    WARNING:  unsupported in b compatibility mode
+
     Example:
 
     ```
@@ -167,6 +169,8 @@
 -   !!
 
     Description: Factorial \(prefix operator\)
+
+    WARNING:  unsupported in b compatibility mode
 
     Example:
 

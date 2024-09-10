@@ -46,15 +46,15 @@
 3.  Run the following command to query the audit record:
 
     ```
-    openGauss=# select * from pg_query_audit('2021-03-04 08:00:00','2021-03-04 17:00:00');
+    openGauss=# select * from pg_query_audit('2024-07-12 08:00:00','2024-07-12 17:00:00');
     ```
 
     The command output is similar to the following:
 
     ```
-              time          |      type      | result | userid | username  | database  |     client_conninfo     |    object_name    |	detail_info	|     node_name     |            thread_id            | local_port | remote_port
+              time          |      type      | result | userid | username  | database  |     client_conninfo     |    object_name    |  detail_info |     node_name     |            thread_id            | local_port | remote_port | sha_code | verify_result
     ------------------------+----------------+--------+--------+-----------+-----------+-------------------------+-------------------+--------------+-------------------+---------------------------------+------------+-------------
-    2021-03-04 08:00:08+08 | login_success  | ok     | 10     | omm  | postgres | gsql@::1 | postgres    | login db(postgres) success, SSL=off | dn_6001_6002_6003 | 140477687527168@668131208211425 |17778      | 46946
+    2024-07-12 16:22:43+08 | login_success  | ok     | 10     | omm  | postgres | gsql@::1 | postgres    | login db(postgres) success,the current user is:omm, SSL=off | node1 | 139658603525888@774087763979298 |  5433      | 38964 | 73ead146da25a77ca01fc21204b74de99b55d499756438d0dc090e674d315bca | t
     ```
 
     This record indicates that user  **omm**  logs in to database  **postgres**  at the time specified by the  **time**  column. After the host specified by  **log\_hostname**  is started and a client is connected to its IP address, the host name found by reverse DNS resolution is displayed following the at sign \(@\) in the value of  **client\_conninfo**.

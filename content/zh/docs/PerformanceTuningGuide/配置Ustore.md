@@ -77,9 +77,9 @@ Ustore与原有的ASTORE(Append Update)存储引擎并存。Ustore存储引擎�
          age    | integer               |           | plain    |              |
          name   | character varying(10) |           | extended |              |
         Indexes:
-            "ubt_idx" ubtree (age) WITH (storage_type=USTORE) TBALESPACE pg_default
+            "ubt_idx" ubtree (age) WITH (storage_type=ustore) TBALESPACE pg_default
         Has OIDs: no
-        Options: orientation=row, storage_type=ustore, compression=no
+        Options: orientation=row, compression=no, storage_type=ustore
         ```
 
     -   **创建方式2：创建索引时使用using关键字指定索引类型为“UBtree”**
@@ -97,9 +97,9 @@ Ustore与原有的ASTORE(Append Update)存储引擎并存。Ustore存储引擎�
          age    | integer               |           | plain    |              |
          name   | character varying(10) |           | extended |              |
         Indexes:
-            "ubt_idx" ubtree (age) WITH (storage_type=USTORE) TBALESPACE pg_default
+            "ubt_idx" ubtree (age) WITH (storage_type=ustore) TBALESPACE pg_default
         Has OIDs: no
-        Options: orientation=row, storage_type=ustore, compression=no
+        Options: orientation=row, compression=no, storage_type=ustore
         ```
 
 

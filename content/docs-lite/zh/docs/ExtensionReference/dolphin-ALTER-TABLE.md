@@ -82,6 +82,7 @@
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     [ COMMENT {=| } 'text' ]
 ```
@@ -164,7 +165,7 @@
 
 - **DROP PRIMARY KEY [ RESTRICT | CASCADE ]**
 
-  删除一个表的外键。
+  删除一个表的主键。
 
 - **DROP FOREIGN KEY foreign_key_name [ RESTRICT | CASCADE ]**
 
@@ -283,6 +284,13 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
  修改表已存在字段的名称和定义，字段新名称不能是已有字段的名称，将用新名称和定义替换字段原名称和定义原字段上的索引、独立对象约束（例如：主键、唯一键、CHECK约束）等不会被删除。\[FIRST | AFTER column\_name\]语法表示修改字段名称和定义的同时修改字段在表中的位置。BINARY关键字将设置列的字符序为该列字符集对应的`_bin`字符序，如果对应字符集的`_bin`字符序不存在，则告警并忽略BINARY属性。比如列的字符集为`utf8`，则指定BINARY时，等价于设置列的字符序为`utf8_bin`。ASCII关键字将设置列的字符集为`latin1`，是`CHARACTER SET latin1`的缩写。
 
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+  
+    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
+  
 >![](public_sys-resources/icon-note.png) **说明：** 
 
 >涉及的参数说明可见[ALTER TABLE](../SQLReference/ALTER-TABLE.md)。

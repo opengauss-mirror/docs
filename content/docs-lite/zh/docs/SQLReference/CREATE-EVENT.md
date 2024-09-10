@@ -7,6 +7,7 @@
 ## 注意事项<a name="section7961133411551"></a>
 
 -   定时任务相关操作只有sql\_compatibility = 'B'时支持。
+-   创建只执行一次的定时任务时，默认情况下，无论执行成功还是失败都会被删除。可以通过使用`ON COMPLETION PRESERVE`覆盖默认行为，执行完成后不删除。
 -   用户操作（创建/修改/删除）定时任务时，非sysadmin用户需要被sysadmin用户赋予操作定时任务的权限。
     -   用户使用CREATE EVENT创建定时任务时，需要拥有创建定时任务schema的CREATE权限。
     -   用户使用ALTER/DROP EVENT修改或删除定时任务时，需要拥有被指定schema的USAGE权限。

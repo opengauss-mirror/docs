@@ -109,6 +109,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       [PRIMARY] KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     [ COMMENT {=| } 'text' ]
 ```
@@ -313,6 +314,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 -   **\[TABLESPACE tablespace\_name\] STORAGE MEMORY**
 
     用于指定表存储在内存；目前该特性仅有语法支持，不实现功能。
+
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+    -   ENABLE( VALIDATE)（默认）：启用约束，创建索引，对已有数据和新加入的数据执行约束。
+    -   ENABLE  NOVALIDATE：启用约束，创建索引。对于CHECK约束仅对新加入的数据执行约束，不管表中现有数据。对于UNIQUE和PRIMARY KEY需要建立索引，所以会对已有数据执行约束。
+    -   DISABLE( NOVALIDATE)（默认）：关闭约束，删除索引，可以对约束列的数据进行修改等操作。
+    -   DISABLE  VALIDATE：关闭约束，删除索引，不能对表进行插入、更新和删除操作。
 
 ## 示例<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 

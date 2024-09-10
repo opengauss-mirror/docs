@@ -14,7 +14,7 @@
 -   在一张已经存在的表上删除列。
 
     ```
-    ALTER TABLE table_name DROP COLUMN column_name;
+    ALTER TABLE table_name DROP [ COLUMN ] column_name;
     ```
 
 -   修改表的字段类型。
@@ -229,5 +229,4 @@ openGauss=# SELECT * FROM customer_t1;
               4320 | tpcds         | Lily         |             |   2000
     (10 rows)
     ```
-
 

@@ -14,6 +14,8 @@
 
 指定节点升级：指定节点升级支持全业务操作，可先升级部分指定节点，在升级剩余节点（openGauss3.1.0版本之后的版本支持该功能）。
 
+升级状态查询：在每次执行升级操作后自动记录升级状态，并且支持实时查询升级状态。
+
 灰度升级支持进度打印，根据程序执行的流程打印进度。
 
 ## 注意事项<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s706621cd98574d11aa38de2448930953"></a>
@@ -43,93 +45,103 @@
 
 ## 语法<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sa2c64f98e27946438ecbbb724ca673da"></a>
 
--   显示帮助信息
+- 显示帮助信息
 
-    ```
-    gs_upgradectl -? | --help
-    ```
+  ```
+  gs_upgradectl -? | --help
+  ```
 
--   显示版本号信息
+- 显示版本号信息
 
-    ```
-    gs_upgradectl -V | --version
-    ```
+  ```
+  gs_upgradectl -V | --version
+  ```
 
--   选择升级策略
+- 选择升级策略
 
-    ```
-    gs_upgradectl -t chose-strategy [-l LOGFILE]
-    ```
+  ```
+  gs_upgradectl -t chose-strategy [-l LOGFILE]
+  ```
 
--   自动升级openGauss
+- 自动升级openGauss
 
-    ```
-    gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
-    ```
+  ```
+  gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
+  ```
 
--   自动回滚升级
+- 自动回滚升级
 
-    ```
-    gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE]
-    ```
+  ```
+  gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE]
+  ```
 
--   升级提交
+- 升级状态查询
 
-    ```
-    gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
-    ```
+  ```
+  gs_upgradectl -S show-step
+  ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
-    >
-    >-   一旦提交操作完成，则不能再执行回滚操作。
+- 升级提交
+
+  ```
+  gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
+  ```
+
+  >![](public_sys-resources/icon-note.png) **说明：** 
+  >
+  >-   一旦提交操作完成，则不能再执行回滚操作。
 
 
 ## 参数说明<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_sdad8716000e7427a84d26645630bb309"></a>
 
--   -t
+- -t
 
-    gs\_upgradectl命令的类型。
+  gs\_upgradectl命令的类型。
 
-    取值范围：chose-strategy、auto-upgrade、auto-rollback和commit-upgrade。
+  取值范围：chose-strategy、auto-upgrade、auto-rollback和commit-upgrade。
 
--   -l
+- -S
 
-    用于记录升级或回滚过程中的日志信息。
+  升级状态查询。
 
-    取值范围：任意存在的可访问的绝对路径。
+- -l
 
-    默认值：/var/log/gaussdb/用户名/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log
+  用于记录升级或回滚过程中的日志信息。
 
--   -?, --help
+  取值范围：任意存在的可访问的绝对路径。
 
-    显示帮助信息。
+  默认值：/var/log/gaussdb/用户名/om/gs\_upgradectl-YYYY-MM-DD\_hhmmss.log
 
--   -V, --version
+- -?, --help
 
-    显示版本号信息。
+  显示帮助信息。
 
--   -X
+- -V, --version
 
-    指定openGauss配置文件。
+  显示版本号信息。
 
-    取值范围：xml文件的存储路径。
+- -X
 
--   --grey
+  指定openGauss配置文件。
 
-    使用灰度升级方式来进行升级操作。
+  取值范围：xml文件的存储路径。
 
--   -h
-    升级部分指定节点，必须与--grey连用。
+- --grey
 
-    Value range: 单节点 or 多节点
+  使用灰度升级方式来进行升级操作。
 
--   --continue
+- -h
+  升级部分指定节点，必须与--grey连用。
 
-    升级剩余节点, 必须与--grey连用。
+  Value range: 单节点 or 多节点
 
--   --force
+- --continue
 
-    当openGauss状态不正常，无法支持正常回滚时，用此参数进行强制回滚操作 (6.0.0版本开始强制回滚参数废弃不在维护)。
+  升级剩余节点, 必须与--grey连用。
+
+- --force
+
+  当openGauss状态不正常，无法支持正常回滚时，用此参数进行强制回滚操作 (6.0.0版本开始强制回滚参数废弃不在维护)。
 
 
 ## 示例<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
@@ -255,7 +267,7 @@ Successfully Cleaned old install path.
 Commit binary upgrade succeeded.
 ```
 
-**示例五**：使用gs\_upgradectl脚本执行指定节点升级。.
+**示例五**：使用gs\_upgradectl脚本执行指定节点升级。
 
 升级部分指定节点
 ```
@@ -330,6 +342,7 @@ Successfully upgrade all nodes.
 ```
 
 **示例六**：使用gs\_upgradectl脚本执行集群管理组件增量升级。
+
 ```
 gs_upgradectl -t upgrade-cm --upgrade-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
 Start ot perform the upgrade of CM component in cluster.
@@ -348,3 +361,23 @@ Cluster state is : [Normal]
 Cluster state is : [Normal]
 The cluster status check is available.
 Upgrade CM component successfully.
+
+```
+
+**示例七**：使用gs_upgradectl脚本执行升级状态查询。
+
+```
+gs_upgradectl -S show-step
+doShowUpgradeStep in UpgradeImpl
+Cluster Nodes are ['node1', 'node2']. 
+Successfully execute command on all nodes.
+
+Output:
+[SUCCESS] node1:
+gsql (openGauss 6.0.0-RC1 build ed7f8e37) compiled at 2024-03-31 11:59:31 commit 0 last mr  
+[SUCCESS] node2:
+gsql (openGauss 6.0.0-RC1 build ed7f8e37) compiled at 2024-03-31 11:59:31 commit 0 last mr  
+
+Cluster Not in Upgrading or have been run `upgrade-commit`.
+```
+

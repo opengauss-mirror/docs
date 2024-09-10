@@ -14,7 +14,7 @@
 -   在一张已经存在的表上删除列。
 
     ```
-    ALTER TABLE table_name DROP COLUMN column_name;
+    ALTER TABLE table_name DROP [ COLUMN ] column_name;
     ```
 
 -   修改表的字段类型。
@@ -130,7 +130,7 @@ openGauss=# SELECT * FROM customer_t1;
 
 -   修改列数据类型
 
-    修改列c的数据类型character\(8\) 为character\(12\)。
+    修改列`c_last_name`的数据类型character\(8\) 为character\(12\)。
 
     ```
     openGauss=# ALTER TABLE customer_t1 MODIFY c_last_name character(12);
@@ -229,5 +229,4 @@ openGauss=# SELECT * FROM customer_t1;
               4320 | tpcds         | Lily         |             |   2000
     (10 rows)
     ```
-
 

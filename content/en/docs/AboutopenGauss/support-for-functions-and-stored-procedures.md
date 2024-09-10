@@ -20,11 +20,15 @@ openGauss  supports functions and stored procedures compliant with the SQL stand
 
 ## Enhancements<a name="section28788730"></a>
 
-None
+Support for nested arrays in PL/SQL.
+
+Support for using default argument values for cursors in PL/SQL.
 
 ## Constraints<a name="section06531946143616"></a>
 
-None
+Not supportted to call functions by a nested array's array-type element referred by suscripts.
+
+Not supportted to assign a nested array's array-type element directly.
 
 ## Dependencies<a name="section57771982"></a>
 

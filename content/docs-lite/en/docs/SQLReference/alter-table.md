@@ -228,6 +228,7 @@
         ```
         [ CONSTRAINT constraint_name ]
             { UNIQUE | PRIMARY KEY } USING INDEX index_name
+            [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
             [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
             [ COMMENT 'text' ]
 
@@ -486,6 +487,13 @@
     -   **CASCADE**: deletes any row that references the deleted row from the new table, or update the field value of the referenced row in the new table to the new value of the referenced column.
     -   **SET NULL**: sets the referenced field to  **NULL**.
     -   **SET DEFAULT**: sets referenced fields to their default values.
+
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+	-   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
 -   **DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE**
 
