@@ -50,6 +50,7 @@ headless: true
          	-   [堆表支持预读]({{< relref "./docs/AboutopenGauss/堆表支持预读.md" >}})
          	-   [开箱即用]({{< relref "./docs/AboutopenGauss/开箱即用.md" >}})
          	-   [用户态网络]({{< relref "./docs/AboutopenGauss/用户态网络.md" >}})
+            -   [非资源池化主备同步加速]({{< relref "./docs/AboutopenGauss/非资源池化主备同步加速.md" >}})
 	    -   [高可用]({{< relref "./docs/AboutopenGauss/高可用.md" >}})
 	    	-   [主备机]({{< relref "./docs/AboutopenGauss/主备机.md" >}})
 	    	-   [逻辑复制]({{< relref "./docs/AboutopenGauss/逻辑复制.md" >}})
