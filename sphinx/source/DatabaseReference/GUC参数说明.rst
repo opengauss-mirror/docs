@@ -38,7 +38,6 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/定时任务
     ../content/zh/docs/DatabaseReference/线程池
     ../content/zh/docs/DatabaseReference/备份恢复
-    ../content/zh/docs/DatabaseReference/Undo
     ../content/zh/docs/DatabaseReference/DCF参数设置
     ../content/zh/docs/DatabaseReference/闪回相关参数
     ../content/zh/docs/DatabaseReference/回滚相关参数

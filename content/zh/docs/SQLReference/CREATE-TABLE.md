@@ -665,6 +665,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
   这两个关键字设置该约束是否可推迟。一个不可推迟的约束将在每条命令之后马上检查。可推迟约束可以推迟到事务结尾使用SET CONSTRAINTS命令检查。缺省是NOT DEFERRABLE。目前，UNIQUE约束、主键约束、外键约束可以接受这个子句。所有其他约束类型都是不可推迟的。
 
+    >![](public_sys-resources/icon-note.png) **说明：** Ustore表不支持 DEFERRABLE 以及 INITIALLY  DEFERRED 约束。
 
 - **COMMENT text**
 

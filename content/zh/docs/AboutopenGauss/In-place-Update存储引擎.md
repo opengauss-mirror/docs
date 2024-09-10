@@ -44,13 +44,12 @@ Ustore 是 openGauss 内核新增的一种存储模式，其最大程度结合�
 </table>
 
 
-相较于 Astore ，虽然同样是采取分离存储的版本存储策略，但 Ustore 的版本存储更加灵活。由于取消了 Undo 日志，转而采用增量日志存储的方式，将每次更新操作的增量数据存储到独立的日志文件中。历史版本不再直接保存在主数据结构中，而是通过增量日志进行维护，使得数据更新更加高效，减少了数据迁移的开销。同时，由于对日志结构的优化， Ustore 可以在一定程度上减少磁盘 I/O 操作，提升存储效率。
+相较于 Astore ，Ustore 将最新版本的“有效数据”和历史版本的“垃圾数据”分离存储。将最新版本的“有效数据”存储在数据页面上，并单独开辟出一段 Undo 空间，用于统一历史版本的“垃圾数据”，因此数据空间不会由于频繁更新而膨胀，“垃圾数据”集中回收效率更高。Ustore 存储引擎采用 NUMA-Aware 的 Undo 一系统可以在多核平台上有效扩展；同时采用多版本索引技术，解决索引清理问题，有效提升了存储空间的回收复用效率。
 
 **图 1**  Ustore框架图<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
-![](figures/UstoreStructe.png "Ustore框架图") 
-
--   Ustore 的设计重点是提升写入性能，尤其是在高并发和高更新负载的场景下。由于去除了 Undo 日志，减少了回滚和版本管理的复杂性， Ustore 在事务的提交、回滚、以及历史版本管理上都表现出更高的效率。同时，增量日志结构的引入，使得数据更新更加精细化，进一步提升了写性能。
--   Ustore 通过增量日志和 WAL 日志的组合，实现了更加高效的数据恢复。增量日志直接记录数据变更，使得恢复过程可以更快速地定位和恢复数据一致性。
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/UstoreStructe.png" height=600px style="margin:auto;">
+</div>
 
 
 ## Ustore主要功能模块<a name="section1359382119297"></a>
@@ -107,6 +106,7 @@ Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使
     <img src="figures/UstorePage.png" height=600px style="margin:auto;">
 </div>
 
+
 ## Ustore的多版本管理<a name="section101449415302"></a>
 
 Ustore 多版本管理方式基于 MVCC 技术，确保在高并发的环境下的数据一致性和事务的隔离性。 Ustore 的多版本管理主要涉及以下几个方面的内容：
@@ -145,7 +145,9 @@ Undo 空间需要回收回滚记录来保证 Undo 空间不会无限膨胀，一
 Undo 空间的回收过程如图 4 所示：
 
 **图 4**  Undo 回收过程<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574413"></a>   
-![](figures/undoRecycleProcedure.png "Undo 回收过程")
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/undoRecycleProcedure.png" height=600px style="margin:auto;">
+</div>
 
 如上图所示，UndoZone1 中回收到小于 oldestXmin 的已提交事务 16068，UndoZone2 中回收到16050，UndoZone m 回收到 16056，UndoZone n 回收到事务 16012，而事务 16014 待回滚但未发生回滚，因此 UndoZone n 回收事务 ID 上限只到16014.其他 zone 的上限是 oldestXmin，oldestXidInUndo 会取所有 Undozone 上的上限最小值，因此 oldestXidInUndo 等于 16014。
 
@@ -164,7 +166,9 @@ Ustore 在获取元组时，会先检查对应的事务目录。事务目录分�
 下图为一元组查询过程的例子：
 
 **图 5**  元组查询过程<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574513"></a>   
-![](figures/tupleSearch.png "元组查询过程")
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/tupleSearch.png" height=700px style="margin:auto;">
+</div>
 
 
 ### 多版本索引
@@ -178,7 +182,9 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 
 
 **图 6**  UBtree结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
-![](figures/UBTREEStructe.png "UBtree结构")
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/UBTREEStructe.png" height=400px style="margin:auto;">
+</div>
 
 
 #### 索引页面组织
@@ -186,7 +192,9 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 多版本索引层次结构与 Btree 索引基本相同，非叶子节点与 Btree 索引保持一致，仅页尾的Special字段有所不同，下图为UBtree叶子页面结构：
 
 **图 7**  UBtree叶子页面结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574713"></a>  
-![](figures/ubtreeTreePage.png "UBtree叶子页面结构")
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/ubtreeTreePage.png" style="margin:auto;">
+</div>
 
 
 与Astore堆页面中维护版本信息的方法类似，UBtree 的叶子节点中每个索引元组尾部都附加了对应的 xmin 和 xmax。索引只是用于加速搜索的结构，本身不与历史版本的概念强相关，仅通过xmin 来标识这个索引元组是从什么时候开始有效的，又是从什么时候被删除的，而不是像astore中堆元组一样会有指向旧版本元组的指针。
@@ -214,7 +222,9 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 -   **Update操作**：对于 Ustore 而言，数据更新对 UBtree 索引列的操作也与 Astore 有所不同，数据更新包含两种情况：索引列和非索引列更新，下图为 UBtree 在数据发生更新时的处理流程：
 
 **图 9**  update 操作<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574913"></a>  
-![](figures/update.png "update 操作")
+<div style="display:flex;justfy-content:center;">  
+    <img src="figures/update.png" height=600px style="margin:auto;">
+</div>
 
 在非索引列更新的情况下，索引不发生任何变化，index tuple 仍指向第一次插入的 data tuple，Uheap 不会插入新的 data tuple，而是修改当下 data tuple 并将历史数据存入Undo中。
 
