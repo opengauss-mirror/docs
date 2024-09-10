@@ -25,8 +25,8 @@ openGauss正常运行。
     其中postgres为需要连接的数据库名称，8000为数据库主节点的端口号。请根据实际情况替换。另外，也可以使用如下任一命令连接数据库。
 
     ```
-    gsql postgres://omm:Gauss_234@127.0.0.1:8000/postgres -r
-    gsql -d "host=127.0.0.1 port=8000 dbname=postgres user=omm password=Gauss_234"
+    gsql postgres://omm:********@127.0.0.1:8000/postgres -r
+    gsql -d "host=127.0.0.1 port=8000 dbname=postgres user=omm password=********"
     ```
 
     连接成功后，系统显示类似如下信息：
