@@ -22,3 +22,4 @@
     ../content/zh/docs/AboutopenGauss/堆表支持预读
     ../content/zh/docs/AboutopenGauss/开箱即用
     ../content/zh/docs/AboutopenGauss/用户态网络
+    ../content/zh/docs/AboutopenGauss/非资源池化主备同步
