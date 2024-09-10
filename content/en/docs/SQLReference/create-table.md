@@ -52,6 +52,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
           [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     [ COMMENT {=| } 'text' ]
     ```
@@ -73,6 +74,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
       FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
           [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
       PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     [ COMMENT {=| } 'text' ]
     ```
@@ -484,6 +486,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   **CASCADE**: deletes any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.
     -   **SET NULL**: sets the referencing column\(s\) to  **NULL**.
     -   **SET DEFAULT**: sets the referencing column\(s\) to their default values.
+
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+	-   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 

@@ -77,6 +77,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
       PRIMARY KEY index_parameters |
       REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
             [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
     [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
     [ COMMENT {=| } 'text' ]
     ```
@@ -468,6 +469,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     Specifies that a column or columns of a table can contain only unique \(non-duplicate\) and non-null values.
 
     Only one primary key can be specified for a table.
+
+-   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+
+	-   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
 -   **DEFERRABLE | NOT DEFERRABLE**
 
