@@ -673,7 +673,7 @@
     -   INITIALLY IMMEDIATE：那么每条语句之后就立即检查它。
     -   INITIALLY DEFERRED：只有在事务结尾才检查它。
 
-
+    >![](public_sys-resources/icon-note.png) **说明：** Ustore表不支持新增 DEFERRABLE 以及 INITIALLY  DEFERRED 约束。
 
 -   **PARTIAL CLUSTER KEY**
 
