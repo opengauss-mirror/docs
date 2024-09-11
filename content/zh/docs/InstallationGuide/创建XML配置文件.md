@@ -46,7 +46,7 @@
     <PARAM name="gaussdbToolPath" value="/opt/huawei/install/om" />
   <!--数据库core文件目录-->
     <PARAM name="corePath" value="/opt/huawei/corefile"/>
-  <!-- 节点IP，与nodeNames一一对应 -->
+  <!-- 节点IP，与nodeNames一一对应，所有节点ip类型要一致（ipv4或ipv6）-->
     <PARAM name="backIp1s" value="192.168.0.1,192.168.0.2"/>
     <!-- 是否开启数据库节点自选主 -->
     <PARAM name="enable_dcf" value="on"/>
@@ -106,6 +106,7 @@
 >-   配置dcf\_config时，角色的配置有leader，follower，passive，logger，其中可投票的角色有leader，follower，logger，配置角色组网时，可投票的角色不能少于3个，因此dcf模式下至少需要三个节点。
 >-   资源池化中请谨慎配置所有包含磁盘信息的参数，安装时工具会低格所有参数中配置的磁盘，所有参数中的磁盘不能重复。
 >-   资源池化中的ip和dn的数据ip保持一致，dss的端口是db端口+10，dms的端口是db端口+20。
+>-   om支持ipv6地址安装管理，所有节点的ip类型需一致（ipv4或者ipv6）。
 
 **表 1**  参数说明
 
@@ -546,6 +547,7 @@ CM支持两节点部署模式
         <!-- 数据库core文件目录-->
         <PARAM name="corePath" value="/opt/huawei/corefile" />
         <!-- 节点IP，与数据库节点名称列表一一对应 -->
+        <!-- 如果用ipv6 替换ipv4地址即可 如：<PARAM name="backIp1s" value="2407:xxxx:xxxx:xxxx:xxxx:xxxx:caa:2335"/> -->
         <PARAM name="backIp1s" value="192.168.0.1"/> 
     </CLUSTER>
     <!-- 每台服务器上的节点部署信息 -->
@@ -558,6 +560,7 @@ CM支持两节点部署模式
             <PARAM name="azName" value="AZ1"/>
             <PARAM name="azPriority" value="1"/>
             <!-- 节点1的IP，如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP -->
+            <!-- 用ipv6安装部署时 换上ipv6地址即可，后面xml文件示例也是同样操作 -->
             <PARAM name="backIp1" value="192.168.0.1"/>
             <PARAM name="sshIp1" value="192.168.0.1"/>
                
