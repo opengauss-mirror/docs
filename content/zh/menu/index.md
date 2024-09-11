@@ -135,6 +135,7 @@ headless: true
 			-   [支持特殊浮点数]({{< relref "./docs/AboutopenGauss/支持特殊浮点数.md" >}})
 	    	-   [事件触发器]({{< relref "./docs/AboutopenGauss/事件触发器.md" >}})
 			-   [支持UWAL特性]({{< relref "./docs/AboutopenGauss/支持UWAL特性.md" >}})
+			-   [高级包]({{< relref "./docs/AboutopenGauss/高级包.md" >}})
 	    -   [应用开发接口]({{< relref "./docs/AboutopenGauss/应用开发接口.md" >}})
 	    	-   [支持标准SQL]({{< relref "./docs/AboutopenGauss/支持标准SQL.md" >}})
 	    	-   [支持标准开发接口]({{< relref "./docs/AboutopenGauss/支持标准开发接口.md" >}})
