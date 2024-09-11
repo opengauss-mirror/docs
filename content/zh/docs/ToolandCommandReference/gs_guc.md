@@ -4,6 +4,8 @@
 
 目前openGauss配置文件（“postgresql.conf”、“pg\_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_guc目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
+
 gs\_guc工具由操作系统用户omm执行。
 
 -   “gs\_guc-current.log”

@@ -23,6 +23,7 @@ gs\_dumpall工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQ
 
 gs\_dumpall工具支持使用过程中打印进度。会依次对每个数据库进行转存，每个数据库的流程中都与使用gs\_dump时的进度打印相同。首先在对数据库的全局扫描阶段会打印扫描流程进行到具体哪一步。在转存数据阶段会根据已经完成的对象数比上总对象数打印进度。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_dumpall目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
 
 >![](public_sys-resources/icon-notice.png) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。

@@ -4,6 +4,8 @@
 
 openGauss提供了gs\_encrypt工具为输入的明文字符串进行加密操作。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_encrypt目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
+
 ## 语法<a name="section45387719164452"></a>
 
 ```
