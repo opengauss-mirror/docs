@@ -132,7 +132,6 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
                 <!-- 节点IP，与数据库节点名称列表一一对应 -->
                 <PARAM name="backIp1s" value="10.0.0.10,10.0.0.20"/>
                 <PARAM name="clusterType" value="single-inst"/>
-                <PARAM name="GaussVT" value="Fusion"/>
                 <PARAM name="enable_dss" value="on"/>
                 <PARAM name="dss_home" value="/opt/huawei/install/dss_home"/>
                 <PARAM name="dss_vg_info" value="data:/dev/sda,log0:/dev/sdb"/>
@@ -487,6 +486,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
         cm_ctl set --param --server -k ss_double_cluster_mode=1
         cm_ctl reload --param --agent
+        cm_ctl reload --param --server
 
         4. 在原备集群首备节点执行
         gs_ctl failover [-D $PGDATA]
