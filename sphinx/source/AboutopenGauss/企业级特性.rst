@@ -24,3 +24,4 @@
     ../content/zh/docs/AboutopenGauss/支持OLTP场景数据压缩
     ../content/zh/docs/AboutopenGauss/支持特殊浮点数
     ../content/zh/docs/AboutopenGauss/事件触发器
+    ../content/zh/docs/AboutopenGauss/高级包
