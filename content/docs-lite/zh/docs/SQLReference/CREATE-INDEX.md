@@ -24,6 +24,7 @@
 -   被授予CREATE ANY INDEX权限的用户，可以在public模式和用户模式下创建索引。
 -   如果表达式索引中调用的是用户自定义函数，按照函数创建者权限执行表达式索引函数。
 -   仅支持在B兼容性数据库下指定COMMENT。
+-   当前不支持在JSONB类型的数据上创建UBtree索引。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 

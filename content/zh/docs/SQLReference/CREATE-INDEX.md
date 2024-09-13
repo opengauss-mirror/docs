@@ -34,6 +34,7 @@
 -   GLOBAL索引，最大支持31列。
 -   如果alter语句不带有UPDATE GLOBAL INDEX，那么原有的GLOBAL索引将失效，查询时将使用其他索引进行查询；如果alter语句带有UPDATE GLOBAL INDEX，原有的GLOBAL索引仍然有效，并且索引功能正确。
 -   对于分区表的local unique索引，索引键必须包含所有的分区键。
+-   当前不支持在JSONB类型的数据上创建UBtree索引。
 
 ## 语法格式<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 

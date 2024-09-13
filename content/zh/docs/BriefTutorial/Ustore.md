@@ -29,12 +29,12 @@ Ustore存储引擎可以在数据频繁更新场景下性能依旧稳如泰山�
 -   不支持 compression 。
 -   不支持 FOR No Key Update 和 FOR KEY SHARE 。
 -   不支持 compress as 。
--   不支持段页式表
+-   不支持段页式表。
 -   不支持 concurrent 索引
 -   在 DELETE 语句中不能与其他存储类型一起使用。
--   不支持列存表
--   不支持 MOT 外表
--   不支持 cursor for update/share
+-   不支持列存表。
+-   不支持 MOT 外表。
+-   不支持 cursor for update/share。
 
 ## 使用指导<a name="section2190298487"></a>
 
