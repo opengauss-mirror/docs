@@ -94,7 +94,7 @@
 
     >![](public_sys-resources/icon-caution.gif) **注意：** 
     >```
-    >USTORE存储引擎表不支持在事务块中执行ALTER TABLE MERGE PARTITIONS的操作。
+    >Ustore存储引擎表不支持在事务块中执行ALTER TABLE MERGE PARTITIONS的操作。
     >```
 
     -   modify\_clause子语法用于设置分区索引是否可用。

@@ -68,9 +68,9 @@ REINDEX CONCURRENTLY这种形式的重建索引不能在事务块中执行。
 
 
     -   普通REINDEX命令可以在事务内执行，但是REINDEX CONCURRENTLY不可以在事务内执行。
-    -   列存表、ustore表、临时表、全局分区索引不支持CONCURRENTLY方式重建索引。
+    -   列存表、Ustore表、临时表、全局分区索引不支持CONCURRENTLY方式重建索引。
     -   REINDEX SYSTEM CONCURRENTLY不会执行任何操作，因为系统表不支持在线重建索引。
-    -   REINDEX DATABASE CONCURRENTLY执行时会跳过系统表、列存表、ustore表、临时表。
+    -   REINDEX DATABASE CONCURRENTLY执行时会跳过系统表、列存表、Ustore表、临时表。
     -   在线重建普通表会跳过“非法”（invalid）的普通索引和“不可用”（unusable）的普通索引。
     -   在线重建普通索引会将“非法”索引变为“合法”（valid），将“不可用”索引变为“可用”（usable），除了toast表的“非法”索引。
     -   在线重建分区表会跳过“不可用”分区表索引和含有“不可用”分区索引的分区表索引。

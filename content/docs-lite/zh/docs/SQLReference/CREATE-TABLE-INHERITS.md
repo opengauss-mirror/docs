@@ -21,7 +21,7 @@
 
 -   继承表功能和mysql的多表更新功能冲突，不可以在B库建继承表。
 -   不支持继承和分区表或者MOT表（及其他外表）同时存在的情况。
--   支持ustore和段页式，但这两种情况不能使用"like fathername including all"语句。
+-   支持Ustore和段页式，但这两种情况不能使用"like fathername including all"语句。
 -   列存不支持继承表。
 
 ## 语法格式<a name="zh-cn_topic_0283136662_zh-cn_topic_0237122118_zh-cn_topic_0059777601_s58148dd6e63843eebaa64756e4b093c9"></a>

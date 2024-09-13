@@ -192,7 +192,7 @@
 >
 >   在逻辑复制场景，解析该表的UPDATE和DELETE操作语句时，解析出的旧元组由以此方法记录的信息组成。对于有主键表该选项可设置为DEFAULT或FULL。对于无主键表该选项需设置为FULL，否则解码时旧元组将解析为空。一般场景不建议设置为NOTHING，旧元组会始终解析为空。
 >
->   即使指定DEFAULT或USING INDEX，当前ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对ustore表，选项NOTHING无效，实际效果等同于FULL。
+>   即使指定DEFAULT或USING INDEX，当前Ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对Ustore表，选项NOTHING无效，实际效果等同于FULL。
 >
 >- **COMMENT {=| } 'text'**
 >
@@ -504,7 +504,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
     >
     >在ADD CONSTRAINT操作中：
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
-    >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
+    >-   在B模式下，未指定USING method时，对于Astore的存储方式，默认索引方法为btree；对于Ustore的存储方式，默认索引方法为ubtree。
 
 -   **ASC | DESC**
 
@@ -706,7 +706,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
     为表或索引指定一个可选的存储参数，详见[CREATE TABLE](CREATE-TABLE.md)语法相关字段的介绍。
     > ![](public_sys-resources/icon-note.png) **说明：** 
     >
-    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
+    > -   行存表支持修改行存压缩参数，包括COMPRESSTYPE、COMPRESS\_LEVEL、COMPRESS\_CHUNK_SIZE、COMPRESS_PREALLOC_CHUNKS、COMPRESS_BYTE_CONVERT、COMPRESS_DIFF_CONVERT，修改会对表做重建，修改后对原有数据、修改对已有数据、变更数据、新增数据同时生效。（仅支持Astore和Ustore下的普通表和分区表）
     > -   修改行存压缩参数时，修改后的行存压缩参数需要满足建表时各行存压缩参数的数据范围和参数间的约束。
     > -   分区表不支持修改分区级别的行存压缩参数，只能修改整个表的行存压缩属性，修改对所有分区生效。
     > -   修改行存压缩参数时会重写整个表，期间对表加八级锁。

@@ -405,14 +405,14 @@
 
 + gs\_undo\_dump\_parsepage\_mv\(relpath text, blkno bigint, reltype text, rmem boolean\)
 
-  描述：解析ustore数据表磁盘页面的页头信息，每个元组的头部信息，标识位信息以及所有可以查询到undo历史版本信息。
+  描述：解析Ustore数据表磁盘页面的页头信息，每个元组的头部信息，标识位信息以及所有可以查询到undo历史版本信息。
 
   返回值类型：text
 
   备注：必须是系统管理员或者运维管理人员才能执行此函数。
 
   >![](public_sys-resources/icon-note.png) **说明：** 
-  >该接口当前仅支持USTORE数据表。
+  >该接口当前仅支持Ustore数据表。
 
   示例：
   ```sql
@@ -439,7 +439,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p16994183413569"><a name="p16994183413569"></a><a name="p16994183413569"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p54991729453"><a name="p54991729453"></a><a name="p54991729453"></a>ustore表数据文件相对路径，相对路径格式为：tablespace name/database oid/relfilenode，例如base/16603/16384, 表对应数据文件的相对路径查找可以通过pg_relation_filepath('tablename')查询。</p>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p54991729453"><a name="p54991729453"></a><a name="p54991729453"></a>Ustore表数据文件相对路径，相对路径格式为：tablespace name/database oid/relfilenode，例如base/16603/16384, 表对应数据文件的相对路径查找可以通过pg_relation_filepath('tablename')查询。</p>
     </td>
     </tr>
     <tr id="row17994123411562"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p28201445235"><a name="p28201445235"></a><a name="p28201445235"></a>输入参数</p>
@@ -457,7 +457,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="15.32%" headers="mcps1.2.5.1.3 "><p id="p188631948943"><a name="p188631948943"></a><a name="p188631948943"></a>text</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p1061215817105"><a name="p1061215817105"></a><a name="p1061215817105"></a>表类型，目前仅支持ustore数据表，取值为uheap。</p>
+    <td class="cellrowborder" valign="top" width="61.019999999999996%" headers="mcps1.2.5.1.4 "><p id="p1061215817105"><a name="p1061215817105"></a><a name="p1061215817105"></a>表类型，目前仅支持Ustore数据表，取值为uheap。</p>
     </td>
     </tr>
     <tr id="row179951634105614"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p09953342561"><a name="p09953342561"></a><a name="p09953342561"></a>输入参数</p>
