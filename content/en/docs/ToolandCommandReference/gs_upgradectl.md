@@ -48,43 +48,43 @@ Grayscale upgrade supports progress printing, and the progress is printed accord
 
 - Display help information.
 
-  ```
+  ```shell
   gs_upgradectl -? | --help
   ```
 
 - Display version information.
 
-  ```
+  ```shell
   gs_upgradectl -V | --version
   ```
 
 - Select an upgrade policy.
 
-  ```
+  ```shell
   gs_upgradectl -t chose-strategy [-l LOGFILE]
   ```
 
 - Automatically upgrade openGauss
 
-  ```
+  ```shell
   gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
   ```
 
 - Automatically roll back the upgrade.
 
-  ```
+  ```shell
   gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE] [--force]
   ```
 
 - Upgrade status query.
 
-  ```
+  ```shell
   gs_upgradectl -S show-step
   ```
 
 - Submit the upgrade project.
 
-  ```
+  ```shell
   gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
   ```
 
@@ -150,7 +150,7 @@ Grayscale upgrade supports progress printing, and the progress is printed accord
 
 Example 1: Use the new package to perform pre-upgrade operations.
 
-```
+```shell
 ./gs_preinstall -U roach -G users -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Parsing the configuration file.
 Successfully parsed the configuration file.
@@ -201,7 +201,7 @@ Preinstallation succeeded.
 
 Example 2: Execute the  **gs\_upgradectl**  script to perform the upgrade.
 
-```
+```shell
 gs_upgradectl -t upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
@@ -237,7 +237,7 @@ Once the check done, please execute following command to commit upgrade:
 
 Example 3: Execute the  **gs\_upgradectl**  script to perform automatic rollback on the upgrade.
 
-```
+```shell
 gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
@@ -262,7 +262,7 @@ Rollback succeeded.
 
 Example 4: Execute the  **gs\_upgradectl**  script to submit the upgrade in in-place mode.
 
-```
+```shell
 gs_upgradectl -t commit -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
@@ -272,7 +272,7 @@ Commit binary upgrade succeeded.
 Example 5: Execute the  **gs\_upgradectl**  script to perform rolling upgrade.
 
 upgrade specified node
-```
+```shell
 gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey -h hostname0
 Static configuration matched with old static configuration files.
 Successfully set upgrade_mode to 0.
@@ -308,7 +308,7 @@ The nodes ['hostname0']ve been successfully upgraded.Then can upgrade the remain
 ```
 
 upgrade the remaining node
-```
+```shell
 gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey --continue
 Static configuration matched with old static configuration files.
 Checking upgrade environment.
@@ -345,7 +345,7 @@ Successfully upgrade all nodes.
 
 Example 6: Use the gs_upgradectl script to perform incremental upgrades of cluster management components.
 
-```
+```shell
 gs_upgradectl -t upgrade-cm --upgrade-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
 Start ot perform the upgrade of CM component in cluster.
 Ready to transform CM package to all nodes.
@@ -367,7 +367,7 @@ Upgrade CM component successfully.
 
 Example 7: Use gs_upgradectl script to perform an upgrade status query.
 
-```
+```shell
 gs_upgradectl -S show-step
 doShowUpgradeStep in UpgradeImpl
 Cluster Nodes are ['node1', 'node2']. 
