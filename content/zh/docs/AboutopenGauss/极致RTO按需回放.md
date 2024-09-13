@@ -36,11 +36,13 @@
 ## 特性约束
 
 -   本特性仅支持在资源池化部署下使用。
--   在对外提供服务后，数据库仍在后台进行回放，直到全部内容完成后退出回放，该阶段称为“按需回放阶段”。按需回放阶段仅支持部分类型SQL语法（INSERT/UPDATE/DELETE/SELECT/SET/SHOW）及部分ddl(详见[特性增强](../AboutopenGauss/极致RTO按需回放.md#特性增强))，该状态请使用pg_controldata工具查询。
+-   在对外提供服务后，数据库仍在后台进行回放，直到全部内容完成后退出回放，该阶段称为“按需回放阶段”。按需回放阶段仅支持部分类型SQL语法（INSERT/UPDATE/DELETE/SELECT/SET/SHOW）及部分DDL(详见[特性增强](../AboutopenGauss/极致RTO按需回放.md#特性增强))，该状态请使用pg_controldata工具查询。
 -   按需回放阶段禁用autovacuum。
 -   实时构建能力仅在备机failover场景生效。
 -   当前不支持多备机情况下，优先选择实时构建节点升主。
 -   极致RTO按需回放性能会受磁阵环境影响而波动。
+-   本功能会消耗较多的内存空间，仅建议在内存充足且对RTO时间敏感的系统上使用，其余系统建议使用极致RTO回放(详见[极致RTO](../AboutopenGauss/极致RTO.md))。
+-   资源池化下回放模式选择，请参考[资源池化高可用系统配置](../DatabaseOMGuide/资源池化高可用系统配置.md)
 
 ## 依赖关系
 
