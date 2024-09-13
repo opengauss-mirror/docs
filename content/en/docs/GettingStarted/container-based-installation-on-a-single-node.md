@@ -16,16 +16,16 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >
-> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-***X.X.X***-CentOS-64bit.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
+> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
 >
 > -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
 >    ```
     ## Modify the SHA-256 verification file.
-    cd /soft/openGauss-server/docker/dockerfiles/3.0.0
-    sha256sum openGauss-3.0.0-CentOS-64bit.tar.bz2 > sha256_file_amd64 
+    cd /soft/openGauss-server/docker/dockerfiles/6.0.0
+    sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
 >   ```
 
-> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/3.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/6.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
 
 >    ```
    wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
@@ -39,7 +39,7 @@ Usage: buildDockerImage.sh -v [version] [-i] [Docker build option]
 Builds a Docker Image for openGauss
 Parameters:
    -v: version to build
-       Choose one of: 3.0.0
+       Choose one of: 6.0.0
    -i: ignores the SHA-256 checksums
 
 LICENSE UPL 1.0
@@ -74,26 +74,26 @@ Specifies the database port. The default value is  **5432**.
 ## Starting an Instance<a name="en-us_topic_0283136491_section148176206211"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 opengauss:2.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 opengauss:6.0.0
 ```
 
 ## Connecting to the Database from the OS Layer<a name="en-us_topic_0283136491_section53753141964"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -p8888:5432 opengauss:2.0.0
-$ gsql -d postgres -U gaussdb -W'Enmo@123' -h your-host-ip -p8888
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -p8888:5432 opengauss:6.0.0
+$ gsql -d postgres -U gaussdb -W'Enmo@123' -h your-host-ip -p8888  # OS need install gsql client
 ```
 
 ## Data Persistence<a name="en-us_topic_0283136491_section973016196416"></a>
 
 ```
-$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -v /opengauss:/var/lib/opengauss opengauss:2.0.0
+$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -v /opengauss:/var/lib/opengauss opengauss:6.0.0
 ```
 
 >**Note**
 >
->1. For details about how to use a database of another version to build a container image, see the configuration file in `openGauss-server/docker/dockerfiles/3.0.0`. You only need to change the version number to the corresponding version number.
+>1. For details about how to use a database of another version to build a container image, see the configuration file in `openGauss-server/docker/dockerfiles/6.0.0`. You only need to change the version number to the corresponding version number.
 >
->2. If the `openeuler-20.03-lts:latest` image cannot be downloaded, download the container image package `openEuler-docker.aarch64.tar.xz` from the OpenEuler official website `http://121.36.97.194/openEuler-20.03-LTS/docker_img/aarch64/` and use `docker load -i openEuler-docker.aarch64.tar.xz` to import the package to the local image list.
+>2. If the `openeuler-20.03-lts:latest` image cannot be downloaded, download the container image package `openEuler-docker.aarch64.tar.xz` from the OpenEuler official website `https://repo.openeuler.org/openEuler-20.03-LTS/docker_img/aarch64/` and use `docker load -i openEuler-docker.aarch64.tar.xz` to import the package to the local image list.
 >
 >3. During the build, if the yum source download times out, check the proxy. You can also `--network host` to the end of the `docker build` command in the `buildDockerImage.sh` script to use the network of the host machine.
