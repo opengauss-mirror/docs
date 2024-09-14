@@ -56,7 +56,7 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 将openGauss提供的ODBC DRIVER（psqlodbcw.so）配置到数据源中便可使用。配置数据源需要配置“odbc.ini”和“odbcinst.ini”两个文件（在编译安装unixODBC过程中生成且默认放在“/usr/local/etc”目录下），并在服务器端进行配置。
 
-1.  获取unixODBC-2.3.9源码包。
+1.  获取unixODBC-x.x.x源码包。
 
     获取参考地址：http://www.unixodbc.org/download.html
 
