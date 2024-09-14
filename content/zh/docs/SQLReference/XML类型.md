@@ -51,7 +51,7 @@ openGauss= SELECT xmlconcat(xmlcomment('hello'),
 >    -   表达式索引。
 >    -   XML类型的值是根据"xml option"会话配置参数决定的。
 >    -   支持gs_dump导出和gs_restore导入操作。
->    -   并行查询，支持astore和ustore存储引擎。
+>    -   并行查询，支持Astore和Ustore存储引擎。
 >    -   作为自定义函数的入参，出参，自定义变量，返回值。
 >    -   作为存储过程的入参，出参，自定义变量，返回值。支持自治事务的存储过程。
 >    -   字符处理函数quote_literal(value anyelement)、quote_nullable(value anyelement)。
