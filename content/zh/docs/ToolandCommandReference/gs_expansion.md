@@ -28,8 +28,6 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 - 使用root或普通用户执行gs_expansion命令。
 
-- 如果使用普通用户执行gs_expansion命令，需要手动将节点的映射关系写入/etc/hosts文件中，所有节点都得写入（也可以使用om提供的gs_sshexkey工具，只有在root用户下才会将映射关系写入到/etc/hosts文件中）。
-
 - 不允许同时在主节点上执行gs_dropnode命令删除其他备机。
 
 - 执行扩容命令前需要通过source命令导入主机数据库的环境变量。如果当前数据库是分离环境变量方式安装，则source导入分离的环境变量。如果未进行分离，则需要source导入子用户的.bashrc配置文件。一般该文件路径为：/home/[user]/.bashrc。

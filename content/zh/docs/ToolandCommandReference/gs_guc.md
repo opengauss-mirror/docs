@@ -106,6 +106,8 @@ gs\_guc工具由操作系统用户omm执行。
     > 
     >    -   HOSTTYPE：local \> hostssl \> hostnossl \> host。
 
+    >    -   如果预安装是通过普通用户执行的，那么-N, -I参数不支持。
+
 -   注释已经设置的客户端认证策略。若选择reload会同时发送信号量到pg\_hba.conf，即无需重启即可生效。
 
     ```

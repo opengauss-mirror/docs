@@ -164,6 +164,7 @@ headless: true
 			-   [反向全量迁移(openGauss -\> MySQL)]({{< relref "./docs/AboutopenGauss/反向全量迁移.md" >}})
 	    	-   [数据校验gs_datacheck]({{< relref "./docs/AboutopenGauss/数据校验gs_datacheck.md" >}})
 	    	-   [openGauss客户端工具DataStudio]({{< relref "./docs/AboutopenGauss/openGauss客户端工具DataStudio.md" >}})
+	    	-   [数据库安装流程解除对root用户的依赖]({{< relref "./docs/AboutopenGauss/数据库安装流程解除对root用户的依赖.md" >}})
 	    -   [中间件]({{< relref "./docs/AboutopenGauss/中间件.md" >}})
 	    	-   [分布式数据库能力]({{< relref "./docs/AboutopenGauss/分布式数据库能力.md" >}})
 	    	-   [使用kubernetes部署分布式数据库]({{< relref "./docs/AboutopenGauss/使用kubernetes部署分布式数据库.md" >}})
