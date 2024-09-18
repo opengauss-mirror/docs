@@ -111,9 +111,9 @@
     -   gin：GIN索引是倒排索引，可以处理包含多个键的值（比如数组）。
     -   gist：Gist索引适用于几何和地理等多维数据类型和集合数据类型。目前支持的数据类型有box、point、poly、circle、tsvector、tsquery、range。
     -   Psort：Psort索引。针对列存表进行局部排序索引。
-    -   ubtree：仅供ustore表使用的多版本B-tree索引，索引页面上包含事务信息，能并自主回收页面。ubtree索引默认开启insertpt功能。
+    -   ubtree：仅供Ustore表使用的多版本B-tree索引，索引页面上包含事务信息，能并自主回收页面。ubtree索引默认开启insertpt功能。
 
-    行存表（ASTORE存储引擎）支持的索引类型：btree（行存表缺省值）、hash、gin、gist。行存表（USTORE存储引擎）支持的索引类型：ubtree。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。全局临时表不支持GIN索引和Gist索引。
+    行存表（Astore存储引擎）支持的索引类型：btree（行存表缺省值）、hash、gin、gist。行存表（Ustore存储引擎）支持的索引类型：ubtree。列存表支持的索引类型：Psort（列存表缺省值）、btree、gin。全局临时表不支持GIN索引和Gist索引。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >
