@@ -90,7 +90,7 @@ UnInstallationGuide succeeded.
    cd /opt/software/openGauss/script
    ```
 
-4. 使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE。
+4. 使用gs\_postuninstall进行清理。若为环境变量分离的模式安装的数据库需要source环境变量分离文件ENVFILE；若不是环境分离的模式安装的数据库需要source普通用户家目录下的.bashrc文件。
 
    ```
    ./gs_postuninstall -U omm -X /opt/software/openGauss/cluster_config.xml --delete-user --delete-group
