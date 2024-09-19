@@ -23,7 +23,9 @@ ROWNUM（伪列），给SQL查询中满足条件的记录按顺序标号得来�
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   ROWNUM是伪列，不可作为别名，以免SQL语句出现歧义；
+-   ROWNUM是伪列，不可作为别名，以免SQL语句出现歧义;
+-   创建表时列名不可为ROWNUM。例如：create table table\_name\(rownum int\);
+-   创建类型时列名不可为ROWNUM。例如：create type type\_name\(a int, rownum int\);
 -   创建索引时不可使用ROWNUM。例如：create index index\_name on table\(rownum\);
 -   创建表时default值不可为ROWNUM。例如：create table table\_name\(id int default rownum\);
 -   Where子句中不可使用rownum的别名。例如：select rownum rn from table where rn < 5;
