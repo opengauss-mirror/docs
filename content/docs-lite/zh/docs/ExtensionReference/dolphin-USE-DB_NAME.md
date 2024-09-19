@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_s86b6c9741c7741d3976c5e358e8d5486"></a>
 
-USE db_name语句将db_name数据库作为默认（当前）数据库使用，用于后续语句。该数据库保持为默认数据库，直到语段的结尾，或者直到发布一个不同的USE语句。
+USE db_name语句将db_name的模式schema作为默认（当前）模式使用，用于后续语句。该模式保持为默认模式，直到语段的结尾，或者直到发布一个不同的USE语句。
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
@@ -18,12 +18,12 @@ USE db_name
 
 - **db_name**
 
-  ​    数据库名。
+  ​    模式名。
 
 ## 示例<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
 ```
---切换到db1库
+--切换到db1 schema
 openGauss=# USE db1;
 SET
 openGauss=# CREATE TABLE test(a text);
@@ -31,7 +31,7 @@ CREATE TABLE
 openGauss=# INSERT INTO test VALUES('db1');
 INSERT 0 1
 
---切换到db2库
+--切换到db2 schema
 openGauss=# USE db2;
 SET
 openGauss=# CREATE TABLE test(a text);
@@ -56,7 +56,7 @@ openGauss=# select a from test;
  db2
 (1 row)
 
---切换到db1库
+--切换到db1 schema
 openGauss=# USE db1;
 SET
 openGauss=# select a from test;
