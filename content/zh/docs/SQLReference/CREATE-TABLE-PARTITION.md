@@ -197,7 +197,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >
     >-   USING method仅在B模式数据库下（即sql\_compatibility = 'B'）支持，其他模式数据库下不支持。
-    >-   在B模式下，未指定USING method时，对于ASTORE的存储方式，默认索引方法为btree；对于USTORE的存储方式，默认索引方法为ubtree。
+    >-   在B模式下，未指定USING method时，对于Astore的存储方式，默认索引方法为btree；对于Ustore的存储方式，默认索引方法为ubtree。
 
 -   **ASC | DESC**
 
@@ -265,7 +265,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   COMPRESSTYPE
 
-        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持ASTORE和USTORE下的普通表和分区表）
+        行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持Astore和Ustore下的普通表和分区表）
 
         取值范围：0\~2，默认值为0。
 
@@ -310,7 +310,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
           取值范围：
 
-          -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+          -   USTORE，表示表支持Inplace-Update存储引擎。
 
           -   ASTORE，表示表支持Append-Only存储引擎。
 
@@ -340,7 +340,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     
     - segment
     
-      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持Ustore存储引擎。
     
       取值范围：on/off
     
