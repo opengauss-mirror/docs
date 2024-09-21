@@ -199,6 +199,7 @@ headless: true
             - [一主一备节点安装]({{< relref "./docs/InstallationGuide/一主一备节点安装.md" >}})
         - [容器安装]({{< relref "./docs/InstallationGuide/容器安装.md" >}})
             - [单节点安装]({{< relref "./docs/InstallationGuide/单节点安装_容器.md" >}})
+            - [一主两备安装]({{< relref "./docs/InstallationGuide/一主两备不带cm安装_容器.md" >}})
             - [CM安装]({{< relref "./docs/InstallationGuide/CM安装_容器.md" >}})
 		- [RPM安装]({{< relref "./docs/InstallationGuide/RPM安装.md" >}})
     - [企业版安装]({{< relref "./docs/InstallationGuide/企业版安装.md" >}})
