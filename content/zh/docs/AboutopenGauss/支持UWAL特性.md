@@ -36,7 +36,9 @@ UWAL特性将数据库和新硬件的特性结合，在保证数据库持久性�
 
 ## 特性约束<a name="section011116254373"></a>
 
-无。
+-   仅支持传统主备
+-   仅在最大可用模式 most_available_sync 关闭时可用
+-   仅在synchronous_commit为on时可用
 
 ## 依赖关系<a name="section12798194673710"></a>
 
