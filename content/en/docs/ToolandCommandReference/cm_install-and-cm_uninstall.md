@@ -9,6 +9,7 @@ The cm\_install tool can be used to deploy CMs in the openGauss database cluster
 -   This tool allows you to install or uninstall the CM tool when the cluster is stopped. Note that the primary node before the cluster is stopped must be the initial primary node configured in the XML file. Otherwise, after the CM tool is installed or uninstalled and started again, the host of the cluster is different from that before the cluster is stopped.
 -   If the CM tool is uninstalled when the cluster is stopped, dynamic files will be deleted after the uninstallation. However, dynamic files cannot be generated because the cluster is stopped. If necessary, run the **gs_om -t refreshconf** command to generate dynamic files after the cluster is started using gs\_om.
 -   Before using this tool, go to the **cm\_tool** directory where this tool is located.
+-   If after executing cm\_install, the term value of the host is checked to be 0, in order to ensure normal operation of subsequent services, the user needs to follow the prompt and execute **cm_ctl stop && cm_ctl start** to restart the service.
 
 ## Prerequisites
 
