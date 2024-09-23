@@ -1840,7 +1840,7 @@ Statistics information functions are divided into the following two categories: 
     >![](public_sys-resources/icon-note.gif) **NOTE:** 
     >This function involves distributed nodes. Currently, openGauss is a centralized database, for which the function of the value  **global**  is the same as that of the value  **local**  and the second parameter cannot set to be  **BY\_CNID**.
 
--   get\_instr\_wait\_event\(NULL\)
+-   get\_instr\_wait\_event\(NULL\) 或 get\_instr\_wait\_event\(integer\)
 
     Description: Obtains the statistics on wait events of the current node.
 
