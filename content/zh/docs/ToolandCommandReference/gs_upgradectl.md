@@ -47,43 +47,43 @@
 
 - 显示帮助信息
 
-  ```
+  ```shell
   gs_upgradectl -? | --help
   ```
 
 - 显示版本号信息
 
-  ```
+  ```shell
   gs_upgradectl -V | --version
   ```
 
 - 选择升级策略
 
-  ```
+  ```shell
   gs_upgradectl -t chose-strategy [-l LOGFILE]
   ```
 
 - 自动升级openGauss
 
-  ```
+  ```shell
   gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
   ```
 
 - 自动回滚升级
 
-  ```
+  ```shell
   gs_upgradectl -t auto-rollback -X XMLFILE [-l LOGFILE]
   ```
 
 - 升级状态查询
 
-  ```
+  ```shell
   gs_upgradectl -S show-step
   ```
 
 - 升级提交
 
-  ```
+  ```shell
   gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
   ```
 
@@ -148,7 +148,7 @@
 
 **示例一**：升级前使用新包进行前置操作。
 
-```
+```shell
 ./gs_preinstall -U roach -G users -X /data/xml/3node_3c3d_1m2s_etcd.xml 
 Parsing the configuration file.
 Successfully parsed the configuration file.
@@ -199,7 +199,7 @@ PreInstallationGuide succeeded.
 
 **示例二**：使用gs\_upgradectl脚本执行灰度升级。
 
-```
+```shell
 gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
@@ -235,7 +235,7 @@ Once the check done, please execute following command to commit upgrade:
 
 **示例三**：使用gs\_upgradectl脚本执行自动回滚，撤销已经成功/失败的升级操作（升级回滚）。
 
-```
+```shell
 gs_upgradectl -t auto-rollback -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
@@ -260,7 +260,7 @@ Rollback succeeded.
 
 **示例四**：使用gs\_upgradectl脚本执行升级后提交（升级提交）。
 
-```
+```shell
 gs_upgradectl -t commit-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
 Old cluster app path is /data/gauss/app_e67b8bcd
 Successfully Cleaned old install path.
@@ -270,7 +270,7 @@ Commit binary upgrade succeeded.
 **示例五**：使用gs\_upgradectl脚本执行指定节点升级。
 
 升级部分指定节点
-```
+```shell
 gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey -h hostname0
 Static configuration matched with old static configuration files.
 Successfully set upgrade_mode to 0.
@@ -306,7 +306,7 @@ The nodes ['hostname0']ve been successfully upgraded.Then can upgrade the remain
 ```
 
 升级剩余节点
-```
+```shell
 gs_upgradectl -t auto-upgrade -X /data/node2.xml --grey --continue
 Static configuration matched with old static configuration files.
 Checking upgrade environment.
@@ -343,7 +343,7 @@ Successfully upgrade all nodes.
 
 **示例六**：使用gs\_upgradectl脚本执行集群管理组件增量升级。
 
-```
+```shell
 gs_upgradectl -t upgrade-cm --upgrade-package /data/openGauss-3.1.0-CentOS-64bit-cm.tar.gz
 Start ot perform the upgrade of CM component in cluster.
 Ready to transform CM package to all nodes.
@@ -366,7 +366,7 @@ Upgrade CM component successfully.
 
 **示例七**：使用gs_upgradectl脚本执行升级状态查询。
 
-```
+```shell
 gs_upgradectl -S show-step
 doShowUpgradeStep in UpgradeImpl
 Cluster Nodes are ['node1', 'node2']. 
