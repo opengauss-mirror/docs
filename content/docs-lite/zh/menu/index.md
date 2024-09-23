@@ -1097,6 +1097,7 @@ headless: true
 			-   [使用]({{< relref "./docs/SQLReference/使用-29.md" >}})
 			-   [支持和约束]({{< relref "./docs/SQLReference/支持和约束-1.md" >}})
 	-   [游标]({{< relref "./docs/SQLReference/游标.md" >}})
+		- [使用游标创建type]({{< relref "./docs/SQLReference/使用游标创建type.md" >}})
 	-   [匿名块]({{< relref "./docs/SQLReference/匿名块-1.md" >}})
 	-   [存储过程]({{< relref "./docs/SQLReference/存储过程.md" >}})
 		-   [存储过程]({{< relref "./docs/SQLReference/存储过程-20.md" >}})
