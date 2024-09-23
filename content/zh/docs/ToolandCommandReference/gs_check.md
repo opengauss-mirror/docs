@@ -559,7 +559,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row49678411210"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"></a>CheckCurConnCount(检查当前连接数)</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a>检查数据库连接数，如果连接数小于最大连接数的90%则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a>检查数据库连接数，如果连接数大于0并且小于最大连接数的90%则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"></a>否</p>
 </td>
