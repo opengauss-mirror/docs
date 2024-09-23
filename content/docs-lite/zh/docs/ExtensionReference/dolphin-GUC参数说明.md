@@ -1032,6 +1032,50 @@ openGauss=# select 1,1.23;
  1 | 1.23
 (1 row)
 ```
+## dolphin.mysql_ca
+
+**参数说明**：dolphin协议插件默认使用的ca证书文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 cacert.pem
+
+## dolphin.mysql_server_key
+
+**参数说明**：dolphin协议插件默认使用的服务端私钥文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 server.key
+
+## dolphin.mysql_server_cert
+
+**参数说明**：dolphin协议插件默认使用的服务端证书文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 server.cert
 
 ## dolphin.support_interval_to
 
