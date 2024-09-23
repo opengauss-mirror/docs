@@ -9,8 +9,8 @@
 
 ## 当前支持的MySQL客户端版本
 
--   MySQL JDBC driver： 5.1.47
--   MySQL 命令行客户端： 5.7.26~5.7.42
+-   MySQL JDBC driver： 8.0.28及其以下
+-   MySQL 命令行客户端： 8.0.28及其以下
 
 ## 约束
 
@@ -19,17 +19,44 @@
 
 ## 使用方式
 
+### mysql_native_password 认证方式
+
 1. 创建B类型数据库，创建用户并设置MySQL native密码（可根据需要通过GRANT命令给新用户赋权）：
 ```SQL
 CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
 \c proto_test_db
 CREATE USER proto_test WITH PASSWORD 'Proto_test123';
-SELECT set_native_password('proto_test', 'Proto_test123');
+SELECT set_native_password('proto_test', 'Proto_test123', '');
 ```
+>![](public_sys-resources/icon-notice.png) **须知：** （第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
+
 2. 设置GUC参数 [enable_dolphin_proto](../DatabaseReference/连接设置.md#enable_dolphin_proto) 为 on。
 3. 设置MySQL协议监听端口号， [dolphin_server_port](../DatabaseReference/连接设置.md#dolphin_server_port)，注意端口号需要与openGauss本身监听的端口号 port 不同。
 4. 如果数据库中存在多个B兼容性数据库，需要通过[dolphin.default_database_name](./dolphin-GUC参数说明.md#dolphindefault_database_name)设置默认连接的数据库实例名。
 5. 设置完成后，即可通过MySQL客户端，使用对应的用户名和密码连接openGauss。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   enable_dolphin_proto和dolphin_server_port为POSTMASTER类型参数，修改需要重启才生效。
+>-   使用MySQL客户端连接openGauss前，请确认listen_addresses配置正确，pg_hba允许MySQL客户端所在机器IP连接。可参考 [配置客户端接入认证](../DatabaseAdministrationGuide/配置客户端接入认证.md)。
+>-   使用MySQL客户端连接时，可通过形如 mysql -u [user_name] -p --port [dolphin_server_port] -h [opengauss_listen_address] 的方式连接。
+>-   备机的可连接性受参数[hot_standby](../DatabaseReference/备服务器.md)和[dolphin_hot_standby](../DatabaseReference/连接设置.md)参数控制。
+
+### caching_sha2_password 认证方式
+
+1. 创建B类型数据库，创建用户并设置MySQL caching_sha2密码（可根据需要通过GRANT命令给新用户赋权）：
+```SQL
+CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
+\c proto_test_db
+CREATE USER proto_test WITH PASSWORD 'Proto_test123';
+SELECT set_caching_sha2_password('proto_test', 'Proto_test123', '');
+```
+>![](public_sys-resources/icon-notice.png) **须知：** （第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
+2. 设置GUC参数 [enable_dolphin_proto](../DatabaseReference/连接设置.md#enable_dolphin_proto) 为 on。
+3. 设置MySQL协议监听端口号， [dolphin_server_port](../DatabaseReference/连接设置.md#dolphin_server_port)，注意端口号需要与openGauss本身监听的端口号 port 不同。
+4. 如果数据库中存在多个B兼容性数据库，需要通过[dolphin.default_database_name](./dolphin-GUC参数说明.md#dolphindefault_database_name)设置默认连接的数据库实例名。
+5. 设置MySQL得SSL文件信息，文件路径不需要设置且为数据目录
+6. 设置完成后，即可通过MySQL客户端，使用对应的用户名和密码连接openGauss。
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
