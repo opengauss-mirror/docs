@@ -20,11 +20,17 @@ openGauss  supports functions and stored procedures compliant with the SQL stand
 
 ## Enhancements<a name="section28788730"></a>
 
+Support for nested arrays in PL/SQL.
+
 Support for using default argument values for cursors in PL/SQL.
 
 Support for getting the type of a row of records in a table, view, or cursor by ROWTYPE in PL/SQL.
 
 ## Constraints<a name="section06531946143616"></a>
+
+Not supportted to call functions by a nested array's array-type element referred by suscripts.
+
+Not supportted to assign a nested array's array-type element directly.
 
 Can't get the type of a nested cursor by ROWTYPE.
 
