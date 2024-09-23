@@ -1005,7 +1005,7 @@ CM支持两节点部署模式
             <PARAM name="dataNum" value="1"/> 
 	    <PARAM name="dataPortBase" value="15400"/> 
 	    <PARAM name="dataNode1" value="/opt/huawei/install/data/dn,node2_hostname,/opt/huawei/install/data/dn,node3_hostname,/opt/huawei/install/data/dn,node4_hostname,/opt/huawei/install/data/dn,node5_hostname,/opt/huawei/install/data/dn"/> 
-            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <!-- syncNode_node1_hostname中的node1_hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node1_hostname" value="ANY 2(node2_hostname, node4_hostname), ANY 1(node3_hostname, node5_hostname)"/> 
         </DEVICE> 
  
@@ -1017,7 +1017,7 @@ CM支持两节点部署模式
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.2"/> 
             <PARAM name="sshIp1" value="192.168.0.2"/> 
-            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <!-- syncNode_node2_hostname中的node2_hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node2_hostname" value="ANY 2(node1_hostname, node3_hostname), ANY 1(node5_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
@@ -1032,7 +1032,7 @@ CM支持两节点部署模式
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.3"/> 
             <PARAM name="sshIp1" value="192.168.0.3"/> 
-            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <!-- syncNode_node3_hostname中的node3_hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node3_hostname" value="FIRST 3(node2_hostname, node1_hostname, node4_hostname, node5_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
@@ -1047,7 +1047,7 @@ CM支持两节点部署模式
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.4"/> 
             <PARAM name="sshIp1" value="192.168.0.4"/> 
-            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <!-- syncNode_node4_hostname中的node4_hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node4_hostname" value="ANY 2(node2_hostname, node1_hostname, node5_hostname, node3_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
@@ -1062,7 +1062,7 @@ CM支持两节点部署模式
             <!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --> 
             <PARAM name="backIp1" value="192.168.0.5"/> 
             <PARAM name="sshIp1" value="192.168.0.5"/> 
-            <!-- syncNode_hostname中的hostname替换为自己的主机名称 -->
+            <!-- syncNode_node5_hostname中的node5_hostname替换为自己的主机名称 -->
             <PARAM name="syncNode_node5_hostname" value="ANY 1(node1_hostname, node2_hostname, node3_hostname, node4_hostname)"/>
             <!-- cm --> 
             <PARAM name="cmServerPortStandby" value="15000"/> 
