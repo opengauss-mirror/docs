@@ -75,9 +75,11 @@ gs\_probackup工具的主要功能如下：
     ```
 
 -   在备份路径_backup-path_内初始化一个新的备份实例，并生成pg\_probackup.conf配置文件，该文件保存了指定数据目录_pgdata-path_的gs\_probackup设置（非资源池化模式）。
+-   若未指定-D选项，则默认为数据库原始数据目录$PGDATA
 
     ```
-    gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
+    gs_probackup add-instance -B backup-path --instance=instance_name
+    [-D pgdata-path]
     [-E external-directories-paths]
     [remote_options] [dss_options] [s3_options]
     [--help]

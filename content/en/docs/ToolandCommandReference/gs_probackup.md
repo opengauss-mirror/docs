@@ -56,9 +56,11 @@
     ```
 
 -   Initialize a new backup instance in the _backup-path_ and generate the **pg\_probackup.conf** file, which saves the gs\_probackup settings of the specified data directory _pgdata-path_ (in non-DSS mode).
+-   If the - D option is not specified, the default is the database raw data directory $PGDATA
 
     ```
-    gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
+    gs_probackup add-instance -B backup-path --instance=instance_name
+    [-D pgdata-path]
     [-E external-directories-paths]
     [remote_options]
     [--help]
