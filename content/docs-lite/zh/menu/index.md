@@ -45,6 +45,7 @@ headless: true
 	    	-   [主备机]({{< relref "./docs/AboutopenGauss/主备机.md" >}})
 	    	-   [逻辑复制]({{< relref "./docs/AboutopenGauss/逻辑复制.md" >}})
 	    	-   [逻辑备份]({{< relref "./docs/AboutopenGauss/逻辑备份.md" >}})
+	    	-   [物理备份]({{< relref "./docs/AboutopenGauss/物理备份.md" >}})
 	    	-   [作业失败自动重试]({{< relref "./docs/AboutopenGauss/作业失败自动重试.md" >}})
 	    	-   [极致RTO]({{< relref "./docs/AboutopenGauss/极致RTO.md" >}})
 	    	-   [延时回放]({{< relref "./docs/AboutopenGauss/延时回放.md" >}})
