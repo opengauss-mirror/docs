@@ -22,11 +22,11 @@ openGauss数据库支持SQL:2011大部分的核心特性，同时还支持部分
 
 支持ALTER TABLE语句修改表字段和引用视图解耦。
 
+以下特性自openGauss 6.0.0开始支持：
+
 支持TABLESAMPLE子句实现数据采样。
 
 支持带外层PRIOR关键字的CONNECT BY子句。
-
-以下特性自openGauss 6.0.0开始支持：
 
 支持to_binary_float(expr default return_expr on conversion error)。
 
