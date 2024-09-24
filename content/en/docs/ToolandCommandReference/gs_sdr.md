@@ -87,6 +87,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         >
         >1. Before the DR relationship is established, you need to create a DR user on the primary cluster for DR authentication. The primary and standby clusters must use the same DR username and password. After a DR relationship is established, the user password cannot be changed. You can remove the DR relationship, modify the username and password, and establish the DR relationship again. The DR user password cannot contain blank characters and the following characters: |;&$<>`\'"{}()[]~*?!\n
         >2. If the **-U** and **-W** parameters are not input in the command line, they can be input in interactive mode during the establishment.
+        >3. When the **-W** parameter is entered in the command line, other terminals can view the password through the PS command, which poses a security risk. Suggest inputting through interactive mode.
 
     -   -X
 

@@ -4,6 +4,34 @@
 
 openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经常需要对基于磁阵实现的集群文件系统进行各种查询，操作和管理。为了对dss创建的文件系统进行有效的管理，资源池化提供了dsscmd管理工具。
 
+## 交互式执行命令<a name="section161808461171"></a>
+
+-   功能介绍
+    > 
+    > 频繁输入命令执行，可以进入交互式执行以减少输入负担。额外支持cd，pwd，以及上下方向键浏览历史执行命令。
+    > 
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- 本文档介绍命令默认均支持在交互式中执行。
+    >- cd 命令用于进入目录，后续命令执行默认带上当前目录执行。
+    >- pwd 显示当前所在目录。
+    >- 上下方向键可浏览历史输入命令，最多记录20条历史命令。
+-   进入交互式命令行
+    ```
+    dsscmd -i 
+    ```
+-   cd进入目录
+    ```
+    cd <-p path>
+    ```
+-   退出交互式命令
+    ```
+    exit
+    ```
+-  执行其他命令
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- 进入交互中执行命令不需加dsscmd前缀，使用cd命令进入目录后可以省略输入路径。交互式中其他特殊用法见具体命令说明。
+    >- 交互中执行命令只允许建联一次，后续执行命令复用连接。有多次建联需求请退出交互式后，再次进入交互式进行建联。
+
 ## 命令<a name="section161808461171"></a>
 
 -   显示帮助信息
@@ -12,6 +40,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd -h
     dsscmd --help
     ```
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- 交互式中直接输入h或help显示帮助信息。
 
 -   显示所有帮助信息
 
@@ -19,6 +49,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd -a
     dsscmd --all
     ```
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- 交互式中直接输入a或all显示所有帮助信息。
 
 -   显示dss的版本号
 
@@ -26,7 +58,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd -v
     dsscmd --version
     ```
-
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- 交互式中直接输入v或version显示dss的版本号。
 -   创建卷组
 
     ```

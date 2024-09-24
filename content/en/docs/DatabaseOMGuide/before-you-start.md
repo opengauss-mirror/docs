@@ -30,28 +30,126 @@ Gray upgrade: based on gray upgrade, supports to upgrade the specified nodes, su
 
 <a name="table7961729"></a>
 
-<table><tbody><tr id="row48398424"><td class="cellrowborder" valign="top" width="41.410000000000004%"><p id="p27958252"><a name="p27958252"></a><a name="p27958252"></a>Version</p>
-</td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p50025933"><a name="p50025933"></a><a name="p50025933"></a>Upgrade Description</p>
-</td>
+<table><tbody>
+<tr>
+   <td>Base \ Upgrade </td>
+   <td>3.0.0</td>
+   <td>3.0.3</td>
+   <td>3.0.5</td>
+   <td>5.0.0</td>
+   <td>5.0.1</td>
+   <td>5.0.2</td>
+   <td>5.0.3</td>
+   <td>6.0.0RC1</td>
+   <td>6.0.0</td>
 </tr>
-<tr id="row5917164"><td class="cellrowborder" valign="top" width="41.410000000000004%"><p id="p138378421424"><a name="p138378421424"></a><a name="p138378421424"></a>Versions earlier than openGauss 1.0.1</p>
-</td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p33594135"><a name="p33594135"></a><a name="p33594135"></a>It can be upgraded to any version earlier than openGauss 1.0.1.</p>
-</td>
+<tr>
+   <td>2.0.0</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
 </tr>
-<tr id="row1699043202811"><td class="cellrowborder" valign="top" width="41.410000000000004%"><p id="p16990230282"><a name="p16990230282"></a><a name="p16990230282"></a>openGauss 1.0.1</p>
-</td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p89903322814"><a name="p89903322814"></a><a name="p89903322814"></a>It can be upgraded to openGauss 1.1.0.</p>
-</td>
+<tr>
+   <td>3.0.0</td>
+   <td></td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
 </tr>
-<tr id="row10729745336"><td class="cellrowborder" valign="top" width="41.410000000000004%"><p id="p473019455316"><a name="p473019455316"></a><a name="p473019455316"></a>openGauss 1.1.0 and later</p>
-</td>
-<td class="cellrowborder" valign="top" width="58.589999999999996%"><p id="p207301045037"><a name="p207301045037"></a><a name="p207301045037"></a>It can be upgraded to any version form openGauss 1.1.0 to openGauss 3.1.0 (exclusive).</span></p>
-</td>
+   <td>3.0.3</td>
+   <td></td>
+   <td></td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
 </tr>
-</tbody>
-</table>
+   <td>3.0.5</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>✕</td>
+   <td>✕</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+</tr>
+</tr>
+   <td>5.0.0</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+</tr>
+</tr>
+   <td>5.0.1</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+   <td>√</td>
+</tr>
+</tr>
+   <td>5.0.2</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>√</td>
+   <td>✕</td>
+   <td>√</td>
+</tr>
+</tr>
+   <td>5.0.3</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>✕</td>
+   <td>√</td>
+</tr>
+</tr>
+   <td>6.0.0RC1</td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td>√</td>
+</tr>
+</tbody></table>
 
 
 >![](../public_sys-resources/icon-note.gif) **NOTE:** 

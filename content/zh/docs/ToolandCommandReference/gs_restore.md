@@ -10,6 +10,8 @@ gs\_restore工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的MySQ
 
 gs\_restore工具目前支持进度打印，会根据已经恢复的对象数比上需要恢复的总对象数打印进度。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_restore目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
+
 >![](public_sys-resources/icon-notice.png) **须知：**
 >-   show create procedure/function等show create语句的database collation和collation connection与数据库的lc_collate相同，由于InitSession会重新初始化lc_collate参数，lc_collate有时会被初始化为C，所以show create procedure/function等show create语句的database collation和collation connection这两个列的值不稳定。
 >-   临时表不支持导入导出。

@@ -12,6 +12,8 @@ gs_ctl工具由操作系统用户omm执行。
 
 gs_ctl build工具支持打印进度，根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_ctl目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
+
 ## 参数说明<a name="zh-cn_topic_0287275989_zh-cn_topic_0237152408_zh-cn_topic_0059777628_sfeccdff45fda4d8dacf4cefb2b8103f8"></a>
 
 gs_ctl参数可分为如下几类：

@@ -4,6 +4,8 @@
 
 目前openGauss配置文件（“postgresql.conf”、“pg\_hba.conf”）中的参数默认值都是单机的配置模式。应用程序可以通过调用gs\_guc来设置适合自己的参数。
 
+工具运行产生的日志位于$GAUSSLOG/bin/gs\_guc目录下，每个日志最大16MB，最多保留50个。如果环境变量GAUSSLOG没有配置，则不会产生日志文件。
+
 gs\_guc工具由操作系统用户omm执行。
 
 -   “gs\_guc-current.log”
@@ -103,6 +105,8 @@ gs\_guc工具由操作系统用户omm执行。
     >    -   USERNAME：当配置为all时表示不限制用户，会放在指定具体某个用户的策略后面。
     > 
     >    -   HOSTTYPE：local \> hostssl \> hostnossl \> host。
+    >
+    >    -   如果预安装是通过普通用户执行的，并且/etc/hosts没有主备节点的映射关系，那么-N, -I参数不支持。
 
 -   注释已经设置的客户端认证策略。若选择reload会同时发送信号量到pg\_hba.conf，即无需重启即可生效。
 
@@ -130,7 +134,7 @@ gs\_guc工具由操作系统用户omm执行。
 
     >![](public_sys-resources/icon-note.png) **说明：** 
     >
-    >-   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<16）和密码复杂度要求，如果不满足，将会报错。此密码用于保证生成密码文件的安全性和唯一性，用户无需保存或记忆。
+    >-   -K是用户指定的密码，gs\_guc会对该密码进行长度（8<=len<=16）和密码复杂度要求，如果不满足，将会报错。此密码用于保证生成密码文件的安全性和唯一性，用户无需保存或记忆。
     > 
     >-   -M是加密类型，当前仅支持server、client和source。默认值为server。
 

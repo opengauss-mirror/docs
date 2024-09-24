@@ -10,7 +10,7 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 -   对于列存表，暂时不支持RETURNING子句。
 -   对于多表删除语法，仅在参数sql\_compatibility=B时生效，暂时不支持对列存表、视图和含有RULE的表进行多表删除。
 -   如果要删除表中的所有记录，建议使用truncate语法。
--   ustore表在delete语句中不能与其他存储类型一起使用。
+-   Ustore表在delete语句中不能与其他存储类型一起使用。
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46203"></a>
 

@@ -50,13 +50,13 @@ Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中
 
 ## Linux下的ODBC包<a name="section1352910461980"></a>
 
-从发布包中获取，包名为openGauss-\*.\*.0-ODBC.tar.gz。Linux环境下，开发应用程序要用到unixODBC提供的头文件（sql.h、sqlext.h等）和库libodbc.so。这些头文件和库可从unixODBC-2.3.9的安装包中获得。
+从发布包中获取，包名为openGauss-\*.\*.0-ODBC.tar.gz。Linux环境下，开发应用程序要用到unixODBC提供的头文件（sql.h、sqlext.h等）和库libodbc.so。这些头文件和库可从unixODBC-x.x.x的安装包中获得。
 
 ## 配置数据源<a name="section12696151016177"></a>
 
 将openGauss提供的ODBC DRIVER（psqlodbcw.so）配置到数据源中便可使用。配置数据源需要配置“odbc.ini”和“odbcinst.ini”两个文件（在编译安装unixODBC过程中生成且默认放在“/usr/local/etc”目录下），并在服务器端进行配置。
 
-1.  获取unixODBC-2.3.9源码包。
+1.  获取unixODBC-x.x.x源码包。
 
     获取参考地址：http://www.unixodbc.org/download.html
 

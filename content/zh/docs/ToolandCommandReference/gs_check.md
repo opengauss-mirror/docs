@@ -304,12 +304,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p28841084819"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p28841084819"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p28841084819"></a>否</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row363284274"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p160286277"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p160286277"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p160286277"></a>CheckDropCache（检查DropCache进程）</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1360285271"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1360285271"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1360285271"></a>检查各节点是否有dropcache进程在运行，若有则检查通过，否则检查不通过。</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1488414016480"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1488414016480"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1488414016480"></a>否</p>
-</td>
+<tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row363284274">
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row649971263415"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1650117125342"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1650117125342"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1650117125342"></a>CheckFilehandle（检查文件句柄）</p>
 </td>
@@ -564,7 +559,7 @@ gs_check改进增强，统一化当前系统中存在的各种检查工具，例
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row49678411210"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p189671541142117"></a>CheckCurConnCount(检查当前连接数)</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a>检查数据库连接数，如果连接数小于最大连接数的90%则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9967194182110"></a>检查数据库连接数，如果连接数大于0并且小于最大连接数的90%则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p178851301483"></a>否</p>
 </td>
@@ -1316,7 +1311,7 @@ Average:        all      0.43      0.00      0.35      0.03      0.03     99.17
 ```
 [perfadm@SIA1000131072 Check]$ gs_check -e inspect
 Parsing the check items config file successfully
-The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel CheckDropCache]
+The below items require root privileges to execute:[CheckBlockdev CheckIOConfigure CheckMTU CheckRXTX CheckMultiQueue CheckFirewall CheckSshdService CheckSshdConfig CheckCrondService CheckMaxProcMemory CheckBootItems CheckFilehandle CheckNICModel ]
 Please enter root privileges user[root]:
 Please enter password for user[root]:
 Check root password connection successfully

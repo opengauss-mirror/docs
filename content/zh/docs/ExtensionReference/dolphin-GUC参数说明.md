@@ -803,6 +803,45 @@ openGauss=# set wait_timeout = default;
 SET
 ```
 
+## foreign_key_checks<a name="section203671436844"></a>
+
+**参数说明**：在MY数据库模式下是否开启insert，update，delete时检查数据是否满足外键约束的功能。
+
+该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型
+
+- on表示MY数据库模式下在insert，update，delete时检查数据是否满足外键约束的功能。
+
+- off表示MY数据库模式下在insert，update，delete时不检查数据是否满足外键约束的功能。
+
+**默认值**：on
+
+**示例**：
+
+```
+openGauss=# create table parent_table(id INT PRIMARY KEY);
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "parent_table_pkey" for table "parent_table"
+CREATE TABLE
+openGauss=# CREATE TABLE child_table(id INT PRIMARY KEY,parent_id INT,FOREIGN KEY (parent_id) REFERENCES parent_table(id));
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "child_table_pkey" for table "child_table"
+CREATE TABLE
+openGauss=#
+openGauss=# insert into parent_table values (1),(2),(3);
+INSERT 0 3
+openGauss=# insert into child_table values (11, 1);
+INSERT 0 1
+openGauss=# SET FOREIGN_KEY_CHECKS=1;
+SET
+openGauss=# insert into child_table values (15, 5);
+ERROR:  insert or update on table "child_table" violates foreign key constraint "child_table_parent_id_fkey"
+DETAIL:  Key (parent_id)=(5) is not present in table "parent_table".
+openGauss=# SET FOREIGN_KEY_CHECKS=0;
+SET
+openGauss=# insert into child_table values (15, 5);
+INSERT 0 1
+```
+
 ## dolphin.lower_case_table_names<a name="section203671436844"></a>
 
 **参数说明**：该参数用于控制用户名、表名、视图名、模式名的大小写敏感；为0时大小写敏感，>0时为大小写不敏感
@@ -994,6 +1033,50 @@ openGauss=# select 1,1.23;
  1 | 1.23
 (1 row)
 ```
+## dolphin.mysql_ca
+
+**参数说明**：dolphin协议插件默认使用的ca证书文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 cacert.pem
+
+## dolphin.mysql_server_key
+
+**参数说明**：dolphin协议插件默认使用的服务端私钥文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 server.key
+
+## dolphin.mysql_server_cert
+
+**参数说明**：dolphin协议插件默认使用的服务端证书文件名
+
+该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+>![](public_sys-resources/icon-notice.png) **须知：** 
+>
+>-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+
+**取值范围**：字符串
+
+**默认值**：加载dolphin协议插件时，默认为 server.cert
 
 ## dolphin.support_interval_to
 

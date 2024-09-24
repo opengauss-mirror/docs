@@ -22,4 +22,5 @@ openGauss supports:
     -   openEuler 22.03 LTS
     -   CentOS 7.6
     -   Asianux 7.6
+    -   Kirin V10
 

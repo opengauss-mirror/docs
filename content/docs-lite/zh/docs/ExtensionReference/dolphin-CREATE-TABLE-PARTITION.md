@@ -140,7 +140,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 - 其中`col_name ( length )`为前缀键，column_name为前缀键的字段名，length为前缀长度。前缀键将取指定字段数据的前缀作为索引键值，可以减少索引占用的存储空间。含有前缀键字段的过滤条件和连接条件可以使用索引。
   
     >![](public_sys-resources/icon-note.png) **说明：** 
-    >-  前缀键支持的索引方法：btree、ubtree。
+    >-  前缀键支持的索引方法：Btree、UBtree。
     >-  前缀键的字段的数据类型必须是二进制类型或字符类型（不包括特殊字符类型）。
     >-  前缀长度必须是不超过2676的正整数，并且不能超过字段的最大长度。对于二进制类型，前缀长度以字节数为单位。对于非二进制字符类型，前缀长度以字符数为单位。键值的实际长度受内部页面限制，若字段中含有多字节字符、或者一个索引上有多个键，索引行长度可能会超限，导致报错，设定较长的前缀长度时请考虑此情况。
 
@@ -266,7 +266,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
          指定存储引擎类型，该参数设置成功后就不再支持修改。
     
         取值范围：
-        - USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+        - USTORE，表示表支持Inplace-Update存储引擎。
         - ASTORE，表示表支持Append-Only存储引擎。
         - 默认值，不指定表时，默认是Append-Only存储。
     
@@ -294,7 +294,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     
     - segment
     
-      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持ustore存储引擎。
+      使用段页式的方式存储。本参数仅支持行存表。不支持列存表、临时表、unlog表。不支持Ustore存储引擎。
     
       取值范围：on/off
     

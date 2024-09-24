@@ -77,7 +77,7 @@ VACUUM回收表或B-Tree索引中已经删除的行所占据的存储空间。�
 
   > **![](public_sys-resources/icon-note.png)说明**
   >
-  > ustore分区表在autovacuum=analyze的时候也会触发vacuum。
+  > Ustore分区表在autovacuum=analyze的时候也会触发vacuum。
 
 -   **table\_name**
 

@@ -14,6 +14,7 @@
 10. 新增```uncompress```函数。
 11. 新增```uncompressed_length```函数。
 12. 新增```weight_string```函数。
+13. 修改```substring```函数表现，将其映射为```substr```。但如果前缀添加pg_catalog，则仍为原始openGauss表现。
 
 -   bit\_length\(string\)
 

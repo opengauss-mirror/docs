@@ -22,9 +22,11 @@ openGauss  supports functions and stored procedures compliant with the SQL stand
 
 Support for using default argument values for cursors in PL/SQL.
 
+Support for getting the type of a row of records in a table, view, or cursor by ROWTYPE in PL/SQL.
+
 ## Constraints<a name="section06531946143616"></a>
 
-None.
+Can't get the type of a nested cursor by ROWTYPE.
 
 ## Dependencies<a name="section57771982"></a>
 
