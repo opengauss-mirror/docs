@@ -12,7 +12,7 @@
 
     ```
     mkdir openGauss
-    tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2 –C openGauss
+    tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 –C openGauss
     ls -lb openGauss/
     ```
 

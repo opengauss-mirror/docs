@@ -190,8 +190,8 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         将下载的安装包放置/opt/software/openGauss目录下
     
         cd /opt/software/openGauss
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-all.tar.gz
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-om.tar.gz
+        tar -zxvf openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz
+        tar -zxvf openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz
     
         cd /opt/software/openGauss/script
         ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --sep-env-file=/home/omm/env
@@ -256,8 +256,8 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         将下载的安装包放置/opt/software/openGauss目录下
     
         cd /opt/software/openGauss
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-all.tar.gz
-        tar -zxvf openGauss-x.x.x-openEuler-64bit-om.tar.gz
+        tar -zxvf openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz
+        tar -zxvf openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz
     
         cd /opt/software/openGauss/script
         gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --sep-env-file=/home/omm/env
