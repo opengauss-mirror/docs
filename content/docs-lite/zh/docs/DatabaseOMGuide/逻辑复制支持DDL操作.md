@@ -4,19 +4,34 @@
 
 openGauss在逻辑复制过程中支持如下DDL操作：
 
-- CREATE/DROP TABLE|TABLE PARTITION
-- CREATE/DROP INDEX
+- CREATE/DROP/ALTER/TRUNCATE/RENAME TABLE | TABLE PARTITION | TABLE SUBPARTITION
+- CREATE/ALTER/DROP INDEX
+- CREATE/ALTER/DROP VIEW
+- CREATE/ALTER/DROP/REFRESH [INCREMENTAL] MATERIALIZED VIEW
+- CREATE/ALTER/DROP TYPE
+- CREATE/ALTER/DROP FUNCTION
+- CREATE/ALTER/DROP PROCEDURE
+- CREATE/ALTER/DROP TRIGGER
+- CREATE/DROP PACKAGE
+- CREATE/DROP SCHEMA
+- CREATE/DROP SEQUENCE
+- COMMENT/GRANT/REVOKE
 
 
 ## 注意事项
 
 - 只支持行存表的DDL操作。
 - 不支持列存，Ustore存储引擎。
+- TYPE仅支持复合类型和枚举类型。
 - 在订阅端手动删除表会导致DDL同步失败，发布订阅阻塞。
 - 不支持在对表进行相关的表结构操作中调用VOLATILE函数。
 
     >在为表增加一个字段并指定默认值中执行了VOLATILE函数，而这个函数中进行了创建表的DDL操作，这样在新增字段并为其计算默认值的过程中会因为调用VOLATILE函数写入其他DDL日志，导致后续在解码时读取到这个DDL日志时进行了重复的操作。
 
+- 在逻辑复制中使用ALTER TABLE时会有如下限制：
+    - 当ALTER TABLE修改表字段类型，使用USING子句设置字段值时，要求表上必须有replication identity字段，并且USING子句修改的表字段不为该标识符字段。
+    - 当ALTER TABLE修改或新增表字段为AUTO_INCREMENT自增列时，要求表上必须有replication identity字段，并且USING子句修改的表字段不为该标识符字段。
+    - 当ALTER TABLE新增表字段，并且表字段类型不为内置类型，即需要每个元组都重新计算其默认值，要求表上必须设置replication identity。
 
 ## 语法格式
 
