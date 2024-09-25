@@ -36,6 +36,10 @@ openGauss数据库支持SQL:2011大部分的核心特性，同时还支持部分
 
 支持numeric(p, s)类型中参数`s`允许为负数。
 
+支持ROTATE和NOT ROTATE函数实现查询结果行列转换。
+
+支持ALTER TRIGGER方式启用或禁用单个触发器。
+
 ## 特性约束<a name="section06531946143616"></a>
 
 float(n)范围支持`1~126`需要开启参数`behavior_compat_options='float_as_numeric'`。
