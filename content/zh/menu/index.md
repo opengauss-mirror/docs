@@ -905,6 +905,7 @@ headless: true
 			-   [增量迁移]({{< relref "./docs/DataMigrationGuide/增量迁移.md" >}})
 			-   [反向迁移]({{< relref "./docs/DataMigrationGuide/反向迁移.md" >}})
 			-   [数据校验]({{< relref "./docs/DataMigrationGuide/数据校验.md" >}})
+        -   [录制回放工具]({{< relref "./docs/DataMigrationGuide/录制回放工具.md" >}})
 -   [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
 	-   [数据库加固概述]({{< relref "./docs/SecHarden/数据库加固概述.md" >}})
 	-   [安全配置规范基线]({{< relref "./docs/SecHarden/安全配置规范基线.md" >}})
