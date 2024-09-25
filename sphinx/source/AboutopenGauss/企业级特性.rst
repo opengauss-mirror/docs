@@ -13,7 +13,6 @@
     ../content/zh/docs/AboutopenGauss/支持HyperLogLog
     ../content/zh/docs/AboutopenGauss/在线添加索引
     ../content/zh/docs/AboutopenGauss/自治事务
-    ../content/zh/docs/AboutopenGauss/管道函数
     ../content/zh/docs/AboutopenGauss/全局临时表
     ../content/zh/docs/AboutopenGauss/伪列ROWNUM
     ../content/zh/docs/AboutopenGauss/支持存储过程调试
