@@ -19,6 +19,7 @@
     物化视图
     ../content/zh/docs/SQLReference/游标
     ../content/zh/docs/SQLReference/匿名块
+    ../content/zh/docs/SQLReference/子类型
     存储过程
     ../content/zh/docs/SQLReference/PL-pgSQL语言函数
     ../content/zh/docs/SQLReference/触发器

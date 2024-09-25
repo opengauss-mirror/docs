@@ -22,6 +22,8 @@
 
 -   **[Cursors](cursors.md)**  
 
+-   **[Subtype](subtype.md)**
+
 -   **[Retry Management](retry-management.md)**  
 
 -   **[Debugging](debugging.md)**  
