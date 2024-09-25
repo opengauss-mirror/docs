@@ -2,7 +2,7 @@
 
 ## 功能描述
 
-Vastbase在逻辑复制过程中支持如下DDL操作：
+openGauss在逻辑复制过程中支持如下DDL操作：
 
 - CREATE/DROP TABLE|TABLE PARTITION
 - CREATE/DROP INDEX
