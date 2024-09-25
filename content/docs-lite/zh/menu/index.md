@@ -1142,6 +1142,7 @@ headless: true
 			-   [显式游标]({{< relref "./docs/SQLReference/显式游标.md" >}})
 			-   [隐式游标]({{< relref "./docs/SQLReference/隐式游标.md" >}})
 			-   [游标循环]({{< relref "./docs/SQLReference/游标循环.md" >}})
+                       -   [支持游标作为插入值]({{< relref "./docs/AboutopenGauss/支持游标作为插入值.md" >}})
 		-   [Retry管理]({{< relref "./docs/SQLReference/Retry管理.md" >}})
 		-   [调试]({{< relref "./docs/SQLReference/调试-22.md" >}})
 	-   [PL/pgSQL语言函数]({{< relref "./docs/SQLReference/PL-pgSQL语言函数.md" >}})
