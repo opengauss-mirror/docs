@@ -14,7 +14,7 @@ You can obtain the installation package from the openGauss open-source community
     Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
     ```
-    tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2
+    tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2
     ls -lb
     ```
 
