@@ -102,7 +102,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
     mkdir /tmp/tools
     ```
 
-    c.  获取软件安装包中的“openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz”上传到“/tmp/tools”路径下。
+    c.  获取软件安装包中的“openGauss-Libpq-x.x.x-openEuler20.03-x86_64.tar.gz”上传到“/tmp/tools”路径下。
 
     >![](public_sys-resources/icon-note.png) **说明：** 
     > -   软件包相对位置为安装时所放位置，根据实际情况填写。
@@ -112,7 +112,7 @@ gsql是openGauss提供的在命令行下运行的数据库连接工具。此工�
 
     ```
     cd /tmp/tools
-    tar -zxvf openGauss-x.x.x-openEuler-64bit-Libpq.tar.gz
+    tar -zxvf openGauss-Libpq-x.x.x-openEuler20.03-x86_64.tar.gz
     ```
 
     e.  登录数据库主节点所在的服务器，拷贝数据库安装目录下的bin目录到客户端主机的“/tmp/tools”路径下。

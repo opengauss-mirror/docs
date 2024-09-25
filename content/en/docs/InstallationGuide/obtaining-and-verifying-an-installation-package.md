@@ -14,7 +14,7 @@ You can obtain the installation package from the openGauss open-source community
     Decompress the installation package and check whether the installation directory and files are complete. Run the following commands in the directory where the installation package is stored:
 
     ```
-    tar -zxvf openGauss-x.x.x-openEuler-64bit.tar-all.gz
+    tar -zxvf openGauss-All-x.x.x-openEuler20.03-x86_64.tar.gz
     ls -lb
     ```
 
@@ -22,10 +22,10 @@ You can obtain the installation package from the openGauss open-source community
 
     ```
     total 50M
-    -rw------- 1 root root       65 Dec 25 15:34 openGauss-x.x.x-openEuler-64bit-om.sha256
-    -rw------- 1 root root 12910775 Dec 25 15:34 openGauss-x.x.x-openEuler-64bit-om.tar.gz
-    -rw------- 1 root root       65 Dec 25 15:34 openGauss-x.x.x-openEuler-64bit.sha256
-    -rw------- 1 root root 73334256 Dec 25 15:34 openGauss-x.x.x-openEuler-64bit.tar.bz2
+    -rw------- 1 root root       65 Dec 25 15:34 openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz.sha256
+    -rw------- 1 root root 12910775 Dec 25 15:34 openGauss-OM-x.x.x-openEuler20.03-x86_64.tar.gz
+    -rw------- 1 root root       65 Dec 25 15:34 openGauss-Server-x.x.x-openEuler20.03-x86_64.sha256
+    -rw------- 1 root root 73334256 Dec 25 15:34 openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2
     -rw------- 1 root root       65 Dec 25 15:34 upgrade_sql.sha256
     -rw------- 1 root root   134747 Dec 25 15:34 upgrade_sql.tar.gz
     ```
