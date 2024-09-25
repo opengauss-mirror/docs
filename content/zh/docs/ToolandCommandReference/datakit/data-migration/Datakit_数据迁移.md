@@ -76,7 +76,9 @@ data-migration项目目前版本为1.0.0。
    - 离线安装
    
       ![migration_install_portal_offline.png](figures/migration_install_portal_offline1.png)
+   
       ![migration_install_portal_offline2.png](figures/migration_install_portal_offline2.png)
+   
       ![migration_install_portal_offline3.png](figures/migration_install_portal_offline3.png)
    
    -  导入安装
@@ -164,6 +166,7 @@ data-migration项目目前版本为1.0.0。
     3. 启动反向迁移
 
        ![migration_reverse_start.png](figures/migration_reverse_start.png)
+   
        ![migration_reverse_detail.png](figures/migration_reverse_detail.png)
 
     4. 停止反向迁移，反向迁移将数据从openGauss实时迁移至MySQL数据库，可保证源端数据库与目标数据库实时一致。作为一种数据逃生的通道，当目标数据库出现问题时，可及时将应用切回至源端数据库。
