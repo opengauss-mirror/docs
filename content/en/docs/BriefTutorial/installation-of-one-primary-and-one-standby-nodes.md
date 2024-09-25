@@ -19,7 +19,7 @@
 
 
     ```
-    tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2 -C /opt/software/openGauss
+    tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 -C /opt/software/openGauss
     ```
 
 4.  Assume that the decompressed package is stored in the  **/opt/software/openGauss**  directory. Go to the  **simpleInstall**  directory.
