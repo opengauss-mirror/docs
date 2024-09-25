@@ -1,0 +1,7 @@
+高级包
+==========
+
+.. toctree::
+
+    ../content/zh/docs/AboutopenGauss/gms_profiler高级包
+    ../content/zh/docs/AboutopenGauss/gms_stats高级包
