@@ -40,6 +40,8 @@ openGauss数据库支持SQL:2011大部分的核心特性，同时还支持部分
 
 支持ALTER TRIGGER方式启用或禁用单个触发器。
 
+添加支持启用禁用table的constraint功能特性描述。
+
 ## 特性约束<a name="section06531946143616"></a>
 
 float(n)范围支持`1~126`需要开启参数`behavior_compat_options='float_as_numeric'`。
