@@ -728,6 +728,7 @@ gs\_probackup工具的主要功能如下：
     ```
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >在恢复备份时，必须先将原始实例目录（参数-D后面的目录）下面的内容清空。
+    >使用restore子命令前，应先停止gaussdb进程。
 
 
 ## cm工具管理集群全量备份恢复流程（资源池化模式）
