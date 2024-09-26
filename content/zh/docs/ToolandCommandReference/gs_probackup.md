@@ -142,7 +142,7 @@ gs\_probackup工具的主要功能如下：
     [--help]
     ```
 
--   从备份目录_backup-path_中的备份副本恢复指定实例。如果指定了恢复目标选项，gs\_probackup将查找最近的备份并将其还原到指定的恢复目标。否则，使用最近一次备份。
+-   从备份目录_backup-path_中的备份副本恢复指定实例。使用restore子命令前，应先停止gaussdb进程，如果指定了恢复目标选项，gs\_probackup将查找最近的备份并将其还原到指定的恢复目标。否则，使用最近一次备份。
 
     ```
     gs_probackup restore -B backup-path --instance=instance_name
@@ -727,6 +727,7 @@ gs\_probackup工具的主要功能如下：
     ```
     >![](public_sys-resources/icon-notice.png) **须知：** 
     >在恢复备份时，必须先将原始实例目录（参数-D后面的目录）下面的内容清空。
+    >使用restore子命令前，应先停止gaussdb进程。
 
 
 ## cm工具管理集群全量备份恢复流程（资源池化模式）
