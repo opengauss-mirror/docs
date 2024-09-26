@@ -255,6 +255,29 @@ gs_restore [OPTION]... FILE
 
     输出SET SESSION AUTHORIZATION命令，而非ALTER OWNER命令，用以决定对象归属。该选项使转储更加兼容标准，但通过参考转储中对象的记录，导入过程可能会有问题。使用SET SESSION AUTHORIZATION的转储要求必须是系统管理员，同时在导入前还需参考“SET SESSION AUTHORIZATION”，手工对导出文件的密码进行修改验证，只有这样才能进行正确的导入操作，相比之下，ALTER OWNER对权限要求较低。
 
+-   --with-decryption=AES128/SM4
+
+    还原数据时采用AES128或SM4硬件加密方式解密。
+
+    若导出时使用--with-encryption指定了加密方式，则恢复时需要指定此参数并采用同样的方式进行解密。
+
+    ![](public_sys-resources/icon-notice.png) **说明：** 
+
+-   --with-key=KEY
+
+    硬件加密设备内部的密钥索引。
+
+-   --with-salt=RANDVALUES
+
+    用于解密的随机盐值。
+
+    - 必须为16个字符的字符串。
+    - 恢复时指定的盐值必须与加密导出时指定的盐值相同。
+
+> ![](public_sys-resources/icon-notice.png) **须知：** 
+>-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
+    ```
+
 -  --pipeline
 
     使用管道传输密码，禁止在终端使用。

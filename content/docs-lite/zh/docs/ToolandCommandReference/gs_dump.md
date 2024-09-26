@@ -399,11 +399,19 @@ gs_dump [OPTION]... [DBNAME]
 
     输出符合SQL标准的SET SESSION AUTHORIZATION命令而不是ALTER OWNER命令来确定对象所有权。这样令转储更加符合标准，但是如果转储文件中的对象的历史有些问题，那么可能不能正确恢复。并且，使用SET SESSION AUTHORIZATION的转储需要数据库系统管理员的权限才能转储成功，而ALTER OWNER需要的权限则低得多。
 
--   --with-encryption=AES128
+-   --with-encryption=AES128/SM4
 
-    指定转储数据需用AES128进行加密。
+    指定转储数据使用的加密方式，支持AES128和SM4算法。加密导出仅支持导出格式为纯文本（-F p）。
 
 -   --with-key=KEY
+
+  ![](public_sys-resources/icon-note.png) **说明：** 
+
+    - 该选项必须与--with-key和--with-salt同时使用。
+    
+    - AES128加密算法使用的是CBC模式，SM4加密算法使用的是CTR模式。
+    
+    - 当使用三未信安的加密算法时，必须使用--with-userpin指定创建密钥时的KMS用户信息。
 
     AES128密钥规则如下：
 

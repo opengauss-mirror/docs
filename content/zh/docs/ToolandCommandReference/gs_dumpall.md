@@ -166,16 +166,33 @@ gs_dumpall [OPTION]...
 
     输出符合SQL标准的SET SESSION AUTHORIZATION命令而不是ALTER OWNER命令来确定对象所有权。这样令转储更加符合标准，但是如果转储文件中的对象的历史有些问题，那么可能不能正确恢复。并且，使用SET SESSION AUTHORIZATION的转储需要数据库系统管理员的权限才能转储成功，而ALTER OWNER需要的权限则低得多。
 
--   --with-encryption=AES128
+-   --with-encryption=AES128/SWS-KMS-SM4/TAS-KMS-SM4
 
     指定转储数据需用AES128进行加密。
+    指定转储数据使用的加密方式（算法）。支持AES128/SWS-KMS-SM4/TAS-KMS-SM4。
 
-- --with-key=KEY
+    ![](public_sys-resources/icon-note.png) **说明：**
 
-  AES128密钥长度规则如下：
+    - 该选项必须与--with-key同时使用。
+
+    - 当加密方式为SWS-KMS-SM4时，必须与--with-userpin同时使用。
+
+-   --with-key=KEY
+
+    密钥名称或者密钥索引。
+
+    - AES128密钥长度规则如下：
+
+        - 密钥长度为8~16字符。
+        - 至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为~!@#$%^&*()-_=+\|[]{};:,<.>/?）四类字符中的三类字符。
+    - 加密算法为TAS-KMS-SM4时，--with-key指定的是江南天安KMS上创建的密钥索引，Vastbase限制其索引范围必须是1 ~ 2048。
+    - 加密算法为SWS-KMS-SM4时，--with-key指定的是三未信安KMS上创建的密钥名称。
+
+-   with-userpin=username:password
 
   - 密钥长度为8~16字符。
   - 至少包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）、非字母数字字符（限定为~!@#$%^&*()-_=+\|[]{};:,<.>/?）四类字符中的三类字符。
+    连接seckms加密服务器的username:password信息。
 
 -   --include-Extension
 
