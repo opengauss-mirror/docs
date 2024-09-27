@@ -899,6 +899,27 @@ omm@[local] openGauss=#
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p640908799712"><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p640908799712"></a><a name="zh-cn_topic_0237152145_zh-cn_topic_0059779319_zh-cn_topic_0058968145_p640908799712"></a>-</p>
 </td>
 </tr>
+<tr>
+<td>--with-decryption</td>
+<td>指定解密算法，软件只支持AES128，第三方接口库支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>--with-module-params</td>
+<td>指定第三方接口库参数
+<ul><li>MODULE_TYPE=TYPE,MODULE_LIB_PATH=path,MODULE_CONFIG_FILE_PATH=path</li>
+<li>type:GDACCARD,JNTAKMS,SWXAKMS;</li>
+<li>MODULE_LIB_PATH:包含库文件名称的绝对路径;</li>
+<li>MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。</li></ul>
+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>--with-salt</td>
+<td>指定IV，16字节。</td>
+<td>-</td>
+</tr>
 </tbody>
 </table>
 

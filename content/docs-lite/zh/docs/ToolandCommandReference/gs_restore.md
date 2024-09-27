@@ -239,24 +239,21 @@ gs_restore [OPTION]... FILE
 
     输出SET SESSION AUTHORIZATION命令，而非ALTER OWNER命令，用以决定对象归属。该选项使转储更加兼容标准，但通过参考转储中对象的记录，导入过程可能会有问题。使用SET SESSION AUTHORIZATION的转储要求必须是系统管理员，同时在导入前还需参考"SET SESSION AUTHORIZATION"，手工对导出文件的密码进行修改验证，只有这样才能进行正确的导入操作，相比之下，ALTER OWNER对权限要求较低。
 
--   --with-decryption=AES128/SM4
+-   --with-decryption 
 
-    还原数据时采用AES128或SM4硬件加密方式解密。
+    指定解密算法，只支持使用第三方接口库，支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
 
-    若导出时使用--with-encryption指定了加密方式，则恢复时需要指定此参数并采用同样的方式进行解密。
+-   --with-salt
+    
+    指定解密IV，16字节长度。
 
-    ![](public_sys-resources/icon-notice.png) **说明：** 
-
--   --with-key=KEY
-
-    硬件加密设备内部的密钥索引。
-
--   --with-salt=RANDVALUES
-
-    用于解密的随机盐值。
-
-    - 必须为16个字符的字符串。
-    - 恢复时指定的盐值必须与加密导出时指定的盐值相同。
+-   --with-module-params
+    
+    指定第三方接口库参数
+    -   MODULE_TYPE=TYPE,MODULE_LIB_PATH=path,MODULE_CONFIG_FILE_PATH=path
+    -   type:GDACCARD,JNTAKMS,SWXAKMS;
+    -   MODULE_LIB_PATH:包含库文件名称的绝对路径;
+    -   MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
 
 > ![](public_sys-resources/icon-notice.png) **须知：** 
 >-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
