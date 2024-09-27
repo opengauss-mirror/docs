@@ -634,13 +634,21 @@
 
 -- 第二参数的INTERVAL单位不能包含年或月部分
  openGauss=# SELECT SUBDATE(time'838:00:00', INTERVAL '1' MONTH);
-ERROR:  time field value out of range
+WARNING:  time field value out of range
 CONTEXT:  referenced column: subdate
+ subdate
+---------
+
+(1 row)
 
 -- 结果超出范围
  openGauss=# SELECT SUBDATE(time'838:59:59', INTERVAL '-1' SECOND);
-ERROR:  time field value out of range
+WARNING:  time field value out of range
 CONTEXT:  referenced column: subdate
+ subdate
+---------
+
+(1 row)
 ```
 
 - SUBTIME()
