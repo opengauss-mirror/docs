@@ -39,6 +39,7 @@ UWAL特性将数据库和新硬件的特性结合，在保证数据库持久性�
 -   仅支持传统主备
 -   仅在最大可用模式 most_available_sync 关闭时可用
 -   仅在synchronous_commit为on，local时可用
+-   当前仅支持全同步模式，一主一备 ANY 1 或者 一主两备 ANY 2
 
 ## 依赖关系<a name="section12798194673710"></a>
 
