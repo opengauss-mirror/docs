@@ -259,6 +259,23 @@ gs_restore [OPTION]... FILE
 
     使用管道传输密码，禁止在终端使用。
 
+-   --with-decryption 
+
+    指定解密算法，只支持使用第三方接口库，支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
+
+-   --with-salt
+    
+    指定解密IV，16字节长度。
+
+-   --with-module-params
+    
+    指定第三方接口库参数
+    -   MODULE_TYPE=TYPE,MODULE_LIB_PATH=path,MODULE_CONFIG_FILE_PATH=path
+    -   type:GDACCARD,JNTAKMS,SWXAKMS;
+    -   MODULE_LIB_PATH:包含库文件名称的绝对路径;
+    -   MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
+
+
 > ![](public_sys-resources/icon-notice.png) **须知：** 
 >-   如果安装过程中有任何本地数据要添加到template1数据库，请谨慎将gs\_restore的输出载入到一个真正的空数据库中；否则可能会因为被添加对象的定义被复制，而出现错误。要创建一个无本地添加的空数据库，需从template0而非template1复制，例如：
     ```

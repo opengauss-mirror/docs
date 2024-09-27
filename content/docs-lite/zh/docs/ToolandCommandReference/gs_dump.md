@@ -401,9 +401,24 @@ gs_dump [OPTION]... [DBNAME]
 
 -   --with-encryption=AES128
 
-    指定转储数据需用AES128进行加密。
+    指定加密算法，软件只支持AES128，使用第三方接口库支持AES128_CBC、AES128_CTR、AES128_GCM、AES256_CBC、AES256_CTR、AES256_GCM、SM4_CBC、SM4_CTR、AES128_CBC_HMAC_SHA256、AES128_CTR_HMAC_SHA256、AES128_GCM_HMAC_SHA256、AES256_CBC_HMAC_SHA256、AES256_CTR_HMAC_SHA256、AES256_GCM_HMAC_SHA256、SM4_CBC_HMAC_SM3、SM4_CTR_HMAC_SM3。如果不带HMAC，表示只做加密。带HMAC表示需要带HMAC运算做完整性校验。
+
+-   --with-module-params
+
+    指定第三方接口库参数
+    -   MODULE_TYPE=TYPE,MODULE_LIB_PATH=path,MODULE_CONFIG_FILE_PATH=path
+    -   type:GDACCARD,JNTAKMS,SWXAKMS;
+    -   MODULE_LIB_PATH:包含库文件名称的绝对路径;
+    -   MODULE_CONFIG_FILE_PATH:GDACCARD不需要,JNTAKMS 不包含文件名称的绝对路径,SWXA 包含文件名称的绝对路径。
+
+-   --gen-key
+    
+    在使用第三方接口库时可以生成密钥做加密，并将生成密钥打印到终端，以便解密和复用。不能和--with-key同时指定。
+
 
 -   --with-key=KEY
+
+    指定加密密钥，软件必须为16字节长度，第三方接口库使用的base64编码，最长44字节。不能和--gen-key同时指定。
 
     AES128密钥规则如下：
 
