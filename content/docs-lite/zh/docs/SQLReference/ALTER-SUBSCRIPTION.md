@@ -90,6 +90,10 @@ ALTER SUBSCRIPTION可以修改在CREATE SUBSCRIPTION中指定的订阅属性。
     -   **skiplsn \(string\)**
 
         如果设置了skiplsn，则后续commit_lsn为该lsn的事务将会被跳过。
+        
+    -   **syncconninfo（bolean）**
+
+        如果设置为syncconninfo=false，则发布端主备切换后不会同步连接信息。
 
 - **REFRESH PUBLICATION**
 

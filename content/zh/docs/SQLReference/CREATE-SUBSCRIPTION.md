@@ -92,6 +92,10 @@ CREATE SUBSCRIPTION subscription_name
     -   **matchddlowner (boolean)**
 
         指定订阅端在应用DDL操作时，是否切换到DDL日志信息中指定owner用户。
+        
+    - **syncconninfo（bolean）**
+    
+      指定订阅端在服务端主备切换后，是否会进行同步发布端连接信息，为true表示会同步发布端连接信息。false则不会同步发布端连接信息。默认值是true。
 
 ## 示例<a name="section1399192015610"></a>
 
