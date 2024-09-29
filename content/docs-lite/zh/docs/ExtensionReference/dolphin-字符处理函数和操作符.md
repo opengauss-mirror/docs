@@ -3,7 +3,7 @@
 相比于原始的openGauss，dolphin对于字符处理函数和操作符的修改主要为：
 
 1. 新增```regexp/not regexp/rlike```操作符。
-2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_int_set/hex/space/soundex/export_set/ord/substring_index/from_base64/uuid```函数。
+2. 新增```locate/lcase/ucase/insert/bin/char/elt/field/find_in_set/hex/space/soundex/export_set/ord/substring_index/from_base64/uuid```函数。
 3. 修改```length/bit_length/octet_length/convert/format/left/right```函数的表现。
 4. 新增```^```操作符的异或功能，新增```like binary/not like binary```操作符。
 5. 修改```like/not like ```操作符的表现。
@@ -535,7 +535,7 @@
     (1 row)
     ```
     
--   find_int_set(str, strlist)
+-   find_in_set(str, strlist)
 
     描述：获取str在后面strlist中的位置，strlist以```,```分割。
 
@@ -544,8 +544,8 @@
     示例：
 
     ```
-    b_compatibility_database=# select find_int_set('wo','ceshi,ni,wo,ta');
-    find_int_set 
+    b_compatibility_database=# select find_in_set('wo','ceshi,ni,wo,ta');
+    find_in_set 
     -------------
             3
     (1 row)
