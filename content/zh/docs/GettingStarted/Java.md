@@ -46,7 +46,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
     此连接方法需要在url上面拼接上用户名密码。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -87,7 +87,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
     此连接方法的用户名密码等参数均在Properties 对象的实例通过setProperty添加。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -129,7 +129,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
     此连接方法需要将用户名和密码作为变量输入。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -171,7 +171,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   通过statement执行创表操作。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -211,7 +211,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   通过PreparedStatement执行创表操作。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -260,7 +260,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用Statement执行插入操作，后面可以跟随查询语句检查插入是否生效。
 
-    ```
+    ```java
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
             Statement statement = conn.createStatement();
@@ -298,7 +298,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用PreparedStatement 执行插入操作，后面可以跟随查询语句检查插入是否生效。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -353,7 +353,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用prepareStatement执行查询操作可以使用预编译，动态的添加参数也可以执行普通的SQL语句。
 
-    ```
+    ```java
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
     	PreparedStatement preparedStatement=conn.prepareStatement("select * from test where id=?;");
@@ -390,7 +390,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用Statement执行查询语句。
 
-    ```
+    ```java
      public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
             Statement statement = conn.createStatement();
@@ -431,7 +431,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用Statement执行更新操作，然后执行查询语句判断更新是否成功。
 
-    ```
+    ```java
     public static void main(String[] args) throws SQLException {
             Connection conn = getConnect();
             Statement statement = conn.createStatement();
@@ -469,7 +469,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用PreparedStatement执行更新操作，然后执行查询语句判断更新是否成功。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -520,7 +520,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用Statement进行删除，然后执行查询语句判断删除是否成功。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
@@ -569,7 +569,7 @@ JDBC提供了三个方法，用于创建数据库连接。
 
 -   使用preparedStatement进行删除，然后执行查询语句判断删除是否成功。
 
-    ```
+    ```java
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.PreparedStatement;
