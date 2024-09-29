@@ -24,4 +24,3 @@
     ../content/zh/docs/AboutopenGauss/支持特殊浮点数
     ../content/zh/docs/AboutopenGauss/事件触发器
     ../content/zh/docs/AboutopenGauss/高级包
-    ../content/zh/docs/AboutopenGauss/支持游标作为插入值
