@@ -97,7 +97,6 @@ headless: true
             - [外键锁增强]({{< relref "./docs/AboutopenGauss/外键锁增强.md" >}})
             - [支持OLTP场景数据压缩]({{< relref "./docs/AboutopenGauss/支持OLTP场景数据压缩.md" >}})
             - [openEuler系统一键安装openGauss]({{< relref "./docs/AboutopenGauss/openEuler系统一键安装openGauss.md" >}})
-	    	- [高级包]({{< relref "./docs/AboutopenGauss/高级包.md" >}})
 	    -   [应用开发接口]({{< relref "./docs/AboutopenGauss/应用开发接口.md" >}})
 	    	-   [支持标准SQL]({{< relref "./docs/AboutopenGauss/支持标准SQL.md" >}})
 	    	-   [支持标准开发接口]({{< relref "./docs/AboutopenGauss/支持标准开发接口.md" >}})
