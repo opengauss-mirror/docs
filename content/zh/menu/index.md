@@ -119,6 +119,7 @@ headless: true
 	    	-   [全文索引]({{< relref "./docs/AboutopenGauss/全文索引.md" >}})
 	    	-   [Copy接口支持容错机制]({{< relref "./docs/AboutopenGauss/Copy接口支持容错机制.md" >}})
 	    	-   [分区]({{< relref "./docs/AboutopenGauss/分区.md" >}})
+	    	-   [DataVec向量引擎]({{< relref "./docs/AboutopenGauss/DataVec向量引擎.md" >}})
 	    	-   [高级分析函数支持]({{< relref "./docs/AboutopenGauss/高级分析函数支持.md" >}})
 	    	-   [物化视图]({{< relref "./docs/AboutopenGauss/物化视图.md" >}})
 	    	-   [支持HyperLogLog]({{< relref "./docs/AboutopenGauss/支持HyperLogLog.md" >}})

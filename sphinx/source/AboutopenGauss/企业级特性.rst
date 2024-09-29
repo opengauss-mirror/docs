@@ -8,6 +8,7 @@
     ../content/zh/docs/AboutopenGauss/全文索引
     ../content/zh/docs/AboutopenGauss/Copy接口支持容错机制
     ../content/zh/docs/AboutopenGauss/分区
+    ../content/zh/docs/AboutopenGauss/DataVec向量引擎
     ../content/zh/docs/AboutopenGauss/高级分析函数支持
     ../content/zh/docs/AboutopenGauss/物化视图
     ../content/zh/docs/AboutopenGauss/支持HyperLogLog
