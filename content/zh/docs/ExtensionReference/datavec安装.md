@@ -1,4 +1,4 @@
-# datavec安装
+# DataVec安装
 
 插件手动安装。如果需要手动编译加载插件最新变更，步骤如下：
 
@@ -8,7 +8,9 @@
 
 2. 将[datavec源码](https://gitcode.com/opengauss/Plugin/tree/master/contrib/datavec)拷贝到openGauss-server源码的contrib目录下。
 
-3. 进入datavec目录执行make install。
+3. 进入DataVec目录执行make install。
+
+4. 初始化数据库后连接创建DataVec。
 
 ## OM安装
 
