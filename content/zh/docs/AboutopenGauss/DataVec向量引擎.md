@@ -96,7 +96,7 @@ ANN支持并行构建索引，通过将数据集分成若干个子集分配到�
 
 **图 4**  PQ码本训练<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQTrain-datavec.png" height=600px style="width: 1300;height: 300;">
+    <img src="figures/PQTrain-datavec.png" style>
 </div>
 
 ### PQ检索
@@ -105,7 +105,7 @@ ANN支持并行构建索引，通过将数据集分成若干个子集分配到�
 
 **图 5**  PQ检索<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQSearch-datavec.png" height=600px style="width: 1300;height: 300;">
+    <img src="figures/PQSearch-datavec.png" style>
 </div>
 
 ### 分层导航+PQ融合索引
@@ -123,7 +123,7 @@ DataVec还能够同时处理标量数据（如数值、类别）和向量数据�
 
 **图 6**  高斯小智智能问答系统<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures//gausscopilot-datavec.png" height=600px style="width: 1000;height: 300;">
+    <img src="figures//gausscopilot-datavec.png" style>
 </div>
 
 当前，openGauss社区的文档数量庞大，用户在查找特定知识时常常面临困难。为了解决这一问题，可以借助DataVec搭建高斯小智问答系统，通过高效的数据处理和混合查询能力，精准提取相关信息，大幅提升用户的使用体验。
