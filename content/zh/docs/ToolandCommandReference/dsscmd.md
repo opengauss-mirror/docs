@@ -335,7 +335,8 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     _BLACKBOX_DETAIL_ON,
     _ENABLE_CORE_STATE_COLLECT,
     MES_WAIT_TIMEOUT,
-    DELAY_CLEAN_INTERVAL。
+    DELAY_CLEAN_INTERVAL,
+    DSS_NODES_LIST。
 
 -   获取配置项信息
 
