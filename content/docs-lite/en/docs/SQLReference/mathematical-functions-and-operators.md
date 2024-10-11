@@ -348,6 +348,22 @@
      1.10714871779409
     (1 row)
     ```
+    
+-   bin_to_num\(VARIADIC number[]\)
+
+    Description: Converts a bit vector to its equivalent number. Each argument to this function represents a bit in the bit vector. Each expr must evaluate to 0 or 1. 
+
+    Return type: number
+
+    Example:
+
+    ```
+    openGauss=# SELECT bin_to_num(1, 0, 1);
+      bin_to_num
+    ---------------
+               5
+    (1 row)
+    ```
 
 -   bitand\(integer, integer\)
 
