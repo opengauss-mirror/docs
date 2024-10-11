@@ -1,0 +1,68 @@
+
+# repository
+
+- 指定 git repository & branch：
+
+
+https://gitee.com/opengauss/docs [branch]
+
+- 测试时可以使用：
+
+https://gitee.com/feng-yalin0/docs 的 master 分支
+
+# Jenkins构建参数
+
+（均为字符型参数）
+
+| 参数名        | 默认值      | 描述                               |
+| ------------- | ----------- | ---------------------------------- |
+| IMAGE_NAME    | doc-builder | 传入本次构建的镜像名称（必须小写） |
+| IMAGE_VERSION | 0.5.95      | 传入本次构建的镜像tag              |
+
+
+# build steps 参考
+
+```bash
+#!/bin/bash
+# 打印当前目录，切换到 docBuilder 目录(debug)
+pwd
+ls
+if [ -d "./docBuilder" ]; then
+    cd ./docBuilder
+    echo "Now build script entered docBuilder directory."
+else
+    echo "Directory 'docBuilder' not found"
+    exit 1
+fi
+
+# 1. 构建镜像
+docker build --network=host --no-cache -t $IMAGE_NAME:$IMAGE_VERSION .
+
+# 2. 获取对应名称和版本号的 docker 镜像 id
+IMAGE_ID=$(docker images --quiet  $IMAGE_NAME:$IMAGE_VERSION)
+if [ -z "$IMAGE_ID" ]; then
+    echo "build failed. no target image id found"
+    exit 1
+else
+    echo "target image build success. found id: $IMAGE_ID"
+fi
+
+# 3. 运行镜像，捕获输出，同时将服务器上的字体目录挂载到容器内
+CURRENT_DIR=$(pwd)
+#SERVER_FONT_DIR="/usr/share/fonts/"
+RUN_OUTPUT=$(docker run -d -p ${PORT}:5000 \
+-v ${CURRENT_DIR}/build:/app/build \
+--rm "$IMAGE_NAME:$IMAGE_VERSION")
+
+# 4. 运行成功则尝试生成 pdf
+if [ $? -eq 0 ]; then
+    CONTAINER_ID=$(echo "$RUN_OUTPUT" | awk '{print $NF}')
+    echo "Docker image has launched with container_id: ${CONTAINER_ID}"
+    sleep 1
+    echo "Try to generate pdf in ${CURRENT_DIR}/build"
+    # fc-cache 更新字体缓存; curl 给微服务发送信息
+    docker exec ${CONTAINER_ID} /bin/sh -c "fc-cache -fv && curl http://127.0.0.1:5000/html && curl http://127.0.0.1:5000/pdf"
+else
+    echo "Failed to start container. Reason: $RUN_OUTPUT"
+fi
+```
