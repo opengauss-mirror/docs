@@ -1,6 +1,6 @@
 # STATEMENT\_HISTORY
 
-获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。只可在系统库中查询到结果，用户库中无法查询。query长度受参数[track_activity_query_size](../DatabaseReference/查询和索引统计收集器.md）控制。
+获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。只可在系统库中查询到结果，用户库中无法查询。query长度受参数[track_activity_query_size](../DatabaseReference/查询和索引统计收集器.md)控制。
 
 **表 1**  STATEMENT\_HISTORY字段
 
@@ -679,7 +679,7 @@ openGauss=# select * from DBE_PERF.statement_history;
 
 此处代码判断逻辑为（以下各个条件为或判定，满足其一即可）：
 
-1. 打开了动态语句追踪功能：采用dynamic_func_control追踪STMT。
+1. 通过设置dynamic_func_control参数打开动态语句追踪功能。
 
 2. track_stmt_stat_level追踪第一个level为L0或者更高。
 
