@@ -572,7 +572,7 @@ detail      | 111 Rows successfully loaded.
 </tr>
 <tr id="row178931235103510"><td class="cellrowborder" valign="top" width="17.7017701770177%" headers="mcps1.2.4.1.1 "><p id="p13894143573512"><a name="p13894143573512"></a><a name="p13894143573512"></a>compatible_illegal_chars</p>
 </td>
-<td class="cellrowborder" valign="top" width="50.18501850185019%" headers="mcps1.2.4.1.2 "><p id="p13894163520358"><a name="p13894163520358"></a><a name="p13894163520358"></a>是否开启非法字符容错功能，与COPY语法中的COMPATIBLE_ILLEGAL_CHARS容错规则和限制相同，详见《开发者指南》的“SQL 语法 &gt; COPY”章节的COPY_OPTION中COMPATIBLE_ILLEGAL_CHARS参数说明。</p>
+<td class="cellrowborder" valign="top" width="50.18501850185019%" headers="mcps1.2.4.1.2 "><p id="p13894163520358"><a name="p13894163520358"></a><a name="p13894163520358"></a>是否开启非法字符容错功能，与COPY语法中的COMPATIBLE_ILLEGAL_CHARS容错规则和限制相同，详见《SQL参考》的“SQL语言结构和语法 > SQL 语法 >  COPY”章节的COPY_OPTION中COMPATIBLE_ILLEGAL_CHARS参数说明。</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.11321132113211%" headers="mcps1.2.4.1.3 "><p id="p13894135173511"><a name="p13894135173511"></a><a name="p13894135173511"></a>[true, false]，默认false。</p>
 </td>
