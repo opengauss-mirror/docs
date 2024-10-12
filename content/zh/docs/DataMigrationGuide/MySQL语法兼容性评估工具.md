@@ -26,7 +26,7 @@ openGauss兼容性评估工具，支持从多个场景下获取sql语句进行�
  https://gitee.com/opengauss/Plugin/tree/master/contrib/assessment
 
 社区提供兼容性评估工具软件包地址：
-https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/compatibility-assessment-5.1.0.tar.gz
+https://gitee.com/opengauss/compatibility-assessment/tree/master/compatibility-assessment
 
 #### 源码安装
 
