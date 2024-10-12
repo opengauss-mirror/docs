@@ -21,7 +21,7 @@
 
   如果实际期望和这些配置不符，建议在java连接设置代码中显式设定这些参数。
 
--   【建议】通过JDBC连接数据库时，会设置extra_float_digits=3，gsql中设置为extra_float_digits=0，可能会使同一条数据在JDBC显示和gsql显示的精度不同。
+-   【建议】通过JDBC连接数据库时，会设置extra_float_digits=2，gsql中设置为extra_float_digits=0，可能会使同一条数据在JDBC显示和gsql显示的精度不同。
 
 -   【建议】对于精度敏感的场景，建议使用numeric类型。
 
