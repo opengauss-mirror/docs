@@ -677,6 +677,30 @@
     ```
 
 
+-   new_time(date, timezone1,timezone2)
+
+    Description: Returns the date and time in timezone2 when date and time in timezone1 are date
+
+    Parameter Type: timestamp without time zone, text, text
+
+    Return type: timestamp without time zone
+
+    Example:
+    
+    ```
+    openGauss=# select new_time('2024-07-22 14:00:00', 'EST', 'PST');
+          new_time
+    ---------------------
+     2024-07-22 11:00:00
+    (1 row)
+    ```
+    
+    > ![](public_sys-resources\icon-note.gif) **NOTE:** 
+    >
+    > 1.This function is valid only when openGauss is compatible with dbcompatibility = 'A'.
+    >
+    > 2.The first parameter date can not be timestamp with time zone.
+    
 -   next\_day\(x,y\)
 
     Description: Calculates the time of the next week y started from x.
