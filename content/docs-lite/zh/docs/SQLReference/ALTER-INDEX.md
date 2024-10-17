@@ -46,6 +46,9 @@ ALTER INDEX用于修改现有索引的定义。
 
     用于修改索引分区的所属表空间。
 
+-   ENABLE / DISABLE
+
+    用于启用/禁用表索引，仅适用于函数索引。
 
 ## 注意事项<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_s503281b2c63545749248dae8614077e7"></a>
 
@@ -127,6 +130,12 @@ ALTER INDEX用于修改现有索引的定义。
         MOVE PARTITION index_partition_name TABLESPACE new_tablespace;
     ```
 
+-   启用/禁用表索引，仅适用于函数索引。
+
+    ```
+    ALTER INDEX [ IF EXISTS ] index_name 
+        ENABLE / DISABLE;
+    ```
 
 ## 参数说明<a name="zh-cn_topic_0283137124_zh-cn_topic_0237122063_zh-cn_topic_0059778960_sbb551b3820484c06ac91aa80e311e48e"></a>
 
