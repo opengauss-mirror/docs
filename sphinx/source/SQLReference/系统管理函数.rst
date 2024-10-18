@@ -15,3 +15,4 @@
     ../content/zh/docs/SQLReference/其它函数
     ../content/zh/docs/SQLReference/Undo系统函数
     ../content/zh/docs/SQLReference/行存压缩系统函数
+    ../content/zh/docs/SQLReference/HTAP行列融合系统函数
