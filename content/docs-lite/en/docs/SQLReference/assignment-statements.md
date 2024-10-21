@@ -56,6 +56,27 @@ END;
 >-   In INTO mode, values can be assigned only to the columns at the first layer. Two-dimensional or above arrays are not supported.
 >-   When a nested column value is referenced, if an array subscript exists, only one parenthesis can exist in the first three layers of columns. You are advised to use square brackets to reference the subscript.
 
+## Assignment Of Variables With Type Names<a name="section72764131238199"></a>
+In addition to the above, openGauss supports assignment methods with type names (including RECORD, VARRAY, TABLE OF types and types created by CREATE TYPE). For compatibility with historical versions, such type names are usually ignored and treated as normal arrays or records. Only when enable_pltype_name_check switch is turned on will throw an error if the type name is different.
+
+## Examples<a name="section1541328764871"></a>
+
+```
+set enable_pltype_name_check = on; -- Turn on the type name detection switch (default is off)
+
+DECLARE
+  TYPE t_rec IS RECORD (val1 VARCHAR2(10), val2 VARCHAR2(10));
+  TYPE t_rec2 IS RECORD (val1 VARCHAR2(10), val2 VARCHAR2(10));
+  l_rec t_rec;
+BEGIN
+  l_rec := t_rec2('ONE', 'TWO'); -- Assignment of variables with type names
+  raise info 'l_rec is %', NVL(l_rec.val1,'NULL');
+END;
+/
+
+ERROR:  "t_rec2" cannot be used to assign "l_rec"
+```
+
 ## INTO/BULK COLLECT INTO<a name="section1491111311511"></a>
 
 **INTO**  and  **BULK COLLECT INTO**  store values returned by statements in a stored procedure to variables.  **BULK COLLECT INTO**  allows some or all returned values to be temporarily stored in an array.
