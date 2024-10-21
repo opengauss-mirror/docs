@@ -1,4 +1,4 @@
-# DMS端口被占用导致reform失败
+# 因DMS端口被占用导致reform失败
 
 ## 一、问题现象
 在资源池化场景，数据库节点启动时，会初始化DMS组件，此时需要额外占用一个端口，用于各节点的DMS组件间的通信，如果该端口被占用，则数据库会因DMS初始化失败而退出。
@@ -37,5 +37,8 @@ gaussdb 3816250 xxxxxxxx   22u  IPv4 39736xxxx      0t0  TCP localhost:12703 (LI
 gaussdb 3816250 xxxxxxxx   25u  IPv4 39736xxxx      0t0  TCP openGauss111:12703 (LISTEN)
 ```
 
-## 三、问题根因及解决方案
-在资源池化场景，数据库节点启动时，会初始化DMS组件，此时需要额外占用一个端口，用于各节点的DMS组件间的通信，如果该端口被占用，则数据库会因DMS初始化失败而退出。DMS所需端口通过参数ss_interconnect_url定义，具体参数说明参考[通信矩阵](../DatabaseReference/通信矩阵.md)。如果发现因DMS端口冲突导致节点无法启动的情况，可以通过`gs_guc set -N all -I all -c "ss_interconnect_url = 'xxx'"`修改为非冲突端口并重启节点解决该问题。
+## 三、问题根因
+在资源池化场景，数据库节点启动时，会初始化DMS组件，此时需要额外占用一个端口，用于各节点的DMS组件间的通信，如果该端口被占用，则数据库会因DMS初始化失败而退出。
+
+## 四、解决方案
+DMS所需端口通过参数ss_interconnect_url定义，具体参数说明参考[通信矩阵](../DatabaseReference/通信矩阵.md)。如果发现因DMS端口冲突导致节点无法启动的情况，可以通过`gs_guc set -N all -I all -c "ss_interconnect_url = 'xxx'"`修改为非冲突端口并重启节点解决该问题。

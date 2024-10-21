@@ -1,4 +1,4 @@
-# switchover转移锁后，升主节点升主失败，原主自动退出
+# 因switchover转移锁后，升主节点升主失败，导致原主自动退出
 
 ## 一、问题现象
 在资源池化场景，DMS通过向CM获取reform锁决定集群的主节点，在switchover期间，reform锁会从原主转移到新主。如果在reform锁已经从原主转移到新主后，集群状态发生变化导致reform失败（比如新主节点发生故障退出），原主节点会自动重启。
@@ -58,16 +58,15 @@ UTC+8 2024-10-09 15:07:52.019|DMS|3753680|ERROR>[DMS REFORM] node exit, reform f
 UTC+8 2024-10-09 15:07:52.019|DMS|3753677|INFO>[DMS REFORM]dms_reform_fail enter [dms_reform_proc.c:1374]
 ```
 此时集群状态如下所示：
-```
+```shell
 [  Datanode State   ]
 
 node            node_ip         instance                                         state            | node            node_ip         instance                                         state            | node            node_ip         instance                                         state
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1  openGauss111 xx.xx.xx.111    6001 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 P Down    Starting | 2  openGauss135 xx.xx.xx.135    6002 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 S Standby Starting | 3  openGauss137 xx.xx.xx.137    6003 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 S Standby Starting
-
 ```
 原主节点退出后，cm会备节点的方式重启原主节点，DMS会重新组织reform，最终数据库会自动恢复稳定状态。
-```
+```shell
 [xxxxxxxx@openGauss135 ~]$ cm_ctl query -Cvipd
 [  Datanode State   ]
 
@@ -75,5 +74,8 @@ node            node_ip         instance                                        
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1  openGauss111 xx.xx.xx.111    6001 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 P Standby Normal | 2  openGauss135 xx.xx.xx.135    6002 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 S Primary Normal | 3  openGauss137 xx.xx.xx.137    6003 12703  /usr3/xxxxxxxx/openGauss/cluster/dn1 S Standby Normal
 ```
-## 三、问题根因及解决方案
-DMS目前的设计为，在failover的场景，原主节点不会参与当轮reform（即使该节点已经启动），而是等failover完成后重新组织reform，将原主节点加入集群。此举是为了避免原主节点在failover期间启动后，基于ckpt点写入日志，导致原主日志写坏的问题。针对switchover锁转移后，新主节点升主失败重启的场景，DMS会控制原主节点自动退出，由CM将该节点重新启动。此过程由DMS自动完成，不需要用户手动操作。
+## 三、问题根因
+DMS目前的设计为，在failover的场景，原主节点不会参与当轮reform（即使该节点已经启动），而是等failover完成后重新组织reform，将原主节点加入集群。此举是为了避免原主节点在failover期间启动后，基于ckpt点写入日志，导致原主日志写坏的问题。针对switchover锁转移后，新主节点升主失败重启的场景，DMS会控制原主节点自动退出，由CM将该节点重新启动。
+
+## 四、解决方案
+此过程由DMS自动完成，不需要用户手动操作，只需等待reform结束即可。
