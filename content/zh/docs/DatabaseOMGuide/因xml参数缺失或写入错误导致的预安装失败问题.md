@@ -1,38 +1,42 @@
-# xml参数缺失或写入错误导致的预安装失败
+# 因xml参数缺失或写入错误导致的预安装失败问题
 
-## 问题现象
+## 一、问题现象
 
 执行预安装出现以下几类报错信息：
 
 参数错误。
 
-```
+```shell
 [GAUSS-51258] : The parameter [dss_ssl_enabl] in the XML file is an incorrect parameter.
 ```
 
 参数缺失。
 
-```
+```shell
 [GAUSS-50012] : The parameter 'dss_home' value can't be empty.
 ```
 
 参数值错误。
 
-```
+```shell
 [GAUSS-50026] : Failed to check dss_ssl_enable parameters in the XML file. It's must be on or off
 ```
 
-```
+```shell
 [GAUSS-50419] : Failed to obtain the public volume 'dat' in 'data:/dev/disk/by-id/scsi-36382028100ed96ac1ec2dd6c000000d2,p0:/dev/disk/by-id/scsi-36382028100ed96ac1ec2dd6c000000d3'.
 ```
 
-## 原因分析
+## 二、定位方法
+
+根据报错信息，查看xml文件对应内容是否有问题。
+
+## 三、问题根因
 
 xml文件参数有误。xml必填参数说明如下。
 
 整体信息必须配置以下内容。
 
-```
+```shell
 <!-- 整体信息 -->
 <CLUSTER>
 <!-- 数据库名称 -->
@@ -62,7 +66,7 @@ xml文件参数有误。xml必填参数说明如下。
 
 主节点上必须配置以下信息。
 
-```
+```shell
 <DEVICELIST>
 <!-- 节点1上的部署信息 -->
 <DEVICE sn="node1_hostname">
@@ -88,7 +92,7 @@ xml文件参数有误。xml必填参数说明如下。
 
 备节点上必须配置以下内容。
 
-```
+```shell
 <DEVICE sn="node2_hostname">
 <PARAM name="name" value="node2_hostname"/>
 <PARAM name="azName" value="AZ1"/>
@@ -98,6 +102,6 @@ xml文件参数有误。xml必填参数说明如下。
 <PARAM name="cmDir" value="/opt/huawei/install/cm"/> 
 ```
 
-## 解决方法
+## 四、解决方法
 
 修改xml文件，重新执行预安装。
