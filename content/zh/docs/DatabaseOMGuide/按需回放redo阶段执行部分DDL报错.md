@@ -4,7 +4,7 @@
 
 按需回放redo阶段，执行部分DDL报错，报错信息如下：
 
-```
+```shell
 openGauss=# create database tpcc1;
 ERROR:  only support INSERT/UPDATE/DELETE/SELECT/SET/SHOW/CALL, and ALTER/CREATE/DROP on Table/Index/View/Procedure/Schema, and ALTER on Database during SS on-demand recovery, command 752
 ```
@@ -13,7 +13,7 @@ ERROR:  only support INSERT/UPDATE/DELETE/SELECT/SET/SHOW/CALL, and ALTER/CREATE
 
 查询`ondemand_recovery_status`视图，确认当前节点处于按需回放状态，对应`in_ondemand_recovery`字段查询为`true`，`ondemand_recovery_status`字段状态为`ONDEMAND_RECOVERY_REDO`。
 
-```
+```shell
 openGauss=# select * from ondemand_recovery_status();
 -[ RECORD 1 ]---------------+-----------------------
 primary_checkpoint_redo_lsn | 0/0
