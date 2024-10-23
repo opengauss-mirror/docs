@@ -93,12 +93,22 @@ CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] 
 
 ## 可自动更新视图<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
-简单视图是可自动更新的，系统允许在这类视图上执行INSERT、UPDATE和DELETE语句，如果一个视图满足以下条件，那么它就是可自动更新的。
+简单视图是可自动更新的。在视图上执行UPDATE语句时，如果视图满足以下条件，那么它就是可自动更新的。
 
-* 视图的FROM列表中只有一项，并且必须是一个表或者是另一个可自动更新视图。
-* 视图定义的顶层不能包含WITH、DISTINCT、GROUP BY、HAVING、LIMIT、OFFSET子句的视图
+* 视图的FROM列表中可以有多项，但这些项必须是一个表、另一个视图或者一个子查询。
+* 视图定义的顶层不能包含WITH、DISTINCT、GROUP BY、HAVING、LIMIT、OFFSET子句的视图。
 * 视图定义的顶层不能包含集合操作（UNION、INTERSET、EXCEPT）的视图。
 * 视图的目标列表中不能包含聚集函数、窗口函数或者返回集合的函数。
+* 如果UPDATE的目标列属于视图的一个子查询或子视图，那么这个子查询或子视图也需要满足上述可自动更新的条件。
+
+在视图上执行DELETE语句时，除了上述执行UPDATE语句的条件，还需要额外满足如下条件。
+
+* 视图FROM列表中的所有子查询和子视图都是满足可自动更新条件的。
+* 视图FROM列表中没有由全外连接或交叉连接的方式连接的项，且除了由左外连接或右外连接的方式连接的表，其他表之中最多只能有一个没有唯一键的表。
+
+在视图上执行INSERT语句，或声明CHECK OPTION时，还需要额外满足如下条件。
+
+* 视图的FROM列表中只有一项，并且必须是一个表或者是另一个可自动更新视图（不能是子查询）。
 
 一个可自动更新的视图可以混合可更新列以及不可更新列。如果一个列是对底层关系中一个可更新列的简单引用，则它是可更新的。否则该列是只读的，并且在一个INSERT或者UPDATE语句尝试对它赋值时会报错。
 
@@ -148,6 +158,29 @@ openGauss=# UPDATE ro_view2 SET a = 5 WHERE a = 15;
 --创建视图指定security_option
 openGauss=# create or replace definer=use_a_1144425 view v1 as select * from sql_security_1144425;
 openGauss=# create sql security invoker view v2 as select * from sql_security_1144425;
+
+--创建多表视图
+openGauss=# CREATE TABLE dept(deptno INT NOT NULL, dname VARCHAR(14), loc VARCHAR(13), CONSTRAINT pk_dept PRIMARY KEY(deptno));
+openGauss=# INSERT INTO dept VALUES (10,'ACCOUNTING','NEW YORK'); 
+openGauss=# CREATE TABLE emp (empno int NOT NULL PRIMARY KEY, ename VARCHAR(10), job VARCHAR(9), deptno int,
+openGauss-# CONSTRAINT fk_deptno FOREIGN KEY(deptno) REFERENCES dept(deptno));
+openGauss=# INSERT INTO emp VALUES (7782,'CLARK','MANAGER',10);
+openGauss=# INSERT INTO emp VALUES (7934,'MILLER','CLERK',10);
+openGauss=# CREATE VIEW multv1 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept, emp 
+openGauss-# WHERE dept.deptno = emp.deptno;
+
+--多表视图更新、删除数据
+openGauss=# UPDATE multv1 SET ENAME='ABCD', JOB='SALESMAN' WHERE EMPNO=7934;
+openGauss=# DELETE FROM multv1 WHERE EMPNO=7934;
+
+--基表不是表、子视图或子查询的视图更新、删除数据失败
+openGauss=# CREATE VIEW multv2 AS SELECT * FROM emp JOIN UPPER('foo') AS f ON true;
+openGauss=# UPDATE multv2 SET f = 'a';
+openGauss=# DELETE FROM multv2;
+
+-- 基表之间交叉连接的视图删除数据失败
+openGauss=# CREATE VIEW multv3 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept CROSS JOIN emp;
+openGauss=# DELETE FROM mutlv3;
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
