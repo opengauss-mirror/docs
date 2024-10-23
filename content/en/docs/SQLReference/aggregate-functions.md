@@ -559,6 +559,97 @@
     (1 row)
     ```
 
+-   corr_s\(expr1, expr2, return_mode\)
+
+    Description：Spearman correlation coefficient
+
+    Return type：double precision
+
+    Return Value: The `return_mode` parameter is optional; if not specified, the function returns the Spearman's rank correlation coefficient (the return value is the same as when `return_mode=COEFFICIENT`). If specified, the value of `return_mode` must be one of the following five options.
+
+    <table>
+        <tr>
+            <th>Return Value</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>COEFFICIENT</td>
+            <td>Coefficient of correlation</td>
+        </tr>
+        <tr>
+            <td>ONE_SIDED_SIG</td>
+            <td>Positive one-tailed significance of the correlation</td>
+        </tr>
+        <tr>
+            <td>ONE_SIDED_SIG_POS</td>
+            <td>Same as ONE_SIDED_SIG</td>
+        </tr>
+        <tr>
+            <td>ONE_SIDED_SIG_NEG</td>
+            <td>Negative one-tailed significance of the correlation</td>
+        </tr>
+        <tr>
+            <td>TWO_SIDED_SIG</td>
+            <td>Two-tailed significance of the correlation</td>
+        </tr>
+    </table>
+
+    Example：
+
+    ```
+    openGauss=# CREATE TABLE corr_t1(a int, b int);
+    CREATE TABLE
+    openGauss=# INSERT INTO corr_t1 VALUES (NULL,11),(1,2),(1,3),(2,4),(2,5),(3,6);
+    INSERT 0 6
+    openGauss=# SELECT CORR_S(a,b) FROM corr_t1;
+        corr_s
+    ------------------
+    .948683298050514
+    (1 row)
+
+    openGauss=# SELECT CORR_S(a,b,'COEFFICIENT') FROM corr_t1;
+        corr_s
+    ------------------
+    .948683298050514
+    (1 row)
+
+    openGauss=# SELECT CORR_S(a,b,'ONE_SIDED_SIG') FROM corr_t1;
+        corr_s
+    --------------------
+    .00692341649442951
+    (1 row)
+    ```
+
+-   corr_k\(expr1, expr2, return_mode\)
+
+    Description： Kendall's tau-b correlation coefficient
+
+    Return type：double precision
+
+    Return Value: The `return_mode` parameter is optional; if not specified, the function returns Kendall's tau-b correlation coefficient (the return value is the same as when `return_mode=COEFFICIENT`). If specified, the description of the return value is the same as that for the `corr_s` function mentioned above.
+
+    Example：
+
+    ```
+    openGauss=# SELECT CORR_K(a,b) FROM corr_t1;
+        corr_k
+    ------------------
+    .894427190999916
+    (1 row)
+
+    openGauss=# SELECT CORR_K(a,b,'COEFFICIENT') FROM corr_t1;
+        corr_k
+    ------------------
+    .894427190999916
+    (1 row)
+
+    openGauss=# SELECT CORR_K(a,b,'ONE_SIDED_SIG') FROM corr_t1;
+        corr_k
+    -------------------
+    .0142298684581553
+    (1 row)
+    ```
+
 -   every\(expression\)
 
     Description: Equivalent to  **bool\_and**
