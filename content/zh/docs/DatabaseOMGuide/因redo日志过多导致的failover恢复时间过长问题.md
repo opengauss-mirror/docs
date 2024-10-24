@@ -1,24 +1,24 @@
-# redo日志过多导致的failover恢复时间过长问题
+# 因redo日志过多导致的failover恢复时间过长问题
 
-## 问题现象
+## 一、问题现象
 
 failover恢复后，集群较长时间处于以下状态。
 
-```
+```shell
 [  Datanode State   ]
 
 node            node_ip         instance                              state
 -----------------------------------------------------------------------------------------
-1  openGauss135 20.20.20.135    6001 25400  /.../install/data/dn P Standby Starting
-2  openGauss137 20.20.20.137    6002 25400  /.../install/data/dn S Down    Unknown
-3  openGauss111 20.20.20.111    6003 25400  /.../install/data/dn S Standby Promoting
+1  openGaussxxx xxx.xxx.xxx.xxx    6001 25400  /.../install/data/dn P Standby Starting
+2  openGaussxxx xxx.xxx.xxx.xxx    6002 25400  /.../install/data/dn S Down    Unknown
+3  openGaussxxx xxx.xxx.xxx.xxx    6003 25400  /.../install/data/dn S Standby Promoting
 ```
 
 ## 定位分析
 
-查看dn日志，升主节点出现以下信息。
+查看`$GAUSSLOG/pg_log/dn_xxx`日志，升主节点出现以下信息。
 
-```
+```shell
 2024-10-12 09:17:16.123 [unknown] [unknown] localhost 281450988154784 0[0:0#0]  0 [BACKEND] LOG:  CheckpointInProgress: ckpt_done=1, ckpt_started=1
 2024-10-12 09:17:16.123 [unknown] [unknown] localhost 281450988154784 0[0:0#0]  0 [DMS] LOG:  [SS reform][SS failover] backends exit successfully
 2024-10-12 09:17:16.127 [unknown] [unknown] localhost 281451140722592 0[0:0#0]  0 [DMS] LOG:  [SS reform] rebuild page: success.rebuild buf thread_index:9, buf_if start from:74304 to:82559, max_buf_id:132095.
@@ -48,4 +48,10 @@ node            node_ip         instance                              state
 [SS reform][SS failover] backends exit successfully
 ```
 
-出现这一问题现象是由于redo日志过多，进而造成集群恢复时间过长，此时等待集群恢复正常即可。
+## 三、问题根因
+
+出现这一问题现象是由于redo日志过多，进而造成集群恢复时间过长。
+
+## 四、解决方法
+
+等待一段时间后，查看`$GAUSSLOG/pg_log/dn_xxx`日志，日志回放完成，此时集群状态恢复正常。
