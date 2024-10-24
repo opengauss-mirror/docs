@@ -20,75 +20,126 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
 
 ## 操作步骤
 
-1.  创建工作目录：
+1. 解压安装包
 
-    ```
-    mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
-    ```
-    
-1.  将jar包传至/ops/server/openGauss-visualtool/下，jar包下载地址：[https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)
+   通过官网获取安装包`Datakit-6.0.0.tar.gz`，解压安装包至`datakit`安装目录下，例如安装目录为`/path/datakit_server`时，解压命令如下:
 
-3. 将配置文件application-temp.yml传至/ops/server/openGauss-visualtool/config/下。配置文件内容如下：
-
+   ```shell
+   $ tar -zxvf Datakit-6.0.0.tar.gz -C /path/datakit_server
    ```
-   system:
-     # File storage path
-     defaultStoragePath: /ops/files
-     # Whitelist control switch
-     whitelist:
-       enabled: false
-   server:
-     port: 9494
-     ssl:
-       key-store: /ops/ssl/keystore.p12
-       key-store-password: password
-       key-store-type: PKCS12
-       enabled: true
-     servlet:
-       context-path: /
-   logging:
-     file:
-       path: /ops/server/openGauss-visualtool/logs/
-   spring:
-     datasource:
-       type: com.alibaba.druid.pool.DruidDataSource
-       driver-class-name: org.opengauss.Driver
-       url: jdbc:opengauss://ip:port/database?currentSchema=public
-       username: dbuser
-       password: dbpassword
-       druid:
-         test-while-idle: false
-         test-on-borrow: true
-         validation-query: "select 1"
-         validation-query-timeout: 30000
-   ```
+2. 创建新目录
 
-4. 将ssl文件传至/ops/ssl/下，生成ssl文件实例（生成ssl的java必须跟运行DataKit是一个java版本）：
-
+   在`datakit`安装目录下，创建新的目录`config`, `files`, `ssl`, `logs`
+   ```shell
+   $ cd /path/datakit_server
+   mkdir config files ssl logs
    ```
-   keytool -genkey -noprompt \
-       -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN"\
-       -alias opengauss\
-       -storetype PKCS12 \
-       -keyalg RSA \
-       -keysize 2048 \
-       -keystore /ops/ssl/keystore.p12 \
-       -validity 3650 \
-       -storepass password
-   ```
+3. 更改配置文件 - 修改工作目录
 
+   修改`datakit`安装目录下的`application-temp.yml`文件，文件中的`/ops`默认工作目录路径统一修改为实际`datakit`安装目录的路径`/path/datakit_server`，而第二步创建的目录就是为了此处统一使用的
+   ```shell
+   $ vim application-temp.yml
+   system.defaultStoragePath: /ops/files
+   server.ssl.key-store: /ops/ssl/keystore.p12
+   logging.file.path: /ops/logs
+   ```
+4. 更改配置文件 - 配置数据库
+
+   平台默认使用`openGauss`作为后台数据库，需要正确配置`openGauss`的连接信息，包括url中的ip、port、database以及username和password。配置内容如下：
+
+   ```yaml
+   # For openGauss
+   driver-class-name: org.opengauss.Driver
+   url: jdbc:opengauss://ip:port/database?currentSchema=public&batchMode=off
+   username: dbuser
+   password: dbpassword
+   ```
    
+   配置文件更改完成后，保存并退出文件编辑，然后执行如下命令，将`application-temp.yml`文件移动到第二步创建的`config`目录下
 
-2.  修改application-temp.yml文件中的数据库链接ip、port、database、dbuser、dbpassword。
-
-2.  创建ops用户，给ops目录及下面所有文件修改所属用户为执行用户（ops）。
-
-7. 切换到ops用户，进入/ops/server/openGauss-visualtool目录，执行启动命令：
-
+   ```shell
+   mv application-temp.yml config
    ```
-   nohup java -Xms2048m -Xmx4096m -jar /ops/server/openGauss-visualtool/visualtool-main.jar --spring.profiles.active=temp >/ops/server/openGauss-visualtool/logs/visualtool-main.out 2>&1 &\
-   ```
+   
+   *注意*：需要提前对`openGauss`数据库做一些参数配置，详细步骤请参考下方目录[**openGauss参数配置**](#openGauss参数配置)
 
+5. 生成密钥信息
+
+   修改并执行如下命令生成密钥信息。修改`-storepass`参数值与`application.yml`配置文件中的`key-store-password`值保持一致，默认时两者均为`123456`；修改`-keystore`路径值与配置文件中的`key-store`路径值保持一致，即第三步中修改`/ops`后的路径。
+   ```shell
+   keytool -genkey -noprompt -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN" -alias opengauss -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore /ops/ssl/keystore.p12 -validity 3650 -storepass 123456
+   ```
+   *注意*：此处为一条完整命令。
+
+6. 启动与日常运维
+
+   启动应用：
+   ```shell
+   sh ./run.sh start
+   ```
+   停止应用：
+   ```shell
+   sh ./run.sh stop
+   ```
+   重启应用：
+   ```shell
+   sh ./run.sh restart
+   ```
+   检查应用状态：
+   ```shell
+   sh ./run.sh status
+   ```
+7. 访问服务
+
+   启动成功后，通过浏览器输入如下地址：`https://ip:9494/` 访问`datakit`服务，这里的`ip`为`datakit`服务安装在的主机`ip`，`9494`为`datakit`服务默认端口，如有修改请根据实际情况替换。初始用户为`admin`，初始密码为`admin123`，首次登录需修改初始密码。
+
+## openGauss参数配置
+
+1. 安装`openGauss`数据库
+
+   `openGauss`数据库的下载及安装请参考官网教程，这里不做赘述，下载地址：https://opengauss.org/zh/download/
+
+2. 切换数据库安装用户，并加载环境变量
+
+   成功安装`openGauss`数据库后，主机切换到数据库安装用户，如`omm`用户。然后`source`环境变量文件，来加载`openGauss`的环境变量，如`omm`用户环境变量文件`~/.bashrc`。注意此环境变量文件为`openGauss`数据库环境变量所在文件，请根据实际情况替换。
+   ```shell
+   source ~/.bashrc
+   ```
+3. 参数配置
+
+   修改并执行如下命令，设置配置文件`pg_hba.conf`相关参数
+   ```shell
+   gs_guc set -D /opt/software/openGauss/data/single_node -h "host all all 0.0.0.0/0 sha256"
+   ```
+   修改并执行如下命令，配置文件`postgresql.conf`相关参数
+   ```shell
+   gs_guc set -D /opt/software/openGauss/data/single_node -c "listen_addresses = '*'"
+   ```
+   上述命令中的`/opt/software/openGauss/data/single_node`为数据库节点的安装目录路径，此目录下包含有上述两个文件，请根据数据库的实际情况替换。此处参数配置的目的是使得数据库接受来自任意`ip`地址的连接请求，以便在外部服务器可以成功连接到数据库。
+
+4. 重启数据库
+
+   执行如下命令重新启动数据库，使参数配置生效。此处的`/opt/software/openGauss/data/single_node`请按第三步的方法替换为实际路径
+   ```shell
+   gs_ctl restart -D /opt/software/openGauss/data/single_node
+   ```
+5. 连接数据库
+
+   执行如下命令连接数据库，此处`5432`为`openGauss`数据库默认端口，请根据实际情况替换
+   ```shell
+   gsql -d postgres -p 5432 -r
+   ```
+6. 创建用户及数据库
+
+   成功连接数据库后，依次执行如下三条命令，分别进行创建用户，赋予用户管理员权限，创建数据库的操作。
+   ```shell
+   create user opengauss_test with password '*********';
+   grant all privileges to opengauss_test;
+   create database db_datakit;
+   ```
+   由于`openGauss`数据库不支持通过初始用户进行远程连接，因此此处创建新的用户供`datakit`远程连接时使用。同时，由于`datakit`需要拥有管理员权限对数据库进行操作，因此需要赋予连接用户管理员权限。此处新建`db_datakit`数据库作为`datakit`平台的底层数据库使用，不用做任何操作，`datakit`成功连接后会自动初始化数据。
+
+7. 所有配置完成，保持`openGauss`数据库服务启动
 
 ## 卸载工具
 
