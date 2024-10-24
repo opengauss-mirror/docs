@@ -1,4 +1,4 @@
-# first reform失败导致节点退出
+# 因first reform失败导致节点退出
 
 ## 一、问题现象
 在资源池化场景中，当一个稳定集群出现异常，例如有节点重启、节点被踢出集群、节点加入集群等，DMS需要处理这一情况，将集群从不稳定状态转变为稳定状态，这一过程在资源池化架构下称之为reform。其中，某一数据库节点启动时触发的reform称为该节点的first reform（或启动轮reform）。在reform期间，如果出现新的节点状态变化，例如有节点在reform期间起停，则会导致本轮reform失败，DMS会基于当前的集群状态重新组织新的reform，用于将集群变为新的稳定状态。在目前DMS的设计中，数据库节点的启动轮reform对于该节点是不允许失败的，如果某个节点的启动轮reform失败，DMS会促使该节点退出，然后由CM重新拉起该节点，并由DMS触发新的一轮reform，将集群变为新的稳定状态。
@@ -102,5 +102,8 @@ node            instance state            | node            instance state      
 1  xxxxxxxxx111 6001     P Primary Normal | 2  xxxxxxxxx135 6002     S Standby Normal | 3  xxxxxxxxx137 6003     S Standby Normal
 ```
 
-## 三、问题根因及解决方案
+## 三、问题根因
 在目前DMS的设计中，数据库节点的启动轮reform对于该节点是不允许失败的，如果某节点的启动轮reform失败，DMS会控制该节点退出，然后由CM重新拉起该节点，并由DMS触发新的一轮reform，将集群变为新的稳定状态。在此过程中，用户不需要手动介入，只需要等待reform结束，即`cm_ctl query -Cv`查询结果，各节点状态都为`Normal`。
+
+## 四、解决方案
+该问题为reform特殊场景，不需要手动接入，只需要等待reform结束即可。
