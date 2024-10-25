@@ -1,4 +1,4 @@
-# 执行cm_ctl pause导致仲裁不响应
+# 因执行pause导致仲裁不响应的问题
 
 ## 一、问题现象
 1.  集群无法启动，或failover无法进行（无法选出主节点）。使用`cm_ctl query -Cvipdw`命令查询，Cluster State下pausing状态为Yes，类似于如下显示：
