@@ -7,3 +7,5 @@
 -   **[datavec安装](datavec安装.md)**  
 
 -   **[datavec使用](datavec使用.md)**  
+
+-   **[datavec容器化部署](datavec容器化部署.md)** 
