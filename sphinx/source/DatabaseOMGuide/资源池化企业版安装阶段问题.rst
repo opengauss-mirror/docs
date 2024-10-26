@@ -3,6 +3,19 @@
 
 .. toctree::
 
-    ../content/zh/docs/DatabaseOMGuide/环境未清理
-    ../content/zh/docs/DatabaseOMGuide/OpenSSL异常工作
-    ../content/zh/docs/DatabaseOMGuide/磁盘权限问题
+    ../content/zh/docs/DatabaseOMGuide/因CheckOs检测项不通过导致预安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因OpenSSL异常工作导致安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因xml参数缺失或写入错误导致的预安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因安装目录已存在导致的安装已存在问题
+    ../content/zh/docs/DatabaseOMGuide/因环境变量GAUSS_ENV=2导致的安装已存在问题
+    ../content/zh/docs/DatabaseOMGuide/因缺少glibc等软件依赖导致预安装或安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因python缺少--enable-shared编译参数导致安装失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因自动化建立互信失败导致的预安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因节点间互信未建立导致安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因预安装使用默认参数导致安装失败问题
+    ../content/zh/docs/DatabaseOMGuide/因三节点盘未解注册被两节点使用导致安装失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因磁盘权限过高导致鉴权失败CM不可用的问题
+    ../content/zh/docs/DatabaseOMGuide/因磁盘属主异常导致安装失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因磁盘满导致安装失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因端口冲突导致安装失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因磁阵写入权限异常导致资源池化存储双集群安装失败的问题
