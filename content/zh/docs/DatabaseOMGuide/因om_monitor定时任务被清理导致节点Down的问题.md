@@ -1,4 +1,4 @@
-# om_monitor定时任务被清理
+# 因om_monitor定时任务被清理导致节点Down的问题
 
 ## 一、问题现象
 
@@ -47,9 +47,9 @@
 ## 二、定位方法
 1.  进入$GAUSSLOG/cm/cm_agent日志，观察cm_agent日志是否有新生成的日志，若没有进入下一步。
 
-2.  ps ux观察进程，观察om_monitor以及cm_agent是否都在，若都不在，进入下一步。
+2.  `ps ux`观察进程，观察om_monitor以及cm_agent是否都在，若都不在，进入下一步。
 
-3.  利用 crontab -l 查看定时任务，观察是否存在如下有om_monitor字样的定时任务。
+3.  利用 `crontab -l` 查看定时任务，观察是否存在如下有om_monitor字样的定时任务。
     ```shell
     */1 * * * * source /etc/profile;(if [ -f ~/.profile ];then source ~/.profile;fi);source ~/.bashrc;source /home/test_0925/envfile;nohup /usr2/test_0925_install/omm/openGauss/gauss/app/bin/om_monitor -L /usr2/test_0925_install/omm/openGauss/log/gaussdb/test_0925/cm/om_monitor >>/dev/null 2>&1 &
     ```
