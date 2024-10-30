@@ -40,7 +40,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >![](public_sys-resources/icon-note.gif) **NOTE:** 
 >-   When setting the port number, ensure that the port number is not in use. When setting the port numbers of multiple instances, ensure that the port numbers do not conflict.
 >-   Ports 1 to 1023 are reserved for the operating system. Do not use them.
->-   When the database instance is installed using the configuration file, pay attention to the ports reserved in the communication matrix in the configuration file. For example,  *dataPortBase*  + 1 needs to be reserved as the port used by internal tools, and  *dataPortBase*  + 6 needs to be reserved as the communication port of the flow engine message queue. Therefore, during database instance installation, the maximum port number is  **65529**  for DNs. Ensure that the port number does not conflict with each other.
+>-   When the database instance is installed using the configuration file, pay attention to the ports reserved in the communication matrix in the configuration file. For example,  *dataPortBase*  + 1 needs to be reserved as the port used by internal tools.
 >-   After changing the port number by using gs_guc set, you need to manually modify the port information in the static configuration file **static_config_files** for the change to take effect.
 
 **Default value**:  **5432**  \(The actual value is specified in the configuration file during installation.\)
