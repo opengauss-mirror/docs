@@ -17,7 +17,7 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 -   检查数据库安全配置信息
 
     ```
-    gs_checkse -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE]
+    gs_checkse -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [--database=database] [-o OUTPUT] [-l LOGFILE]
     ```
 
 -   显示帮助信息
@@ -71,6 +71,12 @@ gs_checkse工具用来帮助检查数据库连接配置、文件目录安全、�
 -   --detail
 
     显示检查结果详情。
+
+-   --database=database
+
+    指定要检查的数据库名，若不指定则默认检查postgres数据库。
+
+    默认值：postgres。
 
 -   -o
 
