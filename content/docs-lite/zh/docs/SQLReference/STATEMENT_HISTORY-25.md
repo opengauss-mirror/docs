@@ -1,6 +1,6 @@
 # STATEMENT\_HISTORY<a name="ZH-CN_TOPIC_0301807366"></a>
 
-获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。只可在系统库中查询到结果，用户库中无法查询。query长度受参数[track_activity_query_size](../DatabaseReference/查询和索引统计收集器.md）控制。
+获得当前节点的执行语句的信息。查询视图必须具有sysadmin权限或者monitor admin权限。只可在系统库中查询到结果，用户库中无法查询。query长度受参数[track_activity_query_size](../DatabaseReference/查询和索引统计收集器.md)控制。
 
 **表 1**  STATEMENT\_HISTORY字段
 
