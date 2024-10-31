@@ -16,6 +16,7 @@
 
 -   不支持游标（指在JDBC中通过useCursorFetch、setFetchSize的方式获取数据）。
 -   不支持执行存储过程。
+-   通过MySQL协议的连接，参数dolphin.b_compatibility_mode和enable_set_variable_b_format会自动设置为true。
 
 ## 使用方式
 
