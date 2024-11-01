@@ -118,6 +118,7 @@
 
     -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
     -   A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
+    -   **Only on dbcompatibility = 'A'**, When the input is interval, the **fmt** will be ignored. If the interval only includes year and month, the output format will be SYYYY-MM. When the year is less than two digits, it will be padded with a leading zero. If the interval only includes day and time, the output format will be SDD HH:MI:SS. If the interval contains both, an error code will be returned.
 
     Return type: text
 
@@ -136,6 +137,24 @@
      to_char  
     ----------
      10:19:46
+    (1 row)
+    ```
+
+-   to\_char\(datetime/interval, fmt, nls_language={ameracia|english}\)
+
+    Description: Similar to to\_char\(datetime/interval \[, fmt\]\), an additional parameter **nls_language**. The possible values for **nls_language** are **ameracia** and **english**.
+
+    -   Templates like MON in fmt will be converted to the corresponding language expression based on nls_language.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT to_char(DATE '2024-08-05', 'DY, DD-MON-YYYY', 'NLS_DATE_LANGUAGE = ENGLISH') ;
+     to_char      
+    ----------
+     MON, 05-AUG-2024
     (1 row)
     ```
 
@@ -203,6 +222,8 @@
 
     Description: Converts the values of the time interval type into the strings in the specified format.
 
+    -   **Only on dbcompatibility = 'A'**, When the input is interval, the **fmt** will be ignored. If the interval only includes year and month, the output format will be SYYYY-MM. When the year is less than two digits, it will be padded with a leading zero. If the interval only includes day and time, the output format will be SDD HH:MI:SS. If the interval contains both, an error code will be returned.
+
     Return type: text
 
     Example:
@@ -213,6 +234,21 @@
     ----------
      15:02:12
     (1 row)
+    ```
+
+    ```
+    openGauss=# SELECT to_char(INTERVAL '123-2' YEAR(4) TO MONTH, 'YYY-MON');
+     to_char 
+    ---------
+     +123-02
+    (1 row)
+    ```
+
+    ```
+    openGauss=# SELECT to_char(INTERVAL '1 year 2 months 3 days', 'YYYY-MON-DD') ;
+    ERROR:  Interval simultaneously includes 'year to month' and 'day to second' is not supported in A format
+    DETAIL:  Not support the given interval data.
+    CONTEXT:  referenced column: to_char
     ```
 
 -   to\_char\(int, text\)
@@ -297,6 +333,75 @@
      10:55:59
     (1 row)
     ```
+
+-   to\_char\(blob, \[CSID\]\)
+
+    Description: **Only on dbcompatibility = 'A'** support the function，convert blob type data to text by specified **CSID**.
+  
+    -   **CSID** type is int，denote A format character ID.
+    -   CSID equal to 0 or without CSID, use database's encoding.
+
+    CSID map to encoding name
+
+    | CSID | encoding name  | openGuass name              |
+    | ------ | ---------------- | ---------------------- |
+    | 1    | US7ASCII       | SQL_ASCII        |
+    | 837  | JA16EUCTILDE   | EUC_JP           |
+    | 850  | ZHS16CGB231280 | EUC_CN           |
+    | 846  | KO16MSWIN949   | EUC_KR           |
+    | 862  | ZHT16DBT       | EUC_TW           |
+    | 830  | JA16EUC        | EUC_JIS_2004 |
+    | 852  | ZHS16GBK       | GBK                  |
+    | 873  | AL32UTF8       | UTF8                 |
+    | 31   | WE8ISO8859P1   | LATIN1               |
+    | 32   | EE8ISO8859P2   | LATIN2               |
+    | 33   | SE8ISO8859P3   | LATIN3               |
+    | 34   | NEE8ISO8859P4  | LATIN4               |
+    | 39   | WE8ISO8859P9   | LATIN5               |
+    | 40   | NE8ISO8859P10  | LATIN6               |
+    | 47   | BLT8ISO8859P13 | LATIN7               |
+    | 48   | CEL8ISO8859P14 | LATIN8               |
+    | 46   | WE8ISO8859P15  | LATIN9               |
+    | 560  | AR8MSWIN1256   | WIN1256              |
+    | 45   | VN8MSWIN1258   | WIN1258              |
+    | 41   | TH8TISASCII    | WIN874               |
+    | 196  | CL8KOI8R       | KOI8R                |
+    | 171  | CL8MSWIN1251   | WIN1251              |
+    | 178  | WE8MSWIN1252   | WIN1252              |
+    | 35   | CL8ISO8859P5   | ISO_8859_5   |
+    | 36   | AR8ISO8859P6   | ISO_8859_6   |
+    | 37   | EL8ISO8859P7   | ISO_8859_7   |
+    | 38   | IW8ISO8859P8   | ISO_8859_8   |
+    | 170  | EE8MSWIN1250   | WIN1250              |
+    | 173  | BG8MSWIN       | WIN1253              |
+    | 177  | TR8MSWIN1254   | WIN1254              |
+    | 175  | IW8MSWIN1255   | WIN1255              |
+    | 179  | BLT8MSWIN1257  | WIN1257              |
+    | 51   | CL8KOI8U       | KOI8U                |
+    | 854  | ZHS32GB18030   | GB18030              |
+    | 832  | JA16SJIS       | SJIS                 |
+    | 865  | ZHT16BIG5      | BIG5                 |
+  
+    Return type: text
+  
+    Example:
+  
+    ```
+    CREATE TABLE blob_table (c1 BLOB);
+    INSERT INTO blob_table (c1) VALUES ( (encode('Hello World!','hex'))::RAW );
+    SELECT to_char(c1, 873) FROM blob_table ;
+       to_char    
+    --------------
+     Hello World!
+    (1 row)
+    
+    SELECT to_char(c1) FROM blob_table ;
+       to_char    
+    --------------
+     Hello World!
+    (1 row)
+
+  ```
 
 -   to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
 

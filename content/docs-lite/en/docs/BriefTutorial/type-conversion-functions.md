@@ -118,6 +118,7 @@
 
     -   The optional parameter  **fmt**  allows for the following types: date, time, week, quarter, and century. Each type has a unique template. The templates can be combined together. Common templates include HH, MI, SS, YYYY, MM, and DD.
     -   A template may have a modification word. FM is a common modification word and is used to suppress the preceding zero or the following blank spaces.
+    -   **Only on dbcompatibility = 'A'**，When the input is interval, the **fmt** will be ignored. If the interval only includes year and month, the output format will be SYYYY-MM. When the year is less than two digits, it will be padded with a leading zero. If the interval only includes day and time, the output format will be SDD HH:MI:SS. If the interval contains both, an error code will be returned.
 
     Return type: text
 
@@ -136,6 +137,24 @@
      to_char  
     ----------
      10:19:46
+    (1 row)
+    ```
+
+-   to\_char\(datetime/interval, fmt, nls_language={ameracia|english}\)
+
+    Description: Similar to to\_char\(datetime/interval \[, fmt\]\)，, an additional parameter **nls_language**. The possible values for **nls_language** are **ameracia** and **english**.
+
+    -   Templates like MON in fmt will be converted to the corresponding language expression based on nls_language.
+
+    Return type: text
+
+    Example:
+
+    ```
+    openGauss=# SELECT to_char(DATE '2024-08-05', 'DY, DD-MON-YYYY', 'NLS_DATE_LANGUAGE = ENGLISH') ;
+     to_char      
+    ----------
+     MON, 05-AUG-2024
     (1 row)
     ```
 
@@ -203,6 +222,8 @@
 
     Description: Converts the values of the time interval type into the strings in the specified format.
 
+    -   **Only on dbcompatibility = 'A'**，When the input is interval, the **fmt** will be ignored. If the interval only includes year and month, the output format will be SYYYY-MM. When the year is less than two digits, it will be padded with a leading zero. If the interval only includes day and time, the output format will be SDD HH:MI:SS. If the interval contains both, an error code will be returned.
+
     Return type: text
 
     Example:
@@ -213,6 +234,21 @@
     ----------
      15:02:12
     (1 row)
+    ```
+
+    ```
+    openGauss=# SELECT to_char(INTERVAL '123-2' YEAR(4) TO MONTH, 'YYY-MON');
+     to_char 
+    ---------
+     +123-02
+    (1 row)
+    ```
+
+    ```
+    openGauss=# SELECT to_char(INTERVAL '1 year 2 months 3 days', 'YYYY-MON-DD') ;
+    ERROR:  Interval simultaneously includes 'year to month' and 'day to second' is not supported in A format
+    DETAIL:  Not support the given interval data.
+    CONTEXT:  referenced column: to_char
     ```
 
 -   to\_char\(int, text\)
@@ -280,6 +316,34 @@
      10:55:59
     (1 row)
     ```
+
+-   to\_char\(blob, \[CSID\]\)
+
+    Description: **Only on dbcompatibility = 'A'** support the function，convert blob type data to text by specified **CSID**.
+  
+    -   **CSID** type is int，denote A format character ID.
+    -   CSID equal to 0 or without CSID, use database's encoding.
+  
+    Return type: text
+  
+    Example:
+  
+    ```
+    CREATE TABLE blob_table (c1 BLOB);
+    INSERT INTO blob_table (c1) VALUES ( (encode('Hello World!','hex'))::RAW );
+    SELECT to_char(c1, 873) FROM blob_table ;
+       to_char    
+    --------------
+     Hello World!
+    (1 row)
+    
+    SELECT to_char(c1) FROM blob_table ;
+       to_char    
+    --------------
+     Hello World!
+    (1 row)
+
+  ```
 
 -   to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
 
