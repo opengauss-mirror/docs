@@ -4,28 +4,53 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{ $versionArr := split $.File.Path "docs\\" }}
-    {{ $version := index $versionArr 1}}
-    {{ $version := split $version "\\" }}
-    {{ $version := index $version 0}}
-    {{ $title := "" }}
-    {{ if .Title }}
-        {{ $title = .Title }}
-    {{ else if and .IsSection .File }}
-        {{ $sections := split (trim .File.Dir "/") "/" }}
-        {{ $title = index ($sections | last 1) 0 | humanize | title }}
-    {{ else if and .IsPage .File }}
-        {{ $title = .File.BaseFileName | humanize | title }}
-    {{ end }}
-    {{ if $version}}
-    <title>{{ $title }} | {{ .Site.Title }} | v{{ $version }}</title>
+    {{ $path := "" }}
+    {{ with .File }}
+        {{ $path = .Path }}
     {{ else }}
-    <title>{{ $title -}} </title>
+        {{ $path = .Path }}
+    {{ end }}
+    {{ $paths := apply (split (substr ($path) 0 -3) "/") "urlquery" "." }}
+    {{ $keySlice := slice }}
+    {{ range seq 2 (sub (len $paths) 1) }}
+        {{ with (index $paths .) }}
+            {{ $keySlice = $keySlice | append . }}
+        {{ end }}
+    {{ end }}
+    {{ $tdkKey := path.Join $keySlice }}
+    {{ $tdk := index site.Params.tdks $tdkKey }}
+    {{ $suffix := "" }}
+    {{ if $path }}
+    {{   $suffix = site.Params.suffix }}
+    {{ else }}
+    {{   $suffix = site.Params.rootSuffix }}
+    {{ end }}
+    {{ with $tdk }}
+        <title>{{ .title }} | {{ $suffix }}</title>
+        <meta name="description" content="{{ .description }}">
+        <meta name="keywords" content="{{ .keywords }}">
+    {{ else }}
+        {{ $versionArr := split $.File.Path "docs\\" }}
+        {{ $version := index $versionArr 1}}
+        {{ $version := split $version "\\" }}
+        {{ $version := index $version 0}}
+        {{ $title := "" }}
+        {{ if .Title }}
+            {{ $title = .Title }}
+        {{ else if and .IsSection .File }}
+            {{ $sections := split (trim .File.Dir "/") "/" }}
+            {{ $title = index ($sections | last 1) 0 | humanize | title }}
+        {{ else if and .IsPage .File }}
+            {{ $title = .File.BaseFileName | humanize | title }}
+        {{ end }}
+        {{ if $version}}
+        <title>{{ $title }} | {{ $suffix }} | v{{ $version }}</title>
+        {{ else }}
+        <title>{{ $title }} | {{ $suffix }}</title>
+        {{ end }}
     {{ end }}
     <meta name="date" content="{{time.Now | time.Format "2006-01-02 15:04:05"}}" >
     <meta name="last-modified" content="{{time.Now | time.Format "2006-01-02 15:04:05"}}" >
-    <meta name="description" content="{{ i18n "description" }}">
-    <meta name="keywords" content="{{ i18n "key_words" }}">
     <meta name="author" content="{{ .Site.Params.author }}" >
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">

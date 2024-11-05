@@ -25,14 +25,111 @@ paginate = 10
 
 
 [languages]
-
-[languages.en]
+  [languages.en]
     languageCode = "en"
     contentDir = "content/en"
-
-[languages.zh]
+    [languages.en.params]
+      rootSuffix = "openGauss documentation"
+      suffix = "openGauss documentation"
+  [languages.zh]
     languageCode = "zh"
     contentDir = "content/zh"
+    [languages.zh.params]
+      rootSuffix = "openGauss文档 | openGauss社区官网"
+      suffix = "openGauss文档 | openGauss社区"
+      [languages.zh.params.tdks]
+        [languages.zh.params.tdks."docs/AboutopenGauss/%E5%85%B3%E4%BA%8EopenGauss"]
+          title = "关于openGauss"
+          description = "本文档对openGauss数据库进行了详细描述，包含产品定位、系统架构介绍、应用场景、运行环境、技术指标、基本功能和特性、企业级增强特性介绍等信息。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,关于openGauss"
+        [languages.zh.params.tdks."docs/AboutopenGauss/CharacteristicDescription"]
+          title = "openGauss特性描述"
+          description = "本文档对openGauss数据库支持的特性进行了详细描述，包含特性的可获得性、特性简介、客户价值、特性描述、特性增强、特性约束和依赖关系等。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss特性,openGauss文档"
+        [languages.zh.params.tdks."docs/ReleaseNotes/%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D"]
+          title = "openGauss版本介绍"
+          description = "openGauss 5.0.0是openGauss发布的第三个LTS版本，该版本生命周期为3年。当前文档说明范围仅限企业版。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss最新版本,openGauss版本介绍,openGauss文档"
+        [languages.zh.params.tdks."docs/InstallationGuide/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85"]
+          title = "openGauss极简版服务器安装"
+          description = "极简版安装的使用主体主要针对高校和个人测试环境，相对企业安装流程更简单快捷。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss服务器,openGauss安装,openGauss部署,openGauss文档"
+        [languages.zh.params.tdks."docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85"]
+          title = "openGauss极简版容器安装"
+          description = "openGauss支持在容器中部署，本文为极简版容器安装指南。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss容器,openGauss文档"
+        [languages.zh.params.tdks."docs/InstallationGuide/%E5%AE%89%E8%A3%85openGauss"]
+          title = "openGauss企业版OM安装"
+          description = "企业版安装的主要使用主体为企业或对数据库性能要求较高的个人，安装流程比较复杂，功能更全。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss企业版OM,openGauss文档,openGauss服务器"
+        [languages.zh.params.tdks."docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91"]
+          title = "openGauss基于JDBC开发"
+          description = "JDBC（Java Database Connectivity，Java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。openGauss库提供了对JDBC 4.0特性的支持，需要使用JDK1.8版本编译程序代码，不支持JDBC桥接ODBC方式。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss jdbc,openGauss驱动,ssl,uds,openGauss日志,openGauss文档"
+        [languages.zh.params.tdks."docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91"]
+          title = "openGauss基于ODBC开发"
+          description = "ODBC（Open Database Connectivity，开放数据库互连）是由Microsoft公司基于X/OPEN CLI提出的用于访问数据库的应用程序编程接口。应用程序通过ODBC提供的API与数据库进行交互，增强了应用程序的可移植性、扩展性和可维护性。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss odbc,openGauss开发,linux,openGauss文档"
+        [languages.zh.params.tdks."docs/DeveloperGuide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91"]
+          title = "openGauss基于Psycopg开发"
+          description = "Psycopg是一种用于执行SQL语句的PythonAPI，可以为PostgreSQL、openGauss数据库提供统一访问接口，应用程序可基于它进行数据操作。Psycopg2是对libpq的封装，主要使用C语言实现，既高效又安全。它具有客户端游标和服务器端游标、异步通信和通知、支持“COPY TO/COPY FROM”功能。支持多种类型Python开箱即用，适配PostgreSQL数据类型；通过灵活的对象适配系统，可以扩展和定制适配。Psycopg2兼容Unicode和Python 3。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss psycopg,sql,openGauss开发,openGauss驱动,ssl,openGauss文档"
+        [languages.zh.params.tdks."docs/DeveloperGuide/%E5%9F%BA%E4%BA%8Elibpq%E5%BC%80%E5%8F%91"]
+          title = "openGauss基于libpq开发"
+          description = "openGauss未对此接口在应用程序开发场景下的使用做验证。因此对使用此接口做应用程序开发存在的风险未知，故不推荐用户使用此套接口做应用程序开发。推荐用户使用ODBC或JDBC接口来替代。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss libpq,openGauss开发,openGauss文档"
+        [languages.zh.params.tdks."docs/DatabaseOMGuide/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"]
+          title = "openGauss数据导入/导出"
+          description = "openGauss数据库提供了灵活的数据入库方式：INSERT、COPY以及gsql元命令\\copy。各方式具有不同的特点"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss数据导入,openGauss文档"
+        [languages.zh.params.tdks."docs/DatabaseOMGuide/DatabaseOMGuide"]
+          title = "openGauss日常运维"
+          description = "本文档提供了openGauss数据库常用的运维操作指导，方便管理员更好地使用openGauss。本文档适用于所有使用openGauss数据库的管理员。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss运维,openGauss维护,openGauss备份,openGauss恢复,openGauss文档"
+        [languages.zh.params.tdks."docs/DatabaseOMGuide/%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"]
+          title = "openGauss备份与恢复"
+          description = "数据备份是保护数据安全的重要手段之一，为了更好的保护数据安全，openGauss数据库支持三种备份恢复类型，以及多种备份恢复方案，备份和恢复过程中提供数据的可靠性保障机制。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss备份,openGauss文档,openGauss恢复"
+        [languages.zh.params.tdks."docs/DatabaseOMGuide/upgrade"]
+          title = "openGauss升级指南"
+          description = "本文档详细的描述了版本升级、回滚流程以及具体的操作指导，同时提供了常见的问题解答及故障处理方法。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss升级,openGauss文档"
+        [languages.zh.params.tdks."docs/DatabaseOMGuide/%E5%B8%B8%E8%A7%81%E6%95%85%E9%9A%9C%E5%AE%9A%E4%BD%8D%E6%89%8B%E6%AE%B5"]
+          title = "openGauss故障诊断指南"
+          description = "openGauss社区的常见故障诊断指南与案例"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss故障定位,openGauss案例,openGauss解决方案,openGauss文档"
+        [languages.zh.params.tdks."docs/ToolandCommandReference/%E5%B7%A5%E5%85%B7%E4%B8%80%E8%A7%88%E8%A1%A8"]
+          title = "openGauss命令集"
+          description = "本章介绍连接数据库的客户端工具、openGauss服务器端所提供的命令行管理工具。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区openGauss命令,openGauss工具,命令集,gsql,gs_cgroup,gs_check,gs_checkos,gs_checkperf,gs_collector,gs_dump,gs_dumpall,gs_guc,gs_encrypt,gs_om,gs_plan_simulator,gs_restore,gs_ssh,gs_sdr"
+        [languages.zh.params.tdks."docs/PerformanceTuningGuide/%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98%E6%8C%87%E5%8D%97"]
+          title = "openGauss系统调优指南"
+          description = "系统调优是指进行操作系统级以及数据库系统级的调优，更充分地利用机器的CPU、内存、I/O和网络资源，避免资源冲突，提升整个系统查询的吞吐量。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss配置,系统调优,SMP,LLVM,Ustore,openGauss文档"
+        [languages.zh.params.tdks."docs/PerformanceTuningGuide/SQL%E8%B0%83%E4%BC%98%E6%8C%87%E5%8D%97"]
+          title = "openGauss SQL调优指南"
+          description = "SQL调优的唯一目的是“资源利用最大化”，即CPU、内存、磁盘IO三种资源利用最大化。所有调优手段都是围绕资源使用开展的。所谓资源利用最大化是指SQL语句尽量高效，节省资源开销，以最小的代价实现最大的效益。比如做典型点查询的时候，可以用seqscan+filter（即读取每一条元组和点查询条件进行匹配）实现，也可以通过indexscan实现，显然indexscan可以以更小的代价实现相同的效果。"
+          keywords = "openGauss,官网,官方,开源,社区,数据库,sql,query,openGauss调优指南,openGauss文档"
+        [languages.zh.params.tdks."docs/PerformanceTuningGuide/TPCC%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E6%B5%8B%E8%AF%95%E6%8C%87%E5%AF%BC"]
+          title = "openGauss TPCC性能调优指南"
+          description = "本章节主要介绍openGauss数据库内核基于鲲鹏服务器和openEuler操作系统，为了达到最佳TPMC性能所依赖的关键系统级调优。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss性能调优,openGauss文档,TPCC,MOT,openGauss指南"
+        [languages.zh.params.tdks."docs/SQLReference/WDR-Snapshot-Schema"]
+          title = "openGauss WDR解读指南"
+          description = "WDR Snapshot在启动后（打开参数enable_wdr_snapshot），会在用户表空间\"pg_default\"，数据库\"postgres\"下新建schema “snapshot”，用于持久化WDR快照数据。默认初始化用户或monadmin用户可以访问Snapshot Schema。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss,WDR,openGauss文档"
+        [languages.zh.params.tdks."docs/ToolandCommandReference/%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86"]
+          title = "openGauss统一数据库管理工具（CM）"
+          description = "CM（Cluster Manager）是一款数据库管理模块。支持自定义资源监控，提供了数据库主备的状态监控、网络通信故障监控、文件系统故障监控、故障自动主备切换等能力。提供了丰富的数据库管理能力，如节点、实例级的启停，数据库实例状态查询、主备切换、日志管理等。提供了通过REST接口远程查询和接收集群状态的能力。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss管理工具,CM,监控模块,openGauss配置,openGauss特性,openGauss文档"
+        [languages.zh.params.tdks."docs/ToolandCommandReference/DataKit"]
+          title = "openGauss DataKit"
+          description = "openGauss的开发运维涉及到很多复杂操作，DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。DataKit是一个以资源（物理机，数据库）为底座的开发运维工具，将上层的开发运维工具插件化，各插件之间相互独立，方便用户按需引入。各插件围绕DataKit的资源中心进行扩展开，完成数据库的运维，监控，迁移，开发，建模等复杂的操作。"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,DataKit,openGauss工具,openGauss系统,openGauss运维,openGauss开发,openGauss文档"
+        [languages.zh.params.tdks."docs/DataMigrationGuide/%E8%BF%81%E7%A7%BBMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss"]
+          title = "openGauss MySQL迁移工具"
+          description = "openGauss支持对MySQL迁移服务，具体包括：MySQL一键式迁移、全量迁移、增量迁移、反向迁移、数据校验"
+          keywords = "openGauss,开源数据库,openGauss社区官网,开源社区,openGauss一键迁移,迁移工具,openGauss文档,mysql"
 
 
 [params]
