@@ -71,7 +71,25 @@
   323032345C3030305C3030305C3030305C3030305C3030305C303030
   ```
 
+- escape_quotes：是否将\\"当成“看待，此参数只在B兼容性库中生效，如下所示：
 
+  ```
+  openGauss=# create table test1(c1 text);
+  CREATE TABLE
+  openGauss=# insert into test1 values ("ab\"c");
+  ERROR:  syntax error at or near "c"
+  LINE 1: insert into test1 values ("ab\"c");
+                                         ^
+  openGauss=# set dolphin.sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero,escape_quotes';
+  SET
+  openGauss=# insert into test1 values ("ab\"c");
+  INSERT 0 1
+  openGauss=# select * from test1;
+    c1
+  ------
+   ab"c
+  (1 row)
+  ```
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
