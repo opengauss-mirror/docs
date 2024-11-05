@@ -79,21 +79,34 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
   }
   ```
 
--   其中指定查询源from\_item为：
+- 其中指定查询源from\_item为：
+
+  ```
+  {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+  [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
+  [ TIMECAPSULE {TIMESTAMP | CSN} expression ]
+  |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
+  |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+  |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
+  |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
+  |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+  |rotate_clause
+  |notrotate_clause
+  |lateral lateral_subquery [ AS ] alias
+  |from_item cross apply lateral_subquery [ AS ] alias
+  |from_item outer apply lateral_subquery [ AS ] alias}
+  ```
+
+-   其中lateral_subquery的子句为：
 
     ```
-    {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
-    [ TABLESAMPLE sampling_method ( argument [, ...] ) [ REPEATABLE ( seed ) ] ]
-    [ TIMECAPSULE {TIMESTAMP | CSN} expression ]
-    |( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
-    |with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
-    |function_name ( [ argument [, ...] ] ) [ AS ] alias [ ( column_alias [, ...] | column_definition [, ...] ) ]
-    |function_name ( [ argument [, ...] ] ) AS ( column_definition [, ...] )
-    |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
-    |rotate_clause
-    |notrotate_clause}
+    table
+    | subquery
+    | function_name ( [ argument [, ...] ])
     ```
-
+    
+    lateral_subquery和普通的subquery的区别在于lateral_subquery可以引用跨路径的变量（如上层路径的列数据），普通的subquery不支持。
+    
 -   其中group子句为：
 
     ```
@@ -219,7 +232,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
       指定文件的绝对路径。
 
       ```
-  into_option三处位置：
+    into_option三处位置：
       --在from子句之前。
       openGauss=#  select * into @my_var from t;
       --在锁定子句之前。
@@ -239,57 +252,58 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
       --导出数据到dumpfile文件。
       openGauss=#  select * from t into dumpfile '/home/openGauss/t.txt';
       文件内容：1a
-      ```
-    
--   **FROM子句**
+    ```
+  
+- **FROM子句**
 
-    为SELECT声明一个或者多个源表。
+  为SELECT声明一个或者多个源表。
 
-    FROM子句涉及的元素如下所示。
+  FROM子句涉及的元素如下所示。
 
-    -   table\_name
+  -   table\_name
 
-        表名或视图名，名称前可加上模式名，如：schema\_name.table\_name。
+      表名或视图名，名称前可加上模式名，如：schema\_name.table\_name。
 
-    -   alias
+  -   alias
 
-        给表或复杂的表引用起一个临时的表别名，以便被其余的查询引用。
+      给表或复杂的表引用起一个临时的表别名，以便被其余的查询引用。
 
-        别名用于缩写或者在自连接中消除歧义。如果提供了别名，它就会完全隐藏表的实际名称。
+      别名用于缩写或者在自连接中消除歧义。如果提供了别名，它就会完全隐藏表的实际名称。
 
-    -   TABLESAMPLE  _sampling\_method_  \(  _argument_  \[, ...\] \) \[ REPEATABLE \(  _seed_  \) \]
+  - TABLESAMPLE  _sampling\_method_  \(  _argument_  \[, ...\] \) \[ REPEATABLE \(  _seed_  \) \]
 
-        _table\_name_ 之后的 TABLESAMPLE 子句表示应该用指定的 _sampling\_method_ 来检索表中行的子集。_sampling\_method_ 可以被指定为以下方法：
-        - bernoulli，按行采样。
-        - system，按块(页)采样。
-        - hybrid，混合采样，_argument_ 可以分别指定按行采样和按块(页)采样的百分比。
-               
-        _argument_ 部分用来指定采样百分比，是一个非空数值表达式（如10或'10'），取值范围是`[0.000001,100)`。
+    _table\_name_ 之后的 TABLESAMPLE 子句表示应该用指定的 _sampling\_method_ 来检索表中行的子集。_sampling\_method_ 可以被指定为以下方法：
+    - bernoulli，按行采样。
+    - system，按块(页)采样。
+    - hybrid，混合采样，_argument_ 可以分别指定按行采样和按块(页)采样的百分比。
+           
 
-        可选的 REPEATABLE 部分指定一个用于产生采样方法中随机数的种子值 _seed_，是一个非空数值表达式（如10或'10'），种子值的取值范围是`[0,4294967295]`。如果查询时表没有被更改，指定相同 _seed_ 和 _argument_ 值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出 REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
+    _argument_ 部分用来指定采样百分比，是一个非空数值表达式（如10或'10'），取值范围是`[0.000001,100)`。
 
-        _table\_name_ 可以是普通表，分区表，普通视图，物化视图和键保留（key-preserved）的连接视图；普通视图指在单表上查询创建的视图；键保留的连接视图指对键保留表进行连接操作后创建的视图，但不支持对包含超过一个非键保留表的连接视图进行数据采样。
+    可选的 REPEATABLE 部分指定一个用于产生采样方法中随机数的种子值 _seed_，是一个非空数值表达式（如10或'10'），种子值的取值范围是`[0,4294967295]`。如果查询时表没有被更改，指定相同 _seed_ 和 _argument_ 值的两个查询将会选择该表相同的采样。但是不同的种子值通常将会产生不同的采样。如果没有给出 REPEATABLE，则会基于一个系统产生的种子为每一个查询选择一个新的随机采样。
 
-    -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
+    _table\_name_ 可以是普通表，分区表，普通视图，物化视图和键保留（key-preserved）的连接视图；普通视图指在单表上查询创建的视图；键保留的连接视图指对键保留表进行连接操作后创建的视图，但不支持对包含超过一个非键保留表的连接视图进行数据采样。
 
-        查询指定CSN点或者指定时间点表的内容。
+  -   TIMECAPSULE \{ TIMESTAMP | CSN \} expression
 
-        目前不支持闪回查询的表：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、视图、序列表、hashbucket表、共享表、继承表、带有PARTIAL CLUSTER KEY约束的表。
+      查询指定CSN点或者指定时间点表的内容。
 
-        -   TIMECAPSULE TIMESTAMP
+      目前不支持闪回查询的表：系统表、列存表、内存表、DFS表、全局临时表、本地临时表、UNLOGGED表、视图、序列表、hashbucket表、共享表、继承表、带有PARTIAL CLUSTER KEY约束的表。
 
-            关键字，闪回查询的标识，根据date日期，闪回查找指定时间点的结果集。date日期必须是一个过去有效的时间戳。
+      -   TIMECAPSULE TIMESTAMP
 
-        -   TIMECAPSULE CSN
+          关键字，闪回查询的标识，根据date日期，闪回查找指定时间点的结果集。date日期必须是一个过去有效的时间戳。
 
-            关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs\_txn\_snapshot记录的snpcsn号查得。
+      -   TIMECAPSULE CSN
 
-            >![](public_sys-resources/icon-note.gif) **说明：** 
-            >
-            >-   闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（TRUNCATE、DDL、DCL、VACUUM FULL），则闪回失败。
-            >-   闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将[version_retention_age](../DatabaseReference/闪回相关参数.md#version_retention_age)和[vacuum_defer_cleanup_age](../DatabaseReference/闪回相关参数.md#vacuum_defer_cleanup_age)设置成同值，配置闪回功能旧版本保留期限，取值范围是0~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
-            >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
-            >-   对表执行truncate之后，再进行闪回查询或者闪回表操作。通过时间点进行的闪回操作会报错：Snapshot too old。通过CSN进行的闪回操作会找不到数据，或者报错：Snapshot too old。
+          关键字，闪回查询的标识，根据表的CSN闪回查询指定CSN点的结果集。其中CSN可从gs\_txn\_snapshot记录的snpcsn号查得。
+
+          >![](public_sys-resources/icon-note.gif) **说明：** 
+          >
+          >-   闪回查询不能跨越影响表结构或物理存储的语句，否则会报错。即闪回点和当前点之间，如果执行过修改表结构或影响物理存储的语句（TRUNCATE、DDL、DCL、VACUUM FULL），则闪回失败。
+          >-   闪回点过旧时，因闪回版本被回收等导致无法获取旧版本会导致闪回失败，报错：Restore point too old。可通过将[version_retention_age](../DatabaseReference/闪回相关参数.md#version_retention_age)和[vacuum_defer_cleanup_age](../DatabaseReference/闪回相关参数.md#vacuum_defer_cleanup_age)设置成同值，配置闪回功能旧版本保留期限，取值范围是0~1000000，值为0表示VACUUM不会延迟清除无效的行存记录。
+          >-   通过时间方式指定闪回点，闪回数据和实际时间点最多偏差为3秒。
+          >-   对表执行truncate之后，再进行闪回查询或者闪回表操作。通过时间点进行的闪回操作会报错：Snapshot too old。通过CSN进行的闪回操作会找不到数据，或者报错：Snapshot too old。
 
 -   column\_alias
 
@@ -364,6 +378,82 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
         >必须为INNER和OUTER连接类型声明一个连接条件，即NATURAL ON，join\_condition，USING \(join\_column \[， ...\]\) 之一。但是它们不能出现在CROSS JOIN中。
 
 ​    其中CROSS JOIN和INNER JOIN生成一个简单的笛卡尔积，和在FROM的顶层列出两个项的结果相同。
+
+- cross apply
+
+  cross apply的功能与cross join的功能相似，主要用于将一个表与一个表函数或者子查询进行关联。与cross join相比cross apply中右表中可以直接引用左表的表和列信息，如下所示：
+
+  ```
+  -- 右表子查询直接引用左表的数据，在cross join场景下会报错 
+  
+  openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+    FROM departments d CROSS join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+    WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+    ORDER BY d.department_name, v.employee_id;
+  ERROR:  invalid reference to FROM-clause entry for table "d"
+  LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
+                                                               ^
+  HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+  openGauss=#
+  
+  -- 右表子查询直接引用左表的数据，在cross apply场景下可以正常执行
+  openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+  openGauss-#   FROM departments d CROSS APPLY (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+  openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+  openGauss-#   ORDER BY d.department_name, v.employee_id;
+   department_name  | employee_id | last_name
+  ------------------+-------------+-----------
+   Marketing        |           1 | zhangsan1
+   Marketing        |           2 | zhangsan2
+   Marketing        |           3 | zhangsan3
+   Marketing        |           4 | zhangsan4
+   Operations       |           9 | wangwu1
+   Operations       |          10 | wangwu2
+   Operations       |          11 | wangwu3
+   Operations       |          12 | wangwu4
+   Public Relations |           5 | lisi1
+   Public Relations |           6 | lisi2
+   Public Relations |           7 | lisi3
+   Public Relations |           8 | lisi4
+  (12 rows)
+  ```
+
+- outer apply
+
+  outer apply的功能与right join的功能相似，主要区别在于outer apply会将join左表的每一行数据计算出来后再应用于右表做联合操作计算，因此右表可以直接引用左表的表列信息。与cross apply相比，如果右表没数据与左表相匹配，outer apply会保留左表的数据且将右表的值设置为NULL，如下所示：
+
+  ```
+  -- 右表子查询引用左表的列信息使用right join时会报错
+  openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+    FROM departments d right join (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+    on 1 = 1 WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+    ORDER BY d.department_name, v.employee_id;
+  ERROR:  invalid reference to FROM-clause entry for table "d"
+  LINE 2: ...SELECT * FROM employees e WHERE e.department_id = d.departme...
+                                                               ^
+  HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+  
+  -- 右表子查询引用左表的列信息使用outer apply时可以正常执行
+  openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+  openGauss-#   FROM departments d outer apply (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+  openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations')
+  openGauss-#   ORDER BY d.department_name, v.employee_id;
+   department_name  | employee_id | last_name
+  ------------------+-------------+-----------
+   Marketing        |           1 | zhangsan1
+   Marketing        |           2 | zhangsan2
+   Marketing        |           3 | zhangsan3
+   Marketing        |           4 | zhangsan4
+   Operations       |           9 | wangwu1
+   Operations       |          10 | wangwu2
+   Operations       |          11 | wangwu3
+   Operations       |          12 | wangwu4
+   Public Relations |           5 | lisi1
+   Public Relations |           6 | lisi2
+   Public Relations |           7 | lisi3
+   Public Relations |           8 | lisi4
+  (12 rows)
+  ```
 
 -   ON join\_condition
 
@@ -1063,3 +1153,230 @@ openGauss=# select * from rotate_orders not rotate ( yearly_total for order_mode
  2021 | online     |         1000
 (5 rows)
 ```
+
+- lateral使用样例
+
+```
+-- 创建表
+openGauss=# create table employees(employee_id int, department_id int, last_name varchar(50));
+CREATE TABLE
+openGauss=# insert into departments values ('Marketing', 1);
+INSERT 0 1
+openGauss=# insert into departments values ('Public Relations', 2);
+INSERT 0 1
+openGauss=# insert into departments values ('Operations', 3);
+INSERT 0 1
+openGauss=# insert into departments values ('Develop', 4);
+INSERT 0 1
+openGauss=# insert into departments values ('Research', 5);
+INSERT 0 1
+openGauss=# insert into departments values ('CEO', 6);
+INSERT 0 1
+openGauss=# insert into departments values ('CFO', 7);
+INSERT 0 1
+openGauss=# insert into employees values(1, 1, 'zhangsan1');
+INSERT 0 1
+openGauss=# insert into employees values(2, 1, 'zhangsan2');
+INSERT 0 1
+openGauss=# insert into employees values(3, 1, 'zhangsan3');
+INSERT 0 1
+openGauss=# insert into employees values(4, 1, 'zhangsan4');
+INSERT 0 1
+openGauss=# insert into employees values(5, 2, 'lisi1');
+INSERT 0 1
+openGauss=# insert into employees values(6, 2, 'lisi2');
+INSERT 0 1
+openGauss=# insert into employees values(7, 2, 'lisi3');
+INSERT 0 1
+openGauss=# insert into employees values(8, 2, 'lisi4');
+INSERT 0 1
+openGauss=# insert into employees values(9,  3, 'wangwu1');
+INSERT 0 1
+openGauss=# insert into employees values(10, 3, 'wangwu2');
+INSERT 0 1
+openGauss=# insert into employees values(11, 3, 'wangwu3');
+INSERT 0 1
+openGauss=# insert into employees values(12, 3, 'wangwu4');
+INSERT 0 1
+openGauss=# insert into employees values(13, 4, 'heliu1');
+INSERT 0 1
+openGauss=# insert into employees values(14, 4, 'heliu2');
+INSERT 0 1
+openGauss=# insert into employees values(15, 4, 'heliu3');
+INSERT 0 1
+openGauss=# insert into employees values(16, 4, 'heliu4');
+INSERT 0 1
+openGauss=# insert into employees values(17, 5, 'chenqi1');
+INSERT 0 1
+openGauss=# insert into employees values(18, 5, 'chenqi2');
+INSERT 0 1
+openGauss=# insert into employees values(19, 5, 'chenqi3');
+INSERT 0 1
+openGauss=# insert into employees values(20, 5, 'chenqi4');
+INSERT 0 1
+
+-- 跨路径进行lateral
+openGauss=# select * from departments d, lateral (select * from employees e WHERE e.department_id = d.department_id) x;
+ department_name  | department_id | employee_id | department_id | last_name
+------------------+---------------+-------------+---------------+-----------
+ Marketing        |             1 |           4 |             1 | zhangsan4
+ Marketing        |             1 |           3 |             1 | zhangsan3
+ Marketing        |             1 |           2 |             1 | zhangsan2
+ Marketing        |             1 |           1 |             1 | zhangsan1
+ Public Relations |             2 |           8 |             2 | lisi4
+ Public Relations |             2 |           7 |             2 | lisi3
+ Public Relations |             2 |           6 |             2 | lisi2
+ Public Relations |             2 |           5 |             2 | lisi1
+ Operations       |             3 |          12 |             3 | wangwu4
+ Operations       |             3 |          11 |             3 | wangwu3
+ Operations       |             3 |          10 |             3 | wangwu2
+ Operations       |             3 |           9 |             3 | wangwu1
+ Develop          |             4 |          16 |             4 | heliu4
+ Develop          |             4 |          15 |             4 | heliu3
+ Develop          |             4 |          14 |             4 | heliu2
+ Develop          |             4 |          13 |             4 | heliu1
+ Research         |             5 |          20 |             5 | chenqi4
+ Research         |             5 |          19 |             5 | chenqi3
+ Research         |             5 |          18 |             5 | chenqi2
+ Research         |             5 |          17 |             5 | chenqi1
+(20 rows)
+
+-- latera function
+openGauss=#  select * from departments d, lateral generate_series(1,2) g;
+ department_name  | department_id | g
+------------------+---------------+---
+ Marketing        |             1 | 1
+ Public Relations |             2 | 1
+ Operations       |             3 | 1
+ Develop          |             4 | 1
+ Research         |             5 | 1
+ CEO              |             6 | 1
+ CFO              |             7 | 1
+ Marketing        |             1 | 2
+ Public Relations |             2 | 2
+ Operations       |             3 | 2
+ Develop          |             4 | 2
+ Research         |             5 | 2
+ CEO              |             6 | 2
+ CFO              |             7 | 2
+(14 rows)
+```
+
+- cross apply和outer apply使用样例
+
+```
+-- 创建表
+openGauss=# create table employees(employee_id int, department_id int, last_name varchar(50));
+CREATE TABLE
+openGauss=# insert into departments values ('Marketing', 1);
+INSERT 0 1
+openGauss=# insert into departments values ('Public Relations', 2);
+INSERT 0 1
+openGauss=# insert into departments values ('Operations', 3);
+INSERT 0 1
+openGauss=# insert into departments values ('Develop', 4);
+INSERT 0 1
+openGauss=# insert into departments values ('Research', 5);
+INSERT 0 1
+openGauss=# insert into departments values ('CEO', 6);
+INSERT 0 1
+openGauss=# insert into departments values ('CFO', 7);
+INSERT 0 1
+openGauss=# insert into employees values(1, 1, 'zhangsan1');
+INSERT 0 1
+openGauss=# insert into employees values(2, 1, 'zhangsan2');
+INSERT 0 1
+openGauss=# insert into employees values(3, 1, 'zhangsan3');
+INSERT 0 1
+openGauss=# insert into employees values(4, 1, 'zhangsan4');
+INSERT 0 1
+openGauss=# insert into employees values(5, 2, 'lisi1');
+INSERT 0 1
+openGauss=# insert into employees values(6, 2, 'lisi2');
+INSERT 0 1
+openGauss=# insert into employees values(7, 2, 'lisi3');
+INSERT 0 1
+openGauss=# insert into employees values(8, 2, 'lisi4');
+INSERT 0 1
+openGauss=# insert into employees values(9,  3, 'wangwu1');
+INSERT 0 1
+openGauss=# insert into employees values(10, 3, 'wangwu2');
+INSERT 0 1
+openGauss=# insert into employees values(11, 3, 'wangwu3');
+INSERT 0 1
+openGauss=# insert into employees values(12, 3, 'wangwu4');
+INSERT 0 1
+openGauss=# insert into employees values(13, 4, 'heliu1');
+INSERT 0 1
+openGauss=# insert into employees values(14, 4, 'heliu2');
+INSERT 0 1
+openGauss=# insert into employees values(15, 4, 'heliu3');
+INSERT 0 1
+openGauss=# insert into employees values(16, 4, 'heliu4');
+INSERT 0 1
+openGauss=# insert into employees values(17, 5, 'chenqi1');
+INSERT 0 1
+openGauss=# insert into employees values(18, 5, 'chenqi2');
+INSERT 0 1
+openGauss=# insert into employees values(19, 5, 'chenqi3');
+INSERT 0 1
+openGauss=# insert into employees values(20, 5, 'chenqi4');
+INSERT 0 1
+openGauss=# create function fn_salar (departmentid int) returns table (employee_id int, department_id int, last_name varchar) language sql as 'select employee_id, department_id, concat(last_name,last_name) as last_name2 from employees WHERE department_id = departmentid';
+CREATE FUNCTION
+
+-- 跨路径cross apply
+openGauss=# SELECT d.department_name, v.employee_id, v.last_name
+openGauss-#   FROM departments d CROSS APPLY (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations', 'CEO', 'CFO')
+openGauss-#   ORDER BY d.department_name, v.employee_id;
+ department_name  | employee_id | last_name
+------------------+-------------+-----------
+ Marketing        |           1 | zhangsan1
+ Marketing        |           2 | zhangsan2
+ Marketing        |           3 | zhangsan3
+ Marketing        |           4 | zhangsan4
+ Operations       |           9 | wangwu1
+ Operations       |          10 | wangwu2
+ Operations       |          11 | wangwu3
+ Operations       |          12 | wangwu4
+ Public Relations |           5 | lisi1
+ Public Relations |           6 | lisi2
+ Public Relations |           7 | lisi3
+ Public Relations |           8 | lisi4
+  
+-- cross apply function
+openGauss=# SELECT * FROM employees AS e outer APPLY fn_Salar(e.department_id) AS f limit 5;;
+ employee_id | department_id | last_name | employee_id | department_id |     last_name
+-------------+---------------+-----------+-------------+---------------+--------------------
+           1 |             1 | zhangsan1 |           1 |             1 | zhangsan1zhangsan1
+           1 |             1 | zhangsan1 |           2 |             1 | zhangsan2zhangsan2
+           1 |             1 | zhangsan1 |           3 |             1 | zhangsan3zhangsan3
+           1 |             1 | zhangsan1 |           4 |             1 | zhangsan4zhangsan4
+           2 |             1 | zhangsan2 |           1 |             1 | zhangsan1zhangsan1
+(5 rows)
+
+-- 跨路径outer apply
+openGauss=#   SELECT d.department_name, v.employee_id, v.last_name
+openGauss-#   FROM departments d OUTER APPLY (SELECT * FROM employees e WHERE e.department_id = d.department_id) v
+openGauss-#   WHERE d.department_name IN ('Marketing', 'Operations', 'Public Relations', 'CEO', 'CFO')
+openGauss-#   ORDER BY d.department_name, v.employee_id;
+ department_name  | employee_id | last_name
+------------------+-------------+-----------
+ CEO              |             |
+ CFO              |             |
+ Marketing        |           1 | zhangsan1
+ Marketing        |           2 | zhangsan2
+ Marketing        |           3 | zhangsan3
+ Marketing        |           4 | zhangsan4
+ Operations       |           9 | wangwu1
+ Operations       |          10 | wangwu2
+ Operations       |          11 | wangwu3
+ Operations       |          12 | wangwu4
+ Public Relations |           5 | lisi1
+ Public Relations |           6 | lisi2
+ Public Relations |           7 | lisi3
+ Public Relations |           8 | lisi4
+(14 rows)
+```
+
