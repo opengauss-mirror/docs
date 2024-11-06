@@ -715,6 +715,7 @@ headless: true
 			-  [因节点间互信未建立导致安装失败问题]({{< relref "./docs/DatabaseOMGuide/因节点间互信未建立导致安装失败问题.md" >}})
 			-  [因预安装使用默认参数导致安装失败问题]({{< relref "./docs/DatabaseOMGuide/因预安装使用默认参数导致安装失败问题.md" >}})
 			-  [因三节点盘未解注册被两节点使用导致安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因三节点盘未解注册被两节点使用导致安装失败的问题.md" >}})
+			-  [因DSS启动加载共享盘失败导致数据库安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因dss load vg失败导致数据库安装失败的问题.md" >}})
 			-  [因磁盘权限过高导致鉴权失败CM不可用的问题]({{< relref "./docs/DatabaseOMGuide/因磁盘权限过高导致鉴权失败CM不可用的问题.md" >}})
 			-  [因磁盘属主异常导致安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因磁盘属主异常导致安装失败的问题.md" >}})
 			-  [因磁盘满导致安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因磁盘满导致安装失败的问题.md" >}})
