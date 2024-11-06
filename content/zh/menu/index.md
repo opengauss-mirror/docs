@@ -1097,7 +1097,7 @@ headless: true
 					-	[SET CHARSET]({{< relref "./docs/ExtensionReference/dolphin-SET-CHARSET.md" >}})
 					-	[SET PASSWORD]({{< relref "./docs/ExtensionReference/dolphin-SET-PASSWORD.md" >}})  
 					-	[SHOW CHARSET]({{< relref "./docs/ExtensionReference/dolphin-SHOW-CHARACTER-SET.md" >}}) 
-					-	[SHOW CHARACTER-SET]({{< relref "./docs/ExtensionReference/dolphin-SHOW-CHARACTER-SET.md" >}}) 
+					-	[SHOW CHARACTER SET]({{< relref "./docs/ExtensionReference/dolphin-SHOW-CHARACTER-SET.md" >}}) 
 					-	[SHOW COLLATION]({{< relref "./docs/ExtensionReference/dolphin-SHOW-COLLATION.md" >}}) 
 					-	[SHOW COLUMNS]({{< relref "./docs/ExtensionReference/dolphin-SHOW_COLUMNS.md" >}}) 
 					-	[SHOW CREATE DATABASE]({{< relref "./docs/ExtensionReference/dolphin-SHOW-CREATE-DATABASE.md" >}}) 

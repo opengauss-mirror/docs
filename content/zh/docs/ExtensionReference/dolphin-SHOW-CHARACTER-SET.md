@@ -1,4 +1,4 @@
-# SHOW CHARACTER SET
+# SHOW CHARACTER SET/SHOW CHARSET
 
 ## 注意事项
 
@@ -37,6 +37,13 @@ SHOW {CHARACTER SET | CHARSET} [LIKE 'pattern' | WHERE expr]
 
 ```sql
 openGauss=# SHOW CHARACTER SET LIKE 'a%';
+ charset |    Description    | default collation | maxlen
+---------+-------------------+-------------------+--------
+ abc     | alias for WIN1258 |                   |      1
+ alt     | alias for WIN866  |                   |      1
+(2 rows)
+
+openGauss=# SHOW CHARSET LIKE 'a%';
  charset |    Description    | default collation | maxlen
 ---------+-------------------+-------------------+--------
  abc     | alias for WIN1258 |                   |      1

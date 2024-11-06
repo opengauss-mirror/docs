@@ -923,6 +923,7 @@ headless: true
     		        -	[SELECT]({{< relref "./docs/ExtensionReference/dolphin-SELECT.md" >}})
     		        -	[SET CHARSET]({{< relref "./docs/ExtensionReference/dolphin-SET-CHARSET.md" >}})
     		        -	[SET PASSWORD]({{< relref "./docs/ExtensionReference/dolphin-SET-PASSWORD.md" >}})
+					-	[SHOW CHARSET]({{< relref "./docs/ExtensionReference/dolphin-show-character-set.md" >}})
     		        -	[SHOW CHARACTER SET]({{< relref "./docs/ExtensionReference/dolphin-show-character-set.md" >}})
     		        -	[SHOW COLLATION]({{< relref "./docs/ExtensionReference/dolphin-show-collation.md" >}})
     		        -	[SHOW COLUMNS]({{< relref "./docs/ExtensionReference/dolphin-show_columns.md" >}})

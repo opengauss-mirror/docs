@@ -42,6 +42,7 @@
 -   **[SELECT](dolphin-SELECT.md)** 
 -   **[SET CHARSET](dolphin-SET-CHARSET.md)** 
 -   **[SET PASSWORD](dolphin-SET-PASSWORD.md)** 
+-   **[SHOW CHARSET](dolphin-show-character-set.md)** 
 -   **[SHOW CHARACTER SET](dolphin-show-character-set.md)** 
 -   **[SHOW COLLATION](dolphin-show-collation.md)** 
 -   **[SHOW COLUMNS](dolphin-show_columns.md)** 
