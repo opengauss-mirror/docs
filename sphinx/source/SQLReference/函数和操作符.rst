@@ -44,4 +44,5 @@
     ../content/zh/docs/SQLReference/数据损坏检测修复函数
     ../content/zh/docs/SQLReference/XML类型函数
     ../content/zh/docs/SQLReference/资源池化函数
+    ../content/zh/docs/SQLReference/向量函数和操作符
     ../content/zh/docs/SQLReference/废弃函数

@@ -24,3 +24,4 @@
     ../content/zh/docs/SQLReference/账本数据库使用的数据类型
     ../content/zh/docs/SQLReference/SET类型
     ../content/zh/docs/SQLReference/字符集与字符序
+    ../content/zh/docs/SQLReference/向量数据类型
