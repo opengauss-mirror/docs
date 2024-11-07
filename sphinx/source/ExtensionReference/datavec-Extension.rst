@@ -7,3 +7,4 @@ datavec-Extension
     ../content/zh/docs/ExtensionReference/datavec安装
     ../content/zh/docs/ExtensionReference/datavec使用
     ../content/zh/docs/ExtensionReference/datavec限制
+    ../content/zh/docs/ExtensionReference/datavec容器化部署

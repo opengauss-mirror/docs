@@ -48,9 +48,9 @@ $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=YourPassoword 
 -   `-p 8888:5432`: 将容器的5432端口映射到宿主机的8888端口
 
 #### 必选容器内环境变量
--   `-e GS_PASSWORD=YourPassoword`：设置数据库超级用户`omm`以及测试用户`gaussdb`密码
+-   `-e GS_PASSWORD=YourPassoword`：设置数据库超级用户`omm`密码
 
-使用 openGauss 镜像的时候，必须设置该参数，且不能为空或未定义。该参数用于设置 openGauss 数据库的超级用户`omm`以及测试用户`gaussdb`的密码。安装过程中将默认创建omm超级用户，该用户名目前无法更改。测试用户`gaussdb`在entrypoint.sh中被创建。
+使用 openGauss 镜像的时候，必须设置该参数，且不能为空或未定义。该参数用于设置 openGauss 数据库的超级用户`omm`。安装过程中将默认创建omm超级用户，该用户名目前无法更改。
 
 openGauss 镜像配置了本地信任机制，因此在容器内连接数据库时无需密码，但若从容器外部（其它主机或者容器）连接，则必须要输入密码。
 
@@ -62,8 +62,10 @@ openGauss 镜像配置了本地信任机制，因此在容器内连接数据库�
 
 #### 可选容器内环境变量
 -   `-e GS_NODENAME=YourNodeName`：指定数据库节点名称，默认为`gaussdb`
--   `-e GS_USERNAME=YourUserName`：指定数据库连接用户名，默认为`gaussdb`
+-   `-e GS_USERNAME=YourUserName`：指定数据库连接用户名，默认为测试用户`gaussdb`
+-   `-e GS_USERPASSWORD=YourUserPassword`：指定用户`$GS_USERNAME`密码，默认为`$GS_PASSWORD`
 -   `-e GS_PORT=YourPort`：指定容器内数据库端口，默认为`5432`
+-   `-e GS_DB=YourDbName`：在容器内创建数据库，默认为`postgres`
 
 ## 验证容器状态<a name="zh-cn_topic_0283136491_section148176206211"></a>
 查看运行中的容器：
