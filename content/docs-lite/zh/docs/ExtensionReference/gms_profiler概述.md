@@ -1,0 +1,3 @@
+# gms_profiler概述
+
+gms_profiler是一个基于openGauss的插件，用于收集PL/pgSQL程序执行情况，通过分析收集的数据进而找到PL/pgSQL程序的性能瓶颈，统计程序的代码覆盖率。目前支持的接口有：START_PROFILER、STOP_PROFILER、PAUSE_PROFILER、RESUME_PROFILER、FLUSH_DATA等。
