@@ -1098,6 +1098,7 @@ headless: true
 		-   [DataVec限制]({{< relref "./docs/ExtensionReference/datavec限制.md" >}})
 		-   [DataVec安装]({{< relref "./docs/ExtensionReference/datavec安装.md" >}})
 		-   [DataVec使用]({{< relref "./docs/ExtensionReference/datavec使用.md" >}})
+		-   [DataVec容器化部署]({{< relref "./docs/ExtensionReference/datavec容器化部署.md" >}})
 	-   [gms_profiler Extension]({{< relref "./docs/ExtensionReference/gms_profiler-Extension.md" >}})
 		-   [gms_profiler概述]({{< relref "./docs/ExtensionReference/gms_profiler概述.md" >}})
 		-   [gms_profiler限制]({{< relref "./docs/ExtensionReference/gms_profiler限制.md" >}})
