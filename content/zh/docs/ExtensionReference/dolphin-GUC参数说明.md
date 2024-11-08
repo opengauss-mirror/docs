@@ -73,6 +73,9 @@
 
 - escape_quotes：是否将\\"当成“看待，此参数只在B兼容性库中生效，如下所示：
 
+-  no_auto_value_on_zero: 影响AUTO_INCREMENT列的处理。通常情况下，您可以通过向列中插入NULL或0来生成列的下一个序列编号。NO_AUTO_VALUE_ON_ZERO抑制了对0的这种行为，因此只有NULL才能生成下一个序列编号。
+
+
   ```
   openGauss=# create table test1(c1 text);
   CREATE TABLE

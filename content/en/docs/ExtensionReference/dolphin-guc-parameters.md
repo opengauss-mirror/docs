@@ -50,6 +50,8 @@ Parameter description: The parameter value is a character string separated by co
    | \l[+]                       | Lists the names, owners, character set encodings, and permissions of all the databases in the server.|
    | \z [PATTERN]                | Lists all tables, views, and sequences in the database and their access permissions.      |
 
+7. no\_auto\_value\_on\_zero: affects handling of AUTO_INCREMENT columns. Normally, you generate the next sequence number for the column by inserting either NULL or 0 into it. NO_AUTO_VALUE_ON_ZERO suppresses this behavior for 0 so that only NULL generates the next sequence number.
+
 This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string
