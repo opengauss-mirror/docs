@@ -8,13 +8,19 @@
 
 SYNONYM的所有者或者被授予了DROP ANY SEQUENCE权限的用户有权限执行DROP SYNONYM命令，系统管理员默认拥有此权限。
 
+只有被授予了DROP PUBLIC SYNONYM权限的用户才能删除PUBLIC SYNONYM。
+
 ## 语法格式<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_s9b11702dc40d417f95cd9eec3970b4d1"></a>
 
 ```
-DROP SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
+DROP [ PUBLIC ] SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 ```
 
 ## 参数描述<a name="zh-cn_topic_0283137394_zh-cn_topic_0237122151_zh-cn_topic_0059778429_sb1cba40c50ea4d648126cedd1ac258ff"></a>
+
+-   **PUBLIC**
+
+    删除公共同义词。如果不指定PUBLIC，则删除私有同义词。
 
 -   **IF EXISTS**
 

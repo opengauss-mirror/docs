@@ -30,7 +30,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
 [ LIMIT { [offset,] count | ALL } ]
 [ OFFSET start [ ROW | ROWS ] ]
-[ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
+[ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ]
 [ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
@@ -438,9 +438,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     **start**  specifies the number of rows to skip before starting to return rows.
 
--   **FETCH \{ FIRST | NEXT \} \[ count \] \{ ROW | ROWS \} ONLY**
+-   **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \} **
 
-    If  **count**  is omitted in a  **FETCH**  clause, it defaults to  **1**.
+    The  **FETCH**  clause restricts the total number of rows starting from the first row of the return query result, and the default value of  **count**  is  **1**. The  **PERCENT**  keyword can be used to specify the number of rows returned as a percentage of the query result. The  **ONLY**  keyword indicates that only the specified number of rows are returned, and the  **WITH TIES**  keyword indicates that the specified number of rows are returned and all rows with the same values as the last row in the result set are returned in order.
 
 -   **FOR UPDATE clause**
 
@@ -668,4 +668,40 @@ openGauss=#  SELECT * FROM tpcds.time_table TIMECAPSULE CSN 107330;
    2 | 2021-04-25 17:50:10.886848 |  107324 | time2
    3 | 2021-04-25 17:50:16.12921  |  107327 | time3
 (3 rows)
+
+-- FETCH usage example
+openGauss=# CREATE TABLE employees(employee_id int, department_id int, last_name varchar(50));
+
+-- Insert 20 records
+openGauss=# INSERT INTO employees VALUES (1, 1, 'zhangsan1'), (2, 1, 'zhangsan2'), (3, 1, 'zhangsan3'), (4, 1, 'zhangsan4'), (5, 2, 'lisi1'), (6, 2, 'lisi2'), (7, 2, 'lisi3'), (8, 2, 'lisi4'), (9, 3, 'wangwu1'), (10, 3, 'wangwu2'), (11, 3, 'wangwu3'), (12, 3, 'wangwu4'), (13, 4, 'heliu1'), (14, 4, 'heliu2'), (15, 4, 'heliu3'), (16, 4, 'heliu4'), (17, 5, 'chenqi1'), (18, 5, 'chenqi2'), (19, 5, 'chenqi3'), (20, 5, 'chenqi4'); 
+
+-- FETCH ... ROWS ONLY：Get the first 3 records
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 3 ROWS ONLY;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           1 |             1 | zhangsan1
+(3 rows)
+
+-- ORDER BY ... FETCH ... ROWS WITH TIES: Get the first 3 records and all records with the same value as the last record
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 3 ROWS WITH TIES;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           1 |             1 | zhangsan1
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           4 |             1 | zhangsan4
+(4 rows)
+
+-- FETCH ... PERCENT ROWS ONLY: Get the first 25% of the records
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 25 PERCENT ROWS ONLY;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           1 |             1 | zhangsan1
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           4 |             1 | zhangsan4
+           5 |             2 | lisi1
+(5 rows)
 ```

@@ -1547,7 +1547,7 @@ CREATE SERVER server_name
 Creates a synonym object. A synonym is an alias of a database object and is used to record the mapping between database object names. You can use synonyms to access associated database objects.
 
 ```
-CREATE [ OR REPLACE ] SYNONYM synonym_name
+CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name
     FOR object_name;
 ```
 
@@ -2108,7 +2108,7 @@ DROP SERVER [ IF EXISTS ] server_name [ { CASCADE | RESTRICT } ] ;
 Deletes a synonym.
 
 ```
-DROP SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
+DROP [ PUBLIC ] SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 ```
 
 ## DROP TABLE<a name="section1271573964016"></a>
@@ -2645,7 +2645,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
     [ LIMIT { [offset,] count | ALL } ]
     [ OFFSET start [ ROW | ROWS ] ]
-    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
+    [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ]
     [ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 TABLE { ONLY {(table_name)| table_name} | table_name [ * ]};
 
@@ -2690,7 +2690,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
     [ LIMIT { count | ALL } ]
     [ OFFSET start [ ROW | ROWS ] ]
-    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
+    [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ]
     [ {FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
 
@@ -2814,6 +2814,6 @@ VALUES {( expression [, ...] )} [, ...]
     [ ORDER BY {sort_expression [ ASC | DESC | USING operator ]} [, ...] ]
     [ LIMIT { count | ALL } ]
     [ OFFSET start [ ROW | ROWS ] ]
-    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ];
+    [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ];
 ```
 

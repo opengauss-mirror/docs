@@ -40,6 +40,7 @@ opengauss=# show privileges;
  Create any package   | Package                                                                                                    | To create any package
  Create any sequence  | Sequence                                                                                                   | To create any sequence
  Create any synonym   | Synonym                                                                                                    | To create any synonym
+ Create public synonym| Synonym                                                                                                    | To create public synonym
  Create any table     | Table                                                                                                      | To create any table
  Create any trigger   | Trigger                                                                                                    | To create any trigger
  Create any type      | Type                                                                                                       | To create any type
@@ -47,6 +48,7 @@ opengauss=# show privileges;
  Delete any table      | Table                                                                                                      | To delete any table
  Drop any sequence    | Sequence                                                                                                   | To drop any sequence
  Drop any synonym     | Synonym                                                                                                    | To drop any synonym
+ Drop public synonym  | Synonym                                                                                                    | To drop public synonym
  Drop any table       | Table                                                                                                      | To drop any table
  Drop any trigger     | Trigger                                                                                                    | To drop any trigger
  Drop any type        | Type                                                                                                       | To drop any type

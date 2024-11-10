@@ -31,7 +31,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="17.85178517851785%" headers="mcps1.2.4.1.2 "><p id="p11223112695411"><a name="p11223112695411"></a><a name="p11223112695411"></a>oid</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.67586758675868%" headers="mcps1.2.4.1.3 "><p id="p18791125963311"><a name="p18791125963311"></a><a name="p18791125963311"></a>OID of the namespace that contains a synonym</p>
+<td class="cellrowborder" valign="top" width="58.67586758675868%" headers="mcps1.2.4.1.3 "><p id="p18791125963311"><a name="p18791125963311"></a><a name="p18791125963311"></a>OID of the namespace that contains a synonym. 0 if the synonym is a public synonym</p>
 </td>
 </tr>
 <tr id="row8791185914334"><td class="cellrowborder" valign="top" width="23.472347234723472%" headers="mcps1.2.4.1.1 "><p id="p19125193215533"><a name="p19125193215533"></a><a name="p19125193215533"></a>synowner</p>

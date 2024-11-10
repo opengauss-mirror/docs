@@ -15,15 +15,26 @@
 -   删除原对象后，与之关联同义词不会被级联删除，继续访问该同义词会报错，并提示已失效。
 -   被授予了CREATE ANY SYNONYM权限的用户能够在用户模式下创建同义词。
 -   不可与同一模式下已存在的表、视图、函数以及存储过程产生命名冲突。
+-   被授予了CREATE PUBLIC SYNONYM权限的用户能够创建公共同义词。
+-   被授予了DROP PUBLIC SYNONYM权限的用户能够删除公共同义词。
+-   创建同义词时，如果指定了PUBLIC，则不能再指定同义词的模式名。
 
 ## 语法格式<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_zh-cn_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
 ```
-CREATE [ OR REPLACE ] SYNONYM synonym_name 
+CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name 
     FOR object_name;
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136599_zh-cn_topic_0237122116_section1549681213574"></a>
+
+-   **OR REPLACE**
+
+    -   如果同义词存在，则替换现有同义词。
+    -   如果同义词不存在，则创建新的同义词。
+
+-   **PUBLIC**
+-   指定同义词为公共同义词。如果不指定PUBLIC，则同义词为私有同义词。
 
 -   **synonym**
 
@@ -97,11 +108,18 @@ openGauss=# CREATE OR REPLACE SYNONYM register FOR ot.register;
 --使用同义词register，调用存储过程。
 openGauss=# CALL register(3,'mia');
 
+-- 创建公共同义词
+openGauss=# CREATE PUBLIC SYNONYM t1 FOR ot.t1;
+
+-- 使用公共同义词
+openGauss=# SELECT * FROM t1;
+
 --删除同义词。
 openGauss=# DROP SYNONYM t1;
 openGauss=# DROP SYNONYM IF EXISTS v1;
 openGauss=# DROP SYNONYM IF EXISTS add;
 openGauss=# DROP SYNONYM register;
+openGauss=# DROP PUBLIC SYNONYM t1;
 openGauss=# DROP SCHEMA ot CASCADE;
 ```
 

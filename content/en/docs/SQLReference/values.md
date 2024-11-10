@@ -16,7 +16,7 @@ VALUES {( expression [, ...] )} [, ...]
     [ ORDER BY { sort_expression [ ASC | DESC | USING operator ] } [, ...] ]
     [ LIMIT { count | ALL } ]
     [ OFFSET start [ ROW | ROWS ] ]
-    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ];
+    [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137477_en-us_topic_0237122196_en-us_topic_0059779241_s0a4a952823114ec6bfe2864b0af1db2f"></a>
@@ -51,9 +51,9 @@ VALUES {( expression [, ...] )} [, ...]
 
     Specifies the maximum number of returned rows, whereas  **start**  specifies the number of rows to skip before starting to return rows.
 
--   **FETCH \{ FIRST | NEXT \} \[ count \] \{ ROW | ROWS \} ONLY**
+-   **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \} **
 
-    The  **FETCH**  clause restricts the total number of rows starting from the first row of the return query result, and the default value of  **count**  is  **1**. 
+    The  **FETCH**  clause restricts the total number of rows starting from the first row of the return query result, and the default value of  **count**  is  **1**. The  **PERCENT**  keyword can be used to specify the number of rows returned as a percentage of the query result. The  **ONLY**  keyword indicates that only the specified number of rows are returned, and the  **WITH TIES**  keyword indicates that the specified number of rows are returned and all rows with the same values as the last row in the result set are returned in order.
 
 
 ## Examples<a name="en-us_topic_0283137477_en-us_topic_0237122196_en-us_topic_0059779241_sdb42dc749d654038b498d0f77883ae8a"></a>
