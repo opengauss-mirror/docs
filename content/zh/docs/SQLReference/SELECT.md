@@ -31,7 +31,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ ORDER BY {expression [ [ ASC | DESC | USING operator ] | nlssort_expression_clause ] [ NULLS { FIRST | LAST } ]} [, ...] ]
 [ LIMIT { [offset,] count | ALL } ]
 [ OFFSET start [ ROW | ROWS ] ]
-[ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
+[ FETCH { FIRST | NEXT } [ count ] [PERCENT] { ROW | ROWS } { ONLY | WITH TIES } ]
 [ into_option ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N]} [...] ]
 [ into_option ];
@@ -828,9 +828,9 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     start声明开始返回行之前忽略的行数。
 
--   **FETCH \{ FIRST | NEXT \} \[ count \] \{ ROW | ROWS \} ONLY**
+-   **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \}**
 
-    如果不指定count，默认值为1，FETCH子句限定返回查询结果从第一行开始的总行数。
+    FETCH子句限定返回查询结果从第一行开始的总行数，count的缺省值为1。使用PERCENT关键字可以指定返回的行数是查询结果的百分比。ONLY关键字表示只返回指定的行数，WITH TIES关键字表示返回指定的行数以及结果集有序情况下所有与最后一行相同的值。
 
 -   **锁定子句**
 
@@ -1377,4 +1377,41 @@ openGauss-#   ORDER BY d.department_name, v.employee_id;
  Public Relations |           7 | lisi3
  Public Relations |           8 | lisi4
 (14 rows)
+
+-- FETCH 语法使用样例
+openGauss=# CREATE TABLE employees(employee_id int, department_id int, last_name varchar(50));
+
+-- 插入20条记录
+openGauss=# INSERT INTO employees VALUES (1, 1, 'zhangsan1'), (2, 1, 'zhangsan2'), (3, 1, 'zhangsan3'), (4, 1, 'zhangsan4'), (5, 2, 'lisi1'), (6, 2, 'lisi2'), (7, 2, 'lisi3'), (8, 2, 'lisi4'), (9, 3, 'wangwu1'), (10, 3, 'wangwu2'), (11, 3, 'wangwu3'), (12, 3, 'wangwu4'), (13, 4, 'heliu1'), (14, 4, 'heliu2'), (15, 4, 'heliu3'), (16, 4, 'heliu4'), (17, 5, 'chenqi1'), (18, 5, 'chenqi2'), (19, 5, 'chenqi3'), (20, 5, 'chenqi4'); 
+
+-- FETCH ... ROWS ONLY：获取前3条记录
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 3 ROWS ONLY;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           1 |             1 | zhangsan1
+(3 rows)
+
+-- ORDER BY ... FETCH ... ROWS WITH TIES：获取前3条记录，如果有相同的值，也会一起获取
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 3 ROWS WITH TIES;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           1 |             1 | zhangsan1
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           4 |             1 | zhangsan4
+(4 rows)
+
+-- FETCH ... PERCENT ROWS ONLY：获取前25%的记录
+openGauss=# SELECT * FROM employees ORDER BY department_id FETCH NEXT 25 PERCENT ROWS ONLY;
+ employee_id | department_id | last_name 
+-------------+---------------+-----------
+           1 |             1 | zhangsan1
+           2 |             1 | zhangsan2
+           3 |             1 | zhangsan3
+           4 |             1 | zhangsan4
+           5 |             2 | lisi1
+(5 rows)
+
 ```

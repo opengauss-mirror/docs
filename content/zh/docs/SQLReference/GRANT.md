@@ -41,7 +41,7 @@
 
     将ANY权限授予特定的角色和用户，ANY权限的取值范围参见语法格式。当声明了WITH ADMIN OPTION，被授权的用户可以将该ANY权限再次授予其他角色/用户，或从其他角色/用户处回收该ANY权限。ANY权限可以通过角色被继承，但不能赋予PUBLIC。初始用户和三权分立关闭时的系统管理员用户可以给任何角色/用户授予或撤销ANY权限。
 
-    目前支持以下ANY权限：CREATE ANY TABLE、ALTER ANY TABLE、DROP ANY TABLE、SELECT ANY TABLE、INSERT ANY TABLE、UPDATE ANY TABLE、DELETE ANY TABLE、CREATE ANY SEQUENCE、CREATE ANY INDEX、CREATE ANY FUNCTION、EXECUTE ANY FUNCTION、 CREATE ANY PACKAGE、EXECUTE ANY PACKAGE、CREATE ANY TYPE、ALTER ANY TYPE、DROP ANY TYPE、ALTER ANY SEQUENCE、DROP ANY SEQUENCE、SELECT ANY SEQUENCE、ALTER ANY INDEX、DROP ANY INDEX、CREATE ANY SYNONYM、DROP ANY SYNONYM、CREATE ANY TRIGGER、ALTER ANY TRIGGER、DROP ANY TRIGGER。详细的ANY权限范围描述参考[表1](#table1360121832117)。
+    目前支持以下ANY权限：CREATE ANY TABLE、ALTER ANY TABLE、DROP ANY TABLE、SELECT ANY TABLE、INSERT ANY TABLE、UPDATE ANY TABLE、DELETE ANY TABLE、CREATE ANY SEQUENCE、CREATE ANY INDEX、CREATE ANY FUNCTION、EXECUTE ANY FUNCTION、 CREATE ANY PACKAGE、EXECUTE ANY PACKAGE、CREATE ANY TYPE、ALTER ANY TYPE、DROP ANY TYPE、ALTER ANY SEQUENCE、DROP ANY SEQUENCE、SELECT ANY SEQUENCE、ALTER ANY INDEX、DROP ANY INDEX、CREATE ANY SYNONYM、DROP ANY SYNONYM、CREATE PUBLIC SYNONYM、DROP PUBLIC SYNONYM、CREATE ANY TRIGGER、ALTER ANY TRIGGER、DROP ANY TRIGGER。详细的ANY权限范围描述参考[表1](#table1360121832117)。
 
 
 ## 注意事项<a name="zh-cn_topic_0283137177_zh-cn_topic_0237122166_zh-cn_topic_0059778755_section1780116145345"></a>
@@ -616,6 +616,21 @@ GRANT的参数说明如下所示。
 <tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP ANY SYNONYM</p>
 </td>
 <td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>用户拥有对public模式和用户模式下同义词的DROP权限。</p>
+</td>
+</tr>
+<tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP ANY SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>用户拥有对public模式和用户模式下同义词的DROP权限。</p>
+</td>
+</tr>
+<tr id="row11336453114020"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p864102511508"><a name="p864102511508"></a><a name="p864102511508"></a>CREATE PUBLIC SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p13641325135013"><a name="p13641325135013"></a><a name="p13641325135013"></a>用户能够创建公共同义词。</p>
+</td>
+</tr>
+<tr id="row11336453114021"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p864102511508"><a name="p864102511508"></a><a name="p864102511508"></a>DROP PUBLIC SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p13641325135013"><a name="p13641325135013"></a><a name="p13641325135013"></a>用户能够删除公共同义词。</p>
 </td>
 </tr>
 </tbody>

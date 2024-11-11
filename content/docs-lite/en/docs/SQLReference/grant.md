@@ -38,7 +38,7 @@
 
     Grant ANY permissions to a specified role or user. For details about the value range of the ANY permissions, see the syntax. If  **WITH ADMIN OPTION**  is specified, the grantee can grant the ANY permissions to or revoke them from other roles or users. The ANY permissions can be inherited by a role but cannot be granted to  **PUBLIC**. An initial user and the system administrator when separation of duties is disabled can grant the ANY permissions to or revoke them from any role or user.
 
-    Currently, the following ANY permissions are supported: CREATE ANY TABLE, ALTER ANY TABLE, DROP ANY TABLE, SELECT ANY TABLE, INSERT ANY TABLE, UPDATE ANY TABLE, DELETE ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY INDEX, CREATE ANY FUNCTION, EXECUTE ANY FUNCTION, CREATE ANY PACKAGE, EXECUTE ANY PACKAGE, CREATE ANY TYPE, ALTER ANY TYPE, DROP ANY TYPE, ALTER ANY SEQUENCE, DROP ANY SEQUENCE, SELECT ANY SEQUENCE, ALTER ANY INDEX, DROP ANY INDEX, CREATE ANY SYNONYM, DROP ANY SYNONYM, CREATE ANY TRIGGER, ALTER ANY TRIGGER, and DROP ANY TRIGGER. For details about the ANY permission scope, see [Table 1](#table1360121832117).
+    Currently, the following ANY permissions are supported: CREATE ANY TABLE, ALTER ANY TABLE, DROP ANY TABLE, SELECT ANY TABLE, INSERT ANY TABLE, UPDATE ANY TABLE, DELETE ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY INDEX, CREATE ANY FUNCTION, EXECUTE ANY FUNCTION, CREATE ANY PACKAGE, EXECUTE ANY PACKAGE, CREATE ANY TYPE, ALTER ANY TYPE, DROP ANY TYPE, ALTER ANY SEQUENCE, DROP ANY SEQUENCE, SELECT ANY SEQUENCE, ALTER ANY INDEX, DROP ANY INDEX, CREATE ANY SYNONYM, DROP ANY SYNONYM, CREATE PUBLIC SYNONYM, DROP PUBLIC SYNONYM, CREATE ANY TRIGGER, ALTER ANY TRIGGER, and DROP ANY TRIGGER. For details about the ANY permission scope, see [Table 1](#table1360121832117).
 
 
 ## Precautions<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_section1780116145345"></a>
@@ -47,7 +47,7 @@
 -   The ANY permissions are database permissions and are valid only for database objects that are granted with the permissions. For example,  **SELECT ANY TABLE**  only allows a user to view all user table data in the current database, but the user does not have the permission to view user tables in other databases.
 -   Even if a user is granted with the ANY permissions, the user cannot perform INSERT, DELETE, UPDATE, and SELECT operations on the objects of private users.
 -   The ANY permissions and the original permissions do not affect each other.
--   If a user is granted with the CREATE ANY TABLE permission, the owner of a table created in a schema with the same name as the user is the owner of the schema. When the user performs other operations on the table, the user needs to be granted with the corresponding operation permission. Similarly, if a user is granted with the CREATE ANY FUNCTION, CREATE ANY PACKAGE, CREATE ANY TYPE, CREATE ANY SEQUENCE, or CREATE ANY INDEX permission, the owner of an object created in a schema with the same name is the owner of the schema. If a user is granted with the CREATE ANY TRIGGER or CREATE ANY SYNONYM permission, the owner of an object created in a schema with the same name is the creator.
+-   If a user is granted with the CREATE ANY TABLE permission, the owner of a table created in a schema with the same name as the user is the owner of the schema. When the user performs other operations on the table, the user needs to be granted with the corresponding operation permission. Similarly, if a user is granted with the CREATE ANY FUNCTION, CREATE ANY PACKAGE, CREATE ANY TYPE, CREATE ANY SEQUENCE, or CREATE ANY INDEX permission, the owner of an object created in a schema with the same name is the owner of the schema. If a user is granted with the CREATE ANY TRIGGER or CREATE ANY SYNONYM permission, the owner of an object created in a schema with the same name is the creator. If a user is granted with the CREATE PUBLIC SYNONYM or DROP PUBLIC SYNONYM permission, the user can create or drop a public synonym.
 
 ## Syntax<a name="en-us_topic_0283137177_en-us_topic_0237122166_en-us_topic_0059778755_s9b21365068e9482782f400457afa8a01"></a>
 
@@ -281,7 +281,7 @@
     GRANT { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
       DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
       CREATE ANY PACKAGE | EXECUTE ANY PACKAGE | CREATE ANY TYPE | ALTER ANY TYPE | DROP ANY TYPE | ALTER ANY SEQUENCE | DROP ANY SEQUENCE |
-      SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER | DROP ANY TRIGGER
+      SELECT ANY SEQUENCE | ALTER ANY INDEX | DROP ANY INDEX | CREATE ANY SYNONYM | DROP ANY SYNONYM | CREATE PUBLIC SYNONYM | DROP PUBLIC SYNONYM | CREATE ANY TRIGGER | ALTER ANY TRIGGER | DROP ANY TRIGGER
      } [, ...]
       TO [ GROUP ] role_name [, ...]
       [ WITH ADMIN OPTION ];
@@ -619,6 +619,16 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 <tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP ANY SYNONYM</p>
 </td>
 <td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>Users have the DROP permission on synonyms in public and user schemas.</p>
+</td>
+</tr>
+<tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>CREATE PUBLIC SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>Users have the CREATE permission on public synonyms.</p>
+</td>
+</tr>
+<tr id="row11336453114019"><td class="cellrowborder" valign="top" width="22.509999999999998%" headers="mcps1.2.3.1.1 "><p id="p588843295012"><a name="p588843295012"></a><a name="p588843295012"></a>DROP PUBLIC SYNONYM</p>
+</td>
+<td class="cellrowborder" valign="top" width="77.49000000000001%" headers="mcps1.2.3.1.2 "><p id="p10888153216509"><a name="p10888153216509"></a><a name="p10888153216509"></a>Users have the DROP permission on public synonyms.</p>
 </td>
 </tr>
 </tbody>

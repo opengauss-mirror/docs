@@ -16,7 +16,7 @@ VALUES {( expression [, ...] )} [, ...]
     [ ORDER BY { sort_expression [ ASC | DESC | USING operator ] } [, ...] ]
     [ LIMIT { count | ALL } ]
     [ OFFSET start [ ROW | ROWS ] ]
-    [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ];
+    [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ];
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_s0a4a952823114ec6bfe2864b0af1db2f"></a>
@@ -51,9 +51,9 @@ VALUES {( expression [, ...] )} [, ...]
 
     声明返回的最大行数，而start声明开始返回行之前忽略的行数。
 
--   **FETCH \{ FIRST | NEXT \} \[ count \] \{ ROW | ROWS \} ONLY**
+-   **FETCH \{ FIRST | NEXT \} \[ count \] \[ PERCENT \] \{ ROW | ROWS \} \{ ONLY | WITH TIES \}**
 
-    FETCH子句限定返回查询结果从第一行开始的总行数，count的缺省值为1。
+    FETCH子句限定返回查询结果从第一行开始的总行数，count的缺省值为1。使用PERCENT关键字可以指定返回的行数是查询结果的百分比。ONLY关键字表示只返回指定的行数，WITH TIES关键字表示返回指定的行数以及结果集有序情况下所有与最后一行相同的值。
 
 
 ## 示例<a name="zh-cn_topic_0283137477_zh-cn_topic_0237122196_zh-cn_topic_0059779241_sdb42dc749d654038b498d0f77883ae8a"></a>

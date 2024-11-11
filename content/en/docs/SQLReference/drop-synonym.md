@@ -8,13 +8,19 @@
 
 The owner of SYNONYM or a user granted with the DROP ANY SEQUENCE permission can run **DROP SYNONYM**. The system administrator has this permission by default.
 
+The **PUBLIC SYNONYM** can only be deleted by a user granted with the DROP PUBLIC SYNONYM permission.
+
 ## Syntax<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_s9b11702dc40d417f95cd9eec3970b4d1"></a>
 
 ```
-DROP SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
+DROP [ PUBLIC ] SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137394_en-us_topic_0237122151_en-us_topic_0059778429_sb1cba40c50ea4d648126cedd1ac258ff"></a>
+
+-   **PUBLIC**
+
+    Deletes a public synonym. If you do not specify PUBLIC, a private synonym is deleted.
 
 -   **IF EXISTS**
 

@@ -1547,7 +1547,7 @@ CREATE SERVER server_name
 Creates a synonym object. A synonym is an alias of a database object and is used to record the mapping between database object names. You can use synonyms to access associated database objects.
 
 ```
-CREATE [ OR REPLACE ] SYNONYM synonym_name
+CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name
     FOR object_name;
 ```
 
@@ -2108,7 +2108,7 @@ DROP SERVER [ IF EXISTS ] server_name [ { CASCADE | RESTRICT } ] ;
 Deletes a synonym.
 
 ```
-DROP SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
+DROP [ PUBLIC ] SYNONYM [ IF EXISTS ] synonym_name [ CASCADE | RESTRICT ];
 ```
 
 ## DROP TABLE<a name="section1271573964016"></a>

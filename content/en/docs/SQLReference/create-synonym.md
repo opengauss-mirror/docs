@@ -14,15 +14,26 @@
 -   You are not advised to create synonyms for temporary tables. To create a synonym, you need to specify the schema name of the target temporary table. Otherwise, the synonym cannot be used normally. In addition, you need to run the  **DROP SYNONYM**  command before the current session ends.
 -   After an original object is deleted, the synonym associated with the object will not be deleted in cascading mode. If you continue to access the synonym, an error message is displayed, indicating that the synonym has expired.
 -   Users granted the CREATE ANY SYNONYM permission can create synonyms in user schemas.
+-   Users granted the CREATE PUBLIC SYNONYM permission can create public synonyms.
+-   Users granted the DROP PUBLIC SYNONYM permission can delete public synonyms.
+-   When creating a synonym, if  **PUBLIC**  is specified, the schema name of synonym cannot be specified.
 
 ## Syntax<a name="en-us_topic_0283136599_en-us_topic_0237122116_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
 ```
-CREATE [ OR REPLACE ] SYNONYM synonym_name 
+CREATE [ OR REPLACE ] [ PUBLIC ] SYNONYM synonym_name
     FOR object_name;
 ```
 
 ## Parameter Description<a name="en-us_topic_0283136599_en-us_topic_0237122116_section1549681213574"></a>
+
+-  **OR REPLACE**
+
+    -   If the synonym exists, replace the existing synonym.
+    -   If the synonym does not exist, create a new synonym.
+
+-   **PUBLIC**
+    -   Specifies that the synonym is a public synonym. If  **PUBLIC**  is not specified, the synonym is a private synonym.
 
 -   **synonym**
 
@@ -95,11 +106,18 @@ openGauss=# CREATE OR REPLACE SYNONYM register FOR ot.register;
 -- Use synonym register to invoke the stored procedure.
 openGauss=# CALL register(3,'mia');
 
+-- Create a public synonym.
+openGauss=# CREATE PUBLIC SYNONYM t1 FOR ot.t1;
+
+-- Use the public synonym.
+openGauss=# SELECT * FROM t1;
+
 -- Delete the synonym.
 openGauss=# DROP SYNONYM t1;
 openGauss=# DROP SYNONYM IF EXISTS v1;
 openGauss=# DROP SYNONYM IF EXISTS add;
 openGauss=# DROP SYNONYM register;
+openGauss=# DROP PUBLIC SYNONYM t1;
 openGauss=# DROP SCHEMA ot CASCADE;
 ```
 
