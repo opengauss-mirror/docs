@@ -10,4 +10,5 @@
     datavec-Extension
     gms_profiler-Extension
     gms_i18n-Extension
+    gms_sql-Extension
 

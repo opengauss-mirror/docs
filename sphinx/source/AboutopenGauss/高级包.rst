@@ -6,3 +6,4 @@
     ../content/zh/docs/AboutopenGauss/gms_profiler高级包
     ../content/zh/docs/AboutopenGauss/gms_stats高级包
     ../content/zh/docs/AboutopenGauss/gms_i18n高级包
+    ../content/zh/docs/AboutopenGauss/gms_sql高级包
