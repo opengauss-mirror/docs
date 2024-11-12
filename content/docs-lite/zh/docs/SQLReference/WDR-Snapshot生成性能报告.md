@@ -66,6 +66,7 @@ WDR Snapshot启动（即参数[enable\_wdr\_snapshot](../DatabaseReference/系�
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >
         >当前openGauss的节点名固定是“dn\_6001\_6002\_6003”，也可直接代入。
+        >若两个快照之间发生了数据库重启事件，生成WDR报告会失败。
 
         **表 1**  generate\_wdr\_report函数参数说明
 
