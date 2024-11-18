@@ -145,7 +145,7 @@ gs_dbmind service start -c confpath
 当执行上述命令后，会提示服务已启动。在未指定任何附加参数时，该命令默认会启动所有的后台任务。如果用户只想启动某一个后台任务，需要添加参数 --only-run. 例如，用户只想启动慢SQL根因分析服务，则为：
 
 ```
-gs_dbmind service start -c confpath --only-run slow_query_diagnosis
+gs_dbmind service start -c confpath --only-run slow_sql_diagnosis
 ```
 
 ## 关闭服务<a name="section5774204123013"></a>
@@ -173,18 +173,23 @@ gs_dbmind service --help
 ```
 
 ```
-usage: service [-h] -c DIRECTORY [--only-run {slow_query_diagnosis,forecast}] [--interactive | --initialize] {setup,start,stop}
+usage:  service [-h] -c DIRECTORY
+                [--only-run {anomaly_detection,discard_expired_results,daily_inspection,weekly_inspection,monthly_inspection,index_recommend,knob_recommend,slow_query_killer,slow_sql_diagnosis}] [--dry-run]
+                [-f] [--interactive | --initialize]
+                {setup,start,stop,restart,reload}
 
 positional arguments:
-  {setup,start,stop}
+  {setup,start,stop,restart,reload}
                         perform an action for service
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -c DIRECTORY, --conf DIRECTORY
                         set the directory of configuration files
-  --only-run {slow_query_diagnosis,forecast}
+  --only-run {anomaly_detection,discard_expired_results,daily_inspection,weekly_inspection,monthly_inspection,index_recommend,knob_recommend,slow_query_killer,slow_sql_diagnosis}
                         explicitly set a certain task running in the backend
+  --dry-run             run the backend task(s) once. the task to run can be specified by the --only-run argument
+  -f, --force           force to stop the process and cancel all in-progress tasks
   --interactive         configure and initialize with interactive mode
   --initialize          initialize and check configurations after configuring.
 ```
@@ -204,7 +209,7 @@ optional arguments:
 </td>
 <td class="cellrowborder" valign="top" width="33.36333633363336%" headers="mcps1.2.4.1.2 "><p id="p5616423334"><a name="p5616423334"></a><a name="p5616423334"></a>动作参数</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul613179154816"></a><a name="ul613179154816"></a><ul id="ul613179154816"><li>setup：初始化配置目录。</li><li>start：服务启动。</li><li>stop：服务停止。</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul613179154816"></a><a name="ul613179154816"></a><ul id="ul613179154816"><li>setup：初始化配置目录。</li><li>start：服务启动。</li><li>stop：服务停止。</li><li>restart：服务重启。</li><li>reload：服务重新加载。</li></ul>
 </td>
 </tr>
 <tr id="row185495841018"><td class="cellrowborder" valign="top" width="33.3033303330333%" headers="mcps1.2.4.1.1 "><p id="p116122412518"><a name="p116122412518"></a><a name="p116122412518"></a>-c，--conf</p>
@@ -232,7 +237,23 @@ optional arguments:
 </td>
 <td class="cellrowborder" valign="top" width="33.36333633363336%" headers="mcps1.2.4.1.2 "><p id="p161918501220"><a name="p161918501220"></a><a name="p161918501220"></a>选择只运行的模块</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><a name="ul9105143317480"></a><a name="ul9105143317480"></a><ul id="ul9105143317480"><li>forecast：预测模块。</li><li>slow_query_diagnosis：慢SQL根因分析模块。</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137337_p94668717174"><a name="ul9105143317480"></a><a name="ul9105143317480"></a>anomaly_detection,discard_expired_results,daily_inspection,
+weekly_inspection,monthly_inspection,index_recommend,
+knob_recommend,slow_query_killer,slow_sql_diagnosis</p>
+</td>
+</tr>
+<tr id="row106196521215"><td class="cellrowborder" valign="top" width="33.3033303330333%" headers="mcps1.2.4.1.1 "><p id="p27171031065"><a name="p27171031065"></a><a name="p27171031065"></a>--dry-run</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.36333633363336%" headers="mcps1.2.4.1.2 "><p id="p161918501220"><a name="p161918501220"></a><a name="p161918501220"></a>只运行一次后台任务。要运行的任务可以通过 --only-run 参数指定</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137337_p94668717174"><a name="ul9105143317480"></a><a name="ul9105143317480"></a>-</p>
+</td>
+</tr>
+<tr id="row106196521215"><td class="cellrowborder" valign="top" width="33.3033303330333%" headers="mcps1.2.4.1.1 "><p id="p27171031065"><a name="p27171031065"></a><a name="p27171031065"></a>-f, --force</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.36333633363336%" headers="mcps1.2.4.1.2 "><p id="p161918501220"><a name="p161918501220"></a><a name="p161918501220"></a>强制停止进程并取消所有进行中的任务</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137337_p94668717174"><a name="ul9105143317480"></a><a name="ul9105143317480"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137337_row162915844513"><td class="cellrowborder" valign="top" width="33.3033303330333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137337_p132968134510"><a name="zh-cn_topic_0283137337_p132968134510"></a><a name="zh-cn_topic_0283137337_p132968134510"></a>-h, --help</p>

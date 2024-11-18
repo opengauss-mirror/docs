@@ -5,7 +5,7 @@
 -   仅启动慢SQL诊断功能（输出Top3根因），启动命令如下（更多用法参考对service子命令的说明）：
 
     ```
-    gs_dbmind service start -c confpath --only-run slow_query_diagnosis
+    gs_dbmind service start -c confpath --only-run slow_sql_diagnosis
     ```
 
 -   用户交互式慢SQL诊断，命令如下：
