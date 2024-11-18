@@ -177,99 +177,99 @@ PARTITION BY {RANGE [ COLUMNS ] | LIST [ COLUMNS ] | HASH | KEY} (partition_key)
 
     这个子句为表或索引指定一个可选的存储参数。参数的详细描述如下所示：
 
-    -   **FILLFACTOR**
+    - **FILLFACTOR**
 
         一个表的填充因子（fillfactor）是一个介于10和100之间的百分数。100（完全填充）是默认值。如果指定了较小的填充因子，INSERT操作仅按照填充因子指定的百分率填充表页。每个页上的剩余空间将用于在该页上更新行，这就使得UPDATE有机会在同一页上放置同一条记录的新版本，这比把新版本放置在其他页上更有效。对于一个从不更新的表将填充因子设为100是最佳选择，但是对于频繁更新的表，选择较小的填充因子则更加合适。该参数对于列存表没有意义。
 
         取值范围：10\~100
 
-    -   **ORIENTATION**
+    - **ORIENTATION**
 
         决定了表的数据的存储方式。
 
         取值范围：
 
-        -   COLUMN：表的数据将以列式存储。
-        -   ROW（缺省值）：表的数据将以行式存储。
+        - COLUMN：表的数据将以列式存储。
+        - ROW（缺省值）：表的数据将以行式存储。
 
             >![](public_sys-resources/icon-notice.png) **须知：** 
             >
             >orientation不支持修改。
-    -   **COMPRESSTYPE**
+
+    - **COMPRESSTYPE**
 
         行存表参数，设置行存表压缩算法。1代表pglz算法（不推荐使用），2代表zstd算法，默认不压缩。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。（仅支持Astore和Ustore下的普通表和分区表）
 
         取值范围：0\~2，默认值为0。
 
-    -   **COMPRESS\_LEVEL**
+    - **COMPRESS\_LEVEL**
 
         行存表参数，设置行存表压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，表的压缩效果越好，表的访问速度越慢。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
         取值范围：-31\~31，默认值为0。
 
-    -   **COMPRESS\_CHUNK_SIZE**
+    - **COMPRESS\_CHUNK_SIZE**
 
         行存表参数，设置行存表压缩chunk块大小，仅当COMPRESSTYPE不为0时生效。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响表的访问速度。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
          取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
 
         默认值：4096
 
-    -  **COMPRESS_PREALLOC_CHUNKS**
+    - **COMPRESS_PREALLOC_CHUNKS**
 
         行存表参数，设置行存表压缩chunk块预分配数量。预分配数量越大，表的压缩率相对越差，离散度越小，访问性能越好。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
         取值范围：0\~7，默认值为0。
 
-        - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
-        - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
-        - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
+        - 当 COMPRESS\_CHUNK_SIZE 为 512 和 1024 时，支持预分配设置最大为 7。
+        - 当 COMPRESS\_CHUNK_SIZE 为 2048 时，支持预分配设置最大为 3。
+        - 当 COMPRESS\_CHUNK_SIZE 为 4096 时，支持预分配设置最大为 1。
 
-    -   **COMPRESS_BYTE_CONVERT**
+    - **COMPRESS_BYTE_CONVERT**
 
-        行存表参数，设置行存表压缩字节转换预处理，仅当COMPRESSTYPE不为0时生效。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+        行存表参数，设置行存表压缩字节转换预处理，仅当 COMPRESSTYPE 不为 0 时生效。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改，修改对已有数据、变更数据、新增数据同时生效。
 
         取值范围：布尔值，默认关闭。
 
-    -   **COMPRESS_DIFF_CONVERT**
+    - **COMPRESS_DIFF_CONVERT**
 
-        行存表参数，设置行存表压缩字节差分预处理。只能与compress_byte_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
+        行存表参数，设置行存表压缩字节差分预处理。只能与 compress_byte_convert 一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。该参数允许修改， 修改对已有数据、变更数据、新增数据同时生效。
 
-        取值范围：布尔值，默认关闭。    
-        
-    -    STORAGE\_TYPE
+        取值范围：布尔值，默认关闭。
 
-          指定存储引擎类型，该参数设置成功后就不再支持修改。
+    - **STORAGE\_TYPE**
 
-          取值范围：
+        指定存储引擎类型，该参数设置成功后就不再支持修改。
 
-          -   USTORE，表示表支持Inplace-Update存储引擎。特别需要注意，使用USTORE表，必须要开启track\_counts和track\_activities参数，否则会引起空间膨胀。
+        取值范围：
 
-          -   ASTORE，表示表支持Append-Only存储引擎。
+        -   USTORE，表示表支持 Inplace-Update 存储引擎。特别需要注意，使用 USTORE 表，必须要开启 track\_counts 和 track\_activities 参数，否则会引起空间膨胀。
+        -   ASTORE，表示表支持 Append-Only 存储引擎。
 
-          默认值： 不指定表时，默认是Append-Only存储。
--   **COMPRESSION**
+        默认值：不指定表时，默认是 Append-Only 存储。
+
+    - **COMPRESSION**
+
+        -   列存表的有效值为 LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为 LOW。
+        -   行存表不支持压缩。
     
-    -   列存表的有效值为LOW/MIDDLE/HIGH/YES/NO，压缩级别依次升高，默认值为LOW。
--   行存表不支持压缩。
-    
--   **MAX\_BATCHROW**
+    - **MAX\_BATCHROW**
 
-    指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
+        指定了在数据加载过程中一个存储单元可以容纳记录的最大数目。该参数只对列存表有效。
 
-    取值范围：10000\~60000，默认60000。
+        取值范围：10000\~60000，默认 60000。
 
--   **PARTIAL\_CLUSTER\_ROWS**
+    - **PARTIAL\_CLUSTER\_ROWS**
 
-    指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
+        指定了在数据加载过程中进行将局部聚簇存储的记录数目。该参数只对列存表有效。
 
-    取值范围：大于等于MAX\_BATCHROW，建议取值为MAX\_BATCHROW的整数倍数。
+        取值范围：大于等于 MAX\_BATCHROW，建议取值为 MAX\_BATCHROW 的整数倍数。
 
--   **DELTAROW\_THRESHOLD**
+    - **DELTAROW\_THRESHOLD**
 
-    预留参数。该参数只对列存表有效。
+        预留参数。该参数只对列存表有效。
 
-    取值范围：0～9999
-
+        取值范围：0～9999
 
 -   **COMPRESS / NOCOMPRESS**
 
