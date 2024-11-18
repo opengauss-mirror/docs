@@ -196,38 +196,79 @@
 
     取值范围：
 
-    只有GIN索引支持FASTUPDATE，GIN\_PENDING\_LIST\_LIMIT参数。GIN和Psort之外的索引都支持FILLFACTOR参数。只有UBTREE索引支持INDEXSPLIT参数。
+    只有 GIN 索引支持 FASTUPDATE，GIN\_PENDING\_LIST\_LIMIT 参数。GIN 和 Psort 之外的索引都支持 FILLFACTOR 参数。只有 UBTREE 索引支持 INDEXSPLIT 参数。
 
-    -   FILLFACTOR
+    - **FILLFACTOR**
 
-        一个索引的填充因子（fillfactor）是一个介于10和100之间的百分数。
+        一个索引的填充因子（fillfactor）是一个介于 10 和 100 之间的百分数。
 
         取值范围：10\~100
 
-    -   FASTUPDATE
+    - **FASTUPDATE**
 
-        GIN索引是否使用快速更新。
+        GIN 索引是否使用快速更新。
 
         取值范围：ON，OFF
 
         默认值：ON
 
-    -   GIN\_PENDING\_LIST\_LIMIT
+    - **GIN\_PENDING\_LIST\_LIMIT**
 
-        当GIN索引启用fastupdate时，设置该索引pending list容量的最大值。
+        当 GIN 索引启用 fastupdate 时，设置该索引 pending list 容量的最大值。
 
-        取值范围：64\~INT\_MAX，单位KB。
+        取值范围：64\~INT\_MAX，单位 KB。
 
-        默认值：gin\_pending\_list\_limit的默认取决于GUC中gin\_pending\_list\_limit的值（默认为4MB）
+        默认值：gin\_pending\_list\_limit 的默认取决于 GUC 中 gin\_pending\_list\_limit 的值（默认为 4MB）
 
-    -   INDEXSPLIT
+    - **INDEXSPLIT**
 
-        UBTREE索引选择采取哪种分裂策略。其中DEFAULT策略指的是与BTREE相同的分裂策略。INSERTPT策略能在某些场景下显著降低索引空间占用。
+        UBTREE 索引选择采取哪种分裂策略。其中 DEFAULT 策略指的是与 BTREE 相同的分裂策略。INSERTPT 策略能在某些场景下显著降低索引空间占用。
 
         取值范围：INSERTPT, DEFAULT
 
         默认值：INSERTPT
 
+    - **COMPRESSTYPE**
+
+        索引参数，设置索引压缩算法。1 代表 pglz 算法，2 代表 zstd 算法，默认不压缩。（仅支持 B-TREE索引）
+
+        取值范围：0\~2，默认值为 0。
+
+    - **COMPRESS\_LEVEL**
+
+        索引参数，设置索引压缩算法等级，仅当 COMPRESSTYPE 为 2 时生效。压缩等级越高，索引的压缩效果越好，索引的访问速度越慢。（仅支持 B-TREE 索引）
+
+        取值范围：-31\~31，默认值为 0。
+
+    - **COMPRESS\_CHUNK\_SIZE**
+
+        索引参数，设置索引压缩 chunk 块大小。chunk 数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。该参数生效后不允许修改。（仅支持 B-TREE 索引）
+
+        取值范围：与页面大小有关。在页面大小为 8k 场景，取值范围为：512、1024、2048、4096。
+
+        默认值：4096
+
+    - **COMPRESS\_PREALLOC\_CHUNKS**
+
+        索引参数，设置索引压缩 chunk 块预分配数量。预分配数量越大，索引的压缩率相对越差，离散度越小，访问性能越好。（仅支持 B-TREE 索引）
+
+        取值范围：0\~7，默认值为 0。
+
+        - 当 COMPRESS\_CHUNK_SIZE 为 512 和 1024 时，支持预分配设置最大为 7。
+        - 当 COMPRESS\_CHUNK_SIZE 为 2048 时，支持预分配设置最大为 3。
+        - 当 COMPRESS\_CHUNK_SIZE 为 4096 时，支持预分配设置最大为 1。
+
+    - **COMPRESS\_BYTE\_CONVERT**
+
+        索引参数，设置索引压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+
+        取值范围：布尔值，默认关闭。
+
+    - **COMPRESS\_DIFF\_CONVERT**
+
+        索引参数，设置索引压缩字节差分预处理。只能与 compress\_byte\_convert 一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
+
+        取值范围：布尔值，默认关闭。
 
 -   **TABLESPACE tablespace\_name**
 
@@ -268,49 +309,6 @@
     索引分区的表空间。
 
     取值范围：如果没有声明，将使用分区表索引的表空间index\_tablespace。
-
--   **COMPRESSTYPE**
-
-    索引参数，设置索引压缩算法。1代表pglz算法，2代表zstd算法，默认不压缩。（仅支持B-TREE索引）
-
-    取值范围：0\~2，默认值为0。
-
--   **COMPRESS\_LEVEL**
-
-    索引参数，设置索引压缩算法等级，仅当COMPRESSTYPE为2时生效。压缩等级越高，索引的压缩效果越好，索引的访问速度越慢。（仅支持B-TREE索引）
-
-    取值范围：-31\~31，默认值为0。
-
--   **COMPRESS\_CHUNK\_SIZE**
-
-    索引参数，设置索引压缩chunk块大小。chunk数据块越小，预期能达到的压缩效果越好，同时数据越离散，影响索引的访问速度。该参数生效后不允许修改。（仅支持B-TREE索引）
-
-    取值范围：与页面大小有关。在页面大小为8k场景，取值范围为：512、1024、2048、4096。
-
-    默认值：4096
-
-- **COMPRESS\_PREALLOC\_CHUNKS**
-
-  索引参数，设置索引压缩chunk块预分配数量。预分配数量越大，索引的压缩率相对越差，离散度越小，访问性能越好。（仅支持B-TREE索引）
-
-  取值范围：0\~7，默认值为0。
-
-  - 当COMPRESS\_CHUNK_SIZE为512和1024时，支持预分配设置最大为7。
-  - 当COMPRESS\_CHUNK_SIZE为2048时，支持预分配设置最大为3。
-  - 当COMPRESS\_CHUNK_SIZE为4096时，支持预分配设置最大为1。
-
--   **COMPRESS\_BYTE\_CONVERT**
-
-    索引参数，设置索引压缩字节转换预处理。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
-
-    取值范围：布尔值，默认关闭。
-
--   **COMPRESS\_DIFF\_CONVERT**
-
-    索引参数，设置索引压缩字节差分预处理。只能与compress\_byte\_convert一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
-
-    取值范围：布尔值，默认关闭。
-
 
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
