@@ -1225,4 +1225,60 @@ openGauss=# \d+ test2
 Has OIDs: no
 Options: orientation=row, compression=no
 ```
+## dolphin.enable_procedure_executestmt
 
+**参数说明**：该参数打开后，存储过程会将execute stmtname当作execute 'execute stmtname' 来执行，从而可以和M*数据库一样在存储过程中执行execute prepare语句。关闭时，execute语句和原来一样用于执行动态语句。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+**默认值**：false
+
+**示例**：
+
+```
+openGauss=# drop table if exists t_prepare_010;
+NOTICE:  table "t_prepare_010" does not exist, skipping
+DROP TABLE
+openGauss=# create table t_prepare_010(c1 int);
+CREATE TABLE
+openGauss=# prepare test_prepare_010 as 'insert into t_prepare_010 values(1)';
+PREPARE
+openGauss=# drop procedure if exists p_prepare_010a();
+NOTICE:  function p_prepare_010a() does not exist, skipping
+DROP PROCEDURE
+openGauss=# CREATE OR REPLACE PROCEDURE p_prepare_010a() AS 
+openGauss$# BEGIN 
+openGauss$#      execute test_prepare_010;
+openGauss$# END;
+openGauss$# /
+CREATE PROCEDURE
+openGauss=# select p_prepare_010a();
+ERROR:  column "test_prepare_010" does not exist
+LINE 1: SELECT test_prepare_010
+               ^
+QUERY:  SELECT test_prepare_010
+CONTEXT:  referenced column: test_prepare_010
+PL/pgSQL function p_prepare_010a() line 2 at EXECUTE statement
+referenced column: p_prepare_010a
+openGauss=# select * from t_prepare_010;
+ c1 
+----
+(0 rows)
+
+openGauss=# set dolphin.enable_procedure_executestmt = on;
+SET
+openGauss=# select p_prepare_010a();
+ p_prepare_010a 
+----------------
+ 
+(1 row)
+
+openGauss=# select * from t_prepare_010;
+ c1 
+----
+  1
+(1 row)
+
+```
