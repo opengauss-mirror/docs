@@ -12,4 +12,4 @@
     ../content/zh/docs/BriefTutorial/DCF
     ../content/zh/docs/BriefTutorial/并行查询
     ../content/zh/docs/BriefTutorial/资源池化
-
+    ../content/zh/docs/BriefTutorial/DataVec向量引擎

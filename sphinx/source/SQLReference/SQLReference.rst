@@ -28,5 +28,6 @@
     ../content/zh/docs/SQLReference/扩展语法
     ../content/zh/docs/SQLReference/INSERT_RIGHT_REF_DEFAULT_VALUE
     GIN索引
+    DataVec向量引擎
     ../content/zh/docs/SQLReference/系统操作
     Schema
