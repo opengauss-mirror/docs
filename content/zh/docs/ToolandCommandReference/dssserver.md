@@ -75,7 +75,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
 -   STORAGE\_MODE
 
-    **参数说明**： DSS对应的存储设备类型，磁阵的话配置为RAID或者CLUSTER\_RAID，非磁阵配置成DISK。
+    **参数说明**： DSS对应的存储设备类型，磁阵的话配置为SHARE_DISK或者CLUSTER_RAID，非磁阵配置成DISK。
 
     **取值范围**： 字符串。
 
@@ -83,7 +83,7 @@ dssserver作为一个独立的进程，在启动之前需要提供配置文件ds
 
     >![](public_sys-resources/icon-note.png) **说明：** 
     >
-    >+ om安装后的默认值为CLUSTER_RAID
+    >+ om安装后的默认值为SHARE_DISK
 
 -   \_LOG\_LEVEL
 
