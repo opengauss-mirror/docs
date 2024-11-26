@@ -519,6 +519,17 @@
 
 **默认值**： 0
 
+## sharedisk_lock_type
+
+**参数说明**： 资源池化集群共享盘锁类型。
+
+**取值范围**： 整型，\[0, 1\]。修改后需要重启cm_server才能生效。
+
+-   0表示共享盘锁类型为非SCSI/NOF协议锁。
+-   1表示共享盘锁类型为SCSI/NOF协议锁。
+
+**默认值**： 0
+
 ## enable_set_most_available_sync
 
 **参数说明**： 是否允许CM管理数据库最大可用模式参数most_available_sync，默认禁止管理。
