@@ -6,7 +6,7 @@
 
 **参数说明**： 设置当前事务的隔离级别。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串，只识别以下字符串，大小写空格敏感：
 
@@ -23,7 +23,7 @@
 
 该参数在数据库恢复过程中或者在备机里，固定为on；否则，固定为default\_transaction\_read\_only的值。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -36,7 +36,7 @@
 
 **参数说明**： 设置系统进入维护模式。
 
-该参数属于SUSET类型参数，仅支持[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中的方式三进行设置。
+该参数属于SUSET类型参数，仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中的方式三进行设置。
 
 **取值范围**： 布尔型
 
@@ -52,7 +52,7 @@
 
 **参数说明**： 设置是否允许并发更新。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -65,7 +65,7 @@
 
 **参数说明**： 指定是否允许一个只读串行事务延迟执行，使其不会执行失败。该参数设置为on时，当一个只读事务发现读取的元组正在被其他事务修改，则延迟该只读事务直到其他事务修改完成。该参数为预留参数，该版本不生效。与该参数类似的还有一个[default\_transaction\_deferrable](语句行为.md#zh-cn_topic_0283136752_zh-cn_topic_0237124732_zh-cn_topic_0059779117_s031e2bbea2cf42a5a1c24e6dbaa70365)，设置它来指定一个事务是否允许延迟。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -78,7 +78,7 @@
 
 **参数说明**： 该参数只有在只读事务中可用，用于分析。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -91,7 +91,7 @@
 
 **参数说明**： 标记当前HA模式是单主机模式、主备从模式还是一主多备模式。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 该参数用户不能自己去设置参数值。
 
@@ -107,7 +107,7 @@
 
 **参数说明**： 指定节点名称。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 在备机请求主机进行日志复制时，如果application\_name参数没有设置，那么该参数会被用来作为备机在主机上的流复制槽名字。该流复制槽的命名方式为 "该参数值\_备机ip\_备机port"。其中，备机ip和备机port取自replconninfo参数中指定的备机ip和端口号。该流复制槽最大长度为61个字符，如果拼接后的字符串超过该长度，则会使用截断后的pgxc\_node\_name进行拼接，以保证流复制槽名字长度小于等于61个字符。
 
@@ -122,7 +122,7 @@
 
 **参数说明**：延迟计算快照的xmin和oldestxmin，执行1000个事务或者间隔1s才触发计算，设置为on时可以在高负载场景下减少计算快照的开销，但是会导致oldestxmin推进较慢，影响垃圾元组回收，设置为off时xmin和oldestxmin可以实时推进，但是会增加计算快照时的开销。
 
-该参数属于SIGHUP类型参数，改请参考[表2](重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)进行设置
+该参数属于SIGHUP类型参数，改请参考[表2](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)进行设置
 
 **取值范围**： 布尔型。
 
