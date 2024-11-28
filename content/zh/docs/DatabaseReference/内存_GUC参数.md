@@ -9,7 +9,7 @@
 
 **参数说明**：设置是否允许使用内存池。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -22,7 +22,7 @@
 
 **参数说明**：设置内存池大小。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：整型，128\*1024～INT\_MAX/2，单位为kB。
 
@@ -32,7 +32,7 @@
 
 **参数说明**： 启用逻辑内存管理模块。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -51,7 +51,7 @@
 
 **参数说明**： 设置一个数据库节点可用的最大物理内存。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：整型，2\*1024\*1024～INT\_MAX，单位为kB。
 
@@ -68,7 +68,7 @@
 
 **参数说明**： 启用检查内存上下文是否超过给定限制的功能。仅适用于DEBUG版本。
 
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -81,7 +81,7 @@
 
 **参数说明**： 启用检查内存上下文是否超过给定限制的功能时，设置不受此功能约束。仅适用于DEBUG版本。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 查询时会在参数值的最前面添加标题含义字符串“MemoryContext white list:”。
 
@@ -93,7 +93,7 @@
 
 **参数说明**： 设置openGauss使用的共享内存大小。增加此参数的值会使openGauss比系统默认设置需要更多的System V共享内存。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，16 \~ 1073741823，单位为8kB。
 
@@ -114,7 +114,7 @@ shared\_buffers需要设置为BLCKSZ的整数倍，BLCKSZ目前设置为8kB，�
 
 **参数说明**： 设置openGauss段页式元数据页的内存大小。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值说明：** 整型，16 \~ 1073741823，单位为8kB。
 
@@ -130,7 +130,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 大批量数据写入触发时（例如copy动作），该操作使用的环形缓冲区大小。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，16384 \~ 2147483647，单位为kB。
 
@@ -142,7 +142,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 备实例所在服务器使用shared\_buffers内存缓冲区大小的比例。
 
-该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 双精度浮点型，0.1\~1.0
 
@@ -152,7 +152,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置每个数据库会话使用的LOCAL临时缓冲区的大小。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 在每个会话的第一次使用临时表之前可以改变temp\_buffers的值，之后的设置将是无效的。
 
@@ -168,7 +168,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 当openGauss部署为主备双机时，在备机上此参数的设置必须要高于或等于主机上的，否则无法在备机上进行查询操作。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，0\~262143。
 
@@ -184,7 +184,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 对于复杂的查询，可能会同时并发运行好几个排序或者散列操作，每个都可以使用此参数所声明的内存量，不足时会使用临时文件。同样，好几个正在运行的会话可能会同时进行排序操作。因此使用的总内存可能是work\_mem的好几倍。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，64\~2147483647，单位为kB。
 
@@ -203,7 +203,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置执行作业所使用的内存。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 0，或大于32M的整型，默认单位为kB。
 
@@ -219,7 +219,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置执行作业所能够使用的最大内存。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 0，或大于32M的整型，默认单位为kB。
 
@@ -235,7 +235,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置在维护性操作（比如VACUUM、CREATE INDEX、ALTER TABLE ADD FOREIGN KEY等）中可使用的最大的内存。该参数的设置会影响VACUUM、VACUUM FULL、CLUSTER、CREATE INDEX的执行效率。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，1024\~INT\_MAX，单位为kB。
 
@@ -251,7 +251,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置列存表在进行局部排序中，在开始写入临时磁盘文件之前使用的内存大小。带partial cluster key的表、带索引的表插入、创建表索引、删除表和更新表都会用到。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
@@ -265,7 +265,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置列存表在做扫描时，每列缓存cudesc信息的个数。增大设置会提高查询性能，但也会增加内存占用，特别是当列存表的列非常多时。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
@@ -279,7 +279,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置openGauss执行堆栈的最大安全深度。需要这个安全界限是因为在服务器里，并非所有程序都检查了堆栈深度，只是在可能递规的过程，比如表达式计算这样的过程里面才进行检查。
 
-该参数属于SUSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SUSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，100\~INT\_MAX，单位为kB。
 
@@ -295,7 +295,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 设置列存所使用的共享缓冲区的大小。
 
-该参数属于POSTMASTER类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，16384～1073741823，单位为kB。
 
@@ -309,7 +309,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**： 大批量数据查询时（例如大表扫描），该操作使用的环形缓冲区大小。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，256\~2147483647，单位为kB。
 
@@ -319,7 +319,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**：控制是否可以实现算子内存的提前释放。
 
-该参数属于USERSET类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：布尔型
 
@@ -332,7 +332,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 **参数说明**：系统表cache在单个session缓存的大小。
 
-该参数属于PG_SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于PG_SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 如果enable_global_plancache已打开，为保证GPC生效，local_syscache_threshold设置值小于16MB时不会生效，最小为16MB。
 
@@ -344,7 +344,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ## memory\_trace\_level<a name="section198622451396"></a>
 
-**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+**参数说明**：动态内存使用超过最大动态内存的90%后，记录内存申请信息的管控等级。该参数仅在use\_workload\_manager和enable\_memory\_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：枚举型
 
@@ -370,7 +370,7 @@ segment\_buffers 用来缓存段页式段头的内容，属于关键元数据信
 
 ##  resilience_memory_reject_percent
 
-**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+**参数说明**：用于控制内存过载逃生的动态内存占用百分比。该参数仅在GUC参数use_workload_manager和enable_memory_limit打开时生效。该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：字符串，长度大于0
 
