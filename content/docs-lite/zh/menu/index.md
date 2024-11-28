@@ -925,6 +925,7 @@ headless: true
             - [CREATE TABLE AS]({{< relref "./docs/SQLReference/CREATE-TABLE-AS.md" >}})
             - [CREATE TABLE INHERITS]({{< relref "./docs/SQLReference/CREATE-TABLE-INHERITS.md" >}})
             - [CREATE TABLE PARTITION]({{< relref "./docs/SQLReference/CREATE-TABLE-PARTITION.md" >}})
+            - [CREATE TABLE SUBPARTITION]({{< relref "./docs/SQLReference/CREATE-TABLE-SUBPARTITION.md" >}})
             - [CREATE TABLESPACE]({{< relref "./docs/SQLReference/CREATE-TABLESPACE.md" >}})
             - [CREATE TEXT SEARCH CONFIGURATION]({{< relref "./docs/SQLReference/CREATE-TEXT-SEARCH-CONFIGURATION.md" >}})
             - [CREATE TEXT SEARCH DICTIONARY]({{< relref "./docs/SQLReference/CREATE-TEXT-SEARCH-DICTIONARY.md" >}})
