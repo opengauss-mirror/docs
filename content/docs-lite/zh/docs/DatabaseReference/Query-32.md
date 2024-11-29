@@ -10,7 +10,7 @@
 
 在x86平台集中式部署下, 硬件配置规格为32U256G, 使用Benchmark SQL 5.0工具测试性能, 开关此参数性能影响约3%。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：整型，0\~2147483647
 
@@ -25,7 +25,7 @@
 
 **参数说明**： unique sql记录SQL方式。
 
-该参数属于INTERNAL类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于INTERNAL类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 枚举类型
 
@@ -37,7 +37,7 @@ top：只记录顶层SQL。
 
 **参数说明**： 是否开启计算系统中80%和95%的SQL响应时间的功能
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -50,7 +50,7 @@ top：只记录顶层SQL。
 
 **参数说明**： sql响应时间百分比信息，后台计算线程根据设置的值计算相应的百分比信息。
 
-该参数属于INTERNAL类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于INTERNAL类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符串。
 
@@ -60,7 +60,7 @@ top：只记录顶层SQL。
 
 **参数说明**： sql响应时间信息计算间隔，sql响应时间信息计算功能打开后，后台计算线程每隔设置的时间进行一次计算。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，0～3600（秒）。
 
@@ -72,7 +72,7 @@ top：只记录顶层SQL。
 
 在x86平台集中式部署下, 硬件配置规格为32U256G, 使用Benchmark SQL 5.0工具测试性能, 开关此参数性能影响约3.5%。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -87,7 +87,7 @@ top：只记录顶层SQL。
 
 在x86平台集中式部署下, 硬件配置规格为32U256G, 使用Benchmark SQL 5.0工具测试性能, 开关此参数性能影响约1.2%。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -100,7 +100,7 @@ top：只记录顶层SQL。
 
 参数说明：开启track\_stmt\_parameter后，在statement\_history中记录的执行语句不再进行归一化操作，可以显示完整SQL语句信息，辅助DBA进行问题定位。其中对于简单查询，显示完整语句信息；对于PBE语句，显示完整语句信息的同时，追加每个变量数值信息，格式为“query string；parameters:$1=value1,$2=value2,...”。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 取值范围：布尔型
 
@@ -113,7 +113,7 @@ top：只记录顶层SQL。
 
 **参数说明**： 设置一个session缓存的最大的全量/慢SQL的数量，超过这个数量，新的语句执行将不会被跟踪，直到落盘线程将缓存语句落盘，留出空闲的空间。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，0 \~ 2147483647
 
@@ -123,7 +123,7 @@ top：只记录顶层SQL。
 
 **参数说明**： 设置单语句可以收集的最大的执行事件的大小\(byte\)。
 
-该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 整型，0 \~ 100000000
 
@@ -133,7 +133,7 @@ top：只记录顶层SQL。
 
 **参数说明**： 组合参数，控制全量/慢SQL记录的保留时间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符型
 
@@ -149,7 +149,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： 控制语句执行跟踪的级别。
 
-该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置，不区分英文字母大小写。
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置，不区分英文字母大小写。
 
 **取值范围**： 字符型
 
@@ -168,7 +168,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： 当系统中产生的unique sql条目数量大于等于instr\_unique\_sql\_count时，是否启用unique sql自动淘汰功能。
 
-该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -182,7 +182,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： 是否将慢查询信息写到日志文件中，在该版本中已废弃。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型
 
@@ -195,7 +195,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： GUC参数enable\_slow\_query\_log设置为ON，表示需要将慢查询记录写进日志文件中，query\_log\_file决定服务器慢查询日志文件的名称，仅sysadmin用户可以访问。通常日志文件名是按照strftime模式生成，因此可以用系统时间定义日志文件名，用%转义字符实现，在该版本中已废弃。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >
@@ -209,7 +209,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： 组合参数，控制备机快/慢SQL记录的最大占用内存与磁盘空间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 字符型
 
@@ -235,7 +235,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 
 **参数说明**： asp_flush_mode设置为all或者file时，asp_log_directory决定存放服务器asp日志文件的目录。它可以是绝对路径，或者是相对路径（相对于数据目录的路径），仅sysadmin用户可以访问。
 
-该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >
@@ -254,7 +254,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 ## query_log_directory（废弃）
 **参数说明**：enable_slow_query_log设置为on时，query_log_directory决定存放服务器慢查询日志文件的目录，仅sysadmin用户可以访问。它可以是绝对路径，或者是相对路径（相对于数据目录的路径），在该版本中已废弃。
 
-该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于POSTMASTER类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >
 >当配置文件中query_log_directory的值为非法路径时，会导致数据库实例无法重新启动。
@@ -271,7 +271,7 @@ slow sql retention time为慢SQL的保留时间，取值范围为0 \~ 604800
 ## unique_sql_retention_time
 **参数说明**：清理unique sql哈希表的间隔，默认为30分钟。
 
-该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/参数设置.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数属于SIGHUP类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**：整型，1~3650，单位为分钟。
 
