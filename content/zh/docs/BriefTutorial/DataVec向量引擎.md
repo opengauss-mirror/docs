@@ -2,7 +2,7 @@
 
 ## 创建向量表
 
-DataVec新增多种[向量数据类型](../SQLReference/向量函数和操作符.md)（vector、bitvector、sparsevector等），向量表的创建与openGauss原生语法保持一致，创建时指定存储向量类型即可。
+DataVec新增多种[向量数据类型](../SQLReference/向量数据类型.md)（vector、bitvector、sparsevector等），向量表的创建与openGauss原生语法保持一致，创建时指定存储向量类型即可。
 ```
 CREATE TABLE [TABLE_NAME]
 (
