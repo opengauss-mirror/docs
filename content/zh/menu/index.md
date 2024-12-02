@@ -222,7 +222,7 @@ headless: true
             - [安装验证]({{< relref "./docs/InstallationGuide/安装验证.md" >}})
         - [创建数据库]({{< relref "./docs/InstallationGuide/创建数据库.md" >}})
         - [可选_设置备机可读]({{< relref "./docs/InstallationGuide/可选_设置备机可读.md" >}})
-    - [卸载openGauss]({{< relref "./docs/InstallationGuide/卸载openGauss.md" >}})
+        - [卸载openGauss]({{< relref "./docs/InstallationGuide/卸载openGauss.md" >}})
 -   [简易教程]({{< relref "./docs/BriefTutorial/BriefTutorial.md" >}})
 	-   [基本概念]({{< relref "./docs/BriefTutorial/基本概念.md" >}})
 	-   [语法]({{< relref "./docs/BriefTutorial/语法.md" >}})
