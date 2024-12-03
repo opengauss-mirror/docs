@@ -444,6 +444,30 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
       (12 rows)
       ```
   
+    - lateral
+  
+      latera用于访问跨路径的表列信息，其作用原理为将外部的每一行数据计算完成后再应用于lateral的内子查询再执行lateral子查询内部计算，从而实现lateral子查询内部可以引用子查询外部的表列数据。如下所示：
+  
+      ```
+      ----如下所示，如果不加lateral，子查询表中无法识别到子查询外的表d
+      openGauss=# select* from departments d,(select d.department_id from employees x) e where e.department_id = d.department_id;
+      ERROR:  invalid reference to FROM-clause entry for table "d"
+      LINE 1: select* from departments d,(select d.department_id from empl...
+                                                 ^
+      HINT:  There is an entry for table "d", but it cannot be referenced from this part of the query.
+      CONTEXT:  referenced column: department_id
+      
+      ----如果自查询前边加上lateral，子查询中可以引用子查询外的表列d.department_id信息
+      openGauss=# select* from departments d, lateral(select d.department_id from employees x) e where e.department_id = d.department_id;
+       department_name  | department_id | department_id
+      ------------------+---------------+---------------
+       Marketing        |             1 |             1
+       Marketing        |             1 |             1
+       Marketing        |             1 |             1
+       Marketing        |             1 |             1
+      
+      ```
+  
     - ON join_condition
   
       连接条件，用于限定连接中的哪些行是匹配的。如：ON left_table.a = right_table.a。
