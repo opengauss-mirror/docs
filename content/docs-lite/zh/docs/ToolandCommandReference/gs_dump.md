@@ -184,6 +184,10 @@ gs_dump [OPTION]... [DBNAME]
 
     该选项只对文本格式有意义。针对归档格式，可以在调用gs\_restore时指定选项。
 
+-   --force-clean
+
+    清理（删除）数据库对象的指令输出到备份文件中时使用CASCADE级联删除，恢复时避免输出错误信息。
+
 -   -C, --create
 
     备份文件以创建数据库和连接到创建的数据库的命令开始。（如果命令脚本是这种方式执行，无所谓在运行脚本之前连接的是哪个数据库。）
@@ -471,6 +475,7 @@ gs_dump [OPTION]... [DBNAME]
 >-   --binary-upgrade-usermap和--binary-upgrade必须一起使用。
 >-   --include-depend-objs/--exclude-self需要同-t/--include-table-file参数关联使用才会生效。
 >-   --exclude-self必须同--include-depend-objs一起使用。
+>-   --force-clean必须同-c一起使用。  
 >-   --with-encryption=AES128仅支持-F p/plain。
 >-   --with-key=KEY仅支持-F p/plain。
 >-   --with-salt=RANDVALUES由gs\_dumpall调用，不需要用户手动输入。
