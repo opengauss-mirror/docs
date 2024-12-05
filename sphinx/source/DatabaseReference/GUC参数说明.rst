@@ -53,3 +53,4 @@ GUC参数说明
     ../content/zh/docs/DatabaseReference/分隔符
     ../content/zh/docs/DatabaseReference/行列融合参数
     ../content/zh/docs/DatabaseReference/DataVec向量引擎参数
+    ../content/zh/docs/DatabaseReference/PQ参数
