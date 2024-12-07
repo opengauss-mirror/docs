@@ -123,6 +123,11 @@
 
   - `parse_string`：要执行的DDL语句。
 
+  **使用说明**：
+
+  - 使用时需要在表前面加上schema名称，例如`public.t1`。或者设置GUC参数`set behavior_compat_options="bind_procedure_searchpath";`。
+  - 仅支持执行DDL语句，一次只支持执行单个SQL。
+
   
 
 - EXPAND_SQL_TEXT(input_sql_text IN CLOB, output_sql_text OUT CLOB);
@@ -134,7 +139,10 @@
   - `input_sql_text`：输入的sql查询文本。
   - `output_sql_text`：view-expanded查询文本。
 
-  **注意**：使用时需要在要解析的表前面加上schema名称，例如`public.t1`。
+  **使用说明**：
+
+  - 使用时需要在要解析的表前面加上schema名称，例如`public.t1`。或者设置GUC参数`set behavior_compat_options="bind_procedure_searchpath";`。
+  - 解析时会对视图及表进行权限校验。
 
   
 
@@ -185,8 +193,8 @@
   **参数说明**：
 
   - `name`：要进行hash计算的字符串。
-  - `base`：开始返回哈希值的基值。
-  - `hash_size`：所需的哈希表大小，该值为正数。
+  - `base`：开始返回哈希值的基值，取值范围为`-2147483648~2147483647`。
+  - `hash_size`：所需的哈希表大小，取值范围为`1~2147483647`。
 
   **返回值**：基于输入字符串的哈希值。
 
@@ -221,7 +229,7 @@
   **参数说明**：
 
   - `name`：对象名。可以是[[a.]b.]c[@d]的形式，其中a、b、c是SQL标识符，d是dblink。不对dblink执行语法检查。如果指定了dblink，或者如果名称解析为dblink，则不会解析对象，但会填写schema、part1、part2和dblink OUT参数。a、 b和c可以是分隔标识符，并且可以包含全球化支持（NLS）字符（单字节和多字节）。
-  - `context`：必须为0~9直接的整数；
+  - `context`：必须为0~10之间的整数；
     - 0：table
     - 1：PL/SQL
     - 2：sequences
@@ -232,6 +240,7 @@
     - 7：type
     - 8：Java shared data（当前暂不支持该类型）
     - 9：index
+    - 10：若带有@dblink，则只做解析，不查找对象；否则报错
   - `schema`：对象的schema，如果名称中没有schema，则通过解析name确定schema。
   - `part1`：name的第一部分。名称的类型指定为part1_type。
   - `part2`：如果非空，则为子程序名。如果part1不是NULL，则子程序在part1指示的包内。如果part1为NULL，则该子程序是顶级子程序。
@@ -247,6 +256,11 @@
     - 12：trigger
     - 13：type
   - `object_number`：对象标识符。
+  
+  **使用说明**：
+  
+  - 查找schema为当前登录用户同名schema或者public下。
+  - 解析表实际可以在`context=0、2、7`时查询到信息；解析sequence实际可以在`context=2、7`时查询到信息。
 
 
 
@@ -286,7 +300,12 @@
   - `r`：输入的十六进制RAW值。
   - `n`：r中要校验的bit。
 
-  **返回值**：如果原始r中的为n被设置，则返回1，否则返回0。位从高到低编号，最低位为位号1。
+  **返回值**：如果原始r中的为n被设置，则返回1，否则返回0。
+  
+  **使用说明**：
+  
+  - 位从高到低编号，最低位为位号1。
+  - 参数二可以使用小数作为入参时，使用四舍五入规则转换。
 
 
 
