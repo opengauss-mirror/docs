@@ -347,7 +347,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   join\_type
 
-    有5种类型，如下所示。
+    有6种类型，如下所示。
 
     -   \[ INNER \] JOIN
 
@@ -368,6 +368,10 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   FULL \[ OUTER \] JOIN
 
         返回所有内连接的结果行，加上每个不匹配的左边行（右边用NULL扩展），再加上每个不匹配的右边行（左边用NULL扩展）。
+
+    -   ASOF JOIN
+
+        这是列存储中针对时间序列数据而新增的一种连接方式,特点是对于给定左表中的时间戳，以最接近的时间戳返回右表中的相应记录。
 
     -   CROSS JOIN
 
