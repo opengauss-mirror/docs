@@ -162,6 +162,13 @@ PG\_INDEX系统表存储索引的一部分信息，其他的信息大多数在PG
 <td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="p1065161015012"><a name="p1065161015012"></a><a name="p1065161015012"></a>索引中的总字段数，超出indnatts的部分不参与索引查询。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_r221671e0c94f4e7980248eaa9e9bb157"><td class="cellrowborder" valign="top" width="16.64%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a7d86901b2de98ad694e60f1a32d57f5d"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a7d86901b2de98ad694e60f1a32d57f5d"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a7d86901b2de98ad694e60f1a32d57f5d"></a>indisenable</p>
+</td>
+<td class="cellrowborder" valign="top" width="17.04%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_ac3995bc7a1e54e42a0ff7e8bb54310ae"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_ac3995bc7a1e54e42a0ff7e8bb54310ae"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_ac3995bc7a1e54e42a0ff7e8bb54310ae"></a>boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="66.32000000000001%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2721018a6b8040fcb788d9058ddc2f55"><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2721018a6b8040fcb788d9058ddc2f55"></a><a name="zh-cn_topic_0283137672_zh-cn_topic_0237122293_zh-cn_topic_0059777688_a2721018a6b8040fcb788d9058ddc2f55"></a>指示索引是否可用。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
