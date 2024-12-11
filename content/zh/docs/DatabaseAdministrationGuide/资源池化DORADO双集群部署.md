@@ -198,7 +198,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     
         su - omm
         source /home/omm/env
-        gs_install -X /opt/software/openGauss/cluster_config.xml --dorado-cluster-mode="primary"
+        gs_install -X /opt/software/openGauss/cluster_config.xml
 
 
     参数解释：
@@ -263,7 +263,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --sep-env-file=/home/omm/env
     
         su - omm
-        gs_install -X /opt/software/openGauss/cluster_config.xml --dorado-cluster-mode="standby"
+        gs_install -X /opt/software/openGauss/cluster_config.xml
     
     第七步：  查询备存储上集群(建立容灾关系之后就是备集群)状态。
     
@@ -305,21 +305,29 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     
         主节点
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "application_name = 'dn_master_0'"
+        gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "ss_disaster_mode = dorado"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo1='localhost=10.0.0.10 localport=25400 remotehost=20.0.0.10 remoteport=25400'"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo2='localhost=10.0.0.10 localport=25400 remotehost=20.0.0.20 remoteport=25400'"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "ha_module_debug = off"
     
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -h "host    all             all             20.0.0.10/32        trust"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -h "host    all             all             20.0.0.20/32        trust"
+
+        在$DSS_HOME/cfg/dss_inst.ini文件中修改
+        STORAGE_MODE=SHARE_DISK --> STORAGE_MODE=CLUSTER_RAID
     
         备节点
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "application_name = 'dn_master_1'"
+        gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "ss_disaster_mode = dorado"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo1='localhost=10.0.0.20 localport=25400 remotehost=20.0.0.10 remoteport=25400'"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo2='localhost=10.0.0.20 localport=25400 remotehost=20.0.0.20 remoteport=25400'"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "ha_module_debug = off"
     
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -h "host    all             all             20.0.0.10/32        trust"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -h "host    all             all             20.0.0.20/32        trust"
+
+        在$DSS_HOME/cfg/dss_inst.ini文件中修改
+        STORAGE_MODE=SHARE_DISK --> STORAGE_MODE=CLUSTER_RAID
     
         设置主集群cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
@@ -339,21 +347,29 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     
         主节点
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "application_name = 'dn_standby_0'"
+        gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "ss_disaster_mode = dorado"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo1='localhost=20.0.0.10 localport=25400 remotehost=10.0.0.10 remoteport=25400'"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo2='localhost=20.0.0.10 localport=25400 remotehost=10.0.0.20 remoteport=25400'"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -c "ha_module_debug = off"
     
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -h "host    all             all             10.0.0.10/32        trust"
         gs_guc set -N node1 -D /opt/mpp/install/data/dn -h "host    all             all             10.0.0.20/32        trust"
-    
+
+        在$DSS_HOME/cfg/dss_inst.ini文件中修改
+        STORAGE_MODE=SHARE_DISK --> STORAGE_MODE=CLUSTER_RAID
+
         备节点
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "application_name = 'dn_standby_1'"
+        gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "ss_disaster_mode = dorado"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo1='localhost=20.0.0.20 localport=25400 remotehost=10.0.0.10 remoteport=25400'"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "cross_cluster_replconninfo2='localhost=20.0.0.20 localport=25400 remotehost=10.0.0.20 remoteport=25400'"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -c "ha_module_debug = off"
     
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -h "host    all             all             10.0.0.10/32        trust"
         gs_guc set -N node2 -D /opt/mpp/install/data/dn -h "host    all             all             10.0.0.20/32        trust"
+
+        在$DSS_HOME/cfg/dss_inst.ini文件中修改
+        STORAGE_MODE=SHARE_DISK --> STORAGE_MODE=CLUSTER_RAID
        
     第十步：. 拉起首备dssserver，执行build
     
