@@ -6,18 +6,24 @@
 
 | 操作系统                | 架构   | openauss版本    |
 | ----------------------- | ------ | --------------- |
-| openEuler 22.03 LTS     | ARM64  | openGauss 2.1.0 |
-| openEuler 22.03 LTS     | x86-64 | openGauss 2.1.0 |
-| openEuler 22.03 LTS SP4 | ARM64  | openGauss 5.0.1 |
-| openEuler 22.03 LTS SP4 | x86-64 | openGauss 5.0.1 |
+| openEuler 22.03 LTS     | ARM64  | openGauss 2.1.0 Lite  |
+| openEuler 22.03 LTS     | x86-64 | openGauss 2.1.0 Lite  |
+| openEuler 22.03 LTS SP4 | ARM64  | openGauss 5.0.1 Lite  |
+| openEuler 22.03 LTS SP4 | x86-64 | openGauss 5.0.1 Lite  |
+| openEuler 24.03 LTS SP1 | ARM64  | openGauss 6.0.0 企业版 |
+| openEuler 24.03 LTS SP1 | x86-64 | openGauss 6.0.0 企业版 |
 
 注意：上面列举的操作系统对应的openGauss版本，指的是从这个版本的操作系统开始有对应的openGauss版本，向后兼容。
 
-比如：从openEuler 22.03 LTS开始支持openGauss2.1.0，从openEuler 22.03 LTS SP4开始支持openGauss5.0.1，向后兼容。
+比如：从openEuler 22.03 LTS开始支持openGauss 2.1.0 Lite，从openEuler 22.03 LTS SP4开始支持openGauss 5.0.1 Lite，从openEuler 24.03 LTS SP1开始支持openGauss 6.0.0 企业版，向后兼容。
 
 ## 支持特性
 
 -  从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](../ExtensionReference/dolphin概述.md)。
+  
+## 约束
+
+-  openGauss 6.0.0企业版不包含mot功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
 
 ## 使用限制
 
@@ -51,8 +57,9 @@
 ## 数据库升级
 
 1. 支持从低版本的数据库升级到高版本的数据库。
+   注意：不支持从2.1.0 Lite升级到6.0.0 LTS，支持从2.1.0 Lite升级到5.0.1 Lite，以及5.0.1 Lite升级到6.0.0 LTS。
 
-2. 当前支持手动升级。
+2. 升级操作系统时，数据库也会随之升级。
 
 3. 升级时，只能升级默认安装下的数据库，并且保证数据库进程正常。
 
