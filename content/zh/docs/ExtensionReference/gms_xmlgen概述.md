@@ -1,0 +1,3 @@
+# gms_xmlgen概述
+
+gms_xmlgen是一个基于openGauss的插件，用于将sql查询结果转换成规范的xml格式。支持sql query字符串或者游标作为输入，并将结果以clob类型或者xmltype类型返回。目前支持的接口有：gms_xmlgen.closecontext、gms_xmlgen.getxmltype、gms_xmlgen.newcontextfromhierarchy、gms_xmlgen.convert、gms_xmlgen.getnumrowsprocessed、gms_xmlgen.getxml、gms_xmlgen.getxmltype、gms_xmlgen.newcontext、gms_xmlgen.restartquery、gms_xmlgen.setconvertspecialchars、gms_xmlgen.setmaxrows、gms_xmlgen.setnullhandling、gms_xmlgen.setrowsettag、gms_xmlgen.setrowtag、gms_xmlgen.setskiprows、gms_xmlgen.useitemtagsforcoll、gms_xmlgen.usenullattributeindicator。
