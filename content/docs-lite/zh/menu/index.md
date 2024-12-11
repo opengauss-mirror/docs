@@ -395,9 +395,7 @@ headless: true
             -   [MOT恢复概念]({{< relref "./docs/DatabaseAdministrationGuide/MOT恢复概念.md" >}})
             -   [MOT查询原生编译（JIT）]({{< relref "./docs/DatabaseAdministrationGuide/MOT查询原生编译_JIT.md" >}})
             -   [对比：磁盘与MOT]({{< relref "./docs/DatabaseAdministrationGuide/对比-磁盘与MOT.md" >}})
-        -   [附录]({{< relref "./docs/DatabaseAdministrationGuide/附录_MOT.md" >}})
-            -   [参考文献]({{< relref "./docs/DatabaseAdministrationGuide/参考文献.md" >}})
-            -   [术语表]({{< relref "./docs/DatabaseAdministrationGuide/术语表.md" >}})					
+ 				
     -   [管理数据库安全]({{< relref "./docs/DatabaseAdministrationGuide/管理数据库安全.md" >}})
         -   [客户端接入认证]({{< relref "./docs/DatabaseAdministrationGuide/客户端接入认证.md" >}})
             -   [配置客户端接入认证]({{< relref "./docs/DatabaseAdministrationGuide/配置客户端接入认证.md" >}})
@@ -2724,4 +2722,5 @@ headless: true
 	-   [openGauss资源获取]({{< relref "./docs/Appendix/openGauss资源获取.md" >}})	
 	-   [错误日志信息参考]({{< relref "./docs/Appendix/错误日志信息参考.md" >}})
 		-   [内核错误信息]({{< relref "./docs/Appendix/内核错误信息.md" >}})	
+    -   [参考文献]({{< relref "./docs/Appendix/参考文献.md" >}})	
 	-   [术语表]({{< relref "./docs/Appendix/术语表.md" >}})

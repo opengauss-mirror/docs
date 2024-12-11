@@ -537,7 +537,7 @@ headless: true
 			-   [MOT恢复概念]({{< relref "./docs/DatabaseAdministrationGuide/MOT恢复概念.md" >}})
 			-   [MOT查询原生编译（JIT）]({{< relref "./docs/DatabaseAdministrationGuide/MOT查询原生编译_JIT.md" >}})
 			-   [对比：磁盘与MOT]({{< relref "./docs/DatabaseAdministrationGuide/对比-磁盘与MOT.md" >}})
-		-   [附录]({{< relref "./docs/DatabaseAdministrationGuide/附录_MOT.md" >}})
+		
 	-   [访问外部数据库]({{< relref "./docs/DatabaseAdministrationGuide/Foreign-Data-Wrapper.md" >}})
 		-   [oracle_fdw]({{< relref "./docs/DatabaseAdministrationGuide/用于Oracle的外部数据包装器.md" >}})
 		-   [mysql_fdw]({{< relref "./docs/DatabaseAdministrationGuide/mysql_fdw.md" >}})
@@ -3216,5 +3216,6 @@ headless: true
     	-   [产品FAQ]({{< relref "./docs/Appendix/产品FAQ.md" >}})
     	-   [使用FAQ]({{< relref "./docs/Appendix/使用FAQ.md" >}})	
     -   [错误日志信息参考]({{< relref "./docs/Appendix/错误日志信息参考.md" >}})
-    	-   [内核错误信息]({{< relref "./docs/Appendix/内核错误信息.md" >}})	
+    	-   [内核错误信息]({{< relref "./docs/Appendix/内核错误信息.md" >}})
+    -   [参考文献]({{< relref "./docs/Appendix/参考文献.md" >}})			
     -   [术语表]({{< relref "./docs/Appendix/术语表.md" >}})
