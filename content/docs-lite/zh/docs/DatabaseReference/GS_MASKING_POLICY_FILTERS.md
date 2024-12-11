@@ -1,8 +1,8 @@
-# GS\_MASKING\_POLICY\_FILTERS<a name="ZH-CN_TOPIC_0306525314"></a>
+# `GS_MASKING_POLICY_FILTERS`<a name="ZH-CN_TOPIC_0306525314"></a>
 
-GS\_MASKING\_POLICY\_FILTERS系统表记录动态数据脱敏策略对应的用户过滤条件，当用户条件满足FILTER条件时，对应的脱敏策略才会生效。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
+`GS_MASKING_POLICY_FILTERS` 系统表记录动态数据脱敏策略对应的用户过滤条件，当用户条件满足FILTER条件时，对应的脱敏策略才会生效。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 
-**表 1**  GS\_MASKING\_POLICY\_FILTERS表字段
+**表 1** `GS_MASKING_POLICY_FILTERS`表字段
 
 <a name="table845914245212"></a>
 <table><thead align="left"><tr id="row15459154216524"><th class="cellrowborder" valign="top" width="28.072807280728075%" id="mcps1.2.4.1.1"><p id="p13460942125210"><a name="p13460942125210"></a><a name="p13460942125210"></a>名称</p>
@@ -43,7 +43,7 @@ GS\_MASKING\_POLICY\_FILTERS系统表记录动态数据脱敏策略对应的用�
 </tr>
 <tr id="row9460154275216"><td class="cellrowborder" valign="top" width="28.072807280728075%" headers="mcps1.2.4.1.1 "><p id="p539014288543"><a name="p539014288543"></a><a name="p539014288543"></a>modifydate</p>
 </td>
-<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p7634152411481"><a name="p7634152411481"></a><a name="p7634152411481"></a>timestamp</p>
+<td class="cellrowborder" valign="top" width="26.772677267726774%" headers="mcps1.2.4.1.2 "><p id="p7634152411481"><a name="p7634152411481"></a><a name="p7634152411481"></a>timestamp without time zone</p>
 </td>
 <td class="cellrowborder" valign="top" width="45.15451545154516%" headers="mcps1.2.4.1.3 "><p id="p647119105316"><a name="p647119105316"></a><a name="p647119105316"></a>该条用户过滤条件创建或修改的最新时间戳。</p>
 </td>

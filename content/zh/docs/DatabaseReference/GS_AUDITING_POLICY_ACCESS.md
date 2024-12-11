@@ -1,8 +1,8 @@
-# GS\_AUDITING\_POLICY\_ACCESS
+# `GS_AUDITING_POLICY_ACCESS`
 
-GS\_AUDITING\_POLICY\_ACCESS系统表记录与DML数据库相关操作的统一审计信息。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
+`GS_AUDITING_POLICY_ACCESS` 系统表记录与DML数据库相关操作的统一审计信息。需要有系统管理员或安全策略管理员权限才可以访问此系统表。
 
-**表 1**  GS\_AUDITING\_POLICY\_ACCESS字段
+**表 1** `GS_AUDITING_POLICY_ACCESS` 字段
 
 <a name="table845914245212"></a>
 <table><thead align="left"><tr id="row15459154216524"><th class="cellrowborder" valign="top" width="17.401740174017398%" id="mcps1.2.4.1.1"><p id="p13460942125210"><a name="p13460942125210"></a><a name="p13460942125210"></a>名称</p>
@@ -43,7 +43,7 @@ GS\_AUDITING\_POLICY\_ACCESS系统表记录与DML数据库相关操作的统一�
 </tr>
 <tr id="row12460842185215"><td class="cellrowborder" valign="top" width="17.401740174017398%" headers="mcps1.2.4.1.1 "><p id="p8829172305414"><a name="p8829172305414"></a><a name="p8829172305414"></a>modifydate</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.86328632863286%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamp</p>
+<td class="cellrowborder" valign="top" width="32.86328632863286%" headers="mcps1.2.4.1.2 "><p id="p146919995319"><a name="p146919995319"></a><a name="p146919995319"></a>timestamp without time zone</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.734973497349735%" headers="mcps1.2.4.1.3 "><p id="p112181314549"><a name="p112181314549"></a><a name="p112181314549"></a>创建或修改的最新时间戳。</p>
 </td>
