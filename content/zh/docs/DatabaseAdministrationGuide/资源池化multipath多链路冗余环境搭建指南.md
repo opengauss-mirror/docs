@@ -56,6 +56,27 @@
   </tr>
 </table>
 
+在不同`OS`下的`device-mapper-multipath`版本推荐，如下表所示
+
+<table>
+  <tr>
+    <td>OS</td>
+    <td>device-mapper-multipath推荐版本</td>
+  </tr>
+  <tr>
+    <td>centOS 7(x86)</td>
+    <td>0.4.9-111.el7.x86_64 ~ 0.4.9-136.el7_9.x86_64</td>
+  </tr>
+  <tr>
+    <td>openEuler 20.03(arm)</td>
+    <td>0.8.4-12.oe1.aarch64</td>
+  </tr>
+  <tr>
+    <td>openEuler 22.03(arm)</td>
+    <td>0.8.7-6.oe2203.aarch64</td>
+  </tr>
+</table>
+
 (1) 安装软件
 
 ```shell
