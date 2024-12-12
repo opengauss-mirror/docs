@@ -1,6 +1,6 @@
-# GS\_TXN\_SNAPSHOT
+# `GS_TXN_SNAPSHOT`
 
-GS\_TXN\_SNAPSHOT是“时间戳-CSN”映射表，周期性采样，并维护适当的时间范围，用于估算范围内的时间戳对应的CSN值。
+`GS_TXN_SNAPSHOT` 是“时间戳-CSN”映射表，周期性采样，并维护适当的时间范围，用于估算范围内的时间戳对应的CSN值。
 
 示例：
 ```sql
@@ -9,7 +9,7 @@ openGauss=# select * from gs_txn_snapshot;
 ---------+---------+--------+-------------
 ```
 
-**表 1**  GS\_TXN\_SNAPSHOT字段
+**表 1** `GS_TXN_SNAPSHOT` 字段
 
 <a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_table370273621911"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_row177034367196"><th class="cellrowborder" valign="top" width="20.13201320132013%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p3704103613192"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p3704103613192"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p3704103613192"></a><b>名称</b></p>
@@ -22,7 +22,7 @@ openGauss=# select * from gs_txn_snapshot;
 </thead>
 <tbody><tr id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_row770433620196"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1670523618197"></a>snptime</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a>timestamptz</p>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p1470517367198"></a>timestamp with time zone</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"></a><a name="zh-cn_topic_0283137196_zh-cn_topic_0237122301_p470503601915"></a>快照捕获时间。</p>
 </td>
