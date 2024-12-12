@@ -34,7 +34,7 @@ gs\_ctl参数可分为如下几类：
     </thead>
     <tbody><tr id="zh-cn_topic_0059777628_rae613ca56bd74177bf4cda2a394a21c3"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"><a name="zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a><a name="zh-cn_topic_0059777628_a910cc4c0298545049dacae33fae20638"></a>init[db]</p>
     </td>
-    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"><a name="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a><a name="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a>初始化DN。</p>
+    <td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"><a name="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a><a name="zh-cn_topic_0059777628_a2a55fa46236643359ba1fd58a6465209"></a>初始化DN。(与<a href="gs_initdb.md">gs_initdb</a>命令使用相同) </p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0059777628_r3b3072e09eb74375b7f20d0c3e927d43"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"><a name="zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a><a name="zh-cn_topic_0059777628_a9aa8c25f9ad146b995556d1ffc70bfe1"></a>start</p>

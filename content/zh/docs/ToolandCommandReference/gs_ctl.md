@@ -44,7 +44,7 @@ gs_ctl参数可分为如下几类：
 </thead>
 <tbody><tr id="row115019017221"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p175017014220"><a name="p175017014220"></a><a name="p175017014220"></a>init</p>
 </td>
-<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p750112092213"><a name="p750112092213"></a><a name="p750112092213"></a>创建数据库。</p>
+<td class="cellrowborder" valign="top" width="74.7%" headers="mcps1.2.3.1.2 "><p id="p750112092213"><a name="p750112092213"></a><a name="p750112092213"></a>创建数据库。(与<a href="gs_initdb.md">gs_initdb</a>命令使用相同)</p>
 </td>
 </tr>
 <tr id="row8502002226"><td class="cellrowborder" valign="top" width="25.3%" headers="mcps1.2.3.1.1 "><p id="p2050170142211"><a name="p2050170142211"></a><a name="p2050170142211"></a>start</p>
