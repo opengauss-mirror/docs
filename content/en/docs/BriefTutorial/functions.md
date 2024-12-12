@@ -1099,9 +1099,19 @@ The common functions of openGauss are as follows:
     ```
 
 
--   to\_number\(text, text\)
+- to\_number ( expr \[ DEFAULT return_value ON CONVERSION ERROR ] [, fmt])
 
-    Description: Converts the values of the string type into the numbers in the specified format.
+    Description: Converts expr to a NUMERIC type value according to the specified format. If the expr conversion fails, it will attempt to convert the return_value after the keyword DEFAULT (the input format of return_value is constrained by fmt).
+  
+    * The length of the integer part in fmt must be greater than the length of the integer part in expr. If it is less, an error will be thrown. The length of the fractional part in fmt can be filled as needed, and the result will be truncated according to the length of the fractional part in fmt.
+
+    * Both expr and the return_value after DEFAULT support implicit conversion. (Note: NULL plus any value equals NULL.)
+
+    * Scientific notation is supported.
+
+    * When converting a hexadecimal string to a decimal number, the function supports up to 16 bytes of hexadecimal string to be converted into an unsigned number.
+
+    * When converting a hexadecimal string to a decimal number, the format string should not contain any characters other than 'x' or 'X', otherwise, an error will be thrown.
 
     Return type: numeric
 
@@ -1109,29 +1119,45 @@ The common functions of openGauss are as follows:
 
     ```
     openGauss=# SELECT to_number('12,454.8-', '99G999D9S');
-     to_number
+     to_number 
     -----------
       -12454.8
     (1 row)
     ```
-
-
--   to\_timestamp\(text, text\)
-
-    Description: Converts values of the string type into the timestamp of the specified type.
-
-    Return type: timestamp
-
-    Example:
-
     ```
-    openGauss=# SELECT to_timestamp('05 Dec 2000', 'DD Mon YYYY');
-        to_timestamp
-    ---------------------
-     2000-12-05 00:00:00
+    openGauss=# SELECT to_number('1234.123','999999.99');
+     to_number 
+    -----------
+       1234.12
     (1 row)
     ```
-
+    ```
+    openGauss=# SELECT to_number('111111.111'+'1111','999999.99');
+     to_number 
+    -----------
+     112222.11
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_number('1e5'+'1111','999999.99');
+     to_number 
+    -----------
+        101111
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_number('111111.111'+'1111'+NULL,'999999.  99');
+     to_number 
+    -----------        
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_number('此参数错误' default 321456231 on conversion error ,'999,999,999,999.99');
+     to_number 
+    -----------
+     321456231
+    (1 row)
+    ```
 
 -   to\_timestamp\(double precision\)
 
@@ -1148,5 +1174,83 @@ The common functions of openGauss are as follows:
      2010-09-13 12:32:03+08
     (1 row)
     ```
+
+-   to\_timestamp(string [ DEFAULT return_value ON CONVERSION ERROR ] \[ , fmt  [, 'nlsparam' ] ]\)
+
+    Description: Converts a string to a timestamp. The default input format is [DD-Mon-YYYY HH12:MI:SS.FF], which is a 12-hour AM format. If the input value string is not in the default format, the user needs to specify their own format in fmt. If the format description is incorrect, an error will be thrown. If part of the string conversion fails, it will attempt to convert the return_value after the keyword DEFAULT (the input format of return_value is constrained by fmt). If Mon is an abbreviation like Jan, the language for the month can be set in nlsparam (currently only supports American and English).
+
+    * If the input year YYYY=0, the system will throw an error.
+    * If the input year YYYY<0, and SYYYY is specified in fmt, it will correctly output the absolute value of the year BC.
+    * Parameters in fmt that are similar to MM cannot mix case.
+    * The delimiters in fmt and the time information in string can be replaced with other symbols. Example: SELECT to_timestamp('05*Dec^2000', 'DD Mon+YYYY');
+  
+    Return type: timestamp with time zone
+
+    Example:
+
+    ```
+    openGauss=# SHOW nls_timestamp_format;
+        nls_timestamp_format    
+    ----------------------------
+     DD-Mon-YYYY HH:MI:SS.FF AM
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp('12-sep-2014');
+        to_timestamp     
+    ---------------------
+     2014-09-12 00:00:00
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp ('01-Jan-2002 10:10:10.  123000');
+        to_timestamp       
+    -------------------------
+     2002-01-01 10:10:10.123
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp ('2002-01-01 10:10:10.123000',  'YYYY-MM-DD HH24:MI:SS.FF');
+          to_timestamp       
+    -------------------------
+     2002-01-01 10:10:10.123
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp ('此为错误输入' DEFAULT   '11-01-11 14:10:10.123000' ON CONVERSION ERROR,'DD-MM-RR   HH24:MI:SS.FF');
+          to_timestamp       
+    -------------------------
+     2011-01-11 14:10:10.123
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp ('01-Jan-03 14:10:10.123000'   DEFAULT '11-Jan-11 14:10:10.123000' ON CONVERSION ERROR,  'DD-Mon-RR HH24:MI:SS.FF','NLS_DATE_LANGUAGE = American');
+          to_timestamp       
+    -------------------------
+     2003-01-01 14:10:10.123
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp('-1','SYYYY');
+          to_timestamp      
+    ------------------------
+     0001-01-01 00:00:00 BC
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp('05 Dec 2000', 'DD Mon YYYY');
+        to_timestamp
+    ---------------------
+     2000-12-05 00:00:00
+    (1 row)
+    ```
+    ```
+    openGauss=# SELECT to_timestamp('05*Dec^2000', 'DD Mon+YYYY');
+      to_timestamp     
+    ---------------------
+     2000-12-05 00:00:00
+    (1 row)
+    ```
+
 
 
