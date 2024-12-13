@@ -193,9 +193,9 @@ y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.
 从上面的命令输出可以看到，133少了2条链路，这里介绍冗余链路的配置过程
 
 ```shell
-**********************************
-******  冗余链路的配置过程  ********
-**********************************
+*********************************
+*****  冗余链路的配置过程-开始  *****
+*********************************
 
 (1) 建立iscsi端口
 
@@ -229,9 +229,9 @@ iscsiadm -m discovery -t st -p y.y.y.229
 
 netstat -anp|grep 3260
 
-**********************************
-******  冗余链路的配置过程  ********
-**********************************
+*********************************
+*****  冗余链路的配置过程-结束  *****
+*********************************
 ```
 
 ## 四.  在Dorado的device manager平台进行主机和启动器绑定映射，并生成4块盘
@@ -254,14 +254,244 @@ netstat -anp|grep 3260
 
 ## 五.  启动multipath
 
+为了确保在多人共用的环境中，`multipath`的配置过程对他人的环境没有影响，需要做一些预操作
+
+a. 启用并初始化多链路配置文件
+
 ```shell
-systemctl enable multipathd
-systemctl start multipathd
+mpathconf --enable
+```
+执行完该命令之后，会在`/etc`下生成一个空的`multipath.conf`文件，其内容如下所示。该文件为`multipath`的核心文件，负责`multipath`相关的各种功能控制与参数配置，是异常重要的
+
+```shell
+# device-mapper-multipath configuration file
+
+# For a complete list of the default configuration values, run either:
+# # multipath -t
+# or
+# # multipathd show config
+
+# For a list of configuration options with descriptions, see the
+# multipath.conf man page.
+
+defaults {
+        user_friendly_names yes
+        find_multipaths yes
+}
+
+blacklist_exceptions {
+        property "(SCSI_IDENT_|ID_WWN)"
+}
+
+blacklist {
+}
 ```
 
-使用`multipath -ll`查看盘的映射情况，当其输出为空时，表示配置有误，修复方法如下：
+为了避免对他人环境的影响，在`blacklist`中写入`wwid "3*"`将所有的设备加入到`blacklist`中，再将多路径设备（第四步中生成的4块盘）加入到`blacklist_exceptions`中
 
-(1) 检查`multipath`的相关模块是否安装成功
+在该操作之后，`multipath`扫描多路径设备时，除了`blacklist_exceptions`中的设备外，其他设备均会被忽略
+
+b. `multipath`核心配置文件`multipath.conf`简介
+
+`multipath.conf`文件可分为几个部分，见下表：
+
+<table>
+  <tr>
+    <td>子部分</td>
+    <td>功能说明</td>
+  </tr>
+  <tr>
+    <td>blacklist</td>
+    <td>黑名单，不被视为多路径设备的设备列表</td>
+  </tr>
+  <tr>
+    <td>blacklist_exceptions：</td>
+    <td>黑名单的豁免名单，若出现在黑名单中的设备被加入到该名单中，会被扫描为多路径设备</td>
+  </tr>
+  <tr>
+    <td>defaults</td>
+    <td>multipath的常规默认设置</td>
+  </tr>
+  <tr>
+    <td>multipaths</td>
+    <td>各个多路径设备特性的设置，这些值会覆盖在配置文件中的 overrides, devices, 和 defaults 部分指定的值</td>
+  </tr>
+  <tr>
+    <td>device</td>
+    <td>各个存储控制器的设置，这些值覆盖了在配置文件的 defaults 部分中指定的内容</td>
+  </tr>
+  <tr>
+    <td>overrides</td>
+    <td>适用于所有设备的设置，这些值覆盖了在配置文件的 devices 和 defaults 部分中指定的值</td>
+  </tr>
+</table>
+
+当系统决定多路径设备的属性时，它会按照以下顺序检查 multipath.conf 文件中的单独部分的设置：
+
+```shell
+multipaths --> overrides --> devices --> defaults
+```
+c. `defaults`、`multipaths`关键参数说明
+
+当在`multipaths`与`defaults`中有相同的参数时，会优先使用`multipaths`中的设定的参数
+
+```shell
+defaults {
+       polling_interval        5
+       path_selector           "round-robin 0"
+       path_grouping_policy    multibus
+       uid_attribute           ID_SERIAL
+       prio                    alua
+       path_checker            readsector0
+       rr_min_io               100
+       max_fds                 8192
+       rr_weight               priorities
+       failback                immediate
+       no_path_retry           fail
+       user_friendly_names     yes
+}
+
+multipaths {
+       multipath {
+               wwid                    3600508b4000156d700012000000b0000
+               alias                   yellow
+               path_grouping_policy    multibus
+               path_selector           "round-robin 0"
+               failback                manual
+               rr_weight               priorities
+               no_path_retry           5
+       }
+       multipath {
+               wwid                    1DEC_____321816758474
+               alias                   red
+       }
+}
+```
+在这两个子部分，有几个重要的参数需要介绍
+
+`polling_interval`: 用于设置多路径设备的路径状态轮询间隔，即系统检查各条路径是否可用以及状态是否发生变化的时间周期
+
+默认值通常在 5 到 10 秒之间，取值越小，路径状态的检查越频繁，系统能更快检测到路径故障并切换，但会增加系统开销
+
+`path_selector`: 用于指定检查存储路径状态的方法，具体取值参考下表（默认值为`tur`）
+<table>
+  <caption>path_selector参数值介绍</caption>
+  <tr>
+    <td>参数值</td>
+    <td>功能说明</td>
+    <td>特点</td>
+  </tr>
+  <tr>
+    <td>tur</td>
+    <td>通过向存储设备发送特定的scsi命令[TEST_UNIT_READY]检查路径状态</td>
+    <td>通用，简单</td>
+  </tr>
+  <tr>
+    <td>emc_clariion</td>
+    <td>专门为EMC Clariion存储设备设计的路径检查器</td>
+    <td>充分利用设备优势，通用性差</td>
+  </tr>
+  <tr>
+    <td>hp_sw</td>
+    <td>专门为惠普存储设备设计的路径检查器</td>
+    <td>充分利用设备优势，通用性差</td>
+  </tr>
+  <tr>
+    <td>netapp_fcp</td>
+    <td>适用于NetApp的光纤通道存储设备的路径检查器</td>
+    <td>充分利用设备优势，通用性差</td>
+  </tr>
+  <tr>
+    <td>readsector0</td>
+    <td>读取存储设备的第0扇区检查路径状态的路径检查器</td>
+    <td>原始，速度慢，通用</td>
+  </tr>
+  <tr>
+    <td>write_file</td>
+    <td>向指定文件写入数据来检查路径状态的路径检查器</td>
+    <td>具有一定的灵活性</td>
+  </tr>
+</table>
+
+`path_grouping_policy`: 用于定义多路径设备的路径分组策略，默认值为`failover`
+
+<table>
+  <caption>path_grouping_policy参数值介绍</caption>
+  <tr>
+    <td>参数值</td>
+    <td>功能说明</td>
+  </tr>
+  <tr>
+    <td>failover</td>
+    <td>是一种主备模式的路径分组策略。在这种模式下，多条路径被分为活动路径和备用路径。通常只有活动路径用于数据传输，当活动路径出现故障时，备用路径会自动接管，确保数据的连续性</td>
+  </tr>
+  <tr>
+    <td>multibus</td>
+    <td>负载均衡模式。在这种策略下，所有路径同时参与工作，数据会根据一定的算法分布在不同的路径上进行传输，实现负载均衡，充分利用所有可用路径的带宽，提高整体性能</td>
+  </tr>
+  <tr>
+    <td>group_by_serial</td>
+    <td>根据存储设备的序列号对路径进行分组。具有相同序列号的存储设备的路径会被分在同一组，同一组内的路径按照一定的规则进行主备或负载均衡配置</td>
+  </tr>
+  <tr>
+    <td>group_by_prio</td>
+    <td>按照路径的优先级进行分组。用户可以为每条路径设置不同的优先级，优先级高的路径会被优先选择用于数据传输，当高优先级路径不可用时，再选择低优先级路径</td>
+  </tr>
+  <tr>
+    <td>group_by_node_name</td>
+    <td>根据存储设备的节点名称对路径进行分组</td>
+  </tr>
+</table>
+
+`failback`: 用于控制当故障路径恢复正常后，是否自动将数据传输切换回原来的主路径，默认值为`manual`
+
+<table>
+  <caption>failback参数值介绍</caption>
+  <tr>
+    <td>参数值</td>
+    <td>功能说明</td>
+  </tr>
+  <tr>
+    <td>immediate</td>
+    <td>当故障路径恢复后，系统会立即将数据传输切换回原主路径，这种方式能快速恢复到故障前的路径状态，最大限度地利用原主路径的性能优势</td>
+  </tr>
+  <tr>
+    <td>manual</td>
+    <td>故障路径恢复后，系统不会自动切换回原主路径，而是继续使用当前的备用路径或负载均衡路径，需要管理员手动干预才能将数据传输切换回原主路径</td>
+  </tr>
+  <tr>
+    <td>followover</td>
+    <td>指定只有路径组的第一个路径处于活跃状态时，才能执行自动故障恢复。当另一个节点请求故障切换时，这会让节点自动进行故障恢复</td>
+  </tr>
+  <tr>
+    <td>delayed</td>
+    <td>在故障路径恢复后延迟一段时间再进行切换，以避免在路径刚恢复时可能存在的不稳定因素对数据传输造成影响</td>
+  </tr>
+</table>
+
+`fast_io_fail_tmo`: 当检测到当前路径I/O出现问题时，在此时间内（以`s`为单位）未解决，`multipathd`进程会认为该路径故障并进行路径切换
+
+`no_path_retry`: 路径故障后的重试次数
+
+`multipath`的参数很多，极其重要的参数在这里列出，可以根据不同场景需要自行配置
+
+(1) 启动`multipathd`服务并设置开机启动
+
+```shell
+systemctl enable multipathd   // 设置开机启动
+systemctl start multipathd    // 启动multipathd服务
+```
+(2) 清除多链路残留，重新配置并加载多链路，显示多链路拓扑
+
+```shell
+multipath -F   // 清除多链路残留
+multipath -v2  // 重新加载多链路
+multipath -ll  // 显示多链路拓扑
+```
+
+(3) 使用`multipath -ll`查看盘的映射情况，当其输出为空时，表示配置有误，修复方法如下：
+
+a. 检查`multipath`的相关模块是否安装成功
 
 ```shell
 [root@centos131 ~]# lsmod |grep dm_multipath
@@ -270,26 +500,26 @@ dm_multipath           27792  2 dm_round_robin,dm_service_time
 dm_mod                128595  12 dm_multipath,dm_log,dm_mirror
 ```
 
-(2) 将`dm-multipath`内核模块加载到`Linux`系统内核中，该模块是多路径功能的核心组成部分，主要用于实现存储设备的多路径访问
+b. 将`dm-multipath`内核模块加载到`Linux`系统内核中，该模块是多路径功能的核心组成部分，主要用于实现存储设备的多路径访问
 
 ```shell
 modprobe dm-multipath
 ```
 
-(3) 将`dm-round-robin`内核模块加载到`Linux`系统内核中，该模块是`Linux`系统中设备映射器的一部分，主要功能是实现一种轮询的`I/O`调度策略 
+c. 将`dm-round-robin`内核模块加载到`Linux`系统内核中，该模块是`Linux`系统中设备映射器的一部分，主要功能是实现一种轮询的`I/O`调度策略 
 
 ```shell
 modprobe dm-round-robin
 ```
 
-(4) 开启`multipath`服务
+d. 开启`multipath`服务
 ```shell
 service multipathd start
 
 Redirecting to /bin/systemctl start multipathd.service
 ```
 
-(5) 使用`multipath -v2`命令验证多路径功能是否正常启用
+e. 使用`multipath -v2`命令验证多路径功能是否正常启用
 
 ```shell
 multipath -v2
@@ -312,7 +542,7 @@ tcp: [38] y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b
 tcp: [39] y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.y.y.229 (non-flash)
 ```
 
-(6) 退出之前建立的会话
+f. 退出之前建立的会话
 
 ```shell
 [root@centos131 ~]# iscsiadm -m session -u
@@ -320,7 +550,7 @@ Logging out of session [sid: 38, target: iqn.2006-08.com.huawei:oceanstor:210038
 Logging out of session [sid: 39, target: iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.y.y.229, portal: y.y.y.229,3260]
 ```
 
-(7) 重新发现磁阵并连接
+g. 重新发现磁阵并连接
 
 ```shell
 [root@centos131 ~]# iscsiadm -m discovery -t st -p y.y.y.229 -l enp3s0f0
@@ -336,7 +566,7 @@ y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.
 y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.y.y.229
 ```
 
-(8) 查看建立的`TCP`会话
+h. 查看建立的`TCP`会话
 
 ```shell
 [root@centos131 ~]# iscsiadm -m session
@@ -344,7 +574,7 @@ tcp: [40] y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b
 tcp: [41] y.y.y.229:3260,36354 iqn.2006-08.com.huawei:oceanstor:2100382028c0772b::28e01:y.y.y.229 (non-flash)
 ```
 
-(9) 使用命令`multipath -ll`查看盘的映射情况
+i. 使用命令`multipath -ll`查看多链路拓扑并检查盘的映射情况
 
 ```shell
 [root@centos131 ~]# multipath -ll
