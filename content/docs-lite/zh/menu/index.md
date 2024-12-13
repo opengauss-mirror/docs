@@ -216,6 +216,8 @@ headless: true
 		-   [子查询]({{< relref "./docs/BriefTutorial/子查询.md" >}})
 		-   [权限]({{< relref "./docs/BriefTutorial/权限.md" >}})
 		-   [函数]({{< relref "./docs/BriefTutorial/函数.md" >}})
+    -   [高级特性]({{< relref "./docs/BriefTutorial/高级特性.md" >}})
+		-   [列存储]({{< relref "./docs/BriefTutorial/列存储.md" >}})
 	-   [附录：SQL语法]({{< relref "./docs/BriefTutorial/附录-SQL语法.md" >}})
 	
 -   [应用开发指南]({{< relref "./docs/DeveloperGuide/应用开发指南.md" >}})
