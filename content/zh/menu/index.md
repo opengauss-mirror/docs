@@ -453,6 +453,7 @@ headless: true
 	-   [数据库基础管理]({{< relref "./docs/DatabaseAdministrationGuide/数据库基础管理.md" >}})
 		-   [数据存储管理]({{< relref "./docs/DatabaseAdministrationGuide/数据存储管理.md" >}})
 			-   [逻辑存储结构]({{< relref "./docs/DatabaseAdministrationGuide/逻辑存储结构.md" >}})
+			-   [段页式存储结构]({{< relref "./docs/DatabaseAdministrationGuide/段页式存储结构.md" >}})
 	-   [数据库部署方案]({{< relref "./docs/DatabaseAdministrationGuide/数据库部署方案.md" >}})
 		-   [openGauss常见主备部署方案简介]({{< relref "./docs/DatabaseAdministrationGuide/openGauss常见主备部署方案简介.md" >}})
 		-   [两地三中心跨Region容灾]({{< relref "./docs/DatabaseAdministrationGuide/两地三中心跨Region容灾.md" >}})
