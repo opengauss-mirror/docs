@@ -1020,3 +1020,171 @@
     { "D" : 5, "D" : null }
     (2 rows)
     ```
+
+-   cume\_dist\(expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+
+    Description: Calculate the cumulative distribution of the assumed rows and corresponding sorting criteria identified by the parameters of the function in the aggregated group rows. in other words, The proportion of the total number of rows in the sorting partition where the value of expression is the same as the value of the last row after sorting
+
+    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    -   **order-list**: Mandatory. The sorting key can be a column name or a sorting key expression.
+
+    Return type: float
+
+    Example:
+
+    Insert the input 4 into a column sorted by c1, with 4 placed at position 8. Therefore, the function returns a value of 8/14.
+
+    ```
+    openGauss=# create table aggregates_hypothetical(c1 int, c2 NUMBER(8,2), c3 varchar(20), c4 timestamp);
+    CREATE TABLE
+    openGauss=# insert into aggregates_hypothetical values
+    openGauss-# (1,0.1,'1','2024-09-01 09:22:00'),
+    openGauss-# (2,0.2,'2','2024-09-02 09:22:00'),
+    openGauss-# (3,0.1,'3','2024-09-03 09:22:00'),
+    openGauss-# (3,0.2,'3','2024-09-04 09:22:00'),
+    openGauss-# (3,0.3,'3','2024-09-05 09:22:00'),
+    openGauss-# (3,0.3,'3','2024-09-05 09:22:00'),
+    openGauss-# (4,0.2,'4','2024-09-06 09:22:00'),
+    openGauss-# (5,0.2,'5','2024-09-07 09:22:00'),
+    openGauss-# (6,0.2,'6','2024-09-08 09:22:00'),
+    openGauss-# (7,0.2,'7','2024-09-09 09:22:00'),
+    openGauss-# (8,0.2,'8','2024-09-10 09:22:00'),
+    openGauss-# (9,0.2,'9','2024-09-11 09:22:00'),
+    openGauss-# (10,0.2,'10','2024-09-12 09:22:00');
+    INSERT 0 13
+
+    openGauss=# select cume_dist(4) within group (order by c1) from aggregates_hypothetical;
+        cume_dist     
+    ------------------
+    .571428571428571
+    (1 row)
+    ```
+
+    Example:
+
+    Insert the input (3,0.2) into the column sorted by c1 and c2, and place it in the 5th position. Therefore, the function returns a value of 5/14
+
+    ```
+    openGauss=# select cume_dist(3,0.2) within group (order by c1,c2) from aggregates_hypothetical;
+    cume_dist     
+    ------------------
+     .357142857142857
+    (1 row)
+    ```
+
+    Example:
+    
+    Insert the input string into a column sorted by c1, perform type conversion, and then perform calculations
+    
+    ```
+    select cume_dist('1') within group (order by c1) from test_aggregate;
+        cume_dist     
+    ------------------
+    .142857142857143
+    (1 row)
+    ```
+
+-   rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+
+    Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking values of the rank function are not continuous.
+    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+
+    Return type: int
+
+    Example
+
+    Using c1 as the sorting column, calculate the ranking value of the input parameter in the sorting column. Duplicate columns are also included in the ranking, so the ranking is discontinuous
+
+    ```
+    openGauss=# select rank(3) within group (order by c1) from aggregates_hypothetical;
+    rank 
+    ------
+        3
+    (1 row)
+
+    openGauss=# select rank(4) within group (order by c1) from aggregates_hypothetical;
+    rank 
+    ------
+        7
+    (1 row)
+    ```
+   
+    Example
+
+    Column sorted by c1, c2
+    ```
+    openGauss=# select rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;
+    rank 
+    ------
+        7
+    (1 row)
+    ```
+
+-   dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+
+    Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking value of the dense_rank function is continuous
+    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+
+    Return type: int
+
+    Example
+
+    Using c1 as the sorting column, calculate the ranking value of the input parameter in the sorting column. Duplicate columns are not included in the ranking, so the ranking is continuous
+
+    ```
+    openGauss=# select dense_rank(3) within group (order by c1) from aggregates_hypothetical;
+    dense_rank 
+    ------------
+            3
+    (1 row)
+
+    openGauss=# select dense_rank(4) within group (order by c1) from aggregates_hypothetical;
+    dense_rank 
+    ------------
+            4
+    (1 row)
+    ```
+   
+    Example
+
+    Column sorted by c1, c2
+    ```
+    openGauss=# select dense_rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;;
+    dense_rank 
+    ------------
+              6
+    (1 row)
+    ```
+
+-   percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+
+    Description: Calculate the percentage of the relative position of the assumed rows identified by the parameters of the function with respect to a given sorting criterion. The calculation formula is (rank -1)/(totals -1).
+
+    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+
+    Return type: float
+
+    Example
+
+    The percentage of the input value in the position of the current ranking column sorted by c1
+    ```
+    openGauss=# select percent_rank(4) within group (order by c1) from aggregates_hypothetical;
+    percent_rank    
+    -------------------
+    0.461538461538462
+    (1 row)
+    ```
+   
+    Example
+
+    Column sorted by c1, c2
+    ```
+    openGauss=# select percent_rank(3,0.2) within group (order by c1,c2) from aggregates_hypothetical; 
+    percent_rank    
+    -------------------
+    0.230769230769231
+    (1 row)
+    ```
