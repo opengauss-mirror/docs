@@ -30,9 +30,9 @@
 
     描述：使用函数xmlserialize, 来从xml产生一个字符串。
 
-    参数：类型可以是character，character varying或text或其中某个的变种。
+    参数：type可以是character，character varying或text或其中某个的变种。
 
-    返回值类型：xml
+    返回值类型：与type参数类型一致。
 
     示例：
 
