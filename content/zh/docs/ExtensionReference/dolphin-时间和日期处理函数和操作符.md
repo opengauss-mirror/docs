@@ -562,7 +562,7 @@
 
   备注:
 
-    - 函数返回格式为`DATE`或`DATETIME`。一般情况下，返回类型与第一参数的类型相同。当第一参数的类型为`DATE`时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为`DATETIME`。
+    - 函数返回值类型为TEXT，格式为只包含年月日信息的`DATE`格式或包含年月日时分秒信息的`DATETIME`格式。一般情况下，第一个参数包含时分秒信息时返回值也包含时分秒信息。当第一参数的类型为`DATE`时且INTERVAL的单位包含HOUR、MINUTE、SECOND部分，则返回结果为包含时分秒信息的数据。
     - 本函数所支持的interval单位与openGauss支持的interval单位保持一致，包括YEAR，MONTH，DAY，HOUR，MINUTE，SECOND，DAY TO HOUR，DAY TO MINUTE，DAY TO SECOND，HOUR TO MINUTE，HOUR TO SECOND，MINUTE TO SECOND。
     - 任一参数为NULL，函数返回NULL。
     - 在下列情况中，函数报错（该特性兼容此函数在`mysql`的`insert`语句中的行为）：
