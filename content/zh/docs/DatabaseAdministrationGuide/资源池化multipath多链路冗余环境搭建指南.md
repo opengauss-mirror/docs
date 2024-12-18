@@ -610,6 +610,85 @@ size=200G features='0' hwhandler='0' wp=rw
 
 经过该步骤之后，在`multipath -ll`命令的输出中，`mpathb`、`mpathc`、`mpathd`及`mpathe`为多链路的标志且可观察到第四步生成的4块盘所对应的盘符`dm-*`，每个盘都有两条链路且状态都是`active ready running`
 
+注意：经过该步骤之后，需要检查各个节点上`multipath`对4块盘生成的盘符`dm-*`是否一致。若一致，可继续执行后续安装步骤；若不一致，可使用下述方法处理
+
+(4) 各个节点`multipath`对4块盘生成的盘符不一致的解决方法[可选步骤]
+
+a. 逐一修改各个节点的`multipath.conf`文件中的参数，并为多路径设备（4块盘）统一别名
+
+```shell
+vim /etc/multipath.conf
+
+defaults {
+        user_friendly_names no
+        find_multipaths no
+}
+
+multipaths {
+        multipath {
+                wwid "36382028100c0772b109f1ce700000007"
+                alias   aa
+        }
+        multipath {
+                wwid "36382028100c0772b109f1ce700000008"
+                alias   bb
+        }
+        multipath {
+                wwid "36382028100c0772b109f1ce700000009"
+                alias   cc
+        }
+        multipath {
+                wwid "36382028100c0772b109f1ce70000000a"
+                alias   dd
+        }
+}
+```
+
+在`defaults`部分，将`user_friendly_names`设置为`no`，并在`multipaths`部分，使用参数`alias`为每个多路径设备起别名
+
+b. 清除多链路残留，重新配置并加载多链路，显示多链路拓扑
+
+```shell
+multipath -F   // 清除多链路残留
+multipath -v2  // 重新加载多链路
+multipath -ll  // 显示多路径拓扑
+
+dd (36382028100c0772b109f1ce70000000a) dm-6 HUAWEI,XSG1
+size=50G features='1 queue_if_no_path' hwhandler='0' wp=rw
+`-+- policy='service-time 0' prio=1 status=active
+  |- 0:0:0:4 sdn     8:208 active ready running
+  `- 1:0:0:4 sdm     8:192 active ready running
+aa (36382028100c0772b109f1ce700000007) dm-3 HUAWEI,XSG1
+size=1000G features='1 queue_if_no_path' hwhandler='0' wp=rw
+`-+- policy='service-time 0' prio=1 status=active
+  |- 0:0:0:1 sdh     8:112 active ready running
+  `- 1:0:0:1 sda     8:0   active ready running
+bb (36382028100c0772b109f1ce700000008) dm-4 HUAWEI,XSG1
+size=500G features='1 queue_if_no_path' hwhandler='0' wp=rw
+`-+- policy='service-time 0' prio=1 status=active
+  |- 0:0:0:2 sdj     8:144 active ready running
+  `- 1:0:0:2 sdi     8:128 active ready running
+cc (36382028100c0772b109f1ce700000009) dm-5 HUAWEI,XSG1
+size=50G features='1 queue_if_no_path' hwhandler='0' wp=rw
+`-+- policy='service-time 0' prio=1 status=active
+  |- 0:0:0:3 sdl     8:176 active ready running
+  `- 1:0:0:3 sdk     8:160 active ready running
+```
+从该命令的输出中，可以看到4个多路径设备的别名都设置为了`aa`、`bb`、`cc`及`dd`的形式
+
+c. 进入`/dev/mapper`目录下，查看4个多路径设备产生的软链接
+
+```shell
+[root@openGauss54 ~]# cd /dev/mapper
+[root@openGauss54 mapper]# ll
+total 0
+lrwxrwxrwx. 1 root root       7 Dec 18 10:12 aa -> ../dm-3
+lrwxrwxrwx. 1 root root       7 Dec 18 10:12 bb -> ../dm-4
+lrwxrwxrwx. 1 root root       7 Dec 18 10:12 cc -> ../dm-5
+lrwxrwxrwx. 1 root root       7 Dec 18 10:12 dd -> ../dm-6
+```
+后续搭建资源池化集群环境时，在`xml`对应位置直接使用，例如，`/dev/mapper/aa`
+
 ## 六.  查看四块盘生成的盘符
 
 使用`ll /dev/dm-*`命令依次查看对应盘的盘符
@@ -627,7 +706,7 @@ brw-rw---- 1 root disk 253, 6 Nov 15 16:35 /dev/dm-6
 
 ## 七.  资源池化环境搭建
 
-在资源池化集群的`xml`文件中，将四个盘的盘符修改为相应的编号`/dev/dm-*`即可，后续流程与资源池化环境搭建相同
+在资源池化集群的`xml`文件中，若各个节点的多路径盘符一致，则将四个盘的盘符修改为相应的编号`/dev/dm-*`即可；若不一致，则使用对应的软链接`/dev/mapper/**`即可，后续流程与资源池化环境搭建相同
 
 ## 八.  可靠性&&可用性测试
 
