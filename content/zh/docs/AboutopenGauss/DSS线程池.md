@@ -28,3 +28,11 @@ openGauss提供DSS线程池能力。支持DSS接入能力与资源占用的可�
 
 暂无。
 
+## 基本原理<a name="section8406643144716"></a>
+- DSS线程池利用epoll实现服务端和客户端的异步I/O，从而提高DSS并发消息处理能力。
+
+## 使用指导<a name="section8406643144716"></a>
+- DSS线程池化中的消息处理能力可通过调整DSS Server参数IO_THREADS和WORK_THREADS来控制。
+
+## 使用场景<a name="section8406643144716"></a>
+- DSS线程池化主要运用于DSS客户端和服务端的消息通讯场景。
