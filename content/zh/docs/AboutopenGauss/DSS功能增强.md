@@ -35,3 +35,13 @@
 ## 依赖关系<a name="section8406643144716"></a>
 
 本特性依赖资源池化架构。
+## 基本原理<a name="section8406643144716"></a>
+- DSS线程池利用epoll实现服务端和客户端的异步I/O，从而提高DSS并发消息处理能力。
+- DSS黑匣子日志能力，基于信号量触发，根据不同信号量决定进程信息收集场景，从而提高DSS问题定位能力。
+## 使用指导<a name="section8406643144716"></a>
+- DSS线程池化中的消息处理能力可通过调整DSS Server参数IO_THREADS和WORK_THREADS来控制。
+- DSS黑匣子日志默认开启，如需关闭，需配置 DSS Server参数_LOG_LEVEL=0，重启 DSS Server后生效。
+配置参数细则参见[dssserver](../ToolandCommandReference/dssserver.md)
+## 使用场景<a name="section8406643144716"></a>
+- DSS线程池化主要运用于DSS客户端和服务端的消息通讯场景。
+- DSS黑匣子日志主要运用于DSS Server进程异常退出的问题定位场景。
