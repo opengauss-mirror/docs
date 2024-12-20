@@ -1,10 +1,10 @@
-# ALTER SYSTEM SET`<a name="ZH-CN_TOPIC_0289900623"></a>`
+# ALTER SYSTEM SET
 
-## 功能描述`<a name="zh-cn_topic_0283137187_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s40bbf40e12d1487aaca3ddd1b9bb55e0"></a>`
+## 功能描述
 
 ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参数。此命令会将参数写入配置文件，不同级别生效方式有所不同。
 
-## 注意事项`<a name="zh-cn_topic_0283137187_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s16279beb536e4281b8403ab11195cb3a"></a>`
+## 注意事项
 
 - 此命令仅限初始用户和拥有sysadmin权限的用户才可使用。
 - 不同级别GUC参数生效时间如下：
@@ -32,13 +32,13 @@ ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参�
   modify_initial_password, password_encryption_type, password_policy
   ```
 
-## 语法格式`<a name="zh-cn_topic_0283137187_zh-cn_topic_0237122075_zh-cn_topic_0059778605_s3b7743fa7cab42718575f7194d1112ba"></a>`
+## 语法格式
 
 ```
 ALTER SYSTEM SET parameter TO value;
 ```
 
-## 参数说明`<a name="zh-cn_topic_0283137187_zh-cn_topic_0237122075_zh-cn_topic_0059778605_sa834b01395fd4366a5dce7a64ad867b6"></a>`
+## 参数说明
 
 - **parameter**
 
@@ -47,7 +47,7 @@ ALTER SYSTEM SET parameter TO value;
 
   GUC参数值。
 
-## 示例`<a name="zh-cn_topic_0283137187_section49061716194314"></a>`
+## 示例
 
 ```
 --设置SIGHUP级别参数audit_enabled。
