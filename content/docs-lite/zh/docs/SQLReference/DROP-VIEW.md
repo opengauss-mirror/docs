@@ -28,7 +28,7 @@ DROP VIEW [ IF EXISTS ] view_name [, ...] [ CASCADE | RESTRICT ];
 
 -   **CASCADE | RESTRICT**
     -   CASCADE：级联删除依赖此视图的对象（比如其他视图）。
-    -   RESTRICT：如果有依赖对象存在，则拒绝删除此视图。此选项为缺省值。
+    -   RESTRICT（缺省项）：如果仅存在视图依赖对象，则允许删除此视图，否则拒绝删除。查询依赖视图时会提示相应依赖错误；新建视图如果名称和列名与视图依赖相匹配，在查询视图时会重新建立与新视图的依赖，恢复视图。
 
 
 ## 示例<a name="zh-cn_topic_0283137706_zh-cn_topic_0237122159_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
