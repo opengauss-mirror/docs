@@ -1,12 +1,12 @@
 # Obtaining Help Information <a name="EN-US_TOPIC_0000001311256720"></a>
 
-You can run the **--help** command to obtain the help information. For example:
+You can run the **--help** command to obtain help information. For example:
 
 ```
 gs_dbmind component anomaly_detection --help
 ```
 
-The following information is displayed:
+The following information will be displayed:
 ```
 usage: anomaly_analysis.py [-h] -c CONF -m METRIC -s START_TIME -e END_TIME -H
                            HOST [--csv-dump-path CSV_DUMP_PATH]

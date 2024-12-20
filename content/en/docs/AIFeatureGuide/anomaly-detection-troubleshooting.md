@@ -1,4 +1,4 @@
 # Troubleshooting<a name="EN-US_TOPIC_0000001364496017"></a>
 
--   Overview scenario failure: Check whether the configuration file path is correct and whether the configuration file information is complete. Check whether the metric name is correct, whether the host IP address is correct, whether the anomaly detection type is correct, and whether the metric data exists in the start time and end time.
--   Visualization scenario failure: Check whether the configuration file path is correct and whether the configuration file information is complete. Check whether the metric name is correct, whether the host IP address is correct, whether the anomaly detection type is correct, and whether the metric data exists in the start time and end time.
+-   Overview scenario failure: Ensure the configuration file path is correct and the configuration information is complete. Verify the metric name, host IP address, and anomaly detection type are accurate, and check if the metric data exists within the specified start and end times.
+-   Visualization scenario failure: Ensure the configuration file path is correct and the configuration information is complete. Verify the metric name, host IP address, and anomaly detection type are accurate, and check if the metric data exists within the specified start and end times.
