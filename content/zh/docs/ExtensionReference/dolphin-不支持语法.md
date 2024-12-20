@@ -165,3 +165,11 @@ select 10！;
 -- 可用的相关语法
 select factorial(10);
 ```
+
+## abstime''语法
+openGauss可以使用abstime''做类型转换。后续abstime''做类型转换功能将不可用，使用::或者cast替换。
+```sql
+-- 可用的相关语法
+select cast('2000-1-1 1:1:1' as abstime);
+select '2000-1-1 1:1:1'::abstime;
+```
