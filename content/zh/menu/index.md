@@ -279,7 +279,6 @@ headless: true
 		-   [DB4AI]({{< relref "./docs/BriefTutorial/DB4AI.md" >}})
 		-   [列存储]({{< relref "./docs/BriefTutorial/列存储.md" >}})
 		-   [LLVM]({{< relref "./docs/BriefTutorial/LLVM.md" >}})
-		-   [Ustore]({{< relref "./docs/BriefTutorial/Ustore.md" >}})
 		-   [MOT]({{< relref "./docs/BriefTutorial/MOT.md" >}})
 		-   [全密态数据库]({{< relref "./docs/BriefTutorial/全密态数据库.md" >}})
 		-   [DCF]({{< relref "./docs/BriefTutorial/DCF.md" >}})
