@@ -25,7 +25,7 @@ OPTION取值如下所示
 
 -   -I, --instance-id=INSTANCE_ID
 
-    资源池化参数，打印指定实例的control文件信息，该参数不指定时打印全部实例的control文件和reformer页信息。当INSTANCE_ID指定为最大INSTANCE_ID+1时，只打印reformer页信息，当前最大INSTANCE_ID为63。
+    资源池化参数，打印指定实例的control文件信息，该参数不指定时打印全部实例的control文件和reformer页信息。当INSTANCE_ID指定为最大INSTANCE_ID+1时，只打印reformer页信息，当前最大INSTANCE_ID为63。在日志合一版本下（openGauss 7.0.0及之后的版本），资源池化集群共享一份control文件（0号节点位置），因此仅0和64为有效值。
 
 -   --enable-dss
 

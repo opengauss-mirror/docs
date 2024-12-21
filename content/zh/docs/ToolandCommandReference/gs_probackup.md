@@ -294,7 +294,7 @@ gs\_probackup工具的主要功能如下：
 
 - --instance-id
 
-  数据库节点id号，因为资源池化模式只支持主机备份，因此该参数一般为0。
+  数据库节点id号，因为资源池化模式只支持主机备份，因此该参数一般为0。在日志合一版本下（openGauss 7.0.0及之后的版本），该参数废弃。
 
 - --vgname
 
@@ -770,9 +770,9 @@ gs\_probackup工具的主要功能如下：
 2. 添加一个新的备份实例。
 
    ```
-   gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name --enable-dss --instance-id node_id --vgname="vgdata,vglog" --socketpath=socket_domain
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name --enable-dss --vgname="vgdata,vglog" --socketpath=socket_domain
    ```
-   **说明：** pgdata-path为数据库在文件系统中的数据目录，instance_name为用户指定的备份实例名，--enable-dss参数代表所添加的备份实例对应的数据库为资源池化模式，node_id为所备份数据库集群的主机节点id，vgdata和vglog分别代表资源池化的数据目录和主机在磁阵中的日志目录(例如--vgname="+data,+p0",其中+data为资源池化的数据目录，+p0为主机在磁阵中的日志目录)，socket_domain为dss实例进程使用的socket文件路径，仅支持绝对路径。
+   **说明：** pgdata-path为数据库在文件系统中的数据目录，instance_name为用户指定的备份实例名，--enable-dss参数代表所添加的备份实例对应的数据库为资源池化模式，vgdata和vglog分别代表资源池化的数据目录和日志目录(例如--vgname="+data,+log"，其中+data为资源池化的数据目录，+log为资源池化的日志目录)，socket_domain为dss实例进程使用的socket文件路径，仅支持绝对路径。
 
 3. 创建指定实例的备份，对主机进行备份。在进行增量备份之前，必须至少创建一次全量备份。
 
@@ -794,13 +794,11 @@ gs\_probackup工具的主要功能如下：
 
    示例：
    假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
-   data:/dev/user_dss_shared
-   p0:/dev/user_dss_private_0
-   p2:/dev/user_dss_private_1
+   data:/dev/user_dss_data
+   log:/dev/user_dss_log
    对应清空磁阵操作如下：
-   dd if=/dev/zero of=/dev/user_dss_shared bs=2048 count=1000 > /dev/null 2>&1
-   dd if=/dev/zero of=/dev/user_dss_private_0 bs=2048 count=1000 > /dev/null 2>&1
-   dd if=/dev/zero of=/dev/user_dss_private_1 bs=2048 count=1000 > /dev/null 2>&1
+   dd if=/dev/zero of=/dev/user_dss_data bs=2048 count=1000 > /dev/null 2>&1
+   dd if=/dev/zero of=/dev/user_dss_log bs=2048 count=1000 > /dev/null 2>&1
    ```
    **说明：** of后面的参数可以进入$DSS_HOME的cfg目录，在dss_vg_conf.ini文件中查看每个卷对应磁盘，这里需要清空该文件中的所有主备对应的数据和日志磁盘。
 
@@ -811,13 +809,11 @@ gs\_probackup工具的主要功能如下：
 
    示例：
    假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
-   data:/dev/user_dss_shared
-   p0:/dev/user_dss_private_0
-   p2:/dev/user_dss_private_1
+   data:/dev/user_dss_data
+   log:/dev/user_dss_log
    对应建卷操作如下：
-   dsscmd cv -g data -v /dev/user_dss_shared -D $DSS_HOME
-   dsscmd cv -g p0 -v /dev/user_dss_private_0 -D $DSS_HOME
-   dsscmd cv -g p2 -v /dev/user_dss_private_1 -D $DSS_HOME
+   dsscmd cv -g data -v /dev/user_dss_data -D $DSS_HOME
+   dsscmd cv -g log -v /dev/user_dss_log -D $DSS_HOME
    ```
    **说明：** -v后面的参数是每个卷对应磁盘，在dss_vg_conf.ini文件中查看。
 
@@ -845,32 +841,7 @@ gs\_probackup工具的主要功能如下：
 
 10. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
 
-11. 将备机的dn目录进行拷贝，在步骤14会用到。
-
-12. 清空备机的dn目录，启动dssserver。
-
-    ```
-    rm -rf standby_dir/*
-    dssserver -M -D $DSS_HOME &
-    ```
-
-13. 在备机执行初始化操作。
-    
-    ```
-    gs_initdb --locale=LOCALE -D pgdata-path --nodename=NODENAME -C DIR -n --vgname="vgdata,vglog" --enable-dss --dms_url="node0_id:ip0:dms0_port,..." -I node_id --socketpath=socket_domain
-    ```
-    **说明：** 可以在备机的om日志目录下执行grep gs_initdb *来查找该命令的历史执行然后直接复制,无需用户自己去指定对应参数。
-
-14. 用步骤11中拷贝的dn目录覆盖初始化完毕后备机生成的dn目录。
-
-15. 查看是否生成pg_xlogn与pg_doublewriten(n为节点id)，关闭dssserver进程。
-
-    ```
-    dsscmd ls -p +data
-    kill -9 xxx(dssserver的pid)  或  dsscmd stopdss
-    ```
-
-16. 在主机启动集群。
+11. 启动资源池化集群。
 
     ```
     cm_ctl start
