@@ -504,41 +504,41 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   创建文件夹pg\_xlog0 ，UDS指定dss进程的socket文件。
 
     ```
-    dsscmd mkdir -p +log -d pg_xlog0 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd mkdir -p +log -d pg_xlog -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 
 -   文件复制，将data中的文件复制到log中。
 
     ```
-    dsscmd cp -s +data/pg_xlog0/000000010000000000000001 -d +log/pg_xlog0/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd cp -s +data/pg_xlog/000000010000000000000001 -d +log/pg_xlog/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 
 -   文件删除，删除data中文件。
 
     ```
-    dsscmd rm -p +data/pg_xlog0/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd rm -p +data/pg_xlog/000000010000000000000001 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 
 -   删除data中文件夹pg\_xlog0/archive\_status（文件夹为空，若文件夹内有文件需要级联删除，需要加-r）。
 
     ```
-    dsscmd rmdir -p +data/pg_xlog0/archive_status -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd rmdir -p +data/pg_xlog/archive_status -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 -   创建软链接。
 
     ```
-    dsscmd ln -s +log/pg_xlog0 -t +data/pg_xlog0 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd ln -s +log/pg_xlog -t +data/pg_xlog -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 
 -   查看data中pg\_xlog0目录下的文件信息。
 
     ```
-    dsscmd ls -p +data/pg_xlog0 -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
+    dsscmd ls -p +data/pg_xlog -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
     ```
 
 -   显示dss节点的auid。
