@@ -67,7 +67,7 @@ PG\_OBJECT系统表存储限定类型对象（普通表，索引，序列，视�
 </td>
 <td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p116141410111"><a name="p116141410111"></a><a name="p116141410111"></a>bool</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p161514101013"><a name="p161514101013"></a><a name="p161514101013"></a>表示当前对象是否有效，引起对象失效的原因可能有存储过程或视图依赖的引用对象被修改或删除。</p>
+<td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p161514101013"><a name="p161514101013"></a><a name="p161514101013"></a>表示当前对象是否有效，引起对象失效的原因可能有存储过程、兼容Oracle风格的函数、包或视图依赖的引用对象被修改或删除。</p>
 </td>
 </tr>
 <tr id="row35161421018"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="p1621411019"><a name="p1621411019"></a><a name="p1621411019"></a>object_options</p>
