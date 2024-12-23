@@ -27,7 +27,8 @@ A stored procedure is a set of SQL statements that can implement a specific func
 -   Delete a stored procedure.
 
     ```
-    DROP PROCEDURE procedure_name ;
+    DROP PROCEDURE [ IF EXISTS ] procedure_name 
+    [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
     ```
 
 

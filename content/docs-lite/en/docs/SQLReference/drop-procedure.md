@@ -11,7 +11,8 @@ None
 ## Syntax<a name="en-us_topic_0283137697_en-us_topic_0237122145_en-us_topic_0059778377_s7fd54cba57c541c5a49626ef477adc4a"></a>
 
 ```
-DROP PROCEDURE [ IF EXISTS  ] procedure_name ;
+DROP PROCEDURE [ IF EXISTS ] procedure_name 
+[ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137697_en-us_topic_0237122145_en-us_topic_0059778377_s080d001d1a1d451cb6e4965bea42c9e9"></a>
