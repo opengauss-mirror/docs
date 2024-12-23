@@ -80,6 +80,12 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
     gs_om -t generate_xml [--add-hostname=hostname1,hostname2] [--add-hostip=hostip1,hostip2]
     ```
 
+-   查询历史升级记录
+
+    ```
+    gs_om -t query_upgrade_records
+    ```
+
 -   显示帮助信息
 
     ```
@@ -628,5 +634,31 @@ gs\_om参数可以分为如下几类：
     gs_om -t generate_xml --add-hostname=open1 --add-hostip=192.168.0.11
     Start generate xml.
     Successfully generated xml. the xml is /home/xxx/xml_output_20240221103102.xml
+    ```
+
+-   查询历史升级记录
+  
+    ```
+    gs_om -t query_upgrade_records
+    Start generate xml.
+    Record[1]
+    Action: auto-upgrade
+    status: begin
+    time: 2024-12-23 19:34:32
+    oldVersionInfo:
+    newVersionInfo:
+    oldPkgSha256:
+    newPkgSha256:
+    details:
+
+    Record[2]
+    Action: large-binary-upgrade
+    status: success
+    time: 2024-12-23 19:37:51
+    oldVersionInfo: 6.0.0 92.954 aee4abd5
+    newVersionInfo: 7.0.0-RC1 93.026 7ef91864
+    oldPkgSha256: c8cd8f90955c22a932e5f66375572cc17e60c49b0ac5afdf03031c1607aaf5a2
+    newPkgSha256: 189fd3f0581f7231f78384d171a399f590fa533f77b66b76a82e911f7e2d0b3d
+    details: Successfully upgrade all nodes.
     ```
 
