@@ -367,7 +367,7 @@
 
 -   char(any)
 
-    描述：根据ASCII码对多个数字转换为多个字符。
+    描述：根据ASCII码对多个数字转换为多个字符，结果受到[GUC参数](/content/docs-lite/zh/docs/DatabaseReference/语句行为.md)bytea_output影响。
 
     返回值类型：text
 
@@ -376,6 +376,36 @@
     ```
     b_compatibility_database=# select char(77,77.3,'77.3','78.8',78.8);
     char
+    -------
+    \x4d4d4d4e4f
+    (1 row)
+    b_compatibility_database=# set bytea_output = escape;
+    SET
+    b_compatibility_database=# select char(77,77.3,'77.3','78.8',78.8);
+    char
+    -------
+    MMMNO
+    (1 row)
+    ```
+
+-   chara(any)
+
+    描述：根据ASCII码对多个数字转换为多个字符，结果同char(any)函数。
+
+    返回值类型：text
+
+    示例：
+
+    ```
+    b_compatibility_database=# select chara(77,77.3,'77.3','78.8',78.8);
+    chara
+    -------
+    \x4d4d4d4e4f
+    (1 row)
+    b_compatibility_database=# set bytea_output = escape;
+    SET
+    b_compatibility_database=# select chara(77,77.3,'77.3','78.8',78.8);
+    chara
     -------
     MMMNO
     (1 row)
