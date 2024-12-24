@@ -23,6 +23,7 @@
 -   sql_mode_full_group：
     - 出现在select列表中的列（不使用聚合函数），是否一定要出现在group by子句中。当处在sql_mode_full_group模式（默认模式）下，如果select列表中的列没有使用聚合函数，也没有出现在group by子句，那么会报错，如果不在此模式下，则会执行成功，并在所有符合条件的元组中选取第一个元组。
     - 出现在order by中的列，是否一定要出现在distinct中（注意是distinct，不是distinct on）。当处在sql_mode_full_group模式（默认模式）下，不允许没有出现在distinct中的列出现在order by子句中，否则允许。
+    
 -   pipes_as_concat：控制 || 当成连接符还是或操作符
 
 -   ansi_quotes：主要是针对出现在各种需要使用双引号表示字符串值的地方。当ansi_quotes打开，就表示此时的双引号中的内容要作为对象引用看待；当ansi_quotes关闭时，表示双引号中的内容要作为字符串的值看待。
@@ -73,9 +74,6 @@
 
 - escape_quotes：是否将\\"当成“看待，此参数只在B兼容性库中生效，如下所示：
 
-- no_auto_value_on_zero: 影响AUTO_INCREMENT列的处理。通常情况下，您可以通过向列中插入NULL或0来生成列的下一个序列编号。NO_AUTO_VALUE_ON_ZERO抑制了对0的这种行为，因此只有NULL才能生成下一个序列编号。
-
-
   ```
   openGauss=# create table test1(c1 text);
   CREATE TABLE
@@ -93,6 +91,41 @@
    ab"c
   (1 row)
   ```
+
+- no_auto_value_on_zero: 影响AUTO_INCREMENT列的处理。通常情况下，您可以通过向列中插入NULL或0来生成列的下一个序列编号。NO_AUTO_VALUE_ON_ZERO抑制了对0的这种行为，因此只有NULL才能生成下一个序列编号。
+
+- disable_escape_bytea：是否一直使用对16进制进行解释，入股此参数开启，等同与standard_conforming_strings对0x开头的16进制不起效，作用如下所示：
+
+  ```
+  openGauss=# create table blob_table(c1 blob);
+  CREATE TABLE
+  openGauss=#
+  openGauss=# set standard_conforming_strings = off;
+  SET
+  -- 关闭此开关的效果（默认）
+  openGauss=# set dolphin.sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero';
+  SET
+  openGauss=#
+  openGauss=# insert into blob_table values ('\xE78E8BE6ADA3E58583E5A4A7E5B885E6AF94');
+  WARNING:  nonstandard use of escape in a string literal
+  LINE 1: insert into blob_table values ('\xE78E8BE6ADA3E58583E5A4A7E5...
+                                         ^
+  HINT:  Use the escape string syntax for escapes, e.g., E'\r\n'.
+  ERROR:  invalid byte sequence for encoding "UTF8": 0xe7 0x38 0x45
+  --打开此开关的效果
+  openGauss=# set dolphin.sql_mode = 'sql_mode_strict,sql_mode_full_group,pipes_as_concat,ansi_quotes,no_zero_date,pad_char_to_full_length,auto_recompile_function,error_for_division_by_zero,disable_escape_bytea';
+  SET
+  openGauss=# insert into blob_table values ('\xE78E8BE6ADA3E58583E5A4A7E5B885E6AF94');
+  INSERT 0 1
+  openGauss=#
+  openGauss=# select * from blob_table;
+                     c1
+  ----------------------------------------
+   \xe78e8be6ada3e58583e5a4a7e5b885e6af94
+  (1 row)
+  ```
+
+  
 
 该参数属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
 
