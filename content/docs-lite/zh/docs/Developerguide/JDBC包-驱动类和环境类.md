@@ -4,7 +4,8 @@
 
 在linux服务器端源代码目录下执行build.sh，获得驱动jar包postgresql.jar，包位置在源代码目录下。从发布包中获取, 包名为openGauss-x.x.x-操作系统版本号-64bit-Jdbc.tar.gz。
 
-驱动包与PostgreSQL保持兼容，其中类名、类结构与PostgreSQL驱动完全一致，曾经运行于PostgreSQL的应用程序可以直接移植到当前系统使用。
+- postgresql.jar：主类名为“org.postgresql.Driver”，数据库连接的url前缀为“jdbc:postgresql"，该驱动包与PostgreSQL保持兼容，其中类名、类结构与 PostgreSQL 驱动完全一致，曾经运行于 PostgreSQL 的应用程序可以直接移植到当前系统使用。
+- opengauss-jdbc-x.x.x.jar：主类名为“org.opengauss.Driver”，数据库连接的url前缀为“jdbc:opengauss“，当同一JVM进程内需要同时访问 PostgreSQL 及 openGauss 时，使用 opengauss-jdbc-x.x.x.jar 可以避免类名冲突。
 
 ## 驱动类<a name="zh-cn_topic_0283136979_zh-cn_topic_0237120378_zh-cn_topic_0213179123_zh-cn_topic_0189249669_zh-cn_topic_0059778950_s103697559c8d4cb68f396e18e3ae65a9"></a>
 
