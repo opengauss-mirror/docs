@@ -6,10 +6,7 @@
 
 ## 特性简介<a name="section740615433477"></a>
 
-全局系统缓存（Global SysCache）是系统表数据的全局缓存和本地缓存。原理如[图1](#fig15658164619166)所示。
-
-**图 1**  Global SysCache原理图<a name="fig15658164619166"></a>  
-![](figures/Global-SysCache-Schemati.png "Global-SysCache原理图")
+在多线程环境下，将SysCache从Session迁移到Thread，将SysCache与Session解耦，降低内存占用，并同时创建与系统提交数据一致的全局缓存来加速查询。
 
 ## 客户价值<a name="section13406743164715"></a>
 
@@ -35,3 +32,17 @@
 
 该特性降内存能力依赖于线程池特性。
 
+## 基本原理<a name="section8406643144717"></a>
+
+全局系统缓存（Global SysCache）是系统表数据的全局缓存和本地缓存。原理如[图1](#fig15658164619166)所示。
+
+**图 1**  Global SysCache原理图<a name="fig15658164619166"></a>  
+![](figures/Global-SysCache-Schemati.png "Global-SysCache原理图")
+
+## 使用指导<a name="section8406643144718"></a>
+
+参考相关GUC参数说明：[Global-SysCache参数](../DatabaseReference/Global-SysCache参数.md)
+
+## 使用场景<a name="section8406643144719"></a>
+
+在高并发场景下，一个节点存在大量会话时，使用该特性，可显著提升数据库的高并发扩展能力。
