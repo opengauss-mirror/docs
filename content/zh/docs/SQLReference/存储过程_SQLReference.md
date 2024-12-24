@@ -31,7 +31,8 @@
 - 删除存储过程
 
   ```
-  DROP PROCEDURE procedure_name ;
+  DROP PROCEDURE [ IF EXISTS ] procedure_name 
+  [ ( [ {[ argname ] [ argmode ] argtype} [, ...] ] ) [ CASCADE | RESTRICT ] ];
   ```
 
 
