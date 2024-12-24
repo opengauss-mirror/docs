@@ -397,7 +397,7 @@ headless: true
             -   [MOT恢复概念]({{< relref "./docs/DatabaseAdministrationGuide/MOT恢复概念.md" >}})
             -   [MOT查询原生编译（JIT）]({{< relref "./docs/DatabaseAdministrationGuide/MOT查询原生编译_JIT.md" >}})
             -   [对比：磁盘与MOT]({{< relref "./docs/DatabaseAdministrationGuide/对比-磁盘与MOT.md" >}})
- 				
+
     -   [管理数据库安全]({{< relref "./docs/DatabaseAdministrationGuide/管理数据库安全.md" >}})
         -   [客户端接入认证]({{< relref "./docs/DatabaseAdministrationGuide/客户端接入认证.md" >}})
             -   [配置客户端接入认证]({{< relref "./docs/DatabaseAdministrationGuide/配置客户端接入认证.md" >}})
@@ -819,7 +819,7 @@ headless: true
 		-   [gms_inaddr安装]({{< relref "./docs/ExtensionReference/gms_inaddr安装.md" >}})
 		-   [gms_inaddr使用]({{< relref "./docs/ExtensionReference/gms_inaddr使用.md" >}})	
 	-   [gms_utility Extension]({{< relref "./docs/ExtensionReference/gms_utility-Extension.md" >}})
-	    -   [gms_utility概述]({{< relref "./docs/ExtensionReference/gms_utility安装.md" >}})
+	    -   [gms_utility概述]({{< relref "./docs/ExtensionReference/gms_utility概述.md" >}})
 	    -   [gms_utility限制]({{< relref "./docs/ExtensionReference/gms_utility限制.md" >}})
 	    -   [gms_utility安装]({{< relref "./docs/ExtensionReference/gms_utility安装.md" >}})
 	    -   [gms_utility使用]({{< relref "./docs/ExtensionReference/gms_utility使用.md" >}})

@@ -19,8 +19,13 @@
   - `estimate_percent`：要估计的百分比。如果指定了`estimate_rows`，则忽略此参数，有效范围在0~100。
   - `method_opt`：下列格式的方法选项：
     - `[FOR TABLE]`
-    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(`SIZE n`目前只做语法支持)
+    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
     - `[FOR ALL INDEXES]`
+  
+  **使用说明**：
+  
+  - 参数`estimate_rows`与参数`estimate_percent`的值仅在参数`method=ESTIMATE`时做校验；
+  - 参数`method=DELETE`时，不能设置参数`method_opt`的值。
 
 
 
@@ -37,8 +42,13 @@
   - `estimate_percent`：要估计的百分比。如果指定了`estimate_rows`，则忽略此参数，有效范围在0~100。
   - `method_opt`：下列格式的方法选项：
     - `[FOR TABLE]`
-    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(`SIZE n`目前只做语法支持)
+    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
     - `[FOR ALL INDEXES]`
+  
+  **使用说明**：
+  
+  - 参数`estimate_rows`与参数`estimate_percent`的值仅在参数`method=ESTIMATE`时做校验；
+  - 参数`method=DELETE`时，不能设置参数`method_opt`的值。
 
 
 
@@ -248,6 +258,7 @@
   - `part1_type`：part1的类型
     - 1：index
     - 2：table
+    - 4：view
     - 5：synonym
     - 6：sequence
     - 7：procedure(top level)
@@ -260,7 +271,7 @@
   **使用说明**：
   
   - 查找schema为当前登录用户同名schema或者public下。
-  - 解析表实际可以在`context=0、2、7`时查询到信息；解析sequence实际可以在`context=2、7`时查询到信息。
+  - 解析表与视图时实际可以在`context=0、2、7`时查询到信息；解析sequence实际可以在`context=2、7`时查询到信息。
 
 
 
