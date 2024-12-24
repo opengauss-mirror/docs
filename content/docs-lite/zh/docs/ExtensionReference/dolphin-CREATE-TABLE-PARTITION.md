@@ -342,7 +342,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   >![](public_sys-resources/icon-notice.png) **须知：** 
   >
   >-   每个分区都需要指定一个上边界。
-  >-   分区上边界的类型应当和分区键的类型一致。
+  >-   在加载dolphin插件的B兼容库下，分区键为有符号整型时，分区上边界的类型为int8；分区键为无符号整型时，分区上边界的类型为uint8，因此允许设置上边界的值超过分区键的最大值。
   >-   分区列表是按照分区上边界升序排列的，值较小的分区位于值较大的分区之前。
 
 - **PARTITION partition\_name \{START \(partition\_value\) END \(partition\_value\) EVERY \(interval\_value\)\}** |  **\{START \(partition\_value\) END \(partition\_value|MAXVALUE\) | MAXVALUE**\} | \{START\(partition\_value\)**\} | **\{END \(partition\_value | MAXVALUE\) | MAXVALUE**\}
