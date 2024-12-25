@@ -6,9 +6,7 @@
 
 -   **[Column Store](column-store.md)**  
 
--   **[LLVM](llvm.md)**  
-
--   **[Ustore](ustore.md)**  
+-   **[LLVM](llvm.md)**
 
 -   **[MOT](mot.md)**  
 
