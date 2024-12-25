@@ -139,21 +139,21 @@ PG\_JOB系统表存储用户创建的定时任务的任务详细信息，定时�
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p1231010294414"><a name="p1231010294414"></a><a name="p1231010294414"></a>text</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p183108217440"><a name="p183108217440"></a><a name="p183108217440"></a>DBE_SCHEDULER定时任务专用，定时任务名称。</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p183108217440"><a name="p183108217440"></a><a name="p183108217440"></a>定时任务名称。</p>
 </td>
 </tr>
 <tr id="row1982366154413"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p1182317610440"><a name="p1182317610440"></a><a name="p1182317610440"></a>end_date</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p18823156194417"><a name="p18823156194417"></a><a name="p18823156194417"></a>timestamp without time zone</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p7823116184412"><a name="p7823116184412"></a><a name="p7823116184412"></a>DBE_SCHEDULER定时任务专用，定时任务失效时间，时间精确到毫秒。</p>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><p id="p7823116184412"><a name="p7823116184412"></a><a name="p7823116184412"></a>定时任务失效时间，时间精确到毫秒。</p>
 </td>
 </tr>
 <tr id="row127764141442"><td class="cellrowborder" valign="top" width="14.7%" headers="mcps1.2.4.1.1 "><p id="p18776201494417"><a name="p18776201494417"></a><a name="p18776201494417"></a>enable</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.599999999999998%" headers="mcps1.2.4.1.2 "><p id="p8776171434414"><a name="p8776171434414"></a><a name="p8776171434414"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><div class="p" id="p15776151412445"><a name="p15776151412445"></a><a name="p15776151412445"></a>DBE_SCHEDULER定时任务专用，定时任务启用状态：<a name="ul2072841518143"></a><a name="ul2072841518143"></a><ul id="ul2072841518143"><li>true：启用</li><li>false：未启用</li></ul>
+<td class="cellrowborder" valign="top" width="64.7%" headers="mcps1.2.4.1.3 "><div class="p" id="p15776151412445"><a name="p15776151412445"></a><a name="p15776151412445"></a>定时任务启用状态：<a name="ul2072841518143"></a><a name="ul2072841518143"></a><ul id="ul2072841518143"><li>true：启用</li><li>false：未启用</li></ul>
 </div>
 </td>
 </tr>
