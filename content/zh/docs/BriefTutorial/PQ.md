@@ -18,12 +18,6 @@ export DATAVEC_HNSWPQ_LIB_PATH=<YOUR_SO_PATH>
 
 - `YOUR_SO_PATH`为libkvecturbo.so所在路径
 
-### 安装OpenMP（可选）
-OpenMP用于构建索引时中子空间聚类中心的Kmeans计算以及查询时与聚类中心计算加速。如果未安装，会大幅度延长检索时间以及索引构建时间。
-
-```
-yum install libomp-devel
-```
 
 ## 环境要求
 PQ特性只支持ARM架构环境
@@ -80,7 +74,7 @@ vector_cosine_ops | 余弦距离
 -   `storage` - 索引存储类型：astore/ustore（默认为astore）
 -   `parallel_workers` - 构建索引并行度 1~32（默认为1并发构建）
 -   `enable_pq` - 开启pq量化压缩（默认off）
--   `pq_m` - 切分的子空间数量 1~65535（默认为8）
+-   `pq_m` - 切分的子空间数量 1~2000（默认为8）
 -   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256）
 
 **示例：** 使用L2距离计算创建HNSWPQ索引并设置`m = 16, ef_construction = 64, pq_m=32`。
