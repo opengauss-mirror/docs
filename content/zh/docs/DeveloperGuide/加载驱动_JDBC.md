@@ -2,7 +2,7 @@
 
 在创建数据库连接之前，需要先加载数据库驱动程序。
 
-针对opengauss提供的两种JDBC jar包加载驱动的方法：
+加载JDBC驱动的方法：
 
 - 使用postgresql.jar包，在JVM启动时参数传递：`java -Djdbc.drivers=org.postgresql.Driver jdbctest`
 - 若使用openGauss-jdbc-x.x.x.jar包，在JVM启动时参数传递：`java -Djdbc.drivers=org.opengauss.Driver jdbctest`
