@@ -14,12 +14,12 @@
 
   **参数说明**：
 
-  - `method`：取值范围为`ESTIMATE`、`COMPUTE`、`DELETE`；若为ESTIMATE，则参数`estimate_rows`或者`estimate_percent`必须为非零。
+  - `method`：取值范围为`ESTIMATE`、`COMPUTE`、`DELETE`；若为ESTIMATE，则参数`estimate_rows`或者`estimate_percent`必须有值。
   - `estimate_rows`：要估计的行数，参数需要大于等于0。
-  - `estimate_percent`：要估计的百分比。如果指定了`estimate_rows`，则忽略此参数，有效范围在0~100。
+  - `estimate_percent`：要估计的百分比，有效范围在0~100。如果指定了`estimate_rows`，则忽略此参数。
   - `method_opt`：下列格式的方法选项：
     - `[FOR TABLE]`
-    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
+    - `[FOR ALL [INDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
     - `[FOR ALL INDEXES]`
   
   **使用说明**：
@@ -37,12 +37,12 @@
 
   - `schema`：指定要进行解析的schema的名称。
 
-  - `method`：取值范围为`ESTIMATE`、`COMPUTE`、`DELETE`；若为ESTIMATE，则参数`estimate_rows`或者`estimate_percent`必须为非零。
+  - `method`：取值范围为`ESTIMATE`、`COMPUTE`、`DELETE`；若为ESTIMATE，则参数`estimate_rows`或者`estimate_percent`必须有值。
   - `estimate_rows`：要估计的行数，参数需要大于等于0。
-  - `estimate_percent`：要估计的百分比。如果指定了`estimate_rows`，则忽略此参数，有效范围在0~100。
+  - `estimate_percent`：要估计的百分比，有效范围在0~100。如果指定了`estimate_rows`，则忽略此参数。
   - `method_opt`：下列格式的方法选项：
     - `[FOR TABLE]`
-    - `[FOR ALL [INMDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
+    - `[FOR ALL [INDEXED] COLUMNS [SIZE n]]`；(目前只做语法支持)
     - `[FOR ALL INDEXES]`
   
   **使用说明**：
@@ -52,7 +52,7 @@
 
 
 
-- CONONICALIZE(name IN VARCHAR2, canon_name OUT VARCHAR2, canon_len IN BINARY_INTEGER);
+- CANONICALIZE(name IN VARCHAR2, canon_name OUT VARCHAR2, canon_len IN BINARY_INTEGER);
 
   **描述**：该存储过程规范化给定的字符串。其处理单个保留字或者关键字（例如'table'），并且去除单个标识符的空格，比如' table '变成TABLE。
 
@@ -370,7 +370,7 @@ openGauss=# call gms_utility.analyze_database('DELETE');
 - ANALYZE_SCHEMA 使用
 
 ```sql
-openGauss=# call gms_utility.analyze_schema('public', COMPUTE');
+openGauss=# call gms_utility.analyze_schema('public', 'COMPUTE');
  analyze_database
 ------------------
 
@@ -392,7 +392,7 @@ openGauss=# call gms_utility.analyze_schema('public', 'DELETE');
 (1 row)
 ```
 
-- CONONICALIZE 使用
+- CANONICALIZE 使用
 
 ```sql
 openGauss=# declare
@@ -510,12 +510,11 @@ openGauss$#     raise info '%', gms_utility.format_call_stack();
 openGauss$# end;
 openGauss$# $$ language plpgsql;
 CREATE FUNCTION
-openGauss=#
+
 openGauss=# select t_inner();
 INFO:  t_inner call stack:
 CONTEXT:  referenced column: t_inner
 INFO:           4    t_inner()
-
 CONTEXT:  referenced column: t_inner
  t_inner
 ---------
@@ -580,6 +579,7 @@ openGauss$#     raise exception 'expected exception';
 openGauss$# end;
 openGauss$# $$ language plpgsql;
 CREATE FUNCTION
+
 openGauss=# create or replace function t_outter(a int, b int)
 openGauss-# returns int as $$
 openGauss$# declare
@@ -675,27 +675,26 @@ openGauss-#     td number;
 openGauss-#     sum bigint := 0;
 openGauss-#     i int := 0;
 openGauss-# begin
-    t1 = gms_utility.get_time();
 openGauss$#     t1 = gms_utility.get_time();
 openGauss$#     for i in 1..1000000 loop
 openGauss$#         sum := sum + i * 2 - i / 2;
 openGauss$#     end loop;
-    raise info 'costtime: %', td;
 openGauss$#     t2 = gms_utility.get_time();
-end;
+openGauss$#
 openGauss$#     td = t2 - t1;
 openGauss$#     raise info 'costtime: %', td;
 openGauss$# end;
 openGauss$# /
-INFO:  costtime: 194
+INFO:  costtime: 188
 ANONYMOUS BLOCK EXECUTE
 ```
 
 - NAME_RESOLVE 使用
 
 ```sql
-openGauss=# drop table public.t_resolve ;
-DROP TABLE
+openGauss=# create table t_resolve (c1 int, c2 text);
+CREATE TABLE
+
 openGauss=# declare
 openGauss-#     name varchar2 := 'public.t_resolve';
 openGauss-#     context number := 0;
@@ -712,6 +711,7 @@ openGauss$# end;
 openGauss$# /
 INFO:  schema = PUBLIC, part1 = T_RESOLVE, part2 = <NULL>, dblink = <NULL>, part1_type = 2, object_number = 254220
 ANONYMOUS BLOCK EXECUTE
+
 openGauss=# declare
 openGauss-#     name varchar2 := 't_resolve';
 openGauss-#     context number := 0;
@@ -722,7 +722,6 @@ openGauss-#     dblink  varchar2;
 openGauss-#     part1_type  number;
 openGauss-#     object_number   number;
 openGauss-# begin
-    gms_utility.NAME_RESOLVE(name, context, schema, part1, part2, dblink, part1_type, object_number);
 openGauss$#     gms_utility.NAME_RESOLVE(name, context, schema, part1, part2, dblink, part1_type, object_number);
 openGauss$#     raise info 'schema = %, part1 = %, part2 = %, dblink = %, part1_type = %, object_number = %', schema, part1, part2, dblink, part1_type, object_number;
 openGauss$# end;
