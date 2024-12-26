@@ -21,6 +21,8 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 -   openGauss 6.0.0 新增支持如下场景的并行：
     -   cmd中声明的NO SCROLL游标和作为并行函数入参的游标表达式支持并行。
     -   存在游标表达式入参的函数，如果创建时指定parallel_enable_clause，作为表函数执行支持并行。具体说明和约束请参见[CREATE-FUNCTION](../SQLReference/CREATE-FUNCTION.md)。
+-   openGauss 7.0.0-RC1 新增支持如下场景的并行：
+    -   Astore批量IUD场景支持并行。
 
 ## 特性约束<a name="section51513617597"></a>
 
