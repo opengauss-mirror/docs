@@ -81,3 +81,5 @@
 -   **[高效数据压缩算法相关参数](高效数据压缩算法相关参数.md)**  
 
 -   **[Global SysCache参数](Global-SysCache参数.md)**  
+
+-   **[DataVec向量引擎参数](DataVec向量引擎参数.md)** 

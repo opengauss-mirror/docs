@@ -77,7 +77,7 @@ openGauss=# SELECT * FROM items ORDER BY val <-> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <#> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 ```
->![](public_sys-resources/icon-note.png) **说明：**
+>![](public_sys-resources/icon-note.gif) **说明：**
 >如果使用当前索引中不存在的距离计算操作符来进行扫描，即使关闭顺序扫描后仍会执行顺序扫描。
 
 
