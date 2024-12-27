@@ -40,8 +40,6 @@
 
 -   **[CREATE TRIGGER](dolphin-CREATE-TRIGGER.md)**
 
--   **[CREATE INDEX](dolphin-CREATE-INDEX.md)**
-
 -   **[DESCRIBE TABLE](dolphin-DESCRIBE-TABLE.md)**
 
 -   **[DROP DATABASE](dolphin-DROP-DATABASE.md)**  
