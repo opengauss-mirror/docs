@@ -316,7 +316,7 @@
 <PARAM name="dataNode1_syncNum" value="0"/>
 <!--数据库节点上自定义设定同步模式的节点方式、数量及顺序,hostname根据主机名自行替换-->
 <PARAM name="syncNode_hostname" value="ANY 1(node1_hostname，node2_hostname)"/>
-<!--floatIp1、floatIp2为各节点或各az对应的VIP地址，用户需要保证VIP地址为可用VIP，即需要可对外提供服务的VIP（跟现有网卡处于同一网段中）dataListenIp1为各节点监听ip，该选项可以不配置，若不配置，则默认使用backIp1s的值，floatIpMap1表示floatIp与dataListenIp的对应关系，其顺序与dataListenIp1的顺序要相互对应/>
+<!--floatIp1、floatIp2为各节点或各az对应的VIP地址，用户需要保证VIP地址为可用VIP，即需要可对外提供服务的VIP（跟现有网卡处于同一网段中）dataListenIp1为各节点监听ip，该选项可以不配置，若不配置，则默认使用backIp1s的值，floatIpMap1表示floatIp与dataListenIp的对应关系，其顺序与dataListenIp1的顺序要相互对应-->
 <PARAM name="floatIpMap1" value="floatIp1,floatIp2,floatIp3"/>
 ```
 
