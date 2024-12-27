@@ -158,7 +158,7 @@ zh_SG.gbk
 <td class="cellrowborder" valign="top" width="36.68%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"><a name="zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"></a><a name="zh-cn_topic_0059778168_a9036f008e6b2417ab4fd693d1afd5281"></a>gs_initdb时通过命令行指定管理员用户的密码，而不是交互式输入。</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.68%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"><a name="zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"></a><a name="zh-cn_topic_0059778168_a166374baf1b9417fa4d889f2b9e7b3ff"></a>设置的密码要符合复杂度要求：</p>
-<a name="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><a name="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><ul id="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"><li>最少包含8个字符；</li><li>不能和用户名及当前密码（ALTER）相同，或和当前密码反序；</li><li>至少包含如下字符中的三类：<a name="ul84322731512"></a><a name="ul84322731512"></a><ul id="ul84322731512"><li>大写字母（A-Z）。</li><li>小写字母（a-z）。</li><li>数字（0-9）。</li><li>特殊字符（限定为~!@#$%^&amp;*()-_=+\|[{}];:,&lt;.&gt;/?）。</li></ul>
+<a name="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><a name="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"></a><ul id="zh-cn_topic_0059778168_u5cf6c2fab0884e6db33705a8b1517dba"><li>最少包含8个字符，不能超过32个字符；</li><li>不能和用户名及当前密码（ALTER）相同，或和当前密码反序；</li><li>至少包含如下字符中的三类：<a name="ul84322731512"></a><a name="ul84322731512"></a><ul id="ul84322731512"><li>大写字母（A-Z）。</li><li>小写字母（a-z）。</li><li>数字（0-9）。</li><li>特殊字符（限定为~!@#$%^&amp;*()-_=+\|[{}];:,&lt;.&gt;/?）。</li></ul>
 </li></ul>
 </td>
 </tr>
