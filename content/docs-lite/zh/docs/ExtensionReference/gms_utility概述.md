@@ -4,7 +4,7 @@ gms_utility是一个基于openGauss的插件，为用户提供了各种实用的
 
 - `ANALYZE_DATABASE`
 - `ANALYZE_SCHEMA`
-- `CONONICALIZE`
+- `CANONICALIZE`
 - `COMMA_TO_TABLE`
 - `COMPILE_SCHEMA`
 - `DB_VERSION`
