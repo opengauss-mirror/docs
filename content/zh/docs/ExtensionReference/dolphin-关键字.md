@@ -271,6 +271,15 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p393316910592"><a name="p393316910592"></a><a name="p393316910592"></a>-</p>
 </td>
 </tr>
+<tr id="row493289135911"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p49331895594"><a name="p49331895594"></a><a name="p49331895594"></a>APPLY</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p6933179155919"><a name="p6933179155919"></a><a name="p6933179155919"></a>非保留</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="p39331194599"><a name="p39331194599"></a><a name="p39331194599"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p393316910592"><a name="p393316910592"></a><a name="p393316910592"></a>-</p>
+</td>
+</tr>
 <tr id="row1133615418114"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p133360411514"><a name="p133360411514"></a><a name="p133360411514"></a>ARCHIVE</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p2336741013"><a name="p2336741013"></a><a name="p2336741013"></a>非保留</p>
@@ -3804,7 +3813,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 
 <tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row42169423"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p42290244"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p42290244"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p42290244"></a>LATERAL</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"></a>-</p>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p14194445"></a>非保留</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p52528682"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p52528682"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p52528682"></a>保留</p>
 </td>
