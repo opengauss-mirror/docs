@@ -9,6 +9,7 @@ JOIN子句用于把来自两个或多个表的行结合起来，基于这些表�
 -   LEFT OUTER JOIN：左外连接
 -   RIGHT OUTER JOIN：右外连接
 -   FULL OUTER JOIN：全外连接
+-   ASOF JOIN：时间连接
 
 以表table1和表table2为例说明不同连接类型，表数据如下：
 
@@ -133,5 +134,54 @@ openGauss=# SELECT * FROM table1 a FULL OUTER JOIN table2 b ON a.name = b.name;
        |      |  3 | Li    | sales
        |      |  1 | Tommy | IT
 (6 rows)
+```
+
+## 时间连接<a name="section8954153161666"></a>
+
+ASOF JOIN 是在列存储中针对时间序列数据而新增的一种连接方式，可以提高数据分析场景中大量时间序列数据的连接性能。
+
+时间连接的特点是对于给定左表中的时间戳，以最接近的时间戳返回右表中的相应记录。
+
+示例：
+
+```
+openGauss=# select * from holdings ;
+   ticker   | pa |         wh          | shares
+------------+----+---------------------+--------
+ APPL       |  1 | 2000-12-31 23:59:30 |   5.16
+ APPL       |  2 | 2001-01-01 00:00:30 |   2.94
+ APPL       |  1 | 2001-01-01 00:01:30 |  24.13
+ MSFT       |  1 | 2000-12-31 23:59:30 |   9.33
+ MSFT       |  2 | 2001-01-01 00:00:30 |  23.45
+ MSFT       |  1 | 2001-01-01 00:01:30 |  10.58
+ DATA       |  1 | 2000-12-31 23:59:30 |   6.65
+ DATA       |  1 | 2001-01-01 00:00:30 |  17.95
+ DATA       |  1 | 2001-01-01 00:01:30 |  18.37
+(9 rows)
+
+openGauss=# select * from prices;
+   ticker   | pa |         wh          | price
+------------+----+---------------------+-------
+ APPL       |  1 | 2001-01-01 00:00:00 |  1.00
+ APPL       |  1 | 2001-01-01 00:01:00 |  2.00
+ APPL       |  1 | 2001-01-01 00:02:00 |  3.00
+ MSFT       |  2 | 2001-01-01 00:00:00 |  1.00
+ MSFT       |  2 | 2001-01-01 00:01:00 |  2.00
+ MSFT       |  2 | 2001-01-01 00:02:00 |  3.00
+ GOOG       |  1 | 2001-01-01 00:00:00 |  1.00
+ GOOG       |  1 | 2001-01-01 00:01:00 |  2.00
+ GOOG       |  1 | 2001-01-01 00:02:00 |  3.00
+(9 rows)
+
+openGauss=# SELECT h.ticker, h.wh, price * shares AS total  FROM holdings h  
+ASOF JOIN prices p ON h.ticker = p.ticker AND h.wh >= p.wh order by h.ticker;
+   ticker   |         wh          |  total
+------------+---------------------+---------
+ APPL       | 2001-01-01 00:00:30 |  2.9400
+ APPL       | 2001-01-01 00:01:30 | 48.2600
+ MSFT       | 2001-01-01 00:00:30 | 23.4500
+ MSFT       | 2001-01-01 00:01:30 | 21.1600
+(4 rows)
+
 ```
 
