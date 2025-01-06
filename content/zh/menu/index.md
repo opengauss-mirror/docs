@@ -747,7 +747,6 @@ headless: true
 			-  [因共享盘权限异常导致连接失败的问题]({{< relref "./docs/DatabaseOMGuide/因共享盘权限异常导致连接失败的问题.md" >}})
 			-  [因数据库套接字文件丢失导致连接失败的问题]({{< relref "./docs/DatabaseOMGuide/因数据库套接字文件丢失导致连接失败的问题.md" >}})
 			-  [因数据库套接字文件异常导致连接失败的问题]({{< relref "./docs/DatabaseOMGuide/因数据库套接字文件异常导致连接失败的问题.md" >}})
-			-  [资源池化暂不支持特性]({{< relref "./docs/DatabaseOMGuide/资源池化暂不支持特性.md" >}})
 			-  [因数据库最大连接数超限导致连接失败的问题]({{< relref "./docs/DatabaseOMGuide/因数据库最大连接数超限导致连接失败的问题.md" >}})
 			-  [因磁阵IO慢导致性能异常的问题]({{< relref "./docs/DatabaseOMGuide/因磁阵IO慢导致性能异常的问题.md" >}})
 			-  [因磁阵hang住导致集群业务卡住的问题]({{< relref "./docs/DatabaseOMGuide/因磁阵hang住导致集群业务卡住的问题.md" >}})
