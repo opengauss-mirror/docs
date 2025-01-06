@@ -46,6 +46,8 @@ ANONYMOUS BLOCK EXECUTE
 openGauss=# DROP Extension gms_inaddr [CASCADE];
 ```
 
+
+
 >![](public_sys-resources/icon-note.png) **说明：** 
 >
 >如果Extension被其它对象依赖，需要加入CASCADE（级联）关键字，删除所有依赖对象。
