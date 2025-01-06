@@ -67,7 +67,7 @@ DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数�
 
 ANN索引页面中在每个Element Tuple尾部附加xmin和xmax字段，从而支持原地更新引擎。这些字段在索引构建和查询过程中起到关键作用，确保数据的可见性和一致性。在实际实现中，插入新数据时系统会记录当前事务ID到xmin字段；在删除数据时系统会更新xmax字段。原地更新引擎采用原位更新的方式极大的节约了空间，将回滚段、数据页面分离存储，具备高效、平稳的IO能力。
 
-**图 2**  ANN原位更新索引页面<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
+**图 2**  ANN原位更新索引页面
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/SupportUstore-datavec.png" height=600px style="width: 900;height:500;">
 </div>
@@ -79,7 +79,7 @@ ANN支持并行构建索引，通过将数据集分成若干个子集分配到�
 - 并行处理：leader线程创建Bgworker，每个Bgworker并行扫描各个数据子集，计算向量之间距离加入候选集。
 - 结果合并：leader线程合并所有线程结果并进行排序，然后持久化到页面上。
 
-**图 3**  ANN并行索引构建<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
+**图 3**  ANN并行索引构建
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/ParallelBuild-datavec.png" height=600px style="width: 750;height: 600;">
 </div>
@@ -203,7 +203,7 @@ openGauss=# SELECT * FROM items ORDER BY val <-> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <#> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 ```
->![](public_sys-resources/icon-note.png) **说明：**
+>![](public_sys-resources/icon-note.gif) **说明：**
 >如果使用当前索引中不存在的距离计算操作符来进行扫描，即使关闭顺序扫描后仍会执行顺序扫描。
 
 
@@ -227,9 +227,9 @@ openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 
 ### DataVec使用场景示例：智能问答系统
 
-**图 6**  高斯小智智能问答系统<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
+**图 6**  高斯小智智能问答系统  
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures//gausscopilot-datavec.png" style>
+    <img src="figures/gausscopilot-datavec.png" style>
 </div>
 
 当前，openGauss社区的文档数量庞大，用户在查找特定知识时常常面临困难。为了解决这一问题，可以借助DataVec搭建高斯小智问答系统，通过高效的数据处理和混合查询能力，精准提取相关信息，大幅提升用户的使用体验。

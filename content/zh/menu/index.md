@@ -285,7 +285,6 @@ headless: true
 		-   [并行查询]({{< relref "./docs/BriefTutorial/并行查询.md" >}})
 		-   [资源池化]({{< relref "./docs/BriefTutorial/资源池化.md" >}})
 		-   [UWAL]({{< relref "./docs/BriefTutorial/UWAL.md" >}})
-		-   [DataVec向量引擎]({{< relref "./docs/BriefTutorial/DataVec向量引擎.md" >}})
         -   [PQ]({{< relref "./docs/BriefTutorial/PQ.md" >}})
 	-   [附录：SQL语法]({{< relref "./docs/BriefTutorial/附录-SQL语法.md" >}})
 -   [应用开发指南]({{< relref "./docs/DeveloperGuide/应用开发指南.md" >}})
