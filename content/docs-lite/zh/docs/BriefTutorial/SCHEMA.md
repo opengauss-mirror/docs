@@ -50,7 +50,7 @@ SCHEMA又称作模式。通过管理SCHEMA，允许多个用户使用同一数�
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
     >模式名不能和当前数据库里其他的模式重名。
-    >模式的名称不可以“pg\_”开头。
+    >模式的名称不可以“pg\_”开头。设置support_extended_features参数为on后，可以“pg\_temp\_”或“pg\_toast\_temp\_”开头，但是不建议用户这样使用，可能导致临时表无法被正常清理。
 
     取值范围：字符串，要符合标识符的命名规范。
 
