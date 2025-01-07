@@ -2110,7 +2110,6 @@ headless: true
 		-   [分隔符]({{< relref "./docs/DatabaseReference/分隔符.md" >}})
 		-   [行列融合参数]({{< relref "./docs/DatabaseReference/行列融合参数.md" >}})
 		-   [DataVec向量引擎参数]({{< relref "./docs/DatabaseReference/DataVec向量引擎参数.md" >}})
-		-   [PQ参数]({{< relref "./docs/DatabaseReference/PQ参数.md" >}})
     -   [系统表和系统视图]({{< relref "./docs/DatabaseReference/系统表和系统视图.md" >}})
         -   [系统表和系统视图概述]({{< relref "./docs/DatabaseReference/系统表和系统视图概述.md" >}})
 		-   [查看系统表]({{< relref "./docs/DatabaseReference/查看系统表.md" >}})
