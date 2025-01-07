@@ -208,6 +208,8 @@ headless: true
 		-   [子查询]({{< relref "./docs/BriefTutorial/子查询.md" >}})
 		-   [权限]({{< relref "./docs/BriefTutorial/权限.md" >}})
 		-   [函数]({{< relref "./docs/BriefTutorial/函数.md" >}})
+    -   [高级特性]({{< relref "./docs/BriefTutorial/高级特性.md" >}})
+		-   [PQ]({{< relref "./docs/BriefTutorial/PQ.md" >}})
 	-   [附录：SQL语法]({{< relref "./docs/BriefTutorial/附录-SQL语法.md" >}})
 	
 -   [应用开发指南]({{< relref "./docs/DeveloperGuide/应用开发指南.md" >}})
@@ -1197,6 +1199,7 @@ headless: true
 		-   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}})
 		-   [向量函数和操作符]({{< relref "./docs/SQLReference/向量函数和操作符.md" >}})
 		-   [向量索引]({{< relref "./docs/SQLReference/向量索引.md" >}})
+		-   [融合查询使用指南]({{< relref "./docs/SQLReference/融合查询使用指南.md" >}})
 	-   [系统操作]({{< relref "./docs/SQLReference/系统操作.md" >}})
 	-   [Schema]({{< relref "./docs/SQLReference/Schema-24.md" >}})
 		-   [Information Schema]({{< relref "./docs/SQLReference/Information-Schema.md" >}})
