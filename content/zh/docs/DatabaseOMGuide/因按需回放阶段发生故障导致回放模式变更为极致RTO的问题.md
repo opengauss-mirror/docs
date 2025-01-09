@@ -15,7 +15,11 @@
 此时如果查询控制文件，可以查询到`Cluster status`状态为`in on-demand build`或者`in on-demand redo`。该信息为上一轮按需回放的残留状态，实际回放状态判断应当以日志中的状态为准，残留信息在本轮故障恢复结束后会刷新为`normal`。
 
 ```shell
-[chendong@openGauss137 dn_6003]$ pg_controldata -I 64 +data
+[chendong@openGauss137 dn_6003]$ pg_controldata +data
+
+pg_control data
+
+...
 
 reformer data (last page id 64)
 
@@ -36,7 +40,11 @@ Cluster run mode:                     primary cluster
 等待本轮回放结束后，控制文件`Cluster status`状态恢复为`normal`。之后如果再发生故障，且恢复节点配置了按需回放，则会选择按需回放进行故障恢复。
 
 ```shell
-[chendong@openGauss137 dn_6003]$ pg_controldata -I 64 +data
+[chendong@openGauss137 dn_6003]$ pg_controldata +data
+
+pg_control data
+
+...
 
 reformer data (last page id 64)
 

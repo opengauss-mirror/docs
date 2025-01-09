@@ -23,10 +23,6 @@ pg_controldata [OPTION]... DATADIR
 
 OPTION取值如下所示
 
--   -I, --instance-id=INSTANCE_ID
-
-    资源池化参数，打印指定实例的control文件信息，该参数不指定时打印全部实例的control文件和reformer页信息。当INSTANCE_ID指定为最大INSTANCE_ID+1时，只打印reformer页信息，当前最大INSTANCE_ID为63。在日志合一版本下（openGauss 7.0.0及之后的版本），资源池化集群共享一份control文件（0号节点位置），因此仅0和64为有效值。
-
 -   --enable-dss
 
     资源池化参数，开启资源池化功能。
@@ -50,17 +46,18 @@ pg_controldata DATADIR
 ```
 **说明：**
 
-在非资源池化模式，OPTION的取值不能是资源池化参数。
+ - 在非资源池化模式，OPTION的取值不能是资源池化参数。
+ - 资源池化control文件信息包括实例的control信息和reform页的control信息，两种control信息都是所有实例共用，执行pg_controldata时一次性打印全部的control信息。
 
 ## 使用举例（资源池化模式）<a name="zh-cn_topic_0237152442_section554725769"></a>
 
 ```
-pg_controldata --enable-dss -I instance_id --socketpath=SOCKETPATH VGDATA
+pg_controldata --enable-dss --socketpath=SOCKETPATH VGDATA
 ```
 
 **资源池化模式使用说明：**
 
-在资源池化模式，-I后面的参数为要查看的控制文件对应节点的节点id，VGDATA为集群的共享数据目录（例如数据目录为+data）。
+在资源池化模式，VGDATA为集群的共享数据目录（例如数据目录为+data）。
 
 当输入包含VGDATA时，会自动开启--enable-dss。
 
