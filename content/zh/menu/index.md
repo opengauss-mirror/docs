@@ -450,7 +450,6 @@ headless: true
 			-   [资源池化开发者环境部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化开发者环境部署.md" >}})
 			-   [资源池化OM安装部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化OM安装部署.md" >}})
 			-   [资源池化POC性能测试指南]({{< relref "./docs/DatabaseAdministrationGuide/资源池化POC性能测试指南.md" >}})
-			-   [资源池化当前架构特性约束]({{< relref "./docs/DatabaseAdministrationGuide/资源池化当前架构特性约束.md" >}})
 			-   [资源池化DORADO双集群部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化DORADO双集群部署.md" >}})
 			-   [资源池化网络双集群部署]({{< relref "./docs/DatabaseAdministrationGuide/资源池化网络双集群部署.md" >}})
 	-   [创建和管理数据库]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理数据库.md" >}})
