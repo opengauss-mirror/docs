@@ -3,8 +3,7 @@
 ## 介绍
 
 本章节主要介绍openGauss数据库DataVec向量引擎PQ（Product Quantization）特性的安装使用步骤，以指导用户顺利完成操作。本特性将DataVec向量引擎和自研PQ算法相结合，以提高向量检索的查询性能。
-
->![](public_sys-resources/icon-note.png) **限制：<br>**
+>![](public_sys-resources/icon-note.gif) **限制：<br>**
 >PQ特性暂时只支持ARM架构环境。<br>
 >PQ特性暂时只支持HNSW索引。<br>
 >PQ特性暂时只支持vector数据类型，在其他向量数据类型构建HNSWPQ索引会导致执行失败。<br>
@@ -37,7 +36,7 @@ PQ特性只支持ARM架构环境以及openEuler22.03操作系统。
 ## 使用PQ
 
 ### HNSWPQ
-``` 
+```
 openGauss=# CREATE INDEX [INDEX_NAME] 
 ON [TABLE_NAME] 
 USING hnsw (COLUMN_NAME [TYPE]_[DISTANCE_FUN]_ops) 
