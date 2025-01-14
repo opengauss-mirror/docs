@@ -169,7 +169,7 @@
 -   分区项partition\_list\_item的语法如下。
 
     ```
-    PARTITION partition_name VALUES (list_values_clause) 
+    PARTITION partition_name VALUES [ IN ] (list_values_clause) 
         [ TABLESPACE tablespacename ]
     ```
 
