@@ -4,7 +4,7 @@
   Version: 2021.09.0
 */
 pre ,code{
-  font-family: 'Helvetica', 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', monospace;
 }
 
 
@@ -21,11 +21,6 @@ code.hljs {
 .hljs {
   color: var(--o-color-text3);
   background: var(--o-color-bg2)
-}
-
-.hljs ::selection,.hljs::selection {
-  background-color: var(--o-color-text4);
-  color: var(--o-color-text4)
 }
 
 .hljs-comment{
