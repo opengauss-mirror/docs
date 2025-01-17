@@ -1,5 +1,14 @@
-// 搜索相关
-$(function ($) {
+$(async function ($) {
+  const { enableOA, reportPV, oaReport, reportPerformance, OpenEventKeys } =
+    await import("./modules/analytics.js");
+  const cookieAgreed = /agreed-cookiepolicy=([0-9]+);?/
+    .exec(document.cookie)?.[1]
+    ?.startsWith("1");
+  if (cookieAgreed) {
+    enableOA();
+    reportPV();
+    reportPerformance();
+  }
   var keyword = "";
   var selectedVersion = location.pathname.split("/")[3];
   const lang = location.href.split("/")[3];
@@ -13,6 +22,9 @@ $(function ($) {
         page: page,
         pageSize: 10,
       };
+      if (cookieAgreed) {
+        oaReport("input", postData, OpenEventKeys.SEARCH);
+      }
       $.ajax({
         type: "POST",
         url: "/api-search/search/sort/docs",
