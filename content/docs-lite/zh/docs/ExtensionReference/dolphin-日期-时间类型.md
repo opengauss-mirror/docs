@@ -43,11 +43,9 @@
   | dolphin.sql_mode=’no_zero_date‘                  | sql_mode=’NO_ZERO_IN_DATE，NO_ZERO_DATE‘                     |
   | dolphin.sql_mode=’‘                              | sql_mode=’NO_ZERO_IN_DATE‘                                   |
 
-  
-
 - 由于 MySQL 原本的年份取值范围在 10000 以内，因此由于 MySQL 原本的年份取值范围在 10000 以内，因此如果想要输入大于等于 10000 年份的日期，请使用 'YYYY-MM-DD' 这种格式，例如 '10100-12-12'
 
-- openGuass关闭dolphin.sql_mode的no_zero_date时允许输入 0000 年，同时在 openGauss 中，认为 0000 年为闰年，可以输入 0000-2-29 (MySQL 不允许)
+- openGuass 允许输入 0000 年。openGauss 认为 0000 年为闰年，可以输入 `0000-2-29`（MySQL 不允许）。在 openGauss 内部实现中，0000 年的年份值是与 0001 BC 相等的，因此这两个年份实际上是等效的。考虑 MySQL 兼容性，它们会被统一输出为 0000 年。
 
 - 对于输入值为非法数据场景，dolphin.b_compatibility_mode开启时，显式转换（如select cast('2022-05-05 20:70' as date)）和function转换（如select date('2022-15-05')）场景下返回NULL。dolphin.b_compatibility_mode关闭时则可能会对非法的时间数据按照正常的数据解释处理（如分秒数据超出范围时按往前进位处理等场景）、强制返回0（如insert ignore等场景）处理或者直接提示错误处理（如格式不对等场景）。
 
