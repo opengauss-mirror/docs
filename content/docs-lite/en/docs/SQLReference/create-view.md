@@ -81,6 +81,23 @@ CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...
 
 ## Automatically Updatable View<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
+Simple views are automatically updatable. When executing UPDATE statements on a view, the view is automatically updatable if it meets the following conditions:
+
+* The view can contain serveral entries in its FROM list, but they must be tables, subqueries or views.
+* The view definition must not contain WITH, DISTINCT, GROUP BY, HAVING, LIMIT, or OFFSET clauses at the top level.
+* The view definition must not contain set operations (UNION, INTERSECT or EXCEPT) at the top level.
+* The view's target list must not contain any aggregates, window functions or set-returning functions.
+* If the targets of the UPDATE statement are columns of a subquery or a subview of the view at the top level, then the subquery or the subview  must also meet the conditions mentioned above.
+
+When executing DELETE statements, aside from conditions mentioned above, the view must also meets the following conditions:
+
+* All subqueries and subviews of the view meets the auto-updatable conditions.
+* No entries in the FROM list should be joined by cross join or full join. Besides, except for the tables joined by left join or right join, at most only one of the other tables can be without a unique key.
+
+When executing INSERT statements or when defining the view with a WITH CHECK OPTION, the view must also meets the following conditions:
+
+* The view must have exactly one entry in its FROM list, which must be a table or another automatically updatable view (a subquery is not allowed here).
+
 Simple views are automatically updatable. The system allows INSERT, UPDATE, and DELETE statements to be executed on these views. A view is automatically updatable if it meets the following conditions:
 
 * The view must have exactly one entry in its FROM list, which must be a table or another automatically updatable view.
@@ -110,6 +127,28 @@ openGauss=# SELECT * FROM myView ;
 
 --Delete the myView view.
 openGauss=# DROP VIEW myView;
+
+-- Create a view with more than one entry in it's FROM list
+openGauss=# CREATE TABLE dept(deptno INT NOT NULL, dname VARCHAR(14), loc VARCHAR(13), CONSTRAINT pk_dept PRIMARY KEY(deptno));
+openGauss=# INSERT INTO dept VALUES (10,'ACCOUNTING','NEW YORK'); 
+openGauss=# CREATE TABLE emp (empno int NOT NULL PRIMARY KEY, ename VARCHAR(10), job VARCHAR(9), deptno int,
+openGauss-# CONSTRAINT fk_deptno FOREIGN KEY(deptno) REFERENCES dept(deptno));
+openGauss=# INSERT INTO emp VALUES (7782,'CLARK','MANAGER',10);
+openGauss=# INSERT INTO emp VALUES (7934,'MILLER','CLERK',10);
+openGauss=# CREATE VIEW multv1 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept, emp 
+openGauss-# WHERE dept.deptno = emp.deptno;
+
+-- Update/Delete from the view with multiple FROM list entries
+openGauss=# UPDATE multv1 SET ENAME='ABCD', JOB='SALESMAN' WHERE EMPNO=7934;
+openGauss=# DELETE FROM multv1 WHERE EMPNO=7934;
+
+-- Failed to update/delete from a view whose target base table is not a table, a view, nor a subquery
+openGauss=# CREATE VIEW multv2 AS SELECT * FROM emp JOIN UPPER('foo') AS f ON true;
+openGauss=# UPDATE multv2 SET f = 'a';
+openGauss=# DELETE FROM multv2;
+
+-- Failed to delete from a view whose base tables are cross/full joined with each other
+openGauss=# CREATE VIEW multv3 AS SELECT emp.empno, emp.ename, emp.job, dept.* FROM dept CROSS JOIN emp;
 ```
 
 ## Helpful Links<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
