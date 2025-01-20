@@ -161,7 +161,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row1789911361061"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p118999361762"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p118999361762"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p118999361762"></a>CheckNTPD（检查NTPD服务）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"></a>检查系统NTPD服务，如果服务开启且各节点时间误差在1分钟以内则检查项通过，否则检查项不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1689993611614"></a>检查系统NTPD服务，如果服务开启且各节点时间误差在5分钟以内则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p38831104484"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p38831104484"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p38831104484"></a>否</p>
 </td>
@@ -285,7 +285,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row15175559913"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p7175551697"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p7175551697"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p7175551697"></a>CheckKernelVer（检查内核版本）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"></a>检查各节点系统内核版本信息，如果版本信息一致则检查项通过，否则报Warning。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p141805515916"></a>检查各节点系统内核版本信息，如果版本信息一致则检查项通过，否则不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16883807487"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16883807487"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p16883807487"></a>否</p>
 </td>
@@ -316,7 +316,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row1034313874413"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p183431687449"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p183431687449"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p183431687449"></a>CheckKeyProAdj（检查关键进程<span id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text11543201019105"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text11543201019105"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text11543201019105"></a>omm</span>_adj的值）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"></a>检查所有关键进程，如果所有关键进程的<span id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"></a>omm</span>_adj值为0，则通过，否则不通过。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1634398174418"></a>检查所有关键进程，如果所有关键进程的<span id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_text133875118104"></a>omm</span>_adj值不小于0，则通过，否则不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1988416094810"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1988416094810"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1988416094810"></a>否</p>
 </td>
@@ -374,7 +374,7 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row17699121094017"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9700121014405"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9700121014405"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p9700121014405"></a>CheckDiskFormat（检查磁盘格式参数）</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"></a>检查磁盘XFS格式信息，如果配置为'rw,noatime,inode64,allocsize=16m'则检查项通过，否则报warning。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1170031014017"></a>检查磁盘XFS格式信息，如果配置为'inode64'则检查项通过，否则报warning；如果节点上无XFS格式硬盘，检查时提示相应信息。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1288460124815"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1288460124815"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1288460124815"></a>否</p>
 </td>
@@ -618,6 +618,13 @@ gs\_check改进增强，统一化当前系统中存在的各种检查工具，�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"></a>检查(max_connections + max_prepared_transactions) * max_locks_per_transaction的值，若该值大于等于1000000则检查项通过，否则检查项不通过。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"></a>是</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row9530101314283"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1853117132281"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1853117132281"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p1853117132281"></a>CheckGUCConsistent(检查GUC参数一致性)</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p8531413132810"></a>检查数据库节点实例GUC参数的值是否一致，一致则检查项通过，否则检查项不通过。</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p18851074816"></a>否</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_row6213122814292"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p172142028102912"><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p172142028102912"></a><a name="zh-cn_topic_0287275940_zh-cn_topic_0237152330_p172142028102912"></a>CheckPMKData(检查PMK异常数据)</p>
