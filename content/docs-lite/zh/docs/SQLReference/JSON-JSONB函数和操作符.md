@@ -1069,6 +1069,87 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
   (1 row)
   ```
   
+  - json_exists\(text, text \[ \{TRUE | FALSE | ERROR\} ON ERROR \]\)
+
+  描述：用于判断一个json数据的特定路径下是否存在值，是则返回真，否则返回假。ON ERROR 语法用于指定$1不是格式化的json数据时json_exists的表现：声明 TRUE ON ERROR 时，这种情况下json_exists返回真；声明 FALSE ON ERROR 时，json_exists返回假；声明 ERROR ON ERROR 时，json_exists抛出错误。未声明 ON ERROR 时，json_exists默认在$1不是格式化的json数据时返回假。
+
+  返回类型：bool
+
+  注意事项：
+
+  - $2必须为符合json路径表达式语法的文本，且不能为空，否则将抛出错误。
+  - 当前json路径表达式语法仅支持通过下标取值和通过键名取值。
+
+  示例：
+
+  ```
+  openGauss=# select json_exists('[{"first":"John"}, {"middle":"Mark"}, {"last":"Smith"}]', '$[0, 1].first');
+  json_exists
+  -------------
+  t
+  (1 row)
+  
+  openGauss=# select json_exists('[{"first":"John"}, {"middle":"Mark"}, {"last":"Smith"}]', '$[3 to 5].*');
+  json_exists
+  -------------
+  f
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[*].first' FALSE ON ERROR);
+  json_exists
+  -------------
+  f
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[0].first' TRUE ON ERROR);
+  json_exists
+  -------------
+  t
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[0].first' ERROR ON ERROR);
+  ERROR:  the input is not a well-formed json data
+  CONTEXT:  referenced column: json_exists
+  ```
+  
+- json_textcontains\(json text, path text, target cstring\)
+
+  描述：用于判断一个json数据的特定路径下是否包含特定值，可同时判断多个值，多个值之间以逗号分隔。多个值之间若至少有一个包含在json数据中则返回真，否则返回假。当$1不是一个格式化的json数据时，函数返回假。
+
+  - json: 用于判断的json数据。
+  - path: json路径表达式。
+  - target: 需要判断是否包含在json数据中的值。
+
+  返回类型：bool
+
+  注意事项：
+
+  - path必须为符合json路径表达式语法的文本，且不能为空，否则将抛出错误。
+  - 当前json路径表达式语法仅支持通过下标取值或通过键名取值。
+  - 匹配的过程大小写不敏感。
+
+  示例：
+
+  ```
+  openGauss=# SELECT JSON_TEXTCONTAINS('{"family" : {"id":12, "ages":[25,23], "address" : {"street" : "300 Oak Street", "apt" : 10}}}', '$.family', 'oak, 10');
+  json_textcontains
+  -------------------
+  t
+  (1 row)
+
+  openGauss=# SELECT JSON_TEXTCONTAINS('{"family" : {"id":12, "ages":[25,23], "address" : {"street" : "300 Oak Street", "apt" : 10}}}', '$.family', '12 25 23 300 OAK');
+  json_textcontains
+  -------------------
+  t
+  (1 row)
+
+  openGauss=# SELECT JSON_TEXTCONTAINS('This is not well-formed JSON data', '$.family', 'data');
+  json_textcontains
+  -------------------
+  f
+  (1 row)
+  ```
+
 - 其他函数
 
   描述：gin索引以及json\\jsonb聚集函数所用到的内部函数，功能不过多赘述。

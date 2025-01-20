@@ -991,6 +991,87 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json-jsonb-t
     (1 row)
     ```
 
+  - json_exists\(text, text \[ \{TRUE | FALSE | ERROR\} ON ERROR \]\)
+
+  Description: Determine whether a JSON value exists under a certain JSON path in a JSON data, returning true if it does, and false otherwise. Specify ON ERORR clause to change json_exists' behaviour when $1 is not a well-formed JSON data text. Under such circumstances, json_exists returns false by default and when FALSE ON ERROR is specified, returns true when TRUE ON ERROR is specified, and report error when ERROR ON ERROR is specified.
+
+  Return type：bool
+
+  Attention：
+
+  - $2 must conform with json path expression's grammar, and it cannot be NULL, otherwise an error will be reported.
+  - Of all json path expression grammars, only extracting json values by array indexes or object field names are supported by now.
+
+  For example:
+
+  ```
+  openGauss=# select json_exists('[{"first":"John"}, {"middle":"Mark"}, {"last":"Smith"}]', '$[0, 1].first');
+  json_exists
+  -------------
+  t
+  (1 row)
+  
+  openGauss=# select json_exists('[{"first":"John"}, {"middle":"Mark"}, {"last":"Smith"}]', '$[3 to 5].*');
+  json_exists
+  -------------
+  f
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[*].first' FALSE ON ERROR);
+  json_exists
+  -------------
+  f
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[0].first' TRUE ON ERROR);
+  json_exists
+  -------------
+  t
+  (1 row)
+
+  openGauss=# select json_exists('This is not well-formed JSON data', '$[0].first' ERROR ON ERROR);
+  ERROR:  the input is not a well-formed json data
+  CONTEXT:  referenced column: json_exists
+  ```
+  
+- json_textcontains\(json text, path text, target cstring\)
+
+  Description: Determine whether some specified values are contained under centain JSON path in a JSON data, which are seperated by commas. The function returns true if at least one of them is contained, and false otherwise. json_textcontains returns false when $1 is not a well-formed JSON data.
+
+  - json: the JSON data text.
+  - path: the JSON path expression text
+  - target: the values needed to be tested for containing.
+
+  Return type：bool
+
+  Attention：
+
+  - $2 must conform with json path expression's grammar, and it cannot be NULL, otherwise an error will be reported.
+  - Of all json path expression grammars, only extracting json values by array indexes or object field names are supported by now.
+  - The match for containing is not case-sensitive。
+
+  示例：
+
+  ```
+  openGauss=# SELECT JSON_TEXTCONTAINS('{"family" : {"id":12, "ages":[25,23], "address" : {"street" : "300 Oak Street", "apt" : 10}}}', '$.family', 'oak, 10');
+  json_textcontains
+  -------------------
+  t
+  (1 row)
+
+  openGauss=# SELECT JSON_TEXTCONTAINS('{"family" : {"id":12, "ages":[25,23], "address" : {"street" : "300 Oak Street", "apt" : 10}}}', '$.family', '12 25 23 300 OAK');
+  json_textcontains
+  -------------------
+  t
+  (1 row)
+
+  openGauss=# SELECT JSON_TEXTCONTAINS('This is not well-formed JSON data', '$.family', 'data');
+  json_textcontains
+  -------------------
+  f
+  (1 row)
+  ```
+
 -   Other functions
 
     Description: Internal functions used by GIN indexes and JSON\\JSONB aggregate functions.
