@@ -393,3 +393,23 @@ resilience_memory_reject_percent = '70,90'
 >
 > - 最大动态内存和已使用的动态内存可以通过gs_total_memory_detail视图查询获得，最大动态内存：max_dynamic_memory，已使用的动态内存：dynamic_used_memory。
 > - 该参数如果设置的百分比过小，则会频繁触发内存过载逃生流程，会使正在执行的会话被强制退出，新连接短时间接入失败，需要根据实际内存使用情况慎重设置。
+
+## num\_slru\_buffers
+
+**参数说明**： 控制部分事务日志在内存中可缓存的最大槽位数，用于特定场景的性能调优，目前主要针对jdbc配置"autosave=always"场景。内容以关键字和数字的KV方式组织，各个不同类型日志缓存之间以逗号隔开。先后顺序对设置结果不影响，例如“MXACT\_OFFSET=256,MXACT\_MEMBER=512”等同于“MXACT\_MEMBER=512,MXACT\_OFFSET=256”。重复设置同一关键字时，以最后一次设置为准，例如“MXACT\_OFFSET=256,MXACT\_OFFSET=2”，设置的结果为MXACT\_OFFSET=2。当没有设置关键字时，则为默认值，相关参数的使用描述和最大、最小、默认值如下。
+
+-   MXACT\_OFFSET：multixact offset日志文件在内存中最大可缓存的8KB页面数量。multixact offset日志每16个页面槽位使用一个bank锁控制，以保证缓存读写的并发度，增大该值可以提高multixact offset日志读写效率，提升事务引擎执行效率，但是会增大内存使用；减小该值会减少相应内存使用，但在multixact日志生成量较大场景，可能使得multixact offset日志读写冲突变大，影响性能。最小值为16，最大值为131072，且必须是16的倍数。
+-   MXACT\_MEMBER：multixact member日志文件在内存中最大可缓存的8KB页面数量。与MXACT\_MEMBER相同，增大该值可以提高multixact member日志读写效率，提升事务引擎执行效率，但是会增大内存使用；减小该值会减少相应内存使用，但在multixact日志生成量较大场景，可能使得multixact member日志读写冲突变大，影响性能。最小值为16，最大值为131072，且必须是16的倍数。
+
+该参数属于POSTMASTER类型参数，参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应设置方法进行设置。
+
+**取值范围**： 字符串
+
+**默认值**：
+
+"MXACT\_OFFSET=16,MXACT\_MEMBER=16"
+
+> ![](public_sys-resources/icon-notice.png) **须知：**
+>
+> - 该参数设置主要适用于部分multixact日志读写压力较大的场景，比如jdbc配置"autosave=always"，其他场景如果没有产生大量multixact日志导致出现相关瓶颈，不建议调整默认配置，反而会增加内存消耗和相关缓存的维护成本。
+> - 资源池化模式中，multixact offset 日志和multixact member日志的内存最大槽位数固定为1024，在资源池化模式修改num\_slru\_buffers不会实际生效。

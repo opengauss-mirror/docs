@@ -627,6 +627,7 @@ headless: true
 		-   [案例：改写SQL消除子查询与使用并行查询]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除子查询与使用并行查询.md" >}})
         -   [案例：改写SQL消除in-clause]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除in-clause.md" >}})
         -   [案例：修改启动参数解决TPCC大幅度波动]({{< relref "./docs/PerformanceTuningGuide/案例-修改启动参数解决TPCC大幅度波动.md" >}})
+        -   [案例：子事务TPCC性能调优]({{< relref "./docs/PerformanceTuningGuide/案例-子事务TPCC性能调优.md" >}})
 -   [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
 	-   [数据库加固概述]({{< relref "./docs/SecHarden/数据库加固概述.md" >}})
 	-   [安全配置规范基线]({{< relref "./docs/SecHarden/安全配置规范基线.md" >}})
