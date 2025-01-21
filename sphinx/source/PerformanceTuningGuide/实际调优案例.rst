@@ -12,3 +12,4 @@
     ../content/zh/docs/PerformanceTuningGuide/案例-改写SQL消除子查询_案例2
     ../content/zh/docs/PerformanceTuningGuide/案例-改写SQL消除in-clause
     ../content/zh/docs/PerformanceTuningGuide/案例-修改启动参数解决TPCC大幅度波动
+    ../content/zh/docs/PerformanceTuningGuide/案例-子事务TPCC性能调优
