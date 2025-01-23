@@ -25,7 +25,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="37.36%" headers="mcps1.1.4.1.3 "><p id="p66743541395"><a name="p66743541395"></a><a name="p66743541395"></a>需要支持RDMA和以太网并开启RDMA协议，开启RDMA协议的具体步骤请参见<a href="https://opengauss.org/zh/blogs/RDMA/RDMA%E7%BD%91%E7%BB%9C%E6%8C%87%E5%AF%BC_2024.html" target="_blank" rel="noopener noreferrer">《RDMA网络指导》</a>。</p>
 </td>
-</tr>M
+</tr>
 <tr id="row9245245530"><td class="cellrowborder" valign="top" width="15.010000000000002%" headers="mcps1.1.4.1.1 "><p id="p152468415531"><a name="p152468415531"></a><a name="p152468415531"></a>交换机</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.63%" headers="mcps1.1.4.1.2 "><p id="p14246134145318"><a name="p14246134145318"></a><a name="p14246134145318"></a>-</p>
