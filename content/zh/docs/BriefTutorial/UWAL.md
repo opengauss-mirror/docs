@@ -23,7 +23,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="47.63%" headers="mcps1.1.4.1.2 "><p id="p1543012207413"><a name="p1543012207413"></a><a name="p1543012207413"></a>具体型号根据实际情况确定，例如Mellanox的CX4/CX5系列网卡。</p>
 </td>
-<td class="cellrowborder" valign="top" width="37.36%" headers="mcps1.1.4.1.3 "><p id="p66743541395"><a name="p66743541395"></a><a name="p66743541395"></a>需要支持RDMA和以太网并开启RDMA协议，开启RDMA协议的具体步骤请参见<a href="https://opengauss.org/zh/blogs/RDMA/RDMA.html" target="_blank" rel="noopener noreferrer">《RDMA网络指导》</a>。</p>
+<td class="cellrowborder" valign="top" width="37.36%" headers="mcps1.1.4.1.3 "><p id="p66743541395"><a name="p66743541395"></a><a name="p66743541395"></a>需要支持RDMA和以太网并开启RDMA协议，开启RDMA协议的具体步骤请参见<a href="https://opengauss.org/zh/blogs/RDMA/RMDA%E7%BD%91%E7%BB%9C%E6%8C%87%E5%AF%BC_2024.html" target="_blank" rel="noopener noreferrer">《RDMA网络指导》</a>。</p>
 </td>
 </tr>
 <tr id="row9245245530"><td class="cellrowborder" valign="top" width="15.010000000000002%" headers="mcps1.1.4.1.1 "><p id="p152468415531"><a name="p152468415531"></a><a name="p152468415531"></a>交换机</p>
