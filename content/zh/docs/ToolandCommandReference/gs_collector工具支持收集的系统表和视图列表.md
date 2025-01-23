@@ -148,7 +148,7 @@
 <td class="cellrowborder" valign="top" width="71.27%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0237637502_p189905012194"><a name="zh-cn_topic_0237637502_p189905012194"></a><a name="zh-cn_topic_0237637502_p189905012194"></a>pg_total_memory_detail</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0237637502_row4101155081919"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237637502_p8101145010191"><a name="zh-cn_topic_0237637502_p8101145010191"></a><a name="zh-cn_topic_0237637502_p8101145010191"></a>pg_shared_memory_detail</p>
+<tr id="zh-cn_topic_0237637502_row4101155081919"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237637502_p8101145010191"><a name="zh-cn_topic_0237637502_p8101145010191"></a><a name="zh-cn_topic_0237637502_p8101145010191"></a>gs_shared_memory_detail</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0237637502_row1610185091912"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0237637502_p19104250101915"><a name="zh-cn_topic_0237637502_p19104250101915"></a><a name="zh-cn_topic_0237637502_p19104250101915"></a>gs_total_memory_detail</p>
