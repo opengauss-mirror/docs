@@ -84,6 +84,9 @@ insert into t1 values(1,'a1');
 2、定义一个弱类型游标。
 
 ```sql
+create extension gms_output;
+select gms_output.enable(2000);
+
 declare
 type RECORD_ACCOUNT_LIST1 IS RECORD (id int, name1 varchar2(30));
 type CUR_ACCOUNT_LIST1 is ref cursor return RECORD_ACCOUNT_LIST1; 
@@ -94,7 +97,7 @@ open cur_accountlist1 for select * from t1;
 loop
 fetch cur_accountlist1 into rc_list;
 exit when cur_accountlist1%notfound;
-dbms_output.put_line(rc_list.id||' '||rc_list.name1); 
+gms_output.put_line(rc_list.id||' '||rc_list.name1);
 end loop; 
 end;
 /
@@ -103,5 +106,6 @@ end;
 返回结果如下，则表示创建成功：
 
 ```sql
+1 a1
 ANONYMOUS BLOCK EXECUTE
 ```
