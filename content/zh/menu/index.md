@@ -799,6 +799,7 @@ headless: true
 			-  [因redo日志过多导致的failover恢复时间过长问题]({{< relref "./docs/DatabaseOMGuide/因redo日志过多导致的failover恢复时间过长问题.md" >}})
 			-  [因redo日志过多强制停机导致集群重启超时问题]({{< relref "./docs/DatabaseOMGuide/因redo日志过多强制停机导致集群重启超时问题.md" >}})
 			-  [因delay_arbitrate_max_cluster_timeout参数设置为0导致集群仲裁失效问题]({{< relref "./docs/DatabaseOMGuide/因delay_arbitrate_max_cluster_timeout参数设置为0导致集群仲裁失效问题.md" >}})
+			-  [因CM不满足多数派原则导致集群无法使用的问题]({{< relref "./docs/DatabaseOMGuide/因CM不满足多数派原则导致集群无法使用的问题.md" >}})
 		-   [资源池化企业版卸载阶段问题]({{< relref "./docs/DatabaseOMGuide/资源池化企业版卸载阶段问题.md" >}})
 			-  [因部分节点卸载失败导致卸载失败问题]({{< relref "./docs/DatabaseOMGuide/因部分节点卸载失败导致卸载失败问题.md" >}})
 			-  [因部分目录无权限导致卸载失败问题]({{< relref "./docs/DatabaseOMGuide/因部分目录无权限导致卸载失败问题.md" >}})
