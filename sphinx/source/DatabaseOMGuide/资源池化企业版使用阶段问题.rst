@@ -3,8 +3,10 @@
 
 .. toctree::
 
+    ../content/zh/docs/DatabaseOMGuide/因hostname文件权限异常导致设置参数失败的问题
     ../content/zh/docs/DatabaseOMGuide/因pg_hba.conf中参数配置错误导致启动集群失败的问题
     ../content/zh/docs/DatabaseOMGuide/因postgres.conf中参数错误导致集群启动失败的问题
+    ../content/zh/docs/DatabaseOMGuide/因随机端口冲突导致集群启动失败的问题
     ../content/zh/docs/DatabaseOMGuide/因信号量不足导致集群启动失败的问题
     ../content/zh/docs/DatabaseOMGuide/因共享内存不足导致集群启动失败的问题
     ../content/zh/docs/DatabaseOMGuide/因内存不足导致集群启动失败的问题
