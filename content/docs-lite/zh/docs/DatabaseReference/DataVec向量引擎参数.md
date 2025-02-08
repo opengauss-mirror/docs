@@ -8,15 +8,11 @@
 
 **取值范围**： 整型，1\~1000
 
-**设置建议**： 使用HNSW索引扫描时，sql结果数量会受限于`hnsw_ef_search`。并且由于查询时的过滤条件等因素，输出的结果可能会更少。建议将
-`hnsw_ef_search`设置为查询中`LIMIT`的至少两倍。
+**设置建议**： 使用HNSW索引扫描时，sql结果数量会受限于`Limit`，hnsw_ef_search为初始扫描集合大小，如果没有获取足够`Limit`大小的数据会自动扩大hnsw_ef_search继续扫描。该值在取值范围内设置即可。
 
 **默认值**： 40
 
 >![](public_sys-resources/icon-note.gif) **说明：**
->
-> 较高的值会提升查询的召回率，但同时查询速度会下降。
->
 > 如果需要超过500个结果，请使用`IVFFLAT`索引。
 
 ## ivfflat_probes<a name="section14941640131"></a>

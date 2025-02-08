@@ -25,6 +25,8 @@ DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数�
 - vector - float向量，最高支持2000维
 - bitvec - bit向量，最高支持64000维
 - sparsevec - sparse向量，最高支持1000非零元素
+>![](public_sys-resources/icon-note.gif) **说明：**
+这里的最高维度是在使用索引场景下的最大维度上限值。
 
 ### 索引支持
 - IVFFLAT 
@@ -203,8 +205,12 @@ openGauss=# SELECT * FROM items ORDER BY val <-> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <#> '[3,1,2]' LIMIT 5;
 openGauss=# SELECT * FROM items ORDER BY val <=> '[3,1,2]' LIMIT 5;
 ```
->![](public_sys-resources/icon-note.gif) **说明：**
->如果使用当前索引中不存在的距离计算操作符来进行扫描，即使关闭顺序扫描后仍会执行顺序扫描。
+>![](public_sys-resources/icon-note.gif) **说明：**<br>
+> 如果使用当前索引中不存在的距离计算操作符来进行扫描，即使关闭顺序扫描后仍会执行顺序扫描。<br>
+>
+> 如果表中向量存在空值或者距离计算结果为NAN，查询结果会将其自动过滤。<br>
+>
+> 目前向量索引查询语法仅支持`order by <字段> <操作符> <查询向量>`子句，order by子句增加desc、非order by子句等均不支持走向量索引。
 
 
 更多使用细节请参考：
