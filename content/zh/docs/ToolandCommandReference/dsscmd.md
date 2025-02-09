@@ -113,7 +113,9 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     ```
     dsscmd cp <-s src_file> <-d dest_file> [-U UDS:socket_domain]
     ```
-    此处的src_file和dest_file为带路径的文件名，使用限制参考“参数说明”部分的path。
+    此处的 src_file(源文件)和 dest_file(目标文件)为带路径的文件名，可以为共享盘中的文件（需要带'+'），也可以为文件系统的文件（不需要带'+'），但均不支持使用相对路径，同时必须添加对应的 -s 和 -d 前缀。
+
+    dsscmd cp 目前仅支持 cp 基本的复制操作，暂不支持添加 cp 的其他参数。
 -   截断卷组文件
 
     ```
