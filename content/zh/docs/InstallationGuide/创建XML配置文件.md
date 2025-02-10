@@ -366,7 +366,7 @@
 </tr>
 <tr id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_row1343016261112"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0241802596_p119281928007"></a>dataPortBase</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a>数据库节点的基础端口号，默认值40000。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a><a name="zh-cn_topic_0283136469_zh-cn_topic_0085434621_zh-cn_topic_0059782004_p6187782101039"></a>数据库节点的基础端口号，默认值40000(约束：如果是部署资源池化，预安装结束后，先利用`cat /proc/sys/net/ipv4/ip_local_port_range`命令查看端口范围，数据库的端口不要配置在这个范围内，否则会导致池化内组件随机端口冲突)。</p>
 </td>
 </tr>
 <tr id="row196421844162013"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p69281428009"><a name="p69281428009"></a><a name="p69281428009"></a>dataListenIp1</p>
