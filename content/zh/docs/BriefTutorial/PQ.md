@@ -74,10 +74,8 @@ vector_ip_ops | 内积
 vector_cosine_ops | 余弦距离
 
 #### 索引选项
--   `m` - 每个图层最大连接数（默认为16）
--   `ef_construction` - 用于图形构造的动态候选集大小 2~100（默认为64）
--   `storage` - 索引存储类型：astore/ustore（默认为astore）
--   `parallel_workers` - 构建索引并行度 1~32（默认为1并发构建）
+-   `m` - 每个图层最大连接数 2~100（默认为16）
+-   `ef_construction` - 用于图形构造的动态候选集大小 4~1000，必须大于等于2*m（默认为64）
 -   `enable_pq` - 开启pq量化压缩（默认off）
 -   `pq_m` - 切分的子空间数量 1~2000（默认为8）
 -   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256）
