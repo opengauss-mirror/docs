@@ -44,7 +44,7 @@ gs_probackup的主要功能如下:
 
 openGauss产品在备份基础上实现了三种功能，分别是增量备份、备份合并和增量恢复： 
 -   增量备份原理：  
-1.  修改xlog文件备份路径，会通过-B参数将文件备份到指定的backup_path/instance/database/pg_xlog0目录下。  
+1.  修改xlog文件备份路径，会通过-B参数将文件备份到指定的backup_path/instance/database/pg_xlog目录下。  
 2.  通过修改cbmparesexlog解析文件来读取的xlog文件路径。  
 3.  pgBackup结构体新增成员变量dssdata_bytes，用于在备份开始时体现PGDATA与DSSDATA中的文件大小。
 -   备份合并原理：  
