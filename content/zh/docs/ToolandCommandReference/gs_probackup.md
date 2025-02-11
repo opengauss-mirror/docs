@@ -770,7 +770,7 @@ gs\_probackup工具的主要功能如下：
 2. 添加一个新的备份实例。
 
    ```
-   gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name --enable-dss --vgname="vgdata,vglog" --socketpath=socket_domain
+   gs_probackup add-instance -B backup-path -D pgdata-path --instance instance_name --enable-dss --vgname="vgdata,vglog" [--socketpath=socket_domain]
    ```
    **说明：** pgdata-path为数据库在文件系统中的数据目录，instance_name为用户指定的备份实例名，--enable-dss参数代表所添加的备份实例对应的数据库为资源池化模式，vgdata和vglog分别代表资源池化的数据目录和日志目录(例如--vgname="+data,+log"，其中+data为资源池化的数据目录，+log为资源池化的日志目录)，socket_domain为dss实例进程使用的socket文件路径，仅支持绝对路径。
 
@@ -882,6 +882,103 @@ gs\_probackup工具的主要功能如下：
     cm_ctl start
     ```
 
+## cm工具管理集群PITR恢复流程（资源池化模式）
+
+>![](public_sys-resources/icon-note.png) **说明：** 
+>
+>-  基于已归档的XLOG。
+>-  基于经过物理备份的全量数据文件。
+
+1. 执行cm_ctl stop关闭集群。(当出现故障后，停止数据库进程kill -9 xxx(gaussdb的pid))
+
+   ```
+   cm_ctl stop
+   ```
+
+2. 使用dd命令清空磁阵（清空磁阵前2M内容磁阵便可以被清空）。
+
+   ```
+   dd if=/dev/zero of=/dev/disk_name bs=2048 count=1000 > /dev/null 2>&1
+
+   示例：
+   假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
+   data:/dev/user_dss_data
+   log:/dev/user_dss_log
+   对应清空磁阵操作如下：
+   dd if=/dev/zero of=/dev/user_dss_data bs=2048 count=1000 > /dev/null 2>&1
+   dd if=/dev/zero of=/dev/user_dss_log bs=2048 count=1000 > /dev/null 2>&1
+   ```
+   **说明：** of后面的参数可以进入$DSS_HOME的cfg目录，在dss_vg_conf.ini文件中查看每个卷对应磁盘，这里需要清空该文件中的所有主备对应的数据和日志磁盘。
+
+3. 使用dsscmd cv命令建卷。
+
+   ```
+   dsscmd cv -g data -v /dev/disk_name -D $DSS_HOME
+
+   示例：
+   假如当前dss_vg_conf.ini文件的内容如下（环境为一主一备）：
+   data:/dev/user_dss_data
+   log:/dev/user_dss_log
+   对应建卷操作如下：
+   dsscmd cv -g data -v /dev/user_dss_data -D $DSS_HOME
+   dsscmd cv -g log -v /dev/user_dss_log -D $DSS_HOME
+   ```
+   **说明：** -v后面的参数是每个卷对应磁盘，在dss_vg_conf.ini文件中查看。
+
+4. 将主机的dn目录中的如下文件拷贝出来（当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群，需要执行该操作，否则跳过）。
+
+   ```
+   cacert.pem server.crt server.key server.key.cipher server.key.rand postgresql.conf pg_hba.conf
+   ```
+   **说明：** 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，集群之间用于认证的证书会发生变化，因此需要将当前集群的拷贝下来防止恢复后被备份文件中的证书覆盖导致无法和备机通信。
+
+5. 清空主机的dn目录，启动dssserver。
+
+   ```
+   rm -rf primary_dir/*
+   dssserver -M -D $DSS_HOME &
+   ```
+
+6. 在主机执行全量恢复操作。
+
+   ```
+   gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
+   kill -9 xxx(dssserver的pid)  或  dsscmd stopdss
+   ```
+   **说明：** 确保dssserver进程关闭后再执行后续操作
+
+7. 当要恢复的集群相对于备份来讲重新安装过或者不是原来的集群时，将步骤7拷贝的的文件覆盖到恢复的主机dn目录，否则跳过。
+
+8. 进入主机恢复后的dn目录，创建恢复配置文件recovery.conf，指定数据库恢复的程度。
+
+   ```
+   vim recovery.conf
+   ```
+   recover.conf里至少需要包括以下内容，其中recovery_target_name、recovery_target_time、recovery_target_xid、recovery_target_lsn参数仅支持同时设置一个:
+   >  restore_command = 'dsscmd cp -s /mnt/server/archivedir/%f -d %p'
+   >
+   >  recovery_target_name = 'target_name'
+   >
+   >  recovery_target_time = 'time'
+   >
+   >  recovery_target_xid = 'xid'
+   >
+   >  recovery_target_lsn = 'lsn'
+   >
+   >  recovery_target_inclusive = boolean
+   >
+   >  pause_at_recovery_target = false
+   >
+   >-  restore_command：该参数是将归档的XLOG复制到pg_xlog文件中，此参数不支持加--remove-destination，/mnt/server/archivedir为归档的XLOG路径且不支持使用相对路径，可以参考[dsscmd](../ToolandCommandReference/dsscmd.md)。
+   >-  上述参数其中recovery_target_name、recovery_target_time、recovery_target_xid、recovery_target_lsn参数仅支持同时设置一个。
+   >-  recovery_target_inclusive：该参数必须和recovery_target_name、recovery_target_time、recovery_target_xid、recovery_target_lsn参数一起使用
+   >-  pause_at_recovery_target：目前资源池化仅支持该参数设置为false。
+
+9. 启动资源池化集群。
+
+    ```
+    cm_ctl start
+    ```
 
 
 ## 故障处理<a name="section1494010372368"></a>

@@ -8,3 +8,4 @@
     ../content/zh/docs/AboutopenGauss/gs_probackup适配资源池化
     ../content/zh/docs/AboutopenGauss/cm支持双集群备集群switchover
     ../content/zh/docs/AboutopenGauss/资源池化支持主备参数同步
+    ../content/zh/docs/AboutopenGauss/资源池化XLOG支持归档
