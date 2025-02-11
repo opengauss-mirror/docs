@@ -1005,71 +1005,71 @@ CONTEXT:  referenced column: subdate
 
 - to_days(expr)
 
-  功能描述：接受一个date或datetime表达式作为参数，返回参数所指定的日期到0000年所经过的天数
+    功能描述：接受一个 `date` 或 `datetime` 表达式作为参数，返回参数所指定的日期到 `0000-01-01` 所经过的天数
 
-  返回类型：64位整数`int8`
+    返回类型：64 位整数 `int8`
 
-  备注: 
+    备注: 
 
-  * 若入参类型为time类型，将用于计算的日期将为当前日期加上time指定时间后得到的日期。
-  * 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错（兼容mysql中该函数于insert语句中的表现）。
+    - 若入参类型为 `time` 类型，将用于计算的日期将为当前日期加上 `time` 指定时间后得到的日期。
+    - 若输入日期字符串超出日期类型的范围或入参为非法的 `date` 或 `datetime` 表达式，函数报错（兼容 MySQL 中该函数于 `INSERT` 语句中的表现）。
 
-  示例：
+    示例：
 
-  ```sql
-  opengauss=# select to_days('0000-01-01');
-   to_days 
-  ---------
-         1
-  (1 row)
-  
-  opengauss=# select to_days('2022-09-05 23:59:59.5');
-   to_days 
-  ---------
-    738768
-  (1 row)
-  
-  -- 当前日期为: 2022-09-05
-  opengauss=# select to_days(time'25:00:00');
-   to_days 
-  ---------
-    738769
-  (1 row)
-  ```
+    ```sql
+    opengauss=# select to_days('0000-01-01');
+     to_days
+    ---------
+           0
+    (1 row)
+
+    opengauss=# select to_days('2022-09-05 23:59:59.5');
+     to_days
+    ---------
+      738768
+    (1 row)
+
+    -- 当前日期为: 2022-09-05
+    opengauss=# select to_days(time'25:00:00');
+     to_days
+    ---------
+      738769
+    (1 row)
+    ```
 
 - to_seconds(expr)
 
-  功能描述：参数输入一个`date`或`datetime`表达式`expr`用以指定时间点，返回`0000-01-01 00:00:00`到该时间点所经过的秒数
+    功能描述：参数输入一个 `date` 或 `datetime` 表达式 `expr` 用以指定时间点，返回 `0000-01-01 00:00:00` 到该时间点所经过的秒数
 
-  返回类型：64位整数`int8`
+    返回类型：64位整数 `int8`
 
-  备注：
+    备注：
 
-  - 参数`datetime`支持的类型有：字符串、数值、date、datetime、time等。当输入参数为time类型时，日期会被自动设置为当前日期。
-  - 返回的结果只保留整秒数，小数部分直接舍弃。
-  - 若输入日期超出[0000-01-01, 9999-12-31]的范围或入参为非法的date或datetime表达式，函数报错（兼容mysql中该函数于insert语句中的表现）。
+    - 参数支持的类型有：字符串、数值、`date`、`datetime`、`time` 等。当输入参数为 `time` 类型时，日期会被自动设置为当前日期。
+    - 返回的结果只保留整秒数，小数部分直接舍弃。
+    - 若输入日期字符串超出日期类型的范围或入参为非法的 `date` 或 `datetime` 表达式，函数报错（兼容 MySQL 中该函数于 `INSERT` 语句中的表现）。
 
-  示例：
-  ```sql
-  opengauss=# select to_seconds('2022-09-01');
-   to_seconds  
-  -------------
-   63829209600
-  (1 row)
-  
-  opengauss=# select to_seconds('2022-09-01 12:30:30.888');
-   to_seconds  
-  -------------
-   63829254630
-  (1 row)
-  
-  opengauss=# select to_seconds(20220901123030);
-   to_seconds  
-  -------------
-   63829254630
-  (1 row)
-  ```
-  
+    示例：
+    ```sql
+    opengauss=# select to_seconds('2022-09-01');
+     to_seconds
+    -------------
+     63829209600
+    (1 row)
+
+    opengauss=# select to_seconds('2022-09-01 12:30:30.888');
+     to_seconds
+    -------------
+     63829254630
+    (1 row)
+
+    opengauss=# select to_seconds(20220901123030);
+     to_seconds
+    -------------
+     63829254630
+    (1 row)
+    ```
+
 - unix_timestamp()
 
   函数原型：
