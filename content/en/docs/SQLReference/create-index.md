@@ -262,13 +262,13 @@ The partitioned table does not support partial index creation.
 
 -   **COMPRESSTYPE**
 
-    Sets the index compression algorithm. The value  **1**  indicates the PGLZ algorithm, and the value  **2**  indicates the ZSTD algorithm. By default, indexes are not compressed. This parameter cannot be modified after it takes effect. \(Only B-tree indexes are supported.\)
+    Sets the index compression algorithm. The value  **1**  indicates the PGLZ algorithm, the value  **2**  indicates the ZSTD algorithm, the value  **3** indicates the PGZSTD algorithm (currently not supported), and the value  **4**  indicates the ZLIB algorithm. By default, indexes are not compressed. This parameter cannot be modified after it takes effect. \(Only B-tree indexes are supported.\)
 
-    Value range: 0 to 2. The default value is  **0**.
+    Value range: 0 to 4. The default value is  **0**.
 
 -   **COMPRESS\_LEVEL**
 
-    Sets the index compression algorithm level. This parameter is valid only when  **COMPRESSTYPE**  is set to  **2**. A higher compression level indicates a better index compression effect and a slower index access speed. This parameter can be modified. The modification affects the compression level of changed data and new data. \(Only B-tree indexes are supported.\)
+    Sets the index compression algorithm level. This parameter is valid only when  **COMPRESSTYPE**  is set to  **2** or **4**. A higher compression level indicates a better index compression effect and a slower index access speed. This parameter can be modified. The modification affects the compression level of changed data and new data. \(Only B-tree indexes are supported.\)
 
     Value range: –31 to 31. The default value is  **0**.
 
