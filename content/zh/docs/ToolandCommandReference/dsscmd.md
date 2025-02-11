@@ -501,7 +501,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     dsscmd rmv -g data -v /dev/tpcc_repl -f -D /home/ss_test/dss_home
     ```
 
--   创建文件夹pg\_xlog0 ，UDS指定dss进程的socket文件。
+-   创建文件夹pg\_xlog ，UDS指定dss进程的socket文件。
 
     ```
     dsscmd mkdir -p +log -d pg_xlog -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
@@ -522,7 +522,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     ```
 
 
--   删除data中文件夹pg\_xlog0/archive\_status（文件夹为空，若文件夹内有文件需要级联删除，需要加-r）。
+-   删除data中文件夹pg\_xlog/archive\_status（文件夹为空，若文件夹内有文件需要级联删除，需要加-r）。
 
     ```
     dsscmd rmdir -p +data/pg_xlog/archive_status -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
@@ -535,7 +535,7 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
     ```
 
 
--   查看data中pg\_xlog0目录下的文件信息。
+-   查看data中pg\_xlog目录下的文件信息。
 
     ```
     dsscmd ls -p +data/pg_xlog -U UDS:/home/ss_test/dss_home/.dss_unix_d_socket
