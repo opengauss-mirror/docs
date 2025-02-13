@@ -140,9 +140,9 @@
     (1 row)
     ```
 
--   to\_char\(datetime/interval, fmt, nls_language={ameracia|english}\)
+-   to\_char\(datetime/interval, fmt, nls_language={american|english}\)
 
-    Description: Similar to to\_char\(datetime/interval \[, fmt\]\)，, an additional parameter **nls_language**. The possible values for **nls_language** are **ameracia** and **english**.
+    Description: Similar to to\_char\(datetime/interval \[, fmt\]\)，, an additional parameter **nls_language**. The possible values for **nls_language** are **american** and **english**.
 
     -   Templates like MON in fmt will be converted to the corresponding language expression based on nls_language.
 
