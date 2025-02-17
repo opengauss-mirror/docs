@@ -33,8 +33,13 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
         PARTITION ( partition_name ) ;
     ```
 
-    >![](public_sys-resources/icon-note.png) **说明：** 
-    >普通分区表目前支持针对某个分区的统计信息的语法，但功能上不支持针对某个分区的统计信息收集。
+-   收集子分区的统计信息
+
+    ```
+    { ANALYZE | ANALYSE } [ VERBOSE ]
+        [ table_name [ ( column_name [, ...] ) ] ]
+        SUBPARTITION ( subpartition_name ) ;
+    ```
 
 
 -   收集多列统计信息。
@@ -120,9 +125,13 @@ ANALYZE|ANALYSE VERIFY用于检测数据库中普通表（行存表、列存表�
 
 -   **partition\_name**
 
-    如果table为分区表，在关键字PARTITION后面指定分区名partition\_name表示分析该分区表的统计信息。目前语法上支持分区表做ANALYZE，但功能实现上暂不支持对指定分区统计信息的分析。
+    如果table为分区表，在关键字PARTITION后面指定分区名partition\_name表示分析该分区表的统计信息。
 
     取值范围：表的某一个分区名。
+
+-   **subpartition\_name**
+
+    如果table为二级分区表，在关键字SUBPARTITION后面指定分区名subpartition\_name表示分析该子分区表的统计信息。
 
 -   **index\_name**
 
