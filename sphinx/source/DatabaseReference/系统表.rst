@@ -98,6 +98,8 @@
     ../content/zh/docs/DatabaseReference/PG_SHSECLABEL
     ../content/zh/docs/DatabaseReference/PG_STATISTIC
     ../content/zh/docs/DatabaseReference/PG_STATISTIC_EXT
+	../content/zh/docs/DatabaseReference/PG_STATISTIC_LOCK
+	../content/zh/docs/DatabaseReference/PG_STATISTIC_STATISTIC
     ../content/zh/docs/DatabaseReference/PG_SUBSCRIPTION
     ../content/zh/docs/DatabaseReference/PG_SUBSCRIPTION_REL
     ../content/zh/docs/DatabaseReference/PG_SYNONYM
