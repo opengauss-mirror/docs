@@ -14,7 +14,7 @@ node            node_ip         instance                              state
 3  openGaussxxx xxx.xxx.xxx.xxx    6003 25400  /.../install/data/dn S Standby Promoting
 ```
 
-## 定位分析
+## 二、定位分析
 
 查看`$GAUSSLOG/pg_log/dn_xxx`日志，升主节点出现以下信息。
 
