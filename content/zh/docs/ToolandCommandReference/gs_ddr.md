@@ -484,7 +484,7 @@ gs\_ddr参数可以分为如下几类：
 -   灾备集群容灾升主。
 
     ```shell
-    gs_ddr -t failover --disaster_tpye dorado
+    gs_ddr -t failover --disaster_type dorado
     --------------------------------------------------------------------------------
     Dorado disaster recovery failover 5078895ce6d811ef859678b46a3ff63e
     --------------------------------------------------------------------------------
