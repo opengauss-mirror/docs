@@ -61,7 +61,7 @@ CREATE PUBLICATION pub_name FOR ALL TABLES with(publish='insert,update,delete,tr
 wal_level=logical
 ```
 
-2、在`$PGDATA/pg_hba.conf`配置文件中添加如下配置参数（发布端和订阅端都要修改）。
+2、在`$PGDATA/pg_hba.conf`配置文件中添加如下配置参数（如果是ipv6地址，则将以下“0.0.0.0/0”换成“::/0”；发布端和订阅端都要修改）。
 
 ```sql
 host replication all 0.0.0.0/0 md5
