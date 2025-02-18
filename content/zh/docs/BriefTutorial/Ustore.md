@@ -24,7 +24,7 @@ USTORE与原有的ASTORE\(Append Update\)存储引擎并存。USTORE存储引擎
 
 -   **创建表的方式**
 
-    USTORE存储引擎含有undo log，创建USTORE存储引擎表的时候需要提前在postgresql.conf中配置undo\_zone\_count的值，该参数代表的时候undo log的一种资源个数，建议配置为16384，即“undo\_zone\_count=16384”，配置完成后要重启数据库。
+    USTORE存储引擎含有undo log，创建USTORE存储引擎表的时候需要提前在postgresql.conf中配置undo\_zone\_count的值，该参数代表的是undo log的一种资源个数，建议配置为16384，即“undo\_zone\_count=16384”，配置完成后要重启数据库。
 
     \[postgresql.conf配置\]
 
