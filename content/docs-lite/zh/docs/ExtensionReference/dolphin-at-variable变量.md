@@ -2,7 +2,7 @@
 
 ## 功能描述
 
-Vastbase在MySQL兼容模式下，支持用户变量`@variable`的以下两种使用形式：
+openGauss在MySQL兼容模式下，支持用户变量`@variable`的以下两种使用形式：
 
 - 支持使用SET命令声明`@variable`，形如：`set @variable = value`或`set @variable := value`。
 
@@ -15,7 +15,7 @@ Vastbase在MySQL兼容模式下，支持用户变量`@variable`的以下两种�
 
 - 使用此功能需开启参数enable_set_variable_b_format，表示允许数据库在MySQL兼容模式下使用自定义用户变量的功能。
 
-- 用户变量是针对当前登录Vastbase的用户的私有变量，声明过的`@variable`变量在客户端连接到数据库实例的整个过程中都是有效的。
+- 用户变量是针对当前登录openGauss的用户的私有变量，声明过的`@variable`变量在客户端连接到数据库实例的整个过程中都是有效的。
 
 - SET命令支持的赋值符号可以是`:=`或`=`，而select赋值时仅支持使用`:=`。
 
