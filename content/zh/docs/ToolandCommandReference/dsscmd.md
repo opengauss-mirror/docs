@@ -93,8 +93,10 @@ openGauss部署资源池化模式且开启ss\_enable\_dss功能情况下，经�
 -   创建文件
 
     ```
-    dsscmd touch <-p path> [-U UDS:socket_domain]
+    dsscmd touch <-p path> [-f flag] [-U UDS:socket_domain]
     ```
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >- -f为创建文件时的功能参数，未指定时默认为0。当输入为2147483648（十六进制的0x80000000）时，表示该文件未写入数据前读取数据直接返回0，其他值未应用。
 
 -   显示API调用时间
 
