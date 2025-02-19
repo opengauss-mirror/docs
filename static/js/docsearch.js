@@ -1,14 +1,4 @@
 $(async function ($) {
-  const { enableOA, reportPV, oaReport, reportPerformance, OpenEventKeys } =
-    await import("./modules/analytics.js");
-  const cookieAgreed = /agreed-cookiepolicy=([0-9]+);?/
-    .exec(document.cookie)?.[1]
-    ?.startsWith("1");
-  if (cookieAgreed) {
-    enableOA();
-    reportPV();
-    reportPerformance();
-  }
   var keyword = "";
   var selectedVersion = location.pathname.split("/")[3];
   const lang = location.href.split("/")[3];
@@ -22,9 +12,9 @@ $(async function ($) {
         page: page,
         pageSize: 10,
       };
-      if (cookieAgreed) {
-        oaReport("input", postData, OpenEventKeys.SEARCH);
-      }
+      import("./modules/analytics")
+        .then(({ reportSearch }) => reportSearch(postData))
+        .catch(() => {});
       $.ajax({
         type: "POST",
         url: "/api-search/search/sort/docs",
@@ -208,7 +198,7 @@ $(async function ($) {
   });
   var versionText = lang === "zh" ? "版本" : "Version";
   var totalAmount = 0;
-  
+
   var currentScreen = document.body.clientWidth;
   if (currentScreen <= 1000) {
     pageCount = 3;
@@ -239,16 +229,25 @@ $(async function ($) {
       insertOptionElement += `<div class="search-version-select-option" data-version="${key}">${key} (${v.state})</div>`;
       insertMobileOptionElement += `<div class="search-version-select-option-mb" data-version="${key}">${key} (${v.state})</div>`;
     });
-    $("#result-container .search-version-select-option-panel").append(insertOptionElement);
-    $(".search-version-select-option-panel-mb").append(insertMobileOptionElement);
-    
+    $("#result-container .search-version-select-option-panel").append(
+      insertOptionElement
+    );
+    $(".search-version-select-option-panel-mb").append(
+      insertMobileOptionElement
+    );
+
     selectedVersion = "latest";
-    $.each($("#result-container .search-version-select-option"), function (_, e) {
-      if (e.dataset.version === selectedVersion) {
-        e.classList.add("search-version-select-option-active");
-        $("#result-container .search-header .search-version-select .version").text(e.dataset.version);
+    $.each(
+      $("#result-container .search-version-select-option"),
+      function (_, e) {
+        if (e.dataset.version === selectedVersion) {
+          e.classList.add("search-version-select-option-active");
+          $(
+            "#result-container .search-header .search-version-select .version"
+          ).text(e.dataset.version);
+        }
       }
-    });
+    );
 
     $.each($(".search-version-select-option-mb"), function (_, e) {
       if (e.dataset.version === selectedVersion) {
@@ -260,20 +259,28 @@ $(async function ($) {
     $("#result-container .search-version-select").click(function (e) {
       const el = $("#result-container .search-version-select-option-panel");
       if (el.hasClass("search-version-select-option-panel-opened")) {
-        $("#result-container .search-version-select").removeClass("search-version-select-opened");
+        $("#result-container .search-version-select").removeClass(
+          "search-version-select-opened"
+        );
         el.removeClass("search-version-select-option-panel-opened");
       } else {
-        $("#result-container .search-version-select").addClass("search-version-select-opened");
+        $("#result-container .search-version-select").addClass(
+          "search-version-select-opened"
+        );
         el.addClass("search-version-select-option-panel-opened");
       }
-  
+
       $(document).one("click", function () {
-        $("#result-container .search-version-select").removeClass("search-version-select-opened");
-        $("#result-container .search-version-select-option-panel").removeClass("search-version-select-option-panel-opened");
+        $("#result-container .search-version-select").removeClass(
+          "search-version-select-opened"
+        );
+        $("#result-container .search-version-select-option-panel").removeClass(
+          "search-version-select-option-panel-opened"
+        );
       });
       e.stopPropagation();
     });
-  
+
     $(".search-version-select-mb").click(function (e) {
       const el = $(".search-version-select-option-panel-mb");
       if (el.css("display") === "none") {
@@ -281,38 +288,55 @@ $(async function ($) {
       } else {
         el.css("display", "none");
       }
-  
+
       $(document).one("click", function () {
         $(".search-version-select-option-panel-mb").css("display", "none");
       });
       e.stopPropagation();
     });
-  
+
     $("#result-container .search-version-select-option").click(function () {
       $.each($("#result-container .search-version-select-option"), (_, e) => {
         e.classList.remove("search-version-select-option-active");
       });
       selectedVersion = this.dataset.version;
       this.classList.add("search-version-select-option-active");
-  
+
       $.each($(".search-version-select-option-mb"), (_, e) => {
         e.classList.remove("search-version-select-option-mb-active");
         if (e.innerText === this.dataset.version) {
           e.classList.add("search-version-select-option-mb-active");
         }
       });
-  
+
       if (this.dataset.version) {
-        $("#result-container .search-version-select .version").text(this.dataset.version);
+        $("#result-container .search-version-select .version").text(
+          this.dataset.version
+        );
         $(".search-version-select-mb .version").text(this.dataset.version);
-        $("#result-container .search-version-select .prefix-text").css("display", "inline-block");
-        $(".search-version-select-mb .prefix-text").css("display", "inline-block");
+        $("#result-container .search-version-select .prefix-text").css(
+          "display",
+          "inline-block"
+        );
+        $(".search-version-select-mb .prefix-text").css(
+          "display",
+          "inline-block"
+        );
       } else {
-        $("#result-container .search-version-select .version").text(lang === 'zh' ? "全部版本" : "All");
-        $(".search-version-select-mb .version").text(lang === 'zh' ? "全部版本" : "All");
-        $("#result-container .search-version-select .prefix-text").css("display", "none");
+        $("#result-container .search-version-select .version").text(
+          lang === "zh" ? "全部版本" : "All"
+        );
+        $(".search-version-select-mb .version").text(
+          lang === "zh" ? "全部版本" : "All"
+        );
+        $("#result-container .search-version-select .prefix-text").css(
+          "display",
+          "none"
+        );
         $(".search-version-select-mb .prefix-text").css("display", "none");
-        $(".search-version-select-option-mb:first").addClass("search-version-select-option-mb-active");
+        $(".search-version-select-option-mb:first").addClass(
+          "search-version-select-option-mb-active"
+        );
       }
 
       const keyword = $(".search-header .search-text").val();
@@ -320,33 +344,52 @@ $(async function ($) {
         searchMethods.search(keyword, 1, "#baseof-pagination");
       }
     });
-  
+
     $(".search-version-select-option-mb").click(function () {
       $.each($(".search-version-select-option-mb"), (_, e) => {
         e.classList.remove("search-version-select-option-mb-active");
       });
       selectedVersion = this.dataset.version;
       this.classList.add("search-version-select-option-mb-active");
-  
+
       $.each($("#result-container .search-version-select-option"), (_, e) => {
         e.classList.remove("search-version-select-option-active");
         if (e.dataset.version === this.dataset.version) {
           e.classList.add("search-version-select-option-active");
-          $("#result-container .search-version-select .version").text(e.innerText);
+          $("#result-container .search-version-select .version").text(
+            e.innerText
+          );
         }
       });
-  
-      if (this.dataset.version) { 
-        $("#result-container .search-version-select .version").text(this.dataset.version);
+
+      if (this.dataset.version) {
+        $("#result-container .search-version-select .version").text(
+          this.dataset.version
+        );
         $(".search-version-select-mb .version").text(this.dataset.version);
-        $("#result-container .search-version-select .prefix-text").css("display", "inline-block");
-        $(".search-version-select-mb .prefix-text").css("display", "inline-block");
+        $("#result-container .search-version-select .prefix-text").css(
+          "display",
+          "inline-block"
+        );
+        $(".search-version-select-mb .prefix-text").css(
+          "display",
+          "inline-block"
+        );
       } else {
-        $("#result-container .search-version-select .version").text(lang === 'zh' ? "全部版本" : "All");
-        $(".search-version-select-mb .version").text(lang === 'zh' ? "全部版本" : "All");
-        $("#result-container .search-version-select .prefix-text").css("display", "none");
+        $("#result-container .search-version-select .version").text(
+          lang === "zh" ? "全部版本" : "All"
+        );
+        $(".search-version-select-mb .version").text(
+          lang === "zh" ? "全部版本" : "All"
+        );
+        $("#result-container .search-version-select .prefix-text").css(
+          "display",
+          "none"
+        );
         $(".search-version-select-mb .prefix-text").css("display", "none");
-        $("#result-container .search-version-select-option:first").addClass("search-version-select-option-active");
+        $("#result-container .search-version-select-option:first").addClass(
+          "search-version-select-option-active"
+        );
       }
 
       const keyword = $(".search-mobile").find("input").val();
@@ -354,6 +397,5 @@ $(async function ($) {
         searchMethods.search(keyword, 1, "#pagination");
       }
     });
-
   }
 });

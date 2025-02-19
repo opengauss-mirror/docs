@@ -82,10 +82,10 @@ $(function ($) {
     stars: 0,
   };
   evaluateParams.lang = lang;
-  var versionStr = urlArr.length >= 4 ? urlArr[3].replace('-lite', '') : '';
-  $('#version-select .option p,#menu-top-mobile .option>p').each(function () {
-    if ($(this).children('.version-name').html() === versionStr) {
-      $(this).addClass('active');
+  var versionStr = urlArr.length >= 4 ? urlArr[3].replace("-lite", "") : "";
+  $("#version-select .option p,#menu-top-mobile .option>p").each(function () {
+    if ($(this).children(".version-name").html() === versionStr) {
+      $(this).addClass("active");
     }
   });
   if (evaluateParams.lang === "en") {
@@ -218,11 +218,17 @@ $(function ($) {
           $(this).addClass("dark").removeClass("light");
           localStorage.setItem("opengauss-theme", "dark");
           _body.addClass("dark").removeClass("light");
+          document.dispatchEvent(
+            new CustomEvent("themechange", { detail: "dark" })
+          );
         } else {
           $(".nav-menu a .logo-mobile").removeClass("dark");
           $(this).addClass("light").removeClass("dark");
           localStorage.setItem("opengauss-theme", "light");
           _body.addClass("light").removeClass("dark");
+          document.dispatchEvent(
+            new CustomEvent("themechange", { detail: "light" })
+          );
         }
       });
     })();
@@ -333,8 +339,8 @@ $(function ($) {
     });
     // 查看该版本是否有轻量版，有轻量版才显示切换按钮
     (function switchVersionHidden() {
-      if(location.pathname.split("/").length < 4){
-        return ;
+      if (location.pathname.split("/").length < 4) {
+        return;
       }
       const version = location.pathname.split("/")[3].split("-lite")[0];
       const versionData = lang === "zh" ? versionObjZh : versionObjEn;
@@ -420,7 +426,7 @@ $(function ($) {
     const mutation = new MutationObserver(addNavTitle);
     const config = { childList: true, subtree: true };
     const targetNode = document.getElementById("docstreeview");
-    if(targetNode){
+    if (targetNode) {
       mutation.observe(targetNode, config);
     }
     // 给较长的导航栏文字增加title end

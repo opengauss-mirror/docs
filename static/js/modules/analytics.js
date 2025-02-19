@@ -1,76 +1,83 @@
-let eventBuffer;
-const MAX_BUFFER_SIZE = 10;
+import {
+  OpenAnalytics,
+  OpenEventKeys,
+  getClientInfo,
+} from "https://unpkg.com/@opensig/open-analytics@0.0.9/dist/open-analytics.mjs";
 
-export const OpenEventKeys = { DOCS: "docs", SEARCH: "search_docs" };
-export let oa;
-let oaEnabled = false;
-let importFailed = false;
+const COOKIE_AGREED_STATUS = {
+  NOT_SIGNED: "0", // 未签署
+  ALL_AGREED: "1", // 同意所有cookie
+  NECCESSARY_AGREED: "2", // 仅同意必要cookie
+};
+const COOKIE_VERSION = "20241230";
 
-const load = (async function () {
-  try {
-    const OA = await import(
-      "https://unpkg.com/@opensig/open-analytics@0.0.9/dist/open-analytics.mjs"
-    );
-    oa = new OA.OpenAnalytics({
-      appKey: "openGauss",
-      request: (data) => {
-        fetch("/api-dsapi/query/track/opengauss", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-          },
-          body: JSON.stringify(data),
-        }).catch(() => ({}));
-      },
-    });
-    Object.assign(OpenEventKeys, OA.OpenEventKeys);
-    oa.setHeader(OA.getClientInfo());
-    oa.enableReporting(oaEnabled);
-    eventBuffer?.forEach((item) => {
-      oaReport(item.event, item.eventData, item.$service, item.options);
-    });
-  } catch {
-    importFailed = true;
-  } finally {
-    eventBuffer = null;
+const getUserCookieStatus = () => {
+  const cookieVal = document.cookie.match(/agreed-cookiepolicy=([^;]+);?/)?.[1];
+  if (!cookieVal) return;
+
+  const cookieStatusVal = cookieVal[0];
+  const cookieVersionVal = cookieVal.slice(1);
+
+  if (cookieVersionVal !== COOKIE_VERSION) {
+    return COOKIE_AGREED_STATUS.NOT_SIGNED;
   }
-})();
+
+  if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
+    return COOKIE_AGREED_STATUS.ALL_AGREED;
+  } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
+    return COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
+  } else {
+    return COOKIE_AGREED_STATUS.NOT_SIGNED;
+  }
+};
+
+const oa = new OpenAnalytics({
+  appKey: "openGauss",
+  request: (data) => {
+    if (getUserCookieStatus() !== COOKIE_AGREED_STATUS.ALL_AGREED) {
+      disableOA();
+      [
+        "oa-openGauss-events",
+        "oa-openGauss-client",
+        "oa-openGauss-session",
+      ].forEach((key) => localStorage.removeItem(key));
+      return;
+    }
+    fetch("/api-dsapi/query/track/opengauss", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(data),
+    }).catch(() => ({}));
+  },
+});
+
+let reportPerfCount = 0;
 
 export const enableOA = () => {
-  if (importFailed) {
-    return;
-  }
-  if (!oa) {
-    oaEnabled = true;
-    return;
-  }
+  oa.setHeader(getClientInfo());
   oa.enableReporting(true);
+  if (reportPerfCount >= 1) {
+    return;
+  }
+  reportPerfCount++;
+  reportPerformance();
 };
 
 export const disableOA = () => {
-  if (importFailed) {
-    return;
-  }
-  if (!oa) {
-    oaEnabled = false;
-    return;
-  }
   oa.enableReporting(false);
 };
 
-export const reportPV = async () => {
-  await load;
-  if (importFailed) {
-    return;
-  }
+export const reportPV = () => {
   oaReport(OpenEventKeys.PV);
 };
 
-export const reportPerformance = async () => {
-  await load;
-  if (importFailed) {
-    return;
-  }
+export const reportSearch = (data) => {
+  oaReport("input", data, "search_docs");
+};
+
+export const reportPerformance = () => {
   oaReport(OpenEventKeys.LCP);
   oaReport(OpenEventKeys.INP);
   oaReport(OpenEventKeys.PageBasePerformance);
@@ -82,27 +89,11 @@ export const reportPerformance = async () => {
  * @param {string | undefined} $service service字段取值
  * @param {Object} options options
  */
-export const oaReport = async (
-  event,
-  eventData,
-  $service = OpenEventKeys.DOCS,
-  options
-) => {
-  if (importFailed) {
+export const oaReport = (event, eventData, $service = "docs", options) => {
+  if (!oa.enabled) {
     return;
   }
-  if (!oa) {
-    if ((eventBuffer ??= []).length < MAX_BUFFER_SIZE) {
-      eventBuffer.push({
-        event,
-        eventData,
-        $service,
-        options,
-      });
-    }
-    return;
-  }
-  await oa.report(
+  return oa.report(
     event,
     async (...opt) => ({
       $service,
