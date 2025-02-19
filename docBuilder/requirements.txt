@@ -3,7 +3,7 @@ Babel==2.15.0
 beautifulsoup4==4.12.3
 blinker==1.8.2
 bs4==0.0.2
-certifi==2024.6.2
+certifi==2025.1.31
 charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
@@ -12,7 +12,7 @@ Flask==3.0.3
 idna==3.7
 imagesize==1.4.1
 itsdangerous==2.2.0
-Jinja2==3.1.4
+Jinja2==3.1.5
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 mdit-py-plugins==0.4.1
@@ -33,6 +33,6 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
 tomli==2.0.1
-urllib3==2.2.1
-Werkzeug==3.0.3
+urllib3==2.3.0
+Werkzeug==3.1.3
 
