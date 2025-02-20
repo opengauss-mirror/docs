@@ -1,18 +1,25 @@
-// 初始化皮肤及版本
-
-const pathName = location.pathname;
-const langStr = pathName.split("/")[1];
-const versionObj = langStr === "zh" ? versionObjZh : versionObjEn;
-const themeStyle = localStorage.getItem("opengauss-theme");
-const html = document.getElementsByTagName("html")[0];
-if (!themeStyle) {
-  localStorage.getItem("opengauss-theme", "light");
-  html.classList.add("light");
-} else {
-  html.classList.add(themeStyle);
-}
-(function () {
-  if (location.pathname.split('/').length >= 4 && location.pathname.split('/')[3].includes('-lite')) {
-    html.classList.add('lite');
+/**
+ * @file 换肤初始化
+ */
+// 获取 cookie
+function getCustomCookie(key) {
+  const name = `${encodeURIComponent(key)}=`
+  const decodedCookies = decodeURIComponent(document.cookie)
+  const cookies = decodedCookies.split('; ')
+  for (let cookie of cookies) {
+      if (cookie.startsWith(name)) {
+          return cookie.substring(name.length)
+      }
   }
-})();
+
+  return null
+}
+const APPEARANCE_KEY = 'openGauss-theme-appearance'
+
+const themeStyle = getCustomCookie(APPEARANCE_KEY)
+const html = document.getElementsByTagName('html')[0]
+if (!themeStyle) {
+  html.classList.add('light')
+} else {
+  html.classList.add(themeStyle)
+}

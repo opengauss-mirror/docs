@@ -82,10 +82,10 @@ $(function ($) {
     stars: 0,
   };
   evaluateParams.lang = lang;
-  var versionStr = urlArr.length >= 4 ? urlArr[3].replace("-lite", "") : "";
-  $("#version-select .option p,#menu-top-mobile .option>p").each(function () {
-    if ($(this).children(".version-name").html() === versionStr) {
-      $(this).addClass("active");
+  var versionStr = urlArr.length >= 4 ? urlArr[3].replace('-lite', '') : '';
+  $('#version-select .option p,#menu-top-mobile .option>p').each(function () {
+    if ($(this).children('.version-name').html() === versionStr) {
+      $(this).addClass('active');
     }
   });
   if (evaluateParams.lang === "en") {
@@ -198,15 +198,40 @@ $(function ($) {
           .addClass("active");
       }
     });
+
+    // 获取 cookie
+    function getCustomCookie(key) {
+      const name = `${encodeURIComponent(key)}=`;
+      const decodedCookies = decodeURIComponent(document.cookie);
+      const cookies = decodedCookies.split('; ');
+      for (let cookie of cookies) {
+        if (cookie.startsWith(name)) {
+          return cookie.substring(name.length);
+        }
+      }
+
+      return null;
+    }
+    // 设置 cookie
+    function setCustomCookie(key, value, day = 1, domain = location.hostname) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + day * 24 * 60 * 60 * 1000);
+      const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
+        value
+      )}; expires=${expires.toUTCString()}; path=/; domain=${domain}`;
+      document.cookie = cookie;
+    }
+
     // 换肤
     (function () {
-      const themeStyle = localStorage.getItem("opengauss-theme");
+      const domain = '.opengauss.org';
+      const APPEARANCE_KEY = 'openGauss-theme-appearance';
+      const themeStyle = getCustomCookie(APPEARANCE_KEY);
       const _body = $("html");
       if (!themeStyle) {
         $(".theme-change i").removeClass("light dark").addClass("light");
         $(".nav-menu a .logo-mobile").removeClass("dark");
-        _body.removeClass("light dark").addClass("light");
-        localStorage.getItem("opengauss-theme", "light");
+        _body.removeClass("light dark").addClass("light"); 
       } else {
         $(".theme-change i").removeClass("light dark").addClass(themeStyle);
         $(".nav-menu a .logo-mobile").addClass(themeStyle);
@@ -215,20 +240,14 @@ $(function ($) {
       $(".theme-change i").click(function () {
         if ($(this).hasClass("light")) {
           $(".nav-menu a .logo-mobile").addClass("dark");
-          $(this).addClass("dark").removeClass("light");
-          localStorage.setItem("opengauss-theme", "dark");
+          $(this).addClass("dark").removeClass("light"); 
+          setCustomCookie(APPEARANCE_KEY, 'dark', 180, domain);
           _body.addClass("dark").removeClass("light");
-          document.dispatchEvent(
-            new CustomEvent("themechange", { detail: "dark" })
-          );
         } else {
           $(".nav-menu a .logo-mobile").removeClass("dark");
           $(this).addClass("light").removeClass("dark");
-          localStorage.setItem("opengauss-theme", "light");
+          setCustomCookie(APPEARANCE_KEY, 'light', 180, domain);
           _body.addClass("light").removeClass("dark");
-          document.dispatchEvent(
-            new CustomEvent("themechange", { detail: "light" })
-          );
         }
       });
     })();
@@ -339,8 +358,8 @@ $(function ($) {
     });
     // 查看该版本是否有轻量版，有轻量版才显示切换按钮
     (function switchVersionHidden() {
-      if (location.pathname.split("/").length < 4) {
-        return;
+      if(location.pathname.split("/").length < 4){
+        return ;
       }
       const version = location.pathname.split("/")[3].split("-lite")[0];
       const versionData = lang === "zh" ? versionObjZh : versionObjEn;
@@ -426,7 +445,7 @@ $(function ($) {
     const mutation = new MutationObserver(addNavTitle);
     const config = { childList: true, subtree: true };
     const targetNode = document.getElementById("docstreeview");
-    if (targetNode) {
+    if(targetNode){
       mutation.observe(targetNode, config);
     }
     // 给较长的导航栏文字增加title end
