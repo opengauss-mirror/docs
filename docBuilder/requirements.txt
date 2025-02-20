@@ -32,7 +32,7 @@ sphinxcontrib-htmlhelp==2.0.5
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
-tomli==2.0.1
+tomli==2.1.0
 urllib3==2.3.0
 Werkzeug==3.1.3
 
