@@ -136,7 +136,7 @@ paginate = 10
     defaultKeywords = ["devows", "hugo", "go", "openGauss"]
     author = "Site template made by devcows Modified by openGauss team"
     defaultDescription = "Select the version and chapter of the openGauss documentation you want to view."
-    email = "contact@public.opengauss.org"
+    email = "common@public.opengauss.org"
 
     ### DOC Configurations
     BookRepo = 'https://gitee.com/opengauss/docs/tree/website-v2/'

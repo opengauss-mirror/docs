@@ -1,35 +1,39 @@
 <div class="float-wrap">
-  <div class="bug-box">
-    <div class="bug-text">{{i18n "issue_title"}}</div>
-    <div class="icon-close">{{ partial "svg/icon-close.html" . }}</div>
-  </div>
-  <div class="nav-box1">
-    <div class="item-nav popup1">
-      <div class="icon-box">
-        <!-- Icon content here -->
-        {{ partial "svg/icon-smile.html" . }}
-      </div>
-      {{ partial "float-popup.html" . }}
+    <div class="bug-box">
+        <div class="bug-text">{{i18n "issue_title"}}</div>
+        <div class="icon-close">{{ partial "svg/icon-close.html" . }}</div>
     </div>
-    <div class="item-nav">
-      <div class="icon-box">
-        {{ partial "svg/icon-headset.html" . }}
-        <!-- Icon content here -->
-      </div>
-      <div class="o-popup2">
-        <div class="pop-item">
-          <div class="o-icon">{{ partial "svg/icon-headset-big.html" . }}</div>
-          <div class="text">
-            <p class="text-name">问题反馈</p>
-            <p class="text-tip">
-              <a href="mailto:contact@public.opengauss.org">contact@public.opengauss.org</a>
-            </p>
-          </div>
+    <div class="nav-box1">
+        <div class="item-nav popup1">
+            <div class="icon-box">
+                <!-- Icon content here -->
+                {{ partial "svg/icon-smile.html" . }}
+            </div>
+            {{ partial "float-popup.html" . }}
         </div>
-      </div>
+        <div class="item-nav">
+            <div class="icon-box">
+                {{ partial "svg/icon-headset.html" . }}
+                <!-- Icon content here -->
+            </div>
+            <div class="o-popup2">
+                <div class="pop-item">
+                    <div class="o-icon">
+                        {{ partial "svg/icon-headset-big.html" . }}
+                    </div>
+                    <div class="text">
+                        <p class="text-name">问题反馈</p>
+                        <p class="text-tip">
+                            <a href="mailto:common@public.opengauss.org"
+                                >common@public.opengauss.org</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="item-nav nav-box2">
-    <div class="icon-box">{{ partial "svg/icon-top.html" . }}</div>
-  </div>
+    <div class="item-nav nav-box2">
+        <div class="icon-box">{{ partial "svg/icon-top.html" . }}</div>
+    </div>
 </div>
