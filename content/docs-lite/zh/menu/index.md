@@ -1650,6 +1650,8 @@ headless: true
 	        -   [PG\_SHSECLABEL]({{< relref "./docs/DatabaseReference/PG_SHSECLABEL.md" >}})
 	        -   [PG\_STATISTIC]({{< relref "./docs/DatabaseReference/PG_STATISTIC.md" >}})
 	        -   [PG\_STATISTIC\_EXT]({{< relref "./docs/DatabaseReference/PG_STATISTIC_EXT.md" >}})
+	        -   [PG\_STATISTIC\_LOCK]({{< relref "./docs/DatabaseReference/PG_STATISTIC_LOCK.md" >}})
+	        -   [PG\_STATISTIC\_HISTORY]({{< relref "./docs/DatabaseReference/PG_STATISTIC_HISTORY.md" >}})
 	        -   [PG\_SUBSCRIPTION]({{< relref "./docs/DatabaseReference/PG_SUBSCRIPTION.md" >}})
 	        -   [PG\_SUBSCRIPTION\_REL]({{< relref "./docs/DatabaseReference/PG_SUBSCRIPTION_REL.md" >}})
 	        -   [PG\_SYNONYM]({{< relref "./docs/DatabaseReference/PG_SYNONYM.md" >}})
