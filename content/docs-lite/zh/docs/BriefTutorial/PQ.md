@@ -5,7 +5,7 @@
 本章节主要介绍openGauss数据库DataVec向量引擎PQ（Product Quantization）特性的安装使用步骤，以指导用户顺利完成操作。本特性将DataVec向量引擎和自研PQ算法相结合，以提高向量检索的查询性能。
 >![](public_sys-resources/icon-note.gif) **限制：<br>**
 >PQ特性暂时只支持ARM架构环境。<br>
->PQ特性暂时只支持HNSW和IVFFLAT索引。<br>
+>PQ特性暂时只支持HNSW和IVF索引。<br>
 >PQ特性暂时只支持vector数据类型，在其他向量数据类型构建HNSWPQ以及IVFPQ索引会导致执行失败。<br>
 >在创建PQ索引前需要先插入数据，无数据情况下会创建失败。
 ## 安装准备
@@ -48,6 +48,8 @@ openGauss=# SET hnsw_earlystop_threshold = <HNSW_EARLYSTOP_THRESHOLD>
 - `TABLE_NAME` - 表名
 - `COLUMN_NAME` - 向量数据列名
 
+创建PQ索引时表中的数据量小于pq_ksub可以正常创建索引，但会提示参与训练码本的数据量较少，召回率可能会偏低。
+
 #### HNSWPQ索引操作符
 
 HNSW索引操作符`[TYPE]_[DISTANCE_FUN]_ops` 格式：
@@ -76,7 +78,15 @@ vector_cosine_ops | 余弦距离
 -   `m` - 每个图层最大连接数 2~100（默认为16）
 -   `ef_construction` - 用于图形构造的动态候选集大小 4~1000，必须大于等于2*m（默认为64）
 -   `enable_pq` - 开启pq量化压缩（默认off）
--   `pq_m` - 切分的子空间数量 1~2000（默认为8）
+-   `pq_m` - 切分的子空间数量 1~2000（默认为8）。对于高维向量，pq_m的上限受页面大小限制，可能会在创建索引时报错，并给出当前向量维度对应pq_m的上限，还需结合pq_m的其他限制确定最终值。
+
+**示例：** 使用L2距离创建HNSWPQ索引，其中表items中向量为2000维。
+
+```
+openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (enable_pq=on, pq_m=2000);
+ERROR: vector and pqcode must on the same page, max pq_m is 72
+```
+对于HNSWPQ索引，2000维的vector pq_m的最大值是72，由于维度%pq_m=0的限制，pq_m的最大值是50。
 -   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256）
 
 #### GUC参数
@@ -133,7 +143,7 @@ vector_cosine_ops|<=>|余弦距离
 
 - `lists` - 倒排表（单元格）聚类中心数量（默认为100）
 - `enable_pq` - 开启pq量化压缩（默认off）
-- `pq_m` - 仅在`enable_pq`开启时有效，切分的子空间数量 1~2000（默认为8）
+- `pq_m` - 仅在`enable_pq`开启时有效，切分的子空间数量 1~2000（默认为8）。对于高维向量，pq_m的上限受页面大小限制，可能会在创建索引时报错，并给出当前向量维度对应pq_m的上限，还需结合pq_m的其他限制确定最终值。
 - `pq_ksub`  - 仅在`enable_pq`开启时有效，每个子空间的聚类中心数量 1~256 （默认256）
 - `by_residual` - 仅在`enable_pq`开启时有效，启用残差运算（默认off）
 
