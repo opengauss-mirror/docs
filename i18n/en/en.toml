@@ -162,6 +162,8 @@ other = "Privacy Policy"
 other = "Legal Notice"
 [relative]
 other = "About Us"
+[about_cookies]
+other = "About Cookies"
 [service]
 other = "Service Status"
 [wechat]
