@@ -31,6 +31,7 @@ DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数�
 ### 索引支持
 - IVFFLAT 
 - HNSW
+- IVFPQ
 - HNSWPQ
 
 ### 架构设计
@@ -167,7 +168,7 @@ openGauss=# INSERT INTO items (val) VALUES ('[1,2,3]'), ('[4,5,6]');
 
 ### 向量索引创建
 
-DataVec目前支持了IVFFLAT、HNSW及HNSWPQ等算法的[向量索引](../SQLReference/向量索引.md)，基于openGauss中的ASTORE和USTORE存储实现，通过索引结构能够高效地检索出查询结果。
+DataVec目前支持了IVFFLAT、HNSW、IVFPQ及HNSWPQ等算法的[向量索引](../SQLReference/向量索引.md)，基于openGauss中的ASTORE和USTORE存储实现，通过索引结构能够高效地检索出查询结果。
 
 ```
 CREATE INDEX [INDEX_NAME]
