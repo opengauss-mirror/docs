@@ -177,6 +177,8 @@ other = "隐私政策"
 other = "法律声明"
 [relative]
 other = "关于我们"
+[about_cookies]
+other = "关于cookies"
 [service]
 other = "服务状态"
 [wechat]
