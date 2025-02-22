@@ -48,9 +48,9 @@
 
 **参数说明**： HNSW索引开启PQ时，在早停策略中设置图搜索的最大连续迭代次数。
 
-该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
 
-**取值范围**： 整型，160~INT32_MAX-1
+**取值范围**： 整型，160~INT32_MAX
 
 **默认值**： INT32_MAX
 
