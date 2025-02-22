@@ -75,10 +75,10 @@ openGauss在安装过程中，需要在openGauss中的节点间进行执行命�
 
 -   -f
 
-    主机列表，列出所有需要建立互信主机的IP。
+    主机列表，列出所有需要建立互信主机的IP或者IP,PORT。
 
     >![](public_sys-resources/icon-note.png) **说明：** 
-    >确保hostfile文件中只配置主机IP（每行只写一个IP），不包含其它信息。
+    >确保hostfile文件中只配置主机IP（每行只写一个IP或者IP,PORT），不包含其它信息。
 
 -   -l
 
