@@ -40,8 +40,6 @@ openGauss=# CREATE INDEX [INDEX_NAME]
 ON [TABLE_NAME] 
 USING hnsw (COLUMN_NAME [TYPE]_[DISTANCE_FUN]_ops) 
 with (m=<M>, ef_construction=<EF_CONSTRUCTION>, enable_pq = on, pq_m = <PQ_M>, pq_ksub = <PQ_KSUB>);
-
-openGauss=# SET hnsw_earlystop_threshold = <HNSW_EARLYSTOP_THRESHOLD>
 ```
 
 - `INDEX_NAME` - 索引名称
@@ -87,21 +85,23 @@ openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (ena
 ERROR: vector and pqcode must on the same page, max pq_m is 72
 ```
 对于HNSWPQ索引，2000维的vector pq_m的最大值是72，由于维度%pq_m=0的限制，pq_m的最大值是50。
--   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256）
+-   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256）<br>
+
+**设置建议：**
+- pq_m：切分子空间越多，精度越高，同时性能越低。该值必须要能整除数据集维度，否则索引无法创建成功，推荐值为`维度/4`。
+- pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
+- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中HNSW索引中相同。
 
 #### GUC参数
 -   `hnsw_earlystop_threshold` - 设置图搜索的最大连续迭代次数 160~INT32_MAX-1 (默认INT32_MAX)
 
-**示例：** 使用L2距离计算创建HNSWPQ索引并设置`m = 16, ef_construction = 64, pq_m=32`。
+**示例：** 使用L2距离计算创建HNSWPQ索引并设置`m = 16, ef_construction = 64, pq_m=32`，并设置`hnsw_earlystop_threshold`为320。
 
 ```
 openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64, enable_pq=on, pq_m=32);
-```
-**设置建议：**
 
-- pq_m：切分子空间越多，精度越高，同时性能越低。该值必须要能整除数据集维度，否则索引无法创建成功，推荐值为`维度/4`。
-- pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
-- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中HNSW索引中相同。
+openGauss=# SET hnsw_earlystop_threshold = 320;
+```
 
 ### IVFPQ
 
