@@ -16,7 +16,7 @@ The  **pg\_config**  tool supports one or more of the following options. If more
 
 -   --bindir
 
-    Prints the path of the executable file of a user. For example, you can use this option to find the  **psql**  program. Generally, this is the path of the  **pg\_config**  program.
+    Prints the path of the executable file of a user. For example, you can use this option to find the  **gsql**  program. Generally, this is the path of the  **pg\_config**  program.
 
 
 -   --docdir
