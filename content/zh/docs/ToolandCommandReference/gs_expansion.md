@@ -27,7 +27,7 @@ openGauss提供了gs_expansion工具对数据库的备机进行扩容。支持�
 
 - 执行扩容工具中添加了-X参数，那么需要正确配置xml文件，在已安装数据库配置文件的基础上，添加需要扩容的备机信息，资源池化模式下扩容备机的信息必须添加在原有节点的后面；如果没有-X参数，那么不需要配置xml文件，扩容工具会自动生成xml文件，生成的xml在子用户的home目录，文件名是xml_file_xxx.xml，xxx是时间戳。
 
-- 使用root或普通用户执行gs_expansion命令。
+- 使用root或普通用户执行gs_expansion命令（资源池化模式只能使用root执行gs_expansion命令）。
 
 - 不允许同时在主节点上执行gs_dropnode命令删除其他备机。
 
