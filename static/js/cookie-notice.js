@@ -3,7 +3,6 @@ $(function () {
   const body = $("body");
   const pathname = window.location.pathname;
   const isEn = pathname.includes("/en/");
-  const COOKIE_VERSION = "20241230";
   const COOKIE_DOMAIN = ".opengauss.org";
   const theme = localStorage.getItem("opengauss-theme") || "light";
   // 弹窗
@@ -228,14 +227,7 @@ $(function () {
     getUserCookieStatus: () => {
       const { COOKIE_AGREED_STATUS, COOKEY_KEY } = cookieNotice;
       const cookieVal = cookieNotice.getCookieByKey(COOKEY_KEY) ?? "0";
-
       const cookieStatusVal = cookieVal[0];
-      const cookieVersionVal = cookieVal.slice(1);
-
-      if (cookieVersionVal !== COOKIE_VERSION) {
-        return COOKIE_AGREED_STATUS.NOT_SIGNED;
-      }
-
       if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
         return COOKIE_AGREED_STATUS.ALL_AGREED;
       } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
@@ -313,7 +305,7 @@ $(function () {
       } = cookieNotice;
       setCustomCookie(
         COOKEY_KEY,
-        `${COOKIE_AGREED_STATUS.ALL_AGREED}${COOKIE_VERSION}`,
+        COOKIE_AGREED_STATUS.ALL_AGREED,
         180
       );
       toggleNoticeVisible(false);
@@ -330,7 +322,7 @@ $(function () {
       } = cookieNotice;
       setCustomCookie(
         COOKEY_KEY,
-        `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${COOKIE_VERSION}`,
+        COOKIE_AGREED_STATUS.NECCESSARY_AGREED,
         180
       );
       toggleNoticeVisible(false);
