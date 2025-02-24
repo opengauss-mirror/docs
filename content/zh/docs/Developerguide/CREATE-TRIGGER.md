@@ -265,6 +265,17 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     </tbody>
     </table>
 
+**触发器函数的返回值规则如下：**
+- 语句级触发器：由语句级触发器调用的触发器函数应始终返回 NULL。
+- 行级触发器：
+    - BEFORE 触发器：
+        - 返回 NULL，以跳过对当前行的操作（INTERT、UPDATE或DELETE）。注意：如上表2所述，变量NEW对DELETE为空，变量OLD对INTERT为空。
+        - 对于行级 INSERT 和 UPDATE 触发器，返回的行将成为要插入或替换正在更新的行，允许触发器函数修改该行。
+        - 不希望产生上述两种行为的行级 BEFORE 触发器，需返回传入的同一行（INSERT 和 UPDATE 触发器的 NEW 行，DELETE 触发器的 OLD 行）。
+    - INSTEAD OF 触发器：
+        - 返回 NULL，表示未修改视图底层基表的数据。
+        - 返回传入的视图行（INSERT 和 UPDATE 操作的 NEW 行，DELETE 操作的 OLD 行），非空返回值表示触发器在视图中执行了必要的数据修改，会使受命令影响的行数计数增加。对于 INSERT 和 UPDATE 操作，触发器可在返回 NEW 行前对其进行修改，以改变 INSERT RETURNING 或 UPDATE RETURNING 返回的数据。
+    - AFTER 触发器：返回值会被忽略，可返回 NULL。
 
 ## 示例<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
