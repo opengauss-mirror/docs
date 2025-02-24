@@ -327,15 +327,20 @@ $(function ($) {
         },
       });
     }
+
+    if (location.pathname.split("/")[3]?.includes("-lite")) {
+      $(".switch-version").addClass("lite");
+    }
+
     // 企业版与轻量版选择
     $(".switch-version>input").click(function () {
       const version = location.pathname.split("/")[3];
       if (version.includes("-lite")) {
-        $(this).removeClass("lite");
+        $(".switch-version").removeClass("lite");
         const targetUrl = location.href.replace("-lite", "");
         switchLiteEnterprise(targetUrl);
       } else {
-        $(this).addClass("lite");
+        $(".switch-version").addClass("lite");
         const targetUrl = location.href.replace(version, version + "-lite");
         switchLiteEnterprise(targetUrl);
       }
@@ -343,7 +348,7 @@ $(function ($) {
     $(".switch-version>.enterprise").click(function () {
       const version = location.pathname.split("/")[3];
       if (version.includes("-lite")) {
-        $(".switch-version>input").removeClass("lite");
+        $(".switch-version").removeClass("lite");
         const targetUrl = location.href.replace("-lite", "");
         switchLiteEnterprise(targetUrl);
       }
@@ -351,7 +356,7 @@ $(function ($) {
     $(".switch-version>.lite").click(function () {
       const version = location.pathname.split("/")[3];
       if (!version.includes("-lite")) {
-        $(".switch-version>input").addClass("lite");
+        $(".switch-version").addClass("lite");
         const targetUrl = location.href.replace(version, version + "-lite");
         switchLiteEnterprise(targetUrl);
       }

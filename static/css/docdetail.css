@@ -192,17 +192,17 @@
 .switch-version span{
     cursor: pointer;
 }
-.lite .switch-version input::after{
+.lite.switch-version input::after{
     left: auto;
     right: 2px;
 }
 .switch-version .enterprise{
     color: #feb32a;
 }
-.lite .switch-version .enterprise,.switch-version .lite{
+.lite.switch-version .enterprise,.switch-version .lite{
     color: var(--o-color-white);
 }
-.lite .switch-version .lite{
+.lite.switch-version .lite{
     color: #feb32a;
 }
 @media screen and (max-width: 1100px){
