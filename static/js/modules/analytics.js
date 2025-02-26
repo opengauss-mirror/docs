@@ -9,19 +9,11 @@ const COOKIE_AGREED_STATUS = {
   ALL_AGREED: "1", // 同意所有cookie
   NECCESSARY_AGREED: "2", // 仅同意必要cookie
 };
-const COOKIE_VERSION = "20241230";
 
 const getUserCookieStatus = () => {
   const cookieVal = document.cookie.match(/agreed-cookiepolicy=([^;]+);?/)?.[1];
   if (!cookieVal) return;
-
   const cookieStatusVal = cookieVal[0];
-  const cookieVersionVal = cookieVal.slice(1);
-
-  if (cookieVersionVal !== COOKIE_VERSION) {
-    return COOKIE_AGREED_STATUS.NOT_SIGNED;
-  }
-
   if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
     return COOKIE_AGREED_STATUS.ALL_AGREED;
   } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
