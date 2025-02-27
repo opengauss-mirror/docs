@@ -28,10 +28,12 @@
     ../content/zh/docs/ToolandCommandReference/klist
     ../content/zh/docs/ToolandCommandReference/krb5kdc
     ../content/zh/docs/ToolandCommandReference/kdestroy
+    ../content/zh/docs/ToolandCommandReference/pagehack
     ../content/zh/docs/ToolandCommandReference/pg_config
     ../content/zh/docs/ToolandCommandReference/pg_controldata
     ../content/zh/docs/ToolandCommandReference/pg_recvlogical
     ../content/zh/docs/ToolandCommandReference/pg_resetxlog
+    ../content/zh/docs/ToolandCommandReference/pg_xlogdump
     ../content/zh/docs/ToolandCommandReference/pg_archivecleanup
     ../content/zh/docs/ToolandCommandReference/pssh
     ../content/zh/docs/ToolandCommandReference/pscp
