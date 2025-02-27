@@ -8,6 +8,9 @@
 
 类型的所有者或者被授予了类型DROP权限的用户或者被授予了DROP ANY TYPE权限的用户有权限执行DROP TYPE命令，系统管理员默认拥有此权限。
 
+用户定义类型支持以部分关键词（甚至包括内建类型名）作为类型名，但删除时需要指定其所属的 schema。
+比如 schema 为 `public` 的默认场景下，用户可使用 `DROP TYPE public.<type-name>;` 等语句删除这些以关键词命名的用户定义类型。
+
 ## 语法格式<a name="zh-cn_topic_0283137107_zh-cn_topic_0237122157_zh-cn_topic_0059778403_s5d2a1a9a8c0848c5b671e837e381ef36"></a>
 
 ```
