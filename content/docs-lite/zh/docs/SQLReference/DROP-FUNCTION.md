@@ -46,7 +46,11 @@ DROP FUNCTION [ IF EXISTS ] function_name
 
 -   **RESTRICT**
 
-    不删除依赖于该函数的对象（默认）。
+    不删除依赖于该函数的对象（默认）。如果仅存在视图依赖对象，则允许删除该函数，否则拒绝删除。查询视图时会提示相应依赖错误；新建函数如果参数和返回值与视图依赖相匹配，在查询视图时会重新建立与新函数的依赖，恢复视图。
+
+    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >
+    >-   删除视图依赖函数功能支持普通视图和物化视图，增量物化视图不支持。
 
 ## 示例<a name="zh-cn_topic_0283137306_zh-cn_topic_0237122138_zh-cn_topic_0059778261_s4c0a49238b6c41bdbf9c9cbd3aabcf08"></a>
 

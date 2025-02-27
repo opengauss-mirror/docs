@@ -33,6 +33,10 @@ DROP TABLE [ IF EXISTS ]
 -   **CASCADE | RESTRICT**
     -   CASCADE：级联删除依赖于表的对象（比如视图）。
     -   RESTRICT（缺省项）：如果仅存在视图依赖对象，则允许删除该表，否则拒绝删除该表。查询视图时会提示相应依赖错误；新建表如果表名和列名与视图依赖相匹配，在查询视图时会重新建立与新表的依赖，恢复视图。
+
+    >![](public_sys-resources/icon-notice.png) **须知：** 
+    >
+    >-   RESTRICT删除视图依赖表功能支持普通视图和物化视图，增量物化视图不支持。
     
 - **PURGE**
 
