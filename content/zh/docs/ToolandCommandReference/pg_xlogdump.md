@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="zh-cn_topic_0237152442_section125419154814"></a>
 
-pg\_resetxlog是一个用于解码并显示 openGauss 的预写式日志 (WAL) 的工具。此工具只能由安装该服务器的用户使用，因为它要求对数据目录的只读访问。
+pg_xlogdump是一个用于解码并显示 openGauss 的预写式日志 (WAL) 的工具。此工具只能由安装该服务器的用户使用，因为它要求对数据目录的只读访问。
 
 >![](public_sys-resources/icon-caution.png) **注意：**<br/>
 >暂不支持对段页式文件进行解码。<br/>
