@@ -1,21 +1,19 @@
 # RPM安装
 
-本章节主要介绍在openEuler（openEuler版本大于等于22.03 LTS）操作系统上，通过yum命令一键安装openGauss数据库。
+本章节主要介绍在openEuler操作系统上，通过yum命令一键安装openGauss数据库。
 
 ## 支持的架构和操作系统版本以及对应的openGauss版本
 
-| 操作系统                | 架构   | openauss版本    |
+| 操作系统                 | 架构   | openauss版本    |
 | ----------------------- | ------ | --------------- |
-| openEuler 22.03 LTS     | ARM64  | openGauss 2.1.0 Lite  |
-| openEuler 22.03 LTS     | x86-64 | openGauss 2.1.0 Lite  |
-| openEuler 22.03 LTS SP4 | ARM64  | openGauss 5.0.1 Lite  |
-| openEuler 22.03 LTS SP4 | x86-64 | openGauss 5.0.1 Lite  |
-| openEuler 24.03 LTS SP1 | ARM64  | openGauss 6.0.0 企业版 |
-| openEuler 24.03 LTS SP1 | x86-64 | openGauss 6.0.0 企业版 |
+| openEuler 24.03 LTS SP1 | ARM64/x86_64  | openGauss 6.0.0 企业版  |
+| openEuler 22.03 LTS SP4 | ARM64/x86_64  | openGauss 5.0.1 Lite   |
+| openEuler 24.03 LTS     | ARM64/x86_64  | openGauss 2.1.0 Lite   |
+| openEuler 22.03 LTS SP3 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
+| openEuler 20.03 LTS SP4 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
+| openEuler 22.03 LTS SP1 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
 
-注意：上面列举的操作系统对应的openGauss版本，指的是从这个版本的操作系统开始有对应的openGauss版本，向后兼容。
-
-比如：从openEuler 22.03 LTS开始支持openGauss 2.1.0 Lite，从openEuler 22.03 LTS SP4开始支持openGauss 5.0.1 Lite，从openEuler 24.03 LTS SP1开始支持openGauss 6.0.0 企业版，向后兼容。
+注意：上面列举的都是openEuler正在维护的版本，如果需要openEuler其他版本上安装openGauss，请联系华为技术支持。
 
 ## 支持特性
 
