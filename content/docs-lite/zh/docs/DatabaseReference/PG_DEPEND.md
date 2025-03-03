@@ -80,6 +80,15 @@ PG\_DEPEND系统表记录数据库对象之间的依赖关系。这个信息允�
 <td class="cellrowborder" valign="top" width="50.94%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526a"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526a"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526a"></a>一个定义这个依赖关系特定语义的代码。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_r08df82cb811f460c802481f5a64c3682"><td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aa3bdd58eda27499780f16b3b32b250bf"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aa3bdd58eda27499780f16b3b32b250bf"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aa3bdd58eda27499780f16b3b32b250bf"></a>depsrc</p>
+</td>
+<td class="cellrowborder" valign="top" width="11.28%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aeb3e794700454b698b9a7ddb84239899"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aeb3e794700454b698b9a7ddb84239899"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_aeb3e794700454b698b9a7ddb84239899"></a>text</p>
+</td>
+<td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af2a270ef143d418b950d209c7634dabc"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af2a270ef143d418b950d209c7634dabc"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_af2a270ef143d418b950d209c7634dabc"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="50.94%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526b"><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526b"></a><a name="zh-cn_topic_0283136814_zh-cn_topic_0237122284_zh-cn_topic_0059779334_a8e53f3a368f44f1e82046b8898c5526b"></a>针对视图规则和函数的依赖关系，记录函数的模式名、包名和函数名</p>
+</td>
+</tr>
 </tbody>
 </table>
 
