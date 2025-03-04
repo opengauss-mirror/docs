@@ -97,7 +97,7 @@ CREATE [ OR REPLACE ] [ DEFINER = user ] [ SQL SECURITY { DEFINER | INVOKER } ] 
 
 * 视图的FROM列表中可以有多项，但这些项必须是一个表、另一个视图或者一个子查询。
 * 视图定义的顶层不能包含WITH、DISTINCT、GROUP BY、HAVING、LIMIT、OFFSET子句的视图。
-* 视图定义的顶层不能包含集合操作（UNION、INTERSET、EXCEPT）的视图。
+* 视图定义的顶层不能包含集合操作（UNION、INTERSECT、EXCEPT）的视图。
 * 视图的目标列表中不能包含聚集函数、窗口函数或者返回集合的函数。
 * 如果UPDATE的目标列属于视图的一个子查询或子视图，那么这个子查询或子视图也需要满足上述可自动更新的条件。
 

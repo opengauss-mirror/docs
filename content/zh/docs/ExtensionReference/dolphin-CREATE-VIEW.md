@@ -96,7 +96,7 @@ CREATE [ OR REPLACE ] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] [DEFINER = u
 
 * 视图的FROM列表中只有一项，并且必须是一个表或者是另一个可自动更新视图。
 * 视图定义的顶层不能包含WITH、DISTINCT、GROUP BY、HAVING、LIMIT、OFFSET子句的视图
-* 视图定义的顶层不能包含集合操作（UNION、INTERSET、EXCEPT）的视图。
+* 视图定义的顶层不能包含集合操作（UNION、INTERSECT、EXCEPT）的视图。
 * 视图的目标列表中不能包含聚集函数、窗口函数或者返回集合的函数。
 
 一个可自动更新的视图可以混合可更新列以及不可更新列。如果一个列是对底层关系中一个可更新列的简单引用，则它是可更新的。否则该列是只读的，并且在一个INSERT或者UPDATE语句尝试对它赋值时会报错。
