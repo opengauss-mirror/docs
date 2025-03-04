@@ -1,3 +1,3 @@
 # gms_inaddr概述
 
-gms_inaddr是一个基于openGauss的插件，为用户提供了获取主机地址或者主机名称的功能。目前支持的接口有：GMS_INADDR.GET_HOST_NAME、GMS_INADDR.GET_HOST_ADDRESS
+gms_inaddr是一个基于openGauss的插件，为用户提供了获取主机地址或者主机名称的功能。目前支持的接口有：GMS_INADDR.GET_HOST_NAME、GMS_INADDR.GET_HOST_ADDRESS。
