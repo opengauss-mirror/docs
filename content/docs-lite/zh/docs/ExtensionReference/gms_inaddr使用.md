@@ -37,6 +37,7 @@ openGauss$# /
 127.0.0.1
 localhost
 ANONYMOUS BLOCK EXECUTE
+```
 
 ## 删除Extension<a name="section1587441381220"></a>
 
