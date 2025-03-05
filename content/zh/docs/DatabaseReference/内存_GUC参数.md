@@ -36,16 +36,16 @@
 
 **取值范围**：布尔型
 
--   true表示启用逻辑内存管理模块。
--   false表示不启用逻辑内存管理模块。
+-   on表示启用逻辑内存管理模块。
+-   off表示不启用逻辑内存管理模块。
 
-**默认值**： true
+**默认值**： on
 
 >![](public_sys-resources/icon-caution.png) **注意：** 
 >
->-   为了使 `enable_memory_limit` 参数生效，`max_process_memory` 的值需要设置足够大。若max\_process\_memory-shared\_buffers-cstore\_buffers-元数据少于2G，openGauss强制把enable\_memory\_limit设置为false。其中元数据是openGauss内部使用的内存和部分并发参数，如max\_connections、thread\_pool\_attr、max\_prepared\_transactions等参数相关。
+>-   为了使 `enable_memory_limit` 参数生效，`max_process_memory` 的值需要设置足够大。若max\_process\_memory-shared\_buffers-cstore\_buffers-元数据少于2G，openGauss强制把enable\_memory\_limit设置为off。其中元数据是openGauss内部使用的内存和部分并发参数，如max\_connections、thread\_pool\_attr、max\_prepared\_transactions等参数相关。
 >
->-   当该值为false时，不对数据库使用的内存做限制，在大并发或者复杂查询时，使用内存过多，可能导致操作系统OOM问题。
+>-   当该值为off时，不对数据库使用的内存做限制，在大并发或者复杂查询时，使用内存过多，可能导致操作系统OOM问题。
 
 ## max\_process\_memory<a name="zh-cn_topic_0283136786_zh-cn_topic_0237124699_zh-cn_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
 
