@@ -20,14 +20,7 @@ openGauss=# CREATE Extension gms_inaddr;
 ### 函数使用
 测试get_host_name、get_host_addr函数
 
-begin
-gms_output.enable;
-gms_output.put_line(gms_inaddr.get_host_address('localhost'));
-gms_output.put_line(gms_inaddr.get_host_name('127.0.0.1'));
-end
-/
-
-```sql
+```
 openGauss=# begin
 openGauss$#   gms_output.enable;
 openGauss$#   gms_output.put_line(gms_inaddr.get_host_address('localhost'));
@@ -37,6 +30,7 @@ openGauss$# /
 127.0.0.1
 localhost
 ANONYMOUS BLOCK EXECUTE
+```
 
 ## 删除Extension<a name="section1587441381220"></a>
 
@@ -45,8 +39,6 @@ ANONYMOUS BLOCK EXECUTE
 ```
 openGauss=# DROP Extension gms_inaddr [CASCADE];
 ```
-
-
 
 >![](public_sys-resources/icon-note.png) **说明：** 
 >
