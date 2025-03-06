@@ -641,19 +641,11 @@
 
 -   pgxc\_unlock\_for\_sp\_database\(name Name\)
 
-    Description: Releases a specified database lock.
-
-    Parameter: database name
-
-    Return type: Boolean
+    Description: This API has been discarded and is unavailable currently.
 
 -   pgxc\_lock\_for\_sp\_database\(name Name\)
 
-    Description: Locks a specified database.
-
-    Parameter: database name
-
-    Return type: Boolean
+    Description: This API has been discarded and is unavailable currently.
 
 -   copy\_error\_log\_create\(\)
 

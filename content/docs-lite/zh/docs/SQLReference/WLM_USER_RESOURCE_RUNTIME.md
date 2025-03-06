@@ -24,7 +24,7 @@ WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要�
 </td>
 <td class="cellrowborder" valign="top" width="21.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p193412140122"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p193412140122"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p193412140122"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"></a>正在使用的内存大小，单位MB。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1230151411213"></a>正在使用的内存大小（表示用户当前活跃的session已使用的内存总大小，若当前未运行业务或会话已结束，则动态内存会自动回收即为0。），单位MB。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_zh-cn_topic_0059778356_rdeb045b57c5440c6876aa5e1fddf3793"><td class="cellrowborder" valign="top" width="24.37%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1275719218122"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1275719218122"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p1275719218122"></a>total_memory</p>
@@ -38,7 +38,7 @@ WLM\_USER\_RESOURCE\_RUNTIME视图显示所有用户资源使用情况，需要�
 </td>
 <td class="cellrowborder" valign="top" width="21.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p797217389175"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p797217389175"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p797217389175"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"></a>正在使用的CPU核数。</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p397263812176"></a>正在使用的CPU核数（仅统计复杂作业CPU使用 情况，且该值为相关控制组的CPU使用统计值）。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_row64614276180"><td class="cellrowborder" valign="top" width="24.37%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p12894125171811"><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p12894125171811"></a><a name="zh-cn_topic_0283136663_zh-cn_topic_0237122754_p12894125171811"></a>total_cpu</p>
