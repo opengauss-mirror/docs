@@ -8,7 +8,9 @@
 >PQ特性暂时只支持ARM架构环境。<br>
 >PQ特性暂时只支持HNSW和IVF索引。<br>
 >PQ特性暂时只支持vector数据类型，在其他向量数据类型构建HNSWPQ以及IVFPQ索引会导致执行失败。<br>
->在创建PQ索引前需要先插入数据，无数据情况下会创建失败。
+>在创建PQ索引前需要先插入数据，无数据情况下会创建失败。<br>
+>创建PQ索引时表中的数据量小于pq_ksub可以正常创建索引，但会提示参与训练码本的数据量较少，召回率可能会偏低。<br>
+>创建IVFPQ索引时，如果表数据量小于索引选项lists，会提示召回率低。<br>
 ## 安装准备
 
 ### 获取PQ加速安装包
@@ -23,7 +25,7 @@ export DATAVEC_PQ_LIB_PATH=<YOUR_SO_PATH>
 
 
 ## 环境要求
-PQ特性只支持ARM架构环境以及openEuler22.03操作系统。
+PQ特性只支持ARM架构环境。
 
 ## 安装与卸载
 
@@ -46,8 +48,6 @@ with (m=<M>, ef_construction=<EF_CONSTRUCTION>, enable_pq = on, pq_m = <PQ_M>, p
 - `INDEX_NAME` - 索引名称
 - `TABLE_NAME` - 表名
 - `COLUMN_NAME` - 向量数据列名
-
-创建PQ索引时表中的数据量小于pq_ksub可以正常创建索引，但会提示参与训练码本的数据量较少，召回率可能会偏低。
 
 #### HNSWPQ索引操作符
 
@@ -79,12 +79,11 @@ vector_cosine_ops | 余弦距离
 -   `enable_pq` - 开启pq量化压缩（默认off）
 -   `pq_m` - 切分的子空间数量 1~2000（默认为8）。对于高维向量，pq_m的上限受页面大小限制，可能会在创建索引时报错，并给出当前向量维度对应pq_m的上限，还需结合pq_m的其他限制确定最终值。
 
-**示例：** 使用L2距离创建HNSWPQ索引，其中表items中向量为2000维。
-
-```
-openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (enable_pq=on, pq_m=2000);
-ERROR: vector and pqcode must on the same page, max pq_m is 72
-```
+	**示例：** 使用L2距离创建HNSWPQ索引，其中表items中向量为2000维。
+	```
+	openGauss=# CREATE INDEX ON items USING hnsw (embedding 	vector_l2_ops) WITH (enable_pq=on, pq_m=2000);
+	ERROR: vector and pqcode must on the same page, max pq_m is 72
+	```
 对于HNSWPQ索引，2000维的vector pq_m的最大值是72，由于维度%pq_m=0的限制，pq_m的最大值是50。
 -   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256） <br>
 
@@ -97,13 +96,12 @@ ERROR: vector and pqcode must on the same page, max pq_m is 72
 #### GUC参数
 -   `hnsw_earlystop_threshold` - 设置图搜索的最大连续迭代次数 160~INT32_MAX-1 (默认INT32_MAX)
 
-**示例：** 使用L2距离计算创建HNSWPQ索引并设置`m = 16, ef_construction = 64, pq_m=32`，并设置`hnsw_earlystop_threshold`为320。
+	**示例：** 使用L2距离计算创建HNSWPQ索引并设置`m = 16, ef_construction = 64, pq_m=32`，并设置`hnsw_earlystop_threshold`为320。
 
-```
-openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64, enable_pq=on, pq_m=32);
-
-openGauss=# SET hnsw_earlystop_threshold = 320;
-```
+	```
+	openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (m = 16, ef_construction = 64, enable_pq=on, 		pq_m=32);
+	openGauss=# SET hnsw_earlystop_threshold = 320;
+	```
 
 ### IVFPQ
 
@@ -149,12 +147,12 @@ vector_cosine_ops|<=>|余弦距离
 - `pq_ksub`  - 仅在`enable_pq`开启时有效，每个子空间的聚类中心数量 1~256 （默认256）
 - `by_residual` - 仅在`enable_pq`开启时有效，启用残差运算（默认off）
 
-**示例：** 使用带残差的L2距离计算创建IVFPQ索引并设置`lists = 200, pq_m = 4, pq_ksub = 256`。
-
-```
-openGauss=# CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists = 200,
-enable_pq = on, pq_m = 4, pq_ksub = 256, by_residual = on);
-```
+	**示例：** 使用带残差的L2距离计算创建IVFPQ索引并设置`lists = 200, pq_m = 4, pq_ksub = 256`。
+	
+	```
+	openGauss=# CREATE INDEX ON items USING ivfflat (embedding 	vector_l2_ops) WITH (lists = 200,
+	enable_pq = on, pq_m = 4, pq_ksub = 256, by_residual = on);
+	```
 
 **设置建议：**
 
@@ -165,18 +163,18 @@ enable_pq = on, pq_m = 4, pq_ksub = 256, by_residual = on);
 
 #### 查询选项
 
-- `ivfflat_probe` - 查询时候选集的大小，参见[Datavec向量引擎参数](../DatabaseReference/Datavec向量引擎参数.md)。
+- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
-**示例：**
+	**示例：**
 
-```
-openGauss=# SET ivfflat_probes = 10;
-```
+	```
+	openGauss=# SET ivfflat_probes = 10;
+	```
 
-- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[Datavec向量引擎参数](../DatabaseReference/Datavec向量引擎参数.md)。
+- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
-**示例：**
+	**示例：**
 
-```
-openGauss=# SET ivfpq_kreorder = 10;
-```
+	```
+	openGauss=# SET ivfpq_kreorder = 10;
+	```
