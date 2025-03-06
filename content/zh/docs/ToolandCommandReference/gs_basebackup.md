@@ -9,11 +9,11 @@ gs\_basebackup工具支持MySQL兼容性。（仅限于3.0.0，3.1.0，3.1.1的M
 gs\_basebackup工具支持打印进度，会根据已经传输完成的文件大小比上需要传输的总文件大小进行进度打印。
 
 >![](public_sys-resources/icon-note.png) **说明：** 
-
+>
 >-   gs\_basebackup仅支持主机和备机的全量备份，不支持增量。
 >-   gs\_basebackup当前支持热备份模式和压缩格式备份模式。
->-   若打开增量检测点功能且打开双写，gs\_basebackup也会备份双写文件。
 >-   gs\_basebackup在备份包含绝对路径的表空间时，如果在同一台机器上进行备份，可以通过tablespace-mapping重定向表空间路径或使用归档模式进行备份。
+>-   若打开增量检测点功能且打开双写，gs\_basebackup也会备份双写文件。
 >-   若pg\_xlog目录为软链接，备份时将不会建立软链接，会直接将数据备份到目的路径的pg\_xlog目录下。
 >-   备份过程中收回用户备份权限，可能导致备份失败或者备份数据不可用。
 >-   如果因为网络临时故障等原因导致Server端无法应答，gs\_basebackup将在最长等待120秒后退出。
@@ -26,6 +26,7 @@ gs\_basebackup工具支持打印进度，会根据已经传输完成的文件大
 -   如果xlog传输模式为stream模式，需要配置max\_wal\_senders的数量，至少有一个可用。
 -   如果xlog传输模式为fetch模式，有必要把wal_keep_segments参数设置得足够高，这样在备份末尾之前日志不会被移除。
 -   在进行还原时，需要保证各节点备份目录中存在备份文件，若备份文件丢失，则需要从其他节点进行拷贝。
+-   关于物理备份与恢复的更多说明，请参考[物理备份与恢复](../DatabaseOMGuide/物理备份与恢复.md)。
 
 ## 语法<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 

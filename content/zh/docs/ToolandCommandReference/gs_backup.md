@@ -9,6 +9,7 @@ openGauss部署成功后，在数据库运行的过程中，会遇到各种问�
 -   可以正常连接openGauss数据库。
 -   在进行还原时，需要保证各节点备份目录中存在备份文件。
 -   需以操作系统用户omm执行gs\_backup命令。
+-   关于物理备份与恢复的更多说明，请参考[物理备份与恢复](../DatabaseOMGuide/物理备份与恢复.md)。
 
 ## 语法<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
@@ -46,7 +47,7 @@ gs\_backup参数可以分为如下几类：
 
         指定存储备份文件的主机名称。
 
-        取值范围：主机名称。如果不指定主机名称，则备份当前集群。
+        取值范围：主机名称。如果不指定主机名称，则备份当前数据库实例。
 
     -   --backup-dir=BACKUPDIR
 
@@ -90,7 +91,7 @@ gs\_backup参数可以分为如下几类：
 
         恢复二进制文件。
 
-    -   --all
+    -   --all 
 
         恢复二进制和参数文件。
 
@@ -102,7 +103,7 @@ gs\_backup参数可以分为如下几类：
         
     -   --force
     
-        节点的静态文件丢失之后强行restore，仅限--all或者--binary参数使用时才生效。
+        节点的静态文件丢失之后强行restore，仅限--all或者--binary参数一起使用时才生效。
     
 
 
@@ -125,25 +126,28 @@ gs\_backup参数可以分为如下几类：
 
 ## 示例<a name="zh-cn_topic_0237152406_zh-cn_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 
--   使用gs\_backup脚本备份数据库主机。
+- 使用gs\_backup脚本备份数据库主机。
 
-    ```
-    gs_backup -t backup --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Parsing configuration files.
-    Successfully parsed the configuration file.
-    Performing remote backup.
-    Remote backup succeeded.
-    Successfully backed up cluster files.
-    ```
+  ```
+  gs_backup -t backup --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
+  Backing up openGauss.
+  Parsing configuration files.
+  Successfully parsed the configuration file.
+  Performing remote backup.
+  Remote backup succeeded.
+  Successfully backed up openGauss.
+  ```
 
--   使用gs\_backup脚本恢复数据库主机。
+- 使用gs\_backup脚本恢复数据库主机。
 
-    ```
-    gs_backup -t restore --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
-    Parsing configuration files.
-    Successfully parsed the configuration file.
-    Performing remote restoration.
-    Successfully restored cluster files.
-    ```
+  ```
+  gs_backup -t restore --backup-dir=/opt/software/gaussdb/backup_dir -h plat1 --parameter
+  Restoring openGauss.
+  Parsing the configuration file.
+  Successfully parsed configuration files.
+  Performing remote restoration.
+  Remote restoration succeeded.
+  Successfully restored openGauss.
+  ```
 
 
