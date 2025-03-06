@@ -15,7 +15,7 @@
     CREATE EVENT TRIGGER name
         ON event
         [ WHEN filter_variable IN (filter_value [, ... ]) [ AND ... ] ]
-        EXECUTE PROCEDURE function_name()
+        EXECUTE { PROCEDURE | FUNCTION } function_name()
 
 ## 参数说明<a name="zh-cn_topic_0283731165_zh-cn_topic_0237112223_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
@@ -34,6 +34,8 @@
 -   **function\_name**
 
     用户定义的函数，必须声明为不带参数并返回类型为event_trigger，在事件触发器触发时执行。
+    
+    在`CREATE EVENT TRIGGER`语法中，关键字`PROCEDURE`和`FUNCTION`具有相同的含义与作用。
 
 ## 示例<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777895_s7f55076bb56940b7920a431c0c344669"></a>
 ```

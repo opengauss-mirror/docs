@@ -23,7 +23,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     { NOT DEFERRABLE | [ DEFERRABLE ] { INITIALLY IMMEDIATE | INITIALLY DEFERRED } }
     [ FOR [ EACH ] { ROW | STATEMENT } ]
     [ WHEN ( condition ) ]
-    EXECUTE PROCEDURE function_name ( arguments );
+    EXECUTE { PROCEDURE | FUNCTION } function_name ( arguments );
 ```
 
 -   **兼容mysql兼容风格的创建触发器的语法**
@@ -143,9 +143,11 @@ CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { 
 
     对于约束触发器，WHEN条件的评估不会延迟，而是在执行更新操作后立即发生。 如果条件返回值不为true，则触发器不会排队等待延迟执行。
 
--   **function\_name**
+- **function\_name**
 
-    用户定义的函数，必须声明为不带参数并返回类型为触发器，在触发器触发时执行。
+  用户定义的函数，必须声明为不带参数并返回类型为触发器，在触发器触发时执行。
+
+  在`CREATE TRIGGER`语法中，关键字`PROCEDURE`和`FUNCTION`具有相同的含义与作用。
 
 - **arguments**
 
