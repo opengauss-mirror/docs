@@ -147,16 +147,24 @@ c: 游标编号
 ### GMS_SQL 简单执行流程如下：
 
 1.OPEN_CURSOR
+
 2.PARSE
+
 3.BIND_VARIABLE
+
 4.DEFINE_COLUMN或者 DEFINE_ARRAY
+
 5.EXECUTE
+
 6.FETCH_ROWS 或者 EXECUTE_AND_FETCH
+
 7.COLUMN_VALUE
+
 8.CLOSE_CURSOR
 
 ### 用例实例
 
+```
 openGauss=# CREATE EXTENSION gms_sql;
 CREATE EXTENSION
 openGauss=# show gms_sql_max_open_cursor_count;
@@ -218,6 +226,7 @@ NOTICE:  c1: ahoj28, c2: 28
 NOTICE:  c1: ahoj29, c2: 29
 NOTICE:  c1: ahoj30, c2: 30
 ANONYMOUS BLOCK EXECUTE
+```
 
 ## 删除Extension<a name="section1587441381220"></a>
 
