@@ -165,8 +165,7 @@ c: 游标编号
 8.CLOSE_CURSOR
 
 
-### 用例实例
-
+### 示例
 ```
 openGauss=# CREATE EXTENSION gms_sql;
 CREATE EXTENSION
