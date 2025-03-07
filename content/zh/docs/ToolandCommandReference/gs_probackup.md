@@ -17,7 +17,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 
 -   可以正常连接openGauss数据库。
 -   若要使用PTRACK增量备份，需在postgresql.conf中手动添加参数“enable\_cbm\_tracking = on”或通过gs\_guc工具进行设置。
--   为了防止xlog在传输结束前被清理，请适当调高postgresql.conf文件中wal_keep_segements的值。
+-   为了防止xlog在传输结束前被清理，请适当调高postgresql.conf文件中wal_keep_segments的值。
 
 ## 限制说明<a name="zh-cn_topic_0287276008_section6439171332614"></a>
 
@@ -27,7 +27,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 -   远程模式下只能执行add-instance、backup、restore子命令。
 -   使用restore子命令前，应先停止gaussdb进程。
 -   在非资源池化模式下，当存在用户自定义表空间时，如果该表空间的路径不在PGDATA目录下，备份的时候要加上 --external-dirs 参数，否则，该表空间不会被备份；在资源池化模式下，当前只支持相对路径表空间，因此存在自定义表空间时不需要指定 --external-dir 参数。
--   当备份的规模比较大或在备份同时执行业务时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数rw-timeout的值。
+-   当备份的规模比较大或在备份同时执行业务时，为了防止备份过程中timeout发生，请适当调整postgresql.conf文件的参数 session\_timeout、wal\_sender\_timeout。并且在备份的命令行参数中适当调整参数--rw-timeout的值。
 -   资源池化模式下，恢复到不同集群需先执行全量恢复。
 -   增量备份恢复后，之前创建的非pgoutput插件的逻辑复制槽不可用，需删除重建。
 -   恢复时，使用-T选项把备份中的外部目录重定向到新目录时，请同时指定参数--external-mapping。
@@ -39,6 +39,7 @@ gs\_probackup目前支持进度打印，会分别在文件备份、文件验证�
 -   备份将执行checkpoint与xlog switch操作，此行为将产生新的xlog，并提交事务。一主一备或一主多备场景备份时，若配置文件中synchronous_commit设置为on，备机关停可能会导致主机同步提交事务失败，进而导致备份失败。此场景下，请确认各节点状态正常，或将synchronous_commit设置为off以避免备份失败。
 -   在开启enable_cbm_tracking后，不能直接执行增量备份，需要先执行全量备份，即使在开启参数之前已经执行过全量备份。
 -   备份到兼容S3协议的对象存储时，请确保对象存储服务已经开通，可以获取到ak和sk，并且已经创建好bucket。备份到对象存储特性目前不支持执行merge子命令。
+-   关于物理备份与恢复的更多说明，请参考[物理备份与恢复](../DatabaseOMGuide/物理备份与恢复.md)。
 
 ## 功能说明<a name="zh-cn_topic_0287276008_section86861610172815"></a>
 
@@ -78,8 +79,7 @@ gs\_probackup工具的主要功能如下：
 -   若未指定-D选项，则默认为数据库原始数据目录$PGDATA
 
     ```
-    gs_probackup add-instance -B backup-path --instance=instance_name
-    [-D pgdata-path]
+    gs_probackup add-instance -B backup-path -D pgdata-path --instance=instance_name
     [-E external-directories-paths]
     [remote_options] [dss_options] [s3_options]
     [--help]
@@ -754,7 +754,7 @@ gs\_probackup工具的主要功能如下：
     gs_probackup restore -B backup-path --instance instance_name -D pgdata-path -i backup_id
     ```
     >![](public_sys-resources/icon-notice.png) **须知：** 
-    >在恢复备份时，必须先将原始实例目录（参数-D后面的目录）下面的内容清空。
+    >在恢复备份前，必须先将原始实例目录（参数-D后面的目录）下面的内容清空。
     >使用restore子命令前，应先停止gaussdb进程。
 
 
