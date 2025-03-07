@@ -252,7 +252,7 @@ PG\_PROC系统表存储函数或过程的信息。
 <td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.4.1.2 "><p id="p3109173511910"><a name="p3109173511910"></a><a name="p3109173511910"></a>"char"</p>
 </td>
 <td class="cellrowborder" valign="top" width="60.73%" headers="mcps1.2.4.1.3 "><p id="p61095352195"><a name="p61095352195"></a><a name="p61095352195"></a>表示该对象为函数还是存储过程：</p>
-<a name="ul137311211520"></a><a name="ul137311211520"></a><ul id="ul137311211520"><li>值为'f'表示该对象为函数。</li><li>值为'p'表示该对象为存储过程。</li></ul>
+<a name="ul137311211520"></a><a name="ul137311211520"></a><ul id="ul137311211520"><li>值为'f'表示该对象为函数。</li><li>值为'p'表示该对象为存储过程。</li><li>值为'v'表示该对象为子程序函数。</li><li>值为'b'表示该对象为子程序存储过程。</li></ul>
 </td>
 </tr>
 <tr id="row2763955123418"><td class="cellrowborder" valign="top" width="25.77%" headers="mcps1.2.4.1.1 "><p id="p14764165515348"><a name="p14764165515348"></a><a name="p14764165515348"></a>proargsrc</p>
