@@ -88,6 +88,18 @@
             }
           }
         }
+        function getNextOrPrevHref(arr, startIndex, step) {
+          let i = startIndex;
+          let href = arr[i].href;
+          while (href == null && i > 0 && i < arr.length) {
+            i += step;
+            if (i > 0 && i < arr.length) {
+              href = arr[i].href;
+            }
+          }
+
+          return href;
+        }
         // 获取上一页、下一页
         function nextAndPevious(arr, id) {
           for (var i = 0; i < arr.length; i++) {
@@ -95,12 +107,14 @@
               if (i === 0) {
                 result.push(null);
               } else {
-                result.push(arr[i - 1].href);
+                const hrefPrev = getNextOrPrevHref(arr, i - 1, -1);
+                result.push(hrefPrev);
               }
               if (i === arr.length - 1) {
                 result.push(null);
               } else {
-                result.push(arr[i + 1].href);
+                const hrefNext = getNextOrPrevHref(arr, i + 1, 1);
+                result.push(hrefNext);
               }
             }
           }
