@@ -4,7 +4,7 @@
 
 **参数说明**： 使用HNSW索引扫描时的动态候选集大小。
 
-该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
 
 **取值范围**： 整型，1\~1000
 
@@ -19,7 +19,7 @@
 
 **参数说明**： 使用IVFFLAT索引扫描时的动态候选集大小。
 
-该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+该参数仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
 
 **取值范围**： 整型，1\~32768
 
@@ -70,4 +70,6 @@
 
 >![](public_sys-resources/icon-note.gif) **说明：**
 >
->默认值是不开启，较高的值会提升查询的召回率，但同时查询速度会下降。推荐值大小为`k*nprobes`，其中`k`为用户查询sql设置的`limit k`。
+>默认值是不开启，较高的值会提升查询的召回率，但同时查询速度会下降。推荐值大小为`k*ivfflat_probes`，其中`k`为用户查询sql设置的`limit k`。
+>如果`ivfpq_kreorder`的值小于用户查询sql设置的`limit k`，返回记录数为实际精排候选集大小。
+>创建IVFPQ索引时，不设置`ivfpq_kreorder`参数或者该参数值设置不合理会导致查询结果乱序。
