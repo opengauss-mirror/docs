@@ -2904,4 +2904,5 @@ headless: true
     	-   [Usage-related FAQs]({{< relref "./docs/Appendix/usage-related-faqs.md" >}})	
     -   [Error Log Reference]({{< relref "./docs/Appendix/error-log-reference.md" >}})
         -   [Kernel Error Information]({{< relref "./docs/Appendix/kernel-error-information.md" >}})
+	-   [References]({{< relref "./docs/Appendix/references.md" >}})
     -   [Glossary]({{< relref "./docs/Appendix/glossary.md" >}})
