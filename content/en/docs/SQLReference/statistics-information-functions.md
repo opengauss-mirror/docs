@@ -1923,15 +1923,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   create\_wlm\_session\_info\(int flag\)
 
-    Description: Clears top SQL query statement-level statistics recorded in the current memory. Only the administrator can execute this function.
-
-    Return type: int
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_session\_info\(int flag\)
 
-    Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not 0, the information is cleared from the memory. Only users with the  **system admin**  or  **monitor admin**  permission can execute this function.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_paxos\_stat\_replication\(\)
 
@@ -2066,15 +2062,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_get\_resource\_pool\_info\(int\)
 
-    Description: Obtains resource usage statistics of all users. The input parameter can be any value of the INT type or be null.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_wlm\_get\_all\_user\_resource\_info\(\)
 
-    Description: Obtains resource usage statistics of all users.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_wlm\_get\_user\_info\(int\)
 
@@ -2082,11 +2074,78 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
+    The following table describes return columns.
+
+    <a name="table16852919405"></a>
+    <table><tbody><tr id="row1665112920400"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p136552919401"><a name="p136552919401"></a><a name="p136552919401"></a>Column</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1659293405"><a name="p1659293405"></a><a name="p1659293405"></a>Type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p136592910407"><a name="p136592910407"></a><a name="p136592910407"></a>Description</p>
+    </td>
+    </tr>
+    <tr id="row965132944017"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p106520295408"><a name="p106520295408"></a><a name="p106520295408"></a>userid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1565162974013"><a name="p1565162974013"></a><a name="p1565162974013"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p1165129154019"><a name="p1165129154019"></a><a name="p1165129154019"></a>OID of the user</p>
+    </td>
+    </tr>
+    <tr id="row1666142974018"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p166582924019"><a name="p166582924019"></a><a name="p166582924019"></a>sysadmin</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p765182954019"><a name="p765182954019"></a><a name="p765182954019"></a>boolean</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p4665297408"><a name="p4665297408"></a><a name="p4665297408"></a>Whether the user has the <strong id="en-us_topic_0237122753_b173782285611"><a name="en-us_topic_0237122753_b173782285611"></a><a name="en-us_topic_0237122753_b173782285611"></a>sysadmin</strong> permission</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>rpoid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>OID of the resource pool</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>parentid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>oid</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>OID of the parent user</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>totalspace</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>Size of the occupied space</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>spacelimit</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>bigint</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>Upper limit of the space size</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>childcount</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>Number of child users</p>
+    </td>
+    </tr>
+    <tr id="row06612298408"><td class="cellrowborder" valign="top" width="25.762576257625764%"><p id="p566182912401"><a name="p566182912401"></a><a name="p566182912401"></a>childlist</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.46134613461346%"><p id="p1866152918409"><a name="p1866152918409"></a><a name="p1866152918409"></a>text</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.77607760776078%"><p id="p96622911403"><a name="p96622911403"></a><a name="p96622911403"></a>Child user list</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 -   gs\_wlm\_get\_workload\_records\(\)
 
-    Description: Obtains all job information in dynamic load management. This function is valid only when dynamic load management is enabled.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_wlm\_readjust\_user\_space\(\)
 
@@ -2108,9 +2167,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_session\_respool\(bigint\)
 
-    Description: Obtains the session resource pool information about all backend threads. The input parameter can be any value of the bigint type or can be null.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_wlm\_get\_session\_info\(\)
 
@@ -2543,15 +2600,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   DBE\_PERF.track\_memory\_context\(context\_list text\)
 
-    Description: Sets the memory context whose memory application details need to be collected. The input parameter is the memory context names, which are separated by commas \(,\), for example,  **ThreadTopMemoryContext, SessionCacheMemoryContext**. Note that the memory context names are context-sensitive. In addition, the length of a single memory context is 63, and the excess part is truncated. The maximum number of memory contexts that can be collected at a time is 16. If the number of memory contexts exceeds 16, the setting fails. Each time this function is called, the previous statistics result is cleared. When the input parameter is set to  **""**, the statistics function is disabled. Only the initial user \(super user\) or a user with the  **monadmin **permission can execute this function.
-
-    Return type: Boolean
+    Description: This API has been discarded and is unavailable currently.
 
 -   DBE\_PERF.track\_memory\_context\_detail\(\)
 
-    Description: Obtains the memory application details of the memory context specified by the  **DBE\_PERF.track\_memory\_context**  function. For details, see the  **DBE\_PERF.track\_memory\_context\_detail**  view. Only the initial user \(super user\) or a user with the  **monadmin **permission can execute this function.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_mem\_mbytes\_reserved\(tid\)
 
@@ -2563,9 +2616,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_user\_resource\_info\(name text\)
 
-    Description: Queries a user's resource quota and resource usage.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_file\_stat\(\)
 
@@ -2739,17 +2790,11 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_user\_resource\_info\(name text\)
 
-    Description: Queries a user's resource quota and resource usage. Common users can query only their own information. Administrators can query information about all users.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   create\_wlm\_instance\_statistics\_info
 
-    Description: Saves the historical monitoring data of the current instance persistently.
-
-    Parameter:  **nan**
-
-    Return type: integer
+    Description: This API has been discarded and is unavailable currently.
 
 -   gs\_session\_memory
 
@@ -2804,25 +2849,15 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_wlm\_persistent\_user\_resource\_info\(\)
 
-    Description: Archives all user resource usage statistics to the  **gs\_wlm\_user\_resource\_history**  system catalog. To query this function, you must have the  **sysadmin**  permission.
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
 -   create\_wlm\_operator\_info\(int flag\)
 
-    Description: Clears top SQL operator-level statistics recorded in the current memory. If the input parameter is greater than 0, the information is archived to  **gs\_wlm\_operator\_info**  and  **gs\_wlm\_ec\_operator\_info**. Otherwise, the information is not archived. Only users with the  **sysadmin**  permission can execute this function.
-
-    Return type: int
+    Description: This API has been discarded and is unavailable currently.
 
 -   GS\_ALL\_NODEGROUP\_CONTROL\_GROUP\_INFO\(text\)
 
-    Description: Provides Cgroup information for all logical database instances. Before calling this function, you need to specify the name of the logical database instance to be queried. For example, to query the Cgroup information for the installation logical database instance, run the following command:
-
-    ```
-    SELECT * FROM GS_ALL_NODEGROUP_CONTROL_GROUP_INFO('installation')
-    ```
-
-    Return type: record
+    Description: This API has been discarded and is unavailable currently.
 
     The following table describes return columns.
 
@@ -2910,9 +2945,7 @@ Statistics information functions are divided into the following two categories: 
 
 -   gs\_total\_nodegroup\_memory\_detail
 
-    Description: Returns information about the memory used by the current logical database, in MB.
-
-    Return type: SETOF record
+    Description: This API has been discarded and is unavailable currently.
 
 -   local\_redo\_time\_count\(\)
 

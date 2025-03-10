@@ -2031,75 +2031,39 @@ The following functions provide server transaction information in an exportable 
 
 -   pg\_stat\_get\_wlm\_realtime\_operator\_info
 
-    Description: Obtains the operator information of the real-time execution plan from the internal hash table.
-
-    Parameter: nan
-
-    Return type: queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, status text, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_realtime\_ec\_operator\_info
 
-    Description: Obtains the operator information of the EC execution plan from the internal hash table.
-
-    Parameter: nan
-
-    Return type: queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_operator\_info
 
-    Description: Obtains the operator information of the execution plan from the internal hash table.
-
-    Parameter: nan
-
-    Return type: queryid bigint, pid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, query\_dop integer, estimated\_rows bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, warning text
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_node\_resource\_info
 
-    Description: Obtains the resource information of the current node.
-
-    Parameter: nan
-
-    Return type: min\_mem\_util integer, max\_mem\_util integer, min\_cpu\_util integer, max\_cpu\_util integer, min\_io\_util integer, max\_io\_util integer, used\_mem\_rate integer
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_session\_wlmstat
 
-    Description: Returns the load information of the current session.
-
-    Parameter: pid integer
-
-    Return type: datid oid, threadid bigint, sessionid bigint, threadpid integer, usesysid oid, appname text, query text, priority bigint, block\_time bigint, elapsed\_time bigint, total\_cpu\_time bigint, skew\_percent integer, statement\_mem integer, active\_points integer, dop\_value integer, current\_cgroup text, current\_status text, enqueue\_state text, attribute text, is\_plana boolean, node\_group text, srespool name
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_ec\_operator\_info
 
-    Description: Obtains the operator information of the EC execution plan from the internal hash table.
-
-    Parameter: nan
-
-    Return type: queryid bigint, plan\_node\_id integer, plan\_node\_name text, start\_time timestamp with time zone, duration bigint, tuple\_processed bigint, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, ec\_operator integer, ec\_status text, ec\_execute\_datanode text, ec\_dsn text, ec\_username text, ec\_query text, ec\_libodbc\_type text, ec\_fetch\_count bigint
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_instance\_info
 
-    Description: Returns the load information of the current instance.
-
-    Parameter: nan
-
-    Return type: instancename text, timestamp, timestamp with time zone, used\_cpu integer, free\_memory integer, used\_memory integer, io\_await double precision, io\_util double precision, disk\_read double precision, disk\_write double precision, process\_read bigint, process\_write bigint, logical\_read bigint, logical\_write bigint, read\_counts bigint, write\_counts bigint
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_instance\_info\_with\_cleanup
 
-    Description: Returns the load information of the current instance and saves the information to the system catalog.
-
-    Parameter: nan
-
-    Return type: instancename text, timestamp, timestamp with time zone, used\_cpu integer, free\_memory integer, used\_memory integer, io\_await double precision, io\_util double precision, disk\_read double precision, disk\_write double precision, process\_read bigint, process\_write bigint, logical\_read bigint, logical\_write bigint, read\_counts bigint, write\_counts bigint
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_realtime\_session\_info
 
-    Description: Returns the load information of the real-time session.
-
-    Parameter: nan
-
-    Return type: nodename text, threadid bigint, block\_time bigint, duration bigint, estimate\_total\_time bigint, estimate\_left\_time bigint, schemaname text, query\_band text, spill\_info text, control\_group text, estimate\_memory integer, min\_peak\_memory integer, max\_peak\_memory integer, average\_peak\_memory integer, memory\_skew\_percent integer, min\_spill\_size integer, max\_spill\_size integer, average\_spill\_size integer, spill\_skew\_percent integer, min\_dn\_time bigint, max\_dn\_time bigint, average\_dn\_time bigint, dntime\_skew\_percent integer, min\_cpu\_time bigint, max\_cpu\_time bigint, total\_cpu\_time bigint, cpu\_skew\_percent integer, min\_peak\_iops integer, max\_peak\_iops integer, average\_peak\_iops integer, iops\_skew\_percent integer, warning text, query text, query\_plan text, cpu\_top1\_node\_name text, cpu\_top2\_node\_name text, cpu\_top3\_node\_name text, cpu\_top4\_node\_name text, cpu\_top5\_node\_name text, mem\_top1\_node\_name text, mem\_top2\_node\_name text, mem\_top3\_node\_name text, mem\_top4\_node\_name text, mem\_top5\_node\_name text, cpu\_top1\_value bigint, cpu\_top2\_value bigint, cpu\_top3\_value bigint, cpu\_top4\_value bigint, cpu\_top5\_value bigint, mem\_top1\_value bigint, mem\_top2\_value bigint, mem\_top3\_value bigint, mem\_top4\_value bigint, mem\_top5\_value bigint, top\_mem\_dn text, top\_cpu\_dn text
+    Description: This API has been discarded and is unavailable currently.
 
 -   pg\_stat\_get\_wlm\_session\_iostat\_info
 
@@ -2111,8 +2075,5 @@ The following functions provide server transaction information in an exportable 
 
 -   pg\_stat\_get\_wlm\_statistics
 
-    Description: Returns session load statistics.
+    Description: This API has been discarded and is unavailable currently.
 
-    Parameter: nan
-
-    Return type: statement text, block\_time bigint, elapsed\_time bigint, total\_cpu\_time bigint, qualification\_time bigint, skew\_percent integer, control\_group text, status text, action text
