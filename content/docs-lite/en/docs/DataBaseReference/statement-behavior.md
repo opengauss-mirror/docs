@@ -250,3 +250,17 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 -   **off**  indicates that case is not ignored when double quotes are used.
 
 **Default value**:  **off**
+
+## enable\_pltype\_name\_check<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_s598902a20151984b90b6d32d8dqw789s51z0"></a>
+
+**Parameter description**: 
+Sets whether type name checking is performed when assigning a variable with a type name (including RECORD, VARRAY, TABLE OF types, and types created with CREATE TYPE).
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
+
+**Value range**: Boolean
+
+-   **on**  Indicates check type names.
+-   **off**  Indicates do not check type names.
+
+**Default value**:  **off**
