@@ -78,19 +78,84 @@ The following functions in openGauss have been discarded in the latest version:
 <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p9480430941"><a name="p9480430941"></a><a name="p9480430941"></a>pg_pool_validate</p>
 </td>
 </tr>
+</tr>
 <tr id="row1380912816123"><td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p148091728131212"><a name="p148091728131212"></a><a name="p148091728131212"></a>gs_stat_ustore</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p38091228141217"><a name="p38091228141217"></a><a name="p38091228141217"></a>table_skewness(text)</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p11810122820128"><a name="p11810122820128"></a><a name="p11810122820128"></a>table_skewness(text, text, text)</p>
 </td>
-<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p19810928161210"><a name="p19810928161210"></a><a name="p19810928161210"></a>-</p>
+<td class="cellrowborder" valign="top" width="9.077276816954914%"><p id="p19810928161210"><a name="p19810928161210"></a><a name="p19810928161210"></a>pg_stat_get_wlm_realtime_operator_info</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p178100288127"><a name="p178100288127"></a><a name="p178100288127"></a>-</p>
+<td class="cellrowborder" valign="top" width="19.49415175447366%"><p id="p178100288127"><a name="p178100288127"></a><a name="p178100288127"></a>pg_stat_get_wlm_realtime_ec_operator_info</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p38101928151213"><a name="p38101928151213"></a><a name="p38101928151213"></a>-</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p38101928151213"><a name="p38101928151213"></a><a name="p38101928151213"></a>pg_stat_get_wlm_ec_operator_info</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817122"></a><a name="p2810132817122"></a>-</p>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817122"></a><a name="p2810132817122"></a>gs_stat_get_wlm_plan_operator_info</p>
+</td>
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817123"></a><a name="p2810132817123"></a>pg_stat_get_wlm_operator_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_get_resource_pool_info(int)</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_get_all_user_resource_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>create_wlm_operator_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>create_wlm_session_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_get_workload_records</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_persistent_user_resource_info</p>
+</td>
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_session_respool</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_total_nodegroup_memory_detail</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_wlm_user_resource_info(name text)</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>create_wlm_instance_statistics_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_session_wlmstat</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_wlm_ec_operator_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_wlm_instance_info</p>
+</td>
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_wlm_instance_info_with_cleanup</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_wlm_statistics</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_get_wlm_realtime_session_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_upload_obs_file</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_download_obs_file</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_set_obs_file_context</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_get_hadr_key_cn</p>
+</td>
+</tr>
+<tr>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>gs_hadr_do_switchover</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>track_memory_context(context_list text)</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>track_memory_context_detail</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pgxc_unlock_for_sp_database</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>local_segment_space_info</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_segment_extent_usage</p>
+</td>
+<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>GS_ALL_NODEGROUP_CONTROL_GROUP_INFO</p>
 </td>
 </tr>
 </tbody>

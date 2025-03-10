@@ -24,7 +24,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p1119319163318"><a name="p1119319163318"></a><a name="p1119319163318"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p81934983311"><a name="p81934983311"></a><a name="p81934983311"></a>正在使用的内存大小，单位MB。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p81934983311"><a name="p81934983311"></a><a name="p81934983311"></a>正在使用的内存大小（表示用户当前活跃的session已使用的内存总大小，若当前未运行业务或会话已结束，则动态内存会自动回收即为0。），单位MB。</p>
 </td>
 </tr>
 <tr id="row191936913332"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p101931398337"><a name="p101931398337"></a><a name="p101931398337"></a>total_memory</p>
@@ -38,7 +38,7 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p2356262115"><a name="p2356262115"></a><a name="p2356262115"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p2194129103315"><a name="p2194129103315"></a><a name="p2194129103315"></a>正在使用的CPU核数。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p2194129103315"><a name="p2194129103315"></a><a name="p2194129103315"></a>正在使用的CPU核数（仅统计复杂作业CPU使用 情况，且该值为相关控制组的CPU使用统计值）。</p>
 </td>
 </tr>
 <tr id="row16194394338"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p111941993334"><a name="p111941993334"></a><a name="p111941993334"></a>total_cpu</p>
@@ -66,70 +66,70 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p21954919338"><a name="p21954919338"></a><a name="p21954919338"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p61951093331"><a name="p61951093331"></a><a name="p61951093331"></a>已使用的临时空间大小，单位KB</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p61951093331"><a name="p61951093331"></a><a name="p61951093331"></a>已使用的临时空间大小（预留字段，暂未使用），单位KB。</p>
 </td>
 </tr>
 <tr id="row1519616963319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p119610911330"><a name="p119610911330"></a><a name="p119610911330"></a>total_temp_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p1319649123316"><a name="p1319649123316"></a><a name="p1319649123316"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p319659103319"><a name="p319659103319"></a><a name="p319659103319"></a>可使用的临时空间总大小，单位KB，值为-1表示未限制。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p319659103319"><a name="p319659103319"></a><a name="p319659103319"></a>可使用的临时空间总大小（预留字段，暂未使用），单位KB，值为-1表示未限制。</p>
 </td>
 </tr>
 <tr id="row181968983316"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p121966903314"><a name="p121966903314"></a><a name="p121966903314"></a>used_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p1919620914333"><a name="p1919620914333"></a><a name="p1919620914333"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p171961953314"><a name="p171961953314"></a><a name="p171961953314"></a>已使用的下盘空间大小。单位KB。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p171961953314"><a name="p171961953314"></a><a name="p171961953314"></a>已使用的下盘空间大小（预留字段，暂未使用）。单位KB。</p>
 </td>
 </tr>
 <tr id="row18196199153319"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p619679173318"><a name="p619679173318"></a><a name="p619679173318"></a>total_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p6196092338"><a name="p6196092338"></a><a name="p6196092338"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p719718919330"><a name="p719718919330"></a><a name="p719718919330"></a>可使用的下盘空间总大小，单位KB，值为-1表示未限制。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p719718919330"><a name="p719718919330"></a><a name="p719718919330"></a>可使用的下盘空间总大小（预留字段，暂未使用），单位KB，值为-1表示未限制。</p>
 </td>
 </tr>
 <tr id="row175431830163011"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p10543730143016"><a name="p10543730143016"></a><a name="p10543730143016"></a>read_kbytes</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p13544430133011"><a name="p13544430133011"></a><a name="p13544430133011"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p7544830133013"><a name="p7544830133013"></a><a name="p7544830133013"></a>读磁盘数据量，单位KB。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p7544830133013"><a name="p7544830133013"></a><a name="p7544830133013"></a>读磁盘数据量，单位KB。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 <tr id="row883843716301"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p1583853723013"><a name="p1583853723013"></a><a name="p1583853723013"></a>write_kbytes</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p12838203711302"><a name="p12838203711302"></a><a name="p12838203711302"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p188387371303"><a name="p188387371303"></a><a name="p188387371303"></a>写磁盘数据量，单位KB。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p188387371303"><a name="p188387371303"></a><a name="p188387371303"></a>写磁盘数据量，单位KB。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 <tr id="row0854134803012"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p12854194893016"><a name="p12854194893016"></a><a name="p12854194893016"></a>read_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p198546481301"><a name="p198546481301"></a><a name="p198546481301"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p16854174853011"><a name="p16854174853011"></a><a name="p16854174853011"></a>读磁盘次数。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p16854174853011"><a name="p16854174853011"></a><a name="p16854174853011"></a>读磁盘次数。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 <tr id="row17710351103015"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p117101251103015"><a name="p117101251103015"></a><a name="p117101251103015"></a>write_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p5710851193016"><a name="p5710851193016"></a><a name="p5710851193016"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p1071085118307"><a name="p1071085118307"></a><a name="p1071085118307"></a>写磁盘次数。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p1071085118307"><a name="p1071085118307"></a><a name="p1071085118307"></a>写磁盘次数。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 <tr id="row244712417302"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p10447134133015"><a name="p10447134133015"></a><a name="p10447134133015"></a>read_speed</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p2044714163010"><a name="p2044714163010"></a><a name="p2044714163010"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p644724116305"><a name="p644724116305"></a><a name="p644724116305"></a>读磁盘速率，单位B/ms。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p644724116305"><a name="p644724116305"></a><a name="p644724116305"></a>读磁盘速率，单位B/ms。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 <tr id="row1340219340305"><td class="cellrowborder" valign="top" width="21.494949494949495%" headers="mcps1.2.4.1.1 "><p id="p24020341309"><a name="p24020341309"></a><a name="p24020341309"></a>write_speed</p>
 </td>
 <td class="cellrowborder" valign="top" width="22.67676767676768%" headers="mcps1.2.4.1.2 "><p id="p64027349303"><a name="p64027349303"></a><a name="p64027349303"></a>double precision</p>
 </td>
-<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p1040217346305"><a name="p1040217346305"></a><a name="p1040217346305"></a>写磁盘速率，单位B/ms。</p>
+<td class="cellrowborder" valign="top" width="55.82828282828282%" headers="mcps1.2.4.1.3 "><p id="p1040217346305"><a name="p1040217346305"></a><a name="p1040217346305"></a>写磁盘速率，单位B/ms。（当前不支持，仅分布式可用。）</p>
 </td>
 </tr>
 </tbody>
