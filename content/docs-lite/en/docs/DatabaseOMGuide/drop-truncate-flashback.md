@@ -8,7 +8,8 @@
 ## Prerequisites<a name="section17975164121712"></a>
 
 -   The  **enable\_recyclebin**  parameter has been set for enabling the recycle bin.
--   The  **recyclebin\_retention\_time**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires.
+-   The  **recyclebin\_retention\_time**  parameter has been set for specifying the retention period of objects in the recycle bin. The objects will be automatically deleted after the retention period expires. The expired
+objects cannot be used to do flashback operations.
 
 ## Syntax<a name="section12145151281719"></a>
 
