@@ -31,7 +31,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p16634234165117"><a name="p16634234165117"></a><a name="p16634234165117"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p263473418512"><a name="p263473418512"></a><a name="p263473418512"></a>Size of the memory being used, in MB</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p263473418512"><a name="p263473418512"></a><a name="p263473418512"></a>Size of the memory being used(The total size of memory used by the user's current active session. If no business is running or the session has ended, the dynamic memory will be automatically reclaimed, resulting in a size of 0.), in MB</p>
 </td>
 </tr>
 <tr id="row126341834205118"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p2634123411519"><a name="p2634123411519"></a><a name="p2634123411519"></a>total_memory</p>
@@ -45,7 +45,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p13634434115117"><a name="p13634434115117"></a><a name="p13634434115117"></a>real</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p163483412516"><a name="p163483412516"></a><a name="p163483412516"></a>Number of CPU cores in use</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p163483412516"><a name="p163483412516"></a><a name="p163483412516"></a>Number of CPU cores in use. CPU usage data is collected only in complex jobs, and the value is the CPU usage of the related Cgroup.</p>
 </td>
 </tr>
 <tr id="row4634193413513"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p1463433411511"><a name="p1463433411511"></a><a name="p1463433411511"></a>total_cpu</p>
@@ -73,70 +73,70 @@
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p1663514348513"><a name="p1663514348513"></a><a name="p1663514348513"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p7635113415114"><a name="p7635113415114"></a><a name="p7635113415114"></a>Used temporary storage space, in KB</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p7635113415114"><a name="p7635113415114"></a><a name="p7635113415114"></a>Used temporary storage space(Reserved field, not in use yet.), in KB</p>
 </td>
 </tr>
 <tr id="row10635173445119"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p9635143425116"><a name="p9635143425116"></a><a name="p9635143425116"></a>total_temp_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p1263513410516"><a name="p1263513410516"></a><a name="p1263513410516"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p17635734175119"><a name="p17635734175119"></a><a name="p17635734175119"></a>Available temporary storage space, in KB. The value <strong id="b1616904602012"><a name="b1616904602012"></a><a name="b1616904602012"></a>–1</strong> indicates that the maximum temporary storage space is not limited.</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p17635734175119"><a name="p17635734175119"></a><a name="p17635734175119"></a>Available temporary storage space(Reserved field, not in use yet.), in KB. The value <strong id="b1616904602012"><a name="b1616904602012"></a><a name="b1616904602012"></a>–1</strong> indicates that the maximum temporary storage space is not limited.</p>
 </td>
 </tr>
 <tr id="row3635113455119"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p11635934105114"><a name="p11635934105114"></a><a name="p11635934105114"></a>used_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p16351334175118"><a name="p16351334175118"></a><a name="p16351334175118"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p13635434205119"><a name="p13635434205119"></a><a name="p13635434205119"></a>Used space of operator flushing, in KB</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p13635434205119"><a name="p13635434205119"></a><a name="p13635434205119"></a>Used space of operator flushing(Reserved field, not in use yet.), in KB</p>
 </td>
 </tr>
 <tr id="row86359341514"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p1163543415120"><a name="p1163543415120"></a><a name="p1163543415120"></a>total_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p36356343510"><a name="p36356343510"></a><a name="p36356343510"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p206351434105117"><a name="p206351434105117"></a><a name="p206351434105117"></a>Available storage space for operator flushing, in KB. The value <strong id="b1100952192020"><a name="b1100952192020"></a><a name="b1100952192020"></a>–1</strong> indicates that the maximum operator flushing space is not limited.</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p206351434105117"><a name="p206351434105117"></a><a name="p206351434105117"></a>Available storage space for operator flushing(Reserved field, not in use yet.), in KB. The value <strong id="b1100952192020"><a name="b1100952192020"></a><a name="b1100952192020"></a>–1</strong> indicates that the maximum operator flushing space is not limited.</p>
 </td>
 </tr>
 <tr id="row16635134115119"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p46351034125113"><a name="p46351034125113"></a><a name="p46351034125113"></a>read_kbytes</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p96351034175115"><a name="p96351034175115"></a><a name="p96351034175115"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p863533413514"><a name="p863533413514"></a><a name="p863533413514"></a>Byte traffic of read operations in a monitoring period, in KB</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p863533413514"><a name="p863533413514"></a><a name="p863533413514"></a>Byte traffic of read operations in a monitoring period(Not supported currently, available only in distributed mode.), in KB</p>
 </td>
 </tr>
 <tr id="row136351034125115"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p10635234185115"><a name="p10635234185115"></a><a name="p10635234185115"></a>write_kbytes</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p863523415119"><a name="p863523415119"></a><a name="p863523415119"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p10636734165110"><a name="p10636734165110"></a><a name="p10636734165110"></a>Byte traffic of write operations in a monitoring period, in KB</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p10636734165110"><a name="p10636734165110"></a><a name="p10636734165110"></a>Byte traffic of write operations in a monitoring period(Not supported currently, available only in distributed mode.), in KB</p>
 </td>
 </tr>
 <tr id="row9636133465111"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p1563653445111"><a name="p1563653445111"></a><a name="p1563653445111"></a>read_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p763683465118"><a name="p763683465118"></a><a name="p763683465118"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p1563341118139"><a name="p1563341118139"></a><a name="p1563341118139"></a>Number of read operations in a monitoring period</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p1563341118139"><a name="p1563341118139"></a><a name="p1563341118139"></a>Number of read operations in a monitoring period(Not supported currently, available only in distributed mode.)</p>
 </td>
 </tr>
 <tr id="row1663683417516"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p66365344511"><a name="p66365344511"></a><a name="p66365344511"></a>write_counts</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p2636163418516"><a name="p2636163418516"></a><a name="p2636163418516"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p763613415512"><a name="p763613415512"></a><a name="p763613415512"></a>Number of write operations in a monitoring period</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p763613415512"><a name="p763613415512"></a><a name="p763613415512"></a>Number of write operations in a monitoring period(Not supported currently, available only in distributed mode.)</p>
 </td>
 </tr>
 <tr id="row2636734175117"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p463663495117"><a name="p463663495117"></a><a name="p463663495117"></a>read_speed</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p1663619341518"><a name="p1663619341518"></a><a name="p1663619341518"></a>real</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p96361534105116"><a name="p96361534105116"></a><a name="p96361534105116"></a>Byte rate of read operations in a monitoring period, in KB/s</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p96361534105116"><a name="p96361534105116"></a><a name="p96361534105116"></a>Byte rate of read operations in a monitoring period(Not supported currently, available only in distributed mode.), in KB/s</p>
 </td>
 </tr>
 <tr id="row19991428101118"><td class="cellrowborder" valign="top" width="20.42204220422042%" headers="mcps1.2.4.1.1 "><p id="p12100228141112"><a name="p12100228141112"></a><a name="p12100228141112"></a>write_speed</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.092609260926093%" headers="mcps1.2.4.1.2 "><p id="p191000288116"><a name="p191000288116"></a><a name="p191000288116"></a>real</p>
 </td>
-<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p210072812117"><a name="p210072812117"></a><a name="p210072812117"></a>Byte rate of write operations in a monitoring period, in KB/s</p>
+<td class="cellrowborder" valign="top" width="53.48534853485349%" headers="mcps1.2.4.1.3 "><p id="p210072812117"><a name="p210072812117"></a><a name="p210072812117"></a>Byte rate of write operations in a monitoring period(Not supported currently, available only in distributed mode.), in KB/s</p>
 </td>
 </tr>
 </tbody>
