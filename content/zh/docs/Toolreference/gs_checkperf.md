@@ -10,10 +10,6 @@ openGauss提供了gs\_checkperf工具来帮助对openGauss级别（主机CPU占�
 
 - 运行在数据库之上的业务运行正常。
 
-  ![](public_sys-resources/icon-note.gif) **说明：**
-
-  出于安全考虑，企业版安装方式下，gaussdbToolPath目录下该工具前置完成后会自动删除。
-
 ## 注意事项<a name="zh-cn_topic_0237152332_section4694838915381"></a>
 
 -   gs\_checkperf工具的监控信息依赖于pmk模式下的表的数据。如果pmk模式下的表未执行analyze操作，则可能导致gs\_checkperf工具执行失败。其报错示例信息如下。
