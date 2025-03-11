@@ -12,7 +12,3 @@ The features discussed in this section are located in the  **bin/dbmind**  direc
 -   **[AI4DB: Autonomous Database O&M](ai4db-autonomous-database-o-m.md)**  
 
 -   **[DB4AI: Database-driven AI](db4ai-database-driven-ai.md)**  
-
--   **[ABO Optimizer](abo-optimizer.md)**  
-
-
