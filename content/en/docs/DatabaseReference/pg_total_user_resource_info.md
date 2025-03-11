@@ -24,7 +24,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="20.810000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p193412140122"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193412140122"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193412140122"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"></a>Used memory, in MB</p>
+<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1230151411213"></a>Used memory(The total size of memory used by the user's current active session. If no business is running or the session has ended, the dynamic memory will be automatically reclaimed, resulting in a size of 0.), in MB</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_en-us_topic_0059778356_rdeb045b57c5440c6876aa5e1fddf3793"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1275719218122"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1275719218122"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1275719218122"></a>total_memory</p>
@@ -66,28 +66,28 @@
 </td>
 <td class="cellrowborder" valign="top" width="20.810000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p944971545310"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p944971545310"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p944971545310"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"></a>Used temporary space, in KB</p>
+<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1344917158536"></a>Used temporary space(Reserved field, not in use yet.), in KB</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row11962131865313"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p3962818115320"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p3962818115320"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p3962818115320"></a>total_temp_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.810000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p5962171813531"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p5962171813531"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p5962171813531"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"></a>Total available temporary space, in KB (<strong id="en-us_topic_0237122471_b1658319437276"><a name="en-us_topic_0237122471_b1658319437276"></a><a name="en-us_topic_0237122471_b1658319437276"></a>-1</strong> if the temporary space is not limited)</p>
+<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p89621118165313"></a>Total available temporary space(Reserved field, not in use yet.), in KB (<strong id="en-us_topic_0237122471_b1658319437276"><a name="en-us_topic_0237122471_b1658319437276"></a><a name="en-us_topic_0237122471_b1658319437276"></a>-1</strong> if the temporary space is not limited)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row448172235313"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1348172225317"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1348172225317"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1348172225317"></a>used_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.810000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p154819220535"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p154819220535"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p154819220535"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"></a>Size of the used operator flushing space, in KB</p>
+<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1648113224531"></a>Size of the used operator flushing space(Reserved field, not in use yet.), in KB</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row1715825165318"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p271552585314"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p271552585314"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p271552585314"></a>total_spill_space</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.810000000000002%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p10715162525319"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p10715162525319"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p10715162525319"></a>bigint</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"></a>Total size of the available operator flushing space, in KB (<strong id="en-us_topic_0237122471_b5480210112920"><a name="en-us_topic_0237122471_b5480210112920"></a><a name="en-us_topic_0237122471_b5480210112920"></a>-1</strong> if the space is not limited)</p>
+<td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p197151425115316"></a>Total size of the available operator flushing space(Reserved field, not in use yet.), in KB (<strong id="en-us_topic_0237122471_b5480210112920"><a name="en-us_topic_0237122471_b5480210112920"></a><a name="en-us_topic_0237122471_b5480210112920"></a>-1</strong> if the space is not limited)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row663824192211"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p663834113223"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p663834113223"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p663834113223"></a>read_kbytes</p>
@@ -96,6 +96,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p46381241142211"></a>Primary database node: total bytes read by the user's complex jobs on all database nodes in the last 5 seconds, in KB</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Database node: total bytes read by the user's complex jobs from the instance startup time to the current time, in KB</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p118134716239"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row758511216274"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1158617212276"></a>write_kbytes</p>
@@ -104,6 +105,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p25861121172715"></a>Primary database node: total bytes written by the user's complex jobs on all database nodes in the last 5 seconds, in KB</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a>Database node: total bytes written by the user's complex jobs from the instance startup time to the current time, in KB</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1917191716289"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row1020031172910"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42019182917"></a>read_counts</p>
@@ -112,6 +114,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p19710105172920"></a>Primary database node: total number of read times of the user's complex jobs on all database nodes in the last 5 seconds</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a>Database node: total number of read times of the user's complex jobs from the instance startup time to the current time</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1720114116299"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row14601458142920"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p16460125819296"></a>write_counts</p>
@@ -120,6 +123,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p193961020133012"></a>Primary database node: total number of write times of the user's complex jobs on all database nodes in the last 5 seconds</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a>Database node: total number of write times of the user's complex jobs from the instance startup time to the current time</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p11460158142912"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row1222144193118"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p1722844173115"></a>read_speed</p>
@@ -128,6 +132,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p922184415311"></a>Primary database node: average read rate of the user's complex jobs on a single database node in the last 5 seconds, in KB/s</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a>Database node: average read rate of the user's complex jobs on the database node in the last 5 seconds, in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p42022014332"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283137005_en-us_topic_0237122471_row78702338"><td class="cellrowborder" valign="top" width="20.64%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p4910083314"></a>write_speed</p>
@@ -136,6 +141,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="58.550000000000004%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p2091702339"></a>Primary database node: average write rate of the user's complex jobs on a single database node in the last 5 seconds, in KB/s</p>
 <p id="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a>Database node: average write rate of the user's complex jobs on the database node in the last 5 seconds, in KB/s</p>
+<p id="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a><a name="en-us_topic_0283137005_en-us_topic_0237122471_p7807924163514"></a>Not supported currently, available only in distributed mode.</p>
 </td>
 </tr>
 </tbody>

@@ -501,19 +501,7 @@ Array comparisons compare the array contents element-by-element, using the defau
 
 -   array\_extendnull\(anyarray, int\)
 
-    Description: Adds a specified number of null elements to the end of an array.
-
-    Return type: anyarray
-
-    Example:
-
-    ```
-    openGauss=# SELECT array_extendnull(ARRAY[1,8,3,7],1) AS RESULT;
-        result 
-    --------------
-    {1,8,3,7,null}
-    (1 row)
-    ```
+    Description: This API has been discarded and is unavailable currently.
 
 -   array\_trim\(anyarray, int\)
 
