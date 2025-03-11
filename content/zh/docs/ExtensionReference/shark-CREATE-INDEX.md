@@ -25,7 +25,7 @@
 -   在表上创建索引。
 
   ```
-  CREATE [ UNIQUE ] [COLUMNSTORE] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
+  CREATE [ UNIQUE ] [ opt_clustered ] [COLUMNSTORE] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ] ON table_name [ USING method ]
       ({ { column_name [ ( length ) ] | ( expression ) } [ COLLATE collation ] [ opclass ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ] }[, ...] )
       [ INCLUDE ( column_name [, ...] )]    
       [ WITH ( {storage_parameter = value} [, ... ] ) ]
@@ -41,12 +41,22 @@
 
     该关键字为创建兼容D库的语法，指定列存选项。仅语法作用，没有实际功能。
 
+-   **opt_clustered**
+
+    参数内容为CLUSTERED/NONCLUSTERED，兼容D库的语法，指定创建聚合/非聚合索引。仅语法作用，没有实际功能。
+
 ## 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```sql
 openGauss=# create table t1 (a int);
 CREATE TABLE
 openGauss=# create columnstore index on t1 (a);
+NOTICE:  The COLUMNSTORE option is currently ignored
+CREATE INDEX
+
+openGauss=# create table t1 (a int);
+CREATE TABLE
+openGauss=# create clustered index on t1 (a);
 NOTICE:  The COLUMNSTORE option is currently ignored
 CREATE INDEX
 ```
