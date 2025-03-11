@@ -980,50 +980,6 @@ create extension gms_raw;
   (1 row)
   ```
 
-### gms_raw.reverse
-
-- gms_raw.reverse(r in raw) returns raw
-
-  **描述**：此函数将一个raw值按字节进行反转。
-
-  **参数说明**：
-
-  - `r`: raw类型入参，要反转的raw数据
-
-  **返回值**：raw数据类型，反转后的raw值
-
-  **说明**：
-  
-  - 当第一个参数r为null或空字符串''，将报错提示
-
-  **示例**：
-
-  ```
-  select gms_raw.reverse('01');
-  reverse 
-  ---------
-  01
-  (1 row)
-
-  select gms_raw.reverse('1122');
-  reverse 
-  ---------
-  2211
-  (1 row)
-
-  select gms_raw.reverse('11223344');
-  reverse  
-  ----------
-  44332211
-  (1 row)
-
-  select gms_raw.reverse('12345678');
-  reverse  
-  ----------
-  78563412
-  (1 row)
-  ```
-
 ### gms_raw.translate
 
 - gms_raw.translate(r in raw, from_set in raw, to_set in raw) returns raw
