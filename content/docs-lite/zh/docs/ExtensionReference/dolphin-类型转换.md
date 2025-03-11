@@ -48,7 +48,7 @@
 |DATETIME/TIMESTAMP|八位数及以下日期部分与DATE相同，时间为00:00:00；九位数及以上优先时间：<br>九位数为2000-0x-xx xx:xx:xx<br>十位数为200x-xx-xx xx:xx:xx<br>十一位数为20xx-xx-xx xx:xx:xx<br>十二位数为0xxx-xx-xx xx:xx:xx<br>十三位数为xxxx-xx-xx xx:xx:xx<br>小数部分忽略，无四舍五入<br>|TINYINT/SMALLINT/INT/BIGINT/NUMERIC到DATETIME/TIMESTAMP的转换级别为隐式，UINT4/UINT8为显式，其他为赋值|
 |TIME|从秒开始逐位对应|B兼容性下的TIME类型取值范围为-838:59:59~838:59:59；<br>'12:34'::time，结果为12::34::00，也更符合日常使用习惯，但1234::time，结果为00::12::34，注意区分。关于字符类型更多转换规则详见具体介绍<br>TINYINT/SMALLINT/INT/BIGINT/NUMERIC到TIME的转换级别为隐式，UINT4为显式，其他为赋值|
 |YEAR|0为0<br>一位数200x<br>两位数20xx<br>四位数xxxx<br>小数存在四舍五入|YEAR类型的取值范围为0、1901~2155<br>TINYINT/SMALLINT/INT到YEAR的转换级别为隐式，其他为赋值|
-|CHAR/VARCHAR/TEXT|按数值转换为字符串|到TEXT的转换级别均为隐式<br>UINT1/UINT2/UINT4/UINT8到CHAR/VARCHAR的转换级别为赋值，其他为隐式|
+|CHAR/VARCHAR/TEXT|按数值转换为字符串|到TEXT的转换级别均为隐式<br>UINT1/UINT2/UINT4/UINT8到CHAR的转换级别为赋值，其他为隐式|
 |BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB|按数值转换为字符串，以/x格式的十六进制当前字符集编码显示|转换级别为赋值|
 |ENUM|按数值对应ENUM编号进行转换<br>小数部分忽略，无四舍五入|转换级别为赋值|
 |SET|按数值对应SET编号进行转换<br>小数部分忽略，无四舍五入|SET编号顺序为1、2、4、8...，可叠加，如5转换为set第一、第三项的集合<br>SMALLINT/INT/BIGINT/NUMERIC/FLOAT/DOUBLE到SET的转换为隐式，其他为赋值|
