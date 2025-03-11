@@ -41,7 +41,7 @@ openGauss提供了gs\_om工具帮助对openGauss进行维护，包括启动openG
   gs_om -t generateconf --old-values=old --new-values=new [--distribute] [-l LOGFILE]
   ```
 
--   生成动态配置文件，备机failover或switchover成主机后，需要执行此操作
+-   生成动态配置文件，在不带CM工具的集群中，备机failover或switchover成主机后，需要执行此操作
 
     ```
     gs_om -t refreshconf
