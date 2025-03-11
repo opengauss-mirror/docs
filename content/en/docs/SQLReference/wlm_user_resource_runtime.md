@@ -24,7 +24,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122754_p193412140122"><a name="en-us_topic_0237122754_p193412140122"></a><a name="en-us_topic_0237122754_p193412140122"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122754_p1230151411213"><a name="en-us_topic_0237122754_p1230151411213"></a><a name="en-us_topic_0237122754_p1230151411213"></a>Used memory (unit: MB)</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122754_p1230151411213"><a name="en-us_topic_0237122754_p1230151411213"></a><a name="en-us_topic_0237122754_p1230151411213"></a>Used memory(The total size of memory used by the user's current active session. If no business is running or the session has ended, the dynamic memory will be automatically reclaimed, resulting in a size of 0.) (unit: MB)</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122754_en-us_topic_0059778356_rdeb045b57c5440c6876aa5e1fddf3793"><td class="cellrowborder" valign="top" width="24.39%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122754_p1275719218122"><a name="en-us_topic_0237122754_p1275719218122"></a><a name="en-us_topic_0237122754_p1275719218122"></a>total_memory</p>
@@ -38,7 +38,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="21.16%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0237122754_p797217389175"><a name="en-us_topic_0237122754_p797217389175"></a><a name="en-us_topic_0237122754_p797217389175"></a>integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122754_p397263812176"><a name="en-us_topic_0237122754_p397263812176"></a><a name="en-us_topic_0237122754_p397263812176"></a>Number of CPU cores in use</p>
+<td class="cellrowborder" valign="top" width="54.449999999999996%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0237122754_p397263812176"><a name="en-us_topic_0237122754_p397263812176"></a><a name="en-us_topic_0237122754_p397263812176"></a>Number of CPU cores in use. CPU usage data is collected only in complex jobs, and the value is the CPU usage of the related Cgroup.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0237122754_row64614276180"><td class="cellrowborder" valign="top" width="24.39%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0237122754_p12894125171811"><a name="en-us_topic_0237122754_p12894125171811"></a><a name="en-us_topic_0237122754_p12894125171811"></a>total_cpu</p>
