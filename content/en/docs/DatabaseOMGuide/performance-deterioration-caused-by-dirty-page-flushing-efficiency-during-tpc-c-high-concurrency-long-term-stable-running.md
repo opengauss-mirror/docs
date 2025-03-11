@@ -11,7 +11,7 @@ Generally, you can analyze the specific cause by checking the process status and
 ## Solution<a name="en-us_topic_0283136782_section12323144814214"></a>
 
 1. Reduce the concurrency or increase the value of **shared_buffers**.
-2. Adjust dirty page parameters. In scenarios where doublewrite is enabled, you can adjust parameters such as **page\_writer\_sleep** (downward adjustment) and **max\_io\_capacity** (upward adjustment) to improve dirty page elimination efficiency.
+2. Adjust dirty page parameters. In scenarios where doublewrite is enabled, you can adjust parameters such as **pagewriter\_sleep** (downward adjustment) and **max\_io\_capacity** (upward adjustment) to improve dirty page elimination efficiency.
 3. Replace high-performance disks (such as NVMe disks).
 
 The resources occupied by the database must meet the service requirements. In a high-concurrency test, you need to add resources to ensure that database services are available.
