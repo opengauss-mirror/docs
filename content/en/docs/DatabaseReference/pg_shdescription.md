@@ -1,6 +1,6 @@
 # PG\_SHDESCRIPTION<a name="EN-US_TOPIC_0289900363"></a>
 
-**PG\_SHDESCRIPTION**  records optional comments for shared database objects. Descriptions can be manipulated with the  **COMMENT**  command and viewed with psql's  **\\d**  commands.
+**PG\_SHDESCRIPTION**  records optional comments for shared database objects. Descriptions can be manipulated with the  **COMMENT**  command and viewed with gsql's  **\\d**  commands.
 
 See also  **PG\_DESCRIPTION**, which provides a similar function for descriptions involving objects within a single database.
 
