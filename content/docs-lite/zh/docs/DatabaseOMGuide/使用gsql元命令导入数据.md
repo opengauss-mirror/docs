@@ -29,6 +29,7 @@ gsql工具提供了元命令\\copy进行数据导入。
 <div class="note" id="zh-cn_topic_0283136941_zh-cn_topic_0237121136_note1924115273417"><a name="zh-cn_topic_0283136941_zh-cn_topic_0237121136_note1924115273417"></a><a name="zh-cn_topic_0283136941_zh-cn_topic_0237121136_note1924115273417"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136941_zh-cn_topic_0237121136_p1925145210348"><a name="zh-cn_topic_0283136941_zh-cn_topic_0237121136_p1925145210348"></a><a name="zh-cn_topic_0283136941_zh-cn_topic_0237121136_p1925145210348"></a>\COPY只适合小批量、格式良好的数据导入，不会对非法字符做预处理，也无容错能力，无法适用于含有异常数据的场景。导入数据应优先选择COPY。</p>
 <p id="p156755320558"><a name="p156755320558"></a><a name="p156755320558"></a>\COPY 可以指定数据导入时的客户端数量，从而实现数据文件的并行导入，目前并发数范围为[1, 8]。</p>
 <p id="p65691446135618"><a name="p65691446135618"></a><a name="p65691446135618"></a>\COPY并行导入目前存在以下约束：临时表的并行导入不支持、在事务内的并行导入不支持、对二进制文件的并行导入不支持、数据导入支持AES128加密时不支持以及COPY选项中存在EOL。在这些情况下，即使指定了parallel参数，仍然会走非并行流程。</p>
+<p id="p65691446135619"><a name="p65691446135619"></a><a name="p65691446135619"></a>\COPY支持并行导入INTERVAL分区表，但受自治事务并发参数影响，如max_concurrent_autonomous_transactions为0，或自治事务并发数已全部占满时，根据插入数据量和分区数可能会执行成功或发生锁等待卡住。</p>
 </div></div>
 </td>
 </tr>
