@@ -21,6 +21,10 @@ debezium opengauss connector的sink端，从kafka读取AVRO格式的数据，在
 - 反向迁移支持jdbc超时重连机制，可在jdbc断连后自动重连，用户无感知。
 - 反向迁移支持用户自定义是否在迁移结束后保留逻辑复制槽，若保留逻辑复制槽则可实现断点续传功能。
 - 反向迁移增加流量控制能力，可在迁移大批量增量数据时触发流量控制，防止系统崩溃。
+- 反向迁移支持使用mppdb_decoding插件进行并行解码，迁移性能较默认插件pgoutput有较大提升，使用方法：
+  在对应的`opengauss-source.properties`文件中（或者使用Datakit-数据迁移-迁移参数配置）修改参数
+  `plugin.name=mppdb_decoding`，
+  当逻辑复制槽为mppdb_decoding时，可设置解码线程并行度：`parallel.decode.num=1~20（默认值：15）`。
 
 ## 特性约束<a name="section06531946143616"></a>
 
