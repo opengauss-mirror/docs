@@ -15,7 +15,9 @@
 下载openGauss-container仓库代码，构建脚本在该仓库中管理。
 
 >-   构建镜像需要openGauss社区发布的企业版本包openGauss-All-X.X.X-CentOS7-x86_64.tar.gz，放到`openGauss-container/dockerfiles`目录下。
->-   运行buildDockerImage.sh脚本时，如果不指定-i参数，此时默认提供SHA256检查，需要您手动将校验结果写入sha256_file_amd64文件。
+>-   运行buildDockerImage.sh脚本时，如果不指定-i参数，此时默认提供SHA256检查，，根据操作系统版本不同修改不同的校验文件，
+     Centos： sha256_file_amd64 ，
+     openEuler_aarch64： sha256_file_arm64 ，以Centos为例需要您手动将校验结果写入sha256\_file\_amd64文件。
 >    ```
 >    ## 修改sha256校验文件内容
 >    cd `openGauss-container/dockerfiles`
@@ -28,6 +30,9 @@
 ```
 sh buildDockerImage.sh -v X.X.X -i
 ```
+>![](public_sys-resources/icon-note.png) **说明：**
+> 默认创建版本为6.0.0，如需构建6.0.0之后版本，进入dockerfiles目录下修改对应dockerfile_arm或dockerfile_amd中 ENV OPENGAUSS_VERSION 6.0.0为需要版本。
+> 因包名变更，如需创建6.0.0之前版本需修改文件中包名称为对应的版本包名。
 
 ### 使用社区发布的镜像
 
