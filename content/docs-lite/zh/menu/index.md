@@ -4,7 +4,6 @@ headless: true
 
 
 - [法律声明]({{< relref "./docs/ReleaseNotes/法律声明.md" >}})
-
 -   [发行说明]({{< relref "./docs/ReleaseNotes/Releasenotes.md" >}})
     -   [用户须知]({{< relref "./docs/ReleaseNotes/用户须知.md" >}})
     -   [版本介绍]({{< relref "./docs/ReleaseNotes/版本介绍.md" >}})
@@ -16,7 +15,6 @@ headless: true
     -   [源代码]({{< relref "./docs/ReleaseNotes/源代码.md" >}})
     -   [参与贡献]({{< relref "./docs/ReleaseNotes/参与贡献.md" >}})
     -   [致谢]({{< relref "./docs/ReleaseNotes/致谢.md" >}})	
-    
 -   [关于openGauss]({{< relref "./docs/AboutopenGauss/关于openGauss.md" >}})
     -   [产品定位]({{< relref "./docs/TechnicalWhitePaper/产品定位.md" >}})
 	-   [系统架构]({{< relref "./docs/AboutopenGauss/系统架构.md" >}})
@@ -134,7 +132,6 @@ headless: true
 	    	-   [使用kubernetes部署分布式数据库]({{< relref "./docs/AboutopenGauss/使用kubernetes部署分布式数据库.md" >}})
 	    -   [负载管理]({{< relref "./docs/AboutopenGauss/负载管理.md" >}})
 	    	-   [支持I层高时延逃生能力]({{< relref "./docs/AboutopenGauss/支持I层高时延逃生能力.md" >}})
-	
 -   [技术白皮书]({{< relref "./docs/TechnicalWhitePaper/TechnicalWhitePaper.md" >}})
 	-   [产品定位]({{< relref "./docs/TechnicalWhitePaper/产品定位.md" >}})
 	-   [应用场景]({{< relref "./docs/TechnicalWhitePaper/应用场景.md" >}})
@@ -145,7 +142,6 @@ headless: true
 	-   [软硬件配置要求]({{< relref "./docs/TechnicalWhitePaper/软硬件配置要求.md" >}})
 	-   [数据库核心技术]({{< relref "./docs/TechnicalWhitePaper/数据库核心技术.md" >}})
 	-   [技术指标]({{< relref "./docs/TechnicalWhitePaper/技术指标.md" >}})
-	
 -   [快速入门]({{< relref "./docs/GettingStarted/GettingStarted.md" >}})
     -   [了解openGauss]({{< relref "./docs/GettingStarted/了解openGauss.md" >}})
     -   [安装openGauss]({{< relref "./docs/GettingStarted/安装openGauss.md" >}})
@@ -162,7 +158,6 @@ headless: true
             -   [Java]({{< relref "./docs/GettingStarted/Java.md" >}})
             -   [Python]({{< relref "./docs/GettingStarted/Python.md" >}})
     -   [使用openGauss]({{< relref "./docs/GettingStarted/使用openGauss.md" >}})
-
 -   [安装指南]({{< relref "./docs/InstallationGuide/Installation.md" >}})
     -   [安装概述]({{< relref "./docs/InstallationGuide/安装概述.md" >}})
 	-   [安装准备]({{< relref "./docs/InstallationGuide/安装准备.md" >}})	
@@ -170,7 +165,6 @@ headless: true
 		-   [准备软硬件安装环境]({{< relref "./docs/InstallationGuide/准备软硬件安装环境.md" >}})
 	-   [安装openGauss]({{< relref "./docs/InstallationGuide/安装openGauss.md" >}})
 	-   [卸载openGauss]({{< relref "./docs/InstallationGuide/卸载openGauss.md" >}})
-
 - [简易教程]({{< relref "./docs/BriefTutorial/BriefTutorial.md" >}})	
 	-   [基本概念]({{< relref "./docs/BriefTutorial/基本概念.md" >}})
 	-   [语法]({{< relref "./docs/BriefTutorial/语法.md" >}})
@@ -224,7 +218,6 @@ headless: true
 		-   [列存储]({{< relref "./docs/BriefTutorial/列存储.md" >}})
 		-   [PQ]({{< relref "./docs/BriefTutorial/PQ.md" >}})
 	-   [附录：SQL语法]({{< relref "./docs/BriefTutorial/附录-SQL语法.md" >}})
-	
 -   [应用开发指南]({{< relref "./docs/DeveloperGuide/应用开发指南.md" >}})
     -   [数据查询请求处理过程]({{< relref "./docs/DeveloperGuide/数据查询请求处理过程.md" >}})
     -   [开发设计规范]({{< relref "./docs/DeveloperGuide/开发设计规范.md" >}})
@@ -321,13 +314,11 @@ headless: true
 	    -   [示例：常用操作]({{< relref "./docs/DeveloperGuide/示例-常用操作_Psycopg.md" >}})
 	    -   [Psycopg接口参考]({{< relref "./docs/DeveloperGuide/Psycopg接口参考.md" >}})
 	-   [编译与调试]({{< relref "./docs/DeveloperGuide/编译与调试.md" >}})
-	
 -   [编译指南]({{< relref "./docs/CompilationGuide/Compilation.md" >}})
 	-   [简介]({{< relref "./docs/CompilationGuide/简介.md" >}})
     -   [搭建编译环境]({{< relref "./docs/CompilationGuide/搭建编译环境.md" >}})
     -   [版本编译]({{< relref "./docs/CompilationGuide/版本编译.md" >}})
     -   [FAQ]({{< relref "./docs/CompilationGuide/FAQ.md" >}})
-	
 -   [数据库管理指南]({{< relref "./docs/DatabaseAdministrationGuide/数据库管理指南.md" >}})
     -   [数据库基础概念介绍]({{< relref "./docs/DatabaseAdministrationGuide/数据库基础概念介绍.md" >}})
     -   [创建和管理数据库]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理数据库.md" >}})
@@ -541,7 +532,6 @@ headless: true
 			-   [btree 索引故障情况下应对策略]({{< relref "./docs/DatabaseOMGuide/btree-索引故障情况下应对策略.md" >}}) 	
     -   [高危操作一览表]({{< relref "./docs/DatabaseOMGuide/高危操作一览表.md" >}})
     -   [日志参考]({{< relref "./docs/DatabaseOMGuide/日志参考.md" >}})
-	
 -   [性能优化指南]({{< relref "./docs/PerformanceTuningGuide/性能优化指南.md" >}})
     -   [总体调优思路]({{< relref "./docs/PerformanceTuningGuide/总体调优思路.md" >}})
     -   [确定性能调优范围]({{< relref "./docs/PerformanceTuningGuide/确定性能调优范围.md" >}})
@@ -645,7 +635,6 @@ headless: true
 		-   [WAL归档配置]({{< relref "./docs/SecHarden/WAL归档配置.md" >}})
 		-   [运行环境配置]({{< relref "./docs/SecHarden/运行环境配置.md" >}})
 		-   [其它配置]({{< relref "./docs/SecHarden/其它配置.md" >}})
-
 -   [插件参考]({{< relref "./docs/ExtensionReference/Extension.md" >}})
 	-   [Dolphin Extension]({{< relref "./docs/ExtensionReference/dolphin-Extension.md" >}})
 		-   [Dolphin概述]({{< relref "./docs/ExtensionReference/dolphin概述.md" >}})
@@ -857,6 +846,11 @@ headless: true
 					-	[CREATE INDEX]({{< relref "./docs/ExtensionReference/shark-CREATE-INDEX.md" >}})
 			-   [存储过程]({{< relref "./docs/ExtensionReference/shark-存储过程.md" >}})
 				-   [基本语句]({{< relref "./docs/ExtensionReference/shark-存储过程_SQLReference.md" >}})
+	-   [gms_lob Extension]({{< relref "./docs/ExtensionReference/gms_lob-Extension.md" >}})
+	    -   [gms_lob概述]({{< relref "./docs/ExtensionReference/gms_lob概述.md" >}})
+	    -   [gms_lob限制]({{< relref "./docs/ExtensionReference/gms_lob限制.md" >}})
+	    -   [gms_lob安装]({{< relref "./docs/ExtensionReference/gms_lob安装.md" >}})
+	    -   [gms_lob使用]({{< relref "./docs/ExtensionReference/gms_lob使用.md" >}})
 -   [SQL参考]({{< relref "./docs/SQLReference/SQL参考.md" >}})
 	-   [SQL语法格式说明]({{< relref "./docs/SQLReference/SQL语法格式说明.md" >}})
 	-   [SQL语言结构和语法]({{< relref "./docs/SQLReference/SQL语言结构和语法.md" >}})
@@ -1553,7 +1547,6 @@ headless: true
 			-   [DBE\_SQL\_UTIL.enable\_sql\_patch]({{< relref "./docs/SQLReference/DBE_SQL_UTIL-enable_sql_patch.md" >}})
 			-   [DBE\_SQL\_UTIL.disable\_sql\_patch]({{< relref "./docs/SQLReference/DBE_SQL_UTIL-disable_sql_patch.md" >}})
 			-   [DBE\_SQL\_UTIL.show\_sql\_patch]({{< relref "./docs/SQLReference/DBE_SQL_UTIL-show_sql_patch.md" >}})
-
 -   [工具与命令参考]({{< relref "./docs/ToolandCommandReference/ToolandCommandReference.md" >}})
 	-   [简介]({{< relref "./docs/ToolandCommandReference/简介.md" >}})
 	-   [客户端工具]({{< relref "./docs/ToolandCommandReference/客户端工具.md" >}})
@@ -1582,7 +1575,6 @@ headless: true
 		-   [pg\_controldata]({{< relref "./docs/ToolandCommandReference/pg_controldata.md" >}})
 		-   [pg\_resetxlog]({{< relref "./docs/ToolandCommandReference/pg_resetxlog.md" >}})  
 		
-
 -   [数据库参考]({{< relref "./docs/DatabaseReference/数据库参考.md" >}})
 	-   [系统表和系统视图]({{< relref "./docs/DatabaseReference/系统表和系统视图.md" >}})
 	    -   [系统表和系统视图概述]({{< relref "./docs/DatabaseReference/系统表和系统视图概述.md" >}})

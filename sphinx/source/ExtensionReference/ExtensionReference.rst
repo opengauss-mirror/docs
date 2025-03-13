@@ -12,4 +12,5 @@
     gms_sql-Extension
     shark-Extension
     gms_tcp-Extension
+    gms_lob_Extension
 
