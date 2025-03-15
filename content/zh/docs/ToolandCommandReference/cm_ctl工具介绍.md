@@ -63,7 +63,7 @@ cm_ctl finishredo
 cm_ctl build [-c] [-n NODEID] [-D DATADIR [-t SECS] [-f] [-b full] [-j NUM]]
 cm_ctl check -B BINNAME -T DATAPATH
 cm_ctl stop [[-z AVAILABILITY_ZONE] | [-n NODEID [-D DATADIR]]] [-t SECS] [-m SHUTDOWN-MODE]
-cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-w] [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [--minorityAz=AZ_NAME]
+cm_ctl query [-z ALL] [-l FILENAME] [-v [-C [-w] [-s] [-S] [-d] [-i] [-F] [-x] [-p]] | [-r]] [-t SECS] [- O] [--minorityAz=AZ_NAME]
 cm_ctl view [-v | -N | -n NODEID] [-l FILENAME]
 cm_ctl set [--log_level=LOG_LEVEL] [--cm_arbitration_mode=ARBITRATION_MODE] [--cm_switchover_az_mode=SWITCHOVER_AZ_MODE] [--cmsPromoteMode=CMS_PROMOTE_MODE -I INSTANCEID]
 cm_ctl set --param --agent | --server [-n [NODEID]] -k [PARAMETER]="[value]"
@@ -467,6 +467,13 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </td>
 <td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="p11386175715616"><a name="p11386175715616"></a><a name="p11386175715616"></a>显示数据库实例所有节点端口。</p>
 <div class="note" id="note938765713620"><a name="note938765713620"></a><a name="note938765713620"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13871857266"><a name="p13871857266"></a><a name="p13871857266"></a>-p参数需要和-v以及-C参数一起使用。</p>
+</div></div>
+</td>
+</tr>
+<tr id="row20168820153124"><td class="cellrowborder" valign="top" width="19.43%" headers="mcps1.2.3.1.1 "><p id="p1316811249541"><a name="p1316811249541"></a><a name="p1316811249541"></a>-O</p>
+</td>
+<td class="cellrowborder" valign="top" width="80.57%" headers="mcps1.2.3.1.2 "><p id="p11386175715752"><a name="p11386175715752"></a><a name="p11386175715752"></a>显示一小时内节点因各种原因踢出次数统计。</p>
+<div class="note" id="note938765713730"><a name="note938765713730"></a><a name="note938765713730"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p13871857456"><a name="p13871857266"></a><a name="p13871857266"></a>-O参数单独使用，如果cm_server被重启或cm_server主切换，计数会重新统计。</p>
 </div></div>
 </td>
 </tr>
