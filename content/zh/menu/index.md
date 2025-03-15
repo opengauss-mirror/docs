@@ -734,6 +734,7 @@ headless: true
 			-  [因磁盘满导致安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因磁盘满导致安装失败的问题.md" >}})
 			-  [因端口冲突导致安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因端口冲突导致安装失败的问题.md" >}})
 			-  [因磁阵写入权限异常导致资源池化存储双集群安装失败的问题]({{< relref "./docs/DatabaseOMGuide/因磁阵写入权限异常导致资源池化存储双集群安装失败的问题.md" >}})
+			-  [因CM盘符不一致导致安装启动失败的问题]({{< relref "./docs/DatabaseOMGuide/因CM盘符不一致导致安装启动失败的问题.md" >}})
 		-   [资源池化企业版使用阶段问题]({{< relref "./docs/DatabaseOMGuide/资源池化企业版使用阶段问题.md" >}})
 			-  [因hostname文件权限异常导致设置参数失败的问题]({{< relref "./docs/DatabaseOMGuide/因hostname文件权限异常导致设置参数失败的问题.md" >}})
 		    -  [因pg_hba.conf中参数配置错误导致启动集群失败的问题]({{< relref "./docs/DatabaseOMGuide/因pg_hba.conf中参数配置错误导致启动集群失败的问题.md" >}})
