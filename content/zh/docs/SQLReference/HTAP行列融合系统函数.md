@@ -66,16 +66,23 @@
     <td class="cellrowborder" valign="top" width="62.839999999999996%"><p id="p7651558127"><a name="p7651558127"></a><a name="p7651558127"></a>临时文件中存储的cu个数。</p>
     </td>
     </tr>
+    <tr id="row565115561215"><td class="cellrowborder" valign="top" width="37.16%"><p id="p186518518123"><a name="p186518518123"></a><a name="p186518518123"></a>delta_in_mem</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="62.839999999999996%"><p id="p7651558127"><a name="p7651558127"></a><a name="p7651558127"></a>内存中存储delta page的大小</p>
+    </td>
+    </tr>
     </tbody>
     </table>
+
+    注：数据由CU和delta组成，CU可能在内存或者硬盘中，delta仅保留在内存中。新数据修改会优先存储在delta中暂存，满足条件后迁移至CU。
 
     例如：
 
     ```
     select * from query_imcstore_views();
-    reloid | relname | imcs_attrs | imcs_nattrs | imcs_status | is_partition | parent_oid | cu_size_in_mem | cu_num_in_mem | cu_size_in_disk | cu_num_in_disk
-    --------+---------+------------+-------------+-------------+--------------+------------+----------------+---------------+-----------------+----------------
-    16384 | test    | 1 2 3      |           3 | COMPLETE    | f            |          0 |              0 |             0 |               0 |              0
+    reloid | relname | imcs_attrs | imcs_nattrs | imcs_status | is_partition | parent_oid | cu_size_in_mem | cu_num_in_mem | cu_size_in_disk | cu_num_in_disk | delta_in_mem
+    --------+---------+------------+-------------+-------------+--------------+------------+----------------+---------------+-----------------+----------------+-------------
+    16384 | test    | 1 2 3      |           3 | COMPLETE    | f            |          0 |              0 |             0 |               0 |              0 |            0
     (1 row)
     ```
 
