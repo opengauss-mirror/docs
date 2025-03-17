@@ -80,7 +80,7 @@ openGauss安装部署，要求用户指定配置文件，配置文件中会指�
 
 -   --dorado-cluster-mode=PARAM
 
-    指定存储设备的集群模式，dorado-cluster-mode 主机群or备机群。
+    指定存储设备的集群模式，dorado-cluster-mode 主集群or备集群。
 
     取值范围：
     - primary:以资源池化dorado双集群主集群安装。
