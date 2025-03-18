@@ -70,6 +70,6 @@
 
 >![](public_sys-resources/icon-note.png) **说明：**
 >
->默认值是不开启，较高的值会提升查询的召回率，但同时查询速度会下降。推荐值大小为`k*ivfflat_probes`，其中`k`为用户查询sql设置的`limit k`。
->如果`ivfpq_kreorder`的值小于用户查询sql设置的`limit k`，返回记录数为实际精排候选集大小。
+>默认值是不开启，较高的值会提升查询的召回率，但同时查询速度会下降。<br>
+>推荐值大小为`k*ivfflat_probes`，其中`k`为用户查询sql设置的`limit k`。如果`ivfpq_kreorder`的值小于用户查询sql设置的`limit k`，返回记录数为实际精排候选集大小。<br>
 >创建IVFPQ索引时，不设置`ivfpq_kreorder`参数或者该参数值设置不合理会导致查询结果乱序。

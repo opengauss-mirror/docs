@@ -6,6 +6,9 @@
 ## 特性简介
 DataVec是一个基于openGauss的向量引擎，目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。
 
+## 快速部署指南
+详见[向量数据库容器镜像安装](../InstallationGuide/容器镜像安装.md)。
+
 ## 客户价值
 伴随着深度学习的不断发展，非结构化数据如图片、视频、音频等得以通过向量的方式进行表征。这种表征方式使得在搜索、推荐、广告等业务中，基于向量的K近邻(K-Nearest Neighbors,KNN)检索需求变得尤为重要。如何在海量数据中高效地实现这一需求，成为了一个重要的研究方向和基础能力。
 
@@ -168,7 +171,7 @@ openGauss=# INSERT INTO items (val) VALUES ('[1,2,3]'), ('[4,5,6]');
 
 ### 向量索引创建
 
-DataVec目前支持了IVFFLAT、HNSW、IVFPQ及HNSWPQ等算法的[向量索引](../SQLReference/向量索引.md)，基于openGauss中的ASTORE和USTORE存储实现，通过索引结构能够高效地检索出查询结果。
+DataVec目前支持了IVFFLAT、HNSW、IVFPQ及HNSWPQ等算法的[向量索引](../SQLReference/向量索引.md)，基于openGauss中的ASTORE存储实现，通过索引结构能够高效地检索出查询结果。
 
 ```
 CREATE INDEX [INDEX_NAME]
