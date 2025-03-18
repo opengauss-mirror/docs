@@ -37,7 +37,7 @@
 全局系统缓存（Global SysCache）是系统表数据的全局缓存和本地缓存。原理如[图1](#fig15658164619166)所示。
 
 **图 1**  Global SysCache原理图<a name="fig15658164619166"></a>  
-![](figures/Global-SysCache-Schemati.png "Global-SysCache原理图")
+![](figures/Global-SysCache原理图.png "Global-SysCache原理图")
 
 ## 使用指导<a name="section8406643144718"></a>
 
