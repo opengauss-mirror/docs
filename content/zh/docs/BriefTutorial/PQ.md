@@ -15,7 +15,11 @@
 ## 安装准备
 
 ### 获取PQ加速安装包
-详见[链接](https://support.huawei.com/enterprise/zh/kunpeng-computing/kunpeng-boostkit-pid-253662285/software/263761464?idAbsPath=fixnode01%7C23710424%7C251364417%7C9856629%7C253662285)获取libkvecturbo.so安装包。解压安装包获得rpm文件并安装，默认路径为/usr/local/sra_recall。
+- 详见[链接](https://support.huawei.com/enterprise/zh/kunpeng-computing/kunpeng-boostkit-pid-253662285/software/263761464?idAbsPath=fixnode01%7C23710424%7C251364417%7C9856629%7C253662285)获取libkvecturbo.so安装包。
+- 解压安装包获得rpm文件并安装(以boostkit-sra_recall-1.1.0.aarch64.rpm包为例)，默认路径为/usr/local/sra_recall。
+```
+rpm -ivh boostkit-sra_recall-1.1.0.aarch64.rpm
+```
 
 ### 配置环境变量
 ```
@@ -85,7 +89,7 @@ vector_cosine_ops | 余弦距离
 	openGauss=# CREATE INDEX ON items USING hnsw (embedding 	vector_l2_ops) WITH (enable_pq=on, pq_m=2000);
 	ERROR: vector and pqcode must on the same page, max pq_m is 72
 	```
-对于HNSWPQ索引，2000维的vector pq_m的最大值是72，由于维度%pq_m=0的限制，pq_m的最大值是50。
+     对于HNSWPQ索引，2000维的vector pq_m的最大值是72，由于维度%pq_m=0的限制，pq_m的最大值是50。
 -   `pq_ksub` - 每个子空间的聚类中心数量 1~256（默认为256） <br>
 
 **设置建议：**
