@@ -52,6 +52,7 @@ headless: true
          	-   [用户态网络]({{< relref "./docs/AboutopenGauss/用户态网络.md" >}})
             -   [非资源池化主备同步加速]({{< relref "./docs/AboutopenGauss/非资源池化主备同步加速.md" >}})
 			-   [HTAP 行列融合]({{< relref "./docs/AboutopenGauss/行列融合.md" >}})
+			-   [自动参数化]({{< relref "./docs/AboutopenGauss/自动参数化.md" >}})
 	    -   [高可用]({{< relref "./docs/AboutopenGauss/高可用.md" >}})
 	    	-   [主备机]({{< relref "./docs/AboutopenGauss/主备机.md" >}})
 	    	-   [逻辑复制]({{< relref "./docs/AboutopenGauss/逻辑复制.md" >}})
