@@ -1543,6 +1543,7 @@ headless: true
         -   [范围函数和操作符]({{< relref "./docs/SQLReference/范围函数和操作符.md" >}})
         -   [聚集函数]({{< relref "./docs/SQLReference/聚集函数.md" >}})
         -   [窗口函数]({{< relref "./docs/SQLReference/窗口函数.md" >}})
+        -   [KEEP函数]({{< relref "./docs/SQLReference/KEEP函数.md" >}})
         -   [安全函数]({{< relref "./docs/SQLReference/安全函数.md" >}})
     	-   [账本数据库的函数]({{< relref "./docs/SQLReference/账本数据库的函数.md" >}})
     	-   [密态等值的函数]({{< relref "./docs/SQLReference/密态等值的函数.md" >}})
