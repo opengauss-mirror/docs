@@ -15,6 +15,10 @@ data-migration项目目前版本为1.0.0。
 
 5. 支持实时收集并展示数据迁移过程中的异常告警信息。
 
+6. 支持在线迁移进程异常状态一键恢复。
+
+7. 优化全量校验详情展示
+
 ## 版本使用注意事项
 - data-migration为一个Java 插件，在构建时需确保配置Java 11+的JDK。
 
@@ -175,3 +179,27 @@ data-migration项目目前版本为1.0.0。
    当业务平稳运行一段时间后，可停止反向迁移。
 
        ![migration_reverse_stop.png](figures/migration_reverse_stop.png)
+
+6. 断点续传
+
+   迁移任务在迁移过程中(包括在线迁移、反向迁移)出现异常，可点击一键恢复或者重启按钮，重新拉起迁移任务进程。
+   在线迁移任务详情进入在线/反向迁移阶段时，展示connect-source 和connect-sink状态选项，绿色表示迁移进程正常，红色表示迁移进程挂起。
+   1. 在线任务重启
+    勾选connect-source 和connect-sink 选项，点击重启按钮，完成进程重启
+   
+    ![img.png](figures/断点续传_在线迁移.png)
+
+   3. 在线任务异常进程一键修复
+    勾选异常进程connect-source/connect-sink 选项，点击一键修复按钮，拉起异常进程
+   
+   ![img.png](figures/断点续传_在线迁移2.png)
+   
+   4. 反向任务重启
+   勾选connect-source 和connect-sink 选项，点击重启按钮，完成进程重启
+
+   ![img.png](figures/断点续传_反向迁移.png)
+ 
+   5. 反向任务异常进程一键修复
+   勾选异常进程connect-source/connect-sink 选项，点击一键修复按钮，拉起异常进程
+
+   ![img.png](figures/断点续传_反向迁移2.png)
