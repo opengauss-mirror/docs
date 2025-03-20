@@ -610,6 +610,15 @@ The naming rules for identifiers are as follows:
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p5245056"><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p5245056"></a><a name="en-us_topic_0283137559_en-us_topic_0237121925_en-us_topic_0059777655_en-us_topic_0058965630_p5245056"></a>Reserved</p>
 </td>
 </tr>
+<tr id="row396465651818"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p1396515617183"><a name="p1396515617183"></a><a name="p1396515617183"></a>BYTE</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p149658568180"><a name="p149658568180"></a><a name="p149658568180"></a>Non-reserved</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="p8965256111814"><a name="p8965256111814"></a><a name="p8965256111814"></a>N/A</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p9965656161810"><a name="p9965656161810"></a><a name="p9965656161810"></a>N/A</p>
+</td>
+</tr>
 <tr id="row396465651818"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="p1396515617183"><a name="p1396515617183"></a><a name="p1396515617183"></a>BYTEAWITHOUTORDER</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="p149658568180"><a name="p149658568180"></a><a name="p149658568180"></a>Non-reserved (excluding functions and types)</p>
