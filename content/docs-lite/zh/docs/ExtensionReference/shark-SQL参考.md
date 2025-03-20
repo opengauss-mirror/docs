@@ -6,4 +6,5 @@
 
 -   **[SQL语法](shark-SQL语法.md)**  
 
+-   **[SQL语法](shark-不支持语法.md)**  
 
