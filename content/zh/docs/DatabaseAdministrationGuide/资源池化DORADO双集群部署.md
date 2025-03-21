@@ -55,14 +55,14 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
 -   操作步骤
 
     第一步： 在主存储上创建资源池化需要的lun，以及远程同步复制xlog卷对应的lun，并且所有lun全部映射到业务计算节点上
-    -   需要保证同一个Dorado lun在一个集群内多台机器上映射的盘符一致，若不一致可以通过建立软连接的方法，使其对openGauss暴露的盘符一致即可。
-    -   例如wwn为00000000000001的盘在主集群0节点的盘符为sda，在主集群1节点的盘符为sdb，我们可以通过
+    -   需要保证同一个Dorado lun在一个集群内多台机器上映射的盘符一致，若不一致可以通过建立软链接的方法，使其对openGauss暴露的盘符一致即可。
+    -   例如wwn为00000000000001的盘在主集群0节点的盘符为sd0，在主集群1节点的盘符为sd1，我们可以通过
         ```
         ll /dev/disk/by-id             // 查看lun对应的wwn来确定具体的盘符
-        ln -s /dev/sda /dev/first      // 在0节点执行
-        ln -s /dev/sdb /dev/first      // 在1节点执行
+        ln -s /dev/sd0 /dev/data      // 在0节点执行 [建议四块盘符均创建一个软链接]
+        ln -s /dev/sd1 /dev/data      // 在1节点执行 [建议四块盘符均创建一个软链接]
         ```
-        然后将/dev/first作为我们可用的盘
+        然后将/dev/data作为我们可用的盘
 
         <table>
         <tbody>
@@ -91,6 +91,12 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
 
 -   磁阵操作步骤
 
+    >![](public_sys-resources/icon-note.png) **说明：**
+    >
+    >- DeviceManager是在有了存储设备后自行配置的一个用于管理存储设备的网页。
+    >- 取消从资源保护在主集群和备集群DeviceManager中都可以执行，执行效果一样，需要先更改关系为分裂，才可以执行取消从资源保护。
+    >- 在第一次扫描、查询盘符时，如果查找不到，则可以使用iscsiadm -m node --logoutall=all和iscsiadm -m node -p ip -l来断开连接并重新登录连接，注意该操作会影响所有连接的存储设备，可能会影响其他用户，请谨慎操作。这里的ip是存储设备的ip地址，可以使用iscsiadm -m node来查询。
+
     1. 登录主集群DeviceManager，选择**服务->LUN组->创建** 来创建主集群LUN组；
 
     2. 登录主集群DeviceManager，选择**数据保护->LUN->远程复制Pair->创建** 为xlog卷创建远程复制Pair，执行完成后DeviceManager会在对端自动创建一个与本端xlog卷有同步复制关系的卷；
@@ -107,7 +113,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
 
     第二步： 主存储上准备xml文件。
     
-    在《文档->安装指南->企业版安装->安装openGauss->创建XML配置文件->配置数据库名称及各项目录》中有配置说明, https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/%E5%88%9B%E5%BB%BAXML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html
+    在[创建XML配置文件](../InstallationGuide/创建XML配置文件.md)中的配置数据库名称及各项目录里有配置说明。
     
     根据配置说明准备资源池化集群需要的xml文件，以一主一备举例：
     
@@ -203,7 +209,6 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
 
     参数解释：
     + sep-env-file           分离环境变量，参数取值是一个安装用户omm可以访问到的文件目录
-    + dorado-cluster-mode    主集群or备集群
     + omm                    操作系统用户
     + dbgrp                  操作系统用户属组
     
@@ -341,7 +346,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
     
     `Tips`: gs_guc为openGauss提供的修改配置文件工具，也可以通过直接打开/opt/huawei/install/data/dn($PGDATA)下的postgresql.conf与pg_hba.conf文件将上面双引号中的内容手动写入文件中。
     
-    第九步：.  停止备存储上的资源池化单集群(建立容灾关系之后就是备集群)，配置容灾参数
+    第九步： 停止备存储上的资源池化单集群(建立容灾关系之后就是备集群)，配置容灾参数
     
         cm_ctl stop
     
@@ -371,7 +376,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         在$DSS_HOME/cfg/dss_inst.ini文件中修改
         STORAGE_MODE=SHARE_DISK --> STORAGE_MODE=CLUSTER_RAID
        
-    第十步：. 拉起首备dssserver，执行build
+    第十步： 拉起首备dssserver，执行build
     
         export DSS_MAINTAIN=TRUE                                                        // 打开dss手动模式
         dssserver -D /opt/huawei/install/dss_home &                                     // 拉起dssserver，-D 指定$DSS_HOME
@@ -391,6 +396,9 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         切换同步复制关系 分裂改为同步(非常关键)
     
         cm_ctl start
+
+    补充说明：
+    + 这里的切换同步复制关系步骤是非常关键的，这一步需要登录主集群DeviceManager去进行，选择**数据保护->LUN->远程复制Pair**，点击之前创建好的远程复制Pair，通过**操作->同步**将同步复制关系改为同步。
     
     第十二步： 查询集群状态
     
@@ -539,3 +547,11 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
    4. 主集群通过在线dsscmd adv扩容
    5. 备集群通过离线dsscmd adv扩容
    6. 将两个pair都进行同步，均同步完成后启动备集群即可
+
+   二. 双集群如何容灾解除、容灾搭建
+
+   需要使用gs_ddr工具来进行，相关具体操作命令请参考[gs_ddr](./../ToolandCommandReference/gs_ddr.md)
+
+   三. 双集群如何卸载
+
+   主集群、备集群均执行gs_uninstall --delete-data命令即可，具体操作命令详情请参考[gs_uninstall](./../ToolandCommandReference/gs_uninstall.md)
