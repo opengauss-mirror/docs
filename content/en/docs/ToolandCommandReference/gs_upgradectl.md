@@ -145,6 +145,9 @@ Grayscale upgrade supports progress printing, and the progress is printed accord
   If openGauss is abnormal and does not support normal rollback, use this parameter to perform a forcible rollback.
   (Starting from version 6.0.0, force rollback parameter is no longer maintained.)
 
+- --bypass-stale-check
+
+  By default, the system prohibits upgrading to versions that were released earlier. For instance, it is not permitted to upgrade from version 6.x.x released in 2026 to version 7.0.0 RC1 released in 2025. To bypass the release date verification, the --bypass-stale-check parameter can be used.
 
 ## Examples<a name="en-us_topic_0287275999_en-us_topic_0237152425_en-us_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
