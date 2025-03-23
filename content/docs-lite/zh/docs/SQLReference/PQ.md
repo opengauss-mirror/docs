@@ -4,7 +4,7 @@
 
 本章节主要介绍openGauss数据库DataVec向量引擎PQ（Product Quantization）特性的安装使用步骤，以指导用户顺利完成操作。本特性将DataVec向量引擎和自研PQ算法相结合，以提高向量检索的查询性能。
 
->![](public_sys-resources/icon-note.png) **限制：<br>**
+>![](../../../../zh/docs/BriefTutorial/public_sys-resources/icon-note.png) **限制：<br>**
 >PQ特性暂时只支持ARM架构环境。<br>
 >PQ特性暂时只支持HNSW和IVF索引。<br>
 >PQ特性暂时只支持vector数据类型，在其他向量数据类型构建HNSWPQ以及IVFPQ索引会导致执行失败。<br>
@@ -35,10 +35,10 @@ PQ特性只支持ARM架构环境。
 ## 安装与卸载
 
 ### 启用PQ特性
-设置GUC参数`enable_pq = on`启用PQ特性，详情请参考[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
+设置GUC参数`enable_pq = on`启用PQ特性，详情请参考[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
 
 ### 关闭PQ特性
-设置GUC参数`enable_pq = off`关闭PQ特性，详情请参考[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
+设置GUC参数`enable_pq = off`关闭PQ特性，详情请参考[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
 
 ## 使用PQ
 
@@ -96,7 +96,7 @@ vector_cosine_ops | 余弦距离
 
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值必须要能整除数据集维度，否则索引无法创建成功，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
-- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](../../../../zh/docs/SQLReference/向量索引.md)中HNSW索引中相同。
 
 #### GUC参数
 -   `hnsw_earlystop_threshold` - 设置图搜索的最大连续迭代次数 160~INT32_MAX-1 (默认INT32_MAX)
@@ -164,11 +164,11 @@ vector_cosine_ops|<=>|余弦距离
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值需要能整除数据集维度，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
 - by_residual：启动残差计算可以提升精度，但是会增加构建索引的时间。推荐值`off`。
-- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](../../../../zh/docs/SQLReference/向量索引.md)中IVFFLAT索引相同。
 
 #### 查询选项
 
-- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 
@@ -176,7 +176,7 @@ vector_cosine_ops|<=>|余弦距离
 	openGauss=# SET ivfflat_probes = 10;
 	```
 
-- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 
