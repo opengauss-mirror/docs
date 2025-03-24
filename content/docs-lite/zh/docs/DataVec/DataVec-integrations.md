@@ -4,7 +4,7 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 
 ## 编排第三方组件
 - [Dify](dify.md)
-- AnythingLLM
+- [AnythingLLM](anythingllm.md)
 
 ## 向量数据迁移
 - [从Milvus迁移至openGauss DataVec](milvus2datavec.md)
