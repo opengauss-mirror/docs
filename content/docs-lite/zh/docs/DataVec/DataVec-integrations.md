@@ -15,5 +15,4 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 - [Python](https://gitee.com/opengauss/openGauss-connector-python-psycopg2)
 - [Java](https://gitee.com/opengauss/openGauss-connector-jdbc)
 - [Node.js](https://gitee.com/opengauss/openGauss-connector-nodejs)
-- [Go](https://gitee.com/opengauss/openGauss-connector-go-pq)
-
+- [Go](integrationGo.md)
