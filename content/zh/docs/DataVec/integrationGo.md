@@ -1,11 +1,12 @@
 # Go SDK对接向量数据库
-本文介绍如何使用Go语言调用openGauss向量数据库
+本文介绍如何使用Go语言调用openGauss向量数据库。
 
-## 要求
-- 安装Go 1.19及以上版本
+## 环境要求
+- 安装Go 1.19及以上版本。
+- openGauss数据库安装部署 [容器镜像安装](../InstallationGuide/容器镜像安装.md)。
 
 ## 安装SDK
-开发者可以运行以下命令安装GO SDK[社区官网](http://gitee.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包
+开发者可以运行以下命令安装GO SDK[官方仓库](http://gitee.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
 ```
 安装SDK
 go get gitee.com/opengauss/openGauss-connector-go-pq
@@ -21,7 +22,8 @@ import (
 ## 基本操作
 ### 1.连接数据库
 ```go
-// connectInfo格式: "host=127.0.0.1 port=5432 user=username password=userpassword dbname=userdbname sslmode=disable"
+// connectInfo格式: 
+// "host=127.0.0.1 port=5432 user=username password=userpassword dbname=userdbname sslmode=disable"
 func CreateDBClient(connectInfo string) (*sql.DB, error) {
     return sql.Open("opengauss", connectInfo)
 }
@@ -76,7 +78,7 @@ func UpdateData(client *sql.DB, vector string) error {
 ```
 ### 5.查询
 ```go
-func FindNearestVectors(client *sql.DB, efsearch int, vector string, topK int) []string {
+func SearchVectors(client *sql.DB, efsearch int, vector string, topK int) []string {
     var res []string
     // 设置查询参数
     paramsql := fmt.Sprintf("set hnsw_ef_search = %d", efsearch);
