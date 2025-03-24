@@ -39,7 +39,7 @@ http://your_server_ip
 ![](./figures/LoginDify.png)
 
 ### 接入大模型
-在主界面点击右上角用户名，然后点击“设置”进入设置页面，单击“模型供应商”，选择“Ollama”单击“安装”按钮。（ollama服务及大模型部署参考：[openGauss-RAG实践](https://opengauss.org/zh/blogs/jiwenke/openGauss-RAG%E5%AE%9E%E8%B7%B5.html)）
+在主界面点击右上角用户名，然后点击“设置”进入设置页面，单击“模型供应商”，选择“Ollama”单击“安装”按钮。（ollama服务及大模型部署参考：[openGauss-RAG实践](openGauss-RAG实践.md)）
 ![](./figures/OllamaPlugin.png)
 
 安装完成后，在添加模型页面，“模型类型”选择“LLM”，配置如下：
