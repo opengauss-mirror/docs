@@ -1523,6 +1523,7 @@ headless: true
     	-   [SET类型]({{< relref "./docs/SQLReference/SET类型.md" >}})
         -   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}})
 		-   [ANYDATA类型]({{< relref "./docs/SQLReference/ANYDATA类型.md" >}})
+		-   [对象类型]({{< relref "./docs/SQLReference/Object_type.md" >}}
     -   [字符集与字符序]({{< relref "./docs/SQLReference/字符集与字符序.md" >}})
     -   [函数和操作符]({{< relref "./docs/SQLReference/函数和操作符.md" >}})
         -   [逻辑操作符]({{< relref "./docs/SQLReference/逻辑操作符.md" >}})
@@ -2255,6 +2256,7 @@ headless: true
     		-   [PG\_LARGEOBJECT\_METADATA]({{< relref "./docs/DatabaseReference/PG_LARGEOBJECT_METADATA.md" >}})
     		-   [PG\_NAMESPACE]({{< relref "./docs/DatabaseReference/PG_NAMESPACE.md" >}})
     		-   [PG\_OBJECT]({{< relref "./docs/DatabaseReference/PG_OBJECT.md" >}})
+	        -   [PG\_OBJECT\_TYPE]({{< relref "./docs/DatabaseReference/pg_object_type.md" >}})
     		-   [PG\_OPCLASS]({{< relref "./docs/DatabaseReference/PG_OPCLASS.md" >}})
     		-   [PG\_OPERATOR]({{< relref "./docs/DatabaseReference/PG_OPERATOR.md" >}})
     		-   [PG\_OPFAMILY]({{< relref "./docs/DatabaseReference/PG_OPFAMILY.md" >}})
