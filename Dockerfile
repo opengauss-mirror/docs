@@ -10,7 +10,6 @@ RUN mkdir -p /src/
 COPY . /src/website
 COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/html/
-COPY ./sitemap/51e990e4796e419eb4a6e0c35efbb50f.txt /usr/share/nginx/html/
 
 RUN cd /src/ && \
     git clone https://gitee.com/opengauss/docs --depth=1 latest/docs && \
