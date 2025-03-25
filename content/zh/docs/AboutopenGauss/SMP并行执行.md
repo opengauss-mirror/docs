@@ -28,7 +28,7 @@ SMP并行技术充分利用了系统多核的能力，来提高重查询的性�
 ## 特性约束<a name="section51513617597"></a>
 
 -   索引扫描不支持并行执行。
--   MergeJoin不支持并行执行。
+-   MergeJoin不支持并行执行，openGauss 7.0.0-RC1版本新增特性，如果最优计划为MergeJoin则走串行计划。
 -   WindowAgg order by不支持并行执行。
 -   仅cmd中声明的NO SCROLL游标和作为并行函数入参的游标表达式支持并行，其他cursor不支持并行执行。
 -   存储过程和函数内的查询不支持并行执行。
