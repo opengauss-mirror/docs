@@ -6,7 +6,8 @@
   width: 100%;
 }
 .cookie-notice-content {
-  background-color: rgba(var(--o-mixedgray-1), 0.9);
+  /* background-color: rgba(var(--o-mixedgray-1), 0.9); */
+  background-color: rgba(var(--o-color-fill6),.9);
   backdrop-filter: blur(5px);
   box-shadow: var(--o-shadow-1);
 }
@@ -39,13 +40,13 @@
 .cookie-title {
   font-size: 16px;
   line-height: 24px;
-  color: var(--o-color-info1);
+  color: var(--o-color-text1);
   font-weight: 500;
 }
 .cookie-desc {
   font-size: 12px;
   line-height: 18px;
-  color: var(--o-color-info2);
+  color: var(--o-color-text3);
   margin-top: 8px;
 }
 .cookie-notice-right {
@@ -54,19 +55,28 @@
   margin-top: 12px;
 }
 .o-button {
-  border: 1px solid var(--o-color-primary1);
-  color: var(--o-color-primary1);
-  line-height: 30px;
-  padding: 0 16px;
-  display: inline-block;
-  background: none;
-  font-size: 14px;
-  border-radius: 32px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--o-button-font-color);
+  background-color: var(--o-button-bg-color);
+  border: var(--o-button-border);
+  outline: none;
+  user-select: none;
   cursor: pointer;
+  padding: var(--o-button-padding-mini);
+  font-size: var(--o-button-font-size-mini);
+  line-height: var(--o-button-line-height-mini);
+  --o-button-font-size-mini: 14px;
 }
 .o-button:hover {
-  border-color: var(--o-color-primary2);
-  color: var(--o-color-primary2);
+  color: var(--o-button-font-color_hover);
+  border: var(--o-button-border_hover);
+  background-color: var(--o-button-bg-color_hover);
+}
+.o-button:active {
+  color: var(--o-button-font-color_active);
+  background-color: var(--o-button-bg-color_active);
+  border: var(--o-button-border_active);
 }
 .o-button + button {
   margin-left: 16px;
@@ -75,7 +85,7 @@
 .o-layer-dialog {
   position: fixed;
   inset: 0;
-  z-index: 1011;
+  z-index: 10001;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,25 +96,24 @@
 .o-layer-mask {
   position: absolute;
   inset: 0;
-  background-color: var(--o-color-mask1);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 .o-dlg-main {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px;
   background-color: var(--o-color-fill2);
   width: 930px;
-  min-height: 424px;
   max-height: 730px;
-  border-radius: 16px;
+  border-radius: 4px;
   box-shadow: var(--o-shadow-1);
 }
 
 .o-dlg-header {
   font-size: 32px;
-  color: var(--o-color-info1);
+  color: var(--o-color-text1);
   line-height: 44px;
   text-align: center;
   margin-bottom: 12px;
@@ -114,21 +123,20 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  height: 24px;
-  width: 24px;
+  height: 32px;
+  width: 32px;
   cursor: pointer;
   mask-image: url(../img/common/icon-close-light.svg);
   -webkit-mask-image: url(../img/common/icon-close-light.svg);
   mask-size: cover;
   -webkit-mask-size: cover;
-  background-color: var(--o-color-info2);
+  background-color: var(--o-color-text3);
   transition: all 0.25s cubic-bezier(0, 0, 0, 1);
 }
 .o-dialog-closed:hover,
 .cookie-close:hover,
 .evaluate-close:hover {
-  transform: rotate(180deg);
-  background-color: var(--o-color-primary1);
+  background-color: var(--o-color-brand1);
 }
 
 @media screen and (max-width: 840px) {
@@ -159,64 +167,6 @@
   }
 }
 
-.o-layer-dialog {
-  position: fixed;
-  inset: 0;
-  z-index: 1011;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.o-dialog {
-  z-index: 1011;
-}
-.o-layer-mask {
-  position: absolute;
-  inset: 0;
-  background-color: var(--o-color-mask1);
-  z-index: -1;
-}
-.o-dlg-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  background-color: var(--o-color-fill2);
-  width: 930px;
-  min-height: 424px;
-  max-height: 730px;
-  border-radius: 16px;
-  box-shadow: var(--o-shadow-1);
-}
-.o-dlg-header {
-  font-size: 32px;
-  color: var(--o-color-info1);
-  line-height: 44px;
-  text-align: center;
-  margin-bottom: 12px;
-}
-.o-dialog-closed,
-.cookie-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-  mask-image: url(../img/common/icon-close-light.svg);
-  -webkit-mask-image: url(../img/common/icon-close-light.svg);
-  mask-size: cover;
-  -webkit-mask-size: cover;
-  background-color: var(--o-color-info2);
-  transition: all 0.25s cubic-bezier(0, 0, 0, 1);
-}
-.o-dialog-closed:hover,
-.cookie-close:hover,
-.evaluate-close:hover {
-  transform: rotate(180deg);
-  background-color: var(--o-color-primary1);
-}
-
 @media screen and (min-width: 1200px) {
   .o-dialog-small .o-dlg-main {
     width: 450px;
@@ -239,7 +189,7 @@
   .privacy-detail {
     font-size: 16px;
     line-height: 24px;
-    color: var(--o-color-info1);
+    color: var(--o-color-text1);
   }
 }
 
@@ -257,13 +207,13 @@
 .manage-item .item-header .item-title {
   font-size: 20px;
   line-height: 28px;
-  color: var(--o-color-info1);
+  color: var(--o-color-text1);
   font-weight: 500;
 }
 .manage-item .item-extra {
   font-size: 14px;
   line-height: 22px;
-  color: var(--o-color-info3);
+  color: var(--o-color-text4);
   margin-left: 24px;
   display: flex;
   align-items: center;
@@ -272,7 +222,7 @@
   margin-top: 16px;
   font-size: 16px;
   line-height: 24px;
-  color: var(--o-color-info2);
+  color: var(--o-color-text3);
 }
 .manage-item + .manage-item {
   margin-top: 24px;
@@ -292,10 +242,10 @@ input[is="o-switch"] {
   background-clip: content-box;
   width: 42px;
   height: 20px;
-  border: 2px solid var(--o-color-info4);
+  border: 2px solid var(--o-color-neutral8);
   border-radius: 26px;
-  color: var(--o-color-info4);
-  background-color: var(--o-color-info4);
+  color: var(--o-color-neutral8);
+  background-color: var(--o-color-neutral8);
   font-size: 0;
   transition: all 0.2s;
   cursor: pointer;
@@ -305,9 +255,9 @@ input[is="o-switch"] {
   -webkit-tap-highlight-color: transparent;
 }
 input[is="o-switch"]:checked {
-  color: var(--o-color-primary1);
-  border-color: var(--o-color-primary1);
-  background-color: var(--o-color-primary1);
+  color: var(--o-color-trafficpurple8);
+  border-color: var(--o-color-trafficpurple8);
+  background-color: var(--o-color-trafficpurple8);
 }
 input[is="o-switch"]::before {
   content: "";

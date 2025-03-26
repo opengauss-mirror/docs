@@ -4,7 +4,7 @@ $(function () {
   const pathname = window.location.pathname;
   const isEn = pathname.includes("/en/");
   const COOKIE_DOMAIN = ".opengauss.org";
-  const theme = localStorage.getItem("opengauss-theme") || "light";
+  // const theme = localStorage.getItem("opengauss-theme") || "light";
   // 弹窗
   const ODialog = (function () {
     let elemDialog;
@@ -59,7 +59,7 @@ $(function () {
       const dom = `
           <div class="o-layer-mask"></div>
           <div class="o-dialog o-dialog-${size}">
-            <div class="o-dlg-main" data-o-theme="${theme}">
+            <div class="o-dlg-main" >
               <div class="o-dlg-header">
                 ${title}
                 ${closable ? '<em class="o-dialog-closed"></em>' : ""}
@@ -239,7 +239,7 @@ $(function () {
     // cookie提示内容
     getCookieContent: () => {
       return `
-<div class="cookie-notice" data-o-theme="${theme}">
+<div class="cookie-notice" >
   <div class="cookie-notice-content">
     <div class="content-wrapper cookie-notice-wrap">
       <div class="cookie-notice-left">
