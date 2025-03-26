@@ -4,7 +4,7 @@
 
 在当前数据库中定义一种新的数据类型。定义数据类型的用户将成为该数据类型的拥有者。类型只适用于行存表
 
-有五种形式的CREATE TYPE，分别为：复合类型、基本类型、shell类型、枚举类型和集合类型。
+有六种形式的CREATE TYPE，分别为：复合类型、基本类型、shell类型、枚举类型、集合类型和对象类型。
 
 -   复合类型
 
@@ -28,7 +28,15 @@
 
   类似数组，但是没有长度限制，主要在存储过程中使用。
 
-- 被授予CREATE ANY TYPE权限的用户，可以在public模式和用户模式下创建类型。
+- 对象类型
+
+  包含属性以及一系列方法的类型，包含member方法、map方法、order方法、static方法。对象类型支持继承能力，通过UNDER关键字继承其他对象类型的属性以及方法（前提是被继承对象在创建时没有指定为FINAL）。
+    - member方法: type中定义的对象，在成员方法中可以隐式self方式的进行访问member方法
+    - map方法: map成员方法用于将单个对象实例转化为标量数据类型（如CHAR或INT），方便进行比较
+    - order方法: order成员方法用于比较两个对象实例的大小
+    - static方法: static方法只能由对象类型调用，不能由对象实例调用    
+    -注意map方法与order方法均用于自定义排序规则，有互斥性，创建对象类型时只能定义其中一种。同时指定会报错
+-   被授予CREATE ANY TYPE权限的用户，可以在public模式和用户模式下创建类型。
 
 
 ## 注意事项<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sae4035e7748641d3bca61cd89db0e80e"></a>
@@ -47,8 +55,10 @@
 ## 语法格式<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s3e7f4ca520974d6984e85b855c05a489"></a>
 
 ```
-CREATE [OR REPLACE] TYPE name AS
-    ( [ attribute_name data_type [ COLLATE collation ] [, ... ] ] )
+CREATE [OR REPLACE] TYPE name AS [OBJECT]
+    ( [ attribute_name data_type [ COLLATE collation ] [, ... ] ]
+      [ object_type_method[, ... ]])
+    [{FINAL | NOT FINAL}]
 
 CREATE [OR REPLACE] TYPE name (
     INPUT = input_function,
@@ -80,6 +90,10 @@ CREATE TYPE name AS ENUM
     ( [ 'label' [, ... ] ] )
    
 CREATE TYPE name AS TABLE OF data_type
+
+CREATE [ OR REPLACE ] TYPE BODY type_name
+    { IS | AS } {proc_decl_in_type |func_decl_in_type 
+    | constructor_declaration | map_order_func_declaration } END;
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
@@ -106,6 +120,39 @@ CREATE TYPE name AS TABLE OF data_type
 
     要关联到复合类型的一列的现有排序规则的名称。排序规则可以使用“select \* from pg\_collation”命令从pg\_collation系统表中查询，默认的排序规则为查询结果中以default开始的行。
 
+对象类型
+-   **object\_type\_method**
+
+    对象类型的方法，包括member、map、order、static四种。
+
+-   **FINAL**
+
+    指定对象类型是否允许被继承，final表示不能被继承，not final表示可以。
+
+-   **TYPE BODY**
+
+    对象类型体，用于实现对象类型中的方法。
+
+-   **END**
+
+    对象类型体结束的标识符。
+
+
+-   **proc\_decl\_in\_type**
+
+    实现对象类型中声明的成员存储过程。
+
+-   **func\_decl\_in\_type**
+
+    实现对象类型中声明的成员函数。
+
+-   **constructor\_declaration**
+
+    实现对象类型中的构造函数。(不指定则会有默认构造函数)
+
+-   **map\_order\_func\_declaration**
+
+    实现对象类型中的map/order函数，只能拥有其中一种，用于对象实例之间的比较与排序。
 
 基本类型
 
@@ -295,6 +342,172 @@ openGauss=# ALTER TYPE bugstatus RENAME VALUE 'create' TO 'new';
 
 --创建一个集合类型
 openGauss=# CREATE TYPE compfoo_table AS TABLE OF compfoo;
+
+--对象类型相关用例
+--创建基类型,指定NOT FINAL方便被其他类型继承
+openGauss=# CREATE TYPE person_t AS OBJECT (name VARCHAR2(100), ssn NUMBER) NOT FINAL;
+
+--创建继承类型
+openGauss=# CREATE TYPE employee_t UNDER person_t (department_id NUMBER, salary NUMBER) NOT FINAL;
+openGauss=# CREATE TYPE part_time_emp_t UNDER employee_t (num_hrs NUMBER);
+
+--插入数据并测试
+openGauss=# CREATE TABLE persons OF person_t;
+openGauss=# INSERT INTO persons VALUES ('Bob', 1234);
+openGauss=# INSERT INTO persons VALUES ('Bob1', 12345);
+openGauss=# select * from persons;
+ name |  ssn  
+------+-------
+ Bob  |  1234
+ Bob1 | 12345
+(2 rows)
+
+--plpgsql中使用子类型实例化对象
+declare
+var part_time_emp_t := part_time_emp_t(name=>'zhangsan',ssn=>11,department_id=>1, salary=>1111,num_hrs=>23);
+begin
+raise info '%',var;
+end;
+/
+
+openGauss=# drop type person_t CASCADE;
+openGauss=# drop type employee_t CASCADE;
+--测试member函数、static函数、map函数
+openGauss=# CREATE OR REPLACE TYPE person_object AS OBJECT (
+    atri_pid NUMBER , -- 人员编号
+    atri_name VARCHAR2(10) , -- 人员姓名
+    atri_sex VARCHAR2(10) , -- 人员性别
+    --定义member函数
+    MEMBER FUNCTION get_person_info_fun RETURN VARCHAR2,
+    --定义static函数
+    STATIC FUNCTION func(num NUMBER)  RETURN NUMBER,
+    --定义构造函数
+    CONSTRUCTOR FUNCTION person_object(patri_pid NUMBER, patri_name VARCHAR2(10)) RETURN SELF AS RESULT , 
+    --定义MAP函数，此函数会在进行排序时自动调用
+    MAP MEMBER FUNCTION compare RETURN NUMBER
+    ) NOT FINAL ;
+
+openGauss=# CREATE OR REPLACE TYPE BODY person_object AS 
+    --定义member函数
+    MEMBER FUNCTION get_person_info_fun RETURN VARCHAR2 IS
+    BEGIN
+        Return atri_name;
+    END;
+    --定义static函数
+    STATIC FUNCTION func(num NUMBER)  RETURN NUMBER IS
+    BEGIN
+        Return num*2;
+    END;
+    --定义构造函数
+    CONSTRUCTOR FUNCTION person_object(patri_pid NUMBER, patri_name VARCHAR2(10)) RETURN SELF AS RESULT IS
+    BEGIN
+    atri_pid := patri_pid;
+    atri_name := patri_name;
+    END;
+    --定义MAP函数，此函数会在进行排序时自动调用
+    MAP MEMBER FUNCTION compare RETURN NUMBER IS
+    BEGIN 
+        Return atri_pid;
+    END;
+    END;
+    /
+openGauss=# select person_object(1,'zhangsan');
+ person_object 
+---------------
+ (1,zhangsan,)
+(1 row)
+
+openGauss=# select person_object(1,'zhangsan') > person_object(2,'lisi') as larger_id;
+ larger_id 
+-----------
+ f
+(1 row)
+
+openGauss=# select person_object.func(1000);
+ func 
+------
+ 2000
+(1 row)
+
+openGauss=# select get_person_info_fun(person_object(3,'wangwu'));
+ get_person_info_fun 
+---------------------
+ wangwu
+(1 row)
+
+openGauss=# drop type person_object CASCADE;
+
+--测试order方法
+openGauss=# CREATE OR REPLACE TYPE person_object AS OBJECT (
+    atri_pid NUMBER , -- 人员编号
+    atri_name VARCHAR2(10) , -- 人员姓名
+    atri_sex VARCHAR2(10) , -- 人员性别
+    --定义member函数
+    MEMBER FUNCTION get_person_info_fun RETURN VARCHAR2,
+    --定义static函数
+    STATIC FUNCTION func(num NUMBER)  RETURN NUMBER,
+    --定义构造函数
+    CONSTRUCTOR FUNCTION person_object(patri_pid NUMBER, patri_name VARCHAR2(10)) RETURN SELF AS RESULT , 
+    --定义ORDER函数，此函数会在进行排序时自动调用
+    ORDER MEMBER FUNCTION compare(target person_object) RETURN INT
+    ) NOT FINAL ;
+    --不支持同时创建MAP函数与ORDER函数，两者互斥
+    --MAP MEMBER FUNCTION compare(target person_object) RETURN INT
+    --) NOT FINAL ;
+openGauss=# CREATE OR REPLACE TYPE BODY person_object AS 
+    --定义member函数
+    MEMBER FUNCTION get_person_info_fun RETURN VARCHAR2 IS
+    BEGIN
+        Return atri_name;
+    END;
+    --定义static函数
+    STATIC FUNCTION func(num NUMBER)  RETURN NUMBER IS
+    BEGIN
+        Return num*2;
+    END;
+    --定义构造函数
+    CONSTRUCTOR FUNCTION person_object(patri_pid NUMBER, patri_name VARCHAR2(10)) RETURN SELF AS RESULT IS
+    BEGIN
+    atri_pid := patri_pid;
+    atri_name := patri_name;
+    END;
+    --定义ORDER函数，此函数会在进行排序时自动调用
+    ORDER MEMBER FUNCTION compare(target person_object) RETURN INT IS
+    BEGIN 
+        CASE
+            WHEN atri_pid > target.atri_pid
+            THEN
+                RETURN 1;
+            WHEN atri_pid = target.atri_pid
+            THEN
+                RETURN 0;
+            WHEN atri_pid < target.atri_pid
+            THEN
+                RETURN -1;
+        END CASE;
+        RETURN -1;
+    END;
+    END;
+    /
+
+openGauss=# select person_object(1,'zhangsan') > person_object(2,'lisi') as larger_id;
+ larger_id 
+-----------
+ f
+(1 row)
+
+--正反向约束
+openGauss=# create or replace type address_typ as object( street varchar2(30), city varchar2(20));
+
+openGauss=# declare
+    address address_typ;
+    begin
+    -- address := new address_typ('long','china'); --不支持，暂未支持通过new创建对象实例
+    -- type address_tab is table of address_typ; --不支持，暂未支持table of type嵌套object type
+    address := address_typ('long','china'); --支持，通过默认构造函数(与对象类型同名)创建对象实例
+    end;
+    /
+
 ```
 
 ## 相关链接<a name="zh-cn_topic_0283136568_zh-cn_topic_0237122124_zh-cn_topic_0059779377_sfc32bec2a548470ebab19d6ca7d6abe2"></a>
