@@ -26,7 +26,10 @@ RAG (Retrieval-Augmented Generation，检索增强生成): 一种将信息检索
 
 ## 实践准备：搭建基础环境
 ### 操作系统与 Python 环境配置
-本文实践所采用的操作系统为 **openEuler 22.03 LTS(x86_64)**。为了确保各个组件之间能够实现无缝兼容并顺利运行，我们选择使用 **python3.11**。
+本文实践所采用的操作系统为 **openEuler 22.03 LTS(鲲鹏arm服务器)**。为了确保各个组件之间能够实现无缝兼容并顺利运行，我们选择使用 **python3.11**。
+| CPU | Memory | Disk | OS |
+| :--- | :---: | ---: | ---: |
+| Kunpeng-920 | 32GB * 16 DDR4 | 3.2T * 1 NVMe | openEuler 22.03 LTS |
 
 ## DeepSeek推理模型部署：解锁强大文本生成能力
 ### 安装Ollama服务
