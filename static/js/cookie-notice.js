@@ -4,7 +4,6 @@ $(function () {
   const pathname = window.location.pathname;
   const isEn = pathname.includes("/en/");
   const COOKIE_DOMAIN = ".opengauss.org";
-  const theme = localStorage.getItem("opengauss-theme") || "light";
   // 弹窗
   const ODialog = (function () {
     let elemDialog;
@@ -59,7 +58,7 @@ $(function () {
       const dom = `
           <div class="o-layer-mask"></div>
           <div class="o-dialog o-dialog-${size}">
-            <div class="o-dlg-main" data-o-theme="${theme}">
+            <div class="o-dlg-main" >
               <div class="o-dlg-header">
                 ${title}
                 ${closable ? '<em class="o-dialog-closed"></em>' : ""}
@@ -159,20 +158,49 @@ $(function () {
       ],
     },
     isNoticeVisible: true,
-    // setCookie 设置cookie
+    removeCustomCookie(key) {
+      document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=${location.hostname}; path=/`;
+    },
     disableOA() {
       import("./modules/analytics.js")
         .then(({ disableOA }) => disableOA())
         .catch(() => {})
         .finally(() => {
           const prefix = "oa-openGauss";
+          const keys = [];
           for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             if (key.startsWith(prefix)) {
-              localStorage.removeItem(key);
+              keys.push(key);
             }
           }
+          keys.forEach(k => localStorage.removeItem(k));
         });
+    },
+    // 移除百度统计相关脚本、storage和cookie
+    removeHM() {
+      const scripts = document.querySelectorAll('script.analytics-script');
+      scripts.forEach((script) => script.remove());
+      const hm = /^hm/i;
+      document.cookie
+        .split(';')
+        .map((c) => c.trim())
+        .forEach((c) => {
+          const key = decodeURIComponent(c.split('=')[0]);
+          if (hm.test(key)) {
+            this.removeCustomCookie(key);
+          }
+        });
+      [sessionStorage, localStorage].forEach((storage) => {
+        const keys = [];
+        for (let i = 0; i < storage.length; i++) {
+          const key = storage.key(i);
+          if (hm.test(key)) {
+            keys.push(key);
+          }
+        }
+        keys.forEach(key => storage.removeItem(key));
+      });
     },
     enableOA() {
       import("./modules/analytics.js")
@@ -181,6 +209,15 @@ $(function () {
           reportPV();
         })
         .catch(() => {});
+    },
+    enableHM() {
+      // 百度统计
+      window._hmt = window._hmt || [];
+      var hm = document.createElement("script");
+      hm.classList.add('analytics-script');
+      hm.src = "https://hm.baidu.com/hm.js?ab8d86daab9a8e98cf8faa239aefcd3c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
     },
     setCustomCookie: (cname, cvalue, day = 1) => {
       let expires = new Date(Date.now() + day * 864e5);
@@ -224,9 +261,9 @@ $(function () {
       val ? cookieMain.show() : cookieMain.hide();
     },
     // 获取cookie状态
-    getUserCookieStatus: () => {
-      const { COOKIE_AGREED_STATUS, COOKEY_KEY } = cookieNotice;
-      const cookieVal = cookieNotice.getCookieByKey(COOKEY_KEY) ?? "0";
+    getUserCookieStatus() {
+      const { COOKIE_AGREED_STATUS, COOKEY_KEY } = this;
+      const cookieVal = this.getCookieByKey(COOKEY_KEY) ?? "0";
       const cookieStatusVal = cookieVal[0];
       if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
         return COOKIE_AGREED_STATUS.ALL_AGREED;
@@ -239,7 +276,7 @@ $(function () {
     // cookie提示内容
     getCookieContent: () => {
       return `
-<div class="cookie-notice" data-o-theme="${theme}">
+<div class="cookie-notice" >
   <div class="cookie-notice-content">
     <div class="content-wrapper cookie-notice-wrap">
       <div class="cookie-notice-left">
@@ -294,95 +331,75 @@ $(function () {
 </div>`;
     },
     // 用户同意所有cookie
-    acceptAll: () => {
-      // getBaiduSensor();
-      const {
-        setCustomCookie,
-        COOKEY_KEY,
-        COOKIE_AGREED_STATUS,
-        toggleNoticeVisible,
-        enableOA,
-      } = cookieNotice;
-      setCustomCookie(
-        COOKEY_KEY,
-        COOKIE_AGREED_STATUS.ALL_AGREED,
+    acceptAll() {
+      this.setCustomCookie(
+        this.COOKEY_KEY,
+        this.COOKIE_AGREED_STATUS.ALL_AGREED,
         180
       );
-      toggleNoticeVisible(false);
-      enableOA();
+      this.toggleNoticeVisible(false);
+      this.enableOA();
+      this.enableHM();
     },
     // 用户拒绝所有cookie，即仅同意必要cookie
-    rejectAll: () => {
-      const {
-        setCustomCookie,
-        COOKEY_KEY,
-        COOKIE_AGREED_STATUS,
-        toggleNoticeVisible,
-        disableOA,
-      } = cookieNotice;
-      setCustomCookie(
-        COOKEY_KEY,
-        COOKIE_AGREED_STATUS.NECCESSARY_AGREED,
+    rejectAll() {
+      this.setCustomCookie(
+        this.COOKEY_KEY,
+        this.COOKIE_AGREED_STATUS.NECCESSARY_AGREED,
         180
       );
-      toggleNoticeVisible(false);
-      disableOA();
+      this.toggleNoticeVisible(false);
+      this.disableOA();
+      this.removeHM();
     },
     removeNotice() {
       $(".cookie-notice").remove();
       document.removeEventListener("themechange", this.onThemeChange);
     },
-    bindEvents: () => {
+    bindEvents() {
+      const _this = this
       $(".cookie-notice-right button").on("click", function () {
-        const {
-          locale,
-          getManageContent,
-          isManageAgreed,
-          acceptAll,
-          rejectAll,
-          removeNotice,
-        } = cookieNotice;
         // 同意
         if ($(this).hasClass("all")) {
-          acceptAll();
-          removeNotice();
+          _this.acceptAll();
+          _this.removeNotice();
         }
         // 拒绝
         if ($(this).hasClass("refuse")) {
-          rejectAll();
-          removeNotice();
+          _this.rejectAll();
+          _this.removeNotice();
         }
         // 管理cookie
         if ($(this).hasClass("manage")) {
           // 加载弹窗
           ODialog &&
             ODialog.show({
-              title: locale.manageTitle,
-              content: getManageContent(),
+              title: _this.locale.manageTitle,
+              content: _this.getManageContent(),
               dlgActions: [
                 {
                   id: "save",
                   label: isEn
-                    ? locale.manageAction[0].btnEn
-                    : locale.manageAction[0].btn,
+                    ? _this.locale.manageAction[0].btnEn
+                    : _this.locale.manageAction[0].btn,
                   color: "primary",
                   variant: "outline",
                   onClick: () => {
-                    isManageAgreed() ? acceptAll() : rejectAll();
-                    removeNotice();
+                    _this.isManageAgreed() ? _this.acceptAll() : _this.rejectAll();
+                    _this.removeNotice();
                   },
                 },
                 {
                   id: "allow-all",
                   label: isEn
-                    ? locale.manageAction[1].btnEn
-                    : locale.manageAction[1].btn,
+                    ? _this.locale.manageAction[1].btnEn
+                    : _this.locale.manageAction[1].btn,
                   color: "primary",
                   variant: "outline",
                   onClick: () => {
-                    acceptAll();
+                    _this.acceptAll();
                     $(".statistics-switch").prop("checked", true);
-                    removeNotice();
+                    _this.removeNotice();
                   },
                 },
               ],
@@ -409,6 +426,7 @@ $(function () {
         this.acceptAll();
       } else {
         this.disableOA();
+        this.removeHM();
       }
     },
   };

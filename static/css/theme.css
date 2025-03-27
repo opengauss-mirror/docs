@@ -183,6 +183,7 @@
   /* SL4 覆盖阴影容器背景，应用于信息提示【tips、活动进入按钮等】等投影容器 */
   --o-color-fill5: var(--o-color-white);
   /* SL5 弹出阴影容器背景，应用于模态弹窗投影 */
+  --o-color-fill6: 255, 255, 255;
 
   /*阴影，注：SL2有hover投影*/
 
@@ -236,6 +237,8 @@
   --o-spacing-h10: 4px;
   /* 分页器颜色 */
   --o-pagination-bg-color:var(--o-color-neutral11);
+
+  
 }
 .dark {
   /*成功色*/
@@ -331,6 +334,7 @@
   --o-color-fill4: var(--o-color-greyblack3);
   /*SL4 覆盖阴影容器背景，应用于信息提示【tips、活动进入按钮等】等投影容器*/
   --o-color-fill5: var(--o-color-greyblack4);
+  --o-color-fill6: 0, 0, 0;
   /*SL5 弹出阴影容器背景，应用于模态弹窗投影
   */
   /**
