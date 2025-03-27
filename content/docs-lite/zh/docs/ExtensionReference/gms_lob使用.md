@@ -33,6 +33,14 @@ GMS_LOB.GETLENGTH (
   RETURN INTEGER;
 ```
 
+getlength获取bfile对象关联的文件大小
+
+```
+GMS_LOB.GETLENGTH (
+   bfileobj     IN  bfile) 
+  RETURN INTEGER;
+```
+
 ####  **gms_lob.read**
 
 从LOB中指定偏移量开始 读取数据
@@ -49,6 +57,28 @@ GMS_LOB.READ (
    amount    INOUT          INTEGER,
    offset    IN             INTEGER,
    buffer    OUT            VARCHAR2); 
+```
+
+从BFILE关联文件的指定偏移量开始 读取数据
+
+```
+GMS_LOB.READ (
+   bfileobj  IN             bfile,
+   amount    INOUT          INTEGER, // 读取长度
+   offset    IN             INTEGER, // 偏移量
+   buffer    OUT            RAW);
+```
+
+####  **gms_lob.bfileread**
+
+从BFILE关联文件的指定偏移量开始 读取数据
+
+```
+GMS_LOB.BFILEREAD (
+   bfileobj  IN             bfile,
+   amount    INOUT          INTEGER, // 读取长度
+   offset    IN             INTEGER) // 偏移量
+  RETURNS RAW;
 ```
 
 ####  **gms_lob.write**
@@ -112,6 +142,26 @@ GMS_LOB.OPEN (
    lob_loc   INOUT BLOB/CLOB,
    open_mode IN            BINARY_INTEGER); --取整0 / 1 只读/读写 gms_lob.LOB_READONLY/gms_lob.LOB_READWRITE
 ```
+####  **gms_lob.bfileopen**
+
+BFILEOPEN函数用于以指定的模式打开BFILE对象关联文件，目前只允许读文件。
+
+```
+GMS_LOB.BFILEOPEN (
+   bfileobj  IN             bfile,
+   mode      IN             INTEGER) --目前取值只有 0 只读，其他值报错。
+  RETURNS pg_catalog.bfile;
+```
+
+####  **gms_lob.fileopen**
+
+FILEOPEN存储过程用于以指定的模式打开BFILE对象关联文件，目前只允许读文件。
+
+```
+GMS_LOB.FILEOPEN (
+   bfileobj  INOUT          bfile,
+   mode      IN             INTEGER); --目前取值只有 0 只读，其他值报错。
+```
 
 ####  **gms_lob.close**
 
@@ -120,6 +170,24 @@ CLOSE 函数用于关闭先前打开的 LOB。
 ```
 GMS_LOB.CLOSE (
     lob_loc    INOUT  BLOB/CLOB); 
+```
+
+####  **gms_lob.bfileclose**
+
+BFILECLOSE函数用于关闭BFILE对象关联文件。
+
+```
+GMS_LOB.BFILECLOSE (
+   bfileobj  IN             bfile);
+```
+
+####  **gms_lob.fileclose**
+
+FILECLOSE存储过程用于关闭BFILE对象关联文件。
+
+```
+GMS_LOB.FILEOPEN (
+   bfileobj  IN             bfile);
 ```
 
 ####  **gms_lob.isopen**
@@ -305,6 +373,58 @@ gms_output.put_line(c1::text);
 end;
 /
 11111111222
+```
+
+测试bfileopen/bfileclose/bfileread函数
+
+```
+create extension gms_lob;
+create extension gms_output;
+CREATE or REPLACE DIRECTORY bfile_test_dir AS '/tmp';
+create table falt_bfile (id number, bfile_name bfile);
+insert into falt_bfile values(1, bfilename('bfile_test_dir','regress_bfile.txt'));
+copy (select * from falt_bfile) to '/tmp/regress_bfile.txt';
+select gms_output.enable;
+ enable 
+--------
+ 
+(1 row)
+
+DECLARE
+    buff raw(2000);
+    my_bfile bfile;
+    amount integer;
+    f_offset integer := 1;
+BEGIN
+    my_bfile := bfilename('bfile_test_dir','regress_bfile.txt');
+    my_bfile = gms_lob.bfileopen(my_bfile, 0);
+    amount := gms_lob.getlength(my_bfile);
+    buff = gms_lob.bfileread(my_bfile, amount, f_offset);
+    gms_lob.bfileclose(my_bfile);
+    gms_output.put_line(CONVERT_FROM(decode(buff,'hex'), 'SQL_ASCII'));
+END;
+/
+1	bfilename('bfile_test_dir', 'regress_bfile.txt')
+```
+
+测试fileopen/fileclose/read函数
+
+```
+DECLARE
+    buff raw(2000);
+    my_bfile bfile;
+    amount integer;
+    f_offset integer := 1;
+BEGIN
+    my_bfile := bfilename('bfile_test_dir','regress_bfile.txt');
+    gms_lob.fileopen(my_bfile, 0);
+    amount := gms_lob.getlength(my_bfile);
+    gms_lob.read(my_bfile, amount, f_offset, buff);
+    gms_lob.fileclose(my_bfile);
+    gms_output.put_line(CONVERT_FROM(decode(buff,'hex'), 'SQL_ASCII'));
+END;
+/
+1	bfilename('bfile_test_dir', 'regress_bfile.txt')
 ```
 
 ## 删除Extension<a name="section1587441381220"></a>
