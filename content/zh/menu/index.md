@@ -834,6 +834,7 @@ headless: true
 			-   [Go SDK]({{< relref "./docs/DataVec/integrationGo.md" >}})
 		-   性能测试
 			-   [VectorDBBench]({{< relref "./docs/DataVec/openGauss-VectorDBBench.md" >}})
+			-   [AnnBenchmark]({{< relref "./docs/DataVec/testtool_annbenchmark.md" >}})
 	-   [教程案例指导]({{< relref "./docs/DataVec/DataVec-tutorials.md" >}})
 		-   [打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手！]({{< relref "./docs/DataVec/openGauss-RAG实践.md" >}})
 		-   [openGauss Datavec + Dify，快速搭建你的智能助手平台]({{< relref "./docs/DataVec/openGauss-Dify.md" >}})
