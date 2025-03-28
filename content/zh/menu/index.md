@@ -913,19 +913,21 @@ headless: true
 	-   [向量存储引擎]({{< relref "./docs/DataVec/DataVec-architecture.md" >}})
 		-   [PQ]({{< relref "./docs/DataVec/PQ.md" >}})
     -   [工具编排使用]({{< relref "./docs/DataVec/DataVec-integrations.md" >}})
-		-   [编排组件]
+		-   编排组件
 			-   [Dify]({{< relref "./docs/DataVec/dify.md" >}})
 			-   [AnythingLLM]({{< relref "./docs/DataVec/anythingllm.md" >}})
-		-   [嵌入模型]
+		-   嵌入模型
 			-   [BGE-M3]({{< relref "./docs/DataVec/embedding-bgem3.md" >}})
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
-		-   [数据迁移]
+		-   数据迁移
 			-   [从Milvus迁移至openGauss DataVec]({{< relref "./docs/DataVec/milvus2datavec.md" >}})
-		-   [API Reference]({{< relref "./docs/DataVec/integrationGo.md" >}})
+		-   API Reference
 			-   [Python SDK]({{< relref "./docs/DataVec/integrationPython.md" >}})
 			-   [Java SDK]({{< relref "./docs/DataVec/integrationJava.md" >}})
 			-   [Node.js SDK]({{< relref "./docs/DataVec/integrationJavaScript.md" >}})
 			-   [Go SDK]({{< relref "./docs/DataVec/integrationGo.md" >}})
+		-   性能测试
+			-   [VectorDBBench]({{< relref "./docs/DataVec/openGauss-VectorDBBench.md" >}})
 	-   [教程案例指导]({{< relref "./docs/DataVec/DataVec-tutorials.md" >}})
 		-   [打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手！]({{< relref "./docs/DataVec/openGauss-RAG实践.md" >}})
 		-   [openGauss Datavec + Dify，快速搭建你的智能助手平台]({{< relref "./docs/DataVec/openGauss-Dify.md" >}})
