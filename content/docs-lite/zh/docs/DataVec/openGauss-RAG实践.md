@@ -35,19 +35,19 @@ RAG (Retrieval-Augmented Generation，检索增强生成): 一种将信息检索
 ### 安装Ollama服务
 首先，我们需要下载 ollama 的 pypi 包，以便后续访问 ollama 服务：
 
-```abap
+```shell
 [test@localhost ~]$ pip3 install ollama
 ```
 
 然后，我们可以使用官网提供的一键式部署脚本来部署 ollama 服务：
 
-```abap
+```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 如果遇到网络问题无法直接安装，我们可以考虑采用手动方案：
 
-```abap
+```shell
 [test@localhost ~]$ wget https://ollama.com/download/ollama-linux-amd64.tgz
 [test@localhost ~]$ tar -zxvf ollama-linux-amd64.tgz -C /usr/
 [test@localhost ~]$ which ollama
@@ -58,7 +58,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 安装成功后，我们可以启动 ollama 服务：
 
-```abap
+```shell
 [test@localhost ~]$ ollama serve &
 ```
 
@@ -67,12 +67,12 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 **deepseek-r1** 模型是基于先进的深度学习技术开发的，它具有独特的架构和训练方式，能够更好地捕捉文本中的语义信息，从而为文本生成带来更出色的效果。同时，我们选用**nomic-embed-text**模型用于嵌入任务，该模型能够将文本转换为高维向量表示，为后续的检索和匹配提供了强有力的支持。二者协同工作，共同助力我们基于DeepSeek与openGauss打造的本地AI知识库，使其能够更高效、更精准地为用户提供服务。
 
-```abap
+```shell
 [test@localhost ~]$ ollama --version
 ollama version is 0.5.6
 ```
 
-```abap
+```shell
 [test@localhost ~]$ ollama pull deepseek-r1
 [test@localhost ~]$ ollama pull nomic-embed-text
 ```
@@ -82,21 +82,21 @@ ollama version is 0.5.6
 ### 下载依赖
 首先，我们需要下载 psycopg2 依赖：
 
-```abap
+```shell
 [test@localhost ~]$ pip3 install psycopg2
 ```
 
 ### 获取镜像
 通过如下命令获取 openGauss 镜像：
 
-```abap
+```shell
 [root@localhost ~]$ docker pull opengauss/opengauss:7.0.0-RC1
 ```
 
 ### 启动服务
 镜像拉取完成后，我们可以启动openGauss服务：
 
-```abap
+```shell
 [root@localhost ~]$ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=****** -p 8888:5432 -v /home/test/opengauss:/var/lib/opengauss opengauss/opengauss:7.0.0-RC1
 ```
 
