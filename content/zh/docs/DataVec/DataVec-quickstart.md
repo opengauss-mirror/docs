@@ -1,7 +1,7 @@
 # 向量数据库快速入门
 
 ## 快速部署
-详见[容器镜像安装](../InstallationGuide/容器镜像安装.md)。
+详见[容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)。
 
 ## 创建向量表
 
