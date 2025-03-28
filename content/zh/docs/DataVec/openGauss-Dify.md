@@ -46,9 +46,9 @@ http://your_server_ip
 ![](./figures/LoginDify.png)
 
 ### 接入大模型
-在主界面点击右上角用户名，然后点击“设置”进入设置页面，单击“模型供应商”，选择“Ollama”单击“安装”按钮。（ollama服务及大模型部署参考：[openGauss-RAG实践](openGauss-RAG实践.md)）
+在主界面点击右上角用户名，然后点击“设置”进入设置页面，单击“模型供应商”，选择“OpenAI”单击“安装”按钮。（大模型及嵌入模型部署采用昇腾解决方案参考：[MindIE-DeepSeek-R1-Distill-Qwen-7B模型部署](https://modelers.cn/models/MindIE/DeepSeek-R1-Distill-Qwen-7B)、[mis-tei-embedding部署](https://www.hiascend.com/developer/ascendhub/detail/07a016975cc341f3a5ae131f2b52399d)）
 
-![](./figures/OllamaPlugin.png)
+![](./figures/OpenAIPlugin.png)
 
 安装完成后，在添加模型页面，“模型类型”选择“LLM”，配置如下：
 
