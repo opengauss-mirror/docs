@@ -20,3 +20,7 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 - [Java](integrationJava.md)
 - [Node.js](integrationJavaScript.md)
 - [Go](integrationGo.md)
+  
+## 性能测试
+- [VectorDBBench](openGauss-VectorDBBench.md)
+- [AnnBenchmark](testtool_annbenchmark.md)
