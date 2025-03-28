@@ -215,7 +215,7 @@ $(function () {
       window._hmt = window._hmt || [];
       var hm = document.createElement("script");
       hm.classList.add('analytics-script');
-      hm.src = "https://hm.baidu.com/hm.js?ab8d86daab9a8e98cf8faa239aefcd3c";
+      hm.src = "https://hm.baidu.com/hm.js?46964f4a20949712c2ce1db681b384d4";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     },
