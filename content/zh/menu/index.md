@@ -222,6 +222,7 @@ headless: true
             - [一主两备安装]({{< relref "./docs/InstallationGuide/一主两备不带cm安装_容器.md" >}})
             - [CM安装]({{< relref "./docs/InstallationGuide/CM安装_容器.md" >}})
 		- [RPM安装]({{< relref "./docs/InstallationGuide/RPM安装.md" >}})
+		- [deb包安装]({{< relref "./docs/InstallationGuide/deb包安装.md" >}})
     - [企业版安装]({{< relref "./docs/InstallationGuide/企业版安装.md" >}})
         - [安装准备]({{< relref "./docs/InstallationGuide/安装准备_企业版.md" >}})
             - [了解安装流程]({{< relref "./docs/InstallationGuide/了解安装流程.md" >}})
