@@ -6,7 +6,7 @@
 - 安装java1.8及以上版本 
 - Spring Boot 3.X及以上版本
 - Ollama服务安装部署 [部署参考](https://github.com/ollama/ollama)
-- openGauss数据库安装部署 [容器镜像安装](../InstallationGuide/容器镜像安装.md)
+- openGauss数据库安装部署 [容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)
 
 ## 添加Maven依赖
 在pom.xml中添加openGauss jdbc和ollama sdk依赖

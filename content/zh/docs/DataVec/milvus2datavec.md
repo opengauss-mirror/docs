@@ -4,7 +4,7 @@
 
 ## 环境准备
 - 已部署2.3 及以上版本的Milvus实例
-- 已部署7.0.0-RC1 及以上版本的openGauss实例，容器部署参考[容器镜像安装](../InstallationGuide/容器镜像安装.md)
+- 已部署7.0.0-RC1 及以上版本的openGauss实例，容器部署参考[容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)
 - 已安装3.8 及以上版本的Python环境
 - 已安装涉及的Python库
 
