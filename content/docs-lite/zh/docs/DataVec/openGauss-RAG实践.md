@@ -212,7 +212,7 @@ conn.commit()
 ### 查询检索
 我们尝试询问如下问题：
 
-```abap
+```shell
 question = "openGauss 发布了哪些版本？"
 ```
 
@@ -235,14 +235,14 @@ conn.close()
 
 查询结果如下：
 
-```abap
+```shell
 [(' 3. openGauss 有哪些版本？\n\nopenGauss 社区每两年发布一个 LTS 版本，LTS 版本作为长期支持版本，可规模上线使用。半年发布一个创新版本，创新版本供用户联创测试使用；涉及重大问题修复时，会按需发布补丁版本。同时按照不同场景分为以下版本：\n\n1. openGauss 企业版:具备更齐全的集群管理功能,适合企业用户；\n2. openGauss 极简版:安装配置简单,解压可用,适合个人开发者；\n3. openGauss 轻量版:精简功能,缩减安装包大小,内存占用更少；\n4. openGauss 分布式镜像:基于 ShardingSphere 和 k8s 的分布式容器化镜像。\n\n详情参考 openGauss 官网[“学习”->“文档”](https://docs-opengauss.osinfra.cn)区域。\n\n',)]
 ```
 
 ### 结合LLM实现RAG
 首先，为对比RAG前后效果，我们直接询问大模型得到如下答案，结果并不理想：
 
-```abap
+```shell
 嗯，我现在想了解一下 openGauss 有哪些发布版本。我之前对这个软件不太熟悉，但听说它是一个用于关系型数据库的高可用性云原生解决方案，可能和 PostgreSQL 类似。首先，我应该确认一下什么是 openGauss，它的主要用途是什么，以及它在市场上的地位。
 
 然后，关于发布版本的部分，用户想知道有哪些具体的版本号。我记得有时候软件会有主版本（major version）和次版本（minor version），还有内部版本（微内核）。例如，PostgreSQL 的版本通常以 9.x、10.x 这样的命名，所以 openGauss 可能也有类似的结构。
@@ -256,7 +256,7 @@ conn.close()
 
 借助openGauss检索结果作为上下文，将文档进行格式化处理，并为大模型制定PROMPT：
 
-```abap
+```shell
 context = "\n".join(row[0] for row in rows)
 
 SYSTEM_PROMPT = "你作为一个对话 AI 助手，结合上下文信息简练高效的回答用户提出的问题"
@@ -265,7 +265,7 @@ USER_PROMPT = f"请结合{context}信息来回答{question}的问题，不需要
 
 基于ollama平台，我们采用**deepseek-r1**大模型进行知识问答：
 
-```abap
+```shell
 response: ChatResponse = chat(
     model="deepseek-r1",
     messages=[
@@ -277,7 +277,7 @@ response: ChatResponse = chat(
 print(response["message"]["content"])
 ```
 
-```abap
+```shell
 <think>
 好的，我现在要解决用户关于openGauss发布版本的问题。根据提供的上下文信息，openGauss每两年发布一个LTS版本，并且半年发布创新版本，当有重大问题修复时会发布补丁版本。
 
