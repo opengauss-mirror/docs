@@ -71,6 +71,10 @@
       | [ [ DEFAULT ] CHARACTER SET | CHARSET [ = ] default_charset ] [ [ DEFAULT ] COLLATE [ = ] default_collation ]
       | CONVERT TO CHARACTER SET | CHARSET charset | DEFAULT [ COLLATE collation ]
       | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
+      | IMCSTORED [ ( column_name [, ...] ) ]
+      | MODIFY PARTITION partition_name IMCSTORED [ ( column_name [, ...] ) ]
+      | UNIMCSTORED
+      | MODIFY PARTITION partition_name UNIMCSTORED
   ```
 
 >- **ADD table\_constraint \[ NOT VALID \]**
@@ -209,6 +213,22 @@
 >- **CONVERT TO CHARACTER SET | CHARSET charset \[ COLLATE collation \]**
 >
 >  修改表的默认字符集和默认字符序为指定的值，同时将表中的所有字符类型的字段的字符集和字符序设置为指定的值，并将字段里的数据转换为新字符集编码。
+>
+>- **IMCSTORED \[ \( column_name \[, ...\] \) \]**
+>
+>  对全表或部分列行列转换。
+>
+>- **MODIFY PARTITION partition_name IMCSTORED \[ \( column_name \[, ...\] \) \]**
+>
+>  对分区表的指定分区或指定分区的部分列行列转换。
+>
+>- **UNIMCSTORED**
+>
+>  对指定行表做全量列缓存清除。
+>
+>- **MODIFY PARTITION partition_name UNIMCSTORED**
+>
+>  对分区表的指定分区做列缓存清除。
 
 
 
