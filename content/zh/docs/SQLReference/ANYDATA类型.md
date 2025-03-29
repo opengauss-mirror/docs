@@ -284,7 +284,7 @@ STATIC PROCEDURE BeginCreate(
 |9|varchar2|
 
 #### ADDINSTANCE
-```self
+```sql
 MEMBER PROCEDURE AddInstance(
    self          IN OUT NOCOPY ANYDATASET);
 ```
