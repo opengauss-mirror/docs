@@ -6,6 +6,12 @@ const versionObjZh = {
     downLink: "",
     state: "DEV",
   },
+  "7.0.0-RC1": {
+    homePath: "/docs/GettingStarted/GettingStarted.html",
+    homeLitePath: "/docs/GettingStarted/GettingStarted.html",
+    downLink: "",
+    state: "Preview",
+  },
   "6.0.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
@@ -100,6 +106,12 @@ const versionObjEn = {
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
     state: "DEV",
+  },
+  "7.0.0-RC1": {
+    homePath: "/docs/GettingStarted/GettingStarted.html",
+    homeLitePath: "/docs/GettingStarted/GettingStarted.html",
+    downLink: "",
+    state: "Preview",
   },
   "6.0.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",

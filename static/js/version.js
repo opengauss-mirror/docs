@@ -8,8 +8,9 @@ function jumpDocsHome(lang, version) {
   const versionObj = lang === "zh" ? versionObjZh : versionObjEn;
   // 修复版本号中划线
   const path =
-    versionObj[version === "6.0.0-RC1" ? version : version.split("-")[0]]
-      .homePath;
+    versionObj[
+      version.includes("-lite") ? version.replace("-lite", "") : version
+    ].homePath;
 
   const link =
     version !== "" ? "/" + lang + "/docs/" + version + path : "/" + lang + "/";
