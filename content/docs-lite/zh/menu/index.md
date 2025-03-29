@@ -1134,7 +1134,7 @@ headless: true
 		-   [SET类型]({{< relref "./docs/SQLReference/SET类型.md" >}})
 		-   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}}) 
 		-   [ANYDATA类型]({{< relref "./docs/SQLReference/ANYDATA类型.md" >}})
-		-   [对象类型]({{< relref "./docs/SQLReference/Object_type.md" >}}
+		-   [对象类型]({{< relref "./docs/SQLReference/Object_type.md" >}})
 		-   [BFILE类型]({{< relref "./docs/SQLReference/BFILE类型.md" >}})
         -   [字符集与字符序]({{< relref "./docs/SQLReference/字符集与字符序.md" >}})
 	-   [函数和操作符]({{< relref "./docs/SQLReference/函数和操作符.md" >}})
