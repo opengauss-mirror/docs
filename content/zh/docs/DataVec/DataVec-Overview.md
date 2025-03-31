@@ -4,7 +4,7 @@ openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提�
 DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。
 
 ## 快速部署指南
-DataVec向量数据库可通过[容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
+DataVec向量数据库可通过[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
 
 ## 特性描述
 

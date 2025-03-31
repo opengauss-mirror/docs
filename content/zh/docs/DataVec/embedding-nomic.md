@@ -1,7 +1,7 @@
 # 使用nomic-embed-text和openGauss DataVec进行向量化搜索
 nomic-embed-text是一个专门用于文本转化为高维向量表示的高性能嵌入模型，本文将介绍如何通过nomic-embed-text和openGauss DataVec轻松实现从文本到向量的转化，并基于语义的相似性快速进行搜索操作。
 
-注：openGauss DataVec容器化部署详见[链接](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)。
+注：openGauss DataVec容器化部署详见[链接](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 ## 环境准备
 - 加载模型
 

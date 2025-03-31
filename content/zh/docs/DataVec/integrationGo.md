@@ -3,7 +3,7 @@
 
 ## 环境要求
 - 安装Go 1.19及以上版本。
-- openGauss数据库安装部署 [容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)。
+- openGauss数据库安装部署 [容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
 ## 安装SDK
 开发者可以运行以下命令安装GO SDK[官方仓库](http://gitee.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
