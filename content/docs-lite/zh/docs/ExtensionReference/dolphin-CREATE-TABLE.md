@@ -24,6 +24,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 - 对于含索引的分区表，若只指定EXCLUDING PARTITION，由于默认复制分区，将会报错，因为普通表不支持分区索引。
 - 只支持复制range分区表的分区，对于hash、list分区表，由于默认复制分区，会直接报错，需要手动指定EXCLUING PARTITION。二级分区只支持复制range-range分区，处理方法同上。
 - 生成列语法支持忽略GENERATED ALWAYS。
+- 大多数情况下，生成列表达式调用的函数只能是不可变（IMMUTABLE）函数，但是对于非IMMUTABLE的concat和concat_ws函数，特定入参类型同样支持，这些类型包括BOOL,CHAR,NAME,INT1,INT2,INT4,INT8,INT16,TEXT,OID,CLOB,JSON,XML,UNKNOWN,VARCHAR,VARBIT,CSTRING,ANYSET,ANYENUM,JSONB,NVARCHAR2,YEAR,UINT1,UINT2,UINT4,UINT8。
 
 创建表。
 
