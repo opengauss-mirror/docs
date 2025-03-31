@@ -2,7 +2,7 @@
 AnythingLLM是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用允许您自定义LLM模型，并通过openGauss向量数据库RAG方案，解决大模型"幻视"问题，同时支持多用户管理并设置不同权限。
 
 ## openGauss容器化部署
-详见[容器镜像安装](../InstallationGuide/容器镜像安装.md)。
+详见[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
 ## AnythingLLM部署
 ### 获取AnythingLLM源码
