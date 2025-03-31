@@ -1,7 +1,7 @@
 # 向量数据库快速入门
 
 ## 快速部署
-详见[容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)。
+详见[容器镜像安装](https://docs.opengauss.org/zh/docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
 ## 创建向量表
 
