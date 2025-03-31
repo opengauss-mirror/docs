@@ -1,7 +1,7 @@
 # 使用BGE M3和openGauss DataVec进行向量生成与存储
 [BGE M3](https://huggingface.co/BAAI/bge-m3)是一款由BAAI开发的多语言高性能文本嵌入模型，能够将文本转化为语义丰富的高维向量表示。本文将围绕BGE M3和向量数据库openGauss DataVec，介绍如何实现文本向量生成与高效存储。通过这两个工具的结合，能够构建更加智能化的数据检索和处理系统。
 
-注：openGauss DataVec容器化部署详见[链接](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)。
+注：openGauss DataVec容器化部署详见[链接](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 ## 案例一： FlagEmbedding + openGauss DataVec
 ### 环境准备
 - 安装依赖包

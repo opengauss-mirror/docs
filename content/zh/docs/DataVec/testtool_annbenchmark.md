@@ -5,7 +5,7 @@
 - 安装python>=3.8.6
 - 下载适配openGauss数据库的ann-benchmark性能测试工具。下载链接：[ann-benchmarks-openGauss](https://github.com/lauraty123/ann-benchmarks-openGauss)
 - 安装测试工具所需的依赖包`pip3 install -r requirements.txt`
-- 部署openGauss-DataVec容器实例，教程可参考[openGauss-DataVec容器镜像安装](../../../docs-lite/zh/docs/InstallationGuide/容器镜像安装.md)
+- 部署openGauss-DataVec容器实例，教程可参考[openGauss-DataVec容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)
 ### 测试数据
 | Dataset                                                           | Dimensions | Train size | Test size | Neighbors | Distance  | Download                                                                   |
 | ----------------------------------------------------------------- | ---------: | ---------: | --------: | --------: | --------- | -------------------------------------------------------------------------- |
