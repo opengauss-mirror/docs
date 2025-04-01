@@ -87,25 +87,57 @@ openGauss提供了gs\_postuninstall工具来帮助清理准备openGauss环境阶
 
 ```
 source /home/omm/om_env #环境变量分离模式；#环境变量不分离模式 source /home/omm/.bashrc 
-gs_postuninstall -U omm  -X /opt/software/openGauss/clusterconfig.xml --delete-user
+gs_postuninstall -U omm -X /opt/software/openGauss/clusterconfig.xml --delete-user --delete-group
 Parsing the configuration file.
 Successfully parsed the configuration file.
+Creating SSH trust for the root permission user.
+Are you sure you want to create trust for root (yes/no)?yes
+Please enter password for root.
+Please enter password for current user[root].
+Password: 
+Checking network information.
+All nodes in the network are Normal.
+Successfully checked network information.
+Creating SSH trust.
+Creating the local key file.
+Successfully created the local key files.
+Appending local ID to authorized_keys.
+Successfully appended local ID to authorized_keys.
+Updating the known_hosts file.
+Successfully updated the known_hosts file.
+Appending authorized_key on the remote node.
+Successfully appended authorized_key on all remote node.
+Checking common authentication file content.
+Successfully checked common authentication content.
+Distributing SSH trust file to all node.
+Distributing trust keys file to all node successfully.
+Successfully distributed SSH trust file to all node.
+Verifying SSH trust on all hosts.
+Verifying SSH trust on all hosts by ip.
+Successfully verified SSH trust on all hosts by ip.
+Verifying SSH trust on all hosts by hostname.
+Successfully verified SSH trust on all hosts by hostname.
+Successfully verified SSH trust on all hosts.
+Start set cron for root
+Successfully to set cron for root
+Successfully created SSH trust.
+Successfully created SSH trust for the root permission user.
 Check log file path.
 Successfully checked log file path.
-Checking unpreInstallationGuide.
-Successfully checked unpreInstallationGuide.
+Checking unpreinstallation.
+Successfully checked unpreinstallation.
+check and clean cgroup
+Successfully clean cgroup.
 Deleting the instance's directory.
 Successfully deleted the instance's directory.
-Deleting the InstallationGuide directory.
-Successfully deleted the InstallationGuide directory.
 Deleting the temporary directory.
 Successfully deleted the temporary directory.
 Deleting remote OS user.
 Successfully deleted remote OS user.
-Deleting software packages and environmental variables of other nodes.
-Successfully deleted software packages and environmental variables of other nodes.
 Deleting logs of other nodes.
 Successfully deleted logs of other nodes.
+Deleting software packages and environmental variables of other nodes.
+Successfully deleted software packages and environmental variables of other nodes.
 Deleting software packages and environmental variables of the local node.
 Successfully deleted software packages and environmental variables of the local nodes.
 Deleting local OS user.
@@ -113,6 +145,7 @@ Successfully deleted local OS user.
 Deleting local node's logs.
 Successfully deleted local node's logs.
 Successfully cleaned environment.
+clean over.
 ```
 
 ## 相关命令<a name="zh-cn_topic_0237152418_zh-cn_topic_0059778816_s2ce69a080cb14656845238b0d1ee73c1"></a>
