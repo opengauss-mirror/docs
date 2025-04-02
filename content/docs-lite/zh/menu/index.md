@@ -634,6 +634,8 @@ headless: true
         -   嵌入模型
 			-   [BGE-M3]({{< relref "./docs/DataVec/embedding-bgem3.md" >}})
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
+		-   Agents
+			-   [MCP]({{< relref "./docs/DataVec/mcp.md" >}})
 		-   数据迁移
 			-   [从Milvus迁移至openGauss DataVec]({{< relref "./docs/DataVec/milvus2datavec.md" >}}) 
         -   API Reference
