@@ -936,6 +936,8 @@ headless: true
 		-   [openGauss DataVec + Dify，快速搭建你的智能助手平台]({{< relref "./docs/DataVec/openGauss-Dify.md" >}})
 		-   [Spring Boot集成openGauss DataVec实现向量化检索]({{< relref "./docs/DataVec/openGauss-Springboot.md" >}})
         -   [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG]({{< relref "./docs/DataVec/openGauss-AGEGraph.md" >}})
+	-   [图数据库引擎]({{< relref "./docs/DataVec/Gallery-Engine-AGE.md" >}})
+		-   [适配详情]({{< relref "./docs/DataVec/Apache-AGE-Adaptation.md" >}})
 -   [AI特性指南]({{< relref "./docs/AIFeatureGuide/AI特性.md" >}})
     -   [AI4DB: 数据库自治运维]({{< relref "./docs/AIFeatureGuide/AI4DB-数据库自治运维.md" >}})
         -   [DBMind模式说明]({{< relref "./docs/AIFeatureGuide/DBMind模式说明.md" >}})
