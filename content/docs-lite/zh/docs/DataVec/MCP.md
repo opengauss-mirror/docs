@@ -40,7 +40,7 @@
             ],
             "env": {
                 "OPENGAUSS_HOST": "localhost",
-                "OPENGAUSS_PORT": "8888",
+                "OPENGAUSS_PORT": "your_port",
                 "OPENGAUSS_USER": "your_username",
                 "OPENGAUSS_PASSWORD": "your_password",
                 "OPENGAUSS_DBNAME": "your_database"
