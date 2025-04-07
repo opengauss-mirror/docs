@@ -32,9 +32,9 @@ MOT旨在实现以下目标：
 
 MOT遵循并利用了openGauss的标准扩展机制——外部数据封装（FDW），如下图所示。
 
-在PostgreSQL外部数据封装特性的支持下，作为其他数据源的代理的MOT数据库可以创建外表，如MySQL、Oracle、PostgreSQL等。当对外表执行查询时，FDW将查询外部数据源并返回结果，就像查询内表一样。
+在外部数据封装特性的支持下，作为其他数据源的代理的MOT数据库可以创建外表，如MySQL、Oracle、PostgreSQL等。当对外表执行查询时，FDW将查询外部数据源并返回结果，就像查询内表一样。
 
-openGauss依赖PostgreSQL外部数据封装和索引支持，因此SQL完全覆盖，包括存储过程、用户定义函数、系统函数调用。
+openGauss依赖外部数据封装和索引支持，因此SQL完全覆盖，包括存储过程、用户定义函数、系统函数调用。
 
 **图 1**  MOT架构<a name="fig30085468"></a>  
 ![](figures/MOT-architecture.png "MOT架构")
