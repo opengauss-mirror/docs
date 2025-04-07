@@ -34,13 +34,13 @@
             "command": "uv",
             "args": [
             "--directory",
-            "path/to/openGauss_mcp_server",s
+            "path/to/openGauss_mcp_server",
             "run",
             "server.py"
             ],
             "env": {
                 "OPENGAUSS_HOST": "localhost",
-                "OPENGAUSS_PORT": "8888",
+                "OPENGAUSS_PORT": "your_port",
                 "OPENGAUSS_USER": "your_username",
                 "OPENGAUSS_PASSWORD": "your_password",
                 "OPENGAUSS_DBNAME": "your_database"
