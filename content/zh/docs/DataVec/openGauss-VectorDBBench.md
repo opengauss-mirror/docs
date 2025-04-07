@@ -1,6 +1,6 @@
 # 使用VectorDBBench工具性能测试
 VectorDBBench 是一款开源向量数据库基准测试工具，主要通过测量关键指标来衡量向量数据库的性能。
-本文介绍如何使用VectorDBBench工具对openGauss中Datavec向量引擎进行性能测试。
+本文介绍如何使用VectorDBBench工具对openGauss中DataVec向量引擎进行性能测试。
 
 ### 安装python3
 推荐安装Python3.11以上版本
