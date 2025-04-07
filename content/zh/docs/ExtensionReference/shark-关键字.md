@@ -5847,7 +5847,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 </tr>
 <tr id="zh-cn_topic_0283137559_row15941591110"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_p151011521110"><a name="zh-cn_topic_0283137559_p151011521110"></a><a name="zh-cn_topic_0283137559_p151011521110"></a>ROWNUM</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_p31041520116"><a name="zh-cn_topic_0283137559_p31041520116"></a><a name="zh-cn_topic_0283137559_p31041520116"></a>保留</p>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_p31041520116"><a name="zh-cn_topic_0283137559_p31041520116"></a><a name="zh-cn_topic_0283137559_p31041520116"></a>非保留</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_p915394801111"><a name="zh-cn_topic_0283137559_p915394801111"></a><a name="zh-cn_topic_0283137559_p915394801111"></a>保留</p>
 </td>

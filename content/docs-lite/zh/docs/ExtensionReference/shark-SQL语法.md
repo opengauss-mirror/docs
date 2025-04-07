@@ -5,3 +5,5 @@
 -   **[INSERT](shark-INSERT.md)**
 -   **[UPDATE](shark-UPDATE.md)**
 -   **[DELETE](shark-DELETE.md)**
+-   **[SET](shark-SET.md)**
+-   **[DBCC](shark-DBCC.md)**
