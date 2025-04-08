@@ -18,3 +18,65 @@ openGauss=# select ARRAY[1,2,3];
 ERROR:  syntax error at or near "[1,2,3]"
 ```
 
+## ANSI_NULLS<a name="section203671436823"></a>
+
+**取值范围**：on/off
+
+**默认值**：on
+
+**参数说明**：用于控制NULL值与非NULL值比较时的表现。如果设置为on，那么NULL值与NULL或者非NULL值做等于或者不等于比较结果都是NULL。如果设置成off，NULL值与NULL值做等于比较结果为true，NULL值与非NULL值做等于比较时结果为false。
+
+```
+openGauss=# set ANSI_NULLS on;
+SET
+openGauss=# select NULL = NULL;
+ ?column?
+----------
+
+(1 row)
+
+openGauss=# select 1 = NULL;
+ ?column?
+----------
+
+(1 row)
+
+openGauss=# select NULL <> NULL;
+ ?column?
+----------
+
+(1 row)
+
+openGauss=# select 1 <> NULL;
+ ?column?
+----------
+
+(1 row)
+
+openGauss=# set ANSI_NULLS off;
+SET
+openGauss=# select NULL = NULL;
+ ?column?
+----------
+ t
+(1 row)
+
+openGauss=# select 1 = NULL;
+ ?column?
+----------
+ f
+(1 row)
+
+openGauss=# select NULL <> NULL;
+ ?column?
+----------
+ f
+(1 row)
+
+openGauss=# select 1 <> NULL;
+ ?column?
+----------
+ t
+(1 row)
+```
+
