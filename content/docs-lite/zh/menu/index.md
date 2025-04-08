@@ -650,6 +650,7 @@ headless: true
 		-   [打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手！]({{< relref "./docs/DataVec/openGauss-RAG实践.md" >}})
 		-   [openGauss DataVec + Dify，快速搭建你的智能助手平台]({{< relref "./docs/DataVec/openGauss-Dify.md" >}})
 		-   [Spring Boot集成openGauss DataVec实现向量化检索]({{< relref "./docs/DataVec/openGauss-Springboot.md" >}})
+        -   [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG]({{< relref "./docs/DataVec/openGauss-AGEGraph.md" >}})
 -   [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
 	-   [数据库加固概述]({{< relref "./docs/SecHarden/数据库加固概述.md" >}})
 	-   [安全配置规范基线]({{< relref "./docs/SecHarden/安全配置规范基线.md" >}})
