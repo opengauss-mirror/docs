@@ -52,7 +52,7 @@ PG\_ATTRDEF系统表存储列的默认值。
 </td>
 <td class="cellrowborder" valign="top" width="15.14%" headers="mcps1.2.4.1.2 "><p id="p282311541917"><a name="p282311541917"></a><a name="p282311541917"></a>"char"</p>
 </td>
-<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>标识该列是否为生成列。取值为's'表示该列为生成列，取值为'\0'表示该列为普通列，默认值为'\0'。</p>
+<td class="cellrowborder" valign="top" width="72.88%" headers="mcps1.2.4.1.3 "><p id="p4823185417115"><a name="p4823185417115"></a><a name="p4823185417115"></a>标识该列是否为生成列。取值为's'表示该列为生成列，取值为'p'表示该列为D库兼容的生成列，取值为'\0'表示该列为普通列，默认值为'\0'。</p>
 </td>
 </tr>
 <tr id="row182312541512"><td class="cellrowborder" valign="top" width="11.98%" headers="mcps1.2.4.1.1 "><p id="p13823135411113"><a name="p13823135411113"></a><a name="p13823135411113"></a>adbin_on_update</p>
