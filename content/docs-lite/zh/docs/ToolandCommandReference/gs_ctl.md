@@ -397,6 +397,13 @@ gs\_ctl参数可分为如下几类：
 <pre class="screen" id="screen1930864312338"><a name="screen1930864312338"></a><a name="screen1930864312338"></a>'localhost=Local DN IP localport=Local DN Port+1 remotehost=DN IP remoteport=DN Port+1'</pre>
 </td>
 </tr>
+<tr id="row168586599123"><td class="cellrowborder" valign="top" width="21.12%" headers="mcps1.2.4.1.1 "><p id="p118591859191216"><a name="p118591859191216"></a><a name="p118591859191216"></a>--verify-commit</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.45%" headers="mcps1.2.4.1.2 "><p id="p785955931215"><a name="p785955931215"></a><a name="p785955931215"></a>增量build时对备机已提交事务进行校验，如果备机与主机存在共同的checkpoint日志，但之后存在不同的提交数据，则为保证这部分数据不丢失，增量build失败，且不会转为全量build。</p>
+</td>
+<td class="cellrowborder" valign="top" width="47.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0287275989_p729832991415"><a name="zh-cn_topic_0287275989_p729832991415"></a><a name="zh-cn_topic_0287275989_p729832991415"></a>无参数</p>
+</td>
+</tr>
 </tbody>
 </table>
 
