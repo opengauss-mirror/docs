@@ -882,6 +882,11 @@ headless: true
 					-	[CREATE INDEX]({{< relref "./docs/ExtensionReference/shark-CREATE-INDEX.md" >}})
 			-   [存储过程]({{< relref "./docs/ExtensionReference/shark-存储过程.md" >}})
 				-   [基本语句]({{< relref "./docs/ExtensionReference/shark-存储过程_SQLReference.md" >}})
+			-   [系统视图]({{< relref "./docs/ExtensionReference/shark-系统视图.md" >}})
+			    -   [SYSCOLUMNS]({{< relref "./docs/ExtensionReference/shark-SYSCOLUMNS.md" >}})
+			    -   [SYSINDEXES]({{< relref "./docs/ExtensionReference/shark-SYSINDEXES.md" >}})
+			    -   [SYSINDEKEYS]({{< relref "./docs/ExtensionReference/shark-SYSINDEXKEYS.md" >}})
+			    -   [SYSOBJECTS]({{< relref "./docs/ExtensionReference/shark-SYSOBJECTS.md" >}})
 	-   [gms_lob Extension]({{< relref "./docs/ExtensionReference/gms_lob-Extension.md" >}})
 	    -   [gms_lob概述]({{< relref "./docs/ExtensionReference/gms_lob概述.md" >}})
 	    -   [gms_lob限制]({{< relref "./docs/ExtensionReference/gms_lob限制.md" >}})
@@ -1621,7 +1626,7 @@ headless: true
 		-   [pg\_config]({{< relref "./docs/ToolandCommandReference/pg_config.md" >}})
 		-   [pg\_controldata]({{< relref "./docs/ToolandCommandReference/pg_controldata.md" >}})
 		-   [pg\_resetxlog]({{< relref "./docs/ToolandCommandReference/pg_resetxlog.md" >}})  
-		
+	
 -   [数据库参考]({{< relref "./docs/DatabaseReference/数据库参考.md" >}})
 	-   [系统表和系统视图]({{< relref "./docs/DatabaseReference/系统表和系统视图.md" >}})
 	    -   [系统表和系统视图概述]({{< relref "./docs/DatabaseReference/系统表和系统视图概述.md" >}})
