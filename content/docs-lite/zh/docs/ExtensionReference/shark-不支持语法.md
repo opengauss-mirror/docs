@@ -14,3 +14,21 @@ select 10！;
 -- 可用的相关语法
 select factorial(10);
 ```
+
+# ROWNUM
+
+### 语法变更说明
+
+- rownum不再作为伪列关键词。
+
+```
+-- 不再支持rownum作为伪列关键词
+openGauss=# select * from test1 where ROWNUM < 2;
+ERROR:  column "rownum" does not exist
+LINE 1: select * from test1 where ROWNUM < 2;
+                                  ^
+
+--可用语法
+--过滤条件中需要使用真实列
+```
+

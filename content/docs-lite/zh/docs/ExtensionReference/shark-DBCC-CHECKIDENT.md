@@ -14,6 +14,27 @@ DBCC CHECKIDENT用于对标识列进行获取或者重置功能。
 DBCC CHECKIDENT (table_name [ , { NORESEED | { RESEED [ , new_reseed_value ] } } ] ) [ WITH NO_INFOMSGS ]
 ```
 
+## 参数说明<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
+
+- **table_name**
+
+  表名，表中必须要有标识列。
+
+- **NORESEED**
+
+  指定仅做标识列的查询，不对标识列进行修改。
+
+- **RESEED**
+
+  指定应该对标识列进行修改。如果既不声明为RESEED，也不声明为NORESEED，默认为RESSED操作。
+
+- **new_reseed_value**
+
+  用作标识列的当前值的新值，默认值为选取标识列的当前标识值和当前标识列的最大值之间较大值。
+
+- **WITH NO_INFOMSGS**
+
+  取消显示所有信息性消息。
 
 ## 示例<a name="zh-cn_topic_0283136841_zh-cn_topic_0237122186_zh-cn_topic_0059779029_s51d29fa208274032a4e5308b57638421"></a>
 
