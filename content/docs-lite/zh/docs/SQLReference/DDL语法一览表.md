@@ -468,9 +468,21 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tbody>
 </table>
 
+## 定义运算符族
+
+运算符族定义了一组相关的运算符类，可能还包含一些与该族内运算符类兼容的附加运算符和支持函数。
+它们虽然能与运算符类协同工作，但对任何单个索引的实际运行并非必需。
+
+**表 16** 运算符族定义相关 SQL
+
+| 功能                 | 相关 SQL                                             |
+| -------------------- | ---------------------------------------------------- |
+| 创建一个新的运算符族 | [CREATE OPERATOR FAMILY ](CREATE-OPERATOR-FAMILY.md) |
+| 删除运算符族         | [DROP OPERRATOR FAMILY](DROP-OPERATOR-FAMILY.md)     |
+
 ## 定义过程语言<a name="section36251059111916"></a>
 
-**表 16**  过程语言定义相关SQL
+**表 17**  过程语言定义相关SQL
 
 <a name="table17164814221"></a>
 <table><thead align="left"><tr id="row111618812214"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p201613818227"><a name="p201613818227"></a><a name="p201613818227"></a>功能</p>
@@ -499,7 +511,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 
 ## 定义数据类型<a name="section256114132018"></a>
 
-**表 17**  数据类型定义相关SQL
+**表 18**  数据类型定义相关SQL
 
 <a name="table351719132218"></a>
 <table><thead align="left"><tr id="row10511919172210"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p115131972213"><a name="p115131972213"></a><a name="p115131972213"></a>功能</p>
