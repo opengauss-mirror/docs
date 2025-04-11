@@ -27,6 +27,9 @@ OPENGAUSS_USERNAME=
 OPENGAUSS_PASSWORD=
 OPENGAUSS_DATABASE=
 ```
+如果使用docker安装openGauss，配置应如下图所示（需要修改password）
+
+![](./figures/AnythingLLM-env.png)
 
 ### 启动容器
 执行以下命令，自动拉取对应Docker镜像并启动服务。
@@ -41,4 +44,6 @@ docker-compose up -d
 http://your_server_ip:3001
 ```
 
-之后可以在设置界面修改LLM参数等
+之后可以在设置界面修改LLM参数等，配置LLM后即可体验RAG功能
+
+![](./figures/AnythingLLM-setting.png)
