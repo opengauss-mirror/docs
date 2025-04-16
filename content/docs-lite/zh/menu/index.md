@@ -153,6 +153,8 @@ headless: true
 -   [安装指南]({{< relref "./docs/InstallationGuide/Installation.md" >}})
     -   [安装概述]({{< relref "./docs/InstallationGuide/安装概述.md" >}})
 	-   [容器镜像安装]({{< relref "./docs/InstallationGuide/容器镜像安装.md" >}})
+	    - [单节点安装]({{< relref "./docs/InstallationGuide/单节点安装_容器.md" >}})
+	    - [一主两备安装]({{< relref "./docs/InstallationGuide/一主两备不带cm安装_容器.md" >}})
 	-   [安装准备]({{< relref "./docs/InstallationGuide/安装准备.md" >}})	
 		-   [获取安装包]({{< relref "./docs/InstallationGuide/获取安装包.md" >}})
 		-   [准备软硬件安装环境]({{< relref "./docs/InstallationGuide/准备软硬件安装环境.md" >}})
