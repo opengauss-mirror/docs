@@ -18,7 +18,7 @@
 
 - @@ROWCOUNT
 
-    描述：返回受上一句影响的行数。如果行数大于20亿，请使用ROWCOUNT_BIG。
+    描述：返回受上一句影响的行数。如果行数大于20亿，请使用ROWCOUNT_BIG()。
 
     返回值类型：int
 
@@ -28,9 +28,9 @@
     select @@ROWCOUNT;
     ```
 
-- ROWCOUNT_BIG
+- ROWCOUNT_BIG()
 
-    描述：返回受上一句影响的行数。该函数的功能与@@ROWCOUNT类型，区别在于ROWCOIUNT_BIG的返回类型为bigint。
+    描述：返回受上一句影响的行数。该函数的功能与@@ROWCOUNT类似，区别在于ROWCOUNT_BIG()的返回类型为bigint。
 
     返回值类型：bigint
 
