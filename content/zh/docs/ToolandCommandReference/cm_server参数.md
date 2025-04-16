@@ -519,7 +519,7 @@
 
 **默认值**： 0
 
-## sharedisk_lock_type
+## share_disk_lock_type
 
 **参数说明**： 资源池化集群共享盘锁类型。
 
