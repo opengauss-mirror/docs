@@ -31,7 +31,7 @@
 
 ## 2. 测试流程
 ### 数据库配置
-容器内的配置文件路径：
+容器内的配置文件路径(注意数据库参数修改后需要`重启容器`才能生效)：
 ```
 /var/lib/opengauss/data/postgresql.conf
 ```
@@ -61,17 +61,17 @@ export ANN_BENCHMARKS_OG_PORT=YourPort
     module: ann_benchmarks.algorithms.openGauss
     name: openGauss-hnsw
     run_groups:
-      M-16:
-        arg_groups: [{M: 16, efConstruction: 200}]
-        args: {}
-        query_args: [[10, 20, 40, 80, 120, 200, 400, 800]]
-      M-24:
-        arg_groups: [{M: 24, efConstruction: 200}]
-        args: {}
-        query_args: [[10, 20, 40, 80, 120, 200, 400, 800]]
+       M-16:
+         arg_groups: [{M: 16, efConstruction: 200, concurrents: 80}]
+         args: {}
+         query_args: [[10, 20, 40, 80, 120, 200, 400, 800]]
+       M-24:
+         arg_groups: [{M: 24, efConstruction: 200, concurrents: 80}]
+         args: {}
+         query_args: [[10, 20, 40, 80, 120, 200, 400, 800]]
 ```
 - name: 近似搜索算法名
-- run_groups: 索引构建和索引查询参数设置，这里的arg_groups设置的是hnsw索引构建参数m和efconstruction，query_args则是hnsw索引查询参数ef_search。
+- run_groups: 索引构建和索引查询参数设置，这里的arg_groups设置的是hnsw索引构建参数m和efconstruction，concurrents为并发线程数，推荐值为cpu核数，query_args则是hnsw索引查询参数ef_search。
 
 ### 执行测试
 修改`go_opgs.sh`中的启动命令
