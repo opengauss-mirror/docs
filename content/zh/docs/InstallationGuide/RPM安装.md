@@ -4,24 +4,26 @@
 
 ## 支持的架构和操作系统版本以及对应的openGauss版本
 
-| 操作系统                 | 架构   | openauss版本    |
-| ----------------------- | ------ | --------------- |
-| openEuler 24.03 LTS SP1 | ARM64/x86_64  | openGauss 6.0.0 企业版  |
-| openEuler 22.03 LTS SP4 | ARM64/x86_64  | openGauss 5.0.1 Lite   |
-| openEuler 24.03 LTS     | ARM64/x86_64  | openGauss 2.1.0 Lite   |
-| openEuler 22.03 LTS SP3 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
-| openEuler 20.03 LTS SP4 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
-| openEuler 22.03 LTS SP1 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
+| 操作系统                 |     架构      |      os版本     |     updata版本    |
+| ----------------------- | ------------- | --------------- | ---------------- |
+| openEuler 24.03 LTS SP1 | ARM64/x86_64  | openGauss 6.0.0 企业版  |     无     |
+| openEuler 22.03 LTS SP4 | ARM64/x86_64  | openGauss 5.0.1 Lite   | openGauss 6.0.0 企业版 |
+| openEuler 24.03 LTS     | ARM64/x86_64  | openGauss 2.1.0 Lite   |     无     |
+| openEuler 22.03 LTS SP3 | ARM64/x86_64  | openGauss 2.1.0 Lite   |     无     |
+| openEuler 20.03 LTS SP4 | ARM64/x86_64  | openGauss 2.1.0 Lite   |     无     |
+| openEuler 22.03 LTS SP1 | ARM64/x86_64  | openGauss 2.1.0 Lite   |     无     |
 
-注意：上面列举的都是openEuler正在维护的版本，如果需要openEuler其他版本上安装openGauss，请联系华为技术支持。
+注意：
+- 上面列举的都是openEuler正在维护的版本，如果需要openEuler其他版本上安装openGauss，请联系华为技术支持。
+- os版本表示系统默认安装的openGauss版本，update版本表示通过yum update命令升级到的openGauss版本。
 
 ## 支持特性
 
--  从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](../ExtensionReference/dolphin概述.md)。
+- 从openGauss 5.0.1开始，支持兼容性B库，详细参考[dolphin插件](../ExtensionReference/dolphin概述.md)。
   
 ## 约束
 
--  openGauss 6.0.0企业版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
+- openGauss 6.0.0企业版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
 
 ## 使用限制
 
