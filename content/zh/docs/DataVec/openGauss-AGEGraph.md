@@ -18,59 +18,11 @@ CONTAINER ID        IMAGE                                                  COMMA
 253714c9c869        opengauss:7.0.0-rc1                                    "entrypoint.sh gauss…"   8 minutes ago       Up 8 minutes                    0.0.0.0:6543->5432/tcp                             opengauss-age
 
 ```
-#### 1.2 AGE插件安装
+#### 1.2 python依赖安装
 
 ```
-#进入openGauss容器中 253714c9c869为 CONTAINER ID
-docker exec -it 253714c9c869 bash
-
-#切换到omm用户
-su omm
-
-#omm用户，连接数据库，默认使用omm数据库
-gsql -r
-
-#连接数据库后，omm数据库安装age插件
-create extension age;
-
-#退出数据库连接
-\q
-
+pip install -U langchain_community langchain langgraph  langchain-ollama langchain-experimental  langchain-openai langchain-opengauss
 ```
-
-#### 1.3 python依赖安装
-
-```
-pip install -U langchain_community langchain langgraph  langchain-ollama langchain-experimental  langchain-openai
-``` 
-下载已适配的 langchain_community 仓库，操作如下：
-
-##### 1.3.1 下载适配好的langchain_community仓
-```
-git clone https://gitee.com/lin-qiang123/langchain.git
-```
-##### 1.3.2 查找pip 安装的langchain_community位置
-```
-pip show langchain_community
-```
-输出
-
-```
-Name: langchain-community
-Version: 0.3.20
-Summary: Community contributed LangChain integrations.
-Home-page:
-Author:
-Author-email:
-License: MIT
-Location: c:\users\test\appdata\local\programs\python\python310\lib\site-packages  #依赖库安装的位置
-Requires: numpy, PyYAML, aiohttp, tenacity, dataclasses-json, langchain, httpx-sse, SQLAlchemy, pydantic-settings, langchain-core, langsmith, requests
-Required-by: langchain-experimental
-```
-
-##### 1.3.3 替换langchain-community
-在git clone 下来的代码仓中，找到langchain\libs\community\langchain_community文件夹，复制并且覆盖到`Location`显示的文件夹中
-
 
 ### 2. 利用 模型和 openGauss AGEGraph 快速构建知识图谱和检索
 本文使用百炼大模型，取得api-key，并且配置DASHSCOPE_API_KEY环境变量
@@ -120,26 +72,49 @@ print(f"Relationships from graph doc:{graph_documents[0].relationships}")
 Nodes from graph doc:[Node(id='Nobel Prize', type='Award', properties={}), Node(id='University of Paris', type='Organization', properties={}), Node(id='Marie Curie', type='Person', properties={}), Node(id='radioactivity', type='ResearchField', properties={}), Node(id='Pierre Curie', type='Person', properties={})]
 Relationships from graph doc:[Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='radioactivity', type='ResearchField', properties={}), type='FIELD_OF_RESEARCH', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='Pierre Curie', type='Person', properties={}), type='SPOUSE', properties={}), Relationship(source=Node(id='Pierre Curie', type='Person', properties={}), target=Node(id='Nobel Prize', type='Award', properties={}), type='AWARD', properties={}), Relationship(source=Node(id='Marie Curie', type='Person', properties={}), target=Node(id='University of Paris', type='Organization', properties={}), type='WORKS_AT', properties={})]
 ```
-#### 2.3 实例化 openGauss AGEGraph 客户端，持久化图数据
+#### 2.3 openGauss AGE插件安装
+如果对应的数据库已经创建age插件，此步骤可以忽略
 
 ```
-from langchain_community.graphs.age_graph import AGEGraph
+import psycopg2
+connection = psycopg2.connect(
+    database = "omm",
+    user = "gaussdb",
+    password = "YourPassoword",
+    host = "Your IP",
+    port = 8888
+)
 
-conf = {
-    "database": "omm",
-    "user": "gaussdb",
-    "password": "YourPassoword",
-    "host": "Your IP",
-    "port": 8888,
-    "sslmode": "disable"
-}
-graph=AGEGraph(graph_name='graph_test1',conf=conf,create=True)
+try:
+    cursor = connection.cursor()
+    sql_qeury = "create extension age;"
+    cursor.execute(sql_query)
+    connection.commit()
+except Exception as e:
+    print(e)
+finally:
+    cursor.close()
+    connection.close()
+```
+#### 2.4 实例化 openGauss AGEGraph 客户端，持久化图数据
+
+```
+from langchain_opengauss import openGaussAGEGraph, openGaussSettings
+
+conf = openGaussSettings(
+    database = "omm",
+    user = "gaussdb",
+    password = "YourPassoword",
+    host = "Your IP",
+    port = 8888
+)
+graph=openGaussAGEGraph(graph_name='graph_test1',conf=conf,create=True)
 graph.add_graph_documents(graph_documents)
 graph.refresh_schema()
 
 ```
 
-#### 2.4 大模型 Text2Cypher：提取问题关键词并生成图检索语句
+#### 2.5 大模型 Text2Cypher：提取问题关键词并生成图检索语句
 
 通过增加提示词`cypher_prompt`，可以让大模型生成的图查询语句更加精准
 ```
