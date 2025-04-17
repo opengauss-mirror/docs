@@ -31,6 +31,6 @@ debezium-connector-postgres工具依赖kafka、zookeeper和schema-registry三方
 
 ## 参考文档<a name="section57771982"></a>
 
-debezium-connector-postgres详细说明和使用文档参考：<a target="_blank" href="https://gitee.com/opengauss/debezium/blob/master/README.md#debezium-postgres-connector-1">debezium-connector-postgres.md</a>
+debezium-connector-postgres详细说明和使用文档参考[Postgresql迁移指南](https://gitee.com/opengauss/debezium/blob/master/README.md#debezium-postgres-connector-1)。
 
 
