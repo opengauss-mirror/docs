@@ -61,44 +61,44 @@ public void ExecuteSQL(Connection conn, String sql)
     }
 }
 
-public void CreateTable(int dim)
+public void CreateTable(Connection conn, int dim)
 {
     String sql = String.format("CREATE TABLE IF NOT EXISTS demotable(id INTEGER, content TEXT, embedding vector(%d));", dim);
-    ExecuteSQL(sql);
+    ExecuteSQL(conn, sql);
 }
 ```
 ### 3.创建索引
 ```java
 // 用L2距离创建HNSW类型的向量索引
-public void CreateIndex()
+public void CreateIndex(Connection conn)
 {
     String sql = String.format("CREATE INDEX ON demotable USING hnsw (embedding vector_l2_ops);");
-    ExecuteSQL(sql);
+    ExecuteSQL(conn, sql);
 }
 ```
 ### 4.插入/删除/更新
 - 插入
  ```java
-public void InsertDataSingle(int id, String content, String vector)
+public void InsertDataSingle(Connection conn, int id, String content, String vector)
 {
     String sql = String.format("INSERT INTO demotable VALUES(%d, '%s', '%s');", id, content, vector);
-    ExecuteSQL(sql);
+    ExecuteSQL(conn, sql);
 }
 ```
 - 删除
 ```java
-public void DeleteData()
+public void DeleteData(Connection conn)
 {
     String sql = String.format("DELETE FROM demotable where id > 10;");
-    ExecuteSQL(sql);
+    ExecuteSQL(conn, sql);
 }
 ```
 - 更新
 ```java
-public void UpdateData(String vector)
+public void UpdateData(Connection conn, String vector)
 {
     String sql = String.format("UPDATE demotable set embedding = '%s' where id = 10;");
-    ExecuteSQL(sql);
+    ExecuteSQL(conn, sql);
 }
 ```
 ### 5.查询
