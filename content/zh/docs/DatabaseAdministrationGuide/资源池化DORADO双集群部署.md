@@ -482,7 +482,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         2. 在deveice manage上调整同步pair：1.分裂，2.取消从资源保护，3.反转同步方向
 
         3. 在原备集群修改dss参数与cm参数
-        dsscmd setcfg -n CLUSTER_RUN_MODE -v cluster_primary
+        dsscmd setcfg -n CLUSTER_RUN_MODE -v cluster_primary（所有节点）
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
         cm_ctl set --param --server -k ss_double_cluster_mode=1
         cm_ctl reload --param --agent
@@ -501,7 +501,7 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
         export DSS_MAINTAIN=FALSE       
 
         7. 在原主集群修改dss与cm参数
-        在$DSS_HOME/dss_inst.ini文件中调整（所有节点）
+        在$DSS_HOME/cfg/dss_inst.ini文件中调整（所有节点）
         CLUSTER_RUN_MODE=cluster_standby
         设置cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=2
