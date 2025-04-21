@@ -46,7 +46,7 @@ NEXT
 
 ## 参数说明<a name="zh-cn_topic_0283137321_zh-cn_topic_0237122165_zh-cn_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
 
--   **direction\_clause**
+-   **direction**
 
     定义抓取数据的方向。
 

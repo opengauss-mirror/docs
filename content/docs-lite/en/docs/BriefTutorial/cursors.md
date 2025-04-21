@@ -103,7 +103,7 @@ To process SQL statements, the stored procedure process assigns a memory segment
 
     Value range:  **SELECT**  or  **VALUES**  clause
 
--   **direction\_clause**
+-   **direction**
 
     Defines the fetch direction.
 
