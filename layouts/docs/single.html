@@ -1,9 +1,19 @@
 {{ define "main" }}
 <article class="markdown" id="markdown">
-  {{ $pt := (replace .Content ".md\"" ".html\"") }}
-  {{ $pt1 := (replace $pt ".md#" ".html#") }}
-  {{ $st := (replace $pt1 "&lsquo;" "'") }}
-  {{ $ot := (replace $st "&rsquo;" "'") }}
-  {{- $ot | safeHTML -}}
+    {{ $content := .Content }}
+    {{ $links := findRE `(href|src)=(["'])([^"']+)(\.md)(["'])` $content }}
+    {{ range $links }}
+        {{ $link := . }}
+        {{ $attr := index (findRE `(href|src)` $link) 0 }}
+        {{ $quote := index (findRE `(["'])` $link) 0 }}
+        {{ $path := index (findRE `(href|src)=(["'])([^"']+)(\.md)(["'])` $link) 0 | replaceRE `(href|src)=(["'])` "" | replaceRE `(\.md)(["'])` "" }}
+        {{ if not (or (hasPrefix $path "http://") (hasPrefix $path "https://")) }}
+            {{ $newLink := printf "%s=%s%s.html%s" $attr $quote $path $quote }}
+            {{ $content = replace $content $link $newLink }}
+        {{ end }}
+    {{ end }}
+    {{ $pt := replace $content "&lsquo;" "'" }}
+    {{ $ot := replace $pt "&rsquo;" "'" }}
+    {{- $ot | safeHTML -}}
 </article>
 {{ end }}
