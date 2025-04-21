@@ -46,7 +46,7 @@ NEXT
 
 ## Parameter Description<a name="en-us_topic_0283137321_en-us_topic_0237122165_en-us_topic_0059778422_sceb763c430654064b8f61e9aa0792af9"></a>
 
--   **direction\_clause**
+-   **direction**
 
     Defines the fetch direction.
 
