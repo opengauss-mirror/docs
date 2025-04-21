@@ -2,7 +2,7 @@
 
 传统 RAG（检索增强生成）通常使用向量数据库检索相关文档来提高大模型的问题回答准确性，但是基于向量的 RAG 不能够很好的表达事物之间的联系。而GraphRAG基于知识图谱的检索增强生成，能够提供结构化检索能力，将图作为传统的RAG多路召回的一环，使知识表达更易解释、对复杂关系更易支持。
 
-目前 [openGauss AGEGraph](https://gitee.com/opengauss/Plugin/blob/master/contrib/age/README_zh.md) 已经提供了图数据库引擎的能力。本文将详细介绍如何借助大模型以及 openGauss 图数据库快速提取文档知识图谱并持久化。 随后，将问题输入大模型，大模型自动提取关键词并转换为图查询语句连接 openGauss 图数据库进行图数据检索。最后，将图数据输入大模型生成问题答案反馈给用户。
+目前 [openGauss AGEGraph](https://docs.opengauss.org/zh/docs/latest/docs/DataVec/Gallery-Engine-AGE.html) 已经提供了图数据库引擎的能力。本文将详细介绍如何借助大模型以及 openGauss 图数据库快速提取文档知识图谱并持久化。 随后，将问题输入大模型，大模型自动提取关键词并转换为图查询语句连接 openGauss 图数据库进行图数据检索。最后，将图数据输入大模型生成问题答案反馈给用户。
 ![AGEGraph](./figures/openGauss-AGEGraph.png)
 
 ### 1.环境准备
