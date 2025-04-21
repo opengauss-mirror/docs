@@ -116,7 +116,7 @@
 
     该选项额外还会将GUC参数character\_set\_connection设置成encoding\_name，用于设置字符串常量的默认字符集。若未指定COLLATE collate\_name选项，
 
-    则会将将GUC参数collation\_connection设置成当前encoding\_name的默认字符序。
+    则会将 GUC 参数 `collation_connection` 设置成当前 `encoding_name` 的默认字符序。
 
 -   **COLLATE collate\_name**
 
