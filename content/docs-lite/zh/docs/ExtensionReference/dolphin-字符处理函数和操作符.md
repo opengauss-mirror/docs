@@ -432,16 +432,17 @@
     (1 row)
     ```
 
--   convert(expr using transcoding_name), convert(expr, type_name)
+- `convert(expr using transcoding_name)`
 
-    描述：通过transcoding_name指定的编码方式转换expr;或者将指定内容转换为对应的数据类型
-    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。对于convert(expr, type_name)场景，当dolphin.b_compatibility_mode为on时，如果type_name为char，实际会转换成varchar。为off时仍保持原始openGauss表现，转换成char。
+    描述：通过 `transcoding_name` 指定的编码方式转换 `expr`。
+    注意：默认库中支持如下格式：`convert(string bytea, src_encoding name, dest_encoding name)`，以 `dest_encoding` 指定的编码方式转换 `bytea`；dolphin 下支持通过 `using` 关键字后 `transcoding_name` 指定要转换的编码方式，对 `expr` 进行转换，不支持上述三个参数的表示方式。
+    另外，该函数需要在 GUC 参数 `b_format_behavior_compat_options` 包含 `enable_multi_charset` 时才可生效。
 
-    返回值类型：text或者type_name指定的数据类型
+    返回值类型：`text`
 
     示例：
 
-    ```
+    ```sql
     b_compatibility_database=# select convert('a' using 'utf8');
     convert
     ---------
@@ -452,6 +453,23 @@
     convert
     ---------
     a 
+    (1 row)
+    ```
+
+- `convert(expr, type_name)`
+
+    将指定内容转换为对应的数据类型。
+    当 `dolphin.b_compatibility_mode` 为 `on` 时，如果 `type_name` 为 `char` ，实际会转换成 `varchar` 。为 `off` 时仍保持原始 openGauss 表现，转换成 `char`。
+
+    返回值类型：`type_name` 指定的数据类型
+
+    示例：
+
+    ```sql
+    b_compatibility_database=# select convert('a', bytea); 
+      bytea   
+    ----------
+     \x61
     (1 row)
     ```
 
