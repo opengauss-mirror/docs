@@ -4,7 +4,7 @@
 - 指定 git repository & branch：
 
 
-https://gitee.com/opengauss/docs [branch]
+https://gitcode.com/opengauss/docs [branch]
 
 - 测试时可以使用：
 
