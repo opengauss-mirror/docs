@@ -229,6 +229,7 @@ headless: true
             - [获取安装包]({{< relref "./docs/InstallationGuide/获取安装包_企业版.md" >}})
             - [准备软硬件安装环境]({{< relref "./docs/InstallationGuide/准备软硬件安装环境_企业版.md" >}})
             - [了解安装用户及用户组]({{< relref "./docs/InstallationGuide/了解安装用户及用户组.md" >}})
+            - [安装前置操作]({{< relref "./docs/InstallationGuide/安装前置操作.md" >}})
         - [安装openGauss]({{< relref "./docs/InstallationGuide/安装openGauss.md" >}})
             - [(可选)一站式安装指南]({{< relref "./docs/InstallationGuide/一站式安装指南.md" >}})
             - [创建XML配置文件]({{< relref "./docs/InstallationGuide/创建XML配置文件.md" >}})
