@@ -363,16 +363,17 @@
     (1 row)
     ```
 
--   convert(expr using transcoding_name)
+- `convert(expr using transcoding_name)`
 
-    描述：通过transcoding_name指定的编码方式转换expr;
-    注意：默认库中支持如下格式： convert(string bytea, src_encoding name, dest_encoding name);以dest_encoding指定的编码方式转换bytea，dolphin下支持通过using关键字后transcoding_name指定要转换的编码方式，对expr进行转换，不支持上述三个参数的表示方式。
+    描述：通过 `transcoding_name` 指定的编码方式转换 `expr`。
+    注意：默认库中支持如下格式：`convert(string bytea, src_encoding name, dest_encoding name)`，以 `dest_encoding` 指定的编码方式转换 `bytea`；dolphin 下支持通过 `using` 关键字后 `transcoding_name` 指定要转换的编码方式，对 `expr` 进行转换，不支持上述三个参数的表示方式。
+    另外，该函数需要在 GUC 参数 `b_format_behavior_compat_options` 包含 `enable_multi_charset` 时才可生效。
 
-    返回值类型：text
+    返回值类型：`text`
 
     示例：
 
-    ```
+    ```sql
     b_compatibility_database=# select convert('a' using 'utf8');
     convert
     ---------
