@@ -5,6 +5,7 @@
 对于此系统表查询有如下约束：
 
 -   必须在postgres库内查询，其它库中不存数据。
+-   此系统表受enable\_stmt\_track控制，默认为"on"。
 -   此系统表受track\_stmt\_stat\_level控制，默认为“OFF,L0”，第一部分控制Full SQL，第二部分控制Slow SQL，具体字段记录级别见下表。考虑性能影响，更改该参数的值时建议通过set方式设置，使该参数仅对当前会话生效。
 -   对于Slow SQL，当track\_stmt\_stat\_level的值为非OFF时，且SQL执行时间超过log\_min\_duration\_statement，会记录为慢SQL。
 对于存储过程内的SQL语句(parent_query_id非0)，当设置instr_unique_sql_track_type为all时才可以记录，其中记录了query、query_plan、unique_query_id、parent_query_id、db_time、cpu_time、start_time、finish_time、is_slow_sql以及一些当前数据库使用信息的基本参数，n_tuples_fetched、n_tuples_returned、n_tuples_inserted、n_tuples_updated、n_tuples_deleted、n_blocks_fetched、n_blocks_hit、execution_time、parse_time、plan_time、rewrite_time、pl_execution_time、pl_compilation_time、data_io_time、net_send_info、net_recv_info、net_stream_send_info、net_stream_recv_info、lock_wait_count、lock_wait_time、lwlock_count、lwlock_wait_count、lwlock_ti、lwlock_wait_time、details、trace_id、advise、net_send_time、 srt1_q、 srt2_simple_query、 srt3_analyze_rewrite、 srt4_plan_query、 srt5_light_query、 srt6_p、 srt7_b、 srt8_e、 srt9_d、 srt10_s、 srt11_c、 srt12_u、 srt13_before_query、 srt14_after_query、rtt_unknown列不支持，记录的值没有实际意义。
