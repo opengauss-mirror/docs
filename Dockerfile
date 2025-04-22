@@ -12,7 +12,7 @@ COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/html/
 
 RUN cd /src/ && \
-    git clone https://gitee.com/opengauss/docs --depth=1 latest/docs && \
+    git clone https://gitcode.com/opengaussmirror/docs --depth=1 latest/docs && \
     mkdir -p /src/website/content/zh/docs/latest && \
     cp -rf /src/latest/docs/content/zh/* /src/website/content/zh/docs/latest && \
     mkdir -p /src/website/content/en/docs/latest && \
@@ -23,43 +23,43 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/latest-lite/ && \
     cp -rf /src/latest/docs/content/docs-lite/en/* /src/website/content/en/docs/latest-lite/ && \
 
-    git clone -b 1.0.0 https://gitee.com/opengauss/docs --depth=1 1.0.0/docs && \
+    git clone -b 1.0.0 https://gitcode.com/opengaussmirror/docs --depth=1 1.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/1.0.0 && \
     cp -rf /src/1.0.0/docs/content/zh/* /src/website/content/zh/docs/1.0.0 && \
     mkdir -p /src/website/content/en/docs/1.0.0 && \
     cp -rf /src/1.0.0/docs/content/en/* /src/website/content/en/docs/1.0.0 && \
 
-    git clone -b 1.0.1 https://gitee.com/opengauss/docs --depth=1 1.0.1/docs && \
+    git clone -b 1.0.1 https://gitcode.com/opengaussmirror/docs --depth=1 1.0.1/docs && \
     mkdir -p /src/website/content/zh/docs/1.0.1 && \
     cp -rf /src/1.0.1/docs/content/zh/* /src/website/content/zh/docs/1.0.1 && \
     mkdir -p /src/website/content/en/docs/1.0.1 && \
     cp -rf /src/1.0.1/docs/content/en/* /src/website/content/en/docs/1.0.1 && \
 
-    git clone -b 1.1.0 https://gitee.com/opengauss/docs --depth=1 1.1.0/docs && \
+    git clone -b 1.1.0 https://gitcode.com/opengaussmirror/docs --depth=1 1.1.0/docs && \
     mkdir -p /src/website/content/zh/docs/1.1.0 && \
     cp -rf /src/1.1.0/docs/content/zh/* /src/website/content/zh/docs/1.1.0 && \
     mkdir -p /src/website/content/en/docs/1.1.0 && \
     cp -rf /src/1.1.0/docs/content/en/* /src/website/content/en/docs/1.1.0 && \
 
-    git clone -b 2.0.0 https://gitee.com/opengauss/docs --depth=1 2.0.0/docs && \
+    git clone -b 2.0.0 https://gitcode.com/opengaussmirror/docs --depth=1 2.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/2.0.0 && \
     cp -rf /src/2.0.0/docs/content/zh/* /src/website/content/zh/docs/2.0.0 && \
     mkdir -p /src/website/content/en/docs/2.0.0 && \
     cp -rf /src/2.0.0/docs/content/en/* /src/website/content/en/docs/2.0.0 && \
 
-    git clone -b 2.0.1 https://gitee.com/opengauss/docs --depth=1 2.0.1/docs && \
+    git clone -b 2.0.1 https://gitcode.com/opengaussmirror/docs --depth=1 2.0.1/docs && \
     mkdir -p /src/website/content/zh/docs/2.0.1 && \
     cp -rf /src/2.0.1/docs/content/zh/* /src/website/content/zh/docs/2.0.1 && \
     mkdir -p /src/website/content/en/docs/2.0.1 && \
     cp -rf /src/2.0.1/docs/content/en/* /src/website/content/en/docs/2.0.1 && \
 
-    git clone -b 2.1.0 https://gitee.com/opengauss/docs --depth=1 2.1.0/docs && \
+    git clone -b 2.1.0 https://gitcode.com/opengaussmirror/docs --depth=1 2.1.0/docs && \
     mkdir -p /src/website/content/zh/docs/2.1.0 && \
     cp -rf /src/2.1.0/docs/content/zh/* /src/website/content/zh/docs/2.1.0 && \
     mkdir -p /src/website/content/en/docs/2.1.0 && \
     cp -rf /src/2.1.0/docs/content/en/* /src/website/content/en/docs/2.1.0 && \
 
-    git clone -b 3.0.0 https://gitee.com/opengauss/docs --depth=1 3.0.0/docs && \
+    git clone -b 3.0.0 https://gitcode.com/opengaussmirror/docs --depth=1 3.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/3.0.0 && \
     cp -rf /src/3.0.0/docs/content/zh/* /src/website/content/zh/docs/3.0.0 && \
     mkdir -p /src/website/content/en/docs/3.0.0 && \
@@ -70,7 +70,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/3.0.0-lite/ && \
     cp -rf /src/3.0.0/docs/content/docs-lite/en/* /src/website/content/en/docs/3.0.0-lite/ && \
 
-    git clone -b 3.1.0 https://gitee.com/opengauss/docs --depth=1 3.1.0/docs && \
+    git clone -b 3.1.0 https://gitcode.com/opengaussmirror/docs --depth=1 3.1.0/docs && \
     mkdir -p /src/website/content/zh/docs/3.1.0 && \
     cp -rf /src/3.1.0/docs/content/zh/* /src/website/content/zh/docs/3.1.0 && \
     mkdir -p /src/website/content/en/docs/3.1.0 && \
@@ -81,7 +81,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/3.1.0-lite/ && \
     cp -rf /src/3.1.0/docs/content/docs-lite/en/* /src/website/content/en/docs/3.1.0-lite/ && \
 
-    git clone -b 3.1.1 https://gitee.com/opengauss/docs --depth=1 3.1.1/docs && \
+    git clone -b 3.1.1 https://gitcode.com/opengaussmirror/docs --depth=1 3.1.1/docs && \
     mkdir -p /src/website/content/zh/docs/3.1.1 && \
     cp -rf /src/3.1.1/docs/content/zh/* /src/website/content/zh/docs/3.1.1 && \
     mkdir -p /src/website/content/en/docs/3.1.1 && \
@@ -92,7 +92,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/3.1.1-lite/ && \
     cp -rf /src/3.1.1/docs/content/docs-lite/en/* /src/website/content/en/docs/3.1.1-lite/ && \
 
-    git clone -b 5.0.0 https://gitee.com/opengauss/docs --depth=1 5.0.0/docs && \
+    git clone -b 5.0.0 https://gitcode.com/opengaussmirror/docs --depth=1 5.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/5.0.0 && \
     cp -rf /src/5.0.0/docs/content/zh/* /src/website/content/zh/docs/5.0.0 && \
     mkdir -p /src/website/content/en/docs/5.0.0 && \
@@ -103,7 +103,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/5.0.0-lite/ && \
     cp -rf /src/5.0.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.0.0-lite/ && \
 
-    git clone -b 5.1.0 https://gitee.com/opengauss/docs --depth=1 5.1.0/docs && \
+    git clone -b 5.1.0 https://gitcode.com/opengaussmirror/docs --depth=1 5.1.0/docs && \
     mkdir -p /src/website/content/zh/docs/5.1.0 && \
     cp -rf /src/5.1.0/docs/content/zh/* /src/website/content/zh/docs/5.1.0 && \
     mkdir -p /src/website/content/en/docs/5.1.0 && \
@@ -114,7 +114,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/5.1.0-lite/ && \
     cp -rf /src/5.1.0/docs/content/docs-lite/en/* /src/website/content/en/docs/5.1.0-lite/ && \
 
-    git clone -b 6.0.0-RC1 https://gitee.com/opengauss/docs --depth=1 6.0.0-RC1/docs && \
+    git clone -b 6.0.0-RC1 https://gitcode.com/opengaussmirror/docs --depth=1 6.0.0-RC1/docs && \
     mkdir -p /src/website/content/zh/docs/6.0.0-RC1 && \
     cp -rf /src/6.0.0-RC1/docs/content/zh/* /src/website/content/zh/docs/6.0.0-RC1 && \
     mkdir -p /src/website/content/en/docs/6.0.0-RC1 && \
@@ -125,7 +125,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/6.0.0-RC1-lite/ && \
     cp -rf /src/6.0.0-RC1/docs/content/docs-lite/en/* /src/website/content/en/docs/6.0.0-RC1-lite/ && \
 
-    git clone -b 6.0.0 https://gitee.com/opengauss/docs 6.0.0/docs && \
+    git clone -b 6.0.0 https://gitcode.com/opengaussmirror/docs 6.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/6.0.0 && \
     cp -rf /src/6.0.0/docs/content/zh/* /src/website/content/zh/docs/6.0.0 && \
     mkdir -p /src/website/content/en/docs/6.0.0 && \
@@ -136,7 +136,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/6.0.0-lite/ && \
     cp -rf /src/6.0.0/docs/content/docs-lite/en/* /src/website/content/en/docs/6.0.0-lite/ && \
 
-    git clone -b 7.0.0-RC1 https://gitee.com/opengauss/docs --depth=1 7.0.0-RC1/docs && \
+    git clone -b 7.0.0-RC1 https://gitcode.com/opengaussmirror/docs --depth=1 7.0.0-RC1/docs && \
     mkdir -p /src/website/content/zh/docs/7.0.0-RC1 && \
     cp -rf /src/7.0.0-RC1/docs/content/zh/* /src/website/content/zh/docs/7.0.0-RC1 && \
     mkdir -p /src/website/content/en/docs/7.0.0-RC1 && \
