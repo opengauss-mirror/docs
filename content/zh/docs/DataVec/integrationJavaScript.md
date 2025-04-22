@@ -2,7 +2,7 @@
 本文介绍如何使用JavaScript语言调用openGauss向量数据库
 
 ## 环境准备
- - 下载源码[openGauss-connector-nodejs](https://gitee.com/opengauss/openGauss-connector-nodejs)
+ - 下载源码[openGauss-connector-nodejs](https://gitcode.com/opengauss/openGauss-connector-nodejs)
 ```bash
 npm install & npm run build
 ```

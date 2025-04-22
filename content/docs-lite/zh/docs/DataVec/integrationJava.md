@@ -131,4 +131,4 @@ public String findNearestVectors(Connection conn, int efsearch, String vector, i
     return res;
 }
 ```
-[更多操作示例参考](https://gitee.com/opengauss/openGauss-connector-jdbc)
+[更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-jdbc)

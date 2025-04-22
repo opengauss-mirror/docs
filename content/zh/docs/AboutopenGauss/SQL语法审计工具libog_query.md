@@ -39,8 +39,8 @@ libog_query 工具对外提供so和接口，传入SQL后判断该SQL在语法上
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： [libog_query](https://gitee.com/opengauss/openGauss-server/tree/master/src/bin/libog_query/)
+开源社区地址： [libog_query](https://gitcode.com/opengauss/openGauss-server/tree/master/src/bin/libog_query/)
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-server/blob/master/src/bin/libog_query/readme.md ">README.md</a>
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-server/blob/master/src/bin/libog_query/readme.md ">README.md</a>
 
 

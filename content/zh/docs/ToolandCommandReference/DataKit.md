@@ -147,9 +147,9 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 
 ## DataKit源码链接和使用说明
 
-源码：https://gitee.com/opengauss/openGauss-workbench/tree/master
+源码：https://gitcode.com/opengauss/openGauss-workbench/tree/master
 
-使用说明： <a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/openGauss-datakit/README.md ">README.md</a>
+使用说明： <a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/openGauss-datakit/README.md ">README.md</a>
 
 ## 插件说明
 
@@ -167,50 +167,50 @@ DataKit工具是Jar包启动的，删除对应的Jar包即可卸载该工具。
 <tr> 
 <td>基础运维插件</td>
 <td>实现数据库集群的基础管理能力，包括安装、导入、启停、备份恢复、升级等操作；也支持websell、安装包管理等能力</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops">base-ops</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/base-ops/README.md ">base-ops使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops">base-ops</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/base-ops/README.md ">base-ops使用说明</a></td>
 </tr>
 <tr> 
 <td>数据迁移插件</td>
 <td>实现其他数据库到openGauss一站式迁移方案（当前支持MySQL）</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/data-migration">data-migration</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/data-migration/README.md ">data-migration使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/data-migration">data-migration</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/data-migration/README.md ">data-migration使用说明</a></td>
 </tr>
 <tr> 
 <td>告警监控插件</td>
 <td>为openGauss提供告警和通知能力</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/alert-monitor">alert-monitor</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md ">alert-monitor使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/alert-monitor">alert-monitor</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md ">alert-monitor使用说明</a></td>
 </tr>
 <tr> 
 <td>业务开发插件</td>
 <td>业务开发是一个基于 Browser/Server 的通用集成开发环境， 帮助数据库开发人员便捷地构建应用程序，以图形化界面形式提供数据库关键特性。业务开发支持的主要功能点包括：创建和管理数据库对象（表、视图、序列、同义词等）、执行 SQL 语句、 编译和执行 PL/SQL语句。</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/data-studio">data-studio</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/data-studio/readme.md ">data-studio使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/data-studio">data-studio</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/data-studio/readme.md ">data-studio使用说明</a></td>
 </tr>
 <tr> 
 <td>实例监控插件</td>
 <td>提供实例、集群等监控能力</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/observability-instance">observability-instance</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/observability-instance/README.md ">observability-instance使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/observability-instance">observability-instance</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/observability-instance/README.md ">observability-instance使用说明</a></td>
 </tr>
 <tr> 
 <td>日志检索插件</td>
 <td>提供日志检索能力</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/observability-log-search">observability-log-search</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/observability-log-search/README.md ">observability-log-search使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/observability-log-search">observability-log-search</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/observability-log-search/README.md ">observability-log-search使用说明</a></td>
 </tr>
 <tr> 
 <td>智能诊断插件</td>
 <td>提供SQL诊断能力</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/observability-sql-diagnosis">observability-sql-diagnosis</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/observability-sql-diagnosis/README.md ">observability-sql-diagnosis使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/observability-sql-diagnosis">observability-sql-diagnosis</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/observability-sql-diagnosis/README.md ">observability-sql-diagnosis使用说明</a></td>
 </tr>
 <tr> 
 <td>openGauss数据库监控插件</td>
 <td>openGauss通用的监控插件生成工具，支持Prometheus、Zabbix以及Nagios平台</td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/openGauss-tools-monitor">openGauss-tools-monitor</a></td>
-<td><a href="https://gitee.com/opengauss/openGauss-workbench/blob/master/plugins/openGauss-tools-monitor/README.md ">openGauss-tools-monitor使用说明</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/openGauss-tools-monitor">openGauss-tools-monitor</a></td>
+<td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/openGauss-tools-monitor/README.md ">openGauss-tools-monitor使用说明</a></td>
 </tr>
 </tbody>
 </table>

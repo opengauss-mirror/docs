@@ -38,7 +38,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 
 - MySQL参数设置要求为：log\_bin=ON, binlog\_format=ROW, binlog\_row\_image=FULL, gtid\_mode = ON。若gtid_mode为off，则sink端按照事务顺序串行回放，会降低在线迁移性能。
 
-- 先进行全量迁移，再进行增量迁移，全量迁移可基于[gs_mysync](https://gitee.com/opengauss/openGauss-tools-chameleon)工具完成。
+- 先进行全量迁移，再进行增量迁移，全量迁移可基于[gs_mysync](https://gitcode.com/opengauss/openGauss-tools-chameleon)工具完成。
 
 - Kafka中以AVRO格式存储数据，AVRO字段名称[命名规则](https://gitee.com/link?target=https%3A%2F%2Favro.apache.org%2Fdocs%2F1.11.1%2Fspecification%2F%23names)为：
 
@@ -56,11 +56,11 @@ gs_replicate工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址：[gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0)
+开源社区地址：[gs_rep_portal](https://gitcode.com/opengauss/openGauss-migration-portal/tree/5.1.0)
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>
 
-增量迁移社区地址：[gs_replicate](https://gitee.com/opengauss/debezium/tree/5.1.0)
+增量迁移社区地址：[gs_replicate](https://gitcode.com/opengauss/debezium/tree/5.1.0)
 
-详细参考文档：<a href="https://gitee.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a> 
+详细参考文档：<a href="https://gitcode.com/opengauss/debezium/blob/5.1.0/README.md ">README.md</a> 
 

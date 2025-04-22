@@ -98,8 +98,8 @@ The DataKit tool is started by the JAR package. You can uninstall the tool by de
 
 
 
-1. DataKit usage and development documents: [https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc](https://gitee.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc)
+1. DataKit usage and development documents: [https://gitcode.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc](https://gitcode.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc)
 
-2. Basic O&M extensions: [https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops](https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops)
+2. Basic O&M extensions: [https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops](https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/base-ops)
 
-3. Other extensions: [https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins](https://gitee.com/opengauss/openGauss-workbench/tree/master/plugins)
+3. Other extensions: [https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins](https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins)
