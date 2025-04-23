@@ -35,9 +35,6 @@ other = "Input content"
 [quick_links]
 other = "Quick links"
 
-[kunpeng_community]
-other = "Kunpeng community"
-
 [document_link]
 other = "Documentation"
 
@@ -46,9 +43,6 @@ other = "Content"
 
 [other_text]
 other = "Reference Links"
-
-[atom]
-other = "openGauss is an open source project incubated and operated by the OpenAtom Foundation."
 
 [copy_right]
 other = "Copyright © openGauss 2025. All rights reserved."
