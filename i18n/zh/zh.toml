@@ -48,12 +48,6 @@ other = "版本选择"
 [quick_links]
 other = "快速链接"
 
-[kunpeng_community]
-other = "鲲鹏社区"
-
-[atom]
-other = "openGauss 是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目"
-
 [copy_right]
 other = "版权所有 © openGauss 2025 保留一切权利"
 
@@ -155,9 +149,6 @@ other = "个关于"
 [result_3]
 other = "的结果"
 
-[hot_docs_version]
-other = "20.03 LTS"
-
 [website]
 other = "openGauss官网"
 
@@ -166,9 +157,7 @@ other = "友情链接"
 
 [cancel]
 other = "取消"
-
-[atom-text]
-other = "openGauss 是由开放原子开源基金会（OpenAtom Foundation）孵化及运营的开源项目"
+ 
 [brand]
 other = "品牌"
 [privacy]
