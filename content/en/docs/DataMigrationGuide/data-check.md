@@ -56,7 +56,7 @@ The debezium service listens to the incremental data of the source MySQL databas
     1.  Run the git command to download the source code.
 
         ```
-        git clone https://gitee.com/opengauss/openGauss-tools-datachecker-performance.git
+        git clone https://gitcode.com/opengauss/openGauss-tools-datachecker-performance.git
         ```
 
     2.  Run the maven command to build the check and extract JAR packages.
@@ -153,7 +153,7 @@ The debezium service listens to the incremental data of the source MySQL databas
     Configure other debezium-related configurations and start the service to enable the incremental check service.
         ```
 
-** For detailed instructions, see  《[ Instructions for use of calibration tools ](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md)》**
+** For detailed instructions, see  《[ Instructions for use of calibration tools ](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md)》**
 
 ## Binary Installation<a name="section33621845504"></a>
 

@@ -301,7 +301,7 @@ This API uses the DELETE method. The format is **http://***ip***:***port***/CMRe
 
 4. Description of the address for receiving information. 
 Example of the information receiving address: **http://***ip***:***port***/CMRestAPI**
-The CMRestAPI uses the PUT method to push host information. The context is MasterInfo, that is, the link format is **http://***ip***:***port***/CMRestAPI/MasterInfo**. The object type is String. The host information format is *ip***:***port*. The context of the pushed standby node is StanbyInfo, the type of the sent object is String, and the format of the standby node information is **ip1:port1,ip2:port2, ...,ipn:portn**. For details about an application demo, see [applicationdemo](https://gitee.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo) in the CMRestAPI repository.
+The CMRestAPI uses the PUT method to push host information. The context is MasterInfo, that is, the link format is **http://***ip***:***port***/CMRestAPI/MasterInfo**. The object type is String. The host information format is *ip***:***port*. The context of the pushed standby node is StanbyInfo, the type of the sent object is String, and the format of the standby node information is **ip1:port1,ip2:port2, ...,ipn:portn**. For details about an application demo, see [applicationdemo](https://gitcode.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo) in the CMRestAPI repository.
 
 **Other description:** 
 1. Security-related description. 

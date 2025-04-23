@@ -27,11 +27,11 @@
 
 - openGauss源码路径：
 
-> https://gitee.com/opengauss/openGauss-server
+> https://gitcode.com/opengauss/openGauss-server
 
 - openGauss插件仓路径：
 
-> https://gitee.com/opengauss/Plugin
+> https://gitcode.com/opengauss/Plugin
 
 ### 编译插件
 
