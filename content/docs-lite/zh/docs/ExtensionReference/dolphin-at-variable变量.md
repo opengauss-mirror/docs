@@ -23,6 +23,7 @@ openGauss在MySQL兼容模式下，支持用户变量`@variable`的以下两种�
 
 - 无论SET或是SELECT都可以同时对多个变量进行赋值。
 
+- 带变量赋值的查询无法使用smp并行特性。
 
 ## 示例
 
