@@ -62,7 +62,7 @@ The parameters in the command output are described as follows:
     ```
     sh openGauss-server/src/bin/scripts/run_drop_cache.sh
     ```
-    The openGauss-server code download address is `https://gitee.com/opengauss/openGauss-server.git`
+    The openGauss-server code download address is `https://gitcode.com/opengauss/openGauss-server.git`
 
 3.  You need to check the execution plan if the memory usage occupied is too high. Focus on the following items:
     -   Whether improper  **JOIN**  sequences exist. For example, if  **JOIN**  is performed for multiple tables, the intermediate result set of the two tables associated preferentially is large during the execution plan execution, resulting in that the final execution cost is high.
