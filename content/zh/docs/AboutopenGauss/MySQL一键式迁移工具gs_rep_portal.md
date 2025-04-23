@@ -37,6 +37,6 @@ gs_rep_portal支持全量迁移工具在指定版本和架构的系统上进行�
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-migration-portal/tree/master
+开源社区地址： https://gitcode.com/opengauss/openGauss-migration-portal/tree/master
 
-详细参考文档：<a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>  、 <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/命令行参数名称及说明.md ">命令行参数名称及说明.md</a>
+详细参考文档：<a href="https://gitcode.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>  、 <a href="https://gitcode.com/opengauss/openGauss-migration-portal/blob/5.1.0/命令行参数名称及说明.md ">命令行参数名称及说明.md</a>
