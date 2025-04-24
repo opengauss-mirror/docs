@@ -827,6 +827,7 @@ headless: true
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
 		-   Agents
 			-   [MCP]({{< relref "./docs/DataVec/mcp.md" >}})
+			-   [Mem0]({{< relref "./docs/DataVec/mem0.md" >}})
 		-   数据迁移
 			-   [从Milvus迁移至openGauss DataVec]({{< relref "./docs/DataVec/milvus2datavec.md" >}})
 		-   API Reference
