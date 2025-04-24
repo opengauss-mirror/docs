@@ -529,7 +529,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_populate\_record\(anyelement, object-json \[, bool\]\)、jsonb\_populate\_record\(anyelement, object-jsonb \[, bool\]\)
 
-    描述：$1必须是一个复合类型的参数。将会把object-json里的每个对键值进行拆分，以键当做列名，与$1中的列名进行匹配查找，并填充到$1的格式中。
+    描述：$1必须是一个复合类型的参数。将会把object-json里的每个对键值进行拆分，以键当做列名，与$1中的列名进行匹配查找，并填充到$1的格式中。如果bool为true，则允许json嵌套。
 
     返回类型：anyelement、anyelement
 
@@ -538,11 +538,18 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
       openGauss=# create type jpop as (a text, b int, c bool);
       CREATE TYPE
-      postgres=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}');
+      openGauss=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}');
          a    | b | c
       --------+---+---
        blurfl |   |
       (1 row)
+      openGauss=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":{ "y":43.2}}', true);
+        a    | b | c
+      --------+---+---
+      blurfl |   |
+      (1 row)
+      openGauss=# select * from json_populate_record(null::jpop,'{"a":"blurfl","x":{ "y":43.2}}', false);
+      ERROR:  cannot call json_populate_record on a nested object
     ```
 
     ```
@@ -556,7 +563,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_populate\_record\_set\(anyelement, array-json \[, bool\]\)、jsonb\_populate\_record\_set\(anyelement, array-jsonb \[, bool\]\)
 
-    描述：参考上述函数json\_populate\_record、jsonb\_populate\_record，对$2数组的每一个元素进行上述参数函数的操作，因此这也要求$2数组的每个元素都是object-json类型的。
+    描述：参考上述函数json\_populate\_record、jsonb\_populate\_record，对$2数组的每一个元素进行上述参数函数的操作，因此这也要求$2数组的每个元素都是object-json类型的。如果bool为true，则允许json嵌套。
 
     返回类型：setof anyelement、setof anyelement
 
@@ -565,12 +572,22 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
      openGauss=# create type jpop as (a text, b int, c bool);
       CREATE TYPE
-      postgres=# select * from json_populate_recordset(null::jpop, '[{"a":1,"b":2},{"a":3,"b":4}]');
+      openGauss=# select * from json_populate_recordset(null::jpop, '[{"a":1,"b":2},{"a":3,"b":4}]');
        a | b | c
       ---+---+---
        1 | 2 |
        3 | 4 |
       (2 rows)
+      openGauss=# select * from json_populate_recordset(null::jpop,
+      '[{"a":{"c":1},"b":2},{"a":{"c":3},"b":4}]',true);
+          a    | b | c
+      ---------+---+---
+      {"c":1} | 2 |
+      {"c":3} | 4 |
+      (2 rows)
+      openGauss=# select * from json_populate_recordset(null::jpop,
+      '[{"a":{"c":1},"b":2},{"a":{"c":3},"b":4}]',false);
+      ERROR:  cannot call json_populate_recordset on a nested object
     ```
 
 
@@ -584,7 +601,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
     ```
      openGauss=# select value, json_typeof(value)
-      postgres-# from (values (json '123.4'), (json '"foo"'), (json 'true'), (json 'null'), (json '[1, 2, 3]'), (json '{"x":"foo", "y":123}'), (NULL::json))  as data(value);
+      openGauss-# from (values (json '123.4'), (json '"foo"'), (json 'true'), (json 'null'), (json '[1, 2, 3]'), (json '{"x":"foo", "y":123}'), (NULL::json))  as data(value);
               value         | json_typeof
       ----------------------+-------------
        123.4                | number
@@ -634,7 +651,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
 
 -   json\_to\_record\(object-json, bool\)
 
-    描述：正如所有返回record 的函数一样，调用者必须用一个AS子句显式地定义记录的结构。会将object-json的键值对进行拆分重组，把键当做列名，去匹配填充as显示指定的记录的结构。
+    描述：正如所有返回record 的函数一样，调用者必须用一个AS子句显式地定义记录的结构。会将object-json的键值对进行拆分重组，把键当做列名，去匹配填充as显示指定的记录的结构。如果bool为true，则允许json嵌套。
 
     返回类型：record
 
@@ -646,27 +663,55 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
       ---+-----+---
        1 | foo |
       (1 row)
+    openGauss=# SELECT * FROM json_to_record(
+    '{"user": "Alice", "age": 30, "address": {"city": "NY", "zipcode": "10001"}}'
+    , true) AS t(user_name TEXT, age INT, address_city TEXT, address_zipcode TEXT);
+    user_name | age | address_city | address_zipcode
+    -----------+-----+--------------+-----------------
+              |  30 |              |
+    (1 row)
+
+    openGauss=# SELECT * FROM json_to_record(
+    '{"user": "Alice", "age": 30, "address": {"city": "NY", "zipcode": "10001"}}'
+    , false) AS t(user_name TEXT, age INT, address_city TEXT, address_zipcode TEXT);
+    ERROR:  cannot call json_populate_record on a nested object
     ```
 
 
 -   json\_to\_recordset\(array-json, bool\)
 
-    描述：参考函数json\_to\_record，对数组内个每个元素，执行上述函数的操作，因此这要求数组内的每个元素都得是object-json。
+    描述：参考函数json\_to\_record，对数组内个每个元素，执行上述函数的操作，因此这要求数组内的每个元素都得是object-json。如果bool为true，则允许json嵌套。
 
     返回类型：setof record
 
     示例：
 
     ```
-     openGauss=# select * from json_to_recordset(
-      openGauss(#   '[{"a":1,"b":"foo","d":false},{"a":2,"b":"bar","c":true}]',
-     openGauss(#   false
-     openGauss(# ) as x(a int, b text, c boolean);
+    openGauss=# select * from json_to_recordset(
+    '[{"a":1,"b":"foo","d":false},{"a":2,"b":"bar","c":true}]',
+    false
+    ) as x(a int, b text, c boolean);
        a |  b  | c
       ---+-----+---
        1 | foo |
        2 | bar | t
       (2 rows)
+    
+    openGauss=# SELECT * FROM json_to_recordset(
+      '[{"user": "Alice", "age": 30, "address": {"city": "NY", "zipcode": "10001"}},
+    {"user": "Bob", "age": 27, "address": {"city": "NY", "zipcode": "10002"}}]'
+    , true) AS t(user_name TEXT, age INT, address_city TEXT, address_zipcode TEXT);
+    user_name | age | address_city | address_zipcode
+    -----------+-----+--------------+-----------------
+              |  30 |              |
+              |  27 |              |
+    (2 rows)
+
+    SELECT * FROM json_to_recordset(
+      '[{"user": "Alice", "age": 30, "address": {"city": "NY", "zipcode": "10001"}},
+    {"user": "Bob", "age": 27, "address": {"city": "NY", "zipcode": "10002"}}]'
+    , false) AS t(user_name TEXT, age INT, address_city TEXT, address_zipcode TEXT);
+    ERROR:  cannot call json_populate_recordset on a nested object
     ```
 
 
@@ -687,7 +732,7 @@ JSON/JSONB数据类型参考[JSON/JSONB类型](JSON-JSONB类型.md)。
     ```
 
     ```
-      postgres=# select json_object('{a,b,"a b c"}', '{a,1,1}');
+      openGauss=# select json_object('{a,b,"a b c"}', '{a,1,1}');
                     json_object
       ---------------------------------------
        {"a" : "a", "b" : "1", "a b c" : "1"}
