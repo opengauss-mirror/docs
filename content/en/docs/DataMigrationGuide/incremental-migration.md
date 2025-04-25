@@ -16,10 +16,10 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
 
 -   **Source Code Compilation**
 
-1.  Run the following command to download the source code from the [code repository](https://gitee.com/opengauss/openGauss-tools-onlineMigration-mysql):
+1.  Run the following command to download the source code from the [code repository](https://gitcode.com/opengauss/openGauss-tools-onlineMigration-mysql):
 
     ```
-    git clone https://gitee.com/opengauss/openGauss-tools-onlineMigration-mysql.git
+    git clone https://gitcode.com/opengauss/openGauss-tools-onlineMigration-mysql.git
     ```
 
 2.  Modify the configuration file. The configuration file is stored in **openGauss-tools-onlineMigration-mysql/mysql2openGauss/config.yml**.
@@ -117,5 +117,5 @@ The sysbench is used to perform a pressure test on MySQL. In the IUD hybrid scen
 -   To ensure the sequence and consistency of transactions, settings such as skip\_event, limit\_table, skip\_table are not supported.
 -   MySQL 5.7 or later is required.
 -   The MySQL parameter must be set to **log\_bin=ON, binlog\_format=ROW, binlog\_row\_image=FULL, gtid\_mode = ON**.
--   Full migration is performed before incremental migration. Full migration can be performed using [Chameleon](https://gitee.com/opengauss/openGauss-tools-chameleon).
+-   Full migration is performed before incremental migration. Full migration can be performed using [Chameleon](https://gitcode.com/opengauss/openGauss-tools-chameleon).
 -   Incremental migration supports the following data types: numeric (int, tinyint, smallint, mediumint, bigint, float, double, decimal), character (char, varchar, and text), time (date, time, datetime, timestamp, year), and binary (binary, varbinary, and blob).

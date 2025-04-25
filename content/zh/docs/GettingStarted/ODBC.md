@@ -46,7 +46,7 @@ openGauss目前在以下环境中提供对ODBC的支持。
 </tbody>
 </table>
 
-Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项，可以参考<a href="https://gitee.com/opengauss/openGauss-connector-odbc/blob/master/windows/odbc-%E6%B5%8B%E8%AF%95.md " target="_blank">odbc文档</a>。
+Windows系统自带ODBC驱动程序管理器，在控制面板-\>管理工具中可以找到数据源（ODBC）选项，可以参考<a href="https://gitcode.com/opengauss/openGauss-connector-odbc/blob/master/windows/odbc-%E6%B5%8B%E8%AF%95.md " target="_blank">odbc文档</a>。
 
 ## Linux下的ODBC包<a name="section1352910461980"></a>
 

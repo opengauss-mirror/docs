@@ -42,7 +42,7 @@ openGauss的安装流程中，在预安装的时候使用的是root用户，到�
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： https://gitee.com/opengauss/openGauss-OM。
+开源社区地址： https://gitcode.com/opengauss/openGauss-OM。
 
 gs_checkos文档：<a href="../ToolandCommandReference/gs_check.md">校验</a>
 
