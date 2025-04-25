@@ -15,13 +15,13 @@ select 10！;
 select factorial(10);
 ```
 
-# ROWNUM
+## ROWNUM
 
 ### 语法变更说明
 
 - rownum不再作为伪列关键词。
 
-```
+```sql
 -- 不再支持rownum作为伪列关键词
 openGauss=# select * from test1 where ROWNUM < 2;
 ERROR:  column "rownum" does not exist
@@ -29,6 +29,12 @@ LINE 1: select * from test1 where ROWNUM < 2;
                                   ^
 
 --可用语法
---过滤条件中需要使用真实列
+--例如可以使用limit替代rownum小于语法
+openGauss=# select * from test1 limit 1;
+ id
+----
+  1
+(1 row)
+
 ```
 
