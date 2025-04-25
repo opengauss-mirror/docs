@@ -58,7 +58,7 @@ You can wait for a while and check whether the cluster starts, or increase the v
 2024-09-03 21:40:53.303 66d711e5.1 [unknown] 281457756798992 [unknown] 0 dn_6001_6002_6003 58000 0 [BACKEND] FATAL:  archive functions are not supported when DMS and DSS enabled
 ```
 
-上述报错信息可以看出 archive functions 被打开且目前暂不支持此功能导致集群启动失败，计划将在 7.0.0-RC1 版本支持开启 xlog 归档。目前相关信息可以参考社区之前的 issue ：[设置GUC参数enable_incremental_checkpoint设置为off后重启集群，主节点概率无法启动成功](https://gitee.com/opengauss/openGauss-server/issues/IAQYW7?from=project-issue)。
+上述报错信息可以看出 archive functions 被打开且目前暂不支持此功能导致集群启动失败，计划将在 7.0.0-RC1 版本支持开启 xlog 归档。目前相关信息可以参考社区之前的 issue ：[设置GUC参数enable_incremental_checkpoint设置为off后重启集群，主节点概率无法启动成功](https://gitcode.com/opengauss/openGauss-server/issues/IAQYW7?from=project-issue)。
 
 ## 三、问题根因
 

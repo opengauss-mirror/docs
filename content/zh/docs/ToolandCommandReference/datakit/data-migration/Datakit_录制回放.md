@@ -40,7 +40,7 @@
 
 录制回放的三种模式的全部介绍参考以下链接：
 
-https://gitee.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool
+https://gitcode.com/opengauss/compatibility-assessment/tree/master/dynamic_sql_collection/transcribe-replay-tool
 
 具体录制操作和设置的参数有关，参数含义请参考上面的链接。
 
