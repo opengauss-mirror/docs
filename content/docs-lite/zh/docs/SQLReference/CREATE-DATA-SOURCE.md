@@ -8,7 +8,7 @@
 
 -   Data Source名称在数据库中需唯一，遵循标识符命名规范，长度限制为63字节，过长则会被截断。
 -   只有系统管理员或初始用户才有权限创建Data Source对象。且创建该对象的用户为其默认属主。
--   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。
+-   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并放入到openGauss每个节点的$GAUSSHOME/bin目录下。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >轻量版场景下，openGauss提供此语法，但SQL on Anywhere不可用。
@@ -55,7 +55,7 @@ CREATE DATA SOURCE src_name
         -   dsn对应odbc配置文件中的DSN。
         -   username/password对应连接目标库的用户名和密码。
 
-            openGauss在后台会对用户输入的username/password加密以保证安全性。该加密所需密钥文件需要使用gs\_guc工具生成并使用gs\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。username/password不应当包含'encryptOpt'前缀，否则会被认为是加密后的密文。
+            openGauss在后台会对用户输入的username/password加密以保证安全性。该加密所需密钥文件需要使用gs\_guc工具生成并放入openGauss每个节点的$GAUSSHOME/bin目录下。username/password不应当包含'encryptOpt'前缀，否则会被认为是加密后的密文。
 
         -   encoding表示与目标库交互的字符串编码方式（含发送的SQL语句和返回的字符类型数据），此处创建对象时不检查encoding取值的合法性，能否正确编解码取决于用户提供的编码方式是否在数据库本身支持的字符编码范围内。
 

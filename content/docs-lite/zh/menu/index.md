@@ -559,7 +559,6 @@ headless: true
             - [资源管理准备]({{< relref "./docs/PerformanceTuningGuide/资源管理准备.md" >}})
               - [资源规划]({{< relref "./docs/PerformanceTuningGuide/资源规划.md" >}})
               - [启动资源负载管理功能]({{< relref "./docs/PerformanceTuningGuide/启动资源负载管理功能.md" >}})
-              - [设置控制组]({{< relref "./docs/PerformanceTuningGuide/设置控制组.md" >}})
               - [创建资源池]({{< relref "./docs/PerformanceTuningGuide/创建资源池.md" >}})
     -   [SQL调优指南]({{< relref "./docs/PerformanceTuningGuide/SQL调优指南.md" >}})
         -   [Query执行流程]({{< relref "./docs/PerformanceTuningGuide/Query执行流程.md" >}})
