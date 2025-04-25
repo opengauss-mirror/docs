@@ -34,7 +34,7 @@ None.
 
 - The MySQL parameter must be set to **log\_bin=ON, binlog\_format=ROW, binlog\_row\_image=FULL, gtid\_mode = ON**. If **gtid\_mode** is set to **off**, the sink end replays data in serial mode based on the transaction sequence, which deteriorates the online migration performance.
 
-- Full migration is performed by using [gs_mysync](https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/README.en.md) before incremental migration.
+- Full migration is performed by using [gs_mysync](https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/master/README.en.md) before incremental migration.
 
 - Kafka stores data in AVRO format. The AVRO [naming rules](https://avro.apache.org/docs/1.11.1/specification/#names) are as follows:
 

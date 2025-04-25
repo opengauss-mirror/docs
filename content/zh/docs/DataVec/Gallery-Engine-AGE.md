@@ -20,7 +20,7 @@ openGauss数据库使用插件的方式支持图数据库引擎，在openGauss�
 
 ### 编译安装
 
-age源码地址：https://gitee.com/opengauss/Plugin/tree/master/contrib/age
+age源码地址：https://gitcode.com/opengauss/Plugin/tree/master/contrib/age
 
 #### 方式一（同openGauss一起安装）
 将age源码放到openGauss-server源码的contrib目录下，直接编译安装openGauss-server，age会自动编译安装

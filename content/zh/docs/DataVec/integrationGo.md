@@ -97,4 +97,4 @@ func SearchVectors(client *sql.DB, efsearch int, vector string, topK int) []stri
     return res
 }
 ```
-[更多操作示例参考](https://gitee.com/opengauss/openGauss-connector-go-pq)
+[更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-go-pq)

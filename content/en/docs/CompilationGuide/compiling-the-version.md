@@ -500,7 +500,7 @@ After the openGauss-server code repository is built using the source code, gs\_o
 1. Run the  **git clone**  command to clone the OM code repository:
 
    ```
-   [user@linux sda]$ git clone https://gitee.com/opengauss/openGauss-OM.git
+   [user@linux sda]$ git clone https://gitcode.com/opengauss/openGauss-OM.git
    ```
 
 2. Run the following build command:

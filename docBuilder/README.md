@@ -220,7 +220,7 @@ Jenkins Project 有多种配置方式，本项目推荐使用自由风格式项�
 - 指定 git repository & branch：
 
 
-https://gitee.com/opengauss/docs [branch]
+https://gitcode.com/opengauss/docs [branch]
 
 - 测试时可以使用：
 
