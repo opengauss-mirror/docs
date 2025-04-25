@@ -4,7 +4,7 @@ dblink is a tool that can connect to other openGauss databases in an openGauss d
 
 ## Compiling dblink<a name="section968819125285"></a>
 
-Currently, the source code of dblink is stored in the  [contrib/dblink](https://gitee.com/opengauss/openGauss-server/tree/master/contrib/dblink)  directory. After the openGauss database is compiled and installed, if you need to use the dblink, go to the preceding directory and run the following command to compile and install the dblink:
+Currently, the source code of dblink is stored in the  [contrib/dblink](https://gitcode.com/opengauss/openGauss-server/tree/master/contrib/dblink)  directory. After the openGauss database is compiled and installed, if you need to use the dblink, go to the preceding directory and run the following command to compile and install the dblink:
 
 ```
 make

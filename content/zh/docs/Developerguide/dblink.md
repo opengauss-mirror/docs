@@ -4,7 +4,7 @@ dblink是一个可以在一个openGauss数据库会话中连接到其它openGaus
 
 ## 编译dblink<a name="section968819125285"></a>
 
-当前dblink的源码放在[contrib/dblink](https://gitee.com/opengauss/openGauss-server/tree/master/contrib/dblink)目录中。在编译安装完openGauss数据库之后，如果用户需要使用dblink，只需要进入上述目录执行如下即可完成dblink的编译安装。
+当前dblink的源码放在[contrib/dblink](https://gitcode.com/opengauss/openGauss-server/tree/master/contrib/dblink)目录中。在编译安装完openGauss数据库之后，如果用户需要使用dblink，只需要进入上述目录执行如下即可完成dblink的编译安装。
 
 ```
 make
