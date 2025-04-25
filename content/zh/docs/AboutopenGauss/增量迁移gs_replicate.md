@@ -34,7 +34,7 @@ debezium mysql connector的source端，监控mysql数据库的binlog日志，并
 
 - MySQL参数设置要求为：log\_bin=ON, binlog\_format=ROW, binlog\_row\_image=FULL, gtid\_mode = ON。若gtid_mode为off，则sink端按照事务顺序串行回放，会降低在线迁移性能。
 
-- 先进行全量迁移，再进行增量迁移，全量迁移可基于[gs_mysync](https://gitee.com/opengauss/openGauss-tools-chameleon)工具完成。
+- 先进行全量迁移，再进行增量迁移，全量迁移可基于[gs_mysync](https://gitcode.com/opengauss/openGauss-tools-chameleon)工具完成。
 
 - Kafka中以AVRO格式存储数据，AVRO字段名称[命名规则](https://gitee.com/link?target=https%3A%2F%2Favro.apache.org%2Fdocs%2F1.11.1%2Fspecification%2F%23names)为：
 

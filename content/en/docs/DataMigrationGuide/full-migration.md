@@ -264,7 +264,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1178718227399"><a name="p1178718227399"></a><a name="p1178718227399"></a>Translated statement. If the translation fails or an error occurs during the translation, the columns that are not supported by openGauss are commented out.</p>
     <div class="note" id="note16512411194411"><a name="note16512411194411"></a><a name="note16512411194411"></a><span class="notetitle"> Note: </span><div class="notebody"><p id="p9512181111441"><a name="p9512181111441"></a><a name="p9512181111441"></a>You can view the translation of database objects in either of the following ways: </p>
-    <a name="ul86092483443"></a><a name="ul86092483443"></a><ul id="ul86092483443"><li>Go to the <a href="https://gitee.com/opengauss/openGauss-tools-sql-translator" target="_blank" rel="noopener noreferrer">openGauss-tools-sql-translator</a> repository to learn about the translation of database objects. </li><li>You can learn about the translation of database objects through Chameleon logs. Chameleon logs include logs generated during translation and migration.</li></ul>
+    <a name="ul86092483443"></a><a name="ul86092483443"></a><ul id="ul86092483443"><li>Go to the <a href="https://gitcode.com/opengauss/openGauss-tools-sql-translator" target="_blank" rel="noopener noreferrer">openGauss-tools-sql-translator</a> repository to learn about the translation of database objects. </li><li>You can learn about the translation of database objects through Chameleon logs. Chameleon logs include logs generated during translation and migration.</li></ul>
     </div></div>
     </td>
     </tr>

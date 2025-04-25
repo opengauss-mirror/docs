@@ -16,7 +16,7 @@ As an openGauss user, you can contribute to the openGauss community in multiple 
 openGauss brings together people of common interest to form different SIGs. For details about existing SIGs, see the  [SIG list](https://opengauss.org/en/contribution/).
 >>>>>>> 0fa0c9878c5e20bdd2818f6ca1a6046c8115f8c0
 
-You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see [Special Interest Group \(SIG\)](https://gitee.com/opengauss/tc/blob/master/sigs/README.en.md/).
+You are welcome to join an existing SIG or create a SIG. For details about how to create a SIG, see [Special Interest Group \(SIG\)](https://gitcode.com/opengauss/tc/blob/master/sigs/README.en.md/).
 
 **Mail List and Issues**
 

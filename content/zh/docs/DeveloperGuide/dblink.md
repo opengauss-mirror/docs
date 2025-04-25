@@ -3,7 +3,7 @@
 dblink是一个可以在openGauss数据库会话中连接到其它数据库的工具，同libpq支持的连接参数一致，可参考[链接参数](链接参数.md)，也可以在通过在连接串中增加drivername字段连接异构数据库。openGauss默认不编译dblink，下面依次介绍如何编译和使用dblink。
 
 ## 编译dblink
-当前dblink的源码放在[contrib/dblink](https://gitee.com/opengauss/openGauss-server/tree/master/contrib/dblink)目录中。在编译安装完openGauss数据库之后，如果用户需要使用dblink，只需要进入上述目录执行如下即可完成dblink的编译安装。
+当前dblink的源码放在[contrib/dblink](https://gitcode.com/opengauss/openGauss-server/tree/master/contrib/dblink)目录中。在编译安装完openGauss数据库之后，如果用户需要使用dblink，只需要进入上述目录执行如下即可完成dblink的编译安装。
 请在编译安装dblink之前提前安装好ODBC驱动程序
 
 ```
