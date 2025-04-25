@@ -60,6 +60,7 @@ openGauss压缩采用通用压缩算法，可选算法有：ZSTD、PGLZ和ZLIB�
 
 - 要求数据库支持双写操作。
 - 压缩时使用开源压缩算法PGLZ、ZSTD和ZLIB。
+- 若服务器已安装KAE，并配置相应路径到LD_LIBRARY_PATH，则可使用硬件加速的KAEZstd与KAEZlib代替原生ZSTD和ZLIB，使相应压缩和解压接口的效率提升，CPU使用率降低。KAE简介与安装指导见：[KAE产品简介](https://www.hikunpeng.com/document/detail/zh/kunpengaccel/compress/devg-kaezip/kunpengaccel_kaezip_0001.html)。
 
 ## 基本原理
 
