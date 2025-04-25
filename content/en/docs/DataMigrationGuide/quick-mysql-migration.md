@@ -83,7 +83,7 @@ The default portal installation directory is **/ops/portal**. You can change it 
 1. Run the git command to download the source code and copy the **portal** folder in the source code to the **/ops** directory.
 
 ```
-git clone https://gitee.com/opengauss/openGauss-migration-portal.git
+git clone https://gitcode.com/opengauss/openGauss-migration-portal.git
 ```
 
 2. Run the maven command to compile the source code to obtain the **portalControl-1.0-SNAPSHOT-exec.jar** package and save the JAR package to the **/ops/portal** directory.

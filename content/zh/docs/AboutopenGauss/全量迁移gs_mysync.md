@@ -22,7 +22,7 @@ gs_mysync工具全量数据导入支持两种方式：(1) 从MySQL库查询数�
 
 ## 特性增强<a name="section28788730"></a>
 
-- 自openGauss 6.0.0-RC1版本，全量迁移支持与数据校验协同进行，在进行多表迁移时，单个表迁移完成后即可进行数据校验，缩短整体迁移校验时间。该特性全量迁移侧详细信息可参考<a href="https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a> 中参数with_datacheck相关描述。
+- 自openGauss 6.0.0-RC1版本，全量迁移支持与数据校验协同进行，在进行多表迁移时，单个表迁移完成后即可进行数据校验，缩短整体迁移校验时间。该特性全量迁移侧详细信息可参考<a href="https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a> 中参数with_datacheck相关描述。
 
 ## 特性约束<a name="section06531946143616"></a>
 
@@ -34,11 +34,11 @@ gs_mysync工具依赖MySQL一键式迁移工具gs_rep_portal。
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址：[gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0) 
+开源社区地址：[gs_rep_portal](https://gitcode.com/opengauss/openGauss-migration-portal/tree/5.1.0) 
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a> 
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a> 
 
-全量迁移社区地址：[gs_mysync](https://gitee.com/opengauss/openGauss-tools-chameleon/tree/5.1.0/)
+全量迁移社区地址：[gs_mysync](https://gitcode.com/opengauss/openGauss-tools-chameleon/tree/5.1.0/)
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-tools-chameleon/blob/5.1.0/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a>
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/5.1.0/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md ">chameleon使用指南.md</a>
 

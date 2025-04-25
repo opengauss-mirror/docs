@@ -28,9 +28,9 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对openGauss/M
 ## 特性增强<a name="section28788730"></a>
 
 - 自openGauss 6.0.0-RC1版本 数据校验工具支持源端是openGauss/MySQL的校验，包括全量校验与增量校验。
-- 自openGauss 6.0.0-RC1版本 数据校验实现大表分片校验，提升抽取校验整体性能。具体参数配置参考《校验工具使用指导》( **https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md**）中7.4章节的数据校验调优配置。
+- 自openGauss 6.0.0-RC1版本 数据校验实现大表分片校验，提升抽取校验整体性能。具体参数配置参考《校验工具使用指导》( **https://gitcode.com/opengauss/openGauss-tools-datachecker-performance/blob/master/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md**）中7.4章节的数据校验调优配置。
 - 自openGauss 5.1.0版本 数据校验工具支持源端是openGauss的校验，包括全量校验与增量校验。
-- 自openGauss 5.1.0版本 表记录抽取任务分片规则进行优化，实现抽取校验性能的提升。（ 在50张表每张表1千万记录场景下，校验性能使用sysbench模型以及t_datacheck_templete模型，校验速率达到20万条/秒，其中使用t_datacheck_templete模型可以达到（150+M/s） ）（具体模型参考 **https://gitee.com/opengauss/openGauss-tools-datachecker-performance**中《校验工具使用指导.md 》7.1章节，表设计）
+- 自openGauss 5.1.0版本 表记录抽取任务分片规则进行优化，实现抽取校验性能的提升。（ 在50张表每张表1千万记录场景下，校验性能使用sysbench模型以及t_datacheck_templete模型，校验速率达到20万条/秒，其中使用t_datacheck_templete模型可以达到（150+M/s） ）（具体模型参考 **https://gitcode.com/opengauss/openGauss-tools-datachecker-performance**中《校验工具使用指导.md 》7.1章节，表设计）
 
 ## 特性约束<a name="section06531946143616"></a>
 
@@ -52,11 +52,11 @@ gs_datacheck工具提供数据全量和增量校验功能，可以对openGauss/M
 
 ## 参考文档<a name="section57771982"></a>
 
-开源社区地址： [gs_rep_portal](https://gitee.com/opengauss/openGauss-migration-portal/tree/5.1.0/)
+开源社区地址： [gs_rep_portal](https://gitcode.com/opengauss/openGauss-migration-portal/tree/5.1.0/)
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-migration-portal/blob/5.1.0/README.md ">README.md</a>
 
-数据校验社区地址：[gs_datacheck](https://gitee.com/opengauss/openGauss-tools-datachecker-performance/tree/5.1.0/)
+数据校验社区地址：[gs_datacheck](https://gitcode.com/opengauss/openGauss-tools-datachecker-performance/tree/5.1.0/)
 
-详细参考文档： <a href="https://gitee.com/opengauss/openGauss-tools-datachecker-performance/blob/5.1.0/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md ">校验工具使用指导.md</a> 
+详细参考文档： <a href="https://gitcode.com/opengauss/openGauss-tools-datachecker-performance/blob/5.1.0/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AF%BC.md ">校验工具使用指导.md</a> 
 
