@@ -15,7 +15,7 @@ COPY . /src/website
 COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 
 RUN cd /src/ && \
-    git clone -b reconstruct https://gitee.com/opengauss/docs latest/docs && \
+    git clone -b reconstruct https://gitcode.com/opengauss/docs latest/docs && \
     mkdir -p /src/website/content/zh/docs/latest && \
     cp -rf /src/latest/docs/content/zh/* /src/website/content/zh/docs/latest && \
     mkdir -p /src/website/content/en/docs/latest && \
