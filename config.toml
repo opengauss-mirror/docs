@@ -139,7 +139,7 @@ paginate = 10
     email = "common@public.opengauss.org"
 
     ### DOC Configurations
-    BookRepo = 'https://gitee.com/opengauss/docs/tree/website-v2/'
+    BookRepo = 'https://gitcode.com/opengauss/docs/tree/website-v2/'
     BookEditPath= 'blob/master/content'
     BookDateFormat = 'Jan 2, 2019'
     enableGitInfo = true
