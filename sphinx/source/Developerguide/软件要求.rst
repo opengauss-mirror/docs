@@ -1,7 +1,0 @@
-软件要求
-========
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/操作系统
-    ../content/zh/docs/Developerguide/软件依赖

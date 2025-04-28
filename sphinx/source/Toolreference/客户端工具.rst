@@ -1,6 +1,0 @@
-客户端工具
-==========
-.. toctree::
-
-    ../content/zh/docs/Toolreference/gsql
-
