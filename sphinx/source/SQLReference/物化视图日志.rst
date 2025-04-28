@@ -1,8 +1,0 @@
-物化视图日志
-============
-
-.. toctree::
-
-    ../content/zh/docs/SQLReference/概述_物化视图日志
-    ../content/zh/docs/SQLReference/使用_物化视图日志
-    ../content/zh/docs/SQLReference/支持和约束-1
