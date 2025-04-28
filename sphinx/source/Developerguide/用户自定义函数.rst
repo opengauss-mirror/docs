@@ -1,6 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/PL-pgSQL语言函数
-

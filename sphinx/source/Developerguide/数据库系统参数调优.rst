@@ -1,7 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/数据库内存参数调优
-    ../content/zh/docs/Developerguide/数据库并发队列参数调优
-

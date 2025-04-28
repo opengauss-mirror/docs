@@ -1,9 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/创建和管理schema
-    ../content/zh/docs/Developerguide/创建和管理分区表
-    ../content/zh/docs/Developerguide/创建和管理索引
-    ../content/zh/docs/Developerguide/创建和管理视图
-    ../content/zh/docs/Developerguide/创建和管理序列
