@@ -1,8 +1,0 @@
-常见故障案例（资源池化）
-============
-
-.. toctree::
-
-    ../content/zh/docs/DatabaseOMGuide/资源池化企业版安装阶段问题
-    ../content/zh/docs/DatabaseOMGuide/资源池化企业版使用阶段问题
-    ../content/zh/docs/DatabaseOMGuide/资源池化企业版卸载阶段问题
