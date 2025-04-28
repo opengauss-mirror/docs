@@ -1,7 +1,0 @@
-资源池化企业版卸载阶段问题
-============
-
-.. toctree::
-
-    ../content/zh/docs/DatabaseOMGuide/因部分节点卸载失败导致卸载失败问题
-    ../content/zh/docs/DatabaseOMGuide/因部分目录无权限导致卸载失败问题
