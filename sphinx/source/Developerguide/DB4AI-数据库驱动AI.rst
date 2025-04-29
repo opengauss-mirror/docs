@@ -1,8 +1,0 @@
-DB4AI：数据库驱动AI
-===================
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/原生DB4AI引擎
-    全流程AI
-

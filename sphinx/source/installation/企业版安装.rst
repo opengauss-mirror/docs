@@ -1,9 +1,0 @@
-
-企业版安装
-==========
-.. toctree::
-
-    安装准备
-    安装openGauss
-    ../content/zh/docs/installation/安装验证
-
