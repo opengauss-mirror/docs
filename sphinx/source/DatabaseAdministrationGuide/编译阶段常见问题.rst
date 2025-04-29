@@ -1,7 +1,0 @@
-编译阶段常见问题
-================
-
-.. toctree::
-
-
-    ../content/zh/docs/DatabaseAdministrationGuide/编译openGauss-server失败
