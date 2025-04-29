@@ -1,6 +1,0 @@
-
-
-.. toctree::
-
-    使用gs_dump和gs_dumpall命令导出数据
-

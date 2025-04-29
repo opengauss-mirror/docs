@@ -1,9 +1,0 @@
-
-
-.. toctree::
-
-    ../content/zh/docs/Developerguide/创建表
-    ../content/zh/docs/Developerguide/向表中插入数据
-    ../content/zh/docs/Developerguide/更新表中数据
-    ../content/zh/docs/Developerguide/查看数据
-    ../content/zh/docs/Developerguide/删除表中数据
