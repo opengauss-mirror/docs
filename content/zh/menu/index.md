@@ -825,6 +825,7 @@ headless: true
 		-   嵌入模型
 			-   [BGE-M3]({{< relref "./docs/DataVec/embedding-bgem3.md" >}})
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
+		    -   [openGauss-SentenceTransformer实践]({{< relref "./docs/DataVec/SentenceTransformer.md" >}})
 		-   Agents
 			-   [MCP]({{< relref "./docs/DataVec/mcp.md" >}})
 			-   [Mem0]({{< relref "./docs/DataVec/mem0.md" >}})
