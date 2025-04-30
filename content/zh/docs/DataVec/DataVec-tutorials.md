@@ -6,3 +6,4 @@
 - [openGauss DataVec + Dify, 快速搭建你的智能助手平台](openGauss-Dify.md)
 - [SpringBoot 集成 openGauss DataVec， 实现向量化检索](openGauss-Springboot.md)
 - [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG](openGauss-AGEGraph.md)
+- [基于Qwen3+openGauss，部署个人专属RAG知识库系统](DataVec-Qwen3.md)
