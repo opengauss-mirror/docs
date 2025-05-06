@@ -214,7 +214,7 @@
 
     -   --disaster_type
 
-        搭建时用于指定双集群类型。其默认值为`dorada`，在`start`命令中若不指定该参数，<span style="color: red;">默认搭建资源池化存储复制双集群。</span>
+        搭建时用于指定双集群类型。其默认值为`dorado`，在`start`命令中若不指定该参数，<span style="color: red;">默认搭建资源池化存储复制双集群。</span>
 
 -   容灾解除参数：
     -   -X
