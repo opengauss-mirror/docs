@@ -7,3 +7,4 @@
 - [SpringBoot 集成 openGauss DataVec， 实现向量化检索](openGauss-Springboot.md)
 - [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG](openGauss-AGEGraph.md)
 - [基于Qwen3+openGauss，部署个人专属RAG知识库系统](DataVec-Qwen3.md)
+- [从数据到智能：openGauss+EulerCopilot的RAG架构实战](openGauss-eulercopilot.md)
