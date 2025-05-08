@@ -48,4 +48,16 @@
     -----------
         16
     (1 row)
+
+    openGauss=# SELECT day('2002-4-25'::date);
+    day
+    -----------
+        25
+    (1 row)
+
+    openGauss=# SELECT day('2025-02-28 00:00:01'::timestamp(0) without time zone);
+    day
+    -----------
+        28
+    (1 row)
     ```
