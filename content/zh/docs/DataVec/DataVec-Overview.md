@@ -20,9 +20,9 @@ DataVec架构与特性实现详情可参考[向量存储引擎](DataVec-architec
 
 ### 向量数据类型
 
-- [vector](../SQLReference/向量数据类型.html#Vector) - float向量，最高支持2000维
-- [bitvec](../SQLReference/向量数据类型.html#Bit) - bit向量，最高支持64000维
-- [sparsevec](../SQLReference/向量数据类型.html#Sparsevec) - sparse向量，最高支持1000非零元素
+- [vector](../SQLReference/向量数据类型.md#Vector) - float向量，最高支持2000维
+- [bitvec](../SQLReference/向量数据类型.md#Bit) - bit向量，最高支持64000维
+- [sparsevec](../SQLReference/向量数据类型.md#Sparsevec) - sparse向量，最高支持1000非零元素
 
 >![](figures/icon-note.png) **说明：**
 这里的最高维度是在使用索引场景下的最大维度上限值。
@@ -31,10 +31,10 @@ DataVec架构与特性实现详情可参考[向量存储引擎](DataVec-architec
 
 ### 索引支持
 
-- [IVFFLAT](../SQLReference/向量索引.html#IVFFlat)  倒排索引
-- [IVF-PQ](PQ.html#IVF-PQ)  量化压缩倒排索引
-- [HNSW](../SQLReference/向量索引.html#HNSW)  图索引
-- [HNSW-PQ](PQ.html#HNSW-PQ)  量化压缩图索引
+- [IVFFLAT](../SQLReference/向量索引.md#IVFFlat)  倒排索引
+- [IVF-PQ](PQ.md#IVF-PQ)  量化压缩倒排索引
+- [HNSW](../SQLReference/向量索引.md#HNSW)  图索引
+- [HNSW-PQ](PQ.md#HNSW-PQ)  量化压缩图索引
 
 ## 生态对接
 
