@@ -1,9 +1,11 @@
 # DataVec向量数据库
+
 openGauss DataVec 向量数据库是一个基于openGauss的向量引擎， 提供向量数据类型的存储、检索。在处理大规模高维向量数据时，能够提供快速、准确的检索结果。适用于智能知识检索、 检索增强生成 RAG(Retrieval-Augmented Generation) 等各种复杂应用场景的智能应用。
 
 DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2距离&余弦距离&内积、向量索引、向量操作函数和操作符。作为openGauss的内核特性，DataVec使用熟悉的SQL语法操作向量，简化了用户使用向量数据库的过程。
 
 ## 快速部署指南
+
 DataVec向量数据库可通过[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
 
 ## 特性描述
@@ -17,25 +19,30 @@ DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数�
 DataVec架构与特性实现详情可参考[向量存储引擎](DataVec-architecture.md)介绍。
 
 ### 向量数据类型
-- [vector](../SQLReference/向量数据类型.md##Vector) - float向量，最高支持2000维 
-- [bitvec](../SQLReference/向量数据类型.md##Bit) - bit向量，最高支持64000维
-- [sparsevec](../SQLReference/向量数据类型.md##Sparsevec) - sparse向量，最高支持1000非零元素
+
+- [vector](../SQLReference/向量数据类型.md#Vector) - float向量，最高支持2000维
+- [bitvec](../SQLReference/向量数据类型.md#Bit) - bit向量，最高支持64000维
+- [sparsevec](../SQLReference/向量数据类型.md#Sparsevec) - sparse向量，最高支持1000非零元素
+
 >![](figures/icon-note.png) **说明：**
 这里的最高维度是在使用索引场景下的最大维度上限值。
 
 支持向量类型与普通类型转换、距离计算、向量计算等，具体可参考[向量函数和操作符](../SQLReference/向量函数和操作符.md)
 
 ### 索引支持
-- [IVFFLAT](../SQLReference/向量索引.md##IVFFlat)  倒排索引
-- [IVF-PQ](PQ.md##IVF-PQ)  量化压缩倒排索引
-- [HNSW](../SQLReference/向量索引.md##HNSW)  图索引
-- [HNSW-PQ](PQ.md##HNSW-PQ)  量化压缩图索引
+
+- [IVFFLAT](../SQLReference/向量索引.md#IVFFlat)  倒排索引
+- [IVF-PQ](PQ.md#IVF-PQ)  量化压缩倒排索引
+- [HNSW](../SQLReference/向量索引.md#HNSW)  图索引
+- [HNSW-PQ](PQ.md#HNSW-PQ)  量化压缩图索引
 
 ## 生态对接
+
 openGauss DataVec 提供Python、Java、Node.js、Go等多语言生态对接，让你能够通过API调用，快速使能向量数据库能力。同时， DataVec拥抱开源第三方组件，在RAG场景下做到快速兼容，多样选择。
 更详细的指导，参考[向量数据库工具编排使用](DataVec-integrations.md)
 
 ## 使用场景
+
 - 图像识别：用于安全监控、身份验证等场景，通过分析图像中的人脸特征进行识别。
 - 车辆检索：通过摄像头捕捉车辆图像，进行车牌识别和车辆特征分析。
 - 实时轨迹跟踪：在物流行业，通过实时跟踪获取运输轨迹，提高物流效率和安全性。
