@@ -8,3 +8,4 @@
 - [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG](openGauss-AGEGraph.md)
 - [基于Qwen3+openGauss，部署个人专属RAG知识库系统](DataVec-Qwen3.md)
 - [从数据到智能：openGauss+EulerCopilot的RAG架构实战](openGauss-eulercopilot.md)
+- [openGauss + Ragflow 从部署到集成](openGauss-Ragflow.md)

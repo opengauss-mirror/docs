@@ -942,6 +942,7 @@ headless: true
         -   [openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG]({{< relref "./docs/DataVec/openGauss-AGEGraph.md" >}})
         -   [基于Qwen3+openGauss，部署个人专属RAG知识库系统]({{< relref "./docs/DataVec/DataVec-Qwen3.md" >}})
 		-   [从数据到智能：openGauss+EulerCopilot的RAG架构实战]({{< relref "./docs/DataVec/openGauss-eulercopilot.md" >}})
+		-   [openGauss + Ragflow 从部署到集成]({{< relref "./docs/DataVec/openGauss-Ragflow.md" >}})
 	-   [图数据库引擎]({{< relref "./docs/DataVec/Gallery-Engine-AGE.md" >}})
 		-   [适配详情]({{< relref "./docs/DataVec/Apache-AGE-Adaptation.md" >}})
 -   [AI特性指南]({{< relref "./docs/AIFeatureGuide/AI特性.md" >}})
