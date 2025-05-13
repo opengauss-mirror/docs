@@ -1,14 +1,15 @@
 {{ define "main" }}
 <article class="markdown" id="markdown">
     {{ $content := .Content }}
-    {{ $links := findRE `(href|src)=(["'])([^"']+)(\.md)(["'])` $content }}
+    {{ $links := findRE `(href|src)=(["'])([^"']+)(\.md)([^"']*?)(["'])` $content }}
     {{ range $links }}
         {{ $link := . }}
         {{ $attr := index (findRE `(href|src)` $link) 0 }}
         {{ $quote := index (findRE `(["'])` $link) 0 }}
-        {{ $path := index (findRE `(href|src)=(["'])([^"']+)(\.md)(["'])` $link) 0 | replaceRE `(href|src)=(["'])` "" | replaceRE `(\.md)(["'])` "" }}
+        {{ $path := index (findRE `(href|src)=(["'])([^"']+)(\.md)([^"']*?)(["'])` $link) 0 | replaceRE `(href|src)=(["'])` "" | replaceRE `(["'])` "" }}
         {{ if not (or (hasPrefix $path "http://") (hasPrefix $path "https://")) }}
-            {{ $newLink := printf "%s=%s%s.html%s" $attr $quote $path $quote }}
+            {{ $p2 := (replace $path ".md" ".html") }}
+            {{ $newLink := printf "%s=%s%s%s" $attr $quote $p2 $quote }}
             {{ $content = replace $content $link $newLink }}
         {{ end }}
     {{ end }}
