@@ -20,6 +20,16 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
+## enable\_default\_pcr\_index<a name="section477353310529"></a>
+
+**Parameter description**： Specifies whether to enable the PCR index by default. If this parameter is set to  **on**, all created UBTREE Indexes are PCR index type.
+
+This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+
+**Value range**： \[off,on\]
+
+**Default value**： off
+
 ## enable\_segment<a name="section182244334911"></a>
 
 **Parameter description**: Specify whether to use segment page storage by default. When this parameter is on, segment page storage is used by default. It should be noted that during the installation process under Resource Pooling, it will be automatically set to on to improve ease of use.

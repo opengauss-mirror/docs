@@ -190,7 +190,7 @@ The partitioned table does not support partial index creation.
 
     Value range:
 
-    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter. Only UBtree indexes support  **INDEXSPLIT**.
+    Only index GIN supports parameters  **FASTUPDATE**  and  **GIN\_PENDING\_LIST\_LIMIT**. Indexes other than GIN and psort support the  **FILLFACTOR**  parameter. Only UBtree indexes support  **INDEXSPLIT** and **INDEX\_TYPE**.
 
     -   FILLFACTOR
 
@@ -222,6 +222,13 @@ The partitioned table does not support partial index creation.
 
         Default value:  **INSERTPT**
 
+    -   INDEX\_TYPE
+
+        Specifies the type of UBTREE index. RCR index is based on Row Consistency Read. PCR index is based on Page Consistency Read.
+
+        Value range:  **RCR**  and  **PCR**
+
+        Default value:  **RCR**
 
 -   **TABLESPACE tablespace\_name**
 
