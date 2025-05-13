@@ -505,35 +505,38 @@ openGauss资源池化是openGauss推出的一种新型的集群架构.通过DMS�
 
         2. 在deveice manage上调整同步pair：1.分裂，2.取消从资源保护，3.反转同步方向
 
-        3. 在原备集群修改dss参数与cm参数
-        dsscmd setcfg -n CLUSTER_RUN_MODE -v cluster_primary（所有节点）
+        3. 在原备集群所有节点上修改dss参数
+        dsscmd setcfg -n CLUSTER_RUN_MODE -v cluster_primary
+
+        4. 在原备集群首备节点上修改cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=1
         cm_ctl set --param --server -k ss_double_cluster_mode=1
         cm_ctl reload --param --agent
         cm_ctl reload --param --server
 
-        4. 在原备集群首备节点执行
+        5. 在原备集群首备节点执行
         gs_ctl failover [-D $PGDATA]
 
-        5. 等待升主完成后可以利用cm_ctl query -Cvipd查询新主集群状态（若原主集群已损坏，至此结束）
+        6. 等待升主完成后可以利用cm_ctl query -Cvipd查询新主集群状态（若原主集群已损坏，至此结束）
 
-        6. 在原主集群全量build（预期内切换可跳过）
+        7. 在原主集群全量build（预期内切换可跳过）
         export DSS_MAINTAIN=TRUE
         dssserver -D /opt/huawei/install/dss_home & 
         gs_ctl build -b cross_cluster_full -q
         dsscmd stopdss
         export DSS_MAINTAIN=FALSE       
 
-        7. 在原主集群修改dss与cm参数
-        在$DSS_HOME/cfg/dss_inst.ini文件中调整（所有节点）
+        8. 在原主集群所有节点上修改dss参数
+        在$DSS_HOME/cfg/dss_inst.ini文件中调整
         CLUSTER_RUN_MODE=cluster_standby
-        设置cm参数
+
+        9. 在原主集群主节点上修改cm参数
         cm_ctl set --param --agent -k ss_double_cluster_mode=2
         cm_ctl set --param --server -k ss_double_cluster_mode=2
 
-        8. 在deveice manage上调整同步pair：1.启用从资源保护，2.同步
+        10. 在deveice manage上调整同步pair：1.启用从资源保护，2.同步
 
-        9. 启动新备集群
+        11. 启动新备集群
         cm_ctl start
 
 ## 常见问题
