@@ -50,6 +50,7 @@ a4693b4c7e6d   valkey/valkey:8                                    "docker-entryp
 ### 3.模型配置
 本文使用ollama工具实现大模型的接入，点击头像进入设置界面，选择“模型提供商”，单击ollama图标下的“添加模型”选项。
 ![](./figures/ragflow4.png)
+
 以下是添加embedding模型的配置示例。
 
 ![](./figures/ragflow5.png)
@@ -64,26 +65,33 @@ LLM模型接入好后就可以将其设置为本项目的默认模型，点击�
 ### 4.知识库创建
 本小节主要介绍Ragflow中知识库的构建步骤，便于后续聊天、Agent模块中使用，使用外挂知识库可以通过检索权威数据增强生成结果的准确性，避免AI“胡编乱造”，同时支持动态更新知识，无需反复训练模型。<br>
 点击“创建知识库”选项，输入知识库名称：
+
 ![](./figures/ragflow8.png)
 
 Ragflow支持丰富的文件类型，包括 Word 文档、PPT、excel 表格、txt 文件、图片、PDF、影印件、复印件、结构化数据、网页等。本次示例传入了一篇pdf格式的论文。
+
 ![](./figures/ragflow9.jpg)
 
 文件上传成功后，点击解析图标开始给文本进行自动分块：
+
 ![](./figures/ragflow10.png)
 
 文本解析结果如下：
+
 ![](./figures/ragflow11.jpg)
 
 点击“检索测试”选项测试文本搜索效果，这里可以动态调整全文搜索和向量搜索的权重大小：
+
 ![](./figures/ragflow12.jpg)
 
 ### 5.聊天实践
 
 点击“新建助手”并在配置中关联知识库：
+
 ![](./figures/ragflow13.png)
 
 开始进行实时对话：
+
 ![](./figures/ragflow14.jpg)
 
 ### 6.Agent实践

@@ -647,6 +647,7 @@ headless: true
             -   [Node.js SDK]({{< relref "./docs/DataVec/integrationJavaScript.md" >}})
             -   [Go SDK]({{< relref "./docs/DataVec/integrationGo.md" >}})
 			-   [C# SDK]({{< relref "./docs/DataVec/integrationCsharp.md" >}})
+			-   [C++ SDK]({{< relref "./docs/DataVec/integrationCpp.md" >}})
 		-   性能测试
 			-   [VectorDBBench]({{< relref "./docs/DataVec/openGauss-VectorDBBench.md" >}})
 			-   [AnnBenchmark]({{< relref "./docs/DataVec/testtool_annbenchmark.md" >}})
