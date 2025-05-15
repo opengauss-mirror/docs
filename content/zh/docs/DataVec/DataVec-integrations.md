@@ -10,6 +10,10 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 - [BGE-M3](embedding-bgem3.md)
 - [Nomic-Embed-Text](embedding-nomic.md)
 
+## Agents
+- [MCP](MCP.md)
+- [Mem0](mem0.md)
+
 ## 数据迁移
 - [从Milvus迁移至openGauss DataVec](milvus2datavec.md)
 - [从PgVector迁移至openGauss DataVec](../AboutopenGauss/Postgresql_openGauss迁移工具debezium-connector-postgres.md)
