@@ -208,7 +208,7 @@
 </tr>
 <tr id="row1064319820577"><td class="cellrowborder" valign="top" width="15.35%" headers="mcps1.2.4.1.1 "><p id="p177763975714"><a name="p177763975714"></a><a name="p177763975714"></a>-C，--enable-client-encryption</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.89%" headers="mcps1.2.4.1.2 "><p id="p1177616965718"><a name="p1177616965718"></a><a name="p1177616965718"></a>当使用-C参数连接本地数据库或者连接远程数据库时，可通过该选项打开密态数据库开关。</p>
+<td class="cellrowborder" valign="top" width="64.89%" headers="mcps1.2.4.1.2 "><p id="p1177616965718"><a name="p1177616965718"></a><a name="p1177616965718"></a>当使用-C参数连接本地数据库或者连接远程数据库时，可通过该选项打开密态数据库开关。(轻量版场景下，openGauss不支持密态数据库)</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.4.1.3 "><p id="p7776599571"><a name="p7776599571"></a><a name="p7776599571"></a>-</p>
 </td>
