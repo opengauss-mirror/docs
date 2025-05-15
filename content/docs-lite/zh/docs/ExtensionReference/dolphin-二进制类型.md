@@ -107,6 +107,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 <tr id="row174646613321"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="p04649613322"><a name="p04649613322"></a><a name="p04649613322"></a>BYTEAWITHOUTORDERWITHEQUALCOL</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p046419673217"><a name="p046419673217"></a><a name="p046419673217"></a>变长的二进制字符串（密态特性新增的类型，如果加密列的加密类型指定为确定性加密，则该列的实际类型为BYTEAWITHOUTORDERWITHEQUALCOL），元命令打印加密表将显示原始数据类型。</p>
+<div class="note" id="note1692165094215"><a name="note1692165094215"></a><a name="note1692165094215"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p269225034218"><a name="p269225034218"></a><a name="p269225034218"></a><span id="text1230917313180"><a name="text1230917313180"></a><a name="text1230917313180"></a>轻量版</span>场景下，openGauss不支持密态数据库。</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="p15464206203213"><a name="p15464206203213"></a><a name="p15464206203213"></a>4字节加上实际的二进制字符串。最大为1GB减去53字节（即1073741771字节）。</p>
 </td>
@@ -114,6 +115,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 <tr id="row1391731014327"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="p991820103327"><a name="p991820103327"></a><a name="p991820103327"></a>BYTEAWITHOUTORDERCOL</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p491813103322"><a name="p491813103322"></a><a name="p491813103322"></a>变长的二进制字符串（密态特性新增的类型，如果加密列的加密类型指定为随机加密，则该列的实际类型为BYTEAWITHOUTORDERCOL），元命令打印加密表将显示原始数据类型。</p>
+<div class="note" id="note1692165094214"><a name="note1692165094214"></a><a name="note1692165094214"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p269225034217"><a name="p269225034217"></a><a name="p269225034217"></a><span id="text1230917313181"><a name="text1230917313181"></a><a name="text1230917313181"></a>轻量版</span>场景下，openGauss不支持密态数据库。</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="p1391812106321"><a name="p1391812106321"></a><a name="p1391812106321"></a>4字节加上实际的二进制字符串。最大为1GB减去53字节（即1073741771字节）。</p>
 </td>
@@ -121,6 +123,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 <tr id="row5701370566"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="p10702679562"><a name="p10702679562"></a><a name="p10702679562"></a>_BYTEAWITHOUTORDERWITHEQUALCOL</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p770215714569"><a name="p770215714569"></a><a name="p770215714569"></a>变长的二进制字符串，密态特性新增的类型。</p>
+<div class="note" id="note1692165094213"><a name="note1692165094213"></a><a name="note1692165094213"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p269225034216"><a name="p269225034216"></a><a name="p269225034216"></a><span id="text1230917313182"><a name="text1230917313182"></a><a name="text1230917313182"></a>轻量版</span>场景下，openGauss不支持密态数据库。</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="p1470207165616"><a name="p1470207165616"></a><a name="p1470207165616"></a>4字节加上实际的二进制字符串。最大为1GB减去53字节（即1073741771字节）。</p>
 </td>
@@ -128,6 +131,7 @@ openGauss支持的二进制类型请参见[表1](#zh-cn_topic_0283136911_zh-cn_t
 <tr id="row105711011165620"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="p557112117563"><a name="p557112117563"></a><a name="p557112117563"></a>_BYTEAWITHOUTORDERCOL</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="p657111119565"><a name="p657111119565"></a><a name="p657111119565"></a>变长的二进制字符串，密态特性新增的类型。</p>
+<div class="note" id="note1692165094212"><a name="note1692165094212"></a><a name="note1692165094212"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p269225034215"><a name="p269225034215"></a><a name="p269225034215"></a><span id="text1230917313183"><a name="text1230917313183"></a><a name="text1230917313183"></a>轻量版</span>场景下，openGauss不支持密态数据库。</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="p75714112563"><a name="p75714112563"></a><a name="p75714112563"></a>4字节加上实际的二进制字符串。最大为1GB减去53字节（即1073741771字节）。</p>
 </td>
