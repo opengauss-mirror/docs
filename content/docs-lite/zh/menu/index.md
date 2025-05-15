@@ -660,6 +660,7 @@ headless: true
 		-   [openGauss + Ragflow 从部署到集成]({{< relref "./docs/DataVec/openGauss-Ragflow.md" >}})
 	-   [图数据库引擎]({{< relref "./docs/DataVec/Gallery-Engine-AGE.md" >}})
 		-   [适配详情]({{< relref "./docs/DataVec/Apache-AGE-Adaptation.md" >}})
+    -   [推理加速]({{< relref "./docs/DataVec/inferenceAcceleration.md" >}})
 -   [安全加固指南]({{< relref "./docs/SecHarden/secHarden.md" >}})
 	-   [数据库加固概述]({{< relref "./docs/SecHarden/数据库加固概述.md" >}})
 	-   [安全配置规范基线]({{< relref "./docs/SecHarden/安全配置规范基线.md" >}})

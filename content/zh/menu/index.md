@@ -945,6 +945,7 @@ headless: true
 		-   [openGauss + Ragflow 从部署到集成]({{< relref "./docs/DataVec/openGauss-Ragflow.md" >}})
 	-   [图数据库引擎]({{< relref "./docs/DataVec/Gallery-Engine-AGE.md" >}})
 		-   [适配详情]({{< relref "./docs/DataVec/Apache-AGE-Adaptation.md" >}})
+    -   [推理加速]({{< relref "./docs/DataVec/inferenceAcceleration.md" >}})
 -   [AI特性指南]({{< relref "./docs/AIFeatureGuide/AI特性.md" >}})
     -   [AI4DB: 数据库自治运维]({{< relref "./docs/AIFeatureGuide/AI4DB-数据库自治运维.md" >}})
         -   [DBMind模式说明]({{< relref "./docs/AIFeatureGuide/DBMind模式说明.md" >}})
