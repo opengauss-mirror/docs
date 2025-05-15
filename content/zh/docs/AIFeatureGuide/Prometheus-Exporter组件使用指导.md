@@ -52,7 +52,7 @@
 >![](public_sys-resources/icon-caution.png) **注意：** 
 
 >- openGauss-exporter中连接数据库的用户需要monitor admin或以上权限，否则会出现部分指标无法采集的情况。同时openGauss-exporter不支持使用数据库初始用户来进行数据采集。
->- oepnGauss-exporter链接的数据库用户需要获取dbe\_perf模式下的数据，因此需要保证其具有该视图的权限。
+>- openGauss-exporter链接的数据库用户需要获取dbe\_perf模式下的数据，因此需要保证其具有该视图的权限。
 >- openGauss-exporter会从dbe\_perf.statement\_history中抽样慢SQL信息，dbe\_perf.statement\_history视图慢SQL记录与GUC参数log\_min\_duration\_statement和track\_stmnt\_stat\_level相关，其中log\_min\_duration\_statement是慢SQL阈值，单位毫秒，具体值由用户设置；track\_stmnt\_stat\_level是SQL记录级别，默认为'OFF,L0'，即只记录慢SQL信息，级别为L0，用户在详细了解参数意义与作用情况下谨慎修改。
 >- openGauss-exporter采集数据库相关信息，主要包括部分系统表和视图中的数据（具体参见代码中opengauss\_exporter中的配置文件），node-exporter采集系统指标信息，主要与系统磁盘、CPU等相关，reprocessing\_exporter基于prometheus-server中的某些指标（具体参见代码中reprocessing\_exporter中的配置文件）进行二次加工，最终提供加工后的数据供用户使用。
 >- prometheus-server在拉取exporter数据时有超时机制，超时时间由scrape\_timeout（默认10s）控制，因此当exporter采集数据量较大时，用户可根据实际情况增大scrape\_timeout以防止超时报错，另外需要注意的是scrape\_interval（采集间隔，默认15s）不能比scrape\_timeout小，否则会出现异常。
