@@ -11,6 +11,10 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 - [Nomic-Embed-Text](embedding-nomic.md)
 - [openGauss-SentenceTransformer实践](SentenceTransformer.md)
 
+## Agents
+- [MCP](MCP.md)
+- [Mem0](mem0.md)
+
 ## 数据迁移
 - [从Milvus迁移至openGauss DataVec](milvus2datavec.md)
 - [从PgVector迁移至openGauss DataVec](../AboutopenGauss/Postgresql_openGauss迁移工具debezium-connector-postgres.md)
