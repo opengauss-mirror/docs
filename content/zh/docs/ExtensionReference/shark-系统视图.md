@@ -2,5 +2,5 @@
 
 - **[SYSOBJECTS](shark-SYSOBJECTS.md)**
 - **[SYSCOLUMNS](shark-SYSCOLUMNS.md)**
-- **[SYSINDEXES](shark-SYSINDEXES)**
-- **[SYSINDEXKEYS](shark-SYSINDEXKEYS)**
+- **[SYSINDEXES](shark-SYSINDEXES.md)**
+- **[SYSINDEXKEYS](shark-SYSINDEXKEYS.md)**
