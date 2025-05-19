@@ -1009,7 +1009,7 @@ headless: true
                         -   [命令参考]({{< relref "./docs/AIFeatureGuide/命令参考-Anomaly-detection.md" >}})
                         -   [常见问题处理]({{< relref "./docs/AIFeatureGuide/常见问题处理-Anomaly-detection.md" >}})
                     -   [Cluster Diagnosis]({{< relref "./docs/AIFeatureGuide/Cluster-Diagnosis.md" >}})
-                        -   [概述]({{< relref "./docs/AIFeatureGuide/概述-Cluster-Diagnosismd" >}})
+                        -   [概述]({{< relref "./docs/AIFeatureGuide/概述-Cluster-Diagnosis.md" >}})
                         -   [使用指导]({{< relref "./docs/AIFeatureGuide/使用指导-Cluster-Diagnosis.md" >}})
                         -   [获取帮助]({{< relref "./docs/AIFeatureGuide/获取帮助-Cluster-Diagnosis.md" >}})
                         -   [命令参考]({{< relref "./docs/AIFeatureGuide/命令参考-Cluster-Diagnosis.md" >}})
