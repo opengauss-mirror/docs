@@ -961,7 +961,7 @@ headless: true
                     -   [set子命令]({{< relref "./docs/AIFeatureGuide/set子命令.md" >}})
                 -   [DBMind的支持组件]({{< relref "./docs/AIFeatureGuide/DBMind的支持组件.md" >}})
                     -   [Prometheus Exporter组件]({{< relref "./docs/AIFeatureGuide/Prometheus-Exporter组件.md" >}})
-                        -   [概述]({{< relref "./docs/AIFeatureGuide/概述.md" >}})
+                        -   [概述]({{< relref "./docs/AIFeatureGuide/概述-Prometheus-Exporter组件.md" >}})
                         -   [环境部署]({{< relref "./docs/AIFeatureGuide/环境部署-Prometheus-Exporter组件.md" >}})
                         -   [使用指导]({{< relref "./docs/AIFeatureGuide/使用指导-Prometheus-Exporter组件.md" >}})
                         -   [获取帮助]({{< relref "./docs/AIFeatureGuide/获取帮助-Prometheus-Exporter组件.md" >}})
