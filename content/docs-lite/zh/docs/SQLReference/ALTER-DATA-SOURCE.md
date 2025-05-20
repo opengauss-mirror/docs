@@ -10,7 +10,7 @@
 
 -   只有初始用户/系统管理员/属主才拥有修改Data Source的权限。
 -   修改属主时，新的属主用户必须是初始用户或系统管理员。
--   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并使用gs\_ssh工具发布到每个节点的$GAUSSHOME/bin目录下。
+-   当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在datasource.key.cipher和datasource.key.rand文件，如果不存在这两个文件，请使用gs\_guc工具生成并放入每个节点的$GAUSSHOME/bin目录下。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >轻量版场景下，openGauss提供此语法，但SQL on Anywhere不可用。
