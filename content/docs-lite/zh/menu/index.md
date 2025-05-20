@@ -431,7 +431,6 @@ headless: true
 		-   [资源管理准备]({{< relref "./docs/Developerguide/资源管理准备.md" >}})
 			-   [资源规划]({{< relref "./docs/Developerguide/资源规划.md" >}})
 			-   [启动资源负载管理功能]({{< relref "./docs/Developerguide/启动资源负载管理功能.md" >}})
-			-   [设置控制组]({{< relref "./docs/Developerguide/设置控制组.md" >}})
 			-   [创建资源池]({{< relref "./docs/Developerguide/创建资源池.md" >}})
 	-   [内存表特性]({{< relref "./docs/Developerguide/内存表特性.md" >}})
 		-   [MOT介绍]({{< relref "./docs/Developerguide/MOT介绍.md" >}})
