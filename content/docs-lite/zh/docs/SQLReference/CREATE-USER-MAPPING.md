@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="section720610212575"></a>
 
-当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在usermapping.key.cipher和usermapping.key.rand文件，如果不存在这两个文件，请使用gs\\\_guc工具生成并使用gs\\\_ssh工具发布到openGauss每个节点的$GAUSSHOME/bin目录下。
+当在OPTIONS中出现password选项时，需要保证openGauss每个节点的$GAUSSHOME/bin目录下存在usermapping.key.cipher和usermapping.key.rand文件，如果不存在这两个文件，请使用gs\\\_guc工具生成并放入到openGauss每个节点的$GAUSSHOME/bin目录下。
 
 ## 语法格式<a name="zh-cn_topic_0283136906_section109016567611"></a>
 
