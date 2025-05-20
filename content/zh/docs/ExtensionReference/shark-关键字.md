@@ -17,6 +17,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 
 1. 新增```columnstore```，```clustered```，```nonclustered```作为非保留关键字。
 2. 大多数关键字可以不用AS前缀直接用作列标签，但也有一些需要前导AS以避免歧义的关键字。这些在表中标记为“需要AS”。
+3. 新增```save```，```tran```作为非保留关键字。
 
 **表 1**  SQL关键字
 
@@ -5864,6 +5865,15 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="p430551116126"><a name="p430551116126"></a><a name="p430551116126"></a>-</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row32050743"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"></a>SAVE</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"></a>非保留</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44722206"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44722206"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p44722206"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p27743709"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p27743709"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p27743709"></a>-</p>
+</td>
+</tr>
 <tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row32050743"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p28859313"></a>SAVEPOINT</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p53046730"></a>非保留</p>
@@ -6925,6 +6935,15 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 <td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p25201741"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p25201741"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p25201741"></a>保留</p>
 </td>
 <td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p5172905"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p5172905"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p5172905"></a>保留</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row65073827"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"></a>TRAN</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p43056650"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p43056650"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p43056650"></a>非保留</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.75%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24302808"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24302808"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24302808"></a>-</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p40231608"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p40231608"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p40231608"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_row65073827"><td class="cellrowborder" valign="top" width="34%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"></a><a name="zh-cn_topic_0283137559_zh-cn_topic_0237121925_zh-cn_topic_0059777655_zh-cn_topic_0058965630_p24702216"></a>TRANSACTION</p>
