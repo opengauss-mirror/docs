@@ -102,7 +102,7 @@ CREATE RESOURCE POOL pool_name
 
 ## 示例<a name="zh-cn_topic_0059777569_s44181f6d005b4da1952aaeff4ef66e0e"></a>
 
-本示例假定用户已预先成功创建控制组（创建控制组请参考[设置控制组](../PerformanceTuningGuide/设置控制组.md)）。
+本示例假定用户已预先成功创建控制组。
 
 ```
 --创建一个默认资源池，其控制组为"DefaultClass"组下属的"Medium" Timeshare Workload控制组。
