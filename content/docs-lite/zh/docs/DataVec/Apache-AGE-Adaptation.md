@@ -22,8 +22,10 @@ SELECT * FROM ag_catalog.create_graph('graph_name');
 ```
 ### 1.2 删除图
 删除图使用函数：drop_graph(graph_name, cascade);
+> 1. 第一个参数graph_name为要删除的图，第二个参数cascade为布尔值，表示是否删除依赖于图表的标签和数据
+> 2. 建议将 cascade 选项设置为 true，否则必须使用 SQL DDL 命令手动删除图中的所有内容
 ```
-SELECT * FROM ag_catalog.drop_graph('graph_name');
+SELECT * FROM ag_catalog.drop_graph('graph_name', true);
 ```
 ### 1.3 创建图中的点类型
 创建图中的点类型使用函数：create_vlabel(graph_name, label_name);
