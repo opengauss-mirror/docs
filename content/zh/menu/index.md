@@ -927,6 +927,7 @@ headless: true
 			-   [Mem0]({{< relref "./docs/DataVec/mem0.md" >}})
 		-   数据迁移
 			-   [从Milvus迁移至openGauss DataVec]({{< relref "./docs/DataVec/milvus2datavec.md" >}})
+            -   [从ElasticSearch迁移至openGauss DataVec]({{< relref "./docs/DataVec/elasticsearch-to-openGauss.md" >}})
 		-   API Reference
 			-   [Python SDK]({{< relref "./docs/DataVec/integrationPython.md" >}})
 			-   [Java SDK]({{< relref "./docs/DataVec/integrationJava.md" >}})
