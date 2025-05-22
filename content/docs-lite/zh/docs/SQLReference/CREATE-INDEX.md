@@ -196,7 +196,7 @@
 
     取值范围：
 
-    只有 GIN 索引支持 FASTUPDATE，GIN\_PENDING\_LIST\_LIMIT 参数。GIN 和 Psort 之外的索引都支持 FILLFACTOR 参数。只有 UBTREE 索引支持 INDEXSPLIT，INDEX\_TYPE 参数。
+    只有 GIN 索引支持 FASTUPDATE，GIN\_PENDING\_LIST\_LIMIT 参数。GIN 和 Psort 之外的索引都支持 FILLFACTOR 参数。只有 UBTREE 索引支持 INDEXSPLIT 参数。
 
     - **FILLFACTOR**
 
@@ -269,14 +269,6 @@
         索引参数，设置索引压缩字节差分预处理。只能与 compress\_byte\_convert 一起使用。在一些场景下可以提升压缩效果，同时会导致一定性能劣化。
 
         取值范围：布尔值，默认关闭。
-
-    - **INDEX\_TYPE**
-
-        UBTREE 索引的具体类型。RCR索引基于行一致性读。PCR索引基于页面一致性读。
-
-        取值范围：RCR, PCR
-
-        默认值：RCR
 
 -   **TABLESPACE tablespace\_name**
 
