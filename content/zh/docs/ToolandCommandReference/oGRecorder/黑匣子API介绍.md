@@ -27,7 +27,7 @@ int wr_init(const wr_param_t param);
 - `param`：`wr_param_t` 类型，初始化参数配置（结构体定义）。
 
 **返回值**  
-成功返回 `0`，失败返回错误码。错误码可通过 `wr_get_err` 获取详细信息。
+成功返回 `0`，失败返回错误码。错误码可通过 `wr_get_error` 获取详细信息。
 
 ---
 
@@ -124,13 +124,13 @@ int wr_get_conf(wr_instance_handle InstHandle, const char *para, char *value);
 
 ## 错误处理
 
-### wr_get_err
+### wr_get_error
 **接口描述**  
 获取错误码信息。
 
 **函数原型**  
 ```c
-int wr_get_err(int errorCode, char* errmsg);
+int wr_get_error(int errorCode, char* errmsg);
 ```
 
 **参数**  
@@ -286,10 +286,19 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, int *fd
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
-- `fileName`：文件名（字符串类型）。
-- `flags`：打开标志（当前版本固定为 `0`）。
-- `fd`：输出参数，返回文件描述符。
+- `vfs`：VFS 句柄。  
+- `fileName`：文件名（字符串类型）。  
+- `flags`：打开标志。  
+  - `O_RDONLY`：以只读模式打开文件。  
+  - `O_WRONLY`：以只写模式打开文件。  
+  - `O_RDWR`：以读写模式打开文件。  
+  - `O_CREAT`：如果文件不存在，则创建文件。  
+  - `O_EXCL`：与 `O_CREAT` 一起使用时，如果文件已存在，则返回错误。  
+  - `O_TRUNC`：如果文件已存在且以写模式打开，则清空文件内容。  
+  - `O_APPEND`：以追加模式打开文件，写入的数据会追加到文件末尾。  
+  - `O_NONBLOCK`：以非阻塞模式打开文件。  
+  - `O_SYNC`：以同步模式打开文件，确保数据直接写入存储设备。  
+- `fd`：输出参数，返回文件描述符。  
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
@@ -320,37 +329,39 @@ int wr_file_close(wr_vfs_handle vfs, int fd);
 
 **函数原型**  
 ```c
-int wr_file_pread(wr_vfs_handle vfs, int fd, void *buf, int64_t offset);
+long long int wr_file_pread(wr_vfs_handle vfs_handle, int fd, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
-- `fd`：文件描述符。
-- `buf`：读取数据缓冲区（需预先分配内存）。
-- `offset`：读取偏移量（单位：字节）。
+- `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
+- `fd`：文件描述符，表示要读取的文件。  
+- `buf`：读取数据的缓冲区，需预先分配内存，读取的数据将存储在此缓冲区中。  
+- `count`：要读取的字节数。  
+- `offset`：读取的起始偏移量（单位：字节）。  
 
 **返回值**  
-成功返回实际读取的字节数，失败返回错误码。
+成功返回实际读取的字节数，失败返回负值错误码。  
 
 ---
 
 ### wr_file_pwrite
 **接口描述**  
-同步写操作。
+同步写操作。  
 
 **函数原型**  
 ```c
-int wr_file_pwrite(wr_vfs_handle vfs, int fd, const void *buf, int64_t offset);
+long long int wr_file_pwrite(wr_vfs_handle vfs_handle, int fd, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
-- `fd`：文件描述符。
-- `buf`：写入数据缓冲区。
-- `offset`：写入偏移量（单位：字节）。
+- `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
+- `fd`：文件描述符，表示要写入的文件。  
+- `buf`：写入数据的缓冲区，需包含要写入的数据内容。  
+- `count`：要写入的字节数。  
+- `offset`：写入的起始偏移量（单位：字节）。  
 
 **返回值**  
-成功返回实际写入的字节数，失败返回错误码。
+成功返回实际写入的字节数，失败返回负值错误码。
 
 ---
 
@@ -374,6 +385,26 @@ int wr_file_truncate(wr_vfs_handle vfs, int fd, int32_t truncateType, int64_t of
 
 ---
 
+### wr_file_stat
+**接口描述**  
+调整文件大小。
+
+**函数原型**  
+```c
+int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count);
+```
+
+**参数**  
+- `vfs`：VFS 句柄。
+- `fileName`：文件名称。
+- `offset`：输出参数，返回文件已写入偏移量。
+- `count`：输出参数，返回文件大小（目前conut与offset结果一致）。
+
+**返回值**  
+成功返回 `0`，失败返回错误码。
+
+---
+
 ## 结构体定义
 
 ### wr_param_t
@@ -383,7 +414,7 @@ int wr_file_truncate(wr_vfs_handle vfs, int fd, int32_t truncateType, int64_t of
 ```c
 typedef struct st_wr_param {
     char log_home[PATH_MAX];                // 日志文件存放目录路径
-    unsigned int log_level;                 // 日志级别（7：运行日志，255：调试日志）
+    unsigned int log_level;                 // 日志级别（7：运行日志，255：调试日志，<=0：关闭日志）
     unsigned int log_backup_file_count;     // 日志文件最大保留个数
     unsigned long long log_max_file_size;   // 单个日志文件最大大小（单位：字节）
 } wr_param_t;
@@ -399,12 +430,4 @@ typedef struct st_wr_param {
 ### truncateType
 - 在 `wr_file_truncate` 中，当前版本固定为 `0`.
 
-### flags
-- 在 `wr_file_open` 中，当前版本固定为 `0`.
-
 ---
-
-### 使用说明
-1. **全选复制**：从 `# WalRecorder SDK API 文档` 到末尾，确保完整选中所有内容。
-2. **保存为 `.md` 文件**：粘贴到文本编辑器（如 VS Code、Typora）中，保存为 `.md` 文件。
-3. **验证格式**：确保标题、代码块和表格正确渲染。
