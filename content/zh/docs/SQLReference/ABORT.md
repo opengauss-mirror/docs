@@ -12,7 +12,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136750_zh-cn_topic_0237122053_zh-cn_topic_0059778271_s36354f226d754e5bb76ed954add5eea3"></a>
 
-```
+```sql
 ABORT [ WORK | TRANSACTION ] ;
 ```
 
