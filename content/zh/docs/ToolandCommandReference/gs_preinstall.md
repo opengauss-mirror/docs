@@ -8,9 +8,11 @@ openGauss提供了gs_preinstall工具来帮助完成openGauss的环境配置，�
 
 -   用户需要检查上层目录权限，保证安装用户对安装包和配置文件目录读写执行的权限。
 -   xml文件中各主机的名称与IP映射配置正确。
--   使用root或普通用户执行gs_preinstall命令。
+-   普通用户执行gs_preinstall命令，只会检查A1,A2,A3,A4,A5,A8,A12,A13选项。
+-   root执行gs_preinstall命令，默认跳过gs_checkos网卡的校验（A11）。
 -   使用root用户执行gs_preinstall会清理/etc/hosts中的openGauss映射信息，可能存在已部署数据库连接丢失风险，可以在安装结束后手动添加其它数据库映射至/etc/hosts文件中。
 -   gs_preinstall指定的用户不支持使用-d手动选定家目录，仅支持系统默认创建的/home下和用户同名的/home目录。
+-   
 -   本产品支持同一操作系统大版本下的小版本混合部署，其支持列表如下：
 
     ```
@@ -250,7 +252,7 @@ Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.
 Warning: InstallationGuide environment contains some warning messages.
-Please get more details by "/package_r8/sudo/gs_checkos -i A -h host179174,host179175,host179176".
+Please get more details by "/package_r8/sudo/gs_checkos -i A -h host179174,host179175,host179176 --skip-item-num=A11 --detail".
 Set and check OS parameter completed.
 Preparing CRON service.
 Successfully prepared CRON service.
@@ -345,7 +347,7 @@ Set and check OS parameter.
 Setting OS parameters.
 Successfully set OS parameters.
 Warning: InstallationGuide environment contains some warning messages.
-Please get more details by "/package_r8/sudo/gs_checkos -i A -h host179174,host179175,host179176".
+Please get more details by "/package_r8/sudo/gs_checkos -i A -h host179174,host179175,host179176 --skip-item-num=A11 --detail".
 Set and check OS parameter completed.
 Preparing CRON service.
 Successfully prepared CRON service.
