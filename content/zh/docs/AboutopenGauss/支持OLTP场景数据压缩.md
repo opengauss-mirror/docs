@@ -137,6 +137,15 @@ extent扩展：
 
 由于pca页面的存在，压缩表分配到的段页式extent只能表示原有的`127/128`的页面，如1M extent对于非压缩表来说能存放128个页，而若表为压缩表，则这个extent只能存放127个逻辑页面。因此，对于段页式压缩表，逻辑页号和物理页号的转换如上图，group 2、3、4内的extent能够表示的页面变为原有的`127/128`。
 
+#### 开启KAE
+
+安装KAE后，在环境变量中配置KAEZlib的lib路径后，启动openGauss，即可使用KAEZlib库(注意KAE的lib路径要放到openGauss自带的zlib库之前)。配置方式如下：
+
+```shell
+#配置KAEZlib的lib路径到环境变量
+export LD_LIBRARY_PATH=/usr/local/kaezip/lib:$LD_LIBRARY_PATH
+```
+
 
 
 ## 使用指导
