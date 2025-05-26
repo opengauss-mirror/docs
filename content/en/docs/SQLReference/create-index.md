@@ -224,7 +224,7 @@ The partitioned table does not support partial index creation.
 
     -   INDEX\_TYPE
 
-        Specifies the type of UBTREE index. RCR index is based on Row Consistency Read. PCR index is based on Page Consistency Read.
+        Specifies the type of UBTREE index. RCR index is based on Row Consistency Read. PCR index is based on Page Consistency Read. This parameter cannot be modified after it takes effect.
 
         Value range:  **RCR**  and  **PCR**
 
