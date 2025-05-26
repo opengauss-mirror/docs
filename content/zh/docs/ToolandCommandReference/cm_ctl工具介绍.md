@@ -535,22 +535,21 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1399151933116"><td class="cellrowborder" valign="top" width="36.559999999999995%" headers="mcps1.2.3.1.1 "><p id="p1642213231347"><a name="p1642213231347"></a><a name="p1642213231347"></a>--log_level=LOG_LEVEL</p>
+<tbody><tr id="row1399151933116"><td class="cellrowborder" valign="top" width="36.559999999999995%" headers="mcps1.2.3.1.1 "><p id="p1642213231347"><a name="p1642213231347"></a><a name="p1642213231347"></a>--log_level</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p8277436173410"><a name="p8277436173410"></a><a name="p8277436173410"></a>获取主cm_server日志级别。共分为DEBUG5、DEBUG1、WARNING、LOG、ERROR和FATAL六个级别，日志打印信息级别越来越高。设置日志级别越高，输出日志信息就越少。</p>
+<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p8277436173410"><a name="p8277436173410"></a><a name="p8277436173410"></a>获取主cm_server日志级别LOG_LEVEL。共分为DEBUG5、DEBUG1、WARNING、LOG、ERROR和FATAL六个级别，日志打印信息级别越来越高。设置日志级别越高，输出日志信息就越少。</p>
 </td>
 </tr>
-<tr id="row1699121903112"><td class="cellrowborder" valign="top" width="36.559999999999995%" headers="mcps1.2.3.1.1 "><p id="p2991919143114"><a name="p2991919143114"></a><a name="p2991919143114"></a>--cm_arbitration_mode=ARBITRATION_MODE</p>
+<tr id="row1699121903112"><td class="cellrowborder" valign="top" width="36.559999999999995%" headers="mcps1.2.3.1.1 "><p id="p2991919143114"><a name="p2991919143114"></a><a name="p2991919143114"></a>--cm_arbitration_mode</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p1699131919316"><a name="p1699131919316"></a><a name="p1699131919316"></a>一主多备功能，获取cm_server的仲裁模式。共有MAJORITY、MINORITY两种模式，MAJORITY为多数派模式，MINORITY为少数派模式。少数派模式适用于一主多备数据库部署并且只有AZ3存活时，此时cm_server可以进行正常的仲裁业务，非此模式下将仲裁模式设置成少数派成功后，cm会自动将仲裁模式改为多数派，以保证集群正常运转；多数派模式适用于一主多备数据库部署并且各个组件（cm_server，节点）存活数量大于一半的场景。数据库实例正常情况下默认为多数派模式。</p>
+<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p1699131919316"><a name="p1699131919316"></a><a name="p1699131919316"></a>一主多备功能，获取cm_server的仲裁模式ARBITRATION_MODE。共有MAJORITY、MINORITY两种模式，MAJORITY为多数派模式，MINORITY为少数派模式。少数派模式适用于一主多备数据库部署并且只有AZ3存活时，此时cm_server可以进行正常的仲裁业务，非此模式下将仲裁模式设置成少数派成功后，cm会自动将仲裁模式改为多数派，以保证集群正常运转；多数派模式适用于一主多备数据库部署并且各个组件（cm_server，节点）存活数量大于一半的场景。数据库实例正常情况下默认为多数派模式。</p>
 <div class="caution" id="note9231439203710"><a name="note9231439203710"></a><a name="note9231439203710"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="p1122639103710"><a name="p1122639103710"></a><a name="p1122639103710"></a>opengauss不支持少数派</p>
 </div></div>
 </td>
 </tr>
 <tr id="row17991519113117"><td class="cellrowborder" valign="top" width="36.559999999999995%" headers="mcps1.2.3.1.1 "><p id="p1237992903510"><a name="p1237992903510"></a><a name="p1237992903510"></a>--cm_switchover_az_mode</p>
-<p id="p83401424173512"><a name="p83401424173512"></a><a name="p83401424173512"></a>=SWITCHOVER_AZ_MODE</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p655611817358"><a name="p655611817358"></a><a name="p655611817358"></a>一主多备功能，获取AZ之间的自动切换开关。共有NON_AUTO、AUTO两种模式，NON_AUTO为非自动切换模式，AUTO为自动切换模式。AUTO模式由主cm_server自动控制AZ1和AZ2之间的节点实例切换。</p>
+<td class="cellrowborder" valign="top" width="63.44%" headers="mcps1.2.3.1.2 "><p id="p655611817358"><a name="p655611817358"></a><a name="p655611817358"></a>一主多备功能，获取AZ之间的自动切换开关SWITCHOVER_AZ_MODE。共有NON_AUTO、AUTO两种模式，NON_AUTO为非自动切换模式，AUTO为自动切换模式。AUTO模式由主cm_server自动控制AZ1和AZ2之间的节点实例切换。</p>
 </td>
 </tr>
 </tbody>
