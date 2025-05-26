@@ -153,6 +153,9 @@ $(document).ready(() => {
             data: JSON.stringify(postData),
             contentType: 'application/json; charset=utf-8',
             datatype: 'json',
+            headers: {
+                source: 'opengauss',
+            },
             success: function (data) {
                 const res = JSON.parse(data)
                 if (res.code === 200) {

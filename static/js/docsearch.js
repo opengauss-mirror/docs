@@ -21,6 +21,9 @@ $(async function ($) {
         data: JSON.stringify(postData),
         contentType: "application/json; charset=utf-8",
         datatype: "json",
+        headers: {
+          source: 'opengauss',
+        },
         success: function (data) {
           let dataArr = [];
           let pag = null;
