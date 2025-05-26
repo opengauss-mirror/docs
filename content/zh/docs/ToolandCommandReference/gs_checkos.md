@@ -24,7 +24,7 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 -   检查操作系统信息
 
     ```
-    gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE] 
+    gs_checkos -i ITEM [-f HOSTFILE] [-h HOSTNAME] [-X XMLFILE] [--detail] [-o OUTPUT] [-l LOGFILE] [--skip-item-num=ITEMNUM]
     ```
 
 -   显示帮助信息
@@ -90,6 +90,12 @@ gs_checkos工具用来帮助检查操作系统、控制参数、磁盘配置等�
 -   --detail
 
     显示检查结果详情。
+
+-   --skip-item-num
+
+    跳过指定的检查项。
+
+    取值范围：A1...A14。
 
 -   -o
 
