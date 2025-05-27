@@ -150,10 +150,6 @@ openGauss中下列函数在最新版本中已废弃：
 </td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pgxc_unlock_for_sp_database</p>
 </td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>local_segment_space_info</p>
-</td>
-<td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>pg_stat_segment_extent_usage</p>
-</td>
 <td class="cellrowborder" valign="top" width="14.285714285714285%"><p id="p2810132817122"><a name="p2810132817124"></a><a name="p2810132817124"></a>GS_ALL_NODEGROUP_CONTROL_GROUP_INFO</p>
 </td>
 </tr>
