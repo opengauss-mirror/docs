@@ -87,8 +87,8 @@ openGauss=# select gs_update_sql_limit(2,'select',0,100,'','','{select,count,fro
 ```sql
 openGauss=# select * from gs_select_sql_limit(1);
  limit_id | is_valid | work_node | max_concurrency | hit_count | reject_count
----------+----------+-----------+-----------------+-----------+--------------
-       1 | t        | 0         |             100 |         0 |            0
+----------+----------+-----------+-----------------+-----------+-------------
+        1 | t        | 0         |             100 |         0 |            0
 (1 row)
 ```
 
@@ -97,9 +97,9 @@ openGauss=# select * from gs_select_sql_limit(1);
 ```sql
 openGauss=# select * from gs_select_sql_limit();
  limit_id | is_valid | work_node | max_concurrency | hit_count | reject_count
----------+----------+-----------+-----------------+-----------+--------------
-       1 | t        | 0         |             100 |         0 |            0
-       2 | t        | 0         |             100 |         0 |            0
+----------+----------+-----------+-----------------+-----------+-------------
+        1 | t        | 0         |             100 |         0 |            0
+        2 | t        | 0         |             100 |         0 |            0
 (2 rows)
 ```
 
