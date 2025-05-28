@@ -34,10 +34,13 @@
 </tr>
 <tr id="zh-cn_topic_0000001714949065_row1145717795616"><td class="cellrowborder" valign="top" width="21.535353535353536%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000001714949065_p125010403211"><a name="zh-cn_topic_0000001714949065_p125010403211"></a><a name="zh-cn_topic_0000001714949065_p125010403211"></a>--role</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.13131313131313%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714949065_p183154183620"><a name="zh-cn_topic_0000001714949065_p183154183620"></a><a name="zh-cn_topic_0000001714949065_p183154183620"></a>分析的目标节点的角色（集中式仅支持DN，使用CN会触发异常提示）。</p>
+<td class="cellrowborder" valign="top" width="45.13131313131313%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714949065_p183154183620"><a name="zh-cn_topic_0000001714949065_p183154183620"></a><a name="zh-cn_topic_0000001714949065_p183154183620"></a>分析的目标节点的角色（仅支持DN，使用CN会触发异常提示）。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0000001714949065_p11987758123118"><a name="zh-cn_topic_0000001714949065_p11987758123118"></a><a name="zh-cn_topic_0000001714949065_p11987758123118"></a>目前仅支持{dn}。（集中式输入cn会提示异常：cn不在实例状态中）。</p>
+<td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0000001714949065_p11987758123118"><a name="zh-cn_topic_0000001714949065_p11987758123118"></a><a name="zh-cn_topic_0000001714949065_p11987758123118"></a>目前仅支持{dn}。（输入cn会提示异常：cn不在实例状态中）。</p>
 </td>
+</tr>
+</tr>
+</tr>
 </tr>
 <tr id="zh-cn_topic_0000001714949065_row6457127115618"><td class="cellrowborder" valign="top" width="21.535353535353536%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000001714949065_p1150749325"><a name="zh-cn_topic_0000001714949065_p1150749325"></a><a name="zh-cn_topic_0000001714949065_p1150749325"></a>--time</p>
 </td>

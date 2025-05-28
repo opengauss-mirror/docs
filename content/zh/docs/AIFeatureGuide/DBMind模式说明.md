@@ -110,7 +110,7 @@ available subcommands:
 </td>
 <td class="cellrowborder" valign="top" width="33.36333633363336%" headers="mcps1.2.4.1.2 "><p id="p1234810159714"><a name="p1234810159714"></a><a name="p1234810159714"></a>升降级功能</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1134817151375"><a name="p1134817151375"></a><a name="p1134817151375"></a>云原生当前不支持</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1134817151375"><a name="p1134817151375"></a><a name="p1134817151375"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000002242300241_row1928113114489"><td class="cellrowborder" valign="top" width="33.3033303330333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000002242300241_p151167279507"><a name="zh-cn_topic_0000002242300241_p151167279507"></a><a name="zh-cn_topic_0000002242300241_p151167279507"></a>set</p>

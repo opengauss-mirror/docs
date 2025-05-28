@@ -147,13 +147,7 @@
     <td class="cellrowborder" valign="top" width="14.12141214121412%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0000001714829281_p499654318184"><a name="zh-cn_topic_0000001714829281_p499654318184"></a><a name="zh-cn_topic_0000001714829281_p499654318184"></a>&gt;0</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0000001714829281_row53226562502"><td class="cellrowborder" valign="top" width="30.59305930593059%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000001714829281_p7323195620503"><a name="zh-cn_topic_0000001714829281_p7323195620503"></a><a name="zh-cn_topic_0000001714829281_p7323195620503"></a>--multi-node</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="55.285528552855276%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714829281_p0323756105018"><a name="zh-cn_topic_0000001714829281_p0323756105018"></a><a name="zh-cn_topic_0000001714829281_p0323756105018"></a>（可选）指定是否为分布式数据库。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.12141214121412%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0000001714829281_p10323185695017"><a name="zh-cn_topic_0000001714829281_p10323185695017"></a><a name="zh-cn_topic_0000001714829281_p10323185695017"></a>-</p>
-    </td>
-    </tr>
+    
     <tr id="zh-cn_topic_0000001714829281_row182011217518"><td class="cellrowborder" valign="top" width="30.59305930593059%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000001714829281_p1282091275112"><a name="zh-cn_topic_0000001714829281_p1282091275112"></a><a name="zh-cn_topic_0000001714829281_p1282091275112"></a>--json</p>
     </td>
     <td class="cellrowborder" valign="top" width="55.285528552855276%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714829281_p982014129514"><a name="zh-cn_topic_0000001714829281_p982014129514"></a><a name="zh-cn_topic_0000001714829281_p982014129514"></a>（可选）指定workload语句的文件路径格式为SQL归一化后的json。</p>
@@ -184,7 +178,7 @@
     </tr>
     <tr id="zh-cn_topic_0000001714829281_row29153530312"><td class="cellrowborder" valign="top" width="30.59305930593059%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0000001714829281_p182188579314"><a name="zh-cn_topic_0000001714829281_p182188579314"></a><a name="zh-cn_topic_0000001714829281_p182188579314"></a>--advise_gsi</p>
     </td>
-    <td class="cellrowborder" valign="top" width="55.285528552855276%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714829281_p152186578311"><a name="zh-cn_topic_0000001714829281_p152186578311"></a><a name="zh-cn_topic_0000001714829281_p152186578311"></a>（可选）集中式不支持。</p>
+    <td class="cellrowborder" valign="top" width="55.285528552855276%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0000001714829281_p152186578311"><a name="zh-cn_topic_0000001714829281_p152186578311"></a><a name="zh-cn_topic_0000001714829281_p152186578311"></a>（可选）不支持。</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.12141214121412%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0000001714829281_p1621815571432"><a name="zh-cn_topic_0000001714829281_p1621815571432"></a><a name="zh-cn_topic_0000001714829281_p1621815571432"></a>-</p>
     </td>

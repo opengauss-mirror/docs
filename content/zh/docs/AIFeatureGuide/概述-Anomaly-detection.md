@@ -33,7 +33,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" width="10.94%" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p206610411164"><a name="zh-cn_topic_0000001666869780_p206610411164"></a><a name="zh-cn_topic_0000001666869780_p206610411164"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p10665415612"><a name="zh-cn_topic_0000001666869780_p10665415612"></a><a name="zh-cn_topic_0000001666869780_p10665415612"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li7864147111117">•场景5：磁盘空间占用高异常</a></p>
+<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p10665415612"><a name="zh-cn_topic_0000001666869780_p10665415612"></a><a name="zh-cn_topic_0000001666869780_p10665415612"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li7864147111117">•场景5：磁盘空间占用高异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row26712411361"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p3675411868"><a name="zh-cn_topic_0000001666869780_p3675411868"></a><a name="zh-cn_topic_0000001666869780_p3675411868"></a>high_db_disk_usage_detector（数据库磁盘高占用检测器）</p>
@@ -44,7 +44,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="zh-cn_topic_0000001666869780_p10675412069"><a name="zh-cn_topic_0000001666869780_p10675412069"></a><a name="zh-cn_topic_0000001666869780_p10675412069"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p4670418617"><a name="zh-cn_topic_0000001666869780_p4670418617"></a><a name="zh-cn_topic_0000001666869780_p4670418617"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li7864147111117">•场景5：磁盘空间占用高异常</a></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p4670418617"><a name="zh-cn_topic_0000001666869780_p4670418617"></a><a name="zh-cn_topic_0000001666869780_p4670418617"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li7864147111117">•场景5：磁盘空间占用高异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row26719417615"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p867174110618"><a name="zh-cn_topic_0000001666869780_p867174110618"></a><a name="zh-cn_topic_0000001666869780_p867174110618"></a>high_xlog_count_detector（Xlog堆积检测器）</p>
@@ -55,7 +55,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="zh-cn_topic_0000001666869780_p136714411061"><a name="zh-cn_topic_0000001666869780_p136714411061"></a><a name="zh-cn_topic_0000001666869780_p136714411061"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1567134112617"><a name="zh-cn_topic_0000001666869780_p1567134112617"></a><a name="zh-cn_topic_0000001666869780_p1567134112617"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li2497131817710">•场景4：xLog堆积</a></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1567134112617"><a name="zh-cn_topic_0000001666869780_p1567134112617"></a><a name="zh-cn_topic_0000001666869780_p1567134112617"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li2497131817710">•场景4：xLog堆积</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row15671641464"><td class="cellrowborder" rowspan="5" valign="top" width="6.68%" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p46718411264"><a name="zh-cn_topic_0000001666869780_p46718411264"></a><a name="zh-cn_topic_0000001666869780_p46718411264"></a>内存</p>
@@ -68,8 +68,8 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" width="10.94%" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p86714418612"><a name="zh-cn_topic_0000001666869780_p86714418612"></a><a name="zh-cn_topic_0000001666869780_p86714418612"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p46711415614"><a name="zh-cn_topic_0000001666869780_p46711415614"></a><a name="zh-cn_topic_0000001666869780_p46711415614"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li1086364719117">•场景3：动态内存使用率异常</a>；</p>
-<p id="zh-cn_topic_0000001666869780_p997710324247"><a name="zh-cn_topic_0000001666869780_p997710324247"></a><a name="zh-cn_topic_0000001666869780_p997710324247"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li14864347141113">•场景4：共享内存使用率异常</a></p>
+<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p46711415614"><a name="zh-cn_topic_0000001666869780_p46711415614"></a><a name="zh-cn_topic_0000001666869780_p46711415614"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li1086364719117">•场景3：动态内存使用率异常</a>；</p>
+<p id="zh-cn_topic_0000001666869780_p997710324247"><a name="zh-cn_topic_0000001666869780_p997710324247"></a><a name="zh-cn_topic_0000001666869780_p997710324247"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li14864347141113">•场景4：共享内存使用率异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row26704115614"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p1867194115612"><a name="zh-cn_topic_0000001666869780_p1867194115612"></a><a name="zh-cn_topic_0000001666869780_p1867194115612"></a>mem_leak_detector（系统内存泄露检测器）</p>
@@ -80,7 +80,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="zh-cn_topic_0000001666869780_p106715411612"><a name="zh-cn_topic_0000001666869780_p106715411612"></a><a name="zh-cn_topic_0000001666869780_p106715411612"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p7671241563"><a name="zh-cn_topic_0000001666869780_p7671241563"></a><a name="zh-cn_topic_0000001666869780_p7671241563"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li10701619131318">•场景2：内存泄漏监测</a></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p7671241563"><a name="zh-cn_topic_0000001666869780_p7671241563"></a><a name="zh-cn_topic_0000001666869780_p7671241563"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li10701619131318">•场景2：内存泄漏监测</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row13676419619"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p151711777585"><a name="zh-cn_topic_0000001666869780_p151711777585"></a><a name="zh-cn_topic_0000001666869780_p151711777585"></a>session_mem_increase_detector（会话内存泄露检测器）</p>
@@ -130,7 +130,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" width="10.94%" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1368241669"><a name="zh-cn_topic_0000001666869780_p1368241669"></a><a name="zh-cn_topic_0000001666869780_p1368241669"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p268141965"><a name="zh-cn_topic_0000001666869780_p268141965"></a><a name="zh-cn_topic_0000001666869780_p268141965"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li12862174711118">•场景1：用户CPU使用率异常</a></p>
+<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p268141965"><a name="zh-cn_topic_0000001666869780_p268141965"></a><a name="zh-cn_topic_0000001666869780_p268141965"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li12862174711118">•场景1：用户CPU使用率异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row6686413610"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p1682418616"><a name="zh-cn_topic_0000001666869780_p1682418616"></a><a name="zh-cn_topic_0000001666869780_p1682418616"></a>high_thread_pool_rate_detector（线程池高使用率检测器）</p>
@@ -141,7 +141,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="zh-cn_topic_0000001666869780_p13680411569"><a name="zh-cn_topic_0000001666869780_p13680411569"></a><a name="zh-cn_topic_0000001666869780_p13680411569"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1368241864"><a name="zh-cn_topic_0000001666869780_p1368241864"></a><a name="zh-cn_topic_0000001666869780_p1368241864"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li13863154781117">•场景2：线程池使用率异常</a></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1368241864"><a name="zh-cn_topic_0000001666869780_p1368241864"></a><a name="zh-cn_topic_0000001666869780_p1368241864"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li13863154781117">•场景2：线程池使用率异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row156854115613"><td class="cellrowborder" rowspan="3" valign="top" width="6.68%" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p56819415618"><a name="zh-cn_topic_0000001666869780_p56819415618"></a><a name="zh-cn_topic_0000001666869780_p56819415618"></a>磁盘I/O</p>
@@ -154,7 +154,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" width="10.94%" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p3692414611"><a name="zh-cn_topic_0000001666869780_p3692414611"></a><a name="zh-cn_topic_0000001666869780_p3692414611"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p869641663"><a name="zh-cn_topic_0000001666869780_p869641663"></a><a name="zh-cn_topic_0000001666869780_p869641663"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li48641147191115">•场景6：磁盘IO读取时延异常</a></p>
+<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p869641663"><a name="zh-cn_topic_0000001666869780_p869641663"></a><a name="zh-cn_topic_0000001666869780_p869641663"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li48641147191115">•场景6：磁盘IO读取时延异常</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row7698418618"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p16691241566"><a name="zh-cn_topic_0000001666869780_p16691241566"></a><a name="zh-cn_topic_0000001666869780_p16691241566"></a>slow_disk_detector（慢盘检测器）</p>
@@ -165,7 +165,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.7.1.4 "><p id="zh-cn_topic_0000001666869780_p19693418613"><a name="zh-cn_topic_0000001666869780_p19693418613"></a><a name="zh-cn_topic_0000001666869780_p19693418613"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1469174119615"><a name="zh-cn_topic_0000001666869780_p1469174119615"></a><a name="zh-cn_topic_0000001666869780_p1469174119615"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li1270001916133">•场景1：潜在慢盘监测</a></p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p1469174119615"><a name="zh-cn_topic_0000001666869780_p1469174119615"></a><a name="zh-cn_topic_0000001666869780_p1469174119615"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li1270001916133">•场景1：潜在慢盘监测</a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001666869780_row19691341462"><td class="cellrowborder" valign="top" headers="mcps1.2.7.1.1 "><p id="zh-cn_topic_0000001666869780_p169184110614"><a name="zh-cn_topic_0000001666869780_p169184110614"></a><a name="zh-cn_topic_0000001666869780_p169184110614"></a>disk_io_jam_detector（I/O阻塞检测器）</p>
@@ -230,7 +230,7 @@ Anomaly detection异常检测模块的主要功能是基于统计方法来发现
 </td>
 <td class="cellrowborder" valign="top" width="10.94%" headers="mcps1.2.7.1.5 "><p id="zh-cn_topic_0000001666869780_p207011416610"><a name="zh-cn_topic_0000001666869780_p207011416610"></a><a name="zh-cn_topic_0000001666869780_p207011416610"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p17064120610"><a name="zh-cn_topic_0000001666869780_p17064120610"></a><a name="zh-cn_topic_0000001666869780_p17064120610"></a><a href="使用指导-20.md#zh-cn_topic_0000001666869584_li106181751192116">•场景5：长事务</a></p>
+<td class="cellrowborder" valign="top" width="25.16%" headers="mcps1.2.7.1.6 "><p id="zh-cn_topic_0000001666869780_p17064120610"><a name="zh-cn_topic_0000001666869780_p17064120610"></a><a name="zh-cn_topic_0000001666869780_p17064120610"></a><a href="使用指导-Anomaly-detection.md#zh-cn_topic_0000001666869584_li106181751192116">•场景5：长事务</a></p>
 </td>
 </tr>
 </tbody>

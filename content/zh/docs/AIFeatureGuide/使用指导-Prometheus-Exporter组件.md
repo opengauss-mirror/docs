@@ -132,7 +132,7 @@
 >null\_coverage\_window参数：当单次采集失败时，可以选择上一个成功的采集点来填充到空缺位置，当时钟超过上一个成功的采集时间加上null\_coverage\_window的秒数的阈值之后，不再进行填充。当null\_coverage\_window缺失时，会使用统一的默认值300秒来作为缺值补充的时间阈值。
 >组件状态查询和修复接口只针对DBMind自研exporter，包括opengauss-exporter、cmd-exporter、reprocessing-exporter，对于开源的node-exporter则不支持。
 >当前Exporter组件支持查询的异常场景如下：
->-   PID文件丢失或文件内容异常：当用户启动服务/组件后，会自动生成\*.pid文件来记录进程对应的进程标识符，也就是PID。PID文件用于云管控来判断进程状态，发现进程级别的异常并进行修复。为防止PID文件的误删除与内容的误修改，需要定期判断PID文件是否存在以及其内容是否正确。
+>-   PID文件丢失或文件内容异常：当用户启动服务/组件后，会自动生成\*.pid文件来记录进程对应的进程标识符，也就是PID。
 >-   日志文件丢失：当用户启动服务/组件后，会自动生成\*.log文件来记录进程运行的日志。此日志文件用于快速定位问题的根源、追踪程序执行的过程等。为防止日志文件的误删除，需要定期判断日志文件是否存在。
 >-   资源占用异常：DBMind服务会执行索引推荐、指标分析、智能巡检等功能，需要占用系统资源；同样的，exporter组件会采集服务器上的指标，用于后续分析，也会占用系统资源；当服务/组件的CPU或内存占用超过阈值时，说明资源占用过高，服务/组件出现异常。因此需要监控服务和组件的资源占用情况。
 >-   数据库异常：opengauss-exporter需要从数据库中获取数据，用于生成采集结果，所以需要判断数据库是否能够正常连接。
@@ -141,14 +141,13 @@
 >-   CPU多核占用阈值：cmd-exporter 10%，opengauss-exporter 10%，reprocessing-exporter 10%， DBMind 80%。
 >-   CPU单核占用阈值：cmd-exporter 50%，opengauss-exporter 50%，reprocessing-exporter 50%，DBMind不做限制。
 >-   调用高可用接口会检查资源占用，连续超过3次阈值才会触发资源占用告警。
->风险：当占用资源连续超过阈值三次时，会触发告警，管控侧会重启服务，导致正在运行的任务中断。
+>风险：当占用资源连续超过阈值三次时，会触发告警，导致正在运行的任务中断。
 >当前Exporter针对组件异常的修复性说明如下：
 >-   PID文件丢失：可自动修复；
 >-   日志文件丢失：可自动修复；
 >-   组件资源占用异常：不可通过接口修复；
 >-   数据库异常：不可通过接口修复；
->-   针对Exporter组件不可修复的异常，需要云侧进行处理，如重启进程。
->-   集中式环境下，opengauss-exporter需要使用单节点部署模式以保证获取必须的指标信息。
+>-   opengauss-exporter需要使用单节点部署模式以保证获取必须的指标信息。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >-   opengauss-exporter中连接数据库的用户需要monitor admin或以上权限，否则会出现部分指标无法采集的情况。同时opengauss-exporter不支持使用数据库初始用户来进行数据采集。
@@ -159,7 +158,7 @@
 >-   opengauss-exporter需要在url参数中连接postgres数据库来获取全局的指标信息，对特定数据库的采集请使用include-databases参数来指定
 >-   opengauss-exporter会从dbe\_perf.statement\_history中抽样慢SQL信息，dbe\_perf.statement\_history视图慢SQL记录与GUC参数log\_min\_duration\_statement和track\_stmt\_stat\_level相关，其中log\_min\_duration\_statement是慢SQL阈值，单位毫秒，具体值由用户设置；track\_stmt\_stat\_level是SQL记录级别，默认为'OFF,L0'，即只记录慢SQL信息，级别为L0，建议用户在详细了解参数意义与作用的情况下谨慎修改。
 >-   opengauss-exporter采集数据库相关信息，主要包括部分系统表和视图中的数据（具体参见代码中opengauss-exporter中的配置文件）。node-exporter采集系统指标信息，主要与系统磁盘、CPU等相关。reprocessing-exporter基于prometheus-server中的某些指标（具体参见代码中reprocessing-exporter中的配置文件）进行二次加工，最终提供加工后的数据供用户使用。
->-   当数据库部署在多层网络上时（集中式：管理层-数据层），opengauss-exporter的启动命令中的url参数必须使用数据层的ip地址，否则会影响DBMind的其他功能。
+>-   当数据库部署在多层网络上时（管理层-数据层），opengauss-exporter的启动命令中的url参数必须使用数据层的ip地址，否则会影响DBMind的其他功能。
 >-   prometheus-server在拉取exporter数据时有超时机制，超时时间由scrape\_timeout（默认10s）控制，因此当exporter采集数据量较大时，用户可根据实际情况增大scrape\_timeout以防止超时报错，另外需要注意的是scrape\_interval（采集间隔，默认15s）不能比scrape\_timeout小，否则会出现异常。
 >-   opengauss-exporter的采集语句存在timeout机制，由于prometheus-server的scrape\_timeout默认为10秒，所以采集语句的上限为10秒，如果遇到数据库负载较高查询响应较慢的情况，可能会超过采集语句的timeout时长导致数据缺失。
 >-   如果数据库时区设置和系统不相同，可能会出现时间相关指标时间与系统时间不一致的情况，因此需要将数据库时区与系统保持同步。

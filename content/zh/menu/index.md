@@ -989,7 +989,7 @@ headless: true
                     -   [X-Tuner]({{< relref "./docs/AIFeatureGuide/X-Tuner.md" >}})
                         -   [概述]({{< relref "./docs/AIFeatureGuide/概述-X-Tuner.md" >}})
                         -   [使用准备]({{< relref "./docs/AIFeatureGuide/使用准备-X-Tuner.md" >}})
-                        -   [使用示例]({{< relref "./docs/AIFeatureGuide/使用示例.md" >}})
+                        -   [使用示例]({{< relref "./docs/AIFeatureGuide/使用示例-X-Tuner.md" >}})
                         -   [获取帮助]({{< relref "./docs/AIFeatureGuide/获取帮助-X-Tuner.md" >}})
                         -   [命令参考]({{< relref "./docs/AIFeatureGuide/命令参考-X-Tuner.md" >}})
                         -   [常见问题处理]({{< relref "./docs/AIFeatureGuide/常见问题处理-X-Tuner.md" >}})
