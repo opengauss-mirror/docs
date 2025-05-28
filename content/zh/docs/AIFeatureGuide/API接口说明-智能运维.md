@@ -444,5 +444,5 @@ curl -X 'POST' 'https://x.x.x.x:x/v1/api/clusters/register' -H 'accept: applicat
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->注册成功后，集群信息存储在集群管理表，表接口参考第5章节附录中[表6](附录.md#table56641357133711)。
+>注册成功后，集群信息存储在集群管理表，表接口参考附录中[表6](附录-GaussMater.md#table56641357133711)。
 
