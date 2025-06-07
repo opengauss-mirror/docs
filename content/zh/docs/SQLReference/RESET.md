@@ -15,7 +15,7 @@ RESET的事务性行为和SET相同：它的影响将会被事务回滚撤销。
 ## 语法格式<a name="zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_s3afbc03dbde14335b3bd49e0d094df41"></a>
 
 ```
-RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLATION LEVEL | SESSION AUTHORIZATION | ALL };
+RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | SESSION AUTHORIZATION | ALL };
 ```
 
 ## 参数说明<a name="zh-cn_topic_0283137385_zh-cn_topic_0237122178_zh-cn_topic_0059779097_s46998dbd2cc84394b47aad2adc8ea141"></a>
@@ -33,10 +33,6 @@ RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLAT
 -   **TIME ZONE**
 
     时区。
-
--   **TRANSACTION ISOLATION LEVEL**
-
-    事务的隔离级别。
 
 -   **SESSION AUTHORIZATION**
 
