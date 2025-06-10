@@ -1,5 +1,17 @@
 # GUC参数说明
 
+## sql\_mode
+
+**取值范围**：字符串
+
+**参数说明**：此GUC参数没有实际意义，使用dolphin.sql\_mode替换。但是对于mysql的sql_mode中有部分参数选项openGauss的dolphin.sql_mode是不支持但是有等价功能的参数进行平替，具体如下所示：
+
+| mysql的sql_mode参数  | openGauss的平替参数                                          |
+| -------------------- | ------------------------------------------------------------ |
+| NO_BACKSLASH_ESCAPES | set standard_conforming_strings = on功能与mysql中的sql_mode= 'NO_BACKSLASH_ESCAPES'相同；set standard_conforming_strings = off与mysql中的sql_mode不配置NO_BACKSLASH_ESCAPES功能相同 |
+
+
+
 ## dolphin.sql\_mode<a name="section203671436821"></a>
 
 **取值范围**：字符串
@@ -1317,3 +1329,57 @@ openGauss=# select * from t_prepare_010;
 (1 row)
 
 ```
+
+## dolphin.transform_unknown_param_type_as_column_type_first
+
+**参数说明**：该参数打开后，对于preapre语句中unknown类型的参数优先按照其比较的列类型来解释，从而避免因为隐式类型转换导致的索引失效的问题。
+
+该参数目前属于USERSET类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d837)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+**默认值**：false
+
+**示例**：
+
+```sql
+openGauss=# create table test1(c1 int, c2 varchar(20));
+CREATE TABLE
+openGauss=#
+openGauss=# insert into test1 values (generate_series(0, 100), 'aaa');
+INSERT 0 101
+openGauss=#
+openGauss=# create index idx1 on test1(c1);
+CREATE INDEX
+openGauss=# analyze test1;
+ANALYZE
+openGauss=# analyze test1;
+ANALYZE
+openGauss=# set enable_seqscan = off;
+SET
+openGauss=#
+openGauss=# set dolphin.transform_unknown_param_type_as_column_type_first = false;
+SET
+openGauss=# prepare s1 as select * from test1 where c1 = ?;
+PREPARE
+--关闭transform_unknown_param_type_as_column_type_first时，常量1会被解释成double类型，条件c1=1发生隐式类型转换从而无法走索引查询
+openGauss=# explain (costs off) execute s1 using 1;
+                        QUERY PLAN
+----------------------------------------------------------
+ Seq Scan on test1
+   Filter: ((c1)::double precision = 1::double precision)
+(2 rows)
+
+openGauss=# set dolphin.transform_unknown_param_type_as_column_type_first = true;
+SET
+--打开transform_unknown_param_type_as_column_type_first时，常量1会被解释成c1的int类型，条件c1=1不会发生隐式类型转换，因此可以走索引查询
+openGauss=# prepare s1 as select * from test1 where c1 = ?;
+PREPARE
+openGauss=# explain (costs off) execute s1 using 1;
+           QUERY PLAN
+--------------------------------
+ Index Scan using idx1 on test1
+   Index Cond: (c1 = 1)
+(2 rows)
+```
+
