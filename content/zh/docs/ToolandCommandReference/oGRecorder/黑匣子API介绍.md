@@ -282,7 +282,7 @@ int wr_file_delete(wr_vfs_handle vfs, const char *fileName);
 
 **函数原型**  
 ```c
-int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, int *fd);
+int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, wr_file_handle *file_handle);
 ```
 
 **参数**  
@@ -298,7 +298,7 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, int *fd
   - `O_APPEND`：以追加模式打开文件，写入的数据会追加到文件末尾。  
   - `O_NONBLOCK`：以非阻塞模式打开文件。  
   - `O_SYNC`：以同步模式打开文件，确保数据直接写入存储设备。  
-- `fd`：输出参数，返回文件描述符。  
+- `file_handle`：输出参数，返回文件句柄。  
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
@@ -311,12 +311,12 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, int *fd
 
 **函数原型**  
 ```c
-int wr_file_close(wr_vfs_handle vfs, int fd);
+int wr_file_close(wr_vfs_handle vfs, wr_file_handle *file_handle);
 ```
 
 **参数**  
 - `vfs`：VFS 句柄。
-- `fd`：文件描述符。
+- `file_handle`：文件句柄。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
@@ -329,12 +329,12 @@ int wr_file_close(wr_vfs_handle vfs, int fd);
 
 **函数原型**  
 ```c
-long long int wr_file_pread(wr_vfs_handle vfs_handle, int fd, const void *buf, unsigned long long count, long long offset);
+long long int wr_file_pread(wr_vfs_handle vfs_handle, wr_file_handle file_handle, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
-- `fd`：文件描述符，表示要读取的文件。  
+- `fd`：文件句柄，包含要读取的文件信息。  
 - `buf`：读取数据的缓冲区，需预先分配内存，读取的数据将存储在此缓冲区中。  
 - `count`：要读取的字节数。  
 - `offset`：读取的起始偏移量（单位：字节）。  
@@ -350,12 +350,12 @@ long long int wr_file_pread(wr_vfs_handle vfs_handle, int fd, const void *buf, u
 
 **函数原型**  
 ```c
-long long int wr_file_pwrite(wr_vfs_handle vfs_handle, int fd, const void *buf, unsigned long long count, long long offset);
+long long int wr_file_pwrite(wr_vfs_handle vfs_handle, wr_file_handle *file_handle, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
-- `fd`：文件描述符，表示要写入的文件。  
+- `file_handle`：文件句柄，包含要写入的文件信息。  
 - `buf`：写入数据的缓冲区，需包含要写入的数据内容。  
 - `count`：要写入的字节数。  
 - `offset`：写入的起始偏移量（单位：字节）。  
@@ -371,12 +371,12 @@ long long int wr_file_pwrite(wr_vfs_handle vfs_handle, int fd, const void *buf, 
 
 **函数原型**  
 ```c
-int wr_file_truncate(wr_vfs_handle vfs, int fd, int32_t truncateType, int64_t offset);
+int wr_file_truncate(wr_vfs_handle vfs, wr_file_handle file_handle, int32_t truncateType, int64_t offset);
 ```
 
 **参数**  
 - `vfs`：VFS 句柄。
-- `fd`：文件描述符。
+- `file_handle`：文件句柄。
 - `truncateType`：截断类型（当前版本固定为 `0`）。
 - `offset`：截断偏移量（单位：字节）。
 
