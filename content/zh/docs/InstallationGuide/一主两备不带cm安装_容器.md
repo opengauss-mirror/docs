@@ -4,7 +4,7 @@
 
 ## Docker安装一主两备不带cm的openGauss步骤
 
-主备部署脚本和配置在路径 `https://gitee.com/opengauss/openGauss-server/tree/master/docker/deploy` 下面。
+主备部署脚本和配置在路径 `https://gitcode.com/opengauss/openGauss-server/tree/master/docker/deploy` 下面。
 
 1.  以root身份登录节点。
 2.  创建openGauss docker镜像(参考单节点容器安装镜像创建)
