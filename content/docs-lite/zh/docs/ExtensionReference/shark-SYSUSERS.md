@@ -113,10 +113,5 @@
             <td><strong>int</strong></td>
             <td>返回0</td>
         </tr>
-        <tr>
-            <td><strong>issqluser</strong></td>
-            <td><strong>name</strong></td>
-            <td>架构的名称</td>
-        </tr>
     </tbody>
 </table>
