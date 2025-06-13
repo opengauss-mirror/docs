@@ -1360,7 +1360,7 @@ headless: true
 				-   [DATABASES]({{< relref "./docs/ExtensionReference/shark-DATABASES.md" >}})
 			    -   [INDEXS]({{< relref "./docs/ExtensionReference/shark-INDEXS.md" >}})
 				-   [INFORMATION_SCHEMA_TSQL.CHECK_CONSTRAINTS]({{< relref "./docs/ExtensionReference/shark-INFORMATION_SCHEMA_TSQL.CHECK_CONSTRAINTS.md" >}})
-				-   [INFORMATION_SCHEMA_TSQL.COLUMUS]({{< relref "./docs/ExtensionReference/shark-INFORMATION_SCHEMA_TSQL.COLUMUS.md" >}})
+				-   [INFORMATION_SCHEMA_TSQL.COLUMNS]({{< relref "./docs/ExtensionReference/shark-INFORMATION_SCHEMA_TSQL.COLUMNS.md" >}})
 				-   [INFORMATION_SCHEMA_TSQL.TABLES]({{< relref "./docs/ExtensionReference/shark-INFORMATION_SCHEMA_TSQL.TABLES.md" >}})
 				-   [INFORMATION_SCHEMA_TSQL.VIEWS]({{< relref "./docs/ExtensionReference/shark-INFORMATION_SCHEMA_TSQL.VIEWS.md" >}})
 			    -   [OBJECTS]({{< relref "./docs/ExtensionReference/shark-OBJECTS.md" >}})

@@ -1,8 +1,8 @@
-# COLUMUS
+# COLUMNS
 
 用户定义对象和系统对象的所有列的集合。
 
-**表1** COLUMUS
+**表1** COLUMNS
 
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>
