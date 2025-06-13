@@ -917,6 +917,7 @@ headless: true
 			    -   [OBJECTS]({{< relref "./docs/ExtensionReference/shark-OBJECTS.md" >}})
 			    -   [PROCEDURES]({{< relref "./docs/ExtensionReference/shark-PROCEDURES.md" >}})
 				-   [SCHEMAS]({{< relref "./docs/ExtensionReference/shark-SCHEMAS.md" >}})
+				-   [SYSDATABASES]({{< relref "./docs/ExtensionReference/shark-SYSDATABASES.md" >}})
 			    -   [SYSCOLUMNS]({{< relref "./docs/ExtensionReference/shark-SYSCOLUMNS.md" >}})
 			    -   [SYSINDEXES]({{< relref "./docs/ExtensionReference/shark-SYSINDEXES.md" >}})
 			    -   [SYSINDEKEYS]({{< relref "./docs/ExtensionReference/shark-SYSINDEXKEYS.md" >}})
