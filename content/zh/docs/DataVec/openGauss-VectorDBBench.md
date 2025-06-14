@@ -78,7 +78,7 @@ class AwsS3Reader(DatasetReader):
 ```
 测试命令示例
 ```bash
-# vectordbbench opengausshnsw --case-type <DATASET> --k <TOPK> --concurrency-duration <DURATION> --num-concurrency <CONCURRENCY_NUM> --user-name <USERNAME> --password <PASSWORD> --host <HOST> --port <PORT> --db-name <DB_NAME> -m <M> --ef-construction <EF_CONSTRUCTION> --ef-search <EF_SEARCH>
+# vectordbbench opengausshnsw --case-type <DATASET> --k <TOPK> --concurrency-duration <DURATION> --num-concurrency <CONCURRENCY_NUM> --user-name <USERNAME> --password <PASSWORD> --host <HOST> --port <PORT> --db-name <DB_NAME> --m <M> --ef-construction <EF_CONSTRUCTION> --ef-search <EF_SEARCH>
 # ALGORITHM 测试用例类型
 # DATASET 测试用例数据集
 # TOPK 查询最近邻结果数量
@@ -97,7 +97,7 @@ vectordbbench opengausshnsw --help
 vectordbbench opengausshnswpq --help
 
 # hnsw索引测试命令
-vectordbbench opengausshnsw --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres -m 16 --ef-construction 200 --ef-search 200
+vectordbbench opengausshnsw --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres --m 16 --ef-construction 200 --ef-search 200
 # hnswpq索引测试命令
 vectordbbench opengausshnswpq --pq_m 96 --hnsw_earlystop_threshold 160 --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres --m 16 --ef-construction 200 --ef-search 200
 ```
