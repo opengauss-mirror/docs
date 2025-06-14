@@ -97,9 +97,9 @@ vectordbbench opengausshnsw --help
 vectordbbench opengausshnswpq --help
 
 # hnsw索引测试命令
-vectordbbench opengausshnsw --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres -m 16 --ef-construction 200 --ef-search 200
+vectordbbench opengausshnsw --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres --m 16 --ef-construction 200 --ef-search 200
 # hnswpq索引测试命令
-vectordbbench opengausshnswpq --pq_m 96 --hnsw_earlystop_threshold 160 --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres -m 16 --ef-construction 200 --ef-search 200
+vectordbbench opengausshnswpq --pq_m 96 --hnsw_earlystop_threshold 160 --case-type Performance768D1M --k 10 --concurrency-duration 60 --num-concurrency 1 --user-name gaussdb --password YourPassword --host 127.0.0.1 --port 5432 --db-name postgres --m 16 --ef-construction 200 --ef-search 200
 ```
 >![](figures/icon-note.png) **说明：**
 >
