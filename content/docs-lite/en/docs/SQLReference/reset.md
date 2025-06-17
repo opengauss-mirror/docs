@@ -15,7 +15,7 @@ SET configuration\_parameter TO DEFAULT
 ## Syntax<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_s3afbc03dbde14335b3bd49e0d094df41"></a>
 
 ```
-RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLATION LEVEL | SESSION AUTHORIZATION | ALL };
+RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | SESSION AUTHORIZATION | ALL };
 ```
 
 ## Parameter Description<a name="en-us_topic_0283137385_en-us_topic_0237122178_en-us_topic_0059779097_s46998dbd2cc84394b47aad2adc8ea141"></a>
@@ -33,10 +33,6 @@ RESET {configuration_parameter | CURRENT_SCHEMA | TIME ZONE | TRANSACTION ISOLAT
 -   **TIME ZONE**
 
     Specifies the time zone.
-
--   **TRANSACTION ISOLATION LEVEL**
-
-    Specifies the transaction isolation level.
 
 -   **SESSION AUTHORIZATION**
 
