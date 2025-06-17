@@ -73,3 +73,33 @@
 >默认值是不开启，较高的值会提升查询的召回率，但同时查询速度会下降。<br>
 >推荐值大小为`k*ivfflat_probes`，其中`k`为用户查询sql设置的`limit k`。如果`ivfpq_kreorder`的值小于用户查询sql设置的`limit k`，返回记录数为实际精排候选集大小。<br>
 >创建IVFPQ索引时，不设置`ivfpq_kreorder`参数或者该参数值设置不合理会导致查询结果乱序。
+
+## enable_ivfflat_npu<a name="section14941640131"></a>
+
+**参数说明**： 索引是否开启IVFFLAT-NPU加速功能。
+
+该参数属于POSTMASTER类型参数，请参考[表2](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型，on/off
+
+**默认值**： off
+
+>![](public_sys-resources/icon-note.png) **说明：**
+>
+> 启用IVFFLAT-NPU加速功能前，必须安装`libnputurbo.so`NPU加速安装包，并正确配置`DATAVEC_NPU_LIB_PATH`环境变量。否则数据库将无法正常启动。
+
+## ivfflat_npubind_info<a name="section14941640131"></a>
+
+**参数说明**： 设置IVFFLAT-NPU加速功能使用的NPU卡编号，需要同时设置`enable_ivfflat_npu`为on。
+
+**设置方式**： 1.'(ivfflat_npubind_info: 1, 2)'，使用编号为1、2的NPU卡；2. '(ivfflat_npubind_info: 0-7)'，使用编号0-7的NPU卡。
+
+**默认值**： 0
+
+## cache_data_on_npu<a name="section14941640131"></a>
+
+**参数说明**：检索时是否在 NPU 内存中缓存原始向量数据。将其设置为"on"可提升检索性能，而将其设置为"off"则可节省 NPU 内存。需要同时设置`enable_ivfflat_npu`为off。
+
+**取值范围**： 布尔型，on/off
+
+**默认值**： off
