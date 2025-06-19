@@ -5,6 +5,7 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 ## 编排第三方组件
 - [Dify](dify.md)
 - [AnythingLLM](anythingllm.md)
+- [LlamaIndex](llama_index.md)
 
 ## 嵌入模型
 - [BGE-M3](embedding-bgem3.md)

@@ -644,6 +644,7 @@ headless: true
         -   编排组件
 			-   [Dify]({{< relref "./docs/DataVec/dify.md" >}})
             -   [AnythingLLM]({{< relref "./docs/DataVec/anythingllm.md" >}})
+            -   [LlamaIndex]({{< relref "./docs/DataVec/llama_index.md" >}})
         -   嵌入模型
 			-   [BGE-M3]({{< relref "./docs/DataVec/embedding-bgem3.md" >}})
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
