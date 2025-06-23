@@ -1,9 +1,9 @@
-# 从数据到智能：openGauss+EulerCopilot的RAG架构实战
+# 从数据到智能：openGauss+openEuler Intelligence的RAG架构实战
 随着人工智能和大规模语言模型技术的崛起，传统的搜索引擎由于其只能提供简单的关键字匹配结果，已经越来越无法满足用户对于复杂、多样化和上下文相关的知识检索需求。与此相对，RAG（Retrieval-Augmented Generation）技术既借鉴了传统搜索引擎的优势，又结合了先进的大语言模型和向量数据库技术，使其能够在复杂查询和自然语言交互中表现得更为智能。这种增强生成技术在很多应用场景下都能提供更丰富和个性化的体验。那么，本地如何快速创建一个RAG智能问答模型呢？
 
-本文将使用EulerCopilot智能问答工具和openGauss向量数据库从零到一搭建一个openGauss专有领域智能问答助手，下面让我们一起逐步完成这个技术实践项目。
+本文将使用openEuler Intelligence智能问答工具和openGauss向量数据库从零到一搭建一个openGauss专有领域智能问答助手，下面让我们一起逐步完成这个技术实践项目。
 
-## Euler Copilot部署
+## openEuler Intelligence部署
 ### 1. 服务部署总览
 #### 1.1 部署图
 ![](./figures/Euler-Copilot部署图.png)
@@ -16,7 +16,7 @@
 | **工具**   | `helm`<br>`k3s`<br>`ollama` |v3.15.0<br>v1.30.3<br>0.6.5|[工具包链接](https://repo.oepkgs.net/openEuler/rpm/openEuler-22.03-LTS/contrib/eulercopilot/tools/)|
 
 ### 2. 构建RAG系统
-EulerCopilot 是一个基于 openEuler 操作系统的人工智能助手，可以帮助用户解决各种技术问题，提供技术支持和咨询服务。它使用了最先进的自然语言处理技术和机器学习算法，能够理解用户的问题并提供相应的解决方案。其安装模式灵活适配不同环境：
+openEuler Intelligence 是一个基于 openEuler 操作系统的人工智能助手，可以帮助用户解决各种技术问题，提供技术支持和咨询服务。它使用了最先进的自然语言处理技术和机器学习算法，能够理解用户的问题并提供相应的解决方案。其安装模式灵活适配不同环境：
 - 在线模式：自动拉取镜像，一键部署，适合网络畅通的云端或个人开发环境。
 - 离线模式：手动导入镜像文件，保障内网或安全敏感场景下的稳定运行。
 
@@ -28,15 +28,15 @@ EulerCopilot 是一个基于 openEuler 操作系统的人工智能助手，可�
 git clone https://gitee.com/openeuler/euler-copilot-framework.git -b dev
 ```
 2）离线模式
-- 获取Euler Copilot项目<br>
-在[Euler Copilot官方仓库](https://gitee.com/openeuler/euler-copilot-framework/tree/dev/)下载压缩包，上传至服务器并解压。
+- 获取openEuler Intelligence项目<br>
+在[openEuler Intelligence官方仓库](https://gitee.com/openeuler/euler-copilot-framework/tree/dev/)下载压缩包，上传至服务器并解压。
   ```bash
   unzip euler-copilot-framework.tar -d <YourPath>
   ```
 - 获取镜像、模型以及工具包
 
   参照1.2资源列表在
-  [Euler Copilot资源下载地址](https://repo.oepkgs.net/openEuler/rpm/openEuler-22.03-LTS/contrib/eulercopilot/)中下载需要使用的镜像、模型以及工具包。
+  [openEuler Intelligence资源下载地址](https://repo.oepkgs.net/openEuler/rpm/openEuler-22.03-LTS/contrib/eulercopilot/)中下载需要使用的镜像、模型以及工具包。
 
   确保服务器已创建以下目录，并把下载好的资源放入对应文件夹：
   ```
@@ -87,7 +87,7 @@ bash deploy.sh
 ==============================
 请输入选项编号（0-9）:
 ```
-这里只要确保每个步骤都能顺利完成且不出现错误提示，即可进入下一环节。如果以下服务pod状态都正常就可以开启访问EulerCopilot之旅啦。
+这里只要确保每个步骤都能顺利完成且不出现错误提示，即可进入下一环节。如果以下服务pod状态都正常就可以开启访问openEuler Intelligence之旅啦。
 ```
 [root@localhost euler_copilot]# kubectl get pods -A
 NAMESPACE       NAME                                      READY   STATUS      RESTARTS   AGE
@@ -111,7 +111,7 @@ kube-system     svclb-traefik-be11ef18-qzv8d              2/2     Running     0 
 kube-system     traefik-5fb479b77-pcbgr                   1/1     Running     0          29h
 ```
 
-注意，如果本地有ollama服务并拉取了embedding和chat大模型，`可以跳过3-5步骤`，在安装完EulerCopilot服务后修改模型配置即可，下面是修改步骤及内容。
+注意，如果本地有ollama服务并拉取了embedding和chat大模型，`可以跳过3-5步骤`，在安装完openEuler Intelligence服务后修改模型配置即可，下面是修改步骤及内容。
 ```bash
 cd euler-copilot-framework/deploy/chart/euler-copilot
 ```
@@ -124,9 +124,9 @@ vim values.yaml
 ```bash
 helm upgrade euler-copilot -n euler-copilot .
 ```
-其他GPU/NPU模型部署参考[大模型准备](https://gitee.com/openeuler/euler-copilot-framework/blob/master/docs/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%87%86%E5%A4%87)。
+其他GPU/NPU模型部署参考[大模型准备](https://gitee.com/openeuler/euler-copilot-framework/blob/master/documents/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/NPU%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md)。
 
-#### 2.4 访问EulerCopilot网页界面
+#### 2.4 访问openEuler Intelligence网页界面
 在访问网页前需要先配置域名：
 ```
 # 本地Windows主机中进行配置
@@ -134,14 +134,14 @@ helm upgrade euler-copilot -n euler-copilot .
 <服务器IP> authhub.eulercopilot.local(或者您自定义的域名)
 <服务器IP> www.eulercopilot.local(或者您自定义的域名)
 ```
-最后，在浏览器中输入 https://authhub.eulercopilot.local(或者您自定义的域名) 链接访问 EulerCopilot 的网页界面：
+最后，在浏览器中输入 https://authhub.eulercopilot.local(或者您自定义的域名) 链接访问 openEuler Intelligence 的网页界面：
 ![](./figures/euler-copilot-web.png)
 
 
 ### 3. 准备openGauss领域知识库
 本文以构建openGauss知识库为例，语料可以在openGauss官网中下载收集。
 
-首先选择EulerCopilot页面左侧工具栏中的知识库，注册账号登录后点击右上角的设置按钮，进行语言模型的选择。这里选择本地ollama部署的llama3.2模型，配置页面如下：
+首先选择openEuler Intelligence页面左侧工具栏中的知识库，注册账号登录后点击右上角的设置按钮，进行语言模型的选择。这里选择本地ollama部署的llama3.2模型，配置页面如下：
 
 ![](./figures/euler-copilot-database1.png)
 
@@ -161,6 +161,7 @@ helm upgrade euler-copilot -n euler-copilot .
 当专属知识库创建完成后，我们可以将其作为外部知识源集成到对话应用中，实现知识增强的智能问答功能。
 
 - 这里需要先在知识库界面获取资产库ID作为唯一标识，然后进入对话页面，将获得的ID配置到知识库关联设置中，设置页面如下：
+
 ![](./figures/euler-copilot-chat1.png)
 
 - 最后我们通过实际测试对比加入知识库前后的回答效果差异，对于"openGauss版本"的提问：<br>
@@ -168,12 +169,13 @@ helm upgrade euler-copilot -n euler-copilot .
     接入知识库后的回答表现：准确返回真实版本信息，附带版本特性说明<br>
 
     知识库的引入有效杜绝了大模型的虚构回答，确保技术细节的准确性和可靠性。
+    
   ![](./figures/euler-copilot-chat2.jpg)
 
-至此，基于openGauss向量数据库的EulerCopilot搭建圆满完成。​
+至此，基于openGauss向量数据库的openEuler Intelligence搭建圆满完成。​
 ## 总结
-通过本文的实践，我们不仅成功构建了一个基于EulerCopilot和openGauss的专有领域智能问答系统，更验证了RAG技术在解决传统搜索局限性方面的强大潜力。这个项目充分展示了如何将前沿的AI技术与专业领域知识深度结合，为开发者提供了一条可复现的技术升级路径。期待读者能将此方案拓展到更多业务场景，推动知识检索技术向更智能、更精准的方向持续演进。
+通过本文的实践，我们不仅成功构建了一个基于openEuler Intelligence和openGauss的专有领域智能问答系统，更验证了RAG技术在解决传统搜索局限性方面的强大潜力。这个项目充分展示了如何将前沿的AI技术与专业领域知识深度结合，为开发者提供了一条可复现的技术升级路径。期待读者能将此方案拓展到更多业务场景，推动知识检索技术向更智能、更精准的方向持续演进。
 
 ### 参考资料
-- [Euler Copilot无网络环境下部署指南](https://gitee.com/openeuler/euler-copilot-framework/blob/master/docs/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/%E6%97%A0%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md#https://gitee.com/link?target=https%3A%2F%2Frepo.oepkgs.net%2FopenEuler%2Frpm%2FopenEuler-22.03-LTS%2Fcontrib%2Feulercopilot%2F)
-- [Euler Copilot网络环境下部署指南](https://gitee.com/openeuler/euler-copilot-framework/blob/master/docs/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md)
+- [Euler Copilot无网络环境下部署指南](https://gitee.com/openeuler/euler-copilot-framework/blob/master/documents/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/%E6%97%A0%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md)
+- [Euler Copilot网络环境下部署指南](https://gitee.com/openeuler/euler-copilot-framework/blob/master/documents/user-guide/%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md)

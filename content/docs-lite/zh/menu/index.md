@@ -645,6 +645,8 @@ headless: true
 			-   [Dify]({{< relref "./docs/DataVec/dify.md" >}})
             -   [AnythingLLM]({{< relref "./docs/DataVec/anythingllm.md" >}})
             -   [LlamaIndex]({{< relref "./docs/DataVec/llama_index.md" >}})
+			-   [openEuler Intelligence]({{< relref "./docs/DataVec/eulercopilot.md" >}})
+			-   [RAGFlow]({{< relref "./docs/DataVec/ragflow.md" >}})
         -   嵌入模型
 			-   [BGE-M3]({{< relref "./docs/DataVec/embedding-bgem3.md" >}})
 			-   [Nomic]({{< relref "./docs/DataVec/embedding-nomic.md" >}})
