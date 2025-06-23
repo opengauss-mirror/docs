@@ -8,6 +8,7 @@
 
 -   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
 -   新增支持 `AS expr [PERSISTED]` 生成列语法
+-   新增支持`opt_clustered`语法
 
 ## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -50,6 +51,20 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ]
     ```
 
+-   其中表约束table\_constraint为：
+
+    ```
+    [ CONSTRAINT [ constraint_name ] ]
+    { CHECK ( expression ) |
+      UNIQUE [ opt_clustered ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      PRIMARY KEY [ opt_clustered ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
+    ```
+
 ## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
 + **AS \( generation\_expr \) \[PERSISTED\]**
@@ -61,6 +76,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
   >-   PERSISTED关键字可省略，与不省略PERSISTED语义相同。
   >-   兼容D库的生成列无需指定列类型，由表达式计算类型得到列的类型。
   >-   兼容D库的生成列在删除生成列依赖的普通列时报错，必须先删除生成列，才能删除生成列依赖的普通列。
+
+-   **opt\_clustered**
+
+    参数内容为CLUSTERED/NONCLUSTERED，兼容D库的语法，指定创建聚合/非聚合索引。仅语法作用，没有实际功能。
 
 ## 生成列示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
