@@ -4,9 +4,9 @@
 
 DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存在，将删除表中所有行，结果只保留表结构。
 
-## 注意事项<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda17"></a>b
+## 注意事项<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_sfc96c070e8574f4ea9a2726e898fda17"></a>
 
-本章节仅包含shark新增语法，原openGauss的UPDATE语法未作修改。原openGauss的UPDATE语法请参考章节[DELETE](../SQLReference/DELETE.md)
+本章节仅包含shark新增语法，原openGauss的UPDATE语法未作修改。原openGauss的UPDATE语法请参考章节[DELETE](../SQLReference/DELETE.md)。
 
 ## 语法格式<a name="zh-cn_topic_0283136795_zh-cn_topic_0237122131_zh-cn_topic_0059778379_s84baecef89484d5f87f57b0545b46202"></a>
 
