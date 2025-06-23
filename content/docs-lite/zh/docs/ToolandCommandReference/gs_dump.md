@@ -248,6 +248,9 @@ gs_dump [OPTION]... [DBNAME]
 
     只转储对象定义（模式），而非数据。
 
+    ![](public_sys-resources/icon-note.gif) **说明：**  
+    -   当-s指定时，导出interval分区表不会导出自动扩展出的分区；反之会导出，并且原先'i'类型的分区，作为初始分区导入后，分区类型为'r'。
+
 -   -S, --sysadmin=NAME
 
     该参数为扩展预留接口，不建议使用。
