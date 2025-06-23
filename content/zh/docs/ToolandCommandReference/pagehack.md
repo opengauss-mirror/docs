@@ -24,7 +24,7 @@ pagehack [OPTIONS]
 
     需要修改的数据库目录，确保路径正确。
 
--   -t { heap| fsm| uheap| btree_index| undo| pca| filenode_map| pg_internal_init| twophase| cu| slot| pg_control| clog| csnlog| gaussdb_state| double_write| dw_single_flush_file| undo_zone| undo_space| undo_slot_space| undo_slot| undo_record| undo_fix| segment| lsn_info_meta| block_info_meta }
+-   -t { heap| fsm| uheap| btree_index| ubtree_index| ubtree_pcr_index| undo| pca| filenode_map| pg_internal_init| twophase| cu| slot| pg_control| clog| csnlog| gaussdb_state| double_write| dw_single_flush_file| undo_zone| undo_space| undo_slot_space| undo_slot| undo_record| undo_fix| segment| lsn_info_meta| block_info_meta }
 
     要解析的数据库文件。
 
@@ -112,6 +112,16 @@ pagehack -f [filename] -t uheap
 + 解析 btree index 页面。
 ```
 pagehack -f [filename] -t btree_index
+```
+
++ 解析 ubtree index 页面。
+```
+pagehack -f [filename] -t ubtree_index
+```
+
++ 解析 ubtree pcr index 页面。
+```
+pagehack -f [filename] -t ubtree_pcr_index
 ```
 
 + 解析 undo 文件的头。
