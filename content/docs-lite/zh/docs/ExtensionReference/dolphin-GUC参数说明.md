@@ -106,7 +106,7 @@
 
 - no_auto_value_on_zero: 影响AUTO_INCREMENT列的处理。通常情况下，您可以通过向列中插入NULL或0来生成列的下一个序列编号。NO_AUTO_VALUE_ON_ZERO抑制了对0的这种行为，因此只有NULL才能生成下一个序列编号。
 
-- disable_escape_bytea：是否一直使用对16进制进行解释，入股此参数开启，等同与standard_conforming_strings对0x开头的16进制不起效，作用如下所示：
+- disable_escape_bytea：是否一直使用对16进制进行解释，如果此参数开启，等同与standard_conforming_strings对0x开头的16进制不起效，作用如下所示：
 
   ```
   openGauss=# create table blob_table(c1 blob);
@@ -1038,7 +1038,7 @@ openGauss=# set lower_case_table_names = default;
 SET
 ```
 
-## b\_compatibility\_show\_warning\_count
+## max_error_count
 
 **参数说明**：控制show warnings/erros语句，输出的error, warning, note信息的最大数量，默认值是64，该参数范围是0~65535。
 
