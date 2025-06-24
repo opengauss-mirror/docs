@@ -31,7 +31,7 @@ GS\_SQL\_LIMIT系统表存储所有SQL防火墙规则的信息。
 </td>
 <td class="cellrowborder" valign="top" width="17.77177717771777%" headers="mcps1.2.4.1.2 "><p id="p13746104913219"><a name="p13746104913219"></a><a name="p13746104913219"></a>boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="63.48634863486349%" headers="mcps1.2.4.1.3 "><p id="p1574664962111"><a name="p1574664962111"></a><a name="p1574664962111"></a>是否生效。</p>
+<td class="cellrowborder" valign="top" width="63.48634863486349%" headers="mcps1.2.4.1.3 "><p id="p1574664962111"><a name="p1574664962111"></a><a name="p1574664962111"></a>是否生效。当时间范围无效或最大并发数为负时，表示不生效。</p>
 </td>
 </tr>
 <tr id="row52941515106"><td class="cellrowborder" valign="top" width="18.74187418741874%" headers="mcps1.2.4.1.1 "><p id="p82941551161014"><a name="p82941551161014"></a><a name="p82941551161014"></a>work_node</p>

@@ -245,7 +245,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p3437223182714"><a name="p3437223182714"></a><a name="p3437223182714"></a>boolean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p443810230277"><a name="p443810230277"></a><a name="p443810230277"></a>规则是否生效。</p>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p443810230277"><a name="p443810230277"></a><a name="p443810230277"></a>规则是否生效。当时间范围无效或最大并发数为负时，值为false。</p>
     </td>
     </tr>
     <tr id="row943892342719"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p5438223162710"><a name="p5438223162710"></a><a name="p5438223162710"></a>输出参数</p>
@@ -323,7 +323,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="11.799999999999999%" headers="mcps1.2.5.1.3 "><p id="p3437223182714"><a name="p3437223182714"></a><a name="p3437223182714"></a>boolean</p>
     </td>
-    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p443810230277"><a name="p443810230277"></a><a name="p443810230277"></a>规则是否生效。</p>
+    <td class="cellrowborder" valign="top" width="50.77%" headers="mcps1.2.5.1.4 "><p id="p443810230277"><a name="p443810230277"></a><a name="p443810230277"></a>规则是否生效。当时间范围无效或最大并发数为负时，值为false。</p>
     </td>
     </tr>
     <tr id="row943892342719"><td class="cellrowborder" valign="top" width="11.690000000000001%" headers="mcps1.2.5.1.1 "><p id="p5438223162710"><a name="p5438223162710"></a><a name="p5438223162710"></a>输出参数</p>
