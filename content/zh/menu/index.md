@@ -2180,6 +2180,7 @@ headless: true
     	-   [黑匣子API介绍]({{< relref "./docs/ToolandCommandReference/oGRecorder/黑匣子API介绍.md" >}})
     	-   [黑匣子错误日志信息参考]({{< relref "./docs/ToolandCommandReference/oGRecorder/黑匣子错误日志信息参考.md" >}})
     	-   [黑匣子配置参数介绍]({{< relref "./docs/ToolandCommandReference/oGRecorder/黑匣子配置参数介绍.md" >}})
+    	-   [黑匣子双向认证介绍]({{< relref "./docs/ToolandCommandReference/oGRecorder/黑匣子双向认证介绍.md" >}})
     -   [openGauss可运行脚本功能说明]({{< relref "./docs/ToolandCommandReference/openGauss可运行脚本功能说明.md" >}})
     -   [gs\_collector工具支持收集的系统表和视图列表]({{< relref "./docs/ToolandCommandReference/gs_collector工具支持收集的系统表和视图列表.md" >}})
     -   [DataKit]({{< relref "./docs/ToolandCommandReference/DataKit.md" >}})

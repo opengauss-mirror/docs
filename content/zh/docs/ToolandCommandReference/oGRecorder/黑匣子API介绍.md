@@ -292,16 +292,18 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, wr_file
   - `O_RDONLY`：以只读模式打开文件。  
   - `O_WRONLY`：以只写模式打开文件。  
   - `O_RDWR`：以读写模式打开文件。  
-  - `O_CREAT`：如果文件不存在，则创建文件。  
   - `O_EXCL`：与 `O_CREAT` 一起使用时，如果文件已存在，则返回错误。  
-  - `O_TRUNC`：如果文件已存在且以写模式打开，则清空文件内容。  
   - `O_APPEND`：以追加模式打开文件，写入的数据会追加到文件末尾。  
   - `O_NONBLOCK`：以非阻塞模式打开文件。  
   - `O_SYNC`：以同步模式打开文件，确保数据直接写入存储设备。  
 - `file_handle`：输出参数，返回文件句柄。  
 
 **返回值**  
-成功返回 `0`，失败返回错误码。
+成功返回 `0`，失败返回错误码。  
+
+**备注**  
+- 禁止通过调用`O_CREAT`方式创建文件。  
+- 在worm文件系统中不支持`O_TRUNC`。
 
 ---
 
@@ -391,7 +393,7 @@ int wr_file_truncate(wr_vfs_handle vfs, wr_file_handle file_handle, int32_t trun
 
 **函数原型**  
 ```c
-int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count);
+int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count, int *mode, char **time);
 ```
 
 **参数**  
@@ -399,8 +401,29 @@ int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offs
 - `fileName`：文件名称。
 - `offset`：输出参数，返回文件已写入偏移量。
 - `count`：输出参数，返回文件大小（目前conut与offset结果一致）。
+- `mode`：输出参数，返回文件状态（文件有初始态、锁定态、追加态、过期态四种状态，返回0代表文件处于初始态，1代表文件处于锁定态，2代表文件处于追加态，3代表文件处于过期态）。
+- `time`：输出参数，返回文件过期时间。
 
 **返回值**  
+成功返回 `0`，失败返回错误码。
+
+---
+
+### wr_file_postpone
+**接口描述**
+延长文件过期时间。
+
+**函数原型**
+```c
+int wr_file_postpone(wr_vfs_handle vfs_handle, const char *file, const char *time);
+```
+
+**参数**
+- `vfs_handle`：VFS句柄。
+- `file`：文件名称。
+- `time`：过期时间，输入参数，格式为`%Y-%m-%d %H:%M:%S`，需要晚于当前文件过期时间。
+
+**返回值**
 成功返回 `0`，失败返回错误码。
 
 ---
