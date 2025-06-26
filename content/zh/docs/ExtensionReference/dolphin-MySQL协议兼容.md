@@ -16,6 +16,7 @@
 
 -   不支持游标（指在JDBC中通过useCursorFetch、setFetchSize的方式获取数据）。
 -   不支持执行存储过程。
+-   openGauss支持TLS 1.2协议标准，而部分MySQL命令行客户端版本仅支持TLS 1和TLS 1.1，例如5.7.27，因此不支持以SSL模式连接openGauss。客户端支持TLS版本情况可通过mysql --help查看。
 
 ## 使用方式
 
