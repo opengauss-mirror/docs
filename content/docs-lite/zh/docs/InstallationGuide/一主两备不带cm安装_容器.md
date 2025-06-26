@@ -1,10 +1,10 @@
-# 一主两备不带cm安装_容器
+# 轻量版一主两备不带cm安装_容器
 
 ### 1. 获取镜像
 参考[容器镜像安装](./容器镜像安装.md)，获取openGauss docker镜像并且修改镜像名称
 ```
-# 9763e8b26794需修改为安装镜像对应的IMAGE ID
-docker tag 9763e8b26794 opengauss:7.0.0-RC1
+# 9aa832ba6684需修改为安装镜像对应的IMAGE ID
+docker tag 9aa832ba6684 opengauss:7.0.0-RC1
 ```
 ### 2. 获取主备容器化部署脚本
 
