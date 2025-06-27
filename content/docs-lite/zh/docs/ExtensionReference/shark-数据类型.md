@@ -2,3 +2,4 @@
 
 -   **[字符类型](shark-字符类型.md)**  
 -   **[sql_variant类型](shark-sql_variant类型.md)**
+-   **[varbinary类型](varbinary类型.md)**
