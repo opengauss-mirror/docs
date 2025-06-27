@@ -43,12 +43,44 @@
         <tr>
             <td><strong>type</strong></td>
             <td><strong>char(2)</strong></td>
-            <td>对象类型。当前支持类型：  <br/>AF = Aggregate function<br/>C = Check constraint<br/>D = Default<br/>F = Foreign key constraint<br/>FN = SQL scalar function<br/>P = SQL stored procedure<br/>PK = Primary key constraint<br/>S = System base table<br/>SN = Synonym<br/>SO = Sequence object<<br/>U = Table<br/>V = View<br/>TR = SQL DML trigger<br/>UQ = unique constraint</td>
+            <td>
+            对象类型。当前支持类型：<br/>
+            AF = AGGREGATE_FUNCTION<br/>
+            C = CHECK_CONSTRAINT<br/>
+            D = DE<br/>
+            F = FOREIGN_KEY_CONSTRAINT<br/>
+            FN = SQL_SCALAR_FUNCTION<br/>
+            P = SQL_STORED_PROCEDURE<br/>
+            PK = PRIMARY_KEY_CONSTRAINT<br/>
+            S = SYSTEM_BASE_TABLE<br/>
+            SN = SYNONYM<br/>
+            SO = SEQUENCE_OBJECT<br/>
+            U = USER_TABLE<br/>
+            V = VIEW<br/>
+            TR = SQL DML trigger<br/>
+            UQ = UNIQUE_CONSTRAINT
+            </td>
         </tr>
         <tr>
             <td><strong>type_desc</strong></td>
             <td><strong>nvarchar(60)</strong></td>
-            <td>对象类型描述。当前支持类型：  <br/Aggregate function<br/>Check constraint<br/>Default<br/>Foreign key constraint<br/>SQL scalar function<br/>SQL stored procedure<br/>Primary key constraint<br/>System base table<br/> Synonym<br/>Sequence object<<br/>Table<br/>View<br/>SQL DML trigger<br/>unique constraint</td>
+            <td>
+            对象类型描述。当前支持类型：<br/>
+            AGGREGATE_FUNCTION<br/>
+            CHECK_CONSTRAINT<br/>
+            DE<br/>
+            FOREIGN_KEY_CONSTRAINT<br/>
+            SQL_SCALAR_FUNCTION<br/>
+            SQL_STORED_PROCEDURE<br/>
+            PRIMARY_KEY_CONSTRAINT<br/>
+            SYSTEM_BASE_TABLE<br/>
+            SYNONYM<br/>
+            SEQUENCE_OBJECT<br/>
+            USER_TABLE<br/>
+            VIEW<br/>
+            SQL DML trigger<br/>
+            UNIQUE_CONSTRAINT
+            </td>
         </tr>
         <tr>
             <td><strong>create_date</strong></td>
