@@ -860,8 +860,8 @@ INSERT 0 1
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的database同mysql的database体系不一致，因此dolphin需要选择一个opengauss的数据库实例。
 
 **取值范围**：字符串
 
@@ -1042,8 +1042,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1057,8 +1057,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
@@ -1072,8 +1072,8 @@ openGauss=# select 1,1.23;
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
->-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dophin需要提供SSL文件信息。
+>-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
+>-   由于opengauss的SSL通信同mysql的SSL通信体系不一致，因此dolphin需要提供SSL文件信息。
 
 **取值范围**：字符串
 
