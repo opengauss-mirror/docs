@@ -313,12 +313,13 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, wr_file
 
 **函数原型**  
 ```c
-int wr_file_close(wr_vfs_handle vfs, wr_file_handle *file_handle);
+int wr_file_close(wr_vfs_handle vfs, wr_file_handle *file_handle, bool need_lock);
 ```
 
 **参数**  
 - `vfs`：VFS 句柄。
 - `file_handle`：文件句柄。
+- `need_lock`：文件是否进入锁定态，`true`表示文件进入锁定态，`false`表示文件不进入锁定态（Dorado Worm存储中文件有初始态、锁定态、保护态和过期态四种状态）。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
