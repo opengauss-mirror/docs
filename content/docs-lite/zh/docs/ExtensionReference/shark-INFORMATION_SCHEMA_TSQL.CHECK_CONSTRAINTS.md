@@ -1,6 +1,6 @@
 # CHECK_CONSTRAINTS
 
-用户定义对象和系统对象的所有列的集合。
+CHECK_CONSTRAINTS视图返回数据库中的约束信息。
 
 **表1** CHECK_CONSTRAINTS
 

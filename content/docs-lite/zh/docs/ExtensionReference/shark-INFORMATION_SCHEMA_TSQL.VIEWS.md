@@ -1,6 +1,6 @@
 # VIEWS 
 
-用户定义对象和系统对象的所有列的集合。
+VIEWS视图返回数据库中的视图信息。
 
 **表1** VIEWS 
 
@@ -26,7 +26,7 @@
         <tr>
             <td><strong>TABLE_NAME</strong></td>
             <td><strong>nvarchar(128)</strong></td>
-            <td>表或视图名称</td>
+            <td>视图名称</td>
         </tr>
         <tr>
             <td><strong>VIEW_DEFINITION</strong></td>

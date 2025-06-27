@@ -1,6 +1,6 @@
 # DATABASES
 
-用户定义对象和系统对象的所有列的集合。
+DATABASES视图返回数据库的信息。
 
 **表1** DATABASES
 

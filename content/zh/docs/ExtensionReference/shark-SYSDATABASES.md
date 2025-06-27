@@ -1,6 +1,6 @@
 # SYSDATABASES
 
-用户定义对象和系统对象的所有列的集合。
+SYSDATABASES视图返回数据库的信息。
 
 **表1** SYSDATABASES
 

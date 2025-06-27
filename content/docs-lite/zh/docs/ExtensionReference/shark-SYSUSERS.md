@@ -1,6 +1,6 @@
 # SYSUSERS
 
-用户定义对象和系统对象的所有列的集合。
+SYSUSERS视图返回数据库中的用户信息。
 
 **表1** SYSUSERS
 
