@@ -4,6 +4,8 @@
 
 用户根据openGauss提供的新特性和数据库现状，确定是否对现有系统进行升级。
 
+当前升级会先校验各个节点的资源情况，并根据结果是否进行升级。
+
 当前支持的升级模式为就地升级和灰度升级。升级方式的策略又分为大版本升级和小版本升级。
 
 用户挑选升级方式后，系统会自动判断并选择合适的升级策略。
@@ -147,6 +149,10 @@
 
   默认情况下，禁止升级到发布时间较早的版本。例如，不允许从 2026 年发布的 6.x.x 版本升级至 2025 年发布的7.0.0 RC1版本。如需绕过发布时间校验，可使用 --bypass-stale-check 参数。
 
+- --skip-resource-check
+
+  默认情况下，升级前会校验各个节点的资源情况。如需绕过资源检查，可使用 --skip-resource-check 参数。
+
 ## 示例<a name="zh-cn_topic_0287275999_zh-cn_topic_0237152425_zh-cn_topic_0059779035_s6c0afe9e35134c4c9959768123dad038"></a>
 
 **示例一**：升级前使用新包进行前置操作。
@@ -204,6 +210,8 @@ PreInstallationGuide succeeded.
 
 ```shell
 gs_upgradectl -t auto-upgrade -X /data/xml/3node_3c3d_1m2s_etcd.xml
+Start check pre upgrade.
+Successfully checked pre upgrade.
 Static configuration matched with old static configuration files.
 Performing inplace rollback.
 Rollback succeeded.
