@@ -89,7 +89,7 @@ GUC参数`cache_data_on_npu` = (on|off)：表示检索时是否在 NPU 内存中
 ### 关闭IVFFLAT-NPU特性
 设置GUC参数`enable_ivfflat_npu = off`关闭IVFFLAT-NPU特性。
 
-IVFFLAT-NPU特性相关GUC参数详情请参见[DataVec向量引擎参数](../../../docs-lite/zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+IVFFLAT-NPU特性相关GUC参数详情请参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
 ## 5.使用IVFFLAT-NPU
 
