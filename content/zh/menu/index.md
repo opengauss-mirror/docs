@@ -81,6 +81,7 @@ headless: true
 	    	-   [指定节点升级]({{< relref "./docs/AboutopenGauss/指定节点升级.md" >}})
 	    	-   [支持WDR诊断报告]({{< relref "./docs/AboutopenGauss/支持WDR诊断报告.md" >}})
 	    	-   [慢SQL诊断]({{< relref "./docs/AboutopenGauss/慢SQL诊断.md" >}})
+	    	-   [监控告警]({{< relref "./docs/AboutopenGauss/监控告警.md" >}})
 	    	-   [Session性能诊断]({{< relref "./docs/AboutopenGauss/Session性能诊断.md" >}})
 	    	-   [系统KPI辅助诊断]({{< relref "./docs/AboutopenGauss/系统KPI辅助诊断.md" >}})
 	    	-   [内置stack工具]({{< relref "./docs/AboutopenGauss/内置stack工具.md" >}})
