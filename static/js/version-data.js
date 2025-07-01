@@ -10,7 +10,7 @@ const versionObjZh = {
     homePath: "/docs/GettingStarted/GettingStarted.html",
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
-    state: "Preview",
+    state: "RC",
   },
   "6.0.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
@@ -22,7 +22,7 @@ const versionObjZh = {
     homePath: "/docs/GettingStarted/GettingStarted.html",
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
-    state: "Preview",
+    state: "RC",
   },
   "5.1.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
@@ -111,7 +111,7 @@ const versionObjEn = {
     homePath: "/docs/GettingStarted/GettingStarted.html",
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
-    state: "Preview",
+    state: "RC",
   },
   "6.0.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
@@ -123,7 +123,7 @@ const versionObjEn = {
     homePath: "/docs/GettingStarted/GettingStarted.html",
     homeLitePath: "/docs/GettingStarted/GettingStarted.html",
     downLink: "",
-    state: "Preview",
+    state: "RC",
   },
   "5.1.0": {
     homePath: "/docs/GettingStarted/GettingStarted.html",
