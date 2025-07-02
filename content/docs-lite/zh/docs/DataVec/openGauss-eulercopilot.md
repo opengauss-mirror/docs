@@ -23,9 +23,9 @@ openEuler Intelligence 是一个基于 openEuler 操作系统的人工智能助�
 两种模式仅在资源准备阶段存在差异，后续使用流程完全一致，用户可根据实际需求自由选择。
 
 #### 2.1 准备资源
-1）在线模式
+1）在线模式(这里以realease-0.9.5版本为例)
 ```bash
-git clone https://gitee.com/openeuler/euler-copilot-framework.git -b dev
+git clone https://gitee.com/openeuler/euler-copilot-framework.git -b release-0.9.5
 ```
 2）离线模式
 - 获取openEuler Intelligence项目<br>
@@ -36,7 +36,7 @@ git clone https://gitee.com/openeuler/euler-copilot-framework.git -b dev
 - 获取镜像、模型以及工具包
 
   参照1.2资源列表在
-  [openEuler Intelligence资源下载地址](https://repo.oepkgs.net/openEuler/rpm/openEuler-22.03-LTS/contrib/eulercopilot/)中下载需要使用的镜像、模型以及工具包。
+  [openEuler Intelligence资源下载地址](https://repo.oepkgs.net/openEuler/rpm/openEuler-22.03-LTS/contrib/eulercopilot/)中下载需要使用的镜像、模型以及工具包。`注意镜像版本需要和项目版本一致`，以release-0.9.5为例，镜像版本也需要下载0.9.5版本。
 
   确保服务器已创建以下目录，并把下载好的资源放入对应文件夹：
   ```
@@ -45,6 +45,10 @@ git clone https://gitee.com/openeuler/euler-copilot-framework.git -b dev
   ├── models/    # 存放模型文件
   └── tools/     # 存放工具包
   ```
+  注意在运行前检查以下目录权限是否为root权限（其中semantics是服务运行时生成的，可忽略）
+
+  ![](./figures/eulercopilot-root.png)
+
 在线模式和离线模式仅在资源准备阶段不同，后续步骤完全一致。
 #### 2.2 运行部署脚本
 ```bash
@@ -87,6 +91,9 @@ bash deploy.sh
 ==============================
 请输入选项编号（0-9）:
 ```
+>注意：<br>
+>如果运行脚本过程中镜像无法导入k3s，可以运行`k3s ctr images import xxx.tar`手动导入镜像至k3s。<br>
+
 这里只要确保每个步骤都能顺利完成且不出现错误提示，即可进入下一环节。如果以下服务pod状态都正常就可以开启访问openEuler Intelligence之旅啦。
 ```
 [root@localhost euler_copilot]# kubectl get pods -A
@@ -119,6 +126,8 @@ cd euler-copilot-framework/deploy/chart/euler-copilot
 vim values.yaml
 ```
 ![](./figures/eulercopilot-model-value.png)
+
+注意字段`name、key、endpoint`都是必填项。
 
 按照上图修改模型名称后更新euler-copilot的部署：
 ```bash
