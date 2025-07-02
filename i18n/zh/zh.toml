@@ -186,7 +186,7 @@ other = "文档地图"
 [lts_version]
 other = "长期支持版本 (LTS)"
 [innovation_version]
-other = "社区创新版本 (Preview)"
+other = "社区创新版本 (RC)"
 [archive_version]
 other = "归档版本"
 [latest_version]

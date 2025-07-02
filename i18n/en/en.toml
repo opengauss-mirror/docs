@@ -178,7 +178,7 @@ other = "Doc Map"
 [lts_version]
 other = "Long term Support Version (LTS)"
 [innovation_version]
-other = "Community Innovation Version (Preview)"
+other = "Community Innovation Version (RC)"
 [archive_version]
 other = "Archived version"
 [latest_version]
