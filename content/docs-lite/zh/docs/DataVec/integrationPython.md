@@ -2,7 +2,9 @@
 本文介绍如何使用Python语言调用openGauss向量数据库
 
 ## 环境准备
-限制：python3.11及以上
+限制：<br>
+如果数据库非OM工具安装，建议python版本为3.11及以上<br>
+如果数据库是OM工具安装，建议python版本为3.6-3.10
 - 在线安装
 ```bash
 pip3 install psycopg2
