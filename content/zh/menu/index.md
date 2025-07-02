@@ -624,6 +624,7 @@ headless: true
 	-	[备份与恢复]({{< relref "./docs/DatabaseOMGuide/备份与恢复.md" >}})
 		-	[概述]({{< relref "./docs/DatabaseOMGuide/备份与恢复概述.md" >}})
 		-	[配置文件的备份与恢复]({{< relref "./docs/DatabaseOMGuide/配置文件的备份与恢复.md" >}})
+		-	[主库备库坏块修复功能]({{< relref "./docs/DatabaseOMGuide/主库备库坏块修复功能.md" >}})
 		-	[逻辑备份与恢复]({{< relref "./docs/DatabaseOMGuide/逻辑备份与恢复.md" >}})
 		-	[物理备份与恢复]({{< relref "./docs/DatabaseOMGuide/物理备份与恢复.md" >}})
 		-	[闪回恢复]({{< relref "./docs/DatabaseOMGuide/闪回恢复.md" >}})
