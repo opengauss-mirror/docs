@@ -2,7 +2,7 @@
 本文介绍如何使用C#语言调用openGauss向量数据库。
 
 ## 环境要求
-- 使用`donet --versin`查看是否安装.NET开发工具，若无，则需安装donet-sdk
+- 使用`dotnet --version`查看是否安装.NET开发工具，若无，则需安装dotnet-sdk
 - 安装相关库
    ```
     dotnet add package Pgvector
@@ -12,7 +12,7 @@
 ## 基本操作
 ### 1.连接数据库
 ```C#
-public NpgsqlConnection Connect(string connStr)
+public async Task<NpgsqlConnection> Connect(string connStr)
 {
     var dataSourceBuilder = new NpgsqlDataSourceBuilder(connStr);
     dataSourceBuilder.UseVector();
@@ -81,8 +81,8 @@ public async Task UpdateDataAsync(NpgsqlConnection conn, Vector vector, int id)
 ```C#
 public async Task<System.Collections.Generic.List<(int, Vector)>> QueryAsync(NpgsqlConnection conn, Vector vector, int limit)
 {
-    const string query = "SELECT * FROM items ORDER BY embedding <-> $1 LIMIT @limit"
-    cmd = new NpgsqlCommand(query, conn);
+    const string query = "SELECT * FROM items ORDER BY embedding <-> $1 LIMIT $2"
+    await using var cmd = new NpgsqlCommand(query, conn);
     cmd.Parameters.AddWithValue(vector).DataTypeName = "vector";
     cmd.Parameters.AddWithValue(limit);
 
@@ -104,7 +104,7 @@ public async Task<System.Collections.Generic.List<(int, Vector)>> QueryAsync(Npg
 public async Task DropTableAsync(NpgsqlConnection conn)
 {
     const string drop = "DROP TABLE IF EXISTS items";
-    await using var cmd = new NpgsqlCommand(drop, conn)
+    await using var cmd = new NpgsqlCommand(drop, conn);
     await cmd.ExecuteNonQueryAsync();
 }
 ```
