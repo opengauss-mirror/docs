@@ -11,7 +11,6 @@ npm install & npm run build
 ### 1.连接数据库
 ```javascript
 const connect = async (host, port, username, database, password) => {
-    const client = new Client();
     const config = {
         host: host,
         port: port,
@@ -20,7 +19,8 @@ const connect = async (host, port, username, database, password) => {
         password: password
     };
 
-    await client.connect(config);
+    const client = new Client(config);
+    await client.connect();
     return client;
 }
 ```
@@ -82,6 +82,7 @@ const query = async (client, table_name, vector, topk) => {
         SELECT * FROM public.${table_name} ORDER BY embedding <-> '${vector}'::vector LIMIT ${topk}::int;
     `;
     const result = await client.query(querystr);
+    return result;
 }
 ```
 
@@ -107,11 +108,19 @@ const close = async (client) => {
 const client = connect('host', 5432, 'username', 'postgres', 'password');
 create_table(client, 'test_table1', 3);
 create_index(client, 'test_table1', 'idx_test1');
-insert_vector(client, 'test_table1', [1.2, 3, 5], 0);
-insert_vector(client, 'test_table1', [4.3, 5.2, 1], 1);
-update_vector(client, 'test_table1', [1, 3, 3], 1);
-query(client, 'test_table1', [1, 2, 2], 1);
+insert_vector(client, 'test_table1', '[1.2, 3, 5]', 0);
+insert_vector(client, 'test_table1', '[4.3, 5.2, 1]', 1);
+update_vector(client, 'test_table1', '[1, 3, 3]', 1);
+query(client, 'test_table1', '[1, 2, 2]', 1);
 delete_vector(client, 'test_table1', 0);
 delete_table(client, 'test_table1');
 close(client);
+```
+注：实例SDK代码中，函数均为async函数，实际使用中需要视情况增加await。
+
+```javascript
+const client = await connect('host', 5432, 'username', 'postgres', 'password');
+await create_table(client, 'test_table1', 3);
+...
+await close(client);
 ```
