@@ -36,6 +36,14 @@ OPENGAUSS_DATABASE=
 ```bash
 docker-compose up -d
 ```
+注：此处可能由以下原因失败：
+1. 无权限导致失败，由于docker compose后，部分数据通过docker文件夹映射。非root启动的docker可能因为权限问题失败。通过设置权限可以解决。
+```
+chmod 777 -R /path/to/anything-llm
+```
+建议使用更严格的权限管理策略，此处仅为演示
+2. docker compose过程中需要从docker官方/npm/yarn/github等地获取依赖包。如果无法正常访问可能造成异常。建议使用网络通畅的环境构建镜像。
+
 容器启动后执行docker ps确保服务都正常运行
 
 ### 创建用户并登陆

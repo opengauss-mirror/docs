@@ -14,6 +14,13 @@ pip install llama-index-vector-stores-opengauss
 ### 撰写代码
 LlamaIndex可以自定义流程，以下为openGauss配合ollama构成RAG应用的demo：
 注意，需要在同目录下新建data文件夹，并在文件夹内存放文档
+
+安装所需依赖：
+```bash
+pip install llama-index-llms-ollama
+pip install llama-index-embeddings-ollama
+```
+
 ```python
 import os
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, StorageContext
