@@ -2,7 +2,7 @@
 AnythingLLM是一个全栈应用程序，可以将任何文档、资源（如网址链接、音频、视频）或内容片段转换为上下文，以便任何大语言模型（LLM）在聊天期间作为参考使用。此应用允许您自定义LLM模型，并通过openGauss向量数据库RAG方案，解决大模型"幻视"问题，同时支持多用户管理并设置不同权限。
 
 ## openGauss容器化部署
-详见[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
+详见[容器镜像安装](https://docs.opengauss.org/zh/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
 ## AnythingLLM部署
 ### 获取AnythingLLM源码
@@ -36,6 +36,14 @@ OPENGAUSS_DATABASE=
 ```bash
 docker-compose up -d
 ```
+注：此处可能由以下原因失败：
+1. 无权限导致失败，由于docker compose后，部分数据通过docker文件夹映射。非root启动的docker可能因为权限问题失败。通过设置权限可以解决。
+```
+chmod 777 -R /path/to/anything-llm
+```
+建议使用更严格的权限管理策略，此处仅为演示
+2. docker compose过程中需要从docker官方/npm/yarn/github等地获取依赖包。如果无法正常访问可能造成异常。建议使用网络通畅的环境构建镜像。
+
 容器启动后执行docker ps确保服务都正常运行
 
 ### 创建用户并登陆
