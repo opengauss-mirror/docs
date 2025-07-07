@@ -8,7 +8,7 @@ docker tag 9aa832ba6684 opengauss:7.0.0-RC1
 ```
 ### 2. 获取主备容器化部署脚本
 
-主备容器部署脚本为`create_master_slave.sh`，可以从[openGauss-server仓库](https://gitee.com/opengauss/openGauss-server/tree/master/docker/dockerfiles)获取
+主备容器部署脚本为`create_master_slave.sh`，可以从[openGauss-server仓库](https://gitcode.com/opengauss/openGauss-server/tree/master/docker/dockerfiles)获取
 
 ### 3. 创建容器路径映射目录
 ```
