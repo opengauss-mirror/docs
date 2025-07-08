@@ -6,7 +6,7 @@
 
 | 操作系统                 | 架构   | openauss版本    |
 | ----------------------- | ------ | --------------- |
-| openEuler 24.03 LTS SP1 | ARM64/x86_64  | openGauss 6.0.0 企业版  |
+| openEuler 24.03 LTS SP1 | ARM64/x86_64  | openGauss 6.0.0 极简版  |
 | openEuler 22.03 LTS SP4 | ARM64/x86_64  | openGauss 5.0.1 Lite   |
 | openEuler 24.03 LTS     | ARM64/x86_64  | openGauss 2.1.0 Lite   |
 | openEuler 22.03 LTS SP3 | ARM64/x86_64  | openGauss 2.1.0 Lite   |
@@ -21,7 +21,7 @@
   
 ## 约束
 
--  openGauss 6.0.0企业版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
+-  openGauss 6.0.0极简版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
 
 ## 使用限制
 
