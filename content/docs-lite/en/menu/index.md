@@ -797,6 +797,7 @@ headless: true
         - 	[REFRESH MATERIALIZED VIEW]({{< relref "./docs/SQLReference/refresh-materialized-view.md" >}})
         - 	[REINDEX]({{< relref "./docs/SQLReference/reindex.md" >}})
         - 	[RELEASE SAVEPOINT]({{< relref "./docs/SQLReference/release-savepoint.md" >}})
+	-	[REPLACE INTO]({{< relref "./docs/SQLReference/replace_into.md" >}})
         - 	[RESET]({{< relref "./docs/SQLReference/reset.md" >}})
         - 	[REVOKE]({{< relref "./docs/SQLReference/revoke.md" >}})
         - 	[ROLLBACK]({{< relref "./docs/SQLReference/rollback.md" >}})
