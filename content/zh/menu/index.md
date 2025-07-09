@@ -1596,6 +1596,7 @@ headless: true
     		-   [REFRESH MATERIALIZED VIEW]({{< relref "./docs/SQLReference/REFRESH-MATERIALIZED-VIEW.md" >}})
     		-   [REINDEX]({{< relref "./docs/SQLReference/REINDEX.md" >}})
     		-   [RELEASE SAVEPOINT]({{< relref "./docs/SQLReference/RELEASE-SAVEPOINT.md" >}})
+    		-   [REPLACE INTO]({{< relref "./docs/SQLReference/REPLACE_INTO.md" >}})
     		-   [RESET]({{< relref "./docs/SQLReference/RESET.md" >}})
     		-   [REVOKE]({{< relref "./docs/SQLReference/REVOKE.md" >}})
     		-   [ROLLBACK]({{< relref "./docs/SQLReference/ROLLBACK.md" >}})
