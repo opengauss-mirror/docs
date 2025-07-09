@@ -56,41 +56,28 @@ private:
 
 public:
     // 构造函数（仅初始化连接指针）
-    OpenGaussManager() : conn(nullptr) {}
-
-    // 析构函数（确保释放连接）
-    ~OpenGaussManager() {
-        disconnectDB();
-    }
-    bool connectDB(const std::string& host, int port, 
-                      const std::string& dbname, 
-                      const std::string& user, 
-                      const std::string& password) {
-        std::string conninfo = 
-            "host=" + host + " " +
-            "port=" + std::to_string(port) + " " +
-            "dbname=" + dbname + " " +
-            "user=" + user + " " +
-            "password=" + password;
-
+    OpenGaussManager(const std::string& conninfo){
         conn = PQconnectdb(conninfo.c_str());
 
         if (PQstatus(conn) != CONNECTION_OK) {
             std::cerr << "Connection failed: " << PQerrorMessage(conn) << std::endl;
             PQfinish(conn);
             conn = nullptr;
-            return false;
         }
-        return true;
+    }
+
+    // 析构函数（确保释放连接）
+    ~OpenGaussManager() {
+        disconnectDB();
     }
     //其它方法
-}
+};
 ```
 ### 2.创建表
 ```cpp
 void create_table(const std::string& table_name, int vector_dim) {
     std::string sql = 
-        "CREATE TABLE IF NOT EXISTS public." + escape_identifie(table_name) + 
+        "CREATE TABLE IF NOT EXISTS public." + escape_identifier(table_name) + 
         " (id BIGINT PRIMARY KEY, " +
         "embedding vector(" + std::to_string(vector_dim) + "))";
     
@@ -102,7 +89,7 @@ void create_table(const std::string& table_name, int vector_dim) {
 ```cpp
 void create_index(const std::string& table_name) {
     std::string sql = 
-        "CREATE INDEX ON " + escape_identifie(table_name) + 
+        "CREATE INDEX ON " + escape_identifier(table_name) + 
         "USING hnsw(embedding vector_l2_ops);";
     execute_sql(sql);
 }
@@ -164,7 +151,7 @@ std::vector<std::pair<int, std::vector<float>>> select(
     std::vector<std::pair<int, std::vector<float>>> results;
     
     std::string sql = 
-        "SELECT id, embedding FROM public." + escape_identifie(table_name) +
+        "SELECT id, embedding FROM public." + escape_identifier(table_name) +
         " ORDER BY embedding <-> " + vector_to_string(query_vec) +
         " LIMIT " + std::to_string(topk);
     
