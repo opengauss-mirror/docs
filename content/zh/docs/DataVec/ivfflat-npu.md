@@ -73,6 +73,17 @@ export DATAVEC_NPU_LIB_PATH=<YOUR_SO_PATH>
 ```bash
 docker restart <CONTAINER_ID>
 ```
+
+>说明：<br>
+>1）如果进入omm使用npu-smi info时报`dcmi module initialize failed.ret is -8005`的错误，可以手动修改/dev下的文件权限，具体命令如下(**需要放到entrypoint.sh文件中生效**)：
+>```
+>chown omm:omm /dev/davinci* 
+>chown omm:omm /dev/devmm_svm
+>chown omm:omm /dev/dvpp_cmdlist
+>chown omm:omm /dev/hisi_hdc
+>``` 
+>2）如果用户手动编译NPU加速包时出现`bisheng:command not found`，需要执行`source /usr/local/Ascend/ascend-toolkit/latest/bin/setenv.bash`。
+
 ## 3.环境要求
 IVFFLAT-NPU特性支持ARM架构以及openEuler22.03操作系统。
 
@@ -261,8 +272,6 @@ if ! command -v python3 &> /dev/null || \
     ln -sf "${PYTHON_PREFIX}/bin/python3" "${PYTHON_PREFIX}/bin/python"
     ln -sf "${PYTHON_PREFIX}/bin/pip3" "${PYTHON_PREFIX}/bin/pip"
     
-    rm -rf /tmp/*
-    
     echo "2-Python ${PYTHON_VERSION} 安装成功，安装路径为： ${PYTHON_PREFIX}"
 else
     echo "2-Python ${PYTHON_VERSION%.*} 已安装在 $(which python3)"
@@ -288,6 +297,8 @@ if [ ${#to_install[@]} -gt 0 ]; then
 else
     echo "3-所有依赖已安装，跳过安装步骤。"
 fi
+
+rm -rf /tmp/*
 
 # 根据架构确定CANN版本
 ARCH=$(uname -m)
