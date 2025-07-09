@@ -3,7 +3,7 @@ VectorDBBench 是一款开源向量数据库基准测试工具，主要通过测
 本文介绍如何使用VectorDBBench工具对openGauss中DataVec向量引擎进行性能测试。
 
 ### 安装python3
-推荐安装Python3.11以上版本
+仅支持安装Python3.11及以上版本
 ```bash
 wget --no-check-certificate https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tar.xz
 tar -xvf Python-3.11.0.tar.xz
