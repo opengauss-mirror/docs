@@ -83,3 +83,4 @@
 -   **[Global SysCache参数](Global-SysCache参数.md)**  
 
 -   **[DataVec向量引擎参数](DataVec向量引擎参数.md)** 
+-   **[BM25全文检索索引参数](BM25参数.md)**
