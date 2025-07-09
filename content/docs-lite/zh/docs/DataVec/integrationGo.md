@@ -5,19 +5,23 @@
 - 安装Go 1.19及以上版本。
 
 ## 安装SDK
-开发者可以运行以下命令安装GO SDK[官方仓库](http://gitee.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
+开发者可以运行以下命令安装GO SDK[官方仓库](http://gitcode.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
 ```
 安装SDK
-go get gitee.com/opengauss/openGauss-connector-go-pq
+go get gitcode.com/opengauss/openGauss-connector-go-pq
 
 在项目中导入该包
 import (
  "database/sql"
 
- _ "gitee.com/opengauss/openGauss-connector-go-pq"
+ _ "gitcode.com/opengauss/openGauss-connector-go-pq"
 )
 
 ```
+>![](figures/icon-note.png) **说明：**
+>
+>目前 gitcode 不支持 go get，请参考下方用例指导手动安装。
+
 ## 基本操作
 ### 1.连接数据库
 ```go
@@ -96,48 +100,126 @@ func SearchVectors(client *sql.DB, efsearch int, vector string, topK int) []stri
     return res
 }
 ```
-
-## 用例
+### 6.删除表
 ```go
-func main() {
-    fmt.Println("test")
+func DropTable(client *sql.DB, tableName string) error {
+    execSql := fmt.Sprintf("DROP TABLE IF EXISTS %s", tableName)
+    _, err := client.Exec(execSql)
+    return err
+}
+```
+## 用例指导
+-   **安装 openGauss-connector-go-pq**
+```
+# 创建部署脚本
+cat << 'EOL' > setup_opengauss_go.sh
+#!/bin/bash
+
+# 设置项目名称和驱动信息
+PROJECT_NAME="opengauss-go"
+MODULE_NAME="opengauss"
+DRIVER_MODULE_PATH="gitcode.com/opengauss/openGauss-connector-go-pq"
+DRIVER_REPO_URL="https://$DRIVER_MODULE_PATH.git"
+DRIVER_VERSION="v1.0.7"
+
+# 获取 GOPATH
+GOPATH=$(go env GOPATH)
+DRIVER_LOCAL_PATH="$GOPATH/src/$DRIVER_MODULE_PATH"
+
+# 创建项目目录并初始化 go mod
+echo "🚀 初始化 Go 项目..."
+mkdir -p "$PROJECT_NAME"
+cd "$PROJECT_NAME" || exit 1
+go mod init "$MODULE_NAME"
+
+# 克隆 openGauss 驱动到本地路径
+echo "📦 正在克隆 openGauss Go 驱动..."
+mkdir -p "$DRIVER_LOCAL_PATH"
+git clone "$DRIVER_REPO_URL" "$DRIVER_LOCAL_PATH"
+
+# 修改 go.mod 添加 require 和 replace
+echo "⚙️ 更新 go.mod 文件..."
+cat <<EOL2 >> go.mod
+
+require $DRIVER_MODULE_PATH $DRIVER_VERSION
+
+replace $DRIVER_MODULE_PATH => $DRIVER_LOCAL_PATH
+EOL2
+
+# 清理模块缓存以确保生效
+echo "🧹 清理模块缓存..."
+go clean -modcache
+
+# 下载依赖
+echo "📥 安装依赖包..."
+go get "$DRIVER_MODULE_PATH"
+
+echo "✅ 初始化和依赖安装完成！"
+EOL
+
+# 赋予可执行权限
+chmod +x setup_opengauss_go.sh
+
+# 执行脚本，开始安装
+./setup_opengauss_go.sh
+```
+-   **使用 Go SDK 连接 openGauss 执行向量操作 **
+```
+cd opengauss-go
+# 创建main.go，填入一下内容
+vim main.go
+package main
+import (
+    "fmt"
+    "log"
+    "database/sql"
+
+    _ "gitcode.com/opengauss/openGauss-connector-go-pq"
+)
+
+/*
+ * 将上述创建、删除等函数复制到此处
+ */
+
+func main(){
     connStr := "host=YourIP port=YourPort user=YourUserName password=YourPassWord dbname=YourDBName sslmode=disable"
-    dbClient, err  := client.CreateDBClient(connStr)
+    dbClient, err := CreateDBClient(connStr)
     if err != nil {
         log.Fatal(err)
     }
-    err = client.CreateTable(dbClient, 3)
-    err = client.CreateIndex(dbClient)
+    
+    err = DropTable(dbClient, "demotable")
+    err = CreateTable(dbClient, 3)
+    err = CreateIndex(dbClient)
 
-    data := client.TableData{
-        Id: 1,
+    data := TableData{
+        Id:      1,
         Content: "test",
-        Vector: "[1,2,3]",
+        Vector:  "[1,2,3]",
     }
+    err = InsertDataSingle(dbClient, data)
 
-    err = client.InsertDataSingle(dbClient, data)
-
-    data := client.TableData{
-        Id: 11,
+    data = TableData{
+        Id:      11,
         Content: "test1",
-        Vector: "[3,4,5]",
+        Vector:  "[3,4,5]",
     }
-    err = client.InsertDataSingle(dbClient, data)
+    err = InsertDataSingle(dbClient, data)
 
-    data := client.TableData{
-        Id: 10,
+    data = TableData{
+        Id:      10,
         Content: "test3",
-        Vector: "[2,2,2]",
+        Vector:  "[2,2,2]",
     }
-    err = client.InsertDataSingle(dbClient, data)
+    err = InsertDataSingle(dbClient, data)
 
-    err = client.DeleteData(dbClient)
+    err = UpdateData(dbClient, "[3,3,3]")
 
-    err = client.UpdateData(dbClient, "[3,3,3]")
+    err = DeleteData(dbClient)
 
-    vectors := client.FindNearestVectors(dbClient, 1, "[3,2,4], 5")
-
-    fmt.Print(vectors)
+    vectors := SearchVectors(dbClient, 1, "[3,2,4]", 5)
+    fmt.Println(vectors)
+    err = DropTable(dbClient, "demotable")
 }
 ```
 
