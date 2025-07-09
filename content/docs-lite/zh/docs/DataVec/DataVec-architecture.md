@@ -93,3 +93,11 @@ ANN支持并行构建索引，通过将数据集分成若干个子集分配到�
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/ParallelBuild-datavec.png" height=600px style="width: 750;height: 600;">
 </div>
+
+## ANN索引扫描支持SQL Bypass
+
+ANN索引扫描支持SQL Bypass, 通过复用执行算子和减少堆栈调用消耗来提升检索性能。
+- 支持非参数化SQL和参数化SQL，支持Limit字段参数化。
+- 不支持普通向量（非索引）检索。
+- 不支持过滤器。
+- 不支持投影（targetlist）包含表达式。
