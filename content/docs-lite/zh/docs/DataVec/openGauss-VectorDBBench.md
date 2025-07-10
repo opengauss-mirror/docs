@@ -29,7 +29,7 @@ pip3 install vectordb-bench[all]
 
 安装过程如果遇到“mariadb_config not found ...”报错，可以尝试指定版本安装: pip3 install vectordb-bench[all]==0.0.22
 ```
-替换适配opengauss的vectordb-bench文件夹
+替换适配opengauss的vectordb-bench文件夹。注意先将原来python安装目录下的vectordb_bench文件夹删除或者移至其它目录下备份，再执行下面的复制命令。
 ```bash
 # 下载适配opengauss的vectordb-bench：https://github.com/wlff123/VectorDBBench.git
 cp -r vectordb_bench <YOUR_PYTHON_INSTALL_PATH>/lib/python3.11/site-packages/
@@ -56,9 +56,9 @@ password_encryption_type = 1 # 采用sha256和md5方式对密码加密
 ### 性能测试
 建议使用vectordbbench命令行执行测试，可以根据测试需求灵活调整测试参数。
 ```bash
-# 修改数据集路径
+# 修改数据集路径为数据集所在文件夹的绝对路径
 # vi <YOUR_PYtTHON_INSTALL_PATH>/lib/python3.11/site-packages/vectordb_bench/__init__.py
-DATASET_LOCAL_DIR = '<YOUR_DATASET_PATH>'
+DATASET_LOCAL_DIR = env.path("DATASET_LOCAL_DIR", "<YOUR_DATASET_PATH>")
 
 # 本地机器如果不能从网络下载数据集，执行测试可能会报错，此时可以屏蔽掉下载数据集的相关代码
 # vi <YOUR_PYTHON_INSTALL_PATH>/lib/python3.11/site-packages/vectordb_bench/backend/data_source.py
@@ -103,8 +103,9 @@ vectordbbench opengausshnswpq --pq_m 96 --hnsw_earlystop_threshold 160 --case-ty
 ```
 >![](figures/icon-note.png) **说明：**
 >
->1. 执行hnswpq索引测试命令需要提前配置PQ检索加速包，详见[PQ](../DataVec/PQ.md)。
+>1. 执行hnswpq索引测试命令需要提前配置PQ检索加速包，PQ特性暂时只支持ARM架构环境，详见[PQ](../DataVec/PQ.md)。
 >2. 支持的数据集名称可以通过执行“vectordbbench opengausshnsw --help”命令回显的“--case-type”字段说明进行查看。
+>3. vectordbbench工具在性能测试过程中，会使用测试命令中指定的用户在数据库中创建表、插入数据、创建索引、执行查询、删除索引、删除表等操作，请提前设置用户相关操作权限。
 
 执行测试命令后，会在当前终端中打印测试执行过程和结果
 ```bash
