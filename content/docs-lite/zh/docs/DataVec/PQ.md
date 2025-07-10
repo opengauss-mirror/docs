@@ -17,53 +17,10 @@
 ### 环境要求
 PQ特性只支持ARM架构环境。
 
-### 1. 容器化部署openGauss
+### 容器化部署openGauss
 详见[容器镜像安装](../InstallationGuide/容器镜像安装.md)。
 
-### 2. 获取PQ加速安装包
-加速包默认安装路径为/usr/local/sra_recall。
-```
-wget https://kunpeng-repo.obs.cn-north-4.myhuaweicloud.com/Kunpeng%20BoostKit/Kunpeng%20BoostKit%2025.0.RC1/BoostKit-SRA_Recall-1.1.0.zip
-unzip BoostKit-SRA_Recall-1.1.0.zip
-```
-
-### 3. 拷贝检索加速包至openGauss容器内安装
-执行语句中的CONTAINER_ID为openGauss Docker容器ID，请根据实际情况进行替换。
-
-```
-docker cp  boostkit-sra_recall-1.1.0-1.aarch64.rpm CONTAINER_ID:/home/omm
-docker exec -it CONTAINER_ID bash
-cd /home/omm
-rpm -ivf boostkit-sra_recall-1.1.0-1.aarch64.rpm
-```
-
-### 4. 容器内变量配置
-在容器内修改环境配置
-```
-cd /
-vi entrypoint.sh
-export DATAVEC_PQ_LIB_PATH=/usr/local/sra_recall/lib
-```
-![datavec_pq.png](figures/datavec_pq.png)
-
-修改数据库参数配置，添加enable_pq=on
-
-```
-vi /var/lib/opengauss/data/postgresql.conf
-```
-![datavec_enablepq.png](figures/datavec_enablepq.png)
-
-重启Docker容器。
-```
-docker restart CONTAINER_ID
-```
-
-
-### 启用PQ特性
-设置GUC参数`enable_pq = on`启用PQ特性，详情请参考[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
-
-### 关闭PQ特性
-设置GUC参数`enable_pq = off`关闭PQ特性，详情请参考[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+ARM架构环境镜像中默认已经安装PQ检索加速安装包，加速包默认安装路径为/usr/local/sra_recall
 
 ## 使用PQ
 
@@ -121,7 +78,7 @@ vector_cosine_ops | 余弦距离
 
 - pq_m：切分子空间越多，精度越高（由于HNSWPQ内置精排，某些情况下切分子空间越多精度不会有明显变化），同时性能越低。该值必须要能整除数据集维度，否则索引无法创建成功，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
-- 其余参数设置与[向量索引](../../../../zh/docs/SQLReference/向量索引.md)中HNSW索引中相同。
+- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中HNSW索引中相同。
 
 #### GUC参数
 -   `hnsw_earlystop_threshold` - 设置图搜索的最大连续迭代次数 160~INT32_MAX-1 (默认INT32_MAX)
@@ -189,11 +146,11 @@ vector_cosine_ops|<=>|余弦距离
 - pq_m：切分子空间越多，精度越高，同时性能越低。该值需要能整除数据集维度，推荐值为`维度/4`。
 - pq_ksub：聚类中心越多，精度越高，但同时性能越低。推荐值为`256`。
 - by_residual：启动残差计算可以提升精度，但是会增加构建索引的时间。推荐值`off`。
-- 其余参数设置与[向量索引](../../../../zh/docs/SQLReference/向量索引.md)中IVFFLAT索引相同。
+- 其余参数设置与[向量索引](../SQLReference/向量索引.md)中IVFFLAT索引相同。
 
 #### 查询选项
 
-- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfflat_probe` - 查询时候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 
@@ -201,7 +158,7 @@ vector_cosine_ops|<=>|余弦距离
 	openGauss=# SET ivfflat_probes = 10;
 	```
 
-- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../../../../zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+- `ivfpq_kreorder` - 设置参与精排候选集的大小，参见[DataVec向量引擎参数](../DatabaseReference/DataVec向量引擎参数.md)。
 
 	**示例：**
 

@@ -16,52 +16,10 @@
 ### 环境要求
 PQ特性只支持ARM架构环境。
 
-### 1. 容器化部署openGauss
+### 容器化部署openGauss
 详见[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
-### 2. 获取PQ检索加速安装包
-加速包默认安装路径为/usr/local/sra_recall。
-```
-wget https://kunpeng-repo.obs.cn-north-4.myhuaweicloud.com/Kunpeng%20BoostKit/Kunpeng%20BoostKit%2025.0.RC1/BoostKit-SRA_Recall-1.1.0.zip
-unzip BoostKit-SRA_Recall-1.1.0.zip
-```
-
-### 3. 拷贝检索加速包至openGauss容器内安装
-执行语句中的CONTAINER_ID为openGauss Docker容器ID，请根据实际情况进行替换。
-
-```
-docker cp  boostkit-sra_recall-1.1.0-1.aarch64.rpm CONTAINER_ID:/home/omm
-docker exec -it CONTAINER_ID bash
-cd /home/omm
-rpm -ivf boostkit-sra_recall-1.1.0-1.aarch64.rpm
-```
-
-### 4. 容器内变量配置
-在容器内修改环境配置
-```
-cd /
-vi entrypoint.sh
-export DATAVEC_PQ_LIB_PATH=/usr/local/sra_recall/lib
-```
-![datavec_pq.png](figures/datavec_pq.png)
-
-修改数据库参数配置，添加enable_pq=on
-
-```
-vi /var/lib/opengauss/data/postgresql.conf
-```
-![datavec_enablepq.png](figures/datavec_enablepq.png)
-
-重启Docker容器。
-```
-docker restart CONTAINER_ID
-```
-
-### 启用PQ特性
-设置GUC参数`enable_pq = on`启用PQ特性，详情请参考[DataVec向量引擎参数](../../../docs-lite/zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
-
-### 关闭PQ特性
-设置GUC参数`enable_pq = off`关闭PQ特性，详情请参考[DataVec向量引擎参数](../../../docs-lite/zh/docs/DatabaseReference/DataVec向量引擎参数.md)。
+ARM架构环境镜像中默认已经安装PQ检索加速安装包，加速包默认安装路径为/usr/local/sra_recall
 
 ## 使用PQ
 
