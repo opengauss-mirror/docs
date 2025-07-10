@@ -3,7 +3,6 @@
 
 ## 环境要求
 - 安装Go 1.19及以上版本。
-- openGauss数据库安装部署 [容器镜像安装](../InstallationGuide/容器镜像安装.md)。
 
 ## 安装SDK
 开发者可以运行以下命令安装GO SDK[官方仓库](http://gitee.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
@@ -97,4 +96,49 @@ func SearchVectors(client *sql.DB, efsearch int, vector string, topK int) []stri
     return res
 }
 ```
-[更多操作示例参考](https://gitee.com/opengauss/openGauss-connector-go-pq)
+
+## 用例
+```go
+func main() {
+    fmt.Println("test")
+    connStr := "host=YourIP port=YourPort user=YourUserName password=YourPassWord dbname=YourDBName sslmode=disable"
+    dbClient, err  := client.CreateDBClient(connStr)
+    if err != nil {
+        log.Fatal(err)
+    }
+    err = client.CreateTable(dbClient, 3)
+    err = client.CreateIndex(dbClient)
+
+    data := client.TableData{
+        Id: 1,
+        Content: "test",
+        Vector: "[1,2,3]",
+    }
+
+    err = client.InsertDataSingle(dbClient, data)
+
+    data := client.TableData{
+        Id: 11,
+        Content: "test1",
+        Vector: "[3,4,5]",
+    }
+    err = client.InsertDataSingle(dbClient, data)
+
+    data := client.TableData{
+        Id: 10,
+        Content: "test3",
+        Vector: "[2,2,2]",
+    }
+    err = client.InsertDataSingle(dbClient, data)
+
+    err = client.DeleteData(dbClient)
+
+    err = client.UpdateData(dbClient, "[3,3,3]")
+
+    vectors := client.FindNearestVectors(dbClient, 1, "[3,2,4], 5")
+
+    fmt.Print(vectors)
+}
+```
+
+[更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-go-pq)

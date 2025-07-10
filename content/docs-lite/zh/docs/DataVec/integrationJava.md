@@ -97,7 +97,7 @@ public void DeleteData(Connection conn)
 ```java
 public void UpdateData(Connection conn, String vector)
 {
-    String sql = String.format("UPDATE demotable set embedding = '%s' where id = 10;");
+    String sql = String.format("UPDATE demotable set embedding = '%s' where id = 10;", vector);
     ExecuteSQL(conn, sql);
 }
 ```
@@ -110,7 +110,7 @@ public String findNearestVectors(Connection conn, int efsearch, String vector, i
     String res = "";
     // 设置查询参数
     String paramsql = String.format("set hnsw_ef_search = %d;", efsearch);
-    ExecuteSQL(paramsql);
+    ExecuteSQL(conn, paramsql);
     String querysql = String.format("SELECT * FROM demotable ORDER BY embedding <-> '%s' LIMIT %d;", vector, topK);
     try {
         statement = conn.createStatement();
@@ -131,4 +131,32 @@ public String findNearestVectors(Connection conn, int efsearch, String vector, i
     return res;
 }
 ```
-[更多操作示例参考](https://gitee.com/opengauss/openGauss-connector-jdbc)
+
+## 用例
+```java
+public static void main(String[] args) {
+        String username = "test2";     // 替换为你的用户名
+        String password = "YourPassword"; // 替换为你的密码
+        int embeddingDim = 3;
+
+        Connection conn = getConnection(username, password);
+        if (conn != null) {
+            CreateTable(conn, embeddingDim);
+            CreateIndex(conn);
+            InsertDataSingle(conn, 0, "test", "[1,2,3]");
+            DeleteData(conn);
+            UpdateData(conn, "[1,1,1]");
+            String res=findNearestVectors(conn, 20, "[2,2,2]", 2);
+            System.out.println("连接成功！"+res);
+            try {
+                conn.close();
+                System.out.println("连接已关闭。");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+```
+
+
+[更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-jdbc)
