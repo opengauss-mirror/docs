@@ -110,22 +110,20 @@ void insert(const std::string& table_name, int id, const std::vector<float>& emb
 
 - 删除
 ```cpp
-int delete_by_id(const std::string& table_name, const std::vector<int>& ids) {
-    if (ids.empty()) return 0;
-    // 构建 ID 列表
-    std::stringstream id_list;
-    for (size_t i = 0; i < ids.size(); ++i) {
-        id_list << escape_literal(std::to_string(ids[i]));
-        if (i != ids.size() - 1) id_list << ",";
-    }
+int delete_by_id(const std::string& table_name, int id) {
     std::string sql = 
         "DELETE FROM public." + escape_identifier(table_name) + 
-        " WHERE id IN (" + id_list.str() + ")";
-    execute_query(sql);
-    PGresult* res = PQexec(conn, "SELECT ROW_COUNT");
-    int deleted = std::stoi(PQgetvalue(res, 0, 0));
+        " WHERE id = " + std::to_string(id) +
+        " RETURNING id";
+    
+    PGresult* res = PQexec(conn, sql.c_str());
+    if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+        PQclear(res);
+        throw std::runtime_error("Delete failed: " + std::string(PQerrorMessage(conn)));
+    }
+    int deleted_count = PQntuples(res);
     PQclear(res);
-    return deleted;
+    return deleted_count;
 }
 ```
 
@@ -137,8 +135,8 @@ void update(const std::string& table_name,
     std::string sql = 
         "UPDATE public." + escape_identifier(table_name) + 
         " SET embedding = " + vector_to_string(embedding) + 
-        " WHERE id = " + escape_literal(std::to_string(id));
-    execute_query(sql);
+        " WHERE id = " + std::to_string(id);
+    execute_sql(sql);
 }
 ```
 ### 5.查询
@@ -158,7 +156,7 @@ std::vector<std::pair<int, std::vector<float>>> select(
     PGresult* res = PQexec(conn, sql.c_str());
     if (PQresultStatus(res) != PGRES_TUPLES_OK) {
         PQclear(res);
-        throw std::runtime_error("Query failed: " + std::strin(PQerrorMessage(conn)));
+        throw std::runtime_error("Query failed: " + std::string(PQerrorMessage(conn)));
     }
     // 解析结果
     int rows = PQntuples(res);
@@ -190,8 +188,8 @@ void drop_table(const std::string& table_name, bool cascade = false) {
         "DROP TABLE IF EXISTS public." + escape_identifier(table_name) +
         (cascade ? " CASCADE" : "");
     
-    execute_query(sql);
-    execute_query("COMMIT");
+    execute_sql(sql);
+    execute_sql("COMMIT");
 }
 ```
 
