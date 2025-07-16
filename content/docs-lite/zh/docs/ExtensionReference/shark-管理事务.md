@@ -5,6 +5,7 @@
 ## 注意事项
 
 -   本章节只包含shark新增的语法，原openGauss的事务控制语法由于无法避免的冲突仅删除begin transaction transaction_mode语法，冲突的语法可使用类似语法begin transaction_mode或者start transaction transaction_mode代替。
+-   D库的PL/pgSQL不支持BEGIN TRAN和BEGIN TRANSACTION语法。
 
 ## 语法格式
 
