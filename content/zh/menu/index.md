@@ -33,8 +33,6 @@ headless: true
 	    -   [高性能]({{< relref "./docs/AboutopenGauss/高性能.md" >}})
 	    	-   [CBO优化器]({{< relref "./docs/AboutopenGauss/CBO优化器.md" >}})
 	    	-   [支持LLVM]({{< relref "./docs/AboutopenGauss/支持LLVM.md" >}})
-	    	-   [向量化引擎]({{< relref "./docs/AboutopenGauss/向量化引擎.md" >}})
-	    	-   [行列混合存储]({{< relref "./docs/AboutopenGauss/行列混合存储.md" >}})
 	    	-   [自适应压缩]({{< relref "./docs/AboutopenGauss/自适应压缩.md" >}})
 	    	-   [SQL by pass]({{< relref "./docs/AboutopenGauss/SQL-by-pass.md" >}})
 	    	-   [鲲鹏NUMA架构优化]({{< relref "./docs/AboutopenGauss/鲲鹏NUMA架构优化.md" >}})
