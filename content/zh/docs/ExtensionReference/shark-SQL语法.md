@@ -7,6 +7,5 @@
 -   **[UPDATE](shark-UPDATE.md)**
 -   **[DELETE](shark-DELETE.md)**
 -   **[SELECT](shark-SELECT.md)**
--   **[操作符](shark-操作符.md)**
 -   **[SET](shark-SET.md)**
 -   **[DBCC](shark-DBCC.md)**
