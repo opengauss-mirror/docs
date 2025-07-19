@@ -129,6 +129,16 @@ top：只记录顶层SQL。
 
 **默认值**： 4096
 
+## track\_stmt\_trace\_size<a name="section584919463"></a>
+
+**参数说明**： 设置单语句可以收集的最大全链路追踪trace信息的大小\(byte\)。
+
+该参数属于USERSET类型参数，请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 整型，0 \~ 100000000
+
+**默认值**： 4096
+
 ## track\_stmt\_retention\_time<a name="section16119247614"></a>
 
 **参数说明**： 组合参数，控制全量/慢SQL记录的保留时间。以60秒为周期读取该参数，并执行清理超过保留时间的记录，仅sysadmin用户可以访问。
