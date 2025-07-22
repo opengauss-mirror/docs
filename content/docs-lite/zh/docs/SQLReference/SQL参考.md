@@ -48,7 +48,7 @@
 
 -   **[类型基础值](INSERT_RIGHT_REF_DEFAULT_VALUE.md)**
 
--   **[GIN索引](GIN索引.md)**
+-   **[GIN索引](DataVec向量引擎.md)**
 
 -   **[系统操作](系统操作.md)**
 
