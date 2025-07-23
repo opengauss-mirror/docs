@@ -116,6 +116,7 @@ n_hard_parse         | 1
 query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
+...
                      
 备机：查看当前节点SQL语句执行信息
 gsql> select * from dbe_perf.standby_statement_history(only_slow, start_time, end_time);
@@ -144,6 +145,7 @@ n_hard_parse         | 1
 query_plan           | Datanode Name: dn_6001_6002_6003
                      | Function Scan on pg_show_all_settings a  (cost=0.00..12.50 rows=5 width=64)
                      |   Filter: (name = '***'::text)
+...
 ```
 
 ## 特性约束<a name="section1956417145819"></a>
