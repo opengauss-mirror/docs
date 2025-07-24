@@ -202,9 +202,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-#lang {
-  cursor: pointer;
-}
 #lang .lang-menu-link {
   display: flex;
   align-items: center;
@@ -217,17 +214,19 @@ body {
   display: block;
 }
 #lang .lang-menu-list {
-  width: 84px;
+  margin: 0;
+  width: fit-content;
   position: absolute;
-  top: 46px;
-  left: -40px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--o-color-bg2);
-  padding: 0 var(--o-spacing-h5);
-  cursor: pointer;
   z-index: 99;
   border: none;
 }
 #lang .lang-menu-list .lang-item {
+  padding: 0 var(--o-spacing-h5);
+  white-space: nowrap;
   display: block;
   line-height: var(--o-line-height-h3);
   text-align: center;
@@ -237,15 +236,21 @@ body {
   height: 48px;
   line-height: 48px;
 }
-#lang .lang-menu-list .lang-item:hover {
+#lang .lang-menu-list .lang-item:not(:last-child) {
+  border-bottom: 1px solid var(--o-color-border2);
+}
+#lang .lang-menu-list .lang-item.active {
   color: var(--o-color-brand1);
+}
+#lang .lang-menu-list .lang-item.hoverable {
+  cursor: pointer;
+}
+#lang .lang-menu-list .lang-item.hoverable:hover {
+  color: var(--o-color-text2);
+  background-color: var(--o-color-brand1);
 }
 #lang .lang-menu-list .lang-item :last-child {
   border-bottom: 0 none;
-}
-#lang .lang-menu-list .lang-item .active,
-#lang .lang-menu-list .lang-item :hover {
-  color: var(--o-color-brand1);
 }
 @media screen and (max-width: 1100px) {
   #lang {

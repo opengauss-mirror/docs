@@ -148,7 +148,7 @@ paginate = 10
     bookFlatSection = true
     BookMenuBundleActiveLinkColor = '\#004ed0'
 
-    languageZh = "中文"
+    languageZh = "简体中文"
     languageEn = "English"
 
 
