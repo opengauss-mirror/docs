@@ -103,6 +103,63 @@ const close = async (client) => {
 }
 ```
 
+### 8.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行 ANN 搜索，并返回多组结果。
+#### 函数名
+```javascript
+async executeMultiSearch(dbConfig, sqlTemplate, paramsList, searchParams, maxThreads)
+```
+#### 输入参数
+- dbConfig:数据库连接配置，包含user、password、host、database、port
+- sqlTemplate:查询语句
+- paramsList：查询参数，需要元组列表的格式
+- searchParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
+- maxThreads:连接池最大连接数
+
+#### 输出参数
+- 查询结果，形式为`[[{id:1, embedding:'[1,2,3]'},{id:2, embedding:'[2,2,2]'}], [],...]`，表示n个查询向量对应的limit个结果。
+#### 使用案例
+```javascript
+async function run() {
+  const dbConfig = {
+    user: 'username',
+    host: 'localhost',
+    database: "dbname",
+    password: "yourpassword",
+    port: yourport
+  };
+
+  const sqlTemplate = 'SELECT id, embedding FROM test_table1 ORDER BY embedding <-> $1 LIMIT $2;';
+
+  const searchParams = {
+    hnsw_ef_search: 40,
+    enable_seqscan: 'off'
+  };
+  const paramsList = [
+    [JSON.stringify([5,5,5]), 3],
+    [JSON.stringify([2,2,2]), 5]
+  ];
+
+  const queryManager = new ParallelSearch();
+try {
+    const results = await queryManager.executeMultiSearch(dbConfig, sqlTemplate, paramsList, searchParams,2);
+    console.log(results)
+    results.forEach((res, idx) => {
+      console.log(`\n查询 ${idx + 1} 结果：`);
+      if (res.success) {
+        console.log('数据列表：', res.data);
+      } else {
+        console.log('错误：', res.error);
+      }
+    });
+  } catch (err) {
+    console.error('执行失败：', err.message);
+  }
+}
+
+run().catch(console.error);
+```
+
 ## 用例
 ```javascript
 const client = connect('host', 5432, 'username', 'postgres', 'password');

@@ -21,7 +21,6 @@ import (
 >![](figures/icon-note.png) **说明：**
 >
 >目前 gitcode 不支持 go get，请参考下方用例指导手动安装。
-
 ## 基本操作
 ### 1.连接数据库
 ```go
@@ -108,6 +107,42 @@ func DropTable(client *sql.DB, tableName string) error {
     return err
 }
 ```
+
+### 7.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行 ANN 搜索，并返回多组结果。
+#### 函数名
+```java
+func ExecuteMultiSearch(conninfo string, query string, args [][]interface{}, scanParams map[string]interface{}, threadCount int)
+```
+#### 输入参数
+- conninfo:数据库连接配置，包含jdbcUrl、user、password
+- query:查询语句
+- args：查询参数，需要元组列表的格式
+- scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
+- threadCount:连接池最大连接数
+
+#### 输出参数
+- 查询结果，形式为`[[map[id:1, embedding:'[1,2,3]'],map[id:2, embedding:'[2,2,2]']], [],...]`，表示n个查询向量对应的limit个结果。
+#### 使用案例
+```go
+import (
+    "gitcode.com/opengauss/openGauss-connector-go-pq"
+)
+conninfo := "host=localhost port=5432 user=test password=yourpassword dbname=testdb sslmode=disable"
+scanParams := map[string]interface{}{
+    "hnsw_ef_search":"40",
+    "enable_seqscan":"off"
+}
+query := "select id from demotable order by embedding <-> $1 limit $2;"
+threadCount := 2
+args := [][]interface{}{
+    {"[1,2,3]", 2},
+    {"[2,2,2]", 3}
+}
+res, err := pq.ExecuteMultiSearch(conninfo, query, args, scanParams, threadCount)
+```
+
+
 ## 用例指导
 -   **安装 openGauss-connector-go-pq**
 ```
@@ -165,7 +200,6 @@ chmod +x setup_opengauss_go.sh
 ```
 -   **使用 Go SDK 连接 openGauss 执行向量操作 **
 ```
-cd opengauss-go
 # 创建main.go，填入一下内容
 vim main.go
 package main
@@ -222,5 +256,4 @@ func main(){
     err = DropTable(dbClient, "demotable")
 }
 ```
-
 [更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-go-pq)

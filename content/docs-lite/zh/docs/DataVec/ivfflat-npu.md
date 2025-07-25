@@ -79,7 +79,6 @@ docker restart <CONTAINER_ID>
 >```
 >chown omm:omm /dev/davinci* 
 >chown omm:omm /dev/devmm_svm
->chown omm:omm /dev/dvpp_cmdlist
 >chown omm:omm /dev/hisi_hdc
 >``` 
 >2）如果用户手动编译NPU加速包时出现`bisheng:command not found`，需要执行`source /usr/local/Ascend/ascend-toolkit/latest/bin/setenv.bash`。
@@ -300,8 +299,6 @@ else
     echo "3-所有依赖已安装，跳过安装步骤。"
 fi
 
-rm -rf /tmp/*
-
 # 根据架构确定CANN版本
 ARCH=$(uname -m)
 case "${ARCH}" in
@@ -357,4 +354,6 @@ echo "===安装完成==="
 echo "Python版本：$(python --version)"
 echo "Pip版本：$(pip --version)"
 echo "CANN工具包路径：${ASCEND_TOOLKIT_HOME}"
+
+rm -rf /tmp/*
 ```

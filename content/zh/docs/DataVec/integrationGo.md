@@ -107,6 +107,42 @@ func DropTable(client *sql.DB, tableName string) error {
     return err
 }
 ```
+
+### 7.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行 ANN 搜索，并返回多组结果。
+#### 函数名
+```java
+func ExecuteMultiSearch(conninfo string, query string, args [][]interface{}, scanParams map[string]interface{}, threadCount int)
+```
+#### 输入参数
+- conninfo:数据库连接配置，包含jdbcUrl、user、password
+- query:查询语句
+- args：查询参数，需要元组列表的格式
+- scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
+- threadCount:连接池最大连接数
+
+#### 输出参数
+- 查询结果，形式为`[[map[id:1, embedding:'[1,2,3]'],map[id:2, embedding:'[2,2,2]']], [],...]`，表示n个查询向量对应的limit个结果。
+#### 使用案例
+```go
+import (
+    "gitcode.com/opengauss/openGauss-connector-go-pq"
+)
+conninfo := "host=localhost port=5432 user=test password=yourpassword dbname=testdb sslmode=disable"
+scanParams := map[string]interface{}{
+    "hnsw_ef_search":"40",
+    "enable_seqscan":"off"
+}
+query := "select id from demotable order by embedding <-> $1 limit $2;"
+threadCount := 2
+args := [][]interface{}{
+    {"[1,2,3]", 2},
+    {"[2,2,2]", 3}
+}
+res, err := pq.ExecuteMultiSearch(conninfo, query, args, scanParams, threadCount)
+```
+
+
 ## 用例指导
 -   **安装 openGauss-connector-go-pq**
 ```
