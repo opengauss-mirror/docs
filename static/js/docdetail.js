@@ -164,17 +164,18 @@ $(function ($) {
       });
       $("#toc-list").append(tocList);
       let targetUrlArr = [];
-      let targetUrl = [];
+      const replaceRegex = / /g;
       $(".book-toc #toc-list a[href]").each(function () {
-        targetUrlArr.push($($(this).attr("href")));
+        const href = $(this).attr("href").replace(replaceRegex, '\\$&');
+        targetUrlArr.push($(href));
       });
-      targetUrl = targetUrlArr.filter(function (item) {
+      targetUrlArr = targetUrlArr.filter(function (item) {
         return $(window).scrollTop() + 260 > item.offset().top;
       });
-      if (targetUrl.length) {
+      if (targetUrlArr.length) {
         $(".book-toc #toc-list a[href]").removeClass("active");
         $(
-          "a[href='#" + targetUrl[targetUrl.length - 1].attr("id") + "']"
+          "a[href='#" + targetUrlArr[targetUrlArr.length - 1].attr("id") + "']"
         ).addClass("active");
       } else if ($(".book-toc #toc-list a[href]").length) {
         $(".book-toc #toc-list a[href]").removeClass("active");
