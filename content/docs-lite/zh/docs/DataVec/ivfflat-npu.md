@@ -33,6 +33,17 @@
   ```
   这里需要保证宿主机NPU驱动程序安装在/usr/local/Ascend上。
 
+  在启动容器后请先切换到omm用户下通过npu-smi info命令查看npu是否可以正常显示相关信息（建议在~/.bashrc中配置npu相关环境变量，环境变量见下一小节，如果正常显示可以继续下一步骤，如果不能正常显示可以根据npu侧报错尝试修改容器启动命令
+  >说明：<br>
+  >1）如果进入omm使用npu-smi info时报`dcmi module initialize failed.ret is -8005`的错误，可以手动修改/dev下的文件权限，具体命令如下      (**需要放到entrypoint.sh文件中生效**)：
+  >```
+  >chown omm:omm /dev/davinci* 
+  >chown omm:omm /dev/devmm_svm
+  >chown omm:omm /dev/hisi_hdc
+  >```
+  >2）如果npu-smi info报"device is used"，这是因为openGauss在普通用户omm下运行，如果容器以特权模式启动（特权模式下容器会自动挂载所有npu卡）并且npu卡有其他容器占用，就可能存在这种问题，建议关闭特权模式，并且保证npu卡空闲。
+  
+
 ### 安装CANN框架
 - 详见本文附件获取容器内cann框架安装脚本
 - 容器root下运行安装脚本
@@ -75,13 +86,7 @@ docker restart <CONTAINER_ID>
 ```
 
 >说明：<br>
->1）如果进入omm使用npu-smi info时报`dcmi module initialize failed.ret is -8005`的错误，可以手动修改/dev下的文件权限，具体命令如下(**需要放到entrypoint.sh文件中生效**)：
->```
->chown omm:omm /dev/davinci* 
->chown omm:omm /dev/devmm_svm
->chown omm:omm /dev/hisi_hdc
->``` 
->2）如果用户手动编译NPU加速包时出现`bisheng:command not found`，需要执行`source /usr/local/Ascend/ascend-toolkit/latest/bin/setenv.bash`。
+>1）如果用户手动编译NPU加速包时出现`bisheng:command not found`，需要执行`source /usr/local/Ascend/ascend-toolkit/latest/bin/setenv.bash`。
 
 
 ## 3.环境要求

@@ -104,7 +104,7 @@ const close = async (client) => {
 ```
 
 ### 8.多向量并发查询
-多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行 ANN 搜索，并返回多组结果。
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。
 #### 函数名
 ```javascript
 async executeMultiSearch(dbConfig, sqlTemplate, paramsList, searchParams, maxThreads)

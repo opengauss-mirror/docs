@@ -109,13 +109,13 @@ func DropTable(client *sql.DB, tableName string) error {
 ```
 
 ### 7.多向量并发查询
-多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行 ANN 搜索，并返回多组结果。
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。
 #### 函数名
 ```java
 func ExecuteMultiSearch(conninfo string, query string, args [][]interface{}, scanParams map[string]interface{}, threadCount int)
 ```
 #### 输入参数
-- conninfo:数据库连接配置，包含jdbcUrl、user、password
+- conninfo:数据库连接配置，包含host、port、user、password、dbname
 - query:查询语句
 - args：查询参数，需要元组列表的格式
 - scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
