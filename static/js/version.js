@@ -66,12 +66,24 @@ function createDownloadBtn() {
 }
 $(document).ready(function () {
   const lang = location.href.split("/")[3];
+  $('#lang .lang-item').each(function() {
+    const _this = $(this);
+    if (_this.attr('name') !== lang) {
+      _this.addClass('hoverable');
+    }
+  });
+  const langTagMap = {
+    zh: '中',
+    en: 'EN'
+  };
+  $('#lang .lang-icon .lang-icon-label').text(langTagMap[lang]);
   const paths = window.location.pathname.split("/");
   const version = paths.length > 3 ? paths[3] : "";
   createVersionSpan();
   // 控制中英文切换
   $("#lang .lang-item,.theme-lang-mobile .lang a").click(function () {
     const linkLang = $(this).attr("name");
+    if (linkLang === lang) return;
     jumpDocsHome(linkLang, version);
   });
   // 控制版本切换
