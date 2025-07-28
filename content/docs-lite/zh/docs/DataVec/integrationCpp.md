@@ -203,6 +203,92 @@ void disconnectDB() {
 }
 ```
 
+### 8.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。
+#### 函数名
+```cpp
+PGresult **PQexecMultiSearchParams(const char *connParams, const char *queryTemplate, const QueryParams *queryParams, const int queryCount, const char *preExecForConn, int threadCount)
+```
+#### 输入参数
+- connParams:数据库连接配置，包含host、dbname、user、password、port
+- queryTemplate:查询语句
+- queryParams：查询参数
+- queryCount:查询请求个数
+- preExecForConn：设置连接参数的sql语句，如："set hnsw_ef_search=200;"
+- threadCount:连接池最大连接数
+
+#### 输出参数
+- 查询结果，PGresult*类型数组，形式为[[[id:1, vector:[1,2,3]], [id:2 vector:[4,5,6]],...], [[id:3, vector:[1,2,2]], [id:2 vector:[4,5,6]],...], ...]，表示n个查询向量对应的limit个结果，解析方式参考示例。
+
+#### 使用案例
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <libpq-fe.h>
+#include <sstream>
+#include <stdexcept>
+
+const char *get_example_vector(int index) {
+    static const char *vectors[] = {
+        "[0.12, 0.34, 0.56]",
+        "[4, 5, 6]"
+    };
+    return vectors[index % 2];
+}
+
+int main()
+{
+     const char *conn_params = "host=127.0.0.1 dbname=postgres user=test password=yourpassword port=5432";
+     const int num_connections = 2;
+     int success_count = 0;
+     const char *query_template = "select id, embedding from vectors order by embedding <-> $1 limit 2;";
+     const char *preExec = "set enable_seqscan=true;";
+
+     int num_vectors = 2;
+     QueryParams query_params[num_vectors];
+     const char *param_values[num_vectors][1];
+     for (int i = 0; i < num_vectors; i++) {
+         param_values[i][0] = get_example_vector(i);
+
+         query_params[i].paramCount = 1;
+         query_params[i].paramValues = param_values[i];
+         query_params[i].paramLengths = NULL;
+         query_params[i].paramFormats = NULL;
+         query_params[i].resultFormat = 0;
+     }
+
+     PGresult **results = PQexecMultiSearchParams(conn_params, query_template, query_params, num_vectors, preExec, num_connections);
+     if (!results) {
+         printf("search error!\n");
+     }
+     for (int i = 0; i < num_vectors; i++) {
+         PGresult *res = results[i];
+         ExecStatusType status = PQresultStatus(res);
+         int rows = PQntuples(res);
+         int cols = PQnfields(res);
+         std::cout << "search query id:" << i << ", rows:" << rows << ", cols:" << cols << std::endl;
+         for (int j = 0; j < rows; ++j) {
+             int id = std::stoi(PQgetvalue(res, j, 0));
+             std::cout << "id:" << id << std::endl;
+
+             std::vector<float> vec;
+             std::string vec_str = PQgetvalue(res, j, 1);
+             std::istringstream iss(vec_str.substr(1, vec_str.size() - 2));
+             std::string val;
+             std::cout << "vector: [";
+             while (std::getline(iss, val, ',')) {
+                 vec.push_back(std::stof(val));
+                 std::cout << val << ",";
+             }
+             std::cout << "]" << std::endl;
+         }
+     }
+     PQclearMultiResults(results, num_vectors);
+     return 0;
+}
+```
+
 ## 用例
 ```cpp
 int main() {

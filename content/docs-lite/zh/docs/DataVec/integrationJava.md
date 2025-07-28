@@ -6,14 +6,24 @@
 - Apache Maven
 
 ## 安装SDK
-开发者可以直接从maven中央仓库中获取jar包[maven中央仓库下载](https://central.sonatype.com/artifact/org.opengauss/opengauss-jdbc)，也可以在openGauss官网下载[社区官网下载](https://opengauss.org/zh/download/)，运行以下命令安装Java SDK
-```xml
-<dependency>
-    <groupId>org.opengauss</groupId>
-    <artifactId>opengauss-jdbc</artifactId>
-    <version>your version</version>
-</dependency>
-```
+- 在线安装
+
+    开发者可以直接从maven中央仓库中获取jar包[maven中央仓库下载](https://central.sonatype.com/artifact/org.opengauss/    opengauss-jdbc)，也可以在openGauss官网下载[社区官网下载](https://opengauss.org/zh/download/)，运行以下命令安装Java  SDK
+    ```xml
+    <dependency>
+        <groupId>org.opengauss</groupId>
+        <artifactId>opengauss-jdbc</artifactId>
+        <version>your version</version>
+    </dependency>
+    ```
+- 离线安装
+
+    可以从开源社区下载openGauss-connector-jdbc源码
+    ```bash
+    git clone https://gitcode.com/opengauss/openGauss-connector-jdbc.git
+    ```
+    切换到代码目录运行`sh build.sh`,成功编译后会出现两个jar包，分别是opengauss-jdbc-${version}.jar与postgresql.jar（在output目录下）
+
 ## 基本操作
 ### 1.连接数据库
 ```java
@@ -131,7 +141,54 @@ public String findNearestVectors(Connection conn, int efsearch, String vector, i
     return res;
 }
 ```
+
+### 6.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。
+#### 函数名
+```java
+public List<List<Map<String, Object>>> executeMultiSearch(Map<String, String> dbConfig,
+        String sqlTemplate, List<List<Object>> parameters, Map<String, Object> scanParams, int threadCount)
+```
+#### 输入参数
+- dbConfig:数据库连接配置，包含jdbcUrl、user、password
+- sqlTemplate:查询语句
+- parameters：查询参数，需要元组列表的格式
+- scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
+- threadCount:连接池最大连接数
+
+#### 输出参数
+- 查询结果，形式为`[[{id=1, embedding='[1,2,3]'},{id=2, embedding='[2,2,2]'}], [],...]`，表示n个查询向量对应的limit个结果。
+#### 使用案例
+```java
+import org.opengauss.util.ParallelSearch
+
+String jdbcUrl = "jdbc:opengauss://localhost:port/dbname?allowMultiQueries=true";
+Map<String, Object> dbConfig = new HashMap<>();
+dbConfig.put("jdbcUrl", jdbcUrl);
+dbConfig.put("username", "YourName");
+dbConfig.put("auth", "YourPassword");
+
+String sqlTemplate = "select id from demotable order by embedding <-> '?'::vector limit ?;";
+int threadCount = 2;
+Map<String, Object> scanParams = new HashMap<>();
+scanParams.put("enable_seqscan", "off");
+scanParams.put("hnsw_ef_search", 40);
+
+List<List<Object>> parameters = new ArrayList<>();
+parameters.add(new ArrayList<>(Arrays.asList(Arrays.toString(new int[]{1, 2, 3})), 1));
+parameters.add(new ArrayList<>(Arrays.asList(Arrays.toString(new int[]{2, 2, 3})), 2));
+
+ParallelSearch ps = new ParallelSearch();
+List<List<Map<String, Object>>> res = ps.executeMultiSearch(dbConfig, sqlTemplate, parameters,  scanParams, threadCount);
+```
+
 ## 用例
+编译及运行命令：
+```bash
+javac -cp ./openGauss-connector-jdbc/output/opengauss-jdbc-7.0.0-RC2.jar <yourfilename>.java
+java -cp ./openGauss-connector-jdbc/output/opengauss-jdbc-7.0.0-RC2.jar:. <yourfilename>
+```
+
 ```java
 public static void main(String[] args) {
         String username = "test2";     // 替换为你的用户名
@@ -156,6 +213,4 @@ public static void main(String[] args) {
         }
     }
 ```
-
-
 [更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-jdbc)

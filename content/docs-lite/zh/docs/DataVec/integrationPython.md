@@ -5,16 +5,27 @@
 限制：<br>
 如果数据库非OM工具安装，建议python版本为3.11及以上<br>
 如果数据库是OM工具安装，建议python版本为3.6-3.10
-- 在线安装
-```bash
-pip3 install psycopg2
-```
-- 离线安装
 
-开发者可以直接到[pypi官网](https://pypi.org/project/psycopg2/)下载psycopg2并安装。
-```bash
-pip3 install YourPath/psycopg2.whl
-```
+- 在线安装
+  ```bash
+  pip3 install psycopg2
+  ```
+  注意这里安装的是pypi上的psycopg2的包，不包含多向量查询的特性。如果要使用多向量查询的特性，参考离线安装。
+
+- 离线安装<br>
+  1）下载适配好openGauss的psycopg2包，下载链接：[gitcode官网](https://gitcode.com/opengauss/  openGauss-connector-python-psycopg2)。<br>
+  2）进入openGauss-connector-python-psycopg2根目录，执行
+  ```bash
+  sh build.sh -bd /data/compile/openGauss-server/dest/ -v 5.0.0
+  ```
+  -bd: 指定openGauss数据库构建结果目录<br>
+  -v: 指定构建包的版本号。不指定则默认为5.0.0<br>
+  编译完成后的驱动，在 output 目录下，解压安装包后，会得到两个目录 lib 和 psycopg2。<br>
+  3) 将 psycopg2 目录拷贝到 Python 解释器的 site-packages 下（需要先pip3 uninstall psycopg2），对于lib文件夹需要设置环境变量。
+  ```bash
+  echo "export LD_LIBRARY_PATH=[/path/to/lib]:$LD_LIBRARY_PATH" >> ~/.bashrc
+  source ~/.bashrc
+  ```
 
 ## 基本操作
 ### 1.连接数据库
@@ -130,6 +141,38 @@ def close_connection(conn, cursor):
     conn.close()
     cursor.close()
 ```
+
+### 8.多向量并发查询
+多向量召回支持在单次搜索请求中同时提交多个查询向量，openGauss将并行对查询向量进行搜索，并返回多组结果。
+#### 函数名
+```python
+execute_multi_search(dbconfig, conn_pool_mgr, sql_template, argslist, scan_params, max_workers)
+```
+#### 输入参数
+- dbconfig:数据库连接配置，包含user、password、dbname、host、port
+- conn_pool_mgr：连接池管理对象，可以自定义设置，当其为None时，函数内部会自行创建
+- sql_template:查询语句
+- argslist：查询参数，需要元组列表的格式
+- scan_params：需要通过set设置的参数（如hnsw_ef_search、nprobes）
+- max_workers:连接池最大连接数
+
+#### 输出参数
+- 查询结果，形式为`[[(1, '[1,2,3]'),(2, '[2,2,2]')], [],...]`，表示n个查询向量对应的limit个结果。
+#### 使用案例
+```python
+from psycopg2.extras import execute_multi_search, init_conn_pool, close_conn_pool
+sql_template = "SELECT * FROM test_table1 ORDER BY embedding <-> %s LIMIT %s;"
+scan_params = {"enable_seqscan": "off", "hnsw_ef_search" : 40}
+dbconfig = {'user': 'yourusername', 'password': 'yourpassword', 'host': 'yourhost', 'dbname': 'yourdbname', 'port' : 5432}
+argslist = [('[1,1,1]', 1), ('[2,2,3]', 2)]
+
+conn_pool_mgr = init_conn_pool(dbconfig, 2, scan_params)
+res = execute_multi_search(dbconfig, conn_pool_mgr, sql_template, argslist, scan_params, 2)
+close_conn_pool(conn_pool_mgr)
+```
+
+>注意：<br>
+>如果并发中的数据库配置密码输入错误，可能会报ERROR:  The account has been locked，这时候需要用超级用户登录为当前用户解锁，具体命令为：`ALTER ROLE username ACCOUNT UNLOCK;`
 
 ## 用例
 ```python
