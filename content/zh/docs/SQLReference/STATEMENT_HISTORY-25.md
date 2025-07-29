@@ -658,7 +658,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="19.998000199980005%" headers="mcps1.2.4.1.2 "><p id="p339717319319"><a name="p339717319319"></a><a name="p339717319319"></a>bytea</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录SQL语句执行各算子耗时。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>trace记录字段容量大小受track_stmt_trace_size控制，范围见track_stmt_trace_size参数说明。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>trace记录级别受track_stmt_stat_level控制，默认为'OFF,L0'，参数第一部分代表Full SQL，第二部分是慢SQL；对于全链路信息，只有Full SQL大于等于L1级别或慢SQL大于等于才L1级别才会被记录。</p>
+<td class="cellrowborder" valign="top" width="49.05509449055094%" headers="mcps1.2.4.1.3 "><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>记录SQL语句执行各算子耗时。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>trace记录字段容量大小受track_stmt_trace_size控制，范围见track_stmt_trace_size参数说明。</p><p id="p43971231315"><a name="p43971231315"></a><a name="p43971231315"></a>trace记录级别受track_stmt_stat_level控制，默认为'OFF,L0'，参数第一部分代表Full SQL，第二部分是慢SQL；对于全链路信息，只有Full SQL大于等于L1级别或慢SQL大于等于L1级别才会被记录。</p>
 </td>
 <td class="cellrowborder" valign="top" width="10.47895210478952%" headers="mcps1.2.4.1.4 "><p id="p19286111393017"><a name="p19286111393017"></a><a name="p19286111393017"></a>L1</p>
 </td>
