@@ -90,3 +90,19 @@
 **取值范围**： 布尔型，on/off
 
 **默认值**： off
+
+## diskann_probes<a name="section14941640131"></a>
+
+**参数说明**： 使用DISKANN索引扫描时的动态候选集大小。
+
+该参数仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
+
+**取值范围**： 整型，1\~32768
+
+**设置建议**： 使用DISKANN索引扫描时，sql结果数量会受限于`Limit`，diskann_probes为初始扫描集合大小，建议该值在大于`Limit`范围内设置即可。
+
+**默认值**： 128
+
+>![](public_sys-resources/icon-note.gif) **说明：**
+>
+> 较高的值会提升查询的召回率，但同时查询速度会下降。
