@@ -18,11 +18,14 @@
     ```
 - 离线安装
 
-    可以从开源社区下载openGauss-connector-jdbc源码
+    1） 可以从开源社区下载openGauss-connector-jdbc源码
     ```bash
     git clone https://gitcode.com/opengauss/openGauss-connector-jdbc.git
     ```
     切换到代码目录运行`sh build.sh`,成功编译后会出现两个jar包，分别是opengauss-jdbc-${version}.jar与postgresql.jar（在output目录下）
+
+    2） 可以直接获取相关jdbc的压缩包
+    获取链接：`https://download-opengauss.osinfra.cn/archive_test/7.0.0-RC2/openGauss7.0.0-RC2.B019/openEuler20.03/arm/openGauss-JDBC-7.0.0-RC2.tar.gz`，可以根据操作系统版本和服务器架构自行选择对应压缩包，压缩包解压后得到opengauss-jdbc-${version}.jar与postgresql.jar。
 
 ## 基本操作
 ### 1.连接数据库
