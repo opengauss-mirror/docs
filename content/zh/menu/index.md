@@ -921,6 +921,7 @@ headless: true
 	-   [向量存储引擎]({{< relref "./docs/DataVec/DataVec-architecture.md" >}})
 		-   [PQ]({{< relref "./docs/DataVec/PQ.md" >}})
 		-   [IVFFLAT-NPU]({{< relref "./docs/DataVec/ivfflat-npu.md" >}})
+                -   [DISKANN]({{< relref "./docs/DataVec/DiskANN.md" >}})
 	-   [全文检索索引]({{< relref "./docs/DataVec/FullText.md" >}})
 		-   [BM25索引]({{< relref "./docs/DataVec/BM25索引.md" >}})
 			-   [索引介绍]({{< relref "./docs/DataVec/BM25全文检索.md" >}})
