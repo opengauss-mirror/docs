@@ -38,6 +38,8 @@
 
 -   **[匿名块](匿名块.md)**
 
+-   **[子类型](子类型.md)**
+
 -   **[存储过程](存储过程.md)**
 
 -   **[PL/pgSQL语言函数](PL-pgSQL语言函数.md)**
@@ -51,8 +53,6 @@
 -   **[扩展语法](扩展语法.md)**
 
 -   **[类型基础值](INSERT_RIGHT_REF_DEFAULT_VALUE.md)**
-
--   **[GIN索引](GIN索引.md)**
 
 -   **[DataVec向量引擎](DataVec向量引擎.md)**
 
