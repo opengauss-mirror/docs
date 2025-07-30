@@ -21,6 +21,7 @@
 
 - 注意，对于 MySQL，在使用 CREATE TABLE 或者 ALTER TABLE 语句中，如果定义时间类型(例如 timestamp、datetime、time)列属性时不指定精度，则默认为 0。同时，使用 cast(expr as typename) 语法进行类型转换时，如果目标类型没有指定精度，那么默认精度也为 0。因此，如果用户需要保留数据的输入精度，则需要显式使用 typmod。
 - 同时，兼容后的时间类型，使用 :: 进行类型转换，如果目标类型没有指定精度，那么默认精度也为 0。
+- 使用MySQL JDBC 8.0.19及以上的驱动连接数据库，获取TIME/TIMESTAMP类型时，如果是表字段，则精度为字段实际精度；否则，精度固定为6。例如执行`select timt('1:1:1.11')`，通过ResultSet.getString打印出来的结果为`1:1:1.110000`。
 
 ### date 类型输入
 
