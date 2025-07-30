@@ -1383,7 +1383,6 @@ headless: true
 	-   [扩展语法]({{< relref "./docs/SQLReference/扩展语法.md" >}})
 	-   [类型基础值]({{< relref "./docs/SQLReference/INSERT_RIGHT_REF_DEFAULT_VALUE.md" >}})
 	-   [GIN索引]({{< relref "./docs/SQLReference/GIN索引.md" >}})
-			-   [介绍]({{< relref "./docs/SQLReference/介绍_GIN.md" >}})
 			-   [扩展性]({{< relref "./docs/SQLReference/扩展性.md" >}})
 			-   [实现]({{< relref "./docs/SQLReference/实现.md" >}})
 			-   [GIN提示与技巧]({{< relref "./docs/SQLReference/GIN提示与技巧.md" >}})
