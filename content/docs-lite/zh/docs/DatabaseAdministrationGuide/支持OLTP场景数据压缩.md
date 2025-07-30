@@ -10,19 +10,13 @@
 
 正式商用版本将在openGauss7.0.0 版本发布。
 
-
-
 ## 特性简介
 
 OLTP场景下，对行存表(包括Ustore和Astore)的数据和索引页面，openGauss提供基于通用压缩算法的透明页压缩功能，降低磁盘空间占用的同时保持OLTP场景下的高性能。
 
-
-
 ## 客户价值
 
 数据压缩，降低存储空间占用，同时维持较高OLTP性能。
-
-
 
 ## 特性描述
 
@@ -34,17 +28,11 @@ openGauss OLTP场景数据压缩，采用透明页压缩的方式实现，在单
 
 压缩后的数据存于一定数量的chunk中，而这些chunk的数量和位置信息也需要存储，这两部分内容分别存储于pcd（页面压缩数据）和pca（页面压缩地址）两个区域内，pcd存储以chunk为单位的压缩后数据，pca存储每个页面对应的chunk数量和地址等信息。如下图所示：
 
-
-
 ![img](figures/Compression_extent.png)
-
-
 
 一个pca页面管理127个pcd页面大小的空间，对应128个未压缩的数据页面，称为压缩中的一个`cfsExtent`。由于压缩后数据小于等于原始页面大小（若压缩后变大则不进行压缩），因此一个`cfsExtent`的末尾通常会有空闲空间未被占用，这部分空间我们采用文件系统punch hole的方式分配，不占用实际的磁盘空间，从而实现磁盘空间的压缩。
 
 openGauss压缩采用通用压缩算法，可选算法有：ZSTD、PGLZ和ZLIB。这些通用压缩算法的解压性能通常较压缩算法要好很多，因此压缩特性对读取页面性能影响较小。而对于页面落盘操作，通常由后台线程异步执行，因此对用户sql性能影响也较小。
-
-
 
 ## 特性约束
 
@@ -64,7 +52,7 @@ openGauss压缩采用通用压缩算法，可选算法有：ZSTD、PGLZ和ZLIB�
 
 ## 基本原理
 
-#### 压缩页面读写
+### 压缩页面读写
 
 一个压缩数据`cfsExtent`，由一个pca页面管理，其详细结构如下图：
 
@@ -95,15 +83,11 @@ extent扩展：
 - 初始化`CfsExtentHeader`，pca页面落盘；
 - 以punch hole方式分配128个页面的pcd空间（不占用实际磁盘空间）。
 
-
-
-#### 碎片整理
+### 碎片整理
 
 正常情况下，新页面压缩落盘时，在pcd空间内占用的是连续的chunk，而随着数据的变化，压缩后数据大小也会变化，这就导致需要分配新chunk，或者已分配的chunk实际没有数据填充。前者会导致读盘时额外的IO读取次数，影响性能，后者会导致压缩率的劣化。为解决这些问题，压缩特性提供了碎片整理接口，整理后的页面对应chunk全部连续，按pca中`CfsExtentAddress`顺序依次排列。
 
-
-
-#### 段页式适配
+### 段页式适配
 
 段页式的详细介绍可见[段页式存储结构](../DatabaseAdministrationGuide/段页式存储结构.md)。段页式下，数据分布满足如下特点：
 
@@ -137,7 +121,7 @@ extent扩展：
 
 由于pca页面的存在，压缩表分配到的段页式extent只能表示原有的`127/128`的页面，如1M extent对于非压缩表来说能存放128个页，而若表为压缩表，则这个extent只能存放127个逻辑页面。因此，对于段页式压缩表，逻辑页号和物理页号的转换如上图，group 2、3、4内的extent能够表示的页面变为原有的`127/128`。
 
-#### 开启KAE
+### 开启KAE
 
 安装KAE后，在环境变量中配置KAEZlib的lib路径后，启动openGauss，即可使用KAEZlib库(注意KAE的lib路径要放到openGauss自带的zlib库之前)。配置方式如下：
 
@@ -146,13 +130,11 @@ extent扩展：
 export LD_LIBRARY_PATH=/usr/local/kaezip/lib:$LD_LIBRARY_PATH
 ```
 
-
-
 ## 使用指导
 
 相关参数见[高效数据压缩算法相关参数](../DatabaseReference/高效数据压缩算法相关参数.md)。
 
-#### 使用示例
+### 使用示例
 
 - 建压缩表
 
@@ -184,4 +166,3 @@ alter table tbl set (compresstype=2,compress_chunk_size=1024,compress_level=1);
 ```sql
 shrink table tbl;
 ```
-
