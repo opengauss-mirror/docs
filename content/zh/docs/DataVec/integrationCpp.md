@@ -3,10 +3,8 @@
 
 ## 环境准备
 - g++
-- libpq库
-```bash
-apt-get install libpq-dev
-```
+- libpq库  
+详见[基于libpq开发流程](../DeveloperGuide/开发流程_libpq.md)。
 
 ## 基本操作
 ### 1.连接数据库
