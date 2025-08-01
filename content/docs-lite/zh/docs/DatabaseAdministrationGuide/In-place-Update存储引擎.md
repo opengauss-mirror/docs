@@ -51,7 +51,6 @@ Ustore 是 openGauss 内核新增的一种存储模式，其最大程度结合�
     <img src="figures/UstoreStructe.png" height=600px style="margin:auto;max-width: 100%;">
 </div>
 
-
 ### Ustore主要功能模块<a name="section1359382119297"></a>
 Ustore 和 Astore 共用事务管理，并发控制、缓冲区管理、检查点、故障恢复管理与介质管理器。Ustore 的主要功能模块如表 2 所示：
 
@@ -96,7 +95,6 @@ Ustore 和 Astore 共用事务管理，并发控制、缓冲区管理、检查�
 </tbody>
 </table>
 
-
 ### Ustore页面结构<a name="section13355203802911"></a>
 
 Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使用默认的 8KB 页面，其页面结构如下图 2 所示：
@@ -105,7 +103,6 @@ Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/UstorePage.png" height=600px style="margin:auto;max-width: 100%;">
 </div>
-
 
 ### Ustore的多版本管理<a name="section101449415302"></a>
 
@@ -121,7 +118,6 @@ Ustore 多版本管理方式基于 MVCC 技术，确保在高并发的环境下�
     -   Ustore 通过维护数据记录的版本链来管理多个版本的数据。每对一条记录进行更新时都会创建一个新版本，并将其连接到现有版本链的末尾。其中旧版本不会立即删除，而是保留在链上，以供正在进行的事务读取。
 -   CSN ( Commit Sequence Number )
     -   CSN 是一个递增的序列号，用于标识事务的提交顺序。在 Ustore 中，CSN 与版本链配合使用，确保数据版本的可见性和一致性。一个事务只能看到它开始之前已经提交的事务所生成的数据版本。
-
 
 #### PBRCR ( Page Base Row Consistency Read ) Ustore 旧版本管理
 
@@ -139,6 +135,7 @@ Ustore的老版本管理的核心是通过 **回滚段 ( Undo Segment )** 来记
 Undo 空间需要回收回滚记录来保证 Undo 空间不会无限膨胀，一旦事务 ID 小于当前快照中最小的 Xmin ( oldestXmin ) ，回滚记录中的旧版本数据就不会被访问，此时就可以对回滚记录进行回收。
 
 如前述描述 Undo 空间中的回滚记录按照事务 ID 递增的顺序存放在 UndoZone 中，回收的条件如下：
+
 1. 事务已经提交并且小于 oldestXmin 的 Undo 空间可以回收。
 2. 事务发生回滚但已经完成回滚的 Undo 空间可以回收。
 
@@ -150,7 +147,6 @@ Undo 空间的回收过程如图 4 所示：
 </div>
 
 如上图所示，UndoZone1 中回收到小于 oldestXmin 的已提交事务 16068，UndoZone2 中回收到16050，UndoZone m 回收到 16056，UndoZone n 回收到事务 16012，而事务 16014 待回滚但未发生回滚，因此 UndoZone n 回收事务 ID 上限只到16014.其他 zone 的上限是 oldestXmin，oldestXidInUndo 会取所有 Undozone 上的上限最小值，因此 oldestXidInUndo 等于 16014。
-
 
 #### MVCC
 
@@ -170,22 +166,20 @@ Ustore 在获取元组时，会先检查对应的事务目录。事务目录分�
     <img src="figures/tupleSearch.png" height=700px style="margin:auto;max-width: 100%;">
 </div>
 
-
 #### 多版本索引
 
-openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引的变种，相比于原有的 Btree 索引有以下差异。
+openGauss实现了多版本索引 UBtree，是专用于 Ustore 的 Btree 索引的变种，相比于原有的 Btree 索引有以下差异。
+
 1. 支持索引数据的多版本管理以及可见性检查，能够自主鉴别旧版本元组并进行回收，同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( Index Only Scan ) 性能有所提升。
 2. 在索引插入操作之外，增加了索引删除操作，用于对被删除或修改的元组对应的索引元组进行标记。
 3. 索引按照 key + TID 的顺序排序，索引列相同的元组按照对应元组的 TID 作为第二关键字进行排序。会将 xmin、xmax 追加到 key 的后面。
-4. 添加新的可选页面分裂策略 " insertpt " 。
+4. 添加新的可选页面分裂策略 " insertpt "。
 5. 不依赖Vacuum进行旧版本清理。独立的空间回收能力，索引与堆表解耦，可独立清理，IO平稳度更优。
-
 
 **图 6**  UBtree结构<a name=""></a>
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/UBTREEStructe.png" height=400px style="margin:auto;max-width: 100%;">
 </div>
-
 
 ##### 索引页面组织
 
@@ -241,6 +235,7 @@ Ustore 中堆页面的自治式空间管理，建立在与 Astore 类似的轻�
 对于 Astore 而言，复用数据元组的行指针前必须保证对应的索引元组已经被清理。这是为了防止通过索引元组访问已经被复用的行指针，导致取到错误的数据。在 Astore 中需要通过 VACUUM 操作将这样的无效索引元组统一清除掉后才能复用行指针，这使得堆页面和索引页面的清理逻辑耦合在一起，也会导致间断性的大量 I/O。在 Ustore 中能高效地单独进行数据和索引页面的清理，因为带有版本信息的 UBtree 能够独立检测并过滤掉无效的索引元组，不会通过无效索引元组访问对应的数据表。
 
 ##### 自治式索引页面空间管理
+
 索引页面的空间管理不依靠 FSM 数据结构，而是依靠特有的 URQ ( UBtree Recycle Queue ) 结构，简称为回收队列。
 
 索引中的回收队列分为两部分，一部分是潜在空页队列 ( Potential Empty Page Queue ) ，一部分是可用页面队列 ( Available Page Queue ) 。两个队列都是跨页面的循环队列，其中每个元素都会储存 blkno 以及 XID。其中 blkno 表示该元素对应索引页面的 block number；XID 表示该页面在哪个时刻能够被回收或复用。这些元素在循环队列单个页内按照 XID 的顺序进行排序，以便于快速找到 XID 小（最可能被回收或复用）的页面。其结构如图所示。
@@ -254,6 +249,7 @@ Ustore 中堆页面的自治式空间管理，建立在与 Astore 类似的轻�
 与 Astore 相同，Ustore 也提供 VACUUM 语句来让用户主动执行对某个Ustore表及其上的索引进行中量级清理。其对外表现与 Astore 一致。重量级的 VACUUM FULL 也与 Astore 一致，会清理无效数据并对数据空间和索引空间重新进行组织。
 
 ### Ustore事务模型<a name="section811017719396"></a>
+
 #### 事务与CSN
 
 Ustore 支持事务以保证操作的 ACID 特性。 Ustore 事务具有以下特性：

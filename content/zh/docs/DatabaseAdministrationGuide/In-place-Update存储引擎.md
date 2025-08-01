@@ -1,4 +1,4 @@
-# In-place Update 存储引擎
+# Ustore 存储引擎
 
 ## 可获得性<a name="section1076382216287"></a>
 
@@ -6,12 +6,21 @@
 
 ## 特性简介<a name="section732915401281"></a>
 
-In-place Update 是 openGauss 内核新增的一种存储模式，中文意思为原地更新。此前的版本使用的行存储引擎是 Append Update（追加更新）模式。追加更新对于业务中的 INSERT、DELETE以及 HOT Update（页面内更新）有很好的表现，但对于跨数据页面的非HOT UPDATE场景，垃圾回收不够高效，Ustore 存储引擎可很好解决上述问题。
+Ustore存储引擎，又名In-place Update存储引擎（原地更新），是openGauss 内核新增的一种存储模式。此前的版本使用的行存储引擎是Append Update（追加更新）模式。追加更新对于业务中的增、删以及HOT（HeapOnly Tuple）Update（即同一页面内更新）有很好的表现，但对于跨数据页面的非HOT UPDATE场景，垃圾回收不够高效。因此，Ustore存储引擎应运而生。
 
-## 客户价值<a name="section103921852122817"></a>
--   **高性能**：对插入、更新、删除等不同负载的业务，性能以及资源的使用表现相对均衡。更新操作采用原地更新模式在频繁更新类的业务场景下可拥有更优秀的性能表现。
--   **高效存储**：采用原位更新的方式极大节约了空间，将回滚段、数据页面分离存储，具备更高效、平稳的IO使用能力。
--   **细粒度资源控制**：Ustore 引擎提供多维度的事务“监管”方式，防止异常、非预期内的行为出现，方便数据库管理员对数据库系统资源使用进行规范和约束。
+## 设计原理<a name="section101901757153119"></a>
+
+Ustore存储引擎将最新版本的“有效数据”和历史版本的“垃圾数据”分离存储。将最新版本的“有效数据”存储在数据页面上，并单独开辟一段UNDO空间，用于统一管理历史版本的“垃圾数据”，因此数据空间不会由于频繁更新而膨胀，“垃圾数据”集中回收效率更高。
+
+Ustore存储引擎采用NUMA-aware的UNDO子系统设计，使得UNDO子系统可以在多核平台上有效扩展；同时采用多版本索引技术，解决索引清理问题，有效提升了存储空间的回收复用效率。
+
+Ustore存储引擎结合UNDO空间，可以实现更高效、更全面的闪回查询和回收站机制，能快速回退人为“误操作”，为openGauss提供了更丰富的企业级功能。
+
+## 核心优势<a name="section69751648124511"></a>
+
+- **高性能：** 对插入、更新、删除等不同负载的业务，性能以及资源使用表现相对均衡。更新操作采用原地更新模式在频繁更新类的业务场景下可拥有更高、更平稳的性能表现。适应“短”（事务短）、“频”（更新操作频繁）、“快”（性能要求高）的典型OLTP类业务场景。
+- **高效存储：** 支持最大限度的原位更新, 极大节约了空间；将回滚段、数据页面分离存储，具备更高效、平稳的IO使用能力，UNDO子系统采用NUMA-aware设计，具有更好的多核扩展性，UNDO空间统一分配，集中回收，复用效率更高，存储空间使用更加高效、平稳。
+- **细粒度资源控制：** Ustore引擎提供多维度的事务“监管”方式，可基于事务运行时长、单事务使用UNDO空间大小、以及整体UNDO空间限制等方式对事务运行进行“监管”，防止异常、非预期内的行为出现，方便数据库管理员对数据库系统资源使用进行规范和约束。
 
 ## 特性描述<a name="section811017719290"></a>
 
@@ -43,7 +52,6 @@ Ustore 是 openGauss 内核新增的一种存储模式，其最大程度结合�
 </tbody>
 </table>
 
-
 相较于 Astore ，Ustore 将最新版本的“有效数据”和历史版本的“垃圾数据”分离存储。将最新版本的“有效数据”存储在数据页面上，并单独开辟出一段 Undo 空间，用于统一历史版本的“垃圾数据”，因此数据空间不会由于频繁更新而膨胀，“垃圾数据”集中回收效率更高。Ustore 存储引擎采用 NUMA-Aware 的 Undo 一系统可以在多核平台上有效扩展；同时采用多版本索引技术，解决索引清理问题，有效提升了存储空间的回收复用效率。
 
 **图 1**  Ustore框架图<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>    
@@ -51,8 +59,8 @@ Ustore 是 openGauss 内核新增的一种存储模式，其最大程度结合�
     <img src="figures/UstoreStructe.png" height=600px style="margin:auto;max-width: 100%;">
 </div>
 
-
 ### Ustore主要功能模块<a name="section1359382119297"></a>
+
 Ustore 和 Astore 共用事务管理，并发控制、缓冲区管理、检查点、故障恢复管理与介质管理器。Ustore 的主要功能模块如表 2 所示：
 
 **表 2** Ustore在多版本管理上的架构设计
@@ -96,7 +104,6 @@ Ustore 和 Astore 共用事务管理，并发控制、缓冲区管理、检查�
 </tbody>
 </table>
 
-
 ### Ustore页面结构<a name="section13355203802911"></a>
 
 Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使用默认的 8KB 页面，其页面结构如下图 2 所示：
@@ -106,14 +113,13 @@ Ustore 的页面结构和 Astore 的页面结构相同，在 openGauss 中也使
     <img src="figures/UstorePage.png" height=600px style="margin:auto;max-width: 100%;">
 </div>
 
-
 ### Ustore的多版本管理<a name="section101449415302"></a>
 
 Ustore 多版本管理方式基于 MVCC 技术，确保在高并发的环境下的数据一致性和事务的隔离性。 Ustore 的多版本管理主要涉及以下几个方面的内容：
--   回滚段（Undo segment）
-	-   每当一个事务修改数据时，Ustore会将旧版本的数据放在回滚段的 Undo 目录中。回滚段用于在事务回滚时恢复数据，同时也支持多版本读取。当一个事务需要访问历史版本时，可以通过回滚段找到之前的旧数据。
--   MVCC
-	-   Ustore 通过 MVCC 实现了高效的并发控制，允许多个事务同时执行读操作且不会相互阻塞，写操作需要额外增加同步机制，整体上 Ustore 的并发控制机制减少了事务间的冲突，提高了系统的吞吐量。
+- 回滚段（Undo segment）
+    - 每当一个事务修改数据时，Ustore会将旧版本的数据放在回滚段的 Undo 目录中。回滚段用于在事务回滚时恢复数据，同时也支持多版本读取。当一个事务需要访问历史版本时，可以通过回滚段找到之前的旧数据。
+- MVCC
+	-  Ustore 通过 MVCC 实现了高效的并发控制，允许多个事务同时执行读操作且不会相互阻塞，写操作需要额外增加同步机制，整体上 Ustore 的并发控制机制减少了事务间的冲突，提高了系统的吞吐量。
 -   空间管理和回收
 	-   Ustore 实现了自治式的空间管理机制，不依赖中量级的 VACUUM 和 AUTOVACUUM 清理机制。
     -   随着时间的推移，Ustore会通过垃圾回收机制来清理不再需要的旧版本和回滚记录，以释放存储空间和优化性能。
@@ -121,7 +127,6 @@ Ustore 多版本管理方式基于 MVCC 技术，确保在高并发的环境下�
 	-   Ustore 通过维护数据记录的版本链来管理多个版本的数据。每对一条记录进行更新时都会创建一个新版本，并将其连接到现有版本链的末尾。其中旧版本不会立即删除，而是保留在链上，以供正在进行的事务读取。
 -   CSN ( Commit Sequence Number )
 	-   CSN 是一个递增的序列号，用于标识事务的提交顺序。在 Ustore 中，CSN 与版本链配合使用，确保数据版本的可见性和一致性。一个事务只能看到它开始之前已经提交的事务所生成的数据版本。
-
 
 #### PBRCR ( Page Base Row Consistency Read ) Ustore 旧版本管理
 
@@ -132,13 +137,14 @@ Ustore的老版本管理的核心是通过 **回滚段 ( Undo Segment )** 来记
     <img src="figures/VersionManage.png" height=600px style="margin:auto;max-width: 100%;">
 </div>
 
--   旧版本数据会集中存放在回滚段的 Undo 目录中，为了减少读写冲突，旧版本的数据（回滚段记录）采用追加写的方式写入数据目录的 Undo 目录下。这样旧版本数据数据的读取和写入不会发生冲突，同一个事物的旧版本数据也会连续存放，便于进行回滚操作。
--   为了减少并发写入时的竞争，Undo 目录空间被划分为多个逻辑区域（ UndoZone ，回滚段逻辑区域）。线程会在自己的逻辑区域上进行分配，与其他线程完全隔离，从而写入旧数据分配空间时就不会有额外的锁开销。 UndoZone 还可以按照 CPU 的 NUMA 核进行划分，每个线程会从当前 NUMA 核上的 UndoZone 进行分配，进一步提升分配效率。
--   在分配 Undo空间时会按照事务粒度进行记录，旧版本的数据一旦确认没有事务进行访问，就会进行回收。
+- 旧版本数据会集中存放在回滚段的 Undo 目录中，为了减少读写冲突，旧版本的数据（回滚段记录）采用追加写的方式写入数据目录的 Undo 目录下。这样旧版本数据数据的读取和写入不会发生冲突，同一个事物的旧版本数据也会连续存放，便于进行回滚操作。
+- 为了减少并发写入时的竞争，Undo 目录空间被划分为多个逻辑区域（ UndoZone ，回滚段逻辑区域）。线程会在自己的逻辑区域上进行分配，与其他线程完全隔离，从而写入旧数据分配空间时就不会有额外的锁开销。 UndoZone 还可以按照 CPU 的 NUMA 核进行划分，每个线程会从当前 NUMA 核上的 UndoZone 进行分配，进一步提升分配效率。
+- 在分配 Undo空间时会按照事务粒度进行记录，旧版本的数据一旦确认没有事务进行访问，就会进行回收。
 
 Undo 空间需要回收回滚记录来保证 Undo 空间不会无限膨胀，一旦事务 ID 小于当前快照中最小的 Xmin ( oldestXmin ) ，回滚记录中的旧版本数据就不会被访问，此时就可以对回滚记录进行回收。
 
 如前述描述 Undo 空间中的回滚记录按照事务 ID 递增的顺序存放在 UndoZone 中，回收的条件如下：
+
 1. 事务已经提交并且小于 oldestXmin 的 Undo 空间可以回收。
 2. 事务发生回滚但已经完成回滚的 Undo 空间可以回收。
 
@@ -150,7 +156,6 @@ Undo 空间的回收过程如图 4 所示：
 </div>
 
 如上图所示，UndoZone1 中回收到小于 oldestXmin 的已提交事务 16068，UndoZone2 中回收到16050，UndoZone m 回收到 16056，UndoZone n 回收到事务 16012，而事务 16014 待回滚但未发生回滚，因此 UndoZone n 回收事务 ID 上限只到16014.其他 zone 的上限是 oldestXmin，oldestXidInUndo 会取所有 Undozone 上的上限最小值，因此 oldestXidInUndo 等于 16014。
-
 
 #### MVCC
 
@@ -170,22 +175,20 @@ Ustore 在获取元组时，会先检查对应的事务目录。事务目录分�
     <img src="figures/tupleSearch.png" height=700px style="margin:auto;max-width: 100%;">
 </div>
 
-
 #### 多版本索引
 
 openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引的变种，相比于原有的 Btree 索引有以下差异。
+
 1. 支持索引数据的多版本管理以及可见性检查，能够自主鉴别旧版本元组并进行回收，同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( Index Only Scan ) 性能有所提升。
 2. 在索引插入操作之外，增加了索引删除操作，用于对被删除或修改的元组对应的索引元组进行标记。
 3. 索引按照 key + TID 的顺序排序，索引列相同的元组按照对应元组的 TID 作为第二关键字进行排序。会将 xmin、xmax 追加到 key 的后面。
 4. 添加新的可选页面分裂策略 " insertpt " 。
 5. 不依赖Vacuum进行旧版本清理。独立的空间回收能力，索引与堆表解耦，可独立清理，IO平稳度更优。
 
-
 **图 6**  UBtree结构<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574613"></a>  
 <div style="display:flex;justfy-content:center;">  
     <img src="figures/UBTREEStructe.png" height=400px style="margin:auto;max-width: 100%;">
 </div>
-
 
 ##### 索引页面组织
 
@@ -196,7 +199,6 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
     <img src="figures/ubtreeTreePage.png" style="margin:auto;max-width: 100%;">
 </div>
 
-
 与Astore堆页面中维护版本信息的方法类似，UBtree 的叶子节点中每个索引元组尾部都附加了对应的 xmin 和 xmax。索引只是用于加速搜索的结构，本身不与历史版本的概念强相关，仅通过xmin 来标识这个索引元组是从什么时候开始有效的，又是从什么时候被删除的，而不是像astore中堆元组一样会有指向旧版本元组的指针。
 
 新插入的索引元组尾部用于存放 xmin 和 xmax 空间，在索引插入函数执行的过程中预留出来。预留的空间及 xmin 在索引元组插入时通过索引元组页面插入函数写入页面，而 xmax 在索引元组删除时通过索引元组页面删除函数写出页面。
@@ -205,9 +207,11 @@ openGauss实现了多版本索引 UBtree ，是专用于 Ustore 的 Btree 索引
 索引扫描时会调用相应函数定位到第一个满足扫描条件的索引元组，然后获取当前页面中符合索引扫描条件且能通过可见性检查的元组。通过 xmin，xmax 和当前的快照进行可见性判断。
 
 ##### 索引操作
+
 对于原有的 Btree 索引而言，主要有四类操作，索引创建、索引扫描、索引插入及索引删除。
--   **Create操作**：创建索引时需要依靠扫描函数扫描对应的 Ustore 表，并取出每个元组的最新版本及其对应的 xmin 和 xmax。若某个元组存在被原定更新的旧版本，会复用 Astore 原有的逻辑，禁止隔离级别为可重复读的老事务访问。创建过程中会接受扫描后传来的元组，并将其按照索引列和 TID 进行排序后依次插入到索引页面中，并构建相应的原页面及上层页面。整个创建流程需要将所有的页面都记录到 XLOG 中，并强制将存储管理中的内容刷到永久存储介质后才算成功结束。
--   **Scan操作**：用户在读取数据时，可通过使用索引扫描加速，索引扫描与 Btree 索引基本一致，UBtree 支持索引数据的多版本管理及可见性检查同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( IndexOnly Scan )性能有所提升。对于索引扫描：
+
+-  **Create操作**：创建索引时需要依靠扫描函数扫描对应的 Ustore 表，并取出每个元组的最新版本及其对应的 xmin 和 xmax。若某个元组存在被原定更新的旧版本，会复用 Astore 原有的逻辑，禁止隔离级别为可重复读的老事务访问。创建过程中会接受扫描后传来的元组，并将其按照索引列和 TID 进行排序后依次插入到索引页面中，并构建相应的原页面及上层页面。整个创建流程需要将所有的页面都记录到 XLOG 中，并强制将存储管理中的内容刷到永久存储介质后才算成功结束。
+-  **Scan操作**：用户在读取数据时，可通过使用索引扫描加速，索引扫描与 Btree 索引基本一致，UBtree 支持索引数据的多版本管理及可见性检查同时索引层的可见性检查使得索引扫描 ( Index Scan ) 及仅索引扫描 ( IndexOnly Scan )性能有所提升。对于索引扫描：
     1. 若索引列包含所有扫描列 ( IndexOnly Scan )，则通过扫描条件在索引上进行二分查找，找到符合条件元组即可返回数据；
     2. 若索引列不包含所有扫描列 ( Index Scan )，则通过扫描条件在索引上进行二分查找，找到符合条件元组的 TID，再通过 TID 到数据表上查找对应的数据元组。如图 8 所示：
 
@@ -295,6 +299,7 @@ Ustore 支持标准的 2PC 事务。
 无。
 
 ## 特性约束<a name="section69751648124265"></a>
+
 -   不支持物化视图。
 -   不支持 gin 索引。
 -   不支持 btree 索引。
@@ -325,89 +330,3 @@ Ustore存储引擎采用NUMA-aware的Undo子系统设计，使得Undo子系统�
 Ustore存储引擎结合Undo空间，可以实现更高效、更全面的闪回查询和回收站机制，能快速回退人为“误操作”，为openGauss提供了更丰富的企业级功能。
 
 Ustore存储引擎可以在数据频繁更新场景下性能依旧稳如泰山，使业务系统运行更加平稳，适应更多业务场景和工作负载，特别是对性能和稳定性有更高要求的金融核心业务场景。
-
-## 使用指导<a name="section2190298487"></a>
-
-Ustore与原有的Astore\(Append Update\)存储引擎并存。Ustore存储引擎屏蔽了存储层实现的细节，SQL语法和原有的ASTORE存储引擎使用基本保持一致，唯一差别是建表和建索引有些细微区别。
-
--   **创建表的方式**
-
-	-   **创建方式1：创建表时指定存储引擎类型**
-
-		```
-        create table test(id int, age int, name varchar(10)) with (storage_type=ustore);
-        ```
-
-	-   **创建方式2：GUC参数配置指定Ustore存储引擎**
-
-
-    1.  数据库启动之前，在postgresql.conf中设置“enable\_default\_ustore\_table=on”，默认指定用户创建表时使用Ustore存储引擎。
-
-        \[postgresql.conf配置\]
-
-        ```
-        enable_default_ustore_table=on
-        ```
-
-    2.  创建表。
-
-        ```
-        create table test(id int, age int, name varchar(10));
-        ```
-
-
--   **创建索引的方式**
-
-	Ustore存储引擎使用的索引为UBtree， UBtree是专门给Ustore存储引擎开发的索引，也是该引擎目前唯一支持的索引类型。
-
-	假定有如下test表结构，计划在test表的age列上增加一个UBtree索引。
-
-	```
-    openGauss=# \d+  test
-                             Table "public.test"
-     Column |  Type                 | Modifiers | Storage  | Stats target | Description
-    --------+-----------------------+-----------+----------+--------------+-------------
-     id     | integer               |           | plain    |              |
-     age    | integer               |           | plain    |              |
-     name   | character varying(10) |           | extended |              |
-    ```
-
-	-   **创建方式1：不指定创建索引类型，默认创建UBtree索引**
-
-		```
-        create index ubt_idx on test(age);
-        ```
-
-		```
-        openGauss=# \d+  test
-                                        Table "public.test"
-         Column |  Type                 | Modifiers | Storage  | Stats target | Description
-        --------+-----------------------+-----------+----------+--------------+-------------
-         id     | integer               |           | plain    |              |
-         age    | integer               |           | plain    |              |
-         name   | character varying(10) |           | extended |              |
-        Indexes:
-            "ubt_idx" ubtree (age) WITH (storage_type=ustore) TBALESPACE pg_default
-        Has OIDs: no
-        Options: orientation=row, compression=no, storage_type=ustore
-        ```
-
-	-   **创建方式2：创建索引时使用using关键字指定索引类型为“ubtree”**
-
-		```
-        create index ubt_idx on test using ubtree(age);
-        ```
-
-		```
-        openGauss=# \d+  test
-                                        Table "public.test"
-         Column |  Type                 | Modifiers | Storage  | Stats target | Description
-        --------+-----------------------+-----------+----------+--------------+-------------
-         id     | integer               |           | plain    |              |
-         age    | integer               |           | plain    |              |
-         name   | character varying(10) |           | extended |              |
-        Indexes:
-            "ubt_idx" ubtree (age) WITH (storage_type=ustore) TBALESPACE pg_default
-        Has OIDs: no
-        Options: orientation=row, compression=no, storage_type=ustore
-        ```
