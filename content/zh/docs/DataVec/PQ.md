@@ -90,6 +90,22 @@ vector_cosine_ops | 余弦距离
 	openGauss=# SET hnsw_earlystop_threshold = 320;
 	```
 
+#### Hnsw-PQ支持MMAP Beta特性功能
+##### 介绍
+MMAP 提供了一种高效的文件访问方式，特别适合数据库的随机读取场景。Hnsw所有检索可以通过开启MMAP功能加速检索。目前属于beta功能。
+##### 使用方式
+-   `enable_mmap=on` - 需要guc文件配置，重启生效
+-	`hnsw_use_mmap=on` - 会话级别参数
+-	`use_mmap=true`	-创建索引时属性
+	**示例：** 使用L2距离创建带MMAP功能的HNSW-PQ索引。
+	```
+	openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (use_mmap=true);
+	```
+>![](../../../docs-lite/zh/docs/BriefTutorial/public_sys-resources/icon-note.gif) **限制：<br>**
+>MMAP特性暂时只支持ARM架构环境。<br>
+>MMAP特性暂时只支持HNSW索引。<br>
+>MMAP特性暂时只能加载一个索引，且加载了MMAP的索引不能进行DML，如果需要切换加载索引，需重启。<br>
+
 ### IVF-PQ
 
 ```
