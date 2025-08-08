@@ -31,6 +31,16 @@ ALTER SYSTEM SET命令用于设置POSTMASTER、SIGHUP、BACKEND级别的GUC参�
   krb_caseins_users, krb_server_keyfile, krb_srvname, allow_system_table_mods, enableSeparationOfDuty,
   modify_initial_password, password_encryption_type, password_policy
   ```
+  >![](public_sys-resources/icon-notice.png) **例外：**
+  > 在兼容B模式下，ALTER SYSTEM SET命令设置可以设置SUSET, USERSET级别参数，条件如下：
+  >
+  > - 当前用户拥有sysadmin权限。
+  >
+  > - 当前用户在B兼容数据库中。
+  >
+  > - 只能设置带有插件属性参数。
+  >
+  > 注意：本例外只对满足上述三个条件的GUC参数设置时级别做了特殊处理，并不会改变参数原有其他校验逻辑：比如只能由初始用户修改的参数。
 
 ## 语法格式
 
