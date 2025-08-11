@@ -96,9 +96,9 @@ vector_cosine_ops | <=> |余弦距离
 
 #### 索引选项
 
--   `index_size` - 索引构建参数，影响召回精度与构建时间，取值范围为16~1000（默认值为100）
+-   `index_size` - 索引构建参数，影响召回精度与构建时间，取值范围为16~1000（默认值为100），百万规模数据集建议设置为50
 -   `enable_pq` - 量化压缩参数，控制是否开启PQ，默认关闭
--   `pq_m` - 量化压缩参数，取值范围为1~192（默认值为8）
+-   `pq_m` - 量化压缩参数，取值范围为1~192（默认值为8），建议设置为```dim / 8```
 
 **示例：** 使用带残差的L2距离计算创建DISKANN索引。
 
@@ -147,3 +147,4 @@ openGauss=# SELECT * FROM items ORDER BY embedding <-> '[1,2,3,4]';
 - DISKANN索引不支持ustore存储。
 - 构建带有向量表时可以使用INDEX子句构建默认btree、ubtree索引，无法指定向量索引。
 - 未指定向量列维度时无法构建向量索引，只支持构建btree、ubtree索引。
+- 若在兼容B库中使用向量索引，需要执行```set dolphin.nulls_minimal=false```，用于关闭nulls处理策略。

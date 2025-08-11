@@ -95,7 +95,7 @@
 
 **参数说明**： 使用DISKANN索引扫描时的动态候选集大小。
 
-该参数仅支持[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
+该参数仅支持[表2](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应方法三进行设置。
 
 **取值范围**： 整型，1\~32768
 
