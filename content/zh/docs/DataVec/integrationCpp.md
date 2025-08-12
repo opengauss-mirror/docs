@@ -4,7 +4,7 @@
 ## 环境准备
 - g++
 - libpq库  
-详见[基于libpq开发流程](../DeveloperGuide/开发流程_libpq.md)。
+详见[基于libpq开发流程](../../docs/DeveloperGuide/开发流程_libpq.md)。
 
 ## 基本操作
 ### 1.连接数据库
@@ -133,7 +133,7 @@ void update(const std::string& table_name,
     std::string sql = 
         "UPDATE public." + escape_identifier(table_name) + 
         " SET embedding = " + vector_to_string(embedding) + 
-        " WHERE id = " + escape_literal(std::to_string(id));
+        " WHERE id = " + std::to_string(id);
     execute_sql(sql);
 }
 ```
@@ -209,11 +209,11 @@ PGresult **PQexecMultiSearchParams(const char *connParams, const char *queryTemp
 ```
 #### 输入参数
 - connParams:数据库连接配置，包含host、dbname、user、password、port
-- queryTemplate:查询语句
-- queryParams：查询参数
+- queryTemplate:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
+- queryParams：查询参数，要求不为空
 - queryCount:查询请求个数
 - preExecForConn：设置连接参数的sql语句，如："set hnsw_ef_search=200;"
-- threadCount:连接池最大连接数
+- threadCount:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 - 查询结果，PGresult*类型数组，形式为[[[id:1, vector:[1,2,3]], [id:2 vector:[4,5,6]],...], [[id:3, vector:[1,2,2]], [id:2 vector:[4,5,6]],...], ...]，表示n个查询向量对应的limit个结果，解析方式参考示例。

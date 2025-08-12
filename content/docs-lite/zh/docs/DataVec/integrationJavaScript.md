@@ -111,15 +111,16 @@ async executeMultiSearch(dbConfig, sqlTemplate, paramsList, searchParams, maxThr
 ```
 #### 输入参数
 - dbConfig:数据库连接配置，包含user、password、host、database、port
-- sqlTemplate:查询语句
-- paramsList：查询参数，需要元组列表的格式
+- sqlTemplate:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
+- paramsList：查询参数，要求不为空
 - searchParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
-- maxThreads:连接池最大连接数
+- maxThreads:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 - 查询结果，形式为`[[{id:1, embedding:'[1,2,3]'},{id:2, embedding:'[2,2,2]'}], [],...]`，表示n个查询向量对应的limit个结果。
 #### 使用案例
 ```javascript
+const { ParallelSearch } = require('pg')
 async function run() {
   const dbConfig = {
     user: 'username',

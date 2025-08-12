@@ -13,7 +13,7 @@
   注意这里安装的是pypi上的psycopg2的包，不包含多向量查询的特性。如果要使用多向量查询的特性，参考离线安装。
 
 - 离线安装<br>
-  1）下载适配好openGauss的psycopg2包，下载链接：[gitcode官网](https://gitcode.com/opengauss/  openGauss-connector-python-psycopg2)。<br>
+  1）下载适配好openGauss的psycopg2包，下载链接：[gitcode官网](https://gitcode.com/opengauss/openGauss-connector-python-psycopg2)。<br>
   2）进入openGauss-connector-python-psycopg2根目录，执行
   ```bash
   sh build.sh -bd /data/compile/openGauss-server/dest/ -v 5.0.0
@@ -151,10 +151,10 @@ execute_multi_search(dbconfig, conn_pool_mgr, sql_template, argslist, scan_param
 #### 输入参数
 - dbconfig:数据库连接配置，包含user、password、dbname、host、port
 - conn_pool_mgr：连接池管理对象，可以自定义设置，当其为None时，函数内部会自行创建
-- sql_template:查询语句
-- argslist：查询参数，需要元组列表的格式
+- sql_template:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
+- argslist：查询参数，需要元组列表的格式，要求不为空
 - scan_params：需要通过set设置的参数（如hnsw_ef_search、nprobes）
-- max_workers:连接池最大连接数
+- max_workers:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 - 查询结果，形式为`[[(1, '[1,2,3]'),(2, '[2,2,2]')], [],...]`，表示n个查询向量对应的limit个结果。
