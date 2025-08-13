@@ -8,7 +8,7 @@
 ## 安装SDK
 - 在线安装
 
-    开发者可以直接从maven中央仓库中获取jar包[maven中央仓库下载](https://central.sonatype.com/artifact/org.opengauss/    opengauss-jdbc)，也可以在openGauss官网下载[社区官网下载](https://opengauss.org/zh/download/)，运行以下命令安装Java  SDK
+    开发者可以直接从maven中央仓库中获取jar包[maven中央仓库下载](https://central.sonatype.com/artifact/org.opengauss/opengauss-jdbc)，也可以在openGauss官网下载[社区官网下载](https://opengauss.org/zh/download/)，运行以下命令安装Java  SDK
     ```xml
     <dependency>
         <groupId>org.opengauss</groupId>
@@ -154,19 +154,20 @@ public List<List<Map<String, Object>>> executeMultiSearch(Map<String, String> db
 ```
 #### 输入参数
 - dbConfig:数据库连接配置，包含jdbcUrl、user、password
-- sqlTemplate:查询语句
-- parameters：查询参数，需要元组列表的格式
+- sqlTemplate:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
+- parameters：查询参数，要求不为空
 - scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
-- threadCount:连接池最大连接数
+- threadCount:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 - 查询结果，形式为`[[{id=1, embedding='[1,2,3]'},{id=2, embedding='[2,2,2]'}], [],...]`，表示n个查询向量对应的limit个结果。
 #### 使用案例
 ```java
+import java.util.*;
 import org.opengauss.util.ParallelSearch
 
 String jdbcUrl = "jdbc:opengauss://localhost:port/dbname?allowMultiQueries=true";
-Map<String, Object> dbConfig = new HashMap<>();
+Map<String, String> dbConfig = new HashMap<>();
 dbConfig.put("jdbcUrl", jdbcUrl);
 dbConfig.put("username", "YourName");
 dbConfig.put("auth", "YourPassword");
@@ -217,3 +218,4 @@ public static void main(String[] args) {
     }
 ```
 [更多操作示例参考](https://gitcode.com/opengauss/openGauss-connector-jdbc)
+[java常用示例](../GettingStarted/Java.md)
