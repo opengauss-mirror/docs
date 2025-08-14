@@ -20,7 +20,9 @@
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
+INSERT [/*+ plan_hint */] INTO
+    { table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ AS ] alias [ ( column_name [, ...] ) ] }
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
@@ -81,6 +83,14 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
     If the value of the  **value**  clause is inconsistent with the specified partition, an error is reported.
 
     For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
+
+-   **target\_query**
+    
+    Specified subquery for insertion，which is equivalent to a view. For restriction on inserting into a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md) for more details.
+
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    For details about the clause, see [CREATE VIEW](create-view.md).
 
 -   **column\_name**
 
@@ -162,6 +172,9 @@ openGauss=# INSERT INTO tpcds.reason_t2(r_reason_sk, r_reason_id, r_reason_desc)
 
 -- Insert a record into the table, which is equivalent to the previous syntax:
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (2, 'AAAAAAAABAAAAAAA', 'reason2');
+
+-- Insert a record into the table, which is equivalent to the previous syntax:
+openGauss=# INSERT INTO (SELECT r_reason_sk, r_reason_id, r_reason_desc FROM tpcds.reason_t2) t VALUES (3, 'AAAAAAAABAAAAAAA', 'reason3');
 
 -- Insert multiple records into the table.
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (3, 'AAAAAAAACAAAAAAA','reason3'),(4, 'AAAAAAAADAAAAAAA', 'reason4'),(5, 'AAAAAAAAEAAAAAAA','reason5');

@@ -19,7 +19,9 @@
 ```
 Update a single table:
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
+UPDATE [/*+ plan_hint */] [ ONLY ]
+    { table_name [ partition_clause ] [ * ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) } [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
@@ -91,9 +93,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     For details, see  [CREATE TABLE SUBPARTITION](create-table-subpartition.md).
 
+-   **target\_query**
+    
+    Specified subquery for updates，which is equivalent to a view. For restrictions on updating a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md).
+
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    For details about the clause, see [CREATE VIEW](create-view.md).
+
 -   **alias**
 
-    Specifies a substitute name for the target table.
+    Specifies a substitute name for the target table or subquery.
 
     Value range: a string. It must comply with the identifier naming convention.
 
@@ -179,6 +189,9 @@ openGauss=# SELECT * FROM student1;
 
 -- Update the values of all records.
 openGauss=# UPDATE student1 SET classno = classno*2;
+
+-- Update the values of all records.
+openGauss=# UPDATE (select classno from student1) SET classno = classno*2;
 
 -- View data.
 openGauss=# SELECT * FROM student1;

@@ -20,7 +20,9 @@
 ```
 单表更新：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-UPDATE [/*+ plan_hint */] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
+UPDATE [/*+ plan_hint */] [ ONLY ]
+    { table_name [ partition_clause ] [ * ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) } [ [ AS ] alias ]
 SET {column_name = { expression | DEFAULT } 
     |( column_name [, ...] ) = {( { expression | DEFAULT } [, ...] ) |sub_query }}[, ...]
     [ FROM from_list] [ WHERE condition ]
@@ -69,10 +71,17 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     关键字详见[SELECT](SELECT.md)一节介绍
 
+-   **target\_query**
+
+    作为更新目标的子查询，相当于视图，更新限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+    
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    详见[CREATE VIEW](CREATE-VIEW.md)一节介绍。
     
 -   **alias**
 
-    目标表的别名。
+    目标表或目标子查询的别名。
 
     取值范围：字符串，符合标识符命名规范。
 
@@ -167,6 +176,9 @@ openGauss=# SELECT * FROM student1;
 
 --直接更新所有记录的值。
 openGauss=# UPDATE student1 SET classno = classno*2;
+
+--直接更新所有记录的值。
+openGauss=# UPDATE (select classno from student1) SET classno = classno*2;
 
 --直接更新所有记录的值并返回记录。
 openGauss=# UPDATE student1 SET classno = classno/2 RETURNING *;

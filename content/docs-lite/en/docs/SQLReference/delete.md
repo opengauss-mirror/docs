@@ -15,7 +15,9 @@
 ```
 Delete a single table:
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause] [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [ partitions_clause ] ] ]
+DELETE [/*+ plan_hint */] [FROM]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] }
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
@@ -25,13 +27,15 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause
 Delete multiple tables:
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE [/*+ plan_hint */] [FROM] 
-    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] } [, ...]
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ];
 or
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE [/*+ plan_hint */]
-    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] } [, ...]
     [ FROM using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ];
 ```
@@ -89,10 +93,17 @@ DELETE [/*+ plan_hint */]
     For details about the keywords, see  [SELECT](select.md).
 
 
+-   **target\_query**
+    
+    Specified subquery for deletion，which is equivalent to a view. For restrictions on deleting from a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md).
+
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    For details about the clause, see [CREATE VIEW](create-view.md).
 
 -   **alias**
 
-    Specifies a substitute name for the target table.
+    Specifies a substitute name for the target table or subquery.
 
     Value range: a string. It must comply with the identifier naming convention.
 
@@ -138,6 +149,9 @@ openGauss=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_addr
 
 -- Delete employees whose ca_address_sk is smaller than 14888 from the tpcds.customer_address_bak table.
 openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 14888;
+
+-- Delete employees whose ca_address_sk is greater than 30000 from the tpcds.customer_address_bak table.
+openGauss=# DELETE FROM (SELECT * FROM tpcds.customer_address_bak WHERE ca_address_sk > 30000);
 
 -- Delete all data from the tpcds.customer_address_bak table.
 openGauss=# DELETE FROM tpcds.customer_address_bak;
