@@ -75,6 +75,7 @@
       | MODIFY PARTITION partition_name IMCSTORED [ ( column_name [, ...] ) ]
       | UNIMCSTORED
       | MODIFY PARTITION partition_name UNIMCSTORED
+      | REDISANYVALUE
   ```
 
 >- **ADD table\_constraint \[ NOT VALID \]**
@@ -229,7 +230,10 @@
 >- **MODIFY PARTITION partition_name UNIMCSTORED**
 >
 >  对分区表的指定分区做列缓存清除。
-
+> 
+>- **REDISANYVALUE**
+>
+>  仅有语法支持，不实现功能。
 
 
 其中列相关的操作column\_clause可以是以下子句之一：
