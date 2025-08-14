@@ -117,9 +117,9 @@ gs_preupgradechk工具用来检查集群中cpu、内存、磁盘、网络、进�
 </tr>
 <tr id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_r24f0ef2ad50f4a87b554a01c70871c8f"><td class="cellrowborder" valign="top" width="9.27%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ad2fa425a2b3b4b05884a2652f9d8a5f3"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ad2fa425a2b3b4b05884a2652f9d8a5f3"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_ad2fa425a2b3b4b05884a2652f9d8a5f3"></a>A7</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a>备机回放延迟（replaygay status）</p>
+<td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_zh-cn_topic_0058968139_p778356414498"></a>备机回放延迟（replay status）</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a>传统主备：备机回放的延迟时间不超过5min，否则报Error；资源池化不校验。</p>
+<td class="cellrowborder" valign="top" width="61.49%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a><a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_a13ba8b3400004e2da8c5bc1ada6a63d2"></a>传统主备：备机需要回放的数据量超过1G，报Error，超过300MB，报Warning，其他Normal；资源池化不校验。</p>
 </td>
 </tr>       
 </tbody>
@@ -140,7 +140,7 @@ Successfully checked all item, result is
     CPU usage is at 1.8%                                    [Normal]
     max_process_memory is greater than process_used_memory  [Normal]
     The number of active connections is 1                   [Normal]
-    do not check replaygay.                                 [Normal]
+    Do not check replay.                                    [Normal]
 
 [openGaussxxx]
     Memory usage is at 23.4%                                [Normal]
@@ -150,7 +150,7 @@ Successfully checked all item, result is
     CPU usage is at 18.0%                                   [Normal]
     max_process_memory is greater than process_used_memory  [Normal]
     The number of active connections is 1                   [Normal]
-    do not check replaygay.                                 [Normal]
+    Do not check replay.                                    [Normal]
 
 [openGaussxxx]
     Memory usage is at 31.7%                                [Normal]
@@ -160,5 +160,5 @@ Successfully checked all item, result is
     CPU usage is at 20.0%                                   [Normal]
     max_process_memory is greater than process_used_memory  [Normal]
     The number of active connections is 1                   [Normal]
-    the replaygay time is 0min.                             [Normal]
+    The replay lag is 0 bytes.                              [Normal]
 ```
