@@ -14,13 +14,11 @@
 
 另外，开启了hot_standby_feedback后，备机实时将oldestXmin同步到主机，主机会将该值持久化到复制槽文件中，autovacuum会根据这个xmin来清理这个点之前的脏数据，并保留之后的。 备机故障后，主机保存的xmin一直无法推进，导致清理无效，发生表膨胀。本特性同样实现xmin长时间未推进时，主机的autovacuum不考虑该xmin。
 
-
 ## 特性描述<a name="section25596675"></a>
 
 最大可用模式most_available_sync开启的情况下，根据配置的同步提交等级synchronous_commit，在同步备反馈的receive\write\flush\replay位点一个超时窗口未推进时，主机提交事务不等待该备机同步，交易不受影响。备机恢复正常后，位点推进了，主机交易仍等待该备机同步。该超时窗口的配置参数为ignore_standby_lsn_window。
 
 针对hot_standby_feedback开启场景，如果备机反馈的xmin一个超时窗口未推进时，则不考虑此备机的xmin，不影响主机autovacuum。该超时窗口的配置参数为ignore_feedback_xmin_window。
-
 
 ## 特性增强<a name="section29043486"></a>
 
@@ -33,4 +31,3 @@
 ## 依赖关系<a name="section57771982"></a>
 
 无。
-
