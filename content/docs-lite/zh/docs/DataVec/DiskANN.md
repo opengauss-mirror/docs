@@ -148,3 +148,4 @@ openGauss=# SELECT * FROM items ORDER BY embedding <-> '[1,2,3,4]';
 - 构建带有向量表时可以使用INDEX子句构建默认btree、ubtree索引，无法指定向量索引。
 - 未指定向量列维度时无法构建向量索引，只支持构建btree、ubtree索引。
 - 若在兼容B库中使用向量索引，需要执行```set dolphin.nulls_minimal=false```，用于关闭nulls处理策略。
+- 数据量小于并行构建数与索引构建参数index_size乘积时，将通过串行构建提升构建精度。
