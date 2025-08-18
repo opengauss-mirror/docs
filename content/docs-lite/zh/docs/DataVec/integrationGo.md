@@ -8,7 +8,7 @@
 开发者可以运行以下命令安装Go SDK[官方仓库](http://gitcode.com/opengauss/openGauss-connector-go-pq)，并在项目中导入该包。
 ```
 安装SDK
-go get gitcode.com/opengauss/openGauss-connector-go-pq
+go get gitcode.com/opengauss/openGauss-connector-go-pq@master
 
 在项目中导入该包
 import (
@@ -139,7 +139,7 @@ args := [][]interface{}{
     {"[1,2,3]", 2},
     {"[2,2,2]", 3},
 }
-res, err := pq.ExecuteMultiSearch(conninfo, query, args, scanParams, threadCount)
+res := pq.ExecuteMultiSearch(conninfo, query, args, scanParams, threadCount)
 ```
 
 

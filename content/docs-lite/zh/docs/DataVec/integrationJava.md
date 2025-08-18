@@ -157,7 +157,7 @@ public List<List<Map<String, Object>>> executeMultiSearch(Map<String, String> db
 - sqlTemplate:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
 - parameters：查询参数，要求不为空
 - scanParams：需要通过set设置的参数（如hnsw_ef_search、nprobes）
-- threadCount:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
+- threadCount:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，由于java使用的HikariCP连接池在创建阶段并没有预设置数据库连接，一般来说，同一时间内执行请求的最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 - 查询结果，形式为`[[{id=1, embedding='[1,2,3]'},{id=2, embedding='[2,2,2]'}], [],...]`，表示n个查询向量对应的limit个结果。
