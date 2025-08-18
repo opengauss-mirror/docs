@@ -25,7 +25,6 @@
 
 另外新增enable_batch_dispatch参数用以控制本优化开关(默认关闭);新增enable_time_report参数用于开关回放过程中的统计信息收集(默认关闭)。
 
-
 ## 特性约束
 
 无

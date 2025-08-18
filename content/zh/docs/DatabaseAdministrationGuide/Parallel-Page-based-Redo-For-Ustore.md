@@ -10,7 +10,7 @@
 
 ## 客户价值<a name="section747141119423"></a>
 
-对于Update的WAL使用空间减少,Ustore DML Operation回放提高并行度。
+对于Update的WAL使用空间减少，Ustore DML Operation回放提高并行度。
 
 ## 特性描述<a name="section1796166174315"></a>
 
@@ -27,4 +27,3 @@
 ## 依赖关系<a name="section2535204364616"></a>
 
 依赖于Ustore引擎。
-
