@@ -262,10 +262,15 @@ int main()
      }
      for (int i = 0; i < num_vectors; i++) {
          PGresult *res = results[i];
+         if (!res) {
+            std::cout << "result is invalid, query id:" << i << std::endl;
+            continue;
+         }
          ExecStatusType status = PQresultStatus(res);
          int rows = PQntuples(res);
          int cols = PQnfields(res);
-         std::cout << "search query id:" << i << ", rows:" << rows << ", cols:" << cols << std::endl;
+         std::cout << "search query id:" << i << ", rows:" << rows << ", cols:" << cols << ", status:" << status <<
+            ", errMsg:" << PQresultErrorMessage(res) << std::endl;
          for (int j = 0; j < rows; ++j) {
              int id = std::stoi(PQgetvalue(res, j, 0));
              std::cout << "id:" << id << std::endl;
