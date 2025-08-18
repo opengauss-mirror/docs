@@ -29,7 +29,9 @@
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
+INSERT [/*+ plan_hint */] INTO
+    { table_name [partition_clause] [ AS alias ] [ ( column_name [, ...] ) ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ AS ] alias [ ( column_name [, ...] ) ] }
     { DEFAULT VALUES
     | VALUES {( { expression | DEFAULT } [, ...] ) }[, ...] 
     | query }
@@ -90,6 +92,13 @@ INSERT [/*+ plan_hint */] INTO table_name [partition_clause] [ AS alias ] [ ( co
 
     如果value子句的值和指定分区不一致，会抛出异常。
 
+-   **target\_query**
+
+    作为插入目标的子查询，相当于视图，插入限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+    
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    详见[CREATE VIEW](CREATE-VIEW.md)一节介绍。
 
 -   **column\_name**
 
@@ -188,6 +197,9 @@ openGauss=# INSERT INTO tpcds.reason_t2(r_reason_sk, r_reason_id, r_reason_desc)
 
 --向表中插入一条记录，和上一条语法等效。
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (2, 'AAAAAAAABAAAAAAA', 'reason2');
+
+--向表中插入一条记录，和上一条语法等效。
+openGauss=# INSERT INTO (SELECT r_reason_sk, r_reason_id, r_reason_desc FROM tpcds.reason_t2) t VALUES (3, 'AAAAAAAABAAAAAAA', 'reason3');
 
 --向表中插入多条记录。
 openGauss=# INSERT INTO tpcds.reason_t2 VALUES (3, 'AAAAAAAACAAAAAAA','reason3'),(4, 'AAAAAAAADAAAAAAA', 'reason4'),(5, 'AAAAAAAAEAAAAAAA','reason5');

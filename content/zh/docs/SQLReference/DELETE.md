@@ -17,7 +17,9 @@ DELETE从指定的表里删除满足WHERE子句的行。如果WHERE子句不存�
 ```
 单表删除：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
-DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+DELETE [/*+ plan_hint */] [FROM]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] }
     [ USING using_list ]
     [ WHERE condition | WHERE CURRENT OF cursor_name ]
     [ ORDER BY {expression [ [ ASC | DESC | USING operator ]
@@ -27,13 +29,15 @@ DELETE [/*+ plan_hint */] [FROM] [ ONLY ] table_name [ * ] [ [ [partition_clause
 多表删除：
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE [/*+ plan_hint */] [FROM] 
-    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] } [, ...]
     [ USING using_list ]
     [ WHERE condition  ];
 或
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE [/*+ plan_hint */]
-    {[ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]} [, ...]
+    { [ ONLY ] table_name [ * ] [ [ [partition_clause]  [ [ AS ] alias ] ] | [ [ [ AS ] alias ] [partitions_clause] ] ]
+    | ( target_query [ WITH [ CASCADED | LOCAL ] CHECK OPTION ] ) [ [ AS ] alias ] } [, ...]
     [ FROM using_list ]
     [ WHERE condition ];
 ```
@@ -99,9 +103,17 @@ DELETE [/*+ plan_hint */]
 
     示例详见[CREATE TABLE SUBPARTITION](CREATE-TABLE-SUBPARTITION.md)
 
+-   **target\_query**
+    
+    作为删除目标的子查询，相当于视图，删除限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+
+-   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+    
+    详见[CREATE VIEW](CREATE-VIEW.md)一节介绍。
+
 -   **alias**
 
-    目标表的别名。
+    目标表或目标子查询的别名。
 
     取值范围：字符串，符合标识符命名规范。
 
@@ -159,6 +171,9 @@ openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 14888;
 
 --删除tpcds.customer_address_bak中ca_address_sk小于20000的职员并返回记录。
 openGauss=# DELETE FROM tpcds.customer_address_bak WHERE ca_address_sk < 20000 RETURNING *;
+
+--删除tpcds.customer_address_bak中ca_address_sk大于30000的职员。
+openGauss=# DELETE FROM (SELECT * FROM tpcds.customer_address_bak WHERE ca_address_sk > 30000);
 
 --删除tpcds.customer_address_bak中所有数据。
 openGauss=# DELETE FROM tpcds.customer_address_bak;
