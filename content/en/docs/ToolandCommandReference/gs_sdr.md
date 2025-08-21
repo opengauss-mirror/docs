@@ -357,7 +357,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 -   Establish a DR relationship in a primary cluster.
 
     ```
-    gs_sdr -t start -m primary -X /opt/install_streaming_primary_cluster.xml --time-out=1200 -U 'hadr_user' -W 'opengauss@123'
+    gs_sdr -t start -m primary -X /opt/install_streaming_primary_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
     --------------------------------------------------------------------------------
     Streaming disaster recovery start 2b9bc268d8a111ecb679fa163e2f2d28
     --------------------------------------------------------------------------------
@@ -405,7 +405,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 -   Establish a DR relationship in a standby cluster.
 
     ```
-    gs_sdr -t start -m disaster_standby -X /opt/install_streaming_standby_cluster.xml --time-out=1200 -U 'hadr_user' -W 'opengauss@123'
+    gs_sdr -t start -m disaster_standby -X /opt/install_streaming_standby_cluster.xml --time-out=1200 -U 'hadr_user' -W '******'
     --------------------------------------------------------------------------------
     Streaming disaster recovery start e34ec1e4d8a111ecb617fa163e77e94a
     --------------------------------------------------------------------------------

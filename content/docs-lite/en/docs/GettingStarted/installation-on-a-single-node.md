@@ -10,7 +10,7 @@
 
     ```
     useradd -g dbgroup omm
-    passwd Gauss_234
+    passwd ******
     ```
 
 3.  Log in to the host where the openGauss package is installed as user **omm** and decompress the openGauss package to the installation directory (for example, **/opt/software/openGauss**).

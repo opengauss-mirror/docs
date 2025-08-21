@@ -406,7 +406,7 @@ openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 --创建B兼容性数据库
 openGauss=# create database db_mysql dbcompatibility 'B';
 --创建触发器定义用户
-openGauss=# create user test_user password 'Gauss@123';
+openGauss=# create user test_user password '******';
 --创建原表及触发表
 db_mysql=# create table test_mysql_trigger_src_tbl (id INT);
 db_mysql=# create table test_mysql_trigger_des_tbl (id INT);
