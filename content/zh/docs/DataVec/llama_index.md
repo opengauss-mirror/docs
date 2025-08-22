@@ -35,7 +35,7 @@ def build_rag_app():
         host="127.0.0.1",
         password="xxxxxx",
         port=8888,
-        user="xxxxxx",
+        user="postgres",
         table_name="paul_graham_essay",
         embed_dim=768  # openai embedding dimension
     )
