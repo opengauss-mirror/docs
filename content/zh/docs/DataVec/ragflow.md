@@ -48,7 +48,7 @@ openGauss部署成功后，到另一台节点完成RAGFlow的部署:
 - OPENGAUSS_HOST：openGauss服务所在服务器IP
 - OPENGAUSS_PORT：openGauss服务监听端口，按上述部署默认为5432
 - OPENGAUSS_USER：openGauss服务普通用户，按上述部署默认为opengauss_user
-- OPENGAUSS_PASS：openGauss服务普通用户密码，按上述部署为Ragflow@123
+- OPENGAUSS_PASS：openGauss服务普通用户密码，按上述部署为xxxxxx
 - OPENGAUSS_DATABASE：openGauss服务数据库名称，按上述部署默认为ragflow
 
 3. 启动RAGFlow服务部署命令

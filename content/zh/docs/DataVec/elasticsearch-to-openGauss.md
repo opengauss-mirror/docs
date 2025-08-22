@@ -34,7 +34,7 @@ db_host = '127.0.0.1'
 db_port = 5432
 db_name = 'your_opengauss_db'
 db_user = 'user_name'
-db_password = 'Sample@123'
+db_password = 'xxxxxx'
 
 RESERVED_KEYWORDS = {
     "select", "insert", "update", "delete", "drop", "table", "from", "where", "group",

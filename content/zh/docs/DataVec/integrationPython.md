@@ -163,7 +163,7 @@ execute_multi_search(dbconfig, conn_pool_mgr, sql_template, argslist, scan_param
 from psycopg2.extras import execute_multi_search, init_conn_pool, close_conn_pool
 sql_template = "SELECT * FROM test_table1 ORDER BY embedding <-> %s LIMIT %s;"
 scan_params = {"enable_seqscan": "off", "hnsw_ef_search" : 40}
-dbconfig = {'user': 'yourusername', 'password': 'yourpassword', 'host': 'yourhost', 'dbname': 'yourdbname', 'port' : 5432}
+dbconfig = {'user': 'yourusername', 'password': 'xxxxxx', 'host': 'yourhost', 'dbname': 'yourdbname', 'port' : 5432}
 argslist = [('[1,1,1]', 1), ('[2,2,3]', 2)]
 
 conn_pool_mgr = init_conn_pool(dbconfig, 2, scan_params)
