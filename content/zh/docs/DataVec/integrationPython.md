@@ -28,7 +28,7 @@ def create_connection(dbname:str, user:str, password:str, host:str, port:int):
     conn = psycopg2.connect(
         dbname = dbname,
         user = user,
-        password = password,
+        password = xxxxxx,
         host = host,
         port = port
     )
@@ -133,7 +133,7 @@ def close_connection(conn, cursor):
 
 ## 用例
 ```python
-conn, cursor = create_connection("testdb", "test_user", YourPassword, "localhost", 5432)
+conn, cursor = create_connection("testdb", "test_user", xxxxxx, "localhost", 5432)
 create_table(conn, cursor, "test_table1", 3)
 create_index(conn, cursor, "test_table1", "idx_test1")
 insert(conn, cursor, "test_table1", [[1.2, 3, 5], [4.3, 5.2, 1]], [0, 1])
