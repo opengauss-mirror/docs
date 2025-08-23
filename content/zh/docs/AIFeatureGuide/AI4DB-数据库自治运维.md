@@ -15,16 +15,6 @@
 -   node-exporter: Prometheus官方提供的exporter, 可用于监控该节点的系统指标，如CPU和内存使用情况；
 -   reprocessing-exporter: 用于对Prometheus采集到的指标进行二次加工处理，例如计算CPU使用率等。
 
-## 环境配置<a name="section14906112131913"></a>
-
-DBMind外置AI功能需要运行在Python 3.6版本及以上，需要的第三方依赖包记录在AI功能根目录（$**GAUSSHOME**/bin/dbmind）的requirements.txt文件中（包括requirements-x86.txt与requirements-arrch64.txt，用户可根据自己平台类型选择）中，可以通过pip install命令安装依赖，如：
-
-```
-pip install requirements-x86.txt
-```
-
-如果用户没有安装齐全所需的依赖，则当用户执行gs\_dbmind命令时，会再次提醒用户安装第三方依赖。需要注意，该文件提供了DBMind所需的第三方依赖，若用户环境存在第三方包冲突等情况，可由用户根据实际情况进行处理。
-
 -   **[DBMind模式说明](DBMind模式说明.md)**  
 
 -   **[DBMind的支持组件](DBMind的支持组件.md)**  
