@@ -5,7 +5,8 @@
 1. 新增```DIV/MOD/XOR/^```操作符。
 2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool/random_bytes```函数。
 3. ```atan```函数支持```atan(y, x)```用法。
-3. 修改exp函数支持结果返回0。
+4. 修改exp函数支持结果返回0。
+5. 修改sum函数的返回值类型与Mysql兼容。
 
 -   DIV
 
@@ -309,3 +310,45 @@
      0
   (1 row)
   ```
+
+- sum\(x\)
+
+  描述：求和函数。
+
+  返回值类型：A库与B库的返回值类型有差异，如下所示：
+
+  | 函数            | A库以及6.0.x之前版本B库返回值类型 | 6.0.x之后版本B库返回值类型 |
+  | --------------- | --------------------------------- | -------------------------- |
+  | sum(int1)       | double                            | numeric                    |
+  | sum(uint1)      | 不涉及                            | numeric                    |
+  | sum(int2)       | bigint                            | numeric                    |
+  | sum(uint2)      | 不涉及                            | numeric                    |
+  | sum(int4)       | bigint                            | numeric                    |
+  | sum(uint4)      | 不涉及                            | numeric                    |
+  | sum(int8)       | numeric                           | numeric                    |
+  | sum(uint8)      | 不涉及                            | numeric                    |
+  | sum(float4)     | real                              | double                     |
+  | sum(float8)     | double                            | double                     |
+  | sum(numeric)    | numeric                           | numeric                    |
+  | sum(bit1)       | sum                               | numeric                    |
+  | sum(bit64)      | 不涉及                            | numeric                    |
+  | sum(boolean)    | 不涉及                            | numeric                    |
+  | sum(date)       | 不涉及                            | numeric                    |
+  | sum(time)       | interval                          | numeric                    |
+  | sum(datetime)   | 不涉及                            | numeric                    |
+  | sum(timestamp)  | 不涉及                            | numeric                    |
+  | sum(year)       | 不涉及                            | numeric                    |
+  | sum(char)       | numeric                           | double                     |
+  | sum(varchar)    | numeric                           | double                     |
+  | sum(binary)     | 不涉及                            | double                     |
+  | sum(varbinary)  | 不涉及                            | double                     |
+  | sum(tinyblob)   | 不涉及                            | double                     |
+  | sum(blob)       | 不涉及                            | double                     |
+  | sum(mediumblob) | 不涉及                            | double                     |
+  | sum(longblob)   | 不涉及                            | double                     |
+  | sum(text)       | numeric                           | double                     |
+  | sum(enum_t)     | 不涉及                            | double                     |
+  | sum(set_t)      | 不涉及                            | double                     |
+  | sum(json)       | 不涉及                            | double                     |
+
+  
