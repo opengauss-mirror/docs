@@ -5,8 +5,8 @@
 1. 新增```DIV/MOD/XOR/^```操作符。
 2. 新增```truncate/rand/crc32/conv/float8_bool/oct/float4_bool/random_bytes```函数。
 3. ```atan```函数支持```atan(y, x)```用法。
-3. 修改exp函数支持结果返回0。
-3. 修改sum函数的返回值类型与Mysql兼容。
+4. 修改exp函数支持结果返回0。
+5. 修改sum函数的返回值类型与Mysql兼容。
 
 -   DIV
 
