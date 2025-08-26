@@ -323,6 +323,8 @@ headless: true
     -   [FAQ]({{< relref "./docs/CompilationGuide/FAQ.md" >}})
 -   [数据库管理指南]({{< relref "./docs/DatabaseAdministrationGuide/数据库管理指南.md" >}})
     -   [数据库基础概念介绍]({{< relref "./docs/DatabaseAdministrationGuide/数据库基础概念介绍.md" >}})
+	-   数据存储管理
+		-   [段页式存储结构]({{< relref "./docs/DatabaseAdministrationGuide/段页式存储结构.md" >}})
     -   [创建和管理数据库]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理数据库.md" >}})
     -   [创建和管理表空间]({{< relref "./docs/DatabaseAdministrationGuide/创建和管理表空间.md" >}})
     -   [数据库对象管理]({{< relref "./docs/DatabaseAdministrationGuide/其他操作.md" >}})
