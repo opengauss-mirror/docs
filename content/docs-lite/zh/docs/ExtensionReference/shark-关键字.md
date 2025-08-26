@@ -18,6 +18,8 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 1. 新增```columnstore```，```clustered```，```nonclustered```作为非保留关键字。
 2. 大多数关键字可以不用AS前缀直接用作列标签，但也有一些需要前导AS以避免歧义的关键字。这些在表中标记为“需要AS”。
 3. 新增```save```，```tran```作为非保留关键字。
+4. 新增```nolock```，```readuncommitted```，```updlock```，```repeatableread```，```readcommitted```，```tablock```，```tablockx```，```paglock```，
+```rowlock```，```readpast```，```xlock```，```noexpand```作为非保留关键字。
 
 **表 1**  SQL关键字
 

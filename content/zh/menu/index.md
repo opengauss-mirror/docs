@@ -2089,6 +2089,7 @@ headless: true
                     -    [SET]({{< relref "./docs/ExtensionReference/shark-SET.md" >}})
 					-    [DBCC]({{< relref "./docs/ExtensionReference/shark-DBCC.md" >}})
 						 -    [DBCC-CHECKIDENT]({{< relref "./docs/ExtensionReference/shark-DBCC-CHECKIDENT.md" >}})
+					-    [MERGE INTO]({{< relref "./docs/ExtensionReference/shark-MERGE-INTO.md" >}})
 				-	[事务]({{< relref "./docs/ExtensionReference/shark-事务.md" >}})
 					-    [管理事务]({{< relref "./docs/ExtensionReference/shark-管理事务.md" >}})
 				-	[不支持语法]({{< relref "./docs/ExtensionReference/shark-不支持语法.md" >}})
