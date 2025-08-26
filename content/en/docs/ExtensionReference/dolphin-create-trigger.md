@@ -389,7 +389,7 @@ openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 --Create a MySQL-compatible database.
 openGauss=# create database db_mysql dbcompatibility 'B';
 --Create a trigger definition user.
-openGauss=# create user test_user password 'Gauss@123';
+openGauss=# create user test_user password '******';
 --Create a source table and a target table.
 db_mysql=# create table test_mysql_trigger_src_tbl (id INT);
 db_mysql=# create table test_mysql_trigger_des_tbl (id INT);

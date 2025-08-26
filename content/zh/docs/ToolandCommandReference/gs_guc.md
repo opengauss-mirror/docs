@@ -412,7 +412,7 @@ Success to perform gs_guc!
 示例5：加密服务器端存储用户密码的明文，避免密码泄露。
 
 ```
-gs_guc encrypt -K Gauss@123 -D /data/xzg/wisequery/gaussdb
+gs_guc encrypt -K ****** -D /data/xzg/wisequery/gaussdb
 gs_guc encrypt -K ***
 ```
 
