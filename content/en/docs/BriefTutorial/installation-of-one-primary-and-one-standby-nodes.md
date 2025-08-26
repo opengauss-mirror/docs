@@ -8,7 +8,7 @@
     groupadd dbgroup
     ```
 
-2.  Create a common user  **omm**  in the  **dbgroup**  user group and set the password to  **Gauss\_234**.
+2.  Create a common user  **omm**  in the  **dbgroup**  user group and set the password to  ******.
 
     ```
     useradd -g dbgroup omm
