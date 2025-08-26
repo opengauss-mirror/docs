@@ -66,7 +66,7 @@ ids = [i for i in range(len(embs))]
 print("text : {}, embedding dim : {}, embedding : {} ...".format(text[0], dimensions, embs[:10]))
 
 # 插入数据
-conn, cursor = create_connection("testdb", "test_user", YourPassword, "localhost", 5432)
+conn, cursor = create_connection("testdb", "test_user", xxxxxx, "localhost", 5432)
 create_table(conn, cursor, "test_table1", dimensions)
 insert(conn, cursor, "test_table1", embs, ids, texts)
 ```
