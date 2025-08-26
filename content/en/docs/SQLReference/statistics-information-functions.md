@@ -442,6 +442,18 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
+-   pg\_stat\_get\_lastscan\(oid\)
+
+    Description: Returns the most recent scan time: table scan time when given a table, or index scan time when given an index.
+
+    Return type: timestamptz
+
+-   pg\_stat\_force\_next\_flush\(\)
+
+    Description: Force statistics to be reported at the next occasion.
+
+    Return type: void
+
 -   pg\_stat\_get\_role\_name\(oid\)
 
     Description: Obtains the username based on the user OID. Only users with the  **sysadmin**  or  **monitor admin**  permission can access the information.
