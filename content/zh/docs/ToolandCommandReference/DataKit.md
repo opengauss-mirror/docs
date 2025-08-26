@@ -75,7 +75,7 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
 
    启动应用：
    ```shell
-   sh ./run.sh start
+   sh run.sh start --aes-key your_key
    ```
    停止应用：
    ```shell
