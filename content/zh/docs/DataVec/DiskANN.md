@@ -141,6 +141,20 @@ openGauss=# SELECT * FROM [TABLE_NAME] ORDER BY [COLUMN_NAME] [operator] [VALUE]
 openGauss=# SELECT * FROM items ORDER BY embedding <-> '[1,2,3,4]';
 ```
 
+#### 增删改
+DELETE/UPDATE之前需要打开主表的immediate_delete选项。
+不开启该选项不会同步删除图的边关系。可能会导致图规模的增大。
+开启后DELETE/UPDATE操作会实时更新到图关系内。
+可以在创建表的时候指定：
+```sql
+CREATE TABLE [table_name] (cols) WITH (immediate_delete = on);
+```
+
+或者在创建完成后修改：
+```sql
+ALTER TABLE [TABLE_NAME] SET (immediate_delete = on);
+```
+
 ## 5.约束
 - 向量索引仅支持普通行存表，临时表，Toast表，Unlogged表，段页式表等，其他表仅支持对向量数据创建btree和ubtree索引。
 - 若ALTER INDEX后不执行REINDEX，后插入的数据会根据新的索引选项构建索引，而索引中已存在的数据不会因此改变。
