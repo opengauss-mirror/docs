@@ -318,6 +318,8 @@ headless: true
 -   [数据库管理指南]({{< relref "./docs/DatabaseAdministrationGuide/数据库管理指南.md" >}})
     -   [数据库基础概念介绍]({{< relref "./docs/DatabaseAdministrationGuide/数据库基础概念介绍.md" >}})
 	-   数据存储管理
+		-   存储结构
+			-   [段页式存储结构]({{< relref "./docs/DatabaseAdministrationGuide/段页式存储结构.md" >}})
 		-   存储模型
     		-   [规划存储模型]({{< relref "./docs/DatabaseAdministrationGuide/规划存储模型.md" >}})
 		-   存储优化
