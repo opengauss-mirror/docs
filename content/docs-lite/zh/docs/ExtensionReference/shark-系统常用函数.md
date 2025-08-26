@@ -61,3 +61,36 @@
         28
     (1 row)
     ```
+
+- ident_current(table_or_view)
+
+    描述：返回为指定的表或视图生成的最后一个标识值。所生成的最有一个标识值可以针对任何会话和任何作用域。
+
+    参数类型: table_or_view为表或视图的名称，类型为nvarchar(128)。
+
+    返回值类型：numeric(38, 0)
+
+    示例：
+    
+    ```
+    openGauss=# CREATE TABLE employees(id int identity, name varchar(100) NOT NULL);
+    CREATE TABLE
+    
+    -- 包含identity列的表，还未插入数据
+    sqlserver=# SELECT ident_current('employees');
+    ident_current 
+    ---------------
+                1
+    (1 row)
+
+    -- 包含identity列的表，更新了序列值
+    openGauss=# INSERT INTO employees(name) VALUES('alice');
+    INSERT 0 1
+    openGauss=# INSERT INTO employees(name) VALUES('bob');
+    INSERT 0 1
+    openGauss=# SELECT ident_current('employees');
+    ident_current 
+    ---------------
+                2
+    (1 row)
+    ```
