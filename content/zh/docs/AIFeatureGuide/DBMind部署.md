@@ -66,6 +66,9 @@ gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参�
 >```
 
 DBMind服务器，创建元数据库：
+>![](public_sys-resources/icon-note.png) **说明：** 
+>
+>实际使用时建议赋予用户最小权限。
 
 ```shell
 grant all privileges to {username:dbmind_monitor};
