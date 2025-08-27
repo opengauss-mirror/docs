@@ -40,7 +40,7 @@ Example:
 >-   ***8080***: port for connecting to the database.  
 >-   ***test***: name of the connected database. If the database does not exist, an error is reported. Before using the database, check whether the database exists.  
 >-   ***myuser***: username for connecting to the database.  
->-   ***my***: password for connecting to the database.  
+>-   ***myPassword***: password for connecting to the database.  
 
 -   DriverManager.getConnection\(String url\);
 
