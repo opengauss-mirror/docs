@@ -591,7 +591,7 @@
 
     ```bash
     ##下述命令中使用的用户名为tpcc，数据库名称为tpcc，用户密码为tpcc@123，数据库端口为26000
-    [root@localhost]# sysbench --pgsql-password=tpcc@123 --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write prepare
+    [root@localhost]# sysbench --pgsql-password=xxxxxx --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write prepare
     ```
 
 ## 执行测试
@@ -624,11 +624,11 @@
 - sysbench测试
     1. 执行如下命令开始测试。
         ```bash
-        [root@localhost]# sysbench --pgsql-password=tpcc@123 --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write run
+        [root@localhost]# sysbench --pgsql-password=xxxxxx --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write run
         ```
     2. 为了避免多次测试导致数据量太大，影响性能，可以把数据清空重新开始。
         ```bash
-        [root@localhost]# sysbench --pgsql-password=tpcc@123 --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write cleanup
+        [root@localhost]# sysbench --pgsql-password=xxxxxx --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write cleanup
         ```
     3. 如果调整配置后重新测试，或者复测，需要重新执行 prepare / run / cleanup。
 
@@ -648,7 +648,7 @@
     driver=org.opengauss.Driver
     conn=jdbc:opengauss://20.20.20.103:26000/tpcc?prepareThreshold=1&batchMode=on&fetchsize=10&loggerLevel=off #修改连接字符串, 包含IP、端口号、数据库
     user=tpcc #用户名
-    password=tpcc@123 #密码
+    password=xxxxxx #密码
     warehouses=1000  #仓位数
     terminals=600 #并发数
     runMins=15  #运行时间
@@ -670,7 +670,7 @@
     driver=org.opengauss.Driver
     conn=jdbc:opengauss://20.20.20.104:26000/tpcc?prepareThreshold=1&batchMode=on&fetchsize=10&loggerLevel=off #修改连接字符串, 包含IP、端口号、数据库
     user=tpcc #用户名
-    password=tpcc@123 #密码
+    password=xxxxxx #密码
     warehouses=1000  #仓位数
     terminals=100 #并发数
     runMins=15  #运行时间
@@ -688,12 +688,12 @@
     - 主机侧执行读写混合负载
     ```bash
     ##下述命令中使用的用户名为tpcc，数据库名称为tpcc，用户密码为tpcc@123，数据库端口为26000
-    [root@localhost]# sysbench --pgsql-password=tpcc@123 --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write run
+    [root@localhost]# sysbench --pgsql-password=xxxxxx --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.103 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='512' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_write run
     ```
     - 备机侧执行只读测试
     ```bash
     ##下述命令中使用的用户名为tpcc，数据库名称为tpcc，用户密码为tpcc@123，数据库端口为26000
-    [root@localhost]# sysbench --pgsql-password=tpcc@123 --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.105 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='256' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_only run
+    [root@localhost]# sysbench --pgsql-password=xxxxxx --pgsql-port=26000 --report-interval='1' --pgsql-host=20.20.20.105 --tables='8' --db-driver='pgsql' --events='0' --histogram='on' --percentile='95' --threads='256' --table-size='64000000' --time='1200' --pgsql-user=tpcc --rand-type='uniform' --pgsql-db=tpcc oltp_read_only run
     ```
 
 - 除了启动2个独立的测试客户端执行测试和新增的配置项外，其余的数据库参数、OS参数、网卡绑中断等配置与单独测试主机相同。

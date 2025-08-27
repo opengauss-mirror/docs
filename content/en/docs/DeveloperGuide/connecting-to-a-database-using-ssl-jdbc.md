@@ -91,7 +91,7 @@ public class SSL{
          */
         urlProps.setProperty("sslfactory","org.opengauss.ssl.NonValidatingFactory");
         urlProps.setProperty("user", "world");
-        urlProps.setProperty("password", "test@123");
+        urlProps.setProperty("password", "xxxxxx");
         urlProps.setProperty("ssl", "true");
         /**
          * ==================  Examples 2: Use a certificate.

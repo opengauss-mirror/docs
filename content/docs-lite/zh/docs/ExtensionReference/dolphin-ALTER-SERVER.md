@@ -69,7 +69,7 @@
 
 ```
 -- 当前用户到给定server的用户映射不存在时
-openGauss=# alter server server_test options(user 'my_user', password 'mypassword');
+openGauss=# alter server server_test options(user 'my_user', password 'xxxxxx');
 WARNING:  USER MAPPING for current user to server server_test created.
 ALTER SERVER
 

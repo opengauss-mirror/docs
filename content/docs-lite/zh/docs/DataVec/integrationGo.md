@@ -24,6 +24,10 @@ import (
 
 ## 基本操作
 ### 1.连接数据库
+>![](figures/icon-note.png) **说明：**
+>
+>该仓库所有资料和测试文件（copy_test.go,encode_test_go等）使用的密码及sslmode=disable仅为示例，在使用时，请根据实际情况配置正确的密码，使用安全的sslmode（默认值prefer）。
+
 ```go
 // connectInfo格式: 
 // "host=127.0.0.1 port=5432 user=username password=userpassword dbname=userdbname sslmode=disable"

@@ -132,7 +132,7 @@ namespace Demo
     {
         public static async Task Main(string[] args)
         {
-            var connstr = "Host=localhost;Database=Yourdb;Port=Yourport;Username=Yourname;Password=YourPassword";
+            var connstr = "Host=localhost;Database=Yourdb;Port=Yourport;Username=Yourname;Password=xxxxxx";
             var dbHandler = new Program();
             var conn = await dbHandler.Connect(connstr);
 

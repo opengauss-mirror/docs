@@ -91,8 +91,8 @@ openGauss=# CREATE USER kim IDENTIFIED BY 'xxxxxxxxx';
 -- To create a user with the CREATEDB permission, add the CREATEDB keyword.
 openGauss=# CREATE USER dim CREATEDB PASSWORD 'xxxxxxxxx';
 
--- Change user jim's login password from xxxxxxxxx to Abcd@123:
-openGauss=# ALTER USER jim IDENTIFIED BY 'Abcd@123' REPLACE 'xxxxxxxxx';
+-- Change user jim's login password from xxxxxxxxx to xxxxxx:
+openGauss=# ALTER USER jim IDENTIFIED BY 'xxxxxx' REPLACE 'xxxxxxxxx';
 
 -- Add the CREATEROLE permission to jim.
 openGauss=# ALTER USER jim CREATEROLE;

@@ -27,8 +27,8 @@ ALTER SESSION命令用于定义或修改那些对当前会话有影响的条件�
           | TIME ZONE time_zone
           | CURRENT_SCHEMA schema
           | NAMES encoding_name
-          | ROLE role_name PASSWORD 'password'
-          | SESSION AUTHORIZATION { role_name PASSWORD 'password' | DEFAULT }
+          | ROLE role_name PASSWORD 'xxxxxx'
+          | SESSION AUTHORIZATION { role_name PASSWORD 'xxxxxx' | DEFAULT }
           | XML OPTION { DOCUMENT | CONTENT }
         } ;
     ```
