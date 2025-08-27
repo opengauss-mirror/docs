@@ -77,7 +77,7 @@ openGauss=# create event trigger no_rewrite_allowed on table_rewrite
   when tag in ('alter table') execute procedure test_evtrig_no_rewrite();
 
 --修改事件触发器
-openGauss=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'EvtUser123';
+openGauss=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'xxxxxx';
 openGauss=# ALTER EVENT TRIGGER regress_event_trigger RENAME TO regress_event_trigger_start;
 --应该失败，事件触发器的owner只能为超级用户
 openGauss=# ALTER EVENT TRIGGER regress_event_trigger_start owner to regress_evt_user;
