@@ -258,8 +258,8 @@ openGauss=# CREATE ROLE manager IDENTIFIED BY 'xxxxxxxxx';
 -- Create a role with its validity from January 1, 2015 to January 1, 2026.
 openGauss=# CREATE ROLE miriam WITH LOGIN PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-01-01' VALID UNTIL '2026-01-01';
 
--- Change the password of role manager to abcd@123.
-openGauss=# ALTER ROLE manager IDENTIFIED BY 'abcd@123' REPLACE 'xxxxxxxxx';
+-- Change the password of role manager to xxxxxx.
+openGauss=# ALTER ROLE manager IDENTIFIED BY 'xxxxxx' REPLACE 'xxxxxxxxx';
 
 -- Change role manager to the system administrator.
 openGauss=# ALTER ROLE manager SYSADMIN;

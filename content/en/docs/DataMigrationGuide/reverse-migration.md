@@ -25,7 +25,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
       host: "openGauss_ip"
       port: "5432"
       user: "user"
-      password: "password"
+      password: "xxxxxx"
       database: "postgres"
       charset: "utf8"
       driver: "org.opengauss.Driver"
@@ -48,7 +48,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
       host: "mysql_ip"
       port: "3306"
       user: "user"
-      password: "password"
+      password: "xxxxxx"
       database: "database
     ```
 

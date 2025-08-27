@@ -135,7 +135,7 @@ public String findNearestVectors(Connection conn, int efsearch, String vector, i
 ```java
 public static void main(String[] args) {
         String username = "test2";     // 替换为你的用户名
-        String password = "YourPassword"; // 替换为你的密码
+        String password = "xxxxxx"; // 替换为你的密码
         int embeddingDim = 3;
 
         Connection conn = getConnection(username, password);

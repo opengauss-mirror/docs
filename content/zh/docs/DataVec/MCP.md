@@ -42,7 +42,7 @@
                 "OPENGAUSS_HOST": "localhost",
                 "OPENGAUSS_PORT": "8888",
                 "OPENGAUSS_USER": "your_username",
-                "OPENGAUSS_PASSWORD": "your_password",
+                "OPENGAUSS_PASSWORD": "xxxxxx",
                 "OPENGAUSS_DBNAME": "your_database"
             }
         }

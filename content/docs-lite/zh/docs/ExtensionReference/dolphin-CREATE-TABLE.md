@@ -68,7 +68,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
         [ MAX_ROWS [=] value ]
         [ MIN_ROWS [=] value ]
         [ PACK_KEYS [=] value ]
-        [ PASSWORD [=] 'password' ]
+        [ PASSWORD [=] 'xxxxxx' ]
         [ ROW_FORMAT [=] row_format_name ]
         [ START TRANSACTION ]
         [ SECONDARY_ENGINE_ATTRIBUTE [=] 'string' ]
@@ -279,7 +279,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     用于指定控制压缩索引的方式；目前该特性仅有语法支持，不实现功能。参数的取值范围为非负整数，小数，十六进制数，DEFAULT。
 
--   **PASSWORD \[=\] 'password'**
+-   **PASSWORD \[=\] 'xxxxxx'**
 
     此选项未使用；目前该特性仅有语法支持，不实现功能。参数的取值范围为任意字符串。
 
@@ -481,7 +481,7 @@ openGauss=# CREATE TABLE t_pack_keys(c text) PACK_KEYS DEFAULT;
 WARNING:  PACK_KEYS for TABLE is not supported for current version. skipped
 CREATE TABLE
 
-openGauss=# CREATE TABLE t_password(c text) PASSWORD 'password';
+openGauss=# CREATE TABLE t_password(c text) PASSWORD 'xxxxxx';
 WARNING:  PASSWORD for TABLE is not supported for current version. skipped
 CREATE TABLE
 

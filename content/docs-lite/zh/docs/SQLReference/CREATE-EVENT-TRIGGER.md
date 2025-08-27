@@ -89,7 +89,7 @@ test_event_trigger=# alter table event_trigger_table alter column a type numeric
 test_event_trigger=# drop table event_trigger_table;
 
 --修改事件触发器
-test_event_trigger=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'EvtUser123';
+test_event_trigger=# create role regress_evt_user WITH ENCRYPTED PASSWORD 'xxxxxx';
 test_event_trigger=# ALTER EVENT TRIGGER regress_event_trigger RENAME TO regress_event_trigger_start;
 --应该失败，事件触发器的owner只能为超级用户
 test_event_trigger=# ALTER EVENT TRIGGER regress_event_trigger_start owner to regress_evt_user;

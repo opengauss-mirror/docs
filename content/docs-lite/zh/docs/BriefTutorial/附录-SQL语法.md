@@ -2752,7 +2752,7 @@ SET CONSTRAINTS { ALL | name [, ...] } { DEFERRED | IMMEDIATE };
 设置当前会话的当前用户标识符。
 
 ```
-SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'password';
+SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'xxxxxx';
 RESET ROLE;
 ```
 
@@ -2761,7 +2761,7 @@ RESET ROLE;
 把当前会话里的会话用户标识和当前用户标识都设置为指定的用户。
 
 ```
-SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'password';
+SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'xxxxxx';
 {SET [ SESSION | LOCAL ] SESSION AUTHORIZATION DEFAULT
    | RESET SESSION AUTHORIZATION};
 ```
