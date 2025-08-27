@@ -17,8 +17,9 @@
 - 容器启动
 启动命令：
   ```bash
-  docker run -d -it --name <Your_Container_Name> --privileged=true \
+  docker run -d -it --name <Your_Container_Name>\
     --network=host  --ipc=host \
+    --device=/dev/davinci0 \
     --device=/dev/davinci_manager --device=/dev/devmm_svm --device=/dev/hisi_hdc --hostname ascend_docker  \
     -e ASCEND_RUNTIME_OPTIONS=NODRV \
     -v /usr/local/Ascend/driver:/usr/local/Ascend/driver \

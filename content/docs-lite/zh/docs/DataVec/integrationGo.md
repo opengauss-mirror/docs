@@ -128,7 +128,7 @@ func ExecuteMultiSearch(conninfo string, query string, args [][]interface{}, sca
 import (
     "gitcode.com/opengauss/openGauss-connector-go-pq"
 )
-conninfo := "host=localhost port=5432 user=test password=yourpassword dbname=testdb sslmode=disable"
+conninfo := "host=localhost port=5432 user=test password=yourpassword dbname=testdb"
 scanParams := map[string]interface{}{
     "hnsw_ef_search":"40",
     "enable_seqscan":"off"
