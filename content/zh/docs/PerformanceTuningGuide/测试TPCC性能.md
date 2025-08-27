@@ -39,7 +39,7 @@
     conn=jdbc:postgresql://8.92.4.238:21579/tpcc1000?prepareThreshold=1&batchMode=on&fetchsize=10 
     // 设置数据库登录用户和密码。
     user=bot 
-    password=Gaussdba@Mpp 
+    password=xxxxxx 
       
     warehouses=1000 
     loadWorkers=200 

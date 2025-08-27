@@ -136,7 +136,7 @@ SELECT * FROM pg_subscription;
                                                      | subslotname | subsynccommit | subpublications | subbinary | submatchddlowner
 ---------+---------+----------+------------+---------------------------------------------------------------------------------------------
 -----------------------------------------------------+-------------+---------------+-----------------+-----------+------------------
-   18797 | sub1    |       10 | t          | host=xxx.xx.xxx.xxx port=xxxx user=vbadmin dbname=dzy_soudb password=encryptOpt+BKUB13sXBzye
+   18797 | sub1    |       10 | t          | host=xxx.xx.xxx.xxx port=xxxx user=vbadmin dbname=dzy_soudb password=xxxxxx
 v0xiJw2EC+kcKn+Ei+hgvT2psOYfbzje8ptkXS/GkzStq9v3uFz  | sub1        | off           | {pub1}          | f         | t
 (1 row)
 ```
