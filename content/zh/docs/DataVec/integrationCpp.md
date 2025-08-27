@@ -208,7 +208,7 @@ void disconnectDB() {
 int main() {
     try {
         // 1. 连接数据库
-        OpenGaussManager db("host=127.0.0.1 dbname=vector_db user=admin password=Admin@123 port=5432");
+        OpenGaussManager db("host=127.0.0.1 dbname=vector_db user=admin password=xxxxxx port=5432");
 
         // 2. 创建表（维度为3）
         db.create_table("image_vectors", 3);

@@ -69,7 +69,7 @@ Modify a server.
 
 ```
 -- The user mapping from the current user to the specified server does not exist.
-openGauss=# alter server server_test options(user 'my_user', password 'mypassword');
+openGauss=# alter server server_test options(user 'my_user', password 'xxxxxx');
 WARNING:  USER MAPPING for current user to server server_test created.
 ALTER SERVER
 

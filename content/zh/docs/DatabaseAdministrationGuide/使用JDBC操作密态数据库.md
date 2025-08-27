@@ -50,7 +50,7 @@ public static Connection getConnect(String username, String passwd)
 
 ```
 // 创建客户端主密钥
-Connection conn1 = DriverManager.getConnection("url","user","password");
+Connection conn1 = DriverManager.getConnection("url","user","xxxxxx");
 
 // conn1通过调用isValid刷新缓存
 try {
@@ -67,7 +67,7 @@ try {
 
 ```
 // 创建客户端主密钥
-Connection conn = DriverManager.getConnection("url","user","password");
+Connection conn = DriverManager.getConnection("url","user","xxxxxx");
 Statement stmt = conn.createStatement();
 int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048));
 ```

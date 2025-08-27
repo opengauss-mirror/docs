@@ -10,7 +10,7 @@
     host=localhost
     database=postgres  
     user=omm
-    password=test
+    password=xxxxxx
     ```
 2. 在连接选项中添加SSL连接相关参数：sslmode、sslcert、sslkey、sslrootcert。  
     a.  sslmode：可选项见[表1](#table167989176183)。  

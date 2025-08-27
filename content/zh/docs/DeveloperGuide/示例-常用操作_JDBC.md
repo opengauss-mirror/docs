@@ -149,7 +149,7 @@ public class DBTest {
   */
   public static void main(String[] args) {
     //创建数据库连接。
-    Connection conn = GetConnection("tester", "Password1234");
+    Connection conn = GetConnection("tester", "xxxxxx");
 
     //创建表。
     CreateTable(conn);

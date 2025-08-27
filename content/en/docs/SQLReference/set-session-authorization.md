@@ -13,7 +13,7 @@ The session identifier can be changed only when the initial session user has the
 -   Set the session user identifier and the current user identifier of the current session.
 
     ```
-    SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'password';
+    SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'xxxxxx';
     ```
 
 -   Reset the identifiers of the session and current users to the initially authenticated user names.
