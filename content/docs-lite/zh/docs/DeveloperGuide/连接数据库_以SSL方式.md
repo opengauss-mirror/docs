@@ -86,7 +86,7 @@ public class SSL{
          */
         urlProps.setProperty("sslfactory","org.postgresql.ssl.NonValidatingFactory");
         urlProps.setProperty("user", "world");
-        urlProps.setProperty("password", "test@123");
+        urlProps.setProperty("password", "xxxxxx");
         urlProps.setProperty("ssl", "true");
         /**
          * ==================  示例2  使用证书

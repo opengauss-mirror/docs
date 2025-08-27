@@ -43,9 +43,9 @@ The OpenSSL component has been installed in the Linux environment.
     .................+++
     ..................+++
     e is 65537 (0x10001)
-    --Set the protection password of the root private key to at least four characters, for example, Test@123.
+    --Set the protection password of the root private key to at least four characters, for example, xxxxxx.
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the private key password Test@123 again.
+    --Enter the private key password xxxxxx again.
     Verifying - Enter pass phrase for demoCA/private/cakey.pem:
     ```
 
@@ -55,7 +55,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Generate a CA root certificate application file named careq.pem.
     openssl req -config openssl.cnf -new -key demoCA/private/cakey.pem -out demoCA/careq.pem
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the root private key password Test@123.
+    --Enter the root private key password xxxxxx.
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
     What you are about to enter is what is called a Distinguished Name or a DN.
@@ -90,7 +90,7 @@ The OpenSSL component has been installed in the Linux environment.
     openssl ca -config openssl.cnf -out demoCA/cacert.pem -keyfile demoCA/private/cakey.pem -selfsign -infiles demoCA/careq.pem
     Using configuration from openssl.cnf
     Enter pass phrase for demoCA/private/cakey.pem:
-    --Enter the root private key password Test@123.
+    --Enter the root private key password xxxxxx.
     Check that the request matches the signature
     Signature ok
     Certificate Details:
@@ -134,9 +134,9 @@ The OpenSSL component has been installed in the Linux environment.
     ..++++++
     e is 65537 (0x10001)
     Enter pass phrase for server.key:
-    --The password of the server private key must contain a minimum of four characters, for example, Test@123.
+    --The password of the server private key must contain a minimum of four characters, for example, xxxxxx.
     Verifying - Enter pass phrase for server.key:
-    --Confirm the protection password for the server private key Test@123 again.
+    --Confirm the protection password for the server private key xxxxxx again.
     ```
 
 6.  Generate a server certificate request file.
@@ -220,7 +220,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Disable the password protection for the server private key.
     openssl rsa -in server.key -out server.key
     --If the password protection for the server private key is not disabled, you need to use the gs_guc tool to encrypt the password.
-    gs_guc encrypt -M server -K Test@123 -D ./
+    gs_guc encrypt -M server -K xxxxxx -D ./
     --After the password is encrypted using gs_guc, two private key password protection files server.key.cipher and server.key.rand are generated.
     ```
 
@@ -243,7 +243,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Disable the protection for a client private key password.
     openssl rsa -in client.key -out client.key
     --If password protection for a client private key is not removed, you need to use the gs_guc tool to encrypt the password.
-    gs_guc encrypt -M client -K Test@123 -D ./  
+    gs_guc encrypt -M client -K xxxxxx -D ./  
     After the password is encrypted using gs_guc, two private key password protection files client.key.cipher and client.key.rand are generated.
     ```
 
