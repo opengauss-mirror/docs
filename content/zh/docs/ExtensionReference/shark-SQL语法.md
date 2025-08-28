@@ -9,3 +9,4 @@
 -   **[SELECT](shark-SELECT.md)**
 -   **[SET](shark-SET.md)**
 -   **[DBCC](shark-DBCC.md)**
+-   **[MERGE INTO](shark-MERGE-INTO.md)**

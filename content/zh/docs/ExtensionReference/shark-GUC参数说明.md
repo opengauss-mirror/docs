@@ -18,6 +18,29 @@ openGauss=# select ARRAY[1,2,3];
 ERROR:  syntax error at or near "[1,2,3]"
 ```
 
+-    enable_table_hint_identifier：是否允许table_hint当做标识符，用于列名、变量名等。开启后允许下述hint用作标识符。
+涉及的hint有：NOLOCK、READUNCOMMITTED、UPDLOCK、REPEATABLEREAD、SERIALIZABLE、READCOMMITTED、TABLOCK、TABLOCKX、PAGLOCK、ROWLOCK、NOWAIT、READPAST、XLOCK、SNAPSHOT、NOEXPAND。
+```
+openGauss=# set d_format_behavior_compat_options = 'enable_table_hint_identifier';
+SET
+openGauss=# create table testhint(nowait int);
+CREATE TABLE
+openGauss=# insert into testhint (nowait) values(1);
+INSERT 0 1
+openGauss=# select max(nowait) from testhint;
+ max
+-----
+   1
+(1 row)
+
+openGauss=# set d_format_behavior_compat_options = '';
+SET
+openGauss=# create table testhint(nowait int);
+ERROR:  syntax error at or near "("
+LINE 1: create table testhint(nowait int);
+                             ^
+```
+
 ## ANSI_NULLS<a name="section203671436823"></a>
 
 **取值范围**：on/off
