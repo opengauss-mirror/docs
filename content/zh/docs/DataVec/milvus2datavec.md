@@ -122,7 +122,7 @@ class MilvusToOpenGaussMigrator:
         try:
             conn = psycopg2.connect(
                 user=self.config.get('openGauss', 'user'),
-                password=self.config.get('openGauss', 'password'),
+                password=self.config.get('openGauss', 'xxxxxx'),
                 host=self.config.get('openGauss', 'host'),
                 port=self.config.get('openGauss', 'port'),
                 database=self.config.get('openGauss', 'database')

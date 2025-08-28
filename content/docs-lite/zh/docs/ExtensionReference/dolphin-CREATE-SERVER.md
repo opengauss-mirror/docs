@@ -66,7 +66,7 @@ CREATE SERVER server_name
 
 ```
 openGauss=# create server server_test foreign data wrapper mysql options(host '192.108.0.1', port '3306', user 'foreign_server_test',
-password 'password@123', database 'my_db', owner 'test_user');
+password 'xxxxxx', database 'my_db', owner 'test_user');
 WARNING:  Option database will be deprecated for CREATE SERVER.
 WARNING:  Option owner will be deprecated for CREATE SERVER.
 WARNING:  USER MAPPING for current user to server server_test created.

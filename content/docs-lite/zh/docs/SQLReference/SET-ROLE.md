@@ -14,7 +14,7 @@
 -   设置当前会话的当前用户标识符。
 
     ```
-    SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'password';
+    SET [ SESSION | LOCAL ] ROLE role_name PASSWORD 'xxxxxx';
     ```
 
 -   重置当前用户标识为当前会话用户标识符。

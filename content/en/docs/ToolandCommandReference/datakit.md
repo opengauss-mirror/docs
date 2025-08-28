@@ -41,7 +41,7 @@ x86/Arm + openEuler 20.03 or x86 + CentOS 5.7
      port: 9494
      ssl:
        key-store: /ops/ssl/keystore.p12
-       key-store-password: password
+       key-store-password: xxxxxx
        key-store-type: PKCS12
        enabled: true
      servlet:
@@ -55,7 +55,7 @@ x86/Arm + openEuler 20.03 or x86 + CentOS 5.7
        driver-class-name: org.opengauss.Driver
        url: jdbc:opengauss://ip:port/database?currentSchema=public
        username: dbuser
-       password: dbpassword
+       password: xxxxxx
        druid:
          test-while-idle: false
          test-on-borrow: true

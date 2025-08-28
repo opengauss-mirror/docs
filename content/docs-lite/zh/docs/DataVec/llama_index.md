@@ -33,7 +33,7 @@ def build_rag_app():
     vector_store = OpenGaussStore.from_params(
         database="postgres",
         host="127.0.0.1",
-        password="password",
+        password="xxxxxx",
         port=8888,
         user="postgres",
         table_name="paul_graham_essay",

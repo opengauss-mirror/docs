@@ -13,7 +13,7 @@
 -   为当前会话设置会话用户标识符和当前用户标识符。
 
     ```
-    SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'password';
+    SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'xxxxxx';
     ```
 
 -   重置会话和当前用户标识符为初始认证的用户名。

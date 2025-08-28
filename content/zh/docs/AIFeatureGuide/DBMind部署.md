@@ -42,7 +42,7 @@ useradd -m test_user -d /home/test_user
 本文以如下的用户和数据库信息作为示例。
 
 >- username：dbmind_monitor
->- password：test_123
+>- password：xxxxxx
 >- port：6789
 >- metadatabase：metadatabase
 
@@ -50,7 +50,7 @@ omm登录主节点，并为数据库节点和DBMind服务器数据库创建dbmin
 
 ```shell
 gs_guc reload -D datanode -c 'password_encryption_type=1'
-gsql -p {port} -d postgres -c 'create user {username:dbmind_monitor} with password {password:test_123} ;'
+gsql -p {port} -d postgres -c 'create user {username:dbmind_monitor} with password {password:xxxxxx} ;'
 gsql -p {port} -d postgres -c 'alter user {username:dbmind_monitor} monadmin; '
 gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 ```
@@ -60,12 +60,15 @@ gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参�
 >
 >```shell
 >gs_guc reload -D datanode -c 'password_encryption_type=1'
->gsql -p {port} -d postgres -c 'create user dbmind_monitor with password test_123;'
+>gsql -p {port} -d postgres -c 'create user dbmind_monitor with password xxxxxx;'
 >gsql -p {port} -d postgres -c 'alter user dbmind_monitor monadmin;'
 >gs_guc reload -D datanode -c 'password_encryption_type=2'  # 可选，将该参数改回去
 >```
 
 DBMind服务器，创建元数据库：
+>![](public_sys-resources/icon-note.png) **说明：**
+>
+>该仓库所有资料和测试文件（copy_test.go,encode_test_go等）使用的密码及sslmode=disable仅为示例，在使用时，请根据实际情况配置正确的密码，使用安全的sslmode（默认值prefer）。
 
 ```shell
 grant all privileges to {username:dbmind_monitor};
@@ -258,7 +261,7 @@ opengauss_exporter是DBMind采集数据库的组件，从openGauss数据库中�
 2. 方式二：K-V格式
 
    ```shell
-   gs_dbmind component opengauss_exporter --url "dbname=postgres user=dbmind_monitor password=test_123 host=192.168.100.1 port=19999" --web.listen-address 0.0.0.0 --web.listen-port 9187 --log.level info --disable-https
+   gs_dbmind component opengauss_exporter --url "dbname=postgres user=dbmind_monitor password=xxxxxx host=192.168.100.1 port=19999" --web.listen-address 0.0.0.0 --web.listen-port 9187 --log.level info --disable-https
    ```
 
 执行完上述命令，如果控制台显示`The process is starting`，说明安装无异常。也可以通过下述命令检查opengauss_exporter是否已启动。

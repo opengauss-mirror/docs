@@ -80,7 +80,7 @@ import psycopg2
 connection = psycopg2.connect(
     database = "omm",
     user = "gaussdb",
-    password = "YourPassoword",
+    password = "xxxxxx",
     host = "Your IP",
     port = 8888
 )
@@ -104,7 +104,7 @@ from langchain_opengauss import openGaussAGEGraph, openGaussSettings
 conf = openGaussSettings(
     database = "omm",
     user = "gaussdb",
-    password = "YourPassoword",
+    password = "xxxxxx",
     host = "Your IP",
     port = 8888
 )
