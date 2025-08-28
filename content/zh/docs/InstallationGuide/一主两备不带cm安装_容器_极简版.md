@@ -51,7 +51,7 @@
     
     如果只有一个节点，则启动后是单机模式。当然，单机也可以快速启动：
     ```
-    docker run --name opengauss --net=ognetwork --privileged=true -p 8000:5432 -d -e GS_PASSWORD=Test@123 -v /data/ogvol:/var/lib/opengauss opengauss:6.0.0
+    docker run --name opengauss --net=ognetwork --privileged=true -p 8000:5432 -d -e GS_PASSWORD=xxxxxx -v /data/ogvol:/var/lib/opengauss opengauss:6.0.0
     ```
 
 

@@ -290,7 +290,7 @@ Example 13:  **user1**  does not have the permission to import data from an expo
 ```
 human_resource=# CREATE USER user1 IDENTIFIED BY "1234@abc";
 CREATE ROLE role1 with SYSADMIN IDENTIFIED BY "abc@1234";
-gs_restore -U user1 /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --role role1 --rolepassword abc@1234
+gs_restore -U user1 /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb --role role1 --rolepassword xxxxxx
 Password:
 restore operation successful
 total time: 554  ms

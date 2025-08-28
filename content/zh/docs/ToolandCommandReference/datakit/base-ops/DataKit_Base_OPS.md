@@ -486,7 +486,7 @@
 
 - 创建平台所需的连接用户
 
-   `CREATE USER username WITH MONADMIN PASSWORD "password";`
+   `CREATE USER username WITH MONADMIN PASSWORD "xxxxxx";`
 
 - 对所有节点配置白名单并重启数据库
 

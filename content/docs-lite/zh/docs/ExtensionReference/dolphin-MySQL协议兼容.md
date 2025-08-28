@@ -27,8 +27,8 @@
 ```SQL
 CREATE DATABASE proto_test_db DBCOMPATIBILITY 'B';
 \c proto_test_db
-CREATE USER proto_test WITH PASSWORD 'Proto_test123';
-SELECT set_native_password('proto_test', 'Proto_test123', '');
+CREATE USER proto_test WITH PASSWORD 'xxxxxx';
+SELECT set_native_password('proto_test', 'xxxxxx', '');
 ```
 >![](public_sys-resources/icon-notice.png) **须知：** （第一个参数为用户名，第二个参数为MySQL连接密码，第三个参数为原密码；第一次设置时可以为空或者任意值，后续更改密码以及更改认证方式需要原密码做验证）
 
