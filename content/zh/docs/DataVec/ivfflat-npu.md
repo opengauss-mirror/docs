@@ -13,7 +13,7 @@
 ## 2.安装准备
 ### 获取openGauss镜像并启动容器
 - 镜像获取
-详见[openGauss容器安装部署](../InstallationGuide/容器镜像安装.md)。
+详见[openGauss容器安装部署](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 - 容器启动
 启动命令：
   ```bash
