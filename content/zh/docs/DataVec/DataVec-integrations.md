@@ -19,7 +19,7 @@ openGauss DataVec提供多种第三方组件的集成教程，并通过多语言
 ## 数据迁移
 - [从Milvus迁移至openGauss DataVec](milvus2datavec.md)
 - [从PgVector迁移至openGauss DataVec](../AboutopenGauss/Postgresql_openGauss迁移工具debezium-connector-postgres.md)
-- 从ElasticSearch迁移至openGauss DataVec
+- [从ElasticSearch迁移至openGauss DataVec](elasticsearch-to-openGauss.md)
 
 ## API Reference
 - [Python](integrationPython.md)
