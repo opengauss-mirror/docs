@@ -10,3 +10,4 @@
 -   **[SET](shark-SET.md)**
 -   **[DBCC](shark-DBCC.md)**
 -   **[MERGE INTO](shark-MERGE-INTO.md)**
+-   **[TRY CATCH](shark-trycatch.md)**
