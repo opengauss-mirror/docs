@@ -686,6 +686,138 @@
 
     Return type: oid
 
+-   natural\(in\)
+
+    Description: Converts the input parameter to a value of the natural type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: natural
+
+    Example:
+
+    ```
+    openGauss=# select "natural"('789');
+     natural
+    ---------
+         789
+    (1 row)
+    
+    openGauss=# select "natural"(99.9);
+     natural
+    ---------
+          99
+    (1 row)
+    ```
+
+-   naturaln\(in\)
+
+    Description: Converts the input parameter to a value of the naturaln type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: naturaln
+
+    Example:
+
+    ```
+    openGauss=# select naturaln('789');
+     naturaln
+    ----------
+          789
+    (1 row)
+    
+    openGauss=# select naturaln(99.9);
+     naturaln
+    ----------
+           99
+    (1 row)
+    ```
+
+-   positive\(in\)
+
+    Description: Converts the input parameter to a value of the positive type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: positive
+
+    Example:
+
+    ```
+    openGauss=# select positive('789');
+     positive
+    ----------
+          789
+    (1 row)
+    
+    openGauss=# select positive(99.9);
+     positive
+    ----------
+           99
+    (1 row)
+    ```
+
+-   positiven\(in\)
+
+    Description: Converts the input parameter to a value of the positiven type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: positiven
+
+    Example:
+
+    ```
+    openGauss=# select positiven('789');
+     positiven
+    -----------
+           789
+    (1 row)
+    
+    openGauss=# select positiven(99.9);
+     positiven
+    -----------
+            99
+    (1 row)
+    ```
+
+-   signtype\(in\)
+
+    Description: Converts the input parameter to a value of the signtype type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: signtype
+
+    Example:
+
+    ```
+    openGauss=# select signtype('1.2');
+     signtype
+    ----------
+            1
+    (1 row)
+    
+    openGauss=# select signtype(-0.9);
+     signtype
+    ----------
+           -1
+    (1 row)
+    ```
+
+-   simple_integer\(in\)
+
+    Description: Converts the input parameter to a value of the simple_integer type and returns the value. The supported input parameter types include tinyint, smallint, integer, bigint, int16，boolean，double precision，real, numeric.
+
+    Return type: simple_integer
+
+    Example:
+
+    ```
+    openGauss=# select simple_integer('789');
+     simple_integer
+    ----------------
+                789
+    (1 row)
+    
+    openGauss=# select simple_integer(99.9);
+     simple_integer
+    ----------------
+                 99
+    (1 row)
+    ```
+
 -   radians\(dp\)
 
     Description: Converts angles to radians.
