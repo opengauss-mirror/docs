@@ -642,7 +642,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     - CONNECT_BY_ISLEAF：是否为叶子结点
     
     除了伪列外，还提供下述的查询函数
-    - sys_connect)by_path(col, separtor)：返回从根节点到当前行的连接路径。参数col为路径中显示的列的名称，separator为连接符。
+    - sys_connect_by_path(col, separtor)：返回从根节点到当前行的连接路径。参数col为路径中显示的列的名称(如果误写函数，函数功能失效)，separator为连接符。
     - connect_by_root(col)：显示该节点最顶级的节点，col为输出列的名称。
 
     当前Start with默认行为是宽度优先搜索，但可以通过和伪列配合，实现深度优先搜索。比如：
