@@ -95,7 +95,7 @@ INSERT [/*+ plan_hint */] INTO
 
 -   **target\_query**
 
-    作为插入目标的子查询，相当于视图，插入限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+    作为插入目标的子查询，相当于视图，仅在参数sql\_compatibility=A时生效。插入限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
     
 -   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     
