@@ -12,6 +12,7 @@
 -   A holdable cursor is implicitly closed if the transaction that created it aborts by  **ROLLBACK**.
 -   If the cursor creation transaction is successfully committed, the holdable cursor remains open until an explicit  **CLOSE**  operation is executed, or the client disconnects.
 -   openGauss does not have an explicit  **OPEN**  cursor statement. A cursor is considered open when it is declared. You can view all available cursors by querying the  **pg\_cursors**  system view.
+-   When the same cursor is opened twice in a row without closing, the cursor will implicitly **CLOSE** and continue to open before the second opening.
 
 ## Syntax<a name="en-us_topic_0283137397_en-us_topic_0237122091_en-us_topic_0059779164_s8ba4e8a4cce54146aea763d5569214e7"></a>
 
