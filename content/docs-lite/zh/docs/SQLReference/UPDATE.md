@@ -73,7 +73,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **target\_query**
 
-    作为更新目标的子查询，相当于视图，更新限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+    作为更新目标的子查询，相当于视图，仅在参数sql\_compatibility=A时生效。更新限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
     
 -   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     

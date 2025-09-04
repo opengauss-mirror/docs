@@ -95,7 +95,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 -   **target\_query**
     
-    Specified subquery for updates，which is equivalent to a view. For restrictions on updating a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md).
+    Specified subquery for updates，which is equivalent to a view. This parameter takes effect only when **sql\_compatibility** is set to **A**. For restrictions on updating a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md).
 
 -   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     

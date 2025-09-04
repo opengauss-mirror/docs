@@ -86,7 +86,7 @@ INSERT [/*+ plan_hint */] INTO
 
 -   **target\_query**
     
-    Specified subquery for insertion，which is equivalent to a view. For restriction on inserting into a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md) for more details.
+    Specified subquery for insertion，which is equivalent to a view. This parameter takes effect only when **sql\_compatibility** is set to **A**. For restriction on inserting into a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md) for more details.
 
 -   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     

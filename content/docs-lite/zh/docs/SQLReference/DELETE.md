@@ -97,7 +97,7 @@ DELETE [/*+ plan_hint */]
 
 -   **target\_query**
     
-    作为删除目标的子查询，相当于视图，删除限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
+    作为删除目标的子查询，相当于视图,仅在参数sql\_compatibility=A时生效。删除限制详见[CREATE VIEW](CREATE-VIEW.md)中可自动更新视图一节。
 
 -   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     
