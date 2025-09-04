@@ -18,7 +18,7 @@
 PQ特性只支持ARM架构环境。
 
 ### 1. 容器化部署openGauss
-详见[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
+详见[容器镜像安装](https://docs.opengauss.org/zh/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)。
 
 ### 2. 获取PQ检索加速安装包
 加速包默认安装路径为/usr/local/sra_recall。
