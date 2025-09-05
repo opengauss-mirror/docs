@@ -62,6 +62,105 @@
     (1 row)
     ```
 
+- ERROR_NUMBER()
+
+    描述：返回PL过程中异常的错误号。
+
+    参数类型: 无
+
+    返回值类型：int
+
+    示例：参见ERROR_MESSAGE()示例
+
+- ERROR_SEVERITY()
+
+    描述：返回PL过程中异常的严重性值。
+
+    参数类型: 无
+
+    返回值类型：int
+
+    示例：参见ERROR_MESSAGE()示例
+
+- ERROR_STATE()
+
+    描述：返回PL过程中异常的错误消息的状态号
+
+    参数类型: 无
+
+    返回值类型：int
+
+    示例：参见ERROR_MESSAGE()示例
+
+- ERROR_PROCEDURE()
+
+    描述：返回PL过程中生成错误的存储过程或触发器的名称
+
+    参数类型: 无
+
+    返回值类型：text
+
+    示例：参见ERROR_MESSAGE()示例
+
+- ERROR_LINE()
+
+    描述：返回PL过程中出现错误的行号
+
+    参数类型: 无
+
+    返回值类型：int
+
+    示例：参见ERROR_MESSAGE()示例
+
+- ERROR_MESSAGE()
+
+    描述：返回PL过程中错误消息的完整文本
+
+    参数类型: 无
+
+    返回值类型：text
+
+    示例：
+
+```
+    openGauss=#CREATE TABLE test(a int);
+    openGauss=#CREATE OR REPLACE PROCEDURE p1()
+               AS
+               BEGIN
+                  select 1/0;
+               END;
+               /
+    openGauss=#CREATE OR REPLACE PROCEDURE p2()
+               AS
+               BEGIN
+                   BEGIN TRY
+                       delete from test;
+                       insert into test values(1);
+                       insert into test values(2);
+                       call p1();
+                       insert into test values(3);
+                   END TRY
+                   BEGIN CATCH
+                       insert into test values(4);
+                       RAISE NOTICE 'ERROR_NUMBER() is %', ERROR_NUMBER();
+                       RAISE NOTICE 'ERROR_SEVERITY() is %', ERROR_SEVERITY();
+                       RAISE NOTICE 'ERROR_STATE() is %', ERROR_STATE();
+                       RAISE NOTICE 'ERROR_PROCEDURE() is %', ERROR_PROCEDURE();
+                       RAISE NOTICE 'ERROR_LINE() is %', ERROR_LINE();
+                       RAISE NOTICE 'ERROR_MESSAGE() is %', ERROR_MESSAGE();
+                   END CATCH;
+                END;
+                /
+    openGauss=#CALL p2();
+    NOTICE:  ERROR_NUMBER() is 33816706
+    NOTICE:  ERROR_SEVERITY() is 20
+    NOTICE:  ERROR_STATE() is 1
+    NOTICE:  ERROR_PROCEDURE() is p1()
+    NOTICE:  ERROR_LINE() is 2
+    NOTICE:  ERROR_MESSAGE() is division by zero
+
+```
+
 - ident_current(table_or_view)
 
     描述：返回为指定的表或视图生成的最后一个标识值。所生成的最有一个标识值可以针对任何会话和任何作用域。
