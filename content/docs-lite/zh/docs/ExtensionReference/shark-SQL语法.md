@@ -9,5 +9,6 @@
 -   **[SELECT](shark-SELECT.md)**
 -   **[SET](shark-SET.md)**
 -   **[DBCC](shark-DBCC.md)**
+-   **[IDENTITY](shark-约束.md)**
 -   **[MERGE INTO](shark-MERGE-INTO.md)**
 -   **[TRY CATCH](shark-trycatch.md)**

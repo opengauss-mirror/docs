@@ -924,6 +924,7 @@ headless: true
 				-	[SQL语法]({{< relref "./docs/ExtensionReference/shark-SQL语法.md" >}})
 					-    [GUC参数说明]({{< relref "./docs/ExtensionReference/shark-GUC参数说明.md" >}})
 					-	 [CREATE INDEX]({{< relref "./docs/ExtensionReference/shark-CREATE-INDEX.md" >}})
+                                       -        [约束]({{< relref "./docs/ExtensionReference/shark-约束.md" >}})
                     -    [CREATE TABLE]({{< relref "./docs/ExtensionReference/shark-CREATE-TABLE.md" >}})
 					-	 [INSERT]({{< relref "./docs/ExtensionReference/shark-INSERT.md" >}})
                     -    [UPDATE]({{< relref "./docs/ExtensionReference/shark-UPDATE.md" >}})
