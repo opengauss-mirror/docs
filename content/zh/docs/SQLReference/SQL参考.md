@@ -56,6 +56,8 @@
 
 -   **[GIN索引](GIN索引.md)**
 
+-   **[BLOOM索引](BLOOM索引.md)**
+
 -   **[DataVec向量引擎](DataVec向量引擎.md)**
 
 -   **[系统操作](系统操作.md)**
