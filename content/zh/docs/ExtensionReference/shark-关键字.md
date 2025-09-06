@@ -20,6 +20,7 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
 3. 新增```save```，```tran```作为非保留关键字。
 4. 新增```nolock```，```readuncommitted```，```updlock```，```repeatableread```，```readcommitted```，```tablock```，```tablockx```，```paglock```，
 ```rowlock```，```readpast```，```xlock```，```noexpand```作为非保留关键字。
+5. 新增```minutes```，```proc```，```textimage_on```作为非保留关键字。
 
 **表 1**  SQL关键字
 
