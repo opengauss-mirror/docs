@@ -1823,6 +1823,7 @@ headless: true
 			-   [限制约束]({{< relref "./docs/SQLReference/限制约束.md" >}})
 		-   [扩展函数]({{< relref "./docs/SQLReference/扩展函数.md" >}})
 		-   [扩展语法]({{< relref "./docs/SQLReference/扩展语法.md" >}})
+		-   [BLOOM索引]({{< relref "./docs/SQLReference/BLOOM索引.md" >}})
 		-   [DataVec向量引擎]({{< relref "./docs/SQLReference/DataVec向量引擎.md" >}})
 			-   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}})
 			-   [向量函数和操作符]({{< relref "./docs/SQLReference/向量函数和操作符.md" >}})
