@@ -1401,6 +1401,7 @@ headless: true
 			-   [扩展性]({{< relref "./docs/SQLReference/扩展性.md" >}})
 			-   [实现]({{< relref "./docs/SQLReference/实现.md" >}})
 			-   [GIN提示与技巧]({{< relref "./docs/SQLReference/GIN提示与技巧.md" >}})
+	-   [BLOOM索引]({{< relref "./docs/SQLReference/BLOOM索引.md" >}})
 	-   [DataVec向量引擎]({{< relref "./docs/SQLReference/DataVec向量引擎.md" >}})
 			-   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}})
 			-   [向量函数和操作符]({{< relref "./docs/SQLReference/向量函数和操作符.md" >}})
