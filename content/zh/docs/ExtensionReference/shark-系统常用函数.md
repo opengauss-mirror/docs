@@ -176,7 +176,7 @@
     CREATE TABLE
     
     -- 包含identity列的表，还未插入数据
-    sqlserver=# SELECT ident_current('employees');
+    openGauss=# SELECT ident_current('employees');
     ident_current 
     ---------------
                 1
@@ -368,3 +368,427 @@
     (1 row)
     ```
 
+- log10(float_expression)
+
+    描述：接受一个浮点数表达式，计算10为底的对数
+
+    参数类型：double precision
+
+    返回值类型：double precision
+
+    示例：
+    
+    ```
+    openGauss=# select log(100);
+     log 
+    -----
+       2
+    (1 row)
+    ```
+
+- isnull(check_expression, replacement_value)
+
+    描述：返回第一个非NULL值
+
+    参数类型: check_expression可为任意类型，replacement_value需为可以隐式或显式地转换为check_expression的类型
+
+    返回值类型：返回值类型与check_expression类型相同
+
+    示例：
+
+    ```
+    openGauss=# select isnull(1, NULL);
+     isnull 
+    --------
+          1
+    (1 row)
+
+    openGauss=# select isnull(NULL, 'abc');
+     isnull 
+    --------
+     abc
+    (1 row)
+    ```
+
+- atn2(float_expression, float_expression)
+
+    描述：返回以弧度表示的角，该角位于正X轴和原点至点(y, x)的射线之间，其中x和y是两个指定的浮点数表达式的值
+
+    参数类型：double precision
+
+    返回值类型：double precision
+
+    示例：
+    ```
+    openGauss=# select atan2(1.2, 2.5);
+         atan2      
+    -----------------
+     .44751997515717
+    (1 row)
+    ```
+
+- charindex(expressionToFind, expressionToSearch [, start_location])
+
+    描述：在expressionToSearch中搜索expressionToFind第一次出现的位置，如果start_location存在的话，则从start_location开始
+
+    参数类型：expressionToFind与expressionToSearch为text类型，start_location为int类型
+
+    返回值类型：int
+
+    示例：
+    ```
+    openGauss=# select charindex('aaa', 'aaa bbb ccc aaa');
+     charindex 
+    -----------
+             1
+    (1 row)
+
+    openGauss=# select charindex('aaa', 'aaa bbb ccc aaa', 4);
+     charindex 
+    -----------
+            13
+    (1 row)
+    ```
+
+- datediff(datepart, startdate, enddate)
+
+    描述：返回指定datepart单位的enddate和startdate之间的差值
+
+    参数类型：datepart为指定的日期单位，详情参见下表。startdate和enddate为timestamp类型
+
+    返回值类型：int
+
+    datepart类型：
+
+    | *datepart*  | **缩写形式** |
+    | ----------- | ------------ |
+    | year        | yy, yyyy     |
+    | quarter     | qq, q        |
+    | month       | mm, m        |
+    | dayofyear   | dy, y        |
+    | day         | dd, d        |
+    | week        | wk, ww       |
+    | weekday     | dw, w        |
+    | hour        | hh           |
+    | minute      | mi, n        |
+    | second      | ss, s        |
+    | millisecond | ms           |
+    | microsecond | mcs          |
+    | nanosecond  | ns           |
+
+    示例：
+
+    ```
+    openGauss=# select datediff(day, timestamp'1997-12-31 23:59:59', timestamp'1998-12-31 23:59:59');
+     datediff 
+    ----------
+          365
+    (1 row)
+    ```
+
+- datediff_big(datepart, startdate, enddate)
+
+    描述：返回指定datepart单位的enddate和startdate之间的差值
+
+    参数类型：datepart为指定的日期单位，同datediff。startdate和enddate为timestamp类型
+
+    返回值类型：bigint
+
+    示例
+    ```
+    openGauss=# select datediff_big(second, timestamp'1997-12-31 23:59:59', timestamp'1998-12-31 23:59:59');
+     datediff_big 
+    --------------
+         31536000
+    (1 row)
+    ```
+
+- cast(expression AS data_type[(length)])
+
+    描述：将表达式转换为指定类型
+
+    参数类型：expression为任意类型表达式，data_type为类型关键字，length为int类型
+
+    返回值类型：指定的data_type类型
+
+    备注：
+    - SQLSERVER2017中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
+
+    示例：
+    ```
+    openGauss=# select cast(123456789 AS char) as result;
+             result             
+    --------------------------------
+     123456789                     
+    (1 row)
+    ```
+
+- try_cast(expression AS data_type[(length)])
+
+    描述：将表达式转换为指定类型，如进行不支持的类型转换则报错, 支持的类型转换但是转换失败情况下返回NULL
+
+    参数类型：expression为任意类型表达式，data_type为类型关键字，length为int类型
+
+    返回值类型：指定的data_type类型
+
+    备注：
+    - SQLSERVER2017中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
+
+    ```
+    sqlserver=# select try_cast(123456789 AS smallint) as result;
+     result 
+    --------
+            
+    (1 row)
+    ```
+
+- convert(data_type[(length)], expression[, style])
+
+    描述：将表达式转换为指定类型
+
+    参数类型：expression为任意类型表达式，data_type为类型关键字，length为int类型
+
+    返回值类型：指定的data_type类型
+
+    备注：
+    - 针对不容的类型转换，style可以具有下表所表示的某个值，其他值作为0进行处理
+    - 目前仅支持涉及日期，时间和浮点数，货币(money)的样式
+
+    **表1** 日期和时间样式
+
+    <table aria-label="表 1" class="table table-sm margin-top-none">
+        <thead>
+            <tr>
+                <th>不带世纪位数</th>
+                <th>带世纪位数</th>
+                <th>标准</th>
+                <th>输入/输出</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>0或100</td>
+                <td>默认值</td>
+                <td>mon dd yyyy hh:miAM</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>美国</td>
+                <td>1 = mm/dd/yy<br>101 = mm/dd/yyyy</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>ANSI</td>
+                <td>2 = yy.mm.dd<br>102 = yyyy.mm.dd</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>103</td>
+                <td>英国/法国</td>
+                <td>3 = dd/mm/yy<br>103 = dd/mm/yyyy</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>104</td>
+                <td>德国</td>
+                <td>4 = dd.mm.yy<br>104 = dd.mm.yyyy</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>105</td>
+                <td>意大利</td>
+                <td>5 = dd-mm-yy<br>105 = dd-mm-yyyy</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>106</td>
+                <td>-</td>
+                <td>6 = dd mon yy<br>106 = dd mon yyyy</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>107</td>
+                <td>-</td>
+                <td>7 = Mon dd, yy<br>107 = Mon dd, yyyy</td>
+            </tr>
+            <tr>
+                <td>8或24</td>
+                <td>108</td>
+                <td>-</td>
+                <td>hh:mi:ss</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>9或109</td>
+                <td>默认格式 + 毫秒</td>
+                <td>9 = mon dd yyyy<br>109 = hh:mi:ss:mmmAM(PM)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>110</td>
+                <td>美国</td>
+                <td>11 = yy/mm/dd<br>111 = yyyy/mm/dd</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>111</td>
+                <td>日本</td>
+                <td>11 = yy/mm/dd<br>111 = yyyy/mm/dd</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>112</td>
+                <td>ISO</td>
+                <td>12 = yymmdd<br>112 = yyyymmdd</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>13或113</td>
+                <td>欧洲默认格式 + 毫秒</td>
+                <td>dd mon yyyy hh:mi:ss:mmm(24小时制)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>114</td>
+                <td>-</td>
+                <td>hh:mi:ss:mmm(24小时制)</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>20或120</td>
+                <td>ODBC规范</td>
+                <td>yyyy-mm-dd hh:mi:ss</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>21或25或121</td>
+                <td>time、date、datetime2和<br>datetimeoffset的ODBC规范(毫秒标识)默认值</td>
+                <td>yyyy-mm-dd hh:mi:ss.mmm(24小时制)</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>-</td>
+                <td>美国</td>
+                <td>mm/dd/yy hh:mi:ss AM(PM)</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>23</td>
+                <td>ISO8601</td>
+                <td>yyyy-mm-dd</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>126</td>
+                <td>ISO8601</td>
+                <td>yyyy-mm-ddThh:mi:ss.mmm</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>127</td>
+                <td>包括时区Z的ISO8601</td>
+                <td>yyy-MM-ddThh:mm:ss.fffZ</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>130</td>
+                <td>回历</td>
+                <td>dd mon yyyy<br>hh:mi:ss:mmmAM</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>131</td>
+                <td>回历</td>
+                <td>dd/mm/yyyy<br>hi:mi:ss:mmmAM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    **表2** float和real样式
+
+    <table aria-label="表 2" class="table table-sm margin-top-none">
+        <thead>
+            <tr>
+                <th>值</th>
+                <th>输出</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>最多包含6位，根据需要使用科学计数法。</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>始终为8位值，根据需要使用科学计数法。</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>始终为16位值，根据需要使用科学计数法。</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>始终为17位值，用于无损转换。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    **表3** money样式
+
+    <table aria-label="表 3" class="table table-sm margin-top-none">
+        <thead>
+            <tr>
+                <th>值</th>
+                <th>输出</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>小数点左侧每三位数字之间不以逗号分隔，小数点右侧取两位数。</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>小数点左侧每三位之间以逗号分隔，小数点右侧取两位数。</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>小数点左侧每三位数字之间不以逗号分隔，小数点右侧取四位数。</td>
+            </tr>
+            <tr>
+                <td>126</td>
+                <td>转换为char(n)或varchar(n)时，等同于样式2。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    示例：
+    ```
+    openGauss=# select convert(varchar, timestamp'2012-03-23 00:12:23', 1) as result;
+      result  
+    ----------
+     03/23/12
+    (1 row)
+    ```
+
+- try_convert(data_type[(length)], expression[, style])
+
+    描述：将表达式转换为指定类型，如进行不支持的类型转换则报错, 支持的类型转换但是转换失败情况下返回NULL
+
+    参数类型：expression为任意类型表达式，data_type为类型关键字，length为int类型
+
+    返回值类型：指定的data_type类型
+
+    示例：
+    
+    ```
+    sqlserver=# select try_convert(smallint, 123456789) as result;
+     result 
+    --------
+       
+    (1 row)
+    ```
