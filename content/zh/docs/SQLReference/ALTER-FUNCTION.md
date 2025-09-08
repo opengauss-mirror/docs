@@ -41,6 +41,7 @@
      | SET configuration_parameter { { TO | = } { value | DEFAULT }| FROM CURRENT}
      | RESET {configuration_parameter | ALL}
      | COMMENT 'text'
+     | {RESULT_CACHE | NOT RESULT_CACHE}
     ```
 
 -   修改自定义函数的名称。
@@ -117,6 +118,10 @@
 -   **VOLATILE**
 
     表示该函数值可以在一次表扫描内改变，不会做任何优化。
+
+-   **RESULT_CACHE**|**NOT RESULT_CACHE**
+
+    表示用户定义的函数是否支持函数结果缓存。
 
 -   **LEAKPROOF**
 

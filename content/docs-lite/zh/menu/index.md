@@ -559,6 +559,7 @@ headless: true
 			-   [行存转向量化]({{< relref "./docs/PerformanceTuningGuide/行存转向量化.md" >}})
         	-   [配置向量化执行引擎]({{< relref "./docs/PerformanceTuningGuide/配置向量化.md" >}})
         -   [配置并行查询功能]({{< relref "./docs/PerformanceTuningGuide/配置并行查询功能.md" >}})
+		-   [UDF结果缓存]({{< relref "./docs/PerformanceTuningGuide/UDF结果缓存.md" >}})
         -   [资源负载管理]({{< relref "./docs/PerformanceTuningGuide/资源负载管理.md" >}})
             - [资源负载管理概述]({{< relref "./docs/PerformanceTuningGuide/资源负载管理概述.md" >}})
             - [资源管理准备]({{< relref "./docs/PerformanceTuningGuide/资源管理准备.md" >}})

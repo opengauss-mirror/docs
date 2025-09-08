@@ -798,6 +798,7 @@ headless: true
             - [其他因素对LLVM性能的影响]({{< relref "./docs/PerformanceTuningGuide/其他因素对LLVM性能的影响.md" >}})
             - [LLVM使用建议]({{< relref "./docs/PerformanceTuningGuide/LLVM使用建议.md" >}})
         -   [配置并行查询功能]({{< relref "./docs/PerformanceTuningGuide/配置并行查询功能.md" >}})
+		-   [UDF结果缓存]({{< relref "./docs/PerformanceTuningGuide/UDF结果缓存.md" >}})
         -   [资源负载管理]({{< relref "./docs/PerformanceTuningGuide/资源负载管理.md" >}})
             - [资源负载管理概述]({{< relref "./docs/PerformanceTuningGuide/资源负载管理概述.md" >}})
             - [资源管理准备]({{< relref "./docs/PerformanceTuningGuide/资源管理准备.md" >}})

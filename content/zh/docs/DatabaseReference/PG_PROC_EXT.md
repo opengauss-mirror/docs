@@ -41,5 +41,12 @@ PG\_PROC\_EXT系统表是PG\_PROC的扩展，存储函数或过程的额外信�
 <td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p161514101016"><a name="p161514101016"></a><a name="p161514101016"></a>仅函数使用，指定并行游标以HASH分布时的分布键。</p>
 </td>
 </tr>
+<tr id="row35161421021"><td class="cellrowborder" valign="top" width="20.13201320132013%" headers="mcps1.2.4.1.1 "><p id="p1621411021"><a name="p1621411021"></a><a name="p1621411021"></a>result_cache</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.08180818081808%" headers="mcps1.2.4.1.2 "><p id="p116141410114"><a name="p116141410114"></a><a name="p116141410114"></a>bool</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.786178617861786%" headers="mcps1.2.4.1.3 "><p id="p161514101016"><a name="p161514101016"></a><a name="p161514101016"></a>是否支持函数结果缓存。</p><a name="ul1867245610132"></a><a name="ul1867245610132"></a><ul id="ul1867245610132"><li>true：表示支持。</li><li>false：表示不支持。</li></ul>
+</td>
+</tr>
 </tbody>
 </table>

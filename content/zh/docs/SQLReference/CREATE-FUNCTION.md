@@ -53,6 +53,7 @@
           | SET configuration_parameter { {TO | =} value | FROM CURRENT }
           | COMMENT 'text' 
           | pipelined_clause
+          | {RESULT_CACHE | NOT RESULT_CACHE}
       ] [...]
       {
           AS 'definition'
@@ -82,6 +83,7 @@
             | COMMENT 'text' 
             | pipelined_clause
             | parallel_enable_clause
+            | {RESULT_CACHE | NOT RESULT_CACHE}
          ][...]
          {
             IS | AS
@@ -191,6 +193,10 @@
 -   **FENCED**|**NOT FENCED**
 
     声明用户定义的C函数是在保护模式还是非保护模式下执行。预留接口，不推荐使用。
+
+-   **RESULT_CACHE**|**NOT RESULT_CACHE**
+
+    表示用户定义的函数是否支持函数结果缓存。
 
 -   **PACKAGE**
 
