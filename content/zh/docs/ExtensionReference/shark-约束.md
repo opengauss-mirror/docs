@@ -26,6 +26,8 @@ increment
 
 IDENTITY 属性可以分配给 tinyint、smallint、int、bigint、decimal(p, 0) 或 numeric(p, 0) 列，每个表只能创建一个标识列。
 
+IDENTITY列显示插入值的行为由GUC参数IDENTITY_INSERT进行控制，默认值OFF表示不可以显示插入IDENTITY列值。
+
 ```
 openGauss=# CREATE TABLE book
 (
