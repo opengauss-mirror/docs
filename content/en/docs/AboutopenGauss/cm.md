@@ -29,6 +29,9 @@ The CM supports two-node deployment mode
 - The minimum number of nodes in the CM cluster is reduced from 3 nodes to 2 nodes, bringing significant cost advantages.
 - By introducing a third-party gateway IP, it effectively solves the self-arbitration problem in the two-node deployment mode of the CM cluster, and supports dynamic configuration of the CM cluster failover strategy and the database cluster split-brain fault recovery strategy, so as to ensure data integrity and consistency as much as possible.
 
+The CM supports automatic cleanup of gstor archive logs (introduced in 7.0.0RC2)
+- Added automatic cleanup functionality for gstor archive logs. When the size of gstor archive logs exceeds 85% of the threshold (2G), the automatic archive log cleanup policy is triggered, and after cleanup, 15% of the threshold size is retained.
+
 ## Constraints<a name="section06531946143616"></a>
 
 Versions before 5.0.0, in scenarios where there are one primary node and one standby node, CM supports only basic capabilities, such as installation, startup, stop, and detection.
