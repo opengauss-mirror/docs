@@ -371,7 +371,7 @@
             </tr>
             <tr>
                 <td><strong>IsAnsiWarningsEnabled</strong></td>
-                <td><strong>发生标准错误条件时，SQL Server会发出错误消息或者警告消息，如果当聚合函数中出现Null值，会发出错误和警告</strong></td>
+                <td><strong>发生标准错误条件时，会发出错误消息或者警告消息，如果当聚合函数中出现Null值，会发出错误和警告</strong></td>
                 <td>返回0</td>
             </tr>
             <tr>
@@ -441,7 +441,7 @@
             </tr>
             <tr>
                 <td><strong>IsMergePublished</strong></td>
-                <td><strong>如果安装了复制(备份)，允许SQL Server支持数据库表发布用来合并复制(备份)</strong></td>
+                <td><strong>如果安装了复制(备份)，允许支持数据库表发布用来合并复制(备份)</strong></td>
                 <td>返回0</td>
             </tr>
             <tr>
@@ -466,7 +466,7 @@
             </tr>
             <tr>
                 <td><strong>IsPublished</strong></td>
-                <td><strong>如果安装了复制，SQL Server支持发布数据库表供快照复制或者事务复制使用</strong></td>
+                <td><strong>如果安装了复制，支持发布数据库表供快照复制或者事务复制使用</strong></td>
                 <td>返回0</td>
             </tr>
             <tr>
@@ -486,7 +486,7 @@
             </tr>
             <tr>
                 <td><strong>IsTornPageDetectionEnabled</strong></td>
-                <td><strong>SQL Server检测断电或者其他系统故障导致的不完全I/O操作</strong></td>
+                <td><strong>检测断电或者其他系统故障导致的不完全I/O操作</strong></td>
                 <td>1为true，0为false</td>
             </tr>
             <tr>
@@ -531,7 +531,7 @@
             </tr>
             <tr>
                 <td><strong>SQLSortOrder</strong></td>
-                <td><strong>SQL Server早期版本中支持的SQL Server排序ID</strong></td>
+                <td><strong>早期版本中支持的排序ID</strong></td>
                 <td>返回0</td>
             </tr>
             <tr>
@@ -551,7 +551,7 @@
             </tr>
             <tr>
                 <td><strong>Version</strong></td>
-                <td><strong>用于创建数据库的SQL Server代码的内部版本号</strong></td>
+                <td><strong>用于创建数据库的代码的内部版本号</strong></td>
                 <td>返回openGauss版本序号</td>
             </tr>
             <tr>

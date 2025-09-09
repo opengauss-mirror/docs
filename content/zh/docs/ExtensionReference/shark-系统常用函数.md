@@ -512,7 +512,7 @@
     返回值类型：指定的data_type类型
 
     备注：
-    - SQLSERVER2017中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
+    - D库中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
 
     示例：
     ```
@@ -532,10 +532,10 @@
     返回值类型：指定的data_type类型
 
     备注：
-    - SQLSERVER2017中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
+    - D库中，length默认值为30，该默认值主要适用于字符串相关类型，目前D兼容模式下`char`和`varchar`及其别名类型都适用该length默认值
 
     ```
-    sqlserver=# select try_cast(123456789 AS smallint) as result;
+    openGauss=# select try_cast(123456789 AS smallint) as result;
      result 
     --------
             
@@ -786,7 +786,7 @@
     示例：
     
     ```
-    sqlserver=# select try_convert(smallint, 123456789) as result;
+    openGauss=# select try_convert(smallint, 123456789) as result;
      result 
     --------
        
