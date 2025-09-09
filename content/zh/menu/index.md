@@ -1111,7 +1111,7 @@ headless: true
 			-   [SET类型]({{< relref "./docs/SQLReference/SET类型.md" >}})
 			-   [向量数据类型]({{< relref "./docs/SQLReference/向量数据类型.md" >}})
 			-   [ANYDATA类型]({{< relref "./docs/SQLReference/ANYDATA类型.md" >}})
-			-   [对象类型]({{< relref "./docs/SQLReference/Object_type.md" >}})
+			-   [对象类型]({{< relref "./docs/SQLReference/对象类型.md" >}})
 			-   [BFILE类型]({{< relref "./docs/SQLReference/BFILE类型.md" >}})
 			-   [类型基础值]({{< relref "./docs/SQLReference/INSERT_RIGHT_REF_DEFAULT_VALUE.md" >}})
 			-   [类型转换]({{< relref "./docs/SQLReference/类型转换.md" >}})
