@@ -109,6 +109,19 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **on**
 
+## enable\_memoize<a name="en-us_topic_0283136675_en-us_topic_0237124716_en-us_topic_0059778346_s9c4bdbba1ad645b497b7d5a2e4cbfwtf"></a>
+
+**Parameter description**: Specifies the query optimizer's use of memoize.In some situation,it can optimize the parametrized nestloop. 
+
+This parameter is a  **USERSET**  parameter. Set it based on instructions provided in  [Table 1](../DatabaseAdministrationGuide/resetting-parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846). [example](memoize_example.md)
+
+**Value range**: Boolean
+
+-   **on**: enabled.
+-   **off**: disabled.
+
+**Default value**:  **off**
+
 ## enable\_mergejoin<a name="en-us_topic_0283136675_en-us_topic_0237124716_en-us_topic_0059778346_sfc257a8da5f94bbfbe8396598e5fd0e4"></a>
 
 **Parameter description**: Specifies the query optimizer's use of merge-join plan types.
