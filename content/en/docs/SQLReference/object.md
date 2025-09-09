@@ -83,5 +83,3 @@
 -   **[SUMMARY\_STAT\_USER\_FUNCTIONS](summary_stat_user_functions.md)**  
 
 -   **[GLOBAL\_STAT\_USER\_FUNCTIONS](global_stat_user_functions.md)**  
-
-
