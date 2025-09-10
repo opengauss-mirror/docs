@@ -227,7 +227,7 @@ opengauss=# ALTER TABLE Products DROP unitprice;
 ALTER TABLE
 ```
 
-## **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## WITH \( \{ storage\_parameter = value \} \[, ... \] \)示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
 create table test_with_1(a int, CONSTRAINT PK_test_with_1 PRIMARY KEY(a)

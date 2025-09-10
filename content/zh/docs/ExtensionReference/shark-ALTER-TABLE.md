@@ -207,7 +207,7 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
     -   修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
     -   filegroup为任意字符串，支持通过[]包裹。
 
-## **opt\_clustered**示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## opt\_clustered示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
 openGauss=# CREATE TABLE alter_table_tbl1 (a INT, b INT);
@@ -215,7 +215,7 @@ openGauss=# ALTER TABLE alter_table_tbl1 ADD CONSTRAINT alter_table_tbl_a UNIQUE
 openGauss=# ALTER TABLE alter_table_tbl1 ADD CONSTRAINT alter_table_tbl_b PRIMARY KEY NONCLUSTERED (a);
 ```
 
-## **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+## WITH \( \{ storage\_parameter = value \} \[, ... \] \)示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
 create table test1(col1 int primary key with(fillfactor = 20), col2 int);
