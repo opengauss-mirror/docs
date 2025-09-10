@@ -2196,6 +2196,7 @@ headless: true
     	-   [pssh]({{< relref "./docs/ToolandCommandReference/pssh.md" >}})
     	-   [pscp]({{< relref "./docs/ToolandCommandReference/pscp.md" >}})
     	-   [transfer.py]({{< relref "./docs/ToolandCommandReference/transfer-py.md" >}})
+    	-   [gs\_filedump]({{< relref "./docs/ToolandCommandReference/gs_filedump.md" >}})
     -   [集群管理（Cluster Manager）]({{< relref "./docs/ToolandCommandReference/集群管理.md" >}})
     	-   [特性介绍]({{< relref "./docs/ToolandCommandReference/特性介绍.md" >}})
     	-   [cm\_ctl工具介绍]({{< relref "./docs/ToolandCommandReference/cm_ctl工具介绍.md" >}})
