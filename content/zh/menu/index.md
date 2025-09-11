@@ -46,6 +46,7 @@ headless: true
             -   [非资源池化主备同步加速]({{< relref "./docs/AboutopenGauss/非资源池化主备同步加速.md" >}})
 			-   [HTAP 行列融合]({{< relref "./docs/AboutopenGauss/行列融合.md" >}})
 			-   [自动参数化]({{< relref "./docs/AboutopenGauss/自动参数化.md" >}})
+			-   [UDF结果缓存]({{< relref "./docs/AboutopenGauss/UDF结果缓存.md" >}})
 	    -   [高可用]({{< relref "./docs/AboutopenGauss/高可用.md" >}})
 	    	-   [逻辑复制]({{< relref "./docs/AboutopenGauss/逻辑复制.md" >}})
 	    	-   [逻辑备份]({{< relref "./docs/AboutopenGauss/逻辑备份.md" >}})

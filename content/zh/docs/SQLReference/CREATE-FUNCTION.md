@@ -35,11 +35,11 @@
   CREATE [ OR REPLACE  ] FUNCTION function_name
       ( [  { argname [ argmode  ] argtype [  { DEFAULT  | :=  | =  } expression  ]
   }  [, ...]  ] )
-      [ RETURNS rettype [ DETERMINISTIC  ]
+      [ RETURNS rettype
           | RETURNS TABLE (  { column_name column_type  }  [, ...] )]
       LANGUAGE lang_name
       [
-          {IMMUTABLE  | STABLE  | VOLATILE}
+          {IMMUTABLE  | STABLE  | VOLATILE | DETERMINISTIC}
           | {SHIPPABLE | NOT SHIPPABLE}
           | [ NOT  ] LEAKPROOF
           | WINDOW
@@ -68,9 +68,9 @@
     CREATE [ OR REPLACE  ] FUNCTION function_name
         ( [  { argname [ argmode  ] argtype [  { DEFAULT | := | =  } expression  ] }
       [, ...]  ] )
-        RETURN rettype [ DETERMINISTIC  ]
+        RETURN rettype
         [
-            {IMMUTABLE  | STABLE  | VOLATILE }
+            {IMMUTABLE  | STABLE  | VOLATILE | DETERMINISTIC}
             | {SHIPPABLE | NOT SHIPPABLE}
             | {PACKAGE}
             | [ NOT  ] LEAKPROOF
