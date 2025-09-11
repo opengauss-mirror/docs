@@ -103,3 +103,40 @@ openGauss=# select 1 <> NULL;
 (1 row)
 ```
 
+## IDENTITY_INSERT<a name="section203671436824"></a>
+
+**取值范围**：on/off
+
+**默认值**：off
+
+**参数说明**：用于控制在INSERT语句中是否能通过显示指定具有identity属性的列名插入用户提供的值。
+
+```
+openGauss=# show identity_insert;
+ identity_insert 
+-----------------
+ off
+(1 row)
+
+openGauss=# create table t_identity_0013(id int identity, name varchar(10));
+NOTICE:  CREATE TABLE will create implicit sequence "t_identity_0013_id_seq_identity" for serial column "t_identity_0013.id"
+CREATE TABLE
+openGauss=# insert into t_identity_0013(name) values('zhangsan');
+INSERT 0 1
+openGauss=# insert into t_identity_0013(id, name) values(100, 'wangwu');
+ERROR:  Cannot insert identity column "id"
+LINE 1: insert into t_identity_0013(id, name) values(100, 'wangwu');
+                                    ^
+openGauss=# set identity_insert=on;
+SET
+openGauss=# insert into t_identity_0013(id, name) values(100, 'wangwu');
+INSERT 0 1
+openGauss=# select * from t_identity_0013;
+ id  |   name   
+-----+----------
+   1 | zhangsan
+ 100 | wangwu
+(2 rows)
+
+```
+
