@@ -40,6 +40,8 @@ NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "book_pkey" for t
 CREATE TABLE
 ```
 
+在INSERT语句中，如果表不存在或者对表的INSERT操作无权限，VALUES子句中的值或者子查询中的值与插入的列类型不匹配(无法转换的类型之间，超过类型精度等情况)或者值的数量不等于插入的列数目、违背目标表上的触发器或者插入操作被触发器修改返回NULL(如BEFORE ROW INSERT TRIGGER，INSTEAD OF ROW INSERT TRIGGER)、VALUES子句/SELECT子句/RETURNING子句中存在不支持的语法时、以及INSERT语句存在语法级别的错误时，IDENTITY列的当前值不会因为这些错误场景而更新，但在INSERT操作违背列约束的错误情况下，IDENTITY列的当前值会进行更新(因为在约束检查前插入数据已经完全准备好了，identity列已经获取到下一个值)。
+
 ## 相关链接<a name="section156744489391"></a>
 
 [约束](../SQLReference/约束.md)
