@@ -54,7 +54,7 @@
   ```
 
 ### 配置NPU加速安装包
-- 详见[链接]()获取libnputurbo.so安装包。
+- 详见[链接](https://gitcode.com/wlff234/npu-turbo)获取libnputurbo.so动态加速库。
 - 配置环境变量
  在容器内修改环境配置
  ```bash
