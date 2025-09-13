@@ -274,7 +274,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="row876891261217"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p157683127123"><a name="p157683127123"></a><a name="p157683127123"></a>-A</p>
 </td>
-<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p5768101211121"><a name="p5768101211121"></a><a name="p5768101211121"></a>将主机切换到一个合适的备机节点上。</p>
+<td class="cellrowborder" valign="top" width="77.13%" headers="mcps1.2.3.1.2 "><p id="p5768101211121"><a name="p5768101211121"></a><a name="p5768101211121"></a>将主机切换到一个合适的备机节点上。该参数在黑匣子集群中无法使用。</p>
 </td>
 </tr>
 <tr id="row132271458161020"><td class="cellrowborder" valign="top" width="22.869999999999997%" headers="mcps1.2.3.1.1 "><p id="p6227658191018"><a name="p6227658191018"></a><a name="p6227658191018"></a>-f</p>
