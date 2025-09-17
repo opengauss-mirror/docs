@@ -13,6 +13,10 @@ SQL里有保留字和非保留字之分。根据标准，保留字决不能用�
     >
     >-   特殊情况下可以使用双引号规避特殊字符报错。
 
+相比于原始的openGauss，shark对于标识符的修改主要为:
+
+1. 增加以@object方式声明变量。当需要@object作为绝对值操作时，需要设置d_format_behavior_compat_options = 'enable_abs'。
+
 相比于原始的openGauss，shark对于关键字的修改主要为:
 
 1. 新增```columnstore```，```clustered```，```nonclustered```作为非保留关键字。
