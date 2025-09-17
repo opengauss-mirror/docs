@@ -22,10 +22,11 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
 
 1. 解压安装包
 
-   通过官网获取安装包`Datakit-6.0.0.tar.gz`，解压安装包至`datakit`安装目录下，例如安装目录为`/path/datakit_server`时，解压命令如下:
+   `Datakit`提供了两个安装包，分别是完整包（`Datakit-All-7.0.0-RC2.tar.gz`）和最小化包（`Datakit-Mini-7.0.0-RC2.tar.gz`），最小化包的插件仅包含基础功能：业务开发和基础运维。
+   以完整包为例，通过官网获取安装包`Datakit-All-7.0.0-RC2.tar.gz`，解压安装包至`datakit`安装目录下，例如安装目录为`/path/datakit_server`时，解压命令如下:
 
    ```shell
-   $ tar -zxvf Datakit-6.0.0.tar.gz -C /path/datakit_server
+   $ tar -zxvf Datakit-All-7.0.0-RC2.tar.gz -C /path/datakit_server
    ```
 2. 创建新目录
 
@@ -45,7 +46,7 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
    ```
 4. 更改配置文件 - 配置数据库
 
-   平台默认使用`openGauss`作为后台数据库，需要正确配置`openGauss`的连接信息，包括url中的ip、port、database以及username和password。配置内容如下：
+   数据库可选用`openGauss`或轻量嵌入式数据库`Intarkdb`，平台默认使用`Intarkdb`作为后台数据库。使用`openGauss`作为后台数据库时，需要正确配置`openGauss`的连接信息。配置内容如下：
 
    ```yaml
    # For openGauss
@@ -54,6 +55,14 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
    username: dbuser
    password: dbpassword
    ```
+
+   使用轻量嵌入式数据库`Intarkdb`作为后台数据库时，只需注释`openGauss`的配置内容，并解开对`Intarkdb`配置内容的注释，即可完成配置。配置内容如下：
+
+   ```yaml
+   # For Intarkdb
+   driver-class-name: org.intarkdb.Driver
+   url: jdbc:intarkdb:data/datakit
+   ```
    
    配置文件更改完成后，保存并退出文件编辑，然后执行如下命令，将`application-temp.yml`文件移动到第二步创建的`config`目录下
 
@@ -61,21 +70,24 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
    mv application-temp.yml config
    ```
    
-   *注意*：需要提前对`openGauss`数据库做一些参数配置，详细步骤请参考下方目录[**openGauss参数配置**](#openGauss参数配置)
+   *注意*：此处使用`openGauss`作为后台数据库时，需要提前对数据库做一些参数配置，详细步骤请参考下方目录[**openGauss参数配置**](#openGauss参数配置)
 
 5. 生成密钥信息
 
-   修改并执行如下命令生成密钥信息。修改`-storepass`参数值与`application.yml`配置文件中的`key-store-password`值保持一致，默认时两者均为`123456`；修改`-keystore`路径值与配置文件中的`key-store`路径值保持一致，即第三步中修改`/ops`后的路径。
+   修改并执行如下命令生成密钥信息。
+   （1）配置命令中`-storepass`参数值与`application-temp.yml`配置文件中的`server.ssl.key-store-password`参数值保持一致，参数取值支持字母、数字、符号等。
+   （2）修改命令中`-keystore`路径值与配置文件中的`key-store`路径值保持一致，即第三步中修改`/ops`后的路径。
+   （3）配置命令中`-ext "SAN=IP:x.x.x.x"`参数，修改`x.x.x.x`为`datakit`服务安装在的主机`ip`。
    ```shell
-   keytool -genkey -noprompt -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN" -alias opengauss -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore /ops/ssl/keystore.p12 -validity 3650 -storepass 123456
+   keytool -genkey -noprompt -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN" -alias opengauss -storetype PKCS12 -keyalg RSA -keysize 4096 -keystore /ops/ssl/keystore.p12 -validity 365 -storepass ****** -ext "SAN=IP:x.x.x.x"
    ```
    *注意*：此处为一条完整命令。
 
 6. 启动与日常运维
 
-   启动应用：
+   启动应用： 启动脚本增加`--aes-key`参数。 参数值为`Datakit`启动密码，用于内部加解密操作，`datakit`不保存该密码且暂不支持修改，对该密码需要妥善保管。
    ```shell
-   sh run.sh start --aes-key your_key
+   sh ./run.sh start --aes-key xxxxxx
    ```
    停止应用：
    ```shell
@@ -83,7 +95,7 @@ X86/ARM+openEuler 20.03 或 X86+CentOS 5.7。
    ```
    重启应用：
    ```shell
-   sh ./run.sh restart
+   sh ./run.sh restart --aes-key xxxxxx
    ```
    检查应用状态：
    ```shell
