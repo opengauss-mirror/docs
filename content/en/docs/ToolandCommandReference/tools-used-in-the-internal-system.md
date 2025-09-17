@@ -62,4 +62,6 @@ This chapter describes tools used in the openGauss process or invoked among modu
 
 -   **[transfer.py](transfer-py.md)**  
 
+-   **[gs\_filedump](gs_filedump.md)**
+
 

@@ -1673,6 +1673,7 @@ headless: true
         -   [pssh]({{< relref "./docs/ToolandCommandReference/pssh.md" >}})
         -   [pscp]({{< relref "./docs/ToolandCommandReference/pscp.md" >}})
         -   [transfer.py]({{< relref "./docs/ToolandCommandReference/transfer-py.md" >}})
+        -   [gs\_filedump]({{< relref "./docs/ToolandCommandReference/gs_filedump.md" >}})
 	-   [Cluster Manager]({{< relref "./docs/ToolandCommandReference/unified-database-management-tool.md" >}})
     	-   [Features]({{< relref "./docs/ToolandCommandReference/features.md" >}})
     	-   [cm\_ctl]({{< relref "./docs/ToolandCommandReference/cm_ctl.md" >}})
