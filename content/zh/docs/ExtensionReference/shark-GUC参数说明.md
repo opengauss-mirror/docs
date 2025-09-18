@@ -41,6 +41,27 @@ LINE 1: create table testhint(nowait int);
                              ^
 ```
 
+-   enable_abs：是否允许@作为取绝对值操作符使用。opengauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
+```
+opengauss=# create table test(@a int, b int);
+CREATE TABLE
+opengauss=# insert into test values (-1,-2);
+INSERT 0 1
+opengauss=# select @a from test;
+ @a
+----
+ -1
+(1 row)
+
+opengauss=# set d_format_behavior_compat_options = 'enable_abs';
+SET
+opengauss=# select @b as abs_b from test;
+ abs_b
+-------
+     2
+(1 row)
+```
+
 ## ANSI_NULLS<a name="section203671436823"></a>
 
 **取值范围**：on/off
