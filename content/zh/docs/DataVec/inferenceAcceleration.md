@@ -5,6 +5,13 @@
 
 ![lookupinofcal_total.png](figures/lookupinofcal_total.png)
 
+## 特性描述
+长序列 KV Cache 以查代算特性分为 Prefill 阶段和 Decode 阶段。
+- Prefill阶段：forward函数进行prefill计算后，将当前注意力相关性较低的 KV Cache 分级换出到 CPU 内存中，即按块提取表征向量插入到openGauss加速库中，从而降低长序列对 HBM 显存占用。
+- Decode阶段：forward函数进行decode推理时，先按需稀疏召回并加载注意力相关性较高的 KV Cache 到 HBM，再完成本轮推理。
+
+该特性在保证推理准确性的同时，提升端到端的推理速度。
+
 ## 整体方案
 整体思路是利用大模型推理 Decode 阶段长序列 KV Cache的稀疏性，在注意力计算时进行稀疏计算和分块卸载，来实现长序列推理中 NPU 计算量的减少和 HBM 占用的降低，从而提高token by token的速度。具体实现如下：
 
@@ -22,7 +29,7 @@ openGauss 加速库的生命周期和读写流程与 RetrievalKV插件耦合； 
 >本特性只支持运行在 NPU 加速卡上。
 
 ## 支持的配套版本
-- Python 3.9
+- Python 3.10
 - Pytorch_npu 2.5.1 [下载](https://pytorch-package.obs.cn-north-4.myhuaweicloud.com/pta/Daily/v2.5.1/20250320.3/pytorch_v2.5.1_py39.tar.gz)
 - vllm 0.7.3
 - vllm_ascend 0.7.3rc1
