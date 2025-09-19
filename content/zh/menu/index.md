@@ -56,6 +56,7 @@ headless: true
 	    	-   [支持Global SysCache]({{< relref "./docs/AboutopenGauss/支持global-syscache.md" >}})
 	    	-   [异步备升主数据找回能力]({{< relref "./docs/AboutopenGauss/异步备升主数据找回能力.md" >}})
 	    	-   [SQL防火墙能力]({{< relref "./docs/AboutopenGauss/SQL防火墙能力.md" >}})
+			-   [主库备库坏块修复功能]({{< relref "./docs/AboutopenGauss/主库备库坏块修复功能.md" >}})
 	    -   [维护性]({{< relref "./docs/AboutopenGauss/维护性.md" >}})
 	    	-   [灰度升级]({{< relref "./docs/AboutopenGauss/灰度升级.md" >}})
 	    	-   [指定节点升级]({{< relref "./docs/AboutopenGauss/指定节点升级.md" >}})
