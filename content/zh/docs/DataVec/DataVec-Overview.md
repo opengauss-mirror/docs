@@ -8,6 +8,8 @@ DataVec目前支持的向量功能有：精确和近似的最近邻搜索、L2�
 
 DataVec向量数据库可通过[容器镜像安装](https://docs.opengauss.org/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html)快速部署，并快速对接大模型，打造本地RAG智能问答服务。
 
+DataVec向量数据库可通过安装[spqplugin_v2插件](../ExtensionReference/spqplugin_v2-Extension.md)，在大数据量场景下获得数据库分布式存储检索能力。
+
 ## 特性描述
 
 DataVec能够无缝对接自研大模型。通过嵌入技术将非结构化数据（如文本、图像等）转换为向量数据，DataVec为之提供存储和检索能力。嵌入是一种将非结构化数据映射到向量空间的技术，使得相似文本、图像在向量空间中的距离相近，从而提高检索的准确性和效率。
