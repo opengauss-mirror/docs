@@ -879,6 +879,7 @@ headless: true
         -   [案例：改写SQL消除in-clause]({{< relref "./docs/PerformanceTuningGuide/案例-改写SQL消除in-clause.md" >}})
         -   [案例：修改启动参数解决TPCC大幅度波动]({{< relref "./docs/PerformanceTuningGuide/案例-修改启动参数解决TPCC大幅度波动.md" >}})
         -   [案例: 子事务TPCC性能调优]({{< relref "./docs/PerformanceTuningGuide/案例-子事务TPCC性能调优.md" >}})
+    -   [基于内存池共享内存降低RTO时间]({{< relref "./docs/PerformanceTuningGuide/基于内存池共享内存降低RTO时间.md" >}})
 -   [向量数据库]({{< relref "./docs/DataVec/DataVec-Overview.md" >}})
 	-   [快速入门指南]({{< relref "./docs/DataVec/DataVec-quickstart.md" >}})
 	-   [DataVec向量引擎]({{< relref "./docs/SQLReference/DataVec向量引擎.md" >}})
