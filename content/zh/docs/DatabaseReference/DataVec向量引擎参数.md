@@ -110,3 +110,27 @@
 >![](public_sys-resources/icon-note.gif) **说明：**
 >
 > 较高的值会提升查询的召回率，但同时查询速度会下降。
+
+## enable_mmap<a name="section14941640131"></a>
+
+**参数说明**：Hnsw检索可以通过开启MMAP功能加速检索，该参数用于初始化Mmap的Hashmap。目前属于beta功能。
+
+该参数属于POSTMASTER类型参数，请参考[表2](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置，只支持重启生效。
+
+**取值范围**： 布尔型，on/off
+
+**默认值**： off
+>![](public_sys-resources/icon-note.gif) **说明：**
+>MMAP特性暂时只支持ARM架构环境。<br>
+>MMAP特性暂时只支持HNSW索引。<br>
+>MMAP特性暂时只能加载一个索引，且加载了MMAP的索引不能进行DML，如果需要切换加载索引，需重启。<br>
+
+## hnsw_use_mmap<a name="section14941640131"></a>
+
+**参数说明**：当前会话可以是否可以使用Mmap加载Hnsw索引。
+
+该参数属于USERSET类型参数，只对当前会话生效。只有在`enable_mmap=on`才能被开启。请参考[表1](../DatabaseAdministrationGuide/重设参数.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**： 布尔型，on/off
+
+**默认值**： off
