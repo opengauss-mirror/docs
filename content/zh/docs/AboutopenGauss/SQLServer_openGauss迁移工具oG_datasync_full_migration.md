@@ -16,14 +16,14 @@ oG_datasync_full_migration工具是一个基于Java语言的数据复制工具�
 
 oG_datasync_full_migration工具提供数据全量复制功能，使得数据可以从SQLServer迁移至openGauss数据库，数据类型映射见参考文档。
 
-oG_datasync_full_migration工具支持在指定版本和架构的系统（包括CentOS7、openEuler20.03、openEuler22.03系统版本，x86_64和aarch64架构）上进行离线安装，无需连接外部网络。
+oG_datasync_full_migration 是一款基于Java开发的工具，支持在指定版本的CentOS 7及openEuler 20.03/22.03/24.03系统（x86_64与aarch64架构）上完成纯离线安装部署，无需任何外部网络连接。
 
 oG_datasync_full_migration工具采用生产者-消费者结构，全量迁移时，生产者查询SQLServer数据库中指定schema的表结构并导出表数据至csv文件中，消费者根据表结构创建在openGauss中创建表并将csv文件导入至openGauss数据库。
 
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   支持SQLServer2016以上版本。
+支持SQLServer2016以上版本。
 
 ## 依赖关系<a name="section57771982"></a>
 
