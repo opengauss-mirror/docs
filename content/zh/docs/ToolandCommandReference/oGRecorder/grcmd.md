@@ -1,6 +1,6 @@
 # grcmd 工具使用说明
 
-`grcmd` 是 openGauss 黑匣子（oGRecorder）组件的命令行管理工具，用于管理和维护 GR 服务。支持配置管理、证书生成、服务状态查询等功能。
+`grcmd` 是 openGauss 数据保险柜（oGRecorder）组件的命令行管理工具，用于管理和维护 GR 服务。支持配置管理、证书生成、服务状态查询等功能。
 
 ## 基本用法
 

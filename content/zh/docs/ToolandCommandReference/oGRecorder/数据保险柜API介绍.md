@@ -337,7 +337,7 @@ long long int wr_file_pread(wr_vfs_handle vfs_handle, wr_file_handle file_handle
 
 **参数**  
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
-- `fd`：文件句柄，包含要读取的文件信息。  
+- `file_handle`：文件句柄，包含要读取的文件信息。  
 - `buf`：读取数据的缓冲区，需预先分配内存，读取的数据将存储在此缓冲区中。  
 - `count`：要读取的字节数。  
 - `offset`：读取的起始偏移量（单位：字节）。  
