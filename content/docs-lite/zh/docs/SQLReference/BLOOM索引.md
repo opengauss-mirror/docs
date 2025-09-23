@@ -12,21 +12,22 @@ Bloom过滤器是一种节省空间的数据结构，用于测试元素是否是
 ## 2.参数
 创建索引时在其WITH子句中接受以下参数:
 
-length
+- length
 每个签名（索引条目）的长度（以bit为单位）。它被四舍五入到最接近的16的倍数。默认值为 80 bits，最大值为4096 bits。
 
-col1 — col32
+- col1 — col32
 为每个索引列生成的bit数。每个参数的名称是指它控制的索引列的编号。默认值为2 bits。
 
 ## 3.示例
 这是创建bloom索引的示例：
-
+```
 CREATE INDEX bloomidx ON tbloom USING bloom (i1,i2,i3)
        WITH (length=80, col1=2, col2=2, col3=4);
+```
 索引的签名长度为80 bits，属性i1和i2映射到2个bit位，属性i3映射到4个bit位,其余属性默认映射2个bit位。
 
 下面是一个更完整的bloom指数定义和用法示例，以及与等效btree索引的比较。bloom指数比btree索引小得多，并且可以表现得更好。
-
+```
 openGauss=#CREATE TABLE tbloom AS
    SELECT
      (random() * 100000)::int as i1,
@@ -37,8 +38,10 @@ openGauss=#CREATE TABLE tbloom AS
      (random() * 100000)::int as i6
    FROM
   generate_series(1,1000000);
-对这个大表进行顺序扫描需要很长时间：
+```
 
+对这个大表进行顺序扫描需要很长时间：
+```
 openGauss=# EXPLAIN ANALYZE SELECT * FROM tbloom WHERE i2 = 898732 AND i5 = 123451;
                                                 QUERY PLAN
 -----------------------------------------------------------------------------------------------------------
@@ -48,8 +51,10 @@ openGauss=# EXPLAIN ANALYZE SELECT * FROM tbloom WHERE i2 = 898732 AND i5 = 1234
  Total runtime: 1160.182 ms
 (4 rows)
 
-即使定义了btree索引，结果仍然是顺序扫描：
+```
 
+即使定义了btree索引，结果仍然是顺序扫描：
+```
 openGauss=# CREATE INDEX btreeidx ON tbloom (i1, i2, i3, i4, i5, i6);
 CREATE INDEX
 openGauss=# SELECT pg_size_pretty(pg_relation_size('btreeidx'));
@@ -66,9 +71,9 @@ openGauss=# EXPLAIN ANALYZE SELECT * FROM tbloom WHERE i2 = 898732 AND i5 = 1234
    Rows Removed by Filter: 1000000
  Total runtime: 566.301 ms
 (4 rows)
-
+```
 在处理此类搜索时，在表上定义bloom索引比 btree 更好：
-
+```
 openGauss=# CREATE INDEX bloomidx ON tbloom USING bloom (i1, i2, i3, i4, i5, i6);
 CREATE INDEX
 openGauss=# SELECT pg_size_pretty(pg_relation_size('bloomidx'));
@@ -89,8 +94,9 @@ openGauss=# EXPLAIN ANALYZE SELECT * FROM tbloom WHERE i2 = 898732 AND i5 = 1234
  Total runtime: 14.621 ms
 (7 rows)
 
+```
 现在，btree搜索的主要问题是，当搜索条件不约束前导索引列时，btree效率低下。btree的更好策略是在每列上创建一个单独的索引。然后规划者会选择这样的东西：
-
+```
 openGauss=# CREATE INDEX btreeidx1 ON tbloom (i1);
 CREATE INDEX
 openGauss=# CREATE INDEX btreeidx2 ON tbloom (i2);
@@ -116,13 +122,15 @@ openGauss=# EXPLAIN ANALYZE SELECT * FROM tbloom WHERE i2 = 898732 AND i5 = 1234
  Total runtime: 0.529 ms
 (8 rows)
 
+```
 尽管此查询的运行速度比使用任何一个索引都要快得多，但我们在索引大小方面付出了代价。每个单列btree索引占用22MB，因此所需的总空间为132MB，是bloom索引所用空间的八倍多。
 
 ## 4.限制
 bloom索引目前仅支持int4和text类型。
-bloom索引的运算符类只需要索引数据类型的哈希函数和用于搜索的相等运算符。此示例显示了数据类型的运算符类定义：text
-
+bloom索引的运算符类只需要索引数据类型的哈希函数和用于搜索的相等运算符。此示例显示了text数据类型的运算符类定义：
+```
 CREATE OPERATOR CLASS text_ops
 DEFAULT FOR TYPE text USING bloom AS
     OPERATOR    1   =(text, text),
     FUNCTION    1   hashtext(text);
+```
