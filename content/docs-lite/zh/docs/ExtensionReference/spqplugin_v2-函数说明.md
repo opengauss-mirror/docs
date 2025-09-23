@@ -112,7 +112,7 @@
 
     示例：
     ```sql
-    openGauss=# spq_addselect spq_add_node('127.0.01', 5432);
+    openGauss=# select spq_add_node('127.0.01', 5432);
     ```   
  
 -   spq_add_inactive_node(nodename text, nodeport integer)
