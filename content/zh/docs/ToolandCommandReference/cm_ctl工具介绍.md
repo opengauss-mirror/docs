@@ -204,6 +204,11 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </div></div>
 </td>
 </tr>
+<tr id="row2797361611"><td class="cellrowborder" valign="top" width="18.73%" headers="mcps1.2.3.1.1 "><p id="p107981561442"><a name="p107981561442"></a><a name="p107981561442"></a><span id="ph28517910620"><a name="ph28517910620"></a><a name="ph28517910620"></a>rack</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="81.27%" headers="mcps1.2.3.1.2 "><p id="p87986618620"><a name="p87986618620"></a><a name="p87986618620"></a><span id="ph594314278623"><a name="ph594314278623"></a><a name="ph594314278623"></a>显示灵衢场景下UBSE集群内存信息</span><span id="ph16649163112638"><a name="ph16649163112638"></a><a name="ph16649163112638"></a>。</span></p>
+</td>
+</tr>
 </tbody>
 </table>
 
