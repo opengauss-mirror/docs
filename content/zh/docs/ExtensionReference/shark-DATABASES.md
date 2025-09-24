@@ -14,463 +14,463 @@ DATABASES视图返回数据库的信息。
     </thead>
     <tbody>
         <tr>
-            <td><strong>name</strong></td>
-            <td><strong>name</strong></td>
+            <td>name</td>
+            <td>name</td>
             <td>数据库名称</td>
         </tr>
         <tr>
-            <td><strong>database_id</strong></td>
-            <td><strong>int</strong></td>
+            <td>database_id</td>
+            <td>int</td>
             <td>数据库 ID</td>
         </tr>
         <tr>
-            <td><strong>source_database_id</strong></td>
-            <td><strong>int</strong></td>
+            <td>source_database_id</td>
+            <td>int</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>owner_sid</strong></td>
-            <td><strong>oid</strong></td>
+            <td>owner_sid</td>
+            <td>oid</td>
             <td>所有者ID</td>
         </tr>
         <tr>
-            <td><strong>create_date</strong></td>
-            <td><strong>timestamp</strong></td>
+            <td>create_date</td>
+            <td>timestamp</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>compatibility_level</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>compatibility_level</td>
+            <td>tinyint</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>collation_name</strong></td>
-            <td><strong>name</strong></td>
+            <td>collation_name</td>
+            <td>name</td>
             <td>数据库的排序规则</td>
         </tr>
         <tr>
-            <td><strong>user_access</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>user_access</td>
+            <td>tinyint</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>user_access_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>user_access_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'MULTI_USER'</td>
         </tr>
         <tr>
-            <td><strong>is_read_only</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_read_only</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_auto_close_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_close_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_auto_shrink_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_shrink_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>state</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>state</td>
+            <td>tinyint</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>state_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>state_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'ONLINE'</td>
         </tr>
         <tr>
-            <td><strong>is_in_standby</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_in_standby</td>
+            <td>bit</td>
             <td>对于还原日志而言，数据库是只读的。</td>
         </tr>
         <tr>
-            <td><strong>is_cleanly_shutdown</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_cleanly_shutdown</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_supplemental_logging_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_supplemental_logging_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>snapshot_isolation_state</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>snapshot_isolation_state</td>
+            <td>tinyint</td>
             <td>允许快照隔离事务的状态,返回1</td>
         </tr>
         <tr>
-            <td><strong>snapshot_isolation_state_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>snapshot_isolation_state_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'ON'</td>
         </tr>
         <tr>
-            <td><strong>is_read_committed_snapshot_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_read_committed_snapshot_on</td>
+            <td>bit</td>
             <td>read-committed 隔离级别，返回1</td>
         </tr>
         <tr>
-            <td><strong>recovery_model</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>recovery_model</td>
+            <td>tinyint</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>recovery_model_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>recovery_model_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'FULL'</td>
         </tr>
         <tr>
-            <td><strong>page_verify_option</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>page_verify_option</td>
+            <td>tinyint</td>
             <td>PAGE_VERIFY选项设置，返回0</td>
         </tr>
         <tr>
-            <td><strong>page_verify_option_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>page_verify_option_desc</td>
+            <td>nvarchar（60）</td>
             <td>PAGE_VERIFY选项设置的说明，返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_auto_create_stats_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_create_stats_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_auto_create_stats_incremental_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_create_stats_incremental_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_auto_update_stats_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_update_stats_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_auto_update_stats_async_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_auto_update_stats_async_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_ansi_null_default_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_ansi_null_default_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_ansi_nulls_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_ansi_nulls_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_ansi_padding_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_ansi_padding_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_ansi_warnings_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_ansi_warnings_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_arithabort_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_arithabort_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_concat_null_yields_null_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_concat_null_yields_null_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_numeric_roundabort_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_numeric_roundabort_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_quoted_identifier_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_quoted_identifier_on</td>
+            <td>bit</td>
             <td>返回1</td>
         </tr>
         <tr>
-            <td><strong>is_recursive_triggers_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_recursive_triggers_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_cursor_close_on_commit_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_cursor_close_on_commit_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_local_cursor_default</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_local_cursor_default</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_fulltext_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_fulltext_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_trustworthy_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_trustworthy_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_db_chaining_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_db_chaining_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_parameterization_forced</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_parameterization_forced</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_master_key_encrypted_by_server</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_master_key_encrypted_by_server</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_query_store_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_query_store_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_published</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_published</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_subscribed</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_subscribed</td>
+            <td>bit</td>
             <td>不使用此列。 无论数据库的订阅服务器状态如何，它都会始终返回 0。</td>
         </tr>
         <tr>
-            <td><strong>is_merge_published</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_merge_published</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_distributor</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_distributor</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_sync_with_backup</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_sync_with_backup</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>service_broker_guid</strong></td>
-            <td><strong>oid</strong></td>
+            <td>service_broker_guid</td>
+            <td>oid</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_broker_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_broker_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>log_reuse_wait</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>log_reuse_wait</td>
+            <td>tinyint</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>log_reuse_wait_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>log_reuse_wait_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'NOTHING'</td>
         </tr>
         <tr>
-            <td><strong>is_date_correlation_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_date_correlation_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_cdc_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_cdc_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_encrypted</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_encrypted</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>nais_honor_broker_priority_onme</strong></td>
-            <td><strong>bit</strong></td>
+            <td>nais_honor_broker_priority_onme</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>replica_id</strong></td>
-            <td><strong>oid</strong></td>
+            <td>replica_id</td>
+            <td>oid</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>group_database_id</strong></td>
-            <td><strong>oid</strong></td>
+            <td>group_database_id</td>
+            <td>oid</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>resource_pool_id</strong></td>
-            <td><strong>int</strong></td>
+            <td>resource_pool_id</td>
+            <td>int</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>default_language_lcid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>default_language_lcid</td>
+            <td>smallint</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>default_language_name</strong></td>
-            <td><strong>nvarchar（128）</strong></td>
+            <td>default_language_name</td>
+            <td>nvarchar（128）</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>default_fulltext_language_lcid</strong></td>
-            <td><strong>int</strong></td>
+            <td>default_fulltext_language_lcid</td>
+            <td>int</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>default_fulltext_language_name</strong></td>
-            <td><strong>nvarchar（128）</strong></td>
+            <td>default_fulltext_language_name</td>
+            <td>nvarchar（128）</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_nested_triggers_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_nested_triggers_on</td>
+            <td>bit</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_transform_noise_words_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_transform_noise_words_on</td>
+            <td>bit</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>two_digit_year_cutoff</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>two_digit_year_cutoff</td>
+            <td>smallint</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>containment</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>containment</td>
+            <td>tinyint</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>containment_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>containment_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'NONE'</td>
         </tr>
         <tr>
-            <td><strong>target_recovery_time_in_seconds</strong></td>
-            <td><strong>int</strong></td>
+            <td>target_recovery_time_in_seconds</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>delayed_durability</strong></td>
-            <td><strong>int</strong></td>
+            <td>delayed_durability</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>delayed_durability_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>delayed_durability_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_memory_optimized_elevate_to_snapshot_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_memory_optimized_elevate_to_snapshot_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_federation_member</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_federation_member</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_remote_data_archive_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_remote_data_archive_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_mixed_page_allocation_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_mixed_page_allocation_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_temporal_history_retention_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_temporal_history_retention_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>catalog_collation_type</strong></td>
-            <td><strong>int</strong></td>
+            <td>catalog_collation_type</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>catalog_collation_type_desc</strong></td>
-            <td><strong>nvarchar（60）</strong></td>
+            <td>catalog_collation_type_desc</td>
+            <td>nvarchar（60）</td>
             <td>返回'Not Application'</td>
         </tr>
         <tr>
-            <td><strong>physical_database_name</strong></td>
-            <td><strong>nvarchar（128）</strong></td>
+            <td>physical_database_name</td>
+            <td>nvarchar（128）</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>is_result_set_caching_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_result_set_caching_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_accelerated_database_recovery_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_accelerated_database_recovery_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_tempdb_spill_to_remote_store</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_tempdb_spill_to_remote_store</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_stale_page_detection_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_stale_page_detection_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_memory_optimized_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_memory_optimized_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_data_retention_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_data_retention_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_ledger_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_ledger_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_change_feed_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_change_feed_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_event_stream_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_event_stream_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_vorder_enabled</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_vorder_enabled</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>is_optimized_locking_on</strong></td>
-            <td><strong>bit</strong></td>
+            <td>is_optimized_locking_on</td>
+            <td>bit</td>
             <td>返回0</td>
         </tr>
     </tbody>

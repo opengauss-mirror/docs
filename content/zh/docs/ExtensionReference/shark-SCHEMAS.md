@@ -14,18 +14,18 @@ SCHEMAS视图返回数据库中的名称空间信息。
     </thead>
     <tbody>
         <tr>
-            <td><strong>name</strong></td>
-            <td><strong>name</strong></td>
+            <td>name</td>
+            <td>name</td>
             <td>架构的名称</td>
         </tr>
         <tr>
-            <td><strong>schema_id</strong></td>
-            <td><strong>int</strong></td>
+            <td>schema_id</td>
+            <td>int</td>
             <td>架构的 ID</td>
         </tr>
         <tr>
-            <td><strong>principal_id</strong></td>
-            <td><strong>int</strong></td>
+            <td>principal_id</td>
+            <td>int</td>
             <td>此架构所属的主体数据库的 ID</td>
         </tr>
     </tbody>
