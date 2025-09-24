@@ -68,7 +68,14 @@
 - 自动升级openGauss
 
   ```shell
-  gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey]
+  gs_upgradectl -t auto-upgrade -X XMLFILE  [-l LOGFILE] [--grey] [--bypass-stale-check] [--skip-resource-check]
+  ```
+  
+- 升级指定节点以及剩余节点
+
+  ```shell
+  gs_upgradectl -t auto-upgrade -X XMLFILE -h host1
+  gs_upgradectl -t auto-upgrade -X XMLFILE --continue
   ```
 
 - 自动回滚升级
