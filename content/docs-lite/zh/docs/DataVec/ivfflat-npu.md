@@ -54,7 +54,7 @@
   ```
 
 ### 配置NPU加速安装包
-- 详见[链接](https://gitcode.com/wlff234/npu-turbo)获取libnputurbo.so动态加速库。
+- NPU加速库源码位于openGauss-server源码下的子目录openGauss-server/contrib/nputurbo。编译方法：在nputurbo目录下CMakeLists.txt中设置参数SOC_VERSION为对应NPU型号(默认为Ascend910B4，可选Ascend910B4/Ascend910B3)；在nputurbo目录下创建一个build目录，并进入该目录，执行‘cmake ../’，再执行‘make’，编译成功后，会生成libnputurbo.so动态加速库。
 - 配置环境变量
  在容器内修改环境配置
  ```bash
