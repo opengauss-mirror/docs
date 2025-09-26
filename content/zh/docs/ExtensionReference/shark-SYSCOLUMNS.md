@@ -15,152 +15,152 @@ SYSCOLUMNS视图为每个表和视图中的每列返回一行，并为数据库�
     <tbody>
         <tr>
             <td>name</td>
-            <td><strong>name</strong></td>
+            <td>name</td>
             <td>列或过程参数的名称。</td>
         </tr>
         <tr>
-            <td><strong>id</strong></td>
-            <td><strong>oid</strong></td>
+            <td>id</td>
+            <td>oid</td>
             <td>此列所属表的对象 ID，或者与此参数关联的存储过程的 ID。</td>
         </tr>
         <tr>
-            <td><strong>xtype</strong></td>
-            <td><strong>oid</strong></td>
+            <td>xtype</td>
+            <td>oid</td>
             <td>类型 ID</td>
         </tr>
         <tr>
-            <td><strong>typestat</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>typestat</td>
+            <td>tinyint</td>
             <td>直接返回0</td>
         </tr>
         <tr>
-            <td><strong>xusertype</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>xusertype</td>
+            <td>smallint</td>
             <td>类型 ID</td>
         </tr>
         <tr>
-            <td><strong>length</strong></td>
-            <td><strong>smallint</strong></td>
-            <td>sys<strong> 的最大物理存储长度</strong>。<strong>类型</strong>。</td>
+            <td>length</td>
+            <td>smallint</td>
+            <td>sys 的最大物理存储长度。类型。</td>
         </tr>
         <tr>
-            <td><strong>xprec</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>xprec</td>
+            <td>tinyint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>xscale</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>xscale</td>
+            <td>tinyint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>colid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>colid</td>
+            <td>smallint</td>
             <td>列 ID 或参数 ID。</td>
         </tr>
         <tr>
-            <td><strong>xoffset</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>xoffset</td>
+            <td>smallint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>bitpos</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>bitpos</td>
+            <td>tinyint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
             <td>reserved</td>
-            <td><strong>tinyint</strong></td>
+            <td>tinyint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>colstat</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>colstat</td>
+            <td>smallint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>cdefault</strong></td>
-            <td><strong>oid</strong></td>
+            <td>cdefault</td>
+            <td>oid</td>
             <td>此列的默认值的 ID。</td>
         </tr>
         <tr>
             <td>domain</td>
-            <td><strong>oid</strong></td>
+            <td>oid</td>
             <td>此列的规则或 CHECK 约束的 ID。</td>
         </tr>
         <tr>
-            <td><strong>number</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>number</td>
+            <td>smallint</td>
             <td>过程分组时的子过程号。直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>colorder</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>colorder</td>
+            <td>smallint</td>
             <td>直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>autoval</strong></td>
+            <td>autoval</td>
             <td>bytea</td>
             <td>直接返回 null</td>
         </tr>
         <tr>
-            <td><strong>offset</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>offset</td>
+            <td>smallint</td>
             <td>此列所在行的偏移量。直接返回 0</td>
         </tr>
         <tr>
-            <td><strong>collationid</strong></td>
-            <td><strong>oid</strong></td>
+            <td>collationid</td>
+            <td>oid</td>
             <td>列的排序规则的 ID。 对于非字符列，此值为 NULL。</td>
         </tr>
         <tr>
-            <td><strong>status</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>status</td>
+            <td>tinyint</td>
             <td>用于说明列或参数的属性的位图：<br> 0x08 = 列允许空值。<br> 0x40 = 参数为 OUTPUT 参数。</td>
         </tr>
         <tr>
             <td>type</td>
-            <td><strong>oid</strong></td>
+            <td>oid</td>
             <td>类型 ID</td>
         </tr>
         <tr>
-            <td><strong>usertype</strong></td>
-            <td><strong>oid</strong></td>
+            <td>usertype</td>
+            <td>oid</td>
             <td>所属架构 ID</td>
         </tr>
         <tr>
-            <td><strong>printfmt</strong></td>
-            <td><strong>varchar(255)</strong></td>
+            <td>printfmt</td>
+            <td>varchar(255)</td>
             <td>直接返回 null</td>
         </tr>
         <tr>
-            <td><strong>prec</strong></td>
-            <td><strong>smallint</strong></td>
-            <td>此列的精度级别。<br> -1 = <strong>xml</strong> 或大值类型。</td>
+            <td>prec</td>
+            <td>smallint</td>
+            <td>此列的精度级别。<br> -1 = xml 或大值类型。</td>
         </tr>
         <tr>
-            <td><strong>scale</strong></td>
-            <td><strong>int</strong></td>
+            <td>scale</td>
+            <td>int</td>
             <td>列的 scale <br><br> NULL = 数据类型不是数值。</td>
         </tr>
         <tr>
-            <td><strong>iscomputed</strong></td>
-            <td><strong>int</strong></td>
+            <td>iscomputed</td>
+            <td>int</td>
             <td>指示列是否为计算列的标志：<br><br> 0 = 非计算列。<br><br> 1 = 计算列。</td>
         </tr>
         <tr>
-            <td><strong>isoutparam</strong></td>
-            <td><strong>int</strong></td>
+            <td>isoutparam</td>
+            <td>int</td>
             <td>指示过程参数是否为输出参数：<br><br> 1 = True<br><br> 0 = False</td>
         </tr>
         <tr>
-            <td><strong>isnullable</strong></td>
-            <td><strong>int</strong></td>
+            <td>isnullable</td>
+            <td>int</td>
             <td>指示列是否允许空值：<br><br> 1 = True<br><br> 0 = False</td>
         </tr>
         <tr>
-            <td><strong>collation</strong></td>
-            <td><strong>name</strong></td>
+            <td>collation</td>
+            <td>name</td>
             <td>列的排序规则的名称。 如果不是基于字符的列，则为 NULL。</td>
         </tr>
     </tbody>

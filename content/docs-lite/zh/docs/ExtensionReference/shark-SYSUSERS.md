@@ -14,103 +14,103 @@ SYSUSERS视图返回数据库中的用户信息。
     </thead>
     <tbody>
         <tr>
-            <td><strong>uid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>uid</td>
+            <td>smallint</td>
             <td>用户 ID，在此数据库中是唯一的</td>
         </tr>
         <tr>
-            <td><strong>status</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>status</td>
+            <td>smallint</td>
             <td>标识为仅供参考。 不支持。 不保证以后的兼容性。返回0</td>
         </tr>
         <tr>
-            <td><strong>name</strong></td>
-            <td><strong>name</strong></td>
+            <td>name</td>
+            <td>name</td>
             <td>用户名或组名，在此数据库中是唯一的。</td>
         </tr>
         <tr>
-            <td><strong>sid</strong></td>
-            <td><strong>varbinary(85)</strong></td>
+            <td>sid</td>
+            <td>varbinary(85)</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>roles</strong></td>
-            <td><strong>varbinary(2048)</strong></td>
+            <td>roles</td>
+            <td>varbinary(2048)</td>
             <td>标识为仅供参考。 不支持。 不保证以后的兼容性。返回NULL</td>
         </tr>
         <tr>
-            <td><strong>createdate</strong></td>
-            <td><strong>date</strong></td>
+            <td>createdate</td>
+            <td>date</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>updatedate</strong></td>
-            <td><strong>date</strong></td>
+            <td>updatedate</td>
+            <td>date</td>
             <td>返回NULL</td>
         </tr>
         <tr>
-            <td><strong>altuid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>altuid</td>
+            <td>smallint</td>
             <td>标识为仅供参考。 不支持。 不保证以后的兼容性。返回0</td>
         </tr>
         <tr>
-            <td><strong>password</strong></td>
-            <td><strong>varbinary(256)</strong></td>
+            <td>password</td>
+            <td>varbinary(256)</td>
             <td>标识为仅供参考。 不支持。 不保证以后的兼容性。返回NULL</td>
         </tr>
         <tr>
-            <td><strong>gid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>gid</td>
+            <td>smallint</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>environ</strong></td>
-            <td><strong>varchar(255)</strong></td>
+            <td>environ</td>
+            <td>varchar(255)</td>
             <td>保留。返回NULL</td>
         </tr>
         <tr>
-            <td><strong>hasdbaccess</strong></td>
-            <td><strong>int</strong></td>
+            <td>hasdbaccess</td>
+            <td>int</td>
             <td>1 = 帐户具有数据库访问权。</td>
         </tr>
         <tr>
-            <td><strong>islogin</strong></td>
-            <td><strong>int</strong></td>
+            <td>islogin</td>
+            <td>int</td>
             <td>1 = 帐户具有登录权限。</td>
         </tr>
         <tr>
-            <td><strong>isntname</strong></td>
-            <td><strong>int</strong></td>
+            <td>isntname</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>isntgroup</strong></td>
-            <td><strong>int</strong></td>
+            <td>isntgroup</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>isntuser</strong></td>
-            <td><strong>int</strong></td>
+            <td>isntuser</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>issqluser</strong></td>
-            <td><strong>int</strong></td>
+            <td>issqluser</td>
+            <td>int</td>
             <td>1 = 帐户具是SQL用户。</td>
         </tr>
         <tr>
-            <td><strong>isaliased</strong></td>
-            <td><strong>int</strong></td>
+            <td>isaliased</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
         <tr>
-            <td><strong>issqlrole</strong></td>
-            <td><strong>int</strong></td>
+            <td>issqlrole</td>
+            <td>int</td>
             <td>1 = 帐户具是SQL角色。</td>
         </tr>
         <tr>
-            <td><strong>isapprole</strong></td>
-            <td><strong>int</strong></td>
+            <td>isapprole</td>
+            <td>int</td>
             <td>返回0</td>
         </tr>
     </tbody>

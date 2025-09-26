@@ -15,17 +15,17 @@ SYSOBJECTS视图返回数据库中创建的每个对象（例如表、视图、�
     <tbody>
         <tr>
             <td>name</td>
-            <td><strong>name</strong></td>
+            <td>name</td>
             <td>对象名称</td>
         </tr>
         <tr>
             <td>id</td>
-            <td><strong>oid</strong></td>
+            <td>oid</td>
             <td>对象的oid</td>
         </tr>
         <tr>
             <td>xtype</td>
-            <td><strong>char(2)</strong></td>
+            <td>char(2)</td>
             <td>支持的类型：<br>
                 AF：聚合函数<br>
                 C：check约束<br>
@@ -45,57 +45,57 @@ SYSOBJECTS视图返回数据库中创建的每个对象（例如表、视图、�
         </tr>
         <tr>
             <td>uid</td>
-            <td><strong>oid</strong></td>
+            <td>oid</td>
             <td>对象所属架构ID</td>
         </tr>
         <tr>
             <td>info</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>status</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>base_schema_ver</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>replinfo</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>parent_obj</td>
-            <td><strong>oid</strong></td>
+            <td>oid</td>
             <td>父对象的对象标识号</td>
         </tr>
         <tr>
             <td>crdate</td>
-            <td><strong>timestamp(3)</strong></td>
+            <td>timestamp(3)</td>
             <td>直返回固定值NULL</td>
         </tr>
         <tr>
             <td>ftcatid</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>schema_ver</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>在每次更改表的架构时都会增加的版本号。 始终返回 0</td>
         </tr>
         <tr>
             <td>stats_schema_ver</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>直接返回固定值0</td>
         </tr>
         <tr>
             <td>type</td>
-            <td><strong>char(2)</strong></td>
+            <td>char(2)</td>
             <td>对象类型，支持以下值：<br>
                 AF：聚合函数<br>
                 C：check约束<br>
@@ -113,57 +113,57 @@ SYSOBJECTS视图返回数据库中创建的每个对象（例如表、视图、�
         </tr>
         <tr>
             <td>userstat</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>sysstat</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>indexdel</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>refdate</td>
-            <td><strong>timestamp</strong></td>
+            <td>timestamp</td>
             <td>返回固定值NULL</td>
         </tr>
         <tr>
             <td>version</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>deltrig</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>instrig</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>updtrig</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>seltrig</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回固定值0</td>
         </tr>
         <tr>
             <td>category</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>用于发布、约束和标识。返回固定值0</td>
         </tr>
         <tr>
             <td>cache</td>
-            <td><strong>smallint</strong></td>
+            <td>smallint</td>
             <td>直接返回固定值0</td>
         </tr>
     </tbody>

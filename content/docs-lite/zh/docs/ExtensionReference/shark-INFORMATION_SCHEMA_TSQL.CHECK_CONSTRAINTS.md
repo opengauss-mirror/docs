@@ -14,23 +14,23 @@ CHECK_CONSTRAINTS视图返回数据库中的检查约束信息。
     </thead>
     <tbody>
         <tr>
-            <td><strong>CONSTRAINT_CATALOG</strong></td>
-            <td><strong>nvarchar(128)</strong></td>
+            <td>CONSTRAINT_CATALOG</td>
+            <td>nvarchar(128)</td>
             <td>约束限定符</td>
         </tr>
         <tr>
-            <td><strong>CONSTRAINT_SCHEMA</strong></td>
-            <td><strong>nvarchar(128)</strong></td>
+            <td>CONSTRAINT_SCHEMA</td>
+            <td>nvarchar(128)</td>
             <td>约束所属架构的名称</td>
         </tr>
         <tr>
-            <td><strong>CONSTRAINT_NAME</strong></td>
-            <td><strong>name</strong></td>
+            <td>CONSTRAINT_NAME</td>
+            <td>name</td>
             <td>约束名称</td>
         </tr>
         <tr>
-            <td><strong>CHECK_CLAUSE</strong></td>
-            <td><strong>nvarchar（4000）</strong></td>
+            <td>CHECK_CLAUSE</td>
+            <td>nvarchar（4000）</td>
             <td>Transact-SQL 定义语句的实际文本</td>
         </tr>
     </tbody>

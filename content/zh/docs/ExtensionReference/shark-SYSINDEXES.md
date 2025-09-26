@@ -14,148 +14,148 @@ SYSINDEXES视图为当前数据库中的每个索引和表各对应一行。此�
     </thead>
     <tbody>
         <tr>
-            <td><strong>id</strong></td>
-            <td><strong>oid</strong></td>
+            <td>id</td>
+            <td>oid</td>
             <td>索引所属表的 ID</td>
         </tr>
         <tr>
-            <td><strong>status</strong></td>
-            <td><strong>int</strong></td>
+            <td>status</td>
+            <td>int</td>
             <td>返回 NULL</td>
         </tr>
         <tr>
-            <td><strong>first</strong></td>
-            <td><strong>bytea</strong></td>
+            <td>first</td>
+            <td>bytea</td>
             <td>返回 NULL</td>
         </tr>
         <tr>
-            <td><strong>indid</strong></td>
-            <td><strong>oid</strong></td>
+            <td>indid</td>
+            <td>oid</td>
             <td>索引 ID</td>
         </tr>
         <tr>
-            <td>root<strong></strong></td>
-            <td><strong>bytea</strong></td>
+            <td>root</td>
+            <td>bytea</td>
             <td>返回 NULL</td>
         </tr>
         <tr>
-            <td><strong>minlen</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>minlen</td>
+            <td>smallint</td>
             <td>行的最小大小。返回 0</td>
         </tr>
         <tr>
-            <td><strong>keycnt</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>keycnt</td>
+            <td>smallint</td>
             <td>键数。返回0</td>
         </tr>
         <tr>
-            <td><strong>groupid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>groupid</td>
+            <td>smallint</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>dpages</strong></td>
-            <td><strong>int</strong></td>
+            <td>dpages</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
             <td>reserved</td>
-            <td><strong>int</strong></td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>used</strong></td>
-            <td><strong>int</strong></td>
+            <td>used</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>rowcnt</strong></td>
-            <td><strong>bigint</strong></td>
+            <td>rowcnt</td>
+            <td>bigint</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>rowmodctr</strong></td>
-            <td><strong>int</strong></td>
+            <td>rowmodctr</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>reserved3</strong></td>
-            <td><strong>int</strong></td>
+            <td>reserved3</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>reserved4</strong></td>
-            <td><strong>int</strong></td>
+            <td>reserved4</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>xmaxlen</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>xmaxlen</td>
+            <td>smallint</td>
             <td>行的最大大小。返回 0</td>
         </tr>
         <tr>
-            <td><strong>maxirow</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>maxirow</td>
+            <td>smallint</td>
             <td>返回 NULL</td>
         </tr>
         <tr>
-            <td><strong>OrigFillFactor</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>OrigFillFactor</td>
+            <td>tinyint</td>
             <td>创建索引时使用的初始填充因子值。 </td>
         </tr>
         <tr>
-            <td><strong>StatVersion</strong></td>
-            <td><strong>tinyint</strong></td>
+            <td>StatVersion</td>
+            <td>tinyint</td>
             <td>返回 0。</td>
         </tr>
         <tr>
-            <td><strong>reserved2</strong></td>
-            <td><strong>int</strong></td>
+            <td>reserved2</td>
+            <td>int</td>
             <td>返回 0。</td>
         </tr>
         <tr>
-            <td><strong>FirstIAM</strong></td>
-            <td><strong>bytea</strong></td>
+            <td>FirstIAM</td>
+            <td>bytea</td>
             <td>返回 NULL</td>
         </tr>
         <tr>
-            <td><strong>impid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>impid</td>
+            <td>smallint</td>
             <td>索引实现标志。 返回 0。</td>
         </tr>
         <tr>
-            <td><strong>lockflags</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>lockflags</td>
+            <td>smallint</td>
             <td>用于约束经过考虑的索引锁粒度。 返回 0。</td>
         </tr>
         <tr>
-            <td><strong>pgmodctr</strong></td>
-            <td><strong>int</strong></td>
+            <td>pgmodctr</td>
+            <td>int</td>
             <td>返回 0。</td>
         </tr>
         <tr>
-            <td><strong>keys</strong></td>
-            <td><strong>bytea</strong></td>
+            <td>keys</td>
+            <td>bytea</td>
             <td>组成索引键的列 ID 列表。<br> 返回 NULL。<br> 若要显示索引键列，请使用[sysindexkeys](shark-SYSINDEXKEYS.md)。</td>
         </tr>
         <tr>
-            <td><strong>name</strong></td>
-            <td><strong>name</strong></td>
+            <td>name</td>
+            <td>name</td>
             <td>索引的名称。</td>
         </tr>
         <tr>
-            <td><strong>statblob</strong></td>
-            <td><strong>blob</strong></td>
+            <td>statblob</td>
+            <td>blob</td>
             <td>统计信息二进制大型对象 (BLOB)。<br> 返回 NULL。</td>
         </tr>
         <tr>
-            <td><strong>maxlen</strong></td>
-            <td><strong>int</strong></td>
+            <td>maxlen</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
         <tr>
-            <td><strong>rows</strong></td>
-            <td><strong>int</strong></td>
+            <td>rows</td>
+            <td>int</td>
             <td>返回 0</td>
         </tr>
     </tbody>

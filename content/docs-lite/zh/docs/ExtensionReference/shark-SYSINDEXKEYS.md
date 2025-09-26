@@ -14,23 +14,23 @@ SYSINDEXKEYS视图包含有关数据库的索引中列的信息。
     </thead>
     <tbody>
         <tr>
-            <td><strong>id</strong></td>
-            <td><strong>oid</strong></td>
+            <td>id</td>
+            <td>oid</td>
             <td>表的 ID。</td>
         </tr>
         <tr>
-            <td><strong>indid</strong></td>
-            <td><strong>oid</strong></td>
+            <td>indid</td>
+            <td>oid</td>
             <td>索引的 ID。</td>
         </tr>
         <tr>
-            <td><strong>colid</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>colid</td>
+            <td>smallint</td>
             <td>列的 ID。</td>
         </tr>
         <tr>
-            <td><strong>keyno</strong></td>
-            <td><strong>smallint</strong></td>
+            <td>keyno</td>
+            <td>smallint</td>
             <td>该列在索引中的位置。</td>
         </tr>
     </tbody>
