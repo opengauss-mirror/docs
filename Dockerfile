@@ -147,6 +147,17 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/en/docs/7.0.0-RC1-lite/ && \
     cp -rf /src/7.0.0-RC1/docs/content/docs-lite/en/* /src/website/content/en/docs/7.0.0-RC1-lite/ && \
 
+    git clone -b 7.0.0-RC2 https://gitcode.com/opengauss/docs --depth=1 7.0.0-RC2/docs && \
+    mkdir -p /src/website/content/zh/docs/7.0.0-RC2 && \
+    cp -rf /src/7.0.0-RC2/docs/content/zh/* /src/website/content/zh/docs/7.0.0-RC2 && \
+    mkdir -p /src/website/content/en/docs/7.0.0-RC2 && \
+    cp -rf /src/7.0.0-RC2/docs/content/en/* /src/website/content/en/docs/7.0.0-RC2 && \
+
+    mkdir -p /src/website/content/zh/docs/7.0.0-RC2-lite/ && \
+    cp -rf /src/7.0.0-RC2/docs/content/docs-lite/zh/* /src/website/content/zh/docs/7.0.0-RC2-lite/ && \
+    mkdir -p /src/website/content/en/docs/7.0.0-RC2-lite/ && \
+    cp -rf /src/7.0.0-RC2/docs/content/docs-lite/en/* /src/website/content/en/docs/7.0.0-RC2-lite/ && \
+
     cd /src/website && hugo -b / --minify && \
     cp -rf /src/website/public/* /usr/share/nginx/html/ && \
     chmod -R 755 /usr/share/nginx/html && \

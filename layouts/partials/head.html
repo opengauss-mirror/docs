@@ -66,6 +66,6 @@
     <script>
       hljs.highlightAll();
     </script>
-    <script src="{{ .Site.BaseURL }}js/version-data.js"></script>
+    <script src="{{ .Site.BaseURL }}js/version-data.js?t={{ mul 1000 (time now).Unix }}"></script>
     <script src="{{ .Site.BaseURL }}js/init-theme.js"></script>
 </head>
