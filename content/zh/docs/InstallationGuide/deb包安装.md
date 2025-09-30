@@ -6,10 +6,10 @@
 
 | 操作系统                 | 架构   | openauss版本    |
 | ----------------------- | ------ | --------------- |
-| Ubuntu 22.04 LTS | ARM64/x86_64  | openGauss 6.0.0 企业版  |
-| Debian 12 | x86_64  | openGauss 6.0.0 企业版  |
+| Ubuntu 22.04 LTS | ARM64/x86_64  | openGauss 6.0.0 极简版  |
+| Debian 12 | x86_64  | openGauss 6.0.0 极简版  |
 
-注意：如果需要其他系统上安装openGauss，请联系华为技术支持。
+注意：如果需要其他系统上安装openGauss，请联系openGauss社区。
 
 ## 支持特性
 
@@ -17,7 +17,7 @@
   
 ## 约束
 
--  openGauss 6.0.0企业版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
+-  openGauss 6.0.0极简版不包含mot，obs和codegen功能，以及om、cm等外部组件，仅有纯数据库功能（支持兼容性B库）。
 
 ## 使用限制
 
