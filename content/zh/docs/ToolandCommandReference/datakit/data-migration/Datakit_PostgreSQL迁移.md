@@ -15,7 +15,7 @@ PostgreSQL数据迁移由Datakit的数据迁移插件提供，DataKit安装成�
 
 在DataKit页面，资源中心-实例管理中添加所需迁移的PostgreSQL数据库以及openGauss数据库。
 
-![添加数据库](figures/添加数据库.png)
+![添加数据库](./figures/添加数据库.png)
 
 ### 添加服务器
 
