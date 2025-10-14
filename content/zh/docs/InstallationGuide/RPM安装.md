@@ -42,7 +42,7 @@
 
 ## 使用说明
 
-1. 切换到opengauss用户 `su - opengauss`
+1. 切换到opengauss用户 `su - opengauss`，执行 `gs_ctl start`
    
 2. 查看进程 `ps ux`, 可以看到，二进制安装目录在 `/usr/local/opengauss`下，默认启动的数据目录在`/var/lib/opengauss/data`目录下。
 
