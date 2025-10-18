@@ -76,12 +76,12 @@
         <tr>
             <td>is_identity</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>是否为identity列<br/>1 = identity列<br/>0 = 非identity列</td>
         </tr>
         <tr>
             <td>is_computed</td>
             <td>bit</td>
-            <td>1 列为计算列</td>
+            <td>是否为计算列<br/>1 = 计算列<br/>0 = 非计算列</td>
         </tr>
         <tr>
             <td>is_filestream</td>
