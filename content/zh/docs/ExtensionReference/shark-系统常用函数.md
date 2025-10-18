@@ -792,3 +792,30 @@
        
     (1 row)
     ```
+
+- newid()
+
+    描述：生成一个全局唯一标识符
+
+    参数类型：无
+
+    返回值类型：uuid
+
+    说明：基于uuid v1（时间+MAC地址）版本生成一个全局唯一标识符，同openGauss B兼容库dolphin插件uuid()函数实现，差异在于返回值类型，dolphin插件的uuid()函数返回值为varchar，shark插件的newid()函数返回值为uuid
+
+    示例：
+    
+    ```
+    openGauss=# select newid();
+                    newid
+    --------------------------------------
+     53018234-09ed-11cf-8676-f82e3f373370
+    (1 row)
+
+    openGauss=# select pg_typeof(newid());
+    pg_typeof
+    -----------
+    uuid
+    (1 row)
+
+    ```

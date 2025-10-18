@@ -1,8 +1,8 @@
-# COLUMNS
+# IDENTITY_COLUMNS
 
-用户定义对象的所有列。
+IDENTITY_COLUMNS视图返回数据库中具有IDENTITY属性的列的相关信息。
 
-**表1** COLUMNS
+**表1** IDENTITY_COLUMNS
 
 <table aria-label="表1" class="table table-sm margin-top-none">
     <thead>
@@ -192,6 +192,26 @@
             <td>graph_type_desc</td>
             <td>nvarchar(60)</td>
             <td>返回 NULL</td>
+        </tr>
+        <tr>
+            <td>seed_value</td>
+            <td>sql_variant</td>
+            <td>identity列的seed值</td>
+        </tr>
+        <tr>
+            <td>increment_value</td>
+            <td>sql_variant</td>
+            <td>identity列的increment值</td>
+        </tr>
+        <tr>
+            <td>last_value</td>
+            <td>sql_variant</td>
+            <td>identity列的last值</td>
+        </tr>
+        <tr>
+            <td>is_not_for_replication</td>
+            <td>bit</td>
+            <td>返回 0</td>
         </tr>
     </tbody>
 </table>

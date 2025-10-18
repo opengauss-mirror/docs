@@ -17,3 +17,4 @@
 -   **[ALTER PROC](shark-ALTER-PROC.md)**
 -   **[DROP PROC](shark-DROP-PROC.md)**
 -   **[USE db_name](shark-USE-DB_NAME.md)**
+-   **[DROP TRIGGER](shark-DROP-TRIGGER.md)**
