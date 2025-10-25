@@ -6,7 +6,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283136989_zh-cn_topic_0237122061_zh-cn_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
 
-相比于原始的openGauss，dolphin对于ALTER PROCEDURE语法的修改为：
+相比于原始的openGauss，dolphin对于ALTER FUNCTION语法的修改为：
 
 1. 增加可修改 LANGUAGE 选项。
 
