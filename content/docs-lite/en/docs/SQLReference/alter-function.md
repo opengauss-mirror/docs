@@ -11,6 +11,7 @@ Only the function owner or a user granted with the ALTER permission can run the 
 -   If a function involves operations on temporary tables,  **ALTER FUNCTION**  cannot be used.
 -   To modify the owner or schema of a function, you must be a function owner or system administrator and a member of the new owner role.
 -   Only the system administrator and initial user can change the schema of a function to  **public**.
+-   Only the initial user or the user who created the function can modify the function to be a definer's rights function.
 
 ## Syntax<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
