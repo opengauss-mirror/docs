@@ -6,7 +6,7 @@ Modifies the attributes of a user-defined function.
 
 ## Precautions <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sf701318086b54f2fad9457e8e0b38f19"></a>
 
-Compared with the original openGauss, Dolphin modifies the ALTER PROCEDURE syntax as follows:
+Compared with the original openGauss, Dolphin modifies the ALTER FUNCTION syntax as follows:
 
 1. The modifiable LANGUAGE option is added.
 
