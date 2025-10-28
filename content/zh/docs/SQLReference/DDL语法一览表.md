@@ -282,6 +282,11 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"></a><a href="DROP-PROCEDURE.md">DROP PROCEDURE</a></p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_rf194389b8b3449f1856055707d47c135"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aad3710f4891e4d27be97bbfbaaf72174"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aad3710f4891e4d27be97bbfbaaf72174"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aad3710f4891e4d27be97bbfbaaf72174"></a>修改存储过程</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"></a><a name="zh-cn_topic_0283136643_zh-cn_topic_0237122049_zh-cn_topic_0059777960_aa201dcc5819a4d519e7abdcf9eaae459"></a><a href="ALTER-PROCEDURE.md">ALTER PROCEDURE</a></p>
+</td>
+</tr>
 </tbody>
 </table>
 
