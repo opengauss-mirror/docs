@@ -8,10 +8,12 @@
 
 **参数说明**：参数值为逗号间隔的字符串，仅允许合法字符串设定，不合法情况下，启动后报error。同样，设置时候，如果新值非法，则报error并且不修改老值。目前可选参数有：
 
--   enable_sbr_identifier：是否允许使用 [] 包裹标识符。开启以后内核原有的数组相关语法会被禁用。
+-   enable_sbr_identifier：是否允许使用 [] 包裹标识符(含数据类型)。开启以后内核原有的数组相关语法会被禁用。
 ```
 openGauss=# set d_format_behavior_compat_options = 'enable_sbr_identifier';
 SET
+openGauss=# create table t1(id [int]);
+CREATE TABLE
 openGauss=# create table[array](a1 int);
 CREATE TABLE
 openGauss=# select ARRAY[1,2,3];

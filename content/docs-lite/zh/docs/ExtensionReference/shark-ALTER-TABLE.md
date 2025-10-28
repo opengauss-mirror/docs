@@ -99,7 +99,8 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
                     REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
                         [ ON DELETE action ] [ ON UPDATE action ] }
                         [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
-                        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+                        [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ] |
+                    DEFAULT (expression) FOR (column_name)
     [ COMMENT 'text' ]
     ```
 
@@ -207,6 +208,11 @@ COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
     -   修改表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
     -   filegroup为任意字符串，支持通过[]包裹。
 
+-   **DEFAULT (expression) FOR (column_name)**
+
+    -   该语法可以为指定列添加DEFAULT约束，该约束为一个表达式。
+    -   对于显式声明约束名的场景，仅做语法支持，使用该语法创建的DEFAULT约束无法通过约束名进行删除。
+
 ## opt\_clustered示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```
@@ -258,6 +264,77 @@ alter table test2 add constraint pk_id primary key(col1) with (fillfactor = 50, 
 create table test3(col1 int, col2 int);
 
 alter table test3 add column col3 int primary key with (data_compression = none) on [primar4];
+```
+
+## DEFAULT (expression) FOR (column_name) 示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+
+```
+openGauss=# create table ADD_DEFAULT(id int, v1 varchar(20), v2 float);
+CREATE TABLE
+openGauss=# \d+ ADD_DEFAULT
+                             Table "public.add_default"
+ Column |         Type          | Modifiers | Storage  | Stats target | Description 
+--------+-----------------------+-----------+----------+--------------+-------------
+ id     | integer               |           | plain    |              | 
+ v1     | character varying(20) |           | extended |              | 
+ v2     | double precision      |           | plain    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# alter table ADD_DEFAULT add default (mod(4, 3)) for id;
+NOTICE:  DEFAULT added. The added DEFAULT can not be dropped by name
+ALTER TABLE
+openGauss=# \d+ ADD_DEFAULT
+                                 Table "public.add_default"
+ Column |         Type          |     Modifiers     | Storage  | Stats target | Description 
+--------+-----------------------+-------------------+----------+--------------+-------------
+ id     | integer               | default mod(4, 3) | plain    |              | 
+ v1     | character varying(20) |                   | extended |              | 
+ v2     | double precision      |                   | plain    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# insert into ADD_DEFAULT(v1, v2) values('bac', 3.1);
+INSERT 0 1
+openGauss=# select * from ADD_DEFAULT;
+ id | v1  | v2  
+----+-----+-----
+  1 | bac | 3.1
+(1 row)
+
+openGauss=# create table ADD_CONSTRAINT_DEFAULT(id int, v1 varchar(20), v2 timestamptz);
+CREATE TABLE
+openGauss=# \d+ ADD_CONSTRAINT_DEFAULT
+                         Table "public.add_constraint_default"
+ Column |           Type           | Modifiers | Storage  | Stats target | Description 
+--------+--------------------------+-----------+----------+--------------+-------------
+ id     | integer                  |           | plain    |              | 
+ v1     | character varying(20)    |           | extended |              | 
+ v2     | timestamp with time zone |           | plain    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# alter table ADD_CONSTRAINT_DEFAULT add constraint ADD_SYSTEIME_DEFAULT default (pg_systimestamp()) for v2;
+NOTICE:  DEFAULT added. The added DEFAULT can not be dropped by name
+ALTER TABLE
+test_d=# \d+ ADD_CONSTRAINT_DEFAULT
+                                 Table "public.add_constraint_default"
+ Column |           Type           |         Modifiers         | Storage  | Stats target | Description 
+--------+--------------------------+---------------------------+----------+--------------+-------------
+ id     | integer                  |                           | plain    |              | 
+ v1     | character varying(20)    |                           | extended |              | 
+ v2     | timestamp with time zone | default pg_systimestamp() | plain    |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# insert into ADD_CONSTRAINT_DEFAULT(id, v1) values(1, 'abc');
+INSERT 0 1
+openGauss=# select * from ADD_CONSTRAINT_DEFAULT;
+ id | v1  |              v2               
+----+-----+-------------------------------
+  1 | abc | 2025-10-30 11:17:36.821797+08
+(1 row)
+
 ```
 
 ## 相关链接<a name="section156744489391"></a>
