@@ -193,6 +193,10 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
     -   ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
 
+-  **ASC | DESC**
+
+    -   table_constraint中，针对PRIMARY KEY和UNIQUE约束支持使用{ column_name [ ASC | DESC ] }语法, 为主键和唯一键提供升序或降序约束。
+
 ## 生成列示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
 
 ```sql
@@ -287,6 +291,26 @@ create table t11(a int PRIMARY KEY WITH (PAD_INDEX = OFF) ON [primary]) ON [prim
 create table t12(a int UNIQUE WITH (XML_COMPRESSION = OFF) ON [primary]) ON [primary];
 create table t13(a int, CONSTRAINT PK_t11 PRIMARY KEY(a) WITH (PAD_INDEX = OFF) ON [primary]) ON [primary];
 create table t14(a int, CONSTRAINT PK_t12 UNIQUE(a) WITH (XML_COMPRESSION = OFF) ON [primary]) ON [primary];
+```
+
+## ASC | DESC示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+
+```
+
+openGauss=# create table CONSTRAINT_DESC(id int not null, v1 varchar(30), constraint PK_CONSTRAINT_DESC primary key(id DESC));
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_constraint_desc" for table "constraint_desc"
+CREATE TABLE
+openGauss=# \d+ CONSTRAINT_DESC
+                           Table "public.constraint_desc"
+ Column |         Type          | Modifiers | Storage  | Stats target | Description 
+--------+-----------------------+-----------+----------+--------------+-------------
+ id     | integer               | not null  | plain    |              | 
+ v1     | character varying(30) |           | extended |              | 
+Indexes:
+    "pk_constraint_desc" PRIMARY KEY, btree (id DESC) TABLESPACE pg_default
+Has OIDs: no
+Options: orientation=row, compression=no
+
 ```
 
 ## 相关链接<a name="section156744489391"></a>
