@@ -79,7 +79,7 @@ installation_and_deployment.md  #新增‘安装与部署’文档
 
 【规则】如果有连续两个转义符，转义符之间要有空格 \{ \}。
 
-【规则】国际化：需同时提供中英文文档，可联系[wu-donger](https://gitee.com/wu-donger)协助翻译。
+【规则】国际化：需同时提供中英文文档，可联系[wu-donger](https://gitcode.com/Evawudonger)协助翻译。
 
 ### 空格
 
@@ -105,7 +105,7 @@ installation_and_deployment.md  #新增‘安装与部署’文档
 ![alt 属性文本](图片地址 "可选标题")
 ```
 
-【规则】图片统一存放到文档同级目录下的 figures 文件夹中。例如，[《A-Tune用户指南》](https://docs.openeuler.org/zh/docs/22.03_LTS_SP2/docs/A-Tune/A-Tune.html)中的手册中使用的图片，统一存储在 [A-Tune](https://gitee.com/openeuler/docs-centralized/tree/stable2-22.03_LTS_SP2/docs/zh/docs/A-Tune/figures) 路径下。该文件夹下的文件引用图片时，使用相对引用。
+【规则】图片统一存放到文档同级目录下的 figures 文件夹中。例如，[《安装指南》](https://gitcode.com/opengauss/docs/tree/6.0.0/content/zh/docs/InstallationGuide)中的手册中使用的图片，统一存储在 <https://gitcode.com/opengauss/docs/tree/6.0.0/content/zh/docs/InstallationGuide/figures> 路径下。该文件夹下的文件引用图片时，使用相对引用。
 
 【规则】请使用原创图片，避免存在知识产权侵权风险。
 
@@ -233,7 +233,7 @@ installation_and_deployment.md  #新增‘安装与部署’文档
 
 ```markdown
 - 网站链接
-A-Tune 的安装步骤请参考[《安装与部署》](https://www.atune.com)。
+DataKit 的安装步骤请参考[《安装与部署》](https://www.datakit.com)。
 
 - 相对路径
 [文档开发流水线门禁](./ci_rules.md)
@@ -302,7 +302,7 @@ A-Tune 的安装步骤请参考[《安装与部署》](https://www.atune.com)。
 
 【规则】感叹号使用场景为可能引发严重后果的操作或设备安全、人身安全的警告。其他场景不允许使用感叹号。
 
-【规则】文内引用其他文档时添加书名号，同时建议增加引用文档的跳转链接。例如：安装 openEuler 系统，安装方法参考《[openEuler 22.03 LTS SP2 安装指南](https://docs.openeuler.org/zh/docs/22.03_LTS_SP2/docs/Installation/installation.html)》。
+【规则】文内引用其他文档时添加书名号，同时建议增加引用文档的跳转链接。例如：安装 openGauss 数据库，安装方法参考[《openGauss 6.0.0 安装指南》](https://docs.opengauss.org/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html)。
 
 ## 语言风格规范
 

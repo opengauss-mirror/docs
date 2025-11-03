@@ -1,0 +1,5 @@
+label: 常见问题
+isManual: true
+sections:
+  - label: 常见问题
+    href: ./faq.md

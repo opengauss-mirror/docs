@@ -1,0 +1,13 @@
+label: 文档开发指南
+isManual: true
+sections:
+  - label: 快速入门
+    href: ./contribution_process.md
+  - label: 文档组织架构
+    href: ./directory_structure_introductory.md
+  - label: 规范与门禁
+    sections:
+      - label: 文档写作规范
+        href: ./documentation_writing_specifications.md
+      - label: 文档发布流水线门禁
+        href: ./ci_rules.md
