@@ -1,0 +1,9 @@
+label: Documentation Development Guide
+isManual: true
+sections:
+  - label: Documentation Structure
+    href: ./directory_structure_introductory.md
+  - label: Tutorials
+    sections:
+      - label: Documentation Writing Specifications
+        href: ./documentation_writing_specifications.md
