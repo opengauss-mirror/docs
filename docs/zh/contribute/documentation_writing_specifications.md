@@ -306,7 +306,7 @@ DataKit 的安装步骤请参考[《安装与部署》](https://www.datakit.com)
 
 ## 语言风格规范
 
-【规则】提交内容必须是与 openEuler 特性相关内容。
+【规则】提交内容必须是与 openGauss 特性相关内容。
 
 【规则】内容不能包含敏感信息、有强烈的种族歧视或性别歧视的内容。
 
@@ -317,4 +317,3 @@ DataKit 的安装步骤请参考[《安装与部署》](https://www.datakit.com)
 **文档贡献中不受欢迎的行为**
 
 短时间内通过自动化工具，提交大量的PR，提交大量的处理诸如拼写错误，语法错误，日期错误，语句不通顺等“无害的错误”的修正。
-具体内容以及处理措施详见 [openEuler社区开发行为规范 V1.0](https://gitee.com/openeuler/community/blob/master/zh/technical-committee/governance/openEuler%E7%A4%BE%E5%8C%BA%E5%BC%80%E5%8F%91%E8%A1%8C%E4%B8%BA%E8%A7%84%E8%8C%83.md)。

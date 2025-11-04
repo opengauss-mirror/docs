@@ -57,7 +57,6 @@
 ```yaml
 label: 安装指南
 isManual: true
-description: 介绍通过Docker安装openGauss，方便DevOps用户的安装、配置和环境设置
 sections:
     - label: 安装概述
     href: ./installation_overview.md
@@ -72,7 +71,6 @@ sections:
 
 - label：手册名称。
 - isManual：标识手册的目录配置文件。
-- description：手册的简介说明。
 - sections：
     - label：章节名称。
     - href：文档内容文件地址（建议使用相对路径）。
