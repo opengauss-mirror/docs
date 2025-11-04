@@ -1,0 +1,169 @@
+{
+  "hots": [
+    "Data type",
+    "Logical replication",
+    "Index",
+    "Migration",
+    "Remote connection",
+    "Tablespace",
+    "Log",
+    "Flashback"
+  ],
+  "recommend": {
+    "columns": 4,
+    "columns_mb": 2,
+    "items": [
+      {
+        "title": "About openGauss",
+        "desc": "Explore the core features and application scenarios of openGauss.",
+        "href": "/en/docs/latest/about_opengauss/about_opengauss.html",
+        "bg_light": "/dsl/assets/img/about.jpg",
+        "bg_dark": "/dsl/assets/img/about.jpg",
+        "bg_mb_light": "/dsl/assets/img/about.jpg",
+        "bg_mb_dark": "/dsl/assets/img/about.jpg"
+      },
+      {
+        "title": "Quick Start",
+        "desc": "Learn the community essentials in 10 minutes, build and grow quickly",
+        "href": "/en/docs/latest/getting_started/understanding_opengauss.html",
+        "bg_light": "/dsl/assets/img/quick-start.jpg",
+        "bg_dark": "/dsl/assets/img/quick-start.jpg",
+        "bg_mb_light": "/dsl/assets/img/quick-start.jpg",
+        "bg_mb_dark": "/dsl/assets/img/quick-start.jpg"
+      },
+      {
+        "title": "Frequently Asked Questions",
+        "desc": "Get answers to common questions and troubleshooting tips",
+        "href": "/en/docs/common/faq/general/general_faq.html",
+        "bg_light": "/dsl/assets/img/qa.jpg",
+        "bg_dark": "/dsl/assets/img/qa.jpg",
+        "bg_mb_light": "/dsl/assets/img/qa.jpg",
+        "bg_mb_dark": "/dsl/assets/img/qa.jpg"
+      },
+      {
+        "title": "Documentation Development Guide",
+        "desc": "Discover how you can contribute to document development",
+        "href": "/en/docs/common/contribute/directory_structure_introductory.html",
+        "bg_light": "/dsl/assets/img/guide.jpg",
+        "bg_dark": "/dsl/assets/img/guide.jpg",
+        "bg_mb_light": "/dsl/assets/img/guide.jpg",
+        "bg_mb_dark": "/dsl/assets/img/guide.jpg"
+      }
+    ]
+  },
+  "installation": {
+    "title": "Installation & Deployment",
+    "item_icon": "/dsl/assets/img/icon-installation.svg",
+    "item_bg_icon": "/dsl/assets/img/icon-installation-bg.svg",
+    "item_bg_light": "/dsl/assets/img/bg-installation-light.png",
+    "item_bg_dark": "/dsl/assets/img/bg-installation-dark.png",
+    "item_title": "Installation & Deployment",
+    "item_desc": "Master openGauss deployment from day one with this hand-on, essential installation guide for all users, administrators, and engineers.",
+    "item_href": "/en/docs/latest/installation_guide/installation_overview.html"
+  },
+  "usage_and_om": {
+    "title": "Usage and O&M",
+    "columns": 3,
+    "columns_mb": 2,
+    "items": [
+      {
+        "icon": "/dsl/assets/img/icon-sql.svg",
+        "bg_icon": "/dsl/assets/img/icon-sql-bg.svg",
+        "title": "SQL Tutorials",
+        "desc": "Dive into our comprehensive course and master openGauss SQL from the ground up.",
+        "href": "/en/docs/latest/sql_reference/opengauss_sql.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-db-management.svg",
+        "bg_icon": "/dsl/assets/img/icon-db-management-bg.svg",
+        "title": "Database Administration Guide",
+        "desc": "Explore core concepts and master the best deployment strategies.",
+        "href": "/en/docs/latest/database_administration_guide/database_concepts.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-db-om.svg",
+        "bg_icon": "/dsl/assets/img/icon-db-om-bg.svg",
+        "title": "Database O&M Guide",
+        "desc": "Follow the step-by-step guide for all common O&M tasks.",
+        "href": "/en/docs/latest/database_om_guide/start_stop_opengauss.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-opt.svg",
+        "bg_icon": "/dsl/assets/img/icon-opt-bg.svg",
+        "title": "Performance Tuning Guide",
+        "desc": "Learn the proven techniques and best practices to boost your database.",
+        "href": "/en/docs/latest/performance_tuning_guide/performance_tuning_overview.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-data-migration.svg",
+        "bg_icon": "/dsl/assets/img/icon-data-migration-bg.svg",
+        "title": "Data Migration Guide",
+        "desc": "Seamlessly move data to and from openGauss and multiple databases.",
+        "href": "/en/docs/latest/data_migration_guide/mysql_migration.html"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "Key Features",
+      "items": [
+        {
+          "title": "DataVec",
+          "desc": "Unlock lightning-fast vector search and retrieval on openGauss.",
+          "href": "/en/docs/latest/datavec/datavec_overview.html"
+        },
+        {
+          "title": "Resource Pooling",
+          "desc": "Get real-time data access for your primary and standby databases from a single shared storage.",
+          "href": "/en/docs/latest/resource_pooling/resource_pooling_overview.html"
+        }
+      ]
+    },
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "Developer Guide",
+      "items": [
+        {
+          "title": "Application Development Guide",
+          "desc": "Build powerful applications on openGauss.",
+          "href": "/en/docs/latest/developer_guide/application_development_guide.html"
+        },
+        {
+          "title": "Compilation Guide",
+          "desc": "Get ready to build.",
+          "href": "/en/docs/latest/compilation_guide/compilation.html"
+        }
+      ]
+    },
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "References",
+      "items": [
+        {
+          "title": "Plugin Reference",
+          "desc": "Enhance your openGauss database and extend its functionality.",
+          "href": "/en/docs/latest/extension_reference/ndpplugin-Extension.html"
+        },
+        {
+          "title": "Database Reference",
+          "desc": "Get a clear-cut guide to all openGauss GUC parameters and error codes.",
+          "href": "/en/docs/latest/database_reference/database_reference.html"
+        },
+        {
+          "title": "Tool and Command Reference",
+          "desc": "Get started with openGauss tools and commands.",
+          "href": "/en/docs/latest/tool_and_commandreference/tool_overview.html"
+        },
+        {
+          "title": "Feature Reference",
+          "desc": "Find a detailed overview of openGauss features and unlock new capabilities.",
+          "href": "/en/docs/latest/characteristic_description/characteristic_description.html"
+        }
+      ]
+    }
+  ]
+}
