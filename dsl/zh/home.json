@@ -1,0 +1,174 @@
+{
+  "hots": [
+    "数据类型",
+    "逻辑复制",
+    "索引",
+    "迁移",
+    "远程连接",
+    "表空间",
+    "日志",
+    "闪回"
+  ],
+  "recommend": {
+    "columns": 4,
+    "columns_mb": 2,
+    "items": [
+      {
+        "title": "关于 openGauss",
+        "desc": "了解openGauss的核心特性与应用场景",
+        "href": "/zh/docs/latest/about_opengauss/about_opengauss.html",
+        "bg_light": "/dsl/assets/img/about.jpg",
+        "bg_dark": "/dsl/assets/img/about.jpg",
+        "bg_mb_light": "/dsl/assets/img/about.jpg",
+        "bg_mb_dark": "/dsl/assets/img/about.jpg"
+      },
+      {
+        "title": "新手入门",
+        "desc": "十分钟玩转社区，快速构建与成长",
+        "href": "/zh/docs/latest/getting_started/understanding_opengauss.html",
+        "bg_light": "/dsl/assets/img/quick-start.jpg",
+        "bg_dark": "/dsl/assets/img/quick-start.jpg",
+        "bg_mb_light": "/dsl/assets/img/quick-start.jpg",
+        "bg_mb_dark": "/dsl/assets/img/quick-start.jpg"
+      },
+      {
+        "title": "常见问题",
+        "desc": "常见问题与解决方法",
+        "href": "/zh/docs/common/faq/faq.html",
+        "bg_light": "/dsl/assets/img/qa.jpg",
+        "bg_dark": "/dsl/assets/img/qa.jpg",
+        "bg_mb_light": "/dsl/assets/img/qa.jpg",
+        "bg_mb_dark": "/dsl/assets/img/qa.jpg"
+      },
+      {
+        "title": "文档开发指南",
+        "desc": "参与文档开发的方式",
+        "href": "/zh/docs/common/contribute/contribution_process.html",
+        "bg_light": "/dsl/assets/img/guide.jpg",
+        "bg_dark": "/dsl/assets/img/guide.jpg",
+        "bg_mb_light": "/dsl/assets/img/guide.jpg",
+        "bg_mb_dark": "/dsl/assets/img/guide.jpg"
+      }
+    ]
+  },
+  "installation": {
+    "title": "安装部署",
+    "item_icon": "/dsl/assets/img/icon-installation.svg",
+    "item_bg_icon": "/dsl/assets/img/icon-installation-bg.svg",
+    "item_bg_light": "/dsl/assets/img/bg-installation-light.png",
+    "item_bg_dark": "/dsl/assets/img/bg-installation-dark.png",
+    "item_title": "安装部署",
+    "item_desc": "手把手指导您完成openGauss数据库的安装，本指南适用于所有用户，尤其是初次使用的系统工程师、管理员和维护人员等",
+    "item_href": "/zh/docs/latest/installation_guide/installation_overview.html"
+  },
+  "usage_and_om": {
+    "title": "使用与运维",
+    "columns": 3,
+    "columns_mb": 2,
+    "items": [
+      {
+        "icon": "/dsl/assets/img/icon-sql.svg",
+        "bg_icon": "/dsl/assets/img/icon-sql-bg.svg",
+        "title": "SQL教程",
+        "desc": "帮助用户系统学习openGauss SQL语法",
+        "href": "/zh/docs/latest/sql_reference/opengauss_sql.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-db-management.svg",
+        "bg_icon": "/dsl/assets/img/icon-db-management-bg.svg",
+        "title": "数据库管理指南",
+        "desc": "介绍数据库的基本概念、部署方案等",
+        "href": "/zh/docs/latest/database_administration_guide/database_concepts.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-db-om.svg",
+        "bg_icon": "/dsl/assets/img/icon-db-om-bg.svg",
+        "title": "数据库运维指南",
+        "desc": "提供数据库常用的运维操作指导",
+        "href": "/zh/docs/latest/database_om_guide/start_stop_opengauss.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-opt.svg",
+        "bg_icon": "/dsl/assets/img/icon-opt-bg.svg",
+        "title": "性能调优指南",
+        "desc": "提供全面的数据库性能调优方法",
+        "href": "/zh/docs/latest/performance_tuning_guide/performance_tuning_overview.html"
+      },
+      {
+        "icon": "/dsl/assets/img/icon-data-migration.svg",
+        "bg_icon": "/dsl/assets/img/icon-data-migration-bg.svg",
+        "title": "数据迁移指南",
+        "desc": "实现openGauss与多种数据库的数据迁移",
+        "href": "/zh/docs/latest/data_migration_guide/mysql_migration.html"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "重要特性",
+      "items": [
+        {
+          "title": "向量数据库",
+          "desc": "基于openGauss的向量引擎， 提供向量数据类型的存储、检索",
+          "href": "/zh/docs/latest/datavec/datavec_overview.html"
+        },
+        {
+          "title": "资源池化",
+          "desc": "提供主备机共享一份存储的能力",
+          "href": "/zh/docs/latest/resource_pooling/resource_pooling_overview.html"
+        },
+        {
+          "title": "Datakit",
+          "desc": "提供可视化操作界面，帮助用户管理，安装，监控运维openGauss数据库及物理机资源",
+          "href": "/zh/docs/latest/datakit/alert_monitor/datakit_alarm_mointor.html"
+        }
+      ]
+    },
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "开发指南",
+      "items": [
+        {
+          "title": "应用开发指南",
+          "desc": "为应用开发者编写的开发者手册",
+          "href": "/zh/docs/latest/developer_guide/application_development_guide.html"
+        },
+        {
+          "title": "编译指南",
+          "desc": "介绍openGauss编译的前提条件，操作步骤等",
+          "href": "/zh/docs/latest/compilation_guide/compilation.html"
+        }
+      ]
+    },
+    {
+      "columns": 4,
+      "columns_mb": 2,
+      "title": "参考指南",
+      "items": [
+        {
+          "title": "插件参考",
+          "desc": "帮助用户使用丰富的openGauss插件",
+          "href": "/zh/docs/latest/extension_reference/ndpplugin-Extension.html"
+        },
+        {
+          "title": "数据库参考",
+          "desc": "介绍openGauss的GUC参数，错误码等",
+          "href": "/zh/docs/latest/database_reference/guc_parameter_description.html"
+        },
+        {
+          "title": "工具和命令参考",
+          "desc": "介绍openGauss的客户端连接与服务器端管理工具",
+          "href": "/zh/docs/latest/tool_and_commandreference/tool_overview.html"
+        },
+        {
+          "title": "特性参考",
+          "desc": "提供openGauss数据库特性的详细描述",
+          "href": "/zh/docs/latest/characteristic_description/characteristic_description.html"
+        }
+      ]
+    }
+  ]
+}
