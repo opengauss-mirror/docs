@@ -32,15 +32,6 @@
         "bg_mb_dark": "/dsl/assets/img/quick-start.jpg"
       },
       {
-        "title": "Frequently Asked Questions",
-        "desc": "Get answers to common questions and troubleshooting tips",
-        "href": "/en/docs/common/faq/general/general_faq.html",
-        "bg_light": "/dsl/assets/img/qa.jpg",
-        "bg_dark": "/dsl/assets/img/qa.jpg",
-        "bg_mb_light": "/dsl/assets/img/qa.jpg",
-        "bg_mb_dark": "/dsl/assets/img/qa.jpg"
-      },
-      {
         "title": "Documentation Development Guide",
         "desc": "Discover how you can contribute to document development",
         "href": "/en/docs/common/contribute/directory_structure_introductory.html",
@@ -99,7 +90,7 @@
         "bg_icon": "/dsl/assets/img/icon-data-migration-bg.svg",
         "title": "Data Migration Guide",
         "desc": "Seamlessly move data to and from openGauss and multiple databases.",
-        "href": "/en/docs/latest/data_migration_guide/mysql_migration.html"
+        "href": "/en/docs/latest/data_migration_guide/mysql_compatible_description.html"
       }
     ]
   },
@@ -110,14 +101,14 @@
       "title": "Key Features",
       "items": [
         {
-          "title": "DataVec",
-          "desc": "Unlock lightning-fast vector search and retrieval on openGauss.",
-          "href": "/en/docs/latest/datavec/datavec_overview.html"
-        },
-        {
           "title": "Resource Pooling",
           "desc": "Get real-time data access for your primary and standby databases from a single shared storage.",
-          "href": "/en/docs/latest/resource_pooling/resource_pooling_overview.html"
+          "href": "/en/docs/latest/resource_pooling/common_faults_and_identification.html"
+        },
+        {
+          "title": "DataKit",
+          "desc": "Effortlessly manage, install, and monitor your openGauss databases and physical machines.",
+          "href": "/en/docs/latest/datakit/datakit.html"
         }
       ]
     },
@@ -129,12 +120,12 @@
         {
           "title": "Application Development Guide",
           "desc": "Build powerful applications on openGauss.",
-          "href": "/en/docs/latest/developer_guide/application_development_guide.html"
+          "href": "/en/docs/latest/developer_guide/query_request_handling_process.html"
         },
         {
           "title": "Compilation Guide",
           "desc": "Get ready to build.",
-          "href": "/en/docs/latest/compilation_guide/compilation.html"
+          "href": "/en/docs/latest/compilation_guide/setting_up_the_compilation_environment.html"
         }
       ]
     },
@@ -144,14 +135,14 @@
       "title": "References",
       "items": [
         {
-          "title": "Plugin Reference",
+          "title": "Extension Reference",
           "desc": "Enhance your openGauss database and extend its functionality.",
-          "href": "/en/docs/latest/extension_reference/ndpplugin-Extension.html"
+          "href": "/en/docs/latest/extension_reference/dolphin-extensions.html"
         },
         {
           "title": "Database Reference",
           "desc": "Get a clear-cut guide to all openGauss GUC parameters and error codes.",
-          "href": "/en/docs/latest/database_reference/database_reference.html"
+          "href": "/en/docs/latest/database_reference/guc-parameters.html"
         },
         {
           "title": "Tool and Command Reference",
@@ -161,7 +152,7 @@
         {
           "title": "Feature Reference",
           "desc": "Find a detailed overview of openGauss features and unlock new capabilities.",
-          "href": "/en/docs/latest/characteristic_description/characteristic_description.html"
+          "href": "/en/docs/latest/characteristic_description/high_performance.html"
         }
       ]
     }

@@ -99,7 +99,7 @@
         "bg_icon": "/dsl/assets/img/icon-data-migration-bg.svg",
         "title": "数据迁移指南",
         "desc": "实现openGauss与多种数据库的数据迁移",
-        "href": "/zh/docs/latest/data_migration_guide/mysql_migration.html"
+        "href": "/zh/docs/latest/data_migration_guide/mysql_compatible_description.html"
       }
     ]
   },
@@ -120,9 +120,9 @@
           "href": "/zh/docs/latest/resource_pooling/resource_pooling_overview.html"
         },
         {
-          "title": "Datakit",
+          "title": "DataKit",
           "desc": "提供可视化操作界面，帮助用户管理，安装，监控运维openGauss数据库及物理机资源",
-          "href": "/zh/docs/latest/datakit/alert_monitor/datakit_alarm_mointor.html"
+          "href": "/zh/docs/latest/datakit/datakit.html"
         }
       ]
     },
@@ -134,12 +134,12 @@
         {
           "title": "应用开发指南",
           "desc": "为应用开发者编写的开发者手册",
-          "href": "/zh/docs/latest/developer_guide/application_development_guide.html"
+          "href": "/zh/docs/latest/developer_guide/query_request_handling_process.html"
         },
         {
           "title": "编译指南",
           "desc": "介绍openGauss编译的前提条件，操作步骤等",
-          "href": "/zh/docs/latest/compilation_guide/compilation.html"
+          "href": "/zh/docs/latest/compilation_guide/setting_up_the_compilation_environment.html"
         }
       ]
     },
@@ -166,7 +166,7 @@
         {
           "title": "特性参考",
           "desc": "提供openGauss数据库特性的详细描述",
-          "href": "/zh/docs/latest/characteristic_description/characteristic_description.html"
+          "href": "/zh/docs/latest/characteristic_description/feature_overview.html"
         }
       ]
     }
