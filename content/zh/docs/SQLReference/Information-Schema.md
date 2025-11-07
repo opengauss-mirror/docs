@@ -8,7 +8,7 @@
 
 https://www.postgresql.org/docs/9.2/information-schema.html
 
-下面章节只显示未在上述链接内的视图信息。
+下面章节只显示未在上述链接内的视图或列信息。
 
 -   **[\_PG\_FOREIGN\_DATA\_WRAPPERS](_PG_FOREIGN_DATA_WRAPPERS.md)**  
 
@@ -20,5 +20,31 @@ https://www.postgresql.org/docs/9.2/information-schema.html
 
 -   **[\_PG\_USER\_MAPPINGS](_PG_USER_MAPPINGS.md)**  
 
+-   **[CHARACTER\_SETS](CHARACTER_SETS.md)**  
 
+-   **[COLLATIONS](COLLATIONS.md)**  
+
+-   **[COLUMNS](COLUMNS.md)**  
+
+-   **[EVENTS](EVENTS.md)**  
+
+-   **[KEYWORDS](KEYWORDS.md)**  
+
+-   **[KEY\_COLUMN\_USAGE](KEY_COLUMN_USAGE.md)**  
+
+-   **[PARAMETERS](PARAMETERS.md)**  
+
+-   **[PARTITIONS](PARTITIONS.md)**  
+
+-   **[REFERENTIAL\_CONSTRAINTS](REFERENTIAL_CONSTRAINTS.md)**  
+
+-   **[ROUTINES](ROUTINES.md)**  
+
+-   **[SCHEMATA](SCHEMATA.md)**  
+
+-   **[STATISTICS](STATISTICS.md)**  
+
+-   **[TABLES](TABLES.md)**  
+
+-   **[TABLE\_CONSTRAINTS](TABLE_CONSTRAINTS.md)**  
 
