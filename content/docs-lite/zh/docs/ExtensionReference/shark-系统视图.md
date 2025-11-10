@@ -13,6 +13,7 @@
 - **[OBJECTS](shark-OBJECTS.md)**
 - **[PROCEDURES](shark-PROCEDURES.md)**
 - **[SCHEMAS](shark-SCHEMAS.md)**
+- **[SERVER_PRINCIPALS](shark-SERVER_PRINCIPALS.md)**
 - **[SYSDATABASES](shark-SYSDATABASES.md)**
 - **[SYSOBJECTS](shark-SYSOBJECTS.md)**
 - **[SYSUSERS](shark-SYSUSERS.md)**
