@@ -25,7 +25,7 @@
       {
         "title": "Quick Start",
         "desc": "Learn the community essentials in 10 minutes, build and grow quickly",
-        "href": "/en/docs/latest/getting_started/understanding_opengauss.html",
+        "href": "/en/docs/latest/getting_started/getting_started.html",
         "bg_light": "/dsl/assets/img/quick-start.jpg",
         "bg_dark": "/dsl/assets/img/quick-start.jpg",
         "bg_mb_light": "/dsl/assets/img/quick-start.jpg",
@@ -103,7 +103,7 @@
         {
           "title": "Resource Pooling",
           "desc": "Get real-time data access for your primary and standby databases from a single shared storage.",
-          "href": "/en/docs/latest/resource_pooling/common_faults_and_identification.html"
+          "href": "/en/docs/latest/resource_pooling/common_fault_locating_methods.html"
         },
         {
           "title": "DataKit",
@@ -137,12 +137,12 @@
         {
           "title": "Extension Reference",
           "desc": "Enhance your openGauss database and extend its functionality.",
-          "href": "/en/docs/latest/extension_reference/dolphin-extensions.html"
+          "href": "/en/docs/latest/extension_reference/dolphin-overview.html"
         },
         {
           "title": "Database Reference",
           "desc": "Get a clear-cut guide to all openGauss GUC parameters and error codes.",
-          "href": "/en/docs/latest/database_reference/guc-parameters.html"
+          "href": "/en/docs/latest/database_reference/guc-parameter-usage.html"
         },
         {
           "title": "Tool and Command Reference",
@@ -152,7 +152,7 @@
         {
           "title": "Feature Reference",
           "desc": "Find a detailed overview of openGauss features and unlock new capabilities.",
-          "href": "/en/docs/latest/characteristic_description/high_performance.html"
+          "href": "/en/docs/latest/characteristic_description/cbo_optimizer.html"
         }
       ]
     }

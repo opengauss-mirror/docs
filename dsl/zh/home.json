@@ -151,12 +151,12 @@
         {
           "title": "插件参考",
           "desc": "帮助用户使用丰富的openGauss插件",
-          "href": "/zh/docs/latest/extension_reference/ndpplugin-Extension.html"
+          "href": "/zh/docs/latest/extension_reference/ndpplugin概述.html"
         },
         {
           "title": "数据库参考",
           "desc": "介绍openGauss的GUC参数，错误码等",
-          "href": "/zh/docs/latest/database_reference/guc_parameter_description.html"
+          "href": "/zh/docs/latest/database_reference/guc_application_note.html"
         },
         {
           "title": "工具和命令参考",
