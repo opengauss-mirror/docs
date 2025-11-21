@@ -1,0 +1,248 @@
+# CREATE TABLE
+
+## 功能描述<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s0867185fef0f4a228532d432b598cb26"></a>
+
+在当前数据库中创建一个新的空白表，该表由命令执行者所有。
+
+## 注意事项<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
+
+-   本章节只包含shark新增的语法，原openGauss的语法未做删除和修改。
+-   新增支持`opt_clustered`语法。
+-   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持通过WITH给出选项，对应index_parameters子句，新增支持的选项包括：
+```
+FILLFACTOR = fillfactor
+| PAD_INDEX = { ON | OFF }
+| IGNORE_DUP_KEY = { ON | OFF }
+| STATISTICS_NORECOMPUTE = { ON | OFF }
+| STATISTICS_INCREMENTAL = { ON | OFF }
+| ALLOW_ROW_LOCKS = { ON | OFF }
+| ALLOW_PAGE_LOCKS = { ON | OFF }
+| OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | OFF }
+| XML_COMPRESSION = { ON | OFF }
+| COMPRESSION_DELAY = { 0 | delay [ MINUTES | MINUTE ] }
+| DATA_COMPRESSION = { NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE }
+```
+其中FILLFACTOR选项的取值fillfactor为[1, 100]的整数，实际含义同A库（A库的取值范围为[10, 100]的整数），因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10;
+COMPRESSION_DELAY选项的取值delay为[0, 10080]的整数;
+除FILLFACTOR选项含有实际功能，同A库，其余参数均无实际功能，仅语法支持。
+-   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+-   建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+-   建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
+-   filegroup为任意字符串，支持通过[]包裹。
+-   如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
+-   ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
+
+## 语法格式<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
+
+创建表。
+
+```
+CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name 
+    ({ column_name data_type [ CHARACTER SET | CHARSET charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]
+        | table_constraint
+        | LIKE source_table [ like_option [...] ] }
+        [, ... ])
+    [ AUTO_INCREMENT [ = ] value ]
+    [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ]
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ] | [ ON filegroup ] | [ TEXTIMAGE_ON filegroup ] ]
+    [ COMPRESS | NOCOMPRESS ]
+    [ TABLESPACE tablespace_name ]
+    [ COMMENT {=| } 'text' ];
+```
+
+-   其中列约束column\_constraint为：
+
+    ```
+    [ CONSTRAINT constraint_name ]
+    { NOT NULL |
+      NULL |
+      CHECK ( expression ) |
+      DEFAULT default_expr |
+      GENERATED ALWAYS AS ( generation_expr ) [STORED] |
+      AUTO_INCREMENT |
+      ON UPDATE update_expr |
+      UNIQUE [KEY] index_parameters [ ON filegroup ] |
+      ENCRYPTED WITH ( COLUMN_ENCRYPTION_KEY = column_encryption_key, ENCRYPTION_TYPE = encryption_type_value ) |
+      PRIMARY KEY index_parameters [ ON filegroup ] |
+      REFERENCES reftable [ ( refcolumn ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+          [ ON DELETE action ] [ ON UPDATE action ] }
+    [ ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE] ]
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
+    ```
+
+-   其中表约束table\_constraint为：
+
+    ```
+    [ CONSTRAINT [ constraint_name ] ]
+    { CHECK ( expression ) |
+      UNIQUE [ opt_clustered ] ( { { column_name [ ( length ) ] | ( expression ) } [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] [ ON filegroup ] |
+      PRIMARY KEY [ opt_clustered ] ( { column_name [ ASC | DESC ] } [, ... ] ) index_parameters [ VISIBLE | INVISIBLE ] [ ON filegroup ] |
+      FOREIGN KEY [ index_name ] ( column_name [, ... ] ) REFERENCES reftable [ (refcolumn [, ... ] ) ]
+          [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE action ] [ ON UPDATE action ] |
+      PARTIAL CLUSTER KEY ( column_name [, ... ] ) }
+    [ DEFERRABLE | NOT DEFERRABLE | INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+    [ COMMENT {=| } 'text' ]
+    ```
+
+-   其中索引参数index\_parameters为：
+
+    ```
+    [ WITH ( {storage_parameter = value} [, ... ] ) ]
+    [ USING INDEX TABLESPACE tablespace_name ]
+    ```
+
+## 参数说明<a name="zh-cn_topic_0283137629_zh-cn_topic_0237122117_zh-cn_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
+
+
+-   **opt\_clustered**
+
+    参数内容为CLUSTERED/NONCLUSTERED，兼容D库的语法，指定创建聚合/非聚合索引。仅语法作用，没有实际功能。
+
+-  **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
+
+    这个子句为表或索引指定一个可选的存储参数。用于表的WITH子句还可以包含OIDS=FALSE表示不分配OID。
+
+    针对UNIQUE和PRIMARY KEY约束，新增支持的storage\_parameter选项包括：
+
+    -   FILLFACTOR
+
+        int类型，填充因子，实际的含义和功能同A库。
+
+        取值范围：[1, 100]的整数，A库的取值范围为[10, 100]的整数，因此当D库中fillfactor的取值范围为[1, 10)，不报错，将打印notice信息，并将fillfactor的取值设置为A库的最小值10。
+
+    -   PAD_INDEX
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   IGNORE_DUP_KEY
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   STATISTICS_NORECOMPUTE
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   STATISTICS_INCREMENTAL
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   ALLOW_ROW_LOCKS
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   ALLOW_PAGE_LOCKS
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   OPTIMIZE_FOR_SEQUENTIAL_KEY
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   XML_COMPRESSION
+
+        bool类型，无实际功能，仅语法兼容。
+
+        取值范围：ON或者OFF。
+
+    -   COMPRESSION_DELAY
+
+        int类型，单位MINUTES或者MINUTE，可选，无实际功能，仅语法兼容。
+
+        取值范围：0 | delay [ MINUTES | MINUTE ]，其中delay为[0, 10080]的整数。
+
+    -   DATA_COMPRESSION
+
+        string类型，无实际功能，仅语法兼容。
+
+        取值范围：NONE | ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE。
+
+-   **filegroup**
+
+    -   建表语句中，针对UNIQUE和PRIMARY KEY约束，支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+    -   建表语句新增支持ON {filegroup | "default" } 选项，无实际作用，仅语法支持。
+    -   建表语句新增支持TEXTIMAGE_ON { filegroup | "default" } 选项，无实际作用，仅语法支持。
+    -   filegroup为任意字符串，支持通过[]包裹。
+    -   如果同时指定ON filegroup子句和TEXTIMAGE_ON filegroup子句，ON filegroup子句应位于前面，否则会出现语法报错。
+    -   ON/TEXTIMAGE_ON filegroup子句无法和ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP }子句同时存在。
+
+## WITH \( \{ storage\_parameter = value \} \[, ... \] \)示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+
+```
+create table test_with_1(a int, CONSTRAINT PK_test_with_1 PRIMARY KEY(a)
+WITH (PAD_INDEX = OFF, FILLFACTOR = 50, IGNORE_DUP_KEY = off, STATISTICS_NORECOMPUTE = off, STATISTICS_INCREMENTAL = off,
+ALLOW_ROW_LOCKS = off, ALLOW_PAGE_LOCKS = off, OPTIMIZE_FOR_SEQUENTIAL_KEY = off, XML_COMPRESSION = off));
+NOTICE:  parameter "pad_index" is currently ignored.
+NOTICE:  parameter "ignore_dup_key" is currently ignored.
+NOTICE:  parameter "statistics_norecompute" is currently ignored.
+NOTICE:  parameter "statistics_incremental" is currently ignored.
+NOTICE:  parameter "allow_row_locks" is currently ignored.
+NOTICE:  parameter "allow_page_locks" is currently ignored.
+NOTICE:  parameter "optimize_for_sequential_key" is currently ignored.
+NOTICE:  parameter "xml_compression" is currently ignored.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_test_with_1" for table "test_with_1"
+
+create table test_with_2(a int, CONSTRAINT PK_test_with_2 PRIMARY KEY(a) with (COMPRESSION_DELAY = 0 MINUTES));
+NOTICE:  parameter "compression_delay" is currently ignored.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_test_with_2" for table "test_with_2"
+
+create table test_with_3(a int, CONSTRAINT PK_test_with_3 PRIMARY KEY(a) with (COMPRESSION_DELAY = 10080 minute));
+NOTICE:  parameter "compression_delay" is currently ignored.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_test_with_3" for table "test_with_3"
+
+create table test_with_4(a int, CONSTRAINT PK_test_with_4 PRIMARY KEY(a) with (data_compression = COLUMNSTORE_ARCHIVE));
+NOTICE:  parameter "data_compression" is currently ignored.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "pk_test_with_4" for table "test_with_4"
+
+create table test_with_5(a int, PRIMARY KEY(a) with (pad_index = on, fillfactor = 20));
+NOTICE:  parameter "pad_index" is currently ignored.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_with_5_pkey" for table "test_with_5"
+
+create table test_with_6(a int, PRIMARY KEY(a) with (pad_index = on, fillfactor = 1));
+NOTICE:  parameter "pad_index" is currently ignored.
+NOTICE:  parameter fillfactor will be set to 10 when it is less than 10.
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "test_with_6_pkey" for table "test_with_6"
+
+create table test_with_7(a int, UNIQUE(a) with (pad_index = on, fillfactor = 1));
+NOTICE:  parameter "pad_index" is currently ignored.
+NOTICE:  parameter fillfactor will be set to 10 when it is less than 10.
+NOTICE:  CREATE TABLE / UNIQUE will create implicit index "test_with_7_a_key" for table "test_with_7"
+```
+
+## filegroup示例<a name="zh-cn_topic_0283136578_zh-cn_topic_0237122106_zh-cn_topic_0059777455_s985289833081489e9d77c485755bd362"></a>
+
+```
+create table t1(a int) on [primary];
+create table t2(a int) on "default";
+create table t3(id int) on [filegroup];
+create table t4(id int) on filegroup;
+create table t5(id int) on 'filegroup';
+create table t6(id int) on "filegroup";
+create table t7(a int) textimage_on [primary];
+create table t8(a int) textimage_on "default";
+create table t9(a int) on "default" textimage_on [primary];
+create table t10(a int) on "default" textimage_on "default";
+create table t11(a int PRIMARY KEY WITH (PAD_INDEX = OFF) ON [primary]) ON [primary];
+create table t12(a int UNIQUE WITH (XML_COMPRESSION = OFF) ON [primary]) ON [primary];
+create table t13(a int, CONSTRAINT PK_t11 PRIMARY KEY(a) WITH (PAD_INDEX = OFF) ON [primary]) ON [primary];
+create table t14(a int, CONSTRAINT PK_t12 UNIQUE(a) WITH (XML_COMPRESSION = OFF) ON [primary]) ON [primary];
+```
+
+## 相关链接<a name="section156744489391"></a>
+
+[CREATE TABLE](../SQLReference/CREATE-TABLE.md)
