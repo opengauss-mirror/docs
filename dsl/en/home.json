@@ -137,7 +137,7 @@
         {
           "title": "Extension Reference",
           "desc": "Enhance your openGauss database and extend its functionality.",
-          "href": "/en/docs/latest/extension_reference/dolphin-overview.html"
+          "href": "/en/docs/latest/extension_reference/dolphin.html"
         },
         {
           "title": "Database Reference",
