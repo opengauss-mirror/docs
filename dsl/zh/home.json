@@ -151,7 +151,7 @@
         {
           "title": "插件参考",
           "desc": "帮助用户使用丰富的openGauss插件",
-          "href": "/zh/docs/latest/extension_reference/ndpplugin概述.html"
+          "href": "/zh/docs/latest/extension_reference/ndpplugin.html"
         },
         {
           "title": "数据库参考",
