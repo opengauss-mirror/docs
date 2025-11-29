@@ -889,6 +889,7 @@ headless: true
 		-   [向量索引]({{< relref "./docs/SQLReference/向量索引.md" >}})
 		-   [融合查询使用指南]({{< relref "./docs/SQLReference/融合查询使用指南.md" >}})
 	-   [向量存储引擎]({{< relref "./docs/DataVec/DataVec-architecture.md" >}})
+		-   [RABITQ]({{< relref "./docs/DataVec/RabitQ.md" >}})
 		-   [PQ]({{< relref "./docs/DataVec/PQ.md" >}})
 		-   [IVFFLAT-NPU]({{< relref "./docs/DataVec/ivfflat-npu.md" >}})
 		-   [DISKANN]({{< relref "./docs/DataVec/DiskANN.md" >}})
