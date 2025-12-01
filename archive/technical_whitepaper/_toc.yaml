@@ -1,0 +1,27 @@
+label: Technical White Paper
+isManual: true
+sections:
+  - label: Application Scenario
+    href: ./application_scenario.md
+  - label: Core Database Technologies
+    href: ./core_database_technologies.md
+  - label: Deployment Solutions
+    href: ./deployment_solutions.md
+  - label: Glossary
+    href: ./glossary.md
+  - label: Hardware and Software Configuration Requirements
+    href: ./hardware_and_software_configuration_requirements.md
+  - label: Product Positioning
+    href: ./product_positioning.md
+  - label: Software Architecture
+    href: ./software_architecture.md
+  - label: Technical White Paper
+    href: ./technicalwhitepaper.md
+  - label: Technical Characteristics
+    href: ./technical_characteristics.md
+  - label: Technical Specifications
+    href: ./technical_specifications.md
+  - label: Typical Networking
+    href: ./typical_networking.md
+  - label: Technical Specifications
+    href: ./technical_specifications.md

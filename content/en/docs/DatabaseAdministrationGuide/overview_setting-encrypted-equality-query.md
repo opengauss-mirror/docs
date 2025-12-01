@@ -1,4 +1,0 @@
-# Overview<a name="EN-US_TOPIC_0000001102868052"></a>
-
-As enterprise data is migrated to the cloud, data security and privacy protection are facing increasingly severe challenges. The encrypted database will solve the privacy protection issues in the entire data lifecycle, covering network transmission, data storage, and data running status. Furthermore, the encrypted database can implement data privacy permission separation in a cloud scenario, that is, separate data owners from data administrators in terms of the read permission. The encrypted equality query is used to solve equality query issues of ciphertext data. The encrypted equality query supports the client tool GSQL and JDBC. The following describes how to use the client tool to perform operations related to encrypted equality query.
-

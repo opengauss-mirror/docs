@@ -1,7 +1,0 @@
-# Instance
-
--   **[INSTANCE\_TIME](INSTANCE_TIME.md)**  
-
--   **[GLOBAL\_INSTANCE\_TIME](GLOBAL_INSTANCE_TIME.md)**  
-
-
