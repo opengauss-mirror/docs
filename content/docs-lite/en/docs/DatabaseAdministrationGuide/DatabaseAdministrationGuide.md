@@ -1,1 +1,0 @@
-# Database Administration Guide

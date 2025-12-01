@@ -1,3 +1,0 @@
-# DBCC语法
-
--   **[DBCC-CHECKIDENT](shark-DBCC-CHECKIDENT.md)**
