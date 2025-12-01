@@ -1,0 +1,129 @@
+label: 向量数据库
+isManual: true
+sections:
+  - label: 概述
+    href: ./datavec_overview.md
+  - label: 快速入门
+    href: ./datavec_quickstart.md
+  - label: DataVec向量引擎
+    sections:
+      - label: 向量数据类型
+        href: ../sql_reference/vector_data_type.md
+      - label: 向量函数和操作符
+        href: ../sql_reference/vector_functions_and_operators.md      
+      - label: 向量索引
+        href: ../sql_reference/vector_index.md
+      - label: 融合查询使用指南
+        href: ../sql_reference/fusion_queries_using_guide.md  
+  - label: 向量存储引擎
+    sections:
+      - label: 概述
+        href: ./datavec_architecture.md
+      - label: PQ
+        href: ./pq.md
+      - label: IVFFLAT-NPU
+        href: ./ivfflat_npu.md
+      - label: DISKANN
+        href: ./diskann.md
+  - label: 全文检索索引
+    sections:
+      - label: 简介
+        href: ./full_text.md    
+      - label: BM25索引
+        sections:
+          - label: 索引介绍
+            href: ./bm25_full_text_search_index.md
+          - label: 索引实现
+            href: ./bm25_index_implementation.md
+          - label: 使用指导
+            href: ./bm25_usage_guide.md
+          - label: 参数介绍与调优
+            href: ../database_reference/bm25_full_text_retrieval_index_parameters.md
+      - label: GIN索引
+        sections:
+          - label: 介绍
+            href:  ../sql_reference/introduction_gin.md     
+          - label: 扩展性
+            href:  ../sql_reference/expansibility.md 
+          - label: 实现
+            href:  ../sql_reference/implement.md 
+          - label: GIN提示与技巧
+            href:  ../sql_reference/gin_tips_and_tricks.md  
+  - label: 工具编排使用
+    sections:
+      - label:  编排组件
+        sections:
+          - label: Dify
+            href: ./dify.md
+          - label: AnythingLLM
+            href: ./anythingllm.md
+          - label: LlamaIndex
+            href: ./llama_index.md
+          - label: openEuler Intelligence
+            href: ./eulercopilot.md
+          - label: RAGFlow
+            href: ./ragflow.md
+      - label:  嵌入模型
+        sections: 
+          - label: BGE-M3
+            href: ./embedding_bgem3.md
+          - label: Nomic
+            href: ./embedding_nomic.md
+          - label: openGauss-SentenceTransformer实践
+            href: ./sentence_transformer.md
+      - label:  Agents
+        sections:
+          - label: MCP
+            href: ./mcp.md
+          - label: Mem0
+            href: ./mem0.md
+      - label:  数据迁移
+        sections:
+          - label: 从Milvus迁移至openGauss DataVec
+            href: ./milvus2datavec.md
+          - label: 从ElasticSearch迁移至openGauss
+            href: ./elasticsearch_to_opengauss.md  
+      - label:  API reference
+        sections:
+          - label: Python SDK
+            href: ./integration_python.md
+          - label: Java SDK
+            href: ./integration_java.md
+          - label: Node.js SDK
+            href: ./integration_java_script.md
+          - label: Go SDK
+            href: ./integration_go.md
+          - label: C# SDK
+            href: ./integration_csharp.md
+          - label: C++ SDK
+            href: ./integration_cpp.md
+      - label:  性能测试
+        sections:
+          - label: VectorDBBench
+            href: ./opengauss_vector_dbb_ench.md
+          - label: AnnBenchmark
+            href: ./testtool_annbenchmark.md
+  - label: 教程案例指导
+    sections:
+      - label: 打破AI黑盒，拥抱开源力量：基于openGauss+DeepSeek的本地知识库，打造你的专属AI助手
+        href: ./opengauss_ragpratice.md
+      - label: openGauss DataVec + Dify，快速搭建你的智能助手平台
+        href: ./opengauss_dify.md
+      - label: Spring Boot集成openGauss DataVec实现高效RAG知识问答
+        href: ./opengauss_springboot.md
+      - label: openGauss AGEGraph + 大模型实现 GraphRAG，助力更强 RAG
+        href: ./opengauss_agegraph.md
+      - label: 基于Qwen3+openGauss，部署个人专属RAG知识库系统
+        href: ./datavec_qwen3.md
+      - label: 从数据到智能：openGauss+openEuler Intelligence的RAG架构实战
+        href: ./opengauss_eulercopilot.md
+      - label: openGauss + Ragflow 从部署到集成
+        href: ./opengauss_ragflow.md
+  - label: 图数据库引擎
+    sections:
+      - label: 快速开始
+        href: ./gallery_engine_age.md
+      - label: 适配详情
+        href: ./apache_age_adaptation.md
+  - label: 推理加速
+    href: ./inference_acceleration.md

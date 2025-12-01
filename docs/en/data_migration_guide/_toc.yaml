@@ -1,0 +1,22 @@
+label: Data Migration Guide
+isManual: true
+sections:
+  - label: B-compatible Description
+    href: ./mysql_compatible_description.md
+  - label: Assessment Tool
+    href: ./mysql_assessment_tool.md
+  - label: Migrating Data from MySQL database to openGauss
+    href: ./migrating_data_from_mysql_database_to_opengauss.md
+    sections:
+      - label: Overview
+        href: ./migrating_data_from_mysql_database_to_opengauss.md
+      - label: Quick MySQL Migration
+        href: ./quick_mysql_migration.md
+      - label: Full Migration
+        href: ./full_migration.md
+      - label: Incremental Migration
+        href: ./incremental_migration.md
+      - label: Reverse Migration
+        href: ./reverse_migration.md
+      - label: Data Check
+        href: ./data_check.md

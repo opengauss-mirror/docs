@@ -1,0 +1,39 @@
+# 资源池化OM安装部署指南
+
+## 内容简介
+
+openGauss资源池化是openGauss推出的一种新型的集群架构。该架构通过DMS和DSS组件，实现集群中多个节点的底层存储数据共享和节点间的内存实时共享，达到节省底层存储资源以及集群内部支持一写多读且可以实时一致性读的目的。
+本文主要介绍如何用企业版安装包，使用OM安装资源池化环境。
+
+## 环境预备
+
+### 物理环境
+
+- 两台及以上的物理机
+- 一台企业级集中式存储（比如Huawei Dorado系列）或支持iscsi3协议的集中式存储
+- 两台物理机和存储之间通过光交换机互连，两台物理机之间通过光交换机或以太交换机互连，业务客户端和物理机之间通过光交换机或以太交换机互连
+
+### 虚拟环境
+
+- 两台及以上的虚拟机（如DCS，ECS等）
+- 四个支持SCSI3协议的共享磁盘
+
+## OM安装指南
+ >
+ >[!NOTE]说明  
+  >
+  > - 存储自身的配置、LUN的划分以及存储节点与机器的连通配置不在安装指导范围中，此处假定机器已经可以看到用于安装数据库的LUN。
+  > - 一套集群需要4个LUN，说明如下:
+    1. cm_vote, cm投票盘，1套集群1个
+    2. cm_shared, cm数据盘，1套集群1个
+    3. dss_data， 数据库数据盘，1套集群1个
+    4. dss_log， 数据库XLog盘，1套集群1个
+
+1. 准备软件包以及准备操作系统环境，详情参考：[获取安装包](../getting_started/obtaining_and_verifying_an_installation_package.md) 和 [准备软硬件安装环境](../getting_started/preparing_for_installation.md)
+
+2. 准备安装需要的xml，详情参考：[创建XML配置文件](../installation_guide/creating_an_xml_configuration_file.md)
+
+3. 执行preinstall, 详情参考：[初始化安装环境](../installation_guide/initializing_the_installation_environment.md)
+
+4. 执行install, 详情参考：[执行安装](../installation_guide/executing_installation.md)
+    

@@ -1,0 +1,216 @@
+label: 数据库管理指南
+isManual: true
+sections:
+      - label: 基础概念
+        href: ./database_concepts.md
+      - label: 数据存储管理
+        sections:
+          - label: “存储结构： 段页式存储结构”
+            href: ./segmentation_with_paging_storage_structure.md
+          - label: "存储模型: 规划存储模型"
+            href: ./planning_storage_models.md    
+          - label: 数据压缩
+            sections:      
+              - label: 自适应压缩
+                href: ./adaptive_compression.md
+              - label: 支持OLTP场景数据压缩
+                href: ./data_compression_in_oltp_scenarios.md
+          - label: Ustore存储引擎
+            href: ./in_place_update_storage_engine.md
+      - label: 创建和管理数据库
+        href: ./creating_and_managing_databases.md
+      - label: 创建和管理表空间
+        href: ./creating_and_managing_tablespaces.md
+      - label: 数据库对象管理
+        sections:  
+          - label: 创建和管理schema
+            href: ./creating_and_managing_schemas.md
+          - label: 创建和管理表
+            href: ./creating_and_managing_tables.md
+            sections:
+              - label: 创建表
+                href: ./creating_tables.md
+              - label: 向表中插入数据
+                href: ./inserting_data_to_tables.md
+              - label: 更新表中数据
+                href: ./updating_data_in_a_table.md
+              - label: 查看数据
+                href: ./viewing_data.md    
+              - label: 删除表中数据
+                href: ./deleting_data_from_a_table.md
+          - label: 创建和管理分区表
+            href: ./creating_and_managing_partitioned_tables.md
+          - label: 创建和管理索引
+            href: ./creating_and_managing_indexes.md
+          - label: 创建和管理视图
+            href: ./creating_and_managing_views.md
+          - label: 创建和管理序列
+            href: ./creating_and_managing_sequences.md
+      - label: 内存优化表MOT管理
+        sections:
+          - label: MOT简介
+            href: ./mot_introduction.md
+          - label: MOT特性及价值
+            href: ./mot_features_and_benefits.md
+          - label: MOT关键技术
+            href: ./mot_key_technologies.md
+          - label: MOT应用场景
+            href: ./mot_usage_scenarios.md
+          - label: MOT性能基准
+            sections:
+              - label: 概述
+                href: ./mot_performance_benchmarks.md            
+              - label: MOT硬件
+                href: ./mot_hardware.md
+              - label: MOT测试总结
+                href: ./mot_results_summary.md
+              - label: MOT高吞吐量
+                href: ./mot_high_throughput.md
+              - label: MOT低延迟
+                href: ./mot_low_latency.md
+              - label: MOT恢复时间目标（RTO）和冷启动时间
+                href: ./mot_rto_and_cold_start_time.md
+              - label: MOT资源利用率
+                href: ./mot_resource_utilization.md
+              - label: MOT数据采集速度
+                href: ./mot_data_ingestion_speed.md
+          - label: 使用MOT
+            sections:
+              - label: MOT使用概述
+                href: ./mot_usage_scenarios.md
+              - label: MOT准备：前提条件
+                href: ./mot_prerequisites.md
+              - label: MOT准备：MOT内存和存储规划
+                href: ./mot_memory_and_storage_planning.md
+              - label: MOT部署： MOT服务器优化（x86）
+                href: ./mot_server_optimization_x86.md
+              - label: MOT部署： MOT服务器优化（基于Arm的华为TaiShan2P/4P服务器）
+                href: ./mot_server_optimization_arm_huawei_taishan_2p_4p.md
+              - label: MOT部署： MOT配置
+                href: ./mot_configuration.md
+              - label: MOT使用
+                href: ./mot_usage.md
+              - label: MOT使用：授予用户权限
+                href: ./granting_user_permissions.md
+              - label: MOT使用：创建/删除MOT
+                href: ./creating_dropping_an_mot_table.md
+              - label: MOT使用：为MOT创建索引
+                href: ./creating_an_index_for_an_mot_table.md
+              - label: MOT使用：将磁盘表转换为MOT
+                href: ./converting_a_disk_table_into_an_mot_table.md
+              - label: MOT使用：查询原生编译
+                href: ./query_native_compilation.md    
+              - label: MOT使用：重试中止事务
+                href: ./retrying_an_aborted_transaction.md
+              - label: MOT使用：MOT外部支持工具
+                href: ./mot_external_support_tools.md
+              - label: MOT使用：MOT SQL覆盖和限制
+                href: ./mot_sql_coverage_and_limitations.md
+              - label: MOT管理：MOT持久性
+                href: ./mot_durability.md
+              - label: MOT管理：MOT恢复
+                href: ./mot_recovery.md
+              - label: MOT管理：MOT复制和高可用
+                href: ./mot_replication_and_high_availability.md
+              - label: MOT管理：MOT内存管理
+                href: ./mot_memory_management.md
+              - label: MOT管理：MOT VACUUM清理
+                href: ./mot_vacuum.md
+              - label: MOT管理：MOT统计
+                href: ./mot_statistics.md
+              - label: MOT管理：MOT监控
+                href: ./mot_monitoring.md
+              - label: MOT管理：MOT错误消息
+                href: ./mot_error_messages.md
+              - label: MOT样例TPC-C基准
+                href: ./mot_sample_tpc_c_benchmark.md
+          - label: MOT的概念
+            sections:
+              - label: MOT纵向扩容架构
+                href: ./mot_scale_up_architecture.md
+              - label: MOT并发控制机制
+                href: ./mot_concurrency_control_mechanism.md
+              - label: 扩展FDW与其他openGauss特性
+                href: ./extended_fdw_and_other_opengauss_features.md
+              - label: NUMA-aware分配和亲和性
+                href: ./numa_awareness_allocation_and_affinity.md
+              - label: MOT索引
+                href: ./mot_index.md
+              - label: MOT持久性概念
+                href: ./mot_durability_concepts.md
+              - label: MOT恢复概念
+                href: ./mot_recovery_concepts.md
+              - label: MOT查询原生编译（JIT）
+                href: ./mot_query_native_compilation_jit.md
+              - label: 对比：磁盘与MOT
+                href: ./comparison_disk_vs_mot.md
+      - label: 管理数据库安全
+        sections:
+          - label: 客户端接入认证
+            sections:
+              - label: 配置客户端接入认证
+                href: ./configuring_client_access_authentication.md
+              - label: 配置文件参考
+                href: ./configuration_file_reference.md
+              - label: 用SSH隧道进行安全的TCP/IP连接
+                href: ./establishing_secure_tcp_ip_connections_in_ssh_tunnel_mode.md
+              - label: 用SSL进行安全的TCP/IP连接
+                href: ./establishing_secure_tcp_ip_connections_in_ssl_mode.md
+              - label: 查看数据库连接数
+                href: ./checking_the_number_of_database_connections.md
+              - label: SSL证书管理
+                href: ./ssl_certificate_management.md
+          - label: 管理用户及权限
+            sections:
+              - label: 默认权限机制
+                href: ./default_permission_mechanism.md
+              - label: 管理员
+                href: ./administrator.md
+              - label: 三权分立
+                href: ./separation_of_duties.md
+              - label: 用户
+                href: ./users.md
+              - label: 角色
+                href: ./roles.md
+              - label: Schema
+                href: ./schema.md
+              - label: 用户权限设置
+                href: ./setting_user_permissions.md
+              - label: 行级访问控制
+                href: ./row_level_access_control.md
+              - label: 设置密码安全策略
+                href: ./setting_password_security_policies.md
+              - label: 设置帐号有效期
+                href: ./setting_the_validity_period_of_an_account.md
+              - label: 设置帐户安全策略
+                href: ./setting_account_security_policies.md
+          - label: 设置数据库审计
+            sections:
+              - label: 审计概述
+                href: ./audit_overview.md
+              - label: 查看审计结果
+                href: ./querying_audit_results.md
+              - label: 维护审计日志
+                href: ./maintaining_audit_logs.md
+              - label: 设置文件权限安全策略
+                href: ./configuring_file_permission_security_policies.md
+          - label: 设置账本数据库
+            sections:
+              - label: 账本数据库概述
+                href: ./overview_setting_a_ledger_database.md
+              - label: 查看账本历史操作记录
+                href: ./viewing_historical_operation_records_in_the_ledger.md
+              - label: 校验账本数据一致性
+                href: ./checking_ledger_data_consistency.md
+              - label: 归档账本数据库
+                href: ./archiving_a_ledger_database.md
+              - label: 修复账本数据库
+                href: ./repairing_a_ledger_database.md
+          - label: 设置透明数据加密（TDE）
+            href: ./configuring_tde.md
+      - label: 参数配置
+        sections:
+          - label: 查看参数
+            href: ./viewing_parameter_values.md
+          - label: 重设参数
+            href: ./reset_parameters.md

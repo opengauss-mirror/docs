@@ -1,0 +1,49 @@
+label:  Installation Guide
+isManual: true
+sections:
+  - label: Installation Overview
+    href: ./installation_overview.md
+  - label: Simplified Installation Process
+    sections:
+      - label: Obtaining the Installation Package
+        href: ./obtaining_the_installation_package.md
+      - label: Preparing the Software and Hardware Installation Environment
+        href: ./preparing_the_software_and_hardware_installation_environment.md
+      - label: Server Installation
+        sections:
+          - label: Installation on a Single Node
+            href: ./installation_on_a_single_node.md
+          - label: Installation on Primary/Standby Nodes
+            href: ./installation_on_primary_standby_nodes.md
+      - label: Container-based Installation
+        sections:
+          - label: Installation on a Single Node
+            href: ./installation_on_a_single_node_container.md
+      - label: Installation Using an RPM Package
+        href: ./installation_using_an_rpm_package.md
+  - label: Enterprise-Edition Installation Process
+    sections:
+      - label: Installation Process
+        href: ./installation_process.md
+      - label: Obtaining and Verifying an Installation Package
+        href: ./obtaining_and_verifying_an_installation_package.md
+      - label: Preparing the Software and Hardware Installation Environment
+        href: ./preparing_the_software_and_hardware_installation_environment_enterprise.md
+      - label: Installation User and User Group
+        href: ./installation_user_and_user_group.md
+      - label: Installing the openGauss
+        sections:
+          - label: Creating an XML Configuration File
+            href: ./creating_an_xml_configuration_file.md
+          - label: Initializing the Installation Environment
+            href: ./initializing_the_installation_environment.md
+          - label: Executing Installation
+            href: ./executing_installation.md
+          - label: Verifying the Installation
+            href: ./verifying_the_installation.md
+      - label: Initializing the Database
+        href: ./initializing_the_database.md
+      - label: (Optional) Setting the Standby Node to Readable
+        href: ./optional_setting_the_standby_node_to_readable.md
+  - label: Uninstalling the openGauss
+    href: ./uninstalling_the_opengauss.md

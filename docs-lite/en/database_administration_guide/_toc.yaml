@@ -1,0 +1,214 @@
+label: Database Administration Guide
+isManual: true
+sections:
+  - label: Concepts
+    href: ./database_concepts.md
+  - label: Creating and Managing Databases
+    href: ./creating_and_managing_databases.md
+  - label: Creating and Managing Tablespaces
+    href: ./creating_and_managing_tablespaces.md
+  - label: Other Operations
+    href: ./other_operations.md
+    sections:
+      - label: Creating and Managing Schemas
+        href: ./creating_and_managing_schemas.md
+      - label: Creating and Managing Tables
+        sections:
+          - label: Creating Tables
+            href: ./creating_tables.md
+          - label: Inserting Data to Tables
+            href: ./inserting_data_to_tables.md
+          - label: Updating Data in a Table
+            href: ./updating_data_in_a_table.md
+          - label: Viewing Data
+            href: ./viewing_data.md
+          - label: Deleting Data from a Table
+            href: ./deleting_data_from_a_table.md
+      - label: Creating and Managing Partitioned Tables
+        href: ./creating_and_managing_partitioned_tables.md
+      - label: Creating and Managing Indexes
+        href: ./creating_and_managing_indexes.md
+      - label: Creating and Managing Views
+        href: ./creating_and_managing_views.md
+      - label: Creating and Managing Sequences
+        href: ./creating_and_managing_sequences.md
+  - label: MOT Engine
+    sections:
+      - label: MOT Introduction
+        href: ./mot_introduction.md
+      - label: MOT Features and Benefits
+        href: ./mot_features_and_benefits.md
+      - label: MOT Key Technologies
+        href: ./mot_key_technologies.md
+      - label: MOT Usage Scenarios
+        href: ./mot_usage_scenarios.md
+      - label: MOT Performance Benchmarks
+        sections:
+          - label: Overview
+            href: ./mot_performance_benchmarks.md
+          - label: MOT Hardware
+            href: ./mot_hardware.md
+          - label: MOT Results – Summary
+            href: ./mot_results_summary.md
+          - label: MOT High Throughput
+            href: ./mot_high_throughput.md
+          - label: MOT Low Latency
+            href: ./mot_low_latency.md
+          - label: MOT RTO and Cold-Start Time
+            href: ./mot_rto_and_cold_start_time.md
+          - label: MOT Resource Utilization
+            href: ./mot_resource_utilization.md
+          - label: MOT Data Ingestion Speed
+            href: ./mot_data_ingestion_speed.md
+      - label: Using MOT
+        sections:
+          - label: Using MOT Overview
+            href: ./using_mot_overview.md
+          - label: "MOT Preparation: MOT Prerequisites"
+            href: ./mot_prerequisites.md
+          - label: "MOT Preparation: MOT Memory and Storage Planning"
+            href: ./mot_memory_and_storage_planning.md
+          - label:  "MOT Deployment: mot_server_optimization"
+            href: ./mot_server_optimization.md
+          - label:  "MOT Deployment: MOT Configuration Settings"
+            href: ./mot_configuration.md
+          - label: MOT Usage
+            href: ./mot_usage.md
+          - label: "MOT Usage: Granting User Permissions"
+            href: ./granting_user_permissions.md
+          - label: "MOT Usage: Creating/Deleting an MOT"
+            href: ./creating_dropping_an_mot_table.md
+          - label: "MOT Usage: Creating an Index for an MOT"
+            href: ./creating_an_index_for_an_mot_table.md
+          - label: "MOT Usage: Converting a Disk Table into an MOT"
+            href: ./converting_a_disk_table_into_an_mot_table.md
+          - label: "MOT Usage: Query Native Compilation"
+            href: ./query_native_compilation.md
+          - label: "MOT Usage: Retrying an Aborted Transaction"
+            href: ./retrying_an_aborted_transaction.md
+          - label: "MOT Usage: MOT External Support Tools"
+            href: ./mot_external_support_tools.md
+          - label: "MOT Usage: MOT SQL Coverage and Limitations"
+            href: ./mot_sql_coverage_and_limitations.md
+          - label: "MOT Administration: MOT Durability"
+            href: ./mot_durability.md
+          - label: "MOT Administration: MOT Recovery"
+            href: ./mot_recovery.md
+          - label: "MOT Administration: MOT Replication and High Availability"
+            href: ./mot_replication_and_high_availability.md
+          - label: "MOT Administration: MOT Memory Management"
+            href: ./mot_memory_management.md
+          - label: "MOT Administration: MOT Vacuum"
+            href: ./mot_vacuum.md
+          - label: "MOT Administration: MOT Statistics"
+            href: ./mot_statistics.md
+          - label: "MOT Administration: MOT Monitoring"
+            href: ./mot_monitoring.md
+          - label: "MOT Administration: MOT Error Messages"
+            href: ./mot_error_messages.md
+          - label: MOT Sample TPC-C Benchmark
+            href: ./mot_sample_tpc_c_benchmark.md
+      - label: Concepts of MOT
+        sections:
+          - label: Overview
+            href: ./mot_concept.md
+          - label: MOT Scale-up Architecture
+            href: ./mot_scale_up_architecture.md
+          - label: MOT Concurrency Control Mechanism
+            href: ./mot_concurrency_control_mechanism.md
+          - label: Extended FDW and Other openGauss Features
+            href: ./extended_fdw_and_other_opengauss_features.md
+          - label: NUMA Awareness Allocation and Affinity
+            href: ./numa_awareness_allocation_and_affinity.md
+          - label: MOT Indexes
+            href: ./mot_index.md
+          - label: MOT Durability Concepts
+            href: ./mot_durability_concepts.md
+          - label: MOT Recovery Concepts
+            href: ./mot_recovery_concepts.md
+          - label: MOT Query Native Compilation (JIT)
+            href: ./mot_query_native_compilation_jit.md
+          - label: "Comparison: Disk vs. MOT"
+            href: ./comparison_disk_vs_mot.md
+  - label: Foreign Data Wrapper
+    sections:
+      - label: Overview
+        href: ./foreign_data_wrapper.md
+      - label: External Data Wrapper for Oracle
+        href: ./oracle_fdw.md
+      - label: mysql_fdw
+        href: ./mysql_fdw.md
+      - label: file_fdw
+        href: ./file_fdw.md
+      - label: dblink
+        href: ./dblink.md
+  - label: Database Security Management
+    sections:
+      - label: Client Access Authentication
+        sections:
+          - label: Configuring Client Access Authentication
+            href: ./configuring_client_access_authentication.md
+          - label: Configuration File Reference
+            href: ./configuration_file_reference.md
+          - label: Establishing Secure TCP/IP Connections in SSH Tunnel Mode
+            href: ./establishing_secure_tcp_ip_connections_in_ssh_tunnel_mode.md
+          - label: Establishing Secure TCP/IP Connections in SSL Mode
+            href: ./establishing_secure_tcp_ip_connections_in_ssl_mode.md
+          - label: Checking the Number of Database Connections
+            href: ./checking_the_number_of_database_connections.md
+          - label: Managing SSL Certificates
+            href: ./ssl_certificate_management.md
+      - label: Managing Users and Their Permissions
+        sections:
+          - label: Default Permission Mechanism
+            href: ./default_permission_mechanism.md
+          - label: Administrator
+            href: ./administrator.md
+          - label: Separation of Duties
+            href: ./separation_of_duties.md
+          - label: Users
+            href: ./users.md
+          - label: Roles
+            href: ./roles.md
+          - label: Schemas
+            href: ./schema.md
+          - label: Setting User Permissions
+            href: ./setting_user_permissions.md
+          - label: Row-Level Security Policy
+            href: ./row_level_security_policy.md
+          - label: Setting Account Security Policies
+            href: ./setting_account_security_policies.md
+          - label: Setting the Validity Period of an Account
+            href: ./setting_the_validity_period_of_an_account.md
+          - label: Setting Password Security Policies
+            href: ./setting_password_security_policies.md
+      - label: Configuring Database Audit
+        sections:
+          - label: Overview
+            href: ./audit_overview.md
+          - label: Querying Audit Results
+            href: ./querying_audit_results.md
+          - label: Maintaining Audit Logs
+            href: ./maintaining_audit_logs.md
+          - label: Configuring File Permission Security Policies
+            href: ./configuring_file_permission_security_policies.md
+      - label: Setting a Ledger Database
+        sections:
+          - label: Overview
+            href: ./overview_setting_a_ledger_database.md
+          - label: Viewing Historical Operation Records in the Ledger
+            href: ./viewing_historical_operation_records_in_the_ledger.md
+          - label: Checking Ledger Data Consistency
+            href: ./checking_ledger_data_consistency.md
+          - label: Archiving a Ledger Database
+            href: ./archiving_a_ledger_database.md
+          - label: Repairing a Ledger Database
+            href: ./repairing_a_ledger_database.md
+      - label: Configuring TDE
+        href: ./configuring_tde.md
+  - label: Configuring Running Parameters
+    sections:
+      - label: Viewing Parameter Values
+        href: ./viewing_parameter_values.md
+      - label: Resetting Parameters
+        href: ./reset_parameters.md

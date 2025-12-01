@@ -1,0 +1,229 @@
+label: Extension Reference
+isManual: true
+sections:
+  - label: Dolphin Extensions
+    href: ./dolphin.md
+  - label: Dolphin Syntax
+    sections:
+      - label: Keywords
+        href: ./dolphin-keywords.md
+      - label: Data Types
+        sections:
+          - label: Numeric Types
+            href: ./dolphin-numeric-types.md
+          - label: Character Types
+            href: ./dolphin-character-types.md
+          - label: Date/Time Types
+            href: ./dolphin-date-time-types.md
+          - label: Bit String Types
+            href: ./dolphin-bit-string-types.md
+          - label: Enumeration Types
+            href: ./dolphin-enumeration-types.md
+          - label: Boolean Types
+            href: ./dolphin-boolean-types.md
+          - label: Binary Types
+            href: ./dolphin-binary-types.md
+      - label: Functions and Operators
+        sections:
+          - label: Assignment Operators
+            href: ./dolphin-assignment-operators.md
+          - label: Character Processing Functions and Operators
+            href: ./dolphin-character-processing-functions-and-operators.md
+          - label: Arithmetic Functions and Operators
+            href: ./dolphin-arithmetic-functions-and-operators.md
+          - label: Dolphin Lock
+            href: ./dolphin-lock.md
+          - label: Date and Time Processing Functions and Operators
+            href: ./dolphin-date-and-time-processing-functions-and-operators.md
+          - label: Advisory Lock Functions
+            href: ./dolphin-advisory-lock-functions.md
+          - label: Network Address Functions and Operators
+            href: ./dolphin-network-address-functions-and-operators.md
+          - label: Conditional Expression Functions
+            href: ./dolphin-conditional-expression-functions.md
+          - label: Aggregate Functions
+            href: ./dolphin-aggregate-functions.md
+          - label: System Information Functions
+            href: ./dolphin-system-information-functions.md
+          - label: Password Functions
+            href: ./dolphin-password-functions.md
+          - label: Logical Operators
+            href: ./dolphin-logical-operators.md
+          - label: Bit String Functions and Operators
+            href: ./dolphin-bit-string-functions-and-operators.md
+          - label: JSON-JSONB Functions and Operators
+            href: ./dolphin-json-jsonb-functions-and-operators.md
+          - label: Type Conversion Functions
+            href: ./dolphin-type-conversion-functions.md
+          - label: Compatible Operators and Operations
+            href: ./dolphin-compatible-operators-and-operations.md
+      - label: Expressions
+        sections:
+          - label: Conditional Expressions
+            href: ./dolphin-conditional-expressions.md
+      - label: DDL Syntax
+        href: ./dolphin-ddl-syntax-overview.md
+      - label: DML Syntax
+        href: ./dolphin-dml-syntax-overview.md
+      - label: DCL Syntax
+        href: ./dolphin-dcl-syntax-overview.md
+      - label: SQL Syntax
+        sections:
+          - label: ALTER FUNCTION
+            href: ./dolphin-alter-function.md
+          - label: ALTER PROCEDURE
+            href: ./dolphin-alter-procedure.md
+          - label: ALTER SERVER
+            href: ./dolphin-alter-server.md
+          - label: ALTER TABLE
+            href: ./dolphin-alter-table.md
+          - label: ALTER TABLE-PARTITION
+            href: ./dolphin-alter-table-partition.md
+          - label: ALTER TABLESPACE
+            href: ./dolphin-alter-tablespace.md
+          - label: ALTER VIEW
+            href: ./dolphin-alter-view.md
+          - label: ANALYZE ANALYSE
+            href: ./dolphin-analyze-analyse.md
+          - label: AST
+            href: ./dolphin-ast.md
+          - label: CHECKSUM TABLE
+            href: ./dolphin-checksum-table.md
+          - label: CREATE FUNCTION
+            href: ./dolphin-create-function.md
+          - label: CREATE INDEX
+            href: ./dolphin-create-index.md
+          - label: CREATE PROCEDURE
+            href: ./dolphin-create-procedure.md
+          - label: CREATE SERVER
+            href: ./dolphin-create-server.md
+          - label: CREATE TABLE
+            href: ./dolphin-create-table.md
+          - label: CREATE TABLE AS
+            href: ./dolphin-create-table-as.md
+          - label: CREATE TABLE PARTITION
+            href: ./dolphin-create-table-partition.md
+          - label: CREATE TABLESPACE
+            href: ./dolphin-create-tablespace.md
+          - label: CREATE TRIGGER
+            href: ./dolphin-create-trigger.md
+          - label: CREATE VIEW
+            href: ./dolphin-create-view.md
+          - label: DESCRIBE TABLE
+            href: ./dolphin-describe-table.md
+          - label: DO
+            href: ./dolphin-do.md
+          - label: DROP-DATABASE
+            href: ./dolphin-drop-database.md
+          - label: DROP INDEX
+            href: ./dolphin-drop-index.md
+          - label: DROP TABLESPACE
+            href: ./dolphin-drop-tablespace.md
+          - label: EXECUTE
+            href: ./dolphin-execute.md
+          - label: EXPLAIN
+            href: ./dolphin-explain.md
+          - label: FLUSH BINARY LOGS
+            href: ./dolphin-flush-binary-logs.md
+          - label: GRANT
+            href: ./dolphin-grant.md
+          - label: GRANT-REVOKE-PROXY
+            href: ./dolphin-grant-revoke-proxy.md
+          - label: INSERT
+            href: ./dolphin-insert.md
+          - label: KILL
+            href: ./dolphin-kill.md
+          - label: LOAD DATA
+            href: ./dolphin-load-data.md
+          - label: OPTIMIZE TABLE
+            href: ./dolphin-optimize-table.md
+          - label: PREPARE
+            href: ./dolphin-prepare.md
+          - label: RENAME-TABLE
+            href: ./dolphin-rename-table.md
+          - label: RENAME USER
+            href: ./dolphin-rename-user.md
+          - label: REVOKE
+            href: ./dolphin-revoke.md
+          - label: SELECT
+            href: ./dolphin-select.md
+          - label: SET CHARSET
+            href: ./dolphin-set-charset.md
+          - label: SET PASSWORD
+            href: ./dolphin-set-password.md
+          - label: SHOW CHARSET
+            href: ./dolphin-show-character-set.md
+          - label: SHOW CHARACTER SET
+            href: ./dolphin-show-character-set.md
+          - label: SHOW COLLATION
+            href: ./dolphin-show-collation.md
+          - label: SHOW COLUMNS
+            href: ./dolphin-show_columns.md
+          - label: SHOW CREATE DATABASE
+            href: ./dolphin-show-create-database.md
+          - label: SHOW CREATE FUNCTION
+            href: ./dolphin-show-create-function.md
+          - label: SHOW CREATE PROCEDURE
+            href: ./dolphin-show-create-procedure.md
+          - label: SHOW CREATE TABLE
+            href: ./dolphin-show-create-table.md
+          - label: SHOW CREATE TRIGGER
+            href: ./dolphin-show-create-trigger.md
+          - label: SHOW CREATE VIEW
+            href: ./dolphin-show-create-view.md
+          - label: SHOW DATABASES
+            href: ./dolphin-show-databases.md
+          - label: SHOW FUNCTION STATUS
+            href: ./dolphin-show-function-status.md
+          - label: SHOW GRANTS
+            href: ./dolphin-show-grants.md
+          - label: SHOW INDEX
+            href: ./dolphin-show-index.md
+          - label: SHOW MASTER STATUS
+            href: ./dolphin-show-master-status.md
+          - label: SHOW PLUGINS
+            href: ./dolphin-show-plugins.md
+          - label: SHOW PRIVILEGES
+            href: ./dolphin-show_privileges.md
+          - label: SHOW PROCEDURE STATUS
+            href: ./dolphin-show-procedure-status.md
+          - label: SHOW PROCESSLIST
+            href: ./dolphin-show-processlist.md
+          - label: SHOW SLAVE HOSTS
+            href: ./dolphin-show-slave-hosts.md
+          - label: SHOW STATUS
+            href: ./dolphin-show-status.md
+          - label: SHOW TABLES
+            href: ./dolphin-show-tables.md
+          - label: SHOW TABLE STATUS
+            href: ./dolphin-show-table-status.md
+          - label: SHOW TRIGGERS
+            href: ./dolphin-show-triggers.md
+          - label: SHOW VARIABLES
+            href: ./dolphin-show-variables.md
+          - label: SHOW WARNINGS
+            href: ./dolphin-show-warnings.md
+          - label: UPDATE
+            href: ./dolphin-update.md
+          - label: USE DB-NAME
+            href: ./dolphin-use-db-name.md
+          - label: SELECT-HINT
+            href: ./dolphin-select-hint.md
+      - label: System Views
+        href: ./dolphin-system-views.md
+      - label: GUC Parameters
+        href: ./dolphin-guc-parameters.md
+      - label: Resetting Parameters
+        href: ./dolphin-resetting-parameters.md
+      - label: Stored Procedures
+        sections:
+          - label: Basic Statements
+            href: ./dolphin-basic-statements.md
+          - label: Assignment Statements
+            href: ./dolphin-assignment-statements.md
+      - label: Identifiers
+        sections:
+          - label: Column Name Identifiers
+            href: ./dolphin-column-name-identifiers.md
+  - label: PostGIS Extensions
+    href: ./PostGIS.md

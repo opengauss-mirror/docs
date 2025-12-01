@@ -1,0 +1,80 @@
+# 数据导入导出
+
+## safe_data_path
+
+**参数说明** ：设置初始用户以外的路径前缀限制，目前包括copy和高级包路径限制。
+
+该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：字符串（小于4096个字符）
+
+**默认值**：NULL
+
+## enable_copy_server_files
+
+**参数说明** ：是否开启copy服务器端文件的权限。
+
+该参数属于SIGHUP类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+- on表示开启copy服务端文件的权限。
+- off表示不开启copy服务端文件的权限。
+
+**默认值**：off
+
+## enable_delta_store
+
+**参数说明** ：为了增强列存单条数据导入的性能和解决磁盘冗余问题，可通过此参数选择是否开启支持列存delta表功能。该参数开启时，数据导入列存表，会根据表定义时指定的《SQL参考》中“SQL语言结构和语法 > SQL语法 > CREATE TABLE”章节中的DELTAROW_THRESHOLD内容决定数据进入delta表存储还是主表CU存储，当数据量小于[DELTAROW_THRESHOLD](../sql_reference/create_table.md)时，数据进入delta表。
+
+该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+- on表示开启列存delta表功能。
+- off表示不开启列存delta表功能。
+
+**默认值**：off
+
+## partition_max_cache_size
+
+**参数说明** ：为了优化对列存分区表的批量插入，在批量插入过程中会对数据进行缓存后再批量写盘。通过partition_max_cache_size可指定数据缓存区大小。该值设置过大，将消耗较多系统内存资源；设置过小，将降低列存分区表批量插入性能。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：
+
+列存分区表：4096~ INT_MAX / 2，最小单位为KB。
+
+**默认值**：2GB
+
+## partition_mem_batch
+
+**参数说明** ：为了优化对列存分区表的批量插入，在批量插入过程中会对数据进行缓存后再批量写盘。通过partition_mem_batch可指定缓存个数。该值设置过大，将消耗较多系统内存资源；设置过小，将降低系统列存分区表批量插入性能。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：
+
+列存分区表：4096~ INT_MAX / 2，最小单位为KB。
+
+**默认值**：2GB
+
+## raise_errors_if_no_files
+
+**参数说明** ：导入时是否区分“导入文件记录数为空”和“导入文件不存在”。raise_errors_if_no_files=TRUE，则“导入文件不存在”的时候，将抛出“文件不存在的”错误。
+
+该参数属于USERSET类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
+
+**取值范围**：布尔型
+
+- on表示导入时区分“导入文件记录数为空”和“导入文件不存在”。
+- off表示导入时不区分“导入文件记录数为空”和“导入文件不存在”。
+
+**默认值**：off
+
+>[!WARNING]注意 
+>
+>- 如果safe_data_path目录下存在软链接文件，则会按软链接实际指向的文件路径进行处理，实际路径如果不在safe_data_path下会报错处理。
+>
+>- 如果safe_data_path目录下存在硬链接文件，则可以正常使用。为安全起见，请谨慎使用硬链接文件，切勿在safe_data_path目录下创建指向目录以外的硬链接文件，并确保safe_data_path目录权限最小化。

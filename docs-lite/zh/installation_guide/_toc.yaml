@@ -1,0 +1,23 @@
+label: 安装指南
+isManual: true
+sections:
+  - label: 安装概述
+    href: ./installation_overview.md
+  - label: 容器镜像安装
+    sections:
+      - label: 运行容器
+        href: ./installing_the_container_image.md  
+      - label: 单节点安装
+        href: ./installation_on_a_single_node_container.md
+      - label: 一主两备安装
+        href: ./one_primary_and_two_backup_installations_without_cm_container.md
+  - label: 安装准备
+    sections:
+      - label: 获取安装包
+        href: ./obtaining_the_installation_package.md
+      - label: 准备软硬件安装环境
+        href: ./preparing_the_software_and_hardware_installation_environment.md
+  - label: 安装openGauss
+    href: ./installing_the_opengauss.md               
+  - label: 卸载openGauss
+    href: ./uninstalling_the_opengauss.md

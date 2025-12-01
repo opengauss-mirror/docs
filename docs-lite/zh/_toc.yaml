@@ -1,0 +1,31 @@
+label: 文档中心
+sections:
+  - label: 从这里开始
+    sections:
+      - href: ./release_notes/_toc.yaml
+      - href: ./about_opengauss/_toc.yaml
+      - href: ./getting_started/_toc.yaml
+      - href: ./brief_tutorial/_toc.yaml
+  - label: 安装部署
+    sections:
+      - href: ./installation_guide/_toc.yaml
+  - label: 使用与运维
+    sections:
+      - href: ./sql_reference/_toc.yaml
+      - href: ./database_administration_guide/_toc.yaml
+      - href: ./database_om_guide/_toc.yaml
+      - href: ./performance_tuning_guide/_toc.yaml
+  - label: 重要特性
+    sections:
+      - href: ./datavec/_toc.yaml
+  - label: 开发指南
+    sections:
+      - href: ./developer_guide/_toc.yaml
+      - href: ./compilation_guide/_toc.yaml
+  - label: 参考指南
+    sections:
+      - href: ./extension_reference/_toc.yaml
+      - href: ./database_reference/_toc.yaml
+      - href: ./tool_and_commandreference/_toc.yaml
+      - href: ./characteristic_description/_toc.yaml
+      - href: ./appendix/_toc.yaml

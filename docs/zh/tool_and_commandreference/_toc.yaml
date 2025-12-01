@@ -1,0 +1,175 @@
+label: 工具和命令参考
+isManual: true
+sections:
+  - label: 工具一览表
+    href: ./tool_overview.md
+  - label: 客户端工具
+    sections:
+      - label: gsql
+        href: ./gsql.md
+      - label: gs_loader
+        href: ./gs_loader.md
+  - label: 服务端工具
+    sections:
+      - label: gs_cgroup
+        href: ./gs_cgroup.md
+      - label: gs_check
+        href: ./gs_check.md
+      - label: gs_checkos
+        href: ./gs_checkos.md
+      - label: gs_checkse
+        href: ./gs_checkse.md
+      - label: gs_checkperf
+        href: ./gs_checkperf.md
+      - label: gs_collector
+        href: ./gs_collector.md
+      - label: gs_dump
+        href: ./gs_dump.md
+      - label: gs_dumpall
+        href: ./gs_dumpall.md
+      - label: gs_guc
+        href: ./gs_guc.md
+      - label: gs_encrypt
+        href: ./gs_encrypt.md
+      - label: gs_om
+        href: ./gs_om.md
+      - label: gs_plan_simulator
+        href: ./gs_plan_simulator.md
+      - label: gs_restore
+        href: ./gs_restore.md
+      - label: gs_ssh
+        href: ./gs_ssh.md
+      - label: gs_sdr
+        href: ./gs_sdr.md
+      - label: gs_ddr
+        href: ./gs_ddr.md 
+      - label: gs_retrieve
+        href: ./gs_retrieve.md
+  - label: 系统内部使用的工具
+    sections:
+      - label: 概述
+        href: ./tools_used_in_the_internal_system.md
+      - label: dsscmd
+        href: ./dsscmd.md
+      - label: dsstbox
+        href: ./dsstbox.md
+      - label: dssserver
+        href: ./dssserver.md
+      - label: gaussdb
+        href: ./gaussdb.md
+      - label: gs_backup
+        href: ./gs_backup.md
+      - label: gs_basebackup
+        href: ./gs_basebackup.md
+      - label: gs_ctl
+        href: ./gs_ctl.md
+      - label: gs_initdb
+        href: ./gs_initdb.md
+      - label: gs_install
+        href: ./gs_install.md
+      - label: gs_postuninstall
+        href: ./gs_postuninstall.md
+      - label: gs_preinstall
+        href: ./gs_preinstall.md
+      - label: gs_sshexkey
+        href: ./gs_sshexkey.md
+      - label: pagehack
+        href: ./pagehack.md
+      - label: gs_tar
+        href: ./gs_tar.md
+      - label: gs_uninstall
+        href: ./gs_uninstall.md
+      - label: gs_upgradectl
+        href: ./gs_upgradectl.md
+      - label: gs_upgradechk
+        href: ./gs_upgradechk.md
+      - label: pg_xlogdump
+        href: ./pg_xlogdump.md
+      - label: gs_perfconfig
+        href: ./gs_perfconfig.md
+      - label: gs_expansion
+        href: ./gs_expansion.md
+      - label: gs_dropnode
+        href: ./gs_dropnode.md
+      - label: gs_probackup
+        href: ./gs_probackup.md
+      - label: gstrace
+        href: ./gstrace.md
+      - label: kdb5_util
+        href: ./kdb5_util.md
+      - label: kadmin.local
+        href: ./kadmin_local.md
+      - label: kinit
+        href: ./kinit.md
+      - label: klist
+        href: ./klist.md
+      - label: krb5kdc
+        href: ./krb5kdc.md
+      - label: kdestroy
+        href: ./kdestroy.md
+      - label: pg_config
+        href: ./pg_config.md
+      - label: pg_controldata
+        href: ./pg_controldata.md
+      - label: pg_recvlogical
+        href: ./pg_recvlogical.md
+      - label: pg_resetxlog
+        href: ./pg_resetxlog.md
+      - label: pg_archivecleanup
+        href: ./pg_archivecleanup.md
+      - label: pssh
+        href: ./pssh.md
+      - label: pscp
+        href: ./pscp.md
+      - label: transfer.py
+        href: ./transfer_py.md
+      - label: gs_preupgradechk
+        href: ./gs_preupgradechk.md
+      - label: gs_filedump
+        href: ./gs_filedump.md
+  - label: 集群管理
+    sections:
+      - label: 概述
+        href: ./unified_database_management_tool.md
+      - label: 特性介绍
+        href: ./features.md
+      - label: cm_ctl工具介绍
+        href: ./cm_ctl.md
+      - label: cm_persist工具介绍
+        href: ./cm_persist.md
+      - label: 安装和卸载工具介绍
+        href: ./cm_install_and_cm_uninstall.md
+      - label: 安全设计
+        href: ./security_design.md
+      - label: CM配置参数介绍
+        sections:
+          - label: CM配置参数介绍
+            href: ./cm_parameters.md
+          - label: cm_agent参数
+            href: ./parameters_related_to_cm_agent.md
+          - label: cm_server参数
+            href: ./parameters_related_to_cm_server.md
+      - label: CM错误日志信息参考
+        href: ./cm_error_log_information_reference.md
+  - label: 数据保险柜
+    sections:
+      - label: 概述
+        href: ./ogrecorder/black_box.md
+      - label: 数据保险柜API介绍
+        href: ./ogrecorder/black_box_api_instroduction.md
+      - label: 数据保险柜错误日志信息参考
+        href: ./ogrecorder/black_box_error_log_information_reference.md
+      - label: 数据保险柜配置参数介绍
+        href: ./ogrecorder/black_box_configuration_parameters_introducation.md
+      - label: 数据保险柜双向认证介绍
+        href: ./ogrecorder/black_box_two_way_authentication_introducation.md
+      - label: 数据保险柜部署介绍
+        href: ./ogrecorder/black_box_deployment_introduction.md
+      - label: grcmd工具使用说明
+        href: ./ogrecorder/grcmd.md    
+  - label: openGauss可运行脚本功能说明
+    href: ./functions_of_opengauss_executable_scripts.md
+  - label: gs_collector工具支持收集的系统表和视图列表
+    href: ./system_catalogs_and_views_supported_by_gs_collector.md
+  - label: FAQ
+    href: ./faqs.md

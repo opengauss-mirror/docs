@@ -1,0 +1,31 @@
+label: About openGauss
+isManual: true
+sections:
+  - label: Product Description
+    href: ./about_opengauss.md
+  - label: Product Positioning
+    href: ./product_positioning.md
+  - label: System Architecture
+    href: ./system_architecture.md
+  - label: Application Scenarios
+    href: ./application_scenarios.md
+  - label: Product Features
+    href: ./product_features.md
+  - label: Deployment Solutions
+    href: ./deployment_solutions.md
+  - label: Typical Networking
+    href: ./typical_networking.md
+  - label: Hardware and Software Configuration Requirements
+    href: ./software_and_hardware_requirements.md
+  - label: Operating Environment
+    href: ./operating_environment.md
+  - label: Technical Specifications
+    href: ./technical_specifications.md
+  - label: Core Database Technologies
+    href: ./core_database_technologies.md
+  - label: Basic Features
+    href: ./basic_features.md
+  - label: Workload Management
+    sections:
+      - label: High-Latency Escape at the Infrastructure Layer
+        href: ./high_latency_escape_at_the_infrastructure_layer.md

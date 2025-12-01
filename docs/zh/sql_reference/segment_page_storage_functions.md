@@ -1,0 +1,77 @@
+# 段页式存储函数
+
+- local\_segment\_space\_info\(tablespacename TEXT, databasename TEXT\)
+
+    描述：目前该接口已废弃，暂不可用。
+
+- pg\_stat\_segment\_extent\_usage\(int4 tablespace oid, int4 database oid, int4 extent\_type, int4 forknum\)
+
+    描述：目前该接口已废弃，暂不可用。
+
+- local\_space\_shrink\(tablespacename TEXT, databasename TEXT\)
+
+    描述：当前节点上对指定段页式空间做物理空间收缩。注意，目前只支持对当前连接的database做shrink。
+
+    返回值：空
+
+- gs\_space\_shrink\(int4 tablespace, int4 database, int4 extent\_type, int4 forknum\)
+
+    描述：效果跟local\_space\_shrink类似，对指定段页式空间做物理空间收缩,但参数不同，传入的是tablespace和database的oid，extent\_type为\[1,5\]的int值。注意：extent\_type = 1表示段页式元数据，当前版本不支持对元数据所在的物理文件做收缩。该函数仅限工具使用，不建议用户直接使用。
+
+    返回值：空
+
+- pg\_stat\_remain\_segment\_info\(\)
+
+    描述：展示在当前节点上，因为故障等原因而残留的extent。残留extent主要分为两类：分配而未被利用的segment和分配出去而未被利用的extent。两者主要区别在于segment会包含多个extent，回收时，要将segment上的extent一并全部回收。
+
+    返回值类型：
+
+    <a name="table1859564011397"></a>
+    <table><tbody><tr id="row8595340103916"><td class="cellrowborder" valign="top" width="39.32%"><p id="p9595184093917"><a name="p9595184093917"></a><a name="p9595184093917"></a>名称</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.68%"><p id="p14595940123915"><a name="p14595940123915"></a><a name="p14595940123915"></a>描述</p>
+    </td>
+    </tr>
+    <tr id="row12595104015397"><td class="cellrowborder" valign="top" width="39.32%"><p id="p1459594083919"><a name="p1459594083919"></a><a name="p1459594083919"></a>space_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.68%"><p id="p1359619404392"><a name="p1359619404392"></a><a name="p1359619404392"></a>表空间ID</p>
+    </td>
+    </tr>
+    <tr id="row175961040163919"><td class="cellrowborder" valign="top" width="39.32%"><p id="p19596104083915"><a name="p19596104083915"></a><a name="p19596104083915"></a>db_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.68%"><p id="p14596194073910"><a name="p14596194073910"></a><a name="p14596194073910"></a>数据库ID</p>
+    </td>
+    </tr>
+    <tr id="row155968402391"><td class="cellrowborder" valign="top" width="39.32%"><p id="p459634043916"><a name="p459634043916"></a><a name="p459634043916"></a>block_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.68%"><p id="p165961409394"><a name="p165961409394"></a><a name="p165961409394"></a>Extent的ID</p>
+    </td>
+    </tr>
+    <tr id="row1359614403391"><td class="cellrowborder" valign="top" width="39.32%"><p id="p16596040113911"><a name="p16596040113911"></a><a name="p16596040113911"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="60.68%"><p id="p20596140143917"><a name="p20596140143917"></a><a name="p20596140143917"></a>Extent的类型，当前有三种：ALLOC_SEGMENT、DROP_SEGMENT、SHRINK_EXTENT</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    其中type的三种类型分别表示：
+
+    - ALLOC\_SEGMENT:用户创建一张段页式表，当segment刚被分配，但是建表语句所在事务仍未提交时，节点故障，导致该segment被分配后，没有被使用。
+    - DROP\_SEGMENT:用户删除段页式表，当该事务成功提交，但是此表的segment页面对应的bit位未被重置，就发生掉电等故障，造成该segment未被使用，也未被释放。
+    - SHRINK\_EXTENT:用户对段页式表执行shrink操作，在未对空置出的extent进行释放时，发生掉电等故障，造成该extent残留，无法被重新利用。
+
+        例如：
+
+        ```
+        select * from pg_stat_remain_segment_info();
+        space_id | db_id | block_id | type
+        ----------+-------+----------+------
+        1663       |   16385|        4156| ALLOC_SEGMENT
+        ```
+
+- pg\_free\_remain\_segment\(int4 spaceId, int4 dbId, int4 segmentId\)
+
+    描述：释放指定的残留extent。参数取值必须为从函数pg\_stat\_remain\_segment\_info中查询获取。函数会对传入值校验，如果指定extent不在记录的残留extent中，将返回错误信息。指定的extent如果为单个extent，则只将其独自释放；如果为一个segment，则会将此segment以及此segment上记录的所有extent释放。
+
+    返回值：空

@@ -1,0 +1,38 @@
+label: Tool and Command Reference
+isManual: true
+sections:
+  - label: Overview
+    href: ./overview.md
+  - label: Client Tool
+    href: ./client_tool.md
+    sections:
+      - label: gsql
+        href: ./gsql.md
+  - label: Server Tools
+    sections:
+      - label: gs_dump
+        href: ./gs_dump.md
+      - label: gs_dumpall
+        href: ./gs_dumpall.md
+      - label: gs_guc
+        href: ./gs_guc.md
+      - label: gs_restore
+        href: ./gs_restore.md
+  - label: Tools Called in the Internal System
+    sections:
+      - label: Overview
+        href: ./tools_used_in_the_internal_system.md
+      - label: gaussdb
+        href: ./gaussdb.md
+      - label: gs_ctl
+        href: ./gs_ctl.md
+      - label: gs_initdb
+        href: ./gs_initdb.md
+      - label: gstrace
+        href: ./gstrace.md
+      - label: pg_config
+        href: ./pg_config.md
+      - label: pg_controldata
+        href: ./pg_controldata.md
+      - label: pg_resetxlog
+        href: ./pg_resetxlog.md

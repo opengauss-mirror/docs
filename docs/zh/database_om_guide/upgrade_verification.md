@@ -1,0 +1,97 @@
+# 升级验证
+
+本章介绍升级完成后的验证操作。给出验证的用例和详细操作步骤。
+
+-   **[验证项目的检查表](#验证项目的检查表)**  
+
+-   **[升级版本查询](#升级版本查询)**  
+
+-   **[检查升级数据库状态](#检查升级数据库状态)**  
+
+## 验证项目的检查表
+
+**表 1**  验证项目的检查表
+
+<a name="toc218487221"></a>
+
+<table><tbody><tr id="row35302572"><td class="cellrowborder" valign="top" width="11.219999999999999%"><p id="p40936059"><a name="p40936059"></a><a name="p40936059"></a>序号</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.41%"><p id="p27486471"><a name="p27486471"></a><a name="p27486471"></a>验证项目</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.980000000000004%"><p id="p11811639"><a name="p11811639"></a><a name="p11811639"></a>检查标准</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.39%"><p id="p17218675"><a name="p17218675"></a><a name="p17218675"></a>检查结果</p>
+</td>
+</tr>
+<tr id="row20750354"><td class="cellrowborder" valign="top" width="11.219999999999999%"><p id="p3057100"><a name="p3057100"></a><a name="p3057100"></a>1</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.41%"><p id="p530184212110"><a name="p530184212110"></a><a name="p530184212110"></a>版本查询</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.980000000000004%"><p id="p83018421413"><a name="p83018421413"></a><a name="p83018421413"></a>查询升级后版本是否正确</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.39%"><p id="p30183838"><a name="p30183838"></a><a name="p30183838"></a>-</p>
+</td>
+</tr>
+<tr id="row3219094"><td class="cellrowborder" valign="top" width="11.219999999999999%"><p id="p59420070"><a name="p59420070"></a><a name="p59420070"></a>2</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.41%"><p id="p43016423117"><a name="p43016423117"></a><a name="p43016423117"></a>健康检查</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.980000000000004%"><p id="p1680714524343"><a name="p1680714524343"></a><a name="p1680714524343"></a>使用gs_checkos工具完成操作系统状态检查。</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.39%"><p id="p51381840"><a name="p51381840"></a><a name="p51381840"></a>-</p>
+</td>
+</tr>
+<tr id="row59783377"><td class="cellrowborder" valign="top" width="11.219999999999999%"><p id="p10615408"><a name="p10615408"></a><a name="p10615408"></a>3</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.41%"><p id="p54541752"><a name="p54541752"></a><a name="p54541752"></a>数据库状态</p>
+</td>
+<td class="cellrowborder" valign="top" width="48.980000000000004%"><p id="p345815107386"><a name="p345815107386"></a><a name="p345815107386"></a>使用gs_om工具完成数据库状态检查。</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.39%"><p id="p23973984"><a name="p23973984"></a><a name="p23973984"></a>-</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## 升级版本查询
+
+本节介绍版本查询的具体操作。
+
+### 验证步骤<a name="section117172026191017"></a>
+
+1. 以数据库用户（如omm）登录节点，source环境变量。
+
+2. 执行如下命令查看所有节点的版本信息。
+   查看gsql版本，升级提交后应该为新版本
+   ```
+   gs_ssh -c "gsql -V"
+   ```
+
+   查看gaussdb版本，升级提交后应该为新版本
+   ```
+   gs_ssh -c "gaussdb -V"
+   ```
+
+   查看内核版本，升级提交后应该为新版本
+   ```
+   gs_ssh -c "gsql -d postgres -p 5432 -c 'select working_version_num();'"
+   ```
+   **重点说明：** 内核版本查询出来为升级后新版本的二进制包中的version.cfg中对应的版本号，提交升级后进程中会显示（-u + 版本号），该版本号是旧版本的二进制包中的version.cfg中对应的版本号，这是因为灰度升级提交流程中，不做进程切换，是在线切换内核版本号，因此查询的进程中仍显示（-u + 旧版本的二进制包中的version.cfg中对应的版本号），实际内核版本号应根据working_version_num函数查询，用户可在业务空闲状态，重启数据库，查询的进程中就不会显示（-u + 旧版本的二进制包中的version.cfg中对应的版本号）。
+
+
+## 检查升级数据库状态
+
+本节介绍数据库状态查询的具体操作。
+
+### 验证步骤<a name="section117172026191017"></a>
+
+1. 以数据库用户（如omm）登录节点。
+
+2. 执行如下命令查看数据库状态。
+
+   ```
+   gs_om -t status
+   ```
+
+   查询结果的cluster\_state为Normal代表数据库正常。
+

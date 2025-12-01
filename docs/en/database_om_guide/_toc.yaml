@@ -1,0 +1,131 @@
+label: Database O&M Guide
+isManual: true
+sections:
+  - label: Starting and Stopping openGauss
+    href: ./start_stop_opengauss.md
+  - label: Querying Status
+    href: ./querying_status.md
+  - label: Routine Maintenance
+    href: ./routine_maintenance.md
+  - label: Backup and Restoration
+    sections:
+      - label: Overview
+        href: ./overview_for_backup_and_restoration.md
+      - label: Backup And Restoration For Configuration Files
+        href: ./configuration_files_backup_and_recovery.md
+      - label: Logical Backup and Restoration
+        href: ./logical_backup_and_restoration.md
+      - label: Physical Backup and Restoration
+        href: ./physical_backup_and_restoration.md
+      - label: Flashback Restoration
+        href: ./flashback_recovery.md
+      - label: Exporting Data
+        sections:
+          - label: Overview
+            href: ./overview_5.md
+          - label: Exporting a Single Database
+            href: ./export_single_database.md
+          - label: Exporting All Databases
+            href: ./export_all_databases.md
+          - label: Data Export By a User Without Required Permissions
+            href: ./data_export_by_a_user_without_required_permissions.md
+      - label: Importing Data
+        sections:
+          - label: Overview
+            href: ./import_data.md
+          - label: Running the INSERT Statement to Insert Data
+            href: ./running_the_insert_statement_to_insert_data.md
+          - label: Running the COPY FROM STDIN Statement to Import Data
+            href: ./running_the_copy_from_stdin_statement_to_import_data.md
+          - label: Using a gsql Meta-Command to Import Data
+            href: ./using_a_gsql_meta_command_to_import_data.md
+          - label: Using gs_restore to Import Data
+            href: ./using_gs_restore_to_import_data.md
+      - label: Updating Data in a Table
+        sections:
+          - label: Updating a Table by Using DML Statements
+            href: ./updating_a_table_by_using_dml_statements.md
+          - label: Updating and Inserting Data by Using the MERGE INTO Statement
+            href: ./updating_and_inserting_data_by_using_the_merge_into_statement.md
+      - label: Deep Copy
+        sections:
+          - label: Overview
+            href: ./deep_copy.md
+          - label: Performing a Deep Copy by Using the CREATE TABLE Statement
+            href: ./performing_a_deep_copy_by_using_the_create_table_statement.md
+          - label: Performing a Deep Copy by Using the CREATE TABLE LIKE Statement
+            href: ./performing_a_deep_copy_by_using_the_create_table_like_statement.md
+          - label: Performing a Deep Copy by Creating a Temporary Table and Truncating the Original Table
+            href: ./performing_a_deep_copy_by_creating_a_temporary_table_and_truncating_the_original_table.md
+      - label: ANALYZE Table
+        href: ./analysis_table.md
+      - label: Doing VACUUM to a Table
+        href: ./doing_vacuum_to_a_table.md
+      - label: Managing Concurrent Write Operations
+        sections:
+          - label: Transaction Isolation
+            href: ./transaction_isolation_description.md
+          - label: Write and Read/Write Operations
+            href: ./write_and_read_write_operations.md
+          - label: Potential Deadlocks During Concurrent Write
+            href: ./potential_deadlocks_during_concurrent_write.md
+          - label: Concurrent Write Examples
+            href: ./concurrent_write_example.md
+  - label: Performing a Primary/Standby Switchover
+    href: ./performing_a_primary_standby_switchover.md
+  - label: Logical Replication
+    sections:
+      - label: Logical Decoding
+        sections:
+          - label: Overview
+            href: ./logical_decoding_overview.md
+          - label: Logical Decoding by SQL Function Interfaces
+            href: ./logical_decoding_by_sql_function_interfaces.md
+      - label: Publication-Subscription
+        sections:
+          - label: Overview
+            href: ./pub_sub.md
+          - label: Publications
+            href: ./publications.md
+          - label: Subscriptions
+            href: ./subscriptions.md
+          - label: Conflicts
+            href: ./conflicts.md
+          - label: Restrictions
+            href: ./restrictions.md
+          - label: Architecture
+            href: ./architecture.md
+          - label: Monitoring
+            href: ./monitoring.md
+          - label: Security
+            href: ./security.md
+          - label: Configuration Settings
+            href: ./configuration_set.md
+          - label: Quick Setup
+            href: ./quick_setup.md
+  - label: Upgrade
+    sections:
+      - label: Overview
+        href: ./upgrade.md
+      - label: Before You Start
+        href: ./before_you_start.md
+      - label: Upgrade Process
+        href: ./upgrade_process.md
+      - label: Preparing for and Checking the Upgrade
+        href: ./preparing_for_and_checking_the_upgrade.md
+      - label: Performing the Upgrade
+        href: ./performing_the_upgrade.md
+      - label: Verifying the Upgrade
+        href: ./upgrade_verification.md
+      - label: Committing the Upgrade Task
+        href: ./committing_the_upgrade_task.md
+      - label: Rolling Back the Upgrade Version
+        href: ./rolling_back_the_upgrade_version.md
+      - label: Troubleshooting
+        href: ./troubleshooting.md
+      - label: Incrementally Upgrading Cluster Management Components
+        href: ./incrementally_upgrading_cluster_management_components.md
+  - label: High-Risk Operations
+    href: ./risky_operations.md
+  - label: Log Reference
+    href: ./log_reference.md

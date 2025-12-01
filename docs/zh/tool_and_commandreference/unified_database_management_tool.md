@@ -1,0 +1,14 @@
+# 统一数据库管理工具
+
+CM（Cluster Manager）是一款数据库管理模块。支持自定义资源监控，提供了数据库主备的状态监控、网络通信故障监控、文件系统故障监控、故障自动主备切换等能力。提供了丰富的数据库管理能力，如节点、实例级的启停，数据库实例状态查询、主备切换、日志管理等。提供了通过REST接口远程查询和接收集群状态的能力。
+
+需要注意的是，一主一备模式下，CM只支持基本的安装，启停，检测能力，其他功能不支持。
+
+-   **[特性介绍](features.md)**  
+-   **[cm\_ctl工具介绍](cm_ctl.md)**  
+-   **[cm\_persist工具介绍](cm_persist.md)**  
+-   **[安装和卸载工具介绍](cm_install_and_cm_uninstall.md)**  
+-   **[安全设计](security_design.md)**  
+-   **[CM配置参数介绍](cm_parameters.md)**  
+-   **[CM错误日志信息参考](cm_error_log_information_reference.md)**  
+

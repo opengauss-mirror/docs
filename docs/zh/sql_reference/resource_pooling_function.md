@@ -1,0 +1,445 @@
+# 资源池化的函数<a name="ZH-CN_TOPIC_0289900393"></a>
+
+- ss_buffer_ctrl()
+
+  描述：显示buffer对应的buf_ctrl上记录的信息
+
+  返回值类型：record
+
+  返回的字段如下：
+
+  bufferid：buffer在数组的下标
+
+  is_remote_dirty：是否有远程脏页，即除本节点，其他节点是否持有这个页面的早期脏页版本(edp页面)。0代表没有远程脏页，1代表有脏页版本
+
+  lock_mode：本地对页面持有的分布式锁模式。0代表没有持有锁模式，1代表以S锁的方式持有页面，2代表以X锁的方式持有页面
+
+  is_edp：是否是edp页面（Early Dirty Page），当请求者X锁请求页面，本节点作为owner转移页面，且该页面还是脏页，等页面转移后，本地页面就是edp页面。0代表不是edp页面，1代表是edp页面
+
+  force_request：是否是是强制请求，0代表不是，1代表是
+
+  need_flush：reform的flush_copy阶段，标记需要刷盘的页面。0代表不需要刷盘，1代表需要刷盘
+
+  buf_id：同bufferid，buffer在数组的下标
+
+  state：用于记录状态标签
+
+  pblk_relno：物理块的relation编号
+
+  pblk_blkno：物理块储的block编号
+
+  pblk_lsn：物理块的lsn
+
+  seg_fileno：段页式存储的文件编号
+
+  seg_blockno：段页式存储的block编号
+
+  示例1：查询特定的buffer的buf_ctrl信息
+
+  ```sql
+  openGauss=# select * from ss_buffer_ctrl() where bufferid = 20;
+  bufferid | is_remote_dirty | lock_mode | is_edp | force_request | need_flush | buf_id | state | pblk_relno | pblk_blkno | pblk_lsn | seg_fileno | seg_blockno
+  ----------+-----------------+-----------+--------+---------------+------------+--------+-------+------------+------------+----------+------------+-------------
+  20 | 0 | 1 | 0 | 0 | 0 | 19 | 32 | 0 | 4294967295 | 0 | 2 | 4375
+  (1 row)
+  ```
+
+  示例2：查询DMS页面分布式锁不为NULL的buffer数量
+
+  ```sql
+  openGauss=#  select count(*) from ss_buffer_ctrl() where lock_mode > 0;
+  count
+  -------
+    258
+   (1 row)
+  ```
+
+- ss_txnstatus_cache_stat()
+
+    描述：返回事务信息缓存和事务信息获取的相关统计信息。注意相关count统计项并不是精确值，本统计函数的目的是性能调优分析，而非精确统计。  
+
+    返回值类型：record  
+    vcache_gets：事务信息从变量缓存获取的次数  
+    hcache_gets：事务信息从哈希缓存获取的次数  
+    nio_gets：事务信息从网络I/O获取的次数  
+    avg_hcache_gettime_us：从哈希缓存获取的平均耗时，单位us  
+    avg_nio_gettime_us：从网络I/O获取的平均耗时，单位us  
+    cache_hit_rate：缓存命中率  
+    hcache_eviction：缓存淘汰计数  
+    avg_eviction_refcnt：每个缓存条目被淘汰前的平均被引用次数  
+
+    示例：主备TPCC写/读，备机查询事务信息缓存统计项。
+
+    ```sql
+    openGauss=# select * from ss_txnstatus_cache_stat();
+    vcache_gets | hcache_gets | nio_gets | avg_hcache_gettime_us | avg_nio_gettime_us | cache_hit_rate | hcache_eviction | avg_eviction_refcnt
+    -------------+-------------+----------+-----------------------+--------------------+-----------------+-----------------+---------------------
+    263809 | 782159 | 275012 | 1.73883698838727 | 756.186410047562 | .79181213947221 | 0 | 0
+    (1 row)
+    ```
+
+* query_node_reform_info()
+
+    描述：查询集群reform相关统计信息。
+
+    返回值类型：record
+
+    reform_node_id：数据库节点编号，取值范围：[0, 63]
+
+    reform_type：集群发生reform的类型，取值范围：[Normal reform、Failover、Switchover]
+
+    reform_start_time：reform开始的时间
+
+    reform_end_time：reform结束的时间
+
+    is_reform_success：reform是否成功
+
+    redo_start_time：日志回放开始的时间
+
+    redo_end_time：日志回放结束的时间
+
+    xlog_total_bytes：总共回放的日志量
+
+    hashmap_construct_time：hashmap构造的时间
+
+    action：节点的动作，取值范围：[kick off、join in、stable]
+
+    约束：该函数只能在数据库主节点进行查询；查询结果中备节点的信息仅支持查看reform_node_id和action，其他信息无效
+
+    示例1：备节点退出集群
+
+    ```sql
+    openGauss=# select * from query_node_reform_info();
+     reform_node_id |  reform_type  |    reform_start_time     |     reform_end_time      | is_reform_success | redo_start_time | redo_end_time | xlog_total_bytes | hashmap_construct_time |  action  
+    ----------------+---------------+--------------------------+--------------------------+-------------------+-----------------+---------------+------------------+------------------------+----------
+                  0 | Normal reform | 2023-09-21 16:37:06.520  | 2023-09-21 16:37:06.568  | t                 | -               | -             |               -1 | -                      | stable
+                  1 | -             | -                        | -                        | t                 | -               | -             |               -1 | -                      | kick off
+    (2 rows)
+    ```
+
+    示例2：备节点加入集群
+
+    ```sql
+    openGauss=# select * from query_node_reform_info();
+     reform_node_id |  reform_type  |    reform_start_time     |     reform_end_time      | is_reform_success | redo_start_time | redo_end_time | xlog_total_bytes | hashmap_construct_time | action  
+    ----------------+---------------+--------------------------+--------------------------+-------------------+-----------------+---------------+------------------+------------------------+---------
+                  0 | Normal reform | 2023-09-21 16:37:46.414  | 2023-09-21 16:37:47.817  | t                 | -               | -             |               -1 | -                      | stable
+                  1 | -             | -                        | -                        | t                 | -               | -             |               -1 | -                      | join in
+    (2 rows)
+    ```
+
+    示例3：主节点故障，集群failover
+
+    ```sql
+    openGauss=# select * from query_node_reform_info();
+     reform_node_id | reform_type |    reform_start_time     |     reform_end_time      | is_reform_success |     redo_start_time      |      redo_end_time       | xlog_total_bytes |  hashmap_construct_time  |  action  
+    ----------------+-------------+--------------------------+--------------------------+-------------------+--------------------------+--------------------------+------------------+--------------------------+----------
+                  0 | -           | -                        | -                        | t                 | -                        | -                        |               -1 | -                        | kick off
+                  1 | Failover    | 2023-09-21 16:56:45.893  | 2023-09-21 16:56:50.702  | t                 | 2023-09-21 16:56:50.282  | 2023-09-21 16:56:50.385  |              288 | 2023-09-21 16:56:50.385  | stable
+    (2 rows)
+    ```
+
+    示例4：集群主动进行switchover
+
+    ```sql
+    openGauss=# select * from query_node_reform_info();
+     reform_node_id | reform_type |    reform_start_time     |     reform_end_time      | is_reform_success | redo_start_time | redo_end_time | xlog_total_bytes | hashmap_construct_time | action 
+    ----------------+-------------+--------------------------+--------------------------+-------------------+-----------------+---------------+------------------+------------------------+--------
+                  0 | Switchover  | 2023-09-21 16:59:25.646  | 2023-09-21 16:59:29.182  | t                 | -               | -             |               -1 | -                      | stable
+                  1 | -           | -                        | -                        | t                 | -               | -             |               -1 | -                      | stable
+    (2 rows)
+    ```
+
+* query_page_distribution_info(relname TEXT, forkNum INT4, blockNum INT4)
+
+    描述：根据`relname + forkNum + blockNum`查询页面在集群中的分布信息。
+
+    入参说明：
+
+    relname：需要查询的表名
+
+    forkNum：需要查询的文件名，取值范围为[0，3]的int值，其中数据文件为0，FSM文件为1，visibility map文件为2，BCM文件为3
+
+    blockNum：需要查询的数据页号，取值范围为[0, total_bolcks)的int值，其中total_blocks由表中相应文件的总页数决定
+
+    返回值类型：record
+
+    instance_id：数据库节点id，取值范围：[0, 63]
+
+    is_master：是否是页面master
+
+    is_owner：是否是页面owner
+
+    is_copy：是否持有副本
+
+    lock_mode：节点持有的锁模式
+
+    mem_lsn：页面在内存中的lsn
+
+    disk_lsn：页面在磁盘上的lsn
+
+    is_dirty：内存中的页面是否是脏页
+
+    约束：该函数只能在数据库主节点进行查询
+
+    示例：向表中插入一行数据，然后立即查询数据页面的分布信息
+
+    ```sql
+    openGauss=# create table tb(id int);
+    CREATE TABLE
+    openGauss=# insert into tb values(0); select * from query_page_distribution_info('tb', 0, 0);
+    INSERT 0 1
+     instance_id | is_master | is_owner | is_copy |   lock_mode    |  mem_lsn   |  disk_lsn  | is_dirty 
+    -------------+-----------+----------+---------+----------------+------------+------------+----------
+               0 | t         | t        | f       | Exclusive lock | 1975555208 | 1975555112 | t
+    (1 row)
+    ```
+
+* dss_io_stat(duration INT4)
+
+    描述：统计在给定时间间隔内IO读写速度和次数，通过`duration`指定时间间隔，单位秒。
+
+    返回值类型：record
+
+    read_kilobyte_per_sec：给定时间内DSS读取数据的速度，单位KB/s
+
+    write_kilobyte_per_sec：给定时间内DSS写入数据的速度，单位KB/s
+
+    io_times：给定时间间隔内DSS IO的调用次数
+
+    约束：`duration < 60`
+
+    示例：主节点向表中写入数据，查询2秒内DSS IO的统计信息
+
+    ```sql
+    openGauss=# select * from dss_io_stat(2);
+     read_kilobyte_per_sec | write_kilobyte_per_sec | io_times 
+    -----------------------+------------------------+----------
+                       404 |                  25664 |     3158
+    (1 row)
+    ```
+
+* query_node_reform_info_from_dms(round INT4)
+
+    描述：查询集群reform相关信息。
+
+    入参说明：
+
+    round：代表查的是哪一轮reform。0：代表已经结束的上一轮reform；1：代表正在进行中的本轮reform；其他值等同于1
+
+    返回值类型：record
+
+    NAME：TEXT
+
+    DESCRIPTION：TEXT
+
+    其中NAME总共有27种：
+
+  | 编号 | 字段名            | 说明                                   |
+  | ---- | ----------------- | -------------------------------------- |
+  | 1    | INSTANCE_ID       | 实例ID                                 |
+  | 2    | DMS_ROLE          | 实例角色 REFORMER/PARTNER             |
+  | 3    | PROC_STATUS       | 线程状态 RUNNING/FINISHED, 只在查询正在进行中的本轮reform状态时才会显示|
+  | 4    | REFORM_STATUS     | 执行进度 WAITING/RUNNING/FINISHED      |
+  | 5    | START_TIME        | 开始时间戳                             |
+  | 6    | REFORM_TYPE       | Reform类型                             |
+  | 7    | FULL_CLEAN        | full clean 标志 TRUE/FALSE             |
+  | 8    | PROMOTE_ID        | 升主实例ID 仅switchover类型, 只在查询正在进行中的本轮reform状态且为switchover类型的reform时才会显示|
+  | 9    | DEMOTE_ID         | 降备实例ID 仅switchover类型, 只在查询正在进行中的本轮reform状态且为switchover类型的reform时才会显示|
+  | 10   | LAST_STEP         | 上一个步骤                             |
+  | 11   | CURR_STEP         | 当前步骤                               |
+  | 12   | NEXT_STEP         | 下一个步骤                             |
+  | 13   | CURR_STEP_ELASPED | 当前步骤耗时,只在查询正在进行中的本轮reform状态时才会显示|
+  | 14   | DDL_ENABLE        | 是否允许DDL                            |
+  | 15   | FILE_ENABLE       | 是否允许文件操作                       |
+  | 16   | BITMAP_MES        | 建立mes的实例bitmap                    |
+  | 17   | BITMAP_CONNECT    | 允许广播的实例bitmap                   |
+  | 18   | BITMAP_STABLE     | 稳定节点bitmap                         |
+  | 19   | BITMAP_ONLINE     | 在线节点bitmap                         |
+  | 20   | BITMAP_RECONNECT  | 需要重新建联的实例bitmap               |
+  | 21   | BITMAP_DISCONNECT | 需要断连的实例bitmap                   |
+  | 22   | BITMAP_CLEAN      | 需要清理信息的实例bitmap               |
+  | 23   | BITMAP_RECOVERY   | 需要日志回放的bitmap                   |
+  | 24   | BITMAP_IN         | 稳定节点列表对应的bitmap               |
+  | 25   | BITMAP_REBUILD    | 需要rebuild的bitmap                    |
+  | 26   | BITMAP_WITHDRAW   | 需要接管回事务信息的实例bitmap         |
+  | 27   | BITMAP_ROLLBACK   | 需要被reformer接管事务信息的实例bitmap |
+
+    示例1：查询当前节点的已经结束的上一轮reform信息
+
+    ```sql
+    openGauss=# select * from query_node_reform_info_from_dms(0);
+        NAME        |       DESCRIPTION
+    -------------------+-------------------------
+    INSTANCE_ID       | 0
+    DMS_ROLE          | REFORMER
+    REFORM_STATUS     | FINISHED
+    START_TIME        | 2024-01-02 20:29:04.376
+    REFORM_TYPE       | OPENGAUSS_NORMAL
+    FULL_CLEAN        | FALSE
+    LAST_STEP         | PAGE_ACCESS
+    CURR_STEP         | DONE_CHECK
+    NEXT_STEP         | N/A
+    DDL_ENABLE        | TRUE
+    FILE_ENABLE       | TRUE
+    BITMAP_MES        | 3
+    BITMAP_CONNECT    | 1
+    BITMAP_STABLE     | 0
+    BITMAP_ONLINE     | 1
+    BITMAP_RECONNECT  | 1
+    BITMAP_DISCONNECT | 0
+    BITMAP_CLEAN      | 0
+    BITMAP_RECOVERY   | 1
+    BITMAP_IN         | 0
+    BITMAP_REBUILD    | 0
+    BITMAP_WITHDRAW   | 0
+    BITMAP_ROLLBACK   | 0
+    (23 rows)
+    ```
+
+* query_all_drc_info(type INT4)
+
+    描述：查询所有的drc相关信息。
+
+    入参说明：
+
+    type：需要查询的drc类型；0：代表页面的drc；1：代表锁的drc；其他值等同于1
+
+    返回值类型：record
+
+    resource_id：资源标识符，对于页面，格式为fileid-pageid；对于锁，格式为type/uid/oid/index/part
+
+    master_id：master的节点id
+
+    copy_insts：副本持有节点bitmap
+
+    claimed_owner：owner持有节点id
+
+    lock_mode：持有锁模式 0：NULL 1：SHARED 2：EXCLUSIVE
+
+    last_edp：最近的早期脏页持有节点id
+
+    type：资源类型 1：page 2：lock
+
+    in_recovery：是否处于recovery阶段
+
+    copy_promote：reform期间DRC是否从副本升级为owner
+
+    part_id：所属的DRC分区链表id
+
+    edp_map：EDP持有节点bitmap
+
+    lsn：集群中本页面所有EDP中最大的LSN
+
+    len：DRC缓存的data大小
+
+    recovery_skip：reform期间DRC是否跳过回放
+
+    recycling：DRC资源是否正在被回收
+
+    CONVERTING_INST_ID：converting节点ID
+
+    CONVERTING_CURR_MODE：converting节点当前持有的锁模式： 0：NULL 1：SHARED 2：EXCLUSIVE
+
+    CONVERTING_REQ_MODE：converting节点申请的锁模式： 0：NULL 1：SHARED 2：EXCLUSIVE
+
+    约束：当有且仅有主节点启动后，该函数查询drc锁信息为空
+
+    示例1：查询特定页面的drc信息
+
+    ```sql
+    openGauss=# select * from query_all_drc_info(0) limit 1;
+    RESOURCE_ID | MASTER_ID | COPY_INSTS | CLAIMED_OWNER | LOCK_MODE | LAST_EDP | TYPE | IN_RECOVERY | COPY_PROMOTE | PART_ID | EDP_MAP | LSN | LEN | RECOVERY_SK
+    IP | RECYCLING | CONVERTING_INST_ID | CONVERTING_CURR_MODE | CONVERTING_REQ_MODE
+    -------------------------+-----------+------------+---------------+-----------+----------+------+-------------+--------------+---------+---------+-----+-----+------------
+    ---+-----------+--------------------+----------------------+---------------------
+    1664/0/1/16384/0 0-4173 | 0 | 2 | 0 | 1 | 255 | 1 | 0 | 0 | 99 | 0 | 0 | 24 |
+    0 | 0 | 255 | 0 | 0
+    (1 row)
+    
+    openGauss=# select * from query_all_drc_info(0) where "RESOURCE_ID" = '1664/0/1/16384/0 0-4173';
+    RESOURCE_ID | MASTER_ID | COPY_INSTS | CLAIMED_OWNER | LOCK_MODE | LAST_EDP | TYPE | IN_RECOVERY | COPY_PROMOTE | PART_ID | EDP_MAP | LSN | LEN | RECOVERY_SK
+    IP | RECYCLING | CONVERTING_INST_ID | CONVERTING_CURR_MODE | CONVERTING_REQ_MODE
+    -------------------------+-----------+------------+---------------+-----------+----------+------+-------------+--------------+---------+---------+-----+-----+------------
+    ---+-----------+--------------------+----------------------+---------------------
+    1664/0/1/16384/0 0-4173 | 0 | 2 | 0 | 1 | 255 | 1 | 0 | 0 | 99 | 0 | 0 | 24 |
+    0 | 0 | 255 | 0 | 0
+    (1 row)
+    ```
+
+* ondemand_recovery_status()
+
+    描述：查询当前资源池化节点按需回放状态。
+
+    返回值类型：record
+
+    primary_checkpoint_redo_lsn：当前节点读取到的主机redo点位置。未开启实时构建特性时，本字段值为'0/0'。
+
+    realtime_build_replayed_lsn：当前节点完成构建的主机日志位置。未开启实时构建特性时，本字段值为'0/0'。
+
+    hashmap_used_blocks：当前hashmap中已存入的block-record数量。
+
+    hashmap_total_blocks：hashmap中能够存入的block-record总数。
+
+    trxn_queue_blocks：当前已存入的事务日志数量，未开启实时构建特性时，本字段为0。
+
+    seg_queue_blocks：当前已存入的段页式元数据日志数量，未开启实时构建特性时，本字段为0。
+
+    in_ondemand_recovery：当前节点是否处于按需回放中，取值范围：[t、f]。当节点正常运行时，无论是否开启实时构建特性，本字段值为'f'。
+
+    ondemand_recovery_status：集群按需回放状态，取值范围及对应含义如下：
+
+    | ondemand_recovery_status | 集群按需回放状态                                             |
+    | ------------------------ | ------------------------------------------------------------ |
+    | ONDEMAND_RECOVERY_BUILD  | 集群处于按需回放中，在构建回放所必须的信息，暂不对外提供服务 |
+    | ONDEMAND_RECOVERY_REDO   | 集群处于按需回放中，集群对外提供服务，且后台进行日志回放     |
+    | NORMAL                   | 集群处于正常运行中，未进行按需回放                           |
+    
+    realtime_build_status：当前节点实时构建状态，取值范围及对应含义如下：
+    
+    | realtime_build_status | 当前节点实时构建状态                                         |
+    | --------------------- | ------------------------------------------------------------ |
+    | DISABLED              | 当前节点未处于实时构建状态                                   |
+    | BUILD_NORMAL          | 当前节点处于实时构建状态，且集群状态正常                     |
+    | READY_TO_BUILD        | 当前节点正在启动实时构建                     |
+    | BUILD_TO_DISABLED     | 当前节点处于实时构建状态，且即将关闭实时构建，一般发生于switchover、normal reform和failover但是未升主的节点中 |
+    | BUILD_TO_REDO         | 当前节点处于实时构建状态，且即将升主，一般发生于failover的升主节点中 |
+    
+    recovery_pause_status：当前节点实时构建暂停状态，取值范围及对应含义如下：
+    
+    | recovery_pause_status      | 当前节点实时构建暂停状态                               |
+    | -------------------------- | ------------------------------------------------------ |
+    | NOT PAUSE                  | 当前节点实时构建未暂停                                 |
+    | PAUSE(for sync record)     | 当前节点实时构建暂停，暂停原因为构建到了DDL日志        |
+    | PAUSE(for hashmap full)    | 当前节点实时构建暂停，暂停原因为HashMap空间满          |
+    | PAUSE(for trxn queue full) | 当前节点实时构建暂停，暂停原因为事务日志队列满         |
+    | PAUSE(for seg queue full)  | 当前节点实时构建暂停，暂停原因为段页式元数据日志队列满 |
+
+    record_item_num：当前节点实时构建/按需回放使用的xlog-record内存块数量。
+
+    record_item_mbytes：当前节点实时构建/按需回放存放xlog-record内存块消耗的内存值，单位为MB，向下取整。
+
+    >[!TIP]须知
+    >
+    >- 当recovery_pause_status显示当前节点处于实时构建暂停状态时，会严重影响回放性能，无法保证RTO要求，应当考虑增大ss_ondemand_recovery_mem_size，同时提高主机刷盘及checkpoint频率。
+    >- 仅在开启了按需回放特性情况下，才允许查询该视图。
+
+* realtime_build_log_ctrl_status()
+
+    描述：主节点配置recovery_time_target > 0，备机开启实时构建（ss_enable_ondemand_realtime_build = on）且在做实时构建时，在主节点上进行查询。各参数取值范围及对应含义如下：
+
+    返回值类型：record
+
+    | realtime_build_log_ctrl_status | 主机节点查到的备机开启实时构建流控功能的状态 
+    | -----------------------| ---------------------------------------------------- |     数据类型         |
+    | ins_id                 |                  该节点的编号                      |     INT4OID         |
+    | currentRTO             |             该节点的预估预估恢复时间                  |     INT8OID         |
+    | prev_reply_time        |                    该节点上次响应时间戳               |     TIMESTAMPTZOID      |
+    | prev_calculate_time    |                   该节点上次计算时间戳                |     TIMESTAMPTZOID      |
+    | reply_time             |                     该节点当前响应时间戳              |     TIMESTAMPTZOID      |
+    | period_total_build     |         本周期内该节点日志构建总量（单位：byte）       |     INT8OID         |
+    | build_rate             |          该节点节点实时构建速率（单位：byte/ms）       |     INT8OID         |
+    | prev_build_ptr         |                     该节点上次构建日志序列号          |     INT8OID         |
+    | realtime_build_ptr     |                   该节点当前构建日志序列号            |     TEXTOID         |
+    | current_insert_ptr     |          该节点当前日志插入位置（日志序列号）          |     TEXTOID         |
+    | sleep_time             |                     该节点节点睡眠时间(微秒)          |     INT4OID         |

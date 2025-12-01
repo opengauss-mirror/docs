@@ -1,0 +1,45 @@
+# 函数和操作符<a name="ZH-CN_TOPIC_0289900013"></a>
+
+- **[逻辑操作符](logical_operators.md)**  
+- **[比较操作符](comparsion_operator.md)**  
+- **[字符处理函数和操作符](character_processing_functions_and_operators.md)**  
+- **[二进制字符串函数和操作符](binary_string_functions_and_operators.md)**  
+- **[位串函数和操作符](bit_string_functions_and_operators.md)**  
+- **[模式匹配操作符](mode_matching_operators.md)**  
+- **[数字操作函数和操作符](mathematical_functions_and_operators.md)**  
+- **[时间和日期处理函数和操作符](        href: ./date_and_time_processing_functions_and_operators.md    
+.md)**  
+- **[类型转换函数](type_conversion_function.md)**  
+- **[几何函数和操作符](geometric_functions_and_operators.md)**  
+- **[网络地址函数和操作符](network_address_functions_and_operators.md)**  
+- **[文本检索函数和操作符](text_retrieval_function_and_operator.md)**  
+- **[JSON/JSONB函数和操作符](json_jsonb_function_and_operator.md)**  
+- **[HLL函数和操作符](hll_function_and_operator.md)**  
+- **[SEQUENCE函数](sequence_function.md)**  
+- **[数组函数和操作符](array_function_and_operator.md)**  
+- **[范围函数和操作符](range_functions_and_operators.md)**  
+- **[聚集函数](aggregate_function.md)**  
+- **[窗口函数](window_function.md)**  
+- **[安全函数](secure_function.md)**  
+- **[账本数据库的函数](ledger_database_functions.md)**  
+- **[密态等值的函数](encrypted_equality_function.md)**  
+- **[返回集合的函数](set_returning_functions.md)**  
+- **[条件表达式函数](conditional_expression_function.md)**  
+- **[系统信息函数](system_information_function.md)**  
+- **[系统管理函数](system_management_functions.md)**  
+- **[统计信息函数](statistics_function.md)**  
+- **[大对象操作函数](large_object_operation_function.md)**  
+- **[触发器函数](trigger_function.md)**  
+- **[HashFunc函数](hashfunc_function.md)**  
+- **[提示信息函数](prompt_message_function.md)**  
+- **[全局临时表函数](global_temporary_table_function.md)**  
+- **[故障注入系统函数](fault_injection_system_function.md)**  
+- **[AI特性函数](ai_feature_functions.md)**  
+- **[动态数据脱敏函数](dynamic_data_masking_functions.md)**  
+- **[其他系统函数](other_system_functions.md)**  
+- **[内部函数](internel_function.md)**  
+- **[Global SysCache特性函数](global_syscache_feature_function.md)**  
+- **[数据损坏检测修复函数](data_corruption_detection_and_repair_function.md)**
+- **[向量函数和操作符](vector_functions_and_operators.md)**
+- **[BFILE类型函数](bfile_type_function.md)**
+- **[废弃函数](obsolete_functions.md)**  

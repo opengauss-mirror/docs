@@ -1,0 +1,11 @@
+label: Appendix
+isManual: true
+sections:
+  - label: Obtaining openGauss Resources
+    href: ./obtaining-opengauss-resources.md
+  - label: Error Log Reference
+    sections:
+      - label: Kernel Error Information
+        href: ./kernel-error-information.md
+  - label: Glossary
+    href: ./glossary.md

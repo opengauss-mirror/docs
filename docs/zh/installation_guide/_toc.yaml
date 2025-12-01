@@ -1,0 +1,67 @@
+label: 安装部署
+isManual: true
+sections:
+      - label: 安装概述
+        href: ./installation_overview.md
+      - label: 容器镜像安装
+        sections:
+          - label: 运行容器
+            href: ./installing_the_container_image.md
+          - label: 单节点安装
+            href: ./installation_on_a_single_node_container.md
+          - label: 一主两备安装
+            href: ./one_primary_and_two_backup_installations_without_cm_container.md
+      - label: 极简版安装
+        sections:
+          - label: 获取安装包
+            href: ./obtaining_the_installation_package.md
+          - label: 准备软硬件安装环境
+            href: ./preparing_the_software_and_hardware_installation_environment.md
+          - label: 服务器安装
+            sections:
+              - label: 单节点安装
+                href: ./installation_on_a_single_node.md
+              - label: 一主一备节点安装
+                href: ./installation_on_primary_standby_nodes.md
+          - label: 容器安装
+            sections:
+              - label: 单节点安装
+                href: ./installation_on_a_single_node_container.md
+              - label: 一主两备不带cm安装
+                href: ./one_primary_and_two_backup_installations_without_cm_container_lite_version.md
+              - label: CM安装
+                href: ./cm_installation_container.md
+          - label: RPM安装
+            href: ./installation_using_an_rpm_package.md
+          - label: deb包安装
+            href: ./deb_installation.md
+      - label: 企业版安装
+        sections:
+          - label: 了解安装流程
+            href: ./installation_process.md
+          - label: 获取安装包
+            href: ./obtaining_and_verifying_an_installation_package.md
+          - label: 准备软硬件安装环境
+            href: ./preparing_the_software_and_hardware_installation_environment_enterprise.md
+          - label: 了解安装用户及用户组
+            href: ./installation_user_and_user_group.md
+          - label: 安装前置操作
+            href: ./pre_installation_operations.md
+          - label: 安装openGauss
+            sections:
+              - label: （可选）一站式安装指南
+                href: ./one_stop_installation_guide.md
+              - label: 创建XML配置文件
+                href: ./creating_an_xml_configuration_file.md
+              - label: 初始化安装环境
+                href: ./initializing_the_installation_environment.md        
+              - label: 执行安装
+                href: ./executing_installation.md
+              - label: 安装验证
+                href: ./verifying_the_installation.md
+          - label: 创建数据库
+            href: ./initializing_the_database.md
+          - label: （可选）设置备机可读
+            href: ./optional_setting_the_standby_node_to_readable.md
+          - label: 卸载openGauss
+            href: ./uninstalling_the_opengauss.md

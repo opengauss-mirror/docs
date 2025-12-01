@@ -1,0 +1,5 @@
+# GLOBAL_PLANCACHE_CLEAN
+
+GPC相关视图在enable_global_plancache打开且线程池打开的状态下才有效。
+
+GLOBAL_PLANCACHE_CLEAN视图用于清理所有节点上无人使用的全局计划缓存。返回值为Boolean类型。

@@ -1,0 +1,1122 @@
+# 特性介绍
+
+- **[cm_agent](#cm_agent)**
+- **[cm_server](#cm_server)**
+- **[CM支持日志管理](#cm支持日志管理)**
+- **[级联备仲裁](#级联备仲裁)**
+- **[自定义资源](#自定义资源)**
+- **[配置方法](#配置方法)**
+- **[资源池化](#资源池化)**
+- **[CM支持DN仲裁](#cm支持dn仲裁)**
+- **[CM支持VIP仲裁](#cm支持vip仲裁)**
+- **[支持集群信息查询和推送](#支持集群信息查询和推送)**
+- **[支持一键暂停/恢复CM服务](#支持一键暂停恢复cm服务)**
+- **[CM支持事件触发器](#cm支持事件触发器)**
+- **[CM支持两节点部署](#cm支持两节点部署)**
+- **[CM支持容器化部署](#cm支持容器化部署)**
+
+## cm\_agent<a name="section1669543664312"></a>
+
+cm\_agent是部署在数据库每个主机上，用来启停和监控各个数据库实例进程的数据库管理组件。
+
+主要功能有：
+
+- 数据库实例启动和停止时负责拉起和停止本主机上部署的实例进程。
+- 监控本主机上运行的实例状态并将状态上报发送给CM Server。
+- 执行CM Server仲裁下发的命令。
+
+故障影响：
+
+- 无法上报本主机上部署的实例状态，cm_server会将这些实例视作故障处理。
+
+**命令说明**：
+
+- 公共选项：
+    - -V, --version
+
+        打印cm\_agent版本信息，然后退出。
+
+    - -?, -h,--help
+
+        显示关于cm\_agent命令行参数的帮助信息，然后退出。
+
+- 日志信息记录的位置选项：
+    - 0
+
+        记录在设定的日志文件中。
+
+    - 1
+
+        记录在syslog文件中。
+
+    - 2
+
+        记录在设定的日志文件中。
+
+    - 3
+
+        空文件，即不记录日志信息。
+
+- 启动模式选项：
+    - normal
+
+        正常模式启动。
+
+    - abnormal
+
+        非正常模式启动。
+
+## cm\_server<a name="section132815414420"></a>
+
+cm\_server是用来进行数据库实例管理和实例仲裁的组件。主要功能有：
+
+- 接收各个节点上cm\_agent发送的数据库各实例状态。
+- 提供数据库实例整体状态的查询功能。
+- 监控实例的状态变化并进行仲裁命令的下发。
+
+故障影响：
+
+- cm_server主故障后，会自动进行主备切换。cm_server全部故障后，数据库实例管理和实例仲裁功能丧失，数据库实例内其他组件按原状态继续运行。
+- cm_server需要满足多数派才能正常运行，当不满足该条件时可能导致集群异常。
+
+**命令说明**：
+
+- 公共选项：
+    - -V, --version
+
+        打印cm\_server版本信息，然后退出。
+
+    - -?, -h,--help
+
+        显示关于cm\_server命令行参数的帮助信息，然后退出。
+
+- 日志信息记录的位置选项：
+    - 0
+
+        记录在设定的日志文件中。
+
+    - 1
+
+        记录在syslog文件中。
+
+    - 2
+
+        记录在设定的日志文件中。
+
+    - 3
+
+        空文件，即不记录日志信息。
+
+## CM支持日志管理<a name="section13934453125514"></a>
+
+- 简介：CM支持对$GAUSSLOG下的日志进行压缩和删除。
+- 管理对象：$GAUSSLOG路径下[表1 日志关键字](#table57617155518)中对应的日志。
+- 压缩删除时机：enable\_log\_compress开启后，间隔log\_threshold\_check\_interval。
+- 日志压缩：
+    - 对于单个目录下相同工具名的日志，除时间戳最新的日志外，剩余日志全部压缩。
+    - 日志压缩后与压缩前路径保持一致，压缩文件命名格式为"工具名-日志创建时间.log.gz"。
+
+- 日志删除：
+
+    - 当所有日志总大小超过（log\_max\_size\*95/100）MB时，根据压缩日志文件名时间，依次删除历史压缩日志，直到日志总大小小于（log\_max\_size\*95/100）MB。
+    - 当所有日志总个数超过log\_max\_count，根据压缩日志文件名时间，依次删除超过保留天数log\_saved\_days的压缩日志，直到日志总个数小于log\_max\_count。
+    - 日志压缩能力受内存限制，最多只能检测到30000个日志文件。总日志量超过30000个文件时，无法保证日志能被正常压缩及删除。可以通过调整log\_saved\_days和log\_threshold\_check\_interval快速清理已压缩日志文件。
+
+    **表 1**  日志关键字
+
+    <a name="table57617155518"></a>
+    <table><thead align="left"><tr id="row77631015655"><th class="cellrowborder" valign="top" width="100%" id="mcps1.2.2.1.1"><p id="p17594611153214"><a name="p17594611153214"></a><a name="p17594611153214"></a>默认值</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row19878191016810"><td class="cellrowborder" valign="top" width="100%" headers="mcps1.2.2.1.1 "><p id="p1396819461881"><a name="p1396819461881"></a><a name="p1396819461881"></a>"cm_client-", "cm_ctl-", "gs_clean-", "gs_ctl-", "gs_guc-", "gs_dump-", "gs_dumpall-", "gs_restore-", "gs_upgrade-", "gs_initcm-", "gs_initdb-", "gs_check-",</p>
+    <p id="p18968104612819"><a name="p18968104612819"></a><a name="p18968104612819"></a>"cm_agent-", "system_call-", "cm_server-", "om_monitor-", "gs_local-", "gs_preinstall-", "gs_install-", "gs_replace-", "gs_uninstall-", "gs_om-", "pssh-", "pscp-",</p>
+    <p id="p99688467818"><a name="p99688467818"></a><a name="p99688467818"></a>"gs_upgradectl-", "gs_expand-", "gs_shrink-", "gs_postuninstall-", "gs_backup-", "gs_checkos-", "gs_collector-", "GaussReplace-", "GaussOM-", "gs_checkperf-",</p>
+    <p id="p15968846388"><a name="p15968846388"></a><a name="p15968846388"></a>"roach_agent-", "roach_controller-", "sync-", "postgresql-", "sessionstat-", "system_alarm-", "pg_perf-", "slow_query_log-", "asp-", "etcd-", "etcd_", "gs_cgroup-",</p>
+    <p id="p129687461980"><a name="p129687461980"></a><a name="p129687461980"></a>"gs_hotpatch-", "cmd_sender-", "uploader-", "checkRunStatus-", "ffic_gaussdb-", "key_event-", "gs_streaming_disaster_recovery-", "mem_log-", "remote_client-"，"system_stat-"</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+## 级联备仲裁<a name="section1761911118325"></a>
+
+cm支持包含级联备组网下的DN仲裁。
+
+主要功能有：
+
+- CMA以pending方式拉起级联备，CMS下发notify消息，级联备pending DN升成级联备。
+- 级联备支持switchover，只支持switchover –n –D（级联备 \> 备机，备机 \> 级联备），switchover -a只能恢复第一个节点为主DN，内部执行两次switchover操作（级联备 \> 备机 \> 主机）。
+- 不支持failover操作。
+- 支持级联备组网下的升降副本功能。
+- 说明：
+    - 级联备默认存在于DN的同步列表中。
+    - 级联备不是正常副本。
+
+- 约束条件：
+    - 最小组网：一主两备一级联。
+    - 副本数：最多8个副本。
+    - 级联备不检查磁盘使用率。
+    - 级联备组网不支持强启功能。
+
+## 自定义资源<a name="section43117352044"></a>
+
+当前CM支持对无状态资源（即各资源实例角色平等，不区分主备，或资源自身就能够自行进行主备仲裁）进行监控，主要功能包括：
+
+- 资源配置
+
+    资源配置文件cm\_resource.json，文件包含所有自定义资源的相关属性，可以通过cm\_ctl res命令对配置文件修改。不支持动态生效，修改配置文件后需要重启cm才能生效。
+
+- 客户端
+
+    CM提供客户端动态库给资源进行集成，提供集群状态查询、状态变更通知、集群锁能力。
+
+- 自动启停资源
+
+    资源需要提供脚本，脚本包含启停、检测等能力，脚本路径需要配置在资源配置文件中。
+
+- 手动启停资源
+
+    可以通过cm\_ctl start/stop -n -I命令实现资源实例的启停操作，详细参见  [工具介绍](cm_ctl.md)。
+
+- 自定义资源状态
+
+    自定义资源有四种状态：online，offline，deleted，unknown。可以通过cm\_ctl查询。
+    
+  ### 配置方法
+    
+    安装好自定义资源后，若要使用自定义资源监控功能，需要配置两个文件：
+    
+    1. 资源脚本  
+       主要用于指定资源的启停、状态检查等指令，一个样例如下：
+    
+    ```
+    #!/bin/bash
+    #set -ex   #取消该行注释可帮助调试脚本
+    #资源名称
+    resName=sharding
+    #资源binpath
+    shardingPath=/home/test/home/apache-shardingsphere-5.1.1-shardingsphere-proxy-bin/bin
+    #用于过滤资源实例的命令关键词
+    cmdKey=org.apache.shardingsphere.proxy.Bootstrap
+    #用于保存首次检测到资源僵死时间的文件
+    phony_dead_time_file=.sharding_phony_dead_time
+    #最长僵死时间，单位为s
+    PHONY_MAX_TIME=20
+    
+    function exec_start
+    {
+      #资源启动命令
+      sh ${shardingPath}/start.sh; exit $?
+    }
+    
+    function exec_stop
+    {
+      #资源停止命令
+      sh ${shardingPath}/stop.sh; exit $?
+    }
+    
+    function exec_check
+    {
+      #查询资源实例pid
+      pid=`ps x | grep "$cmdKey" | grep -v grep | awk '{print $1}'`
+      if [ "${pid}" == "" ]; then
+        echo "$resName is not running."
+        exit 1
+      fi
+      #查询资源实例进程状态
+      state=`cat /proc/$pid/status | grep "State" | awk '{print $2}'`
+      if [ "$state" == "T" ]; then
+        #僵死检查和处理
+        if [ ! -f $phony_dead_time_file ]; then
+          touch ./${phony_dead_time_file}
+          echo "export firstphonytime=''" > ./${phony_dead_time_file}
+        fi
+        source ./$phony_dead_time_file;
+        curtime=$(date +%s);
+        if [ "$firstphonytime" == "" ]; then
+          #首次检测到资源僵死，将首次检测到僵死的时间写入僵死时间存储文件
+          #firstphonytime为用于保存当前资源实例僵死时间的变量名称，
+          #若当前节点存在多个自定义资源实例，该名称需要指定为不同的名称
+          echo "export firstphonytime=$curtime" > ./$phony_dead_time_file;
+          exit 0;
+        fi
+        dead_time=$(( $curtime - $firstphonytime ));
+        #若僵死时间大于等于用户设定的最大僵死时间，则立即杀死资源实例，否则不做处理正常退出
+        if [ $dead_time -ge $PHONY_MAX_TIME ]; then
+          echo "$resName is detected in a state of phony dead(T) and will be forcibly killed!"
+          kill -9 $pid
+          rm ./${phony_dead_time_file} -f
+          sh ${shardingPath}/start.sh; exit $?
+        else
+          exit 0
+        fi
+      elif [ "$state" == "S" ]; then
+        #未处于僵死状态清理环境后正常退出
+        rm ./${phony_dead_time_file} -f
+        exit 0
+      fi
+    }
+    
+    #以下为固定接口无需更改，必须实现
+    if [ $1 == '-start' ]; then
+      exec_start $2
+    elif [ $1 == '-stop' ]; then
+      exec_stop $2
+    elif [ $1 == '-check' ]; then
+      exec_check $2
+    elif [ $1 == '-clean' ]; then
+      exec_stop $2
+    elif [ $1 == '-reg' ]; then
+      exit 0
+    elif [ $1 == '-unreg' ]; then
+      exit 0
+    elif [ $1 == '-isreg' ]; then
+      exit 11
+    else
+      echo "Please confirm the input parameters."
+      exit 1
+    fi
+    ```
+    
+    以上样例可以作为模板使用，用户主要需要修改的地方包括：
+    资源名称、资源binPath、用于过滤资源实例的命令关键词、用于保存首次检测到资源僵死时间的文件（可选）、最长僵死时间、记录首次僵死时间的变量名（如果同一节点存在多个不同的自定义资源实例）
+    
+    2. 自定义资源配置文件cm_resource.json
+       该文件位置为cmdir/cm_agent/cm_resource.json，配置该文件后需要重启集群
+    
+    ```
+    {
+      "resources": [
+        {
+          "name": "sharding",
+          "resource_type": "APP",
+          "instances": [
+            {
+              "node_id": 1,
+              "res_instance_id": 1
+            },
+            {
+              "node_id": 2,
+              "res_instance_id": 2
+            }
+          ],
+          "script": "/usr2/omm/install/cm/cm_agent/sharding.sh",
+          "check_interval": 1,
+          "time_out": 5,
+          "restart_delay":3,
+          "restart_period":5,
+          "restart_times":10
+        },
+        {
+          "name": "test",
+          "resource_type": "APP",
+          "instances": [
+            {
+              "node_id": 1,
+              "res_instance_id": 1
+            },
+            {
+              "node_id": 2,
+              "res_instance_id": 2
+            }
+          ],
+          "script": "/usr2/omm/install/cm/cm_agent/test.sh",
+          "check_interval": 1,
+          "time_out": 5,
+          "restart_delay":0,
+          "restart_period":0,
+          "restart_times":1000
+        }
+      ]
+    }
+    ```
+    
+    配置说明：  
+    
+    - resources: 自定义资源对象列表，名称固定不能更改。
+    - name: 自定义资源对象名称，字符串类型，最大长度为32（包含末尾'\0'）。
+    - resource_type: 资源类型，取值["APP", "DN"]，APP表示为自定义资源，DN表示为数据库资源
+    - instances: 自定义资源所在节点列表。
+    - node_id: 资源实例所在节点的node_id。
+    - res_instance_id: 资源实例id，大于等于0，同一种资源的不同实例id不同。
+    - script: 资源脚本位置。
+    - check_interval: 上报资源状态时间间隔，大于等于0，单位s。
+    - time_out: 脚本执行的超时时间，大于等于0，单位s。
+    - restart_delay: 故障之后重启延迟时间，单位为s，取值范围[0,1800]。
+    - restart_period: 当前时间-最近重启时间若大于restart_period，则再次重启资源重启次数加1。
+    - restart_times: 周期内最多重启次数，超过则不再重启，并将资源标记为不可用，取值范围[-1,9999]，-1表示无限重启。
+    
+    >[!WARNING]注意   
+    >资源配置文件需要在所有节点上都有，且保持一致  。
+    >
+    >用户需要保证资源脚本能够正确运行  。
+
+## 资源池化<a name="section135462412052"></a>
+
+- 磁盘心跳
+
+    各节点cm\_agent定时向投票盘写入心跳，cm\_server获取投票盘中的磁盘心跳，作为主备共享模式下的仲裁依据。
+
+- 网络心跳
+
+    节点间的连通性网络心跳检测的主逻辑在cma实现。为了避免频繁建连，心跳采用长连接的方式，即cma之间通过TCP长连接，进行心跳交互，由每个cma节点定时广播，并周期性将列表信息上报给cms，此功能依赖各个节点的时钟完全同步。
+
+- 仲裁最大集群
+
+    cms根据网络心跳数据、磁盘心跳数据、共享盘状态等进行仲裁，选主子集群。
+
+    子集群满足条件：
+
+    1. 实例正常；
+
+    2. 相互网络通信正常；
+
+    3. 磁盘心跳正常；
+
+    不满足条件的剔除集群。
+
+    子集群仲裁规则：
+
+    1. 拥有节点多的子集群胜出；
+
+    2. 如果节点数一样多，则节点号小的胜出。
+
+- 约束：
+    - 集群节点时钟同步。
+    - CM使用的共享盘在安装之前请确保至少150M为空，否则可能会有历史数据影响。
+    - CM使用的投票盘在安装之前请确保已清空，否则可能会有历史数据影响。
+    - 由于心跳是集群所有节点间进行的，在大集群的情况下可能会对网络产生一定影响，因此，最多只会启动64个节点的心跳检测（DMS最多只支持64节点，满足使用要求）。
+    - 由于CM集群规模最多只支持8个备机，因此当前部署最多支持9副本的集群。
+    - Voting disk和share disk确保包括至少1G空间，由CM独占，其他应用不能使用。
+    - 在资源池化架构仲裁模式下，才启用磁盘心跳。
+
+## CM支持DN仲裁
+
+- CM支持的DN仲裁模式主要分为：
+  - Quorum 模式：基于多数派模式仲裁，选出同步备
+    - 简介：CM 基于Quorum模式进行仲裁，当DN分片处于无主场景时，CM在多数派DN redo完成后，选择 term和lsn最大的节点(同步备)发送failover升主。
+    - 约束：最小满足一主两备集群
+  - DCF 模式：
+    - 自动选主模式：基于paxos 协议：
+      - 简介：dcf模式自动选主，在此场景下，CM不再进行对DN选主，只负责数据采集，假死检测等。
+      - 约束：switchover只能使用cm_ctl switchover -n NODEID -D DATADIR
+      - CM配置：enable_dcf=ON、dn_arbitrate_mode=paxos
+      - DN配置：enable_dcf=ON
+    - 总体约束：
+      - 最小满足一主两备集群
+    - 默认安装：DCF自动选主模式
+  - 共享存储模式：
+    - 简介：在此场景下，CM不再进行对DN选主，只负责数据采集，假死检测等。
+    - CM配置：dn_arbitrate_mode=share_disk
+    - 介绍和约束：参考共享存储。
+
+## CM支持VIP仲裁<a name="section2099617234715"></a>
+
+**简介：** VIP是虚拟IP，随主DN状态进行动态绑定和切换，即如果DN主发生了切换，原主DN上的虚拟IP可能动态绑定到新主DN上，用户可以只通过该IP与数据库连接，不用感知数据库在哪个节点上。
+
+**仲裁流程：**
+
+原主：
+
+1. 在原主上解绑VIP。
+2. 把VIP从数据库配置项"listen\_addresses"中删除
+
+新主：
+
+1. 在新主上用别名\(网卡名:DN端口号\)方式绑定VIP。
+2. 把VIP添加到数据库配置项 "listen\_addresses" 中。
+
+功能开启：在数据库实例节点上每一个cm\_agent数据目录下生成cm\_resource.json配置文件，文件中包含VIP的json字段，可通过cm\_ctl工具命令生成VIP配置文件，参考命令，可以通过[•执行res命令：](cm_ctl.md)cm\_ctl show方法查看VIP信息。
+
+>[!NOTE]说明
+>在选主成功，业务恢复后，5s内VIP可以生效。
+
+**约束：**
+
+- 不支持沙箱环境。
+
+- 不支持灾备集群。
+
+- VIP\(网卡名:DN端口号\)不允许被其他非虚拟IP占用
+
+- 每个节点上cm\_resource.json配置文件必须一致。
+
+- 只支持重启方式加载。
+
+- 允许配置多个VIP，但是每个实例最多支持6个。
+
+- 支持IPV4和IPV6，VIP类型和节点IP类型需一致（如果在虚拟机使用ipv6配置vip，需要先申请可以ping6通的ipv6地址，物理机上则可以直接配置需要的ipv6地址为vip）。
+
+- 需要可用VIP，即需要可对外提供服务的VIP（跟现有网卡处于同一网段中）。
+
+**VIP配置操作步骤：**
+
+- 数据库集群未安装的场景下配置VIP
+
+1. ifconfig提权
+修改权限文件/etc/sudoers或执行visudo命令，添加以下内容，为集群用户添加ifconfig权限。
+
+```
+Cmnd_Alias COMMAND_FLAG = /usr/sbin/ifconfig
+集群用户名 ALL=(root) NOPASSWD: COMMAND_FLAG
+```
+
+也可以缩小权限范围，例如：
+
+```
+Cmnd_Alias COMMAND_FLAG = /usr/sbin/ifconfig * netmask * up, /usr/sbin/ifconfig * down
+集群用户名 ALL=(root) NOPASSWD: COMMAND_FLAG
+```
+
+>[!NOTE]说明
+> /usr/sbin/ifconfig表示ifconfig的绝对路径，需要根据实际环境情况修改
+
+>[!WARNING]注意
+>由于需要动态绑定和解绑VIP，需要对网卡进行操作，故而需要对ifconfig进行提权，允许集群用户使用sudo ifconfig方式绑定和解绑VIP，此操作可能带来窃听、篡改、仿冒、拒绝服务等安全风险。提权操作，可参考[安全设计->ifconfig 提权步骤](security_design.md)
+
+2. 安装集群使用的xml文件中配置VIP相关配置项，一个配置示例文件如下
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <CLUSTER>
+        <PARAM name="clusterName" value="mycluster"/>
+        <PARAM name="nodeNames" value="node1,node2,node3,node4,node5,node6,node7"/>
+        <PARAM name="gaussdbAppPath" value="/install_path/app"/>
+        <PARAM name="gaussdbLogPath" value="/install_path/log"/>
+        <PARAM name="tmpMppdbPath" value="/install_path/tmp"/>
+        <PARAM name="gaussdbToolPath" value="/install_path/om"/>
+        <PARAM name="corePath" value="/install_path/corefile"/>
+        <PARAM name="backIp1s" value="10.10.10.10,10.10.10.11,10.10.10.12,20.20.20.20,20.20.20.21,30.30.30.30,30.30.30.31"/>
+        <PARAM name="floatIp1" value="10.10.10.100"/>
+        <PARAM name="floatIp2" value="20.20.20.100"/>
+        <PARAM name="floatIp3" value="30.30.30.100"/>
+    </CLUSTER>
+
+    <DEVICELIST>
+        <DEVICE sn="node1">
+            <PARAM name="name" value="node1"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <PARAM name="backIp1" value="10.10.10.10"/>
+            <PARAM name="sshIp1" value="10.10.10.10"/>
+            <PARAM name="dataNum" value="1"/>
+            <PARAM name="dataPortBase" value="12600"/>
+            <PARAM name="dataNode1" value="/install_path/data/dn1,node2,/install_path/data/dn1/,node3,/install_path/data/dn1/"/>
+            <PARAM name="dataNode1_syncNum" value="1"/>
+            <PARAM name="dataListenIp1" value="10.10.10.10,10.10.10.11,10.10.10.12,20.20.20.20,20.20.20.21,30.30.30.30,30.30.30.31"/>
+            <PARAM name="floatIpMap1" value="floatIp1,floatIp1,floatIp1,floatIp2,floatIp2,floatIp3,floatIp3"/>
+
+            <PARAM name="cmDir" value="/install_path/cm"/>
+            <PARAM name="cmsNum" value="1"/>
+            <PARAM name="cmServerPortBase" value="13600"/>
+            <PARAM name="cmServerlevel" value="1"/>
+            <PARAM name="cmServerListenIp1" value="10.10.10.10,10.10.10.11,10.10.10.12,20.20.20.20,20.20.20.21,30.30.30.30,30.30.30.31"/>
+            <PARAM name="cmServerRelation" value="node1,node2,node3,node4,node5,node6,node7"/>
+        </DEVICE>
+
+        <DEVICE sn="node2">
+            <PARAM name="name" value="node2"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <PARAM name="backIp1" value="10.10.10.11"/>
+            <PARAM name="sshIp1" value="10.10.10.11"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+
+        <DEVICE sn="node3">
+            <PARAM name="name" value="node2"/>
+            <PARAM name="azName" value="AZ1"/>
+            <PARAM name="azPriority" value="1"/>
+            <PARAM name="backIp1" value="10.10.10.12"/>
+            <PARAM name="sshIp1" value="10.10.10.12"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+
+        <DEVICE sn="node4">
+            <PARAM name="name" value="node4"/>
+            <PARAM name="azName" value="AZ2"/>
+            <PARAM name="azPriority" value="2"/>
+            <PARAM name="backIp1" value="20.20.20.20"/>
+            <PARAM name="sshIp1" value="20.20.20.20"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+
+        <DEVICE sn="node5">
+            <PARAM name="name" value="node5"/>
+            <PARAM name="azName" value="AZ2"/>
+            <PARAM name="azPriority" value="2"/>
+            <PARAM name="backIp1" value="20.20.20.21"/>
+            <PARAM name="sshIp1" value="20.20.20.21"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+
+        <DEVICE sn="node6">
+            <PARAM name="name" value="node6"/>
+            <PARAM name="azName" value="AZ3"/>
+            <PARAM name="azPriority" value="3"/>
+            <PARAM name="backIp1" value="30.30.30.30"/>
+            <PARAM name="sshIp1" value="30.30.30.30"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+
+        <DEVICE sn="node7">
+            <PARAM name="name" value="node7"/>
+            <PARAM name="azName" value="AZ3"/>
+            <PARAM name="azPriority" value="3"/>
+            <PARAM name="backIp1" value="30.30.30.31"/>
+            <PARAM name="sshIp1" value="30.30.30.31"/>
+            <PARAM name="cmDir" value="/install_path/cm"/>
+        </DEVICE>
+    </DEVICELIST>
+</ROOT>
+```
+
+该示例为一个两地三中心（3az，3+2+2）的配置文件示例
+其中与VIP功能相关的几个重点配置项为
+
+```
+<PARAM name="floatIp1" value="10.10.10.100"/>
+<PARAM name="floatIp2" value="20.20.20.100"/>
+<PARAM name="floatIp3" value="30.30.30.100"/>
+
+<PARAM name="dataListenIp1" value="(10.10.10.10),(10.10.10.11),(10.10.10.12),(20.20.20.20),(20.20.20.21),(30.30.30.30),(30.30.30.31)"/>
+<PARAM name="floatIpMap1" value="(floatIp1),(floatIp1),(floatIp1),(floatIp2),(floatIp2),(floatIp3),(floatIp3)"/>
+```
+
+floatIp1、floatIp2、floatIp3为各节点或各az对应的VIP地址，用户需要保证VIP地址为可用VIP，即需要可对外提供服务的VIP（跟现有网卡处于同一网段中）  
+dataListenIp1为各节点监听ip，该选项可以不配置，若不配置，则默认使用backIp1s的值  
+floatIpMap1表示floatIp与dataListenIp的对应关系，其顺序与dataListenIp1的顺序要相互对应  
+
+3. 使用xml进行安装
+
+安装成功后VIP便会自动绑定到对应的主机上，可以使用cm_ctl show命令查看VIP状态
+
+- 带CM的数据库集群已安装的场景下配置VIP
+
+1. ifconfig提权
+
+2. 配置自定义资源文件cm_resource.json
+
+通过cm_ctl res命令新增floatIp资源，仍以上述的xml中的节点情况为例
+
+```
+# 新增VIP资源，res_name为资源名称，资源类型resources_type必须指定为VIP，float_ip表示该自定义VIP资源的虚拟ip
+cm_ctl res --add --res_name="VIP_az1" --res_attr="resources_type=VIP,float_ip=10.10.10.100"
+cm_ctl res --add --res_name="VIP_az2" --res_attr="resources_type=VIP,float_ip=20.20.20.100"
+cm_ctl res --add --res_name="VIP_az3" --res_attr="resources_type=VIP,float_ip=30.30.30.100"
+# 编辑各自定义VIP资源VIP_az1、VIP_az2、VIP_az3，添加节点，node_id表示对应的节点id，res_instance_id用于告知CM绑定的DN实例id，需要与对应的DN实例id对应
+cm_ctl res --edit --res_name="VIP_az1" --add_inst="node_id=1,res_instance_id=6001" --inst_attr="base_ip=10.10.10.10"
+cm_ctl res --edit --res_name="VIP_az1" --add_inst="node_id=2,res_instance_id=6002" --inst_attr="base_ip=10.10.10.11"
+cm_ctl res --edit --res_name="VIP_az1" --add_inst="node_id=3,res_instance_id=6003" --inst_attr="base_ip=10.10.10.12"
+cm_ctl res --edit --res_name="VIP_az2" --add_inst="node_id=4,res_instance_id=6004" --inst_attr="base_ip=20.20.20.20"
+cm_ctl res --edit --res_name="VIP_az2" --add_inst="node_id=5,res_instance_id=6005" --inst_attr="base_ip=20.20.20.21"
+cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=6,res_instance_id=6006" --inst_attr="base_ip=30.30.30.30"
+cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=6007" --inst_attr="base_ip=30.30.30.31"
+```
+
+执行完成后，建议使用cm_ctl res --check命令进行检查。自定义资源文件要求每个节点都要有且一致，检查完成没有错误后，需要手动将该文件分发到其他节点，分发完成后需要重启集群才能生效。该配置文件对格式要求比较严格，所以该操作不建议使用直接修改文件的方式配置，建议配置后使用cm_ctl res --check命令进行校验。  
+
+执行完成后，在cmdataPath/cm_agent/目录下会生成一个自定义资源配置文件cm_resource.json，示例如下：
+
+```
+{
+    "resources":
+        [{"name": "VIP_az1",
+          "resources_type": "VIP",
+          "instances":
+              [{"node_id":      1,
+                "res_instance_id":      6001,
+                "inst_attr":    "base_ip=10.10.10.10"
+              },
+              {"node_id":      2,
+                "res_instance_id":      6002,
+                "inst_attr":    "base_ip=10.10.10.11"
+              },
+              {"node_id":      3,
+                "res_instance_id":      6003,
+                "inst_attr":    "base_ip=10.10.10.12"
+              }],
+          "float_ip":     "10.10.10.100"
+        },
+        {
+          "name": "VIP_az2",
+          "resources_type": "VIP",
+          "instances":
+              [{"node_id":      4,
+                "res_instance_id":      6004,
+                "inst_attr":    "base_ip=20.20.20.20"
+              },
+              {"node_id":      5,
+                "res_instance_id":      6005,
+                "inst_attr":    "base_ip=20.20.20.21"
+              }],
+          "float_ip":     "20.20.20.100"
+        },
+        {
+          "name": "VIP_az3",
+          "resources_type": "VIP",
+          "instances":
+              [{"node_id":      6,
+                "res_instance_id":      6006,
+                "inst_attr":    "base_ip=30.30.30.30"
+              },
+              {"node_id":      7,
+                "res_instance_id":      6007,
+                "inst_attr":    "base_ip=30.30.30.31"
+              }],
+          "float_ip":     "30.30.30.100"
+        }]
+}
+```
+
+3. 在数据库pg_hba.conf文件中以sha256方式添加floatIp
+
+>[!NOTE]说明
+> 对于多中心集群，如果没有额外的硬件网络设施支持，一个VIP无法同时服务于多个中心，所以需要为每个中心或az配置一个VIP。
+
+**模式：**
+
+- CM支持的DN仲裁模式主要分为：
+    - Quorum 模式：基于多数派模式仲裁，选出同步备
+        - 简介：CM 基于Quorum模式进行仲裁，当DN分片处于无主场景时，CM在多数派DN redo完成后，选择 term和lsn最大的节点\(同步备\)发送failover升主。
+        - 约束：最小满足一主两备集群
+
+    - DCF 模式：
+        - 自动选主模式：基于paxos 协议：
+            - 简介：dcf模式自动选主，在此场景下，CM不再进行对DN选主，只负责数据采集，假死检测等。
+            - 约束：switchover只能使用cm\_ctl switchover -n NODEID -D DATADIR
+            - CM配置：enable\_dcf=ON、dn\_arbitrate\_mode=paxos
+            - DN配置：enable\_dcf=ON
+
+        - 总体约束：
+            - 最小满足一主两备集群
+
+        - 默认安装：DCF自动选主模式
+
+    - 资源池化模式：
+        - 简介：在此场景下，CM不再进行对DN选主，只负责数据采集，假死检测等。
+        - CM配置：dn\_arbitrate\_mode=share\_disk
+        - 介绍和约束：参考资源池化。
+
+## 支持集群信息查询和推送
+
+**功能介绍：**  
+通过运行组件CMRestAPI，CM能够支持：
+
+1. 通过http/https服务远程查询到集群的状态，便于管理人员、运维平台等监控集群状态。
+2. 在数据库集群发生切主事件时，通过http/https服务及时地将集群最新的主备信息推送到应用端注册的接收地址，便于应用端及时的感知到集群的主备变化，从而能够快速的连接到新的主机和备机。
+
+**参数说明**：  
+
++ -e 数据库环境变量文件，必须指定。
+
++ -w 访问来源ip白名单，如果不需要设置白名单则可以不用指定。
+  启动命令：  
+
+  ```
+  java -jar cmrestapi-xxx.jar -e envFile [-w appWhiteList]
+  ```
+
+**接口说明：**  
+
+1. 集群或节点状态查询。  
+   该接口使用GET方法，链接为<http://ip:port/CMRestAPI/keyword。>  
+   其中：  
+   + ip为运行CMRestAPI的节点ip。
+   + port为CMRestAPI服务的监听端口。 
+   + keyword为待查询的信息关键词，当前支持查询的信息即关键词包括：  
+     集群状态**ClusterStatus**，对应链接为**<http://ip:port/CMRestAPI/ClusterStatus**。> 
+     节点状态**NodeStatus**，对应链接为**<http://ip:port/CMRestAPI/NodeStatus[?nodeId=n]**，> 指定nodeId等于n，则可以查询节点n的状态，若不指定nodeId，则默认返回提供服务的节点即链接中ip所指定节点的状态。  
+
+2. 注册和更新主备机信息接收地址。 
+   如果应用端想要接收到CMRestAPI推送的集群当前最新的主备信息，需要向CMRestAPI注册一个信息接收地址并且需要在该地址上进行监听。接收到该请求后CMRestAPI会通过dcc将注册的接收地址保存到集群所在环境，dcc存储数据的形式为key-value形式，使用的key为/CMRestAPI/RecvAddrList/**ip**/**app**，其中ip为应用端所在机器的ip地址，app为用户自定义的应用名称，主要用于区分同一环境上的多个应用注册的接收地址。如果key已存在，即来源ip和应用名称均相同，则会更新key对应的主备信息接收地址。  
+   该接口需使用PUT方法，链接为<http://ip:port/CMRestAPI/RecvAddr，> 需要提供两个参数：  
+   + url——待注册的接收地址。
+   + app——应用名称，若不提供该参数则以**前缀+应用端ip**为key。
+
+3. 删除主备机信息接收地址。 
+   该接口使用DELETE方法，链接为<http://ip:port/CMRestAPI/RecvAddr，> 需要提供一个参数：  
+   app——应用名称。若不提供该参数则以**前缀+应用端ip**为key。  
+
+4. 信息接收地址说明。  
+   信息接收地址示例：<http://ip:port/CMRestAPI> ,
+   CMRestAPI使用PUT方法，推送主机信息context为MasterInfo，即链接为<http://ip:port/CMRestAPI/MasterInfo，> 发送对象类型为String，主机信息格式为ip:port，推送备机context为StanbyInfo，发送对象类型为String，备机信息格式为ip1:port1,ip2:port2,...,ipn:portn，一个应用端的demo参见CMRestAPI仓库中的applicationdemo，<https://gitcode.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo。>
+
+**其他使用说明：**  
+
+1. 安全相关。  
+   (1) CMRestAPI默认使用http服务，支持配置访问白名单，可通过启动参数-w配置访问来源ip的白名单文件，白名单文件配置格式为每行一个ip地址；  
+   (2) 若要使用https服务，则可以在启动时jar包时指定系统参数server.ssl相关参数来是CMRestAPI启动https服务，或将相关参数写入application.properties文件然后在启动命令中指定配置文件，或配置源码resource目录下的application.properties文件然后自行编译，自定义配置参数示例：  
+
+```
+-Dserver.port=服务监听端口 -Dserver.ssl.key-store=秘钥文件路径 -Dserver.ssl.key-store-password=秘钥文件密码 -Dserver.ssl.key-store-type=秘钥类型  
+如：  
+指定参数方式：
+
+系统参数方式
+java -jar -Dserver.port=8443 -Dserver.ssl.key-store=/home/omm/keystore.p12 -Dserver.ssl.key-store-password=xxxxxx -Dserver.ssl.key-store-type=PKCS12 cmrestapi-xxx.jar -e envFile  
+指定配置文件方式  
+java -jar -Dspring.config.location=/configpath/application.properties cmrestapi-xxx.jar -e envFile
+```
+
+更多相关配置参数可自行搜索配置
+
+2. 内存相关。  
+   由于本程序使用了springboot框架，默认启动会占用较大内存（约1G左右），若并发量不大不希望该程序占用较大内存，则可以在启动时指定一些系统参数减小内存占用，启动参数示例：  
+
+```
+-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC  
+如：java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC cmrestapi-xxx.jar -e envFile
+```
+
+更多相关配置参数可自行搜索配置
+
+3. 自定义资源配置文件。 
+   本程序需要依赖cm相关进程和指令，所以必须与cm同时运行，需配置自定义资源配置文件，配置方法详见自定义资源监控特性相关内容。
+
+**操作步骤说明：**  
+
+1. 安装带cm的数据库集群，配置资源脚本和自定义资源文件，资源脚本示例如下：  
+   cmrestapi.sh
+
+```
+#!/bin/bash
+#set -ex
+#资源名称
+resName=CM-RestAPI
+#资源binpath
+cmrestapiPath=/home/cmrestapi/cmrestapi-3.1.0-RELEASE.jar
+#资源启动命令关键词
+cmdKey=cmrestapi-3.1.0-RELEASE.jar
+#用于保存首次检测到资源假死时间的文件
+phony_dead_time_file=.cmrestapi_phony_dead_time
+#最长假死时间，单位为s
+PHONY_MAX_TIME=20
+envFile=/home/cmrestapi/envfile
+#appWhiteListFile=/home/cmrestapi/appWhiteListFile
+source $envFile
+
+function exec_start
+{
+    nohup java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=56m -Xms128m -Xmx128m -Xmn32m -Xss328k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC -Dserver.port=8080 $cmrestapiPath -e $envFile >> $GAUSSLOG/cm/cmrestapi/cmrestapi.log 2>&1 &
+    exit $?
+}
+
+function exec_stop
+{
+    ps x | grep "$cmdKey" | grep -v grep | awk '{print $1}' | xargs kill -9; exit $?
+}
+
+function exec_check
+{
+    pid=`ps x | grep "$cmdKey" | grep -v grep | awk '{print $1}'`
+    if [ "${pid}" == "" ]; then
+        echo "$resName is not running."
+        exit 1
+    fi
+    state=`cat /proc/$pid/status | grep "State" | awk '{print $2}'`
+    if [ "$state" == "T" ]; then
+        if [ ! -f $phony_dead_time_file ]; then
+            touch ./${phony_dead_time_file}
+            echo "export firstphonytime=''" > ./${phony_dead_time_file}
+        fi
+        source ./$phony_dead_time_file;
+        curtime=$(date +%s);
+        if [ "$firstphonytime" == "" ]; then
+            echo "export firstphonytime=$curtime" > ./$phony_dead_time_file;
+            exit 0;
+        fi
+        dead_time=$(( $curtime - $firstphonytime ));
+        if [ $dead_time -ge $PHONY_MAX_TIME ]; then
+            echo "$resName is detected in a state of phony dead(T) and will be forcibly killed!"
+            kill -9 $pid
+            rm ./${phony_dead_time_file} -f
+            exec_start
+        else
+            exit 0
+        fi
+    elif [ "$state" == "S" ]; then
+        rm ./${phony_dead_time_file} -f
+        echo "$resName is running normally."
+        exit 0
+    fi
+}
+
+if [ $1 == '-start' ]; then
+    exec_start $2
+elif [ $1 == '-stop' ]; then
+    exec_stop $2
+elif [ $1 == '-check' ]; then
+    exec_check $2
+elif [ $1 == '-clean' ]; then
+    exec_stop $2
+elif [ $1 == '-reg' ]; then
+    exit 0
+elif [ $1 == '-unreg' ]; then
+    exit 0
+elif [ $1 == '-isreg' ]; then
+    exit 11
+else
+    echo "Please confirm the input parameters."
+    exit 1
+fi
+```
+
+自定义资源文件cm_resource.json示例如下：  
+
+```
+{
+  "resources": [
+    {
+      "name": "CM-RestAPI",
+      "resource_type": "APP",
+      "instances": [
+        {
+          "node_id": 1,
+          "res_instance_id": 1
+        },
+        {
+          "node_id": 2,
+          "res_instance_id": 2
+        },
+        {
+          "node_id": 3,
+          "res_instance_id": 3
+        }
+      ],
+      "script": "/home/cmrestapi/install/cm/cm_agent/cmrestapi.sh",
+      "check_interval": 1,
+      "time_out": 10,
+      "restart_delay":0,
+      "restart_period":0,
+      "restart_times":1000
+    }
+  ]
+}
+```
+
+>[!WARNING]注意   
+>使用cm的自定义资源管理功能需将进程放到后台执行，所以需要将日志输出重定向至日志文件或配置日志输出相关选项，并且使用nohup和&将本程序放置到后台运行。
+>本程序需要运行在有数据库的节点；如果在集群发生切换时需要使用主备信息主动推送功能，则需要将该程序运行在集群中所有数据库节点。
+
+2. 启动集群，即可通过浏览器等访问上述集群或节点信息查询接口查询对应信息。
+3. 应用端开发（可参考源码仓库的demo），启动应用端。
+4. 注册信息接收地址。
+
+## 支持一键暂停/恢复CM服务
+
+**特性介绍：**
+在实际场景中，经常需要管理员或运维人员手动对数据库集群进行运维，但是CM的自动故障处理功能可能会对运维过程造成干扰，这种情况下，执行一键暂停命令后，可以将CM对DN的自动仲裁和故障处理功能暂停掉，避免运维操作被干扰，运维操作完成后，再执行一键恢复操作，可以重新恢复CM的仲裁和故障处理功能。
+
+**命令说明：**
+cm_ctl pause
+cm_ctl resume
+
+**约束条件：**
+
+1. 集群各节点间的互信和网络没有问题。
+2. 暂停操作和扩缩容操作不能同时进行，否则可能会导致扩缩容失败。
+3. cm暂停功能主要应用于运维场景，在cm暂停场景下，应尽量避免运行业务，以防止业务受到影响。
+
+**注意事项：**
+
+1. 当前该操作仅支持对整个集群执行，暂不支持节点级暂停。
+2. 暂停仅针对DN以及自定义资源相关的仲裁和故障处理，并不会影响CM其他组件cm_server、cm_agent、om_monitor的仲裁和故障恢复。
+3. 升级期间执行暂停操作可能会导致升级失败，操作时会发出告警。
+4. 网络和互信检查超时时间10s。
+5. 建议该操作及后续的运维操作由具有专业运维知识的人员执行。
+6. 暂停期间cm_ctl工具提供的功能仍可以正常使用。在非资源池化场景下，需要额外说明的是：
+集群暂停期间，cm_ctl start操作虽然可以执行，但是由于仲裁被暂停了，启动阶段的仲裁也无法进行，所以执行该操作只能将dn启动为pending状态，无法下发notify和failover命令，所以start操作在等待集群状态变成normal时会超时，所以notify和failover命令需要用户手动执行。
+集群暂停期间，dn实例的保活功能失效，如果dn实例异常挂掉或者使用非CM命令将其停掉，CM不会自动拉起，并且使用cm_ctl start -n nodeid -D datapath命令也无法拉起，必须执行gs_ctl start -D datapath命令拉起。
+在资源池化场景下，集群暂停期间，主节点被cm的stop命令停掉之后，DSS功能仍可正常使用，备节点不会升主。
+7. 为保障数据库正常运行，请在运维结束后执行resume命令恢复cm仲裁功能。
+
+## CM支持事件触发器
+
+**特性介绍**：
+CM支持事件触发器，即在特定事件发生后，由CM自动触发用户自定义的脚本，执行相应的操作。
+
+**使用说明**：
+事件触发器通过配置cm_agent的参数event_triggers来定义，参数类型为以字符串表示的json类型。  
+配置形式为：'{"trigger_type_1":"trigger_value_1",...,"trigger_type_n":"trigger_value_n"}' 。 
+其中：
+> trigger_type为事件触发器类型，当前支持的事件触发器类型为：on_start、on_stop、on_failover、on_switchover
+> trigger_value为发生对应事件时待执行的用户自定义触发器脚本  
+
+自定义脚本的输出会重定向至cm_agent日志目录下的system-callxxx.log中。
+
+**约束条件**：
+
+1. trigger_value即自定义脚本，必须为真实存在的shell脚本，且为绝对路径，并且对当前用户至少有读取和执行权限。
+2. 使用cm_ctl set命令配置该参数时，参数值必须符合json格式，并且将json类型表示为字符串类型，中间不能包含换行和空格。
+3. 参数值最大长度为1024。
+4. 用户需要保证自定义脚本能够正确执行。
+
+**配置样例**：
+'{"on_start":"/dir/on_start.sh","on_stop":"/dir/on_stop.sh","on_failover":"/dir/on_failover.sh","on_switchover":"/dir/on_switchover.sh"}'
+
+>[!WARNING]注意
+>由于CM内部对各事件的执行均是异步执行，即将事件置于后台执行，所以CM在调用用户自定义的触发器脚本时，有可能事件还尚未执行完成，所以用户自定义触发器脚本中如果是需要等待事件完成后才执行动作的话，则需要在脚本中添加对应的状态检查，以确保事件完成。
+
+## CM支持两节点部署
+
+**特性介绍**：
+CM集群管理组件支持两节点部署模式，集群最小节点数限制由3变2，带来显著的成本优势。。
+
+**使用说明**：
+
+1. 本特性的安装部署与先前两节点集群的安装部署没有任何差异：新增的五个参数(db_service_vip,third_party_gateway_ip,cms_enable_failover_on2nodes,cms_enable_db_crash_recovery, cms_network_isolation_timeout)均已写入配置文件，
+并设置了默认值（如db_service_vip配置到cm_agent.conf，third_party_gateway_ip、cms_enable_failover_on2nodes、cms_enable_db_crash_recovery和 cms_network_isolation_timeout配置到cm_server.conf）。
+2. 集群搭建完成后，可使用cm_ctl set xxx 指令配置前述的五个新增参数，同时结合cm_ctl reload指令达到动态更新参数的目的。
+
+**约束条件**：
+CM集群自动故障恢复场景下，存在从Minority模式向Majority模式的切换，此时可能丢失部分重要数据，如数据库集群的term信息。
+需要注意的是：两节点部署模式下，该问题无法避免，且数据库集群term的丢失未必会引起脑裂问题，一旦脑裂出现可通过配置参数cms_enable_db_crash_recovery加以控制，以此尽最大可能确保数据库集群的数据一致性。
+
+**配置样例**：
+
+1. 配置文件cm_server.conf中新增配置项示例如下：
+    third_party_gateway_ip=192.168.100.1 #请务必修改该地址为实际环境中有效可用的IP地址
+    cms_enable_failover_on2nodes=false
+    cms_enable_db_crash_recovery=false
+    cms_network_isolation_timeout=20
+2. 配置文件cm_agent.conf中新增配置项示例如下：
+    db_service_vip='' #可选配置项，若不配置，则默认为空字符串
+
+**特性增强**：
+
+CM支持多个三方IP检测(third_party_gateway_ip)，可以预防CM脑裂。
+
+自6.0.0版本开始，当CM为两节点部署时，cm_server参数third_party_gateway_ip支持以逗号分隔的多个IP。在两节点环境中，cms_enable_failover_on2nodes配置为true时，节点1与节点2的cm_server会将以与第三方网关的连通条件作为cm_server是否升主的条件之一。
+
+具体如下：当节点CM与三方网关中配置的所有IP都能ping通时，CM会升主；当节点CM与三方网关中配置的所有IP都不能ping通时，CM会降备。即CM升主与降备的条件是三方网关的所有IP都能ping通或者不能ping通。
+
+## CM支持容器化部署
+
+**特性介绍**：
+支持将CM工具和数据库打包到docker容器里面，可以快速拉起容器组成CM集群。
+
+**使用说明**：
+
+1. 构建包含CM和数据库的容器镜像或者从社区拉取构建好的容器镜像
+2. 创建容器网络，确保多个容器内可以互通
+3. 启动多个容器实例，组件CM集群
+
+**约束条件**：
+
+1. 构建的容器需要包含操作系统层
+2. 容器内仅提供CM和数据库内核工具，OM工具无法使用
+3. 当前暂不支持容器内升级或扩缩实例
+4. 对于x86平台，使用社区发布的Centos_x86_64的包;对于arm平台，使用发布的openEuler-arm版本企业包。
+
+**配置样例**：
+
+1. 下载社区发布的容器镜像
+
+  x86_64平台：
+
+  ```
+  docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X
+  docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/x86_64/opengauss:X.X.X opengauss:X.X.X
+  ```
+
+  arm平台:
+
+  ```
+  docker pull swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X
+  docker tag swr.cn-south-1.myhuaweicloud.com/opengauss/arm/opengauss:X.X.X opengauss:X.X.X
+  ```
+
+2. 创建容器网络
+
+##### 如果多个容器部署在一台机器上，创建一个普通的容器网络即可
+
+  `docker network create --subnet=172.11.0.0/24 og-network`
+
+##### 如果容器跨多个节点部署，即要求节点间的容器能够进行通信。业界有多种实现方式，这里提供一种作为参考，用户可以自行选择
+
+  选择一台部署progrium/consul容器：
+
+  ```
+  docker pull progrium/consul
+  docker run -d -p 8500:8500 -h consul --name consul progrium/consul -server -bootstrap
+  ```
+
+  每个节点的docker都进行修改：
+  vim /usr/lib/systemd/system/docker.service
+  在ExecStart一栏后面追加：
+
+  ```
+  -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --cluster-store=consul://192.168.0.94:8500 --cluster-advertise=eth0:2376
+  ```
+
+  **192.168.0.94** 是部署consul的机器ip。
+
+  修改完成后需要重启docker：
+
+  ```
+  systemctl daemon-reload
+  systemctl restart docker
+  ```
+
+  创建overlay网络
+
+  ```
+  docker network create -d overlay --subnet 10.22.1.0/24  --gateway 10.22.1.1 og-network
+  ```
+
+3. 启动多个容器实例
+
+  ```
+  # ip需要和容器网络在同一网段，几个实例的ip和节点名称不能重复。如下示例1主2备：
+
+  primary_nodeip="172.11.0.2"
+  standby1_nodeip="172.11.0.3"
+  standby2_nodeip="172.11.0.4"
+  primary_nodename=primary
+  standby1_nodename=standby1
+  standby2_nodename=standby2
+
+  OG_NETWORK=og-network
+  GS_PASSWORD=xxxxxx
+
+  # 启动实例1
+  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-01 --net ${OG_NETWORK} --ip "$primary_nodeip" -h=$primary_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X 
+
+  # 启动实例2
+  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-02 --net ${OG_NETWORK} --ip "$standby1_nodeip" -h=$standby1_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
+
+  # 启动实例3
+  docker run -d -it -P --ulimit nofile=1000000:1000000 --sysctl kernel.sem="250 6400000 1000 25600" --security-opt seccomp=unconfined -v /data/opengauss_volume:/volume --name opengauss-03 --net ${OG_NETWORK} --ip "$standby2_nodeip" -h=$standby2_nodename -e primaryhost="$primary_nodeip" -e primaryname="$primary_nodename" -e standbyhosts="$standby1_nodeip, $standby2_nodeip" -e standbynames="$standby1_nodename, $standby2_nodename" -e GS_PASSWORD=$GS_PASSWORD opengauss:X.X.X
+  ```
+
+4. 登录容器
+   
+   进入容器
+
+   ```
+   docker exec -ti <containerid> /bin/bash
+   su - omm
+   ```
+
+   查看集群状态
+
+   ```
+   cm_ctl query -Cvid
+   ```
+
+   连接接数据库
+
+   ```
+   gsql -d postgres -r
+   ```
+
+## CM支持最大可用模式动态调整
+
+自6.0.0版本开始，CM支持管理数据库最大可用模式参数most_available_sync。当数据库集群同步备机数量不满足要求时，CM可以打开数据库最大可用模式，以保证数据库主节点的可用性。
+
+当允许CM管理数据库最大可用模式时，需要将cm_server.conf配置文件中enable_set_most_available_sync参数设置为on，否则应该设置为off。
+
+当允许CM管理数据库最大可用模式时，如果数据库主节点因为同步备机故障或者期待的同步备机数量不足导致主机事务提交被hang住，由CM自动打开数据库最大可用模式；当同步备机数量满足要求时，由CM自动关闭数据库最大可用模式。

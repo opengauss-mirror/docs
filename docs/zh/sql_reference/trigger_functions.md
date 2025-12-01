@@ -1,0 +1,50 @@
+# 触发器函数
+
+- pg\_get\_triggerdef\(oid\)
+
+    描述：获取触发器的定义信息。
+
+    参数：待查触发器的OID。
+
+    返回值类型：text
+
+    示例:
+
+    ```
+    openGauss=# select pg_get_triggerdef(oid) from pg_trigger;
+                                                                                         pg_get_triggerdef
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+     CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
+    (2 rows)
+    ```
+
+- pg\_get\_triggerdef\(oid, boolean\)
+
+    描述：获取触发器的定义信息。
+
+    参数：待查触发器的OID及是否以pretty方式展示。
+
+    >[!NOTE]说明
+    >
+>仅在创建trigger时指定WHEN条件的情况下，布尔类型参数才生效。
+    
+返回值类型：text
+    
+示例:
+    
+    ```
+    openGauss=# select pg_get_triggerdef(oid,true) from pg_trigger;
+                                                                                         pg_get_triggerdef
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+     CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN (new.a IS NOT NULL) EXECUTE PROCEDURE gtest_trigger_func()
+    (2 rows)
+    
+    openGauss=# select pg_get_triggerdef(oid,false) from pg_trigger;
+                                                                                         pg_get_triggerdef
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     CREATE TRIGGER tg1 BEFORE INSERT ON gtest26 FOR EACH STATEMENT EXECUTE PROCEDURE gtest_trigger_func()
+     CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
+    (2 rows)
+    ```

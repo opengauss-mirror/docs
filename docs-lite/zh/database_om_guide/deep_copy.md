@@ -1,0 +1,11 @@
+# 深层复制<a name="ZH-CN_TOPIC_0289900500"></a>
+
+数据导入后，如果需要修改表的分区键、或者将行存表改列存、添加PCK（Partial Cluster Key）约束等场景下，可以使用深层复制的方式对表进行调整。深层复制是指重新创建表，然后使用批量插入填充表的过程。
+
+openGauss提供了三种深层复制的方式供用户选择。
+
+- **[使用CREATE TABLE执行深层复制](performing_a_deep_copy_by_using_the_create_table_statement.md)**  
+
+- **[使用CREATE TABLE LIKE执行深层复制](performing_a_deep_copy_by_using_the_create_table_like_statement.md)**  
+
+- **[通过创建临时表并截断原始表来执行深层复制](performing_a_deep_copy_by_creating_a_temporary_table_and_truncating_the_original_table.md)**  

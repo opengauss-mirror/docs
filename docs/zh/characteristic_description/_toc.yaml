@@ -1,0 +1,401 @@
+label: 特性参考
+isManual: true
+sections:
+  - label: 特性概览
+    href: ./feature_overview.md
+  - label: 高性能
+    sections:
+      - label: CBO优化器
+        href: ./cbo_optimizer.md
+      - label: 支持LLVM
+        href: ./llvm.md
+      - label: SQL by pass
+        href: ./sql_by_pass.md
+      - label: 鲲鹏NUMA架构优化
+        href: ./kunpeng_numa_architecture_optimization.md
+      - label: 支持线程池高并发
+        href: ./high_concurrency_of_thread_pools.md
+      - label: SMP并行执行
+        href: ./smp_for_parallel_execution.md
+      - label: Xlog no Lock Flush
+        href: ./xlog_no_lock_flush.md
+      - label: SCRLock加速分布式锁
+        href: ./scrlock.md
+      - label: 大页内存
+        href: ./huge_page_memory.md
+      - label: 开箱即用
+        href: ./out_of_the_box.md
+      - label: 用户态网络
+        href: ./user_mode_network.md
+      - label: 非资源池化主备同步加速
+        href: ./non_resource_pooling_active_standby_synchronization_acceleration.md
+      - label: HTAP 行列融合
+        href: ./row_and_column_integration.md
+      - label: 资源池化行列融合
+        href: ./资源池化行列融合.md        
+      - label: 自动参数化
+        href: ./automatic_parameterization.md
+      - label: UDF结果缓存
+        href: ./udf_result_cache.md            
+      - label: BLOOM索引
+        href: ./bloom_index.md  
+  - label: 高可用
+    sections:
+      - label: 逻辑复制
+        href: ./logical_replication.md
+      - label: 逻辑备份
+        href: ./logical_backup.md
+      - label: 作业失败自动重试
+        href: ./automatic_job_retry_upon_failure.md
+      - label: 并行逻辑解码
+        href: ./parallel_logical_decoding.md
+      - label: CM
+        href: ./cm.md
+      - label: 支持Global SysCache
+        href: ./global_syscache.md
+      - label: 异步备升主数据找回能力
+        href: ./asynchronous_backup_and_recovery_capability_for_master_data.md
+      - label: SQL防火墙能力
+        href: ./sql_firewall_capability.md
+      - label: 主库备库坏块修复功能
+        href: ./primary_and_standby_database_bad_block_repair_function.md                        
+  - label: 维护性
+    sections:
+      - label: 灰度升级
+        href: ./gray_upgrade.md
+      - label: 指定节点升级
+        href: ./specified_node_upgrade.md
+      - label: 支持WDR诊断报告
+        href: ./workload_diagnosis_report_wdr.md
+      - label: 慢SQL诊断
+        href: ./slow_sql_diagnosis.md
+      - label: 全链路跟踪
+        href: ./full_link_tracking.md
+      - label: 监控告警
+        href: ./monitoring_alerts.md
+      - label: Session性能诊断
+        href: ./session_performance_diagnosis.md
+      - label: 系统KPI辅助诊断
+        href: ./system_kpi_aided_diagnosis.md
+      - label: 内置stack工具
+        href: ./built_in_stack_tool.md
+      - label: 支持SQL PATCH
+        href: ./sql_patch.md
+  - label: 数据库安全
+    sections:
+      - label: 访问控制模型
+        href: ./access_control_model.md
+      - label: 控制权和访问权分离
+        href: ./separation_of_control_and_access_permissions.md
+      - label: 数据库认证机制
+        href: ./database_authentication_mechanism.md
+      - label: 数据加密存储
+        href: ./data_encryption_and_storage.md
+      - label: 数据库审计
+        href: ./database_audit.md
+      - label: 网络通信安全
+        href: ./network_communication_security.md
+      - label: 资源标签机制
+        href: ./resource_label.md
+      - label: 统一审计机制
+        href: ./unified_audit.md
+      - label: 动态数据脱敏机制
+        href: ./dynamic_data_masking.md
+      - label: 行级访问控制
+        href: ./row_level_security.md
+      - label: 用户口令强度校验机制
+        href: ./password_strength_verification.md
+      - label: 全密态数据库等值查询
+        href: ./equality_query_in_a_fully_encrypted_database.md
+      - label: 账本数据库机制
+        href: ./ledger_database_mechanism.md
+      - label: 透明数据加密
+        href: ./transparent_data_encryption.md
+  - label: 资源池化
+    sections:
+      - label: 资源池化算子卸载
+        href: ./resource_pooling_operator_offloading.md
+      - label: 资源池化多机并行
+        href: ./resource_pooling_multi_machine_paralleism.md
+  - label: 企业级特性
+    sections:
+      - label: 函数及存储过程支持
+        href: ./support_for_functions_and_stored_procedures.md
+      - label: 支持SQL hint
+        href: ./sql_hints.md
+      - label: 全文索引
+        href: ./full_text_indexing.md
+      - label: Copy接口支持容错机制
+        href: ./copy_interface_for_error_tolerance.md
+      - label: 分区
+        href: ./partitioning.md
+      - label: 高级分析函数支持
+        href: ./support_for_advanced_analysis_functions.md
+      - label: 物化视图
+        href: ./materialized_view.md
+      - label: 支持HyperLogLog
+        href: ./hyperloglog.md
+      - label: 在线添加索引
+        href: ./creating_an_index_online.md
+      - label: 自治事务
+        href: ./autonomous_transaction.md
+      - label: 全局临时表
+        href: ./global_temporary_table.md
+      - label: 伪列ROWNUM
+        href: ./pseudocolumn_rownum.md 
+      - label: 支持存储过程调试
+        href: ./stored_procedure_debugging.md
+      - label: JDBC客户端负载均衡与读写分离
+        href: ./jdbc_client_load_balancing_and_read_write_isolation.md
+      - label: 发布订阅
+        href: ./publication_subscription.md
+      - label: 外键锁增强
+        href: ./foreign_key_lock_enhancement.md
+      - label: 支持特殊浮点数
+        href: ./support_for_special_floating_point_numbers.md
+      - label: 事件触发器
+        href: ./event_trigger.md
+      - label: 支持UWAL特性
+        href: ./uwal.md
+      - label: 高级包
+        sections:
+          - label: gms_output高级包
+            href: ./gms_output_tool_package.md
+          - label: gms_profiler高级包
+            href: ./gms_profiler_advanced_package.md
+          - label: gms_stats高级包
+            href: ./gms_stats_advanced_package.md
+          - label: gms_i18n高级包
+            href: ./gms_i18n_advanced_package.md  
+          - label: gms_sql高级包
+            href: ./gms_sql_advanced_package.md 
+          - label: gms_tcp高级包
+            href: ./gms_tcp_advanced_package.md
+          - label: gms_compress高级包
+            href: ./gms_compress_advanced_package.md
+          - label: gms_inaddr高级包
+            href: ./gms_inaddr_advanced_package.md
+          - label: gms_utility高级包
+            href: ./gms_utility_advanced_package.md
+          - label: gms_raw高级包
+            href: ./gms_raw_advanced_package.md
+          - label: gms_match高级包
+            href: ./gms_match_advanced_package.md
+          - label: gms_assert高级包
+            href: ./gms_assert_advanced_package.md
+          - label: gms_debug高级包
+            href: ./gms_debug_advanced_package.md       
+  - label: 应用开发接口
+    sections:
+      - label: 支持标准SQL
+        href: ./standard_sql.md
+      - label: 支持标准开发接口
+        href: ./standard_development_interfaces.md
+      - label: 支持嵌入式SQL预处理器（ECPG）
+        href: ./embedded_sql_preprocessor_ecpg.md
+      - label: PG接口兼容
+        href: ./postgresql_api_compatibility.md
+      - label: 支持PL/Java
+        href: ./pl_java.md
+      - label: MySQL兼容性增强
+        href: ./enhanced_mysql_compatibility.md
+  - label: AI能力
+    sections:
+      - label: 概述
+        href: ./ai_capabilities.md
+      - label: "AI4DB: 数据库自治运维"
+        sections:
+          - label: 数据库指标采集、预测与异常监控
+            href: ./database_metric_collection_forecast_and_exception_detection.md
+          - label: 慢SQL根因分析
+            href: ./root_cause_analysis_for_slow_sql_statements.md
+          - label: 索引推荐
+            href: ./index_recommendation.md
+          - label: 参数调优与诊断
+            href: ./parameter_tuning_and_diagnosis.md
+          - label: 慢SQL发现
+            href: ./slow_sql_statement_discovery.md
+      - label: "DB4AI: 数据库驱动AI"
+        href: ./db4ai_database_driven_ai.md
+      - label: ABO优化器
+        sections:
+          - label: 智能基数估计
+            href: ./intelligent_cardinality_estimation.md
+          - label: 自适应计划选择
+            href: ./adaptive_plan_selection.md
+  - label: 工具链
+    sections:
+      - label: DataKit
+        href: ./tool_chain_datakit.md
+      - label: MySQL一键式迁移工具gs_rep_portal
+        href: ./gs_rep_portal.md
+      - label: 全量迁移gs_mysync
+        href: ./full_migration_tool_gs_mysync.md
+      - label: 增量迁移gs_replicate
+        href: ./incremental_migration_tool_gs_replicate.md
+      - label: 反向迁移gs_replicate
+        href: ./reverse_migration_gs_replicate.md
+      - label: 反向全量迁移
+        href: ./reverse_full_migration.md
+      - label: PostgreSQL迁移
+        href: ./postgresql_opengauss_migration_tool_debezium_connector_postgres.md
+      - label: PostgreSQL数据迁移工具
+        href: ./SQLServer_openGauss迁移工具oG_datasync_full_migration.md 
+      - label: 数据校验 gs_datacheck
+        href: ./data_check_tool_gs_datacheck.md
+      - label: MySQL->openGauss迁移工具chameleon
+        href: ./mysql_to_opengauss_migration_tool_chameleon.md
+      - label: openGauss客户端工具DataStudio
+        href: ./opengauss_client_tool_datastudio.md
+      - label: 数据库安装流程解除对root用户的依赖
+        href: ./database_installation_process_eliminates_dependency_on_the_root_user.md
+      - label: 支持自定义ssh端口
+        href: ./support_for_custom_ssh_ports.md
+      - label: 录制回放工具
+        href: ./workload_tool.md
+      - label: SQL语法审计工具libog_query
+        href: ./sql_syntax_audit_tool_libog_query.md
+  - label: 中间件
+    sections:
+      - label: 分布式数据库能力
+        href: ./distributed_database_capability.md
+      - label: 使用kubernetes部署分布式数据库
+        href: ./deploying_a_distributed_database_using_kubernetes.md
+      - label: 分布式分析能力
+        href: ./distributed_analysis_capabilities.md
+  - label: 负载管理
+    sections:
+      - label: 支持I层高时延逃生能力
+        href: ./high_latency_escape_at_the_infrastructure_layer.md
+  - label: 高级特性
+    sections:
+      - label: 索引推荐
+        href: ./advanced_features/index_recommendation.md  
+      - label: DB4AI
+        href: ./advanced_features/db4ai.md  
+      - label: LLVM
+        href: ./advanced_features/llvm.md  
+      - label: MOT
+        href: ./advanced_features/mot.md  
+      - label: 全密态数据库
+        href: ./advanced_features/full_encrypted_database.md  
+      - label: DCF
+        href: ./advanced_features/dcf.md  
+      - label: 并行查询
+        href: ./advanced_features/parallel_query.md  
+      - label: UWAL
+        href: ./advanced_features/uwal.md  
+  - label: AI特性
+    sections:
+      - label: "AI4DB: 数据库自治运维"
+        sections:
+          - label: 概述
+            href: ./aifeature_guide/ai4db_autonomous_database_o_m.md
+          - label: DBMind产品描述
+            href: ./aifeature_guide/product_description.md
+          - label: DBMind产品设计
+            href: ./aifeature_guide/product_design.md
+          - label: DBMind支持的场景规格
+            href: ./aifeature_guide/user_guide.md
+          - label: DBMind模式说明
+            sections:
+              - label: 关闭HISTORY记录
+                href: ./aifeature_guide/dbmind_mode.md
+              - label: service子命令
+                href: ./aifeature_guide/service.md
+              - label: component子命令
+                href: ./aifeature_guide/component.md
+              - label: set子命令
+                href: ./aifeature_guide/dbmind_mode_set.md
+          - label: DBMind的支持组件（Prometheus Exporter）
+            sections:
+              - label: 概述
+                href: ./aifeature_guide/prometheus_exporter_overview.md
+              - label: 环境部署
+                href: ./aifeature_guide/prometheus_exporter_environment_deployment.md
+              - label: 使用指导
+                href: ./aifeature_guide/prometheus_exporter_usage_guide.md
+              - label: 获取帮助
+                href: ./aifeature_guide/prometheus_exporter_obtaining_help_information.md
+              - label: 命令参考
+                href: ./aifeature_guide/prometheus_exporter_command_reference.md
+              - label: 常见问题处理
+                href: ./aifeature_guide/prometheus_exporter_troubleshooting.md
+          - label: DBMind服务部署
+            sections:
+              - label: 启动采集组件
+                href: ./aifeature_guide/start_the_collection_component.md
+              - label: 生成配置文件
+                href: ./aifeature_guide/generating_a_configuration_file.md
+              - label: 主服务管理
+                href: ./aifeature_guide/main_service_management.md
+          - label: DBMind的AI子功能
+            sections:
+              - label: 概述
+                href: ./aifeature_guide/ai_sub_functions_of_the_dbmind.md
+              - label: X-Tuner
+                href: ./aifeature_guide/preparation_for_use_x_tuner.md
+              - label: Index-advisor
+                href: ./aifeature_guide/index_advisor_index_recommendation.md
+              - label: Slow Query Diagnosis
+                href: ./aifeature_guide/slow_query_diagnosis.md
+              - label: SQLdiag
+                href: ./aifeature_guide/sqldiag_slow_sql_discovery.md
+              - label: SQL Rewriter
+                href: ./aifeature_guide/sql_rewriter_sql_statement_rewriting.md
+              - label: Anomaly detection
+                href: ./aifeature_guide/anomaly_detection.md
+              - label: Cluster Diagnosis
+                href: ./aifeature_guide/cluster_diagnosis.md
+              - label: 智能巡检
+                href: ./aifeature_guide/intelligent_inspection.md
+              - label: 常见问题
+                href: ./aifeature_guide/faqs.md
+              - label: 附录
+                href: ./aifeature_guide/appendix.md
+          - label: GaussMaster产品描述
+            href: ./aifeature_guide/product_description_gaussmaster.md
+          - label: GaussMaster大模型技术
+            sections:
+              - label: 大模型Agent技术
+                href: ./aifeature_guide/foundation_model_agent_technology.md
+              - label: 大模型RAG技术
+                href: ./aifeature_guide/foundation_model_rag_technology.md
+          - label: GaussMaster使用指南
+            sections:
+              - label: 架构概述
+                href: ./aifeature_guide/architecture_overview.md
+              - label: 部署GaussMaster
+                href: ./aifeature_guide/deployment_gaussmaster.md
+              - label: 智能运维
+                href: ./aifeature_guide/artificial_intelligence_for_it_operations.md
+              - label: 智能问答
+                href: ./aifeature_guide/intelligent_response.md
+              - label: 知识库管理
+                href: ./aifeature_guide/repository_management.md
+          - label: GaussMaster常见问题
+            href: ./aifeature_guide/faqs_gaussmaster.md
+          - label: GaussMaster附录
+            href: ./aifeature_guide/appendix_gaussmaster.md
+      - label: ABO优化器
+        sections:
+          - label: 智能基数估计
+            href: ./aifeature_guide/intelligent_cardinality_estimation.md
+          - label: 自适应计划选择
+            href: ./aifeature_guide/adaptive_plan_selection.md              
+      - label: "DB4AI: 数据库驱动AI"
+        sections:   
+          - label: 概述
+            href: ./aifeature_guide/db4ai_database_driven_ai.md         
+          - label: 原生DB4AI引擎
+            href: ./aifeature_guide/native_db4ai_engine.md
+          - label: 全流程AI
+            sections: 
+              - label: 概述
+                href: ./aifeature_guide/full_process_ai.md
+              - label: PLPython Fenced模式
+                href: ./aifeature_guide/plpython_fenced_mode.md
+              - label: DB4AI-Snapshots数据版本管理
+                href: ./aifeature_guide/db4ai_snapshots_for_data_version_management.md
+              - label: DB4AI-Query：模型训练和推断
+                href: ./aifeature_guide/db4ai_query_for_model_training_and_prediction.md
