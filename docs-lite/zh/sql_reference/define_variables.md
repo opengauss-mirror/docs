@@ -1,0 +1,146 @@
+# 定义变量<a name="ZH-CN_TOPIC_0289900208"></a>
+
+介绍PL/SQL中变量的声明，以及该变量在代码中的作用域。
+
+## 变量声明<a name="zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_scd87586ffb304dfca616ff3dff504b81"></a>
+
+变量声明语法请参见[图1](#zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc)。
+
+**图 1**  declare\_variable::=<a name="zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_f6cc941e0c136457aade3860fc682cbbc"></a>  
+![](figures/declare_variable.png)
+
+对以上语法格式的解释如下：
+
+-   variable\_name：变量名。
+-   type：变量类型。
+-   value：该变量的初始值（如果不给定初始值，则初始为NULL）。value也可以是表达式。
+
+**示例**
+
+```
+openGauss=# DECLARE
+    emp_id  INTEGER := 7788;  --定义变量并赋值
+BEGIN
+    emp_id := 5*7784;  --变量赋值
+END;
+/
+```
+
+变量类型除了支持基本类型，还可以是使用%TYPE和%ROWTYPE去声明一些与其他表字段或表结构本身相关的变量。
+
+**%TYPE属性**
+
+%TYPE主要用于声明某个与其他变量类型（例如，表中某列的类型）相同的变量。假如我们想定义一个my\_name变量，它的变量类型与employee的firstname类型相同，我们可以通过如下定义：
+
+```
+my_name employee.firstname%TYPE
+```
+
+这样定义可以带来两个好处，首先，我们不用预先知道employee 表的firstname类型具体是什么。其次，即使之后firstname类型有了变化，我们也不需要再次修改my\_name的类型。
+
+```
+TYPE employee_record is record (id INTEGER, firstname VARCHAR2(20));
+my_employee employee_record;
+my_id my_employee.id%TYPE;
+my_id_copy my_id%TYPE;
+```
+
+**%ROWTYPE属性**
+
+%ROWTYPE属性主要用于对一组数据的类型声明，用于存储表中的一行数据或从游标匹配的结果。假如，我们需要一组数据，该组数据的字段名称与字段类型都与employee表相同。我们可以通过如下定义：
+
+```
+my_employee employee%ROWTYPE
+```
+
+同样可以使用在cursor上面，该组数据的字段名称与字段类型都与employee表相同（对于PACKAGE中的cursor，可以省略%ROWTYPE）。%TYPE也可以引用cursor中某一列的类型，我们可以通过如下定义：
+
+```
+cursor cur is select * from employee;
+my_employee cur%ROWTYPE
+my_name cur.firstname%TYPE
+my_employee2 cur -- 对于PACKAGE中定义的cursor，可以省略%ROWTYPE字段
+```
+
+用于cursor的ROWTYPE支持以下功能:
+-   开启预编译开关时可以检测游标所涉及的表是否存在，表中是否存在对应列，能够在创建函数、存储过程、包时抛出错误。
+-   关闭预编译开关时无论游标所涉及的表、或者表中的列是否存在，都可以成功创建函数、存储过程、包。
+-   即使游标所涉及的表中没有任何数据，也可以对ROWTYPE所定义的变量进行赋值。
+-   游标所涉及的表的某列存在初始值时，ROWTYPE只获取类型，不继承初始值和约束。
+-   支持在PL中使用ROWTYPE非虚拟列进行数据插入。
+-   每次执行函数、存储过程、包时重新查询游标所涉及的表结构，以适应表结构的变化。
+-   可用游标的ROWTYPE类型变量给RECORD类型变量赋值。
+-   可以对游标ROWTYPE所定义的变量赋初始值。
+
+用例：
+```
+-- 打开预编译开关
+set behavior_compat_options='allow_procedure_compile_check';
+
+-- 创建游标所使用的表并插入数据
+create table int4_table(a NUMBER, b VARCHAR2(5));
+insert into int4_table(a, b) values(3,'johan');
+create table int_table(a NUMBER, d NUMBER, b VARCHAR2(5));
+insert into int_table(a, d, b) values(3, 6,'johan');
+
+-- 创建包头
+create or replace package pck1 is
+cursor cur1 is select * from int4_table;
+var1 cur1%rowtype:=(3, 'ada');-- 使用rowtype获取游标的实际类型并定义一个公共变量
+procedure ppp1;
+procedure ppp2(a cur1%rowtype);
+end pck1;
+/
+
+-- 创建包体
+create or replace package body pck1 is
+procedure ppp1() is
+cursor cur2 is select * from int_table;
+begin
+open cur2;
+fetch cur2 into var1;-- var1与游标cur2查询结果长度不同时会抛出错误
+ppp2(var1);
+raise info '%', var1.a;
+end;
+
+procedure ppp2(a cur1%rowtype) is
+begin
+    raise info '%', a.a;
+end;
+end pck1;
+/
+
+openGauss=# call pck1.ppp1();-- var1有2列，与游标cur2查询结果长度不匹配
+ERROR:  number of source and target fields in assignment does not match
+DETAIL:  strict_multi_assignment check is active.
+HINT:  Make sure the query returns the exact list of columns.
+CONTEXT:  PL/pgSQL function ppp1() line 4 at FETCH
+
+openGauss=# ALTER TABLE int_table DROP COLUMN d;-- 删除表的其中1列
+ALTER TABLE
+
+openGauss=# call pck1.ppp1();-- 执行成功
+INFO:  3
+CONTEXT:  SQL statement "CALL ppp2(var1)"
+PL/pgSQL function ppp1() line 5 at PERFORM
+INFO:  3
+ ppp1
+------
+
+(1 row)
+```
+
+>>[!TIP]须知
+>
+>-   %TYPE不支持引用复合类型或RECORD类型变量的类型、RECORD类型的某列类型、跨PACKAGE复合类型变量的某列类型、跨PACKAGE cursor变量的某列类型等。
+>-   %ROWTYPE不支持引用复合类型或RECORD类型变量的类型、跨PACKAGE cursor的类型。
+>-   %ROWTYPE不支持引用嵌套游标的类型。
+
+## 变量作用域<a name="zh-cn_topic_0283136825_zh-cn_topic_0237122221_zh-cn_topic_0059777427_s22f3ff2c9c4344a99fd2a028a86620bf"></a>
+
+变量的作用域表示变量在代码块中的可访问性和可用性。只有在它的作用域内，变量才有效。
+
+-   变量必须在declare部分声明，即必须建立BEGIN-END块。块结构也强制变量必须先声明后使用，即变量在过程内有不同作用域、不同的生存期。
+-   同一变量可以在不同的作用域内定义多次，内层的定义会覆盖外层的定义。
+-   在外部块定义的变量，可以在嵌套块中使用。但外部块不能访问嵌套块中的变量。
+

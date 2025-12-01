@@ -1,0 +1,37 @@
+label: 新手入门
+isManual: true
+sections:
+  - label: 了解openGauss
+    href: ./understanding_opengauss.md
+  - label: 安装openGauss
+    sections:
+      - label: 安装准备
+        href: ./preparing_for_installation.md
+      - label: 单节点容器化安装
+        href: ./container_based_installation_on_a_single_node.md
+      - label: 单节点服务器安装
+        href: ./installation_on_a_single_node.md
+  - label: 访问openGauss
+    sections:
+      - label: 概述
+        href: ./connecting_to_opengauss.md  
+      - label: 使用gsql访问openGauss
+        href: ./gsql_connection_and_usage.md 
+      - label: 使用应用程序访问openGauss
+        sections: 
+          - label: C/C++ (ODBC)
+            href: ./odbc.md
+          - label: C/C++ (libpq)
+            href: ./libpq.md
+          - label: Java
+            href: ./java.md
+          - label: Python
+            href: ./python.md
+  - label: 使用openGauss
+    href: ./before_you_start.md
+
+
+
+
+
+

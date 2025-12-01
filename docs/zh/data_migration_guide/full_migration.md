@@ -1,0 +1,196 @@
+# 全量迁移
+
+## 功能介绍<a name="section051261814117"></a>
+
+全量迁移gs_mysync是一个用Python3编写的将MySQL迁移至openGauss的复制工具，支持初始全量数据的复制功能。gs_mysync通过一次初始化配置，使用只读模式，将MySQL的数据全量拉取到openGauss。支持在同一快照下，表间数据并行迁移。
+
+全量迁移支持的功能：支持表及表数据、视图、触发器、自定义函数、存储过程的全量迁移
+
+## 特性优势<a name="section9194174261317"></a>
+
+基于sysbench测试模型，2路鲲鹏920 CPU、openEuler操作系统下，MySQL数据库10张表（无主键）单表数据量在500万以上时，gs_mysync使用20并发迁移数据至openGauss，整体全量迁移性能可达300M/s以上。
+
+## 环境准备<a name="section425318254413"></a>
+
+ARM+openEuler 20.03 或 X86+CentOS 7
+
+## 操作步骤<a name="section1912981915448"></a>
+
+全量迁移gs_mysync依赖MySQL一键式迁移工具gs_rep_portal，可实现全量迁移的安装、启动、停止、卸载整个过程。
+
+如果用户的系统版本不在以下版本中，则内网场景下可能无法安装portal，此时安装portal需要保证pip3 install功能可用，可以连接外部网络的场景下安装portal不受系统版本影响。
+
+各系统版本和架构对应的portal下载链接如下：
+
+| 系统名称       | 系统架构 | 下载链接                                                     |
+| :------------- | -------- | ------------------------------------------------------------ |
+| centos7        | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz |
+| openEuler20.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-x86_64.tar.gz |
+| openEuler20.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-aarch64.tar.gz |
+| openEuler22.03 | x86_64   | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-x86_64.tar.gz |
+| openEuler22.03 | aarch64  | https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-aarch64.tar.gz |
+
+- 根据系统版本下载对应版本的portal（这里以centos系统x86架构为例）
+
+  ```
+  wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz
+  ```
+
+  解压，并进入portal对应目录
+
+  ```
+  tar -zxvf PortalControl-6.0.0-x86_64.tar.gz
+  cd portal
+  ```
+
+- 修改gs_rep_portal配置文件
+
+  配置文件位于config目录内，全量迁移相关的配置文件主要包含如下两个，相关参数含义简要说明如下：
+
+  - toolspath.properties
+
+  ```
+  # 迁移工具的版本号
+  tools.version=6.0.0
+  # 系统名称
+  system.name=centos7
+  # 系统架构
+  system.arch=x86_64
+  # 全量迁移工具整体的安装路径
+  chameleon.install.path=/ops/portal/tools/chameleon/
+  # 全量迁移python虚拟环境的路径，可自定义修改
+  chameleon.venv.path=/ops/portal/tools/chameleon/chameleon-${tools.version}/
+  # 全量迁移用户相关路径
+  chameleon.path=~/.pg_chameleon/
+  # 全量迁移tar包的下载路径
+  chameleon.pkg.url=https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/tools/${system.name}/chameleon-${tools.version}-${system.arch}.tar.gz
+  # 全量迁移安装包的路径，可自定义修改
+  chameleon.pkg.path=/ops/portal/pkg/chameleon/
+  # 全量迁移安装包的名称
+  chameleon.pkg.name=chameleon-${tools.version}-${system.arch}.tar.gz
+  ```
+
+  - migrationConfig.properties
+
+  ```
+  # 用于指定全量迁移是否迁移对象，包括函数、存储过程、触发器、视图，默认为yes；若设置为no，表示不迁移对象
+  snapshot.object=yes
+  # mysql用户名
+  mysql.user.name=root
+  # mysql密码
+  mysql.user.password=***
+  # mysql数据库ip
+  mysql.database.host=127.0.0.1
+  # mysql数据库端口
+  mysql.database.port=3306
+  # mysql数据库名称
+  mysql.database.name=test123
+  # openGauss用户名
+  opengauss.user.name=test
+  # openGauss密码
+  opengauss.user.password=***
+  # openGauss数据库ip
+  opengauss.database.host=127.0.0.1
+  # openGauss数据库端口
+  opengauss.database.port=5432
+  # openGauss数据库名称
+  opengauss.database.name=test1234
+  # openGauss数据库的schema名称
+  opengauss.database.schema=test123
+  # 全量迁移的安装方式，默认为offline，表示离线安装，需通过参数chameleon.pkg.path指定离线安装包的路径；若设置为online，对应在线安装，在线下载的安装包将存放在参数chameleon.pkg.path指定的路径
+  default.install.mysql.full.migration.tools.way=offline
+  ```
+
+  - chameleon/config-example.yml
+
+  除上述的基础参数外，工具自身还有一些高级参数，详情请参见[配置参数说明](https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/6.0.0/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md#3-chameleon%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+
+- 安装
+
+  ```
+  sh gs_mysync.sh install workspace.id
+  ```
+
+  其中workspace.id表示迁移任务id，取值为数字和小写字母的组合，不同的id区分不同的迁移任务，不同迁移任务可并行启动。若未设置workspace.id，则使用其默认值1。若使用已存在的workspace.id，并修改其中的配置，请在portal/workspace/${workspace.id}/config/路径下修改对应的配置文件。
+
+- 启动
+
+  ```
+  sh gs_mysync.sh start workspace.id
+  ```
+
+- 停止
+
+  ```
+  sh gs_mysync.sh stop workspace.id
+  ```
+
+- 卸载
+
+  ```
+  sh gs_mysync.sh uninstall workspace.id
+  ```
+
+上述安装、启动、停止、卸载命令均不会在后台运行，若需在后台运行，请在命令后添加&符号。
+
+## FAQ
+
+1. 现象：安装chameleon或查询chameleon版本时遇到以下报错：
+
+    ```
+    NameError:name '_mysql' is not defined
+    ```
+    原因：缺少扩展包。
+  
+    解决方法：查看堆栈信息，找到上一个Error查看具体信息，如果报错信息为找不到libmariadb.so.*文件，例如：
+    
+    ```
+    ImportError: libmariadb.so.3: cannot open shared object file:No such file or directory
+    ```
+    
+    请尝试在root用户下执行以下命令安装mariadb扩展包，然后重新安装chameleon。
+    
+    ```
+    yum install mariadb-devel
+    ```
+    
+    如果报错信息为找不到libmysqlclient.so.*文件，例如：
+    
+    ```
+    ImportError: libmysqlclient.so.20: cannot open shared object file:No such file or directory
+    ```
+    
+    请尝试执行以下命令安装mysql扩展包，然后重新安装chameleon。
+    
+    ```
+    yum install mysql5-devel mysql-devel
+    ```
+    
+    安装扩展包只要成功其中一个即可。若两个扩展包均不存在或者均安装失败，可以从mysql5.7版本数据库的安装位置中获取报错中对应的libmysqlclient.so.*文件，并将这个文件复制一份至/usr/lib64文件夹下，或者在/usr/lib64文件夹建立软链接指向mysql5.7版本数据库的安装位置中对应的文件。
+
+2. 现象：安装chameleon或查询chameleon版本时遇到以下报错：
+
+   ```
+   fatal error: Python.h: No such file or directory
+   ```
+   原因：root用户下缺少python扩展包。
+
+   解决方法： 请尝试在root用户下执行以下命令安装python扩展包，然后重新安装chameleon，安装扩展包只要成功其中一个即可。
+   
+   ```
+   yum install python3-devel python-devel
+    ```
+
+3. 现象：安装chameleon或查询chameleon版本时遇到以下报错
+
+   ```
+   gcc: Command not found
+   ```
+  
+   原因：root用户下未安装gcc或未保存环境变量。
+
+   解决方法：请尝试在root用户下执行以下命令安装gcc，然后重新安装chameleon，或者openGauss在安装时三方件中已经存在了gcc，加载安装openGauss时相关的环境变量即可。
+
+   ```
+   yum install gcc
+   ```

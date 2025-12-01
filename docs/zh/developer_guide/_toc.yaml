@@ -1,0 +1,327 @@
+label: 应用开发指南
+isManual: true
+sections:
+  - label: 数据查询请求处理过程
+    href: ./query_request_handling_process.md
+  - label: 开发设计规范
+    sections:
+      - label: 开发设计规范概述
+        href: ./development_and_design_proposal_overview.md
+      - label: 数据库对象命名
+        href: ./database_object_naming_conventions.md
+      - label: 数据库对象设计
+        sections:
+          - label: Database和Schema设计
+            href: ./database_and_schema_design.md
+          - label: 表设计
+            href: ./table_design.md
+          - label: 字段设计
+            href: ./field_design.md
+          - label: 约束设计
+            href: ./constraint_design.md
+          - label: 视图和关联表设计
+            href: ./view_and_joined_table_design.md
+      - label: SQL编写
+        href: ./sql_compilation.md
+      - label: 程序开发规范
+        sections:
+          - label: 开发规范
+            href: ./development_specifications.md
+          - label: 工具对接：JDBC配置
+            href: ./jdbc_configuration.md
+  - label: 基于JDBC开发
+    sections:
+      - label: 简介
+        href: ./development_based_on_jdbc.md
+      - label: JDBC包、驱动类和环境类
+        href: ./jdbc_package_driver_class_and_environment_class.md
+      - label: 开发流程
+        href: ./development_process_jdbc.md
+      - label: 加载驱动
+        href: ./loading_the_driver_jdbc.md
+      - label: 连接数据库
+        href: ./connecting_to_a_database_jdbc.md
+      - label: 连接数据库（以SSL方式）
+        href: ./connecting_to_a_database_using_ssl_jdbc.md
+      - label: 连接数据库（UDS方式）
+        href: ./connecting_to_a_database_using_uds.md
+      - label: 执行SQL语句
+        href: ./running_sql_statements_jdbc.md
+      - label: 处理结果集
+        href: ./processing_data_in_a_result_set_jdbc.md
+      - label: 关闭连接
+        href: ./closing_a_connection_jdbc.md
+      - label: 日志管理
+        href: ./log_management.md
+      - label: 示例：常用操作
+        href: ./example_common_operations_jdbc.md
+      - label: 示例：重新执行应用SQL
+        href: ./example_retrying_sql_queries_for_applications.md
+      - label: 示例：通过本地文件导入导出数据
+        href: ./example_importing_and_exporting_data_through_local_files.md
+      - label: 示例：从MY向openGauss进行数据迁移
+        href: ./example_migrating_data_from_a_my_database_to_opengauss.md
+      - label: 示例：逻辑复制代码示例
+        href: ./example_logic_replication_code.md
+      - label: 示例：不同场景下连接数据库参数配置
+        href: ./example_parameters_for_connecting_to_the_database_in_different_scenarios.md
+      - label: 示例：jdbc主备集群负载均衡
+        href: ./example_jdbc_primary_standby_cluster_load_balancing.md
+      - label: JDBC接口参考
+        sections:
+          - label: 概览
+            href: ./jdbc_interface_reference.md
+          - label: java.sql.Connection
+            href: ./java_sql_connection.md
+          - label: java.sql.CallableStatement
+            href: ./java_sql_callablestatement.md
+          - label: java.sql.DatabaseMetaData
+            href: ./java_sql_databasemetadata.md
+          - label: java.sql.Driver
+            href: ./java_sql_driver.md
+          - label: java.sql.PreparedStatement
+            href: ./java_sql_preparedstatement.md
+          - label: java.sql.ResultSet
+            href: ./java_sql_resultset.md
+          - label: java.sql.ResultSetMetaData
+            href: ./java_sql_resultsetmetadata.md
+          - label: java.sql.Statement
+            href: ./java_sql_statement.md
+          - label: javax.sql.ConnectionPoolDataSource
+            href: ./javax_sql_connectionpooldatasource.md
+          - label: javax.sql.DataSource
+            href: ./javax_sql_datasource.md
+          - label: javax.sql.PooledConnection
+            href: ./javax_sql_pooledconnection.md
+          - label: javax.naming.Context
+            href: ./javax_naming_context.md
+          - label: javax.naming.spi.InitialContextFactory
+            href: ./javax_naming_spi_initialcontextfactory.md
+          - label: CopyManager
+            href: ./copymanager.md
+      - label: JDBC常用参数参考
+        href: ./common_jdbc_parameters.md
+  - label: 基于ODBC开发
+    sections:    
+      - label: 简介
+        href: ./development_based_on_odbc.md
+      - label: ODBC包及依赖的库和头文件
+        href: ./odbc_packages_dependent_libraries_and_header_files.md
+      - label: Linux下配置数据源
+        href: ./configuring_a_data_source_in_the_linux_os.md
+      - label: 开发流程
+        href: ./development_process_odbc.md
+      - label: 示例：常用功能和批量绑定
+        href: ./example_common_functions_and_batch_binding.md
+      - label: 典型应用场景配置
+        href: ./typical_application_scenarios_and_configurations.md
+      - label: ODBC接口参考
+        sections:
+          - label: 概览
+            href: ./odbc_interface_reference.md
+          - label: SQLAllocEnv
+            href: ./sqlallocenv.md
+          - label: SQLAllocConnect
+            href: ./sqlallocconnect.md
+          - label: SQLAllocHandle
+            href: ./sqlallochandle.md
+          - label: SQLAllocStmt
+            href: ./sqlallocstmt.md
+          - label: SQLBindCol
+            href: ./sqlbindcol.md
+          - label: SQLBindParameter
+            href: ./sqlbindparameter.md
+          - label: SQLColAttribute
+            href: ./sqlcolattribute.md
+          - label: SQLConnect
+            href: ./sqlconnect.md
+          - label: SQLDisconnect
+            href: ./sqldisconnect.md
+          - label: SQLExecDirect
+            href: ./sqlexecdirect.md
+          - label: SQLExecute
+            href: ./sqlexecute.md
+          - label: SQLFetch
+            href: ./sqlfetch.md
+          - label: SQLFreeConnect
+            href: ./sqlfreeconnect.md
+          - label: SQLFreeEnv
+            href: ./sqlfreeenv.md
+          - label: SQLFreeHandle
+            href: ./sqlfreehandle.md
+          - label: SQLFreeStmt
+            href: ./sqlfreestmt.md
+          - label: SQLGetData
+            href: ./sqlgetdata.md
+          - label: SQLGetDiagRec
+            href: ./sqlgetdiagrec.md
+          - label: SQLPrepare
+            href: ./sqlprepare.md
+          - label: SQLSetConnectAttr
+            href: ./sqlsetconnectattr.md
+          - label: SQLSetEnvAttr
+            href: ./sqlsetenvattr.md
+          - label: SQLSetStmtAttr
+            href: ./sqlsetstmtattr.md
+          - label: 示例
+            href: ./example_odbc.md
+  - label: 基于Psycopg开发
+    sections:
+      - label: 简介
+        href: ./psycopg_based_development.md
+      - label: Psycopg包
+        href: ./psycopg_package.md
+      - label: 开发流程
+        href: ./development_process_psycopg.md
+      - label: 加载驱动
+        href: ./loading_a_driver_psycopg.md
+      - label: 连接数据库
+        href: ./connecting_to_a_database_psycopg.md
+      - label: 执行SQL语句
+        href: ./executing_sql_statements_psycopg.md
+      - label: 处理结果集
+        href: ./processing_the_result_set_psycopg.md
+      - label: 关闭连接
+        href: ./closing_the_connection_psycopg.md
+      - label: 连接数据库（SSL方式）
+        href: ./connecting_to_the_database_using_ssl_psycopg.md
+      - label: 示例：常用操作
+        href: ./example_common_operations_psycopg.md
+      - label: Psycopg接口参考
+        sections:
+          - label: 概览
+            href: ./psycopg_api_reference.md
+          - label: psycopg2.connect()
+            href: ./psycopg2_connect.md
+          - label: connection.cursor()
+            href: ./connection_cursor.md
+          - label: cursor.execute(query,vars_list)
+            href: ./cursor_execute_query_vars_list.md
+          - label: curosr.executemany(query,vars_list)
+            href: ./curosr_executemany_query_vars_list.md
+          - label: connection.commit()
+            href: ./connection_commit.md
+          - label: connection.rollback()
+            href: ./connection_rollback.md
+          - label: cursor.fetchone()
+            href: ./cursor_fetchone.md
+          - label: cursor.fetchall()
+            href: ./cursor_fetchall.md
+          - label: cursor.close()
+            href: ./cursor_close.md
+          - label: connection.close()
+            href: ./connection_close.md
+  - label: 基于libpq开发
+    sections:
+      - label: 简介
+        href: ./development_based_on_libpq.md
+      - label: libpq使用依赖的头文件
+        href: ./dependent_header_files_of_libpq.md
+      - label: 开发流程
+        href: ./development_process_libpq.md
+      - label: 示例
+        href: ./example_libpq.md
+      - label: libpq接口参考：数据库连接控制函数
+        sections:
+          - label: 概览
+            href: ./database_connection_control_functions.md
+          - label: PQconnectdbParams
+            href: ./pqconnectdbparams.md
+          - label: PQconnectdb
+            href: ./pqconnectdb.md  
+          - label: PQconninfoParse
+            href: ./pqconninfoparse.md                      
+          - label: PQconnectStart
+            href: ./pqconnectstart.md
+          - label: PQerrorMessage
+            href: ./pqerrormessage.md
+          - label: PQsetdbLogin
+            href: ./pqsetdblogin.md
+          - label: PQfinish
+            href: ./pqfinish.md
+          - label: PQreset
+            href: ./pqreset.md
+          - label: PQstatus
+            href: ./pqstatus.md        
+      - label: libpq接口参考：数据库执行语句函数
+        sections:
+          - label: 概览
+            href: ./database_statement_execution_functions.md
+          - label: PQclear
+            href: ./pqclear.md
+          - label: PQexec
+            href: ./pqexec.md
+          - label: PQexecParams
+            href: ./pqexecparams.md
+          - label: PQexecParamsBatch
+            href: ./pqexecparamsbatch.md
+          - label: PQexecPrepared
+            href: ./pqexecprepared.md
+          - label: PQexecPreparedBatch
+            href: ./pqexecpreparedbatch.md
+          - label: PQfname
+            href: ./pqfname.md
+          - label: PQgetvalue
+            href: ./pqgetvalue.md
+          - label: PQnfields
+            href: ./pqnfields.md
+          - label: PQntuples
+            href: ./pqntuples.md
+          - label: PQprepare
+            href: ./pqprepare.md
+          - label: PQresultStatus
+            href: ./pqresultstatus.md
+      - label: libpq接口参考：大对象操作函数
+        sections:
+          - label: 概览
+            href: ./large_object_operation_functions.md
+          - label: lo_creat
+            href: ./lo_create.md
+          - label: lo_import
+            href: ./lo_import.md
+          - label: lo_export
+            href: ./lo_export.md
+          - label: lo_open
+            href: ./lo_open.md
+          - label: lo_write
+            href: ./lo_write.md
+          - label: lo_read
+            href: ./lo_read.md
+          - label: lo_lseek
+            href: ./lo_lseek.md
+          - label: lo_tell
+            href: ./lo_tell.md
+          - label: lo_truncate
+            href: ./lo_truncate.md
+          - label: lo_close
+            href: ./lo_close.md
+          - label: lo_unlink
+            href: ./lo_unlink.md
+      - label: libpq接口参考：异步命令处理
+        sections:
+          - label: 概览
+            href: ./functions_for_asynchronous_command_processing.md
+          - label: PQsendQuery
+            href: ./pqsendquery.md
+          - label: PQsendQueryParams
+            href: ./pqsendqueryparams.md
+          - label: PQsendPrepare
+            href: ./pqsendprepare.md             
+          - label: PQsendQueryPrepared
+            href: ./pqsendqueryprepared.md           
+          - label: PQflush
+            href: ./pqflush.md
+      - label: libpq接口参考：取消正在处理的查询
+        sections:
+          - label: 概览
+            href: ./functions_for_canceling_queries_in_progress.md
+          - label: PQgetCancel
+            href: ./pqgetcancel.md
+          - label: PQfreeCancel
+            href: ./pqfreecancel.md
+          - label: PQcancel
+            href: ./pqcancel.md
+      - label: 链接参数
+        href: ./link_parameters_libpq.md
+  - label: 编译与调试
+    href: ./commissioning.md

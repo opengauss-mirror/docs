@@ -1,0 +1,182 @@
+# 安装准备<a name="ZH-CN_TOPIC_0000001092968956"></a>
+
+本章详细介绍openGauss极简安装的环境准备和配置，极简安装包括单节点安装和一主一备节点安装，请在安装之前仔细阅读本章的内容。如果已完成本章节的配置，请忽略。
+
+## 获取安装包<a name="ZH-CN_TOPIC_0000001224028753"></a>
+
+### 操作步骤<a name="zh-cn_topic_0289899746_zh-cn_topic_0283136484_zh-cn_topic_0241802590_zh-cn_topic_0085434667_zh-cn_topic_0059782060_section62223956163549"></a>
+
+1.  从openGauss开源社区下载对应平台的安装包。
+    1.  登录[openGauss开源社区](https://opengauss.org/zh/download/)，选择对应平台的最新安装包下载。对于个人开发者或非企业级环境，下载极简安装包（不安装OM等组件）即可。
+    2.  单击“下载”。
+
+2.  检查安装包。
+
+    解压安装包，检查安装目录及文件是否齐全。在安装包所在目录执行以下命令：
+
+    ```
+    mkdir openGauss
+    tar -jxf openGauss-Server-x.x.x-openEuler20.03-x86_64.tar.bz2 –C openGauss
+    ls -lb openGauss/
+    ```
+
+    执行ls命令，显示类似如下信息：
+
+    ```
+    total 90296
+    drwx------ 3 root root     4096 Mar 31 21:18 bin
+    drwx------ 3 root root     4096 Mar 31 21:18 etc
+    drwx------ 3 root root     4096 Mar 31 21:18 include
+    drwx------ 4 root root     4096 Mar 31 21:18 jre
+    drwx------ 5 root root     4096 Mar 31 21:18 lib
+    drwx------ 5 root root     4096 Mar 31 21:18 share
+    drwx------ 2 root root     4096 Mar 31 21:18 simpleInstall
+    -rw------- 1 root root       32 Mar 31 21:18 version.cfg
+    ```
+
+## 准备软硬件安装环境<a name="ZH-CN_TOPIC_0000001223947253"></a>
+
+本章节描述安装前需要进行的环境准备。建议部署openGauss的各服务器具有等价的软硬件配置。
+
+### 硬件环境要求<a name="section113764326018"></a>
+
+[表1 硬件环境要求](#zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_t62cd0eed17004265b1b8ad98f302a4bc)列出了openGauss服务器应具备的最低硬件要求。在实际产品中，硬件配置的规划需考虑数据规模及所期望的数据库响应速度。请根据实际情况进行规划。
+
+**表 1**  硬件环境要求
+
+<a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_t62cd0eed17004265b1b8ad98f302a4bc"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_r22159407d305418785de8468729ae773"><th class="cellrowborder" valign="top" width="12.64%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb26fbf45f264229a75a015d5e872c73"></a><b><strong>项目</strong></b></p>
+</th>
+<th class="cellrowborder" valign="top" width="87.36%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ae6742eb120254caba0d2e3e8d78d3ce6"></a><b><strong>配置描述</strong></b></p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_r6e9f20e9463c41fa8ce77903aa38e901"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aac597314796e4f32be5624781db96791"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aac597314796e4f32be5624781db96791"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aac597314796e4f32be5624781db96791"></a>内存</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a1eb44a187b20406fa74eee0a502319b1"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a1eb44a187b20406fa74eee0a502319b1"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a1eb44a187b20406fa74eee0a502319b1"></a>功能调试建议32GB以上。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p2733433132815"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p2733433132815"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p2733433132815"></a>性能测试和商业部署时，单实例部署建议128GB以上。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ab636748c0876485b987945069966473e"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ab636748c0876485b987945069966473e"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ab636748c0876485b987945069966473e"></a>复杂的查询对内存的需求量比较高，在高并发场景下，可能出现内存不足。此时建议使用大内存的机器，或使用负载管理限制系统的并发。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_row18457708163752"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p18679412163752"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p18679412163752"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p18679412163752"></a>CPU</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p36637388163752"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p36637388163752"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p36637388163752"></a>功能调试最小1×8 核 2.0GHz。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p655107143013"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p655107143013"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_p655107143013"></a>性能测试和商业部署时，建议1×16核 2.0GHz。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p2939854163851"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p2939854163851"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p2939854163851"></a>CPU超线程和非超线程两种模式都支持。</p>
+<div class="note" id="note478320195520"><a name="note478320195520"></a><a name="note478320195520"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p127209169344"><a name="p127209169344"></a><a name="p127209169344"></a>个人开发者最低配置2核4G, 推荐配置4核8G。</p>
+<p id="p57837193513"><a name="p57837193513"></a><a name="p57837193513"></a>目前，openGauss仅支持ARM服务器和基于X86_64通用PC服务器的CPU。</p>
+</div></div>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_rc2f89a29186544e79e7995d19878a617"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb29f61cf13345269542500c96fa3370"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_aeb29f61cf13345269542500c96fa3370"></a>硬盘</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p27815444154057"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p27815444154057"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p27815444154057"></a>用于安装<span id="zh-cn_topic_0283136474_text434316502057"><a name="zh-cn_topic_0283136474_text434316502057"></a><a name="zh-cn_topic_0283136474_text434316502057"></a>openGauss</span>的硬盘需最少满足如下要求：</p>
+<a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ul38458483154057"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ul38458483154057"></a><ul id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_ul38458483154057"><li>至少1GB用于安装<span id="zh-cn_topic_0283136474_text119716545518"><a name="zh-cn_topic_0283136474_text119716545518"></a><a name="zh-cn_topic_0283136474_text119716545518"></a>openGauss</span>的应用程序。</li><li>每个主机需大约300MB用于元数据存储。</li><li>预留70%以上的磁盘剩余空间用于数据存储。</li></ul>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p1864232295654"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p1864232295654"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p1864232295654"></a>建议系统盘配置为Raid1，数据盘配置为Raid5，且规划4组Raid5数据盘用于安装<span id="zh-cn_topic_0283136474_text977517418"><a name="zh-cn_topic_0283136474_text977517418"></a><a name="zh-cn_topic_0283136474_text977517418"></a>openGauss</span>。有关Raid的配置方法在本手册中不做介绍。请参考硬件厂家的手册或互联网上的方法进行配置，其中Disk Cache Policy一项需要设置为Disabled，否则机器异常掉电后有数据丢失的风险。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p32157354152912"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p32157354152912"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p32157354152912"></a><span id="zh-cn_topic_0283136474_text283517517410"><a name="zh-cn_topic_0283136474_text283517517410"></a><a name="zh-cn_topic_0283136474_text283517517410"></a>openGauss</span>支持使用SSD盘作为数据库的主存储设备，支持SAS接口和NVME协议的SSD盘，以RAID的方式部署使用。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_rfd1c9b77d83d4ffba092bdfbdc322881"><td class="cellrowborder" valign="top" width="12.64%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a176cf03cd96e4828a9fcb162c5013968"></a>网络要求</p>
+</td>
+<td class="cellrowborder" valign="top" width="87.36%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a3f99d3fb009c4aeaae03e63a481f33ff"></a>300兆以上以太网。</p>
+<p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p64430430154726"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p64430430154726"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_p64430430154726"></a>建议网卡设置为双网卡冗余bond。有关网卡冗余bond的配置方法在本手册中不做介绍。请参考硬件厂商的手册或互联网上的方法进行配置。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+### 软件环境要求<a name="section12785165215260"></a>
+
+**表 2**  软件环境要求
+
+<a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_tfb195a8129b24c709d238b091e57405a"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_rbb0bb8c17c0c49fc9666f58bdd5487bb"><th class="cellrowborder" valign="top" width="25.230000000000004%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a177f29c592264a53a346a3b6c33a3ea0"></a><b><strong>软件类型</strong></b></p>
+</th>
+<th class="cellrowborder" valign="top" width="74.77000000000001%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a39384e588fc744db804eb3f5beecaa53"></a><b><strong>配置描述</strong></b></p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_rd18980a861d444ad8e87a077e7785e40"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"><a name="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6036b745c87c44ab85a2f6cec7c4e5da"></a>Linux操作系统</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><a name="zh-cn_topic_0283136474_ul2800840102316"></a><a name="zh-cn_topic_0283136474_ul2800840102316"></a><ul id="zh-cn_topic_0283136474_ul2800840102316"><li>ARM：<a name="zh-cn_topic_0283136474_ul177759349286"></a><a name="zh-cn_topic_0283136474_ul177759349286"></a><ul id="zh-cn_topic_0283136474_ul177759349286"><li>openEuler 20.03 LTS（推荐采用此操作系统）</li><li>openEuler 22.03 LTS</li><li>openEuler 24.03 LTS</li><li>麒麟V10</li><li>Asianux 7.5</li><li>统信V20</li></ul>
+</li><li>X86：<a name="zh-cn_topic_0283136474_ul851564911283"></a><a name="zh-cn_topic_0283136474_ul851564911283"></a><ul id="zh-cn_topic_0283136474_ul851564911283"><li>openEuler 20.03 LTS</li><li>openEuler 22.03 LTS</li><li>openEuler 24.03 LTS</li><li>CentOS 7.6</li><li>Asianux 7.6</li><li>麒麟V10</li><div class="note" id="zh-cn_topic_0283136474_note222515135376"><a name="zh-cn_topic_0283136474_note222515135376"></a><a name="zh-cn_topic_0283136474_note222515135376"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0283136474_p1225613103712"><a name="zh-cn_topic_0283136474_p1225613103712"></a><a name="zh-cn_topic_0283136474_p1225613103712"></a>1、当前安装包只能在英文操作系统上安装使用；2、OM工具已经支持对基于openEuler/Centos等商业操作系统的安装使用，具体配置信息可以查看OM中的osid.conf文件。</p>
+</div></div>
+</ul>
+</li></ul>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136474_zh-cn_topic_0241802565_zh-cn_topic_0085434629_zh-cn_topic_0059782022_rf52ebb45df8e4f57882a97bef3b36ca6"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"><a name="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a><a name="zh-cn_topic_0283136474_zh-cn_topic_0085434629_zh-cn_topic_0059782022_a6f023000ee654c70b98c163f8c9b5d99"></a>Linux文件系统</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_p537517310381"><a name="zh-cn_topic_0283136474_p537517310381"></a><a name="zh-cn_topic_0283136474_p537517310381"></a>剩余inode个数 &gt; 15亿（推荐）</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0283136474_row128032214310"><td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_p682172212430"><a name="zh-cn_topic_0283136474_p682172212430"></a><a name="zh-cn_topic_0283136474_p682172212430"></a>工具</p>
+</td>
+<td class="cellrowborder" valign="top" width="74.77000000000001%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_p582112294311"><a name="zh-cn_topic_0283136474_p582112294311"></a><a name="zh-cn_topic_0283136474_p582112294311"></a>bzip2</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+### 软件依赖要求<a name="section13116317142718"></a>
+
+openGauss的软件依赖要求如[表3 软件依赖要求](#zh-cn_topic_0283136474_table1212531681911)所示。
+
+建议使用上述操作系统安装光盘或者源中，下列依赖软件的默认安装包，若不存在下列软件，可参看软件对应的建议版本。
+
+**表 3**  软件依赖要求
+
+<a name="zh-cn_topic_0283136474_table1212531681911"></a>
+<table><thead align="left"><tr id="zh-cn_topic_0283136474_row317811661910"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0283136474_p14178216101910"><a name="zh-cn_topic_0283136474_p14178216101910"></a><a name="zh-cn_topic_0283136474_p14178216101910"></a><b>所需软件</b></p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0283136474_p1117815167195"><a name="zh-cn_topic_0283136474_p1117815167195"></a><a name="zh-cn_topic_0283136474_p1117815167195"></a><b>建议版本</b></p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="zh-cn_topic_0283136474_row17179141619198"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_p111791816141910"><a name="zh-cn_topic_0283136474_p111791816141910"></a><a name="zh-cn_topic_0283136474_p111791816141910"></a>libaio-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_p101791116151915"><a name="zh-cn_topic_0283136474_p101791116151915"></a><a name="zh-cn_topic_0283136474_p101791116151915"></a>建议版本：0.3.109-13</p>
+</td>
+</tr>
+
+<tr id="zh-cn_topic_0283136474_row9187524151412"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0283136474_p1718842421419"><a name="zh-cn_topic_0283136474_p1718842421419"></a><a name="zh-cn_topic_0283136474_p1718842421419"></a>readline-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136474_p0189112418140"><a name="zh-cn_topic_0283136474_p0189112418140"></a><a name="zh-cn_topic_0283136474_p0189112418140"></a>建议版本：7.0-13</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>libedit-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：3.0-3.1</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>libxml2-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：2.9.1-2.11.5</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>lz4-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：1.8.3-1.9.4</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>numactl-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：2.0.12-2.0.16</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>unixODBC-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：2.3.1-2.3.9</p>
+</td>
+</tr>
+<tr id="row81995715810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p182008785810"><a name="p182008785810"></a><a name="p182008785810"></a>java-1.8.0-openjdk-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：1.8</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+```shell
+yum install libaio-devel readline-devel libedit-devel libxml2-devel lz4-devel numactl-devel unixODBC-devel java-1.8.0-openjdk-devel
+```

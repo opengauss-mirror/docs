@@ -1,0 +1,176 @@
+label: Feature Reference
+isManual: true
+sections:
+  - label: High Performance
+    sections:
+      - label: CBO Optimizer
+        href: ./cbo_optimizer.md
+      - label: Vectorized Engine
+        href: ./vectorized_engine.md
+      - label: Hybrid Row-Column Store
+        href: ./hybrid_row_column_store.md
+      - label: Adaptive Compression
+        href: ./adaptive_compression.md
+      - label: SQL by pass
+        href: ./sql_by_pass.md
+      - label: Kunpeng NUMA Architecture Optimization
+        href: ./kunpeng_numa_architecture_optimization.md
+      - label: High Concurrency of Thread Pools
+        href: ./high_concurrency_of_thread_pools.md
+      - label: SMP for Parallel Execution
+        href: ./smp_for_parallel_execution.md
+      - label: Xlog no Lock Flush
+        href: ./xlog_no_lock_flush.md
+      - label: Parallel Page-based Redo For Ustore
+        href: ./parallel_page_based_redo_for_ustore.md
+      - label: Row-Store Execution to Vectorized Execution
+        href: ./row_store_execution_to_vectorized_execution.md
+  - label: High Availability (HA)
+    sections:
+      - label: Primary/Standby
+        href: ./primary_standby.md
+      - label: Logical Backup
+        href: ./logical_backup.md
+      - label: Logical Replication
+        href: ./logical_replication.md
+      - label: Automatic Job Retry upon Failure
+        href: ./automatic_job_retry_upon_failure.md
+      - label: Ultimate RTO
+        href: ./ultimate_rto.md
+      - label: Delayed Replay
+        href: ./delayed_replay.md
+      - label: Delaying Entering the Maximum Availability Mode
+        href: ./delaying_entering_the_maximum_availability_mode.md
+      - label: Parallel Logical Decoding
+        href: ./parallel_logical_decoding.md
+      - label: Global SysCache
+        href: ./global_syscache.md
+  - label: Maintainability
+    sections:
+      - label: Gray Upgrade
+        href: ./gray_upgrade.md
+      - label: WDR
+        href: ./workload_diagnosis_report_wdr.md
+      - label: Slow SQL Diagnosis
+        href: ./slow_sql_diagnosis.md
+      - label: Session Performance Diagnosis
+        href: ./session_performance_diagnosis.md
+      - label: System KPI-aided Diagnosis
+        href: ./system_kpi_aided_diagnosis.md
+      - label: Built-in Stack Tool
+        href: ./built_in_stack_tool.md
+      - label: SQL PATCH
+        href: ./sql_patch.md
+  - label: Database Security
+    sections:
+      - label: Access Control Model
+        href: ./access_control_model.md
+      - label: Separation of Control and Access Permissions
+        href: ./separation_of_control_and_access_permissions.md
+      - label: Database Authentication Mechanism
+        href: ./database_authentication_mechanism.md
+      - label: Data Encryption and Storage
+        href: ./data_encryption_and_storage.md
+      - label: Database Audit
+        href: ./database_audit.md
+      - label: Network Communication Security
+        href: ./network_communication_security.md
+      - label: Resource Label
+        href: ./resource_label.md
+      - label: Unified Audit
+        href: ./unified_audit.md
+      - label: Dynamic Data Masking
+        href: ./dynamic_data_masking.md
+      - label: Row-Level Access Control
+        href: ./row_level_access_control.md
+      - label: Password Strength Verification
+        href: ./password_strength_verification.md
+      - label: Ledger Database Mechanism
+        href: ./ledger_database_mechanism.md
+      - label: Transparent Data Encryption
+        href: ./transparent_data_encryption.md
+  - label: Enterprise-Level Features
+    sections:
+      - label: Full-Text Indexing
+        href: ./full_text_indexing.md
+      - label: Copy Interface for Error Tolerance
+        href: ./copy_interface_for_error_tolerance.md
+      - label: Partitioning
+        href: ./partitioning.md
+      - label: Support for Advanced Analysis Functions
+        href: ./support_for_advanced_analysis_functions.md
+      - label: Materialized View
+        href: ./materialized_view.md
+      - label: HyperLogLog
+        href: ./hyperloglog.md
+      - label: Creating an Index Online
+        href: ./creating_an_index_online.md
+      - label: Autonomous Transaction
+        href: ./autonomous_transaction.md
+      - label: Global Temporary Table
+        href: ./global_temporary_table.md
+      - label: Pseudocolumn ROWNUM
+        href: ./pseudocolumn_rownum.md
+      - label: Stored Procedure Debugging
+        href: ./stored_procedure_debugging.md
+      - label: JDBC Client Load Balancing and Read/Write Isolation
+        href: ./jdbc_client_load_balancing_and_read_write_isolation.md
+      - label: In-place Update Storage Engine
+        href: ./in_place_update_storage_engine.md
+      - label: Publication-Subscription
+        href: ./publication_subscription.md
+      - label: Foreign Key Lock Enhancement
+        href: ./foreign_key_lock_enhancement.md
+      - label: Data Compression in OLTP Scenarios
+        href: ./data_compression_in_oltp_scenarios.md
+      - label: openGauss Installation in openEuler in One-Click Mode
+        href: ./opengauss_installation_in_openeuler_in_one_click_mode.md
+  - label: Application Development Interfaces
+    sections:
+      - label: Standard Development Interfaces
+        href: ./standard_development_interfaces.md
+      - label: Standard SQL
+        href: ./standard_sql.md
+      - label: PostgreSQL API Compatibility
+        href: ./postgresql_api_compatibility.md
+      - label: PL/Java
+        href: ./pl_java.md
+  - label: AI Capabilities
+    href: ./ai_capabilities.md
+    sections:
+      - label: Overview
+        href: ./ai_capabilities.md
+      - label: "AI4DB: Autonomous Database O&M"
+        sections:
+          - label: Database Metric Collection, Forecast, and Exception Detection
+            href: ./database_metric_collection_forecast_and_exception_detection.md
+          - label: Root Cause Analysis for Slow SQL Statements
+            href: ./root_cause_analysis_for_slow_sql_statements.md
+          - label: Index Recommendation
+            href: ./index_recommendation.md
+          - label: Parameter Tuning and Diagnosis
+            href: ./parameter_tuning_and_diagnosis.md
+          - label: Slow SQL Statement Discovery
+            href: ./slow_sql_statement_discovery.md
+      - label: "DB4AI: Database-driven AI"
+        href: ./db4ai_database_driven_ai.md
+      - label: AI in DB
+        sections:
+          - label: "Predictor: AI Query Time Forecasting"
+            href: ./predictor_ai_query_time_forecasting.md
+  - label: Tool Chain
+    sections:
+      - label: MySQL to openGauss Migration Tool Chameleon
+        href: ./mysql_to_opengauss_migration_tool_chameleon.md
+      - label: OpenGauss Client Tool DataStudio
+        href: ./opengauss_client_tool_datastudio.md
+  - label: Middleware
+    sections:
+      - label: Deploying a Distributed Database Using Kubernetes
+        href: ./deploying_a_distributed_database_using_kubernetes.md
+      - label: Distributed Database Capability
+        href: ./distributed_database_capability.md
+  - label: Workload Management
+    sections:
+      - label: High-Latency Escape at the Infrastructure Layer
+        href: ./high_latency_escape_at_the_infrastructure_layer.md

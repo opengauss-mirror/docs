@@ -1,0 +1,15 @@
+label: Installation Guide
+isManual: true
+sections:
+  - label: Installation Overview
+    href: ./installation_overview.md
+  - label: Preparing for Installation
+    sections:
+      - label: Obtaining the Installation Package
+        href: ./obtaining_the_installation_package.md
+      - label: Preparing the Software and Hardware Installation Environment
+        href: ./preparing_the_software_and_hardware_installation_environment.md
+  - label: Installation
+    href: ./installing_the_opengauss.md
+  - label: Uninstalling the openGauss
+    href: ./uninstalling_the_opengauss.md

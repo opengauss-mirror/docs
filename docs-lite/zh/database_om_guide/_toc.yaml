@@ -1,0 +1,191 @@
+label: 数据库运维指南
+isManual: true
+sections:
+  - label: 启停openGauss
+    href: ./starting_or_stopping_opengauss.md
+  - label: 例行维护
+    href: ./routine_maintenance.md
+  - label: 备份与恢复
+    sections:
+      - label: 概述
+        href: ./overview.md
+      - label: 逻辑备份恢复
+        href: ./logical_backup_and_restoration.md
+      - label: 闪回恢复
+        href: ./flashback_restoration.md
+      - label: 导出数据
+        sections:
+          - label: 概述
+            href: ./overview_10.md
+          - label: 导出单个数据库
+            href: ./export_single_database.md
+          - label: 导出所有数据库
+            href: ./export_all_databases.md
+          - label: 无权限角色导出数据
+            href: ./data_export_by_a_user_without_required_permissions.md
+      - label: 导入数据
+        sections:
+          - label: 概览
+            href: ./import_data.md        
+          - label: 通过INSERT语句直接写入数据
+            href: ./running_the_insert_statement_to_insert_data.md
+          - label: 使用COPY FROM STDIN导入数据
+            href: ./running_the_copy_from_stdin_statement_to_import_data.md
+          - label: 使用gsql元命令导入数据
+            href: ./using_a_gsql_meta_command_to_import_data.md
+          - label: 使用gs_restore命令导入数据
+            href: ./using_gs_restore_to_import_data.md
+      - label: 更新表中数据
+        sections:
+          - label: 使用DML命令更新表
+            href: ./updating_a_table_by_using_dml_statements.md
+          - label: 使用合并方式更新和插入数据
+            href: ./updating_and_inserting_data_by_using_the_merge_into_statement.md
+      - label: 深层复制
+        sections:
+          - label: 概述
+            href: ./deep_copy.md
+          - label: 使用CREATE TABLE LIKE执行深层复制
+            href: ./performing_a_deep_copy_by_using_the_create_table_like_statement.md
+          - label: 使用CREATE TABLE执行深层复制
+            href: ./performing_a_deep_copy_by_using_the_create_table_statement.md
+          - label: 通过创建临时表并截断原始表来执行深层复制
+            href: ./performing_a_deep_copy_by_creating_a_temporary_table_and_truncating_the_original_table.md
+      - label: 分析表
+        href: ./analysis_table.md
+      - label: 对表执行VACUUM
+        href: ./doing_vacuum_to_a_table.md
+      - label: 管理并发写入操作
+        sections:
+          - label: 事务隔离说明
+            href: ./transaction_isolation_description.md
+          - label: 写入和读写操作
+            href: ./write_and_read_write_operations.md
+          - label: 并发写入事务的潜在死锁情况
+            href: ./potential_deadlocks_during_concurrent_write.md
+          - label: 并发写入示例
+            href: ./concurrent_write_example.md
+  - label: 逻辑复制
+    sections:
+      - label: 逻辑解码
+        sections:
+          - label: 逻辑解码概述
+            href: ./logical_decoding_overview.md
+          - label: 使用SQL函数接口进行逻辑解码
+            href: ./logical_decoding_by_sql_function_interfaces.md
+      - label: 使用逻辑复制工具复制数据
+        href: ./replicating_data_using_the_logical_replication_tool.md
+      - label: 发布订阅
+        sections:
+          - label: 概述
+            href: ./pub_sub.md
+          - label: 发布
+            href: ./publications.md
+          - label: 订阅
+            href: ./subscriptions.md
+          - label: 冲突处理
+            href: ./conflicts.md
+          - label: 限制
+            href: ./restrictions.md
+          - label: 架构
+            href: ./architecture.md
+          - label: 监控
+            href: ./monitoring.md
+          - label: 安全性
+            href: ./security.md
+          - label: 配置设置
+            href: ./configuration_set.md
+          - label: 快速设置
+            href: ./quick_setup.md
+      - label: 逻辑复制支持DDL操作
+        href: ./logical_copy_support_ddl_operation.md
+  - label: 常见故障定位指南
+    sections:
+      - label: 常见故障定位手段
+        href: ./common_fault_locating_methods.md
+      - label: 常见故障定位案例
+        sections:
+          - label: core问题定位
+            href: ./core_fault_locating.md
+          - label: TPCC运行时，注入磁盘满故障，TPCC卡住的问题
+            href: ./when_the_tpc_c_is_running_and_a_disk_to_be_injected_is_full_the_tpc_c_stops_responding.md    
+          - label: 备机处于need repair\(WAL\)状态问题
+            href: ./standby_node_in_the_need_repair_wal_state.md
+          - label: 内存不足问题
+            href: ./insufficient_memory.md
+          - label: 服务启动失败
+            href: ./service_startup_failure.md               
+          - label: 出现“Error:No space left on device”提示
+            href: ./error_no_space_left_on_device_is_displayed.md
+          - label: 在XFS文件系统中，使用du命令查询数据文件大小大于文件实际大小
+            href: ./after_you_run_the_du_command_to_query_data_file_size_in_the_xfs_file_system_the_query_result_is_grea.md
+          - label: 在XFS文件系统中，出现文件损坏
+            href: ./file_is_damaged_in_the_xfs_file_system.md
+          - label: 磁盘空间达到阈值，数据库只读
+            href: ./disk_space_usage_reaches_the_threshold_and_the_database_becomes_read_only.md
+          - label: 分析查询语句长时间运行的问题
+            href: ./slow_response_to_a_query_statement.md
+          - label: 分析查询语句运行状态
+            href: ./analyzing_the_status_of_a_query_statement.md
+          - label: 强制结束指定的问题会话
+            href: ./forcibly_terminating_a_session.md
+          - label: 分析查询语句是否被阻塞
+            href: ./analyzing_whether_a_query_statement_is_blocked.md
+          - label: 分析查询效率异常降低的问题
+            href: ./low_query_efficiency.md
+          - label: 执行 SQL 语句时，提示 Lock wait timeout
+            href: ./lock_wait_timeout_is_displayed_when_a_user_executes_an_sql_statement.md
+          - label: VACUUM FULL一张表后，表文件大小无变化
+            href: ./table_size_does_not_change_after_vacuum_full_is_executed_on_the_table.md
+          - label: 执行修改表分区操作时报错
+            href: ./an_error_is_reported_when_the_table_partition_is_modified.md
+          - label: 不同用户查询同表显示数据不同
+            href: ./different_data_is_displayed_for_the_same_table_queried_by_multiple_users.md
+          - label: 修改索引时只调用索引名提示索引不存在
+            href: ./when_a_user_specifies_only_an_index_name_to_modify_the_index_a_message_indicating_that_the_index_doe.md
+          - label: 重建索引失败
+            href: ./failed_to_recreate_the_index.md
+          - label: 业务运行时整数转换错
+            href: ./an_error_occurs_during_integer_conversion.md
+          - label: 高并发报错"too many clients already"或无法创建线程
+            href: ./too_many_clients_already_is_reported_or_threads_failed_to_be_created_in_high_concurrency_scenarios.md
+          - label: btree 索引故障情况下应对策略
+            href: ./b_tree_index_faults.md
+          - label: 闪回DROP/TRUNCATE
+            href: ./drop_truncate_flashback.md
+          - label: 闪回查询
+            href: ./flashback_query.md
+          - label: 闪回表
+            href: ./flashback_table.md
+  - label: 安全加固指南
+    sections:
+      - label: 数据库加固概述
+        href: ./secharden/overview_of_database_hardening.md
+      - label: openGauss安全配置说明
+        href: ./secharden/security_configuration_baseline_specification.md
+      - label: 加固指导
+        sections:
+          - label: 连接配置
+            href: ./secharden/connection_configuration.md
+          - label: 文件目录安全
+            href: ./secharden/file_directory_security.md
+          - label: 安全认证配置
+            href: ./secharden/security_authentication_configuration.md
+          - label: 账号口令管理
+            href: ./secharden/account_and_password_management.md
+          - label: 权限管理
+            href: ./secharden/permission_management.md
+          - label: 数据库审计
+            href: ./secharden/database_audit.md
+          - label: 错误报告和日志配置
+            href: ./secharden/error_reporting_and_log_configuration.md
+          - label: WAL归档配置
+            href: ./secharden/wal_archiving_configuration.md
+          - label: 运行环境配置
+            href: ./secharden/configuring_the_operating_environment.md
+          - label: 其它配置
+            href: ./secharden/other_configuration.md
+  - label: 高危操作一览表
+    href: ./risky_operations.md
+  - label: 日志参考
+    href: ./log_reference.md

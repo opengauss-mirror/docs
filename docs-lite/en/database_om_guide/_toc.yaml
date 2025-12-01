@@ -1,0 +1,162 @@
+label: Database O&M Guide
+isManual: true
+sections:
+  - label: Starting and Stopping openGauss
+    href: ./starting_and_stopping_opengauss.md
+  - label: Routine Maintenance
+    href: ./routine_maintenance.md
+  - label: Backup and Restoration
+    sections:
+      - label: Overview
+        href: ./overview.md
+      - label: Logical Backup and Restoration
+        href: ./logical_backup_and_restoration.md
+      - label: Flashback Restoration
+        href: ./flashback_restoration.md
+      - label: Exporting Data
+        sections:
+          - label: Overview
+            href: ./overview_8.md
+          - label: Exporting a Single Database
+            href: ./export_single_database.md
+          - label: Exporting All Databases
+            href: ./export_all_databases.md
+          - label: Data Export By a User Without Required Permissions
+            href: ./data_export_by_a_user_without_required_permissions.md
+      - label: Importing Data
+        sections:
+          - label: Overview
+            href: ./import_data.md
+          - label: Running the INSERT Statement to Insert Data
+            href: ./running_the_insert_statement_to_insert_data.md            
+          - label: Running the COPY FROM STDIN Statement to Import Data
+            href: ./running_the_copy_from_stdin_statement_to_import_data.md
+          - label: Using a gsql Meta-Command to Import Data
+            href: ./using_a_gsql_meta_command_to_import_data.md
+          - label: Using gs_restore to Import Data
+            href: ./using_gs_restore_to_import_data.md
+      - label: Updating Data in a Table
+        sections:
+          - label: Updating a Table by Using DML Statements
+            href: ./updating_a_table_by_using_dml_statements.md
+          - label: Updating and Inserting Data by Using the MERGE INTO Statement
+            href: ./updating_and_inserting_data_by_using_the_merge_into_statement.md
+      - label: Deep Copy
+        sections:
+          - label: Overview 
+            href: ./deep_copy.md
+          - label: Performing a Deep Copy by Using the CREATE TABLE LIKE Statement
+            href: ./performing_a_deep_copy_by_using_the_create_table_like_statement.md
+          - label: Performing a Deep Copy by Using the CREATE TABLE Statement
+            href: ./performing_a_deep_copy_by_using_the_create_table_statement.md
+          - label: Performing a Deep Copy by Creating a Temporary Table and Truncating the
+                  Original Table
+            href: ./performing_a_deep_copy_by_creating_a_temporary_table_and_truncating_the_original_table.md
+      - label: ANALYZE Table
+        href: ./analysis_table.md
+      - label: Doing VACUUM to a Table
+        href: ./doing_vacuum_to_a_table.md
+      - label: Managing Concurrent Write Operations
+        sections:
+          - label: Transaction Isolation
+            href: ./transaction_isolation_description.md
+          - label: Write and Read/Write Operations
+            href: ./write_and_read_write_operations.md
+          - label: Potential Deadlocks During Concurrent Write
+            href: ./potential_deadlocks_during_concurrent_write.md
+          - label: Concurrent Write Examples
+            href: ./concurrent_write_example.md
+  - label: Logical Replication
+    sections:
+      - label: Logical Decoding
+        sections:
+          - label: Overview
+            href: ./overview_30.md
+          - label: Logical Decoding by SQL Function Interfaces
+            href: ./logical_decoding_by_sql_function_interfaces.md
+      - label: Replicating Data Using the Logical Replication Tool
+        href: ./replicating_data_using_the_logical_replication_tool.md
+      - label: Publication-Subscription
+        sections:   
+          - label: Overview
+            href: ./pub_sub.md        
+          - label: Publications
+            href: ./publications.md
+          - label: Subscriptions
+            href: ./subscriptions.md
+          - label: Conflicts
+            href: ./conflicts.md
+          - label: Restrictions
+            href: ./restrictions.md
+          - label: Architecture
+            href: ./architecture.md
+          - label: Monitoring
+            href: ./monitoring.md
+          - label: Security
+            href: ./security.md
+          - label: Configuration Settings
+            href: ./configuration_set.md
+          - label: Quick Setup
+            href: ./quick_setup.md
+  - label: Common Faults and Identification
+    sections:  
+      - label: Common Fault Locating Methods
+        href: ./common_fault_locating_methods.md
+      - label: Common Fault Locating Cases
+        sections:
+          - label: Core Dump Occurs due to Full Disk Space
+            href: ./core_dump_occurs_due_to_full_disk_space.md
+          - label: Core Dump Occurs Due to Incorrect Settings of GUC Parameter log_directory
+            href: ./core_dump_occurs_due_to_incorrect_settings_of_guc_parameter_log_directory.md
+          - label: Core Dump Occurs when RemoveIPC Is Enabled
+            href: ./core_dump_occurs_when_removeipc_is_enabled.md
+          - label: When the TPC-C is running and a disk to be injected is full, the TPC-C stops responding.
+            href: ./when_the_tpc_c_is_running_and_a_disk_to_be_injected_is_full_the_tpc_c_stops_responding.md
+          - label: Standby Node in the Need Repair (WAL) State
+            href: ./standby_node_in_the_need_repair_wal_state.md
+          - label: Insufficient Memory
+            href: ./insufficient_memory.md
+          - label: Service Startup Failure
+            href: ./service_startup_failure.md
+          - label: '"Error:No space left on device" Is Displayed'
+            href: ./error_no_space_left_on_device_is_displayed.md
+          - label: After You Run the du Command to Query Data File Size In the XFS File
+              System, the Query Result Is Greater than the Actual File Size
+            href: ./after_you_run_the_du_command_to_query_data_file_size_in_the_xfs_file_system_the_query_result_is_grea.md
+          - label: File Is Damaged in the XFS File System
+            href: ./file_is_damaged_in_the_xfs_file_system.md
+          - label: Disk space usage reaches the threshold and the database becomes read only
+            href: ./disk_space_usage_reaches_the_threshold_and_the_database_becomes_read_only.md
+          - label: Slow Response to a Query Statement
+            href: ./slow_response_to_a_query_statement.md
+          - label: Analyzing the Status of a Query Statement
+            href: ./analyzing_the_status_of_a_query_statement.md
+          - label: Forcibly Terminating a Session
+            href: ./forcibly_terminating_a_session.md
+          - label: Analyzing Whether a Query Statement Is Blocked
+            href: ./analyzing_whether_a_query_statement_is_blocked.md
+          - label: Low Query Efficiency
+            href: ./low_query_efficiency.md
+          - label: '"Lock wait timeout" Is Displayed When a User Executes an SQL Statement'
+            href: ./lock_wait_timeout_is_displayed_when_a_user_executes_an_sql_statement.md
+          - label: Table Size Does not Change After VACUUM FULL Is Executed on the Table
+            href: ./table_size_does_not_change_after_vacuum_full_is_executed_on_the_table.md
+          - label: An Error Is Reported When the Table Partition Is Modified
+            href: ./an_error_is_reported_when_the_table_partition_is_modified.md
+          - label: Different Data Is Displayed for the Same Table Queried By Multiple Users
+            href: ./different_data_is_displayed_for_the_same_table_queried_by_multiple_users.md
+          - label: When a User Specifies Only an Index Name to Modify the Index, A Message
+              Indicating That the Index Does Not Exist Is Displayed
+            href: ./when_a_user_specifies_only_an_index_name_to_modify_the_index_a_message_indicating_that_the_index_doe.md
+          - label: Reindexing Fails
+            href: ./reindexing_fails.md
+          - label: An Error Occurs During Integer Conversion
+            href: ./an_error_occurs_during_integer_conversion.md
+          - label: '"too many clients already" Is Reported or Threads Failed To Be Created in High Concurrency Scenarios'
+            href: ./too_many_clients_already_is_reported_or_threads_failed_to_be_created_in_high_concurrency_scenarios.md
+          - label: B-tree Index Faults
+            href: ./b_tree_index_faults.md
+  - label: Risky Operations
+    href: ./risky_operations.md
+  - label: Log Reference
+    href: ./log_reference.md

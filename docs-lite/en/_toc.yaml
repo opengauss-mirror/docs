@@ -1,0 +1,27 @@
+label: Document Center
+sections:
+  - label: Getting Started
+    sections:
+      - href: ./release_notes/_toc.yaml
+      - href: ./about_opengauss/_toc.yaml
+      - href: ./getting_started/_toc.yaml
+      - href: ./brief_tutorial/_toc.yaml
+  - label: Installation & Deployment
+    sections:
+      - href: ./installation_guide/_toc.yaml
+  - label: Usage and O&M
+    sections:
+      - href: ./sql_reference/_toc.yaml
+      - href: ./database_administration_guide/_toc.yaml
+      - href: ./database_om_guide/_toc.yaml
+      - href: ./performance_tuning_guide/_toc.yaml
+  - label: Developer Guide
+    sections:
+      - href: ./developer_guide/_toc.yaml
+      - href: ./compilation_guide/_toc.yaml
+  - label: References
+    sections:
+      - href: ./database_reference/_toc.yaml
+      - href: ./tool_and_commandreference/_toc.yaml
+      - href: ./characteristic_description/_toc.yaml
+      - href: ./appendix/_toc.yaml

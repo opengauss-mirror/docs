@@ -1,0 +1,432 @@
+# 范围函数和操作符<a name="ZH-CN_TOPIC_0289900548"></a>
+
+## 范围操作符<a name="zh-cn_topic_0283136628_zh-cn_topic_0237121981_zh-cn_topic_0059778082_sdbd7817099fd47dd95010675e3f38b03"></a>
+
+-   =
+
+    描述：等于
+
+    示例：
+
+    ```
+    openGauss=# SELECT int4range(1,5) = '[1,4]'::int4range AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <\>
+
+    描述：不等于
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(1.1,2.2) <> numrange(1.1,2.3) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <
+
+    描述：小于
+
+    示例：
+
+    ```
+    openGauss=# SELECT int4range(1,10) < int4range(2,3) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   \>
+
+    描述：大于
+
+    示例：
+
+    ```
+    openGauss=# SELECT int4range(1,10) > int4range(1,5) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <=
+
+    描述：小于或等于
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(1.1,2.2) <= numrange(1.1,2.2) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   \>=
+
+    描述：大于或等于
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(1.1,2.2) >= numrange(1.1,2.0) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   @\>
+
+    描述：包含范围
+
+    示例：
+
+    ```
+    openGauss=# SELECT int4range(2,4) @> int4range(2,3) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   @\>
+
+    描述：包含元素
+
+    示例：
+
+    ```
+    openGauss=# SELECT '[2011-01-01,2011-03-01)'::tsrange @> '2011-01-10'::timestamp AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <@
+
+    描述：范围包含于
+
+    示例：
+
+    ```
+    openGauss=# SELECT int4range(2,4) <@ int4range(1,7) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <@
+
+    描述：元素包含于
+
+    示例：
+
+    ```
+    openGauss=# SELECT 42 <@ int4range(1,7) AS RESULT;
+     result
+    --------
+     f
+    (1 row)
+    ```
+
+-   &&
+
+    描述：重叠（有共同点）
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(3,7) && int8range(4,12) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   <<
+
+    描述：范围值是否比另一个范围值的最小值还小（没有交集）
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(1,10) << int8range(100,110) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   \>\>
+
+    描述：范围值是否比另一个范围值的最大值还大（没有交集）
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(50,60) >> int8range(20,30) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   &<
+
+    描述：范围值的最大值是否不超过另一个范围值的最大值。
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(1,20) &< int8range(18,20) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   &\>
+
+    描述：范围值的最小值是否不小于另一个范围值的最小值。
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(7,20) &> int8range(5,10) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   -|-
+
+    描述：相邻
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(1.1,2.2) -|- numrange(2.2,3.3) AS RESULT;
+     result
+    --------
+     t
+    (1 row)
+    ```
+
+-   +
+
+    描述：并集
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(5,15) + numrange(10,20) AS RESULT;
+     result 
+    --------
+     [5,20)
+    (1 row)
+    ```
+
+-   \*
+
+    描述：交集
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(5,15) * int8range(10,20) AS RESULT;
+     result  
+    ---------
+     [10,15)
+    (1 row)
+    ```
+
+-   -
+
+    描述：差集
+
+    示例：
+
+    ```
+    openGauss=# SELECT int8range(5,15) - int8range(10,20) AS RESULT;
+     result 
+    --------
+     [5,10)
+    (1 row)
+    ```
+
+
+简单的比较操作符<，\>，<=和\>=先比较下界，只有下界相等时才比较上界。
+
+<<、\>\>和-|-操作符当包含空范围时也会返回false；也就是，不认为空范围在其他范围之前或之后。
+
+并集和差集操作符的执行结果无法包含两个不相交的子范围。
+
+## 范围函数<a name="zh-cn_topic_0283136628_zh-cn_topic_0237121981_zh-cn_topic_0059778082_sd7f8a14312fe49158bb4b9d8c073e2e6"></a>
+
+-   numrange\(numeric, numeric, \[text\]\)
+
+    描述：表示一个范围。
+
+    返回类型：范围元素类型
+
+    示例：
+
+    ```
+    openGauss=# SELECT numrange(1.1,2.2) AS RESULT;
+     result 
+    --------
+    [1.1,2.2)
+    (1 row)
+    openGauss=# SELECT numrange(1.1,2.2, '()') AS RESULT;
+     result 
+    --------
+    (1.1,2.2)
+    (1 row)
+    ```
+
+-   lower\(anyrange\)
+
+    描述：范围的下界
+
+    返回类型：范围元素类型
+
+    示例：
+
+    ```
+    openGauss=# SELECT lower(numrange(1.1,2.2)) AS RESULT;
+     result 
+    --------
+        1.1
+    (1 row)
+    ```
+
+-   upper\(anyrange\)
+
+    描述：范围的上界
+
+    返回类型：范围元素类型
+
+    示例：
+
+    ```
+    openGauss=# SELECT upper(numrange(1.1,2.2)) AS RESULT;
+     result 
+    --------
+        2.2
+    (1 row)
+    ```
+
+-   isempty\(anyrange\)
+
+    描述：范围是否为空
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT isempty(numrange(1.1,2.2)) AS RESULT;
+     result 
+    --------
+     f
+    (1 row)
+    ```
+
+-   lower\_inc\(anyrange\)
+
+    描述：是否包含下界
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT lower_inc(numrange(1.1,2.2)) AS RESULT;
+     result 
+    --------
+     t
+    (1 row)
+    ```
+
+-   upper\_inc\(anyrange\)
+
+    描述：是否包含上界
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT upper_inc(numrange(1.1,2.2)) AS RESULT;
+     result 
+    --------
+     f
+    (1 row)
+    ```
+
+-   lower\_inf\(anyrange\)
+
+    描述：下界是否为无穷
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT lower_inf('(,)'::daterange) AS RESULT;
+     result 
+    --------
+     t
+    (1 row)
+    ```
+
+-   upper\_inf\(anyrange\)
+
+    描述：上界是否为无穷
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT upper_inf('(,)'::daterange) AS RESULT;
+     result 
+    --------
+     t
+    (1 row)
+    ```
+
+    如果范围是空或者需要的界限是无穷的，lower和upper函数将返回null。lower\_inc、upper\_inc、lower\_inf和upper\_inf函数均对空范围返回false。
+
+
+-   elem\_contained\_by\_range\(anyelement, anyrange\)
+
+    描述：判断元素是否在范围内。
+
+    返回类型：Boolean
+
+    示例：
+
+    ```
+    openGauss=# SELECT elem_contained_by_range('2', numrange(1.1,2.2));
+     elem_contained_by_range
+    -------------------------
+     t
+    (1 row)
+    ```
+
+

@@ -1,0 +1,137 @@
+label: Tool and Command Reference
+isManual: true
+sections:
+  - label: Tool Overview
+    href: ./tool_overview.md
+  - label: Client Tools
+    sections:
+      - label: gsql
+        href: ./gsql.md
+  - label: Server Tools
+    sections:
+      - label: gs_cgroup
+        href: ./gs_cgroup.md
+      - label: gs_check
+        href: ./gs_check.md
+      - label: gs_checkos
+        href: ./gs_checkos.md
+      - label: gs_checkperf
+        href: ./gs_checkperf.md
+      - label: gs_collector
+        href: ./gs_collector.md
+      - label: gs_dump
+        href: ./gs_dump.md
+      - label: gs_dumpall
+        href: ./gs_dumpall.md
+      - label: gs_guc
+        href: ./gs_guc.md
+      - label: gs_encrypt
+        href: ./gs_encrypt.md
+      - label: gs_om
+        href: ./gs_om.md
+      - label: gs_plan_simulator
+        href: ./gs_plan_simulator.md
+      - label: gs_restore
+        href: ./gs_restore.md
+      - label: gs_ssh
+        href: ./gs_ssh.md
+      - label: gs_sdr
+        href: ./gs_sdr.md
+  - label: Tools Used in the Internal System
+    sections:
+      - label: Overview
+        href: ./tools_used_in_the_internal_system.md
+      - label: dsscmd
+        href: ./dsscmd.md
+      - label: dssserver
+        href: ./dssserver.md
+      - label: gaussdb
+        href: ./gaussdb.md
+      - label: gs_backup
+        href: ./gs_backup.md
+      - label: gs_basebackup
+        href: ./gs_basebackup.md
+      - label: gs_ctl
+        href: ./gs_ctl.md
+      - label: gs_initdb
+        href: ./gs_initdb.md
+      - label: gs_install
+        href: ./gs_install.md
+      - label: gs_postuninstall
+        href: ./gs_postuninstall.md
+      - label: gs_preinstall
+        href: ./gs_preinstall.md
+      - label: gs_sshexkey
+        href: ./gs_sshexkey.md
+      - label: gs_tar
+        href: ./gs_tar.md
+      - label: gs_uninstall
+        href: ./gs_uninstall.md
+      - label: gs_upgradectl
+        href: ./gs_upgradectl.md
+      - label: gs_expansion
+        href: ./gs_expansion.md
+      - label: gs_dropnode
+        href: ./gs_dropnode.md
+      - label: gstrace
+        href: ./gstrace.md
+      - label: gs_probackup
+        href: ./gs_probackup.md
+      - label: kadmin.local
+        href: ./kadmin_local.md
+      - label: kdb5_util
+        href: ./kdb5_util.md
+      - label: kdestroy
+        href: ./kdestroy.md
+      - label: kinit
+        href: ./kinit.md
+      - label: klist
+        href: ./klist.md
+      - label: krb5kdc
+        href: ./krb5kdc.md
+      - label: pg_archivecleanup
+        href: ./pg_archivecleanup.md
+      - label: pg_config
+        href: ./pg_config.md
+      - label: pg_controldata
+        href: ./pg_controldata.md
+      - label: pg_recvlogical
+        href: ./pg_recvlogical.md
+      - label: pg_resetxlog
+        href: ./pg_resetxlog.md
+      - label: pscp
+        href: ./pscp.md
+      - label: pssh
+        href: ./pssh.md
+      - label: transfer.py
+        href: ./transfer_py.md
+      - label: gs_filedump
+        href: ./gs_filedump.md        
+  - label: Unified Database Management Tool
+    sections:
+      - label: Overview
+        href: ./unified_database_management_tool.md
+      - label: Features
+        href: ./features.md
+      - label: cm_ctl
+        href: ./cm_ctl.md
+      - label: cm_persist
+        href: ./cm_persist.md
+      - label: cm_install and cm_uninstall
+        href: ./cm_install_and_cm_uninstall.md
+      - label: Security Design
+        href: ./security_design.md
+      - label: CM Parameters
+        sections:
+          - label: Overview
+            href: ./cm_parameters.md
+          - label: Parameters Related to cm_agent
+            href: ./parameters_related_to_cm_agent.md
+          - label: Parameters Related to cm_server
+            href: ./parameters_related_to_cm_server.md
+  - label: Functions of openGauss Executable Scripts
+    href: ./functions_of_opengauss_executable_scripts.md
+  - label: System Catalogs and Views Supported by gs_collector
+    href: ./system_catalogs_and_views_supported_by_gs_collector.md
+  - label: FAQs
+    href: ./faqs.md

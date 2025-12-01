@@ -1,0 +1,77 @@
+# 数组<a name="ZH-CN_TOPIC_0289900692"></a>
+
+## 特性说明<a name="zh-cn_topic_0283137521_zh-cn_topic_0237122214_zh-cn_topic_0059778979_s9b23a1cdca6042f3ae428afa25038607"></a>
+
+在使用数组之前，需要自定义一个数组类型。
+
+在存储过程中紧跟IS关键字后面定义数组类型。定义方法如下。
+
+```
+TYPE array_type IS VARRAY(size) OF data_type;
+```
+
+其中：
+
+-   array\_type：要定义的数组类型名。
+-   VARRAY：表示要定义的数组类型。
+-   size：取值为正整数，表示可以容纳的成员的最大数量。
+-   data\_type：要创建的数组中成员的类型。
+
+>[!NOTE]说明
+>
+>-   在openGauss中，数组会自动增长，访问越界会返回一个NULL，不会报错。
+>-   在存储过程中定义的数组类型，其作用域仅在该存储过程中。
+>-   建议选择上述定义方法的一种来自定义数组类型，当同时使用两种方法定义同名的数组类型时，openGauss会优先选择存储过程中定义的数组类型来声明数组变量。
+>-   data\_type也可以为存储过程中定义的record类型（匿名块不支持），数组或集合类型。
+>-   在嵌套场景下，即当某array\_type的data\_type定义为record, 数组或集合类型时，允许的最大嵌套层数为6。除此之外，也不允许使用数组或集合类型变量直接对嵌套array\_type类型变量的成员赋值。
+
+openGauss支持使用圆括号来访问数组元素，且还支持一些特有的函数，如extend、count、first、last、prior、exists、 trim、next、delete来访问数组的内容。但不推荐使用这些函数通过下标的方式直接访问多维数组的成员（即便这些多维数组的成员也是数组类型）。
+
+>[!NOTE]说明
+>
+>存储过程中如果有DML语句（SELECT、UPDATE、INSERT、DELETE），DML语句推荐使用中括号来访问数组元素，使用小括号默认识别为数组访问，若数组不存在，则识别为函数表达式。
+>存储过程中的table of类型、record类型、clob作为出入参、游标、raise info等对大于1GB的clob类型不支持。
+
+## 示例
+
+```sql
+-- 建表
+create table tbl (col integer);
+
+-- 该存储过程会向表中插入 1 到 10 的十条记录
+create or replace procedure insert_arr
+as
+    -- 定义数组类型
+    type int_arr is varray(10) of integer;
+    p_arr int_arr := int_arr(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+begin
+    for i in 1..p_arr.count loop
+        insert into tbl values (p_arr(i));
+    end loop;
+end;
+/
+
+-- 调用存储过程
+call insert_arr();
+
+-- 查表
+select * from tbl;
+```
+
+查表输出结果：
+
+```txt
+ col
+-----
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+  10
+(10 rows)
+```

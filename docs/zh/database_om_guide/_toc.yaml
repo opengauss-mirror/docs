@@ -1,0 +1,187 @@
+label: 数据库运维指南
+isManual: true
+sections:
+      - label: 启停openGauss
+        href: ./start_stop_opengauss.md
+      - label: 查看状态
+        href: ./querying_status.md
+      - label: 例行维护
+        href: ./routine_maintenance.md
+      - label: 备份与恢复
+        sections:
+          - label: 备份与恢复概述
+            href: ./overview_for_backup_and_restoration.md
+          - label: 配置文件的备份与恢复
+            href: ./configuration_files_backup_and_recovery.md
+          - label: 主库备库坏块修复功能
+            href: ./fast_repair_of_damaged_acitve_standby_libraries.md
+          - label: 备机重建
+            sections:
+              - label: 支持备机build备机
+                href: ./standby_node_building.md
+          - label: 逻辑备份与恢复
+            href: ./logical_backup_and_restoration.md   
+          - label: 物理备份与恢复
+            href: ./physical_backup_and_restoration.md
+          - label: 闪回恢复
+            href: ./flashback_recovery.md
+          - label: 导出数据
+            sections:
+              - label: 概述
+                href: ./overview_5.md
+              - label: 导出单个数据库
+                href: ./export_single_database.md
+              - label: 导出所有数据库
+                href: ./export_all_databases.md
+              - label: 无权限角色导出数据
+                href: ./data_export_by_a_user_without_required_permissions.md
+          - label: 导入数据
+            sections:
+              - label: 概览
+                href: ./import_data.md
+              - label: 通过INSERT语句直接写入数据
+                href: ./running_the_insert_statement_to_insert_data.md
+              - label: 使用COPY FROM STDIN导入数据
+                href: ./running_the_copy_from_stdin_statement_to_import_data.md
+              - label: 使用gsql元命令导入数据
+                href: ./using_a_gsql_meta_command_to_import_data.md
+              - label: 使用gs_restore命令导入数据
+                href: ./using_gs_restore_to_import_data.md
+          - label: 更新表中数据
+            sections:
+              - label: 使用DML命令更新表
+                href: ./updating_a_table_by_using_dml_statements.md
+              - label: 使用合并方式更新和插入数据
+                href: ./updating_and_inserting_data_by_using_the_merge_into_statement.md
+          - label: 深层复制
+            sections:
+              - label: 概述
+                href: ./deep_copy.md
+              - label: 使用CREATE TABLE LIKE执行深层复制
+                href: ./performing_a_deep_copy_by_using_the_create_table_like_statement.md
+              - label: 使用CREATE TABLE执行深层复制
+                href: ./performing_a_deep_copy_by_using_the_create_table_statement.md
+              - label: 通过创建临时表并截断原始表来执行深层复制
+                href: ./performing_a_deep_copy_by_creating_a_temporary_table_and_truncating_the_original_table.md
+          - label: 分析表
+            href: ./analysis_table.md
+          - label: 对表执行VACUUM
+            href: ./doing_vacuum_to_a_table.md
+          - label: 管理并发写入操作
+            sections:
+              - label: 事务隔离说明
+                href: ./transaction_isolation_description.md
+              - label: 写入和读写操作
+                href: ./write_and_read_write_operations.md
+              - label: 并发写入事务的潜在死锁情况
+                href: ./potential_deadlocks_during_concurrent_write.md
+              - label: 并发写入示例
+                href: ./concurrent_write_example.md
+      - label: 实例主备切换
+        href: ./performing_a_primary_standby_switchover.md
+      - label: 主备同步
+        sections:
+          - label: 极致RTO
+            href: ./ultimate_rto.md
+          - label: 延时回放
+            href: ./delayed_replay.md
+          - label: 延迟进入最大可用模式
+            href: ./delaying_entering_the_maximum_availability_mode.md
+          - label: 主备高可用能力增强
+            href: ./enhanced_active_standby_ha.md
+          - label: 表级别并行恢复优化
+            href: ./table_level_parallel_recovery_optimization.md
+      - label: 集群管理
+        sections:
+          - label: 基于Paxos协议的高可用
+            href: ./high_availability_based_on_the_paxos_protocol.md
+          - label: DCF
+            sections:
+              - label: DCF 概述
+                href: ./dcf_overview.md
+              - label: DCF 使用
+                href: ./dcf_usage.md
+      - label: 逻辑复制
+        sections:
+          - label: 逻辑解码
+            sections:
+              - label: 逻辑解码概述
+                href: ./logical_decoding_overview.md
+              - label: 使用SQL函数接口进行逻辑解码
+                href: ./logical_decoding_by_sql_function_interfaces.md
+          - label: 发布订阅
+            sections:
+              - label: 概述
+                href: ./pub_sub.md
+              - label: 发布
+                href: ./publications.md
+              - label: 订阅
+                href: ./subscriptions.md
+              - label: 冲突处理
+                href: ./conflicts.md
+              - label: 限制
+                href: ./restrictions.md
+              - label: 架构
+                href: ./architecture.md
+              - label: 监控
+                href: ./monitoring.md
+              - label: 安全性
+                href: ./security.md
+              - label: 配置设置
+                href: ./configuration_set.md
+              - label: 快速设置
+                href: ./quick_setup.md
+          - label: 逻辑复制支持DDL操作
+            href: ./logical_copy_support_ddl_operation.md
+      - label: 升级
+        sections:
+          - label: 升级前必读
+            href: ./before_you_start.md
+          - label: 升级流程
+            href: ./upgrade_process.md
+          - label: 升级前准备与检查
+            href: ./preparing_for_and_checking_the_upgrade.md
+          - label: 升级操作
+            href: ./performing_the_upgrade.md
+          - label: 升级验证
+            href: ./upgrade_verification.md
+          - label: 提交升级
+            href: ./committing_the_upgrade_task.md
+          - label: 升级版本回滚
+            href: ./rolling_back_the_upgrade_version.md
+          - label: 异常处理
+            href: ./troubleshooting.md
+          - label: 集群管理组件增量升级
+            href: ./incrementally_upgrading_cluster_management_components.md
+      - label: 安全加固指南
+        sections:
+          - label: 数据库加固概述
+            href: ./secharden/overview_of_database_hardening.md
+          - label: openGauss安全配置说明
+            href: ./secharden/security_configuration_baseline_specification.md
+          - label: 加固指导
+            sections:
+              - label: 连接配置
+                href: ./secharden/connection_configuration.md
+              - label: 文件目录安全
+                href: ./secharden/file_directory_security.md
+              - label: 安全认证配置
+                href: ./secharden/security_authentication_configuration.md
+              - label: 账号口令管理
+                href: ./secharden/account_and_password_management.md
+              - label: 权限管理
+                href: ./secharden/permission_management.md
+              - label: 数据库审计
+                href: ./secharden/database_audit.md
+              - label: 错误报告和日志配置
+                href: ./secharden/error_reporting_and_log_configuration.md
+              - label: WAL归档配置
+                href: ./secharden/wal_archiving_configuration.md
+              - label: 运行环境配置
+                href: ./secharden/configuring_the_operating_environment.md
+              - label: 其它配置
+                href: ./secharden/other_configuration.md
+      - label: 高危操作一览表
+        href: ./risky_operations.md
+      - label: 日志参考
+        href: ./log_reference.md

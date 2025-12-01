@@ -1,0 +1,27 @@
+label: Quick Start
+isManual: true
+sections:
+  - label: Understanding openGauss
+    href: ./understanding_opengauss.md
+  - label: Installation
+    sections:
+      - label: Preparing for Installation
+        href: ./preparing_for_installation.md
+      - label: Installation
+        href: ./installation.md
+  - label: Connecting to openGauss
+    sections:
+      - label: Overview
+        href: ./connecting_to_opengauss.md     
+      - label: gsql Connection and Usage
+        href: ./gsql_connection_and_usage.md
+      - label: Connecting to a Database
+        sections:
+          - label: C and C++ (ODBC)
+            href: ./odbc.md
+          - label: C and C++ (libpq)
+            href: ./libpq.md
+          - label: Java
+            href: ./java.md
+          - label: Python
+            href: ./python.md

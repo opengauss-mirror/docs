@@ -1,0 +1,99 @@
+label: Brief Tutorial
+isManual: true
+sections:
+  - label: Basic Concepts
+    href: ./basic_concepts.md
+  - label: Syntax
+    href: ./syntax.md
+  - label: Data Types
+    href: ./data_types.md
+  - label: Simple Data Management
+    href: ./simple_data_management.md
+    sections:
+      - label: Creating a Database
+        href: ./creating_a_database.md
+      - label: Creating a Table
+        href: ./creating_a_table.md
+      - label: INSERT INTO Statement
+        href: ./insert_into_statement.md
+      - label: UPDATE Statement
+        href: ./update_statement.md
+      - label: DELETE Statement
+        href: ./delete_statement.md
+      - label: Viewing Objects
+        href: ./viewing_objects.md
+      - label: SELECT Statement
+        href: ./select_statement.md
+      - label: Operators
+        href: ./operators.md
+      - label: Expressions
+        href: ./expressions.md
+      - label: WHERE Clause
+        href: ./where_clause.md
+      - label: ORDER BY Clause
+        href: ./order_by_clause.md
+      - label: DISTINCT
+        href: ./distinct.md
+      - label: GROUP BY Clause
+        href: ./group_by_clause.md
+      - label: HAVING Clause
+        href: ./having_clause.md
+      - label: Date/Time Functions and Operators
+        href: ./date_time_functions_and_operators.md
+      - label: Mode Matching Operators
+        href: ./mode_matching_operators.md
+      - label: Aggregate Functions
+        href: ./aggregate_functions.md
+      - label: Event Trigger Functions
+        href: ./event_trigger_functions.md
+  - label: Advanced Data Management
+    href: ./advanced_data_management.md
+    sections:
+      - label: Constraints
+        href: ./constraints.md
+      - label: JOIN
+        href: ./join.md
+      - label: "NULL"
+        href: ./null.md
+      - label: UNION Clause
+        href: ./union_clause.md
+      - label: Aliases
+        href: ./aliases.md
+      - label: Indexes
+        href: ./indexes.md
+      - label: Batch Processing Mode
+        href: ./batch_processing_mode.md
+      - label: Views
+        href: ./views.md
+      - label: SCHEMA
+        href: ./schema.md
+      - label: ALTER TABLE Statement
+        href: ./alter_table_statement.md
+      - label: TRUNCATE TABLE Statement
+        href: ./truncate_table_statement.md
+      - label: Transactions
+        href: ./transactions.md
+      - label: Cursors
+        href: ./cursors.md
+      - label: Partitioned Tables
+        href: ./partitioned_tables.md
+      - label: Locks
+        href: ./locks.md
+      - label: Anonymous Blocks
+        href: ./anonymous_blocks.md
+      - label: Triggers
+        href: ./triggers.md
+      - label: Event Trigger
+        href: ./event_trigger.md
+      - label: Stored Procedures
+        href: ./stored_procedures.md
+      - label: Materialized Views
+        href: ./materialized_views.md
+      - label: Subqueries
+        href: ./subqueries.md
+      - label: Permissions
+        href: ./permissions.md
+      - label: Functions
+        href: ./functions.md
+  - label: "Appendix: SQL Syntax"
+    href: ./appendix_sql_syntax.md

@@ -1,0 +1,102 @@
+label: 简短教程
+isManual: true
+sections:
+  - label: 基本概念
+    href: ./basic_concepts.md
+  - label: 语法
+    href: ./syntax.md
+  - label: 数据类型
+    href: ./data_types.md
+  - label: 简单数据管理
+    sections:
+      - label: 创建数据库
+        href: ./creating_a_database.md
+      - label: 创建表
+        href: ./creating_a_table.md
+      - label: INSERT INTO语句
+        href: ./insert_into_statement.md
+      - label: UPDATE语句
+        href: ./update_statement.md
+      - label: DELETE语句
+        href: ./delete_statement.md
+      - label: 查看对象
+        href: ./viewing_objects.md
+      - label: SELECT语句
+        href: ./select_statement.md
+      - label: 运算符
+        href: ./operators.md
+      - label: 表达式
+        href: ./expressions.md
+      - label: WHERE子句
+        href: ./where_clause.md
+      - label: ORDER BY子句
+        href: ./order_by_clause.md
+      - label: DISTINCT
+        href: ./distinct.md
+      - label: GROUP BY子句
+        href: ./group_by_clause.md
+      - label: HAVING子句
+        href: ./having_clause.md
+      - label: 时间/日期函数和操作符
+        href: ./date_time_functions_and_operators.md
+      - label: 模式匹配操作符
+        href: ./mode_matching_operators.md
+      - label: 聚集函数
+        href: ./aggregate_functions.md
+      - label: 事件触发器函数
+        href: ./event_trigger_functions.md
+  - label: 高级数据管理
+    sections:
+      - label: 约束
+        href: ./constraints.md
+      - label: JOIN
+        href: ./join.md
+      - label: NULL值
+        href: ./null.md
+      - label: IS [NOT] INFINITE
+        href: ./is_not_infinite_statement.md
+      - label: IS [NOT] NAN
+        href: ./is_not_nan_statement.md
+      - label: UNION子句
+        href: ./union_clause.md
+      - label: 别名
+        href: ./alias.md
+      - label: 索引
+        href: ./indexes.md
+      - label: 批处理模式
+        href: ./batch_processing_mode.md
+      - label: 视图
+        href: ./views.md
+      - label: SCHEMA
+        href: ./schema.md
+      - label: ALTER TABLE语句
+        href: ./alter_table_statement.md
+      - label: TRUNCATE TABLE语句
+        href: ./truncate_table_statement.md
+      - label: 事务
+        href: ./transactions.md
+      - label: 游标
+        href: ./cursors.md
+      - label: 分区表
+        href: ./partitioned_tables.md
+      - label: 锁
+        href: ./locks.md
+      - label: 匿名块
+        href: ./anonymous_blocks.md
+      - label: 触发器
+        href: ./trigger.md
+      - label: 事件触发器
+        href: ./event_trigger.md
+      - label: 物化视图
+        href: ./materialized_views.md
+      - label: 存储过程
+        href: ./stored_procedures.md
+      - label: 子查询
+        href: ./subqueries.md
+      - label: 权限
+        href: ./permissions.md
+      - label: 函数
+        href: ./functions.md
+  - label: 附录：SQL语法
+    href: ./appendix_sql_syntax.md
+    

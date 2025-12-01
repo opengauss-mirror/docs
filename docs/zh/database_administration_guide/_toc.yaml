@@ -1,0 +1,307 @@
+label: 数据库管理指南
+isManual: true
+sections:
+      - label: 基础概念
+        href: ./database_concepts.md
+      - label: 数据存储管理
+        sections:
+          - label: 存储结构
+            href: ./storage_structure.md
+          - label: "存储模型: 规划存储模型"
+            href: ./planning_storage_models.md
+          - label: 数据压缩
+            sections: 
+              - label: 自适应压缩
+                href: ./adaptive_compression.md
+              - label: 支持OLTP场景数据压缩
+                href: ./support_for_data_compression_in_oltp_scenarios.md
+          - label: Ustore存储引擎
+            sections: 
+              - label: 特性介绍
+                href: ./in_place_update_storage_engine.md
+              - label: 配置Ustore
+                href: ./configuring_ustore.md
+              - label: Parallel Page-based Redo For Ustore
+                href: ./parallel_page_based_redo_for_ustore.md
+      - label: 数据库部署方案
+        sections:        
+          - label: openGauss常见主备部署方案
+            sections:  
+              - label: 概述
+                href: ./opengauss_common_primary_standby_deployment_solutions.md
+              - label: 主备机
+                href: ./master_and_standby_node.md
+              - label: 级联备机
+                href: ./cascaded_standby_node.md
+              - label: 备机增加删除
+                href: ./add_remover_standby_node.md
+          - label: 两地三中心跨Region容灾
+            sections: 
+              - label: 概述
+                href: ./two_city_three_dc_dr.md
+              - label: 基于流式复制的异地容灾解决方案
+                href: ./disaster_recovery_solution_based_on_streaming_replication.md
+          - label: 资源池化架构
+            sections: 
+              - label: 概述
+                href: ./resource_pooling_architecture.md
+              - label: 资源池化开发者环境部署指南
+                href: ./resource_pooling_environment_deployment_guide.md
+              - label: 资源池化OM安装部署指南
+                href: ./resource_pooling_om_installation_and_deployment.md
+              - label: 资源池化POC性能测试指南
+                href: ./resource_pooling_poc_performance_testing_guide.md
+              - label: 资源池化DORADO双集群部署
+                href: ./resource_pooling_dorado_dual_cluster_deployment.md
+              - label: 资源池化网络双集群部署
+                href: ./resource_pooling_network_dual_cluster_deployent.md
+              - label: 资源池化multipath多链路冗余环境搭建指南
+                href: ./resource_pooling_multipath_multi_link_redundancy_environment_setup_guide.md
+      - label: 创建和管理数据库
+        href: ./creating_and_managing_databases.md
+      - label: 创建和管理表空间
+        href: ./creating_and_managing_tablespaces.md
+      - label: 数据库对象管理
+        sections: 
+          - label: 创建和管理schema
+            href: ./creating_and_managing_schema.md
+          - label: 创建和管理普通表
+            sections: 
+              - label: 创建表
+                href: ./creating_tables.md
+              - label: 向表中插入数据
+                href: ./inserting_data_to_tables.md
+              - label: 更新表中数据
+                href: ./updating_data_in_a_table.md
+              - label: 查看数据
+                href: ./viewing_data.md
+              - label: 删除表中数据
+                href: ./deleting_data_from_a_table.md
+          - label: 创建和管理分区表
+            href: ./creating_and_managing_partitioned_tables.md
+          - label: 创建和管理索引
+            href: ./creating_and_managing_indexes.md
+          - label: 创建和管理视图
+            href: ./creating_and_managing_views.md
+          - label: 创建和管理序列
+            href: ./creating_and_managing_sequences.md
+      - label: 内存优化表MOT管理
+        sections:
+          - label: MOT简介
+            href: ./mot_introduction.md        
+          - label: MOT特性及价值
+            href: ./mot_features_and_benefits.md
+          - label: MOT关键技术
+            href: ./mot_key_technologies.md
+          - label: MOT应用场景
+            href: ./mot_usage_scenarios.md
+          - label: MOT性能基准
+            sections:
+              - label: 概述
+                href: ./mot_performance_benchmarks.md
+              - label: MOT硬件
+                href: ./mot_hardware.md
+              - label: MOT测试总结
+                href: ./mot_results_summary.md
+              - label: MOT高吞吐量
+                href: ./mot_high_throughput.md
+              - label: MOT低延迟
+                href: ./mot_low_latency.md
+              - label: MOT恢复时间目标（RTO）和冷启动时间
+                href: ./mot_rto_and_cold_start_time.md
+              - label: MOT资源利用率
+                href: ./mot_resource_utilization.md
+              - label: MOT数据采集速度
+                href: ./mot_data_ingestion_speed.md
+          - label: 使用MOT
+            sections:
+              - label: MOT使用概述
+                href: ./using_mot_overview.md
+              - label: MOT准备：前提条件
+                href: ./mot_prerequisites.md
+              - label: MOT准备：MOT内存和存储规划
+                href: ./mot_memory_and_storage_planning.md
+              - label: MOT部署：MOT服务器优化
+                href: ./mot_server_optimization.md
+              - label: MOT部署：MOT配置
+                href: ./mot_configuration.md
+              - label: MOT使用
+                href: ./mot_usage.md
+              - label: MOT使用：授予用户权限
+                href: ./granting_user_permissions.md
+              - label: MOT使用：创建/删除MOT
+                href: ./creating_dropping_an_mot_table.md
+              - label: MOT使用：为MOT创建索引
+                href: ./creating_an_index_for_an_mot_table.md
+              - label: MOT使用：将磁盘表转换为MOT
+                href: ./converting_a_disk_table_into_an_mot_table.md
+              - label: MOT使用：查询原生编译
+                href: ./query_native_compilation.md
+              - label: MOT使用：重试中止事务
+                href: ./retrying_an_aborted_transaction.md
+              - label: MOT使用：MOT外部支持工具
+                href: ./mot_external_support_tools.md
+              - label: MOT使用：MOT SQL覆盖和限制
+                href: ./mot_sql_coverage_and_limitations.md
+              - label: MOT管理：MOT持久性
+                href: ./mot_durability.md
+              - label: MOT管理：MOT恢复
+                href: ./mot_recovery.md
+              - label: MOT管理：MOT复制和高可用
+                href: ./mot_replication_and_high_availability.md
+              - label: MOT管理：MOT内存管理
+                href: ./mot_memory_management.md
+              - label: MOT管理：MOT VACUUM清理
+                href: ./mot_vacuum.md
+              - label: MOT管理：MOT统计
+                href: ./mot_statistics.md
+              - label: MOT管理：MOT监控
+                href: ./mot_monitoring.md
+              - label: MOT管理：MOT错误消息
+                href: ./mot_error_messages.md
+              - label: MOT样例TPC-C基准
+                href: ./mot_sample_tpc_c_benchmark.md
+          - label: MOT的概念
+            sections:
+              - label: MOT纵向扩容架构
+                href: ./mot_scale_up_architecture.md
+              - label: MOT并发控制机制
+                href: ./mot_concurrency_control_mechanism.md
+              - label: 扩展FDW与其他openGauss特性
+                href: ./extended_fdw_and_other_opengauss_features.md
+              - label: NUMA-aware分配和亲和性
+                href: ./numa_awareness_allocation_and_affinity.md
+              - label: MOT索引
+                href: ./mot_index.md
+              - label: MOT持久性概念
+                href: ./mot_durability_concepts.md
+              - label: MOT恢复概念
+                href: ./mot_recovery_concepts.md
+              - label: MOT查询原生编译（JIT）
+                href: ./mot_query_native_compilation_jit.md
+              - label: 对比：磁盘与MOT
+                href: ./comparison_disk_vs_mot.md
+          - label: 附录
+            href: ./appendix_mot.md
+      - label: 访问外部数据库
+        sections:
+          - label: oracle_fdw
+            href: ./oracle_fdw.md
+          - label: mysql_fdw
+            href: ./mysql_fdw.md
+          - label: postgres_fdw
+            href: ./postgres_fdw.md
+          - label: file_fdw
+            href: ./file_fdw.md
+          - label: dblink
+            href: ./dblink.md
+      - label: 管理数据库安全
+        sections:
+          - label: 客户端接入认证
+            sections:
+              - label: 配置客户端接入认证
+                href: ./configuring_client_access_authentication.md
+              - label: 配置文件参考
+                href: ./configuration_file_reference.md
+              - label: 用SSL进行安全的TCP/IP连接
+                href: ./establishing_secure_tcp_ip_connections_in_ssl_mode.md
+              - label: 用SSH隧道进行安全的TCP/IP连接
+                href: ./establishing_secure_tcp_ip_connections_in_ssh_tunnel_mode.md
+              - label: 查看数据库连接数
+                href: ./checking_the_number_of_database_connections.md
+              - label: SSL证书管理
+                href: ./ssl_certificate_management.md
+          - label: 管理用户及权限
+            sections:
+              - label: 默认权限机制
+                href: ./default_permission_mechanism.md
+              - label: 管理员
+                href: ./administrators.md
+              - label: 三权分立
+                href: ./separation_of_duties.md
+              - label: 用户
+                href: ./users.md
+              - label: 角色
+                href: ./roles.md
+              - label: Schema
+                href: ./schema.md
+              - label: 用户权限设置
+                href: ./setting_user_permissions.md
+              - label: 行级访问控制
+                href: ./row_level_access_control.md
+              - label: 设置帐户安全策略
+                href: ./setting_account_security_policies.md
+              - label: 设置帐号有效期
+                href: ./setting_the_validity_period_of_an_account.md
+              - label: 设置密码安全策略
+                href: ./setting_password_security_policies.md
+          - label: 设置数据库审计
+            sections: 
+              - label: 审计概述
+                href: ./audit_overview.md
+              - label: 查看审计结果
+                href: ./querying_audit_results.md
+              - label: 维护审计日志
+                href: ./maintaining_audit_logs.md
+              - label: 设置统一审计策略
+                href: ./setting_the_unified_audit_policy.md
+              - label: 设置文件权限安全策略
+                href: ./configuring_file_permission_security_policies.md
+          - label: 设置密态等值查询
+            sections: 
+              - label: 密态等值查询概述
+                href: ./encrypted_equality_query_overview.md
+              - label: 使用gsql操作密态数据库
+                href: ./using_gsql_to_operate_an_encrypted_database.md
+              - label: 使用JDBC操作密态数据库
+                href: ./using_jdbc_to_operate_an_encrypted_database.md
+              - label: 密态支持函数/存储过程
+                href: ./encrypted_functions_and_stored_procedures.md
+          - label: 设置账本数据库
+            sections: 
+              - label: 账本数据库概述
+                href: ./overview_setting_a_ledger_database.md
+              - label: 查看账本历史操作记录
+                href: ./viewing_historical_operation_records_in_the_ledger.md
+              - label: 校验账本数据一致性
+                href: ./checking_ledger_data_consistency.md
+              - label: 归档账本数据库
+                href: ./archiving_a_ledger_database.md
+              - label: 修复账本数据库
+                href: ./repairing_a_ledger_database.md
+          - label: 设置透明数据加密（TDE）
+            href: ./configuring_tde.md
+      - label: 参数配置
+        sections:
+          - label: 查看参数
+            href: ./viewing_parameter_values.md
+          - label: 重设参数
+            href: ./reset_parameters.md
+      - label: 常见故障案例（资源池化开发者环境）
+        sections:
+          - label: 编译阶段常见问题
+            sections:
+              - label: 编译openGauss-server失败
+                href: ./compilation_of_opengauss_server_failed.md
+          - label: DSSserver启动失败常见问题
+            sections:
+              - label: dd模拟块设备失败
+                href: ./dd_simulation_block_device_failure_issue.md
+              - label: 共享内存不足问题
+                href: ./low_memory_problem.md
+              - label: INST_ID存在冲突或不合法
+                href: ./inst_id_is_confict_or_illegality.md
+              - label: 未擦除头部文件
+                href: ./top_file_not_erased.md
+              - label: 初始化数据库时密码设置有误
+                href: ./initializating_password_setting_an_error.md
+          - label: 数据库启动失败
+            sections:
+              - label: gs_ctl start 失败
+                href: ./gs_ctl_start_faliure.md
+              - label: 无法单独拉起节点
+                href: ./unable_to_launch_the_node_independently.md
+              - label: DMS组件版本号错误
+                href: ./dms_component_version_number_error.md
+              - label: dssserver端口号错误
+                href: ./dssserver_port_number_error.md

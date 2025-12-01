@@ -1,0 +1,45 @@
+# 架构概述<a name="ZH-CN_TOPIC_0000002293119525"></a>
+
+## 逻辑架构<a name="ZH-CN_TOPIC_0000002293119529"></a>
+
+GaussMaster作为服务端提供RESTful API接口供云管控调用，API接口仅支持HTTPS双向认证。其逻辑架构如下图[图1](#fig12416726131415)所示：
+
+**图 1**  逻辑架构图<a name="fig12416726131415"></a>  
+![](figures/逻辑架构图.png)
+
+## 安全设计<a name="ZH-CN_TOPIC_0000002258486296"></a>
+
+GaussMaster服务运行过程中的中间结果会存储到openGauss数据库中，因此GaussMaster服务启动之前，需要将数据库用户名和密码加密保存到配置文件中。
+
+云管控作为客户端，调用API接口时，默认使用HTTPS双向认证。GaussMaster收到请求后，执行相应的业务逻辑，如果要连接openGauss查询或存储中间结果，需要从配置文件中对密码进行解密，业务逻辑执行完之后，将最终结果返回给云管控。业务请求的时序图如下图[图1](#fig11274103110251)所示：
+
+**图 1**  业务时序图<a name="fig11274103110251"></a>  
+![](figures/业务时序图.png)
+
+其中GaussMaster使用libpq驱动连接openGauss数据库，默认使用TLS加密协议。
+
+由于GaussMaster需要连接DBMind和openGauss，所以需要存储对应的密码。GaussMaster服务执行初始化命令时，用户使用管道符的方式输入密码，然后按照如下图[图2](#fig13844205852611)所示的加密方案存储到配置文件中，如果用户名或密码有修改，需要重新执行初始化命令。
+
+**图 2**  加密流程<a name="fig13844205852611"></a>  
+![](figures/加密流程.png)
+
+需要使用密码时，按照如下图[图3](#fig117662342814)所示的解密方案对密文进行解密。
+
+**图 3**  解密流程<a name="fig117662342814"></a>  
+![](figures/解密流程.png)
+
+## 相关约束<a name="ZH-CN_TOPIC_0000002293246453"></a>
+
+1. GaussMaster不提供前台页面，只提供RESTful API接口。
+2. GaussMaster对外提供的API接口仅支持HTTPS双向认证，不支持HTTP。
+3. GaussMaster基于DBMind实现，因此继承DBMind约束，DBMind支持集群纳管，纳管的集群类型仅支持单节点、，不支持容灾集群、一主一备一logger。
+4. 506.0版本的GaussMaster依赖DBMind的版本为506.0，且一套GaussMaster仅支持纳管一套DBMind。
+5. DBMind/openGauss组件不可用/升级等场景下，GaussMaster服务的功能会受到影响。
+6. 支持Python版本3.7以上，不支持Python3.11。
+7. 大模型的并发能力依赖于大模型实例个数，一个实例只支持一并发。GaussMaster的并发能力依赖于大模型的并发能力，因此GaussMaster支持的并发数小于大模型的并发数。
+8. GaussMaster当前版本不支持IPv6。
+9. GaussMaster当前版本不支持高可用，需要用户重启服务。
+10. GaussMaster服务非大模型接口在64U配置下可支持50并发，不会对业务产生影响。
+11. GaussMaster服务对外提供的接口不直接对用户进行认证和鉴权。认证和鉴权操作由云管控提供，保证用户访问时无法出现越权操作，如添加记录到其他用户的会话中，删除其他用户上传的文档等。
+12. GaussMaster服务依赖的向量数据库服务和第三方模型服务：LLM服务、Embedding Model服务、Reranker Model服务由云管控提供，其认证机制由云管控提供。云管控提供的模型接口需保证安全性，如果有安全风险，需对用户进行提示说明，如采用HTTP协议会有泄漏用户会话内容的风险。
+13. GaussMaster服务提供知识库创建功能，知识库创建个数、知识库单次上传文件个数、上传文件总量均需由云管控进行控制。

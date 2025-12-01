@@ -1,0 +1,202 @@
+label: Application Development Guide
+isManual: true
+sections:
+  - label: Query Request Handling Process
+    href: ./query_request_handling_process.md
+  - label: Development and Design Proposal
+    sections:
+      - label: Overview
+        href: ./development_and_design_proposal_overview.md
+      - label: Database Object Naming Conventions
+        href: ./database_object_naming_conventions.md
+      - label: Database Object Design
+        sections:
+          - label: Database and Schema Design
+            href: ./database_and_schema_design.md
+          - label: Table Design
+            href: ./table_design.md
+          - label: Planning a Storage Model
+            href: ./planning_a_storage_model.md
+          - label: Field Design
+            href: ./field_design.md
+          - label: Constraint Design
+            href: ./constraint_design.md
+          - label: View and Joined Table Design
+            href: ./view_and_joined_table_design.md
+      - label: SQL Compilation
+        href: ./sql_compilation.md
+      - label: Application Development Specifications
+        sections:
+          - label: Development Specifications
+            href: ./development_specifications.md
+          - label: "Tool Interconnection: JDBC Configuration"
+            href: ./jdbc_configuration.md
+  - label: Development Based on JDBC
+    sections:
+      - label: Overview
+        href: ./development_based_on_jdbc.md
+      - label: JDBC Package, Driver Class, and Environment Class
+        href: ./jdbc_package_driver_class_and_environment_class.md
+      - label: Development Process
+        href: ./development_process_jdbc.md
+      - label: Loading the Driver
+        href: ./loading_the_driver_jdbc.md
+      - label: Connecting to a Database
+        href: ./connecting_to_a_database_jdbc.md
+      - label: Connecting to the Database (Using SSL)
+        href: ./connecting_to_a_database_using_ssl_jdbc.md
+      - label: Connecting to a Database (Using UDS)
+        href: ./connecting_to_a_database_using_uds.md
+      - label: Running SQL Statements
+        href: ./running_sql_statements_jdbc.md
+      - label: Processing Data in a Result Set
+        href: ./processing_data_in_a_result_set_jdbc.md
+      - label: Closing a Connection
+        href: ./closing_a_connection_jdbc.md
+      - label: Log Management
+        href: ./log_management.md
+      - label: "Examples: Common Operations"
+        href: ./example_common_operations_jdbc.md
+      - label: "Example: Retrying SQL Queries for Applications"
+        href: ./example_retrying_sql_queries_for_applications.md
+      - label: "Example: Importing and Exporting Data Through Local Files"
+        href: ./example_importing_and_exporting_data_through_local_files.md
+      - label: "Example: Migrating Data from a MySQL Database to the openGauss Database"
+        href: ./example_migrating_data_from_a_my_database_to_opengauss.md
+      - label: "Example: Logical Replication Code"
+        href: ./example_logic_replication_code.md
+      - label: "Example: Parameters for Connecting to the Database in Different Scenarios"
+        href: ./example_parameters_for_connecting_to_the_database_in_different_scenarios.md
+      - label: "Example: JDBC Primary/Standby Cluster Load Balancing"
+        href: ./example_jdbc_primary_standby_cluster_load_balancing.md
+      - label: JDBC API Reference
+        href: ./jdbc_interface_reference.md
+      - label: Common JDBC Parameters
+        href: ./common_jdbc_parameters.md
+  - label: Development Based on ODBC
+    sections:
+      - label: Overview
+        href: ./development_based_on_odbc.md
+      - label: ODBC Packages, Dependent Libraries, and Header Files
+        href: ./odbc_packages_dependent_libraries_and_header_files.md
+      - label: Configuring a Data Source in the Linux OS
+        href: ./configuring_a_data_source_in_the_linux_os.md
+      - label: Development Process
+        href: ./development_process_odbc.md
+      - label: "Example: Common Functions and Batch Binding"
+        href: ./example_common_functions_and_batch_binding.md
+      - label: Typical Application Scenarios and Configurations
+        href: ./typical_application_scenarios_and_configurations.md
+      - label: ODBC Interface Reference
+        sections:
+          - label: Overview
+            href: ./odbc_interface_reference.md
+          - label: SQLAllocEnv
+            href: ./sqlallocenv.md            
+          - label: SQLAllocConnect
+            href: ./sqlallocconnect.md
+          - label: SQLAllocHandle
+            href: ./sqlallochandle.md
+          - label: SQLAllocStmt
+            href: ./sqlallocstmt.md
+          - label: SQLBindCol
+            href: ./sqlbindcol.md
+          - label: SQLBindParameter
+            href: ./sqlbindparameter.md
+          - label: SQLColAttribute
+            href: ./sqlcolattribute.md
+          - label: SQLConnect
+            href: ./sqlconnect.md
+          - label: SQLDisconnect
+            href: ./sqldisconnect.md
+          - label: SQLExecDirect
+            href: ./sqlexecdirect.md
+          - label: SQLExecute
+            href: ./sqlexecute.md
+          - label: SQLFetch
+            href: ./sqlfetch.md
+          - label: SQLFreeConnect
+            href: ./sqlfreeconnect.md
+          - label: SQLFreeEnv
+            href: ./sqlfreeenv.md
+          - label: SQLFreeHandle
+            href: ./sqlfreehandle.md
+          - label: SQLFreeStmt
+            href: ./sqlfreestmt.md
+          - label: SQLGetData
+            href: ./sqlgetdata.md
+          - label: SQLGetDiagRec
+            href: ./sqlgetdiagrec.md
+          - label: SQLPrepare
+            href: ./sqlprepare.md
+          - label: SQLSetConnectAttr
+            href: ./sqlsetconnectattr.md
+          - label: SQLSetEnvAttr
+            href: ./sqlsetenvattr.md
+          - label: SQLSetStmtAttr
+            href: ./sqlsetstmtattr.md
+          - label: Example
+            href: ./example_odbc.md
+  - label: Development Based on libpq
+    sections:
+      - label: Overview
+        href: ./development_based_on_libpq.md
+      - label: Dependent Header Files of libpq
+        href: ./dependent_header_files_of_libpq.md
+      - label: Development Process
+        href: ./development_process_libpq.md
+      - label: Example
+        href: ./example_libpq.md
+      - label: "libpq API Reference: Large Object Operation Functions"
+        href: ./large_object_operation_functions.md
+        sections:
+          - label: lo_creat
+            href: ./lo_create.md
+          - label: lo_import
+            href: ./lo_import.md
+          - label: lo_export
+            href: ./lo_export.md
+          - label: lo_open
+            href: ./lo_open.md
+          - label: lo_write
+            href: ./lo_write.md
+          - label: lo_read
+            href: ./lo_read.md
+          - label: lo_lseek
+            href: ./lo_lseek.md
+          - label: lo_tell
+            href: ./lo_tell.md
+          - label: lo_truncate
+            href: ./lo_truncate.md
+          - label: lo_close
+            href: ./lo_close.md
+          - label: lo_unlink
+            href: ./lo_unlink.md
+      - label: Link Parameters
+        href: ./link_parameters_libpq.md
+  - label: Psycopg-Based Development
+    sections:
+      - label: Overview
+        href: ./psycopg_based_development.md
+      - label: Psycopg Package
+        href: ./psycopg_package.md
+      - label: Development Process
+        href: ./development_process_psycopg.md
+      - label: Loading a Driver
+        href: ./loading_a_driver_psycopg.md
+      - label: Connecting to the Database
+        href: ./connecting_to_a_database_psycopg.md
+      - label: Executing SQL Statements
+        href: ./executing_sql_statements_psycopg.md
+      - label: Processing the Result Set
+        href: ./processing_the_result_set.md
+      - label: Closing the Connection
+        href: ./closing_the_connection_psycopg.md
+      - label: Connecting to the Database (Using SSL)
+        href: ./connecting_to_the_database_using_ssl_psycopg.md
+      - label: "Example: Common Operations"
+        href: ./example_common_operations_psycopg.md
+      - label: Psycopg API Reference
+        href: ./psycopg_api_reference.md
+  - label: Commissioning
+    href: ./commissioning.md

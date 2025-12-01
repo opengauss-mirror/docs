@@ -1,0 +1,434 @@
+label: 插件参考
+isManual: true
+sections:
+  - label: Dolphin Extension
+    sections:
+      - label: Dolphin概述与限制
+        href: ./dolphin概述与限制.md  
+      - label: Dolphin不支持语法
+        href: ./dolphin-不支持语法.md
+      - label: 未兼容MySQL特性列表
+        href: ./dolphin-未兼容MySQL特性列表.md
+      - label: MySQL协议兼容
+        href: ./dolphin-MySQL协议兼容.md
+  - label: Dolphin语法介绍
+    sections:
+      - label: 关键字
+        href: ./dolphin-关键字.md    
+      - label: 数据类型
+        sections:
+          - label: 数值类型
+            href: ./dolphin-数值类型.md
+          - label: 字符类型
+            href: ./dolphin-字符类型.md
+          - label: 位串类型
+            href: ./dolphin-位串类型.md
+          - label: 枚举类型
+            href: ./dolphin-枚举类型.md
+          - label: 布尔类型
+            href: ./dolphin-布尔类型.md
+          - label: 二进制类型
+            href: ./dolphin-二进制类型.md    
+          - label: 类型转换
+            href: ./dolphin-类型转换.md
+      - label: 字面值
+        href: ./dolphin-字面值.md
+      - label: 函数和操作符
+        sections:
+          - label: 赋值操作符
+            href: ./dolphin-赋值操作符.md    
+          - label: 字符处理函数和操作符
+            href: ./dolphin-字符处理函数和操作符.md
+          - label: 数字操作函数和操作符
+            href: ./dolphin-数字操作函数和操作符.md    
+          - label: Dolphin锁
+            href: ./dolphin-锁.md
+          - label: 时间和日期处理函数和操作符
+            href: ./dolphin-时间和日期处理函数和操作符.md    
+          - label: 咨询锁函数
+            href: ./dolphin-咨询锁函数.md
+          - label: 网络地址函数和操作符
+            href: ./dolphin-网络地址函数和操作符.md
+          - label: 条件表达式函数
+            href: ./dolphin-条件表达式函数.md
+          - label: 聚集函数
+            href: ./dolphin-聚集函数.md    
+          - label: 系统信息函数
+            href: ./dolphin-系统信息函数.md              
+          - label: 密码设置函数
+            href: ./dolphin-密码函数.md
+          - label: 逻辑操作符
+            href: ./dolphin-逻辑操作符.md
+          - label: 位串操作函数和操作符
+            href: ./dolphin-位串操作函数和操作符.md
+          - label: JSON-JSONB函数和操作符
+            href: ./dolphin-JSON-JSONB函数和操作符.md
+          - label: 类型转换函数
+            href: ./dolphin-类型转换函数.md
+          - label: 四则运算操作符兼容
+            href: ./dolphin-四则运算操作符兼容.md
+          - label: 注释操作符
+            href: ./dolphin-注释操作符.md
+          - label: 操作符优先级
+            href: ./dolphin-操作符优先级.md                    
+      - label: 表达式
+        sections:
+          - label: 条件表达式
+            href: ./dolphin-条件表达式.md
+          - label: 时间间隔表达式
+            href: ./dolphin-时间间隔表达式.md
+      - label: DDL语法一览表
+        href: ./dolphin-DDL语法一览表.md    
+      - label: DML语法一览表
+        href: ./dolphin-DML语法一览表.md    
+      - label: DCL语法一览表
+        href: ./dolphin-DCL语法一览表.md
+      - label: SQL语法
+        sections:
+          - label: ALTER DATABASE
+            href: ./dolphin-ALTER-DATABASE.md
+          - label: ALTER FUNCTION
+            href: ./dolphin-ALTER-FUNCTION.md
+          - label: ALTER PROCEDURE
+            href: ./dolphin-ALTER-PROCEDURE.md
+          - label: ALTER SERVER
+            href: ./dolphin-ALTER-SERVER.md
+          - label: ALTER TABLE
+            href: ./dolphin-ALTER-TABLE.md
+          - label: ALTER TABLE PARTITION
+            href: ./dolphin-ALTER-TABLE-PARTITION.md
+          - label: ALTER TABLESPACE
+            href: ./dolphin-ALTER-TABLESPACE.md
+          - label: ALTER VIEW
+            href: ./dolphin-ALTER-VIEW.md
+          - label: ANALYZE
+            href: ./dolphin-ANALYZE.md
+          - label: AST
+            href: ./dolphin-AST.md
+          - label: CALL
+            href: ./dolphin-CALL.md
+          - label: CHECKSUM TABLE
+            href: ./dolphin-CHECKSUM-TABLE.md
+          - label: CREATE DATABASE
+            href: ./dolphin-CREATE-DATABASE.md
+          - label: CREATE FUNCTION
+            href: ./dolphin-CREATE-FUNCTION.md
+          - label: CREATE INDEX
+            href: ./dolphin-CREATE-INDEX.md
+          - label: CREATE PROCEDURE
+            href: ./dolphin-CREATE-PROCEDURE.md
+          - label: CREATE SERVER
+            href: ./dolphin-CREATE-SERVER.md
+          - label: CREATE TABLE
+            href: ./dolphin-CREATE-TABLE.md
+          - label: CREATE TABLE AS
+            href: ./dolphin-CREATE-TABLE-AS.md
+          - label: CREATE TABLE PARTITION
+            href: ./dolphin-CREATE-TABLE-PARTITION.md
+          - label: CREATE TABLESPACE
+            href: ./dolphin-CREATE-TABLESPACE.md
+          - label: CREATE TRIGGER
+            href: ./dolphin-CREATE-TRIGGER.md
+          - label: CREATE VIEW
+            href: ./dolphin-CREATE-VIEW.md
+          - label: DESCRIBE TABLE
+            href: ./dolphin-DESCRIBE-TABLE.md
+          - label: DO
+            href: ./dolphin-DO.md
+          - label: DROP DATABASE
+            href: ./dolphin-DROP-DATABASE.md
+          - label: DROP INDEX
+            href: ./dolphin-DROP-INDEX.md
+          - label: DROP TABLES
+            href: ./dolphin-DROP-TABLES.md
+          - label: DROP TABLESPACE
+            href: ./dolphin-DROP-TABLESPACE.md
+          - label: EXECUTE
+            href: ./dolphin-EXECUTE.md
+          - label: EXPLAIN
+            href: ./dolphin-EXPLAIN.md
+          - label: FLUSH BINARY LOGS
+            href: ./dolphin-FLUSH-BINARY-LOGS.md
+          - label: GRANT
+            href: ./dolphin-GRANT.md
+          - label: GRANT/REVOKE PROXY
+            href: ./dolphin-GRANT-REVOKE-PROXY.md
+          - label: INSERT
+            href: ./dolphin-INSERT.md
+          - label: KILL
+            href: ./dolphin-KILL.md
+          - label: LOAD DATA
+            href: ./dolphin-LOAD-DATA.md
+          - label: OPTIMIZE TABLE
+            href: ./dolphin-OPTIMIZE-TABLE.md
+          - label: PREPARE
+            href: ./dolphin-PREPARE.md
+          - label: RENAME TABLE
+            href: ./dolphin-RENAME-TABLE.md
+          - label: RENAME USER
+            href: ./dolphin-RENAME-USER.md
+          - label: REVOKE
+            href: ./dolphin-REVOKE.md
+          - label: SELECT
+            href: ./dolphin-SELECT.md
+          - label: SET PASSWORD
+            href: ./dolphin-SET-PASSWORD.md
+          - label: SET CHARSET
+            href: ./dolphin-SET-CHARSET.md
+          - label: SHOW CHARACTER SET
+            href: ./dolphin-SHOW-CHARACTER-SET.md
+          - label: SHOW COLLATION
+            href: ./dolphin-SHOW-COLLATION.md
+          - label: SHOW COLUMNS
+            href: ./dolphin-SHOW_COLUMNS.md
+          - label: SHOW CREATE DATABASE
+            href: ./dolphin-SHOW-CREATE-DATABASE.md
+          - label: SHOW CREATE FUNCTION
+            href: ./dolphin-SHOW-CREATE-FUNCTION.md
+          - label: SHOW CREATE PROCEDURE
+            href: ./dolphin-SHOW-CREATE-PROCEDURE.md
+          - label: SHOW CREATE TABLE
+            href: ./dolphin-SHOW-CREATE-TABLE.md
+          - label: SHOW CREATE TRIGGER
+            href: ./dolphin-SHOW-CREATE-TRIGGER.md
+          - label: SHOW CREATE VIEW
+            href: ./dolphin-SHOW-CREATE-VIEW.md
+          - label: SHOW DATABASES
+            href: ./dolphin-SHOW-DATABASES.md
+          - label: SHOW FUNCTION STATUS
+            href: ./dolphin-SHOW-FUNCTION-STATUS.md
+          - label: SHOW GRANTS
+            href: ./dolphin-SHOW-GRANTS.md
+          - label: SHOW INDEX
+            href: ./dolphin-SHOW-INDEX.md
+          - label: SHOW MASTER STATUS
+            href: ./dolphin-SHOW-MASTER-STATUS.md
+          - label: SHOW PLUGINS
+            href: ./dolphin-SHOW_PLUGINS.md
+          - label: SHOW PRIVILEGES
+            href: ./dolphin-SHOW_PRIVILEGES.md
+          - label: SHOW PROCEDURE STATUS
+            href: ./dolphin-SHOW-PROCEDURE-STATUS.md
+          - label: SHOW PROCESSLIST
+            href: ./dolphin-SHOW-PROCESSLIST.md
+          - label: SHOW SLAVE HOSTS
+            href: ./dolphin-SHOW-SLAVE-HOSTS.md
+          - label: SHOW STATUS
+            href: ./dolphin-SHOW-STATUS.md
+          - label: SHOW TABLES
+            href: ./dolphin-SHOW_TABLES.md  
+          - label: SHOW TABLE STATUS
+            href: ./dolphin-SHOW-TABLE-STATUS.md
+          - label: SHOW TRIGGERS
+            href: ./dolphin-SHOW-TRIGGERS.md
+          - label: SHOW VARIABLES
+            href: ./dolphin-SHOW-VARIABLES.md
+          - label: SHOW WARNINGS
+            href: ./dolphin-SHOW-WARNINGS.md
+          - label: SHOW ENGINES
+            href: ./dolphin-SHOW-ENGINES.md
+          - label: SHOW SLAVE STATUS
+            href: ./dolphin-SHOW-SLAVE-STATUS.md
+          - label: SHOW OPEN TABLES
+            href: ./dolphin-SHOW-OPEN-TABLES.md
+          - label: UPDATE
+            href: ./dolphin-UPDATE.md
+          - label: USE db_name
+            href: ./dolphin-USE-DB_NAME.md  
+          - label: SELECT HINT
+            href: ./dolphin-SELECT-HINT.md  
+          - label: JOIN
+            href: ./dolphin-JOIN.md                         
+      - label: 别名
+        href: ./dolphin-单引号别名.md
+      - label: "@variable变量"
+        href: ./dolphin-at-variable变量.md
+      - label: 系统视图
+        sections:
+          - label: PG TYPE NONSTRICT BASIC VALUE
+            href: ./dolphin-PG_TYPE_NONSTRICT_BASIC_VALUE.md    
+          - label: INDEX STATISTIC
+            href: ./dolphin-INDEX_STATISTIC.md                        
+          - label: PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT
+            href: ./dolphin-PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_CURRENT.md
+          - label: PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_HISTORY
+            href: ./dolphin-PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_HISTORY.md
+          - label: PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_SUMMARY_BY_DIGEST
+            href: ./dolphin-PERFORMANCE_SCHEMA.EVENTS_STATEMENTS_SUMMARY_BY_DIGEST.md
+          - label: PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT
+            href: ./dolphin-PERFORMANCE_SCHEMA.EVENTS_WAITS_CURRENT.md
+          - label: PERFORMANCE_SCHEMA.EVENTS_WAITS_SUMMARY_GLOBAL_BY_EVENT_NAME
+            href: ./dolphin-PERFORMANCE_SCHEMA.EVENTS_WAITS_SUMMARY_GLOBAL_BY_EVENT_NAME.md
+          - label: PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE
+            href: ./dolphin-PERFORMANCE_SCHEMA.FILE_SUMMARY_BY_INSTANCE.md
+          - label: PERFORMANCE_SCHEMA.TABLE_IO_WAITS_SUMMARY_BY_INDEX_USAGE
+            href: ./dolphin-PERFORMANCE_SCHEMA.TABLE_IO_WAITS_SUMMARY_BY_INDEX_USAGE.md
+          - label: PERFORMANCE_SCHEMA.TABLE_IO_WAITS_SUMMARY_BY_TABLE
+            href: ./dolphin-PERFORMANCE_SCHEMA.TABLE_IO_WAITS_SUMMARY_BY_TABLE.md
+          - label: PERFORMANCE_SCHEMA.THREAD
+            href: ./dolphin-PERFORMANCE_SCHEMA.THREADS.md            
+      - label: GUC参数说明
+        href: ./dolphin-GUC参数说明.md
+      - label: 重设参数
+        href: ./dolphin-重设参数.md   
+      - label: 存储过程
+        sections:
+          - label: 基本语句
+            href: ./dolphin-基本语句.md
+          - label: 赋值语句
+            href: ./dolphin-赋值语句.md
+      - label: 标识符说明
+        sections:
+          - label: 列名标识符
+            href: ./dolphin-列名标识符.md
+  - label: gms_stats Extension
+    href: ./gms_stats.md
+  - label: gms_output Extension
+    href: ./gms_output.md
+  - label: gms_profiler Extension
+    href: ./gms_profiler.md
+  - label: gms_i18n Extension
+    href: ./gms_i18n.md
+  - label: gms_sql Extension
+    href: ./gms_sql.md
+  - label: gms_tcp Extension
+    href: ./gms_tcp.md
+  - label: gms_compress Extension
+    href: ./gms_compress.md
+  - label: gms_inaddr Extension
+    href: ./gms_inaddr.md
+  - label: gms_utility Extension
+    href: ./gms_utility.md
+  - label: gms_raw Extension
+    href: ./gms_raw.md
+  - label: gms_match Extension
+    href: ./gms_match.md
+  - label: gms_assert Extension
+    href: ./gms_assert.md
+  - label: shark Extension
+    href: ./shark.md
+  - label: shark语法介绍
+    sections:
+      - label: 关键字
+        href: ./shark-关键字.md
+      - label: 数据类型
+        sections:
+          - label: 字符类型
+            href: ./shark-字符类型.md
+          - label: sql_variant类型
+            href: ./shark-sql_variant类型.md
+          - label: varbinary类型
+            href: ./shark-varbinary类型.md
+      - label: 函数和操作符
+        sections:
+          - label: 系统信息函数
+            href: ./shark-系统信息函数.md
+          - label: 系统常用函数
+            href: ./shark-系统常用函数.md
+          - label: 操作符
+            href: ./shark-操作符.md
+      - label: SQL语法
+        sections:
+          - label: GUC参数说明
+            href: ./shark-GUC参数说明.md
+          - label: CREATE INDEX
+            href: ./shark-CREATE-INDEX.md
+          - label: CREATE TABLE
+            href: ./shark-CREATE-TABLE.md
+          - label: ALTER TABLE
+            href: ./shark-ALTER-TABLE.md
+          - label: INSERT
+            href: ./shark-INSERT.md
+          - label: UPDATE
+            href: ./shark-UPDATE.md
+          - label: DELETE
+            href: ./shark-DELETE.md
+          - label: SELECT
+            href: ./shark-SELECT.md
+          - label: SET
+            href: ./shark-SET.md
+          - label: DBCC CHECKIDENT
+            href: ./shark-DBCC-CHECKIDENT.md
+          - label: IDENTITY
+            href: ./shark-约束.md                        
+          - label: MERGE INTO
+            href: ./shark-MERGE-INTO.md        
+          - label: TRY CATCH
+            href: ./shark-trycatch.md 
+          - label: CREATE PROC
+            href: ./shark-CREATE-PROC.md          
+          - label: ALTER PROC
+            href: ./shark-ALTER-PROC.md    
+          - label: DROP PROC
+            href: ./shark-DROP-PROC.md      
+          - label: USE DB_NAME
+            href: ./shark-USE-DB_NAME.md  
+          - label: DROP TRIGGER
+            href: ./shark-DROP-TRIGGER.md                          
+      - label: 事务
+        sections:
+          - label: 管理事务
+            href: ./shark-管理事务.md
+      - label: 不支持语法
+        href: ./shark-不支持语法.md
+      - label: 存储过程
+        sections:
+          - label: 基本语句
+            href: ./shark-存储过程_SQLReference.md
+      - label: 系统视图
+        sections:
+          - label: ALL_COLUMNS
+            href: ./shark-ALL_COLUMNS.md
+          - label: ALL_OBJECTS
+            href: ./shark-ALL_OBJECTS.md
+          - label: COLUMNS
+            href: ./shark-COLUMNS.md
+          - label: IDENTITY_COLUMNS
+            href: ./shark-IDENTITY_COLUMNS.md
+          - label: DATABASES
+            href: ./shark-DATABASES.md
+          - label: INDEXS
+            href: ./shark-INDEXS.md
+          - label: CHECK_CONSTRAINTS
+            href: ./shark-INFORMATION_SCHEMA_TSQL.CHECK_CONSTRAINTS.md
+          - label: COLUMNS
+            href: ./shark-INFORMATION_SCHEMA_TSQL.COLUMNS.md
+          - label: TABLES
+            href: ./shark-INFORMATION_SCHEMA_TSQL.TABLES.md
+          - label: VIEWS
+            href: ./shark-INFORMATION_SCHEMA_TSQL.VIEWS.md
+          - label: OBJECTS
+            href: ./shark-OBJECTS.md
+          - label: PROCEDURES
+            href: ./shark-PROCEDURES.md
+          - label: SCHEMAS
+            href: ./shark-SCHEMAS.md
+          - label: SERVER_PRINCIPALS
+            href: ./shark-SERVER_PRINCIPALS.md
+          - label: SYSDATABASES
+            href: ./shark-SYSDATABASES.md
+          - label: SYSCOLUMNS
+            href: ./shark-SYSCOLUMNS.md
+          - label: SYSINDEXES
+            href: ./shark-SYSINDEXES.md
+          - label: SYSINDEXKEYS
+            href: ./shark-SYSINDEXKEYS.md
+          - label: SYSOBJECTS
+            href: ./shark-SYSOBJECTS.md
+          - label: SYSUSERS
+            href: ./shark-SYSUSERS.md
+          - label: TABLES
+            href: ./shark-TABLES.md
+          - label: VIEWS
+            href: ./shark-VIEWS.md                
+  - label: gms_lob Extension
+    href: ./gms_lob.md
+  - label: gms_debug Extension
+    href: ./gms_debug.md
+  - label: spqplugin_v2-Extension
+    sections:
+      - label: spqplugin_v2概述与安装
+        href: ./spqplugin_v2概述与安装.md
+      - label: spqplugin_v2使用说明
+        href: ./spqplugin_v2使用说明.md
+      

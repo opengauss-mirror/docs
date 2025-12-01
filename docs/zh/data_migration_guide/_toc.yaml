@@ -1,0 +1,29 @@
+label: 数据迁移指南
+isManual: true
+sections:
+  - label: MySQL迁移
+    sections:
+      - label: MySQL兼容性说明
+        href: ./mysql_compatible_description.md
+      - label: MySQL语法兼容性评估工具
+        href: ./mysql_assessment_tool.md
+      - label: 迁移MySQL数据库至openGauss
+        sections:
+          - label: 概述
+            href: ./migrating_data_from_mysql_database_to_opengauss.md
+          - label: MySQL一键式迁移
+            href: ./quick_mysql_migration.md
+          - label: 数据迁移
+            href: ./data_migration_guide.md
+          - label: 全量迁移
+            href: ./full_migration.md
+          - label: 增量迁移
+            href: ./incremental_migration.md
+          - label: 反向迁移
+            href: ./reverse_migration.md
+          - label: 数据校验
+            href: ./data_check.md
+      - label: 录制回放工具
+        href: ./workload_tool.md
+  - label: SQLServer迁移
+    href: ./sql_server_migration.md      

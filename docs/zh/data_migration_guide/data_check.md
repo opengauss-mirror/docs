@@ -1,0 +1,266 @@
+# 数据校验
+
+## 功能介绍<a name="section1480816250617"></a>
+
+数据校验工具 gs_datacheck，分为check服务和extract服务。check服务用于数据校验，extract服务用于数据抽取和规整。
+
+## 原理介绍<a name="section1480816250617"></a>
+
+全量校验：
+
+在全量数据迁移完成后，由extract服务对源端和目标端数据通过JDBC方式进行数据抽取然后规整计算，并将计算后的中间数据推送到kafka中。最后由check服务提取kafka中的中间数据，构建默克尔树，通过默克尔树比对实现表数据校验且输出校验结果。
+
+增量校验：
+
+由debezium服务侦听源端数据库的增量数据，到指定topic。再由源端extract服务处理该topic增量数据，触发check增量校验。
+
+## 环境准备<a name="section425318254413"></a>
+
+- ARM+openEuler 20.03 或 X86+CentOS 5.7 
+- JDK ： JDK11+
+- MYSQL：要求5.7+版本
+- openGauss：openGauss3.0.0+
+
+## 操作步骤
+
+全量校验 gs_datacheck 依赖MySQL一键式迁移工具gs_rep_portal，可实现全量迁移的安装、启动、停止、卸载整个过程。
+
+- 下载gs_rep_portal
+
+  ```
+  wget https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz
+  ```
+
+  解压，并进入portal对应目录
+
+  ```
+  tar -zxvf PortalControl-6.0.0-x86_64.tar.gz
+  cd portal
+  ```
+
+- 修改gs_rep_portal配置文件
+
+  配置文件位于config目录内，数据校验相关的配置文件主要包含如下三个，相关参数含义简要说明如下：
+
+  - application.yml
+
+  ```yaml
+  #校验服务配置 修改application.yml文件
+  server:
+    port: 9000    # 为校验服务web端口，默认可不修改
+    tomcat:
+      threads:
+        max: 10 # tomcat 线程池大小
+  logging:
+    config: config/log4j2.xml  #校验服务日志配置文件路径 
+  spring:
+    memory-monitor-enable: false # 内存监控日志，默认关闭
+    kafka:
+      bootstrap-servers: localhost:9092 #为kafka工作地址，默认安装可不修改
+    csv: # 用于协同chameleon迁移校验
+      schema: test #协同迁移mysql 数据库名称
+      path: {chameleon_data_path}\tmp\chameleon # chameleon 迁移配置的临时数据目录
+      sleep-interval: 100 # 毫秒
+      task-dispatcher-interval: 3 # csv 任务执行周期(单位 秒)
+      max-dispatcher-size: 5 # csv task dispatcher size
+    check:
+      core-pool-size: 5  # 校验并发核心线程数
+      maximum-pool-size: 10 # 校验最大线程数
+      maximum-topic-size: 4 # 校验topic数量
+      floating-point-data-supply-zero: false #浮点数据补零默认关闭，CSV场景打开
+  data:
+    check:
+      data-path: ./check_result #校验结果输出目录
+      source-uri: http://127.0.0.1:9001 #指定源端端口  server.port=9001
+      sink-uri: http://127.0.0.1:9002 #指定目标端端口 server.port=9002
+      # auto-delete-topic :  Configure whether to automatically delete topic.
+      # 0 is not delete; 1 is delete when checked all completed ; 
+      auto-delete-topic: 1 # 配置是否删除Topic, {0不删除，1删除}
+      increment-max-diff-count: 1000 #增量场景下，最大差异数量
+      max-retry-times: 20 #校验启动环境检查，失败重试次数
+      rest-api-page-size: 1000 # 设置表信息处理分页大小；用于海量表场景下控制批处理大小
+  rules:
+    enable: false # 过滤规则开关，默认关闭
+    table: # 表级过滤规则
+      - name: white  # white 白名单，black 黑名单
+        text: t_test_table # 过滤表明称，或者添加正则表达式
+    row: # 行级过滤规则
+      - name: ^[a-zA-Z][a-zA-Z_]+$  # 表名称适配规则，给指定表添加行级规则
+        text: 10,100  # 行级规则，过滤表指定范围数据，为默认SQL查询结果的行号
+    column: #列级过滤规则
+       - name: t_test_table # 指定适配列级规则的表名称，必须为当前库表名称
+         text: id,c_1,c_2,c_3 #指定待过滤的字段名称
+         attribute: include # 规则类型，include：包含text中指定字段；exclude排除text中指定字段
+  
+  ```
+  
+  - application-source.yml
+
+  ```yaml
+  源端服务配置 修改application-source.yml文件
+
+ server:
+  port: 9001 # 为校验服务源端web端口，默认可不修改
+  tomcat:
+    threads:
+      max: 10 # tomcat 线程池大小
+logging:
+  config: config/log4j2.xml #校验服务日志配置文件路径 
+spring:
+  check:
+    server-uri: <http://127.0.0.1:9000> #指定校验端服务接口地址 server.port=9000
+    core-pool-size: 5 # 校验并发核心线程数
+    maximum-pool-size: 10 # 校验最大线程数
+    maximum-topic-size: 4  # 校验topic数量
+    maximum-table-slice-size: 10000  # 校验单表记录分片大小
+    extend-maximum-pool-size: 5 # 校验抽取大表扩展线程池大小
+  extract:
+    schema: test # 源端校验schema，mysql为数据库名称
+    databaseType: MS # 指定数据库类型 {MS MySQL| OG openGauss | O oracle}
+    query-dop: 8 # openGauss数据库并行查询参数，当数据库为openGauss时生效
+    dataLoadMode: jdbc # 数据加载模式 当校验连接数据库时，使用JDBC，当与chameleon协同时使用CSV
+    debezium-enable: false # 增量校验开关
+    debezium-topic: data_check_avro_inc_topic_w1 # 增量迁移debezium topic名称
+    debezium-serializer: AvroSerializer #增量数据序列化类型 StringSerializer or AvroSerializer
+    debezium-avro-registry: <http://localhost:8081> # 增量 avro schema registry
+    debezium-groupId: debezium-extract-group # 增量kafkaf分组 debezium topic groupId
+    debezium-time-period: 1 # 增量校验执行周期 单位分钟
+    debezium-num-period: 1000 # 增量校验执行数据变更数量周 期
+
+  kafka:
+    bootstrap-servers: localhost:9092 #为kafka工作地址，默认安装可不修改
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    # driver-class-name: org.opengauss.Driver # For openGauss
+    # url: # jdbc:opengauss://127.0.0.1:5432/postgres?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC # For openGauss
+    # driver-class-name: oracle.jdbc.OracleDriver
+    # url: jdbc:oracle:thin:@127.0.0.1:1521/TEST
+    username: root # database user
+    password: 'xxxxxx' # database password
+    druid:
+      initial-size: 5 # initialization connection pool size
+      min-idle: 5 # minimum number of connections
+      max-active: 20 # maximum number of connections
+      test-while-idle: true
+      test-on-borrow: true
+      validation-query: "SELECT 1 FROM DUAL"
+      validation-query-timeout: 10000
+      connection-error-retry-attempts: 0
+      break-after-acquire-failure: true
+      max-wait: 6000
+      keep-alive: true
+      min-evictable-idle-time-millis: 600000
+
+  ```
+
+  - application-sink.yml
+
+
+  ```yaml
+  # 目标端服务配置 修改application-sink.yml文件
+ server:
+  port: 9002  # 为校验服务目标端web端口，默认可不修改
+  tomcat:
+    threads:
+      max: 10 # tomcat 线程池大小
+logging:
+  config: config/log4j2.xml #校验服务日志配置文件路径 
+spring:
+  check:
+    server-uri: http://127.0.0.1:9000 #指定校验端服务接口地址 server.port=9000
+    core-pool-size: 5 # 校验并发核心线程数
+    maximum-pool-size: 10 # 校验最大线程数
+    maximum-topic-size: 4 # 校验topic数量
+    maximum-table-slice-size: 10000 # 校验单表记录分片大小
+    extend-maximum-pool-size: 5 # 校验抽取大表扩展线程池大小
+  extract:
+    schema: test # 源端校验schema，mysql为数据库名称
+    databaseType: OG # 指定数据库类型 {MS MySQL| OG openGauss | O oracle}
+    query-dop: 8 # openGauss数据库并行查询参数，当数据库为openGauss时生效
+    dataLoadMode: jdbc # 数据加载模式 当校验连接数据库时，使用JDBC
+    debezium-enable: false # no need config,but not delete
+    debezium-topic:  # no need config,but not delete
+    debezium-groupId: # no need config,but not delete
+    debezium-serializer: AvroSerializer # StringSerializer or AvroSerializer
+    debezium-avro-registry: http://localhost:8081 # avro schema registry
+    debezium-time-period: 1 # no need config,but not delete
+    debezium-num-period: 1000 # no need config,but not delete
+  kafka:
+    bootstrap-servers: 192.168.0.114:9092
+  datasource:
+    # driver-class-name: com.mysql.cj.jdbc.Driver
+    # url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: org.opengauss.Driver
+    url: jdbc:opengauss://192.168.0.114:25432/test_check?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&loggerLevel=OFF
+    # driver-class-name: oracle.jdbc.OracleDriver
+    # url: jdbc:oracle:thin:@127.0.0.1:1521/TEST
+    username: jack # database user
+    password: 'xxxxxx'   # The password text may contain special characters, which need to be enclosed in quotation marks
+    druid:
+      initial-size: 5 # initialization connection pool size
+      min-idle: 5 # minimum number of connections
+      max-active: 20 # maximum number of connections
+      test-while-idle: true
+      test-on-borrow: true
+      validation-query: "select 1"
+      validation-query-timeout: 10000
+      connection-error-retry-attempts: 0
+      break-after-acquire-failure: true
+      max-wait: 6000
+      keep-alive: true
+      min-evictable-idle-time-millis: 600000 
+  ```
+
+- 安装
+
+  ```
+  # 全量校验
+  sh gs_datacheck.sh install full workspace.id  
+  # 增量校验
+  sh gs_datacheck.sh install incremental workspace.id
+  ```
+
+  其中workspace.id表示迁移任务id，取值为一个整数，不同的id区分不同的校验任务，不同校验任务可并行启动。full 表示全量校验 ，incremental 表示增量校验
+
+- 启动
+
+  ```
+  # 全量校验
+  sh gs_datacheck.sh start full workspace.id  
+  # 增量校验
+  sh gs_datacheck.sh start incremental workspace.id
+  ```
+
+- 停止
+
+  ```
+  # 全量校验
+  sh gs_datacheck.sh stop full workspace.id  
+  # 增量校验
+  sh gs_datacheck.sh stop incremental workspace.id
+  ```
+
+- 卸载
+
+  ```
+  # 全量校验
+  sh gs_datacheck.sh uninstall full workspace.id  
+  # 增量校验
+  sh gs_datacheck.sh uninstall incremental workspace.id
+  ```
+
+## 注意事项<a name="section17604122817181"></a>
+
+- JDK版本要求JDK11+
+- 当前版本仅支持对源端openGauss/MySQL，目标端openGauss/MySQL数据校验
+- 当前版本仅支持数据校验，不支持表对象校验
+- MYSQL需要5.7+版本
+- 当前版本不支持地理位置几何图形数据校验
+- 校验工具当前不支持校验中断(网络故障、kill进程等)自动恢复。
+- 数据校验行级过滤规则配置，只支持[offset,count]指定范围内抽取，不支持排除[offset,count]范围之内的数据过滤。
+- 行过滤规则抽取中间范围内数据（例如：[10,100]），如果源端在该范围之前的数据[0,10]发生删除操作，则会导致该表在指定范围内数据发生偏移，从而导致数据校验结果产生差异。此时需要扩大前置下标范围,以及增加相应的抽取数量。即[3,107]。
+- 当对主键的update语句没有通过增量迁移同步到目的端 或 主键同步发生错误的时候，进行数据校验，源端update后的新数据和目标端的旧数据是两条独立的数据，对校验差异进行处理时，会生成两条语句，即对旧数据进行删除，对新数据做插入。此场景会将一条主键update语句拆分为两条语句（insert+delete）来执行，且分解到两个事务中执行，无法保证原子性。
+- 增量校验不支持表级规则
+- 增量校验不支持行级规则
+- 增量校验目前只支持数据增删改校验，暂时不支持表结构（对象）校验（包括多表少表）
