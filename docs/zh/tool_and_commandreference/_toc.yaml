@@ -143,7 +143,7 @@ sections:
         href: ./security_design.md
       - label: CM配置参数介绍
         sections:
-          - label: CM配置参数介绍
+          - label: 概述
             href: ./cm_parameters.md
           - label: cm_agent参数
             href: ./parameters_related_to_cm_agent.md

@@ -19,6 +19,8 @@ sections:
     sections:
       - label: 概述
         href: ./datavec_architecture.md
+      - label: Rabitq
+        href: ./Rabitq.md          
       - label: PQ
         href: ./pq.md
       - label: IVFFLAT-NPU
