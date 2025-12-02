@@ -825,5 +825,391 @@ openGauss=# SELECT '{2:1.5,4:3.5}/5'::sparsevec::vector(5);
 (1 row)
 ```
 
+
+## Halfvec
+
+### Halfvec 操作符
+
+操作符 | 描述 
+--- | --- 
+\+ | 元素级加法
+\- | 元素级减法
+\* | 元素级乘法
+\= | 等于
+\<> | 不等于
+\|\| | 向量拼接
+<-> | 欧几里得距离 (L2)
+<#> | 负内积
+<=> | 余弦距离
+<+> | 曼哈顿距离 (L1)
+
+- \+
+
+    描述：元素级加法。
+
+    示例：
+
+    ```
+    openGauss=> select '[1,2,3]'::halfvec + '[4,5,6]';
+     ?column? 
+    ----------
+     [5,7,9]
+    (1 row)
+    ```
+
+- \-
+
+    描述：元素级减法。
+
+    示例：
+
+    ```
+    openGauss=> select '[1,2,3]'::halfvec - '[4,5,6]';
+      ?column?  
+    ------------
+     [-3,-3,-3]
+    (1 row)
+    ```    
+
+- \*
+
+    描述：元素级乘法。
+
+    示例：
+
+    ```
+    openGauss=> select '[1,2,3]'::halfvec * '[4,5,6]';
+     ?column?  
+    -----------
+     [4,10,18]
+    (1 row)
+    ```    
+
+- \=
+
+    描述：等于。
+
+    示例：
+
+    ```
+    openGauss=# select '[1,2,3]'::halfvec = '[4,5,6]';
+     ?column? 
+    ----------
+     f
+    (1 row)
+    ``` 
+
+- \<>
+
+    描述：不等于。
+
+    示例：
+
+    ```
+    openGauss=# select '[1,2,3]'::halfvec <> '[4,5,6]';
+     ?column? 
+    ----------
+     t
+    (1 row)
+    ``` 
+
+- \|\|
+
+    描述：向量拼接。
+
+    示例：
+
+    ```
+    openGauss=> select '[1,2,3]'::halfvec || '[4,5,6]';
+       ?column?    
+    ---------------
+     [1,2,3,4,5,6]
+    (1 row)
+    ```         
+
+- <->
+
+    描述：欧几里得距离 (L2)。
+
+    示例：
+
+    ```
+    openGauss=# SELECT '[0,0]'::halfvec <-> '[3,4]';
+     ?column? 
+    ----------
+            5
+    (1 row)
+    ```      
+
+- <#> 
+
+    描述：负内积。
+
+    示例：
+
+    ```
+    openGauss=# SELECT '[1,2]'::halfvec <#> '[3,4]';
+     ?column? 
+    ----------
+          -11
+    (1 row)
+    ```        
+
+- <=>
+
+    描述：余弦距离。
+
+    示例：
+
+    ```
+    openGauss=# SELECT '[1,2]'::halfvec <=> '[2,4]';
+     ?column? 
+    ----------
+            0
+    (1 row)
+    ```      
+
+- <+>
+
+    描述：曼哈顿距离。
+
+    示例：
+
+    ```
+    openGauss=# SELECT '[0,0]'::halfvec <+> '[3,4]';
+     ?column? 
+    ----------
+            7
+    (1 row)
+    ```      
+
+### Halfvec 函数
+
+函数 | 描述
+--- | --- 
+binary_quantize(halfvec) → bit | 二进制量化
+cosine_distance(halfvec, halfvec) → double precision | 余弦距离
+inner_product(halfvec, halfvec) → double precision | 内积
+l1_distance(halfvec, halfvec) → double precision | 曼哈顿距离 (L1)
+l2_distance(halfvec, halfvec) → double precision | 欧几里得距离 (L2)
+l2_normalize(halfvec) → halfvec | 归一化（使用L2距离）
+subvector(halfvec, integer, integer) → halfvec | 截取子向量
+vector_dims(halfvec) → integer | 向量的维度数
+
+- binary_quantize
+
+    描述：二进制量化，若元素大于0，则量化为1；若元素小于或等于0，则量化为0。
+
+    返回类型：bit
+
+    示例：
+
+    ```
+    openGauss=# SELECT binary_quantize('[1,0,-1]'::halfvec);
+     binary_quantize 
+    -----------------
+     100
+    (1 row)
+    ```    
+
+- cosine_distance
+
+    描述：余弦距离。
+
+    返回类型：float8
+
+    示例：
+
+    ```
+    openGauss=# SELECT cosine_distance('[1,2]'::halfvec, '[2,4]');
+     cosine_distance 
+    -----------------
+                   0
+    (1 row)
+    ```        
+
+- inner_product
+
+    描述：内积。
+
+    返回类型：float8
+
+    示例：
+
+    ```
+    openGauss=# SELECT inner_product('[1,2]'::halfvec, '[3,4]');
+     inner_product 
+    ---------------
+                11
+    (1 row)
+    ```           
+
+- l1_distance
+
+    描述：曼哈顿距离 (L1)。
+
+    返回类型：float8
+
+    示例：
+
+    ```
+    openGauss=# SELECT l1_distance('[0,0]'::halfvec, '[3,4]');
+     l1_distance 
+    -------------
+               7
+    (1 row)
+    ```      
+
+- l2_distance
+
+    描述：欧几里得距离 (L2)。
+
+    返回类型：float8
+
+    示例：
+
+    ```
+    openGauss=# SELECT l2_distance('[0,0]'::halfvec, '[3,4]');
+     l2_distance 
+    -------------
+               5
+    (1 row)
+    ```       
+
+- l2_normalize
+
+    描述：归一化（使用L2距离）。
+
+    返回类型：halfvec
+
+    示例：
+
+    ```
+    openGauss=# SELECT l2_normalize('[3,4]'::halfvec);
+     l2_normalize 
+    --------------
+     [0.6,0.8]
+    (1 row)
+    ```        
+
+- subvector
+
+    描述：截取子向量。
+
+    返回类型：halfvec
+
+    示例：
+
+    ```
+    openGauss=# SELECT subvector('[1,2,3,4,5]'::halfvec, 1, 3);
+     subvector 
+    -----------
+     [1,2,3]
+    (1 row)
+    ```         
+
+- vector_dims
+
+    描述：向量的维度数。
+
+    返回类型：int
+
+    示例：
+
+    ```
+    openGauss=# SELECT vector_dims('[1,2,3]'::halfvec);
+     vector_dims 
+    -------------
+               3
+    (1 row)
+    ```                
+
+### Halfvec 聚合函数
+
+函数 | 描述
+--- | --- 
+avg(halfvec) → halfvec | 平均值 
+sum(halfvec) → halfvec | 求和
+
+- avg
+
+    描述：平均值。
+
+    返回类型：halfvec
+
+    示例：
+
+    ```
+    openGauss=# SELECT avg(v) FROM unnest(ARRAY['[1,2,3]'::halfvec, '[3,5,7]']) v;
+        avg    
+    -----------
+     [2,3.5,5]
+    (1 row)
+    ```     
+
+- sum
+
+    描述：求和。
+
+    返回类型：halfvec
+
+    示例：
+
+    ```
+    openGauss=# SELECT sum(v) FROM unnest(ARRAY['[1,2,3]'::halfvec, '[3,5,7]', NULL]) v;
+       sum    
+    ----------
+     [4,7,10]
+    (1 row)
+    ```       
+
+### Halfvec 类型转换
+
+- 格式：
+
+```
+SELECT ITEM::halfvec;
+
+SELECT halfvec(ITEM);
+
+SELECT cast(ITEM AS halfvec);
+```
+
+#### TEXT/VARCHAR 转 Halfvec
+
+- 示例：
+
+```
+openGauss=# SELECT '[1,2,3,4,5]'::halfvec;
+   halfvec    
+-------------
+ [1,2,3,4,5]
+(1 row)
+```
+
+#### Vector 转 Halfvec
+
+- 示例：
+
+```
+openGauss=# SELECT '[1,2,3,4,5]'::vector::halfvec;
+   halfvec    
+-------------
+ [1,2,3,4,5]
+(1 row)
+```
+
+#### Halfvec 转 Vector
+
+- 示例：
+
+```
+openGauss=# SELECT '[1,2,3,4,5]'::halfvec::vector(5);
+    vector      
+-------------
+ [1,2,3,4,5]
+(1 row)
+```
+
 >[!NOTE]说明  
 >向量数据类型会和其他类型使用同样的函数名、操作符，为确保执行向量操作无误，建议对至少一个入参进行显式类型转换，如 `SELECT l2_distance('[0,0]'::vector, '[3,4]');`。
