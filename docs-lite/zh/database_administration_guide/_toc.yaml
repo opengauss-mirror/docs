@@ -5,7 +5,7 @@ sections:
         href: ./database_concepts.md
       - label: 数据存储管理
         sections:
-          - label: “存储结构： 段页式存储结构”
+          - label: "存储结构: 段页式存储结构"
             href: ./segmentation_with_paging_storage_structure.md
           - label: "存储模型: 规划存储模型"
             href: ./planning_storage_models.md    

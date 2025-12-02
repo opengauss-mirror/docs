@@ -21,6 +21,8 @@ sections:
             href: ./dolphin-数值类型.md
           - label: 字符类型
             href: ./dolphin-字符类型.md
+          - label: 日期-时间类型
+            href: ./dolphin-日期-时间类型.md            
           - label: 位串类型
             href: ./dolphin-位串类型.md
           - label: 枚举类型
@@ -233,7 +235,7 @@ sections:
             href: ./dolphin-SHOW-OPEN-TABLES.md
           - label: UPDATE
             href: ./dolphin-UPDATE.md
-          - label: USE db_name
+          - label: USE DB_NAME
             href: ./dolphin-USE-DB_NAME.md  
           - label: SELECT HINT
             href: ./dolphin-SELECT-HINT.md  

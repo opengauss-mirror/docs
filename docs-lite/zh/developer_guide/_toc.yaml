@@ -55,22 +55,22 @@ sections:
         href: ./log_management.md
       - label: 示例：常用操作
         href: ./example_common_operations_jdbc.md
-      - label: 示例：通过本地文件导入导出数据
-        href: ./example_importing_and_exporting_data_through_local_files.md
-      - label: 示例：jdbc主备集群负载均衡
-        href: ./example_jdbc_primary_standby_cluster_load_balancing.md
-      - label: 示例：逻辑复制代码示例
-        href: ./example_logic_replication_code.md
-      - label: 示例：从MY迁移数据
-        href: ./example_migrating_data_from_a_my_database_to_opengauss.md
-      - label: 示例：不同场景下连接数据库参数配置
-        href: ./example_parameters_for_connecting_to_the_database_in_different_scenarios.md
       - label: 示例：重新执行应用SQL
         href: ./example_retrying_sql_queries_for_applications.md
-      - label: JDBC常用参数参考
-        href: ./common_jdbc_parameters.md
+      - label: 示例：通过本地文件导入导出数据
+        href: ./example_importing_and_exporting_data_through_local_files.md
+      - label: 示例：从MY迁移数据
+        href: ./example_migrating_data_from_a_my_database_to_opengauss.md
+      - label: 示例：逻辑复制代码示例
+        href: ./example_logic_replication_code.md
+      - label: 示例：不同场景下连接数据库参数配置
+        href: ./example_parameters_for_connecting_to_the_database_in_different_scenarios.md
+      - label: 示例：jdbc主备集群负载均衡
+        href: ./example_jdbc_primary_standby_cluster_load_balancing.md
       - label: JDBC接口参考
         href: ./jdbc_interface_reference.md
+      - label: JDBC常用参数参考
+        href: ./common_jdbc_parameters.md
   - label: 基于ODBC开发
     sections:
       - label: 简介
@@ -134,6 +134,8 @@ sections:
             href: ./sqlsetenvattr.md
           - label: SQLSetStmtAttr
             href: ./sqlsetstmtattr.md
+          - label: 示例
+            href: ./example_odbc.md            
   - label: 基于libpq开发
     sections:
       - label: 简介
