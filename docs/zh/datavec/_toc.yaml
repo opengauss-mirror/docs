@@ -19,7 +19,7 @@ sections:
     sections:
       - label: 概述
         href: ./datavec_architecture.md
-      - label: RabitQ
+      - label: RABITQ
         href: ./RabitQ.md        
       - label: PQ
         href: ./pq.md

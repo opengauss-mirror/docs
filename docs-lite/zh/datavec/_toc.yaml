@@ -19,7 +19,7 @@ sections:
     sections:
       - label: 概述
         href: ./datavec_architecture.md
-      - label: Rabitq
+      - label: RABITQ
         href: ./Rabitq.md          
       - label: PQ
         href: ./pq.md
@@ -63,7 +63,7 @@ sections:
             href: ./llama_index.md
           - label: openEuler Intelligence
             href: ./eulercopilot.md
-          - label: Ragflow
+          - label: RAGFlow
             href: ./opengauss_ragflow.md
       - label: 嵌入模型
         sections:
