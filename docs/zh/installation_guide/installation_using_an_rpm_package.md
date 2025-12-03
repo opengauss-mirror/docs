@@ -112,7 +112,6 @@ rpm -qi opengauss
 sudo yum remove opengauss
 ```
 
-
 ## 使用说明
 
 1. 切换到opengauss用户 `su - opengauss`。
@@ -129,10 +128,3 @@ sudo yum remove opengauss
 
 1. 支持从低版本的数据库升级到高版本的数据库。
    注意：不支持从2.1.0 Lite升级到6.0.0 LTS，支持从2.1.0 Lite升级到5.0.1 Lite，以及5.0.1 Lite升级到6.0.0 LTS。
-
-2. 升级操作系统时，数据库也会随之升级。
-
-3. 升级时，只能升级默认安装下的数据库，并且保证数据库进程正常。
-
-4. 升级的数据库的命令是
-    `yum install opengauss -y` 或者 `yum update openguass -y`
