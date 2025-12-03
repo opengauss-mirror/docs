@@ -6,10 +6,12 @@ RABITQ是一种具有理论保证的最先进的二进制量化方法，与HNSW�
 >[!NOTE]**说明**
 >RABITQ特性支持ARM/x86架构环境。<br>
 >RABITQ特性暂时只支持HNSW和IVF索引。<br>
->IVFFLAT-RABITQ特性暂时只支持vector数据类型，HNSW-RABITQ支持vector和halfvec类型。在其他向量数据类型构建HNSW-PQ以及IVF-PQ索引会报错。<br>
+>IVFFLAT-RABITQ特性暂时只支持vector数据类型，HNSW-RABITQ支持vector和halfvec类型。在其他向量数据类型构建HNSW-RABITQ以及IVF-RABITQ索引会报错。<br>
 >创建IVF-RABITQ索引时，如果表数据量小于索引选项lists，会提示召回率低。<br>
->RABITQ不支持ustore表建立索引。<br>
->RABITQ不支持与PQ一起使用，不支持mmap。
+>RABITQ不支持与PQ一起使用，HNSW-RABITQ不支持mmap。
+>RABITQ支持段页式表、行存表、非日志表、临时表，不支持ustore表、分区表、列存表、防篡改模式表。<br>
+>兼容A/B/C/PG库。<br>
+>支持并行构建。
 
 ## 安装准备
 
