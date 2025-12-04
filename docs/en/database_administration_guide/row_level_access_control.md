@@ -1,36 +1,86 @@
-# Row-Level Access Control<a name="EN-US_TOPIC_0000001135403991"></a>
+# Row-Level Access Control<a name="EN-US_TOPIC_0246507965"></a>
 
-## Availability<a name="section17746747"></a>
+The row-level access control feature enables database access control to be accurate to each row of data tables. In this way, the same SQL query may return different results for different users.
 
-This feature is available as of openGauss 1.1.0.
-
-## Introduction<a name="section25503003"></a>
-
-The row-level access control feature enables database access control to be accurate to each row of data tables. When different users perform the same SQL query operation, the read results may be different.
-
-## Benefits<a name="section28200442"></a>
-
-When different users perform the same SQL query operation, the read results may be different.
-
-## Description<a name="section52477394"></a>
-
-You can create a row-level access control policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified row-level access control policy of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  or  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
+You can create a row-level access control policy for a data table. The policy defines an expression that takes effect only for specific database users and SQL operations. When a database user accesses the data table, if a SQL statement meets the specified row-level access control policies of the data table, the expressions that meet the specified condition will be combined by using  **AND**  or  **OR**  based on the attribute type \(**PERMISSIVE**  |  **RESTRICTIVE**\) and applied to the execution plan in the query optimization phase.
 
 Row-level access control is used to control the visibility of row-level data in tables. By predefining filters for data tables, the expressions that meet the specified condition can be applied to execution plans in the query optimization phase, which will affect the final execution result. Currently, the SQL statements that can be affected include  **SELECT**,  **UPDATE**, and  **DELETE**.
 
-## Enhancements<a name="section2534498"></a>
+Scenario 1: A table summarizes the data of different users. Users can view only their own data.
 
-None
+```
+--Create users alice, bob, and peter.
+postgres=# CREATE ROLE alice PASSWORD 'xxxxxxxxx';
+postgres=# CREATE ROLE bob PASSWORD 'xxxxxxxxxx';
+postgres=# CREATE ROLE peter PASSWORD 'xxxxxxxxx';
 
-## Constraints<a name="section06531946143616"></a>
+--Create the all_data table that contains user information.
+postgres=# CREATE TABLE all_data(id int, role varchar(100), data varchar(100));
 
--   Row-level access control policies can be applied only to  **SELECT**,  **UPDATE**, and  **DELETE**  operations and cannot be applied to  **INSERT**  and  **MERGE**  operations.
--   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, replication tables, unlogged tables, and hash tables. Row-level access control policies cannot be defined for foreign tables, and temporary tables.
--   Row-level access control policies cannot be defined for views.
--   A maximum of 100 row-level access control policies can be defined for a table.
--   Initial users and system administrators are not affected by row-level access control policies.
--   If a dynamic data anonymization policy is configured for a table that has the row-level access control policies defined, grant the trigger permission of the table to other users with caution to prevent other users from using the trigger to bypass the anonymization policy.
+--Insert data into the data table.
+postgres=# INSERT INTO all_data VALUES(1, 'alice', 'alice data');
+postgres=# INSERT INTO all_data VALUES(2, 'bob', 'bob data');
+postgres=# INSERT INTO all_data VALUES(3, 'peter', 'peter data');
 
-## Dependencies<a name="section22810484"></a>
+--Grant the read permission for the all_data table to users alice, bob, and peter.
+postgres=# GRANT SELECT ON all_data TO alice, bob, peter;
 
-None
+--Enable row-level access control.
+postgres=# ALTER TABLE all_data ENABLE ROW LEVEL SECURITY;
+
+--Create a row-level access control policy to specify that the current user can view only their own data.
+postgres=# CREATE ROW LEVEL SECURITY POLICY all_data_rls ON all_data USING(role = CURRENT_USER);
+
+--View table details.
+postgres=# \d+ all_data
+                               Table "public.all_data"
+ Column |          Type          | Modifiers | Storage  | Stats target | Description
+--------+------------------------+-----------+----------+--------------+-------------
+ id     | integer                |           | plain    |              |
+ role   | character varying(100) |           | extended |              |
+ data   | character varying(100) |           | extended |              |
+Row Level Security Policies:
+    POLICY "all_data_rls"
+      USING (((role)::name = "current_user"()))
+Has OIDs: no
+Location Nodes: ALL DATANODES
+Options: orientation=row, compression=no, enable_rowsecurity=true
+
+--Switch to user alice and run SELECT * FROM public.all_data.
+postgres=# SELECT * FROM public.all_data;
+ id | role  |    data
+----+-------+------------
+  1 | alice | alice data
+(1 row)
+
+postgres=# EXPLAIN(COSTS OFF) SELECT * FROM public.all_data;
+                           QUERY PLAN
+----------------------------------------------------------------
+ Streaming (type: GATHER)
+   Node/s: All datanodes
+   ->  Seq Scan on all_data
+         Filter: ((role)::name = 'alice'::name)
+ Notice: This query is influenced by row level security feature
+(5 rows)
+
+--Switch to user peter and run SELECT * FROM public.all_data.
+postgres=# SELECT * FROM public.all_data;
+ id | role  |    data
+----+-------+------------
+  3 | peter | peter data
+(1 row)
+
+postgres=#  EXPLAIN(COSTS OFF) SELECT * FROM public.all_data;
+                           QUERY PLAN
+----------------------------------------------------------------
+ Streaming (type: GATHER)
+   Node/s: All datanodes
+   ->  Seq Scan on all_data
+         Filter: ((role)::name = 'peter'::name)
+ Notice: This query is influenced by row level security feature
+(5 rows)
+```
+
+> ![](public_sys-resources/icon-notice.gif) **Notice:**   
+>
+> PG_STATISTIC system table and PG_STATISTIC_EXT system table store some sensitive information of statistical objects, such as high frequency value MCV. After the separation of powers is carried out, the system administrator can still obtain the information in the statistical information by accessing the two system tables.

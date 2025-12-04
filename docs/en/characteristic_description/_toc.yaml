@@ -15,10 +15,14 @@ sections:
         href: ./kunpeng_numa_architecture_optimization.md
       - label: High Concurrency of Thread Pools
         href: ./high_concurrency_of_thread_pools.md
+      - label: Adaptive Compression
+        href: ../database_administration_guide/adaptive_compression.md        
       - label: SMP for Parallel Execution
         href: ./smp_for_parallel_execution.md
       - label: Xlog no Lock Flush
         href: ./xlog_no_lock_flush.md
+      - label: Parallel Page-based Redo For Ustore
+        href: ../database_administration_guide/parallel_page_based_redo_for_ustore.md  
       - label: Row-Store Execution to Vectorized Execution
         href: ./row_store_execution_to_vectorized_execution.md
       - label: OCK-accelerated Data Transmission
@@ -33,18 +37,34 @@ sections:
         href: ./logical_replication.md
       - label: Logical Backup
         href: ./logical_backup.md
+      - label: Physical Backup
+        href: ./physical_backup.md        
       - label: Automatic Job Retry upon Failure
         href: ./automatic_job_retry_upon_failure.md
+      - label: Ultimate RTO
+        href: ../database_om_guide/ultimate_rto.md 
+      - label: High Availability Based on the Paxos Protocol
+        href: ../database_om_guide/high_availability_based_on_the_paxos_protocol.md   
+      - label: Cascaded Standby Server
+        href: ../database_administration_guide/cascaded_standby_node.md   
+      - label: Delayed Replay
+        href: ../database_om_guide/delayed_replay.md 
+      - label: Delaying Entering the Maximum Availability Mode
+        href: ../database_om_guide/delaying_entering_the_maximum_availability_mode.md            
       - label: Adding or Deleting a Standby Server
         href: ./adding_or_deleting_a_standby_server.md
       - label: Parallel Logical Decoding
         href: ./parallel_logical_decoding.md
+      - label: DCF
+        href: ../database_administration_guide/dcf.md         
       - label: CM
         href: ./cm.md
       - label: Global SysCache
         href: ./global_syscache.md
       - label: Using a Standby Node to Build a Standby Node
         href: ./using_a_standby_node_to_build_a_standby_node.md
+      - label: Two-City Three-DC DR
+        href: ./two_city_three_dc_dr.md        
       - label: Primary/Standby Shared Storage
         href: ./primary_standby_shared_storage.md
   - label: Maintainability
@@ -85,6 +105,8 @@ sections:
         href: ./unified_audit.md
       - label: Dynamic Data Masking
         href: ./dynamic_data_masking.md
+      - label: Row-Level Access Control
+        href: ./row_level_access_control.md
       - label: Password Strength Verification
         href: ./password_strength_verification.md
       - label: Equality Query in a Fully-encrypted Database
@@ -123,6 +145,8 @@ sections:
         href: ./stored_procedure_debugging.md
       - label: JDBC Client Load Balancing and Read/Write Isolation
         href: ./jdbc_client_load_balancing_and_read_write_isolation.md
+      - label: In-place Update Storage Engine
+        href: ../database_administration_guide/in_place_update_storage_engine.md           
       - label: Publication-Subscription
         href: ./publication_subscription.md
       - label: Foreign Key Lock Enhancement
