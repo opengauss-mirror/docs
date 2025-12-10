@@ -114,11 +114,16 @@ openGauss支持的操作系统（Linux 64位）：
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>建议版本：1.8</p>
 </td>
 </tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>openblas-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>建议版本：0.3.3及以上</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 ```shell
-yum install libaio-devel flex bison ncurses-devel glibc-devel patch readline-devel libedit-devel libxml2-devel lz4-devel numactl-devel unixODBC-devel java-1.8.0-openjdk-devel
+yum install libaio-devel flex bison ncurses-devel glibc-devel patch readline-devel libedit-devel libxml2-devel lz4-devel numactl-devel unixODBC-devel java-1.8.0-openjdk-devel openblas-devel
 ### centos中安装lsb_release
 yum install redhat-lsb-core
 ### openEuler安装lsb_release
