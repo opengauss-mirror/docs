@@ -229,11 +229,16 @@ openGauss的软件依赖要求如[表3](#zh-cn_topic_0283136474_table12125316819
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p720057175817"><a name="p720057175817"></a><a name="p720057175817"></a>建议版本：1.8</p>
 </td>
 </tr>
+<tr id="row136701325154914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p76711825134912"><a name="p76711825134912"></a><a name="p76711825134912"></a>openblas-devel</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1567262515496"><a name="p1567262515496"></a><a name="p1567262515496"></a>建议版本：0.3.3及以上</p>
+</td>
+</tr>
 </tbody>
 </table>
 
 ```shell
-yum install libaio-devel readline-devel expect libedit-devel libxml2-devel lz4-devel numactl-devel unixODBC-devel java-1.8.0-openjdk-devel
+yum install libaio-devel readline-devel expect libedit-devel libxml2-devel lz4-devel numactl-devel unixODBC-devel java-1.8.0-openjdk-devel openblas-devel
 ```
 
 ## 修改操作系统配置<a name="section231319141039"></a>
