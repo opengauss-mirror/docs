@@ -116,7 +116,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     column_name可以是多列，列名之间用逗号分隔。
     against()的匹配字符只能是字符内容(即全文索引支持字段类型只能是这三种char, varchar, text)，不包含int, bool, 特殊字符(!,#,空格等)与正规功能。
     注意：
-        mysql的全文索引查询语法match(column_name)允许无序，但该功能底层用的是opengauss的to_tsvector(),他的要求是字段顺序必须有序(与表的字段顺序一致)。
+        MySQL的全文索引查询语法match(column_name)允许无序，但该功能底层用的是openGauss的to_tsvector(),他的要求是字段顺序必须有序(与表的字段顺序一致)。
 
     用于安装了dolphin插件，处于MySQL兼容性场景下的全文索引查询。其语法结构相当于
     ```sql

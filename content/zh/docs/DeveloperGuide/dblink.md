@@ -297,7 +297,7 @@ ODBC的使用方法详见：[ODBC](../GettingStarted/ODBC.md)
 
 ## 注意事项
 
--   目前dblink支持通过odbc连接所有支持odbc的异构数据库，以及通过libpq连接opengauss数据库。
+-   目前dblink支持通过odbc连接所有支持odbc的异构数据库，以及通过libpq连接openGauss数据库。
 -   判断odbc或者libpq的条件为connstr中的drivername字段，存在drivername通过odbc连接，不存在drivername通过libpq连接，通过odbc连接只需指定用户名，密码，驱动名称三个参数即可，其他参数不生效。
 -   目前dblink暂时不支持线程池模式。
 -   dblink_open,dblink_fetch,dblink_close 三个关于游标使用的函数，本质上为提前组装SQL语句，然后通过exec执行，因不同数据库语法有差异，不兼容的情况下，请通过dblink_exec来手动执行SQL控制游标。在通过odbc连接openGauss时，请自行通过dblink_exec打开/关闭事务。
