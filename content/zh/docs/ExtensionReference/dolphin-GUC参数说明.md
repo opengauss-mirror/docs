@@ -593,14 +593,14 @@ dayname
 
 ## dolphin.default_database_name<a name="section203671436846"></a>
 
-**参数说明**：dolphin协议插件默认使用的opengauss数据库实例名称
+**参数说明**：dolphin协议插件默认使用的openGauss数据库实例名称
 
 该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   当加载了dolphin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的database同mysql的database体系不一致，因此dolphin需要选择一个opengauss的数据库实例。
+>-   由于openGauss的database同mysql的database体系不一致，因此dolphin需要选择一个openGauss的数据库实例。
 
 **取值范围**：字符串
 
