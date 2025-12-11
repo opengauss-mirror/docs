@@ -162,7 +162,7 @@ sections:
     sections:
       - label: MySQL to openGauss Migration Tool Chameleon
         href: ./mysql_to_opengauss_migration_tool_chameleon.md
-      - label: OpenGauss Client Tool DataStudio
+      - label: openGauss Client Tool DataStudio
         href: ./opengauss_client_tool_datastudio.md
   - label: Middleware
     sections:

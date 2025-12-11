@@ -1,4 +1,4 @@
-# OpenGauss Client Tool DataStudio<a name="EN-US_TOPIC_0000001220227672"></a>
+# openGauss Client Tool DataStudio<a name="EN-US_TOPIC_0000001220227672"></a>
 
 ## Availability<a name="section56086982"></a>
 
