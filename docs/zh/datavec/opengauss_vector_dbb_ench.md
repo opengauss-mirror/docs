@@ -37,10 +37,10 @@ pip3 install vectordb-bench[all]
 安装过程如果遇到“mariadb_config not found ...”报错，可以尝试指定版本安装: pip3 install vectordb-bench[all]==0.0.22
 ```
 
-替换适配opengauss的vectordb-bench文件夹。注意先将原来python安装目录下的vectordb_bench文件夹删除或者移至其它目录下备份，再执行下面的复制命令。
+替换适配openGauss的vectordb-bench文件夹。注意先将原来python安装目录下的vectordb_bench文件夹删除或者移至其它目录下备份，再执行下面的复制命令。
 
 ```bash
-# 下载适配opengauss的vectordb-bench：https://github.com/wlff123/VectorDBBench.git
+# 下载适配openGauss的vectordb-bench：https://github.com/wlff123/VectorDBBench.git
 cp -r vectordb_bench <YOUR_PYTHON_INSTALL_PATH>/lib/python3.11/site-packages/
 ```
 

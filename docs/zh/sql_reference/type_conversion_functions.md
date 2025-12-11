@@ -443,7 +443,7 @@
 
   CSID到字符集的映射
 
-  | CSID | encoding name  | openGuass name              |
+  | CSID | encoding name  | openGauss name              |
   | ------ | ---------------- | ---------------------- |
   | 1    | US7ASCII       | SQL_ASCII        |
   | 837  | JA16EUCTILDE   | EUC_JP           |

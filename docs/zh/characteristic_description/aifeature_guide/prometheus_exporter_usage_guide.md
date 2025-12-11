@@ -177,7 +177,7 @@
 >- cmd-exporter默认匹配的是GUC参数“log\_statement='none'”时的日志格式，当log\_statement为其他参数时cmd-exporter会无法识别日志格式。
 >- 由于cmd-exporter需要访问数据库日志和使用cm工具，所以需要由数据库用户部署cmd-exporter来获取相应的状态信息。
 >- 实例升级过程中，opengauss-exporter无法正常采集数据，cmd-exporter无法采集数据库的cm相关信息。
->- cmd-exporter的日志采集功能对于内核日志的日志文件名和日志格式都有要求，在GUC配置文件中，log\_filename的格式要求为'openGuass-%Y-%m-%d\_%H%M%S.log'，log\_line\_prefix的格式要求为'%m %n %u %d %h %p %S %x %a'。
+>- cmd-exporter的日志采集功能对于内核日志的日志文件名和日志格式都有要求，在GUC配置文件中，log\_filename的格式要求为'openGauss-%Y-%m-%d\_%H%M%S.log'，log\_line\_prefix的格式要求为'%m %n %u %d %h %p %S %x %a'。
 >- cmd-exporter采集的日志指标为散点图形式，各个采集点之间标签不同，所以不能合并到同一个集合中，不适合用折线图的方式进行展示，请采用表格或者散点图的方式进行展示。
 >- 当cmd-exporter在一个采集周期内没有采集到日志指标时（指标为空，则表示没有生成ffic文件），则该指标数据为空。
 >- 在某些特殊情况下由于日志文件激增，考虑到cpu的处理能力和内存限制，cmd-exporter为日志的消息队列设置了长度上限以防止内存泄露。当队列满时将停止新的日志事件入列直到队列有空间为止。这一设计可能导致在日志负载高的时候丢失部分日志指标。

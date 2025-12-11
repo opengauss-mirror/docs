@@ -8,9 +8,9 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
-在b数据库中database和schema是等价的，所以在opengauss中进行语句拼装时都按create schema拼装。
+在b数据库中database和schema是等价的，所以在openGauss中进行语句拼装时都按create schema拼装。
 
-在opengauss中,创建schema支持with blockchain子句，所以在拼装时也会根据schema在系统表中的信息判断是否拼接该子句。
+在openGauss中,创建schema支持with blockchain子句，所以在拼装时也会根据schema在系统表中的信息判断是否拼接该子句。
 
 ## 语法格式<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

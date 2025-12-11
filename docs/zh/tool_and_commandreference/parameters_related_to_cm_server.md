@@ -287,7 +287,7 @@
 **默认值**：1
 
 >[!NOTE]说明
->（opengauss只支持DCC或者share disk模式）。
+>（openGauss只支持DCC或者share disk模式）。
 
 ## enable\_ssl<a name="section1910621118445"></a>
 

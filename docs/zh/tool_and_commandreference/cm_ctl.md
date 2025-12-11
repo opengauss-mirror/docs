@@ -502,7 +502,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tr>
 <tr id="row461575013278"><td class="cellrowborder" valign="top" width="35.120000000000005%" headers="mcps1.2.3.1.1 "><p id="p5616750122715"><a name="p5616750122715"></a><a name="p5616750122715"></a>--cm_arbitration_mode=ARBITRATION_MODE</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.88000000000001%" headers="mcps1.2.3.1.2 "><p id="p26161150132714"><a name="p26161150132714"></a><a name="p26161150132714"></a>一主多备功能，设置cm_server的仲裁模式。共有MAJORITY、MINORITY两种模式，MAJORITY为多数派模式，MINORITY为少数派模式。opengauss不支持少数派，此参数可以设置成MINORITY，但不会生效。</p>
+<td class="cellrowborder" valign="top" width="64.88000000000001%" headers="mcps1.2.3.1.2 "><p id="p26161150132714"><a name="p26161150132714"></a><a name="p26161150132714"></a>一主多备功能，设置cm_server的仲裁模式。共有MAJORITY、MINORITY两种模式，MAJORITY为多数派模式，MINORITY为少数派模式。openGauss不支持少数派，此参数可以设置成MINORITY，但不会生效。</p>
 </td>
 </tr>
 <tr id="row1622416576276"><td class="cellrowborder" valign="top" width="35.120000000000005%" headers="mcps1.2.3.1.1 "><p id="p123344326288"><a name="p123344326288"></a><a name="p123344326288"></a>--cm_switchover_az_mode=</p>
@@ -695,7 +695,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 <tbody><tr id="row4904151813359"><td class="cellrowborder" valign="top" width="44.67%" headers="mcps1.2.3.1.1 "><p id="p190431873518"><a name="p190431873518"></a><a name="p190431873518"></a>--cm_arbitration_mode=ARBITRATION_MODE</p>
 </td>
 <td class="cellrowborder" valign="top" width="55.33%" headers="mcps1.2.3.1.2 "><p id="p2639256183818"><a name="p2639256183818"></a><a name="p2639256183818"></a>一主多备功能，获取cm_server的仲裁模式。共有MAJORITY、MINORITY两种模式，MAJORITY为多数派模式，MINORITY为少数派模式。少数派模式适用于一主多备数据库部署并且只有AZ3存活时，此时cm_server可以进行正常的仲裁业务，非此模式下将仲裁模式设置成少数派成功后，cm会自动将仲裁模式改为多数派，以保证集群正常运转；多数派模式适用于一主多备数据库部署并且各个组件（cm_server，节点）存活数量大于一半的场景。数据库实例正常情况下默认为多数派模式。</p>
-<div class="caution" id="note1463910569387"><a name="note1463910569387"></a><a name="note1463910569387"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="p56391756113812"><a name="p56391756113812"></a><a name="p56391756113812"></a>opengauss不支持少数派</p>
+<div class="caution" id="note1463910569387"><a name="note1463910569387"></a><a name="note1463910569387"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="p56391756113812"><a name="p56391756113812"></a><a name="p56391756113812"></a>openGauss不支持少数派</p>
 </div></div>
 </td>
 </tr>

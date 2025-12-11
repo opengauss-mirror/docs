@@ -436,7 +436,7 @@ gs_dbmind service stop --conf confpath
 
         现象：共享内存持续上涨。
 
-        分析：查看系统内存占用，确认是否有除了openGuass进程外占用大量内存的进程。
+        分析：查看系统内存占用，确认是否有除了openGauss进程外占用大量内存的进程。
 
         建议：手动清理，执行“ipcrm -m shmid”（此命令操作危险，请谨慎操作）。
 
@@ -571,7 +571,7 @@ gs_dbmind service stop --conf confpath
 
         现象：共享内存持续上涨。
 
-        分析：查看系统内存占用，确认是否有除了openGuass进程外占用大量内存的进程。
+        分析：查看系统内存占用，确认是否有除了openGauss进程外占用大量内存的进程。
 
         建议：手动清理，ipcrm -m shmid（此命令操作危险，请谨慎操作）。
 
