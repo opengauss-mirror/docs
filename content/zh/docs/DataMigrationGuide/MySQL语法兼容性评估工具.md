@@ -127,7 +127,7 @@ delimiter ;
 提取结果：select * from user where age = $1
 ```
 
-3、配置文件中opengauss端的用户名不能为数据库初始用户，因为opengauss端禁止使用数据库初始用户进行远程连接。
+3、配置文件中openGauss端的用户名不能为数据库初始用户，因为openGauss端禁止使用数据库初始用户进行远程连接。
 
 #### 使用说明
 
@@ -152,7 +152,7 @@ sh start.sh -d [file|collect] -c assessment.properties -o report.html
   ```
   filedir = /data/testfiles/
   
-  #opengauss端数据库用户，禁止使用数据库初始用户
+  #openGauss端数据库用户，禁止使用数据库初始用户
   opengauss.user = opengauss
   opengauss.password = **********
   opengauss.port = 5432

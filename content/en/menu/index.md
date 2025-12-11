@@ -127,7 +127,7 @@ headless: true
 	    	-   [Incremental Migration Tool gs\_replicate (MySQL -\> openGauss)]({{< relref "./docs/AboutopenGauss/incremental-migration-tool-gs_replicate.md" >}})
 	    	-   [Reverse Migration gs\_replicate (openGauss -\> MySQL)]({{< relref "./docs/AboutopenGauss/reverse-migration-gs_replicate.md" >}})
 	    	-   [Data Check Tool gs\_datacheck]({{< relref "./docs/AboutopenGauss/data-check-tool-gs_datacheck.md" >}})
-            -   [OpenGauss Client Tool DataStudio]({{< relref "./docs/AboutopenGauss/opengauss-client-tool-datastudio.md" >}})
+            -   [openGauss Client Tool DataStudio]({{< relref "./docs/AboutopenGauss/opengauss-client-tool-datastudio.md" >}})
         -   [Middleware]({{< relref "./docs/AboutopenGauss/middleware.md" >}})
             -   [Distributed Database Capability]({{< relref "./docs/AboutopenGauss/distributed-database-capability.md" >}})
             -   [Deploying a Distributed Database Using Kubernetes]({{< relref "./docs/AboutopenGauss/deploying-a-distributed-database-using-kubernetes.md" >}})
