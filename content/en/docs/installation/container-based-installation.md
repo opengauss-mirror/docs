@@ -45,7 +45,7 @@ LICENSE UPL 1.0
 
 ## Environment Variables<a name="en-us_topic_0283136491_section14764166174816"></a>
 
-To flexibly use an openGuass image, you can set additional parameters. In the future, more control parameters will be added. The current version supports the setting of the following variables:
+To flexibly use an openGauss image, you can set additional parameters. In the future, more control parameters will be added. The current version supports the setting of the following variables:
 
 **GS\_PASSWORD**
 
