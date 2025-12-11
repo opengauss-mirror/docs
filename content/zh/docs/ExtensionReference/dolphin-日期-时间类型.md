@@ -218,7 +218,7 @@ openGauss=# SELECT * FROM test_timestamp;
 备注
 
 - 三种类型都接受相同的输入格式和范围，区别仅在于 year(2) 类型输出格式只为 2 位数
-- 如果输入'0'，openGuass 会解析成为 2000 年；但是当输入的是整数0，openGauss 会解析成为 0，表示 year类型的 0 值
+- 如果输入'0'，openGauss 会解析成为 2000 年；但是当输入的是整数0，openGauss 会解析成为 0，表示 year类型的 0 值
 
 示例(注意下方 openGauss 数据库兼容性为 b)
 
