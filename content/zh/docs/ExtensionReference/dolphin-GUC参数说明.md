@@ -36,7 +36,7 @@
 
 -   pad_char_to_full_length：控制char类型查询时是否删除尾部空格。
 
--   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让opengauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
+-   auto_recompile_function：控制严格模式下，在执行会产生数据变化的SQL时（如INSERT、UPDATE、DELETE等），如果SQL中包含用户自定义的存储过程或函数，是否自动对存储过程或函数进行重编译，自动重编译能够让openGauss正确处理存储过程或函数中的无效值，但是对存储过程或函数的执行性能会带来一定的影响。
 
 -   error_for_division_by_zero：控制除数为0时是否报错（包含 `/`， `mod`， `div`等除法含义的操作符），最终除0的表现还受严格模式的控制。
 
@@ -791,14 +791,14 @@ SET
 
 ## dolphin.default_database_name<a name="section203671436846"></a>
 
-**参数说明**：dolphin协议插件默认使用的opengauss数据库实例名称
+**参数说明**：dolphin协议插件默认使用的openGauss数据库实例名称
 
 该参数属于SIGHUP类型参数，请参考[表1](dolphin-重设参数.md#zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 >![](public_sys-resources/icon-notice.png) **须知：** 
 >
 >-   当加载了dophin插件，并且开启了dolphin数据库协议后，可以使用此功能。
->-   由于opengauss的database同mysql的database体系不一致，因此dophin需要选择一个opengauss的数据库实例。
+>-   由于openGauss的database同MySQL的database体系不一致，因此dophin需要选择一个openGauss的数据库实例。
 
 **取值范围**：字符串
 

@@ -70,8 +70,8 @@
 
   备注：
 
-  * 在opengauss中，通过入参前加`E`来实现转译功能，转译前后与Mysql一致。
-  * 在opengauss中，json_quote函数支持数值型。
+  * 在openGauss中，通过入参前加`E`来实现转译功能，转译前后与Mysql一致。
+  * 在openGauss中，json_quote函数支持数值型。
 
   示例：
 
@@ -845,7 +845,7 @@
 
   备注：
 
-  * json是必需的。一个 JSON 文档。它可以是一个 JSON 字符串，或者一个 JSON 列。根据实际存储方式的差异，调用opengauss内部函数计算json在opengauss中的具体存储大小，其结果与mysql不同。
+  * json是必需的。一个 JSON 文档。它可以是一个 JSON 字符串，或者一个 JSON 列。根据实际存储方式的差异，调用openGauss内部函数计算json在openGauss中的具体存储大小，其结果与MySQL不同。
 
   示例：
 
