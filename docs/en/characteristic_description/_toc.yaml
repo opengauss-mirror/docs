@@ -209,7 +209,7 @@ sections:
         href: ./reverse_migration_gs_replicate.md
       - label: Data Check Tool gs_datacheck
         href: ./data_check_tool_gs_datacheck.md
-      - label: OpenGauss Client Tool DataStudio
+      - label: openGauss Client Tool DataStudio
         href: ./opengauss_client_tool_datastudio.md
   - label: Middleware
     sections:

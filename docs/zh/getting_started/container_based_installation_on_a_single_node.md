@@ -78,14 +78,14 @@ openGauss镜像配置了本地信任机制，因此在容器内连接数据库�
 
 ## 开启实例<a name="zh-cn_topic_0283136491_section148176206211"></a>
 
-opengauss数据库版本以6.0.0为例命令如下。
+openGauss数据库版本以6.0.0为例命令如下。
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=XXXXXXXX opengauss:6.0.0
 ```
 
 ## 从操作系统层面连接数据库<a name="zh-cn_topic_0283136491_section53753141964"></a>
 
-opengauss数据库版本以6.0.0为例命令如下。
+openGauss数据库版本以6.0.0为例命令如下。
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=XXXXXXXX -p 8888:5432 opengauss:6.0.0
 $ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p 8888 # 宿主机需要安装gsql客户端
@@ -93,7 +93,7 @@ $ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p 8888 # 宿主机需�
 
 ## 数据持久化<a name="zh-cn_topic_0283136491_section973016196416"></a>
 
-opengauss数据库版本以6.0.0为例命令如下。
+openGauss数据库版本以6.0.0为例命令如下。
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:6.0.0
 ```

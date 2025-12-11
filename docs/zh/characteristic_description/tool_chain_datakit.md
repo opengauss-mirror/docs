@@ -129,7 +129,7 @@ DataKit是基于Web的openGauss的可视化的平台系统，目的是方便客�
 </tr>
 <tr> 
 <td>数据库智能参数调优插件</td>
-<td>负载特征分析、负载生成、离线调优、在线调优、优化opengauss数据库的参数配置</td>
+<td>负载特征分析、负载生成、离线调优、在线调优、优化openGauss数据库的参数配置</td>
 <td><a href="https://gitcode.com/opengauss/openGauss-workbench/tree/master/plugins/intelligent-parameter-tuning"> intelligent-parameter-tuning</a></td>
 <td><a href="https://gitcode.com/opengauss/openGauss-workbench/blob/master/plugins/intelligent-parameter-tuning/README.md "> intelligent-parameter-tuning使用说明</a></td>
 </tr>

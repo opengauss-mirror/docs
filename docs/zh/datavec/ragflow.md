@@ -44,8 +44,8 @@ docker compose up -d
     cd KunpengRAG/deployment/docker-compose/ragflow
     ```
 
-2. 在.env文件中配置opengauss的环境变量，包括opengauss用户名、端口、密码（不配置则按默认值）
-3. 通过docker-compose指定单独启动opengauss服务：
+2. 在.env文件中配置openGauss的环境变量，包括openGauss用户名、端口、密码（不配置则按默认值）
+3. 通过docker-compose指定单独启动openGauss服务：
 
 ```bash
 docker-compose up -d opengauss

@@ -43,7 +43,7 @@ LINE 1: create table testhint(nowait int);
                              ^
 ```
 
--   enable_abs：是否允许@作为取绝对值操作符使用。opengauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
+-   enable_abs：是否允许@作为取绝对值操作符使用。openGauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
 ```
 opengauss=# create table test(@a int, b int);
 CREATE TABLE

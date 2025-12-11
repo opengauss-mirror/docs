@@ -6,4 +6,4 @@
 
 >[!NOTE]说明 
 >由于openGauss默认模式下openGauss与PostgreSQL不兼容，故导致通过PyPI源安装的基于PostgreSQL编译的Python驱动psycopg2-binary默认无法连接至数据库。
->因此，需要用户自行编译psycopg2或修改GUC参数进行适配。也可通过openGauss官方网站下载基于openGuass编译的psycopg2（官方网站仅提供部分Python版本的编译包，需要用户鉴别是否与当前Python运行时版本一致）。
+>因此，需要用户自行编译psycopg2或修改GUC参数进行适配。也可通过openGauss官方网站下载基于openGauss编译的psycopg2（官方网站仅提供部分Python版本的编译包，需要用户鉴别是否与当前Python运行时版本一致）。

@@ -202,9 +202,9 @@
 
 本节介绍在执行调试函数/过程操作后，如何使用函数历史调试结果统计功能。覆盖率统计基于函数或存储过程调试时被汇总至 coverage.proc_coverage 表的数据（执行到的行号、执行行数百分比等信息）提取到覆盖率历史表，且可对记录进行删除或导出为html 文件的报告。
 
-**说明：** 仅 opengauss 3.0 及以上版本数据库支持调试函数或存储过程。
+**说明：** 仅 openGauss 3.0 及以上版本数据库支持调试函数或存储过程。
 
-仅 opengauss 5.1.0 b011及以上版本数据库支持查看 coverage.proc_coverage 表。
+仅 openGauss 5.1.0 b011及以上版本数据库支持查看 coverage.proc_coverage 表。
 
 仅调试前将参数 [enable_proc_coverage ](../../database_reference/other_options.md#section14683125861213)为on时才会将函数或存储过程调试记录存储至 coverage.proc_coverage 表，且仅特定用户（初始用户和 monadmin 用户）有访问权限。
 
