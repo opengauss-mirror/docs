@@ -456,7 +456,7 @@ openGauss$#     raise info 'compatibility: %', compatibility;
 openGauss$# end;
 openGauss$# /
 INFO:  version: openGauss 7.0.0-RC1
-INFO:  compatibility: openGuass 7.0.0-RC1
+INFO:  compatibility: openGauss 7.0.0-RC1
 ANONYMOUS BLOCK EXECUTE
 ```
 
