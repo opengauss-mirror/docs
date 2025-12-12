@@ -62,4 +62,4 @@
 3. 升级时，只能升级默认安装下的数据库，并且保证数据库进程正常。
 
 4. 升级的数据库的命令是
-    `yum install opengauss -y` 或者 `yum update openguass -y`
+    `yum install opengauss -y` 或者 `yum update opengauss -y`
