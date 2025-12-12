@@ -7,7 +7,7 @@
 
 ## 注意事项<a name="zh-cn_topic_0283137542_zh-cn_topic_0237122167_zh-cn_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
-sql_mode是查询时的会话值,b数据库在这里展示的是创建例程时绑定的sql_mode,opengauss这里展示的是会话的值,因为opengauss在创建例程时不会将例程与sql_mode绑定。
+sql_mode是查询时的会话值,b数据库在这里展示的是创建例程时绑定的sql_mode,openGauss这里展示的是会话的值,因为openGauss在创建例程时不会将例程与sql_mode绑定。
 
 character_set_client 是 client_encoding 创建例程时系统变量 的会话值 。 
 
