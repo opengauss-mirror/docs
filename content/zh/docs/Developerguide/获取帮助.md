@@ -15,7 +15,7 @@ usage: main.py [-h] [-m {train,tune}] [-f CONFIG_FILE] [--db-name DB_NAME]
 [--scenario {ap,tp,htap}] [--benchmark BENCHMARK]                
 [--model-path MODEL_PATH] [-v]  
 
-X-Tuner: a self-tuning toolkit for OpenGauss.  
+X-Tuner: a self-tuning toolkit for openGauss.  
 
 optional arguments:   
 -h, --help            show this help message and exit   
