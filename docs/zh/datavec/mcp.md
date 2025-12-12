@@ -6,7 +6,7 @@
 
 **图 1**  openGauss + MCP + LLM 架构
 <div style="display:flex;justfy-content:center;">
-    <img src="figures/MCP.png" height=600px style="width: 750;height: 600;">
+    <img src="figures/MCP.png" height="600px" style="width: 750;height: 600;">
 </div>
 
 ## 快速搭建openGauss + MCP + LLM的AI Agent应用
@@ -63,12 +63,12 @@
 
 **图 3**  Claude Desktop可用MCP Tool
 <div style="display:flex;justfy-content:center;">
-    <img src="figures/Claude-MCP.png" height=600px style="width: 750;height: 600;">
+    <img src="figures/Claude-MCP.png" height="600px" style="width: 750;height: 600;">
 </div>
 
 ### 使用Cluade Desktop通过openGauss进行问答
 
 **图 4**  Claude Desktop问答演示
 <div style="display:flex;justfy-content:center;">
-    <img src="figures/Claude-show.png" height=600px style="width: 750;height: 600;">
+    <img src="figures/Claude-show.png" height="600px" style="width: 750;height: 600;">
 </div>
