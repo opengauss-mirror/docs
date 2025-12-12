@@ -14,30 +14,30 @@
 
 ## 初始化与退出
 
-### wr_init
+### gr_init
 **接口描述**  
 初始化 SDK 实例，包括日志和通信模块。
 
 **函数原型**  
 ```c
-int wr_init(const wr_param_t param);
+int gr_init(const gr_param_t param);
 ```
 
 **参数**  
 - `param`：`wr_param_t` 类型，初始化参数配置（结构体定义）。
 
 **返回值**  
-成功返回 `0`，失败返回错误码。错误码可通过 `wr_get_error` 获取详细信息。
+成功返回 `0`，失败返回错误码。错误码可通过 `gr_get_error` 获取详细信息。
 
----
+--
 
-### wr_exit
+### gr_exit
 **接口描述**  
 退出 SDK 实例。
 
 **函数原型**  
 ```c
-int wr_exit(void);
+int gr_exit(void);
 ```
 
 **返回值**  
@@ -47,35 +47,35 @@ int wr_exit(void);
 
 ## 实例管理
 
-### wr_create_inst
+### gr_create_inst
 **接口描述**  
 获取 WalRecorder 实例句柄。
 
 **函数原型**  
 ```c
-int wr_create_inst(const char *storageServerAddr, wr_instance_handle *InstHandle);
+int gr_create_inst(const char *storageServerAddr, gr_instance_handle *inst_handle);
 ```
 
 **参数**  
 - `storageServerAddr`：存储服务器地址（当前版本未使用，可传 `NULL`）。
-- `InstHandle`：输出参数，返回实例句柄。
+- `inst_handle`：输出参数，返回实例句柄。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
 
 ---
 
-### wr_delete_inst
+### gr_delete_inst
 **接口描述**  
 删除实例句柄。
 
 **函数原型**  
 ```c
-int wr_delete_inst(wr_instance_handle InstHandle);
+int gr_delete_inst(gr_instance_handle inst_handle);
 ```
 
 **参数**  
-- `InstHandle`：要删除的实例句柄。
+- `inst_handle`：要删除的实例句柄。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
@@ -84,18 +84,18 @@ int wr_delete_inst(wr_instance_handle InstHandle);
 
 ## 配置管理
 
-### wr_set_conf
+### gr_set_conf
 **接口描述**  
 设置配置参数。
 
 **函数原型**  
 ```c
-int wr_set_conf(wr_instance_handle InstHandle, const char *para, const char *value);
+int gr_set_conf(gr_instance_handle inst_handle, const char *name, const char *value);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `para`：配置项名称（字符串类型）。
+- `inst_handle`：实例句柄。
+- `name`：配置项名称（字符串类型）。
 - `value`：配置项值（字符串类型）。
 
 **返回值**  
@@ -103,18 +103,18 @@ int wr_set_conf(wr_instance_handle InstHandle, const char *para, const char *val
 
 ---
 
-### wr_get_conf
+### gr_get_conf
 **接口描述**  
 获取配置参数内容。
 
 **函数原型**  
 ```c
-int wr_get_conf(wr_instance_handle InstHandle, const char *para, char *value);
+int gr_get_conf(gr_instance_handle inst_handle, const char *name, char *value);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `para`：配置项名称（字符串类型）。
+- `inst_handle`：实例句柄。
+- `name`：配置项名称（字符串类型）。
 - `value`：输出参数，返回配置项值的缓冲区（需预先分配内存）。
 
 **返回值**  
@@ -124,13 +124,13 @@ int wr_get_conf(wr_instance_handle InstHandle, const char *para, char *value);
 
 ## 错误处理
 
-### wr_get_error
+### gr_get_error
 **接口描述**  
 获取错误码信息。
 
 **函数原型**  
 ```c
-int wr_get_error(int errorCode, char* errmsg);
+int gr_get_error(int *errcode, const char **errmsg);
 ```
 
 **参数**  
@@ -144,18 +144,18 @@ int wr_get_error(int errorCode, char* errmsg);
 
 ## VFS 管理
 
-### wr_vfs_create
+### gr_vfs_create
 **接口描述**  
 创建 VFS。
 
 **函数原型**  
 ```c
-int wr_vfs_create(wr_instance_handle InstHandle, const char *vfsName, uint64_t attrFlag);
+int gr_vfs_create(gr_instance_handle inst_handle, const char *vfs_name, unsigned long long attrFlag);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `vfsName`：VFS 名称（字符串类型）。
+- `inst_handle`：实例句柄。
+- `vfs_name`：VFS 名称（字符串类型）。
 - `attrFlag`：属性标志（当前版本固定为 `0`）。
 
 **返回值**  
@@ -163,18 +163,18 @@ int wr_vfs_create(wr_instance_handle InstHandle, const char *vfsName, uint64_t a
 
 ---
 
-### wr_vfs_delete
+### gr_vfs_delete
 **接口描述**  
 删除 VFS。
 
 **函数原型**  
 ```c
-int wr_vfs_delete(wr_instance_handle InstHandle, const char *vfsName, uint64_t attrFlag);
+int gr_vfs_delete(gr_instance_handle inst_handle, const char *vfs_name, unsigned long long attrFlag);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `vfsName`：VFS 名称（字符串类型）。
+- `inst_handle`：实例句柄。
+- `vfs_name`：VFS 名称（字符串类型）。
 - `attrFlag`：属性标志（当前版本固定为 `0`）。
 
 **返回值**  
@@ -182,55 +182,54 @@ int wr_vfs_delete(wr_instance_handle InstHandle, const char *vfsName, uint64_t a
 
 ---
 
-### wr_vfs_mount
+### gr_vfs_mount
 **接口描述**  
 挂载 VFS 并获取句柄。
 
 **函数原型**  
 ```c
-int wr_vfs_mount(wr_instance_handle InstHandle, const char *vfsName, wr_vfs_handle vfs);
+int gr_vfs_mount(gr_instance_handle inst_handle, const char *vfs_name, gr_vfs_handle *vfs_handle);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `vfsName`：VFS 名称（字符串类型）。
-- `vfs`：输出参数，返回 VFS 句柄。
+- `inst_handle`：实例句柄。
+- `vfs_name`：VFS 名称（字符串类型）。
+- `vfs_handle`：输出参数，返回 VFS 句柄。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
 
 ---
 
-### wr_vfs_unmount
+### gr_vfs_unmount
 **接口描述**  
 卸载 VFS。
 
 **函数原型**  
 ```c
-int wr_vfs_unmount(wr_vfs_handle vfs);
+int gr_vfs_unmount(gr_vfs_handle *vfs_handle);
 ```
 
 **参数**  
-- `vfs`：要卸载的 VFS 句柄。
+- `vfs_handle`：要卸载的 VFS 句柄。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
 
 ---
 
-### wr_vfs_query_file_num
+### gr_vfs_query_file_num
 **接口描述**  
 查询 VFS 内文件数量。
 
 **函数原型**  
 ```c
-int wr_vfs_query_file_num(wr_instance_handle InstHandle, const char *vfsName, uint32_t *fileNum);
+int gr_vfs_query_file_num(gr_vfs_handle vfs_handle, int *file_num);
 ```
 
 **参数**  
-- `InstHandle`：实例句柄。
-- `vfsName`：VFS 名称（字符串类型）。
-- `fileNum`：输出参数，返回文件数量。
+- `vfs_handle`：VFS 句柄。
+- `file_num`：输出参数，返回文件数量。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
@@ -239,18 +238,18 @@ int wr_vfs_query_file_num(wr_instance_handle InstHandle, const char *vfsName, ui
 
 ## 文件操作
 
-### wr_file_create
+### gr_file_create
 **接口描述**  
 创建文件并获取句柄。
 
 **函数原型**  
 ```c
-int wr_file_create(wr_vfs_handle vfs, const char *fileName, const FileParameter *param);
+int gr_file_create(gr_vfs_handle vfs_handle, const char *name, const FileParameter *param);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
-- `fileName`：文件名（字符串类型）。
+- `vfs_handle`：VFS 句柄。
+- `name`：文件名（字符串类型）。
 - `param`：文件参数（当前版本固定为 `NULL`）。
 
 **返回值**  
@@ -258,37 +257,37 @@ int wr_file_create(wr_vfs_handle vfs, const char *fileName, const FileParameter 
 
 ---
 
-### wr_file_delete
+### gr_file_delete
 **接口描述**  
 删除文件。
 
 **函数原型**  
 ```c
-int wr_file_delete(wr_vfs_handle vfs, const char *fileName);
+int gr_file_delete(gr_vfs_handle vfs_handle, const char *name);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
-- `fileName`：文件名（字符串类型）。
+- `vfs_handle`：VFS 句柄。
+- `name`：文件名（字符串类型）。
 
 **返回值**  
 成功返回 `0`，失败返回错误码。
 
 ---
 
-### wr_file_open
+### gr_file_open
 **接口描述**  
 打开文件并获取句柄。
 
 **函数原型**  
 ```c
-int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, wr_file_handle *file_handle);
+int gr_file_open(gr_vfs_handle vfs_handle, const char *name, int flag, gr_file_handle *file_handle);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。  
-- `fileName`：文件名（字符串类型）。  
-- `flags`：打开标志。  
+- `vfs_handle`：VFS 句柄。  
+- `name`：文件名（字符串类型）。  
+- `flag`：打开标志。  
   - `O_RDONLY`：以只读模式打开文件。  
   - `O_WRONLY`：以只写模式打开文件。  
   - `O_RDWR`：以读写模式打开文件。  
@@ -307,17 +306,17 @@ int wr_file_open(wr_vfs_handle vfs, const char *fileName, int32_t flags, wr_file
 
 ---
 
-### wr_file_close
+### gr_file_close
 **接口描述**  
 关闭文件句柄。
 
 **函数原型**  
 ```c
-int wr_file_close(wr_vfs_handle vfs, wr_file_handle *file_handle, bool need_lock);
+int gr_file_close(gr_vfs_handle vfs_handle, gr_file_handle *file_handle, bool need_lock);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
+- `vfs_handle`：VFS 句柄。
 - `file_handle`：文件句柄。
 - `need_lock`：文件是否进入锁定态，`true`表示文件进入锁定态，`false`表示文件不进入锁定态（Dorado Worm存储中文件有初始态、锁定态、保护态和过期态四种状态）。
 
@@ -326,17 +325,16 @@ int wr_file_close(wr_vfs_handle vfs, wr_file_handle *file_handle, bool need_lock
 
 ---
 
-### wr_file_pread
+### gr_file_pread
 **接口描述**  
 同步读操作。
 
 **函数原型**  
 ```c
-long long int wr_file_pread(wr_vfs_handle vfs_handle, wr_file_handle file_handle, const void *buf, unsigned long long count, long long offset);
+long long int gr_file_pread(gr_vfs_handle vfs_handle, gr_file_handle file_handle, void *buf, unsigned long long count, long long offset);
 ```
 
 **参数** 
- 
 - `vfs_handle`：VFS 句柄，用于标识文件系统的上下文。  
 - `file_handle`：文件句柄，包含要读取的文件信息。  
 - `buf`：读取数据的缓冲区，需预先分配内存，读取的数据将存储在此缓冲区中。  
@@ -348,13 +346,13 @@ long long int wr_file_pread(wr_vfs_handle vfs_handle, wr_file_handle file_handle
 
 ---
 
-### wr_file_pwrite
+### gr_file_pwrite
 **接口描述**  
 同步写操作。  
 
 **函数原型**  
 ```c
-long long int wr_file_pwrite(wr_vfs_handle vfs_handle, wr_file_handle *file_handle, const void *buf, unsigned long long count, long long offset);
+long long int gr_file_pwrite(gr_vfs_handle vfs_handle, gr_file_handle *file_handle, const void *buf, unsigned long long count, long long offset);
 ```
 
 **参数**  
@@ -369,17 +367,17 @@ long long int wr_file_pwrite(wr_vfs_handle vfs_handle, wr_file_handle *file_hand
 
 ---
 
-### wr_file_truncate
+### gr_file_truncate
 **接口描述**  
 调整文件大小。
 
 **函数原型**  
 ```c
-int wr_file_truncate(wr_vfs_handle vfs, wr_file_handle file_handle, int32_t truncateType, int64_t offset);
+int gr_file_truncate(gr_vfs_handle vfs_handle, gr_file_handle file_handle, int truncateType, long long offset);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
+- `vfs_handle`：VFS 句柄。
 - `file_handle`：文件句柄。
 - `truncateType`：截断类型（当前版本固定为 `0`）。
 - `offset`：截断偏移量（单位：字节）。
@@ -389,17 +387,17 @@ int wr_file_truncate(wr_vfs_handle vfs, wr_file_handle file_handle, int32_t trun
 
 ---
 
-### wr_file_stat
+### gr_file_stat
 **接口描述**  
 调整文件大小。
 
 **函数原型**  
 ```c
-int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count, int *mode, char **time);
+int gr_file_stat(gr_vfs_handle vfs_handle, const char *fileName, long long *offset, unsigned long long *count, int *mode, char **time);
 ```
 
 **参数**  
-- `vfs`：VFS 句柄。
+- `vfs_handle`：VFS 句柄。
 - `fileName`：文件名称。
 - `offset`：输出参数，返回文件已写入偏移量。
 - `count`：输出参数，返回文件大小（目前conut与offset结果一致）。
@@ -411,13 +409,13 @@ int wr_file_stat(wr_vfs_handle vfs_handle, const char *fileName, long long *offs
 
 ---
 
-### wr_file_postpone
+### gr_file_postpone
 **接口描述**
 延长文件过期时间。
 
 **函数原型**
 ```c
-int wr_file_postpone(wr_vfs_handle vfs_handle, const char *file, const char *time);
+int gr_file_postpone(gr_vfs_handle vfs_handle, const char *file, const char *time);
 ```
 
 **参数**
@@ -432,17 +430,17 @@ int wr_file_postpone(wr_vfs_handle vfs_handle, const char *file, const char *tim
 
 ## 结构体定义
 
-### wr_param_t
+### gr_param_t
 **结构体定义**  
 用于配置 SDK 初始化参数。
 
 ```c
-typedef struct st_wr_param {
-    char log_home[PATH_MAX];                // 日志文件存放目录路径
+typedef struct st_gr_param {
+    char log_home[PATH_MAX];                // 日志目录
     unsigned int log_level;                 // 日志级别（7：运行日志，255：调试日志，<=0：关闭日志）
-    unsigned int log_backup_file_count;     // 日志文件最大保留个数
+    unsigned int log_backup_file_count;     // 日志文件备份数量
     unsigned long long log_max_file_size;   // 单个日志文件最大大小（单位：字节）
-} wr_param_t;
+} gr_param_t;
 ```
 
 ---
@@ -450,9 +448,9 @@ typedef struct st_wr_param {
 ## 参数说明
 
 ### attrFlag
-- 在 `wr_vfs_create` 和 `wr_vfs_delete` 中，当前版本固定为 `0`。
+- 在 `gr_vfs_create` 和 `gr_vfs_delete` 中，当前版本固定为 `0`。
 
 ### truncateType
-- 在 `wr_file_truncate` 中，当前版本固定为 `0`.
+- 在 `gr_file_truncate` 中，当前版本固定为 `0`.
 
 ---

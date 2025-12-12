@@ -63,6 +63,7 @@
     "name": "cluster",
     "install_path": "/home/omm/install/",
     "env_file": "/home/omm/envfile",
+    "worm_path": "/worm_path",
     "user": "omm",
     "nodes": [
       {
@@ -84,6 +85,7 @@
 - `cluster.name`：集群名称
 - `cluster.install_path`：安装路径
 - `cluster.env_file`：环境变量文件路径
+- `cluster.worm_path`：worm 存储路径
 - `cluster.user`：安装用户
 - `cluster.nodes`：节点列表
   - `name`：节点名称（机器hostname）
@@ -304,19 +306,10 @@ enable_walrecord: Yes
 Install CM tool success.
 Cleaned up temporary XML file: /tmp/tmp9bjow88e.xml
 ```
----
-
-### 8. （可选）配置 worm 存储
-
-```bash
-[omm@openGauss install]$ source /home/omm/envfile
-[omm@openGauss GR]$ vim $GR_HOME/cfg/gr_inst.ini
-# 将 DATA_FILE_PATH 配置成 worm 对应的路径
-```
 
 ---
 
-### 9. 停止并卸载#数据保险柜集群
+### 8. 停止并卸载#数据保险柜集群
 
 ```bash
 [omm@openGauss install]$ source /home/omm/envfile
