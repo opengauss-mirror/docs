@@ -94,7 +94,7 @@ gstrace [start|stop|config|dump|detailcodepath|analyze] [-p <port>][-s <BUFFER_S
 <p id="p476815146299"><a name="p476815146299"></a><a name="p476815146299"></a>描述：</p>
 <a name="ul191841558155417"></a><a name="ul191841558155417"></a><ul id="ul191841558155417"><li>comp 是模块列表，使用‘,’分隔，例如：executer,opengauss。也可以使用序号，例如：executer,2。</li><li>func 是function列表，使用‘,’ 分隔。 例如：sql_execute_ddl, sql_execute_dcl。也可以使用序号指代模块中第几个function，例如：2。</li><li>设置成ALL表示所有模块或所有function被trace。</li></ul>
 <p id="p276921442916"><a name="p276921442916"></a><a name="p276921442916"></a>示例：</p>
-<a name="ul31951366551"></a><a name="ul31951366551"></a><ul id="ul31951366551"><li>executer,opengauss.ALL ：所有定义定义在executer和opengauss模块下的function被trace。</li><li>executer,opengauss.sql_execute_ddl ：定义在executer 下的Function sql_execute_ddl被trace. opengauss模块被忽略，因为下面没有该function 。</li><li>executer,opengauss.1 ：定义在模块executer和opengauss下的第一个function被trace。</li></ul>
+<a name="ul31951366551"></a><a name="ul31951366551"></a><ul id="ul31951366551"><li>executer,opengauss.ALL ：所有定义定义在executer和opengauss模块下的function被trace。</li><li>executer,opengauss.sql_execute_ddl ：定义在executer 下的Function sql_execute_ddl被trace. opengauss模块被忽略，因为下面没有该function 。</li><li>executer,opengauss.1 ：定义在模块executer和openauss下的第一个function被trace。</li></ul>
 <p id="p176921422917"><a name="p176921422917"></a><a name="p176921422917"></a>ALL.1,2 ：定义在所有模块下的第一，二个function被trace。</p>
 </td>
 </tr>

@@ -117,7 +117,7 @@ headless: true
 			-   [Predictor: AI Query Time Forecasting]({{< relref "./docs/CharacteristicDescription/predictor-ai-query-time-forecasting.md" >}})
 	-   [Tool Chain]({{< relref "./docs/CharacteristicDescription/tool-chain.md" >}})
 		-   [MySQL to openGauss Migration Tool Chameleon]({{< relref "./docs/CharacteristicDescription/mysql-to-opengauss-migration-tool-chameleon.md" >}})
-		-   [OpenGauss Client Tool DataStudio]({{< relref "./docs/CharacteristicDescription/opengauss-client-tool-datastudio.md" >}})
+		-   [openGauss Client Tool DataStudio]({{< relref "./docs/CharacteristicDescription/opengauss-client-tool-datastudio.md" >}})
 	-   [Middleware]({{< relref "./docs/CharacteristicDescription/middleware.md" >}})
 		-   [Distributed Database Capability]({{< relref "./docs/CharacteristicDescription/distributed-database-capability.md" >}})
 		-   [Deploying a Distributed Database Using Kubernetes]({{< relref "./docs/CharacteristicDescription/deploying-a-distributed-database-using-kubernetes.md" >}})	 
