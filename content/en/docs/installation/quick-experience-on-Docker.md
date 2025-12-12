@@ -1,6 +1,6 @@
 # Quick experience on Docker
 
-Run OpenGauss on Docker is very suit for the person who want to quickly experience the OpenGauss operations without careing the environment configuration issues.
+Run openGauss on Docker is very suit for the person who want to quickly experience the openGauss operations without careing the environment configuration issues.
 It's simple, fast and available in Windows.
 
 ## Procedure
@@ -17,7 +17,7 @@ c.Double click the exe file which you downloaded and follow the instruction to f
 
 > After the installation, some computer will pop up a warning "WSL 2 installation is incomplete". Then you can click the link it provided and finish the operations in the instruction page and click "Restart" in the prompt box.
 
-### Run OpenGauss Image
+### Run openGauss Image
 
 a.Click Start Menu, input "powershell"，enter the Windows PowerShell；or input "cmd"，enter the Command Prompt. Then input：
 
@@ -25,15 +25,15 @@ a.Click Start Menu, input "powershell"，enter the Windows PowerShell；or input
 ```
 docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Secretpassword@123 -p 15432:5432 enmotech/opengauss:latest
 ```
-Now the OpenGauss container is running in the background.
+Now the openGauss container is running in the background.
 Then input the command below to enter the container:
 
 ```
 docker exec -it opengauss /bin/sh
 ```
 
-### Test to use OpenGauss
-After you enter the container, you can use some command to experience the usage of OpenGauss.
+### Test to use openGauss
+After you enter the container, you can use some command to experience the usage of openGauss.
 
 Login as Administrator Omm:
 
@@ -79,4 +79,4 @@ Disconnect database:
 omm=# \q
 ```
 
-More usage of this OpenGauss image, see [enmotech/opengauss](https://hub.docker.com/r/enmotech/opengauss).
+More usage of this openGauss image, see [enmotech/opengauss](https://hub.docker.com/r/enmotech/opengauss).
