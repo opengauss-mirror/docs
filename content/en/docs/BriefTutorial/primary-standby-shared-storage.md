@@ -175,7 +175,7 @@ The shared storage feature provides the real-time read consistency function on s
         2.  Modify the parameters in the **ock\_rpc\_opengauss.sh** deployment script.
 
             ```
-            # Deployment user, which is the same as the opengauss user. 
+            # Deployment user, which is the same as the openGauss user. 
             # It is a non-root user. Ensure that this user exists on all servers.
             USER_NAME="${USER}"
             
@@ -189,7 +189,7 @@ The shared storage feature provides the real-time read consistency function on s
             # If the path does not exist, the path is automatically created.
             PATH_TO_SCP="/home/ock/test"
             
-            # Opengauss environment variable
+            # openGauss environment variable
             GAUSSHOME="/home/ock/mppdb_temp_install"
             
             # OCK_RPC environment variable. Do not change
