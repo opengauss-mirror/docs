@@ -189,7 +189,7 @@ The shared storage feature provides the real-time read consistency function on s
             # If the path does not exist, the path is automatically created.
             PATH_TO_SCP="/home/ock/test"
             
-            # Opengauss environment variable
+            # openGauss environment variable
             GAUSSHOME="/home/ock/mppdb_temp_install"
             
             # OCK_RPC environment variable. Do not change

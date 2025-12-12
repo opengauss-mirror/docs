@@ -2,4 +2,4 @@
 
 -   **[MySQL to openGauss Migration Tool Chameleon](mysql-to-opengauss-migration-tool-chameleon.md)**  
 
--   **[OpenGauss Client Tool DataStudio](opengauss-client-tool-datastudio.md)**  
+-   **[openGauss Client Tool DataStudio](opengauss-client-tool-datastudio.md)**  
