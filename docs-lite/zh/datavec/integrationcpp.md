@@ -229,12 +229,12 @@ PGresult **PQexecMultiSearchParams(const char *connParams, const char *queryTemp
 
 #### 输入参数
 
-- connParams:数据库连接配置，包含host、dbname、user、password、port
-- queryTemplate:查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
+- connParams：数据库连接配置，包含host、dbname、user、password、port
+- queryTemplate：查询语句，要求是单条查询语句(select为首单词)、包含向量操作符（<->/<=>/<#>/<+>/<~>/<%>）
 - queryParams：查询参数，要求不为空
-- queryCount:查询请求个数
+- queryCount：查询请求个数
 - preExecForConn：设置连接参数的sql语句，如："set hnsw_ef_search=200;"
-- threadCount:连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
+- threadCount：连接池最大连接数，和数据库最大连接数（由参数max_connections设置）有关，一般来说，连接池最大连接数要小于数据库最大连接数，但是数据库对于管理员用户的连接限制会略超过max_connections设置。
 
 #### 输出参数
 
