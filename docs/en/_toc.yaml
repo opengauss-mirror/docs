@@ -1,6 +1,6 @@
 label: Document Center
 sections:
-  - label: Getting Started
+  - label: Quick Start
     sections:
       - href: ./release_notes/_toc.yaml
       - href: ./about_opengauss/_toc.yaml
