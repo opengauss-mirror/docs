@@ -91,6 +91,8 @@ sections:
         href: ./gs_expansion.md
       - label: gs_dropnode
         href: ./gs_dropnode.md
+      - label: gs_mergecluster
+        href: ./gs_mergecluster.md
       - label: gs_probackup
         href: ./gs_probackup.md
       - label: gstrace

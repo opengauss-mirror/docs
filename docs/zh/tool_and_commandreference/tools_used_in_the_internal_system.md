@@ -68,4 +68,6 @@
 
 - **[gs_preupgradechk](gs_preupgradechk.md)**
 
+- **[gs_mergecluster](gs_mergecluster.md)**
+
 - **[gs\_filedump](gs_filedump.md)**
