@@ -167,6 +167,8 @@ sections:
         href: ./ogrecorder/black_box_two_way_authentication_introducation.md
       - label: 数据保险柜部署介绍
         href: ./ogrecorder/black_box_deployment_introduction.md
+      - label: 数据保险柜支持主备参数同步介绍
+        href: ./ogrecorder/black_box_support_for_primary_and_standby_parameter_synchronization.md
       - label: grcmd工具使用说明
         href: ./ogrecorder/grcmd.md    
   - label: openGauss可运行脚本功能说明

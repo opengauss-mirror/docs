@@ -10,4 +10,5 @@ GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景�
 - **[数据保险柜错误日志信息参考](black_box_error_log_information_reference.md)**  
 - **[数据保险柜双向认证介绍](black_box_two_way_authentication_introducation.md)**  
 - **[数据保险柜部署介绍](black_box_deployment_introduction.md)**  
+- **[数据保险柜支持主备参数同步介绍](black_box_support_for_primary_and_standby_parameter_synchronization.md)**  
 - **[grcmd](grcmd.md)**  
