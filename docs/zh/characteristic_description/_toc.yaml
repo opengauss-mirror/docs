@@ -265,7 +265,7 @@ sections:
         href: ./distributed_analysis_capabilities.md
   - label: 负载管理
     sections:
-      - label: 支持I层高时延逃生能力
+      - label: 支持底层执行层高时延逃生能力
         href: ./high_latency_escape_at_the_infrastructure_layer.md
   - label: 高级特性
     sections:
