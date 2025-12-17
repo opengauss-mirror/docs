@@ -94,6 +94,48 @@
 
 ---
 
+## restapi 参数配置（可选）
+
+**rest_ssl.properties文件：ssl配置**
+
+- 当前只推荐修改server.port，配置restapi服务端口
+
+```
+# SSL Configuration for CM-RestAPI
+# This file contains SSL/TLS configuration parameters
+
+# Server port
+server.port=8443
+
+# SSL enabled
+server.ssl.enabled=true
+
+# Keystore configuration (server certificate)
+server.ssl.key-store=${GAUSSHOME}/share/sslcert/restapi/server.p12
+server.ssl.key-store-password=
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=rest-server
+
+# Truststore configuration (client certificate verification)
+server.ssl.client-auth=need
+server.ssl.trust-store=${GAUSSHOME}/share/sslcert/restapi/truststore.jks
+server.ssl.trust-store-password=
+server.ssl.trust-store-type=JKS
+```
+
+**restWhiteList文件：白名单**
+
+- 将要配置的白名单ip，以如下格式写入文件
+
+```
+192.168.0.1
+192.168.0.2
+```
+
+**环境准备**
+
+- 各个节点需要参照链接[restapi环境配置](https://gitcode.com/opengauss/CM-RestAPI?tab=md)提前进行环境配置。
+
 ## 数据保险柜集群部署流程
 
 ### 1. 以 omm 用户创建安装包存放路径
@@ -119,12 +161,20 @@ oGRecorder-SDK.tar.gz
 ./install/gr_om
 ./install/py_pstree.py
 ./install/gr_contrl.sh
+./install/rest_contrl.sh
+./install/rest_ssl.properties
+./install/restWhiteList
 ./bin/
 ./bin/grcmd
 ./bin/grserver
 ./lib/
 ./lib/libgrapi.so
 ```
+
+
+**说明：**
+
+- 如果需要安装restapi，需要提前准备好安装包与配置各个节点的环境。同时，修改rest_ssl.properties和restWhiteList文件，配置restapi参数。获取安装包与配置环境请参考：[CM-RestAPI](https://gitcode.com/opengauss/CM-RestAPI?tab=md)
 
 ---
 
@@ -307,9 +357,13 @@ Install CM tool success.
 Cleaned up temporary XML file: /tmp/tmp9bjow88e.xml
 ```
 
+**说明：**
+
+- 如果需要安装restapi，需要通过--restpkg参数指定restapi安装包路径。
+
 ---
 
-### 8. 停止并卸载#数据保险柜集群
+### 8. 停止并卸载数据保险柜集群
 
 ```bash
 [omm@openGauss install]$ source /home/omm/envfile
@@ -332,6 +386,7 @@ Successfully uninstall oGRecorder.
 - `-X`：JSON 配置文件路径
 - `--grpkg`：oGRecorder Server 安装包路径
 - `--cmpkg`：CM 安装包路径
+- `--restpkg`: 可选参数，cmrestapi 安装包路径
 
 **安装说明：**
 - 预安装主要功能为分发安装包并修改集群安装所需的系统配置
