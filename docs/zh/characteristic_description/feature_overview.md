@@ -489,7 +489,7 @@
         <th>特性</th>
     </tr>
     <tr>
-        <td><a href="./high_latency_escape_at_the_infrastructure_layer.md">支持I层高时延逃生能力</a></td>
+        <td><a href="./high_latency_escape_at_the_infrastructure_layer.md">支持底层执行层高时延逃生能力</a></td>
     </tr>
 </table>
 
