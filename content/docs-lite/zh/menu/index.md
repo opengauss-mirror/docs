@@ -130,7 +130,7 @@ headless: true
 	    	-   [分布式数据库能力]({{< relref "./docs/AboutopenGauss/分布式数据库能力.md" >}})
 	    	-   [使用kubernetes部署分布式数据库]({{< relref "./docs/AboutopenGauss/使用kubernetes部署分布式数据库.md" >}})
 	    -   [负载管理]({{< relref "./docs/AboutopenGauss/负载管理.md" >}})
-	    	-   [支持I层高时延逃生能力]({{< relref "./docs/AboutopenGauss/支持I层高时延逃生能力.md" >}})
+	    	-   [支持底层执行层高时延逃生能力]({{< relref "./docs/AboutopenGauss/支持底层执行层高时延逃生能力.md" >}})
 -   [技术白皮书]({{< relref "./docs/TechnicalWhitePaper/TechnicalWhitePaper.md" >}})
 	-   [产品定位]({{< relref "./docs/TechnicalWhitePaper/产品定位.md" >}})
 	-   [应用场景]({{< relref "./docs/TechnicalWhitePaper/应用场景.md" >}})
