@@ -744,12 +744,33 @@ cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=600
    信息接收地址示例：<http://ip:port/CMRestAPI> ,
    CMRestAPI使用PUT方法，推送主机信息context为MasterInfo，即链接为<http://ip:port/CMRestAPI/MasterInfo，> 发送对象类型为String，主机信息格式为ip:port，推送备机context为StanbyInfo，发送对象类型为String，备机信息格式为ip1:port1,ip2:port2,...,ipn:portn，一个应用端的demo参见CMRestAPI仓库中的applicationdemo，<https://gitcode.com/opengauss/CM-RestAPI/tree/master/applicationdemo/src/main/java/com/application/applicationdemo。>
 
+5. 新增oGRecorder场景下接口。
+
+| 接口名                          | 地址                                                     | 参数                | 功能          |
+|---------------------------------|---------------------------------------------------------|---------------------|--------------|
+| `GRClusterStatus`               | https://ip:port/CMRestAPI/GRClusterStatus               | 无                  | 查看集群状态   |
+| `NodeStatus`                    | https://ip:port/CMRestAPI/NodeStatus                    | 无                  | 查看对应节点的状态         |
+| `dataUsage`                     | https://ip:port/CMRestAPI/dataUsage                     | 无                  | 查看worm使用率   |
+| `performance`                   | https://ip:port/CMRestAPI/performance                   | 无                  | 查看grserver到worm的平均时延 |
+| `wormFiles`                     | https://ip:port/CMRestAPI/wormFiles?filter=xxx&maxResult=xxx&sortBy=xxx    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看worm路径下的文件信息        |
+| `wormStatus`                    | https://ip:port/CMRestAPI/wormStatus     | 无   | 查看worm路径下各个目录的统计信息        |
+| `logFiles`                      | https://ip:port/CMRestAPI/logFiles?filter=xxx&maxResult=xxx&sortBy=xxx    | filter: 可选参数，文件名过滤字段；maxResults:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000，最大返回的文件数量   | 查看$GR_HOME/log路径下的文件信息        |
+| `start`                        | https://ip:port/CMRestAPI/start?node=xxx     | node: 可选参数，节点id   | 启动集群/节点        |
+| `stop`                         | https://ip:port/CMRestAPI/stop?node=xxx     | node: 可选参数，节点id   | 停止集群/节点        |
+| `setCmCfg`                     | https://ip:port/CMRestAPI/setCmCfg?mode=xxx&name=xxx&value=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；value：参数值   | 设置cm参数        |
+| `setGrCfg`                     | https://ip:port/CMRestAPI/setGrCfg?name=xxx&value=xxx     | name:参数名；value：参数值   | 设置oGRecorder参数        |
+| `getCmCfg`                     | https://ip:port/CMRestAPI/getCmCfg?mode=xxx&name=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；   | 获取cm参数        |
+| `getGrCfg`                     | https://ip:port/CMRestAPI/getGrCfg?name=xxx     | name:参数名；   | 获取oGRecorder参数        |
+| `reloadCmCfg`                  | https://ip:port/CMRestAPI/reloadCmCfg?mode=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；   | 加载cma参数        |
+| `switchover`                   | https://ip:port/CMRestAPI/switchover?node=xxx     | node:节点id   | 切换oGRecorder主节点        |
+| `stopRestApi`                  | https://ip:port/CMRestAPI/stopRestApi     | 无   | 停止对应节点的restapi服务，建议在集群停止的时候执行，否则进程还会被cm重新拉起        |
+| `log`                          | https://ip:port/CMRestAPI/log?file=xxx&offset=xxx&count=xxx     | file:相对于$GR_HOME/log的相对路径；offset: 可选参数，>0, 默认值1，传输日志的其起始位置；count:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000传输日志的行数  | 传输oGRecorder日志        |
+
 **其他使用说明：**  
 
 1. 安全相关。  
-   (1) CMRestAPI默认使用http服务，支持配置访问白名单，可通过启动参数-w配置访问来源ip的白名单文件，白名单文件配置格式为每行一个ip地址；  
-   (2) 若要使用https服务，则可以在启动时jar包时指定系统参数server.ssl相关参数来是CMRestAPI启动https服务，或将相关参数写入application.properties文件然后在启动命令中指定配置文件，或配置源码resource目录下的application.properties文件然后自行编译，自定义配置参数示例：  
-
+   (1) CMRestAPI默认使用http服务，支持配置访问白名单，可通过启动参数-w配置访问来源ip的白名单文件，白名单文件配置格式为每行一个ip地址;
+   (2) 若要使用https服务，则可以在启动时jar包时指定系统参数server.ssl相关参数来是CMRestAPI启动https服务，或将相关参数写入application.properties文件然后在启动命令中指定配置文件，或配置源码resource目录下的application.properties文件然后自行编译，自定义配置参数示例:
 ```
 -Dserver.port=服务监听端口 -Dserver.ssl.key-store=秘钥文件路径 -Dserver.ssl.key-store-password=秘钥文件密码 -Dserver.ssl.key-store-type=秘钥类型  
 如：  
@@ -775,6 +796,14 @@ java -jar -Dspring.config.location=/configpath/application.properties cmrestapi-
 
 3. 自定义资源配置文件。 
    本程序需要依赖cm相关进程和指令，所以必须与cm同时运行，需配置自定义资源配置文件，配置方法详见自定义资源监控特性相关内容。
+
+4. oGRecorder部署场景下相关说明。
+   (1) 在oGRecorder场景下，通过安装脚本安装默认使用https方式，且需要验证ssl证书。因此在使用curl命令访问接口时，需要通过--cert、--cacert、--cert-type指定客户端证书、根证书、证书格式。举例如下(ip、port根据实际情况修改)：
+```
+curl -s --cacert $GAUSSHOME/share/sslcert/restapi/cacert.pem --cert $GAUSSHOME/share/sslcert/restapi/client.p12:"" --cert-type P12 --resolve "server:port:ip" "https://server:port/CMRestAPI/wormFiles"
+```
+   (2) stopRestApi为POST类型接口。
+   (3) oGRecorder场景下，可以通过脚本和oGRecorder一起部署。参考链接[部署流程](https://docs.opengauss.org/zh/docs/latest/tool_and_commandreference/ogrecorder/black_box_deployment_introduction.html#数据保险柜部署介绍)
 
 **操作步骤说明：**  
 
