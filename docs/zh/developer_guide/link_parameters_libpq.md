@@ -224,5 +224,12 @@
 <a name="ul44624653710"></a><a name="ul44624653710"></a><ul id="ul44624653710"><li>any(默认值)：可以对所有类型的主机进行连接。</li><li>read-write：当连接的主机允许可读可写时，才进行连接。</li><li>read-only：仅对可读的主机进行连接。</li><li>primary：仅对主备系统中的主机能进行连接。</li><li>standby: 仅对主备系统中的备机进行连接。</li><li>prefer-standby：首先尝试找到一个备机进行连接。如果对hosts列表的所有机器都连接失败，那么尝试“any”模式进行连接。</li></ul>
 </td>
 </tr>
+<tr id="row23743329173315"><td class="cellrowborder" valign="top" width="17.53%" headers="mcps1.2.3.1.1 "><p>load_balance_hosts</p>
+</td>
+<td class="cellrowborder" valign="top" width="82.47%" headers="mcps1.2.3.1.2 ">
+<p>当客户端配置了多个主机地址，load_balance_hosts 用于决定尝试连接这些主机的顺序，以实现客户端层面的负载均衡或故障转移。一旦成功连接到一个主机，后续查询都会通过该连接发送，不会切换到其他主机。‌load_balance_hosts的设置规则如下：</p>
+<ul><li>disable(默认值)：主机按配置顺序尝试连接。</li><li>random‌：启用随机负载均衡，连接时从可用主机列表中随机选择一个进行连接。‌</li></ul>
+</td>
+</tr>
 </tbody>
 </table>
