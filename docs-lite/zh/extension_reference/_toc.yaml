@@ -422,7 +422,41 @@ sections:
           - label: TABLES
             href: ./shark-TABLES.md
           - label: VIEWS
-            href: ./shark-VIEWS.md                
+            href: ./shark-VIEWS.md
+          - label: DATABASE_PRINCIPALS
+            href: ./shark-DATABASE_PRINCIPALS.md
+          - label: FOREIGN_KEY_COLUMNS
+            href: ./shark-FOREIGN_KEY_COLUMNS.md
+          - label: FOREIGN_KEYS
+            href: ./shark-FOREIGN_KEYS.md
+          - label: SYSFOREIGNKEYS
+            href: ./shark-SYSFOREIGNKEYS.md
+          - label: KEY_CONSTRAINTS
+            href: ./shark-KEY_CONSTRAINTS.md
+          - label: CHECK_CONSTRAINTS
+            href: ./shark-CHECK_CONSTRAINTS.md
+          - label: INDEX_COLUMNS
+            href: ./shark-INDEX_COLUMNS.md
+          - label: SYSPROCESSES
+            href: ./shark-SYSPROCESSES.md
+          - label: SYNONYMS
+            href: ./shark-SYNONYMS.md
+          - label: SYSTEM_OBJECTS
+            href: ./shark-SYSTEM_OBJECTS.md
+          - label: ALL_VIEWS
+            href: ./shark-ALL_VIEWS.md
+          - label: SEQUENCES
+            href: ./shark-SEQUENCES.md
+          - label: TRIGGERS
+            href: ./shark-TRIGGERS.md
+          - label: TRIGGERS_EVENTS
+            href: ./shark-TRIGGERS_EVENTS.md
+          - label: CONFIGURETIONS
+            href: ./shark-CONFIGURETIONS.md
+          - label: SYSCURCONFIGS
+            href: ./shark-SYSCURCONFIGS.md
+          - label: SYSCONFIGURES
+            href: ./shark-SYSCONFIGURES.md
   - label: gms_lob Extension
     href: ./gms_lob.md
   - label: gms_debug Extension

@@ -47,7 +47,7 @@
             对象类型。当前支持类型：<br/>
             AF = AGGREGATE_FUNCTION<br/>
             C = CHECK_CONSTRAINT<br/>
-            D = DE<br/>
+            D = DEFAULT<br/>
             F = FOREIGN_KEY_CONSTRAINT<br/>
             FN = SQL_SCALAR_FUNCTION<br/>
             P = SQL_STORED_PROCEDURE<br/>
@@ -68,7 +68,7 @@
             对象类型描述。当前支持类型：<br/>
             AGGREGATE_FUNCTION<br/>
             CHECK_CONSTRAINT<br/>
-            DE<br/>
+            DEFAULT<br/>
             FOREIGN_KEY_CONSTRAINT<br/>
             SQL_SCALAR_FUNCTION<br/>
             SQL_STORED_PROCEDURE<br/>

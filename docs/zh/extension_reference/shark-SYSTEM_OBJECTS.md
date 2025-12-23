@@ -1,8 +1,8 @@
-# OBJECTS
+# SYSTEM_OBJECTS
 
-所有架构范围内的用户定义对象。
+返回系统对象的信息，D库中将information_schema、pg_catalog、sys、information_schema_tsql共四个模式作为系统模式，该视图返回系统模式对象以及dbe_perf模式的视图信息。
 
-**表1** OBJECTS
+**表1** SYSTEM_OBJECTS
 
 
 
@@ -95,7 +95,7 @@
         <tr>
             <td>is_ms_shipped</td>
             <td>bit</td>
-            <td>是否为系统内部对象<br/>如系统表、视图等返回 1<br>用户表等返回 0</td>
+            <td>是否为系统内部对象</td>
         </tr>
         <tr>
             <td>is_published</td>

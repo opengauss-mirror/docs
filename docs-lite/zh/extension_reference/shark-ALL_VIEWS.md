@@ -1,8 +1,8 @@
-# VIEWS
+# ALL_VIEWS
 
-所有架构范围内的用户定义视图。
+返回所有系统视图和用户视图相关的信息。
 
-**表1** VIEWS
+**表1** ALL_VIEWS
 
 
 
@@ -18,17 +18,17 @@
         <tr>
             <td>name</td>
             <td>name</td>
-            <td>对象名称</td>
+            <td>视图名称</td>
         </tr>
         <tr>
             <td>object_id</td>
             <td>oid</td>
-            <td>对象 ID</td>
+            <td>视图 ID</td>
         </tr>
         <tr>
             <td>principal_id</td>
             <td>oid</td>
-            <td>对象 owner 的oid。<br/>如果当前owner与schema为同一个owner，则返回NULL。</td>
+            <td>对象owner的oid，如果视图的owner与视图所属schema的owner相同，则返回NULL，否则返回视图的owner</td>
         </tr>
         <tr>
             <td>schema_id</td>
@@ -38,17 +38,17 @@
         <tr>
             <td>parent_object_id</td>
             <td>oid</td>
-            <td>返回对象所属的 parent 对象 ID</td>
+            <td>对象所属的 parent 对象 ID，取值恒为0</td>
         </tr>
         <tr>
             <td>type</td>
             <td>char(2)</td>
-            <td>对象类型</td>
+            <td>对象类型，取值恒为V = VIEW</td>
         </tr>
         <tr>
             <td>type_desc</td>
             <td>nvarchar(60)</td>
-            <td>对象类型描述</td>
+            <td>对象类型描述，取值恒为VIEW</td>
         </tr>
         <tr>
             <td>create_date</td>
@@ -63,47 +63,47 @@
         <tr>
             <td>is_ms_shipped</td>
             <td>bit</td>
-            <td>是否为系统内部对象<br/>如系统表、视图等返回 1<br>用户表等返回 0</td>
+            <td>是否为系统内部对象，取值恒为0</td>
         </tr>
         <tr>
             <td>is_published</td>
             <td>bit</td>
-            <td>对象是否发布</td>
+            <td>对象是否发布，取值恒为0</td>
         </tr>
         <tr>
             <td>is_schema_published</td>
             <td>bit</td>
-            <td>是否只发布架构</td>
+            <td>是否只发布架构，取值恒为0</td>
         </tr>
         <tr>
             <td>is_replicated</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>视图是否已复制，取值恒为0</td>
         </tr>
         <tr>
             <td>has_replication_filter</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>视图是否具有复制筛选器，取值恒为0</td>
         </tr>
         <tr>
             <td>has_opaque_metadata</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>视图是否指定了VIEW_METADATA选项，取值恒为0</td>
         </tr>
         <tr>
             <td>has_unchecked_assembly_data</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>视图是否存在未经校验的程序集数据，取值恒为0</td>
         </tr>
         <tr>
             <td>with_check_option</td>
             <td>bit</td>
-            <td>1 视图存在 WITH CHECK OPTION 选项</td>
+            <td>视图是否指定了WITH CHECK OPTION选项，1表示包含该选项，0表示不包含该选项</td>
         </tr>
         <tr>
             <td>is_date_correlation_view</td>
             <td>bit</td>
-            <td>返回 0</td>
+            <td>是否为系统自动创建视图，以存储datetime列之间的相关信息，取值恒为0</td>
         </tr>
         <tr>
             <td>is_tracked_by_cdc</td>
