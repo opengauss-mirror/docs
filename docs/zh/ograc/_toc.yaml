@@ -1,0 +1,6 @@
+label: oGRAC
+isManual: true
+sections:
+  - href: ./about_ograc/_toc.yaml
+  - href: ./developer_guide/_toc.yaml
+  - href: ./sql_reference/_toc.yaml
