@@ -1,0 +1,18 @@
+label: 关于oGRAC
+isManual: true
+sections:
+  - label: 产品架构
+    sections: 
+      - label: 架构描述
+        href: ./product_architecture/architecture_description.md
+      - label: 事务机制
+        href: ./product_architecture/transaction_mechanism.md
+  - label: 规格
+    sections: 
+      - label: 规格
+        href: ./specification/specification.md 
+  - label: 可维护性
+    href: ./maintainability.md   
+  - label: SQL能力
+    href: ./sql_ability.md  
+  
