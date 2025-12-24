@@ -104,39 +104,33 @@ VALIDATE与NOVALIDATE的配置，并不会改变新增记录及更新记录的�
 <a name="zh-cn_topic_0283136979"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136979"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>关键字组合</p>
 </th>
- <th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_02831369798"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>对已有记录是否进行检查符合约束</p>
+<th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_02831369798"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>对已有记录是否进行检查符合约束</p>
 </th>
 <th class="cellrowborder" valign="top" width="51.54515451545154%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>对新增或修改记录是否进行检查符合约束</p>
 </th>
 </tr>
 </thead>
 <tbody>
-
 <tr id="zh-cn_topic_0283136979">
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>ENABLE VALIDATE</p></td>
-
-<td class="cellrowborder" valign="top" width="32%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_03"></a><a name="zh-cn_topic_03"></a><a id="zh-cn_topic_03"></a>yes</p></td>
+<td class="cellrowborder" valign="top" width="32%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_03"></a><a id="zh-cn_topic_03"></a>yes</td>
 <td class="cellrowborder" valign="top" width="51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_01"><a name="zh-cn_topic_01"></a><a name="zh-cn_topic_01"></a>yes</p></td>
 </tr>
-
 <tr>
     <td rowspan="1">ENABLE NOVALIDATE</td>
     <td>no</td>
     <td>yes</td>
 </tr>
-
 <tr>
     <td rowspan="1">DISABLE VALIDATE</td>
     <td>yes</td>
     <td>no</td>
 </tr>
-
 <tr>
     <td rowspan="1">DISABLE NOVALIDATE</td>
     <td>no</td>
     <td>no</td>
 </tr>
-
 </tbody>
 </table>
 

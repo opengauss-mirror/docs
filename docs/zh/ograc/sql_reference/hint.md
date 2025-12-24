@@ -28,7 +28,7 @@
 <a name="zh-cn_topic_0283136979"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0283136979"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>类别</p>
 </th>
- <th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_02831369798"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>语法</p>
+<th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_02831369798"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>语法</p>
 </th>
 <th class="cellrowborder" valign="top" width="51.54515451545154%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>说明</p>
 </th>
@@ -36,10 +36,11 @@
 </thead>
 <tbody><tr id="zh-cn_topic_0283136979"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>优化器方法</p>
 </td>
-<td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a><a id="zh-cn_topic_0283136979"></a>RLUE</p>
+<td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a><a id="zh-cn_topic_0283136979"></a>RLUE
 </td>
 <td class="cellrowborder" valign="top" width="51.54515451545154%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>提示优化器使用RBO模式</p>
 </td>
+</tr>
 <tr>
     <td rowspan="5">路径访问</td>
     <td>FULL</td>
@@ -70,7 +71,6 @@
     <td>ORDERED</td>
     <td>提示优化器按照from子句中的表的顺序连接表</td>
 </tr>
-
 <tr>
     <td rowspan="3">关联方式</td>
     <td>USE_NL</td>
@@ -81,16 +81,14 @@
     <td>提示优化器将指定的表作为被驱动表，以哈希连接的方式将每个指定的表连接起来。</td>
 </tr>
 <tr>
-    <td>USE_MERGE/td>
+    <td>USE_MERGE</td>
     <td>提示优化器将指定的表作为被驱动表，以归并连接的方式将每个指定的表连接起来。</td>
 </tr>
-
 <tr>
     <td rowspan="1">其它</td>
     <td>OPT_PARAM</td>
     <td>提示优化器使用此参数替换系统参数执行此sql语句。</td>
 </tr>
-
 </tbody>
 </table>
 
