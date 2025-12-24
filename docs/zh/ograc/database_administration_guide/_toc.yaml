@@ -1,0 +1,7 @@
+label: 数据库管理员指南
+isManual: true
+sections:
+  - label: 表空间管理
+    href: ./data_object_management/tablespace_management.md
+  - label: 视图管理
+    href: ./data_object_management/view_management.md

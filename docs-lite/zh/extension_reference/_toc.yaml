@@ -391,13 +391,13 @@ sections:
             href: ./shark-DATABASES.md
           - label: INDEXS
             href: ./shark-INDEXS.md
-          - label: CHECK_CONSTRAINTS
+          - label: INFORMATION_SCHEMA_TSQL.CHECK_CONSTRAINTS
             href: ./shark-INFORMATION_SCHEMA_TSQL.CHECK_CONSTRAINTS.md
-          - label: COLUMNS
+          - label: INFORMATION_SCHEMA_TSQL.COLUMNS
             href: ./shark-INFORMATION_SCHEMA_TSQL.COLUMNS.md
-          - label: TABLES
+          - label: INFORMATION_SCHEMA_TSQL.TABLES
             href: ./shark-INFORMATION_SCHEMA_TSQL.TABLES.md
-          - label: VIEWS
+          - label: INFORMATION_SCHEMA_TSQL.VIEWS
             href: ./shark-INFORMATION_SCHEMA_TSQL.VIEWS.md
           - label: OBJECTS
             href: ./shark-OBJECTS.md

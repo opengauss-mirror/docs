@@ -30,10 +30,32 @@ sections:
   - label: ALTER TABLESPACE
     href: ./alter_tablespace.md
   - label: ALTER TABLE
-    href: ./alter_table.md    
+    href: ./alter_table.md
   - label: ALTER USER 使用说明
     href: ./alter_user.md
   - label: ANALYZE
     href: ./analyse.md
   - label: CREATE DATABASE
     href: ./create_database.md
+  - label: CREATE SEQUENCE
+    href: ./create_sequence.md
+  - label: DROP SEQUENCE
+    href: ./drop_sequence.md
+  - label: DDL
+    sections:  
+      - label: DROP USER
+        href: ./ddl/drop_user.md
+  - label: DCL
+    sections:            
+      - label: GRANT
+        href: ./dcl/grant.md
+      - label: REVOKE
+        href: ./dcl/revoke.md
+  - label: DML
+    sections: 
+      - label: 插入数据INSERT
+        href: ./dml/insert.md
+      - label: 删除数据 DELETE
+        href: ./dml/delete.md
+      - label: 更新数据 UPDATE
+        href: ./dml/update.md

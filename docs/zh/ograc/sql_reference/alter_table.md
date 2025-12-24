@@ -63,6 +63,7 @@
     对分区的初始数据页面上事务槽的个数进行修改，取值范围是[1,255]。
     - 修改指定分区的INITRANS属性，并且会同步修改该分区的所有子分区的INITRANS。
     - 对于新分配的页面，修改后的新值是有效的，对已经分配的老页面是无效的。
+
     ```
     @说明：INITRANS使用
        1.高并发oltp系统，当出现频繁的update/insert操作导致事务槽争用时，可以将INITRANS设为4-8(INITRANS=10时)，减少动态扩展开销。
@@ -81,58 +82,6 @@
   先将最后一个分区的数据插入进前面的某个分区中之后，再将最后一个分区进行删除。
     - 仅限HASH分区的情况才能执行COALESCE_PARTITION语句，并且无需指定分区名称。
     - 如果只剩一个分区，不能执行COALESCE_PARTITION语句，否则会报错。
-  - MODIFY_PARTITION partition_name COALESCE SUBPARTITION
-  先将某个父分区的最后一个子分区的数据插入进前面某个分区里之后，再将最后一个分区进行删除。
-    - 只有当子分区类型为hash分区的时候才能执行COALESCE SUBPARTITION语句，但是需指定需要执行收缩操作的父分区的名字，而子分区的名字无需指定。
-    - 如果父分区下面只剩一个子分区，不能执行COALESCE_PARTITION语句，否则会报错。
-
-- enable_disable_clause
-启用或禁用约束
-  - ENABLE：启动约束
-  - DISABLE:禁用约束
-  - VALIDATE:启用或禁用约束时，或约束被启用或禁用之后，需要保证已有数据是否符合约束。
-  - NOCALIDATE:启用或禁用约束时，或约束被启用或禁用之后，不需要考虑已有数据是否符合约束。
-
-使用VALIDATE或NOVALIDATE时，会对已有记录产生不同影响：无论是在启用或禁用约束的过程中，还是约束生效/失效后执行新增、修改操作时，若指定 VALIDATE，系统会校验已有记录是否符合约束要求；若存在不符合约束的记录，要么约束的启用/禁用操作会直接失败，要么后续新增、修改记录时会返回错误信息。而若使用 NOVALIDATE，无论在启用/禁用约束的环节，还是约束启用/禁用后的操作中，系统都不会检查已有记录是否符合该约束。
-
-VALIDATE与NOVALIDATE的配置，并不会改变新增记录及更新记录的约束检查规则：无论选用 VALIDATE 还是 NOVALIDATE，只要通过ENABLE启用约束，系统都会对新增记录和待更新记录进行约束合规性校验；而一旦通过 DISABLE 禁用约束，系统则不会再对新增记录及更新记录执行该约束的相关检查。
-
-当使用ENABLE启用约束时，若未明确指定NOVALIDATE，系统会默认应用VALIDATE模式，该模式的效果等同于 DISABLE NOVALIDATE：约束会被禁用，约束对应的索引会被删除，且允许对被约束的记录进行修改；而若在启用约束时明确指定 VALIDATE，则会产生如下效果：约束被禁用，约束字段上的索引被删除，同时不允许对任何被约束的记录执行修改操作。
-
-**表 5-20** 关键字组合说明
-
-<a name="zh-cn_topic_0283136979"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0283136979"><th class="cellrowborder" valign="top" width="15.701570157015702%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>关键字组合</p>
-</th>
-<th class="cellrowborder" valign="top" width="32.753275327532755%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_02831369798"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>对已有记录是否进行检查符合约束</p>
-</th>
-<th class="cellrowborder" valign="top" width="51.54515451545154%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>对新增或修改记录是否进行检查符合约束</p>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr id="zh-cn_topic_0283136979">
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>ENABLE VALIDATE</p></td>
-<td class="cellrowborder" valign="top" width="32%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_03"></a><a id="zh-cn_topic_03"></a>yes</td>
-<td class="cellrowborder" valign="top" width="51%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_01"><a name="zh-cn_topic_01"></a><a name="zh-cn_topic_01"></a>yes</p></td>
-</tr>
-<tr>
-    <td rowspan="1">ENABLE NOVALIDATE</td>
-    <td>no</td>
-    <td>yes</td>
-</tr>
-<tr>
-    <td rowspan="1">DISABLE VALIDATE</td>
-    <td>yes</td>
-    <td>no</td>
-</tr>
-<tr>
-    <td rowspan="1">DISABLE NOVALIDATE</td>
-    <td>no</td>
-    <td>no</td>
-</tr>
-</tbody>
-</table>
 
 - [PARITION | SUBPARTITION] NOLOGGING
   - NOLOGGING 
@@ -175,56 +124,51 @@ VALIDATE与NOVALIDATE的配置，并不会改变新增记录及更新记录的�
 - rename_cloumn_clause
   修改表名。只能修改自己schama下的表名，不能修改系统表空间下的表名。
 
-
 - set_interval_caluse
 设置间隔分区，仅对分区表有效。
     - SET INTERVAL():将间隔分区表修改为范围分区表。
     - SET INTERVAL(interval_value):修改间隔分区表的间隔值，interval_value表示指定具体的间隔值数值。
 
-
 示例：
 
 - 添加某列
+
 ```
 --删除表training
 DROP TABLE IF EXISTS test;
 --创建表test
-CREATE TABLE test(student_id INT NOT NULL, course_name VARCHAR（30)，course_start_date DATETIME, course_end_date DATETIME, score INT);
+CREATE TABLE test(student_id INT NOT NULL, course_name VARCHAR(30), course_start_date DATETIME, score INT);
 - 修改列的数据类型
 ```
+
 ALTER TABLE test MODIFY course_name VARCHAR(20);
+
+```
+- 添加主键约束
+```
+
+alter table t_or2union_1 add constraint pk_a primary key (a);
+
 ```
 
 --添加列full_score
 ALTER TABLE test ADD full_score INT;
 ```
+
 - 删除列
+
 ```
 ALTER TABLE test DROP score;
 ```
 
-- 添加约束
-```
-ALTER TABLE test ADD CONSTRANT test_const1 CHECK(student_id > 0);
-ALTER TABLE test ADD CONSTRANT test_const2 UNIQUE(course_name);
-```
-
-- 约束重命名
-```
-ALTER TABLE test RENAME CONSTRANT test_const1 to test_cons3;
-```    
-
-- 删除约束
-```
-ALTER TABLE test DROP CONSTRANT test_const2;
-```
-
 - 重命名表
+
 ```
 ALTER TABLE test RENAME TO test2025;
 ```
 
 - 创建分区表
+
 ```
 --删除表test_partition
 DROP TABLE IF EXISTS test_partition;
@@ -234,22 +178,24 @@ CREATE TABLE test_partition(
   course_name CHAR(20),
   exam_date DATETIME,
   socre INT)
-PARTITION BY RANGE(staff_id)
+PARTITION BY RANGE(student_id)
 (
-PARTITION test_partition1 VALUES LESS THAN(100);
-PARTITION test_partition2 VALUES LESS THAN(200);
-PARTITION test_partition3 VALUES LESS THAN(300);
-PARTITION test_partition4 VALUES LESS THAN(400);
+PARTITION test_partition1 VALUES LESS THAN(100),
+PARTITION test_partition2 VALUES LESS THAN(200),
+PARTITION test_partition3 VALUES LESS THAN(300),
+PARTITION test_partition4 VALUES LESS THAN(400)
 );
 ```
 
 - 添加分区test_partition5和test_partition6
+
 ```
 ALTER TABLE test_partition ADD PARTITION test_partition5 VALUES LESS THAN(450);
 ALTER TABLE test_partition ADD PARTITION test_partition6 VALUES LESS THAN(MAXVALUE);
 ```
 
 - 删除分区test_partition3和test_partition4
+
 ```
 --删除分区test_partition3
 ALTER TABLE test_partition DROP PARTITION test_partition3;
@@ -259,51 +205,40 @@ ALTER TABLE test_partition TRUNCATE PARTITION test_partition4;
 ```
 
 - 分裂分区
-```
-ALTER TABLE test_partition SPILIT PARTITION test_partition5 AT(430) INTO (PARITION p1, PARTITION p2);
-```
 
-- 添加联合主键约束
 ```
---删除表
-DROP TABLE IF EXISTS test_partition;
---创建表
-CREATE TABLE test_partition(
-  student_id int;
-  class varchar(8);
-  name varchar2(8);
-  );
---添加联合主键约束
-ALTER TABLE test_partition ADD CONSTRANT pk_test_partition PRIMARY KEY (student_id,name);
+ALTER TABLE test_partition SPLIT PARTITION test_partition5 AT(430) INTO (PARITIION p1, PARTITION p2);
 ```
 
 - 修改表的分区的MAXSIZE值
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
 --创建表
 CREATE TABLE test_partition(o_id INT, o_char VARCHAR2(900)) STORAGE (MAXSIZE 5M INITIAL 1M)
 PARTITION BY RANGE(o_id)(
-PARTITION p1 VALUES LESS THAN(20) STORAGE (MAXSIZE 3M INITIAL 1M);
-PARTITION p2 VALUES LESS THAN(50);
+PARTITION p1 VALUES LESS THAN(20) STORAGE (MAXSIZE 3M INITIAL 1M),
+PARTITION p2 VALUES LESS THAN(50)
 );
 --修改表的存储空间的MAXSIZE值
-ALTER TABLE test_partition STORAGE (MAXSIZE 10M)；
+ALTER TABLE test_partition STORAGE (MAXSIZE 10M);
 --添加分区，初始大小是5M最小值是2M
-ALTER TABLE test_partitiontest ADD PARTITION p3 VALUES LESS THAN(34) STORAGE (MAXSIZE 5M INITIAL 2M);
+ALTER TABLE test_partition ADD PARTITION p3 VALUES LESS THAN(80) STORAGE (MAXSIZE 5M INITIAL 2M);
 --修改分区p1的最大值为2M
 ALTER TABLE test_partition MODIFY PARTITION p1 STORAGE (MAXSIZE 2M);
 ```
 
 - 修改表及分区的INITRANS值
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
 --创建表
 CREATE TABLE test_partition(o_id INT, o_char VARCHAR2(1000)) INITRANS 10
 PARTITION BY RANGE(o_id)(
-PARTITION p1 VALUES LESS THAN(2) INITRANS 5;
-PARTITION p2 VALUES LESS THAN(3);
+PARTITION p1 VALUES LESS THAN(2) INITRANS 5,
+PARTITION p2 VALUES LESS THAN(3)
 );
 
 --修改表的INITRANS值
@@ -313,6 +248,7 @@ ALTER TABLE test_partition MODIFY PARTITION p1 INITRANS 10;
 ```
 
 - 打开或关闭表级的逻辑复制开关
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -321,9 +257,9 @@ CREATE TABLE test_partition(
   student_id INT PRIMARY KEY,
   course_name VARCHAR(50))
 PARTITION BY RANGE(student_id)(
-PARTITION p1 VALUES LESS THAN(10);
-PARTITION p2 VALUES LESS THAN(50);
-PARTITION p3 VALUES LESS THAN(100);
+PARTITION p1 VALUES LESS THAN(10),
+PARTITION p2 VALUES LESS THAN(50),
+PARTITION p3 VALUES LESS THAN(100)
 );
 -- 打开表级的逻辑复制开关
 ALTER TABLE test_partition ADD LOGICAL LOG(PRIMARY KEY);
@@ -332,6 +268,7 @@ ALTER TABLE test_partition DROP LOGICAL LOG;
 ```
 
 - 打开或关闭表分区级逻辑复制开关
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -340,19 +277,14 @@ CREATE TABLE test_partition(
   student_id INT PRIMARY KEY,
   course_name VARCHAR(50))
 PARTITION BY RANGE(student_id)(
-PARTITION p1 VALUES LESS THAN(10);
-PARTITION p2 VALUES LESS THAN(50);
-PARTITION p3 VALUES LESS THAN(100);
+PARTITION p1 VALUES LESS THAN(10),
+PARTITION p2 VALUES LESS THAN(50),
+PARTITION p3 VALUES LESS THAN(100)
 );
 -- 打开表分区级的逻辑复制开关
 ALTER TABLE test_partition(p1,p2) ADD LOGICAL LOG(PRIMARY KEY);
 -- 删除表分区的同时会删除表分区级逻辑复制开关
-ALTER TABLE test_partition DROP PARITION p1;
+ALTER TABLE test_partition DROP PARTITION p1;
 -- 关闭表级的逻辑复制开关
 ALTER TABLE test_partition DROP LOGICAL LOG;
 ```
-
-
-
-
-
