@@ -49,6 +49,8 @@ sections:
     sections:            
       - label: GRANT
         href: ./dcl/grant.md
+      - label: REVOKE
+        href: ./dcl/revoke.md
   - label: DML
     sections: 
       - label: 插入数据INSERT

@@ -34,7 +34,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0283136979"><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>优化器方法</p>
+<tbody><tr id="zh-cn_topic_0283136979"></tr><td class="cellrowborder" valign="top" width="15.701570157015702%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136979"><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a>优化器方法</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.753275327532755%" headers="mcps1.2.4.1.2 "><a name="zh-cn_topic_0283136979"></a><a name="zh-cn_topic_0283136979"></a><a id="zh-cn_topic_0283136979"></a>RLUE</p>
 </td>
@@ -81,7 +81,7 @@
     <td>提示优化器将指定的表作为被驱动表，以哈希连接的方式将每个指定的表连接起来。</td>
 </tr>
 <tr>
-    <td>USE_MERGE/td>
+    <td>USE_MERGE</td>
     <td>提示优化器将指定的表作为被驱动表，以归并连接的方式将每个指定的表连接起来。</td>
 </tr>
 
