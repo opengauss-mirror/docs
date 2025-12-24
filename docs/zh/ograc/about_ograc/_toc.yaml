@@ -11,6 +11,8 @@ sections:
         href: ./product_architecture/architecture_description.md
       - label: 事务机制
         href: ./product_architecture/transaction_mechanism.md
+      - label: 多写技术特性概述
+        href: ./product_architecture/provide_more_details_technical_overview.md      
   - label: 规格
     sections: 
       - label: 规格

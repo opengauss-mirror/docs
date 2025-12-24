@@ -46,7 +46,9 @@ sections:
       - label: DROP USER
         href: ./ddl/drop_user.md
   - label: DCL
-    sections:            
+    sections:   
+      - label: ROLLBACK
+        href: ./dcl/rollback.md           
       - label: GRANT
         href: ./dcl/grant.md
       - label: REVOKE
