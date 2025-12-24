@@ -1,0 +1,5 @@
+label: 工具与命令参考
+isManual: true
+sections:
+  - label: ogsql使用说明
+    href: ./client_tool/ogsql_instructions.md
