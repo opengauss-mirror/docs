@@ -51,7 +51,12 @@
   expect
   ```
 
----
+- **校验用户各个节点id是否相同**
+  - 所有节点安装用户下，查看id应返回相同结果：
+  ```bash
+  [omm@ogRecorder install]$ id 
+  uid=1135(omm) gid=1135(omm) groups=1135(omm)
+  ```
 
 ## JSON 配置文件格式
 
@@ -64,6 +69,7 @@
     "install_path": "/home/omm/install/",
     "env_file": "/home/omm/envfile",
     "worm_path": "/worm_path",
+    "ca_path": "CA",
     "user": "omm",
     "nodes": [
       {
@@ -86,6 +92,7 @@
 - `cluster.install_path`：安装路径
 - `cluster.env_file`：环境变量文件路径
 - `cluster.worm_path`：worm 存储路径
+- `ca_path`：CA证书路径，相对于worm_path的相对路径
 - `cluster.user`：安装用户
 - `cluster.nodes`：节点列表
   - `name`：节点名称（机器hostname）
