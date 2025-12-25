@@ -12,7 +12,13 @@ sections:
       - label: 事务机制
         href: ./product_architecture/transaction_mechanism.md
       - label: 多写技术特性概述
-        href: ./product_architecture/technical_feature_overview_of_database_multi_write_capability.md      
+        href: ./product_architecture/technical_feature_overview_of_database_multi_write_capability.md
+      - label: CKPT
+        href: ./product_architecture/ckpt.md  
+      - label: Online DDL
+        href: ./product_architecture/online_ddl.md 
+      - label: REDO
+        href: ./product_architecture/redo.md               
   - label: 规格
     sections: 
       - label: 规格
