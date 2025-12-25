@@ -43,6 +43,10 @@ sections:
     href: ./drop_sequence.md
   - label: DDL
     sections:  
+      - label: CREATE USER
+        href: ./ddl/create_user.md
+      - label: DROP ROLE
+        href: ./ddl/drop_role.md        
       - label: DROP USER
         href: ./ddl/drop_user.md
   - label: DCL
