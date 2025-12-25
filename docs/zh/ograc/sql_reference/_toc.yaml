@@ -25,8 +25,14 @@ sections:
     href: ./alter_database.md
   - label: ALTER INDEX
     href: ./alter_index.md
+  - label: ALTER SESSION
+    href: ./alter_session.md
   - label: ALTER SEQUENCE
     href: ./alter_sequence.md
+  - label: ALTER SYSTEM
+    href: ./alter_system.md
+  - label: ALTER SYSTEM KILL SESSION
+    href: ./alter_system_kill_session.md
   - label: ALTER TABLESPACE
     href: ./alter_tablespace.md
   - label: ALTER TABLE
@@ -35,6 +41,10 @@ sections:
     href: ./alter_user.md
   - label: ANALYZE
     href: ./analyse.md
+  - label: COMMENT ON
+    href: ./comment_on.md
+  - label: COMMIT
+    href: ./commit.md
   - label: CREATE DATABASE
     href: ./create_database.md
   - label: CREATE SEQUENCE
@@ -42,23 +52,31 @@ sections:
   - label: DROP SEQUENCE
     href: ./drop_sequence.md
   - label: DDL
-    sections:  
+    sections:
       - label: CREATE USER
         href: ./ddl/create_user.md
+      - label: CREATE ROLE
+        href: ./ddl/create_role.md
       - label: DROP ROLE
-        href: ./ddl/drop_role.md        
+        href: ./ddl/drop_role.md
       - label: DROP USER
         href: ./ddl/drop_user.md
+      - label: DROP PROFILE
+        href: ./ddl/drop_profile.md     
+      - label: FLASHBACK TABLE
+        href: ./ddl/flashback_table.md      
   - label: DCL
-    sections:   
+    sections:
       - label: ROLLBACK
-        href: ./dcl/rollback.md           
+        href: ./dcl/rollback.md
       - label: GRANT
         href: ./dcl/grant.md
       - label: REVOKE
         href: ./dcl/revoke.md
+      - label: SAVEPOINT
+        href: ./dcl/savepoint.md
   - label: DML
-    sections: 
+    sections:
       - label: 插入数据INSERT
         href: ./dml/insert.md
       - label: 删除数据 DELETE
