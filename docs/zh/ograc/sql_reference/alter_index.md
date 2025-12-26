@@ -10,14 +10,14 @@ ALTER INDEX用于修改现有索引的定义。
 
 ## 语法格式
 
--   重命名表索引的名称。
+- 重命名表索引的名称。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
         RENAME TO [ schema_name.]new_name;
     ```
 
--   重建表索引或索引分区。
+- 重建表索引或索引分区。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
@@ -25,28 +25,28 @@ ALTER INDEX用于修改现有索引的定义。
         [ PARALLEL n | PCTFREE n | TABLESPACE tablespace_name ] [,...] ;
     ```
 
--   索引空页回收。
+- 索引空页回收。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
         COALESCE
     ```
 
--   设置失效索引。
+- 设置失效索引。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
         UNUSABLE
     ```
 
--   修改索引初始数据页面上事务槽的个数。
+- 修改索引初始数据页面上事务槽的个数。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
         INITRANS integer
     ```
 
--   修改特定分区或二级分区索引。
+- 修改特定分区或二级分区索引。
 
     ```
     ALTER INDEX [ schema_name.]index_name ON [ schema_name.]table_name
@@ -56,55 +56,54 @@ ALTER INDEX用于修改现有索引的定义。
 
 ## 参数说明
 
--   **schema_name**
+- **schema_name**
 
     模式名
 
--   **index_name**
+- **index_name**
 
     要修改的索引名
 
--   **table_name**
+- **table_name**
 
     索引所在的表名
 
--   **new_name**
+- **new_name**
 
     新的索引名
 
--   **part_name**
+- **part_name**
 
     分区名
 
--   **subpart_name**
+- **subpart_name**
 
     二级分区名
 
--   **PARALLEL n**
+- **PARALLEL n**
 
     指定重建索引时的并行度。
 
-    -   n的取值范围为[1, 64]。
-    -   函数索引不支持并行重建。
+    - n的取值范围为[1, 64]。
+    - 函数索引不支持并行重建。
 
--   **PCTFREE n**
+- **PCTFREE n**
 
     指定为索引数据块保留的空间百分比。当数据块的可用空间低于该空间百分比时，只能更新该数据块的数据，不能向该数据块插入数据。
 
-    -   n的取值范围为[0, 80]，默认值是8。
+    - n的取值范围为[0, 80]，默认值是8。
 
--   **tablespace_name**
+- **tablespace_name**
 
     表空间名，支持重建索引到其他表空间。
 
--   **INITRANS n**
+- **INITRANS n**
 
     修改索引初始数据页面上事务槽的个数。
 
-    -   n的取值范围为[1, 255]。
-    -   修改后的新值只对新分配的页面有效，对已经分配的老页面无效。
-    -   对于分区索引，会同步修改索引分区及子分区的INITRANS属性。
-
+    - n的取值范围为[1, 255]。
+    - 修改后的新值只对新分配的页面有效，对已经分配的老页面无效。
+    - 对于分区索引，会同步修改索引分区及子分区的INITRANS属性。
 
 示例：
 

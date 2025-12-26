@@ -1,6 +1,7 @@
 # ALTER TABLE
 
 ## 主要用途
+
 ALTER TABLE 操作用于对数据库表的定义进行结构变更，包含对字段和约束条件的调整，具体功能如下：
 
 - 数据列的增加、删除、属性修改以及重命名
@@ -19,7 +20,6 @@ ALTER TABLE 操作用于对数据库表的定义进行结构变更，包含对�
 - ALTER TABLE 命令不适用于外部表。
 - 在数据库重新启动或事务回滚过程中，无法执行此操作。
 
-
 ## 语法格式
 
 ```
@@ -32,14 +32,18 @@ ALTER TABLE [ schema_name. ]table_name
 }
 
 ```
+
 - _alter_table_properties_ 语法组件：
+
     ```
     { physical_attributes_clause
     | RENAME TO new_table_name
     | AUTO_INCREMENT [ = ] value
     }
     ```
+
     - _physical_attributes_clause_ 语法组件：
+
         ```
         { PCTFREE integer
         | INITRANS integer
@@ -47,11 +51,15 @@ ALTER TABLE [ schema_name. ]table_name
         | storage_alter_clause
         }
         ```
+
         - _storage_alter_clause语法：_
+
             ```
             STORAGE ( MAXSIZE { UNLIMITED | integer [K | M | G | T] } )
             ```
+
 - _column_clauses_ 语法组件：
+
     ```
     { add_column_clause
     | modify_column_clause
@@ -59,7 +67,9 @@ ALTER TABLE [ schema_name. ]table_name
     | rename_column_clause
     }
     ```
+
     - _add_column_clause_ 语法组件：
+
         ```
         -- 添加单一数据列。
         ADD [ COLUMN ] column_name datatype_name [ DEFAULT expr [ON UPDATE expr ] ]
@@ -69,7 +79,9 @@ ALTER TABLE [ schema_name. ]table_name
         [ COMMENT 'string' ] [ COLLATE collation_name ] [AUTO_INCREMENT] [ inline_constraint ] }
         [ , ... ] )
         ```
+
         - _inline_constraint_ 语法组件：
+
             ```
             [ CONSTRAINT constraint_name ]{ [ NOT ] NULL
             | CHECK( expr )
@@ -77,7 +89,9 @@ ALTER TABLE [ schema_name. ]table_name
             | UNIQUE
             }[ ... ]
             ```
+
     - _modify_column_clause_ 语法组件：
+
         ```
         -- 修改列定义。
         MODIFY ( { column_name [ new_datatype_name ] [ DEFAULT expr [ ON UPDATE expr ] ]
@@ -88,16 +102,21 @@ ALTER TABLE [ schema_name. ]table_name
         -- 回收LOB类型字段的空间占用。
         MODIFY LOB(column_name) (SHRINK SPACE)
         ```
+
     - _drop_column_clause_ 语法组件：
+
         ```
         DROP [ COLUMN ] column_name
         ```
+
     - _rename_column_clause_ 语法组件：
+
         ```
         RENAME COLUMN old_name TO new_name
         ```
     
 - _partition_clauses_ 语法组件：
+
     ```
     { add_partition_clause
     | drop_partition_clause
@@ -107,6 +126,7 @@ ALTER TABLE [ schema_name. ]table_name
     | modify_partition_claus
     }
     ```
+
     - _add_partition_clause_ 语法组件：
         
         ```
@@ -131,27 +151,37 @@ ALTER TABLE [ schema_name. ]table_name
         }
         [ TABLESPACE tablespace_name ]
         ```
+
         - _storage_clause_ 语法组件：
+
             ``` 
             STORAGE ( { INITIAL integer [K | M | G | T]
             |MAXSIZE { UNLIMITED | integer [K | M | G | T] }
             } [ ...] )
             ```
+
     - _drop_partition_clause_ 语法组件：
+
         ```
         DROP { PARTITION partition_name | SUBPARTITION subpartition_name }
         ```
+
     - truncate_partition_clause 语法组件：
+
         ```
         TRUNCATE { PARTITION partition_name | SUBPARTITION subpartition_name }
         [ DROP STORAGE | REUSE STORAGE | PURGE ]
         ```
+
     - coalesce_partition_clause 语法组件：
+
         ```
         COALESCE PARTITION
         MODIFY PARTITION partition_name COALESCE SUBPARTITION
         ```
+
 - split_partition_clause 语法组件：
+
     ```
     SPLIT PARTITION partition_name 
     AT (range_value) 
@@ -171,25 +201,33 @@ ALTER TABLE [ schema_name. ]table_name
     )
     [ UPDATE GLOBAL INDEXES ]
     ```
+
 - _modify_partition_clause_ 语法组件：
+
     ```
     MODIFY PARTITION partition_name { INITRANS integer | storage_alter_clause }
     ```
+
   - _storage_alter_clause_ 语法组件：
+
       ```
       STORAGE (MAXSIZE { UNLIMITED | integer [K | M | G | T] } )
       
 - _set_interval_clause_ 语法组件：
+
     ```
     SET INTERVAL([interval_value])
     ```
+
 - _logic_replication_clauses_ 语法组件：
+
     ```
     [([ partition_name | subpartition_name ][ , ... ])] ADD LOGICAL LOG(UNIQUE index_name)|
     [([ partition_name | subpartition_name ][ , ... ])] ADD LOGICAL LOG(PRIMARY KEY) | DROP LOGICAL LOG
     ```
 
 ## 参数说明
+
 - **[_schema_name_.]**
 
     模式名称。当未显式指定时，系统默认采用当前登录用户的名称作为模式名。
@@ -535,16 +573,15 @@ ALTER TABLE [ schema_name. ]table_name
 - rename_cloumn_clause
   修改表名。只能修改自己schama下的表名，不能修改系统表空间下的表名。
 
-
 - set_interval_caluse
 设置间隔分区，仅对分区表有效。
     - SET INTERVAL():将间隔分区表修改为范围分区表。
     - SET INTERVAL(interval_value):修改间隔分区表的间隔值，interval_value表示指定具体的间隔值数值。
 
-
 示例：
 
 - 添加某列
+
 ```
 --删除表training
 DROP TABLE IF EXISTS test;
@@ -552,27 +589,35 @@ DROP TABLE IF EXISTS test;
 CREATE TABLE test(student_id INT NOT NULL, course_name VARCHAR(30), course_start_date DATETIME, score INT);
 - 修改列的数据类型
 ```
+
 ALTER TABLE test MODIFY course_name VARCHAR(20);
+
 ```
 - 添加主键约束
 ```
+
 alter table t_or2union_1 add constraint pk_a primary key (a);
+
 ```
 
 --添加列full_score
 ALTER TABLE test ADD full_score INT;
 ```
+
 - 删除列
+
 ```
 ALTER TABLE test DROP score;
 ```
 
 - 重命名表
+
 ```
 ALTER TABLE test RENAME TO test2025;
 ```
 
 - 创建分区表
+
 ```
 --删除表test_partition
 DROP TABLE IF EXISTS test_partition;
@@ -592,12 +637,14 @@ PARTITION test_partition4 VALUES LESS THAN(400)
 ```
 
 - 添加分区test_partition5和test_partition6
+
 ```
 ALTER TABLE test_partition ADD PARTITION test_partition5 VALUES LESS THAN(450);
 ALTER TABLE test_partition ADD PARTITION test_partition6 VALUES LESS THAN(MAXVALUE);
 ```
 
 - 删除分区test_partition3和test_partition4
+
 ```
 --删除分区test_partition3
 ALTER TABLE test_partition DROP PARTITION test_partition3;
@@ -607,11 +654,13 @@ ALTER TABLE test_partition TRUNCATE PARTITION test_partition4;
 ```
 
 - 分裂分区
+
 ```
 ALTER TABLE test_partition SPLIT PARTITION test_partition5 AT(430) INTO (PARITIION p1, PARTITION p2);
 ```
 
 - 修改表的分区的MAXSIZE值
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -630,6 +679,7 @@ ALTER TABLE test_partition MODIFY PARTITION p1 STORAGE (MAXSIZE 2M);
 ```
 
 - 修改表及分区的INITRANS值
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -647,6 +697,7 @@ ALTER TABLE test_partition MODIFY PARTITION p1 INITRANS 10;
 ```
 
 - 打开或关闭表级的逻辑复制开关
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -666,6 +717,7 @@ ALTER TABLE test_partition DROP LOGICAL LOG;
 ```
 
 - 打开或关闭表分区级逻辑复制开关
+
 ```
 --删除表
 DROP TABLE IF EXISTS test_partition;
@@ -685,8 +737,3 @@ ALTER TABLE test_partition DROP PARTITION p1;
 -- 关闭表级的逻辑复制开关
 ALTER TABLE test_partition DROP LOGICAL LOG;
 ```
-
-
-
-
-

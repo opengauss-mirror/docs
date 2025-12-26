@@ -51,9 +51,11 @@ GRANT { READ } ON DIRECTORY dir_name TO grantee [ WITH GRANT OPTION ]
 ### 参数解释
 
 #### system_privilege_name
+
    系统权限名称。下表展示了系统目前支持的系统权限以及角色或用户对权限的拥有情况，其中“T”表示拥有此权限，“F”表示没有权限。
 
 **系统权限表**
+
 |系统权限|||角色是否拥有该权限||用户是否拥有该权限||
 |---|---|---|---|---|---|---|
 |操作|权限|权限解释|RESOURCE|CONNECT|SYS|PUBLIC|
@@ -309,6 +311,7 @@ DROP USER
 补充说明：对象所有者、系统管理员（SYS 用户、DBA 角色）默认拥有下表中所有对象的全部权限。
 
 **对象权限对照表**
+
 |对象类型|SELECT|UPDATE|INSERT|DELETE|INDEX|READ|REFERENCES|ALTER|EXECUTE|WRITE|
 |---|---|---|---|---|---|---|---|---|---|---|
 |表|T|T|T|T|T|T|T|T|F|F|
@@ -376,7 +379,6 @@ CREATE USER songjiang IDENTIFIED BY "ghQMO789";
 -- 将CREATE SESSION权限授权给用户songjiang
 
 GRANT CREATE SESSION TO songjiang;
-
 
 -- 创建用户wusong、用户wukong和角色bajie，并将角色bajie授权给用户wusong和用户wukong
 

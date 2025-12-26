@@ -80,12 +80,14 @@ scp ogdba[ip2]:/home/ogdba [package_name]
 > - 在第一次扫描、查询盘符时，如果查找不到，则可以使用iscsiadm -m node --logoutall=all 和iscsiadm -m node -p ip -l来断开连接并重新登录连接，注意该操作会影响所有连接的存储设备，可能会影响其他用户，请谨慎操作。这里的ip是存储设备的ip地址，可以使用iscsiadm -m node来查询。
 
 通过如下步骤来进行LUN的划分：
+
 1. 登录集群DeviceManager，选择`服务`->`LUN组`->`LUN`->`创建`来创建四个LUN，分为一个5G、一个4T、两个2T大小；(具体的大小请根据业务需求进行设置)
 2. 将创建好的四个LUN添加映射到对应的主机组中即可；
 
 #### 3.1 前期准备：解压文件并时间同步
 
 节点1操作如下：
+
 ```shell
 cd /home/ogdba
 tar -zxvf [package_name]
@@ -93,7 +95,9 @@ cd oGRAC/pkg/deploy/action
 ntpdate -u [ip2]  # 同步机器时间
 date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
+
 节点2操作如下：
+
 ```shell
 cd /home/ogdba
 tar -zxvf [package_name]
@@ -102,12 +106,14 @@ tar -zxvf [package_name]
 #### 3.2 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
 
 节点1、2操作如下：
+
 ```shell
 ln -s /dev/sdxx /dev/dss-disk1
 ln -s /dev/sdxx /dev/dss-disk2
 ln -s /dev/sdxx /dev/dss-disk3
 ln -s /dev/sdxx /dev/gcc-disk
 ```
+
 示意图如下：
 
 ![LUN 软连接示意图](image-LUN软链接.png)
@@ -132,6 +138,7 @@ cd /oGRAC/pkg/deploy/action
 - 编辑 `config_params_lun.json`，注意节点参数差异：
 
 节点1上的`config_params_lun.json`进行如下修改配置：
+
 ```json
 {
    "deploy_mode": "dss",
@@ -147,6 +154,7 @@ cd /oGRAC/pkg/deploy/action
 ```
 
 节点2上的`config_params_lun.json`进行如下修改配置：
+
 ```json
 {
    "deploy_mode": "dss",
@@ -161,12 +169,12 @@ cd /oGRAC/pkg/deploy/action
 }
 ```
 
-
 ---
 
 ### 4. 节点安装与启动
 
 节点1、2操作如下：
+
 ```shell
 sh appctl.sh install config_params_lun.json
 sh appctl.sh start
@@ -180,6 +188,7 @@ sh appctl.sh start
 su -s /bin/bash ogdba
 cms stat -res db
 ```
+
 示意图如下：
 
 ![查询集群状态示意图](image-集群状态.png)

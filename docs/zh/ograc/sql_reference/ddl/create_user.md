@@ -53,9 +53,11 @@ CREATE USER user_name
 关键字规避：SYSDBA、CLSMGR 为数据库关键字，使用此类名称创建用户会导致登录失败，建议避免使用。
 
 #### IDENTIFIED BY
+
 密码指定子句，用于创建用户时为其设置初始密码。
 
 #### password
+
 用户密码。
 密码（password）需遵循以下规范：
 长度规则：普通密码：长度需≥PROFILE 中 PASSWORD_MIN_LEN 参数设定的最小值，（主备认证密码：不受 PASSWORD_MIN_LEN 参数限制，最小长度为 16 字符），且≤64个字符。
@@ -69,25 +71,31 @@ conn命令登录：密码段所有字符均视为密码本身。
 ogsql命令登录：密码需用单引号包裹，且密码内不得包含单引号。
 
 #### DEFAULT TABLESPACE tablespace_name
+
 用于定义用户的私有默认表空间，要求指定的表空间必须已存在。
 
 #### TEMPORARY TABLESPACE tablespace_name
+
 用于定义用户的默认临时表空间，要求指定的表空间必须已存在；当前仅支持将temp表空间指定为临时表空间。
 
 #### PASSWORD EXPIRE
+
 效果：配置后如果用户密码过期，登录时提示 “the password has expired”。
 客户端适配：OGSQL客户端：密码过期账户登录时会弹出交互式改密窗口，强制修改密码；改密成功则进入数据库连接，改密失败则退出窗口；
            其他客户端：直接报错并退出登录流程。
 
 #### ACCOUNT {LOCK | UNLOCK}
+
 效果：手动锁定账户后，用户登录时提示 “the account is locked”，且禁止登录；解锁后恢复正常。
 
 #### PROFILE profile_name
+
 档案配置。
 基础规则：创建用户时引用的PROFILE必须提前创建并配置；未明确指定时，默认引用default PROFILE，也可通过双引号显式引用“DEFAULT” PROFILE。
 须知：系统管理员SYS用户默认引用default PROFILE；为避免普通用户的安全策略配置影响SYS用户，建议为普通用户单独创建专属PROFILE。
 
 #### ENCRYPTED
+
 密文密码标识。
 作用：标识指定的密码为加密密文（建议用单引号包裹），指定密文时不校验密码规范。
 使用规则：ENCRYPTED关键字必须位于password后的第一个参数位置，否则报错。
@@ -95,12 +103,14 @@ ogsql命令登录：密码需用单引号包裹，且密码内不得包含单引
          此类用户仍需使用明文密码登录，不推荐采用该方式；管理员可通过设置 enable_password_cipher 参数关闭该创建方式。
 
 #### PERMANENT
+
 永久用户标识。
 核心规则：标记为PERMANENT的用户为不可删除账户，仅SYS用户可创建或删除此类账户。
 操作限制：账户创建后，仅SYS用户可执行以下操作：修改密码、切换锁定状态、手动设置密码过期、变更关联PROFILE、变更用户表空间。
 其他特性：除上述受限操作外，此类账户的其他特性与普通账户一致（例如修改其关联的PROFILE，影响效果与普通账户相同）。
 
 #### 特殊字符
+
 |编号 |字符 |
 |---|---|
 |1 |`|

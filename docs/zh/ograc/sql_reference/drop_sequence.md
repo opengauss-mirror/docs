@@ -11,6 +11,7 @@ DROP SEQUENCE [IF EXISTS] [Schema.]sequence_name;
 ```
 
 ## 示例
+
 ```sql
 -- 删除序列 MY_SEQUENCE
 SQL> DROP SEQUENCE my_sequence;

@@ -1,4 +1,5 @@
 # CREATE SEQUENCE
+
 序列（Sequence）是数据库中一种特殊对象，用于生成唯一、递增或递减的数值序列。
 CREATE SEQUENCE用于向当前数据库中增加一个新的序列生成器。序列的Owner为创建此序列的用户。
 
@@ -38,6 +39,7 @@ CREATE SEQUENCE [Schema.]sequence_name
     - 缺省值为NOORDER。
 
 ## 示例 ​
+
 ```sql
 -- 最基础的序列创建示例
 -- 序列名称 MY_SEQUENCE MIN_VALUE 1 MAX_VALUE 2^63-1 INCREMENT_BY 1 CYCLE_FLAG 0 ORDER_FLAG 0 CACHE_SIZE 20

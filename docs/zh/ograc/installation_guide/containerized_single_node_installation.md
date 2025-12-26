@@ -25,6 +25,7 @@ docker run --name mirror_name -itd -v /home/uer_name/docker/data:/home --privile
 需要配置http代理、git代理(非编译安装不需要)，这里不做详细说明，详情参考git官网等。
 
 3.1 若为编译安装则还需安装依赖：
+
 ```shell
 yum install -y libaio-devel openssl openssl-devel ndctl-devel \
 ncurses ncurses-devel libtirpc-devel expect ant bison iputils \
@@ -33,6 +34,7 @@ git net-tools cmake automake byacc libtool git unzip vim --skip-broken
 ```
 
 3.2 若为安装包安装则还需安装依赖：
+
 ```bash
 yum install -y wget python3 python3-devel iputils iproute --skip-broken
 ```
