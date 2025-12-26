@@ -31,94 +31,94 @@ cms res -stop RESOURCE_NAME -node NODE_ID
 
 ## 命令参考
 
-1、启动集群或实例
+1. 启动集群或实例
 
-**注意事项**
+    **注意事项**
 
-- 执行该命令前，检查待启动节点的CMS server是否存活（执行ps -ef|grep 'cms server'命令查看是否存在cms server进程来判断）。
+    - 执行该命令前，检查待启动节点的CMS server是否存活（执行ps -ef|grep 'cms server'命令查看是否存在cms server进程来判断）。
 
-- 启动指定节点的资源，默认等待时间为600秒，600秒仍未成功启动，该命令超时报错退出。
+    - 启动指定节点的资源，默认等待时间为600秒，600秒仍未成功启动，该命令超时报错退出。
 
-启动cms资源（如需后台挂载，则使用 cms server -start &）：
+    启动cms资源（如需后台挂载，则使用 cms server -start &）：
 
-```
-$ cms server -start
-start resource succeed.
-NODE_ID     = 0
-CMS_HOME    = /opt/oGRAC/data
-GCC_HOME    = /opt/oGRAC/data/gcc_home/gcc_file
-CMS GCC_TYPE:FILEVERSION     = oGRAC Debug 25.12 0d24758
-cms startup...
-MES: LSNR 127.0.0.1:23456
-```
+    ```
+    $ cms server -start
+    start resource succeed.
+    NODE_ID     = 0
+    CMS_HOME    = /opt/oGRAC/data
+    GCC_HOME    = /opt/oGRAC/data/gcc_home/gcc_file
+    CMS GCC_TYPE:FILEVERSION     = oGRAC Debug 25.12 0d24758
+    cms startup...
+    MES: LSNR 127.0.0.1:23456
+    ```
 
-启动集群内所有db节点：
+    启动集群内所有db节点：
 
-```
-$ cms res -start db
-start resource succeed.
-```
+    ```
+    $ cms res -start db
+    start resource succeed.
+    ```
 
-启动指定db节点：
+    启动指定db节点：
 
-```
-$ cms res -start db -node 0
-start resource succeed.
-```
+    ```
+    $ cms res -start db -node 0
+    start resource succeed.
+    ```
 
-启动集群内所有dss节点：
+    启动集群内所有dss节点：
 
-```
-$ cms res -start dss
-start resource succeed.
-```
+    ```
+    $ cms res -start dss
+    start resource succeed.
+    ```
 
-启动集群内指定dss节点：
+    启动集群内指定dss节点：
 
-```
-$ cms res -start dss -node 0
-start resource succeed.
-```
+    ```
+    $ cms res -start dss -node 0
+    start resource succeed.
+    ```
 
-指定等待时间启动集群内节点：
+    指定等待时间启动集群内节点：
 
-```
-$ cms res -start db 120000
-start resource succeed.
-```
+    ```
+    $ cms res -start db 120000
+    start resource succeed.
+    ```
 
-2、停止集群或实例
-停止cms资源：
+2. 停止集群或实例
+    停止cms资源：
 
-```
-cms server -stop
-stop cms server succeed.
-```
+    ```
+    cms server -stop
+    stop cms server succeed.
+    ```
 
-停止集群内所有db节点：
+    停止集群内所有db节点：
 
-```
-$ cms res -stop db
-stop resource succeed.
-```
+    ```
+    $ cms res -stop db
+    stop resource succeed.
+    ```
 
-停止指定db节点：
+    停止指定db节点：
 
-```
-$ cms res -stop db -node 0
-stop resource succeed.
-```
+    ```
+    $ cms res -stop db -node 0
+    stop resource succeed.
+    ```
 
-停止集群内所有dss节点：
+    停止集群内所有dss节点：
 
-```
-$ cms res -stop dss
-stop resource succeed.
-```
+    ```
+    $ cms res -stop dss
+    stop resource succeed.
+    ```
 
-停止指定dss节点：
+    停止指定dss节点：
 
-```
-$ cms res -stop dss -node 0
-stop resource succeed.
-```
+    ```
+    $ cms res -stop dss -node 0
+    stop resource succeed.
+    ```

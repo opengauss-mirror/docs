@@ -1,6 +1,6 @@
 # 搭建编译环境
 
-## 1. 系统初始化
+## 系统初始化
 
 关闭 SELinux 和防火墙：
 
@@ -11,7 +11,7 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-## 2. 创建目录和用户
+## 创建目录和用户
 
 ```shell
 mkdir -p compile_path
@@ -21,7 +21,7 @@ passwd user_password
 chown -R user_name:user_name compile_path
 ```
 
-## 3. 安装必要依赖
+## 安装必要依赖
 
 ```shell
 yum install -y libaio-devel openssl openssl-devel ndctl-devel \

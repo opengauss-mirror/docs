@@ -1,12 +1,12 @@
 # ogsql使用说明
 
-## 1. 概述
+## 概述
 
 ogsql是OpenGauss oGRAC引擎提供的SQL开发者命令行工具，用于连接数据库、执行SQL语句和脚本，以及管理数据库对象。本工具支持交互式和非交互式两种使用模式。
 
-## 2. 命令行语法
+## 命令行语法
 
-### 2.1 基本语法
+### 基本语法
 
 ogsql支持三种主要的使用方式：
 
@@ -22,7 +22,7 @@ ogsql
 ogsql [ <logon> [<options>] [<start>] ]
 ```
 
-### 2.2 登录信息格式
+### 登录信息格式
 
 ogsql支持以下登录格式：
 
@@ -44,7 +44,7 @@ ogsql支持以下登录格式：
 - **port**: 数据库服务器端口号
 - **sysdba**: 数据库管理员身份
 
-### 2.3 选项参数
+### 选项参数
 
 ogsql支持以下可选选项参数：
 
@@ -63,7 +63,7 @@ ogsql支持以下可选选项参数：
   - 可与-f参数一起使用，表示打印并执行SQL脚本文件中的SQL语句
 - **-D**: 指定数据数据目录路径
 
-### 2.4 启动选项
+### 启动选项
 
 ogsql支持以下启动选项（同一时间只能使用其中一种）：
 
@@ -77,9 +77,9 @@ ogsql支持以下启动选项（同一时间只能使用其中一种）：
 - **-f**: 执行指定的SQL脚本文件
 - **-s**: 将命令提示符和输出重定向到指定文件
 
-## 3. 示例用法
+## 示例用法
 
-### 3.1 基本登录
+### 基本登录
 
 ```bash
 # 以管理员身份无密码登录
@@ -89,7 +89,7 @@ ogsql / as sysdba
 ogsql user/user_pwd@127.0.0.1:1611
 ```
 
-### 3.2 执行SQL语句
+### 执行SQL语句
 
 ```bash
 # 登录后执行单个SQL语句\ nogsql user/user_pwd@127.0.0.1:1611 -c "SELECT 1 FROM SYS_DUMMY"
@@ -101,7 +101,7 @@ ogsql user/user_pwd@127.0.0.1:1611 -f "/home/user/example.sql"
 ogsql user/user_pwd@127.0.0.1:1611 -a -f "/home/user/example.sql"
 ```
 
-### 3.3 设置连接超时
+### 设置连接超时
 
 ```bash
 # 设置连接超时为30秒
@@ -111,7 +111,7 @@ ogsql user/user_pwd@127.0.0.1:1611 -w 30
 ogsql user/user_pwd@127.0.0.1:1611 -w -1
 ```
 
-## 4. 交互式命令
+## 交互式命令
 
 在ogsql交互式模式下，可以使用以下命令：
 
@@ -130,7 +130,7 @@ ogsql user/user_pwd@127.0.0.1:1611 -w -1
 | WHENEVER | 错误处理设置 | `WHENEVER SQLERROR EXIT` |
 | PROMPT | 显示提示信息 | `PROMPT '开始执行脚本'` |
 
-## 5. 参数绑定
+## 参数绑定
 
 ogsql支持在SQL语句中使用参数绑定，格式为`:参数名`。执行包含参数的SQL语句时，ogsql会提示用户输入参数值。
 
@@ -142,7 +142,7 @@ SELECT * FROM employees WHERE department_id = :dept_id;
 
 执行时，ogsql会提示用户输入dept_id的值。
 
-## 6. 环境变量设置
+## 环境变量设置
 
 使用SET命令可以配置ogsql的运行环境：
 
@@ -154,7 +154,7 @@ SET TIMING ON;
 SET ECHO ON;
 ```
 
-## 7. 输出重定向
+## 输出重定向
 
 使用SPOOL命令可以将ogsql的输出重定向到文件：
 
@@ -169,7 +169,7 @@ SELECT * FROM employees;
 SPOOL OFF;
 ```
 
-## 8. 错误处理
+## 错误处理
 
 使用WHENEVER命令可以设置ogsql在遇到错误时的行为：
 
@@ -181,7 +181,7 @@ WHENEVER SQLERROR EXIT;
 WHENEVER SQLERROR CONTINUE;
 ```
 
-## 9. 元数据查询示例
+## 元数据查询示例
 
 以下是一些常用的元数据查询示例：
 

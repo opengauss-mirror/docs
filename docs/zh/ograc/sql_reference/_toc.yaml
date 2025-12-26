@@ -77,9 +77,9 @@ sections:
         href: ./dcl/savepoint.md
   - label: DML
     sections:
-      - label: 插入数据INSERT
+      - label: INSERT
         href: ./dml/insert.md
-      - label: 删除数据 DELETE
+      - label: DELETE
         href: ./dml/delete.md
-      - label: 更新数据 UPDATE
+      - label: UPDATE
         href: ./dml/update.md

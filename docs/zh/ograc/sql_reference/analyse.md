@@ -6,9 +6,9 @@
 
 ## 注意事项
 
--   只允许在database为open模式的状态下执行
--   SYS用户和DBA具有收集、删除所有用户或对象的统计信息的权限
--   普通用户具有收集自己的表的统计信息的权限，具备ANALYZE ANY权限可以操作除SYS外所有用户的统计信息（包括收集、删除等）
+- 只允许在database为open模式的状态下执行
+- SYS用户和DBA具有收集、删除所有用户或对象的统计信息的权限
+- 普通用户具有收集自己的表的统计信息的权限，具备ANALYZE ANY权限可以操作除SYS外所有用户的统计信息（包括收集、删除等）
 
 ## 语法格式
 
@@ -26,23 +26,23 @@
 
 ## 参数说明
 
--   **[ schema_name. ]table_name**
+- **[ schema_name. ]table_name**
 
     要获取其统计信息的表名，不能和用户下的表重名。
     
--   **COMPUTE STATISTICS**
+- **COMPUTE STATISTICS**
 
     收集统计信息，固定语法
 
--   **ESTIMATE STATISTICS sample_percent**
+- **ESTIMATE STATISTICS sample_percent**
 
     使用采样的方式收集，其中sample_percent为采样率，取值范围是`[0, 100]`的整数
 
--   **FOR REPORT**
+- **FOR REPORT**
 
     生成统计信息正确性检测报告，用于比较在某个采样率下的统计信息与系统中已收集的统计信息的偏差率。生成的检测报告会保存在LOG_HOME的opt目录下，其中LOG_HOME是安装时的日志目录
 
--   **SAMPLE sample_percent**
+- **SAMPLE sample_percent**
 
     使用采样率采样统计生成检测报告，sample_percent为采样率，取值范围是`[0, 100]`的整数，默认为100
 

@@ -1,11 +1,13 @@
-# 运行架构
+# 产品架构 
+
+## 运行架构
 
 ![](public_sys-resources/running.png)
 
 - oGRAC是基于共享存储的集群架构。
 - 由cms集群管理组件，DB数据库实例组件以及DSS开源集群文件系统组件组成。
 
-# 逻辑架构
+## 逻辑架构
 
 ![](public_sys-resources/logic_arch2.png)
 
