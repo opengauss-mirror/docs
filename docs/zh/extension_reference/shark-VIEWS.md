@@ -105,5 +105,10 @@
             <td>bit</td>
             <td>返回 0</td>
         </tr>
+        <tr>
+            <td>is_tracked_by_cdc</td>
+            <td>bit</td>
+            <td>视图依赖的某个基表是否正在被CDC(数据变更捕获)跟踪，取值恒为0</td>
+        </tr>
     </tbody>
 </table>
