@@ -34,8 +34,6 @@ ALTER SYSTEM
 
  | FLUSH {BUFFER | SQLPOOL}
 
- | DUMP CTRLFILE
-
  | DEBUG MODE debug_parameter_name = debug_parameter_value
 
  | DUMP CATALOG { TABLE table_name | USER user_name } [ TO 'folders' ]
@@ -136,10 +134,6 @@ kill会话，session_id是会话ID，serial是序列号ID。
 - **FLUSH SQLPOOL**
 
 清空SQL池缓存数据。
-
-- **DUMP CTRLFILE**
-
-导出控制文件信息。
 
 - **DEBUG MODE** ***debug_parameter_name*** **=** ***debug_parameter_value***
 
@@ -288,12 +282,6 @@ ALTER SYSTEM FLUSH BUFFER;
 ```
 ALTER SYSTEM FLUSH SQLPOOL;
 ```
-
-- 导出控制文件信息。
-  
-  ```
-  ALTER SYSTEM DUMP CTRLFILE;
-  ```
 
 - 修改数据库调试参数。
   
