@@ -18,4 +18,5 @@
 ## 证书生成
 
 - 在测试环境下，用户可以自行生成服务端与客户端证书，具体可参考[证书生成](../../database_administration_guide/ssl_certificate_management.md)
-- 目前oGRecorder提供服务端与客户端证书生成脚本，具体路径分别为`certificate/server.sh`和`certificate/client.sh`，具体实现时先执行`sh server.sh`，再执行`sh client.sh`生成证书与配置文件。
+- 目前oGRecorder提供grcmd gencert命令生成证书。
+- 服务端相关参数的4个参数，需要指定在相同目录下；客户端参数同理。

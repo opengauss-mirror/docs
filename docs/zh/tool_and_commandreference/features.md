@@ -761,7 +761,7 @@ cm_ctl res --edit --res_name="VIP_az3" --add_inst="node_id=7,res_instance_id=600
 | `setGrCfg`                     | https://ip:port/CMRestAPI/setGrCfg?name=xxx&value=xxx     | name:参数名；value：参数值   | 设置oGRecorder参数        |
 | `getCmCfg`                     | https://ip:port/CMRestAPI/getCmCfg?mode=xxx&name=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；name:参数名；   | 获取cm参数        |
 | `getGrCfg`                     | https://ip:port/CMRestAPI/getGrCfg?name=xxx     | name:参数名；   | 获取oGRecorder参数        |
-| `reloadCmCfg`                  | https://ip:port/CMRestAPI/reloadCmCfg?mode=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；   | 加载cma参数        |
+| `reloadCmCfg`                  | https://ip:port/CMRestAPI/reloadCmCfg?mode=xxx     | mode: 取值agent或server，选择cm_agent还是cm_server参数；   | 加载cm参数        |
 | `switchover`                   | https://ip:port/CMRestAPI/switchover?node=xxx     | node:节点id   | 切换oGRecorder主节点        |
 | `stopRestApi`                  | https://ip:port/CMRestAPI/stopRestApi     | 无   | 停止对应节点的restapi服务，建议在集群停止的时候执行，否则进程还会被cm重新拉起        |
 | `log`                          | https://ip:port/CMRestAPI/log?file=xxx&offset=xxx&count=xxx     | file:相对于$GR_HOME/log的相对路径；offset: 可选参数，>0, 默认值1，传输日志的其起始位置；count:可选参数，默认值100，取值范围(0,1000],当传参超过1000时，赋值为1000传输日志的行数  | 传输oGRecorder日志        |

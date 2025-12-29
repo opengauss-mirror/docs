@@ -105,13 +105,16 @@ grcmd reload_certs
 生成客户端或服务端证书。
 
 ```sh
-grcmd gencert -t <client|server> [-d <days>]
+grcmd gencert -t <ca|client|server> [-d <days>]
 ```
 
-- `-t/--type`：证书类型，`client` 或 `server`（必选）
+- `-t/--type`：证书类型，`ca` 或 `client` 或 `server`（必选）
 - `-d/--days`：证书有效期天数（可选，默认 3650）
 
 > 需提前设置环境变量 `GR_HOME`，证书将生成在 `$GR_HOME/CA` 目录下。
+> 建议设置证书有效时间大于worm保护时间，防止证书超过worm保护时间后被修改。
+> 手动通过grcmd命令生成证书时，需要先修改配置文件中SER_SSL_KEY、CLI_SSL_KEY等证书相关配置，指定一个空目录。
+> 通过该命令生成的证书，会自动把私钥进行加密。
 
 ### 10. datausage
 
