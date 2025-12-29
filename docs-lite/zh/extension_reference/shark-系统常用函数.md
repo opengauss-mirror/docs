@@ -819,3 +819,455 @@
     (1 row)
 
     ```
+
+- object_name(object_id int [, database_id int])
+
+    描述：根据object_id返回object的名称，database_id为可选参数，可以不传或者传入当前数据库的oid，否则固定返回NULL。
+
+    参数类型：object_id和database_id均为int类型的参数
+
+    返回值类型：nvarchar
+
+    说明：如果object为表，触发器或者约束，需要有对象的select权限。如果object为存储过程或者函数，需要有execute权限。如果object为类型，需要有uasge权限。
+
+    示例：
+    
+    ```sql
+    openGauss=# CREATE TABLE students (
+    openGauss(#     id SERIAL PRIMARY KEY,
+    openGauss(#     name VARCHAR(100) NOT NULL,
+    openGauss(#     age INT DEFAULT 0,
+    openGauss(#     grade DECIMAL(5, 2)
+    openGauss(# );
+    NOTICE:  CREATE TABLE will create implicit sequence "students_id_seq" for serial column "students.id"
+    NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "students_pkey" for table "students"
+    CREATE TABLE
+    openGauss=#
+    openGauss=# select object_name(object_id('students'));
+     object_name
+    -------------
+     students
+    (1 row)
+    ```
+
+- object_schema_name(object_id int [, database_id int])
+
+    描述：根据object_id返回object的schema名称，database_id为可选参数，可以不传或者传入当前数据库的oid，否则固定返回NULL。
+
+    参数类型：object_id和database_id均为int类型的参数。
+
+    返回值类型：nvarchar
+
+    说明：如果object为表，触发器或者约束，需要有对象的select权限。如果object为存储过程或者函数，需要有execute权限。如果object为类型，需要有uasge权限。
+
+    示例：
+    
+    ```sql
+    openGauss=# select object_schema_name(object_id('students'));
+     object_schema_name
+    --------------------
+     public
+    (1 row)
+    ```
+
+- object_definition(object_id int)
+
+    描述：根据object_id返回object的定义。只支持获取视图，检查约束，函数，触发器的定义。
+
+    参数类型：int
+
+    返回值类型：nvarchar
+
+    说明：如果object为表，触发器或者约束，需要有对象的select权限。如果object为存储过程或者函数，需要有execute权限。如果object为类型，需要有uasge权限。
+
+    示例：
+    
+    ```sql
+    openGauss=# create view view1 as select * from students;
+    CREATE VIEW
+    openGauss=# select object_definition(object_id('view1'));
+        object_definition
+    --------------------------
+     SELECT  * FROM students;
+    (1 row)
+    ```
+
+- objectpropertyex(object_id int, property varchar)
+
+    描述：根据object_id获取输入属性的属性信息。
+
+    参数类型：id为int类型，property为varchar类型。
+
+    返回值类型：sql_variant
+
+    说明：property当前只支持"basetype",其他的属性结果与objectproperty函数一致。
+
+    示例：
+    
+    ```sql
+    openGauss=# select objectpropertyex(object_id('students'), 'BaseType');
+     objectpropertyex
+    ------------------
+     U
+    (1 row)
+    ```
+
+- col_length(object_name text, column_name text)
+
+    描述：根据object_name和column_name返回指定列的类型的长度。
+
+    参数类型：object_name和column_name均为text类型。
+
+    返回值类型：smallint
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT COL_LENGTH('students', 'age');
+     col_length
+    ------------
+              4
+    (1 row)
+    ```
+
+- col_name(object_id int, column_id int)
+
+    描述：根据object_id和column_id获取到column_id指定的列名。
+
+    参数类型：object_id和column_id均为int类型。
+
+    返回值类型：text
+
+    示例：
+    
+    ```sql
+    openGauss=# select col_name(object_id('students'), 1);
+     col_name
+    ----------
+     id
+    (1 row)
+    ```
+
+- columnproperty(object_id int, column_name text, property_name text)
+
+    描述：根据object_id和column_name获取到指定的property指定的属性信息。
+
+    参数类型：object_id为int类型，column_name和property_name均为text类型。
+
+    返回值类型：int
+
+    说明：property_name当前只支持"charmaxlen"、"allowsnull"、"iscomputed"、"columnid"、"ishidden"、"isidentity"、"ordinal"、"precision"、 "scale"。
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT sys.columnproperty(OBJECT_ID('students'), 'name', 'charmaxlen');
+     columnproperty
+    ----------------
+                100
+    (1 row)
+    ```
+
+- year(input ANYELEMENT)
+
+    描述：返回一个日期类型的年份信息。
+
+    参数类型：任意类型
+
+    返回值类型：int
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT YEAR('20251010');
+     year
+    ------
+     2025
+    (1 row)
+    ```
+
+- month(input ANYELEMENT)
+
+    描述：返回一个日期类型的月份信息。
+
+    参数类型：任意类型
+
+    返回值类型：int
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT MONTH('20251010');
+     month
+    -------
+        10
+    (1 row)
+    ```
+
+- day(input ANYELEMENT)
+
+    描述：返回一个日期类型的天信息。
+
+    参数类型：任意类型
+
+    返回值类型：int
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT day('20251010');
+     month
+    -------
+        10
+    (1 row)
+    ```
+
+- isdate(input text)
+
+    描述：返回输入的字符串是否为合法的datetime或者date或者time类型。
+
+    参数类型：text
+
+    返回值类型：int
+
+    说明：对于毫秒部份精度大于3的日期，返回false。
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT ISDATE('2023-10-05 14:30:00');
+     isdate
+    --------
+          1
+    (1 row)
+    ```
+
+- eomonth(start_date date, month_to_add int DEFAULT 0)
+
+    描述：返回指定日期所在月份的最后一天，可以指定偏移。
+
+    参数类型：start_date为date类型, month_to_add为int类型。
+
+    返回值类型：date
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT EOMONTH('2023-11-10', 2);
+      eomonth
+    ------------
+     2024-01-31
+    (1 row)
+    ```
+
+- sysdatetime()
+
+    描述：返回当前时间。
+
+    返回值类型：timestamptz
+
+    示例：
+    
+    ```sql
+    openGauss=# select sysdatetime();
+              sysdatetime
+    -------------------------------
+     2025-12-29 14:19:58.594762+08
+    (1 row)
+    ```
+
+- square(num float8)
+
+    描述：返回入参数字的平方。
+
+    参数类型：float8。
+
+    返回值类型：float8
+
+    示例：
+    
+    ```sql
+    openGauss=# select square(2.4);
+     square
+    --------
+       5.76
+    (1 row)
+    ```
+
+- isnumeric(expr ANYELEMENT)
+
+    描述：判断输入的字符串是否是有效的数字或者money类型。
+
+    返回值类型：int
+
+    示例：
+    
+    ```sql
+    openGauss=# select isnumeric('123456');
+     isnumeric
+    -----------
+             1
+    (1 row)
+    ```
+
+- patindex(pattern varchar, expression varchar)
+
+    描述：返回输入字符串中匹配正则表达式匹配项的起始位置。
+
+    参数类型：pattern和expression均为varchar类型。
+
+    返回值类型：bigint
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT PATINDEX('%abc%', 'xyzabc123');
+     patindex
+    ----------
+            4
+    (1 row)
+    ```
+
+- stuff(character_expression varchar, start int, length int, replace_with_expression varchar)
+
+    描述：从character_expression的start位置删除length长度的字符，然后将replace_with_expression插入到第一个字符串的开始位置。
+
+    参数类型：character_expression和replace_with_expression均为varchar类型，start和length均为int类型。
+
+    返回值类型：varchar
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT STUFF('abcdefg', 2, 3, 'XYZ');
+      stuff
+    ---------
+     aXYZefg
+    (1 row)
+    ```
+
+- str(float_expression numeric, length int, decimal int)
+
+    描述：返回由数字数据转换而来的字符数据，支持指定长度和10进制精度。
+
+    参数类型：float_expression为numeric类型，length和decimal为int类型。
+
+    返回值类型：varchar
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT STR(123.45, 6, 1);
+      str
+    --------
+      123.5
+    (1 row)
+    ```
+
+- replicate(string_expression text, integer_expression int)
+
+    描述：将一个字符串重复指定的次数。
+
+    参数类型：string_expression为text类型，integer_expression为int类型。
+
+    返回值类型：varchar
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT REPLICATE('abc', 2);
+     replicate
+    -----------
+     abcabc
+    (1 row)
+    ```
+
+ - string_split(string_expression varchar, delimiter char)
+
+    描述：根据指定的分隔符将字符串拆分为子字符串行。
+
+    参数类型：string_expression为varchar类型，delimiter为char类型。
+
+    返回值类型：setof
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT value FROM STRING_SPLIT('nice to meet you.', ' ');
+     value
+    -------
+     nice
+     to
+     meet
+     you.
+    (4 rows)
+    ```
+
+ - quotename(string_expression varchar, [, quote_character char] )
+
+    描述：使用quote_character包括string_expression，string_expression默认为"[]"。
+
+    参数类型：string_expression为varchar类型，delimiter为char类型。
+
+    返回值类型：varchar
+
+    示例：
+    
+    ```sql
+    openGauss=# SELECT quotename('abcd', ']');
+     quotename
+    -----------
+     [abcd]
+    (1 row)
+    ```
+
+ - trim([characters char FROM ] string_expression)
+
+    描述：去掉字符串首尾的空格或者其他的指定字符。
+
+    参数类型：string_expression为varchar类型，delimiter为char类型。
+
+    返回值类型：varchar
+
+    示例：
+    
+    ```sql
+    openGauss=# select trim(' abc ');
+     btrim
+    -------
+     abc
+    (1 row)
+    openGauss=#
+    openGauss=# select trim('a' from 'aabca');
+     btrim
+    -------
+     bc
+    (1 row)
+    ```
+
+ - sql_variant_property(sql_variant_expression sql_variant, property varchar)
+
+    描述：返回sql_variant的属性信息。
+
+    参数类型：sql_variant_expression为sql_variant类型，property为varchar类型。
+
+    返回值类型：sql_variant
+
+    说明：property_name当前只支持"basetype"、"precision"、"scale"、"totalbytes"、"maxlength"，其他属性返回空。
+
+    示例：
+    
+    ```sql
+    openGauss=# select SQL_VARIANT_PROPERTY(cast(cast('a' as nvarchar) as sql_variant), 'BaseType');
+     sql_variant_property
+    ----------------------
+     nvarchar
+    (1 row)
+    
+    openGauss=# select SQL_VARIANT_PROPERTY(cast(cast('a' as nvarchar) as sql_variant), 'precision');
+     sql_variant_property
+    ----------------------
+     5
+    (1 row)
+    ```
+
