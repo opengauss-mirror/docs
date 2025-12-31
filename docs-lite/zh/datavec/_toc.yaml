@@ -87,7 +87,7 @@ sections:
         sections:
           - label: 从Milvus迁移至openGauss DataVec
             href: ./milvus2datavec.md
-          - label: 从ElasticSearch迁移至openGauss
+          - label: 从Elasticsearch迁移至openGauss DataVec
             href: ./elasticsearch_to_opengauss.md
       - label: API Reference
         sections:
