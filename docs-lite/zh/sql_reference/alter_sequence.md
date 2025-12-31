@@ -12,6 +12,7 @@
 - 修改序列的最大值后，会清空该序列在所有会话的cache。
 - 如果Sequence被创建时使用了LARGE标识，则ALTER时也需要使用LARGE标识。
 - ALTER SEQUENCE会阻塞nextval、setval、currval和lastval的调用。
+- D模式下不支持序列重命名语法。序列重命名只修改了序列在元数据系统表pg_class的名称，未修改序列关系中保存的旧名称信息(sequence_name)。
 
 ## 语法格式<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
@@ -28,6 +29,12 @@
 
     ```
     ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
+    ```
+
+- 修改序列的名称
+
+    ```
+    ALTER [LARGE] SEQUENCE [ IF EXISTS ] name RENAME TO new_name;
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
@@ -88,9 +95,13 @@
 
     序列新所有者的用户名。用户要修改序列的所有者，必须是新角色的直接或者间接成员，并且那个角色必须有序列所在模式上的CREATE权限。
 
+- new\_name
+
+    序列重命名后的名称。
+
 ## 示例<a name="zh-cn_topic_0283137303_zh-cn_topic_0237122071_zh-cn_topic_0062358310_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
-```
+```sql
 --创建一个名为serial的递增序列，从101开始。
 openGauss=# CREATE SEQUENCE serial START 101;
 
@@ -120,6 +131,9 @@ openGauss=# ALTER SEQUENCE serial CYCLE;
 
 --修改序列从100重新开始
 openGauss=# ALTER SEQUENCE serial RESTART 100;
+
+--重命名序列
+openGauss=# ALTER SEQUENCE serial RENAME TO serial1;
 
 --删除序列和表。
 openGauss=# DROP SEQUENCE serial cascade;
