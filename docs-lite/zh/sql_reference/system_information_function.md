@@ -1700,6 +1700,43 @@ openGauss=# SELECT relname FROM pg_class WHERE pg_table_is_visible(oid);
     (1 row)
     ```
 
+- pg\_sequence\_all\_parameters\(sequence\_name\)
+
+    描述：获取指定sequence的参数，包含起始值，最小值，最大值，递增值，是否为循环序列，缓存值，当前值，是否被调用，日志计数，uuid，上一个已使用的值，序列值是否已用完。
+
+    返回类型：int16, int16, int16, int16, boolean, int16, int16, boolean, bigint, bigint, int16, boolean
+
+    示例：
+
+    ```
+    openGauss=# create sequence seq1 increment by 2 start with 15 minvalue 10 maxvalue 100 cycle;
+    CREATE SEQUENCE
+    openGauss=# select * from pg_sequence_all_parameters('seq1');
+     start_value | minimum_value | maximum_value | increment | cycle_option | cache_size | last_value |
+    is_called | log_cnt | uuid | last_used_value | is_exhausted 
+    -------------+---------------+---------------+-----------+--------------+------------+------------+
+    -----------+---------+------+-----------------+--------------
+              15 |            10 |           100 |         2 | t            |          1 |         15 |
+    f         |       0 |    0 |                 | f
+    (1 row)
+
+    openGauss=# select nextval('seq1');
+     nextval 
+    ---------
+        15
+    (1 row)
+
+    openGauss=# select * from pg_sequence_all_parameters('seq1');
+     start_value | minimum_value | maximum_value | increment | cycle_option | cache_size | last_value |
+    is_called | log_cnt | uuid | last_used_value | is_exhausted 
+    -------------+---------------+---------------+-----------+--------------+------------+------------+
+    -----------+---------+------+-----------------+--------------
+              15 |            10 |           100 |         2 | t            |          1 |         15 |
+    t         |      32 |    0 |              15 | f
+    (1 row)
+
+    ```
+
 -   pg\_relation\_is\_updatable(reloid, include\_triggers)
 
     描述：获取对象支持修改时间的类型，update为4，insert为8，delete为16。include\_triggers如果为true，表示需要考虑对象上的触发器。
