@@ -10,7 +10,8 @@
 
 ```python
 pip3 install psycopg2
-pip3 install pymilvus==2.4.9
+# pymilvus要求2.3+的版本
+pip3 install pymilvus
 pip3 install numpy
 ```
 
@@ -23,8 +24,13 @@ pip3 install numpy
 [Milvus]
 host = localhost
 port = 19530
+# Milvus username and password, if not set, use anonymous access. Not supported yet.
+#username = user_name
+#password = xxxxxx
 
 [openGauss]
+host = localhost
+# Migration user need to use md5 encrypted password
 user = postgres
 password = xxxxxx
 port = 5432
@@ -53,6 +59,7 @@ from pymilvus import connections, Collection, utility
 import configparser
 import numpy as np
 import os
+import sys
 import logging
 from typing import List, Dict, Any, Optional, Union
 from datetime import datetime
@@ -61,14 +68,14 @@ from datetime import datetime
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[logging.FileHandler('migration.log'), logging.StreamHandler()]
+    handlers=[logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
-
 
 class MilvusToOpenGaussMigrator:
     def __init__(self, config_file: str = 'config.ini'):
         self.config = self._load_config(config_file)
+        self.update_config()
         self.csv_file_path = self._get_csv_file_path()
         self.fields = []
         self.MAX_WINDOW_SIZE = 16384  # Milvus default max query window
@@ -86,6 +93,23 @@ class MilvusToOpenGaussMigrator:
         except Exception as e:
             logger.error(f"Failed to load config: {e}")
             raise
+
+    def update_config(self):
+        """Update configuration from args"""
+        if len(sys.argv) == 3:
+            if not sys.argv[1].strip() or not sys.argv[2].strip():
+                logger.error("Error: Both Milvus collection name and openGauss table name must be provided")
+                sys.exit(1)
+            self.config.set('Table', 'milvus_collection_name', sys.argv[1].strip())
+            self.config.set('Table', 'opengauss_table_name', sys.argv[2].strip())
+
+        is_enable_stdin_password = os.getenv("enable.env.password", "").lower()
+        if is_enable_stdin_password == "true":
+            opengauss_password = os.getenv("openGauss.password", "").strip()
+            if not opengauss_password.strip():
+                logger.error("Error: openGauss password must be provided")
+                sys.exit(1)
+            self.config.set('openGauss', 'password', opengauss_password)
 
     def _get_csv_file_path(self) -> str:
         """Generate CSV file path with timestamp"""
@@ -141,31 +165,31 @@ class MilvusToOpenGaussMigrator:
         try:
             # Convert to {index:value} dict
             if dimension is None or dimension <=0:
-               dimension = self.MAX_SPARSE_DIMENSION
-            
+                dimension = self.MAX_SPARSE_DIMENSION
+
             sparse_dict = {}
-               
+
             if isinstance(sparse_data, dict):
-               sparse_dict = {
-                  int(k+1): float(v)
-                  for k, v in sparse_data.items()
-               }
+                sparse_dict = {
+                    int(k+1): float(v)
+                    for k, v in sparse_data.items()
+                }
             else:
-               raise ValueError(f"Unsupported format: {type(sparse_data)}")
-            
+                raise ValueError(f"Unsupported format: {type(sparse_data)}")
+
             if not sparse_dict:
-               return "{}/" + str(dimension)
-            
+                return "{}/" + str(dimension)
+
             try:
-               # Sort by index to ensure consistent output
-               
-               sorted_items = sorted(sparse_dict.items(), key=lambda x: x[0])
-               entries = ",".join(f"{k}:{v}" for k, v in sorted_items)
-               return "{" + entries + "}/" + str(dimension)
+                # Sort by index to ensure consistent output
+
+                sorted_items = sorted(sparse_dict.items(), key=lambda x: x[0])
+                entries = ",".join(f"{k}:{v}" for k, v in sorted_items)
+                return "{" + entries + "}/" + str(dimension)
             except Exception as sort_error:
-               logger.warning(f"Sorting failed, using unsorted vector: {sort_error}")
-               entries = ",".join(f"{k}:{v}" for k, v in sparse_dict.items())
-               return "{" + entries + "}/" + str(dimension)
+                logger.warning(f"Sorting failed, using unsorted vector: {sort_error}")
+                entries = ",".join(f"{k}:{v}" for k, v in sparse_dict.items())
+                return "{" + entries + "}/" + str(dimension)
 
         except Exception as e:
             logger.error(f"Sparse vector conversion failed: {e}")
@@ -199,9 +223,9 @@ class MilvusToOpenGaussMigrator:
             # Build CREATE TABLE statement
             columns = []
             for field in collection.schema.fields:
-               dim = field.dim if hasattr(field, 'dim') else None
-               pg_type = self._milvus_to_opengauss_type(field.dtype.name, dim)
-               columns.append(f"{field.name} {pg_type}")
+                dim = field.dim if hasattr(field, 'dim') else None
+                pg_type = self._milvus_to_opengauss_type(field.dtype.name, dim)
+                columns.append(f"{field.name} {pg_type}")
 
             # Add primary key if exists
             pk_fields = [f.name for f in collection.schema.fields if f.is_primary]
@@ -219,97 +243,120 @@ class MilvusToOpenGaussMigrator:
         finally:
             cursor.close()
 
-    def _query_milvus_data(self, collection: Collection, limit: int, offset: int) -> List[Dict]:
-        """Query data with sparse vector support"""
+    def _process_milvus_data(self, collection: Collection, batch_data: List[object]) -> List[Dict]:
+        """Process data with sparse vector support"""
+        if not batch_data:
+            return []
+
         try:
             # Get field metadata
-            field_meta = {f.name: {"type": f.dtype.name, "dim": getattr(f, 'dim', None)}
-                          for f in collection.schema.fields}
+            fields_meta = {}
+            for field in collection.schema.fields:
+                fields_meta[field.name] = {
+                    "type": field.dtype.name,
+                    "dim": getattr(field, 'dim', None)
+                }
 
-            # Adjust query window
-            if offset + limit > self.MAX_WINDOW_SIZE:
-                new_limit = self.MAX_WINDOW_SIZE - offset
-                if new_limit <= 0:
-                    return []
-                limit = new_limit
-                logger.warning(f"Adjusted limit to {limit}")
-
-            # Query data
-            results = collection.query(
-                expr="",
-                output_fields=self.fields,
-                limit=limit,
-                offset=offset
-            )
-
-            # Process results
+            # Process all_results
             processed = []
-            for row in results:
-                processed_row = {}
-                for field in self.fields:
-                    meta = field_meta[field]
-                    value = row.get(field)
-                    processed_row[field] = self._process_field_value(
-                        value, meta["type"], meta["dim"])
+            for row in batch_data:
+                processed_row = {
+                    field: self._process_field_value(
+                        row.get(field),
+                        fields_meta[field]["type"],
+                        fields_meta[field]["dim"]
+                    )
+                    for field in self.fields
+                }
                 processed.append(processed_row)
 
             return processed
         except Exception as e:
-            logger.error(f"Query failed: {e}")
+            logger.error(f"Process milvus data failed: {e}")
             raise
 
-    def _export_to_csv_chunked(self, collection: Collection) -> List[str]:
-        """Export data to CSV chunks"""
-        file_paths = []
-        total_rows = 0
-        offset = 0
+    def _write_to_csv_file(self, chunk_file: str, batch: List[object]):
+        """Export batch data to CSV file"""
+        if not batch:
+            return
 
         try:
-            # Flush and get row count
-            collection.flush()
-            total_count = collection.num_entities
-            logger.info(f"Total rows to export: {total_count}")
+            with open(chunk_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=self.fields)
+                writer.writeheader()
+                chunk_size = 1000
+                for i in range(0, len(batch), chunk_size):
+                    writer.writerows(batch[i:i + chunk_size])
+        except (IOError, csv.Error) as e:
+            logger.error(f"Failed to write CSV file {chunk_file}: {e}")
+            raise
 
-            while total_rows < total_count:
-                # Create chunk file
+    def _generate_chunk_filename(self, chunk_id: int) -> str:
+        """Generate chunk filename with consistent naming pattern"""
+        base_name, _ = os.path.splitext(self.csv_file_path)
+        return f"{base_name}_part{chunk_id}.csv"
+
+    def _cleanup_failed_export(self, file_paths: List[str]):
+        """Clean up partially created files on export failure"""
+        if not file_paths:
+            return
+
+        logger.warning(f"Cleaning up {len(file_paths)} partially created files")
+        for file_path in file_paths:
+            try:
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+            except OSError as e:
+                logger.warning(f"Failed to remove file {file_path}: {e}")
+
+    def _export_to_csv_chunked(self, collection: Collection) -> List[str]:
+        """Export data from Milvus collection to CSV chunks"""
+        collection.flush()
+        total_count = collection.num_entities
+        logger.info(f"Total rows to export: {total_count}")
+
+        if total_count == 0:
+            logger.warning("Collection is empty, no data to export")
+            return []
+
+        batch_size = 10000
+        iterator = collection.query_iterator(
+            expr="",
+            batch_size=batch_size,
+            output_fields=self.fields,
+            consistency_level="Strong"
+        )
+
+        file_paths = []
+        exported_rows = 0
+
+        try:
+            while True:
+                batch_results = iterator.next()
+                if not batch_results:
+                    break
+
                 chunk_id = len(file_paths) + 1
-                chunk_file = f"{os.path.splitext(self.csv_file_path)[0]}_part{chunk_id}.csv"
+                chunk_file = self._generate_chunk_filename(chunk_id)
                 file_paths.append(chunk_file)
 
-                with open(chunk_file, 'w', newline='') as f:
-                    writer = csv.DictWriter(f, fieldnames=self.fields)
-                    writer.writeheader()
+                processed_results = self._process_milvus_data(collection, batch_results)
+                self._write_to_csv_file(chunk_file, processed_results)
 
-                    chunk_rows = 0
-                    while chunk_rows < 100000:  # 100K rows per chunk
-                        batch = self._query_milvus_data(
-                            collection,
-                            limit=min(50000, 100000 - chunk_rows),
-                            offset=offset
-                        )
-                        if not batch:
-                            break
+                batch_len = len(batch_results)
+                exported_rows += batch_len
 
-                        writer.writerows(batch)
-                        chunk_rows += len(batch)
-                        total_rows += len(batch)
-                        offset += len(batch)
+                if exported_rows % (batch_size * 10) == 0:
+                    logger.info(f"Exported {exported_rows}/{total_count} rows")
 
-                        if total_rows % 10000 == 0:
-                            logger.info(f"Exported {total_rows}/{total_count} rows")
-
-                logger.info(f"Created chunk {chunk_id}: {chunk_rows} rows")
-
+                logger.info(f"Created chunk {chunk_id}, chunk size: {batch_len} rows")
             return file_paths
         except Exception as e:
-            # Cleanup failed export
-            for f in file_paths:
-                try:
-                    os.remove(f)
-                except:
-                    pass
+            self._cleanup_failed_export(file_paths)
             logger.error(f"Export failed: {e}")
             raise
+        finally:
+            iterator.close()
 
     def _import_to_opengauss(self, conn: psycopg2.extensions.connection, file_paths: List[str]) -> None:
         """Import CSV data to openGauss"""
@@ -317,17 +364,20 @@ class MilvusToOpenGaussMigrator:
         cursor = conn.cursor()
 
         try:
+            cursor.execute("SET client_encoding TO 'UTF8';")
+            conn.commit()
+
             # Prepare for bulk import
             cursor.execute(f"TRUNCATE TABLE {table_name};")
             conn.commit()
 
             total_rows = 0
             for i, csv_file in enumerate(file_paths, 1):
-                with open(csv_file, 'r') as f:
+                with open(csv_file, 'rb') as f:
                     # Use COPY for bulk load
                     copy_sql = f"""
                     COPY {table_name} ({', '.join(self.fields)})
-                    FROM STDIN WITH (FORMAT CSV, HEADER, NULL 'NULL');
+                    FROM STDIN WITH (FORMAT CSV, HEADER, NULL 'NULL', ENCODING 'UTF8');
                     """
                     cursor.copy_expert(copy_sql, f)
                     conn.commit()
@@ -408,7 +458,8 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Migration failed: {e}")
         exit(1)
-
+    finally:
+        logger.info("Migration end.")
 ```
 
 2. 将迁移脚本、配置文件放置在同一目录下，层级如下：
@@ -426,7 +477,7 @@ python3 milvus2datavec.py
     
     4.1 进入容器：
     ```
-    $ docker exec -it <CONTAINER ID> bash
+    $ docker exec -it CONTAINER_ID bash
     ```
     
     4.2 登录`omm`超级用户：

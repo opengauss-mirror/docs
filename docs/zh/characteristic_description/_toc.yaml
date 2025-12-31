@@ -255,6 +255,8 @@ sections:
         href: ./workload_tool.md
       - label: SQL语法审计工具libog_query
         href: ./sql_syntax_audit_tool_libog_query.md
+      - label: Elasticsearch和Milvus迁移工具对接DataKit
+        href: ./datakit_support_elasticsearch_milvus_migration.md
   - label: 中间件
     sections:
       - label: 分布式数据库能力

@@ -4,9 +4,11 @@ sections:
   - label: 概述
     href: ./datakit.md
   - label: MySQL数据迁移
-    href: ./datakit_workload_replay.md
+    href: ./datakit_data_migration.md
   - label: PostgreSQL数据迁移
-    href: ./datakit_postgresql_migration.md       
+    href: ./datakit_postgresql_migration.md
+  - label: Elasticsearch和Milvus数据迁移
+    href: ./datakit_elasticsearch_milvus_migration.md
   - label: 录制回放
     href: ./datakit_workload_replay.md
   - label: 实例监控
