@@ -140,7 +140,7 @@
 
 **参数说明**： 选择精排的候选池范围，一般值越高，qps越低，但召回率越高。
 
-该参数仅支持[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
+该参数支持[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中方法一、二、三进行设置。
 
 **取值范围**： 浮点型，默认5，范围[1-20,0000,0000]
 
@@ -150,7 +150,7 @@
 
 **参数说明**：设置是否对查询向量进行额外的标量量化，适当设置可以提升召回率。
 
-该参数仅支持[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
+该参数仅支持[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应方法三进行设置。
 
 **取值范围**： 整型，默认为8，范围[1-8]
 
@@ -160,7 +160,7 @@
 
 **参数说明**：如果是先构建索引再插入数据的场景，可以通过该参数设置触发延迟索引的数据行数。由于rabitq算法构建索引时需要一定的数据进行训练，如果无数据创建索引会影响向量查询召回率，可以通过该参数调整延迟索引的阈值条件。如果是先插入数据再构建索引则无需设置。
 
-该参数仅支持[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应方法三进行设置。
+该参数仅支持[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t290c8f15953843db8d8e53d867cd893d)中对应方法三进行设置。
 
 **取值范围**： 整型，默认1000，范围[1000-20,0000,0000]
 
