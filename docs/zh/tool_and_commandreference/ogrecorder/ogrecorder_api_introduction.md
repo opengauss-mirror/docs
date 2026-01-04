@@ -454,3 +454,4 @@ typedef struct st_gr_param {
 - 在 `gr_file_truncate` 中，当前版本固定为 `0`.
 
 ---
+

@@ -1,4 +1,4 @@
-# oGRecorder支持主备参数同步
+# oGRecorder 主备参数同步
 
 ## 特性描述<a name="section16406154310471"></a>
 
