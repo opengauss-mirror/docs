@@ -20,11 +20,12 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 
 ## 特性增强<a name="section23349265924"></a>
 
-无。
+- 7.0.0-RC2版本中添加视图支持，开启自动参数化的情况下，被参数化语句可以通过视图函数`query_parameterization_views()`查询。
+- 7.0.0-RC3版本中添加GPC(Global Plan Cache全局计划缓存)支持，开启GPC后使用参数化功能的情况下，被参数化的语句也会被缓存到GPC(执行计划使用Generic Plan的情形下)。可以通过视图`DBE_PERF.GLOBAL_PLANCACHE_STATUS`查询。
 
 ## 特性约束<a name="section51513617598"></a>
 
-- 仅支持IUD(Insert, Update, Delete)三类DML。
+- 仅支持Insert, Update, Delete(DML)以及含有WHERE的SELECT(DQL)。
 - 仅支持Simple Query Protocol， 不支持Extended Query Protocol。
 - SQL语句的长度必须小于等于512。
 - 不支持RETURNING关键词。
@@ -43,7 +44,11 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 - 不支持USING关键词。
 - 不支持ON DUPLICATE KEY UPDATE语法。
 - 不支持PARTITION关键词。
-- 最大可存储缓存计划为512。
+- 不支持包含数组(Array)的语句。
+- 不支持包含隐式类型转换的语句。
+- 当enable_ignore_case_in_quotes = on时，参数化不生效。
+- 当td_compatible_truncation = on时，参数化不生效。
+- 操作分区表，临时表，系统表，压缩表，视图，无日志表的语句不会被参数化。
 
 ## 依赖关系<a name="section20491151513600"></a>
 
@@ -57,10 +62,4 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 
 ```
 SET ENABLE_QUERY_PARAMETERIZATION=ON;
-```
-
-- **设置最大可缓存的执行计划数量**
-
-```
-SET MAX_PARAMETERIZED_QUERY_STORED=512;
 ```
