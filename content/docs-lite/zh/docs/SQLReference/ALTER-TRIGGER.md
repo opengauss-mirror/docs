@@ -2,20 +2,29 @@
 
 ## 功能描述<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_sb9efc89be09141c3b113326dd8c2b35d"></a>
 
-修改触发器名称及单个触发器的启用/禁用。
+修改触发器名称、所有者及单个触发器的启用/禁用。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->目前只支持修改名称及单个触发器的启用/禁用。
+>
+>目前只支持修改名称、所有者及单个触发器的启用/禁用。
 
 ## 注意事项<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>
 
-触发器所在表的所有者或者被授予了ALTER ANY SEQUENCE权限的用户可以执行ALTER TRIGGER操作，系统管理员默认拥有此权限。
+- 触发器所在表的所有者或者被授予了ALTER ANY TRIGGER权限的用户可以执行ALTER TRIGGER操作，系统管理员默认拥有此权限。
+- 若要修改触发器owner，当前用户必须是该触发器的所有者或者系统管理员，且当前用户必须是新owner所属角色的直接或者间接成员。新owner必须有触发器所在模式上的CREATE权限。`enableSeparationOfDuty = off`时，系统管理员默认拥有该权限。`enableSeparationOfDuty = on`时，系统管理员默认没有该权限。
+- 只有初始用户才能修改触发器的owner为初始用户。
 
 ## 语法格式<a name="zh-cn_topic_0283137014_zh-cn_topic_0237122081_zh-cn_topic_0059777936_sf623225ad89841f9a333d738aa22a6ed"></a>
 
 -   修改触发器名称。
 ```
 ALTER TRIGGER trigger_name ON table_name RENAME TO new_name;
+```
+
+- 修改触发器owner
+
+```
+ALTER TRIGGER trigger_name ON table_name OWNER TO new_owner;
 ```
 
 -   启用/禁用单个触发器。
@@ -42,6 +51,12 @@ ALTER TRIGGER trigger_name ENABLE|DISABLE;
     修改后的新名称。
 
     取值范围：符合标识符命名规范的字符串，最大长度不超过63个字符，且不能与所在表上其他触发器同名。
+
+- **new\_owner**
+
+    修改后的触发器新owner名称。
+
+    取值范围：数据库中存在的用户。
 
 -   **ENABLE|DISABLE**
 
