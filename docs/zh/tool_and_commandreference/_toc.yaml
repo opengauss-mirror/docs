@@ -155,21 +155,21 @@ sections:
         href: ./cm_error_log_information_reference.md
   - label: 数据保险柜
     sections:
-      - label: 概述
-        href: ./ogrecorder/black_box.md
-      - label: 数据保险柜API介绍
-        href: ./ogrecorder/black_box_api_instroduction.md
-      - label: 数据保险柜错误日志信息参考
-        href: ./ogrecorder/black_box_error_log_information_reference.md
-      - label: 数据保险柜配置参数介绍
-        href: ./ogrecorder/black_box_configuration_parameters_introducation.md
-      - label: 数据保险柜双向认证介绍
-        href: ./ogrecorder/black_box_two_way_authentication_introducation.md
-      - label: 数据保险柜部署介绍
-        href: ./ogrecorder/black_box_deployment_introduction.md
-      - label: 数据保险柜支持主备参数同步介绍
-        href: ./ogrecorder/black_box_support_for_primary_and_standby_parameter_synchronization.md
-      - label: grcmd工具使用说明
+      - label: oGRecorder 概述
+        href: ./ogrecorder/ogrecorder_overview.md
+      - label: oGRecorder SDK API 介绍
+        href: ./ogrecorder/ogrecorder_api_introduction.md
+      - label: oGRecorder 错误日志信息参考
+        href: ./ogrecorder/ogrecorder_error_log_reference.md
+      - label: oGRecorder 配置参数介绍
+        href: ./ogrecorder/ogrecorder_configuration_parameters.md
+      - label: oGRecorder 双向认证介绍
+        href: ./ogrecorder/ogrecorder_two_way_authentication.md
+      - label: oGRecorder 部署与运维指南
+        href: ./ogrecorder/ogrecorder_deployment_guide.md
+      - label: oGRecorder 主备参数同步介绍
+        href: ./ogrecorder/ogrecorder_primary_standby_sync.md
+      - label: grcmd 工具使用说明
         href: ./ogrecorder/grcmd.md    
   - label: openGauss可运行脚本功能说明
     href: ./functions_of_opengauss_executable_scripts.md
