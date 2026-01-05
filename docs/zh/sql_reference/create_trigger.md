@@ -389,6 +389,9 @@ openGauss=# SELECT * FROM test_trigger_des_tbl;  //查看触发操作是否生�
 --修改触发器
 openGauss=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl RENAME TO delete_trigger_renamed;
 
+--修改触发器owner为jack（需保证jack为数据库中已创建的用户）。
+openGauss=# ALTER TRIGGER delete_trigger ON test_trigger_src_tbl OWNER TO jack;
+
 --ALTER TRIGGER 方式禁用insert_trigger触发器
 openGauss=# ALTER TRIGGER insert_trigger DISABLE;
 
