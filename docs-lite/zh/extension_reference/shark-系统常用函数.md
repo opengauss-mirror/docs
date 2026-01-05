@@ -1118,6 +1118,8 @@
 
     返回值类型：bigint
 
+    说明：patindex基于substring函数进行模式匹配，因此pattern支持的范围与substring一致。
+
     示例：
     
     ```sql
