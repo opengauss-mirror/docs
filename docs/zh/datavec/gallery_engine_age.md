@@ -10,7 +10,7 @@ Apache AGE在数据库内核的查询解析，查询重写，查询计划，查�
 
 <a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/doc_img_AGE-think.png" style>
+    <img src="figures/doc_img_AGE-think.png">
 </div>
 
 openGauss数据库使用插件的方式支持图数据库引擎，在openGauss数据库中可直接采用创建插件的方式使用Apache AGE的能力。

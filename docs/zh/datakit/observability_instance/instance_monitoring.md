@@ -503,7 +503,7 @@ WDR是一个监控openGauss数据库特性的衍生品，通过分析时间范�
 
 3. 由于平台限制了上传文件大小，可能导致安装包上传失败，需要修改平台配置。
 
-   <img src="figures/image-20230331163722608.png" alt="image-20230331163722608" width=50%>
+   <img src="figures/image-20230331163722608.png" alt="image-20230331163722608">
 
     解决方案：修改平台配置文件/ops/server/openGauss-visualtool/config/application-cus.yml中对上传文件的大小限制大于安装包大小，然后重启平台。
 

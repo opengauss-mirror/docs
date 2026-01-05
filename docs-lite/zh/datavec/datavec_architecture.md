@@ -41,7 +41,7 @@ openGauss DataVec 深度结合鲲鹏硬件，通过量化压缩算法、Rerank�
 
 **图 2**  PQ码本训练<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQTrain-datavec.png" style>
+    <img src="figures/PQTrain-datavec.png">
 </div>
 
 #### PQ检索
@@ -50,7 +50,7 @@ openGauss DataVec 深度结合鲲鹏硬件，通过量化压缩算法、Rerank�
 
 **图 3**  PQ检索<a name="zh-cn_topic_0243295241_zh-cn_topic_0243253012_fig1128133574113"></a>
 <div style="display:flex;justfy-content:center;">  
-    <img src="figures/PQSearch-datavec.png" style>
+    <img src="figures/PQSearch-datavec.png">
 </div>
 
 ### 分层导航+PQ融合索引
