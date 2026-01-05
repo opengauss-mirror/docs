@@ -27,7 +27,7 @@
 
 **图 2**  Claude Desktop配置页面
 <div style="display:flex;justfy-content:center;">
-    <img src="figures/Claude.png" style>
+    <img src="figures/Claude.png">
 </div>
 
 - 通过Edit Config增加配置

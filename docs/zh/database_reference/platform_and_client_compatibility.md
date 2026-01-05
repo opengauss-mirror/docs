@@ -813,7 +813,7 @@ end;
 ERROR:  The record type variable cannot be used as an insertion value.
 CONTEXT:  SQL statement "insert into t2 values(source)"
 PL/pgSQL function inline_code_block line 7 at SQL statement
-
+<br>
 set behavior_compat_options='';
 insert into t1 values('one','two');
 declare
