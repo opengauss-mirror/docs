@@ -1780,8 +1780,8 @@ pg_prepared_statement()
 
   ```sql
   openGauss=# select * from query_parameterization_views();
-  reloid | query_type | is_bypass | param_types | param_nums | parameterized_query 
-  --------+------------+-----------+-------------+------------+---------------------
+  databaseid | query_type | is_bypass | param_types | param_nums | parameterized_query 
+  ------------+------------+-----------+-------------+------------+---------------------
   (0 rows)
   ```
 
@@ -1789,7 +1789,7 @@ pg_prepared_statement()
 
   |       序号      |       返回字段      |       类型      |       描述                              |
   | -------------- | ------------------  | -------------- | -------------------------------------- |
-  | 1              | reloid              | oid            | 参数化SQL所属的表oid                     |
+  | 1              | databaseid          | oid            | 参数化SQL所属的数据库oid                 |
   | 2              | query_type          | name           | 参数化SQL的语句类型                      |
   | 3              | is_bypass           | bool           | 是否使用了SQL-BYPASS功能                 |
   | 4              | param_types         | int2vector     | 被参数化的数值的类型                     |
