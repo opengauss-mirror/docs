@@ -26,6 +26,7 @@ grcmd [command] [OPTIONS]
 | switchover   | 主备切换                   |
 | reload_certs | 重新加载证书               |
 | gencert      | 生成客户端/服务端证书      |
+| reload       | 手动触发参数同步（仅主节点允许使用）      |
 | datausage    | 查询数据空间使用情况       |
 
 ## 命令详解
@@ -116,7 +117,14 @@ grcmd gencert -t <ca|client|server> [-d <days>]
 > 手动通过grcmd命令生成证书时，需要先修改配置文件中SER_SSL_KEY、CLI_SSL_KEY等证书相关配置，指定一个空目录。
 > 通过该命令生成的证书，会自动把私钥进行加密。
 
-### 10. datausage
+### 10. reload
+
+触发参数同步（仅主节点允许使用），手动修改完主机配置文件后建议执行。
+
+```sh
+grcmd reload
+```
+### 11. datausage
 
 查询数据空间使用情况。
 
