@@ -326,6 +326,13 @@
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136755_p15491232135111"><a name="en-us_topic_0283136755_p15491232135111"></a><a name="en-us_topic_0283136755_p15491232135111"></a>The maximum size is 1 GB minus 1 byte. However, the size of the column description header and the size of the tuple (less than 1 GB minus 1 byte) where the column is located must also be considered. Therefore, the maximum size of the CLOB type may be less than 1 GB minus 1 byte.</p>
 </td>
 </tr>
+<tr id="en-us_topic_0292138156_row3614101912518"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0292138156_p62231821104126"><a name="en-us_topic_0292138156_p62231821104126"></a><a name="en-us_topic_0292138156_p62231821104126"></a>LONG</p>
+</td>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0292138156_p5275132610513"><a name="en-us_topic_0292138156_p5275132610513"></a><a name="en-us_topic_0292138156_p5275132610513"></a>Big text object. It is the alias of the CLOB type.</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0292138156_p15491232135111"><a name="en-us_topic_0292138156_p15491232135111"></a><a name="en-us_topic_0292138156_p15491232135111"></a>Unlike other databases, it is completely mapped to CLOB, the maximum size is 1 GB minus 1 byte. However, the size of the column description header and the size of the tuple (less than 1 GB minus 1 byte) where the column is located must also be considered. Therefore, the maximum size of the LONG type may be less than 1 GB minus 1 byte. Multiple columns in a table can be LONG.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -385,6 +392,15 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>Its maximum length is 1073733621 bytes (1 GB – 8203 bytes).</p>
+</td>
+</tr>
+<tr id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_rf63072d5d612426f9aab20483b0b4838"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_uba16e21a7ee020d6a3a621b659d6375q"><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_uba16e21a7ee020d6a3a621b659d6375q"></a><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_uba16e21a7ee020d6a3a621b659d6375q"></a>LONG RAW</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"></a><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a9b4f9237bae74fc4bdeffa9152281ae6"></a>It is the alias of BLOB.</p>
+<div class="note" id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_n331c1fd27d094cf7a90c6ee4a2e283dd"></a><span class="notetitle"> NOTE: </span><div class="notebody"><p id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_ac93b21c3a42641ddba19a9e66a229d43"></a>Column storage cannot be used for the LONG RAW type.</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="en-us_topic_0363125712_en-us_topic_0265131752_en-us_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>Unlike other databases, it is completely mapped to BLOB, its maximum length is 1073733621 bytes (1 GB – 8203 bytes). Multiple columns in a table can be LONG RAW.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_rc75b9f1550a84c8d9f3808f11077c5eb"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a><a name="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a>RAW</p>

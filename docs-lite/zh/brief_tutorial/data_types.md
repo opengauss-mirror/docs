@@ -327,6 +327,13 @@ openGauss支持的字符类型请参见[表6](#zh-cn_topic_0283136755_zh-cn_topi
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136755_p15491232135111"><a name="zh-cn_topic_0283136755_p15491232135111"></a><a name="zh-cn_topic_0283136755_p15491232135111"></a>最大为1GB-1，但还需要考虑到列描述头信息的大小， 以及列所在元组的大小限制（也小于1GB-1），因此CLOB类型最大大小可能小于1GB-1。</p>
 </td>
 </tr>
+<tr id="zh-cn_topic_0292138156_row3614101912518"><td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0292138156_p62231821104126"><a name="zh-cn_topic_0292138156_p62231821104126"></a><a name="zh-cn_topic_0292138156_p62231821104126"></a>LONG</p>
+</td>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0292138156_p5275132610513"><a name="zh-cn_topic_0292138156_p5275132610513"></a><a name="zh-cn_topic_0292138156_p5275132610513"></a>文本大对象。是CLOB类型的别名。</p>
+</td>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0292138156_p15491232135111"><a name="zh-cn_topic_0292138156_p15491232135111"></a><a name="zh-cn_topic_0292138156_p15491232135111"></a>与其他数据库不同，它完全被映射为CLOB，所以最大为1GB-1，但还需要考虑到列描述头信息的大小， 以及列所在元组的大小限制（也小于1GB-1），因此LONG类型最大大小可能小于1GB-1。在一张表中可以有多列为LONG。</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -387,6 +394,15 @@ openGauss支持的二进制类型请参见[表8](#zh-cn_topic_0283136911_zh-cn_t
 </div></div>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a100f9d2f6d1c41188650fa08724b0a27"></a>最大为1GB-8203字节（即1073733621字节）。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_rc75b9f1550a84c8d9f3808f11077c5eb"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a>LONG RAW</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.18%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a725886qa90f61e9293194ca825q0383c"><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a725886qa90f61e9293194ca825q0383c"></a><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a725886qa90f61e9293194ca825q0383c"></a>二进制大对象</p>
+<div class="note" id="zh-cn_topic_028213792_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n7545c58ce78742a284856923ue2123b9"><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n7545c58ce78742a284856923ue2123b9"></a><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_n7545c58ce78742a284856923ue2123b9"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aa56c6af1e5e14f5392f15a4e9911f601"><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aa56c6af1e5e14f5392f15a4e9911f601"></a><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aa56c6af1e5e14f5392f15a4e9911f601"></a>BLOB的别名</p>
+</div></div>
+</td>
+<td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aff8ea58e93444332bace62ac9fc672b7"><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aff8ea58e93444332bace62ac9fc672b7"></a><a name="zh-cn_topic_0282137932_zh-cn_topic_0237121951_zh-cn_topic_0059778141_aff8ea58e93444332bace62ac9fc672b7"></a>与其他数据库不同，它完全被映射为BLOB，所以最大为1GB-8203字节（即1073733621字节），在一张表中可以有多列为LONG RAW。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_rc75b9f1550a84c8d9f3808f11077c5eb"><td class="cellrowborder" valign="top" width="16.82%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a><a name="zh-cn_topic_0283136911_zh-cn_topic_0237121951_zh-cn_topic_0059778141_a1e1de28da3144be08f1ac294cec4ddfa"></a>RAW</p>
