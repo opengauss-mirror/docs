@@ -523,6 +523,8 @@ sections:
             href: ./PG_INDEXES.md
           - label: PG_LOCKS
             href: ./PG_LOCKS.md
+          - label: PG_MATVIEWS
+            href: ./PG_MATVIEWS.md
           - label: PG_NODE_ENV
             href: ./PG_NODE_ENV.md
           - label: PG_PREPARED_STATEMENTS
