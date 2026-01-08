@@ -53,6 +53,8 @@ sections:
         href: ./cm.md
       - label: 支持Global SysCache
         href: ./global_syscache.md
+      - label: 支持Global PlanCache
+        href: ./global_plancache.md
       - label: 异步备升主数据找回能力
         href: ./asynchronous_backup_and_recovery_capability_for_master_data.md
       - label: SQL防火墙能力

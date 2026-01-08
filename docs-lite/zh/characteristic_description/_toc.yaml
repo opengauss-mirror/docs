@@ -51,6 +51,8 @@ sections:
         href: ./parallel_logical_decoding.md
       - label: 支持Global SysCache
         href: ./global_syscache.md
+      - label: 支持Global PlanCache
+        href: ./global_plancache.md
       - label: 主备高可用能力增强
         href: ./enhanced_active_and_standby_ha.md
       - label: 表级别并行恢复优化
