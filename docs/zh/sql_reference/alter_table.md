@@ -238,8 +238,8 @@
 其中列相关的操作column\_clause可以是以下子句之一：
 
 ```
-ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
-| ADD column_name data_type [ compress_mode ] [, ...]
+ADD [ COLUMN ] [ IF NOT EXISTS ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ] [ FIRST | AFTER column_name ]     
+| ADD [ IF NOT EXISTS ] column_name data_type [ compress_mode ] [, ...]
 | MODIFY column_name data_type
 | MODIFY column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ]
 | MODIFY column_name [ CONSTRAINT constraint_name ] NULL
@@ -257,11 +257,11 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
 ```
 
-> + **ADD \[ COLUMN \] column\_name data\_type [ CHARACTER SET | CHARSET [ = ] charset ] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
+> + **ADD \[ COLUMN \] \[ IF NOT EXISTS \] column\_name data\_type [ CHARACTER SET | CHARSET [ = ] charset ] \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \]   \[ FIRST | AFTER column\_name\]**
 >
->   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。
+>   向表中增加一个新的字段。用ADD COLUMN增加一个字段，所有表中现有行都初始化为该字段的缺省值（如果没有声明DEFAULT子句，值为NULL）。其中FIRST | AFTER column\_name表示新增字段到某个位置。如果指定了IF NOT EXISTS子句，新增字段与表中已有字段重复时将不会抛出错误。
 >
-> + **ADD \( \{ column\_name data\_type \[ compress\_mode \]  \} \[, ...\] \)**
+> + **ADD \( \{ \[ IF NOT EXISTS \] column\_name data\_type \[ compress\_mode \]  \} \[, ...\] \)**
 >
 >   向表中增加多列。
 >
@@ -455,7 +455,7 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name
-        ADD ( { column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]} [, ...] );
+        ADD ( [ IF NOT EXISTS ] { column_name data_type [ compress_mode ] [ COLLATE collation ] [ column_constraint [ ... ] ]} [, ...] );
     ```
 
 - 更新多个列。
@@ -568,6 +568,10 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
 - **new\_tablespace**
 
     表所属新的表空间名称。
+
+- **IF NOT EXISTS**
+
+    如果指定了IF NOT EXISTS子句，新增字段与表中已有字段重复时将不会抛出错误。
 
 - **column\_name**、**column\_1\_name、 column\_2\_name**
 
