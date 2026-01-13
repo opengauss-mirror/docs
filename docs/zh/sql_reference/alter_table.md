@@ -28,7 +28,7 @@
 - 修改表的定义。
 
   ```
-  ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
+  ALTER TABLE [CONCURRENTLY] [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
       action [, ... ];
   ```
 
@@ -480,6 +480,10 @@ ADD [ COLUMN ] column_name data_type [ CHARACTER SET | CHARSET [ = ] charset ] [
     ```
 
 ## 参数说明<a name="zh-cn_topic_0283137126_zh-cn_topic_0237122076_zh-cn_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
+
+- **CONCURRENTLY**
+
+    使用在线DDL模式执行ALTER操作，只支持传统主备场景Astore、段页式的普通表、分区表进行修改列数据类型、修改行存压缩属性、添加列的约束（非空约束、范围约束）。
 
 - **IF EXISTS**
 
