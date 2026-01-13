@@ -85,6 +85,8 @@ sections:
             href: ./creating_and_managing_views.md
           - label: 创建和管理序列
             href: ./creating_and_managing_sequences.md
+          - label: 在线DDL特性说明
+            href: ./online_ddl.md
       - label: 内存优化表MOT管理
         sections:
           - label: MOT简介

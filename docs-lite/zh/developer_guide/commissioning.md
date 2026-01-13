@@ -97,8 +97,20 @@
 <td class="cellrowborder" valign="top" width="27.42%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"></a><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"></a><ul id="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"><li>on：记录主机名。</li><li>off：不记录主机名。</li></ul>
 <p id="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"></a><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"></a>默认值：off。</p>
 </td>
+
 <td class="cellrowborder" valign="top" width="27.57%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0283136686_zh-cn_topic_0237120444_p0937781562"><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_p0937781562"></a><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_p0937781562"></a>缺省时，连接日志只记录所连接主机的IP地址。打开这个选项会同时记录主机名。</p>
 <p id="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ad4dde24efab64f52a5c81be88a40249b"><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ad4dde24efab64f52a5c81be88a40249b"></a><a name="zh-cn_topic_0283136686_zh-cn_topic_0237120444_zh-cn_topic_0059779333_ad4dde24efab64f52a5c81be88a40249b"></a>该参数同时影响 <a href="../database_administration_guide/querying_audit_results.md">查看审计结果</a>、<a href="../database_reference/GS_SESSION_MEMORY_DETAIL.md">GS_SESSION_MEMORY_DETAIL</a>、<a href="../database_reference/PG_STAT_ACTIVITY.md">PG_STAT_ACTIVITY</a>和<a href="../database_reference/record_logs_content.md#zh-cn_topic_0283136613_zh-cn_topic_0237124723_zh-cn_topic_0059778400_sd57ce2167a8149239e10ab0cef12b949">log_line_prefix</a>参数。</p>
+</td>
+</tr>
+<tr id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_r9ce44b2e2b3049bf801da83986951acf"><td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a8b67d77392a84167a092c2e4af28d591"><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a8b67d77392a84167a092c2e4af28d591"></a><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a8b67d77392a84167a092c2e4af28d591"></a>log_online_ddl_level</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.57%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ae6d967c1b52c4051a930207f64760112"><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ae6d967c1b52c4051a930207f64760112"></a><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ae6d967c1b52c4051a930207f64760112"></a>配置在线DDL相关调试日志的日志级别。</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.42%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"></a><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"></a><ul id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ub69c0b20c1a44813a1543d3c7bf151f4"><li>0: 流程相关的必要日志NOTICE级别，tuple相关调试日志DEBUG级别</li><li>1：tuple相关调试日志LOG级别。</li><li>2: tuple相关调试日志NOTICE级别</li></ul>
+<p id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"></a><a name="zh-cn_topic_0237120444_zh-cn_topic_0059779333_a3187ffbe9cd44ecfaee02b81838b68b7"></a>默认值：0。</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.57%" headers="mcps1.2.5.1.4 ">
+<p id="zh-cn_topic_0237120444_zh-cn_topic_0059779333_ad4dde24efab64f52a5c81be88a40249b">SIGHUP级别</p>
 </td>
 </tr>
 </tbody>
