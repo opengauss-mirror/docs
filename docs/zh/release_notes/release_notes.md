@@ -174,7 +174,7 @@ openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生�
 
 - 企业级特性：支持通过视图查询当前会话拥有的自动参数化计划信息
 
-  - 新增query_parameterization_views视图查询自动化参数信息。[query_parameterization_views](../sql_reference/other_functions.md)
+  - 新增query_parameterization_views视图函数查询自动化参数信息。[query_parameterization_views](../sql_reference/other_functions.md)
 
 - 企业级特性：Ubtree索引支持undo管理，支持PCR
 

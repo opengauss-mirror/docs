@@ -44,8 +44,10 @@ openGauss的自动参数化功能是在需要反复执行相似/相同的SQL简�
 - 不支持USING关键词。
 - 不支持ON DUPLICATE KEY UPDATE语法。
 - 不支持PARTITION关键词。
+- 不支持JOIN关键词。
 - 不支持包含数组(Array)的语句。
 - 不支持包含隐式类型转换的语句。
+- 只支持单表查询/插入/更新。
 - 当enable_ignore_case_in_quotes = on时，参数化不生效。
 - 当td_compatible_truncation = on时，参数化不生效。
 - 操作分区表，临时表，系统表，压缩表，视图，无日志表的语句不会被参数化。
