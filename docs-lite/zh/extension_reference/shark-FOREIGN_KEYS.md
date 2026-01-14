@@ -131,7 +131,7 @@
             </td>
         </tr>
         <tr>
-            <td>delete_referential_action_desc</td>
+            <td>update_referential_action_desc</td>
             <td>nvarchar(60)</td>
             <td>执行更新时为此外键约束声明的引用操作的说明，取值如下：<br/>
             NO_ACTION<br/>

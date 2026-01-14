@@ -125,7 +125,7 @@
         <tr>
             <td>hostprocess</td>
             <td>nchar(10)</td>
-            <td>客户端进程id</td>
+            <td>客户端进程id，取值恒为NULL</td>
         </tr>
         <tr>
             <td>cmd</td>

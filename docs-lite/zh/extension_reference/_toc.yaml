@@ -451,8 +451,8 @@ sections:
             href: ./shark-TRIGGERS.md
           - label: TRIGGERS_EVENTS
             href: ./shark-TRIGGERS_EVENTS.md
-          - label: CONFIGURETIONS
-            href: ./shark-CONFIGURETIONS.md
+          - label: CONFIGURATIONS
+            href: ./shark-CONFIGURATIONS.md
           - label: SYSCURCONFIGS
             href: ./shark-SYSCURCONFIGS.md
           - label: SYSCONFIGURES
