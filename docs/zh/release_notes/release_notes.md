@@ -155,7 +155,7 @@ openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生�
 
 - 高安全：提供数据保险柜功能
 
-  - GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景是运行于virtCCA中，南向对接Dorado Worm存储，北向通过oGRecorderSDK对接数据库，实现对数据库WAL日志的实时同步，形成对用户数据库系统的日志安全保护的软硬一体组合方案。[数据保险柜](../tool_and_commandreference/ogrecorder/black_box.md)
+  - GR（oGRecorder）是一款数据库日志保护软件。其典型部署场景是运行于virtCCA中，南向对接Dorado Worm存储，北向通过oGRecorderSDK对接数据库，实现对数据库WAL日志的实时同步，形成对用户数据库系统的日志安全保护的软硬一体组合方案。[数据保险柜](../tool_and_commandreference/ogrecorder/ogrecorder_overview.md)
 
 
 
@@ -190,7 +190,7 @@ openGauss 7.0.0-RC2是openGauss 2025年9月发布的创新版本，该版本生�
 
 - 企业级特性：内核全链路跟踪
 
-  - 追踪用户 SQL 请求在数据库全链路过程中，在不同阶段执行的相关信息，并以树状结构展现给用户，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。[内核全链路跟踪](../about_opengauss/内核全链路跟踪.md)
+  - 追踪用户 SQL 请求在数据库全链路过程中，在不同阶段执行的相关信息，并以树状结构展现给用户，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。[全链路跟踪](../characteristic_description/full_link_tracking.md)
 
 - 企业级特性：内核监控告警
 
