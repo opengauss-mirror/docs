@@ -45,23 +45,56 @@ LINE 1: create table testhint(nowait int);
 
 -   enable_abs：是否允许@作为取绝对值操作符使用。opengauss支持在D库下以@object方式声明变量，开启后@为取绝对值操作符。
 ```
-opengauss=# create table test(@a int, b int);
+openGauss=# create table test(@a int, b int);
 CREATE TABLE
-opengauss=# insert into test values (-1,-2);
+openGauss=# insert into test values (-1,-2);
 INSERT 0 1
-opengauss=# select @a from test;
+openGauss=# select @a from test;
  @a
 ----
  -1
 (1 row)
 
-opengauss=# set d_format_behavior_compat_options = 'enable_abs';
+openGauss=# set d_format_behavior_compat_options = 'enable_abs';
 SET
-opengauss=# select @b as abs_b from test;
+openGauss=# select @b as abs_b from test;
  abs_b
 -------
      2
 (1 row)
+```
+
+-   default_collation：默认字符序开关。不设置此配置时，在未显式指定字符类型字段的字符集或字符序且表级字符序也为空时，字段为default字符序；设置此配置时，字符类型字段的字符序当表级字符序不为空时继承表级字符序，为空时设置为数据库编码对应的默认字符序。
+```
+openGauss=# SET d_format_behavior_compat_options = '';
+SET
+openGauss=# CREATE TABLE t1 (name varchar(50));
+CREATE TABLE
+openGauss=# \d+ t1
+                                 Table "public.t1"
+ Column |         Type          | Modifiers | Storage  | Stats target | Description 
+--------+-----------------------+-----------+----------+--------------+-------------
+ name   | character varying(50) |           | extended |              | 
+Has OIDs: no
+Options: orientation=row, compression=no
+
+openGauss=# SET d_format_behavior_compat_options = 'default_collation';
+SET
+openGauss=# CREATE TABLE t2 (name varchar(50));
+CREATE TABLE
+openGauss=# \d+ t2
+                                                   Table "public.t2"
+ Column |         Type          |                   Modifiers                   | Storage  |
+ Stats target | Description 
+--------+-----------------------+-----------------------------------------------+----------+
+--------------+-------------
+ name   | character varying(50) | character set UTF8 collate utf8mb4_general_ci | extended |
+              | 
+Has OIDs: no
+Options: orientation=row, compression=no, collate=1537
+Character Set: UTF8
+Collate: utf8mb4_general_ci
+
 ```
 
 ## ANSI_NULLS<a name="section203671436823"></a>
