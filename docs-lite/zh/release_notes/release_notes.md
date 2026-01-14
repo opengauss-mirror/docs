@@ -200,7 +200,7 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 - 高可用：数据读取出现坏块，支持从其他节点进行修复
 
-  - 在数据库运行过程中，会因为某些磁盘问题（例如数据意外覆盖）等问题，导致磁盘数据损坏，从而影响数据库的正常运行。为了解决这类问题，openGauss数据库提供了主库备库坏块恢复功能，用于解决主库备库坏块问题。通过该方式，可以解决主库备库坏块问题，从而保证数据库的可用性。[主库备库坏块修复功能](../database_om_guide/主库备库坏块修复功能.md)
+  - 在数据库运行过程中，会因为某些磁盘问题（例如数据意外覆盖）等问题，导致磁盘数据损坏，从而影响数据库的正常运行。为了解决这类问题，openGauss数据库提供了主库备库坏块恢复功能，用于解决主库备库坏块问题。通过该方式，可以解决主库备库坏块问题，从而保证数据库的可用性。[主库备库坏块修复功能](../database_om_guide/fast_repair_of_damaged_acitve_standby_libraries.md)
 
 - 高智能：向量数据库增强。[DataVec向量数据库](../datavec/datavec_overview.md)
 
@@ -223,22 +223,22 @@ ORC文件访问、Kerberos安全校验、JAVA UDF、Codegen、MOT内存表特性
 
 - 企业级特性：SQL防火墙
 
-  - 通过系统表和系统函数实现SQL防火墙规则的配置，在业务SQL执行时，通过检查是否匹配SQL防火墙规则，如果匹配则拦截报错，否则继续执行。限制指定SQL的执行并发数，保证业务的稳定性和健壮性。[SQL防火墙](../about_opengauss/SQL防火墙能力.md)
+  - 通过系统表和系统函数实现SQL防火墙规则的配置，在业务SQL执行时，通过检查是否匹配SQL防火墙规则，如果匹配则拦截报错，否则继续执行。限制指定SQL的执行并发数，保证业务的稳定性和健壮性。[SQL防火墙](../characteristic_description/sql_firewall_capability.md)
 
 - 企业级特性：内核全链路跟踪
 
-  - 追踪用户 SQL 请求在数据库全链路过程中，在不同阶段执行的相关信息，并以树状结构展现给用户，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。[内核全链路跟踪](../about_opengauss/内核全链路跟踪.md)
+  - 追踪用户 SQL 请求在数据库全链路过程中，在不同阶段执行的相关信息，并以树状结构展现给用户，帮助开发者回溯执行时间超过阈值的SQL，诊断SQL性能瓶颈。[内核全链路跟踪](../characteristic_description/full_link_tracking.md)
 
 - 企业级特性：内核监控告警
 
-  - 通过采集数据库内核后台线程和服务器系统的运行状态，经过分析和计算评估数据库是否出现异常，并将异常信息写入到告警日志中。帮助及时发现潜在问题，快速定位根源，并高效解决问题。[内核监控告警](../about_opengauss/监控告警.md)
+  - 通过采集数据库内核后台线程和服务器系统的运行状态，经过分析和计算评估数据库是否出现异常，并将异常信息写入到告警日志中。帮助及时发现潜在问题，快速定位根源，并高效解决问题。[内核监控告警](../characteristic_description/monitoring_alerts.md)
 
 - DataKit：迁移工具增强
 
   - PostgreSQL到openGauss的迁移能力集成至DataKit。
   - 支持SQL Server到openGauss的全量数据迁移、常用对象迁移。（暂未集成至datakit，提供单独的二进制工具）
 
-- DataKit：安装部署优化。[DataKit](../about_opengauss/工具链_DataKit.md)
+- DataKit：安装部署优化。[DataKit](../characteristic_description/tool_chain_datakit.md)
 
   - 支持DataKit最小化打包，插件按需下载。
 

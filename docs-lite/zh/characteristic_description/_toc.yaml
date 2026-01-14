@@ -59,6 +59,8 @@ sections:
         href: ./table_level_parallel_recovery_optimization.md
       - label: 异步备升主数据找回能力
         href: ./asynchronous_backup_and_recovery_capability_for_master_data.md
+      - label: SQL防火墙能力
+        href: ./sql_firewall_capability.md
   - label: 维护性
     sections:
       - label: 灰度升级
@@ -67,6 +69,10 @@ sections:
         href: ./workload_diagnosis_report_wdr.md
       - label: 慢SQL诊断
         href: ./slow_sql_diagnosis.md
+      - label: 全链路跟踪
+        href: ./full_link_tracking.md
+      - label: 监控告警
+        href: ./monitoring_alerts.md
       - label: Session性能诊断
         href: ./session_performance_diagnosis.md
       - label: 系统KPI辅助诊断
@@ -205,6 +211,8 @@ sections:
         href: ./predictor_ai_query_time_prediction.md
   - label: 工具链
     sections:
+      - label: DataKit
+        href: ./tool_chain_datakit.md
       - label: MySQL->openGauss迁移工具chameleon
         href: ./mysql_to_opengauss_migration_tool_chameleon.md
       - label: openGauss客户端工具DataStudio

@@ -9,6 +9,8 @@ sections:
     sections:
       - label: 概述
         href: ./overview.md
+      - label: 主库备库坏块修复功能
+        href: ./fast_repair_of_damaged_acitve_standby_libraries.md
       - label: 逻辑备份恢复
         href: ./logical_backup_and_restoration.md
       - label: 闪回恢复
