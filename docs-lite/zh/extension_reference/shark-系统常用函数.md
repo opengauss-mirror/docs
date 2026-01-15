@@ -900,7 +900,7 @@
 
     返回值类型：sql_variant
 
-    说明：property当前只支持"basetype",其他的属性结果与objectproperty函数一致。
+    说明：property当前只支持"basetype"，其他的属性结果与objectproperty函数一致。
 
     示例：
     
@@ -1046,7 +1046,7 @@
 
     描述：返回指定日期所在月份的最后一天，可以指定偏移。
 
-    参数类型：start_date为date类型, month_to_add为int类型。
+    参数类型：start_date为date类型，month_to_add为int类型。
 
     返回值类型：date
 
@@ -1080,7 +1080,7 @@
 
     描述：返回入参数字的平方。
 
-    参数类型：float8。
+    参数类型：float8
 
     返回值类型：float8
 
@@ -1205,7 +1205,7 @@
     (4 rows)
     ```
 
- - quotename(string_expression varchar, [, quote_character char] )
+ - quotename(string_expression varchar [, quote_character char] )
 
     描述：使用quote_character包括string_expression，string_expression默认为"[]"。
 
