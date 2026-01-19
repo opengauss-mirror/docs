@@ -722,11 +722,11 @@ sections:
   - label: SQL语法
     sections:
       - label: DCL语法一览表
-        href: ./ddl_syntax_overview.md
+        href: ./dcl_syntax_overview.md  
       - label: DDL语法一览表
-        href: ./dml_syntax_overview.md
+        href: ./ddl_syntax_overview.md
       - label: DML语法一览表
-        href: ./dcl_syntax_overview.md        
+        href: ./dml_syntax_overview.md     
       - label: ABORT
         href: ./abort.md
       - label: ALTER AGGREGATE
