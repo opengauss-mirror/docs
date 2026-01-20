@@ -30,7 +30,7 @@ Developers are advised to:
   - The openGauss installation package of the debug version with resource pooling code has been compiled.You can check whether dssserver and dsscmd exist in the generated **bin** directory. Check whether **libdms.so**, **libdssapi.so**, and **libdssaio.so** exist in the **lib** directory. Ensure that the DSS and DMS components of the test version are used during openGauss compilation. For details, see the following steps.
 
 ## Independent Compilation and Installation
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >
 > Do not perform the following deployment operations in the production environment.
 
@@ -67,7 +67,7 @@ Developers are advised to:
   cd tmp/
   make -sj
 ```
-> [!WARING]CAUTION 
+> [!WARNING]CAUTION 
 >
 >    After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
 
@@ -147,7 +147,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   ```shell
   data:/home/test/dss/dev/dss-dba
   ```
-> [!WARING]CAUTION 
+> [!WARNING]CAUTION 
 >
 > Multiple DNs (databases) are created on a server. The IP addresses are the same, but the port numbers used by services are different.
 
@@ -166,7 +166,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   ```
-> [!WARING]CAUTION 
+> [!WARNING]CAUTION 
 >
 > The DSS does not support volume group configuration modification after startup. If the volume group configuration needs to be modified, perform the preceding steps again.
 

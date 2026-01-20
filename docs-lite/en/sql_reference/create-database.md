@@ -704,7 +704,7 @@ CREATE DATABASE database_name
     </tbody>
     </table>
 
-    >[!WARING]CAUTION 
+    >[!WARNING]CAUTION 
     >
     >Note that not all client APIs support the preceding character sets.
     >The SQL\_ASCII setting performs quite differently from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. Therefore, this setting is not basically used to declare the specified encoding used, because this declaration ignores the encoding. In most cases, if you use any non-ASCII data, it is unwise to use the SQL\_ASCII setting because openGauss will not be able to help you convert or validate non-ASCII characters.

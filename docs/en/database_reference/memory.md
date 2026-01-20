@@ -41,7 +41,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >-   If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit** to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
 >-   If this parameter is set to  **off**, the memory used by the database is not limited. When a large number of concurrent or complex queries are performed, too much memory is used, which may cause OS OOM problems.
 
@@ -59,7 +59,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 The value on the database node is determined based on the physical memory of the system and the number of master database nodes deployed on a single node. The recommended calculation formula is as follows: \(Physical memory – vm.min\_free\_kBytes\) \\ x 0.7 /\(1 + Number of primary nodes\) This parameter is used to prevent node OOM caused by memory usage increase, ensuring system reliability.  **vm.min\_free\_kbytes**  indicates the OS memory reserved for the kernel to receive and send data. Its value is at least 5% of the total memory. That is, max\_process\_memory = Physical memory x 0.665 / \(1 + Number of primary nodes\)
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >If this parameter is set to a value greater than the physical memory of the server, the OS OOM problem may occur.
 
 ## enable\_memory\_context\_control<a name="en-us_topic_0283136786_en-us_topic_0237124699_section83355314353"></a>

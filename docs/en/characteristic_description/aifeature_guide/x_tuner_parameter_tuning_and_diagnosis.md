@@ -330,7 +330,7 @@ After the preceding items are configured, run the following command to start tun
 gs_dbmind component xtuner tune -f connection.json
 ```
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >Before using the  **tune**  or  **train**  mode, you need to import the data required by the benchmark and check whether the benchmark can run properly. After the optimization is complete, the optimization program automatically restores the database parameter settings.
 
 ## Obtaining Help Information<a name="EN-US_TOPIC_0289900462"></a>

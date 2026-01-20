@@ -1257,7 +1257,7 @@ This section describes  **java.sql.DatabaseMetaData**, the API for defining data
 >-   public ResultSet getUDTs\(String catalog, String schemaPattern, String typeNamePattern, int\[\] types\)
 >-   public ResultSet getFunctions\(String catalog, String schemaPattern, String functionNamePattern\)
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >The  **getPartitionTablePrimaryKeys\(String catalog, String schema, String table\)**  API is used to obtain the primary key column of a partitioned table that contains global indexes. The following is an example:
 >```
 >PgDatabaseMetaData dbmd = (PgDatabaseMetaData)conn.getMetaData();

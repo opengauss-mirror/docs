@@ -1190,7 +1190,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
   select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
   ```
 
-  >[!WARING]CAUTION   
+  >[!WARNING]CAUTION   
   >
   >- Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.   
   >- For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.    
@@ -1249,7 +1249,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
             -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
             -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
     
-            >[!WARING]CAUTION 
+            >[!WARNING]CAUTION 
             >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
 

@@ -157,7 +157,7 @@ gs_dbmind service stop -c confpath
 
 The DBMind service automatically exits after the running task is complete in the background.
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >-   The metabase user in  **\[METADATABASE\]**  must have the permission to create tables and insert and update data in the database. Otherwise, an exception will occur during tool execution.
 >-   Currently, multiple services cannot be started separately using the same configuration file.
 >-   The tool provides the  **requirement.txt**  file. You can use this file to install required third-party dependencies.

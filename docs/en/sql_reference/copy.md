@@ -191,7 +191,7 @@
     1.  **LOG ERRORS DATA**  fills the  **rawrecord**  column in the error tolerance table.
     2.  Only users with the  **super**  permission can use the  **LOG ERRORS DATA**  parameter.
 
-        >[!WARING]CAUTION 
+        >[!WARNING]CAUTION 
         >If error content is too complex, it may fail to be written to the error tolerance table by using  **LOG ERRORS DATA**, causing the task failure.
 
 

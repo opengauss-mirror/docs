@@ -36,7 +36,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >This parameter has been deprecated.
 
 ## vacuum\_defer\_cleanup\_age<a name="section1613641811206"></a>
@@ -49,7 +49,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >This parameter can be ignored when you use the Ustore engine to flash back. It serves the Astore flashback function of the earlier version and has other functions. The flashback function is not used in this version.
 
 ## undo\_retention\_time<a name="section179846211004"></a>

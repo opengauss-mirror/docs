@@ -13,7 +13,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **off**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >
 >You are not advised to change the default value of this parameter. If this parameter is set to  **on**, system tables may be damaged and the database may fail to be started.
 

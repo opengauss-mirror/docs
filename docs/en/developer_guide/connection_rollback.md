@@ -4,7 +4,7 @@
 
 This method rolls back the current pending transaction.
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >If you close the connection using  **close\(\)**  but do not commit the change using  **commit\(\)**, an implicit rollback will be performed.
 
 ## Prototype<a name="section441681310810"></a>

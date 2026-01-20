@@ -4,7 +4,7 @@
 
 This method commits the currently pending transaction to the database.
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >By default, Psycopg opens a transaction before executing the first command. If  **commit\(\)**  is not called, the effect of any data operation will be lost.
 
 ## Prototype<a name="section441681310810"></a>

@@ -395,7 +395,7 @@ Specifications
   - Practice: Planned primary/standby database instance switchover, no data loss, RPO = 0, RTO ≤ 20 minutes \(including the processes of demoting the primary database instance to the DR instance and promoting the DR database instance to the primary database instance\)
 
 
->[!NOTE]NOTE 
+>[!TIP]NOTICE 
 >Tests show that the maximum write rate of SATA SSDs is about 240 MB/s, that of SAS SSDs is over 500 MB/s, and that of NVMe SSDs is even better. Currently, only the performance metric under the SATA SSD hardware specifications is provided. If the hardware conditions do not meet the preceding specifications, the single-shard log generation speed in the primary database instance must be reduced to ensure the RPO and RTO.
 >
 >Resources such as file handles and memory are used up in the primary and standby database instances. As a result, the RPO and RTO cannot be ensured.

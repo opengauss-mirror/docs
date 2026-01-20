@@ -16,7 +16,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **100**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >-   If the automatic elimination function is enabled and this parameter is set to a small value, the system may frequently perform automatic elimination, which may affect the database system performance. Therefore, you are advised to set this parameter to  **200000**.
 >-   If automatic elimination is enabled and this parameter is set to a large value \(for example, 38347922\), a large memory problem may occur during the clearance. As a result, the clearance fails.
 
@@ -173,7 +173,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **off**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >Some snapshot information comes from unique SQL statements. Therefore, when automatic elimination is enabled, if the selected start snapshot and end snapshot exceed the elimination time, the WDR report cannot be generated.
 
 ## enable\_slow\_query\_log \(Discarded\)<a name="section19769519201515"></a>

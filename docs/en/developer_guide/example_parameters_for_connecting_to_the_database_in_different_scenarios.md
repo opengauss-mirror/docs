@@ -23,7 +23,7 @@ If the customer wants to evenly distribute the connections established on the sa
 jdbc:opengauss://node1,node2,node3/database?loadBalanceHosts=true
 ```
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >When  **loadBalanceHosts**  is used, if the connection is established on the standby DN, write operations cannot be performed. If read and write operations are required, do not set this parameter.
 
 ## Log Diagnosis Scenario<a name="section179211561507"></a>

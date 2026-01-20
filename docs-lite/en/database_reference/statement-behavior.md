@@ -101,7 +101,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >If this parameter is set to  **on**, the DML and write transactions cannot be executed.
 
 **Value range**: Boolean

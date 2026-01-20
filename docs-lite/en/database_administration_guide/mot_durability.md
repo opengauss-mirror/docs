@@ -131,5 +131,5 @@ For example – If the same table row is modified 100 times, then 100 entries ar
 
 Checkpoint configuration is performed in the CHECKPOINT; section of the mot.conf file. For details about these configuration parameters, see  [MOT Checkpoints](#en-us_topic_0283136668_en-us_topic_0280525142_section182761535131617).
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >In a production deployment, the value must be TRUE \#enable\_Checkpoint = true. A FALSE value can only be used for testing.

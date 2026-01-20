@@ -33,7 +33,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >
 >This parameter has been deprecated.
 
@@ -47,7 +47,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->[!WARING]CAUTION 
+>[!WARNING]CAUTION 
 >
 >This parameter can be ignored when you use the Ustore engine to flash back. It serves the Astore flashback function of the earlier version and has other functions. The flashback function is not used in this version.
 
