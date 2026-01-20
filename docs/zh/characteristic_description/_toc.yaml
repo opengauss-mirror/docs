@@ -357,6 +357,8 @@ sections:
                 href: ./aifeature_guide/faqs.md
               - label: 附录
                 href: ./aifeature_guide/appendix.md
+          - label: DBMind安装和部署
+            href: ./aifeature_guide/dbmind_deployment.md
           - label: GaussMaster产品描述
             href: ./aifeature_guide/product_description_gaussmaster.md
           - label: GaussMaster大模型技术
