@@ -1,6 +1,6 @@
 # DCF Parameters Settings<a name="EN-US_TOPIC_0000001083207760"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, DCF functions of openGauss are unavailable, but the primary node selection capability is provided. If this capability is required, you need to configure it.
 
 ## enable\_dcf<a name="section14941640131"></a>

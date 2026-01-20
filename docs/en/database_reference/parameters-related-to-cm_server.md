@@ -303,7 +303,7 @@ Default value:  **43200**
 -   **off**  indicates that SSL is disabled.
 -   **Default value**:  **off**
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >To ensure security, you are advised not to disable it. After this function is disabled, the CM  **does not**  use encrypted communication and all information is transmitted in plaintext, which may bring security risks such as eavesdropping, tampering, and spoofing.
 
 

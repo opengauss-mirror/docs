@@ -13,7 +13,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates that the resource management function is enabled.
 -   **off**  indicates that the resource management function is disabled.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If method 2 in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.
     >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  was  **off**  are not collected. To collect statistics about such resources, run the following statement:
     >    ```
@@ -77,7 +77,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >You are advised to retain the default value for this parameter.
 
 ## enable\_resource\_track<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_sb8ca264785d649368247597883d52ffd"></a>
@@ -260,7 +260,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   The generation of core files by the black box function depends on the open ptrace interface of the operating system. If the permission is insufficient \(errno = 1\), ensure that the  **/proc/sys/kernel/yama/ptrace\_scope**  configuration is correct.
 
 ## bbox\_dump\_count<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s03ba824694c84fdf8dad4f710d0e3a53"></a>
@@ -273,7 +273,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **8**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >When core files are generated during concurrent SQL statement execution, the number of files may be larger than the value of  **bbox\_dump\_count**.
 
 ## bbox\_dump\_path<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s4fe2520e9c914f1293e1f9314db2d519"></a>

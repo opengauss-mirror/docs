@@ -158,7 +158,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Do not set this parameter manually. Otherwise, openGauss may become faulty.
 
 ## transparent\_encrypt\_kms\_url<a name="en-us_topic_0283137574_en-us_topic_0237124754_section14139346195718"></a>
@@ -252,7 +252,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >For details about the ignore_error hint, see [Hint for Degrading Some Errors to Warnings](../performance_tuning_guide/hint_for_degrading_some_errors_to_warnings.md).
 
 **Value range**: enumerated values

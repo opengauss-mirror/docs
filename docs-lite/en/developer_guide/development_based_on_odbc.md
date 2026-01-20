@@ -46,6 +46,6 @@ The ODBC Driver Manager running on UNIX or Linux can be unixODBC or iODBC. unixO
 
 Windows has a native ODBC Driver Manager. You can locate  **Data Sources \(ODBC\)**  by choosing  **Control Panel**  \>  **Administrative Tools**.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >The current database ODBC driver is based on an open-source version and may be incompatible with data types tinyint, smalldatetime, and nvarchar2.  
 

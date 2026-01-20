@@ -19,7 +19,7 @@ For query statements and DML statements executed in PBE mode, the optimizer gene
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   For SQL statements that are executed in non-PBE mode, setting this hint does not affect the execution mode.
 >-   This hint has a higher priority than cost-based selection and the  **plan\_cache\_mode**  parameter. That is, this hint does not take effect for statements for which  **plan\_cache\_mode**  cannot be forcibly set to specify an execution mode.
 

@@ -43,7 +43,7 @@
 
     Description: Repairs the file based on the input parameters. Only the primary DN with normal primary/standby connection is supported. The parameter is set based on the OID and path returned by the  **gs\_verify\_data\_file**  function. The value of table OID for a segment-page table ranges from 0 to 4294967295. \(The internal verification determines whether a file is a segment-page table file based on the file path. The table OID is not used for a segment-page table file.\) If the repair is successful,  **true**  is returned. If the repair fails, the failure cause is displayed. By default, only the initial user, users with the  **SYSADMIN**  permission, and users with the O&M administrator attribute in O&M mode on the primary DN can view the table. Other users can use the table only after being granted with permissions.
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+    >[!WARING]CAUTION 
     >1.  If a file on a DN is damaged, a verification error occurs when the DN is promoted to primary. An error message is displayed, indicating that the DN cannot be promoted to primary due to PANIC exit. This is normal. After another DN is promoted to primary, the fault can be rectified through the automatic recovery of the standby DN.
     >2.  If a file exists but its size is 0, the file will not be repaired. To repair the file, you need to delete the file whose size is 0 and then repair it.
     >3.  You can delete a file only after the file FD is automatically closed. You can manually restart the process or perform a primary/standby switchover.

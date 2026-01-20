@@ -85,7 +85,7 @@ UWAL allows one-click deployment through a simple deployment script.
 
 - Procedure
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Unless otherwise specified, perform the following operations only on the active node.
 
     1.  Upload the installation package to the node and run the following command in the directory where the installation package is stored to grant permissions to the openGauss database user:
@@ -94,7 +94,7 @@ UWAL allows one-click deployment through a simple deployment script.
         chown omm:dbgrp OCK_UWAL_23.0.0_openeuler_22.03-aarch64_gcc10.tar.gz
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **omm**: database administrator
         >-   **dbgrp**: user group of the database administrator
 
@@ -170,7 +170,7 @@ UWAL allows one-click deployment through a simple deployment script.
         </tbody>
         </table>
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >To decompress the source package again, delete the preceding files before performing decompression operations.
 
     4.  Use the verification binary file in the  **bin**  directory to verify the software package signature.
@@ -179,7 +179,7 @@ UWAL allows one-click deployment through a simple deployment script.
         ./bin/verification OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.cms OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.txt
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >The verification binary file requires three parameters in sequence: source package, signature file, and description file.
 
         -   If the verification is successful, the console displays the following information:
@@ -206,7 +206,7 @@ UWAL allows one-click deployment through a simple deployment script.
             Verify the sha file failed.
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >If the verification fails, the installation package has been tampered with. You are advised to obtain the installation package again and verify it again.
 
     5.  After the installation package is verified, go to the  **scripts**  directory.
@@ -221,7 +221,7 @@ UWAL allows one-click deployment through a simple deployment script.
         sh ock_uwal_install.sh -H '192.168.4.164 192.168.4.165 192.168.4.166' -U omm -D /home/omm/lib
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-H**: IP addresses in the cluster. Example: '_192.168.4.164 192.168.4.165 192.168.4.166_'
         >-   **-U**: user name of the database administrator. Example:  **omm**
         >-   **-D**: path to the  **$\{GAUSSHOME\}/lib**  library. Example:  **/home/omm/lib**
@@ -239,7 +239,7 @@ UWAL allows one-click deployment through a simple deployment script.
         source ~/.bashrc
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >[!TIP]NOTICE 
         >This step is also required on the standby node.
 
     9.  \(Optional\) The UWAL component depends on the HCOM component for RPC communication. Configure the following environment variables as required.
@@ -354,7 +354,7 @@ UWAL allows one-click deployment through a simple deployment script.
 
 To enable the UWAL feature, modify the configuration file and restart the database for the modification to take effect.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Once the UWAL feature is enabled, it cannot be disabled.
 
 - Prerequisites
@@ -387,7 +387,7 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             application_name = 'node201'
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >-   If there are one active node and two standby nodes, add the  **replconninfo2**  parameter to the next line of the  **replconninfo1**  parameter. For example:
             >    ```
             >    replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
@@ -644,7 +644,7 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             cm_ctl start
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >If the startup fails, rectify the fault based on the  **postgresql-**_YYYY-MM-DD\_HHMMSS_**.log**  file in the openGauss log directory.
 
     4.  Verify that the UWAL feature is successfully enabled.
@@ -662,7 +662,7 @@ To enable the UWAL feature, modify the configuration file and restart the databa
         (1 row)
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-p 16600**:  **16600**  indicates the database port number. Change it based on the actual environment.
         >-   To view UWAL log files, go to the path specified by  **uwal\_log\_path**  and run the following command:
         >    ```

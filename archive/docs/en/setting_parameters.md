@@ -146,7 +146,7 @@ openGauss provides four methods to modify GUC parameters. For details, see [Tabl
 </tbody>
 </table>
 
->![](./public_sys-resources/icon-caution.gif) **Caution:**
+>[!WARNING]CAUTION
 >If you use method 1 or 2 to set a parameter that does not belong to the current environment, the database displays a message indicating that the parameter is not supported.
 
 ## Procedure<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
@@ -172,7 +172,7 @@ The following example shows how to set **archive\_mode** on a primary database n
     gs_guc set -D /gaussdb/data/dbnode -c "archive_mode=off"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >You can run the following command to set **archive\_mode** to **off** for the database nodes:
     >```
     >gs_guc set -N all -I all -c "archive_mode=off"
@@ -235,7 +235,7 @@ The following describes how to set **authentication\_timeout** on a primary data
     Success to perform gs_guc!
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >You can run the following command to set **authentication\_timeout** to **59s** for the database nodes:
     >```
     >gs_guc reload -N all -I all -c "authentication_timeout = 59s"

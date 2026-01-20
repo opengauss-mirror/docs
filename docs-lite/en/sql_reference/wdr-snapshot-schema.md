@@ -4,7 +4,7 @@ After the WDR snapshot function is enabled \([enable\_wdr\_snapshot](../database
 
 You can set the parameter  [wdr\_snapshot\_retention\_days](../database_reference/system-performance-snapshot.md#en-us_topic_0283137284_en-us_topic_0237124757_section1658494717518)  to automatically manage the snapshot lifecycle.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Do not add, delete, or modify tables in the snapshot schema. Manual modification or damage to these tables may cause WDR exceptions or even WDR unavailability.
 
 -   **[Original Information of WDR Snapshots](snapshot-snapshot.md)**  

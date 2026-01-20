@@ -10,7 +10,7 @@ In primary/standby deployment mode, the  **mot.conf**  files on the primary and 
 
 Read the  [General Guidelines](#en-us_topic_0283136588_en-us_topic_0280525130_section14452102715206)  section and then review and configure the following sections of the  **mot.conf**  file, as needed.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The topics listed above describe each of the setting sections in the  **mot.conf**  file. In addition to the above topics, for an overview of all the aspects of a specific MOT feature \(such as Recovery\), you may refer to the relevant topic of this user manual. For example, the  **mot.conf**  file has a Recovery section that contains settings that affect MOT recovery and this is described in the  [MOT Recovery](mot_recovery.md)  section that is listed above. Also, for a complete description of recovery, see  [MOT Recovery](mot_recovery.md). Reference links are also provided in each relevant section of the descriptions below.
 
 The following topics describe each section in the  **mot.conf **file and the settings that it contains, as well as the default value of each.
@@ -100,7 +100,7 @@ Time units are represented as follows:
     Checkpoint is performed in parallel by several MOT engine workers. The quantity of workers may substantially affect the overall performance of the entire checkpoint operation, as well as the operation of other running transactions. To achieve a shorter checkpoint duration, a larger number of workers should be used, up to the optimal number \(which varies based on the hardware and workload\). However, be aware that if this number is too large, it may negatively impact the execution time of other running transactions. Keep this number as low as possible to minimize the effect on the runtime of other running transactions. When this number is too high, longer checkpoint durations occur.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >You may refer to  [MOT Checkpoints](mot_durability.md#en-us_topic_0283136668_en-us_topic_0280525142_section182761535131617)  for more information about configuration settings.
 
 ## Recovery \(MOT\)<a name="en-us_topic_0283136588_en-us_topic_0280525130_section7442447103115"></a>
@@ -110,7 +110,7 @@ Time units are represented as follows:
     Specifies the number of workers \(threads\) to use during checkpoint data recovery. Each MOT engine worker runs on its own core and can process a different table in parallel by reading it into memory. For example, while the default is three-course, you might prefer to set this parameter to them number of cores that are available for processing. After recovery, these threads are stopped and killed.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >You may refer to  [MOT Recovery](mot_recovery.md)  for more information about configuration settings.
 
 ## Statistics \(MOT\)<a name="en-us_topic_0283136588_en-us_topic_0280525130_section659861612477"></a>

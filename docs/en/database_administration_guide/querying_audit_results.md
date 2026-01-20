@@ -18,7 +18,7 @@
 
     **startime**  and  **endtime**  indicate the start time and end time of the audit record, respectively.  **audit\_log**  indicates the physical file path of the queried audit logs. If  **audit\_log**  is not specified, the audit log information of the current instance is queried.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The difference between the values of the  **startime**  and  **endtime**  parameters indicates the query period, which can be any value ranging from 00:00:00 of the  **startime**  parameter to 23:59:59 of the  **endtime**  parameter. Therefore, the  **startime**  and  **endtime**  parameters must be properly set to ensure that the required audit information is displayed.
 
 
@@ -59,7 +59,7 @@
 
     This record indicates that user  **omm**  logs in to database  **postgres**  at the time specified by the  **time**  column. After the host specified by  **log\_hostname**  is started and a client is connected to its IP address, the host name found by reverse DNS resolution is displayed following the at sign \(@\) in the value of  **client\_conninfo**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >SSL information is recorded at the end of the audit log  **detail\_info**.  **SSL=on**  indicates that the client is connected using SSL, and  **SSL=off**  indicates that the client is not connected using SSL.
 
 

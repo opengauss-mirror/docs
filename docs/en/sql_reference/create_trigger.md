@@ -160,7 +160,7 @@ Where **trigger\_order** is:
 
     **Table  1**  Types of triggers supported on tables and views
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The following details trigger types:
     >-   **INSTEAD OF**  triggers must be marked as  **FOR EACH ROW**  and can be defined only on views.
     >-   **BEFORE**  and  **AFTER**  triggers on a view must be marked as  **FOR EACH STATEMENT**.

@@ -23,7 +23,7 @@ If a host needs to connect to a database remotely, you need to add information a
     gs_guc reload -D datadir -h "host all jack 10.10.0.30/32 sha256"
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Before using user  **jack**, connect to the database locally and run the following command in the database to create user  **jack**:
     >    ```
     >    openGauss=# CREATE USER jack PASSWORD 'xxxxxx';
@@ -48,7 +48,7 @@ If a host needs to connect to a database remotely, you need to add information a
 
     During authentication, the system checks records in the  **pg\_hba.conf**  file in sequence for connection requests, so the record sequence is vital.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Configure records in the  **pg\_hba.conf**  file from top to bottom based on communication and format requirements in the descending order of priorities. The IP addresses of openGauss and added hosts are of the highest priority and should be configured prior to those manually configured by users. If the IP addresses manually configured by users and those of added hosts are in the same network segment, delete the manually configured IP addresses before the scale-out and configure them after the scale-out.
 
     The suggestions on configuring authentication rules are as follows:
@@ -56,7 +56,7 @@ If a host needs to connect to a database remotely, you need to add information a
     -   Records placed at the front have strict connection parameters but weak authentication methods.
     -   Records placed at the end have weak connection parameters but strict authentication methods.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If a user wants to connect to a specified database, the user must be authenticated by the rules in the  **pg\_hba.conf**  file and have the  **CONNECT**  permission for the database. If you want to restrict a user from connecting to certain databases, you can grant or revoke the user's  **CONNECT**  permission, which is easier than setting rules in the  **pg\_hba.conf**  file.
     >-   The  **trust**  authentication mode is insecure for a connection between openGauss and an external client. In this case, set the authentication mode to  **sha256**.
     >-   After the  **pg\_hba.conf**  configuration is modified using the  **gs\_guc reload**  command, the modification takes effect when a new session is created. If you run the  **gs\_guc set**  command to set parameters or directly edit the  **pg\_hba.conf**  file to modify parameters, you need to restart the database or run the  **gs\_guc reload**  command again for the modification to take effect.

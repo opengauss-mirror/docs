@@ -84,7 +84,7 @@ Currently,  LLVM is enabled by default in the database kernel, and users can con
 2.  Set  **codegen\_cost\_threshold**  to an appropriate value \(the default value is  **10000**\). Ensure that LLVM is not used when the data volume is small. After  **codegen\_cost\_threshold**  is set, the database performance may deteriorate due to the use of LLVM. In this case, you are advised to increase the parameter value.
 3.  If a large number of C functions are called, you are advised not to use the LLVM function.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If resources are robust, the larger the data volume is, the better the performance improvement is.
 
 

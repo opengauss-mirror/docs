@@ -45,7 +45,7 @@ When you create a foreign table using file\_fdw, you can add the following optio
     File-level null option, which is a Boolean option. If it is true, the value of the declared field cannot be an empty string. This option is the same as the  **FORCE\_NOT\_NULL**  option of the  **COPY**  statement.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   file\_fdw does not support the  **OIDS**  and  **FORCE\_QUOTE**  options of the  **COPY**  statement.
 >-   These options can only be declared for a foreign table or the columns of the foreign table, not for the file\_fdw itself, nor for the server or user mapping that uses file\_fdw.
 >-   To modify table-level options, you must obtain the system administrator role permissions. For security reasons, only the system administrator can determine the files to be read.
@@ -57,7 +57,7 @@ When you create a foreign table using file\_fdw, you can add the following optio
 -   To create a user mapping, use  **CREATE USER MAPPING**.
 -   To create a foreign table, use  **CREATE FOREIGN TABLE**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The structure of the foreign table must be consistent with the data in the specified file.
     >-   When a foreign table is queried, no write operation is allowed.
 

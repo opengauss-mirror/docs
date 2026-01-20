@@ -15,7 +15,7 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_topic_0058968158_table23103470),  [Table 2](#en-us_topic_0059778645_en-us_topic_0058968158_table8624338),  [Table 3](#en-us_topic_0059778645_en-us_topic_0058968158_table62130565),  [Table 4](#en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  [Table 6](#en-us_topic_0059778645_en-us_topic_0058968158_table53911699),  [Table 8](#en-us_topic_0059778645_en-us_topic_0058968158_table37189353),  [Table 9](#en-us_topic_0059778645_en-us_topic_0058968158_table32146234),  [Table 10](#en-us_topic_0059778645_en-us_topic_0058968158_table50076468), and  [Table 12](#en-us_topic_0059778645_en-us_topic_0058968158_table55465693).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >_FILE_  mentioned in the following commands indicates a file path. This path can be an absolute path such as  **/home/gauss/file.txt**  or a relative path, such as  **file.txt**. By default, a  **file.txt**  is created in the path where the user runs  **gsql**  commands.
 
 **Table  1**  Common meta-commands
@@ -165,7 +165,7 @@ For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_to
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In  [Table 4](#en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  **S**  indicates displaying the system object and  **+**  indicates displaying the additional description information of the object.  [PATTERN](#section363084334814)  specifies the name of an object to be displayed.
 
 **Table  4**  Information display meta-commands

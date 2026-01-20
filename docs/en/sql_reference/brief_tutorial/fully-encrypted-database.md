@@ -60,7 +60,7 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
 
         Specifies the type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA3072**, and  **SM2**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Key path: By default, local KMS generates, reads, and deletes key files in  _$LOCALKMS\_FILE\_PATH_. You can manually configure this environment variable. However, you do not need to configure this environment variable. If  _$LOCALKMS\_FILE\_PATH_  fails to be obtained, local KMS attempts to obtain  _$GAUSSHOME_**/etc/localkms/**. If the path exists, it is used as the key storage path.
     >Key-related files: When the CREATE CMK syntax is used, local KMS creates four files related to key storage. For example, when  **KEY\_PATH**  is set to  **key\_path\_value**, the four files are  **key\_path\_value.pub**,  **key\_path\_value.pub.rand**,  **key\_path\_value.priv**  and  **key\_path\_value.priv.rand**.
     >Therefore, to successfully create key-related files, ensure that no file with the same name as the key-related files exists in the key path.
@@ -95,7 +95,7 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
 
         Specifies the key password defined by the user. The key password contains 28 to 256 characters. The security strength of a key containing 28 characters complies with AES128. If AES256 is used, the key password must contain 39 characters. If this parameter is not specified, a 256-bit key is automatically generated.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >SM2, SM3, and SM4 are Chinese cryptographic algorithms. To avoid legal risks, these algorithms must be used together. If you specify the SM4 algorithm to encrypt CEKs when creating a CMK, you must specify the SM3 and SM4 algorithms \(SM4\_SM3\) to encrypt data when creating CEKs.
 
     **\[Example: In the GSQL environment\]**
@@ -167,7 +167,7 @@ After an encrypted table is created, you can insert and view data in the encrypt
      (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When a non-encrypted client is used to view the data in the encrypted table, the data is displayed in ciphertext.
 
     ```

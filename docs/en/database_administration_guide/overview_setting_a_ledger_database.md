@@ -137,7 +137,7 @@ The name and structure of the user history table are as follows:
     Options: internal_mask=263
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
     >-   When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
 

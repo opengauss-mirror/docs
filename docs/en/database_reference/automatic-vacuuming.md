@@ -8,12 +8,12 @@ The  **autovacuum**  process automatically runs the  **VACUUM**  and  **ANALYZE*
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Set the  **autovacuum**  parameter to  **on**  if you want to start the automatic cleanup of abnormal two-phase transactions when the system recovers from faults.
 >-   If  **autovacuum**  is set to  **on**  and  **[autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  to  **0**, the autovacuum process is started only when the system recovers from faults to clean up abnormal two-phase transactions.
 >-   If  **autovacuum**  is set to  **on**  and the value of  [autovacuum\_max\_workers](#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)  is greater than  **0**, the system will automatically clean up the two-phase transactions and processes after recovering from faults.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Even if  **autovacuum**  is set to  **off**, the autovacuum process will be started automatically when a transaction ID wraparound is about to occur. When a  **CREATE DATABASE**  or  **DROP DATABASE**  operation fails, it is possible that the transaction has been committed or rolled back on some nodes whereas some nodes are still in the prepared state. In this case, perform the following operations to manually restore the nodes:
 
 **Value range**: Boolean

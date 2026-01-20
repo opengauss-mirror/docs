@@ -9,7 +9,7 @@
     gs_ctl start -D /opt/data
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If the system displays a message indicating that  **gs\_ctl**  cannot be found, check whether the environment variable file \(**\~/.bashrc**  by default\) has been sourced. If you do not want to source the environment variable file, manually switch to the installation path and run the command.
 
 
@@ -22,7 +22,7 @@
     gs_ctl stop -D /opt/data
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >For details about how to start and stop nodes, see "Tools Called in the Internal System \> gs\_ctl" in *Tool Reference*.
 
 

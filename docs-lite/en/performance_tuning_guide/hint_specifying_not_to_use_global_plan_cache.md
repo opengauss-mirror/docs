@@ -10,7 +10,7 @@ When global plan cache is enabled, you can use the  **no\_gpc**  hint to force a
 no_gpc
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >This parameter takes effect only for statements executed by PBE when  **enable\_global\_plancache**  is set to  **on**.
 

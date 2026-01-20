@@ -733,7 +733,7 @@ SELECT date '2001-10-01' - '7' AS RESULT;
 
 The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  –  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of  **timestamp**,  **timestamptz**, or** date**  type.  **unit**  determines the unit of the difference between two dates.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This function is valid only when openGauss is compatible with the MY type \(that is,  **dbcompatibility**  =  **'B'**\).
 
 -   year
@@ -994,7 +994,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date o
 
     **1**  indicates Monday and  **7**  indicates Sunday.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This is identical to  **dow**  except for Sunday.
 
     ```
@@ -1411,7 +1411,7 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**  
+>[!NOTE]NOTE  
 >In the table, the rules for RR to calculate years are as follows:   
 >
 >+   If the range of the input two-digit year is between 00 and 49:   

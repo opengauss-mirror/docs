@@ -64,7 +64,7 @@ During database running, query statements are blocked in some service scenarios 
     The connection to the server was lost. Attempting reset: Succeeded.
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If the  **PG\_TERMINATE\_BACKEND**  function is used to terminate the background threads of the session, the  **gsql**  client will be reconnected rather than be logged out.
 

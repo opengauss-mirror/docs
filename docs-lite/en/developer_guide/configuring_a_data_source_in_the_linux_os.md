@@ -334,7 +334,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   ****
         >-   **-N all**  indicates all hosts in openGauss.
         >-   **-I all**  indicates all instances of the host.
@@ -491,7 +491,7 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
 
     The database stores only the SHA-256 hash of the password, but the open-source client supports only MD5 hashes.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The database stores the hashes of user passwords instead of actual passwords.
     >-   If a password is updated or a user is created, both types of hashes will be stored, compatible with open-source authentication protocols.
     >-   An MD5 hash can only be generated using the original password, but the password cannot be obtained by reversing its SHA-256 hash. Passwords in the old version will only have SHA-256 hashes and not support MD5 authentication.

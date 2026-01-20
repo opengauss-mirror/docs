@@ -45,7 +45,7 @@ openGauss=# CREATE USER user_independent WITH INDEPENDENT IDENTIFIED BY "1234@ab
 
 System administrators and security administrators with the  **CREATEROLE**  attribute can manage \(**DROP**,  **ALTER**, and  **TRUNCATE**\) objects of private users but cannot access \(**INSERT**,  **DELETE**,  **SELECT**,  **UPDATE**,  **COPY**,  **GRANT**,  **REVOKE**, and  **ALTER OWNER**\) the objects before being authorized.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >PG\_STATISTIC and PG\_STATISTIC\_EXT store sensitive information about statistical objects, such as high-frequency MCVs. The system administrator can still access the two system catalogs to obtain the statistics of the tables to which private users belong.
 
 ## Permanent User<a name="section107115013215"></a>

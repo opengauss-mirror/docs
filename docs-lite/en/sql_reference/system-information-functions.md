@@ -88,7 +88,7 @@
 
     **current\_schemas\(Boolean\)**  returns an array of the names of all schemas presently in the search path. The Boolean option determines whether implicitly included system schemas such as  **pg\_catalog**  are included in the returned search path.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The search path can be altered at run time by running the following command:
     >```
     >SET search_path TO schema [, schema, ...]
@@ -215,7 +215,7 @@
 
     Description: Remote connection address.  **inet\_client\_addr**  returns the IP address of the current client.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is available only in remote connection mode.
 
     Return type: inet
@@ -234,7 +234,7 @@
 
     Description: Remote connection port. And  **inet\_client\_port**  returns the port number of the current client.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is available only in remote connection mode.
 
     Return type: int
@@ -253,7 +253,7 @@
 
     Description: Local connection address.  **inet\_server\_addr**  returns the IP address on which the server accepted the current connection.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is available only in remote connection mode.
 
     Return type: inet
@@ -272,7 +272,7 @@
 
     Description: Local connection port.  **inet\_server\_port**  returns the port number. All these functions return NULL if the current connection is via a Unix-domain socket. 
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is available only in remote connection mode.
 
     Return type: int
@@ -662,7 +662,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     **has\_any\_column\_privilege**  checks whether a user can access any column of a table in a particular way. Its parameter possibilities are analogous to  **has\_table\_privilege**, except that the desired access permission type must be some combination of SELECT, INSERT, UPDATE, COMMENT or REFERENCES.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table, so  **has\_any\_column\_privilege**  will always return  **true**  if  **has\_table\_privilege**  does for the same parameters. But  **has\_any\_column\_privilege**  also succeeds if there is a column-level grant of the permission for at least one column.
 
 -   has\_column\_privilege\(user, table, column, privilege\)
@@ -711,7 +711,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     **has\_column\_privilege**  checks whether a user can access a column in a particular way. Its argument possibilities are analogous to  **has\_table\_privilege**, with the addition that the column can be specified either by name or attribute number. The desired access permission type must evaluate to some combination of  **SELECT**,  **INSERT**,  **UPDATE**,  **COMMENT**  or  **REFERENCES**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Note that having any of these permissions at the table level implicitly grants it for each column of the table.
 
 -   has\_cek\_privilege\(user, cek, privilege\)
@@ -763,7 +763,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the encrypted database functions are unavailable.
 
 -   has\_cmk\_privilege\(user, cmk, privilege\)
@@ -815,7 +815,7 @@ The DDL permissions, including ALTER, DROP, COMMENT, INDEX and VACUUM, are inher
 
     Return type: Boolean
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the encrypted database functions are unavailable.
 
 -   has\_database\_privilege\(user, database, privilege\)

@@ -57,7 +57,7 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
     Default value  **1**  indicates that one sequence can be generated each time.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is not recommended that you define  **cache**  and  **maxvalue**  or  **minvalue**  at the same time. The continuity of sequences cannot be ensured after  **cache**  is defined because unacknowledged sequences may be generated, causing waste of sequences.
 
 -   **CYCLE**
@@ -78,7 +78,7 @@ CREATE [ LARGE ] SEQUENCE [ IF NOT EXISTS ] name [ INCREMENT [ BY ] increment ]
 
     The default value  **OWNED BY NONE**  indicates that such association does not exist.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >You are not advised to use the sequence created using  **OWNED BY**  in other tables. If multiple tables need to share a sequence, the sequence must not belong to a specific table.
 
 

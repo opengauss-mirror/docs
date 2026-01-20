@@ -118,7 +118,7 @@ You can view the running query statements in the [PG\_STAT\_ACTIVITY](pg_stat_ac
     FATAL:  terminating connection due to administrator command
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If the **PG\_TERMINATE\_BACKEND** function is used to terminate the backend threads of the current session, the **gsql** client will be reconnected automatically rather than be logged out. The message "The connection to the server was lost. Attempting reset: Succeeded." is returned.
     >```

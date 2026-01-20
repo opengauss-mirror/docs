@@ -65,7 +65,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
             FOR (  partition_value [, ...] ) }
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >The specified partition applies only to ordinary tables.
 
     The rollup\_clause clause is as follows:
@@ -87,7 +87,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     SOUNDS LIKE is a syntax of condition. For example, **column_name sounds like 'character';** is equivalent to the comparison result of **soundex(column_name) = soundex('character')**. It is a Boolean value. It is used to query the data that meets the conditions through soundex processing.
 
-> ![](public_sys-resources/icon-note.gif) **NOTE:**
+> [!NOTE]NOTE
 > 
 > For details about other parameters, see [SELECT](../sql_reference/select.md).
 

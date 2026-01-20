@@ -32,7 +32,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **1**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When openGauss is started, the standby DN is promoted to primary. Therefore, the DN type in the audit log is  **system\_switch**  when the DN is started.
 
 ## audit\_user\_locked<a name="en-us_topic_0283136655_en-us_topic_0237124746_en-us_topic_0059778731_sf87eea8d8fd949708f022da99dad9ba0"></a>

@@ -277,7 +277,7 @@ Currently, CM can monitor stateless resources. That is, each resource instance h
     -   **restart_period**: If the difference between the current time and the latest restart time is greater than the value of **restart_period**, the number of resource restart times increases by 1.
     -   **restart_times**: maximum number of restart times in a period. If the number of restart times exceeds the value of **restart_times**, the system does not restart the resource and marks the resource as unavailable. The value range is [0,9999]. The value **0** indicates unlimited restart.
     
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+    >[!WARING]CAUTION   
     >The resource configuration file must exist on all nodes and be consistent. 
     >Ensure that the resource script can run properly.
 
@@ -543,7 +543,7 @@ The following is an example of the customized resource file **cm_resource.json**
 }
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:**   
+>[!WARING]CAUTION   
 >To use the customized resource management function of CM, the process needs to be executed in the backend. Therefore, you need to redirect the log output to the log file or configure the log output options, and use nohup and & to run the program in the backend.
 >This program must run on a node where a database is deployed. If the primary/standby information push function is required during a cluster switchover, this program must run on all database nodes in the cluster.
 

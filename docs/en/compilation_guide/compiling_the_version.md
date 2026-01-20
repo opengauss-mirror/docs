@@ -24,7 +24,7 @@ The git and git-lfs have been installed and configured on the local host.
     [user@linux sda]$ # mkdir binarylibs        For details about this comment, see the following note.
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >- **openGauss-server**: openGauss code repository.  
     >- **openGauss-third\_party**: open-source third-party software repository on which openGauss depends.  
     >- **binarylibs**: package for storing the built open-source third-party software. You can obtain the package by referring to  [Compiling Open-source Software](#compiling-open-source-software)  . Since compiling and building open-source software take a long time, we have compiled and built  **binarylibs**  using  **openGauss-third\_party**  and compress and upload  **binarylibs**  to the Internet.  
@@ -168,7 +168,7 @@ After installing the software listed in  [Table 1](#en-us_topic_0283136302_table
 
    The openssl is generated.
 
-3. >![](public_sys-resources/icon-note.gif) **NOTE:** 
+3. >[!NOTE]NOTE 
    >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL compilation and installation logs in the  **dependency**  module.
    >
    >- /sda/openGauss-third\_party/build/dependency\_build.log
@@ -256,7 +256,7 @@ The following table describes the parameters.
 </tbody>
 </table>
 
->![] (public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >1. **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
 >
@@ -361,7 +361,7 @@ Software build and installation are to build code to generate software and insta
    ./configure --gcc-version=7.3.0 CC=g++ CFLAGS='-O0' --prefix=$GAUSSHOME --3rd=$BINARYLIBS --enable-debug --enable-cassert --enable-thread-safety --with-readline --without-zlib --enable-memory-check
    ```
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:**   
+   >[!NOTE]NOTE   
    >
    >- *\[debug | release | memcheck\]*  indicates that three target versions are available. The three target versions are as follows:
    >   - **release**: indicates that the binary program of the release version is generated. During this version build, the GCC high-level optimization option is configured to remove the kernel debugging code. This option is usually used in the production environment or performance test environment.

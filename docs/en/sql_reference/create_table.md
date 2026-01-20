@@ -116,7 +116,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**. Users should not delete schemas starting with  **pg\_temp**  or  **pg\_toast\_temp**.
     >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
     >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**  \(except the  **ALTER INDEX index\_name REBUILD**  command\).
@@ -134,7 +134,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the name of the table to be created.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_**  or  **matviewmap\_**. Otherwise, some functions of the table are affected.
 
 -   **column\_name**
@@ -145,14 +145,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies the name of the constraint specified during table creation.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
 
     Specifies an index name.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
     >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
@@ -163,7 +163,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     For details about the value range, see [USING method](create_index.md).
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
@@ -171,14 +171,14 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **expression**
 
     Specifies an expression index constraint created based on one or more columns of the table. The expression index must be written with surrounding parentheses.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
 
 -   **data\_type**
@@ -212,7 +212,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
     -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,** INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**  or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
     >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
     >-   **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
@@ -225,7 +225,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Specifies an optional storage parameter for a table or an index.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When using  **Numeric**  of any precision to define a column, specifies precision  **p**  and scale  **s**. When precision and scale are not specified, the input will be displayed.
 
     The description of parameters is as follows:
@@ -419,7 +419,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     A check constraint specified as a column constraint should reference only the column's values, while an expression appearing in a table constraint can reference multiple columns.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.
 
 -   **DEFAULT default\_expr**
@@ -438,7 +438,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     The initial auto-increment value is set by the AUTO\_INCREMENT \[ = \] value clause. If it is not set, the default value **1** is used.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-   The auto-increment column can be specified only when **sql\_compatibility** is set to **B**.
     >-   The data type of the auto-increment column can only be integer, 4-byte or 8-byte floating point, or Boolean.
     >-   Each table can have only one auto-increment column.
@@ -498,7 +498,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only UNIQUE constraints, primary key constraints, and foreign key constraints accept this clause. All the other constraints are not deferrable.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Ustore tables do not support the keywords  **DEFERRABLE**  and  **INITIALLY DEFERRED**.
 
 - **COMMENT text**
@@ -1144,7 +1144,7 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
     -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >List and hash partitioned tables do not support  **LIKE INCLUDING PARTITION**.
 
 -   LIKE INCLUDING RELOPTIONS

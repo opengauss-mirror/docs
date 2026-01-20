@@ -1,6 +1,6 @@
 # Example: JDBC Primary/Standby Cluster Load Balancing<a name="EN-US_TOPIC_0000001151910145"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >In the following example, **host:port** represents a node, where **host** indicates the name or IP address of the server where the database resides, and **port** indicates the port number of the server where the database resides.
 
 
@@ -38,7 +38,7 @@ jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn
 jdbc:opengauss://node1,node2,node3/database?autoBalance=priority2
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >-   JDBC load balancing identifies a cluster based on the node set specified in the URL string. If multiple URLs with the same node set and load balancing mode use the same driver to establish connections, JDBC considers the connections as connections in the same cluster and performs load balancing as a whole.
 >-   JDBC supports driver-level load balancing. It balances the load of connections created in the same cluster based on the driver instead of the actual number of connections on each node in the cluster or other drivers.
 >-   In leastconn mode, the heartbeat thread is enabled, and scheduled tasks such as connection validity monitoring are executed every 20 seconds. If the heartbeat thread detects that the number of cached connections in leastconn mode is 0 for two consecutive times, the heartbeat thread is disabled and the cached leastconn information is cleared.
@@ -82,7 +82,7 @@ In addition, you can set additional parameters to control the criteria for filte
 jdbc:opengauss://node1,node2,node3/database?autoBalance=leastconn&enableQuickAutoBalance=true&maxIdleTimeBeforeTerminal=20&minReservedConPerCluster=20&minReservedConPerDatanode=20
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >-   JDBC implements load balancing only based on the connections of the driver in the same cluster. When quick load balancing is triggered, only the connections created by the driver in a cluster and configured with corresponding parameters are disabled.
 >-   To use this function, you need to adjust parameters to meet the service requirements of the client. The JDBC cannot detect whether a connection is required by the actual service. Therefore, the JDBC filters out connections that can be closed by determining idle connections. If the parameters do not match the actual service requirements, connections held by a user may be closed.
 >-   When performing quick load balancing, JDBC closes some connections that meet the conditions based on the configured parameters. If most existing connections do not meet the conditions, for example, all connections are active, the quick load balancing result may be poor.

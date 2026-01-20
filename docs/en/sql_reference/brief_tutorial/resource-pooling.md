@@ -195,7 +195,7 @@ SCRLock provides a simple deployment script. You can enter the installation path
         ./bin/verification OCK_scrlock_openEuler_aarch64.tar.gz OCK_scrlock_openEuler_aarch64.tar.gz.cms OCK_scrlock_openEuler_aarch64.tar.gz.txt
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >The verification binary file requires three parameters in sequence: source package, signature file, and description file.
 
         -   If the verification is successful, the console displays the following information:
@@ -222,7 +222,7 @@ SCRLock provides a simple deployment script. You can enter the installation path
             Verify the sha file failed.
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >If the verification fails, the installation package has been tampered with. You are advised to obtain the installation package again and verify it again.
 
     4.  After the installation package is verified, go to the  **scripts**  directory.
@@ -237,7 +237,7 @@ SCRLock provides a simple deployment script. You can enter the installation path
         sh scrlock_install.sh -H '192.168.4.164 192.168.4.165 192.168.4.166' -U omm -G dbgrp -D /home/omm/lib
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-H**: IP addresses in the cluster. Example: '_192.168.4.164 192.168.4.165 192.168.4.166_'
         >-   **-U**: user name of the database administrator. Example:  **omm**
         >-   **-G**: user group of the database administrator. Example:  **dbgrp**
@@ -263,7 +263,7 @@ SCRLock provides a simple deployment script. You can enter the installation path
         source ~/.bashrc
         ```
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >[!TIP]NOTICE 
         >Perform steps  [6](#li9627181442313)  to  [8](#li153702610143)  on the standby node.
 
 #### Enabling the SCRLock Feature
@@ -395,7 +395,7 @@ To enable the SCRLock feature, modify the configuration file and restart the dat
             cm_ctl start
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >If the startup fails, rectify the fault based on the  **postgresql-**_YYYY-MM-DD\_HHMMSS_**.log**  file in the openGauss log directory.
 
     4.  Verify that the SCRLock feature is successfully enabled.
@@ -413,7 +413,7 @@ To enable the SCRLock feature, modify the configuration file and restart the dat
         (1 row)
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-p 16600**:  **16600**  indicates the database port number. Change it based on the actual environment.
         >-   To view SCRLock log files, run the following command to view the last 20 lines:
         >    ```

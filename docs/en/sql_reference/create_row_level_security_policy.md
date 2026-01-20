@@ -143,7 +143,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     If this parameter is not specified, the default value  **PUBLIC**  will be used, indicating that all database users will be affected. You can specify multiple affected database users.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >System administrators are not affected by row access control.
 
 

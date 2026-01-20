@@ -12,7 +12,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
 1.  Check whether the installation package and openGauss configuration file exist in the planned path. If they do not exist, perform the preinstallation again to ensure that the preinstallation is successful, and then perform the following steps.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >User  **omm**  must have the permission on the directory and subdirectories where the installation package is stored.
 
@@ -22,7 +22,7 @@ After the openGauss installation environment is prepared by executing the pre-in
     su - omm
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   **omm**  indicates the user specified by the  **-U**  parameter in the  **gs\_preinstall**  script.
     >
@@ -48,7 +48,7 @@ After the openGauss installation environment is prepared by executing the pre-in
 
     Two files are generated under the log file path:  **gs\_install-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   Character set names are case-insensitive, for example, the following values are supported by openGauss:  **gbk**  and  **GBK**;  **UTF-8**,  **UTF8**,  **utf8**, and  **utf-8**; and  **Latine1**  and  **latine1**.
     >

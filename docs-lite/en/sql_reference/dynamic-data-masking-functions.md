@@ -1,6 +1,6 @@
 # Dynamic Data Masking Functions<a name="EN-US_TOPIC_0000001151866048"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This function is an internal function. For details, see "Database Security \> Dynamic Data Anonymization" in  *Feature Description*.
 
 -   creditcardmasking\(col text, letter char default 'x'\)

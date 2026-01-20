@@ -359,6 +359,6 @@ This section describes  **java.sql.Connection**, the API for connecting to a dat
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The AutoCommit mode is used by default within the API. If you disable it by running  **setAutoCommit\(false\)**, all the statements executed later will be packaged in explicit transactions, and you cannot execute statements that cannot be executed within transactions.
 

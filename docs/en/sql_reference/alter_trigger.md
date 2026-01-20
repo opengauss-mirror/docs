@@ -4,7 +4,7 @@
 
 **ALTER TRIGGER**  modifies the name of a trigger.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >Only the name modification is currently supported.
 

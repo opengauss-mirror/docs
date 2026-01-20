@@ -75,7 +75,7 @@ If the connection configuration is incorrect, perform the following steps:
        vi pg_hba.conf
        ```
 
-       >![](public_sys-resources/icon-note.gif) **NOTE:** 
+       >[!NOTE]NOTE 
        >You can view the  _GS\_HOME_  address in the configuration file during the installation.
        >```
        ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>

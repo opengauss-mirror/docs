@@ -66,7 +66,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >-   Objects created or modified during database initialization \(initdb\) cannot be recorded.  **PG\_OBJECT**  does not contain these object records.
 >-   When an object created before the upgrade is modified again, the modification time \(specified by  **mtime**\) is recorded. When DDL operations are performed on a table or an index, the transaction commit sequence number \(specified by  **changecsn**\) of the transaction to which the table or index belongs is recorded. Because the creation time of the object cannot be obtained,  **ctime**  and  **createcsn**  are empty.
 >-   The time recorded by  **ctime**  and  **mtime**  is the start time of the transaction to which the current operation belongs.

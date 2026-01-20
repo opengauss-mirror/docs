@@ -13,7 +13,7 @@ In the preceding information:
 -   **data\_type**: indicates the types of members in the set to be created.
 -   **indexby\_type**: indicates the type of the set index to be created.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   In openGauss, a set automatically increases. If an access violation occurs, a null value is returned, and no error message is reported.
 >-   The scope of a set type defined in a stored procedure takes effect only in this stored procedure.
 >-   The index can only be of the integer or varchar type. The length of the varchar type is not restricted.
@@ -30,6 +30,6 @@ openGauss supports access to set elements by using parentheses, and it also supp
 
 The set functions support  **multiset union**,  **intersect**,  **except all**, and  **distinct**.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >An expression can contain only one variable of the  **TABLE OF** **index by**  type.
 

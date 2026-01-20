@@ -4,7 +4,7 @@
 
 **ALTER TRIGGER**  renames a trigger.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Currently, only the name can be modified.
 
 ## Precautions<a name="en-us_topic_0283137014_en-us_topic_0237122081_en-us_topic_0059777936_s1cdad938760340bbbbd8251750b59176"></a>

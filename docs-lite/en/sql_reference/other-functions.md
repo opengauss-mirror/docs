@@ -191,7 +191,7 @@
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   The values  **GLOBAL**  and  **LOCAL**  of  **scope**  apply to distributed databases. For openGauss, the values have the same meaning, indicating that the local node is cleared.
     >-   The value  **BY\_CNID**  of  **clean\_type**  applies only to distributed databases and is invalid for openGauss.
 
@@ -653,7 +653,7 @@
 
     Return type: Boolean
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   This function attempts to create the  **public.pgxc\_copy\_error\_log**  table. For details about the table, see  [Table 7](#table138318280213).
     >-   Create the B-tree index on the  **relname**  column and execute  **REVOKE ALL on public.pgxc\_copy\_error\_log FROM public**  to manage permissions for the error table \(the permissions are the same as those of the  **COPY**  statement\).
     >-   **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value is  **off**  for GaussDB Kernel\).
@@ -1388,5 +1388,5 @@
 
     Return type: record
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The query result of this function is displayed only when the user-mode network is deployed in a centralized environment and  **enable\_dfx in comm\_proxy\_attr**  is set to  **true**. In other scenarios, an error message is displayed, indicating that queries are not supported.

@@ -9,7 +9,7 @@ Only the database system administrator or users granted with database creation p
 -   openGauss has two default template databases  **template0**  and  **template1**  and a default user database  **postgres**. The default compatible database type of Postgres is O \(that is,  **DBCOMPATIBILITY**  is set to  **A**\). In this compatible type, empty strings are processed as null values.
 -   **CREATE DATABASE**  creates a database by copying a template database \(**template0**  by default\). Do not use a client or any other tools to connect to or to perform operations on the template databases.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The template database does not contain any user table. You can view the attributes of the template database in the  **PG\_DATABASE**  system catalog.
     >-   The  **template0**  template does not allow user connections. Only the initial user of the database and the system administrator can connect to  **template1**.
 
@@ -37,7 +37,7 @@ To resolve this problem, you need to:
     CREATE DATABASE
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Database names must comply with the general naming convention rules of SQL identifiers. The current role automatically becomes the owner of this new database.
     >-   If a database system is used to support independent users and projects, store them in different databases.
     >-   If the projects or users are associated with each other and share resources, store them in one database. However, you can divide them into different schemas. A schema is a logical structure, and the access permission for a schema is controlled by the permission system module.

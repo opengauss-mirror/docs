@@ -52,7 +52,7 @@
 
     Specifies the parameter name to be modified. Each type of dictionaries has a template containing their custom parameters. Parameters function in a way irrelevant to their setting sequence. For details about the parameters, see  [option](create-text-search-dictionary.md).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The value of  **TEMPLATE**  in the dictionary cannot be changed.
     >-   To specify a dictionary, specify both the dictionary definition file path \(**FILEPATH**\) and the file name.
     >-   The name of a dictionary definition file can contain only lowercase letters, digits, and underscores \(\_\).

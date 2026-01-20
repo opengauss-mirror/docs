@@ -88,6 +88,6 @@ The usual logical operators include AND, OR, and NOT. SQL uses a three-valued lo
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The operators AND and OR are commutative, that is, you can switch the left and right operand without affecting the result.
 

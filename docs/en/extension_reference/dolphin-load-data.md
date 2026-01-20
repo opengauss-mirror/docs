@@ -73,7 +73,7 @@
 
     Value range: multi-character newline characters within 10 bytes. Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n **\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >   
     >-   The value of **LINES TERMINATED BY** cannot be the same as that of the **delimiter** or null parameter.   
     >-   The value of **LINES TERMINATED BY** cannot contain .abcdefghijklmnopqrstuvwxyz0123456789.
@@ -92,7 +92,7 @@
     
     Default value: double quotation mark (")
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >
     >-   The **ENCLOSED BY** parameter cannot be the same as the delimiter parameter.
     >-   The value of **ENCLOSED BY** must be a single-byte character.

@@ -707,6 +707,6 @@ The current version of openGauss supports the native DB4AI capability. By introd
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The DB4AI feature requires data access for computing and is not applicable to encrypted databases.
 

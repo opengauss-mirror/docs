@@ -9,7 +9,7 @@
     gs_om -t start
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >An HA cluster must be started in HA mode. If the cluster is started in standalone mode, you need to restore the HA relationship by running the  **gs\_ctl build**  command. For details about how to use the  **gs\_ctl**  tool, see the  _openGauss Tool Reference_.
 
 
@@ -22,7 +22,7 @@
     gs_om -t stop
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >For details about how to start and stop nodes and availability zones \(AZs\), see "Server Tools \> gs\_om" in the  _openGauss Tool Reference_.
 
 

@@ -253,7 +253,7 @@ cm_ctl switch [--ddb_type=[DDB]] [--commit] [--rollback]
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**  
+>[!NOTE]NOTE  
 >
 >-   The common options listed here may not be applicable to all commands. For details about how to use the common options, see the preceding description. You can also run the **cm\_ctl --help** command to query the common options.
 

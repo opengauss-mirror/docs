@@ -6,7 +6,7 @@
 
 When the database breaks down or needs to be rolled back to a previous state, the point-in-time recovery (PITR) function of openGauss can be used to restore the database to any time point after the backup and archived data is generated.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >-   PITR can only restore the database to a time point after the physical backup data is generated.
 >-   Only the primary node can be restored by using PITR. The standby node needs to be fully built to synchronize data with the primary node.
@@ -108,7 +108,7 @@ Example:
 recovery_target_inclusive = true
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >-   Only one of the four configuration items **recovery\_target\_name**, **recovery\_target\_time**, **recovery\_target\_xid**, and **recovery\_target\_lsn** can be used at a time.
 >-   If no restoration target is configured or the configured target does not exist, data is restored to the latest WAL point by default.

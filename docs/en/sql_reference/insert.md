@@ -12,7 +12,7 @@
 -   If you use the **query** clause to insert rows from a query, you need to have the **SELECT** permission on any table or column used in the query.
 -   When you connect to a database compatible to Teradata and **td\_compatible\_truncation** is **on**, a long string will be automatically truncated. If later **INSERT** statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If inserting multi-byte character data \(such as Chinese characters\) to a database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
 
 
@@ -56,7 +56,7 @@ INSERT [/*+ plan_hint */] INTO
     -   If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
     -   If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**INSERT ON DUPLICATE KEY UPDATE**  does not support the  **WITH**  and  **WITH RECURSIVE**  clauses.
 
 -   **plan\_hint**  clause

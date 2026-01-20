@@ -85,6 +85,6 @@ Applicable to core and important service systems.
 
 For more information, see [Two-City Three-DC DR](two_city_three_dc_dr.md).
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >The preceding deployments are typical solutions. You can adjust the deployment solutions based on actual service scenarios, for example, adding or deleting standby nodes, adjusting the number of centers, properly deploying synchronous and asynchronous standby nodes, and properly using cascaded standby nodes.

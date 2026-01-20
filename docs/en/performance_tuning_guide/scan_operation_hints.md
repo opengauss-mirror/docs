@@ -17,7 +17,7 @@ These hints specify a scan operation, which can be  **tablescan**,  **indexscan*
 -   _table_  specifies the table to be scanned. You can specify only one table. Use a table alias \(if any\) instead of a table name.
 -   _index_  indicates the index for  **indexscan**  or  **indexonlyscan**. You can specify only one index.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >**indexscan**  and  **indexonlyscan**  hints can be used only when the specified index belongs to the table.  
 >Scan operation hints can be used for row-store tables, column-store tables, OBS tables, and subquery tables.   
 

@@ -20,7 +20,7 @@ The above syntax diagram is explained as follows:
 -   **USING IN bind\_argument**: specifies where the variable passed to the dynamic SQL value is stored, that is, in the dynamic placeholder of  **dynamic\_select\_string**.
 -   **USING OUT bind\_argument**: specifies where the dynamic SQL returns the value of the variable.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   In query statements,  **INTO**  and  **OUT**  cannot coexist.
     >-   A placeholder name starts with a colon \(:\) followed by digits, characters, or strings, corresponding to  _bind\_argument_  in the  **USING**  clause.
     >-   _bind\_argument_  can only be a value, variable, or expression. It cannot be a database object such as a table name, column name, and data type. That is,  _bind\_argument_  cannot be used to transfer schema objects for dynamic SQL statements. If a stored procedure needs to transfer database objects through  _bind\_argument_  to construct dynamic SQL statements \(generally, DDL statements\), you are advised to use double vertical bars \(||\) to concatenate  _dynamic\_select\_clause_  with a database object.

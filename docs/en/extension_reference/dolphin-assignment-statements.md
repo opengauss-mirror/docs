@@ -45,6 +45,6 @@ END;
 /
 ```
 
-> ![](public_sys-resources/icon-notice.gif) **NOTICE:**
+> [!TIP]NOTICE
 >
 > * You can run the **set variable\_name :=(=) value** command to assign a value to a variable between BEGIN and END.

@@ -9,7 +9,7 @@
 -   Before the installation, check whether the specified port is occupied. If the port is occupied, change the port or stop the process that uses the port.
 -   Environment variables: Ensure that  *GAUSSHOME*,  *GAUSSDATA*,  *GAUSSLOG*, and  *GAUSSENV*  do not exist during new installation. If subsequent operations such as configuration and startup are performed, ensure that these environment variables are properly configured.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >If the  **history**  command is not disabled before the installation, manually clear sensitive information in the  **HISTORY**  records after the installation to prevent information leakage.
 >If the  **history**  command has been disabled before the installation, ignore this note.
 
@@ -36,7 +36,7 @@
        2. On the standby node: echo password | sh ./install.sh --mode standby -D ~/openGauss/data -R ~/openGauss/install  -C "replconninfo1='localhost=ip1 localport=port1 remotehost=ip2 remoteport=port2'" --start
    ```
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:**
+   >[!NOTE]NOTE
    >
    >
    >
@@ -57,7 +57,7 @@
    >
    >
    >
-   >![](./public_sys-resources/icon-caution.gif) **Caution:**
+   >[!WARNING]CAUTION
    >
    >
    >

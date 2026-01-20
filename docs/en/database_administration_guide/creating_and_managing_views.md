@@ -17,7 +17,7 @@ A view is different from a base table. It is only a virtual object rather than a
     CREATE VIEW
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >The  **OR REPLACE**  parameter in this command is optional. It indicates that if the view exists, the new view will replace the existing view.  
 
 -   Querying a view

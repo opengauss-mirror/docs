@@ -9,7 +9,7 @@
 -   **Connect to the database**: For details, see [Gsql Connection and Usage](../getting_started/gsql_connection_and_usage.md).
   
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If the  **gsql**  client is used to connect to a database, the connection timeout period will be 5 minutes by default. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
     >To resolve this problem, see  [FAQs](#section1780814211263).
@@ -90,7 +90,7 @@
 
     **gsql**  pre-defines some special variables and plans the values of these variables. To ensure compatibility with later versions, do not use these variables for other purposes. For details about special variables, see  [Table 2](#en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_table45814285).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   All the special variables consist of upper-case letters, digits, and underscores\(\_\).
     >-   To view the default value of a special variable, run the  **\\echo :**_varname_  meta-command, for example,  **\\echo :**_DBNAME_.
 
@@ -221,7 +221,7 @@
 
     The above command queries the HR.areaS table.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The value of the variable is copied literally, so it can even contain unbalanced quotation marks or backslash commands. Therefore, the input content must be meaningful.
 
 -   <a name="li163671421104717"></a>Prompt
@@ -447,7 +447,7 @@ Use the  **gsql**  command to connect to the remote database service. When conne
 
     The  **gsql**  tool uses the  **-d**  parameter to specify the target database name, the  **-U**  parameter to specify the database username, the  **-h**  parameter to specify the host name, and the  **-p**  parameter to specify the port number.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >- If the database name is not specified, the default database name generated during initialization is used.
     >- If the database user name is not specified, the current OS user is used as the database user name by default.
     >- If a value does not contain a parameter (such as **-d** or **-U**) and the database name (**-d**) is not specified in the connection command, the parameter is interpreted as the database name.
@@ -1179,7 +1179,7 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table23103470),  [Table Query buffer meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table8624338),  [Table Input and output meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table62130565),  [Table Information display meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  [Table Formatting meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table53911699),[Table Connection meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table37189353)  ,  [Table OS meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table32146234),  [Table Variable meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table50076468), and  [Table Large object meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table55465693).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >_FILE_  mentioned in the following commands indicates a file path. This path can be an absolute path such as  **/home/gauss/file.txt**  or a relative path, such as  **file.txt**. By default, a  **file.txt**  is created in the path where the user runs  **gsql**  commands.
 
@@ -1332,7 +1332,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In  [Table 14](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table44907299), option  **S**  indicates displaying the system object and  **PATTERN**  indicates displaying the additional description information and the name of the object to be displayed.
 
 **Table  14**  Information display meta-commands
@@ -2265,7 +2265,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Do not modify the configurations of the openGauss host in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty. It is recommended that service applications be deployed outside the openGauss.
 
 -   If  **-h 127.0.0.1**  is specified, the database connection is successful. If  **-h 127.0.0.1**  is removed, the connection fails.
@@ -2317,7 +2317,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
         <u>GRANT CONNECT ON DATABASE postgres TO user1;</u>
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >Actually, some common misoperations may also cause a database connection failure, for example, entering an incorrect database name, username, or password. Misoperations are accompanied with an error information on the client tool.
         >```
         >gsql -d postgres -p 15400
@@ -2420,7 +2420,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
     In  **pg\_hba.conf**  of the target primary database node, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md). 
     
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Do not modify the configurations of the openGauss host in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.
     >-   It is recommended that service applications be deployed outside the openGauss.
 
@@ -2433,7 +2433,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     To resolve this problem, try again. In addition, do not run service programs in openGauss during O&M operations, such as an upgrade, preventing such a problem caused by file replacement during the upgrade.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A possible stack of the core dump file contains dl\_main and its function calling. The file is used by the OS to initialize a process and load the shared dynamic library. If the process has been initialized but the shared dynamic library has not been loaded, the process cannot be considered completely started.
 
 

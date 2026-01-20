@@ -8,7 +8,7 @@ Implicit cursor operations, such as definition, open, value-grant, and close ope
 
 Format call:  **SQL%**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   **INSERT**,  **UPDATE**,  **DELETE**, and  **SELECT**  statements do not need defined cursors.
 >-   In O-compatible mode, if the GUC parameter  **behavior\_compat\_options**  is set to  **compat\_cursor**, implicit cursors are valid across stored procedures.
 

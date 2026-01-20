@@ -302,7 +302,7 @@ Filter: (c1 = t1.c1)
 
         The correlated subquery is displayed in the target list \(query return list\). Values need to be returned even if the condition  **t1.c1=t2.c1**  is not met. Therefore, use left outer join to join  **T1**  and  **T2**  so that SSQ can return padding values when the condition  **t1.c1=t2.c1**  is not met.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >ScalarSubQuery \(SSQ\) and Correlated-ScalarSubQuery \(CSSQ\) are described as follows:
         >-   SSQ: a sublink that returns a scalar value of a single row with a single column
         >-   CSSQ: an SSQ containing correlation conditions
@@ -449,7 +449,7 @@ Filter: (c1 = t1.c1)
             ```
 
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   If the AGG type is  **COUNT\(\*\)**,  **0**  is used for data padding when  **CASE-WHEN**  is not matched. If the type is not  **COUNT\(\*\)**,  **NULL**  is used.
     >-   CTE rewriting works better by using sharescan.
 

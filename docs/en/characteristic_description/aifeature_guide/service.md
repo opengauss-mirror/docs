@@ -128,7 +128,7 @@ In non-interactive mode, the initialization consists of three steps: starting co
 
 4. Start the DBMind background service based on the configuration directory.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >1. The comments in the configuration file are used to prompt users in interactive mode. Do not manually modify or delete the comments.
 >2. Make sure that the value of the configuration item and the comment are separated by a space. Otherwise, the system regards the comment as the value of the configuration item.
 >3. If special characters in a configuration item need to be escaped, use the percent sign \( %\) to escape the special characters. For example, if the password is  **password %**, use the percent sign \( %\) to escape the special characters, that is,  **password %%**.
@@ -157,7 +157,7 @@ gs_dbmind service stop -c confpath
 
 The DBMind service automatically exits after the running task is complete in the background.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >-   The metabase user in  **\[METADATABASE\]**  must have the permission to create tables and insert and update data in the database. Otherwise, an exception will occur during tool execution.
 >-   Currently, multiple services cannot be started separately using the same configuration file.
 >-   The tool provides the  **requirement.txt**  file. You can use this file to install required third-party dependencies.

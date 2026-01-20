@@ -128,7 +128,7 @@ The **gs\_om** tool can use the following types of parameters:
 
         If the database node path is not specified, the database node path in the static file is used.
 
-        ![](public_sys-resources/icon-note.gif) **NOTE:** 
+        [!NOTE]NOTE 
         For a cluster where the CM tool is deployed, if the **-D** parameter is specified when you start or stop a single instance, only the database process is started or stopped, and the CM process is not affected.
         
         Assume that the database and CM processes of the current instance are stopped. If the **-D** parameter is specified when the instance is started, only the database process will be started. In this case, the database process fails to be started because the CM process does not exist. You can remove the **-D** parameter to start the entire instance.

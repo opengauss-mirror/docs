@@ -115,7 +115,7 @@ This section describes how to configure parameters for resource load management.
     ```
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If a user's login permission is revoked, the user's resource pool will be changed to  **default\_pool**. For details about  **default\_pool**, see  [Table 2](#creating-a-resource-pool).
 
 ### Procedure<a name="section344124715313"></a>
@@ -149,7 +149,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 
 ### Procedure<a name="en-us_topic_0066854607_section5658359019124"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   To control all the resources in openGauss, you need to create, update, and delete Cgroups on each node. Use  **gs\_ssh**  \(see "Server Tools \> gs\_ssh" in  _Tool Reference_\) to run commands in the steps below.
 >-   A Cgroup must be named as follows:
 >    -   The names of sub-Class Cgroups and Workload Cgroups cannot contain columns \(:\).
@@ -203,7 +203,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
     gs_ssh -c "gs_cgroup -u -S class_a -G workload_a1 -g 30"
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >After adjustment, CPU resources allocated to  **workload\_a1**  should not be greater than those allocated to  **class\_a**. The name of a Workload Cgroup cannot be a default name of the Timeshare Cgroup, that is,  **Low**,  **Medium**,  **High**, or  **Rush**.
 
 
@@ -217,7 +217,7 @@ You are familiar with "Server Tools \> gs\_cgroup" and "Server Tools \> gs\_ssh"
 
     After the command is executed, the Cgroup  **class\_a**  is deleted.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >User  **root**  or a user with the  **root**  permission can delete the default Cgroups that can be accessed by a common user  _username_  by specifying  **-d**  and  **-U** _username_. A common user can delete existing Class Cgroups by specifying  **-d**  and  **-S** _classname_.
 
 
@@ -577,7 +577,7 @@ After resource load management is enabled, the system automatically creates  **d
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**default\_pool**  cannot be modified in openGauss.
 
 ### Prerequisites<a name="section17352165513395"></a>
@@ -609,7 +609,7 @@ You are familiar with the  [CREATE RESOURCE POOL](../sql_reference/create_resour
     CREATE RESOURCE POOL
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If you do not specify an associated Cgroup when creating a resource pool, the resource pool will be associated with the default Cgroup, which is the Timeshare Cgroup  **Medium**  under the  **DefaultClass**  Cgroup.
     >-   The value of **control\_group** is case-sensitive and must be contained in single quotation marks or double quotation marks.
     >-   If a database user specifies the Timeshare string \(**Rush**,  **High**,  **Medium**, or  **Low**\) in the syntax, for example,  **control\_group**  is set to  **High**, the resource pool will be associated with the  **High**  Timeshare Cgroup under  **DefaultClass**.
@@ -634,13 +634,13 @@ openGauss=# DROP RESOURCE POOL resource_pool_a2;
 DROP RESOURCE POOL
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The resource pool cannot be deleted if it is associated with a role.
 >-   In a multi-tenant scenario, deleting a group resource pool also deletes the related service resource pools. A resource pool can be deleted only when it is not associated with any users.
 
 ### Viewing Resource Pool Information<a name="en-us_topic_0066854608_section63579270173658"></a>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   Do not use the INSERT, UPDATE, DELETE, and TRUNCATE statements in the  **pg\_resource\_pool**  system catalog that manages resource load.
 >-   Do not modify the  **memory\_limit**  and  **cpu\_affinity**  attributes of a resource pool.
 

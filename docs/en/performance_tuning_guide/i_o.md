@@ -69,7 +69,7 @@ Use one of the following methods to check the server I/O:
         vacuum full tablename;
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
+        >[!NOTE]NOTE   
         >You are advised to do  **VACUUM FULL**  during the system idle time because this operation will cause heavy I/O load in a short period.  **VACUUM FULL**  during the system busy time does not facilitate the I/O decrease.  
 
 

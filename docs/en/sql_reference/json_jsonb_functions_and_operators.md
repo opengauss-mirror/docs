@@ -114,7 +114,7 @@ For details about the JSON/JSONB data type, see  [JSON/JSONB Types](json_jsonb_t
 </tbody>
 </table>
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >For the  **\#\>**  and  **\#\>\>**  operators, if no data can be found in the specified path, no error is reported and a  **NULL**  value is returned.
 
 **Table  2**  Additional JSONB support for operators

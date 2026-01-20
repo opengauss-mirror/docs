@@ -52,7 +52,7 @@ openGauss=# SELECT 'abc' || 'def' AS "unspecified";
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In this case there is no initial hint for which type to use, since no types are specified in the query. So, the parser looks for all candidate operators and finds that there are candidates accepting both string-category and bit-string-category inputs. Since string category is preferred when available, that category is selected, and then the preferred type for strings,  **text**, is used as the specific type to resolve the unknown-type literals as.
 
 Example 3: Absolute-value and negation operator type resolution. The openGauss operator catalog has several entries for the prefix operator @. All the entries implement absolute-value operations for various numeric data types. One of these entries is for type  **float8**, which is the preferred type in the numeric category. Therefore, openGauss will use that entry when faced with an unknown input:
@@ -77,6 +77,6 @@ openGauss=# SELECT array[1,2] <@ '{1,2,3}' as "is subset";
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The openGauss operator catalog has several entries for the infix operator <@, but the only two that could possibly accept an integer array on the left side are array inclusion \(anyarray <@ anyarray\) and range inclusion \(anyelement <@ anyrange\). Since none of these polymorphic pseudo-types \(see  [Pseudo-Types](pseudo-types.md)\) is considered preferred, the parser cannot resolve the ambiguity on that basis. However, the last resolution rule tells it to assume that the unknown-type literal is of the same type as the other input, that is, integer array. Now only one of the two operators can match, so array inclusion is selected. \(Had range inclusion been selected, we would have gotten an error, because the string does not have the right format to be a range literal.\)
 

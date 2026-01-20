@@ -4,7 +4,7 @@
 
 **pg\_resetxlog**  is a tool for re-setting database transaction files.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >Before running the  **pg\_resetxlog**  command, stop the database.
 
 ## Prerequisites<a name="en-us_topic_0287276005_en-us_topic_0237152442_section14602518109"></a>

@@ -17,7 +17,7 @@ The  **ts\_rewrite**  family of functions searches a given  **tsquery**  for occ
 
     This form of  **ts\_rewrite**  accepts a starting query and a SQL select command, which is given as a text string. The  **select**  must yield two columns of  **tsquery**  type. For each row of the select result, occurrences of the first column value \(the target\) are replaced by the second column value \(the substitute\) within the current  **query**  value.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Note that when multiple rewrite rules are applied in this way, the order of application can be important; so in practice you will want the source query to  **ORDER BY**  some ordering key.
 
     Consider a real-life astronomical example. We will expand query supernovae using table-driven rewriting rules:

@@ -154,7 +154,7 @@ Gray upgrade: based on gray upgrade, supports to upgrade the specified nodes, su
 </tbody></table>
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >To view the current version, run the following command:
 >
 >```
@@ -241,7 +241,7 @@ Note the following during the upgrade:
      export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 
      ```
 
-     >![](/public_sys-resources/icon-note.gif) **NOTE:**
+     >[!NOTE]NOTE 
      >
      >-   Replace the JDK directory and version number with the actual ones.
      >-   The upgrade check verifies only the Java environment variables of the node where the upgrade command is executed. If other nodes also need to use the PL/Java, download the JDK and configure the Java environment variables. Otherwise, the PL/Java cannot be used.

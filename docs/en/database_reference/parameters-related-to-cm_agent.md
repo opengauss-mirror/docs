@@ -151,7 +151,7 @@
 
 **Parameter description**: Specifies the number of shards to be added in the scale-out scenario. This parameter is used to calculate the threshold for reporting a disk capacity alarm.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The parameter value must be the same as the actual number of shards to be added.
 
 **Value range**: an integer ranging from 0 to 2<sup>32</sup>  – 1. If this parameter is set to  **0**, the disk scale-out alarm is not reported. If this parameter is set to a value greater than  **0**, the disk scale-out alarm is reported and the threshold is calculated based on the number of shards specified by this parameter. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).

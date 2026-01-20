@@ -9,7 +9,7 @@ SQL  **UNION**  constructs must match up possibly dissimilar types to become a s
 -   If the inputs are not all of the same type category, a failure will be resulted. \(Type  **unknown**  is not included in this case.\)
 -   If the inputs are all of the same type category, choose the top preferred type in that category. \(Exception: The UNION operation regards the type of the first branch as the selected type.\)
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**typcategory**  in the  **pg\_type**  system catalog indicates the data type category.  **typispreferred**  indicates whether a type is preferred in  **typcategory**.
 
 -   Convert all inputs to the selected type. \(Retain the original lengths of strings\). Fail if there is not an implicit conversion from a given input to the selected type.

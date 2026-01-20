@@ -33,7 +33,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
         PARTITION ( partition_name ) ;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >An ordinary partitioned table supports the syntax but not the function of collecting statistics about specified partitions.
 
 
@@ -44,7 +44,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
         table_name (( column_1_name, column_2_name [, ...] ));
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   When collecting statistics about multiple columns, set the GUC parameter  [default\_statistics\_target](../database_reference/other-optimizer-options.md#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815)  to a negative value to sample data in percentage.
     >-   If the GUC parameter **enable\_functional\_dependency** is disabled, the statistics about a maximum of 32 columns can be collected at a time. If the GUC parameter **enable\_functional\_dependency** is enabled, the statistics about a maximum of 4 columns can be collected at a time.
     >-   You are not allowed to collect statistics about multiple columns in system catalogs.
@@ -56,7 +56,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE};
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   In fast mode, DML operations need to be performed on the tables to be verified concurrently. As a result, an error is reported during the verification. In the current fast mode, data is directly read from the disk. When other threads modify files concurrently, the obtained data is incorrect. Therefore, you are advised to perform the verification offline.
     >-   You can perform operations on the entire database. Because a large number of tables are involved, you are advised to save the result  **gsql -d database -p port -f "verify.sql"\> verify\_warning.txt 2\>&1**  in redirection mode.
     >-   NOTICE is used to check only tables that are visible to external systems. The detection of internal tables is included in the external tables on which NOTICE depends and is not displayed externally.
@@ -69,7 +69,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name|index_name [CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Operations on ordinary tables and index tables are supported, but  **CASCADE**  operations on indexes of index tables are not supported. The  **CASCADE**  mode is used to process all index tables of the primary table. When the index tables are checked separately, the  **CASCADE**  mode is not required.
     >-   When the primary table is checked, the internal tables of the primary table, such as the toast table and cudesc table, are also checked.
     >-   When the system displays a message indicating that the index table is damaged, you are advised to run the  **reindex**  command to recreate the index.
@@ -80,7 +80,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(partition_name)}[CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You can check a single partition of a table, but cannot perform the  **CASCADE**  operation on the indexes of an index table.
 
 
@@ -90,7 +90,7 @@ If no parameter is specified,  **ANALYZE**  analyzes each table and partitioned 
 
     Enables the display of progress messages.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If  **VERBOSE**  is specified,  **ANALYZE**  displays the progress information, indicating the table that is being processed. Statistics about tables are also displayed.
 
 -   **table\_name**
@@ -180,7 +180,7 @@ INFO:  analyzing "public.customer_info" inheritance tree(cn_5002 pid=53078)
 ANALYZE
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If any environment-related fault occurs, check the logs of the primary node of the database.
 
 -- Delete the table.

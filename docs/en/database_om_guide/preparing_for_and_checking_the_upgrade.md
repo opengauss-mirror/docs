@@ -114,7 +114,7 @@ This section describes preparations before the upgrade.
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >Time required varies according to the particulars for the site (such as the data volume and server performance).
 
 ## Collecting Node Information
@@ -179,7 +179,7 @@ Use the gs\_checkos tool to check the OS status.
 
 - Only user **root** is authorized to run the **gs\_checkos** command.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**
+  >[!NOTE]NOTE
   >This tool cannot be independently invoked. For security purposes, it is automatically deleted after the preinstallation is complete.
 
 

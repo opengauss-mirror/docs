@@ -2,7 +2,7 @@
 
 [Table 1](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss. For the operators and built-in functions of the types, see  [Date and Time Processing Functions and Operators](date_and_time_processing_functions_and_operators.md).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the time format of another database is different from that of openGauss, modify the value of the  **DateStyle**  parameter to keep them consistent.
 
 **Table  1**  Date/Time types
@@ -179,7 +179,7 @@ type \[ \( p \) \] 'value'
 
 The  **p**  that can be selected in the precision statement is an integer, indicating the number of fractional digits in the  **seconds**  column.  [Table 2](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_t0606b0d8bec74d34a6440ef1de8d1e67)  shows some possible inputs for the  **date**  type.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >Valid date separators are hyphens (-) and slashes (/). Mixed use of hyphens and slashes may cause parsing errors.
 
 **Table  2**  Date input

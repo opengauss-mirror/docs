@@ -141,7 +141,7 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
 
     Specifies the file of a host name list. The file is a plain text file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-The **-f** and **-h** parameters cannot be used together.
 
     Value range: a host name list
@@ -179,7 +179,7 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
   }
   ```
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:** 
+  [!NOTE]NOTE 
 
    For details about the value ranges of **TypeName** and corresponding **Content**, see Table 1 Information to be collected by gs\_collector.
   The **Interval** and **Count** parameters do not take effect when **TypeName** is set to **Log**, **CoreDump**, **Config**, or **XLog**.
@@ -204,7 +204,7 @@ An OS tool (such as **gstack**) that **gs\_collector** requires has been install
 
   If the keyword contains spaces, quote the keyword with double quotations marks \(""\).
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**
+  >[!NOTE]NOTE
   >
   >  Logs about the performance are binary logs. The keyword collection function does not support performance log collection.
 

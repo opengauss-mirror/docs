@@ -339,7 +339,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >SSL mode:
         >Ensure that the permission on the  **client.key\***  series files is  **600**.
         >Go back to the root directory, create the  **.postgresql**  directory, and save  **root.crt**,  **client.crt**,  **client.key**,  **client.key.cipher**,  **client.key.rand**,  **client.req**,  **server.crt**,  **server.key**,  **server.key.cipher**,  **server.key.rand**, and  **server.req**  to the  **.postgresql**  directory.
@@ -377,7 +377,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-N all**  indicates all hosts in openGauss.
         >-   **-I all**  indicates all instances of the host.
         >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
@@ -547,7 +547,7 @@ Run the  **./isql -v** *MPPODBC*  command \(***MPPODBC***  is the data source na
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction. If one of the statements fails, the entire request will be rolled back.
 
 ## Connecting to a Database<a name="section472715438471"></a>

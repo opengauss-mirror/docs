@@ -42,11 +42,11 @@ The syntax of RAISE is as follows:
 
 If neither a condition name nor an  **SQLSTATE**  is designated in a  **RAISE EXCEPTION**  command, the  **RAISE EXCEPTION \(P0001\)**  is used by default. If no message text is designated, the condition name or SQLSTATE is used as the message text by default.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the  **SQLSTATE**  designates an error code, the error code is not limited to a defined error code. It can be any error code containing five digits or ASCII uppercase rather than  **00000**. Do not use an error code ended with three zeros because such error codes are category codes and can be captured by the whole category.
 >-   In O-compatible mode, SQLCODE is equivalent to SQLSTATE.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The syntax described in  [Figure 5](#en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_f6b9d7253ecad413e9ee92ba78199a6b4)  does not append any parameter. This form is used only for the  **EXCEPTION**  statement in a  **BEGIN**  block so that the error can be re-processed.
 
 **EXCEPTION\_INIT**
@@ -63,7 +63,7 @@ In O-compatible mode, EXCEPTION\_INIT can be used to define the SQLCODE error co
 -   **exception\_name**  indicates the name of the exception declared by the user. The  **EXCEPTION\_INIT**  syntax must follow the declared exception.
 -   **sqlcode**  is a customized SQL code, which must be a negative integer ranging from –2147483647 to –1.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When  **EXCEPTION\_INIT**  is used to customize an SQL code, SQLSTATE is equivalent to SQLCODE, and SQLERRM is in the format of  _xxx_**: non-GaussDB Exception**. For example, if the customized SQL code is  **–1**, SQLSTATE is  **–1**  and SQLERRM is  **1: non-GaussDB Exception**.
 
 ## Example<a name="en-us_topic_0283137518_en-us_topic_0237122256_en-us_topic_0059777683_s962620630e7349e7b37b844648a267a1"></a>

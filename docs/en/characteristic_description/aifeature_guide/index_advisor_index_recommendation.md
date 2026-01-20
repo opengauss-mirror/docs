@@ -27,7 +27,7 @@ The single-query index recommendation function allows users to directly perform 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   This function supports only a single SELECT statement and does not support other types of SQL statements.
 >-   Column-store tables, segment-paged tables, common views, materialized views, global temporary tables, and encrypted databases are not supported.
 
@@ -77,7 +77,7 @@ openGauss=# select "table", "column", "indextype" from gs_index_advise('select n
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Parameters of the system function  **gs\_index\_advise\(\)**  are of the text type. If the parameters contain special characters such as single quotation marks \('\), you can use single quotation marks \('\) to escape the special characters. For details, see the preceding example.
 
 ## Virtual Index<a name="EN-US_TOPIC_0296549247"></a>
@@ -246,7 +246,7 @@ This function involves the following GUC parameters:
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Running  **EXPLAIN ANALYZE**  does not involve the virtual index function.
 >-   The created virtual index is at the database instance level and can be shared by sessions. After a session is closed, the virtual index still exists. However, the virtual index will be cleared after the database is restarted.
 >-   This function does not support common views, materialized views, and column-store tables.
@@ -263,7 +263,7 @@ For workload-level indexes, you can run scripts outside the database to use this
     -   log\_min\_duration\_statement = 0
     -   log\_statement= 'all'
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >After service data extraction is complete, you are advised to restore the preceding GUC parameters. Otherwise, log files may be expanded.
 
 
@@ -297,7 +297,7 @@ For workload-level indexes, you can run scripts outside the database to use this
     gs_dbmind component extract_log $GAUSSLOG/pg_log/dn_6001 sql_log.txt '%m %c %d %p %a %x %n %e' -d postgres -U omm --start_time '2021-07-06 00:00:00' --statement
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If the  **-d/-U**  parameter is specified, the prefix of each log record must contain  **%d**  and  **%u**. If transactions need to be extracted,  **%p**  must be specified. For details, see the  **log\_line\_prefix**  parameter. It is recommended that the value of  **max\_template\_num**  be less than or equal to  **5000**  to avoid long execution time of workload indexes.
 
 3.  Change the GUC parameter values set in  [1](#li541620573521)  to the values before the setting.
@@ -350,7 +350,7 @@ For workload-level indexes, you can run scripts outside the database to use this
     create index ind9 on public.bmsql_district(d_w_id);
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The value of the  **multi\_node**  parameter must be specified based on the current database architecture. Otherwise, the recommendation result is incomplete, or even no recommendation result is generated.
 
 

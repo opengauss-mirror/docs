@@ -8,7 +8,7 @@ This section describes parameter settings and value ranges for communication lib
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the OS does not support  **TCP\_KEEPIDLE**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 >-   If this parameter is set to  **0**, the system value is used.
@@ -29,7 +29,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **300**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the OS does not support  **TCP\_KEEPINTVL**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 >-   If this parameter is set to  **0**, the system value is used.
@@ -42,7 +42,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the OS does not support  **TCP\_KEEPCNT**, set this parameter to  **0**.
 >-   The parameter is ignored on an OS where connections are established using the Unix domain socket.
 >-   If this parameter is set to  **0**, the system value is used.
@@ -57,7 +57,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the parameters related to the communication proxy library.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   This parameter applies only to the centralized ARM standalone system running EulerOS 2.9.
 >-   This function takes effect when the thread pool is enabled, that is,  **enable\_thread\_pool**  is set to  **on**.
 >-   When setting this parameter, you need to set the GUC parameter  **local\_bind\_address**  to the IP address of the NIC of the  **libos\_kni**.

@@ -84,7 +84,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
@@ -190,7 +190,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
@@ -310,7 +310,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 

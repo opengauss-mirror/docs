@@ -14,7 +14,7 @@ Git and Git Large File Storage \(LFS\) have been installed and configured on the
     [user@linux sda]$ git clone [git ssh address] openGauss-server
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **openGauss-server**: openGauss code repository.
     >-   Database compilation depends on open-source third-party software. You can obtain the open-source third-party software from  [Building Open-source Software](#en-us_topic_0283136302_section13890105116714). Since open-source software build takes a long time, we have built  **binarylibs**  using  **openGauss-third\_party**  and compressed and uploaded it to the Internet.
     > The community provides binary files compiled on three platforms. The download links are as follows:\
@@ -162,7 +162,7 @@ After installing the software listed in  [Table 1](#en-us_topic_0283136302_table
 
     The OpenSSL is generated.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >For error logs, you can view the corresponding log in the build directory and the log in the corresponding module. For example, you can view the OpenSSL build and installation logs in the  **dependency**  module.
     >-   /sda/openGauss-third\_party/build/dependency\_build.log
     >-   /sda/openGauss-third\_party/dependency/build/openssl\_build.log
@@ -231,7 +231,7 @@ The following table describes the parameters.
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 
 >1.  **-m \[debug | release | memcheck\]**  indicates that three target versions can be selected:
 

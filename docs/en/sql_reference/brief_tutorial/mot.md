@@ -94,7 +94,7 @@ MOT can be used in a variety of applications, such as:
 
     The following describes how to grant a database user the permission to access the MOT storage engine. This operation is performed only once for each database user and is usually performed during initial configuration.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >MOT is integrated with the openGauss database through FDWs. Therefore, user permissions need to be authorized.
 
     To enable a specific user to create and access MOTs \(through DDL, DML, and SELECT operations\), execute the following statement only once:
@@ -154,7 +154,7 @@ MOT can be used in a variety of applications, such as:
     create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) ;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You do not need to specify the FOREIGN keyword before the MOT name because it is used only in the commands for creating and deleting tables.
 
 
@@ -186,7 +186,7 @@ The following describes how to manually perform a few steps in order to convert 
     6.  Visually/Manually verify that all the original data was imported correctly into the new MOT. An example is provided below.
     7.  Resume application activities.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >In this way, since the table name remains the same, application queries and relevant database stored procedures will be able to access the new MOT seamlessly without code changes. Please note that MOT does not support cross-engine multi-table queries \(such as by using Join, Union and sub-query\) and cross-engine multi-table transactions. Therefore, if an original table is accessed somewhere in a multi-table query, stored procedure or transaction, you must either convert all related disk-based tables into MOTs or alter the relevant code in the application or the database.
 
 -   Conversion example

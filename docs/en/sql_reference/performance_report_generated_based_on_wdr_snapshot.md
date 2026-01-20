@@ -32,7 +32,7 @@ A report can be generated after the WDR snapshot function is enabled (that is, [
    select create_wdr_snapshot();
    ```
 
-   >![](./public_sys-resources/icon-note.gif) **NOTE:**
+   >[!NOTE]NOTE 
    >Run the **cm\_ctl query -Cdvi** command. In the command output, the information under **Central Coordinator State** is the CCN information.
 
 5. Run the following commands to generate a WDR in HTML format on the local PC:
@@ -63,7 +63,7 @@ A report can be generated after the WDR snapshot function is enabled (that is, [
       select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
-      >![](./public_sys-resources/icon-note.gif) **NOTE:**
+      >[!NOTE]NOTE 
       >Currently, the name of the openGauss node is fixed to **dn\_6001\_6002\_6003**. You can also replace it with the actual node name.
 
       **Table 1** Parameters of the generate\_wdr\_report function

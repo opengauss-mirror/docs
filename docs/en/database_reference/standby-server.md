@@ -6,7 +6,7 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If this parameter is set to  **on**,  **[wal\_level](settings-60.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **hot\_standby**. Otherwise, the database startup fails.
 >-   In an HA system,  **hot\_standby**  cannot be set to  **off**, because this setting can affect other features of the HA system.
 >-   If the  **hot\_standby**  parameter was disabled and the  **wal\_level**  parameter was set to a value lower than  **hot\_standby**, perform the following operations to ensure that the logs to be replayed on the standby node can be queried on the standby node before enabling the  **hot\_standby**  parameter again:
@@ -27,7 +27,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
 **Value range**: an integer ranging from –1 to  *INT\*MAX_. The unit is ms.
@@ -40,7 +40,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**–1**  indicates that the standby server waits until the conflicting queries are complete.
 
 **Value range**: an integer ranging from –1 to  *INT\*MAX_. The unit is ms.
@@ -57,7 +57,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **5s**  \(5000 ms\)
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If this parameter is set to  **0**, the standby server does not send information, such as the log receiving location, to the primary server. As a result, the transaction commit on the primary server may be blocked, and the switchover may fail. In normal service scenarios, you are not advised to set this parameter to  **0**.
 
 ## hot\_standby\_feedback<a name="en-us_topic_0283136835_en-us_topic_0237124714_en-us_topic_0059778071_s766f240c55244d1888253a480e732637"></a>
@@ -73,7 +73,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If this parameter is set to  **on**, VACUUM on the primary server will not clean up tuples modified in transactions later than the oldest transaction active on standby servers.
 >Therefore, the performance of the primary server will be affected.
 

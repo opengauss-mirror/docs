@@ -30,7 +30,7 @@ To ensure Durability, MOT is fully integrated with the openGauss's Write-Ahead L
 -   During recovery, data is loaded from the last known or a specific Checkpoint; and then the WAL Redo log is used to complete the data changes that occur from that point forward.
 -   The WAL \(Redo Log\) retains all the table row modifications until a Checkpoint is performed \(as described above\). The log can then be truncated in order to reduce recovery time and to save disk space.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In order to ensure that the log IO device does not become a bottleneck, the log file must be placed on a drive that has low latency.
 
 -   Parallel Redo Recovery - Since the openGauss 5.0 version release, the MOT engine includes a Parallel Recovery mechanism. The recovery operations are performed using multiple threads, while the transaction commit is done with a single thread, ensuring transactional consistency. This delivers low RTO for MOT tables as per openGauss specifications.
@@ -75,7 +75,7 @@ When a transaction commits, a group of entries are recorded in the WAL Redo Log,
 
    Writing transactions to the WAL is more efficient in this manner because all the buffers from the same socket are written to disk together.
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:** 
+   >[!NOTE]NOTE 
    >
    >-   Each thread runs on a single core/CPU which belongs to a single socket and each thread only writes to the socket of the core on which it is running.
 

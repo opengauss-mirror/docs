@@ -1498,7 +1498,7 @@ If the number of connections in the command output is close to the value of  **m
 
 4.  Restart database services to make the new settings take effect.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The restart results in operation interruption. Properly plan the restart to avoid affecting users.
 
     ```
@@ -1588,7 +1588,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     VACUUM
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../database_reference/cost-based-vacuum-delay.md).
 
 3.  Delete a table.
@@ -1683,7 +1683,7 @@ Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column o
         ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Before you recreate an index, you can increase the values of  **maintenance\_work\_mem**  and  **psort\_work\_mem**  to accelerate the index recreation.
 
 ## Exporting and Viewing the WDR
@@ -1740,7 +1740,7 @@ To generate snapshot data, set **enable\_wdr\_snapshot** to **on**. Accessing WD
       openGauss=# select generate_wdr_report(1, 2, 'all', 'node', pgxc_node_str()::cstring);
       ```
 
-      >![](public_sys-resources/icon-note.gif) **NOTE:**
+      >[!NOTE]NOTE
       >
       >Currently, the name of the openGauss node is fixed to **dn\_6001**. You can also replace it with the actual node name.
 
@@ -1913,7 +1913,7 @@ You are advised to plan routine physical backup and store backup files in a reli
 
 -   Delete personal data before sending debug logs to others for analysis.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The log level  **log\_min\_messages**  is set to  **DEBUG***x_  \(*x_  indicates the debug level and the value ranges from 1 to 5\). The information recorded in debug logs may contain personal data.
 
 - Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.

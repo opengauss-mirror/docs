@@ -68,5 +68,5 @@ In  **OPTIONS**,  **ADD**,  **SET**, and  **DROP**  are operations to be perform
 
 [CREATE USER MAPPING](create-user-mapping.md)  and  [DROP USER MAPPING](drop-user-mapping.md)
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.

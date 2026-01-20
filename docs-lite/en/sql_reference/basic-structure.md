@@ -10,7 +10,7 @@ A PL/SQL block can contain a sub-block which can be placed in any section. The f
     DECLARE
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >This part is optional if no variable needs to be declared.
     >-   An anonymous block may omit the  **DECLARE**  keyword if no variable needs to be declared.
@@ -35,7 +35,7 @@ A PL/SQL block can contain a sub-block which can be placed in any section. The f
     /
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >
     >You are not allowed to use consecutive tabs in the PL/SQL block because they may result in an exception when the  **gsql**  tool is executed with the  **-r**  parameter specified.
 

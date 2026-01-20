@@ -6,7 +6,7 @@ openGauss supports two bit string types: bit\(n\) and bit varying\(n\), in which
 
 The  **bit**  type data must match the length  _n_  exactly. It is an error to attempt to store shorter or longer bit strings. The  **bit varying**  data is of variable length up to the maximum length  _n_; longer strings will be rejected. Writing  **bit**  without a length is equivalent to  **bit\(1\)**, while  **bit varying**  without a length specification means unlimited length.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If one explicitly casts a bit-string value to  **bit\(n\)**, it will be truncated or zero-padded on the right to be exactly  _n_  bits, without raising an error.
 >Similarly, if one explicitly casts a bit-string value to  **bit varying\(n\)**, it will be truncated on the right if it is more than  _n_  bits.
 

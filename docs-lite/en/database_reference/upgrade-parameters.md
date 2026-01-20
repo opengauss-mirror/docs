@@ -37,6 +37,6 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Special case: When the gray upgrade is used, if the major version upgrade policy is selected, that is, the upgrade script needs to be executed and the binary package needs to be replaced, the value of  **upgrade\_mode**  is set to  **2**;iIf the minor version upgrade policy is selected, that is, only the binary package needs to be replaced, the value of  **upgrade\_mode**  is not set to  **2**.
 

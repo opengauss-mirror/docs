@@ -19,7 +19,7 @@ X-Tuner is a parameter tuning tool integrated into databases. It uses AI technol
 
 The tuning program is a tool independent of the database kernel. The usernames and passwords for the database and instances are required to control the benchmark performance test of the database. Before starting the tuning program, ensure that the interaction in the test environment is normal, the benchmark test script can be run properly, and the database can be connected properly.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the parameters to be tuned include the parameters that take effect only after the database is restarted, the database will be restarted multiple times during the tuning. Exercise caution when using  **train**  and  **tune**  modes if the database is running jobs.
 
 X-Tuner can run in any of the following modes:
@@ -28,7 +28,7 @@ X-Tuner can run in any of the following modes:
 -   **train**: Modify parameters and execute the benchmark based on the benchmark information provided by users. The reinforcement learning model is trained through repeated iteration so that you can load the model in  **tune**  mode for optimization.
 -   **tune**: Use an optimization algorithm to tune database parameters. Currently, two types of algorithms are supported: deep reinforcement learning and global search algorithm \(global optimization algorithm\). The deep reinforcement learning mode requires  **train**  mode to generate the optimized model after training. However, the global search algorithm does not need to be trained in advance and can be directly used for search and optimization.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If the deep reinforcement learning algorithm is used in  **tune**  mode, a trained model must be available, and the parameters for training the model must be the same as those in the parameter list \(including max and min\) for tuning.
 
 **Figure  1**  X-Tuner structure<a name="fig137427353816"></a>  
@@ -41,7 +41,7 @@ X-Tuner can run in any of the following modes:
 -   X-Tuner: The main logic module is encapsulated by the environment module. Each step is a tuning process. The entire tuning process is iterated through multiple steps.
 -   Benchmark: a user-specified benchmark performance test script, which is used to run benchmark jobs. The benchmark result reflects the performance of the database system.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Ensure that the larger the benchmark script score is, the better the performance is.
 >For example, for the benchmark used to measure the overall execution duration of SQL statements, such as TPCH, the inverse value of the overall execution duration can be used as the benchmark score.
 
@@ -222,7 +222,7 @@ Configuration items for connecting to a database in the three modes are the same
     Input  **-f connection.json**.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >To prevent password leakage, the configuration file and command line parameters do not contain password information by default. After you enter the preceding connection information, the program prompts you to enter the database password and the OS login password in interactive mode.
 
 ### Example of Using the recommend Mode<a name="section17370104016614"></a>
@@ -251,7 +251,7 @@ In the preceding report, the database parameter configurations in the environmen
 -   **checkpoint\_avg\_sync\_time**: average duration for refreshing data to the disk each time when the database is at the checkpoint, in milliseconds.
 -   **load\_average**: average load of each CPU core in 1 minute, 5 minutes, and 15 minutes. Generally, if the value is about 1, the current hardware matches the workload. If the value is about 3, the current workload is heavy. If the value is greater than 5, the current workload is too heavy. In this case, you are advised to reduce the load or upgrade the hardware.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >- Some system catalogs keep recording statistics, which may affect load feature identification. Therefore, you are advised to clear the statistics of some system catalogs, run the workload for a period of time, and then use recommend mode for diagnosis to obtain more accurate results. To clear the statistics, run the following command: 
 >
 >  ```
@@ -330,7 +330,7 @@ After the preceding items are configured, run the following command to start tun
 gs_dbmind component xtuner tune -f connection.json
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >Before using the  **tune**  or  **train**  mode, you need to import the data required by the benchmark and check whether the benchmark can run properly. After the optimization is complete, the optimization program automatically restores the database parameter settings.
 
 ## Obtaining Help Information<a name="EN-US_TOPIC_0289900462"></a>

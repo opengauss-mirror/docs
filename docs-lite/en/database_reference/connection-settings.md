@@ -32,12 +32,12 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter is specified in the configuration file during installation. Do not modify this parameter unless absolutely necessary. Otherwise, database communication will be affected.
 
 **Value range**: an integer ranging from 1 to 65535
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   When setting the port number, ensure that the port number is not in use. When setting the port numbers of multiple instances, ensure that the port numbers do not conflict.
 >-   Ports 1 to 1023 are reserved for the operating system. Do not use them.
 >-   When the database instance is installed using the configuration file, pay attention to the ports reserved in the communication matrix in the configuration file. For example,  *dataPortBase*  + 1 needs to be reserved as the port used by internal tools, and  *dataPortBase*  + 6 needs to be reserved as the communication port of the flow engine message queue. Therefore, during database instance installation, the maximum port number is  **65529**  for DNs. Ensure that the port number does not conflict with each other.
@@ -66,7 +66,7 @@ Retain the default value of this parameter on the primary node of the databases.
 -   If the value of  *max\*connections_  is too large and exceeds the dynamic maximum value described in the formula, the node fails to be started and the error message " invalid value for parameter "max\_connections"" is displayed.
 -   If only the value of  *max\*connections_  is increased while the memory parameter is not adjusted in proportion according to the external egress specifications, when the service load is heavy, the memory may be insufficient, and the error message "memory is temporarily unavailable" is displayed.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   If the number of connections of the administrator exceeds the value of  *max\*connections_, the administrator can still connect to the database after the connections are used up by common users. If the number of connections exceeds the value of  *sysadmin\*reserved\_connections_, an error is reported. That is, the maximum number of connections of the administrator is equal to the value of  *max\*connections_  +  *sysadmin\*reserved\_connections_.
 >-   For common users, internal jobs use some connections. Therefore, the value of this parameter is slightly less than that of  *max\*connections_. The value depends on the number of internal connections.
 
@@ -134,7 +134,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **0700**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Linux OS, a document has one document attribute and nine permission attributes, which consists of the read \(r\), write \(w\), and execute \(x\) permissions of the Owner, Group, and Others groups.
 >The r, w, and x permissions are represented by the following numbers:
 >r: 4
@@ -170,7 +170,7 @@ This parameter is a USERSET parameter used for O&M. You are advised not to chang
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   An empty string indicates that the driver connected to the database does not support automatic setting of the  **connection\_info**  parameter or the parameter is not set by users in applications.
 >-   The following is an example of the concatenated value of  **connection\_info**:
 >    ```

@@ -177,6 +177,6 @@ For details about permission changes before and after enabling separation of dut
 </table>
 
 
-> ![](public_sys-resources/icon-notice.gif) **Notice:**   
+> [!TIP]NOTICE   
 >
 > PG_STATISTIC system table and PG_STATISTIC_EXT system table store some sensitive information of statistical objects, such as high frequency value MCV. After the separation of powers is carried out, the system administrator can still obtain the information in the statistical information by accessing the two system tables.

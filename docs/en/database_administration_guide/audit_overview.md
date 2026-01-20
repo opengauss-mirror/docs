@@ -372,7 +372,7 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
 
 4.  Configure specific audit items.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   After the audit function is enabled, user operations can be recorded into an audit file.
     >-   The default parameter value of each audit item meets security standards. You can enable audit functions as needed, but system performance may be affected.
 

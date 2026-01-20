@@ -35,6 +35,6 @@ public class Test {
 }
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >-   Set the **socketFactoryArg** parameter based on the actual path. The value must be the same as that of the GUC parameter **unix\_socket\_directory**.
 >-   The connection host name must be set to **localhost**.

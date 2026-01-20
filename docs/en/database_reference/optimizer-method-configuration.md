@@ -15,7 +15,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter does not take effect in the current version.
 
 ## enable\_bitmapscan<a name="en-us_topic_0283136675_en-us_topic_0237124716_en-us_topic_0059778346_s6ff0e1cd09c948469a5e8663cafc209f"></a>

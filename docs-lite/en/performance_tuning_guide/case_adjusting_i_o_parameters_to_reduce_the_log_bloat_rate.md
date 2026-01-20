@@ -11,7 +11,7 @@
     -   max\_io\_capacity=300MB
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >-   The  **max\_io\_capacity**  parameter is set to a small value because the I/O does not use the maximum value of the previous parameter. This parameter is used to limit the upper limit of the I/O usage of the backend write process.
 >-   Log recycling is triggered only when the number of logs reaches a certain value. The formula for calculating the value is as follows: Value of  **wal\_keep\_segments**  + Value of  **checkpoint\_segments**  x 2 + 1. If  **checkpoint\_segments**  is set to  **128**  and  **wal\_keep\_segments**  is set to  **128**, the number of logs is \(128 + 128 x 2 + 1\) x 16 MB = 6 GB.

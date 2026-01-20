@@ -10,7 +10,7 @@
 | VARCHAR/VARCHAR2(size [BYTE \| CHAR])  | 存储变长字节或字符串<br>1. size表示最大能容纳的字节或字符数<br>2. BYTE表示字节（默认）<br>3. CHAR表示字符串  |  1 ~ 8000字节   |
 | NVARCHAR/NVARCHAR2(size)  | 等同于VARCHAR(size CHAR)，用于存储变长字符串  |  1 ~ 8000字节   |
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>[!NOTE]说明
 >
 >- 当前支持UTF-8和GBK字符集。UTF-8字符集中汉字和全角字符占2~6个字节，数字、英文字符等都是一个字节；GBK字符集中汉字和全角字符占2个字节，数字、英文字符等都是一个字节。
 

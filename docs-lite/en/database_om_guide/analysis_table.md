@@ -33,7 +33,7 @@ The autovacuum function also depends on the following two GUC parameters in addi
 -   [track\_counts](../database_reference/query-and-index-statistics-collector.md#en-us_topic_0283136895_en-us_topic_0237124727_en-us_topic_0059779313_s3f4fb0b1004041f69e1454c701952411): This parameter must be set to  **on**  to enable statistics collection about the database.
 -   [autovacuum\_max\_workers](../database_reference/automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673): This parameter must be set to a value greater than  **0**  to specify the maximum number of concurrent autovacuum threads.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   The autoanalyze function supports the default sampling mode but not percentage sampling.
 >-   The autoanalyze function does not collect multi-column statistics, which only supports percentage sampling.
 >-   The autoanalyze function supports row-store and column-store tables and does not support foreign tables, temporary tables, unlogged tables, and TOAST tables.

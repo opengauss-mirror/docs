@@ -66,7 +66,7 @@ This is transformed by the parser to effectively become:
 openGauss=# SELECT substr(CAST (varchar '1234' AS text), 3);
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >The parser learns from the  **pg\_cast**  catalog that  **text**  and  **varchar**  are binary-compatible, meaning that one can be passed to a function that accepts the other without doing any physical conversion. Therefore, no type conversion is really inserted in this case.
 

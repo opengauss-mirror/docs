@@ -77,7 +77,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
       -   List partitioned tables and hash partitioned tables cannot be column-store.
       -   List, hash, and range partitioned tables support exchange\_clause.
 
-      >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+      >[!TIP]NOTICE
       >
       >-   When the exchange is done, the data and tablespace of the ordinary table and partition are exchanged. The statistics about ordinary tables and partitions become unreliable, and they should be analyzed again.
       >-   A non-partition key cannot be used to create a local unique index. Therefore, if an ordinary table contains a unique index, data cannot be exchanged.
@@ -113,7 +113,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
    AT ( partition_value ) INTO ( PARTITION partition_name [ TABLESPACE tablespacename ] , PARTITION partition_name [ TABLESPACE tablespacename ] )
    ```
     
-   >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+   >[!TIP]NOTICE
    >
    >-   Column-store tables and row-store tables cannot be partitioned.
    >-   The size of the split point should be in the range of partition keys of the partition to be split. The split point can only split one partition into two new partitions.
@@ -124,7 +124,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
      INTO { ( partition_less_than_item [, ...] ) | ( partition_start_end_item [, ...] ) }
      ```
         
-       >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+       >[!TIP]NOTICE
        >
        >-   The first new partition key specified by partition\_less\_than\_item should be greater than that of the previously split partition (if any), and the last partition key specified by partition\_less\_than\_item should equal that of the partition being split.
        >-   The start point (if any) of the first new partition specified by **partition\_start\_end\_item** must be equal to the partition key (if any) of the previous partition. The end point (if any) of the last partition specified by **partition\_start\_end\_item** must be equal to the partition key of the splitting partition.
@@ -168,7 +168,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
         [ TABLESPACE tablespacename ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   partition\_list\_item supports only one partition key. For details about the supported data types, see [PARTITION BY LIST\(partit...](../sql_reference/create_table_partition.md).
     >-   Interval and hash partitioned tables do not support partition addition.
 
@@ -178,7 +178,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
     DROP PARTITION  { partition_name | FOR (  partition_value [, ...] )  } [ UPDATE GLOBAL INDEX ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >Hash partitioned table does not support partition deletion.
 
 
@@ -341,7 +341,7 @@ Compared with the kernel syntax, the rebuild, remove, check, repair, optimize, t
 
     When **VALIDATION** is **WITH**, if the ordinary table contains data that is out of the partition key range, insert the data to the correct partition. If there is no correct partition where the data can be inserted to, an error is reported.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >Only when **VALIDATION** is **WITH**, **VERBOSE** can be specified.
 
 -   **partition\_new\_name**

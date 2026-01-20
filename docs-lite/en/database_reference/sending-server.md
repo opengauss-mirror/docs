@@ -6,12 +6,12 @@
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**[wal\_level](settings.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  must be set to  **archive**,  **hot\_standby**, or  **logical**  to allow the connection from standby servers.
 
 **Value range:**  an integer ranging from 0 to 1024. The recommended value range is 8 to 100.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter can be set to 0 only when a single DN is used and there is no primary/standby instance.
 
 **Default value:** **16**
@@ -39,7 +39,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the data volume on the primary server is huge, the value of this parameter must be increased for the database rebuilding on a standby server. For example, if the data volume on the primary server reaches 500 GB, you are advised to set this parameter to 600 seconds.
 >-   This parameter cannot be set to a value larger than the value of  **wal\_receiver\_timeout**  or the timeout parameter for database rebuilding.
 
@@ -116,7 +116,7 @@ This parameter applies only to a pair of walsender and walreceiver for cross-clu
 
 **Default value**:  **false**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, the openGauss DR scenario is unavailable.
 
 ## replconninfo1<a name="en-us_topic_0283137693_en-us_topic_0237124712_en-us_topic_0059777860_se4d237ddf6e7410182aa0936da9d54ed"></a>
@@ -129,7 +129,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Example:** replconninfo1='localhost=10.145.130.2 localport=12211 remotehost=10.145.130.3 remoteport=12212 sslmode=verify-ca'**
 >-   -   For details about the  **sslmode**  parameter, see  [Table 1](#table6171141317597).
 >-   The sequence of  **localhost**  and  **localport**  cannot be reversed. The sequence of  **remotehost**  and  **remoteport**  cannot be reversed either.

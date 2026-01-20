@@ -36,7 +36,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
 - Scale out the standby node only on the primary node.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >[!NOTE]NOTE 
   >For security purposes, the tool in the  **gaussdbToolPath**  directory will be automatically deleted after the pre-installation is complete in enterprise-edition installation mode.
 
 
@@ -94,7 +94,7 @@ openGauss provides the  **gs\_expansion**  tool to scale out the standby databas
 
     If the standalone database has been installed on the node to be scaled, skip the step of installing the database on the new standby node and directly establish the primary/standby relationship by adding the  **–L**  parameter during scaling.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**  
+    >[!NOTE]NOTE  
     >-   The databases installed on the primary and standby nodes must use the same user and user group, and the paths for separating environment variables must be the same.  
     >-   When the primary and standby nodes are installed, the values of  **gaussdbAppPath**,  **gaussdbLogPath**,  **gaussdbToolPath**, and  **corePath**  in the XML configuration file must be the same.  
     >-   The data on the scaled standby node must be installed in om mode. The database started in compilation mode does not support scaling out with the primary node.  

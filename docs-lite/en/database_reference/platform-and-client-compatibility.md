@@ -15,7 +15,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Adjusting this parameter will change the internal data type conversion rule and cause unexpected behaviors. Exercise caution when performing this operation.
 
 ## nls\_timestamp\_format<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sd50fac6da781483cae15aaa57243b88e"></a>
@@ -64,7 +64,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >New users are always confused about the semantics of expressions involving  **NULL**  values. Therefore,  **off**  is used as the default value.
 
 ## support\_extended\_features<a name="en-us_topic_0283137001_en-us_topic_0237124738_en-us_topic_0059779195_s1b60ec6dbc79490bbadf5dd62ba2538c"></a>
@@ -93,7 +93,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **A**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   This parameter can be set by **dbcompatibility** only when you run the  [**CREATE DATABASE**](../sql_reference/create-database.md)  command to create a database.
 >-   In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
@@ -107,7 +107,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **""**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Currently, only compatibility configuration items in  [Table 1](#en-us_topic_0283137574_en-us_topic_0237124754_table182861153114812)  are supported.
 >-   Multiple items are separated by commas \(,\), for example,  **set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';**.
 
@@ -334,7 +334,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to enable features compatible with a Teradata database. You can set this parameter to  **on**  when connecting to a database compatible with the Teradata database, so that when you perform the  **INSERT**  operation, overlong strings are truncated based on the allowed maximum length before being inserted into char- and varchar-type columns in the target table. This ensures all data is inserted into the target table without errors reported.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The string truncation function cannot be used if the  **INSERT**  statement includes a foreign table.
 >If inserting multi-byte character data \(such as Chinese characters\) to database with the character set byte encoding \(such as SQL\_ASCII or LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
 

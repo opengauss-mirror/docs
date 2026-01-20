@@ -28,7 +28,7 @@ In addition to comparative operators, you can also use the following sentence st
 
     expression  NOTNULL
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
 
@@ -59,7 +59,7 @@ In addition to comparative operators, you can also use the following sentence st
 
     Null values are considered the same.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-   The usage of the <=\> operator is the same as that of IS NOT DISTINCT FROM.
     >-   This operator is valid only when GaussDB Kernel or openGauss is compatible with the MY type (that is, sql\_compatibility = 'B'). Other types do not support this operator.
 

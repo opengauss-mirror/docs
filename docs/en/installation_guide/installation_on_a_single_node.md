@@ -28,7 +28,7 @@
    sh install.sh  -w  "xxxx" &&source ~/.bashrc
    ```
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:** 
+   >[!NOTE]NOTE 
    >
    >- **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
    >

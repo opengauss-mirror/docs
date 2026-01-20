@@ -13,7 +13,7 @@ Matching rules:
 3.  To match a literal underscore or percent sign, the respective character in the mode must be preceded by an escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
 4.  To match escape characters, enter two escape characters. For example, to write a mode constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. So, writing a mode that matches a single backslash actually involves writing four backslashes in the statement \(you can avoid this by selecting a different escape character with the  **ESCAPE**  clause so that the backslash is no longer a special character of  **LIKE**. But the backslash is still a special character of the character text analyzer, so you still need two backslashes.\)
     >In a MySQL-compatible mode, it is also possible to select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscores and percent signs in the mode.
 

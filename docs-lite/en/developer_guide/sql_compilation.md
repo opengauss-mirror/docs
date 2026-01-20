@@ -175,7 +175,7 @@ Rewrite the statement as follows:
 SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   If the value of the T1.C1 column is not  **NOT NULL**, the preceding rewriting cannot be performed.
 >-   If the  **T1.C1**  column is the output of a subquery, check whether the output is  **NOT NULL**  based on the service logic.
 

@@ -103,7 +103,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the current version, the domain access permission cannot be granted.
 
@@ -116,7 +116,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
@@ -129,7 +129,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
@@ -189,7 +189,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the current version, the large object access permission cannot be granted.
 
@@ -202,7 +202,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >When you grant table or view permissions to other users, you also need to grant the  **USAGE**  permission on the schema that the tables and views belong to. Without the  **USAGE**  permission, the users with table or view permissions can only see the object names, but cannot access them. This syntax cannot be used to grant the permission to create tables in schemas with the same name, but you can use the syntax for granting permission of a role to another user or role to achieve the same effect.
 
@@ -224,7 +224,7 @@
         [ WITH GRANT OPTION ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the current version, the type access permission cannot be granted.
 
@@ -237,7 +237,7 @@
        [WITH GRANT OPTION];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
@@ -471,7 +471,7 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 -   As long as some permission is available, the statement will proceed, but it will grant only those permissions for which the user has grant options.
 -   The  **GRANT ALL PRIVILEGES**  forms will issue a warning message if no grant options are held, while the other forms will issue a warning if grant options for any of the permissions specifically named in the statement are not held.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >Database administrators can access all objects, regardless of object permission settings. This is comparable to the permissions of  **root**  in a Unix system. As with  **root**, it is unwise to operate as a system administrator except when necessary.
 
@@ -634,7 +634,7 @@ When a non-owner of an object attempts to GRANT permissions on the object:
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >If a user is granted with any ANY permission, the user has the  **USAGE**  permission on the public and user schemas but does not have the  **USAGE**  permission on the system schemas except  **public**  listed in  [Table 1](schemas-25.md#table167371825175015).
 

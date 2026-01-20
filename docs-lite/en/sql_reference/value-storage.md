@@ -25,6 +25,6 @@ openGauss=# SELECT VS_COL1, octet_length(VS_COL1) FROM tpcds.value_storage_t1;
 openGauss=# DROP TABLE tpcds.value_storage_t1;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >What has happened here is that the two unknown literals are resolved to  **text**  by default, allowing the  **||**  operator to be resolved as  **text**  concatenation. Then the  **text**  result of the operator is converted to  **bpchar**  \("blank-padded char", the internal name of the  **character**  data type\) to match the target column type. Since the conversion from  **text**  to  **bpchar**  is binary-coercible, this conversion does not insert any real function call. Finally, the sizing function  **bpchar\(bpchar, integer, Boolean\)**  is found in the system catalog and used for the operator's result and the stored column length. This type-specific function performs the required length check and addition of padding spaces.
 

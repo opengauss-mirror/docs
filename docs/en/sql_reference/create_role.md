@@ -63,7 +63,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Value range: a string. It must comply with the naming convention rule, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the role name. When a role is created, the database will display a message.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The identifier must be letters, underscores \(\_\), digits \(0-9\), or dollar signs \($\) and must start with a letter \(a-z\) or underscore \(\_\).
 
 -   **password**
@@ -180,7 +180,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Specifies how many concurrent connections the role can make.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   The system administrator is not restricted by this parameter.
     >-   The number of concurrent connections of each primary database node is calculated separately \(which is the value of  **connlimit**\). The number of all connections of openGauss = Value of  **connlimit**  x Number of normal primary database nodes.
 

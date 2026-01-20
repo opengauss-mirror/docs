@@ -100,7 +100,7 @@ openGauss supports the following permissions, which are associated with differen
                 [ WITH GRANT OPTION ];
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >When you grant table or view permissions to other users, you also need to grant the  **USAGE**  permission on the schema that the tables and views belong to. Without the  **USAGE**  permission, the users with table or view permissions can only see the object names, but cannot access them. This syntax cannot be used to grant the permission to create tables in schemas with the same name, but you can use the syntax for granting permission of a role to others to achieve the same effect.
 
         -   Grant the tablespace access permission to a user or role.

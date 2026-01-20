@@ -35,7 +35,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT | WAIT N ]} [...] ];
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In condition and expression, you can use the aliases of expressions in  **targetlist**  in compliance with the following rules:
 >-   Reference only within the same level.
 >-   Only reference aliases in  **targetlist**.
@@ -83,7 +83,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     SUBPARTITION { ( subpartition_name ) | FOR (  subpartition_value [, ...] )}
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The specified partition applies only to partitioned tables.
 
 -   The sorting order  **nlssort\_expression\_clause**  is as follows:
@@ -132,7 +132,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Retains only the first row in the set of rows that have the same result calculated on the given expression.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >**DISTINCT ON**  expression is explained with the same rule of  **ORDER BY**. Unless you use  **ORDER BY**  to guarantee that the required row appears first, you cannot know what the first row is.
 
 -   **SELECT list**
@@ -182,7 +182,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
             Searches for the result set of a specified CSN point based on the CSN flashback of the table as the flashback query flag. The CSN can be obtained from  **snpcsn**  recorded in  **gs\_txn\_snapshot**.
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >-   A flashback query cannot span statements that affect the table structure or physical storage. Otherwise, an error is reported. Between the flashback point and the current point, if a statement \(**TRUNCATE**, **DDL**,  **DCL**, or  **VACUUM FULL**\) has been executed to modify the table structure or affect physical storage, the flashback fails.
             >-   When the flashback point is too old, the old version cannot be obtained because the flashback version is recycled. As a result, the flashback fails and the error message "Restore point too old" is displayed.
             >-   The flashback point is specified by time. The maximum difference between the flashback point and the actual time is 3 seconds.
@@ -257,7 +257,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
             Is equivalent to  **INNER JOIN ON \(TRUE\)**, which means no rows are removed by qualification. These join types are just a notational convenience, since they do nothing you could not do with plain  **FROM**  and  **WHERE**.
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >For the  **INNER**  and  **OUTER**  join types, a join condition must be specified, namely exactly one of  **NATURAL ON**,  **join\_condition**, or  **USING \(join\_column \[, ...\]\)**. For  **CROSS JOIN**, none of these clauses can appear.
 
 
@@ -297,7 +297,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     9.  The operator \(+\) can appear only in the following expressions: comparison, NOT, ANY, ALL, IN, NULLIF, IS DISTINCT FROM, and IS OF. It is not allowed in other types of expressions. In addition, these expressions cannot be connected through  **AND**  or  **OR**.
     10. The operator \(+\) can be used to convert a table join only to a left or right outer join, instead of a full join. That is, the operator \(+\) cannot be specified on both tables of an expression.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >For the  **WHERE**  clause, if special character  **%**,  **\_**, or  **\\**  is queried in  **LIKE**, add the slash  **\\**  before each character.
 
 -   **START WITH clause**
@@ -324,7 +324,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
         Another extension to the  **GROUP BY**  clause. It allows users to specify multiple  **GROUP BY**  clauses. This improves efficiency by trimming away unnecessary data. After you specify the set of groups that you want to create using a  **GROUPING SETS**  expression within a  **GROUP BY**  clause, the database does not need to compute a whole  **ROLLUP**  or  **CUBE**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >If the  **SELECT**  list expression quotes some ungrouped fields and no aggregate function is used, an error is displayed. This is because multiple values may be returned for ungrouped fields.
 
 -   **HAVING clause**
@@ -361,7 +361,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     UNBOUNDED FOLLOWING
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >For the query of column storage table, only  **row\_number**  window function is supported, and  **frame\_clause**  is not supported.
 
 -   **UNION clause**
@@ -425,7 +425,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   When used with the  **DISTINCT**  keyword, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
     -   When used with the  **GROUP BY**  clause, the columns to be sorted in  **ORDER BY**  must be included in the columns of the result set retrieved by the SELECT statement.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >To support Chinese pinyin order, specify the  **UTF-8**,  **GB18030**, or  **GBK**  encoding mode during database initiation. The statements are as follows:
     >```
     >initdb –E UTF8 –D ../data –locale=zh_CN.UTF-8, initdb -E GB18030 -D ../data -locale=zh_CN.GB18030, or initdb –E GBK –D ../data –locale=zh_CN.GBK.
@@ -471,7 +471,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     If a table appears \(or implicitly appears\) in multiple clauses at the same time, the strongest lock is used. Similarly, a table is processed as  **NOWAIT**  if that is specified in any of the clauses affecting it.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >**FOR UPDATE**,  **NO KEY UPDATE**,  **SHARE**, and  **KEY SHARE**  cannot be used to query column-store tables.
     >Only  **FOR SHARE**  and  **FOR UPDATE**  can be used to query the Ustore table.
 

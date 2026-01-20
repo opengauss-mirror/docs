@@ -72,7 +72,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >The preceding methods are similar, except that the second method specifies cache for the sequence. A sequence having cache defined has inconsecutive values \(such as 1, 4, and 5\) and cannot maintain the order of its values. After the dependent column of a sequence has been specified, once the sequence is deleted, the sequence of the dependent will be deleted. A sequence shared by multiple columns is not forbidden in a database, but you are not advised to do that.  
 >In the current version, you can specify the auto-increment column or set the default value of a column to  **nextval\('seqname'\)**  when defining a table. You cannot add an auto-increment column or a column whose default value is  **nextval\('seqname'\)**  to an existing table.  
 

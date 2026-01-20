@@ -91,7 +91,7 @@ MOT returns PG standard error codes to the envelope using a Return Code \(RC\). 
 
 The PG code \(described below\) is returned internally by MOT to the database envelope, which reacts to it according to standard PG behavior.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >%s, %u and %lu in the message are replaced by relevant error information, such as query, table name or another information.
 >-   %s – String
 >-   %u – Number

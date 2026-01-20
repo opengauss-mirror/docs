@@ -4,7 +4,7 @@
 
 This method closes the database connection.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >This method closes the database connection and does not automatically call  **commit\(\)**. If you just close the database connection without calling  **commit\(\)**  first, changes will be lost.
 
 ## Prototype<a name="section441681310810"></a>

@@ -38,7 +38,7 @@ CREATE SUBSCRIPTION subscription_name
 
         The port number of the publication side cannot be the primary port number. The port number must be the primary port number plus 1. Otherwise, the port number conflicts with the thread pool.
 
-        >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+        >[!WARING]CAUTION 
         >The number of hosts must be the same as that of ports.
 
     -   **dbname**

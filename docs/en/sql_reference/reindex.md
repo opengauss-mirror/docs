@@ -73,7 +73,7 @@ There are several scenarios in which  **REINDEX**  can be used:
     -   When a partitioned table index is recreated online, unusable partitioned table indexes are changed to usable, and unusable partitioned table indexes in the partitioned table index are changed to usable.
     -   When a specific partition index of a partitioned table index is recreated online, unusable partitioned indexes are changed to usable.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   This keyword is specified when an index is recreated. The entire table needs to be scanned twice and built. When the table is scanned for the first time, an index is created and the read and write operations are not blocked. During the second scan, changes that have occurred since the first scan are merged and updated.
     >-   The table needs to be scanned and built twice, and all existing transactions that may modify the table must be completed. This means that the recreation of the index takes a longer time than normal. In addition, the CPU and I/O consumption also affects other services.
     >-   If index recreating fails, it leaves an "invalid" index. This index is ignored by the query, but it still consumes the update overhead. In this case, you are advised to delete the index and try **CONCURRENTLY** again to recreate the index.
@@ -87,7 +87,7 @@ There are several scenarios in which  **REINDEX**  can be used:
 
     Specifies the name of the index, table, or database whose index needs to be recreated. Tables and indexes can be schema-qualified.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**REINDEX DATABASE**  and  **SYSTEM**  can create indexes for only the current database. Therefore,  **name**  must be the same as the current database name.
 
 -   **FORCE**
@@ -105,7 +105,7 @@ There are several scenarios in which  **REINDEX**  can be used:
     -   If it is  **REINDEX INTERNAL TABLE**, specify the name of a partition in a column-store partitioned table.
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**REINDEX DATABASE**  and  **REINDEX SYSTEM**  type cannot be performed in transaction blocks.
 
 ## Examples<a name="en-us_topic_0283137442_en-us_topic_0237122174_en-us_topic_0059777511_saeb969f6c052407e98c22893941c9440"></a>

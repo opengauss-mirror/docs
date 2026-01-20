@@ -83,7 +83,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
         Password of the DR user.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >1. Before the DR relationship is established, you need to create a DR user on the primary cluster for DR authentication. The primary and standby clusters must use the same DR username and password. After a DR relationship is established, the user password cannot be changed. You can remove the DR relationship, modify the username and password, and establish the DR relationship again. The DR user password cannot contain blank characters and the following characters: |;&$<>`\'"{}()[]~*?!\n
         >2. If the **-U** and **-W** parameters are not input in the command line, they can be input in interactive mode during the establishment.
@@ -125,7 +125,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
         # localClusterConf: DN shard information of the cluster. In the preceding command, port indicates the port of the primary DN in the cluster, and {"ip": "10.244.44.216", "dataIp": "172.31.12.58"} indicates the mapping between the SSH reliable channel IP address and streaming replication IP address of each DN shard node in the cluster.
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >-Either **-X** or **--json** can be used to configure DR information. If both parameters are delivered in the command, the JSON file prevails.
 
@@ -137,7 +137,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
         Default value: **1200**
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >It is important to note that the build and start clusters each have their own timeout settings. For the build cluster, the default timeout is set at 1,209,600 seconds (14 days), and if the build operation is not completed within this time frame, it will automatically exit. As for the start cluster, the default timeout is set at 3,600*24*7 seconds (one week). That is, if the start operation is not completed within one week, it will automatically exit. If the --time-out=SECS parameter is not specified, then in the build cluster, the process will not automatically exit after a timeout of 1200 seconds; similarly, in the start cluster, it will not automatically exit after a timeout of 1200 seconds.
 
@@ -155,7 +155,7 @@ Log in to the OS as the OS user **omm** to run the **gs\_sdr** command.
 
         JSON file containing local and peer DR information.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >
         >-For details about how to configure **-X** and **--json**, see the parameters for establishing DR relationship in this section.
 

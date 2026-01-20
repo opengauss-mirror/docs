@@ -4,7 +4,7 @@ Certain data types in the database support implicit data type conversions, such 
 
 openGauss lists common implicit data type conversions in  [Table 1](#en-us_topic_0283137393_en-us_topic_0237122212_en-us_topic_0059778807_tbc67231ae8bc4ca484efaebd2629a0e4).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >The valid value range of  **DATE**  supported by openGauss is from 4713 B.C. to 294276 A.D.
 

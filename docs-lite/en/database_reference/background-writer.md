@@ -36,7 +36,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 1000
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >When this parameter is set to  **0**, the background writer is disabled. This setting does not affect checkpoints.
 
 **Default value**:  **100**

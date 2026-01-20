@@ -26,7 +26,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   **on**  indicates that the statistics collection function is enabled.
 -   **off**  indicates that the statistics collection function is disabled.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Database statistics are required when the autovacuum process checks for databases that need to be vacuumed. Therefore, the default value is set to  **on**.
 
 **Default value**:  **on**
@@ -50,7 +50,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When the SQL functions are set to inline functions queried by the invoking, these SQL functions cannot be traced no matter these functions are set or not.
 
 **Value range**: enumerated values
@@ -77,7 +77,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If a RAM-based file system directory is used, the actual I/O cost can be lowered and the performance can be improved.
 
 **Value range**: a string
@@ -122,7 +122,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The  **track\_sql\_count**  parameter is restricted by the  **track\_activities**  parameter when the  **gs\_sql\_count**  or  **pgxc\_sql\_count**  view is queried.
 >    -   If  **track\_activities**  is set to  **on**  and  **track\_sql\_count**  is set to  **off**, a warning message indicating that  **track\_sql\_count**  is disabled will be displayed in logs when the  **gs\_sql\_count **view is queried.
 >    -   If both  **track\_activities**  and  **track\_sql\_count**  are set to  **off**, two warning messages indicating that  **track\_activities**  is disabled and  **track\_sql\_count**  is disabled will be displayed in logs when the views are queried.

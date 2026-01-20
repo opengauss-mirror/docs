@@ -12,7 +12,7 @@
 -   Each time a scheduled event is modified, the owner of the modified event is changed to the current user. If a definer is specified during modification, the owner is changed to the specified definer.
 -   The restrictions for the definer are the same as those described in [CREATE EVENT](create-event.md).
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   If a system administrator modifies a scheduled event created by another user, the owner of the modified event is changed to the system administrator. The statements to be executed are executed by the system administrator.
 
 

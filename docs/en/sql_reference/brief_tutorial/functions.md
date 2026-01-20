@@ -843,7 +843,7 @@ The common functions of openGauss are as follows:
 
     Description: Encrypts a string in MD5 mode and returns a value in hexadecimal form.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
 
     Return type: text

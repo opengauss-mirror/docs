@@ -56,7 +56,7 @@ Obtain the XML file template from **script/gspylib/etc/conf/cluster\_config\_tem
   </CLUSTER>
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >
 >-   The **/opt/huawei/install/om** directory is used to store tools such as the mutual trust tool. To avoid permission problems, do not store instance data in the directory.
 >-   The installation and data directories must be empty or do not exist. Otherwise, the installation may fail.
@@ -200,7 +200,7 @@ Obtain the XML file template from **script/gspylib/etc/conf/cluster\_config\_tem
 
 ## Configuring the Basic Host Information
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >Each server must contain the following information. The following uses **node1** as an example.
 >
@@ -266,7 +266,7 @@ The content is an example and can be replaced as required. Each line of informat
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >Only one IP address can be configured for all IP parameters (including **backIp**, **sshIp**, and **listenIp**) in the configuration file. Excessive IP addresses are ignored.
 >For example, you can configure **backIp1** and **backIp2** in the XML configuration file as follows:
 >When the file is parsed, only **backIp1** takes effect.

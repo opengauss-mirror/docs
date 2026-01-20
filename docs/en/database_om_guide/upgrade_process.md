@@ -5,7 +5,7 @@ This section describes the process for upgrade from an earlier version to the ta
 **Figure  1**  Upgrade flowchart<a name="fig1492165721411"></a>  
 ![](figures/upgrade-flowchart.png "upgrade-flowchart")
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The time required for each procedure is an estimate and for reference only.
 
 **Table  1**  Estimated time required for each procedure

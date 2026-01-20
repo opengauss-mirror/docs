@@ -109,7 +109,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
 
     The input function must return a value of the data type itself. Usually, an input function should be declared  **STRICT**; if it is not, it will be called with a  **NULL**  first parameter when reading a  **NULL**  input value. The function must still return  **NULL**  in this case, unless it raises an error. \(This case is mainly meant to support domain input functions, which might need to reject  **NULL**  inputs.\)
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The input and output functions can be declared to have results or parameters of the new type, when they have to be created before the new type can be created. The type should first be defined as a shell type, which is a placeholder type that has no attributes except a name and an owner. This is done by issuing the  **CREATE TYPE **_name_  statement, with no additional parameters. Then the I/O functions can be defined referencing the shell type. Finally,  **CREATE TYPE**  with a full definition replaces the shell entry with a complete, valid type definition, after which the new type can be used normally.
 
 -   **output\_function**
@@ -145,7 +145,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
 
     \(Optional\) Specifies the name of a function that converts the internal form of the type's modifier\(s\) to its external textual form.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**type\_modifier\_input\_function**  and  **type\_modifier\_output\_function**  are needed if the type supports modifiers, that is optional constraints attached to a type declaration, such as char\(5\) or numeric\(30,2\). openGauss allows user-defined types to take one or more simple constants or identifiers as modifiers. However, this information must be capable of being packed into a single non-negative integer value for storage in the system catalogs. The  **type\_modifier\_input\_function**  is passed the declared modifier\(s\) in the form of a cstring array. It must check the values for validity \(throwing an error if they are wrong\), and if they are correct, return a single non-negative integer value that will be stored as the column "typmod". Type modifiers will be rejected if the type does not have a  **type\_modifier\_input\_function**. The  **type\_modifier\_output\_function**  converts the internal integer typmod value back to the correct form for user display. It must return a cstring value that is the exact string to append to the type name; for example numeric's function might return \(30,2\). It is allowed to omit the  **type\_modifier\_output\_function**, in which case the default display format is just the stored typmod integer value enclosed in parentheses.
 
 -   **analyze\_function**
@@ -198,7 +198,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
 
     \(Optional\) Specifies whether a type is preferred within its type category. If it is, the value will be  **TRUE**, else  **FALSE**. The default is  **FALSE**. Be very careful about creating a preferred type within an existing type category, as this could cause surprising changes in behavior.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The  **category**  and  **preferred**  parameters can be used to help control which implicit cast will be applied in ambiguous situations. Each data type belongs to a category named by a single ASCII character, and each type is either preferred or not within its category. The parser will prefer casting to preferred types \(but only from other types within the same category\) when this rule is helpful in resolving overloaded functions or operators. For types that have no implicit casts to or from any other types, it is sufficient to leave these settings at the defaults. However, for a group of related types that have implicit casts, it is often helpful to mark them all as belonging to a category and select one or two of the most general types as being preferred within the category. The  **category**  parameter is especially useful when adding a user-defined type to an existing built-in category, such as the numeric or string types. However, it is also possible to create entirely-user-defined type categories. Select any ASCII character other than an uppercase letter to name such a category.
 
 -   **default**
@@ -228,7 +228,7 @@ When creating a base type, you can place parameters in any order. The  **input\_
     \(Optional\) Represents the textual label associated with one value of an enumerated type. It is a string of 1 to 63 characters.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Whenever a user-defined type is created, openGauss automatically creates an associated array type whose name consists of the element type's name prepended with an underscore \(\_\).
 
 ## Examples<a name="en-us_topic_0283136568_en-us_topic_0237122124_en-us_topic_0059779377_s66a0b4a6a1df4ba4a116c6c565a0fe9d"></a>

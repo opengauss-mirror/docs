@@ -88,6 +88,6 @@ openGauss=# CREATE EVENT IF NOT EXISTS event_e1 ON SCHEDULE EVERY 1 minute DO in
 
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >-   If a scheduled event fails to be executed after being created, you can view the failure cause in the **SHOW EVENTS** or **PG\_JOB** table.
 >-   When operations related to user passwords (such as creating weak passwords) are performed in the statements to be executed for a scheduled event, system catalog records the password in plaintext. Therefore, you are not advised to perform operations related to user passwords in the statements to be executed for the scheduled event.

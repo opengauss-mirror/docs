@@ -42,7 +42,7 @@ The following figure shows the overall architecture of the primary/standby share
 
 Compared with traditional gs\_initdb database creation, directories are classifies into three types during shared storage database creation: exclusively used and not shared by each instance, exclusively used and shared by each instance, and shared by all instances. The directories to be shared must be stored on the disk array, and the directories that are not shared must be stored on the local disk. In addition, to create a database on the standby node, you only need to create a directory that belongs to the standby node. You do not need to create a directory structure shared by all instances. GUC parameters are added to the primary/standby shared storage, and the storage mode of system catalogs is switched from page mode to segment-page mode.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >Step-by-step manual installation means that you can run related commands step by step to create a database for shared storage after project compilation. For details about how to install the openGauss, see the *Installation Guide*.
 
 -   Prerequisites
@@ -211,7 +211,7 @@ The shared storage feature provides the real-time read consistency function on s
             sh ock_rpc_opengauss.sh
             ```
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:**
+            >[!NOTE]NOTE
             >Functions:
             >-   The OCK RPC binary package in the cluster is deployed, decompressed, and copied.
             >-   The environment variable *$OCK\_RPC\_LIB\_PATH* is configured.
@@ -231,7 +231,7 @@ The shared storage feature provides the real-time read consistency function on s
             2.  The **UCX\_USE\_MT\_MUTEX** optimization parameter is used to ensure the data consistency lock during RDMA transmission. The options are **n** (atomic lock) and **y** (mutex). (This parameter is optional. You are advised to use the atomic lock because the performance is good.)
             3.  The **UCX\_NET\_DEVICES** configuration parameter is used to specify the NIC port. You can install the mlnx\_ofed driver and run the **ibdev2netdev** command to view the current active RDMA ports. (You are advised to specify active ports.)
 
-                >![](public_sys-resources/icon-note.gif) **NOTE:**
+                >[!NOTE]NOTE
                 >After the environment variables are configured, run the **source \~/.bashrc** command.
 
 

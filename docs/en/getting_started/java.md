@@ -33,7 +33,7 @@ Statements can be executed in two modes: Statement and PreparedStatement.
 
 Example:
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the following example, the underlined fields in bold need to be replaced with your own information, where:  
 >
 >-   ***127.0.0.1***: IP address of the host where the database is located.  
@@ -252,7 +252,7 @@ Example:
 
 ## Insert Operation<a name="section1603173921418"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Before inserting data, ensure that the  **test**  table has been created \(as performed in  [Creating a Table](#section1969315347146)\). The table structure is as follows:
 >```
 >create table test (id int,name varchar (10));
@@ -348,7 +348,7 @@ Example:
 
 ## SELECT Operation<a name="section138138476141"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Ensure that you have performed the creation and insertion operations in  [Creating a Table](#section1969315347146)  and  [Insert Operation](#section1603173921418).
 
 -   You can use prepareStatement to perform pre-compiled query operations by dynamically adding parameters, or execute common SQL statements.
@@ -426,7 +426,7 @@ Example:
 
 ## Update Operation<a name="section112861325191512"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Ensure that you have performed the creation and insertion operations in  [Creating a Table](#section1969315347146)  and  [Insert Operation](#section1603173921418).
 
 -   Use Statement to perform the update operation, and then run the query statement to check whether the update is successful.

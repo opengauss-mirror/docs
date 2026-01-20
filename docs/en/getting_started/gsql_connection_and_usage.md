@@ -34,7 +34,7 @@
     ```
     openGauss=# ALTER ROLE omm IDENTIFIED BY 'XXXXXXXX' REPLACE 'XXXXXXXX';
     ```
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >- Contain at least eight characters.
 >- Cannot be the same as the username, the current password, or the current password in an inverted sequence.
 >- Contain at least three of the following: uppercase characters (A to Z), lowercase characters (a to z), digits (0 to 9), and other characters (limited to ~!@#$%^&*()-_=+|[{}];:,<.>/?).

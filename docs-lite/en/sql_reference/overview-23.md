@@ -2,7 +2,7 @@
 
 To process SQL statements, the stored procedure process assigns a memory segment to store context association. Cursors are handles or pointers pointing to context regions. With cursors, stored procedures can control alterations in context regions.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If JDBC is used to call a stored procedure whose returned value is a cursor, the returned cursor cannot be used.
 
 Cursors are classified into explicit cursors and implicit cursors.  [Table 1](#en-us_topic_0283137575_en-us_topic_0237122243_en-us_topic_0059778312_t0961a7f2a418407cbc7ebba3ba58c03d)  shows the usage conditions of explicit and implicit cursors for different SQL statements.

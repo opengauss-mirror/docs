@@ -24,7 +24,7 @@ An explicit cursor performs the following six PL/SQL steps to process query stat
 
     -   _select\_statement_: specifies a query statement.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >The system automatically determines whether the cursor can be used for backward fetching based on the execution plan.
     >We support specifying default expressions for cursor arguments when declaring cursors. It's recommended to declare arguments without default expressions before declaring arguments with default expressions: for any argument that is declared ahead of the last argument without default expression, its default expression will be ignored.

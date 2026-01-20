@@ -25,7 +25,7 @@ create FOREIGN table bmsql_oorder (
 create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) ;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >You do not need to specify the FOREIGN keyword before the MOT name because it is used only in the commands for creating and deleting tables.
 
 For details about MOT index limitations, see "MOT SQL Coverage and Limitations."

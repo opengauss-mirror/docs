@@ -4,7 +4,7 @@ Our performance tests are based on the TPC-C Benchmark that is commonly used bot
 
 Ours tests used BenchmarkSQL \(see  [MOT Sample TPC-C Benchmark](mot_sample_tpc_c_benchmark.md)\) and generates the workload using interactive SQL commands, as opposed to stored procedures.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Using the stored procedures approach may produce even higher performance results because it involves significantly less networking roundtrips and database envelope SQL processing cycles.
 
 All tests that evaluated the performance of openGauss MOT vs DISK used synchronous logging and its optimized  **group-commit=on**  version in MOT.

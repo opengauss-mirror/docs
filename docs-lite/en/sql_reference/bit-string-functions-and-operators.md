@@ -18,7 +18,7 @@ Aside from the usual comparison operators, the following operators can be used. 
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >It is recommended that a column have no more than 180 consecutive internal joins. A column with over 180 joins will be split into joined consecutive strings.
     >Example:  **str1||str2||str3||str4**  is split into  **\(str1||str2\)||\(str3||str4\)**.
 
@@ -145,6 +145,6 @@ openGauss=# select substring('10101111'::bit(8), 2);
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Casting to just "bit" means casting to bit\(1\), and so will deliver only the least significant bit of the integer.
 

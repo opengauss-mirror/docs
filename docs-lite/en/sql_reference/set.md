@@ -95,7 +95,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the name of a configurable run-time parameter. You can use  **SHOW ALL**  to view available run-time parameters.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Some parameters that viewed by  **SHOW ALL**  cannot be set by  **SET**. For example,  **max\_datanodes**.
 
 -   **value**

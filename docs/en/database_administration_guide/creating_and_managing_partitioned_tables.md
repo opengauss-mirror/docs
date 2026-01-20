@@ -75,7 +75,7 @@ Perform the following operations on range partitioned tables.
     CREATE TABLE
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You are advised to create a maximum of 1000 column-store partitioned tables.
 
 -   Inserting data

@@ -42,7 +42,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   JDK8 JVM system attributes \(starting with  **–D**, for example,  **–Djava.ext.dirs**\). For details, see JDK  [official ](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)descriptions.
 -   User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](../sql_reference/pl_pgsql_functions.md).
 
 **Default value:**  empty

@@ -351,7 +351,7 @@
 
 ### **Recovery objective-related parameters \(recovery\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >Currently, continuous WAL archiving PITR cannot be configured. Therefore, parameter usage is restricted as follows:
 >To use continuously archived WAL logs for PITR, perform the following steps:
@@ -388,7 +388,7 @@
 
 ### **Retention-related parameters \(retention\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The following parameters can be used together with the **backup** and **delete** commands.
 
 -   --retention-redundancy=*retention-redundancy*
@@ -427,7 +427,7 @@
 
 ### **Fixed backup-related parameters \(pinning\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >To exclude certain backups from the established retention policy, you can use the following parameters with the **backup** and **set-backup** commands.
 
 -   --ttl=*interval*
@@ -500,7 +500,7 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
 
 ### **Connection-related parameters \(connection\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The following parameters can be used together with the **backup** command.
 
 -   -d  *dbname*, --pgdatabase=*dbname*
@@ -541,7 +541,7 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
 
 ### **Compression-related parameters \(compression\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The following parameters can be used together with the **backup** command.
 
 -   --compress-algorithm=*compress-algorithm*
@@ -569,7 +569,7 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
 
 ### **Remote mode-related parameters \(remote\_options\)**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The following are parameters that remotely run gs\_probackup through SSH, and can be used together with the **add-instance**, **set-config**, **backup**, and **restore** commands.
 
 -   --remote-proto=*protocol*
@@ -614,7 +614,7 @@ Log levels: **verbose**, **log**, **info**, **warning**, **error**, and **off**.
 
   Example: --ssh-options='-c cipher\_spec -F configfile'
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >[!NOTE]NOTE 
   >
   >
   >

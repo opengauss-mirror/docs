@@ -6,7 +6,7 @@ The following was measured on ARM/Kunpeng 2-socket server \(128 cores\). The num
 
 MOT's average transaction speed is 2.5x, with MOT latency of 10.5 ms, compared to 23-25ms for disk tables.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The average was calculated by taking into account all TPC-C 5 transaction percentage distributions. For more information, you may refer to the description of TPC-C transactions in the  [MOT Sample TPC-C Benchmark](mot_sample_tpc_c_benchmark.md)  section.
 
 **Figure  2**  Low Latency \(90<sup>th</sup>%, Transaction Average\) – Performance Benchmarks<a name="fig9673657173918"></a>  

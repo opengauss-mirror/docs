@@ -28,7 +28,7 @@ AS
 CALL proc_loop(10,5);
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The loop must be exploited together with  **EXIT**; otherwise, a dead loop occurs.
 
 ## WHILE\_LOOP Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_s14510a113df844eaa0b7e00aa2868313"></a>
@@ -71,7 +71,7 @@ DROP TABLE integertable;
 **Figure  3**  for\_loop::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_f225dca3e3bb8473198031bfc2a49f3e1"></a>  
 ![](figures/for_loop.png "for_loop")
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The variable  *name*  is automatically defined as the integer type and exists only in this loop. The value of  *name*  ranges from  **lower\_bound**  to  **upper\_bound**.
 >-   When the keyword  **REVERSE**  is used, the value of  **lower\_bound**  must be greater than or equal to that of  **upper\_bound**; otherwise, the loop body is not executed.
 
@@ -82,7 +82,7 @@ DROP TABLE integertable;
 **Figure  4**  for\_loop\_query::=<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_f4043c6dc0195466388bb2b9b42874e52"></a>  
 ![](figures/for_loop_query.png "for_loop_query")
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The variable  *target*  is automatically defined, its type is the same as that in the query result, and it is valid only in this loop. The value of  *target*  is the query result.
 
 ## FORALL Batch Query Statements<a name="en-us_topic_0283137274_en-us_topic_0237122234_en-us_topic_0059778638_sfb1cf79f590142f19c106d6c9a9e700b"></a>
@@ -92,7 +92,7 @@ DROP TABLE integertable;
 **Figure  5**  forall::=<a name="fig1638718526215"></a>  
 ![](figures/forall.png "forall")
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The variable  *index*  is automatically defined as the integer type and exists only in this loop. The value of  *index*  falls between the value of  **low\_bound**  and the value of  **upper\_bound**.
 >-   If  **SAVE EXCEPTIONS**  is specified, exceptions occurred during DML execution in the loop body are saved in  **SQL&BULK\_EXCEPTIONS**  and an exception is thrown after the execution is complete. If there is no abnormal execution result in the loop, the loop will not be rolled back in the current subtransaction.
 
@@ -140,14 +140,14 @@ DROP TABLE hdfs_t1;
 END LOOP [label_end]
 ```
 
-> ![](public_sys-resources/icon-note.gif) **NOTE:**
+> [!NOTE]NOTE
 >
 > The usage of the label is added based on the simple loop statement. The label rules are as follows:
 >
 > -   label\_begin can appear independently (without label\_end). However, if label\_end is used, label\_begin must appear.
 > -   The label can be referenced by the CONTINUE or EXIT statement. In the B-compatible database, the ITERATE or LEAVE statement can also be used.
 
-> ![](public_sys-resources/icon-notice.gif) **NOTICE:**
+> [!TIP]NOTICE
 > This loop is used only in the B-compatible database. An error is reported in other databases. This loop must be used together with EXIT. (In B-compatible mode, LEAVE has the same effect as EXIT, and ITERATE has the same effect as CONTINUE.) Otherwise, an infinite loop occurs.
 
 **Example**

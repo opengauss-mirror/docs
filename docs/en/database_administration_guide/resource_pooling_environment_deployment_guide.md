@@ -30,11 +30,11 @@ Developers are advised to:
   - The openGauss installation package of the debug version with resource pooling code has been compiled.You can check whether dssserver and dsscmd exist in the generated **bin** directory. Check whether **libdms.so**, **libdssapi.so**, and **libdssaio.so** exist in the **lib** directory. Ensure that the DSS and DMS components of the test version are used during openGauss compilation. For details, see the following steps.
 
 ## Independent Compilation and Installation
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >
 > Do not perform the following deployment operations in the production environment.
 
- >![](public_sys-resources/icon-note.gif) **NOTE:**  
+ >[!NOTE]NOTE  
   > - openGauss must be compiled in debug mode instead of release mode. The DMS and DSS components of the test version are used.
   > - The manual compilation and installation mode does not contain the CM and OM components. In the formal environment, the DSS and DMS components depend on the CM. Therefore, you need to compile the DSS and DMS components in test mode before compiling the openGauss. For details, see the following compilation mode description.
 
@@ -67,7 +67,7 @@ Developers are advised to:
   cd tmp/
   make -sj
 ```
-> ![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+> [!WARING]CAUTION 
 >
 >    After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
 
@@ -147,7 +147,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   ```shell
   data:/home/test/dss/dev/dss-dba
   ```
-> ![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+> [!WARING]CAUTION 
 >
 > Multiple DNs (databases) are created on a server. The IP addresses are the same, but the port numbers used by services are different.
 
@@ -166,7 +166,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   ```
-> ![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+> [!WARING]CAUTION 
 >
 > The DSS does not support volume group configuration modification after startup. If the volume group configuration needs to be modified, perform the preceding steps again.
 

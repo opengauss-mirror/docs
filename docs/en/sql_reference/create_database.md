@@ -704,11 +704,11 @@ CREATE DATABASE [IF NOT EXISTS] database_name
     </tbody>
     </table>
 
-  >![](./public_sys-resources/icon-caution.gif) **Caution:**
+  >[!WARNING]CAUTION
   >Note that not all client APIs support the preceding character sets.
   >The SQL\_ASCII setting performs quite differently from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. Therefore, this setting is not basically used to declare the specified encoding used, because this declaration ignores the encoding. In most cases, if you use any non-ASCII data, it is unwise to use the SQL\_ASCII setting because openGauss will not be able to help you convert or validate non-ASCII characters.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >
   >-   The character set encoding of the new database must be compatible with the local settings (**LC\_COLLATE** and **LC\_CTYPE**).
 
@@ -735,7 +735,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
   Value range: A, B, C, and PG, indicating **O**, **MY**, **TD** and **POSTGRES** databases, respectively.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**
+  >[!NOTE]NOTE
   >
   >-   For A compatibility, the database treats empty strings as **NULL** and replaces DATE with TIMESTAMP\(0\) WITHOUT TIME ZONE.
 
@@ -753,7 +753,7 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 
     Specifies the maximum number of concurrent connections that can be made to the new database.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >
     >-   This limit does not apply to sysadmin.
     

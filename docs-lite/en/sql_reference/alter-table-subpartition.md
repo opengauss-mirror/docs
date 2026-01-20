@@ -69,7 +69,7 @@
     SUBPARTITION subpartition_name { VALUES LESS THAN ( partition_value | MAXVALUE ) | VALUES ( partition_value [, ...] | DEFAULT ) }  [ TABLESPACE tablespace ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >If the level-1 partition is a hash partition, you cannot use  **ADD**  to add a level-1 partition. If the level-2 partition is a hash partition, you cannot use  **MODIFY**  to add a level-2 partition.
 
 -   The  **drop\_clause**  syntax is used to remove a partition from a specified partitioned table. The syntax can be used in level-1 partitions.
@@ -84,7 +84,7 @@
     DROP SUBPARTITION  { subpartition_name | FOR (  partition_value, subpartition_value )  } [ UPDATE GLOBAL INDEX ]
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   If the level-1 partition is a hash partition, the level-1 partition cannot be deleted. If the level-2 partition is a hash partition, the level-2 partition cannot be deleted.
     >-   At least one sub-partition must be retained.
 
@@ -106,7 +106,7 @@
     VALUES ( subpartition_value ) INTO ( SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] , SUBPARTITION subpartition_name [ TABLESPACE tablespacename ] )
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   The size of the split point should be in the range of the splitting partition key.
     >-   One partition can be split into only two new partitions.
     >-   In the range partitioning policy, the current partition is split into two partitions based on the split point. A partition smaller than the size specified by the split point is regarded as one partition, and a partition larger than the size specified by the split point is regarded as the other partition. Therefore, only one split point can be used in the range partitioning policy. In the list partitioning policy, there can be multiple but no more than 64 split points. These split points are extracted from the boundary values of the current partition as a new partition, and the remaining boundary values of the current partition are used as another new partition.

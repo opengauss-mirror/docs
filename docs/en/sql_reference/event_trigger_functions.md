@@ -5,7 +5,7 @@
     Description: Reports running DDL commands in the ddl_command_end event trigger.
 
     Parameter: null
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >This function is used only in event triggers.
 
     Return type: oid,oid,int4,text,text,text,text,bool,pg_ddl_command.
@@ -35,7 +35,7 @@
 
     Parameter: null
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >This function is used only in event triggers.
 
     Return types: oid,oid,int4,bool,bool,booloid,text,text,text,text,TEXTARRAY,TEXTARRAY
@@ -69,7 +69,7 @@
 
     Parameter: null
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >This function is used only in event triggers.
 
     Return type: oid
@@ -93,7 +93,7 @@
 
     Parameter: null
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >This function is used only in event triggers.
 
     Return type: int4

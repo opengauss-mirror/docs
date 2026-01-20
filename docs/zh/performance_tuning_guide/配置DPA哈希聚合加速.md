@@ -37,7 +37,7 @@ DPA功能对数据类型和聚合函数有严格的限制，不满足条件时�
 | SUM | INT8（BIGINT） | 仅支持BIGINT类型的求和 |
 | COUNT | INT4、INT8、CHAR、VARCHAR | 支持多种类型的计数 |
 
->![](../../../contribute/public_sys-resources/icon-note.gif) **须知：** 
+>[!TIP]须知
 >-   当前不支持`count(*)`全行计数、`sum(numeric)`等聚合操作。
 >-   不支持`MAX`、`MIN`聚合函数。
 
@@ -109,7 +109,7 @@ GROUP BY region_id, product_code;
 2. 减少CPU在聚合计算上的开销，释放CPU资源用于其他操作
 3. 对于大规模数据的聚合查询，性能提升效果更加明显
 
->![](../../../contribute/public_sys-resources/icon-note.gif) **说明：** 
+>[!NOTE]说明
 >DPA加速效果取决于硬件加速器的性能和数据规模。对于小数据量查询，加速效果可能不明显，甚至因为数据传输开销导致性能下降。建议在大规模数据聚合场景下使用。
 
 ## 故障诊断

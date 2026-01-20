@@ -32,7 +32,7 @@ An expression is similar to a formula. You can use it in a query statement to se
 
         expression  NOTNULL
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >[!TIP]NOTICE 
         >Do not write  **expression=NULL**  or  **expression<\>\(!=\)NULL**, because  **NULL**  represents an unknown value, and these expressions cannot determine whether two unknown values are equal.
 
 -   is distinct from/is not distinct from
@@ -466,7 +466,7 @@ Subquery expressions include the following types:
 
     If the query statement result is null or the expression list does not meet the expression conditions and at least one null value is returned for the expression list on the right, the result of  **NOT IN**  is  **null**  rather than  **false**. This method is consistent with the Boolean rules used when SQL statements return null values.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In all situations,  **X NOT IN Y**  equals to  **NOT\(X IN Y\)**.
 
 

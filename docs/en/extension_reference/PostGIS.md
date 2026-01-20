@@ -434,7 +434,7 @@ Run the following command to delete a PostGIS extension from openGauss:
 openGauss=# DROP EXTENSION postgis [CASCADE];
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If PostGIS Extension is the dependee of other objects \(for example, geometry tables\), you need to add the  **CASCADE**  keyword to delete all these objects.
 
 To completely delete PostGIS extension, run  **gs\_om**  as user  **omm**  to delete PostGIS and the dynamic link libraries it depends on.

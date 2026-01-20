@@ -11,7 +11,7 @@ This test simulates realtime data streams arriving from massive IoT, cloud or mo
     -   **Throughput – 10,000**  Records/Core or  **2**  MB/Core.
     -   **Latency – 2.8ms per a 10 records**  bulk insert \(includes client-server networking\)
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+    >[!WARING]CAUTION 
     >We are projecting that multiple additional, and even significant, performance improvements will be made by MOT for this scenario.
     >Click  [MOT Usage Scenarios](mot_usage_scenarios.md)for more information about large-scale data streaming and data ingestion.
 

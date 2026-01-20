@@ -12,7 +12,7 @@
 
 - Only user **root** is authorized to run the **gs\_checkos** command.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**
+  [!NOTE]NOTE
 
   This tool cannot be invoked independently. For security purposes, it will be automatically deleted after the preinstallation is complete in enterprise-edition installation mode.
 
@@ -45,7 +45,7 @@
 
     Value range: A1 to A14 and B1 to B8
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >
     >Items from A1 to A14 indicate that OS parameters need to be checked but not to be set.
     >Items from B1 to B8 indicate that system parameters need to be set to expected values.
@@ -57,7 +57,7 @@
 
     Specifies the file of a host name list.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-The **-f** and **-h** parameters cannot be used together.
 
     Value range: a host name list
@@ -275,7 +275,7 @@ The <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 > -   A6 is checked based on the **\[/etc/sysctl.conf\]** and **\[SUGGEST:/etc/sysctl.conf\]** domains in the **check\_list.conf** configuration file.
 >    If the parameter value in **\[/etc/sysctl.conf\]** differs from the actual value, An **Abnormal** message is displayed during the check of A6. You can set the parameter by using B1.

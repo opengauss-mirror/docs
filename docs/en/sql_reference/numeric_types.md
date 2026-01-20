@@ -176,7 +176,7 @@ openGauss=# SELECT * FROM int_type_t2;
 openGauss=# DROP TABLE int_type_t2;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Only numbers of the TINYINT, SMALLINT, INTEGER, BIGINT, or INT16 type, that is, integers can be stored. Saving a number with a decimal in any of the data types will result in errors.
 >-   The INTEGER type is the common choice, as it offers the best balance between range, storage size, and performance. Generally, use the SMALLINT type only if you are sure that the value range is within the SMALLINT value range. The storage speed of INTEGER is much faster. BIGINT is used only when the range of INTEGER is not large enough.
 
@@ -261,7 +261,7 @@ openGauss=# SELECT * FROM numeric_type_t1;
 openGauss=# DROP TABLE numeric_type_t1;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Compared to the integer types, the arbitrary precision numbers require larger storage space and have lower storage efficiency, operation efficiency, and poorer compression ratio results. The INTEGER type is the common choice when number types are defined. Arbitrary precision numbers are used only when numbers exceed the maximum range indicated by the integers.
 >-   When NUMERIC/DECIMAL is used for defining a column, you are advised to specify the precision \(p\) and scale \(s\) for the column.
 
@@ -398,7 +398,7 @@ openGauss=# DROP TABLE bigserial_type_tab;
 openGauss=# DROP TABLE largeserial_type_tab;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >SMALLSERIAL, SERIAL, BIGSERIAL, and LARGESERIAL are not real types.They are concepts used for setting a unique identifier for a table. Therefore, an integer column is created and its default value plans to be read from a sequencer. A NOT NULL constraint is used to ensure NULL is not inserted. In most cases you would also want to attach a  **UNIQUE**  or  **PRIMARY KEY**  constraint to prevent duplicate values from being inserted unexpectedly, but this is not automatic. The sequencer is set so that it belongs to the column. In this case, when the column or the table is deleted, the sequencer is also deleted. Currently, the  **SERIAL**  column can be specified only when you create a table. You cannot add the  **SERIAL**  column in an existing table. In addition,  **SERIAL**  columns cannot be created in temporary tables. Because SERIAL is not a data type, columns cannot be converted to this type.
 
 **Table  4**  Floating point types

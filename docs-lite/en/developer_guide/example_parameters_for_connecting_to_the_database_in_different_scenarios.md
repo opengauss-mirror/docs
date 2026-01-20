@@ -1,6 +1,6 @@
 # Example: Parameters for Connecting to the Database in Different Scenarios<a name="EN-US_TOPIC_0000001151910145"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the following example,  **host:port**  represents a node, where  **host**  indicates the name or IP address of the server where the database resides, and  **port**  indicates the port number of the server where the database resides.
 
@@ -14,7 +14,7 @@ The URL can be configured as follows:
 jdbc:postgresql://node1,node2,node3,node4,node5,node6/database?priorityServers=3
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the Lite scenario, openGauss does not support DR.
 
@@ -28,7 +28,7 @@ If the customer wants to evenly distribute the connections established on the sa
 jdbc:postgresql://node1,node2,node3/database?loadBalanceHosts=true
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >
 >When  **loadBalanceHosts**  is used, if the connection is established on the standby DN, write operations cannot be performed. If read and write operations are required, do not set this parameter.
 

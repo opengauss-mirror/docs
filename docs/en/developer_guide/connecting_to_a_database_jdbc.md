@@ -69,7 +69,7 @@ JDBC provides the following three database connection methods:
 </table>
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >After the  **uppercaseAttributeName**  parameter is enabled, if the database contains metadata with a mixture of uppercase and lowercase letters, only the metadata in lowercase letters can be queried and output in uppercase letters. Before using the metadata, ensure that the metadata is stored in lowercase letters to prevent data errors.
 
 ## Examples<a name="en-us_topic_0283137601_en-us_topic_0237120381_en-us_topic_0213179126_en-us_topic_0189251768_en-us_topic_0059779354_sa87cf707a76c493997989289921f9202"></a>

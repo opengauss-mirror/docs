@@ -12,7 +12,7 @@
 -   **DROP DATABASE**  cannot be executed within a transaction block.
 -   If  **DROP DATABASE**  fails and is rolled back, run  **DROP DATABASE IF EXISTS**  again.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >**DROP DATABASE**  cannot be undone.
 

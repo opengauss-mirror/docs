@@ -7,7 +7,7 @@ The naming rules for identifiers are as follows:
 -   An identifier name can only contain letters, underscores, digits (0-9), and dollar signs ($).
 -   An identifier name must start with a letter (a to z) or an underscore (\_).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     > 
     >-   The naming rules are recommended but not mandatory.
     >

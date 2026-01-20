@@ -77,7 +77,7 @@ A transaction is a user-defined sequence of database operations, which form an i
 
     Specifies the transaction isolation level that determines the data that a transaction can view if other concurrent transactions exist.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The isolation level of a transaction cannot be reset after the first clause \(**SELECT**,  **INSERT**,  **DELETE**,  **UPDATE**,  **FETCH**, or  **COPY**\) for modifying data is executed in the transaction.
 
     Value range:

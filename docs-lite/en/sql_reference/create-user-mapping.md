@@ -32,7 +32,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
     Specifies options for user mapping. These options typically define the actual username and password for this mapping. The option name must be unique. The allowed option names and values are related to the foreign data wrapper of the server.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   User passwords are encrypted and stored in the system catalog  [PG\_USER\_MAPPING](../database_reference/pg_user_mapping.md). During the encryption,  **usermapping.key.cipher**  and  **usermapping.key.rand**  are used as the encryption password file and encryption factor. Before using the tool for the first time, run the following command to create the two files, save the files to the  _$GAUSSHOME_**/bin**  directory on each node, and ensure that you have the read permission on the files.  **gs\_ssh**  helps you quickly place files in the specified directory of each node.
     >    ```
     >    gs_ssh -c "gs_guc generate -o usermapping -S default -D $GAUSSHOME/bin"
@@ -66,7 +66,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
             User password of the remote openGauss database.
 
-            >![](public_sys-resources/icon-note.gif) **NOTE:** 
+            >[!NOTE]NOTE 
             >
             >The password entered by the user is encrypted in the openGauss background to ensure security. The key file required for encryption must be generated using the  **gs\_guc**  tool and released to the  _$GAUSSHOME_**/bin**  directory of each node in openGauss using the  **gs\_ssh**  tool. The password cannot contain the prefix 'encryptOpt'. Otherwise, it is considered as encrypted ciphertext.
 
@@ -77,7 +77,7 @@ CREATE USER MAPPING FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 [ALTER USER MAPPING](alter-user-mapping.md)  and  [DROP USER MAPPING](drop-user-mapping.md)
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.
 

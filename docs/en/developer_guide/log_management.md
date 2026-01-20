@@ -15,7 +15,7 @@ The SLF4J may be implemented by using Log4j or Log4j2. When the Log4j is used to
 
 This method supports log management and control. The SLF4J can implement powerful log management and control functions through related configurations in files. This method is recommended.
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARING]CAUTION 
 >This method depends on the general SLF4J APIs, such as  **org.slf4j.LoggerFactory.getLogger\(String name\)**,  **org.slf4j.Logger.debug\(String var1\)**,  **org.slf4j.Logger.info\(String var1\)**,  **org.slf4j.Logger.warn\(String warn\)**, and  **org.slf4j.Logger.warn\(String warn\)**. If these APIs are changed, logs cannot be recorded.
 
 Example:

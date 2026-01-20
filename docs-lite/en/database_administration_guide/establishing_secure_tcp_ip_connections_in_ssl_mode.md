@@ -52,7 +52,7 @@ Set digital certificate parameters related to SSL authentication. For details, s
     ```
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >You are advised to use bidirectional authentication for security purposes.
 >The environment variables configured for a client must contain the absolute file paths.
@@ -177,7 +177,7 @@ In the  **postgresql.conf**  file on the server, set the related parameters. For
 
 Configure environment variables related to SSL authentication on the client. For details, see  [Table 3](#en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >The path of environment variables is set to  **/home/omm**  as an example. Replace it with the actual path.
 
@@ -486,7 +486,7 @@ A series of encryption and authentication algorithms with different strength are
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Currently, only the six encryption algorithm suites listed in the preceding table are supported.
 >-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. The DHE-RSA-AES128-GCM-SHA256 and DHE-RSA-AES256-GCM-SHA384 are DHE cipher suites reserved for forward compatibility. According to the CVE-2002-20001 vulnerability, the DHE cipher suites have security risks and are not recommended in incompatible scenarios. You can set the **ssl_ciphers** parameter to support only the ECDHE cipher suite.
 >-   To specify the preceding cipher suites, set **ssl\_ciphers**  to the OpenSSL suite names in the preceding table. Use semicolons \(;\) to separate cipher suites. For example, set  **ssl\_ciphers**  in  **postgresql.conf**  as follows:
