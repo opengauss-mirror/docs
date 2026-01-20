@@ -55,6 +55,10 @@ sections:
             href:  ../sql_reference/implement.md 
           - label: GIN提示与技巧
             href:  ../sql_reference/gin_tips_and_tricks.md  
+  - label: OGAI
+    sections:
+      - label: OGAI
+        href: ./ogai_usage_guide.md
   - label: 工具编排使用
     sections:
       - label:  编排组件
