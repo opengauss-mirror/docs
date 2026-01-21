@@ -123,6 +123,8 @@ sections:
             href: ./cursors.md
           - label: Subqueries
             href: ./subqueries.md
+          - label: UWAL
+            href: ./brief_tutorial/UWAL.md
   - label: Schema
     sections:
       - label: Overview

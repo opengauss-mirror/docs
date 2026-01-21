@@ -157,7 +157,7 @@ sections:
         href: ./event_trigger.md
       - label: Resource Pooling
         href: ./resource_pooling.md
-      - label: UWAL
+      - label: UWAL Feature
         href: ./uwal.md
   - label: Application Development Interfaces
     sections:

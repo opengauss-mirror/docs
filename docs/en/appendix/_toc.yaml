@@ -3,6 +3,12 @@ isManual: true
 sections:
   - label: Obtaining openGauss Resources
     href: ./obtaining-opengauss-resources.md
+  - label: FAQ
+    sections:
+      - label: Product-related FAQs
+        href: ./product-related-faqs.md
+      - label: 使用FAQ
+        href: ./usage-related-faqs.md
   - label: Error Log Reference
     sections:
       - label: Kernel Error Information

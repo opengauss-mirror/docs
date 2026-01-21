@@ -68,7 +68,37 @@ sections:
       - label: 示例：jdbc主备集群负载均衡
         href: ./example_jdbc_primary_standby_cluster_load_balancing.md
       - label: JDBC接口参考
-        href: ./jdbc_interface_reference.md
+        sections:
+          - label: JDBC接口参考
+            href: ./jdbc_interface_reference.md
+          - label: java.sql.Connection
+            href: ./java_sql_connection.md
+          - label: java.sql.CallableStatement
+            href: ./java_sql_callablestatement.md
+          - label: java.sql.DatabaseMetaData
+            href: ./java_sql_databasemetadata.md
+          - label: java.sql.Driver
+            href: ./java_sql_driver.md
+          - label: java.sql.PreparedStatement
+            href: ./java_sql_preparedstatement.md
+          - label: java.sql.ResultSet
+            href: ./java_sql_resultset.md
+          - label: java.sql.ResultSetMetaData
+            href: ./java_sql_resultsetmetadata.md
+          - label: java.sql.Statement
+            href: ./java_sql_statement.md
+          - label: javax.sql.ConnectionPoolDataSource
+            href: ./javax_sql_connectionpooldatasource.md
+          - label: javax.sql.DataSource
+            href: ./javax_sql_datasource.md
+          - label: javax.sql.PooledConnection
+            href: ./javax_sql_pooledconnection.md
+          - label: javax.naming.Context
+            href: ./javax_naming_context.md
+          - label: javax.naming.spi.InitialContextFactory
+            href: ./javax_naming_spi_initialcontextfactory.md
+          - label: CopyManager
+            href: ./copymanager.md            
       - label: JDBC常用参数参考
         href: ./common_jdbc_parameters.md
   - label: 基于ODBC开发
