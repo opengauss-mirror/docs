@@ -162,7 +162,7 @@
 
     Description: Performs decoding and goes to the next streaming replication slot.
 
-    Parameter description: This function has the same parameters as **pg\_logical\_slot\_peek\_changes**. For details, see [pg\_logical\_slot\_peek\_ch...](#en-us_topic_0283137128_en-us_topic_0237121996_li11712645125).
+    Parameter description: This function has the same parameters as **pg\_logical\_slot\_peek\_changes**. For details, see [pg\_logical\_slot\_peek\_ch...](#zh-cn_topic_0283137128_zh-cn_topic_0237121996_li11712645125).
 
     Note: Users who invoke this function must have the SYSADMIN permission, the REPLICATION permission, or inherit the gs\_role\_replication permission of the built-in role. Currently, this function can be invoked only on the host.
 
