@@ -197,6 +197,28 @@ sections:
       - label: "Example: Common Operations"
         href: ./example_common_operations_psycopg.md
       - label: Psycopg API Reference
-        href: ./psycopg_api_reference.md
+        sections:
+          - label: Overview
+            href: ./psycopg_api_reference.md   
+          - label: psycopg2.connect()
+            href: ./psycopg2_connect.md
+          - label: connection.cursor()
+            href: ./connection_cursor.md
+          - label: cursor.execute(query,vars_list)
+            href: ./cursor_execute_query_vars_list.md
+          - label: curosr.executemany(query,vars_list)
+            href: ./curosr_executemany_query_vars_list.md
+          - label: connection.commit()
+            href: ./connection_commit.md
+          - label: connection.rollback()
+            href: ./connection_rollback.md
+          - label: cursor.fetchone()
+            href: ./cursor_fetchone.md
+          - label: cursor.fetchall()
+            href: ./cursor_fetchall.md
+          - label: cursor.close()
+            href: ./cursor_close.md
+          - label: connection.close()
+            href: ./connection_close.md     
   - label: Commissioning
     href: ./commissioning.md
