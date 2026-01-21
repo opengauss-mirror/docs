@@ -17,6 +17,8 @@ sections:
         href: ./constant_and_macro.md
       - label: Data Types
         sections:
+          - label: Data Types
+            href: ./brief_tutorial/data-types.md       
           - label: Numeric Types
             href: ./numeric_types.md
           - label: Monetary Types
