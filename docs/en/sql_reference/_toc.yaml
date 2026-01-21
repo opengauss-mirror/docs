@@ -594,7 +594,7 @@ sections:
           - label: DBE_PLDEBUGGER Schema
             sections:
               - label: Introduction
-                href: ./dbe_pldebugger_turn_on.md
+                href: ./dbe_pldebugger_schema.md            
               - label: DBE_PLDEBUGGER.turn_on
                 href: ./dbe_pldebugger_turn_on.md
               - label: DBE_PLDEBUGGER.turn_off
@@ -1222,7 +1222,11 @@ sections:
       - label: Locks
         href: ./locks.md
       - label: Transactions
-        href: ./transactions.md
+        sections:
+          - label: Managing Transactions
+            href: ./managing_transactions.md      
+          - label: Controlling Transactions
+            href: ./controlling_transactions.md     
   - label: Tables and Storage
     sections:
       - label: Creating a Table
