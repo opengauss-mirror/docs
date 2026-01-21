@@ -6,6 +6,8 @@ sections:
   - label: Client Tool
     href: ./client_tool.md
     sections:
+      - label: Meta-Command Reference
+        href: ./meta_command_reference.md     
       - label: gsql
         href: ./gsql.md
   - label: Server Tools
@@ -21,7 +23,7 @@ sections:
   - label: Tools Called in the Internal System
     sections:
       - label: Overview
-        href: ./tools_used_in_the_internal_system.md
+        href: ./tools_used_in_the_internal_system.md  
       - label: gaussdb
         href: ./gaussdb.md
       - label: gs_ctl
