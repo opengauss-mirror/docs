@@ -6,13 +6,11 @@
 
 ### 硬件要求
 
-- 主机数量：2台
+- 主机数量：2台ARM架构物理机/DCS虚拟机
 - 推荐主机硬件最低规格：
     - 内存：8GB
     - CPU：4核（16位）
     - 磁盘空闲空间：100GB
-- ARM架构主机编译生成ARM包，X86架构主机编译生成X86包
-
 ---
 
 ## 安装准备
@@ -20,9 +18,8 @@
 ### 操作系统要求
 
 - 支持的操作系统：
-    - CentOS 8.2（7.x版本需要升级gcc）
-    - openEuler 20.03/22.03 LTS（x86_64/arrch64）
-- 建议使用上述版本的操作系统进行编译和部署
+    - openEuler 20.03/22.03 LTS arrch64
+- 建议使用上述版本的操作系统进行编译和部署，其余环境未作正确性验证
 
 ---
 
@@ -63,10 +60,12 @@ yum install -y wget python3 python3-devel iputils iproute --skip-broken
 - 可以在[openGauss官网](https://docs.opengauss.org/zh/)的`下载`页面进行安装包的下载获取。
 
 ```shell
-假如安装包放在节点一的/home/ogdba目录下，则需要执行下面这个命令给节点二也传输一份
+假如安装包放在节点一的/data/ogdba目录下，则需要执行下面这个命令给节点二也传输一份
 
-scp ogdba[ip2]:/home/ogdba [package_name]
+scp ogdba[ip2]:/data/ogdba [package_name]
 ```
+
+- 请注意：避免将安装包放在`/home/ogdba`或`/home/ograc`目录下，防止安装报错。
 
 ---
 
@@ -89,9 +88,10 @@ scp ogdba[ip2]:/home/ogdba [package_name]
 节点1操作如下：
 
 ```shell
-cd /home/ogdba
+cd /data/ogdba
 tar -zxvf [package_name]
-cd oGRAC/pkg/deploy/action
+chmod 777 ograc_connector -R; chown root:root ograc_connector -R
+cd ograc_connector/action
 ntpdate -u [ip2]  # 同步机器时间
 date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
@@ -99,8 +99,9 @@ date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 节点2操作如下：
 
 ```shell
-cd /home/ogdba
+cd /data/ogdba
 tar -zxvf [package_name]
+chmod 777 ograc_connector -R; chown root:root ograc_connector -R
 ```
 
 #### 3.2 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
@@ -122,7 +123,7 @@ ln -s /dev/sdxx /dev/gcc-disk
 
 | 软链接 | 使用类型 | dss卷名 |  大小  |
 |--------|--------|---------|---------|
-| gcc-disk | gcc使用 |dsscmd查不到，不管理| 5G|
+| gcc-disk | gcc使用 |dsscmd不进行管理| 5G|
 | dss-disk1| page   |vg1    |    2T   |
 | dss-disk2| redo   |vg2    |    4T   |
 | dss-disk3| 归档   |vg3    |    2T   |
@@ -135,21 +136,28 @@ ln -s /dev/sdxx /dev/gcc-disk
 cd /oGRAC/pkg/deploy/action
 ```
 
-- 编辑 `config_params_lun.json`，注意节点参数差异：
+- 编辑 `config_params_lun.json`，注意节点参数差异，其中如果为小规格机器（如内存小于255GB），请讲`auto_tune`置为1，进行自适应参数调节，否则将会因内存资源不足导致安装失败。
 
 节点1上的`config_params_lun.json`进行如下修改配置：
 
 ```json
 {
-   "deploy_mode": "dss",
-   "deploy_user": "ogdba:ogdba",
-   "node_id": "0",
-   "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
-   "db_type": "1",
-   "mes_ssl_switch": false,
-   "MAX_ARCH_FILES_SIZE": "300G",
-   "redo_num": "6",                 //请根据业务需要进行设置
-   "redo_size": "5G"                //请根据业务需要进行设置
+    "deploy_mode": "dss",
+    "deploy_user": "ogdba:ogdba",
+    "node_id": "0",
+    "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
+    "db_type": "1",
+    "mes_ssl_switch": false,
+    "MAX_ARCH_FILES_SIZE": "300G",
+    "redo_num": "6",
+    "redo_size": "5G"，
+    "auto_tune": "0",
+    "dss_vg_list": {
+        "vg1": "/dev/dss-disk1",
+        "vg2": "/dev/dss-disk2",
+        "vg3": "/dev/dss-disk3"
+    },
+    "gcc_home": "/dev/gcc-disk"              
 }
 ```
 
@@ -157,15 +165,22 @@ cd /oGRAC/pkg/deploy/action
 
 ```json
 {
-   "deploy_mode": "dss",
-   "deploy_user": "ogdba:ogdba",
-   "node_id": "1",
-   "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
-   "db_type": "1",
-   "mes_ssl_switch": false,
-   "MAX_ARCH_FILES_SIZE": "300G",
-   "redo_num": "6",                 //请根据业务需要进行设置
-   "redo_size": "5G"                //请根据业务需要进行设置
+    "deploy_mode": "dss",
+    "deploy_user": "ogdba:ogdba",
+    "node_id": "1",
+    "cms_ip": "xx.xx.xx.1;xx.xx.xx.2",
+    "db_type": "1",
+    "mes_ssl_switch": false,
+    "MAX_ARCH_FILES_SIZE": "300G",
+    "redo_num": "6",
+    "redo_size": "5G"，
+    "auto_tune": "0",
+    "dss_vg_list": {
+        "vg1": "/dev/dss-disk1",
+        "vg2": "/dev/dss-disk2",
+        "vg3": "/dev/dss-disk3"
+    },
+    "gcc_home": "/dev/gcc-disk"
 }
 ```
 
