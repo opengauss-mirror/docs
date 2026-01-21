@@ -1207,9 +1207,9 @@
 
  - quotename(string_expression varchar [, quote_character char] )
 
-    描述：使用quote_character包括string_expression，string_expression默认为"[]"。
+    描述：使用quote_character包裹string_expression，quote_character默认为"[]"。
 
-    参数类型：string_expression为varchar类型，delimiter为char类型。
+    参数类型：string_expression为varchar类型，quote_character为char类型。
 
     返回值类型：varchar
 
@@ -1223,11 +1223,11 @@
     (1 row)
     ```
 
- - trim([characters char FROM ] string_expression)
+ - trim([characters varchar FROM ] string_expression)
 
     描述：去掉字符串首尾的空格或者其他的指定字符。
 
-    参数类型：string_expression为varchar类型，delimiter为char类型。
+    参数类型：string_expression为varchar类型，characters为varchar类型。
 
     返回值类型：varchar
 
