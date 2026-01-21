@@ -8,7 +8,6 @@ sections:
   - label: Data Types
     href: ./data_types.md
   - label: Simple Data Management
-    href: ./simple_data_management.md
     sections:
       - label: Creating a Database
         href: ./creating_a_database.md
