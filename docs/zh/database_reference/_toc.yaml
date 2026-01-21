@@ -179,6 +179,8 @@ sections:
         href: ./datavec_vector_engine_parameters.md
       - label: BM25全文检索索引参数
         href: ./bm25_full_text_retrieval_index_parameters.md
+      - label: OGAI参数
+        href: ./ogai_parameters.md
   - label: 系统表和系统视图
     sections:
       - label: 系统表和系统视图概述
