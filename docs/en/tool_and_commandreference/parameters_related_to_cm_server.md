@@ -36,7 +36,7 @@
 
 **Parameter description**: Specifies the time to wait before the instance heartbeat times out.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **6**
 
@@ -44,7 +44,7 @@
 
 **Parameter description**: Specifies the delay in cm\_server failover after the primary cm\_server breakdown is detected.
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **0**
 
@@ -52,7 +52,7 @@
 
 **Parameter description**: Specifies the time to wait before the connection between the primary and standby cm\_servers times out.
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **2**
 
@@ -60,7 +60,7 @@
 
 **Parameter description**: Specifies the time to wait before the heartbeat between the primary and standby cm\_server times out.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **6**
 
@@ -68,7 +68,7 @@
 
 **Parameter description**: Specifies the interval between synchronizations of primary and standby CM Server status.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **1**
 
@@ -76,7 +76,7 @@
 
 **Parameter description**: Specifies the timeout interval for cm\_server to vote for each other. This parameter is a legacy parameter and does not take effect.
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **6**
 
@@ -84,7 +84,7 @@
 
 **Parameter description**: Specifies the maximum number of times a database node is detected as a zombie. If the number of times the node is detected as a zombie is greater than the specified value, a process on the node is considered to be a zombie and will be restarted.
 
-**Value range**: an integer, in the range \[1,2147483647\]. You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\]. You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **5**
 
@@ -92,7 +92,7 @@
 
 **Parameter description:** Specifies the basic duration of cm\_server arbitration delay. If the primary cm\_server is disconnected, the arbitration starts to be timed. If the disconnection duration exceeds the arbitration delay duration, a new primary cm\_server will be selected. The arbitration delay duration is determined by the basic delay duration, the node index (server ID), and the incremental delay duration. The formula is as follows: Arbitration delay duration = Basic delay duration + Node index x Incremental delay duration
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **10**
 
@@ -100,13 +100,13 @@
 
 **Parameter description**: Specifies the incremental delay duration for cm\_server arbitration. If the primary cm\_server is disconnected, the arbitration starts to be timed. If the disconnection duration exceeds the arbitration delay duration, a new primary cm\_server will be selected. The arbitration delay duration is determined by the basic delay duration, the node index (server ID), and the incremental delay duration. The formula is as follows: Arbitration delay duration = Basic delay duration + Node index x Incremental delay duration
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). You need to restart cm\_server for the modification to take effect. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **3**
 
 ## alarm\_component<a name="section12321745182515"></a>
 
-**Parameter description**: Specifies the position of the alarm component that handles alarms if the first mode is used. For details, see [Options of set cm](#table10437204416514). When you set an absolute path using **cm\_ctl**, the path must be included in quotation marks (""), for example, **cm\_ctl set --param --server -k alarm\_component="'/alarm/dir'"**.
+**Parameter description**: Specifies the position of the alarm component that handles alarms if the first mode is used. For details, see [Options of set cm](cm_ctl.md#table10437204416514). When you set an absolute path using **cm\_ctl**, the path must be included in quotation marks (""), for example, **cm\_ctl set --param --server -k alarm\_component="'/alarm/dir'"**.
 
 **Value range**: a string of up to 1024 characters. You need to restart cm\_server for the modification to take effect.
 
@@ -116,7 +116,7 @@
 
 **Parameter description**: specifies the interval at which an alarm is reported.
 
-**Value range**: a non-negative integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: a non-negative integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **3**
 
@@ -124,7 +124,7 @@
 
 **Parameter description**: Specifies the maximum number of times an alarm is reported.
 
-**Value range**: a non-negative integer, in the range \[1,2592000\]. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: a non-negative integer, in the range \[1,2592000\]. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **1**
 
@@ -132,7 +132,7 @@
 
 **Parameter description**: cm\_agent periodically checks the instance status and reports the status to cm\_server. If the instance status cannot be detected for a long time and the accumulated number of times exceeds the value of this parameter, cm\_server delivers a command to cm\_agent to restart the instance.
 
-**Value range**: an integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[0,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **40**
 
@@ -140,7 +140,7 @@
 
 **Parameter description**: If the failure rate of a node shard in an AZ (Number of faulty node shards/Total number of node shards x 100%) exceeds the specified value, automatic AZ switchover is triggered.
 
-**Value range**: an integer ranging from 1 to 100. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer ranging from 1 to 100. The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **100**
 
@@ -148,7 +148,7 @@
 
 **Parameter description**: Specifies the interval for checking the AZ status. If the status of an AZ is abnormal, automatic AZ switchover is triggered.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **2**
 
@@ -156,7 +156,7 @@
 
 **Parameter description**: Specifies the interval at which the network connection between AZs is checked.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **60**
 
@@ -164,7 +164,7 @@
 
 **Parameter description**: Specifies the delay between two retries to check the network connection between AZs.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **150**
 
@@ -172,7 +172,7 @@
 
 **Parameter description**: Specifies the interval at which cm\_server switches from the primary state to the standby state due to unhealthy etcd.
 
-**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **8**
 
@@ -180,7 +180,7 @@
 
 **Parameter description**: Specifies the interval at which cm\_agent restarts and kills a zombie database instance. The interval between two consecutive kill operations cannot be less than the value of this parameter. Otherwise, cm\_agent does not deliver commands.
 
-**Value range**: an integer, in the range \[1800,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: an integer, in the range \[1800,2147483647\] (unit: second). The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value:** **21600**
 
@@ -188,7 +188,7 @@
 
 **Parameter description**: Specifies whether the database is in read-only mode.
 
-**Value range**: Boolean values **on**, **off**, **true**, **false**, **yes**, **no**, **1**, and **0** The modification of this parameter takes effect after reloading. For details, see [Options of set cm](#table10437204416514).
+**Value range**: Boolean values **on**, **off**, **true**, **false**, **yes**, **no**, **1**, and **0** The modification of this parameter takes effect after reloading. For details, see [Options of set cm](cm_ctl.md#table10437204416514).
 
 **Default value**: **on**
 

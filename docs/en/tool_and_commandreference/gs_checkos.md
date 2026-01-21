@@ -51,7 +51,7 @@
     >Items from B1 to B8 indicate that system parameters need to be set to expected values.
     >Items A and items B cannot be simultaneously set.
 
-    [Table 1](#en-us_topic_0237152331_en-us_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e) lists the check items.
+    [Table 1](#Table 1) lists the check items.
 
 -   -f
 
@@ -97,7 +97,7 @@
     Displays version information.
 
 
-**Table 1** OS check items
+**Table 1** OS check items<a id="Table 1"></a>
 
 <a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e"></a>
 <table><thead align="left"><tr id="en-us_topic_0237152331_en-us_topic_0059778883_r96d5e4d71c8c46a18f130b0cc1968953"><th class="cellrowborder" valign="top" width="9.27%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"><a name="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a><a name="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a>No.</p>

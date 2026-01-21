@@ -79,9 +79,9 @@ gs_initdb [OPTION]... [DATADIR]
 
 ## Command Reference<a name="section01341136122018"></a>
 
-For details about common parameters and uncommon parameters supported by **gs\_initdb**, see [Table 1](#en-us_topic_0237152414_en-us_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb) and [Table 2](#en-us_topic_0237152414_en-us_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f), respectively.
+For details about common parameters and uncommon parameters supported by **gs\_initdb**, see [Table 1](#Table 1) and [Table 2](#Table 2), respectively.
 
-**Table 1** Common parameters
+**Table 1** Common parameters<a id="Table 1"></a>
 
 <a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_t7527cd2e8e304b64bec55dcd38b701bb"></a>
 
@@ -273,7 +273,7 @@ During <td class="cellrowborder" valign="top" width="32.6%" headers="mcps1.2.4.1
 
 
 
-**Table 2** Uncommon parameters
+**Table 2** Uncommon parameters<a id="Table 2"></a>
 
 <a name="zh-cn_topic_0237152414_zh-cn_topic_0059778168_t2f464cb1775044808eceb29e25d6d37f"></a>
 <table><thead align="left"><tr id="en-us_topic_0287276015_en-us_topic_0237152414_en-us_topic_0059778168_rcdce44e401504e7fbc3d46375a8bdfcf"><th class="cellrowborder" valign="top" width="15.939999999999998%" id="mcps1.2.4.1.1"><p id="en-us_topic_0287276015_en-us_topic_0237152414_en-us_topic_0059778168_a56f44abb258a4286be24bb7b628afece"><a name="en-us_topic_0287276015_en-us_topic_0237152414_en-us_topic_0059778168_a56f44abb258a4286be24bb7b628afece"></a><a name="en-us_topic_0287276015_en-us_topic_0237152414_en-us_topic_0059778168_a56f44abb258a4286be24bb7b628afece"></a>Parameter</p>

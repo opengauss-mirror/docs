@@ -2,9 +2,9 @@
 
 ## Background<a name="en-us_topic_0237152334_en-us_topic_0059778085_section1813744893314"></a>
 
-When openGauss is faulty, gs\_collector can be used to collect information about the OS, logs, and configuration file, helping you locate the fault. You can use the **-C** parameter to specify the information to be collected. [Table 1](#en-us_topic_0237152334_table18101312318) describes the information that can be collected.
+When openGauss is faulty, gs\_collector can be used to collect information about the OS, logs, and configuration file, helping you locate the fault. You can use the **-C** parameter to specify the information to be collected. [Table 1](#Table 1) describes the information that can be collected.
 
-**Table 1** Information to be collected by gs\_collector
+**Table 1** Information to be collected by gs\_collector<a id="Table 1"></a>
 
 <a name="zh-cn_topic_0237152334_table18101312318"></a>
 
