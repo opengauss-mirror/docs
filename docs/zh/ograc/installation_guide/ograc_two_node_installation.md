@@ -29,7 +29,7 @@
 
 #### 1.1 系统初始化
 
-关闭 SELinux 和防火墙：
+在`root`用户下，关闭 SELinux 和防火墙：
 
 ```shell
 setenforce 0
@@ -56,16 +56,18 @@ yum install -y wget python3 python3-devel iputils iproute --skip-broken
 ---
 
 ### 2. 获取安装包并传输到各个安装节点
+创建安装目录（这里以`/data`目录举例，不建议将安装目录存放在`/home`下，以免存在不可预期的权限问题）
+```shell
+mkdir /data/ograc
+```
 
 - 可以在[openGauss官网](https://docs.opengauss.org/zh/)的`下载`页面进行安装包的下载获取。
 
 ```shell
 假如安装包放在节点一的/data/ogdba目录下，则需要执行下面这个命令给节点二也传输一份
 
-scp ogdba[ip2]:/data/ogdba [package_name]
+scp /data/ograc/[package_name] root@[ip2]:/data/ograc/[package_name]
 ```
-
-- 请注意：避免将安装包放在`/home/ogdba`或`/home/ograc`目录下，防止安装报错。
 
 ---
 
@@ -88,7 +90,7 @@ scp ogdba[ip2]:/data/ogdba [package_name]
 节点1操作如下：
 
 ```shell
-cd /data/ogdba
+cd /data/ograc
 tar -zxvf [package_name]
 chmod 777 ograc_connector -R; chown root:root ograc_connector -R
 cd ograc_connector/action
@@ -123,20 +125,22 @@ ln -s /dev/sdxx /dev/gcc-disk
 
 | 软链接 | 使用类型 | dss卷名 |  大小  |
 |--------|--------|---------|---------|
-| gcc-disk | gcc使用 |dsscmd不进行管理| 5G|
+| gcc-disk | cm投票盘 |不对该卷进行显式管理| 5G|
 | dss-disk1| page   |vg1    |    2T   |
 | dss-disk2| redo   |vg2    |    4T   |
 | dss-disk3| 归档   |vg3    |    2T   |
+
+请注意，上述`gcc`为`CM`组件特有名称，与编译器类型无关。
 
 #### 3.3 配置文件修改
 
 - 进入 action 目录：
 
 ```shell
-cd /oGRAC/pkg/deploy/action
+cd /data/ograc/ograc_connector/action
 ```
 
-- 编辑 `config_params_lun.json`，注意节点参数差异，其中如果为小规格机器（如内存小于255GB），请讲`auto_tune`置为1，进行自适应参数调节，否则将会因内存资源不足导致安装失败。
+- 编辑 `config_params_lun.json`，注意节点参数差异，其中如果为小规格机器（如内存小于255GB），请将`auto_tune`置为1，进行自适应参数调节，否则将会因内存资源不足导致安装失败。
 
 节点1上的`config_params_lun.json`进行如下修改配置：
 
@@ -173,7 +177,7 @@ cd /oGRAC/pkg/deploy/action
     "mes_ssl_switch": false,
     "MAX_ARCH_FILES_SIZE": "300G",
     "redo_num": "6",
-    "redo_size": "5G"，
+    "redo_size": "5G",
     "auto_tune": "0",
     "dss_vg_list": {
         "vg1": "/dev/dss-disk1",
@@ -183,6 +187,18 @@ cd /oGRAC/pkg/deploy/action
     "gcc_home": "/dev/gcc-disk"
 }
 ```
+其中，各字段含义如下：
+- deploy_mode：安装模式，当前默认推荐使用dss安装；
+- deploy_user：安装管理用户；
+- node_id：节点序号，从0开始；
+- mes_ssl_switch：mes通信是否通过ssl加密；
+- db_type：数据库标识，不建议修改；
+- MAX_ARCH_FILES_SIZE：归档最大文件大小；
+- redo_num：redo文件的数量；
+- redo_size：redo文件的大小；
+- auto_tune：是否开启自适应参数配置（小规格机器建议开启）；
+- dss_vg_list：分别为数据盘、redo盘、归档盘目录；
+- gcc_home：CM仲裁盘使用目录；
 
 ---
 
