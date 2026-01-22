@@ -483,29 +483,56 @@ gr_om upgrade -X <config_file> --grpkg <gr_package> --cmpkg <cm_package>
 | `--cmpkg <cm_package>` | 否 | 新版本 CM 安装包路径 |
 | `-n, --nodeids <ids>` | 否 | 指定要升级的节点 ID（从 1 开始） |
 
+### 上传并解压新版本安装包
+
+以 7.0.0RC2 openEuler20.03-aarch64 版本为例：
+
+```bash
+[omm@openGauss pkg]$ cd /home/omm/pkg
+[omm@openGauss pkg]$ tar -zxvf openGauss-oGRecorder-7.0.0-RC2-openEuler20.03-aarch64.tar.gz
+oGRecorder-Server.tar.gz
+oGRecorder-SDK.tar.gz
+[omm@openGauss pkg]$ tar -zxvf oGRecorder-Server.tar.gz
+./
+./install/
+./install/gr_om
+./install/py_pstree.py
+./install/gr_contrl.sh
+./install/rest_contrl.sh
+./install/rest_ssl.properties
+./install/restWhiteList
+./bin/
+./bin/grcmd
+./bin/grserver
+./lib/
+./lib/libgrapi.so
+[omm@openGauss pkg]$ cd install
+[omm@openGauss pkg]$ chmod +x gr_om
+```
+
 ### 滚动升级示例
 
 ```bash
 # 1. 先升级备节点
-gr_om upgrade \
+./gr_om upgrade \
     -X /home/omm/cluster.json \
-    --grpkg /home/omm/oGRecorder-2.0.0.tar.gz \
+    --grpkg /home/omm/pkg/oGRecorder-Server.tar.gz \
     -n 2 3
 
 # 2. 再升级主节点
-gr_om upgrade \
+./gr_om upgrade \
     -X /home/omm/cluster.json \
-    --grpkg /home/omm/oGRecorder-2.0.0.tar.gz \
+    --grpkg /home/omm/pkg/oGRecorder-Server.tar.gz \
     -n 1
 ```
 
 ### 联合升级示例
 
 ```bash
-gr_om upgrade \
+./gr_om upgrade \
     -X /home/omm/cluster.json \
-    --grpkg /home/omm/oGRecorder-2.0.0.tar.gz \
-    --cmpkg /home/omm/CM-2.0.0.tar.gz
+    --grpkg /home/omm/pkg/oGRecorder-Server.tar.gz \
+    --cmpkg /home/omm/pkg/CM-7.0.0.tar.gz
 ```
 
 ### 包验证
