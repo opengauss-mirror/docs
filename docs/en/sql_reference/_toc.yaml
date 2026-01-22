@@ -113,6 +113,8 @@ sections:
             href: ./brief_tutorial/permissions.md
           - label: SCHEMA
             href: ./brief_tutorial/schema.md
+          - label: Transactions
+            href: ./brief_tutorial/transactions.md            
           - label: Aliases
             href: ./aliases.md
           - label: Indexes

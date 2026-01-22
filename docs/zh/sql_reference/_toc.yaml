@@ -126,9 +126,11 @@ sections:
               - label: IS[NOT]NAN
                 href: ./brief_tutorial/is_not_nan_clause.md
               - label: IS[NOT]INFINITE
-                href: ./brief_tutorial/is_not_infinite_clause.md               
+                href: ./brief_tutorial/is_not_infinite_clause.md 
+              - label: 事务
+                href: ./brief_tutorial/transaction.md                   
               - label: 别名
-                href: ./aliases.md
+                href: ./aliases.md           
               - label: 游标
                 href: ./cursors.md
               - label: 子查询
