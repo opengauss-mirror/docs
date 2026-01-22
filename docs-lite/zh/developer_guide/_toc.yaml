@@ -29,6 +29,8 @@ sections:
             href: ./development_specifications.md
           - label: 工具对接
             href: ./tool_interconnection.md
+          - label: 工具对接：JDBC配置
+            href: ./jdbc_configuration.md
   - label: 基于JDBC开发
     sections:
       - label: 简介
