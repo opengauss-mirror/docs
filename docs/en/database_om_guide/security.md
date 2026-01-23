@@ -11,4 +11,3 @@ To create a subscription, the user must be a user with the  **SYSADMIN**  permis
 The subscription apply process will run in the local database with the privileges of a user with the  **SYSADMIN**  permission.
 
 Privileges are only checked once at the start of the replication connection. They are not re-checked when each change record is read from the publisher and when each change is applied.
-

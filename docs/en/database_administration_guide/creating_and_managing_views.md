@@ -8,7 +8,7 @@ A view is different from a base table. It is only a virtual object rather than a
 
 ## Managing Views<a name="en-us_topic_0237120309_en-us_topic_0059777564_s148b7bb2f37e4c4e91b2f8fd7783f258"></a>
 
--   Creating a view
+- Creating a view
 
     Run the following command to create  **MyView**:
 
@@ -20,7 +20,7 @@ A view is different from a base table. It is only a virtual object rather than a
     >[!NOTE]NOTE   
     >The  **OR REPLACE**  parameter in this command is optional. It indicates that if the view exists, the new view will replace the existing view.  
 
--   Querying a view
+- Querying a view
 
     Run the following command to query  **MyView**:
 
@@ -28,7 +28,7 @@ A view is different from a base table. It is only a virtual object rather than a
     SELECT * FROM MyView;
     ```
 
--   Viewing details about a specified view
+- Viewing details about a specified view
 
     Run the following command to view details about the  **dba\_users**  view:
 
@@ -43,7 +43,7 @@ A view is different from a base table. It is only a virtual object rather than a
        FROM PG_AUTHID;
     ```
 
--   Deleting a view
+- Deleting a view
 
     Run the following command to delete  **MyView**:
 
@@ -51,5 +51,3 @@ A view is different from a base table. It is only a virtual object rather than a
     postgres=# DROP VIEW MyView;
     DROP VIEW
     ```
-
-

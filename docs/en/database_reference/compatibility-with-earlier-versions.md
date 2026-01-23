@@ -10,8 +10,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that null values can be entered in arrays.
--   **off**  indicates backward compatibility with the old behavior. Arrays containing the value  **NULL**  can still be created when this parameter is set to  **off**.
+- **on**  indicates that null values can be entered in arrays.
+- **off**  indicates backward compatibility with the old behavior. Arrays containing the value  **NULL**  can still be created when this parameter is set to  **off**.
 
 **Default value**:  **on**
 
@@ -26,9 +26,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **on**  indicates that the use of \\' is always allowed.
--   **off**  indicates that the use of \\' is rejected.
--   **safe\_encoding**  indicates that the use of \\' is allowed only when client encoding does not allow ASCII \\ within a multibyte character.
+- **on**  indicates that the use of \\' is always allowed.
+- **off**  indicates that the use of \\' is rejected.
+- **safe\_encoding**  indicates that the use of \\' is allowed only when client encoding does not allow ASCII \\ within a multibyte character.
 
 **Default value**:  **safe\_encoding**
 
@@ -36,8 +36,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies whether to issue a warning when a backslash \(\\\) is used as an escape in an ordinary character string.
 
--   Applications that wish to use a backslash \(\\\) as an escape need to be modified to use escape string syntax \(E'...'\). This is because the default behavior of ordinary character strings treats the backslash as an ordinary character in each SQL standard.
--   This variable can be enabled to help locate codes that need to be changed.
+- Applications that wish to use a backslash \(\\\) as an escape need to be modified to use escape string syntax \(E'...'\). This is because the default behavior of ordinary character strings treats the backslash as an ordinary character in each SQL standard.
+- This variable can be enabled to help locate codes that need to be changed.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
@@ -65,8 +65,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the forcible quoting is enabled.
--   **off**  indicates that the forcible quoting is disabled.
+- **on**  indicates that the forcible quoting is enabled.
+- **off**  indicates that the forcible quoting is disabled.
 
 **Default value**:  **off**
 
@@ -78,8 +78,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that subtables can be accessed.
--   **off**  indicates that subtables cannot be accessed.
+- **on**  indicates that subtables can be accessed.
+- **off**  indicates that subtables cannot be accessed.
 
 **Default value**:  **on**
 
@@ -87,15 +87,15 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Controls whether ordinary string texts \('...'\) treat backslashes as ordinary texts as specified in the SQL standard.
 
--   Applications can check this parameter to determine how string texts will be processed.
--   It is recommended that characters be escaped by using the escape string syntax \(E'...'\).
+- Applications can check this parameter to determine how string texts will be processed.
+- It is recommended that characters be escaped by using the escape string syntax \(E'...'\).
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
--   **on**  indicates that backslashes are treated as ordinary texts.
--   **off**  indicates that backslashes are not treated as ordinary texts.
+- **on**  indicates that backslashes are treated as ordinary texts.
+- **off**  indicates that backslashes are not treated as ordinary texts.
 
 **Default value**:  **on**
 
@@ -107,8 +107,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that a scan may start in the middle of the table and then "wrap around" the end to cover all rows to synchronize with the activity of scans already in progress. This may result in unpredictable changes in the row ordering returned by queries that have no ORDER BY clause.
--   **off**  indicates that the scan always starts from the table heading.
+- **on**  indicates that a scan may start in the middle of the table and then "wrap around" the end to cover all rows to synchronize with the activity of scans already in progress. This may result in unpredictable changes in the row ordering returned by queries that have no ORDER BY clause.
+- **off**  indicates that the scan always starts from the table heading.
 
 **Default value**:  **on**
 
@@ -120,8 +120,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the features are enabled for forward compatibility. Note that enabling them may cause errors in certain scenarios.
--   **off**  indicates that the features are disabled.
+- **on**  indicates that the features are enabled for forward compatibility. Note that enabling them may cause errors in certain scenarios.
+- **off**  indicates that the features are disabled.
 
 **Default value**:  **off**
 
@@ -135,8 +135,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that  **CREATE TABLE**  and  **CREATE TABLE AS**  can include an  **OID**  field in newly-created tables.
--   **off**  indicates that  **CREATE TABLE**  and  **CREATE TABLE AS**  cannot include any OID field in newly-created tables.
+- **on**  indicates that  **CREATE TABLE**  and  **CREATE TABLE AS**  can include an  **OID**  field in newly-created tables.
+- **off**  indicates that  **CREATE TABLE**  and  **CREATE TABLE AS**  cannot include any OID field in newly-created tables.
 
 **Default value**:  **off**
-

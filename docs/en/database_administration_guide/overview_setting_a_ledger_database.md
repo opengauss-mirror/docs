@@ -84,7 +84,7 @@ The name and structure of the user history table are as follows:
 
 ## Procedure<a name="section1993385411913"></a>
 
-1.  Create a schema in tamper-proof schema.
+1. Create a schema in tamper-proof schema.
 
     For example, create  **ledgernsp**  in tamper-proof schema.
 
@@ -92,7 +92,7 @@ The name and structure of the user history table are as follows:
     openGauss=# CREATE SCHEMA ledgernsp WITH BLOCKCHAIN;
     ```
 
-2.  Create a tamper-proof user table in tamper-proof schema.
+2. Create a tamper-proof user table in tamper-proof schema.
 
     For example, create a tamper-proof user table  **ledgernsp.usertable**.
 
@@ -138,16 +138,16 @@ The name and structure of the user history table are as follows:
     ```
 
     >[!NOTE]NOTE 
-    >-   Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
-    >-   When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
+    >- Tamper-proof tables cannot be non-row-store tables, temporary tables, foreign tables, or unlogged tables. Non-row-store tables do not have the temper-proof attribute.
+    >- When a temper-proof table is created, a system column named  **hash**  is automatically added. Therefore, the maximum number of columns in the temper-proof table is 1599.
 
-    >![](public_sys-resources/icon-warning.gif) **Warning:**
+    >[!WARNING]WARNING
     >
-    >-   The dbe\_perf and snapshot schemas cannot be altered to the blockchain attribute, for example, ALTER SCHEMA dbe_perf WITH BLOCKCHAIN.
-    >-   The system schema cannot be altered to the blockchain attribute, such as ALTER SCHEMA pg_catalog WITH BLOCKCHAIN.
-    >-   The attribute of a schema that contains a table cannot be changed to blockchain using the ALTER SCHEMA statement.
+    >- The dbe\_perf and snapshot schemas cannot be altered to the blockchain attribute, for example, ALTER SCHEMA dbe_perf WITH BLOCKCHAIN.
+    >- The system schema cannot be altered to the blockchain attribute, such as ALTER SCHEMA pg_catalog WITH BLOCKCHAIN.
+    >- The attribute of a schema that contains a table cannot be changed to blockchain using the ALTER SCHEMA statement.
 
-3.  Modify the data in the tamper-proof user table.
+3. Modify the data in the tamper-proof user table.
 
     For example, execute  **INSERT**,  **UPDATE**, or  **DELETE**  on the tamper-proof user table.
 

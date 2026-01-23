@@ -22,9 +22,9 @@ None
 
 ## Constraints<a name="section13678185110268"></a>
 
--   Database services are running properly.
--   Users have logged in to the database.
--   Users have created a database and data table, and have imported data.
+- Database services are running properly.
+- Users have logged in to the database.
+- Users have created a database and data table, and have imported data.
 
 ## Dependencies<a name="section11899817102719"></a>
 

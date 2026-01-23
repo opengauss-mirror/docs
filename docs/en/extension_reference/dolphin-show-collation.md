@@ -34,6 +34,7 @@ SHOW COLLATION [LIKE 'pattern' | WHERE expr]
 | default   | Indicates whether the collation set corresponds to the character set.    | openGauss does not have a default collation order. This column is left empty.      |
 | compiled  | Indicates whether the collation set is compiled.            | The value of this column is <strong>Yes</strong>.  |
 | sortlen   | Indicates the memory size required for character set collation.  | This column is empty.|
+
 ## Examples
 
 ```sql

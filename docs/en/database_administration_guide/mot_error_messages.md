@@ -2,8 +2,8 @@
 
 Errors may be caused by a variety of scenarios. All errors are logged in the database server log file. In addition, user-related errors are returned to the user as part of the response to the query, transaction or stored procedure execution or to database administration action.
 
--   Errors reported in the Server log include – Function, Entity, Context, Error message, Error description and Severity.
--   Errors reported to users are translated into standard PostgreSQL error codes and may consist of an MOT-specific message and description.
+- Errors reported in the Server log include – Function, Entity, Context, Error message, Error description and Severity.
+- Errors reported to users are translated into standard PostgreSQL error codes and may consist of an MOT-specific message and description.
 
 The following lists the error messages, error descriptions and error codes. The error code is actually an internal code and not logged or returned to users.
 
@@ -93,9 +93,10 @@ The PG code \(described below\) is returned internally by MOT to the database en
 
 >[!NOTE]NOTE 
 >%s, %u and %lu in the message are replaced by relevant error information, such as query, table name or another information.
->-   %s – String
->-   %u – Number
->-   %lu – Number
+>
+>- %s – String
+>- %u – Number
+>- %lu – Number
 
 **Table  2**  Errors Returned to the User and Logged to the Log File
 
@@ -408,4 +409,3 @@ The PG code \(described below\) is returned internally by MOT to the database en
 </tr>
 </tbody>
 </table>
-

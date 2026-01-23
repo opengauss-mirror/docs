@@ -14,9 +14,9 @@ SELECT * FROM PG_ROLES;
 
 In non-[Separation of Duties](separation_of_duties.md)  scenarios, a role can be created, modified, and deleted only by a system administrator or a user with the  **CREATEROLE**  attribute. In separation-of-duties scenarios, a role can be created, modified, and deleted only by an initial user or a user with the  **CREATEROLE**  attribute.
 
--   To create a role, use  **[CREATE ROLE](../sql_reference/create_role.md)**.
--   To add or delete users in an existing role, use  **[ALTER ROLE](../sql_reference/alter_role.md)**.
--   To delete a role, use  **[DROP ROLE](../sql_reference/drop_role.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
+- To create a role, use  **[CREATE ROLE](../sql_reference/create_role.md)**.
+- To add or delete users in an existing role, use  **[ALTER ROLE](../sql_reference/alter_role.md)**.
+- To delete a role, use  **[DROP ROLE](../sql_reference/drop_role.md)**.  **DROP ROLE**  deletes only a role, rather than member users in the role.
 
 ## Built-in roles<a name="section210351882916"></a>
 
@@ -66,15 +66,13 @@ openGauss provides a group of default roles whose names start with  **gs\_role\_
 
 The restrictions on built-in roles are as follows:
 
--   The role names starting with  **gs\_role\_**  are reserved for built-in roles in the database. Do not create users or roles starting with  **gs\_role\_**  or rename existing users or roles starting with  **gs\_role\_**.
--   Do not perform  **ALTER**  or  **DROP**  operations on built-in roles.
--   By default, built-in roles do not have the  **LOGIN**  permission and do not have preset passwords.
--   The  **gsql**  meta-commands  **\\du**  and  **\\dg**  do not display information about built-in roles. However, if  _pattern_  is set to a specific built-in role, the information is displayed.
--   When separation-of-duty is disabled, the initial user, users with the  **SYSADMIN**  permission, and users with the  **ADMIN OPTION**  built-in role permission have the permission to perform  **GRANT**  and  **REVOKE**  operations on built-in roles. When separation of duty is enabled, the initial user and users with the  **ADMIN OPTION**  built-in role permission have the permission to perform  **GRANT**  and  **REVOKE**  operations on built-in roles. Example:
+- The role names starting with  **gs\_role\_**  are reserved for built-in roles in the database. Do not create users or roles starting with  **gs\_role\_**  or rename existing users or roles starting with  **gs\_role\_**.
+- Do not perform  **ALTER**  or  **DROP**  operations on built-in roles.
+- By default, built-in roles do not have the  **LOGIN**  permission and do not have preset passwords.
+- The  **gsql**  meta-commands  **\\du**  and  **\\dg**  do not display information about built-in roles. However, if  _pattern_  is set to a specific built-in role, the information is displayed.
+- When separation-of-duty is disabled, the initial user, users with the  **SYSADMIN**  permission, and users with the  **ADMIN OPTION**  built-in role permission have the permission to perform  **GRANT**  and  **REVOKE**  operations on built-in roles. When separation of duty is enabled, the initial user and users with the  **ADMIN OPTION**  built-in role permission have the permission to perform  **GRANT**  and  **REVOKE**  operations on built-in roles. Example:
 
     ```
     GRANT gs_role_signal_backend TO user1;
     REVOKE gs_role_signal_backend FROM user1;
     ```
-
-

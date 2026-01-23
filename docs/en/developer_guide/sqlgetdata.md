@@ -61,12 +61,12 @@ SQLRETURN SQLGetData(SQLHSTMT        StatementHandle,
 
 ## Return Value<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_saaafb13e1b624682bc1d09efa9d415d4"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
--   **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
 
 ## Precautions<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_s46dd381571fd497484a5e93a075e5643"></a>
 
@@ -75,4 +75,3 @@ If SQLGetData returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 ## Example<a name="en-us_topic_0238272899_en-us_topic_0237120429_en-us_topic_0059778461_s69654c27e011474aa33ede59ff0961b8"></a>
 
 See  [Examples](example_odbc.md).
-

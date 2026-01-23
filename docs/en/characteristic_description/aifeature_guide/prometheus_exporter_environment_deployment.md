@@ -1,7 +1,7 @@
 # Environment Deployment <a name="EN-US_TOPIC_0000001196145058"></a>
 
-1.  You can download Prometheus-server and node-exporter from the Prometheus official website and start them according to the official documents. You can also use the quick deployment tool provided by DBMind to deploy them. If you deploy the software by yourself, go to [3](#li353612310452).
-2.  Use the CLI to quickly deploy Prometheus and all exporters. For the first installation, ensure that the network connection is available. The input parameter is **--online**.
+1. You can download Prometheus-server and node-exporter from the Prometheus official website and start them according to the official documents. You can also use the quick deployment tool provided by DBMind to deploy them. If you deploy the software by yourself, go to [3](#li353612310452).
+2. Use the CLI to quickly deploy Prometheus and all exporters. For the first installation, ensure that the network connection is available. The input parameter is **--online**.
 
     ```
     gs_dbmind component deployment --online
@@ -18,7 +18,7 @@
 
     If one-click deployment is used, the download path and decompression path of the Prometheus and node\_exporter software packages are in the $HOME directory.
 
-3.  <a name="li353612310452"></a>During the deployment, to ensure that the deployment location is correct and the subsequent running and monitoring are normal, the program requires users to interactively enter some parameters. The listening IP address of Prometheus and node-exporter is 0.0.0.0 by default. Prometheus and node-exporter are open-source software, and DBMind cannot obtain the IP address to be bound. Therefore, you need to configure the IP address. During the installation, however, the DBMind prompts the user to bind the listening address to a specific IP address. The following is an example of the configuration file of the deployment tool. The tool performs interactive configuration. You are not advised to manually modify the configuration file. The configuration file is as follows:
+3. <a name="li353612310452"></a>During the deployment, to ensure that the deployment location is correct and the subsequent running and monitoring are normal, the program requires users to interactively enter some parameters. The listening IP address of Prometheus and node-exporter is 0.0.0.0 by default. Prometheus and node-exporter are open-source software, and DBMind cannot obtain the IP address to be bound. Therefore, you need to configure the IP address. During the installation, however, the DBMind prompts the user to bind the listening address to a specific IP address. The following is an example of the configuration file of the deployment tool. The tool performs interactive configuration. You are not advised to manually modify the configuration file. The configuration file is as follows:
 
     ```
     [DOWNLOADING]
@@ -65,11 +65,11 @@
     You need to place the certificate files required by \[PROMETHEUS\] and \[EXPORTERS\] in the same path on each node in advance. If multiple nodes are deployed, the certificate file paths on different nodes must be the same. If the path is incorrect and no certificate file is detected during the running of each component, an alarm is generated and the component exits.
 
     >[!NOTE]NOTE
-    >-   Prometheus and node-exporter do not support SSL private key files with passwords. Therefore, Prometheus and node-exporter do not support SSL certificate files. Currently, all SSL certificates refer to those used by the exporter component. The current version of Prometheus supports only certificates in sans format.
-    >-   In the case of multiple nodes, to remotely connect to the database, you need to update the address information of the main control node to the **pg\_hba.conf** file of the database on the branch node and restart the database. Otherwise, the verification fails.
-    >-   If an SSH password-free account is used, any password can be entered during password verification.
-    >-   If you use **deployment** to automatically deploy multiple nodes, ensure that the Python operating environment and corresponding dependency packages are available for the specified user of the node to be deployed. Otherwise, when you use the **--run** parameter to start the node, modules that require the Python operating environment, such as openGauss-exporter, may fail to be started.
-    >-   The port used by the exporter component must be within the valid range (1024–65535).
+    >- Prometheus and node-exporter do not support SSL private key files with passwords. Therefore, Prometheus and node-exporter do not support SSL certificate files. Currently, all SSL certificates refer to those used by the exporter component. The current version of Prometheus supports only certificates in sans format.
+    >- In the case of multiple nodes, to remotely connect to the database, you need to update the address information of the main control node to the **pg\_hba.conf** file of the database on the branch node and restart the database. Otherwise, the verification fails.
+    >- If an SSH password-free account is used, any password can be entered during password verification.
+    >- If you use **deployment** to automatically deploy multiple nodes, ensure that the Python operating environment and corresponding dependency packages are available for the specified user of the node to be deployed. Otherwise, when you use the **--run** parameter to start the node, modules that require the Python operating environment, such as openGauss-exporter, may fail to be started.
+    >- The port used by the exporter component must be within the valid range (1024–65535).
 
     You can run the **--help** command to obtain help information.
 
@@ -98,7 +98,7 @@
 
     When the **-c --conf** parameter is used, the location of the configuration file to be read is specified. \{CONFIG\_PATH\} in CONF varies according to the actual installation path.
 
-4.  After automatic deployment, the **prometheus.yaml** configuration file is automatically generated based on the parameters entered during the configuration. The configuration file is automatically loaded when Prometheus is started. The following is an example:
+4. After automatic deployment, the **prometheus.yaml** configuration file is automatically generated based on the parameters entered during the configuration. The configuration file is automatically loaded when Prometheus is started. The following is an example:
 
     ```
     alerting:
@@ -153,14 +153,14 @@
 
     After the deployment is complete, the program is distributed to all target locations and can run automatically. For details, see the next section.
 
-
 The exporter component uses HTTPS for communication by default. Therefore, you need to provide the SSL certificate and key file by default through **--ssl-keyfile**, **--ssl-certfile**, and **--ssl-ca-file**. To disable HTTPS, you can run the **--disable-https** command.
 
 >[!NOTE]NOTE 
 >
 >The default communication protocol used by openGauss is incompatible with PostgreSQL. As a result, the PostgreSQL-based Python driver  **psycopg2-binary**  installed using the PyPI source cannot connect to the openGauss database.
 >Therefore, you need to compile  **psycopg2**  or modify GUC parameters for adaptation. You can also download  **psycopg2**  compiled based on openGauss from the openGauss official website. \(The official website provides only the compilation packages of some Python versions. You need to check whether the compilation packages are consistent with the current Python version.\)
->-   Download the openGauss Python driver from the official website:
->    https://opengauss.org/en/download/
->-   For details about the adaptation of the Python driver, see the openGauss operation guide at:
->    https://mp.weixin.qq.com/s/2TobUQKtw0N9sBpMZJr6zw
+>
+>- Download the openGauss Python driver from the official website:
+> <https://opengauss.org/en/download/>
+>- For details about the adaptation of the Python driver, see the openGauss operation guide at:
+> <https://mp.weixin.qq.com/s/2TobUQKtw0N9sBpMZJr6zw>

@@ -16,7 +16,7 @@ Compared with the original openGauss, Dolphin modifies the ALTER PROCEDURE synta
 
 ## Syntax <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   Modify the additional parameters of the customized stored procedure.
+- Modify the additional parameters of the customized stored procedure.
 
     ```
     ALTER PROCEDURE procedure_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -50,9 +50,9 @@ Compared with the original openGauss, Dolphin modifies the ALTER PROCEDURE synta
 
 - **SQL SECURITY INVOKER**
 
-​		Specifies that the stored procedure is to be executed with the permissions of the user that calls it. This parameter can be omitted.
+​  Specifies that the stored procedure is to be executed with the permissions of the user that calls it. This parameter can be omitted.
 
-​		The functions of SQL SECURITY INVOKER and SECURITY INVOKER and AUTHID CURRENT\_USER are the same.
+​  The functions of SQL SECURITY INVOKER and SECURITY INVOKER and AUTHID CURRENT\_USER are the same.
 
 - **SQL SECURITY DEFINER**
 

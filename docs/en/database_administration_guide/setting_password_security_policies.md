@@ -1,19 +1,18 @@
 
-
 # Setting Password Security Policy
 
 ## Procedure<a name="en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_s3a1d8e5070044faa84acbb053ba19602"></a>
 
 User passwords are stored in the system catalog **pg\_authid**. To prevent password leakage, openGauss encrypts user passwords before storing them. The encryption algorithm is determined by the configuration parameter **password\_encryption\_type**.
 
--   If parameter **password\_encryption\_type** is set to **0**, passwords are encrypted using MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
--   If parameter **password\_encryption\_type** is set to **1**, passwords are encrypted using SHA-256 and MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
--   If parameter **password\_encryption\_type** is set to **2**, passwords are encrypted using SHA-256. This is the default configuration.
--   If parameter **password\_encryption\_type** is set to **3**, passwords are encrypted using SM3.
+- If parameter **password\_encryption\_type** is set to **0**, passwords are encrypted using MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+- If parameter **password\_encryption\_type** is set to **1**, passwords are encrypted using SHA-256 and MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+- If parameter **password\_encryption\_type** is set to **2**, passwords are encrypted using SHA-256. This is the default configuration.
+- If parameter **password\_encryption\_type** is set to **3**, passwords are encrypted using SM3.
 
 1. Log in as the OS user **omm** to the primary node of the database.
 
-2.  Run the following command to connect to the database:
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -31,7 +30,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
     openGauss=# 
     ```
 
-3.  View the configured encryption algorithm.
+3. View the configured encryption algorithm.
 
     ```
     openGauss=# SHOW password_encryption_type;
@@ -43,7 +42,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
     If the command output is **0** or **1**, run the **\\q** command to exit the database.
 
-4.  Set **gs\_guc reload -Z coordinator -D** using a secure encryption algorithm:
+4. Set **gs\_guc reload -Z coordinator -D** using a secure encryption algorithm:
 
     ```
     gs_guc reload -N all -I all -c "password_encryption_type=2"
@@ -58,8 +57,8 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
      You must specify your password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules (see [password\_policy](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)). Otherwise, you are prompted to enter the password again. 
 
-     -   If parameter **password\_policy** is set to **1**, the default password complexity rule is used to check passwords.
-     -   If parameter **password\_policy** is set to **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to **0** because this operation poses security risks. Even if the setting is required, you must set **password\_policy** to **0** on all openGauss nodes.
+     - If parameter **password\_policy** is set to **1**, the default password complexity rule is used to check passwords.
+     - If parameter **password\_policy** is set to **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to **0** because this operation poses security risks. Even if the setting is required, you must set **password\_policy** to **0** on all openGauss nodes.
 
      Configure the **password\_policy** parameter.
 
@@ -324,9 +323,9 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
        >[!NOTE]NOTE 
        >
-       >-   System administrators are not allowed to change passwords for each other.
-       >-   A system administrator can change the password of a common user without being required to provide the common user's old password.
-       >-   A system administrator can change their own password but is required to provide the old password.
+       >- System administrators are not allowed to change passwords for each other.
+       >- A system administrator can change the password of a common user without being required to provide the common user's old password.
+       >- A system administrator can change their own password but is required to provide the old password.
 
    - Password verification
 
@@ -556,6 +555,6 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
    >[!NOTE]NOTE 
    >
-   >-   After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
+   >- After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
    >
-   >-   Only initial users, system administrators (with the **sysadmin** permission), and users who have the permission to create users (with the **CREATEROLE** permission) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The password of initial users cannot be invalidated.
+   >- Only initial users, system administrators (with the **sysadmin** permission), and users who have the permission to create users (with the **CREATEROLE** permission) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The password of initial users cannot be invalidated.

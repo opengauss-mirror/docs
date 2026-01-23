@@ -18,42 +18,38 @@ If the  **--enable-oracle-fdw**  option is not added during compilation and inst
 
 ## Using oracle\_fdw<a name="section15777182920432"></a>
 
--   To use oracle\_fdw, install and connect to the Oracle server.
+- To use oracle\_fdw, install and connect to the Oracle server.
 
--   Load the oracle\_fdw extension using  **CREATE EXTENSION oracle\_fdw;**.
+- Load the oracle\_fdw extension using  **CREATE EXTENSION oracle\_fdw;**.
 
--   Create a server object using  **CREATE SERVER**.
+- Create a server object using  **CREATE SERVER**.
 
--   Create a user mapping using  **CREATE USER MAPPING**.
+- Create a user mapping using  **CREATE USER MAPPING**.
 
--   Create a foreign table using  **CREATE FOREIGN TABLE**. The structure of the foreign table must be the same as that of the Oracle table. The first column in the table on the Oracle server must be unique, for example,  **PRIMARY KEY**  and  **UNIQUE**.
+- Create a foreign table using  **CREATE FOREIGN TABLE**. The structure of the foreign table must be the same as that of the Oracle table. The first column in the table on the Oracle server must be unique, for example,  **PRIMARY KEY**  and  **UNIQUE**.
 
--   Perform normal operations on the foreign table, such as  **INSERT**,  **UPDATE**,  **DELETE**,  **SELECT**,  **EXPLAIN**,  **ANALYZE**  and  **COPY**.
+- Perform normal operations on the foreign table, such as  **INSERT**,  **UPDATE**,  **DELETE**,  **SELECT**,  **EXPLAIN**,  **ANALYZE**  and  **COPY**.
 
--   Drop a foreign table using  **DROP FOREIGN TABLE**.
+- Drop a foreign table using  **DROP FOREIGN TABLE**.
 
--   Drop a user mapping using  **DROP USER MAPPING**.
+- Drop a user mapping using  **DROP USER MAPPING**.
 
--   Drop a server object using  **DROP SERVER**.
+- Drop a server object using  **DROP SERVER**.
 
--   Drop an extension using  **DROP EXTENSION oracle\_fdw;**.
-
+- Drop an extension using  **DROP EXTENSION oracle\_fdw;**.
 
 ## Common Issues<a name="section41707373437"></a>
 
--   When a foreign table is created on the openGauss, the table is not created on the Oracle server. You need to use the Oracle client to connect to the Oracle server to create a table.
+- When a foreign table is created on the openGauss, the table is not created on the Oracle server. You need to use the Oracle client to connect to the Oracle server to create a table.
 
--   The Oracle user used for executing  **CREATE USER MAPPING**  must have the permission to remotely connect to the Oracle server and perform operations on tables. Before using a foreign table, you can use the Oracle client on the machine where the openGauss server is located and use the corresponding user name and password to check whether the Oracle server can be successfully connected and operations can be performed.
+- The Oracle user used for executing  **CREATE USER MAPPING**  must have the permission to remotely connect to the Oracle server and perform operations on tables. Before using a foreign table, you can use the Oracle client on the machine where the openGauss server is located and use the corresponding user name and password to check whether the Oracle server can be successfully connected and operations can be performed.
 
--   When  **CREATE EXTENSION oracle\_fdw;**  is executed, the message  **libclntsh.so: cannot open shared object file: No such file or directory**  is displayed. The reason is that the Oracle development library  **libclntsh.so**  is not in the related path of the system. You can find the specific path of  **libclntsh.so**, and then add the folder where the  **libclntsh.so**  file is located to  **/etc/ld.so.conf**. For example, if the path of  **libclntsh.so**  is  **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**, add  **/usr/lib/oracle/11.2/client64/lib/**  to the end of  **/etc/ld.so.conf**. Run the  **ldconfig**  command for the modification to take effect. Note that this operation requires the  **root**  permission.
-
+- When  **CREATE EXTENSION oracle\_fdw;**  is executed, the message  **libclntsh.so: cannot open shared object file: No such file or directory**  is displayed. The reason is that the Oracle development library  **libclntsh.so**  is not in the related path of the system. You can find the specific path of  **libclntsh.so**, and then add the folder where the  **libclntsh.so**  file is located to  **/etc/ld.so.conf**. For example, if the path of  **libclntsh.so**  is  **/usr/lib/oracle/11.2/client64/lib/libclntsh.so.11.1**, add  **/usr/lib/oracle/11.2/client64/lib/**  to the end of  **/etc/ld.so.conf**. Run the  **ldconfig**  command for the modification to take effect. Note that this operation requires the  **root**  permission.
 
 ## Precautions<a name="section12951245164312"></a>
 
--   **SELECT JOIN**  between two Oracle foreign tables cannot be pushed down to the Oracle server for execution. Instead,  **SELECT JOIN**  is divided into two SQL statements and transferred to the Oracle server for execution. Then the processing result is summarized in the openGauss.
+- **SELECT JOIN**  between two Oracle foreign tables cannot be pushed down to the Oracle server for execution. Instead,  **SELECT JOIN**  is divided into two SQL statements and transferred to the Oracle server for execution. Then the processing result is summarized in the openGauss.
 
--   The  **IMPORT FOREIGN SCHEMA**  syntax is not supported.
+- The  **IMPORT FOREIGN SCHEMA**  syntax is not supported.
 
--   **CREATE TRIGGER**  cannot be executed for foreign tables.
-
-
+- **CREATE TRIGGER**  cannot be executed for foreign tables.

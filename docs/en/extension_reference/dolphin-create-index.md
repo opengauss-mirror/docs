@@ -6,21 +6,21 @@
 
 Indexes are primarily used to enhance database performance (though inappropriate use can result in slower database performance). You are advised to create indexes on:
 
--   Columns that are often queried
--   Join conditions. For a query on joined columns, you are advised to create a composite index on the columns. For example, select \* from t1 join t2 on t1. a=t2. a and t1. b=t2.b. You can create a composite index on the a and b columns of table t1.
--   Columns having filter criteria (especially scope criteria) of a **where** clause
--   Columns that appear after **order by**, **group by**, and **distinct**
+- Columns that are often queried
+- Join conditions. For a query on joined columns, you are advised to create a composite index on the columns. For example, select \* from t1 join t2 on t1. a=t2. a and t1. b=t2.b. You can create a composite index on the a and b columns of table t1.
+- Columns having filter criteria (especially scope criteria) of a **where** clause
+- Columns that appear after **order by**, **group by**, and **distinct**
 
 The partitioned table does not support concurrent index creation and partial index creation.
 
 ## Precautions<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s31780559299b4f62bec935a2c4679b84"></a>
 
--   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
+- This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
     Options can be sorted in random order.
 
 ## Syntax<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_sa24c1a88574742bcb5427f58f5abb732"></a>
 
--   Create an index on a table.
+- Create an index on a table.
 
     ```
     CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [schema_name.]index_name ]
@@ -30,7 +30,7 @@ The partitioned table does not support concurrent index creation and partial ind
         [ WHERE predicate ];
     ```
 
--   Create an index on a partitioned table.
+- Create an index on a partitioned table.
 
     ```
     CREATE [ UNIQUE ] INDEX [ [schema_name.]index_name ]
@@ -42,17 +42,17 @@ The partitioned table does not support concurrent index creation and partial ind
 
 ## Parameter Description<a name="en-us_topic_0283136578_en-us_topic_0237122106_en-us_topic_0059777455_s82e47e35c54c477094dcafdc90e5d85a"></a>
 
--   **column\_name ( length )**
+- **column\_name ( length )**
 
     Creates a prefix key index based on a column in the table. **column\_name** indicates the column name of the prefix key, and **length** indicates the prefix length.
 
     The prefix key uses the prefix of the specified column data as the index key value, which reduces the storage space occupied by the index. Indexes can be used for filter and join conditions that contain prefix key columns.
 
     >[!NOTE]NOTE
-    > -  The prefix key supports the following index methods: btree and ubtree.
-    > -  The data type of the prefix key column must be binary or character (excluding special characters).
-    > -  The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.
-    > -  In the CREATE INDEX syntax, the following keywords cannot be used as prefix keys for column names: COALESCE, CONVERT, DAYOFMONTH, DAYOFWEEK, DAYOFYEAR, DB_B_FORMAT, EXTRACT, GREATEST, HOUR_P, IFNULL, LEAST, LOCATE, MICROSECOND_P, MID, MINUTE_P, NULLIF, NVARCHAR, NVL, OVERLAY, POSITION, QUARTER, SECOND_P, SUBSTR, SUBSTRING, TEXT_P, TIME, TIMESTAMP, TIMESTAMPDIFF, TREAT, TRIM, WEEKDAY, WEEKOFYEAR, XMLCONCAT, XMLELEMENT, XMLEXISTS, XMLFOREST, XMLPARSE, XMLPI, XMLROOT, and XMLSERIALIZE. If the index where the prefix key containing the preceding keywords resides is created using the ALTER TABLE or CREATE TABLE syntax, the exported CREATE INDEX statement may fail to be executed. Therefore, do not use the preceding keywords as the column names of the prefix keys.
+    > - The prefix key supports the following index methods: btree and ubtree.
+    > - The data type of the prefix key column must be binary or character (excluding special characters).
+    > - The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.
+    > - In the CREATE INDEX syntax, the following keywords cannot be used as prefix keys for column names: COALESCE, CONVERT, DAYOFMONTH, DAYOFWEEK, DAYOFYEAR, DB_B_FORMAT, EXTRACT, GREATEST, HOUR_P, IFNULL, LEAST, LOCATE, MICROSECOND_P, MID, MINUTE_P, NULLIF, NVARCHAR, NVL, OVERLAY, POSITION, QUARTER, SECOND_P, SUBSTR, SUBSTRING, TEXT_P, TIME, TIMESTAMP, TIMESTAMPDIFF, TREAT, TRIM, WEEKDAY, WEEKOFYEAR, XMLCONCAT, XMLELEMENT, XMLEXISTS, XMLFOREST, XMLPARSE, XMLPI, XMLROOT, and XMLSERIALIZE. If the index where the prefix key containing the preceding keywords resides is created using the ALTER TABLE or CREATE TABLE syntax, the exported CREATE INDEX statement may fail to be executed. Therefore, do not use the preceding keywords as the column names of the prefix keys.
 
 - **index\_option**
 

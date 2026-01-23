@@ -8,6 +8,7 @@ This document describes how to set up a resource pooling environment for self-le
 ## Background Knowledge
 
 Developers are advised to:
+
 - Understand basic Linux commands, such as **dd** and **iscis**.
 - Understand disk arrays.
 - Be familiar with the traditional openGauss compilation mode.
@@ -26,15 +27,18 @@ Developers are advised to:
   - Note that the environment set up in this mode cannot be used to debug primary/standby switchover or failover because no real CM is used. It can only be used to verify the normal running of the cluster.
 
 ## Preparing for the Environment
+
   - An independent physical machine with at least one disk partition whose free space is greater than 200 GB.
   - The openGauss installation package of the debug version with resource pooling code has been compiled.You can check whether dssserver and dsscmd exist in the generated **bin** directory. Check whether **libdms.so**, **libdssapi.so**, and **libdssaio.so** exist in the **lib** directory. Ensure that the DSS and DMS components of the test version are used during openGauss compilation. For details, see the following steps.
 
 ## Independent Compilation and Installation
+>
 >[!WARNING]CAUTION 
 >
 > Do not perform the following deployment operations in the production environment.
 
  >[!NOTE]NOTE  
+  >
   > - openGauss must be compiled in debug mode instead of release mode. The DMS and DSS components of the test version are used.
   > - The manual compilation and installation mode does not contain the CM and OM components. In the formal environment, the DSS and DMS components depend on the CM. Therefore, you need to compile the DSS and DMS components in test mode before compiling the openGauss. For details, see the following compilation mode description.
 
@@ -45,11 +49,13 @@ Developers are advised to:
       b. Download the DSS code of the latest version and roll back the DSS to the specified version based on the version number in **src/gausskernel/ddes/ddes\_commit\_id**.
 
       c. Compile, install, and use the downloaded DSS component to replace the DSS component in the third-party library. (**DSS\_CODE\_PATH** indicates the directory of the decompressed DSS source code, and **ThirdParty\_Binarylibs\_Path** indicates the directory of the decompressed third-party library.)
+
 ```shell
   #-**-3rd** is followed by the absolute path of the third-party library.
   cd [DSS_CODE_PATH]/build/linux/opengauss
   sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DebugDsstest
 ```
+
 2. Compile the DMS component of the test version.
 
       a. Download the CBB code of the latest version. Then, compile, install, and use it to replace CBB in the third-party library.
@@ -57,6 +63,7 @@ Developers are advised to:
       b. Download the DMS code of the latest version and roll back the DMS to the specified version based on the version number in **src/gausskernel/ddes/ddes\_commit\_id**.
 
       c. Compile, install, and use the downloaded DMS component to replace the DMS component in the third-party library. (**DMS\_CODE\_PATH** indicates the directory of the decompressed DSS source code, and **ThirdParty\_Binarylibs\_Path** indicates the directory of the decompressed third-party library.)
+
 ```shell
   cd [DMS_CODE_PATH]/build/linux/opengauss
   sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m Release
@@ -67,9 +74,10 @@ Developers are advised to:
   cd tmp/
   make -sj
 ```
+
 > [!WARNING]CAUTION 
 >
->    After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
+> After the DSS, DMS, and CBB are compiled, they are automatically updated to the third-party library. You do not need to manually copy them. You only need to compile the database according to the standard procedure.
 
 3. Configure environment variables.
 
@@ -81,7 +89,9 @@ export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
 export PATH=$GAUSSHOME/bin:$PATH
 export DSS_HOME=/home/test/dss/dss0/dssdba
   ```
+
 4. Create directories for **dssserver**.
+
   ```shell
   cd /home/test
   mkdir -p dss/dss0/dssdba/cfg
@@ -94,6 +104,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
 5. Run the **dd** command to create a simulated block device file.
 
   The following command is used to create a 2 TB disk. Adjust the values of **bs** and **count** as required. The execution time depends on the disk performance.
+
   ```shell
   dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=1024000 >/dev/null 2>&1
   ```
@@ -101,10 +112,13 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
 6. Create the configuration files of DSS 0 and DSS 1 required by the two DNs.
 
     Create the configuration file of DSS 0.
+
   ```shell
   vim /home/test/dss/dss0/dssdba/cfg/dss_inst.ini
   ```
+
   The file content is as follows:
+
   ```shell
   INST_ID=0
   _LOG_LEVEL=255
@@ -116,19 +130,25 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   ```
 
   Create the volume configuration file of DSS 0.
+
   ```shell
   vim /home/test/dss/dss0/dssdba/cfg/dss_vg_conf.ini
   ```
+
   The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
+
   ```shell
   data:/home/test/dss/dev/dss-dba
   ```
 
   Create the configuration file of DSS 1.
+
   ```shell
   vim /home/test/dss/dss1/dssdba/cfg/dss_inst.ini
   ```
+
   The content in the file is as follows. Note that the value of **DISK\_LOCK\_FILE\_PATH** is the same as that in DSS 0.
+
   ```shell
   INST_ID=1
   _LOG_LEVEL=255
@@ -140,13 +160,17 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   ```
 
   Create the volume configuration file of DSS 1.
+
   ```shell
   vim /home/test/dss/dss1/dssdba/cfg/dss_vg_conf.ini
   ```
+
   The content in the file is as follows, which is the volume name plus the device name simulated by **dd**:
+
   ```shell
   data:/home/test/dss/dev/dss-dba
   ```
+
 > [!WARNING]CAUTION 
 >
 > Multiple DNs (databases) are created on a server. The IP addresses are the same, but the port numbers used by services are different.
@@ -166,6 +190,7 @@ export DSS_HOME=/home/test/dss/dss0/dssdba
   dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
   ```
+
 > [!WARNING]CAUTION 
 >
 > The DSS does not support volume group configuration modification after startup. If the volume group configuration needs to be modified, perform the preceding steps again.
@@ -208,6 +233,7 @@ sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/tes
   ```
 
 9. Create a file that simulates the CM function and add it to the environment variable created in step 3.
+
 ```shell
   echo "REFORMER_ID = 0" > /home/test/cm_config.ini
   echo "BITMAP_ONLINE = 3" >> /home/test/cm_config.ini
@@ -215,6 +241,7 @@ sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/tes
 ```
 
 10. Start node 1 and node 2 in sequence.
+
 ```shell
   source /home/test/envfile
   gs_ctrl start -D /home/test/data/node1
@@ -245,5 +272,4 @@ sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/tes
     rm -rf /home/test/data/node1 /home/test/data/node2
     dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=10 conv=notrunc >/dev/null 2>&1
     ```
-    
     

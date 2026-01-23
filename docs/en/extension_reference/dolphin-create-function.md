@@ -51,7 +51,7 @@ After Dolphin is loaded, the format of the CREATE FUNCTION syntax is:
           | AS 'obj_file', 'link_symbol'
       }
 
--   O syntax of creating a customized function:
+- O syntax of creating a customized function:
 
     ```
     CREATE [ OR REPLACE  ] FUNCTION function_name
@@ -81,7 +81,7 @@ After Dolphin is loaded, the format of the CREATE FUNCTION syntax is:
 
 ## Parameter Description<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sd944ea321dde4635bf07b637385f13f9"></a>
 
--   **LANGUAGE  lang_name**
+- **LANGUAGE  lang_name**
 
     Specifies the name of the language that is used to implement the function. PostgreSQL function default value: **sql**. O-style default value: **plpgsql**.
 
@@ -136,8 +136,6 @@ NO SQL SQL SECURITY DEFINER AS $$ select s; $$ ;
 openGauss=# CREATE FUNCTION func_test (s int) RETURNS int  
 SQL SECURITY INVOKER  READS SQL DATA LANGUAGE SQL AS $$ select s; $$ ;
 ```
-
-
 
 ## Helpful Links<a name="en-us_topic_0283136560_en-us_topic_0237122104_en-us_topic_0059778837_sfbe47252e2d24b638c428f7160f181ec"></a>
 

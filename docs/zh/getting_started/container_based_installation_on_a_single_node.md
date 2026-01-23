@@ -4,9 +4,9 @@
 
 ## 构建容器的架构和操作系统版本<a name="zh-cn_topic_0283136491_section1017214481014"></a>
 
--   x86-64 CentOS 7.6
+- x86-64 CentOS 7.6
 
--   ARM64 openEuler 20.03 LTS
+- ARM64 openEuler 20.03 LTS
 
 ## 配置准备<a name="zh-cn_topic_0283136491_section260555142417"></a>
 
@@ -16,24 +16,26 @@
 
 >[!NOTE]说明
 >
->-   安装前需要提供openGauss二进制安装包，解压后将以bz2结尾的包（openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2，X.X.X为当前openGauss版本号）放到 dockerfiles/<version\>文件夹。二进制包可以从  [https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)下载，确保有正确的yum源。
+>- 安装前需要提供openGauss二进制安装包，解压后将以bz2结尾的包（openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2，X.X.X为当前openGauss版本号）放到 dockerfiles/<version\>文件夹。二进制包可以从  [https://www.opengauss.org/zh/download/](https://www.opengauss.org/zh/download/)下载，确保有正确的yum源。
 >
->-   运行buildDockerImage.sh脚本时，如果不指定-i参数，此时默认提供SHA256检查，根据操作系统版本不同修改不同的校验文件，
+>- 运行buildDockerImage.sh脚本时，如果不指定-i参数，此时默认提供SHA256检查，根据操作系统版本不同修改不同的校验文件，
      Centos： sha256_file_amd64 ，
      openEuler_aarch64： sha256_file_arm64 ，以Centos为例需要您手动将校验结果写入sha256\_file\_amd64文件。
->   ```
->   ## 修改sha256校验文件内容
->   cd /soft/openGauss-server/docker/dockerfiles/X.X.X
->   sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
+>
+> ```
+> ## 修改sha256校验文件内容
+> cd /soft/openGauss-server/docker/dockerfiles/X.X.X
+> sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
 >   ```
 >
->-   安装前需要从华为开源镜像站获取repo文件，并放到openGauss-server-master/docker/dockerfiles/X.X.X文件夹下面。
->   ```
->   ## openEuler_aarch64.repo获取方法：
->   wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
->   ## CentOS-Base.repo获取方法：
->   wget -O CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo
->   
+>- 安装前需要从华为开源镜像站获取repo文件，并放到openGauss-server-master/docker/dockerfiles/X.X.X文件夹下面。
+>
+> ```
+> ## openEuler_aarch64.repo获取方法：
+> wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
+> ## CentOS-Base.repo获取方法：
+> wget -O CentOS-Base.repo https://mirrors.huaweicloud.com/repository/conf/CentOS-7-anon.repo
+> 
 >   ```
 
 在dockerfiles文件夹运行buildDockerImage.sh脚本。
@@ -79,6 +81,7 @@ openGauss镜像配置了本地信任机制，因此在容器内连接数据库�
 ## 开启实例<a name="zh-cn_topic_0283136491_section148176206211"></a>
 
 openGauss数据库版本以6.0.0为例命令如下。
+
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=XXXXXXXX opengauss:6.0.0
 ```
@@ -86,6 +89,7 @@ $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=XXXXXXXX openg
 ## 从操作系统层面连接数据库<a name="zh-cn_topic_0283136491_section53753141964"></a>
 
 openGauss数据库版本以6.0.0为例命令如下。
+
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=XXXXXXXX -p 8888:5432 opengauss:6.0.0
 $ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p 8888 # 宿主机需要安装gsql客户端
@@ -94,6 +98,7 @@ $ gsql -d postgres -U gaussdb -W'xxxxxx' -h your-host-ip -p 8888 # 宿主机需�
 ## 数据持久化<a name="zh-cn_topic_0283136491_section973016196416"></a>
 
 openGauss数据库版本以6.0.0为例命令如下。
+
 ```shell
 $ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=xxxxxx -v /opengauss:/var/lib/opengauss opengauss:6.0.0
 ```

@@ -64,8 +64,6 @@ openGauss=# SELECT * FROM test_date;
 (3 rows)
 ```
 
-
-
 ### Time Type Inputs
 
 The following formats are supported:

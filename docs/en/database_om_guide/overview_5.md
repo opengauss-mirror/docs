@@ -64,14 +64,13 @@ When  **gs\_dump**  or  **gs\_dumpall**  is used to export data from a cluster, 
 
 ## Precautions<a name="en-us_topic_0237121167_section969916571299"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
--   If there are more than 500,000 objects \(data tables, views, and indexes\) in a database, you are advised to use  **gs\_guc**  to set the following parameters for database nodes. This operation is not required if the parameter values are greater than the recommended ones.
+- Do not modify an exported file or its content. Otherwise, restoration may fail.
+- If there are more than 500,000 objects \(data tables, views, and indexes\) in a database, you are advised to use  **gs\_guc**  to set the following parameters for database nodes. This operation is not required if the parameter values are greater than the recommended ones.
 
     ```
     gs_guc set -N all -I all -c 'max_prepared_transactions = 1000'
     gs_guc set -N all -I all -c 'max_locks_per_transaction = 512'
     ```
 
--   For data consistency and integrity,  **gs\_dump**  and  **gs\_dumpall**  set a share lock for a table to dump. If a share lock has been set for the table in other transactions,  **gs\_dump**  and  **gs\_dumpall**  lock the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
--   During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as an openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, cluster administrator permissions are also required to add users and user groups, and create databases.
-
+- For data consistency and integrity,  **gs\_dump**  and  **gs\_dumpall**  set a share lock for a table to dump. If a share lock has been set for the table in other transactions,  **gs\_dump**  and  **gs\_dumpall**  lock the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as an openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, cluster administrator permissions are also required to add users and user groups, and create databases.

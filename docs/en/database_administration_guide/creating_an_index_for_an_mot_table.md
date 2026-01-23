@@ -29,5 +29,4 @@ create index  bmsql_oorder_index1 on bmsql_oorder(o_w_id, o_d_id, o_c_id, o_id) 
 >[!NOTE]NOTE 
 >There is no need to specify the  **FOREIGN**  keyword before the MOT table name, because it is only created for create and drop table commands.
 
-For MOT index limitations, see the Index subsection under the  _SQL Coverage and Limitations _section.
-
+For MOT index limitations, see the Index subsection under the  _SQL Coverage and Limitations_section.

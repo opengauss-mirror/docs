@@ -115,4 +115,3 @@
 </table>
 
 Note:  **max\_dop**  and  **max\_worker**  are used for scaling and are not applicable to the centralized deploymentopenGauss.
-

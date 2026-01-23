@@ -23,7 +23,6 @@ A tablespace is used to manage data objects and corresponds to a catalog on a di
 </tbody>
 </table>
 
-
 ## Defining a Table<a name="en-us_topic_0283136643_en-us_topic_0237122049_en-us_topic_0059777960_s54aadbaf84da45868daf6cd4a1bf5578"></a>
 
 A table is a special data structure in a database and is used to store data objects and relationships between data objects. For details about the involved SQL statements, see [Table 1](#en-us_topic_0283136643_en-us_topic_0237122049_en-us_topic_0059777960_tcd92dbef720d4b7eaa5bf7a290b98605).

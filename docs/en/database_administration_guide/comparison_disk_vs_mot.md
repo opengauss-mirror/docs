@@ -102,10 +102,7 @@ The following table briefly compares the various features of the openGauss disk-
 </tbody>
 </table>
 
-
 # Appendices
-
-
 
 ## Glossary
 
@@ -359,4 +356,3 @@ The following table briefly compares the various features of the openGauss disk-
 </tr>
 </tbody>
 </table>
-

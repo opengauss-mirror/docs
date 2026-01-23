@@ -6,7 +6,6 @@ Row-store stores tables to disk partitions by row, and column-store stores table
 
 **Figure  1**  Differences between row storage and column storage<a name="en-us_topic_0237120296_fig1417354233018"></a>  
 
-
 ![](figures/en-us_image_0242381725.png)
 
 In the preceding figure, the upper left part is a row-store table, and the upper right part shows how the row-store table is stored on a disk; the lower left part is a column-store table, and the lower right part shows how the column-store table is stored on a disk.
@@ -96,24 +95,22 @@ postgres=# DROP TABLE customer_t2;
 
 ## Selecting a Storage Model<a name="en-us_topic_0237120296_en-us_topic_0066331191_en-us_topic_0059778293_s120c7d1deb9046bb96d3d187117b1d2c"></a>
 
--   Update frequency
+- Update frequency
 
     If data is frequently updated, use a row-store table.
 
--   Data insertion frequency
+- Data insertion frequency
 
     If a small amount of data is frequently inserted each time, use a row-store table. If a large amount of data is inserted at a time, use a column-store table.
 
--   Number of columns
+- Number of columns
 
     If a table is to contain many columns, use a column-store table.
 
--   Number of columns to be queried
+- Number of columns to be queried
 
     If only a small number of columns \(less than 50% of the total\) is queried each time, use a column-store table.
 
--   Compression ratio
+- Compression ratio
 
     The compression ratio of a column-store table is higher than that of a row-store table. High compression ratio consumes more CPU resources.
-
-

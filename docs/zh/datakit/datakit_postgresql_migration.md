@@ -39,7 +39,7 @@ PostgreSQL数据迁移由Datakit的数据迁移插件提供，DataKit安装成�
 
 迁移工具安装方式支持在线安装、离线安装和已安装。其中在线安装，需要安装的Linux服务器可正常连接外网，安装时会直接从外网下载安装包到安装目录中进行安装；离线安装则需要用户手动下载好安装包后，从前端页面上传安装包进行安装；已安装则用于绑定服务器上已经安装好的迁移工具。
 
-迁移工具安装包获取：[迁移工具代码仓]: https://gitcode.com/opengauss/openGauss-migration-portal/tree/master/multidb-portal
+迁移工具安装包获取：[迁移工具代码仓]: <https://gitcode.com/opengauss/openGauss-migration-portal/tree/master/multidb-portal>
 
 ![安装迁移工具](figures/安装迁移工具.png)
 

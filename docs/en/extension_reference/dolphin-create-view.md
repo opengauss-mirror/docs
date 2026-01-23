@@ -22,7 +22,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
--   **OR REPLACE**
+- **OR REPLACE**
 
     Redefines the view if it already exists.
 
@@ -30,51 +30,51 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
 
   Specify user as the owner of the view. This option is used in B-compatible mode.
 
--   **TEMP | TEMPORARY**
+- **TEMP | TEMPORARY**
 
     Creates a temporary view.
 
--   **view\_name**
+- **view\_name**
 
     Specifies the name of the view to be created. It is optionally schema-qualified.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **column\_name**
+- **column\_name**
 
     Specifies an optional list of names to be used for columns of the view. If not given, the column names are deduced from the query.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **view\_option\_name \[= view\_option\_value\]**
+- **view\_option\_name \[= view\_option\_value\]**
 
     Specifies an optional parameter for a view.
 
-    -   **security\_barrier**
+    - **security\_barrier**
 
         This parameter is used when the view attempts to provide row-level security.
         
         Value range: Boolean type, **TRUE**, and **FALSE**.
     
-    -   **check\_option**
+    - **check\_option**
 
         Specifies the check options of the view.
 
         Value range: **LOCAL** or **CASCADED**.
 
--   **query**
+- **query**
 
     Specifies a **SELECT** or **VALUES** statement that will provide the columns and rows of the view.
 
--   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+- **WITH [ CASCADED | LOCAL ] CHECK OPTION**
 
     Controls the behavior of automatically updatable views. INSERT and UPDATE on the view will be checked to ensure that new rows meet the view-defining condition, that is, the new rows are visible through the view. If the check fails, the modification is rejected. If this option is not added, INSERT and UPDATE on the view are allowed to create rows that are not visible through the view. The following check options are supported:
 
-    -   **LOCAL**
+    - **LOCAL**
 
         New rows are only checked against the conditions defined directly on the view itself. Any conditions defined on underlying views are not checked (unless they also specify the CHECK OPTION).
 
-    -   **CASCADED**
+    - **CASCADED**
 
         New rows are checked against the conditions of the view and all underlying views. If the CHECK OPTION is specified, and neither LOCAL nor CASCADED is specified, then CASCADED is used by default.
     

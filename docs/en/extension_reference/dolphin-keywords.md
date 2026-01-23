@@ -4,14 +4,14 @@ The SQL contains reserved and non-reserved words. Standards require that reserve
 
 The naming rules for identifiers are as follows:
 
--   An identifier name can only contain letters, underscores, digits (0-9), and dollar signs ($).
--   An identifier name must start with a letter (a to z) or an underscore (\_).
+- An identifier name can only contain letters, underscores, digits (0-9), and dollar signs ($).
+- An identifier name must start with a letter (a to z) or an underscore (\_).
 
     >[!NOTE]NOTE
     > 
-    >-   The naming rules are recommended but not mandatory.
+    >- The naming rules are recommended but not mandatory.
     >
-    >-   In special cases, double quotation marks (") can be used to avoid special character errors.
+    >- In special cases, double quotation marks (") can be used to avoid special character errors.
 
 Compared with the original openGauss, Dolphin modifies keywords as follows:
 

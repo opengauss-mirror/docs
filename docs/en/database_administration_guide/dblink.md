@@ -13,63 +13,61 @@ make install
 
 ## Common dblink Functions<a name="section1440011715283"></a>
 
--   Load the dblink extension.
+- Load the dblink extension.
 
     ```
     CREATE EXTENSION dblink;
     ```
 
--   Open a persistent connection to a remote database.
+- Open a persistent connection to a remote database.
 
     ```
     SELECT dblink_connect(text connstr);
     ```
 
--   Close a persistent connection to a remote database.
+- Close a persistent connection to a remote database.
 
     ```
     SELECT dblink_disconnect();
     ```
 
--   Query data in a remote database.
+- Query data in a remote database.
 
     ```
     SELECT * FROM dblink(text connstr, text sql);
     ```
 
--   Execute commands in a remote database.
+- Execute commands in a remote database.
 
     ```
     SELECT dblink_exec(text connstr, text sql);
     ```
 
--   Return the names of all opened dblinks.
+- Return the names of all opened dblinks.
 
     ```
     SELECT dblink_get_connections();
     ```
 
--   Send an asynchronous query to a remote database.
+- Send an asynchronous query to a remote database.
 
     ```
     SELECT dblink_send_query(text connname, text sql);
     ```
 
--   Check whether the connection is busy with an asynchronous query.
+- Check whether the connection is busy with an asynchronous query.
 
     ```
     SELECT dblink_is_busy(text connname);
     ```
 
--   Delete the extension.
+- Delete the extension.
 
     ```
     DROP EXTENSION dblink;
     ```
 
-
 ## Precautions<a name="section1910642310280"></a>
 
--   Currently, dblink allows only the openGauss database to access another openGauss database and does not allow the openGauss database to access a PostgreSQL database.
--   Currently, dblink does not support the thread pool mode.
-
+- Currently, dblink allows only the openGauss database to access another openGauss database and does not allow the openGauss database to access a PostgreSQL database.
+- Currently, dblink does not support the thread pool mode.

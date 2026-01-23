@@ -135,14 +135,16 @@ openGauss=# show warnings limit 2, 4;
 (2 rows)
 
 ```
+
 (3 rows)
+
 ```
 
 ```sql
 --sql\_note is used to determine whether to store note information.
 CREATE OR REPLACE FUNCTION TEST_FUNC(tempdata char) RETURNS VOID AS $$
 BEGIN
-	raise info'TEST CHAR VALUE IS %',tempdata;  
+ raise info'TEST CHAR VALUE IS %',tempdata;  
 END;
 $$ LANGUAGE plpgsql;
 select TEST_FUNC('abc'::clob);

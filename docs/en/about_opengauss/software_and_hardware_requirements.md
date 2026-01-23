@@ -37,7 +37,6 @@
 </tbody>
 </table>
 
-
 ## Hardware Requirements<a name="en-us_concept_0283139016_section108961253113216"></a>
 
 **Table  2**  Hardware Requirements

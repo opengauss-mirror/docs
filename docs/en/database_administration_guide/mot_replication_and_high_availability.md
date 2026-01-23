@@ -6,6 +6,5 @@ The openGauss gs\_ctl tool is used for availability control and to operate the c
 
 You may refer to the openGauss Tools Reference document for more information.
 
--   To configure replication and high availability – 
--   Refer to the relevant openGauss documentation.
-
+- To configure replication and high availability – 
+- Refer to the relevant openGauss documentation.

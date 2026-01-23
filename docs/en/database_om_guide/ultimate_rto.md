@@ -6,8 +6,8 @@ This feature is available since openGauss 1.1.0.
 
 ## Introduction<a name="section43398242"></a>
 
--   The database host can be quickly restored after being restarted.
--   Logs can be synchronized between the primary and standby nodes to accelerate playback on the standby node.
+- The database host can be quickly restored after being restarted.
+- Logs can be synchronized between the primary and standby nodes to accelerate playback on the standby node.
 
 ## Benefits<a name="section55039858"></a>
 
@@ -30,4 +30,3 @@ The ultimate RTO focuses only on whether the RTO of the standby node meets the r
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

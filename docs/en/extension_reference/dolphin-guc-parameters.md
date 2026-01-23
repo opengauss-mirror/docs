@@ -59,6 +59,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 **Default value:** 'sql_mode_strict,sql_mode_full_group,ansi_quotes'
 
 **Example**:
+
 ```
 --Create a table named test1.
 openGauss=# CREATE TABLE test1
@@ -98,6 +99,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**: **0**
 
 **Example**
+
 ```
 openGauss=# show b_db_timestamp;
  b_db_timestamp
@@ -122,7 +124,7 @@ openGauss=# select now();
 
 ## default\_week\_format<a name="section203671436823"></a>
 
-**Parameter description:** The parameter value is an integer. This parameter affects the week function in the Dolphin plug-in. The value range of this parameter is [0,7], which corresponds to eight calculation policies. For details about these policies, see [Time and Date Functions ](dolphin-date-and-time-processing-functions-and-operators.md). If the value of this GUC parameter exceeds the corresponding boundary value, a warning is reported and the GUC parameter is set to the corresponding boundary value.
+**Parameter description:** The parameter value is an integer. This parameter affects the week function in the Dolphin plug-in. The value range of this parameter is [0,7], which corresponds to eight calculation policies. For details about these policies, see [Time and Date Functions](dolphin-date-and-time-processing-functions-and-operators.md). If the value of this GUC parameter exceeds the corresponding boundary value, a warning is reported and the GUC parameter is set to the corresponding boundary value.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in [Table 1](../database_administration_guide/reset_parameters.md).
 
@@ -131,6 +133,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 **Default value**: **0**
 
 **Example**
+
 ```
 openGauss=# show default_week_format;
 default_week_format
@@ -162,123 +165,125 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Value range**:
 The options of lc\_time\_names are as follows:
+
   | Value                                                        | Language Set  |
   | ------------------------------------------------------------ | ------ |
-  |ar_AE	|Arabic - United Arab Emirates|
-  |ar_BH	|Arabic - Bahrain|
-  |ar_DZ	|Arabic - Algeria|
-  |ar_EG	|Arabic - Egypt|
-  |ar_IN	|Arabic - India|
-  |ar_IQ	|Arabic - Iraq|
-  |ar_JO	|Arabic - Jordan|
-  |ar_KW	|Arabic - Kuwait|
-  |ar_LB	|Arabic - Lebanon|
-  |ar_LY	|Arabic - Libya|
-  |ar_MA	|Arabic - Morocco|
-  |ar_OM	|Arabic - Oman|
-  |ar_QA	|Arabic - Qatar|
-  |ar_SA	|Arabic - Saudi Arabia|
-  |ar_SD	|Arabic - Sudan|
-  |ar_SY	|Arabic - Syria|
-  |ar_TN	|Arabic - Tunisia|
-  |ar_YE	|Arabic - Yemen|
-  |be_BY	|Belarusian - Belarus|
-  |bg_BG	|Bulgarian - Bulgaria|
-  |ca_ES	|Catalan - Spain|
-  |cs_CZ	|Czech - Czech Republic|
-  |da_DK	|Danish - Denmark|
-  |de_AT	|German - Austria|
-  |de_BE	|German - Belgium|
-  |de_CH	|German - Switzerland|
-  |de_DE	|German - Germany|
-  |de_LU	|German - Luxembourg|
-  |el_GR	|Greek - Greece|
-  |en_AU	|English - Australia|
-  |en_CA	|English - Canada|
-  |en_GB	|English - United Kingdom|
-  |en_IN	|English - India|
-  |en_NZ	|English - New Zealand|
-  |en_PH	|English - Philippines|
-  |en_US	|English - United States|
-  |en_ZA	|English - South Africa|
-  |en_ZW	|English - Zimbabwe|
-  |es_AR	|Spanish - Argentina|
-  |es_BO	|Spanish - Bolivia|
-  |es_CL	|Spanish - Chile|
-  |es_CO	|Spanish - Colombia|
-  |es_CR	|Spanish - Costa Rica|
-  |es_DO	|Spanish - Dominican Republic|
-  |es_EC	|Spanish - Ecuador|
-  |es_ES	|Spanish - Spain|
-  |es_GT	|Spanish - Guatemala|
-  |es_HN	|Spanish - Honduras|
-  |es_MX	|Spanish - Mexico|
-  |es_NI	|Spanish - Nicaragua|
-  |es_PA	|Spanish - Panama|
-  |es_PE	|Spanish - Peru|
-  |es_PR	|Spanish - Puerto Rico|
-  |es_PY	|Spanish - Paraguay|
-  |es_SV	|Spanish - El Salvador|
-  |es_US	|Spanish - United States|
-  |es_UY	|Spanish - Uruguay|
-  |es_VE	|Spanish - Venezuela|
-  |et_EE	|Estonian - Estonia|
-  |eu_ES	|Basque - Spain|
-  |fi_FI	|Finnish - Finland|
-  |fo_FO	|Faroese - Faroe Islands|
-  |fr_BE	|French - Belgium|
-  |fr_CA	|French - Canada|
-  |fr_CH	|French - Switzerland|
-  |fr_FR	|French - France|
-  |fr_LU	|French - Luxembourg|
-  |gl_ES	|Galician - Spain|
-  |gu_IN	|Gujarati - India|
-  |he_IL	|Hebrew - Israel|
-  |hi_IN	|Hindi - India|
-  |hr_HR	|Croatian - Croatia|
-  |hu_HU	|Hungarian - Hungary|
-  |id_ID	|Indonesian - Indonesia|
-  |is_IS	|Icelandic - Iceland|
-  |it_CH	|Italian - Switzerland|
-  |it_IT	|Italian - Italy|
-  |ja_JP	|Japanese - Japan|
-  |ko_KR	|Korean - Republic of Korea|
-  |lt_LT	|Lithuanian - Lithuania|
-  |lv_LV	|Latvian - Latvia|
-  |mk_MK	|Macedonian - North Macedonia|
-  |mn_MN	|Mongolia - Mongolian|
-  |ms_MY	|Malay - Malaysia|
-  |nb_NO	|Norwegian(Bokmål) - Norway|
-  |nl_BE	|Dutch - Belgium|
-  |nl_NL	|Dutch - The Netherlands|
-  |no_NO	|Norwegian - Norway|
-  |pl_PL	|Polish - Poland|
-  |pt_BR	|Portugese - Brazil|
-  |pt_PT	|Portugese - Portugal|
-  |rm_CH	|Romansh - Switzerland|
-  |ro_RO	|Romanian - Romania|
-  |ru_RU	|Russian - Russia|
-  |ru_UA	|Russian - Ukraine|
-  |sk_SK	|Slovak - Slovakia|
-  |sl_SI	|Slovenian - Slovenia|
-  |sq_AL	|Albanian - Albania|
-  |sr_RS	|Serbian - Serbia|
-  |sv_FI	|Swedish - Finland|
-  |sv_SE	|Swedish - Sweden|
-  |ta_IN	|Tamil - India|
-  |te_IN	|Telugu - India|
-  |th_TH	|Thai - Thailand|
-  |tr_TR	|Turkish - Turkey|
-  |uk_UA	|Ukrainian - Ukraine|
-  |ur_PK	|Urdu - Pakistan|
-  |vi_VN	|Vietnamese - Vietnam|
-  |zh_CN	|Chinese - China|
-  |zh_HK	|Chinese - Hong Kong|
-  |zh_TW	|Chinese - Taiwan|
+  |ar_AE |Arabic - United Arab Emirates|
+  |ar_BH |Arabic - Bahrain|
+  |ar_DZ |Arabic - Algeria|
+  |ar_EG |Arabic - Egypt|
+  |ar_IN |Arabic - India|
+  |ar_IQ |Arabic - Iraq|
+  |ar_JO |Arabic - Jordan|
+  |ar_KW |Arabic - Kuwait|
+  |ar_LB |Arabic - Lebanon|
+  |ar_LY |Arabic - Libya|
+  |ar_MA |Arabic - Morocco|
+  |ar_OM |Arabic - Oman|
+  |ar_QA |Arabic - Qatar|
+  |ar_SA |Arabic - Saudi Arabia|
+  |ar_SD |Arabic - Sudan|
+  |ar_SY |Arabic - Syria|
+  |ar_TN |Arabic - Tunisia|
+  |ar_YE |Arabic - Yemen|
+  |be_BY |Belarusian - Belarus|
+  |bg_BG |Bulgarian - Bulgaria|
+  |ca_ES |Catalan - Spain|
+  |cs_CZ |Czech - Czech Republic|
+  |da_DK |Danish - Denmark|
+  |de_AT |German - Austria|
+  |de_BE |German - Belgium|
+  |de_CH |German - Switzerland|
+  |de_DE |German - Germany|
+  |de_LU |German - Luxembourg|
+  |el_GR |Greek - Greece|
+  |en_AU |English - Australia|
+  |en_CA |English - Canada|
+  |en_GB |English - United Kingdom|
+  |en_IN |English - India|
+  |en_NZ |English - New Zealand|
+  |en_PH |English - Philippines|
+  |en_US |English - United States|
+  |en_ZA |English - South Africa|
+  |en_ZW |English - Zimbabwe|
+  |es_AR |Spanish - Argentina|
+  |es_BO |Spanish - Bolivia|
+  |es_CL |Spanish - Chile|
+  |es_CO |Spanish - Colombia|
+  |es_CR |Spanish - Costa Rica|
+  |es_DO |Spanish - Dominican Republic|
+  |es_EC |Spanish - Ecuador|
+  |es_ES |Spanish - Spain|
+  |es_GT |Spanish - Guatemala|
+  |es_HN |Spanish - Honduras|
+  |es_MX |Spanish - Mexico|
+  |es_NI |Spanish - Nicaragua|
+  |es_PA |Spanish - Panama|
+  |es_PE |Spanish - Peru|
+  |es_PR |Spanish - Puerto Rico|
+  |es_PY |Spanish - Paraguay|
+  |es_SV |Spanish - El Salvador|
+  |es_US |Spanish - United States|
+  |es_UY |Spanish - Uruguay|
+  |es_VE |Spanish - Venezuela|
+  |et_EE |Estonian - Estonia|
+  |eu_ES |Basque - Spain|
+  |fi_FI |Finnish - Finland|
+  |fo_FO |Faroese - Faroe Islands|
+  |fr_BE |French - Belgium|
+  |fr_CA |French - Canada|
+  |fr_CH |French - Switzerland|
+  |fr_FR |French - France|
+  |fr_LU |French - Luxembourg|
+  |gl_ES |Galician - Spain|
+  |gu_IN |Gujarati - India|
+  |he_IL |Hebrew - Israel|
+  |hi_IN |Hindi - India|
+  |hr_HR |Croatian - Croatia|
+  |hu_HU |Hungarian - Hungary|
+  |id_ID |Indonesian - Indonesia|
+  |is_IS |Icelandic - Iceland|
+  |it_CH |Italian - Switzerland|
+  |it_IT |Italian - Italy|
+  |ja_JP |Japanese - Japan|
+  |ko_KR |Korean - Republic of Korea|
+  |lt_LT |Lithuanian - Lithuania|
+  |lv_LV |Latvian - Latvia|
+  |mk_MK |Macedonian - North Macedonia|
+  |mn_MN |Mongolia - Mongolian|
+  |ms_MY |Malay - Malaysia|
+  |nb_NO |Norwegian(Bokmål) - Norway|
+  |nl_BE |Dutch - Belgium|
+  |nl_NL |Dutch - The Netherlands|
+  |no_NO |Norwegian - Norway|
+  |pl_PL |Polish - Poland|
+  |pt_BR |Portugese - Brazil|
+  |pt_PT |Portugese - Portugal|
+  |rm_CH |Romansh - Switzerland|
+  |ro_RO |Romanian - Romania|
+  |ru_RU |Russian - Russia|
+  |ru_UA |Russian - Ukraine|
+  |sk_SK |Slovak - Slovakia|
+  |sl_SI |Slovenian - Slovenia|
+  |sq_AL |Albanian - Albania|
+  |sr_RS |Serbian - Serbia|
+  |sv_FI |Swedish - Finland|
+  |sv_SE |Swedish - Sweden|
+  |ta_IN |Tamil - India|
+  |te_IN |Telugu - India|
+  |th_TH |Thai - Thailand|
+  |tr_TR |Turkish - Turkey|
+  |uk_UA |Ukrainian - Ukraine|
+  |ur_PK |Urdu - Pakistan|
+  |vi_VN |Vietnamese - Vietnam|
+  |zh_CN |Chinese - China|
+  |zh_HK |Chinese - Hong Kong|
+  |zh_TW |Chinese - Taiwan|
 
 **Default value:** **'en_US'**
 
 **Example**
+
 ```
 openGauss=# select dayname('2000-1-1');
 dayname
@@ -316,22 +321,25 @@ Currently, the following operators are affected:
 2. Character type XOR [^](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
 3. Numeric type XOR [^](dolphin-arithmetic-functions-and-operators.md#EN-US_TOPIC_0289900469)
 4. [&&](dolphin-logical-operators.md#EN-US_TOPIC_0289900469)
+
 5. #
 
 The following functions are affected:
+
 1. [LAST_DAY](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 2. [TIMESTAMPDIFF](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 3. [FORMAT](dolphin-character-processing-functions-and-operators.md#EN-US_TOPIC_0289900656)
 4. [EXTRACT](dolphin-date-and-time-processing-functions-and-operators.md#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436)
 
 Other affected parameters:
+
 1. [?](dolphin-prepare.md#en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd)
 
 This parameter is a USERSET parameter. Set it based on instructions provided in [Table 1](../database_administration_guide/reset_parameters.md).
 
 **Value range**: Boolean
 
--   **on** indicates that the new compatibility function is used.
--   **off** indicates that the compatibility function is disabled and the original kernel functions are used.
+- **on** indicates that the new compatibility function is used.
+- **off** indicates that the compatibility function is disabled and the original kernel functions are used.
 
 **Default value**: **off**

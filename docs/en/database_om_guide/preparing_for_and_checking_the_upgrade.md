@@ -2,19 +2,19 @@
 
 This section describes preparations before the upgrade.
 
--   **[Upgrade Preparation Checklist](#upgrade-preparation-checklist)** 
+- **[Upgrade Preparation Checklist](#upgrade-preparation-checklist)** 
 
--   **[Collecting Node Information](#collecting-node-information)** 
+- **[Collecting Node Information](#collecting-node-information)** 
 
--   **[Backing Up Data](#backing-up-data)** 
+- **[Backing Up Data](#backing-up-data)** 
 
--   **[Obtaining the Upgrade Package](#obtaining-the-upgrade-package)** 
+- **[Obtaining the Upgrade Package](#obtaining-the-upgrade-package)** 
 
--   **[Checking the OS Health Status](#checking-the-os-health-status)** 
+- **[Checking the OS Health Status](#checking-the-os-health-status)** 
 
--   **[Checking the Disk Usage of the Database Node](#checking-the-disk-usage-of-the-database-node)** 
+- **[Checking the Disk Usage of the Database Node](#checking-the-disk-usage-of-the-database-node)** 
 
--   **[Checking the Database Status](#checking-the-database-status)** 
+- **[Checking the Database Status](#checking-the-database-status)** 
 
 ## Upgrade Preparation Checklist
 
@@ -113,7 +113,6 @@ This section describes preparations before the upgrade.
 </tbody>
 </table>
 
-
 >[!NOTE]NOTE
 >Time required varies according to the particulars for the site (such as the data volume and server performance).
 
@@ -163,7 +162,7 @@ For details, see section "Backup and Restoration" in the *Administrator Guide*.
 
 ## Obtaining the Upgrade Package
 
-https://opengauss.org/zh/download/
+<https://opengauss.org/zh/download/>
 
 Obtain the upgrade package from the website.
 
@@ -181,7 +180,6 @@ Use the gs\_checkos tool to check the OS status.
 
   >[!NOTE]NOTE
   >This tool cannot be independently invoked. For security purposes, it is automatically deleted after the preinstallation is complete.
-
 
 ### Procedure<a name="section1990781914214"></a>
 

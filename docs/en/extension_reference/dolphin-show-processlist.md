@@ -6,9 +6,8 @@ Queries information about the current external connection (or internal thread).
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   The Id column corresponds to sessionid in the pg\_stat\_activity view.
--   The Info column records the last SQL statement executed by the connection, which is different from that in B-compatible databases (B-compatible databases display the SQL statement that is being executed). However, you can check whether the SQL statement is being executed based on the State column. If the State column is active, the SQL statement corresponding to the Info column is being executed.
-
+- The Id column corresponds to sessionid in the pg\_stat\_activity view.
+- The Info column records the last SQL statement executed by the connection, which is different from that in B-compatible databases (B-compatible databases display the SQL statement that is being executed). However, you can check whether the SQL statement is being executed based on the State column. If the State column is active, the SQL statement corresponding to the Info column is being executed.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -23,7 +22,6 @@ SHOW [FULL] PROCESSLIST
        Do not use the FULL option. The Info column displays only the SQL statement whose length does not exceed 100.
 
        If the FULL option is used, the Info column can display SQL statements whose length does not exceed 1024 characters. If the length of an SQL statement exceeds 1024 characters, the part beyond 1024 characters will be truncated.
-
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -84,6 +82,7 @@ openGauss=# show full processlist;
 22-06-27 14:01:03.969962+08 | 2022-06-27 14:01:19.967521+08 |      7 | active | select pg_sleep(100);
 (10 rows)
 ```
+
 ## Helpful Links<a name="section156744489391"></a>
 
 N/A

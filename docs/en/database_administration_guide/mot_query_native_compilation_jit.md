@@ -4,10 +4,12 @@ Native Compilation (JIT) is one of key technologies of MOT for delivering except
 The following sections describe how to use both mechanisms in your application.
 
 ## JIT SP
+
 JIT SP refers to code generation, compiling and execution of stored procedures (SP) by LLVM runtime code generation and compilation library. JIT SP is available to SPs accessing MOT tables (only) and is completely transparent to users. Acceleration level depends on the SP logic. For example, a real customer application achieved acceleration of 20%, 44%, 300% and 500% for different SPs in latency.
 During the PREPARE phase of a query invoking an SP, or the first SP execution, the JIT module performs an attempt to translate the SP SQL into a C-based function and compile it in runtime (using LLVM). If the consecutive SP invocation is successful, MOT will execute a compiled function, leading to performance gains. In case of failure to produce a compiled function, the SP will be executed by standard PGPLSQL. Both scenarios are fully transparent to users.
 
 ## JIT Query
+
 MOT enables you to prepare and parse  _pre-compiled full queries_  in a native format \(using a  **PREPARE**  statement\) before they are needed for execution.
 
 This native format can later be executed \(using an  **EXECUTE**  command\) more efficiently. This type of execution is much more efficient because during execution the native format bypasses multiple database processing layers. This division of labor avoids repetitive parse analysis operations. The Lite Executor module is responsible for executing  **prepared**  queries and has a much faster execution path than the regular generic plan performed by the envelope. This is achieved using Just-In-Time \(JIT\) compilation via LLVM. In addition, a similar solution that has potentially similar performance is provided in the form of pseudo-LLVM.
@@ -70,8 +72,6 @@ You may refer to [JIT Diagnostics](#mot-jit-diagnostics) for useful diagnostics 
 
 ## MOT JIT Diagnostics
 
-
-
 ### mot_jit_detail
 
 This built-in function is used to query the details about JIT compilation (code generation).
@@ -85,8 +85,6 @@ select proc_oid, substr(query, 0, 50), namespace, jittable_status, valid_status,
 ```
 
 #### Output Description
-
-
 
 <table><thead align="left"><tr id="zh-cn_concept_0283139007_zh-cn_topic_0237080634_zh-cn_topic_0231764167_row4411284819151"><th class="cellrowborder" valign="top" width="14.469999999999999%" id="mcps1.2.3.1.1"><p id="zh-cn_concept_0283139007_zh-cn_topic_0237080634_zh-cn_topic_0231764167_p404366191511"><a name="zh-cn_concept_0283139007_zh-cn_topic_0237080634_zh-cn_topic_0231764167_p404366191511"></a><a name="zh-cn_concept_0283139007_zh-cn_topic_0237080634_zh-cn_topic_0231764167_p404366191511"></a>Field</p>
 </th>
@@ -151,8 +149,6 @@ select proc_oid, substr(query, 0, 50), namespace, jittable_status, valid_status,
 </tr>
 </tbody>
 </table>
-
-
 
 ### mot_jit_profile
 
@@ -246,4 +242,3 @@ For example, body of a stored procedure can be queried using the following query
 ```
 select proname,prosrc from pg_proc where proname='sp_call_filter_rules_100_1';
 ```
-

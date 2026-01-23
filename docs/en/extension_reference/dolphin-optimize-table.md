@@ -6,13 +6,13 @@ Recreates the physical space of tables and indexes, releases recyclable space to
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   The vacuum/owner or superuser permission on the table is required.
--   The B-compatible optimize operation supports multiple tables, and the openGauss optimize operation supports only a single table.
--   The B-compatible optimize operation is an online DDL operation. The main phase of the processing does not affect the read and write of the table. However, the openGauss optimize operation blocks the read and write of the table. If the table contains a large amount of data, the table may be locked for a long time. Therefore, exercise caution when performing this operation.
--   The optimize operation is also blocked by other transactions or two-phase transactions.
--   Do not optimize multiple tables concurrently. If you need to optimize multiple tables concurrently, reduce the number of concurrent tables. Generally, the number of concurrent tables is less than 3.
--   Before running the optimize command, ensure that the remaining space of the data directory is greater than the space occupied by the table. Otherwise, the operation may fail.
--   After a large amount of data is deleted from a table within a short period of time, do not perform optimize immediately. Wait for several seconds or perform other transactions before performing optimize. Otherwise, tuples may be in the HEAPTUPLE_RECENTLY_DEAD state and cannot be reclaimed.
+- The vacuum/owner or superuser permission on the table is required.
+- The B-compatible optimize operation supports multiple tables, and the openGauss optimize operation supports only a single table.
+- The B-compatible optimize operation is an online DDL operation. The main phase of the processing does not affect the read and write of the table. However, the openGauss optimize operation blocks the read and write of the table. If the table contains a large amount of data, the table may be locked for a long time. Therefore, exercise caution when performing this operation.
+- The optimize operation is also blocked by other transactions or two-phase transactions.
+- Do not optimize multiple tables concurrently. If you need to optimize multiple tables concurrently, reduce the number of concurrent tables. Generally, the number of concurrent tables is less than 3.
+- Before running the optimize command, ensure that the remaining space of the data directory is greater than the space occupied by the table. Otherwise, the operation may fail.
+- After a large amount of data is deleted from a table within a short period of time, do not perform optimize immediately. Wait for several seconds or perform other transactions before performing optimize. Otherwise, tuples may be in the HEAPTUPLE_RECENTLY_DEAD state and cannot be reclaimed.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

@@ -10,8 +10,8 @@ This feature servers as an SQL statement execution time forecast tool. It foreca
 
 ## Benefits<a name="section1160749171918"></a>
 
--   This feature does not require users to provide SQL execution plans. Therefore, the database performance is not affected.
--   Different from other algorithms in the industry that are limited to OLAP or OLTP, this feature is more widely used.
+- This feature does not require users to provide SQL execution plans. Therefore, the database performance is not affected.
+- Different from other algorithms in the industry that are limited to OLAP or OLTP, this feature is more widely used.
 
 ## Description<a name="section165492040132317"></a>
 
@@ -23,11 +23,10 @@ None.
 
 ## Constraints<a name="section13678185110268"></a>
 
--   The historical logs and the format of the workload to be predicted meet the requirements. You can use the GUC parameter of the database to enable the collection or use the monitoring tool to collect logs.
--   To ensure the prediction accuracy, the historical statement logs provided by users should be as comprehensive and representative as possible.
--   The Python environment has been configured as required.
+- The historical logs and the format of the workload to be predicted meet the requirements. You can use the GUC parameter of the database to enable the collection or use the monitoring tool to collect logs.
+- To ensure the prediction accuracy, the historical statement logs provided by users should be as comprehensive and representative as possible.
+- The Python environment has been configured as required.
 
 ## Dependencies<a name="section11899817102719"></a>
 
 None.
-

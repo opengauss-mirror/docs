@@ -135,7 +135,7 @@ The virtual index recommendation function supports direct operations in the data
 
 To use the tool, do as follows:
 
-1.  Use the  **hypopg\_create\_index **function to create a virtual index.
+1. Use the  **hypopg\_create\_index**function to create a virtual index.
 
     ```
     openGauss=> select * from hypopg_create_index('create index on bmsql_customer(c_w_id)');
@@ -145,7 +145,7 @@ To use the tool, do as follows:
     (1 row)
     ```
 
-2.  Enable the GUC parameter  **enable\_hypo\_index**. This parameter determines whether the database optimizer considers the created virtual index when executing the  **EXPLAIN**  statement. By executing  **EXPLAIN**  on a specific query statement, you can evaluate whether the index can improve the execution efficiency of the query statement based on the execution plan provided by the optimizer. For example:
+2. Enable the GUC parameter  **enable\_hypo\_index**. This parameter determines whether the database optimizer considers the created virtual index when executing the  **EXPLAIN**  statement. By executing  **EXPLAIN**  on a specific query statement, you can evaluate whether the index can improve the execution efficiency of the query statement based on the execution plan provided by the optimizer. For example:
 
     Before enabling the GUC parameter, run the combined statement of keyword  **EXPLAIN**  and the query statement.
 
@@ -179,7 +179,7 @@ To use the tool, do as follows:
 
     By comparing the two execution plans, you can find that the index may reduce the execution cost of the specified query statement. Then, you can consider creating a real index.
 
-3.  \(Optional\) Use the  **hypopg\_display\_index**  function to display all created virtual indexes. For example:
+3. \(Optional\) Use the  **hypopg\_display\_index**  function to display all created virtual indexes. For example:
 
     ```
     openGauss=> select * from hypopg_display_index();
@@ -190,7 +190,7 @@ To use the tool, do as follows:
     (2 rows)
     ```
 
-4.  \(Optional\) Use the  **hypopg\_estimate\_size**  function to estimate the space \(in bytes\) required for creating a virtual index. For example:
+4. \(Optional\) Use the  **hypopg\_estimate\_size**  function to estimate the space \(in bytes\) required for creating a virtual index. For example:
 
     ```
     openGauss=> select * from hypopg_estimate_size(329730);
@@ -200,7 +200,7 @@ To use the tool, do as follows:
     (1 row)
     ```
 
-5.  Delete the virtual index.
+5. Delete the virtual index.
 
     Use the  **hypopg\_drop\_index**  function to delete the virtual index of a specified OID. For example:
 
@@ -222,13 +222,12 @@ To use the tool, do as follows:
     (1 row)
     ```
 
-
 ## Workload-level Index Recommendation<a name="section174813519117"></a>
 
 For workload-level indexes, you can run scripts outside the database to use this function. This function uses the workload of multiple DML statements as the input to generate a batch of indexes that can optimize the overall workload execution performance.
 
-1.  Prepare a file that contains multiple DML statements as the input workload. Each statement in the file occupies a line. You can obtain historical service statements from the offline logs of the database.
-2.  Run the Python script  **index\_advisor\_workload.py**:
+1. Prepare a file that contains multiple DML statements as the input workload. Each statement in the file occupies a line. You can obtain historical service statements from the offline logs of the database.
+2. Run the Python script  **index\_advisor\_workload.py**:
 
     ```
     python index_advisor_workload.py [p PORT] [d DATABASE] [f FILE] [--h HOST] [-U USERNAME] [-W PASSWORD][--schema SCHEMA]
@@ -237,20 +236,20 @@ For workload-level indexes, you can run scripts outside the database to use this
 
     The input parameters are as follows:
 
-    -   **PORT**: port of the connected database.
-    -   **DATABASE**: name of the connected database.
-    -   **FILE**: file path that contains the workload statement.
-    -   **HOST**  \(optional\): ID of the host that connects to the database.
-    -   **USERNAME**  \(optional\): username for connecting to the database.
-    -   **PASSWORD**  \(optional\): password for connecting to the database.
-    -   **SCHEMA**: schema name.
-    -   **MAX\_INDEX\_NUM**  \(optional\): maximum number of recommended indexes.
-    -   **MAX\_INDEX\_STORAGE**  \(optional\): maximum size of the index set space.
-    -   **multi\_node**  \(optional\): specifies whether the current instance is a distributed database instance.
-    -   **multi\_iter\_mode**  \(optional\): algorithm mode. You can switch the algorithm mode by setting this parameter.
-    -   **json**  \(optional\): specifies the file path format of the workload statement as JSON after SQL normalization. By default, each SQL statement occupies one line.
-    -   **driver**  \(optional\): specifies whether to use the Python driver to connect to the database. By default,  **gsql**  is used for the connection.
-    -   **show\_detail**  \(optional\): specifies whether to display the detailed optimization information about the current recommended index set.
+    - **PORT**: port of the connected database.
+    - **DATABASE**: name of the connected database.
+    - **FILE**: file path that contains the workload statement.
+    - **HOST**  \(optional\): ID of the host that connects to the database.
+    - **USERNAME**  \(optional\): username for connecting to the database.
+    - **PASSWORD**  \(optional\): password for connecting to the database.
+    - **SCHEMA**: schema name.
+    - **MAX\_INDEX\_NUM**  \(optional\): maximum number of recommended indexes.
+    - **MAX\_INDEX\_STORAGE**  \(optional\): maximum size of the index set space.
+    - **multi\_node**  \(optional\): specifies whether the current instance is a distributed database instance.
+    - **multi\_iter\_mode**  \(optional\): algorithm mode. You can switch the algorithm mode by setting this parameter.
+    - **json**  \(optional\): specifies the file path format of the workload statement as JSON after SQL normalization. By default, each SQL statement occupies one line.
+    - **driver**  \(optional\): specifies whether to use the Python driver to connect to the database. By default,  **gsql**  is used for the connection.
+    - **show\_detail**  \(optional\): specifies whether to display the detailed optimization information about the current recommended index set.
 
     For example:
 
@@ -272,5 +271,3 @@ For workload-level indexes, you can run scripts outside the database to use this
     create index ind8 on public.bmsql_oorder(o_w_id,o_c_id,o_d_id);
     create index ind9 on public.bmsql_district(d_w_id);
     ```
-
-

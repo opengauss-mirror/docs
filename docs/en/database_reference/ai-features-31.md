@@ -8,8 +8,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that a virtual index is created during  **EXPLAIN**  execution.
--   **off**  indicates that no virtual index is created during  **EXPLAIN**  execution.
+- **on**  indicates that a virtual index is created during  **EXPLAIN**  execution.
+- **off**  indicates that no virtual index is created during  **EXPLAIN**  execution.
 
 **Default value**:  **off**
 
@@ -21,8 +21,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: a string, which can be  **MSS**  or  **CSS**
 
--   **MSS**  indicates the materialized mode. The DB4AI stores data entities when snapshots are created.
--   **CSS**  indicates the computing mode. The DB4AI stores incremental information when creating snapshots.
+- **MSS**  indicates the materialized mode. The DB4AI stores data entities when snapshots are created.
+- **CSS**  indicates the computing mode. The DB4AI stores incremental information when creating snapshots.
 
 **Default value:** **MSS**
 
@@ -55,4 +55,3 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 **Value range**: a string of 0 or more characters
 
 **Default value:** **''**
-

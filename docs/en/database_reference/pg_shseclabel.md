@@ -59,4 +59,3 @@ Unlike most system catalogs,  **PG\_SHSECLABEL**  is shared across all databases
 </tr>
 </tbody>
 </table>
-

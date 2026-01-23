@@ -13,7 +13,7 @@ Sufficient physical memory must exist on the server in order to maintain the tab
 
 Even so, you can get started with whatever amount of memory you have and perform basic tasks and evaluation tests. Later, when you are ready for production, the following issues should be addressed.
 
--   **Memory Configuration Settings**
+- **Memory Configuration Settings**
 
     Similar to standard PG , the memory of the openGauss database process is controlled by the upper limit in its max\_process\_memory setting, which is defined in the postgres.conf file. The MOT engine and all its components and threads, reside within the openGauss process. Therefore, the memory allocated to MOT also operates within the upper boundary defined by max\_process\_memory for the entire openGauss database process.
 
@@ -52,53 +52,50 @@ Even so, you can get started with whatever amount of memory you have and perform
 
     Additionally, MOT does not allow the insertion of additional data when the total memory usage approaches the chosen memory limits. The threshold for determining when additional data insertions are no longer allowed, is defined as a percentage of MOT max memory \(which is a calculated value, as described above\). The default is 90, meaning 90%. Attempting to add additional data over this threshold returns an error to the user and is also registered in the database log file.
 
--   **Minimum and Maximum**
+- **Minimum and Maximum**
 
     In order to secure memory for future operations, MOT pre-allocates memory based on the minimum global and local settings. The database administrator should specify the minimum amount of memory required for the MOT tables and sessions to sustain their workload. This ensures that this minimal memory is allocated to MOT even if another excessive memory‑consuming application runs on the same server as the database and competes with the database for memory resources. The maximum values are used to limit memory growth.
 
-
--   **Global and Local**
+- **Global and Local**
 
     The memory used by MOT is comprised of two parts –
 
-    -   **Global Memory –**  Global memory is a long-term memory pool that contains the data and indexes of MOT tables. It is evenly distributed across NUMA-nodes and is shared by all CPU cores.
+    - **Global Memory –**  Global memory is a long-term memory pool that contains the data and indexes of MOT tables. It is evenly distributed across NUMA-nodes and is shared by all CPU cores.
 
-    -   **Local Memory –**  Local memory is a memory pool used for short-term objects. Its primary consumers are sessions handling transactions. These sessions are storing data changes in the part of the memory dedicated to the relevant specific transaction \(known as  _transaction private memory_\). Data changes are moved to the global memory at the commit phase. Memory object allocation is performed in NUMA-local manner in order to achieve the lowest possible latency.
+    - **Local Memory –**  Local memory is a memory pool used for short-term objects. Its primary consumers are sessions handling transactions. These sessions are storing data changes in the part of the memory dedicated to the relevant specific transaction \(known as  _transaction private memory_\). Data changes are moved to the global memory at the commit phase. Memory object allocation is performed in NUMA-local manner in order to achieve the lowest possible latency.
 
     Deallocated objects are put back in the relevant memory pools. Minimal use of operating system memory allocation \(malloc\) functions during transactions circumvents unnecessary locks and latches.
 
     The allocation of these two memory parts is controlled by the dedicated  **min/max\_mot\_global\_memory**  and  **min/max\_mot\_local\_memory**  settings. If MOT global memory usage gets too close to this defined maximum, then MOT protects itself and does not accept new data. Attempts to allocate memory beyond this limit are denied and an error is reported to the user.
 
--   **Minimum Memory Requirements**
+- **Minimum Memory Requirements**
 
     To get started and perform a minimal evaluation of MOT performance, there are a few requirements.
 
     Make sure that the  **max\_process\_memory**  \(as defined in  **postgres.conf**\) has sufficient capacity for MOT tables and sessions \(configured by  **mix/max\_mot\_global\_memory**  and  **mix/max\_mot\_local\_memory**\), in addition to the disk tables buffer and extra memory. For simple tests, the default  **mot.conf**  settings can be used.
 
-
--   **Actual Memory Requirements During Production**
+- **Actual Memory Requirements During Production**
 
     In a typical OLTP workload, with 80:20 read:write ratio on average, MOT memory usage per table is 60% higher than in disk-based tables \(this includes both the data and the indexes\). This is due to the use of more optimal data structures and algorithms that enable faster access, with CPU-cache awareness and memory-prefetching.
 
     The actual memory requirement for a specific application depends on the quantity of data, the expected workload and especially on the data growth.
 
-
--   **Max Global Memory Planning – Data + Index Size**
+- **Max Global Memory Planning – Data + Index Size**
 
     To plan for maximum global memory –
 
-    1.  Determine the size of a specific disk table \(including both its data and all its indexes\). The following statistical query can be used to determine the data size of the  **customer**  table and the  **customer\_pkey**  index size –
-        -   **Data size –**  select pg\_relation\_size\(‘customer'\);
-        -   **Index –**  select pg\_relation\_size\('customer\_pkey'\);
+    1. Determine the size of a specific disk table \(including both its data and all its indexes\). The following statistical query can be used to determine the data size of the  **customer**  table and the  **customer\_pkey**  index size –
+        - **Data size –**  select pg\_relation\_size\(‘customer'\);
+        - **Index –**  select pg\_relation\_size\('customer\_pkey'\);
 
-    2.  Add 60%, which is the common requirement in MOT relative to the current size of the disk-based data and index.
-    3.  Add an additional percentage for the expected growth of data. For example –
+    2. Add 60%, which is the common requirement in MOT relative to the current size of the disk-based data and index.
+    3. Add an additional percentage for the expected growth of data. For example –
 
     5% monthly growth = 80% yearly growth \(1.05^12\). Thus, in order to sustain a year's growth, allocate 80% more memory than is currently used by the tables.
 
     This completes the estimation and planning of the max\_mot\_global\_memory value. The actual setting can be defined either as an absolute value or a percentage of the Postgres max\_process\_memory. The exact value is typically finetuned during deployment.
 
--   **Max Local Memory Planning – Concurrent Session Support**
+- **Max Local Memory Planning – Concurrent Session Support**
 
     Local memory needs are primarily a function of the quantity of concurrent sessions. The typical OLTP workload of an average session uses up to 8 MB. This should be multiplied by the quantity of sessions and then a little bit extra should be added.
 
@@ -123,7 +120,6 @@ Even so, you can get started with whatever amount of memory you have and perform
     >[!NOTE]NOTE 
     >You may refer to the[MEMORY \(MOT\)](mot_configuration.md#section1223551495)  section for more information about configuration settings.
 
-
 ## Storage IO<a name="section14871851144813"></a>
 
 MOT is a memory-optimized, persistent database storage engine. A disk drive\(s\) is required for storing the Redo Log \(WAL\) and a periodic checkpoint.
@@ -136,7 +132,7 @@ Since the persistent storage is much slower than RAM memory, the IO operations \
 
 The required capacity is determined by the requirements of checkpointing and logging, as described below –
 
--   **Checkpointing**
+- **Checkpointing**
 
     A checkpoint saves a snapshot of all the data to disk.
 
@@ -149,8 +145,7 @@ The required capacity is determined by the requirements of checkpointing and log
     >[!NOTE]NOTE 
     >In the next openGauss release, MOT will have an incremental checkpoint feature, which will significantly reduce this storage capacity requirement.
 
-
--   **Logging**
+- **Logging**
 
     MOT table log records are written to the same database transaction log as the other records of disk-based tables.
 

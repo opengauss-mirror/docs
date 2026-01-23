@@ -21,4 +21,3 @@ Tuple list, which contains all results of the result set. An empty list is retur
 ## Examples<a name="section4160944682"></a>
 
 For details, see  [Example: Common Operations](example_common_operations_psycopg.md).
-

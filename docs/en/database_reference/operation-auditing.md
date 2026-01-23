@@ -8,8 +8,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: an integer ranging from 0 to 67108863
 
--   **0**  indicates that the function of auditing the CREATE, DROP, and ALTER operations on the openGauss database object can be disabled.
--   Other values indicate that the CREATE, DROP, and ALTER operations on a certain or some openGauss database objects are audited.
+- **0**  indicates that the function of auditing the CREATE, DROP, and ALTER operations on the openGauss database object can be disabled.
+- Other values indicate that the CREATE, DROP, and ALTER operations on a certain or some openGauss database objects are audited.
 
 **Value description:**
 
@@ -216,8 +216,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing the DML operations \(except SELECT\) is disabled.
--   **1**  indicates that the function of auditing the DML operations \(except SELECT\) is enabled.
+- **0**  indicates that the function of auditing the DML operations \(except SELECT\) is disabled.
+- **1**  indicates that the function of auditing the DML operations \(except SELECT\) is enabled.
 
 **Default value**:  **0**
 
@@ -229,8 +229,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the SELECT auditing function is disabled.
--   **1**  indicates that the SELECT auditing function is enabled.
+- **0**  indicates that the SELECT auditing function is disabled.
+- **1**  indicates that the SELECT auditing function is enabled.
 
 **Default value**:  **0**
 
@@ -242,8 +242,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of auditing the procedure or function execution is disabled.
--   **1**  indicates that the function of auditing the procedure or function execution is enabled.
+- **0**  indicates that the function of auditing the procedure or function execution is disabled.
+- **1**  indicates that the function of auditing the procedure or function execution is enabled.
 
 **Default value**:  **0**
 
@@ -255,8 +255,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the COPY auditing function is disabled.
--   **1**  indicates that the COPY auditing function is enabled.
+- **0**  indicates that the COPY auditing function is disabled.
+- **1**  indicates that the COPY auditing function is enabled.
 
 **Default value**:  **1**
 
@@ -268,8 +268,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the SET auditing function is disabled.
--   **1**  indicates that the SET auditing function is enabled.
+- **0**  indicates that the SET auditing function is disabled.
+- **1**  indicates that the SET auditing function is enabled.
 
 **Default value**:  **1**
 
@@ -281,16 +281,18 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:** **0**  or  **1**
 
--   **0**  indicates that the function of recording transaction IDs in audit logs is disabled.
--   **1**  indicates that the function of recording transaction IDs in audit logs is enabled.
+- **0**  indicates that the function of recording transaction IDs in audit logs is disabled.
+- **1**  indicates that the function of recording transaction IDs in audit logs is enabled.
 
 **Default value**:  **0**
 
 >[!TIP]NOTICE 
 >If this function is enabled, the  **detail\_info**  information in audit logs starts with  *xid*. For example:
+>
 >```
 >detail_info: xid=14619 , create table t1(id int);
 >```
+>
 >If transaction IDs do not exist,  *xid*  is recorded as  **NA**  in audit logs.
 
 ## enableSeparationOfDuty<a name="en-us_topic_0283136929_en-us_topic_0237124747_en-us_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6"></a>
@@ -301,8 +303,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: Boolean
 
--   **on**  indicates that the separation of three duties is enabled.
--   **off**  indicates that the separation of three duties is disabled.
+- **on**  indicates that the separation of three duties is enabled.
+- **off**  indicates that the separation of three duties is disabled.
 
 **Default value**:  **off**
 
@@ -314,8 +316,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: Boolean
 
--   **on**  indicates that any user is allowed to execute the EXECUTE DIRECT ON statement.
--   **off**  indicates that only the system administrators and monitoring administrators are allowed to execute the EXECUTE DIRECT ON statement.
+- **on**  indicates that any user is allowed to execute the EXECUTE DIRECT ON statement.
+- **off**  indicates that only the system administrators and monitoring administrators are allowed to execute the EXECUTE DIRECT ON statement.
 
 **Default value**:  **off**
 
@@ -327,11 +329,12 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that non-initial users have the permission to create, modify, and delete directories.
--   **off**  indicates that non-initial users do not have the permission to create, modify, and delete directories.
+- **on**  indicates that non-initial users have the permission to create, modify, and delete directories.
+- **off**  indicates that non-initial users do not have the permission to create, modify, and delete directories.
 
 **Default value**:  **off**
 
 >[!TIP]NOTICE 
->-   For security purposes, only the initial user can create, modify, and delete DIRECTORY objects by default.
->-   If  **enable\_access\_server\_directory**  is enabled, users with the SYSADMIN permission and users who inherit the  **gs\_role\_directory\_create**  permission of the built-in role can create directory objects. A user with the SYSADMIN permission, the owner of a directory, a user who is granted with the DROP permission for the directory, or a user who inherits the  **gs\_role\_directory\_drop**  permission of the built-in role can delete a directory. A user with the SYSADMIN permission and the owner of a directory object can change the owner of the directory object, and the user must be a member of the new owner.
+>
+>- For security purposes, only the initial user can create, modify, and delete DIRECTORY objects by default.
+>- If  **enable\_access\_server\_directory**  is enabled, users with the SYSADMIN permission and users who inherit the  **gs\_role\_directory\_create**  permission of the built-in role can create directory objects. A user with the SYSADMIN permission, the owner of a directory, a user who is granted with the DROP permission for the directory, or a user who inherits the  **gs\_role\_directory\_drop**  permission of the built-in role can delete a directory. A user with the SYSADMIN permission and the owner of a directory object can change the owner of the directory object, and the user must be a member of the new owner.

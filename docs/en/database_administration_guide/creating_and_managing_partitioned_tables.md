@@ -8,10 +8,10 @@ In a range partitioned table, data within a certain range is mapped to each part
 
 A partitioned table has the following advantages over an ordinary table:
 
--   High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
--   High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
--   Easy maintenance: To fix a partitioned table having a faulty partition, you only need to fix the partition.
--   Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
+- High query performance: You can specify partitions when querying partitioned tables, improving query efficiency.
+- High availability: If a certain partition in a partitioned table is faulty, data in the other partitions is still available.
+- Easy maintenance: To fix a partitioned table having a faulty partition, you only need to fix the partition.
+- Balanced I/O: Partitions can be mapped to different disks to balance I/O and improve the overall system performance.
 
 To convert an ordinary table to a partitioned table, you need to create a partitioned table and import data to it from the ordinary table. When you design tables, plan whether to use partitioned tables based on service requirements.
 
@@ -19,7 +19,7 @@ To convert an ordinary table to a partitioned table, you need to create a partit
 
 Perform the following operations on range partitioned tables.
 
--   Creating a tablespace
+- Creating a tablespace
 
     ```
     postgres=# CREATE TABLESPACE example1 RELATIVE LOCATION 'tablespace1/tablespace_1';
@@ -34,7 +34,7 @@ Perform the following operations on range partitioned tables.
     CREATE TABLESPACE
     ```
 
--   Creating a partitioned table
+- Creating a partitioned table
 
     ```
     postgres=# CREATE TABLE tpcds.customer_address
@@ -78,7 +78,7 @@ Perform the following operations on range partitioned tables.
     >[!NOTE]NOTE 
     >You are advised to create a maximum of 1000 column-store partitioned tables.
 
--   Inserting data
+- Inserting data
 
     Insert data from the  **tpcds.customer\_address**  table to the  **tpcds.web\_returns\_p2**  table.
 
@@ -119,14 +119,14 @@ Perform the following operations on range partitioned tables.
     INSERT 0 0
     ```
 
--   Modifying the row movement attributes of the partitioned table
+- Modifying the row movement attributes of the partitioned table
 
     ```
     postgres=# ALTER TABLE tpcds.web_returns_p2 DISABLE ROW MOVEMENT;
     ALTER TABLE
     ```
 
--   Deleting a partition
+- Deleting a partition
 
     Run the following command to delete partition  **P8**:
 
@@ -135,7 +135,7 @@ Perform the following operations on range partitioned tables.
     ALTER TABLE
     ```
 
--   Adding a partition
+- Adding a partition
 
     Run the following command to add partition  **P8**  and set its range to \[40000, MAXVALUE\]:
 
@@ -144,39 +144,37 @@ Perform the following operations on range partitioned tables.
     ALTER TABLE
     ```
 
--   Renaming a partition
-    -   Run the following command to rename partition  **P8**  to  **P\_9**:
+- Renaming a partition
+    - Run the following command to rename partition  **P8**  to  **P\_9**:
 
         ```
         postgres=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION P8 TO P_9;
         ALTER TABLE
         ```
 
-    -   Run the following command to rename partition  **P\_9**  to  **P8**:
+    - Run the following command to rename partition  **P\_9**  to  **P8**:
 
         ```
         postgres=# ALTER TABLE tpcds.web_returns_p2 RENAME PARTITION FOR (40000) TO P8;
         ALTER TABLE
         ```
 
-
--   Modifying the tablespace of a partition
-    -   Run the following command to change the tablespace of partition  **P6**  to  **example3**:
+- Modifying the tablespace of a partition
+    - Run the following command to change the tablespace of partition  **P6**  to  **example3**:
 
         ```
         postgres=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P6 TABLESPACE example3;
         ALTER TABLE
         ```
 
-    -   Run the following command to change the tablespace of partition  **P4**  to  **example4**:
+    - Run the following command to change the tablespace of partition  **P4**  to  **example4**:
 
         ```
         postgres=#  ALTER TABLE tpcds.web_returns_p2 MOVE PARTITION P4 TABLESPACE example4;
         ALTER TABLE
         ```
 
-
--   Querying a partition
+- Querying a partition
 
     Run the following command to query partition  **P6**:
 
@@ -185,7 +183,7 @@ Perform the following operations on range partitioned tables.
     postgres=# SELECT * FROM tpcds.web_returns_p2 PARTITION FOR (35888);
     ```
 
--   Deleting a partitioned table and its tablespaces
+- Deleting a partitioned table and its tablespaces
 
     ```
     postgres=# DROP TABLE tpcds.web_returns_p2;
@@ -196,5 +194,3 @@ Perform the following operations on range partitioned tables.
     postgres=# DROP TABLESPACE example4;
     DROP TABLESPACE
     ```
-
-

@@ -2,14 +2,14 @@
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>
 
--   You are an audit administrator or a role that has the audit administrator permissions.
--   The database is running properly, and a series of addition, deletion, and modification operations are performed on the tamper-proof database to ensure that operation records are generated in the ledger for query.
--   The storage path  **audit\_directory**  of audit files has been correctly configured in the database.
+- You are an audit administrator or a role that has the audit administrator permissions.
+- The database is running properly, and a series of addition, deletion, and modification operations are performed on the tamper-proof database to ensure that operation records are generated in the ledger for query.
+- The storage path  **audit\_directory**  of audit files has been correctly configured in the database.
 
 ## Context<a name="en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   Currently, the ledger database provides two archiving interfaces:  [ledger\_hist\_archive\(text...](../sql_reference/ledger_database_functions.md)  and  [ledger\_gchain\_archive\(vo...](../sql_reference/ledger_database_functions.md). Only the audit administrator can invoke the ledger database interfaces.
--   The interface for archiving the user history table is  **pg\_catalog.ledger\_hist\_archive**. To archive the table, run the following command:
+- Currently, the ledger database provides two archiving interfaces:  [ledger\_hist\_archive\(text...](../sql_reference/ledger_database_functions.md)  and  [ledger\_gchain\_archive\(vo...](../sql_reference/ledger_database_functions.md). Only the audit administrator can invoke the ledger database interfaces.
+- The interface for archiving the user history table is  **pg\_catalog.ledger\_hist\_archive**. To archive the table, run the following command:
 
     ```
     SELECT pg_catalog.ledger_hist_archive(schema_name text,table_name text);
@@ -17,7 +17,7 @@
 
     If the archiving is successful, the function returns  **t**. Otherwise, the function returns  **f**.
 
--   The interface for archiving the global blockchain table is  **pg\_catalog.ledger\_gchain\_archive**. To archive the table, run the following command:
+- The interface for archiving the global blockchain table is  **pg\_catalog.ledger\_gchain\_archive**. To archive the table, run the following command:
 
     ```
     SELECT pg_catalog.ledger_gchain_archive();
@@ -25,10 +25,9 @@
 
     If the archiving is successful, the function returns  **t**. Otherwise, the function returns  **f**.
 
-
 ## Procedure<a name="section199001315531"></a>
 
-1.  Archive a specified user history table.
+1. Archive a specified user history table.
 
     ```
     openGauss=# SELECT pg_catalog.ledger_hist_archive('ledgernsp', 'usertable');
@@ -55,7 +54,7 @@
 
     The command output indicates that the user history table of the current node is exported successfully.
 
-2.  Export the global blockchain table.
+2. Export the global blockchain table.
 
     ```
     openGauss=# SELECT pg_catalog.ledger_gchain_archive();

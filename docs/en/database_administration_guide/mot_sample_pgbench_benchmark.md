@@ -9,7 +9,7 @@ A pgbench benchmark (26/08/2020) showed that MOT engine outperforms the Disk-eng
 + Hardware tested: 2-socket 72 cores x86 server (Intel Xeon Gold 6154 CPU @ 3GHz)
 + Test Parameters: Transaction=TPCB; Scaling Factor = 100 ;Query Protocol=Prepared
 
-## How to run pgbench with MOT:
+## How to run pgbench with MOT
 
 1. To load data into MOT you need to use the "–m" flag like in the following example 
 
@@ -17,13 +17,8 @@ A pgbench benchmark (26/08/2020) showed that MOT engine outperforms the Disk-eng
    ./pgbench -h <server_ip> -p <server_port> -U <user> -W <password> -i –m -s 100
    ```
 
-   
-
 2. To utilize maximum performance of MOT JIT capabilities it is recommended  to use the prepared mode like in the following example
 
    ```
    ./pgbench -h <server_ip> -p <server_port> -U <user> -W <password> -c 30 -j 30 -T 10 -M prepared
    ```
-
-   
-

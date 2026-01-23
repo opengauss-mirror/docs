@@ -2,10 +2,8 @@
 
 A client application can use the functions described in this section to cancel a command that is still being processed by the server.
 
--   **[PQgetCancel](pqgetcancel.md)**  
+- **[PQgetCancel](pqgetcancel.md)**  
 
--   **[PQfreeCancel](pqfreecancel.md)**  
+- **[PQfreeCancel](pqfreecancel.md)**  
 
--   **[PQcancel](pqcancel.md)**  
-
-
+- **[PQcancel](pqcancel.md)**  

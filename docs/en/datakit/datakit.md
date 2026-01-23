@@ -20,17 +20,17 @@ x86/Arm + openEuler 20.03 or x86 + CentOS 5.7
 
 ## Procedure
 
-1.  Create a work directory.
+1. Create a work directory.
 
-    ```
+    ```shell
     mkdir -p /ops/server/openGauss-visualtool/logs /ops/server/openGauss-visualtool/config /ops/ssl /ops/files
     ```
     
-1.  Download the JAR package from [https://www.opengauss.org/en/download/](https://www.opengauss.org/en/download/) and store the JAR package to **/ops/server/openGauss-visualtool/**.
+2. Download the JAR package from [https://www.opengauss.org/en/download/](https://www.opengauss.org/en/download/) and store the JAR package to **/ops/server/openGauss-visualtool/**.
 
 3. Store the configuration file **application-temp.yml** to **/ops/server/openGauss-visualtool/config/**. The content of the configuration file is as follows:
 
-   ```
+   ```shell
    system:
      # File storage path
      defaultStoragePath: /ops/files
@@ -65,7 +65,7 @@ x86/Arm + openEuler 20.03 or x86 + CentOS 5.7
 
 4. Store the SSL file to the **/ops/ssl/** directory to generate an SSL file example. (The Java version for generating the SSL file must be the same as that for running DataKit.)
 
-   ```
+   ```shell
    keytool -genkey -noprompt \
        -dname "CN=opengauss, OU=opengauss, O=opengauss, L=Beijing, S=Beijing, C=CN"\
        -alias opengauss\
@@ -77,26 +77,21 @@ x86/Arm + openEuler 20.03 or x86 + CentOS 5.7
        -storepass password
    ```
 
-   
+5. Change the **ip**, **port**, **database**, **dbuser**, and **dbpassword** values in the **application-temp.yml** file.
 
-2.  Change the **ip**, **port**, **database**, **dbuser**, and **dbpassword** values in the **application-temp.yml** file.
-
-2.  Create user **ops** and change the owner of the **ops** directory and all files in the directory to user **ops**.
+6. Create user **ops** and change the owner of the **ops** directory and all files in the directory to user **ops**.
 
 7. Switch to user **ops**, go to the **/ops/server/openGauss-visualtool** directory, and run the startup command.
 
-   ```
+   ```shell
    nohup java -Xms2048m -Xmx4096m -jar /ops/server/openGauss-visualtool/visualtool-main.jar --spring.profiles.active=temp >/ops/server/openGauss-visualtool/logs/visualtool-main.out 2>&1 &\
    ```
-
 
 ## Uninstalling DataKit
 
 The DataKit tool is started by the JAR package. You can uninstall the tool by deleting the corresponding JAR package.
 
 ## Precautions
-
-
 
 1. DataKit usage and development documents: [https://gitcode.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc](https://gitcode.com/opengauss/openGauss-workbench/tree/master/openGauss-datakit/doc)
 

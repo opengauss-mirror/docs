@@ -149,7 +149,7 @@ postgres=# CREATE TABLE table2(id int, a char(20), b varchar(20),c varchar(20));
 
 You need to create a table before inserting data to it. For details about how to create a table, see  [Creating and Managing Tables](creating_tables.md).
 
--   Insert a row to table  **customer\_t1**.
+- Insert a row to table  **customer\_t1**.
 
     Data values are arranged in the same order as the columns in the table and are separated by commas \(,\). Generally, column values are text values \(constants\). But column values can also be scalar expressions.
 
@@ -179,7 +179,7 @@ You need to create a table before inserting data to it. For details about how to
     INSERT INTO customer_t1 DEFAULT VALUES;
     ```
 
--   To insert multiple rows to a table, run the following command:
+- To insert multiple rows to a table, run the following command:
 
     ```
     INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES 
@@ -190,7 +190,7 @@ You need to create a table before inserting data to it. For details about how to
 
     You can also insert multiple rows by running the command for inserting one row for multiple times. However, you are advised to run this command to improve efficiency.
 
--   Assume that you have created a backup table  **customer\_t2**  for table  **customer\_t1**. To insert data from  **customer\_t1**  to  **customer\_t2**, run the following statements:
+- Assume that you have created a backup table  **customer\_t2**  for table  **customer\_t1**. To insert data from  **customer\_t1**  to  **customer\_t2**, run the following statements:
 
     ```
     CREATE TABLE customer_t2
@@ -207,7 +207,7 @@ You need to create a table before inserting data to it. For details about how to
     >[!NOTE]NOTE   
     >If implicit conversion is not implemented between the column data types of the specified table and those of the current table, the two tables must have the same column data types when data is inserted from the specified table to the current table.  
 
--   To delete a backup file, run the following command:
+- To delete a backup file, run the following command:
 
     ```
     DROP TABLE customer_t2 CASCADE;
@@ -215,5 +215,3 @@ You need to create a table before inserting data to it. For details about how to
 
     >[!NOTE]NOTE   
     >If the table to be deleted is dependent on other tables, you need to delete its dependent tables first.  
-
-

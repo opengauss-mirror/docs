@@ -43,13 +43,13 @@ SQLRETURN SQLExecDirect(SQLHSTMT         StatementHandle,
 
 ## Return Value<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_s43b67f6e7de04935897f38b7e40a090f"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_NEED\_DATA**  indicates that parameters provided before executing the SQL statement are insufficient.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
--   **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
--   **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_NEED\_DATA**  indicates that parameters provided before executing the SQL statement are insufficient.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
+- **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
 
 ## Precautions<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_s43188a28e3e94157b04501330c5bb5e5"></a>
 
@@ -58,4 +58,3 @@ If SQLExecDirect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 ## Example<a name="en-us_topic_0238272891_en-us_topic_0237120421_en-us_topic_0059778538_s8fbcb12db6c5494e98bac4b4820ecc3c"></a>
 
 See  [Examples](example_odbc.md).
-

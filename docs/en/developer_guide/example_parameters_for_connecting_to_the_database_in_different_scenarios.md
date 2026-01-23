@@ -72,4 +72,3 @@ for (int i = 1; i <= rsmd.getColumnCount(); i++) {
     System.out.println(rsmd.getColumnLabel(i) + "   " + rsmd.getColumnName(i));
 }
 ```
-

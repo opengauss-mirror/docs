@@ -2,9 +2,9 @@
 
 You can run the  **gs\_dbmind**  command to invoke all functions of AI4DB. This command provides the following basic functions:
 
--   Service functions: You can use the  **service**  subcommand to implement service related functions, including creating and initializing configuration directories, starting background services, and stopping background services.
--   Invoking components: You can use the  **component**  subcommand to invoke components. AI4DB functions \(such as index recommendation and parameter tuning\) can be invoked in real time in this mode.
--   Setting parameters: You can use the  **set**  subcommand to modify the configuration file in the configuration directory. The configuration file can also be modified by using the text editor.
+- Service functions: You can use the  **service**  subcommand to implement service related functions, including creating and initializing configuration directories, starting background services, and stopping background services.
+- Invoking components: You can use the  **component**  subcommand to invoke components. AI4DB functions \(such as index recommendation and parameter tuning\) can be invoked in real time in this mode.
+- Setting parameters: You can use the  **set**  subcommand to modify the configuration file in the configuration directory. The configuration file can also be modified by using the text editor.
 
 You can use the  **--help**  option to obtain the help information about the preceding modes. For example:
 
@@ -78,10 +78,8 @@ available subcommands:
 </tbody>
 </table>
 
--   **[service](service.md)**  
+- **[service](service.md)**  
 
--   **[component](component.md)**  
+- **[component](component.md)**  
 
--   **[set](dbmind_mode_set.md)**  
-
-
+- **[set](dbmind_mode_set.md)**  

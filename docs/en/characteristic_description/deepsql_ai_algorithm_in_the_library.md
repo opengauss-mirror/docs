@@ -22,11 +22,10 @@ None
 
 ## Constraints<a name="section11980155994711"></a>
 
--   Python 2.7.12 or later has been installed.
--   The database supports the PL/Python stored procedure.
--   You have the administrator permission to install the algorithm library.
+- Python 2.7.12 or later has been installed.
+- The database supports the PL/Python stored procedure.
+- You have the administrator permission to install the algorithm library.
 
 ## Dependencies<a name="section850692718486"></a>
 
 None
-

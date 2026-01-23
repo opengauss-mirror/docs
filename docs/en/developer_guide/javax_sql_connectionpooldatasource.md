@@ -29,4 +29,3 @@ This section describes  **javax.sql.ConnectionPoolDataSource**, the API for data
 </tr>
 </tbody>
 </table>
-

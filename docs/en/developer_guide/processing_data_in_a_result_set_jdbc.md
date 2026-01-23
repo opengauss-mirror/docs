@@ -183,4 +183,3 @@ ResultSet objects provide a variety of methods to obtain data from a result set.
 </tr>
 </tbody>
 </table>
-

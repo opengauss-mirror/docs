@@ -36,4 +36,3 @@ If the server connection attempt fails \(as indicated by PQstatus\), the applica
 ## Example<a name="en-us_topic_0241735616_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 For details, see  [Example](example_libpq.md).
-

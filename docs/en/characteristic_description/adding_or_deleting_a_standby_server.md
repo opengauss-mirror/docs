@@ -26,34 +26,33 @@ None.
 
 For adding a standby node:
 
--   Ensure that the openGauss image package exists on the primary node.
+- Ensure that the openGauss image package exists on the primary node.
 
--   Ensure that the same users and user groups as those on the primary node have been created on the new standby node.
+- Ensure that the same users and user groups as those on the primary node have been created on the new standby node.
 
--   Ensure that the mutual trust of user  **root**  and the database management user has been established between the existing database nodes and the new nodes.
+- Ensure that the mutual trust of user  **root**  and the database management user has been established between the existing database nodes and the new nodes.
 
--   Ensure that the XML file has been properly configured and information about the standby node to be scaled has been added to the installed database configuration file.
+- Ensure that the XML file has been properly configured and information about the standby node to be scaled has been added to the installed database configuration file.
 
--   Ensure that only user  **root**  is authorized to run the scale-out command.
+- Ensure that only user  **root**  is authorized to run the scale-out command.
 
--   Do not run the  **gs\_dropnode**  command on the primary node to delete other standby nodes at the same time.
--   Ensure that the environment variables of the primary node have been imported before the scale-out command is run.
+- Do not run the  **gs\_dropnode**  command on the primary node to delete other standby nodes at the same time.
+- Ensure that the environment variables of the primary node have been imported before the scale-out command is run.
 
--   Ensure that the operating system of the new standby node is the same as that of the primary node.
+- Ensure that the operating system of the new standby node is the same as that of the primary node.
 
--   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+- Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
 
 For deleting a standby node:
 
--   Delete the standby node only on the primary node.
--   Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
--   Do not run the  **gs\_expansion**  command on the primary node for scale-out at the same time.
--   Do not run the  **gs\_dropnode**  command twice at the same time.
--   Before deletion, ensure that the database management user trust relationship has been established between the primary and standby nodes.
--   Run this command as a database administrator.
--   Before running commands, run the  **source**  command to import environment variables of the primary node.
+- Delete the standby node only on the primary node.
+- Do not perform an primary/standby switchover or failover on other standby nodes at the same time.
+- Do not run the  **gs\_expansion**  command on the primary node for scale-out at the same time.
+- Do not run the  **gs\_dropnode**  command twice at the same time.
+- Before deletion, ensure that the database management user trust relationship has been established between the primary and standby nodes.
+- Run this command as a database administrator.
+- Before running commands, run the  **source**  command to import environment variables of the primary node.
 
 ## Dependencies<a name="section24082349505"></a>
 
 None.
-

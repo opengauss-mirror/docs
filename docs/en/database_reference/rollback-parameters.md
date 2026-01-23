@@ -9,4 +9,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range:**  an integer ranging from 1 to 100
 
 **Default value**:  **5**
-

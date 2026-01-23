@@ -18,11 +18,11 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
 ## Parameter Description<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_sad5ef99cc3a043838c29c5bdde9caab3"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified database does not exist.
 
--   **database\_name**
+- **database\_name**
 
     Specifies the name of the database to be deleted.
 
@@ -30,8 +30,7 @@ DROP DATABASE [ IF EXISTS ] database_name ;
     
     >[!NOTE]NOTE
     
-    -   In B-compatible mode, when **dolphin.b\_compatibility\_mode** is set to **on**, the syntax is the same as the DROP SCHEMA syntax without dolphin. If **dolphin.b\_compatibility\_mode** is **off**, the syntax is the DROP DATABASE syntax without dolphin.
-
+    - In B-compatible mode, when **dolphin.b\_compatibility\_mode** is set to **on**, the syntax is the same as the DROP SCHEMA syntax without dolphin. If **dolphin.b\_compatibility\_mode** is **off**, the syntax is the DROP DATABASE syntax without dolphin.
 
 ## Examples<a name="en-us_topic_0283137424_en-us_topic_0237122133_en-us_topic_0059778607_sabd40dc25b604e1b8c213e7e9f6b5200"></a>
 

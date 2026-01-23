@@ -8,7 +8,7 @@ The following describes how to manually perform a few steps in order to convert 
 
 Check that the schema of the disk table to be converted into an MOT table contains all required columns.
 
-Check whether the schema contains any unsupported column data types, as described in the Unsupported Data Types_ _section.
+Check whether the schema contains any unsupported column data types, as described in the Unsupported Data Types__section.
 
 If a specific column is not supported, then it is recommended to first create a secondary disk table with an updated schema. This schema is the same as the original table, except that all the unsupported types have been converted into supported types.
 
@@ -18,18 +18,20 @@ Afterwards, use the following script to export this secondary disk table and the
 
 To covert a disk-based table into an MOT table, perform the following –
 
-1.  Suspend application activity.
-2.  Use  **gs\_dump**  tool to dump the table's data into a physical file on disk. Make sure to use the  **data only**.
-3.  Rename your original disk-based table.
-4.  Create an MOT table with the same table name and schema. Make sure to use the create FOREIGN keyword to specify that it will be an MOT table.
-5.  Use  **gs\_restore**  to load/restore data from the disk file into the database table.
-6.  Visually/manually verify that all the original data was imported correctly into the new MOT table. An example is provided below.
-7.  Resume application activity.
+1. Suspend application activity.
+2. Use  **gs\_dump**  tool to dump the table's data into a physical file on disk. Make sure to use the  **data only**.
+3. Rename your original disk-based table.
+4. Create an MOT table with the same table name and schema. Make sure to use the create FOREIGN keyword to specify that it will be an MOT table.
+5. Use  **gs\_restore**  to load/restore data from the disk file into the database table.
+6. Visually/manually verify that all the original data was imported correctly into the new MOT table. An example is provided below.
+7. Resume application activity.
 
 **IMPORTANT Note** **–**  In this way, since the table name remains the same, application queries and relevant database stored-procedures will be able to access the new MOT table seamlessly without code changes. An additional method is to copy data from a regular (Heap) table into the new MOT table by using an "INSERT INTO SELECT" statement.
+
 ```
 INSERT INTO [MOT_table] SELECT * FROM [PG_table] WHERE condition;
 ```
+
 This method is subject to MOT transaction size limitation of less than 1 GB.
 
 ## Conversion Example<a name="section099142492814"></a>
@@ -38,7 +40,7 @@ Let's say that you have a database name  **benchmarksql**  and a table named  **
 
 To migrate the customer table into an MOT table, perform the following – 
 
-1.  Check your source table column types. Verify that all types are supported by MOT, refer to section  _Unsupported Data Types_.
+1. Check your source table column types. Verify that all types are supported by MOT, refer to section  _Unsupported Data Types_.
 
     ```
     benchmarksql-# \d+ customer
@@ -51,7 +53,7 @@ To migrate the customer table into an MOT table, perform the following –
     Options: orientation=row, compression=no
     ```
 
-2.  Check your source table data.
+2. Check your source table data.
 
     ```
     benchmarksql=# select * from customer;
@@ -62,7 +64,7 @@ To migrate the customer table into an MOT table, perform the following –
     (2 rows)
     ```
 
-3.  Dump table data only by using  **gs\_dump**.
+3. Dump table data only by using  **gs\_dump**.
 
     ```
     $ gs_dump -Fc benchmarksql -a --table customer -f customer.dump -p 16000
@@ -70,14 +72,14 @@ To migrate the customer table into an MOT table, perform the following –
     gs_dump[port='15500'][benchmarksql][2020-06-04 16:45:38]: total time: 332  ms
     ```
 
-4.  Rename the source table name.
+4. Rename the source table name.
 
     ```
     benchmarksql=# alter table customer rename to customer_bk;
     ALTER TABLE
     ```
 
-5.  Create the MOT table to be exactly the same as the source table.
+5. Create the MOT table to be exactly the same as the source table.
 
     ```
     benchmarksql=# create foreign table customer (x int, y int);
@@ -88,7 +90,7 @@ To migrate the customer table into an MOT table, perform the following –
     (0 rows)
     ```
 
-6.  Import the source dump data into the new MOT table.
+6. Import the source dump data into the new MOT table.
 
     ```
     $ gs_restore -C -d benchmarksql customer.dump -p 16000
@@ -110,5 +112,3 @@ To migrate the customer table into an MOT table, perform the following –
      public | customer_bk | table         | aharon | {orientation=row,compression=no}
     (2 rows)
     ```
-
-

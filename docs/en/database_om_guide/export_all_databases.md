@@ -4,20 +4,19 @@
 
 You can use  **gs\_dumpall**  to export full information of all databases in openGauss, including information about each database and global objects in openGauss. You can specify the information to export as follows:
 
--   Export full information of all databases, including information about each database and global objects \(such as roles and tablespaces\) in openGauss.
+- Export full information of all databases, including information about each database and global objects \(such as roles and tablespaces\) in openGauss.
 
     You can use the exported information to create a host environment containing the same databases, global objects, and data as the current one.
 
--   Export data of all databases, excluding all object definitions and global objects.
--   Export all object definitions of all databases, including the definitions of tablespaces, databases, functions, schemas, tables, indexes, and stored procedures.
+- Export data of all databases, excluding all object definitions and global objects.
+- Export all object definitions of all databases, including the definitions of tablespaces, databases, functions, schemas, tables, indexes, and stored procedures.
 
     You can use the exported object definitions to quickly create a host environment that is the same as the current one, containing the same databases and tablespaces but no data.
 
-
 ### Procedure<a name="en-us_topic_0237121173_en-us_topic_0096392335_s3e29cf3b34314c088216013e01293af6"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run  **gs\_dumpall**  to export full information of all databases.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run  **gs\_dumpall**  to export full information of all databases.
 
     ```
     gs_dumpall -W Bigdata@123 -U omm -f /home/omm/backup/MPPDB_backup.sql -p 8000 
@@ -68,7 +67,6 @@ You can use  **gs\_dumpall**  to export full information of all databases in ope
 
     For details about other parameters, see "Server Tools \> gs\_dumpall" in the  _Tool Reference_.
 
-
 ### Examples<a name="en-us_topic_0237121173_en-us_topic_0096392335_s3e34e9e7c7e948d49d1f24d6038514c0"></a>
 
 Example 1: Run  **gs\_dumpall**  as the cluster administrator  **omm**  to export full information of all databases in a cluster. After the command is executed, a large amount of output information will be displayed.  **total time**  will be displayed at the end of the information, indicating that the backup is successful. In this example, only relative output information is included.
@@ -101,8 +99,8 @@ You can use  **gs\_dumpall**  to export global objects, including database users
 
 ### Procedure<a name="en-us_topic_0283137605_en-us_topic_0237121174_section5854958132810"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run  **gs\_dumpall**  to export global tablespaces.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run  **gs\_dumpall**  to export global tablespaces.
 
     ```
     gs_dumpall -U omm -f /home/omm/backup/MPPDB_tablespace.sql -p 8000 -t
@@ -161,7 +159,6 @@ You can use  **gs\_dumpall**  to export global objects, including database users
 
     For details about other parameters, see "Server Tools \> gs\_dumpall" in the  _Tool Reference_.
 
-
 ### Examples<a name="en-us_topic_0283137605_en-us_topic_0237121174_section191141882614"></a>
 
 Example 1: Run  **gs\_dumpall**  as the administrator  **omm**  to export global tablespaces and users of all databases. The exported files are in text format.
@@ -190,4 +187,3 @@ Password:
 gs_dumpall[port='8000'][2018-11-14 19:03:18]: dumpall operation successful
 gs_dumpall[port='8000'][2018-11-14 19:03:18]: total time: 162  ms
 ```
-

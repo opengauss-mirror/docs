@@ -4,16 +4,15 @@
 
 openGauss provides multiple methods to set the GUC parameters of databases, users, or sessions.
 
--   Parameter names are case-insensitive.
--   A parameter value can be an integer, floating point value, string, Boolean value, or enumerated value.
-    -   The Boolean values can be  **on**/**off**,  **true**/**false**,  **yes**/**no**, or  **1**/**0**, and are case-insensitive.
-    -   The enumerated value range is specified in the  **enumvals**  column of the  **pg\_settings**  system catalog.
+- Parameter names are case-insensitive.
+- A parameter value can be an integer, floating point value, string, Boolean value, or enumerated value.
+    - The Boolean values can be  **on**/**off**,  **true**/**false**,  **yes**/**no**, or  **1**/**0**, and are case-insensitive.
+    - The enumerated value range is specified in the  **enumvals**  column of the  **pg\_settings**  system catalog.
 
--   For parameters using units, specify their units during the setting. Otherwise, default units are used.
-    -   The default units are specified in the  **unit**  column of  **pg\_settings**.
-    -   The unit of memory can be kB, MB, or GB.
-    -   The unit of time can be ms, s, min, h, or d.
-
+- For parameters using units, specify their units during the setting. Otherwise, default units are used.
+    - The default units are specified in the  **unit**  column of  **pg\_settings**.
+    - The unit of memory can be kB, MB, or GB.
+    - The unit of time can be ms, s, min, h, or d.
 
 For details about parameters in the hosts configuration template, see  [GUC Parameters](../database_reference/guc-parameter-usage.md).
 
@@ -142,8 +141,8 @@ You can set GUC parameters in openGauss using the four methods listed in  [Table
 
 The following example shows how to set  **archive\_mode**  on the primary node of the database using method 1.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  View the value of  **archive\_mode**.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. View the value of  **archive\_mode**.
 
     ```
     cat /gaussdb/data/dbnode/postgresql.conf | grep archive_mode
@@ -155,19 +154,19 @@ The following example shows how to set  **archive\_mode**  on the primary node o
 
     **on**  indicates logs are archived.
 
-3.  Set  **archive\_mode**  to  **off**  to disable log archiving.
+3. Set  **archive\_mode**  to  **off**  to disable log archiving.
 
     ```
     gs_guc set -D /gaussdb/data/dbnode -c "archive_mode=off"
     ```
 
-4.  Restart the database to make the setting take effect.
+4. Restart the database to make the setting take effect.
 
     ```
     gs_ctl restart -D /gaussdb/data/dbnode
     ```
 
-5.  Run the following command to connect to the database:
+5. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -185,7 +184,7 @@ The following example shows how to set  **archive\_mode**  on the primary node o
     openGauss=# 
     ```
 
-6.  Check whether the parameter is correctly set.
+6. Check whether the parameter is correctly set.
 
     ```
     openGauss=# SHOW archive_mode;
@@ -195,11 +194,10 @@ The following example shows how to set  **archive\_mode**  on the primary node o
     (1 row)
     ```
 
-
 The following example shows how to set  **authentication\_timeout**  on the primary node of the database using method 2.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  View the value of  **authentication\_timeout**.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. View the value of  **authentication\_timeout**.
 
     ```
     cat /gaussdb/data/dbnode/postgresql.conf | grep authentication_timeout
@@ -209,7 +207,7 @@ The following example shows how to set  **authentication\_timeout**  on the prim
     authentication_timeout = 1min
     ```
 
-3.  Set  **authentication\_timeout**  to  **59s**.
+3. Set  **authentication\_timeout**  to  **59s**.
 
     ```
     gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 59s"
@@ -218,7 +216,7 @@ The following example shows how to set  **authentication\_timeout**  on the prim
     Success to perform gs_guc!
     ```
 
-4.  Run the following command to connect to the database:
+4. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -236,7 +234,7 @@ The following example shows how to set  **authentication\_timeout**  on the prim
     openGauss=# 
     ```
 
-5.  Check whether the parameter is correctly set.
+5. Check whether the parameter is correctly set.
 
     ```
     openGauss=# SHOW authentication_timeout;
@@ -246,11 +244,10 @@ The following example shows how to set  **authentication\_timeout**  on the prim
     (1 row)
     ```
 
-
 The following example shows how to set  **explain\_perf\_mode**  using method 3.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -268,7 +265,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     openGauss=# 
     ```
 
-3.  View the value of  **explain\_perf\_mode**.
+3. View the value of  **explain\_perf\_mode**.
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -278,11 +275,11 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     (1 row)
     ```
 
-4.  Set  **explain\_perf\_mode**.
+4. Set  **explain\_perf\_mode**.
 
     Perform one of the following operations:
 
-    -   Set a database-level parameter.
+    - Set a database-level parameter.
 
         ```
         openGauss=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
@@ -296,7 +293,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
 
         The setting takes effect in the next session.
 
-    -   Set a user-level parameter.
+    - Set a user-level parameter.
 
         ```
         openGauss=# ALTER USER omm SET explain_perf_mode TO pretty;
@@ -310,7 +307,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
 
         The setting takes effect in the next session.
 
-    -   Set a session-level parameter.
+    - Set a session-level parameter.
 
         ```
         openGauss=# SET explain_perf_mode TO pretty;
@@ -322,7 +319,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         SET
         ```
 
-5.  Check whether the parameter is correctly set.
+5. Check whether the parameter is correctly set.
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -332,12 +329,11 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
     (1 row)
     ```
 
-
 ## Examples<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
 
--   Example 1: modifying the maximum connections for the primary database node in openGauss using method 1
-    1.  Log in as the OS user  **omm**  to the primary node of the database.
-    2.  Run the following command to connect to the database:
+- Example 1: modifying the maximum connections for the primary database node in openGauss using method 1
+    1. Log in as the OS user  **omm**  to the primary node of the database.
+    2. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -355,7 +351,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    3.  View the allowed maximum connections.
+    3. View the allowed maximum connections.
 
         ```
         openGauss=# SHOW max_connections;
@@ -365,25 +361,25 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-    4.  Run the following command to exit the database:
+    4. Run the following command to exit the database:
 
         ```
         openGauss=# \q
         ```
 
-    5.  Change the maximum connections for the primary database node in openGauss.
+    5. Change the maximum connections for the primary database node in openGauss.
 
         ```
         gs_guc set  -D /gaussdb/data/dbnode -c "max_connections = 800"
         ```
 
-    6.  Restart openGauss.
+    6. Restart openGauss.
 
         ```
         gs_ctl restart -D /gaussdb/data/dbnode
         ```
 
-    7.  Run the following command to connect to the database:
+    7. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -401,7 +397,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    8.  View the allowed maximum connections.
+    8. View the allowed maximum connections.
 
         ```
         openGauss=# SHOW max_connections;
@@ -411,10 +407,9 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-
--   Example 2: setting  **authentication\_timeout**  \(the allowed longest client authentication duration\) for the primary database node using method 2
-    1.  Log in as the OS user  **omm**  to the primary node of the database.
-    2.  Run the following command to connect to the database:
+- Example 2: setting  **authentication\_timeout**  \(the allowed longest client authentication duration\) for the primary database node using method 2
+    1. Log in as the OS user  **omm**  to the primary node of the database.
+    2. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -432,7 +427,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    3.  View the value of  **authentication\_timeout**.
+    3. View the value of  **authentication\_timeout**.
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -442,19 +437,19 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-    4.  Run the following command to exit the database:
+    4. Run the following command to exit the database:
 
         ```
         openGauss=# \q
         ```
 
-    5.  Change the allowed longest client authentication duration of the primary database node.
+    5. Change the allowed longest client authentication duration of the primary database node.
 
         ```
         gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 59s"
         ```
 
-    6.  Run the following command to connect to the database:
+    6. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -472,7 +467,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    7.  View the value of  **authentication\_timeout**.
+    7. View the value of  **authentication\_timeout**.
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -482,10 +477,9 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-
--   Example 3: Change the maximum number of connections between openGauss database nodes.
-    1.  Log in as the OS user  **omm**  to the primary node of the database.
-    2.  Run the following command to connect to the database:
+- Example 3: Change the maximum number of connections between openGauss database nodes.
+    1. Log in as the OS user  **omm**  to the primary node of the database.
+    2. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -503,7 +497,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    3.  View the allowed maximum connections.
+    3. View the allowed maximum connections.
 
         ```
         openGauss=# SHOW max_connections;
@@ -513,25 +507,25 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-    4.  Run the following command to exit the database:
+    4. Run the following command to exit the database:
 
         ```
         openGauss=# \q
         ```
 
-    5.  Change the maximum number of connections between openGauss database nodes.
+    5. Change the maximum number of connections between openGauss database nodes.
 
         ```
         gs_guc set  -D /gaussdb/data/dbnode -c "max_connections = 500"
         ```
 
-    6.  Restart openGauss.
+    6. Restart openGauss.
 
         ```
         gs_ctl restart -D /gaussdb/data/dbnode
         ```
 
-    7.  Run the following command to connect to the database:
+    7. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -549,7 +543,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    8.  View the allowed maximum connections.
+    8. View the allowed maximum connections.
 
         ```
         openGauss=# SHOW max_connections;
@@ -559,10 +553,9 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-
--   Example 4: setting authentication\_timeout \(the allowed longest client authentication duration\) for database nodes
-    1.  Log in as the OS user  **omm**  to the primary node of the database.
-    2.  Run the following command to connect to the database:
+- Example 4: setting authentication\_timeout \(the allowed longest client authentication duration\) for database nodes
+    1. Log in as the OS user  **omm**  to the primary node of the database.
+    2. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -580,7 +573,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    3.  View the value of  **authentication\_timeout**.
+    3. View the value of  **authentication\_timeout**.
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -590,19 +583,19 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         (1 row)
         ```
 
-    4.  Run the following command to exit the database:
+    4. Run the following command to exit the database:
 
         ```
         openGauss=# \q
         ```
 
-    5.  Change the allowed longest client authentication duration of openGauss database nodes.
+    5. Change the allowed longest client authentication duration of openGauss database nodes.
 
         ```
         gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 30s"
         ```
 
-    6.  Run the following command to connect to the database:
+    6. Run the following command to connect to the database:
 
         ```
         gsql -d postgres -p 8000
@@ -620,7 +613,7 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
         openGauss=# 
         ```
 
-    7.  View the value of  **authentication\_timeout**.
+    7. View the value of  **authentication\_timeout**.
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -629,6 +622,3 @@ The following example shows how to set  **explain\_perf\_mode**  using method 3.
          30s
         (1 row)
         ```
-
-
-

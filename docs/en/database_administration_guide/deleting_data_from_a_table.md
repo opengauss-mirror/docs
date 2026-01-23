@@ -29,4 +29,3 @@ To delete a table, run the following command:
 ```
 DROP TABLE customer_t1;
 ```
-

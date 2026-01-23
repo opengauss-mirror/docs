@@ -12,7 +12,7 @@ openGauss has started.
 
 1. Log in as the OS user **omm** to the primary node of the database.
 
-2.  Run the following command to query openGauss status.
+2. Run the following command to query openGauss status.
 
     ```
     gs_om -t status --detail
@@ -27,7 +27,6 @@ openGauss has started.
     ```
 
     **plat2** indicates the name of the host to be queried.
-
 
 ## Parameter Description<a name="en-us_topic_0237088790_en-us_topic_0059778948_s5690879aa2e24fb79ca064e487f93803"></a>
 
@@ -79,9 +78,6 @@ openGauss has started.
 </tr>
 </tbody>
 </table>
-
-
-
 
 Each role has different states, such as startup and connection. The states are described as follows:
 
@@ -147,8 +143,6 @@ Each role has different states, such as startup and connection. The states are d
 </tbody>
 </table>
 
-
-
 If a node is in **Need repair** state, you need to rebuild the node to restore it. Generally, the reasons for rebuilding a node are as follows:
 
 **Table 3** Node rebuilding causes
@@ -202,8 +196,6 @@ If a node is in **Need repair** state, you need to rebuild the node to restore i
 </tr>
 </tbody>
 </table>
-
-
 
 ## Examples<a name="en-us_topic_0237088790_en-us_topic_0059778948_s2ca7a9ce813e4d209f3801b2171de8b1"></a>
 

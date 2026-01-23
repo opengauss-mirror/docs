@@ -19,14 +19,13 @@ EXECUTE name USING parameter [, ...];
 
 ## Parameter Description<a name="en-us_topic_0283137468_en-us_topic_0237122161_en-us_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
 
--   **name**
+- **name**
 
     Specifies the name of the prepared statement to be executed.
 
--   **parameter**
+- **parameter**
 
     Specifies a parameter of the prepared statement. It must be of the same data type as that specified parameter in creating and generating the prepared statement.
-
 
 ## Examples<a name="en-us_topic_0283137468_en-us_topic_0237122161_en-us_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
 

@@ -22,11 +22,11 @@ None
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Java UDFs can implement simple Java computing. It is strongly recommended that services not be encapsulated in Java UDFs.
--   Do not connect to a database in any way \(for example, JDBC\) in Java functions.
--   Use Huawei JDK V100R001C00SPC190B003-b09 to compile Java methods and JAR files.
--   Currently, only data types listed in [Table 1](#table10200627143416) are supported. Other data types, such as user-defined data types and complex data types (for example, Java array and its derived types) are not supported.
--   Currently, UDAF and UDTF are not supported.
+- Java UDFs can implement simple Java computing. It is strongly recommended that services not be encapsulated in Java UDFs.
+- Do not connect to a database in any way \(for example, JDBC\) in Java functions.
+- Use Huawei JDK V100R001C00SPC190B003-b09 to compile Java methods and JAR files.
+- Currently, only data types listed in [Table 1](#table10200627143416) are supported. Other data types, such as user-defined data types and complex data types (for example, Java array and its derived types) are not supported.
+- Currently, UDAF and UDTF are not supported.
 
     **Table  1**  PL/Java mapping for default data types
 
@@ -124,7 +124,6 @@ None
     </tr>
     </tbody>
     </table>
-
 
 ## Dependencies<a name="section57771982"></a>
 

@@ -27,4 +27,3 @@ A standby node can only be used to build another standby node. You can only use 
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

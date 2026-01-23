@@ -10,7 +10,7 @@ None
 
 ## Procedure<a name="en-us_topic_0237088792_en-us_topic_0059777801_sac68001dd22f4446a51ead8f9d58bee2"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
+1. Log in as the OS user  **omm**  to the primary node of the database.
 2. Run the following command to generate configuration files in a specified directory on the current host:
 
    ```
@@ -25,14 +25,13 @@ None
    >
    >- If  **--distribute**  is not specified, perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e)  to distribute static configuration files to their corresponding hosts. If  **--distribute**  is specified, the static configuration files are automatically distributed and you do not need to perform  [3](#en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e).  
 
-3.  <a name="en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>\(Optional\) Replace the damaged static configuration files of the three hosts in the  **/opt/gaussdb/app/bin**  directory.
+3. <a name="en-us_topic_0237088792_en-us_topic_0059777801_lc1ce55d572e44beea3e47b1b427fae3e"></a>\(Optional\) Replace the damaged static configuration files of the three hosts in the  **/opt/gaussdb/app/bin**  directory.
 
     Take one host as an example:
 
     ```
     mv /opt/huawei/wisequery/script/static_config_files/cluster_static_config_SIA1000056771  /opt/gaussdb/app/bin/cluster_static_config
     ```
-
 
 ## Examples<a name="en-us_topic_0237088792_en-us_topic_0059777801_sec4df58bf58241cf9224729643c51d55"></a>
 

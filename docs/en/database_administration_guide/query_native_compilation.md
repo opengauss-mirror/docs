@@ -48,16 +48,16 @@ The following describes the supported and unsupported features of MOT compilatio
 
 The following query types are suitable for lite execution –
 
--   Simple point queries –
-    -   SELECT \(including SELECT for UPDATE\)
-    -   UPDATE
-    -   DELETE
+- Simple point queries –
+    - SELECT \(including SELECT for UPDATE\)
+    - UPDATE
+    - DELETE
 
--   INSERT query
--   Range UPDATE queries that refer to a full prefix of the primary key
--   Range SELECT queries that refer to a full prefix of the primary key
--   JOIN queries where one or both parts collapse to a point query
--   JOIN queries that refer to a full prefix of the primary key in each joined table
+- INSERT query
+- Range UPDATE queries that refer to a full prefix of the primary key
+- Range SELECT queries that refer to a full prefix of the primary key
+- JOIN queries where one or both parts collapse to a point query
+- JOIN queries that refer to a full prefix of the primary key in each joined table
 
 ## Unsupported Queries for Lite Execution<a name="section28009205347"></a>
 
@@ -68,4 +68,3 @@ It is important to emphasize that in case a query statement does not fit
 native compilation and lite execution, no error is reported to the client and the query will still be executed in a normal and standard manner.
 
 For more information about MOT native compilation capabilities, see either the section about Query Native Compilation or a more detailed information in the Query Native Compilation \(JIT\) section.
-

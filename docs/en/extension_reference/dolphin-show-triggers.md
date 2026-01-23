@@ -44,7 +44,7 @@ SHOW TRIIGERS {FROM | IN} db_name [LIKE 'pattern' | WHERE expr]
 | collation_connection | Sorting rule of the client during creation.              | This parameter is left blank.|
 | Database Collation   | Database collocation.                      |                           |
 
-## Instance.
+## Instance
 
 ```sql
 opengauss=# --Create a trigger table and trigger function.

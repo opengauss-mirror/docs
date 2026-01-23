@@ -6,9 +6,9 @@ Sets the character encoding type of the client.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   This statement is equivalent to **set client_encoding** in openGauss.
--   Set this parameter based on the front-end service requirements. Ensure that the client code is the same as the server code to improve efficiency.
--   It is compatible with all encoding types of PostgreSQL.
+- This statement is equivalent to **set client_encoding** in openGauss.
+- Set this parameter based on the front-end service requirements. Ensure that the client code is the same as the server code to improve efficiency.
+- It is compatible with all encoding types of PostgreSQL.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

@@ -8,12 +8,12 @@ X-Tuner is a parameter tuning tool integrated into databases. It uses AI technol
 
 ### Prerequisites and Precautions<a name="en-us_topic_0283137591_section887921944913"></a>
 
--   The database status is normal; the client can be properly connected; and data can be imported to the database. As a result, the optimization program can perform the benchmark test for optimization effect.
--   To use this tool, you need to specify the user who logs in to the database. The user who logs in to the database must have sufficient permissions to obtain sufficient database status information.
--   If you log in to the database host as a Linux user, add  **$GAUSSHOME/bin**  to the  _PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\_guc, and gs\_ctl.
--   This tool can run in three modes. In  **tune**  or  **train**  mode, you must configure the benchmark running environment and import data. This tool will iteratively run the benchmark to check whether the performance is improved after the parameters are modified.
--   In  **recommend**  mode, you are advised to run the command when the database is executing the workload to obtain more accurate real-time workload information.
--   By default, this tool provides benchmark running script samples of TPC-C, TPC-H, TPC-DS, and sysbench. If you use the benchmarks to perform pressure tests on the database system, you can modify or configure the preceding configuration files. To adapt to your own service scenarios, you need to compile the script file that drives your customized benchmark based on the  **template.py**  file in the  **benchmark**  directory.
+- The database status is normal; the client can be properly connected; and data can be imported to the database. As a result, the optimization program can perform the benchmark test for optimization effect.
+- To use this tool, you need to specify the user who logs in to the database. The user who logs in to the database must have sufficient permissions to obtain sufficient database status information.
+- If you log in to the database host as a Linux user, add  **$GAUSSHOME/bin**  to the  _PATH_environment variable so that you can directly run database O&M tools, such as gsql, gs\_guc, and gs\_ctl.
+- This tool can run in three modes. In  **tune**  or  **train**  mode, you must configure the benchmark running environment and import data. This tool will iteratively run the benchmark to check whether the performance is improved after the parameters are modified.
+- In  **recommend**  mode, you are advised to run the command when the database is executing the workload to obtain more accurate real-time workload information.
+- By default, this tool provides benchmark running script samples of TPC-C, TPC-H, TPC-DS, and sysbench. If you use the benchmarks to perform pressure tests on the database system, you can modify or configure the preceding configuration files. To adapt to your own service scenarios, you need to compile the script file that drives your customized benchmark based on the  **template.py**  file in the  **benchmark**  directory.
 
 ### Principles<a name="en-us_topic_0283137591_section1767203555113"></a>
 
@@ -24,9 +24,9 @@ The tuning program is a tool independent of the database kernel. The usernames a
 
 X-Tuner can run in any of the following modes:
 
--   **recommend**: Log in to the database using the specified username, obtain the feature information about the running workload, and generate a parameter recommendation report based on the feature information. Report improper parameter settings and potential risks in the current database. Output the currently running workload behavior and characteristics. Output the recommended parameter settings. In this mode, the database does not need to be restarted. In other modes, the database may need to be restarted repeatedly.
--   **train**: Modify parameters and execute the benchmark based on the benchmark information provided by users. The reinforcement learning model is trained through repeated iteration so that you can load the model in  **tune**  mode for optimization.
--   **tune**: Use an optimization algorithm to tune database parameters. Currently, two types of algorithms are supported: deep reinforcement learning and global search algorithm \(global optimization algorithm\). The deep reinforcement learning mode requires  **train**  mode to generate the optimized model after training. However, the global search algorithm does not need to be trained in advance and can be directly used for search and optimization.
+- **recommend**: Log in to the database using the specified username, obtain the feature information about the running workload, and generate a parameter recommendation report based on the feature information. Report improper parameter settings and potential risks in the current database. Output the currently running workload behavior and characteristics. Output the recommended parameter settings. In this mode, the database does not need to be restarted. In other modes, the database may need to be restarted repeatedly.
+- **train**: Modify parameters and execute the benchmark based on the benchmark information provided by users. The reinforcement learning model is trained through repeated iteration so that you can load the model in  **tune**  mode for optimization.
+- **tune**: Use an optimization algorithm to tune database parameters. Currently, two types of algorithms are supported: deep reinforcement learning and global search algorithm \(global optimization algorithm\). The deep reinforcement learning mode requires  **train**  mode to generate the optimized model after training. However, the global search algorithm does not need to be trained in advance and can be directly used for search and optimization.
 
 >[!TIP]NOTICE 
 >If the deep reinforcement learning algorithm is used in  **tune**  mode, a trained model must be available, and the parameters for training the model must be the same as those in the parameter list \(including max and min\) for tuning.
@@ -36,10 +36,10 @@ X-Tuner can run in any of the following modes:
 
 [Figure 1](#fig137427353816)  shows the overall architecture of the X-Tuner. The X-Tuner system can be divided into the following parts:
 
--   DB: The DB\_Agent module is used to abstract database instances. It can be used to obtain the internal database status information and current database parameters and set database parameters. The SSH connection used for logging in to the database environment is included on the database side.
--   Algorithm: algorithm package used for tuning, including global search algorithms \(such as Bayesian optimization and particle swarm optimization\) and deep reinforcement learning \(such as DDPG\).
--   X-Tuner: The main logic module is encapsulated by the environment module. Each step is a tuning process. The entire tuning process is iterated through multiple steps.
--   Benchmark: a user-specified benchmark performance test script, which is used to run benchmark jobs. The benchmark result reflects the performance of the database system.
+- DB: The DB\_Agent module is used to abstract database instances. It can be used to obtain the internal database status information and current database parameters and set database parameters. The SSH connection used for logging in to the database environment is included on the database side.
+- Algorithm: algorithm package used for tuning, including global search algorithms \(such as Bayesian optimization and particle swarm optimization\) and deep reinforcement learning \(such as DDPG\).
+- X-Tuner: The main logic module is encapsulated by the environment module. Each step is a tuning process. The entire tuning process is iterated through multiple steps.
+- Benchmark: a user-specified benchmark performance test script, which is used to run benchmark jobs. The benchmark result reflects the performance of the database system.
 
 >[!NOTE]NOTE 
 >Ensure that the larger the benchmark script score is, the better the performance is.
@@ -76,20 +76,20 @@ You can modify the configuration items in the configuration file as required to 
 
 The benchmark driver script is stored in the benchmark subdirectory of the X-Tuner directory \(_$GAUSSHOME_**/bin/dbmind/components/xtuner**\). X-Tuner provides common benchmark driver scripts, such as time-based detection script \(default\), TPC-C, and TPC-H. The X-Tuner invokes the  **get\_benchmark\_instance\(\)**  command in the  **benchmark/\_\_init\_\_.py**  file to load different benchmark driver scripts and obtain benchmark driver instances. The format of the benchmark driver script is described as follows:
 
--   Benchmark driver script name uniquely identifies the driver script. You can specify the benchmark driver script to be loaded by setting  **benchmark\_script**  in the configuration file of the X-Tuner.
--   The driver script contains the  _path_  variable,  _cmd_  variable, and the  **run**  function.
+- Benchmark driver script name uniquely identifies the driver script. You can specify the benchmark driver script to be loaded by setting  **benchmark\_script**  in the configuration file of the X-Tuner.
+- The driver script contains the  _path_  variable,  _cmd_  variable, and the  **run**  function.
 
 The following describes the three elements of the driver script:
 
-1.  _path_: path for storing the benchmark driver script. You can modify the path in the driver script or specify the path by setting the  **benchmark\_path**  configuration item in the configuration file.
-2.  _cmd_: command for executing the benchmark driver script. You can modify the command in the driver script or specify the command by setting the  **benchmark\_cmd**  configuration item in the configuration file. Placeholders can be used in the text of cmd to obtain necessary information for running cmd commands. For details, see the TPC-H driver script example. These placeholders include:
-    -   \{_host_\}: IP address of the database host
-    -   \{_port_\}: listening port number of the database instance
-    -   \{_user_\}: username for logging in to the database
-    -   \{_password_\}: password of the user who logs in to the database system
-    -   \{_db_\}: name of the database that is being optimized
+1. _path_: path for storing the benchmark driver script. You can modify the path in the driver script or specify the path by setting the  **benchmark\_path**  configuration item in the configuration file.
+2. _cmd_: command for executing the benchmark driver script. You can modify the command in the driver script or specify the command by setting the  **benchmark\_cmd**  configuration item in the configuration file. Placeholders can be used in the text of cmd to obtain necessary information for running cmd commands. For details, see the TPC-H driver script example. These placeholders include:
+    - \{_host_\}: IP address of the database host
+    - \{_port_\}: listening port number of the database instance
+    - \{_user_\}: username for logging in to the database
+    - \{_password_\}: password of the user who logs in to the database system
+    - \{_db_\}: name of the database that is being optimized
 
-3.  **run**: The signature of this function is as follows:
+3. **run**: The signature of this function is as follows:
 
     ```
     def run(remote_server, local_host) -> float:
@@ -115,10 +115,9 @@ The following describes the three elements of the driver script:
     Note: Generally, if the exit status code is 0, the execution is normal. If the exit status code is not 0, an error occurs.
     ```
 
-
 Benchmark driver script example:
 
-1.  TPC-C driver script
+1. TPC-C driver script
 
     ```
     from tuner.exceptions import ExecutionError
@@ -155,7 +154,7 @@ Benchmark driver script example:
     
     ```
 
-2.  TPC-H driver script
+2. TPC-H driver script
 
     ```
     import time
@@ -196,7 +195,7 @@ X-Tuner supports three modes:  **recommend**  for obtaining parameter diagnosis 
 
 Configuration items for connecting to a database in the three modes are the same. You can enter the detailed connection information in the command line or in the JSON configuration file. Both methods are described as follows:
 
-1.  Entering the connection information in the command line
+1. Entering the connection information in the command line
 
     Input the following options:  **--db-name --db-user --port --host --host-user**. The  **--host-ssh-port**  is optional. The following is an example:
 
@@ -204,7 +203,7 @@ Configuration items for connecting to a database in the three modes are the same
     gs_dbmind component xtuner recommend --db-name postgres --db-user omm --port 5678 --host 192.168.1.100 --host-user omm
     ```
 
-2.  Entering the connection information in the JSON configuration file
+2. Entering the connection information in the JSON configuration file
 
     Assume that the file name is  **connection.json**. The following is an example of the JSON configuration file:
 
@@ -220,7 +219,6 @@ Configuration items for connecting to a database in the three modes are the same
     ```
 
     Input  **-f connection.json**.
-
 
 >[!NOTE]NOTE 
 >To prevent password leakage, the configuration file and command line parameters do not contain password information by default. After you enter the preceding connection information, the program prompts you to enter the database password and the OS login password in interactive mode.
@@ -242,21 +240,22 @@ The diagnosis report is generated as follows:
 
 In the preceding report, the database parameter configurations in the environment are recommended, and a risk warning is provided. The report also generates the current workload features. The following features are for reference:
 
--   **temp\_file\_size**: number of generated temporary files. If the value is greater than 0, the system uses temporary files. If too many temporary files are used, the performance is poor. If possible, increase the value of  **work\_mem**.
--   **cache\_hit\_rate**: cache hit ratio of  **shared\_buffer**, indicating the cache efficiency of the current workload.
--   **read\_write\_ratio**: read/write ratio of database jobs.
--   **search\_modify\_ratio**: ratio of data query to data modification of a database job.
--   **ap\_index**: AP index of the current workload. The value ranges from 0 to 10. A larger value indicates a higher preference for data analysis and retrieval.
--   **workload\_type**: workload type, which can be AP, TP, or HTAP based on database statistics.
--   **checkpoint\_avg\_sync\_time**: average duration for refreshing data to the disk each time when the database is at the checkpoint, in milliseconds.
--   **load\_average**: average load of each CPU core in 1 minute, 5 minutes, and 15 minutes. Generally, if the value is about 1, the current hardware matches the workload. If the value is about 3, the current workload is heavy. If the value is greater than 5, the current workload is too heavy. In this case, you are advised to reduce the load or upgrade the hardware.
+- **temp\_file\_size**: number of generated temporary files. If the value is greater than 0, the system uses temporary files. If too many temporary files are used, the performance is poor. If possible, increase the value of  **work\_mem**.
+- **cache\_hit\_rate**: cache hit ratio of  **shared\_buffer**, indicating the cache efficiency of the current workload.
+- **read\_write\_ratio**: read/write ratio of database jobs.
+- **search\_modify\_ratio**: ratio of data query to data modification of a database job.
+- **ap\_index**: AP index of the current workload. The value ranges from 0 to 10. A larger value indicates a higher preference for data analysis and retrieval.
+- **workload\_type**: workload type, which can be AP, TP, or HTAP based on database statistics.
+- **checkpoint\_avg\_sync\_time**: average duration for refreshing data to the disk each time when the database is at the checkpoint, in milliseconds.
+- **load\_average**: average load of each CPU core in 1 minute, 5 minutes, and 15 minutes. Generally, if the value is about 1, the current hardware matches the workload. If the value is about 3, the current workload is heavy. If the value is greater than 5, the current workload is too heavy. In this case, you are advised to reduce the load or upgrade the hardware.
 
 >[!NOTE]NOTE 
+>
 >- Some system catalogs keep recording statistics, which may affect load feature identification. Therefore, you are advised to clear the statistics of some system catalogs, run the workload for a period of time, and then use recommend mode for diagnosis to obtain more accurate results. To clear the statistics, run the following command: 
 >
->  ```
->  select pg_stat_reset_shared('bgwriter');
->  select pg_stat_reset();
+> ```
+> select pg_stat_reset_shared('bgwriter');
+> select pg_stat_reset();
 >  ```
 >
 >- In recommend mode, information in the **pg\_stat\_database** and **pg\_stat\_bgwriter** system catalogs in the database is read. Therefore, the database login user must have sufficient permissions. (You are advised to own the administrator permission which can be granted to *username* by running **alter user username sysadmin**.) 
@@ -265,12 +264,12 @@ In the preceding report, the database parameter configurations in the environmen
 
 This mode is used to train the deep reinforcement learning model. The configuration items related to this mode are as follows:
 
--   **rl\_algorithm**: algorithm used to train the reinforcement learning model. Currently, this parameter can be set to  **ddpg**.
--   **rl\_model\_path**: path for storing the reinforcement learning model generated after training.
--   **rl\_steps**: maximum number of training steps in the training process.
--   **max\_episode\_steps**: maximum number of steps in each episode.
--   **scenario**: specifies the workload type. If the value is  **auto**, the system automatically determines the workload type. The recommended parameter tuning list varies according to the mode.
--   **tuning\_list**: specifies the parameters to be invoked. If no parameter is specified, the parameters to be invoked are automatically recommended based on the workload type. If parameters are specified,  **tuning\_list**  indicates the path of the tuning list file. The following is an example of the content of a tuning list configuration file:
+- **rl\_algorithm**: algorithm used to train the reinforcement learning model. Currently, this parameter can be set to  **ddpg**.
+- **rl\_model\_path**: path for storing the reinforcement learning model generated after training.
+- **rl\_steps**: maximum number of training steps in the training process.
+- **max\_episode\_steps**: maximum number of steps in each episode.
+- **scenario**: specifies the workload type. If the value is  **auto**, the system automatically determines the workload type. The recommended parameter tuning list varies according to the mode.
+- **tuning\_list**: specifies the parameters to be invoked. If no parameter is specified, the parameters to be invoked are automatically recommended based on the workload type. If parameters are specified,  **tuning\_list**  indicates the path of the tuning list file. The following is an example of the content of a tuning list configuration file:
 
     ```
     {
@@ -303,7 +302,6 @@ This mode is used to train the deep reinforcement learning model. The configurat
     }
     ```
 
-
 After the preceding configuration items are configured, run the following command to start the training:
 
 ```
@@ -318,11 +316,11 @@ The tune mode supports a plurality of algorithms, including a DDPG algorithm bas
 
 The configuration items related to the tune mode are as follows:
 
--   **tune\_strategy**: specifies the algorithm to be used for tuning. The value can be  **rl**\(using the reinforcement learning model\),  **gop**\(using the global optimization algorithm\), or  **auto**\(selected automatically\). If this parameter is set to **rl**, RL-related configuration items take effect. In addition to the preceding configuration items that take effect in train mode, the  **test\_episode** configuration item also takes effect. This configuration item indicates the maximum number of episodes in the tuning process. This parameter directly affects the execution time of the tuning process. Generally, a larger value indicates longer time consumption.
--   **gop\_algorithm**: specifies a global optimization algorithm. The value can be  **bayes**  or  **pso**.
--   **max\_iterations**: specifies the maximum number of iterations. A larger value indicates a longer search time and better search effect.
--   **particle\_nums**: specifies the number of particles. This parameter is valid only for the PSO algorithm.
--   For details about  **scenario** and **tuning\_list**, see the description of train mode.
+- **tune\_strategy**: specifies the algorithm to be used for tuning. The value can be  **rl**\(using the reinforcement learning model\),  **gop**\(using the global optimization algorithm\), or  **auto**\(selected automatically\). If this parameter is set to **rl**, RL-related configuration items take effect. In addition to the preceding configuration items that take effect in train mode, the  **test\_episode** configuration item also takes effect. This configuration item indicates the maximum number of episodes in the tuning process. This parameter directly affects the execution time of the tuning process. Generally, a larger value indicates longer time consumption.
+- **gop\_algorithm**: specifies a global optimization algorithm. The value can be  **bayes**  or  **pso**.
+- **max\_iterations**: specifies the maximum number of iterations. A larger value indicates a longer search time and better search effect.
+- **particle\_nums**: specifies the number of particles. This parameter is valid only for the PSO algorithm.
+- For details about  **scenario** and **tuning\_list**, see the description of train mode.
 
 After the preceding items are configured, run the following command to start tuning:
 
@@ -633,8 +631,7 @@ Database Connection Information:
 
 ## Troubleshooting<a name="EN-US_TOPIC_0289900701"></a>
 
--   Failure of connection to the database instance: Check whether the database instance is faulty or the security permissions of configuration items in the  **pg\_hba.conf**  file are incorrectly configured.
--   Restart failure: Check the health status of the database instance and ensure that the database instance is running properly.
--   Poor performance of TPC-C jobs: In high-concurrency scenarios such as TPC-C, a large amount of data is modified during pressure tests. Each test is not idempotent, for example, the data volume in the TPC-C database increases, invalid tuples are not cleared using VACUUM FULL, checkpoints are not triggered in the database, and drop cache is not performed. Therefore, it is recommended that the benchmark data that is written with a large amount of data, such as TPC-C, be imported again at intervals \(depending on the number of concurrent tasks and execution duration\). A simple method is to back up the $PGDATA directory.
--   When the TPC-C job is running, the TPC-C driver script reports the error "TypeError: float\(\) argument must be a string or a number, not 'NoneType'" \(**none** cannot be converted to the float type\). This is because the TPC-C pressure test result is not obtained. There are many causes for this problem, manually check whether TPC-C can be successfully executed and whether the returned result can be obtained. If the preceding problem does not occur, you are advised to set the delay time of the **sleep** command in the command list in the TPC-C driver script to a larger value.
-
+- Failure of connection to the database instance: Check whether the database instance is faulty or the security permissions of configuration items in the  **pg\_hba.conf**  file are incorrectly configured.
+- Restart failure: Check the health status of the database instance and ensure that the database instance is running properly.
+- Poor performance of TPC-C jobs: In high-concurrency scenarios such as TPC-C, a large amount of data is modified during pressure tests. Each test is not idempotent, for example, the data volume in the TPC-C database increases, invalid tuples are not cleared using VACUUM FULL, checkpoints are not triggered in the database, and drop cache is not performed. Therefore, it is recommended that the benchmark data that is written with a large amount of data, such as TPC-C, be imported again at intervals \(depending on the number of concurrent tasks and execution duration\). A simple method is to back up the $PGDATA directory.
+- When the TPC-C job is running, the TPC-C driver script reports the error "TypeError: float\(\) argument must be a string or a number, not 'NoneType'" \(**none** cannot be converted to the float type\). This is because the TPC-C pressure test result is not obtained. There are many causes for this problem, manually check whether TPC-C can be successfully executed and whether the returned result can be obtained. If the preceding problem does not occur, you are advised to set the delay time of the **sleep** command in the command list in the TPC-C driver script to a larger value.

@@ -6,7 +6,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
 2. The truncate, rand, crc32, conv, float8\_bool, oct, and float4_bool functions are added.
 3. Implement the atan function to support the usage of atan(y, x).
 
--   DIV
+- DIV
 
     Description: Division (rounded)
 
@@ -20,7 +20,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   MOD
+- MOD
 
     Description: Model (to obtain the remainder)
 
@@ -34,7 +34,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   XOR
+- XOR
 
     Description: Binary XOR
 
@@ -48,7 +48,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   truncate\(v numeric, s int\)
+- truncate\(v numeric, s int\)
 
     Description: Truncates a number with **s** digits after the decimal point. It is equivalent to trunc.
 
@@ -64,7 +64,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   rand\(\)
+- rand\(\)
 
     Description: Random number between 0.0 and 1.0 It is equivalent to random.
 
@@ -80,7 +80,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   crc32\(string\)
+- crc32\(string\)
 
     Description: Calculates the crc32 value of string.
 
@@ -96,7 +96,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     (1 row)
     ```
 
--   conv\(input in, current_base int, new_base int\)
+- conv\(input in, current_base int, new_base int\)
 
     Description: Converts a number or string from one number base system to another. The value of in can be a number or a character string.
 
@@ -172,7 +172,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
   (1 row)
   ```
 
--   oct\(input N)
+- oct\(input N)
 
     Description: Converts a number or string from a decimal number to an octal number.
 

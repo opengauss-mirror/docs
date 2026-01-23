@@ -45,4 +45,3 @@ After PQsendQuery is successfully called, call PQgetResult one or more times to 
 ## Example<a name="en-us_topic_0241735627_section97034101433"></a>
 
 For details, see  [Example](example_libpq.md).
-

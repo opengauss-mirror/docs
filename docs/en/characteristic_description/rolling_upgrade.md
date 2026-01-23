@@ -28,4 +28,3 @@ For details about the gray upgrade constraints, see [Before You Start](../databa
 ## Dependencies
 
 None.
-

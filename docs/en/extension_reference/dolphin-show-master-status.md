@@ -6,10 +6,10 @@ Views the progress of WAL (Xlog).
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--  This statement can also be executed in a non-primary database.
--  When the command is executed on the primary database, the results of Xlog\_Lsn and pg\_current\_xlog\_location are the same. When the command is executed on a non-primary database, the results of Xlog\_Lsn and pg\_last\_xlog\_replay\_location are the same.
--  The primary database uses this statement to query the real-time progress of Xlog writing.
--  The standby database uses this statement to query the real-time progress of the current Xlog replay.
+- This statement can also be executed in a non-primary database.
+- When the command is executed on the primary database, the results of Xlog\_Lsn and pg\_current\_xlog\_location are the same. When the command is executed on a non-primary database, the results of Xlog\_Lsn and pg\_last\_xlog\_replay\_location are the same.
+- The primary database uses this statement to query the real-time progress of Xlog writing.
+- The standby database uses this statement to query the real-time progress of the current Xlog replay.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -31,7 +31,6 @@ SHOW MASTER STATUS
 - **Xlog_Lsn**
 
        LSN of the current Xlog.
-
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

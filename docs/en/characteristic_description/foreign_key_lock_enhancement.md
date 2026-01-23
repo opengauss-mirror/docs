@@ -76,9 +76,8 @@ None.
 
 ## Constraints<a name="section13355203802911"></a>
 
--   The new row lock does not support the Ustore table.
+- The new row lock does not support the Ustore table.
 
 ## Dependencies<a name="section101449415302"></a>
 
 None
-

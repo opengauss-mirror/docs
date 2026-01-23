@@ -4,7 +4,7 @@ The openGauss can be deployed in standalone mode or with one primary node and mu
 
 ## Common Concepts<a name="section8443227204011"></a>
 
--   Standalone
+- Standalone
 
     There is only one database instance.
 
@@ -21,7 +21,6 @@ The openGauss can be deployed in standalone mode or with one primary node and mu
   Cold backup: There is only a simple backup set that cannot provide services.
 
   Hot backup: Backup databases can provide services for external systems.
-
 
 ## Deployment Modes<a name="section189157457406"></a>
 
@@ -94,7 +93,6 @@ For details about the standalone and HA cluster deployment modes, see  [Table 1]
 </tbody>
 </table>
 
-
 ## Hardware and Software Specifications<a name="en-us_topic_0243295239_en-us_topic_0240782908_section9327172719508"></a>
 
 openGauss supports the following CPUs and OSs:
@@ -125,37 +123,35 @@ openGauss supports the following CPUs and OSs:
 </tbody>
 </table>
 
-
 ## Introduction to Deployment Solutions<a name="section1368015013424"></a>
 
 The overall deployment solution can be classified into three types: standalone deployment, primary/standby deployment, and one-primary and multiple-standby deployment. For details, see the following sections.
 
--   Standalone Deployment
+- Standalone Deployment
 
     The standalone deployment does not ensure reliability or availability. There is only one data copy. If data is damaged or lost, data can be restored only through physical backup. Therefore, this deployment mode applies to scenarios such as experiencing databases and commissioning syntax functions in the test environment. You are not advised to use this mode on the commercial live network.
 
     **Figure  1**  Standalone deployment<a name="en-us_topic_0243295241_en-us_topic_0243253012_fig1128133574111"></a>  
     
-
     ![](figures/en-us_image_0270750231.png)
 
--   Primary/Standby Deployment
+- Primary/Standby Deployment
 
     The primary/standby deployment mode is equivalent to two data copies. The primary and standby nodes each have a data copy. The standby node receives and plays back logs.
 
     **Figure  2**  Primary/Standby deployment<a name="en-us_topic_0243295242_en-us_topic_0243253013_fig1843505845112"></a>  
     ![](figures/primary-standby-deployment.png "primary-standby-deployment")
 
--   Deployment with One Primary and Multiple Standbys
+- Deployment with One Primary and Multiple Standbys
 
     The multi-copy deployment mode provides the capability of defending against instance-level faults. This mode is applicable to scenarios where equipment room DR is not required but some hardware faults need to be prevented.
 
     Generally, the one-primary and two-standby mode is used for multi-copy deployment. There are three copies in total. The reliability of the three copies is 99.99%, which can meet the reliability requirements of most applications.
 
-    -   In primary/standby DN quorum replication, data is synchronized to at least one standby to ensure the maximum performance.
-    -   If any of primary and standby DNs is faulty, services will not be affected.
-    -   There are three copies of data. If one node is faulty, the system still has two copies of data. In addition, any standby DN can be promoted to primary.
-    -   The primary and standby instances cannot be deployed on the same physical machine.
+    - In primary/standby DN quorum replication, data is synchronized to at least one standby to ensure the maximum performance.
+    - If any of primary and standby DNs is faulty, services will not be affected.
+    - There are three copies of data. If one node is faulty, the system still has two copies of data. In addition, any standby DN can be promoted to primary.
+    - The primary and standby instances cannot be deployed on the same physical machine.
 
     **Figure  3**  One-primary and multiple-standby deployment<a name="fig5294135131017"></a>  
     ![](figures/one-primary-and-multiple-standby-deployment.png "one-primary-and-multiple-standby-deployment")

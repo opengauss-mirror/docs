@@ -21,7 +21,6 @@ Columns are case sensitive. The column names used during table creation retain c
 
 The default character set and collation can be set and modified at the schema, table, and column levels.
 
-
 ## Benefits
 
 A user lock is set to protect data, data structures, and some character strings, preventing mutual interference between sessions and ensuring information consistency and security. It solves the problem that the operation timestamp is recorded when the user service data is written or modified. By setting the SQL mode, you can solve the known issues in earlier versions and compatibility issues in later versions. By hiding indexes, you can test the impact of deleting an index on the query performance without disabling, deleting, or re-creating the index, improving the SQL tuning efficiency. By supporting case sensitivity, column names can remain case sensitive during query. You can set and modify the default character set and collation at the schema, table, and column levels based on the actual application scenarios.

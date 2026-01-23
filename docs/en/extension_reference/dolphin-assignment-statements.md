@@ -21,8 +21,8 @@ set variable_name := value;
 
 The syntax is described as follows:
 
--   **variable\_name** indicates the name of a variable.
--   **value** can be a value or an expression. The type of **value** must be compatible with the type of **variable\_name**.
+- **variable\_name** indicates the name of a variable.
+- **value** can be a value or an expression. The type of **value** must be compatible with the type of **variable\_name**.
 
 Example:
 

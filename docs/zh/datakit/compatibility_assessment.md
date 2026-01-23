@@ -18,8 +18,7 @@ openGauss兼容性评估工具，支持从多个场景下获取sql语句进行�
 
 社区提供的数据库构建包中已包含对应插件。若需要手动编译插件，可参考
 
-https://gitcode.com/opengauss/Plugin/tree/master/contrib/assessment
-
+<https://gitcode.com/opengauss/Plugin/tree/master/contrib/assessment>
 
 ### 注意事项
 
@@ -71,7 +70,7 @@ https://gitcode.com/opengauss/Plugin/tree/master/contrib/assessment
        提取结果：select * from user where stage = 'A' and age = $0 and name = $1
        ```
     
-   3. choose、when、otherwise标签
+    3. choose、when、otherwise标签
     
        提取choose标签中首个when标签的内容。
        

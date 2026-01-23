@@ -10,7 +10,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in [
 
 **Value range**: Boolean
 
--   **on**  indicates that the function of collecting wait event information is enabled.
--   **off**  indicates that the function of collecting wait event information is disabled.
+- **on**  indicates that the function of collecting wait event information is enabled.
+- **off**  indicates that the function of collecting wait event information is disabled.
 
 **Default value**:  **on**

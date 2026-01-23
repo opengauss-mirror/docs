@@ -2,9 +2,9 @@
 
 **GS\_SQL\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) on the current node of the database.
 
--   When a common user queries the  **GS\_SQL\_COUNT**  view, statistics about the current node of the user are displayed. When an administrator queries the  **GS\_SQL\_COUNT**  view, statistics about the current node of all users are displayed.
--   When openGauss or the node is restarted, the statistics are cleared and will be measured again.
--   The system counts when a node receives a query, including a query inside openGauss.
+- When a common user queries the  **GS\_SQL\_COUNT**  view, statistics about the current node of the user are displayed. When an administrator queries the  **GS\_SQL\_COUNT**  view, statistics about the current node of all users are displayed.
+- When openGauss or the node is restarted, the statistics are cleared and will be measured again.
+- The system counts when a node receives a query, including a query inside openGauss.
 
 **Table  1**  GS\_SQL\_COUNT columns
 
@@ -201,4 +201,3 @@
 </tr>
 </tbody>
 </table>
-

@@ -10,8 +10,8 @@ The workload diagnosis report \(WDR\) provides database performance diagnosis re
 
 ## Benefits<a name="section1938191193419"></a>
 
--   The WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
--   Snapshots are also an important data source for self-diagnosis and self-optimization suggestions on subsequent performance problems.
+- The WDR is the main method for diagnosing long-term performance problems. Based on the performance baseline of a snapshot, performance analysis is performed from multiple dimensions, helping DBAs understand the system load, performance of each component, and performance bottlenecks.
+- Snapshots are also an important data source for self-diagnosis and self-optimization suggestions on subsequent performance problems.
 
 ## Description<a name="section49337943415"></a>
 
@@ -21,8 +21,8 @@ You can use generate\_wdr\_report\(...\) to generate a performance report based 
 
 The WDR depends on the following two components:
 
--   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
--   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data. For details, see  [Table 1](#table14895120191613)  and  [Table 2](#table23331848193120).
+- Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
+- WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data. For details, see  [Table 1](#table14895120191613)  and  [Table 2](#table23331848193120).
 
 **Table  1**  Summarized diagnosis report
 
@@ -146,9 +146,9 @@ None.
 
 ## Constraints<a name="section1956417145819"></a>
 
--   The WDR snapshot collects performance data of different databases. If there are a large number of databases or tables in the database instance, it takes a long time to create a WDR snapshot.
--   If WDR snapshot is performed when a large number of DDL statements are executed, WDR snapshot may fail.
--   When the database is dropped, WDR snapshot may fail.
+- The WDR snapshot collects performance data of different databases. If there are a large number of databases or tables in the database instance, it takes a long time to create a WDR snapshot.
+- If WDR snapshot is performed when a large number of DDL statements are executed, WDR snapshot may fail.
+- When the database is dropped, WDR snapshot may fail.
 
 ## Dependencies<a name="section15876411599"></a>
 

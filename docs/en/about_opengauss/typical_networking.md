@@ -4,7 +4,6 @@ To ensure the security of application data, you are advised to divide the openGa
 
 **Figure  1**  Typical networking<a name="en-us_concept_0238166305_fig7654172218145"></a>  
 
-
 ![](figures/en-us_image_0253141769.png)
 
 [Table 1](#en-us_concept_0283139009_en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_tb80dc4a120b64f6093f63535ce9998ef)  describes the network division.
@@ -32,16 +31,14 @@ To ensure the security of application data, you are advised to divide the openGa
 </tbody>
 </table>
 
-
 The typical networking has the following advantages:
 
--   The service network is isolated from the database management and storage network, effectively protecting the security of back-end storage data.
--   The isolation between the service network and database management and storage network prevents attackers from managing database servers through the Internet, improving system security.
+- The service network is isolated from the database management and storage network, effectively protecting the security of back-end storage data.
+- The isolation between the service network and database management and storage network prevents attackers from managing database servers through the Internet, improving system security.
 
-Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirements for openGauss network performance. Therefore, in the production system, the back-end storage network shown in  [Figure 1](#en-us_concept_0283139009_en-us_concept_0238166305_fig7654172218145)  must meet the requirements of exclusiveness and 1:1 bandwidth convergence ratio. For example, in  [Figure 2](#en-us_concept_0283139009_en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542), the Fat-tree networking is used. To achieve a convergence ratio of 1:1, the bandwidth doubles each time the switching network layer is increased by one layer. In the figure, each bold line indicates the 80GE bandwidth, that is, the sum of the bandwidth upper limits of eight physical machines. At the access layer, each switch provides 160GE downlink bandwidth and 160GE uplink bandwidth. The convergence ratio is 1:1. The access bandwidth of each switch at the aggregation layer is 320GE.
+Network exclusiveness and 1:1 bandwidth convergence ratio are the basic requirements for openGauss network performance. Therefore, in the production system, the back-end storage network shown in  [Figure 1](#en-us_concept_0238166305_fig7654172218145)  must meet the requirements of exclusiveness and 1:1 bandwidth convergence ratio. For example, in  [Figure 2](#en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542), the Fat-tree networking is used. To achieve a convergence ratio of 1:1, the bandwidth doubles each time the switching network layer is increased by one layer. In the figure, each bold line indicates the 80GE bandwidth, that is, the sum of the bandwidth upper limits of eight physical machines. At the access layer, each switch provides 160GE downlink bandwidth and 160GE uplink bandwidth. The convergence ratio is 1:1. The access bandwidth of each switch at the aggregation layer is 320GE.
 
 For the test system, the preceding requirements can be lowered.
 
 **Figure  2**  Database management and storage network<a name="en-us_concept_0238166305_en-us_topic_0085434654_en-us_topic_0059782024_fig397545395542"></a>  
 <img src="figures/database-management-and-storage-network.png" title="database-management-and-storage-network" style="zoom:67%;" />
-

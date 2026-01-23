@@ -11,7 +11,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**: **off**
 
 >[!NOTE]NOTE
->-   The default value of **enable\_remote\_execute** is **false** in standalone mode.
->-   To allow the standby node to execute write statements, set this parameter to **true**.
->-   After this function is enabled, write statements and DDL statements can be executed on the standby node, and simple and extended queries are supported. In this case, read statements are still executed on the standby node, and write statements are forwarded to the primary node for execution.
->-   After this function is enabled, the standby node unconditionally forwards all SQL statements, including read statements, to the primary node after starting a transaction.
+>
+>- The default value of **enable\_remote\_execute** is **false** in standalone mode.
+>- To allow the standby node to execute write statements, set this parameter to **true**.
+>- After this function is enabled, write statements and DDL statements can be executed on the standby node, and simple and extended queries are supported. In this case, read statements are still executed on the standby node, and write statements are forwarded to the primary node for execution.
+>- After this function is enabled, the standby node unconditionally forwards all SQL statements, including read statements, to the primary node after starting a transaction.

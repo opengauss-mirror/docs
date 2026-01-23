@@ -74,4 +74,3 @@ PGresult* PQexecPreparedBatch(PGconn* conn,
 ## Return Value<a name="en-us_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
 PGresult pointers
-

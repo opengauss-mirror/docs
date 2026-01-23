@@ -41,8 +41,9 @@ public static Connection getConnect(String username, String passwd)
 ```
 
 >[!NOTE]NOTE 
->-   \[Proposal\] When JDBC is used to perform operations on an encrypted database, one database connection object corresponds to one thread. Otherwise, conflicts may occur due to thread changes.
->-   \[Proposal\] When JDBC is used to perform operations on an encrypted database, different connections change the encrypted configuration data. The client invokes the  **IsValid**  method to ensure that the connections can hold the changed encrypted configuration data. In this case, the  **refreshClientEncryption**  parameter must be set to  **1**  \(default value\). In a scenario where a single client performs operations on encrypted data, the  **refreshClientEncryption**  parameter can be set to  **0**.
+>
+>- \[Proposal\] When JDBC is used to perform operations on an encrypted database, one database connection object corresponds to one thread. Otherwise, conflicts may occur due to thread changes.
+>- \[Proposal\] When JDBC is used to perform operations on an encrypted database, different connections change the encrypted configuration data. The client invokes the  **IsValid**  method to ensure that the connections can hold the changed encrypted configuration data. In this case, the  **refreshClientEncryption**  parameter must be set to  **1**  \(default value\). In a scenario where a single client performs operations on encrypted data, the  **refreshClientEncryption**  parameter can be set to  **0**.
 
 ## Example of Calling the IsValid Method to Refresh the Cache<a name="section8416165433116"></a>
 
@@ -126,4 +127,3 @@ int[] rowcount = pstmt.executeBatch();
 // Close the precompiled statement object by calling the close method in PreparedStatement.
 pstmt.close();
 ```
-

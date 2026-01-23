@@ -49,7 +49,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
 ## 使用指导<a name="section2758144424616"></a>
 
-1.  使用“CREATE MODEL”语句可以进行模型的创建和训练。
+1. 使用“CREATE MODEL”语句可以进行模型的创建和训练。
 
     模型训练SQL语句，现有一个数据集为kmeans\_2d，该表的数据内容如下：
 
@@ -100,11 +100,11 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
     上述命令中：
 
-    -   “CREATE MODEL”语句用于模型的训练和保存。
-    -   USING关键字指定算法名称。
-    -   FEATURES用于指定训练模模型的特征，需根据训练数据表的列名添加。
-    -   TARGET指定模型的训练目标，它可以是训练所需数据表的列名，也可以是一个表达式，例如: price \> 10000。
-    -   WITH用于指定训练模型时的超参数。当超参未被用户进行设置的时候，框架会使用默认数值。
+    - “CREATE MODEL”语句用于模型的训练和保存。
+    - USING关键字指定算法名称。
+    - FEATURES用于指定训练模模型的特征，需根据训练数据表的列名添加。
+    - TARGET指定模型的训练目标，它可以是训练所需数据表的列名，也可以是一个表达式，例如: price \> 10000。
+    - WITH用于指定训练模型时的超参数。当超参未被用户进行设置的时候，框架会使用默认数值。
 
         针对不同的算子，框架支持不同的超参组合，见[表2](#table15985527185615)。
 
@@ -300,7 +300,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
     MODEL CREATED. PROCESSED x
     ```
 
-2.  查看模型信息。
+2. 查看模型信息。
 
     当训练完成后模型会被存储到系统表gs\_model\_warehouse中。系统表gs\_model\_warehouse可以查看到关于模型本身和训练过程的相关信息。
 
@@ -333,7 +333,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
     modeldescribe         | {"id:1,objective_function:542.851169,avg_distance_to_centroid:108.570234,min_distance_to_centroid:1.027078,max_distance_to_centroid:297.210108,std_dev_distance_to_centroid:105.053257,cluster_size:5","id:2,objective_function:5825.982139,avg_distance_to_centroid:529.634740,min_distance_to_centroid:100.270449,max_distance_to_centroid:990.300588,std_dev_distance_to_centroid:285.915094,cluster_size:11","id:3,objective_function:220.792591,avg_distance_to_centroid:55.198148,min_distance_to_centroid:4.216111,max_distance_to_centroid:102.117204,std_dev_distance_to_centroid:39.319118,cluster_size:4"}
     ```
 
-3.  利用已存在的模型做推断任务。
+3. 利用已存在的模型做推断任务。
 
     使用“SELECT”和“PREDICT BY”关键字利用已有模型完成推断任务。
 
@@ -358,7 +358,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
 
     针对相同的推断任务，同一个模型的结果是稳定的。且基于相同的超参数和训练集训练的模型也具有稳定性，同时AI模型训练存在随机成分（每个batch的数据分布、随机梯度下降），所以不同的模型间的计算表现、结果允许存在小的差别。
 
-4.  查看执行计划。
+4. 查看执行计划。
 
     使用explain语句可对“CREATE MODEL”和“PREDICT BY”的模型训练或预测过程中的执行计划进行分析。Explain关键字后可直接拼接CREATE MODEL/ PREDICT BY语句（子句），也可接可选的参数，支持的参数见[表4](#table15575173743415)。
 
@@ -450,9 +450,9 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
     (2 rows)
     ```
 
-5.  异常场景。
-    -   训练阶段。
-        -   场景一：当超参数的设置超出取值范围，模型训练失败，返回ERROR，并提示错误，例如：
+5. 异常场景。
+    - 训练阶段。
+        - 场景一：当超参数的设置超出取值范围，模型训练失败，返回ERROR，并提示错误，例如：
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients WITH optimizer='aa';
@@ -465,7 +465,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  Invalid hyperparameter value for optimizer. Valid values are: gd, ngd. (default is gd)
             ```
 
-        -   场景二：当模型名称已存在，模型保存失败，返回ERROR，并提示错误原因：
+        - 场景二：当模型名称已存在，模型保存失败，返回ERROR，并提示错误原因：
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients;
@@ -482,7 +482,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  The model name "patient_linear_regression" already exists in gs_model_warehouse.
             ```
 
-        -   场景三：FEATURE或者TARGETS列是\*，返回ERROR，并提示错误原因：
+        - 场景三：FEATURE或者TARGETS列是\*，返回ERROR，并提示错误原因：
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES *  TARGET trait_anxiety  FROM
@@ -493,7 +493,7 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  TARGET clause cannot be *
             ```
 
-        -   场景四：对于无监督学习方法使用TARGET关键字，或者在监督学习方法中不适用TARGET关键字，均会返回ERROR，并提示错误原因：
+        - 场景四：对于无监督学习方法使用TARGET关键字，或者在监督学习方法中不适用TARGET关键字，均会返回ERROR，并提示错误原因：
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment FROM patients;
@@ -502,17 +502,17 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;   ERROR:  Supervised ML algorithms require FEATURES clause
             ```
 
-        -   场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数\(iteration\)、提前终止条件\(tolerance、max\_seconds\)、并行线程数\(nthread\)等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
+        - 场景五：当GUC参数statement\_timeout设置了时长，训练超时执行的语句将被终止：执行CREATE MODEL语句。训练集的大小、训练轮数\(iteration\)、提前终止条件\(tolerance、max\_seconds\)、并行线程数\(nthread\)等参数都会影响训练时长。当时长超过数据库限制，语句被终止模型训练失败。
 
-    -   推断阶段。
-        -   场景六：当模型名在系统表中查找不到，数据库会报ERROR：
+    - 推断阶段。
+        - 场景六：当模型名在系统表中查找不到，数据库会报ERROR：
 
             ```
             openGauss=# select id, PREDICT BY patient_logistic_regression (FEATURES second_attack,treatment) FROM patients;
             ERROR:  There is no model called "patient_logistic_regression".
             ```
 
-        -   场景七：当做推断任务FEATURES的数据维度和数据类型与训练集存在不一致，将报ERROR，并提示错误原因，例如：
+        - 场景七：当做推断任务FEATURES的数据维度和数据类型与训练集存在不一致，将报ERROR，并提示错误原因，例如：
 
             ```
             openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
@@ -523,7 +523,3 @@ openGauss当前版本支持了原生DB4AI能力，通过引入原生AI算子，�
             ERROR:  Invalid number of features for prediction, provided 3, expected 2
             CONTEXT:  referenced column: patient_linear_regression_pre
             ```
-
-
-
-

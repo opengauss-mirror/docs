@@ -452,7 +452,6 @@ IP address of the node where the <td class="cellrowborder" valign="top" width="8
 </td>
 </tr>
 
-
 <tr id="row78612485353"><td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.1 "><p id="p11861124893514"><a name="p11861124893514"></a><a name="p11861124893514"></a>Server running the distributed lock service</p>
 </td>
 <td class="cellrowborder" valign="top" width="8.552565769730919%" headers="mcps1.2.13.1.2 "><p id="p68610484354"><a name="p68610484354"></a><a name="p68610484354"></a>IP address configured by openGauss for the distributed lock service</p>

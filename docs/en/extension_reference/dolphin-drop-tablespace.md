@@ -18,22 +18,21 @@ DROP TABLESPACE [ IF EXISTS ] tablespace_name [ENGINE [=] engine_name];
 
 ## Parameter Description<a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_sd3609e09c22149eba3e6e64c989573b6"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Sends a notice instead of an error if the specified tablespace does not exist.
 
--   **tablespace\_name**
+- **tablespace\_name**
 
     Indicates the name of tablespace.
 
     Value range: an existing tablespace name
 
--   **engine\_name**
+- **engine\_name**
 
     This parameter is meaningless.
 
     Value: a combination of any characters
-
 
 ## Examples <a name="en-us_topic_0283137549_en-us_topic_0237122153_en-us_topic_0059779073_sbcb08a6a5edc433b951080b230808c35"></a>
 

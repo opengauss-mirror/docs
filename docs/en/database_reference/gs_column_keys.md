@@ -1,6 +1,6 @@
 # GS\_COLUMN\_KEYS<a name="EN-US_TOPIC_0294528094"></a>
 
-**GS\_COLUMN\_KEYS **records information about the CEK in the encrypted equality feature. Each record corresponds to a CEK.
+**GS\_COLUMN\_KEYS**records information about the CEK in the encrypted equality feature. Each record corresponds to a CEK.
 
 **Table  1**  GS\_COLUMN\_KEYS columns
 
@@ -71,4 +71,3 @@
 </tr>
 </tbody>
 </table>
-

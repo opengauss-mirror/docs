@@ -26,14 +26,12 @@ None.
 
 ## Constraints<a name="section13118121915014"></a>
 
--   This feature takes effect only when the maximum availability mode is enabled.
+- This feature takes effect only when the maximum availability mode is enabled.
 
--   Enabling this feature may affect the RPO. If the primary node is faulty within the configured timeout window, its transactions are committed locally but not synchronized to the faulty synchronous standby nodes.
+- Enabling this feature may affect the RPO. If the primary node is faulty within the configured timeout window, its transactions are committed locally but not synchronized to the faulty synchronous standby nodes.
 
--   This feature does not apply to cascaded standby nodes.
-
+- This feature does not apply to cascaded standby nodes.
 
 ## Dependencies<a name="section24082349505"></a>
 
 This feature depends on the maximum availability mode.
-

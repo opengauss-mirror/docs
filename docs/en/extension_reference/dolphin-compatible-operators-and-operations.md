@@ -22,9 +22,7 @@ If **dolphin.b\_compatibility\_mode** is set to **on**, MySQL-compatible four ar
    - The character string type is converted to the floating-point type in four arithmetic operations.
    - Date and time types: The date type is converted to a signed integer, and the year type is converted to an unsigned integer. If typmod (indicating millisecond and microsecond) is not specified, the datetime, timestamp, and time types are converted to signed integers; otherwise, they are converted to fixed-point numbers with the same number of decimal places as the specified typmod.
 
-
-
-## Example:
+## Example
 
 Test case:
 

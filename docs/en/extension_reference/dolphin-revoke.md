@@ -8,9 +8,10 @@ REVOKE is used to revoke permissions from one or more roles.
 
    This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
    The ALTER ROUTINE, CRAETE ROUTINE, CREATE TEMPORARY TABLES, CREATE USER, CREATE TABLESPACE and INDEX permissions are added.
+
 ## Syntax<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
--   The ALTER ROUTINE permission is added.
+- The ALTER ROUTINE permission is added.
 
 The ALTER permission is basically the same as that of the function and procedure.
 
@@ -22,7 +23,8 @@ ON {FUNCTION {function_name ( [ {[ argmode ] [ arg_name ] arg_type} [, ...] ] )}
 FROM { [ GROUP ] role_name | PUBLIC } [, ...]
 [ WITH GRANT OPTION ];
 ```
--   The CREATE ROUTINE permission is added.
+
+- The CREATE ROUTINE permission is added.
 
 The permission is basically the same as that of CREATE ANY FUNCTION.
 
@@ -37,11 +39,12 @@ REVOKE { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE 
   [ WITH ADMIN OPTION ];
   ```
 
--   The CREATE TEMPORARY TABLES permission is added.
+- The CREATE TEMPORARY TABLES permission is added.
 
 The permission is basically the same as that of TEMPORARY.
 
 The syntax after modification is described as follows:
+
 ```
 REVOKE { { CREATE | CONNECT | CREATE TEMPORARY TABLES | TEMPORARY | TEMP | ALTER | DROP | COMMENT } [, ...]
     | ALL [ PRIVILEGES ] }
@@ -50,28 +53,32 @@ REVOKE { { CREATE | CONNECT | CREATE TEMPORARY TABLES | TEMPORARY | TEMP | ALTER
     [ WITH GRANT OPTION ];
   ```
 
--   The CREATE USER permission is added.
+- The CREATE USER permission is added.
 
 It controls users' permission to create new users, which is basically the same as the CREATEROLE and NOCREATEROLE permissions of users.
 
 The new syntax is described as follows:
+
 ```
 REVOKE CREATE USER ON *.* FROM ROLE_NAME;
 ```
 
--   The CREATE TABLESPACE permission is added.
+- The CREATE TABLESPACE permission is added.
 
 It controls users' permission to create tablespaces.
 
 The new syntax is described as follows:
+
 ```
 REVOKE CREATE TABLESPACE ON *.* FROM ROLE_NAME;
 ```
--   The INDEX permission is added.
+
+- The INDEX permission is added.
 
 The permission is basically the same as that of CREATE ANY INDEX.
 
 The syntax after modification is described as follows:
+
 ```
 REVOKE { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE | INSERT ANY TABLE | UPDATE ANY TABLE |
   DELETE ANY TABLE | CREATE ANY SEQUENCE | CREATE ANY INDEX | INDEX | CREATE ANY FUNCTION | EXECUTE ANY FUNCTION |
@@ -80,6 +87,7 @@ REVOKE { CREATE ANY TABLE | ALTER ANY TABLE | DROP ANY TABLE | SELECT ANY TABLE 
   FROM [ GROUP ] role_name [, ...]
   [ WITH ADMIN OPTION ];
 ```
+
 ## Parameter Description<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
 
 N/A

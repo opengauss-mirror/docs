@@ -8,17 +8,18 @@ This section describes related default parameters involved in the execution of S
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   If the schema of temporary tables exists in the current session, the schema can be listed in  **search\_path**  by using the alias  **pg\_temp**, for example,  **'pg\_temp,public'**. The schema of temporary tables has the highest search priority and is always searched before all the other schemas specified in  **pg\_catalog**  and  **search\_path**. Therefore, do not explicitly specify  **pg\_temp**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed. If the alias  **pg\_temp**  is used, the temporary schema will be searched only for tables, views, and data types, and not for functions or operators.
--   The system catalog schema,  **pg\_catalog**, has the second highest search priority and is the first to be searched among all the schemas, excluding  **pg\_temp**, specified in  **search\_path**. Therefore, do not explicitly specify  **pg\_catalog**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed.
--   When an object is created without a specific target schema, the object will be placed in the first valid schema listed in  **search\_path**. An error is reported if the search path is empty.
--   The current effective value of the search path can be examined through the SQL function  **current\_schema**. This is different from examining the value of  **search\_path**, because the  **current\_schema**  function displays the first valid schema name in  **search\_path**.
+- If the schema of temporary tables exists in the current session, the schema can be listed in  **search\_path**  by using the alias  **pg\_temp**, for example,  **'pg\_temp,public'**. The schema of temporary tables has the highest search priority and is always searched before all the other schemas specified in  **pg\_catalog**  and  **search\_path**. Therefore, do not explicitly specify  **pg\_temp**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed. If the alias  **pg\_temp**  is used, the temporary schema will be searched only for tables, views, and data types, and not for functions or operators.
+- The system catalog schema,  **pg\_catalog**, has the second highest search priority and is the first to be searched among all the schemas, excluding  **pg\_temp**, specified in  **search\_path**. Therefore, do not explicitly specify  **pg\_catalog**  to be searched after other schemas in  **search\_path**. This setting will not take effect and an error message will be displayed.
+- When an object is created without a specific target schema, the object will be placed in the first valid schema listed in  **search\_path**. An error is reported if the search path is empty.
+- The current effective value of the search path can be examined through the SQL function  **current\_schema**. This is different from examining the value of  **search\_path**, because the  **current\_schema**  function displays the first valid schema name in  **search\_path**.
 
 **Value range**: a string
 
 >[!NOTE]NOTE 
->-   When this parameter is set to  **"$user", public**, shared use of a database \(where no users have private schemas, and all share use of public\), private per-user schemas and combinations of them are supported. Other effects can be obtained by modifying the default search path setting, either globally or per-user.
->-   When this parameter is set to a null string \(''\), the system automatically converts it into a pair of double quotation marks \(""\).
->-   If the content contains double quotation marks, the system considers them as insecure characters and converts each double quotation mark into a pair of double quotation marks.
+>
+>- When this parameter is set to  **"$user", public**, shared use of a database \(where no users have private schemas, and all share use of public\), private per-user schemas and combinations of them are supported. Other effects can be obtained by modifying the default search path setting, either globally or per-user.
+>- When this parameter is set to a null string \(''\), the system automatically converts it into a pair of double quotation marks \(""\).
+>- If the content contains double quotation marks, the system considers them as insecure characters and converts each double quotation mark into a pair of double quotation marks.
 
 **Default value**:  **"$user",public**
 
@@ -42,12 +43,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the default tablespace of the created objects \(tables and indexes\) when a  **CREATE**  command does not explicitly specify a tablespace.
 
--   The value of this parameter is either the name of a tablespace, or an empty string that indicates the use of the default tablespace of the current database. If a non-default tablespace is specified, users must have CREATE privilege for it. Otherwise, creation attempts will fail.
--   This parameter is not used for temporary tables. For them, the  **[temp\_tablespaces](#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sd5bfdc9f2696411894b2912cf3f23fcc)**  is used instead.
--   This parameter is not used when users create databases. By default, a new database inherits its tablespace setting from the template database.
+- The value of this parameter is either the name of a tablespace, or an empty string that indicates the use of the default tablespace of the current database. If a non-default tablespace is specified, users must have CREATE privilege for it. Otherwise, creation attempts will fail.
+- This parameter is not used for temporary tables. For them, the  **[temp\_tablespaces](#en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sd5bfdc9f2696411894b2912cf3f23fcc)**  is used instead.
+- This parameter is not used when users create databases. By default, a new database inherits its tablespace setting from the template database.
 
     This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
 
 **Value range**: a string. An empty string indicates that the default tablespace is used.
 
@@ -73,8 +73,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that validation of the function body string is enabled during the execution of  **CREATE FUNCTION**.
--   **off**  indicates that validation of the function body string is disabled during the execution of  **CREATE FUNCTION**.
+- **on**  indicates that validation of the function body string is enabled during the execution of  **CREATE FUNCTION**.
+- **off**  indicates that validation of the function body string is disabled during the execution of  **CREATE FUNCTION**.
 
 **Default value**:  **on**
 
@@ -89,9 +89,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **read committed**  indicates that the data read by a transaction is committed at the moment it is read.
--   **repeatable read**  indicates that the data that has been read by the current transaction cannot be modified by other transactions until the current transaction completes, thereby preventing unrepeatable reads.
--   **serializable**: Currently, this isolation level is not supported in openGauss. It is equivalent to  **repeatable read**.
+- **read committed**  indicates that the data read by a transaction is committed at the moment it is read.
+- **repeatable read**  indicates that the data that has been read by the current transaction cannot be modified by other transactions until the current transaction completes, thereby preventing unrepeatable reads.
+- **serializable**: Currently, this isolation level is not supported in openGauss. It is equivalent to  **repeatable read**.
 
 **Default value:** **read committed**
 
@@ -106,8 +106,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the transaction is in read-only state.
--   **off**  indicates that the transaction is in read/write state.
+- **on**  indicates that the transaction is in read-only state.
+- **off**  indicates that the transaction is in read/write state.
 
 **Default value**:  **off**
 
@@ -121,8 +121,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that a transaction is delayed by default.
--   **off**  indicates that a transaction is not delayed by default.
+- **on**  indicates that a transaction is delayed by default.
+- **off**  indicates that a transaction is not delayed by default.
 
 **Default value**:  **off**
 
@@ -137,9 +137,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: enumerated values
 
--   **origin**  indicates that the system copies operations such as insert, delete, and update from the current session.
--   **replica**  indicates that the system copies operations such as insert, delete, and update from other places to the current session.
--   **local**  indicates that the system will detect the role that has logged in to the database when using the function to copy operations and will perform related operations.
+- **origin**  indicates that the system copies operations such as insert, delete, and update from the current session.
+- **replica**  indicates that the system copies operations such as insert, delete, and update from other places to the current session.
+- **local**  indicates that the system will detect the role that has logged in to the database when using the function to copy operations and will perform related operations.
 
 **Default value**:  **origin**
 
@@ -187,8 +187,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **hex**  indicates that the binary data is converted to hexadecimal format.
--   **escape**  indicates that the traditional PostgreSQL format is used. It takes the approach of representing a binary string as a sequence of ASCII characters, while converting those bytes that cannot be represented as an ASCII character into special escape sequences.
+- **hex**  indicates that the binary data is converted to hexadecimal format.
+- **escape**  indicates that the traditional PostgreSQL format is used. It takes the approach of representing a binary string as a sequence of ASCII characters, while converting those bytes that cannot be represented as an ASCII character into special escape sequences.
 
 **Default value**:  **hex**
 
@@ -200,8 +200,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   base64
--   hex
+- base64
+- hex
 
 **Default value**:  **base64**
 
@@ -213,8 +213,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: enumerated values
 
--   **document**  indicates an HTML document.
--   **content**  indicates a common string.
+- **document**  indicates an HTML document.
+- **content**  indicates a common string.
 
 **Default value**:  **content**
 
@@ -246,8 +246,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that case is ignored when double quotes are used.
--   **off**  indicates that case is not ignored when double quotes are used.
+- **on**  indicates that case is ignored when double quotes are used.
+- **off**  indicates that case is not ignored when double quotes are used.
 
 **Default value**:  **off**
 
@@ -260,7 +260,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  Indicates check type names.
--   **off**  Indicates do not check type names.
+- **on**  Indicates check type names.
+- **off**  Indicates do not check type names.
 
 **Default value**:  **off**

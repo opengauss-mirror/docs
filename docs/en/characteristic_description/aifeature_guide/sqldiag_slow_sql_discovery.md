@@ -2,9 +2,9 @@
 
 SQLdiag is a framework for predicting the execution duration of SQL statements in openGauss. The existing prediction technologies are mainly based on model prediction of execution plans. These prediction solutions are applicable only to jobs whose execution plans can be obtained in the OLAP scenarios, and are not useful for quick query such as OLTP or HTAP. Different from the preceding solutions, SQLdiag focuses on the historical SQL statements of databases. Because the execution duration of the database SQL statements in a short time does not vary greatly, SQLdiag can detect instruction sets similar to the entered instructions from the historical data, and predict the SQL statement execution duration based on the SQL vectorization technology and the time series prediction algorithm. This framework has the following benefits:
 
-1.  Execution plans do not require instructions. This has no impact on database performance.
-2.  The framework is widely used, unlike many other well-targeted algorithms in the industry, for example, they may applicable only to OLTP or OLAP.
-3.  The framework is robust and easy to understand. Users can design their own prediction models by simply modifying the framework.
+1. Execution plans do not require instructions. This has no impact on database performance.
+2. The framework is widely used, unlike many other well-targeted algorithms in the industry, for example, they may applicable only to OLTP or OLAP.
+3. The framework is robust and easy to understand. Users can design their own prediction models by simply modifying the framework.
 
 ## Overview<a name="EN-US_TOPIC_0289900425"></a>
 
@@ -14,9 +14,9 @@ SQLdiag is an SQL statement execution time prediction tool. It predicts the exec
 
 ### Prerequisites<a name="en-us_topic_0283137132_en-us_topic_0059779027_s7c2e433674384463a42b1e562a499257"></a>
 
--   You have obtained training data.
--   If you use the provided tool to collect training data, you need to enable the WDR function. The involved parameters are  **track\_stmt\_stat\_level**  and  **log\_min\_duration\_statement**. For details, see the following sections.
--   To ensure the prediction accuracy, the historical statement logs provided by users should be as comprehensive and representative as possible.
+- You have obtained training data.
+- If you use the provided tool to collect training data, you need to enable the WDR function. The involved parameters are  **track\_stmt\_stat\_level**  and  **log\_min\_duration\_statement**. For details, see the following sections.
+- To ensure the prediction accuracy, the historical statement logs provided by users should be as comprehensive and representative as possible.
 
 ### Collecting SQL Statements<a name="section11673554164710"></a>
 
@@ -36,8 +36,8 @@ SQL
 
 You can collect training data in the required format. The tool also provides the  **load\_sql\_from\_rd**  script for automatic collection. The script obtains SQL information based on the WDR report. The involved parameters are  **log\_min\_duration\_statement**  and  **track\_stmt\_stat\_level**:
 
--   **log\_min\_duration\_statement**  indicates the slow SQL threshold. If the value is  **0**, full collection is performed. The unit is millisecond.
--   **track\_stmt\_stat\_level**  indicates the information capture level. You are advised to set it to  **'L0,L0'**.
+- **log\_min\_duration\_statement**  indicates the slow SQL threshold. If the value is  **0**, full collection is performed. The unit is millisecond.
+- **track\_stmt\_stat\_level**  indicates the information capture level. You are advised to set it to  **'L0,L0'**.
 
 After this parameter is set, a certain amount of system resources may be occupied but the usage is generally low. In continuous high-concurrency scenarios, this may cause a performance loss less than 5%. If the database concurrency is low, the performance loss can be ignored. The following script is stored in the sqldiag root directory \(_$GAUSSHOME_**/bin/components/sqldiag**\).
 
@@ -51,8 +51,8 @@ Example:
 
 ### Procedure<a name="en-us_topic_0283137132_section43562171391"></a>
 
-1.  Provide historical logs for model training.
-2.  Perform training and prediction.
+1. Provide historical logs for model training.
+2. Perform training and prediction.
 
     ```
     Template-based training and prediction:
@@ -60,7 +60,6 @@ Example:
     DNN-based training and prediction:
        gs_dbmind component sqldiag [train, predict] -f FILE --model dnn --model-path dnn_model_path
     ```
-
 
 ### Examples<a name="en-us_topic_0283137132_section1835821733910"></a>
 
@@ -189,6 +188,6 @@ optional arguments:
 
 ## Troubleshooting<a name="EN-US_TOPIC_0289900845"></a>
 
--   Failure in the training scenario: Check whether the file path of historical logs is correct and whether the file format meets the requirements.
+- Failure in the training scenario: Check whether the file path of historical logs is correct and whether the file format meets the requirements.
 
--   Failure in the prediction scenario: Check whether the model path is correct. Ensure that the format of the load file to be predicted is correct.
+- Failure in the prediction scenario: Check whether the model path is correct. Ensure that the format of the load file to be predicted is correct.

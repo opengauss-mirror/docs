@@ -4,7 +4,7 @@
 
 **gstrace**  is used to trace the kernel code execution path, record the kernel data structure, and analyze code performance. The limited trace points and data are fixed in the version and cannot be dynamically added or deleted.
 
->![](public_sys-resources/icon-warning.gif) **WARNING:** 
+>[!WARNING]WARNING
 >1.  The data of the memory variable specified by the kernel dump is used for diagnosis and analysis. There is no behavior of directly specifying any register or memory address. The read memory addresses are hard-coded in the development phase, and no register or memory is read or modified randomly.
 >2.  Trace points may involve sensitive data. Before collecting trace information, you need to negotiate with the customer and obtain authorization and permission.
 >3.  openGauss does not dot sensitive information, and therefore does not trace user-related data.

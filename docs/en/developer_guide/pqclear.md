@@ -36,4 +36,3 @@ PGresult is not automatically released. That is, it does not disappear when a ne
 ## Example<a name="en-us_topic_0241735622_section185045611592"></a>
 
 For details, see  [Example](example_libpq.md).
-

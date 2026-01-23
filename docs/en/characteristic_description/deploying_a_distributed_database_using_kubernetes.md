@@ -27,4 +27,3 @@ Only CentOS and openEuler are supported.
 ## Dependencies<a name="section185341414141318"></a>
 
 ShardingSphere, Patroni, HAProxy
-

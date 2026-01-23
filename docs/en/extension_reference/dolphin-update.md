@@ -6,12 +6,12 @@ Updates data in a table. Changes the values of the specified columns in all rows
 
 ## Precautions<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s7e9e912f472543cbb190edb83e5f22d2"></a>
 
--   This section describes only the new syntax of Dolphin. The UPDATE syntax of openGauss is not modified. For details about the UPDATE syntax of the original openGauss, see section [UPDATE](../sql_reference/update.md).
+- This section describes only the new syntax of Dolphin. The UPDATE syntax of openGauss is not modified. For details about the UPDATE syntax of the original openGauss, see section [UPDATE](../sql_reference/update.md).
 
 ## Syntax<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_sd8d9ff15ff6c45c9aebd16c861936c06"></a>
 
-
 Update a single table:
+
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] [ ONLY ] table_name [ partition_clause ] [ * ] [ [ AS ] alias ]
@@ -25,6 +25,7 @@ SET {column_name = { expression | DEFAULT }
 ```
 
 Update multiple tables:
+
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [/*+ plan_hint */] [IGNORE] table_list
@@ -53,9 +54,9 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   If the executed SQL statement violates the non-null constraint of the table, you can use this hint to degrade errors to warnings and use one of the following strategies based on the value of the GUC parameter **sql_ignore_strategy**:
 
- -   If **sql_ignore_strategy** is set to **ignore_null**, the UPDATE operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
+ - If **sql_ignore_strategy** is set to **ignore_null**, the UPDATE operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
 
- -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
+ - If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
 
         >[!NOTE]NOTE
       >The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
@@ -86,12 +87,12 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
   The IGNORE keyword does not support column store and cannot take effect in column-store tables.
 
-
 ## Example<a name="en-us_topic_0283137651_en-us_topic_0237122194_en-us_topic_0059778969_s23d933f56bc745e1bd819083b4e50155"></a>
 
 ### **IGNORE**
 
 To use the ignore_error hints, you need to create a database named **db_ignore** in B-compatible mode.
+
 ```
 create database db_ignore dbcompatibility 'B';
 \c db_ignore

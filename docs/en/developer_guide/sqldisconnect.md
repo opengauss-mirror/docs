@@ -31,10 +31,10 @@ SQLRETURN SQLDisconnect(SQLHDBC    ConnectionHandle);
 
 ## Return Value<a name="en-us_topic_0238272890_en-us_topic_0237120420_en-us_topic_0059778556_sec718cedec224638b6f21c68a66c165d"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272890_en-us_topic_0237120420_en-us_topic_0059778556_s62c3955fb6e942f58a6e780478d90554"></a>
 
@@ -43,4 +43,3 @@ If SQLDisconnect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the 
 ## Example<a name="en-us_topic_0238272890_en-us_topic_0237120420_en-us_topic_0059778556_sb7797f4e64534d1f85c319d5433804d4"></a>
 
 See  [Examples](example_odbc.md).
-

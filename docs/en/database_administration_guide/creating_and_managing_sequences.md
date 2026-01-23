@@ -6,8 +6,8 @@ A sequence is a database object that generates unique integers. Sequence numbers
 
 You can create a sequence for a column in either of the following methods:
 
--   Set the data type of a column to  [sequence integer](../sql_reference/numeric_types.md#en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_t5262f987c61c4a8caff8c8037e912874). A sequence will be automatically created by the database for this column.
--   Run the  **[CREATE SEQUENCE](../sql_reference/create_sequence.md)**  statement to create a sequence. Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
+- Set the data type of a column to  [sequence integer](../sql_reference/numeric_types.md#en-us_topic_0283136992_en-us_topic_0237121927_en-us_topic_0059778296_t5262f987c61c4a8caff8c8037e912874). A sequence will be automatically created by the database for this column.
+- Run the  **[CREATE SEQUENCE](../sql_reference/create_sequence.md)**  statement to create a sequence. Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
 
 ## Procedure<a name="en-us_topic_0237120310_en-us_topic_0093152908_en-us_topic_0064273680_section1199961991514"></a>
 
@@ -29,7 +29,7 @@ CREATE TABLE
 
 Method 2: Create a sequence and set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
 
-1.  Create a sequence.
+1. Create a sequence.
 
     ```
     CREATE SEQUENCE seq1 cache 100;
@@ -41,7 +41,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
     CREATE SEQUENCE
     ```
 
-2.  Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
+2. Set the initial value of the  **nextval**\('_sequence\_name_'\) function to the default value of a column.
 
     ```
     CREATE TABLE T2 
@@ -57,7 +57,7 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
     CREATE TABLE
     ```
 
-3.  Associate the sequence with a column.
+3. Associate the sequence with a column.
 
     Associates a sequence with a specified column included in a table. In this way, the sequence will be deleted when you delete its associated column or the table where the column belongs to.
 
@@ -71,8 +71,6 @@ Method 2: Create a sequence and set the initial value of the  **nextval**\('_seq
     ALTER SEQUENCE
     ```
 
-
 >[!NOTE]NOTE   
 >The preceding methods are similar, except that the second method specifies cache for the sequence. A sequence having cache defined has inconsecutive values \(such as 1, 4, and 5\) and cannot maintain the order of its values. After the dependent column of a sequence has been specified, once the sequence is deleted, the sequence of the dependent will be deleted. A sequence shared by multiple columns is not forbidden in a database, but you are not advised to do that.  
 >In the current version, you can specify the auto-increment column or set the default value of a column to  **nextval\('seqname'\)**  when defining a table. You cannot add an auto-increment column or a column whose default value is  **nextval\('seqname'\)**  to an existing table.  
-

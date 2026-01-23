@@ -6,9 +6,9 @@ Inserts new rows into a table.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
--   The operation of inserting null values is added. The insertion effect varies according to the value of sql\_mode.
--   The set_clause_values clause is added.
+- This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
+- The operation of inserting null values is added. The insertion effect varies according to the value of sql\_mode.
+- The set_clause_values clause is added.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -33,9 +33,9 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
   If the executed SQL statement violates the non-null constraint of the table, you can use this hint to degrade errors to warnings and use one of the following strategies based on the value of the GUC parameter **sql_ignore_strategy**:
 
-    -   If **sql_ignore_strategy** is set to **ignore_null**, the INSERT operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
+    - If **sql_ignore_strategy** is set to **ignore_null**, the INSERT operations on rows that violate non-null constraints are ignored and remaining data operations are performed.
 
-    -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
+    - If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
 
         >[!NOTE]NOTE
       The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
@@ -52,25 +52,25 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 
   During the execution of the INSERT statement, if the new value does not match the type of the target column, you can use this hint to degrade errors to warnings and continue the execution based on the new value type and the target column type:
 
-    -   When the new value type and column type are both numeric:
+    - When the new value type and column type are both numeric:
 
         If the new value is within the range of the column type, insert the value directly. If the new value is beyond the range of the column type, replace the value with the maximum or minimum value of the column type.
 
-    -   When the new value type and column type are both character strings:
+    - When the new value type and column type are both character strings:
 
         If the length of the new value is within the range specified by the column type, insert the value directly. If the length of the new value is beyond the range specified by the column type, the first n characters of the column type are retained.
 
-    -   When the new value type cannot be converted to the column type:
+    - When the new value type cannot be converted to the column type:
 
         Insert the default value of a column type.
 
   The IGNORE keyword does not support column store and cannot take effect in column-store tables.
 
--   **VALUES()**
+- **VALUES()**
 
     When the GUC parameter **sql\_mode** is set to **stric\_all\_tables**, NULL is inserted into all columns. Otherwise, if the corresponding column name has a default value, the default value is inserted. If the corresponding column name does not have a default value, check whether the corresponding column has the not\_null constraint. If not, NULL is inserted. If yes, the basic value of the type is inserted, for details about the basic values, see the pg\_type\_basic\_value view.
 
--   **set_clause_values**
+- **set_clause_values**
 
     It is equivalent to **insert into table_name set column_name = value, column_name = value, ...** set\_clause\_values indicates **set column_name = value**. Multiple column insertion values are separated by commas (,).
     This is an extended syntax of INSERT INTO to prevent write errors caused by disordered field sequence and value sequence during INSERT INTO. 
@@ -80,6 +80,7 @@ INSERT [/*+ plan_hint */] [IGNORE] [INTO] table_name [partition_clause] [ AS ali
 ### **IGNORE**
 
 To use the ignore_error hints, you need to create a database named **db_ignore** in B-compatible mode.
+
 ```
 create database db_ignore dbcompatibility 'B';
 \c db_ignore

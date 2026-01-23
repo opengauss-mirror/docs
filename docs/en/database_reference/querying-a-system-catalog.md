@@ -6,14 +6,13 @@ In  [System Catalogs and System Views](overview-of-system-catalogs-and-system-vi
 
 openGauss provides the following types of system catalogs and views:
 
--   System catalogs and views inherited from PG
+- System catalogs and views inherited from PG
 
     These system catalogs and views have the prefix  **PG**.
 
--   New system catalogs and views of openGauss
+- New system catalogs and views of openGauss
 
     These system catalogs and views have the prefix  **GS**.
-
 
 ## Querying Database Tables<a name="en-us_topic_0283136670_en-us_topic_0237120304_en-us_topic_0100315815_section371043012532"></a>
 
@@ -63,7 +62,7 @@ spillspacelimit
 
 You can view the running query statements in the  [PG\_STAT\_ACTIVITY](pg_stat_activity.md)  view. You can use the following methods:
 
-1.  Set the parameter  **track\_activities**  to  **on**.
+1. Set the parameter  **track\_activities**  to  **on**.
 
     ```
     SET track_activities = on;
@@ -71,7 +70,7 @@ You can view the running query statements in the  [PG\_STAT\_ACTIVITY](pg_stat_a
 
     The database collects the running information about active queries only if the parameter is set to  **on**.
 
-2.  View the running query statements. Run the following command to view the database names, users performing queries, query status, and the corresponding PIDs which are connected to the running query statements:
+2. View the running query statements. Run the following command to view the database names, users performing queries, query status, and the corresponding PIDs which are connected to the running query statements:
 
     ```
     SELECT datname, usename, state,pid FROM pg_stat_activity;
@@ -96,7 +95,7 @@ You can view the running query statements in the  [PG\_STAT\_ACTIVITY](pg_stat_a
     SELECT datname, usename, state FROM pg_stat_activity WHERE state != 'idle';
     ```
 
-3.  To cancel queries that have been running for a long time, use the  **PG\_TERMINATE\_BACKEND**  function to end sessions based on the thread ID.
+3. To cancel queries that have been running for a long time, use the  **PG\_TERMINATE\_BACKEND**  function to end sessions based on the thread ID.
 
     ```
     SELECT PG_TERMINATE_BACKEND(139834759993104);
@@ -121,6 +120,7 @@ You can view the running query statements in the  [PG\_STAT\_ACTIVITY](pg_stat_a
     >[!NOTE]NOTE 
     >
     >If the  **PG\_TERMINATE\_BACKEND**  function is used to terminate the backend threads of the current session, the  **gsql**  client will be reconnected automatically rather than be logged out. The message "The connection to the server was lost. Attempting reset: Succeeded." is returned.
+>
     >```
     >FATAL:  terminating connection due to administrator command
     >FATAL:  terminating connection due to administrator command

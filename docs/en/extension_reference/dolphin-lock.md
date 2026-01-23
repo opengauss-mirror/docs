@@ -8,44 +8,43 @@ After LOCK TABLES is used, the subsequent SQL statements are in the transaction 
 
 In addition, if you want to make the current session read-only, you can use FLUSH TABLES WITH READ LOCK to implement this function. Then, you need to use UNLOCK TABLES to manually disable this function.
 
-
-
 ## Syntax<a name="section1632155118333"></a>
 
--   Lock.
+- Lock.
+
     ```
     LOCK TABLES namelist READ/WRITE
     ```
 
--   Make the current session read-only.
+- Make the current session read-only.
+
     ```
     FLUSH TABLES WITH READ LOCK
     ```
 
--   Unlock.
+- Unlock.
+
     ```
     UNLOCK TABLES
     ```
 
 ## Parameter Description<a name="section6973139183420"></a>
 
--   **namelist**
+- **namelist**
 
     Name of the table to be locked. Multiple tables are allowed.
 
--   **READ/WRITE**
+- **READ/WRITE**
 
     Lock mode. Values:
 
-    -   **READ**
+    - **READ**
 
         Tables can be read only.
 
-    -   **WRITE**
+    - **WRITE**
 
         The holder is the only transaction accessing the table in any way.
-
-
 
 ## Examples<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 

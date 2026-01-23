@@ -8,13 +8,13 @@ The following describes the various types of SQL coverages and limitations –
 
 The following features are not supported by MOT –
 
--   Isolation – SERIALIZABLE isolation is not supported. 
--   Query Native Compilation \(JIT\)  –  Limited SQL coverage. 
--   LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
--   Capacity \(Data+Index\) is limited to available memory.
--   No full-text search index.
--   Do not support Logical copy.
--   SAVEPOINT – not supported.
+- Isolation – SERIALIZABLE isolation is not supported. 
+- Query Native Compilation \(JIT\)  –  Limited SQL coverage. 
+- LOCAL memory is limited to 1 GB. A transaction can only change data of less than 1 GB.
+- Capacity \(Data+Index\) is limited to available memory.
+- No full-text search index.
+- Do not support Logical copy.
+- SAVEPOINT – not supported.
 
 In addition, the following are detailed lists of various general limitations of MOT tables, MOT indexes, Query and DML syntax and the features and limitations of Query Native Compilation.
 
@@ -22,27 +22,27 @@ In addition, the following are detailed lists of various general limitations of 
 
 The following lists the functionality limitations of MOT tables –
 
--   Partitioning
--   AES encryption, row-level access control, dynamic data masking
--   Stream operations
--   User-defined types
--   Sub-transactions – supported only in the context of statement blocks inside stored procedures with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
+- Partitioning
+- AES encryption, row-level access control, dynamic data masking
+- Stream operations
+- User-defined types
+- Sub-transactions – supported only in the context of statement blocks inside stored procedures with the following limitation: MOT cannot recover from a Sub-Transaction containing operations other then SELECT, only read-only rollback is allowed. In such case, the parent transaction is aborted.
 
--   DML triggers
--   DDL triggers
--   Collations other than "C" or "POSIX"
+- DML triggers
+- DDL triggers
+- Collations other than "C" or "POSIX"
 
 ## Unsupported Table DDLs<a name="section1072117103819"></a>
 
--   CREATE FOREIGN table LIKE - Limited support, LIKE can any table (MOT and Heap tables), but without any options, data or indexes.
+- CREATE FOREIGN table LIKE - Limited support, LIKE can any table (MOT and Heap tables), but without any options, data or indexes.
 
--   Create table as select
--   Partition by range
--   Create table with no-logging clause
--   DEFERRABLE primary key
--   Reindex
--   Tablespace
--   Create schema with subcommands
+- Create table as select
+- Partition by range
+- Create table with no-logging clause
+- DEFERRABLE primary key
+- Reindex
+- Tablespace
+- Create schema with subcommands
 
 ## Unsupported Data Types<a name="section3158172423814"></a>
 
@@ -91,10 +91,10 @@ The following lists the functionality limitations of MOT tables –
 
 ## UnsupportedIndex DDLs and Index<a name="section143421450173815"></a>
 
--   Create index on decimal/numeric
--   Create index on nullable columns
--   Create index, index per table \> 9
--   Create index on key size \> 256
+- Create index on decimal/numeric
+- Create index on nullable columns
+- Create index, index per table \> 9
+- Create index on key size \> 256
 
     The key size includes the column size in bytes + a column additional size, which is an overhead required to maintain the index. The below table lists the column additional size for different column types.
 
@@ -176,35 +176,33 @@ The following lists the functionality limitations of MOT tables –
 
     Types that are not specified in above table, the column additional size is zero \(for instance timestamp\).
 
-
 ## Unsupported DMLs<a name="section2069095112407"></a>
 
--   Merge into
--   Lock table
--   Copy from table
--   Upsert
+- Merge into
+- Lock table
+- Copy from table
+- Upsert
 
 ## Unsupported JIT features (Native Compilation and Execution)<a name="section4815162910417"></a>
 
--   JIT SP (Stored Procedures Compilation) – available to SPs accessing only MOT tables.
--   The query refers to more than two tables
--   The query has any one of the following attributes –
-    -   Aggregation on non-primitive types
-    -   Window functions
-    -   Sub-query sub-links
-    -   Distinct-ON modifier \(distinct clause is from DISTINCT ON\)
-    -   Recursive \(WITH RECURSIVE was specified\)
-    -   Modifying CTE \(has INSERT/UPDATE/DELETE in WITH\)
-
+- JIT SP (Stored Procedures Compilation) – available to SPs accessing only MOT tables.
+- The query refers to more than two tables
+- The query has any one of the following attributes –
+    - Aggregation on non-primitive types
+    - Window functions
+    - Sub-query sub-links
+    - Distinct-ON modifier \(distinct clause is from DISTINCT ON\)
+    - Recursive \(WITH RECURSIVE was specified\)
+    - Modifying CTE \(has INSERT/UPDATE/DELETE in WITH\)
 
 In addition, the following clauses disqualify a query from lite execution –
 
--   Returning list
--   Group By clause
--   Grouping sets
--   Having clause
--   Windows clause
--   Distinct clause
--   Sort clause that does not conform to native index order - is supported, however all sort columns must be present in the SELECT.
--   Set operations
--   Constraint dependencies
+- Returning list
+- Group By clause
+- Grouping sets
+- Having clause
+- Windows clause
+- Distinct clause
+- Sort clause that does not conform to native index order - is supported, however all sort columns must be present in the SELECT.
+- Set operations
+- Constraint dependencies

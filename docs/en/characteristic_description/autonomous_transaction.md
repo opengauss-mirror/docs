@@ -26,13 +26,12 @@ None
 
 ## Constraints<a name="section879914581414"></a>
 
--   A trigger function does not support autonomous transactions.
--   In the autonomous transaction block of a function or stored procedure, static SQL statements do not support variable transfer.
--   Autonomous transactions do not support nesting.
--   A function containing an autonomous transaction does not support the return value of parameter transfer.
--   A stored procedure or function that contains an autonomous transaction does not support exception handling.
+- A trigger function does not support autonomous transactions.
+- In the autonomous transaction block of a function or stored procedure, static SQL statements do not support variable transfer.
+- Autonomous transactions do not support nesting.
+- A function containing an autonomous transaction does not support the return value of parameter transfer.
+- A stored procedure or function that contains an autonomous transaction does not support exception handling.
 
 ## Dependencies<a name="section1863816308477"></a>
 
 None
-

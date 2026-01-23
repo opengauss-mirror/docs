@@ -38,9 +38,6 @@ DO expr[,expr...];
 
   Specifies expressions. Multiple expressions are separated by commas (,). For details, see [Expressions](../sql_reference/simple_expressions.md).
 
-  
-
-
 ## Examples<a name="en-us_topic_0283137438_en-us_topic_0237122132_en-us_topic_0059778658_s414adb8f7846482184cbbd960d4adfcf"></a>
 
 ```

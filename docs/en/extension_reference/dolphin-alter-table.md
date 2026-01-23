@@ -6,12 +6,12 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
 
 ## Precautions<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s8ea536d5b8ff459e9e3614e35f53bc2a"></a>
 
--   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
--   If a statement contains multiple subcommands, the DROP INDEX and RENAME INDEX commands are executed first. The two commands have the same priority.
+- This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
+- If a statement contains multiple subcommands, the DROP INDEX and RENAME INDEX commands are executed first. The two commands have the same priority.
 
 ## Syntax<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_s58bdce220c9f4292ba9af919b04ad25c"></a>
 
--   **ALTER TABLE** modifies the definition of a table.
+- **ALTER TABLE** modifies the definition of a table.
 
     ```
     ALTER TABLE [ IF EXISTS ] { table_name [*] | ONLY table_name | ONLY ( table_name ) }
@@ -31,34 +31,34 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
         | MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP
     ```
 
--   Recreate a table.
+- Recreate a table.
 
     ```
     ALTER TABLE table_name FORCE;
     ```
 
--   Rename a table. The renaming does not affect stored data.
+- Rename a table. The renaming does not affect stored data.
 
     ```
     ALTER TABLE [ IF EXISTS ] table_name 
         RENAME { TO | AS } new_table_name;
     ```
 
--   Add the ON UPDATE attribute to the timestamp column of the table.
+- Add the ON UPDATE attribute to the timestamp column of the table.
 
     ```sql
     ALTER TABLE table_name
         MODIFY column_name column_type ON UPDATE CURRENT_TIMESTAMP;
     ```
 
--   Delete the ON UPDATE attribute from the timestamp column of the table.
+- Delete the ON UPDATE attribute from the timestamp column of the table.
 
     ```sql
     ALTER TABLE table_name
         MODIFY column_name column_type;
     ```
 
--   **ADD table_indexclause**
+- **ADD table_indexclause**
 
     Add an index to the table.
 
@@ -82,8 +82,8 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
     
     ```
     index_option:{
-    	  COMMENT 'string'
-    	| index_type
+       COMMENT 'string'
+     | index_type
     }
     ```
     
@@ -112,7 +112,7 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
   Renames an index of a table.
 
 >[!NOTE]NOTE
-
+>
 >For details about the involved parameters, see [ALTER TABLE](../sql_reference/alter_table.md).
 
 ## Examples<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_se4f9dc97861c410bb51554bb58bcd76d"></a>

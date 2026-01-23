@@ -42,6 +42,7 @@ Compared with the original openGauss, Dolphin modifies the character types as fo
 </table>
 
 Example:
+
 ```
 --Create a table.
 openGauss=# CREATE TABLE char_type_t1 

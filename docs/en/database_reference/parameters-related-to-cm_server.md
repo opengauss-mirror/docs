@@ -38,8 +38,8 @@
 
 **Value range:**  a string You need to restart cm\_server for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
 
 **Default value**:  **/opt/huawei/snas/bin/snas\_cm\_cmd**
 
@@ -265,8 +265,8 @@ Default value:  **43200**
 
 **Value range:** **0**  or  **1**. You need to restart cm\_server for the modification to take effect. This parameter cannot be enabled for a non-DR database instance. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   **0**: disabled.
--   **1**: enabled.
+- **0**: disabled.
+- **1**: enabled.
 
 **Default value**:  **0**
 
@@ -276,8 +276,8 @@ Default value:  **43200**
 
 **Value range**: Boolean You need to restart cm\_server for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   **0**: disabled.
--   **1**: enabled.
+- **0**: disabled.
+- **1**: enabled.
 
 **Default value**:  **off**
 
@@ -287,9 +287,9 @@ Default value:  **43200**
 
 **Value range**: an integer ranging from 0 to 2 You need to restart cm\_server for the modification to take effect. This parameter cannot be enabled for a non-DR database instance. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   **0**  indicates the database instance for which the DR relationship is not established.
--   **1**  indicates a Dorado-based database instance.
--   **2**  indicates a streaming-based database instance.
+- **0**  indicates the database instance for which the DR relationship is not established.
+- **1**  indicates a Dorado-based database instance.
+- **2**  indicates a streaming-based database instance.
 
 **Default value**:  **0**
 
@@ -299,13 +299,12 @@ Default value:  **43200**
 
 **Value range**: Boolean After this function is enabled, the SSL certificate is used to encrypt communication. Any modification of this parameter takes effect only after a restart. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   **on**  indicates that SSL is enabled.
--   **off**  indicates that SSL is disabled.
--   **Default value**:  **off**
+- **on**  indicates that SSL is enabled.
+- **off**  indicates that SSL is disabled.
+- **Default value**:  **off**
 
     >[!TIP]NOTICE 
     >To ensure security, you are advised not to disable it. After this function is disabled, the CM  **does not**  use encrypted communication and all information is transmitted in plaintext, which may bring security risks such as eavesdropping, tampering, and spoofing.
-
 
 ## ssl\_cert\_expire\_alert\_threshold<a name="section12984174210"></a>
 

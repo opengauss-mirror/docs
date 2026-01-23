@@ -74,4 +74,3 @@
 </table>
 
 The usual interpretation of the  **amproclefttype**  and  **amprocrighttype**  columns is that they identify the left and right input types of the operator\(s\) that a particular support procedure supports. For some access methods, these match the input data type\(s\) of the support procedure itself; for others not. There is a notion of "default" support procedures for an index, which are those with  **amproclefttype**  and  **amprocrighttype**  both equal to the index opclass's  **opcintype**. 
-

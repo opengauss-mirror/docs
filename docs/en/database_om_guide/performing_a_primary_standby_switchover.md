@@ -5,18 +5,19 @@
 During openGaussdatabase  running, the database administrator needs to manually perform an primary/standby switchover on the database node. For example, after a primary/standby database node failover, you need to restore the original primary/standby roles, or you need to manually perform a primary/standby switchover due to a hardware fault.  A cascaded standby server cannot be directly switched to a primary server. You must perform a switchover or failover to change the cascaded standby server to a standby server, and then to a primary server.
 
 >[!NOTE]NOTE 
->-   The primary/standby switchover is a maintenance operation. Ensure that the openGaussdatabase  is normal and perform the switchover after all services are complete.
->-   When the ultimate RTO is enabled, cascaded standby servers are not supported. The standby server cannot be connected when the ultimate RTO is enabled. As a result, the cascaded standby server cannot synchronize data.
+>
+>- The primary/standby switchover is a maintenance operation. Ensure that the openGaussdatabase  is normal and perform the switchover after all services are complete.
+>- When the ultimate RTO is enabled, cascaded standby servers are not supported. The standby server cannot be connected when the ultimate RTO is enabled. As a result, the cascaded standby server cannot synchronize data.
 
 ## Procedure<a name="en-us_topic_0283140544_en-us_topic_0237088791_section109254251128"></a>
 
-1.  Log in to any database node as the OS user  **omm**  and run the following command to check the primary/standby status:
+1. Log in to any database node as the OS user  **omm**  and run the following command to check the primary/standby status:
 
     ```
     gs_om -t status --detail
     ```
 
-2.  Log in to the standby node to be switched to the primary node as the OS user  **omm**  and run the following command:
+2. Log in to the standby node to be switched to the primary node as the OS user  **omm**  and run the following command:
 
     ```
     gs_ctl switchover -D /home/omm/cluster/dn1/
@@ -27,12 +28,11 @@ During openGaussdatabase  running, the database administrator needs to manually 
     >[!TIP]NOTICE 
     >For the same database, you cannot perform a new primary/standby switchover if the previous switchover has not completed. If a switchover is performed when the host thread is processing services, the thread cannot stop, and switchover timeout will be reported. Actually, the switchover is ongoing in the background and will complete after the thread finishes service processing and stops. For example, when a host is deleting a large partitioned table, it may fail to respond to the switchover request.
 
-3.  After the switchover is successful, run the following command to record the information about the current primary and standby nodes:
+3. After the switchover is successful, run the following command to record the information about the current primary and standby nodes:
 
     ```
     gs_om -t refreshconf
     ```
-
 
 ## Examples<a name="en-us_topic_0283140544_en-us_topic_0237088791_en-us_topic_0059779253_sf72decb8d5ab4d65a5fb55e46b20257f"></a>
 
@@ -117,15 +117,14 @@ If a switchover fails, troubleshoot the problem according to the log information
 
 Exception handling rules are as follows:
 
--   A switchover takes a long time under high service loads. In this case, no further operation is required.
--   When standby nodes are being built, a primary node can be demoted to a standby node only after sending logs to one of the standby nodes. As a result, the primary/standby switchover takes a long time. In this case, no further operation is required. However, you are not advised to perform a primary/standby switchover during the build process.
--   During a switchover, due to network faults and high disk usage, it is possible that the primary and standby instances are disconnected, or two primary nodes exist in a single pair. In this case, perform the following steps:
+- A switchover takes a long time under high service loads. In this case, no further operation is required.
+- When standby nodes are being built, a primary node can be demoted to a standby node only after sending logs to one of the standby nodes. As a result, the primary/standby switchover takes a long time. In this case, no further operation is required. However, you are not advised to perform a primary/standby switchover during the build process.
+- During a switchover, due to network faults and high disk usage, it is possible that the primary and standby instances are disconnected, or two primary nodes exist in a single pair. In this case, perform the following steps:
 
-    >![](public_sys-resources/icon-warning.gif) **WARNING:** 
+    >[!WARNING]WARNING 
     >After two primary nodes appear, perform the following steps to restore the normal primary/standby state: Otherwise, data loss may occur.
 
-
-1.  Run the following commands to query the current instance status of the database:
+1. Run the following commands to query the current instance status of the database:
 
     ```
     gs_om -t status --detail
@@ -133,23 +132,22 @@ Exception handling rules are as follows:
 
     The query result shows that the status of two instances is  **Primary**, which is abnormal.
 
-2.  Determine the node that functions as the standby node and run the following command on the node to stop the service:
+2. Determine the node that functions as the standby node and run the following command on the node to stop the service:
 
     ```
     gs_ctl stop -D /home/omm/cluster/dn1/
     ```
 
-3.  Run the following command to start the standby node in standby mode:
+3. Run the following command to start the standby node in standby mode:
 
     ```
     gs_ctl start -D /home/omm/cluster/dn1/ -M standby
     ```
 
-4.  Save the information about the primary and standby nodes in the database.
+4. Save the information about the primary and standby nodes in the database.
 
     ```
     gs_om -t refreshconf
     ```
 
-5.  Check the database status and ensure that the instance status is restored.
-
+5. Check the database status and ensure that the instance status is restored.

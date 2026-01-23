@@ -346,9 +346,9 @@ This section describes  **java.sql.PreparedStatement**, the API for preparing st
 </table>
 
 >[!NOTE]NOTE 
->-   Execute  **addBatch\(\)**  and  **execute\(\)**  only after running  **clearBatch\(\)**.
->-   Batch is not cleared by calling  **executeBatch\(\)**. Clear batch by explicitly calling  **clearBatch\(\)**.
->-   After bounded variables of a batch are added, if you want to reuse these values, you do not need to use  **set\*\(\)**  again. Instead, add a batch.
->-   The following methods are inherited from  **java.sql.Statement**:  **close**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getConnection**,  **getResultSet**,  **getUpdateCount**,  **isClosed**,  **setMaxRows**, and  **setFetchSize**.
->-   The  **executeLargeUpdate\(\)**  method can only be used in JDBC 4.2 or later.
-
+>
+>- Execute  **addBatch\(\)**  and  **execute\(\)**  only after running  **clearBatch\(\)**.
+>- Batch is not cleared by calling  **executeBatch\(\)**. Clear batch by explicitly calling  **clearBatch\(\)**.
+>- After bounded variables of a batch are added, if you want to reuse these values, you do not need to use  **set\*\(\)**  again. Instead, add a batch.
+>- The following methods are inherited from  **java.sql.Statement**:  **close**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getConnection**,  **getResultSet**,  **getUpdateCount**,  **isClosed**,  **setMaxRows**, and  **setFetchSize**.
+>- The  **executeLargeUpdate\(\)**  method can only be used in JDBC 4.2 or later.

@@ -178,5 +178,3 @@ Compared with the original openGauss, Dolphin has two new logical operators:
          f
   (1 row)
   ```
-
-  

@@ -7,13 +7,13 @@ As mentioned above, AI4DB is primarily used for autonomous O&M and management of
 
 Description of key components in the figure:
 
--   DBMind Service: The background service of DBMind, used for periodic offline computations, including slow SQL root cause analysis and time series forecasting.
--   Prometheus-server: The server responsible for storing Prometheus monitoring metrics.
--   metadatabase: After offline computations are complete, DBMind stores the results here. Supported databases include openGauss, SQLite, and others.
--   client: The client used to retrieve offline computation results from DBMind, currently only available as a command-line interface (CLI) client. If databases like openGauss are used to store DBMind's computation results, users can configure visualization tools like Grafana for result visualization.
--   openGauss-exporter: Collects monitoring metrics from openGauss database nodes for use by DBMind's calculations.
--   node-exporter: An exporter provided by Prometheus to monitor system metrics of a node, such as CPU and memory usage.
--   reprocessing-exporter: Processes the metrics collected by Prometheus, for example, calculating CPU utilization.
+- DBMind Service: The background service of DBMind, used for periodic offline computations, including slow SQL root cause analysis and time series forecasting.
+- Prometheus-server: The server responsible for storing Prometheus monitoring metrics.
+- metadatabase: After offline computations are complete, DBMind stores the results here. Supported databases include openGauss, SQLite, and others.
+- client: The client used to retrieve offline computation results from DBMind, currently only available as a command-line interface (CLI) client. If databases like openGauss are used to store DBMind's computation results, users can configure visualization tools like Grafana for result visualization.
+- openGauss-exporter: Collects monitoring metrics from openGauss database nodes for use by DBMind's calculations.
+- node-exporter: An exporter provided by Prometheus to monitor system metrics of a node, such as CPU and memory usage.
+- reprocessing-exporter: Processes the metrics collected by Prometheus, for example, calculating CPU utilization.
 
 ## Environment Setup<a name="section14906112131913"></a>
 
@@ -25,10 +25,8 @@ pip install requirements-x86.txt
 
 If you haven't installed all the necessary dependencies, the system will prompt you to install them when you execute the  **gs\_dbmind**  command. Note that the file lists the third-party dependencies required by DBMind, and if there are conflicts with third-party packages in your environment, you should handle them based on your specific situation.
 
--   **[DBMind Mode Explanation](dbmind_mode.md)**  
+- **[DBMind Mode Explanation](dbmind_mode.md)**  
 
--   **[Supporting Components of DBMind](prometheus_exporter_overview.md)**  
+- **[Supporting Components of DBMind](prometheus_exporter_overview.md)**  
 
--   **[DBMind AI Sub_functions](ai_sub_functions_of_the_dbmind.md)**  
-
-
+- **[DBMind AI Sub_functions](ai_sub_functions_of_the_dbmind.md)**  

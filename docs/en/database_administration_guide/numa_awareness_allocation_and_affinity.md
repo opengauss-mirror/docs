@@ -13,4 +13,3 @@ To facilitate quick operation and make efficient use of NUMA nodes, MOT allocate
 **Summary**
 
 MOT has a smart memory control module that has preallocated memory pools intended for various types of memory objects. This smart memory control improves performance, reduces locks and ensures stability. The allocation of the memory objects of a transaction is always NUMA-local, ensuring optimal performance for CPU memory access and resulting in low latency and reduced contention. Deallocated objects go back to the memory pool. Minimized use of OS malloc functions during transactions circumvents unnecessary locks.
-

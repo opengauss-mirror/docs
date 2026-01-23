@@ -14,7 +14,7 @@ The OpenSSL component has been installed in the Linux environment.
 
 ### Generating an Automatic Authentication Certificate<a name="en-us_topic_0237121096_en-us_topic_0059777789_section2972238310327"></a>
 
-1.  Establish a CA environment.
+1. Establish a CA environment.
 
     ```
     -- Suppose that user omm exists, and the CA path is test.
@@ -38,7 +38,7 @@ The OpenSSL component has been installed in the Linux environment.
     --The CA environment has been established.
     ```
 
-2.  Generate a root private key.
+2. Generate a root private key.
 
     ```
     --Generate a CA private key.
@@ -53,7 +53,7 @@ The OpenSSL component has been installed in the Linux environment.
     Verifying - Enter pass phrase for demoCA/private/cakey.pem:
     ```
 
-3.  Generate a root certificate request file.
+3. Generate a root certificate request file.
 
     ```
     --Generate a CA root certificate application file named careq.pem.
@@ -85,7 +85,7 @@ The OpenSSL component has been installed in the Linux environment.
     An optional company name []:
     ```
 
-4.  Generate a self-signed root certificate.
+4. Generate a self-signed root certificate.
 
     ```
     --When generating the root certificate, modify the openssl.cnf file and set basicConstraints to CA:TRUE.
@@ -128,7 +128,7 @@ The OpenSSL component has been installed in the Linux environment.
     --A CA root certificate named demoCA/cacert.pem has been issued.
     ```
 
-5.  Generate a private key for the server certificate.
+5. Generate a private key for the server certificate.
 
     ```
     --Generate a private key file named server.key.
@@ -143,7 +143,7 @@ The OpenSSL component has been installed in the Linux environment.
     --Confirm the protection password for the server private key Test@123 again.
     ```
 
-6.  Generate a server certificate request file.
+6. Generate a server certificate request file.
 
     ```
     --Generate a server certificate request file server.req.
@@ -173,7 +173,7 @@ The OpenSSL component has been installed in the Linux environment.
     An optional company name []:
     ```
 
-7.  Generate a server certificate.
+7. Generate a server certificate.
 
     ```
     --When generating the server certificate or client certificate, modify the openssl.cnf file and set basicConstraints to CA:FALSE.
@@ -228,7 +228,7 @@ The OpenSSL component has been installed in the Linux environment.
     --After the password is encrypted using gs_guc, two private key password protection files server.key.cipher and server.key.rand are generated.
     ```
 
-8.  Generate the client certificate and private key.
+8. Generate the client certificate and private key.
 
     Methods and requirements for generating client certificates and private keys are the same as that for server certificates and private keys.
 
@@ -257,7 +257,7 @@ The OpenSSL component has been installed in the Linux environment.
     openssl pkcs8 -topk8 -outform DER -in client.key -out client.key.pk8 -nocrypt
     ```
 
-9.  Generate a CRL.
+9. Generate a CRL.
 
     If the CRL is required, you can generate it by following the following procedure:
 
@@ -286,23 +286,23 @@ Currently, openGauss supports only the X509v3 certificate in PEM format.
 
 ### Procedure<a name="en-us_topic_0237121097_en-us_topic_0059778589_section2135369514921"></a>
 
-1.  Prepare for a certificate and a key.
+1. Prepare for a certificate and a key.
 
     Conventions for configuration file names on the server:
 
-    -   Certificate name: server.crt
-    -   Key name: server.key
-    -   Key password and encrypted file: server.key.cipher and server.key.rand
+    - Certificate name: server.crt
+    - Key name: server.key
+    - Key password and encrypted file: server.key.cipher and server.key.rand
 
     Conventions for configuration file names on the client:
 
-    -   Certificate name: client.crt
-    -   Key name: client.key
-    -   Key password and encrypted file: client.key.cipher and client.key.rand
-    -   Certificate name: cacert.pem
-    -   CRL file name: sslcrl-file.crl
+    - Certificate name: client.crt
+    - Key name: client.key
+    - Key password and encrypted file: client.key.cipher and client.key.rand
+    - Certificate name: cacert.pem
+    - CRL file name: sslcrl-file.crl
 
-2.  Create a compressed package.
+2. Create a compressed package.
 
     Package name: db-cert-replacement.zip
 
@@ -310,18 +310,18 @@ Currently, openGauss supports only the X509v3 certificate in PEM format.
 
     Package file list: server.crt, server.key, server.key.cipher, server.key.rand, client.crt, client.key, client.key.cipher, client.key.rand, cacert.pem If you need to configure the CRL, the list must contain sslcrl-file.crl.
 
-3.  Invoke the certificate replacement interface to replace a certificate.
-    1.  Upload the prepared package  **db-cert-replacement.zip**  to any path of an openGauss user.
+3. Invoke the certificate replacement interface to replace a certificate.
+    1. Upload the prepared package  **db-cert-replacement.zip**  to any path of an openGauss user.
 
         For example: /home/_xxxx_/db-cert-replacement.zip
 
-    2.  Run the following command to perform the replacement:
+    2. Run the following command to perform the replacement:
 
         ```
         gs_om -t cert --cert-file= /home/xxxx/db-cert-replacement.zip
         ```
 
-4.  Restart the openGauss.
+4. Restart the openGauss.
 
     ```
     gs_om -t stop 
@@ -330,6 +330,3 @@ Currently, openGauss supports only the X509v3 certificate in PEM format.
 
     >[!NOTE]NOTE   
     >Certificates can be rolled back to the version before the replacement. You can run the  **gs\_om -t cert --rollback**  command to remotely invoke the interface or  **gs\_om -t cert --rollback -L**  to locally invoke the interface. The certificate will be rolled back to the latest version that was successfully replaced.  
-
-
-

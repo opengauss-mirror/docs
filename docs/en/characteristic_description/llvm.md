@@ -27,4 +27,3 @@ None
 ## Dependencies<a name="section20491151513592"></a>
 
 It depends on the LLVM open-source component. Currently, the open-source version 10.0.0 is used.
-

@@ -48,4 +48,3 @@ This system catalog is accessible only to system administrators.
 </table>
 
 Each row of  **PG\_LARGEOBJECT**  holds data for one page of a large object, beginning at byte offset \(**pageno \* LOBLKSIZE**\) within the object. The implementation allows sparse storage: pages might be missing, and might be shorter than  **LOBLKSIZE**  bytes even if they are not the last page of the object. Missing regions within a large object read as zeroes.
-

@@ -56,7 +56,7 @@ The possible cause is that the JDK version is incompatible with the system. The 
 
 If the connection configuration is incorrect, perform the following steps:
 
-1.  Check whether the database is started and use GSQL to connect to the database. When connecting to the database using GSQL, do not use user  **omm**.
+1. Check whether the database is started and use GSQL to connect to the database. When connecting to the database using GSQL, do not use user  **omm**.
 
     Run the following command to start the database:
 
@@ -64,7 +64,7 @@ If the connection configuration is incorrect, perform the following steps:
     gs_om -t start
     ```
 
-2.  Check the whitelist configuration. Perform the following operations and ensure that no other content of the configuration file is modified.
+2. Check the whitelist configuration. Perform the following operations and ensure that no other content of the configuration file is modified.
     
     Modify the  **pg\_hba.conf**  file of the database.
 
@@ -77,11 +77,12 @@ If the connection configuration is incorrect, perform the following steps:
 
        >[!NOTE]NOTE 
        >You can view the  _GS\_HOME_  address in the configuration file during the installation.
+>
        >```
        ><PARAM name="dataNode1" value="/gaussdb/data/db1"/>
        >```
 
-    Enter  **:90**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, add the following content to the  **pg\_hba.conf**  file, press  **ESC**  to exit the  **INSERT**  mode, enter** :wq**, and press  **Enter**  to save the change.
+    Enter  **:90**  to find the corresponding location, enter  **i**  to switch to the  **INSERT**  mode, add the following content to the  **pg\_hba.conf**  file, press  **ESC**  to exit the  **INSERT**  mode, enter**:wq**, and press  **Enter**  to save the change.
     
        ```
        # IPv4 local connections:
@@ -121,8 +122,7 @@ If the connection configuration is incorrect, perform the following steps:
         gs_ctl restart -D /gaussdb/data/db1/
         ```
 
-
-3.  Check whether the VM network is normal.
+3. Check whether the VM network is normal.
     a.  In the Linux operating system, run the  **ifconfig**  command to check whether the two network NICs are started normally.
 
         ```
@@ -170,8 +170,6 @@ If the connection configuration is incorrect, perform the following steps:
         ```
 
     You can press  **Ctrl**+**C**  to stop the output.
-
-
 
 **6. During the installation of openGauss, when running gs_ctl, an error is reported that the program path cannot be found or so file is missing. What should I do?**
 

@@ -6,8 +6,8 @@ Lists all schemas or queries schemas by condition.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   The B-compatible SHOW DATABASES command is used to query databases, and the openGauss SHOW DATABASES command is used to query schemas.
--   Schemas are displayed by name.
+- The B-compatible SHOW DATABASES command is used to query databases, and the openGauss SHOW DATABASES command is used to query schemas.
+- Schemas are displayed by name.
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

@@ -38,7 +38,7 @@ SHOW { INDEX | INDEXES | KEYS }
 | Seq_in_index  | Sequence number of the index column in the index                                        |
 | Column_name   | Column name of the index column                                                |
 | Collation     | The value can be **A** (ascending order by default), **D** (descending order), or **NULL** (indexes cannot be sorted).    |
-| Cardinality   | Calculated based on pg\_statistic.stadistinct and pg\_class.reltuples:<br>stadistinct > 0: stadistinct<br>stadistinct = 0: NULL<br>stadistinct < 0: reltuples * stadistinct * -1 |
+| Cardinality   | Calculated based on pg\_statistic.stadistinct and pg\_class.reltuples:<br>stadistinct > 0: stadistinct<br>stadistinct = 0: NULL<br>stadistinct < 0: reltuples *stadistinct* -1 |
 | Sub_part      | Index prefix If the column is only partially indexed, the value is the number of index characters. If the entire column is indexed, the value is NULL. Currently, the prefix index is not supported. The value is NULL.                                        |
 | Packed        | How to pack the key value. Specify pack_keys when creating a table. Otherwise, NULL is returned. Not supported currently. The value is NULL.|
 | Null          | If the value may contain NULL, the value is **YES**. Otherwise, the value is **''**.                             |

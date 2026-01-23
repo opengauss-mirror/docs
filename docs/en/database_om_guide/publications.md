@@ -13,4 +13,3 @@ Each publication can have multiple subscribers.
 A publication is created by running the  **CREATE PUBLICATION**  command and can be altered or dropped by running the corresponding commands.
 
 Tables can be added or removed dynamically by running the  **ALTER PUBLICATION**  command. ADD TABLE and DROP TABLE operations are transactional. Therefore, once the transaction is committed, table replication will start or stop using a proper snapshot.
-

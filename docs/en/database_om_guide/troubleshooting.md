@@ -2,11 +2,11 @@
 
 If the upgrade fails, perform the following operations:
 
-1.  Check whether the environment is normal.
+1. Check whether the environment is normal.
 
     For example, check whether the disk is full, the network is faulty, the upgrade software package is correct, or the version number is correct. After the fault is rectified, perform the upgrade again.
 
-2.  If no environment problem is found or the re-upgrade fails, contact technical support for fault locating.
+2. If no environment problem is found or the re-upgrade fails, contact technical support for fault locating.
 
     Run the following command to collect logs:
 

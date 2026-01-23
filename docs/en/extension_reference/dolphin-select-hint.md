@@ -12,32 +12,31 @@ set_var(param = value)
 
 ## Parameters<a name="section41303128143838"></a>
 
-
--   **param**
+- **param**
 
     Parameter name.
 
     Currently, the following parameters can be set and take effect by using hints:
-    -   Boolean
+    - Boolean
 
         enable\_bitmapscan, enable\_hashagg, enable\_hashjoin, enable\_indexscan, enable\_indexonlyscan, enable\_material, enable\_mergejoin, enable\_nestloop, enable\_index\_nestloop, enable\_seqscan, enable\_sort, enable_incremental_sort, enable\_tidscan, partition\_iterator\_elimination, partition\_page\_estimation, enable\_functional\_dependency, var\_eq\_const\_selectivity,
 
-    -   Integer
+    - Integer
 
         query\_dop
 
-    -   Floating point
+    - Floating point
 
         cost\_weight\_index, default\_limit\_rows, seq\_page\_cost, random\_page\_cost, cpu\_tuple\_cost, cpu\_index\_tuple\_cost, cpu\_operator\_cost, effective\_cache\_size
         
-    -   Enumeration
+    - Enumeration
     
         try_vector_engine_strategy
 
-    -   Character string
+    - Character string
 
         dolphin.optimizer\_switch
 
--   **value**
+- **value**
 
     Value of a parameter.

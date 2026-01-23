@@ -22,11 +22,10 @@ None.
 
 ## Constraints<a name="section163509419432"></a>
 
--   The database is normal, and the client can be connected properly.
--   An environment running Python 3.6 or later is available.
--   The information about slow SQL statements is obtained from the workload diagnosis report \(WDR\). In the database WDR, slow SQL statements are marked. The GUC parameter  **track\_stmt\_stat\_level**  is enabled by default. Otherwise, you need to manually enable it. Generally, the  **track\_stmt\_stat\_level**  is set to  **'off, L0'**. Higher levels will affect the performance. Data collection is implemented by the Prometheus solution. Therefore, you need to configure the Prometheus data collection platform. This feature focuses on algorithms and obtains metric sequence information from Prometheus.
+- The database is normal, and the client can be connected properly.
+- An environment running Python 3.6 or later is available.
+- The information about slow SQL statements is obtained from the workload diagnosis report \(WDR\). In the database WDR, slow SQL statements are marked. The GUC parameter  **track\_stmt\_stat\_level**  is enabled by default. Otherwise, you need to manually enable it. Generally, the  **track\_stmt\_stat\_level**  is set to  **'off, L0'**. Higher levels will affect the performance. Data collection is implemented by the Prometheus solution. Therefore, you need to configure the Prometheus data collection platform. This feature focuses on algorithms and obtains metric sequence information from Prometheus.
 
 ## Dependencies<a name="section10471835443"></a>
 
 None.
-

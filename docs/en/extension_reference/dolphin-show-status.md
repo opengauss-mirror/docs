@@ -4,7 +4,6 @@
 
 SHOW STATUS displays the data of all values in the current statistics status of the system. This statement does not require any permissions. It only requires the ability to connect to the server.
 
-
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
 N/A
@@ -15,7 +14,6 @@ N/A
 SHOW [GLOBAL | SESSION] STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
-
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 

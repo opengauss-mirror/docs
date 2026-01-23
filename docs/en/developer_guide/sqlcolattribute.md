@@ -67,10 +67,10 @@ SQLRETURN SQLColAttibute(SQLHSTMT        StatementHandle,
 
 ## Return Value<a name="en-us_topic_0238272888_en-us_topic_0237120418_en-us_topic_0059778558_s04cf966285614f118de0fabce2eaeb20"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272888_en-us_topic_0237120418_en-us_topic_0059778558_s06211cd9d00f43f098b0db65a182c4f4"></a>
 
@@ -79,4 +79,3 @@ If SQLColAttribute returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, th
 ## Example<a name="en-us_topic_0238272888_en-us_topic_0237120418_en-us_topic_0059778558_sa0124e0144e742c989a8b2f0e52adfd6"></a>
 
 See  [Examples](example_odbc.md).
-

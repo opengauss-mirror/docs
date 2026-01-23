@@ -16,17 +16,17 @@ As the data scale and data nodes increase, data replication between nodes hinder
 
 The Huawei-developed common component UWAL is used to accelerate streaming replication. UWAL is a log service based on high-speed storage media and network media. It provides:
 
--   A large-granularity storage unit that supports only appending and transfers I/O operations to the mapped software protocol stack of a storage block, thereby reducing end-to-end latency of the storage system and CPU loads of storage software.
--   Unified northbound interfaces, unified multi-layer storage media, and compatibility with multiple network communication mechanisms.
-    -   One-way high-performance log service based on Non-Volatile Memory express \(NVMe\) + remote direct memory access \(RDMA\). Memory-like media will be planned in the long run to further improve performance.
+- A large-granularity storage unit that supports only appending and transfers I/O operations to the mapped software protocol stack of a storage block, thereby reducing end-to-end latency of the storage system and CPU loads of storage software.
+- Unified northbound interfaces, unified multi-layer storage media, and compatibility with multiple network communication mechanisms.
+    - One-way high-performance log service based on Non-Volatile Memory express \(NVMe\) + remote direct memory access \(RDMA\). Memory-like media will be planned in the long run to further improve performance.
 
-    -   Large-capacity and low-cost log service based on block devices.
+    - Large-capacity and low-cost log service based on block devices.
 
--   Distributed features such as high availability \(multi-copy\) and strong consistency.
+- Distributed features such as high availability \(multi-copy\) and strong consistency.
 
--   A cluster manager \(CM\) that provides cluster management functions. This module:
-    -   Pushes global views and supports fault recovery.
-    -   Supports dynamic scaling and load balancing.
+- A cluster manager \(CM\) that provides cluster management functions. This module:
+    - Pushes global views and supports fault recovery.
+    - Supports dynamic scaling and load balancing.
 
 The UWAL feature combines the features of the database and new hardware to ensure database durability, effectively reduce the transaction submission latency, and improve database performance. RDMA releases the CPU computing power used in TCP communication transmission, and the remote memory directly accesses the network adapter and transmits WAL records through one-way operations to the persistent storage device of the remote standby database. The latency is lower than that of transmitting WAL records through the TCP protocol stack, improving the active/standby replication efficiency. This method leverages the CPU offloading, kernel bypass, and zero copy advantages of RDMA.
 
@@ -41,4 +41,3 @@ None
 ## Dependency<a name="section12798194673710"></a>
 
 None
-

@@ -73,4 +73,3 @@
 </table>
 
 **rngsubopc**  \(together with  **rngcollation**, if the element type is collatable\) determines the sort ordering used by the range type.  **rngcanonical**  is used when the element type is discrete.
-

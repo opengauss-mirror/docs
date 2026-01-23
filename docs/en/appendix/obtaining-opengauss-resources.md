@@ -6,14 +6,14 @@ openGauss provides online resources that contain a lot of useful information, su
 
 [Our openGauss website](https://opengauss.org/zh/)  provides information about openGauss download, documents, open source community, certification, knowledge graph, security, and activities.
 
--   Download: You can download the openGauss software package, connection tools, and support tools. The panorama of openGauss support tools is provided.
--   Docs: describe the openGauss database, including the legal statement, release notes, product description, technical white paper, compilation guide, quick start, installation guide, administrator guide, developer guide, and tool reference. These documents also describe the architecture, functions, features, and usage of openGauss. A large number of examples are provided in the documents for your reference.
--   Community: shows how to contribute to the open source community, as well as the community organization structure, and online communication methods.
--   Connect: helps users tune in news, activities, videos, summits, and blogs related to openGauss.
--   Certification: introduces the openGauss certification system and serves an entry for querying training information and certificates.
--   Security: introduces the vulnerability management process of openGauss and releases security notices and CVEs.
--   Code: Gitee and Github community entries.
--   Knowledge: provides a knowledge graph of openGauss cluster management, database tools, database kernel, and database driver.
+- Download: You can download the openGauss software package, connection tools, and support tools. The panorama of openGauss support tools is provided.
+- Docs: describe the openGauss database, including the legal statement, release notes, product description, technical white paper, compilation guide, quick start, installation guide, administrator guide, developer guide, and tool reference. These documents also describe the architecture, functions, features, and usage of openGauss. A large number of examples are provided in the documents for your reference.
+- Community: shows how to contribute to the open source community, as well as the community organization structure, and online communication methods.
+- Connect: helps users tune in news, activities, videos, summits, and blogs related to openGauss.
+- Certification: introduces the openGauss certification system and serves an entry for querying training information and certificates.
+- Security: introduces the vulnerability management process of openGauss and releases security notices and CVEs.
+- Code: Gitee and Github community entries.
+- Knowledge: provides a knowledge graph of openGauss cluster management, database tools, database kernel, and database driver.
 
 ## openGauss Community<a name="section157731748104211"></a>
 
@@ -143,19 +143,19 @@ The openGauss community uses the mailing list for online communication. We since
 
 ## Learning Platform<a name="section7788161704417"></a>
 
--   openGauss community
-    -   WeChat official account
+- openGauss community
+    - WeChat official account
 
         <img src="figures/en-us_image_0000001235224851.jpg" style="zoom: 33%;" />
 
-    -   bilibili
-    -   [CSDN](https://blog.csdn.net/weixin_49727236)
+    - bilibili
+    - [CSDN](https://blog.csdn.net/weixin_49727236)
 
--   Gauss Squirrel Club
-    -   WeChat official account
+- Gauss Squirrel Club
+    - WeChat official account
 
         ![](figures/en-us_image_0000001234864947.jpg)
 
-    -   bilibili
-    -   [CSDN](https://blog.csdn.net/GaussDB)
-    -   MoDB
+    - bilibili
+    - [CSDN](https://blog.csdn.net/GaussDB)
+    - MoDB

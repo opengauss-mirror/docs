@@ -16,51 +16,50 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
 ## Installing Chameleon<a name="section1912981915448"></a>
 
--   **Installing using WHL**
-    1.  Download the installation package. Download address: [https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/chameleon/chameleon-1.0.0-py3-none-any.whl](https://gitee.com/link?target=https%3A%2F%2Fopengauss.obs.cn-south-1.myhuaweicloud.com%2Flatest%2Fchameleon%2Fchameleon-1.0.0-py3-none-any.whl). After the installation package is downloaded, install it in the Python virtual environment.
-    2.  Run the following commands to create and activate the Python virtual environment:
+- **Installing using WHL**
+    1. Download the installation package. Download address: [https://opengauss.obs.cn-south-1.myhuaweicloud.com/latest/chameleon/chameleon-1.0.0-py3-none-any.whl](https://gitee.com/link?target=https%3A%2F%2Fopengauss.obs.cn-south-1.myhuaweicloud.com%2Flatest%2Fchameleon%2Fchameleon-1.0.0-py3-none-any.whl). After the installation package is downloaded, install it in the Python virtual environment.
+    2. Run the following commands to create and activate the Python virtual environment:
 
         ```
         python3 -m venv venv
         source venv/bin/activate
         ```
 
-    3.  Run the pip command to install the Chameleon tool:
+    3. Run the pip command to install the Chameleon tool:
 
         ```
         pip3 install ./chameleon-1.0.0-py3-none-any.whl
         ```
 
         >[!NOTE]NOTE
-        >-   During the installation, other libraries on which the tool depends are automatically installed. Ensure that the pip of the local host can download and install related dependencies. The dependent libraries and versions are as follows:
-        >    -   PyMySQL\>=0.10.0, <1.0.0
-        >    -   argparse\>=1.2.1
-        >    -   mysql-replication\>=0.22
-        >    -   py-opengauss\>=1.3.1
-        >    -   PyYAML\>=5.1.2
-        >    -   tabulate\>=0.8.1
-        >    -   daemonize\>=2.4.7
-        >    -   rollbar\>=0.13.17
-        >    -   geomet\>=0.3.0
-        >    -   mysqlclient\>=2.1.1
-        >-   To install MySQL client, you need to use yum to install mysql-devel. You can directly run the **yum install mysql-devel** command.
+        >- During the installation, other libraries on which the tool depends are automatically installed. Ensure that the pip of the local host can download and install related dependencies. The dependent libraries and versions are as follows:
+        >   - PyMySQL\>=0.10.0, <1.0.0
+        >   - argparse\>=1.2.1
+        >   - mysql-replication\>=0.22
+        >   - py-opengauss\>=1.3.1
+        >   - PyYAML\>=5.1.2
+        >   - tabulate\>=0.8.1
+        >   - daemonize\>=2.4.7
+        >   - rollbar\>=0.13.17
+        >   - geomet\>=0.3.0
+        >   - mysqlclient\>=2.1.1
+        >- To install MySQL client, you need to use yum to install mysql-devel. You can directly run the **yum install mysql-devel** command.
 
-
--   **Installing using source code**
-    1.  Run the git command to download the source code:
+- **Installing using source code**
+    1. Run the git command to download the source code:
 
         ```
         git clone git@gitee.com:opengauss/openGauss-tools-chameleon.git
         ```
 
-    2.  Create and activate a Python virtual environment.
+    2. Create and activate a Python virtual environment.
 
         ```
         python3 -m venv venv
         source venv/bin/activate
         ```
 
-    3.  Go to the code directory and run the **python install** command to install the Python.
+    3. Go to the code directory and run the **python install** command to install the Python.
 
         ```
         cd openGauss-tools-chameleon
@@ -69,13 +68,11 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
         After the installation is complete, do not exit the Python virtual environment. You can use the chameleon tool.
 
-
-
 ## Full Migration<a name="section024513334448"></a>
 
-1.  Create a configuration file directory.
-    1.  Go to the Python virtual environment and install the chameleon tool.
-    2.  Run the following command to create the chameleon configuration file directory:
+1. Create a configuration file directory.
+    1. Go to the Python virtual environment and install the chameleon tool.
+    2. Run the following command to create the chameleon configuration file directory:
 
         ```
         chameleon set_configuration_files
@@ -83,14 +80,14 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
         After this command is executed, the default configuration file template is created in the **\~/.pg\_chameleon/configuration** directory.
 
-    3.  Run the following command to copy the default configuration file template and save it as **default.yml**:
+    3. Run the following command to copy the default configuration file template and save it as **default.yml**:
 
         ```
         cd ~/.pg_chameleon/configuration
         cp config-example.yml default.yml
         ```
 
-    4.  Modify the **default.yml** configuration file as required. Example content of the configuration file:
+    4. Modify the **default.yml** configuration file as required. Example content of the configuration file:
 
         ```
         # global settings
@@ -153,12 +150,12 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
         The meanings of the parameters in the preceding configuration files are as follows:
 
-        -   During data migration, the user name and password used by the MySQL database are mysql\_test and password123, respectively. The IP address and port number of the MySQL server are 1.1.1.1 and 3306, respectively. The database to be migrated is mysql\_database.
-        -   The user name and password used on openGauss are opengauss\_test and password\_123, respectively. The IP address and port number of the openGauss server are 1.1.1.1 and 5432, respectively. The target database is opengauss\_database. The sch\_mysql\_database schema is created in opengauss\_database, all tables to be migrated are in this schema.
+        - During data migration, the user name and password used by the MySQL database are mysql\_test and password123, respectively. The IP address and port number of the MySQL server are 1.1.1.1 and 3306, respectively. The database to be migrated is mysql\_database.
+        - The user name and password used on openGauss are opengauss\_test and password\_123, respectively. The IP address and port number of the openGauss server are 1.1.1.1 and 5432, respectively. The target database is opengauss\_database. The sch\_mysql\_database schema is created in opengauss\_database, all tables to be migrated are in this schema.
 
         Note that the user must have the permission to remotely connect to MySQL and openGauss as well as the read and write permissions on the corresponding databases. For openGauss, the host where Chameleon runs must be in the remote access whitelist of openGauss. For MySQL, the user must have the **RELOAD**, **REPLICATION CLIENT**, and **REPLICATION SLAVE** permissions.
 
-2.  Initialize the migration process.
+2. Initialize the migration process.
 
     ```
     chameleon create_replica_schema --config default
@@ -167,7 +164,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
     In this step, an auxiliary schema and table are created for the replication process in openGauss.
 
-3.  Copy basic data.
+3. Copy basic data.
 
     ```
     chameleon init_replica --config default --source mysql
@@ -175,29 +172,29 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
 
     After this step is complete, the current full data in the MySQL database is copied to openGauss. You can view the replication result in openGauss.
 
-4.  Copy database objects.
+4. Copy database objects.
 
     Chameleon can migrate views, triggers, user-defined functions, and stored procedures from MySQL to openGauss. If logs do not need to be output to the console, delete the **--debug** parameter.
 
-    -   Copy a view.
+    - Copy a view.
 
         ```
         chameleon start_view_replica --config default --source mysql --debug
         ```
 
-    -   Copy a trigger.
+    - Copy a trigger.
 
         ```
         chameleon start_trigger_replica --config default --source mysql --debug
         ```
 
-    -   Copy a user-defined function.
+    - Copy a user-defined function.
 
         ```
         chameleon start_func_replica --config default --source mysql --debug
         ```
 
-    -   Copy a stored procedure.
+    - Copy a stored procedure.
 
         ```
         chameleon start_proc_replica --config default --source mysql --debug
@@ -271,7 +268,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
     </tbody>
     </table>
 
-5.  End the replication process and clear resources.
+5. End the replication process and clear resources.
 
     ```
     chameleon stop_replica --config default --source mysql
@@ -280,7 +277,6 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
     ```
 
     The creation and verification of foreign keys and the reset sequence\(serial\) are performed in the detach\_replica phase.
-
 
 ## Uninstalling Chameleon<a name="section11499164634415"></a>
 

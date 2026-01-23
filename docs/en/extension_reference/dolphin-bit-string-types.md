@@ -1,6 +1,7 @@
 # Bit String Types<a name="EN-US_TOPIC_0289900674"></a>
 
 Compared with the original openGauss, Dolphin modifies the bit string types as follows:
+
 1. The data of the bit type is of variable length up to the maximum length *n*. Longer strings will be rejected. The data of the **bit varying** type is of variable length up to the maximum length *n*. Longer strings will be rejected.
 2. If one explicitly casts a bit-string value to **bit\(n\)**, it will be truncated or zero-padded on the left to be exactly *n* bits, without raising an error.
 

@@ -22,7 +22,7 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   MySQL 5.7 is supported.
+- MySQL 5.7 is supported.
 
 ## Dependencies<a name="section57771982"></a>
 

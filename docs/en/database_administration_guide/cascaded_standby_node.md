@@ -24,14 +24,14 @@ None
 
 ## Constraints<a name="section06531946143616"></a>
 
--   A cascaded standby server can only replicate data from a standby server and cannot directly replicate data from the primary server.
--   A cascaded standby server does not support data build from a standby server. Currently, data can be built only from the primary server. If the standby server is fully built, the cascaded standby server needs to be fully built.
--   The cascaded standby node is in asynchronous replication mode.
--   The cascaded standby server cannot be promoted.
--   The cascaded standby server cannot be notified.
--   Currently, the overall architecture of the primary-standby-cascaded standby cluster cannot be queried. You need to find the standby server through the primary server and then find the cascaded standby server based on the standby server.
--   A cascaded standby server cannot own another cascaded standby server.
--   When the ultimate RTO is enabled, no cascaded standby server is supported.
+- A cascaded standby server can only replicate data from a standby server and cannot directly replicate data from the primary server.
+- A cascaded standby server does not support data build from a standby server. Currently, data can be built only from the primary server. If the standby server is fully built, the cascaded standby server needs to be fully built.
+- The cascaded standby node is in asynchronous replication mode.
+- The cascaded standby server cannot be promoted.
+- The cascaded standby server cannot be notified.
+- Currently, the overall architecture of the primary-standby-cascaded standby cluster cannot be queried. You need to find the standby server through the primary server and then find the cascaded standby server based on the standby server.
+- A cascaded standby server cannot own another cascaded standby server.
+- When the ultimate RTO is enabled, no cascaded standby server is supported.
 
 ## Dependencies<a name="section57771982"></a>
 

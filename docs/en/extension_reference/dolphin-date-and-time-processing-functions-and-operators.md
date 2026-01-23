@@ -328,6 +328,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     - The returned value of the TIME type must be in the range [-838:59:59, 838:59:59]. If the value is out of the range, the specified boundary value is returned based on the positive and negative types of hour.
   
   Example:
+
 ```sql
  openGauss=# SELECT MAKETIME(15, 15, 15.5);
   maketime  
@@ -421,6 +422,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     - If the value of **P** and the year in the returned result is less than 100, 70 is used as the boundary to convert the year to 20XX or 19XX.
   
   Example:
+
 ```sql
  openGauss=# SELECT PERIOD_ADD(202201, 2);
   period_add 
@@ -459,6 +461,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     - If the year in P1 and P2 is less than 100, 70 is used as the boundary to convert the year to 20XX or 19XX.
 
   Example:
+
 ```sql
  openGauss=# SELECT PERIOD_DIFF(202201,202003);
   period_diff 
@@ -522,6 +525,7 @@ Compared with the original openGauss, Dolphin modifies the time/date function as
     - The returned value of the TIME type must be in the range [-838:59:59, 838:59:59]. If the value is out of the range, the specified boundary value is returned based on the positive and negative types of second.
   
   Example:
+
 ```sql
  openGauss=# SELECT SEC_TO_TIME(4396);
  sec_to_time 
@@ -707,6 +711,7 @@ CONTEXT:  referenced column: subdate
     - An error is reported for a character string in the date format, and 00:00:00 is returned for a parameter of the date type.
 
   Example:
+
   ```sql
   openGauss=# select time('2022-1-1 1:1:1.1111116'), time('25:25:25');
         time       |   time   
@@ -720,7 +725,6 @@ CONTEXT:  referenced column: subdate
   00:00:00
   (1 row)
   ```
-
 
 - TIMEDIFF()
 
@@ -875,6 +879,7 @@ CONTEXT:  referenced column: subdate
   Remarks:
 
     - The following formats are supported:
+
       | Format| Description                                        |
       | ---- | -------------------------------------------- |
       | %f | Microsecond (000000 to 999999)                      |
@@ -888,6 +893,7 @@ CONTEXT:  referenced column: subdate
       | %s | Second (00 to 59)                                |
       | %T | Time in 24-hour format (hh:mm:ss)              |
       | %k   | Hours                                      |
+
     - For formats that are not related to hour, minute, and second, 0 or NULL is returned, including:
 
 | Format                                              | Return Result|
@@ -914,7 +920,7 @@ CONTEXT:  referenced column: subdate
   23:59:59|11:59:59 PM|23|11|11|59|59|000001|PM|23
   ```
 
--   weekday\(timestamp\)
+- weekday\(timestamp\)
 
     Description: Obtains the day of a week in the date/time value. The value **0** indicates Monday, the value **1** indicates Tuesday, and the value **6** indicates Sunday.
 
@@ -930,7 +936,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   weekofyear\(timestamp\)
+- weekofyear\(timestamp\)
 
     Description: Obtains the week of a year in a date/time value.
 
@@ -946,7 +952,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   year\(timestamp\)
+- year\(timestamp\)
 
     Description: Obtains the value of year in the date or time value.
 
@@ -962,7 +968,7 @@ CONTEXT:  referenced column: subdate
     (1 row)
     ```
 
--   current\_date\(\)
+- current\_date\(\)
 
     Description: Specifies the current date.
 
@@ -1025,6 +1031,7 @@ CONTEXT:  referenced column: subdate
   - If the entered date is out of the range [0000-01-01, 9999-12-31] or the input parameter is an invalid date or datetime expression, the function reports an error. (This function is compatible with the behavior of this function in the INSERT statement of MySQL.)
 
   Example:
+
   ```sql
   opengauss=# select to_seconds('2022-09-01');
    to_seconds  
@@ -1117,9 +1124,9 @@ CONTEXT:  referenced column: subdate
 
   Function prototype:
 
-  	`TIME UTC_TIME()`
+   `TIME UTC_TIME()`
   
-  ​	`TIME UTC_TIME(int fsp)`
+  ​ `TIME UTC_TIME(int fsp)`
   
   This function is used to return the current UTC time of the TIME type. If an integer parameter is specified as the precision, the number of decimals to be retained in the result can be specified. The supported precision range is [0-6].
   
@@ -1165,6 +1172,7 @@ CONTEXT:  referenced column: subdate
   - The returned `DATETIME` result does not display 0 at the end of the decimal part.
   
   Example:
+
   ```sql
   opengauss=# select UTC_TIMESTAMP();
       utc_timestamp    
@@ -1516,6 +1524,7 @@ CONTEXT:  referenced column: subdate
   Return type: integer (indicating the date difference, in days)
 
   Example:
+
   ```
   openGauss=# select datediff('2001-01-01','321-02-02');
   datediff 
@@ -1592,6 +1601,7 @@ CONTEXT:  referenced column: subdate
 - DATE\_ADD\(date/datetime/time, interval expr unit\)
     
   Function prototype:
+
   ```
   text DATE_ADD(text expr1, INTERVAL expr2 unit)
   time DATE_ADD(time expr1, INTERVAL expr2 unit)
@@ -1755,6 +1765,7 @@ CONTEXT:  referenced column: subdate
   Description: expr1 receives three types of names: date, datetime, and time. expr2 receives five types of character strings: 'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'. The function returns a string of the corresponding specification based on the type of expr1 and expr2.
 
   The following table describes the return values of the function.
+
   |Type|Specification|Return Value|
   |---|---|---|
   |DATE|'USA'|'%m.%d.%Y'|
@@ -1831,6 +1842,7 @@ CONTEXT:  referenced column: subdate
 - date\_format\(expr, format\)
 
   Description: The **expr** parameter indicates the input date or datetime format. This function formats the **expr** parameter based on the **format** parameter. The following table lists the values of the **format** parameter.
+
   | Extraction Flag| Description|Value Range|
   | ------- |----- |-------|
   |%a|Abbreviation of the day of the week|Sun...Sat|

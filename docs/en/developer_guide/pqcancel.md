@@ -45,10 +45,9 @@ int PQcancel(PGcancel *cancel, char *errbuf, int errbufsize);
 
 ## Precautions<a name="en-us_topic_0241735638_en-us_topic_0237120433_en-us_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
--   Successful sending does not guarantee that the request will have any effect. If the cancellation is valid, the current command is terminated early and an error is returned. If the cancellation fails \(for example, because the server has processed the command\), no result is returned.
--   If  **errbuf**  is a local variable in a signal handler, you can safely call PQcancel from the signal handler. For PQcancel, the PGcancel object is read-only, so it can also be called from a thread that is separate from the thread that is operating the PGconn object.
+- Successful sending does not guarantee that the request will have any effect. If the cancellation is valid, the current command is terminated early and an error is returned. If the cancellation fails \(for example, because the server has processed the command\), no result is returned.
+- If  **errbuf**  is a local variable in a signal handler, you can safely call PQcancel from the signal handler. For PQcancel, the PGcancel object is read-only, so it can also be called from a thread that is separate from the thread that is operating the PGconn object.
 
 ## Example<a name="en-us_topic_0241735638_section724101713148"></a>
 
 For details, see  [Example](example_libpq.md).
-

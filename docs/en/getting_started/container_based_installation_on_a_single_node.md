@@ -4,9 +4,9 @@ This section describes how to install openGauss using Docker to facilitate insta
 
 ## Supported Architectures and OSs<a name="en-us_topic_0283136491_section1017214481014"></a>
 
--   x86-64 CentOS 7.6
+- x86-64 CentOS 7.6
 
--   ARM64 openEuler 20.03 LTS
+- ARM64 openEuler 20.03 LTS
 
 ## Preparations<a name="en-us_topic_0283136491_section260555142417"></a>
 
@@ -16,20 +16,25 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 >[!NOTE]NOTE 
 >
-> -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
+> - Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
 >
-> -   If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
->    ```
+> - If the  **-i**  option is not specified when you run the  **buildDockerImage.sh**  script, the SHA-256 check is performed by default. You need to manually write the check result to the  **sha256\_file\_amd64**  file.
+>
+> ```
+>
     ## Modify the SHA-256 verification file.
     cd /soft/openGauss-server/docker/dockerfiles/6.0.0
     sha256sum openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2 > sha256_file_amd64 
->   ```
+>
+> ```
 
-> -   Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/6.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
+> - Before the installation, obtain the  **openEuler\_aarch64.repo**  file from Huawei open-source image website and save it to the  **openGauss-server-master/docker/dockerfiles/6.0.0**  folder. Run the following command to obtain the  **openEuler\_aarch64.repo**  file.
 
->    ```
-   wget -O openEuler_aarch64.repo https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo
->    ```
+> ```
+>
+   wget -O openEuler_aarch64.repo <https://mirrors.huaweicloud.com/repository/conf/openeuler_aarch64.repo>
+>
+> ```
 
 Run the  **buildDockerImage.sh**  script in the  **dockerfiles**  folder.
 
@@ -57,7 +62,7 @@ The local trust mechanism is configured for the openGauss image. Therefore, no p
 
 **Complexity requirements for openGauss password:**
 
-The password must contain at least eight characters, including uppercase letters, lowercase letters, digits, and special characters \(**\#?!@$%^&\*-**\).  **!$& **must be escaped using a backslash \(\\\).
+The password must contain at least eight characters, including uppercase letters, lowercase letters, digits, and special characters \(**\#?!@$%^&\*-**\).  **!$&**must be escaped using a backslash \(\\\).
 
 **GS\_NODENAME**
 

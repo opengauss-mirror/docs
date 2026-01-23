@@ -2,8 +2,8 @@
 
 The openGauss JDBC driver uses log records to help solve problems when the openGauss JDBC driver is used in applications. openGauss JDBC supports the following log management methods:
 
-1.  Use the SLF4J log framework for interconnecting with applications.
-2.  Use the JdkLogger log framework for interconnecting with applications.
+1. Use the SLF4J log framework for interconnecting with applications.
+2. Use the JdkLogger log framework for interconnecting with applications.
 
 SLF4J and JdkLogger are mainstream frameworks for Java application log management in the industry. For details about how to use these frameworks, see the official documents \(SLF4J:  [http://www.slf4j.org/manual.html](http://www.slf4j.org/manual.html); JdkLogger:  [https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)\).
 
@@ -221,4 +221,3 @@ pstm.setString(2, "test");
 pstm.execute();
 openGaussTrace.reset();
 ```
-

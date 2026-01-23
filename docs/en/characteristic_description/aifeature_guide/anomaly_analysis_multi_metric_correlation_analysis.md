@@ -20,9 +20,6 @@ To analyze the correlation between a specific metric and other metrics from time
 gs_dbmind component anomaly_analysis --conf confpath --metric metric_name --start-time timestamps1 --end-time timestamps2 --host ip_address --csv-dump-path csv_path
 ```
 
-
-
-
 >[!NOTE]NOTE
 >Ensure that start-time is at least 30 seconds earlier than end-time when configuring anomaly_analysis parameters.
 
@@ -35,6 +32,7 @@ gs_dbmind component anomaly_detection --help
 ```
 
 The following information will be displayed:
+
 ```
 usage: anomaly_analysis.py [-h] -c CONF -m METRIC -s START_TIME -e END_TIME -H
                            HOST [--csv-dump-path CSV_DUMP_PATH]
@@ -57,6 +55,7 @@ optional arguments:
                         dump the result csv file to the dump path if it is
                         specified.
 ```
+
 ** 
 
 ## Command Reference<a name="EN-US_TOPIC_0000001311096736"></a>
@@ -126,4 +125,4 @@ optional arguments:
 
 ## Troubleshooting<a name="EN-US_TOPIC_0000001364496017"></a>
 
--   If the analysis scenario fails, check that the configuration file path is correct and the configuration information is complete. Also, verify that the metric name and host address are accurate, and ensure that the metric data is available for the specified start and end times.
+- If the analysis scenario fails, check that the configuration file path is correct and the configuration information is complete. Also, verify that the metric name and host address are accurate, and ensure that the metric data is available for the specified start and end times.
