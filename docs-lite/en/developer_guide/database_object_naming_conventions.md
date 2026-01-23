@@ -4,7 +4,7 @@ The name of a database object must meet the following requirements: The name of 
 
 -   \[Proposal\] Do not use reserved or non-reserved keywords to name database objects.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >You can use the select \* from pg\_get\_keywords\(\) query openGauss keyword or view the keyword in  [Keywords](../sql_reference/keywords.md).
 

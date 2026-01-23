@@ -12,7 +12,7 @@ When creating the temporary table, retain the primary key attributes of the orig
     CREATE TEMP TABLE customer_t_temp AS SELECT * FROM customer_t;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >Compared with the use of permanent tables, the use of temporary tables can improve performance but may incur data loss. A temporary table is automatically deleted at the end of the session where it is located. If data loss is unacceptable, use a permanent table.  
 
 2.  Truncate the original table  **customer\_t**.

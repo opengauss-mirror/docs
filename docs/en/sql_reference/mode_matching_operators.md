@@ -13,7 +13,7 @@ There are three separate approaches to pattern matching provided by the database
     3.  To match a literal underscore or percent sign without matching other characters, the respective character in  **pattern**  must be preceded by the escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
     4.  To match with escape characters, enter two escape characters. For example, to write a  **pattern**  constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. So, writing a pattern that matches a single backslash actually involves writing four backslashes in the statement \(you can avoid this by selecting a different escape character with  **ESCAPE**  so that the backslash is no longer a special character of  **LIKE**. But the backslash is still the special character of the character text analyzer, so you still need two backslashes.\)
         >In MySQL-compatible schema, it is also possible to select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscore and percent signs in the schema.
 
@@ -248,7 +248,7 @@ There are three separate approaches to pattern matching provided by the database
     -   The  [**regexp\_split\_to\_table\(st...**](character_processing_functions_and_operators.md)  function splits a string using a POSIX regular expression pattern as a delimiter.
     -   The  [**regexp\_split\_to\_array\(st...**](character_processing_functions_and_operators.md)  function behaves the same as  **regexp\_split\_to\_table**, except that it returns its result as an array of text.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >The regular expression split functions ignore zero-length matches, which occur at the beginning or end of a string or after the previous match. This is contrary to the strict definition of regular expression matching. The latter is implemented by regexp\_matches, but the former is usually the most commonly used behavior in practice.
 
 

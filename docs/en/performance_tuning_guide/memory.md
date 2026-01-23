@@ -2,7 +2,7 @@
 
 This section describes memory parameters.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >These parameters, except  **local\_syscache\_threshold**, take effect only after the database restarts.
 
 ## memorypool\_enable<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s630c23ad11044fafae4ed851bc89169a"></a>
@@ -41,7 +41,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >-   If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit **to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
 >-   If this parameter is set to  **off**, the memory used by the database is not limited. When a large number of concurrent or complex queries are performed, too much memory is used, which may cause OS OOM problems.
 
@@ -59,7 +59,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 The value on the database node is determined based on the physical memory of the system and the number of master database nodes deployed on a single node. The recommended calculation formula is as follows: \(Physical memory – vm.min\_free\_kbytes\) \\ x 0.7 /\(1 + Number of primary nodes\) This parameter is used to prevent node OOM caused by memory usage increase, ensuring system reliability.  **vm.min\_free\_kbytes**  indicates the OS memory reserved for the kernel to receive and send data. Its value is at least 5% of the total memory. That is, max\_process\_memory = Physical memory x 0.665 / \(1 + Number of primary nodes\)
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >If this parameter is set to a value greater than the physical memory of the server, the OS OOM problem may occur.
 
 ## enable\_memory\_context\_control<a name="en-us_topic_0283136786_en-us_topic_0237124699_section83355314353"></a>
@@ -171,7 +171,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **10**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Generally, explicit PREPARE operations are not required for transactions. If explicit PREPARE operations are performed for transactions, increase the value of this parameter to be greater than the number of concurrent services that require PREPARE to prevent preparation failures.
 
 ## work\_mem<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e"></a>
@@ -186,7 +186,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **64 MB**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**Setting suggestions**:
 >If the physical memory specified by  **work\_mem**  is insufficient, additional operator calculation data will be written into temporary tables based on query characteristics and the degree of parallelism. This reduces performance by five to ten times, and prolongs the query response time from seconds to minutes.
 >-   For complex serial queries, each query requires five to ten associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/10.
@@ -204,7 +204,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the value of  **query\_mem**  is greater than 0, the optimizer adjusts the memory cost estimate to this value when generating an execution plan.
 >-   If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not adjust the estimated query memory.
 
@@ -218,7 +218,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If the value of  **query\_max\_mem**  is greater than 0, an error is reported when the query memory usage exceeds the value.
 >-   If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not limit the query memory.
 
@@ -232,7 +232,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **16 MB**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**Setting suggestions**:
 >-   The value of this parameter must be greater than that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**  so that database dumps can be more quickly cleared or restored. In a database session, only one maintenance operation can be performed at a time. Maintenance is usually performed when there are not many running sessions.
 >-   When the  [Automatic Vacuuming](../database_reference/automatic-vacuuming.md)  process is running, up to  **[autovacuum\_max\_workers](../database_reference/automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  times this memory may be allocated. In this case, set  **maintenance\_work\_mem**  to a value greater than or equal to that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**.
@@ -244,7 +244,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Such operations may be performed in multiple running sessions concurrently. Therefore, the total memory used may be many times the value of  **psort\_work\_mem**.
 
 **Value range**: an integer ranging from 64 to 2147483647. The unit is kB.
@@ -257,7 +257,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If  **max\_loaded\_cudesc**  is set to a large value, memory may be insufficient.
 
 **Value range**: 100 to 1073741823
@@ -277,7 +277,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   If the value of  **ulimit -s**  minus 640 kB is greater than or equal to 2 MB, the default value of this parameter is  **2 MB**.
 -   If the value of  **ulimit -s**  minus 640 kB is less than 2 MB, the default value of this parameter is the value of  **ulimit -s**  minus 640 kB.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When setting this parameter, comply with the following principles:
 >-   The database needs to reserve 640 kB stack depth. Therefore, the ideal value of this parameter is the actual stack size limit enforced by the OS kernel \(as set by  **ulimit -s**\) minus 640 kB.
 >-   If the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB before the database is started, the database fails to be started. During database running, if the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB, this parameter does not take effect.

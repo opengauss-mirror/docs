@@ -10,7 +10,7 @@ When a database is initialized using  **gs\_initdb**, a database directory is cr
 
 A large number of system catalogs and views are generated when a database is initialized, many of which allow access from any database user.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Permissions on  **pg\_user\_status**  and  **pg\_auth\_history**  system catalogs are granted only to initialization users and  **sysadmin**  users.
 
 ### Generated Databases<a name="en-us_topic_0059779348_sbaf982cf2e9549fa8e083844774de07b"></a>

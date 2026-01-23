@@ -28,6 +28,6 @@ None.
 
 None.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not provide ODBC APIs.
 

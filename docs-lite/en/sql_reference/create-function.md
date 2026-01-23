@@ -108,7 +108,7 @@
 
     Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. The parameters of  **OUT**  and  **INOUT**  cannot be used in the function definition of  **RETURNS TABLE**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**VARIADIC**  specifies parameters of the array type.
 
 -   **argtype**
@@ -153,7 +153,7 @@
 
     Indicates that this function is a window function. The  **WINDOW**  attribute cannot be changed when replacing an existing function definition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >For a customized window function, the value of  **LANGUAGE**  can only be  **internal**, and the referenced internal function must be a window function.
 
 -   **IMMUTABLE**
@@ -260,7 +260,7 @@
 
     Specifies the PL/SQL stored procedure body.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >When a user is created in the function body, the plaintext password is recorded in the log. You are not advised to do it.
 
 

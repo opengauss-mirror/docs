@@ -14,7 +14,7 @@ Use the  **buildDockerImage.sh**  script to build a Docker image. This script is
 
 ## Creating an openGauss Docker Image<a name="en-us_topic_0283136491_section159607494319"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 > -   Before the installation, you need to provide the openGauss binary installation package. After decompressing the package, place the package \(**openGauss-Server-X.X.X-CentOS7-x86_64.tar.bz2**\) in the  **dockerfiles/**<*version*\> folder. The binary package can be downloaded from  [https://opengauss.org/en/download/](https://opengauss.org/en/download/). Ensure that the correct yum source is available.
 >

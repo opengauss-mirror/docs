@@ -22,7 +22,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **10000**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If the number of iterations is too small, the password storage security is reduced. If the number of iterations is too large, the performance deteriorates in scenarios involving password encryption, such as authentication and user creation. Set the number of iterations based on actual hardware conditions. You are advised to retain the default value.
 
 ## session\_authorization<a name="section2099118013294"></a>
@@ -45,7 +45,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **10min**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The gsql client of openGauss has an automatic reconnection mechanism. For local connection of initialized users, the client reconnects to the server if the connection breaks after the timeout.
 
 ## ssl<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s8c4647db116f44c4b9ce3dceee3d6ffa"></a>
@@ -59,7 +59,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **on**  indicates that SSL connections are enabled.
 -   **off**  indicates that SSL connections are not enabled.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.
 
 **Default value**:  **off**
@@ -75,7 +75,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **on**  indicates that the server requires SSL connections.
 -   **off**  indicates that the server does not require SSL connections.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >openGauss supports SSL when a client connects to a the primary node of the database. It is recommended that the SSL connection be enabled only on the primary node of the databases.
 
 **Default value**:  **off**
@@ -90,7 +90,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **ALL**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If ssl\_ciphers is set incorrectly, the database cannot be started properly.
 
 ## ssl\_renegotiation\_limit<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s52ca816208d444eca495ad205c3da3cb"></a>
@@ -153,7 +153,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**: empty
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not provide the Kerberos function.
 
 ## krb\_srvname<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s65aefa786b4f481da22dda86c00abb52"></a>
@@ -166,7 +166,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **postgres**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not provide the Kerberos function.
 
 ## krb\_caseins\_users<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s50cf7e3a4a994dc39cfc356cd6eaa1ca"></a>
@@ -182,7 +182,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not provide the Kerberos function.
 
 ## modify\_initial\_password<a name="en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sd0b025a227a24d07a94d88e691f748e7"></a>
@@ -191,7 +191,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If the initial user password is not specified during the installation, the initial user password is empty by default after the installation. Before performing other operations, you need to set the initial user password using the gsql client. This parameter no longer takes effect and is reserved only for compatibility with upgrade scenarios.
 
 **Value range**: Boolean
@@ -207,7 +207,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >For security purposes, do not disable the password complexity policy.
 
 **Value range**:  **0**  and  **1**
@@ -223,7 +223,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When you change the password, the system checks the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**.
 >-   If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
 >-   If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
@@ -243,7 +243,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When you change the password, the system checks the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**.
 >-   If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
 >-   If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
@@ -263,7 +263,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The locking and unlocking functions take effect only when the values of  **password\_lock\_time**  and  **[failed\_login\_attempts](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sc155ec2258b34e78a2ffcf797e66b959)**  are positive numbers.
 
 **Value range**: a floating point number ranging from 0 to 365. The unit is day.
@@ -279,7 +279,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The locking and unlocking functions take effect only when the values of  **failed\_login\_attempts**  and  **[password\_lock\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s5e488e82235e4bd5b470b57a44a38c27)**  are positive numbers.
 
 **Value range**: an integer ranging from 0 to 1000
@@ -302,7 +302,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   **2**  indicates that passwords are encrypted with SHA-256.
 -   **3**  indicates that the passwords are encrypted in sm3 mode.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
 
 **Default value:** **2**

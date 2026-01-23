@@ -31,7 +31,7 @@ DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 [ALTER USER MAPPING](alter-user-mapping.md)  and  [CREATE USER MAPPING](create-user-mapping.md)
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.
 

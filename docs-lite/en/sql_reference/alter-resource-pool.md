@@ -29,7 +29,7 @@ ALTER RESOURCE POOL pool_name
 
     Specifies the name of a Cgroup.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
     >-   The value of  **group\_name**  is case-sensitive.
     >-   If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
@@ -64,7 +64,7 @@ ALTER RESOURCE POOL pool_name
 
     In common scenarios, the value of  **mem\_percent**  of common users is an integer ranging from 0 to 100. The default value is  **0**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When both  **mem\_percent**  and  **memory\_limit**  are specified, only  **mem\_percent**  takes effect.
 
 -   **io\_limits**
@@ -80,7 +80,7 @@ ALTER RESOURCE POOL pool_name
     There are three priorities:  **Low**,  **Medium**, and  **High**. If you do not want to control I/O resources, use the default value  **None**.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The settings of  **io\_limits**  and  **io\_priority**  are valid only for complex jobs, such as batch import \(using  **INSERT INTO SELECT**,  **COPY FROM**, or  **CREATE TABLE AS**\), complex queries involving over 500 MB data on each DN, and  **VACUUM FULL**.
 
 ## Examples<a name="en-us_topic_0059778630_s5701ea039ae94537a49dec3cd0c173d8"></a>

@@ -12,7 +12,7 @@
 
 - Only user **root** is authorized to run the **gs\_checkos** command.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**
+  [!NOTE]NOTE
 
   This tool cannot be invoked independently. For security purposes, it will be automatically deleted after the preinstallation is complete in enterprise-edition installation mode.
 
@@ -45,19 +45,19 @@
 
     Value range: A1 to A14 and B1 to B8
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >
     >Items from A1 to A14 indicate that OS parameters need to be checked but not to be set.
     >Items from B1 to B8 indicate that system parameters need to be set to expected values.
     >Items A and items B cannot be simultaneously set.
 
-    [Table 1](#en-us_topic_0237152331_en-us_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e) lists the check items.
+    [Table 1](#Table 1) lists the check items.
 
 -   -f
 
     Specifies the file of a host name list.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-The **-f** and **-h** parameters cannot be used together.
 
     Value range: a host name list
@@ -97,7 +97,7 @@
     Displays version information.
 
 
-**Table 1** OS check items
+**Table 1** OS check items<a id="Table 1"></a>
 
 <a name="zh-cn_topic_0237152331_zh-cn_topic_0059778883_t5348bfc47f50450687012eacb1a1ba4e"></a>
 <table><thead align="left"><tr id="en-us_topic_0237152331_en-us_topic_0059778883_r96d5e4d71c8c46a18f130b0cc1968953"><th class="cellrowborder" valign="top" width="9.27%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"><a name="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a><a name="en-us_topic_0237152331_en-us_topic_0059778883_a03238af3de8f43ab9b7cf45ffc1deafb"></a>No.</p>
@@ -275,7 +275,7 @@ The <td class="cellrowborder" valign="top" width="29.24%" headers="mcps1.2.4.1.2
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 > -   A6 is checked based on the **\[/etc/sysctl.conf\]** and **\[SUGGEST:/etc/sysctl.conf\]** domains in the **check\_list.conf** configuration file.
 >    If the parameter value in **\[/etc/sysctl.conf\]** differs from the actual value, An **Abnormal** message is displayed during the check of A6. You can set the parameter by using B1.

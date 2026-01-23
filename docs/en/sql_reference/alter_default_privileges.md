@@ -178,7 +178,7 @@ ALTER DEFAULT PRIVILEGES
     Value range: an existing role name
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >To drop a role for which the default permissions have been granted, reverse the changes in its default permissions or use  **DROP OWNED BY**  to get rid of the default permission entry for the role.
 
 ## Examples<a name="en-us_topic_0283136687_en-us_topic_0237122057_en-us_topic_0059778935_s64b82734f0054e559da974687a61e6bf"></a>

@@ -8,7 +8,7 @@
 
 -   **Connect to the database**: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see  [Gsql Connection and Usage](../getting_started/gsql_connection_and_usage.md).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If  **gsql**  is used to connect to a database, the connection timeout period will be 5 minutes. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
     >To resolve this problem, see  [Troubleshooting](#troubleshooting).
 
@@ -88,7 +88,7 @@
 
     **gsql**  pre-defines some special variables and plans the values of these variables. To ensure compatibility with later versions, do not use these variables for other purposes. For details about special variables, see  [Table 2](#en-us_topic_0059778819_en-us_topic_0058968129_table45814285).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   All the special variables consist of upper-case letters, digits, and underscores \(\_\).
     >-   To view the default value of a special variable, run the  **\\echo :**_varname_  meta-command, for example,  **\\echo :**_DBNAME_.
 
@@ -243,7 +243,7 @@
 
     The above command queries the HR.areaS table.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The value of the variable is copied literally, so it can even contain unbalanced quotation marks or backslash commands. Therefore, the input content must be meaningful.
 
 
@@ -470,7 +470,7 @@ You can use the  **gsql**  command to connect to the local database or remote da
 
     The  **gsql**  tool uses the  **-d**  parameter to specify the target database name, the  **-U**  parameter to specify the database username, the  **-h**  parameter to specify the host name, and the  **-p**  parameter to specify the port number.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If the database name is not specified, the default database name generated during initialization will be used. If the database username is not specified, the current OS username will be used by default. If a variable does not belong to any parameter \(such as  **-d**  and  **-U**\), and  **-d**  is not specified, the variable will be used as the database name. If  **-d**  is specified but  **-U**  is not specified, the variable will be used as the database username.
 
     Example 1: Connect to the 8000 port of the local postgres database as user  **omm**.
@@ -1135,7 +1135,7 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_topic_0058968158_table23103470),  [Table 2](#en-us_topic_0059778645_en-us_topic_0058968158_table8624338),  [Table 3](#en-us_topic_0059778645_en-us_topic_0058968158_table62130565),  [Table 4](#en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  [Table 6](#en-us_topic_0059778645_en-us_topic_0058968158_table53911699),  [Table 8](#en-us_topic_0059778645_en-us_topic_0058968158_table37189353),  [Table 9](#en-us_topic_0059778645_en-us_topic_0058968158_table32146234),  [Table 10](#en-us_topic_0059778645_en-us_topic_0058968158_table50076468), and  [Table 12](#en-us_topic_0059778645_en-us_topic_0058968158_table55465693).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >_FILE_  mentioned in the following commands indicates a file path. This path can be an absolute path such as  **/home/gauss/file.txt**  or a relative path, such as  **file.txt**. By default, a  **file.txt**  is created in the path where the user runs  **gsql**  commands.
 
 **Table  1**  Common meta-commands
@@ -1285,7 +1285,7 @@ For details about meta-commands, see  [Table 1](#en-us_topic_0059778645_en-us_to
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In  [Table 4](#en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  **S**  indicates displaying the system object and  **+**  indicates displaying the additional description information of the object.  [PATTERN](#section363084334814)  specifies the name of an object to be displayed.
 
 **Table  4**  Information display meta-commands
@@ -2217,7 +2217,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty. It is recommended that service applications be deployed outside the database instead of inside the database.
 
 -   The DN can connect to the database if  **-h 127.0.0.1**  is specified, and the connection will fail if  **-h 127.0.0.1**  is removed.
@@ -2269,7 +2269,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
         GRANT CONNECT ON DATABASE postgres TO user1;
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >Actually, some common misoperations may also cause a database connection failure, for example, entering an incorrect database name, username, or password. In this case, the client tool will display the corresponding error messages.
         >```
         >gsql -d postgres -p 8000
@@ -2391,7 +2391,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 -   
     In  **pg\_hba.conf**  of the target DN, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.
     >-   It is recommended that service applications be deployed outside the database instead of inside the database.
 
@@ -2404,7 +2404,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     To resolve this problem, try again. In addition, do not run service programs in a database during O&M operations, such as an upgrade, preventing such a problem caused by file replacement during the upgrade.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A possible stack of the core dump file contains dl\_main and its function calling. The file is used by the OS to initialize a process and load the shared dynamic library. If the process has been initialized but the shared dynamic library has not been loaded, the process cannot be considered completely started.
 
 

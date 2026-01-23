@@ -34,7 +34,7 @@ mkdir -p /opt/software/openGauss
 chmod 755 -R /opt/software
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >
 >-   Do not create the directory in the home directory or subdirectory of any openGauss user because you may lack permissions for such directories.  
 >
@@ -50,7 +50,7 @@ tar -zxvf openGauss-1.1.0-openEuler-64bit-all.tar.gz
 tar -zxvf openGauss-1.1.0-openEuler-64bit-om.tar.gz
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**  
+>[!NOTE]NOTE  
 >
 >-   When you execute the  **gs\_preinstall**  script, plan the directory for storing the openGauss configuration file, directory for storing software packages, installation directories of programs, and directories of instance data. Common users cannot change the directories after the directories are specified.  
 >
@@ -91,7 +91,7 @@ vi /etc/profile.d/performance.sh
     ./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml
     ```
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >[!NOTE]NOTE   
   >You need to run this command on each host.  
   >
 
@@ -106,7 +106,7 @@ vi /etc/profile.d/performance.sh
     ./gs_preinstall -U omm -G dbgrp -X /opt/software/openGauss/cluster_config.xml --non-interactive
     ```
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >[!NOTE]NOTE   
   >
   >-   In this mode, ensure that mutual trust has been established between users  **root**  and between openGauss users on each node before executing  **gs\_preinstall**.  
   >
@@ -301,14 +301,14 @@ Preinstallation succeeded.
 
 If configuring the installation environment fails, obtain the  **gs\_preinstall-YYYY-MM-DD\_HHMMSS.log**  and  **gs\_local-YYYY-MM-DD\_HHMMSS.log**  files from the  **$GAUSSLOG/om**  directory for storing openGauss logs. Then, locate the problem based on the log information. For example, if the path specified by the  **gaussdbLogPath**  parameter in the configuration file is  **/var/log/gaussdb**, the  **$GAUSSLOG/om**  path is  **/var/log/gaussdb/omm/om**, and the  **omm**  user is the user running openGauss.
 
-![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+[!TIP]NOTICE   
 While the installation user and environment is prepared, user  **root**  is used to add scheduled tasks for routine inspection and reporting.
 
 ## Establishing Mutual Trust Manually
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between hosts in openGauss. Establish mutual trust among the hosts before installing the cluster as a common user. During the execution of the pre-installation script, establish mutual trust between users  **root**, then create a common user account, and finally establish mutual trust between common users.
 
-![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+[!TIP]NOTICE   
 The mutual trust between users  **root**  may incur security risks. You are advised to delete the mutual trust between users  **root**  after the installation is complete.  
 
 ### Prerequisites
@@ -372,7 +372,7 @@ Establishing a mutual trust relationship using a script has the following impact
 
 If the passwords of user  **root**  on the hosts in the openGauss are different, the  **gs\_preinstall**  script cannot be used to establish mutual trust. In this case, manually establish mutual trust.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >
 >The following files are generated during establishment of mutual trust:  **authorized\_keys**,  **id\_rsa**,  **id\_rsa.pub**, and  **known\_hosts**. Do not delete or corrupt the files.  
 >
@@ -445,7 +445,7 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
             plat1:~ # ssh-keyscan -t rsa plat3 >> ~/.ssh/known_hosts 
             # plat3 SSH-2.0-OpenSSH_5.1 
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   After being accepted, the public key of a remote host will be saved in the  **$HOME/.ssh/known\_hosts**  file on the local host. When connecting to the remote host next time, the system can recognize that the public key of the remote host has been saved on the local host and then skip alarms.
     >
@@ -489,7 +489,7 @@ The procedure of manually establishing mutual trust is as follows \(**plat1**,  
     plat1:~ # 
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >
     >If there are more than three hosts, the procedure of manually establishing mutual trust between the hosts is similar to the one in this section. Assume that the host names are  **plat1**,  **plat2**,  **plat3**, ... Firstly, generate a licensed file for user  **root**  on host  **plat1**  \(referred to as the local host\). Secondly, obtain the public keys of all the hosts \(**plat1**,  **plat2**,  **plat3**, ...\) between which mutual trust needs to be established, and write the public keys to the  **known\_hosts**  file on the local host. Thirdly, send the file from the local host to all the other hosts \(**plat2**,  **plat3**, ...\). Finally, verify that mutual trust has been successfully established.  
     >
@@ -1070,7 +1070,7 @@ After the modification is complete, restart the OS to make the setting take effe
 </tbody>
 </table>
 
-![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+[!TIP]NOTICE   
 -   NIC parameters can be configured only for 10GE and larger service NICs, that is, the NIC bound to  **backIp1**.  
 -   The commands for setting NIC parameters are written into the OS startup file only after the parameters are successfully set. Information about command execution failures is recorded in logs on the server.  
 

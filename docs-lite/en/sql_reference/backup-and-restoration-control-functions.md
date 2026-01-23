@@ -170,7 +170,7 @@ Backup control functions help with online backup.
 
     Return type: text. The content is the insertion position of the current log.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this API, but the Roach-related functions are unavailable.
 
@@ -180,7 +180,7 @@ Backup control functions help with online backup.
 
     Return type: text. The content is the log location of the start point.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this API, but the Roach-related functions are unavailable.
 
@@ -190,7 +190,7 @@ Backup control functions help with online backup.
 
     Return type: record. The content is the range of logs for which DDL is delayed to take effect.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this API, but the Roach-related functions are unavailable.
 
@@ -200,7 +200,7 @@ Backup control functions help with online backup.
 
     Return type: text. The content is the location of the segment log.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >In the Lite scenario, openGauss provides this API, but the Roach-related functions are unavailable.
 

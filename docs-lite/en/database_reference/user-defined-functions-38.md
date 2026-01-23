@@ -1,6 +1,6 @@
 # User-defined Functions<a name="EN-US_TOPIC_0000001130221229"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not support the Java UDF.
 
 ## udf\_memory\_limit<a name="en-us_topic_0283137548_en-us_topic_0237124743_section1765913299426"></a>
@@ -45,7 +45,7 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 -   JDK8 JVM system attributes \(starting with  **–D**, for example,  **–Djava.ext.dirs**\). For details, see JDK  [official ](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)descriptions.
 -   User-defined parameters \(starting with  **–D**, for example,  **–Duser.defined.option**\).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If  **pljava\_vmoptions**  is set to a value beyond the value range, an error will be reported when PL/Java functions are used. For details, see  [PL/pgSQL Functions](../sql_reference/pl-pgsql-functions.md).
 
 **Default value:**  empty

@@ -32,10 +32,10 @@ ANALYZE tablename;                                               --Collect stati
 ALTER TABLE tablename DELETE STATISTICS ((column_1, column_2)); --Delete statistics about column_1 and column_2 of tablename or their statistics declaration.
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>[!TIP]NOTICE   
 >After the statistics are declared for multiple columns by running the  **ALTER TABLE** _tablename_ **ADD STATISTICS**  statement, the system collects the statistics about these columns next time  **ANALYZE**  is performed on the table or the entire database.  
 >To collect the statistics, run the  **ANALYZE**  statement.  
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >Use  **EXPLAIN**  to show the execution plan of each SQL statement. If  **rows=10**  \(the default value, probably indicating that the table has not been analyzed\) is displayed in the  **SEQ SCAN**  output of a table, run the  **ANALYZE**  statement for this table.  
 

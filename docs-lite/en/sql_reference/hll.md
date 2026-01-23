@@ -58,7 +58,7 @@ HyperLoglog \(HLL\) is an approximation algorithm for efficiently counting the n
 
 HLL has advantages over others in the computing speed and storage space requirement. In terms of time complexity, the sorting algorithm needs O\(nlogn\) time for sorting, and the hash algorithm and HLL need O\(n\) time for full table scanning. In terms of storage space requirements, the sorting algorithm and hash algorithm need to store raw data before collecting statistics, whereas the HLL algorithm needs to store only the HLL data structures rather than the raw data, and thereby occupying a fixed space of about 16 KB.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.
 >-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.
 >    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.
@@ -85,7 +85,7 @@ HLL has advantages over others in the computing speed and storage space requirem
 
 When you create an HLL data type, 0 to 4 input parameters are supported. The parameter meanings and specifications are the same as those of the  **hll\_empty**  function. The first parameter is  **log2m**, indicating the logarithm of the number of buckets, and its value ranges from 10 to 16. The second parameter is  **log2explicit**, indicating the threshold in explicit mode, and its value ranges from 0 to 12. The third parameter is  **log2sparse**, indicating the threshold of the Sparse mode, and its value ranges from 0 to 14. The fourth parameter is  **duplicatecheck**, indicating whether to enable duplicatecheck, and its value ranges from 0 to 1. When the input parameter is set to  **–1**, the default value of the HLL parameter is used. You can run the  **\\d**  or  **\\d+**  command to view the parameters of the HLL type.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >When the HLL data type is created, the result varies depending on the input parameter behavior:
 >-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
@@ -125,7 +125,7 @@ openGauss=# create table t4(id int, set hll(5,-1));
 ERROR:  log2m = 5 is out of range, it should be in range 10 to 16, or set -1 as default
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >When inserting an HLL object to an HLL table, ensure that the parameters of the HLL type are the same as those of the inserted object. Otherwise, an error is reported.
 

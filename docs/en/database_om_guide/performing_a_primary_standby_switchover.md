@@ -4,7 +4,7 @@
 
 During openGaussdatabase  running, the database administrator needs to manually perform an primary/standby switchover on the database node. For example, after a primary/standby database node failover, you need to restore the original primary/standby roles, or you need to manually perform a primary/standby switchover due to a hardware fault.  A cascaded standby server cannot be directly switched to a primary server. You must perform a switchover or failover to change the cascaded standby server to a standby server, and then to a primary server.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The primary/standby switchover is a maintenance operation. Ensure that the openGaussdatabase  is normal and perform the switchover after all services are complete.
 >-   When the ultimate RTO is enabled, cascaded standby servers are not supported. The standby server cannot be connected when the ultimate RTO is enabled. As a result, the cascaded standby server cannot synchronize data.
 
@@ -24,7 +24,7 @@ During openGaussdatabase  running, the database administrator needs to manually 
 
     **/home/omm/cluster/dn1/**  is the data directory of the standby database node.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >For the same database, you cannot perform a new primary/standby switchover if the previous switchover has not completed. If a switchover is performed when the host thread is processing services, the thread cannot stop, and switchover timeout will be reported. Actually, the switchover is ongoing in the background and will complete after the thread finishes service processing and stops. For example, when a host is deleting a large partitioned table, it may fail to respond to the switchover request.
 
 3.  After the switchover is successful, run the following command to record the information about the current primary and standby nodes:

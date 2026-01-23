@@ -20,7 +20,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     When you encrypt a user password using the  **gs\_guc**  encrypt command and the  **-M**  option is set to client, the  **client.key.cipher**  and** client.key.rand**  files are generated.  **client.key.cipher**  stores the encrypted password.  **client.key.rand**  stores the encryption factor.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**client.key.cipher**  and  **client.key.rand**  indicate the ciphertext file and encryption factor files generated when the  **-U**  option is not specified. When you specify the user name using the  **-U**  option, a file whose name starts with the user name is generated. Take  **-U test**  as an example, the names of the files generated are  **test.key.cipher**  and  **test.key.rand**.
 
 
@@ -28,7 +28,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     When you encrypt a user password using the  **gs\_guc**  encrypt command and the  **-M**  option is set to source, the  **datasource.key.cipher**  and  **datasource.key.rand**  files are generated.  **datasource.key.cipher stores**  the encrypted password.  **datasource.key.rand**  stores the encryption factor.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **datasource.key.cipher**  and  **datasource.key.rand**  are key files invoked during data source creation.  **gs\_guc**  has the read permission when the files are generated. Before using the two files, place them in the  _$GAUSSHOME_**/bin**  directory on each node and ensure that they are readable.  **gs\_ssh**  helps you quickly place files in the specified directory of each node in the database instance.
     >-   You can also run the  **gs\_guc generate**  command to generate the two files using either of the following methods and enter the password as prompted.
     >    Method 1: gs\_guc encrypt -M source -D ./
@@ -38,7 +38,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     When you run the  **gs\_guc generate**  command to encrypt the entered password, the two files are generated.  **obsserver.key.cipher**  indicates the ciphertext of the password, and  **obsserver.key.rand**  indicates the encryption factor.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**obsserver.key.cipher**  and  **obsserver.key.rand**  are the key files invoked when OBS objects are created.
 
 
@@ -95,7 +95,7 @@ All the current default values for parameters in the openGauss configuration fil
         gs_guc {set | reload} {-Z NODE-TYPE} -D DATADIR -h "HOSTTYPE DATABASE USERNAME HOSTNAME AUTHMEHOD authentication-options"
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   The  **authentication-options**  parameter following  **AUTHMEHOD**  is optional.  **AUTHMEHOD**  supports the following options:
         >    -   **trust**: No authentication is required. Remote hosts are not allowed to access the database in trust mode.
         >    -   **reject**: access denied.
@@ -139,7 +139,7 @@ All the current default values for parameters in the openGauss configuration fil
         gs_guc encrypt [-M keymode] [-K password] [-U username] -C [cipher_dir] -R [rand_dir]
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-K**  indicates a user-specified password.  **gs\_guc**  specifies the requirements of the password length \(8≤len<16\) and complexity. If the requirements are not meet, an error is reported. If the  **-K**  parameter is not specified, the system prompts you to enter the password in interactive mode. To ensure system security, you are advised to enter the password in interactive mode. This password is used to ensure the security and uniqueness of the generated password file. You do not need to save or memorize the password.
         >-   **-M**  indicates the encryption type. Its value can be  **server**,  **client**  or  **source**. The default value is  **server**.
 
@@ -149,14 +149,14 @@ All the current default values for parameters in the openGauss configuration fil
         gs_guc generate [-o prefix] [-S cipherkey] -D DATADIR
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   **-o**  indicates a file name prefix, pertaining to output cipher and rand files. The default prefix is  **obsserver**. The value can contain only digits, letters, and underscores \(\_\).
         >-   **-S**  indicates the password specified by the user. The password must meet the length \(8≤len<16\) and complexity requirements. If the password does not meet the requirements, an error is reported. If the value is  **default**, a randomly generated string will be used as the password, and the password length is 13 characters. If the  **-S**  parameter is not specified, the system prompts you to enter the password in interactive mode. To ensure system security, you are advised to enter the password in interactive mode. This password is used to ensure the security and uniqueness of the generated password file. You do not need to save or memorize the password.
         >-   Only the parameters are different when the  **gs\_guc encrypt**  or  **gs\_guc generate**  command is used to generate the encrypted password and encryption factor file. During the generation, a random number is used as the encryption key material and salt. Therefore, the file generated each time is different. The encryption password and encryption factor file generated each time must be used in pairs and cannot be changed or used alternately. The same encryption password and encryption factor file must be used for encryption and decryption.
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Parameter values set using  **gs\_guc**  cannot contain the number sign \(\#\). To set such values, you can use vi to manually modify the configuration file.
 >-   If the environment variable  **PGDATA**  has been set, the  **-D**  parameter can be omitted. Otherwise, a parameter setting failure will be reported.
 >-   Set the environment variable PGDATA as follows: Set  _/gaussdb/data_, and then execute export PGDATA to make the setting effective.
@@ -179,7 +179,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Checks only the parameters in the configuration file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If the check result contains  _parameter_=NULL, this parameter is not configured in the configuration file.
 
 -   reload
@@ -206,7 +206,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Name and value of the database configuration parameter to be set.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If the parameter is a string variable, use -c  _parameter_=_value_  or -c  _parameter_  =  _value_.
     >-   When  **gs\_guc**  set or reload is set to  **log\_directory**, the default value is restored and set to a specific data directory.
 
@@ -216,7 +216,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Name of the logical database to be set.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   This parameter must be used together with -Z datanode. That is, gs\_guc can be used only for logical database instances of DNs.
     >-   The parameters that can be operated on a logical database are different from those on a complete database. For details, see  **$GAUSSHOME/bin/cluster\_guc.conf**.
 
@@ -226,7 +226,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Specifies the name of the host to be ignored.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   This parameter must be used together with  **set**  or  **reload**, and** -Z**  supports only datanode or coordinator.
     >-   This parameter cannot be used together with  **-D**.
     >-   When the  **reload**  command is used together with the  **--ignore-node**  command, if no primary node is specified for the  **--ignore-node**  command, the parameters of all nodes in the cluster are modified synchronously.
@@ -284,7 +284,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Specifies that the password is invoked to create which object. Its value can be server, client or source.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Using the SSL function involves the encrypted passwords of the server certificates and private key files as well as those of the client certificates and private key files. When these passwords are stored in encrypted mode, this parameter must be specified. Otherwise, a server password file will be generated.
 
     Value range:
@@ -303,7 +303,7 @@ All the current default values for parameters in the openGauss configuration fil
 
     Specifies the user to be encrypted. The user belongs to the OS user.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >For example, openGauss can configure different SSL licenses and private files for each user. When this option is specified, user-specific password files can be generated.
 
 -   -S CIPHERKEY

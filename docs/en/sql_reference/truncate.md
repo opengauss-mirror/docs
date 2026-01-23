@@ -73,7 +73,7 @@ ALTER TABLE [ IF EXISTS  ] { [ ONLY  ] table_name
 
     Value range: value range of the partition key for the partition to be renamed
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >When the  **PARTITION FOR**  clause is used, the entire partition where  **partition\_value**  is located is cleared.
 
 

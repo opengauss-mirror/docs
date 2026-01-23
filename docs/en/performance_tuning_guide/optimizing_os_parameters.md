@@ -102,7 +102,7 @@ sysctl -p
     RX bytes:17952090386 (17120.4 Mb)  TX bytes:171359670290 (163421.3 Mb)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **ethx**  indicates the 10 GE service NIC used in the database.
     >-   The first command is used to set the MTU. The second command is used to verify that the MTU has been successfully set. The texts in bold indicate the value of the MTU.
     >-   Set the MTU as user  **root**.
@@ -127,7 +127,7 @@ sysctl -p
     TX:             4096
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **ethx**  indicates the 10 GE service NIC used in the database.
     >-   The first command is used to set the lengths of the receiving and sending queues. The second command is to verify whether the lengths have been successfully set. If information similar to the example is displayed, the setting is successful.
     >-   Set the lengths of the receiving and sending queues as user  **root**.

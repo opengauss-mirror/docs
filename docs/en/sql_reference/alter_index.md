@@ -88,7 +88,7 @@ The owner of an index, a user who has the INDEX permission on the table where th
         [ MODIFY PARTITION index_partition_name ] UNUSABLE;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The syntax cannot be used for column-store tables.
 
 

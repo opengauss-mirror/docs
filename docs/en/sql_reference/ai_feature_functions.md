@@ -77,7 +77,7 @@
 
     Return type: text
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This function is an internal function. You are not advised to use it directly.
 
 -   model\_train\_opt\(template text, model text\)

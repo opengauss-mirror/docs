@@ -129,14 +129,14 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
     -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
     -   A table constraint is not bound to a particular column but can apply to more than one column.
 
-     >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+     >[!TIP]NOTICE
         >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
 
     Specifies an index name.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
     >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
@@ -147,7 +147,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     For details about the value range, see [USING method](create_index.md).
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
@@ -155,7 +155,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **LIKE source\_table \[ like\_option ... \]**
@@ -166,7 +166,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
@@ -188,7 +188,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
         -   **COLUMN**: The data will be stored in columns.
         -   **ROW**  \(default value\): The data will be stored in rows.
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >[!TIP]NOTICE 
             >**ORIENTATION**  cannot be modified.
 
     -   COMPRESSLEVEL
@@ -343,7 +343,7 @@ PARTITION BY {RANGE | LIST | HASH} (partition_key) SUBPARTITION BY {RANGE | LIST
 
     This clause creates a column as a generated column. The value of the generated column is calculated by  **generation\_expr**  when data is written \(inserted or updated\).  **STORED**  indicates that the value of the generated column is stored as a common column.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The generation expression cannot refer to data other than the current row in any way. The generation expression cannot reference other generation columns or system columns. The generation expression cannot return a result set. No subquery, aggregate function, or window function can be used. The function called by the generation expression can only be an immutable function.
     >-   Default values cannot be specified for generated columns.
     >-   The generated column cannot be used as a part of the partition key.

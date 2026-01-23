@@ -176,6 +176,6 @@ For details about permission changes before and after enabling separation of dut
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >PG\_STATISTIC and PG\_STATISTIC\_EXT store sensitive information about statistical objects, such as high-frequency MCVs. After separation-of-duty is enabled, the system administrator can still access the two system catalogs to obtain the statistics.
 

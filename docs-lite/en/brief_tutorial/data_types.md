@@ -329,7 +329,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >1.  In addition to the restriction on the size of each column, the total size of each tuple cannot exceed 1 GB minus 1 byte and is affected by the control header information of the column, the control header information of the tuple, and whether null columns exist in the tuple.
 >2.  NCHAR is the alias of the bpchar type, and NCHAR\(n\) is the alias of the b\(n\) type bpchar\(n\).
 
@@ -434,7 +434,7 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   In addition to the size limitation on each column, the total size of each tuple is 1073733621 bytes \(1 GB – 8203 bytes\).
 >-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
 
@@ -442,7 +442,7 @@ In openGauss, there are two other fixed-length character types, as shown in  [Ta
 
 [Table 9](#en-us_topic_0283136973_en-us_topic_0237121952_en-us_topic_0059779229_en-us_topic_0058965827_table60826369)  lists the date/time types supported by openGauss.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the time format of another database is different from that of openGauss, modify the value of the  **DateStyle**  parameter to keep them consistent.
 
 **Table  9**  Date/Time types
@@ -906,7 +906,7 @@ openGauss supports two bit string types: bit\(n\) and bit varying\(n\), in which
 
 The data of the  **bit**  type must match the length  _n_  exactly. An error will be reported if shorter or longer bit strings are stored. The data of the  **bit varying**  type is of variable length up to the maximum length  _n_. Longer strings will be rejected. Writing  **bit**  without a length is equivalent to  **bit\(1\)**, while  **bit varying**  without a length limit means unlimited length.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If one explicitly casts a bit-string value to  **bit\(n\)**, it will be truncated or zero-padded on the right to be exactly  _n_  bits, without raising an error.
 >Similarly, if one explicitly casts a bit-string value to  **bit varying\(n\)**, it will be truncated on the right if it has more than  _n_  bits.
 
@@ -1189,7 +1189,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
     select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
     ```
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+    >[!WARNING]CAUTION 
     >-   Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.
     >-   For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.
 
@@ -1247,7 +1247,7 @@ So you can see that both JSON and JSONB are of JSON data type, and the same stri
             -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
             -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
 
-            >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+            >[!WARNING]CAUTION 
             >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
 
@@ -1341,7 +1341,7 @@ HLL is an approximation algorithm for efficiently counting the number of distinc
 
 HLL has advantages over others in the computing speed and storage space requirement. In terms of time complexity, the sorting algorithm needs O\(nlogn\) time for sorting, and the hash algorithm and HLL need O\(n\) time for full table scanning. In terms of storage space requirements, the sorting algorithm and hash algorithm need to store raw data before collecting statistics, whereas the HLL algorithm needs to store only the HLL data structures rather than the raw data, thereby occupying a fixed space of about 16 KB.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.
 >-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.
 >    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.
@@ -1368,7 +1368,7 @@ HLL has advantages over others in the computing speed and storage space requirem
 
 When you create an HLL data type, 0 to 4 input parameters are supported. The parameter meanings and specifications are the same as those of the  **hll\_empty**  function. The first parameter is  **log2m**, indicating the logarithm of the number of buckets, and its value ranges from 10 to 16. The second parameter is  **log2explicit**, indicating the threshold in explicit mode, and its value ranges from 0 to 12. The third parameter is  **log2sparse**, indicating the threshold of the Sparse mode, and its value ranges from 0 to 14. The fourth parameter is  **duplicatecheck**, indicating whether to enable duplicate check, and its value ranges from 0 to 1. When the input parameter is set to  **–1**, the default value of the HLL parameter is used. You can run the  **\\d**  or  **\\d+**  command to view the parameters of the HLL type.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >When the HLL data type is created, the result varies depending on the input parameter behavior:
 >-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
 >-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.
@@ -1407,7 +1407,7 @@ openGauss=# create table t4(id int, set hll(5,-1));
 ERROR:  log2m = 5 is out of range, it should be in range 10 to 16, or set -1 as default
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >When inserting an HLL object to an HLL table, ensure that the parameters of the HLL type are the same as those of the inserted object. Otherwise, an error is reported.
 
 ```
@@ -2230,7 +2230,7 @@ xmlconcat
 (1 row)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   This function is disabled by default. To use this function, you need to use the  **build.sh**  script to compile the database again and add the** --with-libxml**  parameter to the  **./configure**  configuration parameter.
 >-   Before compilation, you need to run the  **yum install -y libxml2-devel**  command. Otherwise, the "configure: error: library 'xml2' \(version \>= 2.6.23\) is required for XML support" error will be reported.
 >-   Before compilation, you need to add the  **dependency**_operating system environment_**/libobs/comm/lib**  in the binary file of the third-party library to the system environment variable  _LD\_LIBRARY\_PATH_. Otherwise, an error message is displayed, indicating that  **libiconv.so**  does not exist.

@@ -175,7 +175,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies an index name.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
     >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
@@ -186,7 +186,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     For details about the value range, see [USING method](create_index.md).
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
@@ -194,7 +194,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **LIKE source\_table \[ like\_option ... \]**
@@ -217,7 +217,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
 -   **WITH \( storage\_parameter \[= value\] \[, ... \] \)**
@@ -239,7 +239,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
         -   **COLUMN**: The data will be stored in columns.
         -   **ROW**  \(default value\): The data will be stored in rows.
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+            >[!TIP]NOTICE 
             >**orientation**  cannot be modified.
 
     -   COMPRESSTYPE
@@ -342,21 +342,21 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     \(1\) Assume that the  **VALUES LESS THAN**  syntax is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >In this case, a maximum of four partition keys are supported.
 
     Data types supported by the partition keys are as follows: SMALLINT, INTEGER, BIGINT, DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(*n_\), VARCHAR\(*n_\), CHARACTER\(*n_\), CHAR\(*n_\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
     \(2\) Assume that the  **START END**  syntax is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >In this case, only one partition key is supported.
 
     Data types supported by the partition key are as follows:  **SMALLINT**,  **INTEGER**,  **BIGINT**,  **DECIMAL**,  **NUMERIC**,  **REAL**,  **DOUBLE PRECISION**,  **TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\]**, and  **DATE**.
 
     \(3\) Assume that the  **INTERVAL**  syntax is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >In this case, only one partition key is supported.
 
     In this case, the data types supported by the partition key are TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\] and DATE.
@@ -365,7 +365,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     Specifies the information of partitions.  **partition\_name**  is the name of a range partition.  **partition\_value**  is the upper limit of a range partition, and the value depends on the type of  **partition\_key**.  *MAXVALUE*  usually specifies the upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   Each partition requires an upper limit.
     >-   The data type of the upper limit must be the same as that of the partition key.
     >-   In a partition list, partitions are arranged in ascending order of upper limits. A partition with a smaller upper limit value is placed before another partition with a larger one.
@@ -382,7 +382,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
     -   **interval\_value**: width of each partition for dividing the \[**START**,  **END**\) range. It cannot be  *MAXVALUE*. If the value of \(**END**  –  **START**\) divided by  **EVERY**  has a remainder, the width of only the last partition is less than the value of  **EVERY**.
     -   *MAXVALUE*  usually specifies the upper limit of the last range partition.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >1.  If the defined statement is in the first place and has  **START**  specified, the range \(*MINVALUE*,  **START**\) will be automatically used as the first actual partition.
     >2.  The  **START END**  syntax must comply with the following rules:
     >    -   The value of  **START**  \(if any, same for the following situations\) in each  **partition\_start\_end\_item**  must be smaller than that of  **END**.
@@ -403,7 +403,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     -   **STORE IN \(tablespace\_name \[, ... \] \)**: Specifies the list of tablespaces for storing automatically created partitions. If this parameter is specified, the automatically created partitions are cyclically selected from the tablespace list. Otherwise, the default tablespace of the partition table is used.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >Column-store tables do not support interval partitioning.
 
 -   **PARTITION BY LIST\(partition\_key\)**
@@ -466,7 +466,7 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
 
     This clause creates a column as a generated column. The value of the generated column is calculated by  **generation\_expr**  when data is written \(inserted or updated\).  **STORED**  indicates that the value of the generated column is stored as a common column.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The generation expression cannot refer to data other than the current row in any way. The generation expression cannot reference other generation columns or system columns. The generation expression cannot return a result set. No subquery, aggregate function, or window function can be used. The function called by the generation expression can only be an immutable function.
     >-   Default values cannot be specified for generated columns.
     >-   The generated column cannot be used as a part of the partition key.

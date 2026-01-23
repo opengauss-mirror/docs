@@ -92,7 +92,7 @@ CREATE SERVER server_name
 
             Specifies the secret key (SK) value (obtained by users from the OBS console) used for the OBS access protocol. When you create a foreign table, the SK value is encrypted and saved to the metadata table of the database. This parameter is available only when **type** is set to **OBS**.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >In the Lite edition, openGauss does not support obs\_server in the CREATE SERVER syntax.
 
 

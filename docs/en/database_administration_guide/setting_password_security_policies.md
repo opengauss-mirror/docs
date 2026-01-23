@@ -49,7 +49,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
     gs_guc reload -N all -I all -c "password_encryption_type=2"
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >When running **CREATE USER/ROLE** to create a database user, do not specify the properties of **UNENCRYPTED** to prevent password leakage. By doing so, only the password of the newly created user can be encrypted and stored.
 
 5. Configure password security parameters.
@@ -99,7 +99,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
         gs_guc reload -N all -I all -c "password_policy=1"
         ```
 
-     > ![](public_sys-resources/icon-note.gif) **NOTE:** 
+     > [!NOTE]NOTE 
      >
      > The password complexity requirements are as follows:
      >
@@ -126,7 +126,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
      An old password can be reused only when it meets the requirements on reuse days \([password\_reuse\_time](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)\) and reuse times \([password\_reuse\_max](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)\). [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee) lists the parameter configurations.
 
-     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+     >[!NOTE]NOTE 
      >The default values of the **password_reuse_time** and **password_reuse_max** parameters are **60** and **0**, respectively. Large parameter values ensure high security, but they may also cause operation inconvenience. The default values meet security standards. You can keep them or change the values as needed to improve the security level.
 
      Configure the **password\_reuse\_time** parameter.
@@ -163,7 +163,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
      3. Run the following command to set the parameter to its default value **60**:
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >You are not advised to set the parameter to **0**. This value is valid only when **password\_reuse\_time** for all openGauss nodes is set to **0**.
 
         ```
@@ -212,7 +212,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
 
      A validity period ([password\_effect\_time](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)) is set for each database user password. If the password is about to expire ([password\_notify\_time](../database_reference/security_and_authentication_postgresql_conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)), the system displays a message to remind the user to change it upon login.
 
-     >![](public_sys-resources/icon-note.gif) **NOTE:** 
+     >[!NOTE]NOTE 
      >Considering the usage and service continuity of a database, the database still allows a user to log in after the password expires. A password change notification is displayed every time the user logs in to the database until the password is changed.
 
      Configure the **password\_effect\_time** parameter.
@@ -310,7 +310,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
        ALTER ROLE
        ```
 
-       >![](public_sys-resources/icon-note.gif) **NOTE:** 
+       >[!NOTE]NOTE 
        >**1234@abc** and **5678@def** represent the new password and the original password of the user **user1**, respectively. If the new password does not have the required complexity, the change will not take effect.
 
      - Administrators can change their own and common users' passwords. If common users forget their passwords, they can ask administrators to change the passwords.
@@ -322,7 +322,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
        ALTER ROLE
        ```
 
-       >![](public_sys-resources/icon-note.gif) **NOTE:** 
+       >[!NOTE]NOTE 
        >
        >-   System administrators are not allowed to change passwords for each other.
        >-   A system administrator can change the password of a common user without being required to provide the common user's old password.
@@ -554,7 +554,7 @@ User passwords are stored in the system catalog **pg\_authid**. To prevent passw
    ALTER ROLE
    ```
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:** 
+   >[!NOTE]NOTE 
    >
    >-   After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
    >

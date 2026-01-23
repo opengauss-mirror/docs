@@ -124,7 +124,7 @@ Where create\_option is:
   ```
 - `col_name ( length )` is the prefix key, `column\_name` is the column name of the prefix key, and `length` is the prefix length. The prefix key uses the prefix of the specified column data as the index key value, which reduces the storage space occupied by the index. Indexes can be used for filter and join conditions that contain prefix key columns.
   
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-  The prefix key supports the following index methods: btree and ubtree.
     >-  The data type of the prefix key column must be binary or character (excluding special characters).
     >-  The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.
@@ -243,7 +243,7 @@ Where create\_option is:
         -   **COLUMN**: The data will be stored in columns.
         -   **ROW** (default value): The data will be stored in rows.
 
-            >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+            >[!TIP]NOTICE
             >**ORIENTATION** cannot be modified.
         
     -    STORAGE\_TYPE
@@ -301,21 +301,21 @@ Where create\_option is:
 
   (1) Assume that the **VALUES LESS THAN** syntax is used.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >In this case, a maximum of four partition keys are supported.
 
   Data types supported by the partition keys are as follows: TINYINT[UNSIGNED], SMALLINT[UNSIGNED], INTEGER[UNSIGNED], BIGINT[UNSIGNED], DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, CHARACTER VARYING\(n\), VARCHAR\(n\), CHARACTER\(n\), CHAR\(n\), CHARACTER, CHAR, TEXT, NVARCHAR, NVARCHAR2, NAME, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
   (2) Assume that the **START END** syntax is used.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >In this case, only one partition key is supported.
 
   Data types supported by the partition keys are as follows: TINYINT[UNSIGNED], SMALLINT[UNSIGNED], INTEGER[UNSIGNED], BIGINT[UNSIGNED], DECIMAL, NUMERIC, REAL, DOUBLE PRECISION, TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
 
   (3) Assume that the **INTERVAL** syntax is used.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >In this case, only one partition key is supported.
 
   In this case, the data types supported by the partition key are TIMESTAMP\[\(p\)\] \[WITHOUT TIME ZONE\], TIMESTAMP\[\(p\)\] \[WITH TIME ZONE\], and DATE.
@@ -324,7 +324,7 @@ Where create\_option is:
 
   Indicates specifying the partition information, where **partition\_name** indicates the name of a range partition, **partition\_value** indicates the upper boundary of a range partition and its value is determined by the type of **partition\_key**. **MAXVALUE** specifies the upper boundary of the last range partition.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >
   >-   Upper boundaries must be specified for each partition.
   >-   The data type of an upper boundary must be the same as that of the partition key.
@@ -342,7 +342,7 @@ Where create\_option is:
   -   **interval\_value**: width of each partition for dividing the [**START**, **END**) range. It cannot be **MAXVALUE**. If the value of (**END** – **START**) divided by **EVERY** has a remainder, the width of only the last partition is less than the value of **EVERY**.
   -   **MAXVALUE**: maximum value. It is usually used to set the upper boundary for the last range partition.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >1.  If the defined statement is in the first place and has **START** specified, the range (**MINVALUE**, **START**) will be automatically used as the first actual partition.
   >2.  The **START END** syntax must comply with the following rules:
   >    -   The value of START (if any, same for the following situations) in each partition\_start\_end\_item must be smaller than that of END.
@@ -363,7 +363,7 @@ Where create\_option is:
 
   -   STORE IN \(tablespace\_name \[, ... \] \): Specifies the list of tablespaces for storing automatically created partitions. If this parameter is specified, the automatically created partitions are cyclically selected from the tablespace list. Otherwise, the default tablespace of the partitioned table is used.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >Column-store tables do not support interval partitioning.
 
 - **PARTITION BY LIST\(partition\_key\)**
@@ -402,7 +402,7 @@ Where create\_option is:
   -   **ENABLE** (default value): Row movement is enabled.
   -   **DISABLE**: Row movement is disabled.
 
-  >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+  >[!TIP]NOTICE
   >Currently, list and hash partitioned tables do not support **ROW MOVEMENT**.
 
 
@@ -436,7 +436,7 @@ Where create\_option is:
 
     This clause creates a column as a generated column. The value of the generated column is calculated by **generation\_expr** when data is written (inserted or updated). **STORED** indicates that the value of the generated column is stored as a common column.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-   The generation expression cannot refer to data other than the current row in any way. The generation expression cannot reference other generation columns or system columns. The generation expression cannot return a result set. No subquery, aggregate function, or window function can be used. The function called by the generation expression can only be an immutable function.
     >
     >-   Default values cannot be specified for generated columns.

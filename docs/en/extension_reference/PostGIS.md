@@ -279,14 +279,14 @@ You can obtain the PostGIS Extension source code package from  [https://opengaus
 4.  Install the libraries that PostGIS depends on.
     1.  Obtain the PostGIS source code from  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/dependency/postgis-xc-master-2020-09-17.tar.gz). Save it to the  *$GAUSSHOME*  directory. Download the compressed package, decompress it, and rename the folder  **postgis-xc**.
 
-    2.  Download the patch file from https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch. Save the patch file to the *$GAUSSHOME* directory and install the patch.
+    2.  Download the patch file from [https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch](https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/postgis\_2.4.2-2.patch). Save the patch file to the *$GAUSSHOME* directory and install the patch.
 
         ```
         cd $GAUSSHOME/postgis-xc/
         patch -p1 < $GAUSSHOME/postgis_2.4.2-2.patch 
         ```
 
-    3.  Download the header file on which PostGIS depends from https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h. Save the header file to *$GAUSSHOME***/include/postgresql/server/**.
+    3.  Download the header file on which PostGIS depends from [https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h](https://gitcode.com/opengauss/openGauss-third\_party/blob/master/gpl\_dependency/postgis/extension\_dependency.h). Save the header file to *$GAUSSHOME***/include/postgresql/server/**.
 
     4.  Separately compile GEOS, PROJ, JSON-C, Libxml2, and PostGIS, and generate the corresponding dynamic link libraries. Compiling commands are as follows:
 
@@ -434,7 +434,7 @@ Run the following command to delete a PostGIS extension from openGauss:
 openGauss=# DROP EXTENSION postgis [CASCADE];
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If PostGIS Extension is the dependee of other objects \(for example, geometry tables\), you need to add the  **CASCADE**  keyword to delete all these objects.
 
 To completely delete PostGIS extension, run  **gs\_om**  as user  **omm**  to delete PostGIS and the dynamic link libraries it depends on.

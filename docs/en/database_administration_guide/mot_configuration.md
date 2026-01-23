@@ -10,7 +10,7 @@ In primary/standby deployment mode, mot.conf file should be exactly same in both
 
 Read the  [General Guidelines](#section14452102715206)  section and then review and configure the following sections of the mot.conf file, as needed.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The topics listed above describe each of the setting sections in the mot.conf file. In addition to the above topics, for an overview of all the aspects of a specific MOT feature \(such as Recovery\), you may refer to the relevant topic of this user manual. For example, the mot.conf file has a Recovery section that contains settings that affect MOT recovery and this is described in the  [MOT Recovery](mot_recovery.md)  section that is listed above. In addition, for a full description of all aspects of Recovery, you may refer to the  [MOT Recovery](mot_recovery.md)  section of the Administration chapter of this user manual. Reference links are also provided in each relevant section of the descriptions below.
 
 The following topics describe each section in the mot.conf file and the settings that it contains, as well as the default value of each.
@@ -74,7 +74,7 @@ If no time units are specified, then microseconds are assumed.
 
     A commit group is closed after either the configured number of transactions has arrived or after the configured timeout period since the group was opened. After the group is closed, all the transactions in the group wait for a group flush to complete execution and then notify the client that each transaction has ended.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     You may refer to  [MOT Logging – WAL Redo Log](mot_durability.md#section129831140121218)  section for more information about the WAL Redo Log and synchronous group commit logging.
 
 
@@ -96,7 +96,7 @@ If no time units are specified, then microseconds are assumed.
 
     Checkpoint is performed in parallel by several MOT engine workers. The quantity of workers may substantially affect the overall performance of the entire checkpoint operation, as well as the operation of other running transactions. To achieve a shorter checkpoint duration, a larger number of workers should be used, up to the optimal number \(which varies based on the hardware and workload\). However, be aware that if this number is too large, it may negatively impact the execution time of other running transactions. Keep this number as low as possible to minimize the effect on the runtime of other running transactions, but at the cost of longer checkpoint duration.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You may refer to the  [MOT Checkpoints](mot_durability.md#section182761535131617)  section for more information about configuration settings.
 
 
@@ -106,7 +106,7 @@ If no time units are specified, then microseconds are assumed.
 
     Specifies the number of workers \(threads\) to use during checkpoint data recovery. Each MOT engine worker runs on its own core and can process a different table in parallel by reading it into memory. For example, while the default is three-course, you might prefer to set this parameter to the number of cores that are available for processing. After recovery these threads are stopped and killed.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You may refer to the  [MOT Recovery](mot_recovery.md)  section for more information about configuration settings.
 
 -   **parallel\_recovery\_workers = 5**

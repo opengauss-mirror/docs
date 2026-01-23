@@ -9,7 +9,7 @@
 -   Only the CMK owner or a user who has been granted the DROP permission can run this command. By default, the system administrator has this permission.
 -   This command not only deletes the key object in the database, but also deletes the key file corresponding to the key object in the specified path on the client.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
@@ -34,7 +34,7 @@ DROP CLIENT MASTER KEY [ IF EXISTS ] client_master_key_name [CASCADE];
 -   **CASCADE**
     -   **CASCADE**: automatically deletes objects that depend on the CMK.
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+        >[!TIP]NOTICE 
         >
         >During the life cycle of the syntax, the status of both client and server needs to be changed. When an exception occurs, the key information may have been deleted from the server, but the key file is not deleted from the client.
         >In this case, the client does not check whether there are unexpected key files retain due to exceptions during the lifecycle of the next syntax. You need to periodically check the key folder and confirm and process the key files that are not used.

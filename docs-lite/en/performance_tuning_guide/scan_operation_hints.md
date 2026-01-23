@@ -17,7 +17,7 @@ These hints specify a scan operation, which can be  **tablescan**,  **indexscan*
 -   **table **specifies the table to be scanned. You can specify only one table. Use a table alias \(if any\) instead of a table name.
 -   **index **indicates the index for  **indexscan**  or  **indexonlyscan**. You can specify only one index.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**indexscan**  and  **indexonlyscan**  hints can be used only when the specified index belongs to the table.
 >Scan operation hints can be used for row-store tables, column-store tables, HDFS tables, OBS tables, and subquery tables. HDFS internal tables include base tables and delta tables. The delta tables are invisible to users. Therefore, scan operation hints are used only for base tables.
 

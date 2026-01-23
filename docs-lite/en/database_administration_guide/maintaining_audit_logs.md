@@ -124,7 +124,7 @@ You have the audit permission.
 
         If the storage space occupied by audit files or the number of audit files reaches the upper limit, the system automatically deletes the oldest audit files and records deletion information to audit logs.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >By default, the allowed maximum storage space that can be occupied by audit files is set to  **1024 MB**. Users can set the value as required.
 
         Configure the allowed maximum size of storage space occupied by audit files \(**audit\_space\_limit**\).

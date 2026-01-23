@@ -48,7 +48,7 @@ When you execute the CREATE USER statement to create a user, the system creates 
 
     Specifies the schema name.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The name must be unique. 
     >The schema name cannot start with  **pg\_**.
 
@@ -67,7 +67,7 @@ When you execute the CREATE USER statement to create a user, the system creates 
     Objects created by sub-commands are owned by the user specified by  **AUTHORIZATION**.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If objects in the schema on the current search path are with the same name, specify the schemas for different objects. You can run the SHOW SEARCH\_PATH statement to check the schemas on the current search path.
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>

@@ -16,7 +16,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **100**
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >-   If the automatic elimination function is enabled and this parameter is set to a small value, the system may frequently perform automatic elimination, which may affect the database system performance. Therefore, you are advised to set this parameter to  **200000**.
 >-   If automatic elimination is enabled and this parameter is set to a large value \(for example, 38347922\), a large memory problem may occur during the clearance. As a result, the clearance fails.
 
@@ -158,7 +158,7 @@ The first part indicates the tracing level of full SQL statements. The value can
 
 The second part indicates the tracing level of slow SQL statements. The value can be  **OFF**,  **L0**,  **L1**, or  **L2**.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the full SQL tracing level is not  **OFF**, the current SQL tracing level is the higher level \(L2 \> L1 \> L0\) of the full SQL and slow SQL statements. For details about the levels, see  [Table 1](../database_administration_guide/reset_parameters.md).
 
 **Default value**:  **OFF,L0**
@@ -173,7 +173,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >Some snapshot information comes from unique SQL statements. Therefore, when automatic elimination is enabled, if the selected start snapshot and end snapshot exceed the elimination time, the WDR report cannot be generated.
 
 ## track\_stmt\_standby\_chain_size<a name="section16119247614"></a>

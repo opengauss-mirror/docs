@@ -35,7 +35,7 @@
         export PATH=${PATH}:${ANT_HOME}/bin
         ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The installation path of  **ANT\_HOME**  may vary according to the OS. You can run the  **find**  command to find the corresponding installation path.
 
 4.  Install the htop tool. For details, see  [https://hisham.hm/htop/](https://hisham.hm/htop/).

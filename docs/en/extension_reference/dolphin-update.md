@@ -57,7 +57,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
  -   If **sql_ignore_strategy** is set to **overwrite_null**, the null value that violates the constraint is overwritten by the default value of the target type, and the remaining data operations are performed.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
       >The GUC parameter sql\_ignore\_strategy is of the enumeration type. The options are ignore\_null and overwrite\_null.
 
   2. The unique constraint is violated.

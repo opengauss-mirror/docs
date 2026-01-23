@@ -49,5 +49,5 @@ The plan is as follows:
 (9 rows)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >To ensure the equivalence of rewriting, the _not null_ constraint is added to _normal\_date.id_.

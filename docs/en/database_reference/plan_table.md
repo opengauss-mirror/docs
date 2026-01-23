@@ -79,7 +79,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   A valid  **object\_type**  value consists of a relkind type defined in  [PG\_CLASS](pg_class.md)  \(**TABLE**,  **INDEX**,  **SEQUENCE**,  **VIEW**,  **COMPOSITE TYPE**, or  **TOASTVALUE TOAST**\) and the rtekind type used in the plan \(**SUBQUERY**,  **JOIN**,  **FUNCTION**,  **VALUES**,  **CTE**, or  **REMOTE\_QUERY**\).
 >-   For RangeTableEntry \(RTE\),  **object\_owner**  is the object description used in the plan. Non-user-defined objects do not have  **object\_owner**.
 >-   Information in the  **statement\_id**,  **object\_name**,  **object\_owner**, and  **projection**  columns is stored in letter cases specified by users and information in other columns is stored in uppercase.

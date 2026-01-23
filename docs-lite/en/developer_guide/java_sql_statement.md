@@ -352,7 +352,7 @@ This section describes  **java.sql.Statement**, the interface for executing SQL 
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Using setFetchSize can reduce the memory occupied by result sets on the client. Result sets are packaged into cursors and segmented for processing, which will increase the communication traffic between the database and the client, affecting performance.
 >-   Database cursors are valid only within their transactions. If  **setFetchSize**  is set, set  **setAutoCommit\(false\)**  and commit transactions on the connection to flush service data to a database.
 >-   **LargeUpdate**  methods can only be used in JDBC 4.2 or later.

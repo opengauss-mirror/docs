@@ -183,7 +183,7 @@ When the openGauss is deployed in shared storage mode and the ss\_enable\_dss fu
     dsscmd showdisk <-g vg_name> <-b block_id> <-n node_id> [-D DSS_HOME]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >If **-b block\_id** is specified, **-n node\_id** must also be specified.
 
 -   Rename a file.
@@ -198,7 +198,7 @@ When the openGauss is deployed in shared storage mode and the ss\_enable\_dss fu
     dsscmd du <-p path> [-f format] [-U UDS:socket_domain]
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >**format**: Three types of parameters are supported. No separator is required between parameters.
     >-   B|K|M|G|T
     >    **B**: Byte. **K**: KB. **M**: MB. **G**: GB. **T**: TB.

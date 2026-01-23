@@ -81,6 +81,6 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this system catalog, but the SQL on Anywhere capabilities are unavailable.
 

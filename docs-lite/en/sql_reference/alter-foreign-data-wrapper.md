@@ -28,7 +28,7 @@ ALTER FOREIGN DATA WRAPPER name
 
     Specifies that an FDW no longer has a handler function.
 
-	>![](public_sys-resources/icon-notice.gif) **NOTICE:**
+	>[!TIP]NOTICE
     >
     > Foreign tables that use FDWs without handler functions cannot be accessed.
 
@@ -36,7 +36,7 @@ ALTER FOREIGN DATA WRAPPER name
 
     Specifies a new validator function for an FDW.
 
-	>![](public_sys-resources/icon-notice.gif) **NOTICE:**
+	>[!TIP]NOTICE
     >
     > After a validator function is modified, options for an FDW, server, and user mapping may become invalid. Before using the FDW, the user should ensure that these options are correct.
 

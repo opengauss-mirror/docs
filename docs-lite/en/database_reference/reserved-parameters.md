@@ -1,6 +1,6 @@
 # Reserved Parameters<a name="EN-US_TOPIC_0311762489"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The following parameters are reserved and do not take effect in this version.
 
 acce\_min\_datasize\_per\_thread

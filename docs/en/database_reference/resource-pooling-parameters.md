@@ -10,7 +10,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   The default value of **ss\_enable\_dss** is **off** in standalone mode.
 >-   To enable shared storage, set this parameter to **on**.
 >-   After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
@@ -25,7 +25,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   The default value of **ss\_enable\_dms** is **off** in standalone mode.
 >-   To enable shared storage, set this parameter to **on**.
 >-   After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
@@ -40,7 +40,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   This parameter takes effect only when the SSL parameter of the openGauss is set to **on**.
 >-   You need to manually change the value of this parameter on all nodes, and the change takes effect upon restart. If you change the value of this parameter on a single node, the restart will time out and fail.
 >-   If this parameter is disabled, the primary and standby nodes are not connected through SSL, which may cause spoofing attacks and information leakage.
@@ -55,7 +55,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >Currently, the value of **ss\_enable\_catalog\_centralized** cannot be changed. You can only use the default value.
 
 ## ss\_instance\_id<a name="section28801541163"></a>
@@ -126,7 +126,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **TCP**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >RDMA communication depends on the CX5 NIC and the OCK RDMA dynamic library. Before enabling this function, ensure that the configuration is correct.
 
 ## ss\_interconnect\_url<a name="section111131910175619"></a>
@@ -169,7 +169,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >SCRLock requires the CX5 NIC and depends on the OCK RDMA dynamic library. Before enabling this function, ensure that the configuration is correct.
 
 ## ss_enable_scrlock_sleep_mode 
@@ -182,7 +182,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >The SCRLock sleep mode reduces the CPU usage of the SCRLock but increases the SCRLock delay.
 
 ## ss_scrlock_server_port 
@@ -215,7 +215,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **""**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   This parameter can be left blank. In this case, the SCRLock worker is not bound to any CPU.
 >-   The value of start and end CPUs must be greater than or equal to 2.
 
@@ -229,5 +229,5 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **""**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >This parameter can be left blank, which is equivalent to "0 0". That is, the SCRLock server occupies CPU 0.

@@ -328,7 +328,7 @@ Currently, openGauss supports only the X509v3 certificate in PEM format.
     gs_om -t start
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >Certificates can be rolled back to the version before the replacement. You can run the  **gs\_om -t cert --rollback**  command to remotely invoke the interface or  **gs\_om -t cert --rollback -L**  to locally invoke the interface. The certificate will be rolled back to the latest version that was successfully replaced.  
 
 

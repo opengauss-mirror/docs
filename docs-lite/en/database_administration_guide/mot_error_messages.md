@@ -91,7 +91,7 @@ MOT uses return codes \(RCs\) to return the Postgres standard error codes to the
 
 MOT internally returns the Postgres codes \(see below\) to the database package, and the database encapsulation reacts to the codes according to the standard Postgres behavior.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the prompt information,  **%s**,  **%u**, and  **%lu**  indicate the corresponding error information \(such as query, table name, or other information\).
 >-   **%s**: character string
 >-   **%u**: number

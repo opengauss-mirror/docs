@@ -64,7 +64,7 @@
     ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   To modify the object isolation attribute of a database, the database must be connected. Otherwise, the modification will fail.
     >-   For a new database, the object isolation attribute is disabled by default. After this attribute is enabled, common users can view only the objects \(such as tables, functions, views, and columns\) that they have the permission to access. This attribute does not take effect for administrators. After this attribute is enabled, administrators can still view all database objects.
 
@@ -126,7 +126,7 @@
     Resets all database session parameters.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Modify the default tablespace of a database by moving the table or index in the old tablespace into the new tablespace. This operation does not affect the tables or indexes in other non-default tablespaces.
 >-   The modified database session parameter values will take effect in the next session.
 

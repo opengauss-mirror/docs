@@ -17,7 +17,7 @@ To enable an application to operate data in the database by running SQL statemen
     int rc = stmt.executeUpdate("CREATE TABLE customer_t1(c_customer_sk INTEGER, c_customer_name VARCHAR(32));");
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If an execution request \(not in a transaction block\) received in the database contains multiple statements, the request is packed into a transaction.  **VACUUM**  is not supported in a transaction block. If one of the statements fails, the entire request will be rolled back.
     >-   Use semicolons \(;\) to separate statements. Stored procedures, functions, and anonymous blocks do not support multi-statement execution.
     >-   The slash \(/\) can be used as the terminator for creating a single stored procedure, function, or anonymous block.
@@ -119,12 +119,12 @@ To call an existing stored procedure through JDBC in openGauss, perform the foll
     cstmt.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Many database classes such as Connection, Statement, and ResultSet have a close\(\) method. Close these classes after using their objects. Closing Connection will close all the related Statements, and closing a Statement will close its ResultSet.
     >-   Some JDBC drivers support named parameters, which can be used to set parameters by name rather than sequence. If a parameter has the default value, you do not need to specify any parameter value but can use the default value directly. Even though the parameter sequence changes during a stored procedure, the application does not need to be modified. Currently, the openGauss JDBC driver does not support this method.
     >-   openGauss does not support functions containing OUT parameters, or stored procedures and function parameters containing default values.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   If JDBC is used to call a stored procedure whose returned value is a cursor, the returned cursor cannot be used.
     >-   A stored procedure and an SQL statement must be run separately.
     >-   Output parameters must be registered for parameters of the inout type in the stored procedure.
@@ -178,7 +178,7 @@ After the  **behavior\_compat\_options='proc\_outparam\_override'**  parameter i
     cs.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   After the Oracle compatibility mode is enabled, you must use the  **\{call proc\_name\(?,?,?\)\}**  format to call a stored procedure and use the  **\{? = call func\_name\(?,?\)\}**  format to call a function. The question mark \(?\) on the left of the equal mark is the placeholder for the return value of the function and is used to register the return value of the function.
     >-   After  **behavior\_compat\_options**  is set to  **'proc\_outparam\_override'**, the service needs to re-establish a connection. Otherwise, the stored procedures and functions cannot be correctly called.
     >-   If a function or stored procedure contains a composite type, bind and register parameters in the schema.typename format.
@@ -232,5 +232,5 @@ When a prepared statement processes multiple pieces of similar data, the databas
     pstmt.close();
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Do not terminate a batch processing action when it is ongoing; otherwise, database performance will deteriorate. Therefore, disable automatic commit during batch processing. Manually commit several rows at a time. The statement for disabling automatic commit is  **conn.setAutoCommit\(false\);**.

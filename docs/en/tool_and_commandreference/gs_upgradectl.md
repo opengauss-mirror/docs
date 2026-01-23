@@ -88,7 +88,7 @@ Grayscale upgrade supports progress printing, and the progress is printed accord
   gs_upgradectl -t commit-upgrade -X XMLFILE [-l LOGFILE]
   ```
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >[!NOTE]NOTE 
   >
   >-   Once the operation is complete, the rollback operation cannot be performed.
 

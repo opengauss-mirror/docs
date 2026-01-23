@@ -307,7 +307,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the DCF functions are unavailable. DCF functions of openGauss are unavailable, but the leader election capability is provided. If this capability is required, you need to configure it.
 
 -   pg\_stat\_get\_stream\_replications\(\)
@@ -1477,7 +1477,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: text
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss does not support the Java UDF.
 
 -   total\_cpu\(\)
@@ -1492,7 +1492,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
 -   mot\_local\_memory\_detail\(\)
@@ -1501,7 +1501,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
 -   mot\_session\_memory\_detail\(\)
@@ -1510,7 +1510,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
 -   total\_memory\(\)
@@ -1857,7 +1857,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: Boolean
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This function involves distributed nodes. Currently, openGauss is a centralized database, for which the function of the value  **global**  is the same as that of the value  **local**  and the second parameter cannot set to be  **BY\_CNID**.
 
 -   get\_instr\_wait\_event\(NULL\) 或 get\_instr\_wait\_event\(integer\)
@@ -1920,7 +1920,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The status information contains the following 17 items:  **commit**,  **rollback**,  **sql**,  **table\_scan**,  **blocks\_fetched**,  **physical\_read\_operation**,  **shared\_blocks\_dirtied**,  **local\_blocks\_dirtied**,  **shared\_blocks\_read**,  **local\_blocks\_read**,  **blocks\_read\_time**,  **blocks\_write\_time**,  **sort\_imemory**,  **sort\_idisk**,  **cu\_mem\_hit**,  **cu\_hdd\_sync\_read**, and  **cu\_hdd\_asyread**.
 
 -   DBE\_PERF.get\_global\_session\_time\(\)
@@ -2080,7 +2080,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the DCF functions are unavailable. DCF functions of openGauss are unavailable, but the leader election capability is provided. If this capability is required, you need to configure it.
 
 -   gs\_wlm\_get\_resource\_pool\_info\(int\)
@@ -2823,7 +2823,7 @@ Statistics information functions are divided into the following two categories: 
 
     Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If  **[enable\_memory\_limit](../database_reference/memory-35.md#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s2cf6c862bad443aea7e115ff83941f94)**  is set to  **off**, this function cannot be used.
 
     Return type: record
@@ -3242,7 +3242,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This view is not supported in the Lite release version.
 
 -   gs\_get\_session\_memctx\_detail\(text\)
@@ -3284,7 +3284,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This view takes effect only in thread pool mode and is not supported in the Lite release version.
 
 -   gs\_get\_thread\_memctx\_detail\(tid,text\)
@@ -3326,7 +3326,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This view is not supported in the Lite release version.
 
 

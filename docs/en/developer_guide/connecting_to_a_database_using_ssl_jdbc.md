@@ -40,7 +40,7 @@ Perform the following operations \(assuming that the license files are saved in 
 
     Clients on the  **127.0.0.1/32**  network segment can connect to openGauss servers in SSL mode.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the certificate file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5**,  **sm3**, or  **sha256**, there is no such a restriction.
     >-   The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 

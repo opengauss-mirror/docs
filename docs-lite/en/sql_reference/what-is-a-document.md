@@ -18,7 +18,7 @@ identify_serials
 (7 rows) 
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Actually, in these example queries,  **coalesce**  should be used to prevent a single  **NULL**  attribute from causing a  **NULL**  result for the whole document.
 
 Another possibility is to store the documents as simple text files in the file system. In this case, the database can be used to store the full text index and to execute searches, and some unique identifier can be used to retrieve the document from the file system. However, retrieving files from outside the database requires system administrator permissions or special function support, so this is usually less convenient than keeping all the data inside the database. Also, keeping everything inside the database allows easy access to document metadata to assist in indexing and display. 

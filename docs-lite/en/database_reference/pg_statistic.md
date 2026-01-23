@@ -113,6 +113,6 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >**PG\_STATISTIC**  stores sensitive information about statistical objects, such as MCVs. The system administrator and authorized users can access the  **PG\_STATISTIC**  system catalog to query the sensitive information about the statistical objects.
 

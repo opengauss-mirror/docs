@@ -40,7 +40,7 @@ public static Connection getConnect(String username, String passwd)
     };
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   \[Proposal\] When JDBC is used to perform operations on an encrypted database, one database connection object corresponds to one thread. Otherwise, conflicts may occur due to thread changes.
 >-   \[Proposal\] When JDBC is used to perform operations on an encrypted database, different connections change the encrypted configuration data. The client invokes the  **IsValid**  method to ensure that the connections can hold the changed encrypted configuration data. In this case, the  **refreshClientEncryption**  parameter must be set to  **1**  \(default value\). In a scenario where a single client performs operations on encrypted data, the  **refreshClientEncryption**  parameter can be set to  **0**.
 
@@ -70,7 +70,7 @@ Statement stmt = conn.createStatement();
 int rc = stmt.executeUpdate("CREATE CLIENT MASTER KEY ImgCMK1 WITH ( KEY_STORE = localkms, KEY_PATH = \"key_path_value\" , ALGORITHM = RSA_2048);
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Before creating a CMK, you need to use the  **gs\_ktool**  tool to generate a key.
 
 ```

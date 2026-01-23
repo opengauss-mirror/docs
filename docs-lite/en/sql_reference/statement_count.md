@@ -2,7 +2,7 @@
 
 **STATEMENT\_COUNT**  displays statistics about five types of running statements \(**SELECT**,  **INSERT**,  **UPDATE**,  **DELETE**, and  **MERGE INTO**\) as well as DDL, DML, and DCL statements on the current node of the database.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >By querying the  **STATEMENT\_COUNT**  view, a common user can view statistics only about this user on the current node, whereas an administrator can view statistics about all users on the current node. When openGauss or the node is restarted, the statistics are cleared and the counting restarts. The system counts when a node receives a query, including a query inside openGauss. For example, when the primary database node receives a query and distributes multiple queries to other database nodes, the queries are counted accordingly on the database nodes.
 
 **Table  1**  STATEMENT\_COUNT columns

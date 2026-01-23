@@ -498,7 +498,7 @@
     job           OUT  INTEGER);
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When a scheduled job is created, the system binds the current database and the username to the job by default. This function can be called by using  **call**  or  **select**. If you call this function by using  **select**, there is no need to specify output parameters. To call this function within a stored procedure, use  **perform**. If the committed SQL statement job uses a non-public schema, specify the schema to a job schema or a function schema, or add  **set current\_schema = xxx**  before the SQL statement.
 
     **Table  11**  PKG\_SERVICE.JOB\_SUBMIT parameters

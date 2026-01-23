@@ -143,7 +143,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     Specifies a list of table expressions, allowing columns from other tables to appear in the  **WHERE**  condition and the update expressions. This is similar to the list of tables that can be specified in the  **FROM**  clause of a  **SELECT**  statement.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >Note that the target table must not appear in the  **from\_list**, unless you intend a self-join \(in which case it must appear with an alias in the  **from\_list**\).
 
 -   **condition**

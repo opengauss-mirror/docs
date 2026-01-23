@@ -35,7 +35,7 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 
     Specifies the schema name.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The name must be unique. 
     >The schema name cannot start with  **pg\_**.
 
@@ -58,7 +58,7 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
     Objects created by sub-commands are owned by the user specified by  **AUTHORIZATION**.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If objects in the schema on the current search path are with the same name, specify the schemas for different objects. You can run  **SHOW SEARCH\_PATH**  to check the schemas on the current search path.
 
 ## Examples<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_s05e72232af5e4507aad1511c025d7617"></a>

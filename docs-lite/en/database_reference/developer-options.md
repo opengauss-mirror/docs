@@ -13,7 +13,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >
 >You are not advised to change the default value of this parameter. If this parameter is set to  **on**, system tables may be damaged and the database may fail to be started.
 
@@ -28,7 +28,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **on**  indicates that various assertion checks are enabled.
 -   **off**  indicates that various assertion checks are disabled.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >If you compile openGauss with the assertion check enabled, this parameter is set to  **on**  by default.
 
@@ -53,7 +53,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >This parameter is useful for recovering data from tables whose system indexes are damaged.
 
@@ -74,7 +74,7 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value  **0**  is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
 
@@ -88,7 +88,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >This parameter is used only for commissioning and fault locating. To prevent impact on service running, ensure that the default value  **0**  is used in the production environment. If this parameter is set to a value other than 0, the cluster status may be abnormal due to a long authentication delay.
 
@@ -115,7 +115,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **log**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   **log**  indicates that recovery-related debugging information will not be logged.
 >-   Except the default value  **log**, each of the other values indicates that recovery-related debugging information at the specified level will also be logged. Common settings of  **log\_min\_messages**  enable logs to be unconditionally recorded into server logs.
 
@@ -219,7 +219,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >The current version does not support database acceleration. Therefore, this parameter does not take effect after being set.
 
@@ -247,7 +247,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **none**  indicates that this function is disabled.
 -   **all**  indicates that some shared data and threads are distributed to different NUMA nodes to reduce the number of remote access times and improve performance. Currently, this function applies only to ARM servers with multiple NUMA nodes. All NUMA nodes must be available for database processes. You cannot select only some NUMA nodes.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >In the current version,  **numa\_distribute\_mode**  cannot be set to  **all**  on the x86 platform.
 
@@ -310,7 +310,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 -   **on**  indicates that the same calculation method is used and a redistribution is not required.
 -   **off**  indicates that different calculation methods are used and a redistribution is required.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >Calculation methods differ in the length of input strings used for calculating hash values. \(For a char-type hash value, spaces following a string are not counted as the length. For a text- or varchar-type hash value, the spaces are counted.\) The hash value affects the calculation result of queries. To avoid query errors, do not modify this parameter during database running once it is set.
 

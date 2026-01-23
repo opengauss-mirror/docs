@@ -8,7 +8,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
  
 **Value range:** 64 kB to 16 GB.
  
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   If the value is less than 64 kB, an error is reported.
 >-   If the value is greater than 16 GB, the parameter can be set successfully. However, in actual running, the automatic memory running is set to 16 GB.
 >-   If the parameter does not contain a unit, the default value is 8 kB \(the size of a page is 8 kB\) multiplied by the parameter value.

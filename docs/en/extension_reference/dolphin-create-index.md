@@ -48,7 +48,7 @@ The partitioned table does not support concurrent index creation and partial ind
 
     The prefix key uses the prefix of the specified column data as the index key value, which reduces the storage space occupied by the index. Indexes can be used for filter and join conditions that contain prefix key columns.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     > -  The prefix key supports the following index methods: btree and ubtree.
     > -  The data type of the prefix key column must be binary or character (excluding special characters).
     > -  The prefix length must be a positive integer that does not exceed 2676 and cannot exceed the maximum length of the column. For the binary type, the prefix length is measured in bytes. For non-binary character types, the prefix length is measured in characters. The actual length of the key value is restricted by the internal page. If a column contains multi-byte characters or an index has multiple keys, the length of the index line may exceed the upper limit. As a result, an error is reported. Consider this situation when setting a long prefix length.

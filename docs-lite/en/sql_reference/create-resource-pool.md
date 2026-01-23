@@ -29,7 +29,7 @@ CREATE RESOURCE POOL pool_name
 
     Specifies the name of a Cgroup.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   You can use either double quotation marks \(""\) or single quotation marks \(''\) in the syntax when setting the name of a Cgroup.
     >-   The value of  **group\_name**  is case-sensitive.
     >-   If  **group\_name**  is not specified, the string "Medium" will be used by default in the syntax, indicating the  **Medium**  Timeshare Cgroup under  **DefaultClass**.
@@ -64,7 +64,7 @@ CREATE RESOURCE POOL pool_name
 
     In common scenarios, the value of  **mem\_percent**  of common users ranges from 0 to 100. The default value is  **0**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When both  **mem\_percent**  and  **memory\_limit**  are specified, only  **mem\_percent**  takes effect.
 
 -   **io\_limits**
@@ -79,7 +79,7 @@ CREATE RESOURCE POOL pool_name
 
     There are three priorities:  **Low**,  **Medium**, and  **High**. If you do not want to control I/O resources, use the default value  **None**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The settings of  **io\_limits**  and  **io\_priority**  are valid only for complex jobs, such as batch import \(using  **INSERT INTO SELECT**,  **COPY FROM**, or  **CREATE TABLE AS**\), complex queries involving over 500 MB data on each DN, and  **VACUUM FULL**.
 
 -   **nodegroup**
@@ -92,7 +92,7 @@ CREATE RESOURCE POOL pool_name
 
     In logical cluster mode, specifies the current resource pool to control the resources of common users who are not associated with the logical cluster specified by  **nodegroup**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **nodegroup**  must specify an existing logical cluster, and cannot be  **elastic\_group**  or the default node group \(**group\_version1**\), which is generated during cluster installation.
     >-   If  **is\_foreign**  is set to  **true**, the resource pool cannot be associated with users. That is,  **CREATE USER ... RESOURCE POOL**  cannot be used to configure resource pools for users. The resource pool automatically checks whether the users are associated with its logical cluster. If they are not, they will be controlled by the resource pool when performing operations on database nodes in the logical cluster.
 

@@ -19,7 +19,7 @@ None
 
    **/opt/software/openGauss/clusterconfig.xml**  is the  XML configuration files during the openGauss installation.
 
-   >![](public_sys-resources/icon-note.gif) **NOTE:**   
+   >[!NOTE]NOTE   
    >
    >- After the command is executed, the new configuration file storage directory is displayed in the log information. Take a one-primary two-standby environment as an example. This directory contains three configuration files named by host names. You need to replace the configuration files of corresponding hosts with the three files respectively.  
    >

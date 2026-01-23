@@ -6,7 +6,7 @@
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   The current synchronous standby node is on the top of the list. If the current synchronous standby node is disconnected, it will be replaced immediately with the next-highest-priority standby node. Name of the next-highest-priority standby node is added to the list.
 >-   The standby node name can be specified by setting the environment variable  **PGAPPNAME**.
 
@@ -16,7 +16,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 -   \[FIRST\]  *num\*sync_  \(*standby\*name_  \[, ...\]\)
 -   *standby\*name_  \[, ...\]
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   In the preceding command,  *num\*sync_  indicates the number of standby nodes that need to wait for responses from the transaction,  *standby\*name_  indicates the name of the standby node, and FIRST and ANY specify the policies for selecting standby nodes for synchronous replication from the listed servers.
     >-   **ANY N \(dn\_instanceId1, dn\_instanceId2,...\)**  indicates that any  *N_  host names in the brackets are selected as the name list of standby nodes for synchronous replication. For example,  **ANY 1\(dn\*instanceId1, dn\_instanceId2\)**  indicates that any one of  **dn\_instanceId1**  and  **dn\_instanceId2**  is used as the standby node for synchronous replication.
     >-   **FIRST N \(dn\_instanceId1, dn\_instanceId2, ...\)**  indicates that the first N primary node names in the brackets are selected as the standby node name list for synchronous replication based on the priority. For example,  **FIRST 1 \(dn\_instanceId1, dn\_instanceId2\)**  indicates that  **dn\_instanceId1**  is selected as the standby node for synchronous replication.
@@ -69,7 +69,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Setting this parameter may affect the RPO. If the primary node is faulty within the configured timeout window, the data generated from the time when the primary node is blocked to the time when the primary node is faulty may be lost.
 
 ## enable\_stream\_replication<a name="en-us_topic_0283137370_en-us_topic_0237124713_en-us_topic_0059777578_s13e647ddc37142dfa8ed01044f51030b"></a>
@@ -78,7 +78,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   This parameter is used for performance testing in scenarios where data synchronization to standby nodes is enabled and where it is disabled. If this parameter is set to  **off**, tests on abnormal scenarios, such as switchover and faults, cannot be performed to prevent inconsistency between the primary, standby, and secondary servers.
 >-   This parameter is a restricted parameter, and you are advised not to set it to  **off**  in normal service scenarios.
 >-   Currently, primary/standby/secondary deployment is not supported by default.
@@ -96,7 +96,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 This parameter is an INTERNAL parameter. Its default value is  **off**  and cannot be modified.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   This parameter cannot be modified in normal service scenarios. That is, mixed replication of the WAL files and data pages is disabled.
 >-   Currently, primary/standby/secondary deployment is not supported by default.
 
@@ -186,7 +186,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **300**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The unit can only be second.
 >-   Currently, primary/standby/secondary deployment is not supported by default.
 
@@ -218,7 +218,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **all\_node**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   In an openGauss database instance that contains a primary node, a standby node, and a cascaded standby node, the primary node is a sender relative to the standby node and the standby node is a receiver relative to the primary node, while the standby node is a sender relative to the cascaded standby node and the cascaded standby node is a receiver relative to the standby node.
 >-   The sender actively synchronizes the configuration file to the receiver, and the receiver requests the sender to synchronize the configuration file, which are two independent events, so that the configuration files are synchronized. If you do not want to synchronize configuration files, set this parameter to  **none\_node**  on the receiver. If the sender is a standby node, set this parameter to  **none\_node**  only. If the sender is a primary node, set this parameter to  **none\_node**  when the primary node does not synchronize with any standby node; or set this parameter to  **only\_sync\_node**  when the primary node synchronizes with synchronous standby nodes only and does not synchronize with asynchronous standby nodes.
 >-   To be specific, the sender sends a configuration file which directly overwrites the corresponding parameter in the configuration file of the receiver. After the policy for synchronizing configuration files is set, even if you modify configuration parameters of the receiver, the modification does not take effect because the sender immediately overwrites these parameters.
@@ -238,7 +238,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >
 >-   If **most\_available\_sync** is set to **on** and all synchronous standby nodes are faulty, this function does not take effect. This is because no synchronous standby can trigger the persistence of the LSN.
 >

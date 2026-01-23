@@ -36,7 +36,7 @@ DROP USER [ IF EXISTS ] user_name [, ...] [ CASCADE | RESTRICT ];
     -   **CASCADE**: automatically deletes the objects that depend on the user.
     -   **RESTRICT**: refuses to delete the user if any objects depend on it. This is the default action.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >
         >In openGauss, the  **enable\_kill\_query**  configuration parameter exists in the  **postgresql.conf**  file. This parameter affects  **CASCADE**.
         >-   If  **enable\_kill\_query**  is  **on**  and  **CASCADE**  is used, the statement automatically kills the processes locking dependent objects and then deletes the specified user.

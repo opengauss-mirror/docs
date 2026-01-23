@@ -13,7 +13,7 @@ Details about the syntax diagram are as follows:
 
 -   The execute part of an anonymous block starts with a  **BEGIN**  statement, has a break with an  **END**  statement, and ends with a semicolon \(;\). Type a slash \(/\) and press  **Enter**  to execute the statement.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+    >[!TIP]NOTICE   
     >The terminator "/" must be written in an independent row.  
 
 -   The declaration section includes the variable definition, type, and cursor definition.

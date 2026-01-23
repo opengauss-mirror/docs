@@ -50,7 +50,7 @@ Stop the running service:
 gs_dbmind service stop --conf confpath
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >When configuring anomaly detection parameters, ensure that the start-time is at least 30 seconds earlier than the end-time.
 
 ## Obtaining Help Information <a name="EN-US_TOPIC_0000001311256720"></a>

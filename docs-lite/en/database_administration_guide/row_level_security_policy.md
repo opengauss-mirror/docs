@@ -81,6 +81,6 @@ openGauss=> EXPLAIN(COSTS OFF) SELECT * FROM public.all_data;
 (5 rows)
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >PG\_STATISTIC and PG\_STATISTIC\_EXT store sensitive information about statistical objects, such as high-frequency MCVs. If the permission to query the two system catalogs is granted to a common user after row-level security is created, the common user can still access the two system catalogs to obtain the information in the statistical objects.
 

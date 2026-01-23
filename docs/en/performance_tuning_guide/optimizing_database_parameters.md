@@ -38,7 +38,7 @@ In a global concurrent queue,  **max\_active\_statements**  controls the number 
 
 Set this parameter based on system capacities, such as memory and I/O usage. In a resource pool associated with common users, if the jobs of different priorities occupy different portions, they will be queued by priority first. Then, the jobs of the same priority are queued. Jobs in the queue of highest priority will be woken up first.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**   
+>[!NOTE]NOTE   
 >-   In a high transactional concurrency scenario, you are advised to set  **max\_active\_statements**  to  **-1**, indicating that global concurrency is not limited.  
 >-   In an analytical query scenario, set  **max\_active\_statements**  to the number of CPU cores divided by the number of database nodes. Generally, its value ranges from 5 to 8.  
 

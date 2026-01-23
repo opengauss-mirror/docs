@@ -198,7 +198,7 @@ This section describes  **java.sql.CallableStatement**, the API for executing th
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The batch operation of statements containing OUT parameter is not allowed.
 >-   The following methods are inherited from  **java.sql.Statement**:  **close**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getConnection**,  **getResultSet**,  **getUpdateCount**,  **isClosed**,  **setMaxRows**, and  **setFetchSize**.
 >-   The following methods are inherited from  **java.sql.PreparedStatement**:  **addBatch**,  **clearParameters**,  **execute**,  **executeQuery**,  **executeUpdate**,  **getMetaData**,  **setBigDecimal**,  **setBoolean**,  **setByte**,  **setBytes**,  **setDate**,  **setDouble**,  **setFloat**,  **setInt**,  **setLong**,** setNull**,  **setObject**,  **setString**,  **setTime**, and  **setTimestamp**.

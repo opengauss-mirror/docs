@@ -31,7 +31,7 @@ ARM+openEuler 20.03 or x86+CentOS 5.7
         pip3 install ./chameleon-1.0.0-py3-none-any.whl
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >-   During the installation, other libraries on which the tool depends are automatically installed. Ensure that the pip of the local host can download and install related dependencies. The dependent libraries and versions are as follows:
         >    -   PyMySQL\>=0.10.0, <1.0.0
         >    -   argparse\>=1.2.1

@@ -80,7 +80,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
 -   Revoke the specified CEK permission.
@@ -93,7 +93,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
 -   Revoke the permission on a specified directory.
@@ -208,7 +208,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
        [ CASCADE | RESTRICT ];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
 -   Revoke the permission on a package object.

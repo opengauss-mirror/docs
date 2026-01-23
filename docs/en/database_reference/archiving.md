@@ -6,7 +6,7 @@
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   When  **[wal\_level](settings-60.md#en-us_topic_0283137354_en-us_topic_0237124707_en-us_topic_0059778393_s2c76f5957066407a959191148f2c780f)**  is set to  **minimal**, the  **archive\_mode**  parameter is unavailable.
 
 **Value range**: Boolean
@@ -22,7 +22,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If both  **archive\_dest** and  **archive\_command** are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command** does not take effect.
 >-   Any  **%p**  in the string is replaced by the absolute path of the file to archive, and any  **%f**  is replaced by only the file name. \(The relative path is relative to the data directory.\) Use  **%%**  to embed an actual  **%**  character in the command.
 >-   This command returns zero only if it succeeds. The command example is as follows:
@@ -50,7 +50,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If both  **archive\_dest** and  **archive\_command** are configured, WALs are preferentially saved to the directory specified by  **archive\_dest**. The command configured by  **archive\_command** does not take effect.
 >-   If the string is a relative path, it is relative to the data directory. The following is an example:
 >    ```
@@ -67,7 +67,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 This parameter is a  **SIGHUP**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   The server is forced to switch to a new WAL segment file when the period specified by this parameter has elapsed since the last file switch.
 >-   Archived files that are closed early due to a forced switch are still of the same length as full files. Therefore, a very short  **archive\_timeout**  will bloat the archive storage. You are advised to set  **archive\_timeout**  to  **60s**.
 

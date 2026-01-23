@@ -15,14 +15,14 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   When this parameter is set to  **"$user", public**, shared use of a database \(where no users have private schemas, and all share use of public\), private per-user schemas and combinations of them are supported. Other effects can be obtained by modifying the default search path setting, either globally or per-user.
 >-   When this parameter is set to a null string \(''\), the system automatically converts it into a pair of double quotation marks \(""\).
 >-   If the content contains double quotation marks, the system considers them as insecure characters and converts each double quotation mark into a pair of double quotation marks.
 
 **Default value**:  **"$user",public**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**$user**  indicates the name of the schema with the same name as the current session user. If the schema does not exist,  **$user**  will be ignored.
 
 ## current\_schema<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sa00a2b6f98224de8b3e8f7fc820fed29"></a>
@@ -35,7 +35,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Default value**:  **"$user",public**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**$user**  indicates the name of the schema with the same name as the current session user. If the schema does not exist,  **$user**  will be ignored.
 
 ## default\_tablespace<a name="en-us_topic_0283136752_en-us_topic_0237124732_en-us_topic_0059779117_sa058ceea3c3142f0a8a40b5799a682d3"></a>
@@ -84,7 +84,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The current version does not support the setting of the default transaction isolation level. The default value is  **read committed**. Do not change the value.
 
 **Value range**: enumerated values
@@ -101,7 +101,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >If this parameter is set to  **on**, the DML and write transactions cannot be executed.
 
 **Value range**: Boolean
@@ -132,7 +132,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Setting this parameter will discard all the cached execution plans.
 
 **Value range**: enumerated values
@@ -161,7 +161,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: an integer ranging from 0 to 576460752303423487
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Although you can set this parameter to any value, VACUUM will limit the effective value to half the value of  **[autovacuum\_freeze\_max\_age](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s7857d2d0002547a3853b7aac36a458b3)**  by default.
 
 **Default value**:  **2000000000**
@@ -174,7 +174,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from 0 to 576460752303423487
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Although you can set this parameter to any value,  **VACUUM**  will limit the effective value to 95% of  **[autovacuum\_freeze\_max\_age](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s7857d2d0002547a3853b7aac36a458b3)**  by default. Therefore, a periodical manual  **VACUUM**  has a chance to run before an anti-wraparound autovacuum is launched for the table.
 
 **Default value**:  **4000000000**

@@ -96,7 +96,7 @@ ALTER FOREIGN TABLE [ IF EXISTS ] table_name
                 This is a Boolean option. If it is true, the value of the declared field cannot be an empty string. This option is the same as the  **FORCE\_NOT\_NULL**  option of the  **COPY**  statement.
 
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >For details about how to use  **file\_fdw**, see  [file\_fdw](../database_administration_guide/file_fdw.md).
 
 

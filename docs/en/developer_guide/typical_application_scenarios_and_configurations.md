@@ -26,7 +26,7 @@ Servername=10.10.0.13 (database server IP address)
 Debug=1 (Enable the debug log function of the driver.)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The unixODBC logs are generated in the path configured by  **TraceFile**. The psqlODBC generates the  **mylog\_**_xxx_**.log**  file in the  **/tmp/**  directory.
 
 ## High Performance<a name="section139491527155816"></a>
@@ -487,6 +487,6 @@ int main()
 }
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the preceding example, the number column is defined. When the  **SQLBindParameter**  API is called, the performance of binding SQL\_NUMERIC is higher than that of SQL\_LONG. If char is used, the data type needs to be converted when data is inserted to the database server, causing a performance bottleneck.
 

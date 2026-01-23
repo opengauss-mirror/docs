@@ -7,6 +7,8 @@ sections:
     sections:
       - label: Preparing for Installation
         href: ./preparing_for_installation.md
+      - label: Container-based Installation on a Single Node
+        href: ./container_based_installation_on_a_single_node.md        
       - label: Installation
         href: ./installation.md
   - label: Connecting to openGauss

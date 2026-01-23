@@ -25,7 +25,7 @@
 
     Parameter: OID of the trigger to be queried and whether it is displayed in pretty mode
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Boolean parameters take effect only when the WHEN condition is specified during trigger creation.
 
     Return type: text

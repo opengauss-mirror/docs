@@ -13,14 +13,14 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter cannot be enabled on in the current version. Even if it is manually enabled, the system automatically disables it.
 
 ## enable\_adio\_function<a name="en-us_topic_0283137248_en-us_topic_0237124704_en-us_topic_0059778686_s070bd0423484454ab3a16267f8bf30d5"></a>
 
 **Parameter description**: Specifies whether to enable the ADIO function.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The current version does not support the asynchronous I/O function. This function is disabled by default. Do not modify the setting.
 
 **Value range**: Boolean

@@ -1,6 +1,6 @@
 # AI Features<a name="EN-US_TOPIC_0000001108458456"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, the AI capabilities of openGauss are unavailable.
 
 ## enable\_hypo\_index<a name="section76151259193016"></a>

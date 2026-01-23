@@ -92,7 +92,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     A local temporary table is automatically deleted at the end of the current session. Therefore, temporary tables can still be created and used in the current session when the database node connected to the current session is faulty. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements. **TEMP** is equivalent to **TEMPORARY**.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >
     >-   Local temporary tables are visible to the current session through the schema starting with **pg\_temp**. Users should not delete schemas starting with **pg\_temp** or **pg\_toast\_temp**.
     >-   If **TEMPORARY** or **TEMP** is not specified when you create a table but its schema is set to that starting with **pg\_temp\_** in the current session, the table will be created as a temporary table.
@@ -104,7 +104,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     -   User-defined variables can be correctly identified only when the database is a B-compatible database and the GUC parameter **enable\_set\_variable\_b\_format** is set to **on**.
     into_option: { INTO var_name [, var_name] ... }
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >For details about other **SELECT INTO** parameters, see [Parameter Description](select.md#en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc) in SELECT.content\zh\docs\Developerguide\SELECT-INTO.md
 >

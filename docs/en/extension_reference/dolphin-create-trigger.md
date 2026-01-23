@@ -160,7 +160,7 @@ Where **trigger\_order** is:
 
   It can also be a single SQL statement. Currently, the following statements are supported: INSERT, UPDATE, DELETE, SET, and CALL.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >[!NOTE]NOTE 
   >
   >The following details trigger types:
   >

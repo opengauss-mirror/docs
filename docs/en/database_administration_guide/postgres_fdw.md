@@ -4,7 +4,7 @@ postgres\_fdw is an open-source plug-in. Its code is released with the PostgreSQ
 
 The postgres\_fdw plug-in is involved in compilation by default. After installing openGauss using the installation package, you can directly use postgres\_fdw without performing other operations.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Currently, postgres\_fdw supports only connections between openGauss databases, and does not support connections between openGauss and PostgreSQL databases.
 
 ## Using postgres\_fdw<a name="en-us_topic_0283136935_section862733411474"></a>

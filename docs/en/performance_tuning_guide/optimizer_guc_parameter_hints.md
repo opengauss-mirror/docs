@@ -33,7 +33,7 @@ set(param value)
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   If you set a parameter that is not in the whitelist and the parameter value is invalid or the hint syntax is incorrect, the query execution is not affected. Run  **explain\(verbose on\)**. An error message is displayed, indicating that hint parsing fails.
 >-   The GUC parameter hint takes effect only in the outermost query. That is, the GUC parameter hint in the subquery does not take effect.
 >-   The GUC parameter hint in the view definition does not take effect.

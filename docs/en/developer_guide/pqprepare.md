@@ -62,7 +62,7 @@ PGresult *PQprepare(PGconn *conn,
 -   PQprepare creates a prepared statement for later execution with PQexecPrepared. This function allows commands to be repeatedly executed, without being parsed and planned each time they are executed. PQprepare is supported only in protocol 3.0 or later. It will fail when protocol 2.0 is used.
 -   This function creates a prepared statement named  **stmtName**  from the query string, which must contain an SQL command.  **stmtName**  can be  **""**  to create an unnamed statement. In this case, any pre-existing unnamed statement will be automatically replaced. Otherwise, this is an error if the statement name has been defined in the current session. If any parameters are used, they are referred to in the query as $1, $2, and so on.  **nParams**  is the number of parameters for which types are pre-specified in the array paramTypes\[\]. \(The array pointer can be  **NULL**  when  **nParams**  is  **0**.\) paramTypes\[\] specifies the data types to be assigned to the parameter symbols by OID. If  **paramTypes**  is  **NULL**, or any element in the array is  **0**, the server assigns a data type to the parameter symbol in the same way as it does for an untyped literal string. In addition, the query can use parameter symbols whose numbers are greater than  **nParams**. Data types of these symbols will also be inferred.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>[!TIP]NOTICE   
 >You can also execute the  **SQLPREPARE**  statement to create a prepared statement that is used with PQexecPrepared. Although there is no libpq function of deleting a prepared statement, the  **SQL DEALLOCATE**  statement can be used for this purpose.  
 
 ## Example<a name="en-us_topic_0241735620_section13066285525"></a>

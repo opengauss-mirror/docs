@@ -6,7 +6,7 @@ A package contains two parts: package specifications and package body. The decla
 
 For details about how to create a package, see  [CREATE PACKAGE](create_package.md).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   Cross-package variables cannot be used as control variables in the for loops.
 >-   Types defined in a package cannot be deleted or modified, and cannot be used to define tables.
 >-   Cursor variables cannot be referenced in SCHEMA.PACKAGE.CUROSR mode.

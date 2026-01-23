@@ -58,7 +58,7 @@ plsql_body
 
     Specifies the mode of an argument.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >**VARIADIC**  specifies parameters of the array type.
 
     Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**. The default value is  **IN**. Only the parameters in  **OUT**  mode can follow the  **VARIADIC**  parameter.
@@ -103,11 +103,11 @@ plsql_body
 
     Specifies the PL/SQL stored procedure body.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >When you create a user, or perform other operations requiring password input in a stored procedure, the system catalog and CSV log record the password in plaintext. Therefore, you are advised not to perform such operations in the stored procedure.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >No specific order is applied to  **argname**  and  **argname**. The following order is advised:  **argname**,  **argmode**, and  **argtype**.
 
 ## Helpful Links<a name="en-us_topic_0283136646_en-us_topic_0237122110_en-us_topic_0059778640_sfe39b39f278f4933914a438f40c63954"></a>

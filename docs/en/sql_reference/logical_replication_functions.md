@@ -84,7 +84,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
     -   **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
@@ -189,7 +189,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
     -   **options**: Specifies optional parameters, consisting of **options\_name** and **options\_value**.
@@ -308,7 +308,7 @@
 
         Value: a non-negative integer.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >If any of the **LSN** and **upto\_nchanges** values are reached, decoding ends.
 
     -   decoding\_plugin

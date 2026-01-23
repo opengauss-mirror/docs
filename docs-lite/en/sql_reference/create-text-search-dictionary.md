@@ -125,7 +125,7 @@ CREATE TEXT SEARCH DICTIONARY name (
             Specifies the directory for storing dictionary definition files. You can specify a local directory or an OBS directory. \(The OBS directory can be specified only in security mode. You can enter the security mode by adding the  **securitymode**  option during startup.\) The local directory format is  **file://**_absolute\_path_. The OBS directory format is  **obs://**_bucket\_name_**/path accesskey=ak secretkey=sk region=rg**. The default value is the directory where predefined dictionary files are located. If any of the  **FILEPATH**  and  **STOPWORDS**  parameters is specified, the other one must also be specified.
 
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The name of a dictionary definition file can contain only lowercase letters, digits, and underscores \(\_\).
     >In the Lite scenario, OBS functions of openGauss are unavailable.
 

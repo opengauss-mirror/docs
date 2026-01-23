@@ -97,7 +97,7 @@ Only the server owner or a user granted with the ALTER permission can run the  *
     Specifies the new name of the server.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss does not support the change of  **obs\_server**  contained in the  **ALTER SERVER**  syntax.
 
 ## Helpful Links<a name="en-us_topic_0283136932_section13898752175613"></a>

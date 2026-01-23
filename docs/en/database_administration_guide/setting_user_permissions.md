@@ -35,7 +35,7 @@
         GRANT lily to joe;
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
+        >[!NOTE]NOTE   
         >When the permissions of a role are granted to a user, the attributes of the role are not transferred together.  
 
 

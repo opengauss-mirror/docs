@@ -16,7 +16,7 @@ CREATE [ OR REPLACE ] [DEFINER = user] [ TEMP | TEMPORARY ] VIEW view_name [ ( c
     AS query;
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >You can use  **WITH\(security\_barrier\)**  to create a relatively secure view. This prevents attackers from printing hidden base table data by using the  **RAISE**  statement of low-cost functions.
 
 ## Parameter Description<a name="en-us_topic_0283137480_en-us_topic_0237122126_en-us_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>

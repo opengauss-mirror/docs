@@ -345,7 +345,7 @@ This section describes  **java.sql.PreparedStatement**, the API for preparing st
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Execute  **addBatch\(\)**  and  **execute\(\)**  only after running  **clearBatch\(\)**.
 >-   Batch is not cleared by calling  **executeBatch\(\)**. Clear batch by explicitly calling  **clearBatch\(\)**.
 >-   After bounded variables of a batch are added, if you want to reuse these values, you do not need to use  **set\*\(\)**  again. Instead, add a batch.

@@ -76,7 +76,7 @@ This section describes how to query SQL statements whose execution takes a long 
 
         The query statement is displayed. It is requesting a lock resource that may be held by another session, and is waiting for the lock resource to be released by the session.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**   
+        >[!NOTE]NOTE   
         >Only when the query is blocked by internal lock resources, the  **waiting**  column is  **true**. In most cases, blocks happen when query statements are waiting for lock resources to be released. However, query statements may be blocked due to write and timers operations. Such blocked queries are not displayed in the  **pg\_stat\_activity**  view.  
 
 

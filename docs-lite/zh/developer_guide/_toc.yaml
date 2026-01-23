@@ -68,7 +68,37 @@ sections:
       - label: 示例：jdbc主备集群负载均衡
         href: ./example_jdbc_primary_standby_cluster_load_balancing.md
       - label: JDBC接口参考
-        href: ./jdbc_interface_reference.md
+        sections:
+          - label: JDBC接口参考
+            href: ./jdbc_interface_reference.md
+          - label: java.sql.Connection
+            href: ./java_sql_connection.md
+          - label: java.sql.CallableStatement
+            href: ./java_sql_callablestatement.md
+          - label: java.sql.DatabaseMetaData
+            href: ./java_sql_databasemetadata.md
+          - label: java.sql.Driver
+            href: ./java_sql_driver.md
+          - label: java.sql.PreparedStatement
+            href: ./java_sql_preparedstatement.md
+          - label: java.sql.ResultSet
+            href: ./java_sql_resultset.md
+          - label: java.sql.ResultSetMetaData
+            href: ./java_sql_resultsetmetadata.md
+          - label: java.sql.Statement
+            href: ./java_sql_statement.md
+          - label: javax.sql.ConnectionPoolDataSource
+            href: ./javax_sql_connectionpooldatasource.md
+          - label: javax.sql.DataSource
+            href: ./javax_sql_datasource.md
+          - label: javax.sql.PooledConnection
+            href: ./javax_sql_pooledconnection.md
+          - label: javax.naming.Context
+            href: ./javax_naming_context.md
+          - label: javax.naming.spi.InitialContextFactory
+            href: ./javax_naming_spi_initialcontextfactory.md
+          - label: CopyManager
+            href: ./copymanager.md            
       - label: JDBC常用参数参考
         href: ./common_jdbc_parameters.md
   - label: 基于ODBC开发
@@ -196,6 +226,28 @@ sections:
       - label: 示例：常用操作
         href: ./example_common_operations_psycopg.md   
       - label: Psycopg接口参考
-        href: ./psycopg_api_reference.md             
+        sections:
+          - label: 概览
+            href: ./psycopg_api_reference.md
+          - label: psycopg2.connect()
+            href: ./psycopg2_connect.md
+          - label: connection.cursor()
+            href: ./connection_cursor.md
+          - label: cursor.execute(query,vars_list)
+            href: ./cursor_execute_query_vars_list.md
+          - label: curosr.executemany(query,vars_list)
+            href: ./curosr_executemany_query_vars_list.md
+          - label: connection.commit()
+            href: ./connection_commit.md
+          - label: connection.rollback()
+            href: ./connection_rollback.md
+          - label: cursor.fetchone()
+            href: ./cursor_fetchone.md
+          - label: cursor.fetchall()
+            href: ./cursor_fetchall.md
+          - label: cursor.close()
+            href: ./cursor_close.md
+          - label: connection.close()
+            href: ./connection_close.md                            
   - label: 编译与调试
     href: ./commissioning.md

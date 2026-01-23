@@ -27,7 +27,7 @@ You need to specify a password when initializing a database, creating a user, or
 -   A new password cannot be the current password and the current password spelled backwards.
 -   It must be a strong password.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Weak passwords are weak passwords that are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
 
 

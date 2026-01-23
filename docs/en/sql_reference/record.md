@@ -20,7 +20,7 @@ The above syntax diagram is explained as follows:
 -   **datatype**: record data type
 -   **expression**: expression for setting a default value
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In openGauss:
 >-   When assigning values to record variables, you can:
 >    -   Declare a record type and define member variables of this type when you declare a function or stored procedure.

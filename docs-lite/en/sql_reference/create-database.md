@@ -704,12 +704,12 @@ CREATE DATABASE database_name
     </tbody>
     </table>
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+    >[!WARNING]CAUTION 
     >
     >Note that not all client APIs support the preceding character sets.
     >The SQL\_ASCII setting performs quite differently from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. Therefore, this setting is not basically used to declare the specified encoding used, because this declaration ignores the encoding. In most cases, if you use any non-ASCII data, it is unwise to use the SQL\_ASCII setting because openGauss will not be able to help you convert or validate non-ASCII characters.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >
     >-   The character set encoding of the new database must be compatible with the local settings \(**LC\_COLLATE**  and  **LC\_CTYPE**\).
     >-   When the specified character encoding set is  **GBK**, some uncommon Chinese characters cannot be directly used as object names. This is because the byte encoding overlaps with the ASCII characters @A-Z\[\\\]^\_\`a-z\{|\} when the second byte of the GBK ranges from 0x40 to 0x7E.  **@\[\\\]^\_'\{|\}**  is an operator in the database. If it is directly used as an object name, a syntax error will be reported. For example, the GBK hexadecimal code is  **0x8240**, and the second byte is  **0x40**, which is the same as the ASCII character @. Therefore, the character cannot be used as an object name. If you do need to use this function, you can add double quotation marks \(""\) to avoid this problem when creating and accessing objects.
@@ -735,7 +735,7 @@ CREATE DATABASE database_name
 
     Value range:  **A**,  **B**,  **C**, and  **PG**, indicating Oracle, MySQL, Teradata, and Postgres databases, respectively.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   For A compatibility, the database treats empty strings as  **NULL**  and replaces  **DATE**  with  **TIMESTAMP\(0\) WITHOUT TIME ZONE**.
     >-   When a character string is converted to an integer, if the input is invalid, the input will be converted to 0 due to B compatibility, and an error will be reported due to other compatibility issues.
@@ -751,7 +751,7 @@ CREATE DATABASE database_name
 
     Specifies the maximum number of concurrent connections that can be made to the new database.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >
     >-   The system administrator is not restricted by this parameter.
     >-   connlimit is calculated separately for each primary database node. Number of connections of openGauss = connlimit x Number of normal CN primary database nodes.

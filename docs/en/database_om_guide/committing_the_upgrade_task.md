@@ -2,7 +2,7 @@
 
 After the upgrade is complete, if no problem is found during the verification, you can commit the upgrade task.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Once the committal is complete, no rollback can be performed.
 
 ## Procedure<a name="section779219132168"></a>

@@ -13,7 +13,7 @@ Indexes are created based on columns in database tables. Therefore, you must cor
 -   Columns where the  **WHERE**  clause is executed frequently. This speeds up condition judgment.
 -   Columns that often appear after the keywords  **ORDER BY**,  **GROUP BY**, and  **DISTINCT**.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.
     >-   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.
     >-   Partitioned table indexes are classified into local indexes and global indexes. A local index corresponds to a specific partition, and a global index corresponds to the entire partitioned table.
@@ -135,7 +135,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
 
 openGauss supports four methods for creating indexes. For details, see  [Table 1](#en-us_topic_0283136615_en-us_topic_0237120308_en-us_topic_0059777978_tf6189b97ccf4474e871a7a982b53c2e4).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.
 >-   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.
 

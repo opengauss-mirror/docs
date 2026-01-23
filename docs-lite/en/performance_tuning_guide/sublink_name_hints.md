@@ -14,7 +14,7 @@ blockname (table)
 
 -   _table_  specifies the name you have specified for a sublink block.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The  **blockname**  hint is used by an outer query only when the correponding sublink is not pulled up. Currently, only the  **Agg**  equivalent join,  **IN**, and  **EXISTS**  sublinks can be pulled up. This hint is usually used together with the hints described in the previous sections.
 >-   The subquery after the  **FROM**  keyword is hinted by using the subquery alias. In this case,  **blockname**  becomes invalid.
 >-   If a sublink contains multiple tables, the tables will be joined with the outer-query tables in a random sequence after the sublink is pulled up. In this case,  **blockname**  also becomes invalid.

@@ -43,7 +43,7 @@ The length of a character on the server and client may vary by the character set
 
 More than one of the preceding operations can be performed to a string. For example, if the character sets of the client and server are different, a string may be processed and then truncated. In this case, the result will also be unexpected. For details, see  [Table 2](#en-us_topic_0283137618_en-us_topic_0237120300_en-us_topic_0059779039_t8b4da148118a4913925a053cd07ca3c0).
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >Long strings are truncated only if  **DBCOMPATIBILITY**  is set to  **TD**  \(compatible with Teradata\) and  **[td\_compatible\_truncation](../database_reference/platform-and-client-compatibility.md)**  is set to  **on**.
 
@@ -205,7 +205,7 @@ You need to create a table before inserting data to it. For details about how to
     openGauss=# INSERT INTO customer_t2 SELECT * FROM customer_t1;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If implicit conversion is not implemented between the column data types of the specified table and those of the current table, the two tables must have the same column data types when data is inserted from the specified table to the current table.
 
@@ -215,7 +215,7 @@ You need to create a table before inserting data to it. For details about how to
     openGauss=# DROP TABLE customer_t2 CASCADE;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If the table to be deleted is in dependent relationship with other tables, you need to delete its dependent tables first.
 

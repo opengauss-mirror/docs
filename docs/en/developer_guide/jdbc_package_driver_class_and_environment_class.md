@@ -10,7 +10,7 @@ The driver package is compatible with PostgreSQL. The class name and structure i
 
 Before establishing a database connection, load the  **org.opengauss.Driver**  database driver class.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >1.  openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, the org.postgresql.Driver class will conflict when the JDBC driver packages for PostgreSQL and openGauss are loaded in the same JVM virtual machine at the same time.
 >2.  Compared with the PostgreSQL driver, the openGauss JDBC driver has the following enhanced features:
 >    1.  The SHA256 encryption mode is supported for login.

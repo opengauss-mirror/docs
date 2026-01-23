@@ -9,7 +9,7 @@
 -   The model name must be unique. Pay attention to the naming format.
 -   The AI training duration fluctuates greatly, and in some cases, the training duration is long. If the duration specified by the GUC parameter  **statement\_timeout**  is too long, the training will be interrupted. You are advised to set  **statement\_timeout**  to  **0**  so that the statement execution duration is not limited.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this syntax, but the AI capabilities are unavailable.
 
 ## Syntax<a name="section187451047882"></a>

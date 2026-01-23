@@ -196,7 +196,7 @@ Dump parameters:
     Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.
 >-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
 >-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.
@@ -265,7 +265,7 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
 
 ```

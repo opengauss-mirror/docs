@@ -62,7 +62,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Value range: a string. It must comply with the naming convention rule, and can contain a maximum of 63 characters. If the value contains more than 63 characters, the database truncates it and retains the first 63 characters as the role name. When a role is created, the database displays a message if the role contains more than 63 characters.
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The identifier must be letters, underscores \(\_\), digits \(0-9\), or dollar signs \($\) and must start with a letter \(a-z\) or underscore \(\_\).
 
 -   **password**
@@ -87,7 +87,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     By default, you can change your password unless it is disabled. To disable the password of a user, use this parameter. After the password of a user is disabled, the password will be deleted from the system. The user can connect to the database only through external authentication, for example, Kerberos authentication. Only administrators can enable or disable a password. Common users cannot disable the password of an initial user. To enable a password, run  **ALTER USER**  and specify the password.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, Kerberos functions of openGauss are unavailable.
 
 -   **ENCRYPTED | UNENCRYPTED**
@@ -174,7 +174,7 @@ The syntax of role information configuration clause  **option**  is as follows:
 
     Specifies how many concurrent connections the role can make.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   The system administrator is not restricted by this parameter.
     >-   The number of concurrent connections of each primary database node is calculated separately \(which is the value of  **connlimit**\). The number of all connections of openGauss = Value of  **connlimit**  x Number of normal primary database nodes.
 

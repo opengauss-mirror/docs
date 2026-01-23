@@ -8,6 +8,6 @@ System catalogs and system views are visible to either system administrators or 
 
 You can delete and re-create system catalogs, add columns to them, and insert and update values in them, but doing so may make system information inconsistent and cause system faults. Generally, users should not modify system catalogs or system views, or rename their schemas. They are automatically maintained by the system.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Do not add, delete, or modify system catalogs because doing so will result in exceptions or even openGauss unavailability.
 

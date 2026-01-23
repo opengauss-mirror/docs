@@ -21,7 +21,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
 -   gs\_encrypt\(encryptstr,keystr, encrypttype\)
@@ -40,14 +40,14 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
 -   gs\_decrypt\_aes128\(decryptstr,keystr\)
 
     Description: Decrypts  **decrypt**  strings using  **keystr**  as the key and returns decrypted strings. The  **keystr**  used for decryption must be consistent with that used for encryption.  **keystr**  cannot be empty.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This parameter needs to be used with the  **gs\_encrypt\_aes128**  encryption function.
 
     Return type: text
@@ -62,7 +62,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
 -   gs\_decrypt\(decryptstr, keystr, decrypttype\)
@@ -83,7 +83,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
 -   aes\_encrypt\(str, key\_str, init\_vector\)
@@ -110,7 +110,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >
     >(1) This function is valid only when GaussDB Kernel is compatible with the MY type (that is, sql\_compatibility = 'B').
     >
@@ -146,7 +146,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >
     >(1) This function is valid only when the database is compatible with the MY type (that is, sql\_compatibility = 'B').
     >
@@ -220,7 +220,7 @@
 
     Return type: tuple
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >When the thread pool is enabled, the  **backendid**  obtained in the same session may change due to thread switchover. As a result, the return values are different when the function is called for multiple times. You are not advised to call this function when the thread pool is enabled.
 
     Example:
@@ -263,7 +263,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
     >-   If the database is connected to the local PC, the value is empty.
 
@@ -283,7 +283,7 @@
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
     >-   If the database is connected to the local PC, the value is empty.
 

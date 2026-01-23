@@ -21,7 +21,7 @@ ARRAY [ param ]
 - param：数组包含的值，允许出现零个或多个，多个值之间用逗号分隔，成员没有值可写成NULL。
 - 以第一个元素的数据类型作为数组的数据类型，因此要求所有元素的类型相同，或者能够相互转换。
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>[!NOTE]说明
 >
 >- 不支持BINARY、VARBINARY、CLOB、BLOB、CURSOR、RAW、IMAGE数据类型的数组。
 >- 不支持多维数组。
@@ -40,7 +40,7 @@ data_type [(n)]
 - data_type：基础数据类型
 - n：数组长度
 
->![](public_sys-resources/icon-note.png) **说明：** 
+>[!NOTE]说明
 >
 >- 给定的数组长度n并没有实际作用，数组会自动增长，访问越界会返回一个NULL，不会报错。长度最大可达2^31 - 1。数组字段中的元素值实际存储于LOB段中，最大支持4GB - 1，因此能够存储的元素个数取决于元素的数据类型。
 >- 支持使用中括号来访问数组元素，下标从1开始。

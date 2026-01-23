@@ -10,7 +10,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**: **off**
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >-   The default value of **enable\_remote\_execute** is **false** in standalone mode.
 >-   To allow the standby node to execute write statements, set this parameter to **true**.
 >-   After this function is enabled, write statements and DDL statements can be executed on the standby node, and simple and extended queries are supported. In this case, read statements are still executed on the standby node, and write statements are forwarded to the primary node for execution.

@@ -50,7 +50,7 @@ Object \(object-json\): The value is enclosed in braces \(\{\}\). The key must b
 select '{}'::json;select '{"a": 1, "b": {"a": 2,  "b": null}}'::json;select '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::jsonb;  
 ```
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >-   Note that 'null'::json and null::json are different, which are similar to the strings str="" and str=null.
 >-   For numbers, when scientific notation is used, JSONB expands them, while JSON stores an exact copy of the input text.
 
@@ -102,7 +102,7 @@ The main difference between JSON and JSONB lies in the storage mode. JSONB store
         -   **array-jsonb**: long elements \> short elements. If the lengths are the same, compare each element in sequence.
         -   **object-jsonb**: If the length of a key-value pair is longer than that of a short key-value pair, the key is compared first, and then the value is compared.
 
-        >![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+        >[!WARNING]CAUTION 
         >For comparison within the  **object-jsonb**  type, the final result after format sorting is used for comparison. Therefore, the comparison result may not be intuitive compared with the direct input.
 
 

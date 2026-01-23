@@ -27,7 +27,7 @@ The following describes transaction operations supported by the database:
 
 A transaction isolation level specifies how concurrent transactions process the same object.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The isolation level cannot be changed after data is modified using  **SELECT**,  **INSERT**,  **DELETE**,  **UPDATE**,  **FETCH**, or  **COPY**  in the transaction.
 
 -   **READ COMMITTED**: At this level, a transaction can access only committed data. This is the default level.

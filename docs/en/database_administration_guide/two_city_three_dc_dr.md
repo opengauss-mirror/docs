@@ -53,7 +53,7 @@ This section describes the feature specifications and restrictions of this solut
 
 - Practice: Planned primary/standby database instance switchover, no data loss, RPO = 0, RTO ≤ 20 minutes \(including the processes of demoting the primary database instance to the DR instance and promoting the DR database instance to the primary database instance\)
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >Tests show that the maximum write rate of SATA SSDs is about 240 MB/s, that of SAS SSDs is over 500 MB/s, and that of NVMe SSDs is even better. If the hardware conditions do not meet the preceding specifications, the single-shard log generation speed in the primary database instance must be reduced to ensure the RPO and RTO.
 >
 >Resources such as file handles and memory are used up in the primary and standby database instances. As a result, the RPO and RTO cannot be ensured.
@@ -114,7 +114,7 @@ For details about the parameters related to ultimate RTO, see the description of
 
 During the establishment of the DR relationship, you must send setup requests to the primary and standby database instances. For details, see the gs\_sdr tool in *Tool Reference*.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >-   During establishment of the DR relationship, the DR username and password need to be delivered to the primary and DR database instances for inter-database instance authentication. The user permission is **Replication**, which is specific for replication.
 >-   Before setting up a DR relationship, you must create a DR user in the primary cluster.
@@ -126,7 +126,7 @@ During the establishment of the DR relationship, you must send setup requests to
 
 Send a request to the DR database instance to promote the DR database instance to primary. For details, see the gs\_sdr tool in *Tool Reference*.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >
 >-   After the DR database instance is promoted to primary, the DR information is cleared.
 >-   If the primary database instance is normal and is processing services, you can run this command to remove the DR relationship from the DR database instance. After this command is executed, the DR database instance does not receive logs from the primary database instance anymore. As a result, the RPO value keeps increasing until the primary and standby database instances are disconnected. Then, the RPO value is null. For details about how to query the RPO value, see "Querying the DR Status of the Primary and Standby Database Instances."
@@ -135,7 +135,7 @@ Send a request to the DR database instance to promote the DR database instance t
 
 Send a request for clearing DR information to the primary database instance. For details, see the gs\_sdr tool in *Tool Reference*.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >
 >-   This operation will remove the DR information from the primary database instance.
 >-   This operation can be performed on the primary database instance only after the DR database instance is promoted to primary. If you perform this operation on the DR database instance before it is promoted to primary, the DR relationship will be damaged.
@@ -160,7 +160,7 @@ Send a DR status query request to the primary and standby database instances. Fo
 1.  Upgrade the primary and standby database instances at the same time.
 2.  After the upgrade is complete, commit the DR database instance first and then the primary database instance.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >
 >-   Before committing the standby database instance, ensure that the upgrade of the primary database instance is complete.
 >-   Commit the standby database instance first and then the primary database instance.

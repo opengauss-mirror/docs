@@ -52,7 +52,7 @@
 
     Selects "FULL" vacuum, which can recycle more space, but takes much longer and exclusively locks the table.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Using  **FULL**  will cause statistics missing. To collect statistics, add the keyword  **ANALYZE**  to  **VACUUM FULL**.
 
 -   **FREEZE**
@@ -67,7 +67,7 @@
 
     Updates statistics used by the planner to determine the most efficient way to execute a query.
     
-    > **![](public_sys-resources/icon-note.gif) NOTE:**
+    > [!NOTE]NOTE
     >
     > Vacuum is also triggered when **autovacuum** is set to **analyze** for the ustore partitioned table.
 

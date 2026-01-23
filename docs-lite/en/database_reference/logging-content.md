@@ -39,7 +39,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   Debugging information about  **debug\_print\_parse**,  **debug\_print\_rewritten**, and  **debug\_print\_plan**  are printed only when the log level is set to  **log**  or higher. When these parameters are set to  **on**, their debugging information will be recorded in server logs and will not be sent to client logs. You can change the log level by setting  **[client\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)**  and  **[log\_min\_messages](logging-time.md#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)**.
 >-   Do not invoke the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions when  **debug\_print\_plan**  is set to  **on**, preventing the risk of sensitive information disclosure. You are advised to filter parameter information of the  **gs\_encrypt\_aes128**  and  **gs\_decrypt\_aes128**  functions in the log files generated when  **debug\_print\_plan**  is set to  **on**  before providing the log files to external maintenance engineers for fault locating. After you finish using the logs, delete them as soon as possible.
 
@@ -75,7 +75,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Some client programs, such as gsql, attempt to connect twice while determining if a password is required. In this case, duplicate "connection receive" messages do not necessarily indicate a problem.
 
 **Value range**: Boolean
@@ -256,7 +256,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The %c escape character prints a session ID consisting of two 4-byte hexadecimal numbers separated by a period \(.\). The numbers are the process startup time and the process ID. Therefore, %c can also be used as a space saving way of printing those items. For example, run the following query to generate the session ID from  **pg\_stat\_activity**:
 >```
 >SELECT to_hex(EXTRACT(EPOCH FROM backend_start)::integer) || '.' ||
@@ -289,7 +289,7 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 This parameter is a  **SUSET**  parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Statements that contain simple syntax errors are not logged even if  **log\_statement**  is set to  **all**, because the log message is emitted only after basic parsing has been completed to determine the statement type. If an extended query protocol is used, statements that fail before the execution phase \(during parse analysis or planning\) are not logged, either. Set  **log\_min\_error\_statement**  to  **ERROR**  or lower to log such statements.
 
 **Value range:**  enumerated values
@@ -325,7 +325,7 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **GMT**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The default value will be changed when  **gs\_initdb**  is used to set system environments.
 
 ## logging\_module<a name="en-us_topic_0283136613_en-us_topic_0237124723_en-us_topic_0059778400_section4455896615058"></a>
@@ -389,7 +389,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 -   **off**  indicates that reasons why queries are not optimized are not included.
 -   **log**  indicates that reasons why queries are not optimized are included in the database node execution plan.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >To view the reasons why queries are not optimized in the log, set  **opfusion\_debug\_mode**  to  **log**,  **log\_min\_messages**  to  **debug4**, and  **logging\_module**  to  **on\(OPFUSION\)**. Note that a large number of log messages may be generated. Therefore, execute only a small number of jobs during debugging. 
 
 **Default value**:  **off**

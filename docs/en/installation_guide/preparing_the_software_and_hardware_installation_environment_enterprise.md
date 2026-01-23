@@ -219,7 +219,7 @@ Ensure that the time zone and time on each database node are consistent.
     cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >*$Locale/$Time zone*  indicates the locale and time zone to be set, for example,  **Asia/Shanghai**.
 
 3.  <a name="en-us_topic_0283136490_li153615819546"></a>Run the  **date -s**  command to set the time of each database node to the same time. For example:
@@ -231,7 +231,7 @@ Ensure that the time zone and time on each database node are consistent.
 
 **\(Optional\) Disabling the Swap Memory**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Disabling the swap memory ensures the access performance of the database and prevents the buffer memory of the database from being evicted to the disk. If the server memory is small and the memory is overloaded, you can enable the swap memory to ensure normal running.
 
 Run the  **swapoff -a**  command on each database node to disable the swap memory.
@@ -290,7 +290,7 @@ On each database node, disable  **RemoveIPC**.
 
 ### Disabling the History Command
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >To prevent security risks caused by historical records, you need to disable the history command on each host.
 
@@ -324,7 +324,7 @@ source /etc/profile
 
 During the openGauss installation, the user **root** is required for remote login. This section describes how to set the user **root** for remote login.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 >
 >The remote connection function is enabled only when mutual trust between users **root** is required in the database. After the operations and verifications are complete on each host, log out of the system as user **root** in a timely manner to prevent misoperations.
 
@@ -380,6 +380,6 @@ During the openGauss installation, the user **root** is required for remote logi
    ssh xxx.xxx.xxx.xxx
    ```
 
-   > ![](public_sys-resources/icon-note.gif) **NOTE:**
+   > [!NOTE]NOTE
    >
    > *xxx.xxx.xxx.xxx* is the IP address for installing the openGauss environment.

@@ -85,8 +85,8 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 </tbody>
 </table>
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
+>[!NOTE]NOTE   
+>To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
 
 
 
@@ -104,10 +104,10 @@ To reduce the size of an exported file, you can use the gs\_dump tool to compres
 gs_dump [OPTION]... [DBNAME]
 ```
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-*DBNAME*  does not follow a short or long option. It specifies the database to be connected.  
-For example:  
-Specify  *DBNAME*  without a  **-d**  option preceding it.
+>[!NOTE]NOTE   
+>*DBNAME*  does not follow a short or long option. It specifies the database to be connected.  
+>For example:  
+>Specify  *DBNAME*  without a  **-d**  option preceding it.
 
 ```
 gs_dump -p port_number  postgres -f dump1.sql
@@ -209,10 +209,10 @@ Dump parameters:
 
   Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple  **-n**  options. The schema parameter is interpreted as a pattern according to the same rules used by the  **\\d**  command of  **gsql**. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**     
-
-  -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
-  -   If  **-n**  is specified, the non-schema objects are not dumped.  
+ > [!NOTE]NOTE     
+ >
+ > -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
+ > -   If  **-n**  is specified, the non-schema objects are not dumped.  
 
   Multiple schemas can be dumped. Entering  **-n ***schemaname*  multiple times dumps multiple schemas.
 
@@ -268,13 +268,13 @@ Dump parameters:
 
   The  **-n**  and  **-N**  options have no effect when  **-t**  is used, because tables selected by using  **-t**  will be dumped regardless of those options.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**   
-
-  -   The number of  **-t**  parameters must be less than or equal to 100.  
-  -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
-  -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
-  -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
-  -   **-t tablename**  does not export trigger information from a table.  
+ > [!NOTE]NOTE   
+ >
+ > -   The number of  **-t**  parameters must be less than or equal to 100.  
+ > -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
+ > -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
+ > -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
+ > -   **-t tablename**  does not export trigger information from a table.  
 
 
 
@@ -308,11 +308,11 @@ Dump parameters:
 
   Specifies the table files that do not need to be dumped.
 
-  ![](public_sys-resources/icon-note.gif)**NOTE:**   
-  Same as  **--include-table-file**, the content format of this parameter is as follows:  
-  schema1.table1
-  schema2.table2
-  ......
+  >[!NOTE]NOTE 
+  >Same as  **--include-table-file**, the content format of this parameter is >as follows:  
+  >schema1.table1
+  >schema2.table2
+  >......
 
 - -x, --no-privileges|--no-acl
 
@@ -475,15 +475,15 @@ Dump parameters:
   ```
 
 
-> ![](public_sys-resources/icon-note.gif) **NOTE:**   
-
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
--   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
--   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
--   **--role**  must be used in conjunction with  **--rolepassword**.  
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
--   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
--   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
+> [!NOTE]NOTE   
+>
+>-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+>-   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
+>-   **--role**  must be used in conjunction with  **--rolepassword**.  
+>-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+>-   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
+>-   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
 
 
 
@@ -826,18 +826,18 @@ Dump parameters:
   Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
 
-> ![](public_sys-resources/icon-note.gif)**NOTE:**   
-
--   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
--   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
--   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
--   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
--   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
--   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
--   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
--   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
--   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
--   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
+> [!NOTE]NOTE
+>
+>-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
+>-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
+>-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
+>-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+>-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
 
 Connection parameters:
 
@@ -896,8 +896,8 @@ Once  **gs\_dumpall**  is restored, run ANALYZE on each database so that the opt
 
 Use  **gs\_dumpall**  to export all openGauss databases at a time.
 
-![](public_sys-resources/icon-note.gif) **NOTE:** 
-**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
+>[!NOTE]NOTE 
+>**gs\_dumpall**  supports only plain-text format export. Therefore, only  **gsql**  can be used to restore a file exported using  **gs\_dumpall**.
 
 ```
 gs_dumpall -f backup/bkp2.sql -p 37300
@@ -934,7 +934,7 @@ It has the following functions:
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif)**NOTE:**    
+>[!NOTE]NOTE
 >
 >-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
 >-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
@@ -955,7 +955,7 @@ Common parameters
 
   The default is the standard output.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:**   
+  >[!NOTE]NOTE   
   >**-f**  cannot be used in conjunction with  **-d**.  
 
 - -F, --format=c|d|t
@@ -1155,23 +1155,23 @@ Parameters for importing data
 
 
 
-![](public_sys-resources/icon-note.gif) **NOTICE:** 
+>![!NOTE]NOTE 
+>
+>-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
 
--   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
-
-```
-CREATE DATABASE foo WITH TEMPLATE template0;
-```
+>```
+>CREATE DATABASE foo WITH TEMPLATE template0;
+>```
 
 -   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
-![](public_sys-resources/icon-note.gif) **NOTE:**   
-
-1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.  
-2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
-3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
-4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.  
-5. **--role**  must be used in conjunction with  **--rolepassword**.  
+>[!NOTE]NOTE   
+>
+>1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.  
+>2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+>4. When  **--single-transaction**  is used,  **-j/--jobs**  must be a single job.  
+>5. **--role**  must be used in conjunction with  **--rolepassword**.  
 
 Connection parameters:
 

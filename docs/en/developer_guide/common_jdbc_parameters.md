@@ -44,7 +44,7 @@ If the value is **slave**, JDBC attempts to connect to the IP addresses configur
 
 **Suggestion**: After this parameter is set, an asynchronous thread is started each time a connection is established. If there are a large number of connections, the pressure on the client may increase. If this parameter needs to be set, you are advised to set it to 3 x **connectTimeout** in centralized deployment to prevent connection failures when the network is abnormal and the third IP address is the IP address of the primary node.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**
+>[!TIP]NOTICE
 >After this parameter is set, for multiple IP addresses, the value of this parameter is the time for attempting to connect to all the IP addresses. If this parameter is set to a small value, the subsequent IP addresses may fail to be connected. For example, if three IP addresses are set, **logintimeout** is set to **5s**, and it takes 5s to connect to the first two IP addresses, the third IP address cannot be connected. In the centralized deployment environment, the last IP address is the IP address of the primary node. As a result, the automatic search for the primary node may fail.
 
 ## cancelSignalTimeout<a name="section158271453172310"></a>

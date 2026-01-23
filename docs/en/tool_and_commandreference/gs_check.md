@@ -831,7 +831,7 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Constraints on the CheckNetSpeed check item are as follows:
 >-   Do not use  **-L**  to check CheckNetSpeed, because doing so cannot produce enough network load and the check result will be inaccurate.
 >-   If the number of nodes is less than six, the network load produced by  **speed\_test**  may not fully occupy the bandwidth, and the check result will be inaccurate.
@@ -863,7 +863,7 @@
     scp scene_upgrade.xml SIA1000068994: home/package/script/gspylib/inspection/config/
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**home/package/script/gspylib/inspection/config**  is the absolute path of the new scenario configuration file.
 
 5.  Switch to user  **omm**  and run the following command to view the check result:

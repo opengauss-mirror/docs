@@ -94,7 +94,7 @@ Precautions for incrementally upgrading cluster management components:
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **Note:**
+>[!NOTE]NOTE
 >For details about items 2 to 5 in Table 1, see [Preparing for and Checking the Upgrade](preparing_for_and_checking_the_upgrade.md).
 ## Checking Whether the Installation Version Supports the Upgrade of Cluster Management Components
 
@@ -136,5 +136,5 @@ Log in to the node where cluster management components are upgraded, run the **g
     ```
     cm_ctl -V
     ```
->![](public_sys-resources/icon-note.gif) **Note:**
+>[!NOTE]NOTE
 >After cluster management components are upgraded and nodes are added, the cluster management components on new nodes are not upgraded. You need to upgrade the cluster management components again to upgrade the components on new nodes.

@@ -210,7 +210,7 @@ The primary/standby deployment mode supports synchronous and asynchronous replic
 
 In addition, in primary/standby deployment mode, if the read function of the standby node is enabled, the standby node supports read operations instead of write operations \(such as table creation, data insertion, and data deletion\), reducing the pressure on the primary node.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the current Lite scenario, openGauss does not support deployment with one primary and two standbys.
 
 ### Logical Log Replication<a name="en-us_topic_0283136537_section711182311180"></a>

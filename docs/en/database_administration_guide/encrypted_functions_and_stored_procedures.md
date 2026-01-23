@@ -61,7 +61,7 @@ The  **gs\_encrypted\_proc**  system catalog is added to the function or stored 
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Because the query, that is, the dynamic query statement executed in a function or stored procedure, is compiled during execution, the table name and column name in the function or stored procedure must be known in the creation phase. The input parameter cannot be used as a table name or column name, or any connection mode.
 >-   Among the  **RETURNS**,  **IN**, and  **OUT**  parameters, encrypted and non-encrypted parameters cannot be used together. Although the parameter types are all original, the actual types are different.
 >-   For advanced package interfaces, for example,  **dbe\_output.print\_line\(\)**, decryption is not performed on the interfaces whose output is printed on the server. This is because when the encrypted data type is forcibly converted into the plaintext original data type, the default value of the data type is printed.

@@ -255,6 +255,6 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The DB4AI namespace is a private domain of this function. Functional indexes cannot be created in the DB4AI namespace.
 

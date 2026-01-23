@@ -19,7 +19,7 @@ You can specify and sort the data to import.
 
 ## Procedure<a name="en-us_topic_0283137171_en-us_topic_0237121137_section3467125218532"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**gs\_restore**  incrementally imports data by default. To prevent data exception caused by consecutive imports, use the  **-e**  and  **-c**  parameters for each import.  **-c**  indicates that existing data is deleted from the target database before each import.  **-e**  indicates that the system ignores the import task with an error \(error message is displayed after the import process is complete\) and proceeds with the next by default. Therefore, you need to exit the system if an error occurs when you send the SQL statement to the database.
 
 1.  Log in as the OS user  **omm**  to the primary node of the database.

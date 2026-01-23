@@ -8,7 +8,7 @@
 
 The name of the invoked model can be viewed in the  **gs\_model\_warehouse**  system catalog.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this syntax, but the AI capabilities are unavailable.
 
 ## Syntax<a name="section74427451052"></a>

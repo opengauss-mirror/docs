@@ -9,7 +9,7 @@ For data security purposes, openGauss provides a series of security measures, su
 -   If the number of incorrect password attempts \(**failed\_login\_attempts**\) of an account reaches the upper limit \(**10**  by default\), the system automatically locks the account. Smaller parameter values result in higher account security. However, if the value of this parameter is set too small, inconvenience may occur.
 -   If the time during which a user is locked exceeds the preset value \(**password\_lock\_time**, one day by default\), the system automatically unlocks the user. Larger parameter values bring higher account security. However, if the value of this parameter is set too large, inconvenience may occur.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >-   The integral part of the  **password\_lock\_time**  value indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.  
     >-   If the  **failed\_login\_attempts**  parameter is set to  **0**, an account is never locked due to incorrect password attempts. If the  **password\_lock\_time**  parameter is set to  **0**, an account is quickly unlocked after it is locked due to incorrect password attempts. Therefore, only when both parameters are set to positive values, the following operations can be performed: password failure check, account locking, and account unlocking.  
     >-   The default values of the two parameters meet the security requirements. You can change the parameter values as needed for higher security. You are advised to retain the default values.  

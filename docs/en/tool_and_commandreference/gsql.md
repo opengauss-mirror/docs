@@ -9,7 +9,7 @@
 -   **Connect to the database**: For details, see [Gsql Connection and Usage](../getting_started/gsql_connection_and_usage.md).
   
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >If the  **gsql**  client is used to connect to a database, the connection timeout period will be 5 minutes by default. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
     >To resolve this problem, see  [FAQs](#section1780814211263).
@@ -38,19 +38,19 @@
 <pre class="screen" id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_s125f2efde0c04fcfa844abd3345de09c"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_s125f2efde0c04fcfa844abd3345de09c"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_s125f2efde0c04fcfa844abd3345de09c"></a><strong id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_afbdf2cf9940147d1b38744dc051c571d"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_afbdf2cf9940147d1b38744dc051c571d"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_afbdf2cf9940147d1b38744dc051c571d"></a>\unset</strong> <em id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_af1641ddd6a1b41b09c8cbc9b033ca225"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_af1641ddd6a1b41b09c8cbc9b033ca225"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_af1641ddd6a1b41b09c8cbc9b033ca225"></a>varname</em></pre>
 <div class="note" id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ne8000c77528748f6bed28fbf75c2065d"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ne8000c77528748f6bed28fbf75c2065d"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ne8000c77528748f6bed28fbf75c2065d"></a><span class="notetitle"> NOTE: </span><div class="notebody"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_u98c734fbc2c043de8056fd44bb914f5e"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_u98c734fbc2c043de8056fd44bb914f5e"></a><ul id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_u98c734fbc2c043de8056fd44bb914f5e"><li>A variable is a simple name-value pair, where the value can be any characters in any length.</li><li>Variable names must consist of case-sensitive letters (including non-Latin letters), digits, and underscores(_).</li><li>If the <strong id="b842352706113455"><a name="b842352706113455"></a><a name="b842352706113455"></a>\set</strong> <em id="i842352697113527"><a name="i842352697113527"></a><a name="i842352697113527"></a>varname</em> meta-command (without the second parameter) is used, the variable is set without a value specified.</li><li>If the <strong id="b6442191121310"><a name="b6442191121310"></a><a name="b6442191121310"></a>\set</strong> meta-command without parameters is used, values of all variables are displayed.</li></ul>
 </div></div>
-<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"></a>For details about variable examples and descriptions, see <a href="#en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_li39134862">variables</a>.</p>
+<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a63f82373b7d74ee58ca06d7233656a10"></a>For details about variable examples and descriptions, see <a href="#Table 2">variables</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_r457b7479b8204694b14e69200bb8eb7b"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a44f6710088e9453789f62adbbdf8532c"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a44f6710088e9453789f62adbbdf8532c"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a44f6710088e9453789f62adbbdf8532c"></a>SQL substitution</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a60f6f1c254e1494c87f66ea0a3534459"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a60f6f1c254e1494c87f66ea0a3534459"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a60f6f1c254e1494c87f66ea0a3534459"></a>Common SQL statements can be set to variables using the variable feature of <strong id="b128741116131418"><a name="b128741116131418"></a><a name="b128741116131418"></a>gsql</strong> to simplify operations.</p>
-<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"></a>For details about examples and descriptions about SQL substitution, see <a href="#en-us_topic_0287275991_li194391754476">SQL substitution</a>.</p>
+<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a38c61443f662466996d0824b10ea12fc"></a>For details about examples and descriptions about SQL substitution, see <a href="#li194391754476">SQL substitution</a>.</p>
 </td>
 </tr>
 <tr id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_rebf3bc2093a1493db2962cb59d3ebe5e"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ab18d6658f2a541189c7d8b51f6253134"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ab18d6658f2a541189c7d8b51f6253134"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_ab18d6658f2a541189c7d8b51f6253134"></a>Customized prompt</p>
 </td>
 <td class="cellrowborder" valign="top" width="84%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a70cb7b00ca3b4809aa5b933f3df1e445"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a70cb7b00ca3b4809aa5b933f3df1e445"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a70cb7b00ca3b4809aa5b933f3df1e445"></a>Prompts of <strong id="b17641142171417"><a name="b17641142171417"></a><a name="b17641142171417"></a>gsql</strong> can be customized. Prompts can be modified by changing the reserved variables of <strong id="b47111313151"><a name="b47111313151"></a><a name="b47111313151"></a>gsql</strong>: <em id="i871123201511"><a name="i871123201511"></a><a name="i871123201511"></a>PROMPT1</em>, <em id="i16711173121514"><a name="i16711173121514"></a><a name="i16711173121514"></a>PROMPT2</em>, and <em id="i1471143151517"><a name="i1471143151517"></a><a name="i1471143151517"></a>PROMPT3</em>.</p>
-<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a>These variables can be set to customized values or the values predefined by <strong id="b6662918181510"><a name="b6662918181510"></a><a name="b6662918181510"></a>gsql</strong>. For details, see <a href="#en-us_topic_0287275991_li163671421104717">Prompt</a>.</p>
+<p id="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a><a name="en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_a2ba2dc039cd348048e3f2f87b59f06d4"></a>These variables can be set to customized values or the values predefined by <strong id="b6662918181510"><a name="b6662918181510"></a><a name="b6662918181510"></a>gsql</strong>. For details, see <a href="#li163671421104717">Prompt</a>.</p>
 </td>
 </tr>
 <tr id="row119681177486"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.3.1.1 "><p id="p19969191713487"><a name="p19969191713487"></a><a name="p19969191713487"></a>Automatic command completion</p>
@@ -88,13 +88,13 @@
 
     The variable reference method is suitable for regular SQL statements and meta-commands.
 
-    **gsql**  pre-defines some special variables and plans the values of these variables. To ensure compatibility with later versions, do not use these variables for other purposes. For details about special variables, see  [Table 2](#en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_table45814285).
+    **gsql**  pre-defines some special variables and plans the values of these variables. To ensure compatibility with later versions, do not use these variables for other purposes. For details about special variables, see  [Table 2](#Table 2).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   All the special variables consist of upper-case letters, digits, and underscores\(\_\).
     >-   To view the default value of a special variable, run the  **\\echo :**_varname_  meta-command, for example,  **\\echo :**_DBNAME_.
 
-    **Table  2**  Settings of special variables
+    **Table  2**  Settings of special variables<a id="Table 2"></a>
 
     <a name="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_table45814285"></a>
     <table><thead align="left"><tr id="en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_row63384495"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.4.1.1"><p id="en-us_topic_0237152142_en-us_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"><a name="en-us_topic_0237152142_en-us_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a><a name="en-us_topic_0237152142_en-us_topic_0059778819_aac3251466c144663b1b3c78f89175fb3"></a>Environment Variable</p>
@@ -221,7 +221,7 @@
 
     The above command queries the HR.areaS table.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The value of the variable is copied literally, so it can even contain unbalanced quotation marks or backslash commands. Therefore, the input content must be meaningful.
 
 -   <a name="li163671421104717"></a>Prompt
@@ -447,7 +447,7 @@ Use the  **gsql**  command to connect to the remote database service. When conne
 
     The  **gsql**  tool uses the  **-d**  parameter to specify the target database name, the  **-U**  parameter to specify the database username, the  **-h**  parameter to specify the host name, and the  **-p**  parameter to specify the port number.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >- If the database name is not specified, the default database name generated during initialization is used.
     >- If the database user name is not specified, the current OS user is used as the database user name by default.
     >- If a value does not contain a parameter (such as **-d** or **-U**) and the database name (**-d**) is not specified in the connection command, the parameter is interpreted as the database name.
@@ -851,7 +851,7 @@ For details about gsql parameters, see  [Table Common parameters](#en-us_topic_0
 <tr id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_rbfc3635add4a41319b89eba9fc73414a"><td class="cellrowborder" valign="top" width="22.24%" headers="mcps1.2.4.1.1 "><p id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a94c1b074456446488e34aa96bd54d8cc"><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a94c1b074456446488e34aa96bd54d8cc"></a><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a94c1b074456446488e34aa96bd54d8cc"></a>-v, --set, --variable=NAME=VALUE</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.7%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a68da82b5480f4e549bce319bbd613a7f"><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a68da82b5480f4e549bce319bbd613a7f"></a><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a68da82b5480f4e549bce319bbd613a7f"></a>Sets variable <em id="i16554541204710"><a name="i16554541204710"></a><a name="i16554541204710"></a>NAME</em> to <em id="i95541041204713"><a name="i95541041204713"></a><a name="i95541041204713"></a>VALUE</em>.</p>
-<p id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"></a><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"></a>For details about variable examples and descriptions, see <a href="#en-us_topic_0287275991_en-us_topic_0237152142_en-us_topic_0059778819_en-us_topic_0058968129_li39134862">variables</a>.</p>
+<p id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"></a><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_a49cd1e75c903484089d620390e736516"></a>For details about variable examples and descriptions, see <a href="#Table 2">variables</a>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="24.060000000000002%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p566915559712"><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p566915559712"></a><a name="en-us_topic_0287275991_en-us_topic_0237152145_en-us_topic_0059779319_en-us_topic_0058968145_p566915559712"></a>-</p>
 </td>
@@ -1179,7 +1179,7 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table23103470),  [Table Query buffer meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table8624338),  [Table Input and output meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table62130565),  [Table Information display meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table44907299),  [Table Formatting meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table53911699),[Table Connection meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table37189353)  ,  [Table OS meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table32146234),  [Table Variable meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table50076468), and  [Table Large object meta-commands](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table55465693).
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >_FILE_  mentioned in the following commands indicates a file path. This path can be an absolute path such as  **/home/gauss/file.txt**  or a relative path, such as  **file.txt**. By default, a  **file.txt**  is created in the path where the user runs  **gsql**  commands.
 
@@ -1332,7 +1332,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In  [Table 14](#en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_table44907299), option  **S**  indicates displaying the system object and  **PATTERN**  indicates displaying the additional description information and the name of the object to be displayed.
 
 **Table  14**  Information display meta-commands
@@ -1626,7 +1626,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 <p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p429958739351"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p429958739351"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_en-us_topic_0058968158_p429958739351"></a>The following result about <strong id="b17528727162416"><a name="b17528727162416"></a><a name="b17528727162416"></a>\dp</strong> is displayed:</p>
 <pre class="screen" id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_sce9b1fb55fa343c187cf940bc2cc9bc7"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_sce9b1fb55fa343c187cf940bc2cc9bc7"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_sce9b1fb55fa343c187cf940bc2cc9bc7"></a>rolename=xxxx/yyyy  --Assigning permissions to a role</pre>
 <pre class="screen" id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_s93c7bdbc497946f9bad85f0517b454f3"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_s93c7bdbc497946f9bad85f0517b454f3"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_s93c7bdbc497946f9bad85f0517b454f3"></a>=xxxx/yyyy  --Assigning permissions to public</pre>
-<p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"></a><em id="i197532010102516"><a name="i197532010102516"></a><a name="i197532010102516"></a>xxxx</em> indicates assigned permissions, and <em id="i1875314101259"><a name="i1875314101259"></a><a name="i1875314101259"></a>yyyy</em> indicates roles with the assigned permissions. For details about permission descriptions, see <a href="#en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_t9b9f37d7c1c54a7893307344083e644e">Table Description of permissions</a>.</p>
+<p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_aaed77d37fe9d4ddeb54f3d1b5ce1c962"></a><em id="i197532010102516"><a name="i197532010102516"></a><a name="i197532010102516"></a>xxxx</em> indicates assigned permissions, and <em id="i1875314101259"><a name="i1875314101259"></a><a name="i1875314101259"></a>yyyy</em> indicates roles with the assigned permissions. For details about permission descriptions, see <a href="#Table 15">Table Description of permissions</a>.</p>
 </td>
 <td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.3 "><p id="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a7eb8d6e2e4cf42f38b486bd65dc20965"><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a7eb8d6e2e4cf42f38b486bd65dc20965"></a><a name="en-us_topic_0287275991_en-us_topic_0237152146_en-us_topic_0059778645_a7eb8d6e2e4cf42f38b486bd65dc20965"></a>If <strong id="b240333410243"><a name="b240333410243"></a><a name="b240333410243"></a>PATTERN</strong> is specified, only tables and views whose names match <strong id="b840373492416"><a name="b840373492416"></a><a name="b840373492416"></a>PATTERN</strong> are displayed.</p>
 </td>
@@ -1728,7 +1728,7 @@ For details about meta-commands, see  [Table Common meta-commands](#en-us_topic_
 </table>
 
 
-**Table  15**  Description of permissions
+**Table  15**  Description of permissions<a id="Table 15"></a>
 
 <a name="en-us_topic_0237152146_en-us_topic_0059778645_t9b9f37d7c1c54a7893307344083e644e"></a>
 <table><thead align="left"><tr id="en-us_topic_0237152146_en-us_topic_0059778645_r6362dc74b9f541a69e0d66b9cf284ed9"><th class="cellrowborder" valign="top" width="28.060000000000002%" id="mcps1.2.3.1.1"><p id="en-us_topic_0237152146_en-us_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"><a name="en-us_topic_0237152146_en-us_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a><a name="en-us_topic_0237152146_en-us_topic_0059778645_a79aa272feab24abf8c5f27a25dfd7de7"></a>Parameter</p>
@@ -2265,7 +2265,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Do not modify the configurations of the openGauss host in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty. It is recommended that service applications be deployed outside the openGauss.
 
 -   If  **-h 127.0.0.1**  is specified, the database connection is successful. If  **-h 127.0.0.1**  is removed, the connection fails.
@@ -2317,7 +2317,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
         <u>GRANT CONNECT ON DATABASE postgres TO user1;</u>
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >Actually, some common misoperations may also cause a database connection failure, for example, entering an incorrect database name, username, or password. Misoperations are accompanied with an error information on the client tool.
         >```
         >gsql -d postgres -p 15400
@@ -2420,7 +2420,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
     In  **pg\_hba.conf**  of the target primary database node, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md). 
     
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   Do not modify the configurations of the openGauss host in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.
     >-   It is recommended that service applications be deployed outside the openGauss.
 
@@ -2433,7 +2433,7 @@ You can, as required, write ?, \(R+|\), \(R|\), and R to the following  **PATTER
 
     To resolve this problem, try again. In addition, do not run service programs in openGauss during O&M operations, such as an upgrade, preventing such a problem caused by file replacement during the upgrade.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >A possible stack of the core dump file contains dl\_main and its function calling. The file is used by the OS to initialize a process and load the shared dynamic library. If the process has been initialized but the shared dynamic library has not been loaded, the process cannot be considered completely started.
 
 

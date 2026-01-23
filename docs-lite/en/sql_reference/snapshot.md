@@ -11,7 +11,7 @@
 -   The snapshot feature is used to maintain data between team members, involving data transcription between administrators and common users. Therefore, the snapshot feature is not supported in private user and separation of duty \(**enableSeparationOfDuty**  is set to  **ON**\) scenarios.
 -   When you need a stable and available snapshot for tasks such as AI training, you need to publish the snapshot.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the Lite scenario, the AI capabilities of openGauss are unavailable.
 
 

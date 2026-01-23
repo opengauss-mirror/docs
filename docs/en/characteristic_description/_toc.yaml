@@ -157,7 +157,7 @@ sections:
         href: ./event_trigger.md
       - label: Resource Pooling
         href: ./resource_pooling.md
-      - label: UWAL
+      - label: UWAL Feature
         href: ./uwal.md
   - label: Application Development Interfaces
     sections:
@@ -219,6 +219,22 @@ sections:
         href: ./deploying_a_distributed_database_using_kubernetes.md
       - label: Distributed Analysis Capabilities
         href: ./distributed_analysis_capabilities.md
+  - label: Advanced Features
+    sections:
+      - label: 索引推荐
+        href: ./advanced_features/index-recommendation.md  
+      - label: DB4AI
+        href: ./advanced_features/db4ai.md  
+      - label: LLVM
+        href: ./advanced_features/llvm.md  
+      - label: MOT
+        href: ./advanced_features/mot.md  
+      - label: 全密态数据库
+        href: ./advanced_features/fully-encrypted-database.md  
+      - label: DCF
+        href: ./advanced_features/dcf.md  
+      - label: UWAL
+        href: ./advanced_features/UWAL.md     
   - label: AI Features Guide
     sections:
       - label: Overview

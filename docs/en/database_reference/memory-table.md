@@ -22,7 +22,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **true**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Even if  **force\_pseudo\_codegen\_mot**  is set to  **true**, however, the current platform does not support the native LLVM, the pseudo LLVM is still used.
 
 ## enable\_codegen\_mot\_print<a name="en-us_topic_0283137131_section277916121968"></a>

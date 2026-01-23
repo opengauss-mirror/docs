@@ -286,7 +286,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **0**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >If this function is enabled, the  **detail\_info**  information in audit logs starts with  *xid*. For example:
 >```
 >detail_info: xid=14619 , create table t1(id int);
@@ -332,6 +332,6 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Default value**:  **off**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   For security purposes, only the initial user can create, modify, and delete DIRECTORY objects by default.
 >-   If  **enable\_access\_server\_directory**  is enabled, users with the SYSADMIN permission and users who inherit the  **gs\_role\_directory\_create**  permission of the built-in role can create directory objects. A user with the SYSADMIN permission, the owner of a directory, a user who is granted with the DROP permission for the directory, or a user who inherits the  **gs\_role\_directory\_drop**  permission of the built-in role can delete a directory. A user with the SYSADMIN permission and the owner of a directory object can change the owner of the directory object, and the user must be a member of the new owner.

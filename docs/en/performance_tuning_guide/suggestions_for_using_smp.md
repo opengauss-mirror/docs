@@ -20,7 +20,7 @@ The CPU, memory, and I/O resources are sufficient. SMP is a solution that uses a
     openGauss=# SET query_dop = 1;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If resources are sufficient, the higher the parallelism degree is, the better the performance improvement effect is.
     >-   The SMP parallelism degree supports session level settings. You are advised to enable the SMP feature before executing a query that meets the requirements. After the execution is complete, disable the SMP feature. Otherwise, SMP may affect services in peak hours.
 

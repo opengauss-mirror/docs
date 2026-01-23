@@ -33,7 +33,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
         PARTITION ( partition_name ) ;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >An ordinary partitioned table supports the syntax but not the function of collecting statistics about specified partitions.
 
 
@@ -44,7 +44,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
         table_name (( column_1_name, column_2_name [, ...] ));
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   When collecting statistics about multiple columns, set the GUC parameter [default\_statistics\_target](../database_reference/other-optimizer-options.md#en-us_topic_0283137690_en-us_topic_0237124719_en-us_topic_0059779049_se18c86fcdf5e4a22870f71187436d815) to a negative value to sample data in percentage.
     >
@@ -59,7 +59,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE};
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   In fast mode, DML operations need to be performed on the tables to be verified concurrently. As a result, an error is reported during the verification. In the current fast mode, data is directly read from the disk. When other threads modify files concurrently, the obtained data is incorrect. Therefore, you are advised to perform the verification offline.
     >
@@ -77,7 +77,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name|index_name [CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >
     >-   Operations on ordinary tables and index tables are supported, but **CASCADE** operations on indexes of index tables are not supported. The **CASCADE** mode is used to process all index tables of the primary table. When the index tables are checked separately, the **CASCADE** mode is not required.
     >
@@ -91,7 +91,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
     {ANALYZE | ANALYSE} VERIFY {FAST|COMPLETE} table_name PARTITION {(partition_name)}[CASCADE];
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You can check a single partition of a table, but cannot perform the **CASCADE** operation on the indexes of an index table.
 
 
@@ -101,7 +101,7 @@ If no parameter is specified, **ANALYZE** analyzes each table and partitioned ta
 
     Enables the display of progress messages.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If **VERBOSE** is specified, **ANALYZE** displays the progress information, indicating the table that is being processed. Statistics about tables are also displayed.
 
 -   **table\_name**

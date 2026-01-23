@@ -17,7 +17,7 @@ gs_dbmind service setup --initialize -c confpath
 gs_dbmind set METADATABASE password xxxxx -c confpath
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This command is case sensitive to character strings. If you enter an incorrect character string, an error may occur during the command execution.
 >The **set** subcommand involves many types of parameter values. Therefore, only the set values are preliminarily checked. You need to ensure that the entered values are correct. For example, some values must be positive integers instead of negative integers.
 

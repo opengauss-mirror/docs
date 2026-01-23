@@ -1,6 +1,6 @@
 # AI Feature Functions<a name="EN-US_TOPIC_0303599451"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides the following APIs, but the AI capabilities are unavailable.
 
 -   gs\_index\_advise\(text\)
@@ -67,7 +67,7 @@
 
     Return type: text
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This function is an internal function.
 
 -   model\_train\_opt\(template text, model text\)

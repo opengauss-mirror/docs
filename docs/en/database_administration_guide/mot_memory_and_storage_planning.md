@@ -6,7 +6,7 @@ This section describes the considerations and guidelines for evaluating, estimat
 
 MOT belongs to the in-memory database class \(IMDB\) in which all tables and indexes reside entirely in memory.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Memory storage is volatile, meaning that it requires power to maintain the stored information. Disk storage is persistent, meaning that it is written to disk, which is non-volatile storage. MOT uses both, having all data in memory, while persisting \(by WAL logging\) transactional changes to disk with strict consistency \(in synchronous logging mode\).
 
 Sufficient physical memory must exist on the server in order to maintain the tables in their initial state, as well as to accommodate the related workload and growth of data. All this is in addition to the memory that is required for the traditional disk-based engine, tables and sessions that support the workload of disk-based tables. Therefore, planning ahead for enough memory to contain them all is essential.
@@ -27,7 +27,7 @@ Even so, you can get started with whatever amount of memory you have and perform
 
     If this limit is breached, then MOT memory internal limits are adjusted in order to provide the maximum possible within the limitations described above. This adjustment is performed during startup and calculates the value of MOT max memory accordingly.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >MOT max memory is a logically calculated value of either the configured settings or their adjusted values of \(max\_mot\_global\_memory + max\_mot\_local\_memory\).
 
     In this case, a warning is issued to the server log, as shown below –
@@ -120,7 +120,7 @@ Even so, you can get started with whatever amount of memory you have and perform
 
     Take this scenario into consideration when configuring the max\_mot\_local\_memory setting, as well as during application development.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You may refer to the[MEMORY \(MOT\)](mot_configuration.md#section1223551495)  section for more information about configuration settings.
 
 
@@ -146,7 +146,7 @@ The required capacity is determined by the requirements of checkpointing and log
 
     Twice the size is required because a snapshot is saved to disk of the entire size of the data, and in addition, the same amount of space should be allocated for the checkpoint that is in progress. When a checkpoint process finishes, the previous checkpoint files are deleted.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In the next openGauss release, MOT will have an incremental checkpoint feature, which will significantly reduce this storage capacity requirement.
 
 
@@ -162,5 +162,5 @@ The required capacity is determined by the requirements of checkpointing and log
 
     In order to ensure that the log IO device does not become a bottleneck, the log file must be placed on a drive that has low latency.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You may refer to the  [STORAGE \(MOT\)](mot_configuration.md)  section for more information about configuration settings.

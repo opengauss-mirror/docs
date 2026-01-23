@@ -173,7 +173,7 @@ In scenarios such as HCS, you are not advised to use user-defined tablespaces. T
         DROP TABLESPACE
         ```
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >Only the tablespace owner or system administrator can delete a tablespace.
 
 

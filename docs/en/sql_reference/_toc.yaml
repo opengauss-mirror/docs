@@ -17,6 +17,8 @@ sections:
         href: ./constant_and_macro.md
       - label: Data Types
         sections:
+          - label: Data Types
+            href: ./brief_tutorial/data-types.md       
           - label: Numeric Types
             href: ./numeric_types.md
           - label: Monetary Types
@@ -111,6 +113,8 @@ sections:
             href: ./brief_tutorial/permissions.md
           - label: SCHEMA
             href: ./brief_tutorial/schema.md
+          - label: Transactions
+            href: ./brief_tutorial/transactions.md            
           - label: Aliases
             href: ./aliases.md
           - label: Indexes
@@ -592,7 +596,7 @@ sections:
           - label: DBE_PLDEBUGGER Schema
             sections:
               - label: Introduction
-                href: ./dbe_pldebugger_turn_on.md
+                href: ./dbe_pldebugger_schema.md            
               - label: DBE_PLDEBUGGER.turn_on
                 href: ./dbe_pldebugger_turn_on.md
               - label: DBE_PLDEBUGGER.turn_off
@@ -1220,7 +1224,11 @@ sections:
       - label: Locks
         href: ./locks.md
       - label: Transactions
-        href: ./transactions.md
+        sections:
+          - label: Managing Transactions
+            href: ./managing_transactions.md      
+          - label: Controlling Transactions
+            href: ./controlling_transactions.md     
   - label: Tables and Storage
     sections:
       - label: Creating a Table
@@ -1230,7 +1238,7 @@ sections:
   - label: Programmability
     sections:
       - label: Anonymous Blocks
-        href: ./anonymous_blocks.md
+        href: ./brief_tutorial/anonymous_blocks_1.md
       - label: PL/pgSQL Functions
         href: ./pl_pgsql_functions.md
       - label: Triggers
@@ -1348,7 +1356,75 @@ sections:
   - label: Subtype
     href: ./subtype.md
   - label: Full Text Search
-    href: ./full_text_search.md
+    sections:
+      - label: Introducation
+        sections:  
+          - label: Full-Text Retrieval
+            href: ./full_text_retrieval.md
+          - label: What Is a Document?
+            href: ./what_is_a_document.md
+          - label: Basic Text Matching]
+            href: ./basic_text_matching.md
+          - label: Configuration
+            href: ./configurations.md  
+      - label: Tables and Indexes
+        sections:
+          - label: Searching a Table
+            href: ./searching_a_table.md
+          - label: Creating an Index
+            href: ./creating_index.md
+          - label: Constraints on Index Use
+            href: ./constraints_on_index_use.md
+      - label: Controlling Text Search
+        sections:
+          - label: Parsing Documents
+            href: ./parsing_documents.md
+          - label: Parsing Queries
+            href: ./parsing_queries.md
+          - label: Ranking Search Results
+            href: ./ranking_search_results.md
+          - label: Highlighting Results
+            href: ./highlighting_results.md
+      - label: Additional Features
+        sections:
+          - label: Manipulating tsvector
+            href: ./manipulating_tsvector.md
+          - label: Manipulating Queries
+            href: ./manipulating_queries.md
+          - label: Rewriting Queries
+            href: ./rewriting_queries.md
+          - label: Gathering Document Statistics
+            href: ./gathering_document_statistics.md 
+      - label: Parser
+        href: ./parser.md
+      - label: Dictionaries
+        sections:
+          - label: Overview
+            href: ./overview_0.md
+          - label: Stop Words
+            href: ./stop_words.md
+          - label: Simple Dictionary
+            href: ./simple_dictionary.md                
+          - label: Synonym Dictionary
+            href: ./synonym_dictionary.md
+          - label: Thesaurus Dictionary
+            href: ./thesaurus_dictionary.md                
+          - label: Ispell Dictionary
+            href: ./ispell_dictionary.md
+          - label: Snowball Dictionary
+            href: ./snowball_dictionary.md
+      - label: Configuration Examples
+        href: ./configuration_examples.md
+      - label: 测试和调试文本搜索
+        sections:
+          - label: Testing a Configuration
+            href: ./testing_a_configuration.md
+          - label: Testing a Parser
+            href: ./testing_a_parser.md
+          - label: Testing a Dictionary
+            href: ./testing_a_dictionary.md
+      - label: Limitations
+        href: ./limitations.md           
   - label: Extended Functions
     href: ./extended_functions.md
   - label: Extended Syntax

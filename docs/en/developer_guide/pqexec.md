@@ -42,7 +42,7 @@ PGresult *PQexec(PGconn *conn, const char *command);
 
 The PQresultStatus function should be called to check the return value for any errors \(including the value of a null pointer, in which  **PGRES\_FATAL\_ERROR**  will be returned\). The PQerrorMessage function can be called to obtain more information about such errors.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>[!TIP]NOTICE   
 >The command string can contain multiple SQL commands separated by semicolons \(;\). Multiple queries sent in a PQexec call are processed in one transaction, unless there are specific BEGIN/COMMIT commands in the query string to divide the string into multiple transactions. Note that the returned PGresult structure describes only the result of the last command executed from the string. If a command fails, the string processing stops and the returned PGresult describes the error condition.  
 
 ## Example<a name="en-us_topic_0241735619_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>

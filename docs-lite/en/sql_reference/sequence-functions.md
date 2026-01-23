@@ -6,10 +6,10 @@ The sequence functions provide a simple method to ensure security of multiple us
 
     Description: Specifies an increasing sequence and returns a new value.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >To avoid blocking of concurrent transactions that obtain numbers from the same sequence, a nextval operation is never rolled back; that is, once a value has been fetched it is considered used, even if the transaction that did the nextval later aborts. This means that aborted transactions may leave unused "holes" in the sequence of assigned values. Therefore, openGauss sequences cannot be used to obtain sequence without gaps.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
 
     Return type: numeric
@@ -112,11 +112,11 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The current session will take effect immediately after  **setval**  is performed. If other sessions have buffered sequence values,  **setval**  will take effect only after the values are used up. Therefore, to prevent sequence value conflicts, you are advised to use  **setval**  with caution.
     >Because the sequence is non-transactional, the change caused by  **setval**  will not be undone by transaction rollback.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >The  **nextval**  function can be executed only on the primary node. It is not supported on standby nodes.
 
 
@@ -163,6 +163,6 @@ The sequence functions provide a simple method to ensure security of multiple us
     (1 row)
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are session-level functions. If no data is inserted into the auto-increment column in the current session, last\_insert\_id\(\) returns **0**.
     >-   last\_insert\_id\(\) and last\_insert\_id\(int16\) are available only when **sql\_compatibility** is set to **B**.

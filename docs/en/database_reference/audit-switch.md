@@ -23,7 +23,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value:** **pg\_audit**  If  **om**  is used for openGauss deployment, audit logs are stored in  **$GAUSSLOG/pg\_audit/*Instance name**.
 
-> ![](public_sys-resources/icon-notice.gif) **NOTICE:**  
+> [!TIP]NOTICE  
 >
 > - You need to set different audit file directories for different DNs. Otherwise, audit logs will be abnormal.
 > - If the value of **audit_directory** in the configuration file is an invalid path, the audit function cannot be used.
@@ -51,7 +51,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value:** **1d**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  [audit\_resource\_policy](#en-us_topic_0283137524_en-us_topic_0237124745_section939915522551),  [audit\_space\_limit](#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714), and  [audit\_file\_remain\_time](#en-us_topic_0283137524_en-us_topic_0237124745_section149961828185211)  parameters.
 
 ## audit\_rotation\_size<a name="en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sf2c59b75a61e4e55933029c6b1e4ab96"></a>
@@ -64,7 +64,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **10 MB**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.
 
 ## audit\_resource\_policy<a name="en-us_topic_0283137524_en-us_topic_0237124745_section939915522551"></a>
@@ -110,7 +110,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Default value**:  **1048576**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Ensure that this parameter is set to  **1048576**. Adjust this parameter only when required. Otherwise,  **audit\_resource\_policy**  may fail to take effect. To control the storage space and time of audit logs, set the  **audit\_resource\_policy**,  **audit\_space\_limit**, and  **audit\_file\_remain\_time**  parameters.
 
 ## audit\_thread\_num<a name="section119766534165"></a>
@@ -123,5 +123,5 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **1**
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >When  **audit\_dml\_state**  is enabled and high performance is required, you are advised to increase the value of this parameter to ensure that audit messages can be processed and recorded in a timely manner.

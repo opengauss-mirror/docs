@@ -1166,6 +1166,8 @@ sections:
         href: ./locks-1.md
       - label: Transactions
         href: ./managing-transactions.md
+      - label: Controlling Transactions
+        href: ./controlling-transactions.md        
   - label: Tables and Storage
     sections:  
       - label: Creating a Table

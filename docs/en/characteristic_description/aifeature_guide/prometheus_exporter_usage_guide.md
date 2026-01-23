@@ -49,7 +49,7 @@ You can run the  **gs\_dbmind**  command to start an exporter. The following des
     ```
 
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >-   To connect to a database from openGauss-exporter, you must have the  **monitor admin**  permission or higher. Otherwise, some metrics cannot be collected.
 >-   openGauss-exporter samples slow SQL information from the  **dbe\_perf.statement\_history**  view. The slow SQL records in  **dbe\_perf.statement\_history**  are related to  **log\_min\_duration\_statement**  and  **track\_stmnt\_stat\_level**.  **log\_min\_duration\_statement**  indicates the slow SQL threshold, in milliseconds. You can set it to a specific value as required.  **track\_stmnt\_stat\_level**  indicates the SQL record level. The default value is  **'OFF,L0'**, indicating that only slow SQL statements are recorded. The level is L0. Exercise caution when modifying this parameter.
 >-   openGauss-exporter collects database information, including data in some system catalogs and views \(for details, see the opengauss\_exporter configuration file\), node-exporter collects system metrics, mainly related to system disks and CPUs, and reprocessing\_exporter performs secondary processing based on some metrics in prometheus-server \(for details, see the reprocessing\_exporter configuration file\). Then, the processed data is provided to users.

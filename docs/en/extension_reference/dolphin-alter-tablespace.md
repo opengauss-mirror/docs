@@ -86,7 +86,7 @@ Compared with the original openGauss, Dolphin modifies the ALTER TABLESPACE synt
     -   **seq\_page\_cost**: sets the optimizer to calculate the cost of obtaining the disk page in sequence one time. The default value is **1.0**.
     -   **random\_page\_cost**: sets the optimizer to calculate the cost of obtaining the disk page in random sequence one time. The default value is **4.0**.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >-   random\_page\_cost is relative to seq\_page\_cost. It is meaningless when it is equal to or less than seq\_page\_cost.
 
         >-   The prerequisite of using **4.0** as the default value is that the optimizer uses indexes to scan the table data and that the hit ratio of data in the cache reaches about 90%.
@@ -107,7 +107,7 @@ Compared with the original openGauss, Dolphin modifies the ALTER TABLESPACE synt
     -   **UNLIMITED**: No limit is set for this tablespace.
     -   The value is determined by space\_size. For details about the format, see [CREATE TABLESPACE](../sql_reference/create_tablespace.md).
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:**
+        >[!NOTE]NOTE
         >-   If the adjusted quota is smaller than the current tablespace usage, the adjustment is successful. You need to decrease the tablespace usage to a value less than the new quota before writing data to the tablespace.
         
         >-   It can be used when you are modifying **MAXSIZE**:

@@ -2,7 +2,7 @@
 
 Data definition language \(DDL\) is used to define or modify an object in a database, such as a table, an index, or a view.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >openGauss does not support DDL when the primary node of the database is incomplete. For example, if the primary node of the database in openGauss is faulty, creating a database or a table will fail.
 
 ## Defining a Database<a name="en-us_topic_0283136643_en-us_topic_0237122049_en-us_topic_0059777960_s57baeef469e24cc39dd5a38b4c53b6ab"></a>

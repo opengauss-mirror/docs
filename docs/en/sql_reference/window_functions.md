@@ -6,7 +6,7 @@ Currently, column-store tables only support  **rank\(expression\)**  and  **row\
 
 Window functions and the  **OVER**  clause are used together. The  **OVER**  clause is used for grouping data and sorting the elements in a group. Window functions are used for generating sequence numbers for the values in the group.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >**order by**  in a window function must be followed by a column name. If it is followed by a number, the number is processed as a constant value and the target column is not ranked.
 
 -   RANK\(\)

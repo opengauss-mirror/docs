@@ -67,7 +67,7 @@
 
   When  **-l**  is not specified and  **gaussdbLogPath**  is not set in the XML file, the default value of the  **-l**  parameter is  **/var/log/gaussdb/om/gs_local-YYYY-MMDD_hhmmss.log**.
 
-  >![](public_sys-resources/icon-note.gif) **NOTE:** 
+  >[!NOTE]NOTE 
   >After executing gs\_postuninstall, the system will automatically delete the directories related to openGauss \(including $GAUSSLOG\). You are advised to set the log file path to a path outside the openGauss database.
 
 -   -?, --help

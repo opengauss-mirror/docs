@@ -4,7 +4,7 @@ After investing extensive research to find the best concurrency control mechanis
 
 With the release of openGauss 5.0 the MOT now includes support for MVCC, which among other benefits reduces the contention between read and update transactions thus reducing transaction aborts that come with OCC method.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >MOT is fully Atomicity, Consistency, Isolation, Durability \(ACID\)-compliant, as described in the  [MOT Introduction](mot_introduction.md)  section.
 
 The following topics describe MOT's concurrency control mechanism –

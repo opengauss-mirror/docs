@@ -31,11 +31,11 @@ DROP SCHEMA [ IF EXISTS ] schema_name [, ...] [ CASCADE | RESTRICT ];
     -   **RESTRICT**: refuses to delete the schema if the schema contains objects. This is the default action.
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 >Schemas beginning with  **pg\_temp**  or  **pg\_toast\_temp**  are for internal use. Do not delete them. Otherwise, unexpected consequences may be incurred.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >The schema currently being used cannot be deleted. To delete it, switch to another schema first.
 

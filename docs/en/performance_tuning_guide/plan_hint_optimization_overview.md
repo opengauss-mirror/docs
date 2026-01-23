@@ -20,7 +20,7 @@ select /*+ <plan_hint1> <plan_hint2> */ * from t1, (select /*+ <plan_hint3> */ f
 
 In the preceding command, <_plan\_hint1_\> and <_plan\_hint2_\> are the hints of a query, and <_plan\_hint3_\> is the hint of its subquery.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:**   
+>[!TIP]NOTICE   
 >If a hint is specified in the  **CREATE VIEW**  statement, the hint will be applied each time this view is used.  
 >If the random plan function is enabled \(**plan\_mode\_seed**  is set to a value other than 0\), the specified hint will not be used.  
 

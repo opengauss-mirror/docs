@@ -4,7 +4,7 @@ To fine-tune openGauss performance, you need to identify performance bottlenecks
 
 Various factors must be considered during openGauss performance tuning. Therefore, optimization personnel must know well about knowledge, such as system software architecture, hardware and software configuration, database parameter configuration, concurrency control, query processing, and database applications.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >Performance tuning sometimes require openGauss restart, which may interrupt current services. Therefore, after the service goes live and when openGauss needs to be restarted, you must send the request to related management department about the operation window time for approval.
 
 ## Tuning Process<a name="en-us_topic_0283137244_en-us_topic_0237121483_en-us_topic_0073253541_en-us_topic_0040046511_section7336753113553"></a>

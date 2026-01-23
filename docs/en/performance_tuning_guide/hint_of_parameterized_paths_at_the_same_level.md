@@ -11,7 +11,7 @@ predpush_same_level(src, dest)
 predpush_same_level(src1 src2 ..., dest)
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter takes effect only when the  **predpushforce**  option in  **rewrite\_rule**  is enabled.
 
 ## Examples<a name="section5736356154"></a>
@@ -58,7 +58,7 @@ openGauss=# explain select /*+predpush_same_level(t1, t2)*/ * from t1, t2 where 
 (4 rows)
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   **predpush\_same\_level**  can specify multiple  **src**  parameters in the same condition.
 >-   If the specified  **src**  and  **dest**  conditions do not exist or do not meet the parameterized path requirements, this hint does not take effect.
 

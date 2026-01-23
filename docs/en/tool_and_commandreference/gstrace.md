@@ -13,7 +13,7 @@
 >5.  The permission of the trace tool is  **0700**, which indicates that only database users can read, write, and execute the trace tool.
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the process is stopped abnormally, the **gstrace\_trace\_cfg\_\*** file will exist in the **/dev/shm** directory. You can manually delete the file.
 
 ## Syntax<a name="en-us_topic_0287275941_en-us_topic_0237152426_section681720817204"></a>

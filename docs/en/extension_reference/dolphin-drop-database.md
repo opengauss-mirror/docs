@@ -28,7 +28,7 @@ DROP DATABASE [ IF EXISTS ] database_name ;
 
     Value range: an existing database name
     
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     
     -   In B-compatible mode, when **dolphin.b\_compatibility\_mode** is set to **on**, the syntax is the same as the DROP SCHEMA syntax without dolphin. If **dolphin.b\_compatibility\_mode** is **off**, the syntax is the DROP DATABASE syntax without dolphin.
 

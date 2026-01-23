@@ -11,7 +11,7 @@ This section describes how to roll back to the source version.
     gs_upgradectl -t auto-rollback  -X /opt/software/GaussDB_Kernel/clusterconfig.xml
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If the database is abnormal, fix cluseter status and rollback again:
     >
     >openGauss 3.X uses a new method to establish mutual trust relationship. If openGauss 2.X is upgraded to openGauss 3.X and then rolled back, perform the following steps after the rollback command is executed and before running the gs_preinstall command in the old package:

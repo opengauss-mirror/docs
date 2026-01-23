@@ -79,7 +79,7 @@ gs\_dump can create export files in four formats, which are specified by \[**-F*
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using gs\_dump.
 
 ## Precautions<a name="en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
@@ -95,7 +95,7 @@ gs\_dump can create export files in four formats, which are specified by \[**-F*
 gs_dump [OPTION]... [DBNAME]
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >DBNAME does not follow a short or long option. It specifies the database to connect to.
 >For example:
 >Specify DBNAME without a -d option preceding it.
@@ -190,7 +190,7 @@ Dump parameters:
 
     Dumps only schemas matching the schema names. This option contains the schema and all its contained objects. If this option is not specified, all non-system schemas in the target database will be dumped. Multiple schemas can be selected by specifying multiple -n options. The schema parameter is interpreted as a pattern according to the same rule used by the \\d command of gsql. Therefore, multiple schemas can also be selected by writing wildcard characters in the pattern. When you use wildcard characters, quote the pattern to prevent the shell from expanding the wildcard characters.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   If -n is specified, gs\_dump does not dump any other database objects that the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.
     >-   If -n is specified, the non-schema objects are not dumped.
 
@@ -248,7 +248,7 @@ Dump parameters:
 
     The -n and -N options have no effect when -t is used, because tables selected by using -t will be dumped regardless of those options, and non-table objects will not be dumped.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The number of -t parameters must be less than or equal to 100.
     >-   If the number of -t parameters is greater than 100, you are advised to use the --include-table-file parameter to replace some -t parameters.
     >-   If -t is specified, gs\_dump does not dump any other database objects that the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.
@@ -285,7 +285,7 @@ Dump parameters:
 
     Specifies the table file not to be dumped.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Same as --include-table-file, the content format of this parameter is as follows:
     >schema1.table1
     >schema2.table2
@@ -400,7 +400,7 @@ Dump parameters:
     -   Consists of 8 to 16 characters.
     -   Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$ %^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Stored procedures and functions cannot be exported in encrypted mode.
 
 -   --with-salt=RANDVALUES
@@ -438,7 +438,7 @@ Dump parameters:
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The -s/--schema-only and -a/--data-only parameters do not coexist.
 >-   The -c/--clean and -a/--data-only parameters do not coexist.
 >-   --inserts/--column-inserts and -o/--oids do not coexist, because OIDS cannot be set using the INSERT statement.
@@ -509,7 +509,7 @@ Use the gs\_dump to dump a database as a SQL text file or a file in other format
 
 In the following examples,  **backup/MPPDB\_backup.sql**  indicates an exported file where backup indicates the relative path of the current directory.  **37300**  indicates the port ID of the database server.  **postgres**  indicates the name of the database to be accessed.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >Before exporting files, ensure that the directory exists and you have the read and write permissions on the directory.
 
 Example 1: Use gs\_dump to export the full information of the postgres database. The exported MPPDB\_backup.sql file is in plain-text format.

@@ -13,7 +13,7 @@
     gs_dbmind component deployment --offline
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >If the one-click deployment tool involves multiple nodes, you are advised to use it on the internal network.
 
     If one-click deployment is used, the download path and decompression path of the Prometheus and node\_exporter software packages are in the $HOME directory.
@@ -64,7 +64,7 @@
 
     You need to place the certificate files required by \[PROMETHEUS\] and \[EXPORTERS\] in the same path on each node in advance. If multiple nodes are deployed, the certificate file paths on different nodes must be the same. If the path is incorrect and no certificate file is detected during the running of each component, an alarm is generated and the component exits.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**
+    >[!NOTE]NOTE
     >-   Prometheus and node-exporter do not support SSL private key files with passwords. Therefore, Prometheus and node-exporter do not support SSL certificate files. Currently, all SSL certificates refer to those used by the exporter component. The current version of Prometheus supports only certificates in sans format.
     >-   In the case of multiple nodes, to remotely connect to the database, you need to update the address information of the main control node to the **pg\_hba.conf** file of the database on the branch node and restart the database. Otherwise, the verification fails.
     >-   If an SSH password-free account is used, any password can be entered during password verification.
@@ -156,7 +156,7 @@
 
 The exporter component uses HTTPS for communication by default. Therefore, you need to provide the SSL certificate and key file by default through **--ssl-keyfile**, **--ssl-certfile**, and **--ssl-ca-file**. To disable HTTPS, you can run the **--disable-https** command.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >
 >The default communication protocol used by openGauss is incompatible with PostgreSQL. As a result, the PostgreSQL-based Python driver  **psycopg2-binary**  installed using the PyPI source cannot connect to the openGauss database.
 >Therefore, you need to compile  **psycopg2**  or modify GUC parameters for adaptation. You can also download  **psycopg2**  compiled based on openGauss from the openGauss official website. \(The official website provides only the compilation packages of some Python versions. You need to check whether the compilation packages are consistent with the current Python version.\)

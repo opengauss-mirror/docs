@@ -79,7 +79,7 @@ For details on the **\\copy** command, see [Table 1](#zh-cn_topic_0237121136_zh-
 
     Specifies the character that separates columns within each row \(line\) of the file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >   
     >-   The value of **delimiter** cannot be **\\r** or **\\n**. 
     >-   A delimiter cannot be the same as the **null** value. The delimiter for the CSV format cannot be same as the **quote** value. 
@@ -127,7 +127,7 @@ For details on the **\\copy** command, see [Table 1](#zh-cn_topic_0237121136_zh-
 
     Default value: a double quotation mark \("\)
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >   
     >-   The value of **quote** cannot be the same as that of the **delimiter** or null parameter. 
     >-   The value of **quote** must be a single-byte character. 

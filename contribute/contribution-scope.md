@@ -2,7 +2,7 @@
 
 The openGauss community welcomes you to contribute documents. We encourage developers to participate in document feedback and contribution in various ways. You can contribute to the docs repository through channels such as reporting document problems, rectifying document defects, reviewing and modifying content, and sharing experience.
 
->![](public_sys-resources/icon-note.gif) **NOTE**
+>[!NOTE]NOTE
 >-   The content and images you commit must be original and must not infringe others' intellectual property rights.
 >-   openGauss has the right to modify the committed content according to relevant specifications.
 

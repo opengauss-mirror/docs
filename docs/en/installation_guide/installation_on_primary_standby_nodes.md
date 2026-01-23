@@ -28,7 +28,7 @@
     sh install.sh  -w xxxx  --multinode
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   **-w**: initializes the database password \(specified by  **gs\_initdb**\). This parameter is mandatory for security purposes.
     >-   **-p**: specifies the port number of the primary openGauss node. The default value is  **5432**. The port number of the standby node is that of the primary node plus 200. The default port number is  **5632**.
     >-   **--multinode**: determines whether the installation is performed on a single node or on primary/standby nodes.

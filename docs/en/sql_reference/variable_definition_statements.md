@@ -130,7 +130,7 @@ INFO:  3
 (1 row)
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   **%TYPE**  cannot reference the type of a composite variable or a record variable, a column type of the record type, a column type of a variable of the cross-package composite type, or a column type of a cursor variable of the cross-package type.
 >-   **%ROWTYPE**  cannot reference the type of a composite variable or a record variable and the type of a cross-package cursor.
 >-   **%ROWTYPE** cannot reference nested cursors.

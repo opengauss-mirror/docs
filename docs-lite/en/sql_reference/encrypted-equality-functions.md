@@ -1,6 +1,6 @@
 # Encrypted Equality Functions<a name="EN-US_TOPIC_0299864759"></a>
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this API, but the encrypted equality functions are unavailable.
 
 -   byteawithoutorderwithequalcolin\(cstring\)

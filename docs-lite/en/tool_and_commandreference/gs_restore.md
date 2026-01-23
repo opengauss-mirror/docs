@@ -21,7 +21,7 @@ It has the following functions:
 gs_restore [OPTION]... FILE
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   The  **FILE**  does not have a short or long option. It is used to specify the location for the archive files. 
 >-   The  **dbname**  or  **-l**  option is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.
 >-   **gs\_restore**  incrementally imports data by default. To prevent data exception caused by consecutive imports, use the  **-e**  and  **-c**  parameters for each import.  **-c**  indicates that existing data is deleted from the target database before each import.  **-e**  indicates that the system ignores the import task with an error \(error message is displayed after the import process is complete\) and proceeds with the next by default. Therefore, you need to exit the system if an error occurs when you send the SQL statement to the database.
@@ -40,7 +40,7 @@ Common parameters:
 
     The default is the standard output.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**-f**  cannot be used with  **-d**.
 
 -   -F, --format=c|d|t
@@ -184,7 +184,7 @@ Import parameters:
     gs_restore -h host_name -p port_number -d postgres -n PUBLIC -t table1 -n test1 -t table1 backup/MPPDB_backup.tar
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+    >[!TIP]NOTICE 
     >-   **-t**  does not support the  **schema\_name.table\_name**  input format.
     >-   When  **-t**  is specified, gs\_restore does not import any other database objects that are attached to the selected table. Therefore, there is no guarantee that the results of a specific-table dump can be automatically imported to an empty database.
     >-   **-t tablename**  does not import trigger information from a table.
@@ -236,14 +236,14 @@ Import parameters:
     Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >-   If any local additions need to add to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. For example:
 >```
 >CREATE DATABASE foo WITH TEMPLATE template0;
 >```
 >-   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >1. The  **-d/--dbname**  and  **-f/--file**  parameters do not coexist.
 >2. The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.
 >3. The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.

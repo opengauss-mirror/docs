@@ -4,7 +4,7 @@ To compile and connect to a libpq source program, perform the following operatio
 
 1.  Decompress the release package \(for example,  **openGauss-\*.\*.0-\*\*\*-64bit-Libpq.tar.gz**\). The required header file is stored in the  **include**  folder, and the  **lib**  folder contains the required libpq library file.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >In addition to  **libpq-fe.h**, the  **include**  folder contains the header files  **postgres\_ext.h**,  **gs\_thread.h**, and  **gs\_threadlocal.h**  by default. These three header files are the dependency files of  **libpq-fe.h**.
 
 2.  Include the  **libpq-fe.h**  header file.

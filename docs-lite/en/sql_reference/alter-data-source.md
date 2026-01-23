@@ -12,7 +12,7 @@ The attributes include the name and owner. The content includes the type, versio
 -   To change the owner, the new owner must be the initial user or a system administrator.
 -   If the  **password**  option is displayed, ensure that the  **datasource.key.cipher**  and  **datasource.key.rand**  files exist in the  _$GAUSSHOME_**/bin**  directory of each node in openGauss. If the two files do not exist, use the  **gs\_guc**  tool to generate them and use the  **gs\_ssh**  tool to release them to the  _$GAUSSHOME_**/bin**  directory on each node.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
 ## Syntax<a name="en-us_topic_0283136847_en-us_topic_0237122056_section20592145145512"></a>

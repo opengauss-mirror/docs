@@ -111,7 +111,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
     Specifies the name of a configurable run-time parameter. You can use  **SHOW ALL**  to view available run-time parameters.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >Some parameters that viewed by  **SHOW ALL**  cannot be set by  **SET**. For example,  **max\_datanodes**.
 
 -   **value**
@@ -126,7 +126,7 @@ Most run-time parameters can be modified by executing  **SET**. Some parameters 
 
   The declared parameter takes effect in superuser or user mode, which can be determined by the context column in the pg\_settings system view. If GLOBAL/SESSION does not exist, SESSION is used as the default value. The value of config\_parameter can be assigned as an expression.
 
-  ![](public_sys-resources/icon-note.gif) **NOTE:**
+  [!NOTE]NOTE
 
   1. The SET SESSION/GLOBAL syntax is supported only in B-compatible mode (sql_compatibility = B) and the GUC parameter enable\_set\_variable\_b\_format is enabled (enable\_set\_variable\_b\_format = on).
   2. When @@config\_parameter is used for operator calculation, use spaces to separate them. For example, in the **set @config\_parameter1=@config\_parameter1*2;** command, **=@** is used as an operator. You can change it to **set @config\_parameter1= @config\_parameter1 * 2**.

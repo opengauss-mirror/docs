@@ -1,6 +1,6 @@
 # Restrictions<a name="EN-US_TOPIC_0289900513"></a>
 
->![](public_sys-resources/icon-caution.gif) **CAUTION:** 
+>[!WARNING]CAUTION 
 >-   When an autonomous transaction is executed, an autonomous transaction session is started in the background. You can use  **max\_concurrent\_autonomous\_transactions**  to set the maximum number of concurrent autonomous transactions. The value range is 0 to 1024, and the default value is  **10**.
 >-   When  **max\_concurrent\_autonomous\_transactions**  is set to  **0**, autonomous transactions cannot be executed.
 >-   After a new session is started for an autonomous transaction, the default session parameters are used and objects \(including session-level variables, local temporary variables, and global temporary table data\) of the primary session are not shared.

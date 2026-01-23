@@ -146,7 +146,7 @@ Log files are saved as segment files. Each segment is 16 MB and is divided into 
 
 For example, the name of the first transaction log is  **000000010000000000000000**.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The numbers in each part are used in ascending order in succession. Exhausting all available numbers takes a long time, and the numbers will start from zero again after they reach the maximum.
 
 **Log Content Description**
@@ -217,7 +217,7 @@ Logs of openGauss are written in English by default, but openGauss supports tran
     make install
     ```
 
-    >![](public_sys-resources/icon-caution.gif) **CAUTION：** 
+    >[!WARNING]CAUTION 
     > If the target language's grammar requires to swap mutiple format effectors' order, the older version of secure c that openGauss depends on does not support reordering format effectors in ways like `%2$s %1$s`. The latest version of secure c supports this kind of method, but you may need manually update the secure c in binarylibs to the latest version.
     > If charsets specified by system environment variables `LC_CTYPE`, `LC_MESSAGES`, and the guc parameter `lc_messages` don't match with each other, it may lead to garbled codes in logs of main threads and backend threads. To avoid this, when detected mismatch between system environment variables `LC_CTYPE`, `LC_MESSAGES`, and the guc parameter `lc_messages`, openGauss will automatically disable its native language support.
     > If the database is encoded by charsets other than utf-8, make sure the values of environment variable `LC_CTYPE`, `LC_MESSAGES` and guc parameter `lc_messages` match with it, otherwise user data that is not encoded by utf-8/ascii may also lead to garbled codes in logs.

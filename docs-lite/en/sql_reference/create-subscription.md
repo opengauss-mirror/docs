@@ -37,7 +37,7 @@ CREATE SUBSCRIPTION subscription_name
 
         The port number of the publication side cannot be the primary port number. The port number must be the primary port number plus 1. Otherwise, the port number conflicts with the thread pool. You can specify the ports of the primary and standby nodes of the publisher at the same time. If multiple ports are specified, separate them with commas (,).
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:**  
+        >[!TIP]NOTICE  
         >The number of hosts must be the same as that of ports.
 
     -   **dbname**

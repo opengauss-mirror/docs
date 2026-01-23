@@ -34,7 +34,7 @@ Set the isolation level and access mode of the transaction.
 
     Specifies the transaction isolation level that determines the data that a transaction can view if other concurrent transactions exist.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The isolation level cannot be changed after data is modified using  **SELECT**,  **INSERT**,  **DELETE**,  **UPDATE**,  **FETCH**, or  **COPY**  in the current transaction.
 
     Value range:

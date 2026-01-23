@@ -52,7 +52,7 @@ To enable a user not within the validity period to use its account, set a new va
     ```
 
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **CREATE ROLE**  syntax, the start time and end time of a user's operation are not limited.
 >-   If  **VALID BEGIN**  and  **VALID UNTIL**  are not specified in the  **ALTER ROLE**  syntax, the start time and end time of a user's operation are not modified and the original settings are used.
 

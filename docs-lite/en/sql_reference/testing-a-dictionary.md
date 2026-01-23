@@ -18,6 +18,6 @@ openGauss=# SELECT ts_lexize('english_stem', 'a');
  {}
 ```
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >The  **ts\_lexize**  function expects a single  **token**, not text.
 

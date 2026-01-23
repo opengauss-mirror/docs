@@ -4,7 +4,7 @@ Records PLPGSQL object \(stored procedure, function, package, and package body\)
 
 When the  **plsql\_show\_all\_error**  parameter is enabled, information about PL/PGSQL object compilation success or failure is recorded in this table. When the  **plsql\_show\_all\_error**  parameter is disabled, only information about correct compilation is inserted into this table.
 
-> ![](./public_sys-resources/icon-caution.gif) **Caution:**
+> [!WARNING]CAUTION
 >
 > - The gs\_source table records only user-defined original object statements. Even if a user uses ALTER to change the created schema or name, the information in the gs\_source table does not change. If the user changes the schema or name of an object, the deleted object still exists in the gs\_source table.
 >

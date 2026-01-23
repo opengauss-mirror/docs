@@ -111,7 +111,7 @@ Modifies tables, including modifying table definitions, renaming tables, renamin
 
   Renames an index of a table.
 
->![](public_sys-resources/icon-note.gif) **NOTE:**
+>[!NOTE]NOTE
 
 >For details about the involved parameters, see [ALTER TABLE](../sql_reference/alter_table.md).
 

@@ -87,7 +87,7 @@ Besides resources, there are other factors that impact the SMP performance, such
     openGauss=# SET query_dop = 1;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:**   
+    >[!NOTE]NOTE   
     >-   If resources are sufficient, the higher the degree of parallelism, the better the performance.  
     >-   The degree of parallelism supports session-level settings. You are advised to enable the SMP feature before executing a query that meets the requirements. After the execution is complete, disable the SMP feature. Otherwise, SMP may affect services in peak hours.  
 

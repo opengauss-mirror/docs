@@ -47,7 +47,7 @@
 
     Value range: a string. It must comply with the naming convention.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The value of  **-U**  cannot contain double backslashes \(\\\\\) or the following characters: |;&$<\>\`'\\"\{\}\(\)\[\]\~\*?"
 
 -   -G
@@ -81,14 +81,14 @@
 
     Value range: a string.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >This parameter cannot be set to the environment variable created by openGauss by default. Otherwise, the environment variables of the openGauss will be overwritten. [Table 1](#en-us_topic_0237152419_en-us_topic_0059778992_tb25e10cef2104026bdbbedc439fbcd50) lists the environment variables created by openGauss by default. 
 
 -   --sep-env-file=ENVFILE
 
     Saves environment variable files. If this parameter is specified, the split version of environment variable is used.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >The environment variable file name cannot be specified the same as that of the corresponding openGauss directories or those directories, or the directory of the openGauss user.
 
 -   --skip-hostname-set
@@ -214,7 +214,7 @@ SYSLOGD_OPTIONS="-r -m 0"
 KLOGD_OPTIONS="-x"
 ```
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >You need to perform the operations on every host in openGauss.
 
 ## Example<a name="en-us_topic_0237152419_en-us_topic_0059778992_s63833ed33f0c49f8959d4a86ca7bb4f2"></a>

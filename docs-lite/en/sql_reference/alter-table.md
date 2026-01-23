@@ -67,7 +67,7 @@
         | COMMENT {=| } 'text'
     ```
 
-    ![](public_sys-resources/icon-note.gif) **NOTE:** 
+    [!NOTE]NOTE 
     -   **ADD table\_constraint \[ NOT VALID \]**
         Adds a table constraint.
     -   **ADD table\_constraint\_using\_index**
@@ -169,7 +169,7 @@
         | ALTER [ COLUMN ] column_name SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }
         ```
 
-        ![](public_sys-resources/icon-note.gif) **NOTE:** 
+        [!NOTE]NOTE 
         -   **ADD \[ COLUMN \] column\_name data\_type \[ compress\_mode \] \[ COLLATE collation \] \[ column\_constraint \[ ... \] \] \[ COMMENT {=| } 'text'\]**
             Adds a column to a table. If a column is added with  **ADD COLUMN**, all existing rows in the table are initialized with the column's default value \(**NULL**  if no  **DEFAULT**  clause is specified\).
         -   **ADD \( \{ column\_name data\_type \[ compress\_mode \] \} \[, ...\] \)**
@@ -284,7 +284,7 @@
         SET SCHEMA new_schema;
     ```
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >-   The schema setting moves the table into another schema. Associated indexes and constraints owned by table columns are migrated as well. Currently, the schema for sequences cannot be changed. If the table has sequences, delete the sequences, and create them again or delete the ownership between the table and sequences. In this way, the table schema can be changed.
     >-   To change the schema of a table, you must also have the  **CREATE**  permission on the new schema. To add the table as a new child of a parent table, you must own the parent table as well. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have the  **CREATE**  permission on the table's schema. These restrictions enforce that the user can only recreate and delete the table. However, a system administrator can alter the ownership of any table anyway.
     >-   All the actions except for  **RENAME**  and  **SET SCHEMA**  can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns or alter the type of several columns in a single statement. This is useful with large tables, since only one pass over the tables need be made.
@@ -323,14 +323,14 @@
     -   Specifies the name of an existing constraint to drop in the DROP CONSTRAINT operation.
     -   Specifies the name of a new constraint in the ADD CONSTRAINT operation.
 
-        >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+        >[!TIP]NOTICE
         >For a new constraint, constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
 -   **index\_name**
 
     Specifies the name of an index.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >In the ADD CONSTRAINT operation:
     >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
@@ -342,7 +342,7 @@
 
     For details about the value range, see [USING method](create-index.md).
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >In the ADD CONSTRAINT operation:
     >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
     >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
@@ -351,14 +351,14 @@
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >In ADD CONSTRAINT, ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
 -   **expression**
 
     Specifies an expression index constraint created based on one or more columns of the table. The expression index must be written with surrounding parentheses.
 
-    >![](public_sys-resources/icon-notice.gif) **NOTICE:**
+    >[!TIP]NOTICE
     >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
 
 -   **storage\_parameter**
@@ -410,7 +410,7 @@
 
     Specifies how to compute the new column value from the old; if omitted, the default conversion is an assignment cast from old data type to new. A  **USING**  clause must be provided if there is no implicit or assignment cast from the old to new type.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >**USING**  in  **ALTER TYPE**  can specify any expression involving the old values of the row; that is, it can refer to any columns other than the one being cast. This allows general casting to be done with the  **ALTER TYPE**  syntax. Because of this flexibility, the  **USING**  expression is not applied to the column's default value \(if any\); the result might not be a constant expression as required for a default. This means that when there is no implicit or assignment cast from old to new type,  **ALTER TYPE**  might fail to convert the default even though a  **USING**  clause is supplied. In such cases, drop the default with  **DROP DEFAULT**, perform the  **ALTER TYPE**, and then use  **SET DEFAULT**  to add a suitable new default. Similar considerations apply to indexes and constraints involving the column.
 
 -   **NOT NULL | NULL**
@@ -504,7 +504,7 @@
     -   **INITIALLY IMMEDIATE**: checks immediately after the execution of each statement.
     -   **INITIALLY DEFERRED**: checks when the transaction ends.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >Ustore tables do not support the  **DEFERRABLE**  and  **INITIALLY DEFERRED**  constraints.
 
 

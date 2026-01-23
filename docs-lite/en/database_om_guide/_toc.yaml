@@ -11,6 +11,8 @@ sections:
         href: ./overview.md
       - label: Logical Backup and Restoration
         href: ./logical_backup_and_restoration.md
+      - label: Physical Backup and Restoration
+        href: ./physical_backup_and_restoration.md       
       - label: Flashback Restoration
         href: ./flashback_restoration.md
       - label: Exporting Data

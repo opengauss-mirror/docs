@@ -9,7 +9,7 @@
 -   Only the tablespace owner or a user granted with the ALTER permission can run the  **ALTER TABLESPACE**  command. The system administrator has this permission by default. To modify a tablespace owner, you must be the tablespace owner or system administrator and a member of the new owner role.
 -   To change the owner, you must also be a direct or indirect member of the new owning role.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >If  **new\_owner**  is the same as  **old\_owner**, the current user will not be verified. A message indicating successful  **ALTER**  execution is displayed.
 
 
@@ -82,7 +82,7 @@
     -   seq\_page\_cost: sets the optimizer to calculate the cost of obtaining disk pages in sequence. The default value is  **1.0**.
     -   **random\_page\_cost**: sets the optimizer to calculate the cost of obtaining disk pages in a non-sequential manner. The default value is  **4.0**.
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   The value of  **random\_page\_cost**  is relative to that of  **seq\_page\_cost**. It is meaningless when the value is equal to or less than the value of  **seq\_page\_cost**.
         >-   The prerequisite for the default value  **4.0**  is that the optimizer uses indexes to scan table data and the hit ratio of table data in the cache is about 90%.
         >-   If the size of the table data space is smaller than that of the physical memory, decrease the value to a proper level. On the contrary, if the hit ratio of table data in the cache is lower than 90%, increase the value.
@@ -100,7 +100,7 @@
     -   **UNLIMITED**: No limit is set for the tablespace.
     -   Determined by  **space\_size**. For details about the format, see  [CREATE TABLESPACE](create_tablespace.md).
 
-        >![](public_sys-resources/icon-note.gif) **NOTE:** 
+        >[!NOTE]NOTE 
         >-   If the adjusted quota is smaller than the current tablespace usage, the adjustment is successful. You need to decrease the tablespace usage to a value less than the new quota before writing data to the tablespace.
         >-   You can also use the following statement to change the value of  **MAXSIZE**:
         >```

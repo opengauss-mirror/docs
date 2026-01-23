@@ -4,7 +4,7 @@
 
 After openGauss is deployed, problems and exceptions may occur during database running.  **gs\_basebackup**, provided by openGauss, is used to perform basic physical backup.  **gs\_basebackup**  copies the binary files of the database on the server using a replication protocol. To remotely execute  **gs\_basebackup**, you need to use the system administrator account.  **gs\_basebackup**  supports hot backup and compressed backup.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   **gs\_basebackup**  supports only full backup of the primary and standby nodes.
 >-   **gs\_basebackup**  supports hot backup and compressed backup.
 >-   If you use gs\_basebackup to back up a tablespace that contains an absolute path on the same server, you can use tablespace-mapping to redirect the tablespace path or use the archive mode to back up the tablespace.
@@ -146,7 +146,7 @@ INFO:  The starting position of the xlog copy of the full build is: 0/1B800000. 
 
 If a database is faulty, restore it from backup files.  **gs\_basebackup**  backs up the database in binary mode. Therefore, you can directly copy and replace the original files or start the database on the backup database.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   If the current database instance is running, a port conflict may occur when you start the database from the backup file. In this case, you need to modify the port parameter in the configuration file or specify a port when starting the database.
 >-   If the current backup file is a primary/standby database, you may need to modify the replication connections between the primary and standby databases, such as,  **replconninfo1**  and  **replconninfo2**  in the  **postgre.conf**  file.
 >-   If the data_directory parameter in the postgresql.conf configuration file is enabled and configurd and the backup directory is used to start the database, the database fails to be started because the value of data_directory isdifferent from the backup directory. You can change the value of data_directory to a new data directory or comment out this parameter.
@@ -160,7 +160,7 @@ To restore the original database, perform the following steps:
 5.  If a link file exists in the database, modify the link file so that it can be linked to the correct file.
 6.  Restart the database server and check the database content to ensure that the database is restored to the required status.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >-   Incremental restoration from backup files is not supported.
 >-   After the restoration, check that the link file in the database is linked to the correct file.
 

@@ -11,7 +11,7 @@
 >4.  The trace function is used only for diagnosis. Enabling the trace function affects the performance. The impact varies depending on the load and the trace module.
 >5.  The permission of the Trace tool is  **0700**, which indicates read, write, and execution by database users only.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >If the process is stopped abnormally, the  **gstrace\_trace\_cfg\_\***  file will exist in the  **/dev/shm**  directory. You can manually delete the file.
 
 ## Syntax<a name="en-us_topic_0287275941_en-us_topic_0237152426_section681720817204"></a>

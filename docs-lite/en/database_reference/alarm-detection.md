@@ -15,7 +15,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Default value**:  **on**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >This parameter takes effect only on DNs.
 
 ## connection\_alarm\_rate<a name="en-us_topic_0283137422_en-us_topic_0237124725_en-us_topic_0059779120_s3377772ef3b34f0d860419f218742b7f"></a>

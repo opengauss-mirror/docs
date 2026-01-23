@@ -8,7 +8,7 @@ If a Failover event occurs, whether it is due to an unplanned primary node failu
 
 **The RTO of openGauss, including the MOT, is less than 10 seconds.**
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The Recovery Time Objective \(RTO\) is the duration of time and a service level within which a business process must be restored after a disaster in order to avoid unacceptable consequences associated with a break in continuity. In other words, the RTO is the answer to the question: "How much time did it take to recover after notification of a business process disruption?"
 
 In addition, as shown in the  [MOT High Throughput](mot_high_throughput.md)  section in MOT the replication overhead of a Primary/Secondary High Availability scenario is only 7% on ARM/Kunpeng servers and 2% on x86 servers, as opposed to the replication overhead of disk-tables, which is 20% on ARM/Kunpeng and 15% on x86 servers.
@@ -27,6 +27,6 @@ The following figure demonstrates cold-start process and how long it takes to lo
 -   **Database Size –**  The total amount of time to load the entire database \(per database GB\) is represented by the blue line and the  **TIME \(sec\)**  Y axis on the left.
 -   **Throughput –**  The quantity of database GB throughput per second is represented by the orange line and the  **Throughput GB/sec**  Y axis on the right.
 
->![](public_sys-resources/icon-note.gif) **NOTE:** 
+>[!NOTE]NOTE 
 >The performance demonstrated during the test is very close to the bandwidth of the SSD hardware. Therefore, it is feasible that higher \(or lower\) performance may be achieved on a different platform.
 

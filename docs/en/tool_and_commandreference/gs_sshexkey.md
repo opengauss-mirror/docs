@@ -4,7 +4,7 @@
 
 During the openGauss installation, you need to perform operations such as running commands and transferring files between nodes in openGauss. Establish mutual trust among the hosts before the installation. **gs\_sshexkey**, provided by openGauss, is used to establish such relationships.
 
->![](public_sys-resources/icon-notice.gif) **NOTICE:** 
+>[!TIP]NOTICE 
 >
 > The mutual trust among root users may incur security risks. You are advised to delete the mutual trust among root users once operations are complete.
 >
@@ -77,7 +77,7 @@ During the openGauss installation, you need to perform operations such as runnin
 
     Lists the IP addresses of all the hosts among which mutual trust relationships need to be established.
 
-    >![](public_sys-resources/icon-note.gif) **NOTE:** 
+    >[!NOTE]NOTE 
     >You need to ensure that only IP addresses (one in each row) are configured in the hostfile file.
 
 -   -l
