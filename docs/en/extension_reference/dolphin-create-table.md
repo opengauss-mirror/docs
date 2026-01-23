@@ -6,12 +6,12 @@ Creates an empty table in the current database. The table will be owned by the c
 
 ## Precautions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
+- This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
-
 Create a table using LIKE.
+
 ```
 CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXISTS ] table_name LIKE source_table [ like_option [...] ]
 ```
@@ -48,7 +48,7 @@ Where create\_option is:
     In addition to the WITH option, you can enter the same create\_option for multiple times. The latest input prevails.
 ```
 
--   table_indexclause:
+- table_indexclause:
 
     ```
     {INDEX | KEY} [index_name] [index_type] (key_part,...)[index_option]...
@@ -56,14 +56,13 @@ Where create\_option is:
     
     This syntax does not support CREATE FOREIGN TABLE (such as MOT).
 
-
--   Values of index\_type are as follows:
+- Values of index\_type are as follows:
 
     ```
     USING {BTREE | HASH | GIN | GIST | PSORT | UBTREE}
     ```
 
--   Values of key\_part are as follows:
+- Values of key\_part are as follows:
 
     ```
     {col_name[(length)] | (expr)} [ASC | DESC]
@@ -75,14 +74,14 @@ Where create\_option is:
 
   ```
   index_option:{
-  	  COMMENT 'string'
-  	| index_type
+     COMMENT 'string'
+   | index_type
   }
   ```
 
   The sequence and quantity of COMMENT and index\_type can be random, but only the last value of the same column takes effect.
 
--   The like\_option is as follows:
+- The like\_option is as follows:
 
     ```
     { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
@@ -90,13 +89,13 @@ Where create\_option is:
 
 ## Parameter Description<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
     For the enumeration type ENUM and character types such as CHAR, CHARACTER, VARCHAR, TEXT, you can use the keyword CHARSET or CHARACTER SET to specify the column character set when creating a table. Currently, it is used only for syntax and has no actual purpose.
 
--   **column\_constraint**
+- **column\_constraint**
 
     The ON UPDATE feature of MySQL is added to the column type constraint. The constraint is of the same type as the DEFAULT attribute. The ON UPDATE attribute is used to automatically update the timestamp column when the timestamp column of the UPDATE operation is set to the default value.
 
@@ -104,21 +103,21 @@ Where create\_option is:
     CREATE TABLE table_name(column_name timestamp ON UPDATE CURRENT_TIMESTAMP);
     ```
 
--   **COLLATE collation**
+- **COLLATE collation**
 
     Assigns a collation to the column (which must be of a collatable data type). If no collation is specified, the default collation is used. You can run the **select \* from pg\_collation** command to query collation rules from the **pg\_collation** system catalog. The default collation rule is the row starting with **default** in the query result.
 
     If a collation is not supported, the database issues a warning and sets the column as the default collation.
 
--   **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
+- **{ [DEFAULT] CHARSET | CHARACTER SET } \[=\] charset_name**
 
     Selects the character set used by the table. Currently, it is used only for syntax and has no actual purpose.
 
--   **COLLATE \[=\] collation_name**
+- **COLLATE \[=\] collation_name**
 
     Selects the collation used by a table. Currently, it is used only for syntax and has no actual purpose.
 
--   **ROW_FORMAT \[=\] row_format_name**
+- **ROW_FORMAT \[=\] row_format_name**
 
     Selects the row-store format used by a table. Currently, it is used only for syntax and has no actual purpose.
 

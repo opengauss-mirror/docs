@@ -4,20 +4,18 @@
 
 **LOAD DATA** copies data from a file to a table.
 
-
 ## Precautions<a name="en-us_topic_0283136676_en-us_topic_0237122096_en-us_topic_0059778766_sc996fd2c14664963bae3e1e0ce655461"></a>
 
--   When the **enable\_copy\_server\_files** parameter is disabled, only initial users are allowed to run the LOAD DATA command. When the **enable\_copy\_server\_files** parameter is enabled, users with the SYSADMIN permission or users inherited from the built-in role **gs\_role\_copy\_files** are allowed to run the LOAD DATA command. However, the LOAD DATA command cannot be executed on database configuration files, key files, certificate files, or audit logs by default. This prevents users from viewing or modifying sensitive files without authorization.
--   It applies only to tables but not views.
--   Column-store tables and foreign tables are not supported.
--   The INSERT permission of the table to be inserted is required. The **replace** option also requires the DELETE permission of the table.
--   If a list of columns is specified, **LOAD** copies only the data of the specified columns between the file and the table. If a table has any columns that are not in the column list, default values are inserted for those columns.
--   If a data source file is specified, the server must be able to access the file.
--   If any row of the data file contains more or fewer columns than expected, an error is thrown when **dolphin.sql\_mode** is set to strict. In loose mode, NULL is inserted for missing columns. If a column has a NOT NULL constraint, the base value of the type is inserted.
--   **\\N** indicates NULL. To enter the actual data value **\\N**, use **\\\\N**.
+- When the **enable\_copy\_server\_files** parameter is disabled, only initial users are allowed to run the LOAD DATA command. When the **enable\_copy\_server\_files** parameter is enabled, users with the SYSADMIN permission or users inherited from the built-in role **gs\_role\_copy\_files** are allowed to run the LOAD DATA command. However, the LOAD DATA command cannot be executed on database configuration files, key files, certificate files, or audit logs by default. This prevents users from viewing or modifying sensitive files without authorization.
+- It applies only to tables but not views.
+- Column-store tables and foreign tables are not supported.
+- The INSERT permission of the table to be inserted is required. The **replace** option also requires the DELETE permission of the table.
+- If a list of columns is specified, **LOAD** copies only the data of the specified columns between the file and the table. If a table has any columns that are not in the column list, default values are inserted for those columns.
+- If a data source file is specified, the server must be able to access the file.
+- If any row of the data file contains more or fewer columns than expected, an error is thrown when **dolphin.sql\_mode** is set to strict. In loose mode, NULL is inserted for missing columns. If a column has a NOT NULL constraint, the base value of the type is inserted.
+- **\\N** indicates NULL. To enter the actual data value **\\N**, use **\\\\N**.
 
 ## Syntax<a name="en-us_topic_0283136676_en-us_topic_0237122096_en-us_topic_0059778766_s85a73a9ad894403da754c5d6b3d821g2"></a>
-
 
 ```
         LOAD DATA
@@ -41,44 +39,44 @@
 
 ## Parameter Description<a name="en-us_topic_0283136676_en-us_topic_0237122096_en-us_topic_0059778766_sd35c0a2e8c2f4c18837224240e8c4e6a"></a>
 
--   **REPLACE**
+- **REPLACE**
 
     The inserted data takes effect only when a primary key or unique key conflict occurs. The system deletes the conflicting rows in the table and then continues to insert data.
 
--   **IGNORE**
+- **IGNORE**
 
     The inserted data takes effect only when a primary key or unique key conflict occurs. The system ignores the conflicting row file data and then continues to insert subsequent data.
 
--   **tbl\_name**
+- **tbl\_name**
 
     Specifies the name \(possibly schema-qualified\) of an existing table.
 
     Value range: an existing table name
 
--   **col\_name**
+- **col\_name**
 
     Specifies an optional list of columns to be copied.
 
     Value range: If no column list is specified, all columns of the table will be copied.
 
--   **ESCAPED BY 'char'**
+- **ESCAPED BY 'char'**
 
     Specifies escape characters. The value must be a single-byte character.
 
     The default value is single quotation marks \(''\). If the value is the same as that of **ENCLOSED BY**, it will be replaced by **'\\0'**.
 
--   **LINES TERMINATED BY 'string'**
+- **LINES TERMINATED BY 'string'**
 
     Specifies the linefeed style of the exported data file.
 
-    Value range: multi-character newline characters within 10 bytes. Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n **\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
+    Value range: multi-character newline characters within 10 bytes. Common newline characters include  **\\r**  \(0x0D\),  **\\n**  \(0x0A\), and  **\\r\\n**\(0x0D0A\). Special newline characters include  **$**  and  **\#**.
     
     >[!NOTE]NOTE
-    >   
-    >-   The value of **LINES TERMINATED BY** cannot be the same as that of the **delimiter** or null parameter.   
-    >-   The value of **LINES TERMINATED BY** cannot contain .abcdefghijklmnopqrstuvwxyz0123456789.
+    > 
+    >- The value of **LINES TERMINATED BY** cannot be the same as that of the **delimiter** or null parameter.   
+    >- The value of **LINES TERMINATED BY** cannot contain .abcdefghijklmnopqrstuvwxyz0123456789.
 
--   **CHARACTER SET 'charset\_name'**
+- **CHARACTER SET 'charset\_name'**
     
     Specifies the name of a file encoding format.
     
@@ -86,7 +84,7 @@
     
     Default value: current encoding format
 
--   **\[OPTIONALLY\] ENCLOSED BY 'char'**
+- **\[OPTIONALLY\] ENCLOSED BY 'char'**
     
     Specifies the enclosing character. The data in the complete enclosing character is parsed as a column of parameters. OPTIONALLY is meaningless.
     
@@ -94,16 +92,16 @@
     
     >[!NOTE]NOTE
     >
-    >-   The **ENCLOSED BY** parameter cannot be the same as the delimiter parameter.
-    >-   The value of **ENCLOSED BY** must be a single-byte character.
+    >- The **ENCLOSED BY** parameter cannot be the same as the delimiter parameter.
+    >- The value of **ENCLOSED BY** must be a single-byte character.
 
--   **FIELDS \| COLUMNS TERMINATED BY 'string'**
+- **FIELDS \| COLUMNS TERMINATED BY 'string'**
 
     The string that separates columns within each row \(line\) of the file, and it cannot be larger than 10 bytes.
 
     Default: Horizontal tab.
 
--   **IGNORE number \{LINES \| ROWS\}**
+- **IGNORE number \{LINES \| ROWS\}**
 
     Specifies that the first *number* rows of the data file are skipped during data export.
 

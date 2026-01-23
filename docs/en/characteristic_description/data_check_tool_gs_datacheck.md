@@ -24,24 +24,23 @@ gs\_datacheck provides full and incremental check functions to check data consis
 
   The debezium service listens to the incremental data of the source MySQL database to the specified topic. Then, the source extract service processes the incremental data of the topic and triggers the incremental check.
 
-
 ## Enhancements<a name="section28788730"></a>
 
 None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   JDK 11 or later is required.
--   The current version supports data check only between the source MySQL database and the target openGauss database.
--   The current version supports only data check and does not support table object check.
--   MySQL 5.7 or later is required.
--   The current version does not support geographical location geometric data check.
--   When row-level filtering rules are configured for data check, only data within the [offset,count] range can be extracted and filtered.
--   When data within the range [10,100] is extracted based on the row-level filtering rule, if data before the range [0,10] is deleted from the source end, then data in the table is offset. As a result, the data check result is different. In this case, set **offset** to a smaller value to expand the range and set **count** to a larger value to increase the number of extracted records, for example, [3,107].
--   If a primary key UPDATE statement is not synchronized to the target end through incremental migration or an error occurs during primary key synchronization, data check is performed. The updated data on the source end and the old data on the target end are two independent data records. When the check difference is processed, two statements are generated to delete the old data and insert the new data. In this scenario, a primary key UPDATE statement is split into two statements (INSERT+DELETE) and executed in two transactions. Atomicity cannot be ensured.
--   Incremental check does not support table-level rules.
--   Incremental check does not support row-level rules.
--   Incremental check supports only data addition, deletion, and modification checks. The consistency of table structures (objects) is not checked.
+- JDK 11 or later is required.
+- The current version supports data check only between the source MySQL database and the target openGauss database.
+- The current version supports only data check and does not support table object check.
+- MySQL 5.7 or later is required.
+- The current version does not support geographical location geometric data check.
+- When row-level filtering rules are configured for data check, only data within the [offset,count] range can be extracted and filtered.
+- When data within the range [10,100] is extracted based on the row-level filtering rule, if data before the range [0,10] is deleted from the source end, then data in the table is offset. As a result, the data check result is different. In this case, set **offset** to a smaller value to expand the range and set **count** to a larger value to increase the number of extracted records, for example, [3,107].
+- If a primary key UPDATE statement is not synchronized to the target end through incremental migration or an error occurs during primary key synchronization, data check is performed. The updated data on the source end and the old data on the target end are two independent data records. When the check difference is processed, two statements are generated to delete the old data and insert the new data. In this scenario, a primary key UPDATE statement is split into two statements (INSERT+DELETE) and executed in two transactions. Atomicity cannot be ensured.
+- Incremental check does not support table-level rules.
+- Incremental check does not support row-level rules.
+- Incremental check supports only data addition, deletion, and modification checks. The consistency of table structures (objects) is not checked.
 
 ## Dependencies<a name="section57771982"></a>
 

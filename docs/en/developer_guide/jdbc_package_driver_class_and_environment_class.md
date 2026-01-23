@@ -11,22 +11,23 @@ The driver package is compatible with PostgreSQL. The class name and structure i
 Before establishing a database connection, load the  **org.opengauss.Driver**  database driver class.
 
 >[!NOTE]NOTE 
->1.  openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, the org.postgresql.Driver class will conflict when the JDBC driver packages for PostgreSQL and openGauss are loaded in the same JVM virtual machine at the same time.
->2.  Compared with the PostgreSQL driver, the openGauss JDBC driver has the following enhanced features:
->    1.  The SHA256 encryption mode is supported for login.
->    2.  The third-party log framework that implements the sf4j API can be connected.
->    3.  DR failover is supported.
+>
+>1. openGauss is compatible with PostgreSQL in the use of JDBC. Therefore, the org.postgresql.Driver class will conflict when the JDBC driver packages for PostgreSQL and openGauss are loaded in the same JVM virtual machine at the same time.
+>2. Compared with the PostgreSQL driver, the openGauss JDBC driver has the following enhanced features:
+> 1. The SHA256 encryption mode is supported for login.
+> 2. The third-party log framework that implements the sf4j API can be connected.
+> 3. DR failover is supported.
 
 ## Environment Class<a name="en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_section20655192913405"></a>
 
 JDK 1.8 must be configured on the client. The configuration method is as follows:
 
-1.  In the MS-DOS window, run  **java -version**  to check the JDK version. Ensure that the version is JDK 1.8. If JDK is not installed, download the installation package from the official website and install it.
-2.  Configure system environment variables.
-    1.  Right-click  **My computer**  and choose  **Properties**.
-    2.  In the navigation pane, choose  **Advanced system settings**.
-    3.  In the  **System Properties**  dialog box, click  **Environment Variables**  on the  **Advanced**  tab page.
-    4.  In the  **System variables**  area of the  **Environment Variables**  dialog box, click  **New**  or  **Edit**  to configure system variables. For details, see  [Table 1](#en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_table1625616152473).
+1. In the MS-DOS window, run  **java -version**  to check the JDK version. Ensure that the version is JDK 1.8. If JDK is not installed, download the installation package from the official website and install it.
+2. Configure system environment variables.
+    1. Right-click  **My computer**  and choose  **Properties**.
+    2. In the navigation pane, choose  **Advanced system settings**.
+    3. In the  **System Properties**  dialog box, click  **Environment Variables**  on the  **Advanced**  tab page.
+    4. In the  **System variables**  area of the  **Environment Variables**  dialog box, click  **New**  or  **Edit**  to configure system variables. For details, see  [Table 1](#en-us_topic_0283136979_en-us_topic_0237120378_en-us_topic_0213179123_table1625616152473).
 
         **Table  1**  Description
 
@@ -64,6 +65,3 @@ JDK 1.8 must be configured on the client. The configuration method is as follows
         </tr>
         </tbody>
         </table>
-
-
-

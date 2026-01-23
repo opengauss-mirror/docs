@@ -8,7 +8,6 @@ The future-oriented openGauss resource pooling architecture consists of three po
 
  ![Architecture](figures/opengauss-resource-pooling-architecture.png)           
 
-
 Three pooling layers include storage pooling, memory pooling, and compute pooling. Storage pooling supports multiple types of storage, such as distributed storage and enterprise storage. One data service can be used for multiple types of computing. The NDP technology of SQL operator offloading greatly improves SQL processing efficiency and reduces network I/O traffic. Memory pooling implements memory interconnection between compute nodes. Transaction information and database cache are synchronized to implement consistent read of multi-version snapshots on multiple nodes. RoCE and SCM hardware are used to implement ultimate commit acceleration and large-capacity memory access. Computing pooling supports diversified computing power. Based on computing power such as x86 and Kunpeng, it provides applications with comprehensive data services such as TP row store acceleration, AP column store acceleration, and AI training and inference. Above the three-layer pooling, it is a full-scenario SQL standard that provides applications with a series of query interfaces for data analysis, AI inference, and graph query, fully unleashing data value. In addition, the integrated platform implements intelligent O&M, cluster management, and resource orchestration capabilities to ensure stable running and elastic scaling of databases under heavy loads.
 
 ## Software Architecture<a name="en-us_topic_0283136530_en-us_topic_0237080634_en-us_topic_0231764167_section1940043819751"></a>
@@ -20,7 +19,6 @@ The following figure shows the logical architecture of resource pooling in openG
 ![openGauss logical architecture](figures/opengauss-logical-architecture.png)
 
 The openGauss resource pooling architecture supports one primary node and seven standby nodes. The primary node supports read and write, and the standby node supports scale-out read capability to meet the performance requirements of typical loads in the real world. Real-time data consistency among multiple nodes supports transparent expansion of data consistency-sensitive application loads from a single node to multiple nodes. It eliminates the overhead of traditional primary/standby log replication, reducing storage costs by more than 50%. The lightweight RPC framework is implemented based on the high-performance RDMA network, significantly reducing the CPU resource overhead and achieving μs-level network latency. The multi-level cache capability of SCM improves performance by 30% at the same memory cost.
-
 
 **Table 1** Architecture description
 

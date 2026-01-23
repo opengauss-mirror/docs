@@ -16,6 +16,7 @@ Embedded SQL programs compiled for other SQL databases can be easily migrated to
 
 An embedded SQL program consists of code written in an ordinary programming language, in this case C, mixed with SQL commands in specially marked sections. To build the program, the source code (\*.pgc) is first passed through the embedded SQL preprocessor, which converts it to an ordinary C program (\*.c), and afterwards it can be processed by a C compiler. Converted ECPG applications call functions in the libpq library through the embedded SQL library (ecpglib), and communicate with the openGauss server using the normal frontend-backend protocol.
 The embedded SQL program has an advantage over other methods in processing SQL commands for C code.
+
 1. It handles the lengthy information transfer between variables in C programs.
 2. The SQL code in the program is checked during compilation to ensure syntax correctness.
 3. SQL embedded in C is specified in SQL standards and is supported by many other SQL database systems.

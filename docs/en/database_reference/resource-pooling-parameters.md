@@ -11,9 +11,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**: **off**
 
 >[!NOTE]NOTE
->-   The default value of **ss\_enable\_dss** is **off** in standalone mode.
->-   To enable shared storage, set this parameter to **on**.
->-   After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
+>
+>- The default value of **ss\_enable\_dss** is **off** in standalone mode.
+>- To enable shared storage, set this parameter to **on**.
+>- After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
 
 ## ss\_enable\_dms<a name="section715761611422"></a>
 
@@ -26,9 +27,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**: **off**
 
 >[!NOTE]NOTE
->-   The default value of **ss\_enable\_dms** is **off** in standalone mode.
->-   To enable shared storage, set this parameter to **on**.
->-   After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
+>
+>- The default value of **ss\_enable\_dms** is **off** in standalone mode.
+>- To enable shared storage, set this parameter to **on**.
+>- After the OM is automatically installed in shared storage mode, this parameter is set to **on** by default.
 
 ## ss\_enable\_ssl<a name="section95293415425"></a>
 
@@ -41,9 +43,10 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**: **on**
 
 >[!NOTE]NOTE
->-   This parameter takes effect only when the SSL parameter of the openGauss is set to **on**.
->-   You need to manually change the value of this parameter on all nodes, and the change takes effect upon restart. If you change the value of this parameter on a single node, the restart will time out and fail.
->-   If this parameter is disabled, the primary and standby nodes are not connected through SSL, which may cause spoofing attacks and information leakage.
+>
+>- This parameter takes effect only when the SSL parameter of the openGauss is set to **on**.
+>- You need to manually change the value of this parameter on all nodes, and the change takes effect upon restart. If you change the value of this parameter on a single node, the restart will time out and fail.
+>- If this parameter is disabled, the primary and standby nodes are not connected through SSL, which may cause spoofing attacks and information leakage.
 
 ## ss\_enable\_catalog\_centralized<a name="section1487019536418"></a>
 
@@ -216,8 +219,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Default value**: **""**
 
 >[!NOTE]NOTE
->-   This parameter can be left blank. In this case, the SCRLock worker is not bound to any CPU.
->-   The value of start and end CPUs must be greater than or equal to 2.
+>
+>- This parameter can be left blank. In this case, the SCRLock worker is not bound to any CPU.
+>- The value of start and end CPUs must be greater than or equal to 2.
 
 ## ss_scrlock_server_bind_core  
 

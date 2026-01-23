@@ -8,8 +8,8 @@ The SSL mode requires a root certificate, a server certificate, and a private ke
 
 Perform the following operations \(assuming that the license files are saved in the data directory  **/gaussdb/data/datanode**  and the default file names are used\):
 
-1.  Log in as the OS user omm to the primary node of the database.
-2.  Generate and import a certificate.
+1. Log in as the OS user omm to the primary node of the database.
+2. Generate and import a certificate.
 
     Generate an SSL certificate. For details, see  [Generating Certificates](../database_administration_guide/ssl_certificate_management.md). Copy the generated  **server.crt**,  **server.key**, and  **cacert.pem**  files to the data directory on the server.
 
@@ -25,13 +25,13 @@ Perform the following operations \(assuming that the license files are saved in 
     chmod 0600 server.key
     ```
 
-3.  Enable the SSL authentication mode.
+3. Enable the SSL authentication mode.
 
     ```
     gs_guc set -D /gaussdb/data/datanode -c "ssl=on"
     ```
 
-4.  Set client access authentication parameters. The IP address is the IP address of the host to be connected.
+4. Set client access authentication parameters. The IP address is the IP address of the host to be connected.
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -h "hostssl all             all             127.0.0.1/32           cert"
@@ -41,10 +41,10 @@ Perform the following operations \(assuming that the license files are saved in 
     Clients on the  **127.0.0.1/32**  network segment can connect to openGauss servers in SSL mode.
 
     >[!TIP]NOTICE 
-    >-   If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the certificate file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5**,  **sm3**, or  **sha256**, there is no such a restriction.
-    >-   The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
+    >- If  **METHOD**  is set to  **cert**  in the  **pg\_hba.conf**  file of the server, the client must use the username \(common name\) configured in the certificate file \(**client.crt**\) for the database connection. If  **METHOD**  is set to  **md5**,  **sm3**, or  **sha256**, there is no such a restriction.
+    >- The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 
-5.  Configure the digital certificate parameters related to SSL authentication.
+5. Configure the digital certificate parameters related to SSL authentication.
 
     The information following each command indicates operation success.
 
@@ -63,12 +63,11 @@ Perform the following operations \(assuming that the license files are saved in 
     gs_guc set: ssl_ca_file='cacert.pem'
     ```
 
-6.  Restart the database.
+6. Restart the database.
 
     ```
     gs_om -t stop && gs_om -t start
     ```
-
 
 ## Configuring the Client<a name="en-us_topic_0283137170_en-us_topic_0237120382_en-us_topic_0213179127_en-us_topic_0189251215_en-us_topic_0059777633_s29b328f4eb634c5b903c430d663d038b"></a>
 
@@ -136,4 +135,3 @@ public class SSL{
  * Enable BouncyCastle: Introduce the bcpkix-jdk15on.jar package for projects that use JDBC. The recommended version is 1.65 or later.
  */
 ```
-

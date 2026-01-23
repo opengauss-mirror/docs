@@ -40,4 +40,3 @@ PQgetCancel creates a PGcancel object for a given PGconn connection object. If t
 ## Example<a name="en-us_topic_0241735636_section4160944682"></a>
 
 For details, see  [Example](example_libpq.md).
-

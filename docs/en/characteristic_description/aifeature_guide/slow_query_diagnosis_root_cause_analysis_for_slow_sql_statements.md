@@ -6,33 +6,32 @@ Slow SQL statements have always been a pain point in data O&M. How to effectivel
 
 ## Environment Deployment <a name="EN-US_TOPIC_0000001196305052"></a>
 
--   The database is working properly.
--   The metric collection system is running properly.
-
+- The database is working properly.
+- The metric collection system is running properly.
 
 ## Usage Guide<a name="EN-US_TOPIC_0000001240944983"></a>
 
 Assume that the  **confpath**  configuration file directory has been initialized.
 
--   Run the following command to start only the slow SQL diagnosis function and output the top 3 root causes \(for details, see the description of the  **service**  subcommand\): 
+- Run the following command to start only the slow SQL diagnosis function and output the top 3 root causes \(for details, see the description of the  **service**  subcommand\): 
 
     ```
     gs_dbmind service start -c confpath --only-run slow_query_diagnosis
     ```
 
--   Run the following command to diagnose slow SQL statements in interactive mode:
+- Run the following command to diagnose slow SQL statements in interactive mode:
 
     ```
     gs_dbmind component slow_query_diagnosis show -c confpath --query SQL --start-time timestamps0 --end-time timestamps1
     ```
 
--   Run the following command to manually clear historical prediction results:
+- Run the following command to manually clear historical prediction results:
 
     ```
     gs_dbmind component slow_query_diagnosis clean -c confpath --retention-days DAYS
     ```
 
--   Run the following command to stop the services that have been started:
+- Run the following command to stop the services that have been started:
 
     ```
     gs_dbmind service stop -c confpath
@@ -140,9 +139,9 @@ optional arguments:
 
 ## Troubleshooting<a name="EN-US_TOPIC_0000001241064965"></a>
 
--   If you run the interactive diagnosis command for a slow SQL statement that has not been executed, no diagnosis result is provided.
--   If the exporter metric collection function is not enabled, the slow SQL diagnosis function is not available.
--   After the parameters in the configuration file are reset, you need to restart the service process for the settings to take effect.
--   When the interactive diagnosis function of slow SQL statements is used, the tool obtains necessary data based on the RPC and data collection services. Therefore, if the RPC and data collection services are not started, the diagnosis cannot be performed.
--   When the diagnosis function is used for interactive diagnosis, the tool checks the entered SQL and database. If the entered SQL and database are invalid, the diagnosis cannot be performed.
--   During slow SQL diagnosis, SMALL\_SHARED\_BUFFER needs to collect column information of related tables. Therefore, ensure that the opengauss\_exporter connection user has the permission on the schema to which the table belongs.
+- If you run the interactive diagnosis command for a slow SQL statement that has not been executed, no diagnosis result is provided.
+- If the exporter metric collection function is not enabled, the slow SQL diagnosis function is not available.
+- After the parameters in the configuration file are reset, you need to restart the service process for the settings to take effect.
+- When the interactive diagnosis function of slow SQL statements is used, the tool obtains necessary data based on the RPC and data collection services. Therefore, if the RPC and data collection services are not started, the diagnosis cannot be performed.
+- When the diagnosis function is used for interactive diagnosis, the tool checks the entered SQL and database. If the entered SQL and database are invalid, the diagnosis cannot be performed.
+- During slow SQL diagnosis, SMALL\_SHARED\_BUFFER needs to collect column information of related tables. Therefore, ensure that the opengauss\_exporter connection user has the permission on the schema to which the table belongs.

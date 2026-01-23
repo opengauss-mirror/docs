@@ -97,8 +97,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   If this parameter is set to  **on**, the primary node does not recycle logs when any standby node is disconnected.
--   If this parameter is set to  **off**, the primary node recycles logs when any standby node is disconnected.
+- If this parameter is set to  **on**, the primary node does not recycle logs when any standby node is disconnected.
+- If this parameter is set to  **off**, the primary node recycles logs when any standby node is disconnected.
 
 **Default value**:  **on**
 
@@ -116,13 +116,12 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Parameter description**: This parameter takes effect when  **enable\_xlog\_prune**  is enabled. The working mechanism is as follows:
 
-1.  If all standby nodes specified by the  **replconninfo**  series GUC parameters are connected to the primary node, this parameter does not take effect.
-2.  If any standby node specified by the  **replconninfo**  series GUC parameters is not connected to the primary node, this parameter takes effect. When the number of historical logs on the primary node is greater than the value of this parameter, the logs are forcibly recycled. Exception: In synchronous commit mode \(that is, the value of  **synchronous\_commit**  is not  **local**  or  **off**\), if there are connected standby nodes, the primary node retains the logs that meet the minimum log receiving requirements on the majority of standby nodes. In this case, the number of reserved logs may exceed the value of  **max\_size\_for\_xlog\_prune**.
-3.  If any standby node is being built, this parameter does not take effect. All logs of the primary node are retained to prevent build failures due to log recycling.
+1. If all standby nodes specified by the  **replconninfo**  series GUC parameters are connected to the primary node, this parameter does not take effect.
+2. If any standby node specified by the  **replconninfo**  series GUC parameters is not connected to the primary node, this parameter takes effect. When the number of historical logs on the primary node is greater than the value of this parameter, the logs are forcibly recycled. Exception: In synchronous commit mode \(that is, the value of  **synchronous\_commit**  is not  **local**  or  **off**\), if there are connected standby nodes, the primary node retains the logs that meet the minimum log receiving requirements on the majority of standby nodes. In this case, the number of reserved logs may exceed the value of  **max\_size\_for\_xlog\_prune**.
+3. If any standby node is being built, this parameter does not take effect. All logs of the primary node are retained to prevent build failures due to log recycling.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range:**  an integer ranging from 0 to 2147483647. The unit is kB.
 
 **Default value**:  **2147483647**. The unit is kB.****
-

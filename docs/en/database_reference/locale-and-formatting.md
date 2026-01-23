@@ -27,11 +27,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **sql\_standard**  indicates that output matching SQL standards will be generated.
--   **postgres**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **ISO**.
--   **postgres\_verbose**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **non\_ISO**.
--   **iso\_8601**  indicates that output matching the time interval "format with designators" defined in ISO 8601 will be generated.
--   **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](locale-and-formatting.md).
+- **sql\_standard**  indicates that output matching SQL standards will be generated.
+- **postgres**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **ISO**.
+- **postgres\_verbose**  indicates that output matching PostgreSQL 8.4 will be generated when the  [DateStyle](#en-us_topic_0283136798_en-us_topic_0237124733_en-us_topic_0059778109_s6464b29eb2274134845cea28f39d915e)  parameter is set to  **non\_ISO**.
+- **iso\_8601**  indicates that output matching the time interval "format with designators" defined in ISO 8601 will be generated.
+- **a**  indicates the output result that matches the numtodsinterval function. For details, see  [numtodsinterval](locale-and-formatting.md).
 
 >[!TIP]NOTICE 
 >The  **IntervalStyle**  parameter also affects the interpretation of ambiguous interval input.
@@ -73,8 +73,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range:**  an integer ranging from –15 to 3
 
 >[!NOTE]NOTE 
->-   This parameter can be set to  **3**  to include partially-significant digits. It is especially useful for dumping float data that needs to be restored exactly.
->-   This parameter can also be set to a negative value to suppress unwanted digits.
+>
+>- This parameter can be set to  **3**  to include partially-significant digits. It is especially useful for dumping float data that needs to be restored exactly.
+>- This parameter can also be set to a negative value to suppress unwanted digits.
 
 **Default value**:  **0**
 
@@ -89,9 +90,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: encoding compatible with PostgreSQL.  **UTF8**  indicates that the database encoding is used.
 
 >[!NOTE]NOTE 
->-   You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
->-   By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
->-   To use consistent encoding for communication within openGauss, you are advised to retain the default value of  **client\_encoding**. Modification to this parameter in the  **postgresql.conf**  file \(by using the  **gs\_guc**  tool, for example\) does not take effect.
+>
+>- You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
+>- By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>- To use consistent encoding for communication within openGauss, you are advised to retain the default value of  **client\_encoding**. Modification to this parameter in the  **postgresql.conf**  file \(by using the  **gs\_guc**  tool, for example\) does not take effect.
 
 **Default value**:  **UTF8**
 
@@ -101,17 +103,17 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies the language in which messages are displayed.
 
--   Acceptable values are system-related.
--   On some systems, this locale category does not exist. Setting this variable will still work, but there will be no effect. In addition, translated messages for the desired language may not exist. In this case, you can still see the English messages.
+- Acceptable values are system-related.
+- On some systems, this locale category does not exist. Setting this variable will still work, but there will be no effect. In addition, translated messages for the desired language may not exist. In this case, you can still see the English messages.
 
     This parameter is a SUSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
 
 **Value range**: a string
 
 >[!NOTE]NOTE 
->-   You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
->-   By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>
+>- You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
+>- By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -124,8 +126,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: a string
 
 >[!NOTE]NOTE 
->-   You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
->-   By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>
+>- You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
+>- By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -138,8 +141,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: a string
 
 >[!NOTE]NOTE 
->-   You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
->-   By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>
+>- You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
+>- By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -152,8 +156,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: a string
 
 >[!NOTE]NOTE 
->-   You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
->-   By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
+>
+>- You can run the  **locale -a**  command to check the system-supported locales and the corresponding encodings, and select one as required.
+>- By default,  **gs\_initdb**  will initialize the setting of this parameter based on the current system environment. You can also run the  **locale**  command to check the current configuration environment.
 
 **Default value**:  **C**
 
@@ -163,11 +168,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 If the specified text search configuration does not exist, an error will be reported. If the specified text search configuration is deleted, set  **default\_text\_search\_config**  again. Otherwise, an error will be reported, indicating incorrect configuration.
 
--   The text search configuration is used by text search functions that do not have an explicit argument specifying the configuration.
--   When a configuration file matching the environment is determined,  **gs\_initdb**  will initialize the configuration file with a setting that corresponds to the environment.
+- The text search configuration is used by text search functions that do not have an explicit argument specifying the configuration.
+- When a configuration file matching the environment is determined,  **gs\_initdb**  will initialize the configuration file with a setting that corresponds to the environment.
 
     This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
-
 
 **Value range**: a string
 
@@ -175,4 +179,3 @@ If the specified text search configuration does not exist, an error will be repo
 >openGauss supports the following two configurations:  **pg\_catalog.english**  and  **pg\_catalog.simple**.
 
 **Default value**:  **pg\_catalog.english**
-

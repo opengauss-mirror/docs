@@ -87,4 +87,3 @@ IOPS is counted by ones for column store and by 10 thousands for row store.
 </tr>
 </tbody>
 </table>
-

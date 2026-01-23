@@ -8,8 +8,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the system is in the backup and restoration mode.
--   **off**  indicates that the system is not in the backup and restoration mode.
+- **on**  indicates that the system is in the backup and restoration mode.
+- **off**  indicates that the system is not in the backup and restoration mode.
 
 **Default value**:  **off**
 
@@ -21,8 +21,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**: The cbm tracking is enabled.
--   **off**: The cbm tracking is disabled.
+- **on**: The cbm tracking is enabled.
+- **off**: The cbm tracking is disabled.
 
 **Default value**:  **off**
 
@@ -37,4 +37,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: an integer ranging from 0 to 2147483647
 
 **Default value**:  **256 GB**
-

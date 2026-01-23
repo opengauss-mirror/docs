@@ -79,7 +79,7 @@ Logs generated during OM openGauss installation and uninstallation are stored in
 
 - The name formats of CM run logs are:
 
-  - cm_agent logs: cm_agent-creation time.log**, **cm_agent-creation time-current.log**, **system_call-creation time.log, and system_call-creation time-current.log
+  - cm_agent logs: cm_agent-creation time.log**, **cm_agent-creation time-current.log**,**system_call-creation time.log, and system_call-creation time-current.log
   - cm_server logs: cm_server-creation time.log, cm_server creation time-current.log, key_event-creation time.log, and key_event-creation time-current.log
   - om_monitor logs: om_monitor-creation time.log and om_monitor-creation time-current.log.
 
@@ -120,8 +120,8 @@ The default value of  *$GAUSSLOG*  is  **/var/log/gaussdb/***username*.
 
 The log file name format is as follows:
 
--   *tool name***-***log creation time***.log**
--   *tool name***-***log creation time***-current.log**
+- *tool name***-***log creation time***.log**
+- *tool name***-***log creation time***-current.log**
 
 *tool name***-***log creation time***.log**  is a historical log file, and  *tool name***-***log creation time***-current.log**  is a current log file.
 

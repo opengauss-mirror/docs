@@ -6,10 +6,9 @@ Terminates a specified connection or an SQL statement executed under the connect
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   The KILL syntax is valid in both non-thread pool mode and thread pool mode.
--   Generally, this parameter is used together with the Id column in the query result of SHOW PROCESSSLIST.
--   It can also be used together with SELECT sessionid from pg\_stat\_activity WHERE (filtering condition).
-
+- The KILL syntax is valid in both non-thread pool mode and thread pool mode.
+- Generally, this parameter is used together with the Id column in the query result of SHOW PROCESSSLIST.
+- It can also be used together with SELECT sessionid from pg\_stat\_activity WHERE (filtering condition).
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 

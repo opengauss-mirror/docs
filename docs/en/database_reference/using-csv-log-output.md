@@ -2,8 +2,8 @@
 
 ## Prerequisites<a name="en-us_topic_0283136999_en-us_topic_0237124724_en-us_topic_0059779007_s429dec1a2f1348e290437382aa165032"></a>
 
--   The  **[log\_destination](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194)**  parameter is set to  **csvlog**.
--   The  **[logging\_collector](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)**  parameter is set to  **on**.
+- The  **[log\_destination](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_sb6c9884f69bd4765a60f80810c94f194)**  parameter is set to  **csvlog**.
+- The  **[logging\_collector](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s61d6090c04ee464fb54f8b31936ba818)**  parameter is set to  **on**.
 
 ## Definition of csvlog<a name="en-us_topic_0283136999_en-us_topic_0237124724_en-us_topic_0059779007_sa05c5f4e9e53421584d0bfd757ed1247"></a>
 
@@ -191,7 +191,6 @@ COPY gaussdb_log FROM '/opt/data/pg_log/logfile.csv' WITH csv;
 
 Simplify importing CSV log files by performing the following operations:
 
--   Set  **[log\_filename](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s3226ae3209154e249928c24ec67c5809)**  and  **[log\_rotation\_age](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s3ce09b8a7ae543b18fae13a821a725a5)**  to provide a consistent, predictable naming solution for log files. By doing this, you can predict when an individual log file is complete and ready to be imported.
--   Set  **[log\_rotation\_size](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s282e72143bb14915bedb4b432586b07e)**  to  **0**  to disable size-based log rollback, as it makes the log file name difficult to predict.
--   Set  **[log\_truncate\_on\_rotation](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s143b6d35ddbe48b8810106a4d3929e8a)**  to  **on**  so that old log data cannot be mixed with the new one in the same file.
-
+- Set  **[log\_filename](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s3226ae3209154e249928c24ec67c5809)**  and  **[log\_rotation\_age](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s3ce09b8a7ae543b18fae13a821a725a5)**  to provide a consistent, predictable naming solution for log files. By doing this, you can predict when an individual log file is complete and ready to be imported.
+- Set  **[log\_rotation\_size](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s282e72143bb14915bedb4b432586b07e)**  to  **0**  to disable size-based log rollback, as it makes the log file name difficult to predict.
+- Set  **[log\_truncate\_on\_rotation](logging-destination.md#en-us_topic_0283136719_en-us_topic_0237124721_en-us_topic_0059778787_s143b6d35ddbe48b8810106a4d3929e8a)**  to  **on**  so that old log data cannot be mixed with the new one in the same file.

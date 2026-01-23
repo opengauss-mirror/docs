@@ -34,11 +34,10 @@ None
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Resource labels can be created only by a user with the  **POLADMIN**  and  **SYSADMIN**  attributes or an initial user.
--   Resource labels cannot be created for temporary tables.
--   Columns in the same basic table can belong to only one resource tag.
+- Resource labels can be created only by a user with the  **POLADMIN**  and  **SYSADMIN**  attributes or an initial user.
+- Resource labels cannot be created for temporary tables.
+- Columns in the same basic table can belong to only one resource tag.
 
 ## Dependencies<a name="section22810484"></a>
 
 None
-

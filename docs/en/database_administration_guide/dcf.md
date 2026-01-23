@@ -16,16 +16,15 @@ DCF is a high-performance, highly mature, reliable, scalable, and easy-to-use in
 
 ## Description<a name="section16406154310471"></a>
 
--   During log replication, DCF supports log compression before transmission to reduce network bandwidth usage.
--   DCF supports SSL, including TLS 1.2 and TLS 1.3. When SSL is enabled, the DN configures DCF as TLS 1.2 by default.
--   DCF supports five TLS 1.3 cipher suites: TLS13-AES-256-GCM-SHA384, TLS13-CHACHA20-POLY1305-SHA256, TLS13-AES-128-GCM-SHA256, TLS13-AES-128-CCM-8-SHA256 and TLS13-AES-128-CCM-SHA256.
--   DCF supports passive nodes, which do not participate in leader election and only synchronize and replay logs. When this type of nodes is heavily loaded during log synchronization, flow control is performed.
--   DCF supports logger nodes, which participate in leader election and voting. However, the logger nodes only replicate DCF logs. Xlogs are not replicated and redo is not performed.
--   DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
--   DCF supports forcible startup of the minority of DNs. In case that the majority of database instances are faulty, a minority of standby DNs are selected and forcibly promoted to primary, and other normal standby DNs replicate logs from the primary DNs.
--   DCF supports automatic leader election. When the original primary DN is faulty, a new primary DN is automatically selected from the remaining standby DNs on the premise that data consistency is ensured.
--   DCF supports the policy-based majority capability. Based on the configured AZ, DCF ensures that at least one node in the AZ synchronizes replication logs.
-
+- During log replication, DCF supports log compression before transmission to reduce network bandwidth usage.
+- DCF supports SSL, including TLS 1.2 and TLS 1.3. When SSL is enabled, the DN configures DCF as TLS 1.2 by default.
+- DCF supports five TLS 1.3 cipher suites: TLS13-AES-256-GCM-SHA384, TLS13-CHACHA20-POLY1305-SHA256, TLS13-AES-128-GCM-SHA256, TLS13-AES-128-CCM-8-SHA256 and TLS13-AES-128-CCM-SHA256.
+- DCF supports passive nodes, which do not participate in leader election and only synchronize and replay logs. When this type of nodes is heavily loaded during log synchronization, flow control is performed.
+- DCF supports logger nodes, which participate in leader election and voting. However, the logger nodes only replicate DCF logs. Xlogs are not replicated and redo is not performed.
+- DCF supports online switchover between follower and passive nodes. That is, without interrupting services, a node can switch over between the follower and passive roles.
+- DCF supports forcible startup of the minority of DNs. In case that the majority of database instances are faulty, a minority of standby DNs are selected and forcibly promoted to primary, and other normal standby DNs replicate logs from the primary DNs.
+- DCF supports automatic leader election. When the original primary DN is faulty, a new primary DN is automatically selected from the remaining standby DNs on the premise that data consistency is ensured.
+- DCF supports the policy-based majority capability. Based on the configured AZ, DCF ensures that at least one node in the AZ synchronizes replication logs.
 
 ## Enhancements<a name="section1340684315478"></a>
 

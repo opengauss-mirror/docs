@@ -12,31 +12,31 @@ The metric collection system is running properly.
 
 Assume that the  **confpath**  configuration file directory has been initialized.
 
--   Run the following command to start only the slow SQL diagnosis function (the number of root causes for slow SQL diagnosis is determined by the algorithm running result and is not fixed). For more usage, see the description of the **service** subcommand.
+- Run the following command to start only the slow SQL diagnosis function (the number of root causes for slow SQL diagnosis is determined by the algorithm running result and is not fixed). For more usage, see the description of the **service** subcommand.
 
     ```
     gs_dbmind service start -c confpath --only-run slow_query_diagnosis
     ```
 
--   Run the following command to query the diagnosis history of slow SQL statements:
+- Run the following command to query the diagnosis history of slow SQL statements:
 
     ```
     gs_dbmind component slow_query_diagnosis show -c confpath --query SQL --start-time timestamps0 --end-time timestamps1
     ```
 
--   Run the following command to diagnose slow SQL statements in interactive mode:
+- Run the following command to diagnose slow SQL statements in interactive mode:
 
     ```
     gs_dbmind component slow_query_diagnosis diagnosis -c confpath --database dbname --schema schema_name --query SQL
     ```
 
--   Run the following command to manually clear historical prediction results:
+- Run the following command to manually clear historical prediction results:
 
     ```
     gs_dbmind component slow_query_diagnosis clean -c confpath --retention-days DAYS
     ```
 
--   Run the following command to stop the services that have been started:
+- Run the following command to stop the services that have been started:
 
     ```
     gs_dbmind service stop -c confpath
@@ -167,7 +167,5 @@ optional arguments:
 
 ## Troubleshooting<a name="EN-US_TOPIC_0000001240471119"></a>
 
--   Considering the actual service and model prediction effect, you are advised to set the trend prediction duration to a value greater than 3600 seconds. \(If the metric collection period is 15 seconds, the number of data records collected is 240.\) Otherwise, the prediction effect will deteriorate, and the service will be abnormal when the data volume is extremely small. The default value is 3600 seconds.
--   After the parameters in the configuration file are reset, you need to restart the service process for the settings to take effect.
-
-
+- Considering the actual service and model prediction effect, you are advised to set the trend prediction duration to a value greater than 3600 seconds. \(If the metric collection period is 15 seconds, the number of data records collected is 240.\) Otherwise, the prediction effect will deteriorate, and the service will be abnormal when the data volume is extremely small. The default value is 3600 seconds.
+- After the parameters in the configuration file are reset, you need to restart the service process for the settings to take effect.

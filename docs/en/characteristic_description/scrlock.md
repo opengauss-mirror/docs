@@ -27,4 +27,3 @@ The database server must use the Mellanox CX4/CX5 NIC.
 ## Dependency<a name="section12798194673710"></a>
 
 SCRLock depends on the resource pooling feature. To use the SCRLock distributed lock feature, you need to set GUC parameters  **ss\_enable\_dms**  and  **ss\_enable\_dss**  to  **on**  to enable the DMS and DSS components.
-

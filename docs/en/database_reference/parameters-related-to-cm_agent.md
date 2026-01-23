@@ -38,8 +38,8 @@
 
 **Value range**: a string You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
 
 **Default value**:  **/opt/huawei/snas/bin/snas\_cm\_cmd**
 
@@ -188,8 +188,8 @@
 
 **Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
--   **on**  indicates that log compression is enabled.
--   **off**  indicates that log compression is disabled.
+- **on**  indicates that log compression is enabled.
+- **off**  indicates that log compression is disabled.
 
 **Default value**:  **on**
 
@@ -459,8 +459,8 @@
 
 **Value range:** **0**  or  **1**. You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
--   **0**: disabled.
--   **1**: enabled.
+- **0**: disabled.
+- **1**: enabled.
 
 **Default value**:  **0**
 
@@ -470,8 +470,8 @@
 
 **Value range**: Boolean For details about how to modify this parameter, see  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
--   **on**  indicates that the  **pgxc\_node**  system catalog can be modified.
--   **off**  indicates that the  **pgxc\_node**  system catalog cannot be modified.
+- **on**  indicates that the  **pgxc\_node**  system catalog can be modified.
+- **off**  indicates that the  **pgxc\_node**  system catalog cannot be modified.
 
 **Default value**:  **on**
 
@@ -489,8 +489,8 @@
 
 **Value range**: Boolean You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
--   **0**: disabled.
--   **1**: enabled.
+- **0**: disabled.
+- **1**: enabled.
 
 **Default value**:  **off**
 
@@ -500,9 +500,8 @@
 
 **Value range**: an integer ranging from 0 to 2 You need to restart  **cm\_agent**  for the modification to take effect. For details about how to modify this parameter, see  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
--   **0**  indicates that no DR relationship is established.
--   **1**  indicates that the OBS DR relationship is established.
--   **2**  indicates that the streaming DR relationship is established.
+- **0**  indicates that no DR relationship is established.
+- **1**  indicates that the OBS DR relationship is established.
+- **2**  indicates that the streaming DR relationship is established.
 
 **Default value**:  **0**
-

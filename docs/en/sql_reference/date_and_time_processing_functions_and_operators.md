@@ -2,7 +2,7 @@
 
 ## Date and Time Operators<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s0cc044f2acb04adb928696f1f6cfd13d"></a>
 
->![](public_sys-resources/icon-warning.gif) **WARNING:** 
+>[!WARNING]WARNING
 >When the user uses date/time operators, explicit type prefixes are modified for corresponding operands to ensure that the operands parsed by the database are consistent with what the user expects, and no unexpected results occur.
 >For example, abnormal mistakes will occur in the following example without an explicit data type.
 >```

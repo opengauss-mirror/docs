@@ -2,14 +2,14 @@
 
 ## Procedure<a name="section199001315531"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to enable the encryption function and connect to the encrypted database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to enable the encryption function and connect to the encrypted database:
 
     ```
     gsql -p PORT postgres -r -C
     ```
 
-3.  Create a CMK and a CEK. For details about the syntax for creating a CMK and CEK, see  [CREATE CLIENT MASTER KEY](../sql_reference/create_client_master_key.md)  and  [CREATE COLUMN ENCRYPTION KEY](../sql_reference/create_column_encryption_key.md).
+3. Create a CMK and a CEK. For details about the syntax for creating a CMK and CEK, see  [CREATE CLIENT MASTER KEY](../sql_reference/create_client_master_key.md)  and  [CREATE COLUMN ENCRYPTION KEY](../sql_reference/create_column_encryption_key.md).
 
     ```
     -- Create a CMK.
@@ -38,7 +38,7 @@
     (2 rows)
     ```
 
-4.  Create an encrypted table.
+4. Create an encrypted table.
 
     ```
     openGauss=# CREATE TABLE creditcard_info (id_number    int, name         text encrypted with (column_encryption_key = ImgCEK, encryption_type = DETERMINISTIC),
@@ -60,7 +60,7 @@
      credit_card | character varying |  encrypted
     ```
 
-5.  Insert data into the encrypted table and perform an equality query.
+5. Insert data into the encrypted table and perform an equality query.
 
     ```
     openGauss=# INSERT INTO creditcard_info VALUES (1,'joe','6217986500001288393');
@@ -81,7 +81,7 @@
     (2 rows)
     ```
 
-6.  \(Optional\) Alter and update the encrypted table if necessary.
+6. \(Optional\) Alter and update the encrypted table if necessary.
 
     ```
     openGauss=# ALTER TABLE creditcard_info ADD COLUMN age int ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = ImgCEK, ENCRYPTION_TYPE = DETERMINISTIC);
@@ -104,5 +104,3 @@
              2 | joy  | 80000000011111111
     (1 row)
     ```
-
-

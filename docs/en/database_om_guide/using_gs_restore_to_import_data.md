@@ -6,14 +6,13 @@
 
 **gs\_restore**  can:
 
--   Import data to a database.
+- Import data to a database.
 
     If a database is specified, data is imported to the database. If multiple databases are specified, the password for connecting to each database also needs to be specified. During data import, the generated columns are automatically updated and saved as common columns.
 
--   Import data to a script.
+- Import data to a script.
 
     If no database is specified, a script containing the SQL statement to recreate the database is created and written to a file or standard output. This script output is equivalent to the plain text output of  **gs\_dump**.
-
 
 You can specify and sort the data to import.
 
@@ -22,8 +21,8 @@ You can specify and sort the data to import.
 >[!NOTE]NOTE 
 >**gs\_restore**  incrementally imports data by default. To prevent data exception caused by consecutive imports, use the  **-e**  and  **-c**  parameters for each import.  **-c**  indicates that existing data is deleted from the target database before each import.  **-e**  indicates that the system ignores the import task with an error \(error message is displayed after the import process is complete\) and proceeds with the next by default. Therefore, you need to exit the system if an error occurs when you send the SQL statement to the database.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Use  **gs\_restore**  to import all object definitions from the exported file of the entire  **postgres**  database to the  **backupdb**  database.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Use  **gs\_restore**  to import all object definitions from the exported file of the entire  **postgres**  database to the  **backupdb**  database.
 
     ```
     gs_restore -U jack /home/omm/backup/MPPDB_backup.tar -p 8000 -d backupdb -s -e -c
@@ -95,7 +94,6 @@ You can specify and sort the data to import.
     </table>
 
     For details about other parameters, see "Server Tools \> gs\_restore" in the  _Tool Reference_.
-
 
 ## Examples<a name="en-us_topic_0283137171_en-us_topic_0237121137_section19717152710548"></a>
 
@@ -310,4 +308,3 @@ backupdb=# select * from hr.areas;
        3 | Asia
 (4 rows)
 ```
-

@@ -10,10 +10,10 @@ Another challenge was making an optimistic insertion into a table with multiple 
 
 The Masstree index is at the core of MOT memory layout for data and index management. Our team enhanced and significantly improved Masstree and submitted some of the key contributions to the Masstree open source. These improvements include –
 
--   Dedicated memory pools per index – Efficient allocation and fast index drop
--   Global GC for Masstree – Fast, on-demand memory reclamation
--   Masstree iterator implementation with access to an insertion key
--   ARM architecture support
+- Dedicated memory pools per index – Efficient allocation and fast index drop
+- Global GC for Masstree – Fast, on-demand memory reclamation
+- Masstree iterator implementation with access to an insertion key
+- ARM architecture support
 
 We contributed our Masstree index improvements to the Masstree open-source implementation, which can be found here –  [https://github.com/kohler/masstree-beta](https://github.com/kohler/masstree-beta).
 

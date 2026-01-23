@@ -6,23 +6,23 @@ Transparent data encryption (TDE) is used to encrypt data when the database writ
 
 ## Prerequisites<a name="section756657103117"></a>
 
--   Data encryption keys (DEKs) must be protected by KMS so that the database can access KMS. You can apply for KMS on the [Data Encryption Workshop (DEW)](https://www.huaweicloud.com/product/dew.html).
--   The GUC parameter **[enable\_tde](../database_reference/security_configuration.md#section17961238192110)** has been set to **on** to enable the TDE function of the database. In addition, you need to correctly set the **[tde\_cmk\_id](../database_reference/security_configuration.md#section4132027193410)** parameter which indicates the master key ID of the database instance.
+- Data encryption keys (DEKs) must be protected by KMS so that the database can access KMS. You can apply for KMS on the [Data Encryption Workshop (DEW)](https://www.huaweicloud.com/product/dew.html).
+- The GUC parameter **[enable\_tde](../database_reference/security_configuration.md#section17961238192110)** has been set to **on** to enable the TDE function of the database. In addition, you need to correctly set the **[tde\_cmk\_id](../database_reference/security_configuration.md#section4132027193410)** parameter which indicates the master key ID of the database instance.
 
 ## Background<a name="section1049011225714"></a>
 
 The current version interconnects with Huawei Cloud KMS to support table-level key storage and row-store table encryption. The specifications are as follows:
 
--   Encryption of a row-store table stored as a heap is supported.
--   Column-store encryption, materialized view encryption, and Ustore-based encryption are not supported.
--   Indexes, sequences, Xlogs, MOTs, and system catalogs cannot be encrypted.
--   You can specify an encryption algorithm when creating a table. Once specified, the encryption algorithm cannot be changed. If **enable\_tde** is set to **on** but the encryption algorithm **encrypt\_algo** is not specified when a table is created, the AES\_128\_CTR encryption algorithm is used by default.
--   If the encryption function is not enabled or the encryption algorithm is not specified when a table is created, the table cannot be switched to an encrypted table.
--   For a table that has been assigned an encryption key, switching between the encrypted and unencrypted states of the table does not change the key or encryption algorithm.
--   Data key rotation is supported only when the table encryption function is enabled.
--   Cross-region primary/standby synchronization of multiple copies for a single database instance is not supported. Cross-region scale-out of a single database instance is not supported. Cross-region backup and restoration, database instance DR, and data migration are not supported.
--   In hybrid cloud scenarios, if the Huawei Cloud KMS and management plane functions are used, TDE is supported. For other KMS services, TDE is not supported if no compatible API is available.
--   The query performance of encrypted tables is lower than that of non-encrypted tables. If high performance is required, exercise caution when enabling the encryption function.
+- Encryption of a row-store table stored as a heap is supported.
+- Column-store encryption, materialized view encryption, and Ustore-based encryption are not supported.
+- Indexes, sequences, Xlogs, MOTs, and system catalogs cannot be encrypted.
+- You can specify an encryption algorithm when creating a table. Once specified, the encryption algorithm cannot be changed. If **enable\_tde** is set to **on** but the encryption algorithm **encrypt\_algo** is not specified when a table is created, the AES\_128\_CTR encryption algorithm is used by default.
+- If the encryption function is not enabled or the encryption algorithm is not specified when a table is created, the table cannot be switched to an encrypted table.
+- For a table that has been assigned an encryption key, switching between the encrypted and unencrypted states of the table does not change the key or encryption algorithm.
+- Data key rotation is supported only when the table encryption function is enabled.
+- Cross-region primary/standby synchronization of multiple copies for a single database instance is not supported. Cross-region scale-out of a single database instance is not supported. Cross-region backup and restoration, database instance DR, and data migration are not supported.
+- In hybrid cloud scenarios, if the Huawei Cloud KMS and management plane functions are used, TDE is supported. For other KMS services, TDE is not supported if no compatible API is available.
+- The query performance of encrypted tables is lower than that of non-encrypted tables. If high performance is required, exercise caution when enabling the encryption function.
 
 ## Key Management Mechanism<a name="section920142711513"></a>
 

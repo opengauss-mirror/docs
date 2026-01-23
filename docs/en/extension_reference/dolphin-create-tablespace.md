@@ -6,7 +6,7 @@ Creates a tablespace in a database.
 
 ## Precautions<a name="en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_s54948265e9f34f1fac838f60ac0bd3a6"></a>
 
--   This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
+- This section describes only the new syntax of Dolphin. The original syntax of openGauss is not deleted or modified.
 
 ## Syntax<a name="en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_s9f8a8395cc464cd2a34dec7a82fedc7b"></a>
 
@@ -24,7 +24,7 @@ In the preceding information, tablespace\_details is as follows:
 
 ## Parameter Description<a name="en-us_topic_0283137328_en-us_topic_0237122120_en-us_topic_0059777670_see2346106f4e402da499ad74c533dfa8"></a>
 
--   **ENGINE \[=\] engine_name**
+- **ENGINE \[=\] engine_name**
 
     Specifies the storage engine. Currently, it is used only for syntax and has no actual purpose.
 

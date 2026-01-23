@@ -7,8 +7,8 @@ After the upgrade is complete, if no problem is found during the verification, y
 
 ## Procedure<a name="section779219132168"></a>
 
-1.  Log in to the node as a database user \(for example,  **omm**\).
-2.  Run the following command to commit the upgrade task:
+1. Log in to the node as a database user \(for example,  **omm**\).
+2. Run the following command to commit the upgrade task:
 
     ```
     gs_upgradectl -t commit-upgrade  -X /opt/software/GaussDB_Kernel/clusterconfig.xml

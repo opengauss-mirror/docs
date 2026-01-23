@@ -4,7 +4,7 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
 
 ## Connection Parameters<a name="section51233666102514"></a>
 
--   \[Notice\] When a third-party tool connects to openGauss through JDBC, JDBC sends a connection request to openGauss. By default, the following configuration parameters are added. For details, see the implementation of the ConnectionFactoryImpl class in the JDBC code.
+- \[Notice\] When a third-party tool connects to openGauss through JDBC, JDBC sends a connection request to openGauss. By default, the following configuration parameters are added. For details, see the implementation of the ConnectionFactoryImpl class in the JDBC code.
 
     ```
     params = {
@@ -21,19 +21,17 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
 
     If the result is not as expected, you are advised to explicitly set these parameters in the Java connection setting.
 
--   [Proposal] When the database is connected through JDBC, **extra_float_digits** is set to **3**. When the database is connected using gsql, **extra_float_digits** is set to **0**. As a result, the precision of the same data displayed in JDBC clients may be different from that displayed in gsql clients.
+- [Proposal] When the database is connected through JDBC, **extra_float_digits** is set to **3**. When the database is connected using gsql, **extra_float_digits** is set to **0**. As a result, the precision of the same data displayed in JDBC clients may be different from that displayed in gsql clients.
 
--   [Proposal] In precision-sensitive scenarios, the numeric type is recommended.
+- [Proposal] In precision-sensitive scenarios, the numeric type is recommended.
 
--   \[Proposal\] When connecting to the database through JDBC, ensure that the following three time zones are the same:
-    -   Time zone of the host where the JDBC client is located
-    -   Time zone of the host where the openGauss database instance is located.
-    -   Time zone used during openGauss database instance configuration.
+- \[Proposal\] When connecting to the database through JDBC, ensure that the following three time zones are the same:
+    - Time zone of the host where the JDBC client is located
+    - Time zone of the host where the openGauss database instance is located.
+    - Time zone used during openGauss database instance configuration.
 
         >[!NOTE]NOTE 
         >For details about how to set the time zone, see "Initial Configuration \> Synchronizing System Time" in  *Installation Guide*.
-
-
 
 ## fetchsize<a name="section2864318010275"></a>
 
@@ -51,8 +49,8 @@ Currently, third-party tools related to openGauss are connected through JDBC. Th
 
 \[Proposal\] Reset the session environment before releasing connections to the JDBC connection tool. Otherwise, historical session information may cause object conflicts.
 
--   If GUC parameters are set in the connection, run  **SET SESSION AUTHORIZATION DEFAULT;RESET ALL;**  to clear the connection status before you return the connection to the connection pool.
--   If a temporary table is used, delete the temporary table before you return the connection to the connection pool.
+- If GUC parameters are set in the connection, run  **SET SESSION AUTHORIZATION DEFAULT;RESET ALL;**  to clear the connection status before you return the connection to the connection pool.
+- If a temporary table is used, delete the temporary table before you return the connection to the connection pool.
 
 ## CopyManager<a name="section1624965810277"></a>
 

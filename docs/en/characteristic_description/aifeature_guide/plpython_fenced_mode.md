@@ -22,16 +22,16 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
 
 ## Usage Guide<a name="section823619213143"></a>
 
--   Create an extension.
+- Create an extension.
 
-    -   When the compiled PL/Python is Python 2:
+    - When the compiled PL/Python is Python 2:
 
         ```
         openGauss=# create extension plpythonu;
         CREATE EXTENSION
         ```
 
-    -   When the compiled PL/Python is Python 3:
+    - When the compiled PL/Python is Python 3:
 
         ```
         openGauss=# create extension plpython3u;
@@ -40,8 +40,7 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
 
     The following uses Python 2 as an example.
 
-
--   Create a PL/Python-fenced UDF database.
+- Create a PL/Python-fenced UDF database.
 
     ```
     openGauss=# create or replace function pymax(a int, b int)
@@ -57,7 +56,7 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
     CREATE FUNCTION
     ```
 
--   View UDF information.
+- View UDF information.
 
     ```
     openGauss=# select * from pg_proc where proname='pymax';
@@ -103,8 +102,8 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
     proargsrc        |
     ```
 
--   Run the UDF.
-    -   Create a data table.
+- Run the UDF.
+    - Create a data table.
 
         ```
         openGauss=# create table temp (a int ,b int) ;
@@ -113,7 +112,7 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
         INSERT 0 5
         ```
 
-    -   Run the UDF.
+    - Run the UDF.
 
         ```
         openGauss=# select pymax(a,b) from temp;
@@ -126,6 +125,3 @@ After the fenced mode is configured, the UDF calculation is performed in the  **
              6
         (5 rows)
         ```
-
-
-

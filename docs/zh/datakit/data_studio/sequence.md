@@ -94,7 +94,7 @@
 
 <img src="figures/5-4-2.png" alt="image-20221216110103852" style="zoom: 67%;" />
 
-##  查看 DDL
+## 查看 DDL
 
 **步骤 1：** 在 "**数据库导航菜单**" 窗格中，单击序列列表，将显示序列 DDL。
 
@@ -107,7 +107,6 @@
 **说明：** 导出文件为 sql 文件。
 
 <img src="figures/5-4-4.png" style="zoom:50%;" />
-
 
 ## 导出序列 DDL 和数据
 

@@ -66,8 +66,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that SSL connections are enabled.
--   **off**  indicates that SSL connections are not enabled.
+- **on**  indicates that SSL connections are enabled.
+- **off**  indicates that SSL connections are not enabled.
 
 >[!TIP]NOTICE 
 >To enable SSL connections, you also need to configure parameters such as  **ssl\_cert\_file**,  **ssl\_key\_file**, and  **ssl\_ca\_file**  and the corresponding files. Incorrect configurations may cause startup failure of openGauss.
@@ -82,8 +82,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the server requires SSL connections.
--   **off**  indicates that the server does not require SSL connections.
+- **on**  indicates that the server requires SSL connections.
+- **off**  indicates that the server does not require SSL connections.
 
 >[!TIP]NOTICE 
 >openGauss supports SSL when a client connects to a the primary node of the database. It is recommended that the SSL connection be enabled only on the primary node of the databases.
@@ -181,8 +181,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the Kerberos username is case-insensitive.
--   **off**  indicates that the Kerberos username is case-sensitive.
+- **on**  indicates that the Kerberos username is case-insensitive.
+- **off**  indicates that the Kerberos username is case-sensitive.
 
 **Default value**:  **off**
 
@@ -197,8 +197,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the password of the initial user needs to be modified upon the first login after the openGauss is successfully installed.
--   **off**  indicates that the password of the initial user does not need to be modified upon the first login after the openGauss is successfully installed.
+- **on**  indicates that the password of the initial user needs to be modified upon the first login after the openGauss is successfully installed.
+- **off**  indicates that the password of the initial user does not need to be modified upon the first login after the openGauss is successfully installed.
 
 **Default value**:  **off**
 
@@ -213,8 +213,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**:  **0**  and  **1**
 
--   **0**  indicates that no password complexity policy is enabled.
--   **1**  indicates that the default password complexity policy is enabled.
+- **0**  indicates that no password complexity policy is enabled.
+- **1**  indicates that the default password complexity policy is enabled.
 
 **Default value**:  **1**
 
@@ -226,15 +226,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 >[!TIP]NOTICE 
 >When you change the password, the system checks the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**.
->-   If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
->-   If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
->-   If the value of  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  is  **0**, password reuse is restricted based on the reuse interval, and not on the number of reuse times.
->-   If the values of both  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are  **0**, password reuse is not restricted.
+>
+>- If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
+>- If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
+>- If the value of  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  is  **0**, password reuse is restricted based on the reuse interval, and not on the number of reuse times.
+>- If the values of both  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are  **0**, password reuse is not restricted.
 
 **Value range**: a floating point number ranging from 0 to 3650. The unit is day.
 
--   **0**  indicates that the password reuse interval is not checked.
--   A positive number indicates that a new password cannot be chosen from passwords in history that are newer than the specified number of days.
+- **0**  indicates that the password reuse interval is not checked.
+- A positive number indicates that a new password cannot be chosen from passwords in history that are newer than the specified number of days.
 
 **Default value**:  **60**
 
@@ -246,15 +247,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 >[!TIP]NOTICE 
 >When you change the password, the system checks the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**.
->-   If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
->-   If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
->-   If the value of  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  is  **0**, password reuse is restricted based on the reuse interval, and not on the number of reuse times.
->-   If the values of both  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are  **0**, password reuse is not restricted.
+>
+>- If the values of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are both positive numbers, an old password can be reused when it meets either of the reuse restrictions.
+>- If the value of  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  is  **0**, password reuse is restricted based on the number of reuse times, and not on the reuse interval.
+>- If the value of  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  is  **0**, password reuse is restricted based on the reuse interval, and not on the number of reuse times.
+>- If the values of both  **[password\_reuse\_time](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**  and  **[password\_reuse\_max](#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**  are  **0**, password reuse is not restricted.
 
 **Value range**: an integer ranging from 0 to 1000
 
--   **0**  indicates that the password reuse times are not checked.
--   A positive number indicates that the new password cannot be the one whose reuse times exceed the specified number.
+- **0**  indicates that the password reuse times are not checked.
+- A positive number indicates that the new password cannot be the one whose reuse times exceed the specified number.
 
 **Default value**:  **0**
 
@@ -269,8 +271,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a floating point number ranging from 0 to 365. The unit is day.
 
--   **0**  indicates that an account is not automatically locked if the password verification fails.
--   A positive number indicates the duration after which a locked account is automatically unlocked.
+- **0**  indicates that an account is not automatically locked if the password verification fails.
+- A positive number indicates the duration after which a locked account is automatically unlocked.
 
 **Default value**:  **1**
 
@@ -285,8 +287,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 1000
 
--   **0**  indicates that the automatic locking function does not take effect.
--   A positive number indicates that an account is locked when the number of incorrect password attempts reaches the specified number.
+- **0**  indicates that the automatic locking function does not take effect.
+- A positive number indicates that an account is locked when the number of incorrect password attempts reaches the specified number.
 
 **Default value**:  **10**
 
@@ -298,10 +300,10 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range:**  0, 1, 2, or 3
 
--   **0**  indicates that passwords are encrypted with MD5.
--   **1**  indicates that passwords are encrypted with SHA-256 and MD5.
--   **2**  indicates that passwords are encrypted with SHA-256.
--   **3**  indicates that the passwords are encrypted in sm3 mode.
+- **0**  indicates that passwords are encrypted with MD5.
+- **1**  indicates that passwords are encrypted with SHA-256 and MD5.
+- **2**  indicates that passwords are encrypted with SHA-256.
+- **3**  indicates that the passwords are encrypted in sm3 mode.
 
 >[!TIP]NOTICE 
 >The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
@@ -336,8 +338,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 999
 
--   **0**  means no limit.
--   A positive integer indicates the minimum number of uppercase letters required in a password when you create an account.
+- **0**  means no limit.
+- A positive integer indicates the minimum number of uppercase letters required in a password when you create an account.
 
 **Default value**:  **0**
 
@@ -349,8 +351,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 999
 
--   **0**  means no limit.
--   A positive integer indicates the minimum number of lowercase letters required in a password when you create an account.
+- **0**  means no limit.
+- A positive integer indicates the minimum number of lowercase letters required in a password when you create an account.
 
 **Default value**:  **0**
 
@@ -362,8 +364,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 999
 
--   **0**  means no limit.
--   A positive integer indicates the minimum number of digits required in a password when you create an account.
+- **0**  means no limit.
+- A positive integer indicates the minimum number of digits required in a password when you create an account.
 
 **Default value**:  **0**
 
@@ -375,8 +377,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 999
 
--   **0**  means no limit.
--   A positive integer indicates the minimum number of special characters required in a password when you create an account.
+- **0**  means no limit.
+- A positive integer indicates the minimum number of special characters required in a password when you create an account.
 
 **Default value**:  **0**
 
@@ -388,8 +390,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a floating point number ranging from 0 to 999. The unit is day.
 
--   **0**  indicates that the validity period restriction is disabled.
--   A floating point number from 1 to 999 indicates the number of days for which an account password is valid. When the password is about to expire or has expired, the system prompts the user to change the password.
+- **0**  indicates that the validity period restriction is disabled.
+- A floating point number from 1 to 999 indicates the number of days for which an account password is valid. When the password is about to expire or has expired, the system prompts the user to change the password.
 
 **Default value**:  **90**
 
@@ -401,7 +403,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 999. The unit is day.
 
--   **0**  indicates that the reminder is disabled.
--   A positive integer indicates the number of days prior to password expiration that a user will receive a reminder.
+- **0**  indicates that the reminder is disabled.
+- A positive integer indicates the number of days prior to password expiration that a user will receive a reminder.
 
 **Default value**:  **7**

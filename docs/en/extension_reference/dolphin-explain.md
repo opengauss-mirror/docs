@@ -14,7 +14,7 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
 
 ## Precautions<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_s9667906bf0d748b38b576a8e40549816"></a>
 
--   The statement is executed when the **ANALYZE** option is used. If you want to use **EXPLAIN** to analyze **INSERT**, **UPDATE**, **DELETE**, **CREATE TABLE AS**, or **EXECUTE** statement without letting the statement affect your data, use this approach:
+- The statement is executed when the **ANALYZE** option is used. If you want to use **EXPLAIN** to analyze **INSERT**, **UPDATE**, **DELETE**, **CREATE TABLE AS**, or **EXECUTE** statement without letting the statement affect your data, use this approach:
 
     ```
     START TRANSACTION;
@@ -22,7 +22,7 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
     ROLLBACK;
     ```
 
--   The **DETAIL**, **NODES**, and **NUM\_NODES** parameters are disabled in standalone mode. They are available only in distributed mode. If the parameters are used, the following error is reported:
+- The **DETAIL**, **NODES**, and **NUM\_NODES** parameters are disabled in standalone mode. They are available only in distributed mode. If the parameters are used, the following error is reported:
 
     ```
     openGauss=# create table student(id int, name char(20));
@@ -33,22 +33,26 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
     ERROR:  unrecognized EXPLAIN option "num_nodes"
     ```
 
-
 ## Syntax<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_sfa16ba6ad51c455aa79e9602a5998838"></a>
 
--   Display the execution plan of an SQL statement, which supports multiple options and has no requirements for the order of options.
+- Display the execution plan of an SQL statement, which supports multiple options and has no requirements for the order of options.
 
     ```
     {EXPLAIN | DESCRIBE | DESC} [ (  option  [, ...] )  ] statement;
     ```
+
     Or:
+
     ```
     {EXPLAIN | DESCRIBE | DESC} [FORMAT = format_name] statement;
     ```
+
     Or:
+
     ```
     {EXPLAIN | DESCRIBE | DESC} [EXTENDED] statement;
     ```
+
     {EXPLAIN | DESCRIBE | DESC} indicates that DESCRIBE, DESC, and EXPLAIN have the same effect.
     
     The syntax of the **option** clause is as follows:
@@ -68,110 +72,109 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
         FORMAT { TEXT | XML | JSON | YAML }
     ```
 
--   Display the execution plan of an SQL statement, where options are in order.
+- Display the execution plan of an SQL statement, where options are in order.
 
     ```
     {EXPLAIN | DESCRIBE | DESC} { [  { ANALYZE  | ANALYSE  }  ] [ VERBOSE  ]  | PERFORMANCE  } statement;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_se66550d2d643408ebe3189e751499cd5"></a>
 
--   **statement**
+- **statement**
 
     Specifies the SQL statement to explain.
 
--   **ANALYZE boolean | ANALYSE boolean**
+- **ANALYZE boolean | ANALYSE boolean**
 
     Specifies whether to display actual run times and other statistics.
 
     Value range:
 
-    -   **TRUE** (default): displays them.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays them.
+    - **FALSE**: No display.
 
--   **VERBOSE boolean**
+- **VERBOSE boolean**
 
     Specifies whether to display additional information regarding the plan.
 
     Value range:
 
-    -   **TRUE** (default): displays it.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays it.
+    - **FALSE**: No display.
 
--   **COSTS boolean**
+- **COSTS boolean**
 
     Specifies whether to display the estimated total cost of each plan node, estimated number of rows, estimated width of each row.
 
     Value range:
 
-    -   **TRUE** (default): displays them.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays them.
+    - **FALSE**: No display.
 
--   **CPU boolean**
+- **CPU boolean**
 
     Specifies whether to display CPU usage.
 
     Value range:
 
-    -   **TRUE** (default): displays it.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays it.
+    - **FALSE**: No display.
 
--   **DETAIL boolean** (Unavailable)
+- **DETAIL boolean** (Unavailable)
 
     Displays information about database nodes.
 
     Value range:
 
-    -   **TRUE** (default): displays it.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays it.
+    - **FALSE**: No display.
 
--   **NODES boolean** (Unavailable)
+- **NODES boolean** (Unavailable)
 
     Specifies whether to display information about the nodes executed by query.
 
     Value range:
 
-    -   **TRUE** (default): displays it.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays it.
+    - **FALSE**: No display.
 
--   **NUM\_NODES boolean** (Unavailable)
+- **NUM\_NODES boolean** (Unavailable)
 
     Specifies whether to display the number of executing nodes.
 
     Value range:
 
-    -   **TRUE** (default): displays it.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays it.
+    - **FALSE**: No display.
 
--   **BUFFERS boolean**
+- **BUFFERS boolean**
 
     Specifies whether to display buffer usage.
 
     Value range:
 
-    -   **TRUE**: displays it.
-    -   **FALSE** (default): No display.
+    - **TRUE**: displays it.
+    - **FALSE** (default): No display.
 
--   **TIMING boolean**
+- **TIMING boolean**
 
     Specifies whether to display the actual startup time and time spent on the output node.
 
     Value range:
 
-    -   **TRUE** (default): displays them.
-    -   **FALSE**: No display.
+    - **TRUE** (default): displays them.
+    - **FALSE**: No display.
 
--   **PLAN**
+- **PLAN**
 
     Specifies whether to store the execution plan in **PLAN\_TABLE**. If this parameter is set to **on**, the execution plan is stored in **PLAN\_TABLE** and is not displayed on the screen. Therefore, this parameter cannot be used together with other parameters when it is set to **on**.
 
     Value range:
 
-    -   **ON** (default): The execution plan is stored in **PLAN\_TABLE** and not printed on the screen. If the plan is stored successfully, "EXPLAIN SUCCESS" is returned.
-    -   **OFF**: The execution plan is not stored in **PLAN\_TABLE** but is printed on the screen.
+    - **ON** (default): The execution plan is stored in **PLAN\_TABLE** and not printed on the screen. If the plan is stored successfully, "EXPLAIN SUCCESS" is returned.
+    - **OFF**: The execution plan is not stored in **PLAN\_TABLE** but is printed on the screen.
 
--   **FORMAT**
+- **FORMAT**
 
     Specifies the output format.
 
@@ -179,11 +182,11 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
 
     Default value: **TEXT**
 
--   **PERFORMANCE**
+- **PERFORMANCE**
 
     Prints all relevant information in execution.
 
--   **format_name** 
+- **format_name** 
     
     Specifies the output format.
   
@@ -191,10 +194,9 @@ The **ANALYZE** option causes the statement to be executed, not only planned. Th
 
     Default value: **TRADITIONAL**
 
--   **EXTENDED**
+- **EXTENDED**
 
     This parameter is optional and makes no difference.
-
 
 ## Examples<a name="en-us_topic_0283136728_en-us_topic_0237122163_en-us_topic_0059777774_s7175356f914d4ca1954f9c87c4b1e349"></a>
 

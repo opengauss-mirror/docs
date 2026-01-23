@@ -4,20 +4,20 @@
 
 You can use  **gs\_dump**  to export data and all object definitions of a database from openGauss. You can specify the information to export as follows:
 
--   Export full information of a database, including its data and all object definitions.
+- Export full information of a database, including its data and all object definitions.
 
     You can use the exported information to create a database containing the same data as the current one.
 
--   Export all object definitions of a database, including the definitions of the database, functions, schemas, tables, indexes, and stored procedures.
+- Export all object definitions of a database, including the definitions of the database, functions, schemas, tables, indexes, and stored procedures.
 
     You can use the exported object definitions to quickly create a database that is the same as the current one, except that the new database does not have data.
 
--   Export data of a database.
+- Export data of a database.
 
 ### Procedure<a name="en-us_topic_0283136854_en-us_topic_0237121169_en-us_topic_0096392335_s3e29cf3b34314c088216013e01293af6"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Use gs\_dump to export data of the  **userdatabase**  database.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Use gs\_dump to export data of the  **userdatabase**  database.
 
     ```
     gs_dump -U jack -f /home/omm/backup/userdatabase_backup.tar -p 8000 postgres -F t 
@@ -86,7 +86,6 @@ You can use  **gs\_dump**  to export data and all object definitions of a databa
 
     For details about other parameters, see "Server Tools \> gs\_dump" in the  _Tool Reference_.
 
-
 ## Examples<a name="en-us_topic_0283136854_en-us_topic_0237121169_en-us_topic_0096392335_s3e34e9e7c7e948d49d1f24d6038514c0"></a>
 
 Example 1: Run  **gs\_dump**  to export full information of the  **postgres**  database and compress the exported files in .sql format.
@@ -129,14 +128,14 @@ gs_dump[port='8000'][postgres][2018-11-14 11:25:18]: total time: 1161  ms
 
 You can use  **gs\_dump**  to export data and all object definitions of a schema from openGauss. You can export one or more specified schemas as needed. You can specify the information to export as follows:
 
--   Export full information of a schema, including its data and object definitions.
--   Export data of a schema, excluding its object definitions.
--   Export the object definitions of a schema, including the definitions of tables, stored procedures, and indexes.
+- Export full information of a schema, including its data and object definitions.
+- Export data of a schema, excluding its object definitions.
+- Export the object definitions of a schema, including the definitions of tables, stored procedures, and indexes.
 
 ### Procedure<a name="en-us_topic_0283136726_en-us_topic_0237121170_en-us_topic_0096392705_se1377b9a87714047bb07fd6d163c6734"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run  **gs\_dump**  to export the  **hr**  and  **public**  schemas.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run  **gs\_dump**  to export the  **hr**  and  **public**  schemas.
 
     ```
     gs_dump -U jack -f /home/omm/backup/MPPDB_schema_backup -p 8000 human_resource -n hr -n public -F d 
@@ -211,7 +210,6 @@ You can use  **gs\_dump**  to export data and all object definitions of a schema
 
     For details about other parameters, see "Server Tools \> gs\_dump" in the  _Tool Reference_.
 
-
 ### Examples<a name="en-us_topic_0283136726_en-us_topic_0237121170_en-us_topic_0096392705_s221cf543e4004d598aa6fafa8b79f843"></a>
 
 Example 1: Run  **gs\_dump**  to export full information of the  **hr**  schema. The exported files are compressed and stored in text format.
@@ -281,14 +279,14 @@ gs_dump[port='8000'][human_resource][2018-12-13 09:40:24]: total time: 896  ms
 
 You can use  **gs\_dump**  to export data and definition of a table-level object from openGauss. Views, sequences, and foreign tables are special tables. You can export one or more specified tables as needed. You can specify the information to export as follows:
 
--   Export full information of a table, including its data and definition.
--   Export data of a table.
--   Export the definition of a table.
+- Export full information of a table, including its data and definition.
+- Export data of a table.
+- Export the definition of a table.
 
 ### Procedure<a name="en-us_topic_0283137162_en-us_topic_0237121171_en-us_topic_0096393572_sfe5d77987a274a64aaf2d58f17c4a2b9"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run  **gs\_dump**  to export the  **hr.staffs**  and  **hr.employments**  tables.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run  **gs\_dump**  to export the  **hr.staffs**  and  **hr.employments**  tables.
 
     ```
     gs_dump -U jack -f /home/omm/backup/MPPDB_table_backup -p 8000 human_resource -t hr.staffs -t hr.employments -F d
@@ -370,7 +368,6 @@ You can use  **gs\_dump**  to export data and definition of a table-level object
     </table>
 
     For details about other parameters, see "Server Tools \> gs\_dump" in the  *Tool Reference*.
-
 
 ### Examples<a name="en-us_topic_0283137162_en-us_topic_0237121171_en-us_topic_0096393572_s2612a8b058f24a14b1dfa8efd6f4c410"></a>
 
@@ -463,4 +460,3 @@ Password:
 gs_dump[port='8000'][jack][2018-11-14 17:21:18]: dump database human_resource successfully
 gs_dump[port='8000'][jack][2018-11-14 17:21:23]: total time: 4239  ms
 ```
-

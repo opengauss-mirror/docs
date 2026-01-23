@@ -8,8 +8,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: Boolean
 
--   **on**  indicates that the structures of system tables can be modified.
--   **off**  indicates that the structures of system tables cannot be modified.
+- **on**  indicates that the structures of system tables can be modified.
+- **off**  indicates that the structures of system tables cannot be modified.
 
 **Default value**:  **off**
 
@@ -24,8 +24,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that various assertion checks are enabled.
--   **off**  indicates that various assertion checks are disabled.
+- **on**  indicates that various assertion checks are enabled.
+- **off**  indicates that various assertion checks are disabled.
 
 >[!NOTE]NOTE 
 >If you compile openGauss with the assertion check enabled, this parameter is set to  **on**  by default.
@@ -40,8 +40,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**  indicates that data check errors are ignored.
--   **off**  indicates that data check errors are reported.
+- **on**  indicates that data check errors are ignored.
+- **off**  indicates that data check errors are reported.
 
 **Default value**:  **off**
 
@@ -56,8 +56,8 @@ This parameter is a BACKEND parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that system indexes are ignored.
--   **off**  indicates that system indexes are not ignored.
+- **on**  indicates that system indexes are ignored.
+- **off**  indicates that system indexes are not ignored.
 
 **Default value**:  **off**
 
@@ -95,8 +95,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that the function is enabled.
--   **off**  indicates that the function is disabled.
+- **on**  indicates that the function is enabled.
+- **off**  indicates that the function is disabled.
 
 **Default value**:  **off**
 
@@ -111,8 +111,9 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 **Default value**:  **log**
 
 >[!NOTE]NOTE 
->-   **log**  indicates that recovery-related debugging information will not be logged.
->-   Except the default value  **log**, each of the other values indicates that recovery-related debugging information at the specified level will also be logged. Common settings of  **log\_min\_messages**  enable logs to be unconditionally recorded into server logs.
+>
+>- **log**  indicates that recovery-related debugging information will not be logged.
+>- Except the default value  **log**, each of the other values indicates that recovery-related debugging information at the specified level will also be logged. Common settings of  **log\_min\_messages**  enable logs to be unconditionally recorded into server logs.
 
 ## trace\_sort<a name="en-us_topic_0283137548_en-us_topic_0237124743_en-us_topic_0059778871_sd0cba25915364b649503310146519623"></a>
 
@@ -122,8 +123,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that the function is enabled.
--   **off**  indicates that the function is disabled.
+- **on**  indicates that the function is enabled.
+- **off**  indicates that the function is disabled.
 
 **Default value**:  **off**
 
@@ -167,8 +168,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that optimization for numeric data calculation is enabled.
--   **off**  or  **false**  indicates that optimization for numeric data calculation is disabled.
+- **on**  or  **true**  indicates that optimization for numeric data calculation is enabled.
+- **off**  or  **false**  indicates that optimization for numeric data calculation is disabled.
 
 **Default value**:  **on**
 
@@ -180,8 +181,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that optimization for writing data to disk is enabled.
--   **off**  or  **false**  indicates that optimization for writing data to a disk is disabled.
+- **on**  or  **true**  indicates that optimization for writing data to disk is enabled.
+- **off**  or  **false**  indicates that optimization for writing data to a disk is disabled.
 
 **Default value**:  **on**
 
@@ -193,8 +194,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: a string
 
--   **summary**: Brief diagnosis information is displayed.
--   **detail**: Detailed diagnosis information is displayed.
+- **summary**: Brief diagnosis information is displayed.
+- **detail**: Detailed diagnosis information is displayed.
 
 Currently, the two parameter values differ only when there is an alarm about multi-column statistics not collected. If the parameter is set to  **summary**, such an alarm will not be displayed. If it is set to  **detail**, such an alarm will be displayed.
 
@@ -208,9 +209,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that the evaluation information is displayed in the output of the  **EXPLAIN**  statement.
--   **off**  indicates that the evaluation information is not displayed in the output of the  **EXPLAIN**  statement.
-
+- **on**  indicates that the evaluation information is displayed in the output of the  **EXPLAIN**  statement.
+- **off**  indicates that the evaluation information is not displayed in the output of the  **EXPLAIN**  statement.
 
 **Default value**:  **off**
 
@@ -225,8 +225,8 @@ This parameter is a  **SIGHUP**  parameter. Set it based on instructions provide
 
 **Value range**: Boolean
 
--   **on**  indicates that batch binding and execution are used.
--   **off**  indicates that batch binding and execution are not used.
+- **on**  indicates that batch binding and execution are used.
+- **off**  indicates that batch binding and execution are not used.
 
 **Default value**:  **on**
 
@@ -238,8 +238,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: a string. The valid values are  **none**  and  **all**.
 
--   **none**  indicates that this function is disabled.
--   **all**  indicates that some shared data and threads are distributed to different NUMA nodes to reduce the number of remote access times and improve performance. Currently, this function applies only to ARM servers with multiple NUMA nodes. All NUMA nodes must be available for database processes. You cannot select only some NUMA nodes.
+- **none**  indicates that this function is disabled.
+- **all**  indicates that some shared data and threads are distributed to different NUMA nodes to reduce the number of remote access times and improve performance. Currently, this function applies only to ARM servers with multiple NUMA nodes. All NUMA nodes must be available for database processes. You cannot select only some NUMA nodes.
 
 >[!NOTE]NOTE 
 >In the current version,  **numa\_distribute\_mode**  cannot be set to  **all**  on the x86 platform.
@@ -274,8 +274,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -287,8 +287,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**  indicates that a rough check is performed with filter criteria delivered during query.
--   **off**  indicates that a rough check is performed without filter criteria delivered during query.
+- **on**  indicates that a rough check is performed with filter criteria delivered during query.
+- **off**  indicates that a rough check is performed without filter criteria delivered during query.
 
 **Default value**:  **on**
 
@@ -300,8 +300,8 @@ This parameter is a  **POSTMASTER**  parameter. Set it based on instructions pro
 
 **Value range**: Boolean
 
--   **on**  indicates that the same calculation method is used and a redistribution is not required.
--   **off**  indicates that different calculation methods are used and a redistribution is required.
+- **on**  indicates that the same calculation method is used and a redistribution is not required.
+- **off**  indicates that different calculation methods are used and a redistribution is required.
 
 >[!NOTE]NOTE 
 >Calculation methods differ in the length of input strings used for calculating hash values. \(For a char-type hash value, spaces following a string are not counted as the length. For a text- or varchar-type hash value, the spaces are counted.\) The hash value affects the calculation result of queries. To avoid query errors, do not modify this parameter during database running once it is set.
@@ -327,4 +327,3 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 **Value range**: Boolean
 
 **Default value**:  **off**
-

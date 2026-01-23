@@ -7,6 +7,7 @@
 A prepared statement is a performance optimizing object on the server. **PREPARE** is executed to parse, analyze, and rewrite the specified query. **EXECUTE** is executed to plan and execute the prepared statement. This avoids repetitive parsing and analysis. After the PREPARE statement is created, it exists throughout the database session. Once it is created (even if in a transaction block), it will not be deleted when a transaction is rolled back. It can only be deleted by explicitly invoking DEALLOCATE or automatically deleted when the session ends.
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
+
 Compared with the original openGauss, Dolphin modifies the PREPARE syntax as follows:
 
 1. The PREPARE FROM syntax is supported.

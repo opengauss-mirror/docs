@@ -1,6 +1,6 @@
 # GS\_CLIENT\_GLOBAL\_KEYS\_ARGS<a name="EN-US_TOPIC_0294528093"></a>
 
-**GS\_CLIENT\_GLOBAL\_KEYS\_ARGS **records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
+**GS\_CLIENT\_GLOBAL\_KEYS\_ARGS**records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
 
 **Table  1**  GS\_CLIENT\_GLOBAL\_KEYS\_ARGS columns
 
@@ -50,4 +50,3 @@
 </tr>
 </tbody>
 </table>
-

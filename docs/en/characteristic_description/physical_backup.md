@@ -12,17 +12,17 @@ Data in the entire database is backed up to a specified storage medium in an int
 
 Through physical backup, you can achieve the following purposes:
 
--   Back up data of the entire database to a reliable storage medium, improving system reliability.
--   Improve backup and restoration performance using an internal data format.
--   Archive cold data.
+- Back up data of the entire database to a reliable storage medium, improving system reliability.
+- Improve backup and restoration performance using an internal data format.
+- Archive cold data.
 
 The typical physical backup policy and application scenario are as follows:
 
--   On Monday, perform a full backup of the database.
--   On Tuesday, perform an incremental backup based on the full backup on Monday.
--   On Wednesday, perform an incremental backup based on the incremental backup on Tuesday.
--   ...
--   On Sunday, perform an incremental backup based on the incremental backup on Saturday.
+- On Monday, perform a full backup of the database.
+- On Tuesday, perform an incremental backup based on the full backup on Monday.
+- On Wednesday, perform an incremental backup based on the incremental backup on Tuesday.
+- ...
+- On Sunday, perform an incremental backup based on the incremental backup on Saturday.
 
 The preceding backup operations are executed every week.
 
@@ -43,4 +43,3 @@ For details about the constraints of physical backup, see Backup and Restoration
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

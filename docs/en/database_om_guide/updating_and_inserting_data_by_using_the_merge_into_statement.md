@@ -10,7 +10,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
 
 ## Procedure<a name="en-us_topic_0237121140_en-us_topic_0165787112_section116710974218"></a>
 
-1.  Create a source table named  **products**  and insert data.
+1. Create a source table named  **products**  and insert data.
 
     ```
     postgres=# CREATE TABLE products 
@@ -26,7 +26,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
     (1700, 'wait interface', 'books'); 
     ```
 
-2.  Create a target table named  **newproducts**  and insert data.
+2. Create a target table named  **newproducts**  and insert data.
 
     ```
     postgres=# CREATE TABLE newproducts 
@@ -43,7 +43,7 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
     (1666, 'harry potter', 'dvd'); 
     ```
 
-3.  Run the  **MERGE INTO**  statement to merge data in the source table  **products**  into the target table  **newproducts**.
+3. Run the  **MERGE INTO**  statement to merge data in the source table  **products**  into the target table  **newproducts**.
 
    ```
    MERGE INTO newproducts np    
@@ -140,5 +140,3 @@ You have the  **INSERT**  and  **UPDATE**  permissions for the target table and 
            1700 | wait interface | books
     (6 rows)
     ```
-
-

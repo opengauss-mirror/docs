@@ -27,4 +27,3 @@ For details about the gray upgrade constraints, see [Before You Start](../databa
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

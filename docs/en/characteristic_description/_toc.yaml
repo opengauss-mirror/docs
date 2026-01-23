@@ -221,7 +221,7 @@ sections:
         href: ./distributed_analysis_capabilities.md
   - label: Advanced Features
     sections:
-      - label: 索引推荐
+      - label: Index Recommendation
         href: ./advanced_features/index-recommendation.md  
       - label: DB4AI
         href: ./advanced_features/db4ai.md  
@@ -229,12 +229,14 @@ sections:
         href: ./advanced_features/llvm.md  
       - label: MOT
         href: ./advanced_features/mot.md  
-      - label: 全密态数据库
+      - label: Fully Encrypted Database
         href: ./advanced_features/fully-encrypted-database.md  
       - label: DCF
         href: ./advanced_features/dcf.md  
       - label: UWAL
-        href: ./advanced_features/UWAL.md     
+        href: ./advanced_features/UWAL.md 
+      - label: Column Store
+        href: ./advanced_features/column-store.md      
   - label: AI Features Guide
     sections:
       - label: Overview

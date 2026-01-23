@@ -2,24 +2,24 @@ openGauss has a large object facility, large object interface is modeled after t
 
 The following are the operation interfaces for large objects:
 
--   **[lo_creat and lo_create](lo_create.md)**  
+- **[lo_creat and lo_create](lo_create.md)**  
 
--   **[lo_import and lo_import_with_oid](lo_import.md)**   
+- **[lo_import and lo_import_with_oid](lo_import.md)**   
 
--   **[lo_export](lo_export.md)**  
+- **[lo_export](lo_export.md)**  
 
--   **[lo_open](lo_open.md)**  
+- **[lo_open](lo_open.md)**  
 
--   **[lo_write](lo_write.md)**  
+- **[lo_write](lo_write.md)**  
 
--   **[lo_read](lo_read.md)**  
+- **[lo_read](lo_read.md)**  
 
--   **[lo_lseek and lo_lseek64](lo_lseek.md)**  
+- **[lo_lseek and lo_lseek64](lo_lseek.md)**  
 
--   **[lo_tell and lo_tell64](lo_tell.md)**  
+- **[lo_tell and lo_tell64](lo_tell.md)**  
 
--   **[lo_truncate and lo_truncate64](lo_truncate.md)**  
+- **[lo_truncate and lo_truncate64](lo_truncate.md)**  
 
--   **[lo_close](lo_close.md)**  
+- **[lo_close](lo_close.md)**  
 
--   **[lo_unlink](lo_unlink.md)**  
+- **[lo_unlink](lo_unlink.md)**  

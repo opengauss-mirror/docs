@@ -136,6 +136,7 @@
 <img src="figures/5-12-3.png" style="zoom:67%;" />
 
 ## FAQ
+
 1. 无法创建外表数据源类型为 Oracle、MySQL 的外部表。
 
    原因：目前仅支持创建外部数据源类型为 openGauss 的外部表，Oracle、MySQL 将在后续版本支持。

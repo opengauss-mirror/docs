@@ -68,11 +68,10 @@ PGresult contains a result tuple from the current command. This state occurs in 
 
 ## Precautions<a name="en-us_topic_0241735621_en-us_topic_0237120433_en-us_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
--   Note that the SELECT command that happens to retrieve zero rows still returns  **PGRES\_TUPLES\_OK**.  **PGRES\_COMMAND\_OK**  is used for commands that can never return rows \(such as INSERT or UPDATE, without return clauses\). The result status  **PGRES\_EMPTY\_QUERY**  might indicate a bug in the client software.
+- Note that the SELECT command that happens to retrieve zero rows still returns  **PGRES\_TUPLES\_OK**.  **PGRES\_COMMAND\_OK**  is used for commands that can never return rows \(such as INSERT or UPDATE, without return clauses\). The result status  **PGRES\_EMPTY\_QUERY**  might indicate a bug in the client software.
 
--   The result status  **PGRES\_NONFATAL\_ERROR**  will never be returned directly by PQexec or other query execution functions. Instead, such results will be passed to the notice processor.
+- The result status  **PGRES\_NONFATAL\_ERROR**  will never be returned directly by PQexec or other query execution functions. Instead, such results will be passed to the notice processor.
 
 ## Example<a name="en-us_topic_0241735621_section4472558185413"></a>
 
 For details, see  [Example](example_libpq.md).
-

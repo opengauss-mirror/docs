@@ -2,7 +2,7 @@
 
 ## Type Conversion Functions<a name="en-us_topic_0283137417_en-us_topic_0237121973_en-us_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>
 
--   cast\(x as y\)
+- cast\(x as y\)
 
     Description: Converts x into the type specified by y. If the target data type is char, the data type is converted to varchar in the case of **dolphin.b\_compatibility\_mode=on**. Otherwise, the data type is still char.
 
@@ -33,7 +33,7 @@
    CREATE CAST (money AS uint8) WITH FUNCTION cash_uint(money) AS ASSIGNMENT;
    ```
 
-   ## Compatibility<a name="section9989313154010"></a>
+## Compatibility<a name="section9989313154010"></a>
 
    The CREATE CAST instruction complies with the SQL standard. Except that the SQL does not have extra parameters that can be forcibly converted to binary types or implement functions.
 

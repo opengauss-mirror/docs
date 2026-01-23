@@ -26,17 +26,16 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   The database system is normal. The user successfully logs in to the database through identity authentication and accesses the authorized data.
--   The SQL syntax is correct and no error is reported.
--   SQL statements executed by users do not cause database exceptions.
--   In the historical performance data window, the cluster concurrency is stable, the cluster scale, table structure, and table quantity remain unchanged, the data volume does not change abruptly, and the GUC parameters related to query performance remain unchanged. If the preceding conditions are damaged, the model becomes invalid. In this case, you need to invalidate all historical performance data, collect data again, and retrain the model.
--   When a model is loaded, the structure, parameters, and training information of the original model are completely saved. If the original model information is lost, the model cannot be loaded and needs to be trained again.
--   Historical performance data can be properly collected and encoded, and no error is reported when the encoded data is properly parsed.
--   You can install the following software by using the provided installation scripts or by yourself: Python=3.6.4, configparser==3.8.1, Flask==0.12.2, Keras==2.2.4, numpy==1.16.4, scikit-learn==0.19.1, pandas==0.25.1, tensorboard==1.14.0, and tensorflow-gpu==1.14.0 or tensorflow==1.14.0.
--   OpenSSL has been installed in the user environment, and the certificate has been generated using a script or based on the usage description.
--   Currently, administrators need to manually synchronize models across database namespaces. Automatic synchronization is not supported.
+- The database system is normal. The user successfully logs in to the database through identity authentication and accesses the authorized data.
+- The SQL syntax is correct and no error is reported.
+- SQL statements executed by users do not cause database exceptions.
+- In the historical performance data window, the cluster concurrency is stable, the cluster scale, table structure, and table quantity remain unchanged, the data volume does not change abruptly, and the GUC parameters related to query performance remain unchanged. If the preceding conditions are damaged, the model becomes invalid. In this case, you need to invalidate all historical performance data, collect data again, and retrain the model.
+- When a model is loaded, the structure, parameters, and training information of the original model are completely saved. If the original model information is lost, the model cannot be loaded and needs to be trained again.
+- Historical performance data can be properly collected and encoded, and no error is reported when the encoded data is properly parsed.
+- You can install the following software by using the provided installation scripts or by yourself: Python=3.6.4, configparser==3.8.1, Flask==0.12.2, Keras==2.2.4, numpy==1.16.4, scikit-learn==0.19.1, pandas==0.25.1, tensorboard==1.14.0, and tensorflow-gpu==1.14.0 or tensorflow==1.14.0.
+- OpenSSL has been installed in the user environment, and the certificate has been generated using a script or based on the usage description.
+- Currently, administrators need to manually synchronize models across database namespaces. Automatic synchronization is not supported.
 
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

@@ -1,6 +1,5 @@
 # Logical Backup and Restoration
 
-
 ### gs\_dump
 
 #### Background<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_section1271019596335"></a>
@@ -19,8 +18,8 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 
 **gs\_dump**  can export database information to a plain-text SQL script file or archive file.
 
--   Plain-text SQL script: It contains the SQL statements required to restore the database. You can use gsql to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
--   Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
+- Plain-text SQL script: It contains the SQL statements required to restore the database. You can use gsql to execute the SQL script. With only a little modification, the SQL script can rebuild a database on other hosts or database products.
+- Archive file: It contains data required to restore the database. It can be a tar-, directory-, or custom-format archive. For details, see  [Table 1](#en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0058967678_t17db29a12e7342cfbf02b2f6e50ff1a5). The export result must be used with  **gs\_restore**to restore the database. The system allows users to select or even to sort the content to be imported.
 
 #### Functions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s59719e8badd54d11a09df49f558d8b20"></a>
 
@@ -88,15 +87,11 @@ The generated columns are not dumped during  **gs\_dump**  is used.
 >[!NOTE]NOTE   
 >To reduce the size of an exported file, you can use the gs\_dump tool to compress it to a directory archive file or custom-format file. When a directory archive or custom-format archive is generated, a medium level of compression is applied by default. Archived exported files cannot be compressed using  **gs\_dump**.
 
-
-
 #### Precautions<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s75e900efd4f04a2bb39914ec1d8f971f"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
--   To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  option.
--   Stored procedures and functions cannot be exported in encrypted mode.
-
-
+- Do not modify an exported file or its content. Otherwise, restoration may fail.
+- To ensure the data consistency and integrity,  **gs\_dump**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dump**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  option.
+- Stored procedures and functions cannot be exported in encrypted mode.
 
 #### Syntax<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s884f9e03cedd408cbe7ce5303df97df6"></a>
 
@@ -125,8 +120,6 @@ export PGDATABASE=postgres
 
 Environment variable:  *PGDATABASE*
 
-
-
 #### Parameter Description<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s6822518f650f4ad4ab67d1084cd8ffdd"></a>
 
 Common parameters
@@ -149,7 +142,6 @@ Common parameters
 
     A .tar archive can be used as input of  **gsql**.
 
-
 - -v, --verbose
 
   Specifies the verbose mode. If it is specified,  **gs\_dump**  writes detailed object comments and the number of startups/stops to the dump file, and progress messages to standard error.
@@ -164,9 +156,9 @@ Common parameters
 
   Value range: 0-9
 
-  -   **0**  indicates no compression.
-  -   **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
-  -   **9**  indicates that the compression ratio is the highest and processing speed the slowest.
+  - **0**  indicates no compression.
+  - **1**  indicates that the compression ratio is the lowest and processing speed the fastest.
+  - **9**  indicates that the compression ratio is the highest and processing speed the slowest.
 
   For the custom-format archive, this option specifies the compression level of a single table data segment. By default, data is compressed at a medium level. The plain-text and .tar archive formats do not support compression currently.
 
@@ -177,7 +169,6 @@ Common parameters
 - -?, --help
 
   Displays help about  **gs\_dump**  parameters and exits.
-
 
 Dump parameters:
 
@@ -211,10 +202,10 @@ Dump parameters:
 
  > [!NOTE]NOTE     
  >
- > -   If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
- > -   If  **-n**  is specified, the non-schema objects are not dumped.  
+ > - If  **-n**  is specified,  **gs\_dump**  does not dump any other database objects which the selected schemas might depend upon. Therefore, there is no guarantee that the results of a specific-schema dump can be automatically restored to an empty database.  
+ > - If  **-n**  is specified, the non-schema objects are not dumped.  
 
-  Multiple schemas can be dumped. Entering  **-n ***schemaname*  multiple times dumps multiple schemas.
+  Multiple schemas can be dumped. Entering  **-n***schemaname*  multiple times dumps multiple schemas.
 
   For example:
 
@@ -270,13 +261,11 @@ Dump parameters:
 
  > [!NOTE]NOTE   
  >
- > -   The number of  **-t**  parameters must be less than or equal to 100.  
- > -   If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
- > -   If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
- > -   **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
- > -   **-t tablename**  does not export trigger information from a table.  
-
-
+ > - The number of  **-t**  parameters must be less than or equal to 100.  
+ > - If the number of  **-t**  parameters is greater than 100, you are advised to use the  **--include-table-file**  parameter to replace some  **-t**  parameters.  
+ > - If  **-t**  is specified,  **gs\_dump**  does not dump any other database objects which the selected tables might depend upon. Therefore, there is no guarantee that the results of a specific-table dump can be automatically restored to an empty database.  
+ > - **-t tablename**  only dumps visible tables in the default search path.  **-t '\*.tablename'**  dumps  *tablename*  tables in all the schemas of the dumped database.  **-t schema.table**  dumps tables in a specific schema.  
+ > - **-t tablename**  does not export trigger information from a table.  
 
     For example:
     
@@ -436,7 +425,7 @@ Dump parameters:
 
   The AES128 key rules are as follows:
 
-  -   Consists of 8 to 16 characters.
+  - Consists of 8 to 16 characters.
 
 - Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
@@ -474,18 +463,15 @@ Dump parameters:
   gs_dump -p port_number postgres -f backup.sql -F plain --dont-overwrite-file
   ```
 
-
 > [!NOTE]NOTE   
 >
->-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
->-   **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
->-   **--role**  must be used in conjunction with  **--rolepassword**.  
->-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
->-   **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
->-   **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
-
-
+>- The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>- The  **-c/--clean**  and  **-a/--data-only**  parameters do not coexist.  
+>- **--inserts/--column-inserts**  and  **-o/--oids**  do not coexist, because  **OIDS**  cannot be set using the  **INSERT**  statement.  
+>- **--role**  must be used in conjunction with  **--rolepassword**.  
+>- **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+>- **--include-depend-objs**  or  **--exclude-self**  takes effect only when  **-t**  or  **--include-table-file**  is specified.  
+>- **--exclude-self**  must be used in conjunction with  **--include-depend-objs**.  
 
 Connection parameters:
 
@@ -528,7 +514,6 @@ Connection parameters:
 - --rolepassword=ROLEPASSWORD
 
   Specifies the password for a role.
-
 
 #### Notice<a name="en-us_topic_0249632271_en-us_topic_0237152335_en-us_topic_0059777770_s7390a5e2be45435687f910284792c8c6"></a>
 
@@ -646,16 +631,16 @@ The generated columns are not dumped during  **gs\_dumpall**  is used.
 
 **gs\_dumpall**  exports all openGauss databases in two parts:
 
--   **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
--   **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
+- **gs\_dumpall**  exports all global objects, including information about database users and groups, tablespaces, and attributes \(for example, global access permissions\).
+- **gs\_dumpall**  invokes  **gs\_dump**  to export SQL scripts from each openGauss database, which contain all the SQL statements required to restore databases.
 
 The exported files are both plain-text SQL scripts. Use  gsql to execute them to restore openGauss databases.
 
 #### Precautions<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s67532b3f6d2a42e183672fae6c4ba753"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
--   To ensure the data consistency and integrity,  **gs\_dumpall**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dumpall**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
--   During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as an openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, cluster administrator permissions are also required to add users and user groups, and create databases.
+- Do not modify an exported file or its content. Otherwise, restoration may fail.
+- To ensure the data consistency and integrity,  **gs\_dumpall**  acquires a share lock on a table to be dumped. If another transaction has acquired a share lock on the table,  **gs\_dumpall**  waits until this lock is released and then locks the table for dumping. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as an openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, cluster administrator permissions are also required to add users and user groups, and create databases.
 
 #### Syntax<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_s991ca5afb6574130a742db3732d6f577"></a>
 
@@ -686,7 +671,6 @@ Common parameters:
 - -?, --help
 
   Displays help about  **gs\_dumpall**  parameters and exits.
-
 
 Dump parameters:
 
@@ -790,8 +774,8 @@ Dump parameters:
 
   The AES128 key rules are as follows:
 
-  -   Consists of 8 to 16 characters.
-  -   Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
+  - Consists of 8 to 16 characters.
+  - Contains at least three of the following character types: uppercase characters, lowercase characters, digits, and special characters \(limited to \~!@\#$%^&\*\(\)-\_=+\\|\[\{\}\];:,<.\>/?\).
 
 - --include-extensions
 
@@ -825,19 +809,18 @@ Dump parameters:
 
   Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
-
 > [!NOTE]NOTE
 >
->-   The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
->-   The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
->-   The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
->-   The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
->-   **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
->-   **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
->-   **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
+>- The  **-g/--globals-only**  and  **-r/--roles-only**  parameters do not coexist.  
+>- The  **-g/--globals-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>- The  **-r/--roles-only**  and  **-t/--tablespaces-only**  parameters do not coexist.  
+>- The  **-s/--schema-only**  and  **-a/--data-only**  parameters do not coexist.  
+>- The  **-r/--roles-only**  and  **-a/--data-only**  parameters do not coexist.  
+>- The  **-t/--tablespaces-only**  and  **-a/--data-only**  parameters do not coexist.  
+>- The  **-g/--globals-only**  and  **-a/--data-only**  parameters do not coexist.  
+>- **--tablespaces-postfix**  must be used in conjunction with  **--binary-upgrade**.  
+>- **--binary-upgrade-usermap**  must be used in conjunction with  **--binary-upgrade**.  
+>- **--parallel-jobs**  must be used in conjunction with  **-f/--file**.  
 
 Connection parameters:
 
@@ -883,7 +866,6 @@ Connection parameters:
 
   Specifies the password of the specific role.
 
-
 #### Notice<a name="en-us_topic_0249632251_en-us_topic_0237152336_en-us_topic_0059778372_sc99dfbcba3eb44e59598baa7edd2d140"></a>
 
 **gs\_dumpall**  internally invokes  **gs\_dump**. For details about the diagnosis information, see  gs\_dump.
@@ -927,7 +909,6 @@ It has the following functions:
 
   If the database storing imported data is not specified, a script containing the SQL statement to recreate the database is created and written to a file or standard output. This script output is equivalent to the plain text output format of  **gs\_dump**.
 
-
 #### Command Format<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_s5a64660d88db4dfb8e2b35d0b4645264"></a>
 
 ```
@@ -936,10 +917,10 @@ gs_restore [OPTION]... FILE
 
 >[!NOTE]NOTE
 >
->-   **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
->-   The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
->-   **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.  
->-   There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.  
+>- **FILE**  does not have a short or long parameter. It is used to specify the location for the archive files.   
+>- The  **dbname**  or  **-l**  parameter is required as prerequisites. Users cannot enter  **dbname**  and  **-l**  parameters at the same time.  
+>- **gs\_restore**  incrementally imports data by default. To prevent data exceptions caused by multiple import operations, you are advised to use the  **-c**  parameter during the import. Before recreating database objects, delete the database objects that already exist in the database to be restored.  
+>- There is no option to control log printing. To hide logs, redirect the logs to the log file. If a large amount of table data needs to be restored, the table data will be restored in batches. Therefore, the log indicating that the table data has been imported is generated for multiple times.  
 
 #### Parameter Description<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_sc666a8c818084bad8e23afd6e79dd659"></a>
 
@@ -964,9 +945,9 @@ Common parameters
 
   Value range:
 
-  -   **c/custom**: The archive form is the customized format in  gs\_dump.
-  -   **d/directory**: The archive form is a directory archive format.
-  -   **t/tar**: The archive form is a .tar archive format.
+  - **c/custom**: The archive form is the customized format in  gs\_dump.
+  - **d/directory**: The archive form is a directory archive format.
+  - **t/tar**: The archive form is a .tar archive format.
 
 - -l, --list
 
@@ -983,7 +964,6 @@ Common parameters
 - -?, --help
 
   Displays help information about the parameters of  **gs\_restore**  and exits.
-
 
 Parameters for importing data
 
@@ -1005,7 +985,7 @@ Parameters for importing data
 
 - -I, --index=NAME
 
-  Imports only the definition of the specified index. Multiple indexes can be imported. Enter  **-I**_ index_  multiple times to import multiple indexes.
+  Imports only the definition of the specified index. Multiple indexes can be imported. Enter  **-I**_index_  multiple times to import multiple indexes.
 
   For example:
 
@@ -1037,7 +1017,7 @@ Parameters for importing data
 
   This parameter can be used in conjunction with the  **-t**  parameter to import a specific table.
 
-  Entering  **-n ***schemaname*  multiple times can import multiple schemas.
+  Entering  **-n***schemaname*  multiple times can import multiple schemas.
 
   For example:
 
@@ -1077,7 +1057,7 @@ Parameters for importing data
 
 - -t, --table=NAME
 
-  Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n ***schemaname*** -t ***tablename*  multiple times can import multiple tables in a specified schema.
+  Imports only listed table definitions or data, or both. This parameter can be used in conjunction with the  **-n**  parameter to specify a table object in a schema. When  **-n**  is not entered, the default schema is PUBLIC. Entering  **-n ***schemaname*** -t***tablename*  multiple times can import multiple tables in a specified schema.
 
   For example:
 
@@ -1153,17 +1133,15 @@ Parameters for importing data
 
   Uses a pipe to transmit the password. This parameter cannot be used on devices.
 
-
-
 >![!NOTE]NOTE 
 >
->-   If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
+>- If any local additions need to be added to the template1 database during the installation, restore the output of  **gs\_restore**  into an empty database with caution. Otherwise, you are likely to obtain errors due to duplicate definitions of the added objects. To create an empty database without any local additions, copy data from template0 rather than template1. Example:
 
 >```
 >CREATE DATABASE foo WITH TEMPLATE template0;
 >```
 
--   **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
+- **gs\_restore**  cannot import large objects selectively. For example, it can only import the objects of a specified table. If an archive contains large objects, all large objects will be imported, or none of them will be restored if they are excluded by using  **-L**,  **-t**, or other parameters.
 
 >[!NOTE]NOTE   
 >
@@ -1206,7 +1184,6 @@ Connection parameters:
 - --rolepassword=ROLEPASSWORD
 
   Role password.
-
 
 #### Example<a name="en-us_topic_0249632267_en-us_topic_0237152343_en-us_topic_0059777561_s87e334fd72aa475782287207b9d7fb79"></a>
 
@@ -1298,8 +1275,6 @@ gs_restore[2017-07-21 19:16:26]: restore operation successful
 gs_restore[2017-07-21 19:16:26]: total time: 20203  ms
 ```
 
-
-
 ### gs\_backup<a name="ZH-CN_TOPIC_0000001179389636"></a>
 
 #### Background<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_section48401199395"></a>
@@ -1308,9 +1283,9 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
 #### Prerequisites<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_s9649938409774ccdbc6993a90ccb777a"></a>
 
--   openGauss can be connected.
--   During the restoration, backup files exist in the backup directory on all the nodes.
--   Log in to the OS as the OS user **omm** to run the **gs\_backup** command.
+- openGauss can be connected.
+- During the restoration, backup files exist in the backup directory on all the nodes.
+- Log in to the OS as the OS user **omm** to run the **gs\_backup** command.
 
 #### Syntax<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_sa0c0a7aa3d4042fd81017d22ca1e8cac"></a>
 
@@ -1337,7 +1312,6 @@ After openGauss is deployed, problems and exceptions may occur during database r
   ```
   gs_backup -V | --version
   ```
-
 
 #### Parameter Description<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_s2fa71feeaad041f293de868e52bb5907"></a>
 
@@ -1373,7 +1347,6 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
     Default value: **$GAUSSLOG/om/gs\_backup-YYYY-MM-DD\_hhmmss.log**
 
-
 - Parameters for restoring the database host:
 
   - -h
@@ -1408,7 +1381,6 @@ After openGauss is deployed, problems and exceptions may occur during database r
 
     Forcibly restores static files on a node after the files are lost. This parameter is valid only when **--all** or **--binary** is used together.
 
-
 - Other parameters:
 
   - -?, --help
@@ -1424,8 +1396,6 @@ After openGauss is deployed, problems and exceptions may occur during database r
     Specifies the operation type.
 
     The value can be **backup** or **restore**.
-
-
 
 #### Example<a name="en-us_topic_0289899241_en-us_topic_0287276003_en-us_topic_0237152406_en-us_topic_0059777806_sdebe53579dba4bb8a7dad8e21dbcb342"></a>
 

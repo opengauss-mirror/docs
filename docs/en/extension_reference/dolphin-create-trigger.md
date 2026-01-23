@@ -6,14 +6,14 @@
 
 ## Precautions<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sd48f2980b9464b1abca65a4747930552"></a>
 
--   Currently, triggers can be created only on ordinary row-store tables, instead of on column-store tables, temporary tables, or unlogged tables.
--   If multiple triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name.
--   Triggers are usually used for data association and synchronization between multiple tables. SQL execution performance is greatly affected. Therefore, you are advised not to use this statement when a large amount of data needs to be synchronized and performance requirements are high.
--   To create a trigger, you must have the TRIGGER permission on the specified table or have the CREATE ANY TRIGGER permission.
+- Currently, triggers can be created only on ordinary row-store tables, instead of on column-store tables, temporary tables, or unlogged tables.
+- If multiple triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name.
+- Triggers are usually used for data association and synchronization between multiple tables. SQL execution performance is greatly affected. Therefore, you are advised not to use this statement when a large amount of data needs to be synchronized and performance requirements are high.
+- To create a trigger, you must have the TRIGGER permission on the specified table or have the CREATE ANY TRIGGER permission.
 
 ## Syntax<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s93c6eaefe7c447408b7d42ff86e6035f"></a>
 
--   **O-compatible syntax for creating a trigger**
+- **O-compatible syntax for creating a trigger**
 
 ```
 CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
@@ -25,7 +25,7 @@ CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { eve
     EXECUTE PROCEDURE function_name ( arguments );
 ```
 
--   **MySQL-compatible syntax for creating a trigger**
+- **MySQL-compatible syntax for creating a trigger**
 
 ```
 CREATE [ CONSTRAINT ] [ DEFINER=user ] TRIGGER [ IF NOT EXISTS ] trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
@@ -55,37 +55,37 @@ Where **trigger\_order** is:
 
 ## Parameter Description<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
--   **CONSTRAINT**
+- **CONSTRAINT**
 
     (Optional) Creates a constraint trigger. That is, the trigger is used as a constraint. Such a trigger is similar to a regular trigger except that the timing of the trigger firing can be adjusted using **SET CONSTRAINTS**. Constraint triggers must be **AFTER ROW** triggers.
 
--   **DEFINER**
+- **DEFINER**
 
     (Optional) Affects the permission control of the referenced object within the trigger.
 
--   **IF NOT EXISTS**
+- **IF NOT EXISTS**
 
     (Optional) Prevents errors if triggers have the same name, table, or table in the same schema.
 
--   **trigger\_name**
+- **trigger\_name**
 
     Specifies the name of the trigger to be created. This must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified — the trigger inherits the schema of its table. For a constraint trigger, this is also the name to use when modifying the trigger's behavior using [SET CONSTRAINTS](../sql_reference/set_constraints.md).
 
     Value range: a string, which complies with the identifier naming convention and contains a maximum of 63 characters.
 
--   **BEFORE**
+- **BEFORE**
 
     Specifies that the function is called before the event.
 
--   **AFTER**
+- **AFTER**
 
     Specifies that a trigger function is called after the trigger event. A constraint trigger can only be specified as **AFTER**.
 
--   **INSTEAD OF**
+- **INSTEAD OF**
 
     Specifies that the function is called instead of the event.
 
--   **event**
+- **event**
 
     Specifies the event that will fire the trigger. Values are **INSERT**, **UPDATE**, **DELETE**, and **TRUNCATE**. Multiple events can be specified using **OR**.
 
@@ -97,40 +97,40 @@ Where **trigger\_order** is:
 
     The trigger will only fire if at least one of the listed columns is mentioned as a target of the **UPDATE** statement. **INSTEAD OF UPDATE** events do not support lists of columns.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table for which the trigger is created.
 
     Value range: name of an existing table in the database
 
--   **referenced\_table\_name**
+- **referenced\_table\_name**
 
     Specifies the name of another table referenced by a constraint. This parameter can be specified only for constraint triggers.
 
     Value range: name of an existing table in the database
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
     Specifies the start time of the trigger. It can only be specified for constraint triggers. Controls whether the constraint can be deferred.
 
     For details, see  [CREATE TABLE](../sql_reference/create_table.md).
 
--   **INITIALLY IMMEDIATE** **| INITIALLY DEFERRED**
+- **INITIALLY IMMEDIATE** **| INITIALLY DEFERRED**
 
     If a constraint is deferrable, the two clauses specify the default time to check the constraint, and can be specified only for constraint triggers.
 
     For details, see  [CREATE TABLE](../sql_reference/create_table.md).
 
--   **FOR EACH ROW | FOR EACH STATEMENT**
+- **FOR EACH ROW | FOR EACH STATEMENT**
 
     Specifies the frequency of firing the trigger.
 
-    -   **FOR EACH ROW**  indicates that the trigger should be fired once for every row affected by the trigger event.
-    -   **FOR EACH STATEMENT**  indicates that the trigger should be fired just once per SQL statement.
+    - **FOR EACH ROW**  indicates that the trigger should be fired once for every row affected by the trigger event.
+    - **FOR EACH STATEMENT**  indicates that the trigger should be fired just once per SQL statement.
 
     If neither is specified, the default is  **FOR EACH STATEMENT**. Constraint triggers can only be marked as  **FOR EACH ROW**.
 
--   **condition**
+- **condition**
 
     Specifies whether the trigger function will actually be executed. If  **WHEN**  is specified, the function will be called only when  **condition**  returns  **true**.
 
@@ -142,7 +142,7 @@ Where **trigger\_order** is:
 
     Note that for constraint triggers, evaluation of the  **WHEN**  condition is not deferred, but occurs immediately after the row update operation is performed.  If the condition does not evaluate to  **true**, then the trigger is not queued for deferred execution.
 
--   **function\_name**
+- **function\_name**
 
     Specifies a user-defined function, which must be declared as taking no parameters and returning data of trigger type. This function is executed when a trigger fires.
 
@@ -164,9 +164,9 @@ Where **trigger\_order** is:
   >
   >The following details trigger types:
   >
-  >-   **INSTEAD OF**  triggers must be marked as  **FOR EACH ROW**  and can be defined only on views.
-  >-   **BEFORE**  and  **AFTER**  triggers on a view must be marked as  **FOR EACH STATEMENT**.
-  >-   **TRUNCATE**  triggers must be marked as  **FOR EACH STATEMENT**.
+  >- **INSTEAD OF**  triggers must be marked as  **FOR EACH ROW**  and can be defined only on views.
+  >- **BEFORE**  and  **AFTER**  triggers on a view must be marked as  **FOR EACH STATEMENT**.
+  >- **TRUNCATE**  triggers must be marked as  **FOR EACH STATEMENT**.
   
   **Table  1**  Types of triggers supported on tables and views
   
@@ -304,7 +304,6 @@ Where **trigger\_order** is:
   </tbody>
   </table>
 
-
 ## Examples<a name="en-us_topic_0283137165_en-us_topic_0237122123_en-us_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
 ```
@@ -397,29 +396,29 @@ db_mysql=# create table animals (id INT, name CHAR(30));
 db_mysql=# create table food (id INT, foodtype VARCHAR(32), remark VARCHAR(32), time_flag TIMESTAMP);
 --Create a MySQL trigger that is compatible with the definer syntax.
 db_mysql=# create definer=test_user trigger trigger1
-					after insert on test_mysql_trigger_src_tbl
-					for each row
-					begin 
-    				 insert into test_mysql_trigger_des_tbl values(1);
-					end;
-					/
+     after insert on test_mysql_trigger_src_tbl
+     for each row
+     begin 
+         insert into test_mysql_trigger_des_tbl values(1);
+     end;
+     /
 --Create a MySQL trigger that is compatible with the trigger_order syntax.
 db_mysql=# create trigger animal_trigger1
- 					after insert on animals
-					for each row
-					begin
-    				 insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
-					end;
-					/
+      after insert on animals
+     for each row
+     begin
+         insert into food(id, foodtype, remark, time_flag) values (1,'ice cream', 'sdsdsdsd', now());
+     end;
+     /
 --Create a MySQL trigger that is compatible with FOLLOWS.
 db_mysql=# create trigger animal_trigger2
-					after insert on animals
-					for each row
-					follows animal_trigger1
-					begin
-    				 insert into food(id, foodtype, remark, time_flag) values (2,'chocolate', 'sdsdsdsd', now());
-					end;
-					/
+     after insert on animals
+     for each row
+     follows animal_trigger1
+     begin
+         insert into food(id, foodtype, remark, time_flag) values (2,'chocolate', 'sdsdsdsd', now());
+     end;
+     /
 db_mysql=# create trigger animal_trigger3
           after insert on animals
           for each row

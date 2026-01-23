@@ -46,9 +46,9 @@ numa_node  | reserved_size        | used_size
 
 Where –
 
--   -1 is the total memory.
+- -1 is the total memory.
 
--   0..7 are NUMA memory nodes.
+- 0..7 are NUMA memory nodes.
 
 ## MOT LOCAL Memory Details<a name="section229193717315"></a>
 
@@ -76,8 +76,8 @@ numa_node  | reserved_size      | used_size
 
 Where –
 
--   -1 is the total memory.
--   0..7 are NUMA memory nodes.
+- -1 is the total memory.
+- 0..7 are NUMA memory nodes.
 
 ## Session Memory<a name="section106911232543"></a>
 
@@ -100,9 +100,9 @@ sessid                   | total_size | free_size | used_size
 
 Legend –
 
--   **total\_size –**  is allocated for the session
--   **free\_size –**  not in use
--   **used\_size –**  In actual use
+- **total\_size –**  is allocated for the session
+- **free\_size –**  not in use
+- **used\_size –**  In actual use
 
 The following query enables a DBA to determine the state of local memory used by the current session –
 
@@ -114,4 +114,3 @@ select * from mot_session_memory_detail()
 Result –
 
 ![](figures/en-us_image_0270643558.png)
-

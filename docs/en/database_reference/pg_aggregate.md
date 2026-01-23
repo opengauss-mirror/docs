@@ -109,4 +109,3 @@ PG\_AGGREGATE records information about aggregate functions. Each entry in  **PG
 </tr>
 </tbody>
 </table>
-

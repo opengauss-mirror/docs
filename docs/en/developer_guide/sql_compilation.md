@@ -14,7 +14,6 @@
 
 ## Data Loading and Uninstalling<a name="section45234071153513"></a>
 
-
 \[Proposal\] Provide the inserted column list in the insert statement. Example:
 
 ```
@@ -142,7 +141,7 @@ SELECT id, from_image_id, from_person_id, from_video_id FROM face_data where tim
 
 \[Proposal\] If the service logic is accurate, you are advised to use  **UNION ALL**  instead of  **UNION**.
 
-\[Proposal\] If a filter condition contains only an  **OR**  expression, convert the  **OR **expression to  **UNION ALL**  to improve performance. SQL statements that use  **OR**  expressions cannot be optimized, resulting in slow execution. Example:
+\[Proposal\] If a filter condition contains only an  **OR**  expression, convert the  **OR**expression to  **UNION ALL**  to improve performance. SQL statements that use  **OR**  expressions cannot be optimized, resulting in slow execution. Example:
 
 ```
 SELECT * FROM scdc.pub_menu 
@@ -177,7 +176,8 @@ SELECT * FROM T1 WHERE NOT EXISTS (SELECT  * FROM T1,T2 WHERE T1.C1=T2.C2);
 ```
 
 >[!NOTE]NOTE 
->-   If the value of the T1.C1 column is not  **NOT NULL**, the preceding rewriting cannot be performed.
->-   If the  **T1.C1**  column is the output of a subquery, check whether the output is  **NOT NULL**  based on the service logic.
+>
+>- If the value of the T1.C1 column is not  **NOT NULL**, the preceding rewriting cannot be performed.
+>- If the  **T1.C1**  column is the output of a subquery, check whether the output is  **NOT NULL**  based on the service logic.
 
 \[Proposal\] Use cursors instead of the  **LIMIT OFFSET**  syntax to perform pagination queries to avoid resource overheads caused by multiple executions. A cursor must be used in a transaction, and you must disable the cursor and commit the transaction once the query is finished.

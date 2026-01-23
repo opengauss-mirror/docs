@@ -37,7 +37,6 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE table_name
     CREATE TABLE t_new (WITH temp_t(a, b) AS (SELECT a, b FROM t_old) SELECT * FROM temp_t);
     ```
 
-
 ## Examples<a name="en-us_topic_0283136662_en-us_topic_0237122118_en-us_topic_0059777601_sa7f2698f298f4001b3a283cb912f1f4d"></a>
 
 ```

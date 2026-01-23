@@ -5,6 +5,7 @@
 data-migration项目目前版本为1.0.0。
 
 ## 功能特性介绍
+
 1. 可将MySQL源端数据库通过在线或离线的方式将数据迁移至openGauss目的端数据库。
 
 2. 实现MySQL迁移前预检查，Datakit通过调用Portal命令进行全量迁移、反向迁移以及增量迁移前预检查，保证迁移任务成功率。
@@ -20,11 +21,12 @@ data-migration项目目前版本为1.0.0。
 7. 优化全量校验详情展示
 
 ## 版本使用注意事项
+
 - data-migration为一个Java 插件，在构建时需确保配置Java 17+的JDK。
 
 ## 安装说明
 
-- ```
+- ```shell
   #下载源码：
   git clone git@gitee.com:opengauss/openGauss-workbench.git
   #进入根目录
@@ -37,6 +39,7 @@ data-migration项目目前版本为1.0.0。
 - 打开并登录openGauss Datakit，点击插件管理-安装插件，将上诉步骤获得的安装包上传并安装。
 
 ## DataKit安装Portal说明
+
 1. Datakit成功安装data-migration插件。
 
    ![data-migration](figures/data_migration_plugin.png)
@@ -87,7 +90,7 @@ data-migration项目目前版本为1.0.0。
    
       ![migrationmigration_portal_offline3.png](figures/migrationmigration_portal_offline3.png)
    
-   -  已安装导入
+   - 已安装导入
    
       ![migrationmigration_portal_import.png](figures/migrationmigration_portal_import.png)
 
@@ -103,6 +106,7 @@ data-migration项目目前版本为1.0.0。
    ![migration_portal_run.png](figures/migration_portal_run.png)
 
 ## Portal离线安装步骤
+
 数据迁移插件底层依赖Portal组件，在任务执行时如果执行机器未安装Portal，将会执行Portal的安装，因为安装过程时间较长，因此可选择在执行机器上提前安
 装Portal，安装步骤如下。
 
@@ -130,6 +134,7 @@ data-migration项目目前版本为1.0.0。
 2. 以上命令中的"非root用户名"需要跟换成实际操作用户名。
 
 ## 数据迁移步骤
+
 对于在线模式的迁移任务，任务启动后，会首先进入全量迁移阶段，将MySQL端的数据迁移至目标库，全量迁移结束后会进入全量校验阶段，会输出每个表的校验结果；
 之后进入增量迁移阶段，增量迁移阶段会同步执行增量校验。详情界面可以看到迁移过程状态信息。
 
@@ -185,11 +190,11 @@ data-migration项目目前版本为1.0.0。
    迁移任务在迁移过程中(包括在线迁移、反向迁移)出现异常，可点击一键恢复或者重启按钮，重新拉起迁移任务进程。
    在线迁移任务详情进入在线/反向迁移阶段时，展示connect-source 和connect-sink状态选项，绿色表示迁移进程正常，红色表示迁移进程挂起。
    1. 在线任务重启
-    点击对应一键修复，完成进程重启
-   
-    ![img.png](figures/migrationmigration_task_connect1.png)
+      点击对应一键修复，完成进程重启
+      
+      ![img.png](figures/migrationmigration_task_connect1.png)
 
    2. 反向任务重启
-      点击对应一键修复，完成进程重启
+         点击对应一键修复，完成进程重启
 
-   ![img.png](figures/migrationmigration_task_connect2.png)
+      ![img.png](figures/migrationmigration_task_connect2.png)

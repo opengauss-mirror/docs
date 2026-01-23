@@ -6,25 +6,24 @@ Indexes accelerate data access but increase the processing time of insertion, up
 
 Indexes are created based on columns in database tables. Therefore, you must correctly identify which columns require indexes. You are advised to create indexes for any of the following columns:
 
--   Columns that are often searched and queried. This speeds up searches.
--   Columns that function as primary keys. This enforces the uniqueness of the columns and the data collation structures in organized tables.
--   Columns that are often searched by range. The index helps collate data, and therefore the specified ranges are contiguous.
--   Columns that often need to be collated. The index helps collate data, reducing the time for a collation query.
--   Columns where the  **WHERE**  clause is executed frequently. This speeds up condition judgment.
--   Columns that often appear after the keywords  **ORDER BY**,  **GROUP BY**, and  **DISTINCT**.
+- Columns that are often searched and queried. This speeds up searches.
+- Columns that function as primary keys. This enforces the uniqueness of the columns and the data collation structures in organized tables.
+- Columns that are often searched by range. The index helps collate data, and therefore the specified ranges are contiguous.
+- Columns that often need to be collated. The index helps collate data, reducing the time for a collation query.
+- Columns where the  **WHERE**  clause is executed frequently. This speeds up condition judgment.
+- Columns that often appear after the keywords  **ORDER BY**,  **GROUP BY**, and  **DISTINCT**.
 
     [!NOTE]NOTE   
-    -   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.  
-    -   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.  
-    -   Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index corresponds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.  
-
+    - After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.  
+    - After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.  
+    - Partitioned table indexes are classified into LOCAL indexes and GLOBAL indexes. A LOCAL index corresponds to a specific partition, and a GLOBAL index corresponds to the entire partitioned table.  
 
 ## Procedure<a name="en-us_topic_0237120308_en-us_topic_0059777978_scba43baf1cd54d06a22160699ec2c658"></a>
 
 For details about how to create a partitioned table, see  [Creating and Managing Partitioned Tables](creating_and_managing_partitioned_tables.md).
 
--   Creating an index
-    -   Create the LOCAL index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name for a partitioned table.
+- Creating an index
+    - Create the LOCAL index  **tpcds\_web\_returns\_p2\_index1**  without specifying the partition name for a partitioned table.
 
         ```
         postgres=# CREATE INDEX tpcds_web_returns_p2_index1 ON tpcds.web_returns_p2 (ca_address_id) LOCAL;
@@ -36,7 +35,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
         CREATE INDEX
         ```
 
-    -   Create the LOCAL index  **tpcds\_web\_returns\_p2\_index2**  with the partition name specified for a partitioned table.
+    - Create the LOCAL index  **tpcds\_web\_returns\_p2\_index2**  with the partition name specified for a partitioned table.
 
         ```
         postgres=# CREATE INDEX tpcds_web_returns_p2_index2 ON tpcds.web_returns_p2 (ca_address_sk) LOCAL
@@ -58,15 +57,14 @@ For details about how to create a partitioned table, see  [Creating and Managing
         CREATE INDEX
         ```
 
-    -   Create the GLOBAL index  **tpcds\_web\_returns\_p2\_global\_index**  for a partitioned table.
+    - Create the GLOBAL index  **tpcds\_web\_returns\_p2\_global\_index**  for a partitioned table.
 
         ```
         CREATE INDEX tpcds_web_returns_p2_global_index ON tpcds.web_returns_p2 (ca_street_number) GLOBAL;
         ```
 
-
--   Modifying the tablespace of an index partition
-    -   Change the tablespace of index partition  **web\_returns\_p2\_P2\_index**  to  **example1**.
+- Modifying the tablespace of an index partition
+    - Change the tablespace of index partition  **web\_returns\_p2\_P2\_index**  to  **example1**.
 
         ```
         postgres=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P2_index TABLESPACE example1;
@@ -78,7 +76,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
         ALTER INDEX
         ```
 
-    -   Change the tablespace of index partition  **web\_returns\_p2\_P3\_index**  to  **example2**.
+    - Change the tablespace of index partition  **web\_returns\_p2\_P3\_index**  to  **example2**.
 
         ```
         postgres=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P3_index TABLESPACE example2;
@@ -90,8 +88,7 @@ For details about how to create a partitioned table, see  [Creating and Managing
         ALTER INDEX
         ```
 
-
--   Renaming an index partition
+- Renaming an index partition
 
     Rename the name of index partition  **web\_returns\_p2\_P8\_index**  to  **web\_returns\_p2\_P8\_index\_new**.
 
@@ -105,21 +102,20 @@ For details about how to create a partitioned table, see  [Creating and Managing
     ALTER INDEX
     ```
 
--   Querying indexes
-    -   Run the following command to query all indexes defined by the system and users:
+- Querying indexes
+    - Run the following command to query all indexes defined by the system and users:
 
         ```
         postgres=# SELECT RELNAME FROM PG_CLASS WHERE RELKIND='i' or RELKIND='I';
         ```
 
-    -   Run the following command to query information about a specified index:
+    - Run the following command to query information about a specified index:
 
         ```
         postgres=# \di+ tpcds.tpcds_web_returns_p2_index2 
         ```
 
-
--   Dropping an index
+- Dropping an index
 
     ```
     postgres=# DROP INDEX tpcds.tpcds_web_returns_p2_index1;
@@ -132,12 +128,12 @@ For details about how to create a partitioned table, see  [Creating and Managing
     DROP INDEX
     ```
 
-
 openGauss supports four methods for creating indexes. For details, see  [Table 1](#en-us_topic_0237120308_en-us_topic_0059777978_tf6189b97ccf4474e871a7a982b53c2e4).
 
 [!NOTE]NOTE   
--   After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.  
--   After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.  
+
+- After an index is created, the system automatically determines when to reference it. If the system determines that indexing is faster than sequenced scanning, the index will be used.  
+- After an index is successfully created, it must be synchronized with the associated table to ensure new data can be accurately located, which increases the data operation load. Therefore, delete unnecessary indexes periodically.  
 
 **Table  1**  Indexing methods
 
@@ -171,16 +167,14 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
 </tbody>
 </table>
 
-
--   Create an ordinary table.
+- Create an ordinary table.
 
     ```
     postgres=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_address;
     INSERT 0 0
     ```
 
-
--   Create an ordinary index.
+- Create an ordinary index.
 
     For the  **tpcds.customer\_address\_bak**  table, you need to perform the following operations frequently:
 
@@ -197,7 +191,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     CREATE INDEX
     ```
 
--   Create a multi-column index.
+- Create a multi-column index.
 
     Assume you need to frequently query records with  **ca\_address\_sk**  being  **5050**  and  **ca\_street\_number**  smaller than  **1000**  in the  **tpcds.customer\_address\_bak**  table. Run the following commands:
 
@@ -212,7 +206,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     CREATE INDEX
     ```
 
--   Create a partial index.
+- Create a partial index.
 
     If you only want to find records whose  **ca\_address\_sk**  is  **5050**, you can create a partial index to facilitate your query.
 
@@ -221,7 +215,7 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     CREATE INDEX
     ```
 
--   Create an expression index.
+- Create an expression index.
 
     Assume that you need to frequently query records with  **ca\_street\_number**  smaller than  **1000**, run the following command:
 
@@ -236,11 +230,9 @@ openGauss supports four methods for creating indexes. For details, see  [Table 1
     CREATE INDEX
     ```
 
--   Delete the  **tpcds.customer\_address\_bak**  table.
+- Delete the  **tpcds.customer\_address\_bak**  table.
 
     ```
     postgres=# DROP TABLE tpcds.customer_address_bak;
     DROP TABLE
     ```
-
-

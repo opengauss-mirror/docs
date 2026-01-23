@@ -4,15 +4,14 @@ This section describes the method configuration, cost constants, planning algori
 
 >[!NOTE]NOTE 
 >Two parameters are involved in the optimizer:
->-   _INT\_MAX_  indicates the maximum value of the INT data type. The value is  **2147483647**.
->-   _DBL\_MAX_  indicates the maximum value of the FLOAT data type.
+>
+>- _INT\_MAX_  indicates the maximum value of the INT data type. The value is  **2147483647**.
+>- _DBL\_MAX_  indicates the maximum value of the FLOAT data type.
 
--   **[Optimizer Method Configuration](optimizer-method-configuration.md)**  
+- **[Optimizer Method Configuration](optimizer-method-configuration.md)**  
 
--   **[Optimizer Cost Constants](optimizer-cost-constants.md)**  
+- **[Optimizer Cost Constants](optimizer-cost-constants.md)**  
 
--   **[Genetic Query Optimizer](genetic-query-optimizer.md)**  
+- **[Genetic Query Optimizer](genetic-query-optimizer.md)**  
 
--   **[Other Optimizer Options](other-optimizer-options.md)**  
-
-
+- **[Other Optimizer Options](other-optimizer-options.md)**  

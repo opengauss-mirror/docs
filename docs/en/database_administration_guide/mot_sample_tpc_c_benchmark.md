@@ -121,11 +121,11 @@ Follow the instructions in the  [MOT Server Optimization – x86](mot_server_opt
 
 For example, to test TPCC, the  **BenchmarkSQL**  can be used, as follows –
 
--   Download  **benchmarksql**  from the following link –  [https://osdn.net/frs/g\_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip](https://osdn.net/frs/g_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip)
--   The schema creation scripts in the  **benchmarksql**  tool need to be adjusted to MOT syntax and unsupported DDLs need to be avoided. The adjusted scripts can be directly downloaded from the following link –  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz). The contents of this tar file includes sql.common.opengauss.mot folder and jTPCCTData.java file as well as a sample configuration file postgresql.conf and a TPCC properties file props.mot for reference.
--   Place the sql.common.opengauss.mot folder in the same level as sql.common under run folder and replace the file src/client/jTPCCTData.java with the downloaded java file.
--   Edit the file runDatabaseBuild.sh under run folder to remove  **extraHistID**  from  **AFTER\_LOAD**  list to avoid unsupported alter table DDL.
--   Replace the JDBC driver under lib/postgres folder with the openGauss JDBC driver available from the following link –  [https://opengauss.org/en/download/](https://opengauss.org/en/download/).
+- Download  **benchmarksql**  from the following link –  [https://osdn.net/frs/g\_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip](https://osdn.net/frs/g_redir.php?m=kent&f=benchmarksql%2Fbenchmarksql-5.0.zip)
+- The schema creation scripts in the  **benchmarksql**  tool need to be adjusted to MOT syntax and unsupported DDLs need to be avoided. The adjusted scripts can be directly downloaded from the following link –  [https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz](https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/MOT-TPCC-Benchmark.tar.gz). The contents of this tar file includes sql.common.opengauss.mot folder and jTPCCTData.java file as well as a sample configuration file postgresql.conf and a TPCC properties file props.mot for reference.
+- Place the sql.common.opengauss.mot folder in the same level as sql.common under run folder and replace the file src/client/jTPCCTData.java with the downloaded java file.
+- Edit the file runDatabaseBuild.sh under run folder to remove  **extraHistID**  from  **AFTER\_LOAD**  list to avoid unsupported alter table DDL.
+- Replace the JDBC driver under lib/postgres folder with the openGauss JDBC driver available from the following link –  [https://opengauss.org/en/download/](https://opengauss.org/en/download/).
 
 The only change done in the downloaded java file \(compared to the original one\) was to comment the error log printing for serialization and duplicate key errors. These errors are normal in case of MOT, since it uses Optimistic Concurrency Control \(OCC\) mechanism.
 
@@ -138,15 +138,15 @@ Anyone can run the benchmark by starting up the server and running the  **benchm
 
 To run the benchmark –
 
-1.  Go to the  **benchmarksql**  run folder and rename sql.common to sql.common.orig.
-2.  Create a link sql.common to sql.common.opengauss.mot in order to test MOT.
-3.  Start up the database server.
-4.  Configure the props.pg file in the client.
-5.  Run the benchmark.
+1. Go to the  **benchmarksql**  run folder and rename sql.common to sql.common.orig.
+2. Create a link sql.common to sql.common.opengauss.mot in order to test MOT.
+3. Start up the database server.
+4. Configure the props.pg file in the client.
+5. Run the benchmark.
 
 ## Results Report<a name="section536317187211"></a>
 
--   Results in CLI
+- Results in CLI
 
     BenchmarkSQL results should appear as follows –
 
@@ -156,7 +156,7 @@ To run the benchmark –
 
     The score is  **2.71M tmp-C**  \(new-orders per-minute\), which is 45% of the total committed transactions, meaning the  **tpmTOTAL**.
 
--   Detailed Result Report
+- Detailed Result Report
 
     The following is an example of a detailed result report –
 
@@ -169,7 +169,7 @@ To run the benchmark –
 
     This information can show the latency of the queries, and thus expose bottlenecks related to storage/network/CPU.
 
--   Results of TPC-C of MOT on Huawei Taishan 2480
+- Results of TPC-C of MOT on Huawei Taishan 2480
 
     Our TPC-C benchmark dated 01-May-2020 with an openGauss database installed on Taishan 2480 server \(a 4-socket ARM/Kunpeng server\), achieved a throughput of 4.79M tpm‑C.
 
@@ -177,5 +177,3 @@ To run the benchmark –
 
     **Figure  2**  Results of TPC-C of MOT on Huawei Taishan 2480<a name="fig19612208102319"></a>  
     ![](figures/results-of-tpc-c-of-mot-on-huawei-taishan-2480.png "results-of-tpc-c-of-mot-on-huawei-taishan-2480")
-
-

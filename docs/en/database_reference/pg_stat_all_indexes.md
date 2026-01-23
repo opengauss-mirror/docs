@@ -80,4 +80,3 @@ Indexes can be used via either simple index scans or "bitmap" index scans. In a 
 </tr>
 </tbody>
 </table>
-

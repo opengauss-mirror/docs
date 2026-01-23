@@ -6,9 +6,9 @@ Change the user name in the database.
 
 ## Precautions <a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_sdcf8f26a27a64e52b7099ca3ce0256b6"></a>
 
--   RENAME USER changes the user name. Only the user name of the current table can be changed.
--   If multiple users are modified and one of the user names does not exist or fails to be executed due to other reasons, the entire statement fails and all user names remain unchanged.
--   It is equivalent to ALTER USER... RENAME TO....
+- RENAME USER changes the user name. Only the user name of the current table can be changed.
+- If multiple users are modified and one of the user names does not exist or fails to be executed due to other reasons, the entire statement fails and all user names remain unchanged.
+- It is equivalent to ALTER USER... RENAME TO....
 
 ## Syntax <a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s6fa866d73d5c4158836c9fdd0ad5b3ac"></a>
 
@@ -22,9 +22,9 @@ RENAME USER
 
 ## Parameter Description <a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_sa6ea557919e84c0db8ed5cbb227fa983"></a>
 
--   **old_user** 
+- **old_user** 
     Old user name, which must exist.
--    **new_user** 
+- **new_user** 
     New user name
 
 ## Examples <a name="en-us_topic_0283136462_en-us_topic_0237122152_en-us_topic_0059778107_s1af12a7c6e4e456f9fc72da9c90358ff"></a>

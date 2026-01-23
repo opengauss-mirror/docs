@@ -35,10 +35,9 @@ PGconn *PQconnectdb(const char *conninfo);
 
 ## Precautions<a name="en-us_topic_0241735614_en-us_topic_0237120433_en-us_topic_0059777949_sb1b6942996a64e589fdfdfb1c00fa519"></a>
 
--   This function establishes a new database connection using the parameters taken from the string  **conninfo**.
--   The input parameter can be empty, indicating that all default parameters can be used. It can contain one or more values separated by spaces or contain a URL.
+- This function establishes a new database connection using the parameters taken from the string  **conninfo**.
+- The input parameter can be empty, indicating that all default parameters can be used. It can contain one or more values separated by spaces or contain a URL.
 
 ## Example<a name="en-us_topic_0241735614_en-us_topic_0237120433_en-us_topic_0059777949_s14d206561091447bbb06bac48d8fee66"></a>
 
 For details, see  [Example](example_libpq.md).
-

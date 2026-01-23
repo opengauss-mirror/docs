@@ -116,8 +116,8 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Value range**: Boolean
 
--   **on**  indicates that the 64-bit integer format is used.
--   **off**  indicates that the 64-bit integer format is not used.
+- **on**  indicates that the 64-bit integer format is used.
+- **off**  indicates that the 64-bit integer format is not used.
 
 **Default value**:  **on**
 
@@ -165,8 +165,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   If this parameter is set to  **on**, the delta merge operation internally increases the lock level. In this way, when the  **DELTAMERGE**  operation is concurrently performed with the  **UPDATE**  or  **DELETE**  operation, one operation can be performed only after the previous one is complete.
--   If this parameter is set to  **off**  and the  **DELTAMERGE**  operation is concurrently performed with the  **UPDATE**  or  **DELETE**  operation to the data in a row in the delta table of the table, errors will be reported during the later operation, and the operation will stop.
+- If this parameter is set to  **on**, the delta merge operation internally increases the lock level. In this way, when the  **DELTAMERGE**  operation is concurrently performed with the  **UPDATE**  or  **DELETE**  operation, one operation can be performed only after the previous one is complete.
+- If this parameter is set to  **off**  and the  **DELTAMERGE**  operation is concurrently performed with the  **UPDATE**  or  **DELETE**  operation to the data in a row in the delta table of the table, errors will be reported during the later operation, and the operation will stop.
 
 **Default value**:  **off**
 
@@ -254,8 +254,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: enumerated values
 
--   **ignore_null**: ignores rows that violate non-null constraints.
--   **overwrite_null**: overwrites the null value that violates the constraint to the default value of the target type.
+- **ignore_null**: ignores rows that violate non-null constraints.
+- **overwrite_null**: overwrites the null value that violates the constraint to the default value of the target type.
 
 **Default value**: **ignore_null**
 
@@ -267,8 +267,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the query covering the OBS is accelerated based on the cost when the computing resource pool is available.
--   **off**  indicates that no query is accelerated using the computing resource pool.
+- **on**  indicates that the query covering the OBS is accelerated based on the cost when the computing resource pool is available.
+- **off**  indicates that no query is accelerated using the computing resource pool.
 
 **Default value**:  **off**
 
@@ -287,7 +287,6 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Parameter description:** Whether authorized users are permitted to remotely execute the granted DDL privileges, which include `CREATE, DROP, ALTER, TRUNCATE, INDEX, VACUUM, COMMENT`.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
 
 **Value range:**  \[off,on\]
 

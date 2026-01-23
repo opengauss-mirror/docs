@@ -12,7 +12,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
 8. THe ```UNCOMPRESSED_LENGTH``` function is added.
 9. THe ```WEIGHT_STRING``` function is added.
 
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     Description: Specifies the number of bits in a string. For binary input, the value is padded up to a multiple of 8.
 
@@ -34,7 +34,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   insert\(des text, start int, length int, src text\)
+- insert\(des text, start int, length int, src text\)
 
     Description: Inserts a new string at a specified position of the original string and replaces a certain number of characters in the original string from the specified position.
 
@@ -50,7 +50,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   lcase\(string\)
+- lcase\(string\)
 
     Description: Converts a string to lowercase, equivalent to **lower**.
 
@@ -66,7 +66,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   length\(string\)
+- length\(string\)
 
     Description: Obtains the number of characters in a string. For multi-character encoding (such as Chinese), the number of bytes is returned.
 
@@ -173,12 +173,12 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   locate\(substring, string \[,position\]\)
+- locate\(substring, string \[,position\]\)
 
     Description: From the specified **position** (**1** by default) in the string on, queries and returns the value of **position** where the substring occurs for the first time. Parameters are case-sensitive.
 
-    -   If the value of **position** is **0**, 0 is returned.
-    -   If the value of **position** is negative, the search is performed backwards from the last *n*th character in the string, in which *n* indicates the absolute value of **position**.
+    - If the value of **position** is **0**, 0 is returned.
+    - If the value of **position** is negative, the search is performed backwards from the last *n*th character in the string, in which *n* indicates the absolute value of **position**.
 
     Return type: integer. If the character string does not exist, **0** is returned.
 
@@ -204,7 +204,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     Description: It is equivalent to **length**.
 
@@ -220,7 +220,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   source\_string regexp pattern
+- source\_string regexp pattern
 
     Description: Indicates the pattern matching operator of a regular expression.
 
@@ -238,7 +238,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   source\_string not regexp pattern
+- source\_string not regexp pattern
 
     Description: Reverses the result of regexp.
 
@@ -256,7 +256,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   source\_string rlike pattern
+- source\_string rlike pattern
 
     Description: It is equivalent to **regexp**.
 
@@ -274,7 +274,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   ucase\(string\)
+- ucase\(string\)
 
     Description: Converts the string into the uppercase. It is equivalent to **upper**.
 
@@ -290,7 +290,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   bin(number or string)
+- bin(number or string)
 
     Description: Returns a binary string of N integers or numeric characters. For Chinese characters, 0 is returned.
 
@@ -312,7 +312,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   char(any)
+- char(any)
 
     Description: Converts multiple digits into multiple characters based on ASCII codes.
 
@@ -328,7 +328,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   char_length (string) or character_leng (string)
+- char_length (string) or character_leng (string)
 
     Description: Specifies the number of characters in a character string. The length of a Chinese character is 1. The binary type is supported.
 
@@ -349,7 +349,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   convert(expr using transcoding_name)
+- convert(expr using transcoding_name)
 
     Description: Converts expr based on the encoding mode specified by transcoding\_name.
     Note: By default, the database supports the following format: convert(string bytea, src\_encoding name, dest\_encoding name), where the bytea is converted using the encoding mode specified by dest\_encoding. In Dolphin, transcoding\_name after USING can be used to specify the encoding mode to convert expr, and the preceding three parameters are not supported.
@@ -372,7 +372,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   elt(number, str1,str2,str3,...)
+- elt(number, str1,str2,str3,...)
 
     Description: Returns the *N*th string.
 
@@ -388,7 +388,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
     
--   field(str, str1,str2,str3,...)
+- field(str, str1,str2,str3,...)
 
     Description: Obtains the position of str in strn. The position is case insensitive.
 
@@ -404,7 +404,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
     
--   find_in_set(str, strlist)
+- find_in_set(str, strlist)
 
     Description: Obtains the position of str in strlist. The position is case insensitive and is separated by commas (,).
 
@@ -420,7 +420,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   space(number)
+- space(number)
 
     Description: Returns *N* spaces.
 
@@ -436,7 +436,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   soundex(str)
+- soundex(str)
 
     Description: Returns the algorithm that describes the alphanumeric pattern of the speech representation of the specified string.
 
@@ -452,7 +452,7 @@ Compared with the original openGauss, Dolphin modifies character processing func
     (1 row)
     ```
 
--   make_set(number, string1, string2, ...)
+- make_set(number, string1, string2, ...)
 
     Description: Returns a set value (a string containing substrings separated by commas) consisting of a string with the corresponding bit set in number. string1 corresponds to bit 0, string2 corresponds to bit 1, and so on.
     NULL values in string1, string2, ... are not added to the result.
@@ -562,14 +562,14 @@ Compared with the original openGauss, Dolphin modifies character processing func
     
   ``` 
 
-
--   export_set(bits, on, off, separator, number of bits)
+- export_set(bits, on, off, separator, number of bits)
 
     Description: Returns a string that will display the number of digits. This function requires five independent variables to work. This function converts the first parameter (integer) to a binary number. If the binary number is 1, **on** is returned. If the binary number is 0, **off** is returned.
 
     Return type: text
     
     Example:
+
     ```sql
     openGauss=# SELECT EXPORT_SET(5,'Y','N',',',5);
      export_set 
@@ -594,15 +594,11 @@ Compared with the original openGauss, Dolphin modifies character processing func
 
     - If the number of bytes in the input character string is not a multiple of three, the remaining bytes are converted according to the encoding rule. If a byte is less than eight bits, 0s are padded to the least significant bits to fill eight bits, and '=' is used to fill four bytes in the conversion result. If the last group contains only two bytes, every six bits form a group, and the third group contains only four bits, pad two 0s to the least significant bits, pad two 0s to the most significant bits of the three groups, convert the three groups into three characters, and add an equal sign (=) to the end of the three groups. If the last group contains only one byte, every six bits form a group, and the second group contains only two bits, four 0s need to be padded to the lower bits. Then, two 0s need to be padded to the upper bits of the two groups to convert the two groups into two characters, and two equal signs (=) need to be added to the end of the two groups.
 
-    
-
     Decoding rules:
 
     - Represent the input string in binary mode and remove the two 0s from the high-order bits of each byte.
     - According to the encoding rule, the number of correct encoding bytes must be a multiple of 4. If there is an equal sign (=) at the end, 0s in the least significant bits of the last byte except the equal sign (=) are removed based on the number of equal signs (=). If there is an equal sign (=) at the end, that is, the last four bytes are '\*\*\*=', convert the first three bytes into binary and delete the last two zeros. If there are two equal signs (=) at the end, that is, the last four bytes are '\*\*==', in this case, the first two bytes are converted into binary digits and then the last four 0s are deleted.
     - The bytes after the high-order 0s are removed are combined in sequence, and every eight bits are converted into a character.
-
-    
 
     Example 1: YWJj
 
@@ -628,16 +624,17 @@ Compared with the original openGauss, Dolphin modifies character processing func
         (1 row)
         
     ``` 
+
 - ORD(str)
 
   Description:
     Returns the value of the leftmost character of **str** and use the following formula to calculate the value of the byte formed by the character:
+
     ```
       (1st byte code)
     + (2nd byte code  256)
     + (3rd byte code  256^2) ...
     ```
-
 
   Return type: INT
 

@@ -6,7 +6,7 @@
 
 openGauss provides tools to check database and instance status, ensuring that databases and instances are running properly to provide data services.
 
--   Check instance status.
+- Check instance status.
 
     ```
     gs_check -U omm -i CheckClusterState
@@ -20,30 +20,29 @@ openGauss provides tools to check database and instance status, ensuring that da
 
   In the above command, parameter_name needs to be replaced with a specific parameter name.
 
--   Modify parameters.
+- Modify parameters.
 
     ```
     gs_guc reload  -D /gaussdb/data/dbnode -c "paraname=value"
     ```
 
-
 ### Checking Lock Information<a name="en-us_topic_0237088794_en-us_topic_0059778434_s8e22677f9faf4758ad39f7d6d1dde863"></a>
 
 The lock mechanism is an important method to ensure data consistency. Information check helps learn database transactions and database running status.
 
--   Query lock information in the database.
+- Query lock information in the database.
 
     ```
     openGauss=# SELECT * FROM pg_locks;
     ```
 
--   Query the status of threads waiting to acquire locks.
+- Query the status of threads waiting to acquire locks.
 
     ```
     openGauss=# SELECT * FROM pg_thread_wait_status WHERE wait_status = 'acquire lock';
     ```
 
--   Kill a system process.
+- Kill a system process.
 
     Search for a system process that is running and run the following command to end the process:
 
@@ -52,12 +51,11 @@ The lock mechanism is an important method to ensure data consistency. Informatio
     kill -9 pid
     ```
 
-
 ### Collecting Event Statistics<a name="en-us_topic_0237088794_en-us_topic_0059778434_s6506801e729943aba510e2fe669ad8a1"></a>
 
 Long-time running of SQL statements will occupy a lot of system resources. You can check event occurrence time and occupied memory to learn about database running status.
 
--   Query the time points about an event.
+- Query the time points about an event.
 
     Run the following command to query the thread start time, transaction start time, SQL start time, and status change time of the event:
 
@@ -65,13 +63,13 @@ Long-time running of SQL statements will occupy a lot of system resources. You c
     openGauss=# SELECT backend_start,xact_start,query_start,state_change FROM pg_stat_activity;
     ```
 
--   Query the number of sessions on the current server.
+- Query the number of sessions on the current server.
 
     ```
     openGauss=# SELECT count(*) FROM pg_stat_activity;
     ```
 
--   Query system-level statistics.
+- Query system-level statistics.
 
     Run the following command to query information about the session that uses the maximum memory:
 
@@ -79,47 +77,45 @@ Long-time running of SQL statements will occupy a lot of system resources. You c
     openGauss=# SELECT * FROM pv_session_memory_detail() ORDER BY usedsize desc limit 10;
     ```
 
-
 ### Checking Objects<a name="en-us_topic_0237088794_en-us_topic_0059778434_s8dae86ca711b4f24a076b0cffaa04b97"></a>
 
 Tables, indexes, partitions, and constraints are key storage objects of a database. A database administrator needs to routinely maintain key information and these objects.
 
--   View table details.
+- View table details.
 
     ```
     openGauss=# \d+ table_name 
     ```
 
--   Query table statistics.
+- Query table statistics.
 
     ```
     openGauss=# SELECT * FROM pg_statistic;
     ```
 
--   View index details.
+- View index details.
 
     ```
     openGauss=# \d+ index_name
     ```
 
--   Query partitioned table information.
+- Query partitioned table information.
 
     ```
     openGauss=# SELECT * FROM pg_partition;
     ```
 
--   Collect statistics.
+- Collect statistics.
 
     Run the  **ANALYZE**  statement to collect related statistics on the database.
 
     Run the  **VACUUM**  statement to reclaim space and update statistics.
 
--   Query constraint information.
+- Query constraint information.
 
     ```
     openGauss=# SELECT * FROM pg_constraint;
     ```
-
 
 ### Checking an SQL Report<a name="en-us_topic_0237088794_en-us_topic_0059778434_sb5b215f4b4a6440c97da40f66359217d"></a>
 
@@ -129,42 +125,40 @@ Run the  **EXPLAIN**  statement to view execution plans.
 
 Never forget to back up data. During the routine work, the backup execution and backup data validity need to be checked to ensure data security and encryption security.
 
--   Export a specified user.
+- Export a specified user.
 
     ```
     gs_dump dbname -p port -f out.sql -U user_name -W password
     ```
 
--   Export a schema.
+- Export a schema.
 
     ```
     gs_dump dbname -p port -n schema_name -f out.sql
     ```
 
--   Export a table.
+- Export a table.
 
     ```
     gs_dump dbname -p port -t table_name -f out.sql
     ```
 
-
 ### Checking Basic Information<a name="en-us_topic_0237088794_en-us_topic_0059778434_s35aa1e60db1042848a9f4f06413bcb4f"></a>
 
 Basic information includes versions, components, and patches. Periodic database information checks and records are important for database life cycle management.
 
--   Check version information.
+- Check version information.
 
     ```
     openGauss=# SELECT version();
     ```
 
--   Check table size and database size.
+- Check table size and database size.
 
     ```
     openGauss=# SELECT pg_table_size('table_name');
     openGauss=# SELECT pg_database_size('database_name');
     ```
-
 
 ## Checking OS Parameters
 
@@ -174,22 +168,21 @@ Use the  **gs\_checkos**  tool provided by openGauss to check the OS status.
 
 **Prerequisites**
 
--   The hardware and network are working properly.
--   The trust relationship of user  **root**  among the hosts is normal.
--   Only user  **root**  is authorized to run the  **gs\_checkos**  command.
+- The hardware and network are working properly.
+- The trust relationship of user  **root**  among the hosts is normal.
+- Only user  **root**  is authorized to run the  **gs\_checkos**  command.
 
 **Procedure**
 
 1. Log in to a server as user  **root**.
 
-2.  Run the following command to check OS parameters of servers where the openGauss nodes are deployed:
+2. Run the following command to check OS parameters of servers where the openGauss nodes are deployed:
 
     ```
     gs_checkos -i A
     ```
 
     The purpose of checking the OS parameters is to ensure that openGauss is preinstalled properly and can ffic²nìÃy operate after it is installed. For details about the check items, see "Server Tools > gs_checkos" in the Tool Reference.
-
 
 **Examples**
 
@@ -241,43 +234,41 @@ gs_checkos -i A --detail
 
 The  **Abnormal**  state cannot be ignored because the OS in this state affects cluster installation. The  **Warning**  state does not affect cluster installation and thereby can be ignored.
 
--   If the check result for OS version status \(**A1**\) is  **Abnormal**, replace OSs out of the mixed programming scope with those within the scope.
--   If the check result for kernel version status \(**A2**\) is  **Warning**, the platform kernel versions in the cluster are inconsistent.
--   If the check result for Unicode status \(**A3**\) is  **Abnormal**, set the same character set for all the hosts. You can add  **export LANG=***unicode*  to the  **/etc/profile**  file.
+- If the check result for OS version status \(**A1**\) is  **Abnormal**, replace OSs out of the mixed programming scope with those within the scope.
+- If the check result for kernel version status \(**A2**\) is  **Warning**, the platform kernel versions in the cluster are inconsistent.
+- If the check result for Unicode status \(**A3**\) is  **Abnormal**, set the same character set for all the hosts. You can add  **export LANG=***unicode*  to the  **/etc/profile**  file.
 
     ```
     vim /etc/profile
     ```
 
--   If the check result for time zone status \(**A4**\) is  **Abnormal**, set the same time zone for all the hosts. You can copy the time zone file in the  **/usr/share/zoneinfo/**  directory as the  **/etc/localtime**  file.
+- If the check result for time zone status \(**A4**\) is  **Abnormal**, set the same time zone for all the hosts. You can copy the time zone file in the  **/usr/share/zoneinfo/**  directory as the  **/etc/localtime**  file.
 
     ```
     cp /usr/share/zoneinfo/$primary time zone/$secondary time zone /etc/localtime
     ```
 
--   If the check result for swap memory status \(**A5**\) is  **Abnormal**, a possible cause is that the swap memory is larger than the physical memory. You can troubleshoot this issue by reducing the swap memory or increasing the physical memory.
--   If the check result for system control parameter status \(**A6**\) is  **Abnormal**, troubleshoot this issue in either of the following two ways:
-    -   Run the following command:
+- If the check result for swap memory status \(**A5**\) is  **Abnormal**, a possible cause is that the swap memory is larger than the physical memory. You can troubleshoot this issue by reducing the swap memory or increasing the physical memory.
+- If the check result for system control parameter status \(**A6**\) is  **Abnormal**, troubleshoot this issue in either of the following two ways:
+    - Run the following command:
 
         ```
         gs_checkos -i B1
         ```
 
-    -   Modify the  **/etc/sysctl.conf**  file based on the error message and run  **sysctl -p**  to make it take effect.
+    - Modify the  **/etc/sysctl.conf**  file based on the error message and run  **sysctl -p**  to make it take effect.
 
         ```
         vim /etc/sysctl.conf
         ```
 
-
-
--   If the check result for file system configuration status \(**A7**\) is  **Abnormal**, run the following command to troubleshoot this issue:
+- If the check result for file system configuration status \(**A7**\) is  **Abnormal**, run the following command to troubleshoot this issue:
 
     ```
     gs_checkos -i B2
     ```
 
--   If the check result for disk configuration status \(**A8**\) is  **Abnormal**, set the disk mounting format to  **rw,noatime,inode64,allocsize=16m**.
+- If the check result for disk configuration status \(**A8**\) is  **Abnormal**, set the disk mounting format to  **rw,noatime,inode64,allocsize=16m**.
 
     Run the  **man mount**  command to mount the XFS parameter:
 
@@ -291,51 +282,49 @@ The  **Abnormal**  state cannot be ignored because the OS in this state affects 
     /dev/data /data xfs rw,noatime,inode64,allocsize=16m 0 0
     ```
 
--   If the check result for pre-read block size status \(**A9**\) is  **Abnormal**, run the following command to troubleshoot this issue:
+- If the check result for pre-read block size status \(**A9**\) is  **Abnormal**, run the following command to troubleshoot this issue:
 
     ```
     gs_checkos -i B3
     ```
 
--   If the check result for I/O scheduling status \(**A10**\) is  **Abnormal**, run the following command to troubleshoot this issue:
+- If the check result for I/O scheduling status \(**A10**\) is  **Abnormal**, run the following command to troubleshoot this issue:
 
     ```
     gs_checkos -i B4
     ```
 
--   If the check result for NIC configuration status \(**A11**\) is  **Warning**, run the following command to troubleshoot this issue:
+- If the check result for NIC configuration status \(**A11**\) is  **Warning**, run the following command to troubleshoot this issue:
 
     ```
     gs_checkos -i B5
     ```
 
--   If the check result for time consistency status \(**A12**\) is  **Abnormal**, verify that the NTP service has been installed and started and has synchronized time from the NTP clock.
--   If the check result for firewall status \(**A13**\) is  **Abnormal**, disable the firewall. Run the following commands:
-    -   SUSE:
+- If the check result for time consistency status \(**A12**\) is  **Abnormal**, verify that the NTP service has been installed and started and has synchronized time from the NTP clock.
+- If the check result for firewall status \(**A13**\) is  **Abnormal**, disable the firewall. Run the following commands:
+    - SUSE:
 
         ```
         SuSEfirewall2 stop
         ```
 
-    -   RedHat7:
+    - RedHat7:
 
         ```
         systemctl disable firewalld
         ```
 
-    -   RedHat6:
+    - RedHat6:
 
         ```
         service iptables stop
         ```
 
-
--   If the check result for THP service status \(**A14**\) is  **Abnormal**, run the following command to troubleshoot this issue:
+- If the check result for THP service status \(**A14**\) is  **Abnormal**, run the following command to troubleshoot this issue:
 
     ```
     gs_checkos -i B6
     ```
-
 
 ## Checking openGauss Health Status
 
@@ -345,18 +334,18 @@ Use the  **gs\_check**  tool provided by openGauss to check the openGauss health
 
 **Precautions**
 
--   Only user  **root**  is authorized to check new nodes added during cluster scale-out. In other cases, the check can be performed only by user  **omm**.
--   Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
--   If  **-i**  is not set to a  **root**  item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of user  **root**.
--   You can run  **--skip-root-items**  to skip  **root**  items.
--   Check the consistency between the new node and existing nodes. Run the  **gs\_check**  command on an existing node and specify the  **--hosts**  parameter. The IP address of the new node needs to be written into the  **hosts**  file.
+- Only user  **root**  is authorized to check new nodes added during cluster scale-out. In other cases, the check can be performed only by user  **omm**.
+- Parameter  **-i**  or  **-e**  must be set.  **-i**  specifies a single item to be checked, and  **-e**  specifies an inspection scenario where multiple items will be checked.
+- If  **-i**  is not set to a  **root**  item or no such items are contained in the check item list of the scenario specified by  **-e**, you do not need to enter the name or password of user  **root**.
+- You can run  **--skip-root-items**  to skip  **root**  items.
+- Check the consistency between the new node and existing nodes. Run the  **gs\_check**  command on an existing node and specify the  **--hosts**  parameter. The IP address of the new node needs to be written into the  **hosts**  file.
 
 **Procedure**
 
 Method 1:
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to check the openGauss database status:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to check the openGauss database status:
 
     ```
     gs_check -i CheckClusterState
@@ -366,11 +355,10 @@ Method 1:
 
     Checkable items are listed in "Server Tools \> gs\_check \> openGauss status checks" in the  *openGauss Tool Reference*. You can create a check item as needed.
 
-
 Method 2:
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to check the openGauss database health status:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to check the openGauss database health status:
 
     ```
     gs_check -e inspect
@@ -379,7 +367,6 @@ Method 2:
     In the command,  **-e**  indicates the inspection scenario and is case-sensitive. The format is  **-e inspect**  or  **-e upgrade**.
 
     The inspection scenarios include  **inspect**  \(routine inspection\),  **upgrade**  \(inspection before upgrade\),  **Install**  \(install inspection ),  **binary\_upgrade**  \(inspection before in-place upgrade\), **slow_node**  \(node inspection\), **longtime**  \(time-consuming inspection\) and  **health**  \(health inspection\). You can create an inspection scenario as needed.
-
 
 The openGauss inspection is performed to check openGauss status during openGauss running or to check the environment and conditions before critical operations, such as upgrade or scale-out. For details about the inspection items and scenarios, see "Server Tools \> gs\_check \> openGauss status checks" in the  *openGauss Tool Reference*.
 
@@ -1008,10 +995,6 @@ ClientAliveInterval=10800/ClientAliveInterval=0</pre>
 </tbody>
 </table>
 
-
-
-
-
 ## Checking Database Performance
 
 ### Check Method<a name="section61381340192910"></a>
@@ -1020,18 +1003,17 @@ Use the  **gs\_checkperf**  tool provided by openGauss to check hardware perform
 
 **Prerequisites**
 
--   openGauss is running properly.
--   Services are running properly on the database.
+- openGauss is running properly.
+- Services are running properly on the database.
 
 **Procedure**
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to check the openGauss database performance:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to check the openGauss database performance:
 
     ```
     gs_checkperf
     ```
-
 
 For details about performance statistical items, see "Server Tools \> gs\_checkperf \> Performance Check Items" in the  *openGauss Tool Reference*.
 
@@ -1202,13 +1184,13 @@ A database can still run when errors occur during the execution of some operatio
 
 **Prerequisites**
 
--   The host used for collecting logs is running properly, and the network connection is normal. Database installation users trust each other.
--   An OS tool \(for example,  **gstack**\) that the log collection tool requires has been installed. If it is not installed, an error message is displayed, and this collection item is skipped.
+- The host used for collecting logs is running properly, and the network connection is normal. Database installation users trust each other.
+- An OS tool \(for example,  **gstack**\) that the log collection tool requires has been installed. If it is not installed, an error message is displayed, and this collection item is skipped.
 
 **Procedure**
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  <a name="en-us_topic_0237088806_en-us_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab"></a>Run the following command to collect database logs:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. <a name="en-us_topic_0237088806_en-us_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab"></a>Run the following command to collect database logs:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59"
@@ -1216,7 +1198,7 @@ A database can still run when errors occur during the execution of some operatio
 
     In the command,  **20160616 01:01**  indicates the start time of the log and  **20160616 23:59**  indicates the end time of the log.
 
-3.  Based on command output in  [2](#en-us_topic_0237088806_en-us_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab), access the related log collection directory, decompress collected database logs, and check these logs.
+3. Based on command output in  [2](#en-us_topic_0237088806_en-us_topic_0059778412_l87490fc259434bc6ac7800ec9881a6ab), access the related log collection directory, decompress collected database logs, and check these logs.
 
     Assume that collected logs are stored in  **/opt/gaussdb/tmp/gaussdba\_mppdb/collector\_20160726\_105158.tar.gz**.
 
@@ -1225,10 +1207,9 @@ A database can still run when errors occur during the execution of some operatio
     cd /opt/gaussdb/tmp/gaussdba_mppdb/collector_20160726_105158
     ```
 
-
 **Examples**
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**  and  **--end-time**:
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**  and  **--end-time**:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59"
@@ -1241,7 +1222,7 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_175615.tar.gz.
     ```
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-h**:
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-h**:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -h plat2
@@ -1254,7 +1235,7 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_190225.tar.gz.
     ```
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-f**:
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-f**:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -f /opt/software/gaussdb/output
@@ -1267,7 +1248,7 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /opt/software/gaussdb/output/collector_20160616_190511.tar.gz.
     ```
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **--keyword**:
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **--keyword**:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" --keyword="os"
@@ -1280,7 +1261,7 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /tmp/gaussdba_mppdb/collector_20160616_190836.tar.gz.
     ```
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-o**:
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-o**:
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -o /opt/software/gaussdb/output
@@ -1293,7 +1274,7 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /opt/software/gaussdb/output/collector_20160726_113711.tar.gz.
     ```
 
--   Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-l**  \(the file name extension must be .log\):
+- Run the  **gs\_collector**  command together with parameters  **--begin-time**,  **--end-time**, and  **-l**  \(the file name extension must be .log\):
 
     ```
     gs_collector --begin-time="20160616 01:01" --end-time="20160616 23:59" -l /opt/software/gaussdb/logfile.log
@@ -1306,15 +1287,14 @@ A database can still run when errors occur during the execution of some operatio
     All results are stored in /opt/software/gaussdb/output/collector_20160726_113711.tar.gz.
     ```
 
-
 ### Cleaning Run Logs<a name="section12607174612366"></a>
 
 A large number of run logs will be generated during database running and occupy huge disk space. You are advised to delete expired run logs and retain logs generated within one month.
 
 **Procedure**
 
-1.  Log in as the OS user  **omm**  to any host in the GaussDB Kernel cluster.
-2.  Clean logs.
+1. Log in as the OS user  **omm**  to any host in the GaussDB Kernel cluster.
+2. Clean logs.
 
     a. Back up logs generated over one month ago to other disks.
 
@@ -1332,16 +1312,14 @@ A large number of run logs will be generated during database running and occupy 
 
     The naming convention of a log file is  **postgresql-***year*-*month*-*day***\_HHMMSS**.
 
-
-
 ## Checking Time Consistency
 
 Database transaction consistency is guaranteed by a logical clock and is not affected by OS time. However, OS time inconsistency will lead to problems, such as abnormal backend O&M and monitoring functions. Therefore, you are advised to monthly check time consistency among nodes.
 
 ### Procedure<a name="en-us_topic_0237088808_en-us_topic_0059777703_s7110d1c3f93a4bdea6f206e6709de04f"></a>
 
-1.  Log in as the OS user  **omm**  to any host in the GaussDB Kernel cluster.
-2.  Create a configuration file for recording each cluster node. \(You can specify the  *mpphosts*  file directory randomly. It is recommended that the file be stored in the  **/tmp**  directory.\)
+1. Log in as the OS user  **omm**  to any host in the GaussDB Kernel cluster.
+2. Create a configuration file for recording each cluster node. \(You can specify the  *mpphosts*  file directory randomly. It is recommended that the file be stored in the  **/tmp**  directory.\)
 
     ```
     vim /tmp/mpphosts
@@ -1355,19 +1333,19 @@ Database transaction consistency is guaranteed by a logical clock and is not aff
     plat3
     ```
 
-3.  Save the configuration file.
+3. Save the configuration file.
 
     ```
     :wq!
     ```
 
-4.  Run the following command and write the time on each node into the  **/tmp/sys\_ctl-os1.log**  file:
+4. Run the following command and write the time on each node into the  **/tmp/sys\_ctl-os1.log**  file:
 
     ```
     for ihost in `cat /tmp/mpphosts`; do ssh -n -q $ihost "hostname;date"; done > /tmp/sys_ctl-os1.log
     ```
 
-5.  Check time consistency between the nodes based on the command output. The time difference should not exceed 30s.
+5. Check time consistency between the nodes based on the command output. The time difference should not exceed 30s.
 
     ```
     cat /tmp/sys_ctl-os1.log
@@ -1379,15 +1357,14 @@ Database transaction consistency is guaranteed by a logical clock and is not aff
     Thu Feb  9 16:46:14 CST 2017
     ```
 
-
 ## Checking the Number of Application Connections
 
 If the number of connections between applications and the database exceeds the maximum value, new connections cannot be established. You are advised to daily check the number of connections, release idle connections in time, or increase the allowed maximum number of connections.
 
 ### Procedure<a name="en-us_topic_0237088809_en-us_topic_0059777858_s8aaa4c4f54fe4b97b5bf3a874789aad6"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -1405,7 +1382,7 @@ If the number of connections between applications and the database exceeds the m
     openGauss=#  
     ```
 
-3.  Run the following SQL statement to check the number of connections:
+3. Run the following SQL statement to check the number of connections:
 
     ```
     openGauss=#  SELECT count(*) FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS s;
@@ -1420,7 +1397,7 @@ If the number of connections between applications and the database exceeds the m
     (1 row)
     ```
 
-4.  View the allowed maximum connections.
+4. View the allowed maximum connections.
 
     ```
     openGauss=# SHOW max_connections;
@@ -1435,12 +1412,11 @@ If the number of connections between applications and the database exceeds the m
     (1 row)
     ```
 
-
 ### Exception Handling<a name="en-us_topic_0237088809_en-us_topic_0059777858_sd21b84e4719d479daa8c2a0a7bef2589"></a>
 
 If the number of connections in the command output is close to the value of  **max\_connections**  of the database, delete existing connections or change the upper limit based on site requirements.
 
-1.  Run the following SQL statement to view information about connections whose  **state**  is set to  **idle**, and  **state\_change**  column is not updated for a long time.
+1. Run the following SQL statement to view information about connections whose  **state**  is set to  **idle**, and  **state\_change**  column is not updated for a long time.
 
     ```
     openGauss=#  SELECT * FROM pg_stat_activity where state='idle' order by state_change;
@@ -1468,7 +1444,7 @@ If the number of connections in the command output is close to the value of  **m
     (2 rows)
     ```
 
-2.  Release idle connections.
+2. Release idle connections.
 
     Check each connection and release them after obtaining approval from the users of the connections. Run the following SQL command to release a connection using  **pid**  obtained in the previous step:
 
@@ -1488,7 +1464,7 @@ If the number of connections in the command output is close to the value of  **m
 
     If no connections can be released, go to the next step.
 
-3.  Increase the maximum number of connections.
+3. Increase the maximum number of connections.
 
     ```
     gs_guc set -D /gaussdb/data/dbnode -c "max_connections= 800"
@@ -1496,7 +1472,7 @@ If the number of connections in the command output is close to the value of  **m
 
     **800**  is the new maximum value.
 
-4.  Restart database services to make the new settings take effect.
+4. Restart database services to make the new settings take effect.
 
     >[!NOTE]NOTE 
     >The restart results in operation interruption. Properly plan the restart to avoid affecting users.
@@ -1504,7 +1480,6 @@ If the number of connections in the command output is close to the value of  **m
     ```
     gs_om -t stop && gs_om -t start
     ```
-
 
 ## Routinely Maintaining Tables
 
@@ -1514,15 +1489,15 @@ To ensure proper database running, after insert and delete operations, you need 
 
 You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to maintain tables, because:
 
--   **VACUUM FULL**  can be used to reclaim disk space occupied by updated or deleted data and combine small-size data files.
--   **VACUUM**  can be used to maintain a visualized mapping for each table to track pages that contain arrays visible to other active transactions. A common index scan uses the mapping to obtain the corresponding arrays and check whether the arrays are visible to the current transaction. If the arrays cannot be obtained, capture a batch of arrays to check the visibility. Therefore, updating the visualized mapping of a table can accelerate unique index scans.
--   Running  **VACUUM**  can avoid original data loss caused by duplicate transaction IDs when the number of executed transactions exceeds the database threshold.
--   **ANALYZE**  can be used to collect statistics on tables in databases. The statistics are stored in the system catalog  **PG\_STATISTIC**. Then the query optimizer uses the statistics to work out the most efficient execution plan.
+- **VACUUM FULL**  can be used to reclaim disk space occupied by updated or deleted data and combine small-size data files.
+- **VACUUM**  can be used to maintain a visualized mapping for each table to track pages that contain arrays visible to other active transactions. A common index scan uses the mapping to obtain the corresponding arrays and check whether the arrays are visible to the current transaction. If the arrays cannot be obtained, capture a batch of arrays to check the visibility. Therefore, updating the visualized mapping of a table can accelerate unique index scans.
+- Running  **VACUUM**  can avoid original data loss caused by duplicate transaction IDs when the number of executed transactions exceeds the database threshold.
+- **ANALYZE**  can be used to collect statistics on tables in databases. The statistics are stored in the system catalog  **PG\_STATISTIC**. Then the query optimizer uses the statistics to work out the most efficient execution plan.
 
 ### Procedure<a name="en-us_topic_0237088810_en-us_topic_0111591987_en-us_topic_0085032190_en-us_topic_0059779302_section97581768562"></a>
 
-1.  Run the  **VACUUM**  or  **VACUUM FULL**  command to reclaim disk space.
-    -   **VACUUM**:
+1. Run the  **VACUUM**  or  **VACUUM FULL**  command to reclaim disk space.
+    - **VACUUM**:
 
         Run  **VACUUM**  for a table.
 
@@ -1546,7 +1521,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
         VACUUM
         ```
 
-    -   **VACUUM FULL**:
+    - **VACUUM FULL**:
 
         ```
         openGauss=# VACUUM FULL customer;
@@ -1558,7 +1533,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
 
         During the command running, exclusive locks need to be added to the table and all other database operations need to be suspended.
 
-2.  Run  **ANALYZE**  to update statistics.
+2. Run  **ANALYZE**  to update statistics.
 
     ```
     openGauss=# ANALYZE customer;
@@ -1591,7 +1566,7 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     >[!NOTE]NOTE 
     >**VACUUM**  and  **ANALYZE**  cause a substantial increase in I/O traffic, which may affect other active sessions. Therefore, you are advised to set the cost-based vacuum delay feature by specifying the  **vacuum\_cost\_delay**  parameter. For details, see [Cost-based Vacuum Delay](../database_reference/cost-based-vacuum-delay.md).
 
-3.  Delete a table.
+3. Delete a table.
 
     ```
     openGauss=# DROP TABLE customer;
@@ -1605,12 +1580,11 @@ You need to routinely run  **VACUUM**,  **VACUUM FULL**, and  **ANALYZE**  to ma
     DROP TABLE
     ```
 
-
 ### Maintenance Suggestions<a name="en-us_topic_0237088810_en-us_topic_0111591987_en-us_topic_0085032190_en-us_topic_0059779302_section976110616566"></a>
 
--   Routinely run  **VACUUM FULL**  for large tables. If the database performance deteriorates, run  **VACUUM FULL**  for the entire database. If the database performance is stable, you are advised to run  **VACUUM FULL**  monthly.
--   Routinely run  **VACUUM FULL**  on system catalogs, especially  **PG\_ATTRIBUTE**.
--   Enable automatic vacuum processes \(**AUTOVACUUM**\) in the system. The processes automatically run the  **VACUUM**  and  **ANALYZE**  statements to reclaim the record space marked as the deleted state and update statistics in the table.
+- Routinely run  **VACUUM FULL**  for large tables. If the database performance deteriorates, run  **VACUUM FULL**  for the entire database. If the database performance is stable, you are advised to run  **VACUUM FULL**  monthly.
+- Routinely run  **VACUUM FULL**  on system catalogs, especially  **PG\_ATTRIBUTE**.
+- Enable automatic vacuum processes \(**AUTOVACUUM**\) in the system. The processes automatically run the  **VACUUM**  and  **ANALYZE**  statements to reclaim the record space marked as the deleted state and update statistics in the table.
 
 ## Routinely Recreating an Index
 
@@ -1620,8 +1594,8 @@ When data deletion is repeatedly performed in the database, index keys will be d
 
 The database supports B-tree indexes. Recreating a B-tree index routinely helps improve query efficiency.
 
--   If a large amount of data is deleted, index keys on the index pages will be deleted. But index pages will not be directly deleted, that is the number of index pages will not decrease, then index bloat occurs. Recreating an index helps reclaim wasted space.
--   In a newly created index, pages with adjacent logical structures tend to have adjacent physical structures. Therefore, a new index achieves a higher access speed than an index that has been updated for multiple times.
+- If a large amount of data is deleted, index keys on the index pages will be deleted. But index pages will not be directly deleted, that is the number of index pages will not decrease, then index bloat occurs. Recreating an index helps reclaim wasted space.
+- In a newly created index, pages with adjacent logical structures tend to have adjacent physical structures. Therefore, a new index achieves a higher access speed than an index that has been updated for multiple times.
 
 ### Methods<a name="en-us_topic_0237088811_section1483310439110"></a>
 
@@ -1630,58 +1604,63 @@ Use either of the following two methods to recreate an index:
 - Run the  **DROP INDEX**  statement to delete the index and then run the  **CREATE INDEX**  statement to create an index.
 
   When you delete an index, a temporary exclusive lock is added in the parent table to block related read/write operations. During index creation, the write operation is locked, whereas the read operation is not locked and can use only sequential scans.
--   Run  **REINDEX**  to recreate an index.
-    -   When you run the  **REINDEX TABLE**  statement to recreate an index, an exclusive lock is added to block related read/write operations.
-    -   When you run the  **REINDEX INTERNAL TABLE**  statement to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\), an exclusive lock is added to block related read/write operations on the table.
-
+- Run  **REINDEX**  to recreate an index.
+    - When you run the  **REINDEX TABLE**  statement to recreate an index, an exclusive lock is added to block related read/write operations.
+    - When you run the  **REINDEX INTERNAL TABLE**  statement to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\), an exclusive lock is added to block related read/write operations on the table.
 
 ### Procedure<a name="en-us_topic_0237088811_en-us_topic_0059779198_s5066efbb8c0d462694edc169c57822b0"></a>
 
 Assume the ordinary index  **areaS\_idx**  exists in the  **area\_id**  column of the imported table  **areaS**. Use either of the following two methods to recreate an index:
 
--   Run the  **DROP INDEX**  statement to delete the index and run the  **CREATE INDEX**  statement to create an index.
-    1.  Delete the index.
+- Run the  **DROP INDEX**  statement to delete the index and run the  **CREATE INDEX**  statement to create an index.
+    1. Delete the index.
 
         ```
         openGauss=# DROP INDEX areaS_idx;
         ```
+
         If the following information is displayed, the deletion is successful:
+
         ```
         DROP INDEX
         ```
 
-    2.  Create an index
+    2. Create an index
 
         ```
         openGauss=# CREATE INDEX areaS_idx ON areaS (area_id);
         ```
+
         If the following information is displayed, the creation is successful:
+
         ```
         CREATE INDEX
         ```
 
-
--   Run  **REINDEX**  to recreate an index.
-    -   Run  **REINDEX TABLE**  to recreate an index.
+- Run  **REINDEX**  to recreate an index.
+    - Run  **REINDEX TABLE**  to recreate an index.
 
         ```
         openGauss=# REINDEX TABLE areaS;
         ```
+
         If the following information is displayed, the recreating is successful:
+
         ```
         REINDEX
         ```
 
-    -   Run  **REINDEX INTERNAL TABLE**  to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\).
+    - Run  **REINDEX INTERNAL TABLE**  to recreate an index for a  **desc**  table \(such as column-store  **cudesc**  table\).
 
         ```
         openGauss=# REINDEX INTERNAL TABLE areaS;
         ```
+
         If the following information is displayed, the recreating is successful:
+
         ```
         REINDEX
         ```
-
 
 >[!NOTE]NOTE 
 >Before you recreate an index, you can increase the values of  **maintenance\_work\_mem**  and  **psort\_work\_mem**  to accelerate the index recreation.
@@ -1894,8 +1873,6 @@ To generate snapshot data, set **enable\_wdr\_snapshot** to **on**. Accessing WD
    </tbody>
    </table>
 
-
-
 ## Data Security Maintenance Suggestions
 
 To ensure data security in GaussDB Kernel and prevent accidents, such as data loss and illegal data access, read this section carefully.
@@ -1906,19 +1883,19 @@ You are advised to plan routine physical backup and store backup files in a reli
 
 ### Preventing Illegal Data Access<a name="en-us_topic_0237088812_en-us_topic_0085413817_en-us_topic_0059781987_s654ff86682394156a57cf0860791b723"></a>
 
--   You are advised to manage database users based on their permission hierarchies. A database administrator creates users and grants permissions to the users based on service requirements to ensure users properly access the database.
--   You are advised to deploy GaussDB Kernel servers and clients \(or applications developed based on the client library\) in trusted internal networks. If the servers and clients must be deployed in an untrusted network, enable SSL encryption before services are started to ensure data transmission security. Note that enabling the SSL encryption function compromises database performance.
+- You are advised to manage database users based on their permission hierarchies. A database administrator creates users and grants permissions to the users based on service requirements to ensure users properly access the database.
+- You are advised to deploy GaussDB Kernel servers and clients \(or applications developed based on the client library\) in trusted internal networks. If the servers and clients must be deployed in an untrusted network, enable SSL encryption before services are started to ensure data transmission security. Note that enabling the SSL encryption function compromises database performance.
 
 ### Preventing System Logs from Leaking Personal Data<a name="en-us_topic_0237088812_en-us_topic_0085413817_en-us_topic_0059781987_s2ff16280ae30412c9f531f105fd2d6c6"></a>
 
--   Delete personal data before sending debug logs to others for analysis.
+- Delete personal data before sending debug logs to others for analysis.
 
     >[!NOTE]NOTE 
-    >The log level  **log\_min\_messages**  is set to  **DEBUG***x_  \(*x_  indicates the debug level and the value ranges from 1 to 5\). The information recorded in debug logs may contain personal data.
+    >The log level  **log\_min\_messages**  is set to  **DEBUG***x_\(*x_  indicates the debug level and the value ranges from 1 to 5\). The information recorded in debug logs may contain personal data.
 
 - Delete personal data before sending system logs to others for analysis. If the execution of a SQL statement fails, the error SQL statement will be recorded in a system log by default. SQL statements may contain personal data.
 
--   Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. If this function is disabled, it is difficult to locate fault causes when a fault occurs.
+- Set  **log\_min\_error\_statement**  to  **PANIC**  to prevent error SQL statements from being recorded in system logs. If this function is disabled, it is difficult to locate fault causes when a fault occurs.
 
 ## Slow SQL Diagnosis
 
@@ -1928,9 +1905,9 @@ If the SQL statement execution performance does not meet expectations, you can v
 
 ### Prerequisites<a name="section18794625615"></a>
 
--   The database instance is running properly.
--   The GUC parameter **track\_stmt\_stat\_level** is properly set for querying the SQL statement information. The **track\_stmt\_stat\_level** parameter controls the statement execution tracing level. The first part controls full SQL statements, and the second part controls slow SQL statements. For slow SQL statements, if the value of **track\_stmt\_stat\_level** is not **OFF** and the SQL execution time exceeds the value of **log\_min\_duration\_statement**, the SQL statement is recorded as a slow SQL statement. The default value is **"OFF,L0"**. The recommended value is **"L0,L0"**.
--   Only the system administrator and monitor administrator can perform this operation.
+- The database instance is running properly.
+- The GUC parameter **track\_stmt\_stat\_level** is properly set for querying the SQL statement information. The **track\_stmt\_stat\_level** parameter controls the statement execution tracing level. The first part controls full SQL statements, and the second part controls slow SQL statements. For slow SQL statements, if the value of **track\_stmt\_stat\_level** is not **OFF** and the SQL execution time exceeds the value of **log\_min\_duration\_statement**, the SQL statement is recorded as a slow SQL statement. The default value is **"OFF,L0"**. The recommended value is **"L0,L0"**.
+- Only the system administrator and monitor administrator can perform this operation.
 
 ```
 Run the following command to check the execution information about the SQL statements in the database instance:

@@ -36,4 +36,3 @@ PQfreeCancel releases a data object previously created by PQgetCancel.
 ## Example<a name="en-us_topic_0241735637_section1090020191139"></a>
 
 For details, see  [Example](example_libpq.md).
-

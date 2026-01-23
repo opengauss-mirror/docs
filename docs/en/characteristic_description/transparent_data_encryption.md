@@ -30,18 +30,17 @@ None.
 
 The current version interconnects with HUAWEI CLOUD KMS to support table-level key storage and row-store table encryption. The specifications are as follows:
 
--   Encryption of a row-store table stored as a heap is supported.
--   Column-store encryption, materialized view encryption, and ustore storage engine encryption are not supported.
--   Indexes, sequences, Xlogs, MOTs, and system catalogs cannot be encrypted.
--   You can specify an encryption algorithm when creating a table. Once specified, the encryption algorithm cannot be changed. If  **enable\_tde**  is set to  **on**  but the encryption algorithm  **encrypt\_algo**  is not specified when a table is created, the AES-128-CTR encryption algorithm is used by default.
--   If the encryption function is not enabled or the encryption algorithm is not specified when a table is created, the table cannot be switched to an encrypted table.
--   For a table that has been assigned an encryption key, switching between the encrypted and unencrypted states of the table does not change the key or encryption algorithm.
--   Data key rotation is supported only when the table encryption function is enabled.
--   Cross-region primary/standby synchronization of multiple copies in a single cluster is not supported. Cross-region scaling of a single cluster is not supported. Cross-region backup and restoration, cluster DR, and data migration are not supported.
--   In hybrid cloud scenarios, if the HUAWEI CLOUD KMS and management plane functions are used, transparent data encryption is supported. Other KMS services are not supported if their APIs are incompatible.
--   The query performance of encrypted tables is lower than that of non-encrypted tables. If high performance is required, exercise caution when enabling the encryption function.
+- Encryption of a row-store table stored as a heap is supported.
+- Column-store encryption, materialized view encryption, and ustore storage engine encryption are not supported.
+- Indexes, sequences, Xlogs, MOTs, and system catalogs cannot be encrypted.
+- You can specify an encryption algorithm when creating a table. Once specified, the encryption algorithm cannot be changed. If  **enable\_tde**  is set to  **on**  but the encryption algorithm  **encrypt\_algo**  is not specified when a table is created, the AES-128-CTR encryption algorithm is used by default.
+- If the encryption function is not enabled or the encryption algorithm is not specified when a table is created, the table cannot be switched to an encrypted table.
+- For a table that has been assigned an encryption key, switching between the encrypted and unencrypted states of the table does not change the key or encryption algorithm.
+- Data key rotation is supported only when the table encryption function is enabled.
+- Cross-region primary/standby synchronization of multiple copies in a single cluster is not supported. Cross-region scaling of a single cluster is not supported. Cross-region backup and restoration, cluster DR, and data migration are not supported.
+- In hybrid cloud scenarios, if the HUAWEI CLOUD KMS and management plane functions are used, transparent data encryption is supported. Other KMS services are not supported if their APIs are incompatible.
+- The query performance of encrypted tables is lower than that of non-encrypted tables. If high performance is required, exercise caution when enabling the encryption function.
 
 ## Dependencies<a name="section59888241"></a>
 
 The key management service is provided by the external KMS. The current version can interconnect with HUAWEI CLOUD KMS.
-

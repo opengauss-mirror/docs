@@ -11,8 +11,3 @@ Workflow Overview
 The following is a simple overview of the tasks related to working with MOT tables –
 
 ![](figures/en-us_image_0270171684.png)
-
-
-
-
-

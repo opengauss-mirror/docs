@@ -43,4 +43,3 @@ This section describes  **javax.sql.PooledConnection**, the connection API creat
 </tr>
 </tbody>
 </table>
-

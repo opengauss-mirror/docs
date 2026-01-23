@@ -4,15 +4,15 @@ The fully-encrypted database aims to protect privacy throughout the data lifecyc
 
 The entire service data flow is in ciphertext during data processing, so the following can be implemented by using a fully-encrypted database:
 
--   Protects data privacy and security throughout the lifecycle on the cloud. Attackers cannot obtain valid information from the database server regardless of the data status.
--   Helps cloud service providers gain third-party trust. Service administrators, O&M administrators in enterprise service scenarios, and application developers in consumer cloud services can keep keys in their hands so that high-privilege users cannot obtain valid data.
--   Enables cloud database services to better comply with personal privacy protection laws and regulations with the help of the fully-encrypted database.
+- Protects data privacy and security throughout the lifecycle on the cloud. Attackers cannot obtain valid information from the database server regardless of the data status.
+- Helps cloud service providers gain third-party trust. Service administrators, O&M administrators in enterprise service scenarios, and application developers in consumer cloud services can keep keys in their hands so that high-privilege users cannot obtain valid data.
+- Enables cloud database services to better comply with personal privacy protection laws and regulations with the help of the fully-encrypted database.
 
 Currently, the fully-encrypted database supports two connection modes: gsql and JDBC. The following describes how to use the database in the two connection modes.
 
 ## Connecting to a Fully-encrypted Database<a name="section20380155916151"></a>
 
--   Connect to the database using GSQL and run the following command to enable the full encryption function:
+- Connect to the database using GSQL and run the following command to enable the full encryption function:
 
     ```
     gsql -p PORT -d postgres -r -C
@@ -20,11 +20,11 @@ Currently, the fully-encrypted database supports two connection modes: gsql and 
 
     Parameters:
 
-    -   **-p**: port number.
-    -   **-d**: database name.
-    -   **–C**: enables full encryption.
+    - **-p**: port number.
+    - **-d**: database name.
+    - **–C**: enables full encryption.
 
--   To support JDBC operations on a fully-encrypted database, set  **enable\_ce**  to  **1**.
+- To support JDBC operations on a fully-encrypted database, set  **enable\_ce**  to  **1**.
 
 ## Creating a User Key<a name="section47711315142619"></a>
 
@@ -32,7 +32,7 @@ A fully-encrypted database has two types of keys: client master key \(CMK\) and 
 
 The sequence and dependency for creating keys are as follows: Create a CMK and then a CEK.
 
--   **Create a CMK and a CEK in the GSQL environment.**
+- **Create a CMK and a CEK in the GSQL environment.**
 
     **\[Creating a CMK\]**
 
@@ -42,21 +42,21 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
 
     Parameters:
 
-    -   **client\_master\_key\_name**
+    - **client\_master\_key\_name**
 
         Specifies the key name. In the same namespace, the value of this parameter must be unique.
 
         Value range: a string. It must comply with the identifier naming convention.
 
-    -   **KEY\_STORE**
+    - **KEY\_STORE**
 
         Specifies the key tool or component that manages CMKs. Currently, only local KMS is supported.
 
-    -   **KEY\_PATH**
+    - **KEY\_PATH**
 
         **KEY\_STORE**  manages multiple CMKs. The  **KEY\_PATH**  option is used to uniquely identify a CMK in  **KEY\_STORE**. The value is similar to that of  **key\_path\_value**.
 
-    -   **ALGORITHM**
+    - **ALGORITHM**
 
         Specifies the type of the encryption algorithm used to encrypt CEKs. Value range:  **RSA\_2048**,  **RSA3072**, and  **SM2**.
 
@@ -73,25 +73,25 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
 
     Parameters:
 
-    -   **column\_encryption\_key\_name**
+    - **column\_encryption\_key\_name**
 
         Specifies the key name. In the same namespace, the value of this parameter must be unique.
 
         Value range: a string. It must comply with the identifier naming convention.
 
-    -   **CLIENT\_MASTER\_KEY**
+    - **CLIENT\_MASTER\_KEY**
 
         Specifies the CMK used to encrypt the CEK.
 
         The value is the name of a CMK. The CMK object is created using the CREATE CLIENT MASTER KEY syntax.
 
-    -   **ALGORITHM**
+    - **ALGORITHM**
 
         Specifies the encryption algorithm used by the CEK.
 
         The value can be  **AEAD\_AES\_256\_CBC\_HMAC\_SHA256**,  **AEAD\_AES\_128\_CBC\_HMAC\_SHA256**, or  **SM4\_SM3**.
 
-    -   **ENCRYPTED\_VALUE**  \(optional\)
+    - **ENCRYPTED\_VALUE**  \(optional\)
 
         Specifies the key password defined by the user. The key password contains 28 to 256 characters. The security strength of a key containing 28 characters complies with AES128. If AES256 is used, the key password must contain 39 characters. If this parameter is not specified, a 256-bit key is automatically generated.
 
@@ -113,8 +113,7 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
      openGauss=> CREATE COLUMN ENCRYPTION KEY ImgCEK WITH VALUES (CLIENT_MASTER_KEY = alice_cmk, ALGORITHM  = AEAD_AES_256_CBC_HMAC_SHA256); 
     ```
 
-
--   **Create a CMK and a CEK in the JDBC environment.**
+- **Create a CMK and a CEK in the JDBC environment.**
 
     ```
     // Create a CMK.
@@ -124,12 +123,11 @@ The sequence and dependency for creating keys are as follows: Create a CMK and t
      int rc2 = stmt.executeUpdate("CREATE COLUMN ENCRYPTION KEY ImgCEK1 WITH VALUES (CLIENT_MASTER_KEY = ImgCMK1, ALGORITHM  = AEAD_AES_256_CBC_HMAC_SHA256);");
     ```
 
-
 ## Creating an Encrypted Table<a name="section120142113510"></a>
 
 After creating the CMK and CEK, you can use the CEK to create an encrypted table. An encrypted table can be created in two modes: random encryption and deterministic encryption.
 
--   **Create an encrypted table in the GSQL environment.**
+- **Create an encrypted table in the GSQL environment.**
 
     \[Example\]
 
@@ -141,19 +139,17 @@ After creating the CMK and CEK, you can use the CEK to create an encrypted table
 
     For the encryption type in the ENCRYPTED WITH constraint, the value of  **encryption\_type\_value**  can be  **DETERMINISTIC**  or  **RANDOMIZED**.
 
-
--   **Create an encrypted table in the JDBC environment.**
+- **Create an encrypted table in the JDBC environment.**
 
     ```
     int rc3 = stmt.executeUpdate("CREATE TABLE creditcard_info (id_number    int, name  varchar(50) encrypted with (column_encryption_key = ImgCEK, encryption_type = DETERMINISTIC),credit_card  varchar(19) encrypted with (column_encryption_key = ImgCEK1, encryption_type = DETERMINISTIC));");
     ```
 
-
 ## Insert data into the encrypted table and query the data.<a name="section1298375053510"></a>
 
 After an encrypted table is created, you can insert and view data in the encrypted table in fully-encrypted database mode \(by setting connection parameter  **-C**\). When a common environment is used \(the connection parameter  **-C**  is disabled\), the encrypted table cannot be operated, and only ciphertext data can be viewed in the encrypted table.
 
--   **In the GSQL environment, insert data into the encrypted table and view the data.**
+- **In the GSQL environment, insert data into the encrypted table and view the data.**
 
     ```
     openGauss=# INSERT INTO creditcard_info VALUES (1,'joe','6217986500001288393'); 
@@ -179,8 +175,7 @@ After an encrypted table is created, you can insert and view data in the encrypt
      (2 rows)
     ```
 
-
--   **In the JDBC environment, insert data into the encrypted table and view the data.**
+- **In the JDBC environment, insert data into the encrypted table and view the data.**
 
     ```
     // Insert data.
@@ -192,6 +187,4 @@ After an encrypted table is created, you can insert and view data in the encrypt
      stmt.close();
     ```
 
-
 The preceding describes how to use the fully-encrypted database feature. For details, see the corresponding sections in the official document.
-

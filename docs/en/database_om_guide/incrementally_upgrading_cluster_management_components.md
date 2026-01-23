@@ -4,19 +4,19 @@ This chapter describes how to incrementally upgrade cluster management component
 
 ## Procedure<a name=""></a>
 
--   **[Preparing for and Checking the Cluster Management Component Upgrade](#preparing-for-and-checking-the-cluster-management-component-upgrade)** 
--   **[Upgrading Cluster Management Components](#upgrading-cluster-management-components)**
--   **[Checking Cluster Management Components After the Upgrade](#checking-cluster-management-components-after-the-upgrade)** 
+- **[Preparing for and Checking the Cluster Management Component Upgrade](#preparing-for-and-checking-the-cluster-management-component-upgrade)** 
+- **[Upgrading Cluster Management Components](#upgrading-cluster-management-components)**
+- **[Checking Cluster Management Components After the Upgrade](#checking-cluster-management-components-after-the-upgrade)** 
 
 Precautions for incrementally upgrading cluster management components:
 
--   The incremental upgrade cannot be performed together with node scaling.
--   Pre-upgrade operations are not required for the incremental upgrade. For details about how to upgrade cluster management components, see example 6 in [gs_upgradectl](../tool_and_commandreference/gs_upgradectl.md).
--   You are advised to upgrade cluster management components during off-peak hours of the database system.
--   The incremental upgrade needs to be performed using the official component package.
--   Before upgrading cluster management components, ensure that nodes in the cluster can communicate with each other. You can run the **ssh** command on each node to check whether the communication is normal.
--   --**--upgrade-package** is a parameter that specifies the path of the cluster management upgrade package. Before the upgrade, check whether the permissions (owner, owner group, and read/write) on the upgrade package are normal.
--   If you add nodes (using gs\_expansion) after the cluster management component is upgraded, you are advised to upgrade the cluster management components again after adding nodes to ensure that the cluster management components of all nodes are consistent.
+- The incremental upgrade cannot be performed together with node scaling.
+- Pre-upgrade operations are not required for the incremental upgrade. For details about how to upgrade cluster management components, see example 6 in [gs_upgradectl](../tool_and_commandreference/gs_upgradectl.md).
+- You are advised to upgrade cluster management components during off-peak hours of the database system.
+- The incremental upgrade needs to be performed using the official component package.
+- Before upgrading cluster management components, ensure that nodes in the cluster can communicate with each other. You can run the **ssh** command on each node to check whether the communication is normal.
+- --**--upgrade-package** is a parameter that specifies the path of the cluster management upgrade package. Before the upgrade, check whether the permissions (owner, owner group, and read/write) on the upgrade package are normal.
+- If you add nodes (using gs\_expansion) after the cluster management component is upgraded, you are advised to upgrade the cluster management components again after adding nodes to ensure that the cluster management components of all nodes are consistent.
 
 ## Preparing for and Checking the Cluster Management Component Upgrade
 
@@ -96,23 +96,24 @@ Precautions for incrementally upgrading cluster management components:
 
 >[!NOTE]NOTE
 >For details about items 2 to 5 in Table 1, see [Preparing for and Checking the Upgrade](preparing_for_and_checking_the_upgrade.md).
+>
 ## Checking Whether the Installation Version Supports the Upgrade of Cluster Management Components
 
 Log in to the node where cluster management components are upgraded, run the **gs\_upgradectl --help** command, and check whether the value of **-t** in the help information contains the **upgrade-cm** option.
 
-
 ## Upgrading Cluster Management Components
+
 <a name="section17506731105516"></a>
 
-1.  Log in to the node as the cluster user **omm**.
-2.  Create an upgrade package directory.
+1. Log in to the node as the cluster user **omm**.
+2. Create an upgrade package directory.
 
     ```
     mkdir -p /opt/software/cm_upgrade
     ```
 
-3.  Upload the new package to the **/opt/software/cm_upgrade** directory.
-4.  Upgrade the cluster management components. (The package **openGauss-3.1.3-CentOS-64bit-cm.tar.gz** is used as an example. During actual operations, use the package uploaded in step 2.)
+3. Upload the new package to the **/opt/software/cm_upgrade** directory.
+4. Upgrade the cluster management components. (The package **openGauss-3.1.3-CentOS-64bit-cm.tar.gz** is used as an example. During actual operations, use the package uploaded in step 2.)
 
     ```
     gs_upgradectl -t upgrade-cm --upgrade-package /opt/software/cm_upgrade/openGauss-3.1.3-CentOS-64bit-cm.tar.gz
@@ -120,21 +121,23 @@ Log in to the node where cluster management components are upgraded, run the **g
 
 ## Checking Cluster Management Components After the Upgrade
 
-1.  Use the cm\_ctl tool to check whether the cluster status is the same as that before the upgrade or whether the availability status is higher than that before the upgrade.
+1. Use the cm\_ctl tool to check whether the cluster status is the same as that before the upgrade or whether the availability status is higher than that before the upgrade.
 
     ```
     cm_ctl query -Cvd
     ```
 
-2.  Check whether the backup cluster management component package is generated in the temporary directory of the cluster.
+2. Check whether the backup cluster management component package is generated in the temporary directory of the cluster.
 
     ```
     ll $PGHOST
     ```
 
-3.  Check the version of the cluster management components.
+3. Check the version of the cluster management components.
+
     ```
     cm_ctl -V
     ```
+
 >[!NOTE]NOTE
 >After cluster management components are upgraded and nodes are added, the cluster management components on new nodes are not upgraded. You need to upgrade the cluster management components again to upgrade the components on new nodes.

@@ -1,6 +1,6 @@
 # Dolphin Aggregate Functions<a name="EN-US_TOPIC_0289900330"></a>
 
--   any_value\(expression\)
+- any_value\(expression\)
 
     Description: Any expression in all input lines (the first expression by default)
 

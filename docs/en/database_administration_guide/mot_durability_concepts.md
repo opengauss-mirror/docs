@@ -24,16 +24,16 @@ Three logging methods are supported, two standard Synchronous and Asynchronous, 
 
 To ensure Durability, MOT is fully integrated with the openGauss's Write-Ahead Logging \(WAL\) mechanism, so that MOT persists data in WAL records using openGauss's XLOG interface. This means that every addition, update, and deletion to an MOT table's record is recorded as an entry in the WAL. This ensures that the most current data state can be regenerated and recovered from this non-volatile log. For example, if three new rows were added to a table, two were deleted and one was updated, then six entries would be recorded in the log.
 
--   MOT log records are written to the same WAL as the other records of openGauss disk-based tables.
--   MOT only logs an operation at the transaction commit phase.
--   MOT only logs the updated delta record in order to minimize the amount of data written to disk.
--   During recovery, data is loaded from the last known or a specific Checkpoint; and then the WAL Redo log is used to complete the data changes that occur from that point forward.
--   The WAL \(Redo Log\) retains all the table row modifications until a Checkpoint is performed \(as described above\). The log can then be truncated in order to reduce recovery time and to save disk space.
+- MOT log records are written to the same WAL as the other records of openGauss disk-based tables.
+- MOT only logs an operation at the transaction commit phase.
+- MOT only logs the updated delta record in order to minimize the amount of data written to disk.
+- During recovery, data is loaded from the last known or a specific Checkpoint; and then the WAL Redo log is used to complete the data changes that occur from that point forward.
+- The WAL \(Redo Log\) retains all the table row modifications until a Checkpoint is performed \(as described above\). The log can then be truncated in order to reduce recovery time and to save disk space.
 
     >[!NOTE]NOTE 
     >In order to ensure that the log IO device does not become a bottleneck, the log file must be placed on a drive that has low latency.
 
--   Parallel Redo Recovery - Since the openGauss 5.0 version release, the MOT engine includes a Parallel Recovery mechanism. The recovery operations are performed using multiple threads, while the transaction commit is done with a single thread, ensuring transactional consistency. This delivers low RTO for MOT tables as per openGauss specifications.
+- Parallel Redo Recovery - Since the openGauss 5.0 version release, the MOT engine includes a Parallel Recovery mechanism. The recovery operations are performed using multiple threads, while the transaction commit is done with a single thread, ensuring transactional consistency. This delivers low RTO for MOT tables as per openGauss specifications.
 
 ### Logging Types<a name="section1648172420153"></a>
 
@@ -45,9 +45,9 @@ According to your configuration, one of the following types of logging is implem
 
 The  **Synchronous Redo Logging**  option is the simplest and most strict redo logger. When a transaction is committed by a client application, the transaction redo entries are recorded in the WAL \(Redo Log\), as follows –
 
-1.  While a transaction is in progress, it is stored in the MOT's memory.
-2.  After a transaction finishes and the client application sends a **Commit** command, the transaction is locked and then written to the WAL Redo Log on the disk. This means that while the transaction log entries are being written to the log, the client application is still waiting for a response.
-3.  As soon as the transaction's entire buffer is written to the log, the changes to the data in memory take place and then the transaction is committed. After the transaction has been committed, the client application is notified that the transaction is complete.
+1. While a transaction is in progress, it is stored in the MOT's memory.
+2. After a transaction finishes and the client application sends a **Commit** command, the transaction is locked and then written to the WAL Redo Log on the disk. This means that while the transaction log entries are being written to the log, the client application is still waiting for a response.
+3. As soon as the transaction's entire buffer is written to the log, the changes to the data in memory take place and then the transaction is committed. After the transaction has been committed, the client application is notified that the transaction is complete.
 
 ##### **Technical Description**
 
@@ -63,7 +63,7 @@ The downside of the  **Synchronous Redo Logging**  option is that it is the slow
 
 ### Group Synchronous Redo Logging<a name="EN-US_TOPIC_0276133082"></a>
 
-The  **Group Synchronous Redo Logging**  option is very similar to the  **Synchronous Redo Logging**  option, because it also ensures total durability with absolutely no data loss and total synchronization of the client application and the WAL \(Redo Log\) entries. The difference is that the  **Group Synchronous Redo Logging**  option writes  _groups of transaction _redo entries to the WAL Redo Log on the disk at the same time, instead of writing each and every transaction as it is committed. Using Group Synchronous Redo Logging reduces the amount of disk I/Os and thus improves performance, especially when running a heavy workload.
+The  **Group Synchronous Redo Logging**  option is very similar to the  **Synchronous Redo Logging**  option, because it also ensures total durability with absolutely no data loss and total synchronization of the client application and the WAL \(Redo Log\) entries. The difference is that the  **Group Synchronous Redo Logging**  option writes  _groups of transaction_redo entries to the WAL Redo Log on the disk at the same time, instead of writing each and every transaction as it is committed. Using Group Synchronous Redo Logging reduces the amount of disk I/Os and thus improves performance, especially when running a heavy workload.
 
 The MOT engine performs synchronous Group Commit logging with Non-Uniform Memory Access \(NUMA\)-awareness optimization by automatically grouping transactions according to the NUMA socket of the core on which the transaction is running.
 
@@ -77,11 +77,11 @@ When a transaction commits, a group of entries are recorded in the WAL Redo Log,
 
    >[!NOTE]NOTE 
    >
-   >-   Each thread runs on a single core/CPU which belongs to a single socket and each thread only writes to the socket of the core on which it is running.
+   >- Each thread runs on a single core/CPU which belongs to a single socket and each thread only writes to the socket of the core on which it is running.
 
-2.  After a transaction finishes and the client application sends a Commit command, the transaction redo log entries are serialized together with other transactions that belong to the same group.
-3.  After the configured criteria are fulfilled for a specific group of transactions \(quantity of committed transactions or timeout period as describes in the  [REDO LOG \(MOT\)](mot_configuration.md#section361563811235)section\), the transactions in this group are written to the WAL on the disk. This means that while these log entries are being written to the log, the client applications that issued the commit are waiting for a response.
-4.  As soon as all the transaction buffers in the NUMA-aware group have been written to the log, all the transactions in the group are performing the necessary changes to the memory store and the clients are notified that these transactions are complete.
+2. After a transaction finishes and the client application sends a Commit command, the transaction redo log entries are serialized together with other transactions that belong to the same group.
+3. After the configured criteria are fulfilled for a specific group of transactions \(quantity of committed transactions or timeout period as describes in the  [REDO LOG \(MOT\)](mot_configuration.md#section361563811235)section\), the transactions in this group are written to the WAL on the disk. This means that while these log entries are being written to the log, the client applications that issued the commit are waiting for a response.
+4. As soon as all the transaction buffers in the NUMA-aware group have been written to the log, all the transactions in the group are performing the necessary changes to the memory store and the clients are notified that these transactions are complete.
 
 #### **Technical Description**
 
@@ -97,16 +97,15 @@ On one hand this option has fewer disk writes than the  **Synchronous Redo Loggi
 
 The benefits of using this option depend on the type of transactional workload. For example, this option benefits systems that have many transactions \(and less so for systems that have few transactions, because there are few disk writes anyway\).
 
-
 ### Asynchronous Redo Logging<a name="EN-US_TOPIC_0276133083"></a>
 
 The  **Asynchronous Redo Logging**  option is the fastest logging method, However, it does not ensure no data loss, meaning that some data that is still in the buffer and was not yet written to disk may get lost upon a power failure or database crash. When a transaction is committed by a client application, the transaction redo entries are recorded in internal buffers and written to disk at preconfigured intervals. The client application does not wait for the data being written to disk. It continues to the next transaction. This is what makes asynchronous redo logging the fastest logging method.
 
 When a transaction is committed by a client application, the transaction redo entries are recorded in the WAL Redo Log, as follows –
 
-1.  While a transaction is in progress, it is stored in the MOT's memory.
-2.  After a transaction finishes and the client application sends a Commit command, the transaction redo entries are written to internal buffers, but are not yet written to disk. Then changes to the MOT data memory take place and the client application is notified that the transaction is committed.
-3.  At a preconfigured interval, a redo log thread running in the background collects all the buffered redo log entries and writes them to disk.
+1. While a transaction is in progress, it is stored in the MOT's memory.
+2. After a transaction finishes and the client application sends a Commit command, the transaction redo entries are written to internal buffers, but are not yet written to disk. Then changes to the MOT data memory take place and the client application is notified that the transaction is committed.
+3. At a preconfigured interval, a redo log thread running in the background collects all the buffered redo log entries and writes them to disk.
 
 #### **Technical Description**
 
@@ -128,8 +127,7 @@ The following describes the design details of each persistence-related component
 
 The RedoLog component is used by both by backend threads that use the In-Memory Engine and by the WAL writer in order to persist their data. Checkpoints are performed using the Checkpoint Manager, which is triggered by the Postgres checkpointer.
 
-
-#### Additional information:
+#### Additional information
 
 ##### Logging Design Overview<a name="EN-US_TOPIC_0276133416"></a>
 
@@ -150,7 +148,8 @@ In the In-Memory Engine, the transaction log records are stored in a transaction
 **Figure  1**  Per-transaction Logging![](figures/per-transaction-logging.png)
 
 Parallel Logging is performed both by MOT and disk engines. However, the MOT engine enhances this design with a log-buffer per transaction, lockless preparation and a single log record.
--   [Exception Handling](#exception-handling)
+
+- [Exception Handling](#exception-handling)
 
 ##### Exception Handling<a name="EN-US_TOPIC_0276133418"></a>
 
@@ -209,7 +208,6 @@ The following exceptions are reported by this module –
 </tr>
 </tbody>
 </table>
-
 
 ## MOT Checkpoint Concepts<a name="EN-US_TOPIC_0270171540"></a>
 

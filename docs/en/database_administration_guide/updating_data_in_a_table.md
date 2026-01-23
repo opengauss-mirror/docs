@@ -4,9 +4,9 @@ Existing data in a database can be updated. You can update one row, all rows, or
 
 The following types of information are required when the  **UPDATE**  statement is used to update a row:
 
--   Table name and column name of the data to be updated
--   New column value
--   Rows of the data to be updated
+- Table name and column name of the data to be updated
+- New column value
+- Rows of the data to be updated
 
 Generally, the SQL language does not provide a unique ID for a row of data. Therefore, it is impossible to directly specify the rows of the data to be updated. However, you can specify the rows by declaring the conditions that must be met by the updated row. If a table contains primary keys, you can specify a row using the primary keys.
 

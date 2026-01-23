@@ -16,18 +16,17 @@ Users cannot set passwords with low strength to enhance customer data security.
 
 You need to specify a password when initializing a database, creating a user, or modifying a user. The password must meet the strength requirements. Otherwise, the system prompts you to enter the password again. Password complexity requirements:
 
--   Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
--   Minimum number of lowercase letters \(a-z\) \(**password\_min\_lowercase**\)
--   Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
--   Minimum number of special characters \(**password\_min\_special**\)
--   Minimum password length \(**password\_min\_length**\)
--   Maximum password length \(**password\_max\_length**\)
--   A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
--   A password is case insensitive and cannot be the username or the username spelled backwards.
--   A new password cannot be the current password and the current password spelled backwards.
--   It must be a strong password.
-    -   Weak passwords are weak passwords that are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
-
+- Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
+- Minimum number of lowercase letters \(a-z\) \(**password\_min\_lowercase**\)
+- Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
+- Minimum number of special characters \(**password\_min\_special**\)
+- Minimum password length \(**password\_min\_length**\)
+- Maximum password length \(**password\_max\_length**\)
+- A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
+- A password is case insensitive and cannot be the username or the username spelled backwards.
+- A new password cannot be the current password and the current password spelled backwards.
+- It must be a strong password.
+    - Weak passwords are weak passwords that are easy to crack. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
 
 If parameter  **password\_policy**  is set to  **1**, the default password complexity rule is used to check passwords.
 
@@ -55,10 +54,9 @@ In V500R001C10, the weak password dictionary function is implemented.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Initial users, system administrators, and security administrators can view, add, and delete weak password dictionaries.
--   Common users can view but cannot add or delete weak password dictionaries.
+- Initial users, system administrators, and security administrators can view, add, and delete weak password dictionaries.
+- Common users can view but cannot add or delete weak password dictionaries.
 
 ## Dependencies<a name="section22810484"></a>
 
 None
-

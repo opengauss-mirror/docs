@@ -22,15 +22,15 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
-1.  The hardware and network environment must be normal. The size of a logical log is twice that of an Xlog. To ensure that the speed of the Xlog reaches 100 Mbit/s, the I/O bandwidth must be at least 200 Mbit/s. Resources need to be reserved for the reader, decoder, and sender threads. The number of CPU cores to be reserved must be the number of concurrent threads plus 2. For example, if there are four concurrent threads, six CPU cores need to be reserved. In actual scenarios, decoding on the standby node can meet the requirements, and no special resource reservation planning is required. To ensure that the decoding performance meets the requirements and minimize the impact on services, you are advised to set up only one parallel decoding connection on a standby node to ensure that the CPU, memory, and bandwidth resources are sufficient.
-2.  The value of GUC parameter  **wal\_level**  of the log level is  **logical**.
-3.  The GUC parameter  **max\_replication\_slots**  is set to a value greater than or equal to the number of physical streaming replication slots, backup slots, and logical replication slots required by each DN.
-4.  The value of the decoding configuration option  **parallel-decode-num**  is greater than 1 and less than or equal to 20, specifying the number of concurrent decoding threads.
-5.  Decoding into DDL statements is not supported.
-6.  Decoding is not supported for column-store data and data page replication.
-7.  Distributed transactions cannot be decoded. Currently, decoding is performed by DN, which cannot ensure consistency in distributed transaction decoding.
-8.  The size of a single tuple cannot exceed 1 GB. Decoding results may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
-9.  Decoding compressed tables into DML statements is not supported.
+1. The hardware and network environment must be normal. The size of a logical log is twice that of an Xlog. To ensure that the speed of the Xlog reaches 100 Mbit/s, the I/O bandwidth must be at least 200 Mbit/s. Resources need to be reserved for the reader, decoder, and sender threads. The number of CPU cores to be reserved must be the number of concurrent threads plus 2. For example, if there are four concurrent threads, six CPU cores need to be reserved. In actual scenarios, decoding on the standby node can meet the requirements, and no special resource reservation planning is required. To ensure that the decoding performance meets the requirements and minimize the impact on services, you are advised to set up only one parallel decoding connection on a standby node to ensure that the CPU, memory, and bandwidth resources are sufficient.
+2. The value of GUC parameter  **wal\_level**  of the log level is  **logical**.
+3. The GUC parameter  **max\_replication\_slots**  is set to a value greater than or equal to the number of physical streaming replication slots, backup slots, and logical replication slots required by each DN.
+4. The value of the decoding configuration option  **parallel-decode-num**  is greater than 1 and less than or equal to 20, specifying the number of concurrent decoding threads.
+5. Decoding into DDL statements is not supported.
+6. Decoding is not supported for column-store data and data page replication.
+7. Distributed transactions cannot be decoded. Currently, decoding is performed by DN, which cannot ensure consistency in distributed transaction decoding.
+8. The size of a single tuple cannot exceed 1 GB. Decoding results may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
+9. Decoding compressed tables into DML statements is not supported.
 10. GaussDB Kernel supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLILNT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(**_n_**\)**,  **VARCHAR\(**_n_**\)**, and  **TEXT**.
 11. If the SSL connection is required, the GUC parameter  **ssl**  must be set to  **on**.
 12. Interval partitioned tables cannot be replicated.
@@ -43,4 +43,3 @@ None.
 ## Dependencies<a name="section8406643144716"></a>
 
 Decoding is performed on the standby node.
-

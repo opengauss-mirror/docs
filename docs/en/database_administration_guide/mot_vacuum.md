@@ -2,11 +2,11 @@
 
 Use VACUUM for garbage collection and optionally to analyze a database, , as follows –
 
--   \[PG\]
+- \[PG\]
 
     In Postgress \(PG\), the VACUUM reclaims storage occupied by dead tuples. In normal PG operation, tuples that are deleted or that are made obsolete by an update are not physically removed from their table. They remain present until a VACUUM is done. Therefore, it is necessary to perform a VACUUM periodically, especially on frequently updated tables.
 
--   \[MOT Extension\]
+- \[MOT Extension\]
 
     MOT tables do not need a periodic VACUUM operation, since dead/empty tuples are re‑used by new ones. MOT tables require VACUUM operations only when their size is significantly reduced and they do not expect to grow to their original size in the near future.
 
@@ -14,8 +14,7 @@ Use VACUUM for garbage collection and optionally to analyze a database, , as fol
 
     The VACUUM operation on MOT tables is always transformed into a VACUUM FULL with an exclusive table lock.
 
-
--   Supported Syntax and Limitations
+- Supported Syntax and Limitations
 
     Activation of the VACUUM operation is performed in a standard manner.
 
@@ -27,13 +26,11 @@ Use VACUUM for garbage collection and optionally to analyze a database, , as fol
 
     The following PG vacuum options are not supported:
 
-    -   FREEZE
-    -   VERBOSE
-    -   Column specification
-    -   LAZY mode \(partial table scan\)
+    - FREEZE
+    - VERBOSE
+    - Column specification
+    - LAZY mode \(partial table scan\)
 
     Additionally, the following functionality is not supported –
 
-    -   AUTOVACUUM
-
-
+    - AUTOVACUUM

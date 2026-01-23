@@ -6,9 +6,9 @@ After a database is connected, you can use JDBC to run SQL statements to operate
 
 JDBC provides the following three database connection methods:
 
--   DriverManager.getConnection\(String url\);
--   DriverManager.getConnection\(String url, Properties info\);
--   DriverManager.getConnection\(String url, String user, String password\);
+- DriverManager.getConnection\(String url\);
+- DriverManager.getConnection\(String url, Properties info\);
+- DriverManager.getConnection\(String url, String user, String password\);
 
 ## Parameters<a name="en-us_topic_0283137601_en-us_topic_0237120381_en-us_topic_0213179126_en-us_topic_0189251768_en-us_topic_0059779354_sd1d6ca3f8a4345d78889ae70e3f20498"></a>
 
@@ -67,7 +67,6 @@ JDBC provides the following three database connection methods:
 </tr>
 </tbody>
 </table>
-
 
 >[!NOTE]NOTE 
 >After the  **uppercaseAttributeName**  parameter is enabled, if the database contains metadata with a mixture of uppercase and lowercase letters, only the metadata in lowercase letters can be queried and output in uppercase letters. Before using the metadata, ensure that the metadata is stored in lowercase letters to prevent data errors.

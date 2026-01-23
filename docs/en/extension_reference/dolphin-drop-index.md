@@ -19,7 +19,7 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
 ## Parameter Description<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s99e6f6efb9f3448f9de8894607958cd3"></a>
 
--   **CONCURRENTLY**
+- **CONCURRENTLY**
 
     Deletes an index without locking it. A normal  **DROP INDEX**  acquires exclusive lock on the table on which the index depends, blocking other accesses until the index drop can be completed. With this option, the statement does not lock the table during index deletion.
 
@@ -27,20 +27,19 @@ DROP INDEX [ CONCURRENTLY ] [ IF EXISTS ]
 
     The  **DROP INDEX**  statement can be run within a transaction, but  **DROP INDEX CONCURRENTLY**  cannot.
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified index does not exist.
 
--   **index\_name**
+- **index\_name**
 
     Specifies the index name to be deleted.
 
     Value range: an existing index
 
--   **CASCADE | RESTRICT**
-    -   **CASCADE**: automatically deletes the objects that depend on the index.
-    -   **RESTRICT**: refuses to delete the index if any objects depend on it. This is the default action.
-
+- **CASCADE | RESTRICT**
+    - **CASCADE**: automatically deletes the objects that depend on the index.
+    - **RESTRICT**: refuses to delete the index if any objects depend on it. This is the default action.
 
 ## Examples<a name="en-us_topic_0283136794_en-us_topic_0237122140_en-us_topic_0059779018_s95dd4a9a45334e81be4841d86d7a47f1"></a>
 

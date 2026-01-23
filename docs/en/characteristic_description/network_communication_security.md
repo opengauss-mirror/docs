@@ -35,4 +35,3 @@ You need to enable the SSL protocol and configure the certificate and connection
 ## Dependencies<a name="section22810484"></a>
 
 OpenSSL
-

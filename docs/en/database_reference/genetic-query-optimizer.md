@@ -13,8 +13,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the genetic query optimization is enabled.
--   **off**  indicates that the genetic query optimization is disabled.
+- **on**  indicates that the genetic query optimization is enabled.
+- **off**  indicates that the genetic query optimization is disabled.
 
 **Default value**:  **on**
 
@@ -25,8 +25,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 >[!TIP]NOTICE 
->-   For simpler queries, it is best to use the regular, exhaustive-search planner; but for queries with many tables, it is better to use GEQO to manage the queries.
->-   A  **FULL OUTER JOIN**  construct counts as only one  **FROM**  item.
+>
+>- For simpler queries, it is best to use the regular, exhaustive-search planner; but for queries with many tables, it is better to use GEQO to manage the queries.
+>- A  **FULL OUTER JOIN**  construct counts as only one  **FROM**  item.
 
 **Value range**: an integer ranging from 2 to  _INT\_MAX_
 
@@ -96,4 +97,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >Varying the value changes the set of join paths explored, and may result in a better or worse best path being found.
 
 **Default value**:  **0**
-

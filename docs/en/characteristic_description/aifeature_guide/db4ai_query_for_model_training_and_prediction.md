@@ -48,12 +48,12 @@ The current version of openGauss supports the native DB4AI capability. By introd
 
 ## Developer Guide<a name="section061917401992"></a>
 
-1.  Introduce the algorithms supported in this version.
+1. Introduce the algorithms supported in this version.
 
     DB4AI of the current version supports logistic regression \(binary classification tasks\), linear regression, and vector machine algorithms \(classification tasks\) based on the SGD operator, as well as the K-Means clustering algorithm based on the K-Means operator.
 
-2.  Learn about the model training syntax.
-    -   CREATE MODEL
+2. Learn about the model training syntax.
+    - CREATE MODEL
 
         You can run the  **CREATE MODEL**  statement to create and train a model. Taking dataset  **kmeans\_2d**  as an example, the data content of the table is as follows:
 
@@ -86,7 +86,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
 
         The data type of the  **position**  field in this table is double precision\[\].
 
-    -   The following uses K-Means as an example to describe how to train a model. Specify  **position**  as a feature column in the  **kmeans\_2d**  training set, and use the K-Means algorithm to create and save the  **point\_kmeans**  model.
+    - The following uses K-Means as an example to describe how to train a model. Specify  **position**  as a feature column in the  **kmeans\_2d**  training set, and use the K-Means algorithm to create and save the  **point\_kmeans**  model.
 
         ```
         openGauss=# CREATE MODEL point_kmeans USING kmeans FEATURES position FROM kmeans_2d WITH num_centroids=3;
@@ -104,11 +104,11 @@ The current version of openGauss supports the native DB4AI capability. By introd
 
         In the preceding command:
 
-        -   The  **CREATE MODEL**  statement is used to train and save a model.
-        -   **USING**  specifies the algorithm name.
-        -   **FEATURES**  specifies the features of the training model and needs to be added based on the column name of the training data table.
-        -   **TARGET**  specifies the training target of the model. It can be the column name of the data table required for training or an expression, for example,  **price \> 10000**.
-        -   **WITH**  specifies the hyperparameters used for model training. When the hyperparameter is not set by the user, the framework uses the default value.
+        - The  **CREATE MODEL**  statement is used to train and save a model.
+        - **USING**  specifies the algorithm name.
+        - **FEATURES**  specifies the features of the training model and needs to be added based on the column name of the training data table.
+        - **TARGET**  specifies the training target of the model. It can be the column name of the data table required for training or an expression, for example,  **price \> 10000**.
+        - **WITH**  specifies the hyperparameters used for model training. When the hyperparameter is not set by the user, the framework uses the default value.
 
             The framework supports various hyperparameter combinations for different operators.
 
@@ -298,13 +298,13 @@ The current version of openGauss supports the native DB4AI capability. By introd
             </tbody>
             </table>
 
-    -   If the model is saved successfully, the following information is returned:
+    - If the model is saved successfully, the following information is returned:
 
         ```
         MODEL CREATED. PROCESSED x
         ```
 
-3.  View the model information.
+3. View the model information.
 
     After the training is complete, the model is stored in the  **gs\_model\_warehouse**  system catalog. You can view information about the model and training process in the  **gs\_model\_warehouse**  system catalog.
 
@@ -337,7 +337,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
     modeldescribe         | {"id:1,objective_function:542.851169,avg_distance_to_centroid:108.570234,min_distance_to_centroid:1.027078,max_distance_to_centroid:297.210108,std_dev_distance_to_centroid:105.053257,cluster_size:5","id:2,objective_function:5825.982139,avg_distance_to_centroid:529.634740,min_distance_to_centroid:100.270449,max_distance_to_centroid:990.300588,std_dev_distance_to_centroid:285.915094,cluster_size:11","id:3,objective_function:220.792591,avg_distance_to_centroid:55.198148,min_distance_to_centroid:4.216111,max_distance_to_centroid:102.117204,std_dev_distance_to_centroid:39.319118,cluster_size:4"}
     ```
 
-4.  Use an existing model to perform a prediction task.
+4. Use an existing model to perform a prediction task.
 
     Use the  **SELECT**  and  **PREDICT BY**  keywords to complete the prediction task based on the existing model.
 
@@ -362,7 +362,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
 
     For the same prediction task, the results of the same model are stable. In addition, models trained based on the same hyperparameter and training set are stable. AI model training is random \(random gradient descent of data distribution each batch\). Therefore, the computing performance and results of different models can vary slightly.
 
-5.  View the execution plan.
+5. View the execution plan.
 
     You can use the  **EXPLAIN**  statement to analyze the execution plan in the model training or prediction process of  **CREATE MODEL**  and  **PREDICT BY**. The keyword  **EXPLAIN**  can be followed by a  **CREATE MODEL**  or  **PREDICT BY**  clause or an optional parameter. The supported parameters are as follows:
 
@@ -454,9 +454,9 @@ The current version of openGauss supports the native DB4AI capability. By introd
     (2 rows)
     ```
 
-6.  Perform troubleshooting in case of exceptions.
-    -   Training phase
-        -   Scenario 1: When the value of the hyperparameter exceeds the value range, the model training fails and an error message is returned. For example:
+6. Perform troubleshooting in case of exceptions.
+    - Training phase
+        - Scenario 1: When the value of the hyperparameter exceeds the value range, the model training fails and an error message is returned. For example:
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients WITH optimizer='aa';
@@ -469,7 +469,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
             ERROR:  Invalid hyperparameter value for optimizer. Valid values are: gd, ngd. (default is gd)
             ```
 
-        -   Scenario 2: If the model name already exists, the model fails to be saved, and an error message with the cause is displayed:
+        - Scenario 2: If the model name already exists, the model fails to be saved, and an error message with the cause is displayed:
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment TARGET trait_anxiety  FROM patients;
@@ -486,7 +486,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
             ERROR:  The model name "patient_linear_regression" already exists in gs_model_warehouse.
             ```
 
-        -   Scenario 3: If the value in the  **FEATURE**  or  **TARGETS**  column is  **\***,  **ERROR**  is returned with the error cause:
+        - Scenario 3: If the value in the  **FEATURE**  or  **TARGETS**  column is  **\***,  **ERROR**  is returned with the error cause:
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES *  TARGET trait_anxiety  FROM
@@ -497,7 +497,7 @@ The current version of openGauss supports the native DB4AI capability. By introd
             ERROR:  TARGET clause cannot be *
             ```
 
-        -   Scenario 4: If the keyword  **TARGET**  is used in the unsupervised learning method or is not applicable to the supervised learning method,  **ERROR**  is returned with the error cause:
+        - Scenario 4: If the keyword  **TARGET**  is used in the unsupervised learning method or is not applicable to the supervised learning method,  **ERROR**  is returned with the error cause:
 
             ```
             openGauss=# CREATE MODEL patient_linear_regression USING linear_regression FEATURES second_attack,treatment FROM patients;
@@ -506,17 +506,17 @@ The current version of openGauss supports the native DB4AI capability. By introd
             CREATE MODEL patient_linear_regression USING linear_regression TARGET trait_anxiety  FROM patients;   ERROR:  Supervised ML algorithms require FEATURES clause
             ```
 
-        -   Scenario 5: If the GUC parameter  **statement\_timeout**  is set, the statement that is executed due to training timeout will be terminated. In this case, execute the  **CREATE MODEL**  statement. Parameters such as the size of the training set, number of training rounds \(**iteration**\), early termination conditions \(**tolerance**  and  **max\_seconds**\), and number of parallel threads \(**nthread**\) affect the training duration. When the duration exceeds the database limit, the statement execution is terminated and model training fails.
+        - Scenario 5: If the GUC parameter  **statement\_timeout**  is set, the statement that is executed due to training timeout will be terminated. In this case, execute the  **CREATE MODEL**  statement. Parameters such as the size of the training set, number of training rounds \(**iteration**\), early termination conditions \(**tolerance**  and  **max\_seconds**\), and number of parallel threads \(**nthread**\) affect the training duration. When the duration exceeds the database limit, the statement execution is terminated and model training fails.
 
-    -   Prediction phase
-        -   Scenario 6: If the model name cannot be found in the system catalog, the database reports  **ERROR**:
+    - Prediction phase
+        - Scenario 6: If the model name cannot be found in the system catalog, the database reports  **ERROR**:
 
             ```
             openGauss=# select id, PREDICT BY patient_logistic_regression (FEATURES second_attack,treatment) FROM patients;
             ERROR:  There is no model called "patient_logistic_regression".
             ```
 
-        -   Scenario 7: If the data dimension and data type of the  **FEATURES**  task are inconsistent with those of the training set,  **ERROR**  is reported and the error cause is displayed. For example:
+        - Scenario 7: If the data dimension and data type of the  **FEATURES**  task are inconsistent with those of the training set,  **ERROR**  is reported and the error cause is displayed. For example:
 
             ```
             openGauss=# select id, PREDICT BY patient_linear_regression (FEATURES second_attack) FROM patients;
@@ -527,7 +527,3 @@ The current version of openGauss supports the native DB4AI capability. By introd
             ERROR:  Invalid number of features for prediction, provided 3, expected 2
             CONTEXT:  referenced column: patient_linear_regression_pre
             ```
-
-
-
-

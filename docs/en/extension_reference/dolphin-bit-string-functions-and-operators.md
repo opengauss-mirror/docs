@@ -13,6 +13,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
   Return type: Boolean
 
   Example: 
+
   ~~~
   openGauss=# select bit_bool('11111');
    bit_bool 
@@ -64,6 +65,7 @@ Compared with the original openGauss, Dolphin modifies the bit string functions 
   Note: If the entered number or character string exceeds the range of unsigned 64-bit integers, 64 is returned. If the number of 1s in the input bits exceeds 64, 1 is returned.
 
   Example:
+
   ~~~
   SELECT bit_count(29);
    bit_count 

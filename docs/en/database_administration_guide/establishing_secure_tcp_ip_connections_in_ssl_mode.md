@@ -10,8 +10,8 @@ Formal certificates and keys for servers and clients have been obtained from the
 
 ## Precautions<a name="en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_s014a1b1bc72240bb9bbbad5e064bf6d3"></a>
 
--   When a user remotely accesses the primary node of the database, the SHA-256 authentication method is used.
--   If internal servers are connected with each other, the trust authentication mode must be used. IP address whitelist authentication is supported.
+- When a user remotely accesses the primary node of the database, the SHA-256 authentication method is used.
+- If internal servers are connected with each other, the trust authentication mode must be used. IP address whitelist authentication is supported.
 
 ## Procedure<a name="en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_s559f387461c440218ff2b33983a69004"></a>
 
@@ -19,7 +19,7 @@ After a database is deployed, openGauss enables the SSL authentication mode by d
 
 Set digital certificate parameters related to SSL authentication. For details, see  [Table 1](#en-us_topic_0283137035_en-us_topic_0237121092_en-us_topic_0059778374_table56811076112938).
 
--   Configure client parameters.
+- Configure client parameters.
 
     The default client certificate, key, root certificate, and key encrypted file have been obtained from the CA authentication center. Assume that the certificate, key, and root certificate are stored in the  **/home/omm**  directory.
 
@@ -39,7 +39,7 @@ Set digital certificate parameters related to SSL authentication. For details, s
     export PGSSLROOTCERT="/home/omm/cacert.pem"
     ```
 
--   Change the client key permission.
+- Change the client key permission.
 
     The permission of the client root certificate, key, certificate, and encrypted key file should be 600. Otherwise, the client cannot connect to openGauss through SSL.
 
@@ -50,7 +50,6 @@ Set digital certificate parameters related to SSL authentication. For details, s
     chmod 600 client.key.rand
     chmod 600 cacert.pem
     ```
-
 
 >[!TIP]NOTICE 
 >You are advised to use bidirectional authentication for security purposes.
@@ -485,10 +484,10 @@ A series of encryption and authentication algorithms with different strength are
 </table>
 
 >[!NOTE]NOTE 
->-   Currently, only the six encryption algorithm suites listed in the preceding table are supported.
->-   The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. 为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
->-   To specify the preceding cipher suites, set** ssl\_ciphers**  to the OpenSSL suite names in the preceding table. Use semicolons \(;\) to separate cipher suites. For example, set  **ssl\_ciphers**  in  **postgresql.conf**  as follows:
->    ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
->-   SSL authentication increases the time spent for login \(creating the SSL environment\) and logout processes \(clearing the SSL environment\), and requires extra time for encrypting the data to be transferred. It affects performance especially in frequent login, logout, and short-time query scenarios.
->-   If the certificate validity period is less than seven days, an alarm is generated in the log when a user logs in to the system.
-
+>
+>- Currently, only the six encryption algorithm suites listed in the preceding table are supported.
+>- The default value of  **ssl\_ciphers**  is  **ALL**, indicating that all encryption algorithms listed in the table are supported. 为保持前向兼容保留了DHE算法套件，即DHE-RSA-AES128-GCM-SHA256和DHE-RSA-AES256-GCM-SHA384，根据CVE-2002-20001漏洞披露DHE算法存在一定安全风险，非兼容场景不建议使用，可将ssl_ciphers参数配置为仅支持ECDHE类型算法套件。
+>- To specify the preceding cipher suites, set**ssl\_ciphers**  to the OpenSSL suite names in the preceding table. Use semicolons \(;\) to separate cipher suites. For example, set  **ssl\_ciphers**  in  **postgresql.conf**  as follows:
+> ssl\_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
+>- SSL authentication increases the time spent for login \(creating the SSL environment\) and logout processes \(clearing the SSL environment\), and requires extra time for encrypting the data to be transferred. It affects performance especially in frequent login, logout, and short-time query scenarios.
+>- If the certificate validity period is less than seven days, an alarm is generated in the log when a user logs in to the system.

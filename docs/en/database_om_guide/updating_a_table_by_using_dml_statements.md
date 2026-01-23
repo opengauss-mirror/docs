@@ -17,14 +17,14 @@ CREATE TABLE customer_t
 
 You can run the following DML statements to update data in the table.
 
--   Run the  **INSERT**  statement to insert data into the table.
-    -   Insert a row to the  **customer\_t**  table.
+- Run the  **INSERT**  statement to insert data into the table.
+    - Insert a row to the  **customer\_t**  table.
 
         ```
         INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES (3769, 5, 'Grace','White');
         ```
 
-    -   Insert multiple rows to the  **customer\_t**  table.
+    - Insert multiple rows to the  **customer\_t**  table.
 
         ```
         INSERT INTO customer_t (c_customer_sk, c_customer_id, c_first_name,c_last_name) VALUES    
@@ -36,8 +36,7 @@ You can run the following DML statements to update data in the table.
 
         For details on how to use  **INSERT**, see  [Inserting Data to Tables](../database_administration_guide/inserting_data_to_tables.md).
 
-
--   Run the  **UPDATE**  statement to update data in the table. Change the value of the  **c\_customer\_id**  column to  **0**.
+- Run the  **UPDATE**  statement to update data in the table. Change the value of the  **c\_customer\_id**  column to  **0**.
 
     ```
     UPDATE customer_t SET c_customer_id = 0;
@@ -45,7 +44,7 @@ You can run the following DML statements to update data in the table.
 
     For details on how to use  **UPDATE**, see  [UPDATE](../sql_reference/update.md).
 
--   Run the  **DELETE**  statement to delete rows from the table.
+- Run the  **DELETE**  statement to delete rows from the table.
 
     You can use the  **WHERE**  clause to specify the rows whose data is to delete. If you do not specify it, all rows in the table are deleted and only the data structure is retained.
 
@@ -55,7 +54,7 @@ You can run the following DML statements to update data in the table.
 
     For details on how to use  **DELETE**, see  [DELETE](../sql_reference/delete.md).
 
--   Run the  **TRUNCATE**  statement to delete all rows from the table.
+- Run the  **TRUNCATE**  statement to delete all rows from the table.
 
     ```
     TRUNCATE TABLE customer_t;
@@ -66,5 +65,3 @@ You can run the following DML statements to update data in the table.
     The  **DELETE**  statement deletes a row of data each time whereas the  **TRUNCATE**  statement deletes data by releasing the data page stored in the table. Therefore, data can be deleted more quickly by using  **TRUNCATE**  than using  **DELETE**.
 
     **DELETE**  deletes table data but does not release table storage space.  **TRUNCATE**  deletes table data and releases table storage space.
-
-

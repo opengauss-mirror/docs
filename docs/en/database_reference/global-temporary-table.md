@@ -8,8 +8,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer ranging from 0 to 1000000
 
--   **0**: The global temporary table function is disabled.
--   \> 0: The global temporary table function is enabled.
+- **0**: The global temporary table function is disabled.
+- \> 0: The global temporary table function is enabled.
 
 **Default value**:  **1000**
 

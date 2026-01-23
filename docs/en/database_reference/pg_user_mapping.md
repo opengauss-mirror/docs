@@ -55,4 +55,3 @@ This system catalog is accessible only to system administrators. Common users ca
 </tr>
 </tbody>
 </table>
-

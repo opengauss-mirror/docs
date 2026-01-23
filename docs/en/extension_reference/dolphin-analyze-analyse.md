@@ -15,7 +15,7 @@ For details about the precautions, see [ANALYZE](../sql_reference/analyze_analys
 
 ## Syntax<a name="en-us_topic_0283136969_en-us_topic_0237122086_en-us_topic_0059779340_sd95698dc205444ad9f4bbe049cc5d488"></a>
 
--   Table Statistics
+- Table Statistics
 
     ```
     {ANALYZE | ANALYSE} [ VERBOSE ] [ NO_WRITE_TO_BINLOG | LOCAL ] TABLE { [schema.]table_name } [, ... ]
@@ -23,7 +23,7 @@ For details about the precautions, see [ANALYZE](../sql_reference/analyze_analys
 
 ## Parameter Description<a name="en-us_topic_0283137126_en-us_topic_0237122076_en-us_topic_0059779051_sf4962205ddf84312a5fd888bc662e5cf"></a>
 
--   **NO_WRITE_TO_BINLOG | LOCAL**
+- **NO_WRITE_TO_BINLOG | LOCAL**
 
     It is used only for syntax and has no actual purpose.
 

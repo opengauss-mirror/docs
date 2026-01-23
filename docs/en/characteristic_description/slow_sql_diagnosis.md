@@ -146,19 +146,19 @@ query_plan           | Datanode Name: dn_6001_6002_6003
 
 ## Constraints<a name="section1956417145819"></a>
 
--   The SQL tracing information is based on the normal execution logic. The tracing information may inaccurate if SQL statements fail to be executed.
--   Restarting a node may cause data loss on the node.
--   If you exit a session immediately after SQL statements are executed, the session data that is not updated to the system catalog may be lost.
--   The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
--   The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
--   The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
--   When **track\_stmt\_parameter** is set to **off**, the maximum value of the **query** field is determined by the value of by **track\_activity\_query\_size**.
--   Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
--   Functions and views related to the statement\_history table and the **details** column in dbe_perf.standby\_statement\_history on the standby node are in binary format. To parse the detailed information, use the pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\) function.
--   The statement_history table can be queried only in the postgres database. The data in other databases is empty.
--   To query the dbe_perf.standby\_statement\_history function on the standby node, you need to switch to the postgres database. If you query the function in other databases, a message is displayed indicating that the function is unavailable.
--   The standby node uses the track\_stmt\_standby\_chain\_size parameter to limit the memory and disk space occupied by recorded data.
--   The content of the statement\_history table and the dbe_perf.standby\_statement\_history function on the standby node are controlled by track\_stmt\_stat\_level. The default value is **'OFF,L0'**. The first part of the parameter indicates the full SQL statement, and the second part indicates the slow SQL statement. Slow SQL statements are recorded only when the execution time exceeds the value of log\_min\_duration\_statement.
+- The SQL tracing information is based on the normal execution logic. The tracing information may inaccurate if SQL statements fail to be executed.
+- Restarting a node may cause data loss on the node.
+- If you exit a session immediately after SQL statements are executed, the session data that is not updated to the system catalog may be lost.
+- The number of SQL statements to be collected is specified by a GUC parameter. If the number of SQL statements exceeds the threshold, new SQL statement execution information will not be collected.
+- The maximum number of bytes of lock event details collected by a single SQL statement is specified by a GUC parameter. If the number of bytes exceeds the threshold, new lock event details will not be collected.
+- The SQL statement information is updated in asynchronous mode. Therefore, after a query statement is executed, the related view function result is slightly delayed.
+- When **track\_stmt\_parameter** is set to **off**, the maximum value of the **query** field is determined by the value of by **track\_activity\_query\_size**.
+- Certain indicator information \(such as row activities, cache I/O, and time distribution\) depends on the dbe\_perf.statement view. If the number of records in the view exceeds the preset size \(depending on GUC:instr\_unique\_sql\_count\), related indicators may not be collected.
+- Functions and views related to the statement\_history table and the **details** column in dbe_perf.standby\_statement\_history on the standby node are in binary format. To parse the detailed information, use the pg\_catalog.statement\_detail\_decode\(details, 'plaintext', true\) function.
+- The statement_history table can be queried only in the postgres database. The data in other databases is empty.
+- To query the dbe_perf.standby\_statement\_history function on the standby node, you need to switch to the postgres database. If you query the function in other databases, a message is displayed indicating that the function is unavailable.
+- The standby node uses the track\_stmt\_standby\_chain\_size parameter to limit the memory and disk space occupied by recorded data.
+- The content of the statement\_history table and the dbe_perf.standby\_statement\_history function on the standby node are controlled by track\_stmt\_stat\_level. The default value is **'OFF,L0'**. The first part of the parameter indicates the full SQL statement, and the second part indicates the slow SQL statement. Slow SQL statements are recorded only when the execution time exceeds the value of log\_min\_duration\_statement.
 
 ## Dependencies<a name="section15876411599"></a>
 

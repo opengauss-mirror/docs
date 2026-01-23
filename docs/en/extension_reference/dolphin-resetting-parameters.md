@@ -4,16 +4,15 @@
 
 openGauss provides multiple methods to set GUC parameters for databases, users, or sessions.
 
--   Parameter names are case-insensitive.
--   A parameter value can be an integer, floating point number, string, Boolean value, or enumerated value.
-    -   The Boolean values can be **on**/**off**, **true**/**false**, **yes**/**no**, or **1**/**0**, and are case-insensitive.
-    -   The enumerated value range is specified in the **enumvals** column of the **pg\_settings** system catalog.
+- Parameter names are case-insensitive.
+- A parameter value can be an integer, floating point number, string, Boolean value, or enumerated value.
+    - The Boolean values can be **on**/**off**, **true**/**false**, **yes**/**no**, or **1**/**0**, and are case-insensitive.
+    - The enumerated value range is specified in the **enumvals** column of the **pg\_settings** system catalog.
 
--   For parameters using units, specify their units during the setting, or default units are used.
-    -   The default units are specified in the **unit** column of **pg\_settings**.
-    -   The unit of memory can be kB, MB, or GB.
-    -   The unit of time can be ms, s, min, h, or d.
-
+- For parameters using units, specify their units during the setting, or default units are used.
+    - The default units are specified in the **unit** column of **pg\_settings**.
+    - The unit of memory can be kB, MB, or GB.
+    - The unit of time can be ms, s, min, h, or d.
 
 For details, see [GUC Parameters](dolphin-guc-parameters.md).
 
@@ -120,15 +119,12 @@ openGauss provides four methods to modify GUC parameters. For details, see [Tabl
 </tbody>
 </table>
 
-
-
 ## Procedure<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s049438204a0941efb4b85981fb594e7c"></a>
-
 
 The following example shows how to set **explain\_perf\_mode** using method 1.
 
-1.  Log in as the OS user **omm** to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user **omm** to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -146,7 +142,7 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
     openGauss=# 
     ```
 
-3.  Check the **explain\_perf\_mode** parameter.
+3. Check the **explain\_perf\_mode** parameter.
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -156,11 +152,11 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
     (1 row)
     ```
 
-4.  Set the **explain\_perf\_mode** parameter.
+4. Set the **explain\_perf\_mode** parameter.
 
     Perform one of the following operations:
 
-    -   Set a database-level parameter.
+    - Set a database-level parameter.
 
         ```
         openGauss=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
@@ -174,7 +170,7 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
 
         The setting takes effect in the next session.
 
-    -   Set a user-level parameter.
+    - Set a user-level parameter.
 
         ```
         openGauss=# ALTER USER omm SET explain_perf_mode TO pretty;
@@ -188,7 +184,7 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
 
         The setting takes effect in the next session.
 
-    -   Set a session-level parameter.
+    - Set a session-level parameter.
 
         ```
         openGauss=# SET explain_perf_mode TO pretty;
@@ -200,7 +196,7 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
         SET
         ```
 
-5.  Check whether the parameter is correctly configured.
+5. Check whether the parameter is correctly configured.
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -209,7 +205,6 @@ The following example shows how to set **explain\_perf\_mode** using method 1.
      pretty
     (1 row)
     ```
-
 
 ## Examples<a name="en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
 

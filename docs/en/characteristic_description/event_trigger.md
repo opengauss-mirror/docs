@@ -4,7 +4,6 @@
 
 This feature is available since openGauss 5.0.0.
 
-
 ## Introduction<a name="section740615433477"></a>
 
 An event trigger is used to capture and process DDL operations.
@@ -17,12 +16,12 @@ A typical application scenario is as follows: An event trigger is used to captur
 
 The event trigger can capture DDL operations in the current database and target objects of DDL operations. It cannot capture operations on shared objects, such as databases, roles, and tablespaces.
 The event trigger can capture four types of events: ddl_command_start, ddl_command_end, sql_drop, and table_rewrite.
+
 1. The ddl_command_start event occurs before the CREATE, ALTER, DROP, SECURITY LABEL, COMMENT, GRANT, or REVOKE statement is executed. The existence of the affected object is not checked before the event trigger is used.
 2. The ddl_command_end event captures DDL operations and occurs after DDL execution.
 3. The sql\_drop event captures any operation of deleting database objects and is executed before ddl\_command\_end.
 4. The table\_rewrite event occurs only before the table is overwritten by some actions of the ALTER TABLE and ALTER TYPE statements.
    
-
 ## Constraints<a name="section1694165712371"></a>
 
 - This feature is available only in PG-compatible mode.

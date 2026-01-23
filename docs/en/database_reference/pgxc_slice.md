@@ -110,4 +110,3 @@ The  **PGXC\_SLICE**  system catalog has specific meanings only in distributed s
 </tr>
 </tbody>
 </table>
-

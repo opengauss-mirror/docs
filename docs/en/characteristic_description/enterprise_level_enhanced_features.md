@@ -6,9 +6,9 @@ Data partitioning is a general function for most database products. In the openG
 
 openGauss supports:
 
--   Range partitioning. It can divide a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap.
--   List partitioning. It divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
--   Hash partitioning. It uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
+- Range partitioning. It can divide a record, which is to be inserted into a table, into multiple ranges using one or more columns and create a partition for each range to store data. Partition ranges do not overlap.
+- List partitioning. It divides the key values in the records to be inserted into a table into multiple lists \(the lists do not overlap in different partitions\) based on a column of the table, and then creates a partition for each list to store the corresponding data.
+- Hash partitioning. It uses the internal hash algorithm to divide records to be inserted into a table into partitions based on a column of the table. If you specify the  **PARTITION**  parameter when running the  **CREATE TABLE**  statement, data in the table will be partitioned.
 
 For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_topic_0231764089_en-us_topic_0059777656_t77b9e09809f742f1aaadea05d041bc23)  uses an xDR scenario to describe the benefits provided after data is partitioned based on time fragments.
 
@@ -41,22 +41,22 @@ For example,  [Table 1](#en-us_topic_0283136537_en-us_topic_0237080621_en-us_top
 
 Data partitioning provides the following benefits:
 
--   **Improve manageability:**  Tables and indexes are divided into smaller and more manageable units. In this way, data management can be performed by partitions. Database administrators will perform maintenance in the designated area of the table.
--   **Improve deleting performance:**  Delete an entire partition rather than delete data by row, which is very efficient.
+- **Improve manageability:**  Tables and indexes are divided into smaller and more manageable units. In this way, data management can be performed by partitions. Database administrators will perform maintenance in the designated area of the table.
+- **Improve deleting performance:**  Delete an entire partition rather than delete data by row, which is very efficient.
 
     The  **DROP TABLE**  syntax can be used to delete both ordinary tables and partitioned tables.
 
--   **Improve query performance:**  Restrict the volume of data to be checked or operated to facilitate query.
+- **Improve query performance:**  Restrict the volume of data to be checked or operated to facilitate query.
 
     With partition pruning, also known as partition elimination, openGauss filters out unexpected partitions and scans only the remaining partitions. Partition pruning greatly improves query performance.
 
--   **Partition-wise Join**: Partitioning can also improve the performance of multi-table joins by using a technique known as partition-wise join. Partition-wise joins can be applied when two tables are joined and at least one of these tables is partitioned using a join key. Partition-wise joins break a large join into smaller joins of "identical" datasets. "Identical" here is defined as covering the same set of partitioning key values on both sides of the join, ensuring that only a join of these 'identical' datasets will produce a result without considering other datasets. List partitions and hash partitions are not supported currently.
+- **Partition-wise Join**: Partitioning can also improve the performance of multi-table joins by using a technique known as partition-wise join. Partition-wise joins can be applied when two tables are joined and at least one of these tables is partitioned using a join key. Partition-wise joins break a large join into smaller joins of "identical" datasets. "Identical" here is defined as covering the same set of partitioning key values on both sides of the join, ensuring that only a join of these 'identical' datasets will produce a result without considering other datasets. List partitions and hash partitions are not supported currently.
 
 ## Vectorized Executor and Hybrid Row-Column Storage Engine<a name="en-us_topic_0283136537_section118111201716"></a>
 
 In a wide table containing a huge amount of data, a query usually only involves certain columns. In this case, the query performance of the row-store engine is poor. For example, a single table containing the data of a meteorological agency has 200 to 800 columns. Among these columns, only 10 are frequently accessed. In this case, the vectorized execution technology and column-store engine can significantly improve performance by saving storage space.
 
--   Vectorized execution
+- Vectorized execution
 
     [Figure 1](#en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_f9d90aebe179a40759039d0263492489d)  shows a standard iterator module. Control flow travels in the downlink direction \(shown as solid lines in the following figure\) and data flow in the uplink direction \(shown as dotted lines in the following figure\). The upper-layer node invokes the lower-layer node to request data and the lower-layer node only returns one tuple to the upper-layer node at a time.
 
@@ -64,10 +64,9 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     **Figure  1**  Vectorized executor<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_f9d90aebe179a40759039d0263492489d"></a>  
     
-
     ![](figures/向量化执行引擎.png)
 
--   Hybrid row-column storage engine
+- Hybrid row-column storage engine
 
     openGauss supports both the row-store and column-store models. Users can choose a row-store or column-store table based on their needs.
 
@@ -77,12 +76,11 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
     **Figure  2**  Hybrid row-column storage engine<a name="en-us_topic_0283136537_en-us_topic_0237080624_en-us_topic_0231764690_en-us_topic_0059777898_fbb2af39ce12a419cb437829aaf1cf4fb"></a>  
     
-
     ![](figures/opengauss行列混存引擎.png)
 
     The restrictions of the column store engine are as follows:
 
-    -   For DDL statements, only CREATE TABLE, DROP TABLE, and TRUNCATE TABLE are supported.
+    - For DDL statements, only CREATE TABLE, DROP TABLE, and TRUNCATE TABLE are supported.
 
         Partition management using DDL statements \(such as  **ADD PARTITION**,  **DROP PARTITION** , **MERGE PARTITION** ,and **EXCHANGE** \) is supported.
 
@@ -92,55 +90,52 @@ In a wide table containing a huge amount of data, a query usually only involves 
 
         Other DDL statements are not supported.
 
-    -   For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
-    -   Triggers and primary foreign keys are not supported.
-    -   Psort index, B-tree index, and GIN index are supported. For details,  see [Optimizing SQL Self-Diagnosis](../performance_tuning_guide/optimizing_sql_self_diagnosis.md).
+    - For DML statements, UPDATE, COPY, BULKLOAD, and DELETE are supported.
+    - Triggers and primary foreign keys are not supported.
+    - Psort index, B-tree index, and GIN index are supported. For details,  see [Optimizing SQL Self-Diagnosis](../performance_tuning_guide/optimizing_sql_self_diagnosis.md).
 
--   Data compression in column store
+- Data compression in column store
 
     Inactive and earlier data can be compressed to free up space, reducing procurement and O&M costs.
 
     In openGauss, data can be compressed using delta encoding, dictionary coder, RLE, LZ4, and ZLIB algorithms. The system automatically selects a compression algorithm based on data characteristics. The average compression ratio is 7:1. Compressed data can be directly accessed and is transparent to services. This greatly reduces the preparation time before accessing historical data.
 
-
 ## Fusion Storage Engine<a name="section1070714862319"></a>
 
 The fusion engine architecture supports the pluggable storage engine architecture. The in-place update storage engine is added. The indexing multiversion supports adding transaction information to indexes. The Xlog lockless update greatly improves the Xlog write efficiency. The parallel page playback improves the playback efficiency of the standby node, and the enterprise-level flashback provides a stable query state for users.
 
--   In-place update storage engine
+- In-place update storage engine
 
     The in-place update storage engine solves the problems of space expansion and large tuples of the Append update storage engine. The design of efficient rollback segments is the basis of the in-place update storage engine.
 
--   Indexing multiversion
+- Indexing multiversion
 
     **Figure  3**  Comparison between UBTree and BTree searching and updating<a name="fig38821655122012"></a>  
     ![](figures/comparison-between-ubtree-and-btree-searching-and-updating.png)
 
     UBtree can check multiversion concurrency control \(MVCC\) visibility at the index layer by maintaining version information on tuples on the index page. In addition, the UBtree can independently determine whether the index tuple is dead based on the version information, so that the in-place update engine can implement page-level space cleanup for the data table and index table, and build an independent garbage collection mechanism independent of AutoVacuum.
 
-
--   Xlog lockless update
+- Xlog lockless update
 
     **Figure  4**  Xlog lockless design<a name="fig1120113136417"></a>  
     ![](figures/xlog-lockless-design.png)
 
     This feature optimizes the WalInsertLock mechanism by using log sequence numbers \(LSNs\) and log record counts \(LRCs\) to record the copy progress of each backend and canceling the WalInsertLock mechanism. The backend can directly copy logs to the WalBuffer without contending for the WalInsertLock. In addition, a dedicated WALWriter thread is used to write logs, and the backend thread does not need to ensure the Xlog flushing. After the preceding optimization, the WalInsertLock contention and WalWriter dedicated disk write threads are canceled. The system performance can be further improved while the original Xlog function remains unchanged.
 
--   Parallel page playback
+- Parallel page playback
 
     This feature optimizes the Ustore in-place update WALs and Ustore DML operation parallel playback and distribution. Prefixes and suffixes are used to reduce the update WALs. The playback thread is divided into multiple types to solve the problem that most Ustore DML WALs are replayed on multiple pages. In addition, the Ustore data page playback is distributed based on blkno to improve the degree of parallel playback.
 
--   Enterprise-class feature flashback
+- Enterprise-class feature flashback
 
     Flashback is a part of the database recovery technology. It enables the DBA to selectively and efficiently cancel the impact of a committed transaction and restore data from incorrect manual operations. Before the flashback technology is used, the committed database modification can be retrieved only by means of restoring backup and PITR. The restoration takes several minutes or even hours. After the flashback technology is used, it takes only seconds to restore the submitted data before the database is modified. The restoration time is irrelevant to the database size.
 
     This feature supports the following flashback modes:
 
-    -   Flashback query: You can query a snapshot of a table at a certain time point in the past. This feature can be used to view and logically rebuild damaged data that is accidentally deleted or modified. The flashback query is based on the MVCC mechanism. You can retrieve and query the old version to obtain the data of the specified old version.
-    -   Flashback table: You can restore a table to a specific point in time. When only one table or a group of tables are logically damaged instead of the entire database, this feature can be used to quickly restore the table data. Based on the MVCC mechanism, the flashback table deletes incremental data at a specified time point and after the specified time point and retrieves the data deleted at the specified time point and the current time point to restore table-level data.
-    -   Flashback drop: You can restore tables that are deleted by mistake and their auxiliary structures, such as indexes and table constraints, from the recycle bin. Flashback drop is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore dropped tables.
-    -   Flashback truncate: You can restore tables that are truncated by mistake and restore the physical data of the truncated tables and indexes from the recycle bin. Flashback truncate is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore truncated tables.
-
+    - Flashback query: You can query a snapshot of a table at a certain time point in the past. This feature can be used to view and logically rebuild damaged data that is accidentally deleted or modified. The flashback query is based on the MVCC mechanism. You can retrieve and query the old version to obtain the data of the specified old version.
+    - Flashback table: You can restore a table to a specific point in time. When only one table or a group of tables are logically damaged instead of the entire database, this feature can be used to quickly restore the table data. Based on the MVCC mechanism, the flashback table deletes incremental data at a specified time point and after the specified time point and retrieves the data deleted at the specified time point and the current time point to restore table-level data.
+    - Flashback drop: You can restore tables that are deleted by mistake and their auxiliary structures, such as indexes and table constraints, from the recycle bin. Flashback drop is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore dropped tables.
+    - Flashback truncate: You can restore tables that are truncated by mistake and restore the physical data of the truncated tables and indexes from the recycle bin. Flashback truncate is based on the recycle bin mechanism. You can restore physical table files recorded in the recycle bin to restore truncated tables.
 
 ## High Availability \(HA\) Transaction Processing<a name="en-us_topic_0283136537_section975313598411"></a>
 
@@ -154,8 +149,8 @@ Node faults can be recovered and the ACID properties still exist after the recov
 
 **Transaction management**
 
--   Support transaction blocks. The  **Start Transaction**  command can be used to start a transaction block explicitly.
--   Support single-statement transactions. If explicit startup is not performed, a single statement is processed as a transaction.
+- Support transaction blocks. The  **Start Transaction**  command can be used to start a transaction block explicitly.
+- Support single-statement transactions. If explicit startup is not performed, a single statement is processed as a transaction.
 
 ## High Concurrency and High Performance<a name="en-us_topic_0283136537_section137793812513"></a>
 
@@ -173,20 +168,18 @@ SQL self-diagnosis helps users locate and optimize performance issues without af
 
 With the rapid growth and maturity of cloud infrastructure, cloud database services are emerging one after another. Cloud databases have become an important growth point of database services in the future. Most traditional database service vendors are accelerating the provision of high-quality cloud database services. Regardless of offline or cloud database services, the core task of databases is to help users store and manage data and ensure that data is not lost, privacy is not disclosed, data is not tampered with, and services are not interrupted in complex and diversified environments. This requires a multi-level security defense mechanism of the database to defend against malicious attacks from multiple aspects. Mature security technologies are used to build a multi-level database security defense system, ensuring database security in applications. Therefore, to better protect sensitive and privacy data, especially for cloud database services, a systematic solution that can completely protect data privacy throughout the entire lifecycle on the server is urgently needed. This solution is referred to as an encrypted database solution.
 
--   Overall encrypted database solution
+- Overall encrypted database solution
 
     The encrypted equality query belongs to the first phase of the encrypted database solution, but complies with the overall architecture of the encrypted database.  [Figure 5](#en-us_topic_0231763017_fig141362033122319)  shows the overall architecture of the encrypted database. The complete form of the encrypted database includes the cryptology solution and the combination solution of software and hardware.
 
     **Figure  5**  Overall encrypted database architecture <a name="en-us_topic_0231763017_fig141362033122319"></a>  
     
-
     ![](figures/向量化执行引擎-0.png)
 
     Only the software part of the overall encrypted database architecture needs to be integrated because only the software part is involved in the encrypted equality query.  [Figure 6](#fig18836194875513)  shows the overall implementation solution.
 
     **Figure  6**  Overall encrypted equality query solution<a name="fig18836194875513"></a>  
     
-
     ![](figures/向量化执行引擎-1.png)
 
     In the overall process, data is encrypted on the client and sent to the openGauss server in ciphertext. That is, an encryption and decryption module needs to be constructed on the client. The encryption and decryption module depends on the key management module which generates the root key \(RK\) and client master key \(CMK\). With the CMK, a column encryption key \(CEK\) can be defined through the SQL syntax. A CMK is encrypted by an RK and then saved in the key store file \(KSF\). Both CMK and RK are managed by the KeyTool. The CMK encrypts a CEK \(using the symmetric encryption algorithm AES256 and the  SM2  algorithm\) and then stores it on the server.
@@ -197,25 +190,24 @@ With the rapid growth and maturity of cloud infrastructure, cloud database servi
 
     On the database server, data in the encrypted column is always stored in ciphertext, and the entire query is also implemented in ciphertext. In the first phase of the solution, deterministic encryption is required so that the same plaintext data can obtain the same ciphertext. In this way, equality calculation is supported.
 
--   Encrypted database flowchart
+- Encrypted database flowchart
 
     **Figure  7**  Encrypted database flowchart<a name="fig19889211143016"></a>  
     ![](figures/encrypted-database-flowchart.png)
 
     In the flowchart, the encrypted database allows the client to encrypt sensitive data within the client application. During the query period, the entire service data flow exists in the form of ciphertext during data processing. It has the following advantages: 
 
-    -   Protects data privacy and security throughout the lifecycle on the cloud.
-    -   Resolves trust issues by making the public cloud, consumer cloud, and development users keep their own keys.
-    -   Enables partners to better comply with personal privacy protection laws and regulations with the help of the full encryption capability.
+    - Protects data privacy and security throughout the lifecycle on the cloud.
+    - Resolves trust issues by making the public cloud, consumer cloud, and development users keep their own keys.
+    - Enables partners to better comply with personal privacy protection laws and regulations with the help of the full encryption capability.
 
--   Usage scenarios
+- Usage scenarios
 
     Hybrid cloud scenario: The database client and server are deployed on the user's private network, and the client uses Huawei management and control interface.
 
     Public cloud scenario: The database client is on user's local PC, and the database server is on HUAWEI CLOUD.
 
     Public cloud services: Both the database client and server are deployed on HUAWEI CLOUD.
-
 
 ## Memory Table<a name="en-us_topic_0283136537_section1482992711616"></a>
 
@@ -235,7 +227,7 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
 ## AI Capabilities<a name="en-us_topic_0283136537_section958214271813"></a>
 
--   Automatic parameter optimization
+- Automatic parameter optimization
 
     In database scenarios, the optimal parameter value combinations of different types of jobs are different from each other. To achieve better running performance, users want to quickly optimize database parameters. People learning to adjust parameters is not cost-effective, real-time or widely available. Automatic adjustment of database parameters through machine learning helps improve the parameter adjustment efficiency and reduce the cost of parameter adjustment.
 
@@ -247,23 +239,23 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
     When the model is in recommendation mode, second-level parameter recommendation is directly performed based on the current workload characteristics of the user.
 
--   Index recommendation
+- Index recommendation
 
     Single-query index recommendation and workload-level index recommendation are supported. During workload-level index recommendation, typical SQL statements are filtered based on the AI algorithm. For typical SQL statements, the optimal index is recommended and generated based on the semantic information of the statements and the statistics information of the database. Use the recommended indexes of all statements as the candidate index set, calculate the workload benefit of each candidate index, and recommend the index combination with the maximum benefit.
 
--   Time series prediction and exception detection
+- Time series prediction and exception detection
 
     Time series characteristics information on the host where the database is deployed can be collected and stored. This data can be used for time series prediction, for example, storage space prediction. In addition, exceptions can be detected based on the preceding data. In this way, potential problems can be detected in advance so as to take countermeasures.
 
--   Other autonomous O&M services
+- Other autonomous O&M services
 
     The services can be used to comprehensively monitor databases, detect exceptions, and analyze root causes of slow SQL statements in the system.
 
--   DB4AI function
+- DB4AI function
 
     The function supports the native DB4AI engine and uses databases to implement SQL statements to drive AI tasks.
 
--   SQL execution time prediction
+- SQL execution time prediction
 
     In scenarios such as query performance optimization and service load analysis, users often need to predict the execution time of SQL statements. Currently, the database optimizer is based on the cost model and cannot accurately predict the execution time. This feature uses AI models to predict the execution time of historical or similar queries, meeting the SQL execution time prediction requirements.
 
@@ -271,18 +263,16 @@ In addition, in primary/standby deployment mode, if the read function of the sta
 
     Historical data is collected by the database kernel process. The kernel process sends HTTPS requests to the Python AI engine through curl to \(1\) configure the machine learning model \(2\) send training data \(3\) trigger model training \(4\) request the training process monitoring service port \(5\) load the model used for training \(6\) and use the loaded model for prediction. The data encoding phase is completed in the database to ensure that the exported data has been anonymized. In the prediction phase, after the query plan is generated, the entire plan needs to be encoded and written into a file and then sent to the Python end. The TensorFlow computational graph on the Python end needs to be loaded only once to perform highly parallel batch prediction.
 
-
--   Database monitoring
+- Database monitoring
 
     During routine O&M, users need to continuously monitor the database running status. However, due to the complexity of the database, it is difficult for users to efficiently extract key data. Database self-monitoring improves O&M efficiency. You only need to pay attention to core metrics and abnormal data.
 
-    1.  The transaction summary information includes the transaction numbers of Submit \(commit\_counter\) and Rollback \(rollback\_counter\) and the transaction response time. The above transactions are accumulated values since the last restart.
-    2.  The workload SQL summary information includes the distribution of DDL, DCL, and DML in a workload and the number of SELECT, UPDATE, INSERT, and DELETE in DML. The SQL type distribution is the accumulated value since the last restart.
-    3.  The workload SUID time summary information includes the total, average, maximum, and minimum time consumptions of SELECT, UPDATE, INSERT, and DELETE operations in a workload.
-    4.  The SQL response time percentile information includes 80% and 95% of the SQL response time in the system in a past period of time.
-    5.  The Waitevents summary information contains only the event waiting information on a single node and does not contain the global aggregation information. It includes the waiting status \(STATUS\), I/O event \(IO\_EVENT\), lock event \(LOCK\_EVENT\), Lwlock event \(LWLOCK\_EVENT\), successful waiting times, failed waiting times, total event waiting time on the node, minimum event waiting time, maximum event waiting time, and average event waiting time.
-    6.  For the SQL statements that are sent to the Parser, the Parser generates the normalized Unique SQL ID and the corresponding SQL text strings, collects statistics on the time consumed by unique SQL statements in each execution phase to analyze, optimizes SQL performance based on the time distribution, and collects statistics on the time consumed by instances and sessions in each phase to help optimize the overall system performance. It also queries the number of SQL execution times, SQL kernel response time, I/O time, CPU time, network transmission time, numbers of physical and logical reads, result sets returned by Select, scanned tuples, updated rows, deleted rows, inserted rows, and newly generated \(hard\) reuse \(soft\) plans.
-
+    1. The transaction summary information includes the transaction numbers of Submit \(commit\_counter\) and Rollback \(rollback\_counter\) and the transaction response time. The above transactions are accumulated values since the last restart.
+    2. The workload SQL summary information includes the distribution of DDL, DCL, and DML in a workload and the number of SELECT, UPDATE, INSERT, and DELETE in DML. The SQL type distribution is the accumulated value since the last restart.
+    3. The workload SUID time summary information includes the total, average, maximum, and minimum time consumptions of SELECT, UPDATE, INSERT, and DELETE operations in a workload.
+    4. The SQL response time percentile information includes 80% and 95% of the SQL response time in the system in a past period of time.
+    5. The Waitevents summary information contains only the event waiting information on a single node and does not contain the global aggregation information. It includes the waiting status \(STATUS\), I/O event \(IO\_EVENT\), lock event \(LOCK\_EVENT\), Lwlock event \(LWLOCK\_EVENT\), successful waiting times, failed waiting times, total event waiting time on the node, minimum event waiting time, maximum event waiting time, and average event waiting time.
+    6. For the SQL statements that are sent to the Parser, the Parser generates the normalized Unique SQL ID and the corresponding SQL text strings, collects statistics on the time consumed by unique SQL statements in each execution phase to analyze, optimizes SQL performance based on the time distribution, and collects statistics on the time consumed by instances and sessions in each phase to help optimize the overall system performance. It also queries the number of SQL execution times, SQL kernel response time, I/O time, CPU time, network transmission time, numbers of physical and logical reads, result sets returned by Select, scanned tuples, updated rows, deleted rows, inserted rows, and newly generated \(hard\) reuse \(soft\) plans.
 
 ## Logical Log Replication<a name="en-us_topic_0283136537_section711182311180"></a>
 
@@ -294,8 +284,8 @@ Periodically and proactively analyzes run logs and WDR reports \(which are autom
 
 The WDR module consists of the following two components:
 
--   Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
--   WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data.
+- Snapshot: The performance snapshot can be configured to collect a certain amount of performance data from the kernel at a specified interval and store the data in the user tablespace. Any snapshot can be used as a performance baseline for comparison with other snapshots.
+- WDR Reporter: This tool analyzes the overall system performance based on two snapshots, calculates the changes of more specific performance indicators between the two time points, and generates summarized and detailed performance data.
 
 ## Incremental Backup and Restoration \(beta\)<a name="en-us_topic_0283136537_section13561174061810"></a>
 
@@ -335,38 +325,39 @@ User authentication modes \(gsql, JDBC, and ODBC\) support the SM3 algorithm. AP
 The syntax and semantics of the SQL engine are decoupled to implement plug-ins for the syntax and semantics layers of openGauss and decouple the syntax module of heterogeneous databases from the openGauss Kernel. Operator plug-ins are supported, implementing plug-ins for specific operators from plan creation, optimization, to execution.
 
 ## UWAL
+
 This feature combines the database and a Huawei-developed Unified Write-Ahead Log \(UWAL\) component to improve the performance of active/standby transaction submission as well as stream replication and transmission, accelerating the Write-Ahead Log \(WAL\) performance of the database.
 
 ## SCRLock
+
 When resource pooling is enabled, Smart Cached Remote Lock \(SCRLock\) can be used to provide the distributed lock capability, improving distributed lock performance.
 
 ## Others<a name="section136625208413"></a>
 
--   UPSERT supports subqueries.
+- UPSERT supports subqueries.
 
     A subquery expression can be used in the UPSERT statement to assign a value, and EXCLUDED can be used in the subquery expression to reference conflicting rows.
 
--   Column-store tables support unique indexes.
+- Column-store tables support unique indexes.
 
     You can create the unique indexes based on CBTree, the primary keys, and the unique key constraints in a column-store table, preventing duplicate data in a table and extending the application scenarios of column-store tables.
 
--   The jsonb data type is supported.
+- The jsonb data type is supported.
 
     The JSONB data type is supported to efficiently operate JSON data. Various operators and operation functions of JSON and JSONB types are supported. Indexes can be created on JSONB to meet the JSON application and search scenarios.
 
--   The UCE fault detection and response are supported.
+- The UCE fault detection and response are supported.
 
     When a memory UCE error occurs, the SIGBUS signal sent by the system is detected, and the corresponding logs are displayed and the openGauss database state is changed according to the carried physical address. Then, the corresponding database process exits.
 
--   Monitoring and automatic elimination of unique SQL statements are supported.
+- Monitoring and automatic elimination of unique SQL statements are supported.
 
     openGauss supports automatic elimination of unique SQL statements. It uses the LRU algorithm to automatically eliminate old unique SQL information based on the update time, ensuring that the latest statistics can be continuously recorded and improving database O&M.
 
-
--   The gs\_cgroup load management is supported.
+- The gs\_cgroup load management is supported.
 
     gs\_cgroup is a load management tool. It creates and manages Cgroups in the database kernel and sets system resource quotas and resource limits to manage the resource usage and priorities of users and services, fully utilizing machine resources.
 
--  The standby node supports slow SQL performance diagnosis.
+- The standby node supports slow SQL performance diagnosis.
 
     The slow SQL diagnosis capability can also be enabled on the standby node. Similar to the primary node, the standby node can record SQL performance details in multiple dimensions and granularities, such as events and wait events.

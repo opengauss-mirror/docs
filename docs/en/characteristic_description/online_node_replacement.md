@@ -24,9 +24,8 @@ None
 
 Currently, online DDL operations are supported during node replacement.
 
--   During node replacement, DML operations are supported and DDL operations are supported in certain scenarios.
+- During node replacement, DML operations are supported and DDL operations are supported in certain scenarios.
 
 ## Dependencies<a name="section8406643144716"></a>
 
 None
-

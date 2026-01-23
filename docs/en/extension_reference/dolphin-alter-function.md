@@ -16,7 +16,7 @@ Compared with the original openGauss, Dolphin modifies the ALTER FUNCTION syntax
 
 ## Syntax <a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   Modify the additional parameter of the customized function.
+- Modify the additional parameter of the customized function.
 
     ```
     ALTER FUNCTION function_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )

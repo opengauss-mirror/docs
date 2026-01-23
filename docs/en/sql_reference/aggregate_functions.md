@@ -2,7 +2,7 @@
 
 ## Aggregate Functions<a name="en-us_topic_0283136894_en-us_topic_0237121982_en-us_topic_0059778466_s6494488eb2824afa801304697cb740e4"></a>
 
--   sum\(expression\)
+- sum\(expression\)
 
     Description: Specifies the sum of expressions across all input values.
 
@@ -10,9 +10,9 @@
 
     Generally, same as the argument data type. In the following cases, type conversion occurs:
 
-    -   **BIGINT**  for  **SMALLINT**  or  **INT**  arguments
-    -   **NUMBER**  for  **BIGINT**  arguments
-    -   **DOUBLE PRECISION**  for floating-point arguments
+    - **BIGINT**  for  **SMALLINT**  or  **INT**  arguments
+    - **NUMBER**  for  **BIGINT**  arguments
+    - **DOUBLE PRECISION**  for floating-point arguments
 
     Example:
 
@@ -24,7 +24,7 @@
     (1 row)
     ```
 
--   max\(expression\)
+- max\(expression\)
 
     Description: Specifies the maximum value of expression across all input values.
 
@@ -38,7 +38,7 @@
     openGauss=# SELECT MAX(inv_quantity_on_hand) FROM tpcds.inventory;
     ```
 
--   min\(expression\)
+- min\(expression\)
 
     Description: Specifies the minimum value of expression across all input values.
 
@@ -56,7 +56,7 @@
     (1 row)
     ```
 
--   avg\(expression\)
+- avg\(expression\)
 
     Description: Specifies the average \(arithmetic mean\) of all input values.
 
@@ -78,7 +78,7 @@
     (1 row)
     ```
 
--   count\(expression\)
+- count\(expression\)
 
     Description: Specifies the number of input rows for which the value of the expression is not null.
 
@@ -94,7 +94,7 @@
     (1 row)
     ```
 
--   count\(\*\)
+- count\(\*\)
 
     Description: Returns the number of input rows.
 
@@ -110,7 +110,7 @@
     (1 row)
     ```
 
--   median\(expression\) \[over \(query partition clause\)\]
+- median\(expression\) \[over \(query partition clause\)\]
 
     Description: Returns the median of an expression.  **NULL**  will be ignored by the median function during calculation. The  **DISTINCT**  keyword can be used to exclude duplicate records in an expression. The data type of the input expression can be numeric \(including integer, double, and bigint\) or interval. For other data types, the median cannot be calculated.
 
@@ -126,7 +126,7 @@
     (1 row)
     ```
 
--   array\_agg\(expression\)
+- array\_agg\(expression\)
 
     Description: Concatenates input values, including nulls, into an array.
 
@@ -142,7 +142,7 @@
     (1 row)
     ```
 
--   string\_agg\(expression, delimiter\)
+- string\_agg\(expression, delimiter\)
 
     Description: Concatenates input values into a string, separated by delimiter.
 
@@ -160,13 +160,13 @@
     (1 row)
     ```
 
--   listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
+- listagg\(expression \[, delimiter\]\) WITHIN GROUP\(ORDER BY order-list\)
 
     Description: Sorts aggregation column data according to the mode specified by  **WITHIN GROUP**  and concatenates the data to a string using the specified delimiter.
 
-    -   **expression**: Mandatory. It specifies an aggregation column name or a column-based valid expression. It does not support the  **DISTINCT**  keyword and the  **VARIADIC**  parameter.
-    -   **delimiter**: Optional. It specifies a delimiter, which can be a string constant or a deterministic expression based on a group of columns. The default value is empty.
-    -   **order-list**: Mandatory. It specifies the sorting mode in a group.
+    - **expression**: Mandatory. It specifies an aggregation column name or a column-based valid expression. It does not support the  **DISTINCT**  keyword and the  **VARIADIC**  parameter.
+    - **delimiter**: Optional. It specifies a delimiter, which can be a string constant or a deterministic expression based on a group of columns. The default value is empty.
+    - **order-list**: Mandatory. It specifies the sorting mode in a group.
 
     Return type: text
 
@@ -273,17 +273,18 @@
 
     Description: (Available only in B-compatible mode) The number of parameters is not fixed. Multiple columns can be concatenated. Aggregation column data is sorted based on the value of **ORDER BY** and concatenated into a character string using the separator. This function cannot be used as a window function.
 
-    -   **DISTINCT**: Optional. It deduplicates the result after each row is concatenated.
-    -   **expression**: Mandatory. It specifies the aggregation column name or a valid column-based expression.
-    -   **ORDER BY**: Optional. It is followed by a variable expression and sorting rule. The group_concat function does not support the (ORDER BY + number) format.
-    -   **SEPARATOR**: Optional. It is followed by a CONST character (string). This separator is used to concatenate the expression results of two adjacent lines in a group. If this parameter is not specified, **','** is used by default.
-    -   When both DISTINCT and ORDER BY are specified, all ORDER BY expressions of openGauss must be in DISTINCT expressions. Otherwise, an error is reported.
+    - **DISTINCT**: Optional. It deduplicates the result after each row is concatenated.
+    - **expression**: Mandatory. It specifies the aggregation column name or a valid column-based expression.
+    - **ORDER BY**: Optional. It is followed by a variable expression and sorting rule. The group_concat function does not support the (ORDER BY + number) format.
+    - **SEPARATOR**: Optional. It is followed by a CONST character (string). This separator is used to concatenate the expression results of two adjacent lines in a group. If this parameter is not specified, **','** is used by default.
+    - When both DISTINCT and ORDER BY are specified, all ORDER BY expressions of openGauss must be in DISTINCT expressions. Otherwise, an error is reported.
 
     Return type: text
 
     Example:
 
     Set **separator** to **';'**.
+
     ```
     test=# select id, group_concat(v separator ';') from t group by id order by id asc;
      id | group_concat
@@ -294,6 +295,7 @@
     ```
 
     By default, the separator is **','**.
+
     ```
     test=# select id, group_concat(id,v) from t group by id order by id asc;
      id | group_concat
@@ -304,6 +306,7 @@
     ```
 
     The aggregation column is of the text character set type.
+
     ```
     test=# select id, group_concat(v) from t group by id order by id asc;
      id | group_concat
@@ -314,6 +317,7 @@
     ```
 
     The aggregation column is of the integer type.
+
     ```
     test=# select id, group_concat(v separator ';') from t group by id order by id asc;
      id | group_concat
@@ -324,6 +328,7 @@
     ```
 
     The aggregation column is of the floating point type.
+
     ```
     test=# select id, group_concat(v separator ';') from t group by id order by id asc;
      id | group_concat
@@ -334,6 +339,7 @@
     ```
 
     The aggregation column is of the time type.
+
     ```
     test=# select id, group_concat(hiredate separator ';') from t group by id order by id asc;
       id |                     group_concat
@@ -344,6 +350,7 @@
     ```
 
     The aggregation column is of the binary type.
+
     ```
     test=# select id, group_concat(v separator ';') from t group by id order by id asc;
      id | group_concat
@@ -354,6 +361,7 @@
     ```
 
     The aggregation column is of the time interval type.
+
     ```
     test=# select id, group_concat(vacationt separator ';') from t group by id order by id asc;
      id |                    group_concat
@@ -364,6 +372,7 @@
     ```
 
     Use DISTINCT to deduplicate data.
+
     ```
     test=# select id, group_concat(distinct v) from t group by id order by id asc;
      id | group_concat
@@ -374,6 +383,7 @@
     ```
 
     Use ORDER BY to sort data.
+
     ```
     test=# select id, group_concat(v order by v desc) from t group by id order by id asc;
      id | group_concat
@@ -383,7 +393,7 @@
     (2 rows)
     ```
 
--   covar\_pop\(Y, X\)
+- covar\_pop\(Y, X\)
 
     Description: Specifies the overall covariance.
 
@@ -399,7 +409,7 @@
     (1 row)
     ```
 
--   covar\_samp\(Y, X\)
+- covar\_samp\(Y, X\)
 
     Description: Specifies the sample covariance.
 
@@ -415,7 +425,7 @@
     (1 row)
     ```
 
--   stddev\_pop\(expression\)
+- stddev\_pop\(expression\)
 
     Description: Specifies the overall standard deviation.
 
@@ -431,7 +441,7 @@
     (1 row)
     ```
 
--   stddev\_samp\(expression\)
+- stddev\_samp\(expression\)
 
     Description: Specifies the sample standard deviation of the input values.
 
@@ -447,7 +457,7 @@
     (1 row)
     ```
 
--   var\_pop\(expression\)
+- var\_pop\(expression\)
 
     Description: Specifies the population variance of the input values \(square of the population standard deviation\).
 
@@ -463,7 +473,7 @@
     (1 row)
     ```
 
--   var\_samp\(expression\)
+- var\_samp\(expression\)
 
     Description: Specifies the sample variance of the input values \(square of the sample standard deviation\).
 
@@ -479,7 +489,7 @@
     (1 row)
     ```
 
--   bit\_and\(expression\)
+- bit\_and\(expression\)
 
     Description: bitwise AND of all non-null input values, or null if none
 
@@ -495,7 +505,7 @@
     (1 row)
     ```
 
--   bit\_or\(expression\)
+- bit\_or\(expression\)
 
     Description: bitwise OR of all non-null input values, or null if none
 
@@ -511,7 +521,7 @@
     (1 row)
     ```
 
--   bool\_and\(expression\)
+- bool\_and\(expression\)
 
     Description: Its value is  **true**  if all input values are  **true**, otherwise  **false**.
 
@@ -527,7 +537,7 @@
     (1 row)
     ```
 
--   bool\_or\(expression\)
+- bool\_or\(expression\)
 
     Description: Its value is  **true**  if at least one input value is  **true**, otherwise  **false**.
 
@@ -543,7 +553,7 @@
     (1 row)
     ```
 
--   corr\(Y, X\)
+- corr\(Y, X\)
 
     Description: Specifies the correlation coefficient.
 
@@ -559,7 +569,7 @@
     (1 row)
     ```
 
--   corr_s\(expr1, expr2, return_mode\)
+- corr_s\(expr1, expr2, return_mode\)
 
     Description：Spearman correlation coefficient
 
@@ -620,7 +630,7 @@
     (1 row)
     ```
 
--   corr_k\(expr1, expr2, return_mode\)
+- corr_k\(expr1, expr2, return_mode\)
 
     Description： Kendall's tau-b correlation coefficient
 
@@ -650,7 +660,7 @@
     (1 row)
     ```
 
--   every\(expression\)
+- every\(expression\)
 
     Description: Equivalent to  **bool\_and**
 
@@ -666,7 +676,7 @@
     (1 row)
     ```
 
--   regr\_avgx\(Y, X\)
+- regr\_avgx\(Y, X\)
 
     Description: Specifies the average of the independent variable \(**sum\(X\)/N**\).
 
@@ -682,7 +692,7 @@
     (1 row)
     ```
 
--   regr\_avgy\(Y, X\)
+- regr\_avgy\(Y, X\)
 
     Description: Specifies the average of the dependent variable \(**sum\(Y\)/N**\).
 
@@ -698,7 +708,7 @@
     (1 row)
     ```
 
--   regr\_count\(Y, X\)
+- regr\_count\(Y, X\)
 
     Description: Specifies the number of input rows in which both expressions are non-null.
 
@@ -714,7 +724,7 @@
     (1 row)
     ```
 
--   regr\_intercept\(Y, X\)
+- regr\_intercept\(Y, X\)
 
     Description: Specifies the y-intercept of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
 
@@ -730,7 +740,7 @@
     (1 row)
     ```
 
--   regr\_r2\(Y, X\)
+- regr\_r2\(Y, X\)
 
     Description: Specifies the square of the correlation coefficient.
 
@@ -746,7 +756,7 @@
     (1 row)
     ```
 
--   regr\_slope\(Y, X\)
+- regr\_slope\(Y, X\)
 
     Description: Specifies the slope of the least-squares-fit linear equation determined by the \(X, Y\) pairs.
 
@@ -762,9 +772,9 @@
     (1 row)
     ```
 
--   regr\_sxx\(Y, X\)
+- regr\_sxx\(Y, X\)
 
-    Description:  **sum\(X^2\) - sum\(X\)^2/N **\(sum of squares of the independent variables\)
+    Description:  **sum\(X^2\) - sum\(X\)^2/N**\(sum of squares of the independent variables\)
 
     Return type: double precision
 
@@ -778,7 +788,7 @@
     (1 row)
     ```
 
--   regr\_sxy\(Y, X\)
+- regr\_sxy\(Y, X\)
 
     Description:  **sum\(X\*Y\) - sum\(X\) \* sum\(Y\)/N**  \("sum of products" of independent times dependent variable\)
 
@@ -794,7 +804,7 @@
     (1 row)
     ```
 
--   regr\_syy\(Y, X\)
+- regr\_syy\(Y, X\)
 
     Description:  **sum\(Y^2\) - sum\(Y\)^2/N**  \("sum of squares" of the dependent variable\)
 
@@ -810,7 +820,7 @@
     (1 row)
     ```
 
--   stddev\(expression\)
+- stddev\(expression\)
 
     Description: Specifies the alias of  **stddev\_samp**.
 
@@ -826,7 +836,7 @@
     (1 row)
     ```
 
--   variance\(expexpression,ression\)
+- variance\(expexpression,ression\)
 
     Description: Specifies the alias of  **var\_samp**.
 
@@ -842,7 +852,7 @@
     (1 row)
     ```
 
--   delta
+- delta
 
     Description: Returns the difference between the current row and the previous row.
 
@@ -850,18 +860,18 @@
 
     Return type: numeric
 
--   checksum\(expression\)
+- checksum\(expression\)
 
     Description: Returns the  **CHECKSUM**  value of all input values. This function can be used to check whether the data in the tables is the same before and after the backup, restoration, or migration of the openGauss database \(databases other than openGauss are not supported\). Before and after database backup, database restoration, or data migration, you need to manually run SQL commands to obtain the execution results. Compare the obtained execution results to check whether the data in the tables before and after the backup or migration is the same.
 
     >[!NOTE]NOTE 
-    >-   For large tables, the execution of the  **CHECKSUM**  function may take a long time.
-    >-   If the  **CHECKSUM**  values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the  **CHECKSUM**  function may incur conflicts. There is low possibility that two tables with different contents may have the same  **CHECKSUM**  value. The same problem may occur when  **CHECKSUM**  is used for columns.
-    >-   If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the  **CHECKSUM**  value.
+    >- For large tables, the execution of the  **CHECKSUM**  function may take a long time.
+    >- If the  **CHECKSUM**  values of two tables are different, it indicates that the contents of the two tables are different. Using the hash function in the  **CHECKSUM**  function may incur conflicts. There is low possibility that two tables with different contents may have the same  **CHECKSUM**  value. The same problem may occur when  **CHECKSUM**  is used for columns.
+    >- If the time type is timestamp, timestamptz, or smalldatetime, ensure that the time zone settings are the same when calculating the  **CHECKSUM**  value.
 
-    -   If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  *expression*  to the column name.
-    -   If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  *expression*  to  *Column name***::TEXT**.
-    -   If the  **CHECKSUM**  value of all columns is calculated, set  *expression*  to  *Table name***::TEXT**.
+    - If the  **CHECKSUM**  value of a column is calculated and the column type can be changed to TEXT by default, set  *expression*  to the column name.
+    - If the  **CHECKSUM**  value of a column is calculated and the column type cannot be converted to TEXT by default, set  *expression*  to  *Column name***::TEXT**.
+    - If the  **CHECKSUM**  value of all columns is calculated, set  *expression*  to  *Table name***::TEXT**.
 
     The following types of data can be converted into TEXT types by default: char, name, int8, int2, int1, int4, raw, pg\_node\_tree, float4, float8, bpchar, varchar, nvarchar, nvarchar2, date, timestamp, timestamptz, numeric, and smalldatetime. Other types need to be forcibly converted to TEXT.
 
@@ -899,7 +909,7 @@
     (1 row)
     ```
 
--   first\(anyelement\)
+- first\(anyelement\)
 
     Description: Returns the first non-null input.
 
@@ -921,7 +931,7 @@
     (1 rows)
     ```
 
--   last\(anyelement\)
+- last\(anyelement\)
 
     Description: Returns the last non-null input.
 
@@ -943,7 +953,7 @@
     (1 rows)
     ```
 
--   mode\(\) within group \(order by value anyelement\)
+- mode\(\) within group \(order by value anyelement\)
 
     Description: Returns the value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
 
@@ -964,7 +974,7 @@
     (1 row)
     ```
 
--   json\_agg\(any\)
+- json\_agg\(any\)
 
     Description: Aggregates values into a JSON array.
 
@@ -993,7 +1003,7 @@
     (3 rows)
     ```
 
--   json\_object\_agg\(any, any\)
+- json\_object\_agg\(any, any\)
 
     Description: Aggregates values into a JSON object.
 
@@ -1021,13 +1031,12 @@
     (2 rows)
     ```
 
-
--   cume\_dist\(expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- cume\_dist\(expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     Description: Calculate the cumulative distribution of the assumed rows and corresponding sorting criteria identified by the parameters of the function in the aggregated group rows. in other words, The proportion of the total number of rows in the sorting partition where the value of expression is the same as the value of the last row after sorting
 
-    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    -   **order-list**: Mandatory. The sorting key can be a column name or a sorting key expression.
+    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    - **order-list**: Mandatory. The sorting key can be a column name or a sorting key expression.
 
     Return type: float
 
@@ -1085,11 +1094,11 @@
     (1 row)
     ```
 
--   rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking values of the rank function are not continuous.
-    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
 
     Return type: int
 
@@ -1114,6 +1123,7 @@
     Example
 
     Column sorted by c1, c2
+
     ```
     openGauss=# select rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;
     rank 
@@ -1122,11 +1132,11 @@
     (1 row)
     ```
 
--   dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- dense\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     Description: Calculate the ranking of a hypothetical row identified by the parameters of a function relative to a given sorting criterion. The ranking value of the dense_rank function is continuous
-    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
 
     Return type: int
 
@@ -1151,6 +1161,7 @@
     Example
 
     Column sorted by c1, c2
+
     ```
     openGauss=# select dense_rank(4,0.2) within group (order by c1,c2) from aggregates_hypothetical;;
     dense_rank 
@@ -1159,18 +1170,19 @@
     (1 row)
     ```
 
--   percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
+- percent\_rank\( expression \[,expression\] \) WITHIN GROUP \(ORDER BY \{ order-list \[ ASC | DESC \] \[ NULLS \{ FIRST | LAST \} \] \} \[,...\]\)
 
     Description: Calculate the percentage of the relative position of the assumed rows identified by the parameters of the function with respect to a given sorting criterion. The calculation formula is (rank -1)/(totals -1).
 
-    -   **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
-    -   **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
+    - **expression**: Mandatory. specify the rows to be inserted into a set of rows. This expression must return a value of a built-in data type. The expression must be a constant or variable of a constant or variable. Multiple parameters can be entered. The number of parameters must be consistent with the order list and the number of parameters.
+    - **order-list**:Mandatory.The sorting key can be a column name or a sorting key expression.
 
     Return type: float
 
     Example
 
     The percentage of the input value in the position of the current ranking column sorted by c1
+
     ```
     openGauss=# select percent_rank(4) within group (order by c1) from aggregates_hypothetical;
     percent_rank    
@@ -1182,6 +1194,7 @@
     Example
 
     Column sorted by c1, c2
+
     ```
     openGauss=# select percent_rank(3,0.2) within group (order by c1,c2) from aggregates_hypothetical; 
     percent_rank    

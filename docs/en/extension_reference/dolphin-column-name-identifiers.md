@@ -3,8 +3,9 @@
 ## Precautions
 
 Compared with the original openGauss, Dolphin modifies the column name identifiers as follows:
--   Column names and aliases are sensitive to storage and display. Whether to use double quotation marks to enclose column names is not considered.
--   Column names and aliases are insensitive to comparison. That is, column names **'aAa'** and **'AAa'** identify the same column.
+
+- Column names and aliases are sensitive to storage and display. Whether to use double quotation marks to enclose column names is not considered.
+- Column names and aliases are insensitive to comparison. That is, column names **'aAa'** and **'AAa'** identify the same column.
 
 Example:
 

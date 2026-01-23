@@ -16,7 +16,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
 
 ## DB4AI-Snapshots Usage Guide<a name="section9973130101017"></a>
 
-1.  Create a table and insert table data.
+1. Create a table and insert table data.
 
     If a data table exists in the database, you can create a data table snapshot based on the existing data table. To facilitate subsequent demonstration, create a data table named  **t1**  and insert test data into the table.
 
@@ -43,10 +43,10 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
     (5 rows)
     ```
 
-2.  Use DB4AI-Snapshots.
-    -   Create DB4AI-Snapshots.
+2. Use DB4AI-Snapshots.
+    - Create DB4AI-Snapshots.
 
-        -   Example 1: CREATE SNAPSHOT... AS
+        - Example 1: CREATE SNAPSHOT... AS
 
             In the following example, the default version separator is an at sign \(@\), and the default subversion separator is a period \(.\). You can set the separator by setting the  **db4ai\_snapshot\_version\_delimiter**  and  **db4ai\_snapshot\_version\_separator**  parameters.
 
@@ -90,7 +90,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
 
             According to the foregoing example, it can be found that the data table snapshot can solidify content of a data table, to avoid instability during training of a machine learning model caused by data modification in the process, and can also avoid a lock conflict caused when multiple users access and modify the same table at the same time.
 
-        -   Example 2: CREATE SNAPSHOT... FROM
+        - Example 2: CREATE SNAPSHOT... FROM
 
             You can run an SQL statement to inherit a created data table snapshot and generate a new data table snapshot based on the data modification. Example:
 
@@ -119,8 +119,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
             (7 rows)
             ```
 
-
-    -   Delete the data table snapshot  **SNAPSHOT**.
+    - Delete the data table snapshot  **SNAPSHOT**.
 
         ```
         purge snapshot s1@3.0;
@@ -132,7 +131,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
 
         At this time, no data can be retrieved from  **s1@3.0**, and the records of the data table snapshot in the  **db4ai.snapshot**  view are cleared. Deleting the data table snapshot of this version does not affect the data table snapshots of other versions.
 
-    -   Sample from a data table snapshot.
+    - Sample from a data table snapshot.
 
         Example: Use the sampling rate 0.5 to extract data from snapshot  **s1**.
 
@@ -155,7 +154,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         (2 rows)
         ```
 
-    -   Publish a data table snapshot.
+    - Publish a data table snapshot.
 
         Run the following SQL statement to mark the data table snapshot  **s1@2.0**  as published:
 
@@ -167,7 +166,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         (1 row)
         ```
 
-    -   Archive a data table snapshot.
+    - Archive a data table snapshot.
 
         Run the following statement to mark the data table snapshot as archived:
 
@@ -189,8 +188,8 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
           2 |         1 |           |       1 | public | s1nick@2.0 | omm | {"SAMPLE nick .5 {name}"}                |         | f         | f        | 2021-04-17 10:02:31.73923  |         0
         ```
 
-3.  Perform troubleshooting in case of exceptions.
-    -   The data table or DB4AI snapshot does not exist.
+3. Perform troubleshooting in case of exceptions.
+    - The data table or DB4AI snapshot does not exist.
 
         ```
         purge snapshot s1nick@2.0;
@@ -205,7 +204,7 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         CONTEXT:  PL/pgSQL function db4ai.archive_snapshot(name,name) line 11 at assignment
         ```
 
-    -   Before deleting a snapshot, ensure that other snapshots that depend on it have been deleted.
+    - Before deleting a snapshot, ensure that other snapshots that depend on it have been deleted.
 
         ```
         purge snapshot s1@1.0;
@@ -216,20 +215,20 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         PL/pgSQL function db4ai.purge_snapshot(name,name) line 71 at PERFORM
         ```
 
-4.  Set GUC parameters.
-    -   db4ai\_snapshot\_mode:
+4. Set GUC parameters.
+    - db4ai\_snapshot\_mode:
 
         There are two snapshot modes: MSS \(materialized mode, used to store data entities\) and CSS \(computing mode, used to store incremental information\). The snapshot mode can be switched between MSS and CSS. The default snapshot mode is MSS.
 
-    -   db4ai\_snapshot\_version\_delimiter:
+    - db4ai\_snapshot\_version\_delimiter:
 
         Used to set the data table snapshot version separator. The at sign \(@\) is the default data table snapshot version separator.
 
-    -   db4ai\_snapshot\_version\_separator
+    - db4ai\_snapshot\_version\_separator
 
         Used to set the data table snapshot subversion separator. The period \(.\) is the default data table snapshot subversion separator.
 
-5.  View the snapshot details of a data table in the DB4AI schema by using  **db4ai.snapshot**.
+5. View the snapshot details of a data table in the DB4AI schema by using  **db4ai.snapshot**.
 
     ```
     openGauss=# \d db4ai.snapshot
@@ -254,7 +253,5 @@ If a table snapshot is no longer useful, you can run the  **PURGE SNAPSHOT**  st
         "snapshot_id_key" UNIQUE CONSTRAINT, btree (id) TABLESPACE pg_default
     ```
 
-
 >[!NOTE]NOTE 
 >The DB4AI namespace is a private domain of this function. Functional indexes cannot be created in the DB4AI namespace.
-

@@ -35,14 +35,13 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Parameter description**: Specifies one or more shared libraries that are to be preloaded at connection start. If multiple libraries are to be loaded, separate their names with commas \(,\). All library names are converted to lower case unless double-quoted.
 
--   Any user can change this option. Therefore, library files that can be loaded are restricted to those saved in the  **plugins**  subdirectory of the standard library installation directory. It is the database administrator's responsibility to ensure that libraries in this directory are all safe. Entries in  **local\_preload\_libraries**  can specify the library directory explicitly, for example,  **$libdir/plugins/mylib**, or just specify the library name, for example,  **mylib**. \(**mylib**  is equivalent to  **$libdir/plugins/mylib**.\)
--   Unlike  **shared\_preload\_libraries**, there are no differences in performance between loading a module at session start or doing this during the session. The intent of this feature is to allow debugging or performance-measurement libraries to be loaded into specific sessions without an explicit LOAD command. For example, debugging can be enabled under a given user name by setting this parameter to  **ALTER USER SET**.
--   If a specified library is not found, the connection attempt will fail.
--   Every openGauss-supported library has a "magic block" that is checked to guarantee compatibility. For this reason, non-openGauss-supported libraries cannot be loaded in this way.
+- Any user can change this option. Therefore, library files that can be loaded are restricted to those saved in the  **plugins**  subdirectory of the standard library installation directory. It is the database administrator's responsibility to ensure that libraries in this directory are all safe. Entries in  **local\_preload\_libraries**  can specify the library directory explicitly, for example,  **$libdir/plugins/mylib**, or just specify the library name, for example,  **mylib**. \(**mylib**  is equivalent to  **$libdir/plugins/mylib**.\)
+- Unlike  **shared\_preload\_libraries**, there are no differences in performance between loading a module at session start or doing this during the session. The intent of this feature is to allow debugging or performance-measurement libraries to be loaded into specific sessions without an explicit LOAD command. For example, debugging can be enabled under a given user name by setting this parameter to  **ALTER USER SET**.
+- If a specified library is not found, the connection attempt will fail.
+- Every openGauss-supported library has a "magic block" that is checked to guarantee compatibility. For this reason, non-openGauss-supported libraries cannot be loaded in this way.
 
 This parameter is a BACKEND parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: a string
 
 **Default value**: empty
-

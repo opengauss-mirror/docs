@@ -41,7 +41,6 @@ openGauss supports ODBC 3.5 in the following environments.
 </tbody>
 </table>
 
-
 The ODBC Driver Manager running on UNIX or Linux can be unixODBC or iODBC. unixODBC-2.3.0 is used as the component for connecting the database.
 
 Windows has a native ODBC Driver Manager. You can locate  **Data Sources \(ODBC\)**  by choosing  **Control Panel**  \>  **Administrative Tools**.
@@ -49,14 +48,12 @@ Windows has a native ODBC Driver Manager. You can locate  **Data Sources \(ODBC\
 >[!NOTE]NOTE   
 >The current database ODBC driver is based on an open-source version and may be incompatible with data types tinyint, smalldatetime, and nvarchar2.  
 
--   **[ODBC Packages, Dependent Libraries, and Header Files](odbc_packages_dependent_libraries_and_header_files.md)**  
+- **[ODBC Packages, Dependent Libraries, and Header Files](odbc_packages_dependent_libraries_and_header_files.md)**  
 
--   **[Configuring a Data Source in the Linux OS](configuring_a_data_source_in_the_linux_os.md)**  
+- **[Configuring a Data Source in the Linux OS](configuring_a_data_source_in_the_linux_os.md)**  
 
--   **[Development Process](development_process_jdbc.md)**  
+- **[Development Process](development_process_jdbc.md)**  
 
--   **[Example](example_odbc.md)**  
+- **[Example](example_odbc.md)**  
 
--   **[ODBC Interface Reference](odbc_interface_reference.md)**  
-
-
+- **[ODBC Interface Reference](odbc_interface_reference.md)**  

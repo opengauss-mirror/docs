@@ -4,13 +4,13 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
 ## Procedure<a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_s0b78a5ac02d949ada15c29b00b5c734d"></a>
 
-1.  Obtain the source code package of unixODBC by following link: 
+1. Obtain the source code package of unixODBC by following link: 
 
     [https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download](https://sourceforge.net/projects/unixodbc/files/unixODBC/2.3.9/unixODBC-2.3.9pre.tar.gz/download)
 
     After the download, validate the integrity based on the integrity validation algorithm provided by the community.
 
-2.  Install unixODBC. It does not matter if unixODBC of another version has been installed.
+2. Install unixODBC. It does not matter if unixODBC of another version has been installed.
 
     Currently, unixODBC-2.2.1 is not supported. For example, to install unixODBC-2.3.0, run the commands below. unixODBC is installed in the  **/usr/local**  directory by default. The data source file is generated in the  **/usr/local/etc**  directory, and the library file is generated in the  **/usr/local/lib**  directory.
 
@@ -27,12 +27,12 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     make install
     ```
 
-3.  Replace the openGauss client driver.
-    1.  Decompress the  **openGauss-x.x.x-ODBC.tar.gz**  package. After the decompression, the  **lib**  and  **odbc**  folders are generated. The  **odbc**  folder contains another  **lib**  folder. Copy the  **psqlodbca.la**,  **psqlodbca.so**,  **psqlodbcw.la**, and  **psqlodbcw.so**  files from  **/odbc/lib**  to  **/usr/local/lib**.
-    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
+3. Replace the openGauss client driver.
+    1. Decompress the  **openGauss-x.x.x-ODBC.tar.gz**  package. After the decompression, the  **lib**  and  **odbc**  folders are generated. The  **odbc**  folder contains another  **lib**  folder. Copy the  **psqlodbca.la**,  **psqlodbca.so**,  **psqlodbcw.la**, and  **psqlodbcw.so**  files from  **/odbc/lib**  to  **/usr/local/lib**.
+    2. Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
 
-4.  Configure a data source.
-    1.  Configure the ODBC driver file.
+4. Configure a data source.
+    1. Configure the ODBC driver file.
 
         Add the following content to the  **/usr/local/etc/odbcinst.ini**  file:
 
@@ -79,7 +79,7 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-    2.  Configure the data source file.
+    2. Configure the data source file.
 
         Add the following content to the  **/usr/local/etc/odbc.ini**  file:
 
@@ -296,9 +296,9 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-5.  \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](../database_administration_guide/ssl_certificate_management.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
-6.  <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](../database_administration_guide/ssl_certificate_management.md).
-7.  Enable SSL mode.
+5. \(Optional\) Generate an SSL certificate. For details, see  [Generating Certificates](../database_administration_guide/ssl_certificate_management.md). This step and step  [6](#en-us_topic_0283136654_li1724551081815)  are required only when the server and client are connected in SSL mode. Skip the two steps if the non-SSL connection mode is used.
+6. <a name="en-us_topic_0283136654_li1724551081815"></a>\(Optional\) Replace an SSL certificate. For details, see  [Replacing Certificates](../database_administration_guide/ssl_certificate_management.md).
+7. Enable SSL mode.
 
     Declare the following environment variables and ensure that the permission for the  **client.key\***  series files is set to  **600**.
 
@@ -316,9 +316,9 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     Set the sslmode parameter to require or verify-ca in the odbc.ini file.
     ```
 
-8.  <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
-    1.  Log in as the OS user  **omm**  to the primary node of the database.
-    2.  Run the following command to add NIC IP addresses or host names, with values separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
+8. <a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5"></a>Configure the database server.
+    1. Log in as the OS user  **omm**  to the primary node of the database.
+    2. Run the following command to add NIC IP addresses or host names, with values separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  _NodeName_  specifies the name of the current node.
 
         ```
         gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
@@ -328,21 +328,21 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
         You can also set  **listen\_addresses**  to  **\***  or  **0.0.0.0**  to listen to all NICs, but this incurs security risks and is not recommended.
 
-    3.  Run the following command to add an authentication rule to the configuration file of the primary database node. In this example, the IP address \(10.11.12.13\) of the client is the remote host IP address.
+    3. Run the following command to add an authentication rule to the configuration file of the primary database node. In this example, the IP address \(10.11.12.13\) of the client is the remote host IP address.
 
         ```
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
         >[!NOTE]NOTE 
-        >-   ****
-        >-   **-N all**  indicates all hosts in openGauss.
-        >-   **-I all**  indicates all instances of the host.
-        >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
-        >-   **all**  indicates that a client can connect to any database.
-        >-   **jack**  indicates the user that accesses the database.
-        >-   **_10.11.12.13/__32_**  indicates hosts whose IP address is 10.11.12.13 can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
-        >-   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
+        >- ****
+        >- **-N all**  indicates all hosts in openGauss.
+        >- **-I all**  indicates all instances of the host.
+        >- **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
+        >- **all**  indicates that a client can connect to any database.
+        >- **jack**  indicates the user that accesses the database.
+        >- **_10.11.12.13/__32_**  indicates hosts whose IP address is 10.11.12.13 can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
+        >- **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
 
         If the ODBC client and the primary database node to connect are deployed on the same machine, you can use the local trust authentication mode. Run the following command:
 
@@ -356,14 +356,14 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         host all all xxx.xxx.xxx.xxx/32 sha256
         ```
 
-    4.  Restart openGauss.
+    4. Restart openGauss.
 
         ```
         gs_om -t stop
         gs_om -t start
         ```
 
-9.  Configure the environment variables on the client.
+9. Configure the environment variables on the client.
 
     ```
     vim ~/.bashrc
@@ -383,12 +383,11 @@ The ODBC DRIVER \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     source ~/.bashrc
     ```
 
-
 ## Verifying the Data Source Configuration<a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_scfaeeaa70a9448889e6fdd7e37d172c5"></a>
 
 Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source name\).
 
--   If the following information is displayed, the configuration is correct and the connection succeeds.
+- If the following information is displayed, the configuration is correct and the connection succeeds.
 
     ```
     +---------------------------------------+
@@ -402,43 +401,41 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
     SQL> 
     ```
 
--   If error information is displayed, the configuration is incorrect. Check the configuration.
+- If error information is displayed, the configuration is incorrect. Check the configuration.
 
 ## FAQs<a name="en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_section29040424163013"></a>
 
--   \[UnixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
+- \[UnixODBC\]\[Driver Manager\]Can't open lib 'xxx/xxx/psqlodbcw.so' : file not found.
 
     Possible causes:
 
-    -   The path configured in the  **odbcinst.ini**  file is incorrect.
+    - The path configured in the  **odbcinst.ini**  file is incorrect.
 
         Run  **ls**  to check the path in the error information, and ensure that the  **psqlodbcw.so**  file exists and you have execute permissions on it.
 
-    -   The dependent library of  **psqlodbcw.so**  does not exist or is not in system environment variables.
+    - The dependent library of  **psqlodbcw.so**  does not exist or is not in system environment variables.
 
         Run  **ldd**  to check the path in the error information. If  **libodbc.so.1**  or other UnixODBC libraries do not exist, configure UnixODBC again following the procedure provided in this section, and add the  **lib**  directory under its installation directory to  **LD\_LIBRARY\_PATH**. If other libraries do not exist, add the  **lib**  directory under the ODBC driver package to  **LD\_LIBRARY\_PATH**.
 
-
--   \[UnixODBC\]connect to server failed: no such file or directory
+- \[UnixODBC\]connect to server failed: no such file or directory
 
     Possible causes:
 
-    -   An incorrect or unreachable database IP address or port was configured.
+    - An incorrect or unreachable database IP address or port was configured.
 
         Check the  **Servername**  and  **Port**  configuration items in data sources.
 
-    -   Server monitoring is improper.
+    - Server monitoring is improper.
 
         If  **Servername**  and  **Port**  are correctly configured, ensure the proper network adapter and port are monitored by following the database server configurations in the procedure in this section.
 
-    -   Firewall and network gatekeeper settings are improper.
+    - Firewall and network gatekeeper settings are improper.
 
         Check firewall settings, and ensure that the database communication port is trusted.
 
         Check to ensure network gatekeeper settings are proper \(if any\).
 
-
--   \[unixODBC\]The password-stored method is not supported.
+- \[unixODBC\]The password-stored method is not supported.
 
     Possible causes:
 
@@ -448,7 +445,7 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
 
     Set the configuration item to  **allow**  or a higher level. For details, see  [Table 3](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_table22136585143846).
 
--   Server common name "xxxx" does not match host name "xxxxx"
+- Server common name "xxxx" does not match host name "xxxxx"
 
     Possible causes:
 
@@ -458,7 +455,7 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
 
     To solve this problem, use  **verify-ca**  to stop checking host names, or generate a set of CA certificates containing the actual host names.
 
--   Driver's SQLAllocHandle on SQL\_HANDLE\_DBC failed
+- Driver's SQLAllocHandle on SQL\_HANDLE\_DBC failed
 
     Possible causes:
 
@@ -475,36 +472,34 @@ Run the  **./isql -v** _MPPODBC_  command \(**_MPPODBC_**  is the data source na
 
     Uninstall the unnecessary unixODBC, such as libodbc.so.2, and create a soft link with the same name and the .so.2 suffix for the remaining libodbc.so.1 library.
 
--   FATAL: Forbid remote connection with trust method!
+- FATAL: Forbid remote connection with trust method!
 
     For security purposes, the primary database node forbids access from other nodes in openGauss without authentication.
 
     To access the primary database node from inside openGauss, deploy the ODBC program on the host where the primary database node is located and set the server address to  **127.0.0.1**. It is recommended that the service system be deployed outside openGauss. If it is deployed inside, database performance may be affected.
 
--   \[unixODBC\]\[Driver Manager\]Invalid attribute value
+- \[unixODBC\]\[Driver Manager\]Invalid attribute value
 
     The unixODBC version may not be the recommended one. You are advised to run the  **odbcinst --version**  command to check the unixODBC version in the environment.
 
--   authentication method 10 not supported.
+- authentication method 10 not supported.
 
     If this error occurs on an open-source client, the cause may be:
 
     The database stores only the SHA-256 hash of the password, but the open-source client supports only MD5 hashes.
 
     >[!NOTE]NOTE 
-    >-   The database stores the hashes of user passwords instead of actual passwords.
-    >-   If a password is updated or a user is created, both types of hashes will be stored, compatible with open-source authentication protocols.
-    >-   An MD5 hash can only be generated using the original password, but the password cannot be obtained by reversing its SHA-256 hash. Passwords in the old version will only have SHA-256 hashes and not support MD5 authentication.
-    >-   The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
+    >- The database stores the hashes of user passwords instead of actual passwords.
+    >- If a password is updated or a user is created, both types of hashes will be stored, compatible with open-source authentication protocols.
+    >- An MD5 hash can only be generated using the original password, but the password cannot be obtained by reversing its SHA-256 hash. Passwords in the old version will only have SHA-256 hashes and not support MD5 authentication.
+    >- The MD5 encryption algorithm has lower security and poses security risks. Therefore, you are advised to use a more secure encryption algorithm.
 
     To solve this problem, you can update the user password \(see  [ALTER USER](../sql_reference/alter_user.md)\) or create a user \(see  [CREATE USER](../sql_reference/create_user.md)\) having the same permissions as the faulty user.
 
--   unsupported frontend protocol 3.51: server supports 1.0 to 3.0
+- unsupported frontend protocol 3.51: server supports 1.0 to 3.0
 
     The database version is too early or the database is an open-source database. Use the driver of the required version to connect to the database.
 
--   FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
+- FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 
     In  **pg\_hba.conf**  of the target primary database node, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see  [8](#en-us_topic_0283136654_en-us_topic_0237120407_en-us_topic_0059778464_l4c0173b8af93447e91aba24005e368e5).
-
-

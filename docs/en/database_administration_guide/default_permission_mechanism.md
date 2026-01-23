@@ -11,4 +11,3 @@ To remove permissions, run  **[REVOKE](../sql_reference/revoke.md)**. Object own
 System catalogs and views are visible to either system administrators or all users. System catalogs and views that require system administrator permissions can be queried only by system administrators. For details, see  [System Catalogs and System Views](../database_reference/overview-of-system-catalogs-and-system-views.md).
 
 The database provides the object isolation feature. If this feature is enabled, users can view only the objects \(tables, views, columns, and functions\) that they have the permission to access. System administrators are not affected by this feature. For details, see  [ALTER DATABASE](../sql_reference/alter_database.md).
-

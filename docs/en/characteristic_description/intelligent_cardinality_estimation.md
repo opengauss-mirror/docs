@@ -22,13 +22,13 @@ None
 
 ## Constraints<a name="section13678185110268"></a>
 
--   The database is running properly and resources are sufficient.
--   Only the following data types are supported: FLOAT8, Double Precision, FlOAT4, REAL, INT16, BIGINT, INTEGER, VARCHAR, CHARACTER VARYING, CHAR, CHARACTER, and NUMERIC.
--   Only query cardinality estimation with no more than 64 columns is supported.
--   To ensure system performance, model creation uses only a maximum of 200,000 data samples. If the data is too sparse, the estimation result may be inaccurate.
--   To make full use of the limited memory for model access acceleration, you are advised to create a maximum of 30 AI statistics columns. Otherwise, memory replacement may be triggered.
--   If data of the variable-length string type is too long, the creation and estimation performance of cardinality estimation model may be affected.
--   In the current version, if both MCV and Bayesian networks are created, the cardinality estimation performance is low. Therefore, you are not advised to create MCV and Bayesian networks.
+- The database is running properly and resources are sufficient.
+- Only the following data types are supported: FLOAT8, Double Precision, FlOAT4, REAL, INT16, BIGINT, INTEGER, VARCHAR, CHARACTER VARYING, CHAR, CHARACTER, and NUMERIC.
+- Only query cardinality estimation with no more than 64 columns is supported.
+- To ensure system performance, model creation uses only a maximum of 200,000 data samples. If the data is too sparse, the estimation result may be inaccurate.
+- To make full use of the limited memory for model access acceleration, you are advised to create a maximum of 30 AI statistics columns. Otherwise, memory replacement may be triggered.
+- If data of the variable-length string type is too long, the creation and estimation performance of cardinality estimation model may be affected.
+- In the current version, if both MCV and Bayesian networks are created, the cardinality estimation performance is low. Therefore, you are not advised to create MCV and Bayesian networks.
 
 ## Dependencies<a name="section11899817102719"></a>
 

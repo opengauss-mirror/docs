@@ -6,6 +6,7 @@ openGauss resource pooling is a new cluster architecture launched by openGauss. 
 This document describes the constraints on the resource pooling architecture.
 
 ## Current Constraints
+
 - **Note that these are temporary constraints and the features may be supported in the future.**
   
 | No.|  Constraint| Remarks|

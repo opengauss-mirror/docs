@@ -3,9 +3,11 @@
 ## Introduction
 
 This chapter describes how to install and use the Unified Write-Ahead Log \(UWAL\) feature of the openGauss database. This feature combines the database and a Huawei-developed UWAL component to improve the performance of active/standby transaction submission as well as streaming replication and transmission, accelerating the Write-Ahead Log \(WAL\) processing efficiency.
+
 ## Preparations
 
 ### Obtaining the Installation Package
+
 Obtain the UWAL installation package from the openGauss community.
 
 ### Environment Requirements
@@ -73,32 +75,33 @@ Obtain the UWAL installation package from the openGauss community.
 ## Installation and Uninstallation
 
 ### One-Click Deployment of the UWAL Feature
+
 UWAL allows one-click deployment through a simple deployment script.
 
 - Prerequisites
-    -   openGauss has been deployed.
-    -   Obtain the UWAL installation package corresponding to the OS and CPU architecture in use, for example,  **OCK\_UWAL\_23.0.0\_openeuler\_22.03-aarch64\_gcc10.tar.gz**.
-    -   The following directories exist on both the active and standby nodes:
-        -   **$\{GAUSSHOME\}/lib**
-        -   UWAL file storage path \(value of  **uwal\_devices\_path**\)
-        -   UWAL log file storage path \(value of  **uwal\_log\_path**\)
+    - openGauss has been deployed.
+    - Obtain the UWAL installation package corresponding to the OS and CPU architecture in use, for example,  **OCK\_UWAL\_23.0.0\_openeuler\_22.03-aarch64\_gcc10.tar.gz**.
+    - The following directories exist on both the active and standby nodes:
+        - **$\{GAUSSHOME\}/lib**
+        - UWAL file storage path \(value of  **uwal\_devices\_path**\)
+        - UWAL log file storage path \(value of  **uwal\_log\_path**\)
 
 - Procedure
 
     >[!NOTE]NOTE 
     >Unless otherwise specified, perform the following operations only on the active node.
 
-    1.  Upload the installation package to the node and run the following command in the directory where the installation package is stored to grant permissions to the openGauss database user:
+    1. Upload the installation package to the node and run the following command in the directory where the installation package is stored to grant permissions to the openGauss database user:
 
         ```
         chown omm:dbgrp OCK_UWAL_23.0.0_openeuler_22.03-aarch64_gcc10.tar.gz
         ```
 
         >[!NOTE]NOTE 
-        >-   **omm**: database administrator
-        >-   **dbgrp**: user group of the database administrator
+        >- **omm**: database administrator
+        >- **dbgrp**: user group of the database administrator
 
-    2.  Switch to the openGauss database administrator and decompress the installation package.
+    2. Switch to the openGauss database administrator and decompress the installation package.
 
         ```
         su - omm
@@ -132,7 +135,7 @@ UWAL allows one-click deployment through a simple deployment script.
         </tbody>
         </table>
 
-    3.  Decompress the source package.
+    3. Decompress the source package.
 
         ```
         tar -xzvf OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz
@@ -173,7 +176,7 @@ UWAL allows one-click deployment through a simple deployment script.
         >[!NOTE]NOTE 
         >To decompress the source package again, delete the preceding files before performing decompression operations.
 
-    4.  Use the verification binary file in the  **bin**  directory to verify the software package signature.
+    4. Use the verification binary file in the  **bin**  directory to verify the software package signature.
 
         ```
         ./bin/verification OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.cms OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz.txt
@@ -182,7 +185,7 @@ UWAL allows one-click deployment through a simple deployment script.
         >[!NOTE]NOTE 
         >The verification binary file requires three parameters in sequence: source package, signature file, and description file.
 
-        -   If the verification is successful, the console displays the following information:
+        - If the verification is successful, the console displays the following information:
 
             ```
             Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
@@ -190,7 +193,7 @@ UWAL allows one-click deployment through a simple deployment script.
             Verify the sha file passed.
             ```
 
-        -   If the verification fails, the console displays the following information:
+        - If the verification fails, the console displays the following information:
 
             ```
             Starting to verify OCK_UWAL_23.0.0_openeuler_22.03_aarch64_gcc10.tar.gz...
@@ -209,31 +212,31 @@ UWAL allows one-click deployment through a simple deployment script.
             >[!NOTE]NOTE 
             >If the verification fails, the installation package has been tampered with. You are advised to obtain the installation package again and verify it again.
 
-    5.  After the installation package is verified, go to the  **scripts**  directory.
+    5. After the installation package is verified, go to the  **scripts**  directory.
 
         ```
         cd scripts
         ```
 
-    6.  Run the script to complete the UWAL deployment.
+    6. Run the script to complete the UWAL deployment.
 
         ```
         sh ock_uwal_install.sh -H '192.168.4.164 192.168.4.165 192.168.4.166' -U omm -D /home/omm/lib
         ```
 
         >[!NOTE]NOTE 
-        >-   **-H**: IP addresses in the cluster. Example: '_192.168.4.164 192.168.4.165 192.168.4.166_'
-        >-   **-U**: user name of the database administrator. Example:  **omm**
-        >-   **-D**: path to the  **$\{GAUSSHOME\}/lib**  library. Example:  **/home/omm/lib**
-        >-   **-h**: help information.
+        >- **-H**: IP addresses in the cluster. Example: '_192.168.4.164 192.168.4.165 192.168.4.166_'
+        >- **-U**: user name of the database administrator. Example:  **omm**
+        >- **-D**: path to the  **$\{GAUSSHOME\}/lib**  library. Example:  **/home/omm/lib**
+        >- **-h**: help information.
 
-    7.  \(Optional\) Kill the om\_monitor process.
+    7. \(Optional\) Kill the om\_monitor process.
 
         ```
         gs_om -t killmonitor
         ```
 
-    8.  Run the following command to load environment variables:
+    8. Run the following command to load environment variables:
 
         ```
         source ~/.bashrc
@@ -242,7 +245,7 @@ UWAL allows one-click deployment through a simple deployment script.
         >[!TIP]NOTICE 
         >This step is also required on the standby node.
 
-    9.  \(Optional\) The UWAL component depends on the HCOM component for RPC communication. Configure the following environment variables as required.
+    9. \(Optional\) The UWAL component depends on the HCOM component for RPC communication. Configure the following environment variables as required.
 
         ```
         export HCOM_FILE_PATH_PREFIX="/home/uds/socket/file"
@@ -358,20 +361,20 @@ To enable the UWAL feature, modify the configuration file and restart the databa
 >Once the UWAL feature is enabled, it cannot be disabled.
 
 - Prerequisites
-    -   The openGauss version that contains the UWAL feature has been installed on the active and standby nodes.
-    -   The UWAL feature has been deployed in one-click mode.
+    - The openGauss version that contains the UWAL feature has been installed on the active and standby nodes.
+    - The UWAL feature has been deployed in one-click mode.
 
 - Procedure
 
-    1.  Log in to the management node as the database administrator.
-    2.  Modify the  **postgresql.conf**  file of the database.
-        1.  Open the  **postgresql.conf**  file.
+    1. Log in to the management node as the database administrator.
+    2. Modify the  **postgresql.conf**  file of the database.
+        1. Open the  **postgresql.conf**  file.
 
             ```
             vim postgresql.conf
             ```
 
-        2.  Press  **i**  to enter the insert mode and add the following parameters to the end of the file. One active node and one standby node are used as an example. Set the parameters based on the actual environment. For details about the parameters, see  [Table 1](#table135651186916).
+        2. Press  **i**  to enter the insert mode and add the following parameters to the end of the file. One active node and one standby node are used as an example. Set the parameters based on the actual environment. For details about the parameters, see  [Table 1](#table135651186916).
 
             ```
             replconninfo1='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.207 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.207 remoteuwalport=9991'
@@ -388,11 +391,13 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             ```
 
             >[!NOTE]NOTE 
-            >-   If there are one active node and two standby nodes, add the  **replconninfo2**  parameter to the next line of the  **replconninfo1**  parameter. For example:
+            >- If there are one active node and two standby nodes, add the  **replconninfo2**  parameter to the next line of the  **replconninfo1**  parameter. For example:
+>
+            > ```
+            > replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
             >    ```
-            >    replconninfo2='localhost=10.10.10.201 localport=5432 remotehost=10.10.10.208 remoteport=5432 remotenodeid=2 remoteuwalhost=10.10.10.208 remoteuwalport=9991'
-            >    ```
-            >-   If there are one active node and  _N_  standby nodes, add parameters  **replconninfo2**  to  **replconninfo**_**N**_  in sequence.
+>
+            >- If there are one active node and  _N_  standby nodes, add parameters  **replconninfo2**  to  **replconninfo**_**N**_  in sequence.
 
             **Table  1**  UWAL configuration parameters
 
@@ -629,16 +634,16 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             </tbody>
             </table>
 
-        3.  Press  **Esc**, type  **:wq!**, and press  **Enter**  to save the file and exit.
+        3. Press  **Esc**, type  **:wq!**, and press  **Enter**  to save the file and exit.
 
-    3.  Restart the database to enable the UWAL feature.
-        1.  Stop openGauss.
+    3. Restart the database to enable the UWAL feature.
+        1. Stop openGauss.
 
             ```
             cm_ctl stop
             ```
 
-        2.  Start openGauss.
+        2. Start openGauss.
 
             ```
             cm_ctl start
@@ -647,7 +652,7 @@ To enable the UWAL feature, modify the configuration file and restart the databa
             >[!NOTE]NOTE 
             >If the startup fails, rectify the fault based on the  **postgresql-**_YYYY-MM-DD\_HHMMSS_**.log**  file in the openGauss log directory.
 
-    4.  Verify that the UWAL feature is successfully enabled.
+    4. Verify that the UWAL feature is successfully enabled.
 
         ```
         gsql -d postgres -p 16600 -c "show enable_uwal"
@@ -663,9 +668,9 @@ To enable the UWAL feature, modify the configuration file and restart the databa
         ```
 
         >[!NOTE]NOTE 
-        >-   **-p 16600**:  **16600**  indicates the database port number. Change it based on the actual environment.
-        >-   To view UWAL log files, go to the path specified by  **uwal\_log\_path**  and run the following command:
+        >- **-p 16600**:  **16600**  indicates the database port number. Change it based on the actual environment.
+        >- To view UWAL log files, go to the path specified by  **uwal\_log\_path**  and run the following command:
+>
+        > ```
+        > cat uwal*.log
         >    ```
-        >    cat uwal*.log
-        >    ```
-

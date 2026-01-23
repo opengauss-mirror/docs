@@ -97,7 +97,6 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </tbody>
   </table>
 
-
   While backing up and restoring data, take the following aspects into consideration:
 
   - Whether the impact of data backup on services is acceptable
@@ -156,4 +155,3 @@ Backup and restoration can be classified into logical backup and restoration, ph
   </tr>
   </tbody>
   </table>
-

@@ -8,15 +8,15 @@ Serving as an overlaid filter for a database table, **SELECT** filters required 
 
 ## Precautions<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_s42c37979749545719ac9114594f45d93"></a>
 
--   Compared with the openGauss SELECT syntax, the SOUNDS LIKE syntax under the WHERE clause is added.
+- Compared with the openGauss SELECT syntax, the SOUNDS LIKE syntax under the WHERE clause is added.
 
--   The new JOIN does not contain ON/USING. The effect is the same as that of CROSS JOIN.
+- The new JOIN does not contain ON/USING. The effect is the same as that of CROSS JOIN.
 
--   The new PARTITION clause can be used to specify multiple partitions.
+- The new PARTITION clause can be used to specify multiple partitions.
 
 ## Syntax<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sb7329222602d46fe944bf6c300931dd2"></a>
 
--   Querying data
+- Querying data
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -35,7 +35,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 [ {FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table_name [, ...] ] [ NOWAIT ]} [...] ];
 ```
--   The specified query source **from\_item** is as follows:
+
+- The specified query source **from\_item** is as follows:
 
     ```
     {[ ONLY ] table_name [ * ] [ partition_clause ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -48,7 +49,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     |from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]}
     ```
 
--   The **group** clause is as follows:
+- The **group** clause is as follows:
 
     ```
     ( )
@@ -58,7 +59,8 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | CUBE ( { expression | ( expression [, ...] ) } [, ...] )
     | GROUPING SETS ( grouping_element [, ...] )
     ```
--   The specified partition **partition\_clause** is as follows:
+
+- The specified partition **partition\_clause** is as follows:
 
     ```
     PARTITION { ( partition_name [, ...] ) | 
@@ -75,7 +77,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     | { expression | ( expression [, ...] ) } WITH ROLLUP
     ```
 
--   JOIN syntax
+- JOIN syntax
 
 ```
 [JOIN | INNER JOIN] {ON join_condition | USING ( join_column [, ...] ) }
@@ -83,7 +85,7 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## Parameter Description<a name="en-us_topic_0283136463_en-us_topic_0237122184_en-us_topic_0059777449_sa812f65b8e8c4c638ec7840697222ddc"></a>
 
--   **WHERE clause**
+- **WHERE clause**
 
     SOUNDS LIKE is a syntax of condition. For example, **column_name sounds like 'character';** is equivalent to the comparison result of **soundex(column_name) = soundex('character')**. It is a Boolean value. It is used to query the data that meets the conditions through soundex processing.
 
@@ -105,8 +107,8 @@ openGauss=# SELECT * FROM TEST WHERE name SOUNDS LIKE 'two';
 (1 row)
 ```
 
-
 - Use ROLLUP in the SELECT GROUP BY clause.
+
 ```
 openGauss=# CREATE TABLESPACE t_tbspace ADD DATAFILE 'my_tablespace' ENGINE = test_engine;
 CREATE TABLESPACE
@@ -173,7 +175,9 @@ openGauss=# select join_1 inner join join_2;
     3 |    3 |    4 |    4
 
 ```
+
 - Use the SELECT FROM PARTITION clause to specif multiple partitions.
+
 ```
 openGauss=# create table multi_partition_select_test(C_INT INTEGER) partition by range(C_INT)
 openGauss-# (

@@ -24,8 +24,6 @@ ALTER USER joe SYSADMIN;
 
 To run the  **ALTER USER**  statement, the user must exist.
 
-
-
 ## Monitor Administrator<a name="section4709123485918"></a>
 
 A monitor administrator is an account with the  **MONADMIN**  attribute and has the permission to view views and functions in the  **dbe\_perf**  schema. The monitor administrator can also grant or revoke object permissions in the  **dbe\_perf**  schema.

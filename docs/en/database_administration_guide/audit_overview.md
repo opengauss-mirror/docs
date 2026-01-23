@@ -6,9 +6,9 @@ Database security is essential for a database system. openGauss writes all user 
 
 You need to know the following about the audit function:
 
--   The overall audit switch  **[audit\_enabled](../database_reference/audit-switch.md#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd)**  supports dynamic loading. After you change the switch status when the database is running, the change takes effect immediately and you do not need to restart the database. Its default value is  **on**, indicating that the audit function is enabled.
--   In addition to the overall audit switch, each audit item has an independent switch. An audit item is available only after its own switch is turned on.
--   The switch of each audit supports dynamic loading. After changing the audit switch status when the database is running, the modification takes effect immediately without restarting the database.
+- The overall audit switch  **[audit\_enabled](../database_reference/audit-switch.md#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_sb3d1b703f24c49f096b36087a60fdfcd)**  supports dynamic loading. After you change the switch status when the database is running, the change takes effect immediately and you do not need to restart the database. Its default value is  **on**, indicating that the audit function is enabled.
+- In addition to the overall audit switch, each audit item has an independent switch. An audit item is available only after its own switch is turned on.
+- The switch of each audit supports dynamic loading. After changing the audit switch status when the database is running, the modification takes effect immediately without restarting the database.
 
 [Table 1](#en-us_topic_0283137487_en-us_topic_0237121112_en-us_topic_0059778562_t126500e4696c4a9fadb15d0437679eb0)  describes the audit items supported by openGauss.
 
@@ -336,8 +336,8 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
 
 ## Procedure<a name="en-us_topic_0283137487_en-us_topic_0237121112_en-us_topic_0059778562_sac0609c817814cceb8e0f0a4a29f623a"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -355,8 +355,8 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
     openGauss=# 
     ```
 
-3.  Check the status of the overall audit switch.
-    1.  Run the  **show**  command to view the value of  **audit\_enabled**.
+3. Check the status of the overall audit switch.
+    1. Run the  **show**  command to view the value of  **audit\_enabled**.
 
         ```
         openGauss=# SHOW audit_enabled;
@@ -364,17 +364,17 @@ For details about security-related parameters, see  [Table 2](#en-us_topic_02831
 
         If off is displayed, run the **\q** command to exit the database and go to the next step. If on is displayed, no further action is required.
 
-    2.  Run the following command to enable the audit function. The parameter settings take effect immediately.
+    2. Run the following command to enable the audit function. The parameter settings take effect immediately.
 
         ```
         gs_guc set -N all -I all -c "audit_enabled=on"
         ```
 
-4.  Configure specific audit items.
+4. Configure specific audit items.
 
     >[!NOTE]NOTE 
-    >-   After the audit function is enabled, user operations can be recorded into an audit file.
-    >-   The default parameter value of each audit item meets security standards. You can enable audit functions as needed, but system performance may be affected.
+    >- After the audit function is enabled, user operations can be recorded into an audit file.
+    >- The default parameter value of each audit item meets security standards. You can enable audit functions as needed, but system performance may be affected.
 
     For example, you can enable the audit switch of the  **CREATE**,  **DROP**, and  **ALTER**  operations on all database objects. The methods of modifying other configuration items are the same:
 

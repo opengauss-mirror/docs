@@ -123,12 +123,11 @@ The <p id="en-us_topic_0283136911_en-us_topic_0237121951_en-us_topic_0059778141_
 </tbody>
 </table>
 
-
 >[!NOTE]NOTE
 >
->-   In addition to the size limit of each column, the total size of each tuple cannot exceed 1 GB – 8203 bytes (that is, 1073733621 bytes).
+>- In addition to the size limit of each column, the total size of each tuple cannot exceed 1 GB – 8203 bytes (that is, 1073733621 bytes).
 >
->-   BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
+>- BYTEAWITHOUTORDERWITHEQUALCOL, BYTEAWITHOUTORDERCOL, \_BYTEAWITHOUTORDERWITHEQUALCOL, and \_BYTEAWITHOUTORDERCOL cannot be directly used to create a table.
 
 Example:
 

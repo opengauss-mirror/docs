@@ -4,8 +4,9 @@ This feature allows administrators to reduce the I/O impact of the  **VACUUM**  
 
 >[!TIP]NOTICE 
 >Certain vacuum operations hold critical locks and should be complete as quickly as possible. In openGauss, cost-based vacuum delays do not take effect during such operations. To avoid uselessly long delays in such cases, the actual delay is the larger of the two calculated values:
->-   **vacuum\_cost\_delay**  x  **accumulated\_balance**/**vacuum\_cost\_limit**
->-   **vacuum\_cost\_delay**  x 4
+>
+>- **vacuum\_cost\_delay**  x  **accumulated\_balance**/**vacuum\_cost\_limit**
+>- **vacuum\_cost\_delay**  x 4
 
 ## Background<a name="en-us_topic_0283136744_en-us_topic_0237124702_en-us_topic_0059778692_s07d4dedef9d24a83acb5d9412d6b68fc"></a>
 
@@ -66,4 +67,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 1 to 10000
 
 **Default value**: 200
-

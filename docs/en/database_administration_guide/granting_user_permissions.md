@@ -14,4 +14,3 @@ GRANT USAGE ON FOREIGN SERVER mot_server TO <user>;
 ```
 
 All keywords are not case sensitive.
-

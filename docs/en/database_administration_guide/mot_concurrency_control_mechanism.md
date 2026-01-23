@@ -13,9 +13,9 @@ The following topics describe MOT's concurrency control mechanism –
 
 SILO manages both a local memory and a global memory, as shown in.
 
--   **Global**  memory is long-term shared memory is shared by all cores and is used primarily to store all the table data and indexes
+- **Global**  memory is long-term shared memory is shared by all cores and is used primarily to store all the table data and indexes
 
--   **Local**  memory is short-term memory that is used primarily by sessions for handling transactions and store data changes in a primate to transaction memory until the commit phase.
+- **Local**  memory is short-term memory that is used primarily by sessions for handling transactions and store data changes in a primate to transaction memory until the commit phase.
 
 When a transaction change is required, SILO handles the copying of all that transaction's data from the global memory into the local memory. Minimal locks are placed on the global memory according to the OCC approach, so that the contention time in the global shared memory is extremely minimal. After the transaction' change has been completed, this data is pushed back from the local memory to the global memory.
 
@@ -31,14 +31,14 @@ For more details, refer to the Industrial-Strength OLTP Using Main Memory and Ma
 
 SILO  in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments. However, in order to make it a product-grade mechanism, we had to enhance it with many essential functionalities that were missing in the original design, such as –
 
--   Added support for interactive mode transactions, where transactions are running SQL by SQL from the client side and not as a single step on the server side
--   Added optimistic inserts
--   Added support for non-unique indexes
--   Added support for read-after-write in transactions so that users can see their own changes before they are committed 
--   Added support for lockless cooperative garbage collection
--   Added support for lockless checkpoints
--   Added support for fast recovery
--   Multi Version Concurrency Control (MVCC) support was added (openGauss 5.0).
+- Added support for interactive mode transactions, where transactions are running SQL by SQL from the client side and not as a single step on the server side
+- Added optimistic inserts
+- Added support for non-unique indexes
+- Added support for read-after-write in transactions so that users can see their own changes before they are committed 
+- Added support for lockless cooperative garbage collection
+- Added support for lockless checkpoints
+- Added support for fast recovery
+- Multi Version Concurrency Control (MVCC) support was added (openGauss 5.0).
 
 Adding these enhancements without breaking the scalable characteristic of the original SILO was very challenging.
 
@@ -88,7 +88,6 @@ Even though MOT is fully ACID-compliant \(as described in the section\), not all
 </tr>
 </tbody>
 </table>
-
 
 The following table shows the concurrency side effects enabled by the different isolation levels.
 
@@ -165,9 +164,9 @@ Disk-based tables use a pessimistic approach, which is the most commonly used da
 
 The primary functional difference between the pessimistic approach and the optimistic approach is that if a conflict occurs –
 
--   The pessimistic approach causes the client to wait.
+- The pessimistic approach causes the client to wait.
 
--   The optimistic approach causes one of the transactions to fail, so that the failed transaction must be retried by the client.
+- The optimistic approach causes one of the transactions to fail, so that the failed transaction must be retried by the client.
 
 **Optimistic Concurrency Control Approach \(Used by MOT\)**
 
@@ -187,8 +186,8 @@ In 2PL algorithms, while a transaction is writing a row, no other transaction ca
 
 Another approach is Encounter Time Locking \(ETL\), where reads are handled in an optimistic manner, but writes lock the data that they access. As a result, writes from different ETL transactions are aware of each other and can decide to abort. It has been empirically verified that ETL improves the performance of OCC in two ways –
 
--   First, ETL detects conflicts early on and often increases transaction throughput. This is because transactions do not perform useless operations, because conflicts discovered at commit time \(in general\) cannot be solved without aborting at least one transaction.
--   Second, encounter-time locking Reads-After-Writes \(RAW\) are handled efficiently without requiring expensive or complex mechanisms.
+- First, ETL detects conflicts early on and often increases transaction throughput. This is because transactions do not perform useless operations, because conflicts discovered at commit time \(in general\) cannot be solved without aborting at least one transaction.
+- Second, encounter-time locking Reads-After-Writes \(RAW\) are handled efficiently without requiring expensive or complex mechanisms.
 
 **Conclusion**
 
@@ -285,10 +284,10 @@ It describes the situation of creating an MOT table and then having two concurre
 create foreign table test (x int, y int, z int, primary key(x));
 ```
 
--   The advantage of OCC is that there are no locks until COMMIT.
--   The disadvantage of using OCC is that the update may fail if another session updates the same record. If the update fails \(in all supported isolation levels\), an entire SESSION \#2 transaction must be retried.
--   Update conflicts are detected by the kernel at commit time by using a version checking mechanism.
--   SESSION \#2 will not wait in its update operation and will be aborted because of conflict detection at commit phase.
+- The advantage of OCC is that there are no locks until COMMIT.
+- The disadvantage of using OCC is that the update may fail if another session updates the same record. If the update fails \(in all supported isolation levels\), an entire SESSION \#2 transaction must be retried.
+- Update conflicts are detected by the kernel at commit time by using a version checking mechanism.
+- SESSION \#2 will not wait in its update operation and will be aborted because of conflict detection at commit phase.
 
 **Table  2**  Optimistic Approach Code Example – Used in MOT
 
@@ -344,5 +343,3 @@ create foreign table test (x int, y int, z int, primary key(x));
 </tr>
 </tbody>
 </table>
-
-

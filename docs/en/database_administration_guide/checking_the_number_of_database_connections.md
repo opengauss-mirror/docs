@@ -4,15 +4,15 @@
 
 If the number of connections reaches its upper limit, new connections cannot be created. Therefore, if a user fails to connect a database, the administrator must check whether the number of connections has reached the upper limit. The following are details about database connections:
 
--   The maximum number of global connections is specified by the  **max\_connections**  parameter. Its default value is  **5000**.
--   The number of a user's connections is specified by  **CONNECTION LIMIT connlimit**  in the  **CREATE ROLE**  statement and can be changed using  **CONNECTION LIMIT connlimit**  in the  **ALTER ROLE**  statement.
--   The number of a database's connections is specified by the  **CONNECTION LIMIT connlimit**  parameter in the  **CREATE DATABASE**  statement.
+- The maximum number of global connections is specified by the  **max\_connections**  parameter. Its default value is  **5000**.
+- The number of a user's connections is specified by  **CONNECTION LIMIT connlimit**  in the  **CREATE ROLE**  statement and can be changed using  **CONNECTION LIMIT connlimit**  in the  **ALTER ROLE**  statement.
+- The number of a database's connections is specified by the  **CONNECTION LIMIT connlimit**  parameter in the  **CREATE DATABASE**  statement.
 
 ## Procedure<a name="en-us_topic_0237121094_en-us_topic_0059779140_sde106f089f2c443e869945d573576c09"></a>
 
 1. Log in as the OS user  **omm**  to the primary node of the database.
 
-2.  Run the following command to connect to the database:
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -30,7 +30,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
     postgres=# 
     ```
 
-3.  View the upper limit of the number of global connections.
+3. View the upper limit of the number of global connections.
 
     ```
     postgres=# SHOW max_connections;
@@ -42,7 +42,7 @@ If the number of connections reaches its upper limit, new connections cannot be 
 
     **800**  is the maximum number of session connections.
 
-4.  View the number of connections that have been used.
+4. View the number of connections that have been used.
 
     For details, see  [Table 1](#en-us_topic_0237121094_en-us_topic_0059779140_t608a1965463e41f1b6eacd02f97a65ba).
 
@@ -72,14 +72,14 @@ If the number of connections reaches its upper limit, new connections cannot be 
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_afbdde8607a9241d1854e840c0c562471"><a name="en-us_topic_0237121094_en-us_topic_0059779140_afbdde8607a9241d1854e840c0c562471"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_afbdde8607a9241d1854e840c0c562471"></a>Run the following commands to view the number of session connections that have been used by <strong id="b209510632516"><a name="b209510632516"></a><a name="b209510632516"></a><span id="en-us_topic_0237121094_text2279192513507"><a name="en-us_topic_0237121094_text2279192513507"></a><a name="en-us_topic_0237121094_text2279192513507"></a>omm</span></strong>. <strong id="b1060571414255"><a name="b1060571414255"></a><a name="b1060571414255"></a>1</strong> indicates the number of session connections that have been used by <strong id="b660512141259"><a name="b660512141259"></a><a name="b660512141259"></a><span id="en-us_topic_0237121094_text14366152617508"><a name="en-us_topic_0237121094_text14366152617508"></a><a name="en-us_topic_0237121094_text14366152617508"></a>omm</span></strong>.</p>
     <a name="en-us_topic_0237121094_en-us_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677"><span id="text176615548214"><a name="text176615548214"></a><a name="text176615548214"></a>postgres=# </span>CREATE OR REPLACE VIEW DV_SESSIONS AS
-    	       SELECT
-    		    sa.sessionid AS SID,
-    		    0::integer AS SERIAL#,
-    		    sa.usesysid AS USER#,
-    		    ad.rolname AS USERNAME
-    	        FROM pg_stat_get_activity(NULL) AS sa
-    	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
-    	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
+            SELECT
+          sa.sessionid AS SID,
+          0::integer AS SERIAL#,
+          sa.usesysid AS USER#,
+          ad.rolname AS USERNAME
+             FROM pg_stat_get_activity(NULL) AS sa
+             LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
+             WHERE sa.application_name &lt;&gt; 'JobScheduler';
     <span id="en-us_topic_0237121094_text644219223528"><a name="en-us_topic_0237121094_text644219223528"></a><a name="en-us_topic_0237121094_text644219223528"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a>SELECT COUNT(*) FROM DV_SESSIONS WHERE USERNAME='</strong><span id="en-us_topic_0237121094_text9326192718507"><a name="en-us_topic_0237121094_text9326192718507"></a><a name="en-us_topic_0237121094_text9326192718507"></a>omm</span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a>';</strong> 
     count
     \--------
@@ -111,14 +111,14 @@ If the number of connections reaches its upper limit, new connections cannot be 
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="en-us_topic_0237121094_en-us_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"></a>Run the following commands to view the number of session connections that have been used by all users:</p>
     <a name="en-us_topic_0237121094_en-us_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1"></a><pre class="screen" codetype="Sql" id="en-us_topic_0237121094_en-us_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1"><span id="text14699343192312"><a name="text14699343192312"></a><a name="text14699343192312"></a>postgres=# </span>CREATE OR REPLACE VIEW DV_SESSIONS AS
-    	       SELECT
-    		    sa.sessionid AS SID,
-    		    0::integer AS SERIAL#,
-    		    sa.usesysid AS USER#,
-    		    ad.rolname AS USERNAME
-    	        FROM pg_stat_get_activity(NULL) AS sa
-    	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
-    	        WHERE sa.application_name &lt;&gt; 'JobScheduler';
+            SELECT
+          sa.sessionid AS SID,
+          0::integer AS SERIAL#,
+          sa.usesysid AS USER#,
+          ad.rolname AS USERNAME
+             FROM pg_stat_get_activity(NULL) AS sa
+             LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
+             WHERE sa.application_name &lt;&gt; 'JobScheduler';
     <span id="en-us_topic_0237121094_text971592455219"><a name="en-us_topic_0237121094_text971592455219"></a><a name="en-us_topic_0237121094_text971592455219"></a>postgres=# </span><strong id="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a><a name="en-us_topic_0237121094_en-us_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a>SELECT COUNT(*) FROM DV_SESSIONS;</strong> 
     count
     \--------
@@ -130,7 +130,4 @@ If the number of connections reaches its upper limit, new connections cannot be 
         </tbody>
     </table>
     
-    
     ​    
-
-

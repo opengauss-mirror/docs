@@ -18,8 +18,8 @@ DNs reversely parse physical logs to logical logs. Logical replication tools suc
 
 ## Enhancements<a name="section1340684315478"></a>
 
--   openGauss 1.0.0 logic decoding supports the extraction of logs from full and incremental logs.
--   openGauss 1.1.0 supports logical decoding on a standby node.
+- openGauss 1.0.0 logic decoding supports the extraction of logs from full and incremental logs.
+- openGauss 1.1.0 supports logical decoding on a standby node.
 
 ## Constraints<a name="section06531946143616"></a>
 
@@ -28,4 +28,3 @@ Column-store replication and DDL replication are not supported.
 ## Dependencies<a name="section8406643144716"></a>
 
 It depends on logical replication tools that decode logical logs.
-

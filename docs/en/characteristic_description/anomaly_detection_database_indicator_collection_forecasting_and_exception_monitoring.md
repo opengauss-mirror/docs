@@ -10,8 +10,8 @@ Anomaly\_detection is an AI tool integrated into openGauss and can be used to co
 
 ## Benefits<a name="section5621105733410"></a>
 
--   This greatly simplifies the work of O&M personnel, releases a large number of labor resources, and reduces costs for the company.
--   This feature helps users detect exceptions in advance and prevent database exceptions from causing greater loss.
+- This greatly simplifies the work of O&M personnel, releases a large number of labor resources, and reduces costs for the company.
+- This feature helps users detect exceptions in advance and prevent database exceptions from causing greater loss.
 
 ## Description<a name="section117712392341"></a>
 
@@ -25,12 +25,12 @@ None
 
 ## Constraints<a name="section1613131119346"></a>
 
--   The database is normal, and the data directory has been written into environment variables and named  **PGDATA**.
--   If you log in to the database host as a Linux user, add  *$GAUSSHOME***/bin**  to the  *PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\*guc, and gs\_ctl.
--   The recommended Python version is Python 3.6 or later. The required dependency has been installed in the operating environment, and the optimization program can be started properly.
--   This tool consists of the agent and detector. Data is transmitted between the agent and detector in HTTP or HTTPS mode. Therefore, ensure that the agent server can communicate with the detector server properly.
--   Detector module runs the server and monitor services, which need to be started separately.
--   If HTTPS is used for communication, you need to prepare the CA certificate, and certificates and keys of the agent and detector, and save them to  **ca**,  **agent**, and  **server**  in the  **root**  directory of the project, respectively. In addition, you need to save the key encryption password to  **pwf**  of the certificate, and set the permission to  **600**  to prevent other users from performing read and write operations. You can also use the script in the  **share**  directory to generate certificates and keys.
+- The database is normal, and the data directory has been written into environment variables and named  **PGDATA**.
+- If you log in to the database host as a Linux user, add  *$GAUSSHOME***/bin**  to the  *PATH _environment variable so that you can directly run database O&M tools, such as gsql, gs\*guc, and gs\_ctl.
+- The recommended Python version is Python 3.6 or later. The required dependency has been installed in the operating environment, and the optimization program can be started properly.
+- This tool consists of the agent and detector. Data is transmitted between the agent and detector in HTTP or HTTPS mode. Therefore, ensure that the agent server can communicate with the detector server properly.
+- Detector module runs the server and monitor services, which need to be started separately.
+- If HTTPS is used for communication, you need to prepare the CA certificate, and certificates and keys of the agent and detector, and save them to  **ca**,  **agent**, and  **server**  in the  **root**  directory of the project, respectively. In addition, you need to save the key encryption password to  **pwf**  of the certificate, and set the permission to  **600**  to prevent other users from performing read and write operations. You can also use the script in the  **share**  directory to generate certificates and keys.
 
 ## Dependencies<a name="section4228145683310"></a>
 

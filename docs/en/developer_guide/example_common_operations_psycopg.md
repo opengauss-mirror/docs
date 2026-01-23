@@ -234,4 +234,3 @@ c.execute();
 //Use the Boolean type to obtain the result.
 System.out.println(c.getBoolean(1));
 ```
-

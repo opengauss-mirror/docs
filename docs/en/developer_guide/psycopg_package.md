@@ -4,6 +4,5 @@ The psycopg package is obtained from the release package. Its name is  ****openG
 
 After the decompression, the following folders are generated:
 
--   **psycopg2**:  **psycopg2**  library file
--   **lib**:  **lib**  library file
-
+- **psycopg2**:  **psycopg2**  library file
+- **lib**:  **lib**  library file

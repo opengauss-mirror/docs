@@ -6,7 +6,7 @@ You have the audit permission.
 
 ## Background<a name="en-us_topic_0237121114_en-us_topic_0059778793_scec2076978bb4ca1b7959fef703791b2"></a>
 
--   [Table 1](#en-us_topic_0237121114_en-us_topic_0059778793_t611ff04302e6463c8850c39d3e1d78fb)  lists the configuration parameters related to audit logs and the parameter descriptions.
+- [Table 1](#en-us_topic_0237121114_en-us_topic_0059778793_t611ff04302e6463c8850c39d3e1d78fb)  lists the configuration parameters related to audit logs and the parameter descriptions.
 
     **Table  1**  Configuration parameters of audit logs
 
@@ -60,7 +60,7 @@ You have the audit permission.
     >[!NOTE]NOTE   
     >If  **gs\_om**  is used for openGauss deployment, audit logs are stored in  **/var/log/gaussdb/**_Username_**/pg\_audit**.  
 
--   The  **pg\_delete\_audit**  function is used to delete audit logs and is an internal SQL function of the database. Its syntax is as follows:
+- The  **pg\_delete\_audit**  function is used to delete audit logs and is an internal SQL function of the database. Its syntax is as follows:
 
     ```
     pg_delete_audit(timestamp startime,timestamp endtime)
@@ -68,7 +68,7 @@ You have the audit permission.
 
     **startime**  and  **endtime**  indicate the audit record start time and end time, respectively.
 
--   Audit content is commonly recorded to database tables or OS files.  [Table 2](#en-us_topic_0237121114_en-us_topic_0059778793_t078fedc6256143429079733b91e11d22)  lists the advantages and disadvantages of the two record methods.
+- Audit content is commonly recorded to database tables or OS files.  [Table 2](#en-us_topic_0237121114_en-us_topic_0059778793_t078fedc6256143429079733b91e11d22)  lists the advantages and disadvantages of the two record methods.
 
     **Table  2**  Comparison between the two record methods
 
@@ -100,11 +100,10 @@ You have the audit permission.
 
     For database security purposes, openGauss adopts the second method to save audit results for reliability.
 
-
 ## Procedure<a name="en-us_topic_0237121114_en-us_topic_0059778793_sdeb071ceee2f4cfdb1ae1dc6a00da86d"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -122,8 +121,8 @@ You have the audit permission.
     postgres=# 
     ```
 
-3.  Select a method to maintain audit logs.
-    -   Automatic deletion of audit logs
+3. Select a method to maintain audit logs.
+    - Automatic deletion of audit logs
 
         If the storage space occupied by audit files or the number of audit files reaches the upper limit, the system automatically deletes the oldest audit files and records deletion information to audit logs.
 
@@ -132,7 +131,7 @@ You have the audit permission.
 
         Configure the allowed maximum size of storage space occupied by audit files \(**audit\_space\_limit**\).
 
-        1.  View the current value.
+        1. View the current value.
 
             ```
             postgres=# SHOW audit_space_limit;
@@ -144,7 +143,7 @@ You have the audit permission.
 
             If the command output is not 1 GB \(1024 MB\), run the  **\\q**  command to exit the database.
 
-        2.  Run the following command to set the parameter to its default value  **1024MB**:
+        2. Run the following command to set the parameter to its default value  **1024MB**:
 
             ```
             gs_guc reload -N all -I all -c "audit_space_limit=1024MB"
@@ -152,7 +151,7 @@ You have the audit permission.
 
         Configure the maximum number of audit files \(**audit\_file\_remain\_threshold**\).
 
-        1.  View the current value.
+        1. View the current value.
 
             ```
             postgres=# SHOW audit_file_remain_threshold;
@@ -164,25 +163,25 @@ You have the audit permission.
 
             If the command output is not 1048576, run the  **\\q**  command to exit the database.
 
-        2.  Run the following command to set the parameter to its default value  **1048576**:
+        2. Run the following command to set the parameter to its default value  **1048576**:
 
             ```
             gs_guc reload -N all -I all -c "audit_file_remain_threshold=1048576"
             ```
 
-    -   Manual backup of audit files
+    - Manual backup of audit files
 
         If the storage space occupied by audit files or the number of audit logs exceeds the threshold specified by the configuration file, the system automatically deletes the oldest audit files. Therefore, you are advised to periodically save important audit logs.
 
-        1.  Run the  **show**  command to view the directory \(**audit\_directory**\) where audit files are saved.
+        1. Run the  **show**  command to view the directory \(**audit\_directory**\) where audit files are saved.
 
             ```
             postgres=# SHOW audit_directory;
             ```
 
-        2.  Copy the entire audit directory elsewhere to save it.
+        2. Copy the entire audit directory elsewhere to save it.
 
-    -   Manual deletion of audit files
+    - Manual deletion of audit files
 
         Run the  **pg\_delete\_audit**  command to manually delete the audit records generated during a specified period of time.
 
@@ -191,6 +190,3 @@ You have the audit permission.
         ```
         postgres=# SELECT pg_delete_audit('2012-09-20 ','2012-09-21');
         ```
-
-
-

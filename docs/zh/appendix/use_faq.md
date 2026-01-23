@@ -1,6 +1,6 @@
 # 使用FAQ
 
-### **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
+## **Q1：gsql连接数据库，提示“unknow:26000”，错误如下，要如何处理？**
 
 ```
 gsql -d postgres -p 26000 -r
@@ -15,7 +15,7 @@ failed to connect Unkown:26000.
 gs_om -t start
 ```
 
-### **Q2：第一次使用数据库报错，提示需要修改用户名密码，要如何处理？**
+## **Q2：第一次使用数据库报错，提示需要修改用户名密码，要如何处理？**
 
 **回答：**
 
@@ -34,7 +34,7 @@ alter role omm identified by '新密码' replace '旧密码';
 gs_guc reload -N all -I all -c "modify_initial_password  =  false" 
 ```
 
-### **Q3：执行如下命令时，报错提示PID不存在，如何处理？**
+## **Q3：执行如下命令时，报错提示PID不存在，如何处理？**
 
 ![](figures/zh-cn_image_0000001103872542.png)
 
@@ -42,15 +42,13 @@ gs_guc reload -N all -I all -c "modify_initial_password  =  false"
 
 此命令用于重新启动数据库服务，如果之前数据库处于未启动状态，则提示不存在PID。此提示可以忽略，直接进行后续步骤。
 
-### **Q4：Data Studio连接openGauss数据库时出现错误，提示“连接服务器出错，连接失败！”，如何处理？**
+## **Q4：Data Studio连接openGauss数据库时出现错误，提示“连接服务器出错，连接失败！”，如何处理？**
 
 **回答：**
 
 此问题可能是由于系统上的JDK版本不兼容造成的。JDK版本要求为1.8，建议您重新下载安装JDK并修改全局变量后再次尝试。
 
-
-
-### **Q5：安装openGauss时，运行gs_ctl报错找不到程序路径或缺失so，如何处理？**
+## **Q5：安装openGauss时，运行gs_ctl报错找不到程序路径或缺失so，如何处理？**
 
 **回答：**
 

@@ -78,7 +78,6 @@ The following table shows the preset masking functions:
 </tbody>
 </table>
 
-
 The data types supported by each masking function are as follows:
 
 <a name="table3119163316"></a>
@@ -136,20 +135,20 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   The dynamic data masking policy must be created by a user with the  **POLADMIN**  or  **SYSADMIN**  attribute, or by the initial user. Common users do not have the permission to access the security policy system catalog and system view.
--   Dynamic data masking takes effect only on data tables for which masking policies are configured. Audit logs are not within the effective scope of the masking policies.
--   In a masking policy, only one masking mode can be specified for a resource label.
--   Multiple masking policies cannot be used to anonymize the same resource label, except when  **FILTER**  is used to specify user scenarios where the policies take effect and there is no intersection between user scenarios of different masking policies that contain the same resource label. In this case, you can identify the policy that a resource label is anonymized by based on the user scenario.
--   It is recommended that  **APP**  in  **FILTER**  be set to applications in the same trusted domain. Since a client may be forged, a security mechanism must be formed on the client when  **APP**  is used to reduce misuse risks. Generally, you are not advised to set  **APP**. If it is set, pay attention to the risk of client spoofing.
--   For INSERT or MERGE INTO operations with the query clause, if the source table contains anonymized columns, the inserted or updated result in the preceding two operations is the anonymized value and cannot be restored.
--   When the built-in security policy is enabled, the ALTER TABLE EXCHANGE PARTITION statement fails to be executed if the source table is in the anonymized column.
--   If a dynamic data masking policy is configured for a table, grant the trigger permission of the table to other users with caution to prevent other users from using the trigger to bypass the masking policy.
--   A maximum of 98 dynamic data masking policies can be created.
--   Only the preceding seven preset masking policies can be used.
--   Only data with the resource labels containing the  **COLUMN**  attribute can be anonymized.
--   Only columns in base tables can be anonymized.
--   Only the data queried using  **SELECT**  can be anonymized.
--   Taking an IPv4 address as an example, the following formats are supported:
+- The dynamic data masking policy must be created by a user with the  **POLADMIN**  or  **SYSADMIN**  attribute, or by the initial user. Common users do not have the permission to access the security policy system catalog and system view.
+- Dynamic data masking takes effect only on data tables for which masking policies are configured. Audit logs are not within the effective scope of the masking policies.
+- In a masking policy, only one masking mode can be specified for a resource label.
+- Multiple masking policies cannot be used to anonymize the same resource label, except when  **FILTER**  is used to specify user scenarios where the policies take effect and there is no intersection between user scenarios of different masking policies that contain the same resource label. In this case, you can identify the policy that a resource label is anonymized by based on the user scenario.
+- It is recommended that  **APP**  in  **FILTER**  be set to applications in the same trusted domain. Since a client may be forged, a security mechanism must be formed on the client when  **APP**  is used to reduce misuse risks. Generally, you are not advised to set  **APP**. If it is set, pay attention to the risk of client spoofing.
+- For INSERT or MERGE INTO operations with the query clause, if the source table contains anonymized columns, the inserted or updated result in the preceding two operations is the anonymized value and cannot be restored.
+- When the built-in security policy is enabled, the ALTER TABLE EXCHANGE PARTITION statement fails to be executed if the source table is in the anonymized column.
+- If a dynamic data masking policy is configured for a table, grant the trigger permission of the table to other users with caution to prevent other users from using the trigger to bypass the masking policy.
+- A maximum of 98 dynamic data masking policies can be created.
+- Only the preceding seven preset masking policies can be used.
+- Only data with the resource labels containing the  **COLUMN**  attribute can be anonymized.
+- Only columns in base tables can be anonymized.
+- Only the data queried using  **SELECT**  can be anonymized.
+- Taking an IPv4 address as an example, the following formats are supported:
 
     <a name="table7313162864616"></a>
     <table><tbody><tr id="row17313728174619"><td class="cellrowborder" valign="top" width="19%"><p id="p1631315285461"><a name="p1631315285461"></a><a name="p1631315285461"></a>IP Address Format</p>
@@ -179,7 +178,6 @@ None.
     </tr>
     </tbody>
     </table>
-
 
 ## Dependencies<a name="section22810484"></a>
 

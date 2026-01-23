@@ -36,4 +36,3 @@ Value of the int type
 ## Example<a name="en-us_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
 For details, see  [Example](example_libpq.md).
-

@@ -75,4 +75,3 @@ You can run the  **SELECT \* FROM gs\_session\_memctx\_detail \(**_threadid_**,'
 </tr>
 </tbody>
 </table>
-

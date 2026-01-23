@@ -19,4 +19,3 @@ The schema definitions are not replicated, and the published tables must exist o
 The tables are matched between the publisher and the subscriber using fully qualified table names. Replication to differently-named tables on the subscriber is not supported.
 
 Columns of a table are also matched by name. The order of columns in the subscribed table does not need to be the same as that in the published table. The data types of the columns do not need to be the same, as long as the text representation of the data can be converted to the target type. For example, you can replicate from a column of the integer type to a column of the bigint type. The target table can also have additional columns that do not exist in the published table. The additional columns will be filled with the default values specified in the definition of the target table.
-

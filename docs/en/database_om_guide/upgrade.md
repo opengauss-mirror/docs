@@ -8,5 +8,5 @@ This document describes how to upgrade and roll back, and provides frequently as
 
 This document is intended for upgrade personnel, who must:
 
--   Understand version information about the current device and related NEs.
--   Have experience in maintaining and operating these devices.
+- Understand version information about the current device and related NEs.
+- Have experience in maintaining and operating these devices.

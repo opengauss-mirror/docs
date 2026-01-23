@@ -43,11 +43,11 @@ SQLRETURN SQLPrepare(SQLHSTMT      StatementHandle,
 
 ## Return Value<a name="en-us_topic_0238272898_en-us_topic_0237120428_en-us_topic_0059779125_s5a0422bedc334a4f88a22c60cb4ba293"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
--   **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
 
 ## Precautions<a name="en-us_topic_0238272898_en-us_topic_0237120428_en-us_topic_0059779125_sb5b5132a364641b59ecf3f4a0b691616"></a>
 
@@ -56,4 +56,3 @@ If SQLPrepare returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 ## Example<a name="en-us_topic_0238272898_en-us_topic_0237120428_en-us_topic_0059779125_sbf766eb45a5e442094a561b3036a4205"></a>
 
 See  [Examples](example_odbc.md).
-

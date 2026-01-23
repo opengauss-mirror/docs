@@ -17,8 +17,9 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Default value**:  **100**
 
 >[!WARNING]CAUTION 
->-   If the automatic elimination function is enabled and this parameter is set to a small value, the system may frequently perform automatic elimination, which may affect the database system performance. Therefore, you are advised to set this parameter to  **200000**.
->-   If automatic elimination is enabled and this parameter is set to a large value \(for example, 38347922\), a large memory problem may occur during the clearance. As a result, the clearance fails.
+>
+>- If the automatic elimination function is enabled and this parameter is set to a small value, the system may frequently perform automatic elimination, which may affect the database system performance. Therefore, you are advised to set this parameter to  **200000**.
+>- If automatic elimination is enabled and this parameter is set to a large value \(for example, 38347922\), a large memory problem may occur during the clearance. As a result, the clearance fails.
 
 ## instr\_unique\_sql\_track\_type<a name="en-us_topic_0283137149_en-us_topic_0237124756_section88591117185212"></a>
 
@@ -40,8 +41,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the function of calculating the response time of 80% and 95% SQL statements is enabled.
--   **off**  indicates that the function of calculating the response time of 80% and 95% SQL statements is disabled.
+- **on**  indicates that the function of calculating the response time of 80% and 95% SQL statements is enabled.
+- **off**  indicates that the function of calculating the response time of 80% and 95% SQL statements is disabled.
 
 **Default value**:  **on**
 
@@ -75,8 +76,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates the CPU time consumed during SQL statement execution is captured.
--   **off**  indicates the CPU time consumed during SQL statement execution is not captured.
+- **on**  indicates the CPU time consumed during SQL statement execution is captured.
+- **off**  indicates the CPU time consumed during SQL statement execution is not captured.
 
 **Default value**:  **on**
 
@@ -90,8 +91,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   on: Full/Slow SQL capture is enabled.
--   off: Full /Slow SQL capture is disabled.
+- on: Full/Slow SQL capture is enabled.
+- off: Full /Slow SQL capture is disabled.
 
 **Default value**:  **on**
 
@@ -103,8 +104,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**: The function of displaying complete SQL statement information is enabled.
--   **off**: The function of displaying complete SQL statement information is disabled.
+- **on**: The function of displaying complete SQL statement information is enabled.
+- **off**: The function of displaying complete SQL statement information is disabled.
 
 Default value:  **off**
 

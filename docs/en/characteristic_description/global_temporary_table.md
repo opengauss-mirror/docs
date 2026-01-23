@@ -24,16 +24,15 @@ The processing of the global temporary table is added based on the local tempora
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Parallel scanning is not supported.
--   Temp tablespace is not supported.
--   Partitions are not supported.
--   GIST indexes are not supported.
--   The user-defined statistics  **pg\_statistic\_ext**  is not supported.
--   ON COMMIT DROP is not supported.
--   Hash bucket cluster storage is not supported.
--   Row store is not supported.
+- Parallel scanning is not supported.
+- Temp tablespace is not supported.
+- Partitions are not supported.
+- GIST indexes are not supported.
+- The user-defined statistics  **pg\_statistic\_ext**  is not supported.
+- ON COMMIT DROP is not supported.
+- Hash bucket cluster storage is not supported.
+- Row store is not supported.
 
 ## Dependencies<a name="section63981393"></a>
 
 None
-

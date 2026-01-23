@@ -10,8 +10,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the alarm detection thread is enabled.
--   **off**  indicates that the alarm detection thread is disabled.
+- **on**  indicates that the alarm detection thread is enabled.
+- **off**  indicates that the alarm detection thread is disabled.
 
 **Default value**:  **on**
 
@@ -46,8 +46,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string
 
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
--   If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **5**, no third-party component is connected and alarms are written into the  **system\_alarm**  log. In this case, the value of  **alarm\_component**  is  **/opt/huawei/snas/bin/snas\_cm\_cmd**.
+- If  **--alarm-type**  in the  **gs\_preinstall**  script is set to  **1**, a third-party component is connected. In this case, the value of  **alarm\_component**  is the absolute path of the executable program of the third-party component.
 
 **Default value**:  **/opt/huawei/snas/bin/snas\_cm\_cmd**
 
@@ -70,4 +70,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 0 to  _INT\_MAX_
 
 **Default value**:  **100000**
-

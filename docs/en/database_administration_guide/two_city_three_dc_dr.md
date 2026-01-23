@@ -60,19 +60,19 @@ This section describes the feature specifications and restrictions of this solut
 
 #### Constraints
 
--  Before the DR relationship is established, you need to create a DR user with the streaming replication permission on the primary cluster for DR authentication. The primary and standby clusters must use the same DR username and password. After a DR relationship is established, the user password cannot be changed. You can remove the DR relationship, modify the username and password, and establish the DR relationship again. The DR user password cannot contain blank characters and the following characters: |;&$<>`\'"{}()[]~*?!\n
--  The versions of the primary and standby clusters for which a DR relationship is to be established must be the same.
+- Before the DR relationship is established, you need to create a DR user with the streaming replication permission on the primary cluster for DR authentication. The primary and standby clusters must use the same DR username and password. After a DR relationship is established, the user password cannot be changed. You can remove the DR relationship, modify the username and password, and establish the DR relationship again. The DR user password cannot contain blank characters and the following characters: |;&$<>`\'"{}()[]~*?!\n
+- The versions of the primary and standby clusters for which a DR relationship is to be established must be the same.
 - The first standby and cascaded standby nodes cannot exist before streaming DR is established.
--  When the DR relationship is established, if the number of cluster copies is less than or equal to 2, **most\_available\_sync** is set to **on**. After the DR relationship is removed or a failover occurs, **most\_available\_sync** is not restored to the initial value, ensuring that the cluster is in maximum availability mode.
--  When the DR relationship is established, **synchronous\_commit** is set to **on**. After the DR relationship is removed or a failover occurs, **synchronous\_commit** is restored to the initial value.
--  The DR cluster can be read but cannot be written.
--  After the DR cluster is promoted to primary by running the failover command, the DR relationship between the DR cluster and the original primary cluster becomes invalid. You need to re-establish the DR relationship.
+- When the DR relationship is established, if the number of cluster copies is less than or equal to 2, **most\_available\_sync** is set to **on**. After the DR relationship is removed or a failover occurs, **most\_available\_sync** is not restored to the initial value, ensuring that the cluster is in maximum availability mode.
+- When the DR relationship is established, **synchronous\_commit** is set to **on**. After the DR relationship is removed or a failover occurs, **synchronous\_commit** is restored to the initial value.
+- The DR cluster can be read but cannot be written.
+- After the DR cluster is promoted to primary by running the failover command, the DR relationship between the DR cluster and the original primary cluster becomes invalid. You need to re-establish the DR relationship.
 - The DR relationship can be set up only when the primary and DR database instances are normal. Only when the primary database instance is normal and the DR database instance has been promoted to primary, the DR relationship can be canceled for the primary database instance. When both the primary and DR database instances are normal, you can execute a planned switchover between the primary database instance and the DR database instance. If the DR database instance is neither normal nor degraded, it cannot be promoted to primary and cannot provide DR services. In this case, you need to manually repair or rebuild the DR database instance.
 - If the majority DNs of the DR cluster are faulty or all CMS and DNs are faulty, the DR relationship cannot be established, the DR cluster cannot be promoted to primary, and cannot be used. In this case, you need to rebuild the DR cluster.
 - If a forcible switchover is performed on the primary cluster, you need to rebuild the DR cluster.
--  Both the primary and DR clusters support full backup and incremental backup using gs\_probackup. In the DR state, neither the primary cluster nor the DR cluster can be restored. If the primary database instance needs to be restored, remove the DR relationship first. After the backup and restoration are complete, re-establish the DR relationship.
+- Both the primary and DR clusters support full backup and incremental backup using gs\_probackup. In the DR state, neither the primary cluster nor the DR cluster can be restored. If the primary database instance needs to be restored, remove the DR relationship first. After the backup and restoration are complete, re-establish the DR relationship.
 - After the DR relationship is established, the DN port cannot be changed.
--  GUC parameters cannot be synchronized between the primary database instance and the DR database instance in a DR relationship.
+- GUC parameters cannot be synchronized between the primary database instance and the DR database instance in a DR relationship.
 - The primary and standby clusters do not support node replacement and repair, copy addition and reduction, or DCF mode.
 - If the DR database instance has two copies and one copy is damaged, the DR database instance can still be promoted to primary to provide services. If the remaining copies are also damaged, data loss is inevitable.
 - In the DR state, only gray upgrade is supported and the original upgrade constraints are inherited. In the DR state, the upgrade must comply with the following sequence: upgrade the primary cluster, upgrade the standby cluster, submit the standby cluster, and then submit the primary cluster.
@@ -82,8 +82,8 @@ This section describes the feature specifications and restrictions of this solut
 
 #### Impact of Checkpoint-related Parameter Settings<a name="section1564175012403"></a>
 
--   The DR performance metric described in "Feature Specifications" is measured when the parameters related to checkpoints are set to default values.
--   For details about checkpoint parameters, see "GUC Parameters \> Write Ahead Log \> Checkpoints" in *Database Reference*. When **enable\_incremental\_checkpoint** is set to **on**, the maximum interval between automatic WAL checkpoints is determined by the value of **incremental\_checkpoint\_timeout**. If the default value is not used and you set it to a larger value, a large number of logs need to be replayed when the instance is restarted. As a result, the specified RTO cannot be ensured.
+- The DR performance metric described in "Feature Specifications" is measured when the parameters related to checkpoints are set to default values.
+- For details about checkpoint parameters, see "GUC Parameters \> Write Ahead Log \> Checkpoints" in *Database Reference*. When **enable\_incremental\_checkpoint** is set to **on**, the maximum interval between automatic WAL checkpoints is determined by the value of **incremental\_checkpoint\_timeout**. If the default value is not used and you set it to a larger value, a large number of logs need to be replayed when the instance is restarted. As a result, the specified RTO cannot be ensured.
 
 #### Impact of Ultimate RTO-related Parameter Settings<a name="section129219253118"></a>
 
@@ -101,7 +101,6 @@ For details about the parameters related to ultimate RTO, see the description of
 
   For example, if the primary database instance has 100 TB data and the available bandwidth between remote database instances is 512 Mbps (transmission rate: 64 MB/s), it takes 1638400s (100 x 1024 x 1024/64, about 19 days) to transmit the data during establishment of the DR relationship.
 
-
 **Log Generation Rate**
 
 - The log generation rate affects the amount of logs that need to be retained in the primary database instance during establishment of the DR relationship. After full data restoration is complete, the DR database instance establishes a streaming replication relationship with the primary database instance. If the primary database instance does not retain the logs, the streaming replication relationship may fail to be established.
@@ -116,11 +115,11 @@ During the establishment of the DR relationship, you must send setup requests to
 
 >[!TIP]NOTICE 
 >
->-   During establishment of the DR relationship, the DR username and password need to be delivered to the primary and DR database instances for inter-database instance authentication. The user permission is **Replication**, which is specific for replication.
->-   Before setting up a DR relationship, you must create a DR user in the primary cluster.
->-   After the DR relationship is established, the user password cannot be modified. It is used throughout the DR lifecycle. You can remove the DR relationship, modify the username and password, and establish the DR relationship again.
->-   You can set the timeout interval by changing the value of **time\_out** as required. The default value is 20 minutes. The timeout interval is determined by the data volume of the primary database instance before the DR relationship is established and the available remote network bandwidth. The formula is as follows: Data volume/Transmission rate = Time required.
->    For example, if the primary database instance has 100 TB data and the available bandwidth between remote database instances is 512 Mbps (transmission rate: 64 MB/s), it takes 1638400s (100 x 1024 x 1024/64, about 19 days) to transmit the data during establishment of the DR relationship.
+>- During establishment of the DR relationship, the DR username and password need to be delivered to the primary and DR database instances for inter-database instance authentication. The user permission is **Replication**, which is specific for replication.
+>- Before setting up a DR relationship, you must create a DR user in the primary cluster.
+>- After the DR relationship is established, the user password cannot be modified. It is used throughout the DR lifecycle. You can remove the DR relationship, modify the username and password, and establish the DR relationship again.
+>- You can set the timeout interval by changing the value of **time\_out** as required. The default value is 20 minutes. The timeout interval is determined by the data volume of the primary database instance before the DR relationship is established and the available remote network bandwidth. The formula is as follows: Data volume/Transmission rate = Time required.
+> For example, if the primary database instance has 100 TB data and the available bandwidth between remote database instances is 512 Mbps (transmission rate: 64 MB/s), it takes 1638400s (100 x 1024 x 1024/64, about 19 days) to transmit the data during establishment of the DR relationship.
 
 #### DR Database Instance Failover<a name="EN-US_TOPIC_0000001217832244"></a>
 
@@ -128,8 +127,8 @@ Send a request to the DR database instance to promote the DR database instance t
 
 >[!TIP]NOTICE
 >
->-   After the DR database instance is promoted to primary, the DR information is cleared.
->-   If the primary database instance is normal and is processing services, you can run this command to remove the DR relationship from the DR database instance. After this command is executed, the DR database instance does not receive logs from the primary database instance anymore. As a result, the RPO value keeps increasing until the primary and standby database instances are disconnected. Then, the RPO value is null. For details about how to query the RPO value, see "Querying the DR Status of the Primary and Standby Database Instances."
+>- After the DR database instance is promoted to primary, the DR information is cleared.
+>- If the primary database instance is normal and is processing services, you can run this command to remove the DR relationship from the DR database instance. After this command is executed, the DR database instance does not receive logs from the primary database instance anymore. As a result, the RPO value keeps increasing until the primary and standby database instances are disconnected. Then, the RPO value is null. For details about how to query the RPO value, see "Querying the DR Status of the Primary and Standby Database Instances."
 
 #### Removing DR Information from the Primary Database Instance<a name="EN-US_TOPIC_0000001262792037"></a>
 
@@ -137,8 +136,8 @@ Send a request for clearing DR information to the primary database instance. For
 
 >[!TIP]NOTICE
 >
->-   This operation will remove the DR information from the primary database instance.
->-   This operation can be performed on the primary database instance only after the DR database instance is promoted to primary. If you perform this operation on the DR database instance before it is promoted to primary, the DR relationship will be damaged.
+>- This operation will remove the DR information from the primary database instance.
+>- This operation can be performed on the primary database instance only after the DR database instance is promoted to primary. If you perform this operation on the DR database instance before it is promoted to primary, the DR relationship will be damaged.
 
 #### Planned Switchover<a name="EN-US_TOPIC_0000001262632081"></a>
 
@@ -152,20 +151,20 @@ Send a DR status query request to the primary and standby database instances. Fo
 
 ##### Major Version Upgrade<a name="section02171934143419"></a>
 
-1.  Upgrade the primary database instance first. After the upgrade of the primary database instance is complete, upgrade the DR database instance.
-2.  After the upgrade of the DR database instance is complete, commit the DR database instance first and then the primary database instance.
+1. Upgrade the primary database instance first. After the upgrade of the primary database instance is complete, upgrade the DR database instance.
+2. After the upgrade of the DR database instance is complete, commit the DR database instance first and then the primary database instance.
 
 ##### Minor Version Upgrade<a name="section132691016174618"></a>
 
-1.  Upgrade the primary and standby database instances at the same time.
-2.  After the upgrade is complete, commit the DR database instance first and then the primary database instance.
+1. Upgrade the primary and standby database instances at the same time.
+2. After the upgrade is complete, commit the DR database instance first and then the primary database instance.
 
 >[!TIP]NOTICE
 >
->-   Before committing the standby database instance, ensure that the upgrade of the primary database instance is complete.
->-   Commit the standby database instance first and then the primary database instance.
->-   After the standby database instance is committed, the primary database instance cannot be rolled back.
->-   During the upgrade, do not perform a switchover between the primary and standby database instances.
+>- Before committing the standby database instance, ensure that the upgrade of the primary database instance is complete.
+>- Commit the standby database instance first and then the primary database instance.
+>- After the standby database instance is committed, the primary database instance cannot be rolled back.
+>- During the upgrade, do not perform a switchover between the primary and standby database instances.
 
 ### Troubleshooting<a name="EN-US_TOPIC_0000001217672262"></a>
 
@@ -203,8 +202,6 @@ The following tables list the symptoms, causes, and solutions of different opera
 </tbody>
 </table>
 
-
-
 #### Exception in Promoting the DR Database Instance to Primary (Failover)<a name="section11920103834912"></a>
 
 **Table** Errors that may occur when the DR database instance is promoted to primary (failover)
@@ -229,7 +226,6 @@ gs_guc set -Z cmagent -N all -I all -c "disaster_recovery_type= 0"</pre>
 </tr>
 </tbody>
 </table>
-
 
 #### Planned Switchover Exception<a name="section1282142716550"></a>
 
