@@ -487,7 +487,7 @@ ALTER TABLE [ schema_name. ]table_name
         6.交换的分区的表定义、索引定义、列定义完全相同时，才允许交换。
         ```
     
-   - modify_partition_clause
+    - modify_partition_clause
 
         修改分区的属性
 

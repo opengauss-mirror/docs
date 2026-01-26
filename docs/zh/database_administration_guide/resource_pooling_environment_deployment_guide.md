@@ -33,10 +33,10 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
 
 ## 独立编译安装指南
 >
->[!WARNING]注意 
+  >[!WARNING]注意 
+  >
+  > 以下部署操作请勿用于生产环境
 >
-> 以下部署操作请勿用于生产环境
-
  >[!NOTE]说明  
   >
   > - openGauss必须用Debug模式编译，不能使用Release模式，DMS和DSS组件需要使用测试版本。
@@ -48,14 +48,14 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
      
      b.编译安装替换三方库中的CBB，CBB组件需要使用Debug版本。
 
-  ```shell
-  #-3rd后面跟三方库对应的绝对路径
-  cd [CBB_CODE_PATH]
-  #xxxxxxxxxx为ddes_commit_id文件中的cbb_commit_id
-  git reset --hard xxxxxxxxxx 
-  cd [CBB_CODE_PATH]/build/linux/opengauss
-  sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m Debug
-  ```
+    ```shell
+    #-3rd后面跟三方库对应的绝对路径
+    cd [CBB_CODE_PATH]
+    #xxxxxxxxxx为ddes_commit_id文件中的cbb_commit_id
+    git reset --hard xxxxxxxxxx 
+    cd [CBB_CODE_PATH]/build/linux/opengauss
+    sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m Debug
+    ```
 
 2. 编译测试版本的DSS组件。
 
@@ -63,14 +63,14 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
 
       b.编译安装替换三方库中的DSS组件，DSS组件需要使用DebugDsstest版本：
 
-  ```shell
-  #-3rd后面跟三方库对应的绝对路径
-  cd [DSS_CODE_PATH]
-  #xxxxxxxxxx为ddes_commit_iddes文件中的dss_commit_id
-  git reset --hard xxxxxxxxxx
-  cd [DSS_CODE_PATH]/build/linux/opengauss
-  sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DebugDsstest
-  ```
+    ```shell
+    #-3rd后面跟三方库对应的绝对路径
+    cd [DSS_CODE_PATH]
+    #xxxxxxxxxx为ddes_commit_iddes文件中的dss_commit_id
+    git reset --hard xxxxxxxxxx
+    cd [DSS_CODE_PATH]/build/linux/opengauss
+    sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DebugDsstest
+    ```
 
 3. 编译测试版本的DMS组件。
 
@@ -78,210 +78,210 @@ openGauss资源池化是openGauss推出的一种新型的集群架构。该架�
  
       b.编译安装替换三方库中的DMS组件，DMS组件需要使用DMSTest版本：
       
-  ```shell
-  #-3rd后面跟三方库对应的绝对路径
-  cd [DMS_CODE_PATH]
-  #xxxxxxxxxx为ddes_commit_iddes文件中的dms_commit_id
-  git reset --hard xxxxxxxxxx
-  cd [DMS_CODE_PATH]/build/linux/opengauss
-  sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DMSTest
-  ```
+    ```shell
+    #-3rd后面跟三方库对应的绝对路径
+    cd [DMS_CODE_PATH]
+    #xxxxxxxxxx为ddes_commit_iddes文件中的dms_commit_id
+    git reset --hard xxxxxxxxxx
+    cd [DMS_CODE_PATH]/build/linux/opengauss
+    sh build.sh -3rd [ThirdParty_Binarylibs_Path] -t cmake -m DMSTest
+    ```
 
-> [!WARNING]注意 
->
-> 当编译完CBB、DSS、DMS之后，会自动更新到三方库，不需要手动拷贝，接下来只需按标准步骤编译数据库即可。
+    > [!WARNING]注意 
+    >
+    > 当编译完CBB、DSS、DMS之后，会自动更新到三方库，不需要手动拷贝，接下来只需按标准步骤编译数据库即可。
 
 4. 检查DSS、DMS组件编译版本是否满足要求。
 
-  ```shell
-  ##xxx.so分别为lib目录下的libdms.so、libdssapi.so和libdssaio.so
-  strings xxx.so | grep compiled
-  ```
+    ```shell
+    ##xxx.so分别为lib目录下的libdms.so、libdssapi.so和libdssaio.so
+    strings xxx.so | grep compiled
+    ```
 
 5. 配置环境变量。
 
    下面以2个节点为例进行说明。假设本次安装资源池化集群的用户为test，DSS_HOME是dn实例0的dssserver运行时需要的目录，需要手动新建。将下面的内容写入到/home/test/envfile中作为环境变量导入。
 
-  ```shell
-  export GAUSSHOME=/home/test/openGauss-server/dest/
-  export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
-  export PATH=$GAUSSHOME/bin:$PATH
-  export DSS_HOME=/home/test/dss/dss0/dssdba
-  ```
+    ```shell
+    export GAUSSHOME=/home/test/openGauss-server/dest/
+    export LD_LIBRARY_PATH=$GAUSSHOME/lib:$LD_LIBRARY_PATH
+    export PATH=$GAUSSHOME/bin:$PATH
+    export DSS_HOME=/home/test/dss/dss0/dssdba
+    ```
 
 6. 新建dsssever的目录。
 
-  ```shell
-  cd /home/test
-  mkdir -p dss/dss0/dssdba/cfg
-  mkdir -p dss/dss0/dssdba/log
-  mkdir -p dss/dss1/dssdba/cfg
-  mkdir -p dss/dss1/dssdba/log
-  mkdir -p dss/dev
-  ```
+    ```shell
+    cd /home/test
+    mkdir -p dss/dss0/dssdba/cfg
+    mkdir -p dss/dss0/dssdba/log
+    mkdir -p dss/dss1/dssdba/cfg
+    mkdir -p dss/dss1/dssdba/log
+    mkdir -p dss/dev
+    ```
 
 7. 用dd命令新建一个模拟的块设备文件。
 
-  下面的命令是建100G的命令，请根据自己需要的大小调整bs和count的值，执行时间依赖于磁盘的性能。需要注意创建完模拟文件后，磁盘需要预留10GB以上的空余空间，用于存放日志等。
+    下面的命令是建100G的命令，请根据自己需要的大小调整bs和count的值，执行时间依赖于磁盘的性能。需要注意创建完模拟文件后，磁盘需要预留10GB以上的空余空间，用于存放日志等。
 
-  ```shell
-  dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=51200 >/dev/null 2>&1
-  ```
+    ```shell
+    dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=51200 >/dev/null 2>&1
+    ```
 
 8. 创建2个dn节点需要的dss实例0和dss实例1的配置文件，其中17102和18102是dssserver要用的端口，应避免冲突，同时INST_ID不能与本机中其它dssserver有冲突。
 
-  创建dss实例0的配置文件：
+    创建dss实例0的配置文件：
 
-  ```shell
-  vim /home/test/dss/dss0/dssdba/cfg/dss_inst.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss0/dssdba/cfg/dss_inst.ini
+    ```
 
-  文件中的内容如下，注意DSS_NODES_LIST参数值IP之前的ID要和第一行的INST_ID对应：
+    文件中的内容如下，注意DSS_NODES_LIST参数值IP之前的ID要和第一行的INST_ID对应：
 
-  ```shell
-  INST_ID=0
-  _LOG_LEVEL=255
-  DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
-  _DISK_LOCK_FILE_PATH=/home/test/dss/dss0
-  LSNR_PATH=/home/test/dss/dss0
-  _LOG_MAX_FILE_SIZE=20M
-  _LOG_BACKUP_FILE_COUNT=128
-  ```
+    ```shell
+    INST_ID=0
+    _LOG_LEVEL=255
+    DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
+    _DISK_LOCK_FILE_PATH=/home/test/dss/dss0
+    LSNR_PATH=/home/test/dss/dss0
+    _LOG_MAX_FILE_SIZE=20M
+    _LOG_BACKUP_FILE_COUNT=128
+    ```
 
-  创建dss实例0的卷配置文件：
+    创建dss实例0的卷配置文件：
 
-  ```shell
-  vim /home/test/dss/dss0/dssdba/cfg/dss_vg_conf.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss0/dssdba/cfg/dss_vg_conf.ini
+    ```
 
-  文件中的内容如下，里面就是卷名加dd模拟出来的设备名字：
+    文件中的内容如下，里面就是卷名加dd模拟出来的设备名字：
 
-  ```shell
-  data:/home/test/dss/dev/dss-dba
-  ```
+    ```shell
+    data:/home/test/dss/dev/dss-dba
+    ```
 
-  创建dss实例1的配置文件：
+    创建dss实例1的配置文件：
 
-  ```shell
-  vim /home/test/dss/dss1/dssdba/cfg/dss_inst.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss1/dssdba/cfg/dss_inst.ini
+    ```
 
-  文件中的内容如下，注意DISK_LOCK_FILE_PATH配置的与1一致，DSS_NODES_LIST参数值IP之前的ID要和第一行的INST_ID对应：
+    文件中的内容如下，注意DISK_LOCK_FILE_PATH配置的与1一致，DSS_NODES_LIST参数值IP之前的ID要和第一行的INST_ID对应：
 
-  ```shell
-  INST_ID=1
-  _LOG_LEVEL=255
-  DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
-  _DISK_LOCK_FILE_PATH=/home/test/dss/dss0
-  LSNR_PATH=/home/test/dss/dss1
-  _LOG_MAX_FILE_SIZE=20M
-  _LOG_BACKUP_FILE_COUNT=128
-  ```
+    ```shell
+    INST_ID=1
+    _LOG_LEVEL=255
+    DSS_NODES_LIST=0:127.0.0.1:17102,1:127.0.0.1:18102
+    _DISK_LOCK_FILE_PATH=/home/test/dss/dss0
+    LSNR_PATH=/home/test/dss/dss1
+    _LOG_MAX_FILE_SIZE=20M
+    _LOG_BACKUP_FILE_COUNT=128
+    ```
 
-  创建dss实例1的卷配置文件：
+    创建dss实例1的卷配置文件：
 
-  ```shell
-  vim /home/test/dss/dss1/dssdba/cfg/dss_vg_conf.ini
-  ```
+    ```shell
+    vim /home/test/dss/dss1/dssdba/cfg/dss_vg_conf.ini
+    ```
 
-  文件中的内容如下，里面就是卷名加dd模拟出来的设备名字：
+    文件中的内容如下，里面就是卷名加dd模拟出来的设备名字：
 
-  ```shell
-  data:/home/test/dss/dev/dss-dba
-  ```
+    ```shell
+    data:/home/test/dss/dev/dss-dba
+    ```
 
-> [!WARNING]注意 
->
-> 一台服务器上建多个dn(数据库)节点，ip是相同的，服务使用的端口号不同。
-> 17102和18102是dssserver要用的端口。
+    > [!WARNING]注意 
+    >
+    > 一台服务器上建多个dn(数据库)节点，ip是相同的，服务使用的端口号不同。
+    > 17102和18102是dssserver要用的端口。
 
 9. 【可选】【初次执行请跳过】当后续步骤执行出错时，需要先执行如下命令清理残余目录，完成清理后再从下一步开始执行
 
-  ```shell
-  ##删除文件系统内的pgdata残余目录
-  rm -rf /home/test/data/node0 /home/test/data/node1
-  ##擦除模拟文件头部内容，使得虚拟文件内容不被dssserver识别，用于重新建卷
-  dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=100 conv=notrunc >/dev/null 2>&1
-  ```
+    ```shell
+    ##删除文件系统内的pgdata残余目录
+    rm -rf /home/test/data/node0 /home/test/data/node1
+    ##擦除模拟文件头部内容，使得虚拟文件内容不被dssserver识别，用于重新建卷
+    dd if=/dev/zero of=/home/test/dss/dev/dss-dba bs=2M count=100 conv=notrunc >/dev/null 2>&1
+    ```
 
 10. 创建存放数据库数据的数据卷，启动dssserver服务。
 
-  ```shell
-  ##这里是第5步中配好的环境变量
-  source /home/test/envfile
-  ##创建DSS卷组信息
-  dsscmd cv -g data -v /home/test/dss/dev/dss-dba
-  ##拉起dssserver服务
-  dssserver -D /home/test/dss/dss0/dssdba &
-  #上个命令显示DSS SERVER STARTED即为成功
-  dssserver -D /home/test/dss/dss1/dssdba &
-  #上个命令显示DSS SERVER STARTED即为成功
+    ```shell
+    ##这里是第5步中配好的环境变量
+    source /home/test/envfile
+    ##创建DSS卷组信息
+    dsscmd cv -g data -v /home/test/dss/dev/dss-dba
+    ##拉起dssserver服务
+    dssserver -D /home/test/dss/dss0/dssdba &
+    #上个命令显示DSS SERVER STARTED即为成功
+    dssserver -D /home/test/dss/dss1/dssdba &
+    #上个命令显示DSS SERVER STARTED即为成功
 
-  #创建完可以通过如下命令确认是否建卷成功
-  dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
-  dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
-  ```
+    #创建完可以通过如下命令确认是否建卷成功
+    dsscmd lsvg -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
+    dsscmd ls -m M -p +data -U UDS:/home/test/dss/dss0/.dss_unix_d_socket
+    ```
 
-> [!WARNING]注意 
->
-> DSS不支持启动后修改卷组配置，如涉及修改，请先使用kill -9命令关闭dssserver进程，完成修改后再重新拉起dssserver进程。
-> 该步骤如果出错，请查看DSS配置文件是否正确，如端口号是否冲突，INST_ID是否已经被其它DSS服务使用等。
+    > [!WARNING]注意 
+    >
+    > DSS不支持启动后修改卷组配置，如涉及修改，请先使用kill -9命令关闭dssserver进程，完成修改后再重新拉起dssserver进程。
+    > 该步骤如果出错，请查看DSS配置文件是否正确，如端口号是否冲突，INST_ID是否已经被其它DSS服务使用等。
 
 11. 手动执行多节点的initdb，其中initdb命令中1613和1614是dms通信要用的端口，12210和13210是数据库的通信端口，应避免冲突。
 
-  ```shell
-  mkdir -p /home/test/data
-  rm -rf /home/test/data/node0 /home/test/data/node1
+    ```shell
+    mkdir -p /home/test/data
+    rm -rf /home/test/data/node0 /home/test/data/node1
 
-gs_initdb -D /home/test/data/node0 --nodename=node0 -U tester -w Pasword --vgname='+data,+data' --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 0 --socketpath='UDS:/home/test/dss/dss0/.dss_unix_d_socket'
+  gs_initdb -D /home/test/data/node0 --nodename=node0 -U tester -w Pasword --vgname='+data,+data' --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 0 --socketpath='UDS:/home/test/dss/dss0/.dss_unix_d_socket'
 
-  echo "ss_enable_ssl = off
-  listen_addresses = '*'
-  port=12210
-  ss_work_thread_count = 32
-  enable_segment = on
-  ss_log_level = 255
-  ss_log_backup_file_count = 100
-  ss_log_max_file_size = 1GB
-  " >> /home/test/data/node0/postgresql.conf
+    echo "ss_enable_ssl = off
+    listen_addresses = '*'
+    port=12210
+    ss_work_thread_count = 32
+    enable_segment = on
+    ss_log_level = 255
+    ss_log_backup_file_count = 100
+    ss_log_max_file_size = 1GB
+    " >> /home/test/data/node0/postgresql.conf
 
-  sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node0/pg_hba.conf
+    sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node0/pg_hba.conf
 
-  gs_initdb -D /home/test/data/node1 --nodename=node1 -U tester -w Pasword --vgname='+data,+data' --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 1 --socketpath='UDS:/home/test/dss/dss1/.dss_unix_d_socket'
-  
-  echo "ss_enable_ssl = off
-  listen_addresses = '*'
-  port=13210
-  ss_work_thread_count = 32
-  enable_segment = on
-  ss_log_level = 255
-  ss_log_backup_file_count = 100
-  ss_log_max_file_size = 1GB
-  " >> /home/test/data/node1/postgresql.conf
+    gs_initdb -D /home/test/data/node1 --nodename=node1 -U tester -w Pasword --vgname='+data,+data' --enable-dss --dms_url="0:127.0.0.1:1613,1:127.0.0.1:1614" -I 1 --socketpath='UDS:/home/test/dss/dss1/.dss_unix_d_socket'
+    
+    echo "ss_enable_ssl = off
+    listen_addresses = '*'
+    port=13210
+    ss_work_thread_count = 32
+    enable_segment = on
+    ss_log_level = 255
+    ss_log_backup_file_count = 100
+    ss_log_max_file_size = 1GB
+    " >> /home/test/data/node1/postgresql.conf
 
-  sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node1/pg_hba.conf
-  ```
+    sed '91 ahost       all        all         0.0.0.0/0        sha256' -i /home/test/data/node1/pg_hba.conf
+    ```
 
-> [!WARNING]注意 
->
-> 1613和1614是dms通信要用的端口。
-> 12210和13210是openGauss数据库提供服务需要用的端口。
+    > [!WARNING]注意 
+    >
+    > 1613和1614是dms通信要用的端口。
+    > 12210和13210是openGauss数据库提供服务需要用的端口。
 
 12. 创建模拟CM功能的文件，并将其加入到第3步创建的环境变量中。
 
-  ```shell
-  echo "REFORMER_ID = 0" > /home/test/cm_config.ini
-  echo "BITMAP_ONLINE = 3" >> /home/test/cm_config.ini
-  echo "export CM_CONFIG_PATH=/home/test/cm_config.ini" >> /home/test/envfile
-  ```
+    ```shell
+    echo "REFORMER_ID = 0" > /home/test/cm_config.ini
+    echo "BITMAP_ONLINE = 3" >> /home/test/cm_config.ini
+    echo "export CM_CONFIG_PATH=/home/test/cm_config.ini" >> /home/test/envfile
+    ```
 
 13. 依次启动节点1和节点2。
 
-  ```shell
-  source /home/test/envfile
-  gs_ctl start -D /home/test/data/node0
-  gs_ctl start -D /home/test/data/node1
-  ```
+    ```shell
+    source /home/test/envfile
+    gs_ctl start -D /home/test/data/node0
+    gs_ctl start -D /home/test/data/node1
+    ```
 
 ## 部分补充说明
 

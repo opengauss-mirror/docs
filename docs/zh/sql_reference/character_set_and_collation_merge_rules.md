@@ -16,7 +16,7 @@
 
 当两个表达式字符序不同时，使用字符序优先级最高的表达式的字符序。
 
-#### 示例
+### 示例
 
 ```
 openGauss=# CREATE TABLE t_utf8(c1 varchar(16) character set utf8mb4 collate utf8mb4_bin);

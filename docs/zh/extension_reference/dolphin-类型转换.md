@@ -18,11 +18,11 @@
 
 增加了UINT4、BOOL、CHAR、VARCHAR、TEXT向YEAR的赋值转换规则。
 
-### 转换规则
+## 转换规则
 
 下列转换规则需GUC参数dolphin.b_compatibility_mode为on
 
-#### 源类型：BIT
+### 源类型：BIT
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -36,7 +36,7 @@
 |SET|按二进制数值，对应SET编号进行转换|SET编号顺序为1、2、4、8...与二进制各位对应，可叠加，如b'101'转换为set第一、第三项的集合<br>转换级别为赋值|
 |JSON|显示为"base64:type16:xxx"，其中xxx为BIT二进制转换为十六进制，"0x"格式字符串的base64编码|如b'1111'::json，结果为"base64:type16:Dw=="，其中Dw==按base64解码为0x0F<br>转换级别为显式|
 
-#### 源类型：数值类型
+### 源类型：数值类型
 
 #### TINYINT/SMALLINT/INT/BIGINT
 
@@ -58,7 +58,7 @@
 |SET|按数值对应SET编号进行转换<br>小数部分忽略，无四舍五入|SET编号顺序为1、2、4、8...，可叠加，如5转换为set第一、第三项的集合<br>SMALLINT/INT/BIGINT/NUMERIC/FLOAT/DOUBLE到SET的转换为隐式，其他为赋值|
 |JSON|按数值转换，与字符串类似|转换级别为显式|
 
-#### 源类型：DATE
+### 源类型：DATE
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -73,7 +73,7 @@
 |SET|按对应显示格式字符串转换，转换为SET对应Lable的项|转换级别为赋值|
 |JSON|按对应显示格式字符串转换，双引号包裹|转换级别为显式|
 
-#### 源类型：DATETIME/TIMESTAMP
+### 源类型：DATETIME/TIMESTAMP
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -90,7 +90,7 @@
 |JSON|按对应显示格式字符串转换，双引号包裹|转换级别为显式|
 |BOOL|正常合法时间为TRUE，但全0时间为FALSE|转换级别为赋值|
 
-#### 源类型：TIME
+### 源类型：TIME
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -105,7 +105,7 @@
 |SET|按对应显示格式字符串转换，转换为SET对应Lable的项|转换级别为赋值|
 |JSON|按对应显示格式字符串转换，双引号包裹|转换级别为显式|
 
-#### 源类型：YEAR
+### 源类型：YEAR
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -121,7 +121,7 @@
 |JSON|按数值转换，与字符串类似|转换级别为显式|
 |BOOLEAN|先转换为TEXT类型，再转换为布尔类型|转换级别为隐式|
 
-#### 源类型：CHAR/VARCHAR/TEXT
+### 源类型：CHAR/VARCHAR/TEXT
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -137,7 +137,7 @@
 
 - TEXT类型用于数值上下文中，如参与数值运算、与数值进行比较、作为参数传给入参类型为数值的函数，以上场景涉及TEXT类型到数值类型的转换，MySQL对非法格式进行截断处理，不会产生告警。但涉及到TEXT类型数据插入数值类型列时，MySQL会产生告警/报错；openGauss对以上场景均采用更严格的告警/报错。
 
-#### 源类型：BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
+### 源类型：BINARY/VARBINARY<br>TINYBLOB/MEDIUMBLOB/BLOB/LONGBLOB
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -152,7 +152,7 @@
 |JSON|BINARY转JSON显示为"base64:type254:xxx"<br>VARBINARY转JSON显示为"base64:type15:xxx"<br>TINYBLOB转JSON显示为"base64:type249:xxx"<br>MEDIUMBLOB转JSON显示为"base64:type250:xxx"<br>BLOB转JSON显示为"base64:type252:xxx"<br>LONGBLOB转JSON显示为"base64:type251:xxx"<br>其中xxx为"0x"格式字符串的base64编码|如x'5C'::blob::json，结果为"base64:type252:XA=="，其中XA==按base64解码为0x5C<br>转换级别为显式|
 |BOOLEAN|BINARY先转换为CHAR类型，VARBINARY先转换为VARCHAR类型，其他先转换为TEXT类型，再转换为布尔类型|转换级别为赋值|
 
-#### 源类型：ENUM
+### 源类型：ENUM
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -166,7 +166,7 @@
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
 |BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
-#### 源类型：SET
+### 源类型：SET
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -180,7 +180,7 @@
 |JSON|取对应项Lable字符串，按合法的JSON字符串格式进行转换|转换级别为显式|
 |BOOLEAN|先转换为INT类型，再转换为布尔类型|转换级别为赋值|
 
-#### 源类型：JSON
+### 源类型：JSON
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
@@ -193,13 +193,13 @@
 |ENUM|按字符串转换为ENUM对应Lable的项|转换级别为赋值|
 |SET|按字符串转换为SET对应Lable的项|转换级别为隐式|
 
-#### 源类型：BOOL
+### 源类型：BOOL
 
 |目标类型|转换规则描述|备注|
 |--|--|--|
 |YEAR|先转换为BIGINT类型，再转换为YEAR类型|转换级别为赋值|
 
-#### 源类型：INT16
+### 源类型：INT16
 
 |目标类型|转换规则描述|备注|
 |--|--|--|

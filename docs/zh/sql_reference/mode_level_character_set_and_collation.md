@@ -15,7 +15,7 @@ ALTER SCHEMA schema_name
     [ [DEFAULT] CHARACTER SET | CHARSET [ = ] default_charset ] [ [DEFAULT] COLLATE [ = ] default_collation ];
 ```
 
-#### 语法说明
+## 语法说明
 
 - **schema_name**
 
@@ -45,7 +45,7 @@ openGauss通过以下方式选择模式的字符集和字符序：
 - `default_collation` 仅支持指定为B模式下的字符序，指定其他字符序报错。
 - 创建新 SCHEMA 的字符集、字符序与数据库的 server_encoding 不同时需要先设置 `b_format_behavior_compat_options` 参数包含`enable_multi_charset`。
 
-#### 示例
+## 示例
 
 ```
 -- 仅设置字符集，字符序为字符集的默认字符序

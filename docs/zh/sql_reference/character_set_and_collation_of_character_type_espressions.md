@@ -12,7 +12,7 @@
 [_charset_name]'string' [COLLATE collation_name]
 ```
 
-#### 语法说明
+### 语法说明
 
 - **\_charset\_name**
 
@@ -34,7 +34,7 @@
 
 - 如果既不指定字符集但不指定字符序，则使用由参数`character_set_connection`和`collation collation_name`指定的字符集和字符序。
 
-#### 示例
+### 示例
 
 ```
 openGauss=# SELECT _utf8mb4'abc' COLLATE utf8mb4_general_ci;
@@ -68,7 +68,7 @@ openGauss=# SELECT _binary 'abc' COLLATE binary;
 expression [COLLATE collation_name]
 ```
 
-#### 语法说明
+### 语法说明
 
 - **COLLATE collation\_name**
 
@@ -78,7 +78,7 @@ expression [COLLATE collation_name]
 
     指定的字符序必须是表达式的字符集允许的字符序。
 
-#### 示例
+### 示例
 
 字符序与字符集不匹配：
 

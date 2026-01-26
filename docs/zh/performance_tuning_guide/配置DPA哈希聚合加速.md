@@ -122,16 +122,16 @@ GROUP BY region_id, product_code;
 
 1. **检查平台架构**：确认运行环境为ARM64架构。
 
-```bash
-uname -m
-# 输出应为 aarch64
-```
+    ```bash
+    uname -m
+    # 输出应为 aarch64
+    ```
 
 2. **检查UADK库加载**：查看数据库日志，确认UADK库是否加载成功。
 
-```
-LOG:  UADK AGG library loaded successfully
-```
+    ```
+    LOG:  UADK AGG library loaded successfully
+    ```
 
 3. **查看WARNING日志**：当DPA回退CPU执行时，会输出相关WARNING信息。常见的WARNING包括：
    - `DPA: Key columns number X exceeds hardware limit 9, fallback to CPU`

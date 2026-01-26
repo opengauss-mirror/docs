@@ -296,7 +296,7 @@ ON [TABLE_NAME]
 (COLUMN_NAME [TYPE]_ops) ;
 ```
 
-#### btree/ubtree 索引操作符
+### btree/ubtree 索引操作符
 
 - vector_ops
 - bit_ops

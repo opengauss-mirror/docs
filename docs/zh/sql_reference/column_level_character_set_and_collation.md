@@ -10,7 +10,7 @@ CREATE TABLE table_name (
 );
 ```
 
-#### 语法说明
+## 语法说明
 
 - **table_name**
 
@@ -43,7 +43,7 @@ openGauss 通过以下方式选择表字段的字符集和字符序：
 - 设置表字段的默认字符集和默认字符序与数据库字符集`server_encoding`不同时需要先设置`b_format_behavior_compat_options`参数包含`enable_multi_charset`。
 - 分区表的分区键的字符集必须与数据库字符集相同。
 
-#### 示例
+## 示例
 
 ```
 -- 仅设置字符集，字符序为字符集的默认字符序

@@ -216,10 +216,10 @@
 >- 配置该参数时需同步配置GUC参数local\_bind\_address为libos\_kni的网卡IP。
 >- 参数模板：comm\_proxy\_attr = '\{enable\_libnet:true, enable\_dfx:false, numa\_num:4, numa\_bind:\[\[30,31\],\[62,63\],\[94,95\],\[126,127\]\]\}'
 >- 可配置参数说明。
-> - enable\_libnet：是否开启用户态协议，取值范围：true、false。
-> - enable\_dfx：是否开启通信代理库视图，取值范围：true、false。
-> - numa\_num：机器环境中numa的数量，支持2P、4P服务器，取值范围：4、8。
-> - numa\_bind：代理线程绑核参数，每个numa两个CPU绑核，共numa\_num组，取值范围：\[0，cpu数-1\]。
+>   - enable\_libnet：是否开启用户态协议，取值范围：true、false。
+>   - enable\_dfx：是否开启通信代理库视图，取值范围：true、false。
+>   - numa\_num：机器环境中numa的数量，支持2P、4P服务器，取值范围：4、8。
+>   - numa\_bind：代理线程绑核参数，每个numa两个CPU绑核，共numa\_num组，取值范围：\[0，cpu数-1\]。
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
@@ -246,9 +246,9 @@
 >- 该参数需要在配置有效hcom4db\_link\_path的前提下生效
 >- 该参数生效范围为：SPQ场景下的跨节点Stream算子
 >- 可配置参数说明。
-> - ORIGIN：不替换libcom
-> - TCP：使用hcom4db通信库，并且使用TCP模式
-> - UBC：使用hcom4db通信库，并且使用UBC模式
+>   - ORIGIN：不替换libcom
+>   - TCP：使用hcom4db通信库，并且使用TCP模式
+>   - UBC：使用hcom4db通信库，并且使用UBC模式
 
 该参数属于POSTMASTER类型参数，请参考[表1](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 

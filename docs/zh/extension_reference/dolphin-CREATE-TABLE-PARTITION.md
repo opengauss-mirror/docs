@@ -354,13 +354,13 @@ CREATE TABLE [ IF NOT EXISTS ] partition_table_name
   >[!TIP]须知
   >1. 在创建分区表若第一个分区定义含START值，则范围（MINVALUE，START）将自动作为实际的第一个分区。
   >2. START END语法需要遵循以下限制：
-  >    - 每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
-  > - 相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
-  > - 每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
-  > - 每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
-  > - 一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
-  > - partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
-  > - 在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
+  >     - 每个partition\_start\_end\_item中的START值（如果有的话，下同）必须小于其END值。
+  >     - 相邻的两个partition\_start\_end\_item，第一个的END值必须等于第二个的START值；
+  >     - 每个partition\_start\_end\_item中的EVERY值必须是正向递增的，且必须小于（END-START）值；
+  >     - 每个分区包含起始值，不包含终点值，即形如：\[起始值，终点值\)，起始值是MINVALUE时则不包含；
+  >     - 一个partition\_start\_end\_item创建的每个分区所属的TABLESPACE一样；
+  >     - partition\_name作为分区名称前缀时，其长度不要超过57字节，超过时自动截断；
+  >     - 在创建、修改分区表时请注意分区表的分区总数不可超过最大限制（1048575）；
   >3. 在创建分区表时START END与LESS THAN语法不可混合使用。
   >4. 即使创建分区表时使用START END语法，备份（gs\_dump）出的SQL语句也是VALUES LESS THAN语法格式。
 

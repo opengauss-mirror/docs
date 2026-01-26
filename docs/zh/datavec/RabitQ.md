@@ -91,11 +91,13 @@ halfvec_cosine_ops | halfvec类型-余弦距离
 - `rabitq_fht` - 定义是否对向量使用fht随机旋转。如果不设置默认使用RANDOM随机旋转。它可以使向量在几何空间中分布更加均匀，从而避免碰撞。
 
  **示例：** 使用L2距离创建HNSW-RABITQ索引，其中表items中向量为2000维vector数据类型。
+
  ```
  openGauss=# CREATE INDEX ON items USING hnsw (embedding vector_l2_ops) WITH (enable_rabitq=on, rabitq_refine_type='FP32', rabitq_fht=on);
  ```
 
     **示例：** 使用L2距离创建HNSW-RABITQ索引，其中表items中向量为4000维halfvec数据类型。
+
  ```
  openGauss=# CREATE INDEX ON items USING hnsw (embedding halfvec_l2_ops) WITH (enable_rabitq=on, rabitq_refine_type='FP32', rabitq_fht=on);
  ```
@@ -174,6 +176,7 @@ vector_cosine_ops|<=>|余弦距离
 - `rabitq_fht` - 定义是否对向量使用fht随机旋转。如果不设置默认使用RANDOM随机旋转。它可以使向量在几何空间中分布更加均匀，从而避免碰撞。
 
  **示例：** 使用L2距离创建IVFFLAT-RABITQ索引，其中表items中向量为2000维vector数据类型，聚类中心lists=200。
+
  ```
  openGauss=# CREATE INDEX ON items USING ivfflat (embedding vector_l2_ops) WITH (lists=200, enable_rabitq=on, rabitq_refine_type='FP32', rabitq_fht=on);
  ```
