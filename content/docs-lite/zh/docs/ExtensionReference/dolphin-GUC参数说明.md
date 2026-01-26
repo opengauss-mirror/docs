@@ -53,12 +53,12 @@
 
 -   treat_bxconst_as_binary: 控制b''、x''字符串在词法分析时的默认类型。当设置此参数时，将b''、x''数据作为binary类型进行存储和使用。当不设置此参数时，将b''、x''数据作为bit类型进行存储和使用。
 
-    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql表现 |
-    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- |
-    | select b'110010'                                             | 50                                | '2'                             | 2         |
-    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         |
-    | select b'110010' + 1;                                        | 51                                | 3                               | 51        |
-    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 34                              | 12850     |
+    | 语句                                                         | 不设置treat_bxconst_as_binary表现 | 设置treat_bxconst_as_binary表现 | Mysql57表现 | Mysql80表现
+    | ------------------------------------------------------------ | --------------------------------- | ------------------------------- | --------- | --------- |
+    | select b'110010'                                             | 110010                            | \x32                            | 2         | 0x32      |
+    | select conv(b'110010', 16, 10)                               | 50                                | 2                               | 2         | 50        |
+    | select b'110010' + 1;                                        | 51                                | 3                               | 51        | 51        |
+    | create table t_bit(a bit(16));<br>insert into t_bit values(b'11001000110010');<br>select conv(a, 16, 10) from t_bit; | 12850                             | 12850                           | 12850     | 12850     |
     
 - not_escape_zero_in_binary：对于binary类型是否取消将\0字符转义成\000字符输出，该参数只影响JDBC的输出结果，具体表现如下所示：
 
