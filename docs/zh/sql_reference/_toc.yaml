@@ -57,8 +57,6 @@ sections:
             href: ./data_type_used_by_the_ledger_database.md
           - label: SET类型
             href: ./set_type.md
-          - label: 向量数据类型
-            href: ./vector_data_type.md
           - label: ANYDATA类型
             href: ./anydata_type.md
           - label: 对象类型
@@ -1280,7 +1278,7 @@ sections:
       - label: 资源池化的函数
         href: ./resource_pooling_function.md
       - label: 向量函数和操作符
-        href: ./vector_functions_and_operators.md
+        href: ../datavec/vector_functions_and_operators.md
       - label: BFILE类型函数
         href: ./bfile_type_function.md          
       - label: 废弃函数
