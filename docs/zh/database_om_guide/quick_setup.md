@@ -20,7 +20,7 @@ host     all     repuser     0.0.0.0/0     sha256
 CREATE PUBLICATION mypub FOR TABLE users, departments;
 ```
 
-并且在订阅者数据库上：(创建订阅的命令详见[CREATE SUBSCRIPTION](../sql_reference/create_publication.md))
+并且在订阅者数据库上：(创建订阅的命令详见[CREATE SUBSCRIPTION](../sql_reference/create_subscription.md))
 
 ```
 CREATE SUBSCRIPTION mysub CONNECTION 'dbname=foo host=bar user=repuser' PUBLICATION mypub;
