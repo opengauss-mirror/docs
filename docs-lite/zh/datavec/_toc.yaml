@@ -69,6 +69,8 @@ sections:
             href: ./eulercopilot.md
           - label: RAGFlow
             href: ./opengauss_ragflow.md
+          - label: LangGraph
+            href: ./langgraph.md
       - label: 嵌入模型
         sections:
           - label: BGE-M3
