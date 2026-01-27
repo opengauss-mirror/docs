@@ -26,24 +26,22 @@ openGauss supports the psycopg2 feature and allows psycopg2 to be connected in S
 </tbody>
 </table>
 
--   **[Psycopg Package](psycopg_package.md)**  
+- **[Psycopg Package](psycopg_package.md)**  
 
--   **[Development Process](development_process_psycopg.md)**  
+- **[Development Process](development_process_psycopg.md)**  
 
--   **[Loading a Driver](loading_a_driver_psycopg.md)**  
+- **[Loading a Driver](loading_a_driver_psycopg.md)**  
 
--   **[Connecting to the Database](connecting_to_a_database_psycopg.md)**  
+- **[Connecting to the Database](connecting_to_a_database_psycopg.md)**  
 
--   **[Executing SQL Statements](executing_sql_statements_psycopg.md)**  
+- **[Executing SQL Statements](executing_sql_statements_psycopg.md)**  
 
--   **[Processing the Result Set](processing_the_result_set.md)**  
+- **[Processing the Result Set](processing_the_result_set.md)**  
 
--   **[Closing the Connection](closing_the_connection_psycopg.md)**  
+- **[Closing the Connection](closing_the_connection_psycopg.md)**  
 
--   **[Connecting to the Database \(Using SSL\)](connecting_to_the_database_using_ssl_psycopg.md)**  
+- **[Connecting to the Database \(Using SSL\)](connecting_to_the_database_using_ssl_psycopg.md)**  
 
--   **[Example: Common Operations](example_common_operations_psycopg.md)**  
+- **[Example: Common Operations](example_common_operations_psycopg.md)**  
 
--   **[Psycopg API Reference](psycopg_api_reference.md)**  
-
-
+- **[Psycopg API Reference](psycopg_api_reference.md)**  

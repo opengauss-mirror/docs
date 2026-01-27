@@ -4,7 +4,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
--   创建触发器
+- 创建触发器
 
     ```
     CREATE [ CONSTRAINT ] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
@@ -14,72 +14,68 @@
         EXECUTE PROCEDURE function_name ( arguments );
     ```
 
-
--   修改触发器
+- 修改触发器
 
     ```
     ALTER TRIGGER trigger_name ON table_name RENAME TO new_trigger_name;
     ```
 
-
--   删除触发器
+- 删除触发器
 
     ```
     DROP TRIGGER trigger_name ON table_name [ CASCADE | RESTRICT ];
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_s65dbaae3763942599852d585997c77dd"></a>
 
--   **CONSTRAINT**
+- **CONSTRAINT**
 
     可选项，指定此参数将创建约束触发器，即触发器作为约束来使用。除了可以使用SET CONSTRAINTS调整触发器触发的时间之外，这与常规触发器相同。 约束触发器必须是AFTER ROW触发器。
 
--   **trigger\_name**
+- **trigger\_name**
 
     触发器名称。
 
--   **BEFORE**
+- **BEFORE**
 
     触发器函数是在触发事件发生前执行。
 
--   **AFTER**
+- **AFTER**
 
     触发器函数是在触发事件发生后执行。
 
--   **INSTEAD OF**
+- **INSTEAD OF**
 
     触发器函数直接替代触发事件。
 
--   **event**
+- **event**
 
     启动触发器的事件，取值范围包括：INSERT、UPDATE、DELETE或TRUNCATE，也可以通过OR同时指定多个触发事件。
 
--   **table\_name**
+- **table\_name**
 
     触发器对应的表名称。
 
--   **FOR EACH ROW | FOR EACH STATEMENT**
+- **FOR EACH ROW | FOR EACH STATEMENT**
 
     触发器的触发频率。
 
-    -   FOR EACH ROW是指该触发器是受触发事件影响的每一行触发一次。
-    -   FOR EACH STATEMENT是指该触发器是每个SQL语句只触发一次。
+    - FOR EACH ROW是指该触发器是受触发事件影响的每一行触发一次。
+    - FOR EACH STATEMENT是指该触发器是每个SQL语句只触发一次。
 
     未指定时默认值为FOR EACH STATEMENT。约束触发器只能指定为FOR EACH ROW。
 
--   **function\_name**
+- **function\_name**
 
     用户定义的函数，必须声明为不带参数并返回类型为触发器，在触发器触发时执行。
 
--   **arguments**
+- **arguments**
 
     执行触发器时要提供给函数的可选的以逗号分隔的参数列表。
 
--   **new\_trigger\_name**
+- **new\_trigger\_name**
 
     修改后的新触发器名称。
-
 
 ## 示例<a name="zh-cn_topic_0283137165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bcd4799b3ea668b3eb074fa"></a>
 
@@ -157,4 +153,3 @@ openGauss=# DROP TRIGGER insert_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER update_trigger ON test_trigger_src_tbl;
 openGauss=# DROP TRIGGER delete_trigger_renamed ON test_trigger_src_tbl;
 ```
-

@@ -4,21 +4,21 @@
 
 **gs\_ctl**  is a tool provided by openGauss for controlling database services. It can be used to start or stop a database and to query the database status. It is invoked by the database management module.
 
--   Start, stop, and restart the openGauss node.
--   Reload the configuration files \(**postgresql.conf**  and  **pg\_hba.conf**\) without stopping the database.
--   Perform primary/standby switchover, query primary/standby status, DN rebuild the database instance, and query the rebuilding status.
+- Start, stop, and restart the openGauss node.
+- Reload the configuration files \(**postgresql.conf**  and  **pg\_hba.conf**\) without stopping the database.
+- Perform primary/standby switchover, query primary/standby status, DN rebuild the database instance, and query the rebuilding status.
 
 ## Parameter Description<a name="en-us_topic_0059777628_sfeccdff45fda4d8dacf4cefb2b8103f8"></a>
 
 The  **gs\_ctl**  tool can use the following types of parameters:
 
--   **option**  parameters. For details, see  [Table 1](#en-us_topic_0059777628_t56b333c48c5e46cc93262560e23032f5).
--   Common parameters. For details, see  [Table 2](#en-us_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68).
--   **start**  and  **restart**  parameters. For details, see  [Table 3](#en-us_topic_0059777628_t6d75b31bab9540b284e45222396ae38b).
--   **stop**  and  **restart**  parameters. For details, see  [Table 4](#en-us_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a).
--   **switchover**  parameters. For details, see  [Table 5](#en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31).
--   **build**  parameters. For details, see  [Table 6](#en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b).
--   Parameters for  **copy**. For details, see  [Table 7](#table65592307557).
+- **option**  parameters. For details, see  [Table 1](#en-us_topic_0059777628_t56b333c48c5e46cc93262560e23032f5).
+- Common parameters. For details, see  [Table 2](#en-us_topic_0059777628_t09253ddb2a8a4d4a8ba32b103310bb68).
+- **start**  and  **restart**  parameters. For details, see  [Table 3](#en-us_topic_0059777628_t6d75b31bab9540b284e45222396ae38b).
+- **stop**  and  **restart**  parameters. For details, see  [Table 4](#en-us_topic_0059777628_t5406d28e9445424c9fcf63658cffc13a).
+- **switchover**  parameters. For details, see  [Table 5](#en-us_topic_0059777628_tb40c07f148df463c8012b9e7183fdb31).
+- **build**  parameters. For details, see  [Table 6](#en-us_topic_0059777628_t22fb7e7152bf4c939f6316c48cb80b5b).
+- Parameters for  **copy**. For details, see  [Table 7](#table65592307557).
 
     **Table  1** **option**  parameters
 
@@ -113,7 +113,6 @@ The  **gs\_ctl**  tool can use the following types of parameters:
     </tr>
     </tbody>
     </table>
-
 
 **Table  2**  Common parameters
 

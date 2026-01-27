@@ -8,7 +8,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: a string
 
-**Default value**:  **'https://127.0.0.1'**
+**Default value**:  **'<https://127.0.0.1>'**
 
 ## enable\_security\_policy<a name="section18307271684"></a>
 
@@ -26,7 +26,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 ## use\_elastic\_search<a name="section1383330112618"></a>
 
-**Parameter description**: Specifies whether to send unified audit logs to Elasticsearch. If  **enable\_security\_policy**  and this parameter are enabled, unified audit logs are sent to Elasticsearch through HTTP or HTTPS \(used by default\). After this parameter is enabled, ensure that the Elasticsearch service corresponding to  **elastic\_search\_ip\_addr **can be properly connected. Otherwise, the process fails to be started.
+**Parameter description**: Specifies whether to send unified audit logs to Elasticsearch. If  **enable\_security\_policy**  and this parameter are enabled, unified audit logs are sent to Elasticsearch through HTTP or HTTPS \(used by default\). After this parameter is enabled, ensure that the Elasticsearch service corresponding to  **elastic\_search\_ip\_addr**can be properly connected. Otherwise, the process fails to be started.
 
 This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 

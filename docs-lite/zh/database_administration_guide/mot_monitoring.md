@@ -46,8 +46,8 @@ numa_node  | reserved_size        | used_size
 
 其中，
 
--   -1为总内存。
--   0–7为NUMA内存节点。
+- -1为总内存。
+- 0–7为NUMA内存节点。
 
 ## MOT本地内存详情<a name="zh-cn_topic_0283137103_zh-cn_topic_0280525149_section12710669"></a>
 
@@ -75,8 +75,8 @@ numa_node  | reserved_size      | used_size
 
 其中，
 
--   -1为总内存。
--   0–7为NUMA内存节点。
+- -1为总内存。
+- 0–7为NUMA内存节点。
 
 ## 会话内存<a name="zh-cn_topic_0283137103_zh-cn_topic_0280525149_section47287164"></a>
 
@@ -98,9 +98,9 @@ sessid                   | total_size | free_size | used_size
 
 其中，
 
--   total\_size：分配给会话的内存。
--   free\_size：未使用的内存。
--   used\_size：使用中的内存。
+- total\_size：分配给会话的内存。
+- free\_size：未使用的内存。
+- used\_size：使用中的内存。
 
 DBA可以通过以下查询确定当前会话使用的本地内存状态。
 
@@ -112,4 +112,3 @@ select * from mot_session_memory_detail()
 结果如下。
 
 ![](figures/zh-cn_image_0289900225.png)
-

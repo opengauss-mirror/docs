@@ -4,7 +4,7 @@ openGauss常用的函数如下：
 
 ## 数学函数<a name="section168311415165912"></a>
 
--   abs\(x\)
+- abs\(x\)
 
     描述：绝对值。
 
@@ -20,8 +20,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   cbrt\(dp\)
+- cbrt\(dp\)
 
     描述：立方根。
 
@@ -37,8 +36,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   ceil\(x\)
+- ceil\(x\)
 
     描述：不小于参数的最小的整数。
 
@@ -54,8 +52,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   degrees\(dp\)
+- degrees\(dp\)
 
     描述：把弧度转为角度。
 
@@ -71,8 +68,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   exp\(x\)
+- exp\(x\)
 
     描述：自然指数。
 
@@ -88,8 +84,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   floor\(x\)
+- floor\(x\)
 
     描述：不大于参数的最大整数。
 
@@ -105,8 +100,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   ln\(x\)
+- ln\(x\)
 
     描述：自然对数。
 
@@ -122,7 +116,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   log\(x\)
+- log\(x\)
 
     描述：以10为底的对数。
 
@@ -137,6 +131,7 @@ openGauss常用的函数如下：
      2.0000000000000000
     (1 row)
     ```
+
     特性补充：在B库中log函数返回自然对数
 
     示例：
@@ -149,8 +144,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   log\(b numeric, x numeric\)
+- log\(b numeric, x numeric\)
 
     描述：以b为底的对数。
 
@@ -166,8 +160,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   mod\(x,y\)
+- mod\(x,y\)
 
     描述：x/y的余数（模）。如果x是0，则返回0。
 
@@ -191,7 +184,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   pi\(\)
+- pi\(\)
 
     描述：“π”常量。
 
@@ -207,8 +200,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   power\(a double precision, b double precision\)
+- power\(a double precision, b double precision\)
 
     描述：a的b次幂。
 
@@ -224,8 +216,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   radians\(dp\)
+- radians\(dp\)
 
     描述：把角度转为弧度。
 
@@ -241,7 +232,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   random\(\)
+- random\(\)
 
     描述：0.0到1.0之间的随机数。
 
@@ -257,8 +248,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   round\(x\)
+- round\(x\)
 
     描述：离输入参数最近的整数。
 
@@ -280,7 +270,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   round\(v numeric, s int\)
+- round\(v numeric, s int\)
 
     描述：保留小数点后s位，s后一位进行四舍五入。
 
@@ -296,8 +286,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   sign\(x\)
+- sign\(x\)
 
     描述：输出此参数的符号。
 
@@ -313,8 +302,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   sqrt\(x\)
+- sqrt\(x\)
 
     描述：平方根。
 
@@ -330,8 +318,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   trunc\(x\)
+- trunc\(x\)
 
     描述：截断（取整数部分）。
 
@@ -347,7 +334,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   trunc\(v numeric, s int4\)
+- trunc\(v numeric, s int4\)
 
     描述：截断为s位小数（trunc只支持截断不超过int4类型最大值的位数）。
 
@@ -363,10 +350,9 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
 ## 三角函数列表<a name="section12324117201220"></a>
 
--   acos\(x\)
+- acos\(x\)
 
     描述：反余弦。
 
@@ -382,7 +368,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   asin\(x\)
+- asin\(x\)
 
     描述：反正弦。
 
@@ -398,8 +384,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   atan\(x\)
+- atan\(x\)
 
     描述：反正切。
 
@@ -415,7 +400,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   atan2\(y, x\)
+- atan2\(y, x\)
 
     描述：y/x的反正切。
 
@@ -431,8 +416,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   cos\(x\)
+- cos\(x\)
 
     描述：余弦。
 
@@ -448,7 +432,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   cot\(x\)
+- cot\(x\)
 
     描述：余切。
 
@@ -464,8 +448,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   sin\(x\)
+- sin\(x\)
 
     描述：正弦。
 
@@ -481,8 +464,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   tan\(x\)
+- tan\(x\)
 
     描述：正切。
 
@@ -498,10 +480,9 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
 ## 字符串函数和操作符<a name="section148338314152"></a>
 
--   string || string
+- string || string
 
     描述：连接字符串。
 
@@ -517,8 +498,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     描述：字符串的位数。
 
@@ -534,8 +514,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     描述：以dest\_encoding指定的目标编码方式转化字符串bytea。src\_encoding指定源编码方式，在该编码下，string必须是合法的。
 
@@ -551,8 +530,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   lower\(string\)
+- lower\(string\)
 
     描述：把字符串转化为小写。
 
@@ -568,8 +546,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   nls_lower\(string, string\)
+- nls_lower\(string, string\)
 
     描述：将字符串中的全部字母转化为小写，第二个参数用于指定排序方式。
 
@@ -585,8 +562,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     描述：字符串中的字节数。
 
@@ -602,8 +578,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   overlay\(string placing string FROM int \[for int\]\)
+- overlay\(string placing string FROM int \[for int\]\)
 
     描述：替换子字符串。FROM int表示从第一个string的第几个字符开始替换，for int表示替换第一个string的字符数目。
 
@@ -619,8 +594,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   position\(substring in string\)
+- position\(substring in string\)
 
     描述：指定子字符串的位置。字符串区分大小写。
 
@@ -636,8 +610,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     描述：截取子字符串，from int表示从第几个字符开始截取，for int表示截取几个字节。
 
@@ -653,8 +626,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   substring\(string from  _pattern_\)
+- substring\(string from  _pattern_\)
 
     描述：截取匹配POSIX正则表达式的子字符串。如果没有匹配它返回空值，否则返回文本中匹配模式的那部分。
 
@@ -680,8 +652,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   trim\(\[leading |trailing |both\] \[characters\] from string\)
+- trim\(\[leading |trailing |both\] \[characters\] from string\)
 
     描述：从字符串string的开头、结尾或两边删除只包含characters中字符（缺省是一个空白）的最长的字符串。
 
@@ -713,8 +684,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   upper\(string\)
+- upper\(string\)
 
     描述：把字符串转化为大写。
 
@@ -730,8 +700,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   ascii\(string\)
+- ascii\(string\)
 
     描述：参数string的第一个字符的ASCII码。
 
@@ -747,8 +716,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   btrim\(string text \[, characters text\]\)
+- btrim\(string text \[, characters text\]\)
 
     描述：从string开头和结尾删除只包含characters中字符（缺省是空白）的最长字符串。
 
@@ -764,8 +732,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   chr\(integer\)
+- chr\(integer\)
 
     描述：给出ASCII码的字符。
 
@@ -781,8 +748,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     描述：以dest\_encoding指定的目标编码方式转化字符串bytea。src\_encoding指定源编码方式，在该编码下，string必须是合法的。
 
@@ -798,8 +764,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   initcap\(string\)
+- initcap\(string\)
 
     描述：将字符串中的每个单词的首字母转化为大写，其他字母转化为小写。
 
@@ -815,7 +780,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   nls_initcap\(string, string\)
+- nls_initcap\(string, string\)
 
     描述：将字符串中的每个单词的首字母转化为大写，其他字母转化为小写。但是请注意，第二个参数不会生效。
 
@@ -831,7 +796,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
     
--   length\(string\)
+- length\(string\)
 
     描述：获取参数string中字符的数目。
 
@@ -847,8 +812,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   lpad\(string text, length int \[, fill text\]\)
+- lpad\(string text, length int \[, fill text\]\)
 
     描述：通过填充字符fill（缺省时为空白），把string填充为length长度。如果string已经比length长则将其尾部截断。
 
@@ -864,8 +828,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   ltrim\(string \[, characters\]\)
+- ltrim\(string \[, characters\]\)
 
     描述：从字符串string的开头删除只包含characters中字符（缺省是一个空白）的最长的字符串。
 
@@ -881,8 +844,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   md5\(string\)
+- md5\(string\)
 
     描述：将string使用MD5加密，并以16进制数作为返回值。
 
@@ -901,8 +863,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   repeat\(string text, number int \)
+- repeat\(string text, number int \)
 
     描述：将string重复number次。
 
@@ -918,8 +879,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   replace\(string text, from text, to text\)
+- replace\(string text, from text, to text\)
 
     描述：把字符串string里出现地所有子字符串from的内容替换成子字符串to的内容。
 
@@ -935,8 +895,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   rpad\(string text, length int \[, fill text\]\)
+- rpad\(string text, length int \[, fill text\]\)
 
     描述：使用填充字符fill（缺省时为空白），把string填充到length长度。如果string已经比length长则将其从尾部截断。
 
@@ -952,8 +911,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   rtrim\(string text \[, characters text\]\)
+- rtrim\(string text \[, characters text\]\)
 
     描述：从字符串string的结尾删除只包含characters中字符（缺省是个空白）的最长的字符串。
 
@@ -969,8 +927,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   split\_part\(string text, delimiter text, field int\)
+- split\_part\(string text, delimiter text, field int\)
 
     描述：根据delimiter分隔string返回生成的第field个子字符串（从出现第一个delimiter的text为基础）。
 
@@ -986,8 +943,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   strpos\(string, substring\)
+- strpos\(string, substring\)
 
     描述：指定的子字符串的位置。和position\(substring in string\)一样，不过参数顺序相反。
 
@@ -1003,7 +959,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   cast\(x as y\)
+- cast\(x as y\)
 
     描述：类型转换函数，将x转换成y指定的类型。
 
@@ -1019,7 +975,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   CAST( expr AS type_name [ DEFAULT return_value ON CONVERSION ERROR ][, fmt [, 'nlsparam' ] ])
+- CAST( expr AS type_name [ DEFAULT return_value ON CONVERSION ERROR ][, fmt [, 'nlsparam' ] ])
 
     描述：类型转换函数，将x转换成y指定的类型，并且支持DEFAULT设置默认值、fmt指定入参的输入格式以及nlsparam参数，目前nlsparam参数仅支持English和American。
 
@@ -1083,7 +1039,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   to\_hex\(number int or bigint\)
+- to\_hex\(number int or bigint\)
 
     描述：把number转换成十六进制表现形式。
 
@@ -1099,8 +1055,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   translate\(string text, from text, to text\)
+- translate\(string text, from text, to text\)
 
     描述：把在string中包含的任何匹配from中字符的字符转化为对应的在to中的字符。如果from比to长，删掉在from中出现的额外的字符。
 
@@ -1116,10 +1071,9 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
 ## 类型转换相关函数<a name="section162813550446"></a>
 
--   to\_char\(timestamp, text\)
+- to\_char\(timestamp, text\)
 
     描述：将时间戳类型的值转换为指定格式的字符串。
 
@@ -1135,8 +1089,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   to\_char\(interval, text\)
+- to\_char\(interval, text\)
 
     描述：将时间间隔类型的值转换为指定格式的字符串。
 
@@ -1152,8 +1105,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   to\_char\(int, text\)
+- to\_char\(int, text\)
 
     描述：将整数类型的值转换为指定格式的字符串。
 
@@ -1169,8 +1121,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   to\_char\(double precision/real, text\)
+- to\_char\(double precision/real, text\)
 
     描述：将浮点类型的值转换为指定格式的字符串。
 
@@ -1186,8 +1137,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   to\_char\(numeric, text\)
+- to\_char\(numeric, text\)
 
     描述：将数字类型的值转换为指定格式的字符串。
 
@@ -1203,8 +1153,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
-
--   to\_date\(text, text\)
+- to\_date\(text, text\)
 
     描述：将字符串类型的值转换为指定格式的日期。
 
@@ -1219,7 +1168,6 @@ openGauss常用的函数如下：
      2000-12-05 00:00:00
     (1 row)
     ```
-
 
 - to\_number \( expr \[ DEFAULT return_value ON CONVERSION ERROR ] \[, fmt\]\)
 
@@ -1252,6 +1200,7 @@ openGauss常用的函数如下：
     -12454.8
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('1234.123','999999.99');
    to_number 
@@ -1259,6 +1208,7 @@ openGauss常用的函数如下：
      1234.12
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('111111.111'+'1111','999999.99');
    to_number 
@@ -1266,6 +1216,7 @@ openGauss常用的函数如下：
    112222.11
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('1e5'+'1111','999999.99');
    to_number 
@@ -1273,12 +1224,14 @@ openGauss常用的函数如下：
       101111
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('111111.111'+'1111'+NULL,'999999.99');
    to_number 
   -----------        
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('此参数错误' default 321456231 on conversion error ,'999,999,999,999.99');
    to_number 
@@ -1286,6 +1239,7 @@ openGauss常用的函数如下：
    321456231
   (1 row)
   ```
+
   ```
   -- behavior_compat_options的correct_to_number开关关闭时不允许分组的数量不一样
   openGauss=# select to_number('123.45' ,'999,999.999');
@@ -1319,7 +1273,7 @@ openGauss常用的函数如下：
   (1 row)
   ```
 
--   to\_timestamp\(double precision\)
+- to\_timestamp\(double precision\)
 
     描述：把UNIX纪元转换成时间戳。
 
@@ -1335,7 +1289,7 @@ openGauss常用的函数如下：
     (1 row)
     ```
 
--   to\_timestamp(string \[ DEFAULT return_value ON CONVERSION ERROR ] \[ , fmt  [, 'nlsparam' ] ]\)
+- to\_timestamp(string \[ DEFAULT return_value ON CONVERSION ERROR ] \[ , fmt  [, 'nlsparam' ] ]\)
 
     描述：将字符串转换为时间戳。默认的输入格式为[DD-Mon-YYYY HH12:MI:SS.FF]，是12小时制的AM。若输入值string不为默认的格式，则需要用户在fmt处描述自己的输入格式，若格式描述错误则报错。若string部分转换失败，则会尝试转换关键字DEFAULT后的return_value（return_value的输入格式受fmt约束）。若Mon处为Jan这样的英文缩写，则可以在nlsparam处设置月份的描述语言（目前仅支持American和English）。
     * 如果输入的年份YYYY=0，系统报错。
@@ -1355,6 +1309,7 @@ openGauss常用的函数如下：
      DD-Mon-YYYY HH:MI:SS.FF AM
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('12-sep-2014');
         to_timestamp     
@@ -1362,6 +1317,7 @@ openGauss常用的函数如下：
      2014-09-12 00:00:00
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('01-Jan-2002 10:10:10.123000');
         to_timestamp       
@@ -1369,6 +1325,7 @@ openGauss常用的函数如下：
      2002-01-01 10:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('2002-01-01 10:10:10.123000',  'YYYY-MM-DD HH24:MI:SS.FF');
           to_timestamp       
@@ -1376,6 +1333,7 @@ openGauss常用的函数如下：
      2002-01-01 10:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('此为错误输入' DEFAULT '11-01-11   14:10:10.123000' ON CONVERSION ERROR,'DD-MM-RR HH24:MI:SS.FF');
           to_timestamp       
@@ -1383,6 +1341,7 @@ openGauss常用的函数如下：
      2011-01-11 14:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('01-Jan-03 14:10:10.123000'   DEFAULT '11-Jan-11 14:10:10.123000' ON CONVERSION ERROR,  'DD-Mon-RR HH24:MI:SS.FF','NLS_DATE_LANGUAGE = American');
           to_timestamp       
@@ -1390,6 +1349,7 @@ openGauss常用的函数如下：
      2003-01-01 14:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('-1','SYYYY');
           to_timestamp      
@@ -1397,6 +1357,7 @@ openGauss常用的函数如下：
      0001-01-01 00:00:00 BC
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('05 Dec 2000', 'DD Mon YYYY');
         to_timestamp
@@ -1404,6 +1365,7 @@ openGauss常用的函数如下：
      2000-12-05 00:00:00
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('05*Dec^2000', 'DD Mon+YYYY');
       to_timestamp     
@@ -1411,6 +1373,7 @@ openGauss常用的函数如下：
      2000-12-05 00:00:00
     (1 row)
     ```
+
     ```
     -- HH或者HH12的模式下，不指定为PM时间时12点按照0点处理
     openGauss=# select to_timestamp('2025-09-01 12:24:02','YYYY-MM-DD HH:MI:SS');

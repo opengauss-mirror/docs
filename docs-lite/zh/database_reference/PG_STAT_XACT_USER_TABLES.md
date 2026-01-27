@@ -92,4 +92,3 @@ PG\_STAT\_XACT\_USER\_TABLES视图显示命名空间中用户表的事务状态�
 </tr>
 </tbody>
 </table>
-

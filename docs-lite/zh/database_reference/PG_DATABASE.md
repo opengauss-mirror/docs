@@ -127,4 +127,3 @@ PG\_DATABASE系统表存储关于可用数据库的信息。
 </tr>
 </tbody>
 </table>
-

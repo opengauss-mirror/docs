@@ -150,7 +150,7 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
 
 向表中插入数据前，意味着表已创建成功。创建表的步骤请参考[创建和管理表](creating_and_managing_tables.md)。
 
--   向表customer\_t1中插入一行：
+- 向表customer\_t1中插入一行：
 
     数据值是按照这些字段在表中出现的顺序列出的，并且用逗号分隔。通常数据值是文本（常量），但也允许使用标量表达式。
 
@@ -180,7 +180,7 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
     openGauss=# INSERT INTO customer_t1 DEFAULT VALUES;
     ```
 
--   如果需要在表中插入多行，请使用以下命令：
+- 如果需要在表中插入多行，请使用以下命令：
 
     ```
     openGauss=# INSERT INTO customer_t1 (c_customer_sk, c_customer_id, c_first_name) VALUES 
@@ -191,7 +191,7 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
 
     如果需要向表中插入多条数据，除此命令外，也可以多次执行插入一行数据命令实现。但是建议使用此命令可以提升效率。
 
--   如果从指定表插入数据到当前表，例如在数据库中创建了一个表customer\_t1的备份表customer\_t2，现在需要将表customer\_t1中的数据插入到表customer\_t2中，则可以执行如下命令。
+- 如果从指定表插入数据到当前表，例如在数据库中创建了一个表customer\_t1的备份表customer\_t2，现在需要将表customer\_t1中的数据插入到表customer\_t2中，则可以执行如下命令。
 
     ```
     openGauss=# CREATE TABLE customer_t2
@@ -209,7 +209,7 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
     >
     >从指定表插入数据到当前表时，若指定表与当前表对应的字段数据类型之间不存在隐式转换，则这两种数据类型必须相同。
 
--   删除备份表。
+- 删除备份表。
 
     ```
     openGauss=# DROP TABLE customer_t2 CASCADE;
@@ -218,5 +218,3 @@ openGauss=# <strong id="zh-cn_topic_0283137618_zh-cn_topic_0237120300_zh-cn_topi
     >[!NOTE]说明
     >
     >在删除表的时候，若当前需删除的表与其他表有依赖关系，需先删除关联的表，然后再删除当前表。
-
-

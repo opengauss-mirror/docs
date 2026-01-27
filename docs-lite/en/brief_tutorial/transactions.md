@@ -2,7 +2,7 @@
 
 A transaction is a user-defined sequence of database operations, which form an integral unit of work. In openGauss, you can start, set, commit, and roll back transactions. openGauss supports the  **READ COMMITTED**  and  **REPEATABLE READ**  transaction isolation levels.
 
--   **READ COMMITTED**: At this level, a transaction can access only committed data. This is the default level.
+- **READ COMMITTED**: At this level, a transaction can access only committed data. This is the default level.
 
     The SELECT statement accesses the snapshot of the database taken when the query begins. It can also access the data updates in its transaction, regardless of whether they have been committed. Note that different database snapshots may be available to two consecutive SELECT statements for the same transaction, because data may be committed for other transactions while the first SELECT statement is executed.
 
@@ -10,11 +10,11 @@ A transaction is a user-defined sequence of database operations, which form an i
 
     Transaction isolation at this level meets the requirements of many applications, and is fast and easy to use. However, applications performing complicated queries and updates may require data that is more consistent than this level can provide.
 
--   **REPEATABLE READ**: A transaction can only read data committed before it starts. Uncommitted data or data committed in other concurrent transactions cannot be read. However, a query can read earlier data updates in its transaction, regardless of whether they have been committed.  **READ COMMITTED**  differs from this level in that a transaction reads the snapshot taken at the start of the transaction, not at the beginning of the current query within the transaction. Therefore, the SELECT statement within a transaction always reads the same data, and cannot read data committed by other concurrent transactions after the transaction starts. Applications at this level must be able to retry transactions, because serialization failures may occur.
+- **REPEATABLE READ**: A transaction can only read data committed before it starts. Uncommitted data or data committed in other concurrent transactions cannot be read. However, a query can read earlier data updates in its transaction, regardless of whether they have been committed.  **READ COMMITTED**  differs from this level in that a transaction reads the snapshot taken at the start of the transaction, not at the beginning of the current query within the transaction. Therefore, the SELECT statement within a transaction always reads the same data, and cannot read data committed by other concurrent transactions after the transaction starts. Applications at this level must be able to retry transactions, because serialization failures may occur.
 
 ## Syntax<a name="section1632155118333"></a>
 
--   Start a transaction.
+- Start a transaction.
 
     Execute the BEGIN statement to start a transaction.
 
@@ -40,7 +40,7 @@ A transaction is a user-defined sequence of database operations, which form an i
       ];
     ```
 
--   Set transaction features.
+- Set transaction features.
 
     Use the SET TRANSACTION statement or the syntax to set the isolation level and read/write mode of a transaction.
 
@@ -50,7 +50,7 @@ A transaction is a user-defined sequence of database operations, which form an i
       | { READ WRITE | READ ONLY } } [, ...];
     ```
 
--   Commit a transaction.
+- Commit a transaction.
 
     Execute the COMMIT or END statement to commit all operations of a transaction.
 
@@ -58,7 +58,7 @@ A transaction is a user-defined sequence of database operations, which form an i
     { COMMIT | END } [ WORK | TRANSACTION ] ;
     ```
 
--   Roll back a transaction.
+- Roll back a transaction.
 
     If a fault occurs during a transaction and the transaction cannot proceed, the system performs rollback to cancel all the completed database operations related to the transaction.
 
@@ -66,14 +66,13 @@ A transaction is a user-defined sequence of database operations, which form an i
     ROLLBACK [ WORK | TRANSACTION ];
     ```
 
-
 ## Parameter Description<a name="section6973139183420"></a>
 
--   **WORK | TRANSACTION**
+- **WORK | TRANSACTION**
 
     Specifies the optional keyword in BEGIN format without functions.
 
--   **ISOLATION LEVEL**
+- **ISOLATION LEVEL**
 
     Specifies the transaction isolation level that determines the data that a transaction can view if other concurrent transactions exist.
 
@@ -82,28 +81,27 @@ A transaction is a user-defined sequence of database operations, which form an i
 
     Value range:
 
-    -   **READ COMMITTED**: Only committed data is read. This is the default.
-    -   **REPEATABLE READ**: Only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
-    -   **SERIALIZABLE**: Currently, this isolation level is not supported in functions. It is equivalent to  **REPEATABLE READ**.
+    - **READ COMMITTED**: Only committed data is read. This is the default.
+    - **REPEATABLE READ**: Only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
+    - **SERIALIZABLE**: Currently, this isolation level is not supported in functions. It is equivalent to  **REPEATABLE READ**.
 
--   **READ WRITE | READ ONLY**
+- **READ WRITE | READ ONLY**
 
     Specifies the transaction access mode \(read/write or read only\).
 
--   **LOCAL**
+- **LOCAL**
 
     Specifies that the specified statement takes effect only for the current transaction.
 
--   **SESSION**
+- **SESSION**
 
     Specifies that the specified statement takes effect for the current session.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **COMMIT | END**
+- **COMMIT | END**
 
     Commits the current transaction and makes all changes made by the transaction become visible to others.
-
 
 ## Examples<a name="section138212173345"></a>
 
@@ -167,4 +165,3 @@ openGauss=# select * from customer_t1;
           9527 | world         | James        |             |   5000
 (5 rows)
 ```
-

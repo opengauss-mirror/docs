@@ -58,6 +58,7 @@ openGauss目前只支持X509v3的PEM格式证书。
    gs_guc set -D ${GAUSSDATA} -c "ssl_enc_cert_file = 'server_enc.crt'" 
    gs_guc set -D ${GAUSSDATA} -c "ssl_enc_key_file = 'server_enc.key'"
    ```
+
 5. 备节点导出如下环境变量（文件权限不能大于600）
 
    export PGSSLCERT="$\{GAUSSDATA\}/client.crt"

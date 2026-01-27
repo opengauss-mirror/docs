@@ -73,4 +73,3 @@ This is essentially a publicly readable view of  [PG\_USER\_MAPPING](pg_user_map
 </tr>
 </tbody>
 </table>
-

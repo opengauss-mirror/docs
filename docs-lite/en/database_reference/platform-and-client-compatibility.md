@@ -10,8 +10,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that strings are preferentially converted into numbers.
--   **off**  indicates that strings are not preferentially converted into numbers.
+- **on**  indicates that strings are preferentially converted into numbers.
+- **off**  indicates that strings are not preferentially converted into numbers.
 
 **Default value**:  **on**
 
@@ -52,15 +52,15 @@ This parameter is a fixed INTERNAL parameter and cannot be modified.
 
 **Parameter description**: Specifies whether expressions of the form expr = NULL \(or NULL = expr\) are treated as expr IS NULL. They return true if expr evaluates to the  **NULL**  value, and false otherwise.
 
--   The correct SQL-standard-compliant behavior of  **expr = NULL**  is to always return  **NULL**  \(unknown\).
--   Filtered forms in Microsoft Access generate queries that appear to use  **expr = NULL**  to test for null values. If you turn this option on, you can use this interface to access the database.
+- The correct SQL-standard-compliant behavior of  **expr = NULL**  is to always return  **NULL**  \(unknown\).
+- Filtered forms in Microsoft Access generate queries that appear to use  **expr = NULL**  to test for null values. If you turn this option on, you can use this interface to access the database.
 
 This parameter is a USERSET parameter. Set it based on instructions provided in  [Table 2](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t290c8f15953843db8d8e53d867cd893d).
 
 **Value range**: Boolean
 
--   **on**  indicates that expressions of the form  **expr = NULL**  \(or  **NULL = expr**\) are treated as expr  **IS NULL**.
--   **off**  indicates that  **expr = NULL**  always returns  **NULL**  \(unknown\).
+- **on**  indicates that expressions of the form  **expr = NULL**  \(or  **NULL = expr**\) are treated as expr  **IS NULL**.
+- **off**  indicates that  **expr = NULL**  always returns  **NULL**  \(unknown\).
 
 **Default value**:  **off**
 
@@ -75,8 +75,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that extended database features are supported.
--   **off**  indicates that extended database features are not supported.
+- **on**  indicates that extended database features are supported.
+- **off**  indicates that extended database features are not supported.
 
 **Default value**:  **off**
 
@@ -86,16 +86,17 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: enumerated type
 
--   **A**  indicates that the database is compatible with the Oracle database.
--   **B**  indicates that the database is compatible with the MySQL database.
--   **C**  indicates that the database is compatible with the Teradata database.
--   **PG**  indicates that the database is compatible with the PostgreSQL database.
+- **A**  indicates that the database is compatible with the Oracle database.
+- **B**  indicates that the database is compatible with the MySQL database.
+- **C**  indicates that the database is compatible with the Teradata database.
+- **PG**  indicates that the database is compatible with the PostgreSQL database.
 
 **Default value**:  **A**
 
 >[!TIP]NOTICE 
->-   This parameter can be set by **dbcompatibility** only when you run the  [**CREATE DATABASE**](../sql_reference/create-database.md)  command to create a database.
->-   In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
+>
+>- This parameter can be set by **dbcompatibility** only when you run the  [**CREATE DATABASE**](../sql_reference/create-database.md)  command to create a database.
+>- In the database, this parameter must be set to a specific value. It can be set to  **A**  or  **B**  and cannot be changed randomly. Otherwise, the setting is not consistent with the database behavior.
 
 ## behavior\_compat\_options<a name="en-us_topic_0283137574_en-us_topic_0237124754_section1980124735516"></a>
 
@@ -108,8 +109,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **""**
 
 >[!NOTE]NOTE 
->-   Currently, only compatibility configuration items in  [Table 1](#en-us_topic_0283137574_en-us_topic_0237124754_table182861153114812)  are supported.
->-   Multiple items are separated by commas \(,\), for example,  **set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';**.
+>
+>- Currently, only compatibility configuration items in  [Table 1](#en-us_topic_0283137574_en-us_topic_0237124754_table182861153114812)  are supported.
+>- Multiple items are separated by commas \(,\), for example,  **set behavior\_compat\_options='end\_month\_calculate,display\_leading\_zero';**.
 
 **Table  1**  Compatibility configuration items
 
@@ -324,9 +326,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **error**  indicates that a compilation error is reported when the name of a stored procedure variable is the same as that of a table column.
--   **use\_variable**  indicates that if the name of a stored procedure variable is the same as that of a table column, the variable is used preferentially.
--   **use\_column**  indicates that if the name of a stored procedure variable is the same as that of a table column, the column name is used preferentially.
+- **error**  indicates that a compilation error is reported when the name of a stored procedure variable is the same as that of a table column.
+- **use\_variable**  indicates that if the name of a stored procedure variable is the same as that of a table column, the variable is used preferentially.
+- **use\_column**  indicates that if the name of a stored procedure variable is the same as that of a table column, the column name is used preferentially.
 
 **Default value**:  **error**
 
@@ -342,8 +344,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  indicates that overlong strings are truncated.
--   **off**  indicates that overlong strings are not truncated.
+- **on**  indicates that overlong strings are truncated.
+- **off**  indicates that overlong strings are not truncated.
 
 **Default value**:  **off**
 
@@ -355,8 +357,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that column names are returned to the client in uppercase.
--   **off**  indicates that column names are not returned to the client in uppercase.
+- **on**  indicates that column names are returned to the client in uppercase.
+- **off**  indicates that column names are not returned to the client in uppercase.
 
 **Default value**:  **off**
 
@@ -368,7 +370,7 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the lastval function can be used and the nextval function cannot be pushed down.
--   **off**  indicates that the lastval function cannot be used and the nextval function can be pushed down.
+- **on**  indicates that the lastval function can be used and the nextval function cannot be pushed down.
+- **off**  indicates that the lastval function cannot be used and the nextval function can be pushed down.
 
 **Default value**:  **off**

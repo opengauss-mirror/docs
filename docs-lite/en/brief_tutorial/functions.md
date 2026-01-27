@@ -4,7 +4,7 @@ The common functions of openGauss are as follows:
 
 ## Mathematical Functions<a name="section168311415165912"></a>
 
--   abs\(x\)
+- abs\(x\)
 
     Description: Absolute value
 
@@ -20,8 +20,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   cbrt\(dp\)
+- cbrt\(dp\)
 
     Description: Cubic root
 
@@ -37,8 +36,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   ceil\(x\)
+- ceil\(x\)
 
     Description: Minimum integer greater than or equal to the parameter
 
@@ -54,8 +52,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   degrees\(dp\)
+- degrees\(dp\)
 
     Description: Converts radians to angles.
 
@@ -71,8 +68,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   exp\(x\)
+- exp\(x\)
 
     Description: Natural exponent
 
@@ -88,8 +84,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   floor\(x\)
+- floor\(x\)
 
     Description: Maximum integer not larger than the parameter
 
@@ -105,8 +100,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   ln\(x\)
+- ln\(x\)
 
     Description: Natural logarithm
 
@@ -122,7 +116,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   log\(x\)
+- log\(x\)
 
     Description: Logarithm with 10 as the base
 
@@ -138,8 +132,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   log\(b numeric, x numeric\)
+- log\(b numeric, x numeric\)
 
     Description: Logarithm with b as the base
 
@@ -155,8 +148,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   mod\(x,y\)
+- mod\(x,y\)
 
     Description: Remainder of x/y \(model\) If x equals to 0,  **0**  is returned.
 
@@ -180,7 +172,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   pi\(\)
+- pi\(\)
 
     Description: π constant value
 
@@ -196,8 +188,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   power\(a double precision, b double precision\)
+- power\(a double precision, b double precision\)
 
     Description: b power of a
 
@@ -213,8 +204,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   radians\(dp\)
+- radians\(dp\)
 
     Description: Converts angles to radians.
 
@@ -230,7 +220,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   random\(\)
+- random\(\)
 
     Description: Random number between 0.0 and 1.0
 
@@ -246,8 +236,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   round\(x\)
+- round\(x\)
 
     Description: Integer closest to the input parameter
 
@@ -269,7 +258,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   round\(v numeric, s int\)
+- round\(v numeric, s int\)
 
     Description:  **s**  digits are kept after the decimal point.
 
@@ -285,8 +274,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   sign\(x\)
+- sign\(x\)
 
     Description: Returns symbols of this parameter.
 
@@ -302,8 +290,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   sqrt\(x\)
+- sqrt\(x\)
 
     Description: Square root
 
@@ -319,8 +306,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   trunc\(x\)
+- trunc\(x\)
 
     Description: Truncates \(the integral part\).
 
@@ -336,7 +322,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   trunc\(v numeric, s int\)
+- trunc\(v numeric, s int\)
 
     Description: Truncates a number with  **s**  digits after the decimal point.
 
@@ -352,10 +338,9 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
 ## Trigonometric Functions<a name="section12324117201220"></a>
 
--   acos\(x\)
+- acos\(x\)
 
     Description: Arc cosine
 
@@ -371,7 +356,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   asin\(x\)
+- asin\(x\)
 
     Description: Arc sine
 
@@ -387,8 +372,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   atan\(x\)
+- atan\(x\)
 
     Description: Arc tangent
 
@@ -404,7 +388,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   atan2\(y, x\)
+- atan2\(y, x\)
 
     Description: Arc tangent of y/x
 
@@ -420,8 +404,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   cos\(x\)
+- cos\(x\)
 
     Description: Cosine
 
@@ -437,7 +420,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   cot\(x\)
+- cot\(x\)
 
     Description: Cotangent
 
@@ -453,8 +436,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   sin\(x\)
+- sin\(x\)
 
     Description: Sine
 
@@ -470,8 +452,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   tan\(x\)
+- tan\(x\)
 
     Description: Tangent
 
@@ -487,10 +468,9 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
 ## String Functions and Operators<a name="section148338314152"></a>
 
--   string || string
+- string || string
 
     Description: Concatenates strings.
 
@@ -506,8 +486,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     Description: Specifies the number of bits occupied by a string.
 
@@ -523,8 +502,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     Description: Converts the bytea string to  **dest\_encoding**.  **src\_encoding**  specifies the source code encoding. The string must be valid in this encoding.
 
@@ -540,8 +518,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   lower\(string\)
+- lower\(string\)
 
     Description: Converts the string into the lowercase.
 
@@ -557,8 +534,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     Description: Specifies the number of bytes in a string.
 
@@ -574,8 +550,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   overlay\(string placing string FROM int \[for int\]\)
+- overlay\(string placing string FROM int \[for int\]\)
 
     Description: Replaces substrings.  **FROM int**  indicates the start position of the replacement in the first string.  **for int**  indicates the number of characters replaced in the first string.
 
@@ -591,8 +566,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   position\(substring in string\)
+- position\(substring in string\)
 
     Description: Specifies the position of a substring. Parameters are case-sensitive.
 
@@ -608,8 +582,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     Description: Extracts a substring.  **from int**  indicates the start position of the truncation.  **for int**  indicates the number of characters truncated.
 
@@ -625,8 +598,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   substring\(string from  _pattern_\)
+- substring\(string from  _pattern_\)
 
     Description: Extracts substrings matching the POSIX regular expression. It returns the text that matches the pattern. If no match record is found, a null value is returned.
 
@@ -652,8 +624,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   trim\(\[leading |trailing |both\] \[characters\] from string\)
+- trim\(\[leading |trailing |both\] \[characters\] from string\)
 
     Description: Removes the longest string containing only the characters \(a space by default\) from the start/end/both ends of the string.
 
@@ -685,8 +656,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   upper\(string\)
+- upper\(string\)
 
     Description: Converts the string into the uppercase.
 
@@ -702,8 +672,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   ascii\(string\)
+- ascii\(string\)
 
     Description: Indicates the ASCII code of the first character in the string.
 
@@ -719,8 +688,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   btrim\(string text \[, characters text\]\)
+- btrim\(string text \[, characters text\]\)
 
     Description: Removes the longest string consisting only of characters in  **characters**  \(a space by default\) from the start and end of  **string**.
 
@@ -736,8 +704,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   chr\(integer\)
+- chr\(integer\)
 
     Description: Specifies the character of the ASCII code.
 
@@ -753,8 +720,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     Description: Converts the bytea string to  **dest\_encoding**.  **src\_encoding**  specifies the source code encoding. The string must be valid in this encoding.
 
@@ -770,8 +736,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   initcap\(string\)
+- initcap\(string\)
 
     Description: Converts the first letter of each word in the string into the uppercase and the other letters into the lowercase.
 
@@ -787,8 +752,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   length\(string\)
+- length\(string\)
 
     Description: Obtains the number of characters in a string.
 
@@ -804,8 +768,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   lpad\(string text, length int \[, fill text\]\)
+- lpad\(string text, length int \[, fill text\]\)
 
     Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
@@ -821,8 +784,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   ltrim\(string \[, characters\]\)
+- ltrim\(string \[, characters\]\)
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the start of string.
 
@@ -838,8 +800,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   md5\(string\)
+- md5\(string\)
 
     Description: Encrypts a string in MD5 mode and returns a value in hexadecimal form.
 
@@ -858,8 +819,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   repeat\(string text, number int \)
+- repeat\(string text, number int \)
 
     Description: Repeats  **string**  the specified number of times.
 
@@ -875,8 +835,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   replace\(string text, from text, to text\)
+- replace\(string text, from text, to text\)
 
     Description: Replaces all occurrences in  **string**  of substring  **from**  with substring  **to**.
 
@@ -892,8 +851,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   rpad\(string text, length int \[, fill text\]\)
+- rpad\(string text, length int \[, fill text\]\)
 
     Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
@@ -909,8 +867,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   rtrim\(string text \[, characters text\]\)
+- rtrim\(string text \[, characters text\]\)
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the end of string.
 
@@ -926,8 +883,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   split\_part\(string text, delimiter text, field int\)
+- split\_part\(string text, delimiter text, field int\)
 
     Description: Splits  **string**  on  **delimiter**  and returns the  _field_th column \(counting from text of the first appeared delimiter\).
 
@@ -943,8 +899,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   strpos\(string, substring\)
+- strpos\(string, substring\)
 
     Description: Specifies the position of a substring. It is the same as  **position\(substring in string\)**. However, the parameter sequences of them are reversed.
 
@@ -960,8 +915,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_hex\(number int or bigint\)
+- to\_hex\(number int or bigint\)
 
     Description: Converts a number to a hexadecimal expression.
 
@@ -977,8 +931,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   translate\(string text, from text, to text\)
+- translate\(string text, from text, to text\)
 
     Description: Any character in  **string**  that matches a character in the  **from**  set is replaced by the corresponding character in the  **to**  set. If  **from**  is longer than  **to**, extra characters occurred in  **from**  are removed.
 
@@ -994,10 +947,9 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
 ## Functions Related to Type Conversion<a name="section162813550446"></a>
 
--   to\_char\(timestamp, text\)
+- to\_char\(timestamp, text\)
 
     Description: Converts the values of the timestamp type into the strings in the specified format.
 
@@ -1013,8 +965,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_char\(interval, text\)
+- to\_char\(interval, text\)
 
     Description: Converts the values of the time interval type into the strings in the specified format.
 
@@ -1030,8 +981,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_char\(int, text\)
+- to\_char\(int, text\)
 
     Description: Converts the values of the integer type into the strings in the specified format.
 
@@ -1047,8 +997,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_char\(double precision/real, text\)
+- to\_char\(double precision/real, text\)
 
     Description: Converts the values of the floating point type into the strings in the specified format.
 
@@ -1064,8 +1013,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_char\(numeric, text\)
+- to\_char\(numeric, text\)
 
     Description: Converts the values of the numeric type into the strings in the specified format.
 
@@ -1081,8 +1029,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
-
--   to\_date\(text, text\)
+- to\_date\(text, text\)
 
     Description: Converts the values of the string type into the dates in the specified format.
 
@@ -1097,7 +1044,6 @@ The common functions of openGauss are as follows:
      2000-12-05 00:00:00
     (1 row)
     ```
-
 
 - to\_number ( expr \[ DEFAULT return_value ON CONVERSION ERROR ] [, fmt])
 
@@ -1124,6 +1070,7 @@ The common functions of openGauss are as follows:
       -12454.8
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_number('1234.123','999999.99');
      to_number 
@@ -1131,6 +1078,7 @@ The common functions of openGauss are as follows:
        1234.12
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_number('111111.111'+'1111','999999.99');
      to_number 
@@ -1138,6 +1086,7 @@ The common functions of openGauss are as follows:
      112222.11
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_number('1e5'+'1111','999999.99');
      to_number 
@@ -1145,12 +1094,14 @@ The common functions of openGauss are as follows:
         101111
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_number('111111.111'+'1111'+NULL,'999999.  99');
      to_number 
     -----------        
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_number('此参数错误' default 321456231 on conversion error ,'999,999,999,999.99');
      to_number 
@@ -1159,8 +1110,7 @@ The common functions of openGauss are as follows:
     (1 row)
   ```
 
-
--   to\_timestamp(double precision\)
+- to\_timestamp(double precision\)
 
     Description: Converts a UNIX century into a timestamp.
 
@@ -1176,7 +1126,7 @@ The common functions of openGauss are as follows:
     (1 row)
     ```
 
--   to\_timestamp(string [ DEFAULT return_value ON CONVERSION ERROR ] \[ , fmt  [, 'nlsparam' ] ]\)
+- to\_timestamp(string [ DEFAULT return_value ON CONVERSION ERROR ] \[ , fmt  [, 'nlsparam' ] ]\)
 
     Description: Converts a string to a timestamp. The default input format is [DD-Mon-YYYY HH12:MI:SS.FF], which is a 12-hour AM format. If the input value string is not in the default format, the user needs to specify their own format in fmt. If the format description is incorrect, an error will be thrown. If part of the string conversion fails, it will attempt to convert the return_value after the keyword DEFAULT (the input format of return_value is constrained by fmt). If Mon is an abbreviation like Jan, the language for the month can be set in nlsparam (currently only supports American and English).
 
@@ -1196,6 +1146,7 @@ The common functions of openGauss are as follows:
      DD-Mon-YYYY HH:MI:SS.FF AM
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('12-sep-2014');
         to_timestamp     
@@ -1203,6 +1154,7 @@ The common functions of openGauss are as follows:
      2014-09-12 00:00:00
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('01-Jan-2002 10:10:10.  123000');
         to_timestamp       
@@ -1210,6 +1162,7 @@ The common functions of openGauss are as follows:
      2002-01-01 10:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('2002-01-01 10:10:10.123000',  'YYYY-MM-DD HH24:MI:SS.FF');
           to_timestamp       
@@ -1217,6 +1170,7 @@ The common functions of openGauss are as follows:
      2002-01-01 10:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('此为错误输入' DEFAULT   '11-01-11 14:10:10.123000' ON CONVERSION ERROR,'DD-MM-RR   HH24:MI:SS.FF');
           to_timestamp       
@@ -1224,6 +1178,7 @@ The common functions of openGauss are as follows:
      2011-01-11 14:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp ('01-Jan-03 14:10:10.123000'   DEFAULT '11-Jan-11 14:10:10.123000' ON CONVERSION ERROR,  'DD-Mon-RR HH24:MI:SS.FF','NLS_DATE_LANGUAGE = American');
           to_timestamp       
@@ -1231,6 +1186,7 @@ The common functions of openGauss are as follows:
      2003-01-01 14:10:10.123
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('-1','SYYYY');
           to_timestamp      
@@ -1238,6 +1194,7 @@ The common functions of openGauss are as follows:
      0001-01-01 00:00:00 BC
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('05 Dec 2000', 'DD Mon YYYY');
         to_timestamp
@@ -1245,6 +1202,7 @@ The common functions of openGauss are as follows:
      2000-12-05 00:00:00
     (1 row)
     ```
+
     ```
     openGauss=# SELECT to_timestamp('05*Dec^2000', 'DD Mon+YYYY');
       to_timestamp     

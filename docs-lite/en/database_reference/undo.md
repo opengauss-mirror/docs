@@ -19,4 +19,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 2 MB to 16 TB
 
 **Default value**:  **32 GB**
-

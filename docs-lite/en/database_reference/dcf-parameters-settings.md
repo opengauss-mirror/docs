@@ -103,11 +103,10 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: a string
 
--   Disable the log function:  **NONE**, indicating that the log function is disabled and cannot be used for the following log levels:
--   Enable the log function:  **RUN\_ERR|RUN\_WAR|RUN\_INF|DEBUG\_ERR|DEBUG\_WAR|DEBUG\_INF|TRACE|PROFILE|OPER**
+- Disable the log function:  **NONE**, indicating that the log function is disabled and cannot be used for the following log levels:
+- Enable the log function:  **RUN\_ERR|RUN\_WAR|RUN\_INF|DEBUG\_ERR|DEBUG\_WAR|DEBUG\_INF|TRACE|PROFILE|OPER**
 
     You can select a string from the preceding strings and use vertical bars \(|\) to combine the strings. The log level cannot be left blank.
-
 
 **Default value**:  **RUN\_ERR|RUN\_WAR|DEBUG\_ERR|OPER|RUN\_INF|PROFILE**
 
@@ -259,9 +258,9 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: an integer
 
--   **0**  indicates no compression.
--   **1**  indicates the ZSTD compression algorithm.
--   **2**  indicates the LZ4 compression algorithm.
+- **0**  indicates no compression.
+- **1**  indicates the ZSTD compression algorithm.
+- **2**  indicates the LZ4 compression algorithm.
 
 **Default value**:  **0**
 

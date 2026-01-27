@@ -6,19 +6,19 @@
 
 ## Precautions<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_sa3088a8149ed4a2aa40a1107176bbe0a"></a>
 
--   If the  **START TRANSACTION**  statement is not executed before the  **SET TRANSACTION**  statement, the transaction is ended instantly and the statement does not take effect.
--   You can use the  **transaction\_mode\(s\)**  method declared in the  **START TRANSACTION**  statement to avoid using the  **SET TRANSACTION**  statement.
+- If the  **START TRANSACTION**  statement is not executed before the  **SET TRANSACTION**  statement, the transaction is ended instantly and the statement does not take effect.
+- You can use the  **transaction\_mode\(s\)**  method declared in the  **START TRANSACTION**  statement to avoid using the  **SET TRANSACTION**  statement.
 
 ## Syntax<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_sbe3534568f9843f48bb14af315b3c0f6"></a>
 
--   Set transaction parameters of a session.
+- Set transaction parameters of a session.
 
     ```
     ALTER SESSION SET [ SESSION CHARACTERISTICS AS ] TRANSACTION
         { ISOLATION LEVEL { READ COMMITTED } | { READ ONLY  | READ WRITE } } [, ...] ;
     ```
 
--   Set other running parameters of a session.
+- Set other running parameters of a session.
 
     ```
     ALTER SESSION SET 
@@ -32,7 +32,6 @@
           | XML OPTION { DOCUMENT | CONTENT }
         } ;
     ```
-
 
 ## Parameter Description<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_sddb6ecf7bf554397a5dcf64a45a2fd33"></a>
 
@@ -82,4 +81,3 @@ openGauss=# DROP ROLE joe;
 ## Helpful Links<a name="en-us_topic_0283137033_en-us_topic_0237122073_en-us_topic_0059778275_sae8fd88368e642f8bec50ae5712a870c"></a>
 
 [SET](set.md)
-

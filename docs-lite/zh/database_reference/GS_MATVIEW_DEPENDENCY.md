@@ -50,4 +50,3 @@ GS\_MATVIEW\_DEPENDENCY系统表提供了关于数据库中每一个增量物化
 </tr>
 </tbody>
 </table>
-

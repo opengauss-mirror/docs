@@ -10,8 +10,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -26,8 +26,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -39,8 +39,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -52,8 +52,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -65,8 +65,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -78,8 +78,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -91,8 +91,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -104,8 +104,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -117,8 +117,8 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -130,8 +130,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -143,8 +143,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -156,8 +156,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -169,8 +169,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -182,8 +182,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -195,8 +195,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -208,8 +208,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**  indicates that the unlocking is allowed.
--   **off**  indicates that the unlocking is not allowed.
+- **on**  indicates that the unlocking is allowed.
+- **off**  indicates that the unlocking is not allowed.
 
 **Default value**:  **off**
 
@@ -221,8 +221,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the A matching rule is used.
--   **off**  indicates that the POSIX matching rule is used.
+- **on**  indicates that the A matching rule is used.
+- **off**  indicates that the POSIX matching rule is used.
 
 **Default value**:  **on**
 
@@ -244,8 +244,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **on**
 
@@ -257,8 +257,8 @@ This parameter is a  **SUSET**  parameter. Set it based on instructions provided
 
 **Value range**: Boolean
 
--   **on**: enabled.
--   **off**: disabled.
+- **on**: enabled.
+- **off**: disabled.
 
 **Default value**:  **off**
 
@@ -270,8 +270,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that an absolute path can be used.
--   **off**  indicates that an absolute path cannot be used.
+- **on**  indicates that an absolute path can be used.
+- **off**  indicates that an absolute path cannot be used.
 
 **Default value**:  **on**
 
@@ -283,8 +283,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the DFS partitioned table is dynamically or statically optimized.
--   **off**  indicates that the DFS partitioned table is not dynamically or statically optimized.
+- **on**  indicates that the DFS partitioned table is dynamically or statically optimized.
+- **off**  indicates that the DFS partitioned table is not dynamically or statically optimized.
 
 **Default value**:  **on**
 
@@ -296,10 +296,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **disable**  indicates that the inlist2join query rewriting is disabled.
--   **cost\_base**  indicates that the cost-based inlist2join query rewriting is enabled.
--   **rule\_base**  indicates that the forcible rule-based inlist2join query rewriting is enabled.
--   A positive integer indicates the threshold of inlist2join query rewriting. If the number of elements in the list is greater than the threshold, the rewriting is performed.
+- **disable**  indicates that the inlist2join query rewriting is disabled.
+- **cost\_base**  indicates that the cost-based inlist2join query rewriting is enabled.
+- **rule\_base**  indicates that the forcible rule-based inlist2join query rewriting is enabled.
+- A positive integer indicates the threshold of inlist2join query rewriting. If the number of elements in the list is greater than the threshold, the rewriting is performed.
 
 **Default value**:  **cost\_base**
 
@@ -311,9 +311,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: a string
 
--   **off**  indicates that the policy is disabled.
--   **normal**  indicates that a radical policy is used. All possible skews are optimized.
--   **lazy**  indicates that a conservative policy is used. Uncertain skews are ignored.
+- **off**  indicates that the policy is disabled.
+- **normal**  indicates that a radical policy is used. All possible skews are optimized.
+- **lazy**  indicates that a conservative policy is used. Uncertain skews are ignored.
 
 **Default value**:  **normal**
 
@@ -335,8 +335,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that a check will be performed for candidate index paths generated for index columns that have implicit type conversion in a query.
--   **off**  indicates that a check will not be performed.
+- **on**  indicates that a check will be performed for candidate index paths generated for index columns that have implicit type conversion in a query.
+- **off**  indicates that a check will not be performed.
 
 **Default value**:  **off**
 
@@ -358,8 +358,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Valid value**: enumerated values
 
--   **off**  is the default value, which indicates that this function is disabled. That is, row-store tables will not be converted into vectorized execution plans for execution.
--   **force**: Queries are forcibly converted to vectorized execution plans for execution no matter whether the base table to be queried is a row-store table, column-store table, or hybrid row-column store table, unless the query type or expression is not supported by the vectorized executor. In this case, the performance may deteriorate in different query scenarios.
--   **optimal**: On the basis of  **force**, the optimizer determines whether to convert a query statement into a vectorized execution plan based on the query complexity to avoid performance deterioration after the conversion.
+- **off**  is the default value, which indicates that this function is disabled. That is, row-store tables will not be converted into vectorized execution plans for execution.
+- **force**: Queries are forcibly converted to vectorized execution plans for execution no matter whether the base table to be queried is a row-store table, column-store table, or hybrid row-column store table, unless the query type or expression is not supported by the vectorized executor. In this case, the performance may deteriorate in different query scenarios.
+- **optimal**: On the basis of  **force**, the optimizer determines whether to convert a query statement into a vectorized execution plan based on the query complexity to avoid performance deterioration after the conversion.
 
 **Default value**:  **off**

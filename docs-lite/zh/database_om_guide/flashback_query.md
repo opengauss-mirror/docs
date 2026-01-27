@@ -6,7 +6,7 @@
 
 ## 前提条件<a name="section17975164121712"></a>
 
--   undo\_retention\_time参数用于设置undo旧版本的保留时间。
+- undo\_retention\_time参数用于设置undo旧版本的保留时间。
 
 ## 语法<a name="section1489051111232"></a>
 
@@ -25,38 +25,34 @@
 
 ## 参数说明<a name="section1446502852320"></a>
 
--   TIMESTAMP
-    -   指要查询某个表在TIMESTAMP这个时间点上的数据，TIMESTAMP指一个具体的历史时间。
+- TIMESTAMP
+    - 指要查询某个表在TIMESTAMP这个时间点上的数据，TIMESTAMP指一个具体的历史时间。
 
-
--   CSN
-    -   指要查询整个数据库逻辑提交序下某个CSN点的数据，CSN指一个具体逻辑提交时间点，数据库中的CSN为写一致性点，每个CSN代表整个数据库的一个一致性点，查询某个CSN下的数据代表SQL查询数据库在该一致性点的相关数据。
-
+- CSN
+    - 指要查询整个数据库逻辑提交序下某个CSN点的数据，CSN指一个具体逻辑提交时间点，数据库中的CSN为写一致性点，每个CSN代表整个数据库的一个一致性点，查询某个CSN下的数据代表SQL查询数据库在该一致性点的相关数据。
 
 ## 使用示例<a name="section128804136369"></a>
 
--   示例1：
+- 示例1：
 
     ```
     SELECT * FROM t1 TIMECAPSULE TIMESTAMP to_timestamp ('2020-02-11 10:13:22.724718', 'YYYY-MM-DD HH24:MI:SS.FF');
     ```
 
--   示例2：
+- 示例2：
 
     ```
     SELECT * FROM t1 TIMECAPSULE CSN 9617;
     ```
 
--   示例3：
+- 示例3：
 
     ```
     SELECT * FROM t1 AS t TIMECAPSULE TIMESTAMP to_timestamp ('2020-02-11 10:13:22.724718', 'YYYY-MM-DD HH24:MI:SS.FF');
     ```
 
--   示例4：
+- 示例4：
 
     ```
     SELECT * FROM t1 AS t TIMECAPSULE CSN 9617;
     ```
-
-

@@ -24,4 +24,5 @@ xmlconcat
 ```
 
 >[!NOTE]NOTE 
->-   This function is not enabled by default. To use it, you need to modify the cmake/src/build in the openGauss-server source code build_options. cmake file, remove 143 line set (USE_LIBXML OFF), and reuse cmake in build/script/package_mini.sh script compiles the database; See the enterprise version for detailed instructions.
+>
+>- This function is not enabled by default. To use it, you need to modify the cmake/src/build in the openGauss-server source code build_options. cmake file, remove 143 line set (USE_LIBXML OFF), and reuse cmake in build/script/package_mini.sh script compiles the database; See the enterprise version for detailed instructions.

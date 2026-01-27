@@ -4,8 +4,8 @@
 
 ## Procedure<a name="en-us_topic_0283136762_en-us_topic_0237121175_en-us_topic_0096393674_s29032edccba443edb1990c4715fcc047"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Use  **gs\_dump**  to export data of the  **human\_resource**  database.
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Use  **gs\_dump**  to export data of the  **human\_resource**  database.
 
     User  **jack**  does not have the permissions to export data of the  **human\_resource**  database and the role  **role1**  has this permission. To export data of the  **human\_resource**  database, you need to assign the permission of  **role1**  to  **jack**  and set  **--role**  to  **role1**  in the export command. The exported files are in .tar format.
 
@@ -88,7 +88,6 @@
 
     For details about other parameters, see "Server Tools \> gs\_dump" or "Server Tools \> gs\_dumpall" in  _Tool Reference_.
 
-
 ## Examples<a name="en-us_topic_0283136762_en-us_topic_0237121175_en-us_topic_0096393674_sed072bab085e4087b15699dfeda9a662"></a>
 
 Example 1: User  **jack**  does not have the permissions required to export data of the  **human\_resource**  database using  **gs\_dump**  and the role  **role1**  has the permissions. To export data of the  **human\_resource**  database, you can set  **--role**  to  **role1**  in the  **gs\_dump**  command. The exported files are in .tar format.
@@ -132,4 +131,3 @@ Password:
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: dumpall operation successful
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: total time: 6437  ms
 ```
-

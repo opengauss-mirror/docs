@@ -34,11 +34,10 @@ To set the minimum value, add the following two lines to the  **/etc/security/li
 
 The file to be modified varies based on the OS. For versions later than CentOS6, modify the  **/etc/security/limits.d/90-nofile.conf**  file in the same way.
 
-Alternatively, you can run the following command to change the value. However, the change becomes invalid upon OS restart. To solve this problem, you can add  **ulimit -u **\[_value_\] to the global environment variable file  **/etc/profile**.
+Alternatively, you can run the following command to change the value. However, the change becomes invalid upon OS restart. To solve this problem, you can add  **ulimit -u**\[_value_\] to the global environment variable file  **/etc/profile**.
 
 ```
 ulimit -u [values]
 ```
 
 In high concurrency mode, enable the thread pool to control thread resources in the database.
-

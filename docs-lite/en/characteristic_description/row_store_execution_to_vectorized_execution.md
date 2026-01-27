@@ -22,14 +22,13 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   Vectorization is not supported in the following scenarios:
-    -   The targetList contains a function that returns set.
-    -   The targetList or qual contains expressions that do not support vectorization, such as array expressions, multi-subquery expressions, field expressions, and system catalog columns.
-    -   The following types do not support vectorization: POINTOID, LSEGOID, BOXOID, LINEOID, CIRCLEOID, POLYGONOID, PATHOID, and user-defined types.
+- Vectorization is not supported in the following scenarios:
+    - The targetList contains a function that returns set.
+    - The targetList or qual contains expressions that do not support vectorization, such as array expressions, multi-subquery expressions, field expressions, and system catalog columns.
+    - The following types do not support vectorization: POINTOID, LSEGOID, BOXOID, LINEOID, CIRCLEOID, POLYGONOID, PATHOID, and user-defined types.
 
--   MOTs do not support vectorization.
+- MOTs do not support vectorization.
 
 ## Dependencies<a name="section8406643144716"></a>
 
 Vectorized executor
-

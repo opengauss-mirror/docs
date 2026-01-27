@@ -61,10 +61,10 @@ SQLRETURN SQLBindCol(SQLHSTMT       StatementHandle,
 
 ## Return Value<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_s665d7a82265e43e9912a556d627ce508"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_sf12dfc561de44c8a9e952a9b13eda981"></a>
 
@@ -73,4 +73,3 @@ If SQLBindCol returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 ## Example<a name="en-us_topic_0238272886_en-us_topic_0237120416_en-us_topic_0059779335_sd5d16919fd6141598535fc735a91d4df"></a>
 
 See  [Examples](example_odbc.md).
-

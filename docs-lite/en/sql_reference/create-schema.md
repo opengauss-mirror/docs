@@ -10,28 +10,27 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 
 ## Precautions<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_s438fd9a3c5b84d16b7810533d50c71b9"></a>
 
--   Only a user with the  **CREATE**  permission on the current database can perform this operation.
--   The owner of an object created by a system administrator in a schema with the same name as a common user is the common user, not the system administrator.
+- Only a user with the  **CREATE**  permission on the current database can perform this operation.
+- The owner of an object created by a system administrator in a schema with the same name as a common user is the common user, not the system administrator.
 
 ## Syntax<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_sf8fcd5db414748bcaa6b2f79f6247377"></a>
 
--   Create a schema based on a specified name.
+- Create a schema based on a specified name.
 
     ```
     CREATE SCHEMA [IF NOT EXISTS] schema_name 
         [ AUTHORIZATION user_name ] [WITH BLOCKCHAIN] [ schema_element [ ... ] ];
     ```
 
--   Create a schema based on a username.
+- Create a schema based on a username.
 
     ```
     CREATE SCHEMA AUTHORIZATION user_name [ schema_element [ ... ] ];
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_s9930d6a2a74b406980e00129b1f4fe2c"></a>
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the schema name.
 
@@ -41,22 +40,21 @@ Optionally,  **CREATE SCHEMA**  can include sub-commands to create objects withi
 
     Value range: a string. It must comply with the naming convention rule.
 
--   **AUTHORIZATION user\_name**
+- **AUTHORIZATION user\_name**
 
     Specifies the owner of a schema. If  **schema\_name**  is not specified,  **user\_name**  will be used as the schema name. In this case,  **user\_name**  can only be a role name.
 
     Value range: an existing username or role name
 
--   **WITH BLOCKCHAIN**
+- **WITH BLOCKCHAIN**
 
     Specifies the tamper-proof attribute of a schema. In this mode, a row-store common user table is automatically extended to tamper-proof user table.
 
--   **schema\_element**
+- **schema\_element**
 
     Specifies an SQL statement defining an object to be created within the schema. Currently, only the  **CREATE TABLE**,  **CREATE VIEW**,  **CREATE INDEX**,  **CREATE PARTITION**,  **CREATE SEQUENCE**,  **CREATE TRIGGER**  and  **GRANT**  clauses are supported.
 
     Objects created by sub-commands are owned by the user specified by  **AUTHORIZATION**.
-
 
 >[!NOTE]NOTE 
 >If objects in the schema on the current search path are with the same name, specify the schemas for different objects. You can run  **SHOW SEARCH\_PATH**  to check the schemas on the current search path.
@@ -82,4 +80,3 @@ openGauss=# DROP USER role1 CASCADE;
 ## Helpful Links<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_sf210cb55e4884955b9809f27c7c55ce9"></a>
 
 [ALTER SCHEMA](alter-schema.md)  and  [DROP SCHEMA](drop-schema.md)
-

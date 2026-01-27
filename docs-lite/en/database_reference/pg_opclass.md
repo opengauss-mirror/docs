@@ -102,4 +102,3 @@ Each operator class defines semantics for index columns of a particular data typ
 </table>
 
 An operator class's  **opcmethod**  must match the  **opfmethod**  of its containing operator family.
-

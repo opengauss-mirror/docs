@@ -20,26 +20,25 @@ ALTER [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ## Parameter Description<a name="en-us_topic_0283137062_en-us_topic_0237122069_section11851526346"></a>
 
--   policy\_name
+- policy\_name
 
     Specifies the name of a row-level access control policy.
 
--   table\_name
+- table\_name
 
     Specifies the name of a table to which a row-level access control policy is applied.
 
--   new\_policy\_name
+- new\_policy\_name
 
     Specifies the new name of a row-level access control policy.
 
--   role\_name
+- role\_name
 
     Specifies names of users affected by a row-level access control policy. PUBLIC indicates that the row-level access control policy will affect all users.
 
--   using\_expression
+- using\_expression
 
     Specifies an expression defined for a row-level access control policy. The return value is of the boolean type.
-
 
 ## Examples<a name="en-us_topic_0283137062_en-us_topic_0237122069_section17979101023515"></a>
 
@@ -104,4 +103,3 @@ Options: orientation=row, compression=no, enable_rowsecurity=true
 ## Helpful Links<a name="en-us_topic_0283137062_en-us_topic_0237122069_section1426016489355"></a>
 
 [CREATE ROW LEVEL SECURITY POLICY](create-row-level-security-policy.md)  and  [DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md)
-

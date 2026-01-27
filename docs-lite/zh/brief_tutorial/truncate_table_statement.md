@@ -12,12 +12,11 @@ TRUNCATE TABLE  table_name ;
 
 ## 参数说明<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sdbad1b573aae49f5aeba613b6fc3130d"></a>
 
--   **table\_name**
+- **table\_name**
 
     目标表的名称（可以有模式修饰）。
 
     取值范围：已存在的表名。
-
 
 ## 示例<a name="zh-cn_topic_0283137291_zh-cn_topic_0237122193_zh-cn_topic_0059777694_sfa74039cf5ab429abe7b4980088b2c5e"></a>
 
@@ -36,4 +35,3 @@ openGauss=# SELECT * FROM customer_t1;
 ---------------+---------------+--------------+-------------+--------
 (0 rows)
 ```
-

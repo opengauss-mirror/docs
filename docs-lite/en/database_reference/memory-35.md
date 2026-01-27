@@ -13,8 +13,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the memory pool is enabled.
--   **off**  indicates that the memory pool is disabled.
+- **on**  indicates that the memory pool is enabled.
+- **off**  indicates that the memory pool is disabled.
 
 **Default value**:  **off**
 
@@ -36,14 +36,15 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the logical memory management module is enabled.
--   **off**  indicates that the logical memory management module is disabled.
+- **on**  indicates that the logical memory management module is enabled.
+- **off**  indicates that the logical memory management module is disabled.
 
 **Default value**:  **on**
 
 >[!WARNING]CAUTION 
->-   If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit **to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
->-   If this parameter is set to  **off**, the memory used by the database is not limited. When a large number of concurrent or complex queries are performed, too much memory is used, which may cause OS OOM problems.
+>
+>- If the value of  **max\_process\_memory**  minus  **shared\_buffer**  minus  **cstore\_buffers**  minus metadata size is less than 2 GB, openGauss forcibly sets  **enable\_memory\_limit**to  **off**. Metadata is the memory used in openGauss and is related to some concurrent parameters, such as  **max\_connections**,  **thread\_pool\_attr**  and  **max\_prepared\_transactions**.
+>- If this parameter is set to  **off**, the memory used by the database is not limited. When a large number of concurrent or complex queries are performed, too much memory is used, which may cause OS OOM problems.
 
 ## max\_process\_memory<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sbebcee7acf2042dc8824982f22a2b4a8"></a>
 
@@ -70,8 +71,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the function of checking the number of memory contexts is enabled.
--   **off**  indicates that the function of checking the number of memory contexts is disabled.
+- **on**  indicates that the function of checking the number of memory contexts is enabled.
+- **off**  indicates that the function of checking the number of memory contexts is disabled.
 
 **Default value**:  **off**
 
@@ -189,10 +190,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 >[!TIP]NOTICE 
 >**Setting suggestions**:
 >If the physical memory specified by  **work\_mem**  is insufficient, additional operator calculation data will be written into temporary tables based on query characteristics and the degree of parallelism. This reduces performance by five to ten times, and prolongs the query response time from seconds to minutes.
->-   For complex serial queries, each query requires five to ten associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/10.
->-   For simple serial queries, each query requires two to five associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/5.
->-   For concurrent queries, set  **work\_mem**  using the following formula:  **work\_mem**  =  **work\_mem**  for serial queries/Number of concurrent SQL statements.
->-   BitmapScan hash tables are also restricted by  **work\_mem**, but will not be forcibly flushed to disks. In the case of complete lossify, every 1 MB memory occupied by the hash table corresponds to a 16 GB page of BitmapHeapScan \(32 GB for Ustore\). After the upper limit of  **work\_mem**  is reached, the memory increases linearly with the data access traffic based on this ratio.
+>
+>- For complex serial queries, each query requires five to ten associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/10.
+>- For simple serial queries, each query requires two to five associated operations. Set  **work\_mem**  using the following formula:  **work\_mem**  = 50% of the memory/5.
+>- For concurrent queries, set  **work\_mem**  using the following formula:  **work\_mem**  =  **work\_mem**  for serial queries/Number of concurrent SQL statements.
+>- BitmapScan hash tables are also restricted by  **work\_mem**, but will not be forcibly flushed to disks. In the case of complete lossify, every 1 MB memory occupied by the hash table corresponds to a 16 GB page of BitmapHeapScan \(32 GB for Ustore\). After the upper limit of  **work\_mem**  is reached, the memory increases linearly with the data access traffic based on this ratio.
 
 ## query\_mem<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_section12283034151318"></a>
 
@@ -205,8 +207,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **0**
 
 >[!TIP]NOTICE 
->-   If the value of  **query\_mem**  is greater than 0, the optimizer adjusts the memory cost estimate to this value when generating an execution plan.
->-   If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not adjust the estimated query memory.
+>
+>- If the value of  **query\_mem**  is greater than 0, the optimizer adjusts the memory cost estimate to this value when generating an execution plan.
+>- If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not adjust the estimated query memory.
 
 ## query\_max\_mem<a name="en-us_topic_0283136786_en-us_topic_0237124699_section1258420917117"></a>
 
@@ -219,8 +222,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **0**
 
 >[!TIP]NOTICE 
->-   If the value of  **query\_max\_mem**  is greater than 0, an error is reported when the query memory usage exceeds the value.
->-   If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not limit the query memory.
+>
+>- If the value of  **query\_max\_mem**  is greater than 0, an error is reported when the query memory usage exceeds the value.
+>- If the value is set to a negative value or a positive integer less than 32 MB, the default value  **0**  is used. In this case, the optimizer does not limit the query memory.
 
 ## maintenance\_work\_mem<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s123a0cc8d6434028a6709bbfa876e8b0"></a>
 
@@ -236,9 +240,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 >[!TIP]NOTICE 
 >**Setting suggestions**:
->-   The value of this parameter must be greater than that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**  so that database dumps can be more quickly cleared or restored. In a database session, only one maintenance operation can be performed at a time. Maintenance is usually performed when there are not many running sessions.
->-   When the  [Automatic Vacuuming](automatic-vacuuming.md)  process is running, up to  **[autovacuum\_max\_workers](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  times this memory may be allocated. In this case, set  **maintenance\_work\_mem**  to a value greater than or equal to that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**.
->-   If a large amount of data is to be clustered, increase the value of this parameter in the session.
+>
+>- The value of this parameter must be greater than that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**  so that database dumps can be more quickly cleared or restored. In a database session, only one maintenance operation can be performed at a time. Maintenance is usually performed when there are not many running sessions.
+>- When the  [Automatic Vacuuming](automatic-vacuuming.md)  process is running, up to  **[autovacuum\_max\_workers](automatic-vacuuming.md#en-us_topic_0283137694_en-us_topic_0237124730_en-us_topic_0059778244_s76932f79410248ba8923017d19982673)**  times this memory may be allocated. In this case, set  **maintenance\_work\_mem**  to a value greater than or equal to that of  **[work\_mem](#en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_sd27c81d651ce4d2585febca76c4cc34e)**.
+>- If a large amount of data is to be clustered, increase the value of this parameter in the session.
 
 ## psort\_work\_mem<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_scb2890bc578f4811b63b341f7866057a"></a>
 
@@ -276,17 +281,18 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Default value**:
 
--   If the value of  **ulimit -s**  minus 640 kB is greater than or equal to 2 MB, the default value of this parameter is  **2 MB**.
--   If the value of  **ulimit -s**  minus 640 kB is less than 2 MB, the default value of this parameter is the value of  **ulimit -s**  minus 640 kB.
+- If the value of  **ulimit -s**  minus 640 kB is greater than or equal to 2 MB, the default value of this parameter is  **2 MB**.
+- If the value of  **ulimit -s**  minus 640 kB is less than 2 MB, the default value of this parameter is the value of  **ulimit -s**  minus 640 kB.
 
 >[!TIP]NOTICE 
 >When setting this parameter, comply with the following principles:
->-   The database needs to reserve 640 kB stack depth. Therefore, the ideal value of this parameter is the actual stack size limit enforced by the OS kernel \(as set by  **ulimit -s**\) minus 640 kB.
->-   If the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB before the database is started, the database fails to be started. During database running, if the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB, this parameter does not take effect.
->-   If the value of  **ulimit -s**  minus 640 kB is less than the minimum value of this parameter, the database fails to be started.
->-   Setting this parameter to a value greater than the actual kernel limit means that a running recursive function may crash an individual backend process.
->-   Since not all OSs provide this function, you are advised to set a specific value for this parameter.
->-   The default value is  **2 MB**, which is relatively small and does not easily cause system breakdown.
+>
+>- The database needs to reserve 640 kB stack depth. Therefore, the ideal value of this parameter is the actual stack size limit enforced by the OS kernel \(as set by  **ulimit -s**\) minus 640 kB.
+>- If the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB before the database is started, the database fails to be started. During database running, if the value of this parameter is greater than the value of  **ulimit -s**  minus 640 kB, this parameter does not take effect.
+>- If the value of  **ulimit -s**  minus 640 kB is less than the minimum value of this parameter, the database fails to be started.
+>- Setting this parameter to a value greater than the actual kernel limit means that a running recursive function may crash an individual backend process.
+>- Since not all OSs provide this function, you are advised to set a specific value for this parameter.
+>- The default value is  **2 MB**, which is relatively small and does not easily cause system breakdown.
 
 ## cstore\_buffers<a name="en-us_topic_0283136786_en-us_topic_0237124699_en-us_topic_0059777577_s00a05d7c1a374988b114e167735a552d"></a>
 
@@ -320,8 +326,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: Boolean
 
--   **on**  indicates that the operator memory can be released in advance.
--   **off**  indicates that the operator memory cannot be released in advance.
+- **on**  indicates that the operator memory can be released in advance.
+- **off**  indicates that the operator memory cannot be released in advance.
 
 **Default value**:  **on**
 
@@ -331,7 +337,7 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 This parameter is a PGC\_SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
-If  **enable\_global\_plancache **is enabled,  **local\_syscache\_threshold **does not take effect when it is set to a value less than 16 MB to ensure that GPC takes effect. The minimum value is 16 MB.
+If  **enable\_global\_plancache**is enabled,  **local\_syscache\_threshold**does not take effect when it is set to a value less than 16 MB to ensure that GPC takes effect. The minimum value is 16 MB.
 
 **Value range**: an integer ranging from 1 x 1024 to 512 x 1024. The unit is kB.
 
@@ -355,7 +361,6 @@ If pre-read feature is enabled, a larger pre-read size threshold is not necessar
 **Parameter description**: This parameter is used to control the pre-read batch data size in medium-scale heap page cleanup. It functions similarly to the heap table linear pre-read feature, allowing multiple pages to be read at once during the linear scan of heap tables in medium-scale garbage collection. This approach avoids reading only one page at a time, thereby enhancing the efficiency of garbage collection.
 
 This parameter is a PGC_SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
-
 
 **Value range**: Int, 0~64, the unit is "8kB".
 

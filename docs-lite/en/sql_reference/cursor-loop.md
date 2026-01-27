@@ -11,8 +11,7 @@ Use of cursors in  **WHILE**  and  **LOOP**  statements is called a cursor loop.
 
 ## Precautions<a name="en-us_topic_0283136850_en-us_topic_0237122246_en-us_topic_0059778239_s617705baa7ed48738372dea4725976b9"></a>
 
--   The  **UPDATE**  operation for the queried table is not allowed in the loop statement.
--   The variable  _loop\_name_  is automatically defined and is valid only in this loop. Its type is the same as that in the query result of  _select\_statement_. The value of  _loop\_name_  is the query result of  _select\_statement_.
+- The  **UPDATE**  operation for the queried table is not allowed in the loop statement.
+- The variable  _loop\_name_  is automatically defined and is valid only in this loop. Its type is the same as that in the query result of  _select\_statement_. The value of  _loop\_name_  is the query result of  _select\_statement_.
 
--   The  **%FOUND**,  **%NOTFOUND**, and  **%ROWCOUNT**  attributes access the same internal variable in openGauss. Transactions and the anonymous block do not support multiple cursor accesses at the same time.
-
+- The  **%FOUND**,  **%NOTFOUND**, and  **%ROWCOUNT**  attributes access the same internal variable in openGauss. Transactions and the anonymous block do not support multiple cursor accesses at the same time.

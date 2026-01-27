@@ -10,14 +10,14 @@ gms_profiler是一个基于openGauss的插件，用于收集PL/pgSQL程序执行
 
 ## 客户价值<a name="section50098520"></a>
 
--   性能分析：找到存储过程的性能瓶颈，进而针对性优化，提高程序执行效率。
--   覆盖率统计：统计存储过程的语句执行次数，方便跟踪程序执行路径，提升测试覆盖率。
+- 性能分析：找到存储过程的性能瓶颈，进而针对性优化，提高程序执行效率。
+- 覆盖率统计：统计存储过程的语句执行次数，方便跟踪程序执行路径，提升测试覆盖率。
 
 ## 特性描述<a name="section48233501"></a>
 
--   通过CREATE Extension命令进行插件创建。
--   通过START_PROFILER开启收集，执行存储过程，STOP_PROFILER结束收集。
--   通过表plsql_profiler_runs 、plsql_profiler_units、plsql_profiler_data查看收集的统计信息，包括语句执行时间，执行次数等。
+- 通过CREATE Extension命令进行插件创建。
+- 通过START_PROFILER开启收集，执行存储过程，STOP_PROFILER结束收集。
+- 通过表plsql_profiler_runs 、plsql_profiler_units、plsql_profiler_data查看收集的统计信息，包括语句执行时间，执行次数等。
 
 ## 特性增强<a name="section31448332"></a>
 
@@ -26,6 +26,7 @@ gms_profiler是一个基于openGauss的插件，用于收集PL/pgSQL程序执行
 ## 性能增强
 
 无。
+
 ## 特性约束<a name="section06531946143616"></a>
 
 - 仅支持Create extension命令方式加载插件。
@@ -36,4 +37,3 @@ gms_profiler是一个基于openGauss的插件，用于收集PL/pgSQL程序执行
 ## 依赖关系<a name="section14599532"></a>
 
 无。
-

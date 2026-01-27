@@ -4,12 +4,12 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 ## Precautions<a name="en-us_topic_0059778645_sf4d8bb008138470c9007621cebd2dfde"></a>
 
--   The format of the  **gsql**  meta-command is a backslash \(\\\) followed by a command verb, and then a parameter. The parameters are separated from the command verb and from each other by any number of whitespace characters.
--   To include whitespace characters into an argument, you must quote them with a single straight quotation mark. To include a single straight quotation mark into such an argument, precede it by a backslash. Anything contained in single quotation marks is furthermore subject to C-like substitutions for \\n \(new line\), \\t \(tab\), \\b \(backspace\), \\r \(carriage return\), \\f \(form feed\), \\digits \(octal\), and \\xdigits \(hexadecimal\).
--   Within a parameter, text enclosed in double quotation marks \(""\) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
--   If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
--   Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
--   Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
+- The format of the  **gsql**  meta-command is a backslash \(\\\) followed by a command verb, and then a parameter. The parameters are separated from the command verb and from each other by any number of whitespace characters.
+- To include whitespace characters into an argument, you must quote them with a single straight quotation mark. To include a single straight quotation mark into such an argument, precede it by a backslash. Anything contained in single quotation marks is furthermore subject to C-like substitutions for \\n \(new line\), \\t \(tab\), \\b \(backspace\), \\r \(carriage return\), \\f \(form feed\), \\digits \(octal\), and \\xdigits \(hexadecimal\).
+- Within a parameter, text enclosed in double quotation marks \(""\) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
+- If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
+- Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
+- Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
 
 ## Meta-command<a name="en-us_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
@@ -1019,7 +1019,7 @@ openGauss=# \sf
 
 The various  **\\d**  commands accept a  **PATTERN**  parameter to specify the object name to be displayed. In the simplest case, PATTERN is the exact name of the object. Characters in  **PATTERN**  are usually converted to lowercase \(as in SQL names\), for example,  **\\dt FOO**  will display a table named  **foo**. As in SQL names, placing double quotation marks \("\) around a pattern prevents them being folded to lower case. If you need to include a double quotation mark \("\) in a pattern, write it as a pair of double quotation marks \(""\) within a double-quote sequence, which is in accordance with the rules for SQL quoted identifiers. For example,  **\\dt "FOO""BAR"**  will be displayed as a table named  **FOO"BAR**  instead of  **foo"bar**. You cannot put double quotation marks around just part of a pattern, which is different from the normal rules for SQL names. For example,  **\\dt FOO"FOO"BAR**  will be displayed as a table named  **fooFOObar**  if just part of a pattern is quoted.
 
-Whenever the  **PATTERN**  parameter is omitted completely, the  **\\d **commands display all objects that are visible in the current schema search path, which is equivalent to using an asterisk \(\*\) as the pattern. An object is regarded to be visible if it can be referenced by name without explicit schema qualification. To see all objects in the database regardless of their visibility, use a dot within double quotation marks \(\*.\*\) as the pattern.
+Whenever the  **PATTERN**  parameter is omitted completely, the  **\\d**commands display all objects that are visible in the current schema search path, which is equivalent to using an asterisk \(\*\) as the pattern. An object is regarded to be visible if it can be referenced by name without explicit schema qualification. To see all objects in the database regardless of their visibility, use a dot within double quotation marks \(\*.\*\) as the pattern.
 
 Within a pattern, the asterisk \(\*\) matches any sequence of characters \(including no characters\) and a question mark \(?\) matches any single character. This notation is comparable to Unix shell file name patterns. For example,  **\\dt int\***  displays tables whose names start with  **int**. But within double quotation marks, the asterisk \(\*\) and the question mark \(?\) lose these special meanings and are just matched literally.
 
@@ -1027,10 +1027,9 @@ A pattern that contains a dot \(.\) is interpreted as a schema name pattern foll
 
 Senior users can use regular-expression notations, such as character classes. For example \[0-9\] can be used to match any digit. All regular-expression special characters work as specified in POSIX. The following characters are excluded:
 
--   A dot \(.\) is used as a separator.
--   An asterisk \(\*\) is translated into an asterisk prefixed with a dot \(.\*\), which is a regular-expression marking.
--   A question mark \(?\) is translated into a dot \(.\).
--   A dollar sign \($\) is matched literally.
+- A dot \(.\) is used as a separator.
+- An asterisk \(\*\) is translated into an asterisk prefixed with a dot \(.\*\), which is a regular-expression marking.
+- A question mark \(?\) is translated into a dot \(.\).
+- A dollar sign \($\) is matched literally.
 
 You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern characters: .,  _R_\*, and  _R_?. The dollar sign \($\) does not need to be used as a regular expression character because  **PATTERN**  must match the entire name instead of being interpreted as a regular expression \(in other words, $ is automatically appended to  **PATTERN**\). If you do not expect a pattern to be anchored, write an asterisk \(\*\) at its beginning or end. All regular-expression special characters within double quotation marks lose their special meanings and are matched literally. Regular-expression special characters in operator name patterns \(such as the  **\\do**  parameter\) are also matched literally.
-

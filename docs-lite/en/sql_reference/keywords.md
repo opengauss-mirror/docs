@@ -4,13 +4,12 @@ The SQL contains reserved words and non-reserved words. Standards require that r
 
 The naming rules for identifiers are as follows:
 
--   An identifier name can only contain letters, underscores, digits \(0-9\), and dollar signs \($\).
--   An identifier name must start with a letter \(a to z\) or an underscore \(\_\).
+- An identifier name can only contain letters, underscores, digits \(0-9\), and dollar signs \($\).
+- An identifier name must start with a letter \(a to z\) or an underscore \(\_\).
 
     >[!NOTE]NOTE 
-    >-   The naming rules are recommended but not mandatory.
-    >-   In special cases, double quotation marks \("\) can be used to avoid special character errors.
-
+    >- The naming rules are recommended but not mandatory.
+    >- In special cases, double quotation marks \("\) can be used to avoid special character errors.
 
 **Table  1**  SQL keywords
 
@@ -7290,4 +7289,3 @@ The naming rules for identifiers are as follows:
 </tr>
 </tbody>
 </table>
-

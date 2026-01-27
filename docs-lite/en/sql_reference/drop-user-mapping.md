@@ -12,20 +12,19 @@ DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC }
 
 ## Parameter Description<a name="en-us_topic_0283136651_section115661681112"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the user mapping does not exist.
 
--   **user\_name**
+- **user\_name**
 
     Specifies username of the mapping.
 
     CURRENT\_USER and USER match the name of the current user. PUBLIC is used to match all current and future user names in the system.
 
--   **server\_name**
+- **server\_name**
 
     Specifies name of the server to which the user is mapped.
-
 
 ## Helpful Links<a name="en-us_topic_0283136651_section17590015119"></a>
 
@@ -34,4 +33,3 @@ DROP USER MAPPING [ IF EXISTS ] FOR { user_name | USER | CURRENT_USER | PUBLIC }
 >[!NOTE]NOTE 
 >
 >In the Lite scenario, openGauss provides this syntax, but the USER MAPPING functions are unavailable.
-

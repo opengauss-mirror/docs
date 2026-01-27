@@ -43,4 +43,3 @@ This function is used to execute the current SQL statement in a stored procedure
 </tr>
 </tbody>
 </table>
-

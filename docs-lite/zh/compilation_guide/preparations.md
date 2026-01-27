@@ -8,21 +8,21 @@
 
 **操作步骤**
 
-1.  执行如下命令下载openGauss-server代码，其中_\[git ssh address\]_表示实际代码下载地址，可在openGauss社区获取这些地址。
+1. 执行如下命令下载openGauss-server代码，其中_\[git ssh address\]_表示实际代码下载地址，可在openGauss社区获取这些地址。
 
     ```
     [user@linux sda]$ git clone [git ssh address] openGauss-server
     ```
 
     >[!NOTE]说明
-    >-   openGauss-server：openGauss的代码仓库。
-    >-   数据库编译依赖开源三方件。开源三方件的构建用户可通过[开源软件编译构建](#zh-cn_topic_0283136302_section13890105116714)获取。由于开源软件编译构建耗时长，我们特地使用openGauss-third\_party编译构建出了一份binarylibs并压缩上传到了网上，用户可以直接下载获取。
+    >- openGauss-server：openGauss的代码仓库。
+    >- 数据库编译依赖开源三方件。开源三方件的构建用户可通过[开源软件编译构建](#zh-cn_topic_0283136302_section13890105116714)获取。由于开源软件编译构建耗时长，我们特地使用openGauss-third\_party编译构建出了一份binarylibs并压缩上传到了网上，用户可以直接下载获取。
     > 社区提供三个平台编译好的二进制文件。对应各个平台下载地址：\
-    **openEuler_arm:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz
-    **openEuler_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz
-    **Centos_x86:** https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz
+    **openEuler_arm:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_arm.tar.gz>
+    **openEuler_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_openEuler_x86_64.tar.gz>
+    **Centos_x86:** <https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/binarylibs/openGauss-third_party_binarylibs_Centos7.6_x86_64.tar.gz>
 
-2.  下载项进度均显示为100%时表示下载成功。
+2. 下载项进度均显示为100%时表示下载成功。
 
 ## 开源软件编译构建<a name="zh-cn_topic_0283136302_section13890105116714"></a>
 
@@ -146,14 +146,14 @@ openGauss的编译，需要提前把所依赖的开源第三方软件进行编�
 
 在安装完[表 openGauss开源三方件编译前置软件要求](#zh-cn_topic_0283136302_table1212531681911)中的软件后，请将python默认版本指向python3.x并执行如下操作：
 
-1.  执行如下命令进入内核依赖的开源第三方软件目录，进行开源第三方软件的编译和构建，产生相应的二进制程序或库文件。/sda/openGauss-third\_party为开源第三方软件下载目录。
+1. 执行如下命令进入内核依赖的开源第三方软件目录，进行开源第三方软件的编译和构建，产生相应的二进制程序或库文件。/sda/openGauss-third\_party为开源第三方软件下载目录。
 
     ```
     [user@linux sda]$ cd /sda/openGauss-third_party/build
     [user@linux build]$ sh build_all.sh
     ```
 
-2.  用户执行以上命令之后，可以自动生成数据库编译所需的开源第三方软件，如果想单独的生成某个开源三方软件，可以进入对应的目录，执行build.sh脚本，如：
+2. 用户执行以上命令之后，可以自动生成数据库编译所需的开源第三方软件，如果想单独的生成某个开源三方软件，可以进入对应的目录，执行build.sh脚本，如：
 
     ```
     [user@linux sda]$ cd /sda/openGauss-third_party/dependency/openssl
@@ -164,10 +164,9 @@ openGauss的编译，需要提前把所依赖的开源第三方软件进行编�
 
     >[!NOTE]说明
     >相关的报错日志可以查看对应的build目录下对应名字的log以及对应模块下的log，如dependency模块下的openssl的相关编译安装日志可以查看：
-    >-   /sda/openGauss-third\_party/build/dependency\_build.log。
-    >-   /sda/openGauss-third\_party/dependency/build/openssl\_build.log。
-    >-   /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log。
-
+    >- /sda/openGauss-third\_party/build/dependency\_build.log。
+    >- /sda/openGauss-third\_party/dependency/build/openssl\_build.log。
+    >- /sda/openGauss-third\_party/dependency/openssl/build\_openssl.log。
 
 **编译构建结果**
 
@@ -244,11 +243,11 @@ openGauss-server/build/script/cmake\_package\_mini.sh是openGauss轻量版的构
 >
 >- m \[debug | release | memcheck\] 表示可选择三种目标版本：
 >
->  -   release: 代表生成release版本的二进制程序，该版本编译时，配置GCC高级别优化选项，去除内核调试代码，通常用于生产环境或性能测试环境。
+>   - release: 代表生成release版本的二进制程序，该版本编译时，配置GCC高级别优化选项，去除内核调试代码，通常用于生产环境或性能测试环境。
 >
->  -   debug：代表生成debug版本的二进制程序，该版本编译时，增加内核代码调试功能，通常用于开发自测环境。
+>   - debug：代表生成debug版本的二进制程序，该版本编译时，增加内核代码调试功能，通常用于开发自测环境。
 >
->  -   memcheck：代表生成memcheck版本的二进制程序，该版本编译时，在debug版本基础上新增ASAN功能，通常用于定位内存问题。
+>   - memcheck：代表生成memcheck版本的二进制程序，该版本编译时，在debug版本基础上新增ASAN功能，通常用于定位内存问题。
 >
 >- 3rd \[binarylibs path\] 为binarylibs的路径。需要指定三方库的绝对路径。
 >
@@ -256,4 +255,3 @@ openGauss-server/build/script/cmake\_package\_mini.sh是openGauss轻量版的构
 >
 >- T 指定编译依赖于tassl的版本，不指定该参数则编译依赖openssl的版本。依赖tassl的版本可支持TLCP。
 >- 此脚本每个参数选项都设置了缺省值，且数量并不多，依赖关系简单，因此使用时非常方便。如果用户需求值与缺省值不同，请根据实际情况进行设置。
-

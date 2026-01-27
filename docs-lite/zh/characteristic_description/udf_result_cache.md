@@ -22,20 +22,19 @@ UDF结果缓存在函数传入的参数值重复率高的场景下，能够起�
 
 ## 特性约束<a name="section51513617597"></a>
 
--   函数结果缓存支持缓存的参数类型有：SMALLINT、INT、BIGINT、FLOAT、DOUBLE PRECISION、CHAR、VARCHAR、TEXT、VARCHAR2、NUMERIC、DATE、TIME、TIMESTAMP、TIMESTAMPTZ、BOOL、NVARCHAR2
--   使用内置过程语言（INTERNAL、C、SQL）的函数不支持函数结果缓存。
--   RESULT_CACHE 属性为 FALSE 的函数不支持函数结果缓存。
--   含有非 IN 入参的函数不支持函数结果缓存。
--   函数返回结果集、存在可变参数、存在不支持的参数类型不支持函数结果缓存。
--   具有 VOLATILE 属性的函数、聚集函数、窗口函数、存在安全定义或参数数量不一致的函数不支持函数结果缓存。
--   函数中存在子程序、自治事务不支持函数结果缓存。
--   参数超过16个的函数不支持函数结果缓存。
--   除SELECT语句外的语句类型不支持函数结果缓存。
--   开启了SMP并行查询不支持函数结果缓存。
--   传入的参数值超过 127 个字符不支持函数结果缓存。
--   单条语句内UDF数量超过14个，第14个以后的函数不进行缓存。
+- 函数结果缓存支持缓存的参数类型有：SMALLINT、INT、BIGINT、FLOAT、DOUBLE PRECISION、CHAR、VARCHAR、TEXT、VARCHAR2、NUMERIC、DATE、TIME、TIMESTAMP、TIMESTAMPTZ、BOOL、NVARCHAR2
+- 使用内置过程语言（INTERNAL、C、SQL）的函数不支持函数结果缓存。
+- RESULT_CACHE 属性为 FALSE 的函数不支持函数结果缓存。
+- 含有非 IN 入参的函数不支持函数结果缓存。
+- 函数返回结果集、存在可变参数、存在不支持的参数类型不支持函数结果缓存。
+- 具有 VOLATILE 属性的函数、聚集函数、窗口函数、存在安全定义或参数数量不一致的函数不支持函数结果缓存。
+- 函数中存在子程序、自治事务不支持函数结果缓存。
+- 参数超过16个的函数不支持函数结果缓存。
+- 除SELECT语句外的语句类型不支持函数结果缓存。
+- 开启了SMP并行查询不支持函数结果缓存。
+- 传入的参数值超过 127 个字符不支持函数结果缓存。
+- 单条语句内UDF数量超过14个，第14个以后的函数不进行缓存。
 
 ## 依赖关系<a name="section20491151513592"></a>
 
 无。
-

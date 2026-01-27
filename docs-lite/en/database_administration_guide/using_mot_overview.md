@@ -6,7 +6,7 @@ Using MOT tables is quite simple. The syntax of all MOT commands is the same as 
 
 The  [MOT Administration](mot_durability.md)  section describes how to perform database maintenance, monitoring and analysis of logs and reported errors. Lastly, the  [MOT Sample TPC-C Benchmark](mot_sample_tpc_c_benchmark.md)  section describes how to perform a standard TPC-C benchmark.
 
--   Read the following topics to learn how to use MOT –
+- Read the following topics to learn how to use MOT –
 
     <a name="en-us_topic_0283137698_en-us_topic_0270171536_table16769368"></a>
     <table><tbody><tr id="en-us_topic_0283137698_en-us_topic_0270171536_row32398645"><td class="cellrowborder" valign="top" width="100%"><p id="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_p7044574"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><a name="en-us_topic_0283137698_en-us_topic_0270171536_image63401170"></a><span><img id="en-us_topic_0283137698_en-us_topic_0270171536_image63401170" src="figures/en-us_image_0289900154.png" width="219.45000000000002" height="221.44500000000002"></span></p>
@@ -14,5 +14,3 @@ The  [MOT Administration](mot_durability.md)  section describes how to perform d
     </tr>
     </tbody>
     </table>
-
-

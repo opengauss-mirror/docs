@@ -6,7 +6,7 @@ Flashback query enables you to query a snapshot of a table at a certain time poi
 
 ## Prerequisites<a name="section17975164121712"></a>
 
--   The  **undo\_retention\_time**  parameter has been set for specifying the retention period of undo logs.
+- The  **undo\_retention\_time**  parameter has been set for specifying the retention period of undo logs.
 
 ## Syntax<a name="section1489051111232"></a>
 
@@ -25,38 +25,34 @@ In the syntax tree,  **TIMECAPSULE \{TIMESTAMP | CSN\} expression**  is a new ex
 
 ## Parameter Description<a name="section1446502852320"></a>
 
--   TIMESTAMP
-    -   Specifies a history time point of the table data to be queried.
+- TIMESTAMP
+    - Specifies a history time point of the table data to be queried.
 
-
--   CSN
-    -   Specifies a logical commit time point of the data in the entire database to be queried. Each CSN in the database represents a consistency point of the entire database. To query the data under a CSN means to query the data related to the consistency point in the database through SQL statements.
-
+- CSN
+    - Specifies a logical commit time point of the data in the entire database to be queried. Each CSN in the database represents a consistency point of the entire database. To query the data under a CSN means to query the data related to the consistency point in the database through SQL statements.
 
 ## Examples<a name="section128804136369"></a>
 
--   Example 1:
+- Example 1:
 
     ```
     SELECT * FROM t1 TIMECAPSULE TIMESTAMP to_timestamp ('2020-02-11 10:13:22.724718', 'YYYY-MM-DD HH24:MI:SS.FF');
     ```
 
--   Example 2:
+- Example 2:
 
     ```
     SELECT * FROM t1 TIMECAPSULE CSN 9617;
     ```
 
--   Example 3:
+- Example 3:
 
     ```
     SELECT * FROM t1 AS t TIMECAPSULE TIMESTAMP to_timestamp ('2020-02-11 10:13:22.724718', 'YYYY-MM-DD HH24:MI:SS.FF');
     ```
 
--   Example 4:
+- Example 4:
 
     ```
     SELECT * FROM t1 AS t TIMECAPSULE CSN 9617;
     ```
-
-

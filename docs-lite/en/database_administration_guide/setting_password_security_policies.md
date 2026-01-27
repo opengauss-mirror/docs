@@ -4,13 +4,13 @@
 
 User passwords are stored in the system catalog  **pg\_authid**. To prevent password leakage, openGauss encrypts user passwords before storing them. The encryption algorithm is determined by the configuration parameter  **password\_encryption\_type**.
 
--   If parameter  **password\_encryption\_type**  is set to  **0**, passwords are encrypted using MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
--   If parameter  **password\_encryption\_type**  is set to  **1**, passwords are encrypted using SHA-256 and MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
--   If parameter  **password\_encryption\_type**  is set to  **2**, passwords are encrypted using SHA-256. This is the default configuration.
--   If parameter  **password\_encryption\_type**  is set to  **3**, passwords are encrypted using SM3.
+- If parameter  **password\_encryption\_type**  is set to  **0**, passwords are encrypted using MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+- If parameter  **password\_encryption\_type**  is set to  **1**, passwords are encrypted using SHA-256 and MD5. The MD5 encryption algorithm is not recommended because it has lower security and poses security risks.
+- If parameter  **password\_encryption\_type**  is set to  **2**, passwords are encrypted using SHA-256. This is the default configuration.
+- If parameter  **password\_encryption\_type**  is set to  **3**, passwords are encrypted using SM3.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -28,7 +28,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
     openGauss=# 
     ```
 
-3.  View the configured encryption algorithm.
+3. View the configured encryption algorithm.
 
     ```
     openGauss=# SHOW password_encryption_type;
@@ -40,7 +40,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
     If the command output is  **0**  or  **1**, run the  **\\q**  command to exit the database.
 
-4.  Set  **gs\_guc reload -Z coordinator -D**  using a secure encryption algorithm:
+4. Set  **gs\_guc reload -Z coordinator -D**  using a secure encryption algorithm:
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -c "password_encryption_type=2"
@@ -49,18 +49,18 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
     >[!TIP]NOTICE 
     >To prevent password leakage, when running  **CREATE USER/ROLE**  to create a database user, do not specify the  **UNENCRYPTED**  attribute. In this way, the password of the newly created user must be encrypted for storage.
 
-5.  Configure password security parameters.
+5. Configure password security parameters.
 
-    -   Password complexity
+    - Password complexity
 
         You need to specify a password when initializing a database, creating a user, or modifying a user. The password must meet the complexity check rules \(see  [password\_policy](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s3db9d0a21a4d48b98ea4afc1f2e44626)\). Otherwise, you are prompted to enter the password again.
 
-        -   If parameter  **password\_policy**  is set to  **1**, the default password complexity rule is used to check passwords.
-        -   If parameter  **password\_policy**  is set to  **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see  [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to  **0**  because this operation poses security risks. Even if the setting is required, you must set  **password\_policy**  to  **0**  on all openGauss nodes.
+        - If parameter  **password\_policy**  is set to  **1**, the default password complexity rule is used to check passwords.
+        - If parameter  **password\_policy**  is set to  **0**, the password complexity rule is not used. However, the password cannot be empty and must contain only valid characters, including uppercase letters \(A–Z\), lowercase letters \(a–z\), digits \(0–9\), and special characters \(see  [Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)\). You are not advised to set this parameter to  **0**  because this operation poses security risks. Even if the setting is required, you must set  **password\_policy**  to  **0**  on all openGauss nodes.
 
         Configure the  **password\_policy**  parameter.
 
-        1.  Run the following command to connect to the database:
+        1. Run the following command to connect to the database:
 
             ```
             gsql -d postgres -p 8000
@@ -78,7 +78,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             openGauss=# 
             ```
 
-        2.  View the current value.
+        2. View the current value.
 
             ```
             openGauss=# SHOW password_policy;
@@ -90,7 +90,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
             If the command output is not  **1**, run the  **\\q**  command to exit the database.
 
-        3.  Run the following command to set the parameter to its default value  **1**:
+        3. Run the following command to set the parameter to its default value  **1**:
 
             ```
             gs_guc reload  -D /gaussdb/data/datanode -c "password_policy=1"
@@ -98,28 +98,27 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
         The password complexity requirements are as follows:
 
-        -   Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
-        -   Minimum number of lowercase letters \(a-z\) \(**password\_min\_lowercase**\)
-        -   Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
-        -   Minimum number of special characters \(**password\_min\_special**\) \([Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)  lists special characters.\)
-        -   Minimum password length \(**password\_min\_length**\)
-        -   Maximum password length \(**password\_max\_length**\)
-        -   A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
-        -   A password is case insensitive and cannot be the username or the username spelled backwards.
-        -   A new password cannot be the current password and the current password spelled backwards.
-        -   A password cannot be a weak password.
-            -   It is easy to crack weak passwords. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
+        - Minimum number of uppercase letters \(A-Z\) \(**password\_min\_uppercase**\)
+        - Minimum number of lowercase letters \(a-z\) \(**password\_min\_lowercase**\)
+        - Minimum number of digits \(0-9\) \(**password\_min\_digital**\)
+        - Minimum number of special characters \(**password\_min\_special**\) \([Table 1](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t850059f5d3e64bc78857b77fc8ffbba8)  lists special characters.\)
+        - Minimum password length \(**password\_min\_length**\)
+        - Maximum password length \(**password\_max\_length**\)
+        - A password must contain at least three types of the characters \(uppercase letters, lowercase letters, digits, and special characters\).
+        - A password is case insensitive and cannot be the username or the username spelled backwards.
+        - A new password cannot be the current password and the current password spelled backwards.
+        - A password cannot be a weak password.
+            - It is easy to crack weak passwords. The definition of weak passwords may vary with users or user groups. Users can define their own weak passwords.
 
-            -   Passwords in the weak password dictionary are stored in the  **gs\_global\_config**  system catalog. When a user is created or modified, the password set by the user is compared with that stored in the weak password dictionary. If the password is matched, a message is displayed, indicating that the password is weak and password setting fails.
-            -   The weak password dictionary is empty by default. You can add or delete weak passwords using the following syntax:
+            - Passwords in the weak password dictionary are stored in the  **gs\_global\_config**  system catalog. When a user is created or modified, the password set by the user is compared with that stored in the weak password dictionary. If the password is matched, a message is displayed, indicating that the password is weak and password setting fails.
+            - The weak password dictionary is empty by default. You can add or delete weak passwords using the following syntax:
 
                 ```
                 openGauss=# CREATE WEAK PASSWORD DICTIONARY WITH VALUES ('password1'), ('password2');
                 openGauss=# DROP WEAK PASSWORD DICTIONARY;
                 ```
 
-
-    -   Password reuse
+    - Password reuse
 
         An old password can be reused only when it meets the requirements on reuse days \(**[password\_reuse\_time](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s36625909efc14a42af3e142435ae9794)**\) and reuse times \(**[password\_reuse\_max](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_scad28ae18dfc4557b10f51bf147a9e53)**\).  [Table 2](#en-us_topic_0283137010_en-us_topic_0237121110_en-us_topic_0151096202_en-us_topic_0085033092_en-us_topic_0059779155_t2013c9d251bc4cf5be274ef279c4faee)  lists the parameter configurations.
 
@@ -128,7 +127,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
         Configure the  **password\_reuse\_time**  parameter.
 
-        1.  Run the following command to connect to the database:
+        1. Run the following command to connect to the database:
 
             ```
             gsql -d postgres -p 8000
@@ -146,7 +145,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             openGauss=# 
             ```
 
-        2.  View the current value.
+        2. View the current value.
 
             ```
             openGauss=# SHOW password_reuse_time;
@@ -158,7 +157,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
             If the command output is not  **60**, run the  **\\q**  command to exit the database.
 
-        3.  Run the following command to set the parameter to a . The default value is  **60**.
+        3. Run the following command to set the parameter to a . The default value is  **60**.
 
             >[!NOTE]NOTE 
             >You are not advised to set the parameter to  **0**. This value is valid only when  **password\_reuse\_time**  for all openGauss nodes is set to  **0**.
@@ -169,7 +168,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
         Configure the  **password\_reuse\_max**  parameter.
 
-        1.  Run the following command to connect to the database:
+        1. Run the following command to connect to the database:
 
             ```
             gsql -d postgres -p 8000
@@ -187,7 +186,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             openGauss=# 
             ```
 
-        2.  View the current value.
+        2. View the current value.
 
             ```
             openGauss=# SHOW password_reuse_max;
@@ -199,13 +198,13 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
             If the command output is not  **0**, run the  **\\q**  command to exit the database.
 
-        3.  Run the following command to set the parameter to its default value  **0**:
+        3. Run the following command to set the parameter to its default value  **0**:
 
             ```
             gs_guc reload  -D /gaussdb/data/datanode -c "password_reuse_max = 0"
             ```
 
-    -   Password validity period
+    - Password validity period
 
         A validity period \(**[password\_effect\_time](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_sfcc6124115734728917a548a8bd8f0d4)**\) is set for each database user password. If the password is about to expire \(**[password\_notify\_time](../database_reference/security-and-authentication_postgresql-conf.md#en-us_topic_0283137371_en-us_topic_0237124696_en-us_topic_0059778664_s1beab889ab8d49848ef28bf60c10d8f7)**\), the system displays a message to remind the user to change it upon login.
 
@@ -214,7 +213,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
         Configure the  **password\_effect\_time**  parameter.
 
-        1.  Run the following command to connect to the database:
+        1. Run the following command to connect to the database:
 
             ```
             gsql -d postgres -p 8000
@@ -232,7 +231,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             openGauss=# 
             ```
 
-        2.  View the current value.
+        2. View the current value.
 
             ```
             openGauss=# SHOW password_effect_time;
@@ -244,7 +243,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
             If the command output is not  **90**, run the  **\\q**  command to exit the database.
 
-        3.  Run the following command to set the parameter to  **90**  \(**0**  is not recommended\):
+        3. Run the following command to set the parameter to  **90**  \(**0**  is not recommended\):
 
             ```
             gs_guc reload -D /gaussdb/data/datanode -c "password_effect_time = 90"
@@ -252,7 +251,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
         Configure the  **password\_notify\_time**  parameter.
 
-        1.  Run the following command to connect to the database:
+        1. Run the following command to connect to the database:
 
             ```
             gsql -d postgres -p 8000
@@ -270,7 +269,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             openGauss=# 
             ```
 
-        2.  View the current value.
+        2. View the current value.
 
             ```
             openGauss=# SHOW password_notify_time;
@@ -280,15 +279,15 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             (1 row)
             ```
 
-        3.  If  **7**  is not displayed, run the following command to set the parameter to  **7**  \(**0**  is not recommended\):
+        3. If  **7**  is not displayed, run the following command to set the parameter to  **7**  \(**0**  is not recommended\):
 
             ```
             gs_guc reload -D /gaussdb/data/datanode -c "password_notify_time = 7"
             ```
 
-    -   Password change
+    - Password change
 
-        -   During database installation, an OS user with the same name as the initial user is created. The password of the OS user needs to be periodically changed for account security.
+        - During database installation, an OS user with the same name as the initial user is created. The password of the OS user needs to be periodically changed for account security.
 
             To change the password of user  **user1**, run the following command:
 
@@ -298,7 +297,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
 
             Change the password as prompted.
 
-        -   System administrators and common users need to periodically change their passwords to prevent the accounts from being stolen.
+        - System administrators and common users need to periodically change their passwords to prevent the accounts from being stolen.
 
             For example, to change the password of user  **user1**, connect to the database as the system administrator and run the following commands:
 
@@ -310,7 +309,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             >[!NOTE]NOTE 
             >**1234@abc**  and  **5678@def**  represent the new password and the original password of user  **user1**, respectively. If the new password does not have the required complexity, the change will not take effect.
 
-        -   Administrators can change their own and common users' passwords. If common users forget their passwords, they can ask administrators to change the passwords.
+        - Administrators can change their own and common users' passwords. If common users forget their passwords, they can ask administrators to change the passwords.
 
             To change the password of user  **joe**, run the following command:
 
@@ -320,11 +319,11 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
             ```
 
         >[!NOTE]NOTE 
-        >-   System administrators are not allowed to change passwords for each other.
-        >-   A system administrator can change the password of a common user without being required to provide the common user's old password.
-        >-   A system administrator can change their own password but is required to provide the old password.
+        >- System administrators are not allowed to change passwords for each other.
+        >- A system administrator can change the password of a common user without being required to provide the common user's old password.
+        >- A system administrator can change their own password but is required to provide the old password.
 
-    -   Password verification
+    - Password verification
 
         Password verification is required when you set the user or role in the current session. If the entered password is inconsistent with the stored password of the user, an error is reported.
 
@@ -527,7 +526,7 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
     </tbody>
     </table>
 
-6.  Set user password expiration.
+6. Set user password expiration.
 
     When creating a user, a user with the  **CREATEROLE**  permission can force the user password to expire. After logging in to the database for the first time, a new user can perform query operations only after changing the password. The command format is as follows:
 
@@ -549,7 +548,5 @@ User passwords are stored in the system catalog  **pg\_authid**. To prevent pass
     ```
 
     >[!NOTE]NOTE 
-    >-   After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
-    >-   Only initial users, system administrators \(with the  **sysadmin**  permission\), and users who have the permission to create users \(with the  **CREATEROLE**  permission\) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The initial user password cannot be invalidated.
-
-
+    >- After a user whose password is invalid logs in to the database, the system prompts the user to change the password when the user performs a simple or extended query. The user can then execute statements after changing the password.
+    >- Only initial users, system administrators \(with the  **sysadmin**  permission\), and users who have the permission to create users \(with the  **CREATEROLE**  permission\) can invalidate user passwords. System administrators can invalidate their own passwords or the passwords of other system administrators. The initial user password cannot be invalidated.

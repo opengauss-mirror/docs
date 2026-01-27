@@ -10,7 +10,7 @@ The owner of a type, a user granted the ALTER permission on a type, or a user gr
 
 ## Syntax<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s700b45dab05a43e4ac8959c5824223be"></a>
 
--   Modify a type.
+- Modify a type.
 
     ```
     ALTER TYPE name action [, ... ]
@@ -27,124 +27,108 @@ The owner of a type, a user granted the ALTER permission on a type, or a user gr
         ALTER ATTRIBUTE attribute_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ CASCADE | RESTRICT ]
     ```
 
--   Add a new attribute to a composite type.
+- Add a new attribute to a composite type.
 
     ```
     ALTER TYPE name ADD ATTRIBUTE attribute_name data_type [ COLLATE collation ] [ CASCADE | RESTRICT ]
     ```
 
-
--   Delete an attribute from a composite type.
+- Delete an attribute from a composite type.
 
     ```
     ALTER TYPE name DROP ATTRIBUTE [ IF EXISTS ] attribute_name [ CASCADE | RESTRICT ]
     ```
 
-
--   Change the type of an attribute in a composite type.
+- Change the type of an attribute in a composite type.
 
     ```
     ALTER TYPE name ALTER ATTRIBUTE attribute_name [ SET DATA ] TYPE data_type [ COLLATE collation ] [ CASCADE | RESTRICT ]
     ```
 
-
--   Change the owner of a type.
+- Change the owner of a type.
 
     ```
     ALTER TYPE name OWNER TO { new_owner | CURRENT_USER | SESSION_USER }
     ```
 
-
--   Change the name of a type or the name of an attribute in a composite type.
+- Change the name of a type or the name of an attribute in a composite type.
 
     ```
     ALTER TYPE name RENAME TO new_name
     ALTER TYPE name RENAME ATTRIBUTE attribute_name TO new_attribute_name [ CASCADE | RESTRICT ]
     ```
 
-
--   Move a type to a new schema.
+- Move a type to a new schema.
 
     ```
     ALTER TYPE name SET SCHEMA new_schema
     ```
 
-
--   Add a new value to an enumerated type.
+- Add a new value to an enumerated type.
 
     ```
     ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum_value [ { BEFORE | AFTER } neighbor_enum_value ]
     ```
 
-
--   Change an enumerated value in the value list.
+- Change an enumerated value in the value list.
 
     ```
     ALTER TYPE name RENAME VALUE existing_enum_value TO new_enum_value
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_s28f32bbb70f648b680f66e994ccb96f4"></a>
 
--   **name**
+- **name**
 
     Specifies the name of an existing type that needs to be modified \(optionally schema-qualified\).
 
-
--   **new\_name**
+- **new\_name**
 
     Specifies the new name of the type.
 
-
--   **new\_owner**
+- **new\_owner**
 
     Specifies the new owner of the type.
 
-
--   **new\_schema**
+- **new\_schema**
 
     Specifies the new schema of the type.
 
-
--   **attribute\_name**
+- **attribute\_name**
 
     Specifies the name of the attribute to be added, modified, or deleted.
 
-
--   **new\_attribute\_name**
+- **new\_attribute\_name**
 
     Specifies the new name of the attribute to be renamed.
 
-
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the attribute to be added, or the new type of the attribute to be modified.
 
--   **new\_enum\_value**
+- **new\_enum\_value**
 
     Specifies a new enumerated value. It is a non-null string with a maximum length of 63 bytes.
 
--   **neighbor\_enum\_value**
+- **neighbor\_enum\_value**
 
     Specifies an existing enumerated value before or after which a new enumerated value will be added.
 
--   **existing\_enum\_value**
+- **existing\_enum\_value**
 
     Specifies an enumerated value to be changed. It is a non-null string with a maximum length of 63 bytes.
 
-
--   **CASCADE**
+- **CASCADE**
 
     Determines that the type to be modified, its associated records, and subtables that inherit the type will all be updated.
 
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to update the associated records of the modified type. This is the default action.
 
     >[!TIP]NOTICE 
-    >-   **ADD ATTRIBUTE**,  **DROP ATTRIBUTE**, and  **ALTER ATTRIBUTE**  can be combined for processing. For example, it is possible to add several attributes or change the types of several attributes at the same time in one command.
-    >-   To modify a schema of a type, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new owning role, and the member must have the  **CREATE**  permission on the schema of this type. \(These restrictions enforce that the user can only recreate and delete the type. However, the system administrator can change ownership of any type in any way.\) To add an attribute or modify the type of an attribute, you must also have the  **USAGE**  permission of this type.
-
+    >- **ADD ATTRIBUTE**,  **DROP ATTRIBUTE**, and  **ALTER ATTRIBUTE**  can be combined for processing. For example, it is possible to add several attributes or change the types of several attributes at the same time in one command.
+    >- To modify a schema of a type, you must have the  **CREATE**  permission on the new schema. To change the owner, you must be a direct or indirect member of the new owning role, and the member must have the  **CREATE**  permission on the schema of this type. \(These restrictions enforce that the user can only recreate and delete the type. However, the system administrator can change ownership of any type in any way.\) To add an attribute or modify the type of an attribute, you must also have the  **USAGE**  permission of this type.
 
 ## Examples<a name="en-us_topic_0283136571_en-us_topic_0237122082_en-us_topic_0059777461_sf9c8ea511e3c47b98d77fc0ab56e9d07"></a>
 

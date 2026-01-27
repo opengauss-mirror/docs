@@ -22,10 +22,9 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   MySQL 5.7 is supported.
--   If incompatibility still exists after data type mapping, table data migration fails, but the subsequent offline data migration process does not terminate.
+- MySQL 5.7 is supported.
+- If incompatibility still exists after data type mapping, table data migration fails, but the subsequent offline data migration process does not terminate.
 
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

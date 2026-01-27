@@ -67,37 +67,33 @@ Logs generated during the installation and uninstallation of openGauss are store
 
 **Log Naming Rules**
 
--   The name format of database node run logs is:
+- The name format of database node run logs is:
 
     **postgresql-**_creation time_**.log**
 
     By default, a new log file is generated at 0:00 every day, or when the size of the latest log file exceeds 16 MB or a database instance \(database node\) is restarted.
 
+- The name formats of CM run logs are:
 
--   The name formats of CM run logs are:
-
-    -   cm\_agent logs:  **cm\_agent-**_creation time_**.log**,  **cm\_agent-**_creation time_**-current.log**,  **system\_call-**_creation time_**.log**, and  **system\_call-**_creation time_**-current.log**
-    -   cm\_server logs:  **cm\_server-**_creation time_**.log**,  **cm\_server**_creation time_**-current.log**,  **key\_event-**_creation time_**.log**, and  **key\_event-**_creation time_**-current.log**
-    -   om\_monitor logs:  **om\_monitor-**_creation time_**.log**  and  **om\_monitor-**_creation time_**-current.log**
+    - cm\_agent logs:  **cm\_agent-**_creation time_**.log**,  **cm\_agent-**_creation time_**-current.log**,  **system\_call-**_creation time_**.log**, and  **system\_call-**_creation time_**-current.log**
+    - cm\_server logs:  **cm\_server-**_creation time_**.log**,  **cm\_server**_creation time_**-current.log**,  **key\_event-**_creation time_**.log**, and  **key\_event-**_creation time_**-current.log**
+    - om\_monitor logs:  **om\_monitor-**_creation time_**.log**  and  **om\_monitor-**_creation time_**-current.log**
 
     Logs whose names do not contain  **current**  are historical log files. Logs whose names contain  **current**  are current log files. When a process is called for the first time, a log file whose name contains  **current**  is created. If the size of this file exceeds 16 MB, the file is renamed in the historical log file name format, and a new log file is generated at the current time point.
 
-
 **Log Content Description**
 
--   Content of a line in a database node log:
+- Content of a line in a database node log:
 
     Date+Time+Time zone+Username+Database name+Session ID+Log level+Log content
 
-
--   By default, a line in a cm\_agent, cm\_server, om\_monitor log is arranged in the following format:
+- By default, a line in a cm\_agent, cm\_server, om\_monitor log is arranged in the following format:
 
     Time+Time zone+Session ID+Log content
 
     The  **SYSTEM\_CALL**  log records tool commands called by cm\_agent.
 
     By default, a line in a key\_event log is arranged in the following format: Time+Thread ID+Thread name:Key event type+Arbitration object instance ID+Arbitration details
-
 
 ## Operation Log<a name="en-us_topic_0283140584_section334253173120"></a>
 
@@ -111,8 +107,8 @@ The default path is  _$GAUSSLOG_**/bin**. If the environmental variable  **$GAUS
 
 The log file name format is as follows:
 
--   _tool name_**-**_log creation time_**.log**
--   _tool name_**-**_log creation time_**-current.log**
+- _tool name_**-**_log creation time_**.log**
+- _tool name_**-**_log creation time_**-current.log**
 
 _tool name_**-**_log creation time_**.log**  is a historical log file, and  _tool name_**-**_log creation time_**-current.log**  is a current log file.
 

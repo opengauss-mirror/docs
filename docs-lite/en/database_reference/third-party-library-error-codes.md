@@ -80,6 +80,6 @@ A third-party error code contains five characters, the first three indicating th
 </table>
 
 >[!TIP]NOTICE 
+>
 >1. Errors of ORC\_ERROR and higher levels are printed using  **psql**, and their detailed stack information is recorded in the corresponding DN logs. Lower-level logs are only printed in the corresponding DN logs.
 >2. You can locate and rectify the fault based on the error code and information.
-

@@ -16,8 +16,7 @@ This section describes how to execute anonymous blocks in dynamic statements. Ap
 
 The above syntax diagram is explained as follows:
 
--   The execute part of an anonymous block starts with a  **BEGIN**  statement, has a break with an  **END**  statement, and ends with a semicolon \(;\).
--   **USING \[IN|OUT|IN OUT\]bind\_argument**: specifies where the variable passed to the stored procedure parameter value is stored. The modifiers in front of  **bind\_argument**  and of the corresponding parameter are the same.
--   The input and output parameters in the middle of an anonymous block are designated by placeholders. The numbers of the placeholders and parameters are the same. The sequences of the parameters corresponding to the placeholders and the USING parameters are the same.
--   Currently in openGauss, when dynamic statements call anonymous blocks, placeholders cannot be used to pass input and output parameters in an  **EXCEPTION**  statement.
-
+- The execute part of an anonymous block starts with a  **BEGIN**  statement, has a break with an  **END**  statement, and ends with a semicolon \(;\).
+- **USING \[IN|OUT|IN OUT\]bind\_argument**: specifies where the variable passed to the stored procedure parameter value is stored. The modifiers in front of  **bind\_argument**  and of the corresponding parameter are the same.
+- The input and output parameters in the middle of an anonymous block are designated by placeholders. The numbers of the placeholders and parameters are the same. The sequences of the parameters corresponding to the placeholders and the USING parameters are the same.
+- Currently in openGauss, when dynamic statements call anonymous blocks, placeholders cannot be used to pass input and output parameters in an  **EXCEPTION**  statement.

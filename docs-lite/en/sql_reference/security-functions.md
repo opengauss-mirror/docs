@@ -2,9 +2,9 @@
 
 ## Security Functions<a name="en-us_topic_0283137444_en-us_topic_0237121984_en-us_topic_0059778224_s8faac65b21ea4e438009735298c2c8d1"></a>
 
--   gs\_encrypt\_aes128\(encryptstr,keystr\)
+- gs\_encrypt\_aes128\(encryptstr,keystr\)
 
-    Description: Encrypts  **encryptstr**  strings using  **keystr**  as the key and returns encrypted strings. The value of  **keystr **ranges from 8 to 16 bytes and contains at least three types of the following characters: uppercase letters, lowercase letters, digits, and special characters.
+    Description: Encrypts  **encryptstr**  strings using  **keystr**  as the key and returns encrypted strings. The value of  **keystr**ranges from 8 to 16 bytes and contains at least three types of the following characters: uppercase letters, lowercase letters, digits, and special characters.
 
     Return type: text
 
@@ -24,7 +24,7 @@
     >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
--   gs\_encrypt\(encryptstr,keystr, encrypttype\)
+- gs\_encrypt\(encryptstr,keystr, encrypttype\)
 
     Description: Encrypts  **encryptstr**  strings using  **keystr**  as the key and returns encrypted strings based on  **encrypttype**. The value of  **keystr**  contains 8 to 16 bytes and at least three types of the following characters: uppercase letters, lowercase letters, digits, and special characters. The value of  **encrypttype**  can be  **aes128**  or  **sm4**.
 
@@ -43,7 +43,7 @@
     >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
--   gs\_decrypt\_aes128\(decryptstr,keystr\)
+- gs\_decrypt\_aes128\(decryptstr,keystr\)
 
     Description: Decrypts  **decrypt**  strings using  **keystr**  as the key and returns decrypted strings. The  **keystr**  used for decryption must be consistent with that used for encryption.  **keystr**  cannot be empty.
 
@@ -65,7 +65,7 @@
     >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
--   gs\_decrypt\(decryptstr, keystr, decrypttype\)
+- gs\_decrypt\(decryptstr, keystr, decrypttype\)
 
     Description: Decrypts  **decrypt**  strings using  **keystr**  as the key and returns decrypted strings based on  **decrypttype**. The  **decrypttype**  and  **keystr**  used for decryption must be consistent with those used for encryption. The value of  **keystr**  cannot be empty. The value of  **decrypttype**  can be  **aes128**  or  **sm4**.
 
@@ -86,7 +86,7 @@
     >[!NOTE]NOTE 
     >A decryption password is required during the execution of this function. For security purposes, the  **gsql**  tool does not record the function in the execution history. That is, the execution history of this function cannot be found in  **gsql**  by paging up and down.
 
--   aes\_encrypt\(str, key\_str, init\_vector\)
+- aes\_encrypt\(str, key\_str, init\_vector\)
 
     Description: Encrypts the string **str** using the key string **key\_str** and initialization vector **init\_vector** based on the AES algorithm.
 
@@ -122,7 +122,7 @@
     >
     >(5) The SQL\_ASCII setting is different from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. When this function calls the OpenSSL third-party library, the returned encoding of data is non-ASCII data. Therefore, when the character set of the database server is set to SQL\_ASCII, the encoding of the client must also be set to SQL\_ASCII. Otherwise, an error is reported. The database does not convert or verify non-ASCII characters.
 
--   aes\_decrypt\(pass\_str, key\_str, init\_vector\)
+- aes\_decrypt\(pass\_str, key\_str, init\_vector\)
 
     Description: Decrypts the string **str** using the key string **key\_str** and initialization vector **init\_vector** based on the AES algorithm.
 
@@ -162,7 +162,7 @@
     >
     >(7) The SQL\_ASCII setting is different from other settings. If the character set of the server is SQL\_ASCII, the server interprets the byte values 0 to 127 according to the ASCII standard. The byte values 128 to 255 are regarded as the characters that cannot be parsed. If this parameter is set to SQL\_ASCII, no code conversion occurs. When this function calls the OpenSSL third-party library, the returned encoding of data is non-ASCII data. Therefore, when the character set of the database server is set to SQL\_ASCII, the encoding of the client must also be set to SQL\_ASCII. Otherwise, an error is reported. The database does not convert or verify non-ASCII characters.
 
--   gs\_password\_deadline
+- gs\_password\_deadline
 
     Description: Indicates the number of remaining days before the password of the current user expires.
 
@@ -178,13 +178,13 @@
     (1 row)
     ```
 
--   gs\_password\_notifytime
+- gs\_password\_notifytime
 
     Description: Specifies the number of days prior to password expiration that a user will receive a reminder.
 
     Return type: int32
 
--   login\_audit\_messages
+- login\_audit\_messages
 
     Description: Queries login information about a login user.
 
@@ -192,7 +192,7 @@
 
     Example:
 
-    -   Check the date, time, and IP address of the last successful login.
+    - Check the date, time, and IP address of the last successful login.
 
         ```
         openGauss=> select * from login_audit_messages(true);
@@ -202,7 +202,7 @@
         (1 row)
         ```
 
-    -   Check the number of failed attempts, date, and time since the previous successful login.
+    - Check the number of failed attempts, date, and time since the previous successful login.
 
         ```
         openGauss=>  select * from login_audit_messages(false);
@@ -213,8 +213,7 @@
         (2 rows)
         ```
 
-
--   login\_audit\_messages\_pid
+- login\_audit\_messages\_pid
 
     Description: Queries login information about a login user. Different from  **login\_audit\_messages**, this function queries login information based on  **backendid**. Information about subsequent logins of the same user does not alter the query result of previous logins and cannot be found using this function.
 
@@ -225,7 +224,7 @@
 
     Example:
 
-    -   Check the date, time, and IP address of the last successful login.
+    - Check the date, time, and IP address of the last successful login.
 
         ```
         openGauss=> SELECT * FROM login_audit_messages_pid(true);
@@ -235,7 +234,7 @@
         (1 row)
         ```
 
-    -   Check the number of failed attempts, date, and time since the previous successful login.
+    - Check the number of failed attempts, date, and time since the previous successful login.
 
         ```
         openGauss=> SELECT * FROM login_audit_messages_pid(false);
@@ -246,8 +245,7 @@
         (2 rows)
         ```
 
-
--   inet\_server\_addr
+- inet\_server\_addr
 
     Description: Displays the server IP address.
 
@@ -264,10 +262,10 @@
     ```
 
     >[!NOTE]NOTE 
-    >-   The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
-    >-   If the database is connected to the local PC, the value is empty.
+    >- The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
+    >- If the database is connected to the local PC, the value is empty.
 
--   inet\_client\_addr
+- inet\_client\_addr
 
     Description: Displays the client IP address.
 
@@ -284,10 +282,10 @@
     ```
 
     >[!NOTE]NOTE 
-    >-   The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
-    >-   If the database is connected to the local PC, the value is empty.
+    >- The client IP address 10.10.0.50 and server IP address 10.10.0.13 are used as an example.
+    >- If the database is connected to the local PC, the value is empty.
 
--   pg\_query\_audit
+- pg\_query\_audit
 
     Description: Views audit logs of the primary database node.
 
@@ -414,7 +412,7 @@
 
     For details about how to use the function and details about function examples, see  [Querying Audit Results](../database_administration_guide/querying_audit_results.md).
 
--   pg\_delete\_audit
+- pg\_delete\_audit
 
     Description: Deletes audit logs in a specified period.  
      

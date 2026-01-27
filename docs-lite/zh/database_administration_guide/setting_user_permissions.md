@@ -1,6 +1,6 @@
 # 用户权限设置<a name="ZH-CN_TOPIC_0289900074"></a>
 
--   给用户直接授予某对象的权限，请使用[GRANT](../sql_reference/GRANT.md)。
+- 给用户直接授予某对象的权限，请使用[GRANT](../sql_reference/GRANT.md)。
 
     将Schema中的表或者视图对象授权给其他用户或角色时，需要将表或视图所属Schema的USAGE权限同时授予该用户或角色。否则用户或角色将只能看到这些对象的名称，并不能实际进行对象访问。
 
@@ -11,8 +11,8 @@
     openGauss=# GRANT SELECT ON TABLE tpcds.web_returns to joe;
     ```
 
--   给用户指定角色，使用户继承角色所拥有的对象权限。
-    1.  创建角色。
+- 给用户指定角色，使用户继承角色所拥有的对象权限。
+    1. 创建角色。
 
         新建一个角色lily，同时给角色指定系统权限CREATEDB：
 
@@ -20,7 +20,7 @@
         openGauss=# CREATE ROLE lily WITH CREATEDB PASSWORD "xxxxxxxxx";
         ```
 
-    2.  给角色赋予对象权限，请使用[GRANT](../sql_reference/GRANT.md)。
+    2. 给角色赋予对象权限，请使用[GRANT](../sql_reference/GRANT.md)。
 
         例如，将模式tpcds的权限赋给角色lily后，将表tpcds.web\_returns的select权限赋给角色lily。
 
@@ -29,7 +29,7 @@
         openGauss=# GRANT SELECT ON TABLE tpcds.web_returns to lily;
         ```
 
-    3.  将角色的权限赋予用户。
+    3. 将角色的权限赋予用户。
 
         ```
         openGauss=# GRANT lily to joe;
@@ -38,6 +38,4 @@
         >[!NOTE]说明
         >当将角色的权限赋予用户时，角色的属性并不会传递到用户。
 
-
--   回收用户权限，请使用[REVOKE](../sql_reference/REVOKE.md)。
-
+- 回收用户权限，请使用[REVOKE](../sql_reference/REVOKE.md)。

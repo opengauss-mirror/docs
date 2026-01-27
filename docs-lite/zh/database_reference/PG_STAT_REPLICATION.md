@@ -122,4 +122,3 @@ PG\_STAT\_REPLICATION视图用于描述日志同步状态信息，例如发起�
 </tr>
 </tbody>
 </table>
-

@@ -1,6 +1,6 @@
 # GS\_COLUMN\_KEYS\_ARGS<a name="EN-US_TOPIC_0294528095"></a>
 
-**GS\_COLUMN\_KEYS\_ARGS **records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
+**GS\_COLUMN\_KEYS\_ARGS**records the metadata about the CMK in the encrypted equality feature. Each record corresponds to a key-value pair of the CMK.
 
 **Table  1**  GS\_COLUMN\_KEYS\_ARGS columns
 
@@ -53,4 +53,3 @@
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this system catalog, but the encrypted equality feature is unavailable.
-

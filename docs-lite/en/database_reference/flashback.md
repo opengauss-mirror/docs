@@ -60,4 +60,3 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 **Value range**: an integer ranging from 0 to 2147483647. The unit is second.
 
 **Default value**:  **0**
-

@@ -8,13 +8,13 @@
 
 If a non-owner user of an object attempts to  **REVOKE**  permission on the object, the statement is executed based on the following rules:
 
--   If the user has no permissions whatsoever on the object, the statement will fail outright.
--   If an authorized user has some permissions, only the permissions with authorization options are revoked.
--   If the authorized user does not have the authorization option, the  **REVOKE ALL PRIVILEGES**  form will issue an error message. For other forms of statements, if the permission specified in the statement does not have the corresponding authorization option, the statement will issue a warning.
+- If the user has no permissions whatsoever on the object, the statement will fail outright.
+- If an authorized user has some permissions, only the permissions with authorization options are revoked.
+- If the authorized user does not have the authorization option, the  **REVOKE ALL PRIVILEGES**  form will issue an error message. For other forms of statements, if the permission specified in the statement does not have the corresponding authorization option, the statement will issue a warning.
 
 ## Syntax<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s5eb0513470714ccbbd425944c1d73c8e"></a>
 
--   Revoke the permission on a specified table or view.
+- Revoke the permission on a specified table or view.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -26,7 +26,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified field in a table.
+- Revoke the permission on a specified field in a table.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -37,7 +37,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified sequence. The  **LARGE**  field is optional. The recycling statement does not distinguish whether the sequence is LARGE.
+- Revoke the permission on a specified sequence. The  **LARGE**  field is optional. The recycling statement does not distinguish whether the sequence is LARGE.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -49,7 +49,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified database.
+- Revoke the permission on a specified database.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -60,7 +60,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified domain.
+- Revoke the permission on a specified domain.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -70,7 +70,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the specified CMK permission.
+- Revoke the specified CMK permission.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -83,7 +83,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
--   Revoke the specified CEK permission.
+- Revoke the specified CEK permission.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -96,7 +96,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but encrypted database-related functions are unavailable.
 
--   Revoke the permission on a specified directory.
+- Revoke the permission on a specified directory.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -106,7 +106,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified external data source.
+- Revoke the permission on a specified external data source.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -116,7 +116,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified external server.
+- Revoke the permission on a specified external server.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -126,7 +126,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified function.
+- Revoke the permission on a specified function.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -137,7 +137,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified stored procedure.
+- Revoke the permission on a specified stored procedure.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -148,7 +148,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified procedural language.
+- Revoke the permission on a specified procedural language.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -158,7 +158,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified large object.
+- Revoke the permission on a specified large object.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -168,7 +168,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified schema.
+- Revoke the permission on a specified schema.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -178,7 +178,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified tablespace.
+- Revoke the permission on a specified tablespace.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -188,7 +188,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a specified type.
+- Revoke the permission on a specified type.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -198,7 +198,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the permission on a data source object.
+- Revoke the permission on a data source object.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -211,7 +211,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this syntax, but the SQL on Anywhere capabilities are unavailable.
 
--   Revoke the permission on a package object.
+- Revoke the permission on a package object.
 
     ```
     REVOKE [ GRANT OPTION FOR ]
@@ -221,7 +221,7 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
        [ CASCADE | RESTRICT ];
     ```
 
--   Revoke permissions from a role.
+- Revoke permissions from a role.
 
     ```
     REVOKE [ ADMIN OPTION FOR ]
@@ -229,14 +229,13 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
         [ CASCADE | RESTRICT ];
     ```
 
--   Revoke the sysadmin permission from a role.
+- Revoke the sysadmin permission from a role.
 
     ```
     REVOKE ALL { PRIVILEGES | PRIVILEGE } FROM role_name;
     ```
 
-
--   Revoke the ANY permissions.
+- Revoke the ANY permissions.
 
     ```
     REVOKE [ ADMIN OPTION FOR ]
@@ -248,7 +247,6 @@ If a non-owner user of an object attempts to  **REVOKE**  permission on the obje
     } [, ...]
       FROM [ GROUP ] role_name [, ...];
     ```
-
 
 ## Parameter Description<a name="en-us_topic_0283137669_en-us_topic_0237122179_en-us_topic_0059779274_s54fe58f3f55f4965a6b9370f9edebfdf"></a>
 

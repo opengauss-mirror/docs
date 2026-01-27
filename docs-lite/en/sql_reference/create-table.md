@@ -6,18 +6,18 @@
 
 ## Precautions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sb04dbf08cbd848649163edbff21254a1"></a>
 
--   For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
--   Column-store tables do not support the array.
--   Column-store tables do not support column generation.
--   Column-store tables cannot be created as global temporary tables.
--   It is recommended that the number of column-store tables do not exceed 1000.
--   If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
--   Only  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIAMRY KEY**  can be used as the table-level constraint of column-store tables. Table-level foreign key constraints are not supported.
--   Only the  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**  can be used as column-store table constraints.
--   Whether column-store tables support a delta table is specified by the  enable\_delta\_store parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
--   When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
--   The maximum number of columns on each table is 1600, which depends on the column type. The total size of all columns cannot exceed 8192 bytes, except for the columns of variable data types, such as text, varchar, and char.
--   A user granted with the  **CREATE ANY TABLE**  permission can create tables in the public and user schemas. To create a table that contains serial columns, you must also grant the  **CREATE ANY SEQUENCE**  permission to create sequences.
+- For details about the data types supported by column-store tables, see  [Data Types Supported by Column-store Tables](data-types-supported-by-column-store-tables.md).
+- Column-store tables do not support the array.
+- Column-store tables do not support column generation.
+- Column-store tables cannot be created as global temporary tables.
+- It is recommended that the number of column-store tables do not exceed 1000.
+- If an error occurs during table creation, after it is fixed, the system may fail to delete the empty disk files created before the last automatic clearance. This problem seldom occurs and does not affect system running of the database.
+- Only  **PARTIAL CLUSTER KEY**,  **UNIQUE**, and  **PRIAMRY KEY**  can be used as the table-level constraint of column-store tables. Table-level foreign key constraints are not supported.
+- Only the  **NULL**,  **NOT NULL**,  **DEFAULT**  constant values,  **UNIQUE**, and  **PRIMARY KEY**  can be used as column-store table constraints.
+- Whether column-store tables support a delta table is specified by the  enable\_delta\_store parameter. The threshold for storing data into a delta table is specified by the  **deltarow\_threshold**  parameter.
+- When JDBC is used, the  **DEFAULT**  value can be set through  **PrepareStatement**.
+- The maximum number of columns on each table is 1600, which depends on the column type. The total size of all columns cannot exceed 8192 bytes, except for the columns of variable data types, such as text, varchar, and char.
+- A user granted with the  **CREATE ANY TABLE**  permission can create tables in the public and user schemas. To create a table that contains serial columns, you must also grant the  **CREATE ANY SEQUENCE**  permission to create sequences.
 
 ## Syntax<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_sc7a49d08f8ac43189f0e7b1c74f877eb"></a>
 
@@ -37,7 +37,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ];
 ```
 
--   **column\_constraint**  is as follows:
+- **column\_constraint**  is as follows:
 
     ```
     [ CONSTRAINT constraint_name ]
@@ -56,14 +56,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ]
     ```
 
-
--   **compress\_mode**  of a column is as follows:
+- **compress\_mode**  of a column is as follows:
 
     ```
     { DELTA | PREFIX | DICTIONARY | NUMSTR | NOCOMPRESS }
     ```
 
--   **table\_constraint**  is as follows:
+- **table\_constraint**  is as follows:
 
     ```
     [ CONSTRAINT [ constraint_name ] ]
@@ -77,24 +76,22 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     [ COMMENT {=| } 'text' ]
     ```
 
-
--   **like\_option**  is as follows:
+- **like\_option**  is as follows:
 
     ```
     { INCLUDING | EXCLUDING } { DEFAULTS | GENERATED | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | PARTITION | RELOPTIONS | ALL }
     ```
 
--   **index\_parameters**  is as follows:
+- **index\_parameters**  is as follows:
 
     ```
     [ WITH ( {storage_parameter = value} [, ... ] ) ]
     [ USING INDEX TABLESPACE tablespace_name ]
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s99cf2ac11c79436c93385e4efd7c4428"></a>
 
--   **UNLOGGED**
+- **UNLOGGED**
 
     If this keyword is specified, the created table is an unlogged table. Data written to unlogged tables is not written to the WALs, which makes them considerably faster than ordinary tables. However, an unlogged table is automatically truncated after a crash or unclean shutdown, incurring data loss risks. Contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are not automatically logged as well.
 
@@ -102,11 +99,11 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
 
--   **GLOBAL | LOCAL**
+- **GLOBAL | LOCAL**
 
     When creating a temporary table, you can specify the  **GLOBAL**  or  **LOCAL**  keyword before  **TEMP**  or  **TEMPORARY**. If the keyword  **GLOBAL**  is specified, openGauss creates a global temporary table. Otherwise, openGauss creates a local temporary table.
 
--   **TEMPORARY | TEMP**
+- **TEMPORARY | TEMP**
 
     If  **TEMP**  or  **TEMPORARY**  is specified, the created table is a temporary table. Temporary tables are classified into global temporary tables and local temporary tables. If the keyword  **GLOBAL**  is specified when a temporary table is created, the table is a global temporary table. Otherwise, the table is a local temporary table.
 
@@ -115,33 +112,32 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     A local temporary table is automatically dropped at the end of the current session. Therefore, you can create and use temporary tables in the current session as long as the connected database node in the session is normal. Temporary tables are created only in the current session. If a DDL statement involves operations on temporary tables, a DDL error will be generated. Therefore, you are not advised to perform operations on temporary tables in DDL statements.  **TEMP**  is equivalent to  **TEMPORARY**.
 
     >[!TIP]NOTICE 
-    >-   Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**. Users should not delete schemas starting with  **pg\_temp**  or  **pg\_toast\_temp**.
-    >-   If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
-    >-   If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**  \(except the  **ALTER INDEX index\_name REBUILD**  command\).
-    >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
-    >-   You can set the GUC parameter  **max\_active\_global\_temporary\_table**  to determine whether to enable the global temporary table function. If  **max\_active\_global\_temporary\_table**  is set to  **0**, the global temporary table function is disabled.
-    >-   A temporary table is visible only to the current session. Therefore, it cannot be used together with  **\\parallel on**.
-    >-   The temporary table does not support primary/standby switchover.
-    >-   The global temporary table does not respond to automatic clearance. In persistent connection scenarios, you are advised to use the global temporary table in the ON COMMIT DELETE ROWS clause or periodically and manually execute the VACUUM statement. Otherwise, Clogs may not be reclaimed.
+    >- Local temporary tables are visible to the current session through the schema starting with  **pg\_temp**. Users should not delete schemas starting with  **pg\_temp**  or  **pg\_toast\_temp**.
+    >- If  **TEMPORARY**  or  **TEMP**  is not specified when you create a table but its schema is set to that starting with  **pg\_temp\_**  in the current session, the table will be created as a temporary table.
+    >- If global temporary tables and indexes are being used by other sessions, do not perform  **ALTER**  or  **DROP**  \(except the  **ALTER INDEX index\_name REBUILD**  command\).
+    >- The DDL of a global temporary table affects only the user data and indexes of the current session. For example,  **TRUNCATE**,  **REINDEX**, and  **ANALYZE**  are valid only for the current session.
+    >- You can set the GUC parameter  **max\_active\_global\_temporary\_table**  to determine whether to enable the global temporary table function. If  **max\_active\_global\_temporary\_table**  is set to  **0**, the global temporary table function is disabled.
+    >- A temporary table is visible only to the current session. Therefore, it cannot be used together with  **\\parallel on**.
+    >- The temporary table does not support primary/standby switchover.
+    >- The global temporary table does not respond to automatic clearance. In persistent connection scenarios, you are advised to use the global temporary table in the ON COMMIT DELETE ROWS clause or periodically and manually execute the VACUUM statement. Otherwise, Clogs may not be reclaimed.
 
-
--   **IF NOT EXISTS**
+- **IF NOT EXISTS**
 
     Sends a notice, but does not throw an error, if a table with the same name exists.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table to be created.
 
     >[!TIP]NOTICE 
     >
-    >-   Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_ **or  **matviewmap\_**. Otherwise, some functions of the table are affected.
+    >- Some processing logic of materialized views determines whether a table is the log table of a materialized view or a table associated with a materialized view based on the table name prefix. Therefore, do not create a table whose name prefix is  **mlog\_**or  **matviewmap\_**. Otherwise, some functions of the table are affected.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column to be created in the new table.
 
--   **constraint\_name**
+- **constraint\_name**
 
     Specifies the name of the constraint specified during table creation.
 
@@ -149,26 +145,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >constraint\_name is optional in B-compatible mode (**sql\_compatibility = 'B'**). For other modes, constraint\_name must be added.
 
--   **index\_name**
+- **index\_name**
 
     Specifies an index name.
 
     >[!TIP]NOTICE
-    >-   index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
-    >-   For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
+    >- index\_name is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- For foreign key constraints, if constraint\_name and index\_name are specified at the same time, constraint\_name is used as the index name.
+    >- For a unique key constraint, if both constraint\_name and index\_name are specified, index\_name is used as the index name.
 
--   **USING method**
+- **USING method**
 
     Specifies the name of the index method to be used.
 
     For details about the value range, see [USING method](create-index.md).
 
     >[!TIP]NOTICE
-    >-   The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
-    >-   In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
+    >- The USING method is supported only in B-compatible databases (that is, sql\_compatibility = 'B').
+    >- In B-compatible mode, if USING method is not specified, the default index method is btree for ASTORE or ubtree for USTORE.
 
--   **ASC | DESC**
+- **ASC | DESC**
 
     **ASC** specifies an ascending (default) sort order. **DESC** specifies a descending sort order.
 
@@ -176,27 +172,27 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >ASC|DESC is supported only in B-compatible databases (sql\_compatibility = 'B').
 
--   **expression**
+- **expression**
 
      >[!TIP]NOTICE
      >
      >Expression indexes are supported only in B-compatible databases (that is, sql\_compatibility = 'B').
 
--   **data\_type**
+- **data\_type**
 
     Specifies the data type of the column.
 
--   **compress\_mode**
+- **compress\_mode**
 
     Specifies whether to compress a table column. The option specifies the algorithm preferentially used by table columns. Row-store tables do not support compression.
 
     Value range:  **DELTA**,  **PREFIX**,  **DICTIONARY**,  **NUMSTR**, and  **NOCOMPRESS**
 
--   **COLLATE collation**
+- **COLLATE collation**
 
     Assigns a collation to the column \(which must be of a collatable data type\). If no collation is specified, the default collation is used. You can run the  **select \* from pg\_collation;**  command to query collation rules from the  **pg\_collation**  system catalog. The default collation rule is the row starting with  **default**  in the query result.
 
--   **LIKE source\_table \[ like\_option ... \]**
+- **LIKE source\_table \[ like\_option ... \]**
 
     Specifies a table from which the new table automatically copies all column names, their data types, and their not-null constraints.
 
@@ -204,21 +200,21 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Columns and constraints copied by  **LIKE**  are not merged with the same name. If the same name is specified explicitly or in another  **LIKE**  clause, an error is reported.
 
-    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
-    -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
-    -   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
-    -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
-    -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
-    -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table. If the source table has an index, you can use the  **INCLUDING PARTITION INCLUDING INDEXES**  syntax. If only  **INCLUDING INDEXES**  is used for a partitioned table, the target table will be defined as an ordinary table, but the index is a partitioned index. In this case, an error will be reported because ordinary tables do not support partitioned indexes.
-    -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
-    -   **INCLUDING ALL** contains the meaning of **INCLUDING DEFAULTS**, **INCLUDING CONSTRAINTS**, **INCLUDING INDEXES**, **INCLUDING STORAGE**, **INCLUDING COMMENTS**,**INCLUDING PARTITION**, and **INCLUDING RELOPTIONS**.
+    - The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
+    - The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
+    - Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
+    - **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
+    - If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
+    - If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table. If the source table has an index, you can use the  **INCLUDING PARTITION INCLUDING INDEXES**  syntax. If only  **INCLUDING INDEXES**  is used for a partitioned table, the target table will be defined as an ordinary table, but the index is a partitioned index. In this case, an error will be reported because ordinary tables do not support partitioned indexes.
+    - If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
+    - **INCLUDING ALL** contains the meaning of **INCLUDING DEFAULTS**, **INCLUDING CONSTRAINTS**, **INCLUDING INDEXES**, **INCLUDING STORAGE**, **INCLUDING COMMENTS**,**INCLUDING PARTITION**, and **INCLUDING RELOPTIONS**.
 
     >[!TIP]NOTICE 
-    >-   If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**, or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
-    >-   You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
-    >-   **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
+    >- If the source table contains a sequence with the  **SERIAL**,  **BIGSERIAL**,  **SMALLSERIAL**, or  **LARGESERIAL**  data type, or a column in the source table is a sequence by default and the sequence is created for this table by using  **CREATE SEQUENCE...** **OWNED BY**, these sequences will not be copied to the new table, and another sequence specific to the new table will be created. This is different from earlier versions. To share a sequence between the source table and new table, create a shared sequence \(do not use  **OWNED BY**\) and set a column in the source table to this sequence.
+    >- You are not advised to set a column in the source table to the sequence specific to another table especially when the table is distributed in specific node groups, because doing so may result in  **CREATE TABLE ... LIKE**  execution failures. In addition, doing so may cause the sequence to become invalid in the source sequence because the sequence will also be deleted from the source table when it is deleted from the table that the sequence is specific to. To share a sequence among multiple tables, you are advised to create a shared sequence for them.
+    >- **EXCLUDING**  of a partitioned table must be used together with  **INCLUDING ALL**, for example,  **INCLUDING ALL EXCLUDING DEFAULTS**, except for  **DEFAULTS**  of the source partitioned table.
 
--   **AUTO\_INCREMENT \[ = \] value**
+- **AUTO\_INCREMENT \[ = \] value**
 
     This clause specifies an initial value for an auto-increment column. The value must be a positive integer and cannot exceed 2<sup>127</sup>-1.
 
@@ -226,33 +222,33 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >This clause takes effect only when **sql\_compatibility** is set to **B**.
 
--   **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
+- **WITH \( \{ storage\_parameter = value \} \[, ... \] \)**
 
     Specifies an optional storage parameter for a table or an index.
 
     >[!NOTE]NOTE 
     >
-    >-   When using **Numeric** of any precision to define a column, specifies precision **p** and scale **s**.When precision and scale are not specified, the input will be displayed.
+    >- When using **Numeric** of any precision to define a column, specifies precision **p** and scale **s**.When precision and scale are not specified, the input will be displayed.
 
     The description of parameters is as follows:
 
-    -   FILLFACTOR
+    - FILLFACTOR
 
         The fill factor of a table is a percentage from 10 to 100.**100** \(complete filling\) is the default value.When a smaller fill factor is specified, **INSERT** operations pack table pages only to the indicated percentage. The remaining space on each page is reserved for updating rows on that page. This gives **UPDATE** a chance to place the updated copy of a row on the same page, which is more efficient than placing it on a different page. For a table whose entries are never updated, setting the fill factor to **100** \(complete filling\) is the best choice, but in heavily updated tables a smaller fill factor would be appropriate. The parameter has no meaning for column-store tables.
 
         Value range: 10–100
 
-    -   ORIENTATION
+    - ORIENTATION
 
         Specifies the storage mode \(row-store or column-store\) of table data. This parameter cannot be modified once it is set.
 
         Value range:
 
-        -   **ROW**  indicates that table data is stored in rows.
+        - **ROW**  indicates that table data is stored in rows.
 
             **ROW**  applies to OLTP service and scenarios with a large number of point queries or addition/deletion operations.
 
-        -   **COLUMN**  indicates that the data is stored in columns.
+        - **COLUMN**  indicates that the data is stored in columns.
 
             **COLUMN**  applies to the data warehouse service, which has a large amount of aggregation computing, and involves a few column operations.
 
@@ -260,26 +256,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         If an ordinary tablespace is specified, the default is  **ROW**.
 
-    -   STORAGE\_TYPE
+    - STORAGE\_TYPE
 
         Specifies the storage engine type. This parameter cannot be modified once it is set.
 
         Value range:
 
-        -   **USTORE**  indicates that tables support the Inplace-Update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
-        -   **ASTORE**  indicates that tables support the Append-Only storage engine.
+        - **USTORE**  indicates that tables support the Inplace-Update storage engine. Note that the  **track\_counts**  and  **track\_activities**  parameters must be enabled when the Ustore table is used. Otherwise, space expansion may occur.
+        - **ASTORE**  indicates that tables support the Append-Only storage engine.
 
         Default value:
 
         If no table is specified, data is stored in Append-Only mode by default.
 
-    -   INIT\_TD
+    - INIT\_TD
 
         Specifies the number of TDs to be initialized when an Ustore table is created. This parameter is valid only when an Ustore table is created.
 
         Value range: 2 to 128. The default value is  **4**.
 
-    -   COMPRESSION
+    - COMPRESSION
 
         Specifies the compression level of table data. It determines the compression ratio and time. Generally, the higher the level of compression, the higher the ratio, the longer the time; and the lower the level of compression, the lower the ratio, the shorter the time. The actual compression ratio depends on the distribution mode of table data loaded. By default, **COMPRESSION=NO** is added to row-store tables.
 
@@ -287,7 +283,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         The valid values for column-store tables are  **YES**,  **NO**,  **LOW**,  **MIDDLE**, and  **HIGH**, and the default value is  **LOW**.
 
-    -   COMPRESSLEVEL
+    - COMPRESSLEVEL
 
         Specifies the table data compression ratio and duration at the same compression level. This divides a compression level into sublevels, providing more choices for compression ratio and duration. As the value becomes greater, the compression ratio becomes higher and duration longer at the same compression level.
 
@@ -335,25 +331,25 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         Value range: Boolean value. By default, this function is disabled.
 
-    -   MAX\_BATCHROW
+    - MAX\_BATCHROW
 
         Specifies the maximum number of rows in a storage unit during data loading. The parameter is only valid for column-store tables.
 
         Value range: 10000 to 60000. The default value is  **60000**.
 
-    -   PARTIAL\_CLUSTER\_ROWS
+    - PARTIAL\_CLUSTER\_ROWS
 
         Specifies the number of records to be partially clustered for storage during data loading. The parameter is only valid for column-store tables.
 
         Value range: greater than or equal to  **MAX\_BATCHROW**. You are advised to set this parameter to an integer multiple of  **MAX\_BATCHROW**.
 
-    -   DELTAROW\_THRESHOLD
+    - DELTAROW\_THRESHOLD
 
         Specifies the upper limit of to-be-imported rows for triggering the data import to a delta table when data of a column-store table is to be imported. This parameter takes effect only if  **enable\_delta\_store**  is set to  **on**. The parameter is only valid for column-store tables.
 
         Value range: 0 to 9999. The default value is  **100**.
 
-    -   segment
+    - segment
 
         The data is stored in segment-page mode. This parameter supports only row-store tables. Column-store tables, temporary tables, and unlogged tables are not supported. The ustore storage engine is not supported.
 
@@ -361,7 +357,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         Default value:  **off**
 
-    -   dek\_cipher
+    - dek\_cipher
 
         Ciphertext of the key used for transparent data encryption. When  **enable\_tde**  is enabled, the system automatically applies for ciphertext creation. You cannot specify the ciphertext. The key rotation function can be used to update the key.
 
@@ -369,7 +365,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         If encryption is disabled, the default value is null by default.
 
-    -   hasuids
+    - hasuids
 
         If this parameter is set to  **on**, a unique table-level ID is allocated to a tuple when the tuple is updated.
 
@@ -377,49 +373,48 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
         Default value:  **off**
 
-
--   **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
+- **ON COMMIT \{ PRESERVE ROWS | DELETE ROWS | DROP \}**
 
     **ON COMMIT**  determines what to do when you commit a temporary table creation operation. The three options are as follows. Currently, only  **PRESERVE ROWS**  and  **DELETE ROWS**  can be used.
 
-    -   **PRESERVE ROWS**  \(default\): No special action is taken at the ends of transactions. The temporary table and its table data are unchanged.
-    -   **DELETE ROWS**: All rows in the temporary table will be deleted at the end of each transaction block.
-    -   **DROP**: The temporary table will be dropped at the end of the current transaction block. Only local temporary tables can be dropped. Global temporary tables cannot be dropped.
+    - **PRESERVE ROWS**  \(default\): No special action is taken at the ends of transactions. The temporary table and its table data are unchanged.
+    - **DELETE ROWS**: All rows in the temporary table will be deleted at the end of each transaction block.
+    - **DROP**: The temporary table will be dropped at the end of the current transaction block. Only local temporary tables can be dropped. Global temporary tables cannot be dropped.
 
--   **COMPRESS | NOCOMPRESS**
+- **COMPRESS | NOCOMPRESS**
 
     If you specify  **COMPRESS**  in the  **CREATE TABLE**  statement, the compression feature is triggered in case of a bulk  **INSERT**  operation. If this feature is enabled, a scan is performed for all tuple data within the page to generate a dictionary and then the tuple data is compressed and stored. If  **NOCOMPRESS**  is specified, the table is not compressed. Row-store tables do not support compression.
 
     Default value:  **NOCOMPRESS**, that is, tuple data is not compressed before storage.
 
--   **TABLESPACE tablespace\_name**
+- **TABLESPACE tablespace\_name**
 
     Specifies the tablespace where the new table is created. If not specified, the default tablespace is used.
 
--   **COMMNET {=| } text**
+- **COMMNET {=| } text**
     
     Comments a new table. If this parameter is not specified, no comment is created.
 
--   **CONSTRAINT constraint\_name**
+- **CONSTRAINT constraint\_name**
 
     Specifies the name of a column or table constraint. The optional constraint clauses specify constraints that new or updated rows must satisfy for an insert or update operation to succeed.
 
     There are two ways to define constraints:
 
-    -   A column constraint is defined as part of a column definition, and it is bound to a particular column.
-    -   A table constraint is not bound to a particular column but can apply to more than one column.
+    - A column constraint is defined as part of a column definition, and it is bound to a particular column.
+    - A table constraint is not bound to a particular column but can apply to more than one column.
 
--   **NOT NULL**
+- **NOT NULL**
 
     The column is not allowed to contain null values.
 
--   **NULL**
+- **NULL**
 
     The column is allowed to contain null values. This is the default setting.
 
     This clause is only provided for compatibility with non-standard SQL databases. It is not recommended.
 
--   **CHECK \( expression \)**
+- **CHECK \( expression \)**
 
     Specifies an expression producing a Boolean result where the insert or update operation of new or updated rows can succeed only when the expression result is  **TRUE**  or  **UNKNOWN**; otherwise, an error is thrown and the database is not altered.
 
@@ -429,13 +424,13 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >**<\>NULL**  and  **!=NULL**  are invalid in an expression. Change them to  **IS NOT NULL**.
 
--   **DEFAULT default\_expr**
+- **DEFAULT default\_expr**
 
     Assigns a default data value for a column. The value can be any variable-free expressions. \(Subqueries and cross-references to other columns in the current table are not allowed.\) The data type of the default expression must match the data type of the column.
 
     The default expression will be used in any insert operation that does not specify a value for the column. If there is no default value for a column, then the default value is null.
 
--    **AUTO\_INCREMENT**
+- **AUTO\_INCREMENT**
 
      Specifies an auto-increment column.
 
@@ -446,19 +441,19 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
      The initial auto-increment value is set by the AUTO\_INCREMENT \[ = \] value clause. If it is not set, the default value **1** is used.
 
      >[!NOTE]NOTE
-     >-   The auto-increment column can be specified only when **sql\_compatibility** is set to **B**.
-     >-   The data type of the auto-increment column can only be integer, 4-byte or 8-byte floating point, or Boolean.
-     >-   Each table can have only one auto-increment column.
-     >-   The auto-increment column must be the first column of a primary key constraint or unique constraint.
-     >-   The DEFAULT value cannot be specified for an auto-increment column.
-      >-   The expression of the CHECK constraint cannot contain auto-increment columns.
-     >-   You can specify that the auto-increment column can be NULL. If it is not specified, the auto-increment column contains the NOT NULL constraint by default.
-     >-   When a table containing an auto-increment column is created, a sequence that depends on the column is created as an auto-increment counter. You are not allowed to modify or delete the sequence using sequence-related functions. You can view the value of the sequence.
-     >-   Sequences are not created for auto-increment columns in local temporary tables.
-     >-   Auto-increment columns do not support column store.
-     >-   The auto-increment and refresh operations of the auto-increment counter are not rolled back.
+     >- The auto-increment column can be specified only when **sql\_compatibility** is set to **B**.
+     >- The data type of the auto-increment column can only be integer, 4-byte or 8-byte floating point, or Boolean.
+     >- Each table can have only one auto-increment column.
+     >- The auto-increment column must be the first column of a primary key constraint or unique constraint.
+     >- The DEFAULT value cannot be specified for an auto-increment column.
+      >- The expression of the CHECK constraint cannot contain auto-increment columns.
+     >- You can specify that the auto-increment column can be NULL. If it is not specified, the auto-increment column contains the NOT NULL constraint by default.
+     >- When a table containing an auto-increment column is created, a sequence that depends on the column is created as an auto-increment counter. You are not allowed to modify or delete the sequence using sequence-related functions. You can view the value of the sequence.
+     >- Sequences are not created for auto-increment columns in local temporary tables.
+     >- Auto-increment columns do not support column store.
+     >- The auto-increment and refresh operations of the auto-increment counter are not rolled back.
 
--   **UNIQUE index\_parameters**
+- **UNIQUE index\_parameters**
 
     **UNIQUE \( column\_name \[, ... \] \) index\_parameters**
 
@@ -466,7 +461,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     For the purpose of a unique constraint, null is not considered equal.
 
--   **PRIMARY KEY index\_parameters**
+- **PRIMARY KEY index\_parameters**
 
     **PRIMARY KEY \( column\_name \[, ... \] \) index\_parameters**
 
@@ -474,7 +469,7 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     Only one primary key can be specified for a table.
 
--   **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
+- **REFERENCES reftable \[ \( refcolum \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(column constraint\)**
 
     **FOREIGN KEY \( column\_name \[, ... \] \) REFERENCES reftable \[ \( refcolumn \[, ... \] \) \] \[ MATCH matchtype \] \[ ON DELETE action \] \[ ON UPDATE action \] \(table constraint\)**
 
@@ -482,26 +477,26 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
 
     There are three types of matching between a reference column and a referenced column:
 
-    -   **MATCH FULL**: A column with multiple foreign keys cannot be  **NULL**  unless all foreign key columns are  **NULL**.
-    -   **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
-    -   **MATCH PARTIAL**: This option is not supported currently.
+    - **MATCH FULL**: A column with multiple foreign keys cannot be  **NULL**  unless all foreign key columns are  **NULL**.
+    - **MATCH SIMPLE**  \(default\): Any unexpected foreign key column can be  **NULL**.
+    - **MATCH PARTIAL**: This option is not supported currently.
 
     In addition, when certain operations are performed on the data in the referenced table, the operations are performed on the corresponding columns in the new table.  **ON DELETE**: specifies the operations to be executed after a referenced row in the referenced table is deleted.  **ON UPDATE**: specifies the operation to be performed when the referenced column data in the referenced table is updated. Possible responses to the  **ON DELETE**  and  **ON UPDATE**  clauses are as follows:
 
-    -   **NO ACTION**  \(default\): An error indicating that the foreign key constraint is violated is reported. If the constraint is deferrable and there are still any referenced columns, this error will occur when the constraint is checked.
-    -   **RESTRICT**: An error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the constraint is not deferrable.
-    -   **CASCADE**: deletes any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.
-    -   **SET NULL**: sets the referencing column\(s\) to  **NULL**.
-    -   **SET DEFAULT**: sets the referencing column\(s\) to their default values.
+    - **NO ACTION**  \(default\): An error indicating that the foreign key constraint is violated is reported. If the constraint is deferrable and there are still any referenced columns, this error will occur when the constraint is checked.
+    - **RESTRICT**: An error indicating that the foreign key constraint is violated is created. It is the same as  **NO ACTION**  except that the constraint is not deferrable.
+    - **CASCADE**: deletes any rows referencing the deleted row, or update the value of the referencing column to the new value of the referenced column, respectively.
+    - **SET NULL**: sets the referencing column\(s\) to  **NULL**.
+    - **SET DEFAULT**: sets the referencing column\(s\) to their default values.
 
--   **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
+- **ENABLE [VALIDATE | NOVALIDATE] | DISABLE [VALIDATE | NOVALIDATE]**
 
-	-   ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
-    -   ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
-    -   DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
-    -   DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
+    - ENABLE( VALIDATE)(default): Enable constraints, create indexes, and enforce constraints on both existing data and newly added data.
+    - ENABLE NOVALIDATE: Enable constraints and create indexes. For CHECK constraints, the constraints are only enforced for newly added data, regardless of the existing data in the table. For UNIQUE and PRIMARY KEY, indexes need to be established, so the constraints will be enforced for the existing data.
+    - DISABLE( NOVALIDATE)(default): Disable constraints, delete indexes, and operations such as modifying the data of the constraint columns can be performed.
+    - DISABLE VALIDATE: Disable constraints and delete indexes. Insertion, update and deletion operations on the table cannot be performed.
 
--   **DEFERRABLE | NOT DEFERRABLE**
+- **DEFERRABLE | NOT DEFERRABLE**
 
     Controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction using the  **SET CONSTRAINTS**  command.  **NOT DEFERRABLE**  is the default value. Currently, only UNIQUE constraints, primary key constraints, and foreign key constraints accept this clause. All the other constraints are not deferrable.
 
@@ -509,31 +504,30 @@ CREATE [ [ GLOBAL | LOCAL ] [ TEMPORARY | TEMP ] | UNLOGGED ] TABLE [ IF NOT EXI
     >
     >Ustore tables do not support the keywords  **DEFERRABLE**  and  **INITIALLY DEFERRED**.
 
--   **COMMENT text**
+- **COMMENT text**
 
     Comments.
 
--   **PARTIAL CLUSTER KEY**
+- **PARTIAL CLUSTER KEY**
 
     Specifies a partial cluster key for storage. When importing data to a column-store table, you can perform local data sorting by specified columns \(single or multiple\).
 
--   **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
+- **INITIALLY IMMEDIATE | INITIALLY DEFERRED**
 
     If a constraint is deferrable, this clause specifies the default time to check the constraint.
 
-    -   If the constraint is  **INITIALLY IMMEDIATE**  \(default value\), it is checked after each statement.
-    -   If the constraint is  **INITIALLY DEFERRED**, it is checked only at the end of the transaction.
+    - If the constraint is  **INITIALLY IMMEDIATE**  \(default value\), it is checked after each statement.
+    - If the constraint is  **INITIALLY DEFERRED**, it is checked only at the end of the transaction.
 
     The constraint check time can be altered using the  **SET CONSTRAINTS**  statement.
 
--   **USING INDEX TABLESPACE tablespace\_name**
+- **USING INDEX TABLESPACE tablespace\_name**
 
     Allows selection of the tablespace in which the index associated with a  **UNIQUE**  or  **PRIMARY KEY**  constraint will be created. If not specified,  **default\_tablespace**  is consulted, or the default tablespace in the database if  **default\_tablespace**  is empty.
 
--   **ENCRYPTION\_TYPE = encryption\_type\_value**
+- **ENCRYPTION\_TYPE = encryption\_type\_value**
 
     For the encryption type in the ENCRYPTED WITH constraint, the value of  **encryption\_type\_value**  is  **DETERMINISTIC**  or  **RANDOMIZED**.
-
 
 ## Examples<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_s86758dcf05d442d2a9ebd272e76ed1b8"></a>
 
@@ -1124,47 +1118,47 @@ openGauss=# DROP SCHEMA IF EXISTS joe CASCADE;
 
 ## Suggestions<a name="en-us_topic_0283137629_en-us_topic_0237122117_en-us_topic_0059778169_section29320865113651"></a>
 
--   UNLOGGED
-    -   The unlogged table and its indexes do not use the WAL log mechanism during data writing. Their write speed is much higher than that of ordinary tables. Therefore, they can be used for storing intermediate result sets of complex queries to improve query performance.
-    -   The unlogged table has no primary/standby mechanism. In case of system faults or abnormal breakpoints, data loss may occur. Therefore, the unlogged table cannot be used to store basic data.
+- UNLOGGED
+    - The unlogged table and its indexes do not use the WAL log mechanism during data writing. Their write speed is much higher than that of ordinary tables. Therefore, they can be used for storing intermediate result sets of complex queries to improve query performance.
+    - The unlogged table has no primary/standby mechanism. In case of system faults or abnormal breakpoints, data loss may occur. Therefore, the unlogged table cannot be used to store basic data.
 
--   TEMPORARY | TEMP
-    -   A temporary table is automatically dropped at the end of a session.
+- TEMPORARY | TEMP
+    - A temporary table is automatically dropped at the end of a session.
 
--   LIKE
-    -   The new table automatically inherits all column names, data types, and not-null constraints from this table. The new table is irrelevant to the original table after the creation.
+- LIKE
+    - The new table automatically inherits all column names, data types, and not-null constraints from this table. The new table is irrelevant to the original table after the creation.
 
--   LIKE INCLUDING DEFAULTS
-    -   The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
+- LIKE INCLUDING DEFAULTS
+    - The default expressions are copied from the original table to the new table only if  **INCLUDING DEFAULTS**  is specified. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having default values  **NULL**.
 
--   LIKE INCLUDING CONSTRAINTS
-    -   The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
+- LIKE INCLUDING CONSTRAINTS
+    - The  **CHECK**  constraints are copied from the original table to the new table only when  **INCLUDING CONSTRAINTS**  is specified. Other types of constraints are never copied to the new table. Not-null constraints are always copied to the new table. These rules also apply to column constraints and table constraints.
 
--   LIKE INCLUDING INDEXES
-    -   Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
+- LIKE INCLUDING INDEXES
+    - Any indexes on the original table will not be created on the new table, unless the  **INCLUDING INDEXES**  clause is specified.
 
--   LIKE INCLUDING STORAGE
-    -   **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
+- LIKE INCLUDING STORAGE
+    - **STORAGE**  settings for the copied column definitions are copied only if  **INCLUDING STORAGE**  is specified. The default behavior is to exclude  **STORAGE**  settings.
 
--   LIKE INCLUDING COMMENTS
-    -   If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
+- LIKE INCLUDING COMMENTS
+    - If  **INCLUDING COMMENTS**  is specified, comments for the copied columns, constraints, and indexes are copied. The default behavior is to exclude comments.
 
--   LIKE INCLUDING PARTITION
+- LIKE INCLUDING PARTITION
 
-    -   If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table.
+    - If  **INCLUDING PARTITION**  is specified, the partition definitions of the source table are copied to the new table, and the new table no longer uses the  **PARTITION BY**  clause. The default behavior is to exclude partition definition of the original table.
 
     >[!TIP]NOTICE 
     >
     >List and hash partitioned tables do not support  **LIKE INCLUDING PARTITION**.
 
--   LIKE INCLUDING RELOPTIONS
-    -   If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
+- LIKE INCLUDING RELOPTIONS
+    - If  **INCLUDING RELOPTIONS**  is specified, the new table will copy the storage parameter \(that is,  **WITH**  clause\) of the source table. The default behavior is to exclude partition definition of the storage parameter of the original table.
 
--   LIKE INCLUDING ALL
-    -   **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
+- LIKE INCLUDING ALL
+    - **INCLUDING ALL**  contains the meaning of  **INCLUDING DEFAULTS**,  **INCLUDING CONSTRAINTS**,  **INCLUDING INDEXES**,  **INCLUDING STORAGE**,  **INCLUDING COMMENTS**,  **INCLUDING PARTITION**, and  **INCLUDING RELOPTIONS**.
 
--   ORIENTATION ROW
-    -   Creates a row-store table. Row-store applies to the OLTP service, which has many interactive transactions. An interaction involves many columns in the table. Using row-store can improve the efficiency.
+- ORIENTATION ROW
+    - Creates a row-store table. Row-store applies to the OLTP service, which has many interactive transactions. An interaction involves many columns in the table. Using row-store can improve the efficiency.
 
--   ORIENTATION COLUMN
-    -   Creates a column-store table. Column-store applies to the DWS, which has a large amount of aggregation computing, and involves a few column operations.
+- ORIENTATION COLUMN
+    - Creates a column-store table. Column-store applies to the DWS, which has a large amount of aggregation computing, and involves a few column operations.

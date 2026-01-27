@@ -177,4 +177,3 @@ GS\_WLM\_OPERATOR\_STATISTICS视图显示当前用户正在执行的作业的算
 </tr>
 </tbody>
 </table>
-

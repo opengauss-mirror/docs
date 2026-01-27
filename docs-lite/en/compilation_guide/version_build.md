@@ -4,8 +4,6 @@ A  **build/script/cmake\_package\_mini.sh**  script is provided for building ope
 
 This section describes how to build and package the openGauss Lite.
 
--   **[Preparations](preparations.md)**  
+- **[Preparations](preparations.md)**  
 
--   **[Building the Lite Installation Package](building_the_lite_installation_package.md)**  
-
-
+- **[Building the Lite Installation Package](building_the_lite_installation_package.md)**  

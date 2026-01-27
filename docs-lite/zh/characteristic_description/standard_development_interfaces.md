@@ -30,4 +30,3 @@
 
 >[!NOTE]说明
 >目前轻量版场景下，openGauss不提供ODBC接口。
-

@@ -1,6 +1,6 @@
 # Row-store Compression System Functions<a name="EN-US_TOPIC_0000001382371333"></a>
 
--   compress\_buffer\_stat\_info\(\)
+- compress\_buffer\_stat\_info\(\)
 
     Description: Queries the PCA buffer statistics.
 
@@ -58,7 +58,7 @@
     </tbody>
     </table>
 
--   compress\_ratio\_info\(file\_path text\)
+- compress\_ratio\_info\(file\_path text\)
 
     Description: Views the file compression rate.
 
@@ -143,7 +143,7 @@
     </tbody>
     </table>
 
--   compress\_statistic\_info\(file\_path text, step smallint\)
+- compress\_statistic\_info\(file\_path text, step smallint\)
 
     Description: Collects statistics on the dispersion of compressed files.
 
@@ -219,7 +219,7 @@
     </tbody>
     </table>
 
--   compress\_address\_header\(oid regclass, seg\_id bigint\)
+- compress\_address\_header\(oid regclass, seg\_id bigint\)
 
     Description: Views the management information on the file compression page.
 
@@ -304,7 +304,7 @@
     </tbody>
     </table>
 
--   compress\_address\_details\(oid regclass, seg\_id bigint\)
+- compress\_address\_details\(oid regclass, seg\_id bigint\)
 
     Description: Detailed information about the usage of page chunks.
 

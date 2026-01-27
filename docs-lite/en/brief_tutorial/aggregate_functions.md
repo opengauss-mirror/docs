@@ -1,6 +1,6 @@
 # Aggregate Functions<a name="EN-US_TOPIC_0000001255221837"></a>
 
--   sum\(expression\)
+- sum\(expression\)
 
     Description: Specifies the sum of expressions across all input values.
 
@@ -8,9 +8,9 @@
 
     Generally, it is the same as the argument data type. In the following cases, type conversion occurs:
 
-    -   **BIGINT**  for  **SMALLINT**  or  **INT**  arguments
-    -   **NUMBER**  for  **BIGINT**  arguments
-    -   **DOUBLE PRECISION**  for floating-point arguments
+    - **BIGINT**  for  **SMALLINT**  or  **INT**  arguments
+    - **NUMBER**  for  **BIGINT**  arguments
+    - **DOUBLE PRECISION**  for floating-point arguments
 
     Example:
 
@@ -22,7 +22,7 @@
     (1 row)
     ```
 
--   max\(expression\)
+- max\(expression\)
 
     Description: Specifies the maximum value of expressions across all input values.
 
@@ -40,7 +40,7 @@
     (1 row)
     ```
 
--   min\(expression\)
+- min\(expression\)
 
     Description: Specifies the minimum value of expressions across all input values.
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   avg\(expression\)
+- avg\(expression\)
 
     Description: Specifies the average \(arithmetic mean\) of all input values.
 
@@ -80,7 +80,7 @@
     (1 row)
     ```
 
--   count\(expression\)
+- count\(expression\)
 
     Description: Specifies the number of input rows for which the value of the expression is  **NULL**.
 
@@ -96,7 +96,7 @@
     (1 row)
     ```
 
--   count\(\*\)
+- count\(\*\)
 
     Description: Returns the number of input rows.
 
@@ -112,7 +112,7 @@
     (1 row)
     ```
 
--   delta
+- delta
 
     Description: Returns the difference between the current row and the previous row.
 
@@ -120,7 +120,7 @@
 
     Return type: numeric
 
--   mode\(\) within group \(order by value anyelement\)
+- mode\(\) within group \(order by value anyelement\)
 
     Description: Returns the value with the highest occurrence frequency in a column. If multiple values have the same frequency, the smallest value is returned. The sorting mode is the same as the default sorting mode of the column type.  **value**  is an input parameter and can be of any type.
 
@@ -140,5 +140,3 @@
      a
     (1 row)
     ```
-
-

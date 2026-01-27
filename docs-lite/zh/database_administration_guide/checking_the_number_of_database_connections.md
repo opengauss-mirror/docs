@@ -4,14 +4,14 @@
 
 当用户连接数达到上限后，无法建立新的连接。因此，当数据库管理员发现某用户无法连接到数据库时，需要查看是否连接数达到了上限。控制数据库连接的主要以下几种选项。
 
--   全局的最大连接数：由运行参数max\_connections指定。
--   某用户的连接数：在创建用户时由CREATE ROLE命令的CONNECTION LIMIT connlimit子句直接设定，也可以在设定以后用ALTER ROLE的CONNECTION LIMIT connlimit子句修改。
--   某数据库的连接数：在创建数据库时，由CREATE DATABASE的CONNECTION LIMIT connlimit参数指定。
+- 全局的最大连接数：由运行参数max\_connections指定。
+- 某用户的连接数：在创建用户时由CREATE ROLE命令的CONNECTION LIMIT connlimit子句直接设定，也可以在设定以后用ALTER ROLE的CONNECTION LIMIT connlimit子句修改。
+- 某数据库的连接数：在创建数据库时，由CREATE DATABASE的CONNECTION LIMIT connlimit参数指定。
 
 ## 操作步骤<a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_sde106f089f2c443e869945d573576c09"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -29,7 +29,7 @@
     openGauss=# 
     ```
 
-3.  查看全局会话连接数限制。
+3. 查看全局会话连接数限制。
 
     ```
     openGauss=# SHOW max_connections;
@@ -41,7 +41,7 @@
 
     其中800是最大会话连接数。
 
-4.  查看已使用的会话连接数。
+4. 查看已使用的会话连接数。
 
     具体命令请参见[表1](#zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_t608a1965463e41f1b6eacd02f97a65ba)。
 
@@ -72,14 +72,14 @@
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_afbdde8607a9241d1854e840c0c562471"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_afbdde8607a9241d1854e840c0c562471"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_afbdde8607a9241d1854e840c0c562471"></a>执行如下命令查看指定用户<span id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text2279192513507"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text2279192513507"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text2279192513507"></a>omm</span>已使用的会话连接数。其中，1表示<span id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text14366152617508"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text14366152617508"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text14366152617508"></a>omm</span>已使用的会话连接数。</p>
     <a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677"></a><pre class="screen" codetype="Sql" id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_s8936424e3adf420bb9db8cfc23d6f677">openGauss=# CREATE OR REPLACE VIEW DV_SESSIONS AS
-    	       SELECT
-    		    sa.sessionid AS SID,
-    		    0::integer AS SERIAL#,
-    		    sa.usesysid AS USER#,
-    		    ad.rolname AS USERNAME
-    	        FROM pg_stat_get_activity(NULL) AS sa
-    	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
-    	        WHERE sa.application_name &lt;&gt; 'JobSchedul
+            SELECT
+          sa.sessionid AS SID,
+          0::integer AS SERIAL#,
+          sa.usesysid AS USER#,
+          ad.rolname AS USERNAME
+             FROM pg_stat_get_activity(NULL) AS sa
+             LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
+             WHERE sa.application_name &lt;&gt; 'JobSchedul
     openGauss=# <strong id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_ab300884670ad42e1ad494b667e32f973"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_ab300884670ad42e1ad494b667e32f973"></a>SELECT COUNT(*) FROM DV_SESSIONS WHERE USERNAME='</strong><span id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text9326192718507"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text9326192718507"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_text9326192718507"></a>omm</span><strong id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a4b74e7a62ebe4040b9c5ffc46f50ec2b"></a>';</strong>
     <br>
      count
@@ -113,14 +113,14 @@
     </td>
     <td class="cellrowborder" valign="top" width="68.58999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a895ff9baf5744bc8b2ce933084c3388f"></a>执行如下命令查看所有用户已使用的会话连接数。</p>
     <a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1"></a><pre class="screen" codetype="Sql" id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_sbf751537822546bbbc3bbd9c1b3e50b1">openGauss=# CREATE OR REPLACE VIEW DV_SESSIONS AS
-    	       SELECT
-    		    sa.sessionid AS SID,
-    		    0::integer AS SERIAL#,
-    		    sa.usesysid AS USER#,
-    		    ad.rolname AS USERNAME
-    	        FROM pg_stat_get_activity(NULL) AS sa
-    	        LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
-    	        WHERE sa.application_name &lt;&gt; 'JobSchedul
+            SELECT
+          sa.sessionid AS SID,
+          0::integer AS SERIAL#,
+          sa.usesysid AS USER#,
+          ad.rolname AS USERNAME
+             FROM pg_stat_get_activity(NULL) AS sa
+             LEFT JOIN pg_authid ad ON(sa.usesysid = ad.oid)
+             WHERE sa.application_name &lt;&gt; 'JobSchedul
     openGauss=# <strong id="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a><a name="zh-cn_topic_0283136582_zh-cn_topic_0237121094_zh-cn_topic_0059779140_a6f7981f036c346dca1744ecf7e258a37"></a>SELECT COUNT(*) FROM DV_SESSIONS;</strong>
      count
     -------
@@ -130,5 +130,3 @@
     </tr>
     </tbody>
     </table>
-
-

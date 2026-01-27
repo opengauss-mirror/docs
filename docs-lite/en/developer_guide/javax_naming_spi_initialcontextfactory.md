@@ -22,4 +22,3 @@ This section describes  **javax.naming.spi.InitialContextFactory**, the initial 
 </tr>
 </tbody>
 </table>
-

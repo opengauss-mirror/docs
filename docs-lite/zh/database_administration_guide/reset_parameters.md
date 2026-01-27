@@ -2,14 +2,14 @@
 
 openGauss提供了多种修改GUC参数的方法，用户可以方便的针对数据库、用户、会话进行设置。
 
--   参数名称不区分大小写。
--   参数取值有整型、浮点型、字符串、布尔型和枚举型五类。
-    -   布尔值可以是（on，off）、（true，false）、（yes，no）或者（1，0），且不区分大小写。
-    -   枚举类型的取值是在系统表pg\_settings的enumvals字段取值定义的。
--   对于有单位的参数，在设置时请指定单位，否则将使用默认的单位。
-    -   参数的默认单位在系统表pg\_settings的unit字段定义的。
-    -   内存单位有：kB（千字节）、MB（兆字节）和GB（吉字节）。
-    -   时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
+- 参数名称不区分大小写。
+- 参数取值有整型、浮点型、字符串、布尔型和枚举型五类。
+    - 布尔值可以是（on，off）、（true，false）、（yes，no）或者（1，0），且不区分大小写。
+    - 枚举类型的取值是在系统表pg\_settings的enumvals字段取值定义的。
+- 对于有单位的参数，在设置时请指定单位，否则将使用默认的单位。
+    - 参数的默认单位在系统表pg\_settings的unit字段定义的。
+    - 内存单位有：kB（千字节）、MB（兆字节）和GB（吉字节）。
+    - 时间单位：ms（毫秒）、s（秒）、min（分钟）、h（小时）和d（天）。
 
 具体参数说明请参见[GUC参数说明](../database_reference/guc_application_note.md)。
 
@@ -138,8 +138,8 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
 使用方式一设置数据库参数，以在数据库主节点设置archive\_mode参数为例。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  查看archive\_mode参数。
+1. 以操作系统用户omm登录数据库主节点。
+2. 查看archive\_mode参数。
 
     ```
     cat /gaussdb/data/dbnode/postgresql.conf | grep archive_mode
@@ -151,19 +151,19 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
     on表示日志要进行归档操作。
 
-3.  设置archive\_mode参数为off，关闭日志的归档操作。
+3. 设置archive\_mode参数为off，关闭日志的归档操作。
 
     ```
     gs_guc set -D /gaussdb/data/dbnode -c "archive_mode=off"
     ```
 
-4.  重启数据库使参数生效。
+4. 重启数据库使参数生效。
 
     ```
     gs_ctl restart -D /gaussdb/data/dbnode
     ```
 
-5.  使用如下命令连接数据库。
+5. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -181,7 +181,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     openGauss=# 
     ```
 
-6.  检查参数设置的正确性。
+6. 检查参数设置的正确性。
 
     ```
     openGauss=# SHOW archive_mode;
@@ -191,11 +191,10 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     (1 row)
     ```
 
-
 使用方式二设置参数，以在数据库主节点设置authentication\_timeout参数为例。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  查看authentication\_timeout参数。
+1. 以操作系统用户omm登录数据库主节点。
+2. 查看authentication\_timeout参数。
 
     ```
     cat /gaussdb/data/dbnode/postgresql.conf | grep authentication_timeout
@@ -205,7 +204,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     authentication_timeout = 1min
     ```
 
-3.  设置authentication\_timeout参数为59s。
+3. 设置authentication\_timeout参数为59s。
 
     ```
     gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 59s"
@@ -214,7 +213,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     Success to perform gs_guc!
     ```
 
-4.  使用如下命令连接数据库。
+4. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -232,7 +231,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     openGauss=# 
     ```
 
-5.  检查参数设置的正确性。
+5. 检查参数设置的正确性。
 
     ```
     openGauss=# SHOW authentication_timeout;
@@ -242,11 +241,10 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     (1 row)
     ```
 
-
 使用方式三设置参数，以设置explain\_perf\_mode参数为例。
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -264,7 +262,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     openGauss=# 
     ```
 
-3.  查看explain\_perf\_mode参数。
+3. 查看explain\_perf\_mode参数。
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -274,11 +272,11 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     (1 row)
     ```
 
-4.  设置explain\_perf\_mode参数。
+4. 设置explain\_perf\_mode参数。
 
     使用以下任意方式进行设置：
 
-    -   设置数据库级别的参数
+    - 设置数据库级别的参数
 
         ```
         openGauss=# ALTER DATABASE postgres SET explain_perf_mode TO pretty;
@@ -292,7 +290,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
         在下次会话中生效。
 
-    -   设置用户级别的参数
+    - 设置用户级别的参数
 
         ```
         openGauss=# ALTER USER omm SET explain_perf_mode TO pretty;
@@ -306,7 +304,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
 
         在下次会话中生效。
 
-    -   设置会话级别的参数
+    - 设置会话级别的参数
 
         ```
         openGauss=# SET explain_perf_mode TO pretty;
@@ -318,7 +316,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         SET
         ```
 
-5.  检查参数设置的正确性。
+5. 检查参数设置的正确性。
 
     ```
     openGauss=# SHOW explain_perf_mode;
@@ -328,12 +326,11 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
     (1 row)
     ```
 
-
 ## 示例<a name="zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_s5b8255d8025640aba238bfb86b20807a"></a>
 
--   示例1：使用方式一修改openGauss数据库主节点的最大连接数。
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  使用如下命令连接数据库。
+- 示例1：使用方式一修改openGauss数据库主节点的最大连接数。
+    1. 以操作系统用户omm登录数据库主节点。
+    2. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -351,7 +348,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    3.  查看最大连接数。
+    3. 查看最大连接数。
 
         ```
         openGauss=# SHOW max_connections;
@@ -361,25 +358,25 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-    4.  使用如下命令退出数据库。
+    4. 使用如下命令退出数据库。
 
         ```
         openGauss=# \q
         ```
 
-    5.  修改openGauss数据库主节点的最大连接数。
+    5. 修改openGauss数据库主节点的最大连接数。
 
         ```
         gs_guc set  -D /gaussdb/data/dbnode -c "max_connections = 800"
         ```
 
-    6.  重启openGauss。
+    6. 重启openGauss。
 
         ```
         gs_ctl restart -D /gaussdb/data/dbnode
         ```
 
-    7.  使用如下命令连接数据库。
+    7. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -397,7 +394,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    8.  查看最大连接数。
+    8. 查看最大连接数。
 
         ```
         openGauss=# SHOW max_connections;
@@ -407,10 +404,9 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-
--   示例2：使用方式二设置数据库主节点的客户端认证最长时间参数“authentication\_timeout”
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  使用如下命令连接数据库。
+- 示例2：使用方式二设置数据库主节点的客户端认证最长时间参数“authentication\_timeout”
+    1. 以操作系统用户omm登录数据库主节点。
+    2. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -428,7 +424,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    3.  查看客户端认证的最长时间。
+    3. 查看客户端认证的最长时间。
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -438,19 +434,19 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-    4.  使用如下命令退出数据库。
+    4. 使用如下命令退出数据库。
 
         ```
         openGauss=# \q
         ```
 
-    5.  修改数据库主节点的客户端认证最长时间。
+    5. 修改数据库主节点的客户端认证最长时间。
 
         ```
         gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 59s"
         ```
 
-    6.  使用如下命令连接数据库。
+    6. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -468,7 +464,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    7.  查看客户端认证的最长时间。
+    7. 查看客户端认证的最长时间。
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -478,10 +474,9 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-
--   示例3：修改openGauss数据库节点的最大连接数。
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  使用如下命令连接数据库。
+- 示例3：修改openGauss数据库节点的最大连接数。
+    1. 以操作系统用户omm登录数据库主节点。
+    2. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -499,7 +494,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    3.  查看最大连接数。
+    3. 查看最大连接数。
 
         ```
         openGauss=# SHOW max_connections;
@@ -509,25 +504,25 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-    4.  使用如下命令退出数据库。
+    4. 使用如下命令退出数据库。
 
         ```
         openGauss=# \q
         ```
 
-    5.  修改openGauss数据库节点的最大连接数。
+    5. 修改openGauss数据库节点的最大连接数。
 
         ```
         gs_guc set  -D /gaussdb/data/dbnode -c "max_connections = 500"
         ```
 
-    6.  重启openGauss。
+    6. 重启openGauss。
 
         ```
         gs_ctl restart -D /gaussdb/data/dbnode
         ```
 
-    7.  使用如下命令连接数据库。
+    7. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -545,7 +540,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    8.  查看最大连接数。
+    8. 查看最大连接数。
 
         ```
         openGauss=# SHOW max_connections;
@@ -555,10 +550,9 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-
--   示例4：设置数据库节点的客户端认证最长时间参数“authentication\_timeout”
-    1.  以操作系统用户omm登录数据库主节点。
-    2.  使用如下命令连接数据库。
+- 示例4：设置数据库节点的客户端认证最长时间参数“authentication\_timeout”
+    1. 以操作系统用户omm登录数据库主节点。
+    2. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -576,7 +570,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    3.  查看客户端认证的最长时间。
+    3. 查看客户端认证的最长时间。
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -586,19 +580,19 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         (1 row)
         ```
 
-    4.  使用如下命令退出数据库。
+    4. 使用如下命令退出数据库。
 
         ```
         openGauss=# \q
         ```
 
-    5.  修改openGauss数据库节点的客户端认证最长时间。
+    5. 修改openGauss数据库节点的客户端认证最长时间。
 
         ```
         gs_guc reload  -D /gaussdb/data/dbnode -c "authentication_timeout = 30s"
         ```
 
-    6.  使用如下命令连接数据库。
+    6. 使用如下命令连接数据库。
 
         ```
         gsql -d postgres -p 8000
@@ -616,7 +610,7 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
         openGauss=# 
         ```
 
-    7.  查看客户端认证的最长时间。
+    7. 查看客户端认证的最长时间。
 
         ```
         openGauss=# SHOW authentication_timeout;
@@ -625,6 +619,3 @@ openGauss提供了四种方式来修改GUC参数，具体操作请参考[表2](#
          30s
         (1 row)
         ```
-
-
-

@@ -89,7 +89,6 @@
 
 **参数说明**：检索时是否在 NPU 内存中缓存原始向量数据。将其设置为"on"可提升检索性能，而将其设置为"off"则可节省 NPU 内存。需要同时设置`enable_ivfflat_npu`为on。
 
-
 该参数属于POSTMASTER类型参数，请参考[表2](../database_administration_guide/reset_parameters.md#zh-cn_topic_0283137176_zh-cn_topic_0237121562_zh-cn_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)中对应设置方法进行设置。
 
 **取值范围**： 布尔型，on/off

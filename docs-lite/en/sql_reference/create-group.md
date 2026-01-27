@@ -57,4 +57,3 @@ See  [Parameter Description](create-role.md#en-us_topic_0283136858_en-us_topic_0
 ## Helpful Links<a name="en-us_topic_0283137568_en-us_topic_0237122105_en-us_topic_0059779249_s8153dd487fd84f2e924435436395a9a8"></a>
 
 [ALTER GROUP](alter-group.md),  [DROP GROUP](drop-group.md), and  [CREATE ROLE](create-role.md)
-

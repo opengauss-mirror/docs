@@ -407,9 +407,9 @@ Except the preceding parameters, all other parameters in  **postgres.conf**  can
 
 ## Environment Variables<a name="en-us_topic_0059777816_sac6ef2b8033a4b3687c3968ca3692932"></a>
 
--   **PGLINETENCODING**: indicates the default character encoding used by clients. The clients can override this variable individually. This value can also be set in the configuration file.
--   **PGDATESTYLE**: indicates the default value of the  **DateStyle**  run-time parameter. The use of this environment variable is deprecated.
--   **TZ**: indicates the time zone of the server.
+- **PGLINETENCODING**: indicates the default character encoding used by clients. The clients can override this variable individually. This value can also be set in the configuration file.
+- **PGDATESTYLE**: indicates the default value of the  **DateStyle**  run-time parameter. The use of this environment variable is deprecated.
+- **TZ**: indicates the time zone of the server.
 
 ## Error Processing<a name="en-us_topic_0059777816_s93533ab12cab4b3cbdcc08cd129fe243"></a>
 
@@ -432,10 +432,11 @@ If you are certain that no conflicting server is running, you can remove the loc
 A port binding failure message indicates that the port is already in use by a non-openGauss process. This message may also be reported if you terminate  **gaussdb**  and immediately restart it using the same port. In this case, you must simply wait a few seconds until the operating system closes the port before trying again. Finally, you may get this error if you specify a port number that your operating system considers it to be reserved. For example, the Unix considers ports whose IDs are under 1024 to be "trusted" and permits only Unix administrators to access the Unix.
 
 >[!TIP]NOTICE 
->-   Using  **SIGKILL**  to kill the main process prevents gaussdb from releasing system resources \(such as shared memory and semaphores\) that is holds, which affects new processes.
->-   To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT**  can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.
->-   The  **SIGHUP**  signal will reload the server configuration files. It is also possible to send  **SIGHUP**  to an individual server process, but that is usually not sensible.
->-   To cancel a running query, send the  **SIGINT**  signal to the process running that command.
+>
+>- Using  **SIGKILL**  to kill the main process prevents gaussdb from releasing system resources \(such as shared memory and semaphores\) that is holds, which affects new processes.
+>- To properly terminate the server process, signals  **SIGTERM**,  **SIGINT**, and  **SIGQUIT**  can be used.  **SIGTERM**  will wait for all clients to terminate before exit.  **SIGINT**  will forcibly disconnect all clients, and  **SIGQUIT**  will exit immediately without proper shutdown, resulting in a recovery run during restart.
+>- The  **SIGHUP**  signal will reload the server configuration files. It is also possible to send  **SIGHUP**  to an individual server process, but that is usually not sensible.
+>- To cancel a running query, send the  **SIGINT**  signal to the process running that command.
 
 ## Usage<a name="en-us_topic_0059777816_s188b513ab6fb4938a75c0cd8a49cc38c"></a>
 
@@ -448,20 +449,21 @@ gaussdb --single -D /usr/local/pgsql/data other-options my_database
 Use  **-D**  to provide the correct path of the database directory for the server. Besides, specify the name of the existing particular database.
 
 >[!TIP]NOTICE 
->-   In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.
->-   If you use the  **-j**  option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashs and newlines are treated as common characters in this case.
->-   To quit the session, type EOF \(by pressing  **Ctrl**+**D**\). If you have used  **-j**, two consecutive EOFs are needed to exit the session.
->-   The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.
+>
+>- In most cases, the single-user mode server treats newline as the command entry terminator. To continue a command across multiple lines, you must type a backslash just before each newline except the last one.
+>- If you use the  **-j**  option, then newline does not terminate command entry. In this case, the server will read the standard input until the end-of-file \(EOF\) marker, then process the input as a single command string. Backslashs and newlines are treated as common characters in this case.
+>- To quit the session, type EOF \(by pressing  **Ctrl**+**D**\). If you have used  **-j**, two consecutive EOFs are needed to exit the session.
+>- The single-user mode server does not provide complex line-editing functions \(no command history, for example\). The single-user mode also does not do any background processing, like automatic checkpoints.
 
 ## Examples<a name="en-us_topic_0059777816_en-us_topic_0058968126_section367683"></a>
 
-1.  Run the following command to start  **gaussdb**  in the background using the default value:
+1. Run the following command to start  **gaussdb**  in the background using the default value:
 
     ```
     nohup gaussdb >logfile 2>&1 </dev/null  &
     ```
 
-2.  Start  **gaussdb**  on a specified port \(for example, 1234\). The  **-D**  parameter indicates the data directory after gs\_initdb initialization.
+2. Start  **gaussdb**  on a specified port \(for example, 1234\). The  **-D**  parameter indicates the data directory after gs\_initdb initialization.
 
     ```
     gaussdb -p 1234 -D /usr/local/pgsql/data

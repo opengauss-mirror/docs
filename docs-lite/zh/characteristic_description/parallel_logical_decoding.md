@@ -22,15 +22,15 @@
 
 ## 特性约束<a name="section06531946143616"></a>
 
-1.  当前的硬件和网络环境正常；由于逻辑日志一般为xlog的两倍，为保证xlog速度达到100MBps，I/O带宽至少保证200MBps；因为reader、decoder、sender线程均需预留资源，CPU需预留并发数+2的核数，如4并发场景需要预留6核。在实际场景中，使用备机解码即可保证需求，无需进行特殊的资源预留规划。为保证解码性能达标以及尽量降低对业务的影响，一台备机上应尽量仅建立一个并行解码连接，保证CPU、内存、带宽资源充足。
-2.  日志级别的guc参数wal\_level = logical。
-3.  guc参数max\_replication\_slots \>= 每个DN所需的（物理流复制槽数+备份槽数+逻辑复制槽数）。
-4.  解码配置选项parallel-decode-num \> 1且<= 20，指定并行的解码线程数。
-5.  不支持DDL语句解码。
-6.  不支持列存、数据页复制的解码。
-7.  不支持解码分布式事务，当前机制为从DN解码，无法保证分布式事务一致性解码。
-8.  单条元组大小不超过1GB，考虑解码结果可能大于插入数据，因此建议单条元组大小不超过500MB。
-9.  不支持压缩表的DML语句解码。
+1. 当前的硬件和网络环境正常；由于逻辑日志一般为xlog的两倍，为保证xlog速度达到100MBps，I/O带宽至少保证200MBps；因为reader、decoder、sender线程均需预留资源，CPU需预留并发数+2的核数，如4并发场景需要预留6核。在实际场景中，使用备机解码即可保证需求，无需进行特殊的资源预留规划。为保证解码性能达标以及尽量降低对业务的影响，一台备机上应尽量仅建立一个并行解码连接，保证CPU、内存、带宽资源充足。
+2. 日志级别的guc参数wal\_level = logical。
+3. guc参数max\_replication\_slots \>= 每个DN所需的（物理流复制槽数+备份槽数+逻辑复制槽数）。
+4. 解码配置选项parallel-decode-num \> 1且<= 20，指定并行的解码线程数。
+5. 不支持DDL语句解码。
+6. 不支持列存、数据页复制的解码。
+7. 不支持解码分布式事务，当前机制为从DN解码，无法保证分布式事务一致性解码。
+8. 单条元组大小不超过1GB，考虑解码结果可能大于插入数据，因此建议单条元组大小不超过500MB。
+9. 不支持压缩表的DML语句解码。
 10. openGauss支持解码的数据类型为：INTEGER、BIGINT、SMALLILNT、TINYINT、SERIAL、SMALLSERIAL、BIGSERIAL、FLOAT、DOUBLE PRECISION、DATE、TIME\[WITHOUT TIME ZONE\]、TIMESTAMP\[WITHOUT TIME ZONE\]、CHAR\(n\)、VARCHAR\(n\)、TEXT。
 11. 在需要ssl连接的场景，需要前置条件保证guc参数ssl = on。
 12. 不支持interval partition表复制。
@@ -43,4 +43,3 @@
 ## 依赖关系<a name="section8406643144716"></a>
 
 依赖备机解码。
-

@@ -7,4 +7,3 @@ A stored procedure is a combination of SQL and PL/SQL. Stored procedures can mov
 For details about how to create and call a stored procedure, see  [CREATE PROCEDURE](create-procedure.md).
 
 The application methods for PL/pgSQL functions mentioned in  [PL/pgSQL Functions](pl-pgsql-functions.md)  are similar to those for stored procedures. Unless otherwise specified, the following sections apply to stored procedures and PL/pgSQL functions.
-

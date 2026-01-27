@@ -55,7 +55,6 @@
 </tbody>
 </table>
 
-
 ## 系统日志<a name="zh-cn_topic_0283140584_section13479185217289"></a>
 
 openGauss运行时数据库节点以及openGauss安装部署时产生的日志统称为系统日志。如果openGauss在运行时发生故障，可以通过这些系统日志及时定位故障发生的原因，根据日志内容制定恢复openGauss的方法。
@@ -68,37 +67,33 @@ openGauss安装卸载时产生的日志放在安装卸载脚本的同级目录�
 
 **日志文件命名格式**
 
--   数据库节点运行日志的命名规则：
+- 数据库节点运行日志的命名规则：
 
     postgresql-创建时间.log
 
     默认情况下，每日0点或者日志文件大于16MB或者数据库实例（数据库节点）重新启动后，会生成新的日志文件。
 
+- CM的运行日志的命名规则：
 
--   CM的运行日志的命名规则：
-
-    -   cm\_agent的日志：cm\_agent-创建时间.log、cm\_agent-创建时间-current.log、system\_call-创建时间.log、system\_call-创建时间-current.log。
-    -   cm\_server的日志：cm\_server-创建时间.log、cm\_server-创建时间-current.log；key\_event-创建时间.log、key\_event-创建时间-current.log。
-    -   om\_monitor的日志：om\_monitor-创建时间.log、om\_monitor-创建时间-current.log。
+    - cm\_agent的日志：cm\_agent-创建时间.log、cm\_agent-创建时间-current.log、system\_call-创建时间.log、system\_call-创建时间-current.log。
+    - cm\_server的日志：cm\_server-创建时间.log、cm\_server-创建时间-current.log；key\_event-创建时间.log、key\_event-创建时间-current.log。
+    - om\_monitor的日志：om\_monitor-创建时间.log、om\_monitor-创建时间-current.log。
 
     其中，不带current标识符的文件是历史日志文件，带current标识符的文件是当前日志文件。最初调用进程时，进程会先创建一个带current标识符的日志文件，当该日志文件的大小超过16MB时，会将当前日志文件重命名为历史日志文件，并以当前时间生成新的当前日志文件。
 
-
 **日志内容说明**
 
--   数据库节点每一行日志内容的默认格式：
+- 数据库节点每一行日志内容的默认格式：
 
     日期+时间+时区+用户名称+数据库名称+会话ID+日志级别+日志内容
 
-
--   cm\_agent、cm\_server、om\_monitor每一行日志内容的默认格式：
+- cm\_agent、cm\_server、om\_monitor每一行日志内容的默认格式：
 
     时间+时区+会话ID+日志内容
 
     SYSTEM\_CALL系统调用日志记录了CM\_AGENT在运行过程中调用工具命令的情况。
 
     key\_event每一行日志内容的默认格式: 时间+线程号+线程名: 关键事件类型+仲裁对象实例ID+仲裁细节
-
 
 ## 操作日志<a name="zh-cn_topic_0283140584_section334253173120"></a>
 
@@ -112,8 +107,8 @@ openGauss安装卸载时产生的日志放在安装卸载脚本的同级目录�
 
 日志文件命名格式为：
 
--   工具名-日志创建时间.log
--   工具名-日志创建时间-current.log
+- 工具名-日志创建时间.log
+- 工具名-日志创建时间-current.log
 
 其中，“工具名-日志创建时间.log”是历史日志文件，“工具名-日志创建时间-current.log”是当前日志文件。
 
@@ -225,4 +220,3 @@ openGauss的日志默认为英文，但也支持将数据库日志翻译为其�
     > gettext 函数存在翻译缓存，不管翻译成功还是翻译失败（比如输出乱码），后续相同英文的翻译都会使用该缓存结果。
     > 如果数据库编码为 gbk ，将用户输入的gbk格式的数据写入日志文件后，日志文件中同时存在 gbk 和 utf-8 的字符，会导致乱码。
     > 增加guc参数 `enable_nls` ，翻译api影响性能时（日志级别较低且并发高）关闭即可避免性能损耗。该开关仅控制 elog 日志。
-

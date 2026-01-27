@@ -4,24 +4,19 @@
 
 - SELECT INTO ***new_table*** defines a new table based on a query result and inserts data obtained by query to the new table. Different from **SELECT**, data found by **SELECT INTO** is not returned to the client. The table columns have the same names and data types as the output columns of the **SELECT**.
 
-
 - SELECT INTO ***var_list*** assigns the query result to the target variable. ***var_list*** can be a user-defined variable, a parameter of a stored procedure or function, or a local variable of a stored program.
 
-
-​		Note: If *var_list* is a parameter of a stored procedure, function, or local variable of a stored program, see the syntax in [Stored Procedures](../brief_tutorial/stored_procedures.md). The following describes the scenarios where variables are defined by users.
+​  Note: If *var_list* is a parameter of a stored procedure, function, or local variable of a stored program, see the syntax in [Stored Procedures](../brief_tutorial/stored_procedures.md). The following describes the scenarios where variables are defined by users.
 
 ## Precautions<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_seabd3b47a66045ed92ad80da65bd79cc"></a>
 
 - **CREATE TABLE AS** provides functions similar to SELECT INTO ***new_table*** in functions and provides a superset of functions provided by SELECT INTO ***new_table***. You are advised to use **CREATE TABLE AS**, because SELECT INTO ***new_table*** cannot be used in a stored procedure.
 
-
 - In SELECT INTO ***var_list***, only one row of the select query result can be returned. If there are multiple rows, use **limit 1** to restrict the number of rows. Otherwise, an error is reported. The number of returned columns must be the same as the number of variables. Otherwise, an error is reported.
-
 
 ## Syntax<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s95d36c6f79da4133a55b3776c59d3449"></a>
 
 - SELECT INTO ***new_table*** syntax
-
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -42,7 +37,6 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 ```
 
 - SELECT INTO ***var_list*** syntax
-
 
 ```
 [ WITH [ RECURSIVE ] with_query [, ...] ]
@@ -67,24 +61,22 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 ## Parameter Description<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_s5393efdc6e4a42e096e2fd326054418c"></a>
 
--   **new\_table**
+- **new\_table**
 
     **new\_table** specifies the name of the new table.
 
-
--   **UNLOGGED**
+- **UNLOGGED**
 
     Specifies that the table is created as an unlogged table. Data written to unlogged tables is not written to the WALs, which makes them considerably faster than ordinary tables. However, they are not crash-safe: an unlogged table is automatically truncated after a crash or unclean shutdown. Contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are automatically unlogged as well.
 
-    -   Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
-    -   Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
+    - Usage scenario: Unlogged tables do not ensure data security. Users can back up data before using unlogged tables; for example, users should back up the data before a system upgrade.
+    - Troubleshooting: If data is missing in the indexes of unlogged tables due to some unexpected operations such as an unclean shutdown, users should re-create the indexes with errors.
 
-
--   **GLOBAL | LOCAL**
+- **GLOBAL | LOCAL**
 
     When creating a temporary table, you can specify the **GLOBAL** or **LOCAL** keyword before **TEMP** or **TEMPORARY**. If the keyword **GLOBAL** is specified, openGauss creates a global temporary table. Otherwise, openGauss creates a local temporary table.
 
--   **TEMPORARY | TEMP**
+- **TEMPORARY | TEMP**
 
     If **TEMP** or **TEMPORARY** is specified, the created table is a temporary table. Temporary tables are classified into global temporary tables and local temporary tables. If the keyword **GLOBAL** is specified when a temporary table is created, the table is a global temporary table. Otherwise, the table is a local temporary table.
 
@@ -94,14 +86,14 @@ SELECT [/*+ plan_hint */] [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
     >[!TIP]NOTICE 
     >
-    >-   Local temporary tables are visible to the current session through the schema starting with **pg\_temp**. Users should not delete schemas starting with **pg\_temp** or **pg\_toast\_temp**.
-    >-   If **TEMPORARY** or **TEMP** is not specified when you create a table but its schema is set to that starting with **pg\_temp\_** in the current session, the table will be created as a temporary table.
-    >-   If global temporary tables and indexes are being used by other sessions, do not perform **ALTER** or **DROP**.
-    >-   The DDL of a global temporary table affects only the user data and indexes of the current session. For example, **TRUNCATE**, **REINDEX**, and **ANALYZE** are valid only for the current session.
+    >- Local temporary tables are visible to the current session through the schema starting with **pg\_temp**. Users should not delete schemas starting with **pg\_temp** or **pg\_toast\_temp**.
+    >- If **TEMPORARY** or **TEMP** is not specified when you create a table but its schema is set to that starting with **pg\_temp\_** in the current session, the table will be created as a temporary table.
+    >- If global temporary tables and indexes are being used by other sessions, do not perform **ALTER** or **DROP**.
+    >- The DDL of a global temporary table affects only the user data and indexes of the current session. For example, **TRUNCATE**, **REINDEX**, and **ANALYZE** are valid only for the current session.
 
 - **into_option**
-    -   The INTO statement can appear in three positions. A SELECT statement can contain only one INTO clause.
-    -   User-defined variables can be correctly identified only when the database is a B-compatible database and the GUC parameter **enable\_set\_variable\_b\_format** is set to **on**.
+    - The INTO statement can appear in three positions. A SELECT statement can contain only one INTO clause.
+    - User-defined variables can be correctly identified only when the database is a B-compatible database and the GUC parameter **enable\_set\_variable\_b\_format** is set to **on**.
     into_option: { INTO var_name [, var_name] ... }
 
 >[!NOTE]NOTE 
@@ -141,10 +133,10 @@ ERROR:  number of variables must equal the number of columns
 
 ## Suggestions<a name="en-us_topic_0283137419_en-us_topic_0237122185_en-us_topic_0059779381_section21815038152246"></a>
 
--   **DATABASE**
+- **DATABASE**
 
     You are not advised to re-index a database in a transaction.
 
--   **SYSTEM**
+- **SYSTEM**
 
     You are not advised to re-index system catalogs in transactions.

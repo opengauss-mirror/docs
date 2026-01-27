@@ -64,4 +64,3 @@ PG\_RLSPOLICY系统表存储行级访问控制策略。
 </tr>
 </tbody>
 </table>
-

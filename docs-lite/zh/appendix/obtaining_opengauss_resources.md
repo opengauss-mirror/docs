@@ -6,14 +6,14 @@ openGauss提供了在线资源，其中包含大量有用的信息，例如常�
 
 [openGauss官网](https://opengauss.org/zh/)提供了openGauss软件的下载、官方文档、开源社区介绍、官方认证、知识图谱、安全以及活动等信息。
 
--   下载：提供openGauss软件包、连接工具、支持工具下载。并且附有openGauss支持工具全景图。
--   文档 ：对openGauss数据库进行了描述，包括法律声明、发行说明、关于openGauss、技术白皮书、快速入门、安装指南、简易教程、应用开发指南、AI特性指南、编译指南、数据库管理指南、数据库运维指南、性能调优指南、数据迁移指南、SQL参考、工具与命令参考、数据库参考等内容。全方位的介绍了openGauss的架构、功能、特性以及使用方法。文档中包含大量的示例，供您参考。
--   社区：介绍了如何对开源社区进行贡献、社区组织结构以及线上交流方式。
--   互动：提供openGauss相关新闻、活动、视频、峰会和博客。
--   认证：提供openGauss认证体系介绍，以及培训相关信息和证书查询入口。
--   安全：介绍openGauss漏洞管理流程、安全公告和CVE。
--   代码：Gitee和Github社区入口。
--   知识：提供openGauss集群管理、数据库工具、数据库内核和数据库驱动知识图谱。
+- 下载：提供openGauss软件包、连接工具、支持工具下载。并且附有openGauss支持工具全景图。
+- 文档 ：对openGauss数据库进行了描述，包括法律声明、发行说明、关于openGauss、技术白皮书、快速入门、安装指南、简易教程、应用开发指南、AI特性指南、编译指南、数据库管理指南、数据库运维指南、性能调优指南、数据迁移指南、SQL参考、工具与命令参考、数据库参考等内容。全方位的介绍了openGauss的架构、功能、特性以及使用方法。文档中包含大量的示例，供您参考。
+- 社区：介绍了如何对开源社区进行贡献、社区组织结构以及线上交流方式。
+- 互动：提供openGauss相关新闻、活动、视频、峰会和博客。
+- 认证：提供openGauss认证体系介绍，以及培训相关信息和证书查询入口。
+- 安全：介绍openGauss漏洞管理流程、安全公告和CVE。
+- 代码：Gitee和Github社区入口。
+- 知识：提供openGauss集群管理、数据库工具、数据库内核和数据库驱动知识图谱。
 
 ## openGauss开源社区<a name="section157731748104211"></a>
 
@@ -143,21 +143,19 @@ openGauss社区使用邮件列表进行线上沟通交流。我们真诚地邀�
 
 ## 学习交流平台<a name="section7788161704417"></a>
 
--   openGauss社区
-    -   微信公众号
+- openGauss社区
+    - 微信公众号
 
         ![](figures/zh-cn_image_0000001209981920.jpg)
 
-    -   [B站](https://space.bilibili.com/543286270?from=search&seid=7579369334374103192&spm_id_from=333.337.0.0)
-    -   [CSDN](https://blog.csdn.net/weixin_49727236)
+    - [B站](https://space.bilibili.com/543286270?from=search&seid=7579369334374103192&spm_id_from=333.337.0.0)
+    - [CSDN](https://blog.csdn.net/weixin_49727236)
 
--   Gauss松鼠会技术交流圈
-    -   微信公众号
+- Gauss松鼠会技术交流圈
+    - 微信公众号
 
         ![](figures/zh-cn_image_0000001210301878.jpg)
 
-    -   [B站](https://space.bilibili.com/629605267?from=search&seid=8790769897413776977&spm_id_from=333.337.0.0)
-    -   [CSDN](https://blog.csdn.net/GaussDB)
-    -   [墨天轮](https://www.modb.pro/openGauss)
-
-
+    - [B站](https://space.bilibili.com/629605267?from=search&seid=8790769897413776977&spm_id_from=333.337.0.0)
+    - [CSDN](https://blog.csdn.net/GaussDB)
+    - [墨天轮](https://www.modb.pro/openGauss)

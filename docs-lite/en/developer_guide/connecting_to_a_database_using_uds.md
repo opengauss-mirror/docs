@@ -2,7 +2,7 @@
 
 The Unix domain socket is used for data exchange between different processes on the same host. You can add **junixsocket** to obtain the socket factory.
 
-The **junixsocket-core-***XXX***.jar**, **junixsocket-common-***XXX***.jar**, and **junixsocket-native-common-***XXX***.jar** JAR packages need to be referenced. In addition, you need to add **socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg= ***\[path-to-the-unix-socket\]* to the URL connection string.
+The **junixsocket-core-***XXX***.jar**, **junixsocket-common-***XXX***.jar**, and **junixsocket-native-common-***XXX***.jar** JAR packages need to be referenced. In addition, you need to add **socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg=***\[path-to-the-unix-socket\]* to the URL connection string.
 
 Example:
 
@@ -36,5 +36,6 @@ public class Test {
 ```
 
 >[!TIP]NOTICE
->-   Set the **socketFactoryArg** parameter based on the actual path. The value must be the same as that of the GUC parameter **unix\_socket\_directory**.
->-   The connection host name must be set to **localhost**.
+>
+>- Set the **socketFactoryArg** parameter based on the actual path. The value must be the same as that of the GUC parameter **unix\_socket\_directory**.
+>- The connection host name must be set to **localhost**.

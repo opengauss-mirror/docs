@@ -66,4 +66,3 @@ Each operator family is a collection of operators and associated support routine
 </table>
 
 The majority of the information defining an operator family is not in its  **PG\_OPFAMILY**  row, but in the associated rows in  [PG\_AMOP](pg_amop.md),  [PG\_AMPROC](pg_amproc.md), and  [PG\_OPCLASS](pg_opclass.md).
-

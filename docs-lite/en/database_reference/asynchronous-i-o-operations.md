@@ -8,8 +8,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that generation of ADIO logs is allowed.
--   **off**  or  **false**  indicates that generation of ADIO logs is disallowed.
+- **on**  or  **true**  indicates that generation of ADIO logs is allowed.
+- **off**  or  **false**  indicates that generation of ADIO logs is disallowed.
 
 **Default value**:  **off**
 
@@ -25,8 +25,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that the function is enabled.
--   **off**  or  **false**  indicates that the function is disabled.
+- **on**  or  **true**  indicates that the function is enabled.
+- **off**  or  **false**  indicates that the function is disabled.
 
 **Default value**:  **off**
 
@@ -38,8 +38,8 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that the function is enabled.
--   **off**  or  **false**  indicates that the function is disabled.
+- **on**  or  **true**  indicates that the function is enabled.
+- **off**  or  **false**  indicates that the function is disabled.
 
 **Default value**:  **off**
 
@@ -142,4 +142,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: an integer ranging from 0 to 256.  **0**  indicates that the asynchronous flush function is disabled. The size of a single page is 8 KB. For example, if the value is  **64**, the backend thread continuously writes 64 disk pages \(that is, 64 x 8 = 512 KB\) before asynchronous flush.
 
 **Default value**:  **0**
-

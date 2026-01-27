@@ -20,4 +20,3 @@ If the table is a column-store table named  **pg\_cudesc\_**_xxxxx_**\_index**, 
 ```
 REINDEX INTERNAL TABLE name;
 ```
-

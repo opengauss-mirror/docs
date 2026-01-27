@@ -4,21 +4,19 @@
 
 The  **PURGE**  statement can be used to:
 
--   Clear tables or indexes from the recycle bin and release all space related to the objects.
--   Clear the recycle bin.
--   Clear the objects of a specified tablespace in the recycle bin.
+- Clear tables or indexes from the recycle bin and release all space related to the objects.
+- Clear the recycle bin.
+- Clear the objects of a specified tablespace in the recycle bin.
 
 ## Precautions<a name="section749425816510"></a>
 
--   The PURGE operation supports tables \(**PURGE TABLE**\), indexes \(**PURGE INDEX**\), and recycle bins \(**PURGE RECYCLEBIN**\).
+- The PURGE operation supports tables \(**PURGE TABLE**\), indexes \(**PURGE INDEX**\), and recycle bins \(**PURGE RECYCLEBIN**\).
 
+- The permission requirements for performing the PURGE operation are as follows:
 
--   The permission requirements for performing the PURGE operation are as follows:
-
-    -   **PURGE TABLE**: The user must be the owner of the table and must have the  **USAGE**  permission on the schema to which the table belongs. By default, the system administrator has this permission.
-    -   **PURGE INDEX**: The user must be the owner of the index and have the  **USAGE**  permission on the schema to which the index belongs. By default, the system administrator has this permission.
-    -   **PURGE RECYCLEBIN**: Common users can clear only the objects owned by themselves in the recycle bin. In addition, the user must have the  **USAGE**  permission of the schema to which the objects belong. By default, the system administrator can clear all objects in the recycle bin.
-
+    - **PURGE TABLE**: The user must be the owner of the table and must have the  **USAGE**  permission on the schema to which the table belongs. By default, the system administrator has this permission.
+    - **PURGE INDEX**: The user must be the owner of the index and have the  **USAGE**  permission on the schema to which the index belongs. By default, the system administrator has this permission.
+    - **PURGE RECYCLEBIN**: Common users can clear only the objects owned by themselves in the recycle bin. In addition, the user must have the  **USAGE**  permission of the schema to which the objects belong. By default, the system administrator can clear all objects in the recycle bin.
 
 ## Syntax<a name="section2067414318544"></a>
 
@@ -31,25 +29,21 @@ PURGE { TABLE [schema_name.]table_name
 
 ## Parameter Description<a name="section19287181805211"></a>
 
--   _\[  __schema\_name.__  \]_
+- _\[  __schema\_name.__  \]_
 
     Schema name
 
-
--   TABLE  _\[ schema\_name. \] table\_name_
+- TABLE  _\[ schema\_name. \] table\_name_
 
     Clears a specified table in the recycle bin.
 
-
--   INDEX  _index\_name_
+- INDEX  _index\_name_
 
     Clears a specified index in the recycle bin.
 
-
--   RECYCLEBIN
+- RECYCLEBIN
 
     Clears the objects in the recycle bin.
-
 
 ## Examples<a name="section763816452134"></a>
 
@@ -115,4 +109,3 @@ openGauss=#  SELECT rcyname,rcyoriginname,rcytablespace FROM GS_RECYCLEBIN;
 -----------------------+---------------+---------------
 (0 rows)
 ```
-

@@ -54,8 +54,8 @@ For more details you may refer to the Supported Queries for Lite Execution and U
 
 Currently, openGauss contains two main forms of JIT / CodeGen query optimizations for its disk-based tables –
 
--   Accelerating expression evaluation, such as in WHERE clauses, target lists, aggregates and projections
--   Inlining small function invocations.
+- Accelerating expression evaluation, such as in WHERE clauses, target lists, aggregates and projections
+- Inlining small function invocations.
 
 These optimizations are partial \(in the sense they do not optimize the entire interpreted operator tree or replace it altogether\) and are targeted mostly at CPU-bound complex queries, typically seen in OLAP use cases. The execution of queries is performed in a pull-model \(Volcano-style processing\) using an interpreted operator tree. When activated, the compilation is performed at each query execution. At the moment, caching of the generated LLVM code and its reuse across sessions and queries is not yet provided.
 
@@ -64,4 +64,3 @@ In contrast, MOT JIT optimization provides LLVM code for entire queries that qua
 Another significant conceptual difference is that MOT LLVM code is only generated for prepared queries during the PREPARE phase of the query, rather than at query execution. This is especially important for OLTP scenarios due to the rather short runtime of OLTP queries, which cannot allow for code generation and relatively long query compilation time to be performed during each query execution.
 
 Finally, in PostgreSQL the activation of a PREPARE implies the reuse of the resulting plan across executions with different parameters in the same session. Similarly, the MOT JIT applies a caching policy for its LLVM code results, and extends it for reuse across different sessions. Thus, a single query may be compiled just once and its LLVM code may be reused across many sessions, which again is beneficial for OLTP scenarios.
-

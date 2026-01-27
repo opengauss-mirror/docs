@@ -49,7 +49,6 @@ Both <p id="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629
 </tbody>
 </table>
 
-
 ## Software Requirements<a name="section12785165215260"></a>
 
 **Table  2**  Software requirements
@@ -82,7 +81,6 @@ Both <p id="en-us_topic_0283136474_en-us_topic_0241802565_en-us_topic_0085434629
 </tr>
 </tbody>
 </table>
-
 
 ## Software Dependency Requirements<a name="section13116317142718"></a>
 

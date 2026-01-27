@@ -4,8 +4,8 @@ gs\_dump和gs\_dumpall通过-U指定执行导出的用户帐户。如果当前�
 
 ## 操作步骤<a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_zh-cn_topic_0096393674_s29032edccba443edb1990c4715fcc047"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用gs\_dump导出human\_resource数据库数据。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用gs\_dump导出human\_resource数据库数据。
 
     用户jack不具备导出数据库human\_resource的权限，而角色role1具备该权限，要实现导出数据库human\_resource，需要将role1赋权给jack，然后可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。导出文件格式为tar归档格式。
 
@@ -88,7 +88,6 @@ gs\_dump和gs\_dumpall通过-U指定执行导出的用户帐户。如果当前�
 
     其他参数说明请参见《工具与命令参考》中“服务端工具 \> gs\_dump”章节或“服务端工具 \> gs\_dumpall”章节。
 
-
 ## 示例<a name="zh-cn_topic_0283136762_zh-cn_topic_0237121175_zh-cn_topic_0096393674_sed072bab085e4087b15699dfeda9a662"></a>
 
 示例一：执行gs\_dump导出数据，用户jack不具备导出数据库human\_resource的权限，而角色role1具备该权限，要实现导出数据库human\_resource，可以在导出命令中设置--role角色为role1，使用role1的权限，完成导出目的。导出文件格式为tar归档格式。
@@ -132,4 +131,3 @@ Password:
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: dumpall operation successful
 gs_dumpall[port='8000'][human_resource][2018-11-14 17:26:18]: total time: 6437  ms
 ```
-

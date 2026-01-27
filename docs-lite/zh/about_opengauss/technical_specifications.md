@@ -98,4 +98,3 @@ openGauss的技术指标如[表1](#zh-cn_concept_0283138979_zh-cn_concept_023816
 </tr>
 </tbody>
 </table>
-

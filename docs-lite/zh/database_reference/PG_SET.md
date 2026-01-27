@@ -43,4 +43,3 @@ PG\_SET系统表存储SET数据类型定义的元数据。
 </tr>
 </tbody>
 </table>
-

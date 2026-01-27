@@ -30,11 +30,11 @@ T1 is started but not committed. At this time, T2 is started. After  **INSERT** 
 
 Scenario 2: 
 
--   **READ COMMITTED**  level
+- **READ COMMITTED**  level
 
     T1 is started but not committed. At this time, T2 is started. After  **INSERT**  of T1 is complete, T1 is committed. In T2, a query executed after  **INSERT**  can see the data inserted by T1.
 
--   **REPEATABLE READ**  level
+- **REPEATABLE READ**  level
 
     T1 is started but not committed. At this time, T2 is started. After  **INSERT**  of T1 is complete, T1 is committed. In T2, a query executed after  **INSERT**  cannot see the data inserted by T1.
 
@@ -62,11 +62,11 @@ T1 is started but not committed. At this time, T2 is started. After  **INSERT** 
 
 Scenario 2: 
 
--   **READ COMMITTED**  level
+- **READ COMMITTED**  level
 
     T1 is started but not committed. At this time, T2 is started. After  **INSERT**  of T1 is complete, T1 is committed and  **DELETE**  of T2 is executed. In this case,  **DELETE 1**  is displayed, because T2 can see the data inserted by T1.
 
--   **REPEATABLE READ**  level
+- **REPEATABLE READ**  level
 
     T1 is started but not committed. At this time, T2 is started. After  **INSERT**  of T1 is complete, T1 is committed and  **DELETE**  of T2 is executed. In this case,  **DELETE 0**  is displayed, because the data obtained in queries is consistent in a transaction.
 
@@ -128,10 +128,10 @@ T1 is started but not committed. At this time, T2 is started.  **COPY**  of T1 a
 
 Scenario 2: 
 
--   **READ COMMITTED**  level
+- **READ COMMITTED**  level
 
     T1 is started but not committed. At this time, T2 is started.  **COPY**  of T1 is complete and T1 is committed. In this case, T2 can see the data added by  **COPY**  of T1.
 
--   **REPEATABLE READ**  level
+- **REPEATABLE READ**  level
 
     T1 is started but not committed. At this time, T2 is started.  **COPY**  of T1 is complete and T1 is committed. In this case, T2 cannot see the data added by  **COPY**  of T1.

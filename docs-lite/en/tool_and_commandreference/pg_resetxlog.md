@@ -21,48 +21,46 @@ pg_resetxlog [OPTION]... DATADIR
 
 _OPTION_  is described as follows:
 
--   DATADIR
+- DATADIR
 
     Database directory to be modified. Ensure that the directory is correct.
 
--   -e XIDEPOCH
+- -e XIDEPOCH
 
     Sets the next transaction ID.
 
--   -f
+- -f
 
     Forcibly updates transaction files.
 
--   -l xlogfile
+- -l xlogfile
 
     Specifies the smallest WAL start position for new transaction logs.
 
--   -m XID
+- -m XID
 
     Sets the next multitransaction ID.
 
--   -n
+- -n
 
     Displays the value in the configuration file without update. 
 
--   -o OID
+- -o OID
 
     Sets the next OID.
 
--   -O OFFSET
+- -O OFFSET
 
     Sets the offset of the next multitransaction.
 
--   -V, --version
+- -V, --version
 
     Displays version information.
 
--   -x XID
+- -x XID
 
     Sets the next transaction ID.
 
--   -?, --help
+- -?, --help
 
     Displays help information.
-
-

@@ -2,7 +2,7 @@
 
 ## Hash Functions<a name="section161615718554"></a>
 
--   hll\_hash\_boolean\(bool\)
+- hll\_hash\_boolean\(bool\)
 
     Description: Hashes data of the Boolean type.
 
@@ -18,8 +18,7 @@
     (1 row)
     ```
 
-
--   hll\_hash\_boolean\(bool, int32\)
+- hll\_hash\_boolean\(bool, int32\)
 
     Description: Configures a hash seed \(that is, change the hash policy\) and hashes data of the bool type.
 
@@ -35,7 +34,7 @@
     (1 row)
     ```
 
--   hll\_hash\_smallint\(smallint\)
+- hll\_hash\_smallint\(smallint\)
 
     Description: Hashes data of the smallint type.
 
@@ -51,12 +50,11 @@
     (1 row)
     ```
 
-
 >[!NOTE]NOTE 
 >
 >If parameters with the same numeric value are hashed using different data types, the data will differ, because hash functions select different calculation policies for each type.
 
--   hll\_hash\_smallint\(smallint, int32\)
+- hll\_hash\_smallint\(smallint, int32\)
 
     Description: Configures a hash seed \(that is, change the hash policy\) and hashes data of the smallint type.
 
@@ -72,7 +70,7 @@
     (1 row)
     ```
 
--   hll\_hash\_integer\(integer\)
+- hll\_hash\_integer\(integer\)
 
     Description: Hashes data of the integer type.
 
@@ -88,7 +86,7 @@
     (1 row)
     ```
 
--   hll\_hash\_integer\(integer, int32\)
+- hll\_hash\_integer\(integer, int32\)
 
     Description: Hashes data of the integer type and configures a hash seed \(that is, change the hash policy\).
 
@@ -104,7 +102,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bigint\(bigint\)
+- hll\_hash\_bigint\(bigint\)
 
     Description: Hashes data of the bigint type.
 
@@ -120,7 +118,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bigint\(bigint, int32\)
+- hll\_hash\_bigint\(bigint, int32\)
 
     Description: Hashes data of the bigint type and configures a hash seed \(that is, change the hash policy\).
 
@@ -136,7 +134,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bytea\(bytea\)
+- hll\_hash\_bytea\(bytea\)
 
     Description: Hashes data of the bytea type.
 
@@ -152,7 +150,7 @@
     (1 row)
     ```
 
--   hll\_hash\_bytea\(bytea, int32\)
+- hll\_hash\_bytea\(bytea, int32\)
 
     Description: Hashes data of the bytea type and configures a hash seed \(that is, change the hash policy\).
 
@@ -168,7 +166,7 @@
     (1 row)
     ```
 
--   hll\_hash\_text\(text\)
+- hll\_hash\_text\(text\)
 
     Description: Hashes data of the text type.
 
@@ -184,7 +182,7 @@
     (1 row)
     ```
 
--   hll\_hash\_text\(text, int32\)
+- hll\_hash\_text\(text, int32\)
 
     Description: Hashes data of the text type and configures a hash seed \(that is, change the hash policy\).
 
@@ -200,7 +198,7 @@
     (1 row)
     ```
 
--   hll\_hash\_any\(anytype\)
+- hll\_hash\_any\(anytype\)
 
     Description: Hashes data of any type.
 
@@ -222,7 +220,7 @@
     (1 row)
     ```
 
--   hll\_hash\_any\(anytype, int32\)
+- hll\_hash\_any\(anytype, int32\)
 
     Description: Hashes data of any type and configures a hash seed \(that is, change the hash policy\).
 
@@ -238,7 +236,7 @@
     (1 row)
     ```
 
--   hll\_hashval\_eq\(hll\_hashval, hll\_hashval\)
+- hll\_hashval\_eq\(hll\_hashval, hll\_hashval\)
 
     Description: Compares two pieces of data of the  **hll\_hashval**  type to check whether they are the same.
 
@@ -254,7 +252,7 @@
     (1 row)
     ```
 
--   hll\_hashval\_ne\(hll\_hashval, hll\_hashval\)
+- hll\_hashval\_ne\(hll\_hashval, hll\_hashval\)
 
     Description: Compares two pieces of data of the  **hll\_hashval**  type to check whether they are different.
 
@@ -270,12 +268,11 @@
     (1 row)
     ```
 
-
 ## HLL Functions<a name="section362275717559"></a>
 
 There are three HLL modes: explicit, sparse, and full. When the data size is small, the explicit mode is used. In this mode, distinct values are calculated without errors. As the number of distinct values increases, the HLL mode is switched to the sparse and full modes in sequence. The two modes have no difference in the calculation result, but vary in the calculation efficiency of HLL functions and the storage space of HLL objects. The following functions can be used to view some HLL parameters:
 
--   hll\_print\(hll\)
+- hll\_print\(hll\)
 
     Description: Prints some debugging parameters of an HLL.
 
@@ -289,8 +286,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
-
--   hll\_type\(hll\)
+- hll\_type\(hll\)
 
     Description: Checks the type of the current HLL. The return values are described as follows:  **0**  indicates  **HLL\_UNINIT**, an HLL object that is not initialized.  **1**  indicates  **HLL\_EMPTY**, an empty HLL object.  **2**  indicates  **HLL\_EXPLICIT**, an HLL object in explicit mode.  **3**  indicates  **HLL\_SPARSE**, an HLL object in sparse mode.  **4**  indicates  **HLL\_FULL**, an HLL object in full mode.  **5**  indicates  **HLL\_UNDEFINED**, an invalid HLL object.
 
@@ -304,7 +300,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_log2m\(hll\)
+- hll\_log2m\(hll\)
 
     Description: Checks the value of  **log2m**  in the current HLL data structure.  **log2m**  is the logarithm of the number of buckets. This value affects the error rate of calculating distinct values by HLL. The error rate = ±1.04/√\(2^log2m\). If the value of  **log2m**  ranges from 10 to 16, HLL sets the number of buckets to 2<sup>log2m</sup>. When the value of  **log2explicit**  is explicitly set to  **–1**, the built-in default value is used.
 
@@ -330,7 +326,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_log2explicit\(hll\)
+- hll\_log2explicit\(hll\)
 
     Description: Queries the  **log2explicit**  value in the current HLL data structure. Generally, the HLL changes from the explicit mode to the sparse mode and then to the full mode. This process is called the promotion hierarchy policy. You can change the value of  **log2explicit**  to change the policy. For example, if  **log2explicit**  is set to  **0**, an HLL will skip the explicit mode and directly enter the sparse mode. When the value of  **log2explicit**  is explicitly set to a value ranging from 1 to 12, HLL will switch to the sparse mode when the length of the data segment exceeds 2<sup>log2explicit</sup>. When the value of  **log2explicit**  is explicitly set to  **–1**, the built-in default value is used.
 
@@ -356,7 +352,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_log2sparse\(hll\)
+- hll\_log2sparse\(hll\)
 
     Description: Queries the value of  **log2sparse**  in the current HLL data structure. Generally, the HLL changes from the explicit mode to the sparse mode and then to the full mode. This process is called the promotion hierarchy policy. You can adjust the value of  **log2sparse**  to change the policy. For example, if the value of  **log2sparse**  is  **0**, the system skips the sparse mode and directly enters the full mode. If the value of  **log2sparse**  is explicitly set to a value ranging from 1 to 14, HLL will switch to the full mode when the length of the data segment exceeds 2<sup>log2sparse</sup>. When the value of  **log2sparse**  is explicitly set to  **–1**, the built-in default value is used.
 
@@ -382,8 +378,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
-
--   hll\_duplicatecheck\(hll\)
+- hll\_duplicatecheck\(hll\)
 
     Description: Specifies whether duplicate check is enabled. The value  **0**  indicates that it is disabled and the value  **1**  indicates that it is enabled. This function is disabled by default. If there are many duplicate values, you can enable this function to improve efficiency. When the value of  **duplicatecheck**  is explicitly set to  **–1**, the built-in default value is used.
 
@@ -409,10 +404,9 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
-
 ## Functional Functions<a name="section1014220328512"></a>
 
--   hll\_empty\(\)
+- hll\_empty\(\)
 
     Description: Creates an empty HLL.
 
@@ -428,7 +422,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m\)
+- hll\_empty\(int32 log2m\)
 
     Description: Creates an empty HLL and sets the  **log2m**  parameter. The parameter value ranges from 10 to 16. If the input is  **–1**, the built-in default value is used.
 
@@ -450,7 +444,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit\)
+- hll\_empty\(int32 log2m, int32 log2explicit\)
 
     Description: Creates an empty HLL and sets the  **log2m**  and  **log2explicit**  parameters in sequence. The value of  **log2explicit**  ranges from 0 to 12. The value  **0**  indicates that the explicit mode is skipped. This parameter is used to set the threshold of the explicit mode. When the length of the data segment reaches 2<sup>log2explicit</sup>, the mode is switched to the sparse or full mode. If the input is  **–1**, the built-in default value of  **log2explicit**  is used.
 
@@ -472,7 +466,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse\)
+- hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse\)
 
     Description: Creates an empty HLL and sets the  **log2m**,  **log2explicit**  and  **log2sparse**  parameters in sequence. The value of  **log2sparse**  ranges from 0 to 14. The value  **0**  indicates that the sparse mode is skipped. This parameter is used to set the threshold of the sparse mode. When the length of the data segment reaches 2<sup>log2sparse</sup>, the mode is switched to the full mode. If the input is  **–1**, the built-in default value of  **log2sparse**  is used.
 
@@ -494,7 +488,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
+- hll\_empty\(int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
 
     Description: Creates an empty HLL and sets the  **log2m**,  **log2explicit**,  **log2sparse**, and  **duplicatecheck**  parameters in sequence. The value of  **duplicatecheck**  is  **0**  or  **1**, indicating whether the duplicate check mode is enabled. By default, this mode is disabled. If the input is  **–1**, the built-in default value of  **duplicatecheck**  is used.
 
@@ -516,7 +510,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_add\(hll, hll\_hashval\)
+- hll\_add\(hll, hll\_hashval\)
 
     Description: Adds  **hll\_hashval**  to an HLL.
 
@@ -532,7 +526,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_add\_rev\(hll\_hashval, hll\)
+- hll\_add\_rev\(hll\_hashval, hll\)
 
     Description: Adds  **hll\_hashval**  to an HLL. This function works the same as  **hll\_add**, except that the positions of parameters are switched.
 
@@ -548,7 +542,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_eq\(hll, hll\)
+- hll\_eq\(hll, hll\)
 
     Description: Compares two HLLs to check whether they are the same.
 
@@ -564,7 +558,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_ne\(hll, hll\)
+- hll\_ne\(hll, hll\)
 
     Description: Compares two HLLs to check whether they are different.
 
@@ -580,7 +574,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_cardinality\(hll\)
+- hll\_cardinality\(hll\)
 
     Description: Calculates the number of distinct values of an HLL.
 
@@ -596,7 +590,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_union\(hll, hll\)
+- hll\_union\(hll, hll\)
 
     Description: Performs an UNION operation on two HLL data structures to obtain one HLL.
 
@@ -612,10 +606,9 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
-
 ## Aggregate Functions<a name="section136282577556"></a>
 
--   hll\_add\_agg\(hll\_hashval\)
+- hll\_add\_agg\(hll\_hashval\)
 
     Description: Groups hashed data into HLL
 
@@ -645,8 +638,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (2 rows)
     ```
 
-
--   hll\_add\_agg\(hll\_hashval, int32 log2m\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m\)
 
     Description: Groups hashed data into HLL and specifies the  **log2m**  parameter. The value ranges from 10 to 16. If the input is  **–1**  or  **NULL**, the built-in default value is used.
 
@@ -662,7 +654,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit\)
 
     Description: Groups hashed data into HLL and specifies the  **log2m**  and  **log2explicit**  parameters in sequence. The value of  **log2explicit**  ranges from 0 to 12. The value  **0**  indicates that the explicit mode is skipped. This parameter is used to set the threshold of the explicit mode. When the length of the data segment reaches 2<sup>log2explicit</sup>, the mode is switched to the sparse or full mode. If the input is  **–1**  or  **NULL**, the built-in default value of  **log2explicit**  is used.
 
@@ -678,7 +670,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse\)
 
     Description: Groups hashed data into HLL and sets the parameters  **log2m**,  **log2explicit**, and  **log2sparse**  in sequence. The value of  **log2sparse**  ranges from 0 to 14. The value  **0**  indicates that the sparse mode is skipped. This parameter is used to set the threshold of the sparse mode. When the length of the data segment reaches 2<sup>log2sparse</sup>, the mode is switched to the full mode. If the input is  **–1**  or  **NULL**, the built-in default value of  **log2sparse**  is used.
 
@@ -694,7 +686,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
+- hll\_add\_agg\(hll\_hashval, int32 log2m, int32 log2explicit, int64 log2sparse, int32 duplicatecheck\)
 
     Description: Groups hashed data into HLL and sets the  **log2m**,  **log2explicit**,  **log2sparse**, and  **duplicatecheck**  parameters. The value of  **duplicatecheck**  can be  **0**  or  **1**, indicating whether to enable this mode. By default, this mode is disabled. If the input is  **–1**  or  **NULL**, the built-in default value of  **duplicatecheck**  is used.
 
@@ -710,7 +702,7 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     (1 row)
     ```
 
--   hll\_union\_agg\(hll\)
+- hll\_union\_agg\(hll\)
 
     Description: Performs an UNION operation on multiple pieces of data of the HLL type to obtain one HLL.
 
@@ -731,27 +723,25 @@ There are three HLL modes: explicit, sparse, and full. When the data size is sma
     >
     >To perform the UNION operation on data in multiple HLLs, ensure that the HLLs have the same precision. Otherwise,  **UNION**  cannot be performed. This constraint also applies to the  **hll\_union\(hll, hll\)**  function.
 
-
 ## Obsolete Functions<a name="section34169941512"></a>
 
 Some old HLL functions are discarded due to version upgrade. You can replace them with similar functions.
 
--   hll\_schema\_version\(hll\)
+- hll\_schema\_version\(hll\)
 
     Description: Checks the schema version in the current HLL. In earlier versions, the schema version is fixed at  **1**, which is used to verify the header of the HLL field. After refactoring, the HLL field is added to the header for verification. The schema version is no longer used.
 
--   hll\_regwidth\(hll\)
+- hll\_regwidth\(hll\)
 
     Description: Queries the bucket size in the HLL data structure. In earlier versions, the value of  **regwidth**  ranges from 1 to 5, which has a large error and limits the upper limit of the cardinality estimation. After refactoring, the value of  **regwidth**  is fixed at  **6**  and the  **regwidth**  variable is not used.
 
--   hll\_expthresh\(hll\)
+- hll\_expthresh\(hll\)
 
     Description: Obtains the  **expthresh**  value in the current HLL. The  **hll\_log2explicit\(hll\)**  function is used to replace similar functions.
 
--   hll\_sparseon\(hll\)
+- hll\_sparseon\(hll\)
 
     Description: Specifies whether to enable the sparse mode. Use  **hll\_log2sparse\(hll\)**  to replace similar functions. The value  **0**  indicates that the sparse mode is disabled.
-
 
 ## Built-in Functions<a name="section17632057105518"></a>
 
@@ -886,7 +876,7 @@ HyperLogLog \(HLL\) has a series of built-in functions for internal data process
 
 ## Operators<a name="section18638145795518"></a>
 
--   =
+- =
 
     Description: Compares the values of HLL and  **hll\_hashval**  types to check whether they are the same.
 
@@ -910,8 +900,7 @@ HyperLogLog \(HLL\) has a series of built-in functions for internal data process
     (1 row)
     ```
 
-
--   <\> or !=
+- <\> or !=
 
     Description: Compares the values of HLL and  **hll\_hashval**  types to check whether they are different.
 
@@ -935,7 +924,7 @@ HyperLogLog \(HLL\) has a series of built-in functions for internal data process
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Represents the functions of  **hll\_add**,  **hll\_union**, and  **hll\_add\_rev**.
 
@@ -966,7 +955,7 @@ HyperLogLog \(HLL\) has a series of built-in functions for internal data process
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Calculates the number of distinct values of an HLL. It works the same as the  **hll\_cardinality**  function.
 
@@ -981,5 +970,3 @@ HyperLogLog \(HLL\) has a series of built-in functions for internal data process
             1
     (1 row)
     ```
-
-

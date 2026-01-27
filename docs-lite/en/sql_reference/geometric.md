@@ -176,4 +176,3 @@ x , y   , r
 where  **\(x,y\)**  is the center point and  **r**  is the radius of the circle.
 
 Circles are output using the first syntax.
-

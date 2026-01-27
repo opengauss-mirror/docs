@@ -59,10 +59,11 @@ HyperLoglog \(HLL\) is an approximation algorithm for efficiently counting the n
 HLL has advantages over others in the computing speed and storage space requirement. In terms of time complexity, the sorting algorithm needs O\(nlogn\) time for sorting, and the hash algorithm and HLL need O\(n\) time for full table scanning. In terms of storage space requirements, the sorting algorithm and hash algorithm need to store raw data before collecting statistics, whereas the HLL algorithm needs to store only the HLL data structures rather than the raw data, and thereby occupying a fixed space of about 16 KB.
 
 >[!TIP]NOTICE 
->-   In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.
->-   When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.
->    -   By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.
->    -   The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.
+>
+>- In the current default specifications, the maximum number of distinct values that can be calculated is about 1.1e + 15, and the error rate is 0.8%. If the calculation result exceeds the maximum, the error rate of the calculation result will increase, or the calculation will fail and an error will be reported.
+>- When using this feature for the first time, you need to evaluate the distinct values of the service, properly select configuration parameters, and perform verification to ensure that the accuracy meets requirements.
+>   - By default, the distinct value is 1.1e + 15. If the distinct value is NaN, you need to adjust log2m or use another algorithm to calculate the distinct value.
+>   - The hash algorithm has an extremely low probability of collision. However, you are still advised to select 2 or 3 hash seeds for verification when using the hash algorithm for the first time. If there is only a small difference between the distinct values, you can select any one of the seeds as the hash seed.
 
 [Table 2](#table18186113885012)  describes main HLL data structures.
 
@@ -88,9 +89,10 @@ When you create an HLL data type, 0 to 4 input parameters are supported. The par
 >[!NOTE]NOTE 
 >
 >When the HLL data type is created, the result varies depending on the input parameter behavior:
->-   When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
->-   If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.
->-   If the input value is invalid, an error is reported when the HLL type is created.
+>
+>- When creating an HLL type, do not set the input parameter or set it to  **–1**. Use the default value of the corresponding HLL parameter.
+>- If a valid value is set for the input parameter, the corresponding HLL parameter uses the input value.
+>- If the input value is invalid, an error is reported when the HLL type is created.
 
 ```
 -- Create an HLL table without specifying input parameters.
@@ -143,7 +145,7 @@ ERROR:  log2explicit does not match: source is 5 and dest is 10
 
 The following describes HLL application scenarios.
 
--   Scenario 1: "Hello World"
+- Scenario 1: "Hello World"
 
     The following example shows how to use the HLL data type:
 
@@ -171,7 +173,7 @@ The following describes HLL application scenarios.
     openGauss=#  drop table helloworld;
     ```
 
--   Scenario 2: Collect statistics about website visitors.
+- Scenario 2: Collect statistics about website visitors.
 
     The following example shows how an HLL collects statistics on the number of users visiting a website within a period of time:
 
@@ -244,7 +246,7 @@ The following describes HLL application scenarios.
     openGauss=# drop table daily_uniques;
     ```
 
--   Scenario 3: The data to be inserted does not meet the requirements of the HLL data structure.
+- Scenario 3: The data to be inserted does not meet the requirements of the HLL data structure.
 
     When inserting data into a column of the HLL type, ensure that the data meets the requirements of the HLL data structure. If the data does not meet the requirements after being parsed, an error will be reported. In the following example,  **E\\\\1234**  to be inserted does not meet the requirements of the HLL data structure after being parsed. As a result, an error is reported.
 
@@ -254,5 +256,3 @@ The following describes HLL application scenarios.
     ERROR:  not a hll type, size=6 is not enough
     openGauss=# drop table test;
     ```
-
-

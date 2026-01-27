@@ -18,24 +18,23 @@ DROP CAST [ IF EXISTS ] (source_type AS target_type) [ CASCADE | RESTRICT ]
 
 ## Parameter Description<a name="section62781959163314"></a>
 
--   I**F EXISTS**
+- I**F EXISTS**
 
     Do not throw an error if the specified conversion does not exist. A notice is issued in this case.
 
--   **source\_type**
+- **source\_type**
 
     Source data type in the type conversion.
 
--   **target\_type**
+- **target\_type**
 
     Type of the target data in the type conversion.
 
--   **CASCADE**
+- **CASCADE**
 
     **RESTRICT**
 
     These keys have no effect because there is no dependency on type conversion.
-
 
 ## Example<a name="section14411351193419"></a>
 
@@ -48,4 +47,3 @@ DROP CAST (text AS int);
 ## Compatibility<a name="section75182291579"></a>
 
 DROP CAST complies with the SQL standard.
-

@@ -172,4 +172,3 @@ The  **macaddr**  type stores MAC addresses, known for example from Ethernet car
 ```
 
 These examples would all specify the same address. Upper and lower cases are accepted for the digits a through f. Output is always in the first of the forms shown.
-

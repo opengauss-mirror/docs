@@ -13,4 +13,3 @@ GRANT USAGE ON FOREIGN SERVER mot_server TO <user>;
 ```
 
 所有关键字不区分大小写。
-

@@ -15,8 +15,7 @@ MOT有效的几乎无锁的设计和高度调优的实现，使其在多核服�
 
 MOT完全支持ACID特性：
 
--   原子性（Atomicity）：原子事务是一系列不可分割的数据库操作。在事务完成（分别提交或中止）之后，这些操作要么全部发生，要么全部不发生。
--   一致性（Consistency）：事务结束后，数据库处于一致状态，保留数据完整性。
--   隔离性（Isolation）：事务之间不能相互干扰。MOT支持不同的重复读和读提交隔离级别。在下一个版本中，MOT还将支持可序列化隔离。更多信息，请参见[MOT隔离级别](mot_concurrency_control_mechanism.md)。
--   持久性（Durability）：即使发生崩溃和失败，成功完成（提交）的事务效果持久保存。MOT完全集成了openGauss的基于WAL的日志记录。同时支持同步和异步日志记录选项。MOT还支持同步+面向NUMA优化的组提交。更多信息，请参见[MOT持久性概念](mot_durability_concepts.md)。
-
+- 原子性（Atomicity）：原子事务是一系列不可分割的数据库操作。在事务完成（分别提交或中止）之后，这些操作要么全部发生，要么全部不发生。
+- 一致性（Consistency）：事务结束后，数据库处于一致状态，保留数据完整性。
+- 隔离性（Isolation）：事务之间不能相互干扰。MOT支持不同的重复读和读提交隔离级别。在下一个版本中，MOT还将支持可序列化隔离。更多信息，请参见[MOT隔离级别](mot_concurrency_control_mechanism.md)。
+- 持久性（Durability）：即使发生崩溃和失败，成功完成（提交）的事务效果持久保存。MOT完全集成了openGauss的基于WAL的日志记录。同时支持同步和异步日志记录选项。MOT还支持同步+面向NUMA优化的组提交。更多信息，请参见[MOT持久性概念](mot_durability_concepts.md)。

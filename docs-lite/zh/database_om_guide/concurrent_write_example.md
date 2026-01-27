@@ -30,11 +30,11 @@ COMMIT;
 
 场景2：
 
--   READ COMMITTED级别
+- READ COMMITTED级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1执行INSERT完成后，提交事务T1，事务T2再执行DELETE语句时，此时显示DELETE 1，事务T1提交完成后，事务T2可以看到此条数据，可以删除成功。
 
--   REPEATABLE READ级别
+- REPEATABLE READ级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1执行INSERT完成后，提交事务T1，事务T2再执行DELETE语句时，此时显示DELETE 0，事务T1提交完成后，事务T2依旧看不到事务T1的数据，一个事务中前后查询到的数据是一致的。
 
@@ -62,11 +62,11 @@ COMMIT;
 
 场景2：
 
--   READ COMMITTED级别
+- READ COMMITTED级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1执行INSERT完成后直接提交，事务T2中执行INSERT语句后执行查询语句，可以看到事务T1中插入的数据。
 
--   REPEATABLE READ级别
+- REPEATABLE READ级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1执行INSERT完成后直接提交，事务T2中执行INSERT语句后执行查询语句，看不到事务T1中插入的数据。
 
@@ -128,13 +128,10 @@ COMMIT;
 
 场景2：
 
--   READ COMMITTED级别
+- READ COMMITTED级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1开始执行COPY，然后提交，事务T2查询，可以看到事务T1中COPY的数据。
 
--   REPEATABLE READ级别
+- REPEATABLE READ级别
 
     开启事务T1，不提交的同时开启事务T2，事务T1开始执行COPY，然后提交，事务T2 查询，看不到事务T1中COPY的数据。
-
-
-

@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0059779060_s8aed237cc11e48bcb20d63f3ed081327"></a>
 
--   openGauss does not support specified nodes and supports only TO ALL.
--   This function can be used to clear the normal connections that are being used only in force mode.
+- openGauss does not support specified nodes and supports only TO ALL.
+- This function can be used to clear the normal connections that are being used only in force mode.
 
 ## Syntax<a name="en-us_topic_0059779060_s24ab1cb591b54a43af5fe6d87cc067a1"></a>
 
@@ -20,30 +20,29 @@ CLEAN CONNECTION
 
 ## Parameter Description<a name="en-us_topic_0059779060_s5c57cb1e5e8740dcb15254b0ee05e666"></a>
 
--   **CHECK**
+- **CHECK**
 
     This parameter can be specified only when the node list is specified as  **TO ALL**. Setting this parameter will check whether a database is accessed by other sessions before its connections are cleared. If any sessions are detected before  **DROP DATABASE**  is executed, an error will be reported and the database will not be deleted.
 
--   **FORCE**
+- **FORCE**
 
     This parameter can be specified only when the node list is specified as  **TO ALL**. Setting this parameter will send  **SIGTERM**  signals to all the threads related to the specified  **dbname**  and  **username**  and forcibly shut them down.
 
--   **COORDINATOR \( nodename \[,  ... \] \) | NODE \( nodename \[, ... \] \) | ALL**
+- **COORDINATOR \( nodename \[,  ... \] \) | NODE \( nodename \[, ... \] \) | ALL**
 
     Only  **TO ALL**  is supported. This parameter must be specified. All specified connections on the node will be deleted.
 
--   **dbname**
+- **dbname**
 
     Deletes connections to a specified database. If this parameter is not specified, connections to all databases will be deleted.
 
     Value range: an existing database name
 
--   **username**
+- **username**
 
     Deletes connections of a specific user. If this parameter is not specified, connections of all users will be deleted.
 
     Value range: an existing username
-
 
 ## Examples<a name="en-us_topic_0059779060_s11a931f26ab344c1aab49ebd522ee0ad"></a>
 
@@ -63,4 +62,3 @@ CLEAN CONNECTION TO ALL FORCE FOR DATABASE gaussdb;
 -- Delete user jack.
 DROP USER jack;
 ```
-

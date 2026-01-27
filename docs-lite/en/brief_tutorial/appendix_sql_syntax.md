@@ -2816,4 +2816,3 @@ VALUES {( expression [, ...] )} [, ...]
     [ OFFSET start [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ count ] [ PERCENT ] { ROW | ROWS } { ONLY | WITH TIES } ];
 ```
-

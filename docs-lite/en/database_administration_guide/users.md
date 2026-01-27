@@ -8,7 +8,7 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
 
 ## Adding, Modifying, and Deleting Users<a name="en-us_topic_0283136811_en-us_topic_0237121102_en-us_topic_0155089862_section1157510331121"></a>
 
--   To create a user, use the SQL statement  **[CREATE USER](../sql_reference/create-user.md)**.
+- To create a user, use the SQL statement  **[CREATE USER](../sql_reference/create-user.md)**.
 
     For example, create a user  **joe**  and set the  **CREATEDB**  attribute for the user.
 
@@ -17,21 +17,20 @@ When a user logs in, openGauss authenticates the user. A user can own databases 
     CREATE ROLE
     ```
 
--   To create a system administrator, use the  **[CREATE USER](../sql_reference/create-user.md)**  statement with the  **SYSADMIN**  parameter.
--   To delete an existing user, use  **[DROP USER](../sql_reference/drop-user.md)**.
--   To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](../sql_reference/alter-user.md)**.
--   To view a user list, query the  **[PG\_USER](../database_reference/pg_user.md)**  view.
+- To create a system administrator, use the  **[CREATE USER](../sql_reference/create-user.md)**  statement with the  **SYSADMIN**  parameter.
+- To delete an existing user, use  **[DROP USER](../sql_reference/drop-user.md)**.
+- To change a user account \(for example, rename the user or change the password\), use  **[ALTER USER](../sql_reference/alter-user.md)**.
+- To view a user list, query the  **[PG\_USER](../database_reference/pg_user.md)**  view.
 
     ```
     openGauss=# SELECT * FROM pg_user; 
     ```
 
--   To view user attributes, query the system catalog  **[PG\_AUTHID](../database_reference/pg_authid.md)**.
+- To view user attributes, query the system catalog  **[PG\_AUTHID](../database_reference/pg_authid.md)**.
 
     ```
     openGauss=# SELECT * FROM pg_authid; 
     ```
-
 
 ## Private Users<a name="en-us_topic_0283136811_en-us_topic_0237121102_section12234116194510"></a>
 
@@ -57,4 +56,3 @@ openGauss=# CREATE USER user_persistence WITH PERSISTENCE IDENTIFIED BY "1234@ab
 ```
 
 Only the initial user is allowed to create, modify, and delete permanent users with the  **PERSISTENCE**  attribute.
-

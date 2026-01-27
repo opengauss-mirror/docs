@@ -92,4 +92,3 @@ PG\_STAT\_BGWRITER视图显示关于后端写进程活动的统计信息。
 </tr>
 </tbody>
 </table>
-

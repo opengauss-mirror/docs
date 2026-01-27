@@ -53,4 +53,3 @@ GS\_CLIENT\_GLOBAL\_KEYS\_ARGS系统表记录密态等值特性中客户端加�
 
 >[!NOTE]说明
 >轻量版场景下，openGauss提供此系统表，但密态等值特性不可用。
-

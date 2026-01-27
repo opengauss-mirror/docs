@@ -4,8 +4,8 @@ For database security purposes, openGauss provides three backup types, multiple 
 
 Backup and restoration can be classified into logical backup and restoration and flashback restoration.
 
--   Logical backup and restoration: backs up data by logically exporting data. This method can dump data that is backed up at a certain time point, and restore data only to this backup point. Logical backup does not back up data processed between failure occurrence and the last backup. It is suitable when data rarely changes. If such data is damaged due to misoperations, it can be quickly restored through logical backup. To restore all the data in a database through logical backup, rebuild a database and import the backup data. Logical backup is not recommended for databases requiring high data availability because it takes a long time for data restoration. Logical backup is a major approach to migrate and transfer data because it can be performed on any platform.
--   Flashback restoration: This function is used to restore dropped tables from the recycle bin. Like in a Window OS, dropped tables are stored in the recycle bin of databases. The MVCC mechanism is used to restore data to a specified point in time or change sequence number (CSN).
+- Logical backup and restoration: backs up data by logically exporting data. This method can dump data that is backed up at a certain time point, and restore data only to this backup point. Logical backup does not back up data processed between failure occurrence and the last backup. It is suitable when data rarely changes. If such data is damaged due to misoperations, it can be quickly restored through logical backup. To restore all the data in a database through logical backup, rebuild a database and import the backup data. Logical backup is not recommended for databases requiring high data availability because it takes a long time for data restoration. Logical backup is a major approach to migrate and transfer data because it can be performed on any platform.
+- Flashback restoration: This function is used to restore dropped tables from the recycle bin. Like in a Window OS, dropped tables are stored in the recycle bin of databases. The MVCC mechanism is used to restore data to a specified point in time or change sequence number (CSN).
 
     The three data backup and restoration solutions supported by openGauss are as follows. Methods for restoring data in case of an exception differ for different backup and restoration solutions.
 
@@ -67,19 +67,18 @@ Backup and restoration can be classified into logical backup and restoration and
     </tbody>
     </table>
     
-    
     While backing up and restoring data, take the following aspects into consideration:
     
-    -   Ensure that the backup impact on services is within an acceptable scope.
-    -   Database restoration efficiency.
+    - Ensure that the backup impact on services is within an acceptable scope.
+    - Database restoration efficiency.
     
         To minimize the impact of database faults, minimize the restoration time to maximize the restoration efficiency.
     
-    -   Data restorability
+    - Data restorability
     
         If a database fails, try to minimize the data loss.
     
-    -   Database restoration cost
+    - Database restoration cost
     
     There are many factors that need to be considered while you select a backup policy on the live network, such as backup objects, data volume, and network configuration. [Table 2](#en-us_topic_0283140581_en-us_topic_0237088826_en-us_topic_0100209712_table1179095017218) lists available backup policies and applicable scenarios for each backup policy.
     

@@ -134,4 +134,3 @@ DB4AI.SNAPSHOT records the snapshots stored by the current user through the DB4A
 </tr>
 </tbody>
 </table>
-

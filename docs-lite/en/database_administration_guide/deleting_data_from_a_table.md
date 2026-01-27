@@ -31,4 +31,3 @@ To delete a table, run the following command:
 ```
 openGauss=# DROP TABLE customer_t1;
 ```
-

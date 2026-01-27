@@ -41,4 +41,3 @@ openGauss逻辑架构如[图1](#zh-cn_topic_0283136530_zh-cn_topic_0237080634_zh
 </tr>
 </tbody>
 </table>
-

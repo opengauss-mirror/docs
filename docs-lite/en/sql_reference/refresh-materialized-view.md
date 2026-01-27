@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s3a6fd145e83b4e61a22dabdcf32ac282"></a>
 
--   Full refreshing can be performed on both full and fast-refresh materialized views.
--   To refresh a materialized view, you must have the SELECT permission on the base table.
+- Full refreshing can be performed on both full and fast-refresh materialized views.
+- To refresh a materialized view, you must have the SELECT permission on the base table.
 
 ## Syntax<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_sbe280a5c331e4b75969129444d341882"></a>
 
@@ -17,10 +17,9 @@ REFRESH MATERIALIZED VIEW mv_name;
 
 ## Parameter Description<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_sf2fd7956e26c49a8ae566c80a0e8e1c0"></a>
 
--   **mv\_name**
+- **mv\_name**
 
     Name of the materialized view to be refreshed.
-
 
 ## Examples<a name="en-us_topic_0283136612_en-us_topic_0237122161_en-us_topic_0059777447_s8a46083a59d940c3aaa2535b2f783645"></a>
 
@@ -42,4 +41,3 @@ openGauss=# REFRESH MATERIALIZED VIEW my_imv;
 ## Helpful Links<a name="en-us_topic_0283136612_section1922813315464"></a>
 
 [ALTER MATERIALIZED VIEW](alter-materialized-view.md),  [CREATE INCREMENTAL MATERIALIZED VIEW](create-incremental-materialized-view.md),  [CREATE MATERIALIZED VIEW](create-materialized-view.md),  [CREATE TABLE](create-table.md),  [DROP MATERIALIZED VIEW](drop-materialized-view.md), and  [REFRESH INCREMENTAL MATERIALIZED VIEW](refresh-incremental-materialized-view.md)
-

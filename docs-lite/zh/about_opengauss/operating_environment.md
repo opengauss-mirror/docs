@@ -4,9 +4,9 @@
 
 openGauss支持运行在ARM服务器和通用的x86服务器上：
 
--   支持ARM服务器和基于x86\_64的通用PC服务器。
--   支持本地存储（SATA、SAS、SSD）。
--   支持千兆、万兆Ethernet网络。
+- 支持ARM服务器和基于x86\_64的通用PC服务器。
+- 支持本地存储（SATA、SAS、SSD）。
+- 支持千兆、万兆Ethernet网络。
 
 ## 支持的操作系统<a name="zh-cn_topic_0231763749_zh-cn_topic_0059777704_sa3cc6a5214094aa9b46a22b25ba77c20"></a>
 
@@ -44,4 +44,3 @@ openGauss支持运行在ARM服务器和通用的x86服务器上：
 </tr>
 </tbody>
 </table>
-

@@ -16,21 +16,19 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 
 ## Parameter Description<a name="en-us_topic_0283136745_section08321910175316"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified data server does not exist.
 
--   **server\_name**
+- **server\_name**
 
     Specifies the name of the data server to be dropped.
 
--   **CASCADE | RESTRICT**
+- **CASCADE | RESTRICT**
 
-    -   **CASCADE**: automatically drops the objects that depend on the data server.
+    - **CASCADE**: automatically drops the objects that depend on the data server.
 
-    -   **RESTRICT**: refuses to drop the server if any objects depend on it. This is the default action.
-
-
+    - **RESTRICT**: refuses to drop the server if any objects depend on it. This is the default action.
 
 >[!NOTE]NOTE 
 >
@@ -39,4 +37,3 @@ DROP SERVER [ IF EXISTS ] server_name [ {CASCADE | RESTRICT} ] ;
 ## Helpful Links<a name="en-us_topic_0283136745_section620331805317"></a>
 
 [ALTER SERVER](alter-server.md)  and  [CREATE SERVER](create-server.md)
-

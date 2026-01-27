@@ -2,7 +2,7 @@
 
 gsql provides several advanced features to facilitate user operations. The common usage is as follows:
 
--   Query the command help information.
+- Query the command help information.
 
     ```
     \h [NAME]
@@ -18,7 +18,7 @@ gsql provides several advanced features to facilitate user operations. The commo
     ABORT [ WORK | TRANSACTION ] ;
     ```
 
--   Switch databases.
+- Switch databases.
 
     ```
     \c dbname
@@ -33,7 +33,7 @@ gsql provides several advanced features to facilitate user operations. The commo
     db_tpcc=# 
     ```
 
--   Query all databases.
+- Query all databases.
 
     ```
     \l
@@ -55,8 +55,7 @@ gsql provides several advanced features to facilitate user operations. The commo
     (4 rows)
     ```
 
-
--   Query all tables in the current database.
+- Query all tables in the current database.
 
     ```
     \dt
@@ -74,8 +73,7 @@ gsql provides several advanced features to facilitate user operations. The commo
     (2 rows)
     ```
 
-
--   View a table structure.
+- View a table structure.
 
     ```
     \d tablename
@@ -94,5 +92,3 @@ gsql provides several advanced features to facilitate user operations. The commo
      c_last_name   | character(8) |
      amount        | integer      |
     ```
-
-

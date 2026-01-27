@@ -260,4 +260,3 @@ PG\_ROLES provides information about database roles. Initialization users and us
 </tr>
 </tbody>
 </table>
-

@@ -8,8 +8,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the database monitoring snapshot function is enabled.
--   **off**  indicates that the database monitoring snapshot function is disabled.
+- **on**  indicates that the database monitoring snapshot function is enabled.
+- **off**  indicates that the database monitoring snapshot function is disabled.
 
 **Default value**:  **off**
 
@@ -105,14 +105,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 ## enable\_asp<a name="section124165617108"></a>
 
-**Parameter description: **Specifies whether to enable the active session profile function.
+**Parameter description:**Specifies whether to enable the active session profile function.
 
 This parameter is a SIGHUP parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: Boolean
 
--   **on**: The function is enabled.
--   **off**: The function is disabled.
+- **on**: The function is enabled.
+- **off**: The function is disabled.
 
 **Default value**:  **off**
-

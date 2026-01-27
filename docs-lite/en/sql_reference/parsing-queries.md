@@ -65,4 +65,3 @@ openGauss=# SELECT plainto_tsquery('english', 'The Fat & Rats:C');
 ```
 
 Here, all the input punctuation was discarded as being space symbols.
-

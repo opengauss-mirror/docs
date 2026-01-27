@@ -21,4 +21,3 @@ openGauss is integrated into the openEuler OS by default. You can select the ope
 Currently, this feature is integrated only in openEuler 22.03 LTS.
 
 By default, the installed database is a single-instance process.
-

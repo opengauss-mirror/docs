@@ -2,7 +2,7 @@
 
 Universal file access functions provide local access interfaces for files on a database server. Only files in the openGauss directory and the  **log\_directory**  directory can be accessed. Use a relative path for files in the openGauss directory, and a path matching the  **log\_directory**  configuration setting for log files. Only database initialization users can use these functions.
 
--   pg\_ls\_dir\(dirname text\)
+- pg\_ls\_dir\(dirname text\)
 
     Description: Lists files in a directory.
 
@@ -51,7 +51,7 @@ Universal file access functions provide local access interfaces for files on a d
     (32 rows)
     ```
 
--   pg\_read\_file\(filename text, offset bigint, length bigint\)
+- pg\_read\_file\(filename text, offset bigint, length bigint\)
 
     Description: Returns the content of a text file.
 
@@ -75,7 +75,7 @@ Universal file access functions provide local access interfaces for files on a d
     (1 row)
     ```
 
--   pg\_read\_binary\_file\(filename text \[, offset bigint, length bigint,missing\_ok boolean\]\)
+- pg\_read\_binary\_file\(filename text \[, offset bigint, length bigint,missing\_ok boolean\]\)
 
     Description: Returns the content of a binary file.
 
@@ -87,7 +87,7 @@ Universal file access functions provide local access interfaces for files on a d
     openGauss=# SELECT convert_from(pg_read_binary_file('filename'), 'UTF8');
     ```
 
--   pg\_stat\_file\(filename text\)
+- pg\_stat\_file\(filename text\)
 
     Description: Returns status information about a file.
 
@@ -139,5 +139,3 @@ Universal file access functions provide local access interfaces for files on a d
      2017-06-01 17:18:08+08
     (1 row)
     ```
-
-

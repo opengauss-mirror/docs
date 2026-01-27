@@ -16,22 +16,21 @@ DROP TEXT SEARCH CONFIGURATION [ IF EXISTS ] name [ CASCADE | RESTRICT ];
 
 ## Parameter Description<a name="en-us_topic_0283136862_en-us_topic_0237122154_en-us_topic_0059778389_s519cbd43e889441f9638691754942bda"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Reports a notice instead of an error if the specified text search configuration does not exist.
 
--   **name**
+- **name**
 
     Specifies the name \(optionally schema-qualified\) of the text search configuration to be deleted.
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically deletes the objects that depend on the text search configuration.
 
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to delete the text search configuration if any objects depend on it. This is the default action.
-
 
 ## Examples<a name="en-us_topic_0283136862_en-us_topic_0237122154_en-us_topic_0059778389_s720b27fe18f245ca85d1204cda30b327"></a>
 
@@ -40,4 +39,3 @@ See  [Examples](create-text-search-configuration.md#en-us_topic_0283137399_en-us
 ## Helpful Links<a name="en-us_topic_0283136862_en-us_topic_0237122154_en-us_topic_0059778389_s8bb54ddcd47044a0a99c9c9dffadac2c"></a>
 
 [ALTER TEXT SEARCH CONFIGURATION](alter-text-search-configuration.md)  and  [CREATE TEXT SEARCH CONFIGURATION](create-text-search-configuration.md)
-

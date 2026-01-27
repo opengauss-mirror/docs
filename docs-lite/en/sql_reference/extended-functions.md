@@ -38,4 +38,3 @@ The following table lists the extended functions supported by openGauss. These f
 </tr>
 </tbody>
 </table>
-

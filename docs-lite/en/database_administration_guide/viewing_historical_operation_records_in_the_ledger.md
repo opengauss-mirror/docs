@@ -2,13 +2,13 @@
 
 ## Prerequisites<a name="en-us_topic_0059778013_sfe45a1031ec347ba820649c0cec52027"></a>
 
--   You are an audit administrator or a role that has the audit administrator permissions.
--   The database is running properly, and a series of addition, deletion, and modification operations are performed on the tamper-proof database to ensure that operation records are generated in the ledger for query.
+- You are an audit administrator or a role that has the audit administrator permissions.
+- The database is running properly, and a series of addition, deletion, and modification operations are performed on the tamper-proof database to ensure that operation records are generated in the ledger for query.
 
 ## Background<a name="en-us_topic_0059778013_s15667753cb2542158661ae3f96cab067"></a>
 
--   Only users with the  **AUDITADMIN**  attribute can view historical operation records in the ledger. For details about database users and how to create users, see  [Users](users.md).
--   To query the global blockchain table  **gs\_global\_chain**, run the following command:
+- Only users with the  **AUDITADMIN**  attribute can view historical operation records in the ledger. For details about database users and how to create users, see  [Users](users.md).
+- To query the global blockchain table  **gs\_global\_chain**, run the following command:
 
     ```
     SELECT * FROM gs_global_chain;
@@ -16,7 +16,7 @@
 
     This table contains 11 fields. For details about the meaning of each field, see  [GS\_GLOBAL\_CHAIN](../database_reference/gs_global_chain.md).
 
--   To query the user history table in  **BLOCKCHAIN**  schema, the operation is as follows:
+- To query the user history table in  **BLOCKCHAIN**  schema, the operation is as follows:
 
     For example, the schema of the user table is  **ledgernsp**, the table name is  **usertable**, and the name of the corresponding user history table is  **blockchain.ledgernsp\_usertable\_hist**, you can run the following command:
 
@@ -29,11 +29,10 @@
     >[!NOTE]NOTE 
     >Generally, the name of a user history table is in the format of blockchain.<_schemaname_\>\_<_tablename_\>\_hist. If the schema name or table name of the tamper-proof user table is too long, the length of the table name generated using the preceding format may exceed the upper limit. In this case, the blockchain.<_schema\_oid_\>\_<_table\_oid_\>\_hist format is used to name the table.
 
-
 ## Procedure<a name="section199001315531"></a>
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -51,7 +50,7 @@
     openGauss=# 
     ```
 
-3.  View records in the global blockchain table.
+3. View records in the global blockchain table.
 
     ```
     openGauss=# SELECT * FROM gs_global_chain;
@@ -74,7 +73,7 @@
 
     The query result indicates that user  **omm**  has consecutively executed three DML commands, including  **INSERT**,  **UPDATE**, and  **DELETE**.
 
-4.  View records in the user history table.
+4. View records in the user history table.
 
     ```
     openGauss=# SELECT * FROM blockchain.ledgernsp_usertable_hist;
@@ -95,7 +94,7 @@
 
     The query result shows that user  **omm**  inserts three rows of data to the  **ledgernsp.usertable**  table, updates one row of data, deletes one row of data, and leaves two rows of data, and the hash values are  **1f2e543c580cb8c5**  and  **437761affbb7c605**.
 
-5.  Query user table data and hash verification columns.
+5. Query user table data and hash verification columns.
 
     ```
     openGauss=# SELECT *, hash FROM ledgernsp.usertable;
@@ -112,5 +111,3 @@
     ```
 
     The query result indicates that the remaining two records in the user table are the same as those in step 4.
-
-

@@ -4,7 +4,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
 
 ## Arithmetic Operators<a name="section168844437515"></a>
 
--   \+
+- \+
 
     Description: Addition
 
@@ -18,7 +18,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   \-
+- \-
 
     Description: Subtraction
 
@@ -32,7 +32,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   \*
+- \*
 
     Description: Multiplication
 
@@ -46,7 +46,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   /
+- /
 
     Description: Division \(The result is not rounded.\)
 
@@ -68,7 +68,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   +/-
+- +/-
 
     Description: Positive/Negative
 
@@ -82,7 +82,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   %
+- %
 
     Description: Model \(to obtain the remainder\)
 
@@ -96,7 +96,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   @
+- @
 
     Description: Absolute value
 
@@ -110,7 +110,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   ^
+- ^
 
     Description: Power \(exponent calculation\)
 
@@ -124,7 +124,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   |/
+- |/
 
     Description: Square root
 
@@ -138,7 +138,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   ||/
+- ||/
 
     Description: Cubic root
 
@@ -152,7 +152,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   !
+- !
 
     Description: Factorial
 
@@ -168,7 +168,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   !!
+- !!
 
     Description: Factorial \(prefix operator\)
 
@@ -184,7 +184,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   &
+- &
 
     Description: Binary AND
 
@@ -198,7 +198,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   |
+- |
 
     Description: Binary OR
 
@@ -212,7 +212,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   \#
+- \#
 
     Description: Binary XOR
 
@@ -226,7 +226,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   \~
+- \~
 
     Description: Binary NOT
 
@@ -240,7 +240,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   <<
+- <<
 
     Description: Binary shift left
 
@@ -254,7 +254,7 @@ An operator in openGauss is a reserved keyword or character, and it is generally
     (1 row)
     ```
 
--   \>\>
+- \>\>
 
     Description: Binary shift right
 
@@ -267,7 +267,6 @@ An operator in openGauss is a reserved keyword or character, and it is generally
           2
     (1 row)
     ```
-
 
 ## Comparison Operators<a name="section06105235531"></a>
 
@@ -454,4 +453,3 @@ The operators AND and OR are commutative. That is, you can switch the left and r
 </table>
 
 For details, see  [Examples](where_clause.md#en-us_topic_0000001225258419_section36861642133019).
-

@@ -8,12 +8,12 @@ openGauss always tries to select the lock mode with minimum constraints when aut
 
 ## Precautions<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s7bddbed63c51406a8d5cff4c980420bf"></a>
 
--   **LOCK TABLE**  is useless outside a transaction block: the lock would remain held only to the completion of the statement. If  **LOCK TABLE**  is out of any transaction block, an error is reported.
--   If no lock mode is specified, then  **ACCESS EXCLUSIVE**, the most restrictive mode, is used.
--   LOCK TABLE ...  **IN ACCESS SHARE MODE**  requires the  **SELECT **permission on the target table. All other forms of  **LOCK**  require table-level  **UPDATE**  and/or the  **DELETE**  permission.
--   There is no  **UNLOCK TABLE**  statement. Locks are always released at transaction end.
--   **LOCK TABLE**  only deals with table-level locks, and so the mode names involving  **ROW**  are all misnomers. These mode names should generally be read as indicating the intention of the user to acquire row-level locks within the locked table. Also,  **ROW EXCLUSIVE**  mode is a shareable table lock. Note that all the lock modes have identical semantics so far as  **LOCK TABLE**  is concerned, differing only in the rules about which modes conflict with which. For details about the rules, see  [Table 1](#en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_ta3d4fbc3c92c4f2994f7a9f5583a6ba5).
--   If the xc\_maintenance\_mode parameter is not enabled, an error is reported when an ACCESS EXCLUSIVE lock is applied for a system catalog.
+- **LOCK TABLE**  is useless outside a transaction block: the lock would remain held only to the completion of the statement. If  **LOCK TABLE**  is out of any transaction block, an error is reported.
+- If no lock mode is specified, then  **ACCESS EXCLUSIVE**, the most restrictive mode, is used.
+- LOCK TABLE ...  **IN ACCESS SHARE MODE**  requires the  **SELECT**permission on the target table. All other forms of  **LOCK**  require table-level  **UPDATE**  and/or the  **DELETE**  permission.
+- There is no  **UNLOCK TABLE**  statement. Locks are always released at transaction end.
+- **LOCK TABLE**  only deals with table-level locks, and so the mode names involving  **ROW**  are all misnomers. These mode names should generally be read as indicating the intention of the user to acquire row-level locks within the locked table. Also,  **ROW EXCLUSIVE**  mode is a shareable table lock. Note that all the lock modes have identical semantics so far as  **LOCK TABLE**  is concerned, differing only in the rules about which modes conflict with which. For details about the rules, see  [Table 1](#en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_ta3d4fbc3c92c4f2994f7a9f5583a6ba5).
+- If the xc\_maintenance\_mode parameter is not enabled, an error is reported when an ACCESS EXCLUSIVE lock is applied for a system catalog.
 
 ## Syntax<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s178af862f5994d318f9e6603d8196260"></a>
 
@@ -205,7 +205,7 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
 **LOCK**  parameters are as follows:
 
--   **name**
+- **name**
 
     Specifies the name \(optionally schema-qualified\) of an existing table to lock.
 
@@ -213,45 +213,45 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
     Value range: an existing table name
 
--   **ONLY**
+- **ONLY**
 
     If  **ONLY**  is specified, only that table is locked. If  **ONLY**  is not specified, the table and all its sub-tables are locked.
 
--   **ACCESS SHARE**
+- **ACCESS SHARE**
 
     Conflicts with the ACCESS EXCLUSIVE lock mode only.
 
     The  **SELECT**  statement acquires a lock of this mode on referenced tables. Typically, any command that reads a table without modifying it acquires this lock mode.
 
--   **ROW SHARE**
+- **ROW SHARE**
 
     It conflicts with the EXCLUSIVE and ACCESS EXCLUSIVE lock modes.
 
     **SELECT FOR UPDATE**  and  **SELECT FOR SHARE**  automatically acquire the  **ROW SHARE**  lock on the target table and add the  **ACCESS SHARE**  lock to other referenced tables except  **FOR SHARE**  and  **FOR UPDATE**.
 
--   **ROW EXCLUSIVE**
+- **ROW EXCLUSIVE**
 
     Allows concurrent read of a table but does not allow modification of data in the table like  **ROW SHARE**.  **UPDATE**,  **DELETE**, and  **INSERT**  automatically acquire the  **ROW SHARE**  lock on the target table and add the  **ACCESS SHARE**  lock to other referenced tables. Generally, all statements that modify table data acquire the  **ROW EXCLUSIVE**  lock for tables.
 
--   **SHARE UPDATE EXCLUSIVE**
+- **SHARE UPDATE EXCLUSIVE**
 
     Protects a table against concurrent schema changes and VACUUM runs.
 
-    Acquired by  **VACUUM **\(without  **FULL**\),  **ANALYZE**  and  **CREATE INDEX CONCURRENTLY**  statements, and some forms of  **ALTER TABLE**.
+    Acquired by  **VACUUM**\(without  **FULL**\),  **ANALYZE**  and  **CREATE INDEX CONCURRENTLY**  statements, and some forms of  **ALTER TABLE**.
 
--   **SHARE**
+- **SHARE**
 
     Allows concurrent queries of a table but does not allow modification of the table.
 
     Acquired by  **CREATE INDEX**  \(without  **CONCURRENTLY**\).
 
--   **SHARE ROW EXCLUSIVE**
+- **SHARE ROW EXCLUSIVE**
 
     Protects a table against concurrent data changes, and is self-exclusive so that only one session can hold it at a time.
 
     No SQL statements automatically acquire this lock mode.
 
--   **EXCLUSIVE**
+- **EXCLUSIVE**
 
     Allows concurrent queries of the target table but does not allow any other operations.
 
@@ -259,7 +259,7 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
     No SQL statements automatically acquire this lock mode on user tables. However, it will be acquired on some system catalogs in case of some operations.
 
--   **ACCESS EXCLUSIVE**
+- **ACCESS EXCLUSIVE**
 
     Guarantees that the holder is the only transaction accessing the table in any way.
 
@@ -267,12 +267,11 @@ LOCK [ TABLE ] {[ ONLY ] name [, ...]| {name [ * ]} [, ...]}
 
     This is also the default lock mode for  **LOCK TABLE**  statements that do not specify a mode explicitly.
 
--   **NOWAIT**
+- **NOWAIT**
 
     Specifies that  **LOCK TABLE**  should not wait for any conflicting locks to be released: if the specified lock\(s\) cannot be acquired immediately without waiting, the transaction is aborted.
 
     If  **NOWAIT**  is not specified,  **LOCK TABLE**  obtains a table-level lock, waiting if necessary for any conflicting locks to be released.
-
 
 ## Examples<a name="en-us_topic_0283136808_en-us_topic_0237122168_en-us_topic_0059778442_s9884bdbe455b460a9a2dde267283b75b"></a>
 
@@ -293,4 +292,3 @@ openGauss=# COMMIT;
 -- Delete the tpcds.reason_t1 table.
 openGauss=# DROP TABLE tpcds.reason_t1;
 ```
-

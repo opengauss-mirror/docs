@@ -4,15 +4,14 @@
 
 To improve query efficiency, comply with the following rules when designing columns:
 
--   \[Proposal\] Use the most efficient data types allowed.
+- \[Proposal\] Use the most efficient data types allowed.
 
     If all of the following number types provide the required service precision, they are recommended in descending order of priority: integer, floating point, and numeric.
 
--   \[Proposal\] In tables that are logically related, columns having the same meaning should use the same data type.
--   \[Proposal\] For string data, you are advised to use variable-length strings and specify the maximum length. To avoid truncation, ensure that the specified maximum length is greater than the maximum number of characters to be stored. You are not advised to use CHAR\(n\), BPCHAR\(n\), NCHAR\(n\), or CHARACTER\(n\), unless you know that the string length is fixed.
+- \[Proposal\] In tables that are logically related, columns having the same meaning should use the same data type.
+- \[Proposal\] For string data, you are advised to use variable-length strings and specify the maximum length. To avoid truncation, ensure that the specified maximum length is greater than the maximum number of characters to be stored. You are not advised to use CHAR\(n\), BPCHAR\(n\), NCHAR\(n\), or CHARACTER\(n\), unless you know that the string length is fixed.
 
     For details about string types, see  [Common String Types](#section290310115932).
-
 
 ## Common String Types<a name="section290310115932"></a>
 
@@ -94,4 +93,3 @@ Every column requires a data type suitable for its data characteristics. The fol
 </tr>
 </tbody>
 </table>
-

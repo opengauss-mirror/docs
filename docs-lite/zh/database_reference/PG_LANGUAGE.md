@@ -98,4 +98,3 @@ PG\_LANGUAGE系统表登记编程语言，用户可以用这些语言或接口�
 </tr>
 </tbody>
 </table>
-

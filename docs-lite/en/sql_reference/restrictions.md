@@ -1,11 +1,12 @@
 # Restrictions<a name="EN-US_TOPIC_0289900513"></a>
 
 >[!WARNING]CAUTION 
->-   When an autonomous transaction is executed, an autonomous transaction session is started in the background. You can use  **max\_concurrent\_autonomous\_transactions**  to set the maximum number of concurrent autonomous transactions. The value range is 0 to 1024, and the default value is  **10**.
->-   When  **max\_concurrent\_autonomous\_transactions**  is set to  **0**, autonomous transactions cannot be executed.
->-   After a new session is started for an autonomous transaction, the default session parameters are used and objects \(including session-level variables, local temporary variables, and global temporary table data\) of the primary session are not shared.
+>
+>- When an autonomous transaction is executed, an autonomous transaction session is started in the background. You can use  **max\_concurrent\_autonomous\_transactions**  to set the maximum number of concurrent autonomous transactions. The value range is 0 to 1024, and the default value is  **10**.
+>- When  **max\_concurrent\_autonomous\_transactions**  is set to  **0**, autonomous transactions cannot be executed.
+>- After a new session is started for an autonomous transaction, the default session parameters are used and objects \(including session-level variables, local temporary variables, and global temporary table data\) of the primary session are not shared.
 
--   A trigger function does not support autonomous transactions.
+- A trigger function does not support autonomous transactions.
 
     ```
     CREATE TABLE test_trigger_des_tbl(id1 INT, id2 INT, id3 INT);
@@ -21,8 +22,8 @@
     $$ LANGUAGE PLPGSQL;
     ```
 
--   Autonomous transactions cannot be invoked by non-top-layer anonymous blocks \(but can only be invoked by top-layer autonomous transactions, including stored procedures, functions, and anonymous blocks\).
--   In an autonomous transaction, the  **ref cursor**  parameter can be passed only through the  **PROCEDURE OUT**  parameter. The  **ref cursor**  parameter cannot be passed through the  **IN**,  **INOUT**, or  **FUNCTION**  parameter.
+- Autonomous transactions cannot be invoked by non-top-layer anonymous blocks \(but can only be invoked by top-layer autonomous transactions, including stored procedures, functions, and anonymous blocks\).
+- In an autonomous transaction, the  **ref cursor**  parameter can be passed only through the  **PROCEDURE OUT**  parameter. The  **ref cursor**  parameter cannot be passed through the  **IN**,  **INOUT**, or  **FUNCTION**  parameter.
 
     ```
     create table sections(section_ID int);
@@ -114,9 +115,9 @@
     /
     ```
 
--   Autonomous transaction functions only return records in the out format.
--   The isolation level of an autonomous transaction cannot be changed.
--   Autonomous transactions do not support the  **setof**  return type.
+- Autonomous transaction functions only return records in the out format.
+- The isolation level of an autonomous transaction cannot be changed.
+- Autonomous transactions do not support the  **setof**  return type.
 
     ```
     create table test_in (id int,a date);
@@ -153,5 +154,3 @@
     $$
     ;
     ```
-
-

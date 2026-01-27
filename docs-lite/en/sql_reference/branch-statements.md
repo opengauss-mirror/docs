@@ -14,9 +14,9 @@
 
 Parameter description:
 
--   _case\_expression_: specifies the variable or expression.
--   _when\_expression_: specifies the constant or conditional expression.
--   _statement_: specifies the statement to be executed.
+- _case\_expression_: specifies the variable or expression.
+- _when\_expression_: specifies the constant or conditional expression.
+- _statement_: specifies the statement to be executed.
 
 ## Examples<a name="en-us_topic_0283137347_en-us_topic_0237122235_en-us_topic_0059779327_sfd9ddef81026494fbefef995f9ced557"></a>
 
@@ -53,4 +53,3 @@ CALL proc_case_branch(3,0);
 -- Delete the stored procedure.
 DROP PROCEDURE proc_case_branch;
 ```
-

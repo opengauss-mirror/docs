@@ -4,23 +4,20 @@ The aim of SQL optimization is to maximize the utilization of resources, includi
 
 You can determine a proper openGauss deployment solution and table definition based on hardware resources and service characteristics. This is the basis of meeting performance requirements. The following performance tuning sections assume that you have finished installation based on a proper openGauss solution in the software installation guide and performed database design based on the guide for database design and development.
 
--   **[Query Execution Process](query_execution_process.md)**  
+- **[Query Execution Process](query_execution_process.md)**  
 
--   **[Introduction to the SQL Execution Plan](sql_execution_plan_introduction.md)**  
+- **[Introduction to the SQL Execution Plan](sql_execution_plan_introduction.md)**  
 
--   **[Tuning Process](tuning_process.md)**  
+- **[Tuning Process](tuning_process.md)**  
 
--   **[Updating Statistics](update_statistics.md)**  
+- **[Updating Statistics](update_statistics.md)**  
 
--   **[Reviewing and Modifying a Table Definition](reviewing_and_modifying_a_table_definition.md)**  
+- **[Reviewing and Modifying a Table Definition](reviewing_and_modifying_a_table_definition.md)**  
 
--   **[Typical SQL Optimization Methods](typical_sql_optimization_methods.md)**  
+- **[Typical SQL Optimization Methods](typical_sql_optimization_methods.md)**  
 
--   **[Experience in Rewriting SQL Statements](experience_in_rewriting_sql_statements.md)**  
+- **[Experience in Rewriting SQL Statements](experience_in_rewriting_sql_statements.md)**  
 
--   **[Resetting Key Parameters During SQL Tuning](resetting_key_parameters_during_sql_tuning.md)**  
+- **[Resetting Key Parameters During SQL Tuning](resetting_key_parameters_during_sql_tuning.md)**  
 
--   **[Hint_based Tuning](plan_hint_optimization_overview.md)**  
-
-
-
+- **[Hint_based Tuning](plan_hint_optimization_overview.md)**  

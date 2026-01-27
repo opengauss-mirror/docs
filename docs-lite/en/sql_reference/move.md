@@ -73,4 +73,3 @@ openGauss=# END;
 ## Helpful Links<a name="en-us_topic_0283137573_en-us_topic_0237122169_en-us_topic_0059778649_s576a05d59d374a6684001f646161ee14"></a>
 
 [CLOSE](close.md)  and  [FETCH](fetch.md)
-

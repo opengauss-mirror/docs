@@ -37,4 +37,3 @@ ERROR:  start value of partition "p3" NOT EQUAL up-boundary of last partition.
 openGauss=#  ALTER TABLE partitiontest ADD PARTITION p3 start(108)end(130), DROP PARTITION p2;
 openGauss=#  ALTER TABLE partitiontest DROP PARTITION p2,ADD PARTITION p3 start(108)end(130);
 ```
-

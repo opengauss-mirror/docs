@@ -29,4 +29,3 @@ Displays log flow control information about the primary and standby nodes \(exce
 </tr>
 </tbody>
 </table>
-

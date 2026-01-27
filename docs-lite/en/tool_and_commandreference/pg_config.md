@@ -14,118 +14,94 @@ pg_config [option...]
 
 The  **pg\_config**  tool supports one or more of the following options. If more than one option is provided, the information is printed in sequence. Each line contains one option. If no option is given, all available information is printed with the label.
 
--   --bindir
+- --bindir
 
     Prints the path of the executable file of a user. For example, you can use this to find the  **gsql**  program. Generally, this is the path of the  **pg\_config**  program.
 
-
--   --docdir
+- --docdir
 
     Prints the location of a document.
 
-
--   --htmldir
+- --htmldir
 
     Prints the location of the HTML file.
 
-
--   --includedir
+- --includedir
 
     Prints the path of the C header file of the client interface.
 
-
--   --pkgincludedir
+- --pkgincludedir
 
     Prints the location of other C header files.
 
-
--   --includedir-server
+- --includedir-server
 
     Prints the location of the C header files used for server programming.
 
-
--   --libdir
+- --libdir
 
     Prints the path of the target code library.
 
-
--   --pkglibdir
+- --pkglibdir
 
     Prints the location of dynamically loaded modules, or where the server looks for them. Data files related to other systems may also be stored in this directory.
 
-
--   --localedir
+- --localedir
 
     Prints the location of the locale support file. If the locale support is not configured when the database is compiled, the value is an empty string.
 
-
--   --mandir
+- --mandir
 
     Prints the location of the manual page.
 
-
--   --sharedir
+- --sharedir
 
     Prints the location of system-independent support files.
 
-
--   --sysconfdir
+- --sysconfdir
 
     Prints the location of the system-wide configuration file.
 
-
--   --pgxs
+- --pgxs
 
     Prints the location of the extended makefiles file.
 
-
--   --configure
+- --configure
 
     Prints the options passed to the configure script during configuration and database compilation. The options are used to copy the same configuration or find out which options are used to compile the binary package. However, note that binary packages usually contain vendor-provided patches.
 
-
--   --cc
+- --cc
 
     Prints the values of the CC variables used to compile the database. This option displays the C compiler in use.
 
-
--   --cppflags
+- --cppflags
 
     Prints the value of the  _CPPFLAGS_  variable used to compile the database. This option displays the C compiler switch \(usually  **-I**\) needed for preprocessing.
 
-
--   --cflags
+- --cflags
 
     Prints the value of the  _CFLAGS_  variable used during database compilation. This option displays the C compiler switch.
 
-
--   --cflags\_sl
+- --cflags\_sl
 
     Prints the value of the  _CFLAGS\_SL_  variable used during database compilation. This option shows the additional C compiler switch for compiling the shared library.
 
-
--   --ldflags
+- --ldflags
 
     Prints the value of the  _LDFLAGS_  variable used during database compilation. It shows the linker's switch.
 
-
--   --ldflags\_ex
+- --ldflags\_ex
 
     Prints the value of the  _LDFLAGS\_EX_  variable used to create the database. This shows the linker switch for building executable files.
 
-
--   --ldflags\_sl
+- --ldflags\_sl
 
     Prints the value of the  _LDFLAGS\_SL_  variable used during database compilation. It shows the switch of the linker used to compile the shared library.
 
-
--   --libs
+- --libs
 
     Prints the value of the  _LIBS_  variable used during database compilation. It usually contains the  **-l**  switch of the external library connected to the database.
 
-
--   -?, --help
+- -?, --help
 
     Displays help information about  **pg\_config**  command parameters and exits.
-
-

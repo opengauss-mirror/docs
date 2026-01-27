@@ -39,10 +39,10 @@ SQLRETURN SQLFreeHandle(SQLSMALLINT   HandleType,
 
 ## Return Value<a name="en-us_topic_0238272896_en-us_topic_0237120426_en-us_topic_0059779231_s97bab15517c347d8854c982f7e8bfae1"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272896_en-us_topic_0237120426_en-us_topic_0059779231_seb4dad2a49aa45de9411b5f3391d16ea"></a>
 
@@ -51,4 +51,3 @@ If SQLFreeHandle returns  **SQL\_ERROR**, the handle is still valid.
 ## Example<a name="en-us_topic_0238272896_en-us_topic_0237120426_en-us_topic_0059779231_s877f1d1111e8452fbea6495355622686"></a>
 
 See  [Examples](example_odbc.md).
-

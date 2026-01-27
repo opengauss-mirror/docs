@@ -8,10 +8,10 @@ The CPU, memory, and I/O resources are sufficient. SMP is a solution that uses a
 
 ## Procedure<a name="section1076450151617"></a>
 
-1.  Observe the current system load situation. If resources are sufficient \(the resource usage is smaller than 50%\), perform step  [2](#li1174421213171). Otherwise, exit this system.
-2.  <a name="li1174421213171"></a>Set  **query\_dop**  to  **1**  \(default value\). Use  **explain**  to generate an execution plan and check whether the plan can be used in scenarios in  [SMP Application Scenarios and Restrictions](smp_application_scenarios_and_restrictions.md). If yes, go to step  [3](#li998191911172).
-3.  <a name="li998191911172"></a>Set  **query\_dop**  to  _value_. The parallelism degree is 1 or  _value_  regardless of the resource usage and plan characteristics.
-4.  Before the query statement is executed, set  **query\_dop**  to an appropriate value. After the statement is executed, set  **query\_dop**  to disable the query. The following provides an example:
+1. Observe the current system load situation. If resources are sufficient \(the resource usage is smaller than 50%\), perform step  [2](#li1174421213171). Otherwise, exit this system.
+2. <a name="li1174421213171"></a>Set  **query\_dop**  to  **1**  \(default value\). Use  **explain**  to generate an execution plan and check whether the plan can be used in scenarios in  [SMP Application Scenarios and Restrictions](smp_application_scenarios_and_restrictions.md). If yes, go to step  [3](#li998191911172).
+3. <a name="li998191911172"></a>Set  **query\_dop**  to  _value_. The parallelism degree is 1 or  _value_  regardless of the resource usage and plan characteristics.
+4. Before the query statement is executed, set  **query\_dop**  to an appropriate value. After the statement is executed, set  **query\_dop**  to disable the query. The following provides an example:
 
     ```
     openGauss=# SET query_dop = 4;
@@ -21,7 +21,5 @@ The CPU, memory, and I/O resources are sufficient. SMP is a solution that uses a
     ```
 
     >[!NOTE]NOTE 
-    >-   If resources are sufficient, the higher the parallelism degree is, the better the performance improvement effect is.
-    >-   The SMP parallelism degree supports session level settings. You are advised to enable the SMP feature before executing a query that meets the requirements. After the execution is complete, disable the SMP feature. Otherwise, SMP may affect services in peak hours.
-
-
+    >- If resources are sufficient, the higher the parallelism degree is, the better the performance improvement effect is.
+    >- The SMP parallelism degree supports session level settings. You are advised to enable the SMP feature before executing a query that meets the requirements. After the execution is complete, disable the SMP feature. Otherwise, SMP may affect services in peak hours.

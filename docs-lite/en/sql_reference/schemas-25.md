@@ -81,14 +81,14 @@ The following table describes the schemas of .
 </tbody>
 </table>
 
--   **[Information Schema](information-schema.md)**  
+- **[Information Schema](information-schema.md)**  
 
--   **[DBE\_PERF Schema](dbe_perf-schema.md)**  
+- **[DBE\_PERF Schema](dbe_perf-schema.md)**  
 
--   **[WDR Snapshot Schema](wdr-snapshot-schema.md)**  
+- **[WDR Snapshot Schema](wdr-snapshot-schema.md)**  
 
--   **[DBE\_PLDEBUGGER Schema](dbe_pldebugger-schema.md)**  
+- **[DBE\_PLDEBUGGER Schema](dbe_pldebugger-schema.md)**  
 
--   **[DB4AI Schema](db4ai-schema.md)**  
+- **[DB4AI Schema](db4ai-schema.md)**  
 
--   **[DBE\_PLDEVELOPER](dbe_pldeveloper.md)**  
+- **[DBE\_PLDEVELOPER](dbe_pldeveloper.md)**  

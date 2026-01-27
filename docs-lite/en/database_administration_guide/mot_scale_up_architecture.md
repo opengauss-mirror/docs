@@ -6,28 +6,28 @@ To  **scale up**  means to add additional cores to the  _same machine_  in order
 
 MOT has been designed to achieve the following –
 
--   **Linear Scale-up –**  MOT delivers a transactional storage engine that utilizes all the cores of a single NUMA architecture server in order to provide near-linear scale-up performance. This means that MOT is targeted to achieve a direct, near-linear relationship between the quantity of cores in a machine and the multiples of performance increase.
+- **Linear Scale-up –**  MOT delivers a transactional storage engine that utilizes all the cores of a single NUMA architecture server in order to provide near-linear scale-up performance. This means that MOT is targeted to achieve a direct, near-linear relationship between the quantity of cores in a machine and the multiples of performance increase.
 
 >[!NOTE]NOTE 
 >
 >The near-linear scale-up results achieved by MOT significantly outperform all other existing solutions, and come as close as possible to achieving optimal results, which are limited by the physical restrictions and limitations of hardware, such as wires.
 
--   **No Maximum Number of Cores Limitation –**  MOT does not place any limits on the maximum quantity of cores. This means that MOT is scalable from a single core up to 1000s of cores, with minimal degradation per additional core, even when crossing NUMA socket boundaries.
--   **Extremely High Transactional Throughout –**  MOT delivers a transactional storage engine that can achieve extremely high transactional throughout compared with any other OLTP vendor on the market.
--   **Extremely Low Transactional Latency –**  MOT delivers a transactional storage engine that can reach extremely low transactional latency compared with any other OLTP vendor on the market.
--   **Seamless Integration and Leveraging with/of openGauss –**  MOT integrates its transactional engine in a standard and seamless manner with the openGauss product. In this way, MOT reuses maximum functionality from the openGauss layers that are situated on top of its transactional storage engine.
+- **No Maximum Number of Cores Limitation –**  MOT does not place any limits on the maximum quantity of cores. This means that MOT is scalable from a single core up to 1000s of cores, with minimal degradation per additional core, even when crossing NUMA socket boundaries.
+- **Extremely High Transactional Throughout –**  MOT delivers a transactional storage engine that can achieve extremely high transactional throughout compared with any other OLTP vendor on the market.
+- **Extremely Low Transactional Latency –**  MOT delivers a transactional storage engine that can reach extremely low transactional latency compared with any other OLTP vendor on the market.
+- **Seamless Integration and Leveraging with/of openGauss –**  MOT integrates its transactional engine in a standard and seamless manner with the openGauss product. In this way, MOT reuses maximum functionality from the openGauss layers that are situated on top of its transactional storage engine.
 
 ## Design Principles<a name="en-us_topic_0283136704_en-us_topic_0280525153_section24554549"></a>
 
 To achieve the requirements described above \(especially in an environment with many-cores\), our storage engine's architecture implements the following techniques and strategies –
 
--   **Data and indexes only reside in memory.**
--   **Data and indexes are not laid out with physical partitions**  \(because these might achieve lower performance for certain types of applications\).
--   Transaction concurrency control is based on** Optimistic Concurrency Control \(OCC\)**  without any centralized contention points. See the  [MOT Concurrency Control Mechanism](mot_concurrency_control_mechanism.md)  section for more information about OCC.
--   **Parallel Redo Logs \(ultimately per core\)**  are used to efficiently avoid a central locking point.
--   **Indexes are lock-free.**  See the  [MOT Indexes](mot_index.md)  section for more information about lock-free indexes.
--   **NUMA-awareness memory allocation**  is used to avoid cross-socket access, especially for session lifecycle objects. See the  [NUMA Awareness Allocation and Affinity](numa_awareness_allocation_and_affinity.md)  section for more information about NUMA-awareness.
--   **A customized MOT memory management allocator**  with pre-cached object pools is used to avoid expensive runtime allocation and extra points of contention. This dedicated MOT memory allocator makes memory allocation more efficient by pre-accessing relatively large chunks of memory from the operating system as needed and then divvying it out to the MOT as needed.
+- **Data and indexes only reside in memory.**
+- **Data and indexes are not laid out with physical partitions**  \(because these might achieve lower performance for certain types of applications\).
+- Transaction concurrency control is based on**Optimistic Concurrency Control \(OCC\)**  without any centralized contention points. See the  [MOT Concurrency Control Mechanism](mot_concurrency_control_mechanism.md)  section for more information about OCC.
+- **Parallel Redo Logs \(ultimately per core\)**  are used to efficiently avoid a central locking point.
+- **Indexes are lock-free.**  See the  [MOT Indexes](mot_index.md)  section for more information about lock-free indexes.
+- **NUMA-awareness memory allocation**  is used to avoid cross-socket access, especially for session lifecycle objects. See the  [NUMA Awareness Allocation and Affinity](numa_awareness_allocation_and_affinity.md)  section for more information about NUMA-awareness.
+- **A customized MOT memory management allocator**  with pre-cached object pools is used to avoid expensive runtime allocation and extra points of contention. This dedicated MOT memory allocator makes memory allocation more efficient by pre-accessing relatively large chunks of memory from the operating system as needed and then divvying it out to the MOT as needed.
 
 ## Integration using Foreign Data Wrappers \(FDW\)<a name="en-us_topic_0283136704_en-us_topic_0280525153_section19664357"></a>
 
@@ -48,13 +48,13 @@ Integrating MOT through FDW enables the reuse of the most upper layer openGauss 
 
 However, the original FDW mechanism in openGauss was not designed for storage engine extensions, and therefore lacks the following essential functionalities –
 
--   Index awareness of foreign tables to be calculated in the query planning phase
--   Complete DDL interfaces
--   Complete transaction lifecycle interfaces
--   Checkpoint interfaces
--   Redo Log interface
--   Recovery interfaces
--   Vacuum interfaces
+- Index awareness of foreign tables to be calculated in the query planning phase
+- Complete DDL interfaces
+- Complete transaction lifecycle interfaces
+- Checkpoint interfaces
+- Redo Log interface
+- Recovery interfaces
+- Vacuum interfaces
 
 In order to support all the missing functionalities, the SQL layer and FDW interface layer were extended to provide the necessary infrastructure in order to enable the plugging in of the MOT transactional storage engine.
 
@@ -77,4 +77,3 @@ The following is an additional example that shows a test on an x86-based server 
 ![](figures/tpmc-vs-cpu-usage.png)
 
 The chart shows that MOT demonstrates a significant performance increase correlation with an increase of the quantity of cores. MOT consumes more and more of the CPU correlating to the increase of the quantity of cores. Other industry solutions do not increase and sometimes show slightly degraded performance, which is a well-known problem in the database industry that affects customers' CAPEX and OPEX expenses and operational efficiency.
-

@@ -64,9 +64,9 @@ openGauss=# SELECT 8000+500 < ANY (array[10000,9000]) AS RESULT;
 
 The right-hand side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to compute and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
--   If at least one comparison result is true, the result of  **ANY**  is  **true**.
--   If no comparison result is true, the result of ANY is false.
--   If no comparison result is true and the array expression generates at least one null value, the value of ANY is NULL, rather than false. This method is consistent with the Boolean rules used when SQL statements return empty values.
+- If at least one comparison result is true, the result of  **ANY**  is  **true**.
+- If no comparison result is true, the result of ANY is false.
+- If no comparison result is true and the array expression generates at least one null value, the value of ANY is NULL, rather than false. This method is consistent with the Boolean rules used when SQL statements return empty values.
 
 >[!NOTE]NOTE 
 >**SOME**  is a synonym of  **ANY**.
@@ -77,9 +77,9 @@ _expression operator _**ALL **_\(array expression\)_
 
 The right-hand side is a parenthesized expression, which must yield an array value. The result of the expression on the left uses operators to compute and compare the results in each row of the array expression. The comparison result must be a Boolean value.
 
--   The result of  **ALL**  is  **true**  if all comparisons yield  **true**  \(including the case where the array has zero elements\).
--   The result of  **ALL**  is  **false**  if one or multiple comparisons yield  **false**.
--   If the array expression yields a null array, the result of  **ALL**  will be null. If the left-hand expression yields null, the result of  **ALL**  is ordinarily null \(though a non-strict comparison operator could possibly yield a different result\). Also, if the right-hand array contains any null elements and no false comparison result is obtained, the result of  **ALL**  will be null, not true \(again, assuming a strict comparison operator\). This method is consistent with the Boolean rules used when SQL statements return empty values.
+- The result of  **ALL**  is  **true**  if all comparisons yield  **true**  \(including the case where the array has zero elements\).
+- The result of  **ALL**  is  **false**  if one or multiple comparisons yield  **false**.
+- If the array expression yields a null array, the result of  **ALL**  will be null. If the left-hand expression yields null, the result of  **ALL**  is ordinarily null \(though a non-strict comparison operator could possibly yield a different result\). Also, if the right-hand array contains any null elements and no false comparison result is obtained, the result of  **ALL**  will be null, not true \(again, assuming a strict comparison operator\). This method is consistent with the Boolean rules used when SQL statements return empty values.
 
 ```
 openGauss=# SELECT 8000+500 < ALL (array[10000,9000]) AS RESULT;
@@ -88,4 +88,3 @@ openGauss=# SELECT 8000+500 < ALL (array[10000,9000]) AS RESULT;
  t
 (1 row)
 ```
-

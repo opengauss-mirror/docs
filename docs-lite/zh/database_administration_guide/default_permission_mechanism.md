@@ -15,6 +15,7 @@ openGauss支持以下的权限：SELECT、INSERT、UPDATE、DELETE、TRUNCATE、
 不建议用户修改系统表和系统视图的权限。
 
 表1 ACL权限缩写
+
 |权限|缩写|对象类型|
 |--|--|--|
 |SELECT|r|TABLE, table column, SEQUENCE|
@@ -36,6 +37,7 @@ openGauss支持以下的权限：SELECT、INSERT、UPDATE、DELETE、TRUNCATE、
 |VACUUM|v|TABLE|
 
 表2 类型访问权限
+
 |对象类型|所有权限|默认PUBLIC权限|gsql命令|
 |--|--|--|--|
 |TABLE|arwdDxtAPmiv|none|\dp|

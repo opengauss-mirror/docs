@@ -11,8 +11,8 @@ The following topics describe MOT's concurrency control mechanism.
 
 SILO manages both a local memory and a global memory, as shown in.
 
--   Global memory is long-term shared memory is shared by all cores and is used primarily to store all the table data and indexes
--   Local memory is short-term memory that is used primarily by sessions for handling transactions and store data changes in a primate to transaction memory until the commit phase.
+- Global memory is long-term shared memory is shared by all cores and is used primarily to store all the table data and indexes
+- Local memory is short-term memory that is used primarily by sessions for handling transactions and store data changes in a primate to transaction memory until the commit phase.
 
 When a transaction change is required, SILO handles the copying of all that transaction's data from the global memory into the local memory. Minimal locks are placed on the global memory according to the OCC approach, so that the contention time in the global shared memory is extremely minimal. After the transaction change has been completed, this data is pushed back from the local memory to the global memory.
 
@@ -27,14 +27,14 @@ For more details, refer to the Industrial-Strength OLTP Using Main Memory and Ma
 
 SILO<sup>\[</sup>[Comparison: Disk vs. MOT](comparison_disk_vs_mot.md)<sup>\]</sup>  in its basic algorithm flow outperformed many other ACID-compliant OCCs that we tested in our research experiments. However, in order to make SILO a product-grade mechanism, we had to enhance it with many essential functionalities that were missing in the original design, such as:
 
--   Added support for interactive mode transactions, where transactions are running SQL by SQL from the client side and not as a single step on the server side
--   Added optimistic inserts
--   Added support for non-unique indexes
--   Added support for read-after-write in transactions so that users can see their own changes before they are committed 
--   Added support for lockless cooperative garbage collection
--   Added support for lockless checkpoints
--   Added support for fast recovery
--   Added support for two-phase commit in a distributed deployment
+- Added support for interactive mode transactions, where transactions are running SQL by SQL from the client side and not as a single step on the server side
+- Added optimistic inserts
+- Added support for non-unique indexes
+- Added support for read-after-write in transactions so that users can see their own changes before they are committed 
+- Added support for lockless cooperative garbage collection
+- Added support for lockless checkpoints
+- Added support for fast recovery
+- Added support for two-phase commit in a distributed deployment
 
 Adding these enhancements without breaking the scalable characteristic of the original SILO was very challenging.
 
@@ -162,8 +162,8 @@ Disk-based tables use a pessimistic method, which is the most common database me
 
 If a conflict occurs, the main difference between the pessimistic and optimistic methods is as follows:
 
--   A pessimistic method causes the client to wait.
--   An optimistic method causes one of the transactions to fail, making the client have to retry the failed transaction.
+- A pessimistic method causes the client to wait.
+- An optimistic method causes one of the transactions to fail, making the client have to retry the failed transaction.
 
 **OCC Method \(Used in MOT\)**
 
@@ -183,8 +183,8 @@ In the 2PL algorithm, when a transaction is writing to a row, other transactions
 
 Another method is ETL, which handles the read operation in an optimistic way but locks the data assessed by the write operation. Therefore, write operations from different ETL transactions are aware of each other and can decide to abort. The experiment<sup>\[</sup>[Comparison: Disk vs. MOT](comparison_disk_vs_mot.md)<sup>\]</sup>  proves that the ETL improves the OCC performance in the following two ways:
 
--   First, ETL detects conflicts early and typically increases transaction throughput. This is because the transaction does not perform useless operations. \(Generally\) Conflicts found during committing cannot be resolved without aborting at least one transaction.
--   Second, ETL runs efficiently in read-after-write \(RAW\) mode, eliminating the need for expensive or complex mechanisms.
+- First, ETL detects conflicts early and typically increases transaction throughput. This is because the transaction does not perform useless operations. \(Generally\) Conflicts found during committing cannot be resolved without aborting at least one transaction.
+- Second, ETL runs efficiently in read-after-write \(RAW\) mode, eliminating the need for expensive or complex mechanisms.
 
 **Conclusion:**
 
@@ -281,10 +281,10 @@ An MOT is created and then two concurrent sessions update the same MOT at the sa
 create foreign table test (x int, y int, z int, primary key(x));
 ```
 
--   The advantage of OCC is that there is no lock before COMMIT.
--   The disadvantage of OCC is that if another session updates the same record, the update may fail. If the update fails \(at all supported isolation levels\), the entire session \#2 transaction must be retried.
--   Update conflicts are detected by the kernel through the version check mechanism during committing.
--   Session 2 will not wait for its update operation and will abort due to a conflict detected during committing.
+- The advantage of OCC is that there is no lock before COMMIT.
+- The disadvantage of OCC is that if another session updates the same record, the update may fail. If the update fails \(at all supported isolation levels\), the entire session \#2 transaction must be retried.
+- Update conflicts are detected by the kernel through the version check mechanism during committing.
+- Session 2 will not wait for its update operation and will abort due to a conflict detected during committing.
 
 **Table  2**  Optimistic method code for MOTs
 
@@ -340,4 +340,3 @@ create foreign table test (x int, y int, z int, primary key(x));
 </tr>
 </tbody>
 </table>
-

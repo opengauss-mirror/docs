@@ -6,10 +6,8 @@ During PL/SQL programming, you may define some variables, assign values to varia
 >
 >You are advised not to call the SQL statements containing passwords in the stored procedures because authorized users may view the stored procedure file in the database and password information is leaked. If a stored procedure contains other sensitive information, permission to access this procedure must be configured, preventing information leakage.
 
--   **[Variable Definition Statements](variable-definition-statements.md)**  
+- **[Variable Definition Statements](variable-definition-statements.md)**  
 
--   **[Assignment Statements](assignment-statements.md)**  
+- **[Assignment Statements](assignment-statements.md)**  
 
--   **[Call Statements](call-statements.md)**  
-
-
+- **[Call Statements](call-statements.md)**  

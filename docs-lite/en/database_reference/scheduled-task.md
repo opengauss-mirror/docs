@@ -10,8 +10,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 Function:
 
--   Setting  **job\_queue\_processes**  to  **0**  indicates that the scheduled job function is disabled and that no job will be executed. \(Enabling scheduled jobs may affect the system performance. At sites where this function is not required, you are advised to disable it.\)
--   Setting  **job\_queue\_processes**  to a value that is greater than  **0**  indicates that the scheduled job function is enabled and this value is the maximum number of jobs that can be concurrently processed.
+- Setting  **job\_queue\_processes**  to  **0**  indicates that the scheduled job function is disabled and that no job will be executed. \(Enabling scheduled jobs may affect the system performance. At sites where this function is not required, you are advised to disable it.\)
+- Setting  **job\_queue\_processes**  to a value that is greater than  **0**  indicates that the scheduled job function is enabled and this value is the maximum number of jobs that can be concurrently processed.
 
 After the scheduled job function is enabled, the job\_scheduler thread polls the  **pg\_job**  system catalog at a scheduled interval. The scheduled job check is performed every second by default.
 
@@ -29,8 +29,7 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the job thread is not started.
--   **off**  indicates that the job thread is started.
+- **on**  indicates that the job thread is not started.
+- **off**  indicates that the job thread is started.
 
 **Default value**:  **off**
-

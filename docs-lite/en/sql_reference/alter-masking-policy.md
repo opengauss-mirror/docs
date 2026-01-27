@@ -6,20 +6,19 @@
 
 ## Precautions<a name="en-us_topic_0059778839_s63ad21f92ad74c9e8d6bf18bb7218c4f"></a>
 
--   Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
--   The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**.
--   For details about the execution effect and supported data types of preset masking functions, see "Database Security \> Dynamic Data Masking" in  _Feature Description_.
+- Only users with the  **poladmin**  or  **sysadmin**  permission, or the initial user can perform this operation.
+- The masking policy takes effect only after  **enable\_security\_policy**  is set to  **on**.
+- For details about the execution effect and supported data types of preset masking functions, see "Database Security \> Dynamic Data Masking" in  _Feature Description_.
 
 ## Syntax<a name="en-us_topic_0059777586_sa46c661c13834b8389614f75e47a3efa"></a>
 
--   Modify the policy description.
+- Modify the policy description.
 
     ```
     ALTER MASKING POLICY policy_name COMMENTS policy_comments;
     ```
 
-
--   Modify the masking method.
+- Modify the masking method.
 
     ```
     ALTER MASKING POLICY policy_name [ADD | REMOVE | MODIFY] masking_actions[, ...]*;
@@ -27,41 +26,37 @@
         masking_function ON LABEL(label_name[, ...]*)
     ```
 
-
--   Modify the scenarios where the masking policies take effect.
+- Modify the scenarios where the masking policies take effect.
 
     ```
     ALTER MASKING POLICY policy_name MODIFY(FILTER ON FILTER_TYPE(filter_value[, ...]*)[, ...]*);
     ```
 
-
--   Removes the filters of the masking policies.
+- Removes the filters of the masking policies.
 
     ```
     ALTER MASKING POLICY policy_name DROP FILTER;
     ```
 
-
--   Enable or disable the masking policies.
+- Enable or disable the masking policies.
 
     ```
     ALTER MASKING POLICY policy_name [ENABLE | DISABLE];
     ```
 
-
 ## Parameter Description<a name="section2852173114389"></a>
 
--   **policy\_name**
+- **policy\_name**
 
     Specifies the masking policy name, which must be unique.
 
     Value range: a string. It must comply with the naming convention.
 
--   **policy\_comments**
+- **policy\_comments**
 
     Adds or modifies description of masking policies.
 
--   **masking\_function**
+- **masking\_function**
 
     Specifies eight preset masking methods or user-defined functions. Schemas are supported.
 
@@ -73,24 +68,21 @@
     maskall | randommasking | creditcardmasking | basicemailmasking | fullemailmasking | shufflemasking | alldigitsmasking | regexpmasking 
     ```
 
--   **label\_name**
+- **label\_name**
 
     Specifies the resource label name.
 
-
--   **FILTER\_TYPE**
+- **FILTER\_TYPE**
 
     Specifies the types of information to be filtered by the policies:  **IP**,  **ROLES**, and  **APP**.
 
--   **filter\_value**
+- **filter\_value**
 
     Indicates the detailed information to be filtered, such as the IP address, app name, and username.
 
-
--   **ENABLE|DISABLE**
+- **ENABLE|DISABLE**
 
     Enables or disables the masking policy. If  **ENABLE|DISABLE**  is not specified,  **ENABLE**  is used by default.
-
 
 ## Examples<a name="section873151912198"></a>
 
@@ -136,4 +128,3 @@ openGauss=# ALTER MASKING POLICY maskpol1 DISABLE;
 ## Helpful Links<a name="section156744489391"></a>
 
 [CREATE MASKING POLICY](create-masking-policy.md)  and  [DROP MASKING POLICY](drop-masking-policy.md)
-

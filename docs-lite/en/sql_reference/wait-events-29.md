@@ -49,4 +49,3 @@ The following table describes columns in the Wait Events report.
 </tr>
 </tbody>
 </table>
-

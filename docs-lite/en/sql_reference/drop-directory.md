@@ -16,12 +16,11 @@ DROP DIRECTORY [ IF EXISTS ] directory_name;
 
 ## Parameter Description<a name="en-us_topic_0283137028_en-us_topic_0237122136_section1185722174518"></a>
 
--   **directory\_name**
+- **directory\_name**
 
     Specifies the name of the directory to be deleted.
 
     Value range: an existing directory name
-
 
 ## Examples<a name="en-us_topic_0283137028_en-us_topic_0237122136_section54683394512"></a>
 
@@ -36,4 +35,3 @@ openGauss=# DROP DIRECTORY dir;
 ## Helpful Links<a name="en-us_topic_0283137028_en-us_topic_0237122136_section14134121715454"></a>
 
 [CREATE DIRECTORY](create-directory.md)  and  [ALTER DIRECTORY](alter-directory.md)
-

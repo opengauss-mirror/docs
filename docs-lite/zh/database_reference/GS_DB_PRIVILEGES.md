@@ -37,4 +37,3 @@ GS\_DB\_PRIVILEGES系统视图记录ANY权限的授予情况，每条记录对�
 </tr>
 </tbody>
 </table>
-

@@ -38,4 +38,3 @@ The following table lists columns in the Top 10 Events by Total Wait Time report
 </tr>
 </tbody>
 </table>
-

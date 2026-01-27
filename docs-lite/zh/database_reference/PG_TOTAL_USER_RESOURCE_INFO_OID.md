@@ -134,4 +134,3 @@ PG\_TOTAL\_USER\_RESOURCE\_INFO\_OID视图显示所有用户资源使用情况�
 </tr>
 </tbody>
 </table>
-

@@ -6,19 +6,18 @@ For data security purposes, openGauss provides a series of security measures, su
 
 ## Automatically Locking and Unlocking Accounts<a name="en-us_topic_0283136674_en-us_topic_0237121108_en-us_topic_0151096060_en-us_topic_0085032584_en-us_topic_0059778228_section1173585316159"></a>
 
--   If the number of incorrect password attempts \(**failed\_login\_attempts**\) of an account reaches the upper limit \(**10**  by default\), the system automatically locks the account. Smaller parameter values result in higher account security. However, if the value of this parameter is set too small, inconvenience may occur.
--   If the time during which a user is locked exceeds the preset value \(**password\_lock\_time**, one day by default\), the system automatically unlocks the user. Larger parameter values bring higher account security. However, if the value of this parameter is set too large, inconvenience may occur.
+- If the number of incorrect password attempts \(**failed\_login\_attempts**\) of an account reaches the upper limit \(**10**  by default\), the system automatically locks the account. Smaller parameter values result in higher account security. However, if the value of this parameter is set too small, inconvenience may occur.
+- If the time during which a user is locked exceeds the preset value \(**password\_lock\_time**, one day by default\), the system automatically unlocks the user. Larger parameter values bring higher account security. However, if the value of this parameter is set too large, inconvenience may occur.
 
     >[!NOTE]NOTE 
-    >-   The integral part of the  **password\_lock\_time**  value indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.
-    >-   If the  **failed\_login\_attempts**  parameter is set to  **0**, an account is never locked due to incorrect password attempts. If the  **password\_lock\_time**  parameter is set to  **0**, an account is quickly unlocked after it is locked due to incorrect password attempts. Therefore, only when both parameters are set to positive values, the following operations can be performed: password failure check, account locking, and account unlocking.
-    >-   The default values of the two parameters meet the security requirements. You can change the parameter values as needed for higher security. You are advised to retain the default values.
-
+    >- The integral part of the  **password\_lock\_time**  value indicates the number of days and its decimal part can be converted into hours, minutes, and seconds.
+    >- If the  **failed\_login\_attempts**  parameter is set to  **0**, an account is never locked due to incorrect password attempts. If the  **password\_lock\_time**  parameter is set to  **0**, an account is quickly unlocked after it is locked due to incorrect password attempts. Therefore, only when both parameters are set to positive values, the following operations can be performed: password failure check, account locking, and account unlocking.
+    >- The default values of the two parameters meet the security requirements. You can change the parameter values as needed for higher security. You are advised to retain the default values.
 
 Configure the  **failed\_login\_attempts**  parameter.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -36,7 +35,7 @@ Configure the  **failed\_login\_attempts**  parameter.
     openGauss=# 
     ```
 
-3.  View the current value.
+3. View the current value.
 
     ```
     openGauss=# SHOW failed_login_attempts;
@@ -48,17 +47,16 @@ Configure the  **failed\_login\_attempts**  parameter.
 
     If the command output is not  **10**, run the  **\\q**  command to exit the database.
 
-4.  Run the following command to set the parameter to its default value  **10**:
+4. Run the following command to set the parameter to its default value  **10**:
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -c "failed_login_attempts=10"
     ```
 
-
 Configure the  **password\_lock\_time**  parameter.
 
-1.  Log in as the OS user  **omm**  to the primary node of the database.
-2.  Run the following command to connect to the database:
+1. Log in as the OS user  **omm**  to the primary node of the database.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -76,7 +74,7 @@ Configure the  **password\_lock\_time**  parameter.
     openGauss=#
     ```
 
-3.  View the current value.
+3. View the current value.
 
     ```
     openGauss=# SHOW password_lock_time;
@@ -88,12 +86,11 @@ Configure the  **password\_lock\_time**  parameter.
 
     If the command output is not  **1**, run the  **\\q**  command to exit the database.
 
-4.  Run the following command to set the parameter to its default value  **1**:
+4. Run the following command to set the parameter to its default value  **1**:
 
     ```
     gs_guc reload -D /gaussdb/data/datanode -c "password_lock_time=1"
     ```
-
 
 ## Manually Locking and Unlocking Accounts<a name="en-us_topic_0283136674_en-us_topic_0237121108_en-us_topic_0151096060_en-us_topic_0085032584_en-us_topic_0059778228_section964105310248"></a>
 
@@ -103,20 +100,19 @@ Administrators can manually unlock the account if the account becomes normal aga
 
 For details about how to create a user, see  [Users](users.md). To manually lock and unlock user  **joe**, run commands in the following format:
 
--   To manually lock the account, run the following command:
+- To manually lock the account, run the following command:
 
     ```
     openGauss=# ALTER USER joe ACCOUNT LOCK;
     ALTER ROLE
     ```
 
--   To manually unlock the account, run the following command:
+- To manually unlock the account, run the following command:
 
     ```
     openGauss=# ALTER USER joe ACCOUNT UNLOCK;
     ALTER ROLE
     ```
-
 
 ## Deleting Accounts That Are No Longer Used<a name="en-us_topic_0283136674_en-us_topic_0237121108_en-us_topic_0151096060_en-us_topic_0085032584_en-us_topic_0059778228_sc15cf3af332848c28d65ffcfe307a80b"></a>
 
@@ -130,4 +126,3 @@ For example, if you want to delete account  **joe**, run the following command:
 openGauss=# DROP USER joe  CASCADE;
 DROP ROLE
 ```
-

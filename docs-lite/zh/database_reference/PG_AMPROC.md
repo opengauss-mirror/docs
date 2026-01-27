@@ -74,4 +74,3 @@ PG\_AMPROC系统表存储有关与访问方法操作符族相关联的支持过�
 </table>
 
 amproclefttype和amprocrighttype字段的习惯解释，标识一个特定支持过程支持的操作符的左和右输入类型。对于某些访问方式，匹配支持过程本身的输入数据类型，对其他的则不这样。有一个对索引的“缺省”支持过程的概念，amproclefttype和amprocrighttype都等于索引操作符类的opcintype。
-

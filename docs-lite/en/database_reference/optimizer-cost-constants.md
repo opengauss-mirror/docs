@@ -26,8 +26,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Default value**:  **4**
 
 >[!NOTE]NOTE 
->-   This value can be overwritten for tables and indexes in a particular tablespace by setting the tablespace parameter of the same name.
->-   Reducing this value relative to  **seq\_page\_cost**  will cause the system to prefer index scans and raising it will make index scans relatively more expensive. You can increase or decrease both values together to change the disk I/O costs relative to CPU costs.
+>
+>- This value can be overwritten for tables and indexes in a particular tablespace by setting the tablespace parameter of the same name.
+>- Reducing this value relative to  **seq\_page\_cost**  will cause the system to prefer index scans and raising it will make index scans relatively more expensive. You can increase or decrease both values together to change the disk I/O costs relative to CPU costs.
 
 ## cpu\_tuple\_cost<a name="en-us_topic_0283137051_en-us_topic_0237124717_en-us_topic_0059779130_sf7a911047cc34242a80839fe99405821"></a>
 
@@ -84,4 +85,3 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 **Value range**: a floating point number ranging from 0 to  _DBL\_MAX_
 
 **Default value**:  **0**
-

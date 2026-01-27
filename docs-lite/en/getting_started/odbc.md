@@ -49,11 +49,11 @@ Obtain the  **openGauss-\*.\*.0-ODBC.tar.gz**  package from the release package.
 
 The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it is configured in a data source. To configure a data source, you must configure the  **odbc.ini**  and  **odbcinst.ini**  files on the server. The two files are generated during the unixODBC compilation and installation, and are saved in the  **/usr/local/etc**  directory by default.
 
-1.  Obtain the  **unixODBC-2.3.9**  source code package.
+1. Obtain the  **unixODBC-2.3.9**  source code package.
 
-    Download address: http://www.unixodbc.org/download.html
+    Download address: <http://www.unixodbc.org/download.html>
 
-2.  Install unixODBC. If the unixODBC of another version has been installed on the host, overwrite the existing unixODBC.
+2. Install unixODBC. If the unixODBC of another version has been installed on the host, overwrite the existing unixODBC.
 
     Currently, unixODBC-2.2.1 is not supported. For example, to install unixODBC-2.3.0, run the commands below. unixODBC is installed in the  **/usr/local**  directory by default. The data source file is generated in the  **/usr/local/etc**  directory, and the library file is generated in the  **/usr/local/lib**  directory.
 
@@ -70,12 +70,12 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     make install
     ```
 
-3.  Replace the openGauss client driver.
-    1.  Decompress  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory. The  **psqlodbcw.la**  and  **psqlodbcw.so**  files are obtained.
-    2.  Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
+3. Replace the openGauss client driver.
+    1. Decompress  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory. The  **psqlodbcw.la**  and  **psqlodbcw.so**  files are obtained.
+    2. Copy the library in the  **lib**  directory obtained after decompressing  **openGauss-x.x.x-ODBC.tar.gz**  to the  **/usr/local/lib**  directory.
 
-4.  Configure a data source.
-    1.  Configure the ODBC driver file.
+4. Configure a data source.
+    1. Configure the ODBC driver file.
 
         Add the following content to the  **/xxx/odbc/etc/odbcinst.ini**  file:
 
@@ -122,7 +122,7 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         </tbody>
         </table>
 
-    2.  Configure the data source file.
+    2. Configure the data source file.
 
         Add the following content to the  **/usr/local/etc/odbc.ini**  file:
 
@@ -344,24 +344,27 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         >Ensure that the permission on the  **client.key\***  series files is  **600**.
         >Go back to the root directory, create the  **.postgresql**  directory, and save  **root.crt**,  **client.crt**,  **client.key**,  **client.key.cipher**,  **client.key.rand**,  **client.req**,  **server.crt**,  **server.key**,  **server.key.cipher**,  **server.key.rand**, and  **server.req**  to the  **.postgresql**  directory.
         >In the Unix OS,  **server.crt**  and  **server.key**  must deny the access from the external system or any group. Run the following command to set this permission:
+>
         >```
         >chmod 0600 server.key
         >```
+>
         >Copy the certificate files whose names start with  **root.crt**  and  **server**  to the  **install/data**  directory of the database \(the directory is the same as that of the  **postgresql.conf**  file\).
         >Modify the  **postgresql.conf**  file.
+>
         >```
         >ssl = on
         >ssl_cert_file = 'server.crt'
         >ssl_key_file = 'server.key'
         >ssl_ca_file = 'root.crt'
         >```
+>
         >After modifying the parameters, restart the database.
         >Set the  **sslmode**  parameter to  **require**  or  **verify-ca**  in the  **odbc.ini**  file.
 
-
-5.  Configure the database server.
-    1.  Log in as the OS user  **omm**  to the primary database node.
-    2.  Run the following command to add NIC IP addresses or host names which are separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  *NodeName*  specifies the name of the current node.
+5. Configure the database server.
+    1. Log in as the OS user  **omm**  to the primary database node.
+    2. Run the following command to add NIC IP addresses or host names which are separated by commas \(,\). The NICs and hosts are used to provide external services. In the following command,  *NodeName*  specifies the name of the current node.
 
         ```
         gs_guc reload -N NodeName -I all -c "listen_addresses='localhost,192.168.0.100,10.11.12.13'"
@@ -371,20 +374,20 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
 
         You can also set  **listen\_addresses**  to  **\***  or  **0.0.0.0**  to listen on all NICs, but this incurs security risks and is not recommended.
 
-    3.  Run the following command to add an authentication rule to the configuration file of the primary database node. In this example, the IP address \(10.11.12.13\) of the client is the remote host IP address.
+    3. Run the following command to add an authentication rule to the configuration file of the primary database node. In this example, the IP address \(10.11.12.13\) of the client is the remote host IP address.
 
         ```
         gs_guc reload -N all -I all -h "host all jack 10.11.12.13/32 sha256"
         ```
 
         >[!NOTE]NOTE 
-        >-   **-N all**  indicates all hosts in openGauss.
-        >-   **-I all**  indicates all instances of the host.
-        >-   **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
-        >-   **all**  indicates that a client can connect to any database.
-        >-   **jack**  indicates the user that accesses the database.
-        >-   ***10.11.12.13/__32***  indicates hosts whose IP address is  **10.11.12.13**  can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
-        >-   **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
+        >- **-N all**  indicates all hosts in openGauss.
+        >- **-I all**  indicates all instances of the host.
+        >- **-h**  specifies statements that need to be added in the  **pg\_hba.conf**  file.
+        >- **all**  indicates that a client can connect to any database.
+        >- **jack**  indicates the user that accesses the database.
+        >- ***10.11.12.13/__32***  indicates hosts whose IP address is  **10.11.12.13**  can be connected. Configure the parameter based on your network conditions.  **32**  indicates that there are 32 bits whose value is 1 in the subnet mask. That is, the subnet mask is 255.255.255.255.
+        >- **sha256**  indicates that the password of user  **jack**  is encrypted using the SHA-256 algorithm.
 
         If the ODBC client and the primary database node to connect are deployed on the same machine, you can use the local trust authentication mode. Run the following command:
 
@@ -398,14 +401,14 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
         host all all xxx.xxx.xxx.xxx/32 sha256
         ```
 
-    4.  Restart openGauss.
+    4. Restart openGauss.
 
         ```
         gs_om -t stop
         gs_om -t start
         ```
 
-6.  Configure the environment variables on the client.
+6. Configure the environment variables on the client.
 
     ```
     vim ~/.bashrc
@@ -419,18 +422,17 @@ The ODBC driver \(**psqlodbcw.so**\) provided by openGauss can be used after it 
     export ODBCINI=/usr/local/etc/odbc.ini
     ```
 
-7.  Run the following command to validate the addition:
+7. Run the following command to validate the addition:
 
     ```
     source ~/.bashrc
     ```
 
-
 ## Verifying the Data Source Configuration<a name="section1224317573217"></a>
 
 Run the  **./isql -v** *MPPODBC*  command \(***MPPODBC***  is the data source name\).
 
--   If the following information is displayed, the configuration is correct and the connection succeeds.
+- If the following information is displayed, the configuration is correct and the connection succeeds.
 
     ```
     +---------------------------------------+
@@ -444,7 +446,7 @@ Run the  **./isql -v** *MPPODBC*  command \(***MPPODBC***  is the data source na
     SQL> 
     ```
 
--   If error information is displayed, the configuration is incorrect. Check the configuration.
+- If error information is displayed, the configuration is incorrect. Check the configuration.
 
 ## Development Process<a name="section3537202314458"></a>
 

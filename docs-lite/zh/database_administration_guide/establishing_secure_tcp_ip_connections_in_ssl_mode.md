@@ -14,8 +14,8 @@ openGauss支持TLCP协议，TLCP采用国密算法进行身份认证和安全传
 
 ## 注意事项<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s014a1b1bc72240bb9bbbad5e064bf6d3"></a>
 
--   当用户远程连接到数据库主节点时，需要使用sha256的认证方式。
--   当内部服务器之间连接时，需要使用trust的认证方式，支持IP白名单认证。
+- 当用户远程连接到数据库主节点时，需要使用sha256的认证方式。
+- 当内部服务器之间连接时，需要使用trust的认证方式，支持IP白名单认证。
 
 ## 操作步骤<a name="zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_s559f387461c440218ff2b33983a69004"></a>
 
@@ -23,7 +23,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 
 配置SSL认证相关的数字证书参数，具体要求请参见[表1](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_table56811076112938)。 
 
--   配置客户端参数。
+- 配置客户端参数。
 
     已从CA认证中心申请到客户端默认证书，私钥，根证书以及私钥密码加密文件。假设证书、私钥和根证书都放在“/home/omm”目录。
 
@@ -48,7 +48,7 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     export PGSSLROOTCERT="/home/omm/cacert.pem"
     ```
 
--   修改客户端密钥的权限。
+- 修改客户端密钥的权限。
 
     客户端根证书，密钥，证书以及密钥密码加密文件的权限，需保证权限为600。如果权限不满足要求，则客户端无法以SSL连接到openGauss。
 
@@ -63,7 +63,6 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
     chmod 600 client_enc.key.rand
     chmod 600 cacert.pem
     ```
-
 
 >>[!TIP]须知
 >
@@ -228,7 +227,6 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </tbody>
 </table>
 
-
 在客户端配置SSL认证相关的环境变量，详细信息请参见[表3](#zh-cn_topic_0283137035_zh-cn_topic_0237121092_zh-cn_topic_0059778374_t1a20720af5504dc0ba3c5d0e8d1a028b)。
 
 >[!NOTE]说明
@@ -323,8 +321,6 @@ openGauss在数据库部署完成后，默认已开启SSL认证模式。服务�
 </tr>
 </tbody>
 </table>
-
-
 
 服务器端参数ssl、require\_ssl与客户端参数sslmode配置组合结果如下：
 
@@ -610,8 +606,6 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 </tbody>
 </table>
 
-
-
 >[!NOTE]说明
 >
 >- 目前只支持表4和表5中的10种加密算法套件。
@@ -620,14 +614,13 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
 >
 >- 如需指定以上加密算法套件，可以设置ssl\_ciphers为表4中OpenSSL套件名称或表5中的国密套件名称，加密算法套件之间需要使用分号分割，如在postgresql.conf设置：
 >
+> ```
+> ssl_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
 >  ```
->  ssl_ciphers='ECDHE-RSA-AES128-GCM-SHA256;ECDHE-ECDSA-AES128-GCM-SHA256'
->  ```
+>
 >- SSL连接认证不仅增加了登录（创建SSL环境）及退出过程（清理SSL环境）的时间消耗，同时需要消耗额外的时间用于加解密所需传输的内容，因此对性能有一定影响。特别的，对于频繁的登录登出，短时查询等场景有较大的影响。
 >
 >- 在证书有效期小于7天的时候，连接登录会在日志中产生告警提醒。
-
-
 
 服务端参数 ssl_ciphers、ssl_use_tlcp与实际证书生成算法、客户端参数PGSSLTLCP配置需要组合正确才能正常建立ssl连接：
 
@@ -652,5 +645,3 @@ SSL传输支持一系列不同强度的加密和认证算法。用户可以通�
   - 客户端sslmode 为verify-ca 或verify-full
   - sm2算法生成证书时，服务器默认配置了ssl_cert_file、ssl_enc_cert_file、ssl_key_file、ssl_enc_key_file参数，客户端默认配置了PGSSLCERT、PGSSLENCCERT、PGSSLKEY、PGSSLENCKEY参数；
   - 非sm2算法生成证书时，服务器默认配置了ssl_cert_file、ssl_key_file参数，客户端默认配置了PGSSLCERT、PGSSLKEY参数。
-
-

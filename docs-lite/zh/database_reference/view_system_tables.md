@@ -6,14 +6,13 @@
 
 openGauss提供了以下类型的系统表和视图：
 
--   继承自PG的系统表和视图
+- 继承自PG的系统表和视图
 
     这类系统表和视图具有PG前缀。
 
--   openGauss新增的系统表和视图
+- openGauss新增的系统表和视图
 
     这类系统表和视图具有GS前缀。
-
 
 ## 查看数据库中包含的表<a name="zh-cn_topic_0283136670_zh-cn_topic_0237120304_zh-cn_topic_0100315815_section371043012532"></a>
 
@@ -63,7 +62,7 @@ spillspacelimit
 
 通过视图[PG\_STAT\_ACTIVITY](PG_STAT_ACTIVITY.md)可以查看正在运行的查询语句。方法如下：
 
-1.  设置参数track\_activities为on。
+1. 设置参数track\_activities为on。
 
     ```
     SET track_activities = on;
@@ -71,7 +70,7 @@ spillspacelimit
 
     当此参数为on时，数据库系统才会收集当前活动查询的运行信息。
 
-2.  查看正在运行的查询语句。以查看正在运行的查询语句所连接的数据库名、执行查询的用户、查询状态及查询对应的PID为例：
+2. 查看正在运行的查询语句。以查看正在运行的查询语句所连接的数据库名、执行查询的用户、查询状态及查询对应的PID为例：
 
     ```
     SELECT datname, usename, state,pid FROM pg_stat_activity;
@@ -96,7 +95,7 @@ spillspacelimit
     SELECT datname, usename, state FROM pg_stat_activity WHERE state != 'idle';
     ```
 
-3.  若需要取消运行时间过长的查询，通过PG\_TERMINATE\_BACKEND函数，根据线程ID结束会话。
+3. 若需要取消运行时间过长的查询，通过PG\_TERMINATE\_BACKEND函数，根据线程ID结束会话。
 
     ```
     SELECT PG_TERMINATE_BACKEND(139834759993104);
@@ -121,10 +120,9 @@ spillspacelimit
     >[!NOTE]说明
     >
     >gsql客户端使用PG\_TERMINATE\_BACKEND函数结束当前会话后台线程时，客户端不会退出而是自动重连。即还会返回“The connection to the server was lost. Attempting reset: Succeeded.”
+>
     >```
     >FATAL:  terminating connection due to administrator command
     >FATAL:  terminating connection due to administrator command
     >The connection to the server was lost. Attempting reset: Succeeded.
     >```
-
-

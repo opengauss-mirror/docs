@@ -7,4 +7,3 @@ There is some impact on performance, particularly on the server. Impact on the u
 The statistics are saved in the database server log. The log is located in the data folder and named  **postgresql-DATE-TIME.log**.
 
 Refer to  [Statistics \(MOT\)](mot_configuration.md#en-us_topic_0283136588_en-us_topic_0280525130_section659861612477)  for detailed configuration options.
-

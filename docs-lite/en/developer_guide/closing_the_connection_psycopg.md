@@ -4,4 +4,3 @@ After you complete required data operations in a database, close the database co
 
 >[!WARNING]CAUTION 
 >This method closes the database connection and does not automatically call  **commit\(\)**. If you just close the database connection without calling  **commit\(\)**  first, changes will be lost.
-

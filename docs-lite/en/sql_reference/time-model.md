@@ -63,4 +63,3 @@ The following table describes metrics in the Time Model report.
 </tr>
 </tbody>
 </table>
-

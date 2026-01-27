@@ -9,8 +9,8 @@
 
 The above syntax diagram is explained as follows:
 
--   **variable\_name**  indicates the name of a variable.
--   **value**  can be a value or an expression. The type of  **value**  must be compatible with the type of  **variable\_name**.
+- **variable\_name**  indicates the name of a variable.
+- **value**  can be a value or an expression. The type of  **value**  must be compatible with the type of  **variable\_name**.
 
 Example:
 
@@ -33,10 +33,10 @@ END;
 
 The syntax in  [Figure 2](#fig178291445115118)  is described as follows:
 
--   **variable\_name**: variable name
--   **col\_name**: column name
--   **subscript**: subscript, which is used for an array variable. The value can be a value or an expression and must be of the int type.
--   **value**: value or expression. The type of  **value**  must be compatible with the type of  **variable\_name**.
+- **variable\_name**: variable name
+- **col\_name**: column name
+- **subscript**: subscript, which is used for an array variable. The value can be a value or an expression and must be of the int type.
+- **value**: value or expression. The type of  **value**  must be compatible with the type of  **variable\_name**.
 
 Example:
 
@@ -53,10 +53,12 @@ END;
 ```
 
 >[!TIP]NOTICE 
->-   In INTO mode, values can be assigned only to the columns at the first layer. Two-dimensional or above arrays are not supported.
->-   When a nested column value is referenced, if an array subscript exists, only one parenthesis can exist in the first three layers of columns. You are advised to use square brackets to reference the subscript.
+>
+>- In INTO mode, values can be assigned only to the columns at the first layer. Two-dimensional or above arrays are not supported.
+>- When a nested column value is referenced, if an array subscript exists, only one parenthesis can exist in the first three layers of columns. You are advised to use square brackets to reference the subscript.
 
 ## Assignment Of Variables With Type Names<a name="section72764131238199"></a>
+
 In addition to the above, openGauss supports assignment methods with type names (including RECORD, VARRAY, TABLE OF types and types created by CREATE TYPE). For compatibility with historical versions, such type names are usually ignored and treated as normal arrays or records. Only when enable_pltype_name_check switch is turned on will throw an error if the type name is different.
 
 ## Examples<a name="section1541328764871"></a>
@@ -102,4 +104,3 @@ END;
 
 >[!TIP]NOTICE 
 >**BULK COLLECT INTO**  can only assign values to arrays in batches. Use  **LIMIT**  properly to prevent performance deterioration caused by excessive operations on data.
-

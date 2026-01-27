@@ -43,4 +43,3 @@ Various factors must be considered during openGauss performance tuning. Therefor
 </tr>
 </tbody>
 </table>
-

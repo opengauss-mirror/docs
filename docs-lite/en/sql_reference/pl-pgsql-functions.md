@@ -10,11 +10,10 @@ In this case, when a client application sends a query to the server, it must wai
 
 PL/pgSQL enables a whole computing part and a series of queries to be grouped inside a database server. This makes procedural language available and SQL easier to use. In addition, the client/server communication cost is reduced.
 
--   Extra round-trip communication between clients and servers is eliminated.
--   Intermediate results that are not required by clients do not need to be sorted or transmitted between the clients and servers.
--   Parsing can be skipped in multiple rounds of queries.
+- Extra round-trip communication between clients and servers is eliminated.
+- Intermediate results that are not required by clients do not need to be sorted or transmitted between the clients and servers.
+- Parsing can be skipped in multiple rounds of queries.
 
 PL/pgSQL can use all data types, operators, and functions in SQL. There are some common functions, such as  **gs\_extend\_library**.
 
 For details about the PL/pgSQL syntax for creating functions, see  [CREATE FUNCTION](create-function.md). PL/pgSQL is a loadable procedural language. Its application method is similar to that of  [Stored Procedure](stored-procedure-21.md). There is only one difference. Stored procedures have no return values but the functions have.
-

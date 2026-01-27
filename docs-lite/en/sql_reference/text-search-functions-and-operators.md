@@ -2,7 +2,7 @@
 
 ## Text Search Operators<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>
 
--   @@
+- @@
 
     Description: Specifies whether the  **tsvector**-type words match the  **tsquery**-type words.
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   @@@
+- @@@
 
     Description: Synonym for @@
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Connects two  **tsvector**-type words.
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     Description: Performs an AND operation on two  **tsquery**-type words.
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     Description: Performs an OR operation on two  **tsquery**-type words.
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   !!
+- !!
 
     Description:  **NOT**  a  **tsquery**
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     Description: Specifies whether a  **tsquery**-type word contains another  **tsquery**-type word.
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     Description: Specifies whether a  **tsquery**-type word is contained in another  **tsquery**-type word.
 
@@ -114,12 +114,11 @@
     (1 row)
     ```
 
-
 In addition to the preceding operators, the ordinary B-tree comparison operators \(including = and <\) are defined for types  **tsvector**  and  **tsquery**.
 
 ## Text Search Functions<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_s06e6cc0c308848d4b5ab9fa7bfe9f62a"></a>
 
--   get\_current\_ts\_config\(\)
+- get\_current\_ts\_config\(\)
 
     Description: Obtains default text search configurations.
 
@@ -135,7 +134,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   length\(tsvector\)
+- length\(tsvector\)
 
     Description: Specifies the number of lexemes in a  **tsvector**-type word.
 
@@ -151,7 +150,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   numnode\(tsquery\)
+- numnode\(tsquery\)
 
     Description: Specifies the number of lexemes plus  **tsquery**  operators.
 
@@ -167,7 +166,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   plainto\_tsquery\(\[ config regconfig , \] query text\)
+- plainto\_tsquery\(\[ config regconfig , \] query text\)
 
     Description: Generates  **tsquery**  lexemes without punctuations.
 
@@ -183,7 +182,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   querytree\(query tsquery\)
+- querytree\(query tsquery\)
 
     Description: Obtains the indexable part of a  **tsquery**.
 
@@ -199,7 +198,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   setweight\(tsvector, "char"\)
+- setweight\(tsvector, "char"\)
 
     Description: Assigns weight to each element of  **tsvector**.
 
@@ -215,7 +214,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   strip\(tsvector\)
+- strip\(tsvector\)
 
     Description: Removes positions and weights from  **tsvector**.
 
@@ -231,7 +230,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   to\_tsquery\(\[ config regconfig , \] query text\)
+- to\_tsquery\(\[ config regconfig , \] query text\)
 
     Description: Normalizes words and converts them to  **tsquery**.
 
@@ -247,7 +246,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   to\_tsvector\(\[ config regconfig , \] document text\)
+- to\_tsvector\(\[ config regconfig , \] document text\)
 
     Description: Reduces document text to  **tsvector**.
 
@@ -263,7 +262,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   to\_tsvector\_for\_batch\(\[ config regconfig , \] document text\)
+- to\_tsvector\_for\_batch\(\[ config regconfig , \] document text\)
 
     Description: Reduces document text to  **tsvector**.
 
@@ -279,7 +278,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_headline\(\[ config regconfig, \] document text, query tsquery \[, options text \]\)
+- ts\_headline\(\[ config regconfig, \] document text, query tsquery \[, options text \]\)
 
     Description: Highlights a query match.
 
@@ -295,7 +294,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_rank\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
+- ts\_rank\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
     Description: Ranks documents for a query.
 
@@ -311,7 +310,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_rank\_cd\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
+- ts\_rank\_cd\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
     Description: Ranks documents for a query using cover density.
 
@@ -327,7 +326,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_rewrite\(query tsquery, target tsquery, substitute tsquery\)
+- ts\_rewrite\(query tsquery, target tsquery, substitute tsquery\)
 
     Description: Replaces a  **tsquery**-type word.
 
@@ -343,7 +342,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_rewrite\(query tsquery, select text\)
+- ts\_rewrite\(query tsquery, select text\)
 
     Description: Replaces  **tsquery**  data in the target with the result of a  **SELECT**  command.
 
@@ -359,10 +358,9 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
-
 ## Text Search Debugging Functions<a name="en-us_topic_0283137544_en-us_topic_0237121976_en-us_topic_0059779255_s945ba95d2c0e472cb1903d9f734c3c36"></a>
 
--   ts\_debug\(\[ config regconfig, \] document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary\[\], OUT dictionary regdictionary, OUT lexemes text\[\]\)
+- ts\_debug\(\[ config regconfig, \] document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary\[\], OUT dictionary regdictionary, OUT lexemes text\[\]\)
 
     Description: Tests a configuration.
 
@@ -382,7 +380,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (5 rows)
     ```
 
--   ts\_lexize\(dict regdictionary, token text\)
+- ts\_lexize\(dict regdictionary, token text\)
 
     Description: Tests a data dictionary.
 
@@ -398,7 +396,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (1 row)
     ```
 
--   ts\_parse\(parser\_name text, document text, OUT tokid integer, OUT token text\)
+- ts\_parse\(parser\_name text, document text, OUT tokid integer, OUT token text\)
 
     Description: Tests a parser.
 
@@ -417,7 +415,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (4 rows)
     ```
 
--   ts\_parse\(parser\_oid oid, document text, OUT tokid integer, OUT token text\)
+- ts\_parse\(parser\_oid oid, document text, OUT tokid integer, OUT token text\)
 
     Description: Tests a parser.
 
@@ -436,7 +434,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (4 rows)
     ```
 
--   ts\_token\_type\(parser\_name text, OUT tokid integer, OUT alias text, OUT description text\)
+- ts\_token\_type\(parser\_name text, OUT tokid integer, OUT alias text, OUT description text\)
 
     Description: Obtains token types defined by a parser.
 
@@ -474,7 +472,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (23 rows)
     ```
 
--   ts\_token\_type\(parser\_oid oid, OUT tokid integer, OUT alias text, OUT description text\)
+- ts\_token\_type\(parser\_oid oid, OUT tokid integer, OUT alias text, OUT description text\)
 
     Description: Obtains token types defined by a parser.
 
@@ -512,7 +510,7 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
     (23 rows)
     ```
 
--   ts\_stat\(sqlquery text, \[ weights text, \] OUT word text, OUT ndoc integer, OUT nentry integer\)
+- ts\_stat\(sqlquery text, \[ weights text, \] OUT word text, OUT ndoc integer, OUT nentry integer\)
 
     Description: Obtains statistics of a  **tsvector**  column.
 
@@ -528,5 +526,3 @@ In addition to the preceding operators, the ordinary B-tree comparison operators
      (hello,1,1)
     (2 rows)
     ```
-
-

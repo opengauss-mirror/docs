@@ -4,11 +4,11 @@ The  **JOIN**  clause is used to combine rows in two or more tables based on the
 
 In openGauss, the  **JOIN**  clause has five types of join operations.
 
--   CROSS JOIN
--   INNER JOIN
--   LEFT OUTER JOIN
--   RIGHT OUTER JOIN
--   FULL OUTER JOIN
+- CROSS JOIN
+- INNER JOIN
+- LEFT OUTER JOIN
+- RIGHT OUTER JOIN
+- FULL OUTER JOIN
 
 **table1**  and  **table2**  are used as examples to describe different types of join operations. The table data is as follows:
 
@@ -134,4 +134,3 @@ openGauss=# SELECT * FROM table1 a FULL OUTER JOIN table2 b ON a.name = b.name;
        |      |  1 | Tommy | IT
 (6 rows)
 ```
-

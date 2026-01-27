@@ -4,49 +4,44 @@
 
 按照刷新方式物化视图分为两种：
 
--   [全量物化视图](#section1810714714319)：仅支持对已创建的物化视图进行全量更新，而不支持进行增量更新。创建全量物化视图语法和CREATE TABLE AS语法类似。
--   [增量物化视图](#section1980464963719)：可以对物化视图增量刷新，需要用户手动执行语句完成对物化视图在一段时间内的增量数据刷新。与全量创建物化视图的不同在于目前增量物化视图所支持场景较小。目前物化视图创建语句仅支持基表扫描语句或者UNION ALL语句。
+- [全量物化视图](#section1810714714319)：仅支持对已创建的物化视图进行全量更新，而不支持进行增量更新。创建全量物化视图语法和CREATE TABLE AS语法类似。
+- [增量物化视图](#section1980464963719)：可以对物化视图增量刷新，需要用户手动执行语句完成对物化视图在一段时间内的增量数据刷新。与全量创建物化视图的不同在于目前增量物化视图所支持场景较小。目前物化视图创建语句仅支持基表扫描语句或者UNION ALL语句。
 
 ## 全量物化视图语法格式<a name="section1810714714319"></a>
 
--   创建全量物化视图
+- 创建全量物化视图
 
     ```
     CREATE MATERIALIZED VIEW view_name AS query; 
     ```
 
-
--   全量刷新物化视图
+- 全量刷新物化视图
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   删除物化视图
+- 删除物化视图
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   查询物化视图
+- 查询物化视图
 
     ```
     SELECT * FROM [ view_name ];
     ```
 
-
 ## 全量物化视图参数说明<a name="section6973139183420"></a>
 
--   **view\_name**
+- **view\_name**
 
     要创建的物化视图的名称。
 
--   **AS query**
+- **AS query**
 
     一个SELECT、TABLE 或者VALUES命令。
-
 
 ## 全量物化视图示例<a name="section653116105315"></a>
 
@@ -89,51 +84,45 @@ DROP MATERIALIZED VIEW
 
 ## 增量物化视图语法格式<a name="section1980464963719"></a>
 
--   创建增量物化视图
+- 创建增量物化视图
 
     ```
     CREATE INCREMENTAL MATERIALIZED VIEW  view_name  AS  query ; 
     ```
 
-
--   全量刷新物化视图
+- 全量刷新物化视图
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   增量刷新物化视图
+- 增量刷新物化视图
 
     ```
     REFRESH INCREMENTAL MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   删除物化视图
+- 删除物化视图
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   查询物化视图
+- 查询物化视图
 
     ```
     SELECT * FROM [ view_name ];
     ```
 
-
 ## 增量物化视图参数说明<a name="section142126710548"></a>
 
--   **view\_name**
+- **view\_name**
 
     要创建的物化视图的名称。
 
--   **AS query**
+- **AS query**
 
     一个SELECT、TABLE 或者VALUES命令。
-
 
 ## 增量物化视图示例<a name="section1433113611463"></a>
 
@@ -186,4 +175,3 @@ openGauss=# select * from mv;
 openGauss=# DROP MATERIALIZED VIEW mv;
 DROP MATERIALIZED VIEW
 ```
-

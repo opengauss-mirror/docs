@@ -8,17 +8,17 @@ Description: Specifies whether the string matches the mode string following  **L
 
 Matching rules:
 
-1.  This operator can succeed only when its mode matches the entire string. If you want to match a sequence in any position within the string, the mode must begin and end with a percent sign \(%\).
-2.  The underscore \(\_\) represents \(matches\) any single character. The percent sign \(%\) indicates the wildcard character of any string.
-3.  To match a literal underscore or percent sign, the respective character in the mode must be preceded by an escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
-4.  To match escape characters, enter two escape characters. For example, to write a mode constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
+1. This operator can succeed only when its mode matches the entire string. If you want to match a sequence in any position within the string, the mode must begin and end with a percent sign \(%\).
+2. The underscore \(\_\) represents \(matches\) any single character. The percent sign \(%\) indicates the wildcard character of any string.
+3. To match a literal underscore or percent sign, the respective character in the mode must be preceded by an escape character. The default escape character is the backslash but a different one can be selected by using the  **ESCAPE**  clause.
+4. To match escape characters, enter two escape characters. For example, to write a mode constant containing a backslash \(\\\), you need to enter two backslashes in SQL statements.
 
     >[!NOTE]NOTE 
     >When  **standard\_conforming\_strings**  is set to  **off**, any backslashes you write in literal string constants will need to be doubled. So, writing a mode that matches a single backslash actually involves writing four backslashes in the statement \(you can avoid this by selecting a different escape character with the  **ESCAPE**  clause so that the backslash is no longer a special character of  **LIKE**. But the backslash is still a special character of the character text analyzer, so you still need two backslashes.\)
     >In a MySQL-compatible mode, it is also possible to select no escape character by writing  **ESCAPE ''**. This effectively disables the escape mechanism, which makes it impossible to turn off the special meaning of underscores and percent signs in the mode.
 
-5.  The  **ILIKE**  keyword can be used to replace  **LIKE**  to make the match case-insensitive.
-6.  Operator \~\~ is equivalent to  **LIKE**, and operator \~\~\* corresponds to  **ILIKE**.
+5. The  **ILIKE**  keyword can be used to replace  **LIKE**  to make the match case-insensitive.
+6. Operator \~\~ is equivalent to  **LIKE**, and operator \~\~\* corresponds to  **ILIKE**.
 
 Example:
 
@@ -60,9 +60,9 @@ Description: Returns  **true**  or  **false**  depending on whether the mode mat
 
 Matching rules:
 
-1.  Similar to  **LIKE**, this operator succeeds only when its mode matches the entire string. If you want to match a sequence in any position within the string, the mode must begin and end with a percent sign \(%\).
-2.  The underscore \(\_\) represents \(matches\) any single character. The percent sign \(%\) indicates the wildcard character of any string.
-3.  **SIMILAR TO**  supports these mode-matching metacharacters borrowed from POSIX regular expressions.
+1. Similar to  **LIKE**, this operator succeeds only when its mode matches the entire string. If you want to match a sequence in any position within the string, the mode must begin and end with a percent sign \(%\).
+2. The underscore \(\_\) represents \(matches\) any single character. The percent sign \(%\) indicates the wildcard character of any string.
+3. **SIMILAR TO**  supports these mode-matching metacharacters borrowed from POSIX regular expressions.
 
     <a name="en-us_topic_0283137455_en-us_topic_0237121970_table199321611038"></a>
     <table><thead align="left"><tr id="en-us_topic_0283137455_en-us_topic_0237121970_row3083601711038"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"><a name="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"></a><a name="en-us_topic_0283137455_en-us_topic_0237121970_p6509621711038"></a>Metacharacter</p>
@@ -119,7 +119,7 @@ Matching rules:
     </tbody>
     </table>
 
-4.  A preamble escape character disables the special meaning of any of these metacharacters. The rules for using escape characters are the same as those for using  **LIKE**.
+4. A preamble escape character disables the special meaning of any of these metacharacters. The rules for using escape characters are the same as those for using  **LIKE**.
 
 Example:
 
@@ -203,8 +203,8 @@ Description: A regular expression is a character sequence that is an abbreviated
 
 Matching rules:
 
-1.  Unlike  **LIKE**, a regular expression is allowed to match anywhere within a string, unless the regular expression is explicitly anchored to the beginning or end of the string.
-2.  Besides the metacharacters mentioned above, POSIX regular expressions also support the following mode matching metacharacters:
+1. Unlike  **LIKE**, a regular expression is allowed to match anywhere within a string, unless the regular expression is explicitly anchored to the beginning or end of the string.
+2. Besides the metacharacters mentioned above, POSIX regular expressions also support the following mode matching metacharacters:
 
     <a name="en-us_topic_0283137455_en-us_topic_0237121970_table23243447154559"></a>
     <table><thead align="left"><tr id="en-us_topic_0283137455_en-us_topic_0237121970_row10310639154559"><th class="cellrowborder" valign="top" width="50%" id="mcps1.1.3.1.1"><p id="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"><a name="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"></a><a name="en-us_topic_0283137455_en-us_topic_0237121970_p263474154559"></a>Metacharacter</p>
@@ -230,7 +230,6 @@ Matching rules:
     </tr>
     </tbody>
     </table>
-
 
 Example:
 
@@ -291,4 +290,3 @@ openGauss=# SELECT 'abc' ~ '^(b|c)'AS RESULT;
 ```
 
 Although most regular expression searches can be executed quickly, regular expressions can still be artificially made up of memory that takes a long time and any amount of memory. It is not recommended that you accept the regular expression search mode from a non-secure mode source. If you must do this, you are advised to add the statement timeout limit. The  **SIMILAR TO**  search has the same security risks, as  **SIMILAR TO**  provides many capabilities that are the same as those of POSIX- style regular expressions. The  **LIKE**  search is much simpler than the other two options. Therefore, it is more secure to accept the non-secure mode source search.
-

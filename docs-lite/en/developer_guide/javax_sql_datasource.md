@@ -57,4 +57,3 @@ This section describes  **javax.sql.DataSource**, the interface for data sources
 </tr>
 </tbody>
 </table>
-

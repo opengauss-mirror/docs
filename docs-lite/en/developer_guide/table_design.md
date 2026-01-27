@@ -2,8 +2,8 @@
 
 Comply with the following principles to properly design a table:
 
--   \[Notice\] Reduce the amount of data to be scanned. You can use the pruning mechanism of a partitioned table.
--   \[Notice\] Minimize random I/Os. By clustering or local clustering, you can sequentially store hot data, converting random I/O to sequential I/O to reduce the cost of I/O scanning.
+- \[Notice\] Reduce the amount of data to be scanned. You can use the pruning mechanism of a partitioned table.
+- \[Notice\] Minimize random I/Os. By clustering or local clustering, you can sequentially store hot data, converting random I/O to sequential I/O to reduce the cost of I/O scanning.
 
 ## Selecting a Storage Mode<a name="section189043059150"></a>
 
@@ -35,9 +35,9 @@ Comply with the following principles to properly design a table:
 
 If a table contains a large amount of data, partition the table based on the following rules:
 
--   \[Proposal\] Create partitions on columns that indicate certain ranges, such as dates and regions.
--   \[Proposal\] A partition name should show the data characteristics of a partition. For example, its format can be  _Keyword_+_Range_  characteristics.
--   \[Proposal\] Set the upper limit of a partition to  **MAXVALUE**  to prevent data overflow.
+- \[Proposal\] Create partitions on columns that indicate certain ranges, such as dates and regions.
+- \[Proposal\] A partition name should show the data characteristics of a partition. For example, its format can be  _Keyword_+_Range_  characteristics.
+- \[Proposal\] Set the upper limit of a partition to  **MAXVALUE**  to prevent data overflow.
 
     **Table  2**  Table partitioning modes and scenarios
 
@@ -132,5 +132,3 @@ If a table contains a large amount of data, partition the table based on the fol
     ```
 
     For details about the table partition syntax, see  [CREATE TABLE PARTITION](../sql_reference/create-table-partition.md).
-
-

@@ -46,10 +46,10 @@ SQLRETURN SQLAllocHandle(SQLSMALLINT   HandleType,
 
 ## Return Value<a name="en-us_topic_0238272884_en-us_topic_0237120414_en-us_topic_0059778058_s8136c512ac4e4481a73d8640d73d26d2"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
 
 ## Precautions<a name="en-us_topic_0238272884_en-us_topic_0237120414_en-us_topic_0059778058_s9076893176f14464a773531cbd9e81b4"></a>
 
@@ -58,4 +58,3 @@ If SQLAllocHandle returns  **SQL\_ERROR**  when it is used to allocate a non-env
 ## Example<a name="en-us_topic_0238272884_en-us_topic_0237120414_en-us_topic_0059778058_sb7bc1f5b242e441583cf7237bb33199b"></a>
 
 See  [Examples](example_odbc.md).
-

@@ -37,4 +37,3 @@ GS\_TOTAL\_MEMORY\_DETAIL视图统计当前数据库节点使用内存的信息�
 </tr>
 </tbody>
 </table>
-

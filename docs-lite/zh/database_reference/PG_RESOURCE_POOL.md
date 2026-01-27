@@ -115,4 +115,3 @@ PG\_RESOURCE\_POOL系统表提供了数据库资源池的信息。
 </table>
 
 注：max\_dop和max\_worker用于扩容，不适用于集中式openGauss。
-

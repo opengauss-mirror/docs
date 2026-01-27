@@ -55,4 +55,3 @@ See also  [PG\_SHDESCRIPTION](pg_shdescription.md), which provides a similar fun
 </tr>
 </tbody>
 </table>
-

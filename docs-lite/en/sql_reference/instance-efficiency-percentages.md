@@ -38,4 +38,3 @@ The following table lists metrics in the Instance Efficiency Percentages report.
 </tr>
 </tbody>
 </table>
-

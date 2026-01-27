@@ -137,4 +137,3 @@ PG\_EXT\_STATS视图提供对存储在[PG\_STATISTIC\_EXT](PG_STATISTIC_EXT.md)�
 </tr>
 </tbody>
 </table>
-

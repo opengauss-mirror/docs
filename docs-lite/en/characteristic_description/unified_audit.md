@@ -53,15 +53,15 @@ None.
 
 ## Constraints<a name="section06531946143616"></a>
 
--   The unified audit policy must be created by a user with the  **POLADMIN**  or  **SYSADMIN**  attribute, or by the initial user. Common users do not have the permission to access the security policy system catalog and system view.
--   The syntax of a unified audit policy applies to either DDL or DML operations. DDL operations and DML operations are mutually exclusive in an audit policy. A maximum of 98 unified audit policies can be configured.
--   Unified audit monitors the SQL statements executed by users on the clients, but does not record the internal SQL statements of databases.
--   In the same audit policy, the same resource tag can be bound to different audit behaviors, and the same behavior can be bound to different resource tags. The ALL operation type includes all operations supported by DDL or DML.
--   A resource label can be associated with different unified audit policies. Unified audit outputs audit information in sequence based on the policies matched by SQL statements.
--   Audit logs of unified audit policies are recorded separately. Currently, no visualized query interfaces are provided. Audit logs depend on the OS service Rsyslog and are archived through the service configuration.
--   In cloud service scenarios, logs need to be stored in the OBS. In hybrid cloud scenarios, you can deploy Elasticsearch to collect CN logs and perform visualized processing.
--   It is recommended that  **APP**  in  **FILTER**  be set to applications in the same trusted domain. Since a client may be forged, a security mechanism must be formed on the client when  **APP**  is used to reduce misuse risks. Generally, you are not advised to set  **APP**. If it is set, pay attention to the risk of client spoofing.
--   Taking an IPv4 address as an example, the following formats are supported:
+- The unified audit policy must be created by a user with the  **POLADMIN**  or  **SYSADMIN**  attribute, or by the initial user. Common users do not have the permission to access the security policy system catalog and system view.
+- The syntax of a unified audit policy applies to either DDL or DML operations. DDL operations and DML operations are mutually exclusive in an audit policy. A maximum of 98 unified audit policies can be configured.
+- Unified audit monitors the SQL statements executed by users on the clients, but does not record the internal SQL statements of databases.
+- In the same audit policy, the same resource tag can be bound to different audit behaviors, and the same behavior can be bound to different resource tags. The ALL operation type includes all operations supported by DDL or DML.
+- A resource label can be associated with different unified audit policies. Unified audit outputs audit information in sequence based on the policies matched by SQL statements.
+- Audit logs of unified audit policies are recorded separately. Currently, no visualized query interfaces are provided. Audit logs depend on the OS service Rsyslog and are archived through the service configuration.
+- In cloud service scenarios, logs need to be stored in the OBS. In hybrid cloud scenarios, you can deploy Elasticsearch to collect CN logs and perform visualized processing.
+- It is recommended that  **APP**  in  **FILTER**  be set to applications in the same trusted domain. Since a client may be forged, a security mechanism must be formed on the client when  **APP**  is used to reduce misuse risks. Generally, you are not advised to set  **APP**. If it is set, pay attention to the risk of client spoofing.
+- Taking an IPv4 address as an example, the following formats are supported:
 
     <a name="table7313162864616"></a>
     <table><tbody><tr id="row17313728174619"><td class="cellrowborder" valign="top" width="19%"><p id="p1631315285461"><a name="p1631315285461"></a><a name="p1631315285461"></a>IP Address Format</p>
@@ -92,8 +92,6 @@ None.
     </tbody>
     </table>
 
-
 ## Dependencies<a name="section22810484"></a>
 
 None.
-

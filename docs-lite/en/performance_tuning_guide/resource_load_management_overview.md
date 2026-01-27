@@ -17,4 +17,3 @@ Control groups \(Cgroups\) are a mechanism provided by the Linux kernel to restr
 **Resource pool**
 
 Resource pools are a configuration mechanism provided by openGauss to divide host resources \(memory and I/O resources\) and control SQL concurrency. Resource pools are bound to Cgroups. In this way, you can manage the resource loads of jobs in a specific resource pool.
-

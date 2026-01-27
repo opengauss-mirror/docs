@@ -2,15 +2,15 @@
 
 When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SSL to encrypt the communication between the client and server. To enable SSL, you must have the server certificate, client certificate, and private key files. For details on how to obtain these files, see related documents and commands of OpenSSL.
 
-1.  Use the .ini file \(the  **configparser **package of Python can parse this type of configuration file\) to save the configuration information about the database connection.
-2.  Add SSL connection parameters  **sslmode**,  **sslcert**,  **sslkey**, and  **sslrootcert **to the connection options.
-    1.  **sslmode**:  [Table 1](#table167989176183)
-    2.  **sslcert**: client certificate path
-    3.  **sslkey**: client key path
-    4.  **sslrootcert**: root certificate path
+1. Use the .ini file \(the  **configparser**package of Python can parse this type of configuration file\) to save the configuration information about the database connection.
+2. Add SSL connection parameters  **sslmode**,  **sslcert**,  **sslkey**, and  **sslrootcert**to the connection options.
+    1. **sslmode**:  [Table 1](#table167989176183)
+    2. **sslcert**: client certificate path
+    3. **sslkey**: client key path
+    4. **sslrootcert**: root certificate path
 
-3.  Use the  **psycopg2.connect**  function to obtain the connection object.
-4.  Use the connection object to create a cursor object.
+3. Use the  **psycopg2.connect**  function to obtain the connection object.
+4. Use the connection object to create a cursor object.
 
 **Table  1**  sslmode options
 
@@ -67,4 +67,3 @@ When you use psycopy2 to connect to the GaussDB Kernel server, you can enable SS
 </tr>
 </tbody>
 </table>
-

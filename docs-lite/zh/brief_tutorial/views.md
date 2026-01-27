@@ -4,42 +4,40 @@
 
 ## 语法格式<a name="section1719020102251"></a>
 
--   创建视图
+- 创建视图
 
     ```
     CREATE [ TEMP | TEMPORARY ] VIEW view_name [ ( column_name [, ...] ) ]
          AS query;
     ```
 
--   删除视图
+- 删除视图
 
     ```
     DROP VIEW  view_name ;
     ```
 
-
 ## 参数说明<a name="zh-cn_topic_0283137480_zh-cn_topic_0237122126_zh-cn_topic_0059779377_s09c14680fd2e44bcb52cb2f114096621"></a>
 
--   **TEMP | TEMPORARY**
+- **TEMP | TEMPORARY**
 
     创建临时视图。
 
--   **view\_name**
+- **view\_name**
 
     要创建的视图名称。可以用模式修饰。
 
     取值范围：字符串，符合标识符命名规范。
 
--   **column\_name**
+- **column\_name**
 
     可选的名称列表，用作视图的字段名。如果没有给出，字段名取自查询中的字段名。
 
     取值范围：字符串，符合标识符命名规范。
 
--   **query**
+- **query**
 
     为视图提供行和列的SELECT或VALUES语句。
-
 
 ## 示例<a name="section1958392193317"></a>
 
@@ -91,4 +89,3 @@ c_first_name | amount
 openGauss=# DROP VIEW CUSTOMER_VIEW;
 DROP VIEW
 ```
-

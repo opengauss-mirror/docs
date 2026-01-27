@@ -10,9 +10,9 @@ Functions and stored procedures are important database objects. They encapsulate
 
 ## Benefits<a name="section46751668"></a>
 
-1.  Allows customers to modularize program design and encapsulate SQL statement sets, easy to invoke.
-2.  Caches the compilation results of stored procedures to accelerate SQL statement set execution.
-3.  Allows system administrators to restrict the permission for executing a specific stored procedure and controls access to the corresponding type of data. This prevents access from unauthorized users and ensures data security.
+1. Allows customers to modularize program design and encapsulate SQL statement sets, easy to invoke.
+2. Caches the compilation results of stored procedures to accelerate SQL statement set execution.
+3. Allows system administrators to restrict the permission for executing a specific stored procedure and controls access to the corresponding type of data. This prevents access from unauthorized users and ensures data security.
 
 ## Description<a name="section18111828"></a>
 
@@ -37,4 +37,3 @@ Can't get the type of a nested cursor by ROWTYPE.
 ## Dependencies<a name="section57771982"></a>
 
 None.
-

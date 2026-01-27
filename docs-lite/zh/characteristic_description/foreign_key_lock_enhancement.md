@@ -76,9 +76,8 @@
 
 ## 特性约束<a name="section13355203802911"></a>
 
--   对于Ustore，目前行锁仅支持share和update。
+- 对于Ustore，目前行锁仅支持share和update。
 
 ## 依赖关系<a name="section101449415302"></a>
 
 无。
-

@@ -110,5 +110,3 @@ PGXC\_SLICE系统表仅在分布式场景下有具体含义，openGauss只能查
 </tr>
 </tbody>
 </table>
-
-

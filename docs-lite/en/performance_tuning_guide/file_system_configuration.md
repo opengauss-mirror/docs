@@ -2,8 +2,8 @@
 
 To improve the I/O efficiency of the database, NVMe disks are used as data disks. The file system type is XFS and the data block size is 8 KB. The procedure is as follows:
 
-1.  <a name="en-us_topic_0283136945_en-us_topic_0263913268_li13131455153313"></a>Check the file system type of the current data disk.
-    1.  Run the following command to query the attached NVMe disk:
+1. <a name="en-us_topic_0283136945_en-us_topic_0263913268_li13131455153313"></a>Check the file system type of the current data disk.
+    1. Run the following command to query the attached NVMe disk:
 
         ```
         df -h | grep nvme
@@ -18,7 +18,7 @@ To improve the I/O efficiency of the database, NVMe disks are used as data disks
         /dev/nvme3n1                3.7T  1.4T  2.3T  39% /data4
         ```
 
-    2.  Run the following command to view the NVMe disk information:
+    2. Run the following command to view the NVMe disk information:
 
         ```
         xfs_info
@@ -29,8 +29,8 @@ To improve the I/O efficiency of the database, NVMe disks are used as data disks
         **Figure  1**  Viewing the NVMe disk information<a name="fig790551418911"></a>  
         ![](figures/viewing-the-nvme-disk-information.png)
 
-2.  Back up the data on the disk to be modified to other disks or servers.
-3.  Format the disk as an XFS file system.
+2. Back up the data on the disk to be modified to other disks or servers.
+3. Format the disk as an XFS file system.
 
     Take the disk  **/dev/nvme0n1**  whose loading path is  **/data1**  as an example. Run the following command. Perform this step based on the actual situation.
 
@@ -40,5 +40,4 @@ To improve the I/O efficiency of the database, NVMe disks are used as data disks
     mount /dev/nvme0n1 /data1
     ```
 
-4.  Perform  [step 1](#en-us_topic_0283136945_en-us_topic_0263913268_li13131455153313)  and check whether the block size has been changed to 8 KB.
-
+4. Perform  [step 1](#en-us_topic_0283136945_en-us_topic_0263913268_li13131455153313)  and check whether the block size has been changed to 8 KB.

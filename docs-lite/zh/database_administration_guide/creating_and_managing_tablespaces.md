@@ -4,23 +4,21 @@
 
 通过使用表空间，管理员可以控制一个数据库安装的磁盘布局。这样有以下优点：
 
--   如果初始化数据库所在的分区或者卷空间已满，又不能逻辑上扩展更多空间，可以在不同的分区上创建和使用表空间，直到系统重新配置空间。
+- 如果初始化数据库所在的分区或者卷空间已满，又不能逻辑上扩展更多空间，可以在不同的分区上创建和使用表空间，直到系统重新配置空间。
 
--   表空间允许管理员根据数据库对象的使用模式安排数据位置，从而提高性能。
-    -   一个频繁使用的索引可以放在性能稳定且运算速度较快的磁盘上，比如一种固态设备。
-    -   一个存储归档的数据，很少使用的或者对性能要求不高的表可以存储在一个运算速度较慢的磁盘上。
+- 表空间允许管理员根据数据库对象的使用模式安排数据位置，从而提高性能。
+    - 一个频繁使用的索引可以放在性能稳定且运算速度较快的磁盘上，比如一种固态设备。
+    - 一个存储归档的数据，很少使用的或者对性能要求不高的表可以存储在一个运算速度较慢的磁盘上。
 
-
--   管理员通过表空间可以设置占用的磁盘空间。用以在和其他数据共用分区的时候，防止表空间占用相同分区上的其他空间。
--   表空间对应于一个文件系统目录，假定数据库节点数据目录/pg\_location/mount1/path1是用户拥有读写权限的空目录。
+- 管理员通过表空间可以设置占用的磁盘空间。用以在和其他数据共用分区的时候，防止表空间占用相同分区上的其他空间。
+- 表空间对应于一个文件系统目录，假定数据库节点数据目录/pg\_location/mount1/path1是用户拥有读写权限的空目录。
 
     使用表空间配额管理会使性能有30%左右的影响，MAXSIZE指定每个数据库节点的配额大小，误差范围在500MB以内。请根据实际的情况确认是否需要设置表空间的最大值。
 
-
 openGauss自带了两个表空间：pg\_default和pg\_global。
 
--   默认表空间pg\_default：用来存储非共享系统表、用户表、用户表index、临时表、临时表index、内部临时表的默认表空间。对应存储目录为实例数据目录下的base目录。
--   共享表空间pg\_global：用来存放共享系统表的表空间。对应存储目录为实例数据目录下的global目录。
+- 默认表空间pg\_default：用来存储非共享系统表、用户表、用户表index、临时表、临时表index、内部临时表的默认表空间。对应存储目录为实例数据目录下的base目录。
+- 共享表空间pg\_global：用来存放共享系统表的表空间。对应存储目录为实例数据目录下的global目录。
 
 ## 注意事项：<a name="section03301347122915"></a>
 
@@ -28,8 +26,8 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
 
 ## 操作步骤<a name="zh-cn_topic_0283137616_zh-cn_topic_0237120297_zh-cn_topic_0059778849_se40504a685a14d718e41d4f669a4ddca"></a>
 
--   创建表空间
-    1.  执行如下命令创建用户jack。
+- 创建表空间
+    1. 执行如下命令创建用户jack。
 
         ```
         openGauss=# CREATE USER jack IDENTIFIED BY 'xxxxxxxxx';
@@ -41,7 +39,7 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
         CREATE ROLE
         ```
 
-    2.  执行如下命令创建表空间。
+    2. 执行如下命令创建表空间。
 
         ```
         openGauss=# CREATE TABLESPACE fastspace RELATIVE LOCATION 'tablespace/tablespace_1';
@@ -55,7 +53,7 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
 
         其中“fastspace”为新创建的表空间，“数据库节点数据目录_/pg\_location/tablespace/tablespace\_1_”是用户拥有读写权限的空目录。
 
-    3.  数据库系统管理员执行如下命令将“fastspace”表空间的访问权限赋予数据用户jack。
+    3. 数据库系统管理员执行如下命令将“fastspace”表空间的访问权限赋予数据用户jack。
 
         ```
         openGauss=# GRANT CREATE ON TABLESPACE fastspace TO jack;
@@ -67,15 +65,13 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
         GRANT
         ```
 
-
-
--   在表空间中创建对象
+- 在表空间中创建对象
 
     如果用户拥有表空间的CREATE权限，就可以在表空间上创建数据库对象，比如：表和索引等。
 
     以创建表为例。
 
-    -   方式1：执行如下命令在指定表空间创建表。
+    - 方式1：执行如下命令在指定表空间创建表。
 
         ```
         openGauss=# CREATE TABLE foo(i int) TABLESPACE fastspace;
@@ -87,7 +83,7 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
         CREATE TABLE
         ```
 
-    -   方式2：先使用set default\_tablespace设置默认表空间，再创建表。
+    - 方式2：先使用set default\_tablespace设置默认表空间，再创建表。
 
         ```
         openGauss=# SET default_tablespace = 'fastspace';
@@ -98,23 +94,21 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
 
         假设设置“fastspace”为默认表空间，然后创建表foo2。
 
-
--   查询表空间
-    -   方式1：检查pg\_tablespace系统表。如下命令可查到系统和用户定义的全部表空间。
+- 查询表空间
+    - 方式1：检查pg\_tablespace系统表。如下命令可查到系统和用户定义的全部表空间。
 
         ```
         openGauss=# SELECT spcname FROM pg_tablespace;
         ```
 
-    -   方式2：使用gsql程序的元命令查询表空间。
+    - 方式2：使用gsql程序的元命令查询表空间。
 
         ```
         openGauss=# \db
         ```
 
-
--   查询表空间使用率
-    1.  查询表空间的当前使用情况。
+- 查询表空间使用率
+    1. 查询表空间的当前使用情况。
 
         ```
         openGauss=# SELECT PG_TABLESPACE_SIZE('example');
@@ -131,12 +125,11 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
 
         其中2146304表示表空间的大小，单位为字节。
 
-    2.  计算表空间使用率。
+    2. 计算表空间使用率。
 
         表空间使用率=PG\_TABLESPACE\_SIZE/表空间所在目录的磁盘大小。
 
-
--   修改表空间
+- 修改表空间
 
     执行如下命令对表空间fastspace重命名为fspace。
 
@@ -145,21 +138,20 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
     ALTER TABLESPACE
     ```
 
--   删除表空间
+- 删除表空间
 
     >[!NOTE]说明
     >
     >用户必须是表空间的owner或者系统管理员才能删除表空间。
 
-
-    1.  执行如下命令删除用户jack。
+    1. 执行如下命令删除用户jack。
 
         ```
         openGauss=# DROP USER jack CASCADE;
         DROP ROLE
         ```
 
-    2.  执行如下命令删除表foo和foo2。
+    2. 执行如下命令删除表foo和foo2。
 
         ```
         openGauss=# DROP TABLE foo;
@@ -172,14 +164,9 @@ openGauss自带了两个表空间：pg\_default和pg\_global。
         DROP TABLE
         ```
 
-    3.   执行如下命令删除表空间fspace。
+    3. 执行如下命令删除表空间fspace。
 
          ```
          openGauss=# DROP TABLESPACE fspace;
          DROP TABLESPACE
          ```
-
-
-
-
-

@@ -56,7 +56,7 @@ openGauss provides  **gs\_dump**  and  **gs\_dumpall**  to export required datab
 
 **gs\_dump**  and  **gs\_dumpall**  use  **-U**  to specify the user that performs the export. If the specified user does not have the required permissions, data cannot be exported. In this case, you can set  **--role**  in the  **gs\_dump**  or  **gs\_dumpall**  command to the role that has the permissions. Then,  **gs\_dump**  or  **gs\_dumpall**  uses the specified role to export data. See  [Data Export By a User Without Required Permissions](data_export_by_a_user_without_required_permissions.md)  for application scenarios and  [Table 1](#en-us_topic_0283136743_en-us_topic_0237121167_table08278213504)  for operation details.
 
-**gs\_dump**  and  **gs\_dumpall**  encrypt the exported data files. These files are decrypted before being imported. In this way, data disclosure is prevented, protecting database security. Note that if the exported database contains stored procedures, you cannot use the  **gsql**  command to restore the plain-text file encrypted using  **gs\_dump**. In this case, use the other three modes to export the database and use  **gs\_restore **to restore the database.
+**gs\_dump**  and  **gs\_dumpall**  encrypt the exported data files. These files are decrypted before being imported. In this way, data disclosure is prevented, protecting database security. Note that if the exported database contains stored procedures, you cannot use the  **gsql**  command to restore the plain-text file encrypted using  **gs\_dump**. In this case, use the other three modes to export the database and use  **gs\_restore**to restore the database.
 
 When  **gs\_dump**  or  **gs\_dumpall**  is used to export data, other users can still access \(read and write\) the databases.
 
@@ -64,14 +64,13 @@ When  **gs\_dump**  or  **gs\_dumpall**  is used to export data, other users can
 
 ## Precautions<a name="en-us_topic_0283136743_en-us_topic_0237121167_section969916571299"></a>
 
--   Do not modify an exported file or its content. Otherwise, restoration may fail.
--   If there are more than 500,000 objects \(data tables, views, and indexes\) in a database, you are advised to use  **gs\_guc**  to set the following parameters for database nodes. This operation is not required if the parameter values are greater than the recommended ones.
+- Do not modify an exported file or its content. Otherwise, restoration may fail.
+- If there are more than 500,000 objects \(data tables, views, and indexes\) in a database, you are advised to use  **gs\_guc**  to set the following parameters for database nodes. This operation is not required if the parameter values are greater than the recommended ones.
 
     ```
     gs_guc set  -D /gaussdb/data/datanode -c 'max_prepared_transactions = 1000'
     gs_guc set  -D /gaussdb/data/datanode -c 'max_locks_per_transaction = 512'
     ```
 
--   For data consistency and integrity,  **gs\_dump**  and  **gs\_dumpall**  set a share lock for a table to dump. If a share lock has been set for the table in other transactions,  **gs\_dump**  and  **gs\_dumpall**  lock the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
--   During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, administrator permissions are also required to add users and user groups, and create databases.
-
+- For data consistency and integrity,  **gs\_dump**  and  **gs\_dumpall**  set a share lock for a table to dump. If a share lock has been set for the table in other transactions,  **gs\_dump**  and  **gs\_dumpall**  lock the table after it is released. If the table cannot be locked within the specified time, the dump fails. You can customize the timeout duration to wait for lock release by specifying the  **--lock-wait-timeout**  parameter.
+- During an export,  **gs\_dumpall**  reads all tables in a database. Therefore, you need to connect to the database as openGauss administrator to export a complete file. When you use  **gsql**  to execute SQL scripts, administrator permissions are also required to add users and user groups, and create databases.

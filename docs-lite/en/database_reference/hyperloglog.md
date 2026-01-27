@@ -88,8 +88,7 @@ This parameter is a  **USERSET**  parameter. Set it based on instructions provid
 
 **Value range**: Boolean
 
--   **on**  or  **true**  indicates that memory optimization is enabled.
--   **off**  or  **false**  indicates that memory optimization is disabled.
+- **on**  or  **true**  indicates that memory optimization is enabled.
+- **off**  or  **false**  indicates that memory optimization is disabled.
 
 **Default value**:  **off**
-

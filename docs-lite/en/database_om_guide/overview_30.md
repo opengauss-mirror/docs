@@ -21,39 +21,39 @@ A logical replication slot means a stream of changes that can be replayed in oth
 
 ## Precautions<a name="en-us_topic_0283136720_en-us_topic_0237121452_section128900341517"></a>
 
--   DDL statement decoding is not supported. When a specific DDL statement \(for example, to truncate an ordinary table or exchange a partitioned table\) is executed, decoded data may be lost.
--   Decoding for column-store data and data page replication is not supported.
--   Logical decoding is not supported on the cascaded standby node.
--   After a DDL statement \(for example,  **ALTER TABLE**\) is executed, the physical logs that are not decoded before the DDL statement execution may be lost.
--   The size of a single tuple cannot exceed 1 GB, and decoded data may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
--   openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLINT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(***n_**\)**,  **VARCHAR\(***n_**\)**, and  **TEXT**.
--   If the SSL connection is required, ensure that the guc parameter  **ssl**  is set to  **on**.
--   The logical replication slot name must contain fewer than 64 characters and contain only one or more types of the following characters: lowercase letters, digits, and underscores \(\_\).
--   Currently, logical replication does not support the MOT feature.
--   After the database where a logical replication slot resides is deleted, the replication slot becomes unavailable and needs to be manually deleted.
--   Only the UTF-8 character set is supported.
--   To decode multiple databases, you need to create a stream replication slot in each database and start decoding. Logs need to be scanned for decoding of each database.
--   Forcible startup is not supported. After forcible startup, you need to export all data again.
--   During decoding on the standby node, the decoded data may increase during switchover and failover, which needs to be manually filtered out. When the quorum protocol is used, switchover and failover should be performed on the standby node that is to be promoted to primary, and logs must be synchronized from the primary node to the standby node.
--   The same replication slot for decoding cannot be used between the primary node and standby node or between different standby nodes at the same time. Otherwise, data inconsistency occurs.
--   Replication slots can only be created or deleted on hosts.
--   After the database is restarted due to a fault or the logical replication process is restarted, duplicate decoded data exists. You need to filter out the duplicate data.
--   If the computer kernel is faulty, garbled characters are displayed during decoding which need to be manually or automatically filtered out.
--   Currently, the logical decoding on the standby node does not support enabling the ultimate RTO.
--   Ensure that the long transaction is not started during the creation of the logical replication slot. If the long transaction is started, the creation of the logical replication slot will be blocked.
--   Interval partitioned tables cannot be replicated.
--   Global temporary tables are not supported.
--   After a DDL statement is executed in a transaction, the DDL statement and subsequent statements are not decoded.
--   To perform decoding on the standby node, set the GUC parameter  **enable\_slot\_log**  to  **on**  on the corresponding host.
--   Do not perform operations on the replication slot on other nodes when the logical replication slot is in use. To delete a replication slot, stop decoding in the replication slot first.
+- DDL statement decoding is not supported. When a specific DDL statement \(for example, to truncate an ordinary table or exchange a partitioned table\) is executed, decoded data may be lost.
+- Decoding for column-store data and data page replication is not supported.
+- Logical decoding is not supported on the cascaded standby node.
+- After a DDL statement \(for example,  **ALTER TABLE**\) is executed, the physical logs that are not decoded before the DDL statement execution may be lost.
+- The size of a single tuple cannot exceed 1 GB, and decoded data may be larger than inserted data. Therefore, it is recommended that the size of a single tuple be less than or equal to 500 MB.
+- openGauss supports the following data types for decoding:  **INTEGER**,  **BIGINT**,  **SMALLINT**,  **TINYINT**,  **SERIAL**,  **SMALLSERIAL**,  **BIGSERIAL**,  **FLOAT**,  **DOUBLE PRECISION**,  **DATE**,  **TIME\[WITHOUT TIME ZONE\]**,  **TIMESTAMP\[WITHOUT TIME ZONE\]**,  **CHAR\(***n_**\)**,  **VARCHAR\(***n_**\)**, and  **TEXT**.
+- If the SSL connection is required, ensure that the guc parameter  **ssl**  is set to  **on**.
+- The logical replication slot name must contain fewer than 64 characters and contain only one or more types of the following characters: lowercase letters, digits, and underscores \(\_\).
+- Currently, logical replication does not support the MOT feature.
+- After the database where a logical replication slot resides is deleted, the replication slot becomes unavailable and needs to be manually deleted.
+- Only the UTF-8 character set is supported.
+- To decode multiple databases, you need to create a stream replication slot in each database and start decoding. Logs need to be scanned for decoding of each database.
+- Forcible startup is not supported. After forcible startup, you need to export all data again.
+- During decoding on the standby node, the decoded data may increase during switchover and failover, which needs to be manually filtered out. When the quorum protocol is used, switchover and failover should be performed on the standby node that is to be promoted to primary, and logs must be synchronized from the primary node to the standby node.
+- The same replication slot for decoding cannot be used between the primary node and standby node or between different standby nodes at the same time. Otherwise, data inconsistency occurs.
+- Replication slots can only be created or deleted on hosts.
+- After the database is restarted due to a fault or the logical replication process is restarted, duplicate decoded data exists. You need to filter out the duplicate data.
+- If the computer kernel is faulty, garbled characters are displayed during decoding which need to be manually or automatically filtered out.
+- Currently, the logical decoding on the standby node does not support enabling the ultimate RTO.
+- Ensure that the long transaction is not started during the creation of the logical replication slot. If the long transaction is started, the creation of the logical replication slot will be blocked.
+- Interval partitioned tables cannot be replicated.
+- Global temporary tables are not supported.
+- After a DDL statement is executed in a transaction, the DDL statement and subsequent statements are not decoded.
+- To perform decoding on the standby node, set the GUC parameter  **enable\_slot\_log**  to  **on**  on the corresponding host.
+- Do not perform operations on the replication slot on other nodes when the logical replication slot is in use. To delete a replication slot, stop decoding in the replication slot first.
 
 ## Performance<a name="section1228492817598"></a>
 
 When pg\_logical\_slot\_get\_changes is used in the BenchmarkSQL 5.0 with 100 warehouses:
 
--   If 4000 lines of data (about 5 MB to 10 MB logs) are decoded at a time, the decoding performance ranges from 0.3 MB/s to 0.5 MB/s.
--   If 32000 lines of data (about 40 MB to 80 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
--   If 256000 lines of data (about 320 MB to 640 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
--   If the amount of data to be decoded at a time still increases, the decoding performance is not significantly improved.
+- If 4000 lines of data (about 5 MB to 10 MB logs) are decoded at a time, the decoding performance ranges from 0.3 MB/s to 0.5 MB/s.
+- If 32000 lines of data (about 40 MB to 80 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
+- If 256000 lines of data (about 320 MB to 640 MB logs) are decoded at a time, the decoding performance ranges from 3 MB/s to 5 MB/s.
+- If the amount of data to be decoded at a time still increases, the decoding performance is not significantly improved.
 
 Compared with the decoding performance in pg\_logical\_slot\_get\_changes mode, the decoding performance in pg\_logical\_slot\_peek\_changes + pg\_replication\_slot\_advance mode decreases by 30% to 50%.

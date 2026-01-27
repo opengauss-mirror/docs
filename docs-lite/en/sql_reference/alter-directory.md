@@ -6,8 +6,8 @@
 
 ## Precautions<a name="en-us_topic_0283137159_en-us_topic_0237122058_en-us_topic_0059778392_sb3569429c1304678895bcf79fb6304cf"></a>
 
--   Currently, only the directory owner can be changed.
--   When  **enable\_access\_server\_directory**  is set to  **off**, only the initial user is allowed to change the directory owner. When  **enable\_access\_server\_directory**  is set to  **on**, users with the  **SYSADMIN**  permission and the directory object owner can change the directory object owner, and the user who changes the owner is required to be a member of the new owner.
+- Currently, only the directory owner can be changed.
+- When  **enable\_access\_server\_directory**  is set to  **off**, only the initial user is allowed to change the directory owner. When  **enable\_access\_server\_directory**  is set to  **on**, users with the  **SYSADMIN**  permission and the directory object owner can change the directory object owner, and the user who changes the owner is required to be a member of the new owner.
 
 ## Syntax<a name="en-us_topic_0283137159_en-us_topic_0237122058_section185432369210"></a>
 
@@ -38,4 +38,3 @@ openGauss=# DROP DIRECTORY dir;
 ## Helpful Links<a name="en-us_topic_0283137159_en-us_topic_0237122058_section613212620440"></a>
 
 [CREATE DIRECTORY](create-directory.md)  and  [DROP DIRECTORY](drop-directory.md)
-

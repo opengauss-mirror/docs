@@ -4,7 +4,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136626_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d75942939b8cb27ddd67bd30"></a>
 
--   创建事件触发器。
+- 创建事件触发器。
 
     ```
     CREATE EVENT TRIGGER name
@@ -13,8 +13,7 @@
         EXECUTE PROCEDURE function_name()
     ```
 
-
--   修改事件触发器。
+- 修改事件触发器。
 
     ```
     ALTER EVENT TRIGGER name DISABLE
@@ -23,41 +22,42 @@
     ALTER EVENT TRIGGER name RENAME TO new_name
     ```
 
-
--   删除事件触发器。
+- 删除事件触发器。
 
     ```
     DROP EVENT TRIGGER [ IF EXISTS ] name [ CASCADE | RESTRICT ];
     ```
+
 ## 参数说明<a name="zh-cn_topic_0283165137_zh-cn_topic_0237122231_zh-cn_topic_0059778166_s65ae376394dba2599852d585997c77dd"></a>
 
--   **name**
+- **name**
 
     事件触发器名称。
 
--   **filter\_variable**
+- **filter\_variable**
 
     事件触发器用来做过滤的变量（目前仅支持TAG）。
 
--   **event**
+- **event**
 
     事件触发器支持的事件，目前支持ddl_command_start、ddl_command_end、sql_drop、table_rewrite。
 
--   **function\_name**
+- **function\_name**
 
     用户定义的函数，必须声明为不带参数并返回类型为event_trigger，在事件触发器触发时执行。
 
--   **new\_name**
+- **new\_name**
 
     修改后的新事件触发器名称。
 
--   **disable**
+- **disable**
 
     禁用该事件触发器。
 
--   **ENABLE [ REPLICA | ALWAYS ]**
+- **ENABLE [ REPLICA | ALWAYS ]**
 
     该事件触发器在session_replication_role为REPLICA\任何取值时可用。    
+
 ## 示例<a name="zh-cn_topic_0283731165_zh-cn_topic_0237122123_zh-cn_topic_0059778166_sfbca773f5bc99b3ead47668b3eb074fa"></a>
 
 ```

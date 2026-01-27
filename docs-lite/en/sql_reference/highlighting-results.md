@@ -10,16 +10,16 @@ ts_headline([ config regconfig, ] document text, query tsquery [, options text ]
 
 If an options string is specified it must consist of a comma-separated list of one or more  **option=value**  pairs. The available options are:
 
--   **StartSel**,  **StopSel**: The strings with which to delimit query words appearing in the document, to distinguish them from other excerpted words. You must double-quote these strings if they contain spaces or commas.
--   **MaxWords**,  **MinWords**: These numbers determine the longest and shortest headlines to output.
+- **StartSel**,  **StopSel**: The strings with which to delimit query words appearing in the document, to distinguish them from other excerpted words. You must double-quote these strings if they contain spaces or commas.
+- **MaxWords**,  **MinWords**: These numbers determine the longest and shortest headlines to output.
 
--   **ShortWord**: Words of this length or less will be dropped at the start and end of a headline. The default value of three eliminates common English articles.
+- **ShortWord**: Words of this length or less will be dropped at the start and end of a headline. The default value of three eliminates common English articles.
 
--   **HighlightAll**: Boolean flag. If  **true**  the whole document will be used as the headline, ignoring the preceding three parameters.
+- **HighlightAll**: Boolean flag. If  **true**  the whole document will be used as the headline, ignoring the preceding three parameters.
 
--   **MaxFragments**: Maximum number of text excerpts or fragments to display. The default value of zero selects a non-fragment-oriented headline generation method. A value greater than zero selects fragment-based headline generation. This method finds text fragments with as many query words as possible and stretches those fragments around the query words. As a result query words are close to the middle of each fragment and have words on each side. Each fragment will be of at most  **MaxWords**  and words of length  **ShortWord**  or less are dropped at the start and end of each fragment. If not all query words are found in the document, then a single fragment of the first  **MinWords**  in the document will be displayed.
+- **MaxFragments**: Maximum number of text excerpts or fragments to display. The default value of zero selects a non-fragment-oriented headline generation method. A value greater than zero selects fragment-based headline generation. This method finds text fragments with as many query words as possible and stretches those fragments around the query words. As a result query words are close to the middle of each fragment and have words on each side. Each fragment will be of at most  **MaxWords**  and words of length  **ShortWord**  or less are dropped at the start and end of each fragment. If not all query words are found in the document, then a single fragment of the first  **MinWords**  in the document will be displayed.
 
--   **FragmentDelimiter**: When more than one fragment is displayed, the fragments will be separated by this string.
+- **FragmentDelimiter**: When more than one fragment is displayed, the fragments will be separated by this string.
 
 Any unspecified options receive these defaults:
 
@@ -61,4 +61,3 @@ to_tsquery('english', 'query & similarity'),
 ```
 
 **ts\_headline**  uses the original document, not a  **tsvector**  summary, so it can be slow and should be used with care.
-

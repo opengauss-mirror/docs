@@ -4,9 +4,9 @@ Existing data in a database can be updated. You can update one row, all rows, or
 
 The following types of information are required when the  **UPDATE**  statement is used to update a row:
 
--   Table name and column name of the data to be updated
--   New column value
--   Rows of the data to be updated
+- Table name and column name of the data to be updated
+- New column value
+- Rows of the data to be updated
 
 Generally, the SQL language does not provide a unique ID for a row of data. Therefore, it is impossible to directly specify the rows of the data to be updated. However, you can specify the rows by declaring the conditions that must be met by the updated row. If a table contains primary keys, you can specify a row using the primary keys.
 
@@ -37,4 +37,3 @@ openGauss=# UPDATE customer_t1 SET  c_customer_id = 'Admin', c_first_name = 'Loc
 ```
 
 After data has been updated or deleted in batches, a large number of deletion markers are generated in the data file. During query, data with these deletion markers needs to be scanned as well. In this case, a large amount of data with deletion marks can greatly affect the query performance after batch updates or deletions. If data needs to be updated or deleted in batches frequently, you are advised to periodically run the  **VACUUM FULL**  statement to maintain the query performance.
-

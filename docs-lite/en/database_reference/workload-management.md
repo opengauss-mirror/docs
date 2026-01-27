@@ -10,16 +10,16 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the resource management function is enabled.
--   **off**  indicates that the resource management function is disabled.
+- **on**  indicates that the resource management function is enabled.
+- **off**  indicates that the resource management function is disabled.
 
     >[!NOTE]NOTE 
-    >-   If method 2 in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.
-    >-   After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  was  **off**  are not collected. To collect statistics about such resources, run the following statement:
+    >- If method 2 in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846)  is used to change the parameter value, the new value takes effect only for the threads that are started after the change. In addition, the new value does not take effect for new jobs that are executed by backend threads and reused threads. You can make the new value take effect for these threads by using  **kill session**  or restarting the node.
+    >- After the value of  **use\_workload\_manager**  changes from  **off**  to  **on**, statistics about storage resources when  **use\_workload\_manager**  was  **off**  are not collected. To collect statistics about such resources, run the following statement:
+>
+    > ```
+    > select gs_wlm_readjust_user_space(0);
     >    ```
-    >    select gs_wlm_readjust_user_space(0);
-    >    ```
-
 
 **Default value**:  **off**
 
@@ -59,11 +59,11 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**:
 
--   **none**  indicates that memory statistics are not collected.
--   **peak**  indicates that statistics on the peak value of the query level memory are collected. The value is recorded in the database and can also be output by using  **explain analyze**.
--   **normal**  indicates that memory statistics are collected in real time but no file is generated.
--   **executor**  indicates that a statistics file is generated, containing the context information of all allocated memory used on the execution layer.
--   **fullexec**  indicates that a statistics file is generated, containing the information about all memory contexts requested by the execution layer.
+- **none**  indicates that memory statistics are not collected.
+- **peak**  indicates that statistics on the peak value of the query level memory are collected. The value is recorded in the database and can also be output by using  **explain analyze**.
+- **normal**  indicates that memory statistics are collected in real time but no file is generated.
+- **executor**  indicates that a statistics file is generated, containing the context information of all allocated memory used on the execution layer.
+- **fullexec**  indicates that a statistics file is generated, containing the information about all memory contexts requested by the execution layer.
 
 **Default value**:  **none**
 
@@ -88,8 +88,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the resource monitoring is enabled.
--   **off**  indicates that the resource monitoring is disabled.
+- **on**  indicates that the resource monitoring is enabled.
+- **off**  indicates that the resource monitoring is disabled.
 
 **Default value**:  **on**
 
@@ -101,8 +101,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the resource monitoring records are archived.
--   **off**  indicates that the resource monitoring records are not archived.
+- **on**  indicates that the resource monitoring records are archived.
+- **off**  indicates that the resource monitoring records are not archived.
 
 **Default value**:  **off**
 
@@ -114,8 +114,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the function is enabled.
--   **off**  indicates that the function is disabled.
+- **on**  indicates that the function is enabled.
+- **off**  indicates that the function is disabled.
 
 **Default value**:  **on**
 
@@ -155,8 +155,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the instance resource monitoring data is dumped.
--   **off**  indicates that the instance resource monitoring data is not dumped.
+- **on**  indicates that the instance resource monitoring data is dumped.
+- **off**  indicates that the instance resource monitoring data is not dumped.
 
 **Default value**:  **on**
 
@@ -168,8 +168,8 @@ This parameter is a USERSET parameter. Set it based on methods 1 and 2 provided 
 
 **Value range**: an integer ranging from 0 to 3650. The unit is day.
 
--   If this parameter is set to  **0**, the historical monitoring data of instance resources is permanently stored. 
--   If the value is greater than  **0**, the historical monitoring data of instance resources is stored for the specified number of days.
+- If this parameter is set to  **0**, the historical monitoring data of instance resources is permanently stored. 
+- If the value is greater than  **0**, the historical monitoring data of instance resources is stored for the specified number of days.
 
 **Default value**:  **7**
 
@@ -181,9 +181,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Valid value**: enumerated values
 
--   **none**  indicates that resources are not monitored.
--   **query**  indicates that resources used at the query level are monitored.
--   **operator**  indicates that resources used at query and operator levels are monitored.
+- **none**  indicates that resources are not monitored.
+- **query**  indicates that resources used at the query level are monitored.
+- **operator**  indicates that resources used at query and operator levels are monitored.
 
 **Default value**:  **query**
 
@@ -195,9 +195,9 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from –1 to  *INT\*MAX_
 
--   **–1**  indicates that resource monitoring is disabled.
--   A value ranging from 0 to 9 indicates that statements whose execution cost is greater than or equal to 10 will be monitored.
--   A value greater than or equal to  **10**  indicates that statements whose execution cost exceeds this value will be monitored.
+- **–1**  indicates that resource monitoring is disabled.
+- A value ranging from 0 to 9 indicates that statements whose execution cost is greater than or equal to 10 will be monitored.
+- A value greater than or equal to  **10**  indicates that statements whose execution cost exceeds this value will be monitored.
 
 **Default value**:  **100000**
 
@@ -209,8 +209,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from 0 to  *INT\*MAX_. The unit is second.
 
--   **0**  indicates that historical information about all statements recorded in the real-time resource monitoring view are archived.
--   If the value is greater than  **0**, historical information about a statement whose execution time exceeds this value will be archived.
+- **0**  indicates that historical information about all statements recorded in the real-time resource monitoring view are archived.
+- If the value is greater than  **0**, historical information about a statement whose execution time exceeds this value will be archived.
 
 **Default value**:  **1min**
 
@@ -222,8 +222,8 @@ This parameter is a USERSET parameter and is valid only for the current session.
 
 **Value range**: Boolean
 
--   **on**  indicates that memory protection stops.
--   **off**  indicates that memory is protected.
+- **on**  indicates that memory protection stops.
+- **off**  indicates that memory is protected.
 
 **Default value**:  **off**
 
@@ -255,13 +255,14 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the black box function is enabled.
--   **off**  indicates that the black box function is disabled.
+- **on**  indicates that the black box function is enabled.
+- **off**  indicates that the black box function is disabled.
 
 **Default value**:  **on**
 
 >[!TIP]NOTICE 
->-   The generation of core files by the black box function depends on the open ptrace interface of the operating system. If the permission is insufficient \(errno = 1\), ensure that the  **/proc/sys/kernel/yama/ptrace\_scope**  configuration is correct.
+>
+>- The generation of core files by the black box function depends on the open ptrace interface of the operating system. If the permission is insufficient \(errno = 1\), ensure that the  **/proc/sys/kernel/yama/ptrace\_scope**  configuration is correct.
 
 ## bbox\_dump\_count<a name="en-us_topic_0283137479_en-us_topic_0237124729_en-us_topic_0059777791_s03ba824694c84fdf8dad4f710d0e3a53"></a>
 
@@ -294,8 +295,8 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 **Value range**: Boolean
 
--   **on**  indicates that the FFIC function is enabled.
--   **off**  indicates that the FFIC function is disabled.
+- **on**  indicates that the FFIC function is enabled.
+- **off**  indicates that the FFIC function is disabled.
 
 **Default value**:  **on**
 
@@ -317,10 +318,10 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Valid value**: enumerated values
 
--   **None**  indicates no control.
--   **Low**  indicates that the IOPS is reduced to 10% of the original value.
--   **Medium**  indicates that the IOPS is reduced to 20% of the original value.
--   **High**  indicates that the IOPS is reduced to 50% of the original value.
+- **None**  indicates no control.
+- **Low**  indicates that the IOPS is reduced to 10% of the original value.
+- **Medium**  indicates that the IOPS is reduced to 20% of the original value.
+- **High**  indicates that the IOPS is reduced to 50% of the original value.
 
 **Default value**: none
 
@@ -370,8 +371,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: an integer ranging from 0 to 730. The unit is day.
 
--   If it is set to  **0**, the data is stored permanently.
--   If the value is greater than  **0**, the data is stored for the specified number of days.
+- If it is set to  **0**, the data is stored permanently.
+- If the value is greater than  **0**, the data is stored for the specified number of days.
 
 **Default value**:  **0**
 
@@ -393,8 +394,8 @@ This parameter is a USERSET parameter. Set it based on instructions provided in 
 
 **Value range**: an integer ranging from –1 to  *INT\*MAX/2_. The unit is second.
 
--   **–1**  or  **0**  indicates that no queuing timeout is specified for transaction block statements and stored procedure statements. The statements can be executed when resources are available.
--   A value greater than  **0**  indicates that if transaction block statements and stored procedure statements have been queued for a time longer than the specified value, they are forcibly executed regardless of the current resource situation.
+- **–1**  or  **0**  indicates that no queuing timeout is specified for transaction block statements and stored procedure statements. The statements can be executed when resources are available.
+- A value greater than  **0**  indicates that if transaction block statements and stored procedure statements have been queued for a time longer than the specified value, they are forcibly executed regardless of the current resource situation.
 
 **Default value**:  **0**
 
@@ -410,13 +411,13 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 
 Currently, the following data items can be anonymized:
 
--   SHARED\_BUFFER: data buffer
--   XLOG\_BUFFER: redo log buffer
--   DW\_BUFFER: doublewrite data buffer
--   XLOG\_MESSAGE\_SEND: buffer for sending primary/standby replication logs
--   WALRECIVER\_CTL\_BLOCK: buffer for receiving primary/standby replication logs
--   DATA\_MESSAGE\_SEND: buffer for sending primary/standby replication data
--   DATA\_WRITER\_QUEUE: buffer for receiving primary/standby replication data
+- SHARED\_BUFFER: data buffer
+- XLOG\_BUFFER: redo log buffer
+- DW\_BUFFER: doublewrite data buffer
+- XLOG\_MESSAGE\_SEND: buffer for sending primary/standby replication logs
+- WALRECIVER\_CTL\_BLOCK: buffer for receiving primary/standby replication logs
+- DATA\_MESSAGE\_SEND: buffer for sending primary/standby replication data
+- DATA\_WRITER\_QUEUE: buffer for receiving primary/standby replication data
 
 ## current\_logic\_cluster<a name="section15122029164111"></a>
 

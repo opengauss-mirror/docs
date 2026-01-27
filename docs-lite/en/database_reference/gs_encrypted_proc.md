@@ -53,4 +53,3 @@
 
 >[!NOTE]NOTE 
 >In the Lite scenario, openGauss provides this system catalog, but encrypted database-related functions are unavailable.
-

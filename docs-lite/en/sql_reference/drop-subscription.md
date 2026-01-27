@@ -6,8 +6,8 @@
 
 ## **Precautions**<a name="section7392192602015"></a>
 
--   A subscription can be deleted only by the system administrator.
--   If the subscription to be deleted is associated with a replication slot, **DROP SUBSCRIPTION** cannot be executed inside a transaction block.
+- A subscription can be deleted only by the system administrator.
+- If the subscription to be deleted is associated with a replication slot, **DROP SUBSCRIPTION** cannot be executed inside a transaction block.
 
 ## **Syntax**<a name="section1367518145205"></a>
 
@@ -17,14 +17,13 @@ DROP SUBSCRIPTION [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ## **Parameter Description**<a name="section9378519122011"></a>
 
--   **name**
+- **name**
 
     Specifies the name of the subscription to be deleted.
 
--   **CASCADE|RESTRICT**
+- **CASCADE|RESTRICT**
 
     Currently, these keywords do not work because there is no dependency on subscriptions.
-
 
 ## Example<a name="section11649214223"></a>
 

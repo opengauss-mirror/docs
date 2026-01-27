@@ -35,8 +35,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 **Value range**: enumerated values. Valid values are  **debug**,  **debug5**,  **debug4**,  **debug3**,  **debug2**,  **debug1**,  **info**,  **log**,  **notice**,  **warning**,  **error**,  **fatal**, and  **panic**. For details about the parameter, see  [Table 1](#en-us_topic_0283137528_en-us_topic_0237124722_en-us_topic_0059778452_en-us_topic_0058967791_table55180162).
 
 >[!NOTE]NOTE 
->-   The default is  **error**, indicating that statements causing errors, log messages, fatal errors, or panics will be logged.
->-   **panic**  indicates that SQL statements that cause an error condition will not be logged.
+>
+>- The default is  **error**, indicating that statements causing errors, log messages, fatal errors, or panics will be logged.
+>- **panic**  indicates that SQL statements that cause an error condition will not be logged.
 
 **Default value**:  **error**
 
@@ -53,9 +54,9 @@ This parameter is a SUSET parameter. Set it based on instructions provided in  [
 
 **Value range**: an integer ranging from –1 to 2147483647. The unit is ms.
 
--   If this parameter is set to  **250**, all SQL statements that run for 250 ms or longer will be logged.
--   **0**  indicates that the execution durations of all the statements are logged.
--   **–1**  indicates that the duration logging is disabled.
+- If this parameter is set to  **250**, all SQL statements that run for 250 ms or longer will be logged.
+- **0**  indicates that the execution durations of all the statements are logged.
+- **–1**  indicates that the duration logging is disabled.
 
 **Default value**:  **30min**
 

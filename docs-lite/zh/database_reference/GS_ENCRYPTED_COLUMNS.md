@@ -74,4 +74,3 @@ GS\_ENCRYPTED\_COLUMNS系统表记录密态等值特性中表的加密列相关�
 
 >[!NOTE]说明
 >轻量版场景下，openGauss提供此系统表，但密态等值特性不可用。
-

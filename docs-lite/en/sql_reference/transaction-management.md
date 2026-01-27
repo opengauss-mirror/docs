@@ -19,45 +19,45 @@ Release a savepoint.
 
 The applicable contexts are as follows:
 
--   COMMIT/ROLLBACK/SAVEPOINT can be used in stored procedures in PL/SQL.
--   COMMIT, ROLLBACK, and SAVEPOINT can be used in stored procedures that contain EXCEPTION.
--   COMMIT, ROLLBACK, and SAVEPOINT can be used in EXCEPTION statements of stored procedures.
--   A stored procedure that contains COMMIT, ROLLBACK, or SAVEPOINT \(which means the stored procedure is controlled by BEGIN, START, or END\) can be called in a transaction block.
--   A stored procedure that contains savepoints can be invoked in a subtransaction. That is, an externally defined savepoint is used in the stored procedure to roll back the transaction to the savepoint defined outside the stored procedure.
--   A stored procedure is visible to a savepoint defined in the stored procedure. That is, the modification of the transaction can be rolled back to the savepoint defined in the stored procedure.
--   COMMIT, ROLLBACK, and SAVEPOINT, as well as IF, FOR, CURSOR LOOP, and WHILE, can be called in most contexts and statements in PLSQL.
--   A stored procedure or function that contains COMMIT, ROLLBACK, or SAVEPOINT can be called in the return values and simple expression calculation of stored procedures.
+- COMMIT/ROLLBACK/SAVEPOINT can be used in stored procedures in PL/SQL.
+- COMMIT, ROLLBACK, and SAVEPOINT can be used in stored procedures that contain EXCEPTION.
+- COMMIT, ROLLBACK, and SAVEPOINT can be used in EXCEPTION statements of stored procedures.
+- A stored procedure that contains COMMIT, ROLLBACK, or SAVEPOINT \(which means the stored procedure is controlled by BEGIN, START, or END\) can be called in a transaction block.
+- A stored procedure that contains savepoints can be invoked in a subtransaction. That is, an externally defined savepoint is used in the stored procedure to roll back the transaction to the savepoint defined outside the stored procedure.
+- A stored procedure is visible to a savepoint defined in the stored procedure. That is, the modification of the transaction can be rolled back to the savepoint defined in the stored procedure.
+- COMMIT, ROLLBACK, and SAVEPOINT, as well as IF, FOR, CURSOR LOOP, and WHILE, can be called in most contexts and statements in PLSQL.
+- A stored procedure or function that contains COMMIT, ROLLBACK, or SAVEPOINT can be called in the return values and simple expression calculation of stored procedures.
 
 The following content can be committed or rolled back:
 
--   DDL statements after COMMIT/ROLLBACK can be committed or rolled back.
--   DML statements after COMMIT/ROLLBACK can be committed.
--   GUC parameters in stored procedures can be committed or rolled back.
+- DDL statements after COMMIT/ROLLBACK can be committed or rolled back.
+- DML statements after COMMIT/ROLLBACK can be committed.
+- GUC parameters in stored procedures can be committed or rolled back.
 
 ## Usage Restrictions<a name="section816411381184"></a>
 
 COMMIT and ROLLBACK cannot be used in the following contexts:
 
--   COMMIT, ROLLBACK, and SAVEPOINT cannot be called in stored procedures other than PLSQL, such as PLJava and PLPython.
--   COMMIT, ROLLBACK, SAVEPOINT and stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in functions.
--   After SAVEPOINT is called in a transaction block, stored procedures that contain COMMIT/ROLLBACK cannot be called.
--   Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in TRIGGER.
--   COMMIT, ROLLBACK, and SAVEPOINT cannot be invoked in EXECUTE statements.
--   Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in CURSOR statements.
--   Stored procedures that contain IMMUTABLE or SHIPPABLE cannot call COMMIT, ROLLBACK, SAVEPOINT or another stored procedure that contain COMMIT, ROLLBACK, or SAVEPOINT.
--   Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in SQL statements other than SELECT PROC and CALL PROC.
--   COMMIT, ROLLBACK, or SAVEPOINT cannot be called in a stored procedure whose header contains GUC parameters.
--   COMMIT, ROLLBACK, or SAVEPOINT cannot be called in expressions or CURSOR and EXECUTE statements.
--   An autonomous transaction and a stored procedure transaction are two independent transactions that cannot use the savepoints defined in each other.
+- COMMIT, ROLLBACK, and SAVEPOINT cannot be called in stored procedures other than PLSQL, such as PLJava and PLPython.
+- COMMIT, ROLLBACK, SAVEPOINT and stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in functions.
+- After SAVEPOINT is called in a transaction block, stored procedures that contain COMMIT/ROLLBACK cannot be called.
+- Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in TRIGGER.
+- COMMIT, ROLLBACK, and SAVEPOINT cannot be invoked in EXECUTE statements.
+- Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in CURSOR statements.
+- Stored procedures that contain IMMUTABLE or SHIPPABLE cannot call COMMIT, ROLLBACK, SAVEPOINT or another stored procedure that contain COMMIT, ROLLBACK, or SAVEPOINT.
+- Stored procedures that contain COMMIT, ROLLBACK, or SAVEPOINT cannot be called in SQL statements other than SELECT PROC and CALL PROC.
+- COMMIT, ROLLBACK, or SAVEPOINT cannot be called in a stored procedure whose header contains GUC parameters.
+- COMMIT, ROLLBACK, or SAVEPOINT cannot be called in expressions or CURSOR and EXECUTE statements.
+- An autonomous transaction and a stored procedure transaction are two independent transactions that cannot use the savepoints defined in each other.
 
 The following content cannot be committed or rolled back:
 
--   Variables declared or imported in stored procedures cannot be committed or rolled back.
--   In stored procedures, GUC parameters that take effect only after a restart cannot be committed or rolled back.
+- Variables declared or imported in stored procedures cannot be committed or rolled back.
+- In stored procedures, GUC parameters that take effect only after a restart cannot be committed or rolled back.
 
 ## Examples<a name="section819214534171"></a>
 
--   Example 1: COMMIT/ROLLBACK can be used in stored procedures in PLSQL.
+- Example 1: COMMIT/ROLLBACK can be used in stored procedures in PLSQL.
 
     ```
     CREATE TABLE EXAMPLE1(COL1 INT);
@@ -77,8 +77,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
-
--   Example 2:
+- Example 2:
 
     COMMIT and ROLLBACK can be used in stored procedures that contain EXCEPTION.
 
@@ -105,8 +104,7 @@ The following content cannot be committed or rolled back:
     
     ```
 
-
--   Example 3: A stored procedure that contains COMMIT or ROLLBACK \(which means the stored procedure is controlled by BEGIN, START, or END\) can be called in a transaction block.
+- Example 3: A stored procedure that contains COMMIT or ROLLBACK \(which means the stored procedure is controlled by BEGIN, START, or END\) can be called in a transaction block.
 
     ```
     BEGIN;
@@ -114,8 +112,7 @@ The following content cannot be committed or rolled back:
     END;
     ```
 
-
--   Example 4: COMMIT/ROLLBACK, including IF, FOR, CURSOR LOOP, and WHILE, can be called in most PLSQL contexts and statements.
+- Example 4: COMMIT/ROLLBACK, including IF, FOR, CURSOR LOOP, and WHILE, can be called in most PLSQL contexts and statements.
 
     ```
     CREATE OR REPLACE PROCEDURE TEST_COMMIT2()
@@ -139,8 +136,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
-
--   Example 5: Return values and simple expression calculation of stored procedures are supported.
+- Example 5: Return values and simple expression calculation of stored procedures are supported.
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func3(RET_NUM OUT INT)
@@ -160,7 +156,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 6: GUC parameters in stored procedures can be rolled back to a commit.
+- Example 6: GUC parameters in stored procedures can be rolled back to a commit.
 
     ```
     SHOW explain_perf_mode;
@@ -182,7 +178,7 @@ The following content cannot be committed or rolled back:
     SET enable_force_vector_engine = off;
     ```
 
--   Example 7: COMMIT, ROLLBACK, and stored procedures that contain COMMIT or ROLLBACK cannot be called in functions.
+- Example 7: COMMIT, ROLLBACK, and stored procedures that contain COMMIT or ROLLBACK cannot be called in functions.
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_EXAMPLE1() RETURN INT
@@ -203,7 +199,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 8: Stored procedures that contain COMMIT or ROLLBACK cannot be called in functions.
+- Example 8: Stored procedures that contain COMMIT or ROLLBACK cannot be called in functions.
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_EXAMPLE2() RETURN INT
@@ -218,7 +214,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 9: A TRIGGER stored procedure cannot contain COMMIT or ROLLBACK or call another stored procedure that contains COMMIT or ROLLBACK.
+- Example 9: A TRIGGER stored procedure cannot contain COMMIT or ROLLBACK or call another stored procedure that contains COMMIT or ROLLBACK.
 
     ```
     CREATE OR REPLACE FUNCTION FUNCTION_TRI_EXAMPLE2() RETURN TRIGGER
@@ -243,7 +239,7 @@ The following content cannot be committed or rolled back:
     DELETE FROM EXAMPLE1;
     ```
 
--   Example 10: Stored procedures that contain IMMUTABLE or SHIPPABLE cannot call COMMIT, ROLLBACK, or another stored procedure that contains COMMIT or ROLLBACK.
+- Example 10: Stored procedures that contain IMMUTABLE or SHIPPABLE cannot call COMMIT, ROLLBACK, or another stored procedure that contains COMMIT or ROLLBACK.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE1()
@@ -262,7 +258,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 12: Calling in SQL statements \(other than Select Procedure\) is not supported.
+- Example 12: Calling in SQL statements \(other than Select Procedure\) is not supported.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE3()
@@ -280,7 +276,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 13: COMMIT or ROLLBACK cannot be called in a stored procedure whose header contains GUC parameters.
+- Example 13: COMMIT or ROLLBACK cannot be called in a stored procedure whose header contains GUC parameters.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE4()
@@ -299,7 +295,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 14: A stored procedure whose cursor is open cannot contain COMMIT or ROLLBACK.
+- Example 14: A stored procedure whose cursor is open cannot contain COMMIT or ROLLBACK.
 
     ```
     CREATE OR REPLACE PROCEDURE TRANSACTION_EXAMPLE5(INTIN IN INT, INTOUT OUT INT)
@@ -331,7 +327,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
--   Example 15: COMMIT or ROLLBACK cannot be called in expressions or CURSOR and EXECUTE statements.
+- Example 15: COMMIT or ROLLBACK cannot be called in expressions or CURSOR and EXECUTE statements.
 
     ```
     CREATE OR REPLACE PROCEDURE exec_func1()
@@ -350,8 +346,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
-
--   Example 16: Roll back some modifications of stored procedure on a transaction to a savepoint.
+- Example 16: Roll back some modifications of stored procedure on a transaction to a savepoint.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE1()
@@ -366,8 +361,7 @@ The following content cannot be committed or rolled back:
     /
     ```
 
-
--   Example 17: Roll back a stored procedure to a savepoint defined outside the stored procedure.
+- Example 17: Roll back a stored procedure to a savepoint defined outside the stored procedure.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE2()
@@ -387,8 +381,7 @@ The following content cannot be committed or rolled back:
     COMMIT;
     ```
 
-
--   Example 18: Roll back an external SQL or other stored procedure to a savepoint defined in the stored procedure.
+- Example 18: Roll back an external SQL or other stored procedure to a savepoint defined in the stored procedure.
 
     ```
     CREATE OR REPLACE PROCEDURE STP_SAVEPOINT_EXAMPLE3()
@@ -407,5 +400,3 @@ The following content cannot be committed or rolled back:
     SELECT * FROM EXAMPLE1;
     COMMIT;
     ```
-
-

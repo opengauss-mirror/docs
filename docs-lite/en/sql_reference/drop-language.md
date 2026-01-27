@@ -12,22 +12,21 @@ DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] name [ CASCADE | RESTRICT ]
 
 ## Parameter Description<a name="section48568352146"></a>
 
--   **IF EXISTS**
+- **IF EXISTS**
 
     Sends a notice instead of an error if a specified procedural language does not exist.
 
--   **name**
+- **name**
 
     Specifies the name of an existing language. For downward compatibility, the name can be enclosed in single quotation marks \('\).
 
--   **CASCADE**
+- **CASCADE**
 
     Automatically deletes objects that depend on the language \(for example, functions written in the language\).
 
--   **RESTRICT**
+- **RESTRICT**
 
     Refuses to delete the object if any objects depend on it. This is a default parameter.
-
 
 ## Examples<a name="section551802613349"></a>
 
@@ -40,4 +39,3 @@ DROP LANGUAGE plsample;
 ## Compatibility<a name="section446220148329"></a>
 
 The SQL standard does not contain the  **DROP LANGUAGE**  statement.
-

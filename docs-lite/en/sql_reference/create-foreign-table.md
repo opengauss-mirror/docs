@@ -27,108 +27,105 @@ The column_constraint can be:
 
 ## Parameter Description<a name="en-us_topic_0283137606_section3468568300"></a>
 
--   **IF NOT EXISTS**
+- **IF NOT EXISTS**
 
     Sends a notice, but does not throw an error, if a table with the same name exists.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of a foreign table.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column in the foreign table.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **type\_name**
+- **type\_name**
 
     Specifies the data type of the column.
 
--   **SERVER server\_name**
+- **SERVER server\_name**
 
     Specifies the server name of the foreign table. The default value is  **mot\_server**.
 
--   **OPTIONS \( option 'value' \[, ... \] \)**
+- **OPTIONS \( option 'value' \[, ... \] \)**
 
     Options are related to the new foreign table or the columns in the foreign table. The allowed option names and values are specified by each foreign data wrapper, and are also verified by the verification function of the foreign data wrapper. The option name must be unique \(although table options and table column options can share the same name\).
 
-    -   Options supported by  **oracle\_fdw**  are as follows:
-        -   **table**
+    - Options supported by  **oracle\_fdw**  are as follows:
+        - **table**
 
             Name of a table on the Oracle server. The value must be the same as the table name recorded in the Oracle system catalog. Generally, the value consists of uppercase letters.
 
-        -   **schema**
+        - **schema**
 
             Schema \(or owner\) corresponding to the table. The value must be the same as the table name recorded in the Oracle system catalog. Generally, the value consists of uppercase letters.
 
-    -   Options supported by  **mysql\_fdw**  are as follows:
-        -   **dbname**
+    - Options supported by  **mysql\_fdw**  are as follows:
+        - **dbname**
 
             Name of the MySQL database.
 
-        -   **table\_name**
+        - **table\_name**
 
             Name of a table in the MySQL database.
 
-    -   Options supported by  **postgres\_fdw**  are as follows:
-        -   **schema\_name**
+    - Options supported by  **postgres\_fdw**  are as follows:
+        - **schema\_name**
 
             Schema name of a remote server. If this option is not specified, the schema name of the foreign table is used as the schema name of the remote server.
 
-        -   **table\_name**
+        - **table\_name**
 
             Table name of a remote server. If this option is not specified, the name of the foreign table is used as the table name of the remote server.
 
-        -   **column\_name**
+        - **column\_name**
 
             Column name of a table on a remote server. If this option is not specified, the column name of the foreign table is used as the column name of a table on a remote server.
 
-    -   Options supported by  **file\_fdw**  are as follows:
+    - Options supported by  **file\_fdw**  are as follows:
 
-        -   filename
+        - filename
 
             File to be read. This parameter is mandatory and must be an absolute path.
 
-        -   format
+        - format
 
             File format of the remote server, which is the same as the  **FORMAT**  option in the  **COPY**  statement. The value can be  **text**,  **csv**,  **binary**, or  **fixed**.
 
-        -   header
+        - header
 
             Specifies whether a specified file has a header, which is the same as the  **HEADER**  option of the  **COPY**  statement.
 
-            -   delimiter
+            - delimiter
 
                 File delimiter, which is the same as the  **DELIMITER**  option of the  **COPY**  statement.
 
-            -   quote
+            - quote
 
                 Quote character of a file, which is the same as the  **QUOTE**  option of the  **COPY**  statement.
 
-            -   escape
+            - escape
 
                 Escape character of a file, which is the same as the  **ESCAPE**  option of the  **COPY**  statement.
 
-            -   null
+            - null
 
                 Null string of a file, which is the same as the  **NULL**  option of the  **COPY**  statement.
 
-            -   encoding
+            - encoding
 
                 Encoding of a file, which is the same as the  **ENCODING**  option of the  **COPY**  statement.
 
-            -   force\_not\_null
+            - force\_not\_null
 
                 This is a Boolean option. If it is true, the value of the declared field cannot be an empty string. This option is the same as the  **FORCE\_NOT\_NULL**  option of the  **COPY**  statement.
 
-
         >[!NOTE]NOTE 
         >For details about how to use  **file\_fdw**, see  [file\_fdw](../database_administration_guide/file_fdw.md).
-
-
 
 ## Helpful Links<a name="en-us_topic_0283137606_section10964241319"></a>
 

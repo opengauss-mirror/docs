@@ -158,4 +158,3 @@ PG\_TRIGGER系统表存储触发器信息。
 </tr>
 </tbody>
 </table>
-

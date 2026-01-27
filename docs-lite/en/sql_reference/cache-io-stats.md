@@ -124,4 +124,3 @@ Cache IO Stats contains two tables: User table and User index. The columns in th
 </tr>
 </tbody>
 </table>
-

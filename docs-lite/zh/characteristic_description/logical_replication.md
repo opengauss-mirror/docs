@@ -18,9 +18,9 @@ DN通过物理日志反解析为逻辑日志，DRS等逻辑复制工具从DN抽�
 
 ## 特性增强<a name="section1340684315478"></a>
 
--   openGauss逻辑解码新增全量+增量抽取日志的方案。
--   openGauss逻辑解码新增备机支持逻辑解码。
--   openGauss 6.0.0-RC1逻辑复制支持如下DDL操作：
+- openGauss逻辑解码新增全量+增量抽取日志的方案。
+- openGauss逻辑解码新增备机支持逻辑解码。
+- openGauss 6.0.0-RC1逻辑复制支持如下DDL操作：
     - CREATE/DROP/ALTER/TRUNCATE/RENAME TABLE | TABLE PARTITION | TABLE SUBPARTITION
     - CREATE/ALTER/DROP INDEX
     - CREATE/ALTER/DROP VIEW
@@ -41,4 +41,3 @@ DN通过物理日志反解析为逻辑日志，DRS等逻辑复制工具从DN抽�
 ## 依赖关系<a name="section8406643144716"></a>
 
 依赖于逻辑复制工具对逻辑日志进行解码。
-

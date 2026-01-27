@@ -6,6 +6,7 @@
 >
 >When the user uses date/time operators, explicit type prefixes are modified for corresponding operands to ensure that the operands parsed by the database are consistent with what the user expects, and no unexpected results occur.
 >For example, abnormal mistakes will occur in the following example without an explicit data type.
+>
 >```
 >SELECT date '2001-10-01' - '7' AS RESULT;
 >```
@@ -158,7 +159,7 @@
 
 ## Time/Date Functions<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436"></a>
 
--   age\(timestamp, timestamp\)
+- age\(timestamp, timestamp\)
 
     Description: Subtracts parameters, producing a result in YYYY-MM-DD format. If the result is negative, the returned result is also negative. The input parameters can contain timezone or not.
 
@@ -174,7 +175,7 @@
     (1 row)
     ```
 
--   age\(timestamp\)
+- age\(timestamp\)
 
     Description: Minuses the current time with the parameter. The input parameter can contain timezone or not.
 
@@ -190,7 +191,7 @@
     (1 row)
     ```
 
--   clock\_timestamp\(\)
+- clock\_timestamp\(\)
 
     Description: Specifies the current timestamp of the real-time clock.
 
@@ -206,7 +207,7 @@
     (1 row)
     ```
 
--   current\_date
+- current\_date
 
     Description: Specifies the current date.
 
@@ -222,7 +223,7 @@
     (1 row)
     ```
 
--   current\_time
+- current\_time
 
     Description: Specifies the current time.
 
@@ -238,7 +239,7 @@
     (1 row)
     ```
 
--   current\_timestamp
+- current\_timestamp
 
     Description: Specifies the current date and time.
 
@@ -254,7 +255,7 @@
     (1 row)
     ```
 
--   date\_part\(text, timestamp\)
+- date\_part\(text, timestamp\)
 
     Description: Obtains the value of a subdomain in date or time, for example, the year or hour. It is equivalent to  **extract\(field from timestamp\)**.
 
@@ -272,7 +273,7 @@
     (1 row)
     ```
 
--   date\_part\(text, interval\)
+- date\_part\(text, interval\)
 
     Description: Obtains the subdomain value of the date/time value. When obtaining the month value, if the value is greater than 12, obtain the remainder after it is divided by 12. It is equivalent to  **extract\(field from timestamp\)**.
 
@@ -288,7 +289,7 @@
     (1 row)
     ```
 
--   date\_trunc\(text, timestamp\)
+- date\_trunc\(text, timestamp\)
 
     Description: Truncates to the precision specified by  **text**.
 
@@ -304,7 +305,7 @@
     (1 row)
     ```
 
--   trunc\(timestamp\)
+- trunc\(timestamp\)
 
     Description: Truncates to day by default.
 
@@ -317,7 +318,7 @@
     (1 row)
     ```
 
--   trunc\(arg1, arg2\)
+- trunc\(arg1, arg2\)
 
     Description: Truncates to the precision specified by  **arg2**.
 
@@ -336,7 +337,7 @@
     (1 row)
     ```
 
--   daterange\(arg1, arg2\)
+- daterange\(arg1, arg2\)
 
     Description: Obtains time boundary information. The type of  **arg1**  and  **arg2**  is  **date**.
 
@@ -352,7 +353,7 @@
     (1 row)
     ```
 
--   daterange\(arg1, arg2, text\)
+- daterange\(arg1, arg2, text\)
 
     Description: Obtains time boundary information. The type of  **arg1**  and  **arg2**  is  **date**, and the type of  **text**  is  **text**.
 
@@ -368,7 +369,7 @@
     (1 row)
     ```
 
--   extract\(field from timestamp\)
+- extract\(field from timestamp\)
 
     Description: Obtains the hour.
 
@@ -384,7 +385,7 @@
     (1 row)
     ```
 
--   extract\(field from interval\)
+- extract\(field from interval\)
 
     Description: Obtains the month. If the value is greater than 12, obtain the remainder after it is divided by 12.
 
@@ -400,7 +401,7 @@
     (1 row)
     ```
 
--   isfinite\(date\)
+- isfinite\(date\)
 
     Description: Tests for a valid date.
 
@@ -416,7 +417,7 @@
     (1 row)
     ```
 
--   isfinite\(timestamp\)
+- isfinite\(timestamp\)
 
     Description: Tests for a valid timestamp.
 
@@ -432,7 +433,7 @@
     (1 row)
     ```
 
--   isfinite\(interval\)
+- isfinite\(interval\)
 
     Description: Tests for a valid interval.
 
@@ -448,7 +449,7 @@
     (1 row)
     ```
 
--   justify\_days\(interval\)
+- justify\_days\(interval\)
 
     Description: Adjusts intervals to 30-day time periods, which are represented as months.
 
@@ -464,7 +465,7 @@
     (1 row)
     ```
 
--   justify\_hours\(interval\)
+- justify\_hours\(interval\)
 
     Description: Sets the time interval in days \(24 hours is one day\).
 
@@ -480,7 +481,7 @@
     (1 row)
     ```
 
--   justify\_interval\(interval\)
+- justify\_interval\(interval\)
 
     Description: Adjusts  **interval**  using  **justify\_days**  and  **justify\_hours**.
 
@@ -496,7 +497,7 @@
     (1 row)
     ```
 
--   localtime
+- localtime
 
     Description: Specifies the current time.
 
@@ -512,7 +513,7 @@
     (1 row)
     ```
 
--   localtimestamp
+- localtimestamp
 
     Description: Specifies the current date and time.
 
@@ -528,7 +529,7 @@
     (1 row)
     ```
 
--   now\(\)
+- now\(\)
 
     Description: Specifies the current date and time.
 
@@ -544,7 +545,7 @@
     (1 row)
     ```
 
--   timenow
+- timenow
 
     Description: Specifies the current date and time.
 
@@ -560,7 +561,7 @@
     (1 row)
     ```
 
--   numtodsinterval\(num, interval\_unit\)
+- numtodsinterval\(num, interval\_unit\)
 
     Description: Converts a number to the interval type.  **num**  is a numeric-typed number.  **interval\_unit**  is a string in the following format: 'DAY' | 'HOUR' | 'MINUTE' | 'SECOND'
 
@@ -584,7 +585,7 @@
     (1 row)
     ```
 
--   pg\_sleep\(seconds\)
+- pg\_sleep\(seconds\)
 
     Description: Specifies the delay time of the server thread in unit of second.
 
@@ -600,7 +601,7 @@
     (1 row)
     ```
 
--   statement\_timestamp\(\)
+- statement\_timestamp\(\)
 
     Description: Specifies the current date and time.
 
@@ -616,7 +617,7 @@
     (1 row)
     ```
 
--   sysdate
+- sysdate
 
     Description: Specifies the current date and time.
 
@@ -632,7 +633,7 @@
     (1 row)
     ```
 
--   timeofday\(\)
+- timeofday\(\)
 
     Description: Specifies the current date and time \(like  **clock\_timestamp**, but returned as a  **text**  string\)
 
@@ -648,7 +649,7 @@
     (1 row)
     ```
 
--   transaction\_timestamp\(\)
+- transaction\_timestamp\(\)
 
     Description: Specifies the current date and time \(equivalent to  **current\_timestamp**\)
 
@@ -664,7 +665,7 @@
     (1 row)
     ```
 
--   add\_months\(d,n\)
+- add\_months\(d,n\)
 
     Description: Returns the date  *date*  plus  *integer*  months.
 
@@ -680,7 +681,7 @@
     (1 row)
     ```
 
--   last\_day\(d\)
+- last\_day\(d\)
 
     Description: Returns the date of the last day of the month that contains  *date*.
 
@@ -696,8 +697,7 @@
     (1 row)
     ```
 
-
--   new_time(date, timezone1,timezone2)
+- new_time(date, timezone1,timezone2)
 
     Description: Returns the date and time in timezone2 when date and time in timezone1 are date
 
@@ -721,7 +721,7 @@
     >
     > 2.The first parameter date can not be timestamp with time zone.
     
--   next\_day\(x,y\)
+- next\_day\(x,y\)
 
     Description: Calculates the time of the next week y started from x.
 
@@ -737,8 +737,7 @@
     (1 row)
     ```
 
-
--   tinterval\(abstime, abstime \)
+- tinterval\(abstime, abstime \)
 
     Description: Creates a time interval with two pieces of absolute time.
 
@@ -754,8 +753,7 @@
     (1 row)
     ```
 
-
--   tintervalend\(tinterval\)
+- tintervalend\(tinterval\)
 
     Description: Returns the end time of  **tinterval**.
 
@@ -771,8 +769,7 @@
     (1 row)
     ```
 
-
--   tintervalrel\(tinterval\)
+- tintervalrel\(tinterval\)
 
     Description: Calculates and returns the relative time of  **tinterval**.
 
@@ -788,8 +785,7 @@
     (1 row)
     ```
 
-
--   smalldatetime\_ge
+- smalldatetime\_ge
 
     Description: Checks whether the value of the first parameter is greater than or equal to that of the second parameter.
 
@@ -797,7 +793,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_cmp
+- smalldatetime\_cmp
 
     Description: Compares two smalldatetime values to check whether they are the same.
 
@@ -805,7 +801,7 @@
 
     Return type: integer
 
--   smalldatetime\_eq
+- smalldatetime\_eq
 
     Description: Compares two smalldatetime values to check whether they are the same.
 
@@ -813,7 +809,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_gt
+- smalldatetime\_gt
 
     Description: Determines whether the first parameter is greater than the second.
 
@@ -821,7 +817,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_hash
+- smalldatetime\_hash
 
     Description: Calculates the hash value corresponding to a timestamp.
 
@@ -829,7 +825,7 @@
 
     Return type: integer
 
--   smalldatetime\_in
+- smalldatetime\_in
 
     Description: Inputs a timestamp.
 
@@ -837,7 +833,7 @@
 
     Return type: smalldatetime
 
--   smalldatetime\_larger
+- smalldatetime\_larger
 
     Description: Returns a larger timestamp.
 
@@ -845,7 +841,7 @@
 
     Return type: smalldatetime
 
--   smalldatetime\_le
+- smalldatetime\_le
 
     Description: Checks whether the value of the first parameter is less than or equal to that of the second parameter.
 
@@ -853,7 +849,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_lt
+- smalldatetime\_lt
 
     Description: Determines whether the first parameter is less than the second parameter.
 
@@ -861,7 +857,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_ne
+- smalldatetime\_ne
 
     Description: Compares two timestamps to check whether they are different.
 
@@ -869,7 +865,7 @@
 
     Return type: Boolean
 
--   smalldatetime\_out
+- smalldatetime\_out
 
     Description: Converts a timestamp into the external form.
 
@@ -877,7 +873,7 @@
 
     Return type: cstring
 
--   smalldatetime\_send
+- smalldatetime\_send
 
     Description: Converts a timestamp to the binary format.
 
@@ -885,7 +881,7 @@
 
     Return type: bytea
 
--   smalldatetime\_smaller
+- smalldatetime\_smaller
 
     Description: Returns a smaller smalldatetime.
 
@@ -893,7 +889,7 @@
 
     Return type: smalldatetime
 
--   smalldatetime\_to\_abstime
+- smalldatetime\_to\_abstime
 
     Description: Converts smalldatetime to abstime.
 
@@ -901,7 +897,7 @@
 
     Return type: abstime
 
--   smalldatetime\_to\_time
+- smalldatetime\_to\_time
 
     Description: Converts smalldatetime to time.
 
@@ -909,7 +905,7 @@
 
     Return type: time without time zone
 
--   smalldatetime\_to\_timestamp
+- smalldatetime\_to\_timestamp
 
     Description: Converts smalldatetime to timestamp.
 
@@ -917,7 +913,7 @@
 
     Return type: timestamp without time zone
 
--   smalldatetime\_to\_timestamptz
+- smalldatetime\_to\_timestamptz
 
     Description: Converts smalldatetime to timestamptz.
 
@@ -925,7 +921,7 @@
 
     Return type: timestamp with time zone
 
--   smalldatetime\_to\_varchar2
+- smalldatetime\_to\_varchar2
 
     Description: Converts smalldatetime to varchar2.
 
@@ -936,24 +932,29 @@
     >[!NOTE]NOTE 
     >
     >There are multiple methods for obtaining the current time. Select an appropriate API based on the actual service scenario.
-    >1.  The following APIs return values based on the start time of the current transaction:
+    >1. The following APIs return values based on the start time of the current transaction:
+>
+    > ```
+    > CURRENT_DATE CURRENT_TIME CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
     >    ```
-    >    CURRENT_DATE CURRENT_TIME CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
-    >    ```
-    >    **CURRENT\_TIME** and **CURRENT\_TIMESTAMP(precision)** transfer values with time zones. The values of **LOCALTIME** and **LOCALTIMESTAMP** do not contain time zone information. **CURRENT\_TIME**, **LOCALTIME**, and **LOCALTIMESTAMP** can be optionally attached with a precision parameter, which rounds the second field of the result to the specified decimal place. If there is no precision parameter, the result is given the full precision that can be obtained.
-    >    Because these functions all return results by the start time of the current transaction, their values do not change throughout the transaction. We think this is a feature with the purpose to allow a transaction to have a consistent concept at the "current" time, so that multiple modifications in the same transaction can maintain the same timestamp.
+>
+    > **CURRENT\_TIME** and **CURRENT\_TIMESTAMP(precision)** transfer values with time zones. The values of **LOCALTIME** and **LOCALTIMESTAMP** do not contain time zone information. **CURRENT\_TIME**, **LOCALTIME**, and **LOCALTIMESTAMP** can be optionally attached with a precision parameter, which rounds the second field of the result to the specified decimal place. If there is no precision parameter, the result is given the full precision that can be obtained.
+    > Because these functions all return results by the start time of the current transaction, their values do not change throughout the transaction. We think this is a feature with the purpose to allow a transaction to have a consistent concept at the "current" time, so that multiple modifications in the same transaction can maintain the same timestamp.
     >2.  The following APIs return the start time of the current statement:
+>
+    > ```
+    > transaction_timestamp() statement_timestamp() now()
     >    ```
-    >    transaction_timestamp() statement_timestamp() now()
-    >    ```
-    >    **transaction\_timestamp\(\)** is equivalent to **CURRENT\_TIMESTAMP(precision)**, and its name clearly reflects its return value. **statement\_timestamp\(\)** returns the start time of the current statement (more accurately, the time when the last instruction is received from the client). The return values of **statement\_timestamp\(\)** and **transaction\_timestamp\(\)** are the same during the execution of the first instruction of a transaction, but may be different in subsequent instructions.
-    >    **now\(\)**  is equivalent to  **transaction\_timestamp\(\)**.
-    >    1.  The following APIs return the actual current time when the function is invoked:
+>
+    > **transaction\_timestamp\(\)** is equivalent to **CURRENT\_TIMESTAMP(precision)**, and its name clearly reflects its return value. **statement\_timestamp\(\)** returns the start time of the current statement (more accurately, the time when the last instruction is received from the client). The return values of **statement\_timestamp\(\)** and **transaction\_timestamp\(\)** are the same during the execution of the first instruction of a transaction, but may be different in subsequent instructions.
+    > **now\(\)**  is equivalent to  **transaction\_timestamp\(\)**.
+    > 1. The following APIs return the actual current time when the function is invoked:
+>
     >        ```
     >        clock_timestamp() timeofday() 
     >        ```
+>
     >        **clock\_timestamp\(\)**  returns the actual current time, and its value changes even in the same SQL instruction. Similar to  **clock\_timestamp\(\)**,  **timeofday\(\)**  also returns the actual current time. However, the result of  **timeofday\(\)**  is a formatted text string instead of a timestamp with time zone information.
-
 
 [Table 2](#table119992713518)  shows the templates for truncating date/time values.
 
@@ -1222,15 +1223,15 @@
 
 ## TIMESTAMPDIFF<a name="en-us_topic_0283136846_section5629194495516"></a>
 
--   **TIMESTAMPDIFF\(***unit , timestamp\*expr1, timestamp\_expr2_**\)**
+- **TIMESTAMPDIFF\(***unit , timestamp\*expr1, timestamp\_expr2_**\)**
 
-The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€“  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of the  **timestamp**,  **timestamptz**, or** date**  type.  **unit**  determines the unit of the difference between two dates.
+The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€“  **timestamp\_expr1**  in the specified unit.  **timestamp\_expr1**  and  **timestamp\_expr2**  must be value expressions of the  **timestamp**,  **timestamptz**, or**date**  type.  **unit**  determines the unit of the difference between two dates.
 
 >[!NOTE]NOTE 
 >
 >This function is valid only when openGauss is compatible with the MY type \(that is, dbcompatibility = 'B'\).
 
--   year
+- year
 
     Year.
 
@@ -1242,8 +1243,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
-
--   quarter
+- quarter
 
     Quarter.
 
@@ -1255,7 +1255,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
--   month
+- month
 
     Month.
 
@@ -1267,7 +1267,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
--   week
+- week
 
     Week.
 
@@ -1279,7 +1279,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
--   day
+- day
 
     Day.
 
@@ -1291,8 +1291,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
-
--   hour
+- hour
 
     Hour.
 
@@ -1305,8 +1304,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     
     ```
 
-
--   minute
+- minute
 
     Minute.
 
@@ -1319,8 +1317,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     
     ```
 
-
--   second
+- second
 
     Second.
 
@@ -1334,8 +1331,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     
     ```
 
-
--   microseconds
+- microseconds
 
     The seconds column, including fractional parts, is multiplied by 1,000,000.
 
@@ -1348,7 +1344,7 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     
     ```
 
--   timestamp\_expr with the time zone
+- timestamp\_expr with the time zone
 
     ```
     openGauss=# SELECT TIMESTAMPDIFF(HOUR,'2020-05-01 10:10:10-01','2020-05-01 10:10:10-03');
@@ -1358,14 +1354,13 @@ The  **timestampdiff**  function returns the result of  **timestamp\_expr2**  â€
     (1 row)
     ```
 
-
 ## EXTRACT<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_scb40477163d740de80f0e984cad28e7b"></a>
 
--   **EXTRACT\(***field _**FROM ***source_**\)**
+- **EXTRACT\(***field _**FROM ***source_**\)**
 
 The  **extract**  function retrieves subcolumns such as year or hour from date/time values.  **source**  must be a value expression of type  **timestamp**,  **time**, or  **interval**. \(Expressions of type  **date**  are cast to  **timestamp**  and can therefore be used as well.\)  **field**  is an identifier or string that selects what column to extract from the source value. The  **extract**  function returns values of type  **double precision**. The following are valid  **field**  names:
 
--   century
+- century
 
     The first century starts at 0001-01-01 00:00:00 AD. This definition applies to all Gregorian calendar countries. There is no century number 0. You go from  **â€“1**  century to  **1**  century.
 
@@ -1379,8 +1374,8 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   day
-    -   For  **timestamp**  values, the day \(of the month\) column \(1â€“31\)
+- day
+    - For  **timestamp**  values, the day \(of the month\) column \(1â€“31\)
 
         ```
         openGauss=# SELECT EXTRACT(DAY FROM TIMESTAMP '2001-02-16 20:38:40');
@@ -1390,7 +1385,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
         (1 row)
         ```
 
-    -   For  **interval**  values, the number of days
+    - For  **interval**  values, the number of days
 
         ```
         openGauss=# SELECT EXTRACT(DAY FROM INTERVAL '40 days 1 minute');
@@ -1400,8 +1395,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
         (1 row)
         ```
 
-
--   decade
+- decade
 
     Year column divided by 10
 
@@ -1413,7 +1407,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   dow
+- dow
 
     Day of the week as Sunday \(**0**\) to Saturday \(**6**\)
 
@@ -1425,7 +1419,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   doy
+- doy
 
     Day of the year \(1â€“365 or 366\)
 
@@ -1437,8 +1431,8 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   epoch
-    -   For  **timestamp with time zone**  values, the number of seconds since 1970-01-01 00:00:00-00 UTC \(can be negative\).
+- epoch
+    - For  **timestamp with time zone**  values, the number of seconds since 1970-01-01 00:00:00-00 UTC \(can be negative\).
 
         For  **date**  and  **timestamp**  values, the number of seconds since 1970-01-01 00:00:00-00 local time.
 
@@ -1460,7 +1454,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
         (1 row)
         ```
 
-    -   Way to convert an epoch value back to a timestamp
+    - Way to convert an epoch value back to a timestamp
 
         ```
         openGauss=# SELECT TIMESTAMP WITH TIME ZONE 'epoch' + 982384720.12 * INTERVAL '1 second' AS RESULT;
@@ -1470,8 +1464,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
         (1 row)
         ```
 
-
--   hour
+- hour
 
     Hour column \(0â€“23\)
 
@@ -1483,7 +1476,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   isodow
+- isodow
 
     Day of the week \(1â€“7\)
 
@@ -1501,7 +1494,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   isoyear
+- isoyear
 
     The ISO 8601 year that the date falls in \(not applicable to intervals\).
 
@@ -1523,7 +1516,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   microseconds
+- microseconds
 
     The seconds column, including fractional parts, is multiplied by 1,000,000.
 
@@ -1535,7 +1528,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   millennium
+- millennium
 
     Years in the 1900s are in the second millennium. The third millennium started from 0:00 of January 1, 2001.
 
@@ -1547,7 +1540,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   milliseconds
+- milliseconds
 
     Seconds column, including fractional parts, is multiplied by 1000. Note that this includes full seconds.
 
@@ -1559,7 +1552,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   minute
+- minute
 
     Minutes column \(0â€“59\).
 
@@ -1571,7 +1564,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   month
+- month
 
     For  **timestamp**  values, the specific month in the year \(1â€“12\).
 
@@ -1593,7 +1586,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   quarter
+- quarter
 
     Quarter of the year \(1â€“4\) that the date is in.
 
@@ -1605,7 +1598,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   second
+- second
 
     Seconds column, including fractional parts \(0â€“59\).
 
@@ -1617,19 +1610,19 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   timezone
+- timezone
 
     Time zone offset from UTC, measured in seconds. Positive values correspond to time zones east of UTC, negative values to zones west of UTC.
 
--   timezone\_hour
+- timezone\_hour
 
     Hour component of the time zone offset.
 
--   timezone\_minute
+- timezone\_minute
 
     Minute component of the time zone offset.
 
--   week
+- week
 
     Number of the week of the year that the day is in. By definition \(ISO 8601\), the first week of a year contains January 4 of that year. \(The ISO-8601 week starts on Monday.\) In other words, the first Thursday of a year is in week 1 of that year.
 
@@ -1643,7 +1636,7 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
--   year
+- year
 
     Year column.
 
@@ -1655,12 +1648,11 @@ The  **extract**  function retrieves subcolumns such as year or hour from date/t
     (1 row)
     ```
 
-
 ## date\_part<a name="en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_s099f9ebba99e42e6ad63f7aabdca375d"></a>
 
 The  **date\_part**  function is modeled on the traditional Ingres equivalent to the SQL-standard function  **extract**:
 
--   **date\_part\('***field***', ***source***\)**
+- **date\_part\('***field***', ***source***\)**
 
 Note that here the  **field**  parameter needs to be a string value, not a name. The valid field names for  **date\_part**  are the same as for  **extract**. For details, see  [EXTRACT](#en-us_topic_0283136846_en-us_topic_0237121972_en-us_topic_0059779084_scb40477163d740de80f0e984cad28e7b).
 
@@ -1908,9 +1900,10 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 >[!NOTE]NOTE 
 >
 >In the table, the rules for RR to calculate years are as follows:
->-   If the range of the input two-digit year is between 00 and 49:
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year equal to the first two digits of the current year plus 1.
->-   If the range of the input two-digit year is between 50 and 99:
->    If the last two digits of the current year are between 00 and 49, the first two digits of the returned year equal to the first two digits of the current year minus 1.
->    If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.
+>
+>- If the range of the input two-digit year is between 00 and 49:
+> If the last two digits of the current year are between 00 and 49, the first two digits of the returned year are the same as the first two digits of the current year.
+> If the last two digits of the current year are between 50 and 99, the first two digits of the returned year equal to the first two digits of the current year plus 1.
+>- If the range of the input two-digit year is between 50 and 99:
+> If the last two digits of the current year are between 00 and 49, the first two digits of the returned year equal to the first two digits of the current year minus 1.
+> If the last two digits of the current year are between 50 and 99, the first two digits of the returned year are the same as the first two digits of the current year.

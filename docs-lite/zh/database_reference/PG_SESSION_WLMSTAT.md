@@ -185,4 +185,3 @@ PG\_SESSION\_WLMSTAT视图显示当前用户执行作业正在运行时的负载
 </tr>
 </tbody>
 </table>
-

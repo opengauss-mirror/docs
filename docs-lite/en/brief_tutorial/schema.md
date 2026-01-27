@@ -10,30 +10,29 @@ When you execute the CREATE USER statement to create a user, the system creates 
 
 ## Syntax<a name="section10988202911187"></a>
 
--   Create a schema.
+- Create a schema.
 
     ```
     CREATE SCHEMA schema_name 
         [ AUTHORIZATION user_name ] ;
     ```
 
--   Modify a schema.
-    -   Rename a schema.
+- Modify a schema.
+    - Rename a schema.
 
         ```
         ALTER SCHEMA schema_name 
             RENAME TO new_name;
         ```
 
-    -   Change the owner of a schema.
+    - Change the owner of a schema.
 
         ```
         ALTER SCHEMA schema_name 
             OWNER TO new_owner;
         ```
 
-
--   Delete a schema and its objects.
+- Delete a schema and its objects.
 
     ```
     DROP SCHEMA  schema_name;
@@ -41,10 +40,9 @@ When you execute the CREATE USER statement to create a user, the system creates 
 
     Schemas beginning with  **pg\_temp**  or  **pg\_toast\_temp**  are for internal use. Do not delete them. Otherwise, unexpected consequences may be incurred.
 
-
 ## Parameter Description<a name="en-us_topic_0283137491_en-us_topic_0237122113_en-us_topic_0059777945_s9930d6a2a74b406980e00129b1f4fe2c"></a>
 
--   **schema\_name**
+- **schema\_name**
 
     Specifies the schema name.
 
@@ -54,25 +52,24 @@ When you execute the CREATE USER statement to create a user, the system creates 
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **AUTHORIZATION user\_name**
+- **AUTHORIZATION user\_name**
 
     Specifies the owner of a schema. If  **schema\_name**  is not specified,  **user\_name**  will be used as the schema name. In this case,  **user\_name**  can only be a role name.
 
     Value range: an existing username or role name
 
--   **schema\_element**
+- **schema\_element**
 
     Specifies an SQL statement defining an object to be created within a schema. Currently, only the  **CREATE TABLE**,  **CREATE VIEW**,  **CREATE INDEX**,  **CREATE PARTITION**,  **CREATE SEQUENCE**,  **CREATE TRIGGER**  and  **GRANT**  clauses are supported.
 
     Objects created by sub-commands are owned by the user specified by  **AUTHORIZATION**.
-
 
 >[!NOTE]NOTE 
 >If objects in the schema on the current search path are with the same name, specify the schemas for different objects. You can run the SHOW SEARCH\_PATH statement to check the schemas on the current search path.
 
 ## Examples<a name="en-us_topic_0283136607_en-us_topic_0237122070_en-us_topic_0059779037_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 
--   Create a schema for the  **user1**  user.
+- Create a schema for the  **user1**  user.
 
     Create the  **user1**  user.
 
@@ -88,14 +85,14 @@ When you execute the CREATE USER statement to create a user, the system creates 
     CREATE SCHEMA
     ```
 
--   Change the name of the  **test**  schema to  **test1**.
+- Change the name of the  **test**  schema to  **test1**.
 
     ```
     openGauss=# ALTER SCHEMA test RENAME TO test1;
     ALTER SCHEMA
     ```
 
--   Change the owner of the schema.
+- Change the owner of the schema.
 
     Create the  **user2**  user.
 
@@ -111,7 +108,7 @@ When you execute the CREATE USER statement to create a user, the system creates 
     ALTER SCHEMA
     ```
 
--   Check the current search path.
+- Check the current search path.
 
     ```
     openGauss=# SHOW SEARCH_PATH;
@@ -121,18 +118,16 @@ When you execute the CREATE USER statement to create a user, the system creates 
     (1 row)
     ```
 
--   Change the default schema of the current session.
+- Change the default schema of the current session.
 
     ```
     openGauss=# SET SEARCH_PATH TO test1, public;
     SET
     ```
 
--   Delete the schema and its objects.
+- Delete the schema and its objects.
 
     ```
     openGauss=# DROP SCHEMA test1;
     DROP SCHEMA
     ```
-
-

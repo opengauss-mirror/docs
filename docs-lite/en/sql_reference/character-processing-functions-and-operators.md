@@ -2,7 +2,7 @@
 
 String functions and operators provided by openGauss are for concatenating strings with each other, concatenating strings with non-strings, and matching the patterns of strings. Note: Except length-related functions, other functions and operators of string processing functions do not support parameters greater than 1 GB.
 
--   bit\_length\(string\)
+- bit\_length\(string\)
 
     Description: Specifies the number of bits occupied by a string.
 
@@ -18,7 +18,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   btrim\(string text \[, characters text\]\)
+- btrim\(string text \[, characters text\]\)
 
     Description: Removes the longest string consisting only of characters in  **characters**  \(a space by default\) from the start and end of  **string**.
 
@@ -34,7 +34,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   char\_length\(string\) or character\_length\(string\)
+- char\_length\(string\) or character\_length\(string\)
 
     Description: Specifies the number of characters in a string.
 
@@ -50,7 +50,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   instr\(text,text,int,int\)
+- instr\(text,text,int,int\)
 
     Description:  **instr\(string1,string2,int1,int2\)**  returns the text from  **int1**  to  **int2**  in  **string1**. The first  **int**  indicates the start position for matching, and the second  **int**  indicates the number of matching times.
 
@@ -66,7 +66,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   lengthb\(text/bpchar\)
+- lengthb\(text/bpchar\)
 
     Description: Obtains the number of bytes of a specified string.
 
@@ -82,7 +82,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   left\(str text, n int\)
+- left\(str text, n int\)
 
     Description: Returns the first  *n_  characters in a string. When  _n*  is negative, all but the last  **|n|**  characters are returned.
 
@@ -98,7 +98,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   length\(string bytea, encoding name \)
+- length\(string bytea, encoding name \)
 
     Description: Specifies the number of characters in  **string**  in the given  **encoding**.  **string**  must be valid in this encoding.
 
@@ -118,7 +118,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >
     >If the length of the bytea type is queried and UTF8 encoding is specified, the maximum length can only be  **536870888**.
 
--   lpad\(string text, length int \[, fill text\]\)
+- lpad\(string text, length int \[, fill text\]\)
 
     Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
@@ -134,7 +134,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   notlike\(x bytea name text, y bytea text\)
+- notlike\(x bytea name text, y bytea text\)
 
     Description: Compares x and y to check whether they are inconsistent.
 
@@ -155,7 +155,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     Description: Specifies the number of bytes in a string.
 
@@ -171,7 +171,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   overlay\(string placing string FROM int \[for int\]\)
+- overlay\(string placing string FROM int \[for int\]\)
 
     Description: Replaces substrings.  **FROM int**  indicates the start position of the replacement in the first string.  **for int**  indicates the number of characters replaced in the first string.
 
@@ -187,7 +187,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   position\(substring in string\)
+- position\(substring in string\)
 
     Description: Specifies the position of a substring. Parameters are case-sensitive.
 
@@ -203,7 +203,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   pg\_client\_encoding\(\)
+- pg\_client\_encoding\(\)
 
     Description: Specifies the current client encoding name.
 
@@ -219,7 +219,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   quote\_ident\(string text\)
+- quote\_ident\(string text\)
 
     Description: Returns the given string suitably quoted to be used as an identifier in an SQL statement string \(quotation marks are used as required\). Quotation marks are added only if necessary \(that is, if the string contains non-identifier characters or would be case-folded\). Embedded quotation marks are properly doubled.
 
@@ -235,7 +235,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   quote\_literal\(string text\)
+- quote\_literal\(string text\)
 
     Description: Returns the given string suitably quoted to be used as a string literal in an SQL statement string \(quotation marks are used as required\).
 
@@ -281,7 +281,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   quote\_literal\(value anyelement\)
+- quote\_literal\(value anyelement\)
 
     Description: Converts the given value to text and then quotes it as a literal.
 
@@ -317,7 +317,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   quote\_nullable\(string text\)
+- quote\_nullable\(string text\)
 
     Description: Returns the given string suitably quoted to be used as a string literal in an SQL statement string \(quotation marks are used as required\).
 
@@ -363,7 +363,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   quote\_nullable\(value anyelement\)
+- quote\_nullable\(value anyelement\)
 
     Description: Converts the given value to text and then quotes it as a literal.
 
@@ -409,7 +409,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substring\_inner\(string \[from int\] \[for int\]\)
+- substring\_inner\(string \[from int\] \[for int\]\)
 
     Description: Extracts a substring.  **from int**  indicates the start position of the truncation.  **for int**  indicates the number of characters truncated.
 
@@ -425,7 +425,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     Description: Extracts a substring.  **from int**  indicates the start position of the truncation.  **for int**  indicates the number of characters truncated.
 
@@ -441,7 +441,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substring\(string from  *pattern*\)
+- substring\(string from  *pattern*\)
 
     Description: Extracts substrings matching the POSIX regular expression. It returns the text that matches the pattern. If no match record is found, a null value is returned.
 
@@ -471,7 +471,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >
     >If the POSIX pattern contains any parentheses, the portion of the text that matched the first parenthesized sub-expression \(the one whose left parenthesis comes first\) is returned. You can put parentheses around the whole expression if you want to use parentheses within it without triggering this exception.
 
--   substring\(string from  *pattern*  for  *escape*\)
+- substring\(string from  *pattern*  for  *escape*\)
 
     Description: Extracts substrings matching the SQL regular expression. The declared schema must match the entire data string; otherwise, the function fails and returns a null value. To indicate the part of the pattern that should be returned on success, the pattern must contain two occurrences of the escape character followed by a double quotation mark \("\). The text matching the portion of the pattern between these marks is returned.
 
@@ -487,7 +487,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   rawcat\(raw,raw\)
+- rawcat\(raw,raw\)
 
     Description: Indicates the string concatenation function.
 
@@ -503,7 +503,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_like\(text,text,text\)
+- regexp\_like\(text,text,text\)
 
     Description: Indicates the mode matching function of a regular expression.
 
@@ -519,17 +519,17 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_substr\(string text, pattern text \[, position int \[, occurrence int \[, flags text\]\]\]\)
+- regexp\_substr\(string text, pattern text \[, position int \[, occurrence int \[, flags text\]\]\]\)
 
     Description: Extracts substrings from a regular expression. Its function is similar to  **substr**. When a regular expression contains multiple parallel brackets, it also needs to be processed.
 
     Parameter description:
 
-    -   **string**: source character string used for matching.
-    -   **pattern**: regular expression pattern string used for matching.
-    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
-    -   **occurrence**: sequence number of the matched substring to be extracted. This parameter is optional. The default value is  **1**.
-    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
+    - **string**: source character string used for matching.
+    - **pattern**: regular expression pattern string used for matching.
+    - **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    - **occurrence**: sequence number of the matched substring to be extracted. This parameter is optional. The default value is  **1**.
+    - **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: text
 
@@ -549,16 +549,16 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
+- regexp\_count\(string text, pattern text \[, position int \[, flags text\]\]\)
 
     Description: obtains the number of substrings used for matching.
 
     Parameter description:
 
-    -   **string**: source character string used for matching.
-    -   **pattern**: regular expression pattern string used for matching.
-    -   **position**: sequence number of the character to be matched from the source character string. This parameter is optional. The default value is  **1**.
-    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n' **character by default. The meaning of option  **n**  is the same as that of option  **m**.
+    - **string**: source character string used for matching.
+    - **pattern**: regular expression pattern string used for matching.
+    - **position**: sequence number of the character to be matched from the source character string. This parameter is optional. The default value is  **1**.
+    - **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: int
 
@@ -572,18 +572,18 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
+- regexp\_instr\(string text, pattern text \[, position int \[, occurrence int \[, return\_opt int \[, flags text\]\]\]\]\)
 
     Description: obtains the position \(starting from 1\) of the substring that meets the matching condition. If no substring is matched,  **0**  is returned.
 
     Parameter description:
 
-    -   **string**: source character string used for matching.
-    -   **pattern**: regular expression pattern string used for matching.
-    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
-    -   **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **1**.
-    -   **return\_opt**: specifies whether to return the position of the first or last character of the matched substring. This parameter is optional. If the value is  **0**, the position of the first character \(starting from 1\) of the matched substring is returned. If the value is greater than 0, the position of the next character of the end character of the matched substring is returned. The default value is  **0**.
-    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
+    - **string**: source character string used for matching.
+    - **pattern**: regular expression pattern string used for matching.
+    - **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    - **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **1**.
+    - **return\_opt**: specifies whether to return the position of the first or last character of the matched substring. This parameter is optional. If the value is  **0**, the position of the first character \(starting from 1\) of the matched substring is returned. If the value is greater than 0, the position of the next character of the end character of the matched substring is returned. The default value is  **0**.
+    - **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: int
 
@@ -603,7 +603,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_matches\(string text, pattern text \[, flags text\]\)
+- regexp\_matches\(string text, pattern text \[, flags text\]\)
 
     Description: Returns all captured substrings resulting from matching a POSIX regular expression against  **string**. If the pattern does not match, the function returns no rows. If the pattern contains no parenthesized sub-expressions, then each row returned is a single-element text array containing the substring matching the whole pattern. If the pattern contains parenthesized sub-expressions, the function returns a text array whose  *n_th element is the substring matching the  _n*th parenthesized sub-expression of the pattern.
 
@@ -612,8 +612,8 @@ String functions and operators provided by openGauss are for concatenating strin
     >[!TIP]NOTICE 
     >
     >If the last parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to A, the returned result is an empty set. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can:
-    >-   Change the database SQL compatibility mode to C.
-    >-   Do not provide the last parameter or do not set the last parameter to an empty string.
+    >- Change the database SQL compatibility mode to C.
+    >- Do not provide the last parameter or do not set the last parameter to an empty string.
 
     Return type: SETOF text\[\]
 
@@ -638,7 +638,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (2 rows)
     ```
 
--   regexp\_split\_to\_array\(string text, pattern text \[, flags text \]\)
+- regexp\_split\_to\_array\(string text, pattern text \[, flags text \]\)
 
     Description: Splits  **string**  using a POSIX regular expression as the delimiter. The  **regexp\_split\_to\_array**  function behaves the same as  **regexp\_split\_to\_table**, except that  **regexp\_split\_to\_array**  returns its result as an array of text.
 
@@ -654,7 +654,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_split\_to\_table\(string text, pattern text \[, flags text\]\)
+- regexp\_split\_to\_table\(string text, pattern text \[, flags text\]\)
 
     Description: Splits  **string**  using a POSIX regular expression as the delimiter. If there is no match to the pattern, the function returns the string. If there is at least one match, for each match it returns the text from the end of the last match \(or the beginning of the string\) to the beginning of the match. When there are no more matches, it returns the text from the end of the last match to the end of the string.
 
@@ -673,7 +673,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (2 rows)
     ```
 
--   repeat\(string text, number int \)
+- repeat\(string text, number int \)
 
     Description: Repeats  **string**  the specified number of times.
 
@@ -693,7 +693,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >
     >The maximum size of memory allocated at a time cannot exceed 1 GB due to the memory allocation mechanism of the database. Therefore, the maximum value of  **number**  cannot exceed \(1 GB –  **x**\)/**lengthb**  \(**string**\) – 1.  **x**  indicates the length of the header information, which is usually greater than 4 bytes. The value varies among different scenarios.
 
--   replace\(string text, from text, to text\)
+- replace\(string text, from text, to text\)
 
     Description: Replaces all occurrences in  **string**  of substring  **from**  with substring  **to**.
 
@@ -709,8 +709,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
-
--   replace\(string, substring\)
+- replace\(string, substring\)
 
     Description: Deletes all substrings in a string.
 
@@ -730,7 +729,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   reverse\(str\)
+- reverse\(str\)
 
     Description: Returns the reversed string.
 
@@ -746,7 +745,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   right\(str text, n int\)
+- right\(str text, n int\)
 
     Description: Returns the last  *n_  characters in a string. When  _n*  is negative, all but the first  **|n|**  characters are returned.
 
@@ -768,7 +767,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   rpad\(string text, length int \[, fill text\]\)
+- rpad\(string text, length int \[, fill text\]\)
 
     Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
@@ -784,7 +783,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   rtrim\(string text \[, characters text\]\)
+- rtrim\(string text \[, characters text\]\)
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the end of string.
 
@@ -800,9 +799,9 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substrb\(text,int,int\)
+- substrb\(text,int,int\)
 
-    Description: Extracts a substring. The first  **int **indicates the start position of the subtraction. The second  **int**  indicates the number of characters extracted.
+    Description: Extracts a substring. The first  **int**indicates the start position of the subtraction. The second  **int**  indicates the number of characters extracted.
 
     Return type: text
 
@@ -816,7 +815,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substrb\(text,int\)
+- substrb\(text,int\)
 
     Description: Extracts a substring.  **int**  indicates the start position of the extraction.
 
@@ -832,7 +831,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substr\(bytea,from,count\)
+- substr\(bytea,from,count\)
 
     Description: Extracts a substring from  **bytea**.  **from**  specifies the position where the extraction starts.  **count**  specifies the length of the extracted substring.
 
@@ -848,7 +847,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   string || string
+- string || string
 
     Description: Concatenates strings.
 
@@ -864,7 +863,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   string || non-string or non-string || string
+- string || non-string or non-string || string
 
     Description: Concatenates strings and non-strings.
 
@@ -880,7 +879,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   split\_part\(string text, delimiter text, field int\)
+- split\_part\(string text, delimiter text, field int\)
 
     Description: Splits  **string**  on  **delimiter**  and returns the  **field**th column \(counting from text of the first appeared delimiter\).
 
@@ -896,7 +895,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   strpos\(string, substring\)
+- strpos\(string, substring\)
 
     Description: Specifies the position of a substring. It is the same as  **position\(substring in string\)**. However, the parameter sequences of them are reversed.
 
@@ -912,7 +911,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   to\_hex\(number int or bigint\)
+- to\_hex\(number int or bigint\)
 
     Description: Converts a number to a hexadecimal expression.
 
@@ -928,7 +927,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   translate\(string text, from text, to text\)
+- translate\(string text, from text, to text\)
 
     Description: Any character in  **string**  that matches a character in the  **from**  set is replaced by the corresponding character in the  **to**  set. If  **from**  is longer than  **to**, extra characters occurred in  **from**  are removed.
 
@@ -944,8 +943,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
-
--   length\(string\)
+- length\(string\)
 
     Description: Obtains the number of characters in a string.
 
@@ -961,7 +959,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   lengthb\(string\)
+- lengthb\(string\)
 
     Description: Obtains the number of characters in a string. The value depends on character sets \(GBK and UTF8\).
 
@@ -977,7 +975,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substr\(string,from\)
+- substr\(string,from\)
 
     Description:
 
@@ -985,9 +983,9 @@ String functions and operators provided by openGauss are for concatenating strin
 
     **from**  indicates the start position of the extraction.
 
-    -   If  **from**  starts at 0, the value  **1**  is used.
-    -   If the value of  **from**  is positive, all characters from  **from**  to the end are extracted.
-    -   If the value of  **from**  is negative, the last  *n*  characters in the string are extracted, in which  **n**  indicates the absolute value of  **from**.
+    - If  **from**  starts at 0, the value  **1**  is used.
+    - If the value of  **from**  is positive, all characters from  **from**  to the end are extracted.
+    - If the value of  **from**  is negative, the last  *n*  characters in the string are extracted, in which  **n**  indicates the absolute value of  **from**.
 
     Return type: varchar
 
@@ -1013,7 +1011,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substr\(string,from,count\)
+- substr\(string,from,count\)
 
     Description:
 
@@ -1023,10 +1021,10 @@ String functions and operators provided by openGauss are for concatenating strin
 
     **count**  indicates the length of the extracted substring.
 
-    -   If  **from**  starts at 0, the value  **1**  is used.
-    -   If the value of  **from**  is positive, extract  **count**  characters starting from  **from**.
-    -   If the value of  **from**  is negative, extract the last  **n** **count**  characters in the string, in which  **n**  indicates the absolute value of  **from**.
-    -   If the value of  **count**  is smaller than  **1**,  **null**  is returned.
+    - If  **from**  starts at 0, the value  **1**  is used.
+    - If the value of  **from**  is positive, extract  **count**  characters starting from  **from**.
+    - If the value of  **from**  is negative, extract the last  **n** **count**  characters in the string, in which  **n**  indicates the absolute value of  **from**.
+    - If the value of  **count**  is smaller than  **1**,  **null**  is returned.
 
     Return type: varchar
 
@@ -1052,7 +1050,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substrb\(string,from\)
+- substrb\(string,from\)
 
     Description: The functionality of this function is the same as that of  **SUBSTR\(string,from\)**. However, the calculation unit is byte.
 
@@ -1068,7 +1066,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   substrb\(string,from,count\)
+- substrb\(string,from,count\)
 
     Description: The functionality of this function is the same as that of  **SUBSTR\(string,from,count\)**. However, the calculation unit is byte.
 
@@ -1084,7 +1082,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   trim\(\[leading |trailing |both\] \[characters\] from string\)
+- trim\(\[leading |trailing |both\] \[characters\] from string\)
 
     Description: Removes the longest string containing only the characters \(a space by default\) from the start/end/both ends of the string.
 
@@ -1116,7 +1114,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   rtrim\(string \[, characters\]\)
+- rtrim\(string \[, characters\]\)
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the end of string.
 
@@ -1132,7 +1130,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   ltrim\(string \[, characters\]\)
+- ltrim\(string \[, characters\]\)
 
     Description: Removes the longest string containing only characters from characters \(a space by default\) from the start of string.
 
@@ -1148,7 +1146,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   upper\(string\)
+- upper\(string\)
 
     Description: Converts the string into the uppercase.
 
@@ -1164,7 +1162,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   lower\(string\)
+- lower\(string\)
 
     Description: Converts the string into the lowercase.
 
@@ -1180,7 +1178,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   rpad\(string varchar, length int \[, fill varchar\]\)
+- rpad\(string varchar, length int \[, fill varchar\]\)
 
     Description: Fills up  **string**  to  **length**  by appending the characters  **fill**  \(a space by default\). If  **string**  is already longer than  **length**, then it is truncated.
 
@@ -1206,12 +1204,12 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   instr\(string,substring\[,position,occurrence\]\)
+- instr\(string,substring\[,position,occurrence\]\)
 
     Description: Queries and returns the value of the substring position that occurs the  **occurrence**  \(1 by default\) times from the  **position**  \(1 by default\) in the string.
 
-    -   If the value of  **position**  is  **0**,  **0**  is returned.
-    -   If the value of  **position**  is negative, the search is performed backwards from the last  *n_th character in the string, in which  _n*  indicates the absolute value of  **position**.
+    - If the value of  **position**  is  **0**,  **0**  is returned.
+    - If the value of  **position**  is negative, the search is performed backwards from the last  *n_th character in the string, in which  _n*  indicates the absolute value of  **position**.
 
     In this function, the calculation unit is character. One Chinese character is one character.
 
@@ -1235,7 +1233,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   initcap\(string\)
+- initcap\(string\)
 
     Description: Converts the first letter of each word in the string into the uppercase and the other letters into the lowercase.
 
@@ -1251,7 +1249,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   ascii\(string\)
+- ascii\(string\)
 
     Description: Indicates the ASCII code of the first character in the string.
 
@@ -1267,7 +1265,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   replace\(string varchar, search\_string varchar, replacement\_string varchar\)
+- replace\(string varchar, search\_string varchar, replacement\_string varchar\)
 
     Description: Replaces all  **search\_string**  in the string with  **replacement\_string**.
 
@@ -1283,7 +1281,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   lpad\(string varchar, length int\[, repeat\_string varchar\]\)
+- lpad\(string varchar, length int\[, repeat\_string varchar\]\)
 
     Description: Adds a series of  **repeat\_string**  \(a space by default\) on the left of the string to generate a new string with the total length of  *n*.
 
@@ -1309,7 +1307,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   concat\(str1,str2\)
+- concat\(str1,str2\)
 
     Description: Connects str1 and str2 and returns the string.
 
@@ -1334,7 +1332,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   chr\(integer\)
+- chr\(integer\)
 
     Description: Specifies the character of the ASCII code.
 
@@ -1350,7 +1348,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_substr\(source\_char, pattern\)
+- regexp\_substr\(source\_char, pattern\)
 
     Description: Extracts substrings from a regular expression. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the period \(.\) cannot match the  **'\\n'**  character. If  **aformat\_regexp\_match**  is not contained, the period \(.\) matches the  **'\\n'**  character by default.
 
@@ -1366,7 +1364,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   regexp\_replace\(string, pattern, replacement \[,flags \]\)
+- regexp\_replace\(string, pattern, replacement \[,flags \]\)
 
     Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
 
@@ -1391,18 +1389,18 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   repexp\_replace\(string text, pattern text \[, replacement text \[, position int \[, occurrence int \[, flags text\]\]\]\]\)
+- repexp\_replace\(string text, pattern text \[, replacement text \[, position int \[, occurrence int \[, flags text\]\]\]\]\)
 
     Description: Replaces substrings matching the POSIX regular expression. The source string is returned unchanged if there is no match to the pattern. If there is a match, the source string is returned with the replacement string substituted for the matching substring.
 
     Parameter description:
 
-    -   **string**: source character string used for matching.
-    -   **pattern**: regular expression pattern string used for matching.
-    -   **replacement**:character string used to replace the matched substring. This parameter is optional. If no parameter value is specified or the parameter value is null, the parameter value is replaced with an empty string.
-    -   **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
-    -   **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **0**, indicating that all matched substrings are replaced.
-    -   **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
+    - **string**: source character string used for matching.
+    - **pattern**: regular expression pattern string used for matching.
+    - **replacement**:character string used to replace the matched substring. This parameter is optional. If no parameter value is specified or the parameter value is null, the parameter value is replaced with an empty string.
+    - **position**: start character of the source string used for matching. This parameter is optional. The default value is  **1**.
+    - **occurrence**: sequence number of the matched substring to be replaced. This parameter is optional. The default value is  **0**, indicating that all matched substrings are replaced.
+    - **flags**: contains zero or multiple single-letter flags that change the matching behavior of the function. This parameter is optional.  **m**  indicates multi-line matching. If the SQL syntax is compatible with products A and B and the value of the GUC parameter  **behavior\_compat\_options**  contains  **aformat\_regexp\_match**, the option  **n**  indicates that the period \(.\) can match the  **'\\n'**  character. If  **n**  is not specified in flags, the period \(.\) cannot match the  **'\\n'**  character by default. If the value does not contain  **aformat\_regexp\_match**, the period \(.\) matches the  **'\\n'**  character by default. The meaning of option  **n**  is the same as that of option  **m**.
 
     Return type: text
 
@@ -1416,14 +1414,14 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   concat\_ws\(sep text, str"any" \[, str"any" \[, ...\] \]\)
+- concat\_ws\(sep text, str"any" \[, str"any" \[, ...\] \]\)
 
     Description: Uses the first parameter as the separator, which is associated with all following parameters. The  **NULL**  parameter is ignored.
 
     >[!TIP]NOTICE 
     >
-    >-   If the first parameter value is  **NULL**, the returned result is  **NULL**.
-    >-   If the first parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to  **A**, the returned result is  **NULL**. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can change the SQL compatibility mode of the database to  **B**,  **C**, or  **PG**.
+    >- If the first parameter value is  **NULL**, the returned result is  **NULL**.
+    >- If the first parameter is provided but the parameter value is an empty string \(''\) and the SQL compatibility mode of the database is set to  **A**, the returned result is  **NULL**. This is because the A compatibility mode treats the empty string \(''\) as  **NULL**. To resolve this problem, you can change the SQL compatibility mode of the database to  **B**,  **C**, or  **PG**.
 
     Return type: text
 
@@ -1437,7 +1435,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   nlssort\(string text, sort\_method text\)
+- nlssort\(string text, sort\_method text\)
 
     Description: Returns the encoding value of a string in the sorting mode specified by  **sort\_method**. The encoding value can be used for sorting and determines the sequence of the string in the sorting mode. Currently,  **sort\_method**  can be set to  **nls\_sort=schinese\_pinyin\_m**  or  **nls\_sort=generic\_m\_ci**.  **nls\_sort=generic\_m\_ci**  supports only the case-insensitive order for English characters.
 
@@ -1462,7 +1460,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   convert\(string bytea, src\_encoding name, dest\_encoding name\)
+- convert\(string bytea, src\_encoding name, dest\_encoding name\)
 
     Description: Converts the bytea string to  **dest\_encoding**.  **src\_encoding**  specifies the source code encoding. The string must be valid in this encoding.
 
@@ -1482,6 +1480,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >
     >If the rule for converting between source to target encoding \(for example, GBK and LATIN1\) does not exist, the string is returned without conversion. See the  **pg\_conversion**  system catalog for details.
     >Example:
+>
     >```
     >openGauss=# show server_encoding;
     > server_encoding 
@@ -1505,7 +1504,7 @@ String functions and operators provided by openGauss are for concatenating strin
     >(1 row)
     >```
 
--   convert\_from\(string bytea, src\_encoding name\)
+- convert\_from\(string bytea, src\_encoding name\)
 
     Description: Converts the long bytea using the coding mode of the database.
 
@@ -1523,7 +1522,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   convert\_to\(string text, dest\_encoding name\)
+- convert\_to\(string text, dest\_encoding name\)
 
     Description: Converts a string to  **dest\_encoding**.
 
@@ -1539,7 +1538,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   string \[NOT\] LIKE pattern \[ESCAPE escape-character\]
+- string \[NOT\] LIKE pattern \[ESCAPE escape-character\]
 
     Description: Specifies the pattern matching function.
 
@@ -1575,16 +1574,16 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   REGEXP\_LIKE\(source\_string, pattern \[, match\_parameter\]\)
+- REGEXP\_LIKE\(source\_string, pattern \[, match\_parameter\]\)
 
     Description: Indicates the mode matching function of a regular expression.
 
     **source\_string**  indicates the source string and  **pattern**  indicates the matching pattern of the regular expression.  **match\_parameter**  indicates the matching items and the values are as follows: 
 
-    -   'i': case-insensitive
-    -   'c': case-sensitive
-    -   'n': allowing the metacharacter "." in a regular expression to be matched with a linefeed.
-    -   'm': allows  **source\_string**  to be regarded as multiple rows.
+    - 'i': case-insensitive
+    - 'c': case-sensitive
+    - 'n': allowing the metacharacter "." in a regular expression to be matched with a linefeed.
+    - 'm': allows  **source\_string**  to be regarded as multiple rows.
 
     If  **match\_parameter**  is ignored,  **case-sensitive**  is enabled by default, "." is not matched with a linefeed, and  **source\_string**  is regarded as a single row.
 
@@ -1616,7 +1615,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   format\(formatstr text \[, str"any" \[, ...\] \]\)
+- format\(formatstr text \[, str"any" \[, ...\] \]\)
 
     Description: Formats a string.
 
@@ -1632,7 +1631,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   md5\(string\)
+- md5\(string\)
 
     Description: Encrypts a string in MD5 mode and returns a value in hexadecimal form.
 
@@ -1651,12 +1650,13 @@ String functions and operators provided by openGauss are for concatenating strin
      902fbdd2b1df0c4f70b4a5d23525e932
     (1 row)
     ```
--   sha\(string\) / sha1\(string\)
+
+- sha\(string\) / sha1\(string\)
 
     Description: Encrypts a string using SHA1 and returns a hexadecimal number. The sha and sha1 functions are the same.
 
     >[!NOTE]NOTE
-    >  
+    > 
     >The SHA1 encryption algorithm is not recommended because it has lower security and poses security risks.
     >This function is valid only when openGauss is compatible with the MY type (that is, sql\_compatibility = 'B').
 
@@ -1677,7 +1677,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   sha2\(string, hash\_length\)
+- sha2\(string, hash\_length\)
 
     Description: Encrypts a string in SHA2 mode and returns a value in hexadecimal form.
 
@@ -1711,7 +1711,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   decode\(string text, format text\)
+- decode\(string text, format text\)
 
     Description: Decodes binary data from textual representation.
 
@@ -1727,7 +1727,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   similar\_escape\(pat text, esc text\)
+- similar\_escape\(pat text, esc text\)
 
     Description: Converts a regular expression of the SQL:2008 style to the POSIX style.
 
@@ -1743,7 +1743,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   svals\(hstore\)
+- svals\(hstore\)
 
     Description: Obtains the value of the hstore type.
 
@@ -1759,7 +1759,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
--   tconvert\(key text, value text\)
+- tconvert\(key text, value text\)
 
     Description: Converts character strings to the hstore format.
 
@@ -1774,7 +1774,8 @@ String functions and operators provided by openGauss are for concatenating strin
      "aa"=>"bb"
     (1 row)
     ```
--   find\_in\_set\(text, set\)
+
+- find\_in\_set\(text, set\)
 
     Description: Finds the position of a given member in a set, counting from 1. If no record is found, 0 is returned.
 
@@ -1791,7 +1792,7 @@ String functions and operators provided by openGauss are for concatenating strin
     (2 rows)
     ```
 
--   encode\(data bytea, format text\)
+- encode\(data bytea, format text\)
 
     Description: Encodes binary data into a textual representation.
 
@@ -1807,16 +1808,17 @@ String functions and operators provided by openGauss are for concatenating strin
     (1 row)
     ```
 
-
 >[!NOTE]NOTE 
 >
->-   For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.
->-   In openGauss,  *n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n*.
->-   openGauss supports multiple types of databases, including A, B, C, and PG. If the database type is not specified, A is used by default. The lexical analyzer of A database is different from that of the other three databases. In A database, an empty character string is considered as  **NULL**. Therefore, when a type A database is used, if a  **NULL**  character string is used as a parameter in the preceding character operation function, no output is displayed. For example:
+>- For a string containing newline characters, for example, a string consisting of a newline character and a space, the value of  **length**  and  **lengthb**  in openGauss is 2.
+>- In openGauss,  *n_  in the CHAR\(n\) type indicates the number of characters. Therefore, for multiple-octet coded character sets, the length returned by the LENGTHB function may be longer than  _n*.
+>- openGauss supports multiple types of databases, including A, B, C, and PG. If the database type is not specified, A is used by default. The lexical analyzer of A database is different from that of the other three databases. In A database, an empty character string is considered as  **NULL**. Therefore, when a type A database is used, if a  **NULL**  character string is used as a parameter in the preceding character operation function, no output is displayed. For example:
+>
+> ```
+> openGauss=# SELECT translate('12345','123','');
+> translate  
+> -----------
+> (1 row)
 >    ```
->    openGauss=# SELECT translate('12345','123','');
->    translate  
->    -----------
->    (1 row)
->    ```
->    This is because the kernel checks whether the input parameter contains  **NULL**  before calling the corresponding function. If yes, the kernel does not call the corresponding function. As a result, no output is displayed. In PG mode, the processing of character strings is the same as that of PostgreSQL. Therefore, the preceding problem does not occur.
+>
+> This is because the kernel checks whether the input parameter contains  **NULL**  before calling the corresponding function. If yes, the kernel does not call the corresponding function. As a result, no output is displayed. In PG mode, the processing of character strings is the same as that of PostgreSQL. Therefore, the preceding problem does not occur.

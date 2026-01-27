@@ -8,8 +8,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that the auditing function is enabled.
--   **off**  indicates that the auditing function is disabled.
+- **on**  indicates that the auditing function is enabled.
+- **off**  indicates that the auditing function is disabled.
 
 **Default value**:  **on**
 
@@ -77,8 +77,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**  indicates that audit logs are preferentially stored by space. A maximum of  [audit\_space\_limit](#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714)  logs can be stored. 
--   **off**  indicates that audit logs are preferentially stored by time. A minimum duration of  [audit\_file\_remain\_time](#en-us_topic_0283137524_en-us_topic_0237124745_section149961828185211)  logs must be stored.
+- **on**  indicates that audit logs are preferentially stored by space. A maximum of  [audit\_space\_limit](#en-us_topic_0283137524_en-us_topic_0237124745_en-us_topic_0059777744_s167d5900250946bca199444c0617c714)  logs can be stored. 
+- **off**  indicates that audit logs are preferentially stored by time. A minimum duration of  [audit\_file\_remain\_time](#en-us_topic_0283137524_en-us_topic_0237124745_section149961828185211)  logs must be stored.
 
 **Default value**:  **on**
 

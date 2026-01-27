@@ -6,9 +6,9 @@
 
 ## Precautions<a name="en-us_topic_0283137325_en-us_topic_0237122074_en-us_topic_0059778392_sb3569429c1304678895bcf79fb6304cf"></a>
 
--   Currently, only the owner of the  **SYNONYM**  object can be changed.
--   Only the system administrator has the permission to modify the owner of the  **SYNONYM**  object.
--   The new owner must have the  **CREATE**  permission on the schema where the  **SYNONYM**  object resides.
+- Currently, only the owner of the  **SYNONYM**  object can be changed.
+- Only the system administrator has the permission to modify the owner of the  **SYNONYM**  object.
+- The new owner must have the  **CREATE**  permission on the schema where the  **SYNONYM**  object resides.
 
 ## Syntax<a name="en-us_topic_0283137325_en-us_topic_0237122074_section185432369210"></a>
 
@@ -19,19 +19,17 @@ ALTER SYNONYM synonym_name
 
 ## Parameter Description<a name="en-us_topic_0283137325_en-us_topic_0237122074_section37023591411"></a>
 
--   **synonym**
+- **synonym**
 
     Specifies the name of the synonym to be modified, which can contain the schema name.
 
     Value range: a string. It must comply with the identifier naming convention.
 
-
--   **new\_owner**
+- **new\_owner**
 
     Specifies the new owner of the  **SYNONYM**  object.
 
     Value range: a string. It must be a valid username.
-
 
 ## Examples<a name="en-us_topic_0283137325_en-us_topic_0237122074_section162752045154311"></a>
 
@@ -55,4 +53,3 @@ openGauss=# DROP USER u1;
 ## Helpful Links<a name="en-us_topic_0283137325_en-us_topic_0237122074_section613212620440"></a>
 
 [CREATE SYNONYM](create-synonym.md)  and  [DROP SYNONYM](drop-synonym.md)
-

@@ -17,12 +17,12 @@ ts_debug([ config regconfig, ] document text,
 
 **ts\_debug**  returns one row for each token identified in the text by the parser. The columns returned are:
 
--   **alias text**: short name of the token type
--   **description text**: description of the token type
--   **token text**: text of the token
--   **dictionaries regdictionary\[\]**: dictionaries selected by the configuration for this token type
--   **dictionary regdictionary**: the dictionary that recognized the token, or NULL if none did
--   **lexemes text\[\]**: the lexeme\(s\) produced by the dictionary that recognized the token, or NULL if none did; an empty array \(\{\}\) means the token was recognized as a stop word
+- **alias text**: short name of the token type
+- **description text**: description of the token type
+- **token text**: text of the token
+- **dictionaries regdictionary\[\]**: dictionaries selected by the configuration for this token type
+- **dictionary regdictionary**: the dictionary that recognized the token, or NULL if none did
+- **lexemes text\[\]**: the lexeme\(s\) produced by the dictionary that recognized the token, or NULL if none did; an empty array \(\{\}\) means the token was recognized as a stop word
 
 Example:
 

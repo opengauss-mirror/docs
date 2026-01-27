@@ -12,4 +12,3 @@ MOT's average transaction speed is 2.5x, with MOT latency of 10.5 ms, compared t
 
 **Figure  2**  Low Latency \(90<sup>th</sup>%, Transaction Average\) – Performance Benchmarks<a name="en-us_topic_0283136867_en-us_topic_0270171491_fig9673657173918"></a>  
 ![](figures/low-latency-90th-transaction-average-performance-benchmarks.png "low-latency-(90th-transaction-average)-performance-benchmarks")
-

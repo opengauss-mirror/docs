@@ -6,16 +6,16 @@
 
 ## Precautions<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sfccb497f01564edb804ecee58fe2698c"></a>
 
--   Only the owner of a sequence, a user granted the ALTER permission on a sequence, or a user granted the ALTER ANY SEQUENCE permission on a sequence can run the **ALTER SEQUENCE** command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
--   In the current version, you can modify only the step, the maximum value, the minimum value, the start value, the number of cached values, cycle, restart, the owner and the owning column. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
--   **ALTER SEQUENCE MAXVALUE**  cannot be used in functions and stored procedures.
--   After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
--   If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
--   The  **ALTER SEQUENCE**  statement blocks the invocation of  **nextval**,  **setval**,  **currval**, and  **lastval**.
+- Only the owner of a sequence, a user granted the ALTER permission on a sequence, or a user granted the ALTER ANY SEQUENCE permission on a sequence can run the **ALTER SEQUENCE** command. The system administrator has this permission by default. To modify a sequence owner, you must be the sequence owner or system administrator and a member of the new owner role.
+- In the current version, you can modify only the step, the maximum value, the minimum value, the start value, the number of cached values, cycle, restart, the owner and the owning column. To modify other parameters, delete the sequence and create it again. Then, use the  **Setval**  function to restore parameter values.
+- **ALTER SEQUENCE MAXVALUE**  cannot be used in functions and stored procedures.
+- After the maximum value of a sequence is changed, the cache of the sequence in all sessions is cleared.
+- If the LARGE identifier is used when a sequence is created, the LARGE identifier must be used when the sequence is altered.
+- The  **ALTER SEQUENCE**  statement blocks the invocation of  **nextval**,  **setval**,  **currval**, and  **lastval**.
 
 ## Syntax<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s794bdb8d97844eb7aa7d1d6cdf896ac9"></a>
 
--   Change the parameters of a sequence.
+- Change the parameters of a sequence.
 
     ```
     ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name [ INCREMENT [ BY ] increment ]
@@ -24,44 +24,42 @@
         [ OWNED BY { table_name.column_name | NONE } ] ;
     ```
 
-
--   Change the owner of a sequence.
+- Change the owner of a sequence.
 
     ```
     ALTER [ LARGE ] SEQUENCE [ IF EXISTS ] name OWNER TO new_owner;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_s8277cc73aecc4f20845d2ddf456a20e7"></a>
 
--   name
+- name
 
     Specifies the name of the sequence to be modified.
 
--   IF EXISTS
+- IF EXISTS
 
     Sends a notice instead of an error when you are modifying a nonexisting sequence.
 
--   INCREMENT
+- INCREMENT
 
     Specifies the step for the sequence.
 
--   MINVALUE minvalue | NO MINVALUE| NOMINVALUE
+- MINVALUE minvalue | NO MINVALUE| NOMINVALUE
     Specifies the minimum value of the sequence. If  **MINVALUE**  is not declared, or  **NO MINVALUE**  is declared, the default value of the ascending sequence is  **1**, and that of the descending sequence is  **-2<sup>63</sup>+1** or **-2<sup>127</sup>+1** if it's also a LARGE sequence.  **NOMINVALUE**  is equivalent to  **NO MINVALUE**.
 
--   MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE
+- MAXVALUE maxvalue | NO MAXVALUE| NOMAXVALUE
 
     Specifies the maximum value of the sequence. If  **MAXVALUE**  is not declared, or  **NO MAXVALUE**  is declared, the default value of the ascending sequence is  **2<sup>63</sup>-1** or **2<sup>127</sup>-1** if it's also a LARGE sequence, and that of the descending sequence is  **-1**.  **NOMAXVALUE**  is equivalent to  **NO MAXVALUE**.
 
--   START
+- START
 
     Specifies the start value of the sequence.
 
--   CACHE
+- CACHE
 
     Specifies the number of sequences stored in the memory for quick access purposes. If this parameter is not specified, the old cache value is retained.
 
--   CYCLE
+- CYCLE
 
     Recycles sequences after the number of sequences reaches  **maxvalue**  or  **minvalue**.
 
@@ -71,11 +69,11 @@
 
     If  **CYCLE**  is specified, the sequence uniqueness cannot be ensured.
 
--   RESTART
+- RESTART
 
     Specifies the nextval of the sequence. If the value of restart is not specified, the sequence will restart from its start value by default.
 
--   OWNED BY
+- OWNED BY
 
     Associates a sequence with a specified column included in a table. In this way, the sequence will be deleted when you delete its associated column or the table where the column belongs to.
 
@@ -85,10 +83,9 @@
 
     If  **OWNED BY NONE**  is used, all existing associations will be deleted.
 
--   new\_owner
+- new\_owner
 
     Specifies the username of the new owner of the sequence. To change the owner, you must also be a direct or indirect member of the new role, and this role must have  **CREATE**  permission on the sequence's schema.
-
 
 ## Examples<a name="en-us_topic_0283137303_en-us_topic_0237122071_en-us_topic_0062358310_sd7a0dca78f6844d79a0ec70fb4213769"></a>
 

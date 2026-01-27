@@ -2,7 +2,7 @@
 
 Configuration setting functions are used for querying and modifying configuration parameters during running.
 
--   current\_setting\(setting\_name\)
+- current\_setting\(setting\_name\)
 
     Description: Specifies the current setting.
 
@@ -21,25 +21,25 @@ Configuration setting functions are used for querying and modifying configuratio
     (1 row)
     ```
 
--   set\_working\_grand\_version\_num\_manually\(tmp\_version\)
+- set\_working\_grand\_version\_num\_manually\(tmp\_version\)
 
     Description: Upgrades new features of the database by switching the authorization version.
 
     Return type: void
 
--   shell\_in\(type\)
+- shell\_in\(type\)
 
     Description: Inputs a route for the shell type that has not yet been filled.
 
     Return type: void
 
--   shell\_out\(type\)
+- shell\_out\(type\)
 
     Description: Outputs a route for the shell type that has not yet been filled.
 
     Return type: void
 
--   set\_config\(setting\_name, new\_value, is\_local\)
+- set\_config\(setting\_name, new\_value, is\_local\)
 
     Description: Sets the parameter and returns a new value.
 
@@ -57,5 +57,3 @@ Configuration setting functions are used for querying and modifying configuratio
      off
     (1 row)
     ```
-
-

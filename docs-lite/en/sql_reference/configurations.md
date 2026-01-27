@@ -8,8 +8,7 @@ Each text search function that depends on a configuration has an optional argume
 
 To make it easier to build custom text search configurations, a configuration is built up from simpler database objects. openGauss's text search facility provides the following types of configuration-related database objects:
 
--   Text search parsers break documents into tokens and classify each token \(for example, as words or numbers\).
--   Text search dictionaries convert tokens to normalized form and reject stop words.
--   Text search templates provide the functions underlying dictionaries. \(A dictionary simply specifies a template and a set of parameters for the template.\)
--   Text search configurations select a parser and a set of dictionaries to use to normalize the tokens produced by the parser.
-
+- Text search parsers break documents into tokens and classify each token \(for example, as words or numbers\).
+- Text search dictionaries convert tokens to normalized form and reject stop words.
+- Text search templates provide the functions underlying dictionaries. \(A dictionary simply specifies a template and a set of parameters for the template.\)
+- Text search configurations select a parser and a set of dictionaries to use to normalize the tokens produced by the parser.

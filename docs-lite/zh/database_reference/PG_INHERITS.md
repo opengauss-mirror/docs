@@ -44,4 +44,3 @@ PG\_INHERITS系统表记录关于表继承层次的信息。数据库里每个�
 </tr>
 </tbody>
 </table>
-

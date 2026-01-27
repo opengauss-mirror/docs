@@ -4,20 +4,20 @@
 
 openGauss支持使用gs\_dump工具导出某个数据库级的内容，包含数据库的数据和所有对象定义。可根据需要自定义导出如下信息：
 
--   导出数据库全量信息，包含数据和所有对象定义。
+- 导出数据库全量信息，包含数据和所有对象定义。
 
     使用导出的全量信息可以创建一个与当前库相同的数据库，且库中数据也与当前库相同。
 
--   仅导出所有对象定义，包括：库定义、函数定义、模式定义、表定义、索引定义和存储过程定义等。
+- 仅导出所有对象定义，包括：库定义、函数定义、模式定义、表定义、索引定义和存储过程定义等。
 
     使用导出的对象定义，可以快速创建一个相同的数据库，但是库中并无原数据库的数据。
 
--   仅导出数据，不包含所有对象定义。
+- 仅导出数据，不包含所有对象定义。
 
 ### 操作步骤<a name="zh-cn_topic_0283136854_zh-cn_topic_0237121169_zh-cn_topic_0096392335_s3e29cf3b34314c088216013e01293af6"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用gs\_dump导出postgres数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用gs\_dump导出postgres数据库。
 
     ```
     gs_dump -U jack -f /home/omm/backup/userdatabase_backup.tar -p 8000 postgres -F t 
@@ -86,7 +86,6 @@ openGauss支持使用gs\_dump工具导出某个数据库级的内容，包含数
 
     其他参数说明请参见《工具与命令参考》中“服务端工具 \> gs\_dump”章节。
 
-
 ### 示例<a name="zh-cn_topic_0283136854_zh-cn_topic_0237121169_zh-cn_topic_0096392335_s3e34e9e7c7e948d49d1f24d6038514c0"></a>
 
 示例一：执行gs\_dump，导出postgres数据库全量信息，导出文件格式为sql文本格式。
@@ -129,14 +128,14 @@ gs_dump[port='8000'][postgres][2018-11-14 11:25:18]: total time: 1161  ms
 
 openGauss目前支持使用gs\_dump工具导出模式级的内容，包含模式的数据和定义。用户可通过灵活的自定义方式导出模式内容，不仅支持选定一个模式或多个模式的导出，还支持排除一个模式或者多个模式的导出。可根据需要自定义导出如下信息：
 
--   导出模式全量信息，包含数据和对象定义。
--   仅导出数据，即模式包含表中的数据，不包含对象定义。
--   仅导出模式对象定义，包括：表定义、存储过程定义和索引定义等。
+- 导出模式全量信息，包含数据和对象定义。
+- 仅导出数据，即模式包含表中的数据，不包含对象定义。
+- 仅导出模式对象定义，包括：表定义、存储过程定义和索引定义等。
 
 ### 操作步骤<a name="zh-cn_topic_0283136726_zh-cn_topic_0237121170_zh-cn_topic_0096392705_se1377b9a87714047bb07fd6d163c6734"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用gs\_dump同时导出hr和public模式。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用gs\_dump同时导出hr和public模式。
 
     ```
     gs_dump -U jack -f /home/omm/backup/MPPDB_schema_backup -p 8000 human_resource -n hr -n public -F d 
@@ -211,7 +210,6 @@ openGauss目前支持使用gs\_dump工具导出模式级的内容，包含模式
 
     其他参数说明请参见《工具与命令参考》中“服务端工具 \> gs\_dump”章节。
 
-
 ### 示例<a name="zh-cn_topic_0283136726_zh-cn_topic_0237121170_zh-cn_topic_0096392705_s221cf543e4004d598aa6fafa8b79f843"></a>
 
 示例一：执行gs\_dump，导出hr模式全量信息，导出文件格式为文本格式。
@@ -281,14 +279,14 @@ gs_dump[port='8000'][human_resource][2018-12-13 09:40:24]: total time: 896  ms
 
 openGauss支持使用gs\_dump工具导出表级的内容，包含表定义和表数据。视图、序列和外表属于特殊的表。用户可通过灵活的自定义方式导出表内容，不仅支持选定一个表或多个表的导出，还支持排除一个表或者多个表的导出。可根据需要自定义导出如下信息：
 
--   导出表全量信息，包含表数据和表定义。
--   仅导出数据，不包含表定义。
--   仅导出表定义。
+- 导出表全量信息，包含表数据和表定义。
+- 仅导出数据，不包含表定义。
+- 仅导出表定义。
 
 ### 操作步骤<a name="zh-cn_topic_0283137162_zh-cn_topic_0237121171_zh-cn_topic_0096393572_sfe5d77987a274a64aaf2d58f17c4a2b9"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用gs\_dump同时导出指定表hr.staffs和hr.employments。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用gs\_dump同时导出指定表hr.staffs和hr.employments。
 
     ```
     gs_dump -U jack -f /home/omm/backup/MPPDB_table_backup -p 8000 human_resource -t hr.staffs -t hr.employments -F d
@@ -371,12 +369,10 @@ openGauss支持使用gs\_dump工具导出表级的内容，包含表定义和表
 
     其他参数说明请参见《工具与命令参考》中“服务端工具 \> gs\_dump”章节。
 
-
 ### 示例<a name="zh-cn_topic_0283137162_zh-cn_topic_0237121171_zh-cn_topic_0096393572_s2612a8b058f24a14b1dfa8efd6f4c410"></a>
 
 >[!NOTE]说明 
 下方示例导出后，在导入恢复前，需要确保存在导出表所在的schema。
-
 
 示例一：执行gs\_dump，导出表hr.staffs的定义和数据，导出文件格式为文本格式。
 
@@ -467,5 +463,3 @@ Password:
 gs_dump[port='8000'][jack][2018-11-14 17:21:18]: dump database human_resource successfully
 gs_dump[port='8000'][jack][2018-11-14 17:21:23]: total time: 4239  ms
 ```
-
-

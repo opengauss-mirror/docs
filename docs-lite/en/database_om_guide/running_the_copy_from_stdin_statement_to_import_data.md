@@ -4,8 +4,8 @@
 
 Run the  **COPY FROM STDIN**  statement to import data to openGauss in either of the following ways:
 
--   Write data into openGauss by typing. For details, see  [COPY](../sql_reference/copy.md).
--   Import data from a file or database to openGauss through the CopyManager interface driven by JDBC. You can use any parameters in the  **COPY**  syntax.
+- Write data into openGauss by typing. For details, see  [COPY](../sql_reference/copy.md).
+- Import data from a file or database to openGauss through the CopyManager interface driven by JDBC. You can use any parameters in the  **COPY**  syntax.
 
 ## Introduction to the CopyManager Class<a name="EN-US_TOPIC_0289900684"></a>
 
@@ -126,9 +126,9 @@ Handle errors that occurred during data import.
 
 Errors that occur when data is imported are divided into data format errors and non-data format errors.
 
--   Data format errors
+- Data format errors
 
-    When creating a foreign table, specify  **LOG INTO **_error\_table\_name_. Data format errors during data import will be written into the specified table. You can run the following SQL statement to query error details:
+    When creating a foreign table, specify  **LOG INTO**_error\_table\_name_. Data format errors during data import will be written into the specified table. You can run the following SQL statement to query error details:
 
     ```
     openGauss=# SELECT * FROM error_table_name;
@@ -192,8 +192,7 @@ Errors that occur when data is imported are divided into data format errors and 
     </tbody>
     </table>
 
-
--   Non-data format errors
+- Non-data format errors
 
     A non-data format error leads to the failure of an entire data import task. You can locate and troubleshoot a non-data format error based on the error message displayed during data import.
 

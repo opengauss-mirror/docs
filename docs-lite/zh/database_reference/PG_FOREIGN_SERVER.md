@@ -89,4 +89,3 @@ PG\_FOREIGN\_SERVER系统表存储外部服务器定义。一个外部服务器�
 </tr>
 </tbody>
 </table>
-

@@ -6,8 +6,8 @@ In some cases, the administrator must forcibly terminate abnormal sessions to ke
 
 ## Procedure<a name="section1678174320128"></a>
 
-1.  Log in to the host as the OS user  **omm**.
-2.  Run the following command to connect to the database:
+1. Log in to the host as the OS user  **omm**.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -15,7 +15,7 @@ In some cases, the administrator must forcibly terminate abnormal sessions to ke
 
     **postgres**  is the name of the database, and  **8000**  is the port number.
 
-3.  Find the thread ID of the faulty session from the current active session view.
+3. Find the thread ID of the faulty session from the current active session view.
 
     ```
     SELECT datid, pid, state, query FROM pg_stat_activity; 
@@ -31,7 +31,7 @@ In some cases, the administrator must forcibly terminate abnormal sessions to ke
     (2 rows) 
     ```
 
-4.  Terminate the session using its thread ID.
+4. Terminate the session using its thread ID.
 
     ```
     SELECT pg_terminate_backend(139834762094352);
@@ -52,5 +52,3 @@ In some cases, the administrator must forcibly terminate abnormal sessions to ke
     FATAL:  terminating connection due to administrator command 
     FATAL:  terminating connection due to administrator command The connection to the server was lost. Attempting reset: Succeeded.
     ```
-
-

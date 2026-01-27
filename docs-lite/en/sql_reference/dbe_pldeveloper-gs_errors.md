@@ -65,4 +65,3 @@ After the  **plsql\_show\_all\_error**  parameter is enabled, if an error occurs
 </tr>
 </tbody>
 </table>
-

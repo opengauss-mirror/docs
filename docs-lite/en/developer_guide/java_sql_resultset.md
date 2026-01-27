@@ -955,6 +955,6 @@ This section describes  **java.sql.ResultSet**, the API for execution result set
 </table>
 
 >[!NOTE]NOTE 
->-   One statement cannot have multiple open ResultSets.
->-   The cursor that is used for traversing the ResultSet cannot be open after being committed.
-
+>
+>- One statement cannot have multiple open ResultSets.
+>- The cursor that is used for traversing the ResultSet cannot be open after being committed.

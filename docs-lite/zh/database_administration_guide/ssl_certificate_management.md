@@ -14,7 +14,7 @@ Linux环境安装了openssl组件。
 
 ### 自认证证书生成过程<a name="zh-cn_topic_0283137709_zh-cn_topic_0237121096_zh-cn_topic_0059777789_section2972238310327"></a>
 
-1.  搭建CA环境。
+1. 搭建CA环境。
 
     ```
     --假设用户为omm已存在,搭建CA的路径为test
@@ -37,7 +37,7 @@ Linux环境安装了openssl组件。
     --至此CA环境搭建完成
     ```
 
-2.  生成根私钥。
+2. 生成根私钥。
 
     ```
     --生成CA私钥
@@ -53,7 +53,7 @@ Linux环境安装了openssl组件。
     Verifying - Enter pass phrase for demoCA/private/cakey.pem:
     ```
 
-3.  生成根证书请求文件。
+3. 生成根证书请求文件。
 
     ```
     --生成CA根证书申请文件careq.pem
@@ -85,7 +85,7 @@ Linux环境安装了openssl组件。
     An optional company name []:
     ```
 
-4.  生成自签发根证书。
+4. 生成自签发根证书。
 
     ```
     --生成根证书时，需要修改openssl.cnf文件，设置basicConstraints=CA:TRUE
@@ -128,7 +128,7 @@ Linux环境安装了openssl组件。
     --至此CA根证书自签发完成，根证书demoCA/cacert.pem。
     ```
 
-5.  生成服务端证书私钥，RSA和ECDSA加密方式可以根据需要选择其中一种。
+5. 生成服务端证书私钥，RSA和ECDSA加密方式可以根据需要选择其中一种。
 
     ```
     --生成RSA服务端证书私钥文件server.key
@@ -154,7 +154,7 @@ Linux环境安装了openssl组件。
     gs_guc encrypt -M server -D ./
     ```
 
-6.  生成服务端证书请求文件。
+6. 生成服务端证书请求文件。
 
     ```
     --生成服务器证书请求文件server.req
@@ -184,7 +184,7 @@ Linux环境安装了openssl组件。
     An optional company name []:
     ```
 
-7.  生成服务端证书。
+7. 生成服务端证书。
 
     ```
     --生成服务端/客户端证书时，修改openssl.cnf文件，设置basicConstraints=CA:FALSE
@@ -229,7 +229,7 @@ Linux环境安装了openssl组件。
     Data Base Updated
     ```
 
-8.  客户端证书，私钥的生成。
+8. 客户端证书，私钥的生成。
 
     生成客户端证书和客户端证书私钥的方法和要求与服务器相同。
 
@@ -253,7 +253,7 @@ Linux环境安装了openssl组件。
     openssl pkcs8 -topk8 -outform DER -in client.key -out client.key.pk8 -nocrypt
     ```
 
-9.  吊销证书列表的生成。
+9. 吊销证书列表的生成。
 
     如果需要吊销列表，可按照如下方法生成：
 
@@ -278,7 +278,8 @@ Linux环境安装了tassl组件。
 
 ### 自认证证书生成过程<a name="zh-cn_topic_0283137709_zh-cn_topic_0237121096_zh-cn_topic_0059777789_section2972238310327"></a>
 
-1.  生成自签名CA证书。
+1. 生成自签名CA证书。
+
     ```
     --假设tassl的安装路径为/home/omm/tassl
     --copy 配置文件openssl.cnf到certs下
@@ -304,7 +305,7 @@ Linux环境安装了tassl组件。
     其中-days参数指定证书的有效天数，本例取值1500
     ```
 
-2.  生成服务器签名证书-私钥对。
+2. 生成服务器签名证书-私钥对。
 
     ```
     --生成服务器签名私钥
@@ -319,7 +320,7 @@ Linux环境安装了tassl组件。
     其中-days参数指定证书的有效天数，本例取值1500
     ```
 
-3.  生成服务器加密证书-私钥对。
+3. 生成服务器加密证书-私钥对。
 
     ```
     与签名证书私钥对步骤相同，仅输出文件名称不同
@@ -331,8 +332,7 @@ Linux环境安装了tassl组件。
     openssl x509 -sm3 -req -days 1500 -in server_enc.csr -CA cacert.pem -CAkey CA.key -extfile openssl.cnf -extensions v3enc_req -out server_enc.crt -CAcreateserial
     ```
 
-
-4.  生成客户端签名证书-私钥对。
+4. 生成客户端签名证书-私钥对。
 
     ```
     --生成客户端签名私钥
@@ -347,7 +347,7 @@ Linux环境安装了tassl组件。
     其中-days参数指定证书的有效天数，本例取值1500
     ```
 
-5.  生成客户端加密证书-私钥对。
+5. 生成客户端加密证书-私钥对。
 
     ```
     与签名证书私钥对步骤相同，仅输出文件名称不同
@@ -359,7 +359,7 @@ Linux环境安装了tassl组件。
     openssl x509 -sm3 -req -days 1500 -in client_enc.csr -CA cacert.pem -CAkey CA.key -extfile openssl.cnf -extensions v3enc_req -out client_enc.crt -CAcreateserial
     ```
 
-6.  若有需要，对私钥添加密码保护,并生成私钥密码保护文件
+6. 若有需要，对私钥添加密码保护,并生成私钥密码保护文件
 
     ```
     --保护服务器签名私钥
@@ -379,6 +379,7 @@ Linux环境安装了tassl组件。
     openssl ec -sm4 -in client_enc.key  -out client_enc.key  -passout pass:XXXXX
     gs_guc generate -S XXXXX -D ./  -o client_enc
     ```
+
     密码保护文件与相应的私钥文件需放在同一路径下。
 
 ## 证书替换

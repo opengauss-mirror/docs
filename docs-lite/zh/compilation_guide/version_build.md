@@ -4,8 +4,6 @@ openGauss轻量版的编译过程和生成安装包的过程已经写成了一�
 
 本章节主要介绍openGauss轻量版本编译和打包流程。
 
--   **[编译前准备](preparations.md)**  
+- **[编译前准备](preparations.md)**  
 
--   **[轻量版安装包编译](building_the_lite_installation_package.md)**  
-
-
+- **[轻量版安装包编译](building_the_lite_installation_package.md)**  

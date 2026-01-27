@@ -12,8 +12,8 @@ When changing the storage directory of a configuration file, set  **data\_direct
 
 **Parameter description**: Specifies the openGauss  **data**  directory. Only users with the  **sysadmin**  permission can access this parameter. You can set this parameter using one of the following methods:
 
--   Set it when you install the openGauss.
--   This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
+- Set it when you install the openGauss.
+- This parameter is a POSTMASTER parameter. Set it based on instructions provided in  [Table 1](../database_administration_guide/reset_parameters.md#en-us_topic_0283137176_en-us_topic_0237121562_en-us_topic_0059777490_t91a6f212010f4503b24d7943aed6d846).
 
 **Value range**: a string, consisting of one or more characters
 
@@ -80,4 +80,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 >[!TIP]NOTICE 
 >
 >If this parameter is set to  **off**, the .so file can be placed in any accessible directory or the .so file provided by the system can be used, which poses security risks. Therefore, you are not advised to set this parameter to  **off**.
-

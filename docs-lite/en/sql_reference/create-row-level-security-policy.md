@@ -16,12 +16,12 @@ Row-level access control policies can be applied to a specified user \(role\) or
 
 ## Precautions<a name="en-us_topic_0283137345_en-us_topic_0237122109_section12765201893310"></a>
 
--   Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, unlogged tables, and hash tables.
--   Row-level access control policies cannot be defined for foreign tables and local temporary tables.
--   Row-level access control policies cannot be defined for views.
--   A maximum of 100 row-level access control policies can be defined for a table.
--   System administrators are not affected by row-level access control policies and can view all data in a table.
--   Tables queried by using SQL statements, views, functions, and stored procedures are affected by row-level access control policies.
+- Row-level access control policies can be defined for row-store tables, row-store partitioned tables, column-store tables, column-store partitioned tables, unlogged tables, and hash tables.
+- Row-level access control policies cannot be defined for foreign tables and local temporary tables.
+- Row-level access control policies cannot be defined for views.
+- A maximum of 100 row-level access control policies can be defined for a table.
+- System administrators are not affected by row-level access control policies and can view all data in a table.
+- Tables queried by using SQL statements, views, functions, and stored procedures are affected by row-level access control policies.
 
 ## Syntax<a name="en-us_topic_0283137345_en-us_topic_0237122109_section16798192723415"></a>
 
@@ -35,15 +35,15 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
 ## Parameter Description<a name="en-us_topic_0283137345_en-us_topic_0237122109_section11851526346"></a>
 
--   **policy\_name**
+- **policy\_name**
 
     Specifies the name of a row-level access control policy to be created. The names of row-level access control policies for a table must be unique.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of a table to which a row-level access control policy is applied.
 
--   **PERMISSIVE | RESTRICTIVE**
+- **PERMISSIVE | RESTRICTIVE**
 
     **PERMISSIVE**  enables the permissive policy for row-level access control. The conditions of the permissive policy are joined through the OR expression.
 
@@ -55,7 +55,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
 
     The default value is  **PERMISSIVE**.
 
--   **command**
+- **command**
 
     Specifies the SQL operations affected by a row-level access control policy, including  **ALL**,  **SELECT**,  **UPDATE**, and  **DELETE**. If this parameter is not specified, the default value  **ALL**  will be used, covering  **SELECT**,  **UPDATE**, and  **DELETE**.
 
@@ -137,7 +137,7 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     </tbody>
     </table>
 
--   **role\_name**
+- **role\_name**
 
     Specifies database users affected by a row-level access control policy.
 
@@ -146,13 +146,11 @@ CREATE [ ROW LEVEL SECURITY ] POLICY policy_name ON table_name
     >[!TIP]NOTICE 
     >System administrators are not affected by row access control.
 
-
--   **using\_expression**
+- **using\_expression**
 
     Specifies an expression defined for a row-level access control policy \(return type: boolean\).
 
     The expression cannot contain aggregate functions or window functions. In the statement rewriting phase of a query, if row-level access control for a data table is enabled, the expressions that meet the specified conditions will be added to the plan tree. The expression is calculated for each tuple in the data table. For  **SELECT**,  **UPDATE**, and  **DELETE**, row data is visible to the current user only when the return value of the expression is  **TRUE**. If the expression returns  **FALSE**, the tuple is invisible to the current user. In this case, the user cannot view the tuple through the  **SELECT**  statement, update the tuple through the  **UPDATE**  statement, or delete the tuple through the  **DELETE**  statement.
-
 
 ## Examples<a name="en-us_topic_0283137345_en-us_topic_0237122109_section17979101023515"></a>
 
@@ -229,4 +227,3 @@ openGauss=# EXPLAIN(COSTS OFF) SELECT * FROM all_data;
 ## Helpful Links<a name="en-us_topic_0283137345_en-us_topic_0237122109_section1426016489355"></a>
 
 [DROP ROW LEVEL SECURITY POLICY](drop-row-level-security-policy.md),  [ALTER ROW LEVEL SECURITY POLICY](alter-row-level-security-policy.md)
-

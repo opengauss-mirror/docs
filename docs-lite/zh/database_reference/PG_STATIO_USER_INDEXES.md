@@ -64,4 +64,3 @@ PG\_STATIO\_USER\_INDEXES视图显示命名空间中所有用户关系表索引�
 </tr>
 </tbody>
 </table>
-

@@ -4,28 +4,26 @@ Run the  **CREATE TABLE LIKE**  statement to create a copy of the original table
 
 ## Procedure<a name="en-us_topic_0283136983_en-us_topic_0237121143_en-us_topic_0165787115_section1349410417334"></a>
 
-1.  Run the  **CREATE TABLE LIKE**  statement to create the copy  **customer\_t\_copy**  of the  **customer\_t**  table.
+1. Run the  **CREATE TABLE LIKE**  statement to create the copy  **customer\_t\_copy**  of the  **customer\_t**  table.
 
     ```
     openGauss=# CREATE TABLE customer_t_copy (LIKE customer_t);
     ```
 
-2.  Run the  **INSERT INTO...SELECT**  statement to batch insert data of the original table into the copy.
+2. Run the  **INSERT INTO...SELECT**  statement to batch insert data of the original table into the copy.
 
     ```
     openGauss=# INSERT INTO customer_t_copy (SELECT * FROM customer_t);
     ```
 
-3.  Delete the original table.
+3. Delete the original table.
 
     ```
     openGauss=# DROP TABLE customer_t;
     ```
 
-4.  Run the  **ALTER TABLE**  statement to rename the copy to the name of the original table.
+4. Run the  **ALTER TABLE**  statement to rename the copy to the name of the original table.
 
     ```
     openGauss=# ALTER TABLE customer_t_copy RENAME TO customer_t;
     ```
-
-

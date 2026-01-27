@@ -14,13 +14,12 @@ The XFS file system has a pre-assignment mechanism. The file size is determined 
 
 ## Procedure<a name="section16959125763016"></a>
 
--   Select the default value \(64 KB\) for the XFS file system mount parameter allocsize to eliminate the problem.
+- Select the default value \(64 KB\) for the XFS file system mount parameter allocsize to eliminate the problem.
 
--   Add the  **--apparent-size**  parameter when using the  **du**  command to query the actual file size.
+- Add the  **--apparent-size**  parameter when using the  **du**  command to query the actual file size.
 
 ```
 du -sh file --apparent-size
 ```
 
--   If the XFS file system reclaims the pre-assigned space of a file, the  **du**  command displays the actual file size.
-
+- If the XFS file system reclaims the pre-assigned space of a file, the  **du**  command displays the actual file size.

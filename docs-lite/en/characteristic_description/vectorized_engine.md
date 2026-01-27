@@ -20,8 +20,8 @@ The vectorized engine is bound to the column-store technology, because data of e
 
 The advantages of the vectorized execution engine are as follows:
 
--   This reduces inter-node scheduling and improves CPU usage.
--   Because the same type of data is put together, it is easier to leverage the new optimization features of hardware and compilation.
+- This reduces inter-node scheduling and improves CPU usage.
+- Because the same type of data is put together, it is easier to leverage the new optimization features of hardware and compilation.
 
 ## Enhancements<a name="section21149265913"></a>
 
@@ -34,4 +34,3 @@ None.
 ## Dependencies<a name="section20491151513592"></a>
 
 It depends on column store.
-

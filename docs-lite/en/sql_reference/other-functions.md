@@ -1,12 +1,12 @@
 # Other Functions<a name="EN-US_TOPIC_0289900063"></a>
 
--   plan\_seed\(\)
+- plan\_seed\(\)
 
     Description: Obtains the seed value of the previous query statement \(internal use\).
 
     Return type: int
 
--   pg\_stat\_get\_env\(\)
+- pg\_stat\_get\_env\(\)
 
     Description: Obtains the environment variable information of the current node. Only users with the  **sysadmin**  or  **monitor admin**  permission can access the environment variable information.
 
@@ -22,61 +22,61 @@
     (1 row)
     ```
 
--   pg\_catalog.plancache\_clean\(\)
+- pg\_catalog.plancache\_clean\(\)
 
     Description: Clears the global plan cache that is not used on nodes.
 
     Return type: Boolean
 
--   pg\_catalog.plancache\_status\(\)
+- pg\_catalog.plancache\_status\(\)
 
     Description: Displays information about the global plan cache on nodes. The information returned by the function is the same as that in  [GLOBAL\_PLANCACHE\_STATUS](global_plancache_status.md).
 
     Return type: record
 
--   textlen\(text\)
+- textlen\(text\)
 
     Description: Provides the method of querying the logical length of text.
 
     Return type: int
 
--   threadpool\_status\(\)
+- threadpool\_status\(\)
 
     Description: Displays the status of worker threads and sessions in the thread pool.
 
     Return type: record
 
--   get\_local\_active\_session\(\)
+- get\_local\_active\_session\(\)
 
     Description: Provides sampling records of the historical active sessions stored in the memory of the current node.
 
     Return type: record
 
--   pg\_stat\_get\_thread\(\)
+- pg\_stat\_get\_thread\(\)
 
     Description: Provides status information about all threads on the current node. Users with the  **sysadmin**  or  **monitor admin**  permission can view information about all threads, and common users can view only their own thread information.
 
     Return type: record
 
--   pg\_stat\_get\_sql\_count\(\)
+- pg\_stat\_get\_sql\_count\(\)
 
     Description: Provides the counts of the  **SELECT**,  **UPDATE**,  **INSERT**,  **DELETE**, and  **MERGE INTO**  statements executed on the current node. Users with the  **sysadmin**  or  **monitor admin**  permission can view information about all users, and common users can view only their own statistics.
 
     Return type: record
 
--   pg\_stat\_get\_data\_senders\(\)
+- pg\_stat\_get\_data\_senders\(\)
 
     Description: Provides detailed information about the data-copy sending thread active at the moment.
 
     Return type: record
 
--   get\_wait\_event\_info\(\)
+- get\_wait\_event\_info\(\)
 
     Description: Provides detailed information about the wait event.
 
     Return type: record
 
--   generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
+- generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
 
     Description: Generates system diagnosis reports based on two snapshots. You need to run the command in the  **postgres**  database. By default, the initial user or the user with the  **monadmin**  permission can access the database. In V500R001C20SPC002 and earlier versions, the initial user or the user with the  **sysadmin**  permission can access the database. The result can be queried only in the system database but cannot be queried in the user database.
 
@@ -131,25 +131,25 @@
     </tbody>
     </table>
 
--   create\_wdr\_snapshot\(\)
+- create\_wdr\_snapshot\(\)
 
     Description: Manually generates system diagnosis snapshots. This function requires the  **sysadmin**  permission.
 
     Return type: text
 
--   kill\_snapshot\(\)
+- kill\_snapshot\(\)
 
     Description: Kills the WDR snapshot backend thread. Users who invoke this function must have the  **SYSADMIN**  permission, the  **REPLICATION**  permission, or inherit the  **gs\_role\_replication**  permission of the built-in role.
 
     Return type: void
 
--   capture\_view\_to\_json\(text,integer\)
+- capture\_view\_to\_json\(text,integer\)
 
     Description: Saves the view result to the directory specified by GUC:  **perf\_directory**. If  **is\_crossdb**  is set to  **1**, the view is accessed once for all databases. If the value of  **is\_crossdb**  is  **0**, the current database is accessed only once. Only users with the  **sysadmin**  or  **monitor admin**  permission can execute this function.
 
     Return type: int
 
--   reset\_unique\_sql
+- reset\_unique\_sql
 
     Description: Clears the unique SQL statements in the memory of the database node. \(The  **sysadmin**  permission is required.\)
 
@@ -192,10 +192,10 @@
     </table>
 
     >[!TIP]NOTICE 
-    >-   The values  **GLOBAL**  and  **LOCAL**  of  **scope**  apply to distributed databases. For openGauss, the values have the same meaning, indicating that the local node is cleared.
-    >-   The value  **BY\_CNID**  of  **clean\_type**  applies only to distributed databases and is invalid for openGauss.
+    >- The values  **GLOBAL**  and  **LOCAL**  of  **scope**  apply to distributed databases. For openGauss, the values have the same meaning, indicating that the local node is cleared.
+    >- The value  **BY\_CNID**  of  **clean\_type**  applies only to distributed databases and is invalid for openGauss.
 
--   wdr\_xdb\_query\(db\_name\_str text, query text\)
+- wdr\_xdb\_query\(db\_name\_str text, query text\)
 
     Description: Provides the capability of executing local cross-database queries. For example, when connecting to the Postgres database, access tables in the  **test**  database.
 
@@ -205,61 +205,61 @@
 
     Return type: record
 
--   pg\_wlm\_jump\_queue\(pid int\)
+- pg\_wlm\_jump\_queue\(pid int\)
 
     Description: Moves a task to the top of the queue of the primary node of the database.
 
     Return type: Boolean
 
-    -   **true**: success
-    -   **false**: failure
+    - **true**: success
+    - **false**: failure
 
--   gs\_wlm\_switch\_cgroup\(pid int, cgroup text\)
+- gs\_wlm\_switch\_cgroup\(pid int, cgroup text\)
 
     Description: Moves a job to another Cgroup to change the job priority.
 
     Return type: Boolean
 
-    -   **true**: success
-    -   **false**: failure
+    - **true**: success
+    - **false**: failure
 
--   pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
+- pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
 
     Description: Records information about the memory context  **MemoryContextName**  of the thread  **tid**  into the  *threadid***\_timestamp.log**  file in the  *$GAUSSLOG***/pg\_log/***$\{node\*name\}***/dumpmem**  directory.  _threadid*  can be obtained from  *sessid*  in the  **GS\_SESSION\_MEMORY\_DETAIL**  view. In the officially released version, only the  **MemoryContextName**  that is an empty string \(two single quotation marks indicate that the input is an empty string\) is accepted. In this case, all memory context information is recorded. Otherwise, no operation is performed. For the DEBUG version for internal development and test personnel to debug, you can specify the  **MemoryContextName**  to be counted. In this case, all the memory usage of the context is recorded in the specified file. Only the administrator can execute this function.
 
     Return type: Boolean
 
-    -   **true**: success
-    -   **false**: failure
+    - **true**: success
+    - **false**: failure
 
--   pg\_shared\_memctx\_detail\(MemoryContextName text\)
+- pg\_shared\_memctx\_detail\(MemoryContextName text\)
 
     Description: Records information about the memory context  **MemoryContextName**  into the  *threadid***\_timestamp.log**  file in the  *$GAUSSLOG***/pg\_log/***$\{node\*name\}_**/dumpmem**  directory. This function is provided only for internal development and test personnel to debug in the DEBUG version. Calling this function in the officially released version does not involve any operation. Only the administrator can execute this function.
 
     Return type: Boolean
 
-    -   **true**: success
-    -   **false**: failure
+    - **true**: success
+    - **false**: failure
 
--   local\_bgwriter\_stat\(\)
+- local\_bgwriter\_stat\(\)
 
     Description: Displays the information about pages flushed by the bgwriter thread of this instance, number of pages in the candidate buffer chain, and buffer elimination information.
 
     Return type: record
 
--   local\_candidate\_stat\(\)
+- local\_candidate\_stat\(\)
 
     Description: Displays the number of pages in the candidate buffer chain of this instance and buffer elimination information, including the normal buffer pool and segment buffer pool.
 
     Return type: record
 
--   local\_ckpt\_stat\(\)
+- local\_ckpt\_stat\(\)
 
     Description: Displays the information about checkpoints and flushing pages of the current instance.
 
     Return type: record
 
--   local\_double\_write\_stat\(\)
+- local\_double\_write\_stat\(\)
 
     Description: Displays the doublewrite file status of the current instance.
 
@@ -363,19 +363,19 @@
     </tbody>
     </table>
 
--   local\_single\_flush\_dw\_stat\(\)
+- local\_single\_flush\_dw\_stat\(\)
 
     Description: Displays the elimination of dual-write files on a single page in the instance.
 
     Return type: record
 
--   local\_pagewriter\_stat\(\)
+- local\_pagewriter\_stat\(\)
 
     Description: Displays the page flushing information and checkpoint information of the current instance.
 
     Return type: record
 
--   local\_redo\_stat\(\)
+- local\_redo\_stat\(\)
 
     Description: Displays the replay status of the current standby instance.
 
@@ -383,67 +383,67 @@
 
     Note: The returned replay status includes the current replay position and the replay position of the minimum restoration point.
 
--   local\_recovery\_status\(\)
+- local\_recovery\_status\(\)
 
     Description: Displays log flow control information about the primary and standby nodes.
 
     Return type: record
 
--   gs\_wlm\_node\_recover\(boolean isForce\)
+- gs\_wlm\_node\_recover\(boolean isForce\)
 
     Description: Obtains top SQL query statement-level statistics recorded in the current memory. If the input parameter is not  **0**, the information is cleared from the memory.
 
     Return type: record
 
--   gs\_wlm\_node\_clean\(cstring nodename\)
+- gs\_wlm\_node\_clean\(cstring nodename\)
 
     Description: Clears data after the dynamic load management node is faulty. Only administrators can execute this function. This function is called by the database instance management module. You are not advised to directly call this function. This view is not supported in a centralized or standalone system.
 
     Return type: Boolean
 
--   gs\_cgroup\_map\_ng\_conf\(group name\)
+- gs\_cgroup\_map\_ng\_conf\(group name\)
 
     Description: Reads the Cgroup configuration file of a specified logical database.
 
     Return type: record
 
--   gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
+- gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
 
     Description: Switches the Cgroup of a specified session.
 
     Return type: record
 
--   comm\_client\_info\(\)
+- comm\_client\_info\(\)
 
     Description: Queries information about active client connections of a single node.
 
     Return type: SETOF record
 
--   pg\_sync\_cstore\_delta\(text\)
+- pg\_sync\_cstore\_delta\(text\)
 
     Description: Synchronizes the delta table structure of a specified column-store table with that of the column-store primary table.
 
     Return type: bigint
 
--   pg\_sync\_cstore\_delta\(\)
+- pg\_sync\_cstore\_delta\(\)
 
     Description: Synchronizes the delta table structure of all column-store tables with that of the column-store primary table.
 
     Return type: bigint
 
--   pg\_get\_flush\_lsn\(\)
+- pg\_get\_flush\_lsn\(\)
 
     Description: Returns the position of the Xlog flushed from the current node.
 
     Return type: text
 
--   pg\_get\_sync\_flush\_lsn\(\)
+- pg\_get\_sync\_flush\_lsn\(\)
 
     Description: Returns the position of the Xlog flushed by the majority on the current node.
 
     Return type: text
 
--   gs\_create\_log\_tables\(\)
+- gs\_create\_log\_tables\(\)
 
     Description: Creates foreign tables and views for run logs and performance logs.
 
@@ -459,7 +459,7 @@
     (1 row)
     ```
 
--   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
+- dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
     Description: Obtains full SQL information at the database level. The result can be queried only in the system database but cannot be queried in the user database.
 
@@ -493,7 +493,7 @@
     </tbody>
     </table>
 
--   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
+- dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
     Description: Obtains slow SQL information at the database level. The result can be queried only in the system database but cannot be queried in the user database.
 
@@ -527,7 +527,7 @@
     </tbody>
     </table>
 
--   statement\_detail\_decode\(detail text, format text, pretty boolean\)
+- statement\_detail\_decode\(detail text, format text, pretty boolean\)
 
     Description: Parses the  **details**  column in a full or slow SQL statement. The result can be queried only in the system database but cannot be queried in the user database.
 
@@ -569,7 +569,7 @@
     </tbody>
     </table>
 
--   get\_prepared\_pending\_xid
+- get\_prepared\_pending\_xid
 
     Description: Returns nextxid when restoration is complete.
 
@@ -577,7 +577,7 @@
 
     Return type: text
 
--   pg\_clean\_region\_info
+- pg\_clean\_region\_info
 
     Description: Clears the regionmap.
 
@@ -585,7 +585,7 @@
 
     Return type: character varying
 
--   pg\_get\_delta\_info
+- pg\_get\_delta\_info
 
     Description: Obtains delta information from a single DN.
 
@@ -593,7 +593,7 @@
 
     Return type: part\_name text, live\_tuple bigint, data\_size bigint, and blocknum bigint
 
--   pg\_get\_replication\_slot\_name
+- pg\_get\_replication\_slot\_name
 
     Description: Obtains the slot name.
 
@@ -601,7 +601,7 @@
 
     Return type: text
 
--   pg\_get\_running\_xacts
+- pg\_get\_running\_xacts
 
     Description: Obtains running xact.
 
@@ -609,7 +609,7 @@
 
     Return type: handle integer, gxid xid, state tinyint, node text, xmin xid, vacuum boolean, timeline bigint, prepare\_xid xid, pid bigint, and next\_xid xid
 
--   pg\_get\_variable\_info
+- pg\_get\_variable\_info
 
     Description: Obtains the shared memory variable  *cache*.
 
@@ -617,7 +617,7 @@
 
     Return type: node\_name text, nextOid oid, nextXid xid, oldestXid xid, xidVacLimit xid, oldestXidDB oid, lastExtendCSNLogpage xid, startExtendCSNLogpage xid, nextCommitSeqNo xid, latestCompletedXid xid, and startupMaxXid xid
 
--   pg\_get\_xidlimit
+- pg\_get\_xidlimit
 
     Description: Obtains transaction ID information from the shared memory.
 
@@ -625,13 +625,13 @@
 
     Return type: nextXid xid, oldestXid xid, xidVacLimit xid, xidWarnLimit xid, xidStopLimit xid, xidWrapLimit xid, and oldestXidDB oid
 
--   get\_global\_user\_transaction\(\)
+- get\_global\_user\_transaction\(\)
 
     Description: Returns transaction information about each user on all nodes.
 
     Return type: node\_name name, usename name, commit\_counter bigint, rollback\_counter bigint, resp\_min bigint, resp\_max bigint, resp\_avg bigint, resp\_total bigint, bg\_commit\_counter bigint, bg\_rollback\_counter bigint, bg\_resp\_min bigint, bg\_resp\_max bigint, bg\_resp\_avg bigint, and bg\_resp\_total bigint
 
--   pg\_collation\_for
+- pg\_collation\_for
 
     Description: Returns the sorting rule corresponding to the input parameter string.
 
@@ -639,26 +639,26 @@
 
     Return type: text
 
--   pgxc\_unlock\_for\_sp\_database\(name Name\)
+- pgxc\_unlock\_for\_sp\_database\(name Name\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   pgxc\_lock\_for\_sp\_database\(name Name\)
+- pgxc\_lock\_for\_sp\_database\(name Name\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   copy\_error\_log\_create\(\)
+- copy\_error\_log\_create\(\)
 
     Description: Creates the error table \(**public.pgxc\_copy\_error\_log**\) required for creating the  **COPY FROM**  error tolerance mechanism.
 
     Return type: Boolean
 
     >[!NOTE]NOTE 
-    >-   This function attempts to create the  **public.pgxc\_copy\_error\_log**  table. For details about the table, see  [Table 7](#table138318280213).
-    >-   Create the B-tree index on the  **relname**  column and execute  **REVOKE ALL on public.pgxc\_copy\_error\_log FROM public**  to manage permissions for the error table \(the permissions are the same as those of the  **COPY**  statement\).
-    >-   **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value is  **off**  for GaussDB Kernel\).
-    >-   Same as the error table and the  **COPY**  statement, the function requires  **sysadmin**  or higher permissions.
-    >-   If the  **public.pgxc\_copy\_error\_log**  table or the  **copy\_error\_log\_relname\_idx**  index exists before the function creates it, the function will report an error and roll back.
+    >- This function attempts to create the  **public.pgxc\_copy\_error\_log**  table. For details about the table, see  [Table 7](#table138318280213).
+    >- Create the B-tree index on the  **relname**  column and execute  **REVOKE ALL on public.pgxc\_copy\_error\_log FROM public**  to manage permissions for the error table \(the permissions are the same as those of the  **COPY**  statement\).
+    >- **public.pgxc\_copy\_error\_log**  is a row-store table. Therefore, this function can be executed and  **COPY**  error tolerance is available only when row-store tables can be created in the database instance. Note that after the GUC parameter  **enable\_hadoop\_env**  is enabled, row-store tables cannot be created in the database instance \(the default value is  **off**  for GaussDB Kernel\).
+    >- Same as the error table and the  **COPY**  statement, the function requires  **sysadmin**  or higher permissions.
+    >- If the  **public.pgxc\_copy\_error\_log**  table or the  **copy\_error\_log\_relname\_idx**  index exists before the function creates it, the function will report an error and roll back.
 
     **Table  7**  Error table public.pgxc\_copy\_error\_log
 
@@ -716,7 +716,7 @@
     </tbody>
     </table>
 
--   dynamic\_func\_control\(scope text, function\_name text, action text, "\{params\}" text\[\]\)
+- dynamic\_func\_control\(scope text, function\_name text, action text, "\{params\}" text\[\]\)
 
     Description: Dynamically enables built-in functions. Currently, only full SQL statements can be dynamically enabled.
 
@@ -766,7 +766,7 @@
     </tbody>
     </table>
 
--   gs\_parse\_page\_bypath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
+- gs\_parse\_page\_bypath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
 
     Description: Parses a specified table page and returns the path for storing the parsed content.
 
@@ -817,7 +817,7 @@
     </tbody>
     </table>
 
--   gs\_xlogdump\_lsn\(start\_lsn text, end\_lsn text\)
+- gs\_xlogdump\_lsn\(start\_lsn text, end\_lsn text\)
 
     Description: Parses Xlogs within the specified LSN range and returns the path for storing the parsed content. You can use  **pg\_current\_xlog\_location\(\)**  to obtain the current Xlog position.
 
@@ -827,7 +827,7 @@
 
     Note: Only the system administrator or O&M administrator can execute this function.
 
--   gs\_xlogdump\_xid\(c\_xid xid\)
+- gs\_xlogdump\_xid\(c\_xid xid\)
 
     Description: Parses Xlogs of a specified XID and returns the path for storing the parsed content. You can use  **txid\_current\(\)**  to obtain the current XID.
 
@@ -837,7 +837,7 @@
 
     Note: Only the system administrator or O&M administrator can execute this function.
 
--   gs\_xlogdump\_tablepath\(path text, blocknum bigint, relation\_type text\)
+- gs\_xlogdump\_tablepath\(path text, blocknum bigint, relation\_type text\)
 
     Description: Parses logs corresponding to a specified table page and returns the path for storing the parsed content.
 
@@ -881,7 +881,7 @@
     </tbody>
     </table>
 
--   gs\_xlogdump\_parsepage\_tablepath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
+- gs\_xlogdump\_parsepage\_tablepath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
 
     Description: Parses the specified table page and logs corresponding to the table page and returns the path for storing the parsed content. It can be regarded as one execution of  **gs\_parse\_page\_bypath**  and  **gs\_xlogdump\_tablepath**. The prerequisite for executing this function is that the table file exists. To view logs of deleted tables, call  **gs\_xlogdump\_tablepath**.
 
@@ -932,7 +932,7 @@
     </tbody>
     </table>
 
--   gs\_index\_verify\(Oid oid, uint32:wq blkno\)
+- gs\_index\_verify\(Oid oid, uint32:wq blkno\)
 
     Description: Checks whether the sequence of keys on the UBtree index page or index tree is correct.
 
@@ -966,7 +966,7 @@
     </tbody>
     </table>
 
--   gs\_index\_recycle\_queue\(Oid oid, int type, uint32 blkno\)
+- gs\_index\_recycle\_queue\(Oid oid, int type, uint32 blkno\)
 
     Description: Parses the UBtree index recycling queue information.
 
@@ -1007,7 +1007,7 @@
     </tbody>
     </table>
 
--   gs\_stat\_wal\_entrytable\(int64 idx\)
+- gs\_stat\_wal\_entrytable\(int64 idx\)
 
     Description: Exports the content of the write-ahead log insertion status table in the Xlog.
 
@@ -1075,7 +1075,7 @@
     </tbody>
     </table>
 
--   gs\_walwriter\_flush\_position\(\)
+- gs\_walwriter\_flush\_position\(\)
 
     Description: Outputs the refresh position of write-ahead logs.
 
@@ -1205,7 +1205,7 @@
     </tbody>
     </table>
 
--   gs\_walwriter\_flush\_stat\(int operation\)
+- gs\_walwriter\_flush\_stat\(int operation\)
 
     Description: Collects statistics on the frequency of writing and synchronizing write-ahead logs, data volume, and Xlog file information.
 
@@ -1380,7 +1380,7 @@
     </tbody>
     </table>
 
--   gs\_comm\_proxy\_thread\_status\(\)
+- gs\_comm\_proxy\_thread\_status\(\)
 
     Description: Collects statistics on data packets sent and received by the proxy communication library  **comm\_proxy**  when a user-mode network is configured for the database instance.
 

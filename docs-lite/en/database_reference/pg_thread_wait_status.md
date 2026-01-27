@@ -1331,4 +1331,3 @@ The following table describes the corresponding wait events when  **wait\_status
 </tr>
 </tbody>
 </table>
-

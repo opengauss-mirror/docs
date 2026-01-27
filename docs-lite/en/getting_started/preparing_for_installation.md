@@ -2,7 +2,6 @@
 
 This section describes how to prepare and configure an environment for simplified openGauss installation. The simplified installation can be performed on a single node or on primary/standby nodes. Read this section carefully before installation. If the configuration in this section has been completed, skip this section.
 
--   **[Obtaining the Installation Package](../installation_guide/obtaining_the_installation_package.md)**  
+- **[Obtaining the Installation Package](../installation_guide/obtaining_the_installation_package.md)**  
 You can obtain the installation package from the openGauss open-source community.
--   **[Preparing the Software and Hardware Installation Environment](preparing_the_software_and_hardware_installation_environment.md)**  
-
+- **[Preparing the Software and Hardware Installation Environment](preparing_the_software_and_hardware_installation_environment.md)**  

@@ -8,8 +8,8 @@
 
 **取值范围**： 整型，0～268435455
 
--   0代表关闭openGauss数据库对象的CREATE、DROP、ALTER操作审计功能。
--   非0代表只审计openGauss的某类或者某些数据库对象的CREATE、DROP、ALTER操作。
+- 0代表关闭openGauss数据库对象的CREATE、DROP、ALTER操作审计功能。
+- 非0代表只审计openGauss的某类或者某些数据库对象的CREATE、DROP、ALTER操作。
 
 **取值说明**：
 
@@ -230,8 +230,6 @@
 </tbody>
 </table>
 
-
-
 ## audit\_dml\_state<a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_s761d19195b7b48e0b74f40375efd4ea7"></a>
 
 **参数说明**： 这个参数决定是否对具体表的INSERT、UPDATE、DELETE操作进行审计。
@@ -240,8 +238,8 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭具体表的DML操作（SELECT除外）审计功能。
--   1表示开启具体表的DML操作（SELECT除外）审计功能。
+- 0表示关闭具体表的DML操作（SELECT除外）审计功能。
+- 1表示开启具体表的DML操作（SELECT除外）审计功能。
 
 **默认值**： 0
 
@@ -253,8 +251,8 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭SELECT操作审计功能。
--   1表示开启SELECT审计操作功能。
+- 0表示关闭SELECT操作审计功能。
+- 1表示开启SELECT审计操作功能。
 
 **默认值**： 0
 
@@ -266,11 +264,10 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭过程或函数执行的审计功能。
--   1表示开启过程或函数执行的审计功能。
+- 0表示关闭过程或函数执行的审计功能。
+- 1表示开启过程或函数执行的审计功能。
 
 **默认值**： 0
-
 
 ## audit\_system\_function\_exec<a name="section9621132319"></a>
 
@@ -280,8 +277,8 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭对系统函数执行的审计功能。
--   1表示开启对系统函数执行的审计功能。
+- 0表示关闭对系统函数执行的审计功能。
+- 1表示开启对系统函数执行的审计功能。
 
 **默认值**： 0
 
@@ -437,8 +434,8 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭COPY审计功能。
--   1表示开启COPY审计功能。
+- 0表示关闭COPY审计功能。
+- 1表示开启COPY审计功能。
 
 **默认值**： 1
 
@@ -450,8 +447,8 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭SET审计功能。
--   1表示开启SET审计功能。
+- 0表示关闭SET审计功能。
+- 1表示开启SET审计功能。
 
 **默认值**： 0
 
@@ -463,17 +460,19 @@
 
 **取值范围**： 整型，0、1。
 
--   0表示关闭审计日志记录事务ID功能。
--   1表示开启审计日志记录事务ID功能。
+- 0表示关闭审计日志记录事务ID功能。
+- 1表示开启审计日志记录事务ID功能。
 
 **默认值**： 0
 
 >>[!TIP]须知
 >
 >如果开启此开关，审计日志中detail\_info信息则以xid开始，例如：
+>
 >```
 >detail_info: xid=14619 , create table t1(id int);
 >```
+>
 >对于不存在事务ID的审计行为，记录xid=NA。
 
 ## enableSeparationOfDuty<a name="zh-cn_topic_0283136929_zh-cn_topic_0237124747_zh-cn_topic_0059777487_s0a79ea55efa1431d8e3e06e4b8219cd6"></a>
@@ -484,8 +483,8 @@
 
 **取值范围**： 布尔型
 
--   on表示开启三权分立。
--   off表示不开启三权分立。
+- on表示开启三权分立。
+- off表示不开启三权分立。
 
 **默认值**： off
 
@@ -497,8 +496,8 @@
 
 **取值范围**： 布尔型
 
--   on表示允许任意用户执行EXECUTE DIRECT ON语句。
--   off表示只允许系统管理员和监控管理员执行EXECUTE DIRECT ON语句。
+- on表示允许任意用户执行EXECUTE DIRECT ON语句。
+- off表示只允许系统管理员和监控管理员执行EXECUTE DIRECT ON语句。
 
 **默认值**： off
 
@@ -510,14 +509,13 @@
 
 **取值范围**： 布尔型
 
--   on表示开启非初始用户创建、修改和删除DIRECTORY的权限。
--   off表示不开启非初始用户创建、修改和删除DIRECTORY的权限。
+- on表示开启非初始用户创建、修改和删除DIRECTORY的权限。
+- off表示不开启非初始用户创建、修改和删除DIRECTORY的权限。
 
 **默认值**： off
 
 >>[!TIP]须知
 >
->-   出于安全考虑，默认情况下，只有初始用户才能够创建、修改和删除DIRECTORY对象。
->-   如果开启了enable\_access\_server\_directory，具有SYSADMIN权限的用户和继承了内置角色gs\_role\_directory\_create权限的用户可以创建directory对象；具有SYSADMIN权限的用户、directory对象的属主、被授予了该directory的DROP权限的用户或者继承了内置角色gs\_role\_directory\_drop权限的用户可以删除directory对象；具有SYSADMIN权限的用户和directory对象的属主可以修改directory对象的所有者，且要求该用户是新属主的成员。
->-   当修改directory属主时，若新属主与原属主相同，视为未修改属主。即使用户没有修改DIERECTORY的权限，也不会报错。
-
+>- 出于安全考虑，默认情况下，只有初始用户才能够创建、修改和删除DIRECTORY对象。
+>- 如果开启了enable\_access\_server\_directory，具有SYSADMIN权限的用户和继承了内置角色gs\_role\_directory\_create权限的用户可以创建directory对象；具有SYSADMIN权限的用户、directory对象的属主、被授予了该directory的DROP权限的用户或者继承了内置角色gs\_role\_directory\_drop权限的用户可以删除directory对象；具有SYSADMIN权限的用户和directory对象的属主可以修改directory对象的所有者，且要求该用户是新属主的成员。
+>- 当修改directory属主时，若新属主与原属主相同，视为未修改属主。即使用户没有修改DIERECTORY的权限，也不会报错。

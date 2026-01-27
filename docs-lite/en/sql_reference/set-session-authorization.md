@@ -10,44 +10,42 @@ The session identifier can be changed only when the initial session user has the
 
 ## Syntax<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_s9c2df0ee86bb4fae9be40201b8ca286e"></a>
 
--   Set the session user identifier and the current user identifier of the current session.
+- Set the session user identifier and the current user identifier of the current session.
 
     ```
     SET [ SESSION | LOCAL ] SESSION AUTHORIZATION role_name PASSWORD 'password';
     ```
 
--   Reset the identifiers of the session and current users to the initially authenticated user names.
+- Reset the identifiers of the session and current users to the initially authenticated user names.
 
     ```
     {SET [ SESSION | LOCAL ] SESSION AUTHORIZATION DEFAULT
         | RESET SESSION AUTHORIZATION};
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_sb099078e31b74c4bb9d94876d02bc16e"></a>
 
--   **SESSION**
+- **SESSION**
 
     Specifies that the specified parameters take effect for the current session.
 
--   **LOCAL**
+- **LOCAL**
 
     Specifies that the specified statement takes effect only for the current transaction.
 
--   **role\_name**
+- **role\_name**
 
     Username
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **password**
+- **password**
 
     Specifies the password of a role. It must comply with the password convention.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Resets the identifiers of the session and current users to the initially authenticated user names.
-
 
 ## Examples<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_s6407418328e544dc8b8cfcf30db74af1"></a>
 
@@ -71,4 +69,3 @@ openGauss=# DROP USER paul;
 ## Reference<a name="en-us_topic_0283137463_en-us_topic_0237122189_en-us_topic_0059778193_sc0f2308a64c2470aaac2c18b49a18e95"></a>
 
 [SET ROLE](set-role.md)
-

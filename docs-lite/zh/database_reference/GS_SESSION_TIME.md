@@ -43,4 +43,3 @@ GS\_SESSION\_TIME视图用于统计会话线程的运行时间信息，及各执
 </tr>
 </tbody>
 </table>
-

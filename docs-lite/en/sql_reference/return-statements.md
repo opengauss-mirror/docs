@@ -23,7 +23,7 @@ See  [Examples](call-statements.md#en-us_topic_0283136925_en-us_topic_0237122223
 
 ### Syntax<a name="en-us_topic_0283137380_en-us_topic_0237122232_section66906369117"></a>
 
-When creating a function, specify  **SETOF **_datatype_  for the return values.
+When creating a function, specify  **SETOF**_datatype_  for the return values.
 
 return\_next\_clause::=
 
@@ -82,4 +82,3 @@ openGauss=# call fun_for_return_query();
  10
 (2 rows)
 ```
-

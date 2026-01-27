@@ -24,16 +24,15 @@
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   不支持并行扫描
--   不支持temp tablespace
--   不支持partition
--   不支持GIST索引
--   不支持User-defined统计信息pg\_statistic\_ext
--   不支持ON COMMIT DROP
--   不支持hash bucket 聚簇存储
--   不支持列存
+- 不支持并行扫描
+- 不支持temp tablespace
+- 不支持partition
+- 不支持GIST索引
+- 不支持User-defined统计信息pg\_statistic\_ext
+- 不支持ON COMMIT DROP
+- 不支持hash bucket 聚簇存储
+- 不支持列存
 
 ## 依赖关系<a name="section63981393"></a>
 
 无。
-

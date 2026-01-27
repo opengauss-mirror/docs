@@ -20,17 +20,17 @@ Set the isolation level and access mode of the transaction.
 
 ## Parameter Description<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_sedb5d46e1cef47ad953116db260be4ad"></a>
 
--   **LOCAL**
+- **LOCAL**
 
     Specifies that the specified statement takes effect only for the current transaction.
 
--   **SESSION**
+- **SESSION**
 
     Specifies that the specified parameters take effect for the current session.
 
     Value range: a string. It must comply with the naming convention.
 
--   **ISOLATION\_LEVEL**
+- **ISOLATION\_LEVEL**
 
     Specifies the transaction isolation level that determines the data that a transaction can view if other concurrent transactions exist.
 
@@ -39,14 +39,13 @@ Set the isolation level and access mode of the transaction.
 
     Value range:
 
-    -   **READ COMMITTED**: Only submitted data is read. It is the default value.
-    -   **REPEATABLE READ**: Only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
-    -   **SERIALIZABLE**: Currently, this isolation level is not supported in openGauss. It is equivalent to  **REPEATABLE READ**.
+    - **READ COMMITTED**: Only submitted data is read. It is the default value.
+    - **REPEATABLE READ**: Only the data committed before transaction start is read. Uncommitted data or data committed in other concurrent transactions cannot be read.
+    - **SERIALIZABLE**: Currently, this isolation level is not supported in openGauss. It is equivalent to  **REPEATABLE READ**.
 
--   **READ WRITE | READ ONLY**
+- **READ WRITE | READ ONLY**
 
     Specifies the transaction access mode \(read/write or read only\).
-
 
 ## Examples<a name="en-us_topic_0283137515_en-us_topic_0237122190_en-us_topic_0059778135_sf3622c31002245c482e236cade222456"></a>
 
@@ -56,4 +55,3 @@ openGauss=# START TRANSACTION;
 openGauss=# SET LOCAL TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY;
 openGauss=# COMMIT;
 ```
-

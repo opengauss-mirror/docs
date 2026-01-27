@@ -11,4 +11,3 @@ When the disk where the performance log \(**gs\_profile**\) is located is full, 
 ## Procedure<a name="en-us_topic_0283136782_section12323144814214"></a>
 
 Externally monitor the disk usage and periodically clean up the disk.
-

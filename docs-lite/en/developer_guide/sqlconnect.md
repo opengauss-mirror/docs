@@ -67,11 +67,11 @@ SQLRETURN  SQLConnect(SQLHDBC        ConnectionHandle,
 
 ## Return Value<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s2854e438cc754b68aec0788b1cd26b3d"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
--   **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
 
 ## Precautions<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s570c6037911d4c57a42ca982c83b9c6d"></a>
 
@@ -80,4 +80,3 @@ If SQLConnect returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the app
 ## Example<a name="en-us_topic_0238272889_en-us_topic_0237120419_en-us_topic_0059778729_s941ebfb1b130484d9e8e7225aa91a590"></a>
 
 See  [Examples](example_odbc.md).
-

@@ -12,25 +12,23 @@ The following is a simple overview of the tasks related to working with MOT tabl
 
 ![](figures/en-us_image_0289899953.png)
 
--   [Granting User Permissions](granting_user_permissions.md)
--   [Creating/Deleting an MOT](creating_dropping_an_mot_table.md)
--   **Creating an Index for an MOT Table**
--   This section also describes how to perform various additional MOT-related tasks, as well as  [MOT SQL Coverage and Limitations](mot_sql_coverage_and_limitations.md)  –
+- [Granting User Permissions](granting_user_permissions.md)
+- [Creating/Deleting an MOT](creating_dropping_an_mot_table.md)
+- **Creating an Index for an MOT Table**
+- This section also describes how to perform various additional MOT-related tasks, as well as  [MOT SQL Coverage and Limitations](mot_sql_coverage_and_limitations.md)  –
 
--   **[Granting User Permissions](granting_user_permissions.md)**  
+- **[Granting User Permissions](granting_user_permissions.md)**  
 
--   **[Creating/Deleting an MOT](creating_dropping_an_mot_table.md)**  
+- **[Creating/Deleting an MOT](creating_dropping_an_mot_table.md)**  
 
--   **[Creating an Index for an MOT](creating_an_index_for_an_mot_table.md)**  
+- **[Creating an Index for an MOT](creating_an_index_for_an_mot_table.md)**  
 
--   **[Converting a Disk Table into an MOT](converting_a_disk_table_into_an_mot_table.md)**  
+- **[Converting a Disk Table into an MOT](converting_a_disk_table_into_an_mot_table.md)**  
 
--   **[Query Native Compilation](query_native_compilation.md)**  
+- **[Query Native Compilation](query_native_compilation.md)**  
 
--   **[Retrying an Aborted Transaction](retrying_an_aborted_transaction.md)**  
+- **[Retrying an Aborted Transaction](retrying_an_aborted_transaction.md)**  
 
--   **[MOT External Support Tools](mot_external_support_tools.md)**  
+- **[MOT External Support Tools](mot_external_support_tools.md)**  
 
--   **[MOT SQL Coverage and Limitations](mot_sql_coverage_and_limitations.md)**  
-
-
+- **[MOT SQL Coverage and Limitations](mot_sql_coverage_and_limitations.md)**  

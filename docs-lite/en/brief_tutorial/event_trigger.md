@@ -4,7 +4,7 @@ A trigger automatically executes functions when the specified DDL event occurs. 
 
 ## Syntax<a name="en-us_topic_0283136626_en-us_topic_0237122110_en-us_topic_0059778640_sbee45c05d75942939b8cb27ddd67bd30"></a>
 
--   Create an event trigger.
+- Create an event trigger.
 
     ```
     CREATE EVENT TRIGGER name
@@ -13,8 +13,7 @@ A trigger automatically executes functions when the specified DDL event occurs. 
         EXECUTE PROCEDURE function_name()
     ```
 
-
--   Modify an event trigger.
+- Modify an event trigger.
 
     ```
     ALTER EVENT TRIGGER name DISABLE
@@ -23,41 +22,42 @@ A trigger automatically executes functions when the specified DDL event occurs. 
     ALTER EVENT TRIGGER name RENAME TO new_name
     ```
 
-
--   Delete an event trigger.
+- Delete an event trigger.
 
     ```
     DROP EVENT TRIGGER [ IF EXISTS ] name [ CASCADE | RESTRICT ];
     ```
+
 ## Parameter Description<a name="en-us_topic_0283165137_en-us_topic_0237122231_en-us_topic_0059778166_s65ae376394dba2599852d585997c77dd"></a>
 
--   **name**
+- **name**
 
     Specifies the event trigger name.
 
--   **filter\_variable**
+- **filter\_variable**
 
     Specifies the variable used by the event trigger for filtering. Currently, only TAG is supported.
 
--   **event**
+- **event**
 
     Specifies the events supported by the event trigger. Currently, ddl\_command\_start, ddl\_command\_end, sql\_drop and table\_rewrite are supported.
 
--   **function\_name**
+- **function\_name**
 
     Specifies a user-defined function, which must be declared as taking no parameters and returning data of event\_trigger type. This function is executed when an event trigger fires.
 
--   **new\_name**
+- **new\_name**
 
     Specifies the new event trigger name.
 
--   **disable**
+- **disable**
 
     Disables the event trigger.
 
--   **ENABLE [ REPLICA | ALWAYS ]**
+- **ENABLE [ REPLICA | ALWAYS ]**
 
     This event trigger is available when **session\_replication\_role** is set to **REPLICA** or any value.   
+
 ## Examples<a name="en-us_topic_0283731165_en-us_topic_0237122123_en-us_topic_0059778166_sfbca773f5bc99b3ead47668b3eb074fa"></a>
 
 ```

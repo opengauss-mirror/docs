@@ -4,7 +4,7 @@ A  **Synonym**  dictionary is used to define, identify, and convert synonyms of 
 
 ## Examples<a name="en-us_topic_0283137688_en-us_topic_0237122037_section10442451826"></a>
 
--   A  **Synonym**  dictionary can be used to overcome linguistic problems. For example, to prevent an English stemmer dictionary from reducing the word 'Paris' to 'pari', define a  **Paris paris**  line in the  **Synonym**  dictionary and put it before the  **english\_stem**  dictionary.
+- A  **Synonym**  dictionary can be used to overcome linguistic problems. For example, to prevent an English stemmer dictionary from reducing the word 'Paris' to 'pari', define a  **Paris paris**  line in the  **Synonym**  dictionary and put it before the  **english\_stem**  dictionary.
 
     ```
     openGauss=# SELECT * FROM ts_debug('english', 'Paris');
@@ -53,7 +53,7 @@ A  **Synonym**  dictionary is used to define, identify, and convert synonyms of 
 
     The full name of the  **Synonym**  dictionary file is  **my\_synonyms.syn**, and the dictionary is stored in the  **/home/dicts/**  directory of the current database primary node. For details about the syntax and parameters for creating an  **Ispell**  dictionary, see  [ALTER TEXT SEARCH DICTIONARY](alter-text-search-dictionary.md).
 
--   An asterisk \(\*\) can be placed at the end of a synonym in the configuration file. This indicates that the synonym is a prefix. The asterisk is ignored when the entry is used in  **to\_tsvector\(\)**, but when it is used in  **to\_tsquery\(\)**, the result will be a query item with the prefix match marker \(see  [Manipulating Queries](manipulating-queries.md)\).
+- An asterisk \(\*\) can be placed at the end of a synonym in the configuration file. This indicates that the synonym is a prefix. The asterisk is ignored when the entry is used in  **to\_tsvector\(\)**, but when it is used in  **to\_tsquery\(\)**, the result will be a query item with the prefix match marker \(see  [Manipulating Queries](manipulating-queries.md)\).
 
     Assume that the content in the dictionary file  **synonym\_sample.syn**  is as follows:
 
@@ -107,5 +107,3 @@ A  **Synonym**  dictionary is used to define, identify, and convert synonyms of 
      t
     (1 row)
     ```
-
-

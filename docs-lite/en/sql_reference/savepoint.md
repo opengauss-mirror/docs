@@ -8,10 +8,10 @@ A savepoint is a special mark inside a transaction. It allows all statements tha
 
 ## Precautions<a name="en-us_topic_0283137144_en-us_topic_0237122183_en-us_topic_0059777880_section7325138279"></a>
 
--   Use  **ROLLBACK TO SAVEPOINT**  to roll back to a savepoint. Use  **RELEASE SAVEPOINT**  to destroy a savepoint but keep the effects of the statements executed after the savepoint was established.
--   Savepoints can only be established when inside a transaction block. Multiple savepoints can be defined in a transaction.
--   In the case of an unexpected termination of a thread or process caused by a node or connection failure, or of an error caused by the inconsistency between source and destination table structures in a  **COPY FROM**  operation, the transaction cannot be rolled back to the established savepoint. Instead, the entire transaction will be rolled back.
--   According to the SQL standard, when a savepoint with the same name is created, the previous savepoint with the same name is automatically deleted. In openGauss, the old savepoint is retained, but only the latest one is used during rollback or release. Releasing the newer savepoint with  **RELEASE SAVEPOINT**  will cause the older one to again become accessible to  **ROLLBACK TO SAVEPOINT**  and  **RELEASE SAVEPOINT**. In addition,  **SAVEPOINT **fully complies with the SQL standard.
+- Use  **ROLLBACK TO SAVEPOINT**  to roll back to a savepoint. Use  **RELEASE SAVEPOINT**  to destroy a savepoint but keep the effects of the statements executed after the savepoint was established.
+- Savepoints can only be established when inside a transaction block. Multiple savepoints can be defined in a transaction.
+- In the case of an unexpected termination of a thread or process caused by a node or connection failure, or of an error caused by the inconsistency between source and destination table structures in a  **COPY FROM**  operation, the transaction cannot be rolled back to the established savepoint. Instead, the entire transaction will be rolled back.
+- According to the SQL standard, when a savepoint with the same name is created, the previous savepoint with the same name is automatically deleted. In openGauss, the old savepoint is retained, but only the latest one is used during rollback or release. Releasing the newer savepoint with  **RELEASE SAVEPOINT**  will cause the older one to again become accessible to  **ROLLBACK TO SAVEPOINT**  and  **RELEASE SAVEPOINT**. In addition,  **SAVEPOINT**fully complies with the SQL standard.
 
 ## Syntax<a name="en-us_topic_0283137144_en-us_topic_0237122183_en-us_topic_0059777880_section173261081673"></a>
 
@@ -89,4 +89,3 @@ openGauss=# DROP TABLE table2;
 ## Helpful Links<a name="en-us_topic_0283137144_en-us_topic_0237122183_en-us_topic_0059777880_section183301781176"></a>
 
 [RELEASE SAVEPOINT](release-savepoint.md)  and  [ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)
-

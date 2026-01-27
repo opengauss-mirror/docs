@@ -8,13 +8,13 @@
 
 Only the owner of a stored procedure or a user granted with the  **ALTER**  permission can run the  **ALTER PROCEDURE**  command. The system administrator has this permission by default. The following is permission constraints depending on attributes to be modified:
 
--   If a stored procedure involves operations on temporary tables,  **ALTER PROCEDURE**  cannot be used.
--   To modify the owner or schema of a stored procedure, you must be the owner of the stored procedure or system administrator and a member of the new owner role.
--   Only the system administrator and initial user can change the schema of a stored procedure to  **public**.
+- If a stored procedure involves operations on temporary tables,  **ALTER PROCEDURE**  cannot be used.
+- To modify the owner or schema of a stored procedure, you must be the owner of the stored procedure or system administrator and a member of the new owner role.
+- Only the system administrator and initial user can change the schema of a stored procedure to  **public**.
 
 ## Syntax<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_sa4d6f7fca3774a5e9f488937b289bea3"></a>
 
--   Modify the additional parameters of a customized stored procedure.
+- Modify the additional parameters of a customized stored procedure.
 
     ```
     ALTER PROCEDURE procedure_name ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
@@ -38,77 +38,76 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
      | COMMENT 'text'
     ```
 
--   Modify the name of a customized stored procedure.
+- Modify the name of a customized stored procedure.
 
     ```
     ALTER PROCEDURE proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         RENAME TO new_name;
     ```
 
--   Modify the owner of a customized stored procedure.
+- Modify the owner of a customized stored procedure.
 
     ```
     ALTER PROCEDURE proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         OWNER TO new_owner;
     ```
 
--   Modify the schema of a customized stored procedure.
+- Modify the schema of a customized stored procedure.
 
     ```
     ALTER PROCEDURE proname ( [ { [ argname ] [ argmode ] argtype} [, ...] ] )
         SET SCHEMA new_schema;
     ```
 
-
 ## Parameter Description<a name="en-us_topic_0283136989_en-us_topic_0237122061_en-us_topic_0059778614_s72f8af90c9784dc9a16e58974d73a31a"></a>
 
--   **procedure\_name**
+- **procedure\_name**
 
     Specifies the name of the stored procedure to be modified.
 
     Value range: an existing stored procedure name
 
--   **argmode**
+- **argmode**
 
     Specifies whether a parameter is an input or output parameter.
 
     Value range:  **IN**,  **OUT**,  **INOUT**, and  **VARIADIC**
 
--   **argname**
+- **argname**
 
     Specifies the parameter name.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **argtype**
+- **argtype**
 
     Specifies the type of the stored procedure parameter.
 
--   **CALLED ON NULL INPUT**
+- **CALLED ON NULL INPUT**
 
     Declares that some parameters of the stored procedure can be called in normal mode if the parameter values are null. Omitting this parameter is the same as specifying it.
 
--   **IMMUTABLE**
+- **IMMUTABLE**
 
     Specifies that the stored procedure always returns the same result if the parameter values are the same.
 
--   **STABLE**
+- **STABLE**
 
     Specifies that the stored procedure cannot modify the database, and that within a single table scan it will consistently return the same result for the same parameter value, but its result varies by SQL statements.
 
--   **VOLATILE**
+- **VOLATILE**
 
     Specifies that the stored procedure value can change in a single table scan and no optimization is performed.
 
--   **LEAKPROOF**
+- **LEAKPROOF**
 
     Specifies that the stored procedure has no side effect and the parameter contains only the return value.  **LEAKPROOF**  can be set only by the system administrator.
 
--   **EXTERNAL**
+- **EXTERNAL**
 
     \(Optional\) The purpose is to be compatible with SQL. This feature applies to all functions, not only external functions.
 
--   **SECURITY INVOKER**
+- **SECURITY INVOKER**
 
     **AUTHID CURRENT\_USER**
 
@@ -116,7 +115,7 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
 
     **SECURITY INVOKER**  and  **AUTHID CURRENT\_USER**  have the same functions.
 
--   **SECURITY DEFINER**
+- **SECURITY DEFINER**
 
     **AUTHID DEFINER**
 
@@ -124,7 +123,7 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
 
     **AUTHID DEFINER**  and  **SECURITY DEFINER**  have the same functions.
 
--   **COST execution\_cost**
+- **COST execution\_cost**
 
     Estimates the execution cost of the stored procedure.
 
@@ -132,49 +131,48 @@ Only the owner of a stored procedure or a user granted with the  **ALTER**  perm
 
     Value range: a positive integer
 
--   **ROWS result\_rows**
+- **ROWS result\_rows**
 
     Estimates the number of rows returned by the stored procedure. This is only allowed when the stored procedure is declared to return a set.
 
     Value range: a positive number. The default value is  **1000**.
 
--   **configuration\_parameter**
-    -   **value**
+- **configuration\_parameter**
+    - **value**
 
         Sets a specified database session parameter to a specified value. If the value is  **DEFAULT**  or  **RESET**, the default setting is used in the new session.  **OFF**  disables the setting.
 
         Value range: a string.
 
-        -   DEFAULT
-        -   OFF
-        -   RESET
+        - DEFAULT
+        - OFF
+        - RESET
 
         Specifies the default value.
 
-    -   **from current**
+    - **from current**
 
         Uses the value of  **configuration\_parameter**  of the current session.
 
-
--   **new\_name**
+- **new\_name**
 
     Specifies the new name of the stored procedure. To change the schema of a stored procedure, you must have the  **CREATE**  permission on the new schema.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **new\_owner**
+- **new\_owner**
 
     Specifies the new owner of the stored procedure. To change the owner of a stored procedure, the new owner must have the CREATE permission on the schema to which the stored procedure belongs.
 
     Value range: an existing user role
 
--   **new\_schema**
+- **new\_schema**
 
     Specifies the new schema of the stored procedure.
 
     Value range: an existing schema
 
--   **COMMENT 'text'**
+- **COMMENT 'text'**
 
     Comment a stored procedure.
 

@@ -27,4 +27,3 @@
 ## 依赖关系<a name="section185341414141318"></a>
 
 shardingsphere、patroni、haproxy。
-

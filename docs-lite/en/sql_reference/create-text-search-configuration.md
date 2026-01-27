@@ -6,11 +6,11 @@
 
 ## Precautions<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_s212243b97a3c488d925beb43fba7c01a"></a>
 
--   If only the parser is specified, the new text search configuration initially has no mapping from token types to dictionaries, and therefore will ignore all words. Subsequently,  **ALTER TEXT SEARCH CONFIGURATION**  must be used to create mapping to make the configuration useful. If  **COPY**  is specified, the parser, mapping and parameters of the text search configuration is copied automatically.
--   If the schema name is given, the text search configuration will be created in the specified schema. Otherwise, the configuration will be created in the current schema.
--   The user who defines a text search configuration becomes its owner.
--   **PARSER**  and  **COPY**  options are mutually exclusive, because when an existing configuration is copied, its parser selection is copied too. 
--   If only the parser is specified, the new text search configuration initially has no mapping from token types to dictionaries, and therefore will ignore all words.
+- If only the parser is specified, the new text search configuration initially has no mapping from token types to dictionaries, and therefore will ignore all words. Subsequently,  **ALTER TEXT SEARCH CONFIGURATION**  must be used to create mapping to make the configuration useful. If  **COPY**  is specified, the parser, mapping and parameters of the text search configuration is copied automatically.
+- If the schema name is given, the text search configuration will be created in the specified schema. Otherwise, the configuration will be created in the current schema.
+- The user who defines a text search configuration becomes its owner.
+- **PARSER**  and  **COPY**  options are mutually exclusive, because when an existing configuration is copied, its parser selection is copied too. 
+- If only the parser is specified, the new text search configuration initially has no mapping from token types to dictionaries, and therefore will ignore all words.
 
 ## Syntax<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_sebcad83e099e46b0ba586829e634d144"></a>
 
@@ -22,19 +22,19 @@ CREATE TEXT SEARCH CONFIGURATION name
 
 ## Parameter Description<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_s3935d7de401a4ccd97361e7b2b485805"></a>
 
--   **name**
+- **name**
 
     Specifies the name of the text search configuration to be created. The name can be schema-qualified.
 
--   **parser\_name**
+- **parser\_name**
 
     Specifies the name of the text search parser to use for this configuration. 
 
--   **source\_config**
+- **source\_config**
 
     Specifies the name of an existing text search configuration to copy. 
 
--   **configuration\_option**
+- **configuration\_option**
 
     Specifies parameters for the text search configuration, particularly for the parser executed by  **parser\_name**  or contained by  **source\_config**.
 
@@ -80,7 +80,6 @@ CREATE TEXT SEARCH CONFIGURATION name
     </tbody>
     </table>
 
-
 ## Examples<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_sc3a4aef5c0c0420eaf5a2e67097004a2"></a>
 
 ```
@@ -120,4 +119,3 @@ openGauss=# DROP ROLE IF EXISTS joe;
 ## Helpful Links<a name="en-us_topic_0283137399_en-us_topic_0237122121_en-us_topic_0059777835_s0205fc5b18e94f51af91402258be4747"></a>
 
 [ALTER TEXT SEARCH CONFIGURATION](alter-text-search-configuration.md)  and  [DROP TEXT SEARCH CONFIGURATION](drop-text-search-configuration.md)
-

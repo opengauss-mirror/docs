@@ -6,15 +6,14 @@ After a query statement has been executed, no response is returned for a long ti
 
 ## Cause Analysis<a name="section101846244812"></a>
 
--   The query statement is complex and requires a long time for execution.
+- The query statement is complex and requires a long time for execution.
 
--   The query statement is blocked.
-
+- The query statement is blocked.
 
 ## Procedure<a name="section954884820"></a>
 
-1.  Log in to the host as the OS user  **omm**.
-2.  Run the following command to connect to the database:
+1. Log in to the host as the OS user  **omm**.
+2. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -22,7 +21,7 @@ After a query statement has been executed, no response is returned for a long ti
 
     **postgres**  is the name of the database, and  **8000**  is the port number.
 
-3.  Check for the query statements that are executed for a long time in the system.
+3. Check for the query statements that are executed for a long time in the system.
 
     ```
     SELECT EXTRACT(DAY FROM (current_timestamp - query_start)) * 24 * 60 + EXTRACT(HOUR FROM (current_timestamp - query_start)) * 60 + EXTRACT(MINUTE FROM (current_timestamp - query_start)) AS runtime, datname, usename, query FROM pg_stat_activity WHERE state != 'idle' ORDER BY 1 desc;
@@ -42,8 +41,6 @@ After a query statement has been executed, no response is returned for a long ti
     SELECT query FROM pg_stat_activity WHERE timestampdiff(minutes, query_start, current_timestamp) > 2;
     ```
 
-4.  Analyze the status of the query statements that were run for a long time.
-    -   If the query statement is normal, wait until the execution of the query statement is complete.
-    -   If the query statement is blocked, rectify the fault by referring to  [Analyzing Whether a Query Statement Is Blocked](analyzing_whether_a_query_statement_is_blocked.md).
-
-
+4. Analyze the status of the query statements that were run for a long time.
+    - If the query statement is normal, wait until the execution of the query statement is complete.
+    - If the query statement is blocked, rectify the fault by referring to  [Analyzing Whether a Query Statement Is Blocked](analyzing_whether_a_query_statement_is_blocked.md).

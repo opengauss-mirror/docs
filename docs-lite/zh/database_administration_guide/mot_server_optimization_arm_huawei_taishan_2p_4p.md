@@ -8,23 +8,22 @@
 
 修改BIOS相关设置：
 
-1.  选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**Support Smmu**为**Disabled**。
-2.  选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**CPU Prefetching Configuration**为**Disabled**。
+1. 选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**Support Smmu**为**Disabled**。
+2. 选择**BIOS **\>  **Advanced**  \>  **MISC Config**。设置**CPU Prefetching Configuration**为**Disabled**。
 
     ![](figures/zh-cn_image_0289900038.png)
 
-3.  选择**BIOS **\>  **Advanced**  \>  **Memory Config**。设置**Die Interleaving**为**Disabled**。
+3. 选择**BIOS **\>  **Advanced**  \>  **Memory Config**。设置**Die Interleaving**为**Disabled**。
 
     ![](figures/zh-cn_image_0289900642.png)
 
-4.  选择**BIOS **\>  **Advanced**  \>  **Performance Config**。设置**Power Policy**为**Performance**。
+4. 选择**BIOS **\>  **Advanced**  \>  **Performance Config**。设置**Power Policy**为**Performance**。
 
     ![](figures/zh-cn_image_0289901020.png)
 
-
 ## 操作系统：内核和启动<a name="zh-cn_topic_0283136697_zh-cn_topic_0280525129_section11961253"></a>
 
--   以下操作系统内核和启动参数通常由sysadmin配置。
+- 以下操作系统内核和启动参数通常由sysadmin配置。
 
     配置内核参数，如下所示。
 
@@ -84,7 +83,7 @@
     kernel.core_uses_pid=1
     ```
 
--   调优服务
+- 调优服务
 
     以下为必填项。
 
@@ -98,10 +97,8 @@
 
     其他不太适合openGauss和MOT服务器的配置可能会影响MOT的整体性能，包括：平衡配置、桌面配置、延迟性能配置、网络延迟配置、网络吞吐量配置和节能配置。
 
--   启动调优
+- 启动调优
 
     在内核启动参数中添加iommu.passthrough=1。
 
     在pass-through模式下运行时，适配器需要DMA转换到内存，从而提高性能。
-
-

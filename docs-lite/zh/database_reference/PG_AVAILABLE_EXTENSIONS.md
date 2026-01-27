@@ -43,4 +43,3 @@ PG\_AVAILABLE\_EXTENSIONS视图显示数据库中某些特性的扩展信息。
 </tr>
 </tbody>
 </table>
-

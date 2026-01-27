@@ -8,8 +8,8 @@
 
 ## 操作步骤<a name="zh-cn_topic_0283137215_zh-cn_topic_0237121109_zh-cn_topic_0151096201_zh-cn_topic_0085032332_zh-cn_topic_0059779299_sfc98603fadc44ac497654d979bc32291"></a>
 
-1.  以操作系统用户omm登录数据库主节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库主节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -27,7 +27,7 @@
     openGauss=# 
     ```
 
-3.  创建用户并制定用户的有效开始时间和有效结束时间。
+3. 创建用户并制定用户的有效开始时间和有效结束时间。
 
     ```
     openGauss=# CREATE USER joe WITH PASSWORD 'xxxxxxxxx' VALID BEGIN '2015-10-10 08:00:00' VALID UNTIL '2016-10-10 08:00:00';
@@ -39,7 +39,7 @@
     CREATE ROLE
     ```
 
-4.  用户已不在有效使用期内，需要重新设定帐号的有效期，这包括有效开始时间和有效结束时间。
+4. 用户已不在有效使用期内，需要重新设定帐号的有效期，这包括有效开始时间和有效结束时间。
 
     ```
     openGauss=# ALTER USER joe WITH VALID BEGIN '2016-11-10 08:00:00' VALID UNTIL '2017-11-10 08:00:00';
@@ -51,9 +51,7 @@
     ALTER ROLE
     ```
 
-
 >[!NOTE]说明
 >
->-   CREATE ROLE语法中不指定“VALID BEGIN”和“VALID UNTIL”时，表示不对用户的开始操作时间和结束操作时间进行限定。
->-   ALTER ROLE语法中不指定“VALID BEGIN”和“VALID UNTIL”时，表示不对用户的开始操作时间和结束操作时间进行修改，沿用之前设置。
-
+>- CREATE ROLE语法中不指定“VALID BEGIN”和“VALID UNTIL”时，表示不对用户的开始操作时间和结束操作时间进行限定。
+>- ALTER ROLE语法中不指定“VALID BEGIN”和“VALID UNTIL”时，表示不对用户的开始操作时间和结束操作时间进行修改，沿用之前设置。

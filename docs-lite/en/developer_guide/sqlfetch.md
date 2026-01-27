@@ -31,12 +31,12 @@ SQLRETURN SQLFetch(SQLHSTMT    StatementHandle);
 
 ## Return Value<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_s08aa46acb7f04acf807438d3b1f0df6f"></a>
 
--   **SQL\_SUCCESS**  indicates that the call succeeded.
--   **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
--   **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
--   **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
--   **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
--   **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
+- **SQL\_SUCCESS**  indicates that the call succeeded.
+- **SQL\_SUCCESS\_WITH\_INFO**  indicates that some warning information is displayed.
+- **SQL\_ERROR**  indicates major errors, such as memory allocation and connection failures.
+- **SQL\_NO\_DATA**  indicates that the SQL statement does not return a result set.
+- **SQL\_INVALID\_HANDLE**  indicates that invalid handles were called. This value may also be returned by other APIs.
+- **SQL\_STILL\_EXECUTING**  indicates that the statement is being executed.
 
 ## Precautions<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_s2e8fa07b761946118f82afbb0443cdf6"></a>
 
@@ -45,4 +45,3 @@ If SQLFetch returns  **SQL\_ERROR**  or  **SQL\_SUCCESS\_WITH\_INFO**, the appli
 ## Example<a name="en-us_topic_0238272893_en-us_topic_0237120423_en-us_topic_0059777989_s297ce23d9b4d4e6ab0f5888390604f41"></a>
 
 See  [Examples](example_odbc.md).
-

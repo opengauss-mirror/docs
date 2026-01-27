@@ -78,4 +78,3 @@ GS\_LSC\_MEMORY\_DETAIL视图统计所有的线程的本地SysCache内存使用�
 </tr>
 </tbody>
 </table>
-

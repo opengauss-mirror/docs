@@ -2,79 +2,79 @@
 
 Statistics information functions are divided into the following two categories: functions that access databases, using the OID of each table or index in a database to mark the database for which statistics are generated; functions that access servers, identified by the server process ID, whose value ranges from 1 to the number of currently active servers.
 
--   pg\_stat\_get\_db\_conflict\_tablespace\(oid\)
+- pg\_stat\_get\_db\_conflict\_tablespace\(oid\)
 
     Description: Specifies the number of queries canceled due to a conflict between the restored tablespace and the deleted tablespace in the database.
 
     Return type: bigint
 
--   pg\_control\_group\_config
+- pg\_control\_group\_config
 
     Description: Prints Cgroup configurations on the current node.
 
     Return type: record
 
--   pg\_stat\_get\_db\_stat\_reset\_time\(oid\)
+- pg\_stat\_get\_db\_stat\_reset\_time\(oid\)
 
     Description: Specifies the most recent time when database statistics were reset. It is initialized to the system time during the first connection to each database. The reset time is updated when you call  **pg\_stat\_reset**  on the database and execute  **pg\_stat\_reset\_single\_table\_counters**  against any table or index in it.
 
     Return type: timestamptz
 
--   pg\_stat\_get\_function\_total\_time\(oid\)
+- pg\_stat\_get\_function\_total\_time\(oid\)
 
     Description: Specifies the total wall clock time spent in the function, in microseconds. The time spent on this function calling other functions is included.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_returned\(oid\)
+- pg\_stat\_get\_xact\_tuples\_returned\(oid\)
 
     Description: Specifies the number of rows read through sequential scans when the parameter is a table in the current transaction or the number of index entries returned when the parameter is an index.
 
     Return type: bigint
 
--   pg\_lock\_status\(\)
+- pg\_lock\_status\(\)
 
     Description: Queries information about locks held by open transactions. All users can execute this function.
 
     Return type: For details, see  **PG\_LOCKS**  which is obtained by querying this function.
 
--   pg\_stat\_get\_xact\_numscans\(oid\)
+- pg\_stat\_get\_xact\_numscans\(oid\)
 
     Description: Specifies the number of sequential scans performed when the parameter is a table in the current transaction or the number of index scans performed when the parameter is an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_blocks\_fetched\(oid\)
+- pg\_stat\_get\_xact\_blocks\_fetched\(oid\)
 
     Description: Specifies the number of disk block fetch requests for a table or an index in the current transaction.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_blocks\_hit\(oid\)
+- pg\_stat\_get\_xact\_blocks\_hit\(oid\)
 
     Description: Specifies the number of disk block fetch requests for tables or indexes found in cache in the current transaction.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_function\_calls\(oid\)
+- pg\_stat\_get\_xact\_function\_calls\(oid\)
 
     Description: Specifies the number of times the function is called in the current transaction.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_function\_self\_time\(oid\)
+- pg\_stat\_get\_xact\_function\_self\_time\(oid\)
 
     Description: Specifies the time spent on this function in the current transaction, excluding the time spent on this function internally calling other functions.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_function\_total\_time\(oid\)
+- pg\_stat\_get\_xact\_function\_total\_time\(oid\)
 
     Description: Specifies the total wall clock time \(in microseconds\) spent on the function in the current transaction, including the time spent on this function internally calling other functions.
 
     Return type: bigint
 
--   pg\_stat\_get\_wal\_senders\(\)
+- pg\_stat\_get\_wal\_senders\(\)
 
     Description: Queries walsender information on the primary server.
 
@@ -243,7 +243,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   get\_paxos\_replication\_info\(\)
+- get\_paxos\_replication\_info\(\)
 
     Description: Queries the primary/standby replication status in Paxos mode.
 
@@ -310,7 +310,7 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the DCF functions are unavailable. DCF functions of openGauss are unavailable, but the leader election capability is provided. If this capability is required, you need to configure it.
 
--   pg\_stat\_get\_stream\_replications\(\)
+- pg\_stat\_get\_stream\_replications\(\)
 
     Description: Queries the primary/standby replication status.
 
@@ -360,97 +360,97 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_stat\_get\_db\_numbackends\(oid\)
+- pg\_stat\_get\_db\_numbackends\(oid\)
 
     Description: Specifies the number of active server processes for a database.
 
     Return type: integer
 
--   pg\_stat\_get\_db\_xact\_commit\(oid\)
+- pg\_stat\_get\_db\_xact\_commit\(oid\)
 
     Description: Specifies the number of transactions committed in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_xact\_rollback\(oid\)
+- pg\_stat\_get\_db\_xact\_rollback\(oid\)
 
     Description: Specifies the number of transactions rolled back in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_blocks\_fetched\(oid\)
+- pg\_stat\_get\_db\_blocks\_fetched\(oid\)
 
     Description: Specifies the number of disk blocks fetch requests for a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_blocks\_hit\(oid\)
+- pg\_stat\_get\_db\_blocks\_hit\(oid\)
 
     Description: Specifies the number of disk block fetch requests found in cache for a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_tuples\_returned\(oid\)
+- pg\_stat\_get\_db\_tuples\_returned\(oid\)
 
     Description: Specifies the number of tuples returned for a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_tuples\_fetched\(oid\)
+- pg\_stat\_get\_db\_tuples\_fetched\(oid\)
 
     Description: Specifies the number of tuples fetched for a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_tuples\_inserted\(oid\)
+- pg\_stat\_get\_db\_tuples\_inserted\(oid\)
 
     Description: Specifies the number of tuples inserted in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_tuples\_updated\(oid\)
+- pg\_stat\_get\_db\_tuples\_updated\(oid\)
 
     Description: Specifies the number of tuples updated in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_tuples\_deleted\(oid\)
+- pg\_stat\_get\_db\_tuples\_deleted\(oid\)
 
     Description: Specifies the number of tuples deleted in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_conflict\_lock\(oid\)
+- pg\_stat\_get\_db\_conflict\_lock\(oid\)
 
     Description: Specifies the number of lock conflicts in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_deadlocks\(oid\)
+- pg\_stat\_get\_db\_deadlocks\(oid\)
 
     Description: Specifies the number of deadlocks in a database.
 
     Return type: bigint
 
--   pg\_stat\_get\_numscans\(oid\)
+- pg\_stat\_get\_numscans\(oid\)
 
     Description: Specifies the number of sequential row scans done if parameters are in a table or the number of index scans done if parameters are in an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_lastscan\(oid\)
+- pg\_stat\_get\_lastscan\(oid\)
 
     Description: Returns the most recent scan time: table scan time when given a table, or index scan time when given an index.
 
     Return type: timestamptz
 
--   pg\_stat\_force\_next\_flush\(\)
+- pg\_stat\_force\_next\_flush\(\)
 
     Description: Force statistics to be reported at the next occasion.
 
     Return type: void
 
--   pg\_stat\_get\_role\_name\(oid\)
+- pg\_stat\_get\_role\_name\(oid\)
 
     Description: Obtains the username based on the user OID. Only users with the  **sysadmin**  or  **monitor admin**  permission can access the information.
 
@@ -466,211 +466,211 @@ Statistics information functions are divided into the following two categories: 
     (1 row)
     ```
 
--   pg\_stat\_get\_tuples\_returned\(oid\)
+- pg\_stat\_get\_tuples\_returned\(oid\)
 
     Description: Specifies the number of sequential row scans done if parameters are in a table or the number of index scans done if parameters are in an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_fetched\(oid\)
+- pg\_stat\_get\_tuples\_fetched\(oid\)
 
     Description: Specifies the number of table rows fetched by bitmap scans if parameters are in a table or the number of table rows fetched by simple index scans using the index if parameters are in an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_inserted\(oid\)
+- pg\_stat\_get\_tuples\_inserted\(oid\)
 
     Description: Specifies the number of rows inserted into a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_updated\(oid\)
+- pg\_stat\_get\_tuples\_updated\(oid\)
 
     Description: Specifies the number of rows updated in a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_deleted\(oid\)
+- pg\_stat\_get\_tuples\_deleted\(oid\)
 
     Description: Specifies the number of rows deleted from a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_changed\(oid\)
+- pg\_stat\_get\_tuples\_changed\(oid\)
 
     Description: Specifies the total number of inserted, updated, and deleted rows after a table was last analyzed or autoanalyzed.
 
     Return type: bigint
 
--   pg\_stat\_get\_tuples\_hot\_updated\(oid\)
+- pg\_stat\_get\_tuples\_hot\_updated\(oid\)
 
     Description: Specifies the number of rows hot updated in a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_live\_tuples\(oid\)
+- pg\_stat\_get\_live\_tuples\(oid\)
 
     Description: Specifies the number of live rows in a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_dead\_tuples\(oid\)
+- pg\_stat\_get\_dead\_tuples\(oid\)
 
     Description: Specifies the number of dead rows in a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_blocks\_fetched\(oid\)
+- pg\_stat\_get\_blocks\_fetched\(oid\)
 
     Description: Specifies the number of disk block fetch requests for a table or an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_blocks\_hit\(oid\)
+- pg\_stat\_get\_blocks\_hit\(oid\)
 
     Description: Specifies the number of disk block requests found in cache for a table or an index.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_tuples\_inserted\(oid\)
+- pg\_stat\_get\_partition\_tuples\_inserted\(oid\)
 
     Description: Specifies the number of rows in the corresponding table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_tuples\_updated\(oid\)
+- pg\_stat\_get\_partition\_tuples\_updated\(oid\)
 
     Description: Specifies the number of rows that have been updated in the corresponding table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_tuples\_deleted\(oid\)
+- pg\_stat\_get\_partition\_tuples\_deleted\(oid\)
 
     Description: Specifies the number of rows deleted from the corresponding table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_tuples\_changed\(oid\)
+- pg\_stat\_get\_partition\_tuples\_changed\(oid\)
 
     Description: Specifies the total number of inserted, updated, and deleted rows after a table partition was last analyzed or autoanalyzed.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_live\_tuples\(oid\)
+- pg\_stat\_get\_partition\_live\_tuples\(oid\)
 
     Description: Specifies the number of live rows in a partitioned table.
 
     Return type: bigint
 
--   pg\_stat\_get\_partition\_dead\_tuples\(oid\)
+- pg\_stat\_get\_partition\_dead\_tuples\(oid\)
 
     Description: Specifies the number of dead rows in a partitioned table.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_fetched\(oid\)
+- pg\_stat\_get\_xact\_tuples\_fetched\(oid\)
 
     Description: Specifies the number of tuple rows scanned in a transaction.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_inserted\(oid\)
+- pg\_stat\_get\_xact\_tuples\_inserted\(oid\)
 
     Description: Specifies the number of tuple inserted into the active subtransactions related to a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_deleted\(oid\)
+- pg\_stat\_get\_xact\_tuples\_deleted\(oid\)
 
     Description: Specifies the number of deleted tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_hot\_updated\(oid\)
+- pg\_stat\_get\_xact\_tuples\_hot\_updated\(oid\)
 
     Description: Specifies the number of hot updated tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_tuples\_updated\(oid\)
+- pg\_stat\_get\_xact\_tuples\_updated\(oid\)
 
     Description: Specifies the number of updated tuples in the active subtransactions related to a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_partition\_tuples\_inserted\(oid\)
+- pg\_stat\_get\_xact\_partition\_tuples\_inserted\(oid\)
 
     Description: Specifies the number of inserted tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_partition\_tuples\_deleted\(oid\)
+- pg\_stat\_get\_xact\_partition\_tuples\_deleted\(oid\)
 
     Description: Specifies the number of deleted tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_partition\_tuples\_hot\_updated\(oid\)
+- pg\_stat\_get\_xact\_partition\_tuples\_hot\_updated\(oid\)
 
     Description: Specifies the number of hot updated tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_xact\_partition\_tuples\_updated\(oid\)
+- pg\_stat\_get\_xact\_partition\_tuples\_updated\(oid\)
 
     Description: Specifies the number of updated tuples in the active subtransactions related to a table partition.
 
     Return type: bigint
 
--   pg\_stat\_get\_last\_vacuum\_time\(oid\)
+- pg\_stat\_get\_last\_vacuum\_time\(oid\)
 
     Description: Specifies the most recent time when the autovacuum thread is manually started to clear a table.
 
     Return type: timestamptz
 
--   pg\_stat\_get\_last\_autovacuum\_time\(oid\)
+- pg\_stat\_get\_last\_autovacuum\_time\(oid\)
 
     Description: Specifies the time of the last vacuum initiated by the autovacuum daemon on a table.
 
     Return type: timestamptz
 
--   pg\_stat\_get\_vacuum\_count\(oid\)
+- pg\_stat\_get\_vacuum\_count\(oid\)
 
     Description: Specifies the number of times a table is manually cleared.
 
     Return type: bigint
 
--   pg\_stat\_get\_autovacuum\_count\(oid\)
+- pg\_stat\_get\_autovacuum\_count\(oid\)
 
     Description: Specifies the number of times the autovacuum daemon is started to clear a table.
 
     Return type: bigint
 
--   pg\_stat\_get\_last\_analyze\_time\(oid\)
+- pg\_stat\_get\_last\_analyze\_time\(oid\)
 
     Description: Specifies the last time when a table starts to be analyzed manually or by the autovacuum thread.
 
     Return type: timestamptz
 
--   pg\_stat\_get\_last\_autoanalyze\_time\(oid\)
+- pg\_stat\_get\_last\_autoanalyze\_time\(oid\)
 
     Description: Specifies the time when the last analysis initiated by the autovacuum daemon on a table.
 
     Return type: timestamptz
 
--   pg\_stat\_get\_analyze\_count\(oid\)
+- pg\_stat\_get\_analyze\_count\(oid\)
 
     Description: Specifies the number of times a table is manually analyzed.
 
     Return type: bigint
 
--   pg\_stat\_get\_autoanalyze\_count\(oid\)
+- pg\_stat\_get\_autoanalyze\_count\(oid\)
 
     Description: Specifies the number of times the autovacuum daemon analyzes a table.
 
     Return type: bigint
 
--   pg\_total\_autovac\_tuples\(bool,bool\)
+- pg\_total\_autovac\_tuples\(bool,bool\)
 
     Description: Returns tuple records related to the total autovac, such as  **nodename**,  **nspname**,  **relname**, and tuple IUDs. The input parameters specify whether to query  **relation**  and  **local**  information, respectively.
 
@@ -741,7 +741,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_autovac\_status\(oid\)
+- pg\_autovac\_status\(oid\)
 
     Description: Returns autovac information, such as  **nodename**,  **nspname**,  **relname**,  **analyze**,  **vacuum**, thresholds of  **analyze**  and  **vacuum**, and the number of analyzed or vacuumed tuples. Only users with the  **sysadmin**  permission can use this function.
 
@@ -826,31 +826,31 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_autovac\_timeout\(oid\)
+- pg\_autovac\_timeout\(oid\)
 
     Description: Returns the number of consecutive timeouts during the autovac operation on a table. If the table information is invalid or the node information is abnormal,  **NULL**  will be returned.
 
     Return type: bigint
 
--   pg\_stat\_get\_last\_data\_changed\_time\(oid\)
+- pg\_stat\_get\_last\_data\_changed\_time\(oid\)
 
     Description: Returns the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed on a table. The data in the  **last\_data\_changed**  column of the  [PG\_STAT\_ALL\_TABLES](../database_reference/pg_stat_all_tables.md)  view is calculated by using this function. The performance of obtaining the last modification time by using the view is poor when the table has a large amount of data. In this case, you are advised to use the function.
 
     Return type: timestamptz
 
--   pg\_stat\_set\_last\_data\_changed\_time\(oid\)
+- pg\_stat\_set\_last\_data\_changed\_time\(oid\)
 
     Description: Manually changes the time when  **INSERT**,  **UPDATE**,  **DELETE**, or  **EXCHANGE**/**TRUNCATE**/**DROP** **PARTITION**  was last performed.
 
     Return type: void
 
--   pg\_backend\_pid\(\)
+- pg\_backend\_pid\(\)
 
     Description: Specifies the thread ID of the server thread attached to the current session.
 
     Return type: bigint
 
--   pg\_stat\_get\_activity\(integer\)
+- pg\_stat\_get\_activity\(integer\)
 
     Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The returned result does not contain the  **connection\_info**  column. The initial user, system administrators and users with the  **monadmin**  permission can view all data. Common users can only query their own results.
 
@@ -1033,7 +1033,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_stat\_get\_activity\_with\_conninfo\(integer\)
+- pg\_stat\_get\_activity\_with\_conninfo\(integer\)
 
     Description: Returns a record about the backend with the specified PID. A record for each active backend in the system is returned if  **NULL**  is specified. The initial user, system administrators and users with the  **monadmin**  permission can view all data. Common users can only query their own results.
 
@@ -1209,7 +1209,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_user\_iostat\(text\)
+- pg\_user\_iostat\(text\)
 
     Description: Displays the I/O load management information about the job currently executed by the user.
 
@@ -1285,193 +1285,193 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pg\_stat\_get\_function\_calls\(oid\)
+- pg\_stat\_get\_function\_calls\(oid\)
 
     Description: Specifies the number of times the function has been called.
 
     Return type: bigint
 
--   pg\_stat\_get\_function\_self\_time\(oid\)
+- pg\_stat\_get\_function\_self\_time\(oid\)
 
     Description: Specifies the time spent in only this function. The time spent on this function calling other functions is excluded.
 
     Return type: bigint
 
--   pg\_stat\_get\_backend\_idset\(\)
+- pg\_stat\_get\_backend\_idset\(\)
 
     Description: Sets the number of currently active server processes \(from 1 to the number of active server processes\).
 
     Return type: setofinteger
 
--   pg\_stat\_get\_backend\_pid\(integer\)
+- pg\_stat\_get\_backend\_pid\(integer\)
 
     Description: Specifies the ID of the given server thread.
 
     Return type: bigint
 
--   pg\_stat\_get\_backend\_dbid\(integer\)
+- pg\_stat\_get\_backend\_dbid\(integer\)
 
     Description: Specifies the ID of the database connected to the given server process.
 
     Return type: oid
 
--   pg\_stat\_get\_backend\_userid\(integer\)
+- pg\_stat\_get\_backend\_userid\(integer\)
 
     Description: Specifies the user ID of the given server process.
 
     Return type: oid
 
--   pg\_stat\_get\_backend\_activity\(integer\)
+- pg\_stat\_get\_backend\_activity\(integer\)
 
     Description: Active command of the given server process, but only if the current user is a system administrator or the same user as that of the session being queried and  **track\_activities**  is on
 
     Return type: text
 
--   pg\_stat\_get\_backend\_waiting\(integer\)
+- pg\_stat\_get\_backend\_waiting\(integer\)
 
     Description: True if the given server process is waiting for a lock, but only if the current user is a system administrator or the same user as that of the session being queried and  **track\_activities**  is on
 
     Return type: Boolean
 
--   pg\_stat\_get\_backend\_activity\_start\(integer\)
+- pg\_stat\_get\_backend\_activity\_start\(integer\)
 
     Description: Specifies the time when the given server process's currently executing query is started only if the current user is the system administrator or the user of the session being queried and  **track\_activities**  is enabled.
 
     Return type: timestamp with time zone
 
--   pg\_stat\_get\_backend\_xact\_start\(integer\)
+- pg\_stat\_get\_backend\_xact\_start\(integer\)
 
     Description: Specifies the time when the given server process's currently executing transaction is started only if the current user is the system administrator or the user of the session being queried and  **track\_activities**  is enabled.
 
     Return type: timestamp with time zone
 
--   pg\_stat\_get\_backend\_start\(integer\)
+- pg\_stat\_get\_backend\_start\(integer\)
 
     Description: Specifies the time when the given server process is started. If the current user is neither the system administrator nor the user of the session being queried, NULL is  **returned**.
 
     Return type: timestamp with time zone
 
--   pg\_stat\_get\_backend\_client\_addr\(integer\)
+- pg\_stat\_get\_backend\_client\_addr\(integer\)
 
     Description: Specifies the IP address of the client connected to the given server process. If the connection is over a Unix domain socket, or if the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
 
     Return type: inet
 
--   pg\_stat\_get\_backend\_client\_port\(integer\)
+- pg\_stat\_get\_backend\_client\_port\(integer\)
 
     Description: Specifies the TCP port number of the client connected to the given server process. If the connection is over a Unix domain socket,  **-1**  will be returned. If the current user is neither a system administrator nor the same user as that of the session being queried,  **NULL**  will be returned.
 
     Return type: integer
 
--   pg\_stat\_get\_bgwriter\_timed\_checkpoints\(\)
+- pg\_stat\_get\_bgwriter\_timed\_checkpoints\(\)
 
     Description: Specifies the time when the background writer starts scheduled checkpoints \(because the  **checkpoint\_timeout**  time has expired\).
 
     Return type: bigint
 
--   pg\_stat\_get\_bgwriter\_requested\_checkpoints\(\)
+- pg\_stat\_get\_bgwriter\_requested\_checkpoints\(\)
 
     Description: Specifies the time when the background writer starts checkpoints based on requests from the backend because  **checkpoint\_segments**  has been exceeded or the  **CHECKPOINT**  command has been executed.
 
     Return type: bigint
 
--   pg\_stat\_get\_bgwriter\_buf\_written\_checkpoints\(\)
+- pg\_stat\_get\_bgwriter\_buf\_written\_checkpoints\(\)
 
     Description: Specifies the number of buffers written by the background writer during checkpoints.
 
     Return type: bigint
 
--   pg\_stat\_get\_bgwriter\_buf\_written\_clean\(\)
+- pg\_stat\_get\_bgwriter\_buf\_written\_clean\(\)
 
     Description: Specifies the number of buffers written by the background writer for routine cleaning of dirty pages.
 
     Return type: bigint
 
--   pg\_stat\_get\_bgwriter\_maxwritten\_clean\(\)
+- pg\_stat\_get\_bgwriter\_maxwritten\_clean\(\)
 
     Description: Specifies the time when the background writer stops its cleaning scan because it has written more buffers than specified in the  **bgwriter\_lru\_maxpages**  parameter.
 
     Return type: bigint
 
--   pg\_stat\_get\_buf\_written\_backend\(\)
+- pg\_stat\_get\_buf\_written\_backend\(\)
 
     Description: Specifies the number of buffers written by the backend because they need to allocate a new buffer.
 
     Return type: bigint
 
--   pg\_stat\_get\_buf\_alloc\(\)
+- pg\_stat\_get\_buf\_alloc\(\)
 
     Description: Specifies the total number of the allocated buffers.
 
     Return type: bigint
 
--   pg\_stat\_clear\_snapshot\(\)
+- pg\_stat\_clear\_snapshot\(\)
 
     Description: Discards the current statistics snapshot.
 
     Return type: void
 
--   pg\_stat\_reset\(\)
+- pg\_stat\_reset\(\)
 
     Description: Resets all statistics counters for the current database to zero \(requires system administrator permissions\).
 
     Return type: void
 
--   pg\_stat\_reset\_shared\(text\)
+- pg\_stat\_reset\_shared\(text\)
 
     Description: Resets all statistics counters for the current database in each node in a shared cluster to zero \(requires system administrator permissions\).
 
     Return type: void
 
--   pg\_stat\_reset\_single\_table\_counters\(oid\)
+- pg\_stat\_reset\_single\_table\_counters\(oid\)
 
     Description: Resets statistics for a single table or index in the current database to zero \(requires system administrator permissions\).
 
     Return type: void
 
--   pg\_stat\_reset\_single\_function\_counters\(oid\)
+- pg\_stat\_reset\_single\_function\_counters\(oid\)
 
     Description: Resets statistics for a single function in the current database to zero \(requires system administrator permissions\).
 
     Return type: void
 
--   pg\_stat\_session\_cu\(int, int, int\)
+- pg\_stat\_session\_cu\(int, int, int\)
 
     Description: Obtains the compression unit \(CU\) hit statistics of sessions running on the current node.
 
     Return type: record
 
--   pg\_stat\_get\_cu\_mem\_hit\(oid\)
+- pg\_stat\_get\_cu\_mem\_hit\(oid\)
 
     Description: Obtains the number of CU memory hits of a column storage table in the current database of the current node.
 
     Return type: bigint
 
--   pg\_stat\_get\_cu\_hdd\_sync\(oid\)
+- pg\_stat\_get\_cu\_hdd\_sync\(oid\)
 
     Description: Obtains the times CU is synchronously read from a disk by a column storage table in the current database of the current node.
 
     Return type: bigint
 
--   pg\_stat\_get\_cu\_hdd\_asyn\(oid\)
+- pg\_stat\_get\_cu\_hdd\_asyn\(oid\)
 
     Description: Obtains the times CU is asynchronously read from a disk by a column storage table in the current database of the current node.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_cu\_mem\_hit\(oid\)
+- pg\_stat\_get\_db\_cu\_mem\_hit\(oid\)
 
     Description: Obtains the CU memory hit in a database of the current node.
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_cu\_hdd\_sync\(oid\)
+- pg\_stat\_get\_db\_cu\_hdd\_sync\(oid\)
 
     Description: Obtains the times CU is synchronously read from a disk by a database of the current node.
 
     Return type: bigint
 
--   fenced\_udf\_process\(integer\)
+- fenced\_udf\_process\(integer\)
 
     Description: Shows the number of local UDF Master and Work processes. If the input parameter is set to  **1**, the number of Master processes is queried. If the input parameter is set to  **2**, the number of Worker processes is queried. If the input parameter is set to  **3**, all Worker processes are killed.
 
@@ -1480,13 +1480,13 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss does not support the Java UDF.
 
--   total\_cpu\(\)
+- total\_cpu\(\)
 
     Description: Obtains the CPU time used by the current node, in jiffies.
 
     Return type: bigint
 
--   mot\_global\_memory\_detail\(\)
+- mot\_global\_memory\_detail\(\)
 
     Description: Checks the size of the MOT global memory, including data and indexes.
 
@@ -1495,7 +1495,7 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
--   mot\_local\_memory\_detail\(\)
+- mot\_local\_memory\_detail\(\)
 
     Description: Checks the size of the MOT local memory, including data and indexes.
 
@@ -1504,7 +1504,7 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
--   mot\_session\_memory\_detail\(\)
+- mot\_session\_memory\_detail\(\)
 
     Description: Checks the MOT memory usage of all sessions.
 
@@ -1513,21 +1513,19 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the MOT functions are unavailable.
 
--   total\_memory\(\)
+- total\_memory\(\)
 
     Description: Obtains the size of the virtual memory used by the current node, in KB.
 
     Return type: bigint
 
-
--   pg\_stat\_get\_db\_cu\_hdd\_asyn\(oid\)
+- pg\_stat\_get\_db\_cu\_hdd\_asyn\(oid\)
 
     Description: Obtains the times CU is asynchronously read from a disk by a database of the current node.
 
     Return type: bigint
 
-
--   pg\_stat\_bad\_block\(text, int, int, int, int, int, timestamp with time zone, timestamp with time zone\)
+- pg\_stat\_bad\_block\(text, int, int, int, int, int, timestamp with time zone, timestamp with time zone\)
 
     Description: Obtains damage information about pages or CUs after the current node is started.
 
@@ -1535,19 +1533,19 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: record
 
--   pg\_stat\_bad\_block\_clear\(\)
+- pg\_stat\_bad\_block\_clear\(\)
 
     Description: Deletes the page and CU damage information that is read and recorded on the node \(requires system administrator permissions\).
 
     Return type: void
 
--   gs\_respool\_exception\_info\(pool text\)
+- gs\_respool\_exception\_info\(pool text\)
 
     Description: Queries the query rule of a specified resource pool.
 
     Return type: record
 
--   gs\_control\_group\_info\(pool text\)
+- gs\_control\_group\_info\(pool text\)
 
     Description: Queries information about Cgroups associated with a resource pool.
 
@@ -1630,19 +1628,19 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_all\_control\_group\_info\(\)
+- gs\_all\_control\_group\_info\(\)
 
     Description: Collects information about all Cgroups in the database.
 
     Return type: record
 
--   gs\_get\_control\_group\_info\(\)
+- gs\_get\_control\_group\_info\(\)
 
     Description: Collects information about all Cgroups.
 
     Return type: record
 
--   get\_instr\_workload\_info\(integer\)
+- get\_instr\_workload\_info\(integer\)
 
     Description: Obtains the transaction volume and time information on the primary database node.
 
@@ -1751,7 +1749,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   pv\_instance\_time\(\)
+- pv\_instance\_time\(\)
 
     Description: Obtains the time consumed in each execution phase on the current node.
 
@@ -1839,82 +1837,82 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   DBE\_PERF.get\_global\_instance\_time\(\)
+- DBE\_PERF.get\_global\_instance\_time\(\)
 
     Description: Provides the time consumed in each key phase in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   get\_instr\_unique\_sql\(\)
+- get\_instr\_unique\_sql\(\)
 
     Description: Obtains information about execution statements \(normalized SQL statements\) on the current node as a user with the  **sysadmin**  permission.
 
     Return type: record
 
--   reset\_unique\_sql\(text, text, bigint\)
+- reset\_unique\_sql\(text, text, bigint\)
 
-    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be** global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
+    Description: Resets information about system execution statements \(normalized SQL statements\) information as a user with the  **sysadmin**  permission. The value of the first parameter can be**global**  or  **local**.  **global**  indicates that information on all nodes is cleared, and  **local**  indicates that only information on the current node is cleared. The value of the second parameter can be  **ALL**,  **BY\_USERID**, or  **BY\_CNID**.  **ALL**  indicates that all information is cleared.  **BY\_USERID**  indicates that the SQL information of the user specified by  **USERID**  is cleared.  **BY\_CNID**  indicates that the SQL information related to the primary node of the database in the system is cleared. The third parameter indicates  **CNID**  and  **USERID**. If the second parameter is set to  **ALL**, the third parameter does not take effect and can be set to any value.
 
     Return type: Boolean
 
     >[!NOTE]NOTE 
     >This function involves distributed nodes. Currently, openGauss is a centralized database, for which the function of the value  **global**  is the same as that of the value  **local**  and the second parameter cannot set to be  **BY\_CNID**.
 
--   get\_instr\_wait\_event\(NULL\) 或 get\_instr\_wait\_event\(integer\)
+- get\_instr\_wait\_event\(NULL\) 或 get\_instr\_wait\_event\(integer\)
 
     Description: Obtains the statistics on wait events of the current node.
 
     Return type: record
 
--   get\_instr\_user\_login\(\)
+- get\_instr\_user\_login\(\)
 
     Description: Obtains the number of user login and logout times on the current node. Only users with the  **sysadmin**  or  **monitor admin**  permission can execute this function.
 
     Return type: record
 
--   get\_instr\_rt\_percentile\(integer\)
+- get\_instr\_rt\_percentile\(integer\)
 
     Description: Obtains the SQL response time P80 and P95 distribution information of the database.
 
     Return type: record
 
--   get\_node\_stat\_reset\_time\(\)
+- get\_node\_stat\_reset\_time\(\)
 
     Description: Obtains statistics about reset \(restart, primary/standby switchover, and database deletion\) time of the current node.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_os\_runtime\(\)
+- DBE\_PERF.get\_global\_os\_runtime\(\)
 
     Description: Displays the running status of the current operating system. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_os\_threads\(\)
+- DBE\_PERF.get\_global\_os\_threads\(\)
 
     Description: Provides information about the threads under all normal nodes of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_workload\_sql\_count\(\)
+- DBE\_PERF.get\_summary\_workload\_sql\_count\(\)
 
     Description: Provides statistics about the number of SELECT, UPDATE, INSERT, DELETE, DDL, DML, and DCL statements of different service loads in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_workload\_sql\_elapse\_time\(\)
+- DBE\_PERF.get\_summary\_workload\_sql\_elapse\_time\(\)
 
     Description: Provides statistics about the number of SELECT, UPDATE, INSERT, and DELETE statements and response time information \(TOTAL, AVG, MIN, and MAX\) for different loads in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_workload\_transaction\(\)
+- DBE\_PERF.get\_global\_workload\_transaction\(\)
 
     Description: Obtains the transaction volume and time information on all nodes of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_session\_stat\(\)
+- DBE\_PERF.get\_global\_session\_stat\(\)
 
     Description: Obtains the session status information on all nodes of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
@@ -1923,33 +1921,33 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >The status information contains the following 17 items:  **commit**,  **rollback**,  **sql**,  **table\_scan**,  **blocks\_fetched**,  **physical\_read\_operation**,  **shared\_blocks\_dirtied**,  **local\_blocks\_dirtied**,  **shared\_blocks\_read**,  **local\_blocks\_read**,  **blocks\_read\_time**,  **blocks\_write\_time**,  **sort\_imemory**,  **sort\_idisk**,  **cu\_mem\_hit**,  **cu\_hdd\_sync\_read**, and  **cu\_hdd\_asyread**.
 
--   DBE\_PERF.get\_global\_session\_time\(\)
+- DBE\_PERF.get\_global\_session\_time\(\)
 
     Description: Provides the time consumed in each key phase of each node in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_session\_memory\(\)
+- DBE\_PERF.get\_global\_session\_memory\(\)
 
     Description: Displays statistics about memory usage at the session level on each node in the unit of MB, including all the memory allocated to Postgres and stream threads on DNs for jobs currently executed by users. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_session\_memory\_detail\(\)
+- DBE\_PERF.get\_global\_session\_memory\_detail\(\)
 
     Description: Displays statistics about thread memory usage on each node by MemoryContext node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   create\_wlm\_session\_info\(int flag\)
+- create\_wlm\_session\_info\(int flag\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_wlm\_session\_info\(int flag\)
+- pg\_stat\_get\_wlm\_session\_info\(int flag\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_paxos\_stat\_replication\(\)
+- gs\_paxos\_stat\_replication\(\)
 
     Description: Queries the standby server information on the primary server. Currently, only the centralized DCF mode is supported.
 
@@ -2083,15 +2081,15 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >In the Lite scenario, openGauss provides this API, but the DCF functions are unavailable. DCF functions of openGauss are unavailable, but the leader election capability is provided. If this capability is required, you need to configure it.
 
--   gs\_wlm\_get\_resource\_pool\_info\(int\)
+- gs\_wlm\_get\_resource\_pool\_info\(int\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_wlm\_get\_all\_user\_resource\_info\(\)
+- gs\_wlm\_get\_all\_user\_resource\_info\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_wlm\_get\_user\_info\(int\)
+- gs\_wlm\_get\_user\_info\(int\)
 
     Description: Obtains information about all users. The input parameter can be any value of the INT type or be null. Only users with the  **sysadmin**  permission can execute this function.
 
@@ -2166,470 +2164,469 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_wlm\_get\_workload\_records\(\)
+- gs\_wlm\_get\_workload\_records\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_wlm\_readjust\_user\_space\(\)
+- gs\_wlm\_readjust\_user\_space\(\)
 
     Description: Corrects the storage space usage of all users. Only the administrator can execute this function.
 
     Return type: record
 
--   gs\_wlm\_readjust\_user\_space\_through\_username\(text name\)
+- gs\_wlm\_readjust\_user\_space\_through\_username\(text name\)
 
     Description: Corrects the storage space usage of a specified user. Common users can use this function to modify only their own usage. Only the administrator can modify the usage of all users. If the value of  **name**  is  **0000**, the usage of all users needs to be modified.
 
     Return type: record
 
--   gs\_wlm\_readjust\_user\_space\_with\_reset\_flag\(text name, boolean isfirst\)
+- gs\_wlm\_readjust\_user\_space\_with\_reset\_flag\(text name, boolean isfirst\)
 
     Description: Corrects the storage space usage of a specified user. If the input parameter  **isfirst**  is set to  **true**, statistics are collected from 0. Otherwise, statistics are collected from the previous result. Common users can use this function to modify only their own usage. Only the administrator can modify the usage of all users. If the value of  **name**  is  **0000**, the usage of all users needs to be modified.
 
     Return type: record
 
--   gs\_wlm\_session\_respool\(bigint\)
+- gs\_wlm\_session\_respool\(bigint\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_wlm\_get\_session\_info\(\)
+- gs\_wlm\_get\_session\_info\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_wlm\_get\_user\_session\_info\(\)
+- gs\_wlm\_get\_user\_session\_info\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_io\_wait\_status\(\)
+- gs\_io\_wait\_status\(\)
 
     Description: This API does not support single-node systems or centralized systems and is unavailable currently.
 
--   global\_stat\_get\_hotkeys\_info\(\)
+- global\_stat\_get\_hotkeys\_info\(\)
 
     Description: Obtains the statistics of hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
 
--   global\_stat\_clean\_hotkeys\(\)
+- global\_stat\_clean\_hotkeys\(\)
 
     Description: Clears statistics on hot keys in the entire cluster. This API does not support single-node systems or centralized systems and is unavailable currently.
 
-
--   DBE\_PERF.get\_global\_session\_stat\_activity\(\)
+- DBE\_PERF.get\_global\_session\_stat\_activity\(\)
 
     Description: Displays information about threads that are running on each node in openGauss. To query this function, you must have the  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_thread\_wait\_status\(\)
+- DBE\_PERF.get\_global\_thread\_wait\_status\(\)
 
     Description: Displays the block waiting status of backend threads and auxiliary threads on all nodes. To query this function, you must have the  **sysadmin**  or  **monitoradmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_operator\_history\_table\(\)
+- DBE\_PERF.get\_global\_operator\_history\_table\(\)
 
     Description: Displays the operator-related records \(persistent\) generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monadmin**  permissions.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_operator\_history\(\)
+- DBE\_PERF.get\_global\_operator\_history\(\)
 
     Description: Displays the operator-related records generated after jobs are executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monadmin**  permissions.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_operator\_runtime\(\)
+- DBE\_PERF.get\_global\_operator\_runtime\(\)
 
     Description: Displays real-time operator-related records of jobs executed on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monadmin**  permissions.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statement\_complex\_history\(\)
+- DBE\_PERF.get\_global\_statement\_complex\_history\(\)
 
     Description: Displays the historical records of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  and  **monadmin**  permissions.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statement\_complex\_history\_table\(\)
+- DBE\_PERF.get\_global\_statement\_complex\_history\_table\(\)
 
     Description: Displays the historical records \(persistent\) of complex queries on the primary database node of the current user. To query this function, you must have the  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statement\_complex\_runtime\(\)
+- DBE\_PERF.get\_global\_statement\_complex\_runtime\(\)
 
     Description: Displays the real-time information of complex queries on the primary database node of the current user. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_memory\_node\_detail\(\)
+- DBE\_PERF.get\_global\_memory\_node\_detail\(\)
 
     Description: Displays the memory usage of a certain database on all nodes. To query this function, you must have the  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_shared\_memory\_detail\(\)
+- DBE\_PERF.get\_global\_shared\_memory\_detail\(\)
 
     Description: Displays the usage information about all the shared memory contexts of all nodes. To query this function, you must have the  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_all\_indexes\(\)
+- DBE\_PERF.get\_global\_statio\_all\_indexes\(\)
 
     Description: Displays statistics about each index displayed in a row in the current database, showing I/O statistics about accesses to that specific index. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_all\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_all\_tables\(\)
 
     Description: Displays statistics about a row in each table \(including the TOAST table\) on each node.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_all\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_all\_tables\(\)
 
     Description: Displays statistics about a row in each table \(including the TOAST table\) on each node.
 
     Return type: record
 
--   DBE\_PERF.get\_local\_toastname\_and\_toastindexname\(\)
+- DBE\_PERF.get\_local\_toastname\_and\_toastindexname\(\)
 
     Description: Provides the mapping between the name and index of the local TOAST table and its associated table. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_all\_indexes\(\)
+- DBE\_PERF.get\_summary\_statio\_all\_indexes\(\)
 
     Description: Collects statistics about each index displayed in a row in the current databases of all nodes and displays the I/O statistics of a specific index. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_all\_sequences\(\)
+- DBE\_PERF.get\_global\_statio\_all\_sequences\(\)
 
     Description: Provides I/O status information about all sequences in the namespace. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_all\_tables\(\)
+- DBE\_PERF.get\_global\_statio\_all\_tables\(\)
 
     Description: Displays the I/O statistics about each table in databases on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_all\_tables\(\)
+- DBE\_PERF.get\_summary\_statio\_all\_tables\(\)
 
     Description: Collects I/O statistics about each table in databases in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_local\_toast\_relation\(\)
+- DBE\_PERF.get\_local\_toast\_relation\(\)
 
     Description: Provides the mapping between the name of the local TOAST table and its associated table. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_sys\_indexes\(\)
+- DBE\_PERF.get\_global\_statio\_sys\_indexes\(\)
 
     Description: Displays the I/O status information about all system catalog indexes in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_sys\_indexes\(\)
+- DBE\_PERF.get\_summary\_statio\_sys\_indexes\(\)
 
     Description: Collects the I/O status information about all system catalog indexes in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_sys\_sequences\(\)
+- DBE\_PERF.get\_global\_statio\_sys\_sequences\(\)
 
     Description: Provides the I/O status information about all the system sequences in the namespace. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_sys\_tables\(\)
+- DBE\_PERF.get\_global\_statio\_sys\_tables\(\)
 
     Description: Provides I/O status information about all system catalogs in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_sys\_tables\(\)
+- DBE\_PERF.get\_summary\_statio\_sys\_tables\(\)
 
     Description: Displays the I/O status information of all system catalogs in the namespace in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_user\_indexes\(\)
+- DBE\_PERF.get\_global\_statio\_user\_indexes\(\)
 
     Description: Displays the I/O status information about all user relationship table indexes in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_user\_indexes\(\)
+- DBE\_PERF.get\_summary\_statio\_user\_indexes\(\)
 
     Description: Displays the I/O status information about all user relationship table indexes in namespaces in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_user\_sequences\(\)
+- DBE\_PERF.get\_global\_statio\_user\_sequences\(\)
 
     Description: Displays the I/O status information about all user sequences in the namespace of each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statio\_user\_tables\(\)
+- DBE\_PERF.get\_global\_statio\_user\_tables\(\)
 
     Description: Displays the I/O status information about all user relationship tables in namespaces on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statio\_user\_tables\(\)
+- DBE\_PERF.get\_summary\_statio\_user\_tables\(\)
 
     Description: Displays the I/O status information about all user relationship tables in namespaces in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_stat\_db\_cu\(\)
+- DBE\_PERF.get\_stat\_db\_cu\(\)
 
     Description: Queries CU hits in a database and in each node in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_all\_indexes\(\)
+- DBE\_PERF.get\_global\_stat\_all\_indexes\(\)
 
     Description: Displays statistics of each index in databases on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_all\_indexes\(\)
+- DBE\_PERF.get\_summary\_stat\_all\_indexes\(\)
 
     Description: Collects statistics of each index in all databases on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_sys\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_sys\_tables\(\)
 
     Description: Displays statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_sys\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_sys\_tables\(\)
 
     Description: Collects statistics about the system catalogs of all the namespaces in  **pg\_catalog**  and  **information\_schema**  schemas on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_sys\_indexes\(\)
+- DBE\_PERF.get\_global\_stat\_sys\_indexes\(\)
 
     Description: Displays index status information about all the system catalogs in the  **pg\_catalog**  and  **information\_schema**  schemas on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_sys\_indexes\(\)
+- DBE\_PERF.get\_summary\_stat\_sys\_indexes\(\)
 
     Description: Collects statistics about index status information about all the system catalogs in the  **pg\_catalog**  and  **information\_schema**  schemas on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_user\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_user\_tables\(\)
 
     Description: Displays the status information about customized ordinary tables in all namespaces. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_user\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_user\_tables\(\)
 
     Description: Collects statistics about the status information about customized ordinary tables in all namespaces. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_user\_indexes\(\)
+- DBE\_PERF.get\_global\_stat\_user\_indexes\(\)
 
     Description: Displays the status information about the index of customized ordinary tables in all databases. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_user\_indexes\(\)
+- DBE\_PERF.get\_summary\_stat\_user\_indexes\(\)
 
     Description: Collects statistics about the status information about the index of customized ordinary tables in all databases. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_database\(\)
+- DBE\_PERF.get\_global\_stat\_database\(\)
 
     Description: Displays database statistics of all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_database\_conflicts\(\)
+- DBE\_PERF.get\_global\_stat\_database\_conflicts\(\)
 
     Description: Collects statistics on the database of all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_xact\_all\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_xact\_all\_tables\(\)
 
     Description: Displays transaction status information about all ordinary tables and TOAST tables in all namespaces. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_xact\_all\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_xact\_all\_tables\(\)
 
     Description: Collects statistics about transaction status information about all ordinary tables and TOAST tables in all namespaces. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_xact\_sys\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_xact\_sys\_tables\(\)
 
     Description: Displays transaction status information about all system catalogs in namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_xact\_sys\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_xact\_sys\_tables\(\)
 
     Description: Collects statistics about transaction status information about all system catalogs in namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_xact\_user\_tables\(\)
+- DBE\_PERF.get\_global\_stat\_xact\_user\_tables\(\)
 
     Description: Displays the transaction status information of the user tables in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_stat\_xact\_user\_tables\(\)
+- DBE\_PERF.get\_summary\_stat\_xact\_user\_tables\(\)
 
     Description: Collects statistics about the transaction status information of the user tables in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_user\_functions\(\)
+- DBE\_PERF.get\_global\_stat\_user\_functions\(\)
 
     Description: Displays the transaction status information of customized functions in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_xact\_user\_functions\(\)
+- DBE\_PERF.get\_global\_stat\_xact\_user\_functions\(\)
 
     Description: Collects statistics about the transaction status information of customized functions in the namespaces on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_stat\_bad\_block\(\)
+- DBE\_PERF.get\_global\_stat\_bad\_block\(\)
 
     Description: Displays information about table and index read failures on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_file\_redo\_iostat\(\)
+- DBE\_PERF.get\_global\_file\_redo\_iostat\(\)
 
     Description: Collects statistics on information about table and index read failures on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_file\_iostat\(\)
+- DBE\_PERF.get\_global\_file\_iostat\(\)
 
     Description: Displays statistics about data file I/Os on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_locks\(\)
+- DBE\_PERF.get\_global\_locks\(\)
 
     Description: Displays lock information of all nodes. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_replication\_slots\(\)
+- DBE\_PERF.get\_global\_replication\_slots\(\)
 
     Description: Displays logical replication information on all nodes. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_bgwriter\_stat\(\)
+- DBE\_PERF.get\_global\_bgwriter\_stat\(\)
 
     Description: Displays statistics about the background writer process's activities on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_replication\_stat\(\)
+- DBE\_PERF.get\_global\_replication\_stat\(\)
 
     Description: Displays information about log synchronization status on each node, such as the locations where the sender sends logs and where the receiver receives logs. To query this function, you must have the  **sysadmin**  or  **monadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_transactions\_running\_xacts\(\)
+- DBE\_PERF.get\_global\_transactions\_running\_xacts\(\)
 
     Description: Displays information about running transactions on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_transactions\_running\_xacts\(\)
+- DBE\_PERF.get\_summary\_transactions\_running\_xacts\(\)
 
     Description: Collects statistics of information about running transactions on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_transactions\_prepared\_xacts\(\)
+- DBE\_PERF.get\_global\_transactions\_prepared\_xacts\(\)
 
     Description: Displays information about transactions that are currently prepared for two-phase commit on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_transactions\_prepared\_xacts\(\)
+- DBE\_PERF.get\_summary\_transactions\_prepared\_xacts\(\)
 
     Description: Collects statistics information about transactions that are currently prepared for two-phase commit on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_statement\(\)
+- DBE\_PERF.get\_summary\_statement\(\)
 
     Description: Displays the status information of the historically-executed statements on each node. To query this function, you must have the  **sysadmin**  and  **monitor admin**  permissions.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_statement\_count\(\)
+- DBE\_PERF.get\_global\_statement\_count\(\)
 
     Description: Displays the number of  **SELECT**,  **UPDATE**,  **INSERT**, and  **DELETE**  statements and response time information \(TOTAL, AVG, MIN, and MAX\) on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_config\_settings\(\)
+- DBE\_PERF.get\_global\_config\_settings\(\)
 
     Description: Displays GUC parameter configuration information on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_wait\_events\(\)
+- DBE\_PERF.get\_global\_wait\_events\(\)
 
     Description: Displays the wait event status information on each node. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_statement\_responsetime\_percentile\(\)
+- DBE\_PERF.get\_statement\_responsetime\_percentile\(\)
 
     Description: Obtains the response time distribution for 80% and 95% SQL statements of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_summary\_user\_login\(\)
+- DBE\_PERF.get\_summary\_user\_login\(\)
 
     Description: Collects statistics about number of user login and logout times on each node in openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_record\_reset\_time\(\)
+- DBE\_PERF.get\_global\_record\_reset\_time\(\)
 
     Description: Displays the statistics about reset \(restart, primary/standby switchover, and database deletion\) time of openGauss. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.track\_memory\_context\(context\_list text\)
+- DBE\_PERF.track\_memory\_context\(context\_list text\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   DBE\_PERF.track\_memory\_context\_detail\(\)
+- DBE\_PERF.track\_memory\_context\_detail\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_mem\_mbytes\_reserved\(tid\)
+- pg\_stat\_get\_mem\_mbytes\_reserved\(tid\)
 
     Description: Collects statistics on variables related to resource management, which is used only for fault locating.
 
@@ -2637,53 +2634,53 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: text
 
--   gs\_wlm\_user\_resource\_info\(name text\)
+- gs\_wlm\_user\_resource\_info\(name text\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   pg\_stat\_get\_file\_stat\(\)
+- pg\_stat\_get\_file\_stat\(\)
 
     Description: Records statistics about data file I/Os to indicate I/O performance and detect performance problems such as abnormal I/O operations.
 
     Return type: record
 
--   pg\_stat\_get\_redo\_stat\(\)
+- pg\_stat\_get\_redo\_stat\(\)
 
     Description: Displays statistics on the replay of session thread logs.
 
     Return type: record
 
--   pg\_stat\_get\_status\(int8\)
+- pg\_stat\_get\_status\(int8\)
 
     Description: Tests the block waiting status about the backend thread and auxiliary thread of the current instance.
 
     Return type: record
 
--   get\_local\_rel\_iostat\(\)
+- get\_local\_rel\_iostat\(\)
 
     Description: Queries the accumulated I/O status of data files on the current node.
 
     Return type: record
 
--   DBE\_PERF.get\_global\_rel\_iostat\(\)
+- DBE\_PERF.get\_global\_rel\_iostat\(\)
 
     Description: Displays statistics about data file I/Os on all nodes. To query this function, you must have the  **sysadmin**  permission.
 
     Return type: record
 
--   DBE\_PERF.global\_threadpool\_status\(\)
+- DBE\_PERF.global\_threadpool\_status\(\)
 
     Description: Displays the status of worker threads and sessions in thread pools on all nodes. For details about the columns returned by the function, see  [GLOBAL\_THREADPOOL\_STATUS](global_threadpool_status.md).
 
     Return type: record
 
--   remote\_bgwriter\_stat\(\)
+- remote\_bgwriter\_stat\(\)
 
     Description: Displays the information about pages flushed by the bgwriter threads of all instances in the database, number of pages in the candidate buffer chain, and buffer elimination information \(except for the local node and not available on the DN\).
 
     Return type: record
 
--   pv\_os\_run\_info
+- pv\_os\_run\_info
 
     Description: Displays the running status of the current OS. For details about the columns, see  [GS\_OS\_RUN\_INFO](../database_reference/gs_os_run_info.md).
 
@@ -2691,7 +2688,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: SETOF record
 
--   pv\_session\_stat
+- pv\_session\_stat
 
     Description: Collects session status information by session thread or AutoVacuum thread. For details about the columns, see  [GS\_SESSION\_STAT](../database_reference/gs_session_stat.md).
 
@@ -2699,7 +2696,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: SETOF record
 
--   pv\_session\_time
+- pv\_session\_time
 
     Description: Collects statistics on the running time of session threads and the time consumed in each execution phase. For details about the columns, see  [GS\_SESSION\_TIME](../database_reference/gs_session_time.md).
 
@@ -2707,7 +2704,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: SETOF record
 
--   pg\_stat\_get\_db\_temp\_bytes
+- pg\_stat\_get\_db\_temp\_bytes
 
     Description: Collects statistics on the total amount of data written to temporary files through database query. All temporary files are counted, regardless of why the temporary file was created, and regardless of the  **log\_temp\_files**  setting.
 
@@ -2715,7 +2712,7 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   pg\_stat\_get\_db\_temp\_files
+- pg\_stat\_get\_db\_temp\_files
 
     Description: Queries the number of temporary files created in the database. All temporary files are counted, regardless of why the temporary file was created \(for example, sorting or hashing\), and regardless of the  **log\_temp\_files**  setting.
 
@@ -2723,14 +2720,13 @@ Statistics information functions are divided into the following two categories: 
 
     Return type: bigint
 
--   remote\_candidate\_stat\(\)
+- remote\_candidate\_stat\(\)
 
     Description: Displays the checkpoint information and log flushing information about all instances in the database \(except the current node\). Centralized systems are not supported.
 
     Return type: record
 
-
--   dbe\_perf.gs\_stat\_activity\_timeout\(int\)
+- dbe\_perf.gs\_stat\_activity\_timeout\(int\)
 
     Description: Obtains information about query jobs whose execution time exceeds the timeout threshold on the current node. The correct result can be returned only when the GUC parameter  **track\_activities**  is set to  **on**. The timeout threshold ranges from 0 to 2147483.
 
@@ -2811,15 +2807,15 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_wlm\_user\_resource\_info\(name text\)
+- gs\_wlm\_user\_resource\_info\(name text\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   create\_wlm\_instance\_statistics\_info
+- create\_wlm\_instance\_statistics\_info
 
     Description: This API has been discarded and is unavailable currently.
 
--   gs\_session\_memory
+- gs\_session\_memory
 
     Description: Collects statistics about memory usage at the session level in the unit of MB, including all the memory allocated to Postgres and Stream threads on DNs for tasks currently executed by users.
 
@@ -2870,15 +2866,15 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_wlm\_persistent\_user\_resource\_info\(\)
+- gs\_wlm\_persistent\_user\_resource\_info\(\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   create\_wlm\_operator\_info\(int flag\)
+- create\_wlm\_operator\_info\(int flag\)
 
     Description: This API has been discarded and is unavailable currently.
 
--   GS\_ALL\_NODEGROUP\_CONTROL\_GROUP\_INFO\(text\)
+- GS\_ALL\_NODEGROUP\_CONTROL\_GROUP\_INFO\(text\)
 
     Description: This API has been discarded and is unavailable currently.
 
@@ -2966,11 +2962,11 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_total\_nodegroup\_memory\_detail
+- gs\_total\_nodegroup\_memory\_detail
 
     Description: This API has been discarded and is unavailable currently.
 
--   local\_redo\_time\_count\(\)
+- local\_redo\_time\_count\(\)
 
     Description: Returns the time consumption statistics of each process of each playback thread on the current node \(valid data exists only on the standby node\).
 
@@ -3160,7 +3156,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   local\_xlog\_redo\_statics\(\)
+- local\_xlog\_redo\_statics\(\)
 
     Description: Returns the statistics of each type of logs that have been replayed on the current node \(valid data exists only on the standby node\).
 
@@ -3203,7 +3199,7 @@ Statistics information functions are divided into the following two categories: 
     </tbody>
     </table>
 
--   gs\_get\_shared\_memctx\_detail\(text\)
+- gs\_get\_shared\_memctx\_detail\(text\)
 
     Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **pg\_shared\_memory\_detail**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **pg\_shared\_memory\_detail**  view\).
 
@@ -3245,7 +3241,7 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >This view is not supported in the Lite release version.
 
--   gs\_get\_session\_memctx\_detail\(text\)
+- gs\_get\_session\_memctx\_detail\(text\)
 
     Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). This parameter is valid only in thread pool mode. Only the memory context queried through the  **gs_session\_memory\_context**  view can be queried. The input parameter is the memory context name \(that is, the  **contextname**  column in the result returned by the  **gs_session\_memory\_context**  view\).
 
@@ -3287,7 +3283,7 @@ Statistics information functions are divided into the following two categories: 
     >[!NOTE]NOTE 
     >This view takes effect only in thread pool mode and is not supported in the Lite release version.
 
--   gs\_get\_thread\_memctx\_detail\(tid,text\)
+- gs\_get\_thread\_memctx\_detail\(tid,text\)
 
     Description: Returns the memory application details of the specified memory context, including the file, line number, and size of each memory application \(the size of the same line in the same file is accumulated\). Only the memory context queried through the  **gs\_thread\_memory\_context**  view can be queried. The first input parameter is the thread ID \(the  **tid**  column of the data returned by the  **gs\_thread\_memory\_context**\), and the second parameter is the memory context name \(the  **contextname**  column of the data returned by  **gs\_thread\_memory\_context**\).
 
@@ -3328,5 +3324,3 @@ Statistics information functions are divided into the following two categories: 
 
     >[!NOTE]NOTE 
     >This view is not supported in the Lite release version.
-
-

@@ -33,11 +33,10 @@ CREATE RESOURCE LABEL multi_lb ADD SCHEMA(schema_for_label), TABLE(table_for_lab
 
 ## 特性约束<a name="section06531946143616"></a>
 
--   资源标签需要由具备POLADMIN和SYSADMIN属性的用户或初始用户创建。
--   不支持对临时表创建资源标签。
--   同一个基本表的列只可能属于一个资源标签。
+- 资源标签需要由具备POLADMIN和SYSADMIN属性的用户或初始用户创建。
+- 不支持对临时表创建资源标签。
+- 同一个基本表的列只可能属于一个资源标签。
 
 ## 依赖关系<a name="section22810484"></a>
 
 无。
-

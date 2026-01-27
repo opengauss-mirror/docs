@@ -6,26 +6,26 @@
 
 索引建立在数据库表中的某些列上。因此，在创建索引时，应该仔细考虑在哪些列上创建索引。
 
--   在经常需要搜索查询的列上创建索引，可以加快搜索的速度。
--   在作为主键的列上创建索引，强制该列的唯一性和组织表中数据的排列结构。
--   在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的。
--   在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间。
--   在经常使用WHERE子句的列上创建索引，加快条件的判断速度。
--   为经常出现在关键字ORDER BY、GROUP BY、DISTINCT后面的字段建立索引。
+- 在经常需要搜索查询的列上创建索引，可以加快搜索的速度。
+- 在作为主键的列上创建索引，强制该列的唯一性和组织表中数据的排列结构。
+- 在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的。
+- 在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间。
+- 在经常使用WHERE子句的列上创建索引，加快条件的判断速度。
+- 为经常出现在关键字ORDER BY、GROUP BY、DISTINCT后面的字段建立索引。
 
     >[!NOTE]说明
     >
-    >-   索引创建成功后，系统会自动判断何时引用索引。当系统认为使用索引比顺序扫描更快时，就会使用索引。
-    >-   索引创建成功后，必须和表保持同步以保证能够准确地找到新数据，这样就增加了数据操作的负荷。因此请定期删除无用的索引。
-    >-   分区表索引分为LOCAL索引与GLOBAL索引，一个LOCAL索引对应一个具体分区，而GLOBAL索引则对应整个分区表。
--   在开启逻辑复制的场景下，如需创建包含系统列的主键索引，必须将该表的REPLICA IDENTITY属性设置为FULL或是使用USING INDEX指定不包含系统列的、唯一的、非局部的、不可延迟的、仅包括标记为NOT NULL的列的索引。
+    >- 索引创建成功后，系统会自动判断何时引用索引。当系统认为使用索引比顺序扫描更快时，就会使用索引。
+    >- 索引创建成功后，必须和表保持同步以保证能够准确地找到新数据，这样就增加了数据操作的负荷。因此请定期删除无用的索引。
+    >- 分区表索引分为LOCAL索引与GLOBAL索引，一个LOCAL索引对应一个具体分区，而GLOBAL索引则对应整个分区表。
+- 在开启逻辑复制的场景下，如需创建包含系统列的主键索引，必须将该表的REPLICA IDENTITY属性设置为FULL或是使用USING INDEX指定不包含系统列的、唯一的、非局部的、不可延迟的、仅包括标记为NOT NULL的列的索引。
 
 ## 操作步骤<a name="zh-cn_topic_0283136615_zh-cn_topic_0237120308_zh-cn_topic_0059777978_scba43baf1cd54d06a22160699ec2c658"></a>
 
 创建分区表的步骤请参考[创建和管理分区表](creating_and_managing_partitioned_tables.md)。
 
--   创建索引
-    -   创建分区表LOCAL索引tpcds\_web\_returns\_p2\_index1，不指定索引分区的名称。
+- 创建索引
+    - 创建分区表LOCAL索引tpcds\_web\_returns\_p2\_index1，不指定索引分区的名称。
 
         ```
         openGauss=# CREATE INDEX tpcds_web_returns_p2_index1 ON tpcds.web_returns_p2 (ca_address_id) LOCAL;
@@ -37,7 +37,7 @@
         CREATE INDEX
         ```
 
-    -   创建分区表LOCAL索引tpcds\_web\_returns\_p2\_index2，并指定索引分区的名称。
+    - 创建分区表LOCAL索引tpcds\_web\_returns\_p2\_index2，并指定索引分区的名称。
 
         ```
         openGauss=# CREATE INDEX tpcds_web_returns_p2_index2 ON tpcds.web_returns_p2 (ca_address_sk) LOCAL
@@ -59,15 +59,14 @@
         CREATE INDEX
         ```
 
-    -   创建分区表GLOBAL索引tpcds\_web\_returns\_p2\_global\_index。
+    - 创建分区表GLOBAL索引tpcds\_web\_returns\_p2\_global\_index。
 
         ```
         CREATE INDEX tpcds_web_returns_p2_global_index ON tpcds.web_returns_p2 (ca_street_number) GLOBAL;
         ```
 
-
--   修改索引分区的表空间
-    -   修改索引分区_web\_returns\_p2\_P2\_index_的表空间为example1。
+- 修改索引分区的表空间
+    - 修改索引分区_web\_returns\_p2\_P2\_index_的表空间为example1。
 
         ```
         openGauss=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P2_index TABLESPACE example1;
@@ -79,7 +78,7 @@
         ALTER INDEX
         ```
 
-    -   修改索引分区_web\_returns\_p2\_P3\_index_的表空间为example2。
+    - 修改索引分区_web\_returns\_p2\_P3\_index_的表空间为example2。
 
         ```
         openGauss=# ALTER INDEX tpcds.tpcds_web_returns_p2_index2 MOVE PARTITION web_returns_p2_P3_index TABLESPACE example2;
@@ -91,8 +90,7 @@
         ALTER INDEX
         ```
 
-
--   重命名索引分区
+- 重命名索引分区
 
     执行如下命令对索引分区_web\_returns\_p2\_P8\_index_重命名_web\_returns\_p2\_P8\_index\__new。
 
@@ -106,21 +104,20 @@
     ALTER INDEX
     ```
 
--   查询索引
-    -   执行如下命令查询系统和用户定义的所有索引。
+- 查询索引
+    - 执行如下命令查询系统和用户定义的所有索引。
 
         ```
         openGauss=# SELECT RELNAME FROM PG_CLASS WHERE RELKIND='i' or RELKIND='I';
         ```
 
-    -   执行如下命令查询指定索引的信息。
+    - 执行如下命令查询指定索引的信息。
 
         ```
         openGauss=# \di+ tpcds.tpcds_web_returns_p2_index2 
         ```
 
-
--   删除索引
+- 删除索引
 
     ```
     openGauss=# DROP INDEX tpcds.tpcds_web_returns_p2_index1;
@@ -133,13 +130,12 @@
     DROP INDEX
     ```
 
-
 openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_zh-cn_topic_0237120308_zh-cn_topic_0059777978_tf6189b97ccf4474e871a7a982b53c2e4)。
 
 >[!NOTE]说明
 >
->-   索引创建成功后，系统会自动判断何时引用索引。当系统认为使用索引比顺序扫描更快时，就会使用索引。
->-   索引创建成功后，必须和表保持同步以保证能够准确地找到新数据，这样就增加了数据操作的负荷。因此请定期删除无用的索引。
+>- 索引创建成功后，系统会自动判断何时引用索引。当系统认为使用索引比顺序扫描更快时，就会使用索引。
+>- 索引创建成功后，必须和表保持同步以保证能够准确地找到新数据，这样就增加了数据操作的负荷。因此请定期删除无用的索引。
 
 **表 1**  索引方式
 
@@ -173,15 +169,14 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
 </tbody>
 </table>
 
--   创建一个普通表。
+- 创建一个普通表。
 
     ```
     openGauss=# CREATE TABLE tpcds.customer_address_bak AS TABLE tpcds.customer_address;
     INSERT 0 0
     ```
 
-
--   创建普通索引
+- 创建普通索引
 
     如果对于tpcds.customer\_address\_bak表，需要经常进行以下查询。
 
@@ -198,7 +193,7 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
     CREATE INDEX
     ```
 
--   创建唯一索引
+- 创建唯一索引
 
     在表tpcds.ship\_mode\_t1上的SM\_SHIP\_MODE\_SK字段上创建唯一索引。
 
@@ -206,7 +201,7 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
     openGauss=# CREATE UNIQUE INDEX ds_ship_mode_t1_index1 ON tpcds.ship_mode_t1(SM_SHIP_MODE_SK);
     ```
 
--   创建多字段索引
+- 创建多字段索引
 
     假如用户需要经常查询表tpcds.customer\_address\_bak中ca\_address\_sk是5050，且ca\_street\_number小于1000的记录，使用以下命令进行查询。
 
@@ -221,7 +216,7 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
     CREATE INDEX
     ```
 
--   创建部分索引
+- 创建部分索引
 
     如果只需要查询ca\_address\_sk为5050的记录，可以创建部分索引来提升查询效率。
 
@@ -230,7 +225,7 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
     CREATE INDEX
     ```
 
--   创建表达式索引
+- 创建表达式索引
 
     假如经常需要查询ca\_street\_number小于1000的信息，执行如下命令进行查询。
 
@@ -245,11 +240,9 @@ openGauss支持4种创建索引的方式请参见[表1](#zh-cn_topic_0283136615_
     CREATE INDEX
     ```
 
--   删除tpcds.customer\_address\_bak表。
+- 删除tpcds.customer\_address\_bak表。
 
     ```
     openGauss=# DROP TABLE tpcds.customer_address_bak;
     DROP TABLE
     ```
-
-

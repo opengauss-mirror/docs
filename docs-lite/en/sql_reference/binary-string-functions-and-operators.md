@@ -4,7 +4,7 @@
 
 SQL defines some string functions that use keywords, rather than commas, to separate arguments.
 
--   octet\_length\(string\)
+- octet\_length\(string\)
 
     Description: Specifies the number of bytes in a binary string.
 
@@ -20,7 +20,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   overlay\(string placing string from int \[for int\]\)
+- overlay\(string placing string from int \[for int\]\)
 
     Description: Replaces substrings.
 
@@ -36,7 +36,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   position\(substring in string\)
+- position\(substring in string\)
 
     Description: Specifies the location of a specified substring.
 
@@ -52,7 +52,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substring\(string \[from int\] \[for int\]\)
+- substring\(string \[from int\] \[for int\]\)
 
     Description: Truncates a substring.
 
@@ -68,7 +68,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   substr\(string, from int \[, for int\]\)
+- substr\(string, from int \[, for int\]\)
 
     Description: Truncates a substring.
 
@@ -84,7 +84,7 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
--   trim\(\[both\] bytes from string\)
+- trim\(\[both\] bytes from string\)
 
     Description: Removes the longest string containing only bytes from  **bytes**  from the start and end of  **string**.
 
@@ -100,12 +100,11 @@ SQL defines some string functions that use keywords, rather than commas, to sepa
     (1 row)
     ```
 
-
 ## Other Binary String Functions<a name="en-us_topic_0283137016_en-us_topic_0237121968_en-us_topic_0059778049_s460ba3376a004239a3cc867b5466c5f5"></a>
 
 openGauss provides common syntax used for calling functions.
 
--   btrim\(string bytea,bytes bytea\)
+- btrim\(string bytea,bytes bytea\)
 
     Description: Removes the longest string containing only bytes from  **bytes**  from the start and end of  **string**.
 
@@ -121,7 +120,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   get\_bit\(string, offset\)
+- get\_bit\(string, offset\)
 
     Description: Extracts bits from a string.
 
@@ -137,7 +136,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   get\_byte\(string, offset\)
+- get\_byte\(string, offset\)
 
     Description: Extracts bytes from a string.
 
@@ -153,7 +152,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   rawcmp
+- rawcmp
 
     Description: Specifies the raw data type comparison function.
 
@@ -161,7 +160,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: integer
 
--   raweq
+- raweq
 
     Description: Specifies the raw data type comparison function.
 
@@ -169,7 +168,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawge
+- rawge
 
     Description: Specifies the raw data type comparison function.
 
@@ -177,7 +176,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawgt
+- rawgt
 
     Description: Specifies the raw data type comparison function.
 
@@ -185,7 +184,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawin
+- rawin
 
     Description: Specifies the raw data type parsing function.
 
@@ -193,7 +192,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: bytea
 
--   rawle
+- rawle
 
     Description: Specifies the raw data type parsing function.
 
@@ -201,7 +200,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawlike
+- rawlike
 
     Description: Specifies the raw data type parsing function.
 
@@ -209,7 +208,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawlt
+- rawlt
 
     Description: Specifies the raw data type parsing function.
 
@@ -217,7 +216,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawne
+- rawne
 
     Description: Compares whether the raw types are the same.
 
@@ -225,7 +224,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawnlike
+- rawnlike
 
     Description: Checks whether the raw type matches the mode.
 
@@ -233,7 +232,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: Boolean
 
--   rawout
+- rawout
 
     Description: Specifies the RAW output API.
 
@@ -241,7 +240,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: cstring
 
--   rawsend
+- rawsend
 
     Description: Converts the bytea type to the binary type.
 
@@ -249,7 +248,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: bytea
 
--   rawtohex
+- rawtohex
 
     Description: Converts the raw format to the hexadecimal format.
 
@@ -257,7 +256,7 @@ openGauss provides common syntax used for calling functions.
 
     Return type: text
 
--   set\_bit\(string,offset, newvalue\)
+- set\_bit\(string,offset, newvalue\)
 
     Description: Sets bits in a string.
 
@@ -273,7 +272,7 @@ openGauss provides common syntax used for calling functions.
     (1 row)
     ```
 
--   set\_byte\(string,offset, newvalue\)
+- set\_byte\(string,offset, newvalue\)
 
     Description: Sets bytes in a string.
 
@@ -288,5 +287,3 @@ openGauss provides common syntax used for calling functions.
      \x5468006f406173
     (1 row)
     ```
-
-

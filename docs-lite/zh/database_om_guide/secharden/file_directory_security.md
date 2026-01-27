@@ -143,6 +143,7 @@ find ${GAUSSDATA}/postgresql.conf \( ! -user ${GAUSSUSER} -o ! -group ${GAUSSGRO
 ```bash
 chmod 0600 ${GAUSSDATA}/postgresql.conf
 ```
+
 其中`${GAUSSDATA}`为DN的data目录。
 
 ## 确保pg_hba.conf文件权限最小化

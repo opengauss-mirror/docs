@@ -9,8 +9,8 @@
 
 The above syntax diagram is explained as follows:
 
--   **procedure\_name**  specifies the name of a stored procedure.
--   **parameter**  specifies the parameters for the stored procedure. You can set no parameter or multiple parameters.
+- **procedure\_name**  specifies the name of a stored procedure.
+- **parameter**  specifies the parameters for the stored procedure. You can set no parameter or multiple parameters.
 
 ## Examples<a name="en-us_topic_0283136925_en-us_topic_0237122223_en-us_topic_0059778001_scfc5c5fdac3e4a11a915ebac95b49f79"></a>
 
@@ -35,4 +35,3 @@ openGauss=# CALL proc_staffs(2,8,6);
 openGauss=# DROP PROCEDURE proc_staffs;
 
 ```
-

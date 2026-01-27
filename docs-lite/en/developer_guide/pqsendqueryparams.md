@@ -82,4 +82,3 @@ PQsendQueryParams is equivalent to PQsendQuery. The only difference is that quer
 ## Example<a name="en-us_topic_0241735628_section13161655174820"></a>
 
 For details, see  [Example](example_libpq.md).
-

@@ -6,14 +6,14 @@
 
 ### Basic Features<a name="en-us_topic_0059778819_s8ce37a15763045549311205e19f06a45"></a>
 
--   **Connect to the database**: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see  [Gsql Connection and Usage](../getting_started/gsql_connection_and_usage.md).
+- **Connect to the database**: By default, only the local server can be connected. To connect to a remote database, you must configure the server. For details, see  [Gsql Connection and Usage](../getting_started/gsql_connection_and_usage.md).
 
     >[!NOTE]NOTE 
     >If  **gsql**  is used to connect to a database, the connection timeout period will be 5 minutes. If the database has not correctly set up a connection and authenticated the identity of the client within this period,  **gsql**  will time out and exit.
     >To resolve this problem, see  [Troubleshooting](#troubleshooting).
 
--   **Run SQL statements**: Interactively entered SQL statements and specified SQL statements in a file can be run.
--   **Run meta-commands**: Meta-commands help the administrator view database object information, query cache information, format SQL output, and connect to a new database. For details about meta-commands, see  [Meta-Command Reference](meta_command_reference.md).
+- **Run SQL statements**: Interactively entered SQL statements and specified SQL statements in a file can be run.
+- **Run meta-commands**: Meta-commands help the administrator view database object information, query cache information, format SQL output, and connect to a new database. For details about meta-commands, see  [Meta-Command Reference](meta_command_reference.md).
 
 ### Advanced Features<a name="en-us_topic_0059778819_s999ec23443d04c7ab199c53189744b58"></a>
 
@@ -69,7 +69,7 @@
 </tbody>
 </table>
 
--   <a name="en-us_topic_0059778819_en-us_topic_0058968129_li39134862"></a>Variables
+- <a name="en-us_topic_0059778819_en-us_topic_0058968129_li39134862"></a>Variables
 
     To set a variable, run the  **\\set**  meta-command of  **gsql**. For example, to set variable  _foo_  to  **bar**, run the following command:
 
@@ -89,8 +89,8 @@
     **gsql**  pre-defines some special variables and plans the values of these variables. To ensure compatibility with later versions, do not use these variables for other purposes. For details about special variables, see  [Table 2](#en-us_topic_0059778819_en-us_topic_0058968129_table45814285).
 
     >[!NOTE]NOTE 
-    >-   All the special variables consist of upper-case letters, digits, and underscores \(\_\).
-    >-   To view the default value of a special variable, run the  **\\echo :**_varname_  meta-command, for example,  **\\echo :**_DBNAME_.
+    >- All the special variables consist of upper-case letters, digits, and underscores \(\_\).
+    >- To view the default value of a special variable, run the  **\\echo :**_varname_  meta-command, for example,  **\\echo :**_DBNAME_.
 
     **Table  2**  Settings of special variables
 
@@ -224,8 +224,7 @@
     </tbody>
     </table>
 
-
--   <a name="en-us_topic_0059778819_en-us_topic_0058968129_li56915888"></a>SQL substitution
+- <a name="en-us_topic_0059778819_en-us_topic_0058968129_li56915888"></a>SQL substitution
 
     **gsql**, like a parameter of a meta-command, provides a key feature that enables you to substitute a standard SQL statement for a  **gsql**  variable.  **gsql**  also provides a new alias or identifier for the variable. To replace the value of a variable using the SQL substitution method, add a colon \(:\) before the variable. For example:
 
@@ -246,8 +245,7 @@
     >[!TIP]NOTICE 
     >The value of the variable is copied literally, so it can even contain unbalanced quotation marks or backslash commands. Therefore, the input content must be meaningful.
 
-
--   <a name="en-us_topic_0059778819_en-us_topic_0058968129_li65414495"></a>Prompt
+- <a name="en-us_topic_0059778819_en-us_topic_0058968129_li65414495"></a>Prompt
 
     The  **gsql**  prompt can be set using the three variables in  [Table 3](#en-us_topic_0059778819_tfd36c27a76294b92ad194d20beeaac7f). These variables consist of characters and special escape characters.
 
@@ -392,7 +390,6 @@
     </tr>
     </tbody>
     </table>
-
 
 ### Environment Variables<a name="en-us_topic_0059778819_s0a191fd6f5d448aab0473160a8ee54f6"></a>
 
@@ -645,12 +642,11 @@ area_name|Asia
 omm@[local] openGauss=#
 ```
 
-
 ## Obtaining Help Information<a name="EN-US_TOPIC_0294748948"></a>
 
 ### Procedure<a name="en-us_topic_0059778941_s24c36ac1563e42cb99f9773e8cd9c78c"></a>
 
--   When connecting to the database, run the following command to obtain the help information:
+- When connecting to the database, run the following command to obtain the help information:
 
     ```
     gsql --help
@@ -670,7 +666,7 @@ omm@[local] openGauss=#
     ......
     ```
 
--   When connecting to the database, run the following command to obtain the help information:
+- When connecting to the database, run the following command to obtain the help information:
 
     ```
     help
@@ -687,10 +683,9 @@ omm@[local] openGauss=#
            \q to quit
     ```
 
-
 ### Examples<a name="en-us_topic_0059778941_s4dc2aaee2ce54ae1a508fe58125b9995"></a>
 
-1.  Run the following command to connect to the database:
+1. Run the following command to connect to the database:
 
     ```
     gsql -d postgres -p 8000
@@ -706,7 +701,7 @@ omm@[local] openGauss=#
     Type "help" for help.
     ```
 
-2.  View the  **gsql**  help information. For details, see  [Table 1](#en-us_topic_0059778941_en-us_topic_0058968146_table52020644).
+2. View the  **gsql**  help information. For details, see  [Table 1](#en-us_topic_0059778941_en-us_topic_0058968146_table52020644).
 
     **Table  1** **gsql**  online help
 
@@ -762,7 +757,6 @@ omm@[local] openGauss=#
     </tr>
     </tbody>
     </table>
-
 
 ## Command Reference<a name="EN-US_TOPIC_0294749022"></a>
 
@@ -1124,12 +1118,12 @@ This section describes meta-commands provided by  **gsql**  after the openGauss 
 
 ### Precautions<a name="en-us_topic_0059778645_sf4d8bb008138470c9007621cebd2dfde"></a>
 
--   The format of the  **gsql**  meta-command is a backslash \(\\\) followed by a command verb, and then a parameter. The parameters are separated from the command verb and from each other by any number of whitespace characters.
--   To include whitespace characters into an argument, you must quote them with a single straight quotation mark. To include a single straight quotation mark into such an argument, precede it by a backslash. Anything contained in single quotation marks is furthermore subject to C-like substitutions for \\n \(new line\), \\t \(tab\), \\b \(backspace\), \\r \(carriage return\), \\f \(form feed\), \\digits \(octal\), and \\xdigits \(hexadecimal\).
--   Within a parameter, text enclosed in double quotation marks \(""\) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
--   If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
--   Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
--   Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
+- The format of the  **gsql**  meta-command is a backslash \(\\\) followed by a command verb, and then a parameter. The parameters are separated from the command verb and from each other by any number of whitespace characters.
+- To include whitespace characters into an argument, you must quote them with a single straight quotation mark. To include a single straight quotation mark into such an argument, precede it by a backslash. Anything contained in single quotation marks is furthermore subject to C-like substitutions for \\n \(new line\), \\t \(tab\), \\b \(backspace\), \\r \(carriage return\), \\f \(form feed\), \\digits \(octal\), and \\xdigits \(hexadecimal\).
+- Within a parameter, text enclosed in double quotation marks \(""\) is taken as a command line input to the shell. The output of the command \(with any trailing newline removed\) is taken as the argument value.
+- If an unquoted argument begins with a colon \(:\), the argument is taken as a  **gsql**  variable and the value of the variable is used as the argument value instead.
+- Some commands take an SQL identifier \(such as a table name\) as a parameter. These parameters follow the SQL syntax rules: Unquoted letters are forced to lowercase, while double quotation marks \(""\) protect letters from case conversion and allow incorporation of whitespace into the identifier. Within double quotation marks, paired double quotation marks reduce to a single double quotation mark in the result name. For example,  **FOO"BAR"BAZ**  is interpreted as  **fooBARbaz**, and  **"Aweird""name"**  becomes  **A weird"name**.
+- Parsing for arguments stops when another unquoted backslash is found. This is taken as the beginning of a new meta-command. The special sequence \\\\ \(two backslashes\) marks the end of parameters and continues parsing SQL statements if any. In this way, SQL and  **gsql**  commands can be freely mixed in a line. But in any case, the arguments of a meta-command cannot continue beyond the end of the line.
 
 ### Meta-command<a name="en-us_topic_0059778645_s180deee1bdf347639010abe523b324fe"></a>
 
@@ -2139,7 +2133,7 @@ openGauss=# \sf
 
 The various  **\\d**  commands accept a  **PATTERN**  parameter to specify the object name to be displayed. In the simplest case, PATTERN is the exact name of the object. Characters in  **PATTERN**  are usually converted to lowercase \(as in SQL names\), for example,  **\\dt FOO**  will display a table named  **foo**. As in SQL names, placing double quotation marks \("\) around a pattern prevents them being folded to lower case. If you need to include a double quotation mark \("\) in a pattern, write it as a pair of double quotation marks \(""\) within a double-quote sequence, which is in accordance with the rules for SQL quoted identifiers. For example,  **\\dt "FOO""BAR"**  will be displayed as a table named  **FOO"BAR**  instead of  **foo"bar**. You cannot put double quotation marks around just part of a pattern, which is different from the normal rules for SQL names. For example,  **\\dt FOO"FOO"BAR**  will be displayed as a table named  **fooFOObar**  if just part of a pattern is quoted.
 
-Whenever the  **PATTERN**  parameter is omitted completely, the  **\\d **commands display all objects that are visible in the current schema search path, which is equivalent to using an asterisk \(\*\) as the pattern. An object is regarded to be visible if it can be referenced by name without explicit schema qualification. To see all objects in the database regardless of their visibility, use a dot within double quotation marks \(\*.\*\) as the pattern.
+Whenever the  **PATTERN**  parameter is omitted completely, the  **\\d**commands display all objects that are visible in the current schema search path, which is equivalent to using an asterisk \(\*\) as the pattern. An object is regarded to be visible if it can be referenced by name without explicit schema qualification. To see all objects in the database regardless of their visibility, use a dot within double quotation marks \(\*.\*\) as the pattern.
 
 Within a pattern, the asterisk \(\*\) matches any sequence of characters \(including no characters\) and a question mark \(?\) matches any single character. This notation is comparable to Unix shell file name patterns. For example,  **\\dt int\***  displays tables whose names start with  **int**. But within double quotation marks, the asterisk \(\*\) and the question mark \(?\) lose these special meanings and are just matched literally.
 
@@ -2147,10 +2141,10 @@ A pattern that contains a dot \(.\) is interpreted as a schema name pattern foll
 
 Senior users can use regular-expression notations, such as character classes. For example \[0-9\] can be used to match any digit. All regular-expression special characters work as specified in POSIX. The following characters are excluded:
 
--   A dot \(.\) is used as a separator.
--   An asterisk \(\*\) is translated into an asterisk prefixed with a dot \(.\*\), which is a regular-expression marking.
--   A question mark \(?\) is translated into a dot \(.\).
--   A dollar sign \($\) is matched literally.
+- A dot \(.\) is used as a separator.
+- An asterisk \(\*\) is translated into an asterisk prefixed with a dot \(.\*\), which is a regular-expression marking.
+- A question mark \(?\) is translated into a dot \(.\).
+- A dollar sign \($\) is matched literally.
 
 You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern characters: .,  _R_\*, and  _R_?. The dollar sign \($\) does not need to be used as a regular expression character because  **PATTERN**  must match the entire name instead of being interpreted as a regular expression \(in other words, $ is automatically appended to  **PATTERN**\). If you do not expect a pattern to be anchored, write an asterisk \(\*\) at its beginning or end. All regular-expression special characters within double quotation marks lose their special meanings and are matched literally. Regular-expression special characters in operator name patterns \(such as the  **\\do**  parameter\) are also matched literally.
 
@@ -2158,13 +2152,13 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
 ### Low Connection Performance<a name="en-us_topic_0078149561_section625869329424"></a>
 
--   **log\_hostname**  is enabled, but DNS is incorrect.
+- **log\_hostname**  is enabled, but DNS is incorrect.
 
     Connect to the database, and run  **show log\_hostname**  to check whether  **log\_hostname**  is enabled in the database.
 
     If it is enabled, the database kernel will use DNS to check the name of the host where the client is deployed. If the host where the database is configured with an incorrect or unreachable DNS server, the database connection will take a long time to set up. For details about this parameter, see the description of  **log\_hostname**  in section [Log Content](../database_reference/logging-content.md).
 
--   The database kernel slowly runs the initialization statement.
+- The database kernel slowly runs the initialization statement.
 
     Problems are difficult to locate in this scenario. Try using the  **strace**  Linux trace command.
 
@@ -2186,7 +2180,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     An uncommon scenario is that the disk of the machine where the DN resides is full or faulty, affecting queries and leading to user authentication failures. As a result, the connection process is suspended. To solve this problem, simply clear the data disk space of the DN.
 
--   TCP connection is set up slowly.
+- TCP connection is set up slowly.
 
     Adapt the steps of troubleshooting slow initialization statement execution. Use  **strace**. If the following statement is run slowly:
 
@@ -2202,25 +2196,24 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     It indicates that the physical connection between the client and the database is set up slowly. In this case, check whether the network is unstable or has high throughput.
 
-
 ### Problems in Setting Up Connections<a name="en-us_topic_0078149561_section3272835810521"></a>
 
--   gsql: could not connect to server: No route to host
+- gsql: could not connect to server: No route to host
 
     This problem occurs generally because an unreachable IP address or port number was specified. Check whether the values of  **-h**  and  **-p**  parameters are correct.
 
--   gsql: FATAL:  Invalid username/password,login denied.
+- gsql: FATAL:  Invalid username/password,login denied.
 
     This problem occurs generally because an incorrect username or password was entered. Contact the database administrator to check whether the username and password are correct.
 
--   gsql: FATAL:  Forbid remote connection with trust method!
+- gsql: FATAL:  Forbid remote connection with trust method!
 
     For security purposes, remote login in trust mode is forbidden. In this case, you need to modify the connection authentication information in the  **pg\_hba.conf**  file. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
     
     >[!NOTE]NOTE 
     >Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty. It is recommended that service applications be deployed outside the database instead of inside the database.
 
--   The DN can connect to the database if  **-h 127.0.0.1**  is specified, and the connection will fail if  **-h 127.0.0.1**  is removed.
+- The DN can connect to the database if  **-h 127.0.0.1**  is specified, and the connection will fail if  **-h 127.0.0.1**  is removed.
 
     Run the SQL statement  **show unix\_socket\_directory**  to check whether the  **unix socket directory**  used by the DN is the same as that specified by the environment virable  **$PGHOST**  in the  **shell**  directory.
 
@@ -2228,15 +2221,15 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     For more information about  **unix\_socket\_directory**, see [Connection Settings](../database_reference/connection-settings.md). 
 
--   The "libpq.so" loaded mismatch the version of gsql, please check it.
+- The "libpq.so" loaded mismatch the version of gsql, please check it.
 
     This problem occurs because the version of  **libpq.so**  used in the environment does not match that of  **gsql**. Run the  **ldd gsql**  command to check the version of the loaded  **libpq.so**, and then load correct  **libpq.so**  by modifying the environment variable  **LD\_LIBRARY\_PATH**.
 
--   gsql: symbol lookup error: xxx/gsql: undefined symbol: libpqVersionString
+- gsql: symbol lookup error: xxx/gsql: undefined symbol: libpqVersionString
 
     This problem occurs because the version of  **libpq.so**  used in the environment does not match that of  **gsql**  \(or the PostgreSQL  **libpq.so**  exists in the environment\). Run the  **ldd gsql**  command to check the version of the loaded  **libpq.so**, and then load correct  **libpq.so**  by modifying the environment variable  **LD\_LIBRARY\_PATH**.
 
--   gsql: connect to server failed: Connection timed out
+- gsql: connect to server failed: Connection timed out
 
     Is the server running on host "xx.xxx.xxx.xxx" and accepting TCP/IP connections on port xxxx?
 
@@ -2253,24 +2246,25 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
     4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 2999ms
     ```
 
--   gsql: FATAL:  permission denied for database "postgres"
+- gsql: FATAL:  permission denied for database "postgres"
 
     DETAIL:  User does not have CONNECT privilege.
 
     This problem occurs because the user does not have the permission to access the database. To solve this problem, perform the following steps:
 
-    1.  Connect to the database as the system administrator  **dbadmin**.
+    1. Connect to the database as the system administrator  **dbadmin**.
 
         ```
         gsql -d postgres -U dbadmin -p 8000
         ```
 
-    2.  Grant the user with the permission to access the database.
+    2. Grant the user with the permission to access the database.
 
         GRANT CONNECT ON DATABASE postgres TO user1;
 
         >[!NOTE]NOTE 
         >Actually, some common misoperations may also cause a database connection failure, for example, entering an incorrect database name, username, or password. In this case, the client tool will display the corresponding error messages.
+>
         >```
         >gsql -d postgres -p 8000
         >gsql: FATAL:  database "postgres" does not exist
@@ -2279,8 +2273,7 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
         >gsql: FATAL:  Invalid username/password, login denied.
         >```
 
-
--   gsql: FATAL: sorry, too many clients already, active/non-active: 197/3.
+- gsql: FATAL: sorry, too many clients already, active/non-active: 197/3.
 
     This problem occurs because the number of system connections exceeds the allowed maximum. Contact the DBA database administrator to release unnecessary sessions.
 
@@ -2377,28 +2370,27 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
     </tbody>
     </table>
 
--   gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
+- gsql: wait xxx.xxx.xxx.xxx:xxxx timeout expired
 
     When  **gsql**  initiates a connection request to the database, a 5-minute timeout period is used. If the database cannot correctly authenticate the client request and client identity within this period,  **gsql**  will exit the connection process for the current session, and will report the above error.
 
     Generally, this problem is caused by the incorrect host and port \(that is, the  _xxx_  part in the error information\) specified by the  **-h**  and  **-p**  parameters. As a result, the communication fails. Occasionally, this problem is caused by network faults. To resolve this problem, check whether the host name and port number of the database are correct.
 
--   gsql: could not receive data from server: Connection reset by peer.
+- gsql: could not receive data from server: Connection reset by peer.
 
     Check whether DN logs contain information similar to "FATAL: cipher file "/data/coordinator/server.key.cipher" has group or world access". This error is usually caused by incorrect tampering with the permissions for data directories or some key files. For details about how to correct the permissions, see related permissions for files on other normal instances.
 
--   gsql: FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
+- gsql: FATAL:  GSS authentication method is not allowed because XXXX user password is not disabled.
 -   
     In  **pg\_hba.conf**  of the target DN, the authentication mode is set to  **gss**  for authenticating the IP address of the current client. However, this authentication algorithm cannot authenticate clients. Change the authentication algorithm to  **sha256**  and try again. For details, see [Configuration File Reference](../database_administration_guide/configuration_file_reference.md).
 
     >[!NOTE]NOTE 
-    >-   Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.
-    >-   It is recommended that service applications be deployed outside the database instead of inside the database.
-
+    >- Do not modify the configurations of database hosts in the  **pg\_hba. conf**  file. Otherwise, the database may become faulty.
+    >- It is recommended that service applications be deployed outside the database instead of inside the database.
 
 ## Other Faults<a name="section1457563481712"></a>
 
--   There is a core dump or abnormal exit due to the bus error.
+- There is a core dump or abnormal exit due to the bus error.
 
     Generally, this problem is caused by changes in loading the shared dynamic library \(.so file in Linux\) during process running. Alternatively, if the process binary file changes, the execution code for the OS to load machines or the entry for loading a dependent library will change accordingly. In this case, the OS kills the process for protection purposes, generating a core dump file.
 
@@ -2406,5 +2398,3 @@ You can write ?, \(_R_+|\), \(_R_|\), and  _R_  to the following pattern charact
 
     >[!NOTE]NOTE 
     >A possible stack of the core dump file contains dl\_main and its function calling. The file is used by the OS to initialize a process and load the shared dynamic library. If the process has been initialized but the shared dynamic library has not been loaded, the process cannot be considered completely started.
-
-

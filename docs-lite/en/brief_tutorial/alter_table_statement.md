@@ -4,84 +4,80 @@ The ALTER TABLE statement modifies tables, including modifying table definitions
 
 ## Syntax<a name="section6112121974310"></a>
 
--   Add a column to an existing table.
+- Add a column to an existing table.
 
     ```
     ALTER TABLE  table_name
         ADD column_name data_type;
     ```
 
--   Delete a column from an existing table.
+- Delete a column from an existing table.
 
     ```
     ALTER TABLE table_name DROP COLUMN column_name;
     ```
 
--   Change the column type of a table.
+- Change the column type of a table.
 
     ```
     ALTER TABLE  table_name
      MODIFY column_name data_type;
     ```
 
--   Add or delete a NOT NULL constraint to or from a column of an existing table.
+- Add or delete a NOT NULL constraint to or from a column of an existing table.
 
     ```
     ALTER TABLE  table_name
        ALTER column_name { SET | DROP } NOT NULL
     ```
 
-
--   Rename a specified column in a table.
+- Rename a specified column in a table.
 
     ```
     ALTER TABLE table_name RENAME  column_name TO new_column_name;
     ```
 
-
--   Update columns.
+- Update columns.
 
     ```
     ALTER TABLE  table_name 
         MODIFY ( { column_name data_type | column_name [ CONSTRAINT constraint_name ] NOT NULL [ ENABLE ] | column_name [ CONSTRAINT constraint_name ] NULL } [, ...] );
     ```
 
--   Rename a table,which does not affect stored data.
+- Rename a table,which does not affect stored data.
 
     ```
     ALTER TABLE table_name 
         RENAME TO new_table_name;
     ```
 
-
 ## Parameter Description<a name="section10742894719"></a>
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the table to be modified.
 
     If  **ONLY**  is specified, only the table is modified. If  **ONLY**  is not specified, the table and all subtables are modified. You can add the asterisk \(\*\) option following the table name to specify that all subtables are scanned, which is the default operation.
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a new or an existing column.
 
--   **data\_type**
+- **data\_type**
 
     Specifies the type of a new column or a new type of an existing column.
 
--   **new\_table\_name**
+- **new\_table\_name**
 
     Specifies the new table name.
 
--   **new\_column\_name**
+- **new\_column\_name**
 
     Specifies the new name of a specific column in a table.
 
--   **constraint\_name**
+- **constraint\_name**
 
     Specifies the name of a constraint.
-
 
 ## Examples<a name="section258851613475"></a>
 
@@ -105,7 +101,7 @@ openGauss=# SELECT * FROM customer_t1;
 (11 rows)
 ```
 
--   Add a column.
+- Add a column.
 
     Add a new column to the preceding table.
 
@@ -128,7 +124,7 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
--   Change the data type of a column.
+- Change the data type of a column.
 
     Change the data type of the  **c_last_name**  column from character\(8\) to character\(12\).
 
@@ -151,7 +147,7 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
--   Add a column constraint.
+- Add a column constraint.
 
     Delete the rows where the  **c\_customer\_sk**  column is empty.
 
@@ -180,7 +176,7 @@ openGauss=# SELECT * FROM customer_t1;
      date          | time without time zone |
     ```
 
--   Change a column name.
+- Change a column name.
 
     Change the column name from  **date**  to  **purchase_date**.
 
@@ -203,7 +199,7 @@ openGauss=# SELECT * FROM customer_t1;
      purchase_date | time without time zone |
     ```
 
--   Delete a column.
+- Delete a column.
 
     Delete the  **purchase\_date**  column.
 
@@ -229,5 +225,3 @@ openGauss=# SELECT * FROM customer_t1;
               4320 | tpcds         | Lily         |             |   2000
     (10 rows)
     ```
-
-

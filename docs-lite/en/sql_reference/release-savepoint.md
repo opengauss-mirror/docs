@@ -10,9 +10,9 @@ Destroying a savepoint makes it unavailable as a rollback point, but it has no o
 
 ## Precautions<a name="en-us_topic_0283137262_en-us_topic_0237122177_en-us_topic_0059778044_section3731161611223"></a>
 
--   Specifying a savepoint name that was not previously defined causes an error.
--   It is not possible to release a savepoint when the transaction is in an aborted state.
--   If multiple savepoints have the same name, only the one that was most recently defined is released.
+- Specifying a savepoint name that was not previously defined causes an error.
+- It is not possible to release a savepoint when the transaction is in an aborted state.
+- If multiple savepoints have the same name, only the one that was most recently defined is released.
 
 ## Syntax<a name="en-us_topic_0283137262_en-us_topic_0237122177_en-us_topic_0059778044_section1173201615228"></a>
 
@@ -60,4 +60,3 @@ openGauss=# DROP TABLE tpcds.table1;
 ## Helpful Links<a name="en-us_topic_0283137262_en-us_topic_0237122177_en-us_topic_0059778044_section1873501692219"></a>
 
 [SAVEPOINT](savepoint.md)  and  [ROLLBACK TO SAVEPOINT](rollback-to-savepoint.md)
-

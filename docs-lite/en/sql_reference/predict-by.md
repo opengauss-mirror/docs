@@ -19,18 +19,17 @@ PREDICT BY model_name [ (FEATURES attribute [, attribute] +]) ]
 
 ## Parameter Description<a name="section1885554716517"></a>
 
--   model\_name
+- model\_name
 
     Name of the model of a speculative task.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   attribute
+- attribute
 
     Name of the input feature column of a speculative task.
 
     Value range: a string. It must comply with the identifier naming convention.
-
 
 ## Examples<a name="section9624150554"></a>
 
@@ -42,4 +41,3 @@ FROM houses;
 ## Helpful Links<a name="section998105215517"></a>
 
 [CREATE MODEL](create-model.md)  and  [DROP MODEL](drop-model.md)
-

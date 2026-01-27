@@ -6,7 +6,7 @@ Flashback table enables you to restore a table to a specific point in time. When
 
 ## Prerequisites<a name="section17975164121712"></a>
 
--   The  **undo\_retention\_time**  parameter has been set for specifying the retention period of undo logs.
+- The  **undo\_retention\_time**  parameter has been set for specifying the retention period of undo logs.
 
 ## Syntax<a name="section510120469162"></a>
 
@@ -20,4 +20,3 @@ TIMECAPSULE TABLE table_name TO { TIMESTAMP | CSN } expression
 TIMECAPSULE TABLE t1 TO TIMESTAMP to_timestamp ('2020-02-11 10:13:22.724718', 'YYYY-MM-DD HH24:MI:SS.FF');
 TIMECAPSULE TABLE t1 TO CSN 9617;
 ```
-

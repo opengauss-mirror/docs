@@ -1,6 +1,6 @@
 # Hash Function<a name="EN-US_TOPIC_0311139289"></a>
 
--   bucketabstime\(value, flag\)
+- bucketabstime\(value, flag\)
 
     Description: Hashes the value in the abstime format and finds the corresponding hash bucket.
 
@@ -18,7 +18,7 @@
     (1 row)
     ```
 
--   bucketbool\(value, flag\)
+- bucketbool\(value, flag\)
 
     Description: Hashes the value in the bool format and finds the corresponding hash bucket.
 
@@ -41,7 +41,7 @@
     (1 row)
     ```
 
--   bucketbpchar\(value, flag\)
+- bucketbpchar\(value, flag\)
 
     Description: Hashes the value in the bpchar format and finds the corresponding hash bucket.
 
@@ -59,8 +59,7 @@
     (1 row)
     ```
 
-
--   bucketbytea\(value, flag\)
+- bucketbytea\(value, flag\)
 
     Description: Hashes the value in the bytea format and finds the corresponding hash bucket.
 
@@ -78,8 +77,7 @@
     (1 row)
     ```
 
-
--   bucketcash\(value, flag\)
+- bucketcash\(value, flag\)
 
     Description: Hashes the value in the money format and finds the corresponding hash bucket.
 
@@ -97,7 +95,7 @@
     (1 row)
     ```
 
--   getbucket\(value, flag\)
+- getbucket\(value, flag\)
 
     Description: Obtains the hash bucket from the distribution column.
 
@@ -138,7 +136,7 @@
     
     ```
 
--   hash\_array\(anyarray\)
+- hash\_array\(anyarray\)
 
     Description: Hashes an array, obtains the result of an array element using the hash function, and returns the combination result.
 
@@ -156,7 +154,7 @@
     (1 row)
     ```
 
--   hash\_group\(key\)
+- hash\_group\(key\)
 
     Description: Calculates the hash value of each column in the Group Clause in the streaming engine.
 
@@ -201,7 +199,7 @@
     (1 row)
     ```
 
--   hash\_numeric\(numeric\)
+- hash\_numeric\(numeric\)
 
     Description: Calculates the hash value of numeric data.
 
@@ -219,7 +217,7 @@
     (1 row)
     ```
 
--   hash\_range\(anyrange\)
+- hash\_range\(anyrange\)
 
     Description: Calculates the hash value of a range.
 
@@ -237,7 +235,7 @@
     (1 row)
     ```
 
--   hashbpchar\(character\)
+- hashbpchar\(character\)
 
     Description: Calculates the hash value of bpchar.
 
@@ -255,7 +253,7 @@
     (1 row)
     ```
 
--   hashchar\(char\)
+- hashchar\(char\)
 
     Description: Converts char and Boolean data into hash values.
 
@@ -279,7 +277,7 @@
     (1 row)
     ```
 
--   hashenum\(anyenum\)
+- hashenum\(anyenum\)
 
     Description: Converts enumerated values to hash values.
 
@@ -299,7 +297,7 @@
     (1 row)
     ```
 
--   hashfloat4\(real\)
+- hashfloat4\(real\)
 
     Description: Converts float4 values to hash values.
 
@@ -317,7 +315,7 @@
     (1 row)
     ```
 
--   hashfloat8\(double precision\)
+- hashfloat8\(double precision\)
 
     Description: Converts float8 values to hash values.
 
@@ -335,7 +333,7 @@
     (1 row)
     ```
 
--   hashinet\(inet\)
+- hashinet\(inet\)
 
     Description: Supports hashing indexes on inet or cidr. Returns the hash value of inet.
 
@@ -353,7 +351,7 @@
     (1 row)
     ```
 
--   hashint1\(tinyint\)
+- hashint1\(tinyint\)
 
     Description: Converts INT1 values to hash values.
 
@@ -371,7 +369,7 @@
     (1 row)
     ```
 
--   hashint2\(smallint\)
+- hashint2\(smallint\)
 
     Description: Converts INT2 values to hash values.
 
@@ -389,7 +387,7 @@
     (1 row)
     ```
 
--   bucketchar
+- bucketchar
 
     Description: Calculates the hash value of the input parameter.
 
@@ -397,7 +395,7 @@
 
     Return type: integer
 
--   bucketdate
+- bucketdate
 
     Description: Calculates the hash value of the input parameter.
 
@@ -405,7 +403,7 @@
 
     Return type: integer
 
--   bucketfloat4
+- bucketfloat4
 
     Description: Calculates the hash value of the input parameter.
 
@@ -413,7 +411,7 @@
 
     Return type: integer
 
--   bucketfloat8
+- bucketfloat8
 
     Description: Calculates the hash value of the input parameter.
 
@@ -421,7 +419,7 @@
 
     Return type: integer
 
--   bucketint1
+- bucketint1
 
     Description: Calculates the hash value of the input parameter.
 
@@ -429,7 +427,7 @@
 
     Return type: integer
 
--   bucketint2
+- bucketint2
 
     Description: Calculates the hash value of the input parameter.
 
@@ -437,7 +435,7 @@
 
     Return type: integer
 
--   bucketint2vector
+- bucketint2vector
 
     Description: Calculates the hash value of the input parameter.
 
@@ -445,7 +443,7 @@
 
     Return type: integer
 
--   bucketint4
+- bucketint4
 
     Description: Calculates the hash value of the input parameter.
 
@@ -453,7 +451,7 @@
 
     Return type: integer
 
--   bucketint8
+- bucketint8
 
     Description: Calculates the hash value of the input parameter.
 
@@ -461,7 +459,7 @@
 
     Return type: integer
 
--   bucketinterval
+- bucketinterval
 
     Description: Calculates the hash value of the input parameter.
 
@@ -469,7 +467,7 @@
 
     Return type: integer
 
--   bucketname
+- bucketname
 
     Description: Calculates the hash value of the input parameter.
 
@@ -477,7 +475,7 @@
 
     Return type: integer
 
--   bucketnumeric
+- bucketnumeric
 
     Description: Calculates the hash value of the input parameter.
 
@@ -485,7 +483,7 @@
 
     Return type: integer
 
--   bucketnvarchar2
+- bucketnvarchar2
 
     Description: Calculates the hash value of the input parameter.
 
@@ -493,7 +491,7 @@
 
     Return type: integer
 
--   bucketoid
+- bucketoid
 
     Description: Calculates the hash value of the input parameter.
 
@@ -501,7 +499,7 @@
 
     Return type: integer
 
--   bucketoidvector
+- bucketoidvector
 
     Description: Calculates the hash value of the input parameter.
 
@@ -509,7 +507,7 @@
 
     Return type: integer
 
--   bucketraw
+- bucketraw
 
     Description: Calculates the hash value of the input parameter.
 
@@ -517,7 +515,7 @@
 
     Return type: integer
 
--   bucketreltime
+- bucketreltime
 
     Description: Calculates the hash value of the input parameter.
 
@@ -525,7 +523,7 @@
 
     Return type: integer
 
--   bucketsmalldatetime
+- bucketsmalldatetime
 
     Description: Calculates the hash value of the input parameter.
 
@@ -533,7 +531,7 @@
 
     Return type: integer
 
--   buckettext
+- buckettext
 
     Description: Calculates the hash value of the input parameter.
 
@@ -541,7 +539,7 @@
 
     Return type: integer
 
--   buckettime
+- buckettime
 
     Description: Calculates the hash value of the input parameter.
 
@@ -549,7 +547,7 @@
 
     Return type: integer
 
--   buckettimestamp
+- buckettimestamp
 
     Description: Calculates the hash value of the input parameter.
 
@@ -557,7 +555,7 @@
 
     Return type: integer
 
--   buckettimestamptz
+- buckettimestamptz
 
     Description: Calculates the hash value of the input parameter.
 
@@ -565,7 +563,7 @@
 
     Return type: integer
 
--   buckettimetz
+- buckettimetz
 
     Description: Calculates the hash value of the input parameter.
 
@@ -573,7 +571,7 @@
 
     Return type: integer
 
--   bucketuuid
+- bucketuuid
 
     Description: Calculates the hash value of the input parameter.
 
@@ -581,12 +579,10 @@
 
     Return type: integer
 
--   bucketvarchar
+- bucketvarchar
 
     Description: Calculates the hash value of the input parameter.
 
     Parameter: character varying, integer
 
     Return type: integer
-
-

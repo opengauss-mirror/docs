@@ -6,16 +6,15 @@
 
 ## Precautions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sdd2da7fe44624eb99ee77013ff96c6bd"></a>
 
--   You must have the  **INSERT**  permission on a table to insert data to it. If a user is granted with the  **INSERY ANY TABLE**  permission, the user has the  **USAGE**  permission on all schemas except system schemas and the  **INSERT**  permission on tables in these schemas.
--   Use of the  **RETURNING**  clause requires the  **SELECT**  permission on all columns mentioned in  **RETURNING**.
--   If  **ON DUPLICATE KEY UPDATE**  is used, you must have the  **SELECT **and  **UPDATE **permissions on the table and the  **SELECT **permission on the unique constraint \(primary key or unique index\).
--   If you use the  **query**  clause to insert rows from a query, you need to have the  **SELECT**  permission on any table or column used in the query.
--   When you connect to a database compatible to Teradata and  **td\_compatible\_truncation**  is  **on**, a long string will be automatically truncated. If later  **INSERT**  statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
+- You must have the  **INSERT**  permission on a table to insert data to it. If a user is granted with the  **INSERY ANY TABLE**  permission, the user has the  **USAGE**  permission on all schemas except system schemas and the  **INSERT**  permission on tables in these schemas.
+- Use of the  **RETURNING**  clause requires the  **SELECT**  permission on all columns mentioned in  **RETURNING**.
+- If  **ON DUPLICATE KEY UPDATE**  is used, you must have the  **SELECT**and  **UPDATE**permissions on the table and the  **SELECT**permission on the unique constraint \(primary key or unique index\).
+- If you use the  **query**  clause to insert rows from a query, you need to have the  **SELECT**  permission on any table or column used in the query.
+- When you connect to a database compatible to Teradata and  **td\_compatible\_truncation**  is  **on**, a long string will be automatically truncated. If later  **INSERT**  statements \(not involving foreign tables\) insert long strings to columns of char- and varchar-typed columns in the target table, the system will truncate the long strings to ensure no strings exceed the maximum length defined in the target table.
 
     >[!NOTE]NOTE 
     >
     >If inserting multi-byte character data \(such as Chinese characters\) to a database with the character set byte encoding \(SQL\_ASCII, LATIN1\), and the character data crosses the truncation position, the string is truncated based on its bytes instead of characters. Unexpected result will occur in tail after the truncation. If you want correct truncation result, you are advised to adopt encoding set such as UTF8, which has no character data crossing the truncation position.
-
 
 ## Syntax<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_se242be9719f44731b261539dbd42d7b9"></a>
 
@@ -33,7 +32,7 @@ INSERT [/*+ plan_hint */] INTO
 
 ## Parameter Description<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_s06dfa4f09bfd4e0d9826a80e6a91b0a6"></a>
 
--   **WITH \[ RECURSIVE \] with\_query \[, ...\]**
+- **WITH \[ RECURSIVE \] with\_query \[, ...\]**
 
     Specifies one or more subqueries that can be referenced by name in the main query, which is equivalent to a temporary table.
 
@@ -54,24 +53,24 @@ INSERT [/*+ plan_hint */] INTO
 
     – You can use  **MATERIALIZED**  or  **NOT MATERIALIZED**  to modify the CTE.
 
-    -   If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
-    -   If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
+    - If  **MATERIALIZED**  is specified, the WITH query will be materialized, and a copy of the subquery result set is generated. The copy is directly queried at the reference point. Therefore, the WITH subquery cannot be jointly optimized with the SELECT statement trunk \(for example, predicate pushdown and equivalence class transfer\). In this scenario, you can use  **NOT MATERIALIZED**  for modification. If the WITH query can be executed as a subquery inline, the preceding optimization can be performed.
+    - If the user does not explicitly declare the materialized attribute, comply with the following rules: If the CTE is referenced only once in the trunk statement to which it belongs and semantically supports inline execution, it will be rewritten as subquery inline execution. Otherwise, the materialized execution will be performed in CTE Scan mode.
 
     >[!NOTE]NOTE 
     >
     >**INSERT ON DUPLICATE KEY UPDATE**  does not support the  **WITH**  and  **WITH RECURSIVE**  clauses.
 
--   **plan\_hint**  clause
+- **plan\_hint**  clause
 
-    Follows the  **INSERT**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **INSERT**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** _plan\_hint _**\*/**  comment block takes effect as a hint. Multiple hints can be written.
+    Follows the  **INSERT**  keyword in the  **/\*+ \*/**  format. It is used to optimize the plan of an  **INSERT**  statement block. For details, see  [Hint-based Tuning](../performance_tuning_guide/plan_hint_optimization_overview.md). In each statement, only the first  **/\*+** _plan\_hint_**\*/**  comment block takes effect as a hint. Multiple hints can be written.
 
--   **table\_name**
+- **table\_name**
 
     Specifies the name of the target table where data will be inserted.
 
     Value range: an existing table name
 
--   **partition\_clause**
+- **partition\_clause**
 
     Inserts data to a specified partition.
 
@@ -84,89 +83,87 @@ INSERT [/*+ plan_hint */] INTO
 
     If the value of the  **value**  clause is inconsistent with the specified partition, an error is reported.
 
-
--   **target\_query**
+- **target\_query**
     
     Specified subquery for insertion，which is equivalent to a view.This parameter takes effect only when **sql\_compatibility** is set to **A**. For restriction on inserting into a subquery, see Automatically Updatable View section in [CREATE VIEW](create-view.md) for more details.
 
--   **WITH [ CASCADED | LOCAL ] CHECK OPTION**
+- **WITH [ CASCADED | LOCAL ] CHECK OPTION**
     
     For details about the clause, see [CREATE VIEW](create-view.md).
 
--   **column\_name**
+- **column\_name**
 
     Specifies the name of a column in a table.
 
-    -   The column name can be qualified with a subfield name or array subscript, if needed.
-    -   Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or  **NULL**  if there is none. Inserting into only some fields of a composite column leaves the other fields null.
-    -   The target column names  **column\_name**  can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
-    -   The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the  **value **clause or  **query**.
-    -   The values provided by the  **value **clause and query are associated with the corresponding columns from left to right in the table.
+    - The column name can be qualified with a subfield name or array subscript, if needed.
+    - Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or  **NULL**  if there is none. Inserting into only some fields of a composite column leaves the other fields null.
+    - The target column names  **column\_name**  can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order.
+    - The target columns are the first  _N_  column names, if there are only  _N_  columns supplied by the  **value**clause or  **query**.
+    - The values provided by the  **value**clause and query are associated with the corresponding columns from left to right in the table.
 
     Value range: an existing column
 
--   **expression**
+- **expression**
 
     Specifies an expression or a value to assign to the corresponding column.
 
     1. If the database compatibility level is B, column names can be referenced in expressions following VALUES. The calculation rules of expressions following VALUES and ON DUPLICATE KEY UPDATE are as follows:
-    - (1) Expressions are calculated based on the column writing sequence of SQL statements.
-    - (2) When the referenced column is not calculated or is being calculated (referencing itself):
-        - If the default value of the referenced column is a constant or an old tuple exists, the default value or old tuple value is used for the calculation of the current expression.
-        - If the default value of the referenced column is not a constant (such as a method or expression) and no old tuple value exists, null is used for calculation of the current expression.
-    - (3) If the referenced column has been calculated, the value of the current record of the field is used for the calculation of the current expression.
-    
-    Other databases have the same performance as databases of other compatibility levels.
+        - (1) Expressions are calculated based on the column writing sequence of SQL statements.
+        - (2) When the referenced column is not calculated or is being calculated (referencing itself):
+            - If the default value of the referenced column is a constant or an old tuple exists, the default value or old tuple value is used for the calculation of the current expression.
+            - If the default value of the referenced column is not a constant (such as a method or expression) and no old tuple value exists, null is used for calculation of the current expression.
+        - (3) If the referenced column has been calculated, the value of the current record of the field is used for the calculation of the current expression.
+        
+        Other databases have the same performance as databases of other compatibility levels.
     
     2. The syntax of other database compatibility levels is described as follows:
 
-    -   In the  **INSERT ON DUPLICATE KEY UPDATE**  statement, expression can be  **VALUES\(**_column\_name_**\)**  or  **EXCLUDED.**_column\_name_, indicating that the value of  **column\_name**  corresponding to the conflict row is referenced. Note that  **VALUES\(**_column\_name_**\)**  cannot be nested in an expression \(for example,  **VALUES\(**_column\_name_**\)+1**\).  **EXCLUDED**  is not subject to this restriction.
+    - In the  **INSERT ON DUPLICATE KEY UPDATE**  statement, expression can be  **VALUES\(**_column\_name_**\)**  or  **EXCLUDED.**_column\_name_, indicating that the value of  **column\_name**  corresponding to the conflict row is referenced. Note that  **VALUES\(**_column\_name_**\)**  cannot be nested in an expression \(for example,  **VALUES\(**_column\_name_**\)+1**\).  **EXCLUDED**  is not subject to this restriction.
 
-    -   If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
-    -   If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
+    - If single-quotation marks are inserted in a column, the single-quotation marks need to be used for escape.
+    - If the expression for any column is not of the correct data type, automatic type conversion will be attempted. If the attempt fails, data insertion fails, and the system returns an error message.
 
--   **DEFAULT**
+- **DEFAULT**
 
     Specifies the default value of a field. The value is  **NULL**  if no default value is assigned to it.
 
--   **query**
+- **query**
 
     Specifies a query statement \(SELECT statement\) that uses the query result as the inserted data.
 
--   **RETURNING**
+- **RETURNING**
 
     Returns the inserted rows. The syntax of the  **RETURNING**  list is identical to that of the output list of  **SELECT**. Note that  **INSERT ON DUPLICATE KEY UPDATE**  does not support the  **RETURNING**  clause.
 
--   **output\_expression**
+- **output\_expression**
 
     Specifies an expression used to calculate the output result of the  **INSERT**  statement after each row is inserted.
 
     Value range: The expression can use any field in the table. You can use the asterisk \(\*\) to return all fields of the inserted row.
 
--   **output\_name**
+- **output\_name**
 
     Specifies a name to use for a returned column.
 
     Value range: a string. It must comply with the identifier naming convention.
 
--   **ON DUPLICATE KEY UPDATE**
+- **ON DUPLICATE KEY UPDATE**
 
     For a table with a unique constraint \(**UNIQUE INDEX**  or  **PRIMARY KEY**\), if the inserted data violates the unique constraint, the  **UPDATE**  clause is executed on the conflicting row to complete the update. For a table without a unique constraint, only the insert operation is performed. When  **UPDATE**  is used, if  **NOTHING**  is specified, this insertion is ignored. You can use  **EXCLUDE.**  or  **VALUES\(\)**  to select the column corresponding to the source data.
 
-    -   Triggers are supported. The execution sequence of triggers is determined by the actual execution process.
-        -   Run the  **insert**  command to trigger the  **before insert**  and  **after insert**  triggers.
-        -   Run the  **update**  command to trigger the  **before insert**,  **before update**, and  **after update**  triggers.
-        -   Run the  **update nothing**  command to trigger the  **before insert**  trigger.
+    - Triggers are supported. The execution sequence of triggers is determined by the actual execution process.
+        - Run the  **insert**  command to trigger the  **before insert**  and  **after insert**  triggers.
+        - Run the  **update**  command to trigger the  **before insert**,  **before update**, and  **after update**  triggers.
+        - Run the  **update nothing**  command to trigger the  **before insert**  trigger.
 
-    -   The unique constraint or primary key of  **DEFERRABLE**  is not supported.
+    - The unique constraint or primary key of  **DEFERRABLE**  is not supported.
 
-    -   If a table has multiple unique constraints and the inserted data violates multiple unique constraints, only the first row that has a conflict is updated. \(The check sequence is closely related to index maintenance. Generally, the conflict check is performed on the index that is created first.\)
-    -   If multiple rows are inserted and these rows conflict with the same row in the table, the system inserts or updates the first row and then updates other rows in sequence.
+    - If a table has multiple unique constraints and the inserted data violates multiple unique constraints, only the first row that has a conflict is updated. \(The check sequence is closely related to index maintenance. Generally, the conflict check is performed on the index that is created first.\)
+    - If multiple rows are inserted and these rows conflict with the same row in the table, the system inserts or updates the first row and then updates other rows in sequence.
 
-    -   Primary keys and unique index columns cannot be updated.
-    -   Column-store tables, foreign tables, and memory tables are not supported.
-    -   Subquery expressions are supported. The syntax and function of the expressions are the same as those of  **UPDATE**. In a subquery expression,  **EXCLUDED**  can be used to select the columns corresponding to the source data.
-
+    - Primary keys and unique index columns cannot be updated.
+    - Column-store tables, foreign tables, and memory tables are not supported.
+    - Subquery expressions are supported. The syntax and function of the expressions are the same as those of  **UPDATE**. In a subquery expression,  **EXCLUDED**  can be used to select the columns corresponding to the source data.
 
 ## Examples<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_sfff14489321642278317cf06cd89810d"></a>
 
@@ -203,7 +200,9 @@ openGauss=# INSERT INTO tpcds.reason_t2 VALUES (5, 'BBBBBBBBCAAAAAAA','reason5')
 -- Delete the tpcds.reason_t2.
 openGauss=# DROP TABLE tpcds.reason_t2;
 ```
+
 The following is an example of database compatibility level B:
+
 ```sql
 create database db_comb with dbcompatibility 'B';
 \c db_comb
@@ -227,8 +226,6 @@ select * from upser order by c1;
 
 ## Suggestions<a name="en-us_topic_0283137542_en-us_topic_0237122167_en-us_topic_0059778902_section3855297014560"></a>
 
--   VALUES
+- VALUES
 
-    When you run the  **INSERT **statement to insert data in batches, you are advised to combine multiple records into one statement to improve data loading performance. Example:  **INSERT INTO sections VALUES \(30, 'Administration', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);**
-
-
+    When you run the  **INSERT**statement to insert data in batches, you are advised to combine multiple records into one statement to improve data loading performance. Example:  **INSERT INTO sections VALUES \(30, 'Administration', 31, 1900\),\(40, 'Development', 35, 2000\), \(50, 'Development' , 60 , 2001\);**

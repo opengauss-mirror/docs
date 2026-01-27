@@ -77,4 +77,3 @@ openGauss=# ALTER USER joe POLADMIN;
 ```
 
 To run the  **ALTER USER**  statement, the user must exist.
-

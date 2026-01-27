@@ -1,6 +1,6 @@
 # STATEMENT\_HISTORY<a name="EN-US_TOPIC_0301807366"></a>
 
-**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query a view, you must have the  **sysadmin **or  **monitor admin**  permission. The result can be queried only in the system database but cannot be queried in the user database.
+**STATEMENT\_HISTORY**  displays information about execution statements on the current node. To query a view, you must have the  **sysadmin**or  **monitor admin**  permission. The result can be queried only in the system database but cannot be queried in the user database.
 
 **Table  1**  STATEMENT\_HISTORY columns
 
@@ -381,4 +381,3 @@
 </tr>
 </tbody>
 </table>
-

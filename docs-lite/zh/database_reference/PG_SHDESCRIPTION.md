@@ -48,4 +48,3 @@ PG\_DESCRIPTION提供了类似的功能，它记录了单个数据库中对象�
 </tr>
 </tbody>
 </table>
-

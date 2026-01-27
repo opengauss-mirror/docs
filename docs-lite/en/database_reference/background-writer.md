@@ -105,8 +105,8 @@ This parameter is a SIGHUP parameter. Set it based on instructions provided in  
 
 **Value range**: Boolean
 
--   **on**/**true**: The page popularity is considered.
--   **off**/**false**: The page popularity is not considered.
+- **on**/**true**: The page popularity is considered.
+- **off**/**false**: The page popularity is not considered.
 
 **Default value**:  **off**
 
@@ -129,4 +129,3 @@ This parameter is a POSTMASTER parameter. Set it based on instructions provided 
 **Value range**: an integer, in the range \[32,256\]
 
 **Default value**:  **256**
-

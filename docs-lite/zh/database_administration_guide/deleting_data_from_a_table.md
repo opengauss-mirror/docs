@@ -31,4 +31,3 @@ openGauss=# TRUNCATE TABLE customer_t1;
 ```
 openGauss=# DROP TABLE customer_t1;
 ```
-

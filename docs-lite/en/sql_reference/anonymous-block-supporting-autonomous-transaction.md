@@ -7,9 +7,9 @@ create table t1(a int ,b text);
 
 START TRANSACTION;
 DECLARE 
-	PRAGMA AUTONOMOUS_TRANSACTION;
+ PRAGMA AUTONOMOUS_TRANSACTION;
 BEGIN
-	insert into t1 values(1,'you are so cute,will commit!');
+ insert into t1 values(1,'you are so cute,will commit!');
 END;
 /
 insert into t1 values(1,'you will rollback!');
@@ -19,4 +19,3 @@ select * from t1;
 ```
 
 In the preceding example, an anonymous block containing an autonomous transaction is finally executed before a transaction block to be rolled back, which directly illustrates a characteristic of the autonomous transaction, that is, rollback of the primary transaction does not affect content that has been committed by the autonomous transaction.
-
