@@ -64,7 +64,7 @@ mkdir /data/ograc
 - 可以在[openGauss官网](https://docs.opengauss.org/zh/)的`下载`页面进行安装包的下载获取。
 
 ```shell
-假如安装包放在节点一的/data/ogdba目录下，则需要执行下面这个命令给节点二也传输一份
+假如安装包放在节点一的`/data/ograc`目录下，则需要执行下面这个命令给节点二也传输一份
 
 scp /data/ograc/[package_name] root@[ip2]:/data/ograc/[package_name]
 ```
@@ -92,18 +92,22 @@ scp /data/ograc/[package_name] root@[ip2]:/data/ograc/[package_name]
 ```shell
 cd /data/ograc
 tar -zxvf [package_name]
-chmod 777 ograc_connector -R; chown root:root ograc_connector -R
+chmod 777 ograc_connector -R; 
+chown root:root ograc_connector -R
 cd ograc_connector/action
-ntpdate -u [ip2]  # 同步机器时间
+ntpdate -u ntp.xxx.com # 同步机器时间，这里可以采用多种服务时间
 date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
 
 节点2操作如下：
 
 ```shell
-cd /data/ogdba
+cd /data/ograc
 tar -zxvf [package_name]
-chmod 777 ograc_connector -R; chown root:root ograc_connector -R
+chmod 777 ograc_connector -R; 
+chown root:root ograc_connector -R
+ntpdate -u ntp.xxx.com # 同步机器时间，这里可以采用多种服务时间
+date   # 检查两台机器时间是否同步，否则 CMS 无法启动
 ```
 
 #### 3.2 LUN 软链接建立（两节点均需执行，盘符以 by-id 为准）
@@ -154,7 +158,7 @@ cd /data/ograc/ograc_connector/action
     "mes_ssl_switch": false,
     "MAX_ARCH_FILES_SIZE": "300G",
     "redo_num": "6",
-    "redo_size": "5G"，
+    "redo_size": "5G",
     "auto_tune": "0",
     "dss_vg_list": {
         "vg1": "/dev/dss-disk1",
@@ -195,7 +199,7 @@ cd /data/ograc/ograc_connector/action
 - db_type：数据库标识，不建议修改；
 - MAX_ARCH_FILES_SIZE：归档最大文件大小；
 - redo_num：redo文件的数量；
-- redo_size：redo文件的大小；
+- redo_size：redo文件的大小，由于首次起库会`dd`抹除盘中所有内容，不建议设置过大；
 - auto_tune：是否开启自适应参数配置（小规格机器建议开启）；
 - dss_vg_list：分别为数据盘、redo盘、归档盘目录；
 - gcc_home：CM仲裁盘使用目录；
@@ -203,20 +207,29 @@ cd /data/ograc/ograc_connector/action
 ---
 
 ### 4. 节点安装与启动
-
-节点1、2操作如下：
-
+接下来进行两节点安装，首先，在节点一执行如下命令，执行`install`步骤安装一节点：
 ```shell
 sh appctl.sh install config_params_lun.json
-sh appctl.sh start
+```
+其次，在节点二执行如下命令，安装而节点：
+```shell
+sh appctl.sh install config_params_lun.json
 ```
 
+接下来进行两节点启动，首先，在节点一执行如下命令：
+```shell
+sh appctl.sh start
+```
+其次，在节点二执行如下命令，启动二节点：
+```shell
+sh appctl.sh start
+```
 ---
 
 ### 5. 查询集群状态
-
+登录任一节点，执行以下命令，查看节点状态信息：
 ```shell
-su -s /bin/bash ogdba
+su -s /bin/bash ograc
 cms stat -res db
 ```
 
@@ -226,8 +239,12 @@ cms stat -res db
 
 ## 卸载 oGRAC
 
-停止服务并删除数据、安装目录及相关环境变量。
-
+首先，在两节点均利用stop命令停止数据库：
 ```shell
-sh local_install.sh clean -u ogdba
+sh appctl.sh stop
+```
+
+随后，利用`uninstall`命令删除数据、安装目录及相关环境变量。
+```shell
+sh appctl.sh uninstall override
 ```
