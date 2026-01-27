@@ -1249,6 +1249,8 @@ sections:
             href: ./sql_firewall_system_functions.md
       - label: 统计信息函数
         href: ./statistics_function.md
+      - label: 大对象操作函数
+        href: ./large_object_operation_functions.md 
       - label: 触发器函数
         href: ./trigger_functions.md          
       - label: 事件触发器函数
@@ -1279,6 +1281,8 @@ sections:
         href: ./resource_pooling_function.md
       - label: 向量函数和操作符
         href: ./vector_functions_and_operators.md
+      - label: BFILE类型函数
+        href: ./bfile_type_function.md          
       - label: 废弃函数
         href: ./obsolete_functions.md
   - label: 事务和锁
