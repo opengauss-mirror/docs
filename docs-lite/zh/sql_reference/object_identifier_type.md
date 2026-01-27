@@ -188,4 +188,3 @@ openGauss=# SELECT attrelid,attname,atttypid,attstattarget FROM pg_attribute WHE
      1247 | typacl         |     1034 |            -1
 (38 rows)
 ```
-

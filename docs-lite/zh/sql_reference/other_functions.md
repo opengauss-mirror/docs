@@ -1,12 +1,12 @@
 # 其它函数<a name="ZH-CN_TOPIC_0289900063"></a>
 
--   plan\_seed\(\)
+- plan\_seed\(\)
 
     描述：获取前一次查询语句的seed值（内部使用）。
 
     返回值类型：int
 
--   pg\_stat\_get\_env\(\)
+- pg\_stat\_get\_env\(\)
 
     描述：获取当前节点的环境变量信息，仅sysadmin和monitor admin可以访问。
 
@@ -22,61 +22,61 @@
     (1 row)
     ```
 
--   pg\_catalog.plancache\_clean\(\)
+- pg\_catalog.plancache\_clean\(\)
 
     描述：清理节点上无人使用的全局计划缓存。
 
     返回值类型：bool
 
--   pg\_catalog.plancache\_status\(\)
+- pg\_catalog.plancache\_status\(\)
 
     描述：显示节点上全局计划缓存的信息，函数返回信息和[GLOBAL\_PLANCACHE\_STATUS](GLOBAL_PLANCACHE_STATUS.md)一致。
 
     返回值类型：record
 
--   textlen\(text\)
+- textlen\(text\)
 
     描述：提供查询text的逻辑长度的方法。
 
     返回值类型：int
 
--   threadpool\_status\(\)
+- threadpool\_status\(\)
 
     描述：显示线程池中工作线程及会话的状态信息。
 
     返回值类型：record
 
--   get\_local\_active\_session\(\)
+- get\_local\_active\_session\(\)
 
     描述：提供当前节点保存在内存中的历史活跃session状态的采样记录。
 
     返回值类型：record
 
--   pg\_stat\_get\_thread\(\)
+- pg\_stat\_get\_thread\(\)
 
     描述：提供当前节点下所有线程的状态信息，sysadmin和monitor admin用户可以查看所有线程信息，普通用户查看本用户的线程信息。
 
     返回值类型：record
 
--   pg\_stat\_get\_sql\_count\(\)
+- pg\_stat\_get\_sql\_count\(\)
 
     描述：提供当前节点中用户执行的SELECT/UPDATE/INSERT/DELETE/MERGE INTO语句的计数结果，sysadmin和monitor admin用户可以查看所有用户的信息，普通用户查看本用户的统计信息。
 
     返回值类型：record
 
--   pg\_stat\_get\_data\_senders\(\)
+- pg\_stat\_get\_data\_senders\(\)
 
     描述：提供当前活跃的数据复制发送线程的详细信息。
 
     返回值类型：record
 
--   get\_wait\_event\_info\(\)
+- get\_wait\_event\_info\(\)
 
     描述：提供wait event事件的具体信息。
 
     返回值类型：record
 
--   generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
+- generate\_wdr\_report\(begin\_snap\_id bigint, end\_snap\_id bigint, report\_type cstring, report\_scope cstring, node\_name cstring\)
 
     描述：基于两个snapshot生成系统诊断报告。需要在postgres库下执行，默认初始化用户或monadmin用户可以访问，V500R001C20SPC002及其之前的版本初始化用户或sysadmin用户可以访问。只可在系统库中查询到结果，用户库中无法查询。
 
@@ -131,25 +131,25 @@
     </tbody>
     </table>
 
--   create\_wdr\_snapshot\(\)
+- create\_wdr\_snapshot\(\)
 
     描述：手工生成系统诊断快照，该函数需要sysadmin权限。可在单机节点或集群主节点上执行。
 
     返回值类型：text
 
--   kill\_snapshot\(\)
+- kill\_snapshot\(\)
 
     描述：kill后台的WDR snapshot线程，调用该函数的用户需要具有SYSADMIN权限或具有REPLICATION权限或继承了内置角色gs\_role\_replication的权限。
 
     返回值类型：void
 
--   capture\_view\_to\_json\(text,integer\)
+- capture\_view\_to\_json\(text,integer\)
 
     描述：将视图的结果存入GUC: perf\_directory所指定的目录，如果is\_crossdb为1，则表示对于所有的database都会访问一次view；如果is\_crossdb为0，则表示仅对当前database进行一次视图访问。该函数只有sysadmin和monitor admin用户可以执行。
 
     返回值类型：int
 
--   reset\_unique\_sql
+- reset\_unique\_sql
 
     描述：用来清理数据库节点内存中的Unique SQL（需要sysadmin权限）。
 
@@ -193,10 +193,10 @@
 
     >>[!TIP]须知
     >
-    >-   scope的取值GLOBAL和LOCAL针对分布式，对于openGauss而言两者意义相同，均表示清理本节点。
-    >-   clean\_type的值BY\_CNID仅针对分布式，对于openGauss无效。
+    >- scope的取值GLOBAL和LOCAL针对分布式，对于openGauss而言两者意义相同，均表示清理本节点。
+    >- clean\_type的值BY\_CNID仅针对分布式，对于openGauss无效。
 
--   wdr\_xdb\_query\(db\_name\_str text, query text\)
+- wdr\_xdb\_query\(db\_name\_str text, query text\)
 
     描述：提供本地跨数据库执行query的能力。例如: 在连接到postgres库时, 访问test库下的表。
 
@@ -206,61 +206,61 @@
 
     返回值类型：record
 
--   pg\_wlm\_jump\_queue\(pid int\)
+- pg\_wlm\_jump\_queue\(pid int\)
 
     描述：调整任务到数据库主节点队列的最前端。
 
     返回值类型：boolean
 
-    -   true：成功。
-    -   false：失败。
+    - true：成功。
+    - false：失败。
 
--   gs\_wlm\_switch\_cgroup\(pid int, cgroup text\)
+- gs\_wlm\_switch\_cgroup\(pid int, cgroup text\)
 
     描述：调整作业的优先级到新控制组。
 
     返回值类型：boolean
 
-    -   true：成功。
-    -   false：失败。
+    - true：成功。
+    - false：失败。
 
--   pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
+- pv\_session\_memctx\_detail\(threadid tid, MemoryContextName text\)
 
     描述：将线程tid的MemoryContextName内存上下文信息记录到“$GAUSSLOG/pg\_log/$\{node\_name\}/dumpmem”目录下的“threadid\_timestamp.log”文件中。其中threadid可通过视图GS\_SESSION\_MEMORY\_DETAIL中的sessid后获得。在正式发布的版本中仅接受MemoryContextName为空串（两个单引号表示输入为空串，即''）的输入，此时会记录所有的内存上下文信息，否则不会有任何操作。对供内部开发人员和测试人员调试用的DEBUG版本，可以指定需要统计的MemoryContextName，此时会将该Context所有的内存使用情况记录到指定文件。该函数需要管理员权限的用户才能执行。
 
     返回值类型：boolean
 
-    -   true：成功。
-    -   false：失败。
+    - true：成功。
+    - false：失败。
 
--   pg\_shared\_memctx\_detail\(MemoryContextName text\)
+- pg\_shared\_memctx\_detail\(MemoryContextName text\)
 
     描述：将MemoryContextName内存上下文信息记录到“$GAUSSLOG/pg\_log/$\{node\_name\}/dumpmem”目录下的“threadid\_timestamp.log”文件中。该函数功能仅在DEBUG版本中供内部开发人员和测试人员调试使用，在正式发布版本中调用该函数不会有任何操作。该函数需要管理员权限的用户才能执行。
 
     返回值类型：boolean
 
-    -   true：成功。
-    -   false：失败。
+    - true：成功。
+    - false：失败。
 
--   local\_bgwriter\_stat\(\)
+- local\_bgwriter\_stat\(\)
 
     描述：显示本实例的bgwriter线程刷页信息，候选buffer链中页面个数，buffer淘汰信息。
 
     返回值类型：record
 
--   local\_candidate\_stat\(\)
+- local\_candidate\_stat\(\)
 
     描述：显示本实例的候选buffer链中页面个数，buffer淘汰信息，包含normal buffer pool和segment buffer pool。
 
     返回值类型：record
 
--   local\_ckpt\_stat\(\)
+- local\_ckpt\_stat\(\)
 
     描述：显示本实例的检查点信息和各类日志刷页情况。
 
     返回值类型：record
 
--   local\_double\_write\_stat\(\)
+- local\_double\_write\_stat\(\)
 
     描述：显示本实例的双写文件的情况。
 
@@ -364,19 +364,19 @@
     </tbody>
     </table>
 
--   local\_single\_flush\_dw\_stat\(\)
+- local\_single\_flush\_dw\_stat\(\)
 
     描述：显示本实例的单页面淘汰双写文件的情况。
 
     返回值类型：record
 
--   local\_pagewriter\_stat\(\)
+- local\_pagewriter\_stat\(\)
 
     描述：显示本实例的刷页信息和检查点信息。
 
     返回值类型：record
 
--   local\_redo\_stat\(\)
+- local\_redo\_stat\(\)
 
     描述：显示本实例的备机的当前回放状态。
 
@@ -384,67 +384,67 @@
 
     备注：返回的回放状态主要包括当前回放位置，回放最小恢复点位置等信息。
 
--   local\_recovery\_status\(\)
+- local\_recovery\_status\(\)
 
     描述：显示本实例的主机和备机的日志流控信息。
 
     返回值类型：record
 
--   gs\_wlm\_node\_recover\(boolean isForce\)
+- gs\_wlm\_node\_recover\(boolean isForce\)
 
     描述：获取当前内存中记录的TopSQL查询语句级别相关统计信息，当传入的参数不为0时，会将这部分信息从内存中清理掉。
 
     返回值类型：record
 
--   gs\_wlm\_node\_clean\(cstring nodename\)
+- gs\_wlm\_node\_clean\(cstring nodename\)
 
     描述：动态负载管理节点故障后做数据清理操作。该函数只有管理员用户可以执行，属于数据库实例管理模块调用的，不建议用户直接调用。该视图在集中式和单机环境上不支持。
 
     返回值类型：bool
 
--   gs\_cgroup\_map\_ng\_conf\(group name\)
+- gs\_cgroup\_map\_ng\_conf\(group name\)
 
     描述：读取指定逻辑数据库的cgroup配置文件。
 
     返回值类型：record
 
--   gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
+- gs\_wlm\_switch\_cgroup\(sess\_id int8, cgroup name\)
 
     描述：切换指定会话的控制组。
 
     返回值类型：record
 
--   comm\_client\_info\(\)
+- comm\_client\_info\(\)
 
     描述：用于查询单个节点活跃的客户端连接信息。
 
     返回值类型：setof record
 
--   pg\_sync\_cstore\_delta\(text\)
+- pg\_sync\_cstore\_delta\(text\)
 
     描述：同步指定列存表的delta表表结构，使其与列存表主表一致。
 
     返回值类型：bigint
 
--   pg\_sync\_cstore\_delta\(\)
+- pg\_sync\_cstore\_delta\(\)
 
     描述：同步所有列存表的delta表表结构，使其与列存表主表一致。
 
     返回值类型：bigint
 
--   pg\_get\_flush\_lsn\(\)
+- pg\_get\_flush\_lsn\(\)
 
     描述：返回当前节点flush的xlog位置。
 
     返回值类型：text
 
--   pg\_get\_sync\_flush\_lsn\(\)
+- pg\_get\_sync\_flush\_lsn\(\)
 
     描述：返回当前节点多数派flush的xlog位置。
 
     返回值类型：text
 
--   gs\_create\_log\_tables\(\)
+- gs\_create\_log\_tables\(\)
 
     描述：用于创建运行日志和性能日志的外表和视图。单机模式下不支持。
 
@@ -460,7 +460,7 @@
     (1 row)
     ```
 
--   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
+- dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
     描述：获取数据库级的全量SQL\(Full SQL\)信息。只可在系统库中查询到结果，用户库中无法查询。
 
@@ -494,7 +494,7 @@
     </tbody>
     </table>
 
--   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
+- dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp with time zone, end\_timestamp timestamp with time zone\)
 
     描述：获取数据库级的慢SQL\(Slow SQL\)信息。只可在系统库中查询到结果，用户库中无法查询。
 
@@ -528,7 +528,7 @@
     </tbody>
     </table>
 
--   statement\_detail\_decode\(detail text, format text, pretty boolean\)
+- statement\_detail\_decode\(detail text, format text, pretty boolean\)
 
     描述：解析全量/慢SQL语句中的details字段的信息。只可在系统库中查询到结果，用户库中无法查询。
 
@@ -570,7 +570,7 @@
     </tbody>
     </table>
 
--   get\_prepared\_pending\_xid
+- get\_prepared\_pending\_xid
 
     描述：当恢复完成时，返回nextxid。
 
@@ -578,7 +578,7 @@
 
     返回值类型：text
 
--   pg\_clean\_region\_info
+- pg\_clean\_region\_info
 
     描述：清理regionmap。
 
@@ -586,7 +586,7 @@
 
     返回值类型：character varying
 
--   pg\_get\_delta\_info
+- pg\_get\_delta\_info
 
     描述：从单个dn获取delta info。
 
@@ -594,7 +594,7 @@
 
     返回值类型：part\_name text, live\_tuple bigint, data\_size bigint, blocknum bigint
 
--   pg\_get\_replication\_slot\_name
+- pg\_get\_replication\_slot\_name
 
     描述：获取slot name。
 
@@ -602,7 +602,7 @@
 
     返回值类型：text
 
--   pg\_get\_running\_xacts
+- pg\_get\_running\_xacts
 
     描述：获取运行中的xact。
 
@@ -610,7 +610,7 @@
 
     返回值类型：handle integer, gxid xid, state tinyint, node text, xmin xid, vacuum boolean, timeline bigint, prepare\_xid xid, pid bigint, next\_xid xid
 
--   pg\_get\_variable\_info
+- pg\_get\_variable\_info
 
     描述：获取共享内存变量cache。
 
@@ -618,7 +618,7 @@
 
     返回值类型：node\_name text, nextOid oid, nextXid xid, oldestXid xid, xidVacLimit xid, oldestXidDB oid, lastExtendCSNLogpage xid, startExtendCSNLogpage xid, nextCommitSeqNo xid, latestCompletedXid xid, startupMaxXid xid
 
--   pg\_get\_xidlimit
+- pg\_get\_xidlimit
 
     描述：从共享内存获取事物id信息。
 
@@ -626,13 +626,13 @@
 
     返回值类型：nextXid xid, oldestXid xid, xidVacLimit xid, xidWarnLimit xid, xidStopLimit xid, xidWrapLimit xid, oldestXidDB oid
 
--   get\_global\_user\_transaction\(\)
+- get\_global\_user\_transaction\(\)
 
     描述：返回所有节点上各用户的事务相关信息。
 
     返回值类型：node\_name name, usename name, commit\_counter bigint, rollback\_counter bigint, resp\_min bigint, resp\_max bigint, resp\_avg bigint, resp\_total bigint, bg\_commit\_counter bigint, bg\_rollback\_counter bigint, bg\_resp\_min bigint, bg\_resp\_max bigint, bg\_resp\_avg bigint, bg\_resp\_total bigint
 
--   pg\_collation\_for
+- pg\_collation\_for
 
     描述：返回入参字符串对应的排序规则。
 
@@ -640,15 +640,15 @@
 
     返回值类型：text
 
--   pgxc\_unlock\_for\_sp\_database\(name Name\)
+- pgxc\_unlock\_for\_sp\_database\(name Name\)
 
     描述：目前该接口已废弃，暂不可用。
 
--   pgxc\_lock\_for\_sp\_database\(name Name\)
+- pgxc\_lock\_for\_sp\_database\(name Name\)
 
     描述：目前该接口已废弃，暂不可用。
 
--   copy\_error\_log\_create\(\)
+- copy\_error\_log\_create\(\)
 
     描述：创建COPY FROM容错机制所需要的错误表（public.pgxc\_copy\_error\_log）。
 
@@ -656,11 +656,11 @@
 
     >[!NOTE]说明
     >
-    >-   此函数会尝试创建public.pgxc\_copy\_error\_log表，表的详细信息请参见[表7](#table138318280213)。
-    >-   在relname列上创建B-tree索引，并REVOKE ALL on public.pgxc\_copy\_error\_log FROM public对错误表进行权限控制（与COPY语句权限一致）。
-    >-   由于尝试创建的public.pgxc\_copy\_error\_log定义是一张行存表，因此数据库实例上必须支持行存表的创建才能够正常运行此函数，并使用后续的COPY容错功能。需要特别注意的是，enable\_hadoop\_env这个GUC参数开启后会禁止在数据库实例内创建行存表（openGauss默认为off）。
-    >-   此函数自身权限为Sysadmin及以上（与错误表、COPY权限一致）。
-    >-   若创建前public.pgxc\_copy\_error\_log表已存在或者copy\_error\_log\_relname\_idx索引已存在，则此函数会报错回滚。
+    >- 此函数会尝试创建public.pgxc\_copy\_error\_log表，表的详细信息请参见[表7](#table138318280213)。
+    >- 在relname列上创建B-tree索引，并REVOKE ALL on public.pgxc\_copy\_error\_log FROM public对错误表进行权限控制（与COPY语句权限一致）。
+    >- 由于尝试创建的public.pgxc\_copy\_error\_log定义是一张行存表，因此数据库实例上必须支持行存表的创建才能够正常运行此函数，并使用后续的COPY容错功能。需要特别注意的是，enable\_hadoop\_env这个GUC参数开启后会禁止在数据库实例内创建行存表（openGauss默认为off）。
+    >- 此函数自身权限为Sysadmin及以上（与错误表、COPY权限一致）。
+    >- 若创建前public.pgxc\_copy\_error\_log表已存在或者copy\_error\_log\_relname\_idx索引已存在，则此函数会报错回滚。
 
     **表 7**  错误表public.pgxc\_copy\_error\_log信息
 
@@ -718,7 +718,7 @@
     </tbody>
     </table>
 
--   dynamic\_func\_control\(scope text, function\_name text, action text, "\{params\}" text\[\]\)
+- dynamic\_func\_control\(scope text, function\_name text, action text, "\{params\}" text\[\]\)
 
     描述：动态开启内置的功能，当前仅支持动态开启全量SQL。
 
@@ -768,7 +768,7 @@
     </tbody>
     </table>
 
--   gs\_parse\_page\_bypath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
+- gs\_parse\_page\_bypath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
 
     描述：用于解析指定表页面，并返回存放解析内容的路径。
 
@@ -819,7 +819,7 @@
     </tbody>
     </table>
 
--   gs\_xlogdump\_lsn\(start\_lsn text, end\_lsn text\)
+- gs\_xlogdump\_lsn\(start\_lsn text, end\_lsn text\)
 
     描述：用于解析指定lsn范围之内的XLOG日志，并返回存放解析内容的路径。可以通过pg\_current\_xlog\_location\(\)获取当前XLOG位置。
 
@@ -829,7 +829,7 @@
 
     备注：必须是系统管理员或运维管理员才能执行此函数。
 
--   gs\_xlogdump\_xid\(c\_xid xid\)
+- gs\_xlogdump\_xid\(c\_xid xid\)
 
     描述：用于解析指定xid的XLOG日志，并返回存放解析内容的路径。可以通过txid\_current\(\)获取当前事务ID。
 
@@ -839,7 +839,7 @@
 
     备注：必须是系统管理员或运维管理员才能执行此函数。
 
--   gs\_xlogdump\_tablepath\(path text, blocknum bigint, relation\_type text\)
+- gs\_xlogdump\_tablepath\(path text, blocknum bigint, relation\_type text\)
 
     描述：用于解析指定表页面对应的日志，并返回存放解析内容的路径。
 
@@ -883,7 +883,7 @@
     </tbody>
     </table>
 
--   gs\_xlogdump\_parsepage\_tablepath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
+- gs\_xlogdump\_parsepage\_tablepath\(path text, blocknum bigint, relation\_type text, read\_memory boolean\)
 
     描述：用于解析指定表页面和表页面对应的日志，并返回存放解析内容的路径。可以看做一次执行gs\_parse\_page\_bypath和gs\_xlogdump\_tablepath。该函数执行的前置条件是表文件存在。如果想查看已删除的表的相关日志，请直接调用gs\_xlogdump\_tablepath。
 
@@ -934,7 +934,7 @@
     </tbody>
     </table>
 
--   gs\_index\_verify\(Oid oid, uint32:wq blkno\)
+- gs\_index\_verify\(Oid oid, uint32:wq blkno\)
 
     描述：用于校验UBtree索引页面或者索引树上key的顺序是否正确。
 
@@ -968,7 +968,7 @@
     </tbody>
     </table>
 
--   gs\_index\_recycle\_queue\(Oid oid, int type, uint32 blkno\)
+- gs\_index\_recycle\_queue\(Oid oid, int type, uint32 blkno\)
 
     描述：用于解析UBtree索引回收队列信息。
 
@@ -1009,7 +1009,7 @@
     </tbody>
     </table>
 
--   gs\_stat\_wal\_entrytable\(int64 idx\)
+- gs\_stat\_wal\_entrytable\(int64 idx\)
 
     描述：用于输出xlog中预写日志插入状态表的内容。
 
@@ -1077,7 +1077,7 @@
     </tbody>
     </table>
 
--   gs\_walwriter\_flush\_position\(\)
+- gs\_walwriter\_flush\_position\(\)
 
     描述：输出预写日志的刷新位置。
 
@@ -1207,7 +1207,7 @@
     </tbody>
     </table>
 
--   gs\_walwriter\_flush\_stat\(int operation\)
+- gs\_walwriter\_flush\_stat\(int operation\)
 
     描述：用于统计预写日志write与sync的次数频率与数据量，以及xlog文件的信息。
 
@@ -1382,7 +1382,7 @@
     </tbody>
     </table>
 
--   gs\_comm\_proxy\_thread\_status\(\)
+- gs\_comm\_proxy\_thread\_status\(\)
 
     描述：用于在数据库实例配置用户态网络的场景下，代理通信库comm\_proxy收发数据包统计。
 
@@ -1515,7 +1515,7 @@
 
   备注：必须是系统管理员或者监控管理员才能执行此函数。
 
- - GS\_WRITE\_TERM\_LOG(void)
+- GS\_WRITE\_TERM\_LOG(void)
 
    描述：写入一条日志记录数据库节点当前的term值。备节点返回false，主节点写入成功后返回true。
 
@@ -1549,6 +1549,7 @@ pg_prepared_statement()
   > 2. 当pg_prepared_statement()函数传入参数为0时，为查询整个数据库实例的预备语句。
 
   示例：
+
   ```sql
   select *from pg_prepared_statement();
   select *from pg_prepared_statement(0);
@@ -1589,6 +1590,7 @@ pg_prepared_statement()
   > 5. 数据库重启后所有数据回到初始化状态，功能默认关闭。
 
   示例：
+
   ```sql
   select * from gs_stat_walsender(1);
   select * from gs_stat_walsender(2);
@@ -1630,13 +1632,13 @@ pg_prepared_statement()
   > 5. 数据库重启后所有数据回到初始化状态，功能默认关闭。
 
   示例：
+
   ```sql
   select * from gs_stat_walreceiver(1);
   select * from gs_stat_walreceiver(2);
   select * from gs_stat_walreceiver(0);
   select * from gs_stat_walreceiver(-1);
   ```
-
 
 - gs_stat_walrecvwriter
 
@@ -1677,6 +1679,7 @@ pg_prepared_statement()
   > 5. 数据库重启后所有数据回到初始化状态，功能默认关闭。
 
   示例：
+
   ```sql
   select * from gs_stat_walrecvwriter(1);
   select * from gs_stat_walrecvwriter(2);
@@ -1701,6 +1704,7 @@ pg_prepared_statement()
   > 2. 函数直接输出html格式的text内容，配合\a、\t格式化输出，\o指定输出文件，生成html覆盖率报告
 
   示例：
+
   ```sql
   openGauss=# \a
   Output format is unaligned.

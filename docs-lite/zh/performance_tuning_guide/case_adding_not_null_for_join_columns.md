@@ -21,8 +21,8 @@ SELECT * FROM join_a a JOIN join_b b ON a.b = b.b;
 
 ## 优化分析<a name="zh-cn_topic_0073253827_zh-cn_topic_0040046525_section27179124161918"></a>
 
-1.  分析执行计划可知，在顺序扫描阶段耗时较多。
-2.  建议在语句中手动添加JOIN列的非空判断，修改后的语句如下所示。
+1. 分析执行计划可知，在顺序扫描阶段耗时较多。
+2. 建议在语句中手动添加JOIN列的非空判断，修改后的语句如下所示。
 
     ```
     SELECT * FROM join_a a JOIN join_b b ON a.b = b.b where a.b IS NOT NULL;
@@ -45,5 +45,3 @@ SELECT * FROM join_a a JOIN join_b b ON a.b = b.b;
      Total runtime: 13.556 ms
     (10 rows)
     ```
-
-

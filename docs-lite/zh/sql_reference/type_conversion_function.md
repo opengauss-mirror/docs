@@ -2,7 +2,7 @@
 
 ## 类型转换函数<a name="zh-cn_topic_0283137417_zh-cn_topic_0237121973_zh-cn_topic_0059778246_sd1817f56ca2d4be7a4ad606e0e597c55"></a>
 
--   cash\_words\(money\)
+- cash\_words\(money\)
 
     描述：类型转换函数，将money转换成text。
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   cast\(x as y\)
+- cast\(x as y\)
 
     描述：类型转换函数，将x转换成y指定的类型。
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   hextoraw\(raw\)
+- hextoraw\(raw\)
 
     描述：将一个十六进制构成的字符串转换为raw类型。
 
@@ -46,7 +46,7 @@
     (1 row)
     ```
 
--   numtoday\(numeric\)
+- numtoday\(numeric\)
 
     描述：将数字类型的值转换为指定格式的时间戳。
 
@@ -62,7 +62,7 @@
     (1 row)
     ```
 
--   pg\_systimestamp\(\)
+- pg\_systimestamp\(\)
 
     描述：获取系统时间戳。
 
@@ -78,7 +78,7 @@
     (1 row)
     ```
 
--   rawtohex\(string\)
+- rawtohex\(string\)
 
     描述：将一个二进制构成的字符串转换为十六进制的字符串。
 
@@ -144,7 +144,7 @@
   (1 row)
   ```
 
--   cast\(x as y\)
+- cast\(x as y\)
 
     描述：类型转换函数，将x转换成y指定的类型。
 
@@ -160,7 +160,7 @@
     (1 row)
     ```
 
--   CAST( expr AS type_name [ DEFAULT return_value ON CONVERSION ERROR ][, fmt [, 'nlsparam' ] ])
+- CAST( expr AS type_name [ DEFAULT return_value ON CONVERSION ERROR ][, fmt [, 'nlsparam' ] ])
 
     描述：类型转换函数，将x转换成y指定的类型，并且支持DEFAULT设置默认值、fmt指定入参的输入格式以及nlsparam参数，目前nlsparam参数仅支持English和American。
 
@@ -224,13 +224,13 @@
     (1 row)
     ```
 
--   to\_char\(datetime/interval \[, fmt\]\)
+- to\_char\(datetime/interval \[, fmt\]\)
 
     描述：将一个DATE、TIMESTAMP、TIMESTAMP WITH TIME ZONE或者TIMESTAMP WITH LOCAL TIME ZONE类型的DATETIME或者INTERVAL值按照fmt指定的格式转换为TEXT类型。
 
-    -   可选参数fmt可以为以下几类：日期、时间、星期、季度和世纪。每类都可以有不同的模板，模板之间可以合理组合，常见的模板有：HH、MI、SS、YYYY、MM、DD。
-    -   模板可以有修饰词，常用的修饰词是FM，可以用来抑制前导的零或尾随的空白。
-    -   **仅在A兼容模式下**，入参为interval时，会忽略fmt入参，interval只有year和month时，输出fmt为SYYYY-MM，当year小于两位时会补一位0；interval只有day和time时，输出fmt为SDD HH:MI:SS；interval同时包含两者时，返回错误码
+    - 可选参数fmt可以为以下几类：日期、时间、星期、季度和世纪。每类都可以有不同的模板，模板之间可以合理组合，常见的模板有：HH、MI、SS、YYYY、MM、DD。
+    - 模板可以有修饰词，常用的修饰词是FM，可以用来抑制前导的零或尾随的空白。
+    - **仅在A兼容模式下**，入参为interval时，会忽略fmt入参，interval只有year和month时，输出fmt为SYYYY-MM，当year小于两位时会补一位0；interval只有day和time时，输出fmt为SDD HH:MI:SS；interval同时包含两者时，返回错误码
 
     返回值类型：text
 
@@ -252,11 +252,11 @@
     (1 row)
     ```
 
--   to\_char\(datetime/interval, fmt, nls_language={american|english}\)
+- to\_char\(datetime/interval, fmt, nls_language={american|english}\)
 
     描述：同to\_char\(datetime/interval \[, fmt\]\)，增加参数nls_language，值可选american、english
 
-    -   fmt中的MON等模板，根据nls_language转换成对应语言的表达。
+    - fmt中的MON等模板，根据nls_language转换成对应语言的表达。
 
     返回值类型：text
 
@@ -270,7 +270,7 @@
     (1 row)
     ```
 
--   to\_char\(double precision/real, text\)
+- to\_char\(double precision/real, text\)
 
     描述：将浮点类型的值转换为指定格式的字符串。
 
@@ -286,13 +286,13 @@
     (1 row)
     ```
 
--   to\_char\(numeric/smallint/integer/bigint/double precision/real\[, fmt\]\)
+- to\_char\(numeric/smallint/integer/bigint/double precision/real\[, fmt\]\)
 
     描述：将一个整型或者浮点类型的值转换为指定格式的字符串。
 
-    -   可选参数fmt可以为以下几类：十进制字符、“分组”符、正负号和货币符号，每类都可以有不同的模板，模板之间可以合理组合，常见的模板有：9、0、,（千分隔符）、.（小数点）。
-    -   模板可以有类似FM的修饰词，但FM不抑制由模板0指定而输出的0。
-    -   要将整型类型的值转换成对应16进制值的字符串，使用模板X或x。
+    - 可选参数fmt可以为以下几类：十进制字符、“分组”符、正负号和货币符号，每类都可以有不同的模板，模板之间可以合理组合，常见的模板有：9、0、,（千分隔符）、.（小数点）。
+    - 模板可以有类似FM的修饰词，但FM不抑制由模板0指定而输出的0。
+    - 要将整型类型的值转换成对应16进制值的字符串，使用模板X或x。
 
     返回值类型：varchar
 
@@ -330,11 +330,11 @@
     (1 row)
     ```
 
--   to\_char\(interval, text\)
+- to\_char\(interval, text\)
 
     描述：将时间间隔类型的值转换为指定格式的字符串。
 
-    -   **仅在A兼容模式下**，会忽略fmt入参，interval只有year和month时，输出fmt为SYYYY-MM，当year小于两位时会补一位0；interval只有day和time时，输出fmt为SDD HH:MI:SS；interval同时包含两者时，返回错误码
+    - **仅在A兼容模式下**，会忽略fmt入参，interval只有year和month时，输出fmt为SYYYY-MM，当year小于两位时会补一位0；interval只有day和time时，输出fmt为SDD HH:MI:SS；interval同时包含两者时，返回错误码
 
     返回值类型：text
 
@@ -363,7 +363,7 @@
     CONTEXT:  referenced column: to_char
     ```
 
--   to\_char\(int, text\)
+- to\_char\(int, text\)
 
     描述：将整数类型的值转换为指定格式的字符串。
 
@@ -379,7 +379,7 @@
     (1 row)
     ```
     
--   to\_char\(set\)
+- to\_char\(set\)
 
     描述：将SET类型的值转换为字符串
 
@@ -397,7 +397,7 @@
     (2 rows)
     ```
     
--   to\_char\(numeric, text\)
+- to\_char\(numeric, text\)
 
     描述：将数字类型的值转换为指定格式的字符串。
 
@@ -413,7 +413,7 @@
     (1 row)
     ```
 
--   to\_char\(string\)
+- to\_char\(string\)
 
     描述：将CHAR、VARCHAR、VARCHAR2、CLOB类型转换为VARCHAR类型。
 
@@ -431,7 +431,7 @@
     (1 row)
     ```
 
--   to\_char\(timestamp, text\)
+- to\_char\(timestamp, text\)
 
     描述：将时间戳类型的值转换为指定格式的字符串。
 
@@ -447,12 +447,12 @@
     (1 row)
     ```
 
--   to\_char\(blob, \[CSID\]\)
+- to\_char\(blob, \[CSID\]\)
 
     描述：**仅在A兼容模式下**支持本函数，将blob类型的值转换为指定CSID字符集的字符串。
   
-    -   CSID为int类型，表示A兼容模式下的字符集ID
-    -   CSID为0或不传入CSID时，使用数据库的字符集
+    - CSID为int类型，表示A兼容模式下的字符集ID
+    - CSID为0或不传入CSID时，使用数据库的字符集
   
     返回值类型：text
 
@@ -475,7 +475,7 @@
 
     ```
 
--   to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
+- to\_clob\(char/nchar/varchar/varchar2/nvarchar/nvarchar2/text/raw\)
 
     描述：将RAW类型或者文本字符集类型CHAR、NCHAR、VARCHAR、VARCHAR2、NVARCHAR、NVARCHAR2、TEXT转成CLOB类型。
 
@@ -539,12 +539,12 @@
     (1 row)
     ```
 
--   to\_date\(text\)
+- to\_date\(text\)
 
     描述：将文本类型的值转换为指定格式的时间戳。目前只支持两类格式。
 
-    -   格式一：无分隔符日期，如20150814，需要包括完整的年月日。
-    -   格式二：带分隔符日期，如2014-08-14，分隔符可以是单个任意非数字字符。
+    - 格式一：无分隔符日期，如20150814，需要包括完整的年月日。
+    - 格式二：带分隔符日期，如2014-08-14，分隔符可以是单个任意非数字字符。
 
     返回值类型：timestamp without time zone
 
@@ -558,7 +558,7 @@
     (1 row)
     ```
 
--   to\_date\(text, text\)
+- to\_date\(text, text\)
 
     描述：将字符串类型的值转换为指定格式的日期。
 
@@ -596,7 +596,6 @@
   
   * 当fmt的模板配置为数值位（模式为9）时，对于expr 中的非数值输入会进行忽略处理。
 
-
   返回值类型：numeric
 
   示例：
@@ -608,6 +607,7 @@
     -12454.8
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('1234.123','999999.99');
    to_number 
@@ -615,6 +615,7 @@
      1234.12
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('111111.111'+'1111','999999.99');
    to_number 
@@ -622,6 +623,7 @@
    112222.11
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('1e5'+'1111','999999.99');
    to_number 
@@ -629,12 +631,14 @@
       101111
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('111111.111'+'1111'+NULL,'999999.99');
    to_number 
   -----------        
   (1 row)
   ```
+
   ```
   openGauss=# SELECT to_number('此参数错误' default 321456231 on conversion error ,'999,999,999,999.99');
    to_number 
@@ -642,6 +646,7 @@
    321456231
   (1 row)
   ```
+
   ```
   -- behavior_compat_options的correct_to_number开关关闭时不允许分组的数量不一样
   openGauss=# select to_number('123.45' ,'999,999.999');
@@ -675,8 +680,7 @@
   (1 row)
   ```
 
-
--   to\_timestamp\(double precision\)
+- to\_timestamp\(double precision\)
 
     描述：把UNIX纪元转换成时间戳。
 
@@ -692,16 +696,16 @@
     (1 row)
     ```
 
--   to\_timestamp\(string \[,fmt\]\)
+- to\_timestamp\(string \[,fmt\]\)
 
     描述：将字符串string按fmt指定的格式转换成时间戳类型的值。不指定fmt时，按参数nls\_timestamp\_format所指定的格式转换。
 
     openGauss的to\_timestamp中，
 
-    -   类型转换格式请参考[表 1](#表-1-日期格式化的模板模式)。
-    -   如果输入的年份YYYY=0，系统报错。
-    -   如果输入的年份YYYY<0，在fmt中指定SYYYY，则正确输出公元前绝对值n的年份。
-    -   HH和HH12均为01-12小时格式，在fmt指定为HH和HH12的模式下且没明确指定pm的时间戳中，会将时间戳的第12小时按照第0小时处理。
+    - 类型转换格式请参考[表 1](#表-1-日期格式化的模板模式)。
+    - 如果输入的年份YYYY=0，系统报错。
+    - 如果输入的年份YYYY<0，在fmt中指定SYYYY，则正确输出公元前绝对值n的年份。
+    - HH和HH12均为01-12小时格式，在fmt指定为HH和HH12的模式下且没明确指定pm的时间戳中，会将时间戳的第12小时按照第0小时处理。
 
     fmt中出现的字符必须与日期/时间格式化的模式相匹配，否则报错。
 
@@ -770,7 +774,7 @@
     (1 row)
     ```
 
--   to\_timestamp\(text, text\)
+- to\_timestamp\(text, text\)
 
     描述：将字符串类型的值转换为指定格式的时间戳。
 
@@ -786,7 +790,7 @@
     (1 row)
     ```
 
--   abstime\_text
+- abstime\_text
 
     描述：将abstime类型转为text类型输出。
 
@@ -794,8 +798,7 @@
 
     返回值类型：text
 
-
--   abstime\_to\_smalldatetime
+- abstime\_to\_smalldatetime
 
     描述：将abstime类型转为smalldatatime类型。
 
@@ -803,8 +806,7 @@
 
     返回值类型：smalldatetime
 
-
--   bigint\_tid
+- bigint\_tid
 
     描述：将bigint转为tid。
 
@@ -812,8 +814,7 @@
 
     返回值类型：tid
 
-
--   bool\_int1
+- bool\_int1
 
     描述：将bool转为int1。
 
@@ -821,8 +822,7 @@
 
     返回值类型：tinyint
 
-
--   bool\_int2
+- bool\_int2
 
     描述：将bool转为int2。
 
@@ -830,8 +830,7 @@
 
     返回值类型：smallint
 
-
--   bool\_int8
+- bool\_int8
 
     描述：将bool转为tinyint。
 
@@ -839,8 +838,7 @@
 
     返回值类型：bigint
 
-
--   bpchar\_date
+- bpchar\_date
 
     描述：将字符串转为日期。
 
@@ -848,8 +846,7 @@
 
     返回值类型：date
 
-
--   bpchar\_float4
+- bpchar\_float4
 
     描述：将字符串转为float4。
 
@@ -857,8 +854,7 @@
 
     返回值类型：real
 
-
--   bpchar\_float8
+- bpchar\_float8
 
     描述：将字符串转为float8。
 
@@ -866,8 +862,7 @@
 
     返回值类型：double precision
 
-
--   bpchar\_int4
+- bpchar\_int4
 
     描述：将字符串转为int4。
 
@@ -875,8 +870,7 @@
 
     返回值类型：integer
 
-
--   bpchar\_int8
+- bpchar\_int8
 
     描述：将字符串转为tinyint。
 
@@ -884,8 +878,7 @@
 
     返回值类型：bigint
 
-
--   bpchar\_numeric
+- bpchar\_numeric
 
     描述：将字符串转为numeric。
 
@@ -893,8 +886,7 @@
 
     返回值类型：numeric
 
-
--   bpchar\_timestamp
+- bpchar\_timestamp
 
     描述：将字符串转为时间戳。
 
@@ -902,8 +894,7 @@
 
     返回值类型：timestamp without time zone
 
-
--   bpchar\_to\_smalldatetime
+- bpchar\_to\_smalldatetime
 
     描述：将字符串转为smalldatetime。
 
@@ -911,7 +902,7 @@
 
     返回值类型：smalldatetime
 
--   cupointer\_bigint
+- cupointer\_bigint
 
     描述：将列存CU指针类型转为bigint类型。
 
@@ -919,7 +910,7 @@
 
     返回值类型：bigint
 
--   date\_bpchar
+- date\_bpchar
 
     描述：将date类型转换为bpchar类型。
 
@@ -927,7 +918,7 @@
 
     返回值类型：character
 
--   date\_text
+- date\_text
 
     描述：将date类型转换为text类型。
 
@@ -935,7 +926,7 @@
 
     返回值类型：text
 
--   date\_varchar
+- date\_varchar
 
     描述：将date类型转换为varchar类型。
 
@@ -943,7 +934,7 @@
 
     返回值类型：character varying
 
--   f4toi1
+- f4toi1
 
     描述：把float4类型强转为tinyint unsigned类型。
 
@@ -951,7 +942,7 @@
 
     返回值类型：tinyint unsigned
 
--   f8toi1
+- f8toi1
 
     描述：把float8类型强转为tinyint unsigned类型。
 
@@ -959,7 +950,7 @@
 
     返回值类型：tinyint unsigned
 
--   float4\_bpchar
+- float4\_bpchar
 
     描述：float4转换为bpchar。
 
@@ -967,7 +958,7 @@
 
     返回值类型：character
 
--   float4\_text
+- float4\_text
 
     描述：float4转换为text。
 
@@ -975,7 +966,7 @@
 
     返回值类型：text
 
--   float4\_varchar
+- float4\_varchar
 
     描述：float4转换为varchar。
 
@@ -983,8 +974,7 @@
 
     返回值类型：character varying
 
-
--   float8\_bpchar
+- float8\_bpchar
 
     描述：float8转换为bpchar。
 
@@ -992,8 +982,7 @@
 
     返回值类型：character
 
-
--   float8\_interval
+- float8\_interval
 
     描述：float8转换为interval。
 
@@ -1001,8 +990,7 @@
 
     返回值类型：interval
 
-
--   float8\_text
+- float8\_text
 
     描述：float8转换为text。
 
@@ -1010,7 +998,7 @@
 
     返回值类型：text
 
--   float8\_varchar
+- float8\_varchar
 
     描述：float8转换为varchar。
 
@@ -1018,7 +1006,7 @@
 
     返回值类型：character varying
 
--   i1tof4
+- i1tof4
 
     描述：tinyint unsigned转换为float4。
 
@@ -1026,7 +1014,7 @@
 
     返回值类型：real
 
--   i1tof8
+- i1tof8
 
     描述：tinyint unsigned转换为float8。
 
@@ -1034,7 +1022,7 @@
 
     返回值类型：double precision
 
--   i1toi2
+- i1toi2
 
     描述：tinyint unsigned转换为smallint。
 
@@ -1042,8 +1030,7 @@
 
     返回值类型：smallint
 
-
--   i1toi4
+- i1toi4
 
     描述：tinyint unsigned转换为int。
 
@@ -1051,8 +1038,7 @@
 
     返回值类型：integer
 
-
--   i1toi8
+- i1toi8
 
     描述：tinyint unsigned转换为bigint。
 
@@ -1060,7 +1046,7 @@
 
     返回值类型：bigint
 
--   i2toi1
+- i2toi1
 
     描述：smallint转换为tinyint unsigned。
 
@@ -1068,7 +1054,7 @@
 
     返回值类型：tinyint unsigned
 
--   i4toi1
+- i4toi1
 
     描述：int转换为tinyint unsigned。
 
@@ -1076,7 +1062,7 @@
 
     返回值类型：tinyint unsigned
 
--   i8toi1
+- i8toi1
 
     描述：bigint转换为tinyint unsigned。
 
@@ -1084,7 +1070,7 @@
 
     返回值类型：tinyint unsigned
 
--   int1\_avg\_accum
+- int1\_avg\_accum
 
     描述：将第二个tinyint unsigned类型参数，加入到第一个参数中，一个参数为bigint类型数组。
 
@@ -1092,7 +1078,7 @@
 
     返回值类型：bigint\[\]
 
--   int1\_bool
+- int1\_bool
 
     描述：tinyint unsigned转换为bool。
 
@@ -1100,7 +1086,7 @@
 
     返回值类型：boolean
 
--   int1\_bpchar
+- int1\_bpchar
 
     描述：tinyint unsigned转换为bpchar。
 
@@ -1108,7 +1094,7 @@
 
     返回值类型：character
 
--   int1\_mul\_cash
+- int1\_mul\_cash
 
     描述：返回一个tinyint类型参数和一个cash类型参数的乘积，返回值为cash类型。
 
@@ -1116,7 +1102,7 @@
 
     返回值类型：money
 
--   int1\_numeric
+- int1\_numeric
 
     描述：tinyint unsigned转换为numeric。
 
@@ -1124,7 +1110,7 @@
 
     返回值类型：numeric
 
--   int1\_nvarchar2
+- int1\_nvarchar2
 
     描述：tinyint unsigned转换为nvarchar2。
 
@@ -1132,8 +1118,7 @@
 
     返回值类型：nvarchar2
 
-
--   int1\_text
+- int1\_text
 
     描述：tinyint unsigned转换为text。
 
@@ -1141,8 +1126,7 @@
 
     返回值类型：text
 
-
--   int1\_varchar
+- int1\_varchar
 
     描述：tinyint unsigned转换为varchar。
 
@@ -1150,8 +1134,7 @@
 
     返回值类型：character varying
 
-
--   int1in
+- int1in
 
     描述：字符串转化为无符号一字节整数。
 
@@ -1159,7 +1142,7 @@
 
     返回值类型：tinyint
 
--   int1out
+- int1out
 
     描述：无符号一字节整数转化为字符串。
 
@@ -1167,7 +1150,7 @@
 
     返回值类型：cstring
 
--   int1up
+- int1up
 
     描述：输入整数转化为无符号一字节整数。
 
@@ -1175,7 +1158,7 @@
 
     返回值类型：tinyint
 
--   int2\_bool
+- int2\_bool
 
     描述：将有符号二字节整数转化为bool型。
 
@@ -1183,7 +1166,7 @@
 
     返回值类型：boolean
 
--   int2\_bpchar
+- int2\_bpchar
 
     描述：将有符号二字节整数转化为BpChar。
 
@@ -1191,7 +1174,7 @@
 
     返回值类型：character
 
--   int2\_text
+- int2\_text
 
     描述：有符号二字节整数转化为text类型。
 
@@ -1199,7 +1182,7 @@
 
     返回值类型：text
 
--   int2\_varchar
+- int2\_varchar
 
     描述：有符号二字节整数转化为varchar类型。
 
@@ -1207,8 +1190,7 @@
 
     返回值类型：character varying
 
-
--   int8\_text
+- int8\_text
 
     描述：tinyint转化为text类型。
 
@@ -1216,7 +1198,7 @@
 
     返回值类型：text
 
--   int8\_varchar
+- int8\_varchar
 
     描述：tinyint为varchar。
 
@@ -1224,7 +1206,7 @@
 
     返回值类型：character varying
 
--   intervaltonum
+- intervaltonum
 
     描述：将内部数据类型日期转化为numeric类型。
 
@@ -1232,7 +1214,7 @@
 
     返回值类型：numeric
 
--   numeric\_bpchar
+- numeric\_bpchar
 
     描述：numeric转化为bpchar。
 
@@ -1240,7 +1222,7 @@
 
     返回值类型：character
 
--   numeric\_int1
+- numeric\_int1
 
     描述：numeric转化为有符号1字节整数。
 
@@ -1248,7 +1230,7 @@
 
     返回值类型：tinyint
 
--   numeric\_text
+- numeric\_text
 
     描述：numeric转化为text。
 
@@ -1256,7 +1238,7 @@
 
     返回值类型：text
 
--   numeric\_varchar
+- numeric\_varchar
 
     描述：numeric转化为varchar。
 
@@ -1264,7 +1246,7 @@
 
     返回值类型：character varying
 
--   nvarchar2in
+- nvarchar2in
 
     描述：将c字符串转化为varchar。
 
@@ -1272,7 +1254,7 @@
 
     返回值类型：nvarchar2
 
--   nvarchar2out
+- nvarchar2out
 
     描述：将text转化为c字符串。
 
@@ -1280,7 +1262,7 @@
 
     返回值类型：cstring
 
--   nvarchar2send
+- nvarchar2send
 
     描述：将varchar转化为二进制。
 
@@ -1288,8 +1270,7 @@
 
     返回值类型：bytea
 
-
--   oidvectorin\_extend
+- oidvectorin\_extend
 
     描述：将字符串转化为oidvector。
 
@@ -1297,7 +1278,7 @@
 
     返回值类型：oidvector\_extend
 
--   oidvectorout\_extend
+- oidvectorout\_extend
 
     描述：将oidvector转化为字符串。
 
@@ -1305,7 +1286,7 @@
 
     返回值类型：cstring
 
--   oidvectorsend\_extend
+- oidvectorsend\_extend
 
     描述：将oidvector转化为字符串。
 
@@ -1313,7 +1294,7 @@
 
     返回值类型：bytea
 
--   reltime\_text
+- reltime\_text
 
     描述：reltime转换为text。
 
@@ -1321,7 +1302,7 @@
 
     返回值类型：text
 
--   text\_date
+- text\_date
 
     描述：text类型转换为date类型。
 
@@ -1329,7 +1310,7 @@
 
     返回值类型：date
 
--   text\_float4
+- text\_float4
 
     描述：text类型转换为float4类型。
 
@@ -1337,7 +1318,7 @@
 
     返回值类型：real
 
--   text\_float8
+- text\_float8
 
     描述：text类型转换为float8类型。
 
@@ -1345,7 +1326,7 @@
 
     返回值类型：double precision
 
--   text\_int1
+- text\_int1
 
     描述：text类型转换为int1类型。
 
@@ -1353,7 +1334,7 @@
 
     返回值类型：tinyint
 
--   text\_int2
+- text\_int2
 
     描述：text类型转换为int2类型。
 
@@ -1361,7 +1342,7 @@
 
     返回值类型：smallint
 
--   text\_int4
+- text\_int4
 
     描述：text类型转换为int4类型。
 
@@ -1369,7 +1350,7 @@
 
     返回值类型：integer
 
--   text\_int8
+- text\_int8
 
     描述：text类型转换为tinyint类型。
 
@@ -1377,7 +1358,7 @@
 
     返回值类型：bigint
 
--   text\_numeric
+- text\_numeric
 
     描述：text类型转换为numeric类型。
 
@@ -1385,7 +1366,7 @@
 
     返回值类型：numeric
 
--   text\_timestamp
+- text\_timestamp
 
     描述：text类型转换为timestamp类型。
 
@@ -1393,7 +1374,7 @@
 
     返回值类型：timestamp without time zone
 
--   time\_text
+- time\_text
 
     描述：time类型转换为text类型。
 
@@ -1401,7 +1382,7 @@
 
     返回值类型：text
 
--   timestamp\_text
+- timestamp\_text
 
     描述：timestamp类型转换为text类型。
 
@@ -1409,7 +1390,7 @@
 
     返回值类型：text
 
--   timestamp\_to\_smalldatetime
+- timestamp\_to\_smalldatetime
 
     描述：timestamp类型转换为smalldatetime类型。
 
@@ -1417,7 +1398,7 @@
 
     返回值类型：smalldatetime
 
--   timestamp\_varchar
+- timestamp\_varchar
 
     描述：timestamp类型转换为varchar类型。
 
@@ -1425,7 +1406,7 @@
 
     返回值类型：character varying
 
--   timestamptz\_to\_smalldatetime
+- timestamptz\_to\_smalldatetime
 
     描述：timestamptz类型转换为smalldatetime。
 
@@ -1433,7 +1414,7 @@
 
     返回值类型：smalldatetime
 
--   timestampzone\_text
+- timestampzone\_text
 
     描述：timestampzone类型转换为text类型。
 
@@ -1441,7 +1422,7 @@
 
     返回值类型：text
 
--   timetz\_text
+- timetz\_text
 
     描述：timetz类型转换为text类型。
 
@@ -1449,7 +1430,7 @@
 
     返回值类型：text
 
--   to\_integer
+- to\_integer
 
     描述：转换为integer类型。
 
@@ -1457,7 +1438,7 @@
 
     返回值类型：integer
 
--   to\_interval
+- to\_interval
 
     描述：转换为interval类型。
 
@@ -1465,7 +1446,7 @@
 
     返回值类型：interval
 
--   to\_numeric
+- to\_numeric
 
     描述：转换为numeric类型。
 
@@ -1473,7 +1454,7 @@
 
     返回值类型：numeric
 
--   to\_nvarchar2
+- to\_nvarchar2
 
     描述：转换为nvarchar2类型。
 
@@ -1481,7 +1462,7 @@
 
     返回值类型：nvarchar2
 
--   to\_text
+- to\_text
 
     描述：转换为text类型。
 
@@ -1489,7 +1470,7 @@
 
     返回值类型：text
 
--   to\_ts
+- to\_ts
 
     描述：转换为ts类型。
 
@@ -1497,7 +1478,7 @@
 
     返回值类型：timestamp without time zone
 
--   to\_varchar2
+- to\_varchar2
 
     描述：转换为varchar2类型。
 
@@ -1505,7 +1486,7 @@
 
     返回值类型：character varying
 
--   varchar\_date
+- varchar\_date
 
     描述：varchar类型转换为date。
 
@@ -1513,7 +1494,7 @@
 
     返回值类型：date
 
--   varchar\_float4
+- varchar\_float4
 
     描述：varchar类型转换为float4。
 
@@ -1521,7 +1502,7 @@
 
     返回值类型：real
 
--   varchar\_float8
+- varchar\_float8
 
     描述：varchar类型转换为float8。
 
@@ -1529,7 +1510,7 @@
 
     返回值类型：double precision
 
--   varchar\_int4
+- varchar\_int4
 
     描述：varchar类型转换为int4。
 
@@ -1537,7 +1518,7 @@
 
     返回值类型：integer
 
--   varchar\_int8
+- varchar\_int8
 
     描述：varchar类型转换为tinyint。
 
@@ -1545,7 +1526,7 @@
 
     返回值类型：bigint
 
--   varchar\_numeric
+- varchar\_numeric
 
     描述：varchar类型转换为numeric。
 
@@ -1553,7 +1534,7 @@
 
     返回值类型：numeric
 
--   varchar\_timestamp
+- varchar\_timestamp
 
     描述：varchar类型转换为timestamp。
 
@@ -1561,8 +1542,7 @@
 
     返回值类型：timestamp without time zone
 
-
--   varchar2\_to\_smlldatetime
+- varchar2\_to\_smlldatetime
 
     描述：varchar2类型转换为smlldatetime。
 
@@ -1570,8 +1550,7 @@
 
     返回值类型：smalldatetime
 
-
--   xidout4
+- xidout4
 
     描述：xid输出为4字节数字。
 
@@ -1579,8 +1558,7 @@
 
     返回值类型：cstring
 
-
--   xidsend4
+- xidsend4
 
     描述：xid转换为二进制格式。
 
@@ -1588,10 +1566,9 @@
 
     返回值类型：bytea
 
-
 ## 编码类型转换<a name="zh-cn_topic_0283137417_section1073313502270"></a>
 
--   convert\_to\_nocase\(text, text\)
+- convert\_to\_nocase\(text, text\)
 
     描述：将字符串转换为指定的编码类型。
 
@@ -1718,4 +1695,3 @@
 </tr>
 </tbody>
 </table>
-

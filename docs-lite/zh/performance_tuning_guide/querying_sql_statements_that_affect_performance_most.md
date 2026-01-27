@@ -4,8 +4,8 @@
 
 ## 操作步骤<a name="zh-cn_topic_0283136757_zh-cn_topic_0237121490_zh-cn_topic_0073253542_zh-cn_topic_0040046535_section43790015111840"></a>
 
-1.  以操作系统用户omm登录数据库节点。
-2.  使用如下命令连接数据库。
+1. 以操作系统用户omm登录数据库节点。
+2. 使用如下命令连接数据库。
 
     ```
     gsql -d postgres -p 8000
@@ -23,7 +23,7 @@
     openGauss=# 
     ```
 
-3.  查询系统中长时间运行的查询语句。
+3. 查询系统中长时间运行的查询语句。
 
     ```
     SELECT current_timestamp - query_start AS runtime, datname, usename, query FROM pg_stat_activity where state != 'idle' ORDER BY 1 desc;
@@ -37,7 +37,7 @@
     SELECT query FROM pg_stat_activity WHERE current_timestamp - query_start > interval '1 days';
     ```
 
-4.  设置参数track\_activities为on。
+4. 设置参数track\_activities为on。
 
     ```
     SET track_activities = on;
@@ -45,7 +45,7 @@
 
     当此参数为on时，数据库系统才会收集当前活动查询的运行信息。
 
-5.  查看正在运行的查询语句。
+5. 查看正在运行的查询语句。
 
     以查看视图pg\_stat\_activity为例：
 
@@ -66,9 +66,9 @@
     SELECT datname, usename, state FROM pg_stat_activity WHERE state != 'idle';
     ```
 
-6.  分析长时间运行的查询语句状态。
-    -   若查询语句处于正常状态，则等待其执行完毕。
-    -   若查询语句阻塞，则通过如下命令查看当前处于阻塞状态的查询语句：
+6. 分析长时间运行的查询语句状态。
+    - 若查询语句处于正常状态，则等待其执行完毕。
+    - 若查询语句阻塞，则通过如下命令查看当前处于阻塞状态的查询语句：
 
         ```
         SELECT datname, usename, state, query FROM pg_stat_activity WHERE waiting = true;
@@ -79,6 +79,3 @@
         >[!NOTE]说明
         >
         >只有当查询阻塞在系统内部锁资源时，waiting字段才显示为true。尽管等待锁资源是数据库系统最常见的阻塞行为，但是在某些场景下查询也会阻塞在等待其他系统资源上，例如写文件、定时器等。但是这种情况的查询阻塞，不会在视图pg\_stat\_activity中体现。
-
-
-

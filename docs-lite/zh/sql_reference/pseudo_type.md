@@ -121,4 +121,3 @@ openGauss=# DROP FUNCTION showall();
 --删除表
 openGauss=# drop table t1;
 ```
-

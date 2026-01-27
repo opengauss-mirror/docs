@@ -16,9 +16,9 @@
 
   若执行的SQL语句违反了表的非空约束，使用此hint可将Error降级为Warning，并根据GUC参数sql_ignore_strategy的值采用以下策略的一种继续执行：
   
-  -   sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的INSERT/UPDATE操作，并继续执行剩余数据操作。
+  - sql_ignore_strategy为ignore_null时，忽略违反非空约束的行的INSERT/UPDATE操作，并继续执行剩余数据操作。
   
-  -   sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
+  - sql_ignore_strategy为overwrite_null时，将违反约束的null值覆写为目标类型的默认值，并继续执行剩余数据操作。
   
       >[!NOTE]说明
       >
@@ -32,23 +32,21 @@
 
   在对分区表进行INSERT/UPDATE操作时，若某行数据无法匹配到表格的合法分区，使用此hint可将Error降级为Warning，忽略该行操作，并继续执行剩余数据操作。
   
-
 - **更新/插入值向目标列类型转换失败时**
 
   执行INSERT/UPDATE语句时，若发现新值与目标列类型不匹配，使用此hint可将Error降级为Warning，并根据新值与目标列的具体类型采取以下策略的一种继续执行：
   
-  -   当新值类型与列类型同为数值类型时：
+  - 当新值类型与列类型同为数值类型时：
   
       若新值在列类型的范围内，则直接进行插入/更新；若新值在列类型范围外，则以列类型的最大/最小值替代。
-	  
-  -   当新值类型与列类型同为字符串类型时：
+   
+  - 当新值类型与列类型同为字符串类型时：
   
       若新值长度在列类型限定范围内，则以直接进行插入/更新；若新值长度在列类型的限定范围外，则保留列类型长度限制的前n个字符。
-	  
-  -   若遇到新值类型与列类型不可转换时：
+   
+  - 若遇到新值类型与列类型不可转换时：
   
       插入/更新列类型的默认值。
-
 
 ## 语法格式<a name="zh-cn_topic_0237121537_section17380317104213"></a>
 
@@ -56,10 +54,10 @@
 ignore_error
 ```
 
-
 ## 示例<a name="zh-cn_topic_0237121537_section1127715590585"></a>
 
 为使用ignore_error hint，需要创建B兼容模式的数据库，名称为db_ignore。
+
 ```
 create database db_ignore dbcompatibility 'B';
 \c db_ignore

@@ -6,22 +6,22 @@
 
 openGauss根据子查询在SQL语句中的位置把子查询分成了子查询、子链接两种形式。
 
--   子查询SubQuery：对应于查询解析树中的范围表RangeTblEntry，更通俗一些指的是出现在FROM语句后面的独立的SELECT语句。
--   子链接SubLink：对应于查询解析树中的表达式，更通俗一些指的是出现在where/on子句、targetlist里面的语句。
+- 子查询SubQuery：对应于查询解析树中的范围表RangeTblEntry，更通俗一些指的是出现在FROM语句后面的独立的SELECT语句。
+- 子链接SubLink：对应于查询解析树中的表达式，更通俗一些指的是出现在where/on子句、targetlist里面的语句。
 
     综上，对于查询解析树而言，SubQuery的本质是范围表、而SubLink的本质是表达式。针对SubLink场景而言，由于SubLink可以出现在约束条件、表达式中，按照openGauss对sublink的实现，sublink可以分为以下几类：
 
-    -   exist\_sublink：对应EXIST、NOT EXIST语句
-    -   any\_sublink：对应op ALL\(select…\)语句，其中OP可以是IN,<,\>,=操作符
-    -   all\_sublink：对应op ALL\(select…\)语句，其中OP可以是IN,<,\>,=操作符
-    -   rowcompare\_sublink：对应record op \(select …\)语句
-    -   expr\_sublink：对应\(SELECT with single targetlist item ...\)语句
-    -   array\_sublink：对应ARRAY\(select…\)语句
-    -   cte\_sublink：对应with query\(…\)语句
+    - exist\_sublink：对应EXIST、NOT EXIST语句
+    - any\_sublink：对应op ALL\(select…\)语句，其中OP可以是IN,<,\>,=操作符
+    - all\_sublink：对应op ALL\(select…\)语句，其中OP可以是IN,<,\>,=操作符
+    - rowcompare\_sublink：对应record op \(select …\)语句
+    - expr\_sublink：对应\(SELECT with single targetlist item ...\)语句
+    - array\_sublink：对应ARRAY\(select…\)语句
+    - cte\_sublink：对应with query\(…\)语句
 
     其中OLAP、HTAP场景中常用的sublink为exist\_sublink、any\_sublink，在openGauss的优化引擎中对其应用场景做了优化（子链接提升），由于SQL语句中子查询的使用的灵活性，会带来SQL子查询过于复杂造成性能问题。子查询从大类上来看，分为非相关子查询和相关子查询：
 
-    -   **非相关子查询None-Correlated SubQuery**
+    - **非相关子查询None-Correlated SubQuery**
 
         子查询的执行不依赖于外层父查询的任何属性值。这样子查询具有独立性，可独自求解，形成一个子查询计划先于外层的查询求解。
 
@@ -50,7 +50,7 @@ openGauss根据子查询在SQL语句中的位置把子查询分成了子查询�
         
         ```
 
-    -   **相关子查询Correlated-SubQuery**
+    - **相关子查询Correlated-SubQuery**
 
         子查询的执行依赖于外层父查询的一些属性值（如下列示例t2.c1 = t1.c1条件中的t1.c1）作为内层查询的一个AND-ed条件。这样的子查询不具备独立性，需要和外层查询按分组进行求解。
 
@@ -75,8 +75,6 @@ openGauss根据子查询在SQL语句中的位置把子查询分成了子查询�
         
         ```
 
-
-
 ## openGauss对SubLink的优化<a name="zh-cn_topic_0283137293_zh-cn_topic_0237121525_zh-cn_topic_0118337169_section8751034123616"></a>
 
 针对SubLink的优化策略主要是让内层的子查询提升\(pullup\)，能够和外表直接做关联查询，从而避免生成SubPlan+Broadcast內表的执行计划。判断子查询是否存在性能风险，可以通过explain查询语句查看Sublink的部分是否被转换成SubPlan的执行计划。
@@ -98,11 +96,11 @@ Filter: (c1 = t1.c1)
 (5 rows)
 ```
 
--   **目前openGauss支持的Sublink-Release场景**
-    -   IN-Sublink无相关条件
+- **目前openGauss支持的Sublink-Release场景**
+    - IN-Sublink无相关条件
 
-        -   不能包含上一层查询的表中的列（可以包含更高层查询表中的列）。
-        -   不能包含易变函数。
+        - 不能包含上一层查询的表中的列（可以包含更高层查询表中的列）。
+        - 不能包含易变函数。
 
         ![](figures/zh-cn_image_0289900287.png)
 
@@ -122,15 +120,15 @@ Filter: (c1 = t1.c1)
         (8 rows)
         ```
 
-    -   Exist-Sublink包含相关条件
+    - Exist-Sublink包含相关条件
 
         Where子句中必须包含上一层查询的表中的列，子查询的其它部分不能含有上层查询的表中的列。其它限制如下。
 
-        -   子查询必须有from子句。
-        -   子查询不能含有with子句。
-        -   子查询不能含有聚集函数。
-        -   子查询里不能包含集合操作、排序、limit、windowagg、having操作。
-        -   不能包含易变函数。
+        - 子查询必须有from子句。
+        - 子查询不能含有with子句。
+        - 子查询不能含有聚集函数。
+        - 子查询里不能包含集合操作、排序、limit、windowagg、having操作。
+        - 不能包含易变函数。
 
         ![](figures/zh-cn_image_0289900841.png)
 
@@ -149,12 +147,12 @@ Filter: (c1 = t1.c1)
         (7 rows)
         ```
 
-    -   包含聚集函数的等值相关子查询的提升
+    - 包含聚集函数的等值相关子查询的提升
 
         子查询的where条件中必须含有来自上一层的列，而且此列必须和子查询本层涉及表中的列做相等判断，且这些条件必须用and连接。其它地方不能包含上层的列。其它限制条件如下。
 
-        -   子查询中where条件包含的表达式\(列名\)必须是表中的列。
-        -   子查询的Select关键字后，必须有且仅有一个输出列，此输出列必须是聚集函数\(如max\)，并且聚集函数的参数\(t2.c2\)不能是来自外层表\(t1\)中的列。聚集函数不能是count。
+        - 子查询中where条件包含的表达式\(列名\)必须是表中的列。
+        - 子查询的Select关键字后，必须有且仅有一个输出列，此输出列必须是聚集函数\(如max\)，并且聚集函数的参数\(t2.c2\)不能是来自外层表\(t1\)中的列。聚集函数不能是count。
 
             例如，下列示例可以提升。
 
@@ -180,10 +178,10 @@ Filter: (c1 = t1.c1)
             );
             ```
 
-        -   子查询必须是from子句。
-        -   子查询中不能有groupby、having、集合操作。
-        -   子查询的targetlist中不能包含返回set的函数。
-        -   子查询的where条件中必须含有来自上一层的列，而且此列必须和子查询层涉及表中的列做相等判断，且这些条件必须用and连接。其它地方不能包含上层的上层中的列。例如：下列示例中的最内层子链接可以提升。
+        - 子查询必须是from子句。
+        - 子查询中不能有groupby、having、集合操作。
+        - 子查询的targetlist中不能包含返回set的函数。
+        - 子查询的where条件中必须含有来自上一层的列，而且此列必须和子查询层涉及表中的列做相等判断，且这些条件必须用and连接。其它地方不能包含上层的上层中的列。例如：下列示例中的最内层子链接可以提升。
 
             ```
             select * from t3 where t3.c1=(
@@ -204,7 +202,7 @@ Filter: (c1 = t1.c1)
             ));
             ```
 
-    -   提升OR子句中的SubLink
+    - 提升OR子句中的SubLink
 
         当WHERE过滤条件中有OR连接的EXIST相关SubLink，
 
@@ -218,8 +216,8 @@ Filter: (c1 = t1.c1)
 
         将OR-ed连接的EXIST相关子查询OR字句的提升过程：
 
-        1.  提取where条件中，or子句中的opExpr。为：t1.a = \(select avg\(a\) from t3 where t1.b = t3.b\)
-        2.  这个op操作中包含subquery，判断是否可以提升，如果可以提升，重写subquery为：select avg\(a\), t3.b from t3 group by t3.b，生成not null条件t3.b is not null，并将这个opexpr用这个not null条件替换。此时SQL变为：
+        1. 提取where条件中，or子句中的opExpr。为：t1.a = \(select avg\(a\) from t3 where t1.b = t3.b\)
+        2. 这个op操作中包含subquery，判断是否可以提升，如果可以提升，重写subquery为：select avg\(a\), t3.b from t3 group by t3.b，生成not null条件t3.b is not null，并将这个opexpr用这个not null条件替换。此时SQL变为：
 
             ```
             select a, c
@@ -227,16 +225,13 @@ Filter: (c1 = t1.c1)
             where t3.b is not null or exists (select * from t4 where t1.c = t4.c);
             ```
 
-        3.  再次提取or子句中的exists sublink，exists \(select \* from t4 where t1.c = t4.c\)，判断是否可以提升，如果可以提升，转换subquery为：select t4.c from t4 group by t4.c生成NotNull条件t4.c is not null提升查询，SQL变为：
+        3. 再次提取or子句中的exists sublink，exists \(select \* from t4 where t1.c = t4.c\)，判断是否可以提升，如果可以提升，转换subquery为：select t4.c from t4 group by t4.c生成NotNull条件t4.c is not null提升查询，SQL变为：
 
             ```
             select t1.a, t1.c from t1 left join (select avg(a) avg, t3.b from t3 group by t3.b) as t3 on (t1.a = avg and t1.b = t3.b) left join (select t5.c from t5 group by t5.c) as t5 on (t1.c = t5.c) where t3.b is not null or t5.c is not null;
             ```
 
-
-
-
--   **目前openGauss不支持的Sublink-Release场景**
+- **目前openGauss不支持的Sublink-Release场景**
 
     除了以上场景之外都不支持Sublink提升，因此关联子查询会被计划成SubPlan+Broadcast的执行计划，当inner表的数据量较大时则会产生性能风险。
 
@@ -262,7 +257,7 @@ Filter: (c1 = t1.c1)
     where not exists (select a,b from test1 where temp.a=test1.a and temp.b=test1.b);
     ```
 
-    -   出现在targetlist里的相关子查询无法提升\(不含count\)
+    - 出现在targetlist里的相关子查询无法提升\(不含count\)
 
         例如：
 
@@ -294,8 +289,8 @@ Filter: (c1 = t1.c1)
 
         >[!NOTE]说明
         >SSQ和CSSQ的解释如下：
-        >-   SSQ：ScalarSubQuery一般指返回1行1列scalar值的sublink，简称SSQ。
-        >-   CSSQ：Correlated-ScalarSubQuery和SSQ相同不过是指包含相关条件的SSQ。
+        >- SSQ：ScalarSubQuery一般指返回1行1列scalar值的sublink，简称SSQ。
+        >- CSSQ：Correlated-ScalarSubQuery和SSQ相同不过是指包含相关条件的SSQ。
 
         上述SQL语句可以改写为：
 
@@ -327,7 +322,7 @@ Filter: (c1 = t1.c1)
 
         可以看到出现在SSQ返回列表里的相关子查询SSQ，已经被提升成Right Join，从而避免当內表T2较大时出现SubPlan计划导致性能变差。
 
-    -   出现在targetlist里的相关子查询无法提升\(带count\)
+    - 出现在targetlist里的相关子查询无法提升\(带count\)
 
         例如：
 
@@ -397,7 +392,7 @@ Filter: (c1 = t1.c1)
         (15 rows)
         ```
 
-    -   相关条件为不等值场景
+    - 相关条件为不等值场景
 
         例如：
 
@@ -411,7 +406,7 @@ Filter: (c1 = t1.c1)
 
         改写方案有两种。
 
-        -   子查询改写方式
+        - 子查询改写方式
 
             ```
             select t1.c1, t1.c2
@@ -423,7 +418,7 @@ Filter: (c1 = t1.c1)
             where t1.rowid = dt.rowid AND t1.c1 = dt.aggref;
             ```
 
-        -   CTE改写方式
+        - CTE改写方式
 
             ```
             WITH dt as
@@ -438,11 +433,9 @@ Filter: (c1 = t1.c1)
             t1.c1 = derived_table.aggref;
             ```
 
-
     >>[!TIP]须知
-    >-   对于AGG类型为count\(\*\)时需要进行CASE-WHEN对没有match的场景补0处理，非COUNT\(\*\)场景NULL处理。
-    >-   CTE改写方式如果有sharescan支持性能上能够更优。
-
+    >- 对于AGG类型为count\(\*\)时需要进行CASE-WHEN对没有match的场景补0处理，非COUNT\(\*\)场景NULL处理。
+    >- CTE改写方式如果有sharescan支持性能上能够更优。
 
 ## 更多优化示例<a name="zh-cn_topic_0283137293_zh-cn_topic_0237121525_zh-cn_topic_0118337169_s3ec9cccc30fd42868396c57d931f3089"></a>
 
@@ -479,4 +472,3 @@ explain (costs off) select * from t1 where exists (select t2.c1 from t2 where t1
 ```
 
 从计划可以看出，subPlan消除了，计划变成了两个表的hash join，这样会大大提高执行效率。
-

@@ -9,8 +9,8 @@
 
 对以上语法格式的解释如下：
 
--   variable\_name：变量名。
--   value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
+- variable\_name：变量名。
+- value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
 
 示例：
 
@@ -33,10 +33,10 @@ END;
 
 对以上语法格式的解释如下：[图2](#fig178291445115118)
 
--   variable\_name：变量名。
--   col\_name：列名。
--   subscript：下标，针对数组变量使用，可以是值或表达式，类型必须为int。
--   value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
+- variable\_name：变量名。
+- col\_name：列名。
+- subscript：下标，针对数组变量使用，可以是值或表达式，类型必须为int。
+- value：可以是值或表达式。值value的类型需要和变量variable\_name的类型兼容才能正确赋值。
 
 示例：
 
@@ -56,6 +56,7 @@ END;
 >INTO方式赋值仅支持对第一层列赋值，且不支持二维及以上数组。
 
 ## 带类型名称的变量赋值<a name="section72764131238199"></a>
+
 除了以上写法，openGauss还支持带类型名称（包括RECORD、VARRAY、TABLE OF类型及使用CREATE TYPE创建的类型）的赋值方法。为了和历史版本兼容，这样的类型名称通常会被忽略，会被直接当作数组或者record处理。只有打开enable_pltype_name_check后，类型名称不同时才会抛出对应的错误。
 
 示例：
@@ -78,8 +79,8 @@ ERROR:  "t_rec2" cannot be used to assign "l_rec"
 
 ## INTO/BULK COLLECT INTO<a name="section1491111311511"></a>
 
--   将存储过程内语句返回的值存储到变量内，BULK COLLECT INTO允许将部分或全部返回值暂存到数组内部。
--   支持返回空结果集。
+- 将存储过程内语句返回的值存储到变量内，BULK COLLECT INTO允许将部分或全部返回值暂存到数组内部。
+- 支持返回空结果集。
 
 ## 语法格式<a name="zh-cn_topic_0283137625_zh-cn_topic_0237122182_zh-cn_topic_0059778869_section18861202111512"></a>
 
@@ -89,10 +90,11 @@ SELECT INTO [STRICT] target expression [FROM ..]
 ```
 
 >[!NOTE]说明
->-   通过基础 SQL 命令加INTO子句可以将单行或多列的结果赋值给一个变量（记录、行类型、标量变量列表）。
->-   target参数可以是一个记录变量、一个行变量或一个有逗号分隔的简单变量和记录/行域列表。
->-   STRICT选项
->    在开启参数set behavior\_compat\_options = 'select\_into\_return\_null'的前提下（默认未开启），若指定该选项则该查询必须刚好返回一行不为空的结果集，否则会报错，报错信息可能是NO\_DATA\_FOUND（没有行）、TOO\_MANY\_ROWS（多于一行）或QUERY\_RETURNED\_NO\_ROWS \(没有数据返回\)。若不指定该选项则没有该限定，且支持返回空结果集。
+>
+>- 通过基础 SQL 命令加INTO子句可以将单行或多列的结果赋值给一个变量（记录、行类型、标量变量列表）。
+>- target参数可以是一个记录变量、一个行变量或一个有逗号分隔的简单变量和记录/行域列表。
+>- STRICT选项
+> 在开启参数set behavior\_compat\_options = 'select\_into\_return\_null'的前提下（默认未开启），若指定该选项则该查询必须刚好返回一行不为空的结果集，否则会报错，报错信息可能是NO\_DATA\_FOUND（没有行）、TOO\_MANY\_ROWS（多于一行）或QUERY\_RETURNED\_NO\_ROWS \(没有数据返回\)。若不指定该选项则没有该限定，且支持返回空结果集。
 
 示例：
 
@@ -119,9 +121,9 @@ openGauss=# CREATE OR REPLACE FUNCTION check_test() RETURNS integer
     language plpgsql
     AS $function$
     DECLARE
-	    b integer;
+     b integer;
     BEGIN
-	    SELECT INTO b a FROM test WHERE a=1; -- 返回空结果集
+     SELECT INTO b a FROM test WHERE a=1; -- 返回空结果集
             RETURN b;
     END;
     $function$;
@@ -130,11 +132,11 @@ openGauss=# SELECT check_test();
 ```
 
 >>[!TIP]须知
->-   BULK COLLECT INTO 只支持批量赋值给数组或集合。集合类型合理使用LIMIT字段避免操作过量数据导致性能下降。
->-   INTO/BULK COLLECT INTO 只支持4层以下Record类型直接嵌套。
->-   返回空结果集需要数据库初始化使用PG兼容参数，配置GUC参数**set behavior\_compat\_options = 'select\_into\_return\_null'**为开启**。**配置GUC参数**set behavior\_compat\_options =**  ''则关闭。
->-   对于数组变量，小括号"\(\)"将优先识别为下标，因此对于带括号的表达式，不支持写在数组变量后面。如对于select \(1+3\) into va\(5\)，不支持写为select into va\(5\) \(1+3\)或select into va\[5\] \(1+3\)。
->-   INSERT INTO、UPDATE INTO、DELETE INTO不支持返回空结果集。
->-   给多个变量赋值时，由于后面的变量存在语法错误，所以均不赋值。
->-   不支持分布式。
-
+>
+>- BULK COLLECT INTO 只支持批量赋值给数组或集合。集合类型合理使用LIMIT字段避免操作过量数据导致性能下降。
+>- INTO/BULK COLLECT INTO 只支持4层以下Record类型直接嵌套。
+>- 返回空结果集需要数据库初始化使用PG兼容参数，配置GUC参数**set behavior\_compat\_options = 'select\_into\_return\_null'**为开启**。**配置GUC参数**set behavior\_compat\_options =**  ''则关闭。
+>- 对于数组变量，小括号"\(\)"将优先识别为下标，因此对于带括号的表达式，不支持写在数组变量后面。如对于select \(1+3\) into va\(5\)，不支持写为select into va\(5\) \(1+3\)或select into va\[5\] \(1+3\)。
+>- INSERT INTO、UPDATE INTO、DELETE INTO不支持返回空结果集。
+>- 给多个变量赋值时，由于后面的变量存在语法错误，所以均不赋值。
+>- 不支持分布式。

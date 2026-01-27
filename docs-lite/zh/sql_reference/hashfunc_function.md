@@ -1,6 +1,6 @@
 # HashFunc函数<a name="ZH-CN_TOPIC_0311139289"></a>
 
--   bucketabstime\(value，flag\)
+- bucketabstime\(value，flag\)
 
     描述：对abstime格式的数值value计算hash值并找到对应的hashbucket桶。
 
@@ -18,7 +18,7 @@
     (1 row)
     ```
 
--   bucketbool\(value，flag\)
+- bucketbool\(value，flag\)
 
     描述：对bool格式的数值value计算hash值并找到对应的hashbucket桶。
 
@@ -41,7 +41,7 @@
     (1 row)
     ```
 
--   bucketbpchar\(value, flag\)
+- bucketbpchar\(value, flag\)
 
     描述：对bpchar格式的数值value计算hash值并找到对应的hashbucket桶。
 
@@ -59,8 +59,7 @@
     (1 row)
     ```
 
-
--   bucketbytea\(value，flag\)
+- bucketbytea\(value，flag\)
 
     描述：对bytea格式的数值value计算hash值并找到对应的hashbucket桶。
 
@@ -78,8 +77,7 @@
     (1 row)
     ```
 
-
--   bucketcash\(value，flag\)
+- bucketcash\(value，flag\)
 
     描述：对money格式的数值value计算hash值并找到对应的hashbucket桶。
 
@@ -97,7 +95,7 @@
     (1 row)
     ```
 
--   getbucket\(value，flag\)
+- getbucket\(value，flag\)
 
     描述：从分布列获取hashbucket桶。
 
@@ -138,7 +136,7 @@
     
     ```
 
--   hash\_array\(anyarray\)
+- hash\_array\(anyarray\)
 
     描述：数组哈希，将数组的元素通过哈希函数得到结果，并返回合并结果。
 
@@ -156,7 +154,7 @@
     (1 row)
     ```
 
--   hash\_group\(key\)
+- hash\_group\(key\)
 
     描述：流引擎中，该函数可将Group Clause中的各列计算为一个hash值。
 
@@ -200,7 +198,7 @@
     (1 row)
     ```
 
--   hash\_numeric\(numeric\)
+- hash\_numeric\(numeric\)
 
     描述：计算Numeric类型的数据的hash值。
 
@@ -218,7 +216,7 @@
     (1 row)
     ```
 
--   hash\_range\(anyrange\)
+- hash\_range\(anyrange\)
 
     描述：计算range的哈希值。
 
@@ -236,7 +234,7 @@
     (1 row)
     ```
 
--   hashbpchar\(character\)
+- hashbpchar\(character\)
 
     描述：计算bpchar的哈希值。
 
@@ -254,7 +252,7 @@
     (1 row)
     ```
 
--   hashchar\(char\)
+- hashchar\(char\)
 
     描述：char和布尔数据转换为哈希值。
 
@@ -278,7 +276,7 @@
     (1 row)
     ```
 
--   hashenum\(anyenum\)
+- hashenum\(anyenum\)
 
     描述：枚举类型转哈希值。
 
@@ -298,7 +296,7 @@
     (1 row)
     ```
 
--   hashfloat4\(real\)
+- hashfloat4\(real\)
 
     描述：float4转哈希值。
 
@@ -316,7 +314,7 @@
     (1 row)
     ```
 
--   hashfloat8\(double precision\)
+- hashfloat8\(double precision\)
 
     描述：float8转哈希值。
 
@@ -334,7 +332,7 @@
     (1 row)
     ```
 
--   hashinet\(inet\)
+- hashinet\(inet\)
 
     描述：支持inet / cidr上的哈希索引的功能。返回传入inet的hash值。
 
@@ -352,7 +350,7 @@
     (1 row)
     ```
 
--   hashint1\(tinyint\)
+- hashint1\(tinyint\)
 
     描述：INT1转哈希值。
 
@@ -370,7 +368,7 @@
     (1 row)
     ```
 
--   hashint2\(smallint\)
+- hashint2\(smallint\)
 
     描述：INT2转哈希值。
 
@@ -388,7 +386,7 @@
     (1 row)
     ```
 
--   bucketchar
+- bucketchar
 
     描述：计算入参的哈希值。
 
@@ -396,7 +394,7 @@
 
     返回值类型：integer
 
--   bucketdate
+- bucketdate
 
     描述：计算入参的哈希值。
 
@@ -404,7 +402,7 @@
 
     返回值类型：integer
 
--   bucketfloat4
+- bucketfloat4
 
     描述：计算入参的哈希值。
 
@@ -412,7 +410,7 @@
 
     返回值类型：integer
 
--   bucketfloat8
+- bucketfloat8
 
     描述：计算入参的哈希值。
 
@@ -420,7 +418,7 @@
 
     返回值类型：integer
 
--   bucketint1
+- bucketint1
 
     描述：计算入参的哈希值。
 
@@ -428,7 +426,7 @@
 
     返回值类型：integer
 
--   bucketint2
+- bucketint2
 
     描述：计算入参的哈希值。
 
@@ -436,7 +434,7 @@
 
     返回值类型：integer
 
--   bucketint2vector
+- bucketint2vector
 
     描述：计算入参的哈希值。
 
@@ -444,7 +442,7 @@
 
     返回值类型：integer
 
--   bucketint4
+- bucketint4
 
     描述：计算入参的哈希值。
 
@@ -452,7 +450,7 @@
 
     返回值类型：integer
 
--   bucketint8
+- bucketint8
 
     描述：计算入参的哈希值。
 
@@ -460,7 +458,7 @@
 
     返回值类型：integer
 
--   bucketinterval
+- bucketinterval
 
     描述：计算入参的哈希值。
 
@@ -468,7 +466,7 @@
 
     返回值类型：integer
 
--   bucketname
+- bucketname
 
     描述：计算入参的哈希值。
 
@@ -476,7 +474,7 @@
 
     返回值类型：integer
 
--   bucketnumeric
+- bucketnumeric
 
     描述：计算入参的哈希值。
 
@@ -484,7 +482,7 @@
 
     返回值类型：integer
 
--   bucketnvarchar2
+- bucketnvarchar2
 
     描述：计算入参的哈希值。
 
@@ -492,7 +490,7 @@
 
     返回值类型：integer
 
--   bucketoid
+- bucketoid
 
     描述：计算入参的哈希值。
 
@@ -500,7 +498,7 @@
 
     返回值类型：integer
 
--   bucketoidvector
+- bucketoidvector
 
     描述：计算入参的哈希值。
 
@@ -508,7 +506,7 @@
 
     返回值类型：integer
 
--   bucketraw
+- bucketraw
 
     描述：计算入参的哈希值。
 
@@ -516,7 +514,7 @@
 
     返回值类型：integer
 
--   bucketreltime
+- bucketreltime
 
     描述：计算入参的哈希值。
 
@@ -524,7 +522,7 @@
 
     返回值类型：integer
 
--   bucketsmalldatetime
+- bucketsmalldatetime
 
     描述：计算入参的哈希值。
 
@@ -532,7 +530,7 @@
 
     返回值类型：integer
 
--   buckettext
+- buckettext
 
     描述：计算入参的哈希值。
 
@@ -540,7 +538,7 @@
 
     返回值类型：integer
 
--   buckettime
+- buckettime
 
     描述：计算入参的哈希值。
 
@@ -548,7 +546,7 @@
 
     返回值类型：integer
 
--   buckettimestamp
+- buckettimestamp
 
     描述：计算入参的哈希值。
 
@@ -556,7 +554,7 @@
 
     返回值类型：integer
 
--   buckettimestamptz
+- buckettimestamptz
 
     描述：计算入参的哈希值。
 
@@ -564,7 +562,7 @@
 
     返回值类型：integer
 
--   buckettimetz
+- buckettimetz
 
     描述：计算入参的哈希值。
 
@@ -572,7 +570,7 @@
 
     返回值类型：integer
 
--   bucketuuid
+- bucketuuid
 
     描述：计算入参的哈希值。
 
@@ -580,12 +578,10 @@
 
     返回值类型：integer
 
--   bucketvarchar
+- bucketvarchar
 
     描述：计算入参的哈希值。
 
     参数：character varying, integer
 
     返回值类型：integer
-
-

@@ -4,7 +4,7 @@
 
 openGauss有五种形式的IF：
 
--   IF\_THEN
+- IF\_THEN
 
     **图 1**  IF\_THEN::=<a name="zh-cn_topic_0283137283_zh-cn_topic_0237122233_zh-cn_topic_0059778300_f49f3826ed5ce406fb823979bb5693d75"></a>  
     ![](figures/IF_THEN.jpg)
@@ -19,7 +19,7 @@ openGauss有五种形式的IF：
     END IF;
     ```
 
--   IF\_THEN\_ELSE
+- IF\_THEN\_ELSE
 
     **图 2**  IF\_THEN\_ELSE::=<a name="zh-cn_topic_0283137283_zh-cn_topic_0237122233_zh-cn_topic_0059778300_f7793c47dee9842d3979aac9ebde3668d"></a>  
     ![](figures/IF_THEN_ELSE.jpg)
@@ -37,7 +37,7 @@ openGauss有五种形式的IF：
     END IF;
     ```
 
--   IF\_THEN\_ELSE IF
+- IF\_THEN\_ELSE IF
 
     IF语句可以嵌套，嵌套方式如下：
 
@@ -53,7 +53,7 @@ openGauss有五种形式的IF：
 
     这种形式实际上就是在一个IF语句的ELSE部分嵌套了另一个IF语句。因此需要一个END IF语句给每个嵌套的IF，另外还需要一个END IF语句结束父IF-ELSE。如果有多个选项，可使用下面的形式。
 
--   IF\_THEN\_ELSIF\_ELSE
+- IF\_THEN\_ELSIF\_ELSE
 
     **图 3**  IF\_THEN\_ELSIF\_ELSE::=<a name="zh-cn_topic_0283137283_zh-cn_topic_0237122233_zh-cn_topic_0059778300_f4be1510408244e98832b9ac2cf1c9ea9"></a>  
     ![](figures/IF_THEN_ELSIF_ELSE.png)
@@ -72,7 +72,7 @@ openGauss有五种形式的IF：
     END IF;
     ```
 
--   IF\_THEN\_ELSEIF\_ELSE
+- IF\_THEN\_ELSEIF\_ELSE
 
     ELSEIF是ELSIF的别名。
 
@@ -98,5 +98,3 @@ openGauss有五种形式的IF：
     --删除存储过程
     DROP PROCEDURE proc_control_structure;
     ```
-
-

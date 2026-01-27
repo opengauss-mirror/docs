@@ -6,6 +6,7 @@
 >
 >用户在使用时间和日期操作符时，对应的操作数请使用明确的类型前缀修饰，以确保数据库在解析操作数的时候能够与用户预期一致，不会产生用户非预期的结果。
 >比如下面示例没有明确数据类型就会出现异常错误。
+>
 >```
 >SELECT date '2001-10-01' - '7' AS RESULT;
 >```
@@ -156,10 +157,9 @@
 </tbody>
 </table>
 
-
 ## 时间/日期函数<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_sd0d47140cdd048c1964ed53f9858f436"></a>
 
--   age\(timestamp, timestamp\)
+- age\(timestamp, timestamp\)
 
     描述：将两个参数相减，并以年、月、日作为返回值。若相减值为负，则函数返回亦为负，入参可以都带timezone或都不带timezone。
 
@@ -175,7 +175,7 @@
     (1 row)
     ```
 
--   age\(timestamp\)
+- age\(timestamp\)
 
     描述：当前时间和参数相减，入参可以带或者不带timezone。
 
@@ -191,7 +191,7 @@
     (1 row)
     ```
 
--   clock\_timestamp\(\)
+- clock\_timestamp\(\)
 
     描述：实时时钟的当前时间戳。
 
@@ -207,7 +207,7 @@
     (1 row)
     ```
 
--   current\_date
+- current\_date
 
     描述：当前日期。
 
@@ -223,7 +223,7 @@
     (1 row)
     ```
 
--   current\_time
+- current\_time
 
     描述：当前时间。
 
@@ -239,7 +239,7 @@
     (1 row)
     ```
 
--   current\_timestamp
+- current\_timestamp
 
     描述：当前日期及时间。
 
@@ -255,7 +255,7 @@
     (1 row)
     ```
 
--   date\_part\(text, timestamp\)
+- date\_part\(text, timestamp\)
 
     描述：获取日期/时间值中子域的值，例如年或者小时的值。等效于extract\(field from timestamp\)。
 
@@ -273,7 +273,7 @@
     (1 row)
     ```
 
--   date\_part\(text, interval\)
+- date\_part\(text, interval\)
 
     描述：获取日期/时间值中子域的值。获取月份值时，如果月份值大于12，则取与12的模。等效于extract\(field from timestamp\)。
 
@@ -289,7 +289,7 @@
     (1 row)
     ```
 
--   date\_trunc\(text, timestamp\)
+- date\_trunc\(text, timestamp\)
 
     描述：截取到参数text指定的精度。
 
@@ -305,7 +305,7 @@
     (1 row)
     ```
 
--   trunc\(timestamp\)
+- trunc\(timestamp\)
 
     描述：默认按天截取。
 
@@ -318,7 +318,7 @@
     (1 row)
     ```
 
--   trunc\(arg1, arg2\)
+- trunc\(arg1, arg2\)
 
     描述：截取到arg2指定的精度。
 
@@ -337,7 +337,7 @@
     (1 row)
     ```
 
--   daterange\(arg1, arg2\)
+- daterange\(arg1, arg2\)
 
     描述：获取时间边界信息。arg1和arg2的类型为date。
 
@@ -353,7 +353,7 @@
     (1 row)
     ```
 
--   daterange\(arg1, arg2, text\)
+- daterange\(arg1, arg2, text\)
 
     描述：获取时间边界信息。arg1和arg2的类型为date，text类型为text。
 
@@ -369,7 +369,7 @@
     (1 row)
     ```
 
--   extract\(field from timestamp\)
+- extract\(field from timestamp\)
 
     描述：获取小时的值。
 
@@ -385,7 +385,7 @@
     (1 row)
     ```
 
--   extract\(field from interval\)
+- extract\(field from interval\)
 
     描述：获取月份的值。如果大于12，则取与12的模。
 
@@ -401,7 +401,7 @@
     (1 row)
     ```
 
--   isfinite\(date\)
+- isfinite\(date\)
 
     描述：测试是否为有效日期。
 
@@ -417,7 +417,7 @@
     (1 row)
     ```
 
--   isfinite\(timestamp\)
+- isfinite\(timestamp\)
 
     描述：测试判断是否为有效时间。
 
@@ -433,7 +433,7 @@
     (1 row)
     ```
 
--   isfinite\(interval\)
+- isfinite\(interval\)
 
     描述：测试是否为有效区间。
 
@@ -449,7 +449,7 @@
     (1 row)
     ```
 
--   justify\_days\(interval\)
+- justify\_days\(interval\)
 
     描述：将时间间隔以月（30天为一月）为单位。
 
@@ -465,7 +465,7 @@
     (1 row)
     ```
 
--   justify\_hours\(interval\)
+- justify\_hours\(interval\)
 
     描述：将时间间隔以天（24小时为一天）为单位。
 
@@ -481,7 +481,7 @@
     (1 row)
     ```
 
--   justify\_interval\(interval\)
+- justify\_interval\(interval\)
 
     描述：结合justify\_days和justify\_hours，调整interval。
 
@@ -497,7 +497,7 @@
     (1 row)
     ```
 
--   localtime
+- localtime
 
     描述：当前时间。
 
@@ -513,7 +513,7 @@
     (1 row)
     ```
 
--   localtimestamp
+- localtimestamp
 
     描述：当前日期及时间。
 
@@ -529,7 +529,7 @@
     (1 row)
     ```
 
--   now\(\)
+- now\(\)
 
     描述：当前日期及时间。
 
@@ -545,7 +545,7 @@
     (1 row)
     ```
 
--   timenow
+- timenow
 
     描述：当前日期及时间。
 
@@ -561,7 +561,7 @@
     (1 row)
     ```
 
--   numtodsinterval\(num, interval\_unit\)
+- numtodsinterval\(num, interval\_unit\)
 
     描述：将数字转换为interval类型。num为numeric类型数字，interval\_unit为固定格式字符串（'DAY' | 'HOUR' | 'MINUTE' | 'SECOND'）。
 
@@ -585,7 +585,7 @@
     (1 row)
     ```
 
--   pg\_sleep\(seconds\)
+- pg\_sleep\(seconds\)
 
     描述：服务器线程延迟时间，单位为秒。
 
@@ -601,7 +601,7 @@
     (1 row)
     ```
 
--   statement\_timestamp\(\)
+- statement\_timestamp\(\)
 
     描述：当前日期及时间。
 
@@ -617,7 +617,7 @@
     (1 row)
     ```
 
--   sysdate
+- sysdate
 
     描述：当前日期及时间。
 
@@ -633,7 +633,7 @@
     (1 row)
     ```
 
--   timeofday\(\)
+- timeofday\(\)
 
     描述：当前日期及时间（像clock\_timestamp，但是返回时为text）。
 
@@ -649,7 +649,7 @@
     (1 row)
     ```
 
--   transaction\_timestamp\(\)
+- transaction\_timestamp\(\)
 
     描述：当前日期及时间，与current\_timestamp等效。
 
@@ -665,7 +665,7 @@
     (1 row)
     ```
 
--   add\_months\(d,n\)
+- add\_months\(d,n\)
 
     描述：用于计算时间点d再加上n个月的时间。
 
@@ -685,7 +685,7 @@
     (1 row)
     ```
 
--   last\_day\(d\)
+- last\_day\(d\)
 
     描述：用于计算时间点d当月最后一天的时间。
 
@@ -701,8 +701,7 @@
     (1 row)
     ```
 
-
--   new_time(date, timezone1,timezone2)
+- new_time(date, timezone1,timezone2)
 
     描述: 将date从timezone1转换为timezone2对应的日期时间。
 
@@ -726,7 +725,7 @@
     >
     > 2.入参date不能是timestamp with time zone类型。
     
--   next\_day\(x,y\)
+- next\_day\(x,y\)
 
     描述：用于计算时间点x开始的下一个星期几（y）的时间。
 
@@ -742,8 +741,7 @@
     (1 row)
     ```
 
-
--   tinterval\(abstime, abstime\)
+- tinterval\(abstime, abstime\)
 
     描述：用两个绝对时间创建时间间隔。
 
@@ -759,8 +757,7 @@
     (1 row)
     ```
 
-
--   tintervalend\(tinterval\)
+- tintervalend\(tinterval\)
 
     描述：返回tinteval的结束时间。
 
@@ -776,8 +773,7 @@
     (1 row)
     ```
 
-
--   tintervalrel\(tinterval\)
+- tintervalrel\(tinterval\)
 
     描述：计算并返回tinterval的相对时间。
 
@@ -793,8 +789,7 @@
     (1 row)
     ```
 
-
--   smalldatetime\_ge
+- smalldatetime\_ge
 
     描述：判断是否第一个参数大于等于第二个参数。
 
@@ -802,7 +797,7 @@
 
     返回值类型：boolean
 
--   smalldatetime\_cmp
+- smalldatetime\_cmp
 
     描述：对比smalldatetime是否相等。
 
@@ -810,7 +805,7 @@
 
     返回值类型：integer
 
--   smalldatetime\_eq
+- smalldatetime\_eq
 
     描述：对比smalldatetime是否相等。
 
@@ -818,7 +813,7 @@
 
     返回值类型：boolean。
 
--   smalldatetime\_gt
+- smalldatetime\_gt
 
     描述：判断是否第一个参数大于第二个参数。
 
@@ -826,7 +821,7 @@
 
     返回值类型：boolean
 
--   smalldatetime\_hash
+- smalldatetime\_hash
 
     描述：计算timestamp对应的哈希值。
 
@@ -834,7 +829,7 @@
 
     返回值类型：integer
 
--   smalldatetime\_in
+- smalldatetime\_in
 
     描述：输入timestamp。
 
@@ -842,7 +837,7 @@
 
     返回值类型：smalldatetime
 
--   smalldatetime\_larger
+- smalldatetime\_larger
 
     描述：返回较大的timestamp。
 
@@ -850,7 +845,7 @@
 
     返回值类型：smalldatetime
 
--   smalldatetime\_le
+- smalldatetime\_le
 
     描述：判断是否第一个参数小于等于第二个参数。
 
@@ -858,7 +853,7 @@
 
     返回值类型：boolean
 
--   smalldatetime\_lt
+- smalldatetime\_lt
 
     描述：判断是否第一个参数小于第二个参数。
 
@@ -866,7 +861,7 @@
 
     返回值类型：boolean
 
--   smalldatetime\_ne
+- smalldatetime\_ne
 
     描述：比较两个timestamp是否不相等。
 
@@ -874,7 +869,7 @@
 
     返回值类型：boolean
 
--   smalldatetime\_out
+- smalldatetime\_out
 
     描述：timestamp转换为外部形式。
 
@@ -882,7 +877,7 @@
 
     返回值类型：cstring
 
--   smalldatetime\_send
+- smalldatetime\_send
 
     描述：timestamp转换为二进制格式。
 
@@ -890,7 +885,7 @@
 
     返回值类型：bytea
 
--   smalldatetime\_smaller
+- smalldatetime\_smaller
 
     描述：返回较小的一个smalldatetime。
 
@@ -898,7 +893,7 @@
 
     返回值类型：smalldatetime
 
--   smalldatetime\_to\_abstime
+- smalldatetime\_to\_abstime
 
     描述：smalldatetime转换为abstime。
 
@@ -906,7 +901,7 @@
 
     返回值类型：abstime
 
--   smalldatetime\_to\_time
+- smalldatetime\_to\_time
 
     描述：smalldatetime转换为time。
 
@@ -914,7 +909,7 @@
 
     返回值类型：time without time zone
 
--   smalldatetime\_to\_timestamp
+- smalldatetime\_to\_timestamp
 
     描述：smalldatetime转换为timestamp。
 
@@ -922,7 +917,7 @@
 
     返回值类型：timestamp without time zone
 
--   smalldatetime\_to\_timestamptz
+- smalldatetime\_to\_timestamptz
 
     描述：smalldatetime转换为timestamptz。
 
@@ -930,7 +925,7 @@
 
     返回值类型：timestamp with time zone
 
--   smalldatetime\_to\_varchar2
+- smalldatetime\_to\_varchar2
 
     描述：smalldatetime转换为varchar2。
 
@@ -941,24 +936,29 @@
     >[!NOTE]说明
     >
     >获取当前时间有多种方式，请根据实际业务从场景选择合适的接口：
-    >1.  以下接口按照当前事务的开始时刻返回值：
+    >1. 以下接口按照当前事务的开始时刻返回值：
+>
+    > ```
+    > CURRENT_DATE CURRENT_TIME CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
     >    ```
-    >    CURRENT_DATE CURRENT_TIME CURRENT_TIME(precision) CURRENT_TIMESTAMP(precision) LOCALTIME LOCALTIMESTAMP LOCALTIME(precision) LOCALTIMESTAMP(precision)
-    >    ```
-    >    其中CURRENT\_TIME和CURRENT\_TIMESTAMP(precision)传递带有时区的值；LOCALTIME和LOCALTIMESTAMP传递的值不带时区。CURRENT\_TIME、LOCALTIME和 LOCALTIMESTAMP可以有选择地接受一个精度参数， 该精度导致结果的秒域被园整为指定小数位。如果没有精度参数，结果将被给予所能得到的全部精度。
-    >    因为这些函数全部都按照当前事务的开始时刻返回结果，所以它们的值在事务运行的整个期间内都不改变。 我们认为这是一个特性：目的是为了允许一个事务在“当前”时间上有一致的概念， 这样在同一个事务里的多个修改可以保持同样的时间戳。
+>
+    > 其中CURRENT\_TIME和CURRENT\_TIMESTAMP(precision)传递带有时区的值；LOCALTIME和LOCALTIMESTAMP传递的值不带时区。CURRENT\_TIME、LOCALTIME和 LOCALTIMESTAMP可以有选择地接受一个精度参数， 该精度导致结果的秒域被园整为指定小数位。如果没有精度参数，结果将被给予所能得到的全部精度。
+    > 因为这些函数全部都按照当前事务的开始时刻返回结果，所以它们的值在事务运行的整个期间内都不改变。 我们认为这是一个特性：目的是为了允许一个事务在“当前”时间上有一致的概念， 这样在同一个事务里的多个修改可以保持同样的时间戳。
     >2.  以下接口返回当前语句开始时间：
+>
+    > ```
+    > transaction_timestamp() statement_timestamp() now()
     >    ```
-    >    transaction_timestamp() statement_timestamp() now()
-    >    ```
-    >    其中transaction\_timestamp\(\)等价于CURRENT\_TIMESTAMP(precision)，但是其命名清楚地反映了它的返回值。statement\_timestamp\(\)返回当前语句的开始时刻（更准确的说是收到 客户端最后一条命令的时间）。statement\_timestamp\(\)和transaction\_timestamp\(\)在一个事务的第一条命令期间返回值相同，但是在随后的命令中却不一定相同。
-    >    now\(\)等效于transaction\_timestamp\(\)。
-    >    1.  以下接口返回函数被调用时的真实当前时间：
+>
+    > 其中transaction\_timestamp\(\)等价于CURRENT\_TIMESTAMP(precision)，但是其命名清楚地反映了它的返回值。statement\_timestamp\(\)返回当前语句的开始时刻（更准确的说是收到 客户端最后一条命令的时间）。statement\_timestamp\(\)和transaction\_timestamp\(\)在一个事务的第一条命令期间返回值相同，但是在随后的命令中却不一定相同。
+    > now\(\)等效于transaction\_timestamp\(\)。
+    > 1. 以下接口返回函数被调用时的真实当前时间：
+>
     >        ```
     >        clock_timestamp() timeofday() 
     >        ```
+>
     >        clock\_timestamp\(\)返回真正的当前时间，因此它的值甚至在同一条 SQL 命令中都会变化。timeofday\(\)和clock\_timestamp\(\)相似，timeofday\(\)也返回真实的当前时间，但是它的结果是一个格式化的text串，而不是timestamp with time zone值。
-
 
 [表2](#table119992713518)显示了可以用于截断日期和时间值的模板。
 
@@ -1227,7 +1227,7 @@
 
 ## TIMESTAMPDIFF<a name="zh-cn_topic_0283136846_section5629194495516"></a>
 
--   **TIMESTAMPDIFF\(**_unit , timestamp\_expr1, timestamp\_expr2_**\)**
+- **TIMESTAMPDIFF\(**_unit , timestamp\_expr1, timestamp\_expr2_**\)**
 
 timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp\_expr1\)的差值，并以unit形式返回结果。timestamp\_expr1，timestamp\_expr2必须是一个timestamp、timestamptz、date类型的值表达式。unit表示的是两个日期差的单位。
 
@@ -1236,7 +1236,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
 >该函数仅在openGauss兼容MY类型时（即dbcompatibility = 'B'）有效，其他类型不支持该函数。
 >该函数仅在GUC参数[dolphin.b_compatibility_mode](../extension_reference/dolphin-GUC%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E.md#section203671436825)为true/on时，才可正确兼容MySQL。
 
--   year
+- year
 
     年份。
 
@@ -1248,8 +1248,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
-
--   quarter
+- quarter
 
     季度。
 
@@ -1261,7 +1260,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
--   month
+- month
 
     月份。
 
@@ -1273,7 +1272,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
--   week
+- week
 
     星期。
 
@@ -1285,7 +1284,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
--   day
+- day
 
     天。
 
@@ -1297,8 +1296,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
-
--   hour
+- hour
 
     小时。
 
@@ -1311,8 +1309,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     
     ```
 
-
--   minute
+- minute
 
     分钟。
 
@@ -1325,8 +1322,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     
     ```
 
-
--   second
+- second
 
     秒。
 
@@ -1340,8 +1336,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     
     ```
 
-
--   microseconds
+- microseconds
 
     秒域（包括小数部分）乘以1,000,000。
 
@@ -1354,7 +1349,7 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     
     ```
 
--   timestamp\_expr含有时区
+- timestamp\_expr含有时区
 
     ```
     openGauss=# SELECT TIMESTAMPDIFF(HOUR,'2020-05-01 10:10:10-01','2020-05-01 10:10:10-03');
@@ -1364,14 +1359,13 @@ timestampdiff函数是计算两个日期时间之间\(timestamp\_expr2-timestamp
     (1 row)
     ```
 
-
 ## EXTRACT<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_scb40477163d740de80f0e984cad28e7b"></a>
 
--   **EXTRACT\(**_field _**FROM **_source_**\)**
+- **EXTRACT\(**_field_**FROM **_source_**\)**
 
 extract函数从日期或时间的数值里抽取子域，比如年、小时等。source必须是一个timestamp、time或interval类型的值表达式（类型为date的表达式转换为timestamp，因此也可以用）。field是一个标识符或者字符串，它指定从源数据中抽取的域。对于大部分field，extract函数返回类型为double precision的数值。对于TIMEZONE\_REGION,TIMEZONE\_ABBR这些field，extract函数返回text类型。field的取值范围如下所示。
 
--   century
+- century
 
     世纪。
 
@@ -1387,8 +1381,8 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   day
-    -   如果source为timestamp，表示月份里的日期（1-31）。
+- day
+    - 如果source为timestamp，表示月份里的日期（1-31）。
 
         ```
         openGauss=# SELECT EXTRACT(DAY FROM TIMESTAMP '2001-02-16 20:38:40');
@@ -1398,7 +1392,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
         (1 row)
         ```
 
-    -   如果source为interval，表示天数。
+    - 如果source为interval，表示天数。
 
         ```
         openGauss=# SELECT EXTRACT(DAY FROM INTERVAL '40 days 1 minute');
@@ -1408,8 +1402,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
         (1 row)
         ```
 
-
--   decade
+- decade
 
     年份除以10。
 
@@ -1421,7 +1414,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   dow
+- dow
 
     每周的星期几，星期天（0）到星期六（6）。
 
@@ -1433,7 +1426,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   doy
+- doy
 
     一年的第几天（1\~365/366）。
 
@@ -1445,8 +1438,8 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   epoch
-    -   如果source为timestamp with time zone，表示自1970-01-01 00:00:00-00 UTC以来的秒数（结果可能是负数）；
+- epoch
+    - 如果source为timestamp with time zone，表示自1970-01-01 00:00:00-00 UTC以来的秒数（结果可能是负数）；
 
         如果source为date和timestamp，表示自1970-01-01 00:00:00-00当地时间以来的秒数；
 
@@ -1468,7 +1461,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
         (1 row)
         ```
 
-    -   将epoch值转换为时间戳的方法。
+    - 将epoch值转换为时间戳的方法。
 
         ```
         openGauss=# SELECT TIMESTAMP WITH TIME ZONE 'epoch' + 982384720.12 * INTERVAL '1 second' AS RESULT;
@@ -1478,8 +1471,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
         (1 row)
         ```
 
-
--   hour
+- hour
 
     小时域（0-23）。
 
@@ -1491,7 +1483,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   isodow
+- isodow
 
     一周的第几天（1-7）。
 
@@ -1509,7 +1501,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   isoyear
+- isoyear
 
     日期中的ISO 8601标准年（不适用于间隔）。
 
@@ -1531,7 +1523,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   microseconds
+- microseconds
 
     秒域（包括小数部分）乘以1,000,000。
 
@@ -1543,7 +1535,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   millennium
+- millennium
 
     千年。
 
@@ -1557,7 +1549,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   milliseconds
+- milliseconds
 
     秒域（包括小数部分）乘以1000。请注意它包括完整的秒。
 
@@ -1569,7 +1561,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   minute
+- minute
 
     分钟域（0-59）。
 
@@ -1581,7 +1573,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   month
+- month
 
     如果source为timestamp，表示一年里的月份数（1-12）。
 
@@ -1603,7 +1595,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   quarter
+- quarter
 
     该天所在的该年的季度（1-4）。
 
@@ -1615,7 +1607,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   second
+- second
 
     秒域，包括小数部分（0-59）。
 
@@ -1627,11 +1619,11 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   timezone
+- timezone
 
     与UTC的时区偏移量，单位为秒。正数对应UTC东边的时区，负数对应UTC西边的时区。
 
--   timezone\_hour
+- timezone\_hour
 
     支持时间戳类型的输入，比如timestamptz或timetz。对于timestamptz类型，返回的是 **当前会话** 的时区偏移量的小时部分，而不是输入的时区偏移量的小时部分。对于timetz类型，返回输入的时区偏移量的小时部分。对于其他时间戳类型，会先将输入转换为timestamptz或timetz，再返回时区偏移量的小时部分。
 
@@ -1644,7 +1636,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   timezone\_minute
+- timezone\_minute
 
     支持时间戳类型的输入，比如timestamptz或timetz。对于timestamptz类型，返回的是 **当前会话** 的时区偏移量的分钟部分，而不是输入的时区偏移量的分钟部分。对于timetz类型，返回输入的时区偏移量的分钟部分。对于其他时间戳类型，会先将输入转换为timestamptz或timetz，再返回时区偏移量的分钟部分。
 
@@ -1657,7 +1649,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   week
+- week
 
     该天在所在的年份里是第几周。ISO 8601定义一年的第一周包含该年的一月四日（ISO-8601 的周从星期一开始）。换句话说，一年的第一个星期四在第一周。
 
@@ -1671,7 +1663,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   year
+- year
 
     年份域。
 
@@ -1683,7 +1675,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   timezone\_region
+- timezone\_region
 
     支持时间戳类型的输入，比如timestamptz或timetz。对于timestamptz类型，返回 **当前会话** 的时区，而不是输入的时区。这点与timezone\_hour，timezone\_minute类似。对于timetz类型，由于类型本身不包含时区地点的信息，所以返回Unknown。对于其他时间戳类型，会先将输入转换为timestamptz或timetz，再返回对应的结果。
 
@@ -1709,7 +1701,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
     (1 row)
     ```
 
--   timezone\_abbr
+- timezone\_abbr
 
     类似timezone\_region， 支持时间戳类型的输入，比如timestamptz或timetz。对于timestamptz类型，返回 **当前会话** 的时区缩写，而不是输入的时区缩写。这点与timezone\_hour，timezone\_minute类似。对于timetz类型，由于类型本身不包含时区地点的信息，所以返回Unknown。对于其他时间戳类型，会先将输入转换为timestamptz或timetz，再返回对应的结果。
 
@@ -1739,7 +1731,7 @@ extract函数从日期或时间的数值里抽取子域，比如年、小时等�
 
 date\_part函数是在传统的Ingres函数的基础上制作的（该函数等效于SQL标准函数extract）：
 
--   **date\_part\('**_field_**', **_source_**\)**
+- **date\_part\('**_field_**', **_source_**\)**
 
 这里的field参数必须是一个字符串，而不是一个名称。有效的field与extract一样，详细信息请参见[EXTRACT](#zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_scb40477163d740de80f0e984cad28e7b)。
 
@@ -1987,18 +1979,19 @@ openGauss=# SELECT date_part('hour', INTERVAL '4 hours 3 minutes');
 >[!NOTE]说明
 >
 >上表中RR计算年的规则如下：
->-   输入的两位年份在00\~49之间：
->    当前年份的后两位在00\~49之间，返回值年份的前两位和当前年份的前两位相同；
->    当前年份的后两位在50\~99之间，返回值年份的前两位是当前年份的前两位加1。
->-   输入的两位年份在50\~99之间：
->    当前年份的后两位在00\~49之间，返回值年份的前两位是当前年份的前两位减1；
->    当前年份的后两位在50\~99之间，返回值年份的前两位和当前年份的前两位相同。
+>
+>- 输入的两位年份在00\~49之间：
+> 当前年份的后两位在00\~49之间，返回值年份的前两位和当前年份的前两位相同；
+> 当前年份的后两位在50\~99之间，返回值年份的前两位是当前年份的前两位加1。
+>- 输入的两位年份在50\~99之间：
+> 当前年份的后两位在00\~49之间，返回值年份的前两位是当前年份的前两位减1；
+> 当前年份的后两位在50\~99之间，返回值年份的前两位和当前年份的前两位相同。
 
 ## timezone\_extract<a name="zh-cn_topic_0283136846_zh-cn_topic_0237121972_zh-cn_topic_0059779084_s099f9ebba99e42e6ad63f7aabdca375d"></a>
 
 timezone_extract是对EXTRACT函数的扩展，支持TIMEZONE\_REGION和TIMEZONE\_ABBR两种新格式。当使用TIMEZONE\_REGION和TIMEZONE\_ABBR关键字时，EXTRACT会调用timezone_extract函数。该功能允许从带有时区信息的时间戳中提取时区的区域名称（如 "America/New_York"）或缩写（如 "EST"）。
 
--   **timezone\_extract\('**_field_**', **_source_**\)**
+- **timezone\_extract\('**_field_**', **_source_**\)**
 
 这里的field参数必须是一个字符串，而不是一个名称。有效的field有TIMEZONE\_REGION和TIMEZONE\_ABBR。
 

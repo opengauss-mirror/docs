@@ -8,12 +8,12 @@
 
 有下列内建范围类型：
 
--   int4range — integer的范围
--   int8range — bigint的范围
--   numrange — numeric的范围
--   tsrange — 不带时区的 timestamp的范围
--   tstzrange — 带时区的 timestamp的范围
--   daterange — date的范围
+- int4range — integer的范围
+- int8range — bigint的范围
+- numrange — numeric的范围
+- tsrange — 不带时区的 timestamp的范围
+- tstzrange — 带时区的 timestamp的范围
+- daterange — date的范围
 
 此外，你可以定义自己的范围类型，详见[CREATE TYPE](create_type.md)。
 
@@ -154,4 +154,3 @@ CREATE INDEX reservation_idx ON reservation USING GIST (during);
 一个 GiST 或 SP-GiST 索引可以加速涉及以下范围操作符的查询： =、 &&、 <@、 @\>、 <<、 \>\>、 -|-、 &<以及 &\> （详见[范围函数和操作符](range_functions_and_operators.md)）。
 
 此外，B-树和哈希索引可以在范围类型的表列上创建。对于这些索引类型，基本上唯一有用的范围操作就是等值。使用相应的< 和 \>操作符，对于范围值定义有一种 B-树排序顺序，但是该顺序相当任意并且在真实世界中通常不怎么有用。范围类型的 B-树和哈希支持主要是为了允许在查询内部进行排序和哈希，而不是创建真正的索引。
-

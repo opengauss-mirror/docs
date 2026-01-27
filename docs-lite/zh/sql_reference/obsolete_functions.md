@@ -159,4 +159,3 @@ openGauss中下列函数在最新版本中已废弃：
 </tr>
 </tbody>
 </table>
-

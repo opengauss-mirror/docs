@@ -1,6 +1,6 @@
 # 账本数据库的函数
 
--   get\_dn\_hist\_relhash\(text, text\)
+- get\_dn\_hist\_relhash\(text, text\)
 
     描述：返回指定防篡改用户表的表级数据hash值。该函数仅供分布式使用。
 
@@ -8,8 +8,7 @@
 
     返回值类型：hash16
 
-
--   ledger\_hist\_check\(text, text\)
+- ledger\_hist\_check\(text, text\)
 
     描述：校验指定防篡改用户表的表级数据hash值与其对应历史表hash一致性。
 
@@ -18,7 +17,6 @@
     返回值类型：Boolean
 
     示例：
-
 
      ```
     --创建schema。 
@@ -35,8 +33,7 @@
     
       ```
 
-
--   ledger\_hist\_repair\(text, text\)
+- ledger\_hist\_repair\(text, text\)
 
     描述：修复指定防篡改用户表对应的历史表hash值，使之与用户表hash一致，返回hash差值。
 
@@ -44,8 +41,8 @@
 
     返回值类型：hash16
 
-
     示例：
+
     ```
     openGauss=# SELECT ledger_hist_repair('ledgernsp','tab'); 
       ledger_hist_repair 
@@ -54,7 +51,7 @@
     (1 row)
     ```
 
--   ledger\_hist\_archive\(text, text\)
+- ledger\_hist\_archive\(text, text\)
 
     描述：归档指定防篡改用户表对应的历史表至审计日志目录中hist\_back文件夹下。
 
@@ -63,6 +60,7 @@
     返回值类型：Boolean
 
     示例：
+
     ```
     openGauss=# SELECT ledger_hist_archive('ledgernsp','tab'); 
      ledger_hist_archive 
@@ -71,8 +69,7 @@
     (1 row)
     ```
 
-
--   ledger\_gchain\_check\(text, text\)
+- ledger\_gchain\_check\(text, text\)
 
     描述：校验指定防篡改用户表对应的历史表hash与全局历史表对应的relhash一致性。
 
@@ -81,6 +78,7 @@
     返回值类型：Boolean
 
     示例：
+
     ```
     openGauss=# SELECT ledger_gchain_check('ledgernsp','tab');  
      ledger_gchain_check 
@@ -89,7 +87,7 @@
     (1 row)
     ```
 
--   ledger\_gchain\_repair\(text, text\)
+- ledger\_gchain\_repair\(text, text\)
 
     描述：修复验指定防篡改用户表在全局历史表中的relhash，使之与其历史表hash一致，返回hash差值。
 
@@ -98,6 +96,7 @@
     返回值类型：hash16
 
     示例：
+
     ```
     openGauss=# SELECT ledger_gchain_repair('ledgernsp','tab');  
      ledger_gchain_repair 
@@ -106,7 +105,7 @@
     (1 row)
     ```
 
--   ledger\_gchain\_archive\(void\)
+- ledger\_gchain\_archive\(void\)
 
     描述：归档全局历史表至审计日志目录中hist\_back文件夹下。
 
@@ -124,7 +123,7 @@
     (1 row)
     ```
 
--   hash16in\(cstring\)
+- hash16in\(cstring\)
 
     描述：将输入16进制字符串转化成内部hash16形式。
 
@@ -132,8 +131,7 @@
 
     返回值类型：hash16
 
-
--   hash16out\(hash16\)
+- hash16out\(hash16\)
 
     描述：将内部hash16类型的数据转码转化为16进制cstring类型。
 
@@ -141,8 +139,7 @@
 
     返回值类型：cstring
 
-
--   hash32in\(cstring\)
+- hash32in\(cstring\)
 
     描述：将输入16进制字符串（32个字符）转化成内部类型hash32形式。
 
@@ -150,13 +147,10 @@
 
     返回值类型：hash32
 
-
--   hash32out\(hash32\)
+- hash32out\(hash32\)
 
     描述：将内部hash32类型的数据转码转化为16进制cstring类型。
 
     参数类型：cstring
 
     返回值类型：hash32
-
-

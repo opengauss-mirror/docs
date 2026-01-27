@@ -2,7 +2,7 @@
 
 子查询表达式主要有以下几种：
 
--   EXISTS/NOT EXISTS
+- EXISTS/NOT EXISTS
 
     EXISTS/NOT EXISTS的语法图请参见[图1](#zh-cn_topic_0283136595_zh-cn_topic_0237122003_zh-cn_topic_0059777701_f0d971ea580d241e5a0dca682165b4d16)。
 
@@ -37,7 +37,7 @@
     (15 rows)
     ```
 
--   IN/NOT IN
+- IN/NOT IN
 
     IN/NOT IN的语法请参见[图2](#zh-cn_topic_0283136595_zh-cn_topic_0237122003_zh-cn_topic_0059777701_fd3c74d5deb5f456bab447575214b74b0)。
 
@@ -76,7 +76,7 @@
     (19 rows)
     ```
 
--   ANY/SOME
+- ANY/SOME
 
     ANY/SOME的语法图请参见[图3](#zh-cn_topic_0283136595_zh-cn_topic_0237122003_zh-cn_topic_0059777701_f34ef57cea9fe4936b6874f259ee5bc0f)。
 
@@ -113,7 +113,7 @@
     (19 rows)
     ```
 
--   ALL
+- ALL
 
     ALL的语法请参见[图4](#zh-cn_topic_0283136595_zh-cn_topic_0237122003_zh-cn_topic_0059777701_fdf5a38b067314bf7b8847e80f5346f52)。
 
@@ -131,5 +131,3 @@
     (0 rows)
     
     ```
-
-

@@ -1,6 +1,6 @@
 # 全局临时表函数<a name="ZH-CN_TOPIC_0289900393"></a>
 
--   pg\_get\_gtt\_relstats\(relOid\)
+- pg\_get\_gtt\_relstats\(relOid\)
 
     描述：显示当前会话指定的全局临时表的基本信息。
 
@@ -18,8 +18,7 @@
     (1 row)
     ```
 
-
--   pg\_get\_gtt\_statistics\(relOid, attnum, ''::text\)
+- pg\_get\_gtt\_statistics\(relOid, attnum, ''::text\)
 
     描述：显示当前会话指定的全局临时表的单列统计信息。
 
@@ -46,8 +45,7 @@
     (1 row)
     ```
 
-
--   pg\_gtt\_attached\_pid\(relOid\)
+- pg\_gtt\_attached\_pid\(relOid\)
 
     描述：显示正在使用指定全局临时表的所有线程pid。
 
@@ -66,8 +64,7 @@
     (2 rows)
     ```
 
-
--   dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+- dbe\_perf.get\_global\_full\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
 
     描述：获取实例级的全量SQL\(Full SQL\)信息。
 
@@ -101,7 +98,7 @@
     </tbody>
     </table>
 
--   dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
+- dbe\_perf.get\_global\_slow\_sql\_by\_timestamp\(start\_timestamp timestamp, end\_timestamp timestamp\)
 
     描述：获取实例级的慢SQL\(Slow SQL\)信息。
 
@@ -135,7 +132,7 @@
     </tbody>
     </table>
 
--   statement\_detail\_decode\(detail text, format text, pretty bool\)
+- statement\_detail\_decode\(detail text, format text, pretty bool\)
 
     解析全量/慢SQL语句中的details字段的信息。
 
@@ -175,7 +172,7 @@
     </tbody>
     </table>
 
--   pg\_list\_gtt\_relfrozenxids\(\)
+- pg\_list\_gtt\_relfrozenxids\(\)
 
     描述：显示各会话的冻结事务xid。
 
@@ -196,5 +193,3 @@
                    0 |        11151
     (3 rows)
     ```
-
-

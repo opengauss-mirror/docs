@@ -40,6 +40,7 @@ GROUP BY a.type1;
 ![original_plan](figures/perf_case-sql_smp-original_plan.png)
 
 根据执行计划可知，此SQL存在大量子查询，且大部分耗时为以下部分：
+
 ```sql
 SELECT
     i.id AS id,
@@ -55,6 +56,7 @@ FROM t_news_info i
 JOIN t_Column m ON m.type = i.type AND m.STATUS = 'Y'
 WHERE NAME IS NOT NULL AND i.STATUS = 'Y' and i.type is not null
 ```
+
 子查询执行计划：
 
 ![original_subplan](figures/perf_case-sql_smp-original_subplan.png)
@@ -62,6 +64,7 @@ WHERE NAME IS NOT NULL AND i.STATUS = 'Y' and i.type is not null
 在这种场景下，改写消除子查询无明显性能提升，由于并行查询（SMP）不支持子查询算子，因此原 SQL 也无法直接使用并行查询。 此时需要先改造SQL，消除子查询才能使用并行特性。
 
 将外层的 FROM 子句里面的以下子查询：
+
 ```sql
     ( SELECT count(*) FROM t_new_bor_hi h WHERE h.STATUS = 'Y' AND h.new_id = i.id ) countRead1,
     ( SELECT count(*) FROM t_news_comment c WHERE c.STATUS = 'Y' AND c.newsId = i.id ) countComment1,
@@ -70,6 +73,7 @@ WHERE NAME IS NOT NULL AND i.STATUS = 'Y' and i.type is not null
 ```
 
 调整到外层 SELECT 部分后，得到新的 SQL 如下（为了方便比较结果，加上了order by）：
+
 ```sql
 SELECT
     count( a.id ) AS newsCount,
@@ -96,11 +100,15 @@ GROUP BY a.type1 order by newsCount;
 ```
 
 同时作以下参数配置：
+
 - 设置会话级并⾏参数，开启并行：
+
 ```sql
 set query_dop = 4;
 ```
+
 - 设置会话级SQL rewirte参数：
+
 ```sql
 set rewrite_rule='magicset,intargetlist';
 ```
@@ -111,5 +119,3 @@ set rewrite_rule='magicset,intargetlist';
 ![perf_case-sql_smp-final_plan_p2](figures/perf_case-sql_smp-final_plan_p2.png)
 
 相比原SQL，加上了 order by 后，耗时也只有4秒左右，性能提升约 5 倍。 经比较验证，结果正确。
-
-

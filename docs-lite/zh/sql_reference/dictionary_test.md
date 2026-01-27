@@ -21,4 +21,3 @@ openGauss=# SELECT ts_lexize('english_stem', 'a');
 >>[!TIP]须知
 >
 >ts\_lexize函数支持单一token，不支持文本。
-

@@ -19,26 +19,25 @@ ALTER OPERATOR name ( { left_type | NONE } , { right_type | NONE } ) SET SCHEMA 
 
 ## 参数说明<a name="section48568352146"></a>
 
--   **name**
+- **name**
 
     一个现有操作符的名字。
 
--   **left\_type**
+- **left\_type**
 
     操作符的左操作数的数据类型；如果没有左操作数，那么写NONE。
 
--   **right\_type**
+- **right\_type**
 
     操作符的右操作数的数据类型；如果没有右操作数，那么写NONE。
 
--   **new\_owner**
+- **new\_owner**
 
     操作符的新所有者。
 
--   **new\_schema**
+- **new\_schema**
 
     操作符的新模式名。
-
 
 ## 示例<a name="section95851353171318"></a>
 
@@ -51,4 +50,3 @@ ALTER OPERATOR @@ (text, text) OWNER TO joe;
 ## 兼容性<a name="section135891317111410"></a>
 
 SQL 标准里没有ALTER OPERATOR语句。
-

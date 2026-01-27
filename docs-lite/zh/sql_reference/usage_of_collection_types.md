@@ -8,10 +8,10 @@
 
 其中：
 
--   table\_type：要定义的集合类型名。
--   TABLE：表示要定义集合类型。
--   data\_type：要创建的集合中成员的类型。
--   indexby\_type： 创建集合索引的类型。
+- table\_type：要定义的集合类型名。
+- TABLE：表示要定义集合类型。
+- data\_type：要创建的集合中成员的类型。
+- indexby\_type： 创建集合索引的类型。
 
 ## 无索引的集合类型<a name="section58135174498"></a>
 
@@ -32,19 +32,20 @@ var_name table_type [:= table_type([v1[,...]])];
 变量声明和初始化后，可通过下标访问集合成员，或者对成员进行赋值。下标的范围为 \[1, upper\], upper 的值为当前空间的大小。如访问被删除的成员，会返回no data found的错误信息。
 
 >[!NOTE]说明
->-   非兼容A模式下（参数sql\_compatibility值不为A），不支持创建集合类型。
->-   在openGauss中，无索引的集合不会自动增长，访问下标越界时会报错。
->-   支持在schema、匿名块、存储过程、自定义函数、package中定义的集合类型，其作用域各不相同。
->-   NOT NULL只支持语法不支持功能。
->-   char、vachar、numeric、float、number等元素类型的范围约束语法创建集合类型，例如：“create type t1 is table of numeric\(5\); ”只支持语法创建，不支持元素的范围约束功能，功能等同于“create type t1 is table of numeric;”。
->-   data\_type可以为基础数据类型、或存储过程内定义的record类型、集合类型、数组类型，不支持ref cursor类型。
->-   不同的集合类型的变量不能相互赋值。即使成员类型相同，但集合类型名称不同，也是不同的集合类型。如TYPE t1 IS  TABLE OF int;和TYPE t2 IS TABLE OF int;定义的两个集合类型，t1和t2是不同的集合类型，以其定义的变量不支持相互赋值。
->-   只支持集合的等值\(=\)与非等值\(<\>或!=\)比较，不支持其他关系运算和算数运算操作。
->-   集合类型与NULL比较时，请使用 IS \[ NOT \] NULL，使用 = 操作符与NULL比较的结果不准确。
->-   支持集合类型变量作为函数的参数和返回值，此时要求参数或者返回值的类型是在schema或者package中定义的集合类型。
->-   无索引的集合作为函数入参时，可以传入对应子元素类型相同的数组类型作为入参，不支持多维数组，且要求数组下标从1开始（过时的方法，不建议使用该功能。可执行“set behavior\_compat\_options = 'disable\_rewrite\_nesttable';”禁用）。
->-   不支持对XML类型数据操作。
->-   集合类型的构造器不支持浮点数以及表达式作为下标。
+>
+>- 非兼容A模式下（参数sql\_compatibility值不为A），不支持创建集合类型。
+>- 在openGauss中，无索引的集合不会自动增长，访问下标越界时会报错。
+>- 支持在schema、匿名块、存储过程、自定义函数、package中定义的集合类型，其作用域各不相同。
+>- NOT NULL只支持语法不支持功能。
+>- char、vachar、numeric、float、number等元素类型的范围约束语法创建集合类型，例如：“create type t1 is table of numeric\(5\); ”只支持语法创建，不支持元素的范围约束功能，功能等同于“create type t1 is table of numeric;”。
+>- data\_type可以为基础数据类型、或存储过程内定义的record类型、集合类型、数组类型，不支持ref cursor类型。
+>- 不同的集合类型的变量不能相互赋值。即使成员类型相同，但集合类型名称不同，也是不同的集合类型。如TYPE t1 IS  TABLE OF int;和TYPE t2 IS TABLE OF int;定义的两个集合类型，t1和t2是不同的集合类型，以其定义的变量不支持相互赋值。
+>- 只支持集合的等值\(=\)与非等值\(<\>或!=\)比较，不支持其他关系运算和算数运算操作。
+>- 集合类型与NULL比较时，请使用 IS \[ NOT \] NULL，使用 = 操作符与NULL比较的结果不准确。
+>- 支持集合类型变量作为函数的参数和返回值，此时要求参数或者返回值的类型是在schema或者package中定义的集合类型。
+>- 无索引的集合作为函数入参时，可以传入对应子元素类型相同的数组类型作为入参，不支持多维数组，且要求数组下标从1开始（过时的方法，不建议使用该功能。可执行“set behavior\_compat\_options = 'disable\_rewrite\_nesttable';”禁用）。
+>- 不支持对XML类型数据操作。
+>- 集合类型的构造器不支持浮点数以及表达式作为下标。
 
 openGauss支持使用圆括号来访问集合元素，且还支持一些特有的函数，如extend，count，first，last, prior, next, delete来访问集合的内容。
 
@@ -54,40 +55,40 @@ openGauss支持使用圆括号来访问集合元素，且还支持一些特有�
 
 该集合类型将下标和对应成员值以键值对的方式存储在HASH表中，对该类型变量的所有操作实际就是对HASH表的操作。用户无需自行扩展或释放存储空间，仅需通过赋值或delete方式进行存储和删除成员。集合相关操作、说明如下：
 
-1.  类型定义
+1. 类型定义
 
     索引集合类型定义需同时指定成员类型data\_type和下标类型indexby\_type，其中下标类型仅支持integer和varchar。
 
-2.  变量声明和初始化
+2. 变量声明和初始化
 
     索引集合类型声明后存在3种初始化场景：未初始化、初始化为空、初始化指定下标和成员值。其中未初始化和初始化为空场景对变量的效果一致。未初始化或初始化为空后变量不为NULL，后续都可以对变量直接进行赋值。初始化指定下标和成员值场景会将指定的下标和成员值以键值对的形式保存到变量中。
 
-3.  变量赋值
+3. 变量赋值
 
     索引集合类型变量赋值分为两种：成员赋值和整体赋值。成员赋值可通过指定下标方式对某个成员赋值，若该成员不存在则直接赋值，若存在则刷新该成员值。整体赋值则会将被赋值变量中原有成员都清空后重新保存新的成员值。整体赋值场景不能给变量赋NULL值，否则报错。
 
-4.  变量取值
+4. 变量取值
 
     通过指定下标方式可获取变量中对应下标的成员值，若通过下标找不到该成员则会返回no data found的错误信息。
 
-
 >[!NOTE]说明
->-   非兼容A模式下（参数sql\_compatibility值不为A），不支持创建带索引集合类型。
->-   支持在匿名块、存储过程、自定义函数、package中定义带索引集合类型，其作用域各不相同。不支持在schema中定义带索引集合类型。
->-   NOT NULL只支持语法不支持功能。
->-   char、vachar、numeric、float、number等元素类型的范围约束语法创建集合类型，例如：“type t1 is table of numeric\(5\) index by int; ”只支持语法创建，不支持元素的范围约束功能，功能等同于“create type t1 is table of numeric;”。
->-   data\_type可以为基础数据类型，或存储过程内定义的record类型，集合类型，数组类型，不支持ref cursor类型。
->-   indexby\_type仅支持integer和varchar，其中varchar的长度暂不约束。
->-   未初始化的带索引集合类型变量非NULL。
->-   带索引集合类型变量不能赋NULL值，否则报错。
->-   带索引集合类型变量作为入参不能赋NULL值或''。
->-   不同的带索引集合类型的变量不能相互赋值。即使成员类型和下标类型相同，但集合类型名称不同，也是不同的集合类型。如 TYPE t1 IS  TABLE OF int index by int; 和 TYPE t2 IS TABLE OF int index by int; 定义的两个集合类型，t1和t2是不同的集合类型，以其定义的变量不支持相互赋值。
->-   带索引集合类型不支持关系运算和算数运算操作。
->-   select ... bulk collect into 方式赋值带索引集合类型变量时，只支持下标为integer类型的集合类型，下标为varchar类型集合不支持。
->-   支持带索引集合类型变量作为函数的参数和返回值，此时要求参数或者返回值的类型是在package中定义的集合类型。
->-   带索引的集合作为函数入参时，可以传入对应子元素类型相同的数组类型作为入参，不支持多维数组，不支持索引类型为varcahr（过时的方法，不建议使用该功能。可执行“set behavior\_compat\_options = 'disable\_rewrite\_nesttable';”禁用）。
->-   类型构造器目前仅支持集合类型，其参数个数的上限与用户自定义函数参数个数上限相同。对于带索引的集合类型，构造器在使用时索引的值仅支持为常量。
->-   不支持对XML类型数据操作。
+>
+>- 非兼容A模式下（参数sql\_compatibility值不为A），不支持创建带索引集合类型。
+>- 支持在匿名块、存储过程、自定义函数、package中定义带索引集合类型，其作用域各不相同。不支持在schema中定义带索引集合类型。
+>- NOT NULL只支持语法不支持功能。
+>- char、vachar、numeric、float、number等元素类型的范围约束语法创建集合类型，例如：“type t1 is table of numeric\(5\) index by int; ”只支持语法创建，不支持元素的范围约束功能，功能等同于“create type t1 is table of numeric;”。
+>- data\_type可以为基础数据类型，或存储过程内定义的record类型，集合类型，数组类型，不支持ref cursor类型。
+>- indexby\_type仅支持integer和varchar，其中varchar的长度暂不约束。
+>- 未初始化的带索引集合类型变量非NULL。
+>- 带索引集合类型变量不能赋NULL值，否则报错。
+>- 带索引集合类型变量作为入参不能赋NULL值或''。
+>- 不同的带索引集合类型的变量不能相互赋值。即使成员类型和下标类型相同，但集合类型名称不同，也是不同的集合类型。如 TYPE t1 IS  TABLE OF int index by int; 和 TYPE t2 IS TABLE OF int index by int; 定义的两个集合类型，t1和t2是不同的集合类型，以其定义的变量不支持相互赋值。
+>- 带索引集合类型不支持关系运算和算数运算操作。
+>- select ... bulk collect into 方式赋值带索引集合类型变量时，只支持下标为integer类型的集合类型，下标为varchar类型集合不支持。
+>- 支持带索引集合类型变量作为函数的参数和返回值，此时要求参数或者返回值的类型是在package中定义的集合类型。
+>- 带索引的集合作为函数入参时，可以传入对应子元素类型相同的数组类型作为入参，不支持多维数组，不支持索引类型为varcahr（过时的方法，不建议使用该功能。可执行“set behavior\_compat\_options = 'disable\_rewrite\_nesttable';”禁用）。
+>- 类型构造器目前仅支持集合类型，其参数个数的上限与用户自定义函数参数个数上限相同。对于带索引的集合类型，构造器在使用时索引的值仅支持为常量。
+>- 不支持对XML类型数据操作。
 
 ## 示例<a name="section93565513911"></a>
 
@@ -197,4 +198,3 @@ openGauss=# CALL nest_table_proc();
 --删除存储过程。
 openGauss=# DROP PROCEDURE nest_table_proc;
 ```
-

@@ -147,16 +147,16 @@
   >     透明数据加密密钥轮转。只有在数据库开启透明加密功能，并且表的enable_tde选项为on时才可以进行表的数据加密密钥轮转。执行密钥轮转操作后，系统会自动向KMS申请创建新的密钥。密钥轮转后，使用旧密钥加密的数据仍使用旧密钥解密，新写入的数据使用新密钥加密。为保证加密数据安全，用户可根据加密表的新增数据量大小定期更新密钥，建议更新周期为两到三年。
   >
   >
-  >  - **INHERIT parent\_table**
+  >     - **INHERIT parent\_table**
   >    将目标资料表加到指定的父资料表中成为新的子资料表。之后，针对父资料表的查询将会包含目标资料表的资料。要作为子资料表加入前，目标资料表必须已经包含父资料表的所有栏位。这些栏位必须具有可匹配的资料类别，并且如果他们在父资料表中具有NOT NULL的限制条件，那么他们必须在子资料表中也具有NOT NULL的限制条件。对于父资料表的所有CHECK限制条件，必须还有相对应的子资料表限制条件，除非父资料表中标记为不可继承。
   >
-  > - **NO INHERIT parent\_table**
+  >     - **NO INHERIT parent\_table**
   >    从指定的父资料表的子资料表中产出目标资料表。针对父资料表的查询将不再包含从目标资料表中所产生的记录。
   >
-  > - **OF type\_name**
+  >     - **OF type\_name**
   >    将表连接至一种复合类型，与CREATE TABLE OF选项创建表一样。表的字段的名称和类型必须精确匹配复合类型中的定义，不过oid系统字段允许不一样。表不能是从任何其他表继承的。这些限制确保CREATE TABLE OF选项允许一个相同的表定义。
   >
-  > - **NOT OF**
+  >     - **NOT OF**
   >    将一个与某类型进行关联的表进行关联的解除。
   >
   > - **REPLICA IDENTITY \{ DEFAULT | USING INDEX index\_name | FULL | NOTHING \}**
@@ -173,7 +173,7 @@
   >
   >    即使指定DEFAULT或USING INDEX，当前Ustore表列的旧值中也可能包含该行所有列的旧值，只有旧值涉及toast该配置选项才会生效。另外针对Ustore表，选项NOTHING无效，实际效果等同于FULL。
   >
-  >  - **AUTO\_INCREMENT \[ = \] value**
+  > - **AUTO\_INCREMENT \[ = \] value**
   >
   >    设置自动增长列下一次的自增值。设置的值只有大于当前自增计数器时才会生效。
   >
@@ -181,10 +181,11 @@
   >
   >    该子句仅在参数sql\_compatibility=B时生效。
   >
-  >- **COMMENT 'text'**
+  > - **COMMENT 'text'**
+  >
   > 修改表对象的注释。
   >
-  >- **ALTER INDEX index_name [ VISBLE | INVISIBLE ]**
+  > - **ALTER INDEX index_name [ VISBLE | INVISIBLE ]**
   >
   > 修改索引的可见性。
   >

@@ -132,4 +132,3 @@ select * from get_tab_ptf(2);
   2 | Descrption for 2
 (4 rows)
 ```
-

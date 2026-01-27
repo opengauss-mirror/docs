@@ -2,7 +2,7 @@
 
 服务器信号函数向其他服务器进程发送控制信号。只有系统管理员才能使用这些函数。
 
--   pg\_cancel\_backend\(pid int\)
+- pg\_cancel\_backend\(pid int\)
 
     描述：取消一个后端的当前查询。
 
@@ -10,7 +10,7 @@
 
     备注：pg\_cancel\_backend向由pid标识的后端进程发送一个查询取消（SIGINT）信号。一个活动的后端进程的PID可以从pg\_stat\_activity视图的pid字段找到，或者在服务器上用ps列出数据库进程。具有SYSADMIN权限的用户，后端进程所连接的数据库的属主，后端进程的属主或者继承了内置角色gs\_role\_signal\_backend权限的用户有权使用该函数。
 
--   pg\_reload\_conf\(\)
+- pg\_reload\_conf\(\)
 
     描述：导致所有服务器进程重新装载它们的配置文件（需要系统管理员角色）。
 
@@ -18,7 +18,7 @@
 
     备注：pg\_reload\_conf给服务器发送一个SIGHUP信号，导致所有服务器进程重新装载配置文件。
 
--   pg\_rotate\_logfile\(\)
+- pg\_rotate\_logfile\(\)
 
     描述：滚动服务器的日志文件（需要系统管理员角色）。
 
@@ -26,7 +26,7 @@
 
     备注：pg\_rotate\_logfile给日志文件管理器发送信号，告诉它立即切换到一个新的输出文件。这个函数只有在redirect\_stderr用于日志输出的时候才有用，否则根本不存在日志文件管理器子进程。
 
--   pg\_terminate\_backend\(pid int\)
+- pg\_terminate\_backend\(pid int\)
 
     描述：终止一个后台线程。
 
@@ -50,7 +50,7 @@
     (1 row)
     ```
 
--   pg\_terminate\_session\(pid int64, sessionid int64\)
+- pg\_terminate\_session\(pid int64, sessionid int64\)
 
     描述：终止一个后台session。
 
@@ -58,11 +58,10 @@
 
     备注：如果成功，函数返回true，否则返回false。具有SYSADMIN权限的用户，会话所连接的数据库的属主，会话的属主或者继承了内置角色gs\_role\_signal\_backend权限的用户有权使用该函数。
 
--   pg\_terminate\_active\_session\_socket\(pid int64, sessionid int64\)
+- pg\_terminate\_active\_session\_socket\(pid int64, sessionid int64\)
 
     描述：关闭一个活跃session和客户端的socker连接。
 
     返回值类型：Boolean
 
     备注：如果成功，函数返回true，否则返回false。仅限初始化用户才可使用函数。
-

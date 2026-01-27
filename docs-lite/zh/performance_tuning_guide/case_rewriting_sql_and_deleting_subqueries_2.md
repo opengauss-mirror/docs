@@ -48,4 +48,3 @@ WHERE EXISTS
 ```
 update normal_date n set time = p.time from normal_date_part p where p.id = n.id;
 ```
-

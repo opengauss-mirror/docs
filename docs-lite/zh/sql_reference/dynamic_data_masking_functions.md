@@ -4,7 +4,7 @@
 >
 >该函数为内部功能调用函数，详见《关于openGauss》中“特性描述-数据库安全-动态数据脱敏机制”章节。
 
--   creditcardmasking\(col text, letter char default 'x'\)
+- creditcardmasking\(col text, letter char default 'x'\)
 
     描述：将col字符串后四位之前的数字使用letter替换。
 
@@ -12,7 +12,7 @@
 
     返回值类型：text
 
--   basicmailmasking\(col text, letter char default 'x'\)
+- basicmailmasking\(col text, letter char default 'x'\)
 
     描述：将col字符串中第一个'@'之前的字符使用letter替换。
 
@@ -20,7 +20,7 @@
 
     返回值类型：text
 
--   fullmailmasking\(col text, letter char default 'x'\)
+- fullmailmasking\(col text, letter char default 'x'\)
 
     描述：将col字符串中出现最后一个'.'之前的字符\(除'@'外\)使用letter替换。
 
@@ -28,7 +28,7 @@
 
     返回值类型：text
 
--   alldigitsmasking\(col text, letter char default '0'\)
+- alldigitsmasking\(col text, letter char default '0'\)
 
     描述：将col字符串中出现的数字使用letter替换。
 
@@ -36,7 +36,7 @@
 
     返回值类型：text
 
--   shufflemasking\(col text\)
+- shufflemasking\(col text\)
 
     描述：将col字符串中的字符乱序排列。
 
@@ -44,7 +44,7 @@
 
     返回值类型：text
 
--   randommasking\(col text\)
+- randommasking\(col text\)
 
     描述：将col字符串中的字符随机化。
 

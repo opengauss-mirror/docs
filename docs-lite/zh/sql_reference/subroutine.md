@@ -4,7 +4,7 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_sbee45c05d759429e9b8cb27ddd67bd30"></a>
 
--   创建子程序
+- 创建子程序
 
     ```
     CREATE [OR REPLACE] PROCEDURE procedure_name
@@ -26,17 +26,16 @@
 
 ## 参数说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
 
--   **subprogram**
+- **subprogram**
 
     创建的子程序。
 
-
 ## 功能说明<a name="zh-cn_topic_0283136646_zh-cn_topic_0237122110_zh-cn_topic_0059778640_scd93d84d9e624b5e831d78d47a830ca4"></a>
--   子程序只能被父程序调用，其他程序无法调用
--   当前不支持包中的子程序
--   当前子程序仅支持三层嵌套
--   当前子程序中不支持自治事务
 
+- 子程序只能被父程序调用，其他程序无法调用
+- 当前不支持包中的子程序
+- 当前子程序仅支持三层嵌套
+- 当前子程序中不支持自治事务
 
 ## 示例<a name="zh-cn_topic_0283136560_zh-cn_topic_0237122104_zh-cn_topic_0059778837_scc61c5d3cc3e48c1a1ef323652dda821"></a>
 
@@ -123,4 +122,3 @@ openGauss$# /
 NOTICE:  1
 ANONYMOUS BLOCK EXECUTE
 ```
-

@@ -159,4 +159,3 @@ openGauss=# SELECT to_tsquery('Fat:ab & Cats');
  'fat':AB & 'cat'
 (1 row)
 ```
-

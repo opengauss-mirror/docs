@@ -14,9 +14,9 @@ when\_clause子句的语法图参见[图2](#zh-cn_topic_0283137347_zh-cn_topic_0
 
 参数说明：
 
--   case\_expression：变量或表达式。
--   when\_expression：常量或者条件表达式。
--   statement：执行语句。
+- case\_expression：变量或表达式。
+- when\_expression：常量或者条件表达式。
+- statement：执行语句。
 
 ## 示例<a name="zh-cn_topic_0283137347_zh-cn_topic_0237122235_zh-cn_topic_0059779327_sfd9ddef81026494fbefef995f9ced557"></a>
 
@@ -53,4 +53,3 @@ CALL proc_case_branch(3,0);
 --删除存储过程
 DROP PROCEDURE proc_case_branch;
 ```
-

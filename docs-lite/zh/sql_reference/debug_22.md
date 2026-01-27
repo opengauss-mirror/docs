@@ -23,29 +23,29 @@
 
 **参数说明**：
 
--   level选项用于指定错误级别，有DEBUG，LOG，INFO，NOTICE，WARNING以及EXCEPTION（默认值）。EXCEPTION抛出一个正常终止当前事务的异常，其他的仅产生不同异常级别的信息。特殊级别的错误信息是否报告到客户端、写到服务器日志由[log\_min\_messages](../database_reference/record_logs_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)和[client\_min\_messages](../database_reference/record_logs_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)这两个配置参数控制。
--   format：格式字符串，指定要报告的错误消息文本。格式字符串后可跟表达式，用于向消息文本中插入。在格式字符串中，%由format后面跟着的参数的值替换，%%用于打印出%。例如：
+- level选项用于指定错误级别，有DEBUG，LOG，INFO，NOTICE，WARNING以及EXCEPTION（默认值）。EXCEPTION抛出一个正常终止当前事务的异常，其他的仅产生不同异常级别的信息。特殊级别的错误信息是否报告到客户端、写到服务器日志由[log\_min\_messages](../database_reference/record_logs_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_sc6c47ec8cc1b47e28be98dbb24b1b39a)和[client\_min\_messages](../database_reference/record_logs_time.md#zh-cn_topic_0283137528_zh-cn_topic_0237124722_zh-cn_topic_0059778452_s2955da1f1cb24b0aa68ddc77700233e0)这两个配置参数控制。
+- format：格式字符串，指定要报告的错误消息文本。格式字符串后可跟表达式，用于向消息文本中插入。在格式字符串中，%由format后面跟着的参数的值替换，%%用于打印出%。例如：
 
     ```
     --v_job_id 将替换字符串中的 %：
     RAISE NOTICE 'Calling cs_create_job(%)',v_job_id;
     ```
 
--   option = expression：向错误报告中添加另外的信息。关键字option可以是MESSAGE、DETAIL、HINT以及ERRCODE，并且每一个expression可以是任意的字符串。
-    -   MESSAGE，指定错误消息文本，这个选项不能用于在USING前包含一个格式字符串的RAISE语句中。
-    -   DETAIL，说明错误的详细信息。
-    -   HINT，用于打印出提示信息。
-    -   ERRCODE，向报告中指定错误码（SQLSTATE）。可以使用条件名称或者直接用五位字符的SQLSTATE错误码。
+- option = expression：向错误报告中添加另外的信息。关键字option可以是MESSAGE、DETAIL、HINT以及ERRCODE，并且每一个expression可以是任意的字符串。
+    - MESSAGE，指定错误消息文本，这个选项不能用于在USING前包含一个格式字符串的RAISE语句中。
+    - DETAIL，说明错误的详细信息。
+    - HINT，用于打印出提示信息。
+    - ERRCODE，向报告中指定错误码（SQLSTATE）。可以使用条件名称或者直接用五位字符的SQLSTATE错误码。
 
--   condition\_name：错误码对应的条件名。
--   sqlstate：错误码。
+- condition\_name：错误码对应的条件名。
+- sqlstate：错误码。
 
 如果在RAISE EXCEPTION命令中既没有指定条件名也没有指定SQLSTATE，默认用RAISE EXCEPTION \(P0001\)。如果没有指定消息文本，默认用条件名或者SQLSTATE作为消息文本。
 
->>[!TIP]须知
+>[!TIP]须知
 >
->-   当由SQLSTATE指定了错误码，则不局限于已定义的错误码，可以选择任意包含五个数字或者大写的ASCII字母的错误码，而不是00000。建议避免使用以三个0结尾的错误码，因为这种错误码是类别码，会被整个种类捕获。
->-   兼容O模式下，SQLCODE等于SQLSTATE。
+>- 当由SQLSTATE指定了错误码，则不局限于已定义的错误码，可以选择任意包含五个数字或者大写的ASCII字母的错误码，而不是00000。建议避免使用以三个0结尾的错误码，因为这种错误码是类别码，会被整个种类捕获。
+>- 兼容O模式下，SQLCODE等于SQLSTATE。
 
 >[!NOTE]说明
 >
@@ -57,13 +57,12 @@
 
 **图 6**  exception\_init::=<a name="fig1171943461612"></a>  
 
-
 ![](figures/捕获.png)
 
 **参数说明**：
 
--   exception\_name为用户申明的异常名，EXCEPTION\_INIT语法必须出现在与申明异常相同部分，位于申明异常之后。
--   sqlcode为自定义的SQLCODE，必须为负整数，取值范围-2147483647\~-1。
+- exception\_name为用户申明的异常名，EXCEPTION\_INIT语法必须出现在与申明异常相同部分，位于申明异常之后。
+- sqlcode为自定义的SQLCODE，必须为负整数，取值范围-2147483647\~-1。
 
 >>[!TIP]须知
 >
@@ -160,4 +159,3 @@ end;
 --执行结果
 NOTICE:  sqlcode:-1,sqlstate:-1,sqlerrm: 1: non-GaussDB Exception
 ```
-

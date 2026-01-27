@@ -527,7 +527,6 @@ openGauss支持几个特殊值，在读取的时候将被转换成普通的日�
 </tbody>
 </table>
 
-
 ```
 --创建表。
 openGauss=# CREATE TABLE realtime_type_special(col1 varchar(20), col2 date, col3 timestamp, col4 time);
@@ -606,7 +605,6 @@ openGauss=# SELECT TIME 'allballs';
 --删除表。
 openGauss=# DROP TABLE realtime_type_special;
 ```
-
 
 ## 时间段输入<a name="zh-cn_topic_0283136973_zh-cn_topic_0237121952_section1947184682711"></a>
 
@@ -704,4 +702,3 @@ openGauss=# SELECT * FROM reltime_type_tab;
 --删除表。
 openGauss=# DROP TABLE reltime_type_tab;
 ```
-

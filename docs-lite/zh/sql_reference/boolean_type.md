@@ -72,4 +72,3 @@ openGauss=# SELECT * FROM bool_type_t1 WHERE bt_col1 = 't';
 --删除表。
 openGauss=# DROP TABLE bool_type_t1;
 ```
-

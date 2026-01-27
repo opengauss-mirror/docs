@@ -37,4 +37,3 @@ CREATE OPERATOR === (
 
 DROP OPERATOR ===(bigint, bigint);
 ```
-

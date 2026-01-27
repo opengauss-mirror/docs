@@ -50,4 +50,3 @@ text @@ text
 ```
 
 我们已经看到了前面两种，形式text @@ tsquery等价于to\_tsvector\(text\) @@ tsquery，而text @@ text等价于to\_tsvector\(text\) @@ plainto\_tsquery\(text\)。
-

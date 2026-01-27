@@ -1,6 +1,6 @@
 # 触发器函数<a name="ZH-CN_TOPIC_0289900144"></a>
 
--   pg\_get\_triggerdef\(oid\)
+- pg\_get\_triggerdef\(oid\)
 
     描述：获取触发器的定义信息。
 
@@ -19,7 +19,7 @@
     (2 rows)
     ```
 
--   pg\_get\_triggerdef\(oid, boolean\)
+- pg\_get\_triggerdef\(oid, boolean\)
 
     描述：获取触发器的定义信息。
 
@@ -47,5 +47,3 @@
      CREATE TRIGGER tg03 AFTER INSERT ON gtest26 FOR EACH ROW WHEN ((new.a IS NOT NULL)) EXECUTE PROCEDURE gtest_trigger_func()
     (2 rows)
     ```
-
-

@@ -6,13 +6,13 @@
 
 ## 语法格式<a name="zh-cn_topic_0283136909_zh-cn_topic_0237121533_section128191729143517"></a>
 
--   仅指定join顺序，不指定内外表顺序。
+- 仅指定join顺序，不指定内外表顺序。
 
 ```
 leading(join_table_list) 
 ```
 
--   同时指定join顺序和内外表顺序，内外表顺序仅在最外层生效。
+- 同时指定join顺序和内外表顺序，内外表顺序仅在最外层生效。
 
 ```
 leading((join_table_list)) 
@@ -29,10 +29,10 @@ leading((join_table_list))
 
 join table list中指定的表需要满足以下要求，否则会报语义错误。
 
--   list中的表必须在当前层或提升的子查询中存在。
--   list中的表在当前层或提升的子查询中必须是唯一的。如果不唯一，需要使用不同的别名进行区分。
--   同一个表只能在list里出现一次。
--   如果表存在别名，则list中的表需要使用别名。
+- list中的表必须在当前层或提升的子查询中存在。
+- list中的表在当前层或提升的子查询中必须是唯一的。如果不唯一，需要使用不同的别名进行区分。
+- 同一个表只能在list里出现一次。
+- 如果表存在别名，则list中的表需要使用别名。
 
 例如：
 
@@ -60,4 +60,3 @@ select /*+ leading((((((store_sales store) promotion) item) customer) ad2) store
 ![](figures/zh-cn_image_0289899975.png)
 
 图中计划顶端warning的提示详见[Hint的错误、冲突及告警](hint_errors_conflicts_and_other_warnings.md)的说明。
-

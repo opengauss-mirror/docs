@@ -12,20 +12,18 @@ ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name ALTER [ PROCEDURAL ] LANGU
 
 ## 参数说明<a name="section48568352146"></a>
 
--   **name**
+- **name**
 
     语言的名字。
 
--   **new\_name**
+- **new\_name**
 
     语言的新名字。
 
--   **new\_owner**
+- **new\_owner**
 
     语言的新的所有者。
-
 
 ## 兼容性<a name="section446220148329"></a>
 
 SQL标准里没有ALTER LANGUAGE语句。
-

@@ -31,11 +31,11 @@ select /*+ <plan_hint1> <plan_hint2> */ * from t1, (select /*+ <plan_hint3> */ *
 
 当前版本Plan Hint支持的范围如下，后续版本会进行增强。
 
--   指定Join顺序的Hint - leading hint。
--   指定Join方式的Hint，仅支持除semi/anti join，unique plan之外的常用hint。
--   指定结果集行数的Hint。
--   指定Scan方式的Hint，仅支持常用的tablescan，indexscan和indexonlyscan的hint。
--   指定子链接块名的Hint。
+- 指定Join顺序的Hint - leading hint。
+- 指定Join方式的Hint，仅支持除semi/anti join，unique plan之外的常用hint。
+- 指定结果集行数的Hint。
+- 指定Scan方式的Hint，仅支持常用的tablescan，indexscan和indexonlyscan的hint。
+- 指定子链接块名的Hint。
 
 ## 注意事项<a name="zh-cn_topic_0283137554_zh-cn_topic_0237121532_section19195171972812"></a>
 
@@ -260,4 +260,3 @@ group by i_product_name
 ```
 
 ![](figures/zh-cn_image_0289900927.png)
-

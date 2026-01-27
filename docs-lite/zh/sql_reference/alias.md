@@ -4,7 +4,7 @@ SQL可以重命名一张表或者一个字段的名称，这个名称为该表�
 
 ## 语法格式<a name="section119531510131916"></a>
 
--   列别名语法
+- 列别名语法
 
     ```
     SELECT 
@@ -13,7 +13,7 @@ SQL可以重命名一张表或者一个字段的名称，这个名称为该表�
     [ WHERE condition ];
     ```
 
--   表别名语法
+- 表别名语法
 
     ```
     SELECT column1, column2.... 
@@ -21,13 +21,11 @@ SQL可以重命名一张表或者一个字段的名称，这个名称为该表�
     WHERE [condition];
     ```
 
-
 ## 参数说明<a name="section012816161027"></a>
 
--   **output\_name**
+- **output\_name**
 
     通过使用子句AS output\_name可以为输出字段取个别名，这个别名通常用于输出字段的显示。支持关键字name、value和type作为列别名。
-
 
 ## 示例<a name="section73551858131418"></a>
 
@@ -47,4 +45,3 @@ openGauss=# SELECT c.c_first_name,c.amount FROM customer_t1 AS c;
  Lily         |   2000
 (8 rows)
 ```
-

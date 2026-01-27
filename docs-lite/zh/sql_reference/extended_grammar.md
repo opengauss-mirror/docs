@@ -57,5 +57,3 @@ openGauss提供的扩展语法如下。
 </tr>
 </tbody>
 </table>
-
-

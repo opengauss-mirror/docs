@@ -2,7 +2,7 @@
 
 ## 序列号生成函数<a name="zh-cn_topic_0283137117_zh-cn_topic_0237121985_zh-cn_topic_0059779332_sfde916b05a3b4024b5cddf1ccf83a8f2"></a>
 
--   generate\_series\(start, stop\)
+- generate\_series\(start, stop\)
 
     描述：生成一个数值序列，从start到stop，步长为1。
 
@@ -10,7 +10,7 @@
 
     返回值类型：setof int、setof bigint、setof numeric（与参数类型相同）
 
--   generate\_series\(start, stop, step\)
+- generate\_series\(start, stop, step\)
 
     描述：生成一个数值序列，从start到stop，步长为step。
 
@@ -18,14 +18,13 @@
 
     返回值类型：setof int、setof bigint、setof numeric（与参数类型相同）
 
--   generate\_series\(start, stop, step interval\)
+- generate\_series\(start, stop, step interval\)
 
     描述：生成一个数值序列，从start到stop，步长为step。
 
     参数类型：timestamp或timestamp with time zone
 
     返回值类型：setof timestamp或setof timestamp with time zone（与参数类型相同）
-
 
 如果step是正数且start大于stop，则返回零行。相反，如果step是负数且start小于stop，则也返回零行。如果输入是NULL，同样产生零行。如果step为零则是一个错误。
 
@@ -79,18 +78,17 @@ openGauss=# SELECT * FROM generate_series('2008-03-01 00:00'::timestamp, '2008-0
 
 ## 下标生成函数<a name="zh-cn_topic_0283137117_zh-cn_topic_0237121985_zh-cn_topic_0059779332_s25da07a4e3f84281af7e30b081b29a88"></a>
 
--   generate\_subscripts\(array anyarray, dim int\)
+- generate\_subscripts\(array anyarray, dim int\)
 
     描述：生成一系列包括给定数组的下标。
 
     返回值类型：setof int
 
--   generate\_subscripts\(array anyarray, dim int, reverse boolean\)
+- generate\_subscripts\(array anyarray, dim int, reverse boolean\)
 
     描述：生成一系列包括给定数组的下标。当reverse为真时，该系列则以相反的顺序返回。
 
     返回值类型：setof int
-
 
 generate\_subscripts是一个为给定数组中的指定维度生成有效下标集的函数。如果数组中没有所请求的维度或者NULL数组，返回零行（但是会给数组元素为空的返回有效下标）。示例：
 
@@ -127,4 +125,3 @@ openGauss=# SELECT * FROM unnest2(ARRAY[[1,2],[3,4]]);
 --删除函数。
 openGauss=# DROP FUNCTION unnest2;
 ```
-

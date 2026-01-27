@@ -92,7 +92,7 @@
 
 ### 前提条件<a name="section102673333318"></a>
 
--   在openGauss中，如果需要对系统资源进行管理，用户需要拥有DBA权限。通过执行如下语法查询哪些用户拥有该权限：
+- 在openGauss中，如果需要对系统资源进行管理，用户需要拥有DBA权限。通过执行如下语法查询哪些用户拥有该权限：
 
     ```
     openGauss=# SELECT rolname FROM pg_roles WHERE rolsystemadmin = 't';
@@ -103,8 +103,7 @@
     (2 rows)
     ```
 
-
--   如果想要将一个用户纳入资源负载管理的范围，则此用户必须具有login权限。通过执行如下语法查询哪些用户拥有该权限：
+- 如果想要将一个用户纳入资源负载管理的范围，则此用户必须具有login权限。通过执行如下语法查询哪些用户拥有该权限：
 
     ```
     openGauss=# SELECT rolname FROM pg_roles WHERE rolcanlogin = 't';
@@ -114,7 +113,6 @@
     (1 row)
     ```
 
-
 >>[!TIP]须知
 >
 >如果一个用户的login权限被取消，那么他的resource pool将会自动修改为default\_pool。default\_pool的详细介绍请参见[表2](#创建资源池)。
@@ -123,14 +121,14 @@
 
 DBA权限用户可以通过如下步骤启动基于资源池的资源负载管理。此处以omm用户为例进行描述。
 
-1.  以操作系统用户omm登录openGauss主节点。
-3.  开启基于资源池的资源负载管理功能。
+1. 以操作系统用户omm登录openGauss主节点。
+3. 开启基于资源池的资源负载管理功能。
 
     ```
      gs_guc set -Z datanode -D /gaussdb/data/datanode -c "use_workload_manager=on"
     ```
 
-6.  重启数据库使参数设置生效。
+6. 重启数据库使参数设置生效。
 
     ```
     gs_ctl restart -D /gaussdb/data/datanode
@@ -271,9 +269,9 @@ openGauss支持通过创建资源池对主机资源进行划分。开启资源�
 
 **创建资源池**
 
-1.  [使用gsql连接](../getting_started/gsql_connection_and_usage.md)数据库。
+1. [使用gsql连接](../getting_started/gsql_connection_and_usage.md)数据库。
 
-1.  创建组资源池关联到指定的子Class控制组。例如下面：名称为“resource\_pool\_a”的组资源池关联到了“class\_a”控制组。
+2. 创建组资源池关联到指定的子Class控制组。例如下面：名称为“resource\_pool\_a”的组资源池关联到了“class\_a”控制组。
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a WITH (control_group='class_a');
@@ -281,8 +279,7 @@ openGauss支持通过创建资源池对主机资源进行划分。开启资源�
     CREATE RESOURCE POOL
     ```
 
-
-1.  创建业务资源池关联到指定的Workload控制组。例如下面：名称为“resource\_pool\_a1”的业务资源池关联到了“workload\_a1”控制组。
+3. 创建业务资源池关联到指定的Workload控制组。例如下面：名称为“resource\_pool\_a1”的业务资源池关联到了“workload\_a1”控制组。
 
     ```
     openGauss=# CREATE RESOURCE POOL resource_pool_a1 WITH (control_group='class_a:workload_a1');
@@ -294,11 +291,10 @@ openGauss支持通过创建资源池对主机资源进行划分。开启资源�
 
     >[!NOTE]说明
     >
-    >-   如果在创建资源池的时候不指定所关联的控制组，则该资源池会被关联到默认控制组（DefaultClass控制组下的"Medium" Timeshare控制组）。
-    >-   control\_group取值区分大小写，指定时要使用单引号。
-    >-   若数据库用户指定Timeshare控制组代表的字符串，即"Rush"、"High"、"Medium"或"Low"其中一种，如control\_group的字符串为"High"，代表资源池指定到DefaultClass控制组下的"High" Timeshare控制组。
-    >-   control\_group可以指定用户创建Workload控制组，即'class1:wd'，也可以带有控制组的级别，例如：'class1:wd:2'，这个级别范围一定要在1-10的范围内，但这个级别将不做任何区分作用。在旧版本中，允许创建同名Workload控制组，以级别进行区分。但新版本升级后，不允许创建同名控制组，用户如在旧版本中已创建同名Workload控制组，使用过程中其级别将不进行区分，由此可能造成的控制组不明确使用的问题，需要用户自行把旧的同名控制组删除以明确控制组使用。
-
+    >- 如果在创建资源池的时候不指定所关联的控制组，则该资源池会被关联到默认控制组（DefaultClass控制组下的"Medium" Timeshare控制组）。
+    >- control\_group取值区分大小写，指定时要使用单引号。
+    >- 若数据库用户指定Timeshare控制组代表的字符串，即"Rush"、"High"、"Medium"或"Low"其中一种，如control\_group的字符串为"High"，代表资源池指定到DefaultClass控制组下的"High" Timeshare控制组。
+    >- control\_group可以指定用户创建Workload控制组，即'class1:wd'，也可以带有控制组的级别，例如：'class1:wd:2'，这个级别范围一定要在1-10的范围内，但这个级别将不做任何区分作用。在旧版本中，允许创建同名Workload控制组，以级别进行区分。但新版本升级后，不允许创建同名控制组，用户如在旧版本中已创建同名Workload控制组，使用过程中其级别将不进行区分，由此可能造成的控制组不明确使用的问题，需要用户自行把旧的同名控制组删除以明确控制组使用。
 
 **管理资源池**
 
@@ -320,16 +316,17 @@ DROP RESOURCE POOL
 
 >[!NOTE]说明
 >
->-   如果某个角色已关联到该资源池，无法删除。
->-   多租户场景下，如果删除组资源池，其业务资源池都将被删除。只有不关联用户时，资源池才能被删除。
+>- 如果某个角色已关联到该资源池，无法删除。
+>- 多租户场景下，如果删除组资源池，其业务资源池都将被删除。只有不关联用户时，资源池才能被删除。
 
 ### 查看资源池的信息<a name="zh-cn_topic_0066854608_section63579270173658"></a>
 
 >>[!TIP]须知
->-   不允许使用INSERT、UPDATE、DELETE、TRUNCATE操作资源负载管理的系统表pg\_resource\_pool。
->-   不允许修改资源池的memory\_limit和cpu\_affinity属性。
+>
+>- 不允许使用INSERT、UPDATE、DELETE、TRUNCATE操作资源负载管理的系统表pg\_resource\_pool。
+>- 不允许修改资源池的memory\_limit和cpu\_affinity属性。
 
--   查看当前数据库实例中所有的资源池信息。
+- 查看当前数据库实例中所有的资源池信息。
 
     ```
     openGauss=# SELECT * FROM PG_RESOURCE_POOL;
@@ -348,7 +345,7 @@ DROP RESOURCE POOL
     (7 rows)
     ```
 
--   查看某个资源池关联的控制组信息，具体内容可以参考[•gs\_control\_group\_info\(p...](../sql_reference/statistics_function.md#zh-cn_topic_0283136951_zh-cn_topic_0237121998_table1560939125613)。
+- 查看某个资源池关联的控制组信息，具体内容可以参考[•gs\_control\_group\_info\(p...](../sql_reference/statistics_function.md#zh-cn_topic_0283136951_zh-cn_topic_0237121998_table1560939125613)。
 
     如下命令中“resource\_pool\_a1”为资源池名称。
 
@@ -439,6 +436,3 @@ DROP RESOURCE POOL
     </tr>
     </tbody>
     </table>
-
-
-

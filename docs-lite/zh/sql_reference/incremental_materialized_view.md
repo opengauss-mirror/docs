@@ -8,40 +8,35 @@
 
 ### 语法格式<a name="section1980464963719"></a>
 
--   创建增量物化视图
+- 创建增量物化视图
 
     ```
     CREATE INCREMENTAL MATERIALIZED VIEW [ view_name ] AS { query_block }; 
     ```
 
-
--   全量刷新物化视图
+- 全量刷新物化视图
 
     ```
     REFRESH MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   增量刷新物化视图
+- 增量刷新物化视图
 
     ```
     REFRESH INCREMENTAL MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   删除物化视图
+- 删除物化视图
 
     ```
     DROP MATERIALIZED VIEW [ view_name ];
     ```
 
-
--   查询物化视图
+- 查询物化视图
 
     ```
     SELECT * FROM [ view_name ];
     ```
-
 
 ### 示例<a name="section1433113611463"></a>
 
@@ -99,24 +94,23 @@ DROP MATERIALIZED VIEW
 
 ### 支持场景<a name="section1490618598164"></a>
 
--   单表查询语句。
--   多个单表查询的UNION ALL。
--   物化视图上支持创建索引。
--   物化视图支持Analyze操作。
+- 单表查询语句。
+- 多个单表查询的UNION ALL。
+- 物化视图上支持创建索引。
+- 物化视图支持Analyze操作。
 
 ### 不支持场景<a name="section10338102122020"></a>
 
--   物化视图中不支持多表Join连接计划以及subquery计划。
--   除少部分ALTER操作外，不支持对物化视图中基表执行绝大多数DDL操作。
--   物化视图不支持增删改操作，只支持查询语句。
--   不支持用临时表/hashbucket/unlog/分区表创建物化视图。
--   不支持物化视图嵌套创建（即物化视图上创建物化视图）。
--   不支持视图上创建增量物化视图。
--   仅支持行存表，不支持列存表。
--   不支持UNLOGGED类型的物化视图，不支持WITH语法。
+- 物化视图中不支持多表Join连接计划以及subquery计划。
+- 除少部分ALTER操作外，不支持对物化视图中基表执行绝大多数DDL操作。
+- 物化视图不支持增删改操作，只支持查询语句。
+- 不支持用临时表/hashbucket/unlog/分区表创建物化视图。
+- 不支持物化视图嵌套创建（即物化视图上创建物化视图）。
+- 不支持视图上创建增量物化视图。
+- 仅支持行存表，不支持列存表。
+- 不支持UNLOGGED类型的物化视图，不支持WITH语法。
 
 ### 约束<a name="section16598132020150"></a>
 
--   物化视图定义如果为UNION ALL，则其中每个子查询需使用不同的基表。
--   增量物化视图的创建、全量刷新、删除过程中会给基表加高级别锁，若物化视图的定义为UNION ALL，需要注意业务逻辑，避免死锁产生。
-
+- 物化视图定义如果为UNION ALL，则其中每个子查询需使用不同的基表。
+- 增量物化视图的创建、全量刷新、删除过程中会给基表加高级别锁，若物化视图的定义为UNION ALL，需要注意业务逻辑，避免死锁产生。

@@ -1,6 +1,6 @@
 # 提示信息函数<a name="ZH-CN_TOPIC_0311139290"></a>
 
--   report\_application\_error
+- report\_application\_error
 
     描述：PL执行过程中，可以使用此函数来抛ERROR。
 
@@ -40,7 +40,7 @@
     </tbody>
     </table>
 
--   raise\_application\_error
+- raise\_application\_error
 
     描述：PL执行过程中，可以使用此函数抛出自定义的错误信息。它允许开发人员在存储过程、函数或触发器中定义自己的错误代码和错误消息，并将这些信息传递给客户端。
 
@@ -91,4 +91,3 @@
     </tr>
     </tbody>
     </table>
-

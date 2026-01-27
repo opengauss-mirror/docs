@@ -14,118 +14,94 @@ pg_config [option...]
 
 pg\_config工具支持下面一个或多个选项，如果给出多于一个选项，那么信息以该顺序打印，每行一条。 如果没有给出选项，则打印所有可获得的信息，连着标签一起打印。
 
--   --bindir
+- --bindir
 
     打印用户可执行文件的路径。比如，可以用这个找gsql程序。通常这也是pg\_config程序存在的路径。
 
-
--   --docdir
+- --docdir
 
     打印文档文件的位置。
 
-
--   --htmldir
+- --htmldir
 
     输出HTML文档文件的位置。
 
-
--   --includedir
+- --includedir
 
     打印客户端接口C头文件的路径。
 
-
--   --pkgincludedir
+- --pkgincludedir
 
     打印其它C头文件的位置。
 
-
--   --includedir-server
+- --includedir-server
 
     打印那些做服务器编程时使用的C头文件的位置。
 
-
--   --libdir
+- --libdir
 
     打印目标代码库的路径。
 
-
--   --pkglibdir
+- --pkglibdir
 
     打印动态加载的模块的位置，或者服务器在哪里寻找他们。 其它体系相关的数据文件可能也放在这个目录里。
 
-
--   --localedir
+- --localedir
 
     打印区域支持文件的位置。如果在编译数据库的时候没有配置区域支持， 则其值为空字符串。
 
-
--   --mandir
+- --mandir
 
     打印手册页的位置。
 
-
--   --sharedir
+- --sharedir
 
     打印体系无关的支持文件的位置。
 
-
--   --sysconfdir
+- --sysconfdir
 
     打印系统范围的配置文件位置。
 
-
--   --pgxs
+- --pgxs
 
     打印扩展makefiles文件的位置。
 
-
--   --configure
+- --configure
 
     打印配置和编译数据库时给configure脚本传递的选项， 用于复制相同配置， 或者找出二进制包是用哪些选项编译的。 不过请注意二进制包通常包含供应商提供的补丁。
 
-
--   --cc
+- --cc
 
     打印用于编译数据库的CC变量的数值。 这个选项显示使用的C编译器。
 
-
--   --cppflags
+- --cppflags
 
     打印用于编译数据库的CPPFLAGS变量的数值。 这个选项显示在预处理的时候所需要的C编译器开关\(通常是-I开关\)。
 
-
--   --cflags
+- --cflags
 
     打印编译数据库时使用的CFLAGS变量的数值。 这个选项显示C编译器开关。
 
-
--   --cflags\_sl
+- --cflags\_sl
 
     打印编译数据库时使用的CFLAGS\_SL变量的数值。 这个选项显示了编译共享库的额外的C编译器开关。
 
-
--   --ldflags
+- --ldflags
 
     打印编译数据库时使用的LDFLAGS变量的数值。 它显示了链接器的开关。
 
-
--   --ldflags\_ex
+- --ldflags\_ex
 
     输出用于创建数据库的LDFLAGS\_EX变量的值。 这显示用于构建可执行文件的链接器开关。
 
-
--   --ldflags\_sl
+- --ldflags\_sl
 
     打印编译数据库时使用的LDFLAGS\_SL变量的数值。 它显示了用于编译共享库的链接器的开关。
 
-
--   --libs
+- --libs
 
     打印编译数据库时使用的LIBS变量的数值。 其内容通常包含连接到数据库的外部库的-l开关。
 
-
--   -?, --help
+- -?, --help
 
     显示关于pg\_config命令行参数的帮助文件，并且退出。
-
-

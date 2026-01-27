@@ -482,7 +482,7 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 
 | 功能                 | 相关 SQL                                             |
 | -------------------- | ---------------------------------------------------- |
-| 创建一个新的运算符族 | [CREATE OPERATOR FAMILY ](create_operator_family.md) |
+| 创建一个新的运算符族 | [CREATE OPERATOR FAMILY](create_operator_family.md) |
 | 删除运算符族         | [DROP OPERRATOR FAMILY](drop_operator_family.md)     |
 
 ## 定义过程语言<a name="section36251059111916"></a>
@@ -542,4 +542,3 @@ DDL（Data Definition Language数据定义语言），用于定义或修改数�
 </tr>
 </tbody>
 </table>
-

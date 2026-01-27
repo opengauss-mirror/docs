@@ -15,22 +15,23 @@ record类型的语法参见[图1](#zh-cn_topic_0283136936_zh-cn_topic_0237122215
 
 对以上语法格式的解释如下：
 
--   record\_type：声明的类型名称。
--   field：record类型中的成员名称。
--   datatype：record类型中成员的类型。
--   expression：设置默认值的表达式。
+- record\_type：声明的类型名称。
+- field：record类型中的成员名称。
+- datatype：record类型中成员的类型。
+- expression：设置默认值的表达式。
 
 >[!NOTE]说明
 >
 >在openGauss中：
->-   record类型变量的赋值支持：
->    -   在函数或存储过程的声明阶段，声明一个record类型，并且可以在该类型中定义成员变量。
->    -   一个record变量到另一个record变量的赋值。
->    -   SELECT INTO和FETCH向一个record类型的变量中赋值。
->    -   将一个NULL值赋值给一个record变量。
->-   不支持INSERT和UPDATE语句使用record变量进行插入数据和更新数据。
->-   如果成员有复合类型，在声明阶段不支持指定默认值，该行为同声明阶段的变量一样。
->-   datatype可以为存储过程中定义record类型、数组类型和集合类型（匿名块不支持）。
+>
+>- record类型变量的赋值支持：
+> - 在函数或存储过程的声明阶段，声明一个record类型，并且可以在该类型中定义成员变量。
+> - 一个record变量到另一个record变量的赋值。
+> - SELECT INTO和FETCH向一个record类型的变量中赋值。
+> - 将一个NULL值赋值给一个record变量。
+>- 不支持INSERT和UPDATE语句使用record变量进行插入数据和更新数据。
+>- 如果成员有复合类型，在声明阶段不支持指定默认值，该行为同声明阶段的变量一样。
+>- datatype可以为存储过程中定义record类型、数组类型和集合类型（匿名块不支持）。
 
 ## 示例<a name="zh-cn_topic_0283136936_zh-cn_topic_0237122215_zh-cn_topic_0059778979_s471412484c0048debf8a78d76cf1a439"></a>
 
@@ -113,4 +114,3 @@ openGauss=# CALL regress_record('abc');
 --删除函数。
 openGauss=# DROP FUNCTION regress_record;
 ```
-

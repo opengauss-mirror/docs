@@ -3878,21 +3878,19 @@
 
 下述列表为openGauss实现系统内部功能所使用的函数，不推荐使用，若需使用，请联系华为技术支持工程师。
 
--   pv\_compute\_pool\_workload\(\)
+- pv\_compute\_pool\_workload\(\)
 
     描述：提供云上加速数据库实例当前负载信息。
 
     返回值类型：record
 
-
--   locktag\_decode\(locktag text\)
+- locktag\_decode\(locktag text\)
 
     描述：从locktag中解析锁的具体信息。
 
     返回值类型：text
 
-
--   smgreq\(a smgr, b smgr\)
+- smgreq\(a smgr, b smgr\)
 
     描述：比较两个smgr是否一样。
 
@@ -3900,7 +3898,7 @@
 
     返回值类型：boolean
 
--   smgrne\(a smgr, b smgr\)
+- smgrne\(a smgr, b smgr\)
 
     描述：判断两个smgr是否不一样。
 
@@ -3908,7 +3906,7 @@
 
     返回值类型：boolean
 
--   xidin4
+- xidin4
 
     描述：输入4字节的xid。
 
@@ -3916,7 +3914,7 @@
 
     返回值类型：xid32
 
--   set\_hashbucket\_info
+- set\_hashbucket\_info
 
     描述：设置哈希桶信息。
 
@@ -3924,7 +3922,7 @@
 
     返回值类型：boolean
 
--   hs\_concat
+- hs\_concat
 
     描述：拼接两个hstore类型数据。
 
@@ -3932,7 +3930,7 @@
 
     返回值类型：hstore
 
--   hs\_contained
+- hs\_contained
 
     描述：判断两个hstore类型数据是否包含，返回值布尔类型。
 
@@ -3940,7 +3938,7 @@
 
     返回值类型：boolean
 
--   hs\_contains
+- hs\_contains
 
     描述：判断两个hstore类型数据是否包含，返回值布尔类型。
 
@@ -3948,7 +3946,7 @@
 
     返回值类型：boolean
 
--   hstore
+- hstore
 
     描述：将参数转为hstore类型。
 
@@ -3956,7 +3954,7 @@
 
     返回值类型：hstore
 
--   hstore\_in
+- hstore\_in
 
     描述：以string格式接收hstore数据。
 
@@ -3964,7 +3962,7 @@
 
     返回值类型：hstore
 
--   hstore\_out
+- hstore\_out
 
     描述：以string格式发送hstore数据。
 
@@ -3972,7 +3970,7 @@
 
     返回值类型：cstring
 
--   hstore\_send
+- hstore\_send
 
     描述：以bytea格式发送hstore数据。
 
@@ -3980,7 +3978,7 @@
 
     返回值类型：bytea
 
--   hstore\_to\_array
+- hstore\_to\_array
 
     描述：以text数组格式发送hstore数据。
 
@@ -3988,7 +3986,7 @@
 
     返回值类型：text\[\]
 
--   hstore\_to\_matrix
+- hstore\_to\_matrix
 
     描述：以text数组格式发送hstore数据。
 
@@ -3996,7 +3994,7 @@
 
     返回值类型：text\[\]
 
--   hstore\_version\_diag
+- hstore\_version\_diag
 
     描述：以integer数组格式发送hstore数据。
 
@@ -4004,7 +4002,7 @@
 
     返回值类型：integer
 
--   int1send
+- int1send
 
     描述：将无符号一字节整数打包放入内部数据缓冲流。
 
@@ -4012,7 +4010,7 @@
 
     返回值类型：bytea
 
--   isdefined
+- isdefined
 
     描述：判断指定key是否存在。
 
@@ -4020,7 +4018,7 @@
 
     返回值类型：boolean
 
--   listagg
+- listagg
 
     描述：list类型agg聚集函数。
 
@@ -4028,7 +4026,7 @@
 
     返回值类型：text
 
--   log\_fdw\_validator
+- log\_fdw\_validator
 
     描述：验证函数。
 
@@ -4036,7 +4034,7 @@
 
     返回值类型：void
 
--   nvarchar2typmodin
+- nvarchar2typmodin
 
     描述：获取varchar的typmod信息。
 
@@ -4044,7 +4042,7 @@
 
     返回值类型：integer
 
--   nvarchar2typmodout
+- nvarchar2typmodout
 
     描述：获取varchar的typmod信息，并构造字符串返回。
 
@@ -4052,7 +4050,7 @@
 
     返回值类型：cstring
 
--   read\_disable\_conn\_file
+- read\_disable\_conn\_file
 
     描述：读取禁止的连接文件。
 
@@ -4060,7 +4058,7 @@
 
     返回值类型：disconn\_mode text, disconn\_host text, disconn\_port text, local\_host text, local\_port text, redo\_finished text
 
--   regex\_like\_m
+- regex\_like\_m
 
     描述：正则匹配，判断字符串是否符合给定的正则表达式。
 
@@ -4068,7 +4066,7 @@
 
     返回值类型：boolean
 
--   update\_pgjob
+- update\_pgjob
 
     描述：更新job。
 
@@ -4076,7 +4074,7 @@
 
     返回值类型：void
 
--   enum\_cmp
+- enum\_cmp
 
     描述：枚举类比较函数，用于判断两个枚举类是否相等，以及相对大小。
 
@@ -4084,7 +4082,7 @@
 
     返回值类型：integer
 
--   enum\_eq
+- enum\_eq
 
     描述：枚举类比较函数，用于实现=符号。
 
@@ -4092,7 +4090,7 @@
 
     返回值类型：boolean
 
--   enum\_first
+- enum\_first
 
     描述：返回枚举类中的第一个元素。
 
@@ -4100,7 +4098,7 @@
 
     返回值类型：anyenum
 
--   enum\_ge
+- enum\_ge
 
     描述：枚举类比较函数，用于实现\>=符号。
 
@@ -4108,7 +4106,7 @@
 
     返回值类型：boolean
 
--   enum\_gt
+- enum\_gt
 
     描述：枚举类比较函数，用于实现\>符号。
 
@@ -4116,7 +4114,7 @@
 
     返回值类型：boolean
 
--   enum\_in
+- enum\_in
 
     描述：枚举类比较函数，用于判断元素是否在枚举类中。
 
@@ -4124,7 +4122,7 @@
 
     返回值类型：anyenum
 
--   enum\_larger
+- enum\_larger
 
     描述：枚举类比较函数，用于实现\>符号。
 
@@ -4132,7 +4130,7 @@
 
     返回值类型：anyenum
 
--   enum\_last
+- enum\_last
 
     描述：返回枚举类中的最后一个元素。
 
@@ -4140,7 +4138,7 @@
 
     返回值类型：anyenum
 
--   enum\_le
+- enum\_le
 
     描述：枚举类比较函数，用于实现<=符号。
 
@@ -4148,7 +4146,7 @@
 
     返回值类型：boolean
 
--   enum\_lt
+- enum\_lt
 
     描述：枚举类比较函数，用于实现<符号。
 
@@ -4156,7 +4154,7 @@
 
     返回值类型：boolean
 
--   enum\_smaller
+- enum\_smaller
 
     描述：枚举类比较函数，用于实现<符号。
 
@@ -4164,7 +4162,7 @@
 
     返回值类型：boolean
 
--   node\_oid\_name
+- node\_oid\_name
 
     描述：不支持。
 
@@ -4172,7 +4170,7 @@
 
     返回值类型：cstring
 
--   pg\_buffercache\_pages
+- pg\_buffercache\_pages
 
     描述：读取共享缓冲区的状态数据。
 
@@ -4278,7 +4276,7 @@
     </tbody>
     </table>
 
--   pg\_check\_xidlimit
+- pg\_check\_xidlimit
 
     描述：判断nextxid是否\>= xidwarnlimit。
 
@@ -4286,7 +4284,7 @@
 
     返回值类型：boolean
 
--   pg\_comm\_delay
+- pg\_comm\_delay
 
     描述：展示单个DN的通信库时延状态。
 
@@ -4294,7 +4292,7 @@
 
     返回值类型：text, text, integer, integer, integer, integer
 
--   pg\_comm\_recv\_stream
+- pg\_comm\_recv\_stream
 
     描述：展示单个DN上所有的通信库接收流状态。
 
@@ -4302,7 +4300,7 @@
 
     返回值类型：text, bigint, text, bigint, integer, integer, integer, text, bigint, integer, integer, integer, bigint, bigint, bigint, bigint, bigint
 
--   pg\_comm\_send\_stream
+- pg\_comm\_send\_stream
 
     描述：展示单个DN上所有的通信库发送流状态。
 
@@ -4310,7 +4308,7 @@
 
     返回值类型：text, bigint, text, bigint, integer, integer, integer, text, bigint, integer, integer, integer, bigint, bigint, bigint, bigint, bigint
 
--   pg\_comm\_status
+- pg\_comm\_status
 
     描述：展示单个DN的通信状态。
 
@@ -4318,7 +4316,7 @@
 
     返回值类型：text, integer, integer, bigint, bigint, bigint, bigint, bigint, integer, integer, integer, integer, integer
 
--   pg\_log\_comm\_status
+- pg\_log\_comm\_status
 
     描述：在DN上打印一些log。
 
@@ -4326,7 +4324,7 @@
 
     返回值类型：boolean
 
--   pg\_parse\_clog
+- pg\_parse\_clog
 
     描述：解析clog获取xid的status。
 
@@ -4334,7 +4332,7 @@
 
     返回值类型：xid xid, status text
 
--   pg\_pool\_ping
+- pg\_pool\_ping
 
     描述：设置PoolerPing。
 
@@ -4342,7 +4340,7 @@
 
     返回值类型：SETOF boolean
 
--   pg\_resume\_bkp\_flag
+- pg\_resume\_bkp\_flag
 
     描述：用于备份恢复获取delay xlong标志。
 
@@ -4350,7 +4348,7 @@
 
     返回值类型：start\_backup\_flag boolean, to\_delay boolean, ddl\_delay\_recycle\_ptr text, rewind\_time text
 
--   pgfadvise\_DONTNEED
+- pgfadvise\_DONTNEED
 
     描述: 这个函数为当前关系设置DONTNEED标记。这意味着如果需要释放一些内存，操作系统会首先卸载该文件的页。主要思想是卸载不再使用的文件（而不是可能会被使用的页面）。
 
@@ -4364,7 +4362,7 @@
      base/11874/16447.1 |         4096 |        65726 |        408103
     ```
 
--   pgfadvise\_WILLNEED
+- pgfadvise\_WILLNEED
 
     描述：这个函数为当前关系设置WILLNEED标记。这意味着操作系统将尝试加载该关系尽可能多的页面。主要思想是在服务器启动时预加载文件，预加载文件时可能使用缓存命中率/失误率以及最可能被使用的关系/索引等信息。
 
@@ -4378,19 +4376,19 @@
     base/11874/16447.1 |         4096 |        65726 |         80650
     ```
 
--   pgfadvise\_NORMAL
+- pgfadvise\_NORMAL
 
     描述：这个函数为当前关系设置NORMAL标记。
 
--   pgfadvise\_SEQUENTIAL
+- pgfadvise\_SEQUENTIAL
 
     描述：这个函数为当前关系设置SEQUENTIAL标记。
 
--   pgfadvise\_RANDOM
+- pgfadvise\_RANDOM
 
     描述：这个函数为当前关系设置RANDOM标记。
 
--   pgfadvise\_loader
+- pgfadvise\_loader
 
     描述：这个函数允许直接与页面缓存交互。它可以用于根据表示要加载/卸载的页面映射的varbit从内存加载和/或卸载页面。
 
@@ -4416,7 +4414,7 @@
     base/11874/16447 |         4096 |        408370 |            0 |              3
     ```
 
--   pgfincore
+- pgfincore
 
     描述：这个函数提供关于文件系统缓存\(页面缓存\)的信息。
 
@@ -4432,18 +4430,18 @@
 
     对于一个指定的关系，该函数返回包括以下字段：
 
-    -   relpath : 该关系的路径。
-    -   segment : 被分析的段号。
-    -   os\_page\_size : 一个页面的大小。
-    -   rel\_os\_pages : 该关系的总页面数。
-    -   pages\_mem : 关系在页面缓存中的页面总数。 \(来自操作系统缓存\)  。
-    -   group\_mem : 相邻pages\_mem的组数。
-    -   os\_page\_free : 操作系统页面缓存中空闲的页面数。
-    -   databit : 该文件的varbit映射，因为该字段的大小关系，若需要输出该字段，需要使用pgfincore\('pgbench\_accounts'，true\)来激活它。
-    -   pages\_dirty : 如果定义了HAVE\_FINCORE常量，平台将提供相关的信息，和pages\_mem类似，只不过是对于脏页面的。
-    -   group\_dirty : 如果定义了HAVE\_FINCORE常量，平台将提供相关的信息，和group\_mem类似，只不过是对于脏页面的。
+    - relpath : 该关系的路径。
+    - segment : 被分析的段号。
+    - os\_page\_size : 一个页面的大小。
+    - rel\_os\_pages : 该关系的总页面数。
+    - pages\_mem : 关系在页面缓存中的页面总数。 \(来自操作系统缓存\)  。
+    - group\_mem : 相邻pages\_mem的组数。
+    - os\_page\_free : 操作系统页面缓存中空闲的页面数。
+    - databit : 该文件的varbit映射，因为该字段的大小关系，若需要输出该字段，需要使用pgfincore\('pgbench\_accounts'，true\)来激活它。
+    - pages\_dirty : 如果定义了HAVE\_FINCORE常量，平台将提供相关的信息，和pages\_mem类似，只不过是对于脏页面的。
+    - group\_dirty : 如果定义了HAVE\_FINCORE常量，平台将提供相关的信息，和group\_mem类似，只不过是对于脏页面的。
 
--   pgsysconf
+- pgsysconf
 
     描述: 这个函数输出操作系统块的大小，操作系统页面缓冲区中空闲页面的数量。
 
@@ -4456,7 +4454,7 @@
              4096 |         80431 |        4094174
     ```
 
--   pgsysconf\_pretty
+- pgsysconf\_pretty
 
     描述：该函数的功能同上，不同之处在于该函数进行了单位转换，便于阅读。
 
@@ -4470,7 +4468,7 @@
     
     ```
 
--   pgfincore\_drawer
+- pgfincore\_drawer
 
     描述：一个非常简单的渲染器。这个函数需要一个varbit类型的参数。通常，这个参数的值来源于pgfincore函数的databit返回字段。databit字段的值由0和1组成，如果是0，意味着该页不在操作系统页面缓存中，如果是1，则意味着该页在操作系统页面缓存中。
 
@@ -4488,7 +4486,7 @@
        ...    
     ```
 
--   psortoptions
+- psortoptions
 
     描述：返回psort属性。
 
@@ -4496,7 +4494,7 @@
 
     返回值类型：bytea
 
--   xideq4
+- xideq4
 
     描述：对比两个xid类型的值是否相等。
 
@@ -4504,7 +4502,7 @@
 
     返回值类型：boolean
 
--   xideqint8
+- xideqint8
 
     描述：对比xid类型和int8类型的值是否相等。
 
@@ -4512,7 +4510,7 @@
 
     返回值类型：boolean
 
--   xidlt
+- xidlt
 
     描述：返回xid1 < xid2是否成立。
 
@@ -4520,12 +4518,10 @@
 
     返回值类型：boolean
 
--   xidlt4
+- xidlt4
 
     描述：返回xid1 < xid2是否成立。
 
     参数：xid32, xid32
 
     返回值类型：boolean
-
-

@@ -2,7 +2,7 @@
 
 ## 文本检索操作符<a name="zh-cn_topic_0283137544_zh-cn_topic_0237121976_zh-cn_topic_0059779255_sd5fffb0507864456a3be705c4680bfbb"></a>
 
--   @@
+- @@
 
     描述：tsvector类型的词汇与tsquery类型的词汇是否匹配
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   @@@
+- @@@
 
     描述：@@的同义词
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：连接两个tsvector类型的词汇
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     描述：将两个tsquery类型的词汇进行“与”操作
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：将两个tsquery类型的词汇进行“或”操作
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   !!
+- !!
 
     描述：tsquery类型词汇的非关系
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     描述：一个tsquery类型的词汇是否包含另一个tsquery类型的词汇
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     描述：一个tsquery类型的词汇是否被包含另一个tsquery类型的词汇
 
@@ -114,12 +114,11 @@
     (1 row)
     ```
 
-
 除了上述的操作符，还为tsvector类型和tsquery类型的数据定义了普通的B-tree比较操作符（=，<等）。
 
 ## 文本检索函数<a name="zh-cn_topic_0283137544_zh-cn_topic_0237121976_zh-cn_topic_0059779255_s06e6cc0c308848d4b5ab9fa7bfe9f62a"></a>
 
--   get\_current\_ts\_config\(\)
+- get\_current\_ts\_config\(\)
 
     描述：获取文本检索的默认配置。
 
@@ -135,7 +134,7 @@
     (1 row)
     ```
 
--   length\(tsvector\)
+- length\(tsvector\)
 
     描述：tsvector类型词汇的单词数。
 
@@ -151,7 +150,7 @@
     (1 row)
     ```
 
--   numnode\(tsquery\)
+- numnode\(tsquery\)
 
     描述：tsquery类型的单词加上操作符的数量。
 
@@ -167,7 +166,7 @@
     (1 row)
     ```
 
--   plainto\_tsquery\(\[ config regconfig , \] query text\)
+- plainto\_tsquery\(\[ config regconfig , \] query text\)
 
     描述：产生tsquery类型的词汇，并忽略标点。
 
@@ -183,7 +182,7 @@
     (1 row)
     ```
 
--   querytree\(query tsquery\)
+- querytree\(query tsquery\)
 
     描述：获取tsquery类型的词汇可加索引的部分。
 
@@ -199,7 +198,7 @@
     (1 row)
     ```
 
--   setweight\(tsvector, "char"\)
+- setweight\(tsvector, "char"\)
 
     描述：给tsvector类型的每个元素分配权值。
 
@@ -215,7 +214,7 @@
     (1 row)
     ```
 
--   strip\(tsvector\)
+- strip\(tsvector\)
 
     描述：删除tsvector类型单词中的position和权值。
 
@@ -231,7 +230,7 @@
     (1 row)
     ```
 
--   to\_tsquery\(\[ config regconfig , \] query text\)
+- to\_tsquery\(\[ config regconfig , \] query text\)
 
     描述：标准化单词，并转换为tsquery类型。
 
@@ -247,7 +246,7 @@
     (1 row)
     ```
 
--   to\_tsvector\(\[ config regconfig , \] document text\)
+- to\_tsvector\(\[ config regconfig , \] document text\)
 
     描述：去除文件信息，并转换为tsvector类型。
 
@@ -263,7 +262,7 @@
     (1 row)
     ```
 
--   to\_tsvector\_for\_batch\(\[ config regconfig , \] document text\)
+- to\_tsvector\_for\_batch\(\[ config regconfig , \] document text\)
 
     描述：去除文件信息，并转换为tsvector类型。
 
@@ -279,7 +278,7 @@
     (1 row)
     ```
 
--   ts\_headline\(\[ config regconfig, \] document text, query tsquery \[, options text \]\)
+- ts\_headline\(\[ config regconfig, \] document text, query tsquery \[, options text \]\)
 
     描述：高亮显示查询的匹配项。
 
@@ -295,7 +294,7 @@
     (1 row)
     ```
 
--   ts\_rank\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
+- ts\_rank\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
     描述：文档查询排名。
 
@@ -311,7 +310,7 @@
     (1 row)
     ```
 
--   ts\_rank\_cd\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
+- ts\_rank\_cd\(\[ weights float4\[\], \] vector tsvector, query tsquery \[, normalization integer \]\)
 
     描述：排序文件查询使用覆盖密度。
 
@@ -327,7 +326,7 @@
     (1 row)
     ```
 
--   ts\_rewrite\(query tsquery, target tsquery, substitute tsquery\)
+- ts\_rewrite\(query tsquery, target tsquery, substitute tsquery\)
 
     描述：替换目标tsquery类型的单词。
 
@@ -343,7 +342,7 @@
     (1 row)
     ```
 
--   ts\_rewrite\(query tsquery, select text\)
+- ts\_rewrite\(query tsquery, select text\)
 
     描述：使用SELECT命令的结果替代目标中tsquery类型的单词。
 
@@ -359,10 +358,9 @@
     (1 row)
     ```
 
-
 ## 文本检索调试函数<a name="zh-cn_topic_0283137544_zh-cn_topic_0237121976_zh-cn_topic_0059779255_s945ba95d2c0e472cb1903d9f734c3c36"></a>
 
--   ts\_debug\(\[ config regconfig, \] document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary\[\], OUT dictionary regdictionary, OUT lexemes text\[\]\)
+- ts\_debug\(\[ config regconfig, \] document text, OUT alias text, OUT description text, OUT token text, OUT dictionaries regdictionary\[\], OUT dictionary regdictionary, OUT lexemes text\[\]\)
 
     描述：测试一个配置。
 
@@ -382,7 +380,7 @@
     (5 rows)
     ```
 
--   ts\_lexize\(dict regdictionary, token text\)
+- ts\_lexize\(dict regdictionary, token text\)
 
     描述：测试一个数据字典。
 
@@ -398,7 +396,7 @@
     (1 row)
     ```
 
--   ts\_parse\(parser\_name text, document text, OUT tokid integer, OUT token text\)
+- ts\_parse\(parser\_name text, document text, OUT tokid integer, OUT token text\)
 
     描述：测试一个解析。
 
@@ -417,7 +415,7 @@
     (4 rows)
     ```
 
--   ts\_parse\(parser\_oid oid, document text, OUT tokid integer, OUT token text\)
+- ts\_parse\(parser\_oid oid, document text, OUT tokid integer, OUT token text\)
 
     描述：测试一个解析。
 
@@ -436,7 +434,7 @@
     (4 rows)
     ```
 
--   ts\_token\_type\(parser\_name text, OUT tokid integer, OUT alias text, OUT description text\)
+- ts\_token\_type\(parser\_name text, OUT tokid integer, OUT alias text, OUT description text\)
 
     描述：获取分析器定义的记号类型。
 
@@ -474,7 +472,7 @@
     (23 rows)
     ```
 
--   ts\_token\_type\(parser\_oid oid, OUT tokid integer, OUT alias text, OUT description text\)
+- ts\_token\_type\(parser\_oid oid, OUT tokid integer, OUT alias text, OUT description text\)
 
     描述：获取分析器定义的记号类型。
 
@@ -512,7 +510,7 @@
     (23 rows)
     ```
 
--   ts\_stat\(sqlquery text, \[ weights text, \] OUT word text, OUT ndoc integer, OUT nentry integer\)
+- ts\_stat\(sqlquery text, \[ weights text, \] OUT word text, OUT ndoc integer, OUT nentry integer\)
 
     描述：获取tsvector列的统计数据。
 
@@ -528,5 +526,3 @@
      (hello,1,1)
     (2 rows)
     ```
-
-

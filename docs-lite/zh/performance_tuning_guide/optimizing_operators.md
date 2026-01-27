@@ -51,4 +51,3 @@ openGauss=#  explain (analyze on, costs off) select * from store_sales_row where
 ![](figures/12-4-5-4-算子级调优示例错乱调整示例3.png)
 
 ![](figures/12-4-5-4-算子级调优示例错乱调整示例3-1.png)
-

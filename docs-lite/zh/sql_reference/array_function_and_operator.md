@@ -2,7 +2,7 @@
 
 ## 数组操作符<a name="zh-cn_topic_0283137239_zh-cn_topic_0237121980_zh-cn_topic_0059777596_s7fe6ac87a6fc4d7c8c7bd46484b9d9c3"></a>
 
--   =
+- =
 
     描述：两个数组是否相等
 
@@ -16,7 +16,7 @@
     (1 row)
     ```
 
--   <\>
+- <\>
 
     描述：两个数组是否不相等
 
@@ -30,7 +30,7 @@
     (1 row)
     ```
 
--   <
+- <
 
     描述：一个数组是否小于另一个数组
 
@@ -44,7 +44,7 @@
     (1 row)
     ```
 
--   \>
+- \>
 
     描述：一个数组是否大于另一个数组
 
@@ -58,7 +58,7 @@
     (1 row)
     ```
 
--   <=
+- <=
 
     描述：一个数组是否小于或等于另一个数组
 
@@ -72,7 +72,7 @@
     (1 row)
     ```
 
--   \>=
+- \>=
 
     描述：一个数组是否大于或等于另一个数组
 
@@ -86,7 +86,7 @@
     (1 row)
     ```
 
--   @\>
+- @\>
 
     描述：一个数组是否包含另一个数组
 
@@ -100,7 +100,7 @@
     (1 row)
     ```
 
--   <@
+- <@
 
     描述：一个数组是否被包含于另一个数组
 
@@ -114,7 +114,7 @@
     (1 row)
     ```
 
--   &&
+- &&
 
     描述：一个数组是否和另一个数组重叠（有共同元素）
 
@@ -128,7 +128,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：数组与数组进行连接
 
@@ -150,7 +150,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：元素与数组进行连接
 
@@ -164,7 +164,7 @@
     (1 row)
     ```
 
--   ||
+- ||
 
     描述：数组与元素进行连接
 
@@ -178,12 +178,11 @@
     (1 row)
     ```
 
-
 数组比较是使用默认的B-tree比较函数对所有元素逐一进行比较的。多维数组的元素按照行顺序进行访问。如果两个数组的内容相同但维数不等，决定排序顺序的首要因素是维数。
 
 ## 数组函数<a name="zh-cn_topic_0283137239_zh-cn_topic_0237121980_zh-cn_topic_0059777596_sba9d38cb89864afaac99972eff9a8b00"></a>
 
--   array\_append\(anyarray, anyelement\)
+- array\_append\(anyarray, anyelement\)
 
     描述：向数组末尾添加元素，只支持一维数组。
 
@@ -199,7 +198,7 @@
     (1 row)
     ```
 
--   array\_prepend\(anyelement, anyarray\)
+- array\_prepend\(anyelement, anyarray\)
 
     描述：向数组开头添加元素，只支持一维数组。
 
@@ -215,7 +214,7 @@
     (1 row)
     ```
 
--   array\_cat\(anyarray, anyarray\)
+- array\_cat\(anyarray, anyarray\)
 
     描述：连接两个数组，支持多维数组。
 
@@ -237,7 +236,7 @@
     (1 row)
     ```
 
--   array\_ndims\(anyarray\)
+- array\_ndims\(anyarray\)
 
     描述：返回数组的维数。
 
@@ -253,7 +252,7 @@
     (1 row)
     ```
 
--   array\_dims\(anyarray\)
+- array\_dims\(anyarray\)
 
     描述：返回数组各个维度中的低位下标值和高位下标值。
 
@@ -269,7 +268,7 @@
     (1 row)
     ```
 
--   array\_length\(anyarray, int\)
+- array\_length\(anyarray, int\)
 
     描述：返回指定数组维度的长度。int为指定数组维度。
 
@@ -291,7 +290,7 @@
     (1 row)
     ```
 
--   array\_lower\(anyarray, int\)
+- array\_lower\(anyarray, int\)
 
     描述：返回指定数组维数的下界。int为指定数组维度。
 
@@ -307,7 +306,7 @@
     (1 row)
     ```
 
--   array\_upper\(anyarray, int\)
+- array\_upper\(anyarray, int\)
 
     描述：返回指定数组维数的上界。int为指定数组维度。
 
@@ -323,7 +322,7 @@
     (1 row)
     ```
 
--   array\_upper\(anyarray, int\)
+- array\_upper\(anyarray, int\)
 
     描述：返回指定数组维数的上界。int为指定数组维度。
 
@@ -339,7 +338,7 @@
     (1 row)
     ```
 
--   array\_remove\(anyarray, anyelement\)
+- array\_remove\(anyarray, anyelement\)
 
     描述：移除数组中的所有指定元素。仅支持一维数组。
 
@@ -355,7 +354,7 @@
     (1 row)
     ```
 
--   array\_replace\(anyarray, anyelement, anyelement\)
+- array\_replace\(anyarray, anyelement, anyelement\)
 
     描述：使用指定元素替换数组中的所有指定元素。仅支持一维数组。由于anyelement类型的限制，在任何给定的查询第二参数与第三参数必须是相同的实际类型。
 
@@ -371,7 +370,7 @@
     (1 row)
     ```
 
--   array\_to\_string\(anyarray, text \[, text\]\)
+- array\_to\_string\(anyarray, text \[, text\]\)
 
     描述：使用第一个text作为数组的新分隔符，使用第二个text替换数组值为null的值。
 
@@ -387,7 +386,7 @@
     (1 row)
     ```
 
--   array\_delete\(anyarray\)
+- array\_delete\(anyarray\)
 
     描述：清空数组中的元素并返回一个同类型的空数组。
 
@@ -403,7 +402,7 @@
     (1 row)
     ```
 
--   array\_deleteidx\(anyarray, int\)
+- array\_deleteidx\(anyarray, int\)
 
     描述：从数组中删除指定下标的元素并返回剩余元素组成的数组。
 
@@ -419,11 +418,11 @@
     (1 row)
     ```
 
--   array\_extendnull\(anyarray, int\)
+- array\_extendnull\(anyarray, int\)
 
     描述：目前该接口已废弃，暂不可用。
 
--   array\_trim\(anyarray, int\)
+- array\_trim\(anyarray, int\)
 
     描述：从数组尾部删除指定个数个元素。
 
@@ -439,7 +438,7 @@
     (1 row)
     ```
 
--   array\_exists\(anyarray, int\)
+- array\_exists\(anyarray, int\)
 
     描述：检查第二个参数是否是数组的合法下标。
 
@@ -455,7 +454,7 @@
     (1 row)
     ```
 
--   array\_next\(anyarray, int\)
+- array\_next\(anyarray, int\)
 
     描述：根据第二个入参返回数组中指定下标元素的下一个元素的下标。
 
@@ -471,7 +470,7 @@
     (1 row)
     ```
 
--   array\_prior\(anyarray, int\)
+- array\_prior\(anyarray, int\)
 
     描述：根据第二个入参返回数组中指定下标元素的上一个元素的下标。
 
@@ -487,7 +486,7 @@
     (1 row)
     ```
 
--   string\_to\_array\(text, text \[,  text\]\)
+- string\_to\_array\(text, text \[,  text\]\)
 
     描述：使用第二个text指定分隔符，使用第三个可选的text作为NULL值替换模板，如果分隔后的子串与第三个可选的text完全匹配，则将其替换为NULL。
 
@@ -508,7 +507,7 @@
     (1 row)
     ```
 
--   unnest\(anyarray\)
+- unnest\(anyarray\)
 
     描述：扩大一个数组为一组行。
 
@@ -525,7 +524,7 @@
     (2 rows)
     ```
 
--   array\_position\(anyarray, anyelement [, integer]\)
+- array\_position\(anyarray, anyelement [, integer]\)
 
     描述：根据第二个入参返回数组中指定元素的下标，第二个入参的类型必须和数组元素保持一致。可选的第三个入参标识查找的起点。
 
@@ -546,10 +545,8 @@
     (1 row)
     ```
 
-
 在string\_to\_array中，如果分隔符参数是NULL，输入字符串中的每个字符将在结果数组中变成一个独立的元素。如果分隔符是一个空白字符串，则整个输入的字符串将变为一个元素的数组。否则输入字符串将在每个分隔字符串处分开。
 
 在string\_to\_array中，如果省略null字符串参数或为NULL，将字符串中没有输入内容的子串替换为NULL。
 
 在array\_to\_string中，如果省略null字符串参数或为NULL，运算中将跳过在数组中的任何null元素，并且不会在输出字符串中出现。
-
