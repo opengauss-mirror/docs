@@ -140,6 +140,7 @@ uid=1135(omm) gid=1135(omm) groups=1135(omm)
 | `nodes[].name` | string | 是 | 节点主机名（hostname） |
 | `nodes[].ip` | string | 是 | 节点 IP 地址 |
 | `nodes[].gr_port` | int | 是 | oGRecorder 服务端口 |
+| `nodes[].rest_ip` | string | 否 | restapi 服务ip，仅在安装restapi，且restapi和oGRecorder部署在不同ip时需要配置 |
 
 ### RestAPI 参数配置（可选）
 
